@@ -1,15 +1,25 @@
 # JSON Form
 
-
-The JSON form widget saves time and effort by automatically generating forms from JSON data, eliminating the need for manual form creation.
+This page provides information on how to use the JSON form widget, which efficiently generates forms from JSON data, eliminating the need for manual form creation.
 
 
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
 
+## Content properties
 
-## Generate JSON Form
-To populate the JSON Form widget with data, you can utilize the **Source Data** property, which requires the data to be structured in a JSON format:
 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
+
+#### Source Data `json`	
+
+<dd>
+
+Allows you to add form data for the widget. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
+
+*Expected data structure:*
 ```json
 {
   "name": "John",
@@ -18,22 +28,10 @@ To populate the JSON Form widget with data, you can utilize the **Source Data** 
   "employee_id": 1001
 }
 ```
-JSON Form automatically detects the appropriate field type for each value. For instance, if the JSON data contains an `age` field, it sets the field type to a *Number Input*. Additionally, you can add/customize field types using the **Field Configuration** property.
 
+You can display dynamic data by binding the response from a query or a JavaScript function to the **Source Data** property. For instance, to display a master-detail form when a user selects a row in a Table widget, you can add the below code in the **Source Data** property:
 
-
-You can display dynamic data in a JSON Form widget by binding the response from a query or a JS function to the **Source Data** property. This allows the form to update dynamically as the data changes in the database or API.
-
----
-
-**Example**: suppose you want a master-detail form that shows details of each record in a form when you select a row in a table. Suppose you have fetched data from the mock database using a SELECT query `fetchUserData`. You can display the fetched data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{fetchUserData.data}}
-```
-
-To automatically generate the fields in the JSON Form when a table row is selected, add the below code in the **Source Data** property:
-
+*Example*:
 ```js
 {{tbluserData.selectedRow}}
 ```
@@ -41,15 +39,37 @@ To automatically generate the fields in the JSON Form when a table row is select
 You can click on an individual row in the Table and update data in the form fields.
 
 
-#### Auto generate form
+Based on the JSON data provided, the JSON Form automatically identifies the appropriate field type for each value. For example, if the data contains the field `age`, the form sets the field type to a `Number Input`. Additionally, you have the flexibility to add or customize field types using the **Field Configuration property**.
 
-You can enable the **Auto Generate Form** property to have the form fields regenerate automatically when the source data changes, for example, when keys in the JSON data change or if a data type changes, for example, from string to a number. 
+
+</dd>
+
+#### Auto Generate Form `boolean`
+
+<dd>
+
+When enabled, the form layout updates automatically when the field types inside the **Source Data** are changed. With this, the **Field Configuration** property also gets automatically updated to reflect any changes in the **Source Data** property.
 
 However, it's important to note that enabling this feature overrides any custom configurations that you are providing through data transformations using JavaScript.
 
-#### Field configuration
+</dd>
 
-In the **Field Configuration** section of the JSON Form's property pane, you can add fields or update each field's settings by clicking the cog icon ⚙︎ next to it. You can customize each form field using properties, for instance, updating the field type, setting validation and style properties, and triggering actions using event listeners. You can select any one of the following options from the **Field Type** property to update the widget type for that field on the JSON Form:
+#### Generate Form `string`
+
+<dd>
+
+When the **Auto Generate Form** property is disabled, this button becomes visible. You can use this button to manually regenerate the form layout. With this, the **Field Configuration** property also gets updated to reflect any changes in the **Source Data** property.
+
+
+</dd>
+
+#### Field Configuration `list`
+
+<dd>
+
+Contains all the generated form fields. You can rearrange the items and configure them by clicking on the ⚙️ gear icon. Alternatively, the eye icon allows you to hide specific fields.
+
+Clicking the gear icon ⚙︎ enables you to customize each form field extensively. You can select any one of the following options from the **Field Type** property to update the widget type for that field on the JSON Form:
 
 * Array
 * Checkbox
@@ -67,126 +87,356 @@ In the **Field Configuration** section of the JSON Form's property pane, you can
 * Switch
 * Text Input
 
-Each field type has different sets of events and configurations that can be customized. For example, the Number Input field can have a min and max value, while the Datepicker field can have a specific date format.
+Each field type offers unique sets of customizable events and configurations. For instance, the Number Input field can have a min and max value, whereas the Select field includes the options property.
 
-The configuration options for each field type may include default values, placeholder text, validation rules, and more. These options can be adjusted to fit the specific needs of the form being created.
+Most of the field properties are similar to those found in widget properties. To explore more about these properties, you can refer to the widget reference guide for more information.
 
-## Submit form data
 
-To access form data, the values entered in the JSON form are stored in the `formData` property. For instance, if you have a JSON form with a name field, you can access its value using:
+</dd>
 
+#### Add New Field `string`
+
+
+<dd>
+
+Adds a new field in the form. Fields added this way are known as custom fields and you have the flexibility to delete these fields at a later time. It's important to note that custom fields do not update the **Source data** property.
+
+</dd>
+
+### General
+
+#### Title `string`
+
+<dd>
+
+Sets the text that appears at the top of the form as a title.
+
+</dd>
+
+#### Hidden Fields in Data `boolean`
+
+
+<dd>
+
+Enabling the this option updates the output data to include information from hidden fields in the source data. 
+
+For instance, suppose you have a registration form where the `Date of Birth` field is hidden from users in the UI. When you enable the **Hidden Fields in Data** option, you can access the `Date of Birth` field through the `formData` reference property.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in *View Mode*. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects `Yes` from a Select widget, you can use the following JavaScript expression: 
 ```js
-{{JSONForm.formData.name}}
+{{Select1.selectedOptionValue === "Yes"}}
 ```
 
 
-To submit form data, you can use the `onSubmit` event. This event allows you to perform an action when the user submits the form.
 
-Suppose you have a database with user information `name`, `gender`, and `email` and you want to insert data collected through the JSON Form. To do this, you can create an SQL insert query and pass the data as shown:
-
-```sql
-INSERT INTO users
-  (name, gender, email)
-VALUES
-  (
-    {{JSONForm1.formData.name}},
-    {{JSONForm1.formData.gender}},
-    {{JSONForm1.formData.email}}
-  );
-```
-
-To trigger this insert query, you can set the `onSubmit` event of the **Submit** button on the JSON Form. 
+</dd>
 
 
-## Form validation
-
-Validating user input is essential for ensuring correct and formatted data. Appsmith provides validation properties such as Valid, Regex, and Required for **Fields** property. 
-
-- The **Valid** property, which checks input against a code expression,
-- The **Regex** property, which checks that input matches a regular expression,
-- The **Required** property, which indicates that the field must be filled out.
-
-When **Disabled Invalid Forms** is turned on, the JSON Form widget checks the validation properties, and the **Submit** button is automatically disabled if there are failing checks. Using this property guarantees that all user input meets the criteria you have defined in the form fields.
+#### Animate Loading `boolean`
 
 
-## Clear form fields
+<dd>
 
-To clear form fields, you can enable the **Show Reset** property. When the Show Reset property is enabled, a reset button is added to the form. Clicking this button resets all fields in the form to their default values. This is useful if a user wants to start over with a new entry or if they entered the wrong information and need to clear the form.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
 
+</dd>
 
+#### Disable Invalid Forms `boolean`
 
-## Properties
+<dd>
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+When turned on, the JSON Form widget checks the validation properties, and the Submit button is automatically disabled if there are failing checks. 
 
-### Widget properties
-
-These properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Title**           | String        | Sets the text that appears at the top of the form as a title.                                                                                                                                                                |
-| **Source Data**       | JSON      | Takes a JSON _object_ whose data is used to generate the form layout.                                                                                                                                                        |
-| **Auto Generate form** | Boolean     | When enabled, the form layout updates automatically when the field types inside the **Source Data** are changed.                                                                                                         |
-| **Generate Form**      | Button     | When **Auto Generate Form** is disabled, this button manually regenerates the form layout according to the field types in the **Source Data** object.                                                                        |
-| **Field Configuration**  | List   | This is a list of the generated form fields. Click the gear icon to further customize any of these fields, or the eye icon to hide that field. They can also be re-ordered by dragging, and renamed by clicking their names. |
-| **Add New Field**     | Button      | Adds a new field in the form. Fields added this way are known as custom fields. You can delete these fields later.                                                                                                           |
-| **Disable Invalid Forms** | Boolean   | Disables the submit button when one or more of the form fields are considered invalid.                                                                                                                                       |
-| **Animate Loading**   | Boolean      | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it.                       |
-| **Fixed Footer**       | Boolean     | Makes the footer sticky for long forms, so the Submit and Reset buttons are always visible on long forms.                                                                                                                    |
-| **Visible**          | Boolean       | Controls widget's visibility on the page. When turned off: The widget would not be visible when the app is published. It appears translucent when in Edit mode.                                                               |
-| **Hidden Fields in Data**      | Boolean           | When turned on, the output data is updated to contain data from hidden fields. The hidden field values are referenced from the source data.                                                               |
-| **Scroll Contents**   | Boolean      | Makes the contents of the form scrollable.                                                                                                                                                                                   |
-| **Show Reset**       | Boolean       | When enabled, shows a reset button in the form allowing users to reset the form at any time.                                                                                                                                 |
-| **Submit Button Label** | String    | Sets the text for the label on the Submit button.                                                                                                                                                                            |
-| **Reset Button Label** | String     | Sets the text for the label on the Reset button.                                                                                                                                                                             |
-| **Height**  | String        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes. In JSON form widget, auto height is enabled by default.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+</dd>
 
 
+#### Show Reset `boolean`
+
+<dd>
+
+When the property is enabled, a reset button is added to the form. Clicking this button resets all fields in the form to their default values. This is useful if a user wants to start over with a new entry or if they entered the wrong information and need to clear the form.
+
+</dd>
+
+#### Submit Button Label `string`
+
+<dd>
+
+Sets the text for the Submit button.
+
+</dd>
+
+#### Reset Button Label	 `string`
+
+<dd>
+
+Sets the text for the Reset button.
+
+</dd>
+
+#### Height `string`
 
 
-### Reference properties
+<dd>
 
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the formData, you can use `JSONFrom1.formData`.
-
-
-| Property | Data Type                                                                                                                                                                                                                                                                                                                | Description                 |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
-| **fieldState**  | Object   | 8A JSON *object* describing the state of each field in the form. State data includes: **isDisabled**, **isRequired**, **isVisible**, and **isValid** <br/>e.g. `{ "name": {"isVisible": true, ... }, ... }` 
-| **formData**   | Object    | Contains a JSON _object_ with the field names and their current values in the form.                                                                                                                                                                                                                                    
-| **isValid**  | Boolean      | Reflects whether the widget's inputs are considered **Valid**.                                                                                                                                                                                                                                                 
-| **sourceData**  | Object   | Contains a JSON _object_ of the original source data which was bound to the form.                                                                                                                                                                                                                           
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
 
 
-### Styles properties
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
+
+</dd>
+
+### Events
+
+#### onSubmit
+
+<dd>
+
+Sets an [action](reference/appsmith-framework/widget-actions) to be executed when the user clicks the Submit button on the form.
+
+</dd>
+
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Background Color** |   String| Sets the background color of the widget. Accepts CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                   |
-| **Border Radius**  |   String  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Border Width**   |   Number  | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
-| **Box Shadow**   |   String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
-| **Border Color**   |   String    | Sets the Border color of the widget.    |
-| **Button Color** |   String  | Sets the color of the submit and reset button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                                                                                                                                                                                                                                                                          |
-| **Button Variant** |   String| Sets the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the `"PRIMARY", "SECONDARY", or "TERTIARY"`.                                                                                                                                                                                                              |
-| **Border Radius** |   String  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.                                                                                                                                                                                                                                                            |
-| **Box Shadow**   |   String  | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.                                                                                                                                                                                                                                                               |
-| **Icon**       |   String    | Sets an icon to be included on the submit and reset button.                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Placement**   |   String   | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the `"START", "CENTER", or "BETWEEN"`. |
-| **Position** |   String | Sets whether the icon appears on the left or right of the button's label text.                                                                                                                                                                                                                                                                                                                                                              |
+### Color
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Border Color String `string`
+
+<dd>
+
+Sets a color for the form's border, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border Width	 `number`
+
+<dd>
+
+Sets the width of the widget's border. Accepts number values only, in px.
+
+</dd>
 
 
-## Events
+#### Border radius `string`
 
-These are functions that are called when event listeners are triggered in the widget. [Use actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
 
 
+</dd>
 
-| **Event name** | **Description**                                                                                                                                                                                                                                               |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onSubmit**   | Sets an action to take place when the user clicks the Submit button on this form. |
+### Button styles
+
+
+#### Button color `string`
+
+<dd>
+
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Button variant `string`
+
+<dd>
+
+Specifies the style type of the button to indicate its significance.
+
+*Options:*
+
+* **Primary**: Fills the button with color.
+* **Secondary**: Adds a colored border to the button while keeping the button itself white.
+* **Tertiary**: This option does not apply any specific styling changes to the button.
+
+This property can be dynamically set using JavaScript by providing a string value of `PRIMARY`, `SECONDARY`, or `TERTIARY`.
+</dd>
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+#### Icon `string`
+
+<dd>
+
+Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons.
+
+</dd>
+
+#### Position `string`
+
+<dd>
+
+This property allows you to configure the **Icon**'s placement.
+
+*Options:*
+* **Left**: Aligns the Icon to the left side of the Label.
+* **Right**: Aligns the Icon to the right side of the Label.
+
+
+</dd>
+
+#### Placement `string`
+
+<dd>
+
+Determines the spacing between the **Icon** and the **Label**.
+
+*Options:*
+* Start
+* Center
+* Between
+
+</dd>
+
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `JSONForm1.isVisible`.
+
+#### formData `object`
+
+<dd>
+
+Contains a JSON object with the field names and their current values in the form.
+
+*Example:*
+```js
+{{JSONForm1.object}}
+```
+
+</dd>
+
+#### fieldState `object`
+
+<dd>
+
+A JSON object describing the state of each field in the form. State data includes: `isDisabled`, `isRequired`, `isVisible`, and `isValid`.
+
+Example:
+
+```js
+// To access the object:
+{{JSONForm1.fieldState}}
+
+// To get state for a particular field (e.g., "name"):
+{{JSONForm1.fieldState.name}}
+```
+</dd>
+
+
+#### isValid `boolean`
+
+
+<dd>
+
+Reflects whether the widget's inputs are considered Valid.
+
+Example:
+
+```js
+{{JSONForm1.isValid}}
+```
+
+</dd>
+
+#### sourceData `object`
+
+<dd>
+
+Contains a JSON object of the original source data which was bound to the form.
+
+Example:
+
+```js
+{{JSONForm1.sourceData}}
+```
+
+</dd>
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility(`:boolean`)
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+JSONForm1.setVisibility(true)
+```
+
+</dd>
+
+
+#### setSourceData(`:object`)
+
+<dd>
+
+ Sets the data to be displayed in the widget.
+
+*Example*:
+
+```js
+JSONForm1.setSourceData(<data>)
+```
+
+</dd>
 
 ## Troubleshooting
 

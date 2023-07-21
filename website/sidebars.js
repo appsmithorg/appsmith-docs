@@ -188,8 +188,8 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/instance-configuration/email/gmail',
-                    'getting-started/setup/instance-configuration/email/sendgrid',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
+                    'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
@@ -238,6 +238,7 @@ const sidebars = {
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
+            `getting-started/setup/best-practices`,
           ],
         },
 
@@ -264,7 +265,6 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'connect-data/how-to-guides/returning-data-from-a-stored-procedure',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
           ]
@@ -318,6 +318,7 @@ const sidebars = {
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
             'connect-data/concepts/how-to-use-prepared-statements',
+            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
         'connect-data/integrations'
@@ -511,7 +512,7 @@ const sidebars = {
             'reference/appsmith-framework/query-object',
             {
               type: 'category',
-              label: 'Actions',
+              label: 'Framework Functions',
               link: {
                 type: 'doc',
                 id: 'reference/appsmith-framework/widget-actions/README',

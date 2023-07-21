@@ -95,3 +95,127 @@ Style properties allow you to change the look and feel of the widget.
 | **Emphasis**      | String         	          	| Allows you to choose a font style; bold or italic.                                                                                                                                                   	|
 | **Border Width**   | Number            	          	| You can define the width of the border here. It takes input in px.                                                                                                              	|
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Text1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Text1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Text1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Text1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Text1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Text1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
+#### setText `string`
+
+<dd>
+
+Sets the text value of the widget.
+
+*Example*:
+
+```js
+Text1.setText('Hello, world!')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Text1.setText('Hello, world!').then(() => {
+  // code to be executed after text value is set
+})
+```
+
+</dd>
+
+
+
+
+
+
+
+#### setTextColor `string`
+
+<dd>
+
+Sets the selected option of the Select widget.
+
+*Example*:
+
+```js
+Text1.setColor('#FF0000')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Text1.setColor('#FF0000').then(() => {
+  // code to be executed after color is set
+})
+```
+
+</dd>

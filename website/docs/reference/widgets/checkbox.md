@@ -159,3 +159,101 @@ The `isDisabled` property reflects the state of the widget's **Disabled** settin
 The `isVisible` property reflects the state of the widget's **Visible** setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
 </dd>
 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Checkbox1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Checkbox1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Checkbox1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Checkbox1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setValue `boolean`
+
+<dd>
+
+Allows you to dynamically set the value of the Checkbox widget.
+
+*Example*:
+
+```js
+Checkbox1.setValue(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Checkbox1.setValue(true).then(() => {
+  // code to be executed after value is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Checkbox1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Checkbox1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>

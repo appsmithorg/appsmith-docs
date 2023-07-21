@@ -14,6 +14,7 @@ To use external MongoDB with Appsmith v1.9.0 onwards, you need MongoDB version 5
 Follow the steps below to configure Appsmith to use an external MongoDB instance:
 
 ### Prerequisites
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 * Ensure that your external MongoDB has a replica set configuration in place. Connect to your database as an admin user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud, the replica set configuration is already set up for you.
 * Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
 

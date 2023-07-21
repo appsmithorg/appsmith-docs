@@ -39,3 +39,81 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onPlay**  | Sets the action to run when the audio begins playing.   |
 | **onPause** | Sets the action to run when the audio is paused.    |
 | **onEnd**   | Sets the action to run when the audio ends.            |
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setPlaying `boolean`
+
+<dd>
+
+Updates the playing state of the Audio widget. When the `setPlaying` method is called with `true`, the audio starts playing, and when called with `false`, the audio stops playing.
+
+
+*Example*:
+
+```js
+Audio1.setPlaying(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Audio1.setPlaying(true).then(() => {
+  // Perform additional actions or write code to be executed after the playing state is set
+});
+```
+
+</dd>
+
+
+#### setURL `string`
+
+<dd>
+
+Updates the URL of the audio to be played in the audio widget. Provide the desired URL as a string parameter to the `setURL` method. 
+
+*Example*:
+
+```js
+Audio1.setURL('<https://example.com/image.mp3>')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Audio1.setURL('<https://example.com/image.mp3>').then(() => {
+  // code to be executed after URL is set
+})
+
+```
+
+</dd>
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Updates the visibility of the Audio widget.
+
+*Example*:
+
+```js
+Audio1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Audio1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>

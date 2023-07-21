@@ -49,3 +49,76 @@ Style properties allow you to change the look and feel of the widget.
 | ------------------ | ------------------------------------------------------------------------------- |
 | **Active color**   | Sets the color of stars for that are provided in the default rate. |
 | **Inactive color** | Sets the color of inactive stars                                                |
+
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Rating1.setVisibility(true)
+```
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Rating1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Rating1.setDisabled(false)
+```
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Rating1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setValue `number`
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+Rating1.setValue(3)
+```
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Rating1.setValue(3).then(() => {
+  // code to be executed after value is set
+})
+```
+
+</dd>

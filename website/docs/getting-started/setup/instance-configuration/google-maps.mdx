@@ -11,6 +11,7 @@ This page provides instructions to integrate Google Maps to use the [Map Widget]
 
 ## Prerequisites
 
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 - A [Google Cloud](https://www.google.com/aclk?sa=l&ai=DChcSEwi0373S7OX_AhW7Vn0KHT5BD30YABABGgJzZg&sig=AOD64_3YNMGHJAu3vGJmjK-vrl8qni2BxA&q&adurl&ved=2ahUKEwjjs7XS7OX_AhWy3TgGHWtHAkYQ0Qx6BAgIEAE) account. 
 
 ## Generate Google Maps API key 
@@ -55,7 +56,7 @@ Follow these steps to add the API key to your self-hosted instance using Admin S
 
 Follow these steps to add the API key to your self-hosted instance using an environment variable:
 
-1. Go to the location where the Appsmith configuration file is located. For example, the `docker-compose.yml` file for Docker and the `values.yaml` file for Kubernetes.
+1. Go to the location where the Appsmith configuration file is located. For example, the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
 
 2. Update the value of the `APPSMITH_GOOGLE_MAPS_API_KEY` variable as shown below:
 

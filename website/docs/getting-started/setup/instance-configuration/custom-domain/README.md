@@ -9,8 +9,9 @@ This page explains how to set up SSL for your custom domain on the Appsmith inst
 
 ## Prerequisites
 Before configuring SSL for your custom domain, make sure you have the following:
-1. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
-2. Ports 80 and 443 are open and accessible.
+1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+2. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
+3. Ports 80 and 443 are open and accessible.
 
 You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
 

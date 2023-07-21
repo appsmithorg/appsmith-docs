@@ -64,3 +64,80 @@ Each variant of the Slider widget has events that are called when the user adjus
 | **onChange** | Sets an action to take place when the user changes the slider's value. Can be set from the GUI list of common actions (See a list of [supported actions](./../../appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead. | Fetching a certain page or image from a range based upon user selection. |
 
 The Category Slider widget is great for collecting input that falls along a range of possible values. Consider using this widget when your users' responses are expected to fall along a fixed set of ascending data.
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+CategorySlider1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+CategorySlider1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+CategorySlider1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+CategorySlider1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setValue `string`
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+CategorySlider1.setValue('xl')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+CategorySlider1.setValue('xl').then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
