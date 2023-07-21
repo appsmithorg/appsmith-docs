@@ -1,6 +1,6 @@
 # Datasource Environments
 
-This page describes Datasource environments, which allows developers to isolate their development and testing datasources from their production datasources.
+This page describes Datasource environments, which allows developers to isolate their testing datasources from their production datasources.
 
 
 :::info
@@ -13,13 +13,15 @@ See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-dat
 
 Datasource environments enable you to separate staging and production configurations of a datasource, providing controlled and isolated settings for specific tasks during different phases. This approach allows developers to test and validate changes without affecting the live production environment.
 
+With this you can create queries and seamlessly switch between environments. As you switch the environment, the queries would automatically adapt to the chosen environment settings, reflecting widget data changes.
+
 ## Environments on Appsmith
 
 Appsmith provides two environments: 
 
-* **Staging**: Environment for development, QA, and user acceptance testing.
+* **Staging**: Environment for development, QA, and user acceptance testing. You can make modifications and experiment with new features before pushing them to the production environment.
 
-* **Production**: Live version with actual production data for end users.
+* **Production**: Live version with actual production data for end users. 
 
 In Appsmith, environments work at the *Workspace* level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
 
@@ -37,8 +39,7 @@ The following factors highlight the significance of having datasource environmen
 
 
 
-When working with Datasource environments in Appsmith, it is important to note that custom/user-defined environments are not currently supported. Appsmith provides predefined staging and production environments, but the option to create custom environments is not available.
-
+When using Datasource environments in Appsmith, only predefined staging and production environments are supported, and custom/user-defined environments are currently unavailable.
 
 
 
