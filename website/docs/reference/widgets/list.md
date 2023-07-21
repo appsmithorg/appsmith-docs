@@ -1,3 +1,8 @@
+---
+description: >-
+  List widget reference
+---
+
 # List
 
 The List widget provides a way to iterate over a structured dataset (array of objects) and display the data in sections that repeat vertically without writing any code. Each list item can contain other widgets to display data or capture user input.
