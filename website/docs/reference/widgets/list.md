@@ -15,7 +15,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Enables you to bind static or dynamic data as an array of objects to the widget. You can bind the object property to the widgets on the list item.
+Enables you to bind static or dynamic data as an array of objects to the widget. You can bind the object property to the widgets in the list item using `currentItem` property.
 
 *Expected Data Structure*:
 
