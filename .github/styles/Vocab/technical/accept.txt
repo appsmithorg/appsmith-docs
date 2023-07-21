@@ -446,11 +446,20 @@ colors
 primaryColor
 theme
 user
+Fetch Many
+Sheet Row(s)
+Fetch Details
+Insert One
+Update One
+Delete One
+Insert Many
+Update Many
+onFilterUpdate
+Data
 setDisabled
 setColor
 setLabel
 setVisibility
-
 Data
 setSourceData
 disabled
@@ -469,4 +478,3 @@ Hidden Fields in Data
 Disable Invalid Forms
 onFilterUpdate
 Data
-
