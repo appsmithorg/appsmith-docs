@@ -16,7 +16,7 @@ This page provides information for connecting Appsmith to Google Sheets and for 
 
 <dl>
   <dt><b>Permissions | Scope:</b></dt>
-  <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd>
+  <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
@@ -38,42 +38,14 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
-The following settings are common amongst many of the Google Sheets operations:
-
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> A subset of horizontal records from a page of a spreadsheet document.</li>
-     <li><b>Spreadsheet:</b> A document containing multiple pages (Sheets) of cell matrices.</li>
-     <li><b>Sheet:</b> A single page of a spreadsheet document.</li>
-    </ul>
-  </dd><br />
-
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
-
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
-
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd>
-
-</dl>
-
-## Fetch Details
+### Fetch Details
 
 This command fetches metadata for a given **Spreadsheet** entity. The following section lists all the fields available for the **Fetch Details** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Spreadsheet:</b> Returns metadata for a spreadsheet document.</li>
@@ -86,14 +58,14 @@ This command fetches metadata for a given **Spreadsheet** entity. The following 
 
 </dl>
 
-## Insert One
+### Insert One
 
 This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Insert One** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
@@ -121,14 +93,14 @@ This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 </dl>
 
-## Update One
+### Update One
 
 This command updates a **Sheet Row(s)** entity. The following section lists all the fields available for the **Update One** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Updates a single existing row in the spreadsheet.</li>
@@ -152,14 +124,14 @@ This command updates a **Sheet Row(s)** entity. The following section lists all 
 
 </dl>
 
-## Delete One
+### Delete One
 
 This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **Sheet**. The following section lists all the fields available for the **Delete One** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Deletes a single row of a spreadsheet.</li>
@@ -181,14 +153,14 @@ This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **She
 
 </dl>
 
-## Fetch Many
+### Fetch Many
 
 This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Fetch Many** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
@@ -210,7 +182,7 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
   <dt><b>Filter Format</b></dt>
   <dd>Sets the method of selecting records from your spreadsheet.
-  </dd>
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Where Clause:</b> Fetches records based on logic and conditions. This also allows you to sort and paginate your results.</li>
@@ -250,14 +222,14 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 </dl>
 
-## Insert Many
+### Insert Many
 
 This command inserts multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Insert Many** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Inserts several records as a rows in the spreadsheet.</li>
@@ -281,14 +253,14 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
 
 </dl>
 
-## Update Many
+### Update Many
 
 This command updates multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Update Many** command.
 
 <dl>
   <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query:
-  </dd>
+  <dd>Sets which entity type to query.
+  </dd><br/>
   <dd><i>Options:</i>
     <ul>
      <li><b>Sheet Row(s):</b> Updates multiple existing rows in the spreadsheet.</li>
