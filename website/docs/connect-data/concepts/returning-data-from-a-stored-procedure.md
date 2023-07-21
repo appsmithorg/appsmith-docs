@@ -43,4 +43,4 @@ CALL users_by_role('admin');
 SELECT 1+1;
 ```
 
-The need for this modification is due to the way that Appsmith parses SQL and its return values from the database. Without the empty `SELECT` clause, the stored procedure is still run on the database but its return values are not accessible from the Appsmith platform.
+This modification is necessary due to how Appsmith parses SQL and its return values from the database. Without the empty `SELECT` clause, the stored procedure is still run on the database, but its return values are not accessible from the Appsmith platform.
