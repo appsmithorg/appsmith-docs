@@ -11,6 +11,11 @@ To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) a
 OpenID Connect is available only in the [**business edition**](https://www.appsmith.com/pricing) for self-hosted instances. Note that only superusers of your Appsmith instance can set up OIDC.
 :::
 
+## Prerequisites
+
+1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+2. Before setting up Single Sign-On (SSO), ensure that you have already configured a [custom domain](/getting-started/setup/instance-configuration/custom-domain) for your instance.
+
 ## Create user pool
 
 Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security, Identity & Compliance** > **Cognito** and follow the steps below:

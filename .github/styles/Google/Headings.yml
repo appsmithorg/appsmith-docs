@@ -149,3 +149,9 @@ exceptions:
   - selectedValues
   - Customer Support Tool
   - Store Catalog Manager
+  - Disabled
+  - setVisibility
+  - setDisabled
+  - setOptions
+  - setRequired
+  - setSelectedOption
