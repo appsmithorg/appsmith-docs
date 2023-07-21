@@ -442,6 +442,7 @@ fontFamily
 boxShadow
 appBorderRadius
 borderRadius
+setVisibility
 colors
 primaryColor
 theme
@@ -450,3 +451,23 @@ setDisabled
 setColor
 setLabel
 setVisibility
+
+Data
+setSourceData
+disabled
+Background Color
+Border Color String
+background color
+Show Reset 
+Reset Button Label
+Submit Button Label
+Border Width
+View Mode
+Generate Form
+Field Configuration
+Add New Field 
+Hidden Fields in Data
+Disable Invalid Forms
+onFilterUpdate
+Data
+

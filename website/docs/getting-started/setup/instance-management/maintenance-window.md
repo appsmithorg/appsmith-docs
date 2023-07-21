@@ -4,13 +4,13 @@ description: Instructions to schedule automatic updates for your Appsmith instan
 ---
 # Schedule Automatic Updates
 
-The page gives you steps to schedule automatic updates for your Appsmith instance.
+The page gives you steps to schedule automatic updates for your self-hosted instance.
 
 ## Schedule automatic updates for Docker installation
 You can define a time slot for automatic updates using a `cron` expression in the `--schedule` argument.
 
 Follow these steps to update the `auto_update` container:
-1. Go to the location where `docker-compose.yml` file is located
+1. Go to the location where the `docker-compose.yml` file is located
 2. Open the ``docker-compose.yml` file
 3. Update the `command` attribute under `auto_update` as shown below:
 
