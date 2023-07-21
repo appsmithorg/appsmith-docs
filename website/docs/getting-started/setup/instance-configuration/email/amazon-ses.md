@@ -45,30 +45,30 @@ Follow these steps to configure Amazon SES using Admin Settings:
 
 4. Configure the parameters as shown below:
     <dl>
-        <dt><strong>SMTP Host and SMTP Port</strong></dt>
-        <dd>Add the Simple Mail Transfer Protocol (SMTP) host and port to configure Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP Host and SMTP Port, follow these steps:
+        <dt><strong>SMTP host and SMTP port</strong></dt>
+        <dd>Add the Simple Mail Transfer Protocol (SMTP) host and port to configure Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP host and SMTP port, follow these steps:
             <ul>
                 <li>Log into your Amazon management console.</li>
                 <li>Go to Amazon Simple Email Service (SES).</li>
                 <li>Select <strong>SMTP Settings</strong> from the left navigation bar.</li>
-                <li>Add the <em>SMTP endpoint</em> from Amazon SES to the SMTP Host field in Appsmith.</li>
-                <li>Add the <em>SMTP Port</em> from Amazon SES to the SMTP Port field in Appsmith. Do not use port <em>465</em> listed on the SES page because it uses implicit TLS, which is not supported by Appsmith.</li>
+                <li>Add the <em>SMTP endpoint</em> from Amazon SES to the SMTP host field in Appsmith.</li>
+                <li>Add the <em>SMTP Port</em> from Amazon SES to the SMTP port field in Appsmith. Do not use port <em>465</em> listed on the SES page because it uses implicit TLS, which is not supported by Appsmith.</li>
             </ul>
         </dd><br/>
         
-        <dt><strong>From Address</strong></dt>
+        <dt><strong>From address</strong></dt>
         <dd>Add a verified email address. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
         
-        <dt><strong>Reply To Address</strong></dt>
+        <dt><strong>Reply-to address</strong></dt>
         <dd>Add a verified email address. When recipients reply to emails, their replies are directed to this address.</dd><br/>
         
-        <dt><strong>TLS Protected Connection</strong></dt>
+        <dt><strong>Enable TLS protected connection</strong></dt>
         <dd>Amazon SES configuration uses Transport Layer Security (TLS) for securely sending emails. Toggle it to use the TLS protocol. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted for enhanced security.</dd><br/>
         
-        <dt><strong>SMTP Username</strong></dt>
+        <dt><strong>SMTP username</strong></dt>
         <dd>Add the <strong>SMTP username</strong> from the SMTP credentials available on Amazon SES. The SMTP username is used for authentication when sending emails through the SMTP server.</dd><br/>
         
-        <dt><strong>SMTP Password</strong></dt>
+        <dt><strong>SMTP password</strong></dt>
         <dd>Add the <strong>SMTP password</strong> from the SMTP credentials available on Amazon SES. The SMTP password is used for authentication when sending emails through the SMTP server.</dd>
     </dl>
 
@@ -94,7 +94,7 @@ Follow these steps to configure Amazon SES using environment variables:
         <dt><strong>APPSMITH_REPLY_TO</strong></dt>
         <dd>Set it to the verified email. When users respond to emails sent from your application, the replies are directed to this email address.</dd><br/>
         <dt><strong>APPSMITH_MAIL_HOST and APPSMITH_MAIL_PORT</strong></dt>
-        <dd>Set these variables to configure the Simple Mail Transfer Protocol (SMTP) host and port for Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP Host and SMTP Port, follow these steps:
+        <dd>Set these variables to configure the Simple Mail Transfer Protocol (SMTP) host and port for Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP host and SMTP port, follow these steps:
         <ul>
             <li>Log into your Amazon management console.</li>
             <li>Go to Amazon Simple Email Service (SES).</li>

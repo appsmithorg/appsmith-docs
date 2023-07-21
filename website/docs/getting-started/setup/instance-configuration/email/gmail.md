@@ -60,30 +60,30 @@ Follow these steps to configure your email provider using Admin Settings:
 
 4. Configure the parameters as shown below: 
 <dl>
-<dt><b>SMTP Host</b></dt>
+<dt><b>SMTP host</b></dt>
 <dd>
     <ul>
         <li>To connect without using TLS protocol enter <code>aspmx.l.google.com</code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation. </li>
         <li> To connect with TLS protocol enter <code>smtp.gmail.com</code>.</li>
     </ul>
 </dd> <br/>
-<dt><b>SMTP Port</b></dt>
+<dt><b>SMTP port</b></dt>
 <dd>
    <ul>
       <li>To connect without using TLS protocol enter <code> 25 </code>. Ensure that you add your Appsmith self-hosted instance IP address to the allowed lists in your Google workspace. For more information, see <a href="https://support.google.com/a/answer/60751?sjid=7926061352255899566-AP">Add IP addresses to allowlists in Gmail</a> on official Google documentation.</li>
       <li>To connect with TLS protocol enter <code> 587 </code>.</li>
    </ul>
 </dd><br/>
-<dt><b>From Address</b></dt>
+<dt><b>From address</b></dt>
 <dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.
 </dd> <br/>
-<dt><b>Reply To Address</b></dt>
+<dt><b>Reply-to Address</b></dt>
 <dd>Add a verified email address, so users can contact you.</dd> <br/>
-<dt><b>TLS Protected Connection</b></dt>
+<dt><b>Enable TLS protected connection</b></dt>
 <dd>This option is turned off by default. Toggle it to enable the transport layer security protocol.</dd> <br/>
-<dt><b>SMTP Username</b></dt>
+<dt><b>SMTP username</b></dt>
 <dd>Your Gmail address. This is only needed when the transport layer security protocol is turned on.</dd> <br/>
-<dt><b>SMTP Password</b></dt>
+<dt><b>SMTP password</b></dt>
 <dd>Your Gmail password. Alternatively, if you have 2-Step Verification enabled, set it to the app password you generated in the <a href="#create-app-password">Create app password</a> section. This is only needed when the transport layer security protocol is turned on.</dd> 
 </dl>
 
@@ -131,7 +131,7 @@ Follow these steps to configure Gmail using environment variables:
     <dd>Set it to your password. Alternatively, if you have 2-Step Verification enabled, set it to the app password you generated in the <a href="#create-app-password">Create app password Gmail</a> section. This is only needed when the transport layer security protocol is turned on.</dd>
     </dl>
 
-3. Restart the instance.
+3. Save the changes and restart the Appsmith instance.
 
 ## Troubleshooting
 
