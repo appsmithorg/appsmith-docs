@@ -87,7 +87,7 @@ Clicking the gear icon ⚙︎ enables you to customize each form field extensive
 * Switch
 * Text Input
 
-Each field type offers unique sets of customizable events and configurations. For instance, the `Number Input` field can have a `min` and `max` value, whereas the `Select` field includes the `options` property.
+Each field type offers unique sets of customizable events and configurations. For instance, the Number Input field can have a min and max value, whereas the Select field includes the options property.
 
 Most of the field properties are similar to those found in widget properties. To explore more about these properties, you can refer to the widget reference guide for more information.
 
