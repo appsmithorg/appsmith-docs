@@ -57,13 +57,13 @@ Follow these steps to configure Amazon SES using Admin Settings:
         </dd><br/>
         
         <dt><strong>From Address</strong></dt>
-        <dd>Add a verified email address to be shown in the <em>From</em> field when users receive an email. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
+        <dd>Add a verified email address. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
         
         <dt><strong>Reply To Address</strong></dt>
-        <dd>Add a verified email address where users can contact you. When recipients reply to emails, their replies are directed to this address.</dd><br/>
+        <dd>Add a verified email address. When recipients reply to emails, their replies are directed to this address.</dd><br/>
         
         <dt><strong>TLS Protected Connection</strong></dt>
-        <dd>Amazon SES configuration uses TLS for securely sending emails. Toggle it to use Transport Layer Security (TLS) protocol for securely sending emails through Amazon SES. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted for enhanced security.</dd><br/>
+        <dd>Amazon SES configuration uses Transport Layer Security (TLS) for securely sending emails. Toggle it to use the TLS protocol. Enabling TLS ensures that email communications between Appsmith and Amazon SES are encrypted for enhanced security.</dd><br/>
         
         <dt><strong>SMTP Username</strong></dt>
         <dd>Add the <strong>SMTP username</strong> from the SMTP credentials available on Amazon SES. The SMTP username is used for authentication when sending emails through the SMTP server.</dd><br/>
@@ -92,7 +92,7 @@ Follow these steps to configure Amazon SES using environment variables:
         <dt><strong>APPSMITH_MAIL_FROM</strong></dt>
         <dd>Set it to the verified email of the sender. This email address is displayed in the <em>From</em> field when users receive an email from your application.</dd><br/>
         <dt><strong>APPSMITH_REPLY_TO</strong></dt>
-        <dd>Set it to the email that should receive replies by default. When users respond to emails sent from your application, the replies are directed to this email address.</dd><br/>
+        <dd>Set it to the verified email. When users respond to emails sent from your application, the replies are directed to this email address.</dd><br/>
         <dt><strong>APPSMITH_MAIL_HOST and APPSMITH_MAIL_PORT</strong></dt>
         <dd>Set these variables to configure the Simple Mail Transfer Protocol (SMTP) host and port for Amazon SES. These settings allow Appsmith to establish a connection with Amazon SES to send emails. To find the SMTP Host and SMTP Port, follow these steps:
         <ul>
