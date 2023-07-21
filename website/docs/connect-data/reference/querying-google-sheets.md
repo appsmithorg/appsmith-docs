@@ -34,7 +34,7 @@ Clicking **Save and Authorize** takes you to a Google login where you can author
 The following section is a reference guide that provides a complete description of all the parameters to connect to Google Sheets.
 
 <figure>
-  <img src="/img/google-sheets-query-page.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
+  <img src="/img/gsheets-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
   <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
 </figure>
 
@@ -86,10 +86,29 @@ This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
   </dd><br />
 
   <dt><b>Row Object</b></dt>
-  <dd>Available when the <b>Entity</b> is <b>Sheet Row(s)</b>. This expects a JSON-formatted object whose key/value pairs represent the columns and values from your table record.</dd><br/>
+  <dd>Available when the <b>Entity</b> is <b>Sheet Row(s)</b>. This expects a JSON-formatted object whose key/value pairs represent the columns and values from your table record.</dd>
+  <dd><i>Example:</i>
+  <pre>{`{
+    "name": {{ UserForm.name }},
+    "email": {{ UserForm.email }},
+    "status": "pending"
+}`}</pre>
+  </dd><br/>
 
   <dt><b>Row Objects</b></dt>
   <dd>Available when the <b>Entity</b> is <b>Spreadsheet</b>. This expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to your new spreadsheet when it is created.</dd>
+  <dd><i>Example:</i>
+  <pre>{`[{
+    "name": "Kim",
+    "email": "hkim@example.com",
+    "status": "accepted"
+},
+{
+  "name": "Amal",
+  "email": "samal@example.com",
+  "status": "accepted"
+}]`}</pre>
+  </dd>
 
 </dl>
 
@@ -120,7 +139,13 @@ This command updates a **Sheet Row(s)** entity. The following section lists all 
   </dd><br />
 
   <dt><b>Update Row Object</b></dt>
-  <dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+  <dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
+  <dd><i>Example:</i>
+  <pre>{`{
+    ...{{ UsersTable.selectedRow }}, // includes rowIndex key
+    "status": "accepted"
+}`}</pre>
+  </dd>
 
 </dl>
 
@@ -149,7 +174,7 @@ This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **She
   </dd><br />
 
   <dt><b>Row Index</b></dt>
-  <dd>The index of the record to delete from the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+  <dd>The index of the record to delete from the spreadsheet. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
 
 </dl>
 
@@ -250,6 +275,18 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
 
   <dt><b>Row Objects</b></dt>
   <dd>Expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to the spreadsheet.</dd>
+  <dd><i>Example:</i>
+  <pre>{`[{
+    "name": "Kim",
+    "email": "hkim@example.com",
+    "status": "accepted"
+},
+{
+  "name": "Amal",
+  "email": "samal@example.com",
+  "status": "accepted"
+}]`}</pre>
+  </dd>
 
 </dl>
 
@@ -281,10 +318,11 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 
   <dt><b>Update Row Object(s)</b></dt>
   <dd>An array of JSON-formatted objects whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key in each row object to specify which record to update in the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+  <dd><i>Example:</i>
+  <pre>{`{{ UsersTable.updatedRows }} // includes rowIndex key in each object`}</pre>
+  </dd>
 </dl>
 
 ## Troubleshooting
 
-If you are experiencing difficulties, you can refer to the [troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/) page for assistance.
-
-If you need further support, you can reach out on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com/).
+If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
