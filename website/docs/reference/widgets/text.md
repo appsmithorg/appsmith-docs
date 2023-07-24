@@ -268,12 +268,6 @@ Sets the selected option of the Select widget.
 Text1.setColor('#FF0000')
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
 
-```js
-Text1.setColor('#FF0000').then(() => {
-  // code to be executed after color is set
-})
-```
 
 </dd>
