@@ -3,14 +3,20 @@
 This page explains how to use a Multiselect widget to allow users to select multiple options from a given list.
 
 
+## Content properties
 
-## Display static options 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-To display static options in a Multiselect widget, you can use the **Options** property.
+### Data
 
-The options must be specified as an array of objects, where each object has two properties: `label` and `value`. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+#### Options `array`
 
-```json
+<dd>
+
+Use to set labels and values for options in the list of the Multiselect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+
+
+```js
 [
   {
     "label": "Blue",
@@ -27,61 +33,443 @@ The options must be specified as an array of objects, where each object has two 
 ]
 ```
 
-### Set default values
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
-The **Default Selected Values** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options property**. 
+```js
+{{fetchData.data}}
+```
 
-For example, if you want the default selected values to be `RED` and `GREEN,` you can set the **Default Selected Values** property to:
+If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the Multiselect widget. 
 
-```json
+*Example:* 
+
+```js
+{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
+```
+
+</dd>
+
+#### Default selected value `string`
+
+<dd>
+
+Sets the initial options that are automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects another option from the list. Multiple values can be provided as CSV or an array of strings for a Multiselect dropdown. For example, if you want the default option to be `Blue` and `Red`, set the **Default Selected Value** property to:
+
+```js
 [
   "GREEN",
   "RED"
 ]
 ```
 
-## Display options dynamically 
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
+</dd>
+
+### Label
+
+#### Text `string`
+
+<dd>
+
+Sets the label of the widget.
+
+</dd>
+
+#### Position `string`
+
+<dd>
+
+Sets the placement of the **Label** in the widget.
+
+*Options*:
+- **Left**: The label is placed on the left of the widget.
+- **Top**: The label gets placed at the top of the widget.
+- **Auto**: The label position is determined based on the height of the widget itself. 
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+Sets the label alignment of the widget when the position selected is **left**.
+
+</dd>
+
+#### Width (in columns) `number`
+
+<dd>
+
+Sets the width of the label in the widget when the **left** position is selected.
+
+</dd>
+
+### Search and filters
+
+#### Allow searching `boolean`
+
+<dd>
+
+Enables searching for options within the dropdown list. When this option is enabled, a search input field is displayed in the widget. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+#### Server side filtering `boolean`
+
+<dd>
+
+Enables server-side filtering via a query request. Use this property when the Multiselect widget's option data is being bound to a query.
+
+</dd>
+
+#### onFilterUpdate
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text. 
+
+</dd>
 
 
----
-**Example 1:** suppose you want to use a Multiselect widget to allow users to select one or more countries from a database, with the dynamic population of options.
+### Validations
 
+#### Required `boolean`
 
-1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
+<dd>
 
+Enabling this property for a Multiselect widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the Multiselect widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the Multiselect widget.
 
-```sql
-SELECT DISTINCT country as label, country as value FROM users;
-```
+</dd>
 
-2. In the Multiselect **Options** property, display the data using:
+### General 
+
+#### Tooltip `string`
+
+<dd>
+
+Sets a tooltip for the widget. You can add hints or extra information about the required input from the user
+
+</dd>
+
+#### Placeholder `string`
+
+<dd>
+
+Sets the placeholder text for the Multiselect widget. 
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
+
+For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the Multiselect widget:
 
 ```js
-{{fetchData.data}}
+{{Checkbox1.isChecked}}
 ```
 
-With this configuration, the Multiselect widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Multiselect widget.
+</dd>
 
----
-**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Multiselect widget. 
+#### Disabled `boolean`
 
-1. Use the `users` table in the sample database and fetch the unique country values using the following `getdata` SQL query:
+<dd>
 
-```sql
-SELECT DISTINCT country FROM users;
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's disabled state conditionally.
+
+For example, if you want to allow only a specific user to interact with the Multi+-select widget, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
 ```
 
-This query retrieves unique country values from the `users` table. The retrieved data is in the form of an array of objects, where each object has a country `key`.
+</dd>
 
-2. Use JavaScript to **transform the data** by adding it to the **Options** property.
+
+#### Animate Loading `boolean`
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+#### Allow select all `boolean`
+
+<dd>
+
+Controls the visibility of **Select all** option in the dropdown. When enabled, **Select all** option is visible at the top of the dropdown, allowing you to select all the options with one click.
+
+</dd>
+
+#### Height `string`
+
+<dd>
+
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+- **Fixed:** The height of the widget remains as set using drag and resize.
+- **Auto Height:** The widget's height adjusts dynamically in response to changes in its content.
+- **Auto Height with limits:** Same as Auto height, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+</dd>
+
+### Events
+
+#### onOptionChange 
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response.
+
+</dd>
+
+#### onDropdownOpen
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.
+
+</dd>
+
+
+#### onDropdownClose 
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user closes the dropdown list. For example, you could use the **onDropdownClose** event to store the selected option in a database, hide additional information, or reset the widget to its original state.
+
+</dd>
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Allows you to set text color for the label. Additionally, you can programmatically modify the text color using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Allows you to control the size of the label text. Additionally, you can programmatically modify the text size using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Allows you to choose a font style; bold or italic. you can programmatically modify the font style using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+</dd>
+
+## Reference properties
+
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `multiSelect1.isVisible`.
+
+#### filterText `string`
+
+<dd>
+
+Returns the text entered in the search filter for Server side filtering.
+
+*Example:*
 
 ```js
-{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
+{{multiSelect1.filterText}}
 ```
 
-The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
+</dd>
+
+#### isDisabled `boolean`
+
+<dd>
+
+It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where `true` indicates that the widget is disabled, and `false` indicates that it is enabled for user interaction.
+
+*Example:*
+
+```js
+{{multiSelect1.isDisabled}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{multiSelect1.isVisible}}
+```
+
+</dd>
+
+####  isDirty `boolean`
+
+<dd>
+
+This property is a boolean value that indicates whether the user has interacted with the widget. If the user selects an option from the dropdown list, the `isDirty` property returns `true`. However, if the user does not make any selection and the initial value remains unchanged, the `isDirty` property returns `false`.
+
+*Example:*
+
+```js
+{{multiSelect1.isDirty}}
+```
+
+</dd>
+
+#### options `array`
+
+<dd>
+
+Returns an array of objects that contain the label and value of the options in the dropdown list.
+
+*Example:*
+
+```js
+{{multiSelect1.options}}
+```
+
+</dd>
+
+#### selectedOptionValue `string`
+
+<dd>
+
+Returns the value of the option displayed in the Multiselect widget. It changes if the default value of the widget changes or the user selects an option.
+
+*Example:*
+
+```js
+{{multiSelect1.selectedOptionValue}}
+```
+
+</dd>
+
+#### selectedOptionLabel `string`
+
+<dd>
+
+Returns the label of the option displayed in the Multiselect widget. It changes if the default value of the widget changes or the user selects an option.
+
+*Example:*
+
+```js
+{{multiSelect1.selectedOptionLabel}}
+```
+
+</dd>
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setDisabled (`:boolean`)
+
+<dd>
+
+Sets the `disabled` state of the widget.
+
+*Example*:
+
+```js
+multiSelect1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+multiSelect1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setRequired (`:boolean`)
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+multiSelect1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+multiSelect1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
+
+
+
+
+#### setSelectedOptions (`:object`)
+
+<dd>
+
+Sets the selected option of the Multiselect widget.
+
+*Example*:
+
+```js
+multiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+multiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
+  // code to be executed after selected option is set
+})
+```
+
+</dd>
+
 
 ## Access selected options
 If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
@@ -123,148 +511,3 @@ When using dynamic binding with queries that contain SQL keywords such as `SELEC
   <figcaption align = "center"><i>Access selected options</i></figcaption>
 </figure>
 
-
-## Properties
-
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-
-### Widget properties
-
-These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
-
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**          | Array     | Sets the labels and values for different items/options in the list of the Multiselect widget. Options must be specified as an array of objects with a label and value property.  |
-| **Default Value**      | Array     | Sets a default option that is captured as user input unless it is changed by the user. Multiple values can be provided as CSV or an array of strings for a Multiselect dropdown. |
-| **Placeholder**         | String  | Sets the Placeholder of the Multiselect widget.                                                                                                                                       |
-| **Required**        | Boolean       | When turned on, it makes a user input required and disables any form submission until input is made.                                                                                   |
-| **Visible**         | Boolean       | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                    |
-| **Disabled**       | Boolean        | Disables input/selection to the widget. The widget is visible to the user but user input/selection is not allowed.                                                       |
-| **Tooltip**         | String                  	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
-| **Animate Loading**   | Boolean     | Allows you to control a widget’s animation on the page load.                                                                                                                           |
-| **Server Side Filtering** | Boolean| Enables server-side filtering via an API / Query request. Use this property when your Select option data is being bound to an API / Query.                                             |
-| **Allow Select All**     | Boolean  | Controls the visibility of `select all` option in the dropdown.                                                                                                                        |
-| **Height**     | String  | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-| **Text**      | String | Sets the Placeholder of the Multiselect widget.             |
-| **Position**  | String | Sets the label position of the widget.                       |
-| **Alignment** | String | Sets the label alignment of the widget.                      |
-| **Allow Searching**   | Boolean   | Makes the dropdown list filterable. |
-| **Width**      | Number| Sets the label width of the widget as the number of columns.  |
-
-
-
-### Reference properties
-
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `MultiSelect1.isVisible` to get the visibility status.
-
-| Reference Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **filterText**     | String      | The filter text for Server side filtering                                                                                                                                           |
-| **isVisible**     | Boolean       | This property indicates whether the widget is visible or not.                                                                                                                       |
-| **isDisabled**     | Boolean      | This property indicates whether the widget is disabled or not.                                                                                                                      |
-| **options**        | Array      | This property shows the values of all the options.                                                                                                                                  |
-| **selectedOptionLabels** | Array | An array of Labels of the options are displayed in a Multiselect dropdown. This label changes if the default values of the dropdown change or the user changes an option selection |
-| **selectedOptionValues** | Array  | An array of values of the options are displayed in a Multiselect dropdown. This value changes if the default values of the dropdown change or the user changes an option selection |
-| **isDirty** | Boolean | Indicates whether the Multiselect widget has been used by the end user during their session. |
-| **isValid** | Boolean | This property indicates whether the widget is valid or not.	 |
-
-### Style properties
-
-Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
-
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Font Color** | String| Allows you to set text color for the label.              |
-| **Font Size**  | String| Allows you to set the size of the label.                 |
-| **Emphasis** | String| Allows you to choose a font style (bold or italic). |
-| **Border Radius**    | String| Allows you to define curved corners.                     |
-| **Box Shadow**       | String | Allows you to choose from the available shadow styles.   |
-
-
-
-### Events
-
-When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
-
-| Events             | Description                                                                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onOptionChange** | Sets the action to be run when the user selects/unselects an option. |
-| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown. |
-| **onDropdownClose** | Sets the action to be run when the user opens the dropdown. |
-| **onFilterUpdate** | Triggers an action on change of `filterText` |
-
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
-
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
-
-
-#### setVisibility `boolean`
-
-<dd>
-
-Sets the visibility of the widget.
-
-*Example*:
-
-```js
-MultiSelect1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiSelect1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
-</dd>
-
-
-#### setDisabled `boolean`
-
-<dd>
-
-Sets the disabled state of the widget.
-
-*Example*:
-
-```js
-MultiSelect1.setDisabled(false)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiSelect1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
-</dd>
-
-
-#### setRequired `boolean`
-
-<dd>
-
-Sets whether the widget is required or not.
-
-*Example*:
-
-```js
-MultiSelect1.setRequired(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MultiSelect1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
-
-</dd>
