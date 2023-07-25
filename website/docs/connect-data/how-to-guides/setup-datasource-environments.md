@@ -1,12 +1,10 @@
- # Setup Datasource Environments
-
-This page describes how to set up and manage multiple datasource environments for your application.
-
+ # Setup Datasource Environments (beta)
 
 :::info
-A [Business Edition](https://www.appsmith.com/pricing) account is required to work with datasource environments.
+The Datasource environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
 
+This page shows how to set up and manage [multiple datasource environments](/connect-data/concepts/Datasource-Environments) for your application.
 
 ## Configure an environment
 
@@ -44,5 +42,5 @@ Select the environment on the bottom left corner of the screen to configure the 
 
 Developers can switch between staging and production environments in the *Edit mode*. In addition, users with the necessary permissions can also switch to the staging environment configuration when accessing the app in *View mode*. For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
-With this, you can create queries and switch between environments. As you toggle between environments, the queries would automatically adapt to the chosen environment settings, ensuring widget data changes are reflected.
+This allows you to create queries and switch between environments, with the queries automatically using the selected environment.
 

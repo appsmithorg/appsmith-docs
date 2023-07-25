@@ -1,11 +1,11 @@
-# Datasource Environments
-
-This page describes Datasource environments, which allows developers to isolate their testing datasources from their production datasources.
-
+# Datasource Environments (beta)
 
 :::info
 The Datasource environments feature is only available on [Business Edition.](https://www.appsmith.com/pricing)
 :::
+
+This page explains multiple datasource environments, which allows developers to isolate their testing datasources from their production datasources.
+
 
 See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
@@ -13,7 +13,7 @@ See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-dat
 
 Datasource environments enable you to separate staging and production configurations of a datasource, providing controlled and isolated settings for specific tasks during different phases. This approach allows developers to test and validate changes without affecting the live production environment.
 
-With this you can create queries and seamlessly switch between environments. As you switch the environment, the queries would automatically adapt to the chosen environment settings, reflecting widget data changes.
+This allows you to create queries and switch between environments, with the queries automatically using the selected environment.
 
 ## Environments on Appsmith
 
@@ -29,18 +29,18 @@ For more information on permissions, you can refer to the [Granular Access Contr
 
 ## Benefits of Datasource Environments
 
-The following factors highlight the significance of having datasource environments:
+Some core benefits of using datasource environments include:
 
 * **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
 
-* **Efficient Development:** With Datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
+* **Efficient Development:** With datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
 
 * **Flexible Testing:** Having separate staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
 
 
-
-When using Datasource environments in Appsmith, only predefined staging and production environments are supported, and custom/user-defined environments are currently unavailable.
-
+:::note
+When using datasource environments in Appsmith, only predefined staging and production environments are supported, and custom or user-defined environments are currently unavailable.
+:::
 
 
 
