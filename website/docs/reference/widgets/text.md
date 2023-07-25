@@ -193,8 +193,13 @@ Reflects whether the widget is visible or not.
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith, like:
 
+```js
+Text1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
 
 #### setVisibility(`args:boolean`)
 
