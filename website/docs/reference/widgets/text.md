@@ -21,7 +21,7 @@ These properties are customizable options present in the property pane of the wi
 
 Sets the text to be displayed. The text remains unchanged until manually updated or edited. 
 
-You can dynamically change text by fetching data from queries or JS functions by binding the response to the **Text** property. For instance, when a row in a Table widget is clicked, the Text widget dynamically displays the specific name associated with that row.
+You can dynamically change text by fetching data from queries or JS functions and binding the response to the **Text** property. For instance, when a row in a Table widget is clicked, the Text widget dynamically displays the specific name associated with that row.
 
 *Example:*
 
