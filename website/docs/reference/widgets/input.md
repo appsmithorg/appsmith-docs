@@ -435,7 +435,7 @@ Input1.setVisibility(true).then(() => {
 })
 ```
 
-#### setVisibility `boolean`
+#### setVisibility(args:boolean)
 
 <dd>
 
@@ -451,7 +451,7 @@ Input1.setVisibility(true)
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled(args:boolean)
 
 <dd>
 
@@ -466,7 +466,7 @@ Input1.setDisabled(false)
 
 </dd>
 
-#### setValue `boolean`
+#### setValue (args:boolean)
 
 <dd>
 
@@ -481,7 +481,7 @@ Input1.setValue(true)
 </dd>
 
 
-#### setRequired `boolean`
+#### setRequired(args:boolean)
 
 <dd>
 
