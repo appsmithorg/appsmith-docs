@@ -26,7 +26,7 @@ The following section is a reference guide that provides a complete description 
 
 <dl>
   <dt><b>Connection mode</b></dt>
-  <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd>
+  <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
   <dd><i>Options:</i>
     <ul>
       <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
