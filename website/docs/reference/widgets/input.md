@@ -102,125 +102,325 @@ Sets a maximum length allowed for user input. Only appears when Data Type is set
 
 <dd>
 
-Sets a maximum length allowed for user input. Only appears when Data Type is set to a Text type.
+Sets a maximum length allowed for user input. Only appears when **Data Type** is set to a Text type.
 
 </dd>
 
----
+#### Regex `regExp`
 
-Input widgets gather user-provided data, which can be accessed using the widget's `text` property. First, however, it's important to help users provide clean and well-formatted data.
+<dd>
 
-Properties under the "Validation" tab in the properties pane can be configured to enforce specific rules on what the user has entered.
+The Regex property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-When any of the validation rules have been broken, the widget flags itself as invalid; the border shows red, and its **Error Message** appears. If the widget is part of a Form widget, that Form (by default) can't be submitted while it contains invalid data.
+For instance, if you want to validate that the user enters a value in multiples of 5. You can set **Regex** as:
 
-### Regex
-
-The **Regex** property is used to compare input to a regular expression that you have defined. If the user's input doesn't match the pattern, it's considered invalid.
-
-This is useful when you need to guarantee that the content exactly follows the formatting of your dataset.
-
-For example, if you'd like to create an input for a person's name, you can add the following regular expression to restrict input to only alphabetical characters, spaces, and certain special characters:
-
-```
-/^[a-z ,.'-]+$/i
+```js
+.*[05]$
 ```
 
-### Valid
+</dd>
 
-In the **Valid** property field, you can write a code expression to evaluate the user's input. Or, if you have more complex logic, you can define a function in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to determine whether it's acceptable. The input is acceptable when the **Valid** field evaluates to `true`.
+#### Valid `boolean`
 
-Use this property when you have rules or logic beyond simple formatting that the input must follow.
+<dd>
 
-As an example, imagine that you are creating rules for a "Create Password" field in an account registration form. If you want to be sure that new passwords don't contain certain strings, you may write:
+Allows you to define custom validation rules and error messages to guide users when their input doesn't meet required criteria. 
 
-```javascript
-// Valid property of an Input widget
+For instance, you can use this property to validate a Create Password field, making sure it doesn't contain certain strings like `password` or `123`.
+
+_Example:_
+
+```js
 {{
   !["password", "123", "admin"].some(subStr => {
-    return PasswordInput.text.toLowerCase().includes(subStr)
+    return Input1.text.toLowerCase().includes(subStr)
   })
 }}
 ```
 
----
 
-Other validation properties include:
+</dd>
 
-- **Required**: Makes the input mandatory. When the field is left blank, it's considered invalid.
-- **Max Characters**: Limits the number of characters that the input allows.
-- **Min** / **Max**: Input less than **Min** or greater than **Max** is invalid.
+#### Error Message `string`
 
-To see some of these validations in practice, visit the [sample app](https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f).
+<dd>
 
-## Properties
+Allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic `"invalid input"` message.
 
-Properties allow you to edit the table, connect it with other widgets, and customize how the user interacts with it.
+</dd>
 
-### General properties
+#### Min `number`
 
-General properties control the data and behavior of the Input widget. These properties are present in the widget's properties pane.
+<dd>
 
-| Property            | Description       |
-| ------------------- | ----------------- |
-| **Data Type**       | Sets the type of data you want to capture in the user input. Selecting a data type adds the associated validation to the user input. Choose from Single-line text, Multi-line text, Number, Password, or Email.       |
-| **Default value**   | Sets the widget's default value before the user has made any changes.       |
-| **Text**            | Sets the label text of the widget.                                                                   |
-| **Position**        | Sets where the label appears relative to the widget's input area. Choose between Left, Top, or Auto. |
-| **Required**        | Sets whether the input field is a mandatory field. When this is turned on and the user has left the field blank, it's considered invalid.       |
-| **Max Characters**  | Sets a maximum length allowed for user input. Only appears when **Data Type** is set to a Text type.    |
-| **Min**             | Sets a minimum value allowed for user input. Only appears when **Data Type** is set to Number.       |
-| **Max**             | Sets a maximum value allowed for user input. Only appears when **Data Type** is set to Number.      |
-| **Regex**           | Used to add custom regex validation to perform on user input. When the input doesn't match the regex expression, the input is considered invalid.                                                     |
-| **Valid**           | Sets an expression to decide whether the user's input is considered valid. When the expression evaluates to `false`, the input is considered invalid.   |
-| **Error message**   | Sets the text of the error message to display if user input is invalid.      |
-| **Spellcheck**      | When enabled, user input is checked for spelling errors. This doesn't affect whether the input is considered invalid.   |
-| **Tooltip**         | Sets a tooltip for the widget on mouse hover. You can add hints or extra information about the required input.    |
-| **Placeholder**     | Sets the placeholder text within the input box. Use to show a hint or example value to the user.    |
-| **Show step arrows**  | Controls visibility of step arrows. Turning this toggle off hides the step arrows to increment or decrement the values in the widget. Only appears when **Data Type** is set to Number.  |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. It appears translucent when in Edit mode.     |
-| **Disabled**        | Makes the widget un-clickable or unusable. The widget remains visible to the user, but user interaction isn't allowed.     |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. |
-| **Autofocus**       | When enabled, the user's cursor focuses on the input box automatically on page load.      |
-| **Height**  | Configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-| **Reset on Submit** | Clears the value entered by the user after the user submits with the Enter key.       |
+Sets a minimum value allowed for user input. Only appears when **Data Type** is set to Number.
 
-### Reference properties
+</dd>
 
-Reference properties are used to access the widget's data and state using code. When using reference properties, substitute `<input_name>` in the examples below with the name of your Input widget.
+#### Max `number`
 
-| Property         | Description       | Code Snippet |
-| ---------------- | ----------------- | ------------ |
-| **text**         | Contains the widget's text / user input, either as a _string_ or _number_. depending on the widget's **Data Type** property. | `{{ Input1.text }}` |
-| **isDisabled**   | Reflects the state of the widget's **Disabled** setting.    | `{{ Input1.isDisabled }}` |
-| **isValid**      | Reflects whether the widget's input is considered **Valid**.  | `{{ Input1.isValid }}` | 
-| **isVisible**    | Reflects the state of the widget's **Visible** setting.   | `{{ Input1.isVisible }}` |
+<dd>
 
-### Style properties
+Sets a maximum value allowed for user input. Only appears when **Data Type** is set to Number.
 
-Style properties allow you to change the look and feel of the Input widget. These properties are present in the widget's properties pane.
+</dd>
 
-| Property           | Description              |
-| ------------------ | ------------------------ |
-| **Icon**           | Sets an icon to be included on the button. Uses icons from the [Blueprint](https://blueprintjs.com) library. See the [list of icons here](https://blueprintjs.com/docs/#icons).  |
-| **Position**       | Sets whether the icon appears on the left or right of the button's label text.  |
-| **Font Color**     | Sets the text color for the label. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.   |
-| **Font Size**      | Sets the size of the label font. Accepts valid CSS [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. |
-| **Emphasis**       | Toggles font styles (**bold** or _italic)._   |
-| **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+### General
 
 
-## Events
+#### Tooltip `string`
+<dd>
 
-These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
 
-| Event             | Description             |
-| ----------------- | ----------------------- |
-| **onTextChanged** | Sets an action to take place when the input's value is changed.  |
-| **onFocus**      | Sets an action to take place when the widget has focus (when the user's text cursor is in the field). |
-| **onBlur**      | Sets an action to take place when the input loses focus. |
-| **onSubmit**      | Sets an action to take place when the input is submitted with the Enter key. When the widget's **Data Type** is set to **Multi-line text**, the submit is triggered by CTRL + Enter instead. |
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
+</dd>
+
+#### Placeholder `string`
+
+<dd>
+
+Allows you to set the placeholder text displayed within the input box. This can be used to provide a hint or example value to the user, guiding them on the expected format or content of the input.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+
+#### Auto Focus `boolean`
+
+<dd>
+
+When enabled, automatically places the user's cursor in the input box upon page load, directing their attention to the input field for immediate interaction.
+
+</dd>
+
+#### Allow autofill `boolean`
+
+<dd>
+
+When enabled, allows users to autofill input values using their web browser's saved data.
+
+</dd>
+
+#### Height `string`
+
+
+<dd>
+This property determines how the widget's height adjusts to changes in its content. 
+
+*Options:*
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+### Events
+
+When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+
+
+
+#### onTextChanged
+
+<dd>
+
+Specifies the actions to be executed when the input is modified.
+
+</dd>
+
+
+
+#### onFocus
+
+<dd>
+
+Specifies the actions to be executed when the input area is focused.
+
+</dd>
+
+#### onBlur
+
+<dd>
+
+Specifies the actions to be executed when the input area loses focus.
+
+
+
+</dd>
+
+#### onSubmit
+
+<dd>
+
+Specifies the actions to be executed when the input is submitted with the `ENTER` key.
+
+</dd>
+
+#### Reset on submit
+
+<dd>
+
+Clears the input value after submission. 
+
+</dd>
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### Icon
+
+#### Icon `string`
+
+<dd>
+
+Specifies the icon to be displayed on the widget. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons.
+
+</dd>
+
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Input1.isVisible`.
+
+#### text `string`
+
+<dd>
+
+The `text` property retrieves the input value of the widget. 
+
+*Example:*
+```js
+{{Input1.text}}
+```
+
+</dd>
+
+
+#### isValid `boolean`
+
+<dd>
+
+The `isValid` property indicates the validation status of a widget, providing information on whether the widget's current value is considered valid or not.
+
+*Example:*
+```js
+{{Input1.isValid}}
+```
+
+</dd>
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+*Example:*
+```js
+{{Input1.isDisabled}}
+```
+
+</dd>
+
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{Input1.isVisible}}
+```
+
+</dd>
 
 
 ## Methods
@@ -229,6 +429,11 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
+```js
+Input1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
 
 #### setVisibility `boolean`
 
