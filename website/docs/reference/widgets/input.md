@@ -1,3 +1,6 @@
+---
+description: Learn how to use the Input widget to gather and validate user input such as text, numbers, emails, and passwords.
+---
 # Input
 
 This page provides information on using the Input widget to gather and validate user input such as text, numbers, emails, and passwords.
