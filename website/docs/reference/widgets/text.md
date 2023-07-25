@@ -29,7 +29,7 @@ You can dynamically change text by fetching data from queries or JS functions an
 {{Table1.selectedRow.name}}
 ```
 
-You have the option to use HTML code within the Text field to customize the appearance of the displayed text. Note that the Text field supports only inline CSS. If you need to use external CSS, it is recommended to use the [Iframe widget](/reference/widgets/iframe).
+You have the option to use HTML code within the **Text** property to customize the appearance of the displayed text. Note that the Text field supports only inline CSS. If you need to use external CSS, it is recommended to use the [Iframe widget](/reference/widgets/iframe).
 
 *Example:*
 
