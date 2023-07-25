@@ -466,7 +466,7 @@ Input1.setDisabled(false)
 
 </dd>
 
-#### setValue (args:boolean)
+#### setValue (args:string)
 
 <dd>
 
@@ -475,7 +475,7 @@ Allows you to dynamically set the value of the widget.
 *Example*:
 
 ```js
-Input1.setValue(true)
+Input1.setValue("Hello123")
 ```
 
 </dd>
