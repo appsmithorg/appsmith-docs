@@ -5,8 +5,7 @@ description: >-
 
 # Select
 
-This page provides information on the Select widget (*formerly known as dropdown*), that enable users to select a single option from a given list.
-
+This page provides information on the Select widget (_formerly known as dropdown_), that enable users to select a single option from a given list.
 
 ## Content properties
 
@@ -14,43 +13,58 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Options `array`
+#### Source Data `array<object>`
 
 <dd>
 
-Use to set labels and values for options in the list of the select widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
-
+Use to set source data of the select widget. Source Data must be specified as an array of objects. For example:
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE"
+    name: "Blue",
+    code: "BLUE",
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    name: "Green",
+    code: "GREEN",
   },
   {
-    "label": "Red",
-    "value": "RED"
+    name: "Red",
+    code: "RED",
+  },
+];
+```
+
+You can dynamically generate source by fetching data from queries or JS functions by binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+
+```js
+{
+  {
+    fetchData.data;
   }
-]
+}
 ```
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+</dd>
+
+#### Label `string/array<string>`
+
+<dd>
+
+Use to set option key from the source data of the select widget. This key will be used to populate the lable of each option in the list of the select widget. if you want to perform some transformation, you can bind a dynamic string in JS mode. For example:
 
 ```js
-{{fetchData.data}}
+{{ item.name.toLowerCase() }}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the select widget. 
+</dd>
 
-*Example:* 
+#### Value `string/array<string/number/boolean>`
 
-```js
-{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
-```
+<dd>
+
+Use to set value key from the source data of the select widget. This key will be used to populate the value of each option in the list of the select widget. if you want to perform some transformation, you can bind a dynamic string in JS mode.
 
 </dd>
 
@@ -58,8 +72,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 
 <dd>
 
-Sets the initial option that is automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects a different option from the list. For example, if you want the default option to be ```Blue```, set the **Default Selected Value** property to `BLUE`.
-
+Sets the initial option that is automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects a different option from the list. For example, if you want the default option to be `Blue`, set the **Default Selected Value** property to `BLUE`.
 
 </dd>
 
@@ -73,17 +86,17 @@ Sets the label of the widget.
 
 </dd>
 
-
 #### Position `string`
 
 <dd>
 
 Sets the placement of the **Label** in the widget.
 
-*Options*:
+_Options_:
+
 - **Left**: The label is placed on the left of the widget.
 - **Top**: The label gets placed at the top of the widget.
-- **Auto**: The label position is determined based on the height of the widget itself. 
+- **Auto**: The label position is determined based on the height of the widget itself.
 
 </dd>
 
@@ -125,7 +138,7 @@ Enables server-side filtering via a query request. Use this property when the Se
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text. 
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text.
 
 </dd>
 
@@ -139,7 +152,7 @@ Enabling this property for a select widget makes it a mandatory field, meaning t
 
 </dd>
 
-### General 
+### General
 
 #### Visible `boolean`
 
@@ -147,10 +160,14 @@ Enabling this property for a select widget makes it a mandatory field, meaning t
 
 Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
-For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the select widget:
+For example, if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the select widget:
 
 ```js
-{{Checkbox1.isChecked}}
+{
+  {
+    Checkbox1.isChecked;
+  }
+}
 ```
 
 </dd>
@@ -161,13 +178,17 @@ For example,  if you want to make the widget visible only when the user checks a
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's disabled state conditionally.
 
-For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression: 
+For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression:
+
 ```js
-{{appsmith.user.email=="john@appsmith.com"?false:true}}
+{
+  {
+    appsmith.user.email == "john@appsmith.com" ? false : true;
+  }
+}
 ```
 
 </dd>
-
 
 #### Animate Loading `boolean`
 
@@ -191,7 +212,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
-#### onOptionChange 
+#### onOptionChange
 
 <dd>
 
@@ -207,8 +228,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 </dd>
 
-
-#### onDropdownClose 
+#### onDropdownClose
 
 <dd>
 
@@ -257,7 +277,6 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 </dd>
 
 #### Box Shadow `string`
- 
 
 <dd>
 
@@ -275,10 +294,14 @@ Reference properties enable you to access the widget's data and state using the 
 
 Returns the text entered in the search filter for Server side filtering.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.filterText}}
+{
+  {
+    Select1.filterText;
+  }
+}
 ```
 
 </dd>
@@ -289,10 +312,14 @@ Returns the text entered in the search filter for Server side filtering.
 
 It reflects the state of the widget's Disabled setting. It is represented by a boolean value, where `true` indicates that the widget is disabled, and `false` indicates that it is enabled for user interaction.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.isDisabled}}
+{
+  {
+    Select1.isDisabled;
+  }
+}
 ```
 
 </dd>
@@ -303,23 +330,32 @@ It reflects the state of the widget's Disabled setting. It is represented by a b
 
 The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
 
-*Example:*
+_Example:_
+
 ```js
-{{Select1.isVisible}}
+{
+  {
+    Select1.isVisible;
+  }
+}
 ```
 
 </dd>
 
-####  isDirty `boolean`
+#### isDirty `boolean`
 
 <dd>
 
 This property is a boolean value that indicates whether the user has interacted with the widget. If the user selects an option from the dropdown list, the `isDirty` property returns `true`. However, if the user does not make any selection and the initial value remains unchanged, the `isDirty` property returns `false`.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.isDirty}}
+{
+  {
+    Select1.isDirty;
+  }
+}
 ```
 
 </dd>
@@ -330,10 +366,14 @@ This property is a boolean value that indicates whether the user has interacted 
 
 Returns an array of objects that contain the label and value of the options in the dropdown list.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.options}}
+{
+  {
+    Select1.options;
+  }
+}
 ```
 
 </dd>
@@ -344,10 +384,14 @@ Returns an array of objects that contain the label and value of the options in t
 
 Returns the value of the option displayed in the Select widget. It changes if the default value of the widget changes or the user selects an option.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.selectedOptionValue}}
+{
+  {
+    Select1.selectedOptionValue;
+  }
+}
 ```
 
 </dd>
@@ -358,14 +402,17 @@ Returns the value of the option displayed in the Select widget. It changes if th
 
 Returns the label of the option displayed in the Select widget. It changes if the default value of the widget changes or the user selects an option.
 
-*Example:*
+_Example:_
 
 ```js
-{{Select1.selectedOptionLabel}}
+{
+  {
+    Select1.selectedOptionLabel;
+  }
+}
 ```
 
 </dd>
-
 
 ## Methods
 
@@ -373,17 +420,16 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-
 #### setVisibility (`:boolean`)
 
 <dd>
 
 Sets the visibility of the widget.
 
-*Example*:
+_Example_:
 
 ```js
-Select1.setVisibility(true)
+Select1.setVisibility(true);
 ```
 
 To perform sequential actions, use the `.then()` block for execution.
@@ -391,12 +437,10 @@ To perform sequential actions, use the `.then()` block for execution.
 ```js
 Select1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
-})
-
+});
 ```
 
 </dd>
-
 
 #### setDisabled (`:boolean`)
 
@@ -404,10 +448,10 @@ Select1.setVisibility(true).then(() => {
 
 Sets the `disabled` state of the widget.
 
-*Example*:
+_Example_:
 
 ```js
-Select1.setDisabled(false)
+Select1.setDisabled(false);
 ```
 
 To perform sequential actions, use the `.then()` block for execution.
@@ -415,7 +459,7 @@ To perform sequential actions, use the `.then()` block for execution.
 ```js
 Select1.setDisabled(false).then(() => {
   // code to be executed after disabled state is set
-})
+});
 ```
 
 </dd>
@@ -426,22 +470,27 @@ Select1.setDisabled(false).then(() => {
 
 Sets the options to be displayed in the widget.
 
-*Example*:
+_Example_:
 
 ```js
-Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }])
+Select1.setOptions([
+  { label: "Option 1", value: "option1" },
+  { label: "Option 2", value: "option2" },
+]);
 ```
 
 To perform sequential actions, use the `.then()` block for execution.
 
 ```js
-Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]).then(() => {
+Select1.setOptions([
+  { label: "Option 1", value: "option1" },
+  { label: "Option 2", value: "option2" },
+]).then(() => {
   // code to be executed after options are set
-})
+});
 ```
 
 </dd>
-
 
 #### setRequired (`:boolean`)
 
@@ -449,10 +498,10 @@ Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2'
 
 Sets whether the widget is required or not.
 
-*Example*:
+_Example_:
 
 ```js
-Select1.setRequired(true)
+Select1.setRequired(true);
 ```
 
 To perform sequential actions, use the `.then()` block for execution.
@@ -460,13 +509,10 @@ To perform sequential actions, use the `.then()` block for execution.
 ```js
 Select1.setRequired(true).then(() => {
   // code to be executed after required state is set
-})
+});
 ```
 
 </dd>
-
-
-
 
 #### setSelectedOption (`:object`)
 
@@ -474,35 +520,31 @@ Select1.setRequired(true).then(() => {
 
 Sets the selected option of the Select widget.
 
-*Example*:
+_Example_:
 
 ```js
-Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+Select1.setSelectedOption({ label: "Option 2", value: "option2" });
 ```
 
 To perform sequential actions, use the `.then()` block for execution.
 
 ```js
-Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
+Select1.setSelectedOption({ label: "Option 2", value: "option2" }).then(() => {
   // code to be executed after selected option is set
-})
+});
 ```
 
 </dd>
 
-
-
-## Display options dynamically 
+## Display options dynamically
 
 You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
 
-
 ---
+
 **Example 1:** suppose you want to use a Select widget to allow users to select one country from a database, with the dynamic population of options.
 
-
 1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
-
 
 ```sql
 SELECT DISTINCT country as label, country as value FROM users;
@@ -511,13 +553,18 @@ SELECT DISTINCT country as label, country as value FROM users;
 2. In the Select **Options** property, display the data using:
 
 ```js
-{{fetchData.data}}
+{
+  {
+    fetchData.data;
+  }
+}
 ```
 
 With this configuration, the Select widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Select widget.
 
 ---
-**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget. 
+
+**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget.
 
 1. Use the `users` table in the sample database and fetch the unique country values using the following `getdata` SQL query:
 
@@ -530,25 +577,30 @@ This query retrieves unique country values from the `users` table. The retrieved
 2. Use JavaScript to **transform the data** by adding it to the **Options** property.
 
 ```js
-{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
+{
+  {
+    getdata.data.map((p) => ({ label: p.country, value: p.country }));
+  }
+}
 ```
 
 The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
 
-
 ## Access selected option
+
 These properties allow you to bind your select widget with any other widget in queries or JS objects.
 
-* **selectedOptionValue**: This property returns the value of the selected option in the Select widget.
+- **selectedOptionValue**: This property returns the value of the selected option in the Select widget.
 
-* **selectedOptionLabel**: This property returns the label of the selected option in the Select widget.
+- **selectedOptionLabel**: This property returns the label of the selected option in the Select widget.
 
 Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Select widget.
 
 ---
-**Example**: suppose you want to filter the table data based on the user-selected country from a Select widget. 
 
-1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected option from a Select widget. 
+**Example**: suppose you want to filter the table data based on the user-selected country from a Select widget.
+
+1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected option from a Select widget.
 
 ```sql
 SELECT *
@@ -560,20 +612,21 @@ LIMIT 10;
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
 ```js
-{{filterdata.data}}
+{
+  {
+    filterdata.data;
+  }
+}
 ```
 
 3. Set the `onOptionChange` event of the Select widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects option.
-
 
 <figure>
   <img src="/img/select-access.gif" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Access selected option</i></figcaption>
 </figure>
 
-
-
-## Server side filtering	
+## Server side filtering
 
 The Select widget has the option to configure server-side filtering, where search queries are sent to the back-end, and responses are used to populate options on the Select widget. You can implement server-side filtering of options in the Select widget by using the filterText binding property.
 
@@ -582,6 +635,5 @@ The **filterText** is a binding property in a Select widget that allows you to i
 <VideoEmbed host="youtube" videoId="QDmTwRaLzHg" title="Server Side Filtering" caption="Server Side Filtering"/>
 
 The preceding video demonstrates how to enable Server Side Filtering, and you can also refer to this [guide](/reference/widgets/table#server-side-filter) to learn more about Server-Side Searching or Filtering.
-
 
 **Sample app** for [Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695).
