@@ -27,7 +27,7 @@ The source data must be specified as an array of objects. For example:
 
 ## Set label and value
 
-To set the label and value key from the source data, you can use the **Label** and **Value** property.
+To set the label and value key from the source data, you can use the **Label** and **Value** properties.
 
 If you want to perform some transformation, you can bind dynamic string using JS mode. For example:
 

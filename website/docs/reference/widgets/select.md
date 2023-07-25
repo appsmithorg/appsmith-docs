@@ -52,7 +52,7 @@ You can dynamically generate source by fetching data from queries or JS function
 
 <dd>
 
-Use to set option key from the source data of the select widget. This key will be used to populate the lable of each option in the list of the select widget. if you want to perform some transformation, you can bind a dynamic string in JS mode. For example:
+Use to set the option key from the source data of the select widget. This key will be used to populate the label of each option in the list of the select widget. if you want to perform some transformation, you can bind a dynamic string in JS mode. For example:
 
 ```js
 {{ item.name.toLowerCase() }}
