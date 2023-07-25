@@ -322,6 +322,121 @@ const sidebars = {
         'connect-data/integrations'
       ]
     }, //Data end
+
+    {
+      //build ui start
+      type: 'category',
+      collapsed: false,
+      label: 'Build UI',
+      items: [
+        'build-ui/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'build-ui/how-to-guides/README' },
+          items: [
+   
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: { type: 'doc', id: 'build-ui/reference/widgets/README' },
+          items: [
+              'build-ui/reference/widgets/audio',
+              'build-ui/reference/widgets/audio-recorder',
+              {
+                type: 'category',
+                label: 'Button',
+                link: { type: 'doc', id: 'build-ui/reference/widgets/button/README' },
+                items: ['build-ui/reference/widgets/button/google-recaptcha'],
+              },
+              {
+                type: 'category',
+                label: 'Button Group',
+                link: { type: 'doc', id: 'build-ui/reference/widgets/button-group/README' },
+                items: [
+                  'build-ui/reference/widgets/button-group/buttons'
+                ],
+              },
+              'build-ui/reference/widgets/camera',
+              'build-ui/reference/widgets/chart',
+              'build-ui/reference/widgets/checkbox',
+              'build-ui/reference/widgets/checkbox-group',
+              'build-ui/reference/widgets/code-scanner',
+              'build-ui/reference/widgets/container',
+              'build-ui/reference/widgets/currency-input',
+              'build-ui/reference/widgets/datepicker',
+              'build-ui/reference/widgets/divider',
+              'build-ui/reference/widgets/document-viewer',
+              'build-ui/reference/widgets/form',
+              'build-ui/reference/widgets/filepicker',
+              'build-ui/reference/widgets/icon-button',
+              'build-ui/reference/widgets/iframe',
+              'build-ui/reference/widgets/image',
+              'build-ui/reference/widgets/input',
+              'build-ui/reference/widgets/json-form',
+              'build-ui/reference/widgets/list',
+              'build-ui/reference/widgets/maps',
+              'build-ui/reference/widgets/map-chart',
+              {
+                type: 'category',
+                label: 'Menu Button',
+                link: { type: 'doc', id: 'build-ui/reference/widgets/menu/README' },
+                items: [
+                  'build-ui/reference/widgets/menu/menu-items'
+                ],
+              },
+              'build-ui/reference/widgets/modal',
+              'build-ui/reference/widgets/multiselect',
+              'build-ui/reference/widgets/multi-tree-select',
+              'build-ui/reference/widgets/phone-input',
+              'build-ui/reference/widgets/progress',
+              'build-ui/reference/widgets/radio-group',
+              'build-ui/reference/widgets/rating',
+              'build-ui/reference/widgets/rich-text-editor',
+              'build-ui/reference/widgets/select',
+              {
+                type: 'category',
+                label: 'Sliders',
+                link: { type: 'doc', id: 'build-ui/reference/widgets/sliders/README' },
+                items: [
+                  'build-ui/reference/widgets/sliders/category-slider',
+                  'build-ui/reference/widgets/sliders/number-slider',
+                  'build-ui/reference/widgets/sliders/range-slider',
+                ],
+              },
+              'build-ui/reference/widgets/stat-box',
+              'build-ui/reference/widgets/switch',
+              'build-ui/reference/widgets/switch-group',
+              'build-ui/reference/widgets/tabs',
+              {
+                type: 'category',
+                label: 'Table',
+                link: { type: 'doc', id: 'build-ui/reference/widgets/table/README' },
+                items: [
+                  'build-ui/reference/widgets/table/column-settings',
+                  'build-ui/reference/widgets/table/inline-editing',
+                ],
+              },
+              'build-ui/reference/widgets/text',
+              'build-ui/reference/widgets/tree-select',
+              'build-ui/reference/widgets/video',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: { type: 'doc', id: 'build-ui/Concepts/README' },
+          items: [
+            
+          ]
+        },
+      ]
+    },
+    
     {
       //core concepts section start
       type: 'category',
@@ -414,92 +529,6 @@ const sidebars = {
       collapsed: false,
       label: 'Reference',
       items: [
-        {
-          type: 'category',
-          label: 'Widgets',
-          link: { type: 'doc', id: 'reference/widgets/README' },
-          items: [
-            'reference/widgets/audio',
-            'reference/widgets/audio-recorder',
-            {
-              type: 'category',
-              label: 'Button',
-              link: { type: 'doc', id: 'reference/widgets/button/README' },
-              items: ['reference/widgets/button/google-recaptcha'],
-            },
-            {
-              type: 'category',
-              label: 'Button Group',
-              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
-              items: [
-                'reference/widgets/button-group/buttons'
-              ],
-            },
-            'reference/widgets/camera',
-            'reference/widgets/chart',
-            'reference/widgets/checkbox',
-            'reference/widgets/checkbox-group',
-            'reference/widgets/code-scanner',
-            'reference/widgets/container',
-            'reference/widgets/currency-input',
-            'reference/widgets/datepicker',
-            'reference/widgets/divider',
-            'reference/widgets/document-viewer',
-            'reference/widgets/form',
-            'reference/widgets/filepicker',
-            'reference/widgets/icon-button',
-            'reference/widgets/iframe',
-            'reference/widgets/image',
-            'reference/widgets/input',
-            'reference/widgets/json-form',
-            'reference/widgets/list',
-            'reference/widgets/maps',
-            'reference/widgets/map-chart',
-            {
-              type: 'category',
-              label: 'Menu Button',
-              link: { type: 'doc', id: 'reference/widgets/menu/README' },
-              items: [
-                'reference/widgets/menu/menu-items'
-              ],
-            },
-            'reference/widgets/modal',
-            'reference/widgets/multiselect',
-            'reference/widgets/multi-tree-select',
-            'reference/widgets/phone-input',
-            'reference/widgets/progress',
-            'reference/widgets/radio-group',
-            'reference/widgets/rating',
-            'reference/widgets/rich-text-editor',
-            'reference/widgets/select',
-            {
-              type: 'category',
-              label: 'Sliders',
-              link: { type: 'doc', id: 'reference/widgets/sliders/README' },
-              items: [
-                'reference/widgets/sliders/category-slider',
-                'reference/widgets/sliders/number-slider',
-                'reference/widgets/sliders/range-slider',
-              ],
-            },
-            'reference/widgets/stat-box',
-            'reference/widgets/switch',
-            'reference/widgets/switch-group',
-            'reference/widgets/tabs',
-            {
-              type: 'category',
-              label: 'Table',
-              link: { type: 'doc', id: 'reference/widgets/table/README' },
-              items: [
-                'reference/widgets/table/column-settings',
-                'reference/widgets/table/inline-editing',
-              ],
-            },
-            'reference/widgets/text',
-            'reference/widgets/tree-select',
-            'reference/widgets/video',
-          ],
-        },
         {
           type: 'category',
           label: 'Appsmith Framework',
