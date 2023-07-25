@@ -19,23 +19,25 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Sets the text to be displayed. The text would remain unchanged until manually updated or edited. 
+Sets the text to be displayed. The text remains unchanged until manually updated or edited. 
 
-To display dynamic text that changes based on user interactions or external data, you can connect widget's reference properties. For instance, clicking on a row in a Table widget displays specific task details in a Text widget.
+You can dynamically change text by fetching data from queries or JS functions by binding the response to the **Text** property. For instance, when a row in a Table widget is clicked, the Text widget dynamically displays the specific name associated with that row.
 
 *Example:*
 
 ```js
-{{Table1.selectedRow.task}}
+{{Table1.selectedRow.name}}
 ```
 
-Additionally, you have the option to utilize HTML code within the Text field to customize the appearance of the displayed text. Note that the Text field supports only inline CSS. If you need to use external CSS, it is recommended to utilize the Iframe widget.
+You have the option to use HTML code within the Text field to customize the appearance of the displayed text. Note that the Text field supports only inline CSS. If you need to use external CSS, it is recommended to use the [Iframe widget](/reference/widgets/iframe).
 
 *Example:*
 
 ```js
 <p style="color:blue;">Hello World</p>
 ```
+
+This code displays the text Hello World in blue color.
 
 </dd>
 
@@ -75,6 +77,7 @@ Enabling this option treats any link in the widget as standard text instead of c
 
 
 <dd>
+
 This property determines how the widget's height adjusts to changes in its content. There are three available options:
 
 
@@ -112,7 +115,7 @@ Determines the font size of the text. It accepts [CSS font-size](https://develop
 
 <dd>
 
-Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
+Sets the color for the text, and when JS is enabled, you can dynamically modify the text color using JavaScript functions.
 
 </dd>
 
@@ -120,7 +123,9 @@ Sets the color for the text in the table. Additionally, the text color can be pr
 
 
 #### Alignment `string`
+
 <dd>
+
 Sets the horizontal alignment of the text within the cells.
 
 *Options*:
@@ -134,7 +139,7 @@ Sets the horizontal alignment of the text within the cells.
 
 <dd>
 
-Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+Allows you to choose a font style for the widget, including options like bold or italic. When JS is enabled, you can dynamically modify the font style using JavaScript functions.
 
 </dd>
 
@@ -145,7 +150,7 @@ Enables you to select a font style for the widget, such as bold or italic. Addit
 
 <dd>
 
-Sets the width of the widget's border. Accepts number values only, in px.
+Specifies the width of the widget's border, accepting only numerical values in pixels (px).
 
 </dd>
 
@@ -191,7 +196,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility(`:boolean`)
+#### setVisibility(`args:boolean`)
 
 <dd>
 
@@ -207,7 +212,7 @@ Text1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(`:boolean`)
+#### setDisabled(`args:boolean`)
 
 <dd>
 
@@ -221,7 +226,7 @@ Text1.setDisabled(false)
 
 </dd>
 
-#### setRequired(`:boolean`)
+#### setRequired(`args:boolean`)
 
 <dd>
 
@@ -236,7 +241,7 @@ Text1.setRequired(true)
 
 </dd>
 
-#### setText(`:string`)
+#### setText(`args:string`)
 
 <dd>
 
@@ -256,7 +261,7 @@ Text1.setText('Hello, world!')
 
 
 
-#### setTextColor(`:string`)
+#### setTextColor(`args:string`)
 
 <dd>
 
