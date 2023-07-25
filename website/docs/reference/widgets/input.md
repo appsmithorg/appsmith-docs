@@ -430,10 +430,10 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 ```js
-Input1.setVisibility(true).then(() => {
+return Input1.setVisibility(true).then(() => {
   // code to be executed after visibility is set
 })
 ```
