@@ -1,10 +1,112 @@
 # Input
 
-This page describes how to use an Input widget to gather and validate user input such as text, numbers, emails, and passwords.
+This page provides information on using the Input widget to gather and validate user input such as text, numbers, emails, and passwords.
 
 <VideoEmbed host="youtube" videoId="zNGwWO6OXlw" title="How to use Input Widget" caption="How to use Input Widget"/>
 
-## Data validation
+## Content properties
+
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
+
+#### Data type `string` 
+
+<dd>
+
+Allows you to set the type of data you want to capture in the user input, enabling the associated validation for the chosen data type. 
+
+*Options:*
+
+* **Single-line text:** Accepts input with a single line of text, typically used for short responses like names or titles.
+* **Multi-line text:** Allows input with multiple lines, suitable for longer text entries, such as comments or descriptions.
+* **Number:** Permits input of numeric values, restricting non-numeric characters.
+* **Password:** Masks the user's input to hide sensitive information like passwords or PINs.
+* **Email:** Validates and accepts email addresses, ensuring they match the required format.
+
+</dd>
+
+#### Default value `string`
+
+<dd>
+
+Allows you to specify an initial value for the widget when it's first displayed.
+
+</dd>
+
+### Label
+
+#### Text `string`
+
+<dd>
+
+Allows you to define the label on the widget.
+
+</dd>
+
+#### Position `string`
+
+
+<dd>
+
+
+This property allows you to configure the label's placement.
+
+*Options:*
+* **Auto**: Automatically positions the label based on the widget type and layout.
+* **Left**: Aligns the label to the left side of the widget.
+* **Top**: Positions the label above the widget.
+
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width `number`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
+
+</dd>
+
+### Validation
+
+#### Required `boolean`
+
+<dd>
+
+This validation feature allows you to designate the Input as a mandatory field. For instance, when the Input is placed within a Form widget, enabling the Required property ensures that the Form's submit button remains disabled until the Input has some value.
+
+</dd>
+
+#### Max Characters	`number`
+
+<dd>
+
+Sets a maximum length allowed for user input. Only appears when Data Type is set to a Text type.
+
+</dd>
+
+#### Max Characters	`number`
+
+<dd>
+
+Sets a maximum length allowed for user input. Only appears when Data Type is set to a Text type.
+
+</dd>
+
+---
 
 Input widgets gather user-provided data, which can be accessed using the widget's `text` property. First, however, it's important to help users provide clean and well-formatted data.
 
@@ -140,14 +242,6 @@ Sets the visibility of the widget.
 Input1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Input1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
 
 </dd>
 
@@ -164,13 +258,6 @@ Sets the disabled state of the widget.
 Input1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Input1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
 
 </dd>
 
@@ -184,14 +271,6 @@ Allows you to dynamically set the value of the widget.
 
 ```js
 Input1.setValue(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Input1.setValue(true).then(() => {
-  // code to be executed after value is set
-})
 ```
 
 </dd>
@@ -209,19 +288,6 @@ Sets whether the widget is required or not.
 Input1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Input1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
 
 </dd>
-
-## Further reading
-
-- [Currency Input](/reference/widgets/currency-input)
-- [Phone Input](/reference/widgets/phone-input)
-- [Rich-Text Editor](/reference/widgets/rich-text-editor)
 
