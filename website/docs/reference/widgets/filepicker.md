@@ -130,6 +130,68 @@ This property controls whether the widget is displayed with a loading animation.
 
 ### Events
 
+#### onFilesSelected	
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user select a file through the widget.
+
+</dd>
+
+
+### Color
+
+#### Button color `string`
+
+<dd>
+
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). When JS is enabled, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `FilePicker1.isVisible`.
+
+#### files `array`
+
+<dd>
+
+The `files` property stores file objects that the user has selected. Each file object contains the file data, which can be accessed through its `data` property.
+
+*Example:*
+
+```js
+// Accessing the data
+{{ FilePicker1.files[0].data }}
+
+// Accessing the data format
+{{FilePicker1.files[0].dataFormat}}
+
+//here [0] represents index of the file.
+```
+
+</dd>
 
 ---
 
@@ -206,67 +268,6 @@ Similarly, you can use the [Image widget ](/reference/widgets/image) to display 
 Currently, only CSV data is supported; XLS or other formats aren't supported.
 :::
 
-## Properties
-
-
-Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
-
-
-### Widget properties
-These properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-
-| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
-|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Label**                     	| String          	| Sets the text displayed within the widget.                                                                                                                                                                                                                                            	|
-| **Maximum No. of files**      	| Number          	| Sets the maximum number of files allowed to be uploaded by a user.                                                                                                                                                                                                                    	|
-| **Maximum File Size**         	| Number          	| Sets the maximum allowed size of each file that a user can upload.                                                                                                                                                                                                                    	|
-| **Allowed File Types**        	| Array   	| Controls which types of files a user is allowed to upload. Accepts an array of wildcards image/, exact mime types image/jpeg, or file extensions e.g.: '.jpg', '.jpeg', '.png', '.gif']. The following file types are supported: Images, Videos, Audio, Text, MS Word, JPEG, and PNG. 	|
-| **Data Format**               	| String 	| Determines the data format of the files uploaded. You can choose from Base64, Binary, , Text, and Array(CSV).                                                                                                                                                                         	|
-| **Infer data-types from CSV** 	| Boolean         	| Enables or disables the automatic inference of data types from CSV files.                                                                                                                                                                                                             	|
-| **Required**                  	| Boolean         	| Makes input to the widget mandatory.                                                                                                                                                                                                                                                  	|
-| **Visible**                   	| Boolean        	| Controls widget's visibility on the page.                                                                                                                                                                                                                                             	|
-| **Disabled**                  	| Boolean         	| Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.                                                                                                                                                              	|
-| **Animate Loading**           	| Boolean         	| Allows you to control a widget’s animation on the page load.     
-
-
-
-### Reference properties
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For example, to check the visibility setting of the widget, you can use `FilePicker1.isVisible`.
-
-| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
-|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **files**             	| Array    |  An array of file objects that have been selected by the user. Each file object contains the file data, which can be accessed through its `data` property.                                                                                                                                                                           
-| **isVisible**         	| Boolean        | Indicates the state of the widget's Visible setting.  
-| **isDisabled**        	| Boolean         | Indicates the state of the widget's Disabled setting.
-| **isDirty**          	| Boolean       | Indicates whether the file picker has been used by the end user during their session.
-| **isValid**          	| Boolean       | Indicates whether the file type selected by the user is considered valid for the widget.
-
-
-### Styles
-
-
-Style properties allow you to change the look and feel of the widget.
-
-
-| Property                      	| Data Type       	| Description                                                                                                                                                                                                                                                                           	|
-|-------------------------------	|-----------------	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Button Color**  	| String | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
-| **Border Radius** 	| String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**    	| String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
-
-
-## Events
-
-
-These are functions that are called when event listeners are triggered in the widget. Use [actions](/reference/appsmith-framework/widget-actions) to execute tasks based on user events.
-
-
-
-
-| Event               | Description                                                                                                                                                                                                                            |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onFilesSelected** | The onFilesSelected event is triggered when a user selects a file through the widget, allowing you to define a specific action.
 
 
 ## Methods
