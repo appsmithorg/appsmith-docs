@@ -12,7 +12,7 @@ Appsmith's backend server supports **TLS1.1** and **TLS1.2** for connecting to e
 ## Connect MS SQL
 
 :::caution important
-You may need to whitelist the IP addresses 18.223.74.85 and 3.131.104.27 of the Appsmith deployment on your database instance before connecting to your database.
+You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to your database.
 :::
 
 ### Connection parameters
@@ -38,7 +38,7 @@ The following section is a reference guide that provides a complete description 
   <dd>The network location of your MS SQL database. This can be a domain name or an IP address. To connect to a local MS SQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
 
   <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port `1433` by default if you do not specify one.</dd><br />
+  <dd>The port number to connect to on the server. Appsmith connects to port <code>1433</code> by default if you do not specify one.</dd><br />
 
   <dt><b>Database Name</b></dt>
   <dd>The name of the database to connect.</dd><br />
@@ -69,7 +69,7 @@ The following section provides examples of creating basic CRUD queries for MS SQ
 </figure>
 
 :::info
-You can query MS SQL databases using T-SQL syntax. Refer to Microsoft's documentation to learn how to [Write Transact-SQL statements](https://docs.microsoft.com/en-us/sql/t-sql/tutorial-writing-transact-sql-statements?view=sql-server-ver15).
+You can query MS SQL databases using T-SQL syntax. Refer to Microsoft's documentation to learn how to [Write Transact-SQL statements](https://learn.microsoft.com/en-us/sql/t-sql/queries/queries?view=sql-server-ver16).
 :::
 
 ### Fetch data
@@ -115,9 +115,9 @@ DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
 
-## Prepared statements
-
+:::info
 Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements).
+:::
 
 ## Troubleshooting
 
