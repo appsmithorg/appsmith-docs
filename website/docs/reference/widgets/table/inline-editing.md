@@ -1,17 +1,6 @@
-# Inline Editing
+# Setup Table Inline Editing
 
 This page shows you how to add and edit Table data directly from the UI through inline editing.
-
-
-
-1). How to update Table data directly from the UI
-
-2). How to Edit cells in the table widget
-
-3). How to Update and Add Data to Rows in Table widget
-
----
-
 
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
