@@ -174,7 +174,7 @@ Browse through the tutorials below to see how to connect non-native datasources 
         <div class="containerDescription"><strong>Xano</strong> is the fastest no-code backend development platform.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/adding-social-authentication"><strong>View Tutorial</strong></a> </div>
     </div>
-    <div class="columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/zapier-logo_odZ9wZQ3vY.jpeg" alt="Zapier-logo"/>
         </div> <hr/>
