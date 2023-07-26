@@ -44,6 +44,11 @@ _Example_:
 
 </dd>
 
+:::info
+* Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
+* When using the data in a query, it is uploaded in the selected format, despite appearing in the blob URL format when you log the data.
+:::
+
 #### Data Format `string`
 
 <dd>
@@ -193,32 +198,108 @@ The `files` property stores file objects that the user has selected. Each file o
 
 </dd>
 
----
+#### isValid `boolean`
 
-To upload a file or multiple files, you can drag and drop them onto the Filepicker widget or select files from your local machine. Appsmith supports various file types and data formats, including:
+<dd>
 
-* **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method. To upload a binary file, choose Data Format as Binary and then upload the file.
-* **Text**: Text files store data as human-readable characters. 
-* **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
-* **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
+The `isValid` property indicates the validation status of a widget, providing information on whether the widget's current value is considered valid or not.
 
-:::info
-* Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
-* When using the data in a query, it is uploaded in the selected format, despite appearing in the blob URL format when you log the data.
-:::
-
-To access the uploaded file's data, you can use the following code in a query or JS code. 
+Example:
 
 ```js
-{{ FilePicker1.files[0].data }}
+{{FilePicker1.isValid}}
+```
 
-//here [0] represents index of the file.
+</dd>
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's Disabled setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+Example:
+
+```js
+{{FilePicker1.isDisabled}}
+```
+
+</dd>
+
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+Example:
+
+```js
+{{FilePicker1.isVisible}}
+```
+
+</dd>
+
+#### isDirty `boolean`
+
+<dd>
+
+Indicates whether the FilePicker has been used by the end user during their session. It is true if the user has interacted with the FilePicker at least once during their session, and false if they haven't used it yet.
+
+Example:
+
+```js
+{{FilePicker1.isDirty}}
 ```
 
 
+</dd>
 
 
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+```js
+return FilePicker1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+FilePicker1.setVisibility(true)
+```
+
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+FilePicker1.setDisabled(false)
+```
+
+
+</dd>
 
 ## Send file data with API requests
 
@@ -269,63 +350,3 @@ Currently, only CSV data is supported; XLS or other formats aren't supported.
 :::
 
 
-
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
-
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
-
-
-#### setVisibility `boolean`
-
-<dd>
-
-Sets the visibility of the widget.
-
-*Example*:
-
-```js
-FilePicker1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-FilePicker1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
-
-</dd>
-
-
-#### setDisabled `boolean`
-
-<dd>
-
-Sets the disabled state of the widget.
-
-*Example*:
-
-```js
-FilePicker1.setDisabled(false)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-FilePicker1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
-</dd>
-
-## Further reading
-
-
-* [Document Viewer](/reference/widgets/document-viewer)
-* [Form](/reference/widgets/form)
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database)
