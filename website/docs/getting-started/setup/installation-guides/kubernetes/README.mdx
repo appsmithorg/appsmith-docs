@@ -12,10 +12,20 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 <VideoEmbed host="youtube" videoId="wZzYL1uZwds" title="How To Deploy Appsmith On Kubernetes" caption="How To Deploy Appsmith On Kubernetes" />
 
 ### Prerequisites
-1. Ensure that you have at least 15 GB of free storage space and 4 GB of RAM.
-2. [Helm Package Manager](https://helm.sh/docs/intro/install/) to install and manage applications on Kubernetes clusters.
-3. [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) to manage resources on Kubernetes clusters.
-4. Follow the steps below to install Appsmith on your Kubernetes cluster:
+Before you begin, make sure that you have:
+
+* At least 15 GB of free storage space and 4 GB of RAM.
+* Helm Package Manager to install and manage applications on Kubernetes clusters. If you don't have it, copy and run the below command for your operation system to install the Helm package manager:
+  - MacOS - `brew install helm`.
+  - Debian/Ubuntu-based systems - `sudo apt install -y helm`.
+  - Red Hat/Fedora-based systems - `sudo dnf install -y helm`.
+  - Windows - `choco install kubernetes-helm`.
+* kubectl to manage resources on Kubernetes clusters. If you don't have it, copy and run the below command for your operation system to install kubectl:
+  - MacOS - `brew install kubectl`.
+  - Debian/Ubuntu-based systems - `sudo apt install -y kubectl`.
+  - Red Hat/Fedora-based systems - `sudo dnf install -y kubectl`.
+  - Windows - `choco install kubernetes-cli`.
+* Set up Kubernetes cluster:
 
 <Tabs groupId="configurations" queryString="current-configuration">
  <TabItem label="AWS EKS" value="AWSEKS">
