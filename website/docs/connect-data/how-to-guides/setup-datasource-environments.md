@@ -1,7 +1,7 @@
  # Setup Multiple Datasource Environments
 
 :::info
-The Datasource environments feature is in beta testing. If you'd like to explore this feature, please get in [touch with us](https://discord.com/invite/rBTTVJp). 
+The Datasource environments feature is only available on [Business Edition](https://www.appsmith.com/pricing). This feature is still in Beta. If you have questions and would like to test this feature and share feedback, please contact the support team using the chat widget at the bottom right of this page. 
 :::
 
 
