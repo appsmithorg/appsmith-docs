@@ -1,9 +1,146 @@
+---
+description: This page provides information on using the Filepicker widget, which simplifies file uploading and selection for seamless user experiences.
+---
 # Filepicker
 
-This document explains how to use a datapicker widget to capture date and time input from users.
+This page provides information on using the Filepicker widget, which allows users to select and upload multiple files.
+
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 
-##  Upload files
+### Basic
+
+
+#### Allowed File Types	`array<string>`
+
+<dd>
+
+Allows you to control the types of files users can upload with the Filepicker widget. It accepts an array of wildcards, exact mime types, or specific file extensions, such as `.jpg`, `.jpeg`, `.png`, and `.gif`. 
+
+_Supported file types_ :
+
+* Images, 
+* Videos, 
+* Audio, 
+* Text, 
+* MS Word, 
+* JPEG, and 
+* PNG
+
+
+
+When JS is enabled, you can provide the data as an array of strings, specifying accepted file types, like:
+
+_Example_:
+
+```js
+[
+  "audio/*",
+  "text/*",
+  "video/*"
+]
+```
+
+</dd>
+
+#### Data Format `string`
+
+<dd>
+
+This property allows you to choose the data format of the uploaded files. Appsmith supports various file types and data formats, including:
+
+_Options_:
+
+* **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method.
+* **Text**: Text files store data as human-readable characters. 
+* **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
+* **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
+
+
+</dd>
+
+#### Maximum No. of files	`number`
+
+<dd>
+
+Sets the maximum number of files that a user can upload.
+
+</dd>
+
+#### Maximum No. of files	`number`
+
+<dd>
+
+Sets the maximum number of files that a user can upload.
+
+</dd>
+
+### Label
+
+#### Text `string`
+
+<dd>
+
+Sets the text on the widget.
+
+</dd>
+
+### Validation
+
+#### Required `boolean`
+
+
+<dd>
+
+Enabling this property makes the Filepicker widget mandatory, requiring users to select a file. I When the widget is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled untila a file is selected.
+
+</dd>
+
+### General
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+### Events
+
+
+---
 
 To upload a file or multiple files, you can drag and drop them onto the Filepicker widget or select files from your local machine. Appsmith supports various file types and data formats, including:
 
