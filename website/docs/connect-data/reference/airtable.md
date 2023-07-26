@@ -34,6 +34,8 @@ Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtab
 
 ## Create queries
 
+The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Airtable queries.
+
 <figure>
   <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
   <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
