@@ -1,31 +1,36 @@
 ---
 sidebar_position: 1
+description: Connect Appsmith to an Airtable base and create queries.
 ---
 
 # Airtable
 
-This page describes how to connect your application to your Airtable bases and use queries to manage their content.
+This page provides information for connecting your application to your Airtable base and for using queries to manage its content.
 
-<VideoEmbed host="youtube" videoId="cmr2-SsBR3w" title="Build CRUD apps with Appsmith and Airtable" caption="Build CRUD apps with Appsmith and Airtable"/>
+## Connection parameters
 
-## Connect to Airtable
+The following section is a reference guide that provides a complete description of all the parameters to connect to an Airtable base.
 
 <figure>
   <img src="/img/airtable-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Airtable datasource." />
   <figcaption align="center"><i>Configuring an Airtable datasource.</i></figcaption>
 </figure>
 
-To add an Airtable datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Airtable** button. Your datasource is created and you are taken to a screen to configure its settings.
+<dl>
+  <dt><b>Authentication type</b></dt>
+  <dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
+  <dd>
 
-### Authentication type
+Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Personal access token** authentication if possible. If you must use an existing API Key, select the **API Key** authentication type and provide the key in the API Key field. Otherwise, you'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration.
 
-:::info
-Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Bearer Token** authentication using Airtable's Personal Access Tokens. If you must use an API Key, simply select the **API Key** authentication type and provide the key in the API Key field.
-:::
-
-You'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration. Appsmith automatically handles sending your token in your request headers.
-
-Once you're finished, click **Save** to save your datasource.
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>API key:</b> Connects to Airtable using the provided existing Airtable API Key.</li>
+     <li><b>Personal access token:</b> Connects to Airtable using the provided Airtable Personal Access Token.</li>
+    </ul>
+  </dd>  
+</dl>
 
 ## Create queries
 
@@ -34,14 +39,11 @@ Once you're finished, click **Save** to save your datasource.
   <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
 </figure>
 
-You can write [queries](/connect-data/reference/query-settings) to fetch or write data to Airtable by selecting the **+ New Query**  button on the Airtable datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Airtable datasource. You'll be brought to a new query screen where you can write queries.
-
-<a name="base-id"></a>
-
 :::caution info
 [The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
 :::
 
+#### Find your Base ID
 
 In your queries, you'll need to specify the **Base ID** and **Table Name** to access your data.
 
@@ -53,372 +55,240 @@ https://airtable.com/appZueQaLuTv7fSXjJx/tblPhSJD7fdIKLY3j1/viwqRLKs978DFI6Q?blo
 // The Base ID for this URL is: appZueQaLuTv7fSXjJx
 ```
 
-## List records
+### List records
 
-Use the **List Records** command to fetch data from your Airtable base. You can use the query configuration settings to filter, sort, and format the data that's returned to your app.
-
-Record data is returned according to the format:
-
-```json
-{
-  "records": [
-    {
-      "id": "rec2BjrZNxNjhJ9dO",
-      "createdTime": "2023-03-13T15:11:26.000Z",
-      "fields": {
-        "name": "Bob Jones",
-        "employee_id": 1001,
-        // ...
-      }
-    },
-    // further records...
-  ],
-  "offset": "itr534r2Ro2QnjK3x/rec2BjrZNxNjhJ9dO"
-}
-```
-
-When binding your data to a [Table](/reference/widgets/table) or [List widget](/reference/widgets/list), it's helpful to use a `map()` function:
-
-```javascript
-// binding response data to a Table widget
-{{
-  AirtableQuery.data.records.map(row => {
-    return {
-      "Name": row.fields.name,
-      "Employee ID": row.fields.employee_id
-    }
-  })
-}}
-```
-
-| **Parameter**         | **Description**                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Base ID**           | A string that uniquely identifies your Airtable base. Find this in your base's URL [prefixed by `app`](#base-id).    |
-| **Table Name**        | Name of the table to query from your base.                                         |
-| **Fields**            | Specifies which columns to return, omits the rest. `fields%5B%5D=<COLUMN_NAME>`    |
-| **Filter by Formula** | Returns only the records where this Airtable formula is `true`.                    |
-| **Max Records**       | Sets a limit for how many records are allowed to be selected in this query.        |
-| **Page Size**         | Sets a limit for how many records can be returned at a time; others are sent in subsequent requests. |
-| **Sort**              | Specifies which column to sort by. `sort%5B0%5D%5Bfield%5D=<COLUMN_NAME>`          |
-| **Cell Format**       | Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.  |
-| **Time Zone**         | Sets the time zone to use for displaying date values, expects value like `'America/Chicago'`. See [all supported time zones](https://support.airtable.com/docs/supported-timezones-for-set-timezone).                              |
-| **User Locale**       | Sets format for displaying dates according to locale, expects value like `'hi'` for Hindi. See [all supported locales](https://support.airtable.com/docs/supported-locale-modifiers-for-set-locale).                          |
-| **Offset**            | Takes an `offset` token from the query's prior response that requests the next page of data. |
-
-### Filter and sort
+This command to fetches data from your Airtable base. You can use the query configuration fields to filter, sort, and format the data that's returned to your app. The following section lists all the fields available for the **List records** command.
 
 :::info
-Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the Filter and Sort examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
+Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the **Fields** and **Sort** parameter examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
 :::
 
-Use the **Filter** setting to request only certain column values from your table records. This is useful for reducing the amount of data you're requesting when you only need a handful of values. To provide a search field, enter the name of the column to sort by prefixed with the string: `fields%5B%5D=`.
+<dl>
+  <dt><b>Base ID</b></dt>
+  <dd>
 
-```javascript
-// Return only "Name" column, chosen with Select widget
-fields%5B%5D={{ ColumnSelect.selectedOptionValue }}
-// evaluates to: fields%5B%5D=name
+A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+
+  </dd>
+
+  <dt><b>Table name</b></dt>
+  <dd>
+
+The name of the table to query from your base.
+  
+  </dd>
+
+  <dt><b>Fields</b></dt>
+  <dd>
+
+Specifies which columns to return, omits the rest. Each column name must be written in this field in the format `fields%5B%5D=<COLUMN_NAME>`, and multiple of these columns should be separated by `&`.
+
+For example, the following returns the columns `name` and `date-of-birth`:
+
 ```
-```javascript
-// Return "Name" and "Employee ID" columns, chosen with MultiSelect widget
-{{
-  `fields%5B%5D=${ColumnsSelect.selectedOptionValues.join('&fields%5B%5D=')}`
-}}
-// evaluates to: fields%5B%5D=name&fields%5B%5D=employee_id
-```
-
-**Filter by formula** performs a check on each record in your base and returns it if the condition is true. Use this to filter your dataset with logical operations. This field expects a formula (such as `employee_id = 1001`) as a string; see [Airtable formulas](https://support.airtable.com/docs/formula-field-reference) for more information.
-
-To have your data sorted in the response, use the **Sort** field. To provide a search field, enter the name of the column to sort by prefixed with the string: `sort%5B0%5D%5Bfield%5D=`.
-
-```javascript
-// Sort by "Employee ID" column, chosen with Select widget
-sort%5B0%5D%5Bfield%5D={{ SortSelect.selectedOptionValue }}
-// evaluates to: sort%5B0%5D%5Bfield%5D=employee_id
-```
-```javascript
-// Sort by "Employee ID" column in descending order
-sort%5B0%5D%5Bfield%5D={{ SortSelect.selectedOptionValue }}&sort%5B0%5D%5Bdirection%5D={{ DirectionSelect.selectedOptionValue }}
-// evaluates to: sort%5B0%5D%5Bfield%5D=employee_id&sort%5B0%5D%5Bdirection%5D=desc
+fields%5B%5D=name&fields%5B%5D=date-of-birth
 ```
 
-### Server side pagination
+  </dd>
 
-To limit the amount of records you receive at once, use **Page Size**; the default setting is 100 records per page.
+  <dt><b>Filter by formula</b></dt>
+  <dd>
 
-When there are further pages of records available, the response to your query includes an `offset` key with a string token. Use this token in your query's **Offset** field in your next request to get the next page of data.
+Returns only the records where this [Airtable formula](https://support.airtable.com/docs/formula-field-reference) is `true`.
+  
+  </dd>
 
-To paginate your Airtable query in a [Table widget](/reference/widgets/table):
+  <dt><b>Max records</b></dt>
+  <dd>
 
-In the **Offset** field, write:
+Sets a limit for how many records are allowed to be selected in this query.
+  
+  </dd>
 
-```javascript
-// query's Offset field
-{{ this.params.offset || 0 }}
+  <dt><b>Page size</b></dt>
+  <dd>
+
+Sets an integer limit for how many records can be returned at a time; further results are sent in subsequent requests. The default value for this field is `100`.
+  
+  </dd>
+
+  <dt><b>Sort</b></dt>
+  <dd>
+
+Specifies which column to sort results by. Each column name must be written in this field in the format `sort%5B0%5D%5Bfield%5D=<COLUMN_NAME>`
+
+For example, the following value sorts the results by `name`:
+
 ```
-
-In your Table widget, enable **Server side pagination**. In the **onPageChange** event below it, enable JS and use this code, substituting the name of your query for `<query_name>`:
-
-```javascript
-// in the Table's onPageChange event
-{{
-  <query_name>.run({ offset: <query_name>.data.offset })
-}}
+sort%5B0%5D%5Bfield%5D=name
 ```
+  
+  </dd>
 
-Now when you click one of the page cycle buttons on your Table widget, the query is run again and uses the `offset` value from its previous execution if it exists. Otherwise, your query returns the first page of data.
+  <dt><b>Cell format</b></dt>
+  <dd>
 
----
+Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.
+  
+  </dd>
 
-#### Example
+  <dt><b>Time zone</b></dt>
+  <dd>
 
-> Fetch all records from a table `Bugs and issues`, 10 records at a time, and put them into a Table widget `IssueTable` with columns for `name`, `opened_date`, and `days_old`.
+Sets the time zone to use for displaying date values, expects value like `'America/Chicago'`. See [all supported time zones](https://support.airtable.com/docs/supported-timezones-for-set-timezone).
+  
+  </dd>
 
-:::info
-This example uses the "Bug Tracker" Airtable base template. [Fork this template](https://www.airtable.com/templates/bug-tracker/expOzMycWirMsUOTL) to follow along.
-:::
+  <dt><b>User locale</b></dt>
+  <dd>
 
-* Create a query called `FetchIssues` based on your Airtable datasource. This query should use the **List Records** command, and be configured with the **Base ID** and table name in their appropriate fields.
+Sets format for displaying dates according to locale, expects value like `'hi'` for Hindi. See [all supported locales](https://support.airtable.com/docs/supported-locale-modifiers-for-set-locale).  
+  
+  </dd>
 
-  This query doesn't require filtering or sorting the data, so **Filter**, **Filter by Formula**, and **Sort** can be left blank.
+  <dt><b>Offset</b></dt>
+  <dd>
 
-* Set the **Page Size** to 10 to limit the number of records you receive at once. To continue setting up pagination for your data, see [pagination](#pagination).
+This field expects an `offset` token from the query's prior response. That token acts as a cursor to tell your base where in its records to begin returning results.
 
-* In the **Table Data** property of your Table widget, bind the result of your query:
+  </dd>
 
-  ```javascript
-  // in the Table Data property of UsersTable
-  {{
-    FetchIssues.data.records.map(record => {
-      return {
-        name: record.fields.Name,
-        opened_date: record.fields["Opened date"],
-        days_old: record.fields["Days old"]
-      }
-    })
-  }}
-  ```
+</dl>
 
-Your table should fill with data when the query is run.
+### Create records
 
+This command creates new entries in your Airtable base. The following section lists all the fields available for the **Create records** command.
 
-## Create a record
+<dl>
+  <dt><b>Base ID</b></dt>
+  <dd>
 
-To add a new record to your Airtable base, use the **Create Records** command.
+A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
 
-After you fill in fields for **Base ID** and **Table Name**, you just need to provide an array of objects to the **Records** field. Each object should have a `fields` key containing an object of columns and data:
+  </dd>
+
+  <dt><b>Table name</b></dt>
+  <dd>
+
+The name of the table to query from your base.
+  
+  </dd>
+
+  <dt><b>Records</b></dt>
+  <dd>
+
+Data for the new records to create. Expects an array of objects, where each object has a `fields` key containing an object of column key/value pairs. For example:
 
 ```javascript
-// query's Records field
 [
   {
     "fields": {
-      "name": "Amal Lee",
-      "date_of_birth": "1989/11/2",
-      "employee_id": 1005
+      "name": {{ UserForm.data.name }},
+      "date_of_birth": {{ UserForm.data.date_of_birth }},
+      "employee_id": {{ UserForm.data.employee_id }}
     }
   },
-  // ...
 ]
 ```
-When records are created successfully, the response includes the data you submitted as well as the ID for each record.
+  
+  </dd>
 
-| **Parameter**         | **Description**                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Base ID**           | A string that uniquely identifies your Airtable base. Find this in your base's URL [prefixed by `app`](#base-id).    |
-| **Table Name**        | Name of the table to query from your base.                                         |
-| **Records**           | Data for the new records to create. Expects an array of objects.                   |
+</dl>
 
----
+### Delete a record
 
-#### Example
+This command deletes one entry in your Airtable base. The following section lists all the fields available for the **Delete a record** command.
 
-> Create a new record in a table `Bugs and issues` with columns for `name`, `opened_date`, and `days_old`.
+<dl>
+  <dt><b>Base ID</b></dt>
+  <dd>
 
-:::info
-This example uses the "Bug Tracker" Airtable base template. [Fork this template](https://www.airtable.com/templates/bug-tracker/expOzMycWirMsUOTL) to follow along.
-:::
+A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
 
-* Create your query called `CreateIssue` based on your Airtable datasource. This query should use the **Create Records** command. Enter the appropriate values for **Base ID** and **Table Name**.
+  </dd>
 
-* To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewIssueForm`. Add **Source Data** to the JSON Form to create input fields:
+  <dt><b>Table name</b></dt>
+  <dd>
 
-```json
-{{
-  {
-    name: "",
-    opened_date: "",
-    days_old: ""
-  }
-}}
-```
+The name of the table to query from your base.
+  
+  </dd>
 
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+  <dt><b>Record ID</b></dt>
+  <dd>
 
-  ```javascript
-  // Submit button's onClick event
-  {{ CreateIssue.run() }}
-  ```
+The string ID of the record to delete.
+  
+  </dd>
 
-* Once these form fields are filled out, you can add their values to your query in the **Records** field like below:
+</dl>
 
-  ```javascript
-  // in the Row Object field of your query
-  {{
-    [
-      {
-        "fields": {
-          "name": NewIssueForm.formData.name,
-          "opened_date": NewIssueForm.formData.opened_date,
-          "days_old": NewIssueForm.formData.days_old
-        }
-      }
-    ]
-  }}
+### Retrieve a record
 
-  ```
+This command fetches one entry from your Airtable base by its string ID. The following section lists all the fields available for the **Retrieve a record** command.
 
-When the Submit button is clicked, your query is executed and the new record is inserted into your Airtable base.
+<dl>
+  <dt><b>Base ID</b></dt>
+  <dd>
 
-## Update a record
+A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
 
-Use the **Update Records** command to modify existing records in your spreadsheet.
+  </dd>
 
-After you fill in fields for **Base ID** and **Table Name**, you just need to provide an array of objects to the **Records** field. Each object should have an `id` key with the `id` of the record you are updating, and a `fields` key containing an object with the record's new data:
+  <dt><b>Table name</b></dt>
+  <dd>
+
+The name of the table to query from your base.
+  
+  </dd>
+
+  <dt><b>Record ID</b></dt>
+  <dd>
+
+The string ID of the record to retrieve.
+  
+  </dd>
+
+</dl>
+
+### Update records
+
+This command updates entries in your Airtable base, selected by their string IDs. The following section lists all the fields available for the **Update records** command.
+
+<dl>
+  <dt><b>Base ID</b></dt>
+  <dd>
+
+A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+
+  </dd>
+
+  <dt><b>Table name</b></dt>
+  <dd>
+
+The name of the table to query from your base.
+  
+  </dd>
+
+  <dt><b>Records</b></dt>
+  <dd>
+
+Data for the records to update. Expects an array of objects, where each object has an `id` key containing the ID of the record to update, and a `fields` key containing an object of column key/value pairs. For example:
 
 ```javascript
-// query's Records field
 [
   {
-    "id": "recdo3NkX7ucvnJTu"
+    "id": {{ UsersTable.selectedRow.id }},
     "fields": {
-      "name": "Amal Lee",
-      "date_of_birth": "1989/11/2",
-      "employee_id": 1005
+      "name": {{ UsersTable.selectedRow.name }},
+      "date_of_birth": {{ UsersTable.selectedRow.date_of_birth }},
+      "employee_id": {{ UsersTable.selectedRow.employee_id }}
     }
   },
-  // ...
 ]
 ```
-When records are updated successfully, the response includes the data you submitted as well as the ID for each record.
+  
+  </dd>
 
-| **Parameter**         | **Description**                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Base ID**           | A string that uniquely identifies your Airtable base. Find this in your base's URL [prefixed by `app`](#base-id).    |
-| **Table Name**        | Name of the table to query from your base.                                         |
-| **Records**           | Data for the records to update. Expects an array of objects.                       |
+</dl>
 
----
-
-#### Example
-
-> Modify a record in a table `Bugs and issues` with columns for `name`, `opened_date`, and `days_old`.
-
-:::info
-This example uses the "Bug Tracker" Airtable base template. [Fork this template](https://www.airtable.com/templates/bug-tracker/expOzMycWirMsUOTL) to follow along.
-:::
-
-* Create your query called `UpdateIssue` based on your Airtable datasource. This query should use the **Update Records** command. Enter the appropriate values for **Base ID** and **Table Name**. Finally, You should have a [Table widget](/reference/widgets/table) `IssueTable` containing your spreadsheet data from a [**List Records**](#list-records) query.
-
-* Create a [JSON Form widget](/reference/widgets/json-form) called `UpdateIssueForm` to use for submitting your updated data. Add **Source Data** to the JSON Form to create input fields. Reference the existing row in the Table widget to have the form fields pre-filled:
-
-```json
-{{
-  {
-    name: IssueTable.selectedRow.name,
-    opened_date: IssueTable.selectedRow.opened_date,
-    days_old: IssueTable.selectedRow.days_old
-  }
-}}
-```
-
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
-
-  ```javascript
-  // Submit button's onClick event
-  {{ UpdateIssue.run() }}
-  ```
-
-* To add your modified row data to your query, reference them in its **Records** field. You must include the record's `id` in your submission to indicate which record to update. If your data came from an Airtable **List Records** operation, this value was returned in the original response.
-
-  ```javascript
-  // in the Row Object field of your query
-  {{
-    [
-      {
-        "id": IssueTable.selectedRow.rowIndex, // include the record's id
-        "fields": {
-          "name": UpdateIssueForm.formData.name,
-          "opened_date": UpdateIssueForm.formData.opened_date,
-          "days_old": UpdateIssueForm.formData.days_old
-        }
-      }
-    ]
-  }}
-  ```
-
-When the Submit button is clicked, your query is executed and the record is updated in your database.
-
-## Delete a record
-
-Use the **Delete A Record** command to delete existing records in your spreadsheet.
-
-After you fill in fields for **Base ID** and **Table Name**, you just need to provide a record's `id` in the **Record ID** field. Each object should have an `id` key with the `id` of the record you are updating, and a `fields` key containing an object with the record's new data:
-
-```javascript
-// in the Record field
-recdo2NkX3ucpnOLb
-```
-
-When record is deleted successfully, the response includes the `id` of the deleted record.
-
-| **Parameter**         | **Description**                                                                    |
-| --------------------- | ---------------------------------------------------------------------------------- |
-| **Base ID**           | A string that uniquely identifies your Airtable base. Find this in your base's URL [prefixed by `app`](#base-id).    |
-| **Table Name**        | Name of the table to query from your base.                                         |
-| **Record ID**         | Record ID of the record to delete.                                                 |
-
----
-
-#### Example
-
-> Delete a record from a table `Bugs and issues`.
-
-:::info
-This example uses the "Bug Tracker" Airtable base template. [Fork this template](https://www.airtable.com/templates/bug-tracker/expOzMycWirMsUOTL) to follow along.
-:::
-
-* Create your query called `DeleteIssue` based on your Airtable datasource. This query should use the **Delete A Record** command. Enter the appropriate values for **Base ID** and **Table Name**. Finally, You should have a [Table widget](/reference/widgets/table) `IssueTable` containing your spreadsheet data from a [**List Records**](#list-records) query.
-
-* Create a [Button widget](/reference/widgets/button) on the canvas and update its **Label** to "Delete." Set its **onClick** event to execute your `DeleteIssue` query:
-
-  ```javascript
-  // in the Delete button's onClick event
-  {{ DeleteIssue.run() }}
-  ```
-
-* To delete a record, you need only provide the `id` of the record to delete. In your `DeleteIssue` query's **Record ID** field, bind the value of the selected row of the `IssueTable`:
-
-  ```javascript
-  // DeleteUser query's Row Index field
-  {{ IssueTable.selectedRow.id }}
-  ```
-
-Now when the button is clicked, the query is run and the corresponding row is deleted from your Airtable base.
-
-## Commands
-
-**Command** sets the type of action you want to perform with your query.
-
-| **Command**           | **Description**                                                                    |
-| ----------------------  | ---------------------------------------------------------------------------------- |
-| **List Records**        | Fetch records from a base table.                                                   |
-| **Create Records**      | Add new records to a base table.                                                   |
-| **Delete A Record**     | Delete a record from a base table by its Record ID.                                |
-| **Retrieve A Record**   | Fetch a single record by its Record ID.                                            |
-| **Update Records**      | Update existing records in a base table, referenced by their Record ID.            |
-
-## Further reading
-
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)

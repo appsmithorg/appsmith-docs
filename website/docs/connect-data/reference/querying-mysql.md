@@ -4,7 +4,7 @@ description: Connect Appsmith to a MySQL database and create queries.
 ---
 # MySQL
 
-This page provides information for connecting your application to your MySQL database and using queries to manage its content.
+This page provides information for connecting your application to your MySQL database and for using queries to manage its content.
 
 Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
 
