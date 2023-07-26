@@ -16,7 +16,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to control the types of files users can upload with the Filepicker widget. It accepts an array of wildcards, exact mime types, or specific file extensions, such as `.jpg`, `.jpeg`, `.png`, and `.gif`. 
+Allows you to control the types of files users can upload with the Filepicker widget. It accepts an array of wildcards, MIME types, or specific file extensions, such as `.jpg`, `.jpeg`, `.png`, and `.gif`. 
 
 _Supported file types_ :
 
@@ -69,7 +69,7 @@ _Options_:
 
 <dd>
 
-Sets the maximum number of files that a user can upload.
+Sets the maximum number of files that a user can select.
 
 </dd>
 
@@ -245,7 +245,7 @@ Example:
 
 <dd>
 
-Indicates whether the FilePicker has been used by the end user during their session. It is true if the user has interacted with the FilePicker at least once during their session, and false if they haven't used it yet.
+Indicates whether the FilePicker has been used by the end user during the session. It is `true` if the user has interacted with the FilePicker at least once during their session, and `false` if they haven't used it yet.
 
 Example:
 
@@ -270,7 +270,7 @@ return FilePicker1.setVisibility(true).then(() => {
 })
 ```
 
-#### setVisibility `boolean`
+#### setVisibility(`boolean`)
 
 <dd>
 
@@ -286,7 +286,7 @@ FilePicker1.setVisibility(true)
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled(`boolean`)
 
 <dd>
 
