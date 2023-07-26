@@ -163,3 +163,5 @@ exceptions:
   - triggeredItemView
   - onPageSizeChange
   - setSelectedOptions
+  - selectedOptionValues
+  - selectedOptionLabels

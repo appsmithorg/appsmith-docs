@@ -53,7 +53,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 
 <dd>
 
-Sets the initial options that are automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects another option from the list. Multiple values can be provided as CSV or an array of strings for a Multiselect dropdown. For example, if you want the default option to be `Blue` and `Red`, set the **Default Selected Value** property to:
+Sets the initial options that are automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects another option from the list. Multiple values can be provided in a CSV format or an array of strings for a Multiselect dropdown. For example, if you want the default option to be `Blue` and `Red`, set the **Default Selected Value** property to:
 
 ```js
 [
@@ -92,7 +92,7 @@ Sets the placement of the **Label** in the widget.
 
 <dd>
 
-Sets the label alignment of the widget when the position selected is **left**.
+Sets the label alignment of the widget when the position selected is **Left**.
 
 </dd>
 
@@ -100,7 +100,7 @@ Sets the label alignment of the widget when the position selected is **left**.
 
 <dd>
 
-Sets the width of the label in the widget when the **left** position is selected.
+Sets the width of the label in the widget when the **Left** position is selected.
 
 </dd>
 
@@ -126,7 +126,7 @@ Enables server-side filtering via a query request. Use this property when the Mu
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text. 
+This event allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when you update the filter text. You can also write custom JavaScript logic for this event by clicking on the **JS** next to the property.
 
 </dd>
 
@@ -207,7 +207,9 @@ Controls the visibility of **Select all** option in the dropdown. When enabled, 
 
 <dd>
 
-This property determines how the widget's height adjusts to changes in its content. There are three available options:
+This property determines how the widget's height adjusts to changes in its content. 
+
+*Options*:
 
 - **Fixed:** The height of the widget remains as set using drag and resize.
 - **Auto Height:** The widget's height adjusts dynamically in response to changes in its content.
@@ -268,7 +270,7 @@ Allows you to control the size of the label text. Additionally, you can programm
 
 <dd>
 
-Allows you to choose a font style; bold or italic. you can programmatically modify the font style using JavaScript functions.
+Allows you to choose a font style; bold or italic. You can click on the **JS** button to programmatically modify the font style using JavaScript functions.
 
 </dd>
 
@@ -278,7 +280,7 @@ Allows you to choose a font style; bold or italic. you can programmatically modi
 
 <dd>
 
-Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius)](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+Applies rounded corners to the outer edge of the widget. To control the border radius programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
 
 </dd>
 
@@ -287,7 +289,7 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 <dd>
 
-This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+This property adds a drop shadow effect to the frame of the widget. To control the box shadow programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) value to customize the appearance of the shadow.
 
 </dd>
 
@@ -299,7 +301,7 @@ Reference properties enable you to access the widget's data and state using the 
 
 <dd>
 
-Returns the text entered in the search filter for Server side filtering.
+Returns the text entered in the search filter of the Multiselect widget. For more information, see Server side filtering.
 
 *Example:*
 
@@ -364,7 +366,7 @@ Returns an array of objects that contain the label and value of the options in t
 
 </dd>
 
-#### selectedOptionValue `string`
+#### selectedOptionValues `string`
 
 <dd>
 
@@ -378,7 +380,7 @@ Returns the value of the option displayed in the Multiselect widget. It changes 
 
 </dd>
 
-#### selectedOptionLabel `string`
+#### selectedOptionLabels `string`
 
 <dd>
 
@@ -397,11 +399,11 @@ Returns the label of the option displayed in the Multiselect widget. It changes 
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 
-#### setDisabled (`:boolean`)
+#### setDisabled (args:boolean)
 
 <dd>
 
@@ -413,17 +415,9 @@ Sets the `disabled` state of the widget.
 multiSelect1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-multiSelect1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
-#### setRequired (`:boolean`)
+#### setRequired (args:boolean)
 
 <dd>
 
@@ -435,20 +429,12 @@ Sets whether the widget is required or not.
 multiSelect1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-multiSelect1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
-
 </dd>
 
 
 
 
-#### setSelectedOptions (`:object`)
+#### setSelectedOptions (args:object)
 
 <dd>
 
