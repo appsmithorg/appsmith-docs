@@ -143,23 +143,3 @@ VALUES
 
 
 
----
-
-
-
-
-
-
-
-
-Additionally, if you want to restrict the **Editable** property of certain cells based on a specific condition, you can use the JS within the column settings. For instance, you can allow editing for a row only if the `status` column contains the value `pending`.
-
-```js
-{{ currentRow.status === "pending" }}
-```
-Inline editing does not save changes automatically to the original datasource. To save changes, the table's **Update mode** must be set and **onSave** event must be configured to execute queries that update the datasource.
-
-
-
-
-
