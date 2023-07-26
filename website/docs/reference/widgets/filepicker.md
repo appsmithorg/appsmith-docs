@@ -12,7 +12,6 @@ These properties are customizable options present in the property pane of the wi
 
 ### Basic
 
-
 #### Allowed File Types	`array<string>`
 
 <dd>
@@ -58,14 +57,6 @@ _Options_:
 * **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
 * **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
 
-
-</dd>
-
-#### Maximum No. of files	`number`
-
-<dd>
-
-Sets the maximum number of files that a user can upload.
 
 </dd>
 
