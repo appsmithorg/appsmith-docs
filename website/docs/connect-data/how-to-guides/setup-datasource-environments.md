@@ -1,4 +1,4 @@
- # Setup Datasource Environments 
+ # Setup Multiple Datasource Environments
 
 :::info
 The Datasource environments feature is in beta testing. If you'd like to explore this feature, please get in [touch with us](https://discord.com/invite/rBTTVJp). 
