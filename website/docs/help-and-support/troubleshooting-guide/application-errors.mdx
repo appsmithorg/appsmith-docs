@@ -2,6 +2,9 @@
 sidebar_position: 4
 description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Application Errors
 
 ## Invalid / empty name error
@@ -86,6 +89,25 @@ The error indicates that the email provided to reset the password isn't register
 
 #### Solution
 You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
+
+### Unable to log in with SSO
+
+If you configure Single Sign-On (SSO) before setting up a custom domain, you may encounter issues when trying to log in. In such cases, you may be redirected to the URL `https://user/login?error=true`.
+
+#### Error Message
+
+If you check the [container logs](/getting-started/setup/instance-management/how-to-get-container-logs), you would see an error as shown below:
+
+```bash
+In the login failure handler. Cause: [invalid_client] AA**********: The reply address 'http://<IP>/login/oauth2/code/oidc' does not match the reply address 'https://<APPSMITH_CUSTOM_DOMAIN>/login/oauth2/code/oidc' provided when requesting Authorization code.
+```
+#### Cause
+
+This error means that you have configured SSO before configuring the custom domain.
+
+#### Solution 
+
+To resolve the issue, go to **Admin Settings > Authentication > OIDC/SAML**, disconnect the configured SSO method and set up a new SSO configuration. 
 
 ## Page access error
 

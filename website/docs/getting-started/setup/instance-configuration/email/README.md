@@ -1,82 +1,118 @@
 ---
 description: >-
-  Configure an email provider of your choice to send and receive email
-  notifications in Appsmith
+ Configure an email provider of your choice to send and receive email
+ notifications in Appsmith
 sidebar_position: 2
 ---
 
 # Email
 
-[Email](https://en.wikipedia.org/wiki/Email) is a widely used service to communicate with your users. You can set up email integration on your Appsmith instance to:
+This page guides you through configuring an email service provider on your self-hosted instance. By configuring email, you can leverage the below capabilities:
 
-* Invite users to your Appsmith workspace
-* Notify admins of important events & approval requests
-* Handle user management emails such as invites and password resets
+* Invite users to join your Appsmith workspace by sending email invitations.
+* Reset password using password reset emails.
 
-:::note
-[Password resets](/help-and-support/troubleshooting-guide/application-errors#reset-password-error) for user accounts are handled by emails from the Appsmith instance. If you would like users to be able to perform this action, ensure that your instance has been configured to handle email notifications. 
+<VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="Configure Email Service Provider." caption="Configure Email Service Provider" /> 
+
+## Prerequisites
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+* Account with your email provider.
+
+## Configure email
+ On Appsmith, you can configure email by using one of the following ways:
+
+* [Admin settings](#admin-settings)
+* [Environment Variables](#environment-variables)
+
+### Admin settings
+
+:::caution Attention
+If you have configured email using [environment variables](#environment-variables) for your instance, it takes precedence over the configuration provided through the Admin Settings UI.
 :::
 
-Appsmith allows you to configure email using environment variables or the [admin settings](/getting-started/setup/instance-configuration).
+Follow these steps to configure your email provider using Admin Settings:
 
-<VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="" caption="" /> 
+1. Log into your Appsmith instance as a superuser.
 
-## Environment variables
+2. Go to the **Admin Settings** screen.
 
-Appsmith requires the following environment variables to be configured:
+3. Select **Email** from the left nav bar.
 
-| Variable                               | Description                                                                                                                                                                                             |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **APPSMITH\_MAIL\_ENABLED**            | Set it to true to enable the email service.                                                                                                                                                             |
-| **APPSMITH\_MAIL\_FROM**               | Set it to the verified email of the sender.                                                                                                                                                             |
-| **APPSMITH\_REPLY\_TO**                | Set it to the email that should receive replies by default.                                                                                                                                             |
-| **APPSMITH\_MAIL\_HOST**               | Set it to the **SMTP Host** of the email service provider.                                                                                                                                              |
-| **APPSMITH\_MAIL\_PORT**               | Set it to the **SMTP Port** available for the email service provider.                                                                                                                                   |
-| **APPSMITH\_MAIL\_SMTP\_TLS\_ENABLED** | Enables transport layer security if set to **true.**                                                                                                                                                    |
-| **APPSMITH\_MAIL\_SMTP\_AUTH**         | Set it to **true** to share the credentials (<mark >`APPSMITH_MAIL_USERNAME`</mark> **** and **** <mark>`APPSMITH_MAIL_PASSWORD`</mark>**)** with the SMTP server. |
-| **APPSMITH\_MAIL\_USERNAME**           | Set it to the username for accessing the SMTP service provider.                                                                                                                                         |
-| **APPSMITH\_MAIL\_PASSWORD**           | Set it to the password for the SMTP user. You can also set it to the API key generated by the email service provider for the SMTP user.                                                                 |
+<figure>
+<img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
+<figcaption align="center"><i>Configure your email service provider</i></figcaption>
+</figure>
 
-:::note
-Be sure to double-check your configuration if you find that you're able to send test mail but not invites or password resets.
-:::
+4. Add the configuration details for your email provider as below: 
 
-[Restart the Appsmith instance](../) once the environment variables are configured.
+    <dl>
+    <dt><b>SMTP host</b></dt>
+    <dd> Add the SMTP host of your email service provider. </dd> <br/>
+    <dt><b>SMTP port</b></dt>
+    <dd> Add the SMTP port of your email service provider. </dd><br/>
+    <dt><b>From address</b></dt>
+    <dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.
+    </dd> <br/>
+    <dt><b>Reply-to address</b></dt>
+    <dd>Add a verified email address, so users can contact you.</dd> <br/>
+    <dt><b>Enable TLS protected connection</b></dt>
+    <dd>This option is turned off by default. Toggle it to enable the transport layer security protocol.</dd> <br/>
+    <dt><b>SMTP username</b></dt>
+    <dd>Add the username for your email service provider. This is only needed when TLS is turned on.</dd> <br/>
+    <dt><b>SMTP password</b></dt>
+    <dd> Add the password for your email service provider. This is only needed when TLS is turned on.</dd> 
+    </dl>
 
-## Admin settings
+5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
 
-:::info
-If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
-:::
+6. Click the **SAVE & RESTART** button to save the configurations and restart the instance with the updated settings.
 
-You can configure the email for your self-hosted instance using the [Admin Settings](/getting-started/setup/instance-configuration) page. Follow the below steps:
+### Environment variables
 
-* Navigate to **profile** >> **Admin Settings** >> Select **Email.**
+Follow these steps to configure your email provider using environment variables:
 
-![Add Configuration Details](</img/Instance_Configuration__Email__Configure_using_Admin_Settings.png>)
+1. Go to your Appsmith instance configuration file. For example, the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
 
-*   Add configuration details provided by your email service provider.
+2. Update the values of the environment variables as shown below:
 
-    * **SMTP Host** - SMTP host of your email service provider
-    * **SMTP Port** - SMTP port of your email service provider
-    * **From Address** - a verified email address to be shown in the <mark >`from field`</mark> when users receive an email
-    * **TLS Protected Connection** - Bey default is enabled. Toggle back to disable
-    * **SMTP Username** - Add the username for your email service provider
-    * **SMTP Password** - Add the password for your email service provider
+    <dl>
+    <dt><b>APPSMITH_MAIL_ENABLED</b></dt>
+    <dd>Set it to <code> true </code> to enable the email service.</dd> <br/>
+    <dt><b>APPSMITH_MAIL_FROM</b></dt>
+    <dd>Set it to the verified email of the sender.
+    </dd><br/>
+    <dt><b>APPSMITH_REPLY_TO</b></dt>
+    <dd>Set it to the email that should receive replies by default.</dd><br/>
+    <dt><b>APPSMITH_MAIL_HOST</b></dt>
+    <dd>Set it to the SMTP Host of the email service provider.</dd><br/>
+    <dt><b>APPSMITH_MAIL_PORT</b></dt>
+    <dd>Set it to the SMTP port of the email service provider. </dd><br/>
+    <dt><b>APPSMITH_MAIL_SMTP_TLS_ENABLED</b></dt>
+    <dd>
+        Set it to <code>true</code> to enable transport layer security.
+    </dd><br/>
+    <dt><b>APPSMITH_MAIL_SMTP_AUTH</b></dt>
+    <dd>Set it to <code>true</code> to share the <code>APPSMITH_MAIL_USERNAME</code> and <code>APPSMITH_MAIL_PASSWORD</code> with the SMTP server.</dd><br/>
+    <dt><b>APPSMITH_MAIL_USERNAME</b></dt>
+    <dd> Set it to the username for accessing the SMTP service provider. This is only needed when the transport layer security protocol is turned on. </dd><br/>
+    <dt><b>APPSMITH_MAIL_PASSWORD</b></dt>
+    <dd>Set it to the password for the SMTP user. Alternatively, you can use the API key generated by the email service provider for the SMTP user. This is only needed when the transport layer security protocol is turned on. </dd>
+    </dl>
 
+3. Save the changes and restart the Appsmith instance.
 
-* Click the <mark >`SAVE & RESTART`</mark> button to save the configurations and restart the Appsmith instance with the updated settings.
+## Troubleshooting
 
-:::tip
-Once your instance is restarted, you can use the **`SEND TEST EMAIL`** button to send a test email. You should see a message at the top of the page telling you whether the test succeeded or failed. On success, you should also receive a test email in your email inbox.
-:::
+You may encounter some common errors after configuring your email provider:
 
-## Configuration guides
+- [Unable to send emails](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails)
 
-Follow the below guides to configure popular email service providers:
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
+## See also
 
-* [Sendgrid](sendgrid.md)
-* [Amazon-SES](amazon-ses.md)
-* [Gmail](gmail.md)
+To configure email with popular email service providers, see the guides below:
 
+* [Gmail](/getting-started/setup/instance-configuration/email/gmail)
+* [SendGrid](/getting-started/setup/instance-configuration/email/sendgrid)
+* [Amazon SES](/getting-started/setup/instance-configuration/email/amazon-ses)

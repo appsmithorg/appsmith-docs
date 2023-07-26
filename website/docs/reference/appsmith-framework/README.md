@@ -1,13 +1,28 @@
 # Appsmith Framework
 
-The Appsmith framework is designed to make it easy for developers to create dynamic, data-driven applications that respond to user interactions in real-time. It provides a range of utility functions and objects that allow developers to access important information, such as the current application URL or the authenticated user, and more. This makes it simple to build applications that are aware of the current context and can respond to changes in real-time.
+The Appsmith framework simplifies the creation of dynamic, data-driven applications that respond to user interactions in real-time. It consists of built-in global objects and framework functions, that enhance the development process and enable seamless user experiences. Global objects like Appsmith object, Console object, and Query object enable users to execute database queries, share data between pages using parameters, gather information about the application's current state, and facilitate code debugging. Framework functions serve as valuable tools for developers to enhance user experience and effectively interact with the application.
 
-One of the key features of the Appsmith framework is its in-built functions such as storing values in local storage. Storing values in local storage can be used to store information such as user preferences, session data, or temporary data that needs to be passed between pages. This allows developers to save and retrieve data that's specific to the current user or session, without having to worry about managing the storage themselves. For more information, see [storeValue](/reference/appsmith-framework/widget-actions/store-value).
+To know more about the objects and functions, refer to the resources below:
 
-It also provides other functions like navigating to a page, displaying messages to users, and many more. For more information, see [Actions](/reference/appsmith-framework/widget-actions).
-
-Additionally, Appsmith offers a variety of built-in global objects, such as the Query Object, Context Object, and Console Object, that empower developers to execute database queries, share data between different pages through the use of parameters, obtain information about the current status of the application, and aid in debugging code respectively. For more information, see:
-
-- [Context Object](/reference/appsmith-framework/context-object)
-- [Console Object](/reference/appsmith-framework/console-object)
-- [Query Object](/reference/appsmith-framework/query-object)
+<div class="containerGrid">
+    <div class="containerBorder">
+        <div class="columnGrid column-one" align="center">
+            <b><a href="/reference/appsmith-framework/context-object">Appsmith Object</a></b><br/>
+        </div>
+    </div>
+    <div class="containerBorder">
+        <div class="columnGrid column-two" align="center">
+            <b><a href="/reference/appsmith-framework/console-object">Console Object</a></b> 
+        </div>  
+    </div>
+    <div class="containerBorder">
+        <div class="columnGrid column-three" align="center">
+            <b><a href="/reference/appsmith-framework/query-object">Query Object</a></b><br/>     
+        </div> 
+    </div>
+        <div class="containerBorder">
+        <div class="columnGrid column-four" align="center">
+            <b><a href="/reference/appsmith-framework/widget-actions">Framework Functions</a></b><br/>     
+        </div>
+    </div>
+</div>

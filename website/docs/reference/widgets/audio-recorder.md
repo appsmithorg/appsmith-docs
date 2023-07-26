@@ -71,3 +71,56 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onRecordingComplete** | Sets an action to be executed when recording ends.  |
 
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the Audio Recorder widget.
+
+*Example*:
+
+```js
+AudioRecorder1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+AudioRecorder1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+AudioRecorder1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+AudioRecorder1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>

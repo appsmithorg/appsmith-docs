@@ -792,6 +792,81 @@ Refers to an array of indices corresponding to the rows that have been updated.
 ```
 </dd>
 
+## Methods
+
+Widget property setters enables you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Table1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Table1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+#### setData `array<object`
+
+<dd>
+
+Sets the data to be displayed in the Table widget.
+
+*Example*:
+
+```js
+Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
+  // code to be executed after data is set
+})
+```
+
+</dd>
+
+
+
+#### setSelectedRowIndex `number`
+
+<dd>
+
+ Sets the selected row index of the table widget.
+
+*Example*:
+
+```js
+Table1.setSelectedRowIndex(2)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Table1.setSelectedRowIndex(2).then(() => {
+  // code to be executed after selected row index is set
+})
+```
+
+</dd>
+
 
 ## Server-side pagination
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination.
@@ -865,6 +940,7 @@ For example, you can use `{{fetch_users_count.data[0].count}}` COUNT query to di
 </Tabs>
 
 
+
 ## Server-side searching
 
 Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
@@ -929,3 +1005,4 @@ For instance, suppose you have a table that receives its data from a query calle
     ```
 
 Now when `sendNewData` succeeds, your table automatically refreshes itself.
+
