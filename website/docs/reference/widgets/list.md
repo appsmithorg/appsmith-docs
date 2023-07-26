@@ -1,7 +1,3 @@
-<VideoEmbed host="youtube" videoId="kSDSGaXhfv0" title="What’s New With The List Widget?" caption="What’s New With The List Widget?"/>
-
-
-
 ---
 description: >-
   List widget reference
