@@ -95,13 +95,6 @@ This validation feature allows you to designate the Input as a mandatory field. 
 
 #### Max Characters	`number`
 
-<dd>
-
-Sets a maximum length allowed for user input. Only appears when **Data Type** is set to a Text type.
-
-</dd>
-
-#### Max Characters	`number`
 
 <dd>
 
