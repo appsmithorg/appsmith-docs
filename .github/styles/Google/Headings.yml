@@ -162,3 +162,5 @@ exceptions:
   - selectedItemView
   - triggeredItemView
   - onPageSizeChange
+  - Max Characters
+  - setValue
