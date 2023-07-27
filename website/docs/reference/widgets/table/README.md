@@ -615,7 +615,7 @@ Contains an array of the index of the rows selected by the user. Not applicable 
 
 </dd>
 
-#### filteredTableData `array`
+#### filteredTableData `array<object>`
 
 <dd>
 
