@@ -102,7 +102,7 @@ Sets a maximum length allowed for user input. Only appears when **Data Type** is
 
 </dd>
 
-#### Regex `regExp`
+#### Regex `string`
 
 <dd>
 
