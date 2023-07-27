@@ -26,8 +26,8 @@ Inline editing is supported for **Text**, **Number**, **Date**, **Switch**, **Se
 
 ## Update single row
 
+To update a single row, follow these steps:
 
-To update a single row, 
 
 1). Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons for executing **onSave** and **onDiscard** events when clicked.
 
