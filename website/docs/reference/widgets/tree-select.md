@@ -277,7 +277,7 @@ Enables you to select a font style for the widget, such as bold or italic. You c
 
 <dd>
 
-Applies rounded corners to the outer edge of the widget. To control the border radius programmatically, click the JS button to enable JavaScript and specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+Applies rounded corners to the outer edge of the widget. To control the border radius programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
 
 </dd>
 
@@ -385,7 +385,7 @@ The `isValid` property indicates the validation status of a widget, providing in
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setDisabled (args:boolean)
@@ -415,40 +415,5 @@ TreeSelect1.setRequired(true)
 ```
 
 </dd>
-
-
-## Access selected option
-
-If you want to retrieve the selected value from a TreeSelect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
-
-
-* **selectedOptionValue**: This property returns the value of the selected option in the TreeSelect widget. 
-
-* **selectedOptionLabel**: This property returns the label of the selected option in the TreeSelect widget.
-
-Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the TreeSelect widget.
-
----
-**Example**: suppose you want to filter the table data based on the user-selected product name or type from a TreeSelect widget.
-
-1. Create a new query called `filterproducts` and add a SQL statement to select all the data from the products table where the type/name column matches the selected options from a Treeselect widget.
-
-```sql
-SELECT * FROM product
-WHERE type = {{TreeSelect.selectedOptionValue}} OR name = {{TreeSelect.selectedOptionValue}};
-```
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{filterproducts.data}}
-```
-
-3. Set the `onOptionChange` event of the TreeSelect widget to run the `filterproducts` query. This updates the displayed data in real time as the user selects or deselects options.
-
-<figure>
-  <img src="/img/tree-access.gif" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
-  <figcaption align = "center"><i>Access selected option</i></figcaption>
-</figure>
 
 
