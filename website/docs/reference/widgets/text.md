@@ -246,7 +246,7 @@ Text1.setRequired(true)
 
 </dd>
 
-#### setText(param: string`)
+#### setText(param: string)
 
 <dd>
 
@@ -266,7 +266,7 @@ Text1.setText('Hello, world!')
 
 
 
-#### setTextColor(param: string`)
+#### setTextColor(param: string)
 
 <dd>
 
