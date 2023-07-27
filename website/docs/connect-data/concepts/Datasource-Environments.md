@@ -1,6 +1,6 @@
 # Datasource Environments
 
-:::info
+:::caution
 The Datasource environments feature is only available on [Business Edition](https://www.appsmith.com/pricing). This feature is still in Beta. If you have questions and would like to test this feature and share feedback, please contact the support team using the chat widget at the bottom right of this page. 
 :::
 
@@ -38,7 +38,7 @@ Some core benefits of using datasource environments include:
 * **Flexible Testing:** Having separate staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
 
 
-:::note
+:::info
 When using datasource environments in Appsmith, only predefined staging and production environments are supported, and custom or user-defined environments are currently unavailable.
 :::
 

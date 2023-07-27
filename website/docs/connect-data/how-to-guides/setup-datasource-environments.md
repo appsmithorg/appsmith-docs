@@ -1,11 +1,11 @@
  # Setup Multiple Datasource Environments
 
-:::info
+:::caution
 The Datasource environments feature is only available on [Business Edition](https://www.appsmith.com/pricing). This feature is still in Beta. If you have questions and would like to test this feature and share feedback, please contact the support team using the chat widget at the bottom right of this page. 
 :::
 
 
-This page shows how to set up and manage [multiple datasource environments](/connect-data/concepts/Datasource-Environments) for your application.
+This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 
 ## Configure an environment
 
