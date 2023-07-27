@@ -14,131 +14,140 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
 ## Prerequisites
 Before you proceed, make sure you have:
 
-1. A self-hosted Kubernetes Business Edition Appsmith installation. See the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
+1. A self-hosted Kubernetes Business Edition Appsmith installation. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
 2. A running Kubernetes cluster with more than one node to achieve high availability. 
 3. At least 2 GB of free storage space for backup and update tasks.
 4. Created a backup of the Appsmith instance before a manual update. See the [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
-5. Installed a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods. If not, install the `metrics-server` with:
-
+5. Installed a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods. If you haven't installed it, use the below command:
   ```bash
   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
   ```
+6. Configured your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC). Make sure that you have:
 
-6. Configure your Kubernetes cluster by creating Amazon Elastic File System (EFS) and setting up the Persistent Volume Claim (PVC). If not, follow the below steps:
+    a. Created an IAM role to interact with the Amazon Elastic File System (EFS). If not, see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
+          
+    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. Installed the Amazon EFS CSI driver. If not, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
 
-<Tabs groupId="configurations" queryString="current-configuration">
-  <TabItem label="AWS EKS" value="AWSEKS">
+    c. Created the EFS file system. If not, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
 
-  
-  * Create an IAM role to interact with the Amazon Elastic File System (EFS). See [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources).
-        
-  * Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. Install the Amazon EFS CSI driver. See [Installing the Amazon EFS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-install-driver). 
+    d. Configured the Persistent Volume Claim (PVC) for the Kubernetes cluster. If not configured already, follow these steps:
+      *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the values.yaml file as shown below:
 
-  * Create the EFS file system. See [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
+        ```yaml
+          existingClaim:
+              # highlight-next-line
+              enabled: true
+              name: efsappsmith
+              claimName: efsappsmith
+            efs:
+              enabled: true
+              # highlight-next-line
+              driver: efs.csi.aws.com
+              # highlight-next-line
+              volumeHandle: FILE_SYSTEM_ID
+        ```
+      *  **Create a New Persistent Volume Claim** - If you don't have any existing PVC and want to use a specific PVC solely, create a new PVC and update the values.yaml file as shown below:
 
-  * Create a storage class with:
-
-  ```bash
-  kubectl apply -f - <<EOF
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    apiVersion: storage.k8s.io/v1
-    metadata:
-      name: gp2
-    provisioner: kubernetes.io/aws-ebs
-  ```
-
-</TabItem>
-</Tabs>
+      ```yaml
+          existingClaim:
+            enabled: false
+            name: 
+            claimName: 
+          efs:
+            # highlight-next-line
+            enabled: true
+            driver: efs.csi.aws.com
+            # highlight-next-line
+            volumeHandle: FILE_SYSTEM_ID
+      ```
 
 ## Configure instance
-Follow these steps to configure auto scaling for your instance:
 
-1. If you wish Appsmith to connect to an external PostgreSQL, enable the following parameters in the `applicationConfig` section in the `values.yaml` file as shown below:
-    * Go to the `values.yaml` file, and turn off the settings for internal PostgreSQL, by changing the `enabled` attribute to `false`.
-    
-      ```yaml
-            # enable PostgreSQL
-            postgresql:
-            #highlight-next-line
-                enabled: false
-                auth:
-                  username: root
-      ```
+1. Turn on autoscaling by changing the `enabled` attribute to `true` in the `values.yaml` file for autoscaling attribute.
 
-    * Update the below parameters to point to an external PostgreSQL:
-    
-      ```yaml
-        # configure an external PostgreSQL
-        applicationConfig::
-          APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
-          APPSMITH_KEYCLOAK_DB_USERNAME: "POSTGRES_USER"
-          APPSMITH_KEYCLOAK_DB_PASSWORD: "POSTGRES_PASSWORD"
-          APPSMITH_KEYCLOAK_DB_URL: "POSTGRES_DB_URL"
-      ```
+  ```yaml
+  autoscaling:
+    # highlight-next-line
+    enabled: true
+    minReplicas: 2
+    maxReplicas: 2
+  ```
 
-2. If you wish Appsmith to connect to an external MongoDB, enable the following parameters in the `applicationConfig` section in the `values.yaml` file as shown below:
-    * Go to the `values.yaml` file, and turn off the settings for internal MongoDB, by changing the `enabled` attribute to `false`.
+2. You may choose to configure external PostgreSQL, MongoDB, and Redis instances for your self-hosted instance Follow these steps to configure an external PostgreSQL, MongoDB, and Redis instances:
+  * Turn off the settings for internal PostgreSQL, by changing the `enabled` attribute to `false` in the `values.yaml` file for postgresql attribute.
+  
+    ```yaml
+    # enable PostgreSQL
+    postgresql:
+    #highlight-next-line
+        enabled: false
+        auth:
+          username: root
+    ```
 
-      ```yaml
-        # enable MongoDB
-        mongodb:
+  * Update the below parameters to point to an external PostgreSQL:
+  
+    ```yaml
+    # configure an external PostgreSQL
+    applicationConfig::
+      APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
+      APPSMITH_KEYCLOAK_DB_USERNAME: "POSTGRES_USER"
+      APPSMITH_KEYCLOAK_DB_PASSWORD: "POSTGRES_PASSWORD"
+      APPSMITH_KEYCLOAK_DB_URL: "POSTGRES_DB_URL"
+    ```
+
+* Turn off the settings for internal MongoDB, by changing the `enabled` attribute to `false` in the `values.yaml` file for mongodb attribute.
+
+    ```yaml
+    # enable MongoDB
+    mongodb:
+      #highlight-next-line
+      enabled: false
+      service:
+        nameOverride: appsmith-mongodb
+    ```
+  
+* Update the below parameters to point to an external MongoDB:
+
+    ```yaml
+    # configure an external MongoDB
+      applicationConfig::
+        #highlight-next-line
+        APPSMITH_MONGODB_URI: "MONGODB_URI"
+    ```
+
+* Turn off the settings for internal Redis, by changing the `enabled` attribute to `false` in the `values.yaml` file for redis attribute.
+
+    ```yaml
+      # enable Redis
+      redis:
           #highlight-next-line
+        enabled: false
+        auth:
           enabled: false
-          service:
-            nameOverride: appsmith-mongodb
-      ```
+    ```
+  
+* Update the below parameters to point to an external Redis:
+
+    ```yaml
+    # configure an external Redis
+      applicationConfig::
+        #highlight-next-line
+        APPSMITH_REDIS_URL: "REDIS_URL"
+    ```
     
-    * Update the below parameters to point to an external MongoDB:
-
-      ```yaml
-      # configure an external MongoDB
-        applicationConfig::
-          #highlight-next-line
-          APPSMITH_MONGODB_URI: "MONGODB_URI"
-      ```
-3. If you wish Appsmith to connect to an external Redis, enable the following parameters in the `applicationConfig` section in the `values.yaml` file as shown below:
-    * Go to the `values.yaml` file, and turn off the settings for internal Redis, by changing the `enabled` attribute to `false`.
-
-      ```yaml
-        # enable Redis
-        redis:
-           #highlight-next-line
-          enabled: false
-          auth:
-            enabled: false
-      ```
-    
-    * Update the below parameters to point to an external MongoDB:
-
-      ```yaml
-      # configure an external MongoDB
-        applicationConfig::
-          #highlight-next-line
-          APPSMITH_MONGODB_URI: "MONGODB_URI"
-      ```
-
-4. Go to the `values.yaml` file, and turn on autoscaling by setting the `enabled` attribute to `true`:
-
-   ```yaml
-        autoscaling:
-          # highlight-next-line
-          enabled: true
-          minReplicas: 2
-          maxReplicas: 2
-   ```
-4. Run the below command to update Appsmith with high availability. If the `values.yaml` file is not in the deployment directory, add the location of the file to the `-f` attribute in the below command:
+3. Run the below command to update Appsmith installation with high availability. If the values.yaml file is not in the deployment directory, specify the file location using the `-f` attribute:
 
 ```bash
 helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
 ```
 
-5. Verify the pod status with:
+4. Verify the pod status with:
 
 ```bash
 kubectl get pods -n appsmith-ee
 ```
-The above command displays the status of the pods. Once the process is completed the pod status is shown as _RUNNING_.
+The above command displays the status of the pods. Once the process is completed, the pod status is shown as _RUNNING_.
 
 ## Troubleshooting
 If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 

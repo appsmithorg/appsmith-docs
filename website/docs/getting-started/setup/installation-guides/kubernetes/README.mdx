@@ -19,9 +19,6 @@ Before you begin, make sure that you have:
 3. Installed Helm package manager on your local machine. See the official Helm documentation for your [operation system](https://helm.sh/docs/intro/install/#through-package-managers).
 4. A running Kubernetes cluster. You can setup a Kubernetes cluster using Amazon Elastic Kubernetes Service (EKS) as shown below:
 
-  <Tabs groupId="configurations" queryString="current-configuration">
-  <TabItem label="AWS EKS" value="AWSEKS">
-
     a. Verify if you have access to AWS EKS with:
       
     ```bash
@@ -44,10 +41,17 @@ Before you begin, make sure that you have:
     ```
     The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information. 
 
-    d. Make sure that you have a default storage class running. If not, see the [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html) guide.
+    d. A default storage class running. If not, create a storage class with:
 
-  </TabItem>
-  </Tabs>
+    ```bash
+    kubectl apply -f - <<EOF
+      apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      apiVersion: storage.k8s.io/v1
+      metadata:
+        name: gp2
+      provisioner: kubernetes.io/aws-ebs
+    ```
 
 5. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management), and [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
 
