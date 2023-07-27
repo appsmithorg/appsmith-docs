@@ -51,7 +51,7 @@ UPDATE users SET
 
 3. Click on the gear icon ⚙️ next to the **Save/Discard** column in the property pane.
 
-4. Set the **onSave** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Set the **onSave** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
  
 Alternatively, you can configure the **onSubmit** event for each [Column](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event is triggered when the user clicks away from the edited cell or presses the Enter key within it. 
 
@@ -87,7 +87,7 @@ WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 
 </dd>
 
-4. Drop a Button widget, and set its **onClick** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Drop a Button widget, and set its **onClick** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
 
 
 
@@ -125,7 +125,7 @@ VALUES
 
 </dd>
 
-4. Set the Table widget's **onSave** event to run the query and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Set the Table widget's **onSave** event to run the query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
 
 
 
