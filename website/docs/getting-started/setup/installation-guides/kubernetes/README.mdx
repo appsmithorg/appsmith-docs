@@ -14,42 +14,43 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 ### Prerequisites
 Before you begin, make sure that you have:
 
-* At least 15 GB of free storage space and 4 GB of RAM.
-* Helm Package Manager to install and manage applications on Kubernetes clusters. If you don't have it, copy and run the below command for your operation system to install the Helm package manager:
-  - MacOS - `brew install helm`.
-  - Debian/Ubuntu-based systems - `sudo apt install -y helm`.
-  - Red Hat/Fedora-based systems - `sudo dnf install -y helm`.
-  - Windows - `choco install kubernetes-helm`.
-* kubectl to manage resources on Kubernetes clusters. If you don't have it, copy and run the below command for your operation system to install kubectl:
-  - MacOS - `brew install kubectl`.
-  - Debian/Ubuntu-based systems - `sudo apt install -y kubectl`.
-  - Red Hat/Fedora-based systems - `sudo dnf install -y kubectl`.
-  - Windows - `choco install kubernetes-cli`.
-* Set up Kubernetes cluster:
+1. At least 15 GB of free storage space.
+2. 4 GB of RAM.
+3. Installed Helm package manager on your local machine. See the official Helm documentation for your [operation system](https://helm.sh/docs/intro/install/#through-package-managers).
+4. A running Kubernetes cluster. You can setup a Kubernetes cluster using Amazon Elastic Kubernetes Service (EKS) as shown below:
 
-<Tabs groupId="configurations" queryString="current-configuration">
- <TabItem label="AWS EKS" value="AWSEKS">
+  <Tabs groupId="configurations" queryString="current-configuration">
+  <TabItem label="AWS EKS" value="AWSEKS">
 
-  a. Set up the Kubernetes cluster by [creating a kubeconfig for Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html).
-
-  b. Ensure that you have a default storage class running. If not, [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html).
-
-</TabItem>
-<TabItem label="Google Cloud Kubernetes" value="GoogleCloudKubernetes">
-
-  a. [Configure cluster access for kubectl](https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl) on Google Cloud Kubernetes.
-
-  b. Ensure that you have a default storage class running. If not, [set up a default storage class on Google Kubernetes Engine](https://cloud.google.com/anthos/clusters/docs/on-prem/1.3/how-to/default-storage-class)[GKE].
-
-</TabItem>
-<TabItem label="Microk8s" value="Microk8s">
-
-  a. Set up Kubernetes by [working with kubectl](https://microk8s.io/docs/working-with-kubectl).
-
-  b. Ensure that you have a default storage class running. If not, [enable storage class](https://microk8s.io/docs/command-reference#heading--microk8s-enable).
+    a. Verify if you have access to AWS EKS with:
+      
+    ```bash
+      aws sts get-caller-identity 
+    ```
     
-</TabItem>
-</Tabs>
+    The above command provides information related to your account and ARN, indicating that you can connect and access your Amazon account using a terminal.
+
+    b. Create KubeConfig with: 
+
+    ```bash
+    aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile PROFILE_NAME
+    ```
+    In the above command, add the profile name that has access to the EKS cluster to the `--profile` parameter.
+
+    c. Test your Kubernetes configuration with:
+
+    ```bash
+    kubectl cluster-info
+    ```
+    The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information. 
+
+    d. Make sure that you have a default storage class running. If not, see the [create default storage class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html) guide.
+
+  </TabItem>
+  </Tabs>
+
+5. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management), and [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
+
 
 ## Install Appsmith
 
@@ -65,11 +66,13 @@ Create a folder named `appsmith` on your machine for deployment and data storage
     ```
 
   2. Load the Appsmith chart repository with:
+
   ```bash
   helm repo update
-  ```
+  ``` 
 
   3. Run the below command to deploy Appsmith:
+  
   ```bash
   helm install appsmith appsmith/appsmith -n appsmith --create-namespace
   ```
@@ -77,7 +80,7 @@ Create a folder named `appsmith` on your machine for deployment and data storage
   4. Get pod name with:
 
   ```bash
-  kubectl get pods
+  kubectl get pods -n appsmith
   ```
 
   5. To verify the installation locally, use the below command to forward the 8080 port to 80:
@@ -86,7 +89,7 @@ Create a folder named `appsmith` on your machine for deployment and data storage
     kubectl --namespace appsmith port-forward appsmith-0 8080:80
     ```
 
-  6. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost:8080](https://localhost:8080).
+  6. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -111,24 +114,26 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 4. Run the below command to deploy Appsmith:
 
   ```bash
-  helm install appsmith appsmith-ee/appsmith -n appsmith --create-namespace
+  helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace
   ```
 
 5. Get pod name with:
 
   ```bash
-  kubectl get pods
+  kubectl get pods -n appsmith-ee
   ```
 
 6. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
   ```bash
-  kubectl --namespace appsmith port-forward appsmith-0 8080:80
+  kubectl --namespace appsmith-ee port-forward appsmith-0 8080:80
   ```
 
-7. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost:8080](https://localhost:8080).
+7. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
 8. Log into your Appsmith account, and enter your license key to activate the instance.
+
+ If you wish to configure high availability and scalability see [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
 
 
 </TabItem>
