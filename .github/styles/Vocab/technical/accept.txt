@@ -482,3 +482,5 @@ Disable Invalid Forms
 onFilterUpdate
 Data
 data
+setText
+setTextColor
