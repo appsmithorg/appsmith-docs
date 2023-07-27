@@ -483,3 +483,5 @@ onFilterUpdate
 Data
 data
 Click on
+setText
+setTextColor
