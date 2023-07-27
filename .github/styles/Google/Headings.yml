@@ -162,9 +162,12 @@ exceptions:
   - selectedItemView
   - triggeredItemView
   - onPageSizeChange
+  - Data Format
+  - Maximum No. of files
   - setValue  
   - setSelectedOptions
   - selectedOptionValues
   - selectedOptionLabels
   - MultiSelect  
   - TreeSelect
+
