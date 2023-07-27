@@ -5,7 +5,7 @@ description: >-
 
 # TreeSelect
 
-This page explains how to use the Treeselect widget to allow users to select a single option from a hierarchical list.
+This page explains how to use the TreeSelect widget to allow users to select a single option from a hierarchical list.
 
 
 ## Content properties
@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set labels and values for options in the list of the Treeselect widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. For example:
+Use to set labels and values for options in the list of the TreeSelect widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. For example:
 
 ```js
 [
