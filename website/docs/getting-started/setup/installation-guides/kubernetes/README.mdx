@@ -72,7 +72,7 @@ Create a folder named `appsmith` on your machine for deployment and data storage
   ``` 
 
   3. Run the below command to deploy Appsmith:
-  
+
   ```bash
   helm install appsmith appsmith/appsmith -n appsmith --create-namespace
   ```
@@ -123,7 +123,7 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
   kubectl get pods -n appsmith-ee
   ```
 
-6. To verify the installation locally, use the below command to forward the 8080 port to 80:
+6. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
   
   ```bash
   kubectl --namespace appsmith-ee port-forward appsmith-0 8080:80
@@ -133,7 +133,7 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 
 8. Log into your Appsmith account, and enter your license key to activate the instance.
 
- If you wish to configure high availability and scalability see [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
+For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
 
 
 </TabItem>
