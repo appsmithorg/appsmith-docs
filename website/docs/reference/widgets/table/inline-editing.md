@@ -32,9 +32,9 @@ Enable inline editing by checking the **Editable** checkbox for the desired colu
 To update a single row, follow these steps:
 
 
-1). Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
+1. Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
 
-2). Create a new query that uses the `updatedRow` reference property to update the relevant data.
+2. Create a new query that uses the `updatedRow` reference property to update the relevant data.
 
 <dd>
 
@@ -49,9 +49,9 @@ UPDATE users SET
 
 </dd>
 
-3). Click on the gear icon ⚙️ next to the **Save/Discard** column in the property pane.
+3. Click on the gear icon ⚙️ next to the **Save/Discard** column in the property pane.
 
-4). Set the **onSave** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Set the **onSave** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
  
 As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
 
@@ -64,11 +64,11 @@ As an alternative you can configure the **onSubmit** event in each [column's set
 
 To update multiple rows at once using the inline editing feature, follow these steps:
 
-1). Select **Multiple rows** from the **Update mode** property.
+1. Select **Multiple rows** from the **Update mode** property.
 
-2). Configure the columns you want to enable for inline editing and set the **Primary Key** column for row identification during updates.
+2. Configure the columns you want to enable for inline editing and set the **Primary Key** column for row identification during updates.
 
-3). Create a new query that uses `updatedRows` reference property to update the relevant data. 
+3. Create a new query that uses `updatedRows` reference property to update the relevant data. 
 
 <dd>
 
@@ -87,7 +87,7 @@ WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 
 </dd>
 
-4). Drop a Button widget, and set its **onClick** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Drop a Button widget, and set its **onClick** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
 
 
 
@@ -95,11 +95,11 @@ WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 
 To dynamically add new rows to the table, follow these steps:
 
-1). Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
+1. Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
 
-2). Enable the **Editable** property for all the required columns.
+2. Enable the **Editable** property for all the required columns.
 
-3). Create a new INSERT query, using the `newRow` reference property. 
+3. Create a new INSERT query, using the `newRow` reference property. 
 
 <dd>
 
@@ -125,7 +125,7 @@ VALUES
 
 </dd>
 
-4). Set the Table widget's **onSave** event to run the query and **onSuccess** callback to trigger a fetch query that refreshes the data.
+4. Set the Table widget's **onSave** event to run the query and **onSuccess** callback to trigger a fetch query that refreshes the data.
 
 
 
