@@ -11,7 +11,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 
 <VideoEmbed host="youtube" videoId="wZzYL1uZwds" title="How To Deploy Appsmith On Kubernetes" caption="How To Deploy Appsmith On Kubernetes" />
 
-### Prerequisites
+## Prerequisites
 Before you begin, make sure that you have:
 
 1. At least 15 GB of free storage space.
@@ -41,7 +41,7 @@ Before you begin, make sure that you have:
     ```
     The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information. 
 
-    d. A default storage class running. If not, create a storage class with:
+    d. A default storage class running. If not created yet, create the storage class with:
 
     ```bash
     kubectl apply -f - <<EOF
@@ -65,9 +65,9 @@ Create a folder named `appsmith` on your machine for deployment and data storage
 
   1. Add the Appsmith chart repository with:
 
-    ```bash
-    helm repo add appsmith https://helm.appsmith.com
-    ```
+  ```bash
+  helm repo add appsmith https://helm.appsmith.com
+  ```
 
   2. Load the Appsmith chart repository with:
 
@@ -140,7 +140,6 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 8. Log into your Appsmith account, and enter your license key to activate the instance.
 
 For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
-
 
 </TabItem>
 </Tabs>   

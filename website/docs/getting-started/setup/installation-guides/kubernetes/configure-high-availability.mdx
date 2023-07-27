@@ -24,11 +24,11 @@ Before you proceed, make sure you have:
   ```
 6. Configured your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC). Make sure that you have:
 
-    a. Created an IAM role to interact with the Amazon Elastic File System (EFS). If not, see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
+    a. Created an IAM role to interact with the Amazon Elastic File System (EFS). If not created yet, see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
           
-    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. Installed the Amazon EFS CSI driver. If not, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
+    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. Installed the Amazon EFS CSI driver. If not installed yet, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
 
-    c. Created the EFS file system. If not, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
+    c. Created the EFS file system. If not created yet, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
 
     d. Configured the Persistent Volume Claim (PVC) for the Kubernetes cluster. If not configured already, follow these steps:
       *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the values.yaml file as shown below:
@@ -152,7 +152,7 @@ The above command displays the status of the pods. Once the process is completed
 ## Troubleshooting
 If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 
 
-If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
 * [Publish Appsmith on the Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
