@@ -7,3 +7,28 @@ import TabItem from '@theme/TabItem';
 
 # User Provisioning and Group Sync
 
+User Provisioning and Group Sync uses SCIM, a standardized protocol that simplifies user provisioning and management. On your Appmith instance, It enables you to streamline the user lifecycle management based on your SSO provider and ensure data security effectively. This page describes how to setup SCIM on your Appsmith instance.
+
+## Prerequisites
+
+-  Ensure that you have an SSO provider configured on your Appsmith instance.
+
+
+## Set up provisioning on Appsmith
+
+1. On your instance, go to **Admin Settings > Access Control** and click **Provisioning**.
+2. On the **User Provisioning & Group Sync** page, click **Enable**.
+3. Copy the **SCIM API endpoint** URL to add it later in your IdP application.
+4. Under **API key to setup SCIM**, click the **Generate API key button and copy the API key to add it later in your IdP applicaton.
+
+
+## Configure SSO provider
+
+To complete the setup, go to your IdP application that is connect to Appsmith and folow the steps below
+
+<Tabs queryString="scim-ad-saml">
+<TabItem label="Active Direcotry (SAML)" value="scim-ad-saml">
+
+1. Open your Enterprise application and click on **Provisioning** from the sidebar.
+2. 
+
