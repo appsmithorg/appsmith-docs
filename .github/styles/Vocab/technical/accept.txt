@@ -487,4 +487,5 @@ disable
 setText
 setTextColor
 param
+MultiSelect
 
