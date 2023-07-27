@@ -426,7 +426,26 @@ If you want to keep the same background color for an entire row, you can use the
 #### Text Color `string`
 
 <dd>
+
 Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
+</dd>
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a (CSS color value)[https://developer.mozilla.org/en-US/docs/Web/CSS/color]. It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Border Color `string`
+
+
+<dd>
+
+Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
+
+
 </dd>
 
 ### Border and shadow
