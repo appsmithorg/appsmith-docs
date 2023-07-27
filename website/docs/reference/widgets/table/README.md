@@ -615,7 +615,7 @@ Contains an array of the index of the rows selected by the user. Not applicable 
 
 </dd>
 
-#### filteredTableData `boolean`
+#### filteredTableData `array<object>`
 
 <dd>
 
@@ -818,7 +818,7 @@ Widget property setters enables you to modify the values of widget properties at
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility(param: boolean)
 
 <dd>
 
@@ -840,7 +840,7 @@ Table1.setVisibility(true).then(() => {
 
 </dd>
 
-#### setData `array<object`
+#### setData(param: array<object)
 
 <dd>
 
@@ -864,7 +864,7 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 
 
 
-#### setSelectedRowIndex `number`
+#### setSelectedRowIndex(param: number)
 
 <dd>
 
