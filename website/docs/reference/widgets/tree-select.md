@@ -1,6 +1,6 @@
 ---
 description: >-
-  Select widget reference
+  TreeSelect widget reference
 ---
 
 # TreeSelect
