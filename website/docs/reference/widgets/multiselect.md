@@ -1,3 +1,8 @@
+---
+description: >-
+  Multiselect widget reference
+---
+
 # Multiselect
 
 This page explains how to use a Multiselect widget to allow users to select multiple options from a given list.
