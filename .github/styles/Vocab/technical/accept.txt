@@ -483,3 +483,6 @@ onFilterUpdate
 Data
 data
 disable
+setText
+setTextColor
+
