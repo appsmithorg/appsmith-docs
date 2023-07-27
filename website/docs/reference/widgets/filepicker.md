@@ -18,19 +18,20 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to control the types of files users can upload with the Filepicker widget. It accepts an array of wildcards, MIME types, or specific file extensions, such as `.jpg`, `.jpeg`, `.png`, and `.gif`. 
 
-_Supported file types_ :
+_Options_ :
 
-* Images, 
-* Videos, 
-* Audio, 
-* Text, 
-* MS Word, 
-* JPEG, and 
+* Any *(allows users to upload files of all the mentioned file types)*
+* Images 
+* Videos 
+* Audio
+* Text
+* MS Word
+* JPEG
 * PNG
 
 
 
-When JS is enabled, you can provide the data as an array of strings, specifying accepted file types, like:
+When JS is enabled, you can provide the data as an array of strings, specifying accepted file types.
 
 _Example_:
 
@@ -44,7 +45,7 @@ _Example_:
 
 </dd>
 
-:::info
+:::caution
 * Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
 * When using the data in a query, it is uploaded in the selected format, despite appearing in the blob URL format when you log the data.
 :::
@@ -69,7 +70,7 @@ _Options_:
 
 <dd>
 
-Sets the maximum number of files that a user can select. By default, the property is set to `1`.
+Sets the maximum number of files that a user can select. The default value is `1`.
 </dd>
 
 ### Label
@@ -78,7 +79,7 @@ Sets the maximum number of files that a user can select. By default, the propert
 
 <dd>
 
-Sets the text on the widget. By default, the text is set to `Select Files`.
+Sets the text on the widget. The default value is `Select Files`.
 
 </dd>
 
@@ -97,7 +98,7 @@ Enabling this property makes the Filepicker widget mandatory, requiring users to
 
 <dd>
 
-Sets the maximum allowed size of each file that a user can upload. The default value is set to 5 MB.
+Sets the maximum allowed size of each file that a user can upload. The default value is set to `5 MB`.
 
 </dd>
 
@@ -107,7 +108,7 @@ Sets the maximum allowed size of each file that a user can upload. The default v
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. By default, the property is set to `true`.
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. The default value for the property is `true`.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
@@ -122,7 +123,7 @@ For example, if you want to make the widget visible only when the user selects "
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally. By default, the property is set to `false`.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally. The default value for the property is `false`.
 
 For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
 ```js
@@ -136,7 +137,7 @@ For example, if you want to allow only a specific user to fill the input, you ca
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. By default, the property is set to `true`.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. The default value for the property is `true`.
 
 </dd>
 
@@ -202,6 +203,8 @@ The `files` property stores file objects that the user has selected. Each file o
 
 //here [0] represents index of the file.
 ```
+
+See how to [Upload Files to S3 using Filepicker](connect-data/how-to-guides/how-to-upload-to-s3)
 
 </dd>
 
@@ -269,7 +272,7 @@ Example:
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 ```js
 return FilePicker1.setVisibility(true).then(() => {
@@ -277,7 +280,7 @@ return FilePicker1.setVisibility(true).then(() => {
 })
 ```
 
-#### setVisibility(`boolean`)
+#### setVisibility(param: boolean)
 
 <dd>
 
@@ -293,7 +296,7 @@ FilePicker1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(`boolean`)
+#### setDisabled(param: boolean)
 
 <dd>
 
@@ -335,7 +338,7 @@ If you intend to upload files of significant size, kindly adjust the timeout set
 To learn more,  see [how to use the Filepicker widget](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to upload or manage files on Cloudinary.
 
 
-## Display CSV data in table
+## Upload CSV data in Table using Filepicker
 
 To display CSV data in a [Table widget](/reference/widgets/text), use the Array data format. This format allows CSV data to be directly parsed into an array or array of objects that can be referenced throughout the platform. To achieve this, follow these steps:
 
@@ -352,7 +355,7 @@ This displays your CSV data in a tabular format.
 Similarly, you can use the [Image widget ](/reference/widgets/image) to display images that are base64 encoded, and the [Text widget ](/reference/widgets/text) to display text files with a `.txt` extension.
 
 
-:::info
+:::caution
 Currently, only CSV data is supported; XLS or other formats aren't supported.
 :::
 
