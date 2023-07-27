@@ -167,3 +167,4 @@ exceptions:
   - setSelectedOptions
   - selectedOptionValues
   - selectedOptionLabels
+  - MultiSelect

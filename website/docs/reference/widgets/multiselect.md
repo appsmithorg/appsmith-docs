@@ -1,11 +1,11 @@
 ---
 description: >-
-  Multiselect widget reference
+  MultiSelect widget reference
 ---
 
-# Multiselect
+# MultiSelect
 
-This page explains how to use a Multiselect widget to allow users to select multiple options from a given list.
+This page explains how to use a MultiSelect widget to allow users to select multiple options from a given list.
 
 
 ## Content properties
@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set labels and values for options in the list of the Multiselect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Use to set labels and values for options in the list of the MultiSelect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
 
 
 ```js
@@ -44,7 +44,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the Multiselect widget. 
+If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the MultiSelect widget. 
 
 *Example:* 
 
@@ -58,7 +58,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 
 <dd>
 
-Sets the initial options that are automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects another option from the list. Multiple values can be provided in a CSV format or an array of strings for a Multiselect dropdown. For example, if you want the default option to be `Blue` and `Red`, set the **Default Selected Value** property to:
+Sets the initial options that are automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects another option from the list. Multiple values can be provided in a CSV format or an array of strings for a MultiSelect dropdown. For example, if you want the default option to be `Blue` and `Red`, set the **Default Selected Value** property to:
 
 ```js
 [
@@ -123,7 +123,7 @@ Enables searching for options within the dropdown list. When this option is enab
 
 <dd>
 
-Enables server-side filtering via a query request. Use this property when the Multiselect widget's option data is being bound to a query.
+Enables server-side filtering via a query request. Use this property when the MultiSelect widget's option data is being bound to a query.
 
 </dd>
 
@@ -142,7 +142,7 @@ This event allows you to configure one or multiple actions (Framework functions,
 
 <dd>
 
-Enabling this property for a Multiselect widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the Multiselect widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the Multiselect widget.
+Enabling this property for a MultiSelect widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the MultiSelect widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the MultiSelect widget.
 
 </dd>
 
@@ -160,7 +160,7 @@ Sets a tooltip for the widget. You can add hints or extra information about the 
 
 <dd>
 
-Sets the placeholder text for the Multiselect widget. 
+Sets the placeholder text for the MultiSelect widget. 
 
 </dd>
 
@@ -170,7 +170,7 @@ Sets the placeholder text for the Multiselect widget.
 
 Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
-For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the Multiselect widget:
+For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the MultiSelect widget:
 
 ```js
 {{Checkbox1.isChecked}}
@@ -300,18 +300,18 @@ This property adds a drop shadow effect to the frame of the widget. To control t
 
 ## Reference properties
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `multiSelect1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `MultiSelect1.isVisible`.
 
 #### filterText `string`
 
 <dd>
 
-Returns the text entered in the search filter of the Multiselect widget. For more information, see Server side filtering.
+Returns the text entered in the search filter of the MultiSelect widget. For more information, see Server side filtering.
 
 *Example:*
 
 ```js
-{{multiSelect1.filterText}}
+{{MultiSelect1.filterText}}
 ```
 
 </dd>
@@ -325,7 +325,7 @@ It reflects the state of the widget's Disabled setting. It is represented by a b
 *Example:*
 
 ```js
-{{multiSelect1.isDisabled}}
+{{MultiSelect1.isDisabled}}
 ```
 
 </dd>
@@ -338,7 +338,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 *Example:*
 ```js
-{{multiSelect1.isVisible}}
+{{MultiSelect1.isVisible}}
 ```
 
 </dd>
@@ -352,7 +352,7 @@ This property is a boolean value that indicates whether the user has interacted 
 *Example:*
 
 ```js
-{{multiSelect1.isDirty}}
+{{MultiSelect1.isDirty}}
 ```
 
 </dd>
@@ -366,7 +366,7 @@ Returns an array of objects that contain the label and value of the options in t
 *Example:*
 
 ```js
-{{multiSelect1.options}}
+{{MultiSelect1.options}}
 ```
 
 </dd>
@@ -375,12 +375,12 @@ Returns an array of objects that contain the label and value of the options in t
 
 <dd>
 
-Returns the value of the option displayed in the Multiselect widget. It changes if the default value of the widget changes or the user selects an option.
+Returns the value of the option displayed in the MultiSelect widget. It changes if the default value of the widget changes or the user selects an option.
 
 *Example:*
 
 ```js
-{{multiSelect1.selectedOptionValues}}
+{{MultiSelect1.selectedOptionValues}}
 ```
 
 </dd>
@@ -389,12 +389,12 @@ Returns the value of the option displayed in the Multiselect widget. It changes 
 
 <dd>
 
-Returns the label of the option displayed in the Multiselect widget. It changes if the default value of the widget changes or the user selects an option.
+Returns the label of the option displayed in the MultiSelect widget. It changes if the default value of the widget changes or the user selects an option.
 
 *Example:*
 
 ```js
-{{multiSelect1.selectedOptionLabels}}
+{{MultiSelect1.selectedOptionLabels}}
 ```
 
 </dd>
@@ -422,7 +422,7 @@ Sets the `disabled` state of the widget.
 *Example*:
 
 ```js
-multiSelect1.setDisabled(false)
+MultiSelect1.setDisabled(false)
 ```
 
 </dd>
@@ -436,7 +436,7 @@ Sets whether the widget is required or not.
 *Example*:
 
 ```js
-multiSelect1.setRequired(true)
+MultiSelect1.setRequired(true)
 ```
 
 </dd>
@@ -448,12 +448,12 @@ multiSelect1.setRequired(true)
 
 <dd>
 
-Sets the selected option of the Multiselect widget.
+Sets the selected option of the MultiSelect widget.
 
 *Example*:
 
 ```js
-multiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+MultiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
 ```
 
 </dd>
