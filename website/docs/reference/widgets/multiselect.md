@@ -408,7 +408,7 @@ return Input1.setVisibility(true).then(() => {
 ```
 
 
-#### setDisabled (`:boolean`)
+#### setDisabled (param: boolean)
 
 <dd>
 
@@ -422,7 +422,7 @@ multiSelect1.setDisabled(false)
 
 </dd>
 
-#### setRequired (`:boolean`)
+#### setRequired (param: boolean)
 
 <dd>
 
@@ -439,7 +439,7 @@ multiSelect1.setRequired(true)
 
 
 
-#### setSelectedOptions (`:object`)
+#### setSelectedOptions (param: object)
 
 <dd>
 
