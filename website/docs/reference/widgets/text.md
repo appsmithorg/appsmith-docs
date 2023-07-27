@@ -201,7 +201,7 @@ Text1.setVisibility(true).then(() => {
 })
 ```
 
-#### setVisibility(`args:boolean`)
+#### setVisibility(param: boolean)
 
 <dd>
 
@@ -217,7 +217,7 @@ Text1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(`args:boolean`)
+#### setDisabled(param: boolean)
 
 <dd>
 
@@ -231,7 +231,7 @@ Text1.setDisabled(false)
 
 </dd>
 
-#### setRequired(`args:boolean`)
+#### setRequired(param: boolean)
 
 <dd>
 
@@ -246,7 +246,7 @@ Text1.setRequired(true)
 
 </dd>
 
-#### setText(`args:string`)
+#### setText(param: string`)
 
 <dd>
 
@@ -266,7 +266,7 @@ Text1.setText('Hello, world!')
 
 
 
-#### setTextColor(`args:string`)
+#### setTextColor(param: string`)
 
 <dd>
 
