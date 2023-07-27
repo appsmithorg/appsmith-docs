@@ -78,7 +78,7 @@ This property is only available when you select **Left** from the Position prope
 
 <dd>
 
-This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned. By default, the **Width** is set to 5.
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned. Default value of **Width** is `5`.
 
 
 </dd>
@@ -184,7 +184,8 @@ Allows you to set the placeholder text displayed within the input box. This can 
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. By default, the **Visible** property is set to `true`.
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. The default value for the property is `true`.
+
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
@@ -199,7 +200,7 @@ For example, if you want to make the widget visible only when the user selects "
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally. By default, the **Disabled** property is set to `false`.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally. The default value for the property is `false`.
 
 For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
 ```js
@@ -215,7 +216,7 @@ For example, if you want to allow only a specific user to fill the input, you ca
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. By default, the Animate Loading property is set to `true`.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. The default value for the property is `true`.
 
 </dd>
 
@@ -423,7 +424,8 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
 
 ```js
 return Input1.setVisibility(true).then(() => {
@@ -431,7 +433,7 @@ return Input1.setVisibility(true).then(() => {
 })
 ```
 
-#### setVisibility(args:boolean)
+#### setVisibility(param: boolean)
 
 <dd>
 
@@ -447,7 +449,7 @@ Input1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(args:boolean)
+#### setDisabled(param: boolean)
 
 <dd>
 
@@ -462,7 +464,7 @@ Input1.setDisabled(false)
 
 </dd>
 
-#### setValue (args:string)
+#### setValue (param: string)
 
 <dd>
 
@@ -477,7 +479,7 @@ Input1.setValue("Hello123")
 </dd>
 
 
-#### setRequired(args:boolean)
+#### setRequired(param: boolean)
 
 <dd>
 
