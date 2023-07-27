@@ -11,7 +11,7 @@ The page provides steps to publish Appsmith Kubernetes installation to the inter
 Before you proceed, make sure you have:
 1. A self-hosted Kubernetes Business Edition Appsmith installation. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
 2. A running Kubernetes cluster with at least one node.
-3. Installed NGINX Ingress Controller on your Kubernetes cluster. It not installed yet, follow these steps:
+3. Installed NGINX Ingress Controller on your Kubernetes cluster. If not installed yet, follow these steps:
 
   a. Add ingress chart repository with:
 
@@ -44,30 +44,30 @@ Before you proceed, make sure you have:
 
 Use the `helm upgrade` command to enable the ingress controller as shown below:
   
- 1. Update `ingress` attribute as shown below in the `values.yaml` file.
+ 1. Update the `ingress` attribute as shown below in the `values.yaml` file.
 
     ```yaml 
-      ingress:
-        ## @param ingress.enabled Enable ingress record generation for Ghost
-        ##
-        enabled: true
-        annotations:
-          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-          nginx.ingress.kubernetes.io/limit-rps: "15"
-        ## @param ingress.annotations Additional custom annotations for the ingress record
-        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-        ##
-        className: nginx
-        hosts:
-          #highlight-next-line
-          - host: REPLACE_WITH_DOMAIN_NAME
-            paths:
-            - path: "/"
-              pathType: Prefix
-      service:
-        ## @param service.type Kubernetes Service type
-        ##
-        type: ClusterIP
+    ingress:
+      ## @param ingress.enabled Enable ingress record generation for Ghost
+      ##
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+        nginx.ingress.kubernetes.io/limit-rps: "15"
+      ## @param ingress.annotations Additional custom annotations for the ingress record
+      ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
+      ##
+      className: nginx
+      hosts:
+        #highlight-next-line
+        - host: REPLACE_WITH_DOMAIN_NAME
+          paths:
+          - path: "/"
+            pathType: Prefix
+    service:
+      ## @param service.type Kubernetes Service type
+      ##
+      type: ClusterIP
     ```
 
   2. Run the below command once the parameter values are updated:
