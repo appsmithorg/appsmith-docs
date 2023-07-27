@@ -394,7 +394,7 @@ return Input1.setVisibility(true).then(() => {
 ```
 
 
-#### setDisabled (`:boolean`)
+#### setDisabled (param: boolean)
 
 <dd>
 
@@ -408,7 +408,7 @@ TreeSelect1.setDisabled(false)
 
 </dd>
 
-#### setRequired (`:boolean`)
+#### setRequired (param: boolean)
 
 <dd>
 
