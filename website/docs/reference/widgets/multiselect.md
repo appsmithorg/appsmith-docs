@@ -223,7 +223,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
 
 </dd>
 
@@ -231,7 +231,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
 
 </dd>
 
@@ -240,7 +240,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user closes the dropdown list. For example, you could use the **onDropdownClose** event to store the selected option in a database, hide additional information, or reset the widget to its original state.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user closes the dropdown list. For example, you could use the **onDropdownClose** event to store the selected option in a database, hide additional information, or reset the widget to its original state. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
 
 </dd>
 
@@ -289,7 +289,7 @@ Applies rounded corners to the outer edge of the widget. To control the border r
 
 <dd>
 
-This property adds a drop shadow effect to the frame of the widget. To control the box shadow programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) value to customize the appearance of the shadow.
+This property adds a drop shadow effect to the frame of the widget. To control the Box Shadow programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) value to customize the appearance of the shadow.
 
 </dd>
 
@@ -375,7 +375,7 @@ Returns the value of the option displayed in the Multiselect widget. It changes 
 *Example:*
 
 ```js
-{{multiSelect1.selectedOptionValue}}
+{{multiSelect1.selectedOptionValues}}
 ```
 
 </dd>
@@ -389,7 +389,7 @@ Returns the label of the option displayed in the Multiselect widget. It changes 
 *Example:*
 
 ```js
-{{multiSelect1.selectedOptionLabel}}
+{{multiSelect1.selectedOptionLabels}}
 ```
 
 </dd>
@@ -399,7 +399,7 @@ Returns the label of the option displayed in the Multiselect widget. It changes 
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [JavaScript Promise](/core-concepts/writing-code/javascript-promises). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
 
@@ -446,54 +446,4 @@ Sets the selected option of the Multiselect widget.
 multiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-multiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
-  // code to be executed after selected option is set
-})
-```
-
 </dd>
-
-
-## Access selected options
-If you want to retrieve the selected values from a Multiselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
-
-
-* **selectedOptionValues**: This property returns the value of the selected options in the Multiselect widget. 
-
-* **selectedOptionLabels**: This property returns the label of the selected options in the Multiselect widget. 
-
-Both properties, `selectedOptionValues` and `selectedOptionLabels`, update automatically when the user selects or deselects a new option in the Multiselect widget.
-
----
-**Example**: suppose you want to filter the table data based on the user-selected countries from a Multiselect widget. 
-
-1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected options from a Multiselect widget. 
-
-```sql
-SELECT *
-FROM users
-WHERE country IN ({{"'" + MultiSelect.selectedOptionLabels.join("', '") + "'"}})
-LIMIT 10;
-```
-
-:::info
-When using dynamic binding with queries that contain SQL keywords such as `SELECT`, `WHERE`, `AND`, and other keywords, a [prepared statement](/connect-data/concepts/how-to-use-prepared-statements#when-not-to-use-prepared-statements-in-appsmith) cannot be used. Therefore, it is recommended to turn off the prepared statement in the `filterdata` query for the Multiselect widget.
-:::
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{filterdata.data}}
-```
-
-3. Set the `onOptionChange` event of the Multiselect widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects options.
-
-
-<figure>
-  <img src="/img/multi-select-access.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Access selected options</i></figcaption>
-</figure>
-
