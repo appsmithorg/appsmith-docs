@@ -53,7 +53,7 @@ UPDATE users SET
 
 4. Set the **onSave** event to run the update query, and **onSuccess** callback to trigger a fetch query that refreshes the data.
  
-As an alternative you can configure the **onSubmit** event in each [column's settings](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event takes place whenever the user clicks away from the edited cell, or presses the Enter key within it. 
+Alternatively, you can configure the **onSubmit** event for each [Column](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event is triggered when the user clicks away from the edited cell or presses the Enter key within it. 
 
 <figure>
   <img src="/img/inline-single.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
