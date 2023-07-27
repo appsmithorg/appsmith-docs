@@ -69,8 +69,7 @@ _Options_:
 
 <dd>
 
-Sets the maximum number of files that a user can select.
-
+Sets the maximum number of files that a user can select. By default, the property is set to `1`.
 </dd>
 
 ### Label
@@ -79,7 +78,7 @@ Sets the maximum number of files that a user can select.
 
 <dd>
 
-Sets the text on the widget.
+Sets the text on the widget. By default, the text is set to `Select Files`.
 
 </dd>
 
@@ -94,13 +93,21 @@ Enabling this property makes the Filepicker widget mandatory, requiring users to
 
 </dd>
 
+#### Maximum File Size	`number`
+
+<dd>
+
+Sets the maximum allowed size of each file that a user can upload. The default value is set to 5 MB.
+
+</dd>
+
 ### General
 
 #### Visible `boolean`
 
 <dd>
 
-Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. By default, the property is set to `true`.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
@@ -115,7 +122,7 @@ For example, if you want to make the widget visible only when the user selects "
 
 <dd>
 
-Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally. By default, the property is set to `false`.
 
 For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
 ```js
@@ -129,7 +136,7 @@ For example, if you want to allow only a specific user to fill the input, you ca
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. By default, the property is set to `true`.
 
 </dd>
 
