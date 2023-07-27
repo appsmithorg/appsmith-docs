@@ -7,6 +7,8 @@ description: >-
 
 The List widget provides a way to iterate over a structured dataset, such as an array of objects, and display the data in vertical sections without the need for writing the code. Each list item can contain other widgets to display data or capture user input. Once you bind the data to the first item in the List widget, the subsequent items automatically update with the corresponding values from the dataset.
 
+<VideoEmbed host="youtube" videoId="kSDSGaXhfv0" title="What’s New With the List Widget?" caption="What’s New with the List Widget?"/>
+
 ## Content properties
 
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.

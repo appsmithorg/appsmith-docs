@@ -164,4 +164,5 @@ exceptions:
   - onPageSizeChange
   - Data Format
   - Maximum No. of files
-  - 
+  - Max Characters
+  - setValue
