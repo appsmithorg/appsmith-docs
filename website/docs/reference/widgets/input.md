@@ -93,7 +93,7 @@ This validation feature allows you to designate the Input as a mandatory field. 
 
 </dd>
 
-#### Max Characters	`number`
+#### Max characters	`number`
 
 
 <dd>

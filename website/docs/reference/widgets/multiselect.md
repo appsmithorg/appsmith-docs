@@ -436,8 +436,6 @@ MultiSelect1.setRequired(true)
 </dd>
 
 
-
-
 #### setSelectedOptions (param: object): Promise
 
 <dd>

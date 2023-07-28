@@ -256,11 +256,6 @@ Text1.setText('Hello, world!')
 </dd>
 
 
-
-
-
-
-
 #### setTextColor(param: string): Promise
 
 <dd>
