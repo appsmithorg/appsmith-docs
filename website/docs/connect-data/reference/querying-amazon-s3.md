@@ -3,13 +3,13 @@ sidebar_position: 2
 description: Connect Appsmith to an S3 bucket and create queries.
 ---
 
-# Amazon S3
+# S3
 
 This page provides information for connecting your application to your Amazon S3 bucket and using queries to manage its content.
 
 This datasource can also be used to connect to any S3-compatible object storage provider such as Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, and MinIO.
 
-## Connect Amazon S3
+## Connect S3
 
 :::caution
 You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your S3 instance before connecting to the bucket. For more information about whitelisting on Amazon, see [Managing access based on specific IP addresses](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-IP).
@@ -20,7 +20,7 @@ You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an S3 bucket.
 
 <figure>
-  <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Amazon S3 datasource." />
+  <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an S3 datasource." />
   <figcaption align="center"><i>Configuring an S3 datasource.</i></figcaption>
 </figure>
 
@@ -29,13 +29,13 @@ The following section is a reference guide that provides a complete description 
   <dd>Configures the datasource to connect to the specified S3 provider.</dd><br/>
   <dd><i>Options:</i>
     <ul>
-      <li><b>Amazon S3</b></li>
-      <li><b>Upcloud</b></li>
-      <li><b>Digital Ocean spaces</b></li>
-      <li><b>Wasabi</b></li>
-      <li><b>DreamObjects</b></li>
-      <li><b>MinIO</b></li>
-      <li><b>Other</b></li>
+      <li>Amazon S3</li>
+      <li>Upcloud</li>
+      <li>Digital Ocean spaces</li>
+      <li>Wasabi</li>
+      <li>DreamObjects</li>
+      <li>MinIO</li>
+      <li>Other</li>
     </ul>
   </dd><br />
 
@@ -46,10 +46,10 @@ The following section is a reference guide that provides a complete description 
   <dd>The secret key used to identify and authenticate your queries.</dd><br />
 
   <dt><b>Endpoint URL</b></dt>
-  <dd>The network location of your S3 resource. This could be a domain or IP address. This field is required when <b>S3 service provider</b> is not <b>Amazon S3</b>. For a guide about connecting to a local resource, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd><br />
+  <dd>The network location of your S3 resource. This could be a domain or IP address. This field is required when <b>S3 service provider</b> is not Amazon S3. For a guide about connecting to a local resource, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd><br />
 
   <dt><b>Region</b></dt>
-  <dd>Identifies which regional data center to connect to. This field appears when <b>S3 service provider</b> is <b>MinIO</b> or <b>Other</b>.</dd>
+  <dd>Identifies which regional data center to connect to. This field appears when <b>S3 service provider</b> is MinIO or Other.</dd>
 
 </dl>
 
@@ -77,7 +77,7 @@ The name of the S3 bucket to query.
   <dt><b>Prefix</b></dt>
   <dd>
 
-The directory path whose files you'd like to query.
+The directory path of the files you'd like to query.
 
 For example, in `sample/path/example.png`, the **Prefix** is `sample/path`. Using the prefix `sample/path` with no filtering returns all files in the `sample/path` directory.
 
@@ -136,11 +136,7 @@ Skips a given number of files before returning the further results. Expects an i
 
 ### Create a new file
 
-This command creates a new object in the S3 bucket. If a file by the same name/path already exists within the bucket, the old file is overwritten by the new one. The following section lists all the fields available for the **Create a new file** command.
-
-:::tip
-You can use the [Filepicker widget](/reference/widgets/filepicker) to select files on your machine to upload to S3.
-:::
+This command creates a new object in the S3 bucket. If a file by the same name or path already exists within the bucket, the old file is overwritten by the new one. The following section lists all the fields available for the **Create a new file** command.
 
 <dl>
   <dt><b>Bucket name</b></dt>
@@ -176,11 +172,7 @@ The length of time in minutes that the returned Signed URL is valid. Accepts num
   <dt><b>Content</b></dt>
   <dd>
 
-The file data to be sent to the bucket. Expects a file object. Use the [Filepicker widget](/reference/widgets/filepicker) to select a file on your machine to upload to S3, and then reference it in the **Content** field as:
-
-```javascript
-{{ Filepicker1.files[0] }}
-```
+The file data to be sent to the bucket. Expects a file object. You can use widgets such as a [Filepicker](/reference/widgets/filepicker) or a [Camera](/reference/widgets/camera) to upload files to S3. For guides on this subject, see [Upload or Download Files to and from S3](/connect-data/how-to-guides/how-to-upload-to-s3) or [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images).
 
   </dd>
 </dl>
@@ -223,11 +215,7 @@ The length of time in minutes that the returned Signed URL is valid. Accepts num
   <dt><b>Content</b></dt>
   <dd>
 
-The file data to be sent to the bucket. Expects an array of file objects. Use the [Filepicker widget](/reference/widgets/filepicker) to select files on your machine to upload to S3, and then reference them in the **Content** field as:
-
-```javascript
-{{ Filepicker1.files }}
-```
+The file data to be sent to the bucket. Expects a file object. You can use widgets such as a [Filepicker](/reference/widgets/filepicker) to upload files to S3. For a guide on this subject, see [Upload or Download Files to and from S3](/connect-data/how-to-guides/how-to-upload-to-s3).
 
   </dd>
 </dl>
@@ -236,9 +224,6 @@ The file data to be sent to the bucket. Expects an array of file objects. Use th
 
 This command returns the data from a given file in your S3 bucket. By default, the raw content of the file is returned on the `fileData` property of the response. The following section lists all the fields available for the **Read file** command.
 
-:::tip
-If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
-:::
 
 <dl>
   <dt><b>Bucket name</b></dt>
@@ -264,6 +249,10 @@ The path to the file in your S3 bucket.
     </ul>
   </dd>
 </dl>
+
+:::tip
+If your `fileData` content is in Base64 format and needs to be decoded, use the [JavaScript `atob()` method](https://developer.mozilla.org/en-US/docs/Web/API/atob).
+:::
 
 ### Delete file
 
