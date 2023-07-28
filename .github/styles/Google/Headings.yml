@@ -174,4 +174,5 @@ exceptions:
   - onFilesSelected
   - files
   - isSwitchedOn
+  - triggeredRowIndex
 
