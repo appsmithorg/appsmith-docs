@@ -96,9 +96,9 @@ DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
 
-## Prepared statements
-
-Appsmith switches on prepared statements in queries by default to help prevent SQL injection attacks. If the query has widget data bindings using the mustache template `{{ }}`, Appsmith internally replaces these with question marks (?), translating the queries into prepared statements. See [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements) for more details.
+:::info
+Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements).
+:::
 
 ## See also
 

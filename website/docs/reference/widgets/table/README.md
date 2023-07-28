@@ -426,7 +426,26 @@ If you want to keep the same background color for an entire row, you can use the
 #### Text Color `string`
 
 <dd>
+
 Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
+</dd>
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a (CSS color value)[https://developer.mozilla.org/en-US/docs/Web/CSS/color]. It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Border Color `string`
+
+
+<dd>
+
+Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
+
+
 </dd>
 
 ### Border and shadow
@@ -596,7 +615,7 @@ Contains an array of the index of the rows selected by the user. Not applicable 
 
 </dd>
 
-#### filteredTableData `boolean`
+#### filteredTableData `array<object>`
 
 <dd>
 
@@ -799,7 +818,7 @@ Widget property setters enables you to modify the values of widget properties at
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility(param: boolean)
 
 <dd>
 
@@ -821,7 +840,7 @@ Table1.setVisibility(true).then(() => {
 
 </dd>
 
-#### setData `array<object`
+#### setData(param: array<object)
 
 <dd>
 
@@ -845,7 +864,7 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 
 
 
-#### setSelectedRowIndex `number`
+#### setSelectedRowIndex(param: number)
 
 <dd>
 
