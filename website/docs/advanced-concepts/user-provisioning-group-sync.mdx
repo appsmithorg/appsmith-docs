@@ -39,7 +39,18 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     b. In the **Tenant URL** field, enter the **SCIM API endpoint** URL copied from Appsmith.
 
-    c. 
+    c. In the **Secret Token** field, enter the **API key to setup SCIM** copied from Appsmith.
+
+    d. Under Mappings, click **Provision Azure Active Directory Users** and scroll down to **Attribute Mappings**. Delete all the attributes except the following:
+
+    - **userPrincipalName**
+    - **displayName**
+
+    e. Click **Save**
+
+    f. Go back to the **Provisioning** page, turn the toggle **On** for **Provisioning status** present at the bottom.
+
+4. 
 
 </TabItem>
 
@@ -71,10 +82,10 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     a. Click **Edit** on the **Provisioning to App** section, and tick all the options. Click **Save**.
 
-    b. Scroll down to **SCIM_test Attribute Mappings**, remove the attributes except the following:
+    b. Scroll down to **SCIM_test Attribute Mappings**, remove all the attributes except the following:
 
-    - userName
-    - displayName
+    - **Username**
+    - **Display name**
 
 </TabItem>    
 </Tabs>
