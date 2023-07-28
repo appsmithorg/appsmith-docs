@@ -27,7 +27,7 @@ The following section is a reference guide that provides a complete description 
   </dd>  
 </dl>
 
-::: caution info
+:::caution info
 Airtable has deprecated their API Key style of authentication, and it becomes unsupported as of February 1, 2024. For details, see [Airtable Api Key Deprecation Notice](https://support.airtable.com/docs/airtable-api-key-deprecation-notice). Please use **Personal access token** authentication if possible. If you must use an existing API Key, select the **API Key** authentication type and provide the key in the API Key field. Otherwise, you'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration.
 :::
 
