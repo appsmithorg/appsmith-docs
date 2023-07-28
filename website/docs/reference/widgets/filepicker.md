@@ -204,7 +204,7 @@ The `files` property stores file objects that the user has selected. Each file o
 //here [0] represents index of the file.
 ```
 
-See how to [Upload Files to S3 using Filepicker](connect-data/how-to-guides/how-to-upload-to-s3)
+See how to [Upload Files to S3 using Filepicker](/connect-data/how-to-guides/how-to-upload-to-s3)
 
 </dd>
 
