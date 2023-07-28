@@ -391,7 +391,7 @@ Sets the horizontal alignment of the text within the cells.
 
 </dd>
 
-#### Vertical Alignment `string`
+#### Vertical alignment `string`
 
 <dd>
 
@@ -438,7 +438,7 @@ Sets the background color of the widget, specified as a (CSS color value)[https:
 
 </dd>
 
-#### Border Color `string`
+#### Border color `string`
 
 
 <dd>
@@ -483,7 +483,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 
 
-#### Border Color `string`
+#### Border color `string`
 
 <dd>
 
@@ -815,10 +815,11 @@ Refers to an array of indices corresponding to the rows that have been updated.
 
 Widget property setters enables you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility(param: boolean)
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -830,17 +831,10 @@ Sets the visibility of the widget.
 Table1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
 </dd>
 
-#### setData(param: array<object)
+#### setData (param: array<object\>): Promise
 
 <dd>
 
@@ -852,19 +846,11 @@ Sets the data to be displayed in the Table widget.
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
-  // code to be executed after data is set
-})
-```
-
 </dd>
 
 
 
-#### setSelectedRowIndex(param: number)
+#### setSelectedRowIndex (param: number): Promise
 
 <dd>
 
@@ -874,14 +860,6 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 
 ```js
 Table1.setSelectedRowIndex(2)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setSelectedRowIndex(2).then(() => {
-  // code to be executed after selected row index is set
-})
 ```
 
 </dd>
