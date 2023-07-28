@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set labels and values for options in the list of the TreeSelect widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. For example:
+Use to set options in the list of the TreeSelect widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. For example:
 
 ```js
 [
@@ -312,12 +312,12 @@ The `options` property contains the values available for selection in a TreeSele
 #### selectedOptionLabel `string`
 <dd>
 
-Returns the label of the option displayed in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
+Returns the label of the option selected in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
 
 *Example:*
 
 ```js
-{{TreeSelect1.selectedOptionLabels}}
+{{TreeSelect1.selectedOptionLabel}}
 ```
 
 
@@ -326,12 +326,12 @@ Returns the label of the option displayed in the TreeSelect widget. It changes i
 #### selectedOptionValue `string`
 <dd>
 
-Returns the value of the option displayed in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
+Returns the value of the option selected in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
 
 *Example:*
 
 ```js
-{{TreeSelect1.selectedOptionValues}}
+{{TreeSelect1.selectedOptionValue}}
 ```
 
 
@@ -387,14 +387,7 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-```js
-return Input1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
-
-#### setDisabled (param: boolean)
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -408,7 +401,7 @@ TreeSelect1.setDisabled(false)
 
 </dd>
 
-#### setRequired (param: boolean)
+#### setRequired (param: boolean): Promise
 
 <dd>
 

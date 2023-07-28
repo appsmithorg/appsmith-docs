@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set labels and values for options in the list of the MultiSelect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Use to set options in the list of the MultiSelect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
 
 
 ```js
@@ -306,7 +306,7 @@ Reference properties enable you to access the widget's data and state using the 
 
 <dd>
 
-Returns the text entered in the search filter of the MultiSelect widget. For more information, see Server side filtering.
+Returns the text entered in the search filter of the MultiSelect widget. For more information, see [Server side filtering](/reference/widgets/select#server-side-filtering).
 
 *Example:*
 
@@ -406,14 +406,8 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-```js
-return Input1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
-
-#### setDisabled (param: boolean)
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -427,7 +421,7 @@ MultiSelect1.setDisabled(false)
 
 </dd>
 
-#### setRequired (param: boolean)
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -444,7 +438,7 @@ MultiSelect1.setRequired(true)
 
 
 
-#### setSelectedOptions (param: object)
+#### setSelectedOptions (param: object): Promise
 
 <dd>
 
