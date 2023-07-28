@@ -253,10 +253,10 @@ It reflects the state of the widget's **Disabled** setting. It is represented by
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility(param: boolean): Promise
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -272,7 +272,7 @@ Button1..setVisibility(true)
 </dd>
 
 
-#### setDisabled(param: boolean): Promise
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -287,7 +287,7 @@ Button1.setDisabled(false)
 
 </dd>
 
-#### setColor(param: boolean): Promise
+#### setColor (param: boolean): Promise
 
 <dd>
 
@@ -301,7 +301,7 @@ Button1.setColor('#FF0000')
 
 </dd>
 
-#### setLabel(param: boolean): Promise
+#### setLabel (param: boolean): Promise
 
 <dd>
 

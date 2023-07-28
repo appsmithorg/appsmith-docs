@@ -175,4 +175,12 @@ exceptions:
   - files
   - isSwitchedOn
   - triggeredRowIndex
+  - progress
+  - onSearchTextChanged
+  - nextPageVisited
+  - previousPageVisited
+  - totalRecordsCount
+  - setSelectedRowIndex
+  - setURL
+  - setData
 

@@ -331,7 +331,7 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically.For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
 
 
 #### countryCode `string`
@@ -432,10 +432,11 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -447,19 +448,11 @@ Sets the visibility of the widget.
 CurrencyInput1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CurrencyInput1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
 
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -471,17 +464,9 @@ Sets the disabled state of the widget.
 CurrencyInput1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CurrencyInput1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
-#### setValue `number`
+#### setValue (param: number): Promise
 
 <dd>
 
@@ -494,16 +479,11 @@ CurrencyInput1.setValue(123)
 ```
 To perform sequential actions, use the `.then()` block for execution.
 
-```js
-CurrencyInput1.setValue(123).then(() => {
-  // code to be executed after value is set
-})
-```
 
 </dd>
 
 
-#### setRequired `boolean`
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -513,14 +493,6 @@ Sets whether the widget is required or not.
 
 ```js
 CurrencyInput1.setRequired(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CurrencyInput1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
 ```
 
 </dd>
