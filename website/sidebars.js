@@ -274,7 +274,6 @@ const sidebars = {
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
-            'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-arango-db',
             'connect-data/reference/authenticated-api',
             'connect-data/reference/curl-import',
@@ -302,6 +301,7 @@ const sidebars = {
           'connect-data/reference/querying-redis',
           'connect-data/reference/querying-redshift',
           'connect-data/reference/rest-api',
+          'connect-data/reference/querying-amazon-s3',
           'connect-data/reference/querying-snowflake-db',
           'connect-data/reference/using-smtp',
           'connect-data/reference/twilio',
