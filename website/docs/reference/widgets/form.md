@@ -68,7 +68,7 @@ Sets the background color of the widget, specified as a [CSS color value](https:
 
 </dd>
 
-#### Border Color `String`
+#### Border color `String`
 
 <dd>
 
@@ -161,9 +161,9 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-#### setVisibility(`:boolean`)
+#### setVisibility(param: boolean): Promise
 
 <dd>
 

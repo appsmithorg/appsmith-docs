@@ -490,3 +490,4 @@ setText
 setTextColor
 param
 MultiSelect
+setProgress
