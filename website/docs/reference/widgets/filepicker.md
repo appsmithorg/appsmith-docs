@@ -274,13 +274,8 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous and return a [promise](/core-concepts/writing-code/javascript-promises). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-```js
-return FilePicker1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
-#### setVisibility(param: boolean)
+#### setVisibility(param: boolean): Promise
 
 <dd>
 
@@ -292,11 +287,10 @@ Sets the visibility of the widget.
 FilePicker1.setVisibility(true)
 ```
 
-
 </dd>
 
 
-#### setDisabled(param: boolean)
+#### setDisabled(param: boolean): Promise
 
 <dd>
 
@@ -307,7 +301,6 @@ Sets the disabled state of the widget.
 ```js
 FilePicker1.setDisabled(false)
 ```
-
 
 </dd>
 
