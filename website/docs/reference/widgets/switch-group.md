@@ -280,10 +280,11 @@ The `selectedValues` property holds an array of values that represents the optio
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -295,18 +296,11 @@ Sets the visibility of the widget.
 SwitchGroup1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-SwitchGroup1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -318,18 +312,10 @@ Sets the disabled state of the widget.
 SwitchGroup1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-SwitchGroup1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
 
-#### setRequired `boolean`
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -341,12 +327,5 @@ Sets whether the widget is required or not.
 SwitchGroup1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-SwitchGroup1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
 
 </dd>
