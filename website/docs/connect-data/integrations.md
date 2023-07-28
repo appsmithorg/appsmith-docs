@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: Browse resources for integrating Appsmith with various third-party API datasources.
 ---
 
 # Third-Party Integrations
