@@ -21,15 +21,11 @@ The following section is a reference guide that provides a complete description 
   <dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
   <dd><i>Options:</i>
     <ul>
-     <li><b>API key:</b> Connects to Airtable using the provided existing Airtable API Key.</li>
+     <li><b>API key:</b> This authentication type has been deprecated by Airtable. For more information, see <a href="https://support.airtable.com/docs/airtable-api-key-deprecation-notice">Airtable Api Key Deprecation Notice</a>.</li>
      <li><b>Personal access token:</b> Connects to Airtable using the provided Airtable Personal Access Token.</li>
     </ul>
   </dd>  
 </dl>
-
-:::caution info
-Airtable has deprecated their API Key style of authentication, and it becomes unsupported as of February 1, 2024. For details, see [Airtable Api Key Deprecation Notice](https://support.airtable.com/docs/airtable-api-key-deprecation-notice). Please use **Personal access token** authentication if possible. If you must use an existing API Key, select the **API Key** authentication type and provide the key in the API Key field. Otherwise, you'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration.
-:::
 
 ## Create queries
 
@@ -60,10 +56,6 @@ For more information, see [Finding Airtable IDs](https://support.airtable.com/do
 
 This command to fetches data from your Airtable base. You can use the query configuration fields to filter, sort, and format the data that's returned to your app. The following section lists all the fields available for the **List records** command.
 
-:::warning important
-Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the **Fields** and **Sort** parameter examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
-:::
-
 <dl>
   <dt><b>Base ID</b></dt>
   <dd>
@@ -82,12 +74,28 @@ The name of the table to query from your base.
   <dt><b>Fields</b></dt>
   <dd>
 
-Specifies which columns to return, omits the rest. Each column name must be written in this field in the format `fields%5B%5D=COLUMN_NAME`, and multiple of these columns should be separated by `&`.
+Specifies which columns to return. If left blank, all columns are returned. The input to this field must be encoded using the JavaScript [`encodeURI()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) method. See below:
 
-For example, the following returns the columns `name` and `date-of-birth`:
+Each column to return is written as `fields[]=COLUMN_NAME`. For example, to return a column called `name`:
 
+```javascript
+{{ encodeURI("fields[]=name") }}
 ```
-fields%5B%5D=name&fields%5B%5D=date-of-birth
+
+To return multiple columns, separate the strings with `&`. For example, to return both `name` and `date_of_birth`:
+
+```javascript
+{{ encodeURI("fields[]=name") + "&" + encodeURI("fields[]=date_of_birth") }}
+```
+
+Below, a variable number of columns are chosen with a [Multi-Select widget](/reference/widgets/multiselect) and each is encoded and joined with an `&`:
+
+```javascript
+{{
+  MultiSelect1.selectedOptionValues.map(value => {
+    return encodeURI(`fields[]=${value}`)
+  }).join("&")
+}}
 ```
 
   </dd>
@@ -95,7 +103,19 @@ fields%5B%5D=name&fields%5B%5D=date-of-birth
   <dt><b>Filter by formula</b></dt>
   <dd>
 
-Returns only the records where this [Airtable formula](https://support.airtable.com/docs/formula-field-reference) is `true`.
+Expects an [Airtable formula](https://support.airtable.com/docs/formula-field-reference), which only returns the records where the formula evaluates to `true`. For example:
+
+You can return only records where the `permissionLevel` column is `admin`:
+
+```javascript
+permissionLevel = "admin"
+```
+
+Or you can return records where the percentage of positive reviews are above an 85% threshold:
+
+```javascript
+goodReviews / SUM(goodReviews, badReviews) > .85
+```
   
   </dd>
 
@@ -116,14 +136,30 @@ Sets an integer limit for how many records can be returned at a time; further re
   <dt><b>Sort</b></dt>
   <dd>
 
-Specifies which column to sort results by. Each column name must be written in this field in the format `sort%5B0%5D%5Bfield%5D=COLUMN_NAME`
-
-For example, the following value sorts the results by `name`:
-
-```
-sort%5B0%5D%5Bfield%5D=name
-```
+Specifies which column to sort results by. The input for this field must be encoded using the JavaScript [`encodeURI()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) method. See below:
   
+Each column to sort by is written as `sort[SORT_LEVEL_INDEX][field]=COLUMN_NAME`. For example, to sort by a column called `name`:
+
+```javascript
+{{ encodeURI("sort[0][field]=name") }}
+```
+
+To sort by multiple columns, separate the strings with `&`. For example, to sort by `name` and then by `date_of_birth`:
+
+```javascript
+{{ encodeURI("sort[0][field]=name") + "&" + encodeURI("sort[1][field]=date_of_birth") }}
+```
+
+Below, a variable number of columns are chosen with a [Multi-Select widget](/reference/widgets/multiselect) and each is encoded and joined with an `&`:
+
+```javascript
+{{
+  MultiSelect1.selectedOptionValues.map((value, index) => {
+    return encodeURI(`sort[${index}][field]=${value}`)
+  }).join("&")
+}}
+```
+
   </dd>
 
   <dt><b>Cell format</b></dt>
