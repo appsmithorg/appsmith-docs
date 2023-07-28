@@ -322,7 +322,7 @@ CheckboxGroup1.setDisabled(false)
 
 </dd>
 
-#### setValue (param: string): Promise
+#### setValue (param: object): Promise
 
 <dd>
 

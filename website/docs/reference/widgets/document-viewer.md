@@ -89,7 +89,7 @@ DocumentViewer1.setVisibility(true)
 </dd>
 
 
-#### setURL (param: boolean): Promise
+#### setURL (param: string): Promise
 
 <dd>
 

@@ -265,7 +265,7 @@ Sets the selected option of the Select widget.
 *Example*:
 
 ```js
-Text1.setColor('#FF0000')
+Text1.setTextColor('#FF0000')
 ```
 
 
