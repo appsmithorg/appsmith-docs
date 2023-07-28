@@ -427,13 +427,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous and return a [promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-```js
-return Input1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
-#### setVisibility(param: boolean)
+#### setVisibility(param: boolean): Promise
 
 <dd>
 
@@ -449,7 +443,7 @@ Input1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(param: boolean)
+#### setDisabled(param: boolean): Promise
 
 <dd>
 
@@ -464,7 +458,7 @@ Input1.setDisabled(false)
 
 </dd>
 
-#### setValue (param: string)
+#### setValue (param: string): Promise
 
 <dd>
 
@@ -479,7 +473,7 @@ Input1.setValue("Hello123")
 </dd>
 
 
-#### setRequired(param: boolean)
+#### setRequired(param: boolean): Promise
 
 <dd>
 

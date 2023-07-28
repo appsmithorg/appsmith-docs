@@ -389,7 +389,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility (:`boolean`)
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -399,15 +399,6 @@ Sets the visibility of the widget.
 
 ```js
 List1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-List1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
 ```
 
 </dd>

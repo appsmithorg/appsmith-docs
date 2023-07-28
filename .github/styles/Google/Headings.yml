@@ -170,4 +170,5 @@ exceptions:
   - selectedOptionLabels
   - MultiSelect  
   - TreeSelect
+  - Promise
 

@@ -195,13 +195,8 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith, like:
 
-```js
-Text1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
-#### setVisibility(param: boolean)
+#### setVisibility(param: boolean): Promise
 
 <dd>
 
@@ -217,7 +212,7 @@ Text1.setVisibility(true)
 </dd>
 
 
-#### setDisabled(param: boolean)
+#### setDisabled(param: boolean): Promise
 
 <dd>
 
@@ -231,7 +226,7 @@ Text1.setDisabled(false)
 
 </dd>
 
-#### setRequired(param: boolean)
+#### setRequired(param: boolean): Promise
 
 <dd>
 
@@ -246,7 +241,7 @@ Text1.setRequired(true)
 
 </dd>
 
-#### setText(param: string)
+#### setText(param: string): Promise
 
 <dd>
 
@@ -266,7 +261,7 @@ Text1.setText('Hello, world!')
 
 
 
-#### setTextColor(param: string)
+#### setTextColor(param: string): Promise
 
 <dd>
 
