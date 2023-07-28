@@ -171,4 +171,7 @@ exceptions:
   - MultiSelect  
   - TreeSelect
   - Promise
+  - onFilesSelected
+  - files
+  - isSwitchedOn
 
