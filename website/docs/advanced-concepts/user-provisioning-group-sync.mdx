@@ -29,14 +29,23 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 <Tabs queryString="scim">
 <TabItem label="Active Direcotry (SAML)" value="scim-ad-saml">
 
-1. Open your Enterprise application and click on **Provisioning** from the sidebar.
-2. 
+1. On the Active Directory homepage, click **Enterprise application** from the sidebar and open your application connect to Appsmith.
+
+2. On the application **Overview** page, click **Provisioning** from the sidebar.
+
+3. On the Provisioning homepage, click **Provisioning** from the sidebar and follow the steps below:
+
+    a. Select **Automatic** from the **Provision Mode** dropdown.
+
+    b. In the **Tenant URL** field, enter the **SCIM API endpoint** URL copied from Appsmith.
+
+    c. 
 
 </TabItem>
 
 <TabItem label="Okta (SAML)" value="scim-okta-saml">
 
-1. Open your Okta application connected to Appsmith and go to the General Tab.
+1. Open your Okta application connected to Appsmith and go to the **General** Tab.
 2. In the **General** tab, click **Edit** on **App Settings** and select the **Enable SCIM provisioning** checkbox. Click **Save**.
 3. Go to the **Provisioning** tab, click **Edit** on SCIM connection.
 
@@ -46,13 +55,13 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     c. In **Supported provisioning actions**, select the following checkboxes:
 
-        - **Push New Users**
-        - **Push Profile Updates**
-        - **Push Groups**
+    - **Push New Users**
+    - **Push Profile Updates**
+    - **Push Groups**
 
     d. Select **HTTP Header** the **Authentication Mode** dropdown.
 
-    e. In the HTTP Header section, add the **API key to setup SCIM** key copied from Appsmith to the **Authorization** field.
+    e. In the **HTTP Header** section, add the **API key to setup SCIM** key copied from Appsmith to the **Authorization** field.
     
     f. Click **Test Connector Configuration** to test the connection.
 
@@ -64,10 +73,8 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     b. Scroll down to **SCIM_test Attribute Mappings**, remove the attributes except the following:
 
-        - userName
-        - displayName
-
-5. 
+    - userName
+    - displayName
 
 </TabItem>    
 </Tabs>
