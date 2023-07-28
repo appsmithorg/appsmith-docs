@@ -19,11 +19,6 @@ The following section is a reference guide that provides a complete description 
 <dl>
   <dt><b>Authentication type</b></dt>
   <dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
-  <dd>
-
-Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtable-api-key-deprecation-notice) style of authentication. Please use **Personal access token** authentication if possible. If you must use an existing API Key, select the **API Key** authentication type and provide the key in the API Key field. Otherwise, you'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration.
-
-  </dd>
   <dd><i>Options:</i>
     <ul>
      <li><b>API key:</b> Connects to Airtable using the provided existing Airtable API Key.</li>
@@ -32,6 +27,10 @@ Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtab
   </dd>  
 </dl>
 
+::: caution info
+Airtable has deprecated their API Key style of authentication, and it becomes unsupported as of February 1, 2024. For details, see [Airtable Api Key Deprecation Notice](https://support.airtable.com/docs/airtable-api-key-deprecation-notice). Please use **Personal access token** authentication if possible. If you must use an existing API Key, select the **API Key** authentication type and provide the key in the API Key field. Otherwise, you'll need to [create a Personal Access Token](https://airtable.com/create/tokens) in Airtable and provide it in your datasource configuration.
+:::
+
 ## Create queries
 
 <figure>
@@ -39,7 +38,7 @@ Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtab
   <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
 </figure>
 
-:::caution info
+:::caution
 [The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
 :::
 
@@ -47,19 +46,19 @@ Airtable has [deprecated their API Key](https://support.airtable.com/docs/airtab
 
 In your queries, you'll need to specify the **Base ID** and **Table Name** to access your data.
 
-The **Base ID** can be found in the URL of the webpage that displays your database. It's the first sub-string after `https://airtable.com/`, prefixed by `app`. For example:
+The **Base ID** can be found in the URL of the webpage that displays your database. It's the first sub-string after `https://airtable.com/`, prefixed by `app`. For example, the Base ID for the following URL is `appZueQaLuTv7fSXjJx`:
 
 ```
 https://airtable.com/appZueQaLuTv7fSXjJx/tblPhSJD7fdIKLY3j1/viwqRLKs978DFI6Q?blocks=hide
-                     ^^^^^^^^^^^^^^^^^^^
-// The Base ID for this URL is: appZueQaLuTv7fSXjJx
 ```
+
+For more information, see [Finding Airtable IDs](https://support.airtable.com/docs/finding-airtable-ids).
 
 ### List records
 
 This command to fetches data from your Airtable base. You can use the query configuration fields to filter, sort, and format the data that's returned to your app. The following section lists all the fields available for the **List records** command.
 
-:::info
+:::warning important
 Appsmith is currently unable to support automatic parameter encoding for Airtable queries. Check the **Fields** and **Sort** parameter examples below, and see this [Airtable API URL Encoder](https://codepen.io/airtable/full/MeXqOg) for more help.
 :::
 
@@ -67,7 +66,7 @@ Appsmith is currently unable to support automatic parameter encoding for Airtabl
   <dt><b>Base ID</b></dt>
   <dd>
 
-A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
   </dd>
 
@@ -81,7 +80,7 @@ The name of the table to query from your base.
   <dt><b>Fields</b></dt>
   <dd>
 
-Specifies which columns to return, omits the rest. Each column name must be written in this field in the format `fields%5B%5D=<COLUMN_NAME>`, and multiple of these columns should be separated by `&`.
+Specifies which columns to return, omits the rest. Each column name must be written in this field in the format `fields%5B%5D=COLUMN_NAME`, and multiple of these columns should be separated by `&`.
 
 For example, the following returns the columns `name` and `date-of-birth`:
 
@@ -115,7 +114,7 @@ Sets an integer limit for how many records can be returned at a time; further re
   <dt><b>Sort</b></dt>
   <dd>
 
-Specifies which column to sort results by. Each column name must be written in this field in the format `sort%5B0%5D%5Bfield%5D=<COLUMN_NAME>`
+Specifies which column to sort results by. Each column name must be written in this field in the format `sort%5B0%5D%5Bfield%5D=COLUMN_NAME`
 
 For example, the following value sorts the results by `name`:
 
@@ -135,14 +134,14 @@ Sets whether certain values are returned in `string` or `json` format. For examp
   <dt><b>Time zone</b></dt>
   <dd>
 
-Sets the time zone to use for displaying date values, expects value like `'America/Chicago'`. See [all supported time zones](https://support.airtable.com/docs/supported-timezones-for-set-timezone).
+Sets the time zone to use for displaying date values, expects value like `'America/Chicago'`. For more information, see [Supported Timezones for SET_TIMEZONE](https://support.airtable.com/docs/supported-timezones-for-set-timezone).
   
   </dd>
 
   <dt><b>User locale</b></dt>
   <dd>
 
-Sets format for displaying dates according to locale, expects value like `'hi'` for Hindi. See [all supported locales](https://support.airtable.com/docs/supported-locale-modifiers-for-set-locale).  
+Sets format for displaying dates according to locale, expects a value like `'en-gb'` for British English. For more information, see [Supported locale modifiers for SET_LOCALE](https://support.airtable.com/docs/supported-locale-modifiers-for-set-locale).  
   
   </dd>
 
@@ -163,7 +162,7 @@ This command creates new entries in your Airtable base. The following section li
   <dt><b>Base ID</b></dt>
   <dd>
 
-A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
   </dd>
 
@@ -177,7 +176,7 @@ The name of the table to query from your base.
   <dt><b>Records</b></dt>
   <dd>
 
-Data for the new records to create. Expects an array of objects, where each object has a `fields` key containing an object of column key/value pairs. For example:
+Data for the new records to create. Expects an array of objects, where each object has a `fields` key containing an object of column key-value pairs. For example:
 
 ```javascript
 [
@@ -203,7 +202,7 @@ This command deletes one entry in your Airtable base. The following section list
   <dt><b>Base ID</b></dt>
   <dd>
 
-A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
   </dd>
 
@@ -231,7 +230,7 @@ This command fetches one entry from your Airtable base by its string ID. The fol
   <dt><b>Base ID</b></dt>
   <dd>
 
-A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
   </dd>
 
@@ -259,7 +258,7 @@ This command updates entries in your Airtable base, selected by their string IDs
   <dt><b>Base ID</b></dt>
   <dd>
 
-A string that uniquely identifies your Airtable base. Find this in your base's URL, [prefixed by `app`](#find-your-base-id).
+A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
   </dd>
 
@@ -273,7 +272,7 @@ The name of the table to query from your base.
   <dt><b>Records</b></dt>
   <dd>
 
-Data for the records to update. Expects an array of objects, where each object has an `id` key containing the ID of the record to update, and a `fields` key containing an object of column key/value pairs. For example:
+Data for the records to update. Expects an array of objects, where each object has an `id` key containing the ID of the record to update, and a `fields` key containing an object of column key-value pairs. For example:
 
 ```javascript
 [
