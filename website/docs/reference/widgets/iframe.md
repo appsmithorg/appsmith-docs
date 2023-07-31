@@ -21,7 +21,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to specify the URL of the page or application you want to load within the Iframe. For instance, by adding `https://docs.appsmith.com/` to the **URL** property, you can display the Appsmith docs in your Appsmith application.
+Allows you to specify the URL of the page or application you want to display within the Iframe. For instance, by adding `https://docs.appsmith.com/` to the **URL** property, you can display the Appsmith docs in your Appsmith application.
 
 
 <figure>
@@ -43,10 +43,12 @@ Allows you to specify the URL of the page or application you want to load within
 
 <dd>
 
-Allows you to embed HTML and CSS *(within `<style>` tags)* to render within the Iframe. When this property has a value, it overrides the URL property. In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
+Allows you to embed HTML and CSS *(within `<style>` tags)* to render within the Iframe. When this property has a value, it overrides the URL property.
+
+In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
 
-**Example**: suppose you want to create a simple time-picker with HTML and CSS. 
+**Example**: suppose you want to create a simple time-picker: 
 
 
 ```html
@@ -122,7 +124,7 @@ Set a title for the content displayed within the Iframe.
 
 <dd>
 
-This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. The default value for the property is `true`.
 
 </dd>
 
@@ -221,7 +223,7 @@ Reference properties are properties that are not available in the property pane 
 
 <dd>
 
-Reflects whether the widget is visible or not.
+Indicates the visibility state of a widget, with `true` indicating it is visible and `false` indicating it is hidden.
 
 *Example:*
 ```js
