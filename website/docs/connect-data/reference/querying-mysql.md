@@ -4,9 +4,9 @@ description: Connect Appsmith to a MySQL database and create queries.
 ---
 # MySQL
 
-This page provides information for connecting your application to your MySQL database and using queries to manage its content.
+This page provides information for connecting your application to your MySQL database and for using queries to manage its content.
 
-Appsmith supports MySQL versions 5.5, 5.6, 5.7, and 8.0.
+Appsmith supports MySQL versions **5.5**, **5.6**, **5.7**, and **8.0**.
 
 ## Connect MySQL
 
@@ -120,9 +120,9 @@ DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
 
-## Prepared statements
-
+:::info
 Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements).
+:::
 
 ## SQL modes
 

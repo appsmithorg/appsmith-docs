@@ -289,10 +289,10 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -304,19 +304,10 @@ Sets the visibility of the widget.
 CheckboxGroup1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CheckboxGroup1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
-
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -328,17 +319,10 @@ Sets the disabled state of the widget.
 CheckboxGroup1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CheckboxGroup1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
 
 </dd>
 
-#### setValue `string`
+#### setValue (param: string): Promise
 
 <dd>
 
@@ -349,18 +333,11 @@ Allows you to dynamically set the value of the widget.
 ```js
 CheckboxGroup1.setValue({ label: 'Option 2', value: 'option2' })
 ```
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CheckboxGroup1.setValue({ label: 'Option 2', value: 'option2' }).then(() => {
-  // code to be executed after value is set
-})
-```
 
 </dd>
 
 
-#### setRequired `boolean`
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -372,12 +349,5 @@ Sets whether the widget is required or not.
 CheckboxGroup1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-CheckboxGroup1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
 
 </dd>

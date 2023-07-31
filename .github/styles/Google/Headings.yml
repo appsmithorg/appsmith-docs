@@ -163,3 +163,24 @@ exceptions:
   - triggeredItemView
   - onPageSizeChange
   - Benefits of Datasource Environments
+  - Data Format
+  - Maximum No. of files
+  - setValue  
+  - setSelectedOptions
+  - selectedOptionValues
+  - selectedOptionLabels
+  - MultiSelect  
+  - TreeSelect
+  - Promise
+  - onFilesSelected
+  - files
+  - isSwitchedOn
+  - triggeredRowIndex
+  - progress
+  - onSearchTextChanged
+  - nextPageVisited
+  - previousPageVisited
+  - totalRecordsCount
+  - setSelectedRowIndex
+  - setURL
+  - setData
