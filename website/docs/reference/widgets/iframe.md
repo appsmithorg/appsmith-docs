@@ -1,11 +1,21 @@
+---
+description: This page explains how to use the Iframe widget to embed third-party applications and websites into your Appsmith application.
+---
 
 # Iframe
 
-This page explains how to use the Iframe widget to embed third-party applications and websites into your Appsmith application.
+This page provides information on using the Iframe widget to embed third-party applications and websites into your Appsmith application.
 
 :::info
 The Iframe widget is safe from XSS attacks from v1.8.6 onwards. If you have a self-hosted Appsmith and are on an older version, see [Sandboxing Iframe widgets](/product/security#sandboxing-iframe-widgets) to enable this.
 :::
+
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
 
 ## Display external content
 
