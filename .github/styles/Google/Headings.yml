@@ -183,4 +183,10 @@ exceptions:
   - setSelectedRowIndex
   - setURL
   - setData
-
+  - onSrcDocChanged
+  - onURLChanged
+  - Border Opacity	
+  - onMessageReceived
+  - source
+  - title
+  - message

@@ -17,33 +17,309 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-## Display external content
+#### URL `string`
 
-To display a website or third-party application within your Appsmith app, you can use the **URL** property. For example, you can display `https://docs.appsmith.com/` in your Appsmith app by adding it to the **URL** property.
+<dd>
+
+Allows you to specify the URL of the page or application you want to load within the Iframe. For instance, by adding `https://docs.appsmith.com/` to the **URL** property, you can display the Appsmith docs in your Appsmith application.
+
 
 <figure>
   <img src="/img/iframe-website.png" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
   <figcaption align = "center"><i></i>Display external website</figcaption>
 </figure>
 
+
+</dd>
+
+
 :::note
 * If the Iframe widget has a value in the **srcDoc** property, it overrides the **URL** property.
 * If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe widget fails to load.
 :::
 
-### HTML and CSS 
+#### srcDoc `string`
 
-To display HTML and CSS content in your Appsmith app, you can use the **srcDoc** property.
+
+<dd>
+
+Allows you to embed HTML and CSS *(within `<style>` tags)* to render within the Iframe. When this property has a value, it overrides the URL property. In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
+
+
+**Example**: suppose you want to create a simple time-picker with HTML and CSS. 
+
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Picker with AM/PM</title>
+    <style>
+        /* Add your custom CSS for the time picker here */
+        /* Example CSS for a basic time picker */
+        .time-picker {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        select {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="time-picker">
+        <select id="hour">
+            <!-- Add options for hours in 12-hour format with AM/PM -->
+            <option value="12">12</option>
+            <option value="01">01</option>
+            <!-- ... Continue with options for 02 to 11 ... -->
+            <option value="11">11</option>
+        </select>
+        <span>:</span>
+        <select id="minute">
+            <!-- Add options for minutes -->
+            <option value="00">00</option>
+            <option value="15">15</option>
+            <!-- ... Continue with options for 30 and 45 ... -->
+            <option value="45">45</option>
+        </select>
+        <select id="amPm">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+    </div>
+</body>
+</html>
+```
 
 
 <figure>
-  <img src="/img/html-iframe-1.png" style= {{width:"700px", height:"auto"}} alt="Display HTML components"/>
-  <figcaption align = "center"><i></i></figcaption>
+  <img src="/img/iframe-time-pick.png" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i>Custom Time-picker</figcaption>
 </figure>
 
-In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
-### Custom widgets
+</dd>
+
+
+### General
+
+#### Title `string`
+
+<dd>
+
+Set a title for the content displayed within the Iframe.
+
+</dd>
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+### Events
+
+When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+
+
+#### onURLChanged
+
+<dd>
+
+Specifies the action to be performed when the widget's **URL** property is changed.
+
+</dd>
+
+#### onSrcDocChanged
+
+<dd>
+
+Specifies the action to be performed when the **srcDoc** property of the widget is changed.
+
+
+</dd>
+
+#### onMessageReceived
+
+<dd>
+
+Specifies the action to be performed when a `postMessage` event is received from the embedded page.
+
+</dd>
+
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### Color
+
+#### Background Color `string`
+
+<dd>
+
+Sets a color for the Iframe's border, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+
+### Border and shadow
+
+
+
+#### Border Width `number`
+
+<dd>
+
+Specifies the width of the widget's border, accepting only numerical values in pixels (px). The default value is `1`.
+
+</dd>
+
+#### Border Opacity	`number`
+
+<dd>
+
+This property controls the opacity level of the widget's border. The maximum value is 100, which represents full opacity. Default value is `100`.
+
+
+</dd>
+
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Iframe1.isVisible`.
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+```js
+{{Iframe1.isVisible}}
+```
+
+</dd>
+
+#### source `string`
+
+<dd>
+
+Contains the URL of the embedded page. Doesn't reflect the content set in the **srcDoc** property.
+
+*Example:*
+```js
+{{Iframe1.source}}
+```
+
+
+</dd>
+
+#### title `string`
+
+<dd>
+
+Contains the title of the Iframe as set in the widget's **Title** property.
+
+*Example:*
+```js
+{{Iframe1.title}}
+```
+
+
+</dd>
+
+#### message `string`
+
+
+<dd>
+
+The `message` property contains a message received from the embedded page via the JavaScript `postMessage()` method. This message can be of any type and is `undefined` before a message is received.
+
+*Example:*
+```js
+{{Iframe1.message}}
+```
+
+</dd>
+
+#### messageMetadata `string`
+
+
+<dd>
+
+The `messageMetadata` property contains metadata related to the message received from the embedded page through the JavaScript `postMessage()` method.
+
+*Example:*
+```js
+{{Iframe1.messageMetadata}}
+```
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+```js
+Iframe1.setVisibility(true)
+```
+
+</dd>
+
+#### setURL (param: string): Promise
+
+<dd>
+
+Allows you to dynamically change the content of the iFrame by providing a new URL. 
+
+*Example*:
+```js
+Iframe1.setURL('<https://example.com>')
+```
+
+
+</dd>
+
+
+## Custom widgets
 
 Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
@@ -178,95 +454,4 @@ The Iframe widget listens for messages sent from the page embedded within it. To
   <figcaption align = "center"><i></i>From embedded page to Iframe</figcaption>
 </figure>
 
-## Properties
 
-Properties allow you to customize the widget, connect it to other widgets and trigger events on user actions.
-
-
-### Widget properties
-
-These properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **URL**          | URL   | Sets the URL of the page to load within the Iframe.                                                                                                                                                    |
-| **srcDoc**        | String  | Embed HTML and CSS (within `<style>` tags) to render within the Iframe. When this property has a value, it overrides the **URL** property.   |
-| **Title**         | String  | Sets a title for the Iframe content.                                |
-| **Animate Loading** | Boolean | When this toggle is switched on, it enables a skeleton loading screen, which sets an animated placeholder while the widget is loading and becomes visible. You can also control this toggle using JavaScript code by clicking the **JS** button |
-
-### Reference properties
-
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the visibility status, you can use `Iframe1.isVisible`.
-
-
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **isVisible**  | Boolean  | This property indicates whether the widget is visible or not.                                                                                                                                                                                         |
-| **message**    | String  | Contains a message received from the embedded page via the JS [`postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method. It may be of _any_ type. The property is `undefined` before a message is received. |
-| **messageMetadata**    | String  | 	Contains metadata associated with the message received from the embedded page via the JavaScript `postMessage()` method.  |
-| **source**    | String   | Contains the URL of the embedded page. Doesn't reflect the content set in the `srcDoc` property.                                                                                                                                                                                                      |
-| **title**     | String   | Contains the title of the Iframe as set in the widget's Title property._                                                                                                                                                                                                                                                           |
-
-### Style properties
-
-Style properties allow you to change the look and feel of the widget.
-
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Border Color**   | String    | Sets the color of the widget's border. Accepts valid CSS [color ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                               |
-| **Border Opacity**  | Number  | Sets the opacity of the widget's border. Max: 100                                                                            |
-| **Border Width**    | Number   | Sets the width of the widget's border.                                                                                  |
-| **Border Radius**   | String   | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**     | String    | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
-
-## Events
-
-When the event is triggered, these event handlers can run queries, JS code, or other supported actions.
-
-| Event                | Description                                                                                                                                                                                                                                                                     |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onURLChanged**      | Sets the action to take place when the widget's URL is changed.                                     |
-| **onSrcDocChanged**   | Sets the action to take place when the `srcDoc`property is changed.  |
-| **onMessageReceived** | Sets the action to take place when a `postMessage` event is received from the embedded page.       |
-
-
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
-
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
-
-#### setVisibility `boolean`
-
-<dd>
-
-Sets the visibility of the widget.
-*Example*:
-```js
-Iframe1.setVisibility(true)
-```
-To perform sequential actions, use the `.then()` block for execution.
-```js
-Iframe1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-</dd>
-
-#### setURL `string`
-
-<dd>
-
-Allows you to dynamically change the content of the iframe by providing a new URL. 
-*Example*:
-```js
-Iframe1.setURL('<https://example.com>')
-```
-To perform sequential actions, use the `.then()` block for execution.
-```js
-Iframe1.setURL('<https://example.com>').then(() => {
-  // code to be executed after URL is set
-})
-```
-
-</dd>
