@@ -89,7 +89,7 @@ Before you proceed, make sure you have:
   
     ```yaml
     # configure an external PostgreSQL
-    applicationConfig::
+    applicationConfig:
       APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
       APPSMITH_KEYCLOAK_DB_USERNAME: "POSTGRES_USER"
       APPSMITH_KEYCLOAK_DB_PASSWORD: "POSTGRES_PASSWORD"
@@ -111,7 +111,7 @@ Before you proceed, make sure you have:
 
     ```yaml
     # configure an external MongoDB
-      applicationConfig::
+      applicationConfig:
         #highlight-next-line
         APPSMITH_MONGODB_URI: "MONGODB_URI"
     ```
@@ -131,7 +131,7 @@ Before you proceed, make sure you have:
 
     ```yaml
     # configure an external Redis
-      applicationConfig::
+      applicationConfig:
         #highlight-next-line
         APPSMITH_REDIS_URL: "REDIS_URL"
     ```
