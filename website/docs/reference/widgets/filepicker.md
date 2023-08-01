@@ -46,7 +46,7 @@ _Example_:
 </dd>
 
 :::caution
-* Any file exceeding 5 MB would be saved as a blob URL, and the upper limit for file size is 100 MB.
+* Any file exceeding 5 MB is saved as a blob URL, and the upper limit for file size is 100 MB.
 * When using the data in a query, it is uploaded in the selected format, despite appearing in the blob URL format when you log the data.
 :::
 
@@ -204,7 +204,7 @@ The `files` property stores file objects that the user has selected. Each file o
 //here [0] represents index of the file.
 ```
 
-See how to [Upload Files to S3 using Filepicker](connect-data/how-to-guides/how-to-upload-to-s3)
+See how to [Upload Files to S3 using Filepicker](/connect-data/how-to-guides/how-to-upload-to-s3)
 
 </dd>
 
@@ -325,7 +325,7 @@ Be sure to select `File` in the datatype dropdown. If you would like to submit m
 * Now, update the `onFilesSelected` property to RUN the API.
 
 :::tip
-If you intend to upload files of significant size, kindly adjust the timeout settings in the API configuration.
+If you intend to upload files of significant size, adjust the timeout settings in the API configuration.
 :::
 
 To learn more,  see [how to use the Filepicker widget](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to upload or manage files on Cloudinary.
