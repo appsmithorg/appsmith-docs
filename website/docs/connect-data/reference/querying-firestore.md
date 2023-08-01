@@ -48,7 +48,7 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a Firestore query.</i></figcaption>
 </figure>
 
-## List Documents
+### List Documents
 
 This command lists all documents from a given collection. The following section lists all the fields available for the **List Documents** command.
 
@@ -102,7 +102,7 @@ Sets a limit for how many documents may be returned by the query.
   </dd>
 </dl>
 
-## Create Document
+### Create Document
 
 This command creates a new document within a given collection. Firestore automatically generates an identifier for the created document. The following section lists all the fields available for the **Create Document** command.
 
@@ -137,7 +137,7 @@ When filled, adds a `timestamp` key-value pair into the created document that sh
   </dd>
 </dl>
 
-## Update Document
+### Update Document
 
 This command updates an existing document at a given path. The following section lists all the fields available for the **Update Document** command.
 
@@ -178,7 +178,7 @@ When filled, adds a `timestamp` key-value pair into the created document that sh
   </dd>
 </dl>
 
-## Delete Document
+### Delete Document
 
 This command deletes an existing document at a given path. The following section lists all the fields available for the **Delete Document** command.
 
@@ -191,7 +191,7 @@ The path to the document to delete.
   </dd>
 </dl>
 
-## Get Document
+### Get Document
 
 This command fetches a single existing document at a given path. The following section lists all the fields available for the **Get Document** command.
 
@@ -204,7 +204,7 @@ The path to the document to fetch.
   </dd>
 </dl>
 
-## Upsert Document
+### Upsert Document
 
 This command creates a new document or replaces an existing document at the given path. The following section lists all the fields available for the **Upsert Document** command.
 
@@ -241,7 +241,7 @@ When filled, adds a `timestamp` key-value pair into the created document that sh
   </dd>
 </dl>
 
-## Add document to collection
+### Add document to collection
 
 This command creates a new document within a given collection, under the identifer you provide. The following section lists all the fields available for the **Add document to collection** command.
 
