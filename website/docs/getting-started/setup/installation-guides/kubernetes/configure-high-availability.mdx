@@ -32,7 +32,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
     c. To create the EFS file system, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
 
     d. To configured the Persistent Volume Claim (PVC) for the Kubernetes cluster, follow these steps:
-      *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the values.yaml file as shown below:
+      *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the `values.yaml` file as shown below:
 
         ```yaml
           existingClaim:
@@ -47,7 +47,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
               # highlight-next-line
               volumeHandle: FILE_SYSTEM_ID
         ```
-      *  **Create a New Persistent Volume Claim** - If you don't have any existing PVC and want to use a specific PVC solely, create a new PVC and update the values.yaml file as shown below:
+      *  **Create a New Persistent Volume Claim** - If you don't have any existing PVC and want to use a specific PVC solely, create a new PVC and update the `values.yaml` file as shown below:
 
       ```yaml
           existingClaim:
