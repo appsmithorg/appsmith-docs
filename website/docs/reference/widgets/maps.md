@@ -22,7 +22,7 @@ These properties are customizable options present in the property pane of the wi
 
 Sets the default location that the map focuses on when it is displayed for the first time to the user. 
 
-**Example**, if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
+*Example*, if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
 
 ```js
 {
@@ -42,7 +42,7 @@ Sets the default location that the map focuses on when it is displayed for the f
 Allows you to display precise locations or display multiple locations at once. To add markers to the Map widget, define an array of markers with latitude, longitude, title and color keys, and set it in the **Default markers** property. 
 
 
-**Example:**
+*Example:*
 
 ```js
 [
@@ -57,7 +57,7 @@ Allows you to display precise locations or display multiple locations at once. T
 
 You can display dynamic data from queries or JS functions by binding the response to the **Default markers** property.
 
-**Example**:  suppose you want to display multiple markers on a Map using the locations from the users' database:
+*Example*:  suppose you want to display multiple markers on a Map using the locations from the users' database:
 
 ```js
 {{fetchUserData.data.map(loc  => {
