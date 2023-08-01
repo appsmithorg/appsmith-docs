@@ -14,43 +14,54 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Options `array`
+#### Source Data `array<object>`
 
 <dd>
 
-Use to set labels and values for options in the list of the select widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Use to set source data of the Select widget. Source Data must be specified as an array of objects. For example:
 
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE"
+    name: "Blue",
+    code: "BLUE",
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    name: "Green",
+    code: "GREEN",
   },
   {
-    "label": "Red",
-    "value": "RED"
-  }
-]
+    name: "Red",
+    code: "RED",
+  },
+];
 ```
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate source by fetching data from queries or JS functions by binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the select widget. 
+</dd>
 
-*Example:* 
+#### Label `string/array<string>`
+
+<dd>
+
+Used to specify a key from the **Source Data** of the Select widget that provides the labels for each option in the list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property. For example:
 
 ```js
-{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
+{{ item.name.toLowerCase() }}
 ```
+</dd>
+
+#### Value `string/array<string>/number/boolean>`
+
+<dd>
+
+Used to define the key from the **Source Data** of the Select widget that provides the values for each option in the dropdown list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property.
 
 </dd>
 
@@ -135,7 +146,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Enabling this property for a select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the select widget.
+Enabling this property for a Select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the Select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the Select widget.
 
 </dd>
 
@@ -161,7 +172,7 @@ For example,  if you want to make the widget visible only when the user checks a
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's disabled state conditionally.
 
-For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression: 
+For example, if you want to allow only a specific user to interact with the Select widget, you can use the following JavaScript expression: 
 ```js
 {{appsmith.user.email=="john@appsmith.com"?false:true}}
 ```
@@ -267,7 +278,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `Select1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Select widget, you can use `Select1.isVisible`.
 
 #### filterText `string`
 

@@ -18,41 +18,53 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set options in the list of the MultiSelect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Use to set source data of the MultiSelect widget. Source Data must be specified as an array of objects. For example:
 
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE"
+    name: "Blue",
+    code: "BLUE",
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    name: "Green",
+    code: "GREEN",
   },
   {
-    "label": "Red",
-    "value": "RED"
-  }
-]
+    name: "Red",
+    code: "RED",
+  },
+];
 ```
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate source data by fetching data from queries or JS functions by binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the MultiSelect widget. 
+</dd>
 
-*Example:* 
+#### Label `string/array<string>`
+
+<dd>
+
+Used to specify a key from the **Source Data** of the MultiSelect widget that provides the labels for each option in the list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property. For example:
 
 ```js
-{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
+{{ item.name.toLowerCase() }}
 ```
+</dd>
+
+#### Value `string/array<string>/number/boolean>`
+
+<dd>
+
+Used to define the key from the **Source Data** of the MultiSelect widget that provides the values for each option in the dropdown list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property.
 
 </dd>
+
 
 #### Default selected value `string`
 
