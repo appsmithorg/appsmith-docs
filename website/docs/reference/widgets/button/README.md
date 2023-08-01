@@ -287,7 +287,7 @@ Button1.setDisabled(false)
 
 </dd>
 
-#### setColor (param: boolean): Promise
+#### setColor (param: string): Promise
 
 <dd>
 
@@ -301,7 +301,7 @@ Button1.setColor('#FF0000')
 
 </dd>
 
-#### setLabel (param: boolean): Promise
+#### setLabel (param: string): Promise
 
 <dd>
 

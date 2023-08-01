@@ -261,6 +261,7 @@ const sidebars = {
             'connect-data/how-to-guides/connect-datasource',
             'connect-data/how-to-guides/query-data',
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
@@ -315,6 +316,7 @@ const sidebars = {
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
             'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/Datasource-Environments',
             'connect-data/concepts/how-to-use-prepared-statements',
             'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
