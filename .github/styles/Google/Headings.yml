@@ -187,4 +187,10 @@ exceptions:
   - Auto Play 
   - playing
   - setPlaying
+  - Zoom Level
+  - Map & Marker Centring
+  - onMarkerCreated
+  - onMarkerClick
+  - center
+  - markers
 
