@@ -69,7 +69,7 @@ Defines conditions that documents' column values must meet to appear in your res
   <dd><i>Buttons:</i>
     <ul>
      <li><b>Add condition:</b> Adds another simple single-line expression.</li>
-     <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>`AND</code> statements.</li>
+     <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>AND</code> statements.</li>
     </ul>
   </dd><br />
 
