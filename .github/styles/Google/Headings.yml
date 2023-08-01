@@ -162,6 +162,7 @@ exceptions:
   - selectedItemView
   - triggeredItemView
   - onPageSizeChange
+  - Benefits of Datasource Environments
   - Data Format
   - Maximum No. of files
   - setValue  
@@ -186,3 +187,4 @@ exceptions:
   - Auto Play 
   - playing
   - setPlaying
+

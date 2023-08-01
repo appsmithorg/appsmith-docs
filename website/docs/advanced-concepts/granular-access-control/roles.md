@@ -36,10 +36,10 @@ In this section, you'll find permissions related to the application and its reso
 
 |   | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> | <div style= {{width:"180px"}}> **Public** </div> | <div style= {{width:"180px"}}> **Export** </div> | 
 | --- | --- | --- | --- | --- | --- | --- |
-| **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | Make any application inside the workspace public | Export any application in the workspace |
-| **App** | Create pages and queries inside the app | Edit pages and queries inside the app | Delete the app and its pages and queries | View the app and its pages and queries. | Make the application public | Export that particular application |
-| **Page** | Create queries on the page | Edit the page and its queries | Delete the page and its queries | View the page and its queries | - | - |
-| **Query** | - | Edit the query | Delete the query | View the query | - | - |
+| **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace. | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | Make any application inside the workspace public. | Export any application in the workspace. |
+| **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | Make the application public | Export that particular application. |
+| **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - |
+| **Query** | - | Edit the query. | Delete the query. | View the query. | - | - |
 
 
 ### Datasource and queries
@@ -48,9 +48,10 @@ This section contains permissions related to the actions a user can perform on d
 
 | | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> |
 | --- | --- | --- | --- | --- | --- |
-| **Workspace** | Execute queries on any datasource in the workspace | Create queries on any datasource in the workspace | Edit any datasource in the workspace | Delete any datasource in the workspace | View any datasource in the workspace |
-| **Datasource** | Execute queries on the datasource | Create queries on the datasource | Edit the datasource | Delete the datasource | View the datasource |
-| **Query** | Execute the query | - | - | - | - |
+| **Workspace** | Execute queries on any datasource in the workspace. | Create queries on any datasource in the workspace. | Edit any datasource in the workspace. | Delete any datasource in the workspace. | View any datasource in the workspace. |
+| **Environments** | Execute queries for staging and production environment.  | - | - | - | - |
+| **Datasource** | Execute queries on that datasource provided they have access to execute on at least one environment. | Create queries on the datasource. | Edit values of datasource configurations parameters in all environments. | Add or Remove datasource configuration parameters in all environments. | View datasource configuration values in all environments. |
+| **Query** | Execute the query. | - | - | - | - |
 
 
 ### Groups and roles
@@ -59,10 +60,10 @@ This section includes permissions for managing the groups and roles of an Appsmi
 
 | | <div style= {{width:"150px"}}> **Create** </div>| <div style= {{width:"150px"}}> **Edit** </div> | <div style= {{width:"150px"}}> **Delete** </div> | <div style= {{width:"150px"}}> **View** </div> | <div style= {{width:"150px"}}> **Invite User** </div> | <div style= {{width:"150px"}}> **Remove User** </div> | <div style= {{width:"150px"}}> **Associate Role** </div>|
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| **Groups** | Create a User Group | Edit any User Group | Delete any User Group | View any User Group | Invite an email to any User Group | Remove another user from any User Group | - |
-| **Group** | - | Edit the User Group | Delete the User Group | View the User Group | Invite an email to the User Group | Remove another user from the User Group | - |
-| **Roles** | Create a Role | Edit any Role | Delete any Role | View any Role | - | - | Assign any role to any User or User Group |
-| **Role** | - | Edit the Role | Delete the Role | View the Role | - | - | Assign the role to any User or User Group |
+| **Groups** | Create a User Group. | Edit any User Group. | Delete any User Group. | View any User Group | Invite an email to any User Group. | Remove another user from any User Group. | - |
+| **Group** | - | Edit the User Group. | Delete the User Group. | View the User Group. | Invite an email to the User Group | Remove another user from the User Group. | - |
+| **Roles** | Create a Role | Edit any Role. | Delete any Role. | View any Role. | - | - | Assign any role to any User or User Group. |
+| **Role** | - | Edit the Role. | Delete the Role. | View the Role. | - | - | Assign the role to any User or User Group. |
 
 
 ### Others
@@ -71,6 +72,6 @@ In this section, users can assign permissions for workspaces and Audit logs.
 
 |  | <div style= {{width:"150px"}}> **Create** </div>| <div style= {{width:"150px"}}> **Edit** </div> | <div style= {{width:"150px"}}> **Delete** </div> | <div style= {{width:"150px"}}> **View** </div> |
 | --- | --- | --- | --- | --- |
-| **Workspaces** | Create a workspace | Edit any workspace | Delete any workspace | View any workspace |
-| **Workspace** | - | Edit the workspace | Delete the workspace | View the workspace |
-| **Audit Logs** | - | - | - | View the audit logs |
+| **Workspaces** | Create a workspace. | Edit any workspace. | Delete any workspace. | View any workspace. |
+| **Workspace** | - | Edit the workspace. | Delete the workspace. | View the workspace. |
+| **Audit Logs** | - | - | - | View the audit logs. |

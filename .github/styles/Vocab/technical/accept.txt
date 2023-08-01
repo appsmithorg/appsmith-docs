@@ -491,3 +491,6 @@ setTextColor
 param
 MultiSelect
 setProgress
+Roles
+User
+Groups
