@@ -33,17 +33,13 @@ Allows you to specify the URL of the page or application you want to display wit
 </dd>
 
 
-:::note
-* If the Iframe widget has a value in the **srcDoc** property, it overrides the **URL** property.
-* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe widget fails to load.
-:::
 
 #### srcDoc `string`
 
 
 <dd>
 
-Allows you to embed HTML and CSS *(within `<style>` tags)* to render within the Iframe. When this property has a value, it overrides the URL property.
+Allows you to embed HTML and CSS within `<style>` tags to render in the Iframe. When this property has a value, it overrides the URL property.
 
 In addition to static HTML, you can display data generated dynamically from queries or JavaScript functions in the **srcDoc** property using the mustache syntax `{{ }}`.
 
@@ -108,6 +104,11 @@ In addition to static HTML, you can display data generated dynamically from quer
 
 </dd>
 
+
+:::info
+* If the Iframe widget has a value in the **srcDoc** property, it overrides the **URL** property.
+* If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe widget fails to load.
+:::
 
 ### General
 
@@ -265,7 +266,7 @@ Contains the title of the Iframe as set in the widget's **Title** property.
 
 <dd>
 
-The `message` property contains a message received from the embedded page via the JavaScript `postMessage()` method. This message can be of any type and is `undefined` before a message is received.
+The `message` property contains a message received from the embedded page via the JavaScript `postMessage()` method. This message can be of any type and is `undefined` before a message is received. Learn more about [postMessage().](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
 *Example:*
 ```js
@@ -321,7 +322,7 @@ Iframe1.setURL('<https://example.com>')
 </dd>
 
 
-## Custom widgets
+## Create custom widgets
 
 Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
@@ -380,7 +381,7 @@ With this setup, users can edit the code in the code editor, and when the submit
 
 
 
-## Communication between app and Iframe
+## Send Message Between App and Iframe
 
 Appsmith offers a secure method for enabling [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget. By leveraging the `postMessage` capability, you can establish a seamless exchange of messages between the embedded external page and the Appsmith app. 
 

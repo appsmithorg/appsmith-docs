@@ -190,3 +190,4 @@ exceptions:
   - source
   - title
   - message
+  - Send Message Between App and Iframe
