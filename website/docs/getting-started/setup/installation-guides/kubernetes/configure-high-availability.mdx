@@ -5,32 +5,33 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Configure High Availability and Scalability
-The High availability and scalability features of Kubernetes ensure continuous access to your applications. This page shows how to set up high availability and scalability for Appsmith.
+The high availability and scalability features of Kubernetes ensure continuous access to your applications. This page shows how to set up high availability and scalability for Appsmith.
 
 :::info
 High Availability is only available on Kubernetes self-hosted [**Business Edition**](https://www.appsmith.com/pricing) instances of Appsmith.
 :::
 
 ## Prerequisites
-Before you proceed, make sure you have:
 
 1. A self-hosted Kubernetes Business Edition Appsmith installation. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
 2. A running Kubernetes cluster with more than one node to achieve high availability. 
 3. At least 2 GB of free storage space for backup and update tasks.
-4. Created a backup of the Appsmith instance before a manual update. See the [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
-5. Installed a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods. If you haven't installed it, use the below command:
+
+## Before you begin
+1. Created a backup of the Appsmith instance before a manual update. For more information about creating backup, see the [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
+2. Installed a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods. If you haven't installed it yet, install it with:
   ```bash
   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
   ```
-6. Configured your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC). Make sure that you have:
+3. Configured your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC). If you haven't already, follow these steps:
 
-    a. Created an IAM role to interact with the Amazon Elastic File System (EFS). If not created yet, see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
+    a. To create an IAM role to interact with the Amazon Elastic File System (EFS), see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
           
-    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. Installed the Amazon EFS CSI driver. If not installed yet, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
+    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. To install the Amazon EFS CSI driver, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
 
-    c. Created the EFS file system. If not created yet, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
+    c. To create the EFS file system, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
 
-    d. Configured the Persistent Volume Claim (PVC) for the Kubernetes cluster. If not configured already, follow these steps:
+    d. To configured the Persistent Volume Claim (PVC) for the Kubernetes cluster, follow these steps:
       *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the values.yaml file as shown below:
 
         ```yaml
@@ -73,7 +74,7 @@ Before you proceed, make sure you have:
     maxReplicas: 2
   ```
 
-2. You may choose to configure external PostgreSQL, MongoDB, and Redis instances for your self-hosted instance Follow these steps to configure an external PostgreSQL, MongoDB, and Redis instances:
+2. You may choose to configure external PostgreSQL, MongoDB, and Redis instances for your self-hosted instance. Follow these steps to configure an external PostgreSQL, MongoDB, and Redis instances:
   * Turn off the settings for internal PostgreSQL, by changing the `enabled` attribute to `false` in the `values.yaml` file for postgresql attribute.
   
     ```yaml
@@ -133,7 +134,7 @@ Before you proceed, make sure you have:
         APPSMITH_REDIS_URL: "REDIS_URL"
     ```
     
-3. Run the below command to update Appsmith installation with high availability. If the values.yaml file is not in the deployment directory, specify the file location using the `-f` attribute:
+3. To update the installation of Appsmith with high availability configuration, run the command below. If the `values.yaml` file is not in the deployment directory specify the file location using the `-f` attribute.
 
 ```bash
 helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml

@@ -12,12 +12,12 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 <VideoEmbed host="youtube" videoId="wZzYL1uZwds" title="How To Deploy Appsmith On Kubernetes" caption="How To Deploy Appsmith On Kubernetes" />
 
 ## Prerequisites
-Before you begin, make sure that you have:
-
 1. At least 15 GB of free storage space.
 2. 4 GB of RAM.
-3. Installed Helm package manager on your local machine. See the official Helm documentation for your [operation system](https://helm.sh/docs/intro/install/#through-package-managers).
-4. A running Kubernetes cluster. If not present, follow these steps to set up the cluster:
+
+## Before you begin
+1. Installed Helm package manager on your local machine. See the official Helm documentation for your [operation system](https://helm.sh/docs/intro/install/#through-package-managers).
+2. A running Kubernetes cluster. If not present, follow these steps to set up the cluster:
 
     a. Verify if you have access to AWS CLI with:
       
@@ -54,48 +54,50 @@ Before you begin, make sure that you have:
       EOF
     ```
 
-5. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos), [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management), and [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
+3. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
+* [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
+* [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
+* [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
 
 
 ## Install Appsmith
 
-Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
+. Then, navigate to this folder using the `cd` command and follow the steps below:
 
 <Tabs groupId="appsmithEditions" queryString="current-edition">
   <TabItem label="Community Edition" value="communityEdition"> 
 
-  1. Add the Appsmith chart repository with:
+  1. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
+  2. Add the Appsmith chart repository with:
 
   ```bash
   helm repo add appsmith https://helm.appsmith.com
   ```
-
-  2. Load the Appsmith chart repository with:
+  3. Load the Appsmith chart repository with:
 
   ```bash
   helm repo update
   ``` 
-
-  3. Deploy Appsmith with:
+  4. Deploy Appsmith with:
 
   ```bash
   helm install appsmith appsmith/appsmith -n appsmith --create-namespace
   ```
 
-  4. Get pod name with:
+  5. Get pod name with:
 
   ```bash
   kubectl get pods -n appsmith
   ```
   The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
-  5. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  6. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
     kubectl --namespace appsmith port-forward appsmith-0 8080:80
     ```
 
-  6. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+  7. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -106,39 +108,41 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 
 1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
 
-2. Add the Appsmith chart repository with:
+2. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
+
+3. Add the Appsmith chart repository with:
 
   ```bash
   helm repo add appsmith-ee https://helm-ee.appsmith.com
   ```
-3. Load the Appsmith chart repository with:
+4. Load the Appsmith chart repository with:
 
   ```bash
   helm repo update
   ```
 
-4. Run the below command to deploy Appsmith:
+5. Run the below command to deploy Appsmith:
 
   ```bash
   helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace
   ```
 
-5. Get pod name with:
+6. Get pod name with:
 
   ```bash
   kubectl get pods -n appsmith-ee
   ```
  The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
-6. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
+7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
   
   ```bash
   kubectl --namespace appsmith-ee port-forward appsmith-0 8080:80
   ```
 
-7. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
-8. Log into your Appsmith account, and enter your license key to activate the instance.
+9. Log into your Appsmith account, and enter your license key to activate the instance.
 
 For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
 
