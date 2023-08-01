@@ -15,7 +15,7 @@ SCIM Provisioning is only available in Appsmith's [Enterprise Edition](https://w
 
 ## Prerequisites
 
--  Ensure that you have a [SAML](/setup/instance-configuration/authentication/security-assertion-markup-language-saml) SSO provider ([Active Direcotry](/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory) or [Okta](/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta)) configured on your Appsmith instance.
+-  Ensure that you have a [SAML](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) SSO provider ([Active Direcotry](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory) or [Okta](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta)) configured on your Appsmith instance.
 
 
 ## Set up provisioning on Appsmith
@@ -49,6 +49,7 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     - **userPrincipalName**
     - **displayName**
+    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**
 
     Click **Save**.
 
@@ -61,7 +62,9 @@ To complete the setup, go to your IdP application that is connect to Appsmith an
 
     f. Go back to the **Provisioning** page, turn the toggle **On** for **Provisioning status** present at the bottom. 
 
-4. Go to the **Provision on Demand** from the sidebar, enter a user or group name in the **Select a user or group** field to provision each user or group separately.
+4. Go to **Users and Groups** from the sidebar, and click **Add user/group** to add a user or group to your application. These users or groups get automatically synced and added to your Appsmith instance.
+
+5. If you want to manually sync a user or group, go to the **Provision on Demand** from the sidebar, enter a user or group name in the **Select a user or group** field. 
 
 </TabItem>
 
