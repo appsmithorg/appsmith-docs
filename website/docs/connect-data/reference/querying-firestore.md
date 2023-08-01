@@ -20,7 +20,7 @@ The following section is a reference guide that provides a complete description 
   <dt><b>Database URL</b></dt>
   <dd>
 
-The domain or network location of your database instance. This value includes your **Project ID** in the format `https://<project-id>.firebaseio.com`.
+The domain or network location of your database instance. This value includes your **Project ID** in the format `https://PROJECT_ID.firebaseio.com`.
 
   </dd>
 
