@@ -183,4 +183,6 @@ exceptions:
   - setSelectedRowIndex
   - setURL
   - setData
-
+  - Auto Play 
+  - playing
+  - setPlaying
