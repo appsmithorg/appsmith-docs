@@ -516,7 +516,7 @@ Contains the data of the row selected by the user. It's an empty object if no ro
 ```
 </dd>
 
-#### selectedRows `array`
+#### selectedRows `array<object>`
 
 <dd>
 
@@ -576,7 +576,7 @@ Reflects the current column sort criteria. For example, if table rows are being 
 
 </dd>
 
-#### tableData `array`
+#### tableData `array<object>`
 
 <dd>
 
@@ -733,7 +733,7 @@ Indicates whether the previous page of data has been visited by the user.
 
 </dd>
 
-#### tableHeaders `array`
+#### tableHeaders `array<object>`
 
 <dd>
 
@@ -773,7 +773,7 @@ Contains data related to the recently updated added row.
 ```
 </dd>
 
-#### updatedRows `array`
+#### updatedRows `array<object>`
 
 <dd>
 

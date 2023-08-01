@@ -1,6 +1,6 @@
 # Setup Table Inline Editing
 
-This page shows you how to add and edit Table data directly from the UI through inline editing.
+This page shows you how to add and edit Table data through inline editing.
 
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
