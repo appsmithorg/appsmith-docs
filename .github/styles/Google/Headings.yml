@@ -186,5 +186,5 @@ exceptions:
   - setData
   - Auto Play 
   - playing
-  - setPlaying
-
+  - setPlaying 
+  - Use Git with Datasource Environments
