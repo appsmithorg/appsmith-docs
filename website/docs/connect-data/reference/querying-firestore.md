@@ -27,14 +27,14 @@ The domain or network location of your database instance. This value includes yo
   <dt><b>Project ID</b></dt>
   <dd>
 
-The unique identifier for your Firestore project, accessible in your Firebase project's **Project Settings**.
+The unique identifier for your Firestore project, accessible in your Firebase project's **Project Settings**. For more information, see [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more#project-id).
 
   </dd>
 
   <dt><b>Service account credentials</b></dt>
   <dd>
 
-A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase projects **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration.
+A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase project's **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration. For
 
   </dd>
 </dl>
@@ -66,17 +66,23 @@ The name of the collection to query.
 Defines conditions that documents' column values must meet to appear in your results. The available comparison operators are `==`, `<`, `<=`, `>=`, `>`, `in`, `contains`, and `contains any`.
 
   </dd>
-  <dd><i>Buttons:</i>
+  <dd><i>Options:</i>
     <ul>
      <li><b>Add condition:</b> Adds another simple single-line expression.</li>
      <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>AND</code> statements.</li>
     </ul>
-  </dd><br />
+  </dd>
+  <dd>
+    <figure>
+      <img src="/img/firestore-where-conditions.png" style={{width: "100%", height: "auto"}} alt="Use Where conditions to create multiple levels of filtering." />
+      <figcaption align="center"><i>Use Where conditions to create multiple levels of filtering.</i></figcaption>
+    </figure>
+  </dd>
 
   <dt><b>Order by</b></dt>
   <dd>
 
-Sorts query results by a column value. Expects an array containing a single string which is the column's name. Sorts by the given column in ascending order by default, or you can add a "-" prefix to sort in descending order. For example, `["name"]` is ascending and `["-name"]` is descending.
+Sorts query results by a column value. Expects a JSON array containing a single string which is the column's name. By default this sorts in ascending order, or you can add a `-` prefix to the column name to sort in descending order. For example, `["name"]` is ascending and `["-name"]` is descending.
 
   </dd>
 
@@ -132,8 +138,24 @@ Expects a JSON object that represents the document to be created. For example:
   <dt><b>Timestamp Path</b></dt>
   <dd>
 
-When filled, adds a `timestamp` key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["timestamp"]`.
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
 
+  </dd>
+  <dd>
+  
+  For example, the value `["meta.dateCreated"]` adds the following to your document:
+  ```json
+  {
+    "meta": {
+      "dateCreated": {
+        "seconds": 1681997026,
+        "nanos": 409000000
+      },
+    },
+    // ...
+  }
+  ```
+  
   </dd>
 </dl>
 
@@ -166,7 +188,7 @@ Expects a JSON object that represents the new key-value pairs to update the docu
   <dt><b>Delete Key Path</b></dt>
   <dd>
 
-When filled, deletes the key located at the path specified by this field. You can delete nested keys by providing the path from the root of the object. Expects an array with a single string value, for example `["parentKey.keyToDelete"]`.
+When filled, deletes the key located at the path specified by this field. You can delete nested keys by providing the path from the root of the object. Expects an array with a single string value, for example `["PARENT_KEY.KEY_TO_DELETE"]`.
 
   </dd>
 
