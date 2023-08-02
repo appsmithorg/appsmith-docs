@@ -43,6 +43,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 ```js
 {{fetchData.data}}
 ```
+If you are generating options for MutliSelect widget using JS code as shown above, make sure to define both the [**Label**](#label-string) and [**Value**](#value-string) properties.
 
 </dd>
 

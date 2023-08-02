@@ -44,6 +44,8 @@ You can dynamically generate options by fetching data from queries or JS functio
 {{fetchData.data}}
 ```
 
+If you are generating options for Select widget using JS code as shown above, make sure to define both the [**Label**](#label-string) and [**Value**](#value-string) properties.
+
 </dd>
 
 #### Label `string`
@@ -65,7 +67,7 @@ Defines the key from the **Source Data** property that specifies the labels for 
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the values for each option in the Select widget. To define **Value** using code, click the **JS** button next to the property.
+Defines the key from the **Source Data** property that specifies the values for each option in the Select widget. Value defined for each option must be unique. To define **Value** using code, click the **JS** button next to the property.
 
 </dd>
 
