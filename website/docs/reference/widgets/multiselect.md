@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set source data of the MultiSelect widget. Source Data must be specified as an array of objects. For example:
+Specify data as an array of objects to display options in the widget. For example:
 
 
 ```js
