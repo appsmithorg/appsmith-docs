@@ -109,7 +109,7 @@ In addition to static HTML, you can display data generated dynamically from quer
 * If [X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) is set to DENY on the external page or website, the Iframe widget fails to load.
 :::
 
-Learn how to [create custom widgets](#create-custom-widgets).
+See how to [create custom widgets](#create-custom-widgets) using Iframe.
 
 
 ### General
