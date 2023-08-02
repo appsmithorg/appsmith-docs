@@ -14,7 +14,7 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Options `array`
+#### Source Data `array<object>`
 
 <dd>
 
@@ -46,7 +46,7 @@ You can dynamically generate source data by fetching data from queries or JS fun
 
 </dd>
 
-#### Label `string/array<string>`
+#### Label `string`
 
 <dd>
 
@@ -57,7 +57,7 @@ Used to specify a key from the **Source Data** of the MultiSelect widget that pr
 ```
 </dd>
 
-#### Value `string/array<string>/number/boolean>`
+#### Value `string`
 
 <dd>
 
