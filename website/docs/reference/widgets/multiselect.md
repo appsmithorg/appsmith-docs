@@ -66,7 +66,7 @@ Defines the key from the **Source Data** property that specifies the labels for 
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the values for each option in the MultiSelect widget. To define **Value** using code, click the **JS** button next to the property.
+Defines the key from the **Source Data** property that specifies the values for each option in the MultiSelect widget. Value defined for each option must be unique. To define **Value** using code, click the **JS** button next to the property.
 
 </dd>
 
