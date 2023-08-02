@@ -38,7 +38,7 @@ Use to set source data of the Select widget. Source Data must be specified as an
 ];
 ```
 
-You can dynamically generate source by fetching data from queries or JS functions by binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate source data by fetching data from queries or JS functions by binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
@@ -46,7 +46,7 @@ You can dynamically generate source by fetching data from queries or JS function
 
 </dd>
 
-#### Label `string/array<string>`
+#### Label `string`
 
 <dd>
 
@@ -57,7 +57,7 @@ Used to specify a key from the **Source Data** of the Select widget that provide
 ```
 </dd>
 
-#### Value `string/array<string>/number/boolean>`
+#### Value `string`
 
 <dd>
 
