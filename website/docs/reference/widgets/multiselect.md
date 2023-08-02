@@ -33,7 +33,7 @@ Specify data as an array of objects to display options in the widget. For exampl
   },
   {
     name: "Red",
-    code: "RED",
+    code: "RED"
   },
 ];
 ```
