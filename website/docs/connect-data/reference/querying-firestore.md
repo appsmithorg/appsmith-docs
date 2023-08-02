@@ -143,18 +143,19 @@ When filled, adds a timestamp key-value pair into the created document that show
   </dd>
   <dd>
   
-  For example, the value `["meta.dateCreated"]` adds the following to your document:
-  ```json
-  {
-    "meta": {
-      "dateCreated": {
-        "seconds": 1681997026,
-        "nanos": 409000000
-      },
+For example, the value `["meta.dateCreated"]` adds the following to your document:
+
+```json
+{
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
     },
-    // ...
-  }
-  ```
+  },
+  // ...
+}
+```
   
   </dd>
 </dl>
