@@ -50,18 +50,22 @@ You can dynamically generate options by fetching data from queries or JS functio
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the labels for each option in the Multiselect widget. To provide value to this field using code, click the **JS** button next to the property. For example:
+Defines the key from the **Source Data** property that specifies the labels for each option in the MultiSelect widget. To define **Label** using code, click the **JS** button next to the property. 
+
+Example: If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
 
 ```js
 {{ item.name.toLowerCase() }}
 ```
+`item.name` represents the Source Data's property containing the label, and the `toLowerCase()` function is applied to convert the label to lowercase.
+
 </dd>
 
 #### Value `string`
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the values for each option in the Multiselect widget. To provide value to this field using code, click the **JS** button next to the property.
+Defines the key from the **Source Data** property that specifies the values for each option in the MultiSelect widget. To define **Value** using code, click the **JS** button next to the property.
 
 </dd>
 

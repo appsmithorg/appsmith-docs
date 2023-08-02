@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Use to set source data of the Select widget. Source Data must be specified as an array of objects. For example:
+Specify data as an array of objects to display options in the widget. For example:
 
 
 ```js
@@ -38,7 +38,7 @@ Use to set source data of the Select widget. Source Data must be specified as an
 ];
 ```
 
-You can dynamically generate source data by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate options by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
@@ -50,18 +50,22 @@ You can dynamically generate source data by fetching data from queries or JS fun
 
 <dd>
 
-Used to specify a key from the **Source Data** of the Select widget that provides the labels for each option in the list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property. For example:
+Defines the key from the **Source Data** property that specifies the labels for each option in the Select widget. To define **Label** using code, click the **JS** button next to the property. 
+
+Example: If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
 
 ```js
 {{ item.name.toLowerCase() }}
 ```
+`item.name` represents the Source Data's property containing the label, and the `toLowerCase()` function is applied to convert the label to lowercase.
+
 </dd>
 
 #### Value `string`
 
 <dd>
 
-Used to define the key from the **Source Data** of the Select widget that provides the values for each option in the dropdown list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property.
+Defines the key from the **Source Data** property that specifies the values for each option in the Select widget. To define **Value** using code, click the **JS** button next to the property.
 
 </dd>
 
