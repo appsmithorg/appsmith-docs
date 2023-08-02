@@ -29,7 +29,7 @@ Specify data as an array of objects to display options in the widget. For exampl
   },
   {
     name: "Green",
-    code: "GREEN",
+    code: "GREEN"
   },
   {
     name: "Red",
