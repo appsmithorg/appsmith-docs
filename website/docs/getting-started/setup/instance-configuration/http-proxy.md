@@ -3,7 +3,7 @@ sidebar_position: 10
 ---
 # HTTP/HTTPS Proxy
 
-Appsmith supports running behind a forward proxy. This is usually useful when Appsmith is run on a server that's behind a corporate firewall, and needs to access the internet through a proxy.
+Appsmith supports running behind a forward proxy. This is usually useful when Appsmith is run on a server that's behind a corporate firewall and needs to access the internet through a proxy.
 
 ## How to configure a proxy
 
@@ -20,4 +20,4 @@ Saving and restarting Appsmith with this, will make all outgoing requests from t
 
 ## Trust custom CA for HTTPS proxy
 
-Using a `HTTPS_PROXY` will usually also need you to add a custom CA, as a trusted CA to Appsmith. This is described in detail [here](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate).
+Using an `HTTPS_PROXY` will usually also need you to add a custom CA, as a trusted CA to Appsmith. This is described in detail [here](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate).
