@@ -379,6 +379,19 @@ With this setup, users can edit the code in the code editor, and when the submit
   <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
 </figure>
 
+### Current Limitations
+With the iframe model, you cannot add widgets which rely on underlying platform capabilities like. For example, but not limited to - 
+1. A widget behaving like a canvas or parent to drop more widgets. Eg - Container
+2. A widget which acts like a modal or a drawer on top of the existing canvas
+3. Use the auto height or responsiveness features in your iframe
+
+### Common errors
+
+Within Appsmith currently, html formatting and error parsing is not available. So if you have any html or css errors in the src doc field Appsmith cannot identify them. 
+
+It’s very easy to run into errors when configuring code in the src doc field. 
+
+Our advise for you is to use an external service like code sandbox or host your own code if the widget functionality is complex and frequently updates to maintain your solution better.
 
 
 ## Send Message Between App and Iframe
