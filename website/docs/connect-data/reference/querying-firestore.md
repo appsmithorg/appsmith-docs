@@ -143,7 +143,7 @@ When filled, adds a timestamp key-value pair into the created document that show
   </dd>
   <dd>
   
-For example, the value `["meta.dateCreated"]` adds the following to your document:
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
 
 ```json
 {
@@ -196,7 +196,24 @@ When filled, deletes the key located at the path specified by this field. You ca
   <dt><b>Timestamp Path</b></dt>
   <dd>
 
-When filled, adds a `timestamp` key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["timestamp"]`.
+When filled, adds a timestamp key-value pair into the created document that shows when the document was updated. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
+
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.lastModified"]</code> adds the following to your document:
+
+```json
+{
+  "meta": {
+    "lastModified": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
   </dd>
 </dl>
@@ -259,7 +276,24 @@ Expects a JSON object that represents the document to be created. If a document 
   <dt><b>Timestamp Path</b></dt>
   <dd>
 
-When filled, adds a `timestamp` key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["timestamp"]`.
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
+
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
+
+```json
+{
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
   </dd>
 </dl>
@@ -294,7 +328,24 @@ Expects a JSON object that represents the document to be created. For example:
   <dt><b>Timestamp Path</b></dt>
   <dd>
 
-When filled, adds a `timestamp` key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["timestamp"]`.
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
+
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
+
+```json
+{
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
   </dd>
 </dl>
