@@ -61,7 +61,7 @@ Defines the key from the **Source Data** property that specifies the labels for 
 
 <dd>
 
-Used to define the key from the **Source Data** of the MultiSelect widget that provides the values for each option in the dropdown list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property.
+Defines the key from the **Source Data** property that specifies the values for each option in the Multiselect widget. To provide value to this field using code, click the **JS** button next to the property.
 
 </dd>
 
