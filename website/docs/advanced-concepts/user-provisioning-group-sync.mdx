@@ -18,12 +18,12 @@ This page shows how to set up SCIM on your Appsmith instance to streamline the u
 ## Prerequisites
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
-- A SAML SSO provider configured on your Appsmith instance. Currently, SCIM is only available for [Active Directory](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory) and [Okta](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta)
+- A SAML SSO provider configured on your Appsmith instance.
 
 ## Enable SCIM provisioning on Appsmith
 
 1. On your instance, go to **Admin Settings > Access Control** and click **Provisioning**.
-2. On the **User Provisioning & Group Sync** page, click **Enable**.
+2. On the **User Provisioning & Group Sync** page, click **Configure**.
 3. Copy the **SCIM API endpoint** URL to add it later in your IdP application.
 4. Under **API key to setup SCIM**, click the **Generate API key** button and copy the API key to add it later in your IdP application.
 
@@ -35,7 +35,7 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 <Tabs queryString="scim">
 <TabItem label="Active Direcotry (SAML)" value="scim-ad-saml">
 
-1. On the Active Directory homepage, click **Enterprise application** on the sidebar and open your application connected to Appsmith.
+1. On the Active Directory homepage, click **Enterprise application** on the sidebar and open the SAML application that is already connected to Appsmith.
 
 2. On the application **Overview** page, click **Provisioning** on the sidebar.
 
@@ -74,8 +74,8 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
 <TabItem label="Okta (SAML)" value="scim-okta-saml">
 
-1. Open your Okta application connected to Appsmith and go to the **General** Tab.
-2. In the **General** tab, click **Edit** on **App Settings** and select the **Enable SCIM provisioning** checkbox. Click **Save**.
+1. On the Okta homepage, go to **Applications > Applications** on the sidebar, and open the SAML application that is already connected to Appsmith.
+2. On the application page, go to the **General** tab, click **Edit** on **App Settings** and select the **Enable SCIM provisioning** checkbox. Click **Save**.
 3. Go to the **Provisioning** tab, click **Edit** on SCIM connection.
 
     a. Paste the **SCIM API endpoint** URL that you copied in step 3 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section to the **SCIM connector base URL** field.
