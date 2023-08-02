@@ -54,7 +54,7 @@ You can create a new branch for each feature you're working on and commit change
 To use environments with Git, you can follow these steps:
 
 1. If you haven't done it already, [connect your application to Git](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
-2. Connect to a datasource and configure its staging and production environments.
+2. Connect to a datasource and configure the _Staging_ and _Production_ environments.
 3. On the staging environment, create and switch to a `feature` [branch](/advanced-concepts/version-control-with-git/working-with-branches) to work on specific enhancements or features. 
 4. Use the staging environment while working on your application so that you can test the changes without affecting production data.
 5. Once you have tested your changes and are ready to deploy to production, commit your changes and merge into the `master` branch.
