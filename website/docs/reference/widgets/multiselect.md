@@ -38,7 +38,7 @@ Specify data as an array of objects to display options in the widget. For exampl
 ];
 ```
 
-You can dynamically generate source data by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate options by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
