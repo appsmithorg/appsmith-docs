@@ -50,7 +50,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 
 <dd>
 
-Used to specify a key from the **Source Data** of the MultiSelect widget that provides the labels for each option in the list. If you want to perform some transformation using JavaScript, click the **JS** button next to the property. For example:
+Defines the key from the **Source Data** property that specifies the labels for each option in the Multiselect widget. To provide value to this field using code, click the **JS** button next to the property. For example:
 
 ```js
 {{ item.name.toLowerCase() }}
