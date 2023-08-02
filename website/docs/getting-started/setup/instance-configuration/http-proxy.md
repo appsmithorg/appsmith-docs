@@ -16,7 +16,7 @@ HTTP_PROXY=http://1.2.3.4:8080
 HTTPS_PROXY=http://1.2.3.4:8080
 ```
 
-Saving and restarting Appsmith with this, will make all outgoing requests from the Appsmith server, go through this proxy.
+Saving and restarting Appsmith with this, makes all outgoing requests from the Appsmith server, go through this proxy.
 
 ## Trust custom CA for HTTPS proxy
 
