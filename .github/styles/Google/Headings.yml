@@ -162,6 +162,7 @@ exceptions:
   - selectedItemView
   - triggeredItemView
   - onPageSizeChange
+  - Benefits of Datasource Environments
   - Data Format
   - Maximum No. of files
   - setValue  
@@ -191,3 +192,8 @@ exceptions:
   - title
   - message
   - Send Message Between App and Iframe
+  - Auto Play 
+  - playing
+  - setPlaying 
+  - Use Git with Datasource Environments
+
