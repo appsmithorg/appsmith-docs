@@ -52,7 +52,7 @@ You can dynamically generate options by fetching data from queries or JS functio
 
 Defines the key from the **Source Data** property that specifies the labels for each option in the MultiSelect widget. To define **Label** using code, click the **JS** button next to the property. 
 
-Example: If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
+*Example:* If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
 
 ```js
 {{ item.name.toLowerCase() }}
