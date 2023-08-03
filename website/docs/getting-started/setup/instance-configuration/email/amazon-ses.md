@@ -121,7 +121,7 @@ Follow these steps to configure Amazon SES using environment variables:
 
 You may encounter some common errors after configuring Amazon SES:
 
-* [Unable to send emails](help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails)
+* [Unable to send emails](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails)
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
