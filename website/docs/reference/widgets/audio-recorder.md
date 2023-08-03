@@ -1,3 +1,8 @@
+---
+description: >-
+  Audio Recorder widget reference
+---
+
 # Audio Recorder
 
 This page provides information on how to use the Audio Recorder widget to record audio using your microphone. The recorded audio is saved in WAV format.
