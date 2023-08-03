@@ -75,7 +75,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Sets the color of the mic icon in the Audio Recorder. If JavaScript is enabled, you can specify valid CSS-sytnax [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color) values to set the color of the icon.
+Sets the color of the mic icon in the Audio Recorder. If JavaScript is enabled, you can specify valid CSS-syntax [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color) values to set the color of the icon.
 
 </dd>
 
@@ -83,7 +83,7 @@ Sets the color of the mic icon in the Audio Recorder. If JavaScript is enabled, 
 
 <dd>
 
-Sets the color of the widget's button. If JavaScript is enabled, you can specify valid CSS-sytnax [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color) values to set the color of the button.
+Sets the color of the widget's button. If JavaScript is enabled, you can specify valid CSS-syntax [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color) values to set the color of the button.
 
 </dd>
 
@@ -168,7 +168,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
 #### setVisibility `boolean`
 
