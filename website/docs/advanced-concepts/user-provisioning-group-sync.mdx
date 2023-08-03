@@ -18,7 +18,7 @@ This page shows how to configure Appsmith for SCIM to enable the automatic provi
 ## Prerequisites
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
-- A SAML SSO provider configured on your Appsmith instance. See [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) for instructions.
+- A SAML SSO provider is configured on your Appsmith instance. See [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) for instructions.
 
 ## Enable SCIM provisioning on Appsmith
 
@@ -49,9 +49,9 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
     a. Select **Automatic** from the **Provision Mode** dropdown.
 
-    b. In the **Tenant URL** field, paste the **SCIM API endpoint** URL that you copied in step 3 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
+    b. In the **Tenant URL** field, paste the **SCIM API endpoint** URL that you copied in Step 3 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
 
-    c. In the **Secret Token** field, paste the **API key** that you copied in step 4 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
+    c. In the **Secret Token** field, paste the **API key** that you copied in Step 4 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
 
     d. Click the **Test Connection** button to check if the added credentials are authorized to enable provisioning.
 
@@ -81,18 +81,18 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 <TabItem label="Okta (SAML)" value="scim-okta-saml">
 
 1. On the Okta homepage, go to **Applications > Applications** on the sidebar, and open the SAML application that is already connected to Appsmith.
-2. On the application page, go to the **General** tab, click **Edit** on **App Settings** and select the **Enable SCIM provisioning** checkbox. Click **Save**.
-3. Go to the **Provisioning** tab, click **Edit** on SCIM connection.
+2. On the application page, go to the **General** tab, click **Edit** on **App Settings**, and select the **Enable SCIM provisioning** checkbox. Click **Save**.
+3. Go to the **Provisioning** tab, and click **Edit** on SCIM connection.
 
-    a. Paste the **SCIM API endpoint** URL that you copied in step 3 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **SCIM connector base URL** field.
+    a. Paste the **SCIM API endpoint** URL that you copied in Step 3 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **SCIM connector base URL** field.
 
-    b. In **Unique identifier field for users**, enter `userName`.
+    b. In the **Unique identifier field for users**, enter `userName`.
 
     c. In **Supported provisioning actions**, select the **Push New Users**, **Push Profile Updates**, and **Push Groups** checkboxes.
 
-    d. Select **HTTP Header** the **Authentication Mode** dropdown.
+    d. Select **HTTP Header** in the **Authentication Mode** dropdown.
 
-    e. In the **HTTP Header** section, paste the **API key** that you copied in step 4 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **Authorization** field.
+    e. In the **HTTP Header** section, paste the **API key** that you copied in Step 4 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **Authorization** field.
     
     f. Click **Test Connector Configuration** to test the connection.
 
@@ -102,12 +102,12 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
     a. Click **Edit** on the **Provisioning to App** section, and tick all the options. Click **Save**.
 
-    b. Scroll down to **SCIM_test Attribute Mappings**, remove all the attributes except the following:
+    b. Scroll down to **SCIM_test Attribute Mappings**, and remove all the attributes except the following:
 
     - **Username**
     - **Display name**
 
-5. To assign the application to users or groups, go to the **Assignments** tab, click the **Assign** dropdown and select **Assign to People** or **Assign to Group** as per requirement.  
+5. To assign the application to users or groups, go to the **Assignments** tab, click the **Assign** dropdown, and select **Assign to People** or **Assign to Group** as per requirement.  
 
 </TabItem>    
 </Tabs>
