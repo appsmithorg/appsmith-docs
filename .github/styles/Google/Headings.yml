@@ -203,8 +203,10 @@ exceptions:
   - markers
   - setPlaying 
   - Use Git with Datasource Environments
+  - Quick Dismiss
   - Colors, Borders and Shadows
   - Default Tab
   - onTabSelected
+
 
 
