@@ -15,19 +15,22 @@ This page provides steps for configuring SendGrid as an email service provider o
 ## Configure SendGrid to use SMTP Relay
 
 1. Log into your [SendGrid account](https://app.sendgrid.com/login/).
-2. Go to **Integrations**, select **Integrate using Web API or SMTP Relay**, and click **Start**.
-3. Select **SMTP Relay** on next screen.
+2. Select **Email API > Integration Guide** from the left nav bar.
+2. Choose **SMTP Relay** on <em>Integrate using our Web API or SMTP Relay</em> screen.
 4. Click **Choose** button.
-5. Click the **Create API Key** button.
-6. Select permissions for the key. The key must have at least the _Mail Send_ permission.
-7. Click **Save** to create the key. SendGrid generates a new key. Make sure to copy and save it for later use.
-8. Add the details as shown in the screenshot below:
+5. On <em>How to send email using the SMTP relay</em> screen:
 
-     <figure>
-    <img src="/img/email-configuration-sendgrid-apikey.png" style={{width: "100%", height: "auto"}} alt="Create API key" />
-    <figcaption align="center"><i>Create API Key</i></figcaption>
+    <figure>
+        <img src="/img/email-configuration-sendgrid-api-key.png" style={{width: "100%", height: "auto"}} alt="SendGrid email configuration" />
+        <figcaption align="center"><i>Configure SendGrid as your email service provider</i></figcaption>
     </figure>
-9. Click **Next: Verify Integration** button to verify the integration.
+
+    a. Enter a unique name for <b>My First API Key Name</b> field.
+
+    b. Click the **Create Key** button. SendGrid generates a new key. Make sure to copy and save it for later use.
+
+6. The API key generated is also shown in the **Password** field under the <em>Configure your application</em> section. 
+7. Keep the SendGrid configuration screen open and proceed to the [Configure SendGrid on Appsmith](#configure-sendgrid-on-appsmith) section.
 
 ## Configure SendGrid on Appsmith
 
@@ -111,6 +114,25 @@ Follow these steps to configure SendGrid using environment variables:
     </dl>
 
 3. Save the changes and restart the Appsmith instance.
+
+## Verify SendGrid integration
+
+Follow these steps to verify your SendGrid integration:
+
+1. After triggering a test email, return to the SendGrid screen <em>Integrate using our Web API or SMTP Relay</em>.
+    <figure>
+        <img src="/img/email-configuration-sendgrid-api-key.png" style={{width: "100%", height: "auto"}} alt="SendGrid email configuration" />
+        <figcaption align="center"><i>Configure SendGrid as your email service provider</i></figcaption>
+    </figure>
+
+2. Check **I've updated my settings** checkbox, and click the **Next: Verify Integration** button.
+3. On the next screen, click the **Verify Integration** button and wait for SendGrid to verify the test email.
+4. On successful verification, a screen with the message <em>It worked!</em> is displayed.
+
+    <figure>
+        <img src="/img/email-configuration-sendgrid-integration-success.png" style={{width: "100%", height: "auto"}} alt="SendGrid integration success message" />
+        <figcaption align="center"><i>SendGrid integration success message</i></figcaption>
+    </figure>
 
 ## Troubleshooting
 
