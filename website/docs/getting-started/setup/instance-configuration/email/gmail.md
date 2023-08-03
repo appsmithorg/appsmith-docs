@@ -6,8 +6,8 @@ description: Configure Gmail to invite users to your Appsmith installation
 This page guides you through configuring Gmail as an email service provider on your self-hosted instance.
 
 ## Prerequisites
-* A self-hosted Appsmith instance: If you haven't installed Appsmith yet, follow the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-* A [Google Workspace](https://workspace.google.com/intl/en_in/) account.
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
+* A Google Workspace account. Sign up on the [Google Workspace](https://workspace.google.com/intl/en_in/), if you don't have one.
 
 ## Create app password
 

@@ -11,8 +11,8 @@ This page guides you through configuring Amazon SES as an email service provider
 
 Before you begin, make sure that you have the following:
 
-- A self-hosted Appsmith instance: If you haven't installed Appsmith yet, follow the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-- An Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
+- An Amazon Web Services (AWS) account. [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/), if you don't have one.
 - Amazon SES is configured to send emails. If you haven't set up SES yet, make sure you have:
     - Created an identity using an email address or a domain, and the identity status is verified. See [Creating and verifying identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html).
     - Created SMTP credentials for your account. See [Obtaining Amazon SES SMTP credentials](https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html).

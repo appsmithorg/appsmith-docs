@@ -8,9 +8,9 @@ This page provides steps for configuring SendGrid as an email service provider o
 
 ## Prerequisites
 
-- A self-hosted Appsmith instance. If you haven't installed Appsmith yet, follow the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-- A SendGrid account. If you don't have a SendGrid account, sign up for one on the [SendGrid](https://sendgrid.com/) Website.
-- A sender identity on SendGrid. To send emails via SendGrid, you need to have a sender identity set up. If you don't have one, create a sender identity by following the guide [Adding a Sender](https://docs.sendgrid.com/ui/sending-email/senders) available on SendGrid official documentation.
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
+- A SendGrid account. Sign up on the [SendGrid](https://sendgrid.com/) Website, if you don't have one.
+- A sender identity on SendGrid. You need this to send emails via SendGrid. For more information, see the [Adding a Sender](https://docs.sendgrid.com/ui/sending-email/senders) on the SendGrid official documentation.
 
 ## Configure SendGrid to use SMTP Relay
 
