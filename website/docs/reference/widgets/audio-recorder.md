@@ -128,7 +128,7 @@ Returns a blob URL that stores the audio for future use.
 
 <dd>
 
-Data URL format (Base64) of the audio, used to embed it inline within different applications.
+Stores the recorded audio in Data URL format (Base64). You can use it to embed the audio inline within different applications.
 
 *Example:*
 ```js
