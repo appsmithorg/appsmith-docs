@@ -14,45 +14,62 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Options `array`
+#### Source Data `array<object>`
 
 <dd>
 
-Use to set options in the list of the MultiSelect widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Specify data as an array of objects to display options in the widget. For example:
 
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE"
+    name: "Blue",
+    code: "BLUE"
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    name: "Green",
+    code: "GREEN"
   },
   {
-    "label": "Red",
-    "value": "RED"
-  }
-]
+    name: "Red",
+    code: "RED"
+  },
+];
 ```
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate options by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
 ```
-
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the MultiSelect widget. 
-
-*Example:* 
-
-```js
-{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
-```
+If you are generating options for MutliSelect widget using JS code as shown above, you must define both the [**Label**](#label-string) and [**Value**](#value-string) properties.
 
 </dd>
+
+#### Label `string`
+
+<dd>
+
+Defines the key from the **Source Data** property that specifies the labels for each option in the MultiSelect widget. To define **Label** using code, click the **JS** button next to the property. 
+
+*Example:* If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
+
+```js
+{{ item.name.toLowerCase() }}
+```
+`item.name` represents the Source Data's property containing the label, and the `toLowerCase()` function is applied to convert the label to lowercase.
+
+</dd>
+
+#### Value `string`
+
+<dd>
+
+Defines the key from the **Source Data** property that specifies the values for each option in the MultiSelect widget. Value defined for each option must be unique. To define **Value** using code, click the **JS** button next to the property.
+
+</dd>
+
 
 #### Default selected value `string`
 

@@ -434,7 +434,7 @@ Sets the color for the text in the table. Additionally, the text color can be pr
 
 <dd>
 
-Sets the background color of the widget, specified as a (CSS color value)[https://developer.mozilla.org/en-US/docs/Web/CSS/color]. It can also be manipulated programmatically using the JavaScript functions.
+Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
 
 </dd>
 

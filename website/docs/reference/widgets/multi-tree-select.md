@@ -22,22 +22,32 @@ The **Options** property allows you define the options available in the Multi Tr
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE",
+    "label": "Shoes",
+    "value": "SHOES",
     "children": [
       {
-        "label": "Dark Blue",
-        "value": "DARK BLUE"
+        "label": "Sports Shoes",
+        "value": "SPORTS_SHOES"
       },
       {
-        "label": "Light Blue",
-        "value": "LIGHT BLUE"
+        "label": "Casual Shoes",
+        "value": "CASUAL_SHOES"
       }
     ]
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    "label": "Electronics",
+    "value": "ELECTRONICS",
+    "children": [
+      {
+        "label": "Laptops",
+        "value": "LAPTOPS"
+      }
+    ]
+  },
+  {
+    "label": "Clothing",
+    "value": "CLOTHING"
   }
 ]
 ```
@@ -96,12 +106,12 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 Allows you to specify an initial value(s) for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. 
 
 
-For example, if you want the default selected values to be `RED` and `GREEN`, you can set the **Default Selected Values** property to:
+For example, if you want the default selected values to be `CLOTHING` and `LAPTOPS`, you can set the **Default Selected Values** property to:
 
 ```js
 [
-  "GREEN",
-  "RED"
+  "CLOTHING",
+  "LAPTOPS"
 ]
 ```
 
