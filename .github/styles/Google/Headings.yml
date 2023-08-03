@@ -184,6 +184,14 @@ exceptions:
   - setSelectedRowIndex
   - setURL
   - setData
+  - onSrcDocChanged
+  - onURLChanged
+  - Border Opacity	
+  - onMessageReceived
+  - source
+  - title
+  - message
+  - Send Message Between App and Iframe
   - Auto Play 
   - playing
   - setPlaying
@@ -193,4 +201,10 @@ exceptions:
   - onMarkerClick
   - center
   - markers
+  - setPlaying 
+  - Use Git with Datasource Environments
+  - Colors, Borders and Shadows
+  - Default Tab
+  - onTabSelected
+
 
