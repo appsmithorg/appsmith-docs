@@ -1,6 +1,40 @@
 # Image
 
-You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
+This page provides information on how to use the Image widget. You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
+
+## Content Propeties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+### Data
+
+#### Image `string`
+
+<dd>
+
+Sets the source from which to render the image. Accepts an image URL, data URI, or base64 encoded image data.
+
+</dd>
+
+#### Default image `string`
+
+<dd>
+
+Sets a default image that would be displayed if no image is rendered via the **Image** property. Accepts an image URL, data URI, or base64 encoded image data.
+
+</dd>
+
+### General
+
+#### Object fit `string`
+
+<dd>
+
+Sets how the image should be resized to fit its container. With JS enabled, accepts string values `auto`, `cover`, or `contain`. See CSS [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) for reference on these behaviors.
+
+</dd>
+
+#### Max zoom level 
 
 ## Display static images 
 
