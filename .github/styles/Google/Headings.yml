@@ -196,4 +196,7 @@ exceptions:
   - playing
   - setPlaying 
   - Use Git with Datasource Environments
+  - Colors, Borders and Shadows
+  - Default Tab
+  - onTabSelected
 
