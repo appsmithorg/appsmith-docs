@@ -3,7 +3,7 @@ Description: This page explains how to use the Map widget(powered by Google Maps
 ---
 # Map
 
-This page provides information on using the Map widget (powered by Google Maps API) to display location data and enable users to add markers, search, and select locations on the map.
+This page provides information on using the Map widget (powered by [Google Maps API](https://developers.google.com/maps/documentation)) to display location data and enable users to add markers, search, and select locations on the map.
 
 
 :::info IMPORTANT
