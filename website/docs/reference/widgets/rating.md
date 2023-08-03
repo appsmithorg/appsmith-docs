@@ -94,7 +94,7 @@ For example, if you want to allow only a specific user to click the button, you 
 
 <dd>
 
-When enabled, user input is disabled, but the stars retain their regular styling, and the tooltips remain visible when the user hovers with the mouse cursor. However, when the "Disabled" setting is turned on, the **Read Only** mode is disregarded.
+When enabled, user input is disabled, but the stars retain their regular styling, and the tooltips remain visible when the user hovers with the mouse cursor. However, when the **Disabled** setting is turned on, the **Read Only** mode is disregarded.
 
 </dd>
 
