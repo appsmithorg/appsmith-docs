@@ -194,9 +194,17 @@ exceptions:
   - Send Message Between App and Iframe
   - Auto Play 
   - playing
+  - setPlaying
+  - Zoom Level
+  - Map & Marker Centring
+  - onMarkerCreated
+  - onMarkerClick
+  - center
+  - markers
   - setPlaying 
   - Use Git with Datasource Environments
   - Colors, Borders and Shadows
   - Default Tab
   - onTabSelected
+
 
