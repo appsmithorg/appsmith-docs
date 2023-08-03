@@ -3,7 +3,7 @@ Description: The Rating widget is used to perform a quick rating operation on so
 ---
 # Rating
 
-This page provides information on using the Rating widget to perform a quick rating operations and customize it to rate any information from the connected datasource.
+This page provides information on using the Rating widget to perform a quick rating operations.
 
 <figure>
   <img src="/img/rating-img.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
