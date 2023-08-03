@@ -7,8 +7,14 @@ This page provides information on using the Map widget (powered by Google Maps A
 
 
 :::info IMPORTANT
-If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. For more information, see [Configuring Google Maps](/getting-started/setup/instance-configuration/google-maps).
+If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
+
+<figure>
+  <img src="/img/map-img.png" style= {{width:"700px", height:"auto"}} alt="Download image"/>
+  <figcaption align = "center"><i>Display Map</i></figcaption>
+</figure>
+
 
 ## Content properties
 
@@ -22,7 +28,7 @@ These properties are customizable options present in the property pane of the wi
 
 Sets the default location that the map focuses on when it is displayed for the first time to the user. 
 
-*Example*, if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
+*Example*: if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
 
 ```js
 {
