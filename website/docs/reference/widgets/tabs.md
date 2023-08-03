@@ -5,6 +5,11 @@ description: This page explains how the Tabs widget can be used to group related
 
 This page provides information on using the Tabs widget to organize related content and allow users to switch between different sets of information within a single container.
 
+<figure>
+  <img src="/img/tabs-img.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
+  <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
+</figure>
+
 
 ## Content properties
 
@@ -17,7 +22,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to manage tabs within the widget, where each tab is identified by a unique name. Additionally, you can rearrange the items and configure their visibility by clicking on the ⚙️ gear icon.
+Allows you to manage tabs within the widget, where each tab is identified by a unique name. You can rearrange the tabs items and configure their visibility by clicking on the gear icon ⚙️.
 
 </dd>
 
@@ -26,8 +31,7 @@ Allows you to manage tabs within the widget, where each tab is identified by a u
 
 <dd>
 
-Allows you can set a default tab for the widget by specifying its name. The selected tab is displayed automatically when the widget is loaded. Make sure the Tab name is exactly as specified.
-
+Allows you to specify a default tab by its name, which is automatically displayed when the widget loads. Make sure the Tab name is exactly as specified. 
 
 </dd>
 
@@ -65,7 +69,7 @@ This property controls whether the widget is displayed with a loading animation.
 
 <dd>
 
-This option enables you to toggle the visibility of tabs in the tab widget. The default value for the property is `true`.
+This option enables you to toggle the visibility of tabs. The default value for the property is `true`.
 
 </dd>
 
@@ -194,7 +198,7 @@ Widget property setters enable you to modify the values of widget properties at 
 These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -208,12 +212,9 @@ Tabs1.setVisibility(true)
 
 </dd>
 
-## Create multi-step form
+## Create multi-step form 
 
-Custom navigation schemes can be created by modifying the properties of a Tab widget. For instance, you can use the **Default tabs** and **storeValue** to create a multi-step form.
-
----
-**Example**: suppose you want to create a multi-step form using Tabs Widget.
+You can create a multi-step form using Tabs widget and `storeValue` function:
 
 1. Drop a Tab Widget and rename the tabs to `Basic Info`, and `Personal Info`.
 
