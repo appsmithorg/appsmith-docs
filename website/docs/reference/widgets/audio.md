@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Specifies the audio source to be played. It supports various formats such as MP3, WAV, and OGG. 
+Allows you to set the audio source to be played. It supports various formats such as MP3, WAV, and OGG. 
 
 *Example*:
 ```js
