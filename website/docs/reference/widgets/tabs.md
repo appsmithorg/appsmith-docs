@@ -7,7 +7,7 @@ This page provides information on using the Tabs widget to organize related cont
 
 <figure>
   <img src="/img/tabs-img.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
-  <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
+  <figcaption align = "center"><i>Display Tabs</i></figcaption>
 </figure>
 
 
@@ -90,14 +90,12 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
-
 
 #### onTabSelected
 
 <dd>
 
-Specifies the action to be performed when the user selects a tab.
+Specifies the action (Framework functions, queries, or JS functions) to be performed when the user selects a tab.
 
 </dd>
 
