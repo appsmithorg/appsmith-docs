@@ -1,3 +1,8 @@
+---
+description: >-
+  Container widget reference
+---
+
 # Container
 
 This page describes how to use Container widgets to group multiple widgets. You can either drop the widgets inside a Container widget or select the widgets and use `cmd+g` to create a Container widget.
@@ -52,7 +57,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Sets the background color of the widget. If JavaScript is enabled, you can specify valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the background color.
+Sets the background color of the widget. If JavaScript is enabled, you can specify a valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the background color.
 
 </dd>
 
@@ -60,7 +65,7 @@ Sets the background color of the widget. If JavaScript is enabled, you can speci
 
 <dd>
 
-Sets the border color of the widget. If JavaScript is enabled, you can specify valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the border color.
+Sets the border color of the widget. If JavaScript is enabled, you can specify a valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the border color.
 
 </dd>
 
@@ -125,7 +130,7 @@ Represents the widget's **Background Color** setting as a [CSS color](https://de
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility `boolean`
