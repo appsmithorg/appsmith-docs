@@ -208,6 +208,9 @@ exceptions:
   - Default Tab
   - onTabSelected
   - onRecordingStart
+  - blobURL
+  - dataURL
+  - onRecordingComplete
 
 
 

@@ -82,7 +82,7 @@ Sets the color of the widget's button. If JavaScript is enabled, you can specify
 
 </dd>
 
-### Border and Shadow
+### Border and shadow
 
 #### Border radius `string`
 
@@ -101,7 +101,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 </dd>
 
-## Reference Properties
+## Reference properties
 
 Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Select widget, you can use `AudioRecorder1.isVisible`.
 
