@@ -8,31 +8,30 @@ This page provides steps for configuring SendGrid as an email service provider o
 
 ## Prerequisites
 
-- A self-hosted Appsmith instance: If you haven't installed Appsmith yet, follow the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-- A SendGrid account: If you don't have a SendGrid account, sign up for one on the [SendGrid](https://sendgrid.com/) Website.
-- A sender identity on SendGrid: To send emails via SendGrid, you need to have a sender identity set up. If you don't have one, create a sender identity by following the guide [Adding a Sender](https://docs.sendgrid.com/ui/sending-email/senders) available on SendGrid official documentation.
+- A self-hosted Appsmith instance. If you haven't installed Appsmith yet, follow the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
+- A SendGrid account. If you don't have a SendGrid account, sign up for one on the [SendGrid](https://sendgrid.com/) Website.
+- A sender identity on SendGrid. To send emails via SendGrid, you need to have a sender identity set up. If you don't have one, create a sender identity by following the guide [Adding a Sender](https://docs.sendgrid.com/ui/sending-email/senders) available on SendGrid official documentation.
 
 ## Configure SendGrid to use SMTP Relay
 
-- Log into your [SendGrid account](https://app.sendgrid.com/login/).
-- Create a new sender identity.
-- Go to **Integrations**, select **Integrate using Web API or SMTP Relay**, and click **Start**.
-- Select **SMTP Relay** on next screen.
-- Click **Choose** button.
-- Click the **Create API Key** button.
-- Select permissions for the key. The key must have at least the _Mail Send_ permission.
-- Click **Save** to create the key. SendGrid generates a new key. Make sure to copy and save it for later use.
-- Add the details as shown in the screenshot below:
+1. Log into your [SendGrid account](https://app.sendgrid.com/login/).
+2. Go to **Integrations**, select **Integrate using Web API or SMTP Relay**, and click **Start**.
+3. Select **SMTP Relay** on next screen.
+4. Click **Choose** button.
+5. Click the **Create API Key** button.
+6. Select permissions for the key. The key must have at least the _Mail Send_ permission.
+7. Click **Save** to create the key. SendGrid generates a new key. Make sure to copy and save it for later use.
+8. Add the details as shown in the screenshot below:
 
      <figure>
     <img src="/img/email-configuration-sendgrid-apikey.png" style={{width: "100%", height: "auto"}} alt="Create API key" />
     <figcaption align="center"><i>Create API Key</i></figcaption>
     </figure>
-- Click **Next: Verify Integration** button to verify the integration.
+9. Click **Next: Verify Integration** button to verify the integration.
 
 ## Configure SendGrid on Appsmith
 
- On Appsmith, you can configure email by using one of the following ways:
+ On Appsmith, you can configure SendGrid by using one of the following ways:
 
 * [Admin settings](#admin-settings)
 * [Environment Variables](#environment-variables)
@@ -59,10 +58,10 @@ Follow these steps to configure SendGrid using Admin Settings:
 4. Add the configuration details for SendGrid as follows:
     <dl>
         <dt><b>SMTP host</b></dt>
-        <dd> Add the SMTP host as `smtp.sendgrid.net` for SendGrid. </dd>
+        <dd> Add the SMTP host as <code>smtp.sendgrid.net</code> for SendGrid. </dd>
         <br/>
         <dt><b>SMTP port</b></dt>
-        <dd> Add the SMTP port as `587` for using Transport Layer Security (TLS) protocol and `25` for sending emails without encryption. </dd>
+        <dd> Add the SMTP port as <code>587</code> for using Transport Layer Security (TLS) protocol and <code>25</code> for sending emails without encryption. </dd>
         <br/>
         <dt><b>From address</b></dt>
         <dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.</dd>
@@ -77,7 +76,7 @@ Follow these steps to configure SendGrid using Admin Settings:
         <dd>Add the username `apikey` for accessing the SMTP service provider. This is the actual string "apikey" and not the value of the API key that is created. This is only needed when the Transport Layer Security protocol is turned on.</dd>
         <br/>
         <dt><b>SMTP password</b></dt>
-        <dd>Add the API Key you created in [Configure SendGrid to use SMTP Relay](#configure-sendgrid-to-use-smtp-relay). This is only needed when the Transport Layer Security protocol is turned on.</dd>
+        <dd>Add the API Key you created in <a href="#configure-sendgrid-to-use-smtp-relay">Configure SendGrid to use SMTP Relay</a>. This is only needed when the Transport Layer Security protocol is turned on.</dd>
     </dl>
 
 5. Click the **SEND TEST EMAIL** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
@@ -88,7 +87,7 @@ Follow these steps to configure SendGrid using Admin Settings:
 
 Follow these steps to configure SendGrid using environment variables:
 
-1. Go to your Appsmith instance configuration file, such as the docker.env file for Docker or the values.yaml file for Kubernetes.
+1. Go to your Appsmith instance configuration file, such as the `docker.env` file for Docker or the `values.yaml` file for Kubernetes.
 2. Update the values of the environment variables as shown below:
     <dl>
     <dt><b>APPSMITH_MAIL_ENABLED</b></dt>
@@ -98,9 +97,9 @@ Follow these steps to configure SendGrid using environment variables:
     <dt><b>APPSMITH_REPLY_TO</b></dt>
     <dd>Set it to the email that should receive replies by default.</dd><br/>
     <dt><b>APPSMITH_MAIL_HOST</b></dt>
-    <dd>Set it to `smtp.sendgrid.net` for SendGrid.</dd><br/>
+    <dd>Set it to <code>smtp.sendgrid.net</code> for SendGrid.</dd><br/>
     <dt><b>APPSMITH_MAIL_PORT</b></dt>
-    <dd>Set it to `587` for using Transport Layer Security (TLS) protocol and `25` for sending emails without encryption.</dd><br/>
+    <dd>Set it to <code>587</code> for using Transport Layer Security (TLS) protocol and <code>25</code> for sending emails without encryption.</dd><br/>
     <dt><b>APPSMITH_MAIL_SMTP_TLS_ENABLED</b></dt>
     <dd>Set it to <code>true</code> to enable Transport Layer Security.</dd><br/>
     <dt><b>APPSMITH_MAIL_SMTP_AUTH</b></dt>
@@ -108,7 +107,7 @@ Follow these steps to configure SendGrid using environment variables:
     <dt><b>APPSMITH_MAIL_USERNAME</b></dt>
     <dd> Set it to the username as `apikey` for accessing the SMTP service provider. This is the actual string "apikey" and not the value of the API key that is created. This is only needed when the Transport Layer Security protocol is turned on. </dd><br/>
     <dt><b>APPSMITH_MAIL_PASSWORD</b></dt>
-    <dd>Set it to the API Key you created in [Configure SendGrid to use SMTP Relay](#configure-sendgrid-to-use-smtp-relay). This is only needed when the Transport Layer Security protocol is turned on.</dd>
+    <dd>Set it to the API Key you created in <a href="#configure-sendgrid-to-use-smtp-relay">Configure SendGrid to use SMTP Relay</a>. This is only needed when the Transport Layer Security protocol is turned on.</dd>
     </dl>
 
 3. Save the changes and restart the Appsmith instance.
