@@ -207,6 +207,7 @@ exceptions:
   - Colors, Borders and Shadows
   - Default Tab
   - onTabSelected
+  - onRecordingStart
 
 
 
