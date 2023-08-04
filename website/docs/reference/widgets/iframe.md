@@ -470,7 +470,6 @@ You cannot create custom widgets using Iframe that rely on underlying platform c
 
 
 Appsmith currently does not support HTML formatting and error parsing. As a result, Appsmith cannot identify any HTML or CSS errors in the **srcDoc** property.
-Be cautious when handling code in the **srcDoc** field, as errors can be encountered.
 
 For complex widgets with frequent updates, it is advisable to utilize an external service like CodeSandbox or host your own code. This helps to maintain your solution more effectively.
 
