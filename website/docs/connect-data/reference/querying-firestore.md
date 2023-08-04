@@ -312,7 +312,7 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
 
 ### Add document to collection
 
-This command creates a new document within a given collection, under the identifer you provide. The following section lists all the fields available for the **Add document to collection** command.
+This command creates a new document within a given collection, under the identifier you provide. The following section lists all the fields available for the **Add document to collection** command.
 
 <dl>
   <dt><b>Collection/Document path</b></dt>
