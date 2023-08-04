@@ -520,14 +520,14 @@ This operation associates a set of tags with a DynamoDB resource, identified by 
 
     ```json
     {
-   "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
-   "Tags": [ 
-      { 
-         "Key": "department",
-         "Value": "marketing"
-      }
-   ]
-}
+        "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
+        "Tags": [ 
+            { 
+                "Key": "department",
+                "Value": "marketing"
+            }
+        ]
+    }
     ```
 
 For more information, see the AWS docs for [TagResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html).
