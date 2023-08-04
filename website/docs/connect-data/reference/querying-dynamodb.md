@@ -310,7 +310,7 @@ This operation returns information about the auto scaling settings of all replic
 
 ### DescribeTimeToLive
 
-This operation returns information about the Time to Live (TTL) status of a given table, identified by its name. For example, the following shows TTL status for a table `users`:
+This operation returns information about the Time to Live (TTL) status of a given table, identified by its name. For example, the following shows the TTL status for a table `users`:
 
 ```json
 {
@@ -379,7 +379,7 @@ This operation returns a list of all tags for a given DynamoDB resource, identif
 
 ### PutItem
 
-This operation creates a new item, or replaces an old item with a new one. If an item with the same primary key already exists in the table, the new item completely replaces the existing item. For example, the following creates or replaces an item in a table `users` where the partition key is `team_id = "team_1"` and the sort key is `employee_id = "emp_1"`:
+This operation creates a new item or replaces an old item with a new one. If an item with the same primary key already exists in the table, the new item completely replaces the existing item. For example, the following creates or replaces an item in a table `users` where the partition key is `team_id = "team_1"` and the sort key is `employee_id = "emp_1"`:
 
 ```json
 {
@@ -439,7 +439,7 @@ This operation creates a new table that is a restoration of a given table from a
 
 ### Scan
 
-This operation searches an entire table and return records based on a filter condition. Scanning a table accesses every one of its records, and could result in lengthy response times and increased costs on large datasets. For example, the following query returns every record in the `users` table:
+This operation searches an entire table and returns records based on a filter condition. Scanning a table accesses every one of its records, and could result in lengthy response times and increased costs on large datasets. For example, the following query returns every record in the `users` table:
 
 ```json
 {
@@ -619,7 +619,7 @@ This operation updates settings for an existing global table. For example, the f
 
 ### UpdateItem
 
-This operation edits an existing item's attributes, or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
+This operation edits an existing item's attributes or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
 
 ```json
 {
