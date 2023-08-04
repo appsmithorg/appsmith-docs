@@ -2,15 +2,15 @@
 description: This page provides steps to configure HTTP/HTTPS proxy on your self-hosted instance.
 ---
 
-# Configure Proxy
+# Configure HTTP/HTTPS Proxy Server
 
-Appsmith offers support for running behind a forward proxy, which is beneficial when deploying Appsmith on a server behind a corporate firewall, and allows internet access through a proxy server. This page provides instructions for configuring HTTP/HTTPS proxy on your self-hosted Appsmith instance.
+Appsmith offers support for running behind a forward proxy, which is beneficial when deploying Appsmith on a server behind a corporate firewall, and allows internet access through a proxy server. This page provides instructions for configuring HTTP/HTTPS proxy server on your self-hosted Appsmith instance.
 
 ## Prerequisites
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
 
-## Configure HTTP/HTTPS proxy
+## Configure Proxy on Appsmith
 
 Follow these steps to configure HTTP/HTTPS proxy for your self-hosted instance:
 
@@ -21,13 +21,13 @@ Follow these steps to configure HTTP/HTTPS proxy for your self-hosted instance:
 
  b. `http_proxy` and/or `https_proxy`
 
-3. Add the chosen environment variables as shown below:
+For example, add the chosen environment variables as shown below:
  ```bash
  HTTP_PROXY=http://1.2.3.4:8080
  HTTPS_PROXY=http://1.2.3.4:8080
  ```
-4. Save the changes and restart the Appsmith instance.
-5. To use an HTTPS proxy, you also need to add a trusted custom Certificate Authority (CA) to Appsmith. See [Custom Root CA Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) to set up a certificate authority.
+3. Save the changes and restart the Appsmith instance.
+4. To use an HTTPS proxy, you also need to add a trusted custom Certificate Authority (CA) to Appsmith. See [Custom Root CA Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) to set up a certificate authority.
 
 ## Troubleshooting
 
