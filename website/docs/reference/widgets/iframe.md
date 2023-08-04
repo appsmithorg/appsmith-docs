@@ -463,8 +463,7 @@ With this setup, users can edit the code in the code editor, and when the submit
 
 You cannot create custom widgets using Iframe that rely on underlying platform capabilities, such as:
 
-* Widgets that act as a canvas or parent for other widgets. Eg: _Container_
-* ```
+* Widgets that act as a canvas or parent for other widgets. Eg: _Container_.
 * Widgets that act as a _Modal_ or _Drawer_ on top of the existing canvas.
 * Cannot use auto-height or responsiveness features for widgets within the Iframe.
 
