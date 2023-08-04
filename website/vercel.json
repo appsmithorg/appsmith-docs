@@ -1011,6 +1011,10 @@
     {
       "source": "/third-party-services/google-maps",
       "destination": "/getting-started/setup/instance-configuration/google-maps"
+    },
+    {
+      "source": "/reference/readme-1/actions/:path*",
+      "destination": "/reference/appsmith-framework/widget-actions/:path*"
     }
   ]
 }
