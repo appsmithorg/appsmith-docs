@@ -465,7 +465,7 @@ You cannot create custom widgets using Iframe that rely on underlying platform c
 
 * Widgets that act as a canvas or parent for other widgets. Eg: _Container_
 * ```
-* Widgets acting as modals or drawers on top of the existing canvas.
+* Widgets that act as a _Modal_ or _Drawer_ on top of the existing canvas.
 * Using auto height or responsiveness features within your iframe.
 
 Appsmith currently lacks support for HTML formatting and error parsing. As a result, any HTML or CSS errors in the **srcDoc** field are not identified by Appsmith.
