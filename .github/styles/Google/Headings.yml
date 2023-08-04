@@ -194,6 +194,20 @@ exceptions:
   - Send Message Between App and Iframe
   - Auto Play 
   - playing
+  - setPlaying
+  - SendGrid
+  - API
+  - Key
+  - Relay
+  - Zoom Level
+  - Map & Marker Centring
+  - onMarkerCreated
+  - onMarkerClick
+  - center
+  - markers
   - setPlaying 
   - Use Git with Datasource Environments
-
+  - Quick Dismiss
+  - Colors, Borders and Shadows
+  - Default Tab
+  - onTabSelected

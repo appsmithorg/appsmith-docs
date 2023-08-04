@@ -23,28 +23,35 @@ Use to set options in the list of the TreeSelect widget. Options must be specifi
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE",
+    "label": "Shoes",
+    "value": "SHOES",
     "children": [
       {
-        "label": "Dark Blue",
-        "value": "DARK BLUE"
+        "label": "Sports Shoes",
+        "value": "SPORTS_SHOES"
       },
       {
-        "label": "Light Blue",
-        "value": "LIGHT BLUE"
+        "label": "Casual Shoes",
+        "value": "CASUAL_SHOES"
       }
     ]
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    "label": "Electronics",
+    "value": "ELECTRONICS",
+    "children": [
+      {
+        "label": "Laptops",
+        "value": "LAPTOPS"
+      }
+    ]
   },
   {
-    "label": "Red",
-    "value": "RED"
+    "label": "Clothing",
+    "value": "CLOTHING"
   }
 ]
+
 ```
 You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
@@ -77,7 +84,15 @@ This code takes an array of products and creates a nested data structure that gr
 
 <dd>
 
-Sets the initial option that is automatically chosen when the widget is loaded. It serves as the default selection unless the user manually selects a different option from the list. For example, if you want the default selected option to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
+Allows you to specify an initial value(s) for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. 
+
+For example, if you want the default selected value to be `CLOTHING`, you can set the **Default Selected Values** property to:
+
+```js
+[
+  "CLOTHING"
+]
+```
 
 </dd>
 
