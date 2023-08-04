@@ -1,0 +1,131 @@
+---
+description: Guide on how to configure SCIM
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Setup SCIM Provisioning
+
+:::info
+SCIM Provisioning is only available in Appsmith's [Enterprise Edition](https://www.appsmith.com/pricing).
+:::
+
+
+This page shows how to configure Appsmith for SCIM to enable the automatic provisioning of users and groups based on your SSO provider.
+
+
+## Prerequisites
+
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
+- A SAML SSO provider is configured on your Appsmith instance. See [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) for instructions.
+
+## Enable SCIM provisioning on Appsmith
+
+1. On your instance, go to **Admin Settings > Access Control** and click **Provisioning**.
+2. On the **User Provisioning & Group Sync** page, click **Configure**.
+3. Copy the **SCIM API endpoint** URL to add it later in your IdP application.
+4. Under **API key to setup SCIM**, click the **Generate API key** button and copy the API key to add it later in your IdP application.
+
+<figure>
+  <img src="/img/scim-setup-appsmith.png" style= {{width:"700px", height:"auto"}} alt="SCIM Provisioning"/>
+  <figcaption align = "center"><i>Configure SCIM in Appsmith</i></figcaption>
+</figure>
+
+
+
+## Configure identity provider
+
+To complete the setup, go to your IdP application that is connected to Appsmith and follow the steps below:
+
+<Tabs queryString="scim">
+<TabItem label="Active Directory (SAML)" value="scim-ad-saml">
+
+1. On the Active Directory homepage, click **Enterprise application** on the sidebar and open the SAML application that is already connected to Appsmith.
+
+2. On the application **Overview** page, click **Provisioning** on the sidebar.
+
+3. On the **Provisioning** homepage, click **Provisioning** on the sidebar and follow the steps below:
+
+    a. Select **Automatic** from the **Provision Mode** dropdown.
+
+    b. In the **Tenant URL** field, paste the **SCIM API endpoint** URL that you copied in Step 3 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
+
+    c. In the **Secret Token** field, paste the **API key** that you copied in Step 4 under [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section.
+
+    d. Click the **Test Connection** button to check if the added credentials are authorized to enable provisioning.
+
+    e. Expand the **Mappings** section, click **Provision Azure Active Directory Users**, and scroll down to **Attribute Mappings** to configure attributes for users. Delete all the attributes except the following:
+
+    - **userPrincipalName**
+    - **displayName**
+    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**
+
+    f. Click **Save**.
+
+    g. Go back to **Mappings** on the **Provisioning** page, click **Provision Azure Active Directory Groups**, and scroll down to **Attribute Mappings** to configure attributes for groups. Delete all the attributes except the following:
+
+    - **displayName**
+    - **members**
+
+    h. Click **Save**.
+
+    i. Go back to the **Provisioning** page, turn the toggle **On** for **Provisioning status** present at the bottom. 
+
+4. Go to the **Overview** page on the sidebar, and click the **start provisioning** button on the navigation bar.
+
+5. Go to **Users and Groups** on the sidebar, and click **Add user/group** to add a user or group to your application. These users or groups get automatically synced and added to your Appsmith instance.
+
+6. If you want to sync a user or group manually, go to the **Provision on Demand** from the sidebar, and enter a user or group name in the **Select a user or group** field. 
+
+</TabItem>
+
+<TabItem label="Okta (SAML)" value="scim-okta-saml">
+
+1. On the Okta homepage, go to **Applications > Applications** on the sidebar, and open the SAML application that is already connected to Appsmith.
+2. On the application page, go to the **General** tab, click **Edit** on **App Settings**, and select the **Enable SCIM provisioning** checkbox. Click **Save**.
+3. Go to the **Provisioning** tab, and click **Edit** on SCIM connection.
+
+    a. Paste the **SCIM API endpoint** URL that you copied in Step 3 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **SCIM connector base URL** field.
+
+    b. In the **Unique identifier field for users**, enter `userName`.
+
+    c. In **Supported provisioning actions**, select the **Push New Users**, **Push Profile Updates**, and **Push Groups** checkboxes.
+
+    d. Select **HTTP Header** in the **Authentication Mode** dropdown.
+
+    e. In the **HTTP Header** section, paste the **API key** that you copied in Step 4 under the [Enable SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith) section in the **Authorization** field.
+    
+    f. Click **Test Connector Configuration** to test the connection.
+
+    g. Click **Save**.
+
+4. In the Provisioning tab, go to **Settings > to App**.
+
+    a. Click **Edit** on the **Provisioning to App** section, and tick all the options. Click **Save**.
+
+    b. Scroll down to **SCIM_test Attribute Mappings**, and remove all the attributes except the following:
+
+    - **Username**
+    - **Display name**
+
+4. Go to the **Push Groups** tab, click on the **+ Push Groups** dropdown and select **Find Group by name**.
+
+    a. Enter the group name that you want to sync from Okta to your application.
+
+    b. Click **Save** to push the group or click **Save & Add Another** to save the current group and immediately add another one.
+
+5. To assign the application to users or groups, go to the **Assignments** tab, click the **Assign** dropdown, and select **Assign to People** or **Assign to Group** as per requirement.  
+
+</TabItem>    
+</Tabs>
+
+Once the setup is complete, refresh Appsmith in your browser, and the users and groups from your IdP provider sync in Appsmith. You can check the users and groups in Appsmith under **Admin Settings > Access Control > Users/Groups**.
+
+:::caution
+All user and group updates must be performed on the Identity Provider (IdP) side only. Avoid making direct changes within Appsmith to prevent data discrepancies. For assistance or inquiries, contact the support team using the chat widget at the bottom right of this page.
+:::
+
+## See also 
+
+- [Roles](/advanced-concepts/granular-access-control/roles)

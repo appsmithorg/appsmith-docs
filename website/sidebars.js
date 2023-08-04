@@ -551,6 +551,7 @@ const sidebars = {
               'advanced-concepts/granular-access-control/roles', 
           ]
         },
+        `advanced-concepts/user-provisioning-group-sync`,
         {
           type: 'category',
           label: 'Version Control with Git',
