@@ -208,7 +208,7 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
-                'getting-started/setup/instance-configuration/custom-domain/http-proxy',
+                'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
