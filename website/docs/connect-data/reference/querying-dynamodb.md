@@ -8,6 +8,12 @@ This page provides information for connecting your application to your DynamoDB 
 
 ## Connect DynamoDB
 
+:::caution important
+You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to your database. Create an IAM Policy with a condition statement to allow these IP addresses. To learn more, see [IP address condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress).
+:::
+
+### Connection parameters
+
 The following section is a reference guide that provides a complete description of all the parameters to connect to a DynamoDB database.
 
 <figure>
@@ -21,7 +27,7 @@ The following section is a reference guide that provides a complete description 
   
 The region where your DynamoDB instance is hosted.
 
-  </dd>
+  </dd><br/>
 
   <dt><b>AWS Access Key ID</b></dt>
   <dd>
@@ -51,32 +57,32 @@ The following section is a reference guide that provides a complete description 
 
 This operation fetches many specific records by their partition and sort keys. For example, the following fetches two specific records by their sort and partition keys:
 
-    ```json
-    {
-        "RequestItems": {
-            "users": {
-                "Keys": [
-                    {
-                        "team_id": {
-                            "S": "team_1"
-                        },
-                        "employee_id": {
-                            "S": "emp_1"
-                        }
+```json
+{
+    "RequestItems": {
+        "users": {
+            "Keys": [
+                {
+                    "team_id": {
+                        "S": "team_1"
                     },
-                    {
-                        "team_id": {
-                            "S": "team_3"
-                        },
-                        "employee_id": {
-                            "S": "emp_4"
-                        }
+                    "employee_id": {
+                        "S": "emp_1"
                     }
-                ]
-            }
+                },
+                {
+                    "team_id": {
+                        "S": "team_3"
+                    },
+                    "employee_id": {
+                        "S": "emp_4"
+                    }
+                }
+            ]
         }
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [BatchGetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html).
 
@@ -84,41 +90,41 @@ For more information, see the AWS docs for [BatchGetItem](https://docs.aws.amazo
 
 This operation creates and deletes multiple items in one or more tables. For example, the following creates a new record and deletes an existing one:
 
-    ```json
-    {
-        "RequestItems": {
-            "users": [
-                {
-                    "PutRequest": {
-                        "Item": {
-                            "team_id" : {
-                                "S" : "team_1"
-                            },
-                            "employee_id": {
-                                "S" : "emp_1"
-                            },
-                            "name": {
-                                "S" : "Aman"
-                            }
-                        }
-                    }
-                },
-                {
-                    "DeleteRequest": {
-                        "Key" : {
-                            "team_id" : {
-                                "S" : "team_1"
-                            },
-                            "employee_id" : {
-                                "S" : "emp_3"
-                            }
+```json
+{
+    "RequestItems": {
+        "users": [
+            {
+                "PutRequest": {
+                    "Item": {
+                        "team_id" : {
+                            "S" : "team_1"
+                        },
+                        "employee_id": {
+                            "S" : "emp_1"
+                        },
+                        "name": {
+                            "S" : "Aman"
                         }
                     }
                 }
-            ]
-        }
+            },
+            {
+                "DeleteRequest": {
+                    "Key" : {
+                        "team_id" : {
+                            "S" : "team_1"
+                        },
+                        "employee_id" : {
+                            "S" : "emp_3"
+                        }
+                    }
+                }
+            }
+        ]
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [BatchWriteItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html).
 
@@ -126,12 +132,12 @@ For more information, see the AWS docs for [BatchWriteItem](https://docs.aws.ama
 
 This operation creates a backup with a given name of an entire table. For example, the following creates a backup of the table `users` under the name `usersBackup`:
 
-    ```json
-    {
-        "BackupName": "usersBackup",
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "BackupName": "usersBackup",
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [CreateBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html).
 
@@ -139,16 +145,16 @@ For more information, see the AWS docs for [CreateBackup](https://docs.aws.amazo
 
 This operation creates a global table from an existing table. A global table creates a replication relationship between two or more DynamoDB tables that share a name in the specified Regions. For example, the following creates a global replica of the `users` table in the `us-east-1` region:
 
-    ```json
-    {
-        "GlobalTableName": "users",
-        "ReplicationGroup": [ 
-            { 
-                "RegionName": "us-east-1"
-            }
-        ]
-    }
-    ```
+```json
+{
+    "GlobalTableName": "users",
+    "ReplicationGroup": [ 
+        { 
+            "RegionName": "us-east-1"
+        }
+    ]
+}
+```
 
 For more information, see the AWS docs for [CreateGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html).
 
@@ -156,39 +162,39 @@ For more information, see the AWS docs for [CreateGlobalTable](https://docs.aws.
 
 This operation creats a new DynamoDB table. For example the following creates a table called `users` with three columns, where `team_id` is the partition key and `emp_id` is the sort key:
 
-    ```json
-    {
-        "AttributeDefinitions": [
-            {
-                "AttributeName": "name",
-                "AttributeType": "S"
-            },
-            {
-                "AttributeName": "emp_id",
-                "AttributeType": "S"
-            },
-            {
-                "AttributeName": "team_id",
-                "AttributeType": "S"
-            }
-        ],
-        "TableName": "users",
-        "KeySchema": [
-            {
-                "AttributeName": "team_id",
-                "KeyType": "HASH" // partition key
-            },
-            {
-                "AttributeName": "emp_id",
-                "KeyType": "RANGE" // sort key
-            }
-        ],
-        "ProvisionedThroughput": {
-            "ReadCapacityUnits": 5,
-            "WriteCapacityUnits": 5
+```json
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "name",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "emp_id",
+            "AttributeType": "S"
+        },
+        {
+            "AttributeName": "team_id",
+            "AttributeType": "S"
         }
+    ],
+    "TableName": "users",
+    "KeySchema": [
+        {
+            "AttributeName": "team_id",
+            "KeyType": "HASH" // partition key
+        },
+        {
+            "AttributeName": "emp_id",
+            "KeyType": "RANGE" // sort key
+        }
+    ],
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 5,
+        "WriteCapacityUnits": 5
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [CreateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html).
 
@@ -198,11 +204,11 @@ This operation deletes an existing backup of a table. The backup is identified b
 
 For example, the following deletes a backup with ARN `arn:aws:dynamodb:us-east-2:123456789012:table/users`:
 
-    ```json
-    {
-        "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
-    }
-    ```
+```json
+{
+    "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
+}
+```
 
 For more information, see the AWS docs for [DeleteBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html).
 
@@ -210,19 +216,19 @@ For more information, see the AWS docs for [DeleteBackup](https://docs.aws.amazo
 
 This operation deletes an existing record, identified by its primary and sort keys. For example, the following deletes a record with keys `team_id = team_1` and `employee_id = emp_3` from the table `users`:
 
-    ```json
-    {
-        "TableName" : "users",
-        "Key" : {
-            "team_id" : {
-                "S" : "team_1"
-            },
-            "employee_id" : {
-                "S" : "emp_3"
-            }
+```json
+{
+    "TableName" : "users",
+    "Key" : {
+        "team_id" : {
+            "S" : "team_1"
+        },
+        "employee_id" : {
+            "S" : "emp_3"
         }
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [DeleteItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html).
 
@@ -230,11 +236,11 @@ For more information, see the AWS docs for [DeleteItem](https://docs.aws.amazon.
 
 This operation deletes an existing table. For example, the following deletes an existing table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DeleteTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html).
 
@@ -242,11 +248,11 @@ For more information, see the AWS docs for [DeleteTable](https://docs.aws.amazon
 
 This operation returns metadata about an existing table backup. The backup is identified by its Amazon Resource Name (ARN), which you can find with a ListBackups query. For example, the following returns information about a backup with ARN `arn:aws:dynamodb:us-east-2:123456789012:table/users`:
 
-    ```json
-    {
-        "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
-    }
-    ```
+```json
+{
+    "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
+}
+```
 
 For more information, see the AWS docs for [DescribeBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html).
 
@@ -254,11 +260,11 @@ For more information, see the AWS docs for [DescribeBackup](https://docs.aws.ama
 
 This operation checks the status of continuous backups and point in time recovery on the specified table. For example, the following checks the status of a table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeContinuousBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html).
 
@@ -266,11 +272,11 @@ For more information, see the AWS docs for [DescribeContinuousBackups](https://d
 
 This operation returns information about contributor insights for a given table or global secondary index. For example, the following returns contributor insights for a table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContributorInsights.html).
 
@@ -284,11 +290,11 @@ For more information, see the AWS docs for [DescribeEndpoints](https://docs.aws.
 
 This operation returns information about a given global table, identified by its name. For example, the following returns information about a global table `users`:
 
-    ```json
-    {
-        "GlobalTableName": "users"
-    }
-    ```
+```json
+{
+    "GlobalTableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTable.html).
 
@@ -296,11 +302,11 @@ For more information, see the AWS docs for [DescribeGlobalTable](https://docs.aw
 
 This operation returns information about the region-specific settings of a global table, identified by its name. For example, the following returns settings data about a global table `users`:
 
-    ```json
-    {
-        "GlobalTableName": "users"
-    }
-    ```
+```json
+{
+    "GlobalTableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeGlobalTableSettings](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTableSettings.html).
 
@@ -314,11 +320,11 @@ For more information, see the AWS docs for [DescribeLimits](https://docs.aws.ama
 
 This operation returns information about a given table, identified by its name. For example, the following returns information about a table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html).
 
@@ -326,11 +332,11 @@ For more information, see the AWS docs for [DescribeTable](https://docs.aws.amaz
 
 This operation returns information about the auto scaling settings of all replicas of a given global table, identified by its name. For example, the following shows the auto scaling settings for replicas of a global table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeTableReplicaAutoScaling](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTableReplicaAutoScaling.html).
 
@@ -338,11 +344,11 @@ For more information, see the AWS docs for [DescribeTableReplicaAutoScaling](htt
 
 This operation returns information about the Time to Live (TTL) status of a given table, identified by its name. For example, the following shows TTL status for a table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [DescribeTimeToLive](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTimeToLive.html).
 
@@ -350,15 +356,15 @@ For more information, see the AWS docs for [DescribeTimeToLive](https://docs.aws
 
 Use this operation when you want one specific record, and you know its partition and sort keys. For example, the following returns a record where `team_id = "team_1"` and `employee_id = "emp_1"`:
 
-    ```json
-    {
-        "TableName": "users",
-        "Key": {
-            "team_id": "team_1",
-            "employee_id": "emp_1"
-        }
+```json
+{
+    "TableName": "users",
+    "Key": {
+        "team_id": "team_1",
+        "employee_id": "emp_1"
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html).
 
@@ -366,12 +372,12 @@ For more information, see the AWS docs for [GetItem](https://docs.aws.amazon.com
 
 This operation returns a list of DynamoDB backups associated with your AWS account. The results can be filtered to certain tables or time ranges. For example, the following returns a list of all backups of a table `users`:
 
-    ```json
-    {
-        "BackupType": "ALL",
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "BackupType": "ALL",
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [ListBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html).
 
@@ -379,11 +385,11 @@ For more information, see the AWS docs for [ListBackups](https://docs.aws.amazon
 
 This operation returns a list of `ContributorInsightsSummary` entries for a table and all of its global secondary indexes. For example, the following returns a list of `ContributorInsightsSummary` entries for a table `users`:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [ListContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListContributorInsights.html).
 
@@ -391,11 +397,11 @@ For more information, see the AWS docs for [ListContributorInsights](https://doc
 
 This operation returns a list of your global tables that have a replica in the specified region. For example, the following returns a list of global tables for the region `us-east-1`:
 
-    ```json
-    {
-        "RegionName": "us-east-1"
-    }
-    ```
+```json
+{
+    "RegionName": "us-east-1"
+}
+```
 
 For more information, see the AWS docs for [ListGlobalTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListGlobalTables.html).
 
@@ -409,11 +415,11 @@ For more information, see the AWS docs for [ListTables](https://docs.aws.amazon.
 
 This operation returns a list of all tags for a given DynamoDB resource, identified by its Amazon Resource Name (ARN). For example, the following returns a list of tags for a resource with ARN `arn:aws:dynamodb:us-east-2:123456789012:table/users`:
 
-    ```json
-    {
-        "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
-    }
-    ```
+```json
+{
+    "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
+}
+```
 
 For more information, see the AWS docs for [ListTagsOfResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html).
 
@@ -421,22 +427,22 @@ For more information, see the AWS docs for [ListTagsOfResource](https://docs.aws
 
 This operation creates a new item, or replaces an old item with a new one. If an item with the same primary key already exists in the table, the new item completely replaces the existing item. For example, the following creates or replaces an item in a table `users` where the partition key is `team_id = "team_1"` and the sort key is `employee_id = "emp_1"`:
 
-    ```json
-    {
-        "TableName": "users",
-        "Item": {
-            "team_id" : {
-                "S" : "team_1"
-            },
-            "employee_id": {
-                "S" : "emp_1"
-            },
-            "name": {
-                "S" : "Aman"
-            }
+```json
+{
+    "TableName": "users",
+    "Item": {
+        "team_id" : {
+            "S" : "team_1"
+        },
+        "employee_id": {
+            "S" : "emp_1"
+        },
+        "name": {
+            "S" : "Aman"
         }
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html).
 
@@ -444,17 +450,17 @@ For more information, see the AWS docs for [PutItem](https://docs.aws.amazon.com
 
 This operation fetches records that share a partition key based on a filter condition. For example, the following returns all records with partition key `team_id = "team_2"`:
 
-    ```json
-    {
-        "TableName": "users",
-        "KeyConditionExpression": "team_id = :val",
-        "ExpressionAttributeValues": {
-            ":val": {
-                "S": "team_2"
-            }
+```json
+{
+    "TableName": "users",
+    "KeyConditionExpression": "team_id = :val",
+    "ExpressionAttributeValues": {
+        ":val": {
+            "S": "team_2"
         }
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [Query](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html).
 
@@ -462,12 +468,12 @@ For more information, see the AWS docs for [Query](https://docs.aws.amazon.com/a
 
 This operation creates a new table from an existing backup, identified by its Amazon Resource Name (ARN). For example, the following creates a new table `usersRestored` from a backup with ARN `arn:aws:dynamodb:us-east-2:123456789012:table/users`:
 
-    ```json
-    {
-        "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
-        "TargetTableName": ""
-    }
-    ```
+```json
+{
+    "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
+    "TargetTableName": ""
+}
+```
 
 For more information, see the AWS docs for [RestoreTableFromBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html).
 
@@ -475,13 +481,13 @@ For more information, see the AWS docs for [RestoreTableFromBackup](https://docs
 
 This operation creates a new table that is a restoration of a given table from a given point in time. The point in time is a timestamp that must be between 5 minutes and 35 days prior to the time of the request. For example, the following creates a new table `usersRestored` from the state of an original table `users` at a specific time:
 
-    ```json
-    {
-        "RestoreDateTime": 1691100258,
-        "SourceTableName": "users",
-        "TargetTableName": "usersRestored"
-    }
-    ```
+```json
+{
+    "RestoreDateTime": 1691100258,
+    "SourceTableName": "users",
+    "TargetTableName": "usersRestored"
+}
+```
 
 For more information, see the AWS docs for [RestoreTableToPointInTime](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html).
 
@@ -489,28 +495,28 @@ For more information, see the AWS docs for [RestoreTableToPointInTime](https://d
 
 This operation searches an entire table and return records based on a filter condition. Scanning a table accesses every one of its records, and could result in lengthy response times and increased costs on large datasets. For example, the following query returns every record in the `users` table:
 
-    ```json
-    {
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "TableName": "users"
+}
+```
 
 The following query checks every record in the `users` table and returns records where its `name` is `Anneke`:
 
-    ```json
-    {
-        "TableName": "users",
-        "FilterExpression": "#n = :val",
-        "ExpressionAttributeNames": { // "name" is a reserved keyword, so this key sets an alias
-            "#n": "name"
-        },
-        "ExpressionAttributeValues": {
-            ":val": {
-                "S": "Anneke"
-            }
+```json
+{
+    "TableName": "users",
+    "FilterExpression": "#n = :val",
+    "ExpressionAttributeNames": { // "name" is a reserved keyword, so this key sets an alias
+        "#n": "name"
+    },
+    "ExpressionAttributeValues": {
+        ":val": {
+            "S": "Anneke"
         }
     }
-    ```
+}
+```
 
 For more information, see the AWS docs for [Scan](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html).
 
@@ -518,17 +524,17 @@ For more information, see the AWS docs for [Scan](https://docs.aws.amazon.com/am
 
 This operation associates a set of tags with a DynamoDB resource, identified by its Amazon Resource Name (ARN). For example, the following associates a `department` key-value pair as a tag on a table `users`:
 
-    ```json
-    {
-        "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
-        "Tags": [ 
-            { 
-                "Key": "department",
-                "Value": "marketing"
-            }
-        ]
-    }
-    ```
+```json
+{
+    "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
+    "Tags": [ 
+        { 
+            "Key": "department",
+            "Value": "marketing"
+        }
+    ]
+}
+```
 
 For more information, see the AWS docs for [TagResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html).
 
@@ -536,38 +542,38 @@ For more information, see the AWS docs for [TagResource](https://docs.aws.amazon
 
 This operation retrieves multiple items from one or more tables in a single account and region. The request contains a `TransactItems` array, where each element describes a single `Get` operation. If any of the operations within the transaction fail, then the entire query is rejected and no data is returned. For example, the following fetches an item from a table `users` and another item from a table `locations`:
 
-    ```json
-    {
-        "TransactItems": [ 
-            { 
-                "Get": {
-                    "TableName": "users",
-                    "Key" : {
-                        "team_id" : {
-                            "S" : "team_1"
-                        },
-                        "employee_id" : {
-                            "S" : "emp_1"
-                        }
+```json
+{
+    "TransactItems": [ 
+        { 
+            "Get": {
+                "TableName": "users",
+                "Key" : {
+                    "team_id" : {
+                        "S" : "team_1"
                     },
-                }
-            },
-            { 
-                "Get": {
-                    "TableName": "locations",
-                    "Key" : {
-                        "name" : {
-                            "S" : "Main Office"
-                        },
-                        "address" : {
-                            "S" : "123 Maple St."
-                        }
-                    },
-                }
+                    "employee_id" : {
+                        "S" : "emp_1"
+                    }
+                },
             }
-        ]
-    }
-    ```
+        },
+        { 
+            "Get": {
+                "TableName": "locations",
+                "Key" : {
+                    "name" : {
+                        "S" : "Main Office"
+                    },
+                    "address" : {
+                        "S" : "123 Maple St."
+                    }
+                },
+            }
+        }
+    ]
+}
+```
 
 For more information, see the AWS docs for [TransactGetItems](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html).
 
@@ -575,35 +581,35 @@ For more information, see the AWS docs for [TransactGetItems](https://docs.aws.a
 
 This operation retrieves multiple items from one or more tables in a single account and region. The request contains a `TransactItems` array, where each element describes a single `Get` operation. If any of the operations within the transaction fail, then the entire query is rejected and no data is returned. For example, the following fetches an item from a table `users` and another item from a table `locations`:
 
-    ```json
-    {
-        "TransactItems": [ 
-            { 
-                "Put": { 
-                    "TableName": "string",
-                    "Item": { 
-                        "string" : { 
-                            "S": "string",
-                        }
+```json
+{
+    "TransactItems": [ 
+        { 
+            "Put": { 
+                "TableName": "string",
+                "Item": { 
+                    "string" : { 
+                        "S": "string",
+                    }
+                },
+            }
+        },
+        { 
+            "Delete": { 
+                "TableName": "string",
+                "Key": { 
+                    "team_id" : { 
+                        "S": "team_2",
                     },
-                }
-            },
-            { 
-                "Delete": { 
-                    "TableName": "string",
-                    "Key": { 
-                        "team_id" : { 
-                            "S": "team_2",
-                        },
-                        "employee_id": {
-                            "S": "emp_2"
-                        }
-                    },
-                }
-            },
-        ]
-    }
-    ```
+                    "employee_id": {
+                        "S": "emp_2"
+                    }
+                },
+            }
+        },
+    ]
+}
+```
 
 For more information, see the AWS docs for [TransactWriteItems](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html).
 
@@ -611,12 +617,12 @@ For more information, see the AWS docs for [TransactWriteItems](https://docs.aws
 
 This operation removes a set of tags from a DynamoDB resource, identified by its Amazon Resource Name (ARN). For example, the following removes a `{ "department": "billing" }` tag from a table `users`:
 
-    ```json
-    {
-        "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
-        "TagKeys": ["department"]
-    }
-    ```
+```json
+{
+    "ResourceArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users",
+    "TagKeys": ["department"]
+}
+```
 
 For more information, see the AWS docs for [UntagResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html).
 
@@ -624,14 +630,14 @@ For more information, see the AWS docs for [UntagResource](https://docs.aws.amaz
 
 This operation turns point in time recovery on or off for the specified table. For example, the following turns continuous backups off for a table `users`:
 
-    ```json
-    {
-        "PointInTimeRecoverySpecification": { 
-            "PointInTimeRecoveryEnabled": false
-        },
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "PointInTimeRecoverySpecification": { 
+        "PointInTimeRecoveryEnabled": false
+    },
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [UpdateContinuousBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContinuousBackups.html).
 
@@ -639,12 +645,12 @@ For more information, see the AWS docs for [UpdateContinuousBackups](https://doc
 
 This operation updates the status for contributor insights for a given table or index. This query requires the name of the table to update and an `"ENABLE"` or `"DISABLE"` value that turns `ContributorInsightsAction` on or off. For example, the following turns contributor insights off for a table `users`:
 
-    ```json
-    {
-        "ContributorInsightsAction": "DISABLE",
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "ContributorInsightsAction": "DISABLE",
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [UpdateContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContributorInsights.html).
 
@@ -652,21 +658,21 @@ For more information, see the AWS docs for [UpdateContributorInsights](https://d
 
 This operation adds or removes replicas in a given global table. The global table must already exist, and any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units. For example, the following adds a replica table of global table `users` in `us-east-1` and removes a replica in `us-west-1`:
 
-    ```json
-    {
-        "GlobalTableName": "users",
-        "ReplicaUpdates": [ 
-            { 
-                "Create": { 
-                    "RegionName": "us-east-1"
-                },
-                "Delete": { 
-                    "RegionName": "us-west-1"
-                }
+```json
+{
+    "GlobalTableName": "users",
+    "ReplicaUpdates": [ 
+        { 
+            "Create": { 
+                "RegionName": "us-east-1"
+            },
+            "Delete": { 
+                "RegionName": "us-west-1"
             }
-        ]
-    }
-    ```
+        }
+    ]
+}
+```
 
 For more information, see the AWS docs for [UpdateGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html).
 
@@ -674,12 +680,12 @@ For more information, see the AWS docs for [UpdateGlobalTable](https://docs.aws.
 
 This operation updates settings for an existing global table. For example, the following updates a global table `users` so that the `GlobalTableBillingMode` is `"PROVISIONED"`:
 
-    ```json
-    {
-        "GlobalTableName": "users",
-        "GlobalTableBillingMode": "PROVISIONED"
-    }
-    ```
+```json
+{
+    "GlobalTableName": "users",
+    "GlobalTableBillingMode": "PROVISIONED"
+}
+```
 
 For more information, see the AWS docs for [UpdateGlobalTableSettings](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html).
 
@@ -687,20 +693,20 @@ For more information, see the AWS docs for [UpdateGlobalTableSettings](https://d
 
 This operation edits an existing item's attributes, or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
 
-    ```json
-    {
-        "TableName" : "users",
-        "Key" : {
-            "team_id" : {
-                "S" : "team_1" // partition key
-            },
-            "employee_id" : {
-                "S" : "emp_1" // sort key
-            }
+```json
+{
+    "TableName" : "users",
+    "Key" : {
+        "team_id" : {
+            "S" : "team_1" // partition key
         },
-        "UpdateExpression" : "set name = Amal"
-    }
-    ```
+        "employee_id" : {
+            "S" : "emp_1" // sort key
+        }
+    },
+    "UpdateExpression" : "set name = Amal"
+}
+```
 
 For more information, see the AWS docs for [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html).
 
@@ -708,12 +714,12 @@ For more information, see the AWS docs for [UpdateItem](https://docs.aws.amazon.
 
 This operation modifies the throughput settings, global secondary indexes, or DynamoDB Streams settings for an existing table. For example, the following turns on deletion protection for a table `users`:
 
-    ```json
-        {
-            "TableName": "users",
-            "DeletionProtectionEnabled": true
-        }
-    ```
+```json
+    {
+        "TableName": "users",
+        "DeletionProtectionEnabled": true
+    }
+```
 
 For more information, see the AWS docs for [UpdateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html).
 
@@ -721,15 +727,15 @@ For more information, see the AWS docs for [UpdateTable](https://docs.aws.amazon
 
 This operation updates auto scaling settings on your global tables. For example, the following turns on provisioned write capacity auto scaling for a table `users`:
 
-    ```json
-    {
-        "ProvisionedWriteCapacityAutoScalingUpdate": [ 
-            { 
-                "AutoScalingDisabled": false
-            }
-        ],
-        "TableName": "users"
-    }
-    ```
+```json
+{
+    "ProvisionedWriteCapacityAutoScalingUpdate": [ 
+        { 
+            "AutoScalingDisabled": false
+        }
+    ],
+    "TableName": "users"
+}
+```
 
 For more information, see the AWS docs for [UpdateTableReplicaAutoScaling](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html).
