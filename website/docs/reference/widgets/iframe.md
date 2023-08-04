@@ -461,7 +461,7 @@ With this setup, users can edit the code in the code editor, and when the submit
 
 ### Limitations
 
-With the Iframe widget, you cannot add widgets that rely on underlying platform capabilities, such as:
+You cannot create custom widgets using Iframe that rely on underlying platform capabilities, such as:
 
 * Widgets behaving like a canvas or parent, enabling the dropping of additional widgets (example, Container).
 * Widgets acting as modals or drawers on top of the existing canvas.
