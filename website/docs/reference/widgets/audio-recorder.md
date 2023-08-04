@@ -115,7 +115,7 @@ Reference properties enable you to access the widget's data and state using the 
 
 <dd>
 
-Returns a blob URL that stores the audio for future use.
+Returns a binary URL that stores the audio for future use.
 
 *Example:*
 ```js

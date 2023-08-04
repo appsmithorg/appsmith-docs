@@ -195,6 +195,10 @@ exceptions:
   - Auto Play 
   - playing
   - setPlaying
+  - SendGrid
+  - API
+  - Key
+  - Relay
   - Zoom Level
   - Map & Marker Centring
   - onMarkerCreated
