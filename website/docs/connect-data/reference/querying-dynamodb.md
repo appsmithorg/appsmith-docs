@@ -650,101 +650,86 @@ For more information, see the AWS docs for [UpdateContributorInsights](https://d
 
 ### UpdateGlobalTable
 
-This operation updates the status for contributor insights for a given table or index. This query requires the name of the table to update and an `"ENABLE"` or `"DISABLE"` value that turns `ContributorInsightsAction` on or off. For example, the following turns contributor insights off for a table `users`:
+This operation adds or removes replicas in a given global table. The global table must already exist, and any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units. For example, the following adds a replica table of global table `users` in `us-east-1` and removes a replica in `us-west-1`:
 
     ```json
     {
-        "ContributorInsightsAction": "DISABLE",
-        "TableName": "users"
+        "GlobalTableName": "users",
+        "ReplicaUpdates": [ 
+            { 
+                "Create": { 
+                    "RegionName": "us-east-1"
+                },
+                "Delete": { 
+                    "RegionName": "us-west-1"
+                }
+            }
+        ]
     }
     ```
 
 For more information, see the AWS docs for [UpdateGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html).
 
-### UpdateItem
+### UpdateGlobalTableSettings
 
-Use UpdateItem to change specific attributes of an existing record. You only need to supply the partition key and the values for the attributes that are changing.
-
-```json
-{
-    "TableName" : "users",
-    "Key" : {
-        "pkey" : {
-            "S" : "a"
-        }
-    },
-    "UpdateExpression" : "set friends = :new_friends",
-    "ExpressionAttributeValues" : {
-        ":new_friends" : {
-            "SS" : ["Mycroft", "Watson", "Irene"]
-        }
-    }
-}
-```
-
----
-
-#### Example
-
-> Modify an existing record in a table `users`, with columns for `team_id` (primary key), `emp_id` (sort key), `name`, and `date_of_birth`.
-
-* Create your query called `UpdateUser` based on your DynamoDB datasource. You should have a [Table widget](/reference/widgets/table) `UsersTable` containing your users data from another query `ListUsers` that fetches your records.
-
-* Create a [JSON Form widget](/reference/widgets/json-form) `UpdateUserForm` to use for submitting your updated values. Add **Source Data** to the JSON Form to create input fields. Reference the `selectedRow` of `UsersTable` to pre-fill the form fields:
+This operation updates settings for an existing global table. For example, the following updates a global table `users` so that the `GlobalTableBillingMode` is `"PROVISIONED"`:
 
     ```json
-    {{
     {
-        team_id: UsersTable.selectedRow.team_id,
-        employee_id: UsersTable.selectedRow.employee_id,
-        name: UsersTable.selectedRow.name,
-        date_of_birth: UsersTable.selectedRow.date_of_birth
+        "GlobalTableName": "users",
+        "GlobalTableBillingMode": "PROVISIONED"
     }
-    }}
     ```
-    * For fields that are primary or sort keys, you may want to set their inputs to **Disabled**, as they can't be updated with this query.
 
-* In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+For more information, see the AWS docs for [UpdateGlobalTableSettings](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html).
 
-    ```javascript
-    // Submit button's onClick event
-    {{ UpdateUser.run(() => ListUsers.run(), () => {}) }}
-  ```
-  * The **onSuccess** callback is used above to refresh your table data after the operation is complete.
+### UpdateItem
 
-* To add your modified row data to your query, reference them in your UpdateItem query:
+This operation edits an existing item's attributes, or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
 
-    ```javascript
+    ```json
     {
         "TableName" : "users",
         "Key" : {
             "team_id" : {
-                "S" : "{{ UsersTable.selectedRow.team_id }}"
+                "S" : "team_1" // partition key
             },
             "employee_id" : {
-                "S" : "{{ UsersTable.selectedRow.employee_id }}"
+                "S" : "emp_1" // sort key
             }
         },
-        "UpdateExpression" : "SET #n = :new_name, date_of_birth = :new_dob",
-        "ExpressionAttributeNames": { // "name" is a reserved keyword, this key sets an alias
-            "#n": "name"
-        },
-        "ExpressionAttributeValues" : {
-            ":new_name" : {
-                "S" : "{{ UpdateUserForm.formData.name }}"
-            },
-            ":new_dob": {
-                "S": " {{ UpdateUserForm.formData.date_of_birth }}"
-            }
-        }
+        "UpdateExpression" : "set name = Amal"
     }
     ```
 
-When the Submit button is clicked, your query is executed and the record is updated in your table.
+For more information, see the AWS docs for [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html).
 
+### UpdateTable
 
-## Further reading
+This operation modifies the throughput settings, global secondary indexes, or DynamoDB Streams settings for an existing table. For example, the following turns on deletion protection for a table `users`:
 
-* [Queries](/core-concepts/data-access-and-binding/querying-a-database/)
-* [Table widget](/reference/widgets/table)
-* [Form widget](/reference/widgets/form)
+    ```json
+        {
+            "TableName": "users",
+            "DeletionProtectionEnabled": true
+        }
+    ```
+
+For more information, see the AWS docs for [UpdateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html).
+
+### UpdateTableReplicaAutoScaling
+
+This operation updates auto scaling settings on your global tables. For example, the following turns on provisioned write capacity auto scaling for a table `users`:
+
+    ```json
+    {
+        "ProvisionedWriteCapacityAutoScalingUpdate": [ 
+            { 
+                "AutoScalingDisabled": false
+            }
+        ],
+        "TableName": "users"
+    }
+    ```
+
+For more information, see the AWS docs for [UpdateTableReplicaAutoScaling](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html).
