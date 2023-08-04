@@ -459,7 +459,7 @@ With this setup, users can edit the code in the code editor, and when the submit
   <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
 </figure>
 
-### Limitations for custom widgets:
+### Limitations
 
 With the Iframe widget, you cannot add widgets that rely on underlying platform capabilities, such as:
 
