@@ -170,7 +170,7 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
-#### setVisibility `boolean`: Promise
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -186,7 +186,7 @@ AudioRecorder1.setVisibility(true)
 </dd>
 
 
-#### setDisabled `boolean`: Promise
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
