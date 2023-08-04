@@ -467,7 +467,7 @@ With the Iframe widget, you cannot add widgets that rely on underlying platform 
 * Widgets acting as modals or drawers on top of the existing canvas.
 * Using auto height or responsiveness features within your iframe.
 
-Appsmith currently lacks support for HTML formatting and error parsing. As a result, any HTML or CSS errors in the **srcDoc** field is not identified by Appsmith.
+Appsmith currently lacks support for HTML formatting and error parsing. As a result, any HTML or CSS errors in the **srcDoc** field are not identified by Appsmith.
 Be cautious when handling code in the **srcDoc** field, as errors can be encountered.
 
 For complex widgets with frequent updates, it is advisable to utilize an external service like CodeSandbox or host your own code. This helps to maintain your solution more effectively.
