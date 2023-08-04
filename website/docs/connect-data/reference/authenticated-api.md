@@ -25,7 +25,7 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
   <dt><b>URL</b></dt>
   <dd>
 
-The URL of the GraphQL service to query. For a guide about connecting to a local APIs, see [Connect Local Database](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+The URL of the service to query. For a guide about connecting to a local APIs, see [Connect Local Database](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
 
   </dd>
 
