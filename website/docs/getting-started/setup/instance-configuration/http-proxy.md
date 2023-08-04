@@ -1,9 +1,12 @@
 ---
 sidebar_position: 10
 ---
-# HTTP/HTTPS Proxy
+# Configure HTTP/HTTPS Proxy
 
-Appsmith supports running behind a forward proxy. This is usually useful when Appsmith is run on a server that's behind a corporate firewall and needs to access the internet through a proxy.
+Appsmith offers support for running behind a forward proxy, which is beneficial when deploying Appsmith on a server residing behind a corporate firewall, and allows internet access through a proxy. This page provides instructions for configuring HTTP/HTTPS proxy on your self-hosted Appsmith instance.
+
+## Prerequisites
+
 
 ## How to configure a proxy
 
