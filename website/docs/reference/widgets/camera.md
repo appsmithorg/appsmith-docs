@@ -1,3 +1,8 @@
+---
+description: >-
+  Camera widget reference
+---
+
 # Camera
 
 This page provides instructions on how to use the camera widget to capture images and videos.
