@@ -39,7 +39,7 @@ Allows you to choose between world maps or individual continent maps for visuali
 * USA
 
 :::info
-If you want to display a different Map type not listed above, like specific locations, countries, or cities, please contact at [support@appsmith.com](mailto:support@appsmith.com).
+If you want to display a different Map type not listed above, like specific locations, countries, or cities, please contact [support@appsmith.com](mailto:support@appsmith.com).
 :::
 
 
@@ -143,7 +143,7 @@ Style properties allow you to change the look and feel of the widget.
 
 <dd>
 
-Allows you to manages the color of a collection of regions based on the assigned value ranges. It accepts arrays of objects containing the following keys: 
+Allows you to manage the color of a collection of regions based on the assigned value ranges. It accepts arrays of objects containing the following keys: 
 
 * `code`: Represents the color code to be applied.
 * `minValue`: Indicates the minimum value where this color should be used.
