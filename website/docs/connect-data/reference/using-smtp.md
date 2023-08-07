@@ -53,7 +53,7 @@ Some SMTP providers use a multi-factor authentication flow and may require you t
 
 ## Create queries
 
-The following section is a reference guide that provides a complete description of all the parameters to for sending emails.
+The following section is a reference guide that provides a complete description of all the parameters for sending emails.
 
 <figure>
   <img src="/img/smtp_query_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP query"/>
@@ -82,28 +82,28 @@ Toggles the **Reply to email** field.
   <dt><b>Reply to email</b></dt>
   <dd>
   
-Sets an email address that recieves all replies to your email.
+Sets an email address that receives all replies to your email.
 
   </dd><br/>
 
   <dt><b>To email(s)</b></dt>
   <dd>
   
-Sets the email addresses that recieves your email. For multiple recipients, separate the addresses with commas.
+Sets the email addresses that receive your email. For multiple recipients, separate the addresses with commas.
 
   </dd><br/>
 
   <dt><b>CC email(s)</b></dt>
   <dd>
   
-Sets the email address that recieves a CC (carbon copy). For multiple CC recipients, separate the addresses with commas.
+Sets the email addresses that receive a CC (carbon copy). For multiple CC recipients, separate the addresses with commas.
 
   </dd><br/>
 
   <dt><b>BCC email(s)</b></dt>
   <dd>
   
-Sets the email address that recieves a BCC (blind carbon copy). For multiple BCC recipients, separate the addresses with commas.
+Sets the email addresses that receive a BCC (blind carbon copy). For multiple BCC recipients, separate the addresses with commas.
 
   </dd><br/>
 

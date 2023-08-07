@@ -17,7 +17,7 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 The following section is a reference guide that provides a complete description of all the parameters to connect to a DynamoDB database.
 
 <figure>
-  <img src="/img/dynamodb_config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB datasource." />
+  <img src="/img/dynamodb-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB datasource." />
   <figcaption align="center"><i>Configuring a DynamoDB datasource.</i></figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ The region where your DynamoDB instance is hosted.
   <dt><b>AWS Access Key ID</b></dt>
   <dd>
 
-The AWS access key used to identify your IAM user for DynamoDB. Be sure to use the access key for your IAM user with the set of privileges you want your Appsmith app to have. For more information on usimg an AWS access key, see [Create Access Key](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/).
+The AWS access key used to identify your IAM user for DynamoDB. Be sure to use the access key for your IAM user with the set of privileges you want your Appsmith app to have. For more information on using an AWS access key, see [Create Access Key](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/).
 
   </dd>
 
@@ -49,9 +49,11 @@ The secret value used to authenticate your queries to DynamoDB. This value is ac
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create DynamoDB queries.
 
 <figure>
-  <img src="/img/dynamodb_query.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB scan query." />
+  <img src="/img/dynamodb-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB scan query." />
   <figcaption align="center"><i>Configuring a DynamoDB scan query.</i></figcaption>
 </figure>
+
+For more details about any of the operations below, see the [Amazon DynamoDB Actions documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations_Amazon_DynamoDB.html).
 
 ### BatchGetItem
 
@@ -83,8 +85,6 @@ This operation fetches many specific records by their partition and sort keys. F
     }
 }
 ```
-
-For more information, see the AWS docs for [BatchGetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchGetItem.html).
 
 ### BatchWriteItem
 
@@ -126,8 +126,6 @@ This operation creates and deletes multiple items in one or more tables. For exa
 }
 ```
 
-For more information, see the AWS docs for [BatchWriteItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html).
-
 ### CreateBackup
 
 This operation creates a backup with a given name of an entire table. For example, the following creates a backup of the table `users` under the name `usersBackup`:
@@ -138,8 +136,6 @@ This operation creates a backup with a given name of an entire table. For exampl
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [CreateBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html).
 
 ### CreateGlobalTable
 
@@ -156,11 +152,9 @@ This operation creates a global table from an existing table. A global table cre
 }
 ```
 
-For more information, see the AWS docs for [CreateGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateGlobalTable.html).
-
 ### CreateTable
 
-This operation creats a new DynamoDB table. For example the following creates a table called `users` with three columns, where `team_id` is the partition key and `emp_id` is the sort key:
+This operation creates a new DynamoDB table. For example the following creates a table called `users` with three columns, where `team_id` is the partition key and `emp_id` is the sort key:
 
 ```json
 {
@@ -196,8 +190,6 @@ This operation creats a new DynamoDB table. For example the following creates a 
 }
 ```
 
-For more information, see the AWS docs for [CreateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html).
-
 ### DeleteBackup
 
 This operation deletes an existing backup of a table. The backup is identified by its Amazon Resource Name (ARN), which you can find with a ListBackups query.
@@ -209,8 +201,6 @@ For example, the following deletes a backup with ARN `arn:aws:dynamodb:us-east-2
     "BackupArn": "arn:aws:dynamodb:us-east-2:123456789012:table/users"
 }
 ```
-
-For more information, see the AWS docs for [DeleteBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html).
 
 ### DeleteItem
 
@@ -230,8 +220,6 @@ This operation deletes an existing record, identified by its primary and sort ke
 }
 ```
 
-For more information, see the AWS docs for [DeleteItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html).
-
 ### DeleteTable
 
 This operation deletes an existing table. For example, the following deletes an existing table `users`:
@@ -241,8 +229,6 @@ This operation deletes an existing table. For example, the following deletes an 
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [DeleteTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html).
 
 ### DescribeBackup
 
@@ -254,8 +240,6 @@ This operation returns metadata about an existing table backup. The backup is id
 }
 ```
 
-For more information, see the AWS docs for [DescribeBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html).
-
 ### DescribeContinuousBackups
 
 This operation checks the status of continuous backups and point in time recovery on the specified table. For example, the following checks the status of a table `users`:
@@ -265,8 +249,6 @@ This operation checks the status of continuous backups and point in time recover
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [DescribeContinuousBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html).
 
 ### DescribeContributorInsights
 
@@ -278,13 +260,9 @@ This operation returns information about contributor insights for a given table 
 }
 ```
 
-For more information, see the AWS docs for [DescribeContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContributorInsights.html).
-
 ### DescribeEndpoints
 
 This operation returns information about your regional AWS endpoint. This request must be sent with an empty body.
-
-For more information, see the AWS docs for [DescribeEndpoints](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeEndpoints.html).
 
 ### DescribeGlobalTable
 
@@ -296,8 +274,6 @@ This operation returns information about a given global table, identified by its
 }
 ```
 
-For more information, see the AWS docs for [DescribeGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTable.html).
-
 ### DescribeGlobalTableSettings
 
 This operation returns information about the region-specific settings of a global table, identified by its name. For example, the following returns settings data about a global table `users`:
@@ -308,13 +284,9 @@ This operation returns information about the region-specific settings of a globa
 }
 ```
 
-For more information, see the AWS docs for [DescribeGlobalTableSettings](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeGlobalTableSettings.html).
-
 ### DescribeLimits
 
 This operation returns the current provisioned capacity quotas for your AWS account in a region, both for the region as a whole and for any one DynamoDB table in that region. This request must be sent with an empty body.
-
-For more information, see the AWS docs for [DescribeLimits](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html).
 
 ### DescribeTable
 
@@ -326,8 +298,6 @@ This operation returns information about a given table, identified by its name. 
 }
 ```
 
-For more information, see the AWS docs for [DescribeTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html).
-
 ### DescribeTableReplicaAutoScaling
 
 This operation returns information about the auto scaling settings of all replicas of a given global table, identified by its name. For example, the following shows the auto scaling settings for replicas of a global table `users`:
@@ -338,19 +308,15 @@ This operation returns information about the auto scaling settings of all replic
 }
 ```
 
-For more information, see the AWS docs for [DescribeTableReplicaAutoScaling](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTableReplicaAutoScaling.html).
-
 ### DescribeTimeToLive
 
-This operation returns information about the Time to Live (TTL) status of a given table, identified by its name. For example, the following shows TTL status for a table `users`:
+This operation returns information about the Time to Live (TTL) status of a given table, identified by its name. For example, the following shows the TTL status for a table `users`:
 
 ```json
 {
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [DescribeTimeToLive](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTimeToLive.html).
 
 ### GetItem
 
@@ -366,8 +332,6 @@ Use this operation when you want one specific record, and you know its partition
 }
 ```
 
-For more information, see the AWS docs for [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html).
-
 ### ListBackups
 
 This operation returns a list of DynamoDB backups associated with your AWS account. The results can be filtered to certain tables or time ranges. For example, the following returns a list of all backups of a table `users`:
@@ -379,8 +343,6 @@ This operation returns a list of DynamoDB backups associated with your AWS accou
 }
 ```
 
-For more information, see the AWS docs for [ListBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html).
-
 ### ListContributorInsights
 
 This operation returns a list of `ContributorInsightsSummary` entries for a table and all of its global secondary indexes. For example, the following returns a list of `ContributorInsightsSummary` entries for a table `users`:
@@ -390,8 +352,6 @@ This operation returns a list of `ContributorInsightsSummary` entries for a tabl
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [ListContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListContributorInsights.html).
 
 ### ListGlobalTables
 
@@ -403,13 +363,9 @@ This operation returns a list of your global tables that have a replica in the s
 }
 ```
 
-For more information, see the AWS docs for [ListGlobalTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListGlobalTables.html).
-
 ### ListTables
 
 This operation returns an array of table names that are associated with your AWS account and endpoint. This request does not require a body, however there are optional parameters available for pagination.
-
-For more information, see the AWS docs for [ListTables](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html).
 
 ### ListTagsOfResource
 
@@ -421,11 +377,9 @@ This operation returns a list of all tags for a given DynamoDB resource, identif
 }
 ```
 
-For more information, see the AWS docs for [ListTagsOfResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html).
-
 ### PutItem
 
-This operation creates a new item, or replaces an old item with a new one. If an item with the same primary key already exists in the table, the new item completely replaces the existing item. For example, the following creates or replaces an item in a table `users` where the partition key is `team_id = "team_1"` and the sort key is `employee_id = "emp_1"`:
+This operation creates a new item or replaces an old item with a new one. If an item with the same primary key already exists in the table, the new item completely replaces the existing item. For example, the following creates or replaces an item in a table `users` where the partition key is `team_id = "team_1"` and the sort key is `employee_id = "emp_1"`:
 
 ```json
 {
@@ -444,8 +398,6 @@ This operation creates a new item, or replaces an old item with a new one. If an
 }
 ```
 
-For more information, see the AWS docs for [PutItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html).
-
 ### Query
 
 This operation fetches records that share a partition key based on a filter condition. For example, the following returns all records with partition key `team_id = "team_2"`:
@@ -462,8 +414,6 @@ This operation fetches records that share a partition key based on a filter cond
 }
 ```
 
-For more information, see the AWS docs for [Query](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html).
-
 ### RestoreTableFromBackup
 
 This operation creates a new table from an existing backup, identified by its Amazon Resource Name (ARN). For example, the following creates a new table `usersRestored` from a backup with ARN `arn:aws:dynamodb:us-east-2:123456789012:table/users`:
@@ -474,8 +424,6 @@ This operation creates a new table from an existing backup, identified by its Am
     "TargetTableName": ""
 }
 ```
-
-For more information, see the AWS docs for [RestoreTableFromBackup](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html).
 
 ### RestoreTableToPointInTime
 
@@ -489,11 +437,9 @@ This operation creates a new table that is a restoration of a given table from a
 }
 ```
 
-For more information, see the AWS docs for [RestoreTableToPointInTime](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableToPointInTime.html).
-
 ### Scan
 
-This operation searches an entire table and return records based on a filter condition. Scanning a table accesses every one of its records, and could result in lengthy response times and increased costs on large datasets. For example, the following query returns every record in the `users` table:
+This operation searches an entire table and returns records based on a filter condition. Scanning a table accesses every one of its records, and could result in lengthy response times and increased costs on large datasets. For example, the following query returns every record in the `users` table:
 
 ```json
 {
@@ -518,8 +464,6 @@ The following query checks every record in the `users` table and returns records
 }
 ```
 
-For more information, see the AWS docs for [Scan](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html).
-
 ### TagResource
 
 This operation associates a set of tags with a DynamoDB resource, identified by its Amazon Resource Name (ARN). For example, the following associates a `department` key-value pair as a tag on a table `users`:
@@ -535,8 +479,6 @@ This operation associates a set of tags with a DynamoDB resource, identified by 
     ]
 }
 ```
-
-For more information, see the AWS docs for [TagResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html).
 
 ### TransactGetItems
 
@@ -575,8 +517,6 @@ This operation retrieves multiple items from one or more tables in a single acco
 }
 ```
 
-For more information, see the AWS docs for [TransactGetItems](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactGetItems.html).
-
 ### TransactWriteItems
 
 This operation retrieves multiple items from one or more tables in a single account and region. The request contains a `TransactItems` array, where each element describes a single `Get` operation. If any of the operations within the transaction fail, then the entire query is rejected and no data is returned. For example, the following fetches an item from a table `users` and another item from a table `locations`:
@@ -611,8 +551,6 @@ This operation retrieves multiple items from one or more tables in a single acco
 }
 ```
 
-For more information, see the AWS docs for [TransactWriteItems](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html).
-
 ### UntagResource
 
 This operation removes a set of tags from a DynamoDB resource, identified by its Amazon Resource Name (ARN). For example, the following removes a `{ "department": "billing" }` tag from a table `users`:
@@ -623,8 +561,6 @@ This operation removes a set of tags from a DynamoDB resource, identified by its
     "TagKeys": ["department"]
 }
 ```
-
-For more information, see the AWS docs for [UntagResource](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html).
 
 ### UpdateContinuousBackups
 
@@ -639,8 +575,6 @@ This operation turns point in time recovery on or off for the specified table. F
 }
 ```
 
-For more information, see the AWS docs for [UpdateContinuousBackups](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContinuousBackups.html).
-
 ### UpdateContributorInsights
 
 This operation updates the status for contributor insights for a given table or index. This query requires the name of the table to update and an `"ENABLE"` or `"DISABLE"` value that turns `ContributorInsightsAction` on or off. For example, the following turns contributor insights off for a table `users`:
@@ -651,8 +585,6 @@ This operation updates the status for contributor insights for a given table or 
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [UpdateContributorInsights](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateContributorInsights.html).
 
 ### UpdateGlobalTable
 
@@ -674,8 +606,6 @@ This operation adds or removes replicas in a given global table. The global tabl
 }
 ```
 
-For more information, see the AWS docs for [UpdateGlobalTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTable.html).
-
 ### UpdateGlobalTableSettings
 
 This operation updates settings for an existing global table. For example, the following updates a global table `users` so that the `GlobalTableBillingMode` is `"PROVISIONED"`:
@@ -687,11 +617,9 @@ This operation updates settings for an existing global table. For example, the f
 }
 ```
 
-For more information, see the AWS docs for [UpdateGlobalTableSettings](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateGlobalTableSettings.html).
-
 ### UpdateItem
 
-This operation edits an existing item's attributes, or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
+This operation edits an existing item's attributes or adds a new item to the table if it does not already exist. For example, the following changes the `name` of a record in the table `users`:
 
 ```json
 {
@@ -708,8 +636,6 @@ This operation edits an existing item's attributes, or adds a new item to the ta
 }
 ```
 
-For more information, see the AWS docs for [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html).
-
 ### UpdateTable
 
 This operation modifies the throughput settings, global secondary indexes, or DynamoDB Streams settings for an existing table. For example, the following turns on deletion protection for a table `users`:
@@ -720,8 +646,6 @@ This operation modifies the throughput settings, global secondary indexes, or Dy
         "DeletionProtectionEnabled": true
     }
 ```
-
-For more information, see the AWS docs for [UpdateTable](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html).
 
 ### UpdateTableReplicaAutoScaling
 
@@ -737,5 +661,3 @@ This operation updates auto scaling settings on your global tables. For example,
     "TableName": "users"
 }
 ```
-
-For more information, see the AWS docs for [UpdateTableReplicaAutoScaling](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTableReplicaAutoScaling.html).

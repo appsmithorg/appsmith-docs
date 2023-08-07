@@ -89,14 +89,26 @@ Sorts query results by a column value. Expects a JSON array containing a single 
   <dt><b>Start after</b></dt>
   <dd>
 
-Sets a record that acts as a starting cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query.
+Sets a record that acts as a starting cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the last record from the most recent execution of a query:
+
+```javascript
+{{ ListQuery.data[ListQuery.data.length - 1] }}
+```
+
+Each time the query is run, it fetches the next set of results that come after the previous execution. 
 
   </dd>
 
   <dt><b>End before</b></dt>
   <dd>
 
-Sets a record that acts as an ending cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query.
+Sets a record that acts as an ending cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the first record from the most recent execution of a query:
+
+```javascript
+{{ ListQuery.data[0] }}
+```
+
+When the query is paged backwards, it fetches the set of results that lead up to the current results.
 
   </dd>
 
@@ -169,7 +181,7 @@ This command updates an existing document at a given path. The following section
   <dt><b>Collection/Document path</b></dt>
   <dd>
 
-The path to the document to update.
+The path to the document to update. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
   </dd>
 
@@ -226,7 +238,7 @@ This command deletes an existing document at a given path. The following section
   <dt><b>Collection/Document path</b></dt>
   <dd>
 
-The path to the document to delete.
+The path to the document to delete. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
   </dd>
 </dl>
@@ -239,7 +251,7 @@ This command fetches a single existing document at a given path. The following s
   <dt><b>Collection/Document path</b></dt>
   <dd>
 
-The path to the document to fetch.
+The path to the document to fetch. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
   </dd>
 </dl>
@@ -254,7 +266,7 @@ If you use **Upsert Document**, your query completely replaces whatever record e
   <dt><b>Collection/Document path</b></dt>
   <dd>
 
-The path to the document to update.
+The path to the document to update. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
   </dd>
 
@@ -300,7 +312,7 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
 
 ### Add document to collection
 
-This command creates a new document within a given collection, under the identifer you provide. The following section lists all the fields available for the **Add document to collection** command.
+This command creates a new document within a given collection, under the identifier you provide. The following section lists all the fields available for the **Add document to collection** command.
 
 <dl>
   <dt><b>Collection/Document path</b></dt>

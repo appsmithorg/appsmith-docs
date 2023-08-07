@@ -77,6 +77,17 @@ You can display dynamic data from queries or JS functions by binding the respons
 
 This code converts `fetchUserData` into a new array with latitude, longitude, and location name properties.
 
+If you want to display the live location, you can use the **Default Marker** property to set a marker at your current latitude and longitude coordinates. To do this, you can use the following code:
+
+```js
+[{
+"lat":{{appsmith.geolocation.currentPosition.coords.latitude || ""}}, 
+"long":{{appsmith.geolocation.currentPosition.coords.longitude || ""}}
+}]
+```
+
+To fetch the current location, use `appsmith.geolocation.watchPosition()` action triggered by a Button widget's **onClick** event. 
+
 
 </dd>
 
@@ -122,18 +133,6 @@ This property controls whether the widget is displayed with a loading animation.
 <dd>
 
 Enabling this option allows users to interactively select a location on the map, and the map marker is moved to the user's current location. The `selectedMarker` field is updated with the information of the marker representing the user's current location.
-
-If you want to display the live location, you can use the **Default Marker** property to set a marker at your current latitude and longitude coordinates. To do this, you can use the following code:
-
-```js
-[{
-"lat":{{appsmith.geolocation.currentPosition.coords.latitude || ""}}, 
-"long":{{appsmith.geolocation.currentPosition.coords.longitude || ""}}
-}]
-```
-
-To fetch the current location, use `appsmith.geolocation.watchPosition()` action triggered by a Button widget's **onClick** event. 
-
 
 </dd>
 
