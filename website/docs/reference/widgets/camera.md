@@ -67,7 +67,7 @@ Enabling this property mirrors the camera preview and the resulting captured ima
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user captures an image. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user captures an image. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property.
 
 </dd>
 
@@ -75,7 +75,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user saves a video. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user saves a video. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property.
 
 </dd>
 
@@ -194,10 +194,10 @@ Returns the video file in binary format, suitable for storing the video for futu
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -212,7 +212,7 @@ Camera1.setVisibility(true)
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
