@@ -50,7 +50,7 @@ If you want to display a different Map type not listed above, like specific loca
 
 <dd>
 
-Allows you to display data in the chart, provide the data in the following structure: 
+Allows you to display data in the chart.
 
 *Expected data structure:*
 
