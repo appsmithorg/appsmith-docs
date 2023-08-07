@@ -215,6 +215,8 @@ exceptions:
   - blobURL
   - dataURL
   - onRecordingComplete
+  - setImage
+  - image
 
 
 
