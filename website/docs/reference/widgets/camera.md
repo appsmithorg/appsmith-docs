@@ -5,7 +5,7 @@ description: >-
 
 # Camera
 
-This page provides instructions on how to use the camera widget to capture images and videos.
+This page describes how to use the camera widget to capture images and videos.
 
 <figure>
   <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
@@ -104,7 +104,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ### Reference properties 
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Select widget, you can use `Camera1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Camera widget, you can use `Camera1.isVisible`.
 
 #### imageBlobURL `string`
 
@@ -138,7 +138,7 @@ Stores the captured image in Data URL format (Base64). You can use it to embed t
 
 <dd>
 
-Returns the image file in binary format, suitable for storing the audio for future use.
+Returns the image file in binary format, suitable for storing the image for future use.
 
 *Example:*
 
