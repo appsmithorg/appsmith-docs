@@ -10,7 +10,7 @@ Appsmith offers support for running behind a forward proxy, which is beneficial 
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
 
-## Add Proxy configuration on Appsmith
+## Add Proxy details to configuration file
 
 Follow these steps to configure HTTP/HTTPS proxy for your self-hosted instance:
 
