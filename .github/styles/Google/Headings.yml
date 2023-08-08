@@ -211,10 +211,8 @@ exceptions:
   - Colors, Borders and Shadows
   - Default Tab
   - onTabSelected
+  - Proxy
   - onRecordingStart
   - blobURL
   - dataURL
   - onRecordingComplete
-
-
-
