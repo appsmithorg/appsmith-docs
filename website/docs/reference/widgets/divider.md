@@ -233,6 +233,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 {{Divider1.isVisible}}
 ```
 
+</dd>
 
 ## Methods
 
