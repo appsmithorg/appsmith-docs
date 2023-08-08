@@ -1,0 +1,208 @@
+---
+sidebar_position: 3
+description: This page provides instructions to schedule automatic updates for your Appsmith instance.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Schedule Automatic Updates 
+
+This page provides steps to schedule automatic updates using `cron` expression for your self-hosted instance.
+
+:::caution Attention
+You must add a 6-value `cron` expression, not the traditional 5-value one. Refer to learn more about [How the `cron` expression works](https://pkg.go.dev/github.com/robfig/`cron`@v1.2.0#hdr-`cron`\_Expression\_Format).
+:::
+
+## Docker
+
+Follow the below steps to schedule automatic updates for Appsmith Docker installation:
+
+1. Go to the root directory of the Appsmith installation and run:
+
+   ```bash
+   docker-compose down
+   ```
+
+2. Open the `docker-compose.yml` file and uncomment the below code block: 
+   ```yaml
+    # Uncomment the lines below to enable auto-update
+    #labels:
+    #  com.centurylinklabs.watchtower.enable: "true"
+    #auto_update:
+    #  image: containrrr/watchtower
+    #  volumes:
+    #    - /var/run/docker.sock:/var/run/docker.sock
+    #  # Update check interval in seconds.
+    #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
+    #  restart: unless-stopped
+    #  depends_on:
+    #    - appsmith
+    #  environment:
+    #    - WATCHTOWER_LIFECYCLE_HOOKS=true
+  ```
+  Below are some configurations for common use cases:
+
+    * Check for updates every Sunday at 12:00 noon:
+
+    ```bash
+    command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
+    ```
+
+    * Check for updates every hour:
+
+    ```bash
+    command: --schedule "0 0 * ? * *" --label-enable --cleanup
+    ```
+    * Check for updates once at 12:00 noon every day:
+
+    ```bash
+    command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
+    ```
+
+    * Check for updates once at midnight every day:
+
+    ```bash
+    command: --schedule "0 0 0 * * ?" --label-enable --cleanup 
+    ```
+3. Restart the watchtower container with:
+  ```bash
+  sudo docker-compose pull && sudo docker-compose up --force-recreate auto_update
+  ```
+4. Verify the logs that the scheduled update is in effect with:
+  ```bash
+  docker-compose logs -f auto_update
+  ```
+ Based on the specified ``cron`` expression, Watchtower updates Appsmith whenever a new version becomes available. If you'd like to change the schedule, adjust the ``cron`` expression accordingly.
+
+If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#docker) guide.
+
+## Kubernetes
+Follow the below steps to schedule automatic updates for Appsmith Kubernetes installation:
+
+1. Go to the root directory of the Appsmith installation and open `values.yaml` file.
+2. Update the `values.yaml` and set `enabled` to `true` for `autoupdate` attribute, and set the desired ``cron`` expression:
+   ```yaml
+   autoupdate:
+    ## @param autoupdate.enabled - Enable config autoupdate
+    ##
+    enabled: true
+    ## @param autoupdate.scheduler - Schedule `cron` job to check & update Helm image
+    ##
+    scheduler: "0 * * * *"
+   ```
+   Below are some configurations for common use cases:
+
+    * Check for updates every Sunday at 12:00 noon:
+
+    ```bash
+    command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
+    ```
+
+    * Check for updates every hour:
+
+    ```bash
+    command: --schedule "0 0 * ? * *" --label-enable --cleanup
+    ```
+    * Check for updates once at 12:00 noon every day:
+
+    ```bash
+    command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
+    ```
+
+    * Check for updates once at midnight every day:
+
+    ```bash
+    command: --schedule "0 0 0 * * ?" --label-enable --cleanup 
+    ```
+
+3. Save the changes and update the Appsmith installation.
+    * When running an **Appsmith Community Edition**, update with:
+      ```bash
+      helm upgrade -i appsmith appsmith/appsmith -f values.yaml
+      ```
+    * When running an **Appsmith Business Edition**, update with:
+      ```bash
+      helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
+      ```
+
+Based on the specified ``cron`` expression, Watchtower updates Appsmith whenever a new version becomes available. If you'd like to change the schedule, adjust the ``cron`` expression accordingly.
+
+If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#kubernetes) guide.
+
+## Switch off automatic updates
+
+Follow the below steps for your Appsmith installation to switch off automatic updates:
+
+### Docker
+
+1. Go to the root directory of the Appsmith installation and run:
+
+   ```bash
+   docker-compose down
+   ```
+
+2. Open the `docker-compose.yml` file and comment out the below code block:
+   
+   ```yaml
+   auto_update:
+     image: containrrr/watchtower
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     # Update check interval in seconds.
+     command: --schedule "0 0 * ? * *" --label-enable --cleanup
+     restart: unless-stopped
+     depends_on:
+       - appsmith
+     environment:
+       - WATCHTOWER_LIFECYCLE_HOOKS=true
+   ```
+
+3. Save the changes and restart the Appsmith instance with:
+  ```bash
+  docker-compose up -d --force-recreate
+  ```
+
+4. Verify that the automatic update is turned off with:
+  ```bash
+  docker-compose ps
+  ```
+### Kubernetes
+Follow the steps below to turn off auto updates:
+
+ * When running an **Appsmith Community Edition** on Kubernetes, update the image name as shown below:
+
+    1. Go to the Appsmith installation directory, and edit `values.yaml`, to update the below parameters:
+      ```yaml
+        autoupdate.enabled: false
+        autoupdate.scheduler: 0
+      ```
+    2. Save the changes and update the configuration with:
+      ```bash
+        helm upgrade --values values.yaml appsmith appsmith/appsmith
+      ```
+
+
+You can switch off auto update by either using a command or setting it in the `values.yaml` file.
+
+  * Run the below command:
+
+  ```bash
+    #highlight-next-line
+    helm upgrade --set autoupdate.enabled=false \
+    appsmith appsmith-ee/appsmith 
+  ```
+
+  * **Or** edit `values.yaml`, update the below parameters:
+  ```yaml
+    autoupdate.enabled: false
+    autoupdate.scheduler: 0
+  ```
+  and run the below command:
+  ```bash
+  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
+  ```
+
+</TabItem>
+
+</Tabs>
