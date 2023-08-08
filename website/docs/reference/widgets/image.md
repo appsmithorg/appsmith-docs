@@ -5,7 +5,7 @@ description: >-
 
 # Image
 
-This page describes how to use the Image widget. You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
+This page describes how to use the Image widget. You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP, and GIF.
 
 ## Content propeties
 
@@ -120,7 +120,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Image widget, you can use `Image1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of an Image widget, you can use `Image1.isVisible`.
 
 #### image `string`
 
@@ -153,7 +153,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
 
 #### setVisibility (param: boolean): Promise
