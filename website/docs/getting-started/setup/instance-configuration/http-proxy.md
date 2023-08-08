@@ -27,7 +27,7 @@ For example, add the chosen environment variables as shown below:
  HTTPS_PROXY=http://1.2.3.4:8080
  ```
 3. Save the changes and restart the Appsmith instance.
-4. To use an HTTPS proxy, you also need to add a trusted custom Certificate Authority (CA) to Appsmith. See [Custom Root CA Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) to set up a certificate authority.
+4. When using an HTTPS proxy, you may want to add a trusted custom Certificate Authority (CA) to Appsmith. See [Custom Root CA Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) to set up a certificate authority.
 
 ## Troubleshooting
 
