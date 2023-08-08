@@ -32,7 +32,7 @@ Toggles the camera between Image and Video mode.
 
 Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
-For example,  if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the Camera widget:
+*Example:*  If you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the Camera widget:
 
 ```js
 {{Checkbox1.isChecked}}
@@ -67,7 +67,7 @@ Enabling this property mirrors the camera preview and the resulting captured ima
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user captures an image. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user captures an image. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property. This event is only available when the camera widget is in Image mode.
 
 </dd>
 
@@ -75,7 +75,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user saves a video. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user saves a video. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property. This event is only available when the camera widget is in Video mode.
 
 </dd>
 
