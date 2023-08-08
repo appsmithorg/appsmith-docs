@@ -3,9 +3,6 @@ sidebar_position: 3
 description: This page provides instructions to schedule automatic updates for your Appsmith instance.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Schedule Automatic Updates 
 
 This page provides steps to schedule automatic updates using `cron` expression for your self-hosted instance.
