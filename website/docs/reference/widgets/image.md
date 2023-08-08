@@ -5,7 +5,7 @@ description: >-
 
 # Image
 
-This page describes how to use the Image widget. You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP, and GIF.
+This page describes the properties of the Image widget. You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP, and GIF.
 
 ## Content propeties
 
