@@ -27,7 +27,7 @@ A checkpoint version is a milestone release that ensures a proper application of
 Follow these steps on your platform to update to the checkpoint version `v1.9.2`:
 
 1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
-    * When running an **Appsmith Community Edition** on Docker, update the image name as shown below:
+    * When running the **Appsmith Community Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -35,7 +35,7 @@ Follow these steps on your platform to update to the checkpoint version `v1.9.2`
             image: index.docker.io/appsmith/appsmith-ce:v1.9.2
             container_name: appsmith
         ```
-    * When running an **Appsmith Business Edition** on Docker, update the image name as shown below:
+    * When running the **Appsmith Business Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -49,7 +49,7 @@ Follow these steps on your platform to update to the checkpoint version `v1.9.2`
   ```
 
 3. The server starts with the older version, and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
-    * When running an **Appsmith Community Edition** on Docker, update the image name as shown below:
+    * When running the **Appsmith Community Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
         appsmith:
@@ -57,7 +57,7 @@ Follow these steps on your platform to update to the checkpoint version `v1.9.2`
           image: index.docker.io/appsmith/appsmith-ce
           container_name: appsmith
         ```
-    * When running an **Appsmith Business Edition** on Docker, update the image name as shown below:
+    * When running the **Appsmith Business Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -98,12 +98,12 @@ Before you begin with the Appsmith update, ensure that all the [prerequisites](#
 
 Follow these steps to update Appsmith:
 
-* When running an **Appsmith Community Edition**, update the installation to the latest release with:
+* When running the **Appsmith Community Edition**, update the installation to the latest release with:
 
   ```bash
   kubectl rollout restart statefulset appsmith
   ```
-* When running an **Appsmith Business Edition**, update the Appsmith container image to the latest release with: 
+* When running the **Appsmith Business Edition**, update the Appsmith container image to the latest release with: 
 
   ```bash
   kubectl rollout restart deployment appsmith
