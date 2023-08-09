@@ -12,7 +12,7 @@ Before upgrading, ensure you have:
 
 - Signed up on [customer.appsmith.com](https://customer.appsmith.com/) and generated a trial license key.
 - At least 2 GB of free storage space for the backup process.
-- Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#kubernetes) to update the version.
+- Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-kubernetes-installation) to update the version.
 - Created a backup of your Appsmith instance. For instructions, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
 
 ## Upgrade to Business Edition
