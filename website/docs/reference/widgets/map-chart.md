@@ -11,7 +11,7 @@ This page provides information on using the Map Chart widget for data visualizat
 </figure>
 
 :::info
-* Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
+Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
 :::
 
 ## Content properties
@@ -39,7 +39,7 @@ Allows you to choose between world maps or individual continent maps for visuali
 * USA
 
 :::info
-If you want to display a different Map type not listed above, like specific locations, countries, or cities, please contact [support@appsmith.com](mailto:support@appsmith.com).
+If you want to display a different Map type not listed above, like specific locations, countries, or cities, please contact the support team using the chat widget at the bottom right of this page.
 :::
 
 
@@ -68,9 +68,9 @@ Allows you to display data in the chart.
 ```
 
 
-In this format, the `id` refers to the pre-defined label ID available on [Fusioncharts](https://www.fusioncharts.com/dev/maps/spec-sheets/world), and the `value` represents the corresponding value associated with that label. If a label ID has no corresponding value, the map displays grey color, to signify the absence of data.
+In this format, the `id` refers to the pre-defined label ID available on [Fusioncharts](https://www.fusioncharts.com/dev/maps/spec-sheets/world) under the section List of Entities, and the `value` represents the corresponding value associated with that label. If a label ID has no corresponding value, the map displays grey color, to signify the absence of data.
 
-Each **Map Type** has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps). 
+Each **Map Type** has different configurations. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps). 
 
 Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Chart data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
@@ -148,7 +148,7 @@ Allows you to manage the color of a collection of regions based on the assigned 
 * `code`: Represents the color code to be applied.
 * `minValue`: Indicates the minimum value where this color should be used.
 * `maxValue`: Indicates the maximum value where this color should be used.
-* `displayValue`: Displays string value.
+* `displayValue`: Display string values, overriding the numeric range.
 * `alpha`: Indicates the transparency level, with a maximum value of 100.
 
 *Expected data structure:*
