@@ -6,96 +6,271 @@ description: >-
 
 # Number Slider
 
-Use the Number Slider when you want to allow the user to select a numerical value from a set range of possible data. For example, it may be used to set a variable for some calculation while only allowing values within a reasonable range.
+This page provides information on using the Number Slider, which allows the user to select a numerical value from a set range of possible data. 
 
-![Number Slider](</img/as_number.png>)
+<figure>
+  <img src="/img/as_number.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
+</figure>
 
-## Properties
-
-Properties allow you to edit the Number Slider widget, connect it with other widgets and customize the user actions.
-
-| Property                                                            | Type       | Description                                                                                                                                                                                                            | Code Snippet              |
-| ------------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| [**Min Value**](./number-slider.md#min-value--max-value)       | Formatting | The starting/smallest possible value of the slider. The value may be negative and/or include decimals, however it must always be less than the **Max Value**. _(number)_                                               |                           |
-| [**Max Value**](./number-slider.md#min-value--max-value)       | Formatting | The ending/largest possible value of the slider. The value may be negative and/or include decimals, however it must always be greater than the **Min Value**. _(number)_                                               |                           |
-| [**Step Size**](./number-slider.md#step-size)                 | Formatting | The increment by which the user can adjust the slider's value. This increment must be at least 0.1, and can't be greater than the **Max Value**. _(number)_                                                            |                           |
-| [**Default Value**](./number-slider.md#default-value)         | Formatting | Sets an initial number to be captured as user input unless it's changed by the user. This value should be between the slider's **Min Value** and **Max Value**. _(number)_                                             |                           |
-| [**Marks**](./number-slider.md#marks)                         | Formatting | An _array of objects_ with keys `value` and `label` which define where reference labels should appear below the widget's slider. These labels can be shown or hidden with the **Show Marks** property toggle. _(bool)_ |                           |
-| [**Show Marks**](./number-slider.md#show-marks)               | Formatting | Toggles on/off the widget's reference labels below the slider element. _(bool)_                                                                                                                                        |                           |
-| [**Visible**](../#visible)                                  | Formatting | Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published. It appears translucent when in Edit mode. _(bool)_                                                   |                           |
-| [**Disabled**](../#disabled)                                | Formatting | Makes the widget inactive or unusable. The widget remains visible to the user, but user interaction won't be allowed. _(bool)_                                                                                     |                           |
-| **Animate Loading**                                                 | Formatting | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. _(bool)_            |                           |
-| [**Tooltip Always On**](./number-slider.md#tooltip-always-on) | Formatting | Hovering over the slider with the mouse cursor shows the slider's selected value in a tooltip; enabling this setting forces the tooltip to always be visible, regardless of the cursor's location. _(bool)_            |                           |
-| [**value**](./number-slider.md#value)                         | Binding    | Represents the value which is currently selected in the widget. _(number)_                                                                                                                                             | `{{<widget-name>.value}}` |
-
-These properties allow you to perform formatting changes or bind it to any other widget in queries or JS objects.
-
-#### Min Value / Max Value
-
-These properties represent the lower and upper bounds of values that can be selected with the slider. The **Min Value** determines the value at the far left end of the widget, and the **Max Value** determines the value at the far right end. Negative and or decimal values are allowed however, the Min Value must always be less than the Max Value.
-
-<VideoEmbed host="youtube" videoId="VphLW50YPKo" title="Min Value/Max Value" caption="Min Value/Max Value"/>
+## Content properties
 
 
-#### Step Size
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-The `Step Size` property determines the smallest increment by which the user may adjust the value selected by the slider. Smaller values for this property (can't be smaller than 0.1) result in finer control of the selection, whereas larger step sizes result in coarser control.
 
-<VideoEmbed host="youtube" videoId="mecwJ-D49gU" title="Step Size" caption="Step Size"/>
+### Data
 
-#### Default Value
+#### Min Value `number`
 
-Sets an initial number to be captured as user input unless it's changed by the user.
+<dd>
 
-<VideoEmbed host="youtube" videoId="GOQ0SguBbp0" title="Default Value" caption="Default Value"/>
+Indicates the lowest possible value that the slider can start from. The value can include negative numbers and decimals, but it should always be smaller than the **Maximum** Value. 
 
-#### Marks
+</dd>
 
-Marks appear along the bottom of the widget as labels for the different values along the slider. Using the `Marks` property, which is an array of objects with keys `label` and `value`, you can define where these marks appear and how they're labeled. Each mark appears below the place where its `value` is located on the slider, and has the text from its corresponding `label`.
+#### Max Value `number`
 
-<VideoEmbed host="youtube" videoId="9lkNIjJ8EFs" title="Marks" caption="Marks"/>
+<dd>
 
-#### Show Marks
+Indicates the highest possible value for the slider. The value can encompass negative numbers and decimals, but it must always surpass the **Minimum** Value.
 
-This property is a toggle that enables/disables the marks along the bottom of the slider.
+</dd>
 
-<VideoEmbed host="youtube" videoId="-4DS16RBkeI" title="Show Marks" caption="Show Marks"/>
+#### Step Size `number`
 
-#### Tooltip Always On
+<dd>
 
-When this property is enabled, the widget's tooltip is _always_ visible, and shows the currently selected value on the slider. If this setting is turned off, the tooltip is only visible when the user hovers over the slider with their mouse cursor.
+Denotes the amount by which the user can modify the slider's value. The increment should be a minimum of 0.1 and must not exceed the **Maximum** Value. 
 
-<VideoEmbed host="youtube" videoId="mtlqTYBplqk" title="Tooltip Always On" caption="Tooltip Always On"/>
+</dd>
 
-#### Value
+#### Default Value `number`
 
-This binding property allows you to access the value that has been selected with the slider. For example, if the selected value is `50`, then the `value` property would look like:
+<dd>
 
+Sets an initial number to be captured as user input unless it's changed by the user. This value should be between the slider's **Min Value** and **Max Value**. 
+
+</dd>
+
+### Label
+
+
+#### Text `string`
+
+
+<dd>
+Sets the label on the widget.
+</dd>
+
+
+
+
+#### Position `string`
+
+
+<dd>
+
+
+This property allows you to configure the label's placement.
+
+*Options:*
+* **Auto**: Automatically positions the label based on the widget type and layout.
+* **Left**: Aligns the label to the left side of the widget.
+* **Top**: Positions the label above the widget.
+
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width (in columns) `number`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
+
+</dd>
+
+### General
+
+
+#### Tooltip `string`
+<dd>
+
+
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
+</dd>
+
+#### Show Marks `boolean`
+
+
+<dd>
+
+When enabled, this property displays the labels below the slider element within the widget.
+
+</dd>
+
+
+#### Marks `array<object>`
+
+<dd>
+
+Sets the label and corresponding values for the marks located below the slider.
+
+*Expected data structure:*
+
+```js
+[
+  {
+    "value": 25,
+    "label": "25%"
+  },
+  {
+    "value": 50,
+    "label": "50%"
+  },
+  {
+    "value": 75,
+    "label": "75%"
+  }
+]
 ```
-{{NumberSlider1.value}}
-// 50
+
+</dd>
+
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
 ```
 
-<VideoEmbed host="youtube" videoId="AD89aGY2Kwc" title="Value" caption="Value"/>
+</dd>
 
-## Events
+#### Disabled `boolean`
 
-Each variant of the Slider widget has events that are called when the user adjusts the widget's values:
+<dd>
 
-| Event        | Description                                                                                                                                                                                                                                                                                       | Example                                                                  |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| **onChange** | Sets an action to take place when the user changes the slider's value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead. | Fetching a certain page or image from a range based upon user selection. |
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
 
-Numerical sliders can be helpful when you want to add a visual component to a user's selection of a numerical value. This way, values can be selected at-a-glance for estimations; or even for watching incremental changes in a dataset as the slider value gradually increases or decreases.
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+
+#### Show value always `boolean`
+
+
+<dd>
+
+Maintains the constant visibility of a tooltip containing the current value.
+
+</dd>
+
+### Events
+
+When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
+#### onChange
+
+<dd>
+
+Specifies the actions to be executed when the user changes the slider's value. 
+
+</dd>
+
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### General
+
+#### Size `string`
+
+<dd>
+
+Defines the size of the slider.
+
+Options:
+* Small
+* Medium
+* Large
+
+</dd>
+
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Color
+
+#### Fill color `string`
+
+<dd>
+
+Represents the color of the slider, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -107,18 +282,11 @@ Sets the disabled state of the widget.
 NumberSlider1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-NumberSlider1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
 
 </dd>
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -130,19 +298,11 @@ Sets the visibility of the widget.
 NumberSlider1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-NumberSlider1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
 
 </dd>
 
 
-#### setValue `string`
+#### setValue (param: string): Promise
 
 <dd>
 
@@ -154,13 +314,5 @@ Allows you to dynamically set the value of the widget.
 NumberSlider1.setValue(23)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-NumberSlider1.setValue(23).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
 
 </dd>
