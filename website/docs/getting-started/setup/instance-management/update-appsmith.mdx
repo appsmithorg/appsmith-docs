@@ -1,29 +1,30 @@
 ---
-description: Follow the steps to update Appsmith to the latest versionon your self-hosted Appsmith instance.
+description: This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
 toc_max_heading_level: 3
 ---
 
 # Update Appsmith
 
-This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance. The steps can be followed for both Community and Business editions.
+This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
 
 ## Prerequisites
 
-Before you update Appsmith, make sure you have:
-
 * A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 * At least 2 GB of free storage space for backup and update tasks.
+
+## Before you begin
+
 * Created a backup of the Appsmith instance. If not yet backed up Appsmith, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
 * Upgraded your embedded or custom MongoDB server to MongoDB v5 or later. If you haven't upgraded yet, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
 
 ## Upgrade to checkpoint version
 
-A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent any compatibility issues or data inconsistencies. The available Appsmith checkpoint versions are as follows:
+A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent compatibility issues or data inconsistencies. The available Appsmith checkpoint versions are as follows:
 
   * `v1.9.2`
 
 ### Upgrade Docker installation
-Before you begin with the update to a checkpoint version, ensure that all the [prerequisites](#prerequisites) are met. Follow these steps to update to the checkpoint version `v1.9.2`, these instructions can be used to update Appsmith on any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
+Before you update to a checkpoint version, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update to the checkpoint version `v1.9.2`. You can use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
 1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
     * When running the **Community Edition** on Docker, update the image name as shown below:
@@ -42,12 +43,11 @@ Before you begin with the update to a checkpoint version, ensure that all the [p
             image: index.docker.io/appsmith/appsmith-ee:v1.9.2
             container_name: appsmith
         ```
-2. Save the changes, and restart Appsmith instance with:
+2. Save the changes, and restart the Appsmith instance with:
   ```bash
   docker-compose up -d
   ```
-
-3. The server starts with the older version, and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
+3. The server starts with the older version and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
     * When running the **Community Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
@@ -64,38 +64,36 @@ Before you begin with the update to a checkpoint version, ensure that all the [p
             image: index.docker.io/appsmith/appsmith-ee
             container_name: appsmith
         ```
-4. Save the changes and restart Appsmith instance with: 
+4. Save the changes and restart the Appsmith instance with: 
   ```bash
   docker-compose up -d
   ```
 
-If you haven't updated Appsmith for a while, you may have to update to multiple versions. In such case, follow the same steps for each version starting from the oldest. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
+If you haven't updated Appsmith for a while, you may have to update to multiple versions. In such cases, start with the older version and follow the steps for each version. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
 
 ## Update Docker installation
 
-Before you begin with the Appsmith update, ensure that all the [prerequisites](#prerequisites) are met and that your current version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](#upgrade-to-checkpoint-version) guide.
+Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](#upgrade-to-checkpoint-version) guide.
 
-Follow these steps to update Appsmith, these instructions can be used to update Appsmith on any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
+Follow these steps to update Appsmith, these instructions can be used to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
 1. Go to the Appsmith installation directory. If you don't know the directory, find it with:
 
   ```bash
   docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
   ```
-2. Update the Appsmith installation to a latest version with:
+2. Update the Appsmith installation to the latest version with:
 
   ```bash
   docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
   ```
-The above command, pulls the latest image of Appsmith, and updates the installation after restarting the Docker container.
+The above command pulls the latest image of Appsmith and updates the installation after restarting the Docker container.
 
 You may choose to schedule automatic updates for your Appsmith Docker installation. For more information, see [Schedule Automatic Updates for Docker installation](/getting-started/setup/instance-management/maintenance-window#docker).
 
 ## Update Kubernetes installation
 
-Before you begin with the Appsmith update, ensure that all the [prerequisites](#prerequisites) are met and that your current version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](#upgrade_to_checkpoint_version) guide.
-
-Follow these steps to update Appsmith:
+Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update Appsmith:
 
 * When running the **Community Edition**, update the installation to the latest release with:
 
@@ -111,16 +109,14 @@ You may choose to schedule automatic updates for your Appsmith Kubernetes instal
 
 ## Update AWS ECS EC2 installation
 
-Before you begin with the Appsmith update, ensure that all the [prerequisites](#prerequisites) are met and that your current version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](#upgrade_to_checkpoint_version) guide.
-
-Follow the below steps using the Classic Amazon Web Console to manually update Appsmith:
+Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow the below steps using the Classic Amazon Web Console to update Appsmith:
 
 1. Log in to your [AWS account](https://console.aws.amazon.com/ecs/).
 2. Go to the **Amazon ECS console**.
-3. Select the **cluster** that contains the container instance that you want to update.
+3. Choose the **cluster** that has the container instance you wish to update.
 4. Click the **Tasks** tab.
-5. Select and click the **task** that you want to update. 
-6. Click the **Stop** button to stop the task. A new task is deployed automatically. Wait for the new task to be deployed.
+5. Select and click the **task** you wish to update. 
+6. Click the **Stop** button to stop the task. Wait for the automatic deployment of a new task to be completed.
 7. Verify that the updated version of your application is running as expected.
 
 ## Troubleshooting

@@ -18,11 +18,9 @@ Before you schedule an automatic update for Appsmith, make sure you have:
 Follow the below steps to schedule automatic updates for Appsmith Docker installation:
 
 1. Go to the root directory of the Appsmith installation and run:
-
    ```bash
    docker-compose down
    ```
-
 2. Open the `docker-compose.yml` file and uncomment the below code block. Note that you must add a 6-value cron expression, not the traditional 5-value. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more.
    ```yaml
     labels:
@@ -42,24 +40,18 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
   Below are some configurations for common use cases:
 
     * Check for updates every Sunday at 12:00 noon:
-
     ```bash
     command: --schedule "0 0 12 ? * SUN" --label-enable --cleanup
     ```
-
     * Check for updates every hour:
-
     ```bash
     command: --schedule "0 0 * ? * *" --label-enable --cleanup
     ```
     * Check for updates once at 12:00 noon every day:
-
     ```bash
     command: --schedule "0 0 12 * * ?" --label-enable --cleanup 
     ```
-
     * Check for updates once at midnight every day:
-
     ```bash
     command: --schedule "0 0 0 * * ?" --label-enable --cleanup 
     ```
@@ -96,20 +88,15 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
       ```bash
       scheduler: 0 12 * * SUN
       ```
-
     * Check for updates every hour:
-
       ```bash
       scheduler: 0 * * * *
       ```
     * Check for updates once at 12:00 noon every day:
-
       ```bash
       scheduler: 0 12 * * *
       ```
-
     * Check for updates once at midnight every day:
-
       ```bash
       scheduler: 0 0 * * * 
       ```
