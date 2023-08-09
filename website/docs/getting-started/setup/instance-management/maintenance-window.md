@@ -115,11 +115,11 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
       ```
 
 3. Save the changes and update the Appsmith installation.
-    * When running an **Appsmith Community Edition**, update with:
+    * When running the **Community Edition**, update with:
       ```bash
       helm upgrade -i appsmith appsmith/appsmith -f values.yaml
       ```
-    * When running an **Appsmith Business Edition**, update with:
+    * When running the **Business Edition**, update with:
       ```bash
       helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
       ```
@@ -168,7 +168,7 @@ Follow the below steps for your Appsmith installation to switch off automatic up
 ### Kubernetes
 Follow the steps below to turn off auto updates:
 
- * When running the **Appsmith Community Edition** on Kubernetes, update the configuration as shown below:
+ * When running the **Community Edition** on Kubernetes, update the configuration as shown below:
 
     1. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
       ```yaml
@@ -184,7 +184,7 @@ Follow the steps below to turn off auto updates:
         helm upgrade --values values.yaml appsmith appsmith/appsmith
       ```
 
- * When running the **Appsmith Business Edition** on Kubernetes, update the configuration as shown below:
+ * When running the **Business Edition** on Kubernetes, update the configuration as shown below:
     1. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
       ```yaml
       #highlight-next-line
@@ -198,3 +198,7 @@ Follow the steps below to turn off auto updates:
       ```bash
       helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
       ```
+
+## Troubleshooting
+
+If you face issues, contact the support team using the chat widget at the bottom right of this page.

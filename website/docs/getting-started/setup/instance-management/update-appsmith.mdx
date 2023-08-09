@@ -3,9 +3,6 @@ description: Follow the steps to update Appsmith to the latest versionon your se
 toc_max_heading_level: 3
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Update Appsmith
 
 This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance. The steps can be followed for both Community and Business editions.
@@ -29,7 +26,7 @@ A checkpoint version is a milestone release that ensures a proper application of
 Before you begin with the update to a checkpoint version, ensure that all the [prerequisites](#prerequisites) are met. Follow these steps to update to the checkpoint version `v1.9.2`, these instructions can be used to update Appsmith on any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
 1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
-    * When running the **Appsmith Community Edition** on Docker, update the image name as shown below:
+    * When running the **Community Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -37,7 +34,7 @@ Before you begin with the update to a checkpoint version, ensure that all the [p
             image: index.docker.io/appsmith/appsmith-ce:v1.9.2
             container_name: appsmith
         ```
-    * When running the **Appsmith Business Edition** on Docker, update the image name as shown below:
+    * When running the **Business Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -51,7 +48,7 @@ Before you begin with the update to a checkpoint version, ensure that all the [p
   ```
 
 3. The server starts with the older version, and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
-    * When running the **Appsmith Community Edition** on Docker, update the image name as shown below:
+    * When running the **Community Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
         appsmith:
@@ -59,7 +56,7 @@ Before you begin with the update to a checkpoint version, ensure that all the [p
           image: index.docker.io/appsmith/appsmith-ce
           container_name: appsmith
         ```
-    * When running the **Appsmith Business Edition** on Docker, update the image name as shown below:
+    * When running the **Business Edition** on Docker, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -92,7 +89,7 @@ Follow these steps to update Appsmith, these instructions can be used to update 
   ```
 The above command, pulls the latest image of Appsmith, and updates the installation after restarting the Docker container.
 
-You may choose to schedule automatic updates for your Appsmith Docker installation. For more information, see [Schedule Automatic Updates].
+You may choose to schedule automatic updates for your Appsmith Docker installation. For more information, see [Schedule Automatic Updates for Docker installation](/getting-started/setup/instance-management/maintenance-window#docker).
 
 ## Update Kubernetes installation
 
@@ -100,17 +97,17 @@ Before you begin with the Appsmith update, ensure that all the [prerequisites](#
 
 Follow these steps to update Appsmith:
 
-* When running the **Appsmith Community Edition**, update the installation to the latest release with:
+* When running the **Community Edition**, update the installation to the latest release with:
 
   ```bash
   kubectl rollout restart statefulset appsmith
   ```
-* When running the **Appsmith Business Edition**, update the Appsmith container image to the latest release with: 
+* When running the **Business Edition**, update the Appsmith container image to the latest release with: 
 
   ```bash
   kubectl rollout restart deployment appsmith
   ```
-You may choose to schedule automatic updates for your Appsmith Kubernetes installation. For more information, see [Schedule Automatic Updates].
+You may choose to schedule automatic updates for your Appsmith Kubernetes installation. For more information, see [Schedule Automatic Updates for Kubernetes installation](/getting-started/setup/instance-management/maintenance-window#kubernetes ).
 
 ## Update AWS ECS EC2 installation
 
