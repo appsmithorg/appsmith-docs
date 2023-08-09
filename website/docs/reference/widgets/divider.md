@@ -92,7 +92,7 @@ Sets the thickness of the divider line in pixels.
 
 <dd>
 
-Sets the style of cap to apply to the divider line.
+Sets the design of the cap to be added to the end of the divider line.
 
 *Options:*
 * No Cap
