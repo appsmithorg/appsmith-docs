@@ -211,6 +211,7 @@ exceptions:
   - Colors, Borders and Shadows
   - Default Tab
   - onTabSelected
+  - Proxy
   - onRecordingStart
   - blobURL
   - dataURL
@@ -223,6 +224,3 @@ exceptions:
   - videoRawBinary
   - onImageSave
   - onVideoSave
-
-
-
