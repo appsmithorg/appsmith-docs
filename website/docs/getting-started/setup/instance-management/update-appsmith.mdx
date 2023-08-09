@@ -14,6 +14,7 @@ This page provides steps to update Appsmith to the latest version on your self-h
 
 Before you update Appsmith, make sure you have:
 
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 * At least 2 GB of free storage space for backup and update tasks.
 * Created a backup of the Appsmith instance. If not yet backed up Appsmith, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
 * Upgraded your embedded or custom MongoDB server to MongoDB v5 or later. If you haven't upgraded yet, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
@@ -24,7 +25,8 @@ A checkpoint version is a milestone release that ensures a proper application of
 
   * `v1.9.2`
 
-Follow these steps on your platform to update to the checkpoint version `v1.9.2`:
+### Upgrade Docker installation
+Before you begin with the update to a checkpoint version, ensure that all the [prerequisites](#prerequisites) are met. Follow these steps to update to the checkpoint version `v1.9.2`, these instructions can be used to update Appsmith on any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
 1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
     * When running the **Appsmith Community Edition** on Docker, update the image name as shown below:
