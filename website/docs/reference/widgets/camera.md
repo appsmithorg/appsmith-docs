@@ -5,7 +5,7 @@ description: >-
 
 # Camera
 
-This page describes how to use the camera widget to capture images and videos.
+This page describes properties of the camera widget, which is used for capturing images and videos.
 
 <figure>
   <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
@@ -124,13 +124,15 @@ Returns a binary URL that stores the captured image for future use.
 
 <dd>
 
-Stores the captured image in Data URL format (Base64). You can use it to embed the image inline within different applications.
+Stores the captured image in Data URL format (Base64). You can use it to embed the image inline within different applications. 
 
 *Example:*
 
 ```js
 {{Camera1.imageDataURL}}
 ```
+
+You can use this property to upload an image to Amazon S3. For more infornmation, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images).
 
 </dd>
 
@@ -173,6 +175,8 @@ Stores the recorded video in Data URL format (Base64). You can use it to embed t
 ```js
 {{Camera1.videoDataURL}}
 ```
+
+You can use this property to upload a video to Amazon S3. For more infornmation, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images)
 
 </dd>
 
@@ -225,38 +229,3 @@ Camera1.setDisabled(false)
 ```
 
 </dd>
-
-## Upload media to S3
-
-This guide shows you how to capture and upload an image or video to Amazon S3.
-
-1. Connect to [Amazon S3](/connect-data/reference/querying-amazon-s3) datasource.
-2. Click the **+** icon next to the **Queries/JS** and choose your S3 datasource.
-3. Select **Create a new file** from the **Commands** list.
-4. Specify the necessary parameters, such as the **Bucket Name** and **File Data Type**. Select the `base64` option from **File Data Type** when uploading data from the Camera widget.
-5. In the content box, add the data you want to upload. For instance, if you want to upload an image, use: 
-
- ```js
-  //For image
-   {
-    "data": {{Camera1.imageDataURL}}
-   }
-  ```
-To upload the video, use:
- ```js
-  //For video
-   {
-    "data": {{Camera1.videoDataURL}}
-   }
-  ```
-
-<figure>
-  <img src="/img/cam-to-s3.png" style= {{width:"700px", height:"auto"}} alt="Upload media to S3"/>
-  <figcaption align = "center"><i>Upload media to S3</i></figcaption>
-</figure>
-
-
-5. Set the **onImageCapture** or **onVideoSave** event to run the query. When you capture an image or video using the Camera widget, it gets uploaded to the S3 bucket.
-
-
-
