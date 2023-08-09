@@ -67,7 +67,7 @@ With **JS** enabled, accepts string values `auto`, `cover`, or `contain`. See CS
 
 <dd>
 
-Sets the maximum allowable zoom level for the image view. Th available options are 2x, 4x, 8x, 16x. With **JS** enabled, it accepts a number as the zoom level.
+Sets the maximum allowable zoom level for the image view. Th available options are **2x**, **4x**, **8x**, **16x**. With **JS** enabled, it accepts a number as the zoom level.
 
 </dd>
 
