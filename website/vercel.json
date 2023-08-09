@@ -965,14 +965,6 @@
       "destination": "/connect-data/reference/querying-snowflake-db"
     },
     {
-      "source": "/assets/images/:path*",
-      "destination": "/"
-    },
-    {
-      "source": "/assets/files/:path*",
-      "destination": "/"
-    },
-    {
       "source": "/getting-sta",
       "destination": "/getting-started"
     },
