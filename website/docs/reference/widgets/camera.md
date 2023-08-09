@@ -5,14 +5,14 @@ description: >-
 
 # Camera
 
-This page describes properties of the camera widget, which is used for capturing images and videos.
+This page describes the properties of the camera widget, which is used for capturing images and videos.
 
 <figure>
   <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
   <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
 </figure>
 
-## Content propeties
+## Content properties
 
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
@@ -132,7 +132,7 @@ Stores the captured image in Data URL format (Base64). You can use it to embed t
 {{Camera1.imageDataURL}}
 ```
 
-You can use this property to upload an image to Amazon S3. For more infornmation, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images).
+You can use this property to upload an image to Amazon S3. For more information, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images).
 
 </dd>
 
@@ -176,7 +176,7 @@ Stores the recorded video in Data URL format (Base64). You can use it to embed t
 {{Camera1.videoDataURL}}
 ```
 
-You can use this property to upload a video to Amazon S3. For more infornmation, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images)
+You can use this property to upload a video to Amazon S3. For more information, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images)
 
 </dd>
 
