@@ -63,13 +63,13 @@ Enabling this property mirrors the camera preview and the resulting captured ima
 
 ### Events 
 
-When the event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 
 #### onImageSave
 
 <dd>
 
-Triggers when the user captures an image. This event is only available when the camera widget is in Image mode.
+Triggered when the user captures an image. This event is only available when the camera widget is in Image mode.
 
 </dd>
 
@@ -77,7 +77,7 @@ Triggers when the user captures an image. This event is only available when the 
 
 <dd>
 
-Triggers when the user saves a video. This event is only available when the camera widget is in Video mode.
+Triggered when the user saves a video. This event is only available when the camera widget is in Video mode.
 
 </dd>
 
