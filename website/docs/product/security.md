@@ -5,11 +5,6 @@ description: Learn about Appsmith's security features and how to protect your da
 
 This page explains the security features and considerations that Appsmith has implemented in its platform, and steps you can take to make your apps as safe as possible.
 
-## Does Appsmith store my data?
-
-
-
-
 ## Secure data
 
 Appsmith applications are secure-by-default, with a number of strategies in place to protect your data.
