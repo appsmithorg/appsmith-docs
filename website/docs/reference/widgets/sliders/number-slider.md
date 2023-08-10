@@ -146,6 +146,20 @@ Sets the label and corresponding values for the marks located below the slider.
 ]
 ```
 
+Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Marks** property. For example, if you have a query named `fetchData`, you can bind its response using:
+
+*Example:*
+```js
+{{fetchData.data}}
+```
+
+If the query data is not in the expected format, you can use the `map()` function to transform it before passing it to the widget, like:
+
+*Example:*
+```js
+{{fetchData.data.map( p => ({label: p.size, value: p.size}))}}
+```
+
 </dd>
 
 
