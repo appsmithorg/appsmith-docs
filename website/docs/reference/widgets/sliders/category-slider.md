@@ -5,11 +5,11 @@ description: >-
 ---
 # Category Slider
 
-This page provides information on using the Category Slider widget, which is ideal for obtaining feedback within fixed ascending options. For instance, in surveys, respondents can rate their agreement with statements using options like "Strongly Agree," "Agree," "Disagree," and "Strongly Disagree."
+This page describes the properties of the Category Slider, which allows users to make selections from a predetermined set of ascending options. 
 
 <figure>
-  <img src="/img/as_category.png" style= {{width:"700px", height:"auto"}} alt="Display Category Slider"/>
-  <figcaption align = "center"><i>Display Category Slider</i></figcaption>
+  <img src="/img/as_category.png" style= {{width:"700px", height:"auto"}} alt="Category Slider"/>
+  <figcaption align = "center"><i> Category Slider</i></figcaption>
 </figure>
 
 ## Content properties
@@ -182,13 +182,13 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 #### onChange
 
 <dd>
 
-Specifies the actions to be executed when the user changes the slider's value. 
+Specifies one or multiple actions to be triggered when the user changes the value of the Number Slider.
 
 </dd>
 
