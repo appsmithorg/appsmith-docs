@@ -216,3 +216,4 @@ exceptions:
   - blobURL
   - dataURL
   - onRecordingComplete
+  - onDateSelected
