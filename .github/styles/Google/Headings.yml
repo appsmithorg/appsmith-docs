@@ -223,4 +223,6 @@ exceptions:
   - videoDataURL
   - videoRawBinary
   - onImageSave
-  - onVideoSave
+  - onVideoSave  
+  - setImage
+  - image
