@@ -63,11 +63,13 @@ Enabling this property mirrors the camera preview and the resulting captured ima
 
 ### Events 
 
+When the event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+
 #### onImageSave
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user captures an image. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property. This event is only available when the camera widget is in Image mode.
+Triggers when the user captures an image. This event is only available when the camera widget is in Image mode.
 
 </dd>
 
@@ -75,7 +77,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user saves a video. You can also write custom JavaScript logic for this event by clicking the **JS** button next to the property. This event is only available when the camera widget is in Video mode.
+Triggers when the user saves a video. This event is only available when the camera widget is in Video mode.
 
 </dd>
 
