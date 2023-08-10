@@ -36,7 +36,7 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
         - WATCHTOWER_LIFECYCLE_HOOKS=true
    ```
 
-  The above 6-value cron expression `0 0 * ? * *` means that the task runs every day of every month, regardless of the day of the week or year at midnight (0:00). If you'd like to change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#docker) guide.
+  The above 6-value cron expression `0 0 * ? * *` means that the task runs every day of every month, regardless of the day of the week or year, at midnight (0:00). You can change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#docker) guide.
   
   Below are some examples of 6-value cron expressions:
 
@@ -95,7 +95,7 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
     scheduler: "0/10 * * * *"
    ```
 
-  The above 5-value cron expression `0/10 * * * *` means that the task runs every day of the week, and every month regardless of the year at the 0th minute of every hour. If you'd like to change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#kubernetes) guide.
+  The above 5-value cron expression `0/10 * * * *` means that the task runs every day of the week and every month, regardless of the year, at the 0th minute of every hour. You can change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#kubernetes) guide.
   
   Below are some examples of 5-value cron expressions:
     * Check for updates every Sunday at 12:00 noon:
