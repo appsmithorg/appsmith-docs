@@ -1,3 +1,8 @@
+---
+description: >-
+  Datepicker widget reference
+---
+
 # Datepicker
 
 This page describes the properties of the Datepicker widget which can be used to display or capture date/time information. It enables to filter the data based on a date range, format dates and performs date validations. 
