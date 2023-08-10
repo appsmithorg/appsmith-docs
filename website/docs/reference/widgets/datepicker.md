@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The date format selected for the Datepicker widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values. 
+The date format selected for the Datepicker widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) formats. 
 
 </dd>
 
@@ -26,7 +26,7 @@ The date format selected for the Datepicker widget. With **JS** enabled, this pr
 
 <dd>
 
-Sets a default date that would be captured as user input unless it is changed by the user.
+Sets a default date that would be captured as user input unless it is changed by the user. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
 
 </dd>
 
@@ -70,7 +70,7 @@ Enables you to designate the Datepicker widget as a mandatory field.
 
 <dd>
 
-Sets a minimum/earliest date permitted to be selected in the widget.
+Sets a minimum/earliest date permitted to be selected in the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
 
 </dd>
 
@@ -78,7 +78,7 @@ Sets a minimum/earliest date permitted to be selected in the widget.
 
 <dd>
 
-Sets a maximum/latest date allowed to be selected with the widget.
+Sets a maximum/latest date allowed to be selected with the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
 
 </dd>
 
