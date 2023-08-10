@@ -2,9 +2,6 @@
 
 This page explains how to use the Datepicker widget to display or capture date/time information. It enables to filter the data based on a date range, format dates and performs date validations. 
 
-<VideoEmbed host="youtube" videoId="MFflGf3K324" title="Using the Datepicker widget" caption="Using the Datepicker widget"/>
-
-
 
 ## Update date
 
@@ -55,7 +52,7 @@ To get data that was collected within a particular time frame, you need to use a
 
 **Example**: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
 
-1. Fetch data from the [sample database ](https://docs.appsmith.com/core-concepts/connecting-to-data-sources/connecting-to-databases#sample-databases) `users` using a SELECT query `fetchUserData`. 
+1. Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
 
 2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
 
@@ -139,6 +136,101 @@ When the event is triggered, these event handlers can run queries, JS code, or o
 | **onFocus** | Triggers an action when a Datepicker widget is focused. |
 | **onBlur** | Triggers an action when a Datepicker widget loses focus. |
 
+## Methods
 
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+DatePicker1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+DatePicker1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+
+```
+
+</dd>
+
+
+#### setDisabled `boolean`
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+DatePicker1.setDisabled(false)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+DatePicker1.setDisabled(false).then(() => {
+  // code to be executed after disabled state is set
+})
+```
+
+</dd>
+
+#### setValue `string`
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+DatePicker1.setValue('11-01-1994')
+```
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+DatePicker1.setValue('11-01-1994').then(() => {
+  // code to be executed after value is set
+})
+```
+
+</dd>
+
+
+#### setRequired `boolean`
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+DatePicker1.setRequired(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+DatePicker1.setRequired(true).then(() => {
+  // code to be executed after required state is set
+})
+```
+
+</dd>
 
 

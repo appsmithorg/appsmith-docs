@@ -2,9 +2,6 @@
 
 You can add images in the form of URLs or base64 strings. The Image widget supports popular formats such as JPG, PNG, SVG, WebP and GIF.
 
-
-<VideoEmbed host="youtube" videoId="jdDcydQ8Ho0" title="How to use the Image Widget" caption="How to use the Image Widget"/>
-
 ## Display static images 
 
 You can specify the image source using the **Image property** to display an image. The Image property can accept a **URL**, a **data URI**, or a **base64** encoded image data as its input. For example, you can add this URL in the image property:
@@ -36,7 +33,7 @@ Bind ```{{Table1.selectedRow.image}}``` in the Image property where "Table1" is 
 
 ## Display images from S3 bucket
 
-To fetch an image from [S3](/reference/datasources/querying-amazon-s3), follow these steps:
+To fetch an image from [S3](/connect-data/reference/querying-amazon-s3), follow these steps:
 
 * Click the + icon next to Queries/JS and choose your S3 datasource.
 * Select the "List files" method from the Commands drop-down menu.
@@ -101,8 +98,60 @@ These are functions that are called when event listeners are triggered in the wi
 | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **onClick** | Sets an action when the user clicks this widget. |
 
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility `boolean`
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Image1.setVisibility(true)
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Image1.setVisibility(true).then(() => {
+  // code to be executed after visibility is set
+})
+```
+
+</dd>
+
+
+#### setImage `string`
+
+<dd>
+
+Sets the `base64` encoded image in the Image widget.
+
+*Example*:
+
+```js
+Image1.setImage('data:image/png;base64,iVBORw0KG...')
+```
+
+To perform sequential actions, use the `.then()` block for execution.
+
+```js
+Image1.setImage('data:image/png;base64,iVBORw0KG...').then(() => {
+  // code to be executed after image is set
+})
+```
+
+</dd>
+
 ## Further reading
 
-* [Amazon S3](/reference/datasources/querying-amazon-s3)
+* [Amazon S3](/connect-data/reference/querying-amazon-s3)
 * [Filepicker widget](/reference/widgets/filepicker)
 

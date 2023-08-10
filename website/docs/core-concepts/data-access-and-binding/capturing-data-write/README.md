@@ -1,6 +1,6 @@
 # Capturing Data (Write)
 
-This document presumes you have successfully [connected to a data source](/core-concepts/connecting-to-data-sources) and have a query that can insert/update/delete data. You should also have gone through the basics of [using widgets](/core-concepts/data-access-and-binding/displaying-data-read).
+This document presumes you have successfully connected to a data source and have a query that can insert/update/delete data. You should also have gone through the basics of [using widgets](/core-concepts/data-access-and-binding/displaying-data-read).
 
 The following widgets can be used to capture user inputs in an application
 

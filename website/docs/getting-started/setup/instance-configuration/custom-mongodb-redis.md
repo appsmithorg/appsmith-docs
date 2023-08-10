@@ -14,6 +14,7 @@ To use external MongoDB with Appsmith v1.9.0 onwards, you need MongoDB version 5
 Follow the steps below to configure Appsmith to use an external MongoDB instance:
 
 ### Prerequisites
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 * Ensure that your external MongoDB has a replica set configuration in place. Connect to your database as an admin user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud, the replica set configuration is already set up for you.
 * Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
 
@@ -30,6 +31,10 @@ You can use [Admin Settings](/getting-started/setup/instance-configuration#admin
   <img src="/img/setup-external-mongodb-using-admin-settings.png" style= {{width:"700px", height:"auto"}} alt="Setup an external MongoDB using Admin settings"/>
   <figcaption align = "center"><i>Setup an external MongoDB using Admin settings</i></figcaption>
 </figure>
+
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
 
 #### Environment variable
 To connect to an external MongoDB server, update the environment variable `APPSMITH_MONGODB_URI`. For example, if you want to connect to [MongoDB Cloud](https://www.mongodb.com/cloud), set the value as shown below:
@@ -79,5 +84,5 @@ Some common errors that you may face after external configuration:
 If you continue to face issues, reach out to the support team at [support@appsmith.com](mailto:support@appsmith.com).
 
 ## Further reading
-- [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+- [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
 - [Instance Management](/getting-started/setup/instance-management) 

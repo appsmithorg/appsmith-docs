@@ -25,13 +25,15 @@ If you are on a version earlier than v1.9.2, first upgrade:
    * Follow the steps in the [Upgrade to a Checkpoint version](#upgrade-to-a-checkpoint-version) section to update Appsmith.
 :::
 
+Follow one of the guides below to update Appsmith on your installation platform:
+
 ## Docker Compose
 The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
 
 You can update Appsmith in one of the below ways:
 
 * [Manual update](#manual-update)
-* [Automatic update](#automatic-update)
+* [Schedule automatic update](#automatic-update)
 
 :::info
 To find the Appsmith installation directory, run the following command:
@@ -48,9 +50,9 @@ Go to the root directory of your installation and run:
 docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
 ```
 
-### Automatic update
+### Schedule automatic update
 
-Follow the below steps to turn on the auto updates:
+Follow the below steps to schedule the auto updates:
 
 :::info
 Before an automatic update, Appsmith creates a backup. You may use this to roll back to a previous version in case of any issues.
@@ -63,19 +65,27 @@ Before an automatic update, Appsmith creates a backup. You may use this to roll 
    ```
 
 2. Open the `docker-compose.yml` file and uncomment the below code block:
+
+  :::caution Attention
+  The automatic update is scheduled to run at midnight. If you prefer a different update time, change the expression accordingly.
+  :::
    
    ```yaml
-   #auto_update:
-   #  image: containrrr/watchtower
-   #  volumes:
-   #    - /var/run/docker.sock:/var/run/docker.sock
-   #  # Update check interval in seconds.
-   #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
-   #  restart: unless-stopped
-   #  depends_on:
-   #    - appsmith
-   #  environment:
-   #    - WATCHTOWER_LIFECYCLE_HOOKS=true
+    # Uncomment the lines below to enable auto-update
+    #labels:
+    #  com.centurylinklabs.watchtower.enable: "true"
+
+  #auto_update:
+  #  image: containrrr/watchtower
+  #  volumes:
+  #    - /var/run/docker.sock:/var/run/docker.sock
+  #  # Update check interval in seconds.
+  #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
+  #  restart: unless-stopped
+  #  depends_on:
+  #    - appsmith
+  #  environment:
+  #    - WATCHTOWER_LIFECYCLE_HOOKS=true
    ```
 
 3. Save the file and run:
@@ -156,6 +166,17 @@ kubectl rollout restart deployment appsmith
 
 </TabItem>
 </Tabs>
+
+## AWS ECS EC2
+Follow the below steps using the Classic Amazon Web Console to manually update Appsmith:
+
+1. Log in to your [AWS account](https://console.aws.amazon.com/ecs/).
+2. Go to the **Amazon ECS console**.
+3. Select the **cluster** that contains the container instance that you want to update.
+4. Click the **Tasks** tab.
+5. Select and click the **task** that you want to update. 
+6. Click the **Stop** button to stop the task. A new task is deployed automatically. Wait for the new task to be deployed.
+7. Verify that the updated version of your application is running as expected.
 
 ## Upgrade to a checkpoint version
 

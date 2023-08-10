@@ -136,4 +136,91 @@ exceptions:
   - PingID
   - Active
   - Directory
-
+  - Row Level Security
+  - Property group - Label
+  - Property group - General
+  - Property group - Events
+  - Document Link
+  - docUrl
+  - Select All Options 
+  - onSelectionChange
+  - options
+  - Default Selected Values
+  - selectedValues
+  - Customer Support Tool
+  - Store Catalog Manager
+  - Disabled
+  - setVisibility
+  - setDisabled
+  - setOptions
+  - setRequired
+  - setSelectedOption
+  - Data
+  - onitemClick
+  - currentItemsView
+  - itemSpacing
+  - selectedItemView
+  - triggeredItemView
+  - onPageSizeChange
+  - Benefits of Datasource Environments
+  - Data Format
+  - Maximum No. of files
+  - setValue  
+  - setSelectedOptions
+  - selectedOptionValues
+  - selectedOptionLabels
+  - MultiSelect  
+  - TreeSelect
+  - Promise
+  - onFilesSelected
+  - files
+  - isSwitchedOn
+  - triggeredRowIndex
+  - progress
+  - onSearchTextChanged
+  - nextPageVisited
+  - previousPageVisited
+  - totalRecordsCount
+  - setSelectedRowIndex
+  - setURL
+  - setData
+  - onSrcDocChanged
+  - onURLChanged
+  - Border Opacity	
+  - onMessageReceived
+  - source
+  - title
+  - message
+  - Send Message Between App and Iframe
+  - Auto Play 
+  - playing
+  - setPlaying
+  - SendGrid
+  - API
+  - Key
+  - Relay
+  - Zoom Level
+  - Map & Marker Centring
+  - onMarkerCreated
+  - onMarkerClick
+  - center
+  - markers
+  - setPlaying 
+  - Use Git with Datasource Environments
+  - Quick Dismiss
+  - Colors, Borders and Shadows
+  - Default Tab
+  - onTabSelected
+  - Proxy
+  - onRecordingStart
+  - blobURL
+  - dataURL
+  - onRecordingComplete
+  - imageBlobURL
+  - imageDataURL
+  - imageRawBinary
+  - videoBlobURL
+  - videoDataURL
+  - videoRawBinary
+  - onImageSave
+  - onVideoSave

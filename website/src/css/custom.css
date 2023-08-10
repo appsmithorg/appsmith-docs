@@ -223,6 +223,10 @@
   order: 3;
 }
 
+.column-four {
+  order: 4;
+}
+
 .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
 }
@@ -259,28 +263,23 @@ div.containerColumnSampleApp.columnGrid > div.containerCol > img,
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
-
 h2 {
   font-size: 1.75rem;
 }
-
 h3 {
   font-size: 1.5rem;
 }
-
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
-
 h5 {
-  font-size: 1rem;
-}
-
-h6 {
   font-size: 0.75rem;
 }
+h6 {
+  font-size: 0.5rem;
+} 
 
 .tabs {
   color: #47525d;
@@ -438,3 +437,11 @@ ul.circle > li:before {
     max-width: 65% !important;
   }
 }
+
+/* Search button width */
+@media only screen and (min-width: 768px) {
+.DocSearch-Button {
+  width: 350px;
+  }
+} 
+
