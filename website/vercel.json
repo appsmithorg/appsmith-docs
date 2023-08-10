@@ -1005,6 +1005,22 @@
       "destination": "/getting-started/setup/instance-configuration/google-maps"
     },
     {
+      "source": "/reference/widgets/sliders",
+      "destination": "/reference/widgets"
+    },
+    {
+      "source": "/reference/widgets/sliders/category-slider",
+      "destination": "/reference/widgets/category-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/number-slider",
+      "destination": "/reference/widgets/number-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/range-slider",
+      "destination": "/reference/widgets/range-slider"
+    },
+    {
       "source": "/reference/readme-1/actions/:path*",
       "destination": "/reference/appsmith-framework/widget-actions/:path*"
     }

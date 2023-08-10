@@ -216,4 +216,12 @@ exceptions:
   - blobURL
   - dataURL
   - onRecordingComplete
+  - imageBlobURL
+  - imageDataURL
+  - imageRawBinary
+  - videoBlobURL
+  - videoDataURL
+  - videoRawBinary
+  - onImageSave
+  - onVideoSave  
   - onDateSelected
