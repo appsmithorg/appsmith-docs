@@ -1,6 +1,73 @@
 # Datepicker
 
-This page explains how to use the Datepicker widget to display or capture date/time information. It enables to filter the data based on a date range, format dates and performs date validations. 
+This page describes the properties of the Datepicker widget which can be used to display or capture date/time information. It enables to filter the data based on a date range, format dates and performs date validations. 
+
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
+
+#### Date format `ISO 8601 date string`
+
+<dd>
+
+The date format selected for  the Datepicker widget. 
+
+</dd>
+
+#### Default date `string`
+
+<dd>
+
+Sets a default date that would be captured as user input unless it is changed by the user.
+
+</dd>
+
+#### First day of the week `number`
+
+<dd>
+
+Sets which day of the week appears first within the calendar of the Datepicker's menu.
+
+</dd>
+
+#### Time precision `string`
+
+<dd>
+
+Decides whether a time is included within the Datepicker, and whether that time is to the minute or second precision. With JS enabled, values may be `None`, `minute`, or `second`.
+
+</dd>
+
+### Label
+
+#### Text `string`
+
+<dd>
+
+Sets the label text displayed in the Datepicker widget.
+
+</dd>
+
+### Validation
+
+#### Required
+
+<dd>
+
+Enables you to designate the Datepicker widget as a mandatory field. 
+
+</dd>
+
+#### Min date ``
+
+<dd>
+
+Sets a minimum/earliest date permitted to be selected in the widget.
+
+</dd>
 
 
 ## Update date
