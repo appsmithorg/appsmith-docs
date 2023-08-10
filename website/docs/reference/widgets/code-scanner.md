@@ -89,11 +89,13 @@ Sets a tooltip that appears when the user hovers over the widget. It enables you
 
 ### Events
 
+When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+
 #### onCodeDetected
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when a valid code is detected. You can chain multiple actions together, and all the nested actions would run simultaneously. 
+Triggered when a valid code is detected.
 
 </dd>
 
