@@ -103,3 +103,7 @@ This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. 
 Once you have set up your Authenticated API datasource, you're ready to create queries.
 
 Visit the [REST API docs](/connect-data/reference/rest-api) to learn about the query configuration parameters.
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

@@ -129,3 +129,7 @@ Attaches one or more files to the email. Expects an array of file objects.
   </dd>
 
 </dl>
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

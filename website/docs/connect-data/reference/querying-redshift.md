@@ -103,3 +103,7 @@ DELETE FROM users WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
 In the above example, `UsersTable` is the name of the Table widget where the user selects the row for deletion.
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

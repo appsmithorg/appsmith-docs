@@ -109,3 +109,7 @@ In the example above, the query uses the `id` of the row selected in the `UsersT
 ## See also
 
 [Data access and binding](/core-concepts/data-access-and-binding)
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
