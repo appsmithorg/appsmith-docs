@@ -18,7 +18,17 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The date format selected for the Datepicker widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) formats. 
+Displays a list of date formats for the Datepicker widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) formats.
+
+You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required. 
+
+*Example:* If you want to convert the selected date and time to the IST timezone (Asia/Kolkata), click the **JS** button and add the following code:
+
+```js
+{{
+  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
+}}
+```
 
 </dd>
 
@@ -42,7 +52,7 @@ Sets which day of the week appears first within the calendar of the Datepicker's
 
 <dd>
 
-Decides whether a time is included within the Datepicker, and whether that time is to the minute or second precision. With JS enabled, values may be `None`, `minute`, or `second`.
+Decides whether a time is included within the Datepicker, and whether that time is to the minute or second precision. With **JS** enabled, it accepts the follwoing values - `None`, `minute`, or `second`.
 
 </dd>
 
@@ -70,7 +80,7 @@ Enables you to designate the Datepicker widget as a mandatory field.
 
 <dd>
 
-Sets a minimum/earliest date permitted to be selected in the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
+Sets a minimum date permitted to be selected in the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
 
 </dd>
 
@@ -78,7 +88,7 @@ Sets a minimum/earliest date permitted to be selected in the widget. With **JS**
 
 <dd>
 
-Sets a maximum/latest date allowed to be selected with the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
+Sets a maximum date permitted to be selected with the widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values.
 
 </dd>
 
@@ -140,7 +150,7 @@ When enabled, it adds section within the Datepicker pop-up that contains options
 
 <dd>
 
-Sets whether the Datepicker menu should automatically close upon user selection of a date
+Sets whether the Datepicker menu should automatically close upon user selection of a date.
 
 </dd>
 
@@ -172,7 +182,7 @@ Triggered when the user selects a date in the Datepicker widget.
 
 <dd>
 
-Triggered the user clicks on or interacts with the widget
+Triggered when the widget gets focus, when user clicks on the widget.
 
 </dd>
 
@@ -180,7 +190,7 @@ Triggered the user clicks on or interacts with the widget
 
 <dd>
 
-Triggered when the widget loses focus, typically when the user clicks outside of the widget or interacts with another element on the page.
+Triggered when the widget loses focus, when the user clicks outside of the widget or interacts with another entity on the page.
 
 </dd>
 
@@ -241,7 +251,7 @@ Reference properties enable you to access the widget's data and state using the 
 
 <dd>
 
-Contains the formatted date value currently selected within the Datepicker widget. This value changes if the default value is updated or the user inputs a new value.
+Contains the formatted date value currently selected within the Datepicker widget. This value changes if the default value is updated or the user inputs a new value. The format depends on the **Date Format** property set for the widget.
 
 *Example:*
 
@@ -357,54 +367,13 @@ DatePicker1.setRequired(true)
 
 </dd>
 
-## Update date
 
-To update the date, you can start by setting a **Default Date**. You can also display the date from a query response or JS function and set it to any valid date format that the widget supports. To access the date the user selects in the Datepicker widget, you can use the `formattedDate` or `selectedDate` reference property.
+## Filter table data using Datepicker
 
-* The `formattedDate` property contains the formatted date value currently selected within the Datepicker widget. The format depends on the **Date Format** property set for the widget.
-* The `selectedDate` property contains the ISO date string selected in the Datepicker widget. This value also changes if the default value is updated or the user inputs a new value. The date is in the format: `YYYY-MM-DDTHH:mm:ss.sssZ`, where Z represents the time zone offset from UTC.
-
----
-
-**Example**: suppose you have a master-detail form showing users' date of birth when you select a row in a table. For this, lets use the same `tblUserData` table.
-
-1. To display the date of birth of each user in the Datepicker widget when a row is selected, set the **Default Date** property of the Datepicker as shown below: 
-
-```js
-{{tblUserData.selectedRow.dob}}
-```
-
-2. To update the date of birth, you can create a new query called `updateDob` with an UPDATE statement as shown below:
-
-```sql
-UPDATE users
-  SET dob = {{DatePicker.selectedDate}}
-  WHERE id = {{tblUserData.selectedRow.id}};
-```
-
-Then, set the `onDateSelected` event listener of the Datepicker widget to run the`updateDob` query. 
-
-You can also use the built-in [**Moment.js**](https://momentjs.com/docs/) library in Appsmith to parse the date in the format required. For instance, if you want to convert the selected date and time to the IST timezone (Asia/Kolkata), use the following code:
-
-```js
-{{
-  moment(datePickerName.selectedDate).tz("Asia/Kolkata").format()
-}}
-```
-
-<figure>
-  <img src="/img/display-date-datepicker.png" alt="Display date"/>
-  <figcaption align = "center"><i>Display date from table row</i></figcaption>
-</figure>
-
-
-
-## Filter data for a date range
 To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the `formattedDate` or `selectedDate` reference property.
+ 
 
---- 
-
-**Example**: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
+*Example*: suppose you have a table in your database that contains user details, including their date of birth (DOB). You want to allow users to filter data for specific dates, such as retrieving data of users born between `01/01/1980` and `01/01/2010`.
 
 1. Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
 
