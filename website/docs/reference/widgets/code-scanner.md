@@ -5,7 +5,11 @@ description: >-
 
 # Code Scanner
 
-This page describes the properties of the Code Scanner widget, which is used for scanning barcodes and QR codes. The following formats for QR and barcodes are supported:
+This page describes the properties of the Code Scanner widget, which is used for scanning barcodes and QR codes. 
+
+<VideoEmbed host="youtube" videoId="Suhefwa5pz0" title="How To Build A Self-Checkout Payment System With The Code Scanner Widget" caption="Building a Self-Checkout Payment System with Code Scanner Widget"/>
+
+The following formats for QR and barcodes are supported:
 
 | 1D product | 1D industrial | 2D          |
 | ---------- | ------------- | ----------- |
