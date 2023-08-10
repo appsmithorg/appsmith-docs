@@ -263,6 +263,36 @@ Represents the color of the slider, specified as a [CSS color value](https://dev
 
 </dd>
 
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `NumberSlider1.isVisible`.
+
+#### value `string`
+
+<dd>
+
+Allows you to access the value that has been selected with the slider. 
+
+*Example:*
+```js
+{{NumberSlider1.value}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{NumberSlider1.isVisible}}
+```
+
+</dd>
+
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
