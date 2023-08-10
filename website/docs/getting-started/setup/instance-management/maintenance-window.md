@@ -179,7 +179,7 @@ Follow the steps below to turn off auto updates:
 
  * If you are on the **Community Edition** on Kubernetes, update the configuration as shown below:
 
-    1. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
+    a. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
 
       ```yaml
       #highlight-next-line
@@ -193,14 +193,15 @@ Follow the steps below to turn off auto updates:
         scheduler: "0 * * * *"
       ```
 
-    2. Save the changes and update the configuration with:
+    b. Save the changes and update the configuration with:
 
       ```bash
         helm upgrade --values values.yaml appsmith appsmith/appsmith
       ```
 
  * If you are on the **Business Edition** on Kubernetes, update the configuration as shown below:
-    1. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
+
+    a. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
 
       ```yaml
       #highlight-next-line
@@ -211,7 +212,7 @@ Follow the steps below to turn off auto updates:
         enabled: false
       ```
 
-    2. Save the changes and update the configuration with:
+    b. Save the changes and update the configuration with:
 
       ```bash
       helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
