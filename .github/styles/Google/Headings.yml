@@ -224,4 +224,6 @@ exceptions:
   - videoRawBinary
   - onImageSave
   - onVideoSave  
+  - setImage
+  - image 
   - onDateSelected
