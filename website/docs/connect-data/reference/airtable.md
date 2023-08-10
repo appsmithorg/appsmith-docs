@@ -329,3 +329,6 @@ Data for the records to update. Expects an array of objects, where each object h
 
 </dl>
 
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

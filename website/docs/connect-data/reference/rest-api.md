@@ -124,13 +124,10 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 
 ## Troubleshooting
 
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
+
 [Missing URL](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#missing-url-error)<br />
 [Missing client secret / client ID / access token](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#missing-client-secret--client-id--access-token-error)<br />
 [Secret key required](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#secret-key-required-error)
 
 If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
-
-## See also
-
-* [Data access and binding](/core-concepts/data-access-and-binding)
-

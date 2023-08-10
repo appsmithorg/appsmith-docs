@@ -56,11 +56,11 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
    </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
-            <a href="/reference/widgets/sliders/category-slider">
+            <a href="/reference/widgets/category-slider">
             <img class="containerImage" src="/img/cat-icon.svg" alt="Category-Slider"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/sliders/category-slider">Category Slider</a></b>
+            <b><a href="/reference/widgets/category-slider">Category Slider</a></b>
    
    </div>
 
@@ -308,11 +308,11 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
     </div>
    <div class="columnGrid column-two" align="center">
       <div class="containerCol">
-            <a href="/reference/widgets/sliders/number-slider">
+            <a href="/reference/widgets/number-slider">
             <img class="containerImage" src="/img/number-s.svg" alt="number-s"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/sliders/number-slider">Number Slider</a></b>
+            <b><a href="/reference/widgets/number-slider">Number Slider</a></b>
    </div>
 
    <div class="columnGrid column-three" align="center">
@@ -350,11 +350,11 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
     </div>
    <div class="columnGrid column-two" align="center">
       <div class="containerCol">
-            <a href="/reference/widgets/sliders/range-slider">
+            <a href="/reference/widgets/range-slider">
             <img class="containerImage" src="/img/range-icon.svg" alt="range-icon"/>
             </a>   
         </div> 
-            <b><a href="/reference/widgets/sliders/range-slider">Range Slider</a></b>
+            <b><a href="/reference/widgets/range-slider">Range Slider</a></b>
    </div>
 
    <div class="columnGrid column-three" align="center">

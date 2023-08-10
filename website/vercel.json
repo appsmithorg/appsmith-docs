@@ -965,14 +965,6 @@
       "destination": "/connect-data/reference/querying-snowflake-db"
     },
     {
-      "source": "/assets/images/:path*",
-      "destination": "/"
-    },
-    {
-      "source": "/assets/files/:path*",
-      "destination": "/"
-    },
-    {
       "source": "/getting-sta",
       "destination": "/getting-started"
     },
@@ -1011,6 +1003,22 @@
     {
       "source": "/third-party-services/google-maps",
       "destination": "/getting-started/setup/instance-configuration/google-maps"
+    },
+    {
+      "source": "/reference/widgets/sliders",
+      "destination": "/reference/widgets"
+    },
+    {
+      "source": "/reference/widgets/sliders/category-slider",
+      "destination": "/reference/widgets/category-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/number-slider",
+      "destination": "/reference/widgets/number-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/range-slider",
+      "destination": "/reference/widgets/range-slider"
     },
     {
       "source": "/reference/readme-1/actions/:path*",

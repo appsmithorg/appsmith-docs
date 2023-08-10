@@ -1,56 +1,248 @@
+---
+Description: The Divider widget is used to visually separate or compartmentalise different parts of your application.
+---
 # Divider
 
-The Divider widget is used to visually separate or compartmentalise different parts of your application.
+This page provides information on using the Divider widget, which serves the purpose of visually separating or compartmentalizing various sections within your application.
+
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 
-## Properties
+### General
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+#### Visible `boolean`
 
-### Widget properties
+<dd>
 
-These properties allow you to edit the Divider widget. All of these properties are present in the property pane of the widget. The following table lists all the widget properties.
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. Default value is set to `true`.
 
-| Property            | Description                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Orientation**     | Sets whether the line of the widget is oriented horizontally or vertically. With JS enabled, accepted values are "horizontal" or "vertical."                                                           |
-| **Visible**         | Control widget's visibility on the page. When turned off: The widget isn't visible when the app is published. It appears translucent when in Edit mode.                                         |
-| **Animate Loading** | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using JavaScript by enabling the JS label next to it. |
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
 
-### Binding properties
 
-These properties allow you to bind your Divider widget with any other widget in queries or JS objects. The following table lists all the binding properties.
 
-| Property         | Description                                                                                                                                                                                               |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **capSide**      | Reflects the widget's **Cap Position** style property, shows which sides of the divider line have a cap. Values are _numbers_, either -1 (left or top only), 0 (both sides), or 1 (right or bottom only). |
-| **capType**      | Reflects the widget's **Cap** style property, shows whether the divider line is capped with a dot, an arrow, or no cap. Values are _strings_ "dot," "arrow," or "nc."                                     |
-| **dividerColor** | Contains the color of the divider line, represented as a hexadecimal color code.                                                                                                                          |
-| **isVisible**    | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                                                                          |
-| **orientation**  | Reflects the **Orientation** property of the widget, values are _strings_ either "horizontal" or "vertical."                                                                                             |
-| **strokeStyle**  | Reflects the widget's **Dash Style** property as a _string_ with value either "solid," "dashed," or "dotted."                                                                                            |
-| **thickness**    | Reflects the thickness of the divider line as a _number_ of pixels.                                                                                                                                       |
+</dd>
 
-### Style
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. Default value is set to `true`.
+
+</dd>
+
+## Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style Property    | Description                                                                                                                                                |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Dash Style**    | Sets the type of line used for the divider, either Solid, Dashed, or Dotted. With JS enabled, accepts _strings_ with value "solid," "dashed," or "dotted." |
-| **Thickness**     | Sets the thickness of the divider line in pixels. Accepts _number_ values.                                                                                 |
-| **Divider Color** | Sets the color of the divider line. Accepts valid CSS [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                            |
-| **Cap**           | Sets the type of cap to use on the divider line; none, arrows, or dots. With JS enabled, accepts _strings_ with value "nc," "arrow," or "dot."             |
-| **Cap Position**  | Sets which sides of the divider line have caps. With JS enabled, accepts _number_ values -1 (left/top), 0 (both), or 1 (right/bottom).                     |
+### General
+
+#### Direction `string` 
+
+<dd>
+
+Determines the orientation of the widget's line, allowing you to choose between horizontal and vertical alignments. When JavaScript is enabled, accepted values are `horizontal` or `vertical`.
+
+</dd>
+
+### Stroke
+
+#### Color `string`
+
+<dd>
+
+Specify the color of the divider. It accepts [CSS color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color) and can also be programmatically modified using JavaScript functions.
+
+
+</dd>
+
+#### Style `string`
+
+<dd>
+
+Sets the type of line used for the divider.
+
+*Options:*
+* Solid: A continuous and unbroken line.
+* Dashed: A line composed of short, evenly spaced dashes.
+* Dotted: A line made up of small, distinct dots.
+
+With JS is enabled, accepts strings with value `solid`, `dashed`, or `dotted`.
+
+
+</dd>
+
+#### Thickness `number` 
+
+
+<dd>
+
+Sets the thickness of the divider line in pixels. 
+
+</dd>
+
+### Cap
+
+#### Cap `string`
+
+<dd>
+
+Sets the design of the cap to be added to the end of the divider line.
+
+*Options:*
+* No Cap
+* Arrow
+* Dot
+
+</dd>
+
+#### Cap position `string`
+
+<dd>
+
+Determines the placement of caps on the sides of the divider line. 
+
+*Options:*
+
+* Left
+* Both
+* Right
+
+</dd>
+
+## Reference properties
+
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `Divider1.isVisible`.
+
+#### capType `string`
+
+<dd>
+
+Indicates the widget's Cap style property, shows whether the divider line is capped with a Dot, an Arrow, or No cap. 
+
+
+*Example:*
+
+```js
+{{Divider1.capType}}
+```
+
+
+</dd>
+
+
+#### capSide `number`
+
+<dd>
+
+Reflects the widget's Cap Position style property, indicating the sides of the divider line where caps are located. Numeric values include:
+
+* `-1` for the left or top side only
+* `0` for both sides
+* `1` for the right or bottom side only
+
+*Example:*
+
+```js
+{{Divider1.capSide}}
+```
+
+
+</dd>
+
+#### dividerColor `string`
+
+<dd>
+
+Reflects the color value of the divider line, presented in the form of a hexadecimal color code.
+
+
+*Example:*
+
+```js
+{{Divider1.dividerColor}}
+```
+
+
+</dd>
+
+
+#### orientation `string`
+
+<dd>
+
+Reflects the **Orientation** of the widget, values are strings either `horizontal` or `vertical`.
+
+
+*Example:*
+
+```js
+{{Divider1.orientation}}
+```
+
+
+</dd>
+
+#### strokeStyle `string`
+
+<dd>
+
+Reflects the widget's **Dash Style** property as a string with value either `solid`, `dashed`, or `dotted`.
+
+
+*Example:*
+
+```js
+{{Divider1.strokeStyle}}
+```
+
+
+</dd>
+
+
+#### thickness `number`
+
+<dd>
+
+Reflects the thickness of the divider line as a number of pixels.
+
+
+*Example:*
+
+```js
+{{Divider1.thickness}}
+```
+
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+
+```js
+{{Divider1.isVisible}}
+```
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -60,14 +252,6 @@ Sets the visibility of the widget.
 
 ```js
 Divider1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Divider1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
 ```
 
 </dd>
