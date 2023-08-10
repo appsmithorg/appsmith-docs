@@ -1,4 +1,9 @@
+---
+description: Learn about Appsmith's security features and how to protect your data on the Appsmith platform.
+---
 # Security
+
+This page explains the security features and considerations that Appsmith has implemented in its platform, and steps you can take to make your apps as safe as possible.
 
 ## Does Appsmith store my data?
 
@@ -11,7 +16,7 @@ Appsmith applications are secure-by-default. The security measures implemented f
 * All sensitive credentials, such as database credentials and Git SSH keys, are encrypted with [AES-256 encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard). Each self-hosted Appsmith instance ensures [data-at-rest](https://en.wikipedia.org/wiki/Data\_at\_rest) security by configuring unique salt and password values.
 * All connections to Appsmith Cloud are encrypted with [TLS](https://en.wikipedia.org/wiki/Public\_key\_certificate). For self-hosted instances, it's possible to set up [SSL](https://en.wikipedia.org/wiki/Public\_key\_certificate) certificates during installation via [LetsEncrypt](https://letsencrypt.org/), or administrators can upload their own SSL certificate to Appsmith.
 * Appsmith Cloud only connects to your databases and API endpoints through whitelisted IPs: `18.223.74.85` and `3.131.104.27`. This ensures that your data is only exposed to specific IPs when using Appsmith Cloud.
-* Appsmith Cloud is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers. Data redundancy is maintained on our cloud instances with regular backups.
+* Appsmith Cloud is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers. Data redundancy is maintained on Appsmith Cloud instances with regular backups.
 * Internal access to Appsmith Cloud is controlled with a two-factor authentication aystem and instance audit logs.
 
 ## Securely executing queries
