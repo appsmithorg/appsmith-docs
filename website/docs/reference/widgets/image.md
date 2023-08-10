@@ -34,6 +34,11 @@ You can also display images that dynamically change based on user input or other
   <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
 </figure>
 
+If you are fetching an image from the [Amazon S3](/connect-data/reference/querying-amazon-s3) bucket, add the following code in the **Image** property to display the image on the widget:
+
+```js
+{{list_files.data[0].signedUrl}}
+```
 
 </dd>
 
@@ -119,11 +124,13 @@ Alternatively, you can use the built-in [Download](/reference/appsmith-framework
 
 ### Events 
 
+When the event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+
 #### onClick 
 
 <dd>
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user clicks on the image. You can chain multiple actions together, and all the nested actions would run simultaneously.
+Triggers when the user clicks on the image.
 
 </dd>
 
@@ -155,7 +162,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of an Image widget, you can use `Image1.isVisible`.
 
 #### image `string`
-
+q
 <dd>
 
 Contains the URL of the image source.
@@ -216,16 +223,3 @@ Image1.setImage('data:image/png;base64,iVBORw0KG...')
 ```
 
 </dd>
-
-## Display images from S3 bucket
-
-To fetch an image from [S3](/connect-data/reference/querying-amazon-s3), follow these steps:
-
-* Click the + icon next to Queries/JS and choose your S3 datasource.
-* Select the "List files" method from the Commands drop-down menu.
-* Provide the required parameters for reading the file, including the bucket name, file path and file data type.
-
-Once you have added all the required parameters in the Image property pane, add:
-```js
-{{list_files.data[0].signedUrl}}
-```
