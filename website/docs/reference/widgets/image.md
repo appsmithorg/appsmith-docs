@@ -162,7 +162,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of an Image widget, you can use `Image1.isVisible`.
 
 #### image `string`
-q
+
 <dd>
 
 Contains the URL of the image source.
