@@ -618,3 +618,7 @@ In addition to HubDB and CRM command types, Appsmith also provides the following
 | Settings - remove user                   |  Removes a set of users.                                    |
 | Settings - retrieve roles account        |  Fetches users in your HubSpot account.                                     |
 | Settings - see details account's teams   |  Fetches information about the team's account.                                    |
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

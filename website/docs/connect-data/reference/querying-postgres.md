@@ -131,13 +131,10 @@ Row level security is a PostgreSQL security feature the database provides to lim
 
 ## Troubleshooting
 
-[Missing required parameter](/help-and-support/troubleshooting-guide/action-errors#missing-query-error)<br />
-[PostgreSQL query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)<br />
-[Query preparation failed while inserting value](/help-and-support/troubleshooting-guide/action-errors#invalid-query-error)
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
 
-If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
+* [Missing required parameter](/help-and-support/troubleshooting-guide/action-errors#missing-query-error)
+* [PostgreSQL query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)
+* [Query preparation failed while inserting value](/help-and-support/troubleshooting-guide/action-errors#invalid-query-error)
 
-## See also
-
-[Data access and binding](/core-concepts/data-access-and-binding)
-
+If you still have trouble, you can contact the support team using the chat widget at the bottom right of this page.

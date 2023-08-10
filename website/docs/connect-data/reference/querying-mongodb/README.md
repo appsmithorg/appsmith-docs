@@ -346,19 +346,15 @@ This command allows users to process data records and return computed results. T
   </dd>
 </dl>
 
-
 ### Raw
 
 This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/connect-data/reference/querying-mongodb/mongo-syntax) for more information. 
 
 ## Troubleshooting
 
-[Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)<br />
-[Missing default database name](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
 
-If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
+* [Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)
+* [Missing default database name](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
 
-## See also
-
-[Data access and binding](/core-concepts/data-access-and-binding)
-
+If you still have trouble, you can contact the support team using the chat widget at the bottom right of this page.
