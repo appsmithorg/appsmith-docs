@@ -225,4 +225,5 @@ exceptions:
   - onImageSave
   - onVideoSave  
   - setImage
-  - image
+  - image 
+  - onDateSelected
