@@ -6,11 +6,11 @@ description: >-
 
 # Number Slider
 
-This page provides information on using the Number Slider, which allows the user to select a numerical value from a set range of possible data. 
+This page describes the properties of the Number Slider, which allows the user to select a numerical value from a set range of data. 
 
 <figure>
-  <img src="/img/as_number.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
+  <img src="/img/num-slider-img.png" style= {{width:"700px", height:"auto"}} alt="Number Slider"/>
+  <figcaption align = "center"><i>Number Slider</i></figcaption>
 </figure>
 
 ## Content properties
@@ -197,13 +197,13 @@ Maintains the constant visibility of a tooltip containing the current value.
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 #### onChange
 
 <dd>
 
-Specifies the actions to be executed when the user changes the slider's value. 
+Specifies one or multiple actions to be triggered when the user changes the value of the Number Slider.
 
 </dd>
 
