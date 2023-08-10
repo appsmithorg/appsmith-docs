@@ -153,7 +153,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events 
 
-When the event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
+When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 
 #### onDateSelected
 
@@ -230,7 +230,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Select widget, you can use `Datepicker1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Datepicker widget, you can use `Datepicker1.isVisible`.
 
 #### formattedDate `string`
 
@@ -269,7 +269,7 @@ It reflects the state of the widget's Disabled setting. It is represented by a b
 *Example:*
 
 ```js
-{{Select1.isDisabled}}
+{{Datepicker1.isDisabled}}
 ```
 
 </dd>
@@ -282,7 +282,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 *Example:*
 ```js
-{{Select1.isVisible}}
+{{Datepicker1.isVisible}}
 ```
 
 </dd>
