@@ -9,7 +9,7 @@ This page explains the security features and considerations that Appsmith has im
 
 Appsmith applications are secure-by-default, with a number of strategies in place to protect your data.
 
-All sensitive credentials such as database credentials and Git SSH keys are encrypted with [AES-256 encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard), and each self-hosted Appsmith instance ensures [data-at-rest](https://en.wikipedia.org/wiki/Data\_at\_rest) security by configuring unique salt and password values. In the cloud, Appsmith is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers, with data redundancy maintained by regular backups. Internal access to Appsmith Cloud is controlled with a two-factor authentication aystem and audit logs.
+All sensitive credentials such as database credentials and Git SSH keys are encrypted with [AES-256 encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard), and each self-hosted Appsmith instance ensures [data-at-rest](https://en.wikipedia.org/wiki/Data\_at\_rest) security by configuring unique salt and password values. In the cloud, Appsmith is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers, with data redundancy maintained by regular backups. Internal access to Appsmith Cloud is controlled with a two-factor authentication system and audit logs.
 
 Appsmith Cloud only connects to your databases and API endpoints through specific whitelisted IPs: `18.223.74.85` and `3.131.104.27`. All connections to Appsmith Cloud are encrypted with [TLS](https://en.wikipedia.org/wiki/Public\_key\_certificate). For self-hosted instances, it's possible to set up [SSL](https://en.wikipedia.org/wiki/Public\_key\_certificate) certificates during installation via [LetsEncrypt](https://letsencrypt.org/), or administrators can upload their own SSL certificate to Appsmith.
 
@@ -17,7 +17,7 @@ Appsmith Cloud only connects to your databases and API endpoints through specifi
 
 Appsmith's backend system doesn't log or store any data returned from your databases or API endpoints, nor does it store information about responses or user input; Appsmith only acts as a proxy layer.
 
-The configuration and body of your queries are securely stored, and are never exposed to clients while the app is in **View** mode. Users can't access any data that would allow them to infer the query's content. When a query is executed, the Appsmith server appends sensitive credentials just before forwarding the request to your backend, without exposing any sensitive credentials to the client's browser.
+The configuration and body of your queries are securely stored and are never exposed to clients while the app is in **View** mode. Users can't access any data that would allow them to infer the query's content. When a query is executed, the Appsmith server appends sensitive credentials just before forwarding the request to your backend, without exposing any sensitive credentials to the client's browser.
 
 It's safe to add secrets to APIs or datasource configurations, as they are not exposed while the app is in **View** mode. You can update the secrets in **Edit** mode, but it's not possible to view the current value of existing secrets, regardless of the app's mode.
 
@@ -31,7 +31,7 @@ JavaScript code written in any Appsmith app is executed on the client, and a use
 
 * Don't store sensitive information using the [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function, because the data is stored in the browser's local storage and can be viewed by the user.
 
-Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some simliar features like [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/reference/appsmith-framework/widget-actions).
+Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some similar features like [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/reference/appsmith-framework/widget-actions).
 
 The JavaScript `Fetch` API is supported, and it never sends cookies or session information when called from within Appsmith.
 
