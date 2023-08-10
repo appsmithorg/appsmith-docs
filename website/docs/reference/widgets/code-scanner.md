@@ -5,7 +5,7 @@ description: >-
 
 # Code Scanner
 
-This page describes the properties of the Code Scanner widget to scan barcodes and QR codes. The following formats for QR and barcodes are supported:
+This page describes the properties of the Code Scanner widget, which is used for scanning barcodes and QR codes. The following formats for QR and barcodes are supported:
 
 | 1D product | 1D industrial | 2D          |
 | ---------- | ------------- | ----------- |
