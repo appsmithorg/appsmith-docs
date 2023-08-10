@@ -281,7 +281,7 @@ Represents the color of the slider, specified as a [CSS color value](https://dev
 
 Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `NumberSlider1.isVisible`.
 
-#### value `string`
+#### value `number`
 
 <dd>
 
@@ -346,7 +346,7 @@ NumberSlider1.setVisibility(true)
 </dd>
 
 
-#### setValue (param: string): Promise
+#### setValue (param: number): Promise
 
 <dd>
 
