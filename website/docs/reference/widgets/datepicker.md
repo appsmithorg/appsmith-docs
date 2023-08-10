@@ -22,7 +22,7 @@ The date format selected for the Datepicker widget. With **JS** enabled, this pr
 
 </dd>
 
-#### Default date `string`
+#### Default date `ISO 8601 date string`
 
 <dd>
 
