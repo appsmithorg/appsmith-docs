@@ -6,100 +6,355 @@ description: >-
 
 # Range Slider
 
-Range Sliders are great for allowing users to narrow and filter down large sets of data. They're often found in places such as online marketplaces, where an app might offer the ability to search for products based on a certain minimum and maximum price range.
-
-![Range Slider](</img/as_range.png>)
-
-## Properties
-
-Properties allow you to edit the Range Slider widget, connect it with other widgets and customize the user actions.
-
-| Property                | Type       | Description                                                                                                                                                                                                                                           | Code Snippet                   |
-| ----------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
-| **Min Value**           | Formatting | The starting/smallest possible value of the slider. The value may be negative and/or include decimals, however it must always be less than the **Max Value**. _(number)_                                                                              |                                |
-| **Max Value**           | Formatting | The ending/largest possible value of the slider. The value may be negative and/or include decimals, however it must always be greater than the **Min Value**. _(number)_                                                                              |                                |
-| **Step Size**           | Formatting | The increment by which the user can adjust the slider's value. This increment must be at least 0.1, and can't be greater than the **Max Value**. _(number)_                                                                                           |                                |
-| **Min Range**           | Formatting | The minimum distance allowed between the selected values. _(number)_                                                                                                                                                                                  |                                |
-| **Default Start Value** | Formatting | Sets an initial value to be captured as the starting value of the range, unless it's changed by the user. This value should be between the slider's **Min Value** and **Max Value**, and should be less than its **Default End Value**. _(number)_    |                                |
-| **Default End Value**   | Formatting | Sets an initial value to be captured as the ending value of the range, unless it's changed by the user. This value should be between the slider's **Min Value** and **Max Value**, and should be greater than its **Default Start Value**. _(number)_ |                                |
-| **Marks**               | Formatting | An _array of objects_ with keys `value` and `label` which define where reference labels should appear below the widget's slider. These labels can be shown or hidden with the **Show Marks** property toggle.                                         |                                |
-| **Tooltip Always On**   | Formatting | Hovering over the slider with the mouse cursor shows the slider's selected value in a tooltip; enabling this setting forces the tooltip to always be visible, regardless of the cursor's location. _(bool)_                                           |                                |
-| **start**               | Binding    | Represents the beginning value of the user's selected range. _(number)_                                                                                                                                                                               | `{{<widget-name>.startValue}}` |
-| **end**                 | Binding    | Represents the ending value of the user's selected range. _(number)_                                                                                                                                                                                  | `{{<widget-name>.endValue}}`   |
-
-These properties allow you to perform formatting changes or bind it to any other widget in queries or JS objects.
-
-#### Min Value / Max Value
-
-These properties represent the lower and upper bounds of values that can be selected with the slider. The **Min Value** determines the value at the far left end of the widget, and the **Max Value** determines the value at the far right end. Negative and/or decimal values are allowed, however the Min Value must always be less than the Max Value.
-
-<VideoEmbed host="youtube" videoId="VphLW50YPKo" title="Min Value / Max Value" caption="Min Value / Max Value"/>
+This page describes the properties of the Range Slider, which allows users to select a range of values within a specified minimum and maximum range. 
 
 
-#### Step Size
+<figure>
+  <img src="/img/as_range.png" style= {{width:"700px", height:"auto"}} alt="Range Slider"/>
+  <figcaption align = "center"><i>Range Slider</i></figcaption>
+</figure>
 
-The `Step Size` property determines the smallest increment by which the user may adjust the value selected by the slider. Smaller values for this property (can't be smaller than 0.1) result in finer control of the selection, whereas larger step sizes result in coarser control.
+## Content properties
 
-<VideoEmbed host="youtube" videoId="mecwJ-D49gU" title="Step Size" caption="Step Size"/>
 
-#### Min Range
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-This property represents the minimum difference allowed between the low and high ends of the user's selection. This value can't be less than 0.1.
 
-<VideoEmbed host="youtube" videoId="C40N4hh3SRA" title="Min Range" caption="Min Range"/>
+### Data
 
-#### Default Start / End Value
+#### Min Value `number`
 
-Sets an initial start/end value for the range to be captured as user input unless it's changed by the user.
+<dd>
 
-<VideoEmbed host="youtube" videoId="2-iIwfNigbo" title="Default Start / End Value" caption="Default Start / End Value"/>
+Indicates the lowest possible value that the slider can start from. The value can include negative numbers and decimals, but it should always be smaller than the **Maximum** Value. 
 
-#### Marks
+</dd>
 
-Marks appear along the bottom of the widget as labels for the different values along the slider. Using the `Marks` property, which is an array of objects with keys `label` and `value`, you can define where these marks appear and how they're labeled. Each mark appears below the place where its `value` is located on the slider, and has the text from its corresponding `label`.
+#### Max Value `number`
 
-<VideoEmbed host="youtube" videoId="9lkNIjJ8EFs" title="Marks" caption="Marks"/>
+<dd>
 
-#### Tooltip Always On
+Indicates the highest possible value for the slider. The value can encompass negative numbers and decimals, but it must always surpass the **Minimum** Value.
 
-When this property is enabled, the widget's tooltip is _always_ visible, and shows the currently selected value on the slider. If this setting is turned off, the tooltip is only visible when the user is hovering over the slider with their mouse cursor.
+</dd>
 
-<VideoEmbed host="youtube" videoId="mtlqTYBplqk" title="Tooltip Always On" caption="Tooltip Always On"/>
+#### Step Size `number`
 
-#### Start / End
+<dd>
 
-These binding properties allow you to access the values that have been selected with the Range Slider. For example, if the selected slider range is `45` to `80`, then the `start` and `end` values would look like:
+Denotes the amount by which the user can modify the slider's value. This value must be at least 0.1 and less than or equal to **Min. Range**.
 
+</dd>
+
+#### Min. Range `number`
+
+<dd>
+
+The smallest permissible interval between the selected values. This value must be greater than or equal to **Step Size**.
+
+</dd>
+
+
+#### Default Start Value `number`
+
+<dd>
+
+Defines a starting value for the range, which serves as the initial point unless modified by the user. This numeric value should fall within the range of the **Min Value** and **Max Value**, and it should be lower than the **Default End Value**.
+
+</dd>
+
+#### Default End Value `number`
+
+<dd>
+
+Defines a ending value for the range, which serves as the end point unless modified by the user. This numeric value should fall within the range of the **Min Value** and **Max Value**, and it should be higher than the **Default Start Value.**
+
+</dd>
+
+### Label
+
+
+#### Text `string`
+
+
+<dd>
+Sets the label on the widget.
+</dd>
+
+
+
+
+#### Position `string`
+
+
+<dd>
+
+
+This property allows you to configure the label's placement.
+
+*Options:*
+* **Auto**: Automatically positions the label based on the widget type and layout.
+* **Left**: Aligns the label to the left side of the widget.
+* **Top**: Positions the label above the widget.
+
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width (in columns) `number`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
+
+</dd>
+
+### General
+
+
+#### Tooltip `string`
+<dd>
+
+
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
+</dd>
+
+#### Show Marks `boolean`
+
+
+<dd>
+
+When enabled, this property displays the labels below the slider element within the widget.
+
+</dd>
+
+
+#### Marks `array<object>`
+
+<dd>
+
+Sets the label and corresponding values for the marks located below the slider.
+
+*Expected data structure:*
+
+```js
+[
+  {
+    "value": 25,
+    "label": "25%"
+  },
+  {
+    "value": 50,
+    "label": "50%"
+  },
+  {
+    "value": 75,
+    "label": "75%"
+  }
+]
 ```
+
+Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Marks** property. For example, if you have a query named `fetchData`, you can bind its response using:
+
+*Example:*
+```js
+{{fetchData.data}}
+```
+
+If the query data is not in the expected format, you can use the `map()` function to transform it before passing it to the widget, like:
+
+*Example:*
+```js
+{{fetchData.data.map( p => ({label: p.size, value: p.size}))}}
+```
+
+</dd>
+
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+
+#### Show value always `boolean`
+
+
+<dd>
+
+Maintains the constant visibility of a tooltip containing the current value.
+
+</dd>
+
+### Events
+
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
+#### onStartValueChange
+
+<dd>
+
+Specifies one or multiple actions to be triggered when the user changes the start value of the Range Slider.
+
+</dd>
+
+#### onEndValueChange
+
+<dd>
+
+Specifies one or multiple actions to be triggered when the user changes the end value of the Range Slider.
+
+</dd>
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### General
+
+#### Size `string`
+
+<dd>
+
+Defines the size of the slider.
+
+Options:
+* Small
+* Medium
+* Large
+
+</dd>
+
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Color
+
+#### Fill color `string`
+
+<dd>
+
+Represents the color of the slider, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `RangeSlider1.isVisible`.
+
+#### start `number`
+
+<dd>
+
+Enables you to retrieve the start value that has been selected with the slider. 
+
+*Example:*
+```js
 {{RangeSlider1.start}}
-// 45
-
-{{RangeSlider1.end}}
-// 80
 ```
 
-<VideoEmbed host="youtube" videoId="c5jzfvx1hvQ" title="Start / End" caption="Start / End"/>
+</dd>
+
+#### start `number`
+
+<dd>
+
+Enables you to retrieve the end value that has been selected with the slider. 
+
+*Example:*
+```js
+{{RangeSlider1.end}}
+```
+
+</dd>
 
 
-## Events
+#### isVisible `boolean`
 
-Each variant of the Slider widget has events that are called when the user adjusts the widget's values:
+<dd>
 
-| Event        | Description                                                                                                                                                                                                                                                                                       | Example                                                                  |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| **onStartValueChange** | Sets an action to take place when the user changes the range's start value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead. | Filtering a dataset according to user input. |
-| **onEndValueChange**   | Sets an action to take place when the user changes the range's end value. Can be set from the GUI list of common actions (See a list of [supported actions](/reference/appsmith-framework/widget-actions/README.md)), or you can define a custom JavaScript function to call instead.   | Filtering a dataset according to user input. |
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
 
-Range sliders are a great choice when you have a large dataset, but only wish to see a portion of it at a time. They provide an easy way to choose exactly what part you'd like to use, and offer a visual representation of the size of your selection relative to the whole.
+*Example:*
+```js
+{{RangeSlider1.isVisible}}
+```
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -111,18 +366,10 @@ Sets the disabled state of the widget.
 RangeSlider1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-RangeSlider1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -132,15 +379,6 @@ Sets the visibility of the widget.
 
 ```js
 RangeSlider1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-RangeSlider1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
 ```
 
 </dd>
