@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The date format selected for  the Datepicker widget. 
+The date format selected for the Datepicker widget. With **JS** enabled, this property accepts [ISO 8601 date string](https://www.iso.org/iso-8601-date-and-time-format.html) values. 
 
 </dd>
 
