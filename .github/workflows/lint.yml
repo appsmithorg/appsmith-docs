@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "website/docs/**.md"
+      - "website/docs/**.mdx"
 
 jobs:
   run_vale:

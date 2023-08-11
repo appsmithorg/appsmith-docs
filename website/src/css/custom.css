@@ -437,3 +437,11 @@ ul.circle > li:before {
     max-width: 65% !important;
   }
 }
+
+/* Search button width */
+@media only screen and (min-width: 768px) {
+.DocSearch-Button {
+  width: 350px;
+  }
+} 
+

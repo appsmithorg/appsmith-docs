@@ -74,7 +74,7 @@ On Appsmith, you can bind execution of JS Objects on page load in either of two 
 
 **Bind Response to Widget**
 
-Whenever you bind a [query](../../data-access-and-binding/querying-a-database/) or [API](/reference/datasources/authenticated-api) response to a [widget](/reference/widgets/), Appsmith automatically sets the execution of the corresponding API or Query on page load. For example, you have a widget that refers to the data property of the JavaScript async function by adding `{{JSObject.myFun.data}}`, at that time Appsmith marks the execution of that query/API on page load. You can modify the same by navigating to **JSObject** → **Settings** → **RUN ON PAGE LOAD** → Select **No**.
+Whenever you bind a [query](../../data-access-and-binding/querying-a-database/) or [API](/connect-data/reference/authenticated-api) response to a [widget](/reference/widgets/), Appsmith automatically sets the execution of the corresponding API or Query on page load. For example, you have a widget that refers to the data property of the JavaScript async function by adding `{{JSObject.myFun.data}}`, at that time Appsmith marks the execution of that query/API on page load. You can modify the same by navigating to **JSObject** → **Settings** → **RUN ON PAGE LOAD** → Select **No**.
 
  <VideoEmbed host="youtube" videoId="urnRIZ2xMJk" /> 
 
@@ -180,8 +180,6 @@ You are not authorized to view user data.
 :::
 
 If the user is **logged in** `appsmith.user.isAnonymous` returns `false` and the logic is executed to verify if the logged-in user is an Appsmith user. If the user is an Appsmith user, `GetUserList` API is called to fetch the user listing. The execution is completed, and the response is generated, displayed in the `UserListing` table.
-
-You can use authentication and authorization using the Async function settings. To get started; [view and fork the authentication application](https://app.appsmith.com/app/custom-auth-google-sso/login-62a99de284b91337251a7dd3), [view and fork the authorization application](https://app.appsmith.com/applications/62a069e0e56c5566a628df0a/pages/62a069e0e56c5566a628df0d).
 
 You can do authentication and authorization using the Async function settings. To get started, you can use one of the below applications:
 

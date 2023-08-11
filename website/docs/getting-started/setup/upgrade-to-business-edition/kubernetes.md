@@ -46,7 +46,7 @@ Follow these steps to upgrade your Appsmith installation:
    helm install appsmith appsmith-ee/appsmith -n <NAMESPACE> --create-namespace
    ```
 
-6. Restore the backup data using the [Restore Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
+6. Restore the backup data using the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
 
 7. Restart the pods with:
 

@@ -90,33 +90,12 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
             type: 'search',
             position: 'right',
           },
           {
-            href: 'https://www.appsmith.com/blog?cat=Tutorial',
-            label: 'Tutorials',
-            position: 'right',
-          },
-          {
-            href: 'https://community.appsmith.com/',
-            label: 'Forum',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/appsmithorg/appsmith',
-            label: 'GitHub',
-            position: 'right'
-          },
-          {
             href: 'https://app.appsmith.com',
-            label: 'Get Appsmith',
+            label: 'Try Appsmith',
             position: 'right'
           }, 
           
@@ -135,10 +114,6 @@ const config = {
               {
                 label: 'Reference',
                 to: '/',
-              },
-              {
-                label: 'Resources',
-                to: 'learning-and-resources/tutorials',
               },
             ],
           },

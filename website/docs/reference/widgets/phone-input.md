@@ -2,6 +2,7 @@
 
 This page provides information on using the Phone Input, which allows you to capture phone numbers as input from users.
 
+
 <VideoEmbed host="youtube" videoId="DuyMuOZm83g" title="Using the Phone Input Widget" caption="Using the Phone Input Widget"/>
 
 ## Content properties
@@ -412,6 +413,41 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 *Example:*
 ```js
 {{PhoneInput1.isVisible}}
+```
+
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+PhoneInput1.setVisibility(true)
+```
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+```js
+PhoneInput1.setDisabled(false)
 ```
 
 </dd>

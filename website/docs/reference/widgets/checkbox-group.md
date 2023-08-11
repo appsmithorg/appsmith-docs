@@ -5,8 +5,6 @@ description: Learn how to use the Checkbox Group widget for selecting multiple i
 
 This page provides instructions on using the Checkbox Group widget to allow users to select multiple items from a predefined set of choices. 
 
-<VideoEmbed host="youtube" videoId="-7cvZ2yCgtE" title="Using the Checkbox Group Widget" caption="Using the Checkbox Group Widget"/>
-
 
 
 
@@ -284,5 +282,72 @@ The `isDisabled` property indicates the disabled status of a widget. It is repre
 <dd>
 
 The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+CheckboxGroup1.setVisibility(true)
+```
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+CheckboxGroup1.setDisabled(false)
+```
+
+
+</dd>
+
+#### setValue (param: object): Promise
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+CheckboxGroup1.setValue({ label: 'Option 2', value: 'option2' })
+```
+
+</dd>
+
+
+#### setRequired (param: boolean): Promise
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+CheckboxGroup1.setRequired(true)
+```
+
 
 </dd>

@@ -1,127 +1,331 @@
+---
+description: Learn how to use the Switch Group widget which allows users to toggle multiple options.
+---
+
 # Switch Group
 
-Switch group widget captures user inputs from a set of binary choices. This widget captures multiple choices.
+This page provides information on using the Switch Group widget, which allows users to toggle the on/off state for multiple options.
 
 <VideoEmbed host="youtube" videoId="p--j-QyBlAY" title="How to use Switch Group Widget" caption="How to use Switch Group Widget"/>
 
-### Displaying Data
 
-Switch group’s **options** can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(label, value\\). The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+## Content properties
 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+
+### Data
+
+
+#### Options `array<object>`
+
+
+<dd>
+
+
+This property allows you to set the labels and values for the options. Ensure that the values assigned to each option are unique. 
+
+You can add these labels and values options in JSON format, like:
+
+
+```js
+[
+ {
+   "label": "Option1",
+   "value": "OPTION1"
+ },
+ {
+   "label": "Option2",
+   "value": "OPTION2"
+ }..
+]
 ```
-// Query1.data is assumed to be an array here
-{{ Query1.data.map((row) => {
-      return { label: row.name, value: row.id }
-   })
-}}
+Additionally, you can dynamically display data from a query using JavaScript. For instance, you can use the `.map()` function to transform the data to the desired format, like:
+
+
+```js
+{{getCountry.data.map( p => ({label: p.country, value: p.country}))}}
 ```
 
-### Filtering Data
 
-A Switch Group widget can show a set of binary choices for users. The selected values can be passed to an API using `{{ SwitchGroup1.selectedValues }}`.
+</dd>
 
-### **Form submission**
 
-Switch group widgets can capture a fixed set of choices for the user like, showing, and hiding or enabling and disabling.
+#### Default Selected Values `string`
 
-:::info
-Some forms need to be pre-filled data from a table or API. You can bind the data to the default text property to enable this.
-:::
+<dd>
 
-```
-{{Table1.selectedRow.subscription_choices}}
-/**
-* Binding this to the default option will update the selected choices
-* of the Switch group widget with the subscription_choices of the selected row in Table1
-*/
+Allows you to set default options in a widget. These options are initially selected when the widget is loaded, representing the user's default input unless modified. Multiple default options can be added by providing them as an array of values. 
+
+*Example*:
+
+```js
+[
+ "OPTION1", "OPTION2"
+]
 ```
 
-Read more about submitting Input data to an API below.
 
-[Sending widget data in the post body](../../core-concepts/data-access-and-binding/capturing-data-write/capture-form-data.md)
+</dd>
 
-## Properties
-
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget properties
-
-These properties allow you to edit the widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
-
-| Property                    | Description                                                                                                                                                                                |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Placeholder**             | Sets the Placeholder of the multi-select widget.                                                                                                                                           |
-| **Default Selected Values** | Sets a default option that captures the user input unless it is changed by the user. Multiple values can be provided as CSV or an array of value strings.                           |
-| **Inline**                  | Whether the checkbox buttons are to be displayed inline horizontally.                                                                                                                      |
-| **Required**                | Makes input of the widget mandatory.                                                                                                                                                       |
-| **Visible**                 | Control widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                        |
-| **Disabled**                | Disables input/selection to the widget. The widget remains visible to the user, but user input/selection is not allowed.                                                          |
-| **Animate Loading**         | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered. |
-| **Alignment**               | Controls the switch alignment on the page. Switches can be left or right-aligned.                                                                                                          |
-| [**Height**](/reference/widgets/#height)        | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-
-### Binding properties
-
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions
-
-| Property            | Description                                                                                                                                                              | Code Snippet                     |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------- |
-| **Selected Values** | An array of values of the options that are selected in a switch group. This value changes if the default values of the switch group change or the user changes a switch. | `{{widget_name.selectedValues}}` |
-
-### **Events**
-
-They are a set of actions that you can perform on the widget. The following table lists the actions:
-
-|                       | Description                                                                                                                                            |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **onSelectionChange** | Sets the action to be run when the user turns any of the switches on or off. See a list of [supported actions](../appsmith-framework/widget-actions/). |
 
 ### Label
 
-The property hosts a group of configurations that you can use to associate a display name and define a placement for the widget. These properties are usually useful when you want to design forms that follow a defined alignment for your form fields and give a professional look to your forms. Below are the properties that you can use:
 
-| Label         | Description                                                  |   |
-| ------------- | ------------------------------------------------------------ | - |
-| **Text**      | Sets the label of the widget.                                |   |
-| **Position**  | Sets the label position of the widget.                       |   |
-| **Alignment** | Sets the label alignment of the widget.                      |   |
-| **Width**     | Sets the label width of the widget as the number of columns. |   |
+#### Text `string`
 
-Let's understand the label properties in detail:
 
-#### **Text**
+<dd>
+Sets the label on the widget.
+</dd>
 
-It allows you to set the display name for the Switch Group. For example, if you want the user to select a payment option, you can enter the text as "Payment Options."
 
-:::info
-You can leave the text empty if you don't want any display name for your Switch Group widget.
-:::
 
-#### **Position**
 
-It allows you to specify the placement of the label. You can select one of the available options:
+#### Position `string`
 
-* Top - It allows you to align the text at the top of the Switch Group.
-* Left - It aligns the text to the left of the Switch Group. When you select **Left** alignment, you get additional settings that you can use to control the alignment and define the text's width.
-  * Alignment - With the help of alignment, you can define the placement of the text in accordance with the position of the Switch Group. You can choose:
-    * Left - It aligns the text to the widget's left boundary that is away from the Switch Group.
-    * Right - It aligns the text closer to the Switch Group.
-  * Width - With the help of width, you can define the **number of columns** in the **grid** that surrounds the widget. You can specify how close or far the text can be placed to the Switch Group.
-* Auto - It automatically adjusts the position of the text based on the Switch Group's height.
 
-:::info
-Columns are the dashed lines (-----) that surround a widget when you try to drag and drop it on the canvas.
-:::
+<dd>
 
-<VideoEmbed host="youtube" videoId="mXkHx0W-xdM" title="How to set the label properties?" caption="How to set the label properties?"/>
 
-### Styles
+This property allows you to configure the label's placement.
 
+*Options:*
+* **Auto**: Automatically positions the label based on the widget type and layout.
+* **Left**: Aligns the label to the left side of the widget.
+* **Top**: Positions the label above the widget.
+
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to align the text to the left boundary or adjust it closer to the widget using the Right alignment option.
+
+
+</dd>
+
+#### Width `number`
+
+<dd>
+
+This property is only available when you select **Left** from the Position property. It allows you to control the proximity of the text to the widget, determining how close or far it can be positioned.
+
+
+</dd>
+
+
+### Validations
+
+
+#### Required `boolean`
+
+
+<dd>
+This validation feature allows you to designate the Switch Group as a mandatory field. For instance, when the widget is placed within a Form widget, enabling the Required property ensures that the Form's submit button remains disabled until the Switch Group is turned on/off.
+
+
+
+
+</dd>
+
+
+### General
+
+
+#### Tooltip `string`
+<dd>
+
+
+This feature enables you to add hints or provide additional information to guide the user regarding the required input.
+</dd>
+
+
+#### Visible `boolean`
+
+<dd>
+
+This property controls the visibility of the widget. If you turn off this property, the widget would not be visible in view mode. Additionally, you can use JavaScript by clicking on `JS` next to the **Visible** property to conditionally control the widget's visibility. 
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+This property prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on `JS` next to the **Disabled** property to control the widget's disable state conditionally.
+
+</dd>
+
+#### Inline `boolean`
+
+<dd>
+
+When the inline property is enabled, the options are displayed horizontally within the widget. When this property is turned off, the options are displayed in a vertical format.
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
+
+</dd>
+
+
+#### Height `string`
+
+
+<dd>
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: The widget's height remains as set using drag and resize.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+
+### Events
+
+
+#### onSelectionChange
+
+<dd>
+
+This event defines the action that would be executed when the user selects or deselects multiple or single options in the switch group. It allows you to specify a list of [actions](/reference/appsmith-framework/widget-actions) that can be triggered in response to the switch state change.
+
+</dd>
+
+
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-| Style                | Description                                              |
-| -------------------- | -------------------------------------------------------- |
-| **Label Text Color** | Allows you to set text color for the label.              |
-| **Label Text Size**  | Allows you to set the size of the label.                 |
-| **Label Font Style** | Allows you to choose a font style (bold or italic). |
-| **Accent color**     | Sets the background color of the widget.                 |
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color).  It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. Additionally, the font style can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### General
+
+#### Alignment 
+
+<dd>
+
+It allows you to specify how the label should be positioned relative to the switch.
+
+</dd>
+
+### Color
+
+#### Accent color `string`
+
+<dd>
+
+Defines the accent color of the widget, which is used as the fill color for the switch when it is turned on. It accepts [CSS color values](https://developer.mozilla.org/en-US/docs/Web/CSS/color) and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+
+## Reference properties
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions. For instance, to get the visibility status, you can use `SwitchGroup1.isVisible`.
+
+
+#### selectedValues `array`
+
+<dd>
+
+The `selectedValues` property holds an array of values that represents the options selected by the user.
+
+*Example:*
+
+```js
+{{SwitchGroup1.selectedValues}}
+```
+
+
+
+</dd>
+
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+SwitchGroup1.setVisibility(true)
+```
+
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+SwitchGroup1.setDisabled(false)
+```
+
+</dd>
+
+
+#### setRequired (param: boolean): Promise
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+SwitchGroup1.setRequired(true)
+```
+
+
+</dd>

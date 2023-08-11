@@ -23,10 +23,62 @@ const sidebars = {
       //getting started section start
       type: 'category',
       collapsed: false,
-      label: 'Getting Started',
+      label: 'Get Started',
       items: [
         'intro',
-        'getting-started/start-building',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          items: [
+            'getting-started/tutorials/start-building',
+            {
+              type: 'category',
+              label: 'Customer Support Tool',
+              link: {
+                type: 'doc',
+                id: 'getting-started/tutorials/customer-support-tool/README',
+              },
+              items: [
+                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
+                'getting-started/tutorials/customer-support-tool/view-ticket-details',
+                'getting-started/tutorials/customer-support-tool/add-new-tickets',
+                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
+                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
+                'getting-started/tutorials/customer-support-tool/application-settings'
+              ],
+            },
+            // Hiding the tutorials
+            // {
+            //   type: 'category',
+            //   label: 'Review Moderator Dashboard',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/review-moderator-dashboard/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/review-moderator-dashboard/setting-up-the-app',
+            //     'getting-started/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
+            //     'getting-started/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
+            //     'getting-started/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
+            //   ],
+            // },
+            // {
+            //   type: 'category',
+            //   label: 'Building a Store Catalog Manager',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/building-a-store-catalog-manager/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/using-forms',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/creating-interactive-views',
+            //   ],
+            // },
+          ],
+        },
+
         {
           type: 'category',
           label: 'Self Hosting',
@@ -136,9 +188,9 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/email/README',
                   },
                   items: [
-                    'getting-started/setup/instance-configuration/email/sendgrid',
-                    'getting-started/setup/instance-configuration/email/amazon-ses',
                     'getting-started/setup/instance-configuration/email/gmail',
+                    'getting-started/setup/instance-configuration/email/amazon-ses',
+                    'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
@@ -157,6 +209,7 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
+                'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
@@ -169,6 +222,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/instance-management/update-appsmith',
+                'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/maintenance-window',
@@ -186,6 +240,7 @@ const sidebars = {
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
+            `getting-started/setup/best-practices`,
           ],
         },
 
@@ -193,58 +248,90 @@ const sidebars = {
       ],
     }, //getting started section end
     {
+      //Data start
+      type: 'category',
+      collapsed: false,
+      label: 'Connect Data',
+      items: [
+        'connect-data/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
+          items: [
+            'connect-data/how-to-guides/connect-datasource',
+            'connect-data/how-to-guides/query-data',
+            'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'connect-data/how-to-guides/setup-datasource-environments',
+            'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/how-to-upload-to-s3',
+            'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/how-to-integrate-dropbox',
+            'connect-data/how-to-guides/how-to-integrate-zoho',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/README' },
+          items: [
+            'connect-data/reference/airtable',
+            'connect-data/reference/querying-arango-db',
+            'connect-data/reference/authenticated-api',
+            'connect-data/reference/curl-import',
+            'connect-data/reference/querying-dynamodb',
+            'connect-data/reference/querying-elasticsearch',
+            'connect-data/reference/querying-firestore',
+            'connect-data/reference/querying-google-sheets',
+            'connect-data/reference/graphql',
+            'connect-data/reference/hubspot',
+            {
+            type: 'category',
+            label: 'MongoDB',
+            link: {
+                type: 'doc',
+                id: 'connect-data/reference/querying-mongodb/README',
+            },
+            items: [
+                'connect-data/reference/querying-mongodb/mongo-syntax'
+            ],
+          },
+          'connect-data/reference/querying-mssql',
+          'connect-data/reference/querying-mysql',
+          'connect-data/reference/querying-oracle',
+          'connect-data/reference/querying-postgres',
+          'connect-data/reference/querying-redis',
+          'connect-data/reference/querying-redshift',
+          'connect-data/reference/rest-api',
+          'connect-data/reference/querying-amazon-s3',
+          'connect-data/reference/querying-snowflake-db',
+          'connect-data/reference/using-smtp',
+          'connect-data/reference/twilio',
+          'connect-data/reference/query-settings',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: { type: 'doc', id: 'connect-data/concepts/README' },
+          items: [
+            'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/Datasource-Environments',
+            'connect-data/concepts/how-to-use-prepared-statements',
+            'connect-data/concepts/returning-data-from-a-stored-procedure',
+          ]
+        },
+        'connect-data/integrations'
+      ]
+    }, //Data end
+    {
       //core concepts section start
       type: 'category',
       collapsed: false,
       label: 'Core Concepts',
       items: [
-        {
-          type: 'category',
-          label: 'Connecting to Datasource',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/connecting-to-data-sources/README',
-          },
-          items: [
-            'core-concepts/connecting-to-data-sources/connecting-to-databases',
-            {
-              type: 'category',
-              label: 'REST APIs',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/connecting-to-data-sources/authentication/README',
-              },
-              items: [
-                'core-concepts/connecting-to-data-sources/authentication/connect-to-apis',
-                {
-                  type: 'category',
-                  label: 'Authentication Type',
-                  link: {
-                    type: 'doc',
-                    id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/README',
-                  },
-                  items: [
-                    'core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication',
-                    {
-                      type: 'category',
-                      label: 'OAuth 2.0',
-                      link: {
-                        type: 'doc',
-                        id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README',
-                      },
-                      items: [
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code',
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials',
-                      ],
-                    },
-                  ],
-                },
-                'core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions',
-                'core-concepts/connecting-to-data-sources/authentication/self-signed-certificates',
-              ],
-            },
-          ],
-        },
         {
           type: 'category',
           label: 'Building UI',
@@ -281,17 +368,7 @@ const sidebars = {
             id: 'core-concepts/data-access-and-binding/README',
           },
           items: [
-            {
-              type: 'category',
-              label: 'Queries',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/querying-a-database/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/querying-a-database/query-settings',
-              ],
-            },
+            'core-concepts/data-access-and-binding/querying-a-database',
             'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
@@ -334,6 +411,7 @@ const sidebars = {
         },
       ],
     }, //core concepts end
+    
     {
       //Reference start
       type: 'category',
@@ -353,8 +431,16 @@ const sidebars = {
               link: { type: 'doc', id: 'reference/widgets/button/README' },
               items: ['reference/widgets/button/google-recaptcha'],
             },
-            'reference/widgets/button-group',
+            {
+              type: 'category',
+              label: 'Button Group',
+              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+              items: [
+                'reference/widgets/button-group/buttons'
+              ],
+            },
             'reference/widgets/camera',
+            'reference/widgets/category-slider',
             'reference/widgets/chart',
             'reference/widgets/checkbox',
             'reference/widgets/checkbox-group',
@@ -374,26 +460,25 @@ const sidebars = {
             'reference/widgets/list',
             'reference/widgets/maps',
             'reference/widgets/map-chart',
-            'reference/widgets/menu-button',
+            {
+              type: 'category',
+              label: 'Menu Button',
+              link: { type: 'doc', id: 'reference/widgets/menu/README' },
+              items: [
+                'reference/widgets/menu/menu-items'
+              ],
+            },
             'reference/widgets/modal',
             'reference/widgets/multiselect',
             'reference/widgets/multi-tree-select',
+            'reference/widgets/number-slider',
             'reference/widgets/phone-input',
             'reference/widgets/progress',
             'reference/widgets/radio-group',
+            'reference/widgets/range-slider',
             'reference/widgets/rating',
             'reference/widgets/rich-text-editor',
             'reference/widgets/select',
-            {
-              type: 'category',
-              label: 'Sliders',
-              link: { type: 'doc', id: 'reference/widgets/sliders/README' },
-              items: [
-                'reference/widgets/sliders/category-slider',
-                'reference/widgets/sliders/number-slider',
-                'reference/widgets/sliders/range-slider',
-              ],
-            },
             'reference/widgets/stat-box',
             'reference/widgets/switch',
             'reference/widgets/switch-group',
@@ -414,45 +499,6 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Datasources',
-          link: { type: 'doc', id: 'reference/datasources/README' },
-          items: [
-            'reference/datasources/airtable',
-            'reference/datasources/querying-amazon-s3',
-            'reference/datasources/querying-arango-db',
-            'reference/datasources/authenticated-api',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-dynamodb',
-            'reference/datasources/querying-elasticsearch',
-            'reference/datasources/querying-firestore',
-            'reference/datasources/querying-google-sheets',
-            'reference/datasources/graphql',
-            'reference/datasources/hubspot',
-            {
-              type: 'category',
-              label: 'MongoDB',
-              link: {
-                type: 'doc',
-                id: 'reference/datasources/querying-mongodb/README',
-              },
-              items: [
-                'reference/datasources/querying-mongodb/mongo-syntax'
-              ],
-            },
-            'reference/datasources/querying-mssql',
-            'reference/datasources/querying-mysql',
-            'reference/datasources/querying-oracle',
-            'reference/datasources/querying-postgres',
-            'reference/datasources/querying-redis',
-            'reference/datasources/querying-redshift',
-            'reference/datasources/rest-api',
-            'reference/datasources/querying-snowflake-db',
-            'reference/datasources/using-smtp',
-            'reference/datasources/twilio',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Appsmith Framework',
           link: { type: 'doc', id: 'reference/appsmith-framework/README' },
           items: [
@@ -461,7 +507,7 @@ const sidebars = {
             'reference/appsmith-framework/query-object',
             {
               type: 'category',
-              label: 'Actions',
+              label: 'Framework Functions',
               link: {
                 type: 'doc',
                 id: 'reference/appsmith-framework/widget-actions/README',
@@ -487,13 +533,20 @@ const sidebars = {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
-      label: 'Advanced Concepts',
+      label: 'Manage Apps and Users',
       items: [
-        'advanced-concepts/custom-authentication',
-        'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/audit-logs',
-        'advanced-concepts/branding',
+        'advanced-concepts/custom-authentication',
+        'advanced-concepts/invite-users',
+        {
+          type: 'category',
+          label: 'Granular Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
+          items: [
+              'advanced-concepts/granular-access-control/roles', 
+          ]
+        },
+        `advanced-concepts/user-provisioning-group-sync`,
         {
           type: 'category',
           label: 'Version Control with Git',
@@ -519,87 +572,19 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/invite-users',
-        {
-          type: 'category',
-          label: 'Granular Access Control',
-          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
-          items: [
-              'advanced-concepts/granular-access-control/roles', 
-          ]
-        },
-        {
-          type: 'category',
-          label: 'More',
-          link: { type: 'doc', id: 'advanced-concepts/more/README' },
-          items: [
-            'advanced-concepts/more/backup-restore',
-            'advanced-concepts/more/keyboard-shortcuts',
-          ],
-        },
+        'advanced-concepts/sharing-data-across-pages',
+        'advanced-concepts/more/backup-restore',
+        'advanced-concepts/audit-logs',
+        'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
     {
       //Learning and Resources start
       type: 'category',
       collapsed: false,
-      label: 'Learning & Resources',
+      label: 'Resources',
       items: [
-        {
-          type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'learning-and-resources/tutorials/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Review Moderator Dashboard',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/review-moderator-dashboard/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app',
-                'learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
-                'learning-and-resources/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
-                'learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building a Store Catalog Manager',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/building-a-store-catalog-manager/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How To Guides',
-          link: {
-            type: 'doc',
-            id: 'learning-and-resources/how-to-guides/README',
-          },
-          items: [
-            'learning-and-resources/how-to-guides/how-to-upload-to-s3',
-            'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'learning-and-resources/how-to-guides/aws-whitelist',
-            'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
-            'learning-and-resources/how-to-guides/how-to-work-with-local-apis-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
-            'learning-and-resources/how-to-guides/how-to-get-container-logs',
-            'learning-and-resources/how-to-guides/how-to-integrate-zoho',
-            'learning-and-resources/how-to-guides/how-to-integrate-dropbox'
-          ],
-        },
         'learning-and-resources/sample-apps',
-        'learning-and-resources/integrations',
         {
           type: 'link',
           label: 'Templates', // The link label
