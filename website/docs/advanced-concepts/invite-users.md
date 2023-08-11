@@ -43,9 +43,9 @@ The table below shows the permissions available for each role when you share a w
 
 |Role           |	<div style= {{width:"150px"}}> Create App </div> | <div style= {{width:"150px"}}> Edit App </div>  |<div style= {{width:"150px"}}> View App </div> |<div style= {{width:"150px"}}> Delete App </div>| <div style= {{width:"150px"}}> Make App Public </div> | <div style= {{width:"150px"}}> Invite Users </div>   | <div style= {{width:"150px"}}> Manage Users </div>  |
 |---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
-| **Administrator** |Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace|Delete any application, page and query inside the workspace |Make any application inside the workspace public  |Invite other users to the workspace |	Manage users in a workspace |
-|**Developer**      | Create applications, pages and queries inside the workspace|Edit any application, page and query inside the workspace|View any application, page and query inside the workspace |Delete any application, page and query inside the workspace|	-             |Invite other users to the workspace |	-             |
-|**App Viewer**     |	-             |-             |View any application, page & query inside the workspace.|-|           -     |Invite other users to the workspace only as **App Viewer** |	-|
+| **Administrator** |Create applications, pages and queries inside the workspace in any environment |Edit any application, page and query inside the workspace in any environment |View any application, page and query inside the workspace in any environment |Delete any application, page and query inside the workspace in any environment |Make any application inside the workspace public |Invite other users to the workspace | Manage users in a workspace |
+|**Developer**      | Create applications, pages and queries inside the workspace in any environment |Edit any application, page and query inside the workspace in any environment |View any application, page and query inside the workspace in any environment |Delete any application, page and query inside the workspace in any environment |	-             |Invite other users to the workspace |	-             |
+|**App Viewer**     |	-             |-             |View any application, page & execute actions inside the workspace in production environment (Cannot see queries and datasources) |-|           -     |Invite other users to the workspace only as **App Viewer** |	-|
 
 ## Share application
 
@@ -70,12 +70,12 @@ The table below shows the permissions available for each role when you share an 
 
 |Role           |	<div style= {{width:"150px"}}> Create </div> | <div style= {{width:"150px"}}> Edit </div>  |<div style= {{width:"150px"}}> View </div> |<div style= {{width:"150px"}}> Delete </div>| <div style= {{width:"150px"}}> Make App Public </div> | <div style= {{width:"150px"}}> Invite Users </div>   | <div style= {{width:"150px"}}> Manage Users </div>  |
 |---------------|-----------------------------------------------|--------------------------------------------|------------------------------------------|-------------------------------------------|-------------------------------------------------------|------------------------------------------------------|-----------------------------------------------------|
-|**Developer**      | Create pages, datasources and queries inside the app|Edit pages, datasources and queries inside the app|View the app, its pages, datasources and queries. |Delete the app, its pages, datasources and queries|-|Invite other users with an equivalent or a lower role |	-       |
-|**App Viewer**     |	-              |     -          |View the app and execute actions (Cannot see queries,datasources)|-|           -     |Invite users only as **App Viewer** |	-|
+|**Developer**      | Create pages, datasources and queries inside the app in any environment |Edit pages, datasources and queries inside the app in any environment |View the app, its pages, datasources and queries in any environment |Delete the app, its pages, datasources and queries in any environment |-|Invite other users with an equivalent or a lower role |	-       |
+|**App Viewer**     |	-              |     -          |View the app and execute actions in production environment (Cannot see queries,datasources)|-|           -     |Invite users only as **App Viewer** |	-|
 
 ## Make application public
 
-You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications.
+You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications. The will only be able to see the production environment of your deployed application.
 
 To make an application public, you can click on the **Share** button within the application and turn on the **Make application public** switch. Once enabled, click **Copy Application URL** to copy the application link and share the application with your users.
 
