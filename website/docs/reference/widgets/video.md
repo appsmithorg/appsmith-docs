@@ -76,7 +76,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
 
 #### onPlay
 

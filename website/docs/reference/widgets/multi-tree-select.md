@@ -282,7 +282,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
 
 
 #### onOptionChange
