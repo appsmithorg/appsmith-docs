@@ -13,12 +13,12 @@ This page provides steps to update Appsmith to the latest version on your self-h
 
 ## Before you begin
 
-* Create a backup of the Appsmith instance, See [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
+* Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
 * Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
 
 ## Upgrade to checkpoint version
 
-A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimisations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual upgrade, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. The available Appsmith checkpoint versions are as follows:
+A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimisations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. The available Appsmith checkpoint versions are as follows:
 
   * `v1.9.2`
 
@@ -26,7 +26,7 @@ A checkpoint version is a milestone release that ensures a proper application of
 Before you update to a checkpoint version, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update to the checkpoint version `v1.9.2`. You can use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
 1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
-    * If you are on the **Community Edition** on Docker, update the image name as shown below:
+    * If you are on the **Community Edition**, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -34,7 +34,7 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
             image: index.docker.io/appsmith/appsmith-ce:v1.9.2
             container_name: appsmith
         ```
-    * If you are on the **Business Edition** on Docker, update the image name as shown below:
+    * If you are on the **Business Edition**, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -47,7 +47,7 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
   docker-compose up -d
   ```
 3. The server starts with the older version and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
-    * If you are on the **Community Edition** on Docker, update the image name as shown below:
+    * If you are on the **Community Edition**, update the image name as shown below:
         ```yaml
         services:
         appsmith:
@@ -55,7 +55,7 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
           image: index.docker.io/appsmith/appsmith-ce
           container_name: appsmith
         ```
-    * If you are on the **Business Edition** on Docker, update the image name as shown below:
+    * If you are on the **Business Edition**, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -120,7 +120,7 @@ Before you begin the update, ensure you have met all the [prerequisites](#prereq
 
 ## Troubleshooting
 
-If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
+If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
