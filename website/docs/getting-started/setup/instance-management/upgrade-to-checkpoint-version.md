@@ -5,7 +5,9 @@ toc_max_heading_level: 2
 
 # Upgrade to Checkpoint Version
 
-A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. The available Appsmith checkpoint versions are as follows:
+A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
+
+The available Appsmith checkpoint versions are as follows:
 
   * `v1.9.2`
   
@@ -65,8 +67,6 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
   ```bash
   docker-compose up -d
   ```
-
-If you haven't updated Appsmith for a while, you may have to update to multiple versions. In such a case, perform the same steps for each version in order, starting from the oldest. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
 
 ## Troubleshooting
 
