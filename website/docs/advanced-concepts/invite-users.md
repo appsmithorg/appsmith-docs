@@ -75,7 +75,7 @@ The table below shows the permissions available for each role when you share an 
 
 ## Make application public
 
-You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications. The will only be able to see the production environment of your deployed application.
+You can make your applications public and share them with users who are not part of your workspace. These external users do not need to log in to Appsmith to access the shared applications. They will only be able to see the production environment of your deployed application.
 
 To make an application public, you can click on the **Share** button within the application and turn on the **Make application public** switch. Once enabled, click **Copy Application URL** to copy the application link and share the application with your users.
 
