@@ -1,6 +1,6 @@
 ---
 description: This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
-toc_max_heading_level: 3
+toc_max_heading_level: 2
 ---
 
 # Update Appsmith
@@ -16,63 +16,9 @@ This page provides steps to update Appsmith to the latest version on your self-h
 * Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
 * Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
 
-## Upgrade to checkpoint version
-
-A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimisations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. The available Appsmith checkpoint versions are as follows:
-
-  * `v1.9.2`
-
-### Docker
-Before you update to a checkpoint version, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update to the checkpoint version `v1.9.2`. You can use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
-
-1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
-    * If you are on the **Community Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ce:v1.9.2
-            container_name: appsmith
-        ```
-    * If you are on the **Business Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ee:v1.9.2
-            container_name: appsmith
-        ```
-2. Save the changes, and restart the Appsmith instance with:
-  ```bash
-  docker-compose up -d
-  ```
-3. The server starts with the older version and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
-    * If you are on the **Community Edition**, update the image name as shown below:
-        ```yaml
-        services:
-        appsmith:
-          #highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ce
-          container_name: appsmith
-        ```
-    * If you are on the **Business Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ee
-            container_name: appsmith
-        ```
-4. Save the changes and restart the Appsmith instance with: 
-  ```bash
-  docker-compose up -d
-  ```
-
-If you haven't updated Appsmith for a while, you may have to update to multiple versions. In such a case, perform the same steps for each version in order, starting from the oldest. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
-
 ## Update on Docker
 
-Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](#upgrade-to-checkpoint-version) guide.
+Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.
 
 Follow these steps to update Appsmith, these instructions can be used to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 

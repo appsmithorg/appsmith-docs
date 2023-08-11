@@ -107,7 +107,7 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
     * Check for updates every hour:
 
       ```bash
-      scheduler: 0/10 * * * *
+      scheduler: 0 * * * *
       ```
 
     * Check for updates once at 12:00 noon every day:

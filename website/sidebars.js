@@ -220,7 +220,17 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/README',
               },
               items: [
-                'getting-started/setup/instance-management/update-appsmith',
+                {
+                  type: 'category',
+                  label: 'Update Appsmith',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/instance-management/update-appsmith',
+                  },
+                  items: [
+                    'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
+                  ]
+                },
                 'getting-started/setup/instance-management/maintenance-window',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
