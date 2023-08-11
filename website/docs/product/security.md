@@ -5,7 +5,7 @@ description: Learn about Appsmith's security features and how to protect your da
 
 This page explains the security features and considerations that Appsmith has implemented in its platform, and steps you can take to make your apps as safe as possible.
 
-## Secure data
+## Safe data
 
 Appsmith applications are secure-by-default, with a number of strategies in place to protect your data.
 
@@ -13,7 +13,7 @@ All sensitive credentials such as database credentials and Git SSH keys are encr
 
 Appsmith Cloud only connects to your databases and API endpoints through specific whitelisted IPs: `18.223.74.85` and `3.131.104.27`. All connections to Appsmith Cloud are encrypted with [TLS](https://en.wikipedia.org/wiki/Public\_key\_certificate). For self-hosted instances, it's possible to set up [SSL](https://en.wikipedia.org/wiki/Public\_key\_certificate) certificates during installation via [LetsEncrypt](https://letsencrypt.org/), or administrators can upload their own SSL certificate to Appsmith.
 
-## Secure queries
+## Safe queries
 
 Appsmith's backend system doesn't log or store any data returned from your databases or API endpoints, nor does it store information about responses or user input; Appsmith only acts as a proxy layer.
 
@@ -23,13 +23,11 @@ It's safe to add secrets to APIs or datasource configurations, as they are not e
 
 To avoid SQL injections, all SQL queries have [prepared statements](/connect-data/concepts/how-to-use-prepared-statements) enabled by default.
 
-## Secure JavaScript
+## Safe JavaScript
 
-JavaScript code written in any Appsmith app is executed on the client, and a user can inspect the site to view your code in their browser. Similarly, when you sync applications to Git repositories, the JavaScript code in your app is stored and accessible as a JavaScript file in the repository. Therefore, it is recommended to implement the standard best practices for dealing with client-side code. Specifically:
+JavaScript code written in any Appsmith app is executed on the client, and a user can inspect the site to view your code in their browser. Similarly, when you sync applications to Git repositories, the JavaScript code in your app is stored and accessible as a JavaScript file in the repository. Therefore, it's recommended to implement the standard best practices for dealing with client-side code.
 
-* Don't hard-code sensitive keys, credentials, or other sensitive information in plain text within JavaScript objects.
-
-* Don't store sensitive information using the [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function, because the data is stored in the browser's local storage and can be viewed by the user.
+For example, it's important to avoid hard-coding sensitive keys or credentials in plain text. Similarly, it's not safe to store sensitive information using Appsmith's [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function, because it stores its data in the browser's local storage and can be viewed by the user.
 
 Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some similar features like [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/reference/appsmith-framework/widget-actions).
 
@@ -37,14 +35,12 @@ The JavaScript `Fetch` API is supported, and it never sends cookies or session i
 
 ## Sandboxed Iframe widgets
 
-After v1.8.6 of Appsmith, [Iframe](/reference/widgets/iframe/) widgets have a `sandbox` attribute set on them by default to help protect from [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities. This attribute is controlled with an environment variable in your Appsmith instance's `stacks/configuration/docker.env` file:
+After v1.8.6 of Appsmith, [Iframe](/reference/widgets/iframe/) widgets have a `sandbox` attribute set on them by default to help protect from [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities. It reduces some capabilities of the iframe, but increases security and is unlikely to impede most real-world uses of this widget. The `sandbox` attribute is toggled using an environment variable in the Appsmith instance's `stacks/configuration/docker.env` file; setting `APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX` to `true` removes the `sandbox` attribute and its protections.
 
 ```sh
 APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false
 ```
 
-The `sandbox` attribute reduces some capabilities of the iframe, but increases security and is unlikely to impede most real-world uses of this widget.
-
-:::tip
+:::info
 Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email [security@appsmith.com](mailto:security@appsmith.com), and it'll be resolved as quickly as possible.
 :::
