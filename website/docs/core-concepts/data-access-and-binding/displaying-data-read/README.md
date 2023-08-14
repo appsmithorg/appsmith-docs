@@ -1,6 +1,6 @@
 # Display Data (Read)
 
-You can display data from a query or JS function in a widget. Before reading this page, ensure you have [connected to a data source](/core-concepts/connecting-to-data-sources) and have a query that fetches data.
+You can display data from a query or JS function in a widget. Before reading this page, ensure you have connected to a data source and have a query that fetches data.
 
 ## Display data from query
 

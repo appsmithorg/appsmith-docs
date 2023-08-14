@@ -1,17 +1,218 @@
+---
+description: This page explains how the Tabs widget can be used to group related content and enable users to switch between different sets of information within a single container.
+---
 # Tabs
 
-This page explains how the Tabs widget can be used to group related content and enable users to switch between different sets of information within a single container.
+This page provides information on using the Tabs widget to organize related content and allow users to switch between different sets of information within a single container.
+
+<figure>
+  <img src="/img/tabs-img.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
+  <figcaption align = "center"><i>Display Tabs</i></figcaption>
+</figure>
 
 
-<VideoEmbed host="youtube" videoId="NLe0To_fB7E" title="Using the Tabs Widget" caption="Using the Tabs Widget"/>
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 
-## Create multi-step form
+### Data
 
-Custom navigation schemes can be created by modifying the properties of a Tab widget. For instance, you can use the **Default tabs** and **storeValue** to create a multi-step form.
+#### Tabs `string`
 
----
-**Example**: suppose you want to create a multi-step form using Tabs Widget.
+<dd>
+
+Allows you to manage tabs within the widget, where each tab is identified by a unique name. You can rearrange the tabs items and configure their visibility by clicking on the gear icon ⚙️.
+
+</dd>
+
+#### Default Tab `string`	
+
+
+<dd>
+
+Allows you to specify a default tab by its name, which is automatically displayed when the widget loads. Make sure the Tab name is exactly as specified. 
+
+</dd>
+
+### General
+
+####
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. The default value for the property is `true`.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. The default value for the property is `true`.
+
+</dd>
+
+
+#### Show tabs `boolean`
+
+
+<dd>
+
+This option enables you to toggle the visibility of tabs. The default value for the property is `true`.
+
+</dd>
+
+#### Height `string`
+
+
+<dd>
+
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+### Events
+
+
+#### onTabSelected
+
+<dd>
+
+Specifies the action (Framework functions, queries, or JS functions) to be performed when the user selects a tab.
+
+</dd>
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+
+### Colors, Borders and Shadows
+
+#### Accent color `string`
+
+<dd>
+
+Represents the color of the tab, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Border color `string`
+
+
+<dd>
+
+Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
+
+
+</dd>
+
+#### Border Width `number`
+
+<dd>
+
+Specifies the width of the widget's border, accepting only numerical values in pixels (px). The default value is `1`.
+
+</dd>
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Tabs2.isVisible`.
+
+#### selectedTab `string`
+
+<dd>
+
+Contains the name of the tab currently selected.
+
+*Example:*
+
+```js
+{{Tabs1.selectedTab}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+```js
+{{Tabs1.isVisible}}
+```
+
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the .then() block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Tabs1.setVisibility(true)
+```
+
+</dd>
+
+## Create multi-step form 
+
+You can create a multi-step form using Tabs widget and `storeValue` function:
 
 1. Drop a Tab Widget and rename the tabs to `Basic Info`, and `Personal Info`.
 
@@ -40,51 +241,5 @@ You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-
   <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
 </figure>
 
-## Properties
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
-
-### Widget properties
-
-These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
-
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Tabs**          | String  | This property lets you add and remove tabs from the widget. Tabs are uniquely identified by their tab names. You can also change the visibility settings for each tab from here              |
-| **Default Tab**     | String  | This property selects the tab which matches the corresponding name, making it the default tab that is displayed when the widget is loaded.                                                       |
-| **Show Tabs**        | Boolean | This property allows you to hide or show the tabs in the tab widget. It can be used to create the illusion of dynamically changing UI. |
-| **Visible**          | Boolean | This property controls the widget's visibility on the page. When turned off, the widget isn't visible when the app is published.     |
-| **Animate Loading**  | Boolean | This property allows you to control a widget’s animation on the page load.                                                             |
-| **Scroll Contents**  | Boolean | This property enables scrolling within the contents of each tab. If the content of a tab is larger than the available space, users can scroll to view it.                                                          |
-| **Height**   | String     | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-
-### Reference properties
-
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `Tabs1.isVisible` to get the visibility status.
-
-| Reference Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **isVisible**   | Boolean | This property indicates whether the widget is visible or not. |
-| **selectedTab** | String | Contains the name of the tab currently selected                  |
-
-### Style properties
-
-Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
-
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Accent Color**       | String| Sets the widget's accent color, which appears as the fill color for the checkbox when checked. Accepts CSS color values.             |
-| **Background Color** | String| Controls background color of container.                 |
-| **Border Color** | String| Allows you to change the border color of the text widget.                    |
-| **Border Width** | Number| Defines the thickness of the border.                    |
-| **Border Radius**    | String| Allows you to define curved corners.                     |
-| **Box Shadow**       | String | Allows you to choose from the available shadow styles.   |
-
-### Events
-
-When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
-
-| Events             | Description                                                                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onTabSelected** | Sets the action to be run when the user selects a tab.  |
 

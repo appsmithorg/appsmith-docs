@@ -100,9 +100,9 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **page.viewed** | Logged when a user, including any anonymous public users, views a page. |
 | **page.updated** | Logged when a user edits a page. |
 | **page.deleted** | Logged when a page is deleted. |
-| **datasource.created** | Logged when a new datasource is created. |
-| **datasource.updated** | Logged when a user edits an existing datasource's configuration. |
-| **datasource.deleted** | Logged when a datasource is deleted. |
+| **datasource.created** | Logged when a new datasource is created. Also creates a separate event per environment. |
+| **datasource.updated** | Logged when a user edits an existing datasource's configuration. Creates a separate event per environment. |
+| **datasource.deleted** | Logged when a datasource is deleted. Only logs a single event for all environments. |
 | **query.created** | Logged when a new query is created. |
 | **query.updated** | Logged when a user edits an existing query's configuration. |
 | **query.deleted** | Logged when a query is deleted. |

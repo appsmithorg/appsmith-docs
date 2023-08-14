@@ -107,7 +107,7 @@ az container logs --resource-group myResourceGroup --name mycontainer
 ### Update Appsmith
 
 :::caution
-Create a backup of the Appsmith instance before performing an update. See [How to create a backup](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#backup-instance).
+Create a backup of the Appsmith instance before performing an update. See [How to create a backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
 :::
 
 1. Navigate to the ACI on the Azure Portal
@@ -115,7 +115,7 @@ Create a backup of the Appsmith instance before performing an update. See [How t
 3. Click the Restart button
 4. Wait until the ACI restarts with the latest Appsmith release.
 
-If you have updated your Appsmith instance and face any issues, you can roll back the changes and [restore the Appsmith instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive.
+If you have updated your Appsmith instance and face any issues, you can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive.
 
 ### Troubleshooting
 
@@ -125,4 +125,4 @@ If there are any errors during this process, follow the guide on [debugging depl
 
 * [Configuring Self-Hosted Instances](/getting-started/setup/instance-configuration/#configuring-docker-installations)
 * [Managing the Appsmith instance](/getting-started/setup/instance-management/)
-* [Tutorials](/learning-and-resources/tutorials/)
+* [Tutorials](/getting-started/tutorials/)

@@ -40,9 +40,9 @@ To stop a previous version of appsmith running on these ports, run the following
 
 If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work. If it doesn't, please reach out on [discord](https://discord.com/invite/rBTTVJp)
 
-If you are trying to connect to an existing [MongoDB](../../reference/datasources/querying-mongodb/) and the containers failed to start it may be due to one of the following reasons:
+If you are trying to connect to an existing [MongoDB](../../connect-data/reference/querying-mongodb/) and the containers failed to start it may be due to one of the following reasons:
 
-1. Incorrect [MongoDB](../../reference/datasources/querying-mongodb/) credentials
+1. Incorrect [MongoDB](../../connect-data/reference/querying-mongodb/) credentials
 2. Empty Salt / Password for encryption
 
 Restart the installation process with valid values.
@@ -67,11 +67,11 @@ with
 proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
 ```
 
-This ensures that the redirect URLs are correct during [OAuth2](/core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/) logins. This works even if the ELB is configured to run on a custom port.
+This ensures that the redirect URLs are correct during [OAuth2](/connect-data/reference/authenticated-api) logins. This works even if the ELB is configured to run on a custom port.
 
 ## Server not booting because of MongoCommandException
 
-In release `v1.6.4`, Appsmith upgraded its libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](/reference/datasources/querying-mongodb/) that was shipped earlier. This didn't show up in testing because all testing happened against [MongoDB](/reference/datasources/querying-mongodb/) clusters with replica sets, where the problem doesn't surface.
+In release `v1.6.4`, Appsmith upgraded its libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](/connect-data/reference/querying-mongodb/) that was shipped earlier. This didn't show up in testing because all testing happened against [MongoDB](/connect-data/reference/querying-mongodb/) clusters with replica sets, where the problem doesn't surface.
 
 If you see an error like the below, your instance is affected by the library upgrade performed in `v1.6.4`.
 
@@ -135,7 +135,7 @@ As the error message in the server logs suggests, your Appsmith instance has mis
 
 #### Solution
 
-To resolve this error, you must [upgrade to the checkpoint version](/getting-started/setup/instance-management/update-appsmith#upgrade-to-a-checkpoint-version), in this case, `v1.9.2`.
+To resolve this error, you must [upgrade to the checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version), in this case, `v1.9.2`.
 
 To prevent similar issues in the future, consider [enabling auto updates](/getting-started/setup/installation-guides/docker#enabling-appsmith-auto-updates) for your Appsmith instance. If you already had auto updates on and still encountered this issue, please contact the [Appsmith team](https://discord.com/invite/rBTTVJp) to determine the cause of the deployment problem
 

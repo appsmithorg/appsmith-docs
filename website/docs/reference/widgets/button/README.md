@@ -1,98 +1,315 @@
+---
+description: >-
+  Button widget reference
+---
+
 # Button
 
-This page describes how to use a Button widget to trigger actions and code in your application.
+This page provides information on the button widget, enabling you to trigger actions or perform specific tasks with a simple click. 
 
-<VideoEmbed host="youtube" videoId="8FOJ1CFRQcU" title="How to use Button Widget" caption="How to use Button Widget"/>
+## Content properties
 
-## Trigger actions with buttons
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-To execute an action or function when the Button widget is clicked, you must use the button's `onClick` event property. When the widget is clicked, it executes whatever function is contained in the `onClick` field.
+### Basic
 
-Appsmith has a number of [built-in functions](/reference/appsmith-framework/widget-actions/) that can be selected with the GUI in the properties pane, or you can click the "JS" toggle next to **onClick** to allow writing custom code in this field instead.
+#### Label `string`
 
-**Example 1**
+<dd>
 
-Buttons are often used to execute [queries](/core-concepts/data-access-and-binding/querying-a-database/). In the button's **onClick** field dropdown, you can find an "Execute a query" menu item that exposes a list of all the queries available on this page of your app. Once you select your query from the list, the button widget is ready for use.
+Sets the text that appears on the button.
 
-**Example 2**
+</dd>
 
-There are some cases where you might want to create more complex flows:
+#### onClick
 
-Once you've selected a query (see prior example), two new fields appear in the properties pane: **onSuccess** and **onError**. You can use these fields to set up subsequent functions to run after your query completes. If the query is successful, the action in the **onSuccess** field is executed. If the query returns an error response, **onError** is executed.
+<dd>
 
-If you'd like even more control or more [complex workflows](/core-concepts/writing-code/workflows#complex-workflows), consider writing custom code in a [JS Object](/core-concepts/writing-code/javascript-editor-beta) to handle the logic. Once you've created a function in the JS Object, you can set the button to execute it just like you did with the query before -- this time, look for your JS Object under the "Execute a JS function" menu item.
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
-## Buttons in forms
+</dd>
+
+### General
+
+#### Tooltip `string`
+
+<dd>
+
+Sets a tooltip that appears when the user hovers over the widget. It enables you to add hints or provide additional information for the button.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
+
+For example, if you want to make the button visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's `disabled` state conditionally.
+
+For example, if you want to allow only a specific user to click the button, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+### Validation
+
+#### Google reCAPTCHA key
+
+<dd>
+
+Add a Google reCAPTCHA [site key](https://cloud.google.com/recaptcha-enterprise/docs/create-key) here to enable Google reCAPTCHA check to the button. The token is accessible from the API pane with the `recaptchaToken` key (see the [Google reCAPTCHA](https://www.google.com/recaptcha/about/) docs). Read more about using [Google reCAPTCHA Keys in Appsmith](/reference/widgets/button/google-recaptcha/).
+
+</dd>
+
+#### Google reCAPTCHA version
+
+<dd>
+
+Sets the Google reCAPTCHA version to use for the button, either v2 or v3.
+
+</dd>
+
+### Form settings
 
 Buttons can have some special behaviors when they're located within the boundaries of a [Form widget](/reference/widgets/form). Its form-specific behavior is controlled by two of the button's properties:
 
-### Disabled invalid forms 
+#### Disabled invalid forms 
 
-When this button property is turned on, the button is **Disabled** while the form has any required fields that are incomplete, or while any of the fields have input that's considered invalid.
+<dd>
 
-For example, imagine that you have a form with an [Input widget](/reference/widgets/input/) whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
+When this button property is turned on, the button remains disabled if the associated form contains any required fields that are incomplete or if any of the form fields contain input that is considered invalid.
 
-Similarly, if an Input widget's **Valid** property is ```{{ Input1.text.length > 5 }}``` but the user input is only 2 characters long, the input is considered invalid and the button is disabled.
+For example, if you have a form with an Input widget whose **Required** property is turned on. If that input field hasn't been completed by the user, then the button won't be usable.
 
-### Reset form on success
+</dd>
 
-When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state. This is useful for clearing inputs after the form is submitted; when both **Disabled invalid forms** and **Reset form on success** are turned on, submitting the form automatically resets the input fields so they can be used again.
+#### Reset form on success
 
-## Properties
+<dd>
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+When this button property is turned on, the button can be used to reset all fields present in the form's area to their default state. This is useful for clearing inputs after the form is submitted.
 
-### General properties
+</dd>
 
-General properties control the data and behavior of the widget. These properties are present in the properties pane of the widget.
+## Style properties
 
-|    Property    |    Description    |
-| -------------- | ----------------- |
-| **Label**                    | Sets the text shown within the widget.   |
-| **Tooltip**                  | Sets a tooltip that appears when the user hovers over the widget with the mouse. Use this to provide hints or extra information to the user.         |
-| **Google reCAPTCHA Key**     | Providing a Google reCAPTCHA [site key](https://cloud.google.com/recaptcha-enterprise/docs/create-key) here adds a [Google reCAPTCHA](https://www.google.com/recaptcha/about/) check to the button. The token is accessible from the API pane with the`recaptchaToken` key (see the [Google reCAPTCHA](https://www.google.com/recaptcha/about/) docs). [Read more about using Google reCAPTCHA Keys in Appsmith](/reference/widgets/button/google-recaptcha/).  |
-| **Google reCAPTCHA Version** | Sets the Google reCAPTCHA version to use for the button, either v2 or v3.  |
-| **Visible**                  | Controls widget's visibility on the page. When turned off: The widget won't be visible in the published app. It appears translucent when in Edit mode.  |
-| **Disabled**                 | Makes the widget un-clickable or unusable. The widget remains visible to the user but user interaction won't be allowed.   |
-| **Animate loading**          | When turned off, the widget loads without any skeletal animation. You can use a toggle switch to turn it on/off. You can also turn it off/on using javascript by enabling the JS label next to it. |
+Style properties allow you to change the look and feel of the button.
+
+### General
+
+#### Button variant `string`
+
+<dd>
+
+Specifies the style type of the button to indicate its significance.
+
+*Options:*
+
+* **Primary**: Fills the button with color.
+* **Secondary**: Adds a colored border to the button while keeping the button itself white.
+* **Tertiary**: This option does not apply any specific styling changes to the button.
+
+This property can be dynamically set using JavaScript by providing a string value of `PRIMARY`, `SECONDARY`, or `TERTIARY`.
+
+</dd>
+
+### Icon
+
+#### Select icon `string`
+
+<dd>
+
+Specifies the icon to be displayed on the button. Additionally, you can use **JS** to dynamically set the icon. You can refer to the documentation of [blueprintjs](https://blueprintjs.com/docs/#icons) to explore a wide range of available icons.
+
+</dd>
+
+#### Position `string`
+
+<dd>
+
+This property allows you to configure the **Icon**'s placement.
+
+*Options:*
+* **Left**: Aligns the icon to the left side of the Label.
+* **Right**: Aligns the icon to the right side of the Label.
+
+
+</dd>
+
+#### Placement `string`
+
+<dd>
+
+Determines the spacing between the **Icon** and the **Label**.
+
+*Options:*
+* **Start**: The icon and label appear on the leftmost side of the button.
+* **Between**: The icon and label appear at opposite ends of the button's space.
+* **Center**: The icon and label appear in the center of the button space.
+
+This property can be dynamically set using JavaScript by providing a string value of `START`, `CENTER`, or `BETWEEN`.
+
+</dd>
+
+### Color
+
+#### Button color `string`
+
+<dd>
+
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+
 
 ### Reference properties
 
-Reference properties are used to access the widget's data and state using code. When using reference properties, substitute `<button_name>` in the examples below with the name of your button widget.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a  button widget, you can use `Button1.isVisible`.
 
-|    Property     |    Description    |    Code Snippet    |
-| --------------- | ----------------- | ------------------ |
-| **text**               | Reflects the **Label** property, which contains the text shown in the button's area _(string)._      | `{{ <button_name>.text }}` |
-| **googleRecaptchaKey** | Reflects the **Google reCAPTCHA Key** property, contains the button's reCAPTCHA site key _(string)._ [Read more about using Google reCAPTCHA Keys in Appsmith](/reference/widgets/button/google-recaptcha/). | `{{ <button_name>.googleRecaptchaKey }}` |
-| **isVisible**          | Reflects the state of the widget's **Visible** setting _(bool)_.                                     | `{{ <button_name>.isVisible }}` |
-| **isDisabled**         | Reflects the state of the widget's **Disabled** setting _(bool)_.                                    | `{{ <button_name>.isDisabled }}` |
+#### text `string`
 
-### Style properties
+<dd>
 
-Style properties allow you to change the look and feel of the button. These properties are present in the properties pane of the widget.
+Returns the value of the button's label property.
 
-|    Style    | Description    |
-| ----------- | -------------- |
-| **Button Color**   | Sets the color of the widget's button. Accepts valid CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.   |
-| **Button Variant** | Sets the button style type to represent its significance - Primary, Secondary, or Tertiary. You can use JavaScript to set this field by writing code that evaluates to the _string_ "PRIMARY," "SECONDARY," or "TERTIARY." |
-| **Border Radius**  | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values.  |
-| **Box Shadow**     | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
-| **Icon**           | Sets an icon to be included on the button. Uses icons from the [Blueprint](https://blueprintjs.com) library. See the [list of icons here](https://blueprintjs.com/docs/#icons).  |
-| **Icon Alignment** | Sets whether the icon appears on the left or right of the button's label text.  |
-| **Placement**      | Defines where the button's icon and label appear within the space of the button. **Start:** The icon and label appear at the left-most side of the button; **Center:** The icon and label appear in the center of the button space; **Between:** The icon and label appear at opposite ends of the button's space. You can use JavaScript to set this field by writing code that evaluates to the _string_ "START," "CENTER," or "BETWEEN." |
+*Example:*
+```js
+{{Button1.text}}
+```
+</dd>
 
-## Events
+#### isVisible `boolean`
 
-These event handlers can be used to run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions/) when the event is triggered.
+<dd>
 
-|    Event    |    Description     |
-| ----------- | ------------------ |
-| **onClick** | Sets an action to take place when the user clicks on this widget. Can be set from the GUI list of built-in actions, or you can define a custom JavaScript function to call instead. |
+Indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
 
-## Further reading
+*Example:*
+```js
+{{Button1.isVisible}}
+```
 
-You may be interested in these pages that can come in handy with the Button widget:
+</dd>
 
-1. [Built-in functions](/reference/appsmith-framework/widget-actions/)
-2. [Queries](https://docs.appsmith.com/core-concepts/data-access-and-binding/querying-a-database)
-3. [Widgets](/reference/widgets/)
+#### isDisabled `boolean`
+
+<dd>
+
+It reflects the state of the widget's **Disabled** setting. It is represented by a boolean value, where true indicates that the widget is disabled, and false indicates that it is enabled for user interaction.
+
+*Example:*
+```js
+{{Button1.isDisabled}}
+```
+
+</dd>
+
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Button1..setVisibility(true)
+
+```
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the `disabled` state of the widget.
+
+*Example*:
+
+```js
+Button1.setDisabled(false)
+
+```
+
+</dd>
+
+#### setColor (param: string): Promise
+
+<dd>
+
+Sets the background color of the button widget.
+
+*Example*:
+
+```js
+Button1.setColor('#FF0000')
+```
+
+</dd>
+
+#### setLabel (param: string): Promise
+
+<dd>
+
+Sets the label of the button widget.
+
+*Example*:
+
+```js
+Button1.setLabel('Click me!')
+```
+</dd>

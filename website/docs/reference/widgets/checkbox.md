@@ -1,6 +1,6 @@
 # Checkbox
 
-This page provides instructions on using the Checkbox widget to allow users to check or uncheck an item.
+This page provides instructions on using the Checkbox widget to allow users to check or clear an item.
 
 <figure>
   <img src="/img/checkbox-img-.png" style= {{width:"700px", height:"auto"}} alt="Display Checkbox"/>
@@ -159,3 +159,68 @@ The `isDisabled` property reflects the state of the widget's **Disabled** settin
 The `isVisible` property reflects the state of the widget's **Visible** setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
 </dd>
 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+Checkbox1.setVisibility(true)
+```
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+Checkbox1.setDisabled(false)
+```
+
+</dd>
+
+#### setValue (param: boolean): Promise
+
+<dd>
+
+Allows you to dynamically set the value of the Checkbox widget.
+
+*Example*:
+
+```js
+Checkbox1.setValue(true)
+```
+
+</dd>
+
+
+#### setRequired (param: boolean): Promise
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+Checkbox1.setRequired(true)
+```
+
+</dd>

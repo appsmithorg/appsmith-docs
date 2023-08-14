@@ -199,7 +199,7 @@ For example, if you want to allow only a specific user to fill the input, you ca
 ```js
 {{appsmith.user.email=="john@appsmith.com"?false:true}}
 ```
-
+test
 </dd>
 
 
@@ -331,7 +331,7 @@ Applies rounded corners to the outer edge of the widget. If JavaScript is enable
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically.For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `CurrencyInput1.isVisible`.
 
 
 #### countryCode `string`
@@ -424,6 +424,75 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 *Example:*
 ```js
 {{CurrencyInput1.isVisible}}
+```
+
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+CurrencyInput1.setVisibility(true)
+```
+
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+CurrencyInput1.setDisabled(false)
+```
+
+</dd>
+
+#### setValue (param: number): Promise
+
+<dd>
+
+Allows you to dynamically set the value of the widget.
+
+*Example*:
+
+```js
+CurrencyInput1.setValue(123)
+```
+To perform sequential actions, use the `.then()` block for execution.
+
+
+</dd>
+
+
+#### setRequired (param: boolean): Promise
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+CurrencyInput1.setRequired(true)
 ```
 
 </dd>

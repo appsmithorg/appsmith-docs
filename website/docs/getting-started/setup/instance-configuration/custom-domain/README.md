@@ -9,8 +9,9 @@ This page explains how to set up SSL for your custom domain on the Appsmith inst
 
 ## Prerequisites
 Before configuring SSL for your custom domain, make sure you have the following:
-1. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
-2. Ports 80 and 443 are open and accessible.
+1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+2. A domain name - You can get a custom domain from popular providers like [GoDaddy](https://in.godaddy.com/help/create-a-subdomain-4080), [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/create-subdomain-route-53/), [Digital Ocean](https://www.digitalocean.com/docs/networking/dns/how-to/add-subdomain/), [NameCheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9776/2237/how-to-create-a-subdomain-for-my-domain), and [Domain.com](https://www.domain.com/help/article/domain-management-how-to-update-subdomains).
+3. Ports 80 and 443 are open and accessible.
 
 You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet. However, it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
 
@@ -40,6 +41,10 @@ You can use [Admin Settings](/getting-started/setup/instance-configuration#admin
 </figure>
 
 When you restart Appsmith, it generates an SSL certificate for your custom domain. You can now use your custom domain mapped to port 443 via HTTPS to access Appsmith in your browser.
+
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
 
 ### Environment variables
 Appsmith is deployed on a Docker container. To generate an SSL certificate, add the custom domain to the environment variable `APPSMITH_CUSTOM_DOMAIN` in a `docker.env` file. Follow the steps below:
@@ -80,5 +85,5 @@ The container uses the certificate if the files are present in the `<MOUNTING-DI
 If you’re having issues accessing Appsmith after Appsmith SSL Configuration, please see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) troubleshooting guide. 
 
 ## Further reading
-- [Container logs](/learning-and-resources/how-to-guides/how-to-get-container-logs)
+- [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
 - [Instance Management](/getting-started/setup/instance-management) 

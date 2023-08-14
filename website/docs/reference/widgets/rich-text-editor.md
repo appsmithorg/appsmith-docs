@@ -5,7 +5,6 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 
 This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
 
-<VideoEmbed host="youtube" videoId="_KrxFScQJys" title="Using Rich Text Editor Widget" caption="Using Rich Text Editor Widget"/>
 
 ## Content properties
 
@@ -298,5 +297,59 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 {{RichTextEditor1.isVisible}}
 ```
 
+
+</dd>
+
+## Methods
+
+The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+#### setVisibility (param: boolean): Promise
+
+
+<dd>
+
+Sets the visibility of the widget.
+
+*Example*:
+
+```js
+RichTextEditor1.setVisibility(true)
+```
+
+</dd>
+
+
+#### setDisabled (param: boolean): Promise
+
+
+<dd>
+
+Sets the disabled state of the widget.
+
+*Example*:
+
+```js
+RichTextEditor1.setDisabled(false)
+```
+
+</dd>
+
+
+#### setRequired (param: boolean): Promise
+
+
+<dd>
+
+Sets whether the widget is required or not.
+
+*Example*:
+
+```js
+RichTextEditor1.setRequired(true)
+```
 
 </dd>

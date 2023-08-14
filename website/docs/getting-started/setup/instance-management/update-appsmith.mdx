@@ -1,362 +1,72 @@
 ---
-description: Follow the steps to update Appsmith to the latest version.
+description: This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
 toc_max_heading_level: 2
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Update Appsmith
-This page provides steps to update Appsmith to the latest version.
 
-:::info
-The steps below apply to both the Community and Business editions.
-:::
+This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
 
 ## Prerequisites
-Before you start the update process, make sure you complete the below steps:
 
-* Ensure you have at least 2 GB of free storage space for backup and update tasks.
-* You can create a backup of the Appsmith instance before a manual update. For more information, see [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) (_Recommended_)
+* At least 2 GB of free storage space for backup and update tasks.
 
-:::caution Attention
-If you are on a version earlier than v1.9.2, first upgrade:
-   * Your Embedded or Custom MongoDB server to use MongoDB v5. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/) once your infrastructure is in place.
-   * Follow the steps in the [Upgrade to a Checkpoint version](#upgrade-to-a-checkpoint-version) section to update Appsmith.
-:::
+## Before you begin
 
-Follow one of the guides below to update Appsmith on your installation platform:
+* Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
+* Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
 
-## Docker Compose
-The steps below work with any platform that supports Docker. For example, Docker, AWS AMI, or DigitalOcean.
+## Update on Docker
 
-You can update Appsmith in one of the below ways:
+Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.
 
-* [Manual update](#manual-update)
-* [Schedule automatic update](#automatic-update)
+Follow these steps to update Appsmith, these instructions can be used to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
-:::info
-To find the Appsmith installation directory, run the following command:
+1. Go to the Appsmith installation directory. If you don't know the directory, find it with:
 
-```bash
-docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
-```
-:::
-
-### Manual update
-Go to the root directory of your installation and run:
-
-```bash
-docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
-```
-
-### Schedule automatic update
-
-Follow the below steps to schedule the auto updates:
-
-:::info
-Before an automatic update, Appsmith creates a backup. You may use this to roll back to a previous version in case of any issues.
-:::
-
-1. Go to the root directory of the Appsmith installation and run:
-
-   ```bash
-   docker-compose down
-   ```
-
-2. Open the `docker-compose.yml` file and uncomment the below code block:
-
-  :::caution Attention
-  The automatic update is scheduled to run at midnight. If you prefer a different update time, change the expression accordingly.
-  :::
-   
-   ```yaml
-   #auto_update:
-   #  image: containrrr/watchtower
-   #  volumes:
-   #    - /var/run/docker.sock:/var/run/docker.sock
-   #  # Update check interval in seconds.
-   #  command: --schedule "0 0 * ? * *" --label-enable --cleanup
-   #  restart: unless-stopped
-   #  depends_on:
-   #    - appsmith
-   #  environment:
-   #    - WATCHTOWER_LIFECYCLE_HOOKS=true
-   ```
-
-3. Save the file and run:
-
-   ```bash
-   docker-compose up -d
-   ```
-
-This setup runs an Appsmith and a Watchtower container. The Watchtower checks and updates Appsmith when a new version becomes available. 
-
-You may also schedule automatic updates for your instance. For more information, see [Schedule automatic updates for Docker installation](/getting-started/setup/instance-management/maintenance-window#schedule-automatic-updates-for-docker-installation).
-
-## Kubernetes
-
-Follow the steps to update your Appsmith installation:
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-
-<TabItem label="Community Edition" value="communityEdition"> 
-
-You can update Appsmith in one of the below ways:
-
-### Automatic update
-
-The default Appsmith helm installation disables auto update (_recommended_). You have the option to enable auto update by either setting it in the values file or using a command.
-
-* Running the command below.
-  ```bash 
-    helm install appsmith/appsmith appsmith \
-      #highlight-next-line
-      --set autoupdate.enabled=true
+  ```bash
+  docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
   ```
+2. Update the Appsmith installation to the latest version with:
 
-* Or edit `values.yaml` and specify the following parameters
-```bash
-helm upgrade -i appsmith appsmith/appsmith -f values.yaml
-```
+  ```bash
+  docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
+  ```
+The above command pulls the latest image of Appsmith and updates the installation after restarting the Docker container.
 
-### Manual update
+You may choose to schedule automatic updates for your Appsmith Docker installation. For more information, see [Schedule Automatic Updates for Docker installation](/getting-started/setup/instance-management/maintenance-window#docker).
 
-To manually update the Appsmith container image to the latest release, run the command: 
+## Update on Kubernetes
 
-```bash
-kubectl rollout restart statefulset appsmith
-```
+Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update Appsmith:
 
-</TabItem>
+* If you are on the **Community Edition**, update the installation to the latest release with:
 
-<TabItem label="Business Edition" value="businessEditin">
+  ```bash
+  kubectl rollout restart statefulset appsmith
+  ```
+* If you are on the **Business Edition**, update the Appsmith container image to the latest release with: 
 
-You can update Appsmith in one of the below ways:
+  ```bash
+  kubectl rollout restart deployment appsmith
+  ```
+You may choose to schedule automatic updates for your Appsmith Kubernetes installation. For more information, see [Schedule Automatic Updates for Kubernetes installation](/getting-started/setup/instance-management/maintenance-window#kubernetes ).
 
-### Automatic update
+## Update on AWS ECS EC2
 
-The default Appsmith helm installation disables auto update (_recommended_). You have the option to enable auto update by either:
-  - Running the command below.
-    ```bash
-    helm upgrade --set autoupdate.enabled=true \
-    appsmith appsmith-ee/appsmith 
-    ```
-  - Or edit `values.yaml` and specify the following parameters
-    ```yaml
-    autoupdate.enabled: true
-    autoupdate.scheduler: 0
-    ```
-    Followed by running the command below.
-    ```bash
-    helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
-    ```
-
-### Manual update
-
-To manually update the Appsmith container image to the latest release, run the command: 
-
-```bash
-kubectl rollout restart deployment appsmith
-```
-
-</TabItem>
-</Tabs>
-
-## AWS ECS EC2
-Follow the below steps using the Classic Amazon Web Console to manually update Appsmith:
+Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow the below steps using the Classic Amazon Web Console to update Appsmith:
 
 1. Log in to your [AWS account](https://console.aws.amazon.com/ecs/).
 2. Go to the **Amazon ECS console**.
-3. Select the **cluster** that contains the container instance that you want to update.
+3. Choose the **cluster** that has the container instance you wish to update.
 4. Click the **Tasks** tab.
-5. Select and click the **task** that you want to update. 
-6. Click the **Stop** button to stop the task. A new task is deployed automatically. Wait for the new task to be deployed.
+5. Select and click the **task** you wish to update. 
+6. Click the **Stop** button to stop the task. Wait for the automatic deployment of a new task to be completed.
 7. Verify that the updated version of your application is running as expected.
-
-## Upgrade to a checkpoint version
-
-When performing a manual upgrade, you must:
-
-* First, upgrade to the checkpoint between your current and the latest versions.
-* Appsmith checkpoint versions:
-  * v1.9.2
-
-Follow the steps below to upgrade to a checkpoint version:
-
-1. Access your Appsmith instance. Make the below change to the `docker-compose.yml` file:
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-  <TabItem value="CE" label="Community Edition" default>
-
-```yaml
-services:
-  appsmith:
-    #highlight-next-line
-    image: index.docker.io/appsmith/appsmith-ce:v1.9.2
-    container_name: appsmith
-```
-
-</TabItem>
-   <TabItem value="BE" label="Business Edition">
-
-```yaml
-services:
-  appsmith:
-    #highlight-next-line
-    image: index.docker.io/appsmith/appsmith-ee:v1.9.2
-    container_name: appsmith
-```
-   
-   </TabItem>
-</Tabs>
-
-2. Save and run the below command on your shell to restart Appsmith.
-
-```bash
-docker-compose up -d
-```
-
-3. Your server starts with the older version. It applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image in the `docker-compose.yml` file and resume normal operations.
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-  <TabItem value="CE" label="Community Edition" default>
-
-  ```yaml
-  services:
-  appsmith:
-    #highlight-next-line
-    image: index.docker.io/appsmith/appsmith-ce
-    container_name: appsmith
-  ```
-  
-  </TabItem>
-  <TabItem value="BE" label="Business Edition">
-
-  ```yaml
-  services:
-    appsmith:
-      #highlight-next-line
-      image: index.docker.io/appsmith/appsmith-ee
-      container_name: appsmith
-  ```
-  </TabItem>
-</Tabs>
-
-4. Run the restart command once again: 
-
- ```bash
- docker-compose up -d
- ```
- 
- 
-:::note 
-If you haven't been using your Appsmith instance for a while, it could be possible that there might be multiple versions that show up in the error message. In such a case, perform the same steps for each version in order, starting from the oldest.
-:::
-
-## Switch off auto updates
-
- Follow the below steps for your Appsmith installation to switch off auto updates:
-
-<Tabs queryString="current-installation">
-  <TabItem label="Docker" value="Docker"> 
-
-1. Go to the root directory of the Appsmith installation and run:
-
-   ```bash
-   docker-compose down
-   ```
-
-2. Open the `docker-compose.yml` file and comment out the below code block:
-   
-   ```yaml
-   auto_update:
-     image: containrrr/watchtower
-     volumes:
-       - /var/run/docker.sock:/var/run/docker.sock
-     # Update check interval in seconds.
-     command: --schedule "0 0 * ? * *" --label-enable --cleanup
-     restart: unless-stopped
-     depends_on:
-       - appsmith
-     environment:
-       - WATCHTOWER_LIFECYCLE_HOOKS=true
-   ```
-
-3. Save the file and run:
-
-```bash
-docker-compose up -d --force-recreate
-```
-
-4. Verify that auto update is turned off with:
-
-```bash
-docker-compose ps
-```
-
-  </TabItem>
-
-<TabItem label="Kubernetes" value="Kubernetes">
-Follow the steps below to turn off auto updates:
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-<TabItem label="Community Edition" value="communityEdition"> 
-
-  You can switch off auto update by either using a command or setting it in the `values.yaml` file.
-
-  * Run the below command:
-
-  ```bash
-    #highlight-next-line
-    helm upgrade --set autoupdate.enabled=false \
-     appsmith appsmith/appsmith
-  ```
-
-  * **Or** edit `values.yaml`, update the below parameters:
-  ```yaml
-    autoupdate.enabled: false
-    autoupdate.scheduler: 0
-  ```
-  and run the below command:
-  ```bash
-    helm upgrade --values values.yaml appsmith appsmith/appsmith
-  ```
-
-</TabItem>
-<TabItem label="Business Edition" value="businessEdition"> 
-
-You can switch off auto update by either using a command or setting it in the `values.yaml` file.
-
-  * Run the below command:
-
-  ```bash
-    #highlight-next-line
-    helm upgrade --set autoupdate.enabled=false \
-    appsmith appsmith-ee/appsmith 
-  ```
-
-  * **Or** edit `values.yaml`, update the below parameters:
-  ```yaml
-    autoupdate.enabled: false
-    autoupdate.scheduler: 0
-  ```
-  and run the below command:
-  ```bash
-  helm upgrade --values values.yaml appsmith appsmith-ee/appsmith
-  ```
-
-</TabItem>
-
-</Tabs>
-
-</TabItem>
-
-</Tabs>
-
 
 ## Troubleshooting
 
-If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
+If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
 
-If you continue to face issues, contact the [support team](mailto:support@appsmith.com).
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+
