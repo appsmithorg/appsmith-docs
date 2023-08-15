@@ -21,28 +21,29 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a DynamoDB datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Region</b></dt>
-  <dd>
-  
+#### Region
+
+<dd>
+
 The region where your DynamoDB instance is hosted.
 
-  </dd><br/>
+</dd>
 
-  <dt><b>AWS Access Key ID</b></dt>
-  <dd>
+#### AWS Access Key ID
+
+<dd>
 
 The AWS access key used to identify your IAM user for DynamoDB. Be sure to use the access key for your IAM user with the set of privileges you want your Appsmith app to have. For more information on using an AWS access key, see [Create Access Key](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/).
 
-  </dd>
+</dd>
 
-  <dt><b>AWS Secret Access Key</b></dt>
-  <dd>
+#### AWS Secret Access Key
+
+<dd>
 
 The secret value used to authenticate your queries to DynamoDB. This value is accessible from your AWS security credentials page. To learn more about your AWS Secret Key, see the [AWS Security Blog](https://aws.amazon.com/blogs/security/how-to-find-update-access-keys-password-mfa-aws-management-console/).
 
-  </dd>
-</dl>
+</dd>
 
 ## Create queries
 
