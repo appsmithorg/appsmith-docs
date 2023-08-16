@@ -448,7 +448,7 @@ If you want to bind the response from a query or a JS function, then you can use
 {{GetAllEmployees.data}}
 ```
 
-To learn how to bind data from JS functions, see [Display Data from JS function](/core-concepts/writing-code/workflows#display-data-from-async-js-function)
+To learn how to bind data from JS functions, see [Display Data from JS function](/write-code/how-to-guides/Chain-functions-and-promises)
 
 To display the data in individual widgets in the list item cards, use the **currentItem** property to bind the corresponding value from the object's fields in the widget as shown below. 
  

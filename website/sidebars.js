@@ -464,6 +464,7 @@ const sidebars = {
         label: 'How-To Guides',
         link: { type: 'doc', id: 'write-code/how-to-guides/README' },
         items: [
+          'write-code/how-to-guides/write-code-in-appsmith',
           'write-code/how-to-guides/sharing-data-across-pages',
           'write-code/how-to-guides/javascript-promises',
           'write-code/how-to-guides/ext-libraries',

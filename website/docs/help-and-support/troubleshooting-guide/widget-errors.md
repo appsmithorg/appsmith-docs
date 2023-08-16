@@ -26,13 +26,13 @@ messageContent="Found a Promise() during evaluation. Sync fields cannot execute 
 
 
 #### Cause
-Action refers to the execution of an API, Query, or JS object. You can only perform an action by binding it to an [async](/core-concepts/writing-code/workflows#async-fields) field. When you bind an action to a [sync](/core-concepts/writing-code/workflows#sync-fields) field that only expects data, it throws an error.
+Action refers to the execution of an API, Query, or JS object. You can only perform an action by binding it to an [async](/write-code/how-to-guides/Chain-functions-and-promises) field. When you bind an action to a [sync](/write-code/how-to-guides/Chain-functions-and-promises) field that only expects data, it throws an error.
 
 Example: if you are executing a `storeValue()` function in a `TableData` property of a table. The `TableData` property expects data and can't execute a function, and results in an error. Similarly, if you try to execute a JS Object function `<JSOBJECT_NAME.FUNCTION_NAME>` in the `TableData` property, it throws an error.
 
 
 #### Solution
-Invoke the [data property](/core-concepts/writing-code/workflows#use-an-async-function-response-in-a-sync-field) of an API, Query or JS object.
+Invoke the [data property](/write-code/how-to-guides/Chain-functions-and-promises) of an API, Query or JS object.
 
 For example, you have a JS Object `getLoggedInUserInfo`, which has a function ```getFullNameOfLoggedInUser```. The function returns the full name of the logged-in user. You wish to add the full name and create a welcome text, `Welcome! <LOGGED_IN_USER_NAME>`. Bind the response of ```getFullNameOfLoggedInUser``` function to a text widget by calling the `.data` property. To bind the response, add the below code snippet in a mustache (`{{}}`) sign.
 

@@ -6,7 +6,8 @@ toc_min_heading_level: 2
 toc_max_heading_level: 4
 ---
 
-# Writing Code
+# Write code in Appsmith 
+
 Appsmith enables writing JavaScript code almost everywhere on the GUI inside widget properties, events listeners, queries, and other settings. With the help of the JavaScript editor and the debugging tools, you can write complex reusable code and build scalable applications.
 
 Appsmith also provides the ability to [import external libraries](/write-code/how-to-guides/ext-libraries#custom-javascript-libraries), helping you expand the capabilities of your applications.

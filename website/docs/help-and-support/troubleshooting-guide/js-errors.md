@@ -255,7 +255,7 @@ You can also check the EVALUATED VALUE section to make sure that it's returning 
 ## Syntax error
 
 
-This error occurs when there is invalid JavaScript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Verify the number of braces in your code and consider re-writing your [JS as multi-line ](../../core-concepts/writing-code/#multi-line-javascript)code.
+This error occurs when there is invalid JavaScript inside the handlebars `{{ }}`. The evaluated value of the field is displayed as undefined in this case. Verify the number of braces in your code and consider re-writing your [JS as multi-line ](/write-code/how-to-guides/write-code-in-appsmith#multi-line-code)code.
 
 
 In the example below, fetch isn't defined anywhere in the application

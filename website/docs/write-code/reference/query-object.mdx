@@ -61,7 +61,7 @@ run(params: Object): Promise
 | **params**    | An object containing key-value pairs to pass into the query. You can access it using the key - `{{ this.params.KEY_NAME }}`. |
 
 
-`run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
+`run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax. It can't be used in [synchronous fields](/write-code/how-to-guides/Chain-functions-and-promises).
 
 ```javascript
 // Using promise syntax to chain actions in sequence
