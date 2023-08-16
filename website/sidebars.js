@@ -350,7 +350,20 @@ const sidebars = {
       label: 'How-To Guides',
       link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
       items: [
-
+        'build-apps/how-to-guides/Server-side-pagination-in-table',
+        'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+        'build-apps/how-to-guides/refresh-table-data',
+        'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+        'reference/widgets/table/inline-editing',
+        'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+        'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+        'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+        'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+        'build-apps/how-to-guides/Create-Nested-Lists',
+        'build-apps/how-to-guides/Server-side-filtering-table',
+        'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+        'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
+        'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
       ]
     },
     {
