@@ -1,4 +1,4 @@
-# Display Data (Read)
+# Reactive programming
 
 You can display data from a query or JS function in a widget. Before reading this page, ensure you have connected to a data source and have a query that fetches data.
 
