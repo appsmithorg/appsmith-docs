@@ -335,92 +335,24 @@ const sidebars = {
         'connect-data/integrations'
       ]
     }, //Data end
+
+// Build App Start
+
+{ // UI start
+  type: 'category',
+  collapsed: false,
+  label: 'Build Apps',
+  items: [ 
+    'build-apps/overview',
     {
-      //core concepts section start
       type: 'category',
-      collapsed: false,
-      label: 'Core Concepts',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
       items: [
-        {
-          type: 'category',
-          label: 'Building UI',
-          link: { type: 'doc', id: 'core-concepts/building-ui/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Designing an Application',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/designing-an-application/README',
-              },
-              items: [
-                'core-concepts/building-ui/designing-an-application/app-theming',
-                'core-concepts/building-ui/designing-an-application/application-layout',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building Dynamic UI',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/dynamic-ui/README',
-              },
-              items: ['core-concepts/building-ui/dynamic-ui/widget-visibility'],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Data Access and Binding',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/data-access-and-binding/README',
-          },
-          items: [
-            'core-concepts/data-access-and-binding/querying-a-database',
-            'core-concepts/data-access-and-binding/displaying-data-read/README',
-            {
-              type: 'category',
-              label: 'Capturing Data (Write)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/capturing-data-write/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Writing Code',
-          link: { type: 'doc', id: 'core-concepts/writing-code/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'JS Objects',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/writing-code/javascript-editor-beta/README',
-              },
-              items: [
-                'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-              ],
-            },
-            'core-concepts/writing-code/workflows',
-            'core-concepts/writing-code/javascript-promises',
-            'core-concepts/writing-code/ext-libraries',
-            {
-              type: 'link',
-              label: 'Appsmith Framework',
-              href: '/reference/appsmith-framework/',
-            },
-          ],
-        },
-      ],
-    }, //core concepts end
-    
+
+      ]
+    },
     {
       //Reference start
       type: 'category',
@@ -497,8 +429,7 @@ const sidebars = {
               label: 'Table',
               link: { type: 'doc', id: 'reference/widgets/table/README' },
               items: [
-                'reference/widgets/table/column-settings',
-                'reference/widgets/table/inline-editing',
+                'reference/widgets/table/column-settings'
               ],
             },
             'reference/widgets/text',
@@ -506,6 +437,113 @@ const sidebars = {
             'reference/widgets/video',
           ],
         },
+        {
+          type: 'category',
+          label: 'App Settings',
+          link: { type: 'doc', id: 'build-apps/reference/app-settings/README' },
+          items: [
+            'core-concepts/building-ui/designing-an-application/app-theming',
+            'core-concepts/building-ui/designing-an-application/application-layout',
+          ],
+       },
+      ],
+    }, //Reference End
+  ]
+}, //Build Apps end
+
+
+
+    {
+      //core concepts section start
+      type: 'category',
+      collapsed: false,
+      label: 'Core Concepts',
+      items: [
+        {
+          type: 'category',
+          label: 'Building UI',
+          link: { type: 'doc', id: 'core-concepts/building-ui/README' },
+          items: [
+            {
+              type: 'category',
+              label: 'Designing an Application',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/building-ui/designing-an-application/README',
+              },
+              items: [
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Building Dynamic UI',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/building-ui/dynamic-ui/README',
+              },
+              items: ['core-concepts/building-ui/dynamic-ui/widget-visibility'],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Data Access and Binding',
+          link: {
+            type: 'doc',
+            id: 'core-concepts/data-access-and-binding/README',
+          },
+          items: [
+            'core-concepts/data-access-and-binding/querying-a-database',
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
+            {
+              type: 'category',
+              label: 'Capturing Data (Write)',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/data-access-and-binding/capturing-data-write/README',
+              },
+              items: [
+                'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Writing Code',
+          link: { type: 'doc', id: 'core-concepts/writing-code/README' },
+          items: [
+            {
+              type: 'category',
+              label: 'JS Objects',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/writing-code/javascript-editor-beta/README',
+              },
+              items: [
+                'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
+              ],
+            },
+            'core-concepts/writing-code/workflows',
+            'core-concepts/writing-code/javascript-promises',
+            'core-concepts/writing-code/ext-libraries',
+            {
+              type: 'link',
+              label: 'Appsmith Framework',
+              href: '/reference/appsmith-framework/',
+            },
+          ],
+        },
+      ],
+    }, //core concepts end
+    
+    {
+      //Reference start
+      type: 'category',
+      collapsed: false,
+      label: 'Reference',
+      items: [
         {
           type: 'category',
           label: 'Appsmith Framework',
