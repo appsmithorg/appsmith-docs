@@ -335,209 +335,198 @@ const sidebars = {
         'connect-data/integrations'
       ]
     }, //Data end
-    {
-      //core concepts section start
-      type: 'category',
-      collapsed: false,
-      label: 'Core Concepts',
-      items: [
-        {
-          type: 'category',
-          label: 'Building UI',
-          link: { type: 'doc', id: 'core-concepts/building-ui/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Designing an Application',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/designing-an-application/README',
+
+   { // UI start
+    type: 'category',
+    collapsed: false,
+    label: 'Build UI',
+    items: [ 
+      'build-ui/overview',
+      {
+        type: 'category',
+        collapsed: true,
+        label: 'How-To Guides',
+        link: { type: 'doc', id: 'build-ui/how-to-guides/README' },
+        items: [
+          'build-ui/how-to-guides/inline-editing',
+          'build-ui/how-to-guides/Server-side-pagination-in-table',
+          'build-ui/how-to-guides/Setup-Server-side-Searching-on-Table',
+          'build-ui/how-to-guides/Server-side-filtering-table'
+        ]
+      },
+      {
+        //Reference start
+        type: 'category',
+        collapsed: false,
+        label: 'Reference',
+        items: [
+          {
+            type: 'category',
+            label: 'Widgets',
+            link: { type: 'doc', id: 'reference/widgets/README' },
+            items: [
+              'reference/widgets/audio',
+              'reference/widgets/audio-recorder',
+              {
+                type: 'category',
+                label: 'Button',
+                link: { type: 'doc', id: 'reference/widgets/button/README' },
+                items: ['reference/widgets/button/google-recaptcha'],
               },
-              items: [
-                'core-concepts/building-ui/designing-an-application/app-theming',
-                'core-concepts/building-ui/designing-an-application/application-layout',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building Dynamic UI',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/dynamic-ui/README',
+              {
+                type: 'category',
+                label: 'Button Group',
+                link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+                items: [
+                  'reference/widgets/button-group/buttons'
+                ],
               },
-              items: ['core-concepts/building-ui/dynamic-ui/widget-visibility'],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Data Access and Binding',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/data-access-and-binding/README',
+              'reference/widgets/camera',
+              'reference/widgets/category-slider',
+              'reference/widgets/chart',
+              'reference/widgets/checkbox',
+              'reference/widgets/checkbox-group',
+              'reference/widgets/code-scanner',
+              'reference/widgets/container',
+              'reference/widgets/currency-input',
+              'reference/widgets/datepicker',
+              'reference/widgets/divider',
+              'reference/widgets/document-viewer',
+              'reference/widgets/form',
+              'reference/widgets/filepicker',
+              'reference/widgets/icon-button',
+              'reference/widgets/iframe',
+              'reference/widgets/image',
+              'reference/widgets/input',
+              'reference/widgets/json-form',
+              'reference/widgets/list',
+              'reference/widgets/maps',
+              'reference/widgets/map-chart',
+              {
+                type: 'category',
+                label: 'Menu Button',
+                link: { type: 'doc', id: 'reference/widgets/menu/README' },
+                items: [
+                  'reference/widgets/menu/menu-items'
+                ],
+              },
+              'reference/widgets/modal',
+              'reference/widgets/multiselect',
+              'reference/widgets/multi-tree-select',
+              'reference/widgets/number-slider',
+              'reference/widgets/phone-input',
+              'reference/widgets/progress',
+              'reference/widgets/radio-group',
+              'reference/widgets/range-slider',
+              'reference/widgets/rating',
+              'reference/widgets/rich-text-editor',
+              'reference/widgets/select',
+              'reference/widgets/stat-box',
+              'reference/widgets/switch',
+              'reference/widgets/switch-group',
+              'reference/widgets/tabs',
+              {
+                type: 'category',
+                label: 'Table',
+                link: { type: 'doc', id: 'reference/widgets/table/README' },
+                items: [
+                  'reference/widgets/table/column-settings'
+                ],
+              },
+              'reference/widgets/text',
+              'reference/widgets/tree-select',
+              'reference/widgets/video',
+            ],
           },
-          items: [
-            'core-concepts/data-access-and-binding/querying-a-database',
-            'core-concepts/data-access-and-binding/displaying-data-read/README',
-            {
-              type: 'category',
-              label: 'Capturing Data (Write)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/capturing-data-write/README',
+          {
+            type: 'category',
+            label: 'App Settings',
+            link: { type: 'doc', id: 'build-ui/reference/app-settings/README' },
+            items: [
+              'build-ui/reference/app-settings/app-theming',
+              'build-ui/reference/app-settings/application-layout'
+            ],
+         },
+        ],
+      }, //Reference End
+    ]
+  }, //UI end
+
+  { // WRITE CODE start
+    type: 'category',
+    collapsed: false,
+    label: 'Write Code',
+    items: [ 
+      'write-code/overview',
+      {
+        type: 'category',
+        collapsed: true,
+        label: 'How-To Guides',
+        link: { type: 'doc', id: 'write-code/how-to-guides/README' },
+        items: [
+          'write-code/how-to-guides/sharing-data-across-pages',
+          'write-code/how-to-guides/javascript-promises',
+          'write-code/how-to-guides/ext-libraries',
+          'write-code/how-to-guides/Chain-functions-and-promises'
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Reference',
+        link: { type: 'doc', id: 'write-code/reference/README' },
+        items: [
+          'write-code/reference/context-object',
+          'write-code/reference/console-object',
+          'write-code/reference/query-object',
+
+              {
+                type: 'category',
+                label: 'Framework Functions',
+                link: {
+                  type: 'doc',
+                  id: 'write-code/reference/widget-actions/README',
+                },
+                items: [
+                  'write-code/reference/widget-actions/navigate-to',
+                  'write-code/reference/widget-actions/show-alert',
+                  'write-code/reference/widget-actions/show-modal',
+                  'write-code/reference/widget-actions/close-modal',
+                  'write-code/reference/widget-actions/store-value',
+                  'write-code/reference/widget-actions/download',
+                  'write-code/reference/widget-actions/copy-to-clipboard',
+                  'write-code/reference/widget-actions/reset-widget',
+                  'write-code/reference/widget-actions/intervals-time-events',
+                  'write-code/reference/widget-actions/post-message'
+                ]
               },
-              items: [
-                'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
-              ],
+            ],
+      },
+      {
+        type: 'category',
+        collapsed: true,
+        label: 'Concepts',
+        link: { type: 'doc', id: 'write-code/concepts/README' },
+        items: [
+          {
+            type: 'category',
+            label: 'JS Objects',
+            link: {
+              type: 'doc',
+              id: 'write-code/concepts/javascript-editor-beta/README',
             },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Writing Code',
-          link: { type: 'doc', id: 'core-concepts/writing-code/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'JS Objects',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/writing-code/javascript-editor-beta/README',
-              },
-              items: [
-                'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-              ],
-            },
-            'core-concepts/writing-code/workflows',
-            'core-concepts/writing-code/javascript-promises',
-            'core-concepts/writing-code/ext-libraries',
-            {
-              type: 'link',
-              label: 'Appsmith Framework',
-              href: '/reference/appsmith-framework/',
-            },
-          ],
-        },
-      ],
-    }, //core concepts end
-    
-    {
-      //Reference start
-      type: 'category',
-      collapsed: false,
-      label: 'Reference',
-      items: [
-        {
-          type: 'category',
-          label: 'Widgets',
-          link: { type: 'doc', id: 'reference/widgets/README' },
-          items: [
-            'reference/widgets/audio',
-            'reference/widgets/audio-recorder',
-            {
-              type: 'category',
-              label: 'Button',
-              link: { type: 'doc', id: 'reference/widgets/button/README' },
-              items: ['reference/widgets/button/google-recaptcha'],
-            },
-            {
-              type: 'category',
-              label: 'Button Group',
-              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
-              items: [
-                'reference/widgets/button-group/buttons'
-              ],
-            },
-            'reference/widgets/camera',
-            'reference/widgets/category-slider',
-            'reference/widgets/chart',
-            'reference/widgets/checkbox',
-            'reference/widgets/checkbox-group',
-            'reference/widgets/code-scanner',
-            'reference/widgets/container',
-            'reference/widgets/currency-input',
-            'reference/widgets/datepicker',
-            'reference/widgets/divider',
-            'reference/widgets/document-viewer',
-            'reference/widgets/form',
-            'reference/widgets/filepicker',
-            'reference/widgets/icon-button',
-            'reference/widgets/iframe',
-            'reference/widgets/image',
-            'reference/widgets/input',
-            'reference/widgets/json-form',
-            'reference/widgets/list',
-            'reference/widgets/maps',
-            'reference/widgets/map-chart',
-            {
-              type: 'category',
-              label: 'Menu Button',
-              link: { type: 'doc', id: 'reference/widgets/menu/README' },
-              items: [
-                'reference/widgets/menu/menu-items'
-              ],
-            },
-            'reference/widgets/modal',
-            'reference/widgets/multiselect',
-            'reference/widgets/multi-tree-select',
-            'reference/widgets/number-slider',
-            'reference/widgets/phone-input',
-            'reference/widgets/progress',
-            'reference/widgets/radio-group',
-            'reference/widgets/range-slider',
-            'reference/widgets/rating',
-            'reference/widgets/rich-text-editor',
-            'reference/widgets/select',
-            'reference/widgets/stat-box',
-            'reference/widgets/switch',
-            'reference/widgets/switch-group',
-            'reference/widgets/tabs',
-            {
-              type: 'category',
-              label: 'Table',
-              link: { type: 'doc', id: 'reference/widgets/table/README' },
-              items: [
-                'reference/widgets/table/column-settings',
-                'reference/widgets/table/inline-editing',
-              ],
-            },
-            'reference/widgets/text',
-            'reference/widgets/tree-select',
-            'reference/widgets/video',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Appsmith Framework',
-          link: { type: 'doc', id: 'reference/appsmith-framework/README' },
-          items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
-            {
-              type: 'category',
-              label: 'Framework Functions',
-              link: {
-                type: 'doc',
-                id: 'reference/appsmith-framework/widget-actions/README',
-              },
-              items: [
-                'reference/appsmith-framework/widget-actions/navigate-to',
-                'reference/appsmith-framework/widget-actions/show-alert',
-                'reference/appsmith-framework/widget-actions/show-modal',
-                'reference/appsmith-framework/widget-actions/close-modal',
-                'reference/appsmith-framework/widget-actions/store-value',
-                'reference/appsmith-framework/widget-actions/download',
-                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-                'reference/appsmith-framework/widget-actions/reset-widget',
-                'reference/appsmith-framework/widget-actions/intervals-time-events',
-                'reference/appsmith-framework/widget-actions/post-message'
-              ]
-            },
-          ],
-        },
-      ],
-    }, //Reference End
+            items: [
+              'write-code/concepts/javascript-editor-beta/asynchronous-javascript-function-settings',
+            ],
+          },
+          'write-code/concepts/reactive-programming'
+        ]
+      },
+    ]
+  }, //CODE end
+
+// old core concepts
+//old ref removed 
+
     {
       //Advanced Concepts Start
       type: 'category',
@@ -581,7 +570,6 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
