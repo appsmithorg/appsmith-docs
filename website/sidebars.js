@@ -349,6 +349,7 @@ const sidebars = {
         link: { type: 'doc', id: 'build-ui/how-to-guides/README' },
         items: [
           'build-ui/how-to-guides/Server-side-pagination-in-table',
+          'build-ui/how-to-guides/Setup-Server-side-Pagination-on-List',
           'build-ui/how-to-guides/refresh-table-data',
           'build-ui/how-to-guides/Filter-Table-Data-using-Datepicker',
           'build-ui/how-to-guides/inline-editing',
