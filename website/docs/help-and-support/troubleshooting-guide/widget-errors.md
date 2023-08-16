@@ -3,7 +3,7 @@
 This section helps you troubleshoot common widget errors on the Appsmith platform.
 
 ## Binding errors
-You may see below errors when binding data to widgets from an API, Query, or [JS object](/core-concepts/writing-code/javascript-editor-beta/).
+You may see below errors when binding data to widgets from an API, Query, or [JS object](/write-code/concepts/javascript-editor-beta/).
 
 ### Sync field error
 

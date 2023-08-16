@@ -58,7 +58,7 @@ In this section, you'll learn to:
    ```javascript
    👋 Hey {{appsmith.user.name}}, welcome back!
    ``` 
-  For more information about the `appsmith.user` object, see [Context Object](/reference/appsmith-framework/context-object#user).
+  For more information about the `appsmith.user` object, see [Context Object](/write-code/reference/context-object#user).
 
   The output should look like this: 
 

@@ -12,7 +12,7 @@ sidebar_position: 4
 
 You are now almost ready with your super cool dashboard. To make your app more interactive, add another page that shows reviews of that particular business.
 
- Start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](/reference/appsmith-framework/context-object)and use it as a reference. Follow the instructions below:
+ Start by adding a button that'll redirect to a new page. Also, on the new page, you would require the **`business_id`** to filter the reviews from the review table. Hence, now store the value in the [Appsmith Context Object ](/write-code/reference/context-object)and use it as a reference. Follow the instructions below:
 
 <VideoEmbed host="youtube" videoId="7xQid95aHuM" title="Storing Value and Redirecting to a Page" caption="Storing Value and Redirecting to a Page"/>
 
@@ -212,5 +212,5 @@ The basic Review Moderator Dashboard is now up and running. It also marks the en
 
 * [Widgets](/reference/widgets/)
 * [Datasource Reference](/connect-data/reference)
-* [Appsmith Framework](/reference/appsmith-framework/)
-* [JavaScript Editor](/core-concepts/writing-code/javascript-editor-beta/)
+* [Appsmith Framework](/write-code/reference/)
+* [JavaScript Editor](/write-code/concepts/javascript-editor-beta/)

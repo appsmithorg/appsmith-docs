@@ -106,9 +106,6 @@ REMOVE "{{ UsersTable.selectedRow.id }}" IN users
 
 In the example above, the query uses the `id` of the row selected in the `UsersTable` Table widget to delete that record.
 
-## See also
-
-[Data access and binding](/core-concepts/data-access-and-binding)
 
 ## Troubleshooting
 

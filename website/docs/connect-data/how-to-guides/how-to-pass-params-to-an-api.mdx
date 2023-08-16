@@ -13,7 +13,7 @@ This page describes how to use the run() function in a loop to pass different pa
 
 In some cases, like running a query inside a loop, different parameters may need to be passed to the query each time with values contextual to the execution.
 
-For this, you can use the [`run()` function's](/reference/appsmith-framework/query-object)  `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
+For this, you can use the [`run()` function's](/write-code/reference/query-object)  `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
 
 ---
 
@@ -21,7 +21,7 @@ As an example, the snippets below fetch specific users from the mock **users** d
 
 1. To begin, you should have a query to which you'd like to pass contextual parameters.
 1. Create a JS Object and rename it `utils`. This is where you write your helper function that calls the query and handles its responses.
-1. Create a function that calls your query's [`run()` function](/reference/appsmith-framework/query-object) in a loop, using the `run()` function's first argument to pass your parameter. On completion, the results of the queries are mapped into an array and stored in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value).
+1. Create a function that calls your query's [`run()` function](/write-code/reference/query-object) in a loop, using the `run()` function's first argument to pass your parameter. On completion, the results of the queries are mapped into an array and stored in the [Appsmith store](/write-code/reference/widget-actions/store-value).
 
     ```javascript
     // Using promise syntax

@@ -47,7 +47,7 @@ Let's see what each of these directories is:
   * The **`Page1`** directory contains all entities required to render the corresponding web-page.
 * **`Widgets`**: This directory is a container for all the widgets that will be part of the web-page `Page1`. You can think of Widgets as simple UI Components for your web-page, like a form or a table. By default, this directory doesn't have any pre-configured widgets.
 * **`Datasources`**: The datasources directory is a container consisting of all API's and queries that Page1 connects to.
-* Lastly, you can also see all the [JS libraries supported by Appsmith](/core-concepts/writing-code/ext-libraries.md) under the _**External libraries**_ section. These libraries are already imported into your app's environment, ready to be used.
+* Lastly, you can also see all the [JS libraries supported by Appsmith](/write-code/how-to-guides/ext-libraries.md) under the _**External libraries**_ section. These libraries are already imported into your app's environment, ready to be used.
 
 ## Creating your First Page
 

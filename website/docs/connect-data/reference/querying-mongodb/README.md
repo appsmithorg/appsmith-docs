@@ -239,7 +239,7 @@ This command modifies the documents in a collection based on a specified set of 
     "rating": {{tableItems.updatedRow.rating}}
   }
 }`}</pre></dd>
-  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd><br />
+  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/build-ui/how-to-guides/inline-editing"><b>inline editing</b></a>.</dd><br />
 
   <dt><b>Limit</b></dt>
   <dd>Specifies whether to delete single or multiple documents</dd><br />

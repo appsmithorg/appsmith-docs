@@ -12,9 +12,9 @@ When you build an app on Appsmith, you write code to add, update, delete, and re
 
 ## Trigger actions with event listeners
 
-[Actions](/reference/appsmith-framework/widget-actions) in Appsmith are built-in functions that provide a way to perform specific operations in response to user interactions or other events in your application. 
+[Actions](/write-code/reference/widget-actions) in Appsmith are built-in functions that provide a way to perform specific operations in response to user interactions or other events in your application. 
 
-You can trigger actions by binding them to Events(Async fields). For example, if you want to run a query on button click, you can bind the query's [run()](/reference/appsmith-framework/query-object#run) method on the button's `onClick` event.
+You can trigger actions by binding them to Events(Async fields). For example, if you want to run a query on button click, you can bind the query's [run()](/write-code/reference/query-object#run) method on the button's `onClick` event.
 
 <figure>
   <img src="/img/trigger-action-on-events.png" style= {{width:"700px", height:"auto"}} alt="Trigger actions using event listeners"/>
@@ -37,7 +37,7 @@ For example, you can display a success message when the query has executed succe
 
 The Appsmith GUI is limited to a single `onSuccess` or `onError` callback, while the underlying framework has no limitation. To write complex workflows, you can enable JavaScript by clicking the `JS` toggle next to the event listener. You can perform operations such as chaining multiple queries and executing them in a specific order or conditionally executing a query based on the result of another query. 
 
-**Every query object has a [run()](/reference/appsmith-framework/query-object#run) method used to execute the query.**
+**Every query object has a [run()](/write-code/reference/query-object#run) method used to execute the query.**
 
 :::tip
 Once you have configured actions using the GUI, you can click the `JS` icon next to the event to view the JavaScript equivalent of your configuration and then modify the code per your requirement.
@@ -153,6 +153,6 @@ let response = await fetch('https://httpbin.org/post', {
 
 
 ## Further reading
-* [Appsmith Framework](/reference/appsmith-framework/)
-* [Import External Libraries](/core-concepts/writing-code/ext-libraries) 
+* [Appsmith Framework](/write-code/reference/)
+* [Import External Libraries](/write-code/how-to-guides/ext-libraries) 
 

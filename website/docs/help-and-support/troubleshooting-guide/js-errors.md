@@ -5,7 +5,7 @@ description: >-
 
 
 # JS Errors
-Errors may be encountered when using [JS Objects](/core-concepts/writing-code/javascript-editor-beta) or writing [JS functions](/core-concepts/writing-code/javascript-editor-beta/#types-of-js-functions). They can be caused by syntax errors in the code, data type mismatch, or attempts to access properties or functions that don't exist.
+Errors may be encountered when using [JS Objects](/write-code/concepts/javascript-editor-beta) or writing [JS functions](/write-code/concepts/javascript-editor-beta/#types-of-js-functions). They can be caused by syntax errors in the code, data type mismatch, or attempts to access properties or functions that don't exist.
 
 
 This section helps you troubleshoot common JS errors on the Appsmith platform.
@@ -320,7 +320,7 @@ To fix this problem, you can use debugger statements in Appsmith to halt the exe
 
 1. Open the app in Appsmith and go to the page where the infinite loop is occurring.
 2. Locate the function or code block that's causing the infinite loop.
-3. Insert a debugger statement at the beginning of the function or code block that pauses the execution of the code and allows you to inspect its state. For more information, see [debugging statement and how to use it](/core-concepts/writing-code/javascript-editor-beta/#debugger-statements).
+3. Insert a debugger statement at the beginning of the function or code block that pauses the execution of the code and allows you to inspect its state. For more information, see [debugging statement and how to use it](/write-code/concepts/javascript-editor-beta/#debugger-statements).
 4. Use the debugger console of the browser to step through the code and identify the cause of the infinite loop.
 5. Once you have identified the issue, make the necessary changes to the code to fix it.
 6. Save the changes and test the app again to ensure the infinite loop issue has been resolved.

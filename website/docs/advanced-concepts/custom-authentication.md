@@ -77,8 +77,8 @@ On a successful response, your authentication API should return a valid access t
 Back on the application canvas, set up the login form's button to run the **login_api** query via the button's **onClick** property. Here is how the flow works:
 
 1. Execute the query
-2. If the response contains a valid `jwt`, store it in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value) and then take the user to the **MainPage**
-3. Else if there is no valid `jwt`, [show an alert message](/reference/appsmith-framework/widget-actions/show-alert) to tell the user that there was an error.
+2. If the response contains a valid `jwt`, store it in the [Appsmith store](/write-code/reference/widget-actions/store-value) and then take the user to the **MainPage**
+3. Else if there is no valid `jwt`, [show an alert message](/write-code/reference/widget-actions/show-alert) to tell the user that there was an error.
 
 In code, the button's **onClick** should look like:
 

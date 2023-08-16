@@ -10,7 +10,7 @@ This document aims to help debug common errors on the Appsmith platform.
 
 ## Using the Linter and Debugger
 
-The [Linter](/core-concepts/writing-code/javascript-editor-beta#linting-errors) and [Debugger](/core-concepts/writing-code/javascript-editor-beta#debugger-statements) are tools built right into the Editor to help you find and fix bugs quickly. The video below shows how to use the [Linter](/core-concepts/writing-code/javascript-editor-beta#linting-errors) and [Debugger](/core-concepts/writing-code/javascript-editor-beta#debugger-statements) to fix various bugs.
+The [Linter](/write-code/concepts/javascript-editor-beta#linting-errors) and [Debugger](/write-code/concepts/javascript-editor-beta#debugger-statements) are tools built right into the Editor to help you find and fix bugs quickly. The video below shows how to use the [Linter](/write-code/concepts/javascript-editor-beta#linting-errors) and [Debugger](/write-code/concepts/javascript-editor-beta#debugger-statements) to fix various bugs.
 
 
 <VideoEmbed host="youtube" videoId="DuDBMCqG2Zo" title="Using the Linter and Debugger" caption="Using the Linter and Debugger"/>

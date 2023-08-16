@@ -122,7 +122,7 @@ Now our **Options** field is easier to read, and much easier to update in the fu
 
 You may wish to define a JavaScript function that modifies/transforms the shape or appearance of your data before it is rendered by a widget. For example, you could include methods to check whether input records match a particular condition, and include or filter out records based on the result.
 
-Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](/core-concepts/writing-code/ext-libraries.md) to transform data in any widget, API, or DB Query.
+Since you can Appsmith supports JavaScript just about everywhere, you can use JavaScript, or one of the [supported JS libraries](/write-code/how-to-guides/ext-libraries.md) to transform data in any widget, API, or DB Query.
 :::
 
 ## Wrapping up the Form
@@ -261,7 +261,7 @@ Your **ProductListPage** now looks like this:
 
 Let's test it out: Click on the "**Add New Product"** button on the **ProductListPage**. You'll see that the **NewProductPage** form opens up, ready for user input.
 
-By selecting the [Navigate To](../../../reference/appsmith-framework/widget-actions/navigate-to.md) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
+By selecting the [Navigate To](../../../write-code/reference/widget-actions/navigate-to.md) option, you set up the button to open a new page when it is clicked. You then specified the name of that page in your app, so Appsmith knows where to redirect the user.
 
 ## What's next?
 

@@ -27,9 +27,9 @@ To avoid SQL injections, all SQL queries have [prepared statements](/connect-dat
 
 JavaScript code written in any Appsmith app is executed on the client, and a user can inspect the site to view your code in their browser. Similarly, when you sync applications to Git repositories, the JavaScript code in your app is stored and accessible as a JavaScript file in the repository. Therefore, it's recommended to implement the standard best practices for dealing with client-side code.
 
-For example, it's important to avoid hard-coding sensitive keys or credentials in plain text. Similarly, it's not safe to store sensitive information using Appsmith's [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function, because it stores its data in the browser's local storage and can be viewed by the user.
+For example, it's important to avoid hard-coding sensitive keys or credentials in plain text. Similarly, it's not safe to store sensitive information using Appsmith's [`storeValue()`](/write-code/reference/widget-actions/store-value) function, because it stores its data in the browser's local storage and can be viewed by the user.
 
-Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some similar features like [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/reference/appsmith-framework/widget-actions).
+Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some similar features like [`setInterval()`](/write-code/reference/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/write-code/reference/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/write-code/reference/widget-actions).
 
 The JavaScript `Fetch` API is supported, and it never sends cookies or session information when called from within Appsmith.
 

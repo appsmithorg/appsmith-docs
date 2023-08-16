@@ -7,7 +7,7 @@ description: >-
 
 # Building Dynamic UI
 
-This document presumes you understand the basics of [Displaying Data](/core-concepts/data-access-and-binding/displaying-data-read) & [Capturing Data](/core-concepts/data-access-and-binding/capturing-data-write) and expands on the concept of building dynamic UI that reacts to user inputs and system data
+This document presumes you understand the basics of Displaying Data & Capturing Data and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
 <VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget properties" caption="Dynamically Update Widget properties"/>
 
