@@ -1,30 +1,50 @@
 ---
 description: >-
   storeValue() reference
+toc_max_heading_level: 2
 ---
 
 # storeValue()
 
-The storeValue() function stores the data in the browser's local storage as key-value pairs that represent storage objects and can be later accessed anywhere in the application.
+The `storeValue()` function stores the data in the browser's local storage as key-value pairs that represent storage objects and can be later accessed anywhere in the application.
 
-<VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
+<VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="Using the StoreValue Function" caption="How to use the StoreValue Function"/>
 
-
-You can store a value in the browser's local storage using the storeValue() function by passing the parameters shown in the signature. 
-
+ 
 ## Signature
-
-The syntax for storeValue() function is given below:
 
 ```javascript
 storeValue(key: string, value: any, persist? = true): Promise
 ```
+### Parameters
 
-- **key**: Name of the key. Accepts a string value.
-- **value**: The data you want to save using storeValue(). You can save any data type in the Appsmith store.  
-- **persist**: Accepts a boolean value. Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.            
+#### key
 
-*Example 1:* If you want to store the text of an input widget, you can use storeValue() as shown below:
+<dd>
+
+A string containing the key name that acts as a unique identifier to access the associated value.
+
+</dd>
+
+#### value
+
+<dd>
+
+The data you want to save using `storeValue()`. You can save any data type in the Appsmith store. 
+
+</dd>
+
+#### persist
+
+<dd>
+
+Accepts a boolean value. Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.
+
+</dd>
+
+*Example 1:* 
+
+If you want to store the text of an input widget, you can use `storeValue()` as shown below:
 
 ```javascript
 {{storeValue('email',input1.text)}}
@@ -32,7 +52,9 @@ storeValue(key: string, value: any, persist? = true): Promise
 
 Here, `email` is the key where the value is stored, and `input1.text` is the value in the input widget that's saved in the storage object.
 
-*Example 2*:  You can save any data type with storeValue(). The code snippet below shows how to store employees' basic information using a function inside a JS Object. 
+*Example 2*:  
+
+You can save any data type with `storeValue()`. The code snippet below shows how to store employees' basic information using a function inside a JS Object. 
 
 ```javascript
 
@@ -45,15 +67,18 @@ export default {
 	}
 }
 ```
-## Access value
+## Access stored value
 
 You can access the values from the store by referencing the key inside the store object.
 
-```javascript
+### Signature
 
+```javascript
 {{ appsmith.store.KEY_NAME }}
 ```
-*Example*: If you have stored a value with the key `email`, you can access this value anywhere in the application using the code snippet given below: 
+*Example*: 
+
+If you have stored a value with the key `email`, you can access this value anywhere in the application using the code snippet given below: 
 
 ```javascript
 {{appsmith.store.email}}
@@ -63,7 +88,9 @@ You can access the values from the store by referencing the key inside the store
 
 You can update the saved value in the store, by overwriting the data using its key. 
 
-*Example*: If you have stored a boolean value with the key `isActive`, you can update the boolean value from `True` to `False` using a JS Object as shown below:
+*Example*: 
+
+If you have stored a boolean value with the key `isActive`, you can update the boolean value from `True` to `False` using a JS Object as shown below:
 
 ```javascript
 
@@ -77,7 +104,7 @@ export default {
 
 ## Store multiple values
 
-If you need to store many values, instead of making multiple calls to the `storeValue` function, it's recommended to use an object array to store the values. All values can be assigned in a single `storeValue()` function as shown below:
+If you need to store many values, instead of making multiple calls to the `storeValue()` function, it's recommended to use an object array to store the values. All values can be assigned in a single `storeValue()` function as shown below:
 
 ```javascript
 
@@ -118,13 +145,15 @@ export default {
 
 ## Storage states
 
-Appsmith’s storeValue() function consists of two storage states: persistent and session state.
+Appsmith’s `storeValue()` function consists of two storage states: persistent and session state.
 
 #### Persistent state
 
-If you store value in the persistent state, it remains in the store across different sessions/pages and value is saved even if the page is reloaded. By default, the `persist` argument is set to **true** in storeValue() and so the data is saved in a persistent state. 
+If you store value in the persistent state, it remains in the store across different sessions/pages and value is saved even if the page is reloaded. By default, the `persist` argument is set to **true** in `storeValue()` and so the data is saved in a persistent state. 
 
-**Example**: if you don't define the value for persist argument, the value is saved in the persistent state by default.
+*Example*:
+
+If you don't define the value for persist argument, the value is saved in the persistent state by default.
 
 ```
 {{storeValue('one',Input1.text)}}
@@ -133,7 +162,7 @@ The persistent state is cleared out when the user logs out.
 
 #### Session state
 
-You can use the session state to store the value you wish to hold until the page reloads or a user closes the window. To save data in this way, add `false` to the `persist` argument in the storeValue() function.
+You can use the session state to store the value you wish to hold until the page reloads or a user closes the window. To save data in this way, add `false` to the `persist` argument in the `storeValue()` function.
 
 ```javascript
 {{storeValue('two',Input2.text, false)}}
@@ -148,9 +177,11 @@ Check the sample app to learn more about [persistent and session states](https:/
 
 ## Asynchronous behavior of store value
 
-storeValue() is asynchronous, so its execution isn't dependent on another function or task. To handle this scenario, you'll have to use async/await to control the execution.
+`storeValue()` is asynchronous, so its execution isn't dependent on another function or task. To handle this scenario, you'll have to use async/await to control the execution.
 
-**Example**: suppose there is a JS function that calls an API that returns a unique identifier, and you want to save the value returned using `storeValue()`.
+*Example*: 
+
+Suppose there is a JS function that calls an API that returns a unique identifier, and you want to save the value returned using `storeValue()`.
 
 ```javascript
 export default {
@@ -163,10 +194,12 @@ export default {
 ```
 
 When you run the function, you expect an alert success message with the value stored in the key `uniqueEmail` but it shows `undefined`. 
-As storeValue() is asynchronous, it may execute while the API call is in progress and the value isn't saved in the storage resulting in `undefined` value.
+As `storeValue()` is asynchronous, it may execute while the API call is in progress and the value isn't saved in the storage resulting in `undefined` value.
 
-To handle such a scenario, you can use **async/await** to ensure that the storeValue() function waits for the API call to complete execution.
-**Example**: modify the code to use async/await as shown below:
+To handle such a scenario, you can use **async/await** to ensure that the `storeValue()` function waits for the API call to complete execution.
+*Example*: 
+
+Modify the code to use async/await as shown below:
 
 ```javascript
 export default {

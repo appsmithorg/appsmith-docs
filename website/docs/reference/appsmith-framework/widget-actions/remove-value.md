@@ -1,6 +1,7 @@
 ---
 description: >-
   removeValue() reference
+toc_max_heading_level: 2
 ---
 
 # removeValue()
@@ -15,10 +16,26 @@ The syntax for the removeValue() function is given below:
 removeValue(key: string)
 
 ```
-- **key**: Name of the key. Accepts a string value.
+### Parameters
 
-*Example*: If you want to remove the value with key `isActive`, you can use the removeValue() function as shown below:  
+#### key
+
+<dd>
+
+A string containing the key name that acts as a unique identifier to access the associated value.
+
+</dd>
+
+
+*Example*: 
+
+If you want to remove the value with key `isActive`, you can use the removeValue() function using a JS Object as shown below:  
 
 ```js
-removeValue("isActive")
+export default {
+    deleteStore: () => {
+        storeValue("isActive", true)
+        removeValue("isActive")
+            }
+}
 ```
