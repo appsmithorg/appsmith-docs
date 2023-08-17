@@ -465,6 +465,66 @@ const sidebars = {
   ]
 }, //Build Apps end
 
+{ // WRITE CODE start
+  type: 'category',
+  collapsed: false,
+  label: 'Write Code',
+  items: [ 
+    'write-code/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
+      items: [
+    
+        'write-code/how-to-guides/Write-code-in-Appsmith',
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/how-to-guides/Display-data-from-functions',
+        'core-concepts/writing-code/javascript-promises',
+        'advanced-concepts/sharing-data-across-pages',
+        'write-code/how-to-guides/Chain-functions-and-promises',
+        'core-concepts/writing-code/ext-libraries',
+
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      link: { type: 'doc', id: 'write-code/reference/README' },
+      items: [
+        'reference/appsmith-framework/context-object',
+        'reference/appsmith-framework/console-object',
+        'reference/appsmith-framework/query-object',
+
+        {
+          type: 'category',
+          label: 'Framework Functions',
+          link: {
+            type: 'doc',
+            id: 'reference/appsmith-framework/widget-actions/README',
+          },
+          items: [
+            'reference/appsmith-framework/widget-actions/navigate-to',
+            'reference/appsmith-framework/widget-actions/show-alert',
+            'reference/appsmith-framework/widget-actions/show-modal',
+            'reference/appsmith-framework/widget-actions/close-modal',
+            'reference/appsmith-framework/widget-actions/store-value',
+            'reference/appsmith-framework/widget-actions/download',
+            'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+            'reference/appsmith-framework/widget-actions/reset-widget',
+            'reference/appsmith-framework/widget-actions/intervals-time-events',
+            'reference/appsmith-framework/widget-actions/post-message'
+              ]
+            },
+            'write-code/reference/Built-in-JS-Libraries',
+            'write-code/reference/Fetch-API',
+            'write-code/reference/Function-Settings',      
+            'write-code/reference/JavaScript-Editor',
+          ],
+    },
+  ]
+}, //CODE end
 
 
     {
@@ -540,8 +600,6 @@ const sidebars = {
               ],
             },
             'core-concepts/writing-code/workflows',
-            'core-concepts/writing-code/javascript-promises',
-            'core-concepts/writing-code/ext-libraries',
             {
               type: 'link',
               label: 'Appsmith Framework',
@@ -563,29 +621,8 @@ const sidebars = {
           label: 'Appsmith Framework',
           link: { type: 'doc', id: 'reference/appsmith-framework/README' },
           items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
-            {
-              type: 'category',
-              label: 'Framework Functions',
-              link: {
-                type: 'doc',
-                id: 'reference/appsmith-framework/widget-actions/README',
-              },
-              items: [
-                'reference/appsmith-framework/widget-actions/navigate-to',
-                'reference/appsmith-framework/widget-actions/show-alert',
-                'reference/appsmith-framework/widget-actions/show-modal',
-                'reference/appsmith-framework/widget-actions/close-modal',
-                'reference/appsmith-framework/widget-actions/store-value',
-                'reference/appsmith-framework/widget-actions/download',
-                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-                'reference/appsmith-framework/widget-actions/reset-widget',
-                'reference/appsmith-framework/widget-actions/intervals-time-events',
-                'reference/appsmith-framework/widget-actions/post-message'
-              ]
-            },
+          
+            
           ],
         },
       ],
@@ -633,7 +670,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/sharing-data-across-pages',
+
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',

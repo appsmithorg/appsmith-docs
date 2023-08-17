@@ -97,7 +97,7 @@ Here’s a quick snapshot of how Appsmith triggers a query or API execution on p
 
 **Asynchronous Function Setting**
 
-Especially for [asynchronous functions](asynchronous-javascript-function-settings.md#how-to-define-asynchronous-function-in-appsmith), you can explicitly mark the execution of an async function on page load for the corresponding JS Object.
+Especially for asynchronous functions, you can explicitly mark the execution of an async function on page load for the corresponding JS Object.
 
 Navigate to **JS Object** —> Click **Settings** —> Select **Yes** for **RUN ON PAGE LOAD** next to the JS function. You are all set. Appsmith takes care of executing the async function on page load for you.
 
