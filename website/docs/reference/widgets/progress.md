@@ -21,7 +21,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Enables the widget to enter an infinite loading state, which is beneficial when the progress values cannot be determined.For instance, this property can be enabled for queries that take a longer time to execute.
+Enables the widget to enter an infinite loading state, which is beneficial when the progress values cannot be determined. For instance, this property can be enabled for queries that take a longer time to execute.
 
 </dd>
 
@@ -138,10 +138,11 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 The methods provided by the widget allow users to dynamically update and manipulate its properties, facilitating the creation of dynamic and interactive applications without the need for manual property modifications. 
 
-These setter methods are asynchronous, and users have the option to either await them or use the `.then()` block to ensure appsmith reactivity is maintained for subsequent lines of code.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -153,18 +154,10 @@ Sets the visibility of the widget.
 Progress1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Progress1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
-
 </dd>
 
 
-#### setProgress `number`
+#### setProgress (param: number): Promise
 
 <dd>
 
@@ -174,13 +167,6 @@ Sets the progress value of the Progress widget.
 
 ```js
 Progress1.setProgress(50)
-```
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Progress1.setProgress(50).then(() => {
-  // code to be executed after progress is set
-})
 ```
 
 </dd>

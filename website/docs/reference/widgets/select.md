@@ -14,43 +14,60 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
-#### Options `array`
+#### Source Data `array<object>`
 
 <dd>
 
-Use to set labels and values for options in the list of the select widget. Options must be specified as an array of objects with a `label` and `value` property. The `label` property represents the text that's displayed to the user, while the `value` property is the actual data that's stored and used in your application. For example:
+Specify data as an array of objects to display options in the widget. For example:
 
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE"
+    name: "Blue",
+    code: "BLUE",
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    name: "Green",
+    code: "GREEN",
   },
   {
-    "label": "Red",
-    "value": "RED"
-  }
-]
+    name: "Red",
+    code: "RED",
+  },
+];
 ```
 
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can dynamically generate options by fetching data from queries or JS functions and binding the response to the **Source Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 ```js
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the select widget. 
+If you are generating options for Select widget using JS code as shown above, make sure to define both the [**Label**](#label-string) and [**Value**](#value-string) properties.
 
-*Example:* 
+</dd>
+
+#### Label `string`
+
+<dd>
+
+Defines the key from the **Source Data** property that specifies the labels for each option in the Select widget. To define **Label** using code, click the **JS** button next to the property. 
+
+*Example:* If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
 
 ```js
-{{fetchData.data.map( user => ({label: user.name, value: user.email}))}}
+{{ item.name.toLowerCase() }}
 ```
+`item.name` represents the Source Data's property containing the label, and the `toLowerCase()` function is applied to convert the label to lowercase.
+
+</dd>
+
+#### Value `string`
+
+<dd>
+
+Defines the key from the **Source Data** property that specifies the values for each option in the Select widget. Value defined for each option must be unique. To define **Value** using code, click the **JS** button next to the property.
 
 </dd>
 
@@ -135,7 +152,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Enabling this property for a select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the select widget.
+Enabling this property for a Select widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the Select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the Select widget.
 
 </dd>
 
@@ -161,7 +178,7 @@ For example,  if you want to make the widget visible only when the user checks a
 
 Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the `Disabled` property to control the widget's disabled state conditionally.
 
-For example, if you want to allow only a specific user to interact with the select widget, you can use the following JavaScript expression: 
+For example, if you want to allow only a specific user to interact with the Select widget, you can use the following JavaScript expression: 
 ```js
 {{appsmith.user.email=="john@appsmith.com"?false:true}}
 ```
@@ -267,7 +284,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 ## Reference properties
 
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `Select1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Select widget, you can use `Select1.isVisible`.
 
 #### filterText `string`
 
@@ -371,10 +388,10 @@ Returns the label of the option displayed in the Select widget. It changes if th
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility (`:boolean`)
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -386,19 +403,10 @@ Sets the visibility of the widget.
 Select1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Select1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
-
 </dd>
 
 
-#### setDisabled (`:boolean`)
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -410,17 +418,9 @@ Sets the `disabled` state of the widget.
 Select1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Select1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
-#### setOptions (`:array<object>`)
+#### setOptions (param: array<object\>): Promise
 
 <dd>
 
@@ -432,18 +432,10 @@ Sets the options to be displayed in the widget.
 Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }])
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Select1.setOptions([{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }]).then(() => {
-  // code to be executed after options are set
-})
-```
-
 </dd>
 
 
-#### setRequired (`:boolean`)
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -455,20 +447,9 @@ Sets whether the widget is required or not.
 Select1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Select1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
-
 </dd>
 
-
-
-
-#### setSelectedOption (`:object`)
+#### setSelectedOption (param: object): Promise
 
 <dd>
 
@@ -480,98 +461,7 @@ Sets the selected option of the Select widget.
 Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Select1.setSelectedOption({ label: 'Option 2', value: 'option2' }).then(() => {
-  // code to be executed after selected option is set
-})
-```
-
 </dd>
-
-
-
-## Display options dynamically 
-
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
-
-
----
-**Example 1:** suppose you want to use a Select widget to allow users to select one country from a database, with the dynamic population of options.
-
-
-1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve distinct country values as `label` and `value`:
-
-
-```sql
-SELECT DISTINCT country as label, country as value FROM users;
-```
-
-2. In the Select **Options** property, display the data using:
-
-```js
-{{fetchData.data}}
-```
-
-With this configuration, the Select widget displays a list of unique country values directly from the query. It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Select widget.
-
----
-**Example 2:** if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Select widget. 
-
-1. Use the `users` table in the sample database and fetch the unique country values using the following `getdata` SQL query:
-
-```sql
-SELECT DISTINCT country FROM users;
-```
-
-This query retrieves unique country values from the `users` table. The retrieved data is in the form of an array of objects, where each object has a country `key`.
-
-2. Use JavaScript to **transform the data** by adding it to the **Options** property.
-
-```js
-{{getdata.data.map( p => ({label: p.country, value: p.country}))}}
-```
-
-The code transforms each item in the `getdata` array by using the `map()` function to create a new object with a `label` and `value` property, both set to the country value of each object in the array.
-
-
-## Access selected option
-These properties allow you to bind your select widget with any other widget in queries or JS objects.
-
-* **selectedOptionValue**: This property returns the value of the selected option in the Select widget.
-
-* **selectedOptionLabel**: This property returns the label of the selected option in the Select widget.
-
-Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Select widget.
-
----
-**Example**: suppose you want to filter the table data based on the user-selected country from a Select widget. 
-
-1. Create a new query called `filterdata` and add a SQL statement to select all the data from the `users` table where the `country` column matches the selected option from a Select widget. 
-
-```sql
-SELECT *
-FROM users
-WHERE country IN ({{Select1.selectedOptionValue}})
-LIMIT 10;
-```
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{filterdata.data}}
-```
-
-3. Set the `onOptionChange` event of the Select widget to run the `filterdata` query. This updates the displayed data in real-time as the user selects or deselects option.
-
-
-<figure>
-  <img src="/img/select-access.gif" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Access selected option</i></figcaption>
-</figure>
-
-
 
 ## Server side filtering	
 

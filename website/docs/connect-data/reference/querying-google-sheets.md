@@ -325,4 +325,4 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 
 ## Troubleshooting
 
-If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

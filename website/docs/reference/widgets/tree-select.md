@@ -1,100 +1,67 @@
-# Treeselect
+---
+description: >-
+  TreeSelect widget reference
+---
 
-This page explains how to use the Treeselect widget to allow users to select a single option from a hierarchical list.
+# TreeSelect
+
+This page explains how to use the TreeSelect widget to allow users to select a single option from a hierarchical list.
 
 
+## Content properties
 
-## Display static options
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-To display static options in a Treeselect widget, you can use the **Options** property.
+### Data
 
-To display data, options must be specified as an array of objects. Each object represents an option and must include a `label` and a `value`. If the option has **child** options, the object must also include a `children array` containing the child options in the same format.
+#### Options `array`
+
+<dd>
+
+Use to set options in the list of the TreeSelect widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. For example:
 
 ```js
 [
   {
-    "label": "Blue",
-    "value": "BLUE",
+    "label": "Shoes",
+    "value": "SHOES",
     "children": [
       {
-        "label": "Dark Blue",
-        "value": "DARK BLUE"
+        "label": "Sports Shoes",
+        "value": "SPORTS_SHOES"
       },
       {
-        "label": "Light Blue",
-        "value": "LIGHT BLUE"
+        "label": "Casual Shoes",
+        "value": "CASUAL_SHOES"
       }
     ]
   },
   {
-    "label": "Green",
-    "value": "GREEN"
+    "label": "Electronics",
+    "value": "ELECTRONICS",
+    "children": [
+      {
+        "label": "Laptops",
+        "value": "LAPTOPS"
+      }
+    ]
   },
   {
-    "label": "Red",
-    "value": "RED"
+    "label": "Clothing",
+    "value": "CLOTHING"
   }
 ]
+
 ```
-### Set default value
+You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
-The **Default Selected Value** property in a widget allows you to specify an initial value for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. To use this property, set its value to the value of the desired option from the **Options** property.
-
-
-For example, if you want the default selected option to be `Dark Blue`, you can set the **Default Selected Value** property to: `DARK BLUE`.
-
-
-## Display options dynamically
-
-You can dynamically generate options by fetching data from queries or JS functions by binding the response to the **Options** property.
-
----
-**Example 1**: suppose you have a database that includes a column for product categories (type), as well as other product details such as its name and description. For instance, you might have a category called `Household` with a product name `Measuring Spoons`. 
-
-1. You can construct a query that retrieves the relevant data and formats it to be used as options, something like:
-
-```sql
-SELECT 
-  type AS label,
-  type AS value,
-  JSON_AGG(
-    JSON_BUILD_OBJECT(
-      'label', (name),
-      'value', (name)
-    )
-  ) AS children
-FROM product
-GROUP BY type
-ORDER BY label;
-```
-This query groups product names by type and creates a nested JSON object for each type, where the `type` is the parent and the `product names` are the children.
-`
-
-2. In the Treeselect **Options** property, display the data using:
-
-```sql
+```js
 {{fetchData.data}}
 ```
 
-<figure>
-  <img src="/img/fetchData-tree.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
-  <figcaption align = "center"><i>Display options dynamically</i></figcaption>
-</figure>
+If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Options** property in the TreeSelect widget. For example, you have a database that includes a column for product categories (type), as well as other product details such as its name and description. To transform this data, use:
 
-With this configuration, the Treeselect widget displays a list of unique products directly from the query. 
-
-It is recommended to retrieve the data in a structured format directly from the query, as it simplifies the configuration when displaying the options in the Treeselect widget.
-
-
----
-**Example 2**: if the data retrieved from the query is not in the desired format, you can use JavaScript to transform it before passing it to the Treeselect widget. In the same product example where you have a list of products with their name and type: 
-
-1. You can use a SELECT query to fetch the data from the database.
-
-```sql
-SELECT type, name FROM product LIMIT 10;
-```
-2. Use JavaScript to transform the data in the **Options** property.
+*Example*:
 
 ```js
 {{ getdata.data.reduce((acc, cur) => {
@@ -103,128 +70,340 @@ SELECT type, name FROM product LIMIT 10;
   return acc;
 }, []) }}
 ```
-
 This code takes an array of products and creates a nested data structure that groups the products by their type, making it easier to display them in a hierarchical view.
-
-
 
 <figure>
   <img src="/img/tree-js-3.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
   <figcaption align = "center"><i>Transform data using JavaScript</i></figcaption>
 </figure>
 
+</dd>
 
 
+#### Default selected value `string`
 
-## Access selected option
+<dd>
 
-If you want to retrieve the selected value from a Treeselect widget and bind them to other widgets or JavaScript functions, you can use the following properties:
+Allows you to specify an initial value(s) for the widget when it's first displayed. This is useful for pre-populating the widget or ensuring that specific options are selected by default. 
 
-
-* **selectedOptionValue**: This property returns the value of the selected option in the Treeselect widget. 
-
-* **selectedOptionLabel**: This property returns the label of the selected option in the Treeselect widget.
-
-Both properties, `selectedOptionValue` and `selectedOptionLabel`, update automatically when the user selects or deselects a new option in the Treeselect widget.
-
----
-**Example**: suppose you want to filter the table data based on the user-selected product name or type from a Treeselect widget.
-
-1. Create a new query called `filterproducts` and add a SQL statement to select all the data from the products table where the type/name column matches the selected options from a Treeselect widget.
-
-```sql
-SELECT * FROM product
-WHERE type = {{TreeSelect.selectedOptionValue}} OR name = {{TreeSelect.selectedOptionValue}};
-```
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
+For example, if you want the default selected value to be `CLOTHING`, you can set the **Default Selected Values** property to:
 
 ```js
-{{filterproducts.data}}
+[
+  "CLOTHING"
+]
 ```
 
-3. Set the `onOptionChange` event of the Treeselect widget to run the `filterproducts` query. This updates the displayed data in real time as the user selects or deselects options.
+</dd>
 
-<figure>
-  <img src="/img/tree-access.gif" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
-  <figcaption align = "center"><i>Access selected option</i></figcaption>
-</figure>
+### Label
 
-## Properties
+#### Text `string`
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+<dd>
+
+Sets the label of the widget.
+
+</dd>
+
+#### Position `string`
+
+<dd>
+
+Sets the placement of the **Label** in the widget.
+
+*Options*:
+- **Left**: The label is placed on the left of the widget.
+- **Top**: The label gets placed at the top of the widget.
+- **Auto**: The label position is determined based on the height of the widget itself. 
+
+</dd>
+
+#### Alignment `string`
+
+<dd>
+
+Sets the label alignment of the widget when the position selected is **Left**.
+
+</dd>
+
+#### Width (in columns) `number`
+
+<dd>
+
+Sets the width of the label in the widget when the **Left** position is selected.
+
+</dd>
+
+### Validations
+
+#### Required `boolean`
+
+<dd>
+
+Enabling this property for a TreeSelect widget makes it a mandatory field, meaning that the user must select a value from the dropdown. When the select widget is placed within a Form widget and the **Required** property is enabled, the Form's submit button remains inactive until a value is selected in the select widget.
+
+</dd>
+
+### General
+
+#### Tooltip `string`
+
+<dd>
+
+Enables you to add hints or provide additional information to guide the user regarding the selection.
+
+</dd>
+
+#### Placeholder `string`
+
+<dd>
+
+Allows you to set the placeholder text displayed within the widget. This can be used to provide a hint or example value to the user, guiding them on the expected format or content of the input.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+Prevents users from selecting the widget. Even though the widget remains visible, user input is not permitted. Additionally, you can use JavaScript by clicking on **JS** next to the **Disabled** property to control the widget's disable state conditionally.
+
+For example, if you want to allow only a specific user to fill the input, you can use the following JavaScript expression: 
+```js
+{{appsmith.user.email=="john@appsmith.com"?false:true}}
+```
+
+</dd>
+
+#### Animate Loading `boolean`
+
+<dd>
+
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
+
+</dd>
+
+#### Allow clearing value `boolean`
+
+<dd>
+
+Enabling this option allows users to clear the selected value, whether it was the default selection or one they made themselves.
+
+</dd>
+
+#### Expand all by default `boolean`
+
+<dd>
+
+When enabled, this feature displays the dropdown in an expanded state by default, revealing all the available child options.
+
+</dd>
 
 
-### Widget properties
+#### Height `string`
 
-These properties allow you to edit the Modal widget. All of these properties are present in the property pane of the widget.
+<dd>
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Options**         | Array	        | It lets you set labels and values for different items/options in the list of the tree select widget. Options must be specified as an array of objects with a label and value property. The tree structure can be added to any option by adding the children field that should be an object. |
-| **Default Value**   | String        | Sets a default option that is captured as user input unless the user changes it.                                                                                                                                                                                                       |
-| **Placeholder**     | String        | Sets the Placeholder of the Treeselect widget.                                                                                                                                                                                                                                            |
-| **Required**      | Boolean          | When turned on, it makes a user input required and disables any form submission until the user makes an input.                                                                                                                                                                              |
-| **Visible**       | Boolean          | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                                                                                                                         |
-| **Disabled**       | Boolean         | Disables input/selection to the widget. The widget remains visible to the user but user input/selection is not allowed.                                                                                                                                                            |
-| **Tooltip**         | String                   	| It sets a tooltip for the widget. You can add hints or extra information about the required input from the user.      
-| **Animate Loading**    | Boolean     | Control’s widget’s loading animation on the page. When turned off, the widget loads without any skeletal animation. This can be controlled with JS until all the widgets are rendered.                                                                                                  |
-| **Allow Clearing Value**  | Boolean  | When turned on, it allows users to clear the selection, which was the default or the selection made by them.                                                                                                                                                                                |
-| **Expand all by default**  | Boolean | It shows a dropdown in an expanded state when turned on, revealing all the children options.                                                                                                                                                                                                |
-| **Height**      | String   | It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
-| **Text**      | String  | Sets the label of the widget.                                |
-| **Position**   | String | Sets the label position of the widget.                       |
-| **Alignment**  | String | Sets the label alignment of the widget.                      |
-| **Width**      | Number | Sets the label width of the widget as the number of columns. |
+This property determines how the widget's height adjusts to changes in its content.
 
+*Options:*
 
-### Reference properties
+* **Fixed**: Maintains a constant height for the widget, allowing you to adjust it by dragging or using the resize handle.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `TreeSelect1.isVisible` to get the visibility status.
-
-| Reference Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedOptionValue** | String| This is the value of the option displayed in a Single Select dropdown. It changes if the default value of the dropdown changes or the user selects an option.                 | 
-| **selectedOptionLabel** | String| This is the Label of the option displayed in a Treeselect dropdown. This label changes if the default value of the dropdown changes or the user changes an option selection. |
-| **isDisabled**         | Boolean | This property indicates whether the widget is disabled or not.                                                                                                                | 
-| **isValid**            | Boolean | This property indicates whether the widget is valid or not.                                                                                                                   | 
-| **isVisible**          | Boolean | This property indicates whether the widget is visible or not.                                                                                                                 | 
-| **options**          | Array | This property shows the values of all the options.
-                                                                                        
-
-
-### Style properties
-
-Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
-
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Border Radius**    | String| Allows you to define curved corners.                     |
-| **Box Shadow**       | String| Allows you to choose from the available shadow styles.   |
-| **Emphasis** | String| Allows you to choose a font style (bold or italic). |
-| **Font Color** | String| Allows you to set text color for the label.              |
-| **Font Size** | String | Allows you to set the size of the label.                 |
-
+</dd>
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
+#### onOptionChange 
 
-| Events             | Description                                                                                                                 |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| **onOptionChange** | Triggers an action when a user selects an option.  |
-| **onDropdownOpen** | Sets the action to be run when the user opens the dropdown.  |
-| **onDropdownClose** | Sets the action to be run when the user opens the dropdown.  |
+<dd>
 
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user selects an option in the dropdown list. It enables you to capture the user's input and perform specific actions in response. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
+
+</dd>
+
+#### onDropdownOpen
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user opens the dropdown list. For example, you could use the **onDropdownOpen** event to retrieve data from a database, populate the options in the dropdown list, or display additional information to the user. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
+
+</dd>
+
+
+#### onDropdownClose 
+
+<dd>
+
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the user closes the dropdown list. For example, you could use the **onDropdownClose** event to store the selected option in a database, hide additional information, or reset the widget to its original state. You can also write custom JavaScript logic for this event by clicking on the **JS** button next to the property.
+
+</dd>
+
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Represents the text color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). You can also click the **JS** button to programmatically modify the font color using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the label. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values. You can also click the **JS** button to programmatically modify the font size using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Enables you to select a font style for the widget, such as bold or italic. You can click the **JS** button to programmatically modify the font style using JavaScript functions.
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. To control the border radius programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. To control the Box Shadow programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+</dd>
+
+
+## Reference properties
+
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a select widget, you can use `treeSelect1.isVisible`.
+
+#### options `array`
+<dd>
+
+The `options` property contains the values available for selection in a TreeSelect widget.
+
+
+*Example:*
+
+```js
+{{TreeSelect1.options}}
+```
+
+
+</dd>
+
+#### selectedOptionLabel `string`
+<dd>
+
+Returns the label of the option selected in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
+
+*Example:*
+
+```js
+{{TreeSelect1.selectedOptionLabel}}
+```
+
+
+</dd>
+
+#### selectedOptionValue `string`
+<dd>
+
+Returns the value of the option selected in the TreeSelect widget. It changes if the default value of the widget changes or the user selects an option.
+
+*Example:*
+
+```js
+{{TreeSelect1.selectedOptionValue}}
+```
+
+
+</dd>
+
+#### isDisabled `boolean`
+
+<dd>
+
+The `isDisabled` property reflects the state of the widget's Disabled setting. It is represented by a boolean value, where true indicates that the widget is not available, and false indicates that it is enabled for user interaction.
+
+*Example:*
+
+```js
+{{TreeSelect1.isDisabled}}
+```
+
+
+</dd>
+
+#### isVisible `boolean`
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+
+```js
+{{TreeSelect1.isVisible}}
+```
+
+
+</dd>
+
+#### isValid `boolean`
+<dd>
+
+The `isValid` property indicates the validation status of a widget, providing information on whether the widget's current value is considered valid or not.
+
+
+*Example:*
+
+```js
+{{TreeSelect1.isValid}}
+```
+
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -236,17 +415,9 @@ Sets the disabled state of the widget.
 TreeSelect1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-TreeSelect1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
-#### setRequired `boolean`
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -258,12 +429,6 @@ Sets whether the widget is required or not.
 TreeSelect1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-TreeSelect1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
-
 </dd>
+
+

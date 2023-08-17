@@ -208,6 +208,7 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
+                'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
@@ -219,11 +220,21 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/README',
               },
               items: [
-                'getting-started/setup/instance-management/update-appsmith',
-                'getting-started/setup/instance-management/how-to-get-container-logs',
+                {
+                  type: 'category',
+                  label: 'Update Appsmith',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/instance-management/update-appsmith',
+                  },
+                  items: [
+                    'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
+                  ]
+                },
+                'getting-started/setup/instance-management/maintenance-window',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
-                'getting-started/setup/instance-management/maintenance-window',
+                'getting-started/setup/instance-management/how-to-get-container-logs',
               ],
             },
             {
@@ -261,6 +272,7 @@ const sidebars = {
             'connect-data/how-to-guides/connect-datasource',
             'connect-data/how-to-guides/query-data',
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
@@ -274,7 +286,6 @@ const sidebars = {
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
-            'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-arango-db',
             'connect-data/reference/authenticated-api',
             'connect-data/reference/curl-import',
@@ -302,6 +313,7 @@ const sidebars = {
           'connect-data/reference/querying-redis',
           'connect-data/reference/querying-redshift',
           'connect-data/reference/rest-api',
+          'connect-data/reference/querying-amazon-s3',
           'connect-data/reference/querying-snowflake-db',
           'connect-data/reference/using-smtp',
           'connect-data/reference/twilio',
@@ -315,6 +327,7 @@ const sidebars = {
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
             'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/Datasource-Environments',
             'connect-data/concepts/how-to-use-prepared-statements',
             'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
@@ -436,6 +449,7 @@ const sidebars = {
               ],
             },
             'reference/widgets/camera',
+            'reference/widgets/category-slider',
             'reference/widgets/chart',
             'reference/widgets/checkbox',
             'reference/widgets/checkbox-group',
@@ -466,22 +480,14 @@ const sidebars = {
             'reference/widgets/modal',
             'reference/widgets/multiselect',
             'reference/widgets/multi-tree-select',
+            'reference/widgets/number-slider',
             'reference/widgets/phone-input',
             'reference/widgets/progress',
             'reference/widgets/radio-group',
+            'reference/widgets/range-slider',
             'reference/widgets/rating',
             'reference/widgets/rich-text-editor',
             'reference/widgets/select',
-            {
-              type: 'category',
-              label: 'Sliders',
-              link: { type: 'doc', id: 'reference/widgets/sliders/README' },
-              items: [
-                'reference/widgets/sliders/category-slider',
-                'reference/widgets/sliders/number-slider',
-                'reference/widgets/sliders/range-slider',
-              ],
-            },
             'reference/widgets/stat-box',
             'reference/widgets/switch',
             'reference/widgets/switch-group',
@@ -549,6 +555,7 @@ const sidebars = {
               'advanced-concepts/granular-access-control/roles', 
           ]
         },
+        `advanced-concepts/user-provisioning-group-sync`,
         {
           type: 'category',
           label: 'Version Control with Git',

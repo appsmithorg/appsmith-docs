@@ -955,6 +955,74 @@
     {
       "source": "/learning-and-resources/how-to-guides",
       "destination": "/connect-data/how-to-guides"
+    },
+    {
+      "source": "/advanced-concepts/embed-appsmith-into-existing-application1",
+      "destination": "/advanced-concepts/embed-appsmith-into-existing-application"
+    },
+    {
+      "source": "/datasource-reference/querying-snowflake",
+      "destination": "/connect-data/reference/querying-snowflake-db"
+    },
+    {
+      "source": "/getting-sta",
+      "destination": "/getting-started"
+    },
+    {
+      "source": "/advanced-co",
+      "destination": "/advanced-concepts"   
+    },
+    {
+      "source": "/core-concepts/application-layout",
+      "destination": "/core-concepts/building-ui/designing-an-application/application-layout"
+    },
+    {
+      "source": "/changelog",
+      "destination": "https://github.com/appsmithorg/appsmith/releases"
+    },
+    {
+      "source": "/getting-started/tutorials/review-moderator-dashboard/advanced-concepts/invite-users",
+      "destination": "/advanced-concepts/invite-users"
+    },
+    {
+      "source": "/getting-started/tutorials/building-a-store-catalog-manager/advanced-concepts/invite-users",
+      "destination": "/advanced-concepts/invite-users"
+    },
+    {
+      "source": "/getting-started/tutorials/building-a-store-catalog-manager/reference/widgets/input",
+      "destination": "/reference/widgets/input"
+    },
+    {
+      "source": "/reference/appsmith-framework/actions/:path*",
+      "destination": "/reference/appsmith-framework/widget-actions/:path*"
+    },
+    {
+      "source": "/core-concepts/writing-code/appsmith-framework",
+      "destination": "/reference/appsmith-framework"
+    },
+    {
+      "source": "/third-party-services/google-maps",
+      "destination": "/getting-started/setup/instance-configuration/google-maps"
+    },
+    {
+      "source": "/reference/widgets/sliders",
+      "destination": "/reference/widgets"
+    },
+    {
+      "source": "/reference/widgets/sliders/category-slider",
+      "destination": "/reference/widgets/category-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/number-slider",
+      "destination": "/reference/widgets/number-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/range-slider",
+      "destination": "/reference/widgets/range-slider"
+    },
+    {
+      "source": "/reference/readme-1/actions/:path*",
+      "destination": "/reference/appsmith-framework/widget-actions/:path*"
     }
   ]
 }

@@ -1,108 +1,202 @@
+---
+description: Learn how to use the Text widget to display static or dynamic textual information
+---
 # Text
 
-This document explains how to display static or dynamic textual information using the Text widget.
+This page provides information on using the Text widget to display static or dynamic textual information.
 
 
 <VideoEmbed host="youtube" videoId="-anmDHXDScQ" title="Use the Text widget to display data" caption="Use the Text widget to display data"/>
 
-## Display static text
+## Content properties
 
-To display static text enter the desired text directly into the `Text` property. The text remains the same until manually updated or edited. 
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-This method is useful when you need to display fixed information, such as **instructions** or **labels**, that don't change based on user interactions. 
+### General
 
-Additionally, you can use **HTML code** in the Text field to customize the appearance of the displayed text. Text field can only render inline CSS. To use external CSS, it's recommended to use the [Iframe widget](/reference/widgets/iframe). For instance, you can use:
+#### Text `string`
+
+
+<dd>
+
+Sets the text to be displayed. The text remains unchanged until manually updated or edited. 
+
+You can dynamically change text by fetching data from queries or JS functions and binding the response to the **Text** property. For instance, when a row in a Table widget is clicked, the Text widget dynamically displays the specific name associated with that row.
+
+*Example:*
+
+```js
+{{Table1.selectedRow.name}}
+```
+
+You have the option to use HTML code within the **Text** property to customize the appearance of the displayed text. Note that the Text field supports only inline CSS. If you need to use external CSS, it is recommended to use the [Iframe widget](/reference/widgets/iframe).
+
+*Example:*
 
 ```js
 <p style="color:blue;">Hello World</p>
 ```
 
-## Display dynamic text
+This code displays the text Hello World in blue color.
 
-To display dynamic text that changes based on user interactions or data from external sources, you can use binding values to connect different widgets and their properties.
+</dd>
 
+#### Visible `boolean`
 
-For example, if you have a Table widget that displays a list of tasks, where each row contains the task name, the person assigned to the task, and the deadline for completion.
+<dd>
 
-```json
-[
-  {
-    "Name": "John",
-    "Task": "Create report",
-    "Deadline": "2023-04-01"
-  },
-  {
-    "Name": "Alice",
-    "Task": "Review proposal",
-    "Deadline": "2023-04-03"
-  },
-  {
-    "Name": "Bob",
-    "Task": "Update website",
-    "Deadline": "2023-04-05"
-  }
-]
-```
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
-Now, if you want to display the details of a particular task in a Text widget when the user clicks on the corresponding row in the Table widget, you can use the following steps:
-
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
 ```js
-{{Table1.selectedRow.task}}
+{{Select1.selectedOptionValue === "Yes"}}
 ```
 
+</dd>
+
+#### Animate Loading `boolean`
 
 
-## Properties
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+<dd>
 
-### Widget properties
-These properties are present in the property pane of the widget. The following table lists all the widget properties.
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property.
 
+</dd>
 
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Text**                	| String                   	| Sets the text to be displayed.                                                                                                                                                                                                                                                                                                                                                                         	|
-| **Overflow Text**       	| String 	| Controls the text behavior when the length of the text exceeds. You can choose between Scroll, Truncate and None. Scroll: This option enables scrolling within the boundaries of the Text widget. Truncate: This option shortens text in a Text widget and adds ellipses at the bottom left. Clicking on the ellipses reveals a pop-up with the full text if it exceeds the widget area.               	|
-| **Visible**             	| Boolean                 	| Controls the widget's visibility on the page. When turned off, the widget would not be visible when the app is published.                                                                                                                                                                                                                                                                              	|
-| **Animate Loading**     	| Boolean                  	| Controls the widget's loading animation. This can be controlled with JS until all the widgets are rendered.                                                                                                                                                                                                                                                                                            	|
-| **Disable link**        	| Boolean                  	| It parses any link in the widget as standard text.                                                                                                                                                                                                                                                                                                                                                     	|
-| **Height**              	| String                   	| It configures how a widget’s height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/>**Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                                                                                                                                                         	|
+#### Disable link `boolean`
 
 
+<dd>
 
-### Reference properties
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, to get the text, you can use `Text1.text`.
+Enabling this option treats any link in the widget as standard text instead of clickable links.
 
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **isVisible** | Boolean    | This property indicates whether the widget is visible or not. |
-| **text**      | String    | This property returns the widget's text value.                |
+</dd>
 
-### Style properties
 
+#### Height `string`
+
+
+<dd>
+
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+
+* **Fixed**: The widget's height remains as set using drag and resize.
+* **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+* **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+
+</dd>
+
+## Style properties
 Style properties allow you to change the look and feel of the widget.
 
+### General
+
+#### Font family `string`
+
+<dd>
+
+Enables you to choose a font for the text, which can also be programmatically manipulated using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Determines the font size of the text. It accepts [CSS font-size](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size) values and can also be programmatically modified using JavaScript functions.
+
+</dd>
+
+### Color
+
+#### Text Color `string`
+
+<dd>
+
+Sets the color for the text, and when JS is enabled, you can dynamically modify the text color using JavaScript functions.
+
+</dd>
+
+### Text formatting
 
 
-| Property            	|         Data type        	| Description                                                                                                                                                                                                                                                                                                                                                                                            	|
-|---------------------	|:------------------------:	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
-| **Font Family**     | String             	| Allows you to select a font for the text.                                                                                             	|
-| **Font Size**      | String          	       	| Allows you to set the size of the label.                                                                                                                                                                     	|
-| **Text Color**     | String           	            	| Allows you to change the color of the text.                                                                                                                                               	|
-| **Background Color**   | String                   	|  Allows you to change the background color of the text widget.                                                                                                                            	|
-| **Border Color**      | String         	          	| Allows you to change the border color of the text widget.                                                                                                                                                            	|
-| **Alignment**        | String       	          	| This property focuses on the text alignment inside the text widget.                                                                                                                                                            	|
-| **Emphasis**      | String         	          	| Allows you to choose a font style; bold or italic.                                                                                                                                                   	|
-| **Border Width**   | Number            	          	| You can define the width of the border here. It takes input in px.                                                                                                              	|
+#### Alignment `string`
+
+<dd>
+
+Sets the horizontal alignment of the text within the cells.
+
+*Options*:
+* Left
+* Center
+* Right
+
+</dd>
+
+#### Emphasis `String`
+
+<dd>
+
+Allows you to choose a font style for the widget, including options like bold or italic. When JS is enabled, you can dynamically modify the font style using JavaScript functions.
+
+</dd>
+
+
+### Border and shadow
+
+#### Border Width	 `number`
+
+<dd>
+
+Specifies the width of the widget's border, accepting only numerical values in pixels (px).
+
+</dd>
+
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Text1.isVisible`.
+
+#### text `string`
+
+<dd>
+
+The `text` property retrieves the current text value of the widget.
+
+
+*Example:*
+```js
+{{Text1.text}}
+```
+
+</dd>
+
+
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+```js
+{{Text1.isVisible}}
+```
+
+</dd>
+
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -114,19 +208,11 @@ Sets the visibility of the widget.
 Text1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Text1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
 
 </dd>
 
 
-#### setDisabled `boolean`
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -138,17 +224,9 @@ Sets the disabled state of the widget.
 Text1.setDisabled(false)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Text1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
-```
-
 </dd>
 
-#### setRequired `boolean`
+#### setRequired (param: boolean): Promise
 
 <dd>
 
@@ -160,17 +238,10 @@ Sets whether the widget is required or not.
 Text1.setRequired(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Text1.setRequired(true).then(() => {
-  // code to be executed after required state is set
-})
-```
 
 </dd>
 
-#### setText `string`
+#### setText (param: string): Promise
 
 <dd>
 
@@ -182,23 +253,10 @@ Sets the text value of the widget.
 Text1.setText('Hello, world!')
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Text1.setText('Hello, world!').then(() => {
-  // code to be executed after text value is set
-})
-```
-
 </dd>
 
 
-
-
-
-
-
-#### setTextColor `string`
+#### setTextColor (param: string): Promise
 
 <dd>
 
@@ -207,15 +265,9 @@ Sets the selected option of the Select widget.
 *Example*:
 
 ```js
-Text1.setColor('#FF0000')
+Text1.setTextColor('#FF0000')
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
 
-```js
-Text1.setColor('#FF0000').then(() => {
-  // code to be executed after color is set
-})
-```
 
 </dd>

@@ -1,75 +1,243 @@
+---
+Description: Map Chart widget is useful for data visualizations on a map. The visualizations can be used in dashboards to denote areas of interest.
+---
 # Map Chart
 
-Map Chart widget is useful for data visualizations on a map. The visualizations can be used in dashboards to denote areas of interest.
+This page provides information on using the Map Chart widget for data visualizations on maps. The visualizations can be used in dashboards to denote areas of interest.
 
-![](/img/mapschart.png)
+<figure>
+  <img src="/img/mapschart.png" style= {{width:"700px", height:"auto"}} alt="Display Map Chart"/>
+  <figcaption align = "center"><i>Display Map Chart</i></figcaption>
+</figure>
 
-## Properties
+:::info
+Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
+:::
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+## Content properties
 
-### Widget properties
 
-These properties allow you to edit the Map chart widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-| Property        | Description                                                                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Map type**    | It lets you select the maps of the world or continents to visualize data.                                                                                                                                                                       |
-| **Title**       | Sets the title to be displayed on top of the map chart.                                                                                                                                                                                         |
-| **Visible**     | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published                                                                                                                             |
-| **Data**        | Information in a specified format (array \<id, value>) is to be displayed on the selected map type. To know what each `id` represents for a map, please refer to this [documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps). |
-| **Show Labels** | When turned on, it shows the labels for each data point on the map chart.                                                                                                                                                                       |
+### Data
 
-### Binding properties
+#### Map Type	`string`
 
-These properties allow you to bind your Map chart widget with any other widget in queries or JS objects. The following table lists all the binding properties.
+<dd>
 
-| Internal Property     | Description                                                                                                                             |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedDataPoint** | An object of the currently selected data point in the map. This object changes when the user selects a different data point in the map. |
-| **isVisible**         | This property indicates whether the widget is visible or not.                                                                           |
+Allows you to choose between world maps or individual continent maps for visualizing your data.
+
+*Options:*
+* World
+* World with Antarctica
+* Europe
+* North America
+* South America
+* Asia
+* Oceania
+* Africa
+* USA
+
+:::info
+If you want to display a different Map type not listed above, like specific locations, countries, or cities, please contact the support team using the chat widget at the bottom right of this page.
+:::
+
+
+</dd>
+
+
+#### Chart Data `array<object>`
+
+<dd>
+
+Allows you to display data in the chart.
+
+*Expected data structure:*
+
+```js
+[
+  {
+    "id": "AK",
+    "value": "1.96"
+  },
+  {
+    "id": "AL",
+    "value": "2.22"
+  },..
+]
+```
+
+
+In this format, the `id` refers to the pre-defined label ID available on [Fusioncharts](https://www.fusioncharts.com/dev/maps/spec-sheets/world) under the section List of Entities, and the `value` represents the corresponding value associated with that label. If a label ID has no corresponding value, the map displays grey color, to signify the absence of data.
+
+Each **Map Type** has different configurations. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps). 
+
+Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Chart data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+
+*Example:*
+```js
+{{fetchData.data}}
+```
+
+If the query data is not in the expected format, you can use the `map()` function to transform it before passing it to the widget, like:
+
+*Example:*
+```js
+{{fetchUserData.data.map( p => ({id: p.label, value: val.count}))}}
+```
+
+
+</dd>
+
+#### Title `string`
+
+<dd>
+
+Sets the text that appears at the top of the chart as a title.
+
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+</dd>
+
+#### Show Labels `boolean`	
+
+<dd>
+
+When enabled, displays labels for each data point featured on the Map chart.
+
+</dd>
+
+
 
 ### Events
 
-They are a set of actions that you can perform on the widget.
 
-| Event                | Description                                                                                                                                             |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onDataPointClick** | Sets the action to be run when the user selects a distinct region in the map. See a list of [supported actions](../appsmith-framework/widget-actions/). |
+#### onDataPointClick
 
-### Styles
+<dd>
+
+Sets the action (Framework functions, queries, or JS functions) to be executed when a user clicks on a data point in the chart.
+
+</dd>
+
+
+## Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
-| Styles            |                                                                                                                                                                                                                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Color range**   | Controls the colour of a set of regions based on the range of values assigned. Accepts arrays of objects with the following keys: code (Color code to be applied), minValue (Minimum value for which this colour should be applied), maxValue (Maximum value for which this colour should be applied). |
-| **Border Radius** | Allows you to define curved corners.                                                                                                                                                                                                                                                                   |
-| **Box Shadow**    | Allows you to choose from the available shadow styles.                                                                                                                                                                                                                                                 |
+### General
 
-## Displaying Data
+#### Color range `array<object>`
 
-Map chart’s options can be populated from a data source like an API / Query by transforming the incoming data to an array of \\(id, value\\). For each “Map type”, each unique ID represents a fixed region in the map, which can be determined from the [fusion map chart documentation](https://www.fusioncharts.com/dev/map-guide/list-of-maps).
+<dd>
 
-The transformation can be performed using JavaScript. So if the data is an array, you can transform it using the [**Array.map**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/TypedArray/map) function.
+Allows you to manage the color of a collection of regions based on the assigned value ranges. It accepts arrays of objects containing the following keys: 
 
+* `code`: Represents the color code to be applied.
+* `minValue`: Indicates the minimum value where this color should be used.
+* `maxValue`: Indicates the maximum value where this color should be used.
+* `displayValue`: Display string values, overriding the numeric range.
+* `alpha`: Indicates the transparency level, with a maximum value of 100.
+
+*Expected data structure:*
+```js
+[
+  {
+    "minValue": 0.5,
+    "maxValue": 1,
+    "code": "#FFD74D"
+  },
+  {
+    "minValue": 1,
+    "maxValue": 2,
+	"displayValue": "Hello",
+	"alpha": 32,
+    "code": "#FB8C00"
+  },..
+]
 ```
-// Query1.data is assumed to be an array here
-{{ Query1.data.map((row) => {
-      return { id: row.name, value: row.id }
-   })
-}}
+
+</dd>
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+
+</dd>
+
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `MapChart1.isVisible`.
+
+#### selectedDataPoint `object`
+
+<dd>
+
+Contains an object which represents the data point that the user has most recently clicked.
+
+*Example*:
+
+```js
+//To access all the details of the selected data point:
+{{MapChart1.selectedDataPoint}}
+
+//To access the label of the selected data point:
+{{MapChart1.selectedDataPoint.id}}
+
+//To access the value of the selected data point:
+{{MapChart1.selectedDataPoint.value}}
 ```
 
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+```js
+{{MapChart1.isVisible}}
+```
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -79,15 +247,6 @@ Sets the visibility of the widget.
 
 ```js
 MapChart1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MapChart1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
 ```
 
 </dd>

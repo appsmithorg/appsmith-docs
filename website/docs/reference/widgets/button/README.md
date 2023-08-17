@@ -253,11 +253,10 @@ It reflects the state of the widget's **Disabled** setting. It is represented by
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-
-#### setVisibility(`:boolean`)
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -266,16 +265,14 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
-Button1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
+Button1..setVisibility(true)
 
 ```
 
 </dd>
 
 
-#### setDisabled(`:boolean`)
+#### setDisabled (param: boolean): Promise
 
 <dd>
 
@@ -284,14 +281,13 @@ Sets the `disabled` state of the widget.
 *Example*:
 
 ```js
-Button1.setDisabled(false).then(() => {
-  // code to be executed after disabled state is set
-})
+Button1.setDisabled(false)
+
 ```
 
 </dd>
 
-#### setColor(`:boolean`)
+#### setColor (param: string): Promise
 
 <dd>
 
@@ -300,14 +296,12 @@ Sets the background color of the button widget.
 *Example*:
 
 ```js
-Button1.setColor('#FF0000').then(() => {
-  // code to be executed after color is set
-})
+Button1.setColor('#FF0000')
 ```
 
 </dd>
 
-#### setLabel(`:boolean`)
+#### setLabel (param: string): Promise
 
 <dd>
 
@@ -316,8 +310,6 @@ Sets the label of the button widget.
 *Example*:
 
 ```js
-Button1.setLabel('Click me!').then(() => {
-  // code to be executed after label is set
-})
+Button1.setLabel('Click me!')
 ```
 </dd>

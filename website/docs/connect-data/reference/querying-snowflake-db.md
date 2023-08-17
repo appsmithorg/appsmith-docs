@@ -97,6 +97,6 @@ DELETE FROM customer WHERE id = {{ CustomerTable.selectedRow.id }};
 
 In the above example, `CustomerTable` is the name of the Table widget where the user selects the row for deletion.
 
-## See also
+## Troubleshooting
 
-[Data access and binding](/core-concepts/data-access-and-binding)
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

@@ -23,25 +23,34 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
 
 <dl>
   <dt><b>URL</b></dt>
-  <dd>Sets the domain that this datasource should query. Queries created from this datasource inherit this value as a base URL.</dd><br/>
   <dd>
-    For example, if you set <b>URL</b> to <code>https://api.example.com</code>, then its queries would all start with that URL as their base path and you'd add the endpoint (like <code>/users/search/</code>) as a suffix within each query.
+
+The URL of the service to query. For a guide about connecting to a local APIs, see [Connect Local Database](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith).
+
   </dd>
-</dl>
 
-<dl>
   <dt><b>Headers</b></dt>
-  <dd>Sets key/value pairs to send in the header of all HTTP requests to this datasource.</dd>
-  <dd><em>To learn how to set up dynamic headers, visit and fork this <a href="https://app.appsmith.com/applications/6200ac292cd3d95ca414dc4f/pages/624eda0551a8863d6c406760">sample app</a></em>.</dd>
-</dl>
+  <dd>
+  
+Key-value pairs to include in the header section of your HTTP requests.
 
-<dl>
+  </dd><br/>
+
   <dt><b>Query parameters</b></dt>
-  <dd>Sets key/value pairs to send as part of all HTTP requests to this datasource.</dd>
-</dl>
+  <dd>
+  
+Key-value pairs that should be passed as parameters in the URL of your HTTP requests.
 
-<dl>
-  <dt><b>Authentication Type</b></dt>
+  </dd><br/>
+
+  <dt><b>Send Appsmith signature header</b></dt>
+  <dd>
+  
+When enabled, you can enter a secret string of at least 32 characters in the <b>Session Details Signature Key</b> field. Every API call made to this datasource then includes an additional header, <code>X-Appsmith-Signature</code>, whose value is a <a href="https://jwt.io">JSON Web Token (JWT)</a> signed with a signature created from your secret string. This can be used to help prove the integrity and authenticity of your requests originating from Appsmith.
+
+  </dd><br/>
+
+<dt><b>Authentication Type</b></dt>
   <dd>Sets the method used to authenticate requests. Configure details under the <b>Authentication</b> dropdown after selecting your Authentication Type.</dd><br/>
   <dd><i>Options:</i>
     <ul>
@@ -50,11 +59,12 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
       <li>
         <b>OAuth 2.0:</b> Enables several fields for configuring an OAuth 2.0 integration.
         <ul>
-          <li><b>Grant Type:</b> An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token. <br/>
+          <li><b>Grant Type:</b> An authorization grant type is a secured representation of the owner’s authorization presented in exchange for an access token.</li>
           <i>Options:</i>
-          <b>Authorization Code</b> : An authorization code is a temporary code authorized by an authorization server. You can get an access token in exchange for an authorization code. Once you get an access token, you can use it to access the resources or perform actions on behalf of the user.<br/>
-         <b>Client Credentials</b>.
-         </li>
+          <ul>
+            <li><b>Authorization Code</b> : An authorization code is a temporary code authorized by an authorization server. You can get an access token in exchange for an authorization code. Once you get an access token, you can use it to access the resources or perform actions on behalf of the user.</li>
+            <li><b>Client Credentials</b>.</li>
+          </ul>
           <li><b>Add Access Token To:</b> Sets whether the access token is sent as a <b>Request Header</b> or as a query parameter (<b>Request URL</b>).</li>
           <li><b>Header Prefix:</b> When the access token is sent as a header, this sets a string to prefix the access token. A common example is <code>Bearer</code>.</li>
           <li><b>Access Token URL:</b> The endpoint on the authentication server that is used to exchange the authorization code for an access token.</li>
@@ -72,21 +82,19 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
       <li><b>API Key:</b> Sends a key/value pair which is sent as a base64-encoded string in the request's Authorization header. You can specify the key's prefix, as well as choose whether it's sent in the request header or the query params.</li>
       <li><b>Bearer Token:</b> Sends a bearer token value as a base64-encoded string in the request's Authorization header. If you are using OIDC protocol to log in to your instance, you can use the <a href="/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt#access-token">access token</a> of the logged-in user as a bearer token.</li>
     </ul>
-  </dd>  
-</dl>
+  </dd><br/>
 
-<dl>
-  <dt><b>Send appsmith signature header</b></dt>
-  <dd>When enabled, you can enter a secret string of at least 32 characters in the <b>Session Details Signature Key</b> field. Every API call made to this datasource then includes an additional header, <code>X-Appsmith-Signature</code>, whose value is a <a href="https://jwt.io">JSON Web Token (JWT)</a> signed with a signature created from your secret string.</dd>
+<dt><b>Use self-signed certificate</b></dt>
+  <dd>
+  
+When enabled, you can upload your own self-signed certificate for accessing your endpoint. These can be useful for accessing your API without relying on external agnecies to issue certificates for authenticating the origin of your requests.
 
-  <dd>You can use the signature header to ensure the authenticity and integrity of your query; you can guarantee that the request originated from Appsmith, and that it has not been tampered with before reaching your API.</dd>
+  </dd>
+  <dd>
+  
+This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. The certificate information is stored securely in an encrypted format in the database.
 
-</dl>
-
-<dl>
-  <dt><b>Use self-signed certificate</b></dt>
-  <dd>When enabled, you can upload your own self-signed certificate for accessing your REST endpoint. These can be useful for accessing your API without relying on external agnecies to issue certificates for authenticating the origin of your requests.</dd>
-  <dd>This information needs to be provided in .PEM (_Privacy Enhanced Mail_) format. The certificate information is stored securely in an encrypted format in the database.</dd>
+  </dd>
 
 </dl>
 
@@ -95,3 +103,7 @@ The datasource configuration fields do not accept JavaScript code or mustache sy
 Once you have set up your Authenticated API datasource, you're ready to create queries.
 
 Visit the [REST API docs](/connect-data/reference/rest-api) to learn about the query configuration parameters.
+
+## Troubleshooting
+
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

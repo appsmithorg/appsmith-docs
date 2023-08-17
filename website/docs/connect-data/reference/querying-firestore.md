@@ -1,328 +1,367 @@
 ---
 sidebar_position: 6
+description: Connect Appsmith to a Firestore database and create queries.
 ---
 
 # Firestore
 
-This page describes how to connect your application to your Firestore database and use queries to manage its content.
+This page provides information for connecting your application to your Firestore database and for using queries to manage its content.
 
-<VideoEmbed host="youtube" videoId="Npwf5LW0MXA" title="Build CRUD apps with Appsmith and Firebase" caption="Build CRUD apps with Appsmith and Firebase"/>
+## Connection parameters
 
-## Connect to Firestore
+The following section is a reference guide that provides a complete description of all the parameters to connect to a Firestore database.
 
 <figure>
   <img src="/img/firestore-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore datasource." />
   <figcaption align="center"><i>Configuring a Firestore datasource.</i></figcaption>
 </figure>
 
-To add a Firestore datasource, click the (**+**) sign in the **Explorer** tab next to **Datasources**. On the next screen, select the **Firestore** button. Your datasource is created and you are taken to a screen to configure its settings.
+<dl>
+  <dt><b>Database URL</b></dt>
+  <dd>
 
-The Firestore plugin requires three pieces of information which are available from your project's settings page in the Firebase Console. To find the settings, navigate to your Firebase project's dashboard and click the **Gear** icon next to **Project Overview**.
+The domain or network location of your database instance. This value includes your **Project ID** in the format `https://PROJECT_ID.firebaseio.com`.
 
-- **Project ID**: Find this value under the **General** tab in your project settings.
-- **Database URL**: Build this value from your Project ID: `https://<project-id>.firebaseio.com`
-- **Service Account Credentials**: Under the **Service Accounts** tab in your project settings, click **Generate new private key**. Open the downloaded file and copy-paste its entire contents into the **Service Account Credentials** field in your Appsmith datasource configuration.
+  </dd>
 
-Click the **Test** button in Appsmith to check that your configuration is valid, and **Save** the datasource when you're done.
+  <dt><b>Project ID</b></dt>
+  <dd>
+
+The unique identifier for your Firestore project, accessible in your Firebase project's **Project Settings**. For more information, see [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more#project-id).
+
+  </dd>
+
+  <dt><b>Service account credentials</b></dt>
+  <dd>
+
+A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase project's **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration. For
+
+  </dd>
+</dl>
 
 ## Create queries
 
-You can write [queries](/connect-data/reference/query-settings) to fetch or write data to Firestore by selecting the **+ New Query** button on the Firestore datasource page, or by clicking (**+**) next to **Queries/JS** in the **Explorer** tab and selecting your Firestore datasource. You'll be brought to a new query screen where you can write queries.
+The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Firestore queries.
 
 <figure>
   <img src="/img/firestore-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore query." />
   <figcaption align="center"><i>Configuring a Firestore query.</i></figcaption>
 </figure>
 
-## Fetch documents
+### List Documents
 
-There are two commands available for fetching your data:
+This command lists all documents from a given collection. The following section lists all the fields available for the **List Documents** command.
 
-- **List Documents**: Fetch all documents in a given collection. Allows filtering results by additional parameters.
-- **Get Document**: Fetch a single document by its path.
+<dl>
+  <dt><b>Collection Name</b></dt>
+  <dd>
 
-Record data is returned according to the format:
+The name of the collection to query.
+
+  </dd>
+
+  <dt><b>Where</b></dt>
+  <dd>
+
+Defines conditions that documents' column values must meet to appear in your results. The available comparison operators are `==`, `<`, `<=`, `>=`, `>`, `in`, `contains`, and `contains any`.
+
+  </dd>
+  <dd><i>Options:</i>
+    <ul>
+     <li><b>Add condition:</b> Adds another simple single-line expression.</li>
+     <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>AND</code> statements.</li>
+    </ul>
+  </dd>
+  <dd>
+    <figure>
+      <img src="/img/firestore-where-conditions.png" style={{width: "100%", height: "auto"}} alt="Use Where conditions to create multiple levels of filtering." />
+      <figcaption align="center"><i>Use Where conditions to create multiple levels of filtering.</i></figcaption>
+    </figure>
+  </dd>
+
+  <dt><b>Order by</b></dt>
+  <dd>
+
+Sorts query results by a column value. Expects a JSON array containing a single string which is the column's name. By default this sorts in ascending order, or you can add a `-` prefix to the column name to sort in descending order. For example, `["name"]` is ascending and `["-name"]` is descending.
+
+  </dd>
+
+  <dt><b>Start after</b></dt>
+  <dd>
+
+Sets a record that acts as a starting cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the last record from the most recent execution of a query:
+
+```javascript
+{{ ListQuery.data[ListQuery.data.length - 1] }}
+```
+
+Each time the query is run, it fetches the next set of results that come after the previous execution. 
+
+  </dd>
+
+  <dt><b>End before</b></dt>
+  <dd>
+
+Sets a record that acts as an ending cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the first record from the most recent execution of a query:
+
+```javascript
+{{ ListQuery.data[0] }}
+```
+
+When the query is paged backwards, it fetches the set of results that lead up to the current results.
+
+  </dd>
+
+  <dt><b>Limit</b></dt>
+  <dd>
+
+Sets a limit for how many documents may be returned by the query.
+
+  </dd>
+</dl>
+
+### Create Document
+
+This command creates a new document within a given collection. Firestore automatically generates an identifier for the created document. The following section lists all the fields available for the **Create Document** command.
+
+<dl>
+  <dt><b>Collection Name</b></dt>
+  <dd>
+
+The name of the collection where the new document should be created.
+
+  </dd>
+
+  <dt><b>Body</b></dt>
+  <dd>
+
+Expects a JSON object that represents the document to be created. For example:
+
+```javascript
+{
+	"name": {{ NameInput.text }},
+	"email": {{ EmailInput.text }},
+	"date_of_birth": {{ DatePicker.selectedDate }}
+}
+```
+
+  </dd>
+
+  <dt><b>Timestamp Path</b></dt>
+  <dd>
+
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
+
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
 
 ```json
 {
-  "date_of_birth": "1989-06-07",
-  "_ref": {
-    "path": "users/2",
-    "id": "2"
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
   },
-  "name": "Amal",
-  "email": "amal@example.com"
+  // ...
 }
 ```
+  
+  </dd>
+</dl>
 
-| **Parameter**       | **Description**                                                                                                                                                                                                                                           |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Where**           | Defines conditions that documents' column values must meet to appear in your results.                                                                                                                                                                     |
-| **Order By**        | Sorts query results by a column value. Expects an array containing a single string which is the column's name. Sorts by the given column in ascending order by default, or you can add a "-" prefix to sort in descending order. (`["name] / ["-name"]`). |
-| **Start After**     | Sets a starting pagination cursor for searching documents. Expects an object that is a whole document result.                                                                                                                                             |
-| **End Before**      | Sets an ending pagination cursor for searching documents. Expects an object that is a whole document result.                                                                                                                                              |
-| **Limit Documents** | Sets a limit for how many documents may be returned by the query.                                                                                                                                                                                         |
+### Update Document
 
-### Server-side Pagination
+This command updates an existing document at a given path. The following section lists all the fields available for the **Update Document** command.
 
-To set up server-side pagination for your **List Documents** query called `ListUsers` and a table called `UsersTable`:
 
-1. In the properties for your `ListUsers` query, set **Start After** to:
-   ```javascript
-   {
-     {
-       ListUsers.data[ListUsers.data.length - 1];
-     }
-   }
-   ```
-2. Set **End Before** to:
-   ```javascript
-   {
-     {
-       ListUsers.data[0];
-     }
-   }
-   ```
-3. Set **Limit Documents** to:
-   ```javascript
-   {
-     {
-       UsersTable.pageSize;
-     }
-   }
-   ```
-4. In the `UsersTable`'s properties on the canvas, set **Table Data** to:
-   ```javascript
-   {
-     {
-       ListUsers.data;
-     }
-   }
-   ```
-5. Turn on the table's **Server side pagination** property and set its **onPageChange** property to execute your `ListUsers` query.
+<dl>
+  <dt><b>Collection/Document path</b></dt>
+  <dd>
 
-When you click the page buttons in the table's header, the pages should now cycle through your dataset.
+The path to the document to update. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
----
+  </dd>
 
-#### Example
+  <dt><b>Body</b></dt>
+  <dd>
 
-> Fetch all documents from a Firestore collection `users`, 10 at a time, and put them into a table widget `UsersTable`.
-
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Create a query called `ListUsers` based on your Firestore datasource.
-
-- Select the **List** command for your query, and enter `users` in the **Collection** field.
-- In the properties for your `ListUsers` query, set **Start After** to `{{ ListUsers.data[ ListUsers.data.length - 1 ] }}`.
-- Set **End After** to `{{ ListUsers.data[0] }}`.
-- Set **Limit Documents** to `{{ UsersTable.pageSize }}`.
-- On the canvas in the `UsersTable`'s properties, set **Table Data** to `{{ ListUsers.data }}`.
-- Turn on the table's **Server side pagination** property and set its **onPageChange** property to execute your `ListUsers` query.
-
-Your table should populate with data once your query is run.
-
-## Create a document
-
-Use the **Create Document** command to create a new document in a specified collection and path. Alternatively, use the **Add Document to Collection** command to create a new document in a given collection, allowing Firestore to auto-generate the document's path.
-
-After filling in the desired collection/path, enter your document data in the **Body** field of the query:
+Expects a JSON object that represents the new key-value pairs to update the document with. You only need to include the key-value pairs that are changing, adding all keys is not necessary. For example:
 
 ```javascript
 {
-	"name": "Nick",
-	"email": "nick@example.com",
-	"date_of_birth": "1995-11-11"
+	"name": {{ NewNameInput.text }}
 }
 ```
 
-| **Parameter**                   | **Description**                                                                                                                                            |
-| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Timestamp Path** _(optional)_ | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`). |
+  </dd>
 
----
+  <dt><b>Delete Key Path</b></dt>
+  <dd>
 
-#### Example
+When filled, deletes the key located at the path specified by this field. You can delete nested keys by providing the path from the root of the object. Expects an array with a single string value, for example `["PARENT_KEY.KEY_TO_DELETE"]`.
 
-> Create a new document in the `users` collection with values for `name`, `email`, and `date_of_birth`.
+  </dd>
 
-**Setup**:
+  <dt><b>Timestamp Path</b></dt>
+  <dd>
 
-- Create a query `CreateUser` based on your Firestore datasource, and set it to use the **Add Document to Collection** command.
-- Set the **Collection/Document Path** field to `users`.
-- To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `NewUserForm`. Add **Source Data** to the JSON Form to create input fields:
+When filled, adds a timestamp key-value pair into the created document that shows when the document was updated. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
 
-  ```json
-  {
-    "name": "",
-    "email": "",
-    "date_of_birth": ""
-  }
-  ```
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.lastModified"]</code> adds the following to your document:
 
-- In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+```json
+{
+  "meta": {
+    "lastModified": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
-  ```javascript
-  // Submit button's onClick event
-  {
-    {
-      CreateUser.run();
-    }
-  }
-  ```
+  </dd>
+</dl>
 
-- Once these form fields are filled out, you can add their values to your query in the **Body** field like below:
+### Delete Document
 
-  ```javascript
-  // in the Body field of your query
-  {{
-  {
-      "name": NewUserForm.formData.name,
-      "email": NewUserForm.formData.email,
-      "date_of_birth": NewUserForm.formData.date_of_birth
-  }
-  }}
-  ```
+This command deletes an existing document at a given path. The following section lists all the fields available for the **Delete Document** command.
 
-When the Submit button is clicked, your query is executed and the new record is inserted into your Firestore collection.
+<dl>
+  <dt><b>Collection/Document path</b></dt>
+  <dd>
 
-## Update a document
+The path to the document to delete. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
 
-Use the **Update Document** command to modify an existing document.
+  </dd>
+</dl>
 
-Provide the target's **Collection/Document Path**, and enter your document data in the **Body** field of the query.
+### Get Document
 
-:::info
-When using **Update Document**, you only need to provide the fields that have been changed. If you use **Upsert Document**, your query completely replaces whatever record exists at the given path, so be sure to provide all necessary fields including those that have not changed.
-:::
+This command fetches a single existing document at a given path. The following section lists all the fields available for the **Get Document** command.
+
+<dl>
+  <dt><b>Collection/Document path</b></dt>
+  <dd>
+
+The path to the document to fetch. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
+
+  </dd>
+</dl>
+
+### Upsert Document
+
+This command creates a new document or replaces an existing document at the given path. The following section lists all the fields available for the **Upsert Document** command.
+
+If you use **Upsert Document**, your query completely replaces whatever record exists at the given path, so be sure to provide all necessary fields including those that have not changed.
+
+<dl>
+  <dt><b>Collection/Document path</b></dt>
+  <dd>
+
+The path to the document to update. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
+
+  </dd>
+
+  <dt><b>Body</b></dt>
+  <dd>
+
+Expects a JSON object that represents the document to be created. If a document already exists at the path given in **Collection/Document path**, this command completely replaces it with the content of this field. For example:
 
 ```javascript
 {
-	"name": "Nicholas",
-	"email": "nicholas@example.com"
+	"name": {{ NameInput.text }},
+	"email": {{ EmailInput.text }},
+	"date_of_birth": {{ DatePicker.selectedDate }}
 }
 ```
 
-| **Parameter**       | **Description**                                                                                                                                            |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Delete Key Path** | When filled, deletes the key/value pair with the name that you provide. For example, passing `["name"]` will delete the `name` property in the document.   |
-| **Timestamp Path**  | When filled, adds a timestamp value in the created document under the key name you provide. Expects an array with a single string value (`["timestamp"]`). |
+  </dd>
 
----
+  <dt><b>Timestamp Path</b></dt>
+  <dd>
 
-#### Example
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
 
-> Update the `name` and `email` values of a document in the `users` collection.
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
+```json
+{
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
-- Create a query `UpdateUser` based on your Firestore datasource, and set it to use the **Update Document** command.
-- Set the **Collection/Document Path** field to the `_ref.path` property of the record you're updating:
+  </dd>
+</dl>
 
-  ```javascript
-  {
-    {
-      UsersTable.selectedRow._ref.path;
-    }
-  }
-  ```
+### Add document to collection
 
-- To gather data for the new record, create a [JSON Form](/reference/widgets/json-form) on the canvas called `UpdateUserForm`. Add **Source Data** to the JSON Form to create input fields. Reference the existing row in the Table widget to have the form fields pre-filled:
+This command creates a new document within a given collection, under the identifier you provide. The following section lists all the fields available for the **Add document to collection** command.
 
-  ```json
-  {{
-  {
-      name: UserTable.selectedRow.name,
-      email: UserTable.selectedRow.email,
-      date_of_birth: UserTable.selectedRow.date_of_birth
-  }
-  }}
-  ```
+<dl>
+  <dt><b>Collection/Document path</b></dt>
+  <dd>
 
-- In JSON Form's Submit [button](/reference/widgets/button) properties, configure the **onClick** event to execute your query:
+The path to where the document should be created. The last part of this string becomes the document's identifier. For example, a path `Users/Admins/admin001` will create a document `admin001` in the `Users` Collection in the `Admins` directory.
 
-  ```javascript
-  // Submit button's onClick event
-  {
-    {
-      UpdateUser.run(
-        () => ListUsers.run(),
-        () => {}
-      );
-    }
-  }
-  ```
+  </dd>
 
-  - The **onSuccess** callback is used above to refresh your table data after the operation is complete.
+  <dt><b>Body</b></dt>
+  <dd>
 
-- Once these form fields are filled out, you can add their values to your query in the **Body** field like below:
+Expects a JSON object that represents the document to be created. For example:
 
-  ```javascript
-  // in the Body field of your query
-  {{
-  {
-      "name": UpdateUserForm.formData.name,
-      "email": UpdateUserForm.formData.email,
-      "date_of_birth": UpdateUserForm.formData.date_of_birth
-  }
-  }}
-  ```
+```javascript
+{
+	"name": {{ NameInput.text }},
+	"email": {{ EmailInput.text }},
+	"date_of_birth": {{ DatePicker.selectedDate }}
+}
+```
 
-When the Submit button is clicked, your query is executed and the new values are updated on the document.
+  </dd>
 
-## Deleting a document
+  <dt><b>Timestamp Path</b></dt>
+  <dd>
 
-Use the **Delete Document** command to delete an existing document by its collection/path.
+When filled, adds a timestamp key-value pair into the created document that shows when the document was created. Expects an array with a single string value, for example `["TIMESTAMP_KEY_NAME"]`. The string you provide in this field is used as the key to the timestamp value in your document. You can create a timestamp key-value pair within a nested object by using `.` to specify the path.
 
----
+  </dd>
+  <dd>
+  
+For example, the value <code>["meta.dateCreated"]</code> adds the following to your document:
 
-#### Example
+```json
+{
+  "meta": {
+    "dateCreated": {
+      "seconds": 1681997026,
+      "nanos": 409000000
+    },
+  },
+  // ...
+}
+```
 
-> Delete a document from the `users` collection.
+  </dd>
+</dl>
 
-**Setup**: create a [Table widget](/reference/widgets/table) called `UsersTable` to display your data. Use a **List Documents** query to display your collection of documents in the table.
+## Troubleshooting
 
-- Create a query `DeleteUser` based on your Firestore datasource, and set it to use the **Delete Document** command.
-- Set the **Collection/Document Path** field to the `_ref.path` property of the record you're deleting:
-
-  ```javascript
-  {
-    {
-      UsersTable.selectedRow._ref.path;
-    }
-  }
-  ```
-
-- Add a [button](/reference/widgets/button) to the canvas and update its **Label** to `Delete`. Configure the **onClick** event to execute your query:
-
-  ```javascript
-  // Delete button's onClick event
-  {
-    {
-      DeleteUser.run(
-        () => ListUsers.run(),
-        () => {}
-      );
-    }
-  }
-  ```
-
-  - The **onSuccess** callback is used above to refresh your table data after the operation is complete.
-
-When the Submit button is clicked, your query is executed and the document is deleted.
-
-## Commands
-
-Below are the commands available for use with Firestore:
-
-| **Command**                    | **Description**                                                                           |
-| ------------------------------ | ----------------------------------------------------------------------------------------- |
-| **List Documents**             | Fetch documents in a given collection. Allows filtering results by additional parameters. |
-| **Create Document**            | Add a new document at a specified path.                                                   |
-| **Update Document**            | Make changes an existing document.                                                        |
-| **Delete Document**            | Delete an existing document.                                                              |
-| **Get Document**               | Fetch a single document by its collection/path.                                           |
-| **Upsert Document**            | Replaces an existing document or creates a new document at the specified path.            |
-| **Add Document to Collection** | Add a new document to a collection with a path generated by Firestore.                    |
-
-## See also
-
-[Convert Firestore Timestamp to JavaScript Date](https://www.youtube.com/watch?v=SHrp7cLXr9s)
+If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.

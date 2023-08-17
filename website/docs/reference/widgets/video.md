@@ -1,61 +1,198 @@
+---
+Description: A widget for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+---
 # Video
 
-A widget for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+This page provides information on using the Video widget, which allows playback of various URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+
+<figure>
+  <img src="/img/video-img.png" style= {{width:"700px", height:"auto"}} alt="Display Video"/>
+  <figcaption align = "center"><i>Display Video</i></figcaption>
+</figure>
+
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 
-## Properties
+### Data
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+#### URL `string`
 
-### Widget properties
+<dd>
 
-These properties allow you to edit the video widget. All these properties are present in the property pane of the widget. The following table lists all the widget properties.
+Allows you to set the video source to be played. 
 
-| Property            | Description                                                                                                          |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **URL**             | Renders the video from the URL.                                                                                      |
-| **Autoplay**        | Plays video automatically, without action from a user.                                                               |
-| **Visible**         | Controls widget's visibility on the page. When turned off, the widget isn't visible when the app is published. |
-| **Animate Loading** | Allows you to control a widget’s animation on the page load.                                                         |
+*Example*:
+```js
+https://assets.appsmith.com/widgets/bird.mp4
+```
 
-### Binding properties
+You can display dynamic data by binding the response from a query or a JavaScript function to the **URL** property. For instance, if you have a table with a column containing video URLs, clicking on a specific row plays the corresponding video:
 
-These properties help you share values between widgets and also allow you to easily access the widget property within Queries or JS functions.
+*Example*:
 
-| Property      | Description                                                              | Code Snippet          |
-| ------------- | ------------------------------------------------------------------------ | --------------------- |
-| **autoPlay**  | This parameter indicates whether the auto play feature is enabled. | `{{Video.autoPlay}}`  |
-| **playState** | This field shows whether a video is currently playing.            | `{{Video.playState}}` |
+```js
+{{Table1.selectedRow.videoURL}}
+```
+
+</dd>
+
+### General
+
+#### Auto Play `boolean`
+
+<dd>
+
+Allows you to play the video automatically on page load, without requiring any action from the user. Default value is `false`.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. The default value for the property is `true`.
+
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. The default value for the property is `true`.
+
+</dd>
 
 ### Events
 
-They're a set of actions that you can perform on the widget. The following table lists the actions:
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
-| Events      | Description                                                                                                                |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **onPlay**  | Sets the action to be run when the video plays. See a list of [supported actions](../appsmith-framework/widget-actions/).  |
-| **onPause** | Sets the action to be run when the video pauses. See a list of [supported actions](../appsmith-framework/widget-actions/). |
-| **onEnd**   | Sets the action to be run when the video ends. See a list of [supported actions](../appsmith-framework/widget-actions/).   |
 
-### Styles
+#### onPlay
+
+<dd>
+Specifies the action to be executed when the video starts playing.
+
+</dd>
+
+#### onPause
+
+<dd>
+Specifies the action to be performed when the video is paused.
+
+</dd>
+
+#### onEnd
+
+<dd>
+
+Specifies the action to be taken when the video playback is completed.
+
+</dd>
+
+## Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
-| Style                | Description                                            |
-| -------------------- | ------------------------------------------------------ |
-| **Background color** | Sets the widget's background color.                    |
-| **Border Radius**    | Allows you to define curved corners.                   |
-| **Box Shadow**       | Allows you to choose from the available shadow styles. |
+### Color
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. To control the border radius programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. To control the Box Shadow programmatically, click the **JS** button to enable JavaScript and specify a valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Video1.isVisible`.
+
+#### autoPlay `boolean`
+
+<dd>
+
+Indicates the current state of the widget's **Auto Play** setting.
+
+*Example:*
+```js
+{{Video1.autoPlay}}
+```
+
+</dd>
+
+#### playState `string`
+
+<dd>
+
+Indicates the current state of the Video widget's playback. It is represented by a string with values:
+
+* PLAYING: Indicates that the video is currently playing.
+* NOT_STARTED: Represents the state when the video has not started playing yet.
+* PAUSED: Indicates that the video is paused.
+* ENDED: Represents the state when the video playback has ended.
+
+*Example:*
+```js
+{{Video1.playState}}
+```
+
+</dd>
+
+#### playing `boolean`
+
+
+<dd>
+
+Indicates the current playing state of the widget. When the value is `true`, it means the video is playing.
+
+*Example:*
+```js
+{{Video1.playing}}
+```
+
+
+</dd>
 
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -67,19 +204,10 @@ Sets the visibility of the widget.
 Video1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Video1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-
-```
-
 </dd>
 
 
-#### setURL `string`
+#### setURL (param: string): Promise
 
 <dd>
 
@@ -91,18 +219,10 @@ Sets the URL of the video to be displayed in the widget.
 Video1.setURL('<https://example.com/video.mp4>')
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Video1.setURL('<https://example.com/video.mp4>').then(() => {
-  // code to be executed after URL is set
-})
-```
-
 </dd>
 
 
-#### setPlaying `boolean`
+#### setPlaying (param: boolean): Promise
 
 <dd>
 
@@ -113,11 +233,4 @@ Sets the playing state of the Video widget.
 Video1.setPlaying(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Video1.setPlaying(true).then(() => {
-  // code to be executed after playing state is set
-})
-```
 </dd>

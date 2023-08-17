@@ -391,7 +391,7 @@ Sets the horizontal alignment of the text within the cells.
 
 </dd>
 
-#### Vertical Alignment `string`
+#### Vertical alignment `string`
 
 <dd>
 
@@ -426,7 +426,26 @@ If you want to keep the same background color for an entire row, you can use the
 #### Text Color `string`
 
 <dd>
+
 Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
+</dd>
+
+#### Background Color `string`
+
+<dd>
+
+Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
+#### Border color `string`
+
+
+<dd>
+
+Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
+
+
 </dd>
 
 ### Border and shadow
@@ -464,7 +483,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 
 
-#### Border Color `string`
+#### Border color `string`
 
 <dd>
 
@@ -497,7 +516,7 @@ Contains the data of the row selected by the user. It's an empty object if no ro
 ```
 </dd>
 
-#### selectedRows `array`
+#### selectedRows `array<object>`
 
 <dd>
 
@@ -557,7 +576,7 @@ Reflects the current column sort criteria. For example, if table rows are being 
 
 </dd>
 
-#### tableData `array`
+#### tableData `array<object>`
 
 <dd>
 
@@ -596,7 +615,7 @@ Contains an array of the index of the rows selected by the user. Not applicable 
 
 </dd>
 
-#### filteredTableData `boolean`
+#### filteredTableData `array<object>`
 
 <dd>
 
@@ -714,7 +733,7 @@ Indicates whether the previous page of data has been visited by the user.
 
 </dd>
 
-#### tableHeaders `array`
+#### tableHeaders `array<object>`
 
 <dd>
 
@@ -754,7 +773,7 @@ Contains data related to the recently updated added row.
 ```
 </dd>
 
-#### updatedRows `array`
+#### updatedRows `array<object>`
 
 <dd>
 
@@ -796,10 +815,11 @@ Refers to an array of indices corresponding to the rows that have been updated.
 
 Widget property setters enables you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -811,17 +831,10 @@ Sets the visibility of the widget.
 Table1.setVisibility(true)
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
-```
 
 </dd>
 
-#### setData `array<object`
+#### setData (param: array<object\>): Promise
 
 <dd>
 
@@ -833,19 +846,11 @@ Sets the data to be displayed in the Table widget.
 Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
 ```
 
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() => {
-  // code to be executed after data is set
-})
-```
-
 </dd>
 
 
 
-#### setSelectedRowIndex `number`
+#### setSelectedRowIndex (param: number): Promise
 
 <dd>
 
@@ -855,14 +860,6 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }]).then(() =
 
 ```js
 Table1.setSelectedRowIndex(2)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Table1.setSelectedRowIndex(2).then(() => {
-  // code to be executed after selected row index is set
-})
 ```
 
 </dd>

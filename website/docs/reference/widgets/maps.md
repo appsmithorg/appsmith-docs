@@ -1,15 +1,34 @@
+---
+Description: This page explains how to use the Map widget(powered by Google Maps API) to display location data and enable users to add markers, search, and select locations on the map.
+---
 # Map
 
-This page explains how to use the Map widget(powered by Google Maps API) to display location data and enable users to add markers, search, and select locations on the map.
+This page provides information on using the Map widget (powered by [Google Maps API](https://developers.google.com/maps/documentation)) to display location data and enable users to add markers, search, and select locations on the map.
+
 
 :::info IMPORTANT
-If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. For more information, see [Configuring Google Maps](/getting-started/setup/instance-configuration/google-maps).
+If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
 
+<figure>
+  <img src="/img/map-img.png" style= {{width:"700px", height:"auto"}} alt="Download image"/>
+  <figcaption align = "center"><i>Display Map</i></figcaption>
+</figure>
 
-## Display location
 
-To display a specific area on the Map widget, you can set the **Initial location** property by selecting a location from Google's autocomplete suggestions. For instance, if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
+## Content properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
+
+### Data
+
+#### Initial location	`object`
+
+<dd>
+
+Sets the default location that the map focuses on when it is displayed for the first time to the user. 
+
+*Example*: if you want to show New York City as the initial location on the Map widget, you can either select it from Google's autocomplete suggestions or define its location using JavaScript, like:
 
 ```js
 {
@@ -19,8 +38,17 @@ To display a specific area on the Map widget, you can set the **Initial location
 }
 ```
 
-### Add markers
-You can use markers on the Map widget to showcase precise locations or display multiple locations at once. To add markers to the Map widget, define an array of markers with latitude, longitude, title and optional color keys, and set it in the **Default markers** property. For example:
+</dd>
+
+#### Default markers `array<object>`
+
+
+<dd>
+
+Allows you to display precise locations or display multiple locations at once. To add markers to the Map widget, define an array of markers with latitude, longitude, title and color keys, and set it in the **Default markers** property. 
+
+
+*Example:*
 
 ```js
 [
@@ -33,37 +61,9 @@ You can use markers on the Map widget to showcase precise locations or display m
 ]
 ```
 
-This would display markers at the specified coordinates with the specified titles and colors. 
+You can display dynamic data from queries or JS functions by binding the response to the **Default markers** property.
 
-Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Default markers** property.
-
----
-**Example 1**: suppose you want to display the location of a user when you select a row in a table.
-
-1.  Fetch data from the sample **users** database using a SELECT query `fetchUserData`. 
-
-2. Display the data by binding the query response to the **Table Data** property of the Table widget `tblUserData`, as shown below:
-
-```js
-{{fetchUserData.data}}
-```
-3. In the **Default markers** property, add:
-
-```js
-[
-  {
- "lat": {{parseFloat(tblUserData.selectedRow.latitude)}},
-"long": {{parseFloat(tblUserData.selectedRow.longitude)}},
-"title": "{{tblUserData.selectedRow.name}}",
-"color": "blue"
-  }
-]
-```
-This creates a map marker using the latitude and longitude values from the database. In addition, the marker is given a title and is displayed in blue color.
-
-**Example 2**:  suppose you want to display multiple markers on a Map using the locations from the users' database.
-
-To do this, you can use the`fetchUserData` query to retrieve the data and then **transform the data** into an array of objects containing latitude, longitude, and title properties using a `map()` function, and then set it in the **Default markers** property to display all the locations together on the map.
+*Example*:  suppose you want to display multiple markers on a Map using the locations from the users' database:
 
 ```js
 {{fetchUserData.data.map(loc  => {
@@ -75,11 +75,9 @@ To do this, you can use the`fetchUserData` query to retrieve the data and then *
 })}}
 ```
 
+This code converts `fetchUserData` into a new array with latitude, longitude, and location name properties.
 
-
-### Live location
-
-If you want to display the live location on a map, you can use the **Default Marker** property to set a marker at your current latitude and longitude coordinates. To do this, you can use the following code:
+If you want to display the live location, you can use the **Default Marker** property to set a marker at your current latitude and longitude coordinates. To do this, you can use the following code:
 
 ```js
 [{
@@ -91,9 +89,74 @@ If you want to display the live location on a map, you can use the **Default Mar
 To fetch the current location, use `appsmith.geolocation.watchPosition()` action triggered by a Button widget's **onClick** event. 
 
 
-## Search and tag location
+</dd>
 
-Enabling the **Search Location** property on a map allows users to search and select a specific location on the map. This can be achieved using Google Autocomplete, which suggests potential locations as the user types in the search bar.
+
+### General
+
+
+#### Zoom Level `number`
+
+<dd>
+
+Sets the zoom level of the map. Default value is set to `50%`.
+
+</dd>
+
+#### Visible `boolean`
+
+<dd>
+
+Controls the visibility of the widget. If you turn off this property, the widget would not be visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to conditionally control the widget's visibility. Default value is set to `true`.
+
+For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+```js
+{{Select1.selectedOptionValue === "Yes"}}
+```
+
+
+
+</dd>
+
+
+#### Animate Loading `boolean`
+
+
+<dd>
+
+This property controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the <code>JS</code> next to the property. Default value is set to `true`.
+
+</dd>
+
+#### Enable pick location	`boolean`
+
+<dd>
+
+Enabling this option allows users to interactively select a location on the map, and the map marker is moved to the user's current location. The `selectedMarker` field is updated with the information of the marker representing the user's current location.
+
+</dd>
+
+#### Map & Marker Centring `boolean`
+
+<dd>
+
+When enabled, this setting controls whether the clicked marker is automatically centered on the map.
+
+</dd>
+
+#### Enable clustering `boolean`
+
+<dd>
+
+When enabled, groups nearby markers into a single cluster on the map.
+
+</dd>
+
+#### Enable search location `boolean`
+
+<dd>
+
+When this property is enabled, a search bar is added to the map, allowing users to easily navigate and search for specific locations. This can be achieved using Google Autocomplete, which suggests potential locations as the user types in the search bar.
 
 To access the searched location, use the ``center`` reference property. This returns the latitude and longitude coordinates of the location. To display the searched location on the map, add the following code to the **Default markers** property:
 
@@ -103,73 +166,132 @@ To access the searched location, use the ``center`` reference property. This ret
 ]
 ```
 
+</dd>
 
+### Create marker
 
+#### Create new marker `boolean`
 
+<dd>
 
+Allows users to mark locations by adding new markers on the map.
 
-## Properties
+</dd>
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+#### onMarkerCreated	
 
+<dd>
 
-### Widget properties
+This event is available only when the **Create new marker** property is turned on. It specifies the action (Framework functions, queries, or JS functions) to be executed when the user creates a new marker on the map.
 
-These properties allow you to edit the Map widget. All of these properties are present in the property pane of the widget.
+</dd>
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Initial location**     |  Object  | This property sets the default location that the map should focus on.                                                                                                                      |
-| **Default markers**      | Array   | This property sets an array of default markers. |
-| **Map & Marker Centring** | Boolean  | Controls whether the clicked marker is centred on the map.                                                                                                                                 |
-| **Enable search location** | Boolean | This property enables a search bar on the map which users can use to navigate                                                                                                              |
-| **Enable pick location** | Boolean   | This property allows users to select a location on the map and moves the map marker to this location. The `selectedMarker` field is populated with this marker.                            |
-| **Create new marker**    | Boolean   | This property enables scrolling within the contents of each tab                                                                                                                            |
-| **Visible**             | Boolean    | Controls widget's visibility on the page.                                                                       |
-| **Animate Loading**     | Boolean    | Allows you to control a widget’s animation on the page load.                                                                                                                               |
-| **Zoom Level**          | Number    | Sets the default zoom level of the map      
-| **Enable clustering**    | Boolean          |         Enabling clustering groups nearby markers into a cluster                                                                                                   |
+### Events
 
-### Reference properties
+#### onMarkerClick	
 
-These properties allow you to bind your select widget with any other widget in queries or JS objects. For instance, you can use `Map1.isVisible` to get the visibility status.
+<dd>
 
-| Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **selectedMarker**  | Object  | This contains the marker object selected by the user          |
-| **markers**        | Array   | This contains the list of markers on the map                  |
-| **isVisible**       | Boolean  | This property indicates whether the widget is visible.  |
-| **center**       | Object  | This property contains latitude and longitude coordinates of the location. |
+Sets the action (Framework functions, queries, or JS functions) to be executed when the user clicks a marker on the map. 
 
+</dd>
 
-### Style properties
+## Style properties
 
 Style properties allow you to change the look and feel of the widget.
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Border Radius** | String | Allows you to define curved corners.                   |
-| **Box Shadow**    | String  | Allows you to choose from the available shadow styles. |
+### Border and shadow
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
 
 
-
-## Events
-
-When the event is triggered, these event handlers can run queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions)
+</dd>
 
 
-| Events              | Description                                                                                                                                       |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **onMarkerClick**   | Sets the action to be run when the user clicks a marker on the map.      |
-| **onMarkerCreated** | Sets the action to be run when the user creates a new marker on the map. |
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Map1.isVisible`.
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+```js
+{{Map1.isVisible}}
+```
+
+</dd>
+
+#### center `object`
+
+<dd>
+
+Contains title, latitude, and longitude coordinates of the location.
+
+*Example:*
+```js
+{{Map1.center}}
+```
+
+</dd>
+
+#### selectedMarker `object`
+
+<dd>
+
+Contains the marker object that the user has selected.
+
+*Example:*
+```js
+{{Map1.selectedMarker}}
+```
+
+</dd>
+
+#### markers `array<object>`
+
+<dd>
+
+This contains the list of markers on the map
+
+*Example:*
+```js
+// Access the entire array of markers
+{{Map1.markers}}
+
+// Access the title of the first marker in the array
+{{Map1.markers[0].title}}
+
+// here [0] represents the index of the first marker
+```
+
+</dd>
+
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
 
-#### setVisibility `boolean`
+
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -179,14 +301,6 @@ Sets the visibility of the widget.
 
 ```js
 MapChart1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-MapChart1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
 ```
 
 </dd>

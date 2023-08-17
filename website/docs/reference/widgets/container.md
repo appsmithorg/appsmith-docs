@@ -1,62 +1,139 @@
+---
+description: >-
+  Container widget reference
+---
+
 # Container
 
-This page explains how to use Container widgets to group multiple widgets. To do so, you can either drop the widgets inside a Container widget or select the widgets and use `cmd+g` to create a Container widget.
+This page describes how to use Container widgets to group multiple widgets. You can either drop the widgets inside a Container widget or select the widgets and use `cmd+g` to create a Container widget.
 
+## Content properties
 
-<VideoEmbed host="youtube" videoId="mfPGTUxr6SY" title="Using the Container Widget" caption="Using the Container Widget"/>
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
-## Configure height
+### General
 
-The **Height** property in a Container widget determines how the widget's height reacts to content changes. Selecting **Auto Height** adjusts the height dynamically based on the size of its contents, which is useful for handling dynamic content.
+#### Visible `boolean`
 
-However, you can also enable **Auto height with limits** to set minimum and maximum height limits for the widget, even when its content changes dynamically. To use this feature, set the two handles that appear on the Container widget to drag and set the height limits.
+<dd>
 
-## Properties
+Controls the visibility of the widget. If you turn off this property, the widget is not visible in View mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
-Properties allow you to edit the widget, connect it with other widgets and customize the user actions.
+For example, if you want to make the widget visible only when the user checks an item in a Checkbox widget, you can use the following JavaScript expression in the visible property of the Container widget:
 
+```js
+{{Checkbox1.isChecked}}
+```
 
-### Widget properties
+</dd>
 
-These properties allow you to edit the widget. All of these properties are present in the property pane of the widget.
+#### Animate Loading `boolean`
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Visible**           | Boolean  | 	Controls widget's visibility on the page. When turned off: The widget won't be visible when the app is published.  |
-| **Animate Loading**    | Boolean | Allows you to control a widget’s animation on the page load. |
-| **Scroll Contents**    | Boolean  | Enables scrolling in this widget when its contents are larger than its dimensions.  |
-| **Height**   | String | This property determines how the widget's height reacts to content changes. It has three possible configurations:<br/>**Fixed**: The height of the widget remains as set using drag and resize.<br/> **Auto Height**: The height of the widget reacts to content changes.<br/>  **Auto Height with limits**: Same as Auto height, with a configurable option to set the minimum and maximum number of rows that can be occupied by the widget.                                      |
+<dd>
 
+Controls whether the widget is displayed with a loading animation. When enabled, the widget shows a skeletal animation during the loading process. Additionally, you can control it through JavaScript by clicking on the **JS** next to the property.
 
-### Reference properties
+</dd>
 
-These properties can be referenced in other widgets, queries, or JS functions using the dot operator. For instance, you can use `Container1.isVisible` to get the visibility status.
+#### Height `string`
 
-| Reference Property | Data type | Description                                                                                                                                                    |
-| ----------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **backgroundColor**  | String| Represents the widget's **Background Color** setting as a CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)value _(string)_. |
-| **isVisible**       | Boolean | Reflects the state of the widget's **Visible** setting _(bool)_.                                                                                  |
+<dd>
 
-### Style properties
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
 
-Style properties allow you to change the look and feel of the widget. All of these properties are present in the property pane of the widget.
+- **Fixed:** The height of the widget remains as set using drag and resize.
+- **Auto Height:** The widget's height adjusts dynamically in response to changes in its content.
+- **Auto Height with limits:** Same as Auto height, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
 
-|  Property   | Data type |  Description                                                                                                                                                                      |
-| -----------------| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Background Color** | String | Sets the background color of the widget. Accepts CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                  |
-| **Border Color**    | String | Sets the border color of the widget. Accepts CSS [`color` ](https://developer.mozilla.org/en-US/docs/Web/CSS/color)values.                                                      |
-| **Border Width**    | Number | Sets the width of the widget's border. Accepts _number_ values only, in px.                                                                                                      |
-| **Border Radius**   | String | Rounds the corners of the widget's outer edge. With JS enabled, this accepts valid CSS [`border-radius`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) values. |
-| **Box Shadow**      | String | Casts a drop shadow from the frame of the widget. With JS enabled, this accepts valid CSS [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values.    |
+</dd>
+
+## Style properties
+
+Style properties allow you to change the look and feel of the widget.
+
+### Color
+
+#### Background color `string`
+
+<dd>
+
+Sets the background color of the widget. If JavaScript is enabled, you can specify a valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the background color.
+
+</dd>
+
+#### Border color `string`
+
+<dd>
+
+Sets the border color of the widget. If JavaScript is enabled, you can specify a valid [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value to adjust the border color.
+
+</dd>
+
+### Border and shadow
+
+#### Border width `string`
+
+<dd>
+
+Sets the width of the widget's border.
+
+</dd>
+
+#### Border radius `string`
+
+<dd>
+
+Applies rounded corners to the outer edge of the widget. If JavaScript is enabled, you can specify valid [CSS border-radius](https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius) to adjust the radius of the corners.
+
+</dd>
+
+#### Box Shadow `string`
+ 
+<dd>
+
+This property adds a drop shadow effect to the frame of the widget. If JavaScript is enabled, you can specify valid [CSS box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) values to customize the appearance of the shadow.
+
+</dd>
+
+## Reference properties
+
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a Container widget, you can use `Container1.isVisible`.
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+*Example:*
+```js
+{{Container1.isVisible}}
+```
+
+</dd>
+
+#### backgroundColor `string`
+
+<dd>
+
+Represents the widget's **Background Color** setting as a [CSS color](https://developer.mozilla.org/en-US/docs/Web/CSS/color) value.
+
+*Example:*
+
+```js
+{{Container1.backgroundColor}}
+```
+
+</dd>
 
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
-These methods are asynchronous, and you can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
 
-#### setVisibility `boolean`
+#### setVisibility (param: boolean): Promise
 
 <dd>
 
@@ -66,14 +143,6 @@ Sets the visibility of the widget.
 
 ```js
 Container1.setVisibility(true)
-```
-
-To perform sequential actions, use the `.then()` block for execution.
-
-```js
-Container1.setVisibility(true).then(() => {
-  // code to be executed after visibility is set
-})
 ```
 
 </dd>

@@ -211,7 +211,7 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `MenuButton1.isVisible`.
 
-#### label
+#### Label
 
 <dd>
 Returns the value of the label associated with the widget.
