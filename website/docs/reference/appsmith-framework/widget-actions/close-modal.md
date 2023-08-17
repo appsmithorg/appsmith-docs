@@ -2,7 +2,8 @@
 sidebar_position: 4
 description: Close a Modal widget using the closeModal() Appsmith framework function.
 ---
-# Close Modal
+
+# `closeModal()`
 
 This page provides information for using the `closeModal()` framework function to open a Modal widget.
 
@@ -12,15 +13,7 @@ This page provides information for using the `closeModal()` framework function t
 closeModal(modalName: string): Promise
 ```
 
-### Arguments
-
-#### Modal Name
-
-<dd>
-
-_(string)_ Name of the Modal widget to close.
-
-</dd>
+* This function accepts a parameter of type _string_ which is the name of the modal widget to close.
 
 ### Example
 
