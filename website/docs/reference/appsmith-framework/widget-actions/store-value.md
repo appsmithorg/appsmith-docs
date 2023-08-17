@@ -5,7 +5,7 @@ description: >-
 
 # storeValue()
 
-The storeValue() function stores the data in the browser's local storage in the form of key-value pairs. This enables you to later retrieve and use the stored data anywhere within the application.
+The storeValue() function stores the data in the browser's local storage as key-value pairs that represent storage objects and can be later accessed anywhere in the application.
 
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 
@@ -32,7 +32,7 @@ storeValue(key: string, value: any, persist? = true): Promise
 {{storeValue('email',input1.text)}}
 ```
 
-Here, `email` is the key where the value is stored and `input1.text` is the value in the input widget that's saved in the storage object.
+Here, `email` is the key where the value is stored, and `input1.text` is the value in the input widget that's saved in the storage object.
 
 *Example 2*:  You can save any data type with storeValue(). The code snippet below shows how to store employees' basic information using a function inside a JS Object. 
 
@@ -181,7 +181,3 @@ export default {
 ```
 
 The `getUniqueValue` function calls  `GetUniqueNameAPI.run()` to fetch data from the API. The prefix `await` to the `GetUniqueNameAPI` call ensures that the control waits for API execution to complete and then moves to the following line. The prefix `await` to the `storeValue()` ensures that the value gets added to the store for the given key before executing `showAlert` in the next line.
-
-# Further Reading
-
-- [Appsmith Framework](/reference/appsmith-framework)
