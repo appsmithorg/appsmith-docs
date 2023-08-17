@@ -1,4 +1,4 @@
-# Asynchronous JavaScript Function Settings
+# Function Settings 
 
 The asynchronous function allows you to choose when you want to execute code. For example, you may want to delay the query execution or fetch the data on demand.
 

@@ -476,19 +476,6 @@ If no such unique identifier is present in the data, you can join multiple ident
 Always set the **Data Identifier** property with a valid unique identifier to boost performance.
 :::
 
-## Server-side pagination
-
-Lists are often required to display large data sets from queries, but browsers can only sometimes load all the data in the database or might do so slowly. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render, thus enabling you to paginate the data and determine the pagination boundaries.
-
-Follow the steps below to paginate the responses and request smaller chunks of data at a time:
-
-1. Enable the **Server Side Pagination** property for the List.
-2. Call the query on the **onPageChange** event listener.
-3. Set the `LIMIT` and `OFFSET` clauses in the query using the **pageSize** and **pageNo** properties of the List as shown below:
-
-```javascript
-SELECT * FROM users LIMIT {{ <listName>.pageSize }} OFFSET {{ (<listName>.pageNo - 1) * <listName>.pageSize }}
-```
 
 ## Access list items
 
@@ -566,18 +553,3 @@ SELECT * FROM users LIMIT {{ <listName>.pageSize }} OFFSET {{ (<listName>.pageNo
   ]
   ```
 
-## Nested lists
-
-You can nest lists within a List widget up to three levels. The **level_*** property can be used to access the parent List item's data and widget properties where * represents the level number (from 1 through 3).
-
-Suppose there is a parent list - `parentList`, and a child list - `childList1`. The widgets present in the inner list `childList1` can access the values of an attribute/field in the dataset using the **currentItem** property of the outer list `parentList` as shown below:
-
-```javascript
-{{level_1.currentItem.fieldName}}
-```
-
-You can use the **currentView** and **currentIndex** properties similarly.
-
-Suppose there is another List widget `childList2` inside `childList1`. The innermost list, `childList2` can access two levels - **level_1** and **level_2**. Here, **level_1** represents the data and state of the topmost list widget, `parentList` and **level_2** represents `childList1`.
-
-The parent list widgets don't have access to it's child list widgets. In the preceding example, the widgets in `childList1` can't use `level_2` or `level_3` to access the data in it child lists. Similarly, `childList1` can only access `level_1` and not `level_2`, but `childList2` can access both `level_1` and `level_2`.

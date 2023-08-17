@@ -370,8 +370,8 @@ const sidebars = {
     {
       //Reference start
       type: 'category',
-      collapsed: false,
       label: 'Reference',
+      link: { type: 'doc', id:  'build-apps/reference/README' },
       items: [
         {
           type: 'category',
@@ -478,14 +478,14 @@ const sidebars = {
       link: { type: 'doc', id: 'write-code/how-to-guides/README' },
       items: [
     
-        'write-code/how-to-guides/Write-code-in-Appsmith',
+        'write-code/how-to-guides/write-code-in-appsmith',
         'core-concepts/writing-code/javascript-editor-beta/README',
-        'write-code/how-to-guides/Display-data-from-functions',
+        'write-code/how-to-guides/display-data-from-functions',
         'core-concepts/writing-code/javascript-promises',
         'advanced-concepts/sharing-data-across-pages',
-        'write-code/how-to-guides/Chain-functions-and-promises',
+        'write-code/how-to-guides/chain-functions-and-promises',
         'core-concepts/writing-code/ext-libraries',
-
+        'write-code/how-to-guides/debug-js-errors',
       ]
     },
     {
@@ -628,7 +628,7 @@ const sidebars = {
         },
       ],
     }, //Reference End */
-    
+
     {
       //Advanced Concepts Start
       type: 'category',

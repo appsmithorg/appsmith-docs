@@ -1,4 +1,4 @@
-# Asynchronous JavaScript
+# Use JavaScript promises
 
 This document explains how to write asynchronous Javascript code in Appsmith.
 
