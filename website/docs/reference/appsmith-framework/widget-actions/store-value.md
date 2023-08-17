@@ -10,7 +10,7 @@ The storeValue() function stores the data in the browser's local storage as key-
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 
 
-You can store a value using the storeValue() function by passing the parameters shown in the signature. 
+You can store a value in the browser's local storage using the storeValue() function by passing the parameters shown in the signature. 
 
 ## Signature
 
@@ -20,11 +20,9 @@ The syntax for storeValue() function is given below:
 storeValue(key: string, value: any, persist? = true): Promise
 ```
 
-| Argument    | Description              |
-| --------------|--------------------------- |
-| **key**          | Name of the key.        |
-| **value**        | The data you want to save using storeValue(). You can save any data type in the Appsmith store.  |
-| **persist**      | Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.            |
+- **key**: Name of the key. Accepts a string value.
+- **value**: The data you want to save using storeValue(). You can save any data type in the Appsmith store.  
+- **persist**: Accepts a boolean value. Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.            
 
 *Example 1:* If you want to store the text of an input widget, you can use storeValue() as shown below:
 

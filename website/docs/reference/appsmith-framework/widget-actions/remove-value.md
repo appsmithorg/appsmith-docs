@@ -15,9 +15,7 @@ The syntax for the removeValue() function is given below:
 removeValue(key: string)
 
 ```
-| Argument    | Description              |
-| --------------|--------------------------- |
-| **key**       | Name of the key.        |
+- **key**: Name of the key. Accepts a string value.
 
 *Example*: If you want to remove the value with key `isActive`, you can use the removeValue() function as shown below:  
 
