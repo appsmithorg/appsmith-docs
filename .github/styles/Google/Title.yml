@@ -10,3 +10,5 @@ exceptions:
   - to
   - clipboard
   - from
+  - removeValue()
+  - clearStore()
