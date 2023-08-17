@@ -8,7 +8,7 @@ toc_max_heading_level: 2
 
 The `storeValue()` function stores the data in the browser's local storage as key-value pairs that represent storage objects and can be later accessed anywhere in the application.
 
-<VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="Using the StoreValue Function" caption="How to use the StoreValue Function"/>
+<VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="Using the StoreValue Function" caption="Using the StoreValue Function"/>
 
  
 ## Signature
@@ -38,7 +38,7 @@ The data you want to save using `storeValue()`. You can save any data type in th
 
 <dd>
 
-Accepts a boolean value. Defaults to **true**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.
+Accepts a boolean value. Default value is **True**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.
 
 </dd>
 
