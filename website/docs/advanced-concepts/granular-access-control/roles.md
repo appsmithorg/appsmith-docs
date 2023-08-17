@@ -40,7 +40,6 @@ In this section, you'll find permissions related to the application and its reso
 | **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | - | Make the application public | Export that particular application. |
 | **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - | - |
 | **Query** | - | Edit the query. | Delete the query. | View the query. | Execute the query. | - | - |
-|**JS Object**| - | Edit the JS Object. | Delete the JS Object. | View the JS Object. | Execute the JS Object. | - | - |
 
 
 ### Datasource and environments
