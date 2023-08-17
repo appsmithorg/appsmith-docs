@@ -1,4 +1,4 @@
-# Filter table data using Datepicker
+# Filter Table Data using Datepicker
 
 To get data that was collected within a particular time frame, you need to use a query to filter the data based on that time frame. To retrieve data for a specific date range, you can use either the `formattedDate` or `selectedDate` reference property.
  
