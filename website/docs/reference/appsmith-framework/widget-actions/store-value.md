@@ -5,7 +5,7 @@ description: >-
 
 # storeValue()
 
-The storeValue() function stores the data in the browser's local storage in the form of key-value pairs. This enables you to later retrieve and use the stored data from anywhere within the application.
+The storeValue() function stores the data in the browser's local storage in the form of key-value pairs. This enables you to later retrieve and use the stored data anywhere within the application.
 
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="How to use the StoreValue Function" caption="How to use the StoreValue Function"/>
 

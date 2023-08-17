@@ -12,3 +12,9 @@ exceptions:
   - from
   - removeValue()
   - clearStore()
+  - closeModal()
+  - copyToClipboard()
+  - resetWidget()
+  - download()
+  - copyToClipboard()
+  - showModal()
