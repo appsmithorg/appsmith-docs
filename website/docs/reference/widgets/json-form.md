@@ -203,7 +203,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-Sets an [action](reference/appsmith-framework/widget-actions) to be executed when the user clicks the Submit button on the form.
+Sets an [action](/reference/appsmith-framework/widget-actions) to be executed when the user clicks the Submit button on the form.
 
 </dd>
 
