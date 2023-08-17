@@ -527,7 +527,7 @@ const sidebars = {
 }, //CODE end
 
 
-    {
+  /*   {
       //core concepts section start
       type: 'category',
       collapsed: false,
@@ -609,8 +609,9 @@ const sidebars = {
         },
       ],
     }, //core concepts end
+     */
     
-    {
+/*     {
       //Reference start
       type: 'category',
       collapsed: false,
@@ -626,7 +627,8 @@ const sidebars = {
           ],
         },
       ],
-    }, //Reference End
+    }, //Reference End */
+    
     {
       //Advanced Concepts Start
       type: 'category',

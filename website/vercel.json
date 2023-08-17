@@ -1023,6 +1023,13 @@
     {
       "source": "/reference/readme-1/actions/:path*",
       "destination": "/reference/appsmith-framework/widget-actions/:path*"
+    },
+    {
+      "source": "/core-concepts/writing-code",
+      "destination": "/write-code/how-to-guides/Write-code-in-Appsmith"
     }
+
+   
+
   ]
 }
