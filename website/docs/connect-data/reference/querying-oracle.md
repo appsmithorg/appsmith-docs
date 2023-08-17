@@ -21,31 +21,35 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring an Oracle datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+#### Host Address
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd><br />
+<dd>The network location of your Oracle database. This can be a domain name or an IP address. To connect to a local Oracle database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd>
 
-  <dt><b>Service Name</b></dt>
-  <dd>The service name for your database instance. </dd><br />
+#### Port
 
-  <dt><b>Username</b></dt>
-  <dd>The username that you want to use to authenticate with the Oracle server.</dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port `1521` by default if you do not specify one.</dd>
 
-  <dt><b>Password</b></dt>
-  <dd>Password to use if the server demands password authentication.</dd><br />
+#### Service Name
 
-  <dt><b>SSL Mode</b></dt>
-  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>TLS:</b> Connection is encrypted but no client verification is done.</li>
-      <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
-    </ul>
-  </dd>
-</dl>
+<dd>The service name for your database instance. </dd>
+
+#### Username
+
+<dd>The username that you want to use to authenticate with the Oracle server.</dd>
+
+#### Password
+
+<dd>Password to use if the server demands password authentication.</dd>
+
+#### SSL Mode
+
+<dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>TLS:</b> Connection is encrypted but no client verification is done.</li>
+    <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
+  </ul>
+</dd>
 
 ## Query Oracle
 
