@@ -12,7 +12,7 @@ Browse this section to learn about the different actions you can trigger on Apps
 * [Store Value](/reference/appsmith-framework/widget-actions/store-value)
 * [Navigate To](/reference/appsmith-framework/widget-actions/navigate-to)
 * [Show Alert](/reference/appsmith-framework/widget-actions/show-alert)
-* [Open Modal](/reference/appsmith-framework/widget-actions/show-modal)
+* [Show Modal](/reference/appsmith-framework/widget-actions/show-modal)
 * [Close Modal](/reference/appsmith-framework/widget-actions/close-modal)
 * [Download](/reference/appsmith-framework/widget-actions/download)
 * [Copy to Clipboard](/reference/appsmith-framework/widget-actions/copy-to-clipboard)
