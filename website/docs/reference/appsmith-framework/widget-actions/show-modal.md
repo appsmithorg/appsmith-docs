@@ -2,7 +2,8 @@
 sidebar_position: 3
 description: Open a Modal widget using the showModal() Appsmith framework function.
 ---
-# Show Modal
+
+# `showModal()`
 
 This page provides information for using the `showModal()` framework function to open a Modal widget.
 
@@ -12,15 +13,7 @@ This page provides information for using the `showModal()` framework function to
 showModal(modalName: string): Promise
 ```
 
-### Arguments
-
-#### Modal Name
-
-<dd>
-
-_(string)_ Name of the Modal widget to open.
-
-</dd>
+* This function accepts a parameter of type _string_ which is the name of the modal widget to open.
 
 ### Example
 
