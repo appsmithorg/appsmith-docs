@@ -49,7 +49,7 @@ All query results are stored in the [data](/reference/appsmith-framework/query-o
 {{ Query1.data }}
 ```
 
-Queries fetch data in an array of objects where each object is a row, and each key in the object is a column. However, each widget property supports a specific data type. You can [transform the data](/core-concepts/data-access-and-binding/displaying-data-read#transform-data) from the query response to match the expected data structure in the property.
+Queries fetch data in an array of objects where each object is a row, and each key in the object is a column. However, each widget property supports a specific data type. You can [transform the data](/core-concepts/building-ui/dynamic-ui#transform-data#transform-data) from the query response to match the expected data structure in the property.
 
 ## Debug errors
 
@@ -67,8 +67,8 @@ If you want to see errors in the *View* and in the *Edit* mode, you can append `
 
 Once you have successfully run a Query, you can use it in your application to:
 
-* [Display Data from a query](/core-concepts/data-access-and-binding/displaying-data-read) - Bind the query results to a widget to display the data.
-* [Capture Data](/core-concepts/data-access-and-binding/capturing-data-write) - Capture the user input entered in a widget that can be referenced using JavaScript.
+* [Display Data from a query](/core-concepts/building-ui/dynamic-ui#transform-data) - Bind the query results to a widget to display the data.
+* [Capture Data](/core-concepts/building-ui/dynamic-ui#transform-data) - Capture the user input entered in a widget that can be referenced using JavaScript.
 * Run multiple queries by separating the run statements with a `;`. Check out the sample app that shows [how to run multiple queries](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/62ab7a7e84b91337251afd40) on a button click.
 * Pass parameters to a query in the run() function and access these parameters in the query. Check out the sample app that shows [how to pass parameters to the Query.run() function](https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/628e64d47901344ba8d2a584).
 
