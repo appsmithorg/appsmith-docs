@@ -1,17 +1,10 @@
 ---
 sidebar_position: 4
+description: Close a Modal widget using the closeModal() Appsmith framework function.
 ---
 # Close Modal
 
-This action is used to close a Modal when triggered. Create a new Modal and open it before calling this action
-
-
-<figure>
-  <img src="/img/close-modal-action.png" style= {{width:"700px", height:"auto"}} alt="Close a Modal"/>
-  <figcaption align = "center"><i>Close a Modal</i></figcaption>
-</figure>
-
-
+This page provides information for using the `closeModal()` framework function to open a Modal widget.
 
 ## Signature
 
@@ -21,6 +14,16 @@ closeModal(modalName: string): Promise
 
 ### Arguments
 
-| **Argument Name** | **Description**                |
-| ----------------- | ------------------------------ |
-| **Modal Name**    | Name of the Modal to be closed |
+#### Modal Name
+
+<dd>
+
+_(string)_ Name of the Modal widget to close.
+
+</dd>
+
+### Example
+
+```javascript
+{{ closeModal("Modal1") }}
+```
