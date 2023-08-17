@@ -78,26 +78,30 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
   ```bash
   helm repo update
   ``` 
-  4. Deploy Appsmith with:
+  4. Generate the `values.yaml` file with:
+  ```bash
+  helm show values appsmith/appsmith  > values.yaml
+  ```
+  5. Deploy Appsmith with:
 
   ```bash
-  helm install appsmith appsmith/appsmith -n appsmith --create-namespace
+  helm install appsmith appsmith/appsmith -n appsmith --create-namespace -f values.yaml
   ```
 
-  5. Get pod name with:
+  6. Get pod name with:
 
   ```bash
   kubectl get pods -n appsmith
   ```
   The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
-  6. To verify the installation locally, use the below command to forward the 8080 port to 80:
+  7. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
     kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
     ```
 
-  7. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+  8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080). To expose Appsmith installation on internet, see the [Publish Appsmith on internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -121,31 +125,34 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
   helm repo update
   ```
 
-5. Run the below command to deploy Appsmith:
+5. Generate the `values.yaml` file with:
+  ```bash
+  helm show values appsmith-ee/appsmith  > values.yaml
+  ```
+6. Run the below command to deploy Appsmith:
 
   ```bash
-  helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace
+  helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
   ```
-
-6. Get pod name with:
+7. Get pod name with:
 
   ```bash
   kubectl get pods -n appsmith-ee
   ```
  The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
-7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
+8. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
   
   ```bash
   kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
   ```
   In above command, `appsmith-ee-0` is the Appsmith pod name.
 
-8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+9. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
-9. Log into your Appsmith account, and enter your license key to activate the instance.
+10. Log into your Appsmith account, and enter your license key to activate the instance.
 
-For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide.
+For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on internet, see the [Publish Appsmith on internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
 
 </TabItem>
 </Tabs>   

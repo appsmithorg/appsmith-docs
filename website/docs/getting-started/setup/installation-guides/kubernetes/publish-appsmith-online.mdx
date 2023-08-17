@@ -43,11 +43,9 @@ The page provides steps to publish Appsmith Kubernetes installation to the inter
 
 <TabItem label="Community Edition" value="communityEdition"> 
 
-Use the `helm upgrade` command to enable the ingress controller as shown below:
-  
- 1. Update the `ingress` attribute as shown below in the `values.yaml` file.
+  1. Go to the Appsmith installation directory, open values.yaml file, and update the `ingress` attribute as shown below:
 
-    ```yaml 
+  ```yaml 
     ingress:
       ## @param ingress.enabled Enable ingress record generation for Ghost
       ##
@@ -70,7 +68,7 @@ Use the `helm upgrade` command to enable the ingress controller as shown below:
       ## @param service.type Kubernetes Service type
       ##
       type: ClusterIP
-    ```
+  ```
 
   2. Run the below command once the parameter values are updated:
 
@@ -86,14 +84,12 @@ Use the `helm upgrade` command to enable the ingress controller as shown below:
 </TabItem>
  <TabItem label="Business Edition" value="businessEdition">
 
- Use the `helm upgrade` command to enable the ingress controller as shown below:
-  
-  1. Update `ingress` attribute as shown below in the `values.yaml` file.
-
+  1. Go to the Appsmith installation directory, open values.yaml file, and update `ingress` attribute as shown below:
     ```yaml 
       ingress:
         ## @param ingress.enabled Enable ingress record generation for Ghost
         ##
+        #highlight-next-line
         enabled: true
         annotations:
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
