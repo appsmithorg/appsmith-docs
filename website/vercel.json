@@ -885,11 +885,7 @@
     },
     {
       "source": "/learning-and-resources/integrations",
-      "destination": "/connect-data/how-to-guides/integrations"
-    },
-    {
-      "source": "/connect-data/integrations",
-      "destination": "/connect-data/how-to-guides/integrations"
+      "destination": "/connect-data/integrations"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-upload-to-s3",
