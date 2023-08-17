@@ -94,7 +94,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
   6. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
-    kubectl --namespace appsmith port-forward appsmith-0 8080:80
+    kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
     ```
 
   7. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
@@ -137,8 +137,9 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
   
   ```bash
-  kubectl --namespace appsmith-ee port-forward appsmith-0 8080:80
+  kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
   ```
+  In above command, `appsmith-ee-0` is the Appsmith pod name.
 
 8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 

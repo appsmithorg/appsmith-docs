@@ -74,7 +74,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
     maxReplicas: 2
   ```
 
-2. You may choose to configure external PostgreSQL, MongoDB, and Redis instances for your self-hosted instance. Follow these steps to configure an external PostgreSQL, MongoDB, and Redis instances:
+2. You may choose to configure external managed PostgreSQL, MongoDB, and Redis instances for your self-hosted instance. Follow these steps to configure an external managed PostgreSQL, MongoDB, and Redis instances:
   * Turn off the settings for internal PostgreSQL, by changing the `enabled` attribute to `false` in the `values.yaml` file for postgresql attribute.
   
     ```yaml
@@ -85,10 +85,10 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
           username: root
     ```
 
-  * Update the below parameters to point to an external PostgreSQL:
+  * Update the below parameters to point to an external managed PostgreSQL:
   
     ```yaml
-    # configure an external PostgreSQL
+    # configure an external managed PostgreSQL
     applicationConfig:
       APPSMITH_KEYCLOAK_DB_DRIVER: "postgresql"
       APPSMITH_KEYCLOAK_DB_USERNAME: "POSTGRES_USER"
@@ -106,7 +106,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
         nameOverride: appsmith-mongodb
     ```
   
-* Update the below parameters to point to an external MongoDB:
+* Update the below parameters to point to an external managed MongoDB:
 
     ```yaml
     # configure an external MongoDB
@@ -125,7 +125,7 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
           enabled: false
     ```
   
-* Update the below parameters to point to an external Redis:
+* Update the below parameters to point to an external managed Redis:
 
     ```yaml
     # configure an external Redis
