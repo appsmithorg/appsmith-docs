@@ -10,7 +10,6 @@ The removeValue() function clears the value associated with a specified key, whi
 
 ## Signature
 
-The syntax for the removeValue() function is given below:
 
 ```js
 removeValue(key: string)
@@ -29,7 +28,7 @@ A string containing the key name that acts as a unique identifier to access the 
 
 *Example*: 
 
-If you want to remove the value with key `isActive`, you can use the removeValue() function using a JS Object as shown below:  
+If you want to remove the value with key `isActive`, you can use the `removeValue()` function using a JS Object as shown below:  
 
 ```js
 export default {
