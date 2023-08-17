@@ -16,8 +16,16 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 2. 4 GB of RAM.
 
 ## Before you begin
-1. Installed Helm package manager on your local machine. See the official Helm documentation for your [operation system](https://helm.sh/docs/intro/install/#through-package-managers).
-2. A running Kubernetes cluster. If not present, follow these steps to set up the cluster:
+1. Installed Helm package manager on your local machine. See the official Helm documentation for your [operating system](https://helm.sh/docs/intro/install/#through-package-managers).
+2. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
+    * [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
+    * [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
+    * [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
+3. A running Kubernetes cluster. If not present, follow these steps to set up the cluster on AWS EKS:
+
+  :::info
+   You are free to choose your preferred platform for hosting the Kubernetes cluster. Make sure you have configured Kubeconfig and created a default storage class before proceeding with the Appsmith installation. If you face any issues, reach out to the support team at [support@appsmith.com](mailto:support@appsmith.com).
+  :::
 
     a. Verify if you have access to AWS CLI with:
       
@@ -53,12 +61,6 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
       provisioner: kubernetes.io/aws-ebs
       EOF
     ```
-
-3. Installed and configured `kubectl` to interact with your Kubernetes cluster. See the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
-* [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
-* [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
-* [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
-
 
 ## Install Appsmith
 

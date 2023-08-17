@@ -18,12 +18,12 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
 3. At least 2 GB of free storage space for backup and update tasks.
 
 ## Before you begin
-1. Created a backup of the Appsmith instance before a manual update. For more information about creating backup, see the [Backup Appsmith Instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
-2. Installed a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods. If you haven't installed it yet, install it with:
+1. Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
+2. Install a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods with:
   ```bash
   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
   ```
-3. Configured your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC). If you haven't already, follow these steps:
+3. Configure your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC),follow these steps:
 
     a. To create an IAM role to interact with the Amazon Elastic File System (EFS), see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
           
@@ -76,21 +76,22 @@ High Availability is only available on Kubernetes self-hosted [**Business Editio
     maxReplicas: 2
   ```
 
-2. To update the installation of Appsmith with high availability configuration, run the command below. If the `values.yaml` file is not in the deployment directory specify the file location using the `-f` attribute.
+2. Update the Appsmith installation with high availability configuration with: 
 
-```bash
-helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
-```
+  ```bash
+  helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+  ``` 
+ If the `values.yaml` file is not in the deployment directory specify the file location in the `-f` attribute.
 
 3. Verify the pod status with:
 
-```bash
-kubectl get pods -n appsmith-ee
-```
+  ```bash
+  kubectl get pods -n appsmith-ee
+  ```
 The above command displays the status of the pods. Once the process is completed, the pod status is shown as _RUNNING_.
 
 ## Troubleshooting
-If you see deployment errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 
+If you see errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
