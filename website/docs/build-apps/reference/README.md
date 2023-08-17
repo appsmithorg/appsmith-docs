@@ -2,6 +2,6 @@
 
 
 - [Widgets](/reference/widgets)
-- [App Settings](/reference/app-settings)
+- [App Settings](/build-apps/reference/app-settings)
 
 
