@@ -350,6 +350,7 @@ const sidebars = {
       label: 'How-To Guides',
       link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
       items: [
+        'core-concepts/building-ui/dynamic-ui/README',
         'build-apps/how-to-guides/Server-side-pagination-in-table',
         'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
         'build-apps/how-to-guides/refresh-table-data',

@@ -5,7 +5,7 @@ description: >-
   HTML/CSS.
 ---
 
-# Building Dynamic UI
+# Update Widget Properties
 
 This document presumes you understand the basics of [Displaying Data](/core-concepts/data-access-and-binding/displaying-data-read) & [Capturing Data](/core-concepts/data-access-and-binding/capturing-data-write) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
@@ -15,7 +15,6 @@ This document presumes you understand the basics of [Displaying Data](/core-conc
 
 Every property of a widget can be described dynamically using JavaScript inside handlebars `{{}}`. The properties which don't have an input to write JavaScript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
 
-![](</img/convert_js.gif>)
 
 ## Updating widget data
 
@@ -49,3 +48,13 @@ Here Table1 is the name of the widget
 
 ## Setting widget height
 You can set the height of widget using the Height property. It configures how a widget’s height reacts to content changes in the app. To build a dynamic UI, you can use the Auto Height, that gives the widget a capability to change height in response to content changes. Auto height saves you from the task of defining the height of the widget manually. For more information, see the [Auto height](/reference/widgets/#auto-height) property of widgets. 
+
+## Dynamic forms
+
+Some cases require form fields to dynamically change based on the user input. This can be achieved using a [Tab](/reference/widgets/tabs) widget inside the form and conditionally updating the selected tab value based on the inputs of the [form](/reference/widgets/form)
+
+![](</img/dynamic_forms.gif>)
+
+:::tip
+Hide the tabs in the tab widget to make it look like the views are changing in place.
+:::
