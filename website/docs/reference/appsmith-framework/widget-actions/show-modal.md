@@ -1,7 +1,9 @@
 ---
-sidebar_position: 3
+description: >-
+  showModal() reference
 ---
-# Show Modal
+
+# showModal()
 
 This function is used to open a Modal when triggered.
 
