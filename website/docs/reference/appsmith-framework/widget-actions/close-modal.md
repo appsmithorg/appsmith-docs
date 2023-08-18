@@ -12,8 +12,8 @@ The `showModal()` framework function is used to close an existing [Modal widget]
 ```javascript
 closeModal(modalName: string): Promise
 ```
-
-* This function accepts a parameter of type _string_ which is the name of the modal widget to close.
+This function accepts the following parameters:
+* A parameter of type _string_ which is the name of the modal widget to close.
 
 _Example:_
 
