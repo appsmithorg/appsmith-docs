@@ -4,7 +4,7 @@ description: >-
 ---
 # showAlert()
 
-Displays a temporary toast-style alert message to the user, lasting 5 seconds. The duration of the alert message can't be modified.
+The `showAlert()` function displays a temporary toast-style alert message to the user for precisely 5 seconds. The duration of the alert message can't be modified.
 
 <figure>
     <img src="/img/show-alert-action.png" style={{width:"700px", height:"auto"}} alt="showAlert displays notifications at the top of the screen." />
@@ -16,12 +16,28 @@ Displays a temporary toast-style alert message to the user, lasting 5 seconds. T
 ## Signature
 
 ```javascript
-showAlert(message: string, style: string) -> Promise
+showAlert(message: string, type: string) -> Promise
 ```
 
-### Arguments
+### Parameters
 
-| **Argument Name** | **Description**                                                         |
-| ----------------- | ----------------------------------------------------------------------- |
-| **Message**       | The message to show the user.                             |
-| **Style**         | The style of alert message. Can be one of "info," "success," "error," or "warning." |
+#### Message
+
+<dd>
+
+A string value that contains the text displayed in the alert message.
+
+</dd>
+
+#### Style
+
+<dd>
+
+Accepts a string value. Enables you to configure the type of the alert message. It accepts the following values - 
+
+- Info
+- Success
+- Error
+- Warning
+
+</dd>
