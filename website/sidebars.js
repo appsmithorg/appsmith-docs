@@ -278,6 +278,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
+            'connect-data/integrations',
           ]
         },
         {
@@ -332,7 +333,6 @@ const sidebars = {
             'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
-        'connect-data/integrations'
       ]
     }, //Data end
     {
