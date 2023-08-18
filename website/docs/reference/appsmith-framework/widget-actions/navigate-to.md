@@ -25,7 +25,7 @@ navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") 
 
 <dd>
 
-Page name or URL to which you would like to be transported. `PageName` is case- sensitive.
+Page name or URL to which you would like to be transported. `PageName` is case-sensitive.
 
 </dd>
 
@@ -33,7 +33,7 @@ Page name or URL to which you would like to be transported. `PageName` is case- 
 
 <dd>
 
-Query parameters passed via the URL. Used to share information with destination page.
+Query parameters passed via the URL. Used to share information with the destination page.
 
 </dd>
 
