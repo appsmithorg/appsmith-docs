@@ -60,7 +60,7 @@ You can save any data type with `storeValue()`. The code snippet below shows how
 
 export default {
 	writeToStore: () => {
-		storeValue("isActive", true). // Boolean
+		storeValue("isActive", true) // Boolean
 		storeValue("name", "Robert") // String 
 		storeValue("pin", 9929) // Number
 	
@@ -212,3 +212,8 @@ export default {
 ```
 
 The `getUniqueValue` function calls  `GetUniqueNameAPI.run()` to fetch data from the API. The prefix `await` to the `GetUniqueNameAPI` call ensures that the control waits for API execution to complete and then moves to the following line. The prefix `await` to the `storeValue()` ensures that the value gets added to the store for the given key before executing `showAlert` in the next line.
+
+## See also
+
+- [clearStore()](/reference/appsmith-framework/widget-actions/clear-store)
+- [removeValue()](/reference/appsmith-framework/widget-actions/remove-value)
