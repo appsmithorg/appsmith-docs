@@ -13,7 +13,8 @@ The `showModal()` framework function is used to open an existing [Modal widget](
 showModal(modalName: string): Promise
 ```
 
-* This function accepts a parameter of type _string_ which is the name of the modal widget to open.
+This function accepts the following parameters:
+* A parameter of type _string_ which is the name of the modal widget to open.
 
 _Example:_
 
