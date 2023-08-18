@@ -7,7 +7,7 @@ description: >-
 
 # Update Widget Properties
 
-This document presumes you understand the basics of [Displaying Data](/core-concepts/building-ui/dynamic-ui#transform-data) & [Capturing Data](/core-concepts/building-ui/dynamic-ui#transform-data) and expands on the concept of building dynamic UI that reacts to user inputs and system data
+This document presumes you understand the basics of [Displaying Data](/build-apps/overview) & [Capturing Data](/build-apps/overview) and expands on the concept of building dynamic UI that reacts to user inputs and system data
 
 <VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget properties" caption="Dynamically Update Widget properties"/>
 

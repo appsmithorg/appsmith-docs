@@ -189,7 +189,7 @@ Here are some general guidelines for using Promises in Appsmith:
 ```
 
 ## Async/Await
-The `async` and `await` keywords enable the [asynchronous](/core-concepts/writing-code/javascript-editor-beta#asynchronous) workflow to be written in a cleaner style, avoiding the need to configure promise chains explicitly.
+The `async` and `await` keywords enable the [asynchronous](/core-concepts/writing-code/javascript-editor-beta) workflow to be written in a cleaner style, avoiding the need to configure promise chains explicitly.
 
 ### Async
 Adding the `async` keyword before a function always returns a promise. Other values are wrapped in a resolved promise automatically.
