@@ -19,11 +19,30 @@ navigateTo() allows the user to navigate between the internal pages of the App o
 navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") -> Promise
 ```
 
-### Arguments
+### Parameters
 
-| **Argument Name**     | **Description**                                                                        |
-| --------------------- | -------------------------------------------------------------------------------------- |
-| **pageNameOrUrl**     | Page name or URL to which you would like to be transported. `PageName` is case- sensitive. |
-| **params** (optional) | Query parameters passed via the URL. Used to share information with destination page.  |
-| **target** (optional) | Option to configure where to open the URL. Default: "SAME\_WINDOW"                     |
+#### pageNameOrUrl
+
+<dd>
+
+Page name or URL to which you would like to be transported. `PageName` is case- sensitive.
+
+</dd>
+
+#### params
+
+<dd>
+
+Query parameters passed via the URL. Used to share information with destination page.
+
+</dd>
+
+#### target
+
+<dd>
+
+
+Option to configure where to open the URL. Default: "SAME\_WINDOW"
+
+</dd>
 
