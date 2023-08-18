@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 ---
-# Navigate To
+# navigateTo()
 
 
 

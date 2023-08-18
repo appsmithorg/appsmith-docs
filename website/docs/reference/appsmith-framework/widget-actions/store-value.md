@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 ---
-# Store Value
+# storeValue()
 
 The storeValue() function saves data in the browser as key-value pairs and can be later accessed anywhere in the application. 
 
