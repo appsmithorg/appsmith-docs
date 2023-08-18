@@ -8,4 +8,4 @@
 * [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images)
 * [Upload Files to Dropbox](/connect-data/how-to-guides/how-to-integrate-dropbox)
 * [Create Campaigns with Zoho](/connect-data/how-to-guides/how-to-integrate-zoho)
-* [Integrate With Third-Party Tools](/connect-data/how-to-guides/integrations)
+* [Integrate With Third-Party Tools](/connect-data/integrations)
