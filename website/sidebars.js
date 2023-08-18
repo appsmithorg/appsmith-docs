@@ -478,12 +478,12 @@ const sidebars = {
       link: { type: 'doc', id: 'write-code/how-to-guides/README' },
       items: [
     
-        'write-code/how-to-guides/write-code-in-appsmith',
+        'core-concepts/writing-code/README',
         'core-concepts/writing-code/javascript-editor-beta/README',
         'write-code/how-to-guides/display-data-from-functions',
         'core-concepts/writing-code/javascript-promises',
         'advanced-concepts/sharing-data-across-pages',
-        'write-code/how-to-guides/chain-functions-and-promises',
+        `core-concepts/writing-code/workflows`,
         'core-concepts/writing-code/ext-libraries',
         'write-code/how-to-guides/debug-js-errors',
       ]
@@ -519,7 +519,7 @@ const sidebars = {
             },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'write-code/reference/Function-Settings',      
+            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',  
             'write-code/reference/JavaScript-Editor',
           ],
     },

@@ -42,14 +42,6 @@ If you are new to Appsmith, this is the place to start:
       <div class="containerDescription">A quickstart guide to help you build an app using Appsmith
       </div>
    </div>
-   <div class=" containerColumnSampleApp columnGrid column-two">
-      <div class="containerCol">
-         <img class="containerImage" src="/img/resources-icon.png" alt="core concepts"/>
-      </div>
-      <b><a href="/core-concepts/building-ui">Learn core concepts</a></b>
-      <div class="containerDescription">Everything you need to know about Appsmith basics and its core features
-      </div>
-   </div>  
 </div>
 
 :::info
