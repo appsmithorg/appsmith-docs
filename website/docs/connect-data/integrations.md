@@ -3,13 +3,9 @@ sidebar_position: 4
 description: Browse resources for integrating Appsmith with various third-party API datasources.
 ---
 
-# Third-Party Integrations
+# Integrate With Third-Party Tools
 
-Appsmith provides **native** integrations with many [datasources](/connect-data/reference/). Besides, Appsmith can also seamlessly connect with most other tools through the [REST API](/connect-data/reference/rest-api) plugin.
-
-Browse through the tutorials below to see how to connect non-native datasources with Appsmith.
-
-###             
+This page offers resources to guide you in connecting Appsmith to many third-party tools via API.          
 
 <div class="containerGrid">
     <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>

@@ -24,40 +24,45 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring an MS SQL datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Connection mode</b></dt>
-  <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
-      <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
-    </ul>
-  </dd><br />
+#### Connection mode
 
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your MS SQL database. This can be a domain name or an IP address. To connect to a local MS SQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+<dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
+    <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
+  </ul>
+</dd>
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>1433</code> by default if you do not specify one.</dd><br />
+#### Host Address
 
-  <dt><b>Database Name</b></dt>
-  <dd>The name of the database to connect.</dd><br />
+<dd>The network location of your MS SQL database. This can be a domain name or an IP address. To connect to a local MS SQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd>
 
-  <dt><b>Username</b></dt>
-  <dd>The username that you want to use to authenticate with the database server.</dd><br />
+#### Port
 
-  <dt><b>Password</b></dt>
-  <dd>Password to use if the server demands password authentication.</dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port <code>1433</code> by default if you do not specify one.</dd>
 
-  <dt><b>SSL mode</b></dt>
-  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
-      <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
-    </ul>
-  </dd>
-</dl>
+#### Database Name
+
+<dd>The name of the database to connect.</dd>
+
+#### Username
+
+<dd>The username that you want to use to authenticate with the database server.</dd>
+
+#### Password
+
+<dd>Password to use if the server demands password authentication.</dd>
+
+#### SSL mode
+
+<dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
+    <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
+  </ul>
+</dd>
 
 ## Query MS SQL
 

@@ -1,22 +1,11 @@
 ---
 sidebar_position: 3
+description: Open a Modal widget using the showModal() Appsmith framework function.
 ---
-# Show Modal
 
-This function is used to open a Modal when triggered.
+# showModal()
 
-
-<figure>
-  <img src="/img/show-modal-action.png" style= {{width:"700px", height:"auto"}} alt="open a Modal"/>
-  <figcaption align = "center"><i>Open a Modal</i></figcaption>
-</figure>
-
-
-
-
-:::tip
-Remember to create a new Modal before calling this action
-:::
+The `showModal()` framework function is used to open an existing [Modal widget](/reference/widgets/modal) and bring it into focus on the page.
 
 ## Signature
 
@@ -24,8 +13,11 @@ Remember to create a new Modal before calling this action
 showModal(modalName: string): Promise
 ```
 
-### Arguments
+This function accepts the following parameters:
+* A parameter of type _string_ which is the name of the modal widget to open.
 
-| Argument Name  | Description                       |
-| -------------- | --------------------------------- |
-| **Modal Name** | Name of the Modal to be displayed |
+_Example:_
+
+```javascript
+{{ showModal("Modal1") }}
+```

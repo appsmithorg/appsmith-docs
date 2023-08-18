@@ -227,3 +227,5 @@ exceptions:
   - setImage
   - image 
   - onDateSelected
+  - key
+  - persist

@@ -278,6 +278,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
+            'connect-data/integrations',
           ]
         },
         {
@@ -332,7 +333,6 @@ const sidebars = {
             'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
-        'connect-data/integrations'
       ]
     }, //Data end
 
@@ -604,6 +604,19 @@ const sidebars = {
               type: 'link',
               label: 'Appsmith Framework',
               href: '/reference/appsmith-framework/',
+                'reference/appsmith-framework/widget-actions/navigate-to',
+                'reference/appsmith-framework/widget-actions/show-alert',
+                'reference/appsmith-framework/widget-actions/show-modal',
+                'reference/appsmith-framework/widget-actions/close-modal',
+                'reference/appsmith-framework/widget-actions/store-value',
+                'reference/appsmith-framework/widget-actions/remove-value',
+                'reference/appsmith-framework/widget-actions/clear-store',
+                'reference/appsmith-framework/widget-actions/download',
+                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+                'reference/appsmith-framework/widget-actions/reset-widget',
+                'reference/appsmith-framework/widget-actions/intervals-time-events',
+                'reference/appsmith-framework/widget-actions/post-message'
+              ]
             },
           ],
         },

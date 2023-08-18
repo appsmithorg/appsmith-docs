@@ -1,7 +1,8 @@
 ---
-sidebar_position: 7
+description: >-
+  copyToClipboard() reference
 ---
-# Copy to clipboard
+# copyToClipboard()
 
 This function is used to copy text to the clipboard.
 
