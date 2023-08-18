@@ -5,7 +5,7 @@ description: Reset a widget to its default state using the resetWidget() Appsmit
 
 # resetWidget()
 
-The `resetWidget()` framework function reverts a widget to its default state. All user input changes are reverted and its properties' default values are applied.
+The `resetWidget()` framework function sets a widget to its default state. All user input changes are reverted and its properties' default values are applied.
 
 ### Signature
 
