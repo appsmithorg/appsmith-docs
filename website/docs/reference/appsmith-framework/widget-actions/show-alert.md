@@ -2,7 +2,6 @@
 description: >-
   showAlert() reference
 ---
-
 # showAlert()
 
 Displays a temporary toast-style alert message to the user, lasting 5 seconds. The duration of the alert message can't be modified.

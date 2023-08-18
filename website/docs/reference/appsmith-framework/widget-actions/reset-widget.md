@@ -2,7 +2,6 @@
 sidebar_position: 8
 description: Reset a widget to its default state using the resetWidget() Appsmith framework function.
 ---
-
 # resetWidget()
 
 The `resetWidget()` framework function sets a widget to its default state. All user input changes are reverted and its properties' default values are applied.

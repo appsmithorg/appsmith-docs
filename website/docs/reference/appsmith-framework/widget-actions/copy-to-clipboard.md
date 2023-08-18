@@ -2,7 +2,6 @@
 description: >-
   copyToClipboard() reference
 ---
-
 # copyToClipboard()
 
 This function is used to copy text to the clipboard.
