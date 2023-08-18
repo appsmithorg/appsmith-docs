@@ -1,11 +1,11 @@
 ---
-description: Publish Appsmith Kubernetes cluster to the internet
+description: The page provides steps to expose your Appsmith Kubernetes installation to the internet.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Publish Appsmith Kubernetes Installation
-The page provides steps to publish Appsmith Kubernetes installation to the internet.
+# Expose K8s to Internet
+The page provides steps to expose your Appsmith Kubernetes installation to the internet.
 
 ## Prerequisites
 1. A self-hosted Kubernetes Business Edition Appsmith installation. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
@@ -60,7 +60,7 @@ The page provides steps to publish Appsmith Kubernetes installation to the inter
       className: nginx
       hosts:
         #highlight-next-line
-        - host: REPLACE_WITH_DOMAIN_NAME
+        - host: <REPLACE-WITH-YOUR-DOMAIN>
           paths:
           - path: "/"
             pathType: Prefix
@@ -101,7 +101,7 @@ The page provides steps to publish Appsmith Kubernetes installation to the inter
         className: nginx
         hosts:
           #highlight-next-line
-          - host: <replace-with-your-domain>
+          - host: <REPLACE-WITH-YOUR-DOMAIN>
             paths:
             - path: "/"
               pathType: Prefix

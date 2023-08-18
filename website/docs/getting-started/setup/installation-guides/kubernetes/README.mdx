@@ -12,16 +12,16 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 <VideoEmbed host="youtube" videoId="wZzYL1uZwds" title="How To Deploy Appsmith On Kubernetes" caption="How To Deploy Appsmith On Kubernetes" />
 
 ## Prerequisites
-1. At least 15 GB of free storage space.
-2. 4 GB of RAM.
+* At least 15 GB of free storage space.
+* 4 GB of RAM.
 
 ## Before you begin
-1. Installed Helm package manager on your local machine. See the official Helm documentation for your [operating system](https://helm.sh/docs/intro/install/#through-package-managers).
-2. Installed and configured `kubectl` to interact with your Kubernetes cluster. Follow the below guides available on the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
+1. Install Helm package manager on your local machine. See the official Helm documentation for your [operating system](https://helm.sh/docs/intro/install/#through-package-managers).
+2. Install and configure `kubectl` to interact with your Kubernetes cluster. Follow the below guides available on the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
     * [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
     * [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
     * [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
-3. A running Kubernetes cluster. If not present, follow these steps to set up the cluster on AWS EKS:
+3. Setup a Kubernetes cluster. Follow these steps using a terminal to set up the cluster on AWS EKS:
 
   :::info
    You are free to choose your preferred platform for hosting the Kubernetes cluster. Make sure you have configured Kubeconfig and created a default storage class before proceeding with the Appsmith installation. If you face any issues, reach out to the support team at [support@appsmith.com](mailto:support@appsmith.com).
@@ -38,7 +38,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
     b. Create KubeConfig with: 
 
     ```bash
-    aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile PROFILE_NAME
+    aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile <PROFILE_NAME>
     ```
     In the above command, add the profile name that has access to the EKS cluster to the `--profile` parameter.
 
@@ -100,10 +100,11 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
   7. To verify the installation locally, use the below command to forward the 8080 port to 80:
   
     ```bash
-    kubectl --namespace appsmith port-forward <APPSMITH_POD_NAME> 8080:80
+    kubectl --namespace appsmith port-forward appsmith-0 8080:80
     ```
+     In above command, `appsmith-0` is the Appsmith pod name.
 
-  8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080). To expose Appsmith installation on internet, see the [Publish Appsmith on internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
+  8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080). To expose Appsmith installation on internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
 
 </TabItem>
 <TabItem label="Business Edition" value="businessEdition"> 
@@ -154,7 +155,7 @@ To upgrade from Community Edition to Business Edition, follow the instructions a
 
 10. Log into your Appsmith account, and enter your license key to activate the instance.
 
-For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on internet, see the [Publish Appsmith on internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
+For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
 
 </TabItem>
 </Tabs>   
@@ -165,6 +166,6 @@ If you face issues, contact the support team using the chat widget at the bottom
 ## Further reading
 
 * [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability)
-* [Publish Appsmith on internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
+* [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
 * [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-helm-installations)
 * [Manage your Appsmith instance](/getting-started/setup/instance-management)
