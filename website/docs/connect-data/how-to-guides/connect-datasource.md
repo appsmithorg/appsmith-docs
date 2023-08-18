@@ -25,7 +25,7 @@ This page shows you how to connect to a datasource on Appsmith.
 6. Set the required connection parameters to connect to your datasource. If you are on [Business Edition](https://www.appsmith.com/pricing), you can configure production and staging datasources using [datasource environments](/connect-data/concepts/Datasource-Environments). Appsmith encrypts all your datasource credentials and stores them securely. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource. 
 
 :::info
-If your datasource is locally hosted, follow the instructions in [Connect Datasouce on Local Machine](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith) to get the hostname.
+If your datasource is locally hosted, follow the instructions in [Connect Datasource on Local Machine](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith) to get the hostname.
 :::
 
 7. Click the **Test** button to test the connection and ensure the datasource is valid.
