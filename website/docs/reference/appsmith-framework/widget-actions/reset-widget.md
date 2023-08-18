@@ -1,5 +1,6 @@
 ---
-sidebar_position: 8
+description: >-
+  resetWidget() reference
 ---
 # resetWidget()
 

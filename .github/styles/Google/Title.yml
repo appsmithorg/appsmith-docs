@@ -10,3 +10,11 @@ exceptions:
   - to
   - clipboard
   - from
+  - removeValue()
+  - clearStore()
+  - closeModal()
+  - copyToClipboard()
+  - resetWidget()
+  - download()
+  - copyToClipboard()
+  - showModal()
