@@ -38,7 +38,7 @@ The data you want to save using `storeValue()`. You can save any data type in th
 
 <dd>
 
-Accepts a boolean value. Default value is **True**. **True** persists the key-value pair in the browser's local storage, and you can use it between sessions. A **false** doesn't persist the value and removes the key once the page refreshes or is closed.
+Accepts a boolean value. The default value is `True`, which ensures the persistence of the key-value pair in the browser's local storage, allowing it to be used between sessions. Setting it to `False` prevents the value from persisting, and the key gets removed when the page is refreshed or closed.
 
 </dd>
 
