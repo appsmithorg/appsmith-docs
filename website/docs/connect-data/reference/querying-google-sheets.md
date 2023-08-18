@@ -14,18 +14,17 @@ This page provides information for connecting Appsmith to Google Sheets and for 
   <figcaption align="center"><i>Configuring a new Google Sheets datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Permissions | Scope:</b></dt>
-  <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
-     <li><b>Read / Write / Delete | All Google Sheets:</b> Your app has read, write, and delete access for all sheets on your Google account.</li>
-     <li><b>Read / Write | All Google Sheets:</b> Your app has read and write (but not delete) access for all sheets on your Google account.</li>
-     <li><b>Read | All Google Sheets:</b> Your app has read-only access to all sheets on your Google account.</li>
-    </ul>
-  </dd>  
-</dl>
+#### Permissions | Scope:
+
+<dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
+    <li><b>Read / Write / Delete | All Google Sheets:</b> Your app has read, write, and delete access for all sheets on your Google account.</li>
+    <li><b>Read / Write | All Google Sheets:</b> Your app has read and write (but not delete) access for all sheets on your Google account.</li>
+    <li><b>Read | All Google Sheets:</b> Your app has read-only access to all sheets on your Google account.</li>
+  </ul>
+</dd>
 
 Clicking **Save and Authorize** takes you to a Google login where you can authorize your account and select your sheets.
 
@@ -42,60 +41,64 @@ The following section is a reference guide that provides a complete description 
 
 This command fetches metadata for a given **Spreadsheet** entity. The following section lists all the fields available for the **Fetch Details** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Spreadsheet:</b> Returns metadata for a spreadsheet document.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd>
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Spreadsheet:</b> Returns metadata for a spreadsheet document.</li>
+  </ul>
+</dd>
 
-</dl>
+#### Spreadsheet
+
+<dd> The name of the spreadsheet document you'd like to query.</dd>
+
 
 ### Insert One
 
 This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Insert One** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
-     <li><b>Spreadsheet:</b> Creates a new spreadsheet document. Optionally, you can use the <b>Row Objects</b> field to provide rows that should be created along with the document.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
+    <li><b>Spreadsheet:</b> Creates a new spreadsheet document. Optionally, you can use the <b>Row Objects</b> field to provide rows that should be created along with the document.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd><br />
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-  <dt><b>Row Object</b></dt>
-  <dd>Available when the <b>Entity</b> is <b>Sheet Row(s)</b>. This expects a JSON-formatted object whose key/value pairs represent the columns and values from your table record.</dd>
-  <dd><i>Example:</i>
-  <pre>{`{
-    "name": {{ UserForm.name }},
-    "email": {{ UserForm.email }},
-    "status": "pending"
+#### Sheet Name
+
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
+
+#### Table Heading Row Index
+
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+</dd>
+
+#### Row Object
+
+<dd>Available when the <b>Entity</b> is <b>Sheet Row(s)</b>. This expects a JSON-formatted object whose key/value pairs represent the columns and values from your table record.</dd>
+<dd><i>Example:</i>
+<pre>{`{
+  "name": {{ UserForm.name }},
+  "email": {{ UserForm.email }},
+  "status": "pending"
 }`}</pre>
-  </dd><br/>
+</dd>
 
-  <dt><b>Row Objects</b></dt>
+  #### Row Objects
+
   <dd>Available when the <b>Entity</b> is <b>Spreadsheet</b>. This expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to your new spreadsheet when it is created.</dd>
   <dd><i>Example:</i>
   <pre>{`[{
@@ -108,175 +111,189 @@ This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
   "email": "samal@example.com",
   "status": "accepted"
 }]`}</pre>
-  </dd>
+</dd>
 
-</dl>
 
 ### Update One
 
 This command updates a **Sheet Row(s)** entity. The following section lists all the fields available for the **Update One** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Updates a single existing row in the spreadsheet.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Updates a single existing row in the spreadsheet.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd><br />
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-  <dt><b>Update Row Object</b></dt>
-  <dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
-  <dd><i>Example:</i>
-  <pre>{`{
+#### Sheet Name
+
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
+
+#### Table Heading Row Index
+
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+</dd>
+
+#### Update Row Object
+
+<dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
+<dd><i>Example:</i>
+<pre>{`{
     ...{{ UsersTable.selectedRow }}, // includes rowIndex key
     "status": "accepted"
 }`}</pre>
-  </dd>
-
-</dl>
+</dd>
 
 ### Delete One
 
 This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **Sheet**. The following section lists all the fields available for the **Delete One** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Deletes a single row of a spreadsheet.</li>
-     <li><b>Spreadsheet:</b> Deletes a new spreadsheet document.</li>
-     <li><b>Sheet:</b> Deletes a page from a spreadsheet document.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Deletes a single row of a spreadsheet.</li>
+    <li><b>Spreadsheet:</b> Deletes a new spreadsheet document.</li>
+    <li><b>Sheet:</b> Deletes a page from a spreadsheet document.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Row Index</b></dt>
-  <dd>The index of the record to delete from the spreadsheet. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-</dl>
+#### Sheet Name
+
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
+
+#### Row Index
+
+<dd>The index of the record to delete from the spreadsheet. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
+
 
 ### Fetch Many
 
 This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. The following section lists all the fields available for the **Fetch Many** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
-     <li><b>Spreadsheet:</b> Fetches a list of existing spreadsheet documents.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
+    <li><b>Spreadsheet:</b> Fetches a list of existing spreadsheet documents.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd><br />
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-  <dt><b>Filter Format</b></dt>
-  <dd>Sets the method of selecting records from your spreadsheet.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Where Clause:</b> Fetches records based on logic and conditions. This also allows you to sort and paginate your results.</li>
-     <li><b>Cell Range:</b> Fetches a block of spreadsheet cells defined by spreadsheet-style notation, such as `A2:B7`.</li>
-    </ul>
-  </dd><br />
+#### Sheet Name
 
-  <p>The following settings are available when <b>Filter Format</b> is set to <b>Where Clause</b>:</p><br />
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
 
-  <dt><b>Filter By</b></dt>
-  <dd>This is used to build expressions that return records when a column value meets some criteria. You can evaluate records using `in`, `not in`, `contains`, and logic operators.</dd>
-  <dd><i>Buttons:</i>
-    <ul>
-     <li><b>Add Condition:</b> Adds another simple single-line expression.</li>
-     <li><b>Cell Range:</b> Adds a nested expression with multiple levels of And/Or statements.</li>
-    </ul>
-  </dd><br />
+#### Table Heading Row Index
 
-  <dt><b>Sort By</b></dt>
-  <dd>Sorts the resulting records according to the specified column.</dd>
-  <dd><i>Buttons:</i>
-    <ul>
-     <li><b>Add Parameter:</b> Adds another column for sorting on multiple levels.</li>
-    </ul>
-  </dd><br />
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+</dd>
 
-  <dt><b>Pagination Limit</b></dt>
-  <dd>Limits the number of records you can receive in a single response. Use with <b>Pagination Offset</b> to implement pagination for large datasets.</dd><br/>
+#### Filter Format
 
-  <dt><b>Pagination Offset</b></dt>
-  <dd>Allows skipping a given number of records before returning results. Use with <b>Pagination Limit</b> to implement pagination for large datasets.</dd><br/>
+<dd>Sets the method of selecting records from your spreadsheet.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Where Clause:</b> Fetches records based on logic and conditions. This also allows you to sort and paginate your results.</li>
+    <li><b>Cell Range:</b> Fetches a block of spreadsheet cells defined by spreadsheet-style notation, such as `A2:B7`.</li>
+  </ul>
+</dd>
 
-  <p>The following setting is available when <b>Filter Format</b> is set to <b>Cell Range</b>:</p><br />
+<p>The following settings are available when <b>Filter Format</b> is set to <b>Where Clause</b>:</p>
 
-  <dt><b>Cell Range</b></dt>
-  <dd>This mode uses Google Sheets' row number and column letter syntax (such as `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells. This mode doesn't allow conditions, sorting, or pagination.</dd>
+#### Filter By
 
-</dl>
+<dd>This is used to build expressions that return records when a column value meets some criteria. You can evaluate records using `in`, `not in`, `contains`, and logic operators.</dd>
+<dd><i>Buttons:</i>
+  <ul>
+    <li><b>Add Condition:</b> Adds another simple single-line expression.</li>
+    <li><b>Cell Range:</b> Adds a nested expression with multiple levels of And/Or statements.</li>
+  </ul>
+</dd>
+
+#### Sort By
+
+<dd>Sorts the resulting records according to the specified column.</dd>
+<dd><i>Buttons:</i>
+  <ul>
+    <li><b>Add Parameter:</b> Adds another column for sorting on multiple levels.</li>
+  </ul>
+</dd>
+
+#### Pagination Limit
+
+<dd>Limits the number of records you can receive in a single response. Use with <b>Pagination Offset</b> to implement pagination for large datasets.</dd>
+
+#### Pagination Offset
+
+<dd>Allows skipping a given number of records before returning results. Use with <b>Pagination Limit</b> to implement pagination for large datasets.</dd>
+
+<p>The following setting is available when <b>Filter Format</b> is set to <b>Cell Range</b>:</p>
+
+#### Cell Range
+
+<dd>This mode uses Google Sheets' row number and column letter syntax (such as `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells. This mode doesn't allow conditions, sorting, or pagination.</dd>
 
 ### Insert Many
 
 This command inserts multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Insert Many** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Inserts several records as a rows in the spreadsheet.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Inserts several records as a rows in the spreadsheet.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd><br />
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-  <dt><b>Row Objects</b></dt>
-  <dd>Expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to the spreadsheet.</dd>
-  <dd><i>Example:</i>
-  <pre>{`[{
+#### Sheet Name
+
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
+
+#### Table Heading Row Index
+
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+</dd>
+
+#### Row Objects
+
+<dd>Expects an array of JSON-formatted objects whose key/value pairs represent columns and values to add to the spreadsheet.</dd>
+<dd><i>Example:</i>
+<pre>{`[{
     "name": "Kim",
     "email": "hkim@example.com",
     "status": "accepted"
@@ -286,42 +303,43 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
   "email": "samal@example.com",
   "status": "accepted"
 }]`}</pre>
-  </dd>
-
-</dl>
+</dd>
 
 ### Update Many
 
 This command updates multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Update Many** command.
 
-<dl>
-  <dt><b>Entity</b></dt>
-  <dd>Sets which entity type to query.
-  </dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Sheet Row(s):</b> Updates multiple existing rows in the spreadsheet.</li>
-    </ul>
-  </dd><br />
+#### Entity
 
-  <dt><b>Spreadsheet</b></dt>
-  <dd> The name of the spreadsheet document you'd like to query.
-  </dd><br />
+<dd>Sets which entity type to query.
+</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Sheet Row(s):</b> Updates multiple existing rows in the spreadsheet.</li>
+  </ul>
+</dd>
 
-  <dt><b>Sheet Name</b></dt>
-  <dd> The name of the page you'd like to query from your spreadsheet.
-  </dd><br />
+#### Spreadsheet
 
-  <dt><b>Table Heading Row Index</b></dt>
-  <dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-  </dd><br />
+<dd> The name of the spreadsheet document you'd like to query.
+</dd>
 
-  <dt><b>Update Row Object(s)</b></dt>
-  <dd>An array of JSON-formatted objects whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key in each row object to specify which record to update in the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
-  <dd><i>Example:</i>
-  <pre>{`{{ UsersTable.updatedRows }} // includes rowIndex key in each object`}</pre>
-  </dd>
-</dl>
+#### Sheet Name
+
+<dd> The name of the page you'd like to query from your spreadsheet.
+</dd>
+
+#### Table Heading Row Index
+
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
+</dd>
+
+#### Update Row Object(s)
+
+<dd>An array of JSON-formatted objects whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key in each row object to specify which record to update in the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
+<dd><i>Example:</i>
+<pre>{`{{ UsersTable.updatedRows }} // includes rowIndex key in each object`}</pre>
+</dd>
 
 ## Troubleshooting
 

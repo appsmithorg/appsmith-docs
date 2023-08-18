@@ -22,29 +22,32 @@ The following is a reference guide that provides a description of the parameters
   <figcaption align = "center"><i>Configuring an ArangoDB datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your ArangoDB database. This can be a domain name or an IP address. To connect to a local ArangoDB database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+#### Host Address
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. If none is specified, Appsmith attempts to connect to port 8529.</dd><br />
+<dd>The network location of your ArangoDB database. This can be a domain name or an IP address. To connect to a local ArangoDB database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd>
 
-  <dt><b>Database Name</b></dt>
-  <dd>The name of your database. </dd><br />
+#### Port
 
-  <dt><b>Authentication</b></dt>
-  <dd>The <b>Username</b> and <b>Password</b> for the user with which you are connecting to the database.</dd><br />
+<dd>The port number to connect to on the server. If none is specified, Appsmith attempts to connect to port 8529.</dd>
 
-  <dt><b>SSL Mode</b></dt>
-  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-        <li><b>Default:</b> The same as Disabled.</li>
-        <li><b>Enabled:</b> Only allows an SSL connection.</li>
-        <li><b>Disabled:</b> Does not attempt an SSL connection; it uses a plain unencrypted connection.</li>
-    </ul>
-  </dd>
-</dl>
+#### Database Name
+
+<dd>The name of your database. </dd>
+
+#### Authentication
+
+<dd>The <b>Username</b> and <b>Password</b> for the user with which you are connecting to the database.</dd>
+
+#### SSL mode
+
+<dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br/>
+<dd><i>Options:</i>
+  <ul>
+      <li><b>Default:</b> The same as Disabled.</li>
+      <li><b>Enabled:</b> Only allows an SSL connection.</li>
+      <li><b>Disabled:</b> Does not attempt an SSL connection; it uses a plain unencrypted connection.</li>
+  </ul>
+</dd>
 
 ## Query ArangoDB
 

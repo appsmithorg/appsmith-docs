@@ -28,104 +28,109 @@ The following section is a reference guide that provides a complete description 
    <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Use Mongo Connection String URI</b></dt><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
-     <li><b>No:</b> Connect to MongoDB database by configuring multiple parameter fields.</li>
-    </ul>
-  </dd>  
-</dl>
+#### Use Mongo Connection String URI
 
-<dl>
-  <dt><b>Connection String URI</b></dt>
-  <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre><code>
-   mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
-  </code></pre></dd>
-</dl>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
+    <li><b>No:</b> Connect to MongoDB database by configuring multiple parameter fields.</li>
+  </ul>
+</dd>
+
+#### Connection String URI
+
+<dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre><code>
+  mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
+</code></pre></dd>
 
 ---
  
 The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the *Connection String URI* format.
+
 <figure>
   <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
   <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
  </figure>
 
-<dl>
-  <dt><b>Connection Mode</b></dt>
-  <dd> Specifies the mode in which the Appsmith application can interact with the database. This field and the subsequent fields are visible only if you select <b>No</b> in the <b>Use Mongo Connection String URI</b> list.  </dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Read Only:</b> This mode permits only read-only operations by default.</li>
-     <li><b>Read/Write:</b> This mode permits both read-write operations by default.</li>
-    </ul>
-  </dd>  
- 
- <dt><b>Connection Type</b></dt>
-  <dd> Specifies whether to connect to a MongoDB instance or replica set deployment.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
-     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
-    </ul>
-  </dd> 
-  
-  <dt><b>Host Address</b></dt>
-  <dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see  <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
-  </dd><br />
+#### Connection Mode
 
-  <dt><b>Port</b></dt>
-  <dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. 
-  </dd><br />
+<dd> Specifies the mode in which the Appsmith application can interact with the database. This field and the subsequent fields are visible only if you select <b>No</b> in the <b>Use Mongo Connection String URI</b> list.  </dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Read Only:</b> This mode permits only read-only operations by default.</li>
+    <li><b>Read/Write:</b> This mode permits both read-write operations by default.</li>
+  </ul>
+</dd>  
 
-  <dt><b>Default Database Name</b></dt>
-  <dd>Specifies the default authentication database to use when authenticating a user. In MongoDB, when a user is authenticated, the authentication process checks the user's credentials against a specific database. By default, this database is <code>admin</code>, but you can specify a different database by using the <b>Default Database Name</b> parameter. 
-  </dd><br />
+#### Connection Type
 
-  <dt><b>Database Name</b></dt>
-  <dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
- defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
- </dd><br />
+<dd> Specifies whether to connect to a MongoDB instance or replica set deployment.</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
+    <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
+  </ul>
+</dd> 
 
-  <dt><b>Authentication Type</b></dt>
-  <dd>Specifies the authentication mechanism that MongoDB uses to authenticate the connection. </dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>SCRAM-SHA-1:</b> Provides secure password storage through the use of a salted hash function. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-1">SCRAM-SHA-1</a> for details.</li>
-     <li><b>SCRAM-SHA-256:</b> Uses the SHA-256 hashing algorithm for password storage. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-256">SCRAM-SHA-256</a> for details.</li>
-     <li><b>MONGODB-CR:</b> Uses a challenge-response protocol to authenticate users based on a combination of a password and a random challenge string. See <a href="https://www.mongodb.com/docs/v3.2/core/security-mongodb-cr/">MONGODB-CR</a> for details.</li>
-    </ul>
-  </dd> 
-</dl>
+#### Host Address
+
+<dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
+</dd>
+
+#### Port
+
+<dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. 
+</dd>
+
+#### Default Database Name
+
+<dd>Specifies the default authentication database to use when authenticating a user. In MongoDB, when a user is authenticated, the authentication process checks the user's credentials against a specific database. By default, this database is <code>admin</code>, but you can specify a different database by using the <b>Default Database Name</b> parameter. 
+</dd>
+
+#### Database Name
+
+<dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
+defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
+</dd>
+
+#### Authentication Type
+
+<dd>Specifies the authentication mechanism that MongoDB uses to authenticate the connection. </dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>SCRAM-SHA-1:</b> Provides secure password storage through the use of a salted hash function. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-1">SCRAM-SHA-1</a> for details.</li>
+    <li><b>SCRAM-SHA-256:</b> Uses the SHA-256 hashing algorithm for password storage. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-256">SCRAM-SHA-256</a> for details.</li>
+    <li><b>MONGODB-CR:</b> Uses a challenge-response protocol to authenticate users based on a combination of a password and a random challenge string. See <a href="https://www.mongodb.com/docs/v3.2/core/security-mongodb-cr/">MONGODB-CR</a> for details.</li>
+  </ul>
+</dd>
 
 :::info
 You cannot specify MONGODB-CR as the authentication mechanism when connecting to MongoDB 4.0+ deployments.
 :::
 
-<dl>
-  <dt><b>Username</b></dt>
-  <dd>Provide the username required for authenticating connection requests to the database.
-  </dd><br />
+#### Username
 
-  <dt><b>Password</b></dt>
-  <dd>Provide the password required for authenticating connection requests for the given username to the database.
-  </dd><br />
+<dd>Provide the username required for authenticating connection requests to the database.
+</dd>
 
-  <dt><b>SSL Mode</b></dt>
-  <dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. 
-  </dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
-     <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL is not available.</li>
-     <li><b>Disabled:</b> Initiates the connection without TLS/SSL. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection. </li>
-    </ul>
-  </dd>  
-</dl>
+#### Password
+
+<dd>Provide the password required for authenticating connection requests for the given username to the database.
+</dd>
+
+#### SSL Mode
+
+<dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. 
+</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
+    <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL is not available.</li>
+    <li><b>Disabled:</b> Initiates the connection without TLS/SSL. Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection. </li>
+  </ul>
+</dd>
 
 ## Query MongoDB
 
@@ -144,207 +149,210 @@ The following section is a reference guide that provides a complete description 
 
 This command fetches documents from a collection. The following section lists all the fields available for the **Find Documents** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>The name of the target collection from which you want to retrieve documents.
-  </dd><br />
+#### Collection
 
-  <dt><b>Query</b></dt>
-  <dd>Specifies the criteria that match the documents you want to retrieve.</dd><br/>
+<dd>The name of the target collection from which you want to retrieve documents.
+</dd>
 
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+#### Query
+
+<dd>Specifies the criteria that match the documents you want to retrieve.</dd><br/>
+
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   rating: { $gte: 4 },
   cuisine: {{cuisineList.selectedOptionValue}}
 }`}</pre></dd>
-  <dd>In the above example, the query filters documents from a restaurant collection where the rating field is greater than 4 and the cuisine matches the one selected in the Select widget <code>cusineList</code>.</dd><br />
+<dd>In the above example, the query filters documents from a restaurant collection where the rating field is greater than 4 and the cuisine matches the one selected in the Select widget <code>cusineList</code>.</dd>
 
-  <dt><b>Sort</b></dt>
-  <dd>Specifies the order in which the documents should be returned. 
-  </dd><br/>
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ name: 1 }
-`}</pre></dd>
-  <dd>In the above example, the query sorts the results by the <code>name</code> field in ascending order.</dd><br />
+#### Sort
 
-  <dt><b>Projection</b></dt>
-  <dd>Specifies which fields to include in the returned documents.</dd><br/>
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ name: 1, rating: 1, address: 1 }
+<dd>Specifies the order in which the documents should be returned. 
+</dd><br/>
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ name: 1 }
 `}</pre></dd>
-  <dd>In the above example, the query only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd><br />
+<dd>In the above example, the query sorts the results by the <code>name</code> field in ascending order.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.
-  </dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{{tableItems.pageSize}}
-`}</pre></dd>
-  <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table widget's pageSize property.</dd><br />
+#### Projection
 
-  <dt><b>Skip</b></dt>
-  <dd>This field specifies the number of documents to skip before returning results. </dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{{tableItems.pageOffset}}
+<dd>Specifies which fields to include in the returned documents.</dd><br/>
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ name: 1, rating: 1, address: 1 }
 `}</pre></dd>
-  <dd>In the above examples for the <b>Limit</b> and <b>Skip</b> fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
-</dl>
+<dd>In the above example, the query only returns the <code>name</code>, <code>rating</code>, and <code>address</code> fields in the matching documents.</dd>
+
+#### Limit
+
+<dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.
+</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{{tableItems.pageSize}}
+`}</pre></dd>
+<dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table widget's pageSize property.</dd>
+
+  #### Skip
+
+<dd>This field specifies the number of documents to skip before returning results. </dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{{tableItems.pageOffset}}
+`}</pre></dd>
+<dd>In the above examples for the <b>Limit</b> and <b>Skip</b> fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
 
 ### Insert Documents
 
 This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields for the **Insert Documents** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>The name of the target collection where you want to insert the documents.
-  </dd><br />
+#### Collection
+<dd>The name of the target collection where you want to insert the documents.
+</dd>
 
-  <dt><b>Documents</b></dt>
-  <dd>Specifies an array of one or more documents you want to insert into the collection.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`[
+#### Documents
+<dd>Specifies an array of one or more documents you want to insert into the collection.</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`[
   { 
     "_id": {{NewMovieForm.data.idInput}}, 
     "name": {{NewMovieForm.data.nameInput}}, 
     "rating": {{NewMovieForm.data.ratingSelect}}
   }
 ]`}</pre></dd>
-  <dd>In the above example, the query inserts a new movie using the data entered in the Form widget.</dd><br />
-</dl>
+<dd>In the above example, the query inserts a new movie using the data entered in the Form widget.</dd>
 
 ### Update Documents
 
 This command modifies the documents in a collection based on a specified set of filters. The following section lists all the fields available for the **Update Documents** command. 
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>The name of the target collection where you want to update documents.
-  </dd><br />
+#### Collection
 
-  <dt><b>Query</b></dt>
-  <dd>Specifies the criteria that match the documents you want to update.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+<dd>The name of the target collection where you want to update documents.
+</dd>
+
+#### Query
+<dd>Specifies the criteria that match the documents you want to update.</dd>
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   "_id": {{tableItems.selectedRow.id}} 
 }`}</pre></dd>
-  <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the value in the <code>id</code> column of the row selected on the Table widget named <code>tableItems</code>.</dd><br />
+<dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the value in the <code>id</code> column of the row selected on the Table widget named <code>tableItems</code>.</dd>
 
-  <dt><b>Update</b></dt>
-  <dd>Specifies the modifications you want to make to the selected documents. 
-  </dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+#### Update 
+
+<dd>Specifies the modifications you want to make to the selected documents. 
+</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   $set: {
     "name":  {{tableItems.updatedRow.name}},
     "rating": {{tableItems.updatedRow.rating}}
   }
 }`}</pre></dd>
-  <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd><br />
+<dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>Specifies whether to delete single or multiple documents</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
-     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
-    </ul>
-  </dd>  
-</dl>
-
+#### Limit
+<dd>Specifies whether to delete single or multiple documents</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
+    <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
+  </ul>
+</dd>
 
 ### Delete Documents
 
 This command removes one or more documents from the collection based on specified filters. The following section lists all the fields available for the **Delete Documents** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>The name of the target collection where you want to delete documents.
-  </dd><br />
+#### Collection
 
-  <dt><b>Query</b></dt>
-  <dd>Specifies the criteria that match the documents to delete.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+<dd>The name of the target collection where you want to delete documents.
+</dd>
+
+#### Query
+
+<dd>Specifies the criteria that match the documents to delete.</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   "rating": {{selectRating.selectedOptionValue}} 
 }`}</pre></dd>
-  <dd>In the above example, the query deletes all the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
+<dd>In the above example, the query deletes all the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>Specifies whether to delete single or multiple documents</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
-     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
-    </ul>
-  </dd>  
-</dl>
+#### Limit
+
+<dd>Specifies whether to delete single or multiple documents</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
+    <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
+  </ul>
+</dd>
 
 ### Count
 
 This command counts the number of documents in a collection that match a specified set of criteria. The following section lists all the fields available for the **Count** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>The name of the target collection where you want to count the documents.
-  </dd><br />
+#### Collection
 
-  <dt><b>Query</b></dt>
-  <dd>This field specifies the criteria for selecting the documents to count.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+<dd>The name of the target collection where you want to count the documents.
+</dd>
+
+#### Query
+
+<dd>This field specifies the criteria for selecting the documents to count.</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   "release_dt": { $gte: {{releaseDate.formattedDate}} 
 }`}</pre></dd>
-  <dd>In the above example, the query counts the documents in a <code>movies</code> collection where the release date is greater than the date picked in the Datepicker widget <code>releaseDate</code>.</dd>
-</dl>
+<dd>In the above example, the query counts the documents in a <code>movies</code> collection where the release date is greater than the date picked in the Datepicker widget <code>releaseDate</code>.</dd>
 
 ### Distinct
 
 This command finds the unique or distinct values for a specified field across a single collection. The following section lists all the fields available for the **Distinct** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection to query for distinct values.
-  </dd><br />
+#### Collection
 
-  <dt><b>Query</b></dt>
-  <dd>Specifies the documents from which to retrieve the distinct values.</dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+<dd>Specifies the name of the target collection to query for distinct values.
+</dd>
+
+#### Query
+
+<dd>Specifies the documents from which to retrieve the distinct values.</dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   "rating": {{selectRating.selectedOptionValue}} 
 }`}</pre></dd>
-  <dd>In the above example, the query retrieves distinct values from the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd><br />
+<dd>In the above example, the query retrieves distinct values from the documents where the <code>rating</code> field contains the same value as the one selected in the Select widget named <code>selectRating</code>.</dd>
 
-  <dt><b>Key</b></dt>
-  <dd> Specifies the name of the field for which to return distinct values.
-  </dd>
-</dl>
+#### Key
+
+<dd> Specifies the name of the field for which to return distinct values.
+</dd>
 
 
 ### Aggregate
 
 This command allows users to process data records and return computed results. The aggregation framework provides several operators to perform a variety of operations like filtering, grouping, sorting, projecting, and calculating. See <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/"><b>Aggregation Pipeline Stages</b></a> for information on the aggregation operators. The following section lists all the fields available for the **Aggregate** command.
 
-<dl>
-  <dt><b>Collection</b></dt>
-  <dd>Specifies the name of the target collection that serves as the input for the aggregation pipeline.
-  </dd><br />
+#### Collection
 
-  <dt><b>Array of Pipelines</b></dt>
-  <dd>An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. </dd><br />
-  <dd><i>Example:</i></dd>
-  <dd><pre>{`{ 
+<dd>Specifies the name of the target collection that serves as the input for the aggregation pipeline.
+</dd>
+
+#### Array of Pipelines
+
+<dd>An array of aggregation pipeline stages that process and transform the document stream as part of the aggregation pipeline. </dd><br />
+<dd><i>Example:</i></dd>
+<dd><pre>{`{ 
   [
     { $project: { tags: 1 } },
     { $unwind: "$tags" },
     { $group: { _id: "$tags", count: { $sum : 1 } } }
   ] 
 }`}</pre></dd>
-  <dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd><br />
+<dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
-  </dd>
-</dl>
+#### Limit
+<dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
+</dd>
 
 ### Raw
 

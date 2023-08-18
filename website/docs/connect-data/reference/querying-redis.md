@@ -21,24 +21,27 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a Redis datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your Redis database. This can be a domain name or an IP address.</dd><br />
+#### Host Address
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd><br />
+<dd>The network location of your Redis database. This can be a domain name or an IP address.</dd>
 
-  <dt><b>Database Number</b></dt>
-  <dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd><br />
+#### Port
 
-  <dt><b>Username</b></dt>
-  <dd>The username for your Redis user.
-  </dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd>
 
-  <dt><b>Password</b></dt>
-  <dd>The password for your Redis user.
-  </dd><br />
-</dl>
+#### Database Number
+
+<dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd>
+
+#### Username
+
+<dd>The username for your Redis user.
+</dd>
+
+#### Password
+
+<dd>The password for your Redis user.
+</dd>
 
 ## Query Redis
 

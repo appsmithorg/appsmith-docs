@@ -22,31 +22,35 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a Redshift datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Connection Mode</b></dt>
-  <dd>Determines which permissions your app has when querying the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.</li>
-      <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.</li>
-    </ul>
-  </dd><br/>
+#### Connection Mode
 
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your Redshift database. This can be a domain name or an IP address.</dd><br />
+<dd>Determines which permissions your app has when querying the database.</dd><br />
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.</li>
+    <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.</li>
+  </ul>
+</dd>
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>5439</code> by default if you do not specify one.</dd><br />
+#### Host Address
 
-  <dt><b>Database name</b></dt>
-  <dd>Name of the database you'd like to connect to.</dd><br />
+<dd>The network location of your Redshift database. This can be a domain name or an IP address.</dd>
 
-  <dt><b>Username</b></dt>
-  <dd>The username to use to authenticate your queries.</dd><br />
+#### Port
 
-  <dt><b>Password</b></dt>
-  <dd>The password to use to authenticate your queries.</dd><br />
-</dl>
+<dd>The port number to connect to on the server. Appsmith connects to port <code>5439</code> by default if you do not specify one.</dd>
+
+#### Database name
+
+<dd>Name of the database you'd like to connect to.</dd>
+
+#### Username
+
+<dd>The username to use to authenticate your queries.</dd>
+
+#### Password
+
+<dd>The password to use to authenticate your queries.</dd>
 
 ## Query Redshift
 
