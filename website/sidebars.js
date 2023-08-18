@@ -527,6 +527,8 @@ const sidebars = {
                 'reference/appsmith-framework/widget-actions/show-modal',
                 'reference/appsmith-framework/widget-actions/close-modal',
                 'reference/appsmith-framework/widget-actions/store-value',
+                'reference/appsmith-framework/widget-actions/remove-value',
+                'reference/appsmith-framework/widget-actions/clear-store',
                 'reference/appsmith-framework/widget-actions/download',
                 'reference/appsmith-framework/widget-actions/copy-to-clipboard',
                 'reference/appsmith-framework/widget-actions/reset-widget',

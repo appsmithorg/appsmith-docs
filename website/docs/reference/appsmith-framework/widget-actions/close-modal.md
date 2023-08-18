@@ -5,7 +5,7 @@ description: Close a Modal widget using the closeModal() Appsmith framework func
 
 # closeModal()
 
-The `showModal()` framework function is used to close an existing [Modal widget](/reference/widgets/modal) that is currently open on the page.
+The `closeModal()` framework function is used to close an existing [Modal widget](/reference/widgets/modal) that is currently open on the page.
 
 ## Signature
 
