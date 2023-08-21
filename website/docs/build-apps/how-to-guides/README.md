@@ -14,7 +14,7 @@
 - [Communicate Between an App and Iframe](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
 
 ### List Widget
-- [Setup Server-side Pagination on List](//build-apps/how-to-guides/Setup-Server-side-Pagination-on-List)
+- [Setup Server-side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List)
 - [Create Nested Lists](/build-apps/how-to-guides/Create-nested-lists)
 
 
