@@ -19,7 +19,7 @@ This section covers writing code in Appsmith and updating widgets dynamically. L
    <div class="containerCol">
       </div>
       <b><a href="/write-code/reference"> Reference</a></b>
-      <div class="containerDescription"> Technical descriptions and information about widgets and other actions.
+      <div class="containerDescription"> Technical descriptions and information about framework and libraries.
       </div>
    </div>
 </div>

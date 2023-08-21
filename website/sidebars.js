@@ -451,15 +451,8 @@ const sidebars = {
             'reference/widgets/video',
           ],
         },
-        {
-          type: 'category',
-          label: 'App Settings',
-          link: { type: 'doc', id: 'build-apps/reference/app-settings/README' },
-          items: [
-            'core-concepts/building-ui/designing-an-application/app-theming',
-            'core-concepts/building-ui/designing-an-application/application-layout',
-          ],
-       },
+        'core-concepts/building-ui/designing-an-application/app-theming',
+        'core-concepts/building-ui/designing-an-application/application-layout',
       ],
     }, //Reference End
   ]
