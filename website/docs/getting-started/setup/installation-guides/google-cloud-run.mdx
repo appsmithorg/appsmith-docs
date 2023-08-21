@@ -61,37 +61,6 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 7. Click **Create**. A green check mark will appear next to the connector's name when it is ready to use.
 
-## Create a Redis Instance
-
-This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#deploy-appsmith-on-cloud-run). Follow the steps below if you want scalable, secure, and highly available services. Ensure you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
-
-1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
-
-2. Click **Create Instance**.
-    
-3. On the **Create a Redis instance** page, enter the configurations as shown below:
-
-    - In the **Instance ID** field, set an id. Example: `instanceid`.
-    - In the **Tier Selection** list, select one of the options:
-      - **Basic**: One primary Redis node. No automatic failover for High Availability.
-      - **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
-    For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
-    - In the **Capacity** box, enter `10`.
-    - In the **Region** box, select a region for your instance.
-    - In the **Zone** box, select a zone for your instance.
-    - If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
-    - Under **Set up connection**, select the **default** option for **Network**.
-    - Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
-
-4. Click the **Create** button.
-
-5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
-
-<figure>
-    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint of the Redis Instance"/>
-    <figcaption align = "center"><i>Primary Endpoint of the Redis Instance</i></figcaption>
-</figure>
-
 
 ## Deploy Appsmith on Cloud Run
 
@@ -134,7 +103,6 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
     | **owner** | `appsmith`|
     | **APPSMITH_ENABLE_EMBEDDED_DB** |`0`|
-    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
 10. Click the **Networking** tab.
     - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
@@ -161,7 +129,9 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 ### Assign roles to account
 
 1. Go to the [IAM & Admin](https://console.cloud.google.com/iam-admin) page in the Google Cloud console.
+
 2. Grant the **Cloud SQL Admin** and the **Cloud SQL Client** roles to the member for the project. 
+
 3. Click **Save**.
 
 <figure>
@@ -172,45 +142,99 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 ### Create a PostgreSQL instance
 
 1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
 2. Click **Create instance**.
+
 3. On the **Choose your database engine** panel of the **Create an instance** page, click **Choose PostgreSQL**.
+
 4. In the **Instance ID** field of the **Instance info** pane, enter an ID for your instance. Eg: `postgres`.
+
 5. In the **Password** field, enter a password for the postgres user.
+
 6. Select **PostgreSQL 12** in the **Database version** dropdown list.
+
 7. Select **Enterprise** in the **Choose a Cloud SQL edition** panel.
+
 8. In the **Choose region and zonal availability** section:
     - In the **Region** dropdown list, select the region for your instance.   
     - Select **Single zone** under **Zonal availability**.
+
 9. In the **Customize your instance** section, click **SHOW CONFIGURATION OPTIONS** to display the groups of settings.
+
 10. Under the **Storage** section: 
     - Select **HDD** under **Storage type**.
     - Select **10 GB** under **Storage capacity**.
+
 11. Under the **Connections** section, select the **Public IP** checkbox.
+
 12. Under the **Data protection** section, deselect the **Automate backups** and **Enable deletion protection** checkboxes.
+
 13. Under the **Maintenance** section:
     - Select **Any window** in the **Maintenance window** dropdown list. 
     - Select **Any** in the **Order of update** dropdown list. 
+
 14. Click **Create Instance**.
 
 ### Create database
 
 1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
 2. To open the Overview page of an instance, click the instance name.
+
 3. Select **Databases** from the SQL navigation menu.
+
 4. Click **Create database**.
+
 5. In the **New database** dialog, specify the name of the database.
+
 6. Click **Create**.
 
 ### Create users
 
 1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
 2. To open the Overview page of an instance, click the instance name.
+
 3. Select **Users** from the SQL navigation menu.
+
 4. Click **Add user account**.
+
 5. In the **Add a user account to instance instance_name** page, select **Built-in authentication** (the default) and add a **User name** and **Password**.
+
 6. Click **Add**.
 
-### Create Service
+### Create a Redis instance
+
+This guide is optional, and you can skip to [Create Service](#create-service). Follow the steps below if you want scalable, secure, and highly available services. Ensure you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
+
+1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
+
+2. Click **Create Instance**.
+    
+3. On the **Create a Redis instance** page, enter the configurations as shown below:
+
+    - In the **Instance ID** field, set an id. Example: `instanceid`.
+    - In the **Tier Selection** list, select one of the options:
+      - **Basic**: One primary Redis node. No automatic failover for High Availability.
+      - **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
+    For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
+    - In the **Capacity** box, enter `10`.
+    - In the **Region** box, select a region for your instance.
+    - In the **Zone** box, select a zone for your instance.
+    - If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
+    - Under **Set up connection**, select the **default** option for **Network**.
+    - Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
+
+4. Click the **Create** button.
+
+5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
+
+<figure>
+    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint of the Redis Instance"/>
+    <figcaption align = "center"><i>Primary Endpoint of the Redis Instance</i></figcaption>
+</figure>
+
+### Create service
 1. Go to [Cloud Run](https://console.cloud.google.com/run).
 
 2. Click **Create service**.
@@ -254,9 +278,12 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
     | **KC_DB_USERNAME** |`appsmith`|
     | **KC_DB_PASSWORD** |`appsmith`|
     | **KC_TRANSACTION_XA_ENABLED** |`false`|
+    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
 
 10. Scroll down to **Cloud SQL connections** section.
+
 11. Click **Add connection**.
+
 12. Select the desired Cloud SQL instance from the dropdown list.
 
 10. Click the **Networking** tab.
@@ -278,11 +305,31 @@ This guide is optional, and you can skip to [Deploy Appsmith on Cloud Run](#depl
 
 15. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key. Enter your license key to activate the instance.
 
+### Manage traffic between revisions
+
+Follow the steps below if you have created a Redis instance in the steps above to split traffic between multiple revisions.
+
+1. Go to [Cloud Run](https://console.cloud.google.com/run).
+
+2. Locate the service in the services list, and click on it.
+
+3. Click the **Revisions** tab.
+
+4. Click the **︙** icon under **Actions** next to the service.
+
+5. Specify the percentage of traffic to be shared. To split traffic between more revisions, click **Add Revision**, select the desired revision, and set the percentage to the desired split.
+
+6. Click **Save**.
+
+<figure>
+  <img src="/img/manage_traffic_revisions.png" style= {{width:"100%", height:"auto"}} alt="Manage traffic between revisions"/>
+  <figcaption align = "center"><i>Manage traffic between revisions</i></figcaption>
+</figure>
 
 </TabItem>
 </Tabs>
 
-## Further reading
+## See also
 
 [Instance Configuration](/getting-started/setup/instance-configuration/) <br/>
 [Instance Management](/getting-started/setup/instance-management/)
