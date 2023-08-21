@@ -3,6 +3,8 @@ import TabItem from '@theme/TabItem';
 
 # Setup Server-side Pagination on Table
 
+This page shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your web application.
+ 
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based pagination or Cursor-based pagination.
 
 
@@ -13,6 +15,7 @@ Appsmith can handle query responses of up to 5 MB. To display large datasets and
  Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API. 
 
 1. Fetch data from the sample **users** database using `pageSize` and `pageOffset`  reference properties to implement pagination.
+
 
    ```sql
     SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }}; 
