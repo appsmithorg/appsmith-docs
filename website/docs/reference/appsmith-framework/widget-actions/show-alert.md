@@ -1,7 +1,8 @@
 ---
-sidebar_position: 2
+description: >-
+  showAlert() reference
 ---
-# Show Alert
+# showAlert()
 
 Displays a temporary toast-style alert message to the user, lasting 5 seconds. The duration of the alert message can't be modified.
 

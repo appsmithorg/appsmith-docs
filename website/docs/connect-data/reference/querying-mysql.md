@@ -23,47 +23,53 @@ The following section is a reference guide that provides a complete description 
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Connection mode</b></dt>
-  <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd>
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
-      <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
-    </ul>
-  </dd><br />
+#### Connection mode
 
-  <dt><b>Host address</b></dt>
-  <dd>The network location of your MySQL database. This could be a domain or IP address. For a guide about connecting to a local MySQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd><br />
+<dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
+    <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
+  </ul>
+</dd>
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>3306</code> by default if you do not specify one.</dd><br />
+#### Host address
 
-  <dt><b>Database name</b></dt>
-  <dd>The name of the database to connect.</dd><br />
+<dd>The network location of your MySQL database. This could be a domain or IP address. For a guide about connecting to a local MySQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd>
 
-  <dt><b>Username</b></dt>
-  <dd>The username for your MySQL user.
-  </dd><br />
+#### Port
 
-  <dt><b>Password</b></dt>
-  <dd>The password for your MySQL user.
-  </dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port <code>3306</code> by default if you do not specify one.</dd>
 
-  <dt><b>SSL mode</b></dt>
-  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd>
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Default:</b> SSL is used if the server supports it.</li>
-      <li><b>Required:</b> The connection is rejected if SSL isn't available.</li>
-      <li><b>Disabled:</b> Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.</li>
-    </ul>
-  </dd><br />
+#### Database name
 
-  <dt><b>Server Timezone Override</b></dt>
-  <dd>Sets a custom timezone, which is useful if Appsmith doesn't automatically recognize the MySQL server's timezone. Expects a valid timezone string (For example: <code>UTC</code>) to use for your queries.
-  </dd>
-</dl>
+<dd>The name of the database to connect.</dd>
+
+#### Username
+
+<dd>The username for your MySQL user.
+</dd>
+
+#### Password
+
+<dd>The password for your MySQL user.
+</dd>
+
+#### SSL mode
+
+<dd>Determines whether your queries use an SSL connection to communicate with the database.</dd>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Default:</b> SSL is used if the server supports it.</li>
+    <li><b>Required:</b> The connection is rejected if SSL isn't available.</li>
+    <li><b>Disabled:</b> Disallows all administrative requests over HTTPS. It uses a plain unencrypted connection.</li>
+  </ul>
+</dd>
+
+#### Server Timezone Override
+
+<dd>Sets a custom timezone, which is useful if Appsmith doesn't automatically recognize the MySQL server's timezone. Expects a valid timezone string (For example: <code>UTC</code>) to use for your queries.
+</dd>
 
 ## Create queries
 

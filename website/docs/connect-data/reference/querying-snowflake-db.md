@@ -19,35 +19,40 @@ The following section is a reference guide that provides a complete description 
   <figcaption align="center"><i>Configuring a Snowflake datasource.</i></figcaption>
 </figure>
 
-<dl>
-  <dt><b>Account Name</b></dt>
-  <dd>This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. You can find your organization name and account name on the Snowflake dashboard at the bottom-left of the page; click the string next to the Snowflake logo to open an information box with your details.</dd><br />
+#### Account Name
 
-  <figure>
-    <img src="/img/snowflake-account-name.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
-    <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
-  </figure>
+<dd>This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. You can find your organization name and account name on the Snowflake dashboard at the bottom-left of the page; click the string next to the Snowflake logo to open an information box with your details.</dd>
 
-  <dt><b>Warehouse</b></dt>
-  <dd>Specifies the virtual warehouse to use once connected.</dd><br />
+<figure>
+  <img src="/img/snowflake-account-name.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
+  <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
+</figure>
 
-  <dt><b>Database</b></dt>
-  <dd>Specifies the database to use once connected.</dd><br />
+#### Warehouse
 
-  <dt><b>Default Schema</b></dt>
-  <dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd><br />
-  
-  <dt><b>Role</b></dt>
-  <dd>The role to use for performing queries.</dd><br />
+<dd>Specifies the virtual warehouse to use once connected.</dd>
 
-  <dt><b>Username</b></dt>
-  <dd>The username for your Snowflake account.
-  </dd><br />
+#### Database
 
-  <dt><b>Password</b></dt>
-  <dd>The password for your Snowflake account.
-  </dd><br />
-</dl>
+<dd>Specifies the database to use once connected.</dd>
+
+#### Default Schema
+
+<dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd>
+
+#### Role
+
+<dd>The role to use for performing queries.</dd>
+
+#### Username
+
+<dd>The username for your Snowflake account.
+</dd>
+
+#### Password
+
+<dd>The password for your Snowflake account.
+</dd>
 
 ## Query Snowflake
 

@@ -17,36 +17,32 @@ The following section is a reference guide that provides a description of the pa
   <figcaption align = "center"><i>Configuring a REST API query.</i></figcaption>
 </figure>
 
-<dl>  
-  <dt><b>Method</b></dt>
-  <dd>Sets the REST method (<code>GET</code>, <code>POST</code>, etc.) to use for the request.</dd>
-</dl>
+#### Method
 
-<dl>  
-  <dt><b>URL</b></dt>
-  <dd>Sets the endpoint to query.</dd>
-</dl>
+<dd>Sets the REST method (<code>GET</code>, <code>POST</code>, etc.) to use for the request.</dd>
 
-<dl>  
-  <dt><b>Headers</b></dt>
-  <dd>Sets key/value pairs to send in the request header.</dd>
-  <dd><em>To learn how to set up dynamic headers, visit and fork this <a href="https://app.appsmith.com/applications/6200ac292cd3d95ca414dc4f/pages/624eda0551a8863d6c406760">sample app</a></em>.</dd>
-</dl>
+#### URL
 
-<dl>
-  <dt><b>Params</b></dt>
-  <dd>Sets key/value pairs to send as query parameters in the request.</dd>
-</dl>
+<dd>Sets the endpoint to query.</dd>
 
-<dl>
-  <dt><b>Body</b></dt>
-  <dd>Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
-  </dd>
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>None:</b> Omits a body from the request.</li>
-      <li><b>JSON:</b> Expects a JSON object to send as the body.</li>
-    </ul>
+#### Headers
+
+<dd>Sets key/value pairs to send in the request header.</dd>
+<dd><em>To learn how to set up dynamic headers, visit and fork this <a href="https://app.appsmith.com/applications/6200ac292cd3d95ca414dc4f/pages/624eda0551a8863d6c406760">sample app</a></em>.</dd>
+
+#### Params
+
+<dd>Sets key/value pairs to send as query parameters in the request.</dd>
+
+#### Body
+
+<dd>Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
+</dd>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>None:</b> Omits a body from the request.</li>
+    <li><b>JSON:</b> Expects a JSON object to send as the body.</li>
+  </ul>
 
 <dd><pre>{` 
 {
@@ -103,24 +99,21 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 :::
 </dd>
 
-  </dd>  
-</dl>
-
-<dl>
-  <dt><b>Pagination</b></dt>
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>None:</b> Doesn't use any pagination.</li>
-      <li><b>Paginate with Table Page No:</b> Use when your API expects an offset or increment value to determine which set of records to return. Follow the instructions that appear on the platform, or see <a href="/reference/widgets/table?current-edition=Offset_edition#server-side-pagination">Offset-based pagination</a> for more information.</li>
-      <li><b>Paginate with Response URL:</b> Use when your API returns cursor values to page through data. The <b>Previous URL</b> and <b>Next URL</b> fields expect the cursor values from the query response. For more information, see <a href="/reference/widgets/table?current-edition=Cursor#server-side-pagination">Cursor-based pagination</a>.</li>
-    </ul>
   </dd>
-</dl>
 
-<dl>
-  <dt><b>Authentication</b></dt>
-  <dd><em>Click the button in this tab to turn this query into a new Authenticated API datasource where you can configure Authentication for your requests.</em></dd>
-</dl>
+#### Pagination
+
+<dd><i>Options:</i>
+  <ul>
+    <li><b>None:</b> Doesn't use any pagination.</li>
+    <li><b>Paginate with Table Page No:</b> Use when your API expects an offset or increment value to determine which set of records to return. Follow the instructions that appear on the platform, or see <a href="/reference/widgets/table?current-edition=Offset_edition#server-side-pagination">Offset-based pagination</a> for more information.</li>
+    <li><b>Paginate with Response URL:</b> Use when your API returns cursor values to page through data. The <b>Previous URL</b> and <b>Next URL</b> fields expect the cursor values from the query response. For more information, see <a href="/reference/widgets/table?current-edition=Cursor#server-side-pagination">Cursor-based pagination</a>.</li>
+  </ul>
+</dd>
+
+#### Authentication
+
+<dd><em>Click the button in this tab to turn this query into a new Authenticated API datasource where you can configure Authentication for your requests.</em></dd>
 
 ## Troubleshooting
 
