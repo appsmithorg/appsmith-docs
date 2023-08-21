@@ -1038,6 +1038,10 @@
       "source": "/core-concepts/building-ui/designing-an-application",
       "destination": "/build-apps/overview"
     },
+    {
+      "source": "/core-concepts/building-ui",
+      "destination": "/build-apps/overview"
+    },
   
     {
       "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
@@ -1062,6 +1066,14 @@
     {
       "source": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data",
       "destination": "/reference/widgets/form"
-    }
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/querying-a-database",
+      "destination": "/connect-data/how-to-guides/query-data"
+    },
+    {
+      "source": "/reference/appsmith-framework",
+      "destination": "/write-code/reference"
+    },
   ]
 }
