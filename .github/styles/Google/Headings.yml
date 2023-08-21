@@ -229,3 +229,6 @@ exceptions:
   - onDateSelected
   - key
   - persist
+  - interval
+  - callbackFunction
+  - delay
