@@ -8,8 +8,8 @@ toc_max_heading_level: 2
 The `showAlert()` function displays a temporary toast-style alert message to the user for precisely 5 seconds. The duration of the alert message can't be modified.
 
 <figure>
-    <img src="/img/show-alert-action.png" style={{width:"700px", height:"auto"}} alt="showAlert displays notifications at the top of the screen." />
-    <figcaption align="center" ><i>Show Alert</i></figcaption>
+    <img src="/img/show-alert-action.png" style={{width:"700px", height:"auto"}} alt="showAlert() displays notifications at the top of the screen." />
+    <figcaption align="center" ><i>showAlert()</i></figcaption>
 </figure>
 
 
