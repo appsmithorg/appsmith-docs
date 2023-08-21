@@ -3,6 +3,7 @@
 
 ### Table Widget
 
+
 - [Refresh table data](/build-apps/how-to-guides/Refresh-table-data)
 - [Setup Table Inline Editing](/reference/widgets/table/inline-editing)
 - [Setup Server-side Filtering on Table](/build-apps/how-to-guides/Server-side-filtering-table)
