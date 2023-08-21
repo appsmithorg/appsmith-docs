@@ -2,6 +2,8 @@
 
 Appsmith offers a powerful set of widgets to help you build dynamic and functional app layouts. You can simply drag and drop them onto the canvas and edit the properties of each widget to customize its data, style, and actions.
 
+You can drag and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies front-end and back-end integration between the UI and the datasource to optimize building applications. It also supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
+
 
 <div class="containerGridSampleApp">
    <div class="containerColumnSampleApp columnGrid column-one">
