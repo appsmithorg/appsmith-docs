@@ -1,3 +1,7 @@
+---
+toc_max_heading_level: 3
+description: Use Appsmith framework functions like postWindowMessage() to communicate between different windows and origins from Appsmith.
+---
 # Cross-origin Communication
 
 Appsmith provides a way to enable safe cross-origin communication between different [Window](https://developer.mozilla.org/en-US/docs/Web/API/Window) objects such as application/parent window and iframes. This is useful when:
@@ -5,44 +9,88 @@ Appsmith provides a way to enable safe cross-origin communication between differ
 - Using Appsmith's [Iframe](/reference/widgets/iframe/) widget to embed other applications or pages.
 - Embedding Appsmith in an iframe of a parent application.
 
-## Methods
+**Methods:**
+
 In Appsmith, you can use the following methods for cross-origin communication -
 * [postWindowMessage()](#postwindowmessage)
 * [windowMessageListener()](#windowmessagelistener)
 * [unlistenWindowMessage()](#unlistenwindowmessage)
 
 
-### postWindowMessage()
+## postWindowMessage()
 
-`postWindowMessage()` method can be used to send messages between the application or parent windows and iframes.
+`postWindowMessage()` is used to send messages between parent apps or windows and child iframes.
 
-#### Signature
+### Signature
 
 ```javascript
 postWindowMessage(message, targetIframe, targetOrigin)
 ```
 
-##### Arguments
+#### Parameters
 
-| Argument Name | Description |
-| ------------- | ----------- |
-| **message** | This is the message to send to the target iframe or window. Most JavaScript values are acceptable here, except `null` and `undefined`. (Default: `""`) |
-| **targetIframe** | This is the window to which you want to send the message. If its value is `"window"`, you are sending a message to the parent application’s window (where Appsmith is embedded). If you want to send a message to an iframe within Appsmith, enter the name of the iframe here. (Default: `"window"`) |
-| **targetOrigin** | This is the URL to which you can send messages. The default value of "`*`" means the message can be sent to any URL. If you want to limit sending messages to only the parent application (in which Appsmith is embedded), enter the URL of the parent application here. (Default: `"*"`) |
+##### message
 
-To see examples of the **postWindowMessage** function, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
+<dd>
+
+The message to send to the target iframe or window. Most JavaScript values are acceptable here, except `null` and `undefined`. This is an empty string (`""`) by default.
+
+</dd>
+
+##### targetIframe
+
+<dd>
+
+A string which sets where to send the message. If its value is `"window"`, the message is sent to the parent application’s window (where Appsmith is embedded). To send a message to an iframe embedded within Appsmith, the string should be the name of the Iframe widget. This parameter is `"window"` by default.
+
+</dd>
+
+##### targetOrigin
+
+<dd>
+
+A string that is the URL or domain where messages are allowed to be sent. A value of `"*"` allows sending to any URL. To limit sending messages to only the parent application where Appsmith is embedded, enter the URL of the parent application. By default, this parameter is `"*"`.
+
+</dd>
+
+To see examples of **postWindowMessage()**, take a look at the [sample app](https://app.appsmith.com/applications/61f3d1949d6d6a6720c98681/pages/61f3d1949d6d6a6720c98684).
 
 
+## windowMessageListener()
 
-### windowMessageListener()
-
-`windowMessageListener()` function enables an appsmith app to react to the messages incoming from the parent website. This is a page level action that's specific to the current page and won't continue on other pages.
+`windowMessageListener()` is used to enable an appsmith app to capture and react to the messages incoming from a parent website. This listener is page-scoped and is only active on the page where it's created.
 
 :::info
 This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
 :::
 
-#### Signature
+### Signature
+
+```javascript
+windowMessageListener(domain: string, callback: function): Promise
+```
+
+#### Parameters
+
+##### domain
+
+<dd>
+
+A string that is the URL or domain of the website from which Appsmith expects to recieve a message. The listener only listens for messages from the given domain when that domain is embedded in the Appsmith app; If the Appsmith app is embedded in some other website, the callback won’t be triggered.
+
+If an active listener is already in place, it won't be overridden and a warning appears in the console. The use of the `"*"` wildcard is not allowed in this parameter, a specific web address is required.
+
+</dd>
+
+##### callback
+
+<dd>
+
+A callback function to be called whenever a message is recieved from the target domain. It can expect a parameter that is the incoming message.
+
+</dd>
+
+_Example:_
 
 ```javascript
 windowMessageListener(
@@ -50,13 +98,6 @@ windowMessageListener(
 	(message) => { showAlert(message) }
 )
 ```
-
-##### Arguments
-
-| Argument | Description |
-| --- | --- |
-| domain | This is the address of the website that sends the message (`https://mywebsite.com`). The app only listens to messages from the given domain when embedded. If the app is embedded in some other website(`https://myother-website.com`)the callback  won’t be triggered. If an active action is already in place, it won't be overridden and a warning appears in the console. The use of ** * ** is not allowed in the domain field, as Appsmith requires specific website address.|
-| callback | A callback comes to action whenever a message is sent from the defined domain. It accepts a parameter that  returns the response to the incoming message. |
 
 ### unlistenWindowMessage()
 
