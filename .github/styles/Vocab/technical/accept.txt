@@ -536,3 +536,4 @@ UpdateTable
 UpdateTableReplicaAutoScaling
 UpdateTimeToLive
 Modal Name
+widgetName
