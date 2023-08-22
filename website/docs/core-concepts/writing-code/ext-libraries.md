@@ -1,11 +1,11 @@
-# Use external JS libraries 
+# Use External JS Libraries 
 
 The Appsmith platform includes built-in JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings or within JSObjects. You can also install and use other custom libraries to manipulate or transform data. These external libraries provide additional methods to help you build complex applications and business logic.
 
  <VideoEmbed host="youtube" videoId="xXssLXQvdyY" title="How To Use Custom JavaScript Libraries" caption="How To Use JavaScript Libraries"/>
 
 
-## Custom JavaScript libraries
+## Custom JavaScript Libraries
 
 Custom Javascript libraries provide far more advanced capabilities for complex use cases like PDF generation, CSV Parsing, analytics, authentication, error logging, etc. You can browse and install a JS library of your choice by pasting a valid URL to the library’s index file.
 
