@@ -1023,6 +1023,57 @@
     {
       "source": "/reference/readme-1/actions/:path*",
       "destination": "/reference/appsmith-framework/widget-actions/:path*"
+    },
+    {
+      "source": "../data-access-and-binding/querying-a-database",
+      "destination": "/connect-data/how-to-guides/query-data"
+    },
+  
+    {
+      "source": "/core-concepts/data-access-and-binding",
+      "destination": "/build-apps/overview"
+    },
+  
+    {
+      "source": "/core-concepts/building-ui/designing-an-application",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/building-ui",
+      "destination": "/build-apps/overview"
+    },
+  
+    {
+      "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
+      "destination": "/reference/widgets"
+    },
+  
+    {
+      "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
+      "destination": "/reference/widgets"
+    },
+  
+    {
+      "source": "/core-concepts/data-access-and-binding/displaying-data-read",
+      "destination": "/build-apps/overview"
+    },
+  
+    {
+      "source": "/core-concepts/data-access-and-binding/capturing-data-write",
+      "destination": "/build-apps/overview"
+    },
+  
+    {
+      "source": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data",
+      "destination": "/reference/widgets/form"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/querying-a-database",
+      "destination": "/connect-data/how-to-guides/query-data"
+    },
+    {
+      "source": "/reference/appsmith-framework",
+      "destination": "/write-code/reference"
     }
   ]
 }
