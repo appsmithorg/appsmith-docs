@@ -53,29 +53,6 @@
     </div>
 </div>
 
-
-### Iframe
-
-<div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <strong>Create Custom Widgets Using Iframe</strong>
-        </div> <hr/>
-        <div class="containerDescription">Shows how to create custom widgets using Iframe, allowing you to embed external content and functionalities seamlessly within your app.</div>
-        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Create-custom-widgets-using-Iframe">
-        <strong>View</strong></a></div>
-    </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
-           <strong>Communicate Between an App and Iframe</strong>
-        </div><hr/>
-        <div class="containerDescription">Shows how to communicate between an app and Iframe, enabling seamless interaction and data exchange between the two.</div>
-         <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe"><strong>View</strong></a>
-         </div>
-    </div>
-</div>
-
-
 ### List 
 
 <div class="containerGridSampleApp">
@@ -113,6 +90,7 @@
 </div>
 
 
+
 ### Filepicker 
 
 <div class="containerGridSampleApp">
@@ -133,6 +111,29 @@
          </div>
     </div>
 </div>
+
+
+### Iframe
+
+<div class="containerGridSampleApp">
+    <div class="containerColumnSampleApp columnGrid column-one">
+        <div class="containerCol">
+            <strong>Create Custom Widgets Using Iframe</strong>
+        </div> <hr/>
+        <div class="containerDescription">Shows how to create custom widgets using Iframe, allowing you to embed external content and functionalities seamlessly within your app.</div>
+        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Create-custom-widgets-using-Iframe">
+        <strong>View</strong></a></div>
+    </div>
+    <div class="containerColumnSampleApp columnGrid column-two">
+        <div class="containerCol">
+           <strong>Communicate Between an App and Iframe</strong>
+        </div><hr/>
+        <div class="containerDescription">Shows how to communicate between an app and Iframe, enabling seamless interaction and data exchange between the two.</div>
+         <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe"><strong>View</strong></a>
+         </div>
+    </div>
+</div>
+
 
 ### Select
 
