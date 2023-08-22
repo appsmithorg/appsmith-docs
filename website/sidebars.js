@@ -492,7 +492,7 @@ const sidebars = {
 
         {
           type: 'category',
-          label: 'Framework Functions',
+          label: 'Built-in Functions',
           link: {
             type: 'doc',
             id: 'reference/appsmith-framework/widget-actions/README',
