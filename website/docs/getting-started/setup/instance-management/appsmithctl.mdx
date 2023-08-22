@@ -63,41 +63,40 @@ The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder.
 # Replace the appsmith-backup-DATE_AND_TIMESTAMP.tar.gz with the backup file name
 docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz .
 ```
-This command copies the backup archive in your current directory.
+After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
 
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetes-commands"> 
 
-1. Get the name of the Appsmith pod with:
+1. Get the name of the Appsmith pod with (replace the `APPSMITH_NAMESPACE` with your Appsmith namespace):
 
 ```bash
-kubectl get pods
+kubectl get pods -n APPSMITH_NAMESPACE
 ```
-2. Get your encryption details with:
+2. Get your encryption details using the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
 
 ```bash
-# Replace ANY_APPSMITH_POD_NAME with the pod name
 #highlight-next-line
 kubectl exec ANY_APPSMITH_POD_NAME -- cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
 ```
 Keep these details handy, as you need them for restoring the Appsmith instance.
 
-3. Create a backup with:
+3. Create a backup using the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
  
 ```bash
-# Replace ANY_APPSMITH_POD_NAME with the pod name
 #highlight-next-line
 kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
 ```
 The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
-4. Copy the archive file
+4. Copy the archive file using the below command, ensure that you replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name, APPSMITH_BACKUP_FILENAME with your Appsmith backup filename, and APPSMITH_NAMESPACE with your Appsmith namespace:
+
 ```bash
-# Replace ANY_APPSMITH_POD_NAME with the pod name
 #highlight-next-line
-kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/appsmith-backup-TIMESTAMP.tar.gz appsmith-backup-TIMESTAMP.tar.gz
+kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/APPSMITH_BACKUP_FILENAME -n APPSMITH_NAMESPACE GIVE_NAME_FOR_COPIED_BACKUP_FILE
 ```
+After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
 
 </TabItem>
 
