@@ -197,7 +197,7 @@ This command fetches documents from a collection. The following section lists al
 <dd><i>Example:</i></dd>
 <dd><pre>{`{{tableItems.pageOffset}}
 `}</pre></dd>
-<dd>In the above examples for the <b>Limit</b> and <b>Skip</b> fields, the queries use <a href="/reference/widgets/table#server-side-pagination"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
+<dd>In the above examples for the <b>Limit</b> and <b>Skip</b> fields, the queries use <a href="/build-apps/how-to-guides/Server-side-pagination-in-table"><b>server-side pagination</b></a> to limit the number of query results returned by the server and fetch additional results when the user moves to the next page in the Table widget. You can fork this <a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><b>Sample App</b></a> to see how to implement server-side pagination on the Table widget.</dd>
 
 ### Insert Documents
 

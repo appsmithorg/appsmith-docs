@@ -72,7 +72,7 @@ LIMIT {{ UsersTable.pageOffset }}, {{ UsersTable.pageSize }}
 RETURN user
 ```
 
-In the above example, `UsersTable` is the name of the Table widget that displays the data. It is configured to use [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `UsersTable` is the name of the Table widget that displays the data. It is configured to use [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
 ### Create
 
