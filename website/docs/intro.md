@@ -41,8 +41,11 @@ If you are new to Appsmith, this is the place to start:
       <b><a href="/getting-started/tutorials/start-building">Build your first app</a></b>
       <div class="containerDescription">A quickstart guide to help you build an app using Appsmith
       </div>
-   </div>
 </div>
+     <div class="columnGrid column-two" style={{margin: "10px"}}>
+    </div>
+</div>
+
 
 :::info
 
