@@ -22,7 +22,7 @@ Technical descriptions and information about widgets and app settings.
            <strong>Theme</strong>
         </div><hr/>
         <div class="containerDescription">Theme allows you to style your pages and widgets using global controls, making it easy to change the visual layout with a single click. </div>
-         <div class="containerTutorialLink"><a href="/reference/widgets/table/inline-editing"><strong>View</strong></a>
+         <div class="containerTutorialLink"><a href="/core-concepts/building-ui/designing-an-application/app-theming"><strong>View</strong></a>
          </div>
     </div>
 </div>
@@ -34,7 +34,7 @@ Technical descriptions and information about widgets and app settings.
                 <strong>Canvas Size</strong>
         </div> <hr/>
         <div class="containerDescription">You can choose the application layout to align with the device size for which the app is intended. </div>
-        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Refresh-table-data">
+        <div class="containerTutorialLink"><a href="/core-concepts/building-ui/designing-an-application/application-layout">
         <strong >View </strong></a></div>
     </div>
      <div class="columnGrid column-two" style={{margin: "10px"}}>
