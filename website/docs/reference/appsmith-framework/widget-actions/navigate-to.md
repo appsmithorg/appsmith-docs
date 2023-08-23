@@ -5,7 +5,7 @@ description: >-
 
 # navigateTo()
 
-navigateTo() allows the user to navigate between the internal pages of the App or to an external URL. It could be triggered on any widget action like Button `onClick`, Dropdown `onOptionChange`, etc. Enter the page name or the external URL in the navigateTo function (under a triggered action like `onClick`), enter the Query parameters if required, and select the destination for the new page (a new window or same window).
+The `navigateTo()` function enables you to navigate between the internal pages of the App or to an external URL. 
 
 
 <figure>
@@ -42,7 +42,7 @@ Query parameters passed via the URL. Used to share information with the destinat
 <dd>
 
 
-Option to configure where to open the URL. Default: "SAME\_WINDOW"
+Option to configure whether to open the page or URL in the same browser window or a new window/tab. The default value is set to `SAME_WINDOW`.
 
 </dd>
 
