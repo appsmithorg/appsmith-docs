@@ -1,7 +1,9 @@
 ---
 description: >-
   download() reference
+toc_max_heading_level: 2
 ---
+
 # download()
 
 The `download()` function enables you to download any data as a file, leveraging the capabilities of the [downloadjs](https://github.com/rndme/download) library.
