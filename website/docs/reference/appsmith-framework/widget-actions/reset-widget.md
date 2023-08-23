@@ -36,7 +36,7 @@ _Example 1:_
 Reset a Container widget and all other widgets that it contains:
 
 ```javascript
-{{ resetWidget("Conatiner1") }}
+{{ resetWidget("Container1") }}
 ```
 
 _Example 2:_
