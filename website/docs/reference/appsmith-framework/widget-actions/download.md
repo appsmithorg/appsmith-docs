@@ -4,13 +4,7 @@ description: >-
 ---
 # download()
 
-With Appsmith, users have the ability to download a wide range of file formats. This action serves the purpose of downloading any data as a file. The feature is made possible by using  [downloadjs](https://github.com/rndme/download) library.
-
-<figure>
-  <img src="/img/download-action.png" style= {{width:"700px", height:"auto"}} alt="Download"/>
-  <figcaption align = "center"><i>Download</i></figcaption>
-</figure>
-
+The `download()` function enables you to download any data as a file, leveraging the capabilities of the [downloadjs](https://github.com/rndme/download) library.
 
 ## Signature
 
@@ -24,7 +18,7 @@ download(data: any, fileName: string, fileType?: string): Promise
 
 <dd>
 
-Data or URL that would be downloaded.
+The Blob, File, String, or dataURL containing the soon-to-be File's contents
 
 </dd>
 
@@ -40,7 +34,7 @@ Name of the file to be downloaded
 
 <dd>
 
-The mime type of the file to be downloaded
+The MIME content-type of the file to download.
 
 *Supported file types:*
 
@@ -65,15 +59,11 @@ If you want to download a plain text document, the data passed to the download a
 ```javascript
 download(data: string, fileName: string, fileType?: string): void
 ```
-<VideoEmbed host="youtube" videoId="JL0XRRIIcus" title="Downloading a plain text" caption="Downloading a plain text"/>
 
 
 *Example 2:*
 
 To download an image, the data passed to the download action should be the image's URL or Base64 string representation of the image. A `fileName` and an optional `fileType` should be provided as parameters to the download function. 
-
-<VideoEmbed host="youtube" videoId="PoDi1MR6nI4" title="Downloading an image" caption="Downloading an image"/>
-
 
 *Example 3:*
 
