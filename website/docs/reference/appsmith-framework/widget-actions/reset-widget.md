@@ -27,7 +27,7 @@ A string which is the name of the widget to reset.
 
 <dd>
 
-An optional boolean which determines whether all child widgets should also be reset. This is `true` by default.
+An optional boolean value which determines whether all child widgets should also be reset. This is `true` by default.
 
 </dd>
 
