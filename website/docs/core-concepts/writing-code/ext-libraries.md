@@ -1,24 +1,11 @@
-# External Libraries
+# Use External JS Libraries 
 
 The Appsmith platform includes built-in JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings or within JSObjects. You can also install and use other custom libraries to manipulate or transform data. These external libraries provide additional methods to help you build complex applications and business logic.
 
  <VideoEmbed host="youtube" videoId="xXssLXQvdyY" title="How To Use Custom JavaScript Libraries" caption="How To Use JavaScript Libraries"/>
 
-## Built-in JavaScript libraries
 
-Built-in JavaScript libraries provide a comprehensive array of capabilities for common tasks such as data manipulation, numeric operations, date and time handling, and more. These libraries can be accessed and used without the need for any additional installations or setup.
-
-Appsmith provides the following built-in JavaScript libraries that can be utilized in your applications.
-
-- [Lodash](https://lodash.com/docs/4.17.15) provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
-
-- [Moment](https://momentjs.com/docs/) simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
-
-- [xmlParser](https://naturalintelligence.github.io/fast-xml-parser/) can be used for parsing and manipulating XML data in JavaScript.
-
-- [Forge](https://github.com/digitalbazaar/forge) can be used to work with cryptographic algorithms and protocols in JavaScript.
-
-## Custom JavaScript libraries
+## Custom JavaScript Libraries
 
 Custom Javascript libraries provide far more advanced capabilities for complex use cases like PDF generation, CSV Parsing, analytics, authentication, error logging, etc. You can browse and install a JS library of your choice by pasting a valid URL to the library’s index file.
 
@@ -78,7 +65,7 @@ Following is an example of the Lodash `_.map` utility, in use. `fetchFruits` is 
 
 #### moment
 
-An example of the moment.js `format` utility, in use in a [query](../data-access-and-binding/querying-a-database/).
+An example of the moment.js `format` utility, in use in a [query](/connect-data/how-to-guides/query-data).
 
 ```sql
 insert into users (name, email, createdDate) values

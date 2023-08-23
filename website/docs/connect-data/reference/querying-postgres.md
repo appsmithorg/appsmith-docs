@@ -86,7 +86,7 @@ SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOff
 
 ```
 
-In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination).
+In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 
 ### Insert data
