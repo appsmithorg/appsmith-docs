@@ -2,7 +2,7 @@
 description: Appsmith supports a variety of screen sizes to build UI.
 ---
 
-# Application Layout
+# Canvas Size
 
 The Application layout can be selected to match the Application size to the device it is intended for. The desktop layout is set by default for an application.
 

@@ -30,7 +30,7 @@ GraphQL queries are written in the **Body** tab of the query screen. Use the **Q
 
 Use a query like the one below to retrieve records from your datasource.
 
-In the example below, `UsersTable` is the name of a Table widget used to search for a user by name and display the results. This query uses `limit` and `offset` to implement [**server-side pagination**](/reference/widgets/table#server-side-pagination).
+In the example below, `UsersTable` is the name of a Table widget used to search for a user by name and display the results. This query uses `limit` and `offset` to implement [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 In the **Query** window:
 

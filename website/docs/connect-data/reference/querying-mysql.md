@@ -90,7 +90,7 @@ MySQL databases are queried using standard SQL syntax. For a language reference,
 SELECT * FROM users LIMIT {{ UsersTable.pageSize }} OFFSET {{ UsersTable.pageOffset }};
 ```
 
-In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
 
 ### Insert data
