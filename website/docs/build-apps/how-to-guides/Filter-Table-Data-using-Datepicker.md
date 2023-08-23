@@ -44,7 +44,7 @@ To configure queries for specific datasources, please refer to the [datasource r
 
 </dd>
 
-3. Configure `onDateSelected` event to run the filter query for both Datepickers.
+3. Configure **onDateSelected** event to run the filter query for both Datepickers.
 
 
 Whenever a user selects dates from `Datepicker1` or `Datepicker2`, the table data automatically updates to reflect the data from the selected date range.
