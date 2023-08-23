@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 
-# Setup Server-side Pagination on Table
+# Setup Server-Side Pagination on Table
 
 
 This page shows you how to set up server-side pagination on a Table widge, which allows you to manage and display large datasets within your application.
@@ -26,7 +26,7 @@ With one-click table binding, Appsmith automatically generates queries for you, 
 :::
 
 
-## Query Configuration
+## Query configuration
 
 
 Most databases and APIs support server-side pagination, although the methods of implementation can vary.
@@ -158,7 +158,7 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 2. Enable the **Server-side pagination** property in the table.
 
 
-3. Set the table widget's **onPageChange** event to run the query.
+3. Set the table widget's **onPageChange** event to run the pagination query.
 
 
 4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
