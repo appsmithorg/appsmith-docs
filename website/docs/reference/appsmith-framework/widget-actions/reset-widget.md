@@ -1,5 +1,6 @@
 ---
 sidebar_position: 8
+toc_max_heading_level: 2
 description: Reset a widget to its default state using the resetWidget() Appsmith framework function.
 ---
 # resetWidget()
@@ -12,6 +13,36 @@ The `resetWidget()` framework function sets a widget to its default state. All u
 resetWidget(widgetName: string, resetChildren?: boolean = true) -> Promise
 ```
 
-This function accepts the following parameters:
-* A parameter of type _string_ which is the name of the widget to reset.
-* An optional parameter of type _boolean_ which determines whether all child widgets should also be reset. This is set to `true` by default.
+### Parameters
+
+#### widgetName
+
+<dd>
+
+A string which is the name of the widget to reset.
+
+</dd>
+
+#### resetChildren
+
+<dd>
+
+An optional boolean value which determines whether all child widgets should also be reset. This is `true` by default.
+
+</dd>
+
+_Example 1:_
+
+Reset a Container widget and all other widgets that it contains:
+
+```javascript
+{{ resetWidget("Container1") }}
+```
+
+_Example 2:_
+
+Reset the state of a List widget without affecting the contents of Input widgets contained within the list items:
+
+```javascript
+{{ resetWidget("List1", false) }}
+```
