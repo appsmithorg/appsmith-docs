@@ -80,15 +80,25 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 
 
+2. Bind the query data into the **Table data** property of the Table widget.
+
+<dd>
+
+*Example*: 
+
+```js
+{{fetchData.data}}
+```
+
+</dd>
+
+3. Enable the **Server-side pagination** property in the table.
 
 
-2. Enable the **Server-side pagination** property in the table.
+4. Set the Table widget's **onPageChange** event to run the pagination query.
 
 
-3. Set the Table widget's **onPageChange** event to run the pagination query.
-
-
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
+5. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
 
 
 <dd>
@@ -153,15 +163,24 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 </dd>
 
+2. Bind the query data into the **Table data** property of the Table widget.
+
+<dd>
+
+*Example*: 
+
+```js
+{{fetchData.data}}
+```
+</dd>
+
+3. Enable the **Server-side pagination** property in the table.
 
 
-2. Enable the **Server-side pagination** property in the table.
+4. Set the table widget's **onPageChange** event to run the pagination query.
 
 
-3. Set the table widget's **onPageChange** event to run the pagination query.
-
-
-4. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
+5. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
 
 
 <dd>
