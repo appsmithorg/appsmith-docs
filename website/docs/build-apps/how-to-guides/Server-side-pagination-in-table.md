@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 This page shows you how to set up server-side pagination on a Table widge, which allows you to manage and display large datasets within your application.
 
 
-It involves fetching and displaying only a portion of data from the server at a time, enhancing performance. By loading smaller chunks of data as needed, server-side pagination reduces loading times, minimizes resource consumption, and provides a smoother user experience.
+It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
 
 
