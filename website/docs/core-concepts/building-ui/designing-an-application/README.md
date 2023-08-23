@@ -89,7 +89,3 @@ Styles allow you to customize the look and feel of your widgets. With the style 
 ![Moving Across Containers](</img/style-widgets-2.gif>)
 
 
-## Further reading
-
-* [App Theming](/core-concepts/building-ui/designing-an-application/app-theming)
-* [Building dynamic UI](/core-concepts/building-ui/dynamic-ui)
