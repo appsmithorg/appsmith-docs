@@ -28,12 +28,3 @@ Similar to the above example, you can bind the visibility of a widget to the res
 {{ API1.data.value === "trueValue" }}
 ```
 
-## Dynamic forms
-
-Some cases require form fields to dynamically change based on the user input. This can be achieved using a [Tab](/reference/widgets/tabs) widget inside the form and conditionally updating the selected tab value based on the inputs of the [form](/reference/widgets/form)
-
-![](</img/dynamic_forms.gif>)
-
-:::tip
-Hide the tabs in the tab widget to make it look like the views are changing in place.
-:::
