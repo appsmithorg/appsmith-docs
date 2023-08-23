@@ -24,11 +24,11 @@ A string value that contains the text displayed in the alert message.
 
 </dd>
 
-#### Style
+#### Type
 
 <dd>
 
-Accepts a string value. Enables you to configure the type of the alert message. It accepts the following values - 
+Enables you to configure the type of the alert message. It accepts the following string values - 
 
 - Info
 - Success
