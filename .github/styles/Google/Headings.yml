@@ -229,3 +229,4 @@ exceptions:
   - onDateSelected
   - key
   - persist
+  - fileName
