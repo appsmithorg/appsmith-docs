@@ -335,97 +335,43 @@ const sidebars = {
         },
       ]
     }, //Data end
+
+// Build App Start
+
+{ // UI start
+  type: 'category',
+  collapsed: false,
+  label: 'Build Apps',
+  items: [ 
+    'build-apps/overview',
     {
-      //core concepts section start
       type: 'category',
-      collapsed: false,
-      label: 'Core Concepts',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
       items: [
-        {
-          type: 'category',
-          label: 'Building UI',
-          link: { type: 'doc', id: 'core-concepts/building-ui/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Designing an Application',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/designing-an-application/README',
-              },
-              items: [
-                'core-concepts/building-ui/designing-an-application/app-theming',
-                'core-concepts/building-ui/designing-an-application/application-layout',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building Dynamic UI',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/building-ui/dynamic-ui/README',
-              },
-              items: ['core-concepts/building-ui/dynamic-ui/widget-visibility'],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Data Access and Binding',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/data-access-and-binding/README',
-          },
-          items: [
-            'core-concepts/data-access-and-binding/querying-a-database',
-            'core-concepts/data-access-and-binding/displaying-data-read/README',
-            {
-              type: 'category',
-              label: 'Capturing Data (Write)',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/capturing-data-write/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Writing Code',
-          link: { type: 'doc', id: 'core-concepts/writing-code/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'JS Objects',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/writing-code/javascript-editor-beta/README',
-              },
-              items: [
-                'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-              ],
-            },
-            'core-concepts/writing-code/workflows',
-            'core-concepts/writing-code/javascript-promises',
-            'core-concepts/writing-code/ext-libraries',
-            {
-              type: 'link',
-              label: 'Appsmith Framework',
-              href: '/reference/appsmith-framework/',
-            },
-          ],
-        },
-      ],
-    }, //core concepts end
-    
+        'core-concepts/building-ui/dynamic-ui/README',
+        'build-apps/how-to-guides/Server-side-pagination-in-table',
+        'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+        'build-apps/how-to-guides/refresh-table-data',
+        'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+        'reference/widgets/table/inline-editing',
+        'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+        'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+        'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+        'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+        'build-apps/how-to-guides/Create-Nested-Lists',
+        'build-apps/how-to-guides/Server-side-filtering-table',
+        'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+        'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
+        'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+      ]
+    },
     {
       //Reference start
       type: 'category',
-      collapsed: false,
       label: 'Reference',
+      link: { type: 'doc', id:  'build-apps/reference/README' },
       items: [
         {
           type: 'category',
@@ -497,8 +443,7 @@ const sidebars = {
               label: 'Table',
               link: { type: 'doc', id: 'reference/widgets/table/README' },
               items: [
-                'reference/widgets/table/column-settings',
-                'reference/widgets/table/inline-editing',
+                'reference/widgets/table/column-settings'
               ],
             },
             'reference/widgets/text',
@@ -506,22 +451,153 @@ const sidebars = {
             'reference/widgets/video',
           ],
         },
+        'core-concepts/building-ui/designing-an-application/app-theming',
+        'core-concepts/building-ui/designing-an-application/application-layout',
+      ],
+    }, //Reference End
+  ]
+}, //Build Apps end
+
+{ // WRITE CODE start
+  type: 'category',
+  collapsed: false,
+  label: 'Write Code',
+  items: [ 
+    'write-code/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
+      items: [
+    
+        'core-concepts/writing-code/README',
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/how-to-guides/display-data-from-functions',
+        'core-concepts/writing-code/javascript-promises',
+        'advanced-concepts/sharing-data-across-pages',
+        `core-concepts/writing-code/workflows`,
+        'core-concepts/writing-code/ext-libraries',
+        'write-code/how-to-guides/debug-js-errors',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      link: { type: 'doc', id: 'write-code/reference/README' },
+      items: [
+        'reference/appsmith-framework/context-object',
+        'reference/appsmith-framework/console-object',
+        'reference/appsmith-framework/query-object',
+
         {
           type: 'category',
-          label: 'Appsmith Framework',
-          link: { type: 'doc', id: 'reference/appsmith-framework/README' },
+          label: 'Built-in Functions',
+          link: {
+            type: 'doc',
+            id: 'reference/appsmith-framework/widget-actions/README',
+          },
           items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
+            'reference/appsmith-framework/widget-actions/navigate-to',
+            'reference/appsmith-framework/widget-actions/show-alert',
+            'reference/appsmith-framework/widget-actions/show-modal',
+            'reference/appsmith-framework/widget-actions/close-modal',
+            'reference/appsmith-framework/widget-actions/store-value',
+            'reference/appsmith-framework/widget-actions/download',
+            'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+            'reference/appsmith-framework/widget-actions/reset-widget',
+            'reference/appsmith-framework/widget-actions/intervals-time-events',
+            'reference/appsmith-framework/widget-actions/clear-interval',
+            'reference/appsmith-framework/widget-actions/set-timeout',
+            'reference/appsmith-framework/widget-actions/post-message'
+              ]
+            },
+            'write-code/reference/Built-in-JS-Libraries',
+            'write-code/reference/Fetch-API',
+            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings', 
+          ],
+    },
+  ]
+}, //CODE end
+
+
+  /*   {
+      //core concepts section start
+      type: 'category',
+      collapsed: false,
+      label: 'Core Concepts',
+      items: [
+        {
+          type: 'category',
+          label: 'Building UI',
+          link: { type: 'doc', id: 'core-concepts/building-ui/README' },
+          items: [
             {
               type: 'category',
-              label: 'Framework Functions',
+              label: 'Designing an Application',
               link: {
                 type: 'doc',
-                id: 'reference/appsmith-framework/widget-actions/README',
+                id: 'core-concepts/building-ui/designing-an-application/README',
               },
               items: [
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Building Dynamic UI',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/building-ui/dynamic-ui/README',
+              },
+              items: ['core-concepts/building-ui/dynamic-ui/widget-visibility'],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Data Access and Binding',
+          link: {
+            type: 'doc',
+            id: 'core-concepts/data-access-and-binding/README',
+          },
+          items: [
+            'core-concepts/data-access-and-binding/querying-a-database',
+            'core-concepts/data-access-and-binding/displaying-data-read/README',
+            {
+              type: 'category',
+              label: 'Capturing Data (Write)',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/data-access-and-binding/capturing-data-write/README',
+              },
+              items: [
+                'core-concepts/data-access-and-binding/capturing-data-write/capture-form-data',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Writing Code',
+          link: { type: 'doc', id: 'core-concepts/writing-code/README' },
+          items: [
+            {
+              type: 'category',
+              label: 'JS Objects',
+              link: {
+                type: 'doc',
+                id: 'core-concepts/writing-code/javascript-editor-beta/README',
+              },
+              items: [
+                'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
+              ],
+            },
+            'core-concepts/writing-code/workflows',
+            {
+              type: 'link',
+              label: 'Appsmith Framework',
+              href: '/reference/appsmith-framework/',
                 'reference/appsmith-framework/widget-actions/navigate-to',
                 'reference/appsmith-framework/widget-actions/show-alert',
                 'reference/appsmith-framework/widget-actions/show-modal',
@@ -532,14 +608,36 @@ const sidebars = {
                 'reference/appsmith-framework/widget-actions/download',
                 'reference/appsmith-framework/widget-actions/copy-to-clipboard',
                 'reference/appsmith-framework/widget-actions/reset-widget',
-                'reference/appsmith-framework/widget-actions/intervals-time-events',
+                'reference/appsmith-framework/widget-actions/set-interval',
+                'reference/appsmith-framework/widget-actions/clear-interval',
+                'reference/appsmith-framework/widget-actions/set-timeout',
                 'reference/appsmith-framework/widget-actions/post-message'
               ]
             },
           ],
         },
       ],
-    }, //Reference End
+    }, //core concepts end
+     */
+    
+/*     {
+      //Reference start
+      type: 'category',
+      collapsed: false,
+      label: 'Reference',
+      items: [
+        {
+          type: 'category',
+          label: 'Appsmith Framework',
+          link: { type: 'doc', id: 'reference/appsmith-framework/README' },
+          items: [
+          
+            
+          ],
+        },
+      ],
+    }, //Reference End */
+
     {
       //Advanced Concepts Start
       type: 'category',
@@ -583,7 +681,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        'advanced-concepts/sharing-data-across-pages',
+
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
