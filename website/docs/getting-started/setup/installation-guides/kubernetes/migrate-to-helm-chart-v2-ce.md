@@ -113,8 +113,8 @@ kubectl exec -it appsmith-0 -n <namespace> appsmithctl restore
 
 Congratulations, you have successfully migrated to the Appsmith Community Edition Helm chart v2 installation.
 
-## Publish Appsmith
-You may choose to publish Appsmith service over internet. For more information, see [How to publish Appsmith](/getting-started/setup/installation-guides/kubernetes#publish-appsmith)?
+## Expose Appsmith
+You may choose to expose Appsmith service to internet. For more information, see [Expose K8s to internet](/getting-started/setup/installation-guides/kubernetes#publish-appsmith)?
 
 ## Troubleshooting
-If any issues are encountered, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raise it on the [Discord Server](https://discord.com/invite/rBTTVJp).
+If you face issues, contact the support team using the chat widget at the bottom right of this page.

@@ -3,7 +3,7 @@ description: >-
   Framework functions
 ---
 
-# Framework Functions
+# Built-in Functions
 
 The Appsmith framework allows triggering actions for widget events and inside JS Objects. There are functions to navigate to another page, show alert messages, open/close modals, and store data in local storage.
 

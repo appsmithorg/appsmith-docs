@@ -158,10 +158,3 @@ You can check this [Guide](/connect-data/how-to-guides/how-to-upload-to-s3)to le
 
 With Appsmith S3 integration, it is possible to create apps that seamlessly connect with the S3 database and provide additional flexibility for updating and analyzing data.
 
-## Using queries in applications
-
-Once you have successfully run a Query, you can use it in your application to:
-
-* [Display Data ](/core-concepts/data-access-and-binding/displaying-data-read/)
-* [Capture Data ](/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data)
-* [Execute Queries](/core-concepts/data-access-and-binding/querying-a-database/)

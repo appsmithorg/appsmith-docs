@@ -30,8 +30,8 @@ The error response could be caused when the API/query response size exceeds the 
 
 #### Solution
 You could resolve the error response by doing one of the following:
-* To limit the data returned as part of query response by using limit in the query or enabling [pagination for table](/reference/widgets/table#server-side-pagination). 
-* To limit the data for an API, you'll have to add a [server-side pagination](/reference/widgets/table#server-side-pagination) feature to it.
+* To limit the data returned as part of query response by using limit in the query or enabling [pagination for table](/build-apps/how-to-guides/Server-side-pagination-in-table). 
+* To limit the data for an API, you'll have to add a [server-side pagination](/build-apps/how-to-guides/Server-side-pagination-in-table) feature to it.
 * To update the maximum allowed limit, you can modify the environment variable only for the self-hosted instance of Appsmith. For example, to modify the limit for docker-based installation, navigate to the `docker.env` file and modify the `APPSMITH_PLUGIN_MAX_RESPONSE_SIZE_MB` environment variable to the desired response size(10 MB).
 
 ```bash
