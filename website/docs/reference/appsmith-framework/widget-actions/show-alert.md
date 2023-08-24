@@ -11,7 +11,7 @@ The `showAlert()` function displays a temporary toast-style alert message to the
 ## Signature
 
 ```javascript
-showAlert(message: string, type: string) -> Promise
+showAlert(message: string, type: string): Promise
 ```
 
 ### Parameters
@@ -30,9 +30,14 @@ A string value that contains the text displayed in the alert message.
 
 Enables you to configure the type of the alert message. It accepts the following string values - 
 
-- Info
-- Success
-- Error
-- Warning
+- `info`
+- `success`
+- `error`
+- `warning`
 
 </dd>
+
+*Example*:
+```javascript
+{{showAlert('Data submitted successfully', 'success');}}
+```
