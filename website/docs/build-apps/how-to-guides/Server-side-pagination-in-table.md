@@ -1,3 +1,6 @@
+---
+description: This page shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application.
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -5,25 +8,12 @@ import TabItem from '@theme/TabItem';
 # Setup Server-Side Pagination on Table
 
 
-This page shows you how to set up server-side pagination on a Table widge, which allows you to manage and display large datasets within your application.
+This page shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
-
-It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
-
-
+ If you are using the one-click binding feature to connect to data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
 <VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
 
-
-
-## Prerequisites
-
-
-A [Table widget](/reference/widgets/table) connected to a query. To connect your datasource to the Table widget, click on **Connect data** and select your datasource or query. If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the searchable property. 
-
-:::note
-With one-click table binding, Appsmith automatically generates queries for you, providing features like server-side pagination, search capabilities, and the ability to edit and add new rows to the table.
-:::
 
 
 ## Query configuration
@@ -43,8 +33,13 @@ Appsmith can handle query responses of up to 5 MB. Server-side pagination can be
 
 Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API.
 
+<figure>
+<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+<figcaption align = "center"><i>Offset-based pagination</i></figcaption>
+</figure>
 
-1. Create a query to fetch data from the database/API using `pageSize`, `pageNo` and `pageOffset` reference properties to implement pagination.
+
+1. Create a query to fetch data from the database/API using `pageSize`, `pageNo`, and `pageOffset` reference properties to implement pagination.
 
 
 <dd>
@@ -77,57 +72,18 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 </dd>
 
-
-
-
-2. Bind the query data into the **Table data** property of the Table widget.
-
-<dd>
-
-*Example*: 
-
-```js
-{{fetchData.data}}
-```
-
-</dd>
-
-3. Enable the **Server-side pagination** property in the table.
-
-
-4. Set the Table widget's **onPageChange** event to run the pagination query.
-
-
-5. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
-
-
-<dd>
-
-*Example*:
-
-* For PostgreSQL, create a new query and configure the query as follows:
-
-```sql
-SELECT COUNT(*) FROM users;
-```
-
-You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls.
-
-</dd>
-
-
-<figure>
-<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Offset-based pagination</i></figcaption>
-</figure>
-
-
 </TabItem>
 
 
 <TabItem value="Cursor" label="Cursor-based-pagination">
 
 Cursor-based pagination is a method that uses unique identifiers (cursors) to navigate and fetch data in large datasets. The cursor itself serves as a reference point, and you query for a specific number of records that come after or before that cursor. 
+
+<figure>
+<img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+<figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
+</figure>
+
 
 1. Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
@@ -163,7 +119,13 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 </dd>
 
-2. Bind the query data into the **Table data** property of the Table widget.
+
+</TabItem>
+</Tabs>
+
+
+
+2. Bind the query data into the [**Table data**](/reference/widgets/table#table-data-arrayobject) property of the Table widget.
 
 <dd>
 
@@ -172,44 +134,39 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 ```js
 {{fetchData.data}}
 ```
+
 </dd>
 
-3. Enable the **Server-side pagination** property in the table.
+3. Enable the [**Server-side pagination**](/reference/widgets/table#server-side-pagination-boolean) property in the table.
 
 
-4. Set the table widget's **onPageChange** event to run the pagination query.
+4. Set the Table widget's [**onPageChange**](/reference/widgets/table#onpagechange) event to run the pagination query.
 
 
-5. To provide the user with information about the number of records in the table, you can configure the **Total records** property to be displayed in the table header. 
+5. To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
 
 
 <dd>
 
-*Example*:
-
-* For PostgreSQL, create a new query and configure the query as follows:
+*PostgreSQL Example*:
 
 ```sql
-SELECT COUNT(*) FROM users;
+SELECT COUNT(*) from users where name ilike '%{{Table1.searchText}}%';
 ```
 
-You can use `{{fetch_users_count.data[0].count}}` COUNT query to display the count. Additionally, you can use the total record count to enable or disable the next/previous controls.
+This SQL query uses the `ilike` condition on the `name` column, pinpointing relevant data rather than performing a blanket count of all records.
 
+To display the count, add the following code in the **Total records** property:
+
+```js
+{{fetch_users_count.data[0].count}}
+```
 </dd>
 
 
-<figure>
-<img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
-</figure>
 
 
 
-
-
-
-</TabItem>
-</Tabs>
 
 
 
