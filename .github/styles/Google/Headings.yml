@@ -231,3 +231,6 @@ exceptions:
   - persist
   - pageNameOrUrl
   - target
+  - interval
+  - callbackFunction
+  - delay
