@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 
 # clearInterval()
 
-`clearInterval()` stops a repeating callback that was started with the [setInterval()](/reference/appsmith-framework/widget-actions/set-interval) method.
+`clearInterval()` stops a repeating callback that was started with the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) method.
 
 ## Signature
 
@@ -20,7 +20,7 @@ clearInterval(id: string)
 
 <dd>
 
-The string name of the timer that you want to clear. This should match the `id` parameter of the [setInterval()](/reference/appsmith-framework/widget-actions/set-interval) call that you want to stop.
+The string name of the timer that you want to clear. This should match the `id` parameter of the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) call that you want to stop.
 
 </dd>
 
@@ -31,3 +31,6 @@ The string name of the timer that you want to clear. This should match the `id` 
 clearInterval("myTimer");
 ```
 
+## See also
+[setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events)<br/>
+[setTimeout()](/reference/appsmith-framework/widget-actions/set-timeout)

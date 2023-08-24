@@ -38,3 +38,7 @@ The time in milliseconds to wait before calling the `callbackFunction`.
 ```javascript
 setTimeout(() => { showAlert("5 seconds have passed") }, 5000);
 ```
+
+## See also
+[setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events)<br/>
+[clearInterval()](/reference/appsmith-framework/widget-actions/clear-interval)<br/>

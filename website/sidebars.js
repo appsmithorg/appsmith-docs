@@ -506,7 +506,7 @@ const sidebars = {
             'reference/appsmith-framework/widget-actions/download',
             'reference/appsmith-framework/widget-actions/copy-to-clipboard',
             'reference/appsmith-framework/widget-actions/reset-widget',
-            'reference/appsmith-framework/widget-actions/set-interval',
+            'reference/appsmith-framework/widget-actions/intervals-time-events',
             'reference/appsmith-framework/widget-actions/clear-interval',
             'reference/appsmith-framework/widget-actions/set-timeout',
             'reference/appsmith-framework/widget-actions/post-message'
