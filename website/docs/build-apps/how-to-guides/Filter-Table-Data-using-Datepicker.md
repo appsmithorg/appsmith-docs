@@ -13,7 +13,7 @@ This page shows you how to use the Datepicker widget to filter and view table da
 * A [Table](/reference/widgets/table) widget connected to a query containing a date column.
 * Two [Datepicker](/reference/widgets/datepicker) widgets for selecting a date range.
 
-## Query configuration
+## Configure query
 
 Follow these steps to filter data within the designated time frame:
 
