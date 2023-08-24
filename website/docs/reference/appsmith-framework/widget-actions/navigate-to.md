@@ -8,15 +8,10 @@ description: >-
 The `navigateTo()` function enables you to navigate between the internal pages of the App or to an external URL. 
 
 
-<figure>
-    <img src="/img/nav-to-action.png" style={{width:"700px", height:"auto"}}alt="Navigate To" />
-    <figcaption align="center" ><i>Navigate To</i></figcaption>
-</figure>
-
 ## Signature
 
 ```javascript
-navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW") -> Promise
+navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW"): Promise
 ```
 
 ### Parameters
@@ -33,7 +28,7 @@ Page name or URL to which you would like to be transported. `PageName` is case-s
 
 <dd>
 
-Query parameters passed via the URL. Used to share information with the destination page.
+Query parameters passed via the URL. Used to share information with the destination page. See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
 </dd>
 
