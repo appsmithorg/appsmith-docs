@@ -229,6 +229,7 @@ exceptions:
   - onDateSelected
   - key
   - persist
+  - fileName
   - pageNameOrUrl
   - target
   - interval
