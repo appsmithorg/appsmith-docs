@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import generateFeedback from '@site/src/components/feedback/generateFeedback'; 
+import { generateFeedback, sendToSegment } from '@site/src/components/feedback/feedbackHelper';
 
 const FeedbackWidget = () => {
   const [feedback, setFeedback] = useState({
@@ -23,13 +23,13 @@ const FeedbackWidget = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    if (process.env.NODE_ENV === 'production') {
     const feedbackJSON = generateFeedback(
       feedback.helpful,
       feedback.comments
     );
-
-    console.log('Generated Feedback JSON:', feedbackJSON);
+    sendToSegment(feedbackJSON); 
+    }
   };
 
   return (
