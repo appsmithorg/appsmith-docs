@@ -10,13 +10,13 @@ import TabItem from '@theme/TabItem';
 
 This page shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
- If you are using the one-click binding feature to connect to data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
+ If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
 <VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
 
 
 
-## Query configuration
+## Configure query
 
 
 Most databases and APIs support server-side pagination, although the methods of implementation can vary.
@@ -39,7 +39,7 @@ Offset-based pagination works by using the page number and size to calculate the
 </figure>
 
 
-1. Create a query to fetch data from the database/API using `pageSize`, `pageNo`, and `pageOffset` reference properties to implement pagination.
+Create a query to fetch data from the database/API using `pageSize`, `pageNo`, and `pageOffset` reference properties to implement pagination.
 
 
 <dd>
@@ -59,7 +59,7 @@ This SQL query retrieves data from the `users` table with pagination based on th
 
 
 
-* For REST API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the URL:
+* For the REST API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the URL:
 
 
 ```
@@ -85,7 +85,7 @@ Cursor-based pagination is a method that uses unique identifiers (cursors) to na
 </figure>
 
 
-1. Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
 <dd>
 
@@ -124,8 +124,11 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 </Tabs>
 
 
+## Configure Table widget
 
-2. Bind the query data into the [**Table data**](/reference/widgets/table#table-data-arrayobject) property of the Table widget.
+Follow these steps to configure the Table widget to display fetched data, and implement server-side pagination:
+
+1. Bind the query data into the [**Table data**](/reference/widgets/table#table-data-arrayobject) property of the Table widget.
 
 <dd>
 
@@ -137,13 +140,13 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 </dd>
 
-3. Enable the [**Server-side pagination**](/reference/widgets/table#server-side-pagination-boolean) property in the table.
+2. Enable the [**Server-side pagination**](/reference/widgets/table#server-side-pagination-boolean) property in the table.
 
 
-4. Set the Table widget's [**onPageChange**](/reference/widgets/table#onpagechange) event to run the pagination query.
+3. Set the Table widget's [**onPageChange**](/reference/widgets/table#onpagechange) event to run the pagination query.
 
 
-5. To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
+4. To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
 
 
 <dd>
@@ -156,7 +159,7 @@ SELECT COUNT(*) from users where name ilike '%{{Table1.searchText}}%';
 
 This SQL query uses the `ilike` condition on the `name` column, pinpointing relevant data rather than performing a blanket count of all records.
 
-To display the count, add the following code in the **Total records** property:
+To display the count, add the following code to the **Total records** property:
 
 ```js
 {{fetch_users_count.data[0].count}}
