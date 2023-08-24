@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import generateFeedback from '@site/src/components/feedback/generateFeedback'; 
 
 const FeedbackWidget = () => {
   const [feedback, setFeedback] = useState({
@@ -23,13 +24,12 @@ const FeedbackWidget = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log('Sending feedback to Segment:', feedback);
+    const feedbackJSON = generateFeedback(
+      feedback.helpful,
+      feedback.comments
+    );
 
-    // Reset the form after submission
-    setFeedback({
-      helpful: '',
-      comments: '',
-    });
+    console.log('Generated Feedback JSON:', feedbackJSON);
   };
 
   return (
@@ -72,9 +72,6 @@ const FeedbackWidget = () => {
         </button>
          
         </div>
-        
-
-        
       </div>
     </div>
   );

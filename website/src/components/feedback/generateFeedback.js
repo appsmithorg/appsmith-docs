@@ -1,13 +1,13 @@
 import React from "react";
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
-const generateFeedbackJSON = (feedbackOption, comments) => {
+const generateFeedback = (feedbackOption, comments) => {
     let docId;
 
     if (ExecutionEnvironment.canUseDOM){
-        docId = window.location.pathname; // Fetches the current page's path as doc ID
+        docId = window.location.pathname;
     }
-    const date = new Date().toISOString(); // Current date in ISO format
+    const date = new Date().toISOString();
 
     console.log('Generating Feedback JSON:');
     console.log('Doc ID:', docId);
@@ -23,4 +23,4 @@ const generateFeedbackJSON = (feedbackOption, comments) => {
     };
   };
   
-  export default generateFeedbackJSON;
+  export default generateFeedback;
