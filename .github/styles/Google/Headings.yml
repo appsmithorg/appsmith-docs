@@ -229,6 +229,8 @@ exceptions:
   - onDateSelected
   - key
   - persist
+  - pageNameOrUrl
+  - target
   - interval
   - callbackFunction
   - delay
