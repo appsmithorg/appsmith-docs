@@ -1047,12 +1047,6 @@
       "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
       "destination": "/reference/widgets"
     },
-  
-    {
-      "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
-      "destination": "/reference/widgets"
-    },
-  
     {
       "source": "/core-concepts/data-access-and-binding/displaying-data-read",
       "destination": "/build-apps/overview"

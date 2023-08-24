@@ -230,3 +230,8 @@ exceptions:
   - key
   - persist
   - fileName
+  - pageNameOrUrl
+  - target
+  - interval
+  - callbackFunction
+  - delay
