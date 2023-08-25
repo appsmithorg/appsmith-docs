@@ -20,7 +20,7 @@ APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
 APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
 ```
 
-3. Use the interface to effectively manage the Appsmith server, Nginx, MongoDB, and other components. Access to the Supervisor web interface is available using the same domain on which Appsmith is operational. For example, if Appsmith is accessible via `http://localhost`, you can access the Supervisor web interface at `http://localhost/supervisor`.
+3. Access the web interface of Supervisord to manage the Appsmith server, Nginx, MongoDB, and other components at http://[my_domain]/supervisor. For example, if Appsmith is accessible via `http://localhost`, you can access the Supervisor web interface at `http://localhost/supervisor`.
 
 <figure>
   <img src="/img/appsmith_supervisord_ui.png" style= {{width:"700px", height:"auto"}} alt="The web interface listing of all the managed processes"/>
