@@ -10,11 +10,6 @@ import TabItem from '@theme/TabItem';
 
 This page shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
- If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
-
-<VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
-
-
 This page shows you how to set up server-side pagination for Table and List widgets. Simply select the relevant tab and follow the step-by-step instructions outlined below:
 
 
@@ -23,6 +18,9 @@ This page shows you how to set up server-side pagination for Table and List widg
 This guide shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
 If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
+
+<VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
+
 
 ## Configure query
 
