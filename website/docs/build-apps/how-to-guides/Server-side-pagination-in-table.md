@@ -14,6 +14,10 @@ This page shows you how to set up server-side pagination on a Table widget, whic
 
 <VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
 
+
+This page shows you how to set up server-side pagination for Table and List widgets. Simply select the relevant tab and follow the step-by-step instructions outlined below:
+
+
 <Tabs>
   <TabItem value="Table" label=" Setup Server-Side Pagination on Table" default>
 This guide shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
@@ -187,11 +191,45 @@ To display the count, add the following code to the **Total records** property:
 
   <TabItem value="List" label="Setup Server-Side Pagination on List">
 
-# Setup Server-side Pagination on List
 
-Lists are often required to display large data sets from queries, but browsers can only sometimes load all the data in the database or might do so slowly. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render, thus enabling you to paginate the data and determine the pagination boundaries.
+This page shows you how to set up server-side pagination on the List widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
-Follow the steps below to paginate the responses and request smaller chunks of data at a time:
+### Configure query
+
+Most databases and APIs support server-side pagination, although the methods of implementation can vary. Server-side pagination on the List widget can be implemented using Offset-based pagination: 
+
+Create a query to fetch data from the database/API using `pageSize`, and `pageNo` reference properties to implement pagination.
+
+
+<dd>
+
+
+*Example:*
+
+
+* For PostgreSQL, you can configure the query as follows:
+
+
+```sql
+SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
+```
+
+This SQL query retrieves data from the `users` table with pagination based on the specified [pagesize](/reference/widgets/table#pagesize-number) and [offset values](/reference/widgets/table#pageoffset-number).
+
+
+
+* For the REST API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, as shown in the URL:
+
+
+```
+https://mock-api.appsmith.com/users?page={{Table1.pageNo}}
+```
+
+
+You can refer to the [datasource reference](/connect-data/reference) for specific instructions on setting up pagination for your selected datasource.
+
+
+</dd>
 
 1. Enable the **Server Side Pagination** property for the List.
 2. Call the query on the **onPageChange** event listener.
