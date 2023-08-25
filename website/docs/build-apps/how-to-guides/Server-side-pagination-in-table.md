@@ -24,10 +24,6 @@ Most databases and APIs support server-side pagination, although the methods of 
 
 Appsmith can handle query responses of up to 5 MB. Server-side pagination can be implemented using Offset-based pagination or Cursor-based pagination.
 
-<figure>
-<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Server-side pagination</i></figcaption>
-</figure>
 
 <Tabs queryString="current-edition">
 <TabItem label="Offset-based pagination" value="Offset_edition">
@@ -101,6 +97,14 @@ This SQL query selects all columns from the `users` table and applies cursor-bas
 :::note
 Please ensure that you turn off prepared statements in the query editor for this configuration.
 :::
+
+* For the REST API, you can make use of the URL's query parameter to retrieve data under specific conditions using `next` and `previous`:
+
+```js
+https://api.site.com/users/?pageDirection={{Table1.nextPageVisited ? "next" : Table1.previousPageVisited? "previous":"default"}}
+
+//The "pageDirection" serves as a query parameter within the API
+```
 
 You can refer to the [datasource reference](/connect-data/reference) for specific instructions on setting up pagination for your selected datasource.
 
