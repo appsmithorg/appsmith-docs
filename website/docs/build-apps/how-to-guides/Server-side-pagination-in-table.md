@@ -14,7 +14,11 @@ This page shows you how to set up server-side pagination on a Table widget, whic
 
 <VideoEmbed host="youtube" videoId="9_uqwm4M4Yg" title="Server-side Pagination on Table" caption="Server-side Pagination on Table"/>
 
+<Tabs>
+  <TabItem value="Table" label=" Setup Server-Side Pagination on Table" default>
+This guide shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
+If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side pagination queries for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
 ## Configure query
 
@@ -145,8 +149,11 @@ Follow these steps to configure the Table widget to display fetched data, and im
 
 3. Set the Table widget's [**onPageChange**](/reference/widgets/table#onpagechange) event to run the pagination query.
 
+With this setup, users can paginate through data, ensuring an efficient browsing experience.
 
-4. To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
+## Configure total records
+
+To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
 
 
 <dd>
@@ -173,4 +180,28 @@ To display the count, add the following code to the **Total records** property:
 
 
 
+
+
+
+  </TabItem>
+
+  <TabItem value="List" label="Setup Server-Side Pagination on List">
+
+# Setup Server-side Pagination on List
+
+Lists are often required to display large data sets from queries, but browsers can only sometimes load all the data in the database or might do so slowly. You can use server-side pagination when a client receives only a subset of data from large datasets. It allows you to define the data limit that a query call can render, thus enabling you to paginate the data and determine the pagination boundaries.
+
+Follow the steps below to paginate the responses and request smaller chunks of data at a time:
+
+1. Enable the **Server Side Pagination** property for the List.
+2. Call the query on the **onPageChange** event listener.
+3. Set the `LIMIT` and `OFFSET` clauses in the query using the **pageSize** and **pageNo** properties of the List as shown below:
+
+```javascript
+SELECT * FROM users LIMIT {{ <listName>.pageSize }} OFFSET {{ (<listName>.pageNo - 1) * <listName>.pageSize }}
+```
+
+
+  </TabItem>
+</Tabs>
 
