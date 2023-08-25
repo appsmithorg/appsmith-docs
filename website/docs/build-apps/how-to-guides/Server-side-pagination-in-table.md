@@ -24,6 +24,10 @@ Most databases and APIs support server-side pagination, although the methods of 
 
 Appsmith can handle query responses of up to 5 MB. Server-side pagination can be implemented using Offset-based pagination or Cursor-based pagination.
 
+<figure>
+<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+<figcaption align = "center"><i>Server-side pagination</i></figcaption>
+</figure>
 
 <Tabs queryString="current-edition">
 <TabItem label="Offset-based pagination" value="Offset_edition">
@@ -33,10 +37,7 @@ Appsmith can handle query responses of up to 5 MB. Server-side pagination can be
 
 Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API.
 
-<figure>
-<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Offset-based pagination</i></figcaption>
-</figure>
+
 
 
 Create a query to fetch data from the database/API using `pageSize`, `pageNo`, and `pageOffset` reference properties to implement pagination.
@@ -79,13 +80,8 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 Cursor-based pagination is a method that uses unique identifiers (cursors) to navigate and fetch data in large datasets. The cursor itself serves as a reference point, and you query for a specific number of records that come after or before that cursor. 
 
-<figure>
-<img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
-</figure>
 
-
-1. Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
+Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
 <dd>
 
