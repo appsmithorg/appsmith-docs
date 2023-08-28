@@ -4,74 +4,43 @@ import { generateFeedback, sendToSegment } from '@site/src/components/feedback/f
 const FeedbackWidget = () => {
   const [feedback, setFeedback] = useState({
     helpful: '',
-    comments: '',
   });
 
-  const handleHelpfulChange = (value) => {
+  const handleHelpfulChange = async (value) => {
+    // Send the feedback to Segment first
+    const feedbackJSON = generateFeedback(value);
+    await sendToSegment(feedbackJSON);
+
+    // Then open the Intercom widget if "No" is chosen
+    if (value === 'no') {
+      if (typeof Intercom !== 'undefined') {
+        Intercom('show');
+      }
+    }
+
+    // Update the feedback state after handling
     setFeedback({
       ...feedback,
       helpful: value,
     });
   };
 
-  const handleCommentsChange = (event) => {
-    setFeedback({
-      ...feedback,
-      comments: event.target.value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (process.env.NODE_ENV === 'production') {
-    const feedbackJSON = generateFeedback(
-      feedback.helpful,
-      feedback.comments
-    );
-    sendToSegment(feedbackJSON); 
-    }
-  };
-
   return (
     <div className="feedback-widget-container">
-      <div className="docFooterDivider"></div>
-      <div className="feedback-widget">
-        <h2 className="feedback-heading">Was this page helpful?</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="radio-options">
-            <label>
-              <input
-                type="radio"
-                name="helpful"
-                value="yes"
-                checked={feedback.helpful === 'yes'}
-                onChange={() => handleHelpfulChange('yes')}
-              />
-              Yes
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="helpful"
-                value="no"
-                checked={feedback.helpful === 'no'}
-                onChange={() => handleHelpfulChange('no')}
-              />
-              No
-            </label>
-          </div>
-        </form>
-        <div >
-          <textarea className="comments-box"
-            placeholder="Share your comments(optional)"
-            value={feedback.comments}
-            onChange={handleCommentsChange}
-          />
-          <button className="submit-button" onClick={handleSubmit}>
-          Submit
+      <span className="feedback-heading">Was this page helpful?</span>
+      <div>
+        <button
+          className={`thumbs-button ${feedback.helpful === 'yes' ? 'selected' : ''}`}
+          onClick={() => handleHelpfulChange('yes')}
+        >
+          <img src="/img/feedback-thumbs-up.png" alt="Thumbs Up" className="thumbs-icon" />
         </button>
-         
-        </div>
+        <button
+          className={`thumbs-button ${feedback.helpful === 'no' ? 'selected' : ''}`}
+          onClick={() => handleHelpfulChange('no')}
+        >
+          <img src="/img/feedback-thumbs-down.png" alt="Thumbs Down" className="thumbs-icon rotate-image" />
+        </button>
       </div>
     </div>
   );

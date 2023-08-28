@@ -1,12 +1,12 @@
 import React from 'react';
-import Footer from '@theme-original/DocItem/Footer';
+import TOC from '@theme-original/TOC';
 import FeedbackWidget from '@site/src/components/feedback';
 
-export default function FooterWrapper(props) {
+export default function TOCWrapper(props) {
   return (
     <>
+      <TOC {...props} />
       <FeedbackWidget/>
-      <Footer {...props} />
     </>
   );
 }
