@@ -470,8 +470,13 @@ ul.circle > li:before {
   border: none;
   cursor: pointer;
   transition: opacity 0.3s;
-  margin: 0 5px;
-  width: 60px;
+}
+
+.thumbs-button > img {
+  max-width: 55% !important;
+  padding: 0 !important;
+  margin-right: -27px;
+  margin-left: -26px;
 }
 
 .selected {
