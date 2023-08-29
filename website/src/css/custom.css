@@ -447,11 +447,14 @@ ul.circle > li:before {
 
 .feedback-widget-container {
   border: 1px solid #ccc;
+  padding-top: 2px;
   border-radius: 8px;
   text-align: center;
   width: 100%;
   margin-top: 1em !important;
   margin-right: 1.5em !important;
+  height: 100px;
+  padding: 10px;
 }
 
 .feedback-heading {
@@ -469,28 +472,32 @@ body {
 }
 
 .submit-button {
-  background-color: transparent;
-  color: #f86a2b;
-  border: 2px solid #f86a2b;
-  padding: 8px;
+  display: inline-block;
+  outline: 0px;
+  appearance: none;
+  padding: 0px 12px;
+  border-radius: 4px;
+  text-decoration: none;
   cursor: pointer;
+  background-color: rgb(249, 251, 250);
+  border: 1px solid rgb(137, 151, 155);
+  color: rgb(61, 79, 88);
+  font-size: 14px;
+  font-weight: 400;
+  height: 36px;
   width: 35%;
-  border-radius: 5px;
-  font-size: 0.8em;
-  font-weight: 500;
-  transition: background-color 0.3s, color 0.3s;
-  margin: 0.5em 1em 1em 0.5em;
+  margin: 5px;
+  transition: all 150ms ease-in-out 0s;
 }
 
 .submit-button:hover {
-  background-color: #f86a2b;
-  color: #f3f5f7;
-  border-color: #f86a2b;
-  font-size: 0.8em;
-  font-weight: 500;
+  background-color: #555;
+  color: #fff;
+  border-color: #555;
 }
 
 .fixedToc {
   position: fixed;
-  width: 17em;
+  width:17em;
+ 
 }
