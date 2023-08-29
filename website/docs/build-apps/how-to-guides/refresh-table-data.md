@@ -20,7 +20,7 @@ This page shows you how to display a master-detail form and update table data us
 
 ## Submit form data
 
-Follow these steps to setup JSON Form and configure the query:
+Follow these steps to set up a JSON Form and configure the query:
 
 1. To display a master-detail form when a user selects a row in a Table widget, you can add the below code in the **Source Data** property of the JSON Form:
 
@@ -32,7 +32,9 @@ Follow these steps to setup JSON Form and configure the query:
 {{Table1.selectedRow}}
 ```
 
-Based on the data, the JSON Form automatically identifies the appropriate field type for each value. For example, if the data contains the field `age`, the form sets the field type to a `Number Input`. Additionally, you have the flexibility to add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
+Based on the data, the JSON Form automatically identifies the appropriate field type for each value.  For instance, if the data contains the field `age`, the form sets the field type to a `Number Input`. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
+
+The JSON Form automatically identifies the appropriate field type for each value based on the data. For instance, if the data contains the field age, the field type is set to Number Input. 
 
 </dd>
 
@@ -50,30 +52,18 @@ SET
 WHERE id = {{JSONForm1.formData.id}};
 ```
 
-This query updates the `phone` and `email` fields in the `users` table based on the data provided by a JSON Form, targeting the record with the specified ID.
+Above query updates the `phone` and `email` fields in the `users` table using JSON form data and the provided `ID` to identify the record.
 
-
-:::note
-Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
-:::
 
 </dd>
 
-3. Configure the [**onSubmit**](/reference/widgets/json-form#events) event to execute the update query. When JS is enabled, you can configure as follows:
+3. Configure the [**onSubmit**](/reference/widgets/json-form#events) event to execute the update query. 
 
-<dd>
-
-*Example*:
-
-```js
-{{updateData.run().then(() => {});}}
-```
-
-</dd>
+This setup submits the JSON Form data to the datasource.
 
 ## Refresh Table data after updates
 
-When you change the datasource that feeds your table, the table won't show those changes automatically. To fix this, you can use events or write code to run the query again that fills the table with new data when you send new information to the datasource.
+When you connect a table to a datasource to display data and then update that datasource, the table does not automatically reflect the changes. You need to manually refresh the table using events or JS code to see the updated data.
 
 <dd>
 
@@ -87,8 +77,8 @@ Configure the **onSubmit** event to perform data updates and set the **onSuccess
  });}}
 ```
 
-Upon the successful execution of the `updateData` query, the table refreshes automatically through the triggering of the `getData` query.
 
+Above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes.
 
 </dd>
 
