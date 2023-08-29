@@ -1,7 +1,7 @@
 ---
 description: This page shows you how to display a master-detail form and update table data using a JSON form.
 ---
-# Update Table Data using JSON Form
+# Update Table Data Using JSON Form
 
 This page shows you how to display a master-detail form and update table data using a JSON form.
 
@@ -32,7 +32,7 @@ Follow these steps to set up a JSON Form and configure the query:
 {{Table1.selectedRow}}
 ```
 
-Based on the data, the JSON Form automatically identifies the appropriate field type for each value.  For instance, if the data contains the field `age`, the form sets the field type to a `Number Input`. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
+Based on the data, the JSON Form automatically identifies the appropriate field type for each value. For instance, if the data contains the field `age`, the form sets the field type to a `Number Input`. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
 
 </dd>
 
