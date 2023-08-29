@@ -43,10 +43,10 @@
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-                <strong>Refresh table data</strong>
+                <strong>Update Table Data Using JSON Form</strong>
         </div> <hr/>
-        <div class="containerDescription">Shows you how to refresh table data based on specific actions. </div>
-        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/Refresh-table-data">
+        <div class="containerDescription">This page shows you how to display a master-detail form and update table data using a JSON form. </div>
+        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/update-table-data-using-json-form">
         <strong >View </strong></a></div>
     </div>
      <div class="columnGrid column-two" style={{margin: "10px"}}>
