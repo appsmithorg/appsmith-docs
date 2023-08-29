@@ -76,7 +76,7 @@ Configure the **onSubmit** event to perform data updates and set the **onSuccess
 ```
 
 
-Above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes.
+The above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes.
 
 </dd>
 
