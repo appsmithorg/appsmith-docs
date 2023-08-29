@@ -34,8 +34,6 @@ Follow these steps to set up a JSON Form and configure the query:
 
 Based on the data, the JSON Form automatically identifies the appropriate field type for each value.  For instance, if the data contains the field `age`, the form sets the field type to a `Number Input`. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
 
-The JSON Form automatically identifies the appropriate field type for each value based on the data. For instance, if the data contains the field age, the field type is set to Number Input. 
-
 </dd>
 
 2. Create a query to update the data using the [formData](/reference/widgets/json-form#formdata-object) reference property.
@@ -52,7 +50,7 @@ SET
 WHERE id = {{JSONForm1.formData.id}};
 ```
 
-Above query updates the `phone` and `email` fields in the `users` table using JSON form data and the provided `ID` to identify the record.
+The above query updates the `phone` and `email` fields in the `users` table using the JSON form data. It targets the user record with the provided `ID`.
 
 
 </dd>
