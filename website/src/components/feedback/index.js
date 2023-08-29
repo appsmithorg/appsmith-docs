@@ -11,10 +11,10 @@ const FeedbackWidget = () => {
     const feedbackJSON = generateFeedback(value);
     await sendToSegment(feedbackJSON);
 
-    // Then open the Intercom widget if "No" is chosen
+    // Then open the Intercom survey to capture the feedback if "No" is chosen
     if (value === 'no') {
       if (typeof Intercom !== 'undefined') {
-        Intercom('show');
+        Intercom('startSurvey', 35583751);
       }
     }
 
@@ -30,16 +30,14 @@ const FeedbackWidget = () => {
       <span className="feedback-heading">Was this page helpful?</span>
       <div>
         <button
-          className={`thumbs-button ${feedback.helpful === 'yes' ? 'selected' : ''}`}
+          className={`submit-button ${feedback.helpful === 'yes' ? 'selected' : ''}`}
           onClick={() => handleHelpfulChange('yes')}
-        >
-          <img src="/img/feedback-thumbs-up.png" alt="Thumbs Up" className="thumbs-icon" />
+        > Yes
         </button>
         <button
-          className={`thumbs-button ${feedback.helpful === 'no' ? 'selected' : ''}`}
+          className={`submit-button ${feedback.helpful === 'no' ? 'selected' : ''}`}
           onClick={() => handleHelpfulChange('no')}
-        >
-          <img src="/img/feedback-thumbs-down.png" alt="Thumbs Down" className="thumbs-icon rotate-image" />
+        > No
         </button>
       </div>
     </div>
