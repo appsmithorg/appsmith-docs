@@ -1,3 +1,6 @@
+---
+description: This page shows you how to display a master-detail form and update table data using a JSON form.
+---
 # Update Table Data using JSON Form
 
 This page shows you how to display a master-detail form and update table data using a JSON form.
@@ -70,7 +73,7 @@ Prepared statements are turned on by default in your queries to help prevent SQL
 
 ## Refresh Table data after updates
 
-When changes are made to the datasource providing data to your table, the table won't automatically reflect these changes. Therefore, it is necessary to use events and/or write code that re-executes the query responsible for populating data into the table whenever new data is submitted to the datasource.
+When you change the datasource that feeds your table, the table won't show those changes automatically. To fix this, you can use events or write code to run the query again that fills the table with new data when you send new information to the datasource.
 
 <dd>
 
