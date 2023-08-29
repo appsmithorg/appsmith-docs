@@ -80,3 +80,13 @@ The above code executes the `updateData` query and, once completed, triggers the
 
 </dd>
 
+
+## Troubleshooting
+
+Here are some common errors that you may see when using the JSON Form widget:
+
+* [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
+
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+
