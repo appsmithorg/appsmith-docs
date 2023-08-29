@@ -5,7 +5,7 @@ import FeedbackWidget from '@site/src/components/feedback';
 export default function TOCWrapper(props) {
   return (
     <>
-    <div>
+    <div className='fixedToc'>
       <div>
       <TOC {...props} />
       </div>
