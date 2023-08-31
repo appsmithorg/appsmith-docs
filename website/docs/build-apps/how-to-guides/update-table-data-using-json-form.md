@@ -67,7 +67,7 @@ Follow these steps to set up a Form widget and configure the query:
 </figure>
 
 
-1. To display a master-detail form when a user selects a row in a Table widget, drag the relevant widgets into the Form widget (e.g., Text, Inputs, Select).
+1. To display a master-detail form when a user selects a row in a Table widget, drag the relevant widgets into the Form widget (example; Text, Inputs, Select).
 
 2. Configure each widget using the [selectedRow](/reference/widgets/table#selectedrow-object) reference property.
 
