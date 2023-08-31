@@ -33,10 +33,7 @@ Appsmith can handle query responses of up to 5 MB. Server-side pagination can be
 
 Offset-based pagination works by using the page number and size to calculate the offset of records to fetch from a database or API.
 
-<figure>
-<img src="/img/off-set.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Offset-based pagination</i></figcaption>
-</figure>
+
 
 
 Create a query to fetch data from the database/API using `pageSize`, `pageNo`, and `pageOffset` reference properties to implement pagination.
@@ -79,11 +76,6 @@ You can refer to the [datasource reference](/connect-data/reference) for specifi
 
 Cursor-based pagination is a method that uses unique identifiers (cursors) to navigate and fetch data in large datasets. The cursor itself serves as a reference point, and you query for a specific number of records that come after or before that cursor. 
 
-<figure>
-<img src="/img/cursor.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-<figcaption align = "center"><i>Cursor-based pagination</i></figcaption>
-</figure>
-
 
 Create a query to fetch data from the database/API using `previousPageVisited` and `nextPageVisited` reference properties to implement pagination.
 
@@ -102,17 +94,17 @@ SELECT * FROM users {{Table1.nextPageVisited ? "WHERE id > "+ " "+ Table1.tableD
 
 This SQL query selects all columns from the `users` table and applies cursor-based pagination to limit the number of results returned. The `WHERE` clause is dynamically generated based on whether the user has already visited the [next](/reference/widgets/table#nextpagevisited-boolean) or [previous](/reference/widgets/table#previouspagevisited-boolean) page, and orders the results by `ID`.
 
+:::note
+Please ensure that you turn off prepared statements in the query editor for this configuration.
+:::
 
-
-
-* For REST API, you can make use of the URL's query parameter to retrieve data under specific conditions using `next` and `previous`:
+* For the REST API, you can make use of the URL's query parameter to retrieve data under specific conditions using `next` and `previous`:
 
 ```js
-https://mock-api.appsmith.com/users/?pageDirection={{nextPageVisited ? "next" : previousPageVisited? "previous":"default"}}
+https://api.site.com/users/?pageDirection={{Table1.nextPageVisited ? "next" : Table1.previousPageVisited? "previous":"default"}}
 
-//The "pageDirection" serves as a query parameter within the API.
+//The "pageDirection" serves as a query parameter within the API
 ```
-
 
 You can refer to the [datasource reference](/connect-data/reference) for specific instructions on setting up pagination for your selected datasource.
 
@@ -145,8 +137,11 @@ Follow these steps to configure the Table widget to display fetched data, and im
 
 3. Set the Table widget's [**onPageChange**](/reference/widgets/table#onpagechange) event to run the pagination query.
 
+With this setup, users can paginate through data, ensuring an efficient browsing experience.
 
-4. To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
+## Configure total records
+
+To provide the user with information about the number of records in the table, you can configure the [**Total records**](/reference/widgets/table#total-records-number) property to be displayed in the table header. 
 
 
 <dd>
