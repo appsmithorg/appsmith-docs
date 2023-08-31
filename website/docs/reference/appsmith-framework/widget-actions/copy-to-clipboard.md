@@ -1,6 +1,6 @@
 ---
 description: >-
-  copyToClipboard() reference
+ copyToClipboard() reference
 ---
 # copyToClipboard()
 
@@ -16,15 +16,15 @@ copyToClipboard(data: string, { debug: boolean, format: string }): Promise
 
 #### data
 <dd> 
-  The string containing text data that is copied to the clipboard.
+ The string contains the text data copied to the clipboard.
 </dd>
 
 #### debug
 <dd>
-When set to <code>true</code>, this option enables the function to output information to the console. This can be helpful for debugging purposes. It defaults to <code>false</code>.
+The default value is <code>false</code>. When set to <code>true</code>, this option displays the information in the console. The parameter can be helpful for debugging.
 </dd>
 
 #### format
 <dd> 
-  This parameter allows you to specify the <code>MIME</code> type of the text being copied. This can be useful when dealing with specialized content types. For example, <em>application/json</em>.
+ The string specifies the <code>MIME</code> type of the copied text. The parameter can be helpful when using specialized content types, such as <em>application/json</em>.
 </dd>
