@@ -235,3 +235,4 @@ exceptions:
   - interval
   - callbackFunction
   - delay
+  - Submit form data using Form widget

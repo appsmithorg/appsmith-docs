@@ -1,26 +1,24 @@
 ---
-description: This page shows you how to display a master-detail form and update table data using a JSON form.
+description: This page shows you how to display a master-detail form and update table data using a JSON form and Form widget.
 ---
-# Update Table Data Using JSON Form
+# Update Table Data Using Form
 
-This page shows you how to display a master-detail form and update table data using a JSON form.
+This page shows you how to display a master-detail form and update table data using JSON form and Form widget.
+
+## Prerequisites
+
+* A [Table](/reference/widgets/table) widget connected to a query.
+* A [JSON Form](/reference/widgets/json-form) or [Form](/reference/widgets/form) widget for updating table data.
+
+
+## Submit form data using JSON Form
+
+Follow these steps to set up a JSON Form and configure the query:
 
  <figure>
   <img src="/img/jsonguide.gif" style= {{width:"700px", height:"auto"}} alt="Update Table Data using JSON Form"/>
   <figcaption align = "center"><i>Update Table Data using JSON Form</i></figcaption>
 </figure>
-
-
-
-## Prerequisites
-
-* A [Table](/reference/widgets/table) widget connected to a query.
-* A [JSON Form](/reference/widgets/json-form) widget for updating table data.
-
-
-## Submit form data
-
-Follow these steps to set up a JSON Form and configure the query:
 
 1. To display a master-detail form when a user selects a row in a Table widget, you can add the below code in the **Source Data** property of the JSON Form:
 
@@ -59,6 +57,58 @@ The above query updates the `phone` and `email` fields in the `users` table usin
 
 This setup submits the JSON Form data to the datasource.
 
+## Submit form data using Form widget
+
+Follow these steps to set up a Form widget and configure the query:
+
+ <figure>
+  <img src="/img/form-guide-2.gif" style= {{width:"700px", height:"auto"}} alt="Update Table Data using JSON Form"/>
+  <figcaption align = "center"><i>Update Table Data using Form</i></figcaption>
+</figure>
+
+
+1. To display a master-detail form when a user selects a row in a Table widget, drag the relevant widgets into the Form widget (e.g., text, inputs, select).
+
+2. Configure each widget to display data. To bind table data, use the [selectedRow](/reference/widgets/table#selectedrow-object) reference property.
+
+<dd>
+
+*PostgreSQL Example*: suppose you have a `users` table and you want to display the email field when the user selects a row. Add the following code to the Input widget's **Default value** property:
+
+```js
+{{Table1.selectedRow.email}}
+```
+
+The above code displays the `email` from the selected row in the table. Similarly, you can populate other widgets with table data.
+
+
+</dd>
+
+3. Create a query to update the data using the [data](/reference/widgets/form#data-object) reference property.
+
+
+<dd>
+
+*PostgreSQL Example*: 
+
+```sql
+UPDATE public.users
+SET 
+  phone = {{Form1.data.PhoneInput1}},
+  email = {{Form1.data.Input1}}
+WHERE id = {{Form1.data.Textid}};
+```
+
+The above query updates the `phone` and `email` fields in the `users` table using the form data. It targets the user record with the provided `ID`.
+
+
+</dd>
+
+4. Configure the Button's [**onClick**](/reference/widgets/button#onclick) event to execute the update query.
+
+This setup submits the Form data to the datasource.
+
+
 ## Refresh Table data after updates
 
 When you connect a table to a datasource to display data and then update that datasource, the table does not automatically reflect the changes. You need to manually refresh the table using events or JS code to see the updated data.
@@ -81,12 +131,5 @@ The above code executes the `updateData` query and, once completed, triggers the
 </dd>
 
 
-## Troubleshooting
-
-Here are some common errors that you may see when using the JSON Form widget:
-
-* [Source data exceeds 50 fields](/help-and-support/troubleshooting-guide/widget-errors#source-data-exceeds-50-fields)
-
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
 
 
