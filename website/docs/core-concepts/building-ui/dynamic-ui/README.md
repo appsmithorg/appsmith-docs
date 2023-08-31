@@ -48,7 +48,52 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 
 ### Bind data from JS
 
+1. Create a New JS Object from queries/JS section, and add following code:
+
+<dd>
+
+*Example:*
+
+```js
+export default {
+  data: [
+    {
+      id: 1,
+      name: "John Doe",
+      country: "USA"
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      country: "Canada"
+    },
+    {
+      id: 3,
+      name: "Michael Johnson",
+      country: "UK"
+    }
+    // Add additional objects here following the same structure
+  ]
+}
+```
+</dd>
+
+2. In the Table widget's Table Data property ..
+
+<dd>
+
+```js
+{{JSObject1.data}}
+```
+
+</dd>
 
 ### Bind data from another widget
 
+
+
 ## Update widgets programmatically
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
