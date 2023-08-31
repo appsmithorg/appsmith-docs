@@ -26,5 +26,5 @@ The default value is <code>false</code>. When set to <code>true</code>, this opt
 
 #### format
 <dd> 
- The string specifies the <code>MIME</code> type of the copied text. The parameter can be helpful when using specialized content types, such as <em>application/json</em>.
+ The string specifies the <code>MIME</code> type of the copied text. The parameter can be helpful when using specialized content types, such as <code>application/json</code>.
 </dd>
