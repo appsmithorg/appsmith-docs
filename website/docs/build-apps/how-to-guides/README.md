@@ -46,7 +46,7 @@
                 <strong>Update Table Data Using JSON Form</strong>
         </div> <hr/>
         <div class="containerDescription">This page shows you how to display a master-detail form and update table data using a JSON form. </div>
-        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/update-table-data-using-json-form">
+        <div class="containerTutorialLink"><a href="/build-apps/how-to-guides/update-table-data-using-form">
         <strong >View </strong></a></div>
     </div>
      <div class="columnGrid column-two" style={{margin: "10px"}}>
