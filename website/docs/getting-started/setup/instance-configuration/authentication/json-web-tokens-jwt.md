@@ -17,6 +17,8 @@ Appsmith provides the `idToken` on the client side, allowing you to incorporate 
 
 ```
 {{appsmith.user.idToken}}
+```
+```
 {{appsmith.user.rawIdToken}}
 ```
 If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
