@@ -5,7 +5,7 @@ description: When you connect a table to a datasource to display data and then u
 
 This page shows you how to refresh table data after updates which allows you to see changes in real time.
 
-When you connect a table to a datasource to display data and then update that datasource, the table does not automatically reflect the changes. You need to manually refresh the table using events or JS code to see the updated data.
+When data is updated in a datasource, the Table widget does not automatically reflect the changes. You need to manually refresh the Table using events or JS code to see the updated data.
 
 
  <figure>
@@ -33,4 +33,4 @@ When you connect a table to a datasource to display data and then update that da
 ```
 
 
-The above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes.
+The above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes. A similar process can be applied to other widgets, such as List.
