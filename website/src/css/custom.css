@@ -447,14 +447,11 @@ ul.circle > li:before {
 
 .feedback-widget-container {
   border: 1px solid #ccc;
-  padding-top: 2px;
   border-radius: 8px;
   text-align: center;
   width: 100%;
   margin-top: 1em !important;
-  margin-right: 1.5em !important;
-  height: 100px;
-  padding: 18px;
+  padding: 6px;
 }
 
 .feedback-heading {
@@ -468,7 +465,7 @@ ul.circle > li:before {
   border-radius: 5px;
   background: none;
   cursor: pointer;
-  margin: 5px 5px 0px 10px;
+  margin: 5px;
   width:25%
 }
 
