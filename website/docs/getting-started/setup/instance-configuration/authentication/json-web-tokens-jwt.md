@@ -13,10 +13,11 @@ When you log in using the [OIDC](/getting-started/setup/instance-configuration/a
 
 An ID token serves as a verified confirmation of a user's identity and includes essential information such as their name, picture, email address etc. According to the OpenID Connect (OIDC) specifications, when a user successfully logs in, Appsmith receives an ID token.
 
-Appsmith provides the `idToken` parameter on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed. You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
+Appsmith provides the `idToken` on the client side, allowing you to incorporate it into various operations like JavaScript functions, APIs, or queries as needed. We also provide the `idToken` in its raw format for you to incorporate into API headers. You can read the value of an ID token in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
 
 ```
 {{appsmith.user.idToken}}
+{{appsmith.user.rawIdToken}}
 ```
 If you have defined custom scopes in your identity provider, the information associated with those scopes can be accessed within the Identity token.
 
