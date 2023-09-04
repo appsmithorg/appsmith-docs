@@ -1,5 +1,5 @@
 ---
-description: This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methods
+description: This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methodss
 ---
 
 # Update Widget Properties
@@ -48,7 +48,9 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 }}
 ```
 
-Similarly, you can connect widgets with queries for different datasources.
+Similarly, you can connect queries and different widgets using the Mustache syntax `{}`.
+
+
 
 </dd>
 
