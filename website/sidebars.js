@@ -353,6 +353,7 @@ const sidebars = {
         'core-concepts/building-ui/dynamic-ui/README',
         'build-apps/how-to-guides/Server-side-pagination-in-table',
         'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+        'build-apps/how-to-guides/submit-form-data',
         'build-apps/how-to-guides/refresh-table-data',
         'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
         'reference/widgets/table/inline-editing',
@@ -365,7 +366,7 @@ const sidebars = {
         'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
         'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
         'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
-      ]
+      ]  
     },
     {
       //Reference start
