@@ -235,3 +235,5 @@ exceptions:
   - interval
   - callbackFunction
   - delay
+  - debug
+  - format
