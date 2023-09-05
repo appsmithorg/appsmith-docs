@@ -81,7 +81,7 @@ When working with widgets in Appsmith, you may need to update values in the widg
 <dd>
 
 
-*Table Example:* suppose you have a Table widget connected to a query. Whenever a user selects a row in the Table, you want to display specific data in a Text widget based on user selections. 
+*Example:* suppose you have a Table widget connected to a query. Whenever a user selects a row in the Table, you want to display specific data in a Text widget based on user selections. 
 
 
 Add the following code to the Text widget's **Text** property:
