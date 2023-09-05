@@ -2,29 +2,29 @@
 description: This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methodss
 ---
 
-# Update Widget Properties
+# Bind Data to Widget Properties
 
 This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methods
 
+There are multiple ways to bind data to widgets; each method offers its own advantages and use cases: 
 
-<VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget properties" caption="Dynamically Update Widget properties"/>
+* [Using query](#using-query)
+* [Using JS Objects](#using-js-objects)
+* [Using widgets](#using-widgets)
+* [Using storeValue](#using-storevalue)
+* [Using setters methods](#using-setters-methods)
 
 
 
-## Prerequisites
+## Using query
 
-A basic understanding of how Appsmith's [query](/connect-data/how-to-guides/query-data) and [JS functions](/core-concepts/writing-code) work. 
-
-
-## Bind data from a query
-
-This method allows you to dynamically update widget data when the datasource is updated, providing real-time, synchronized information. Follow these steps to bind data from a database or API directly into your widget: 
+This method allows you to update widget data in real-time based on changes in the data source. Follow these steps to bind data from a database or API query directly into your widget: 
 
 <dd>
 
-*PostgreSQL & Table Example:* Suppose you have a users data that you want to display in a Table widget. You can achieve this by binding the response from a query to the widget's data property. 
+*Example:* Suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using Mustache syntax `{{}}`.
 
-1. Create a query to fetch data from the datasource, like:
+1. You have a query called `fetchData` that retrieves data from a datasource, like:
 
 ```sql
 SELECT * FROM public."users" LIMIT 10;
@@ -36,81 +36,45 @@ SELECT * FROM public."users" LIMIT 10;
 {{fetchData.data}}
 ```
 
-If the retrieved data is not in the desired format, you can use JavaScript to transform it before passing it to the widget, like:
-
-```js
-{{fetchData.data.users.map((user) => {
-  return {
-    name: user.name,
-    email: user.email
-    };
-  });
-}}
-```
-
-Similarly, you can connect queries and different widgets using the Mustache syntax `{}`.
+Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{<query_name>.data}}`.
 
 
 
 </dd>
 
-## Bind data from JS Objects
+## Using JS Objects
 
 This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta).
 
 <dd>
 
-*Custom Chart Example:* suppose you have a JavaScript object containing [custom chart](reference/widgets/chart#custom-fusion-chart-arrayobject) data that you would like to present this data in a Chart widget.
+*Example:* Suppose you want to display data using a JavaScript object, such as the current date and time, within a Text widget.
 
-1. Create a New JS Object from the *queries/JS* section, and add the required code. For a custom chart, add:
 
+
+1. Create a New JS Object from the *queries/JS* section, and add the required code. To display the current date and time, add:
 
 
 ```js
 export default {
-	chartdata: {
-  "type": "column2d",
-  "dataSource": {
-    "chart": {
-      "caption": "Monthly Revenue for the year 2023",
-      "xAxisName": "Month",
-      "yAxisName": "Revenue",
-      "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Jan",
-        "value": 42000
-      },
-      {
-        "label": "Feb",
-        "value": 810000
-      },
-      {
-        "label": "Mar",
-        "value": 72000
-      }
-        // Add more as needed
-    ]
-  }
-}
-}
+  currentDateTime: new Date().toLocaleString(),
+};
 ```
 
 Additionally, you can also bind data from queries directly into JavaScript objects for dynamic data integration.
 
 
-2. In the Chart widget, select `Custom Chart` as the **Chart type**, and in the **Custom Fusion Chart** property, add the following code to bind the properties of the JS Objects:
+2. Add the following code to the **Text** property of the Text widget to bind the properties of the JS objects:
 
 ```js
-{{JSObject1.chartdata}}
+{{JSObject1.currentDateTime}}
 ```
 
 By following similar steps, you can create a JavaScript object, define variables and functions within it, and bind their values to widgets. 
 
 </dd>
 
-## Bind data between widgets
+## Using widgets
 
 When working with widgets in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the reactive programming paradigm. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data. When a value is updated, any widgets that depend on that changed value also update automatically.
 
@@ -130,13 +94,13 @@ Add the following code to the Text widget's **Text** property:
 {{List1.selectedItem.email}}
 ```
 
-Similarly, you can connect values from other widgets using the Mustache syntax `{}` and reference properties.
+Similarly, you can connect values from other widgets using the Mustache syntax `{{}}` and reference properties.
 
 </dd>
 
-## Bind data using framework functions
+## Using storeValue()
 
-This method allows you to bind data using Appsmith [framework functions](/reference/appsmith-framework/widget-actions).
+This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to store and bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
 
 <dd>
 
@@ -163,7 +127,7 @@ You can also use `{{appsmith.user.email}}` to display the email address of the c
 
 
 
-## Update widgets programmatically
+## Using setters methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
 
@@ -171,53 +135,40 @@ These methods are asynchronous and return a [Promise](/core-concepts/writing-cod
 
 <dd>
 
-*Example:* suppose you want to create an online booking prompt using a Select widget. If the user selects `Yes`, it displays a Form for booking details, and if they choose `No`, you can provide a message or alternative action.
+*Example:* suppose you want to display a Form widget only when a user selects a specific option from a Select widget.
 
- <figure>
-  <img src="/img/setter-1.gif" style= {{width:"700px", height:"auto"}} alt="online booking prompt "/>
-  <figcaption align = "center"><i>Booking prompt using setter methods</i></figcaption>
-</figure>
+1. Set up the Select widget to display options such as `Yes` and `No`.
 
-1. To display the options, add the following code into the [**Source data**](/reference/widgets/select#source-data-arrayobject) property of the Select widget.
 
-<dd>
-
-```js
-[
-  {
-    "name": "Yes",
-    "code": "yes"
-  },
-  {
-    "name": "No",
-    "code": "no"
-  }
-]
-```
-</dd>
-
-2. Create a new JS object and write the function to set the values of different widgets, like setting the visibility of a Form widget to true:
+2. Create a new JS object and write the function to set the values of different widgets. For instance, using the `setVisibility` method to change the visibility of a Form widget to `true`:
 
 <dd>
 
 ```js
 export default {
 	myFun1 () {
+	
     if (Select1.selectedOptionValue === 'yes') {
       Form1.setVisibility(true);
     } else {
-      // Add alternative actions when 'No' is selected
+      Form1.setVisibility(false);
     }
-},...
+ }
+}
 ```
 
 </dd>
 
 3. Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the JS function.
 
-Similarly, you can use various setter methods to programmatically update data, color, visibility, and other properties.
+Similarly, you can use setter methods to programmatically update data, color, visibility, and other properties.
 
 
+
+ <figure>
+  <img src="/img/setter-1.gif" style= {{width:"700px", height:"auto"}} alt="online booking prompt "/>
+  <figcaption align = "center"><i>Booking prompt using setter methods</i></figcaption>
+</figure>
 
 
 </dd>
