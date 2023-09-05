@@ -4,7 +4,7 @@ description: This page demonstrates how you can dynamically update widget proper
 
 # Bind Data to Widget Properties
 
-This page demonstrates how you can dynamically update widget properties using queries, JavaScript functions, and setter methods. There are several ways to bind data to widgets:
+This page shows how you can dynamically update widget properties using queries, JavaScript functions, and setter methods. There are several ways to bind data to widgets:
 
 * [Using query](#using-query)
 * [Using JS Objects](#using-js-objects)
@@ -16,11 +16,11 @@ This page demonstrates how you can dynamically update widget properties using qu
 
 ## Using query
 
-This method allows you to update widget data in real-time based on changes in the data source. Follow these steps to bind data from a database or API query directly into your widget: 
+This method allows you to update widget data based on changes in the datasource. Follow these steps to bind data from a database or API query directly into your widget: 
 
 <dd>
 
-*Example:* Suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using Mustache syntax `{{}}`.
+*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using Mustache syntax, like `{{<query_name>.data}}`.
 
 1. You have a query called `fetchData` that retrieves data from a datasource, like:
 
@@ -34,7 +34,7 @@ SELECT * FROM public."users" LIMIT 10;
 {{fetchData.data}}
 ```
 
-Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{<query_name>.data}}`.
+Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{}}`.
 
 
 
@@ -46,7 +46,7 @@ This method allows you to dynamically connect your data using [JavaScript Object
 
 <dd>
 
-*Example:* Suppose you want to display data using a JavaScript object, such as the current date and time, within a Text widget.
+*Example:* suppose you want to display data using a JavaScript object, such as the current date and time, within a Text widget.
 
 
 
@@ -98,7 +98,7 @@ Similarly, you can connect values from other widgets using the Mustache syntax `
 
 ## Using storeValue()
 
-This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to store and bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
+This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
 
 <dd>
 
