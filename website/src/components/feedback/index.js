@@ -46,7 +46,7 @@ const FeedbackWidget = () => {
           </button>
         </>
       ) : (
-        <p className="feedback-heading wrapContent">Thank you for your <br/>feedback!</p>
+        <p className="feedback-heading line-spacing">Thank you for your <br/> feedback!</p>
       )}
     </div>
   );
