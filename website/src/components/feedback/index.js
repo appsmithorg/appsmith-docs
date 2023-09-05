@@ -27,18 +27,14 @@ const FeedbackWidget = () => {
 
   return (
     <div className="feedback-widget-container">
-      <span className="feedback-heading">Was this page helpful?</span>
-      <div>
-     
-          <img src="/img/thumbs-up-line.svg" alt="Thumbs Up" className={`thumbs-button ${feedback.helpful === 'yes' ? 'selected' : ''}`}
-          onClick={() => handleHelpfulChange('yes')}/>
-
-
-          <img src="/img/thumbs-down-line.svg" alt="Thumbs down" className={`thumbs-button ${feedback.helpful === 'no' ? 'selected' : ''}`} onClick={() => handleHelpfulChange('no')}/>
-
-
-      </div>
-    </div>
+  <p className="feedback-heading">Was this page helpful?</p>
+    <button id="thumbs-up" className={`${feedback.helpful === 'yes' ? 'selected' : ''}`} onClick={() => handleHelpfulChange('yes')}>
+      <img src="/img/thumbs-up-line.svg" alt="Thumbs Up" />
+    </button>
+    <button id="thumbs-down" className={`${feedback.helpful === 'no' ? 'selected' : ''}`} onClick={() => handleHelpfulChange('no')}>
+      <img src="/img/thumbs-down-line.svg" alt="Thumbs down" />
+    </button>
+</div>
   );
 };
 
