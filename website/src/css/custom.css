@@ -448,10 +448,8 @@ ul.circle > li:before {
 /* feedback-widget.css */
 .feedback-widget-container {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 12px 20px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
@@ -460,6 +458,7 @@ ul.circle > li:before {
   font-weight: 600;
   line-height: 4px;
   text-align: center;
+  margin-left: 30px;
 }
 
 .feedback-heading {
