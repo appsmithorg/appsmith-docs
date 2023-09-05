@@ -20,21 +20,20 @@ This method allows you to update widget data based on changes in the datasource.
 
 <dd>
 
-*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using Mustache syntax, like `{{<query_name>.data}}`.
-
-1. You have a query called `fetchData` that retrieves data from a datasource, like:
+*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using mustache syntax `{{}}`. 
+* For instance, you have a query called `fetchData` that retrieves data from a datasource, like:
 
 ```sql
 SELECT * FROM public."users" LIMIT 10;
 ```
 
-2. Display the data by binding the query response. For the Table widget, add the following code to the **Table data** property:
+* To display the data, bind the query response. For the Table widget, add the following code to the **Table data** property:
 
 ```js
 {{fetchData.data}}
 ```
 
-Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{}}`.
+Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{<query_name>.data}}`.
 
 
 
@@ -42,7 +41,8 @@ Similarly, you can connect queries to different widgets using the Mustache synta
 
 ## Using JS Objects
 
-This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta).
+This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding variables and functions, whether they are synchronous or asynchronous, to different widget properties. For synchronous functions, use `JS_object.Function_name();`, while for asynchronous ones, access the data using `JS_object.Function_name().data;`. 
+
 
 <dd>
 
@@ -50,7 +50,7 @@ This method allows you to dynamically connect your data using [JavaScript Object
 
 
 
-1. Create a New JS Object from the *queries/JS* section, and add the required code. To display the current date and time, add:
+* To display the current date and time, add the following code in the JS object:
 
 
 ```js
@@ -62,7 +62,7 @@ export default {
 Additionally, you can also bind data from queries directly into JavaScript objects for dynamic data integration.
 
 
-2. Add the following code to the **Text** property of the Text widget to bind the properties of the JS objects:
+* Add the following code to the **Text** property of the Text widget to bind the properties of the JS objects:
 
 ```js
 {{JSObject1.currentDateTime}}
@@ -71,6 +71,9 @@ Additionally, you can also bind data from queries directly into JavaScript objec
 By following similar steps, you can create a JavaScript object, define variables and functions within it, and bind their values to widgets. 
 
 </dd>
+
+See [How to display data from functions](/write-code/how-to-guides/display-data-from-functions).
+
 
 ## Using widgets
 
@@ -133,12 +136,9 @@ These methods are asynchronous and return a [Promise](/core-concepts/writing-cod
 
 <dd>
 
-*Example:* suppose you want to display a Form widget only when a user selects a specific option from a Select widget.
+*Example:* suppose you want to display a Form widget only when a user selects a specific option from a Select widget, such as `Yes` and `No`.
 
-1. Set up the Select widget to display options such as `Yes` and `No`.
-
-
-2. Create a new JS object and write the function to set the values of different widgets. For instance, using the `setVisibility` method to change the visibility of a Form widget to `true`:
+* Write a function in the JS object that sets the values for the widgets. For instance, use the `setVisibility` method to change the visibility of a Form widget to `true`:
 
 <dd>
 
@@ -157,7 +157,8 @@ export default {
 
 </dd>
 
-3. Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the JS function.
+
+* Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the JS function.
 
 Similarly, you can use setter methods to programmatically update data, color, visibility, and other properties.
 
