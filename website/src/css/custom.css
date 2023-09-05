@@ -467,6 +467,10 @@ ul.circle > li:before {
   color: #10141D;
 }
 
+.wrapContent {
+  line-height: 24px;
+}
+
 #thumbs-up,
 #thumbs-down {
   border-radius: 5px;
