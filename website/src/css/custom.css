@@ -455,7 +455,7 @@ ul.circle > li:before {
   z-index: 10;
   max-width: 50%;
   min-height: 112px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 4px;
   text-align: center;
   margin-left: 30px;
