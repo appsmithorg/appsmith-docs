@@ -33,7 +33,7 @@ SELECT * FROM public."users" LIMIT 10;
 {{fetchData.data}}
 ```
 
-Similarly, you can connect queries to different widgets using the Mustache syntax, like `{{<query_name>.data}}`.
+Similarly, you can connect queries to different widgets using the mustache syntax, like `{{<query_name>.data}}`.
 
 
 
@@ -95,7 +95,7 @@ Add the following code to the Text widget's **Text** property:
 {{List1.selectedItem.email}}
 ```
 
-Similarly, you can connect values from other widgets using the Mustache syntax `{{}}` and reference properties.
+Similarly, you can connect values from other widgets using the mustache syntax `{{}}` and reference properties.
 
 </dd>
 
