@@ -1,12 +1,10 @@
 ---
-description: This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methodss
+description: This page demonstrates how you can dynamically update widget properties using queries, JavaScript functions, and setter methods.
 ---
 
 # Bind Data to Widget Properties
 
-This page shows you how to dynamically update widget property using queries, JavaScript functions, and setter methods
-
-There are multiple ways to bind data to widgets; each method offers its own advantages and use cases: 
+This page demonstrates how you can dynamically update widget properties using queries, JavaScript functions, and setter methods. There are several ways to bind data to widgets:
 
 * [Using query](#using-query)
 * [Using JS Objects](#using-js-objects)
