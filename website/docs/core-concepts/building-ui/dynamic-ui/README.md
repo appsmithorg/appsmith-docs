@@ -163,10 +163,6 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 
 
 
- <figure>
-  <img src="/img/setter-1.gif" style= {{width:"700px", height:"auto"}} alt="online booking prompt "/>
-  <figcaption align = "center"><i>Booking prompt using setter methods</i></figcaption>
-</figure>
 
 
 </dd>
