@@ -237,3 +237,6 @@ exceptions:
   - delay
   - debug
   - format
+  - console.log
+  - console.error
+  - console.warn

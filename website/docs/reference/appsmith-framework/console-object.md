@@ -4,58 +4,18 @@ sidebar_position: 2
 
 # Console Object
 
-The [console object](https://developer.mozilla.org/en-US/docs/Web/API/Console\_API)provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs. By default, console output would appear in the browser's console tab, which you can view by invoking your browser's developer tools.
+The Console Object provides a way to send logging messages to the console, making it a valuable tool for debugging and monitoring code. This page provides information about console object and its methods.
 
-The console is integral to any developer's toolkit - it allows you to monitor what your program is doing by logging messages, errors, and warnings as they occur. These informative logs make it much easier to debug your code and locate the source of errors and unexpected behavior.
-
-Appsmith provides the global console object for logging information about your API, Queries, and Widgets properties in your JavaScript code. Invoke a console object using the mustache sign `{{}}` in widget properties or directly in your code.
-
-:::note
-The console logs **is not** saved and are **only** available for the **current session.**
-:::
 
 ## Methods
 
-A console method is a function executed on a console object that logs different types of messages. The following methods are available to you for logging messages:
+In Appsmith, only below methods can be used for logging messages:
 
-* log
-* error
-* warn
+* [log](#consolelog)
+* [error](#error)
+* [warn](#warn)
 
-:::info
-The console object **only** supports **log**, **error**, and **warn** methods. You can also use the **info** and **debug** methods. However, these methods offer the same feature as the **log** method.
-:::
-
-For example, you are building an app and integrating external API to get input. Your app code behaves differently depending on the type of response generated from the API.
-
-Here's a code snippet of [JS Object ](../../core-concepts/writing-code/javascript-editor-beta/#code-workflow)where you're calling an external API(`getTaskList`), and depending on the generated response, you return the desired output. You either send an email to notify the user or alert the administrator that no action is needed.
-
-
-```javascript
-export default {
-    notifyUserIfTaskIsIncomplete: async () => {
-        let isTaskIncomplete = false;
-        const taskList = getTaskList.data.record;
-        for (const task of taskList) {
-            if(task.ownerId == Table1.selectedRow.ownerId && task.endDate < Date() && task.status != "Completed") {
-                isTaskIncomplete = true;
-                break;
-            }
-        }
-        if (isTaskIncomplete){
-            sendEmailToNotifyUser.sendEmail();
-            return;
-        } 
-        showAlert("No action is needed");
-}
-```
-
-
-The API generates the correct response when executed standalone, and your app code works as expected. However, the code fails during integration because the API response either is not generated or isn't as expected.
-
-To troubleshoot the error, you would want to log some messages: at the start of the API call, the parameters you are building and passing to the API, the response you get from the API, and the result. Here, the console object comes in handy. You can use different methods such as [`log`](console-object.md#log) to log the start of the method, parameters, and result, [`error`](console-object.md#error) to log the error messages returned by the API, and [`warn`](console-object.md#warn) to log the warnings returned by API.
-
-### Log
+### console.log()
 
 The `console.log()` method outputs a message to the logs tab. The message could be a single string value, multiple string values, or JavaScript object.
 
@@ -221,3 +181,39 @@ Debugging with the console object is more efficient, faster, and easier than usi
 :::info
 If you're experiencing issues, please go through the [JS Errors](../../help-and-support/troubleshooting-guide/js-errors.md)/[Action Errors](../../help-and-support/troubleshooting-guide/action-errors/) [troubleshooting guide ](../../help-and-support/troubleshooting-guide/)or raise your queries via [Discord](https://discord.com/invite/rBTTVJp) or the [Community Forum.](https://community.appsmith.com/)
 :::
+
+
+:::note
+The console logs **is not** saved and are **only** available for the **current session.**
+:::
+
+
+
+For example, you are building an app and integrating external API to get input. Your app code behaves differently depending on the type of response generated from the API.
+
+Here's a code snippet of [JS Object ](../../core-concepts/writing-code/javascript-editor-beta/#code-workflow)where you're calling an external API(`getTaskList`), and depending on the generated response, you return the desired output. You either send an email to notify the user or alert the administrator that no action is needed.
+
+
+```javascript
+export default {
+    notifyUserIfTaskIsIncomplete: async () => {
+        let isTaskIncomplete = false;
+        const taskList = getTaskList.data.record;
+        for (const task of taskList) {
+            if(task.ownerId == Table1.selectedRow.ownerId && task.endDate < Date() && task.status != "Completed") {
+                isTaskIncomplete = true;
+                break;
+            }
+        }
+        if (isTaskIncomplete){
+            sendEmailToNotifyUser.sendEmail();
+            return;
+        } 
+        showAlert("No action is needed");
+}
+```
+
+
+The API generates the correct response when executed standalone, and your app code works as expected. However, the code fails during integration because the API response either is not generated or isn't as expected.
+
+To troubleshoot the error, you would want to log some messages: at the start of the API call, the parameters you are building and passing to the API, the response you get from the API, and the result. Here, the console object comes in handy. You can use different methods such as [`log`](console-object.md#log) to log the start of the method, parameters, and result, [`error`](console-object.md#error) to log the error messages returned by the API, and [`warn`](console-object.md#warn) to log the warnings returned by API.
