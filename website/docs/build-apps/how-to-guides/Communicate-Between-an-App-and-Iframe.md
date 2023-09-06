@@ -1,21 +1,24 @@
+---
+description: This page demonstrates how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget. 
+---
 # Communicate Between an App and Iframe
 
-Appsmith offers a secure method for enabling [cross-origin communication](/reference/appsmith-framework/widget-actions/post-message) between the Appsmith app and the Iframe widget. By leveraging the `postMessage` capability, you can establish a seamless exchange of messages between the embedded external page and the Appsmith app. 
+This page shows how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget using the `postMessage()` method.
 
 ### From Appsmith to embedded page
 
+The Iframe widget allows you to send messages from Appsmith to an embedded page. [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method is used to facilitate this communication.
 
-With the Iframe widget, you can send messages from Appsmith to an embedded page. This communication is facilitated by utilizing the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in JavaScript.
+<figure>
+  <img src="/img/postmessage_child_incoming.png" style= {{width:"500px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
-![](/img/postmessage_child_incoming.png)
+<dd>
 
----
+*Example*: If you want to send a message from an Input widget to an external website or application embedded within an Iframe widget, you can achieve this by following the steps below:
 
-**Example**:  suppose you want to send the text entered in the Input widget to an app in the Iframe. 
-
-1. Drop an Input widget named `inputMessage` and a Button widget onto the canvas.
-
-2. Drop an Iframe widget named `iframeExample` on the canvas. In the **srcDoc** property, insert the following code:
+* In the **srcDoc** property of the Iframe widget, add the necessary code. For instance, you can use the following code for handling incoming messages:
 
     ```html
     <div id="target"></div>
@@ -27,26 +30,32 @@ With the Iframe widget, you can send messages from Appsmith to an embedded page.
         });
     </script>
     ```
-    This code listens for a message sent from the Input widget in Appsmith and displays the text inside the `<div>` HTML element in the Iframe.
 
-3. In the button's **onClick** event, select the **Post message** option. Set the **Message** box to `{{inputMessage.text}}` and **Target iframe** box to `iframeExample`.
+    Above code listens for incoming messages and, upon receiving a message, it updates the content of an HTML element with the id `target` to display the data.
 
-4. Enter some text in the Input widget, and click the button. The Iframe receives the message and displays it.
+* Set up an event *(like button click or input change event)* to send the message; select the [**Post message**](/reference/appsmith-framework/widget-actions/post-message) option from the action selector and specify the widget input in the **Message** box and the **Target iframe** as the name of the Iframe widget. For instance, enable *JS* for the **onTextChanged** event of the Input widget, and add:
+
+    ```js
+    {{postWindowMessage(Input1.text, 'Iframe1', "*");}}
+    ```
+
+
+With this you can send messages from the Appsmith application to any external source.
 
 <figure>
-  <img src="/img/iframe-1-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
+  <img src="/img/fromapptoiframe-1.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
   <figcaption align = "center"><i></i>From Appsmith to embedded page</figcaption>
 </figure>
 
+</dd>
+
 ### From embedded page to Iframe
 
-The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in Javascript. Appsmith receives the message in the Iframe’s `message` reference property when the page sends data. This property remains undefined until a message is received.
+The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in Javascript. 
 
----
-**Example**: 
+*Example*: If you want to send a message from an embedded website or application to a Text widget, you can achieve this by following the steps below:
 
-1. Drop an Iframe widget named `iframeExample` on the canvas.
-2. Embed a page that can send a message with `postMessage()` function. To do this,  paste the following code in the srcDoc property:
+* In the **srcDoc** property of the Iframe widget, add the necessary code. For instance, you can use the following code to embed a page that can send a message with `postMessage()` function:
 
     ```html
     <input id="messageinput" type="text" placeholder="Type your message here..."></input>
@@ -61,13 +70,16 @@ The Iframe widget listens for messages sent from the page embedded within it. To
     <div id="target"></div>
     ```
 
-    This code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
+    Above code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
 
-3. Drop a Text widget onto the canvas, and set its Text property to `{{iframeExample.message}}`.
+* To display the message in Appsmith, bind the response in any widget. For instance, in the **Text** property of Text Widget add:
 
-4. Type something in the Iframe's input box and click the **Send** button. The Text widget displays the text that you sent from the Iframe.
+   ```js
+   {{Iframe1.message}}
+   ```
+When the page sends data to Appsmith, it receives the message in the Iframe's `message` reference property. This property remains undefined until a message is received.
 
-5. When a message is received, you can also execute a set of actions in the Iframe’s `onMessageReceived` event. For example, in the `onMessageReceived` event, select the **Show message** action and set the message to 'Message received'. When you click the **Send** button in the Iframe, a toast message appears on the top of the screen.
+When a message is received, you can also execute a set of actions using the Iframe’s **onMessageReceived** event, like displaying a message or executing a query.
 
 <figure>
   <img src="/img/iframe-2-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
