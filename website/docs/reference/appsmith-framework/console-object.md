@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: The console object provides a way to log messages to the logs tab.
 ---
 
 # console
