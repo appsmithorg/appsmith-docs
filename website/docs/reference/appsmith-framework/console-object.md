@@ -5,7 +5,7 @@ description: The console object provides a way to log messages to the logs tab.
 
 # console
 
-The `console` object provides a way to log messages to the logs tab and helps in debugging and monitoring code. This page provides information about the console object and its methods.
+The `console` object provides a way to log messages to the Logs tab, aiding in code debugging and monitoring. This page gives comprehensive information about the console object and its methods.
 
 
 ## Methods
@@ -28,49 +28,46 @@ Console methods do not support string substitutions.
 
 ### console.log() `...args`
 
-The `console.log()` method logs informational messages. It can take one or more arguments, such as strings, numbers, objects, or expressions. For example:
+The console.log() method is used for logging informational messages. It accepts one or more arguments, including strings, numbers, objects, or expressions. For example:
 
 ```javascript
-// logs the given string message
+// Logs the given string message.
 console.log('This is an informational message');
 
-// logs the value of parameters, where param1 is an argument to a method
+// Logs the value of parameters, where param1 is an argument to a method.
 console.log('Value of parameter:', param1);
 
-// logs the value of an expression
-console.log('Value of evaluated expression', 1+2);
+// Logs the value of an evaluated expression.
+console.log('Value of evaluated expression', 1 + 2);
 
-//logs the object properties
+// Logs object property.
 console.log('Value of a property', appsmith.user.email);
 ```
 
 ### console.error() `...args`
 
-The `console.error()` method logs error messages. It helps in reporting unexpected or critical issues in the code. It can take one or more arguments, such as strings, numbers, objects, or expressions. For example:
-
+The `console.error()` method logs error messages and helps in reporting unexpected or critical issues in the code. It can take one or more arguments, such as strings, numbers, objects, or expressions. For example:
 ```javascript
-// logs the given string message 
+// Logs the given error message.
 console.error('This is an error message');
 
-//logs the error
-try{
-
-    //some code that throws error
-
-}catch(err){
-    // logs the err object
-    console.error('In catch block: ', err);
+// Logs errors within a try-catch block.
+try {
+    // Some code that throws an error.
+} catch (err) {
+    // Logs the err object.
+    console.error('In the catch block:', err);
 }
 ```
 
 ### console.warn() `...args`
 
-The `console.warn()` method logs warning messages. It indicates potential issues or situations that might lead to errors. It can take one or more arguments, such as strings, numbers, objects, or expressions.
+The `console.warn()` method logs warning messages, indicating potential issues or situations that might lead to errors. It can take one or more arguments, such as strings, numbers, objects, or expressions. For example:
 
 ```javascript
-// logs the given string message
+// Logs the given string message
 console.warn('This is a warning message');
 
-// logs a warning message
+// Logs a warning message
 console.warn('The recommended page size is 5, whereas the actual is: ', actual_page_size);
 ```
