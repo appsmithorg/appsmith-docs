@@ -459,10 +459,11 @@ ul.circle > li:before {
   line-height: 4px;
   text-align: center;
   margin-left: 30px;
+  margin-top: 30px;
 }
 
 .feedback-heading {
-  font-size: 16px;
+  font-size: 15px;
   color: #10141D;
 }
 
@@ -476,9 +477,17 @@ ul.circle > li:before {
   border: none;
   background: #f86a2b;
   cursor: pointer;
-  margin: 10px 5px 0px 0px;
+  margin: 10px 10px 0px 0px;
   width: 25%;
 }
+
+#thumbs-up > img {
+padding: 2px;
+}
+
+#thumbs-down > img {
+  padding: 2px;
+  }
 
 .selected {
   opacity: 0.7;
