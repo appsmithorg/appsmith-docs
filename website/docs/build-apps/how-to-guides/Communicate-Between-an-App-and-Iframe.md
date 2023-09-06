@@ -40,8 +40,6 @@ The Iframe widget allows you to send messages from Appsmith to an embedded page.
     ```
 
 
-With this you can send messages from the Appsmith application to any external source.
-
 <figure>
   <img src="/img/fromapptoiframe-1.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
   <figcaption align = "center"><i></i>From Appsmith to embedded page</figcaption>
