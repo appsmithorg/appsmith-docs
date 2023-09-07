@@ -3,11 +3,11 @@ description: This page demonstrates how to establish secure cross-origin communi
 ---
 # Communicate Between an App and Iframe
 
-This page shows how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget using the `postMessage()` method.
+This page shows how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget using the `postMessage()` function.
 
 ### From Appsmith to embedded page
 
-The Iframe widget allows you to send messages from Appsmith to an embedded page. [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method is used to facilitate this communication.
+The Iframe widget allows you to send messages from Appsmith to an embedded page using [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage).
 
 <figure>
   <img src="/img/postmessage_child_incoming.png" style= {{width:"500px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
@@ -49,7 +49,7 @@ The Iframe widget allows you to send messages from Appsmith to an embedded page.
 
 ### From embedded page to Iframe
 
-The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method in Javascript. 
+The Iframe widget listens for messages sent from the page embedded within it. To send data from the embedded page, you can use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) function in Javascript. 
 
 *Example*: If you want to send a message from an embedded website or application to a Text widget, you can achieve this by following the steps below:
 
