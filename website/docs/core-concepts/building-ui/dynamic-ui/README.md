@@ -40,8 +40,11 @@ SELECT * FROM public."users" LIMIT 10;
 
 ## Using JS Objects
 
-This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding the results returned in variables or functions to different widget properties. For synchronous functions, use `{{JS_OBJECT_NAME.FUNCTION_NAME()}}`. For asynchronous ones, access the data using `{{JS_OBJECT_NAME.FUNCTION_NAME.data}}`. 
+This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding the results returned in variables or functions to different widget properties. 
 
+* For synchronous functions, use `{{JS_OBJECT_NAME.FUNCTION_NAME()}}`. 
+* For asynchronous ones, access the data using `{{JS_OBJECT_NAME.FUNCTION_NAME.data}}`.
+* For variables, access their values using `{{JS_OBJECT_NAME.VARIABLE_NAME}}`.
 
 <dd>
 
@@ -54,7 +57,13 @@ This method allows you to dynamically connect your data using [JavaScript Object
 
 ```js
 export default {
+//for variable
   currentDateTime: new Date().toLocaleString(),
+
+//for functions
+  invokeModal: () => {
+		showModal("Modal1");
+	}
 };
 ```
 
@@ -64,6 +73,7 @@ Additionally, you can also bind data from queries directly into JavaScript objec
 * Add the following code to the **Text** property of the Text widget to bind the properties of the JS objects:
 
 ```js
+// Accessing the current date and time stored in the variable.
 {{JSObject1.currentDateTime}}
 ```
 
