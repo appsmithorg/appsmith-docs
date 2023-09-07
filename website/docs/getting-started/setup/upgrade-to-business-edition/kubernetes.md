@@ -1,166 +1,82 @@
 ---
-description: Follow the guide to upgrade the Appsmith Community Edition installation on Kubernetes to Business Edition.
+description: Follow these steps to upgrade the Appsmith Community Kubernetes installation to the Business Edition.
 ---
 
 # Kubernetes
 
-The Appsmith Business Edition (BE) Helm chart installation supports Horizontal Pod Auto Scaling (HPA), allowing Appsmith pods to scale automatically based on the current load. Additionally, this means that Appsmith pods are managed using a Kubernetes _deployment_ resource instead of a _stateful-set_ resource. Follow this guide to upgrade the Kubernetes installation from Community Edition (CE) to Business Edition (BE).
+This page provides steps to upgrade Appsmith Kubernetes Community Edition to Business Edition.
 
-## Generate license key
+## Prerequisites
 
-Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
+Before upgrading, ensure you have:
 
+- Signed up on [customer.appsmith.com](https://customer.appsmith.com/) and generated a trial license key.
+- At least 2 GB of free storage space for the backup process.
+- Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-on-kubernetes) to update the version.
+- Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
 
-## Backup data
+## Upgrade to Business Edition
 
-1. Connect to the shell of a running container:
+Follow these steps to upgrade your Appsmith installation:
 
-   ```bash
-   kubectl exec -it <pod> bash
-   ```
+1. Create a folder named `appsmith-ee` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
 
-2. Run the backup command:
-
-   ```bash
-   appsmithctl backup
-   ```
-
-3. Once the backup process is complete, the backup archive is available at `/appsmith-stacks/data/backup/`
-
-4. To download the backup archive, run the following command:
-
-   ```bash
-   kubectl cp <namespace>/appsmith-0:<backup_path> ./<name_of_backup_file>
-   ```
-   
-5. To retrieve the salt and password from the pod, run the following command and copy the values to `values.yaml`.
-
-   ```bash
-   kubectl exec <pod_name> -- grep /appsmith-stacks/configuration/docker.env APPSMITH_ENCRYPTION_
-   ```
-
-   Set the values in the `applicationConfig` section:
-
-   ```yaml
-     APPSMITH_ENCRYPTION_PASSWORD: "<PASSWORD>"
-     APPSMITH_ENCRYPTION_SALT: "<SALT>"
-   ```
-
-## Uninstall Community Edition Helm chart
-
-To uninstall the CE helm chart, run the following command:
-
-```bash
-helm uninstall appsmith
-```
-
-## Configure parameters
-
-To ensure that the Appsmith Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure parameters:
-
-1. Add the following snippet to the bottom of your `values.yaml` file. This snippet enables PostgreSQL.
-
-   ```yaml
-   postgresql:
-     enabled: true
-     auth:
-       username: root
-       password: "<PASSWORD>"
-       postgresPassword: "<POSTGRESQL_PASSWORD>"
-       database: keycloak
-   ```
-
-2. If present, remove the highlighted lines, regardless of their value.
-
-   ```yaml
-   image:
-     # highlight-next-line
-     registry: anything
-     # highlight-next-line
-     repository: anything
-     pullPolicy: Always
-     tag: "latest"
-   ```
-
-3. To configure high availability, choose or create a shared file system. For more information, see [Create a shared file system.](/getting-started/setup/installation-guides/kubernetes#create-a-shared-file-system)
-
-4. Add variables related to keycloak to `applicationConfig` section:
-
-   ```yaml
-     APPSMITH_KEYCLOAK_DB_DRIVER: ""
-     APPSMITH_KEYCLOAK_DB_USERNAME: ""
-     APPSMITH_KEYCLOAK_DB_PASSWORD: ""
-     APPSMITH_KEYCLOAK_DB_URL: ""
-     APPSMITH_KEYCLOAK_DB_NAME: "keycloak"
-   ```
-
-## Install Business Edition Helm chart 
-
-To add and deploy the new Helm chart, run the following command:
+2. Add the Appsmith chart repository with:
 
    ```bash
    helm repo add appsmith-ee https://helm-ee.appsmith.com
+   ```
+
+3. Load the Appsmith chart repository with:
+
+   ```bash
    helm repo update
-   helm install appsmith appsmith-ee/appsmith -n <namespace> -f values.yaml
    ```
 
-For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
-
-
-## Restore backup
-
-To restore the backup, follow the below steps:
-
-1. To copy the Appsmith backup into the new Appsmith pod, run the following command:
+4. Generate the business edition `values.yaml` with:
 
    ```bash
-   kubectl cp ./<name_of_backup_file> <namespace>/<pod>:/appsmith-stacks/data/backup/
-   ```
+   helm show values appsmith-ee/appsmith > values.yaml
+   ``` 
 
-2. To copy the keycloak backup into the new Appsmith pod, run the following command:
-
-   ```bash
-   kubectl cp keycloak_bkp.json <namespace>/<pod_name>:/appsmith-stacks/data/
-   ```
-
-3. To restore Appsmith data, run the following command:
+5. Deploy Appsmith with:
 
    ```bash
-   kubectl exec -it <namespace>/<pod_name> -- appsmithctl restore
+   # Give a desired name to your namespace by replacing <NAMESPACE> 
+   helm install appsmith appsmith-ee/appsmith -n <NAMESPACE> --create-namespace
    ```
 
-   Once the data is restored, the pod restarts automatically.
+6. Restore the backup data using the [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance).
 
-4. To restore the keycloak data, run the following command:
+7. Restart the pods with:
 
    ```bash
-   kubectl exec -it <namespace>/<pod_name> -- /bin/sh /opt/keycloak/bin/standalone.sh -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=singleFile -Dkeycloak.migration.file=/appsmith-stacks/data/keycloak_bkp.json -Dkeycloak.migration.strategy=OVERWRITE_EXISTING
+   kubectl rollout restart statefulsets/appsmith -n <NAMESPACE>
    ```
 
-   Monitor the output as shown below:
-
-   ```
-   08:20:54,708 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0030: Full model import requested. Strategy: OVERWRITE_EXISTING
-   08:20:54,708 INFO  [org.keycloak.exportimport.singlefile.SingleFileImportProvider] (ServerService Thread Pool -- 54) Full importing from file /appsmith-stacks/data/keycloak_bkp.json
-   08:20:54,715 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'master' already exists. Removing it before import
-   08:20:59,160 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'master' imported
-   08:21:01,704 INFO  [org.keycloak.exportimport.util.ImportUtils] (ServerService Thread Pool -- 54) Realm 'appsmith' imported
-   08:21:01,794 INFO  [org.keycloak.services] (ServerService Thread Pool -- 54) KC-SERVICES0032: Import finished successfully
-   ```
-
-   When you see the output, press <kbd>Ctrl+c</kbd> to stop.
-
-5. To apply the changes, restart using the following command:
+8. Get pod name with:
 
    ```bash
-   kubectl rollout restart deployment/appsmith -n <namespack>
+   kubectl get pods -n <NAMESPACE>
    ```
 
-   Congratulations, you have successfully upgraded to the Appsmith Business Edition Helm chart v2 installation.
+9. Verify the installation locally by forwarding port 8080 to 80 with:
+ 
+   ```bash
+   # Replace the <NAMESPACE> with the your namespace 
+   kubectl --namespace <NAMESPACE> port-forward appsmith-0 8080:80
+   ```
 
-## Enter license key
+10. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost:8080](https://localhost:8080).
 
-Sign in to your instance again. On successful login, you see a screen where you can enter the license key and activate the instance.   
+11. Log into your Appsmith account and enter your license key to activate the instance.
 
-If you’re having issues with the deployment, please reach out on [Discord Server](https://discord.com/invite/rBTTVJp) or [send email to support](mailto:support@appsmith.com) or ask questions on the [community forum](https://community.appsmith.com/).
+12. After successfully verifying the Appsmith Business Edition installation, you may choose to delete the Community Edition namespace:
 
+   ```bash
+   kubectl delete ns <COMMUNITY_EDITION_NAMESPACE>
+   ```
+
+## Troubleshooting
+
+If you face issues, continue to use the Community Edition installation and contact the support team using the chat widget at the bottom right of this page.

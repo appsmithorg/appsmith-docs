@@ -23,10 +23,62 @@ const sidebars = {
       //getting started section start
       type: 'category',
       collapsed: false,
-      label: 'Getting Started',
+      label: 'Get Started',
       items: [
         'intro',
-        'getting-started/start-building',
+        {
+          type: 'category',
+          label: 'Tutorials',
+          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          items: [
+            'getting-started/tutorials/start-building',
+            {
+              type: 'category',
+              label: 'Customer Support Tool',
+              link: {
+                type: 'doc',
+                id: 'getting-started/tutorials/customer-support-tool/README',
+              },
+              items: [
+                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
+                'getting-started/tutorials/customer-support-tool/view-ticket-details',
+                'getting-started/tutorials/customer-support-tool/add-new-tickets',
+                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
+                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
+                'getting-started/tutorials/customer-support-tool/application-settings'
+              ],
+            },
+            // Hiding the tutorials
+            // {
+            //   type: 'category',
+            //   label: 'Review Moderator Dashboard',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/review-moderator-dashboard/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/review-moderator-dashboard/setting-up-the-app',
+            //     'getting-started/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
+            //     'getting-started/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
+            //     'getting-started/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
+            //   ],
+            // },
+            // {
+            //   type: 'category',
+            //   label: 'Building a Store Catalog Manager',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/building-a-store-catalog-manager/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/using-forms',
+            //     'getting-started/tutorials/building-a-store-catalog-manager/creating-interactive-views',
+            //   ],
+            // },
+          ],
+        },
+
         {
           type: 'category',
           label: 'Self Hosting',
@@ -135,9 +187,9 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/email/README',
                   },
                   items: [
-                    'getting-started/setup/instance-configuration/email/sendgrid',
-                    'getting-started/setup/instance-configuration/email/amazon-ses',
                     'getting-started/setup/instance-configuration/email/gmail',
+                    'getting-started/setup/instance-configuration/email/amazon-ses',
+                    'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
@@ -156,6 +208,7 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
                   ],
                 },
+                'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
               ],
             },
@@ -167,10 +220,21 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/README',
               },
               items: [
-                'getting-started/setup/instance-management/update-appsmith',
+                {
+                  type: 'category',
+                  label: 'Update Appsmith',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/instance-management/update-appsmith',
+                  },
+                  items: [
+                    'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
+                  ]
+                },
+                'getting-started/setup/instance-management/maintenance-window',
                 'getting-started/setup/instance-management/appsmithctl', 
                 'getting-started/setup/instance-management/supervisor',
-                'getting-started/setup/instance-management/maintenance-window',
+                'getting-started/setup/instance-management/how-to-get-container-logs',
               ],
             },
             {
@@ -185,6 +249,7 @@ const sidebars = {
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
+            `getting-started/setup/best-practices`,
           ],
         },
 
@@ -192,58 +257,279 @@ const sidebars = {
       ],
     }, //getting started section end
     {
+      //Data start
+      type: 'category',
+      collapsed: false,
+      label: 'Connect Data',
+      items: [
+        'connect-data/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
+          items: [
+            'connect-data/how-to-guides/connect-datasource',
+            'connect-data/how-to-guides/query-data',
+            'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
+            'connect-data/how-to-guides/setup-datasource-environments',
+            'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/how-to-upload-to-s3',
+            'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/how-to-integrate-dropbox',
+            'connect-data/how-to-guides/how-to-integrate-zoho',
+            'connect-data/integrations',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/README' },
+          items: [
+            'connect-data/reference/airtable',
+            'connect-data/reference/querying-arango-db',
+            'connect-data/reference/authenticated-api',
+            'connect-data/reference/curl-import',
+            'connect-data/reference/querying-dynamodb',
+            'connect-data/reference/querying-elasticsearch',
+            'connect-data/reference/querying-firestore',
+            'connect-data/reference/querying-google-sheets',
+            'connect-data/reference/graphql',
+            'connect-data/reference/hubspot',
+            {
+            type: 'category',
+            label: 'MongoDB',
+            link: {
+                type: 'doc',
+                id: 'connect-data/reference/querying-mongodb/README',
+            },
+            items: [
+                'connect-data/reference/querying-mongodb/mongo-syntax'
+            ],
+          },
+          'connect-data/reference/querying-mssql',
+          'connect-data/reference/querying-mysql',
+          'connect-data/reference/querying-oracle',
+          'connect-data/reference/querying-postgres',
+          'connect-data/reference/querying-redis',
+          'connect-data/reference/querying-redshift',
+          'connect-data/reference/rest-api',
+          'connect-data/reference/querying-amazon-s3',
+          'connect-data/reference/querying-snowflake-db',
+          'connect-data/reference/using-smtp',
+          'connect-data/reference/twilio',
+          'connect-data/reference/query-settings',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: { type: 'doc', id: 'connect-data/concepts/README' },
+          items: [
+            'connect-data/concepts/connection-pooling',
+            'connect-data/concepts/Datasource-Environments',
+            'connect-data/concepts/how-to-use-prepared-statements',
+            'connect-data/concepts/returning-data-from-a-stored-procedure',
+          ]
+        },
+      ]
+    }, //Data end
+
+// Build App Start
+
+{ // UI start
+  type: 'category',
+  collapsed: false,
+  label: 'Build Apps',
+  items: [ 
+    'build-apps/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
+      items: [
+        'core-concepts/building-ui/dynamic-ui/README',
+        'build-apps/how-to-guides/Server-side-pagination-in-table',
+        'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+        'build-apps/how-to-guides/submit-form-data',
+        'build-apps/how-to-guides/refresh-table-data',
+        'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+        'reference/widgets/table/inline-editing',
+        'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+        'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+        'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+        'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+        'build-apps/how-to-guides/Create-Nested-Lists',
+        'build-apps/how-to-guides/Server-side-filtering-table',
+        'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+        'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
+        'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+      ]  
+    },
+    {
+      //Reference start
+      type: 'category',
+      label: 'Reference',
+      link: { type: 'doc', id:  'build-apps/reference/README' },
+      items: [
+        {
+          type: 'category',
+          label: 'Widgets',
+          link: { type: 'doc', id: 'reference/widgets/README' },
+          items: [
+            'reference/widgets/audio',
+            'reference/widgets/audio-recorder',
+            {
+              type: 'category',
+              label: 'Button',
+              link: { type: 'doc', id: 'reference/widgets/button/README' },
+              items: ['reference/widgets/button/google-recaptcha'],
+            },
+            {
+              type: 'category',
+              label: 'Button Group',
+              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+              items: [
+                'reference/widgets/button-group/buttons'
+              ],
+            },
+            'reference/widgets/camera',
+            'reference/widgets/category-slider',
+            'reference/widgets/chart',
+            'reference/widgets/checkbox',
+            'reference/widgets/checkbox-group',
+            'reference/widgets/code-scanner',
+            'reference/widgets/container',
+            'reference/widgets/currency-input',
+            'reference/widgets/datepicker',
+            'reference/widgets/divider',
+            'reference/widgets/document-viewer',
+            'reference/widgets/form',
+            'reference/widgets/filepicker',
+            'reference/widgets/icon-button',
+            'reference/widgets/iframe',
+            'reference/widgets/image',
+            'reference/widgets/input',
+            'reference/widgets/json-form',
+            'reference/widgets/list',
+            'reference/widgets/maps',
+            'reference/widgets/map-chart',
+            {
+              type: 'category',
+              label: 'Menu Button',
+              link: { type: 'doc', id: 'reference/widgets/menu/README' },
+              items: [
+                'reference/widgets/menu/menu-items'
+              ],
+            },
+            'reference/widgets/modal',
+            'reference/widgets/multiselect',
+            'reference/widgets/multi-tree-select',
+            'reference/widgets/number-slider',
+            'reference/widgets/phone-input',
+            'reference/widgets/progress',
+            'reference/widgets/radio-group',
+            'reference/widgets/range-slider',
+            'reference/widgets/rating',
+            'reference/widgets/rich-text-editor',
+            'reference/widgets/select',
+            'reference/widgets/stat-box',
+            'reference/widgets/switch',
+            'reference/widgets/switch-group',
+            'reference/widgets/tabs',
+            {
+              type: 'category',
+              label: 'Table',
+              link: { type: 'doc', id: 'reference/widgets/table/README' },
+              items: [
+                'reference/widgets/table/column-settings'
+              ],
+            },
+            'reference/widgets/text',
+            'reference/widgets/tree-select',
+            'reference/widgets/video',
+          ],
+        },
+        'core-concepts/building-ui/designing-an-application/app-theming',
+        'core-concepts/building-ui/designing-an-application/application-layout',
+      ],
+    }, //Reference End
+  ]
+}, //Build Apps end
+
+{ // WRITE CODE start
+  type: 'category',
+  collapsed: false,
+  label: 'Write Code',
+  items: [ 
+    'write-code/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
+      items: [
+    
+        'core-concepts/writing-code/README',
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/how-to-guides/display-data-from-functions',
+        'core-concepts/writing-code/javascript-promises',
+        'advanced-concepts/sharing-data-across-pages',
+        `core-concepts/writing-code/workflows`,
+        'core-concepts/writing-code/ext-libraries',
+        'write-code/how-to-guides/debug-js-errors',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      link: { type: 'doc', id: 'write-code/reference/README' },
+      items: [
+        'reference/appsmith-framework/context-object',
+        'reference/appsmith-framework/console-object',
+        'reference/appsmith-framework/query-object',
+
+        {
+          type: 'category',
+          label: 'Built-in Functions',
+          link: {
+            type: 'doc',
+            id: 'reference/appsmith-framework/widget-actions/README',
+          },
+          items: [
+            'reference/appsmith-framework/widget-actions/navigate-to',
+            'reference/appsmith-framework/widget-actions/store-value',
+            'reference/appsmith-framework/widget-actions/show-alert',
+            'reference/appsmith-framework/widget-actions/show-modal',
+            'reference/appsmith-framework/widget-actions/close-modal',
+            'reference/appsmith-framework/widget-actions/reset-widget',
+            'reference/appsmith-framework/widget-actions/intervals-time-events',
+            'reference/appsmith-framework/widget-actions/clear-interval',
+            'reference/appsmith-framework/widget-actions/set-timeout',
+            'reference/appsmith-framework/widget-actions/post-message',
+            'reference/appsmith-framework/widget-actions/window-message-listener',
+            'reference/appsmith-framework/widget-actions/unlisten-window-message',
+            'reference/appsmith-framework/widget-actions/download',
+            'reference/appsmith-framework/widget-actions/copy-to-clipboard'
+              ]
+            },
+            'write-code/reference/Built-in-JS-Libraries',
+            'write-code/reference/Fetch-API',
+            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings', 
+          ],
+    },
+  ]
+}, //CODE end
+
+
+  /*   {
       //core concepts section start
       type: 'category',
       collapsed: false,
       label: 'Core Concepts',
       items: [
-        {
-          type: 'category',
-          label: 'Connecting to Datasource',
-          link: {
-            type: 'doc',
-            id: 'core-concepts/connecting-to-data-sources/README',
-          },
-          items: [
-            'core-concepts/connecting-to-data-sources/connecting-to-databases',
-            {
-              type: 'category',
-              label: 'REST APIs',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/connecting-to-data-sources/authentication/README',
-              },
-              items: [
-                'core-concepts/connecting-to-data-sources/authentication/connect-to-apis',
-                {
-                  type: 'category',
-                  label: 'Authentication Type',
-                  link: {
-                    type: 'doc',
-                    id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/README',
-                  },
-                  items: [
-                    'core-concepts/connecting-to-data-sources/authentication/authentication-type/basic-authentication',
-                    {
-                      type: 'category',
-                      label: 'OAuth 2.0',
-                      link: {
-                        type: 'doc',
-                        id: 'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/README',
-                      },
-                      items: [
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/authorization-code',
-                        'core-concepts/connecting-to-data-sources/authentication/authentication-type/oauth2-authentication/client-credentials',
-                      ],
-                    },
-                  ],
-                },
-                'core-concepts/connecting-to-data-sources/authentication/signature-header-in-api-actions',
-                'core-concepts/connecting-to-data-sources/authentication/self-signed-certificates',
-              ],
-            },
-          ],
-        },
         {
           type: 'category',
           label: 'Building UI',
@@ -257,8 +543,7 @@ const sidebars = {
                 id: 'core-concepts/building-ui/designing-an-application/README',
               },
               items: [
-                'core-concepts/building-ui/designing-an-application/app-theming',
-                'core-concepts/building-ui/designing-an-application/application-layout',
+
               ],
             },
             {
@@ -280,17 +565,7 @@ const sidebars = {
             id: 'core-concepts/data-access-and-binding/README',
           },
           items: [
-            {
-              type: 'category',
-              label: 'Queries',
-              link: {
-                type: 'doc',
-                id: 'core-concepts/data-access-and-binding/querying-a-database/README',
-              },
-              items: [
-                'core-concepts/data-access-and-binding/querying-a-database/query-settings',
-              ],
-            },
+            'core-concepts/data-access-and-binding/querying-a-database',
             'core-concepts/data-access-and-binding/displaying-data-read/README',
             {
               type: 'category',
@@ -322,18 +597,33 @@ const sidebars = {
               ],
             },
             'core-concepts/writing-code/workflows',
-            'core-concepts/writing-code/javascript-promises',
-            'core-concepts/writing-code/ext-libraries',
             {
               type: 'link',
               label: 'Appsmith Framework',
               href: '/reference/appsmith-framework/',
+                'reference/appsmith-framework/widget-actions/navigate-to',
+                'reference/appsmith-framework/widget-actions/show-alert',
+                'reference/appsmith-framework/widget-actions/show-modal',
+                'reference/appsmith-framework/widget-actions/close-modal',
+                'reference/appsmith-framework/widget-actions/store-value',
+                'reference/appsmith-framework/widget-actions/remove-value',
+                'reference/appsmith-framework/widget-actions/clear-store',
+                'reference/appsmith-framework/widget-actions/download',
+                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+                'reference/appsmith-framework/widget-actions/reset-widget',
+                'reference/appsmith-framework/widget-actions/set-interval',
+                'reference/appsmith-framework/widget-actions/clear-interval',
+                'reference/appsmith-framework/widget-actions/set-timeout',
+                'reference/appsmith-framework/widget-actions/post-message'
+              ]
             },
           ],
         },
       ],
     }, //core concepts end
-    {
+     */
+    
+/*     {
       //Reference start
       type: 'category',
       collapsed: false,
@@ -341,140 +631,11 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Widgets',
-          link: { type: 'doc', id: 'reference/widgets/README' },
-          items: [
-            'reference/widgets/audio',
-            'reference/widgets/audio-recorder',
-            {
-              type: 'category',
-              label: 'Button',
-              link: { type: 'doc', id: 'reference/widgets/button/README' },
-              items: ['reference/widgets/button/google-recaptcha'],
-            },
-            'reference/widgets/button-group',
-            'reference/widgets/camera',
-            'reference/widgets/chart',
-            'reference/widgets/checkbox',
-            'reference/widgets/checkbox-group',
-            'reference/widgets/code-scanner',
-            'reference/widgets/container',
-            'reference/widgets/currency-input',
-            'reference/widgets/datepicker',
-            'reference/widgets/divider',
-            'reference/widgets/document-viewer',
-            'reference/widgets/form',
-            'reference/widgets/filepicker',
-            'reference/widgets/icon-button',
-            'reference/widgets/iframe',
-            'reference/widgets/image',
-            'reference/widgets/input',
-            'reference/widgets/json-form',
-            'reference/widgets/list',
-            'reference/widgets/maps',
-            'reference/widgets/map-chart',
-            'reference/widgets/menu-button',
-            'reference/widgets/modal',
-            'reference/widgets/multiselect',
-            'reference/widgets/multi-tree-select',
-            'reference/widgets/phone-input',
-            'reference/widgets/progress',
-            'reference/widgets/radio-group',
-            'reference/widgets/rating',
-            'reference/widgets/rich-text-editor',
-            'reference/widgets/select',
-            {
-              type: 'category',
-              label: 'Sliders',
-              link: { type: 'doc', id: 'reference/widgets/sliders/README' },
-              items: [
-                'reference/widgets/sliders/category-slider',
-                'reference/widgets/sliders/number-slider',
-                'reference/widgets/sliders/range-slider',
-              ],
-            },
-            'reference/widgets/stat-box',
-            'reference/widgets/switch',
-            'reference/widgets/switch-group',
-            'reference/widgets/tabs',
-            {
-              type: 'category',
-              label: 'Table',
-              link: { type: 'doc', id: 'reference/widgets/table/README' },
-              items: [
-                'reference/widgets/table/column-settings',
-                'reference/widgets/table/inline-editing',
-              ],
-            },
-            'reference/widgets/text',
-            'reference/widgets/tree-select',
-            'reference/widgets/video',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Datasources',
-          link: { type: 'doc', id: 'reference/datasources/README' },
-          items: [
-            'reference/datasources/airtable',
-            'reference/datasources/querying-amazon-s3',
-            'reference/datasources/querying-arango-db',
-            'reference/datasources/querying-dynamodb',
-            'reference/datasources/querying-elasticsearch',
-            'reference/datasources/querying-firestore',
-            'reference/datasources/querying-google-sheets',
-            'reference/datasources/graphql',
-            'reference/datasources/hubspot',
-            {
-              type: 'category',
-              label: 'MongoDB',
-              link: {
-                type: 'doc',
-                id: 'reference/datasources/querying-mongodb/README',
-              },
-              items: [
-                'reference/datasources/querying-mongodb/mongo-syntax',
-                'reference/datasources/querying-mongodb/whitelist-mongodb-cloud',
-              ],
-            },
-            'reference/datasources/querying-mssql',
-            'reference/datasources/querying-mysql',
-            'reference/datasources/querying-postgres',
-            'reference/datasources/querying-redis',
-            'reference/datasources/querying-redshift',
-            'reference/datasources/querying-snowflake-db',
-            'reference/datasources/using-smtp',
-            'reference/datasources/twilio',
-          ],
-        },
-        {
-          type: 'category',
           label: 'Appsmith Framework',
           link: { type: 'doc', id: 'reference/appsmith-framework/README' },
           items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
-            {
-              type: 'category',
-              label: 'Actions',
-              link: {
-                type: 'doc',
-                id: 'reference/appsmith-framework/widget-actions/README',
-              },
-              items: [
-                'reference/appsmith-framework/widget-actions/navigate-to',
-                'reference/appsmith-framework/widget-actions/show-alert',
-                'reference/appsmith-framework/widget-actions/show-modal',
-                'reference/appsmith-framework/widget-actions/close-modal',
-                'reference/appsmith-framework/widget-actions/store-value',
-                'reference/appsmith-framework/widget-actions/download',
-                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-                'reference/appsmith-framework/widget-actions/reset-widget',
-                'reference/appsmith-framework/widget-actions/intervals-time-events',
-                'reference/appsmith-framework/widget-actions/post-message'
-              ]
-            },
+          
+            
           ],
         },
         {
@@ -484,18 +645,26 @@ const sidebars = {
           items: [],
         },
       ],
-    }, //Reference End
+    }, //Reference End */
+
     {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
-      label: 'Advanced Concepts',
+      label: 'Manage Apps and Users',
       items: [
-        'advanced-concepts/custom-authentication',
-        'advanced-concepts/sharing-data-across-pages',
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/audit-logs',
-        'advanced-concepts/branding',
+        'advanced-concepts/custom-authentication',
+        'advanced-concepts/invite-users',
+        {
+          type: 'category',
+          label: 'Granular Access Control',
+          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
+          items: [
+              'advanced-concepts/granular-access-control/roles', 
+          ]
+        },
+        `advanced-concepts/user-provisioning-group-sync`,
         {
           type: 'category',
           label: 'Version Control with Git',
@@ -521,105 +690,19 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/environments-with-git',            
           ],
         },
-        {
-          type: 'category',
-          label: 'Access Control',
-          link: {type: 'doc', id:  'advanced-concepts/access-control/README'},
-          items: [
-          {
-            type: 'category',
-            label: 'Granular Access Control',
-            link: {
-              type: 'doc',
-              id: 'advanced-concepts/access-control/granular-access-control/README',
-            },
-            items: [
-              'advanced-concepts/access-control/granular-access-control/roles', 
-          ]
-        },
-      ],
-       },
-        {
-          type: 'category',
-          label: 'More',
-          link: { type: 'doc', id: 'advanced-concepts/more/README' },
-          items: [
-            'advanced-concepts/more/how-to-work-with-local-apis-on-appsmith',
-            'advanced-concepts/more/backup-restore',
-            'advanced-concepts/more/keyboard-shortcuts',
-          ],
-        },
+
+        'advanced-concepts/more/backup-restore',
+        'advanced-concepts/audit-logs',
+        'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
     {
       //Learning and Resources start
       type: 'category',
       collapsed: false,
-      label: 'Learning & Resources',
+      label: 'Resources',
       items: [
-        {
-          type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'learning-and-resources/tutorials/README' },
-          items: [
-            {
-              type: 'category',
-              label: 'Review Moderator Dashboard',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/review-moderator-dashboard/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/review-moderator-dashboard/setting-up-the-app',
-                'learning-and-resources/tutorials/review-moderator-dashboard/connecting-to-data-source-and-binding-queries',
-                'learning-and-resources/tutorials/review-moderator-dashboard/building-ui-and-accessing-widget-properties',
-                'learning-and-resources/tutorials/review-moderator-dashboard/creating-interactive-views-using-lists-and-charts',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Building a Store Catalog Manager',
-              link: {
-                type: 'doc',
-                id: 'learning-and-resources/tutorials/building-a-store-catalog-manager/README',
-              },
-              items: [
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/building-a-simple-ui',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/using-forms',
-                'learning-and-resources/tutorials/building-a-store-catalog-manager/creating-interactive-views',
-              ],
-            },
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How To Guides',
-          link: {
-            type: 'doc',
-            id: 'learning-and-resources/how-to-guides/README',
-          },
-          items: [
-            'learning-and-resources/how-to-guides/how-to-use-js-object-within-appsmith',
-            'learning-and-resources/how-to-guides/writing-javascript-in-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-filters-on-appsmith-table-widget',
-            'learning-and-resources/how-to-guides/build-auto-generated-forms-using-list-widget',
-            'learning-and-resources/how-to-guides/how-to-upload-to-s3',
-            'learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'learning-and-resources/how-to-guides/how-to-work-with-google-sheets-on-appsmith',
-            'learning-and-resources/how-to-guides/oauth2-authorization-for-google-sheets',
-            'learning-and-resources/how-to-guides/aws-whitelist',
-            'learning-and-resources/how-to-guides/returning-data-from-a-stored-procedure',
-            'learning-and-resources/how-to-guides/use-mssql-as-data-source',
-            'learning-and-resources/how-to-guides/use-notion-as-database-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-redis-as-a-data-source-on-apppsmith',
-            'learning-and-resources/how-to-guides/use-redshift-as-data-source-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-elasticsearch-as-a-data-source-on-appsmith',
-            'learning-and-resources/how-to-guides/how-to-use-prepared-statements',
-            'learning-and-resources/how-to-guides/how-to-get-container-logs',
-          ],
-        },
         'learning-and-resources/sample-apps',
-        'learning-and-resources/integrations',
         {
           type: 'link',
           label: 'Templates', // The link label

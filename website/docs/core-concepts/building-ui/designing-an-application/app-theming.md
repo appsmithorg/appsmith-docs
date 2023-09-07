@@ -1,4 +1,4 @@
-# App Theming
+# Theme
 
 App theming allows you to style your pages and [widgets](/reference/widgets/) using global controls, making it easy to change the visual layout with a single click.
 

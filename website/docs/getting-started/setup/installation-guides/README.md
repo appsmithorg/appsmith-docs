@@ -4,7 +4,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
 
 <div class="containerBorder">
 
-##### Recommended
+ **Recommended**
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
@@ -27,7 +27,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
 </div>
 <br/>
 
-##### Platform deployments
+**Platform deployments**
 <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
           <div class="containerCol">

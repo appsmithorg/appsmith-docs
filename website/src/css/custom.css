@@ -223,6 +223,10 @@
   order: 3;
 }
 
+.column-four {
+  order: 4;
+}
+
 .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-theme-Icon-ExternalLink-styles-module {
   display: none;
 }
@@ -259,28 +263,23 @@ div.containerColumnSampleApp.columnGrid > div.containerCol > img,
 }
 
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
 }
-
 h2 {
   font-size: 1.75rem;
 }
-
 h3 {
   font-size: 1.5rem;
 }
-
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
 }
-
 h5 {
-  font-size: 1rem;
-}
-
-h6 {
   font-size: 0.75rem;
 }
+h6 {
+  font-size: 0.5rem;
+} 
 
 .tabs {
   color: #47525d;
@@ -437,4 +436,78 @@ ul.circle > li:before {
   .DocSearch-Modal {
     max-width: 65% !important;
   }
+}
+
+/* Search button width */
+@media only screen and (min-width: 768px) {
+.DocSearch-Button {
+  width: 350px;
+  }
+} 
+
+/* feedback-widget.css */
+.feedback-widget-container {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  max-width: 50%;
+  min-height: 112px;
+  font-weight: 500;
+  line-height: 4px;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.feedback-heading {
+  font-size: 15px;
+  color: #10141D;
+}
+
+.line-spacing {
+  line-height: 24px;
+}
+
+#thumbs-up,
+#thumbs-down {
+  border-radius: 5px;
+  border: none;
+  background: #f86a2b;
+  cursor: pointer;
+  margin: 10px 10px 0px 0px;
+  width: 25%;
+}
+
+#thumbs-up > img {
+padding: 2px;
+}
+
+#thumbs-down > img {
+  padding: 2px;
+  }
+
+.selected {
+  opacity: 0.7;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .feedback-widget-container {
+    right: auto;
+    left: 20px; /* Adjust the position for smaller screens */
+  }
+}
+
+
+body {
+  margin-top: -30px !important;
+}
+
+.fixedToc {
+  position: fixed;
+  width:15%;
+ 
 }

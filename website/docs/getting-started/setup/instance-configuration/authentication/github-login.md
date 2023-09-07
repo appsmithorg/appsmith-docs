@@ -9,6 +9,11 @@ sidebar_position: 2
 
 Appsmith allows you to integrate with GitHub OAuth, enabling end users to sign in to the Appsmith account using their GitHub authentication credentials.
 
+## Prerequisites
+
+1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+2. A [GitHub](https://github.com/login) account.
+
 ## Register OAuth app on GitHub
 
 To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) and follow the steps below:
@@ -40,6 +45,10 @@ There are two ways to configure the self-hosted Appsmith instance -
 Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and  `Client Secret`. Click the **Save & Restart** button at the bottom of the page. 
 
 ![](/img/as_github_auth_config.png)
+
+:::info
+If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
+:::
 
 ### Environment variables
 
