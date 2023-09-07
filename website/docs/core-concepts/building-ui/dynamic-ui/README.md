@@ -16,7 +16,7 @@ This page shows how you can dynamically update widget properties using queries, 
 
 ## Using query
 
-This method allows you to update widget data based on changes in the datasource. Follow these steps to bind data from a database or API query directly into your widget: 
+This method allows you to update widget data based on the query response.
 
 <dd>
 
