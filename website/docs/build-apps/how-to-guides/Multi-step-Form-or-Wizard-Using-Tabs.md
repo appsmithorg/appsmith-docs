@@ -15,21 +15,23 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 ## Configure the Tabs
 
-1. Drop a Tab Widget and rename the tabs to `Basic Info`, and `Personal Info`.
+*Example:* Suppose you want to create tabs for a multi-step form. In the first tab, users can provide their basic information, while in the second tab, they can input their personal details.
 
-2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, and set its **onClick** event to:
+1. Make changes to the Tab widget according to your requirements, like renaming the tabs to `Basic Info`, and `Personal Info`.
+
+2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, enable *JS* for the **onClick** event and add:
 
 ```js
 {{storeValue('defaulttab', 'Personal Info');}}
 ```
 
-3. Similarly, on the `Personal Info` tab, add a new button widget that allows users to go back to the previous tab, and set its **onClick** event to:
+3. Similarly, on the `Personal Info` tab, add a new Button widget that allows users to go back to the previous tab, enable *JS* for the **onClick** event and add:
 
 ```js
 {{storeValue('defaulttab', 'Basic Info');}}
 ```
 
-You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-value) action for both previous and next buttons, and set the key for the stored value to be the same as the name of the Tabs. 
+You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-value) action for both the previous and next buttons, and set the key for the stored value to be the same as the name of the Tabs. 
 
 4. In the **Default Tab** property of the Tabs widget, add the following code:
 
