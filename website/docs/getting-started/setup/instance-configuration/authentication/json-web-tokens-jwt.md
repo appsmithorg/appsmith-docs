@@ -19,7 +19,7 @@ Appsmith provides the `idToken` on the client side, allowing you to incorporate 
 {{appsmith.user.idToken}}
 ```
 
-`idToken` is also provided in its raw format for you to incorporate into API headers.You can read the value of an ID token in its raw format in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
+`idToken` is also provided in its raw format for you to incorporate into API headers. You can read the value of an ID token in its raw format in your APIs/Queries by using the mustache syntax `{{}}` as shown below:
 
 ```
 {{appsmith.user.rawIdToken}}
