@@ -1,6 +1,19 @@
 # Create a Multi-step Form or Wizard Using Tabs
 
-You can create a multi-step form using Tabs widget and `storeValue` function:
+This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user information in a structured step-by-step manner.
+
+<figure>
+  <img src="/img/tabs-nav.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
+  <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
+</figure>
+
+## Prerequisites
+
+* A [Tab](/reference/widgets/table) widget.
+* Basic knowledge of how the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function works in Appsmith.
+
+
+## Configure the Tabs
 
 1. Drop a Tab Widget and rename the tabs to `Basic Info`, and `Personal Info`.
 
@@ -24,7 +37,3 @@ You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-
 {{appsmith.store.defaulttab}}
 ```
 
-<figure>
-  <img src="/img/tabs-nav.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
-</figure>
