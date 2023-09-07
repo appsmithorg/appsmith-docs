@@ -1,14 +1,13 @@
+---
+description: The page provides information about the deployment architecture of Appsmith.
+---
 # Deployment Architecture
 
-Appsmith can be accessed through the cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or it can be self-hosted using the setup instructions provided in the [self-hosted](/getting-started/setup#self-hosted) guide.
-
-Appsmith provides Community, Business, and Enterprise [Editions](https://www.appsmith.com/pricing). These editions are extremely similar in build and architecture and are deployed as a single Docker container with a single volume for storing persistent data.
-
-Read further to learn about how the Appsmith platform works under the hood.
+Appsmith can be accessed through the cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or self-hosted using the setup instructions provided in the [self-hosted](/getting-started/setup) guide. This page provides information about the deployment architecture of Appsmith.
 
 ## Self-hosted instance architecture
 
-The diagram below illustrates the different components and how these services communicate with each other.
+Appsmith is deployed as a single Docker container with a single volume for storing persistent data. The diagram below illustrates the different components and how these services communicate with each other.
 
 <figure>
   <img src="/img/Appsmith_Deployment_Architecture.png" style= {{width:"700px", height:"auto"}} alt="Appsmith Deployment Architecture"/>
@@ -26,7 +25,7 @@ A single Docker container runs the following processes to deploy and get started
     4. A git module that maintains clones of your Git-connected apps on the file system
 
 2. The **NGINX Server**, which routes:
-    1. Requests to static assets like Javascript, CSS, and images
+    1. Requests to static assets like JavaScript, CSS, and images
     2. Incoming requests to the backend server, or the RTS depending on the request path
     3. Path-unidentified requests to an `index.html` page with a 200 status code. This is like a typical single-page application where the client React code is expected to understand the path and show the UI accordingly.
 
