@@ -31,7 +31,7 @@ The Iframe widget allows you to send messages from Appsmith to an embedded page 
     </script>
     ```
 
-    Above code listens for incoming messages and, upon receiving a message, it updates the content of an HTML element with the id `target` to display the data.
+    The above code listens for incoming messages and, upon receiving a message, it updates the content of an HTML element with the id `target` to display the data.
 
 * Set up an event *(like button click or input change event)* to send the message; select the [**Post message**](/reference/appsmith-framework/widget-actions/post-message) option from the action selector and specify the widget input in the **Message** box and the **Target iframe** as the name of the Iframe widget. For instance, enable *JS* for the **onTextChanged** event of the Input widget, and add:
 
@@ -68,7 +68,7 @@ The Iframe widget listens for messages sent from the page embedded within it. To
     <div id="target"></div>
     ```
 
-    Above code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
+    The above code creates a simple HTML document in the Iframe containing a text input, a button, and a script to handle sending the message.
 
 * To display the message in Appsmith, bind the response in any widget. For instance, in the **Text** property of Text Widget add:
 
