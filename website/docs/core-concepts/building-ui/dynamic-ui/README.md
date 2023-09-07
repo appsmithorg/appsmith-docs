@@ -57,14 +57,8 @@ This method allows you to dynamically connect your data using [JavaScript Object
 
 ```js
 export default {
-//for variable
   currentDateTime: new Date().toLocaleString(),
-
-//for functions
-  invokeModal: () => {
-		showModal("Modal1");
-	}
-};
+}
 ```
 
 Additionally, you can also bind data from queries directly into JavaScript objects for dynamic data integration.
