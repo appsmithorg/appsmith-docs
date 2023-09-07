@@ -1,6 +1,8 @@
-# Architecture
+# Deployment Architecture
 
-Appsmith is available via the [cloud](http://app.appsmith.com/user/sign-up) as well as [self-hosted](/getting-started/setup#self-hosted) instances. It comes in [two versions](https://www.appsmith.com/pricing): Community and Business. Both of these are extremely similar in build and architecture and are deployed as a single Docker container with a single volume for storing persistent data.
+Appsmith can be accessed through the cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or it can be self-hosted using the setup instructions provided in the [self-hosted](/getting-started/setup#self-hosted) guide.
+
+Appsmith provides Community, Business, and Enterprise [Editions](https://www.appsmith.com/pricing). These editions are extremely similar in build and architecture and are deployed as a single Docker container with a single volume for storing persistent data.
 
 Read further to learn about how the Appsmith platform works under the hood.
 
@@ -8,7 +10,10 @@ Read further to learn about how the Appsmith platform works under the hood.
 
 The diagram below illustrates the different components and how these services communicate with each other.
 
-![Appsmith Deployment Architecture](/img/Appsmith_Deployment_Architecture.png)
+<figure>
+  <img src="/img/Appsmith_Deployment_Architecture.png" style= {{width:"700px", height:"auto"}} alt="Appsmith Deployment Architecture"/>
+  <figcaption align = "center"><i>Appsmith Deployment Architecture</i></figcaption>
+</figure>
 
 ## How it works
 
