@@ -9,7 +9,7 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 ## Prerequisites
 
-* A [Tabs](/reference/widgets/table) widget.
+* A [Tabs](/reference/widgets/tabs) widget.
 * Basic knowledge of how the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function works in Appsmith.
 
 
