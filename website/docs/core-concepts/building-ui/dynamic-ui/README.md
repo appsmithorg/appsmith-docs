@@ -20,7 +20,7 @@ This method allows you to update widget data based on the query response.
 
 <dd>
 
-*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using mustache syntax `{{}}`. 
+*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using mustache syntax `{{QUERY_NAME.data}}`. 
 * For instance, you have a query called `fetchData` that retrieves data from a datasource, like:
 
 ```sql
