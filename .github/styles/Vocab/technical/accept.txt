@@ -189,12 +189,10 @@ untrusted
 Filepicker
 Cloudinary
 Port
-<<<<<<< HEAD
 supervisord
 Supervisord
 config
 Realtime
-=======
 navigateTo
 triggerable
 params
@@ -204,7 +202,6 @@ auto-configure
 the cloud
 CLI
 ACI
->>>>>>> main
 GSheet
 Twilio
 subnet
