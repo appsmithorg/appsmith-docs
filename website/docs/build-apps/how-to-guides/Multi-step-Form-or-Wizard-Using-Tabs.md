@@ -9,7 +9,7 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 ## Prerequisites
 
-* A [Tab](/reference/widgets/table) widget.
+* A [Tabs](/reference/widgets/table) widget.
 * Basic knowledge of how the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function works in Appsmith.
 
 
@@ -17,7 +17,7 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 *Example:* Suppose you want to create tabs for a multi-step form. In the first tab, users can provide their basic information, while in the second tab, they can input their personal details.
 
-1. Make changes to the Tab widget according to your requirements, like renaming the tabs to `Basic Info`, and `Personal Info`.
+1. Make changes to the Tabs widget according to your requirements, like renaming the tabs to `Basic Info`, and `Personal Info`.
 
 2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, enable *JS* for the **onClick** event of the Button widget, and add:
 
