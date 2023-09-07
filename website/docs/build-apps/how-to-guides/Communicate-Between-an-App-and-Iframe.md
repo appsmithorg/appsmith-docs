@@ -77,7 +77,7 @@ The Iframe widget listens for messages sent from the page embedded within it. To
    ```
 When the page sends data to Appsmith, it receives the message in the Iframe's `message` reference property. This property remains undefined until a message is received.
 
-When a message is received, you can also execute a set of actions using the Iframe’s **onMessageReceived** event, like displaying a message or executing a query.
+When a message is received, you can also execute a set of actions using the Iframe’s **onMessageReceived** event, like displaying an alert or executing a query.
 
 <figure>
   <img src="/img/iframe-2-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
