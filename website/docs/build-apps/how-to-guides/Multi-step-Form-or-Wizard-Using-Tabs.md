@@ -19,13 +19,13 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 1. Make changes to the Tab widget according to your requirements, like renaming the tabs to `Basic Info`, and `Personal Info`.
 
-2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, enable *JS* for the **onClick** event and add:
+2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, enable *JS* for the **onClick** event of the Button widget, and add:
 
 ```js
 {{storeValue('defaulttab', 'Personal Info');}}
 ```
 
-3. Similarly, on the `Personal Info` tab, add a new Button widget that allows users to go back to the previous tab, enable *JS* for the **onClick** event and add:
+3. Similarly, on the `Personal Info` tab, add a new Button widget that allows users to go back to the previous tab, enable *JS* for the **onClick** event of the Button widget, and add:
 
 ```js
 {{storeValue('defaulttab', 'Basic Info');}}
