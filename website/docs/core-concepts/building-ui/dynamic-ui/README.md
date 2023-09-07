@@ -33,7 +33,6 @@ SELECT * FROM public."users" LIMIT 10;
 {{fetchData.data}}
 ```
 
-Similarly, you can connect queries to different widgets using the mustache syntax, like `{{<query_name>.data}}`.
 
 
 
