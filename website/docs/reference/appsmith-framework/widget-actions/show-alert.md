@@ -1,27 +1,43 @@
 ---
 description: >-
   showAlert() reference
+toc_max_heading_level: 2
 ---
 # showAlert()
 
-Displays a temporary toast-style alert message to the user, lasting 5 seconds. The duration of the alert message can't be modified.
-
-<figure>
-    <img src="/img/show-alert-action.png" style={{width:"700px", height:"auto"}} alt="showAlert displays notifications at the top of the screen." />
-    <figcaption align="center" ><i>Show Alert</i></figcaption>
-</figure>
-
+The `showAlert()` function displays a temporary toast-style alert message to the user for precisely 5 seconds. The duration of the alert message can't be modified.
 
 
 ## Signature
 
 ```javascript
-showAlert(message: string, style: string) -> Promise
+showAlert(message: string, type: string): Promise
 ```
 
-### Arguments
+### Parameters
 
-| **Argument Name** | **Description**                                                         |
-| ----------------- | ----------------------------------------------------------------------- |
-| **Message**       | The message to show the user.                             |
-| **Style**         | The style of alert message. Can be one of "info," "success," "error," or "warning." |
+#### Message
+
+<dd>
+
+A string value that contains the text displayed in the alert message.
+
+</dd>
+
+#### Type
+
+<dd>
+
+Enables you to configure the type of the alert message. It accepts the following string values - 
+
+- `info`
+- `success`
+- `error`
+- `warning`
+
+</dd>
+
+*Example*:
+```javascript
+{{showAlert('Data submitted successfully', 'success');}}
+```

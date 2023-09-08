@@ -1,4 +1,4 @@
-# JS Objects
+# Create JS Objects 
 
 The JavaScript Editor in Appsmith enables you to create _JS Objects_ with a page-level scope. A JS Object is an encapsulation of variables and functions associated with it. It is a template similar to a Java class that contains the variables and the methods used to perform actions.
 
@@ -64,44 +64,6 @@ You can access the properties of the JS Objects defined using the dot or bracket
 
 Click the **Run** button on the top right corner to execute the JS function. If your JS object has only one function defined, the editor defaults the function name. But if your JS Object has more than one function defined, you can select the function you want to execute and then click **Run**. If your code has errors, the **Run** button is greyed out and blocks the execution until the errors are resolved. You can also execute the function using a shortcut key **CMD+ENTER** or **CTRL + ENTER**
 
-## Display data from functions
-
-Functions in a JS Object can be _Synchronous_ or _Asynchronous_.
-
-Widgets have fields/properties where you can bind data or trigger actions.
-
-_Async fields_ are properties that can trigger an [action](/reference/appsmith-framework/widget-actions) or perform an operation. For example, the properties like `OnTextChanged` and `OnSubmit` of an input widget are async fields. **You can call or execute the JS functions in async fields(event listeners)**.
-
-_Sync fields_ are properties that expect data. For example, for an Input widget, properties such as **Default Value**, **Required**, **Text** expect data and are sync fields. **You can display the response from JS functions in sync fields**.
-
-### Synchronous functions
-
-As the name suggests, synchronous means to run in a particular sequence. It means that every statement of the code gets executed one by one. So, a statement must wait for the earlier statement to complete its execution.
-To display the response from a synchronous JS function in a sync widget field, call the function inside the JS Object as shown below:
-
-```javascript
-{
-  {
-    JS_OBJECT_NAME.FUNCTION_NAME();
-  }
-}
-```
-
-### Asynchronous functions
-
-The word asynchronous means not occurring at the same time. You may need to fetch data from the server or execute a function with a delay, something you don't want happening at the current time. Asynchronous functions can be specified using the keyword `async`. See [Asynchronous JavaScript Function Settings ](asynchronous-javascript-function-settings.md) for more information.
-
-To display the response from an asynchronous JS function in a sync widget field, you need to retrieve it using the `.data` property, as shown below:
-
-```javascript
-{
-  {
-    JS_OBJECT_NAME.FUNCTION_NAME.data;
-  }
-}
-```
-
-<VideoEmbed host="youtube" videoId="yn_8gs5w04g" title="Display response from async function in widget field" caption="Display response from async function in widget field"/>
 
 ## Use variables for state management
 
@@ -170,56 +132,6 @@ export default {
 Variable mutations can be triggered only using event listeners(async fields). For example, you can't update the variable value using the **Text** property on the Text widget, but you can use the **onClick** event on the Button widget.
 :::
 
-## Debug JS errors
-
-You can use the `debugger` statement or `console.log()` to debug and inspect your code in the browser console or the **Console** tab. This allows you to check the state of your code and step through it line by line to help identify and fix any errors.
-
-### With debugger statement
-
-To invoke the debugger, insert a `debugger` keyword in your code where you want it to pause, and then run your app. The code execution pauses on the debugger statement. It works like a `breakpoint`. You can then use the debugger tools to step through your code, inspect variables, and see how your code is executing.
-
-**Syntax**
-
-```
-debugger;
-```
-
-**Example**:
-
-```
-export default {
-    getUserDetails: async () => {
-        const userInfo = await userDetailsAPI.run();
-        debugger; // the execution is paused at this point
-        console.log(“user information: “+userInfo); // The value of the userInfo
-        variable is printed in the Logs tab.
-        return userInfo;
-    }
-}
-```
-
-### With console.log()
-
-In addition to using the debugger statement, you can use `console.log()` to print information about your code to the browser's console. This can help inspect the values of variables or the state of your app at different points during the execution of your code.
-
-**Syntax**
-
-```
-console.log(<VARIABLE_NAME>);
-```
-
-<VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
-
-## JavaScript editor
-
-| <div style= {{width:"120px"}}> **Features** </div> | **Description**                                                                                                                                                                                                                                                                                                |
-| -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Response tab                                       | Displays the output generated by the functions defined in a JS Object.                                                                                                                                                                                                                                         |
-| Errors tab                                         | Displays errors during or after code execution. They can be syntax errors, parsing errors, etc.                                                                                                                                                                                                                |
-| Logs tab                                           | Shows the execution of functions with a timestamp. You can also open the Logs Tab by clicking a debug icon at the bottom right of the console. The Logs tab gives enables you to search for logs by writing keywords in the **Filter** input box or by selecting the type of log in the **Show All Logs** list |
-| Snippets                                           | Insert ready-to-use code from the Snippets Library.                                                                                                                                                                                                                                                            |
-| Linter                                             | The JS editor automatically checks your source code for programmatic errors. If the code isn't syntactically correct, it highlights the error using red wavy lines. You can inspect the error in detail on the **Errors** tab.                                                                                 |
-| Debugger                                           | Use debugger statements to pause the execution or `console.log()` to print debug messages.                                                                                                                                                                                                                     |
 
 ## Write complex code
 
@@ -439,7 +351,7 @@ export default {
 
 Only the users with email added to the `adminList` can access the dashboard and do the updates.
 
-With the [Async function settings](asynchronous-javascript-function-settings.md), you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is in the `adminsList`, the user can access the dashboard. If not, the user navigates to the denied access page with the message 'You don't have permission to access the Dashboard'.
+With the Async function settings, you can bind the `isAdmin` function to `RUN ON PAGE LOAD`. The execution of `IsAdmin` on page load ensures the validation of the user’s email against the `adminList` for the logged-in user should happen on the page load. If the logged-in user's email is in the `adminsList`, the user can access the dashboard. If not, the user navigates to the denied access page with the message 'You don't have permission to access the Dashboard'.
 
 ## Current limitations
 

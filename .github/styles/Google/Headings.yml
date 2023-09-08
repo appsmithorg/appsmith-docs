@@ -230,3 +230,14 @@ exceptions:
   - onDateSelected
   - key
   - persist
+  - fileName
+  - pageNameOrUrl
+  - target
+  - interval
+  - callbackFunction
+  - delay
+  - debug
+  - format
+  - console.log
+  - console.error
+  - console.warn

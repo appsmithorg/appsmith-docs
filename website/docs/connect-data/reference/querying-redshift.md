@@ -73,7 +73,7 @@ OFFSET {{ UsersTable.pageOffset }} ROWS
 FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
 ```
 
-In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
 ### Insert data
 
