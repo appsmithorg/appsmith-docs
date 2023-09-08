@@ -46,7 +46,7 @@ The above query updates the `phone` and `email` fields in the `users` table usin
 Follow these steps to set up a JSON Form and configure the query:
 
 
-1. To populate the JSON Form with data, you need to provide the data in a structured JSON format or bind a query response to the [**Source Data**](/reference/widgets/json-form#source-data-json) property. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
+1. To display form data in the JSON form, provide data in structured JSON format or bind the query response in the [**Source Data**](/reference/widgets/json-form#source-data-json) property. 
 
 
 2. Create a query to either insert new data or update existing data using the [formData](/reference/widgets/json-form#formdata-object) reference property.
