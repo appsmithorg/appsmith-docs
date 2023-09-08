@@ -52,4 +52,4 @@ For each of the processes in Appsmith, the container’s entry-point script (whi
 
 ## Deployment
 
-Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord. The Appsmith Cloud runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to be scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service.
+Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord. The Appsmith Cloud runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service.
