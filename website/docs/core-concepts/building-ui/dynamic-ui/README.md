@@ -1,141 +1,172 @@
 ---
-description: >-
-  Widgets are the UI building blocks of Appsmith. Widgets empower you to
-  visualise, capture and organise data with simple configuration and zero
-  HTML/CSS.
+description: This page demonstrates how you can dynamically update widget properties using queries, JavaScript functions, and setter methods.
 ---
 
-# Update Widget Properties
+# Bind Data to Widgets
 
-This document presumes you understand the basics of [Displaying Data](/build-apps/overview) & [Capturing Data](/build-apps/overview) and expands on the concept of building dynamic UI that reacts to user inputs and system data
+This page shows how you can dynamically update widget properties using queries, JavaScript functions, and setter methods. There are several ways to bind data to widgets:
 
-<VideoEmbed host="youtube" videoId="vlx8TEuep5I" title="Dynamically Update Widget properties" caption="Dynamically Update Widget properties"/>
+* [Using query](#using-query)
+* [Using JS Objects](#using-js-objects)
+* [Using widgets](#using-widgets)
+* [Using storeValue](#using-storevalue)
+* [Using setters methods](#using-setters-methods)
 
-## Dynamic properties
-
-Every property of a widget can be described dynamically using JavaScript inside handlebars `{{}}`. The properties which don't have an input to write JavaScript can be made dynamic by clicking the JS button next to them. This transforms the property into an input field that can be used to write code.
 
 
-## Updating widget data
+## Using query
 
-You want to display a list of products in a [Table](/reference/widgets/table#table-data). When a user selects a product in the table, you may want to update the product information in a form so that the user can update the product.
+This method allows you to update widget data based on the query response.
 
-![Click to expand](</img/table_form.gif>)
+<dd>
 
-In order to achieve this, you can populate the default values of each of the Form's widgets with the corresponding value selected in the table. You can reference the [Tables](/reference/widgets/table#binding-properties) [`selectedRows`](/reference/widgets/table#selectedrows) property using its name inside the **`{{ }}`**
+*Example:* suppose you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using mustache syntax `{{QUERY_NAME.data}}`. 
+* For instance, you have a query called `fetchData` that retrieves data from a datasource, like:
 
-Get Product Name Input (Default Text property)
-
-```javascript
-{{ Table1.selectedRow.productName }}
+```sql
+SELECT * FROM public."users" LIMIT 10;
 ```
 
-Get MRP Input (Default Text property)
+* To display the data, bind the query response. For the Table widget, add the following code to the **Table data** property:
 
-```javascript
-{{ Table1.selectedRow.mrp }}
+```js
+{{fetchData.data}}
 ```
 
-Get Category Dropdown (Default Option property)
 
-```javascript
-{{ Table1.selectedRow.category }}
+
+
+</dd>
+
+## Using JS Objects
+
+This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding the results returned in variables or functions to different widget properties. 
+
+* For synchronous functions, use `{{JS_OBJECT_NAME.FUNCTION_NAME()}}`. 
+* For asynchronous ones, access the data using `{{JS_OBJECT_NAME.FUNCTION_NAME.data}}`.
+* For variables, access their values using `{{JS_OBJECT_NAME.VARIABLE_NAME}}`.
+
+<dd>
+
+*Example:* suppose you want to display data using a JavaScript object, such as the current date and time, within a Text widget.
+
+
+
+* To display the current date and time, add the following code in the JS object:
+
+
+```js
+export default {
+  currentDateTime: new Date().toLocaleString(),
+}
 ```
 
-Here Table1 is the name of the widget
+Additionally, you can also bind data from queries directly into JavaScript objects for dynamic data integration.
 
-![Click to expand](</img/form_-_table.gif>)
 
-## Setting widget height
-You can set the height of widget using the Height property. It configures how a widget’s height reacts to content changes in the app. To build a dynamic UI, you can use the Auto Height, that gives the widget a capability to change height in response to content changes. Auto height saves you from the task of defining the height of the widget manually. For more information, see the [Auto height](/reference/widgets/#auto-height) property of widgets. 
+* Add the following code to the **Text** property of the Text widget to bind the properties of the JS objects:
 
-## Dynamic forms
-
-Some cases require form fields to dynamically change based on the user input. This can be achieved using a [Tab](/reference/widgets/tabs) widget inside the form and conditionally updating the selected tab value based on the inputs of the [form](/reference/widgets/form)
-
-![](</img/dynamic_forms.gif>)
-
-:::tip
-Hide the tabs in the tab widget to make it look like the views are changing in place.
-:::
-
-## Transform data
-
-Each widget property has a specific data type that it validates its value against. If the data type mismatches, it throws an error. You can use JavaScript to transform the data when binding it to a property. For example, consider a query that returns an array of objects, as shown below:    
-
-**Example Query Data**
-
-```javascript
-[
-  {
-    "id": 1,
-    "name": "test",
-    "status": "APPROVED",
-    "gender": "",
-    "avatar": "https://robohash.org/sednecessitatibuset.png?size=100x100&set=set1",
-    "email": "barty.crouch@gmail.com",
-    "address": "St Petersberg #911 4th main",
-    "createdAt": "2020-03-16T18:00:05.000Z",
-    "updatedAt": "2020-08-12T17:29:31.980Z"
-  },
-  {
-    "id": 2,
-    "name": "Jenelle Kibbys",
-    "status": "APPROVED",
-    "gender": "Female",
-    "avatar": "https://robohash.org/quiaasperiorespariatur.bmp?size=100x100&set=set1",
-    "email": "jkibby1@hp.com",
-    "address": "85 Tennessee Plaza",
-    "createdAt": "2019-10-04T03:22:23.000Z",
-    "updatedAt": "2019-09-11T20:18:38.000Z"
-  },
-  {
-    "id": 3,
-    "name": "Demetre",
-    "status": "APPROVED",
-    "gender": "Male",
-    "avatar": "https://robohash.org/iustooptiocum.jpg?size=100x100&set=set1",
-    "email": "aaaa@bbb.com",
-    "address": "262 Saint Paul Park",
-    "createdAt": "2020-05-01T17:30:50.000Z",
-    "updatedAt": "2019-10-08T14:55:53.000Z"
-  }
-]
+```js
+// Accessing the current date and time stored in the variable.
+{{JSObject1.currentDateTime}}
 ```
 
-Suppose you want to display this data in a [Select](/reference/widgets/select.md) widget. A Select widget only accepts data as an Array in the `{ "label": "string", "value": "string" }` format in its **Options** property, so you must transform the data from the query to pass it in the required structure.
+By following similar steps, you can create a JavaScript object, define variables and functions within it, and bind their values to widgets. 
 
-The following example iterates over the query data and returns it in an `Array<label, value>` format:
+</dd>
 
-```javascript
-{{
-  QueryName.data.map((row) => {
-      return { label: row.name, value: row.id };
-  });
-}}
+See [How to display data from functions](/write-code/how-to-guides/display-data-from-functions).
+
+
+## Using widgets
+
+When working with widgets in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the reactive programming paradigm. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data. When a value is updated, any widgets that depend on that changed value also update automatically.
+
+<dd>
+
+
+*Example:* suppose you have a Table widget connected to a query. Whenever a user selects a row in the Table, you want to display specific data in a Text widget based on user selections. 
+
+
+Add the following code to the Text widget's **Text** property:
+
+```js
+//To display the email field when the user selects a row in the Table widget, use:
+{{Table1.selectedRow.email}}
+
+//To display the email field when the user selects an item in the List widget, use:
+{{List1.selectedItem.email}}
 ```
 
-## Update widgets programmatically
+Similarly, you can connect values from other widgets using the mustache syntax `{{}}` and reference properties.
 
-When working with [widgets](/reference/widgets) in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the **reactive programming paradigm**. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data with each other. When a value is updated, any widgets that depend on that changed value also update automatically.
+</dd>
 
-**Example 1:** suppose you have two Input widgets named `Input1` and `Input 2`. To update `Input2` with the value entered in `Input1`, add the following code in the `Default Value` property of Input2.
+## Using storeValue()
 
-```javascript
-{{Input1.text}}
+This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
+
+<dd>
+
+*Example:* suppose you want to save the text of an Input widget, you can do so by using `storeValue()`. 
+
+1. In the [**onTextChanged**](/reference/widgets/input#ontextchanged) event of the Input widget, enable JS and add the following code: 
+
+
+```js
+{{storeValue('inputData', Input1.text);}}
 ```
 
-Enter a value in `Input1` and see how the value updates in `Input2`.
+2. Drag the Text widget and add the following code to the **Text** property to display the saved text:
 
-**Example 2:** suppose you have two input widgets and one button widget named `Input1`, `Input2`, and `Button1`, respectively. This example shows how to update `Input2` with the value in `Input1` on the button click. Here, the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is used.
-
-Paste the following code in the `onClick` event of `Button1`. 
-
-```javascript
-{{storeValue('inputData',Input1.text)}}
-```
-Paste the following code in the `Default Value` property of Input2.
-```javascript
+```js
 {{appsmith.store.inputData}}
 ```
-Enter a value in `Input1`. On button click, the value updates in `Input2`.
+
+</dd>
+
+Similarly, you can use different functions to perform actions like page navigation, displaying alerts, managing modals, and storing data in local storage.
+
+You can also use `{{appsmith.user.email}}` to display the email address of the current user.
+
+
+
+## Using setters methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
+
+<dd>
+
+*Example:* suppose you want to display a Form widget only when a user selects a specific option from a Select widget, such as `Yes` and `No`.
+
+* Write a function in the JS object that sets the values for the widgets. For instance, use the `setVisibility` method to change the visibility of a Form widget to `true`:
+
+<dd>
+
+```js
+export default {
+	myFun1 () {
+	
+    if (Select1.selectedOptionValue === 'yes') {
+      Form1.setVisibility(true);
+    } else {
+      Form1.setVisibility(false);
+    }
+ }
+}
+```
+
+</dd>
+
+
+* Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the JS function.
+
+Similarly, you can use setter methods to programmatically update data, color, visibility, and other properties.
+
+
+
+
+
+</dd>
