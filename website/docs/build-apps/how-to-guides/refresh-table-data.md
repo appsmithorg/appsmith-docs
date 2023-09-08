@@ -14,23 +14,12 @@ When data is updated in a datasource, the Table widget does not automatically re
 </figure>
 
 
-*Example:* suppose you have a Table that receives its data from a query called `getData`, and you have a Button that submits a Form with new user input through a query called `updateData`.
+*Example:* if you have a Table that receives its data from a query called `getData`, and you have a Button that submits a Form with new user input through a query called `updateData`.
 
 
-1. To update data, set the Button's **onClick** to execute the `updateData` query. When JS is enabled, you can configure as follows:
+1. To update data, set the Button's **onClick** event to execute the `updateData` query. 
  
-```js
-{{updateData.run()}}
-```
 
-2. To refresh table data, set the **onSuccess** callback to execute the `getData` query. When JS is enabled, you can configure as follows:
+2. To refresh Table data, set the **onSuccess** callback to execute the `getData` query. 
 
-
-```js
- {{updateData.run().then(() => {
-   getData.run();
- });}}
-```
-
-
-The above code executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes. A similar process can be applied to other widgets, such as List.
+This executes the `updateData` query and, once completed, triggers the execution of the `getData` query. This process updates and fetches data to show real-time changes. A similar process can be applied to other widgets, such as List.
