@@ -2,6 +2,105 @@
 
 Appsmith offers a powerful set of widgets to help you build dynamic and functional app layouts. You can simply drag and drop them onto the canvas and edit the properties of each widget to customize its data, style, and actions.
 
+### Suggested
+
+<div class="containerGrid">
+  <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/Table">
+            <img class="containerImage" src="/img/table-icon.svg" alt="Table"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/widgets/Table">Table</a></b>
+    </div>
+    <div class="columnGrid column-two" align="center">
+      <div class="containerCol">
+            <a href="/reference/widgets/json-form">
+            <img class="containerImage" src="/img/json-form-icon.svg" alt="JSON-form"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/widgets/json-form">JSON form</a></b>
+     </div>
+     <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/input">
+            <img class="containerImage" src="/img/input-icon.svg" alt="Input"/>
+            </a> 
+        </div> 
+        <b><a href="//reference/widgets/input">Input</a></b>
+    </div>
+
+
+</div>
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/Text">
+            <img class="containerImage" src="/img/text-icon.svg" alt="Text"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/widgets/Text">Text</a></b>
+    </div>
+     <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/select">
+            <img class="containerImage" src="/img/select-icon-.svg" alt="Select"/>
+            </a> 
+        </div> 
+        <b><a href="//reference/widgets/select">Select</a></b>
+     </div>
+    <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/list">
+            <img class="containerImage" src="/img/list-icon.svg" alt="List"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/widgets/list">List</a></b>
+   
+   </div>
+
+
+</div>
+
+### Inputs
+
+<div class="containerGrid">
+    <div class="columnGrid column-one" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/Text">
+            <img class="containerImage" src="/img/text-icon.svg" alt="Text"/>
+            </a>     
+        </div> 
+         <b><a href="/reference/widgets/Text">Text</a></b>
+    </div>
+     <div class="columnGrid column-two" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/select">
+            <img class="containerImage" src="/img/select-icon-.svg" alt="Select"/>
+            </a> 
+        </div> 
+        <b><a href="//reference/widgets/select">Select</a></b>
+     </div>
+    <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+            <a href="/reference/widgets/list">
+            <img class="containerImage" src="/img/list-icon.svg" alt="List"/>
+            </a>   
+        </div> 
+            <b><a href="/reference/widgets/list">List</a></b>
+   
+   </div>
+
+
+</div>
+
+
+----
+
+
+
+
 
 <div class="containerGrid">
     <div class="columnGrid column-one" align="center">
@@ -116,15 +215,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <b><a href="/reference/widgets/container">Container</a></b>
    
    </div>
-   <div class="columnGrid column-three" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/currency-input">
-            <img class="containerImage" src="/img/c-input.svg" alt="Currency-Input"/>
-            </a>   
-        </div> 
-            <b><a href="/reference/widgets/currency-input">Currency Input</a></b>
-   
-   </div>
 
 </div>
 
@@ -214,32 +304,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
 
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/input">
-            <img class="containerImage" src="/img/input-icon.svg" alt="Input"/>
-            </a> 
-        </div> 
-        <b><a href="//reference/widgets/input">Input</a></b>
-    </div>
-   <div class="columnGrid column-two" align="center">
-      <div class="containerCol">
-            <a href="/reference/widgets/json-form">
-            <img class="containerImage" src="/img/json-form-icon.svg" alt="JSON-form"/>
-            </a>   
-        </div> 
-            <b><a href="/reference/widgets/json-form">JSON form</a></b>
-   </div>
 
-   <div class="columnGrid column-three" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/list">
-            <img class="containerImage" src="/img/list-icon.svg" alt="List"/>
-            </a>   
-        </div> 
-            <b><a href="/reference/widgets/list">List</a></b>
-   
-   </div>
    <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/maps">
@@ -381,14 +446,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
 
 
 <div class="containerGrid">
-    <div class="columnGrid column-one" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/select">
-            <img class="containerImage" src="/img/select-icon-.svg" alt="Select"/>
-            </a> 
-        </div> 
-        <b><a href="//reference/widgets/select">Select</a></b>
-    </div>
    <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/switch">
@@ -425,14 +482,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
 
 
 <div class="containerGrid">
-   <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/Table">
-            <img class="containerImage" src="/img/table-icon.svg" alt="Table"/>
-            </a>     
-        </div> 
-         <b><a href="/reference/widgets/Table">Table</a></b>
-    </div>
     <div class="columnGrid column-two" align="center">
         <div class="containerCol">
             <a href="/reference/widgets/tabs">
@@ -440,14 +489,6 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             </a>     
         </div> 
          <b><a href="/reference/widgets/tabs">Tabs</a></b>
-    </div>
-    <div class="columnGrid column-two" align="center">
-        <div class="containerCol">
-            <a href="/reference/widgets/Text">
-            <img class="containerImage" src="/img/text-icon.svg" alt="Text"/>
-            </a>     
-        </div> 
-         <b><a href="/reference/widgets/Text">Text</a></b>
     </div>
     <div class="columnGrid column-two" align="center">
         <div class="containerCol">
