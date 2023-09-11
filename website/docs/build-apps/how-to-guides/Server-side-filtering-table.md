@@ -9,6 +9,11 @@ This page shows you how to set up server-side filtering on a Table widget, which
 
 Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
 
+ <figure>
+  <img src="/img/table-filter-1.gif" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
+  <figcaption align = "center"><i>Server-side Filtering on Table</i></figcaption>
+</figure>
+
 
 ## Configure query
 
