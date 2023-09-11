@@ -1,23 +1,35 @@
+---
+description: This page shows you how to set up server-side filtering on a Table widget, which allows you to refine query results based on specific criteria.
+---
 
 
 # Setup Server-side Filtering on Table
 
+This page shows you how to set up server-side filtering on a Table widget, which allows you to refine query results based on specific criteria.
+
 Server-side filtering involves using a value to narrow down the results of a query in a similar way to server-side searching. However, instead of searching for a specific term, the selected value is used to filter out unwanted data from the requested dataset. 
 
-To enable server-side filtering, you can use widgets such as the [Select widget](/reference/widgets/select/) to provide users with a list of supported filters to choose from.
 
-1. Drag a Select widget to the canvas and add options that you might use to filter your data.
+## Configure query
 
-2. Create a query, and add the Select widget's `selectedOptionValue`:
+To implement server-side filtering, you can use widgets such as the [Select](/reference/widgets/select/), [Checkbox](/reference/widgets/checkbox), [Sliders](/reference/widgets/category-slider) and other similar widgets that allow users to select from a variety of available filters.
 
-    As a SQL query:
+*Example*: If you want to filter table data based on specific criteria, such as gender, you can use a Select widget with the required option.
+
+1. Configure the query to fetch data using `selectedOptionValue` reference properties:
+
+    * For PostgreSQL, you can configure the query as follows:
+
     ```sql
-    SELECT * FROM users WHERE gender = {{genderDropdown.selectedOptionValue}};
+    SELECT * FROM users WHERE gender = {{Select1.selectedOptionValue}};
     ```
 
-    As an API request with URL parameters:
+    * For the REST API, configure query parameter as shown in the URL:
+
     ```
-    https://mock-api.appsmith.com/users?gender={{genderDropdown.selectedOptionValue}}
+    https://mock-api.appsmith.com/users?gender={{Select1.selectedOptionValue}}
     ```
 
-3. Set the Select widget's **onOptionChange** event to run the query. 
+3. Set the Select widget's **onOptionChange** event to execute the fetch query.
+ 
+ 
