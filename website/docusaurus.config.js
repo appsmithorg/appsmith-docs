@@ -103,55 +103,6 @@ const config = {
       },
       footer: {
         style: 'light',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Advanced Concepts',
-                to: 'advanced-concepts/custom-authentication',
-              },
-              {
-                label: 'Reference',
-                to: '/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Forum',
-                href: 'https://community.appsmith.com/',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.com/invite/rBTTVJp',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/theappsmith?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'https://www.appsmith.com/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/appsmithorg/appsmith',
-              },
-              {
-                label: 'YouTube',
-                to: 'https://www.youtube.com/c/Appsmith',
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()} Appsmith, Inc.`,
       },
       prism: {
