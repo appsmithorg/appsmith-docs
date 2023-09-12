@@ -23,13 +23,13 @@ The console.log() method is used for logging informational messages. It accepts 
 // Logs the given string message.
 console.log('This is an informational message');
 
-// Logs the value of parameters, where param1 is an argument to a method.
+// Logs the value of `param1` after 'parameter:', with 'param1' being appended to the message.
 console.log('Value of parameter:', param1);
 
 // Logs the value of an evaluated expression.
 console.log('Value of evaluated expression', 1 + 2);
 
-// Logs object property.
+// Logs the object property.
 console.log('Value of a property', appsmith.user.email);
 ```
 
@@ -57,6 +57,7 @@ The `console.warn()` method logs warning messages, indicating potential issues o
 // Logs the given string message
 console.warn('This is a warning message');
 
-// Logs a warning message
+// Logs the value of 'actual_page_size' after 'is:'. 
+// The value of 'actual_page_size' being appended to the message. 
 console.warn('The recommended page size is 5, whereas the actual is: ', actual_page_size);
 ```
