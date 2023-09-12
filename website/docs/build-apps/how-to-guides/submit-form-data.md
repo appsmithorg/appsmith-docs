@@ -12,22 +12,6 @@ Follow these steps to set up a Form widget and configure the query:
 
 1. To allow users to submit their information, drag the relevant widgets into the Form widget (example: Text, Inputs, Select) and configure their properties.
 
-<dd>
-
-*Example*: suppose you have a `users` database and you want to display specific data based on user selections. Add the following code to the Input widget's **Default value** property:
-
-```js
-//To display the email field when the user selects a row in Table widget, use:
-{{Table1.selectedRow.email}}
-
-//To display the email field when the user selects a item in List widget, use:
-{{List1.selectedItem.email}}
-```
-
-The above code displays the `email` based on user selections. Similarly, you can populate other widgets with data.
-
-
-</dd>
 
 2. Create a query to either insert new data or update existing data using the [reference properties](/reference/widgets/form#reference-properties) of the Form widget.
 
@@ -48,7 +32,7 @@ The above query updates the `phone` and `email` fields in the `users` table usin
 
 </dd>
 
-3. Set the Button's [**onClick**](/reference/widgets/button#onclick) event to execute the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the data with the updated information.
+3. Set the Submit Button's [**onClick**](/reference/widgets/button#onclick) event to execute the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the data with the updated information.
 
  <figure>
   <img src="/img/refresh-after-update.gif" style= {{width:"810px", height:"auto"}} alt="Submit form data using Form"/>
@@ -62,25 +46,8 @@ The above query updates the `phone` and `email` fields in the `users` table usin
 Follow these steps to set up a JSON Form and configure the query:
 
 
-1. To display data based on a user's selection, you can add the following code in the **Source Data** property of the JSON Form:
+1. To display data in JSON form, provide the data in structured JSON format or bind the query response in the [**Source Data**](/reference/widgets/json-form#source-data-json) property. 
 
-<dd>
-
-*Example*: 
-
-```js
-//To display data when the user selects a row in Table widget, use:
-{{Table1.selectedRow}}
-
-//To display data when the user selects a item in List widget, use:
-{{List1.selectedItem}}
-```
-
-Similarly, you can populate other widgets with data. Based on the data, the JSON Form automatically identifies the appropriate field type for each value. For instance, it sets `age` to a `Number Input`. In addition, you can add or customize field types using the [**Field Configuration**](/reference/widgets/json-form#field-configuration-list) property.
-
-
-
-</dd>
 
 2. Create a query to either insert new data or update existing data using the [formData](/reference/widgets/json-form#formdata-object) reference property.
 
