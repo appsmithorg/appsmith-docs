@@ -2,6 +2,7 @@
 
 This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user information in a structured step-by-step manner.
 
+
 <figure>
   <img src="/img/tabs-nav.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
@@ -15,27 +16,49 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 ## Configure the Tabs
 
-*Example:* Suppose you want to create tabs for a multi-step form. In the first tab, users can provide their basic information, while in the second tab, they can input their personal details.
+*Example:* lets set up a multi-step form with two tabs: one where users can input basic information, and the other where they can provide personal information.
 
-1. Make changes to the Tabs widget according to your requirements, like renaming the tabs to `Basic Info`, and `Personal Info`.
+1. Configure the Tabs according to your requirements. For this example, rename Tab 1 to `Basic Info` and Tab 2 to `Personal Info`. 
 
-2. On the `Basic Info` tab add a Button widget to allow users to move to the next tab, enable *JS* for the **onClick** event of the Button widget, and add:
-
-```js
-{{storeValue('defaulttab', 'Personal Info');}}
-```
-
-3. Similarly, on the `Personal Info` tab, add a new Button widget that allows users to go back to the previous tab, enable *JS* for the **onClick** event of the Button widget, and add:
+2. On Tab 1 (`Basic Info`), add a Button widget and configure its [**onClick**](/reference/widgets/button#onclick) event; select the **Store value** option from the action selector and specify:
+   
+<dd>
 
 ```js
-{{storeValue('defaulttab', 'Basic Info');}}
+Key: 'defaulttab'  //string containing the key name that acts as a unique identifier
+Value: 'Personal Info' //Name of the tab you want to navigate, in this case the next tab
 ```
 
-You can use the [storeValue](/reference/appsmith-framework/widget-actions/store-value) action for both the previous and next buttons, and set the key for the stored value to be the same as the name of the Tabs. 
+<figure>
+  <img src="/img/tabs-next.png" style= {{width:"530px", height:"auto"}} alt="Configure Store value"/>
+  <figcaption align = "center"><i>Configure Store value</i></figcaption>
+</figure>
 
-4. In the **Default Tab** property of the Tabs widget, add the following code:
+
+</dd>
+
+
+3. Similarly, on Tab 2 (`Personal Info`) tab, add a new Button widget and configure its **onClick** event to allow users to go back to the previous tab. For this, select **Store value** option from the action selector and specify:
+   
+<dd>
+
+```js
+Key: 'defaulttab'  //unique identifier
+Value: 'Basic Info' //Name of the tab you want to navigate, in this case the previous tab
+```
+</dd>
+
+
+
+4. In the [**Default Tab**](/reference/widgets/tabs#default-tab-string) property of the Tabs widget, add the following code:
+
+<dd>
 
 ```js
 {{appsmith.store.defaulttab}}
 ```
+
+This allows you to access the Tab name from the store using the `defaulttab` key.
+
+</dd>
 
