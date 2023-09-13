@@ -3,7 +3,11 @@ description: The page provides information about the deployment architecture of 
 ---
 # Deployment Architecture
 
-Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up) or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. This page provides information about the self-hosted deployment architecture of Appsmith.
+Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up) or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. 
+
+The Appsmith Cloud runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service. The self-hosted Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord.
+
+This page provides information about the self-hosted deployment architecture of Appsmith.
 
 ## Components
 
@@ -47,7 +51,3 @@ Supervisor comes with a command line tool called `supervisorctl` that's used to 
 When the user runs the Docker command to start the Appsmith container, Supervisor identifies which processes are required to start and run. This includes the backend server, the RTS, and the NGINX server, as well as any additional processes that haven't been plugged in by the user externally, such as a custom MongoDB or Redis instance.
 
 For each of the processes in Appsmith, the container’s entry-point script (which Docker invokes when the container starts) generates a config file with all the details needed for the Supervisor daemon. For example, the config file generated for the backend Java server includes the full set of commands for starting the process, as well as all necessary environment variables and settings. This same entry-point script also helps set up SSL certificates and install custom CA roots.
-
-## Deployment
-
-Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord. The Appsmith Cloud runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service.
