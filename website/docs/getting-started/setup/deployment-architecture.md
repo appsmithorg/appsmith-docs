@@ -3,7 +3,7 @@ description: The page provides information about the deployment architecture of 
 ---
 # Deployment Architecture
 
-Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. This page provides information about the self-hosted deployment architecture of Appsmith.
+Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up) or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. This page provides information about the self-hosted deployment architecture of Appsmith.
 
 ## Components
 
