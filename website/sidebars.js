@@ -305,6 +305,7 @@ const sidebars = {
       link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
       items: [
         'core-concepts/building-ui/dynamic-ui/README',
+        `build-apps/how-to-guides/update-widget-properties`,
         'build-apps/how-to-guides/Server-side-pagination-in-table',
         'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
         'build-apps/how-to-guides/submit-form-data',
