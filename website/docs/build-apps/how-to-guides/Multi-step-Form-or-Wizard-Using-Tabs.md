@@ -18,16 +18,23 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 *Example:* lets set up a multi-step form with two tabs: one where users can input basic information, and the other where they can provide personal information.
 
-1. Configure the Tabs according to your requirements. For this example, rename Tab 1 to `Basic Info` and Tab 2 to `Personal Info`. 
+1. Configure the Tabs as required. For this example, rename Tab 1 to `Basic Info` and Tab 2 to `Personal Info`. 
 
 2. On Tab 1 (`Basic Info`), add a Button widget and configure its [**onClick**](/reference/widgets/button#onclick) event; select the **Store value** option from the action selector and specify:
    
 <dd>
 
-```js
-Key: 'defaulttab'  //string containing the key name that acts as a unique identifier
-Value: 'Personal Info' //Name of the tab you want to navigate, in this case the next tab
-```
+
+| Field Name	| Value    	|
+|-------	|---------------	|
+| Key   	| `defaulttab`   	|
+| Value 	| `Personal Info` 	|
+
+
+Here, `defaulttab` acts as a unique identifier and the Value Field represents the name of the tab you want to navigate, in this case the next tab (`Personal Info`).
+
+Using this configuration, the name of the next tab is saved in the `defaulttab` key, which can be used for navigation in subsequent steps.
+
 
 <figure>
   <img src="/img/tabs-next.png" style= {{width:"530px", height:"auto"}} alt="Configure Store value"/>
@@ -42,10 +49,14 @@ Value: 'Personal Info' //Name of the tab you want to navigate, in this case the 
    
 <dd>
 
-```js
-Key: 'defaulttab'  //unique identifier
-Value: 'Basic Info' //Name of the tab you want to navigate, in this case the previous tab
-```
+| Field Name	| Value    	|
+|-------	|---------------	|
+| Key   	| `defaulttab`   	|
+| Value 	| `Basic Info` 	|
+
+In this configuration, the same `defaulttab` key is used to store the name of the previous tab, which, in this case, is `Basic Info`.
+
+
 </dd>
 
 
