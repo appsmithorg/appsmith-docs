@@ -35,7 +35,7 @@ The above query retrieves data using `id` and `name` from the `users` database, 
 
 Follow these steps to configure the Select widget to display fetched data, and implement server-side filtering:
 
-1. Bind the filter query into the [**Source data**](/reference/widgets/select#source-data-arrayobject) property of the Select widget. Enable *JS* and add:
+1. Bind the filter query into the [**Source data**](/reference/widgets/select#source-data-arrayobject) property of the Select widget. Additionally, you can enable *JS* and add:
 
 <dd>
 
