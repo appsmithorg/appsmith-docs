@@ -26,9 +26,8 @@ WHERE name LIKE '%{{Select1.filterText}}%'
 ORDER BY id LIMIT 10;
 ```
 
-The above query selects `id` and `name` from the `users` database, with the results being filtered based on the text entered in the search tab of the Select widget.
+The above query retrieves data using `id` and `name` from the `users` database, with the results being filtered based on the text entered in the search tab of the Select widget.
 
- 
 
 </dd>
 
@@ -36,7 +35,7 @@ The above query selects `id` and `name` from the `users` database, with the resu
 
 Follow these steps to configure the Select widget to display fetched data, and implement server-side filtering:
 
-1. Bind the query data into the [**Source data**](/reference/widgets/select#source-data-arrayobject) property of the Select widget.
+1. Bind the query data into the [**Source data**](/reference/widgets/select#source-data-arrayobject) property of the Select widget. Enable *JS* and add:
 
 <dd>
 
