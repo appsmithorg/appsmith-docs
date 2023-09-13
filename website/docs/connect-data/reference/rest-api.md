@@ -51,7 +51,7 @@ The following section is a reference guide that provides a description of the pa
   "offset": {{ UsersTable.pageOffset }}
 }
 `}</pre>
-In the example above, values are collected from a [Table widget](/reference/widgets/table) and passed into a JSON object.</dd>
+In the example above, values are collected from a Table widget and passed into a JSON object.</dd>
     <ul>
       <li><b>FORM_URLENCODED:</b> Expects key/value pairs to be encoded into FORM_URLENCODED format as the body.</li>
     </ul>
@@ -106,8 +106,8 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 <dd><i>Options:</i>
   <ul>
     <li><b>None:</b> Doesn't use any pagination.</li>
-    <li><b>Paginate with Table Page No:</b> Use when your API expects an offset or increment value to determine which set of records to return. Follow the instructions that appear on the platform, or see <a href="/reference/widgets/table?current-edition=Offset_edition#server-side-pagination">Offset-based pagination</a> for more information.</li>
-    <li><b>Paginate with Response URL:</b> Use when your API returns cursor values to page through data. The <b>Previous URL</b> and <b>Next URL</b> fields expect the cursor values from the query response. For more information, see <a href="/reference/widgets/table?current-edition=Cursor#server-side-pagination">Cursor-based pagination</a>.</li>
+    <li><b>Paginate with Table Page No:</b> Use when your API expects an offset or increment value to determine which set of records to return. Follow the instructions that appear on the platform, or see <a href="/build-apps/how-to-guides/Server-side-pagination-in-table">Offset-based pagination</a> for more information.</li>
+    <li><b>Paginate with Response URL:</b> Use when your API returns cursor values to page through data. The <b>Previous URL</b> and <b>Next URL</b> fields expect the cursor values from the query response. For more information, see <a href="/build-apps/how-to-guides/Server-side-pagination-in-table">Cursor-based pagination</a>.</li>
   </ul>
 </dd>
 

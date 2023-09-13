@@ -16,7 +16,7 @@ If your API / DB Query times out, it could be due to one of the following reason
 * Your API / Database is behind a VPC which is not accessible from the appsmith Instance. This can be fixed by whitelisting the appsmith instance in your database or VPC.
 * Your API / Query is taking too long to respond. This can be fixed by fetching smaller datasets using
 
-[server-side pagination](/reference/widgets/table#server-side-pagination) or increasing the timeout of the API / Query in the [settings](/connect-data/reference/query-settings) section.
+[server-side pagination](/build-apps/how-to-guides/Server-side-pagination-in-table) or increasing the timeout of the API / Query in the [settings](/connect-data/reference/query-settings) section.
 
 ### Configuration error
 
