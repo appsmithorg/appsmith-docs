@@ -3,9 +3,9 @@ description: The page provides information about the deployment architecture of 
 ---
 # Deployment Architecture
 
-Appsmith can be accessed through the cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or self-hosted using the setup instructions provided in the [self-hosted](/getting-started/setup) guide. This page provides information about the deployment architecture of Appsmith.
+Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up), or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. This page provides information about the self-hosted deployment architecture of Appsmith.
 
-## Self-hosted instance architecture
+## Components
 
 Appsmith is deployed as a single Docker container with a single volume for storing persistent data. The diagram below illustrates the different components and how these services communicate with each other.
 
@@ -13,8 +13,6 @@ Appsmith is deployed as a single Docker container with a single volume for stori
   <img src="/img/Appsmith_Deployment_Architecture.png" style= {{width:"700px", height:"auto"}} alt="Appsmith Deployment Architecture"/>
   <figcaption align = "center"><i>Appsmith Deployment Architecture</i></figcaption>
 </figure>
-
-## How it works
 
 A single Docker container runs the following processes to deploy and get started with Appsmith:
 
