@@ -2,7 +2,7 @@
 description: This page shows how you can dynamically update widget properties using setters methods, and Appsmith framework functions. 
 ---
 
-# Update Widgets properties
+# Update Widgets Properties
 
 This page shows how you can dynamically update widget properties using setters methods, and Appsmith framework functions. 
 
