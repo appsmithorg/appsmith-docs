@@ -189,6 +189,10 @@ untrusted
 Filepicker
 Cloudinary
 Port
+supervisord
+Supervisord
+config
+Realtime
 navigateTo
 triggerable
 params

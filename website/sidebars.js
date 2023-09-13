@@ -204,6 +204,7 @@ const sidebars = {
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
+            'getting-started/setup/deployment-architecture',
             `getting-started/setup/best-practices`,
           ],
         },
@@ -479,6 +480,7 @@ const sidebars = {
     },
   ]
 }, //CODE end
+
     {
       //Advanced Concepts Start
       type: 'category',
