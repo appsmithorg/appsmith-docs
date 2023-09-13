@@ -5,7 +5,7 @@ description: The page provides information about the deployment architecture of 
 
 Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up) or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup) guide. 
 
-The Appsmith Cloud runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service. The self-hosted Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord.
+The Appsmith Cloud version runs on geographically distanced [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS. This deployment strategy allows the Appsmith Cloud platform to scale and avoid downtime during outages, as well as conduct rolling updates with minimal disruptions to service. The self-hosted Appsmith runs as a single Docker container, housing all five processes in one image via Supervisord.
 
 This page provides information about the self-hosted deployment architecture of Appsmith.
 
