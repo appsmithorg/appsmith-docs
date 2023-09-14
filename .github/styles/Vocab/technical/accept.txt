@@ -551,5 +551,6 @@ callback
 widgetName
 modalName
 Using Form
+Select
 Tabs
 
