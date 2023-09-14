@@ -5,9 +5,9 @@ description: >-
   the application
 ---
 
-# Appsmith Object
+# appsmith
 
-The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.
+The `appsmith` object is a global object that provides access to information and functionalities within an application through objects and utility functions.
 
 ## Properties
 
@@ -370,7 +370,7 @@ This object contains functions that allow you to retrieve the current user's loc
 }
 ```
 
-#### getCurrentPosition `function`
+#### geolocation.getCurrentPosition()
 
 <dd>
 
@@ -388,7 +388,7 @@ Similar to the original browser API, the `getCurrentPosition` function retrieves
 
 </dd>
 
-#### watchPosition `function`
+#### geolocation.watchPosition()
 
 <dd>
 
@@ -406,7 +406,7 @@ Similar to the original browser API, the `getCurrentPosition` retrieves periodic
 
 </dd>
 
-#### clearWatch `function`
+#### geolocation.clearWatch()
 
 <dd>
 
