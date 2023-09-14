@@ -115,12 +115,20 @@ This page offers resources to guide you in connecting Appsmith to many third-par
 <div class="containerGrid">
     <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
+            <img class="containerImage" src="/img/neon.png" alt="neon-logo"/>
+        </div> <hr/>
+        <div class="containerDescription"><strong>Neon</strong> is a serverless postgres built specifically for the cloud. <br/><br/> </div>
+         <div class="containerTutorialLink"><a href="https://community.appsmith.com/tutorial/build-powerful-and-scalable-tools-appsmith-and-neon"><strong>View Tutorial</strong> </a>
+         </div>
+    </div>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
+        <div class="containerCol">
             <img class="containerImage" src="/img/notion-logo_nw3DY5mWz.png" alt="Notion-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Notion</strong> is a project management and note-taking software.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/using-the-notion-api-to-build-a-content-management-system"><strong>View Tutorial</strong></a> </div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/replyto-logo_6yaZHFIeU.jpeg" alt="Replyio-logo"/>
         </div> <hr/>
@@ -128,24 +136,24 @@ This page offers resources to guide you in connecting Appsmith to many third-par
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+</div>
+
+<div class="containerGrid">
+    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/rowy-logo_pkqwXawrdl.png" alt="Rowy-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Rowy</strong> is a low-code platform for building your product backend, all in the browser. <br/><br/> </div>
          <div class="containerTutorialLink"><a href="https://www.youtube.com/watch?v=m-vSQRrar8A"><strong>View Tutorial</strong> </a></div>
     </div>
-</div>
-
-<div class="containerGrid">
-    <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/shopify-logo_3YbQ78SX7.png" alt="Shopify-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Shopify</strong> is an e-commerce platform for online stores and retail point-of-sale systems.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-a-shopify-admin-panel-a-step-by-step-guide"><strong>View Tutorial</strong></a> </div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
+    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/Slack-logo.png" alt="Slack-logo"/>
         </div> <hr/>
@@ -153,7 +161,10 @@ This page offers resources to guide you in connecting Appsmith to many third-par
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-a-daily-standup-application-in-30-minutes">
         <strong >View Tutorial </strong></a></div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+</div>
+
+<div class="containerGrid">
+     <div class="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
         <div class="containerCol">
             <img class="containerImage" src="/img/supabase-logo_JCWmwonfL.png" alt="Supabase-logo"/>
         </div> <hr/>
@@ -161,25 +172,20 @@ This page offers resources to guide you in connecting Appsmith to many third-par
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong> </a>
          </div>
     </div>
-</div>
-
-<div class="containerGrid">
-    <div class="containerColumnSampleApp columnGrid column-one">
+    <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
             <img class="containerImage" src="/img/xano-logo_nnco8rx_b.png" alt="Xano-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Xano</strong> is the fastest no-code backend development platform.<br/><br/></div>
          <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/adding-social-authentication"><strong>View Tutorial</strong></a> </div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
+    <div class="containerColumnSampleApp columnGrid column-three">
         <div class="containerCol">
             <img class="containerImage" src="/img/zapier-logo_odZ9wZQ3vY.jpeg" alt="Zapier-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Zapier</strong> allows end users to integrate the web applications they use and automate workflows.<br/><br/>  </div>
         <div class="containerTutorialLink"><a href="https://www.appsmith.com/blog/want-to-automate-your-apps-use-zapier-to-connect-specialized-platforms">
         <strong >View Tutorial </strong></a></div>
-    </div>
-    <div class="columnGrid column-three" style={{padding:"20px"}}>
     </div>
 </div>
 

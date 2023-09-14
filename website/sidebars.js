@@ -76,6 +76,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
+                'getting-started/setup/installation-guides/google-cloud-run',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/cloudjiffy',
@@ -203,6 +204,7 @@ const sidebars = {
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
               ],
             },
+            'getting-started/setup/deployment-architecture',
             `getting-started/setup/best-practices`,
           ],
         },
@@ -478,6 +480,7 @@ const sidebars = {
     },
   ]
 }, //CODE end
+
     {
       //Advanced Concepts Start
       type: 'category',
