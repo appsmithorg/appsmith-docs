@@ -1,6 +1,6 @@
 # Create a Multi-step Form or Wizard Using Tabs
 
-This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user information in a structured step-by-step manner.
+This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps.
 
 
 <figure>
