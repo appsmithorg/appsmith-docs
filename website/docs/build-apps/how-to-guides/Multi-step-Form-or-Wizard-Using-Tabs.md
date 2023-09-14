@@ -18,7 +18,7 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 
 *Example:* lets set up a multi-step form with two tabs: one where users can input basic information, and the other where they can provide personal information.
 
-1. Rename the Tabs as required. For this example, rename Tab 1 to `Basic Info` and Tab 2 to `Personal Info`. 
+1. Rename the Tabs as required. In this example, Tab 1 is renamed to `Basic Info`, and Tab 2 to `Personal Info`. 
 
 2. On Tab 1 (`Basic Info`), add a Button widget and configure its [**onClick**](/reference/widgets/button#onclick) event; select the **Store value** option from the action selector and specify:
    
@@ -31,7 +31,7 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 | Value 	| `Personal Info` 	|
 
 
-In this configuration, `defaulttab` acts as a unique identifier, while the Value Field represents the name of the tab you want to navigate to, which, in this case, is the next tab `Personal Info`. 
+In this configuration, `defaulttab` acts as a unique identifier, while the Value field represents the name of the tab you want to navigate to, which, in this case, is the next tab `Personal Info`. 
 
 This setup stores the next tab's name in the `defaulttab` key, which can then be used for navigation in subsequent steps.
 
