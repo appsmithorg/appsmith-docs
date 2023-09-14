@@ -55,7 +55,7 @@ Follow these steps to configure the Select widget to display fetched data, and i
 
 3. Set the Select widget's [**onFilterUpdate**](/reference/widgets/select#onfilterupdate) event to run the filter query.
 
-After completing these steps, you can search for specific terms using the Search widget's search box.
+After completing these steps, you can search for specific terms using the Select widget's search box.
 
 Check out this sample app for [Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6215d4742882606a1df5c695).
 
