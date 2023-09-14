@@ -25,6 +25,11 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 <dd>
 
 
+<figure>
+  <img src="/img/tabs-next.png" style= {{width:"530px", height:"auto"}} alt="Configure Store value"/>
+  <figcaption align = "center"><i>Configure Store value</i></figcaption>
+</figure>
+
 | Field Name	| Value    	|
 |-------	|---------------	|
 | Key   	| `defaulttab`   	|
@@ -35,22 +40,6 @@ In this configuration, `defaulttab` acts as a unique identifier, while the Value
 
 This setup stores the next tab's name in the `defaulttab` key, which can then be used for navigation in subsequent steps.
 
-
-
-
-
-
-
-
-
-
-
-
-
-<figure>
-  <img src="/img/tabs-next.png" style= {{width:"530px", height:"auto"}} alt="Configure Store value"/>
-  <figcaption align = "center"><i>Configure Store value</i></figcaption>
-</figure>
 
 
 </dd>
@@ -80,7 +69,7 @@ In this configuration, the same `defaulttab` key is used to store the name of th
 {{appsmith.store.defaulttab}}
 ```
 
-This allows you to access the Tab name from the store using the `defaulttab` key.
+This allows you to access the Tab name from the store using the `defaulttab` key. 
 
 </dd>
 
