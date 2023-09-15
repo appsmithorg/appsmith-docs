@@ -20,7 +20,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <img class="containerImage" src="/img/date-pick.svg" alt="Datepicker"/>
             </a> 
         </div> 
-        <b><a href="//reference/widgets/datepicker">Datepicker</a></b>
+        <b><a href="/reference/widgets/datepicker">Datepicker</a></b>
     </div>
     <div class="columnGrid column-three" align="center">
         <div class="containerCol">
@@ -126,7 +126,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <img class="containerImage" src="/img/multi-select.svg" alt="multi-select"/>
             </a> 
         </div> 
-        <b><a href="//reference/widgets/multiselect">Multi Select</a></b>
+        <b><a href="/reference/widgets/multiselect">Multi Select</a></b>
     </div>
       <div class="columnGrid column-one" align="center">
         <div class="containerCol">
@@ -252,7 +252,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <img class="containerImage" src="/img/form-icon.svg" alt="Form"/>
             </a> 
         </div> 
-        <b><a href="//reference/widgets/form">Form</a></b>
+        <b><a href="/reference/widgets/form">Form</a></b>
     </div>
    </div>
 
@@ -362,7 +362,7 @@ Appsmith offers a powerful set of widgets to help you build dynamic and function
             <img class="containerImage" src="/img/radio-icon.svg" alt="radio-icon"/>
             </a> 
         </div> 
-        <b><a href="//reference/widgets/radio-group">Radio Group</a></b>
+        <b><a href="/reference/widgets/radio-group">Radio Group</a></b>
     </div>
 
 </div>
