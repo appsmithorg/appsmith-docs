@@ -33,7 +33,7 @@ ORDER BY id LIMIT 10;
 ```
 
 :::note
-Please ensure that you turn off [prepared statements](/connect-data/concepts/how-to-use-prepared-statements) in the query editor for this configuration.
+Ensure that you turn off prepared statements in the query editor for this configuration. For more details, see [Prepared statements](/connect-data/concepts/how-to-use-prepared-statements).
 :::
 
 
