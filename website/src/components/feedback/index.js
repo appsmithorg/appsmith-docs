@@ -29,7 +29,7 @@ const FeedbackWidget = () => {
     <div className="feedback-widget-container">
       {feedback.helpful === '' ? (
         <>
-          <p className="feedback-heading">Was this page helpful?</p>
+          <div className="feedback-heading">Was this page helpful?</div>
           <button
             id="thumbs-up"
             className={feedback.helpful === 'yes' ? 'selected' : ''}
@@ -46,7 +46,7 @@ const FeedbackWidget = () => {
           </button>
         </>
       ) : (
-        <p className="feedback-heading line-spacing">Thank you for your <br/> feedback!</p>
+        <div className="feedback-heading">Thank you for your feedback!</div>
       )}
     </div>
   );
