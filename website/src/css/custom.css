@@ -512,49 +512,78 @@ body {
  
 }
 
-/* Custom styles for the feature label */
-.tag-label {
-  padding: 5px 10px;
-  border: 1px solid gray;
-  border-radius: 14px;
-  font-size: medium;
-  width: 17%;
-  text-align: center;
-  margin:10px;
-  float:right;
-  
+/*
+.tags {
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: -61px;
+  margin-left: -272px;
+  margin-bottom: 5px;
+}*/
+
+.tag-wrapper{
+  display: flex;
+  align-items: center;
 }
 
-.tag-container {
-  margin-top: -70px;
-  margin-left: 10px;
-  display: flex;
-  justify-content: left;
-  padding:5px;
-  width: 100%;
-}
 
 .tags {
-  width: 797px;
-  height: 1,494px;
-  top: 60px;
-  left: 285px;
-  padding: 24px, 32px, 24px, 32px;
-  gap: 16px; 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .tags {
+    flex-direction: column;
+    /* Stack tags vertically */
+    align-items: flex-start;
+    /* Align tags to the left */
+    top: 0;
+    /* Reset the top position */
+    left: 0;
+    /* Reset the left position */
+  }
 }
 
 .tag {
-width: 58px;
-height: 24px;
-top: 64px;
-left: 34px;
-padding: 4px, 8px, 4px, 8px;
-border-radius: 4px;
-border: 1px;
-gap: 2px;
-
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  display: flex;
+  padding: 4px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.tag:hover {
-background-color: #0056b3; /* Hover background color */
+.tag .enterprise:hover, .business:hover {
+  cursor:pointer;
+}
+
+.enterprise { 
+  color: #501FCD;
+  border-radius: 4px;
+  border: 1px solid rgba(80, 31, 205, 0.50);
+  background: rgba(113, 63, 243, 0.05);
+}
+
+.business {
+  color: #E15615;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 109, 45, 0.50);
+  background: rgba(255, 109, 45, 0.05);
+}
+
+.neutral {
+  color: #4C5664;
+  border-radius: 4px;
+  border: 1px solid rgba(76, 86, 100, 0.50);
+  background: var(--colors-ui-content-bg-muted, #F1F5F9);
 }

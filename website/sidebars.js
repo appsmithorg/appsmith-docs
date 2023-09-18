@@ -526,7 +526,11 @@ const sidebars = {
         },
 
         'advanced-concepts/more/backup-restore',
-        'advanced-concepts/audit-logs',
+        {
+          type: 'doc',
+          id: 'advanced-concepts/audit-logs',
+          label: 'Audit Logs',
+        },
         'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
