@@ -69,6 +69,8 @@ Click the **Run** button on the top right corner to execute the JS function. If 
 
 JS Object variables are mutable and can be used to contain the reference to a value. You can use it to store your data in a non-persistent state. As the storage state is non-persistent, the data is saved until the page reloads or until the user closes the window. JSObject variables can be of any data type, such as Number, String, Object, Array, Date object, etc.
 
+<VideoEmbed host="youtube" videoId="CYMdw3NTIcE" title="How To Code Better Apps With Mutable JavaScript Variables" caption="How To Code Better Apps With Mutable JavaScript Variables"/>
+
 **Example 1:** a counter that increments or decrements the value in a JS Object variable.
 
 1. Create a JS Object `JSObject1` and add the following code:
