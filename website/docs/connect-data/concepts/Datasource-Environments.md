@@ -15,6 +15,9 @@ Datasource environments enable you to separate staging and production configurat
 
 This allows you to create queries and switch between environments, with the queries automatically using the selected environment.
 
+<VideoEmbed host="youtube" videoId="2sLvrFsVEDg" title="How To Use Datasource Environments" caption="How To Use Datasource Environments"/>
+
+
 ## Environments on Appsmith
 
 Appsmith provides two environments: 
