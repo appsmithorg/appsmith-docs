@@ -490,6 +490,7 @@ ul.circle > li:before {
   height: 16px;
   justify-content: center;
   align-items: center;
+  cursor:pointer;
 }
 
 #thumbs-down > img {
@@ -498,6 +499,7 @@ ul.circle > li:before {
   height: 16px;
   justify-content: center;
   align-items: center;
+  cursor:pointer;
   }
 
 .selected {
