@@ -104,9 +104,9 @@ Allows you to add multiple chart series. With this you can populate the chart wi
 
 <dd>
 
-[ECharts](https://echarts.apache.org/handbook/en/get-started/) is a JavaScript chart library by Apache that provides a wide range of chart types. To display an EChart in Appsmith, you can integrate it by embedding the EChart code using mustache syntax, like `{{<your-chart-data>}}`.
+[ECharts](https://echarts.apache.org/handbook/en/get-started/) is a JavaScript chart library by Apache that provides a wide range of chart types. To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, like `{{<your-chart-data>}}`.
 
-While you can directly bind data to a **Custom EChart Configuration** property, it is recommended to use a JSObject for structured and maintainable chart configurations.
+While you can directly bind data to a **Custom ECharts Configuration** property, it is recommended to use a JSObject for structured and maintainable chart configurations.
 
 *Expected data structure:*
 
@@ -143,7 +143,7 @@ While you can directly bind data to a **Custom EChart Configuration** property, 
 
 
 
-Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [EChart documentation](https://echarts.apache.org/examples/en/index.html#chart-type-line). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
+Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [ECharts documentation](https://echarts.apache.org/examples/en/index.html#chart-type-line). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
 
 *Examples:*
 
@@ -155,7 +155,7 @@ Each chart type has different configurations and options. To learn more about th
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
-Add the following code to the **Custom EChart Configuration** property:
+Add the following code to the **Custom ECharts Configuration** property:
 
 ```js
 {{
@@ -214,7 +214,7 @@ Add the following code to the **Custom EChart Configuration** property:
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
-Add the following code to the **Custom EChart Configuration** property:
+Add the following code to the **Custom ECharts Configuration** property:
 
    ```js
    {{
@@ -316,7 +316,7 @@ Add the following code to the **Custom EChart Configuration** property:
 
 
   </TabItem>
-  <TabItem value="3D-EChart" label="Bar 3D">
+  <TabItem value="3D-ECharts" label="Bar 3D">
 
 <figure>
   <img src="/img/3D-ECHARTS.gif" style= {{width:"700px", height:"auto"}} alt=""/>
@@ -397,7 +397,7 @@ To create a 3D Bar chart, it's recommended to use JavaScript objects for definin
 
 
 
-2. In the **Custom EChart Configuration** property, add the following code to display data:
+2. In the **Custom ECharts Configuration** property, add the following code to display data:
 
 ```js
   {{JSObject1.options()}}
