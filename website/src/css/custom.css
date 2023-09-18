@@ -511,3 +511,50 @@ body {
   width:15%;
  
 }
+
+/* Custom styles for the feature label */
+.tag-label {
+  padding: 5px 10px;
+  border: 1px solid gray;
+  border-radius: 14px;
+  font-size: medium;
+  width: 17%;
+  text-align: center;
+  margin:10px;
+  float:right;
+  
+}
+
+.tag-container {
+  margin-top: -70px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: left;
+  padding:5px;
+  width: 100%;
+}
+
+.tags {
+  width: 797px;
+  height: 1,494px;
+  top: 60px;
+  left: 285px;
+  padding: 24px, 32px, 24px, 32px;
+  gap: 16px; 
+}
+
+.tag {
+width: 58px;
+height: 24px;
+top: 64px;
+left: 34px;
+padding: 4px, 8px, 4px, 8px;
+border-radius: 4px;
+border: 1px;
+gap: 2px;
+
+}
+
+.tag:hover {
+background-color: #0056b3; /* Hover background color */
+}

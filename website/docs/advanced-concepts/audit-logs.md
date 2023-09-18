@@ -3,12 +3,22 @@ sidebar_position: 6
 description: Audit logs allow you to keep records of everything that happens on your instance.
 ---
 
-# Audit Logs
+# Audit Logs  
+
+<Tags tags={["Business plan", "Enterprise plan", "Beta"]} />
+
+<Tags
+  tags={[
+    { name: "Business plan", link: "https://www.appsmith.com/pricing" },
+    { name: "Enterprise Plan", link: "https://www.appsmith.com/pricing" },
+    { name: "Beta" }
+  ]}
+/>
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events. 
 
 :::info
-Audit logs are only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
+Audit logs are only available in Appsmith [**Enterprise Plan**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
 :::
 
 There are several kinds of events that are logged:
