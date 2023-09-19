@@ -501,18 +501,23 @@ ul.circle > li:before {
   align-items: center;
   }
 
-.selected {
-  opacity: 0.7;
+  #thumbs-down:hover, #thumbs-up:hover {
+    background-color: #F1F5F9;
+    border-color: #CDD5DF;
+  }
+
+#thumbs-down:active, #thumbs-up:active, #thumbs-down::selection, #thumbs-up::selection {
+  border-radius: 4px;
+  border: 1px solid #99A4B3;
+  background: #E3E8EF;
 }
 
-/* Media query for smaller screens */
 @media (max-width: 768px) {
   .feedback-widget-container {
     right: auto;
-    left: 20px; /* Adjust the position for smaller screens */
+    left: 20px;
   }
 }
-
 
 body {
   margin-top: -30px !important;
