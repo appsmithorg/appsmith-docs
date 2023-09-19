@@ -22,13 +22,13 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to choose from a variety of built-in chart types to visualize your data. Each chart type has its own unique way of representing data, allowing you to choose the most suitable visualization for your specific needs. Here are the available chart types:
 
-* Line Chart, 
-* Bar Chart, 
-* Pie Chart, 
-* Column Chart, 
-* Area Chart, 
-* Custom ECharts, and  
-* Custom Fusion Chart
+* Line Chart 
+* Bar Chart 
+* Pie Chart 
+* Column Chart 
+* Area Chart 
+* [Custom ECharts](#custom-echarts)  
+* [Custom Fusion Chart](#custom-fusion-chart)
 
 </dd>
 
@@ -100,13 +100,14 @@ Allows you to add multiple chart series. With this you can populate the chart wi
 
 </dd>
 
-### Custom EChartS 
+### Custom ECharts 
 
 <dd>
 
-[ECharts](https://echarts.apache.org/handbook/en/get-started/) is a JavaScript chart library by Apache that provides a wide range of chart types. To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, like `{{<your-chart-data>}}`.
+[ECharts](https://echarts.apache.org/handbook/en/get-started/) is a JavaScript chart library by Apache that provides a wide range of chart types. 
 
-While you can directly bind data to a **Custom ECharts Configuration** property, it is recommended to use a JSObject for structured and maintainable chart configurations.
+To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, `{{<your-chart-data>}}` in the **Custom EChart Configuration** property, like:
+
 
 *Expected data structure:*
 
@@ -138,6 +139,8 @@ While you can directly bind data to a **Custom ECharts Configuration** property,
 
 
 
+
+While you can directly bind data to a **Custom ECharts Configuration** property, it is recommended to use a JSObject for structured and maintainable chart configurations.
 
 
 
@@ -325,7 +328,7 @@ Add the following code to the **Custom ECharts Configuration** property:
 
 To create a 3D Bar chart, it's recommended to use JavaScript objects for defining your chart configuration. 
 
-1. Create a JSObject, and add the following code:
+1. In the JSObject, add the following code:
 
   ```js
   export default {
@@ -414,7 +417,7 @@ To create a 3D Bar chart, it's recommended to use JavaScript objects for definin
 <dd>
 
 :::caution
-The support for Custom Fusion Charts ends on March 1st, 2024. Change the chart type to E-charts Custom to switch.
+The support for Custom Fusion Charts ends on March 1st, 2024. Change the chart type to [Custom ECharts](#custom-echarts) to switch.
 :::
 
 :::info
