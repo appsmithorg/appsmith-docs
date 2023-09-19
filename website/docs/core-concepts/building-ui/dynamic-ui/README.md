@@ -11,6 +11,34 @@ This page shows how you can dynamically bind widget properties using queries, an
 
 This method allows you to update widget data based on the query response.
 
+### One-click binding
+
+Appsmith simplifies the process of data binding with one-click binding feature. With one-click binding, you can connect your widget to existing datasources and have Appsmith automatically generate queries for you. This feature is currently supported by the following widgets: 
+
+* Table
+* Select
+* Multi select
+
+#### Generate queries automatically
+
+With this method, you can connect widgets to your datasource, and Appsmith automatically generates fetch, insert, pagination, and filtering queries based on your widget and datasource selections.
+
+
+
+<iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" width="900" height="750"></iframe>
+
+
+1. Click **Connect Data** and, in the "Choose your data source," section select your preferred datasource.
+2. 
+
+#### Connect existing queries
+
+<iframe src="https://demo.arcade.software/JhOT0E5Jf7UaIBTshWRH?embed" width="900" height="700"></iframe>
+
+
+
+### q
+
 <dd>
 
 *Example:* if you have data that you want to display in a Table widget; you can do so by binding the response to the widget's properties using mustache syntax `{{QUERY_NAME.data}}`. 
