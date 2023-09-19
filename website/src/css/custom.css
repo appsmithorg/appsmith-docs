@@ -506,7 +506,7 @@ ul.circle > li:before {
     border-color: #CDD5DF;
   }
 
-#thumbs-down:active, #thumbs-up:active, #thumbs-down::selection, #thumbs-up::selection {
+#thumbs-down:active, #thumbs-up:active {
   border-radius: 4px;
   border: 1px solid #99A4B3;
   background: #E3E8EF;
