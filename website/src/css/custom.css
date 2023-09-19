@@ -482,6 +482,7 @@ ul.circle > li:before {
   border-radius: 4px;
   border: 1px solid #CDD5DF;
   background:  #FFF;
+  cursor: pointer;
 }
 
 #thumbs-up > img {
@@ -490,7 +491,6 @@ ul.circle > li:before {
   height: 16px;
   justify-content: center;
   align-items: center;
-  cursor:pointer;
 }
 
 #thumbs-down > img {
@@ -499,7 +499,6 @@ ul.circle > li:before {
   height: 16px;
   justify-content: center;
   align-items: center;
-  cursor:pointer;
   }
 
 .selected {
