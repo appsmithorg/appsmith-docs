@@ -1,19 +1,20 @@
 ---
 sidebar_position: 6
 description: Audit logs allow you to keep records of everything that happens on your instance.
+title: Audit Logs
 hide_title: true
 ---
 
 <div className="tag-wrapper">
  <h1> Audit Logs </h1>
 
-  <Tags
-    tags={[
-      { name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
-      { name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" },
-      { name: "Beta", additionalClass: "neutral" }
-    ]}
-  />
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
 </div>
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events.

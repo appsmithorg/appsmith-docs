@@ -512,21 +512,10 @@ body {
  
 }
 
-/*
-.tags {
-  display: flex;
-  padding: 4px 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-top: -61px;
-  margin-left: -272px;
-  margin-bottom: 5px;
-}*/
-
 .tag-wrapper{
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
 
@@ -535,6 +524,8 @@ body {
   flex-wrap: wrap;
   gap: 8px;
   align-items: center;
+  position: relative;
+  top: -10px !important;
 }
 
 /* Media query for smaller screens */

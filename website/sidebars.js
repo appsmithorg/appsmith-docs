@@ -498,7 +498,11 @@ const sidebars = {
               'advanced-concepts/granular-access-control/roles', 
           ]
         },
-        `advanced-concepts/user-provisioning-group-sync`,
+        {
+          type: 'doc',
+          id: `advanced-concepts/user-provisioning-group-sync`,
+          label: 'Setup SCIM Provisioning',
+        },
         {
           type: 'category',
           label: 'Version Control with Git',
@@ -531,7 +535,12 @@ const sidebars = {
           id: 'advanced-concepts/audit-logs',
           label: 'Audit Logs',
         },
-        'advanced-concepts/branding',
+        {
+          type: 'doc',
+          id: 'advanced-concepts/branding',
+          label: 'Branding',
+        },
+        
       ],
     }, //Advanced Concepts end
     {
