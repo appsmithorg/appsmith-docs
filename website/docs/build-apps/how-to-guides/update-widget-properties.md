@@ -47,30 +47,3 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 </dd>
 
 
-## Using storeValue()
-
-This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
-
-<dd>
-
-*Example:* if you want to save the text of an Input widget, you can do so by using `storeValue()`. 
-
-1. In the [**onTextChanged**](/reference/widgets/input#ontextchanged) event of the Input widget, enable JS and add the following code: 
-
-
-```js
-{{storeValue('inputData', Input1.text);}}
-```
-
-2. Drag the Text widget and add the following code to the **Text** property to display the saved text:
-
-```js
-{{appsmith.store.inputData}}
-```
-
-</dd>
-
-Similarly, you can use different functions to perform actions like page navigation, displaying alerts, managing modals, and storing data in local storage.
-
-You can also use `{{appsmith.user.email}}` to display the email address of the current user.
-
