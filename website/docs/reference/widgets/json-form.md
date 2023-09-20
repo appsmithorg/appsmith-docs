@@ -17,7 +17,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Connects the JSON Form widget to your datasource, allowing you to add new records or edit existing ones. To connect your datasource to the JSON Form widget, click on Generate Form and select your datasource or query.
+Connects the JSON Form widget to your datasource, allowing you to add new records or edit existing ones. To connect your datasource to the JSON Form widget, click on **Generate Form** and select your datasource or query.
 
 If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a JSON form tailored to your datasource. Additionally, it creates an insert query connected to the **onSubmit** event. 
 
