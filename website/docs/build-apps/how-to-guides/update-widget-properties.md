@@ -12,7 +12,6 @@ Widget property setters enable you to modify the values of widget properties at 
 
 These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure the execution and sequencing of subsequent lines of code in Appsmith.
 
-<dd>
 
 *Example:* if you want to display a Form widget only when a user selects a specific option from a Select widget, such as `Yes` and `No`.
 
@@ -44,6 +43,14 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 
 
 
-</dd>
 
 
+### Using JS expressions
+
+JavaScript expressions, enclosed within {{ ... }}, serve as dynamic scripting elements in your application. These expressions allow you to create logic that reacts to user inputs and events.
+
+*Example:* if you want to display a widget only when a user selects `Yes` from a Select widget. In the **Visible** property of the widget, enable JS and add the following JS expression:
+
+```js
+{{Select1.selectedOptionValue === 'Yes' ? true : false}}
+```

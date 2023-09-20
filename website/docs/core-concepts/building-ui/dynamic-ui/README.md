@@ -19,7 +19,12 @@ Appsmith simplifies the process of data binding with the one-click binding featu
 * Select
 * Multiselect
 
-<iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" width="900" height="750"></iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 
 1. In the Data property of the widget, select your preferred datasource from the **Choose Your Datasource** section.
 2. Select the data/collection you want to display. 
@@ -51,7 +56,7 @@ SELECT * FROM public."users" LIMIT 10;
 
 </dd>
 
-## Using JS Objects
+## Using JS
 
 This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding the results returned in variables or functions to different widget properties. 
 
@@ -93,7 +98,7 @@ Additionally, you can also bind data from queries directly into JavaScript objec
 *Example*: you want to display Echarts using JSObjects, to that you can add the following code in the JS object:
 
 ```
-
+te
 ```
 
 #### Asynchronous functions
@@ -105,6 +110,13 @@ See [How to display data from functions](/write-code/how-to-guides/display-data-
 
 ### JS expressions
 
+JavaScript expressions are code snippets that produce a value or result. They can be used to calculate values, make decisions, or generate dynamic content.
+
+*Example*: if you want to pre-fill an Input widget with a user's email ID or name, you can achieve this by adding the following code in the **Default value** property:
+
+```js
+{{appsmith.user.email}}
+```
 
 
 ## Using widgets
@@ -156,7 +168,4 @@ This method uses the Appsmith framework function [storeValue()](/reference/appsm
 </dd>
 
 Similarly, you can use different functions to perform actions like page navigation, displaying alerts, managing modals, and storing data in local storage.
-
-You can also use `{{appsmith.user.email}}` to display the email address of the current user.
-
 
