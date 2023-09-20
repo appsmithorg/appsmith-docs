@@ -217,14 +217,11 @@ This issue occurs while upgrading your Appsmith Business or Enterprise Helm char
 
 #### Cause
 
-The issue happens because of how Helm handles the upgrade:
-
-- During an upgrade, Helm compares your existing application configuration with the new chart, verifying the updated/supported API versions.
-- When Kubernetes removes an API version, the Go Client library can no longer understand the deprecated objects. This results in an error when Helm interacts with the library, causing the upgrade to fail.
+The issue happens because of how Helm handles the upgrade. During an upgrade, Helm compares your existing application configuration with the new chart, verifying the updated/supported API versions. When Kubernetes removes an API version, the Go Client library can no longer understand the deprecated objects. This results in an error when Helm interacts with the library, causing the upgrade to fail.
 
 #### Solution
 
-To resolve this issue, use the `helm-mapkubeapis` plugin. This plugin helps Helm understand the changes made in Kubernetes.
+To resolve this issue, use the [helm-mapkubeapis](https://github.com/helm/helm-mapkubeapis) plugin. This plugin helps Helm understand the changes made in Kubernetes.
 
 Follow these steps to solve the issue:
 
