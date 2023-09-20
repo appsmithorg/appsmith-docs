@@ -33,9 +33,8 @@ If you encounter the error that `ports 80 & 443` aren't open, its is recommended
 
 :::tip
 To stop a previous version of appsmith running on these ports, run the following:
-
-- `sudo su`
-- `docker container kill $(docker ps -q)`
+* `sudo su`
+* `docker container kill $(docker ps -q)`
 :::
 
 ## Containers failed to start
@@ -150,7 +149,7 @@ MongoDB fails to start, after migrating to MongoDB version 5.
 
 <Message
   messageContainerClassName="error"
-  messageContent="Illegal instruction (core dumped) mongod –fork –port 27017 –dbpath “$MONGO_DB_PATH"
+  messageContent="Illegal instruction (core dumped) mongod `–fork –port 27017 –dbpath` “$MONGO_DB_PATH"
 ></Message>
 
 #### Cause
