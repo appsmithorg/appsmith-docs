@@ -1,14 +1,15 @@
 ---
 sidebar_position: 3
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Deployment Errors
 
 ## Ports unavailable
 
-If you encounter the error that ```ports 80 & 443``` aren't open, its is recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port.
+If you encounter the error that `ports 80 & 443` aren't open, its is recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port.
 
 1.  In the file `docker-compose.yml`, change the ports for the [Nginx](https://www.nginx.com) container to a custom port as shown in the below example.
 
@@ -27,16 +28,17 @@ If you encounter the error that ```ports 80 & 443``` aren't open, its is recomme
           - "8443:443"
           - "9801:9001"
     ```
-2. Run `docker-compose up -d`
+
+2.  Run `docker-compose up -d`
 
 :::tip
 To stop a previous version of appsmith running on these ports, run the following:
 
-* ```sudo su```
-* ```docker container kill $(docker ps -q)```
+- `sudo su`
+- `docker container kill $(docker ps -q)`
 :::
 
-## Containers Failed to Start
+## Containers failed to start
 
 If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work. If it doesn't, please reach out on [discord](https://discord.com/invite/rBTTVJp)
 
@@ -49,9 +51,9 @@ Restart the installation process with valid values.
 
 ## Unable to access Appsmith
 
-* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
-* You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
-* You may need to wait for a few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
+- Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
+- You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
+- You may need to wait for a few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
 
 ## OAuth sign up not working
 
@@ -109,12 +111,11 @@ sudo docker-compose up -d --force-recreate appsmith-internal-server
 
 In a minute or two, the server should now come up and be ready.
 
-
 ## Unable to send emails
 
 If you are having trouble with invitation emails not being sent, even though the **Admin email setup** is able to send test emails, it may be due to an issue with the configuration of the email parameters.
 
-If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in the configuration file. If this value is empty, please set it to the same email address that you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
+If you aren't receiving the invitation email, please check the value for `APPSMITH_REPLY_TO` in the configuration file. If this value is empty, please set it to the same email address that you are using for `APPSMITH_MAIL_FROM` and **restart the application**.
 
 This should resolve the issue of not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and there are no issues with the network or other components preventing the emails from being sent.
 
@@ -127,10 +128,12 @@ The instance keeps restarting due to a server shutdown displaying a schema misma
 #### Error message
 
 <Message
-messageContainerClassName="error" 
-messageContent="Looks like you skipped some required updates, please go back to the mandatory upgrade path v1.9.2"></Message>
+  messageContainerClassName="error"
+  messageContent="Looks like you skipped some required updates, please go back to the mandatory upgrade path v1.9.2"
+></Message>
 
 #### Cause
+
 As the error message in the server logs suggests, your Appsmith instance has missed a required checkpoint upgrade. This occurs if you are manually upgrading and have skipped a version or are on an automatic upgrade but your instance hasn't checked for updates for a particular period.
 
 #### Solution
@@ -140,27 +143,32 @@ To resolve this error, you must [upgrade to the checkpoint version](/getting-sta
 To prevent similar issues in the future, consider [enabling auto updates](/getting-started/setup/installation-guides/docker#enabling-appsmith-auto-updates) for your Appsmith instance. If you already had auto updates on and still encountered this issue, please contact the [Appsmith team](https://discord.com/invite/rBTTVJp) to determine the cause of the deployment problem
 
 ## Illegal instruction (core dumped)
+
 MongoDB fails to start, after migrating to MongoDB version 5.
 
 #### Error message
 
 <Message
-messageContainerClassName="error" 
-messageContent="Illegal instruction (core dumped) mongod –fork –port 27017 –dbpath “$MONGO_DB_PATH"></Message>
+  messageContainerClassName="error"
+  messageContent="Illegal instruction (core dumped) mongod –fork –port 27017 –dbpath “$MONGO_DB_PATH"
+></Message>
 
 #### Cause
+
 MongoDB version 5 has specific CPU requirements. If these requirements are not met the server wouldn't start.
 
 #### Solution
+
 To resolve this error, you must upgrade your infrastructure. See the [List of complaint hardware](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support).
 
 If it is not possible for you to upgrade your infrastructure to support MongoDB version 5 or higher:
-* You may use an external MongoDB version 5 or higher on [MongoDB Atlas](https://www.mongodb.com/pricing).
-* If you are upgrading your infrastructure and need time, consider downgrading Appsmith. Once you have upgraded MongoDB, [Update Appsmith](/getting-started/setup/instance-management/update-appsmith) to the latest version to use new features.
+
+- You may use an external MongoDB version 5 or higher on [MongoDB Atlas](https://www.mongodb.com/pricing).
+- If you are upgrading your infrastructure and need time, consider downgrading Appsmith. Once you have upgraded MongoDB, [Update Appsmith](/getting-started/setup/instance-management/update-appsmith) to the latest version to use new features.
 
 Follow the steps below to downgrade to v1.8.15:
 
-  1. Access your Appsmith instance and make the below change to the `docker-compose.yml` file:
+1. Access your Appsmith instance and make the below change to the `docker-compose.yml` file:
 
   <Tabs groupId="appsmithEditions" queryString="current-edition">
     <TabItem value="CE" label="Community Edition" default>
@@ -172,7 +180,7 @@ Follow the steps below to downgrade to v1.8.15:
       image: index.docker.io/appsmith/appsmith-ce:v1.8.15
       container_name: appsmith
     ```
-    
+
     </TabItem>
     <TabItem value="BE" label="Business Edition">
 
@@ -184,12 +192,54 @@ Follow the steps below to downgrade to v1.8.15:
       container_name: appsmith
     ```
     </TabItem>
+
   </Tabs>
 
+2. Run the restart command:
 
-  2. Run the restart command: 
+```bash
+docker-compose up -d
+```
 
+Your server starts with version 1.8.15, which makes all the necessary schema changes to your Appsmith instance.
+
+## Unable to build Kubernetes objects from current release
+
+This issue occurs while upgrading your Appsmith Business or Enterprise Helm charts from version `3.0.4` to `3.0.7` and results in an upgrade failure.
+
+#### Error message
+
+<Message
+  messageContainerClassName="error"
+  messageContent="UPGRADE FAILED: unable to build kubernetes objects from current release manifest: resource mapping not found for name: '<chart-name>' namespace: '<namespace>' from '': no matches for kind 'HorizontalPodAutoscaler' in version 'autoscaling/v2beta1' ensure CRDs are installed first"
+></Message>
+
+#### Cause
+
+The issue happens because of how Helm handles the upgrades:
+
+- During an upgrade, Helm compares your existing application configuration with the new chart, verifying the updated/supported API versions.
+- When Kubernetes removes an API version, the Go Client library can no longer understand the deprecated objects. This results in an error when Helm interacts with the library, causing the upgrade to fail.
+
+#### Solution
+
+To resolve this issue, use the `helm-mapkubeapis` plugin. This plugin helps Helm understand the changes made in Kubernetes.
+
+Follow these steps to solve the issue:
+
+- Install `helm-mapkubeapis` plugin with:
   ```bash
-  docker-compose up -d
+  helm plugin install https://github.com/helm/helm-mapkubeapis
   ```
-Your server starts with version 1.8.15, which makes all the necessary schema changes to your Appsmith instance. 
+- Verify plugin installation with:
+  ```bash
+  helm plugin ls
+  ```
+- Apply the plugin to the Appsmith Helm chart with (replace `<APPSMITH-CHART_NAME>` and `<NAMESPACE>` with the chart name and the your namespace):
+  ```bash
+  helm mapkubeapis <APPSMITH-CHART-NAME> -n <NAMESPACE>
+  ```
+- Update the Appsmith installation with:
+  ```bash
+  helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+  ```
