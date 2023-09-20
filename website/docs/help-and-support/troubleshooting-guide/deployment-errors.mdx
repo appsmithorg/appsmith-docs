@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: This page provides you common deployment errors and troubleshooting instructions to fix them.
 ---
 
 import Tabs from "@theme/Tabs";
@@ -33,8 +34,9 @@ If you encounter the error that `ports 80 & 443` aren't open, its is recommended
 
 :::tip
 To stop a previous version of appsmith running on these ports, run the following:
-* `sudo su`
-* `docker container kill $(docker ps -q)`
+
+- `sudo su`
+- `docker container kill $(docker ps -q)`
 :::
 
 ## Containers failed to start
@@ -215,7 +217,7 @@ This issue occurs while upgrading your Appsmith Business or Enterprise Helm char
 
 #### Cause
 
-The issue happens because of how Helm handles the upgrades:
+The issue happens because of how Helm handles the upgrade:
 
 - During an upgrade, Helm compares your existing application configuration with the new chart, verifying the updated/supported API versions.
 - When Kubernetes removes an API version, the Go Client library can no longer understand the deprecated objects. This results in an error when Helm interacts with the library, causing the upgrade to fail.
@@ -226,11 +228,11 @@ To resolve this issue, use the `helm-mapkubeapis` plugin. This plugin helps Helm
 
 Follow these steps to solve the issue:
 
-- Install `helm-mapkubeapis` plugin with:
+- Install the `helm-mapkubeapis` plugin with:
   ```bash
   helm plugin install https://github.com/helm/helm-mapkubeapis
   ```
-- Verify plugin installation with:
+- Verify the plugin installation with:
   ```bash
   helm plugin ls
   ```
