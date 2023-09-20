@@ -19,19 +19,10 @@ Appsmith simplifies the process of data binding with the one-click binding featu
 - Multiselect
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-
-<<<<<<< HEAD
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-=======
-  <iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
-
-</div>
->>>>>>> 8b334dd40160e34eca30b7ef46bd8ae4d44e18e2
 
 1. In the Data property of the widget, select your preferred datasource from the **Choose Your Datasource** section.
 2. Select the data/collection you want to display.
@@ -116,7 +107,6 @@ See [How to display data from functions](/write-code/how-to-guides/display-data-
 
 ### JS expressions
 
-<<<<<<< HEAD
 JavaScript expressions are code snippets that produce a value or result. They can be used to calculate values, make decisions, or generate dynamic content.
 
 *Example*: if you want to pre-fill an Input widget with a user's email ID or name, you can achieve this by adding the following code in the **Default value** property:
@@ -126,8 +116,6 @@ JavaScript expressions are code snippets that produce a value or result. They ca
 ```
 
 
-=======
->>>>>>> 8b334dd40160e34eca30b7ef46bd8ae4d44e18e2
 ## Using widgets
 
 When working with widgets in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the reactive programming paradigm. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data. When a value is updated, any widgets that depend on that changed value also update automatically.
@@ -190,7 +178,3 @@ _Example:_ if you want to save the text of an Input widget, you can do so by usi
 
 Similarly, you can use different functions to perform actions like page navigation, displaying alerts, managing modals, and storing data in local storage.
 
-<<<<<<< HEAD
-=======
-You can also use `{{appsmith.user.email}}` to display the email address of the current user.
->>>>>>> 8b334dd40160e34eca30b7ef46bd8ae4d44e18e2
