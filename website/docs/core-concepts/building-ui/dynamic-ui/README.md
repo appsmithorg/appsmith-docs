@@ -13,27 +13,19 @@ This method allows you to update widget data based on the query response.
 
 ### One-click binding
 
-Appsmith simplifies the process of data binding with one-click binding feature. With one-click binding, you can connect your widget to existing datasources and have Appsmith automatically generate queries for you. This feature is currently supported by the following widgets: 
+Appsmith simplifies the process of data binding with the one-click binding feature. The one-click binding feature allows you to connect your existing datasources to widgets and have Appsmith automatically generate fetch, insert, pagination, and filtering queries for you. The following widgets currently support this feature:
 
 * Table
 * Select
-* Multi select
-
-#### Generate queries automatically
-
-With this method, you can connect widgets to your datasource, and Appsmith automatically generates fetch, insert, pagination, and filtering queries based on your widget and datasource selections.
-
-
+* Multiselect
 
 <iframe src="https://demo.arcade.software/UoxpSP7leUynT4CaU0R6?embed" width="900" height="750"></iframe>
 
+1. In the Data property of the widget, select your preferred datasource from the **Choose Your Datasource** section.
+2. Select the data/collection you want to display. 
+3. Customize your selection by choosing a searchable column or configure labels and values based on your widget.
 
-1. Click **Connect Data** and, in the "Choose your data source," section select your preferred datasource.
-2. 
-
-#### Connect existing queries
-
-<iframe src="https://demo.arcade.software/JhOT0E5Jf7UaIBTshWRH?embed" width="900" height="700"></iframe>
+Similarly, you can establish connections with existing queries.
 
 
 
@@ -63,15 +55,12 @@ SELECT * FROM public."users" LIMIT 10;
 
 This method allows you to dynamically connect your data using [JavaScript Objects](/core-concepts/writing-code/javascript-editor-beta). You can achieve this by binding the results returned in variables or functions to different widget properties. 
 
-* For synchronous functions, use `{{JS_OBJECT_NAME.FUNCTION_NAME()}}`. 
-* For asynchronous ones, access the data using `{{JS_OBJECT_NAME.FUNCTION_NAME.data}}`.
-* For variables, access their values using `{{JS_OBJECT_NAME.VARIABLE_NAME}}`.
+
+### JSObject variables 
 
 <dd>
 
 *Example:* if you want to display data using a JavaScript object, such as the current date and time, within a Text widget.
-
-
 
 * To display the current date and time, add the following code in the JS object:
 
@@ -92,11 +81,30 @@ Additionally, you can also bind data from queries directly into JavaScript objec
 {{JSObject1.currentDateTime}}
 ```
 
-By following similar steps, you can create a JavaScript object, define variables and functions within it, and bind their values to widgets. 
-
 </dd>
 
+### JSObject functions
+
+
+#### Synchronous functions
+
+* For synchronous functions, use `{{JS_OBJECT_NAME.FUNCTION_NAME()}}`. 
+
+*Example*: you want to display Echarts using JSObjects, to that you can add the following code in the JS object:
+
+```
+
+```
+
+#### Asynchronous functions
+
+`{{JS_OBJECT_NAME.FUNCTION_NAME.data}}`.
+
+
 See [How to display data from functions](/write-code/how-to-guides/display-data-from-functions).
+
+### JS expressions
+
 
 
 ## Using widgets
@@ -123,5 +131,32 @@ Similarly, you can connect values from other widgets using the mustache syntax `
 
 </dd>
 
+
+## Using storeValue()
+
+This method uses the Appsmith framework function [storeValue()](/reference/appsmith-framework/widget-actions/store-value) to bind data to widgets. `storeValue()` stores data as key-value pairs in the browser's local storage for universal accessibility within the application.
+
+<dd>
+
+*Example:* if you want to save the text of an Input widget, you can do so by using `storeValue()`. 
+
+1. In the [**onTextChanged**](/reference/widgets/input#ontextchanged) event of the Input widget, enable JS and add the following code: 
+
+
+```js
+{{storeValue('inputData', Input1.text);}}
+```
+
+2. Drag the Text widget and add the following code to the **Text** property to display the saved text:
+
+```js
+{{appsmith.store.inputData}}
+```
+
+</dd>
+
+Similarly, you can use different functions to perform actions like page navigation, displaying alerts, managing modals, and storing data in local storage.
+
+You can also use `{{appsmith.user.email}}` to display the email address of the current user.
 
 
