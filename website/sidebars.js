@@ -76,6 +76,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
+                'getting-started/setup/installation-guides/google-cloud-run',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/cloudjiffy',
@@ -204,6 +205,7 @@ const sidebars = {
               ],
             },
             `getting-started/setup/best-practices`,
+            'getting-started/setup/deployment-architecture',
           ],
         },
 
@@ -409,6 +411,7 @@ const sidebars = {
         },
         'core-concepts/building-ui/designing-an-application/app-theming',
         'core-concepts/building-ui/designing-an-application/application-layout',
+        'learning-and-resources/sample-apps'
       ],
     }, //Reference End
   ]
@@ -479,6 +482,7 @@ const sidebars = {
     },
   ]
 }, //CODE end
+
     {
       //Advanced Concepts Start
       type: 'category',
@@ -528,20 +532,6 @@ const sidebars = {
         'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
-    {
-      //Learning and Resources start
-      type: 'category',
-      collapsed: false,
-      label: 'Resources',
-      items: [
-        'learning-and-resources/sample-apps',
-        {
-          type: 'link',
-          label: 'Templates', // The link label
-          href: 'https://www.appsmith.com/templates', // The external URL
-        },
-      ],
-    }, //Learning and Resources end
     {
       // Help & Support start
       type: 'category',
