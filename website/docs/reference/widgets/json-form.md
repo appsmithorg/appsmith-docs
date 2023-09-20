@@ -17,7 +17,34 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to add form data for the widget. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
+Allows you to generate form data for the widget by connecting to your datasource or an existing Table/List widget.
+
+To generate form data for the widget using datasource, click on **Generate form** and select your datasource.
+
+After that select the desired table or collection, and specify the form type.
+
+- #### Create Records
+
+  If the form type is create records, this will generate form data for the widget with datasource table's columns as keys and appsmith defined default values. The default values are generated based on the column type. Here are the values.
+
+  Type                    value 
+  number                   1
+  string                   ""
+  date                     Date.now()
+
+  Appsmith will also automatically generate a query for you to add a new record to the datasource and bind it to the onSubmit event of the widget.
+
+- #### Edit Records
+
+  If the form type is edit records, select the widget from which the form data should get its values. Select the widget data identifier to use in the update query, by default this will be the datasource's primary column. This will generate form data for the widget with the datasource table's columns as keys and will ask you to select a widget to get the values. Appsmith will also automatically generate a query for you to update an existing record in the datasource and bind it to the onSubmit event of the widget.
+
+To generate form data for the widget using another widget present in the current page or query, click on **Generate form** and select the widget to connect to or query.
+
+:::note
+You can only connect to a Table or List widget.
+:::
+
+Additionally, you can use JavaScript by clicking on **JS** to write schema for the source data. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
 
 *Expected data structure:*
 ```json
