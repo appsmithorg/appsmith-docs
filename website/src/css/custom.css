@@ -530,7 +530,7 @@ body {
 
 .tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   align-items: center;
   position: relative;
@@ -540,10 +540,9 @@ body {
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .tags {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
-    top: 0;
-    left: 0;
+    white-space: nowrap;
   }
 }
 
