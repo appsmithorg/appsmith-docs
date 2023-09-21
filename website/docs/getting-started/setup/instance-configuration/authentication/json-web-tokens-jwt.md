@@ -1,13 +1,21 @@
 ---
 description: Reference to Identity and Access token
+title: Identity and Access Tokens
+hide_title: true
 ---
-# Identity and Access Tokens
+
+<div className="tag-wrapper">
+ <h1>Identity and Access Tokens</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 When you log in using the [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) protocol in Appsmith, you gain access to the identity and access tokens. These tokens can be used within your applications to implement custom logic and authorize API requests on behalf of the authenticated user.
-
-:::info
-**Identity and Access Tokens** can be accessed as part of [OpenID Connect (OIDC),](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) available **only** in Appsmith's [**business edition**](https://www.appsmith.com/pricing).
-:::
 
 ## Identity token
 

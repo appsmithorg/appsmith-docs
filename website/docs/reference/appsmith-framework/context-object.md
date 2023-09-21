@@ -164,11 +164,25 @@ This object contains the data of the currently authenticated user.
 }
 ```
 
-#### roles `object`
+<div className="tag-wrapper">
 
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+#### roles `object` 
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    },
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    },
+  ]}
+/>
+</div>
 
 <dd>
 

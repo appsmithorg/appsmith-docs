@@ -583,6 +583,13 @@ body {
   background: var(--colors-ui-content-bg-muted, #F1F5F9);
 }
 
-h2+.tags {
+h2+.tags,
+h3+.tags {
   margin-left: -26px;
+  top: -6px !important;
+}
+
+h4+.tags {
+  margin-left: -18px;
+  top: -6px !important;
 }

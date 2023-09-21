@@ -19,10 +19,6 @@ tags={[
 
 This page explains multiple datasource environments, which allows developers to isolate their testing and production datasources.
 
-:::info
-If you have questions and would like to test this feature and share feedback, please contact the support team using the chat widget at the bottom right of this page.
-:::
-
 See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
 ## Overview

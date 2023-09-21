@@ -1,9 +1,20 @@
 ---
 description: >-
   Setup OIDC using Auth0
+title: Auth0
+hide_title: true
 ---
 
-# Auth0
+<div className="tag-wrapper">
+ <h1>Auth0</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, follow the steps below:
 

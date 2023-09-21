@@ -1,9 +1,20 @@
 ---
 description: >-
   Setup OIDC using Ping Identity
+title: Ping Identity
+hide_title: true
 ---
 
-# Ping Identity
+<div className="tag-wrapper">
+ <h1>Ping Identity</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.html) as an OIDC provider, follow the steps below:
 

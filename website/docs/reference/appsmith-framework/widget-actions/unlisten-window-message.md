@@ -1,13 +1,21 @@
 ---
 toc_max_heading_level: 2
 description: Communicate between Appsmith and parent application.
+title:  unlistenWindowMessage()
+hide_title: true
 ---
 
-# unlistenWindowMessage()
+<div className="tag-wrapper">
+ <h1> unlistenWindowMessage()</h1>
 
-:::info
-This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
-:::
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 `unlistenWindowMessage()` allows you to disable an Appsmith app from reacting to messages from the parent website.
 

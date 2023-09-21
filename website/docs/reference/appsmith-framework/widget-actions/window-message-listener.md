@@ -1,13 +1,21 @@
 ---
 toc_max_heading_level: 2
 description: Communicate between Appsmith and parent application.
+title:  windowMessageListener()
+hide_title: true
 ---
 
-# windowMessageListener()
+<div className="tag-wrapper">
+ <h1>windowMessageListener()</h1>
 
-:::info
-This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
-:::
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 `windowMessageListener()` is used to enable an Appsmith application to capture and react to the messages incoming from a parent application. This listener is page-scoped and is only active on the page where it's created.
 

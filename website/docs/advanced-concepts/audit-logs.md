@@ -19,10 +19,6 @@ tags={[
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events.
 
-:::info
-Audit logs are only available in Appsmith [**Enterprise Plan**](https://www.appsmith.com/pricing). They're retained in the database for 1 year.
-:::
-
 There are several kinds of events that are logged:
 
 - App-specific activity
