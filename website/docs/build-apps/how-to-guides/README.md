@@ -5,7 +5,8 @@
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/build-apps/how-to-guides/Server-side-pagination-in-table"><strong>Setup Server-side Pagination on Table</strong></a>
+            <a href="/build-apps/how-to-guides/Server-side-pagination-in-table"><strong>Setup Server-side Pagination on Table</strong>
+            </a>
         </div> <hr/>
         <div class="containerDescription">Shows you how to set up server-side pagination on a Table widget, which allows you to manage and display large datasets.</div>
     </div>
