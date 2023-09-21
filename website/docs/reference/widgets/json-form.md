@@ -17,9 +17,9 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Connects the JSON Form widget to your datasource, allowing you to add new records or edit existing ones. To connect your datasource to the JSON Form, click on **Generate Form** and select your datasource or query.
+Connects the JSON Form to your datasource or widget, allowing you to add new records or edit existing ones. To bind data to the JSON Form, click on **Generate Form** and select either a datasource, query, or widget.
 
-If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a customized JSON form for your datasource and creates an insert query connected to the **onSubmit** event. 
+If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a customized JSON form for your datasource and creates an insert or update query connected to the **onSubmit** event. 
 
 * **Select table/collection:** enables the selection of the relevant table or collection type corresponding to the datasource.
 
@@ -28,17 +28,10 @@ If you don't have a query, you can choose your datasource, select the desired ta
   * Create records 
   * Edit records
 
-* **Get values from:** enables the selection of the Table or List widget from which the form should retrieve its values. You can then view and edit the corresponding data in JSON Form. This option is available when the **Form Type**  is set to Edit Records.
+* **Get values from:** enables the selection of the Table or List widget from which the form should retrieve its values. You can then view and edit the corresponding data in JSON Form. This option is available when the **Form Type**  is set to Edit Records and is only applicable to Table and List widget.
 
-<dd>
 
-:::note
-You can only connect to a Table or List widget connected to the same datasource.
-:::
-
-</dd>
-
-* **Data Identifier:** serves as a label for the unique identification of a datasource object. By default, it's set to the primary column of the datasource. This option is available when the **Form Type**  is set to Edit Records.
+* **Data Identifier:** serves as an attribute for the unique identification of a datasource object. By default, it's set to the primary column of the datasource. This option is available when the **Form Type**  is set to Edit Records.
 
 
  <figure>

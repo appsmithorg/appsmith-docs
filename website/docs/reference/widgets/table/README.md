@@ -27,11 +27,6 @@ Allows you to connect the Table widget to your datasource. To connect your datas
 
 If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the searchable property. Appsmith would automatically generate a query for you, enabling features such as server-side pagination, search capability, and the ability to edit and add new rows in the table.
 
-
-:::note
-Currently, this feature is compatible with PostgreSQL and MongoDB datasources. 
-:::
-
 Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data. The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
 *Expected data structure:*
