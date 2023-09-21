@@ -215,12 +215,25 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
+<div className="tag-wrapper">
+
 #### groups `object`
 
-
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    },
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    },
+  ]}
+/>
+</div>
 
 <dd>
 
