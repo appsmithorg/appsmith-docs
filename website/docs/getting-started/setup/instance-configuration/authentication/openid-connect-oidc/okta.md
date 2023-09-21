@@ -4,6 +4,7 @@ description: >-
 title: Okta
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1>Okta</h1>
@@ -15,6 +16,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, follow the steps below:
 

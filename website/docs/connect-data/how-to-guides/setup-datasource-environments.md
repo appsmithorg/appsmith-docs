@@ -3,6 +3,7 @@ title: Setup Multiple Datasource Environments
 description: This page provides information about datasource environments in Appsmith.
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1> Setup Multiple Datasource Environments </h1>
@@ -14,7 +15,10 @@ tags={[
 { name: "Beta", additionalClass: "neutral" }
 ]}
 />
+
 </div>
+
+<!-- vale on -->
 
 This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 

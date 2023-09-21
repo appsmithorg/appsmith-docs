@@ -5,6 +5,8 @@ title: Active Directory
 hide_title: true
 ---
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1>Active Directory</h1>
 
@@ -15,6 +17,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as an OIDC provider, follow the steps below:
 

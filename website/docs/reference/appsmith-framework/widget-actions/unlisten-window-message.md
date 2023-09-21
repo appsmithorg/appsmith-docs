@@ -5,6 +5,8 @@ title:  unlistenWindowMessage()
 hide_title: true
 ---
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1> unlistenWindowMessage()</h1>
 
@@ -16,6 +18,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 `unlistenWindowMessage()` allows you to disable an Appsmith app from reacting to messages from the parent website.
 

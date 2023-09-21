@@ -5,6 +5,8 @@ title: SAML SSO
 hide_title: true
 ---
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1>SAML SSO</h1>
 
@@ -15,6 +17,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling users to sign in to the Appsmith account using their SAML identity providers.
 

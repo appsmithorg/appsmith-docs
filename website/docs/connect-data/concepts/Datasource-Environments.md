@@ -4,6 +4,8 @@ description: This page provides information about datasource environments in App
 hide_title: true
 ---
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1> Datasource Environments </h1>
 
@@ -16,6 +18,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 This page explains multiple datasource environments, which allows developers to isolate their testing and production datasources.
 

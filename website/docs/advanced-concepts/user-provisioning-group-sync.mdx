@@ -7,6 +7,8 @@ hide_title: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1>Setup SCIM Provisioning</h1>
 
@@ -17,6 +19,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 This page shows how to configure Appsmith for SCIM to enable the automatic provisioning of users and groups based on your SSO provider.
 
@@ -65,9 +69,9 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
     - **userPrincipalName**
     - **displayName**
-    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**
+    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**<!-- vale off -->
 
-    f. Click **Save**.
+    f. Click **Save**.<!-- vale on -->
 
     g. Go back to **Mappings** on the **Provisioning** page, click **Provision Azure Active Directory Groups**, and scroll down to **Attribute Mappings** to configure attributes for groups. Delete all the attributes except the following:
 

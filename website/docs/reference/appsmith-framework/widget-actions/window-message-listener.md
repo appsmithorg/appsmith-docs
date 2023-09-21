@@ -4,6 +4,7 @@ description: Communicate between Appsmith and parent application.
 title:  windowMessageListener()
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1>windowMessageListener()</h1>
@@ -16,6 +17,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 `windowMessageListener()` is used to enable an Appsmith application to capture and react to the messages incoming from a parent application. This listener is page-scoped and is only active on the page where it's created.
 

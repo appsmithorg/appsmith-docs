@@ -5,6 +5,8 @@ title: Branding
 hide_title: true
 ---
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
  <h1>Branding</h1>
 
@@ -17,6 +19,7 @@ tags={[
 
 </div>
 
+<!-- vale on -->
 Custom branding for Appsmith is a feature that allows app builders to customize the appearance of their Appsmith workspace and apps with their own logo and color palette. This ensures that the end-users of the app have a more familiar and cohesive experience, with the login screen, invite emails, and error pages matching the branding of your company. 
 
 <VideoEmbed host="youtube" videoId="E_4I0J-0u1k" title="How to use Custom Branding" caption="Set up Appsmith to show your own branding" /> 

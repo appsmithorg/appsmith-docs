@@ -4,6 +4,7 @@ description: Audit logs allow you to keep records of everything that happens on 
 title: Audit Logs
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1> Audit Logs </h1>
@@ -14,8 +15,9 @@ tags={[
 { name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
 ]}
 />
-
 </div>
+
+<!-- vale on -->
 
 The audit log is a paper trail of all notable activities on an Appsmith instance. It automatically captures and displays events by recording what activity was performed, who performed it, and when it occurred. With this information, you can ensure that you're able to follow up and address any unexpected or undesirable events.
 

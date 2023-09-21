@@ -4,6 +4,7 @@ description: This page provides an overview about OpenID connect (OIDC) and popu
 title: OpenID Connect SSO
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1>OpenID Connect SSO</h1>
@@ -15,6 +16,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 Appsmith provides a way to integrate with OpenID Connect (OIDC), enabling the users to sign in to the Appsmith account using their OIDC identity providers.
 

@@ -163,6 +163,7 @@ This object contains the data of the currently authenticated user.
   isAnonymous: boolean
 }
 ```
+<!-- vale off -->
 
 <div className="tag-wrapper">
 
@@ -182,7 +183,10 @@ This object contains the data of the currently authenticated user.
     },
   ]}
 />
+
 </div>
+
+<!-- vale on -->
 
 <dd>
 
@@ -215,6 +219,8 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
 
 #### groups `object`
@@ -233,7 +239,10 @@ In the above example, the visibility of the button is determined by a role. Only
     },
   ]}
 />
+
 </div>
+
+<!-- vale on -->
 
 <dd>
 

@@ -102,6 +102,8 @@ After running the above command, the backup archive is copied to your current di
 
 </Tabs>
 
+<!-- vale off -->
+
 <div className="tag-wrapper">
 
 ### Schedule automatic backups 
@@ -120,7 +122,10 @@ After running the above command, the backup archive is copied to your current di
     },
   ]}
 />
+
 </div>
+
+<!-- vale on -->
 
 #### Docker
 Follow these steps to schedule backups only for Docker Appsmith installation:
@@ -145,6 +150,7 @@ APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
 APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
 ```
 For more information about creating the `Cron` expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
+<!-- vale off -->
 
 <div className="tag-wrapper">
 
@@ -165,6 +171,8 @@ For more information about creating the `Cron` expressions, see [Cron Schedule E
   ]}
 />
 </div>
+
+<!-- vale on -->
 
 Follow these steps to sync backups with an S3 bucket for your installation type:
 

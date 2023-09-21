@@ -4,6 +4,7 @@ description: >-
 title: Auth0
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1>Auth0</h1>
@@ -15,6 +16,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, follow the steps below:
 

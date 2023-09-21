@@ -4,6 +4,7 @@ description: >-
 title: Amazon Cognito
 hide_title: true
 ---
+<!-- vale off -->
 
 <div className="tag-wrapper">
  <h1>Amazon Cognito</h1>
@@ -15,6 +16,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) as an OIDC provider, follow these steps:
 
