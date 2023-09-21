@@ -413,36 +413,6 @@ const sidebars = {
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
-        },
-        'core-concepts/building-ui/designing-an-application/app-theming',
-        'core-concepts/building-ui/designing-an-application/application-layout',
-        'learning-and-resources/sample-apps'
-      ],
-    }, //Reference End
-  ]
-}, //Build Apps end
-
-{ // WRITE CODE start
-  type: 'category',
-  collapsed: false,
-  label: 'Write Code',
-  items: [ 
-    'write-code/overview',
-    {
-      type: 'category',
-      collapsed: true,
-      label: 'How-To Guides',
-      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
-      items: [
-    
-        'core-concepts/writing-code/README',
-        'core-concepts/writing-code/javascript-editor-beta/README',
-        'write-code/how-to-guides/display-data-from-functions',
-        'core-concepts/writing-code/javascript-promises',
-        'advanced-concepts/sharing-data-across-pages',
-        `core-concepts/writing-code/workflows`,
-        'core-concepts/writing-code/ext-libraries',
-        'write-code/how-to-guides/debug-js-errors',
       ]
     }, //Build Apps end
 
@@ -529,11 +499,7 @@ const sidebars = {
             'advanced-concepts/granular-access-control/roles',
           ]
         },
-        {
-          type: 'doc',
-          id: `advanced-concepts/user-provisioning-group-sync`,
-          label: 'Setup SCIM Provisioning',
-        },
+        `advanced-concepts/user-provisioning-group-sync`,
         {
           type: 'category',
           label: 'Version Control with Git',
@@ -561,17 +527,8 @@ const sidebars = {
         },
 
         'advanced-concepts/more/backup-restore',
-        {
-          type: 'doc',
-          id: 'advanced-concepts/audit-logs',
-          label: 'Audit Logs',
-        },
-        {
-          type: 'doc',
-          id: 'advanced-concepts/branding',
-          label: 'Branding',
-        },
-
+        'advanced-concepts/audit-logs',
+        'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
     {
