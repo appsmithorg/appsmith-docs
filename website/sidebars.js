@@ -413,6 +413,36 @@ const sidebars = {
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
+        },
+        'core-concepts/building-ui/designing-an-application/app-theming',
+        'core-concepts/building-ui/designing-an-application/application-layout',
+        'learning-and-resources/sample-apps'
+      ],
+    }, //Reference End
+  ]
+}, //Build Apps end
+
+{ // WRITE CODE start
+  type: 'category',
+  collapsed: false,
+  label: 'Write Code',
+  items: [ 
+    'write-code/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-To Guides',
+      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
+      items: [
+    
+        'core-concepts/writing-code/README',
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/how-to-guides/display-data-from-functions',
+        'core-concepts/writing-code/javascript-promises',
+        'advanced-concepts/sharing-data-across-pages',
+        `core-concepts/writing-code/workflows`,
+        'core-concepts/writing-code/ext-libraries',
+        'write-code/how-to-guides/debug-js-errors',
       ]
     }, //Build Apps end
 
