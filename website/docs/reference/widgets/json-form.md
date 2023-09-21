@@ -17,18 +17,18 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Connects the JSON Form widget to your datasource, allowing you to add new records or edit existing ones. To connect your datasource to the JSON Form widget, click on **Generate Form** and select your datasource or query.
+Connects the JSON Form widget to your datasource, allowing you to add new records or edit existing ones. To connect your datasource to the JSON Form, click on **Generate Form** and select your datasource or query.
 
-If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a customized JSON form for your datasource and creates an insert query connected to the **onSubmit** event. After clicking on **Generate Form**, you will see the following fields:
+If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a customized JSON form for your datasource and creates an insert query connected to the **onSubmit** event. 
 
-* **Select table/collection:** enables you to select the relevant table or collection type that corresponds to your datasource.
+* **Select table/collection:** enables the selection of the relevant table or collection type corresponding to the datasource.
 
-* **Form Type:** specifies the type of form to be created, you have two options:
+* **Form Type:** specifies the type of form to be created, with two options:
 
   * Create records 
   * Edit records
 
-* **Get values from:** enables you to select the Table or List widget from which the form should retrieve its values. You can then view and edit the corresponding data in JSON Form. This option is available when the **Form Type**  is set to Edit Records.
+* **Get values from:** enables the selection of the Table or List widget from which the form should retrieve its values. You can then view and edit the corresponding data in JSON Form. This option is available when the **Form Type**  is set to Edit Records.
 
 <dd>
 
