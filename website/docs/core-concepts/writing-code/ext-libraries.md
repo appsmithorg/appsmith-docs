@@ -9,8 +9,6 @@ The Appsmith platform includes built-in JavaScript utility libraries, which can 
 
 Custom Javascript libraries provide far more advanced capabilities for complex use cases like PDF generation, CSV Parsing, analytics, authentication, error logging, etc. You can browse and install a JS library of your choice by pasting a valid URL to the library’s index file.
 
-Use a URL that points to the library's index file. Ensure that your library supports a **[UMD](https://github.com/umdjs/umd)** build for it to work on Appsmith. Here’s the [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js) of a UMD build. Most libraries have a `.min.js` under the `root`, `/umd` or `/browser` folders. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
-
 ### Library compatibility
 
 Appsmith is only compatible with libraries that support **[UMD](https://github.com/umdjs/umd)** builds. If a library supports the UMD build format, the source code of a library’s index file should conform to this [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js). The index file for most compatible libraries can be found under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.

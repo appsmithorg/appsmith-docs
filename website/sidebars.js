@@ -410,6 +410,7 @@ const sidebars = {
         },
         'core-concepts/building-ui/designing-an-application/app-theming',
         'core-concepts/building-ui/designing-an-application/application-layout',
+        'learning-and-resources/sample-apps'
       ],
     }, //Reference End
   ]
@@ -543,20 +544,6 @@ const sidebars = {
         
       ],
     }, //Advanced Concepts end
-    {
-      //Learning and Resources start
-      type: 'category',
-      collapsed: false,
-      label: 'Resources',
-      items: [
-        'learning-and-resources/sample-apps',
-        {
-          type: 'link',
-          label: 'Templates', // The link label
-          href: 'https://www.appsmith.com/templates', // The external URL
-        },
-      ],
-    }, //Learning and Resources end
     {
       // Help & Support start
       type: 'category',
