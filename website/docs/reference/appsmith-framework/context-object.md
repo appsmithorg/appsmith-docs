@@ -175,12 +175,7 @@ This object contains the data of the currently authenticated user.
       name: "Business",
       link: "https://www.appsmith.com/pricing",
       additionalClass: "business",
-    },
-    {
-      name: "Enterprise",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "enterprise",
-    },
+    }
   ]}
 />
 
@@ -231,12 +226,7 @@ In the above example, the visibility of the button is determined by a role. Only
       name: "Business",
       link: "https://www.appsmith.com/pricing",
       additionalClass: "business",
-    },
-    {
-      name: "Enterprise",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "enterprise",
-    },
+    }
   ]}
 />
 
