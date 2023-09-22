@@ -10,7 +10,7 @@ This page provides instructions to install Appsmith using Docker.
 caption="How to install Appsmith using Docker Compose"/> 
 
 :::info
-To upgrade to a paid plan, follow the instructions in [Upgrade to Paid Plan](/getting-started/setup/upgrade-to-business-edition/docker) guide.
+To upgrade to a paid plan, follow the instructions in the [Upgrade to Paid Plan](/getting-started/setup/upgrade-to-business-edition/docker) guide.
 :::
 
 ## Prerequisites
@@ -28,20 +28,10 @@ Follow these steps to install Appsmith:
 
 <a id="docker-compose-file"></a>
 
-2. Create a `docker-compose.yml` file in the `appsmith` folder:
+2. Run the below command to download `docker-compose.yml` file in the `appsmith` folder:
 
-   ```yaml title="docker-compose.yml" 
-   version: "3"
-   services:
-      appsmith:
-         image: index.docker.io/appsmith/appsmith-ee
-         container_name: appsmith
-         ports:
-            - "80:80"
-            - "443:443"
-         volumes:
-            - ./stacks:/appsmith-stacks
-         restart: unless-stopped
+   ```bash
+   curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
    ```
 
 3. Start the Docker container by using the below command. You may need to use `sudo` if you don't have permission to run `docker-compose`:
@@ -51,23 +41,13 @@ Follow these steps to install Appsmith:
    ```
 This command will download the necessary Docker image if it doesn't exist locally and start the container.
 
-4. Open [http://localhost](http://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost](http://localhost).
+4. Open [http://localhost](http://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost](http://localhost).  You can continue to use Appsmith under a free plan.
 
-### Generate a trial license (Optional)
-
-To explore [paid plans](https://www.appsmith.com/pricing), you may choose to generate a trial license key.
-1. Sign up on [customer.appsmith.com](https://customer.appsmith.com).
-2. Generate a trial license key.
-
-### Activate and use Appsmith
-
-1. Log into your Appsmith account. 
-2. If you have a license key, enter it to activate your instance to try the paid plan.
-3. If you don't have a license key, you can continue to use Appsmith under a free plan.
+5. If you have a license key, enter it to activate your instance to try the paid plan.  If you don't have a license key and want one, sign up on [customer.appsmith.com](https://customer.appsmith.com), generate a license key, and then activate your instance.
 
 ## Install Appsmith Community
 
-To install Appsmith Community, replace `ee` with `ce` in the [docker-compose.yml](#docker-compose-file) file on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [docker-compose.yml](#docker-compose-file) file on this page.
 
 ## Troubleshooting
 
