@@ -128,18 +128,10 @@ Add the following code to the Text widget's **Text** property:
 
 ```js
 //To display the email field when the user selects a row in the Table widget, use:
-{
-  {
-    Table1.selectedRow.email;
-  }
-}
+{{Table1.selectedRow.email;}}
 
 //To display the email field when the user selects an item in the List widget, use:
-{
-  {
-    List1.selectedItem.email;
-  }
-}
+{{List1.selectedItem.email;}}
 ```
 
 Similarly, you can connect values from other widgets using the mustache syntax `{{}}` and reference properties.
@@ -157,21 +149,13 @@ _Example:_ if you want to save the text of an Input widget, you can do so by usi
 1. In the [**onTextChanged**](/reference/widgets/input#ontextchanged) event of the Input widget, enable JS and add the following code:
 
 ```js
-{
-  {
-    storeValue("inputData", Input1.text);
-  }
-}
+{{storeValue("inputData", Input1.text);}}
 ```
 
 2. Drag the Text widget and add the following code to the **Text** property to display the saved text:
 
 ```js
-{
-  {
-    appsmith.store.inputData;
-  }
-}
+{{appsmith.store.inputData;}}
 ```
 
 </dd>
