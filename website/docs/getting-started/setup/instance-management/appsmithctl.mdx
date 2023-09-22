@@ -102,11 +102,25 @@ After running the above command, the backup archive is copied to your current di
 
 </Tabs>
 
-### Schedule automatic backups
+<!-- vale off -->
 
-:::info
-Scheduling automatic backups is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
-:::
+<div className="tag-wrapper">
+
+### Schedule automatic backups 
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 #### Docker
 Follow these steps to schedule backups only for Docker Appsmith installation:
@@ -131,12 +145,24 @@ APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
 APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
 ```
 For more information about creating the `Cron` expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
+<!-- vale off -->
+
+<div className="tag-wrapper">
 
 ### Sync backup to S3 bucket
 
-:::info
-Syncing backups with an AWS S3 bucket is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
-:::
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
 
 Follow these steps to sync backups with an S3 bucket for your installation type:
 

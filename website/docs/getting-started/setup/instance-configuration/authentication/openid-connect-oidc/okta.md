@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using Okta
+title: Okta
+hide_title: true
 ---
+<!-- vale off -->
 
-# Okta
+<div className="tag-wrapper">
+ <h1>Okta</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, follow the steps below:
 
