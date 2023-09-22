@@ -47,7 +47,7 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 
 ## Using JS expressions
 
-JavaScript expressions, enclosed within {{ ... }}, serve as dynamic scripting elements in your application. These expressions allow you to create logic that reacts to user inputs and events.
+JavaScript expressions, enclosed within `{{ ... }}`, serve as dynamic scripting elements in your application. These expressions allow you to create logic that reacts to user inputs and events.
 
 *Example:* if you want to display a widget only when a user selects `Yes` from a Select widget. In the **Visible** property of the widget, enable JS and add the following JS expression:
 
