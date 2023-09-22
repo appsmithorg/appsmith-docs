@@ -114,28 +114,28 @@ To display an ECharts in Appsmith, you can integrate it by embedding the ECharts
 ```js
 //Basic line chart format
 {
-  xAxis: {
-    type: '',
-    data: []
+ xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   },
   yAxis: {
-    type: ''
+    type: 'value'
   },
   series: [
     {
-      data: [],
-      type: ''
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
   }]}
 ```
 
 
-* **xAxis** specifies the type of data on the x-axis. For instance, you can use `category` as the `type` and provide an array of labeled values in the `data` field.
+* **xAxis** specifies the type of data on the x-axis. For instance, you can use `category` as the `type` and provide an array of labeled values in the `data` field. The [xAxis](https://echarts.apache.org/handbook/en/concepts/axis) field is limited to specific chart types.
 
-* **yAxis** specifies the type of data on the y-axis. For instance, to display values on the y-axis, you can set the `type` as `value`.
+* **yAxis** specifies the type of data on the y-axis. For instance, to display values on the y-axis, you can set the `type` as `value`. The yAxis field is limited to specific chart types.
 
-* **series** defines the data points and the type of chart:
+* **series** defines the [data points](https://echarts.apache.org/en/option.html#dataset) and the type of chart:
   * **type**: You can specify the type of chart you want to display, such as `line` for a line chart or `bar` for a bar chart. 
-  * **data**: Contains an array of values or categories, depending on the chart type. Alternatively, you can dynamically update the data using mustache syntax, like `{{Query1.data}}`, enabling real-time data integration from external sources or queries.
+  * **data**: Contains an array of values or categories, depending on the chart type. Alternatively, you can dynamically update the data using mustache syntax, like `{{Query1.data}}`, enabling real-time data integration from external sources or queries, provided the data format aligns with the chart type's requirements.
 
 
 
@@ -154,9 +154,12 @@ Each chart type has different configurations and options. To learn more about th
   <TabItem value="stack-radial" label="Bar Polar Stack Radial" default>
 
 <figure>
-  <img src="/img/bar-radial.gif" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/e-chart-2.gif" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
+
+To display an Bar Polar Stack Radial Chart, you can integrate it by embedding the code using mustache syntax, `{{<chart-data>}}`.
+
 
 Add the following code to the **Custom ECharts Configuration** property:
 
