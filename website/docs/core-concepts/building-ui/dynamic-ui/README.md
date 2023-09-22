@@ -30,7 +30,7 @@ Appsmith simplifies the process of data binding with the one-click binding featu
 
 Similarly, you can establish connections with existing queries.
 
-### q
+### Mustache syntax
 
 <dd>
 
@@ -96,7 +96,7 @@ Additionally, you can also bind data from queries directly into JavaScript objec
 _Example_: you want to display Echarts using JSObjects, to that you can add the following code in the JS object:
 
 ```
-te
+
 ```
 
 #### Asynchronous functions

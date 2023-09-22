@@ -45,7 +45,7 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 
 
 
-### Using JS expressions
+## Using JS expressions
 
 JavaScript expressions, enclosed within {{ ... }}, serve as dynamic scripting elements in your application. These expressions allow you to create logic that reacts to user inputs and events.
 
