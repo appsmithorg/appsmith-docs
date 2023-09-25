@@ -11,7 +11,7 @@ function Tags({ tags }) {
                 {tag.name}
               </a>
             ) : (
-              <span className={`tag ${tag.additionalClass}`}>
+              <span className={`appsmithtag ${tag.additionalClass}`}>
                 {tag.name}
               </span>
             )}
