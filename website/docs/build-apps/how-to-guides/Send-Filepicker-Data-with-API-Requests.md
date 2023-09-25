@@ -6,7 +6,7 @@ This page shows you how to use the Filepicker widget to upload file data into AP
 ## Prerequisites
 
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
-* An [API](/connect-data/reference/rest-api), for this guide, lets use the [Cloudinary API](https://cloudinary.com/) as an example.
+* An [API](/connect-data/reference/rest-api). For this guide, lets use the [Cloudinary API](https://cloudinary.com/) as an example.
 
 
 
