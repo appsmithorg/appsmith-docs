@@ -1,20 +1,19 @@
 # Send Filepicker Data with API Requests
 
-
-
+This page shows you how to use the Filepicker widget to upload file data into API requests.
 
 
 ## Prerequisites
 
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
-* An [API](/connect-data/reference/rest-api), for this guide, lets use the [Cloudinary API](https://cloudinary.com/documentation/image_upload_api_reference) as an example.
+* An [API](/connect-data/reference/rest-api), for this guide, lets use the [Cloudinary API](https://cloudinary.com/) as an example.
 
 
 
 
 ## Configure query
 
-Follow these steps to configure the Cloudinary API for file uploads via the API:
+Follow these steps to configure the Cloudinary API:
 
 <figure>
   <img src="/img/api-cloud-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
@@ -43,14 +42,15 @@ In this configuration:
 |      Key      	| Type 	|           Value          	| D
 |:-------------:	|:----:	|:------------------------:	|
 | file          	| File 	| `{{FilePicker1.files[0]}}` 	|
-| upload_preset 	| Text 	| `<your_upload_preset_id>`                   	|
+| upload_preset 	| Text 	| `<your_upload_preset_name>`                   	|
 
 In this configuration:
 
-* `File`, corresponds to the file you want to upload, which should be selected from the FilePicker widget.
+* `File`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
+
 * The `upload_preset` is a configuration setting that defines upload parameters. You can find and configure it in the **Upload** page of the [Console Settings](https://console.cloudinary.com/settings/upload).
   
-  For `upload_presets`, make sure to change it from **Signed Upload** to **Unsigned Upload** in Cloudinary settings: **Settings** > **Upload** > **Presets**, then click **Edit** and select **Unsigned Upload**.
+  For `upload_preset`, make sure to change it from **Signed Upload** to **Unsigned Upload** in Cloudinary settings: **Settings** > **Upload** > **Presets**, then click **Edit** and select **Unsigned Upload**.
 
 
 
@@ -59,6 +59,10 @@ In this configuration:
   <img src="/img/presets-api9.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
+
+:::tip
+If you intend to upload files of significant size, adjust the timeout settings in the API configuration.
+:::
 
 </dd>
 
@@ -69,16 +73,17 @@ In this configuration:
 
 ## Configure Filepicker widget
 
-Follow these steps to configure the Filepicker widget to upload data:
+Follow these steps to configure the Filepicker widget to upload files:
 
-Be sure to select `File` in the datatype dropdown. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
+* Configure the [**Allowed file types**](/reference/widgets/filepicker#allowed-file-typesarraystring) property of the Filepicker widget to allow users to upload files of specific formats.
 
-* Now, update the `onFilesSelected` property to RUN the API.
+* Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to run the Cloudinary query.
 
-:::tip
-If you intend to upload files of significant size, adjust the timeout settings in the API configuration.
-:::
+After completing these steps, you'll be able to upload single or multiple files to Cloudinary. You can view the uploaded images in the [Media explorer](https://console.cloudinary.com/console/media-explorer) page. 
 
-To learn more,  see [how to use the Filepicker widget](https://www.appsmith.com/blog/upload-and-manage-files-on-cloudinary-with-the-filepicker-widget) to upload or manage files on Cloudinary.
+
+
+
+
 
 
