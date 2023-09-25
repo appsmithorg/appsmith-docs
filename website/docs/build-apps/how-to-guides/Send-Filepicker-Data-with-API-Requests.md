@@ -13,7 +13,8 @@ This page shows you how to use the Filepicker widget to upload file data into AP
 
 ## Configure query
 
-Follow these steps to configure the Cloudinary API:
+Follow these steps to configure the Cloudinary API in the Appsmith app:
+
 
 <figure>
   <img src="/img/api-cloud-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
@@ -21,7 +22,7 @@ Follow these steps to configure the Cloudinary API:
 </figure>
 
 
-1. In the API configuration, select the PUT request method, and in the URL field, add the following:
+1. In the API configuration, select the **PUT** request method, and in the URL field, add the following:
 
 <dd>
 
@@ -80,6 +81,12 @@ Follow these steps to configure the Filepicker widget to upload files:
 * Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to run the Cloudinary query.
 
 After completing these steps, you'll be able to upload single or multiple files to Cloudinary. You can view the uploaded images in the [Media explorer](https://console.cloudinary.com/console/media-explorer) page. 
+
+<figure>
+  <img src="/img/cloudinary-upload.gif" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
 
 
 
