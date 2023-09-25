@@ -7,7 +7,7 @@ function Tags({ tags }) {
         (tag && tag.name) ? (
           <React.Fragment key={index}>
             {tag.link ? (
-              <a href={tag.link} target="_blank" rel="noopener noreferrer" className={`tag ${tag.additionalClass}`}>
+              <a href={tag.link} target="_blank" rel="noopener noreferrer" className={`appsmithtag ${tag.additionalClass}`}>
                 {tag.name}
               </a>
             ) : (
