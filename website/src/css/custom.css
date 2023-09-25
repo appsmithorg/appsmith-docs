@@ -546,7 +546,7 @@ body {
   }
 }
 
-.tag {
+.appsmithtag {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -558,12 +558,12 @@ body {
   gap: 8px;
 }
 
-.tag .enterprise:hover,
+.appsmithtag .enterprise:hover,
 .business:hover {
   cursor: pointer;
 }
 
-a.tag.enterprise:hover {
+a.appsmithtag.enterprise:hover {
   cursor: pointer;
   color: #501FCD;
 }
