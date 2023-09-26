@@ -24,7 +24,8 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-7. Select the **Appsmith Business Edition** image.
+<a id="select-appsmith-image"></a>
+7. Select the [Appsmith](https://aws.amazon.com/marketplace/pp/prodview-mrpgdd3mhpvbs?sr=0-2&ref_=beagle&applicationId=AWSMPContessa) image.
 8. On the **Launch an instance** screen:
 
  a. Configure the instance as below:
@@ -89,13 +90,11 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
    <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
  </figure>
 
-13. If you are on a **Business Edition**:
-    * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
-    * Enter your license key to activate the instance.
+13. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
  
- To install the Appsmith open source edition (Appsmith Community) select the **Appsmith Community Edition** image on this page.
+ To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4?sr=0-1&ref_=beagle&applicationId=AWSMPContessa) in the [image selection](#select-appsmith-image) step, and then follow the instructions provided on this page.
 
 ## Troubleshooting
 
