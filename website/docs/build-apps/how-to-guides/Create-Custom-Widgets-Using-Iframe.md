@@ -1,3 +1,7 @@
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Create Custom Widgets Using Iframe
 
 Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
@@ -6,17 +10,16 @@ Lets create a custom Code Editor Widget with the [Ace Code Editor Library](https
 
 1. In the **srcDoc** property, add the following code:
 
-
 ```html
 <head>
 <style type="text/css" media="screen">
-    #editor { 
+ #editor{ 
         position: absolute;
         top: 40px;
         right: 0;
         bottom: 0;
         left: 0;
-    }
+}
 </style>
 </head>
 <body>
