@@ -24,10 +24,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-7. Select the image:
-    * To install the **Community Edition**, click on the **Select** button available on the right side of the **Appsmith Community Edition** image.
-    * To install the **Business Edition**, click on the **Select** button available on the right side of the **Appsmith Business Edition** image.
-   
+7. Select the **Appsmith Business Edition** image.
 8. On the **Launch an instance** screen:
 
  a. Configure the instance as below:
@@ -42,7 +39,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
  | Attribute | Value |
  |------------------------|------------------------------------------| 
- | **Firewall (security groups)** | Select **Select existing security group** checkbox.|
+ | **Firewall (security groups)** | Choose **Select existing security group** checkbox.|
  | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) section. |
  
 9. Keep the default selection for other fields.
@@ -96,6 +93,9 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
     * Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
     * Enter your license key to activate the instance.
 
+## Install Appsmith Community
+ 
+ To install the Appsmith open source edition (Appsmith Community) select the **Appsmith Community Edition** image on this page.
 
 ## Troubleshooting
 
