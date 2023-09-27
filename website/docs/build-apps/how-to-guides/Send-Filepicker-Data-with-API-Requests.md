@@ -39,7 +39,7 @@ You can select any of the following methods based on your use case:
 
 
 <figure>
-  <img src="/img/json-rest-api.png" style= {{width:"590px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-json.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -86,7 +86,7 @@ In this example:
 
    
   <figure>
-  <img src="/img/rest-api-encoded.png" style= {{width:"590px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-2-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -109,7 +109,7 @@ Multi-part form data is a flexible format for API requests. It is used when you 
 
 
 <figure>
-  <img src="/img/api-cloud-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-m-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
