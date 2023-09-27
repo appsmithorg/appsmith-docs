@@ -1,5 +1,5 @@
 ---
-title: Dynamic Binding
+title: Dynamic Binding in Queries
 description: Bind data dynamically in Appsmith.
 ---
 
