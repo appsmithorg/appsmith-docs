@@ -3,13 +3,13 @@ import TabItem from '@theme/TabItem';
 
 # Upload Files Using API 
 
-This page shows you how to use the Filepicker widget to upload file data into API requests.
+This page shows you how to use the Filepicker widget to upload file data using API.
 
 
 ## Prerequisites
 
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
-* Access to a cloud platform with an [API](/connect-data/reference/rest-api) setup. For this guide, lets use the [Cloudinary API](https://cloudinary.com/) as an example.
+* Access to a cloud platform with an [API](/connect-data/reference/rest-api) endpoints.
 
 
 ## Configure query
@@ -17,23 +17,9 @@ This page shows you how to use the Filepicker widget to upload file data into AP
 Follow these steps to configure the API in the Appsmith app:
 
 
-1. In the API configuration, select the request method, typically either **POST** or **PUT**, depending on specific API requirements.
+1. In the API configuration, select the request method, typically either **POST** or **PUT**, depending on API requirements.
 
 2. In the URL field, add your API URL. Depending on the API you are working with, you may also need to include additional path or query parameters.
-
-<dd>
-
-*Example*: For the Cloudinary API, select **POST** request method, and in the URL field, add the following:
-
-```API
-https://api.cloudinary.com/v1_1/{cloud_name}/image/upload
-```
-
-In this configuration:
-
-`{cloud_name}`, corresponds to the Cloudinary product environment identifier. You can locate this information in the [Cloudinary dashboard](https://console.cloudinary.com/console).
-
-</dd>
 
 
 3. In the request **Body**, select the method and format that align with the API's requirements. 
@@ -52,30 +38,31 @@ You can select any of the following methods based on your use case:
    JSON is typically used when uploading files along with structured data, such as metadata or parameters. It is suitable for both single and multiple file uploads.
 
 
+<figure>
+  <img src="/img/json-rest-api.png" style= {{width:"590px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
 <dd>
 
-*Example*: To upload a file using Cloudinary API, select the JSON method and add the following code:
-
+*Example*: 
 ```json
 {
   "file": "{{ FilePicker1.files[0].data }}",
-  "upload_preset": "okmn123"
+  "key1": "value1",
+  "key2": "value2"
 }
-//here [0] represents index of the file.
+// [0] represents index of the file.
 ```
 
-<figure>
-  <img src="/img/json-rest-api.png" style= {{width:"550px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+
 
 In this example:
 
 
 * `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
 
-* The `upload_preset` is a configuration setting that defines upload parameters. You can find and configure it in the **Upload** page of the [Console Settings](https://console.cloudinary.com/settings/upload).
+* The `key1` and `key2` parameters can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameters.
   
 
 
@@ -88,18 +75,18 @@ In this example:
 
 <dd>
 
-*Example*: To upload a file using Cloudinary API, select the FORM_URLENCODED method and configure it with the following parameters:
+*Example*: 
 
 
 
 |      Key      	 	|           Value          	| 
 |:-------------:		|:------------------------:	|
 | file          		| `{{FilePicker1.files[0].data}}` 	|
-| upload_preset 	 	| `<your_upload_preset_name>`                   	|
+| key1 	 	| `value1`                   	|
 
    
   <figure>
-  <img src="/img/rest-api-encoded.png" style= {{width:"550px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/rest-api-encoded.png" style= {{width:"590px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -108,7 +95,7 @@ In this example:
 
 * `file`, corresponds to the file you want to upload, which in this case is represented by `FilePicker1.files[0].data`, where `0` is the index of the selected file, and `data` contains the file data.
 
-* The `upload_preset` is a configuration setting that defines upload parameters. You can find and configure it in the **Upload** page of the [Console Settings](https://console.cloudinary.com/settings/upload).
+* The `key1` parameter can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameter.
   
 
 
@@ -120,28 +107,38 @@ In this example:
 
 Multi-part form data is a flexible format for API requests. It is used when you need to upload multiple files or a combination of files and other form data.  
 
-<dd>
-
-*Example*: To upload a file using Cloudinary API, select the MULTIPART_FORM_DATA method and configure it with the following parameters:
-  
-
-|      Key      	| Type 	|           Value          	| D
-|:-------------:	|:----:	|:------------------------:	|
-| file          	| File 	| `{{FilePicker1.files[0]}}` 	|
-| upload_preset 	| Text 	| `<your_upload_preset_name>`                   	|
-
 
 <figure>
   <img src="/img/api-cloud-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
+
+<dd>
+
+*Example*: 
+  
+**For Single File Upload:**
+
+|      Key      	| Type 	|           Value          	| D
+|:-------------:	|:----:	|:------------------------:	|
+| file          	| File 	| `{{FilePicker1.files[0]}}` 	|
+| key1 	| Text 	| `value1`                   	|
+
+**For Multiple Files Upload:**
+
+|      Key      	| Type 	|           Value          	| D
+|:-------------:	|:----:	|:------------------------:	|
+| file          	| File 	| `{{ FilePicker1.files }}` 	|
+| key1 	| Text 	| `value1`                   	|
+
+
 In this example:
 
 * `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
 
-* The `upload_preset` is a configuration setting that defines upload parameters. You can find and configure it in the **Upload** page of the [Console Settings](https://console.cloudinary.com/settings/upload). For `upload_preset`, make sure to change it from **Signed Upload** to **Unsigned Upload** in Cloudinary settings: **Settings** > **Upload** > **Presets**, then click **Edit** and select **Unsigned Upload**.
-
+* The `key1` parameter can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameter.
+  
 
 </dd>
 
@@ -187,13 +184,7 @@ Follow these steps to configure the Filepicker widget to upload files:
 
 * Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to run the Cloudinary query.
 
-After completing these steps, you'll be able to upload single or multiple files to Cloudinary. You can view the uploaded images in the [Media explorer](https://console.cloudinary.com/console/media-explorer) page. 
-
-<figure>
-  <img src="/img/cloudinary-upload.gif" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
+After completing these steps, select your file(s) and click the **Upload File(s)** button to send them to the server.
 
 
 
