@@ -207,7 +207,7 @@ The `files` property stores file objects that the user has selected. Each file o
 // Accessing multiple files
 {{FilePicker1.files}}
 
-// Access metadata and data
+// Accessing metadata and data
 {{FilePicker1.files[0]}} 
 
 

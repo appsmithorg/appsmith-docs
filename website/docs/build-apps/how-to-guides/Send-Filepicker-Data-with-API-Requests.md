@@ -17,7 +17,7 @@ This page shows you how to use the Filepicker widget to upload file data using A
 Follow these steps to configure the API in the Appsmith app:
 
 
-1. In the API configuration, specify the request method (POST or PUT) and provide your API URL, including any necessary path or query parameters.
+1. In the API configuration, specify the request method *(Generally POST or PUT)* and provide your API URL, including any necessary path or query parameters.
 
 
 2. In the request **Body**, select the method and format that align with the API's requirements. 
@@ -46,7 +46,7 @@ You can select any of the following methods based on your use case:
 *Example*: 
 ```json
 {
-  "file": "{{ FilePicker1.files[0].data }}",
+  "file": "{{ FilePicker1.files[0].data }}", // Accessing the file data
   "key1": "value1",
   "key2": "value2"
 }
@@ -58,7 +58,10 @@ You can select any of the following methods based on your use case:
 In this example:
 
 
-* `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
+* `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. 
+   * If you want to upload just the file data, use: `{{ FilePicker1.files[0].data }}`.
+   * If you want to upload all the details of a file, including format, type, name, and data, use: `{{ FilePicker1.files[0] }}`.
+   * If you want to upload multiple files, use `{{ FilePicker1.files }}`.
 
 * The `key1` and `key2` parameters can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameters.
   
@@ -86,6 +89,7 @@ In this example:
 |      Key      	 	|           Value          	| 
 |:-------------:		|:------------------------:	|
 | file          		| `{{FilePicker1.files[0].data}}` 	|
+| key_filename          		| `{{FilePicker1.files[0].name}}` 	|
 | key1 	 	| `value1`                   	|
 
 
@@ -117,25 +121,19 @@ Multi-part form data is a flexible format for API requests. It is used when you 
 <dd>
 
 *Example*: 
-  
-**For Single File Upload:**
 
 |      Key      	| Type 	|           Value          	| D
 |:-------------:	|:----:	|:------------------------:	|
 | file          	| File 	| `{{FilePicker1.files[0]}}` 	|
+| key_filename     | Text     		| `{{FilePicker1.files[0].name}}` 	|
 | key1 	| Text 	| `value1`                   	|
-
-**For Multiple Files Upload:**
-
-|      Key      	| Type 	|           Value          	| D
-|:-------------:	|:----:	|:------------------------:	|
-| file          	| File 	| `{{ FilePicker1.files }}` 	|
-| key1 	| Text 	| `value1`                   	|
-
 
 In this example:
 
-* `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. If you would like to submit multiple files in the same request key, you can use `{{ FilePicker1.files }}` to include the entire contents of the Filepicker widget.
+* `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. 
+   * If you want to upload just the file data, use: `{{ FilePicker1.files[0].data }}`.
+   * If you want to upload all the details of a single file, including data format, type, name, and data, use: `{{ FilePicker1.files[0] }}`.
+   * If you want to upload multiple files, use `{{ FilePicker1.files }}`.
 
 * The `key1` parameter can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameter.
   
@@ -162,6 +160,7 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 </Tabs>
 
 </dd>
+
 
 :::tip
 If you intend to upload files of significant size, adjust the timeout settings in the API configuration.
