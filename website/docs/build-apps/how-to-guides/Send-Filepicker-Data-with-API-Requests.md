@@ -17,12 +17,10 @@ This page shows you how to use the Filepicker widget to upload file data using A
 Follow these steps to configure the API in the Appsmith app:
 
 
-1. In the API configuration, select the request method, typically either **POST** or **PUT**, depending on API requirements.
-
-2. In the URL field, add your API URL. Depending on the API you are working with, you may also need to include additional path or query parameters.
+1. In the API configuration, specify the request method (POST or PUT) and provide your API URL, including any necessary path or query parameters.
 
 
-3. In the request **Body**, select the method and format that align with the API's requirements. 
+2. In the request **Body**, select the method and format that align with the API's requirements. 
 
 <dd>
 
@@ -75,6 +73,12 @@ In this example:
 
 <dd>
 
+   
+  <figure>
+  <img src="/img/filepicker-2-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
 *Example*: 
 
 
@@ -84,11 +88,7 @@ In this example:
 | file          		| `{{FilePicker1.files[0].data}}` 	|
 | key1 	 	| `value1`                   	|
 
-   
-  <figure>
-  <img src="/img/filepicker-2-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+
 
 In this example:
 
