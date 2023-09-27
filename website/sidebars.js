@@ -232,6 +232,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/download-files-from-s3',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',

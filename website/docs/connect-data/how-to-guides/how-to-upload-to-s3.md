@@ -4,7 +4,8 @@ sidebar_position: 5
 
 # Upload Files to S3 using Filepicker
 
-Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. This document presumes you have successfully [connected to your S3 instance](/connect-data/reference/querying-amazon-s3)
+This page shows you how to use the Filepicker widget to upload file data to S3.
+
 
   <VideoEmbed host="youtube" videoId="pmEmQcd9_KA" /> 
 
@@ -27,7 +28,7 @@ Configure the S3 query to upload file data, using the following parameters:
 
 * **Commands**: Select either the **Create a new file** command for single-file uploads or the **Create multiple new files** command for multiple-file uploads.
 
-* **Bucket Name:** The object key (or key name) uniquely identifies the object in an Amazon S3 bucket.
+* **Bucket Name:** The name of the S3 bucket where you intend to upload files.
 
 * **File Path:** Path of the location you want to store the file. For instance, `images/any` or `users/files`. You can also use `/{{FilePicker1.files[0].name}}` to dynamically set the filename. It automatically creates a new folder if the specified folder does not exist. 
 
@@ -43,10 +44,10 @@ Configure the S3 query to upload file data, using the following parameters:
 
 ```js
 // Single-file upload using the "Create a new file" command
-{{FilePicker5.files[0]}}
+{{FilePicker1.files[0]}}
 
 // Multi-file upload when using the "Create multiple new files" command
-{{FilePicker5.files}}
+{{FilePicker1.files}}
 
 ```
 
