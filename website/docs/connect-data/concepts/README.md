@@ -3,7 +3,7 @@
 <div class="containerGridSampleApp">
 <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/concepts/connection-pooling"><strong>Dynamic Binding</strong></a>
+            <a href="/connect-data/concepts/dynamic-binding"><strong>Dynamic Binding</strong></a>
         </div> <hr/>
         <div class="containerDescription">The first time you connect a database to your application, Appsmith creates a new connection with the database server.</div>
         <div class="containerTutorialLink"></div>
@@ -45,8 +45,7 @@
         <div class="containerDescription">Stored procedures are SQL statements that can be defined and called as reusable pieces of code. </div>
          <div class="containerTutorialLink">
          </div>
-    </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol"></div>
-    </div>
+</div>
+<div class="columnGrid column-two">
+</div>
 </div>
