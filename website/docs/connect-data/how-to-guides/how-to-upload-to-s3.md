@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Upload Files to S3 using Filepicker
 
 This page shows you how to use the Filepicker widget to upload file data to S3.
@@ -12,7 +8,7 @@ This page shows you how to use the Filepicker widget to upload file data to S3.
 ## Prerequisites
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
 * An [AWS S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html). You can use an existing bucket if you’d prefer. 
-* App connected to [S3 Datasource](/connect-data/reference/querying-amazon-s3)
+* App connected to [S3 Datasource](/connect-data/reference/querying-amazon-s3).
 
 ## Configure query
 
