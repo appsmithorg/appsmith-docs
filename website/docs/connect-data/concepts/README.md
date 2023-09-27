@@ -5,13 +5,13 @@
         <div class="containerCol">
             <a href="/connect-data/concepts/dynamic-binding"><strong>Dynamic Binding</strong></a>
         </div> <hr/>
-        <div class="containerDescription">The first time you connect a database to your application, Appsmith creates a new connection with the database server.</div>
+        <div class="containerDescription">Bind data dynamically to your queries in Appsmith.</div>
         <div class="containerTutorialLink"></div>
     </div>
 
   <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-            <a href="/connect-data/concepts/connection-pooling"><strong>Connection Pooling Test</strong></a>
+            <a href="/connect-data/concepts/connection-pooling"><strong>Connection Pooling</strong></a>
         </div> <hr/>
         <div class="containerDescription">The first time you connect a database to your application, Appsmith creates a new connection with the database server.</div>
         <div class="containerTutorialLink"></div>
