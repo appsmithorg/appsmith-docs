@@ -28,7 +28,7 @@ This page provides instructions to install Appsmith on a remote host using Ansib
     ```
     An Ansible inventory file specifies the target hosts you want to manage with Ansible.
 
-4.  Open the `inventory` file and add the server details on which you want to deploy Appsmith:
+4.  Open the `inventory` file and add the server details:
     * If you are using an SSH key pair for authenticating your server, then add the hostname or Fully Qualified Domain Name (FQDN), port, and the SSH Key in the below format:
         ```txt
         appsmith ansible_host=<SERVER_HOST> ansible_port=<SERVER_PORT> ansible_user=<SERVER_USER> ansible_ssh_private_key_file=<PATH_TO_SSH_PRIVATE_KEY_FILE>
