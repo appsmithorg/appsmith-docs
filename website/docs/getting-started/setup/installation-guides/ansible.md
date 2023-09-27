@@ -51,9 +51,4 @@ This page provides instructions to install Appsmith on a remote host using Ansib
 
 ## Troubleshooting
 
-Some common errors that you may face during installation:
-* [Ports unavailable](/help-and-support/troubleshooting-guide/deployment-errors#ports-unavailable)
-* [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
-* [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) 
-
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
