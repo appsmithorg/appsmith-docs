@@ -37,7 +37,7 @@ You can select any of the following methods based on your use case:
 
 
 <figure>
-  <img src="/img/filepicker-json.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-json.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -72,13 +72,13 @@ In this example:
   </TabItem>
     <TabItem value="FORM_URLENCODED" label="FORM_URLENCODED">
 
-  FORM_URLENCODED is a simple data format for API requests. It is suitable for single file uploads along with some form data. Each key-value pair represents a specific piece of information to be submitted to the API.
+  Form-urlencoded is a simple data format for API requests. It is suitable for single file uploads along with some form data. Each key-value pair represents a specific piece of information to be submitted to the API.
 
 <dd>
 
    
   <figure>
-  <img src="/img/filepicker-2-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-2-2.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -113,7 +113,7 @@ Multi-part form data is a flexible format for API requests. It is used when you 
 
 
 <figure>
-  <img src="/img/filepicker-m-2.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
+  <img src="/img/filepicker-m-2.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
 
