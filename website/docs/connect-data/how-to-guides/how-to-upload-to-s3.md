@@ -15,14 +15,13 @@ Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. Th
 
 ## Configure query
 
-Follow these steps to configure the S3 query in the Appsmith:
+Configure the S3 query to upload file data, using the following parameters:
 
  <figure>
   <img src="/img/s3-filepicler.png" style= {{width:"700px", height:"auto"}} alt="S3 query"/>
   <figcaption align = "center"><i>Configure S3 query</i></figcaption>
 </figure>
 
-1. Configure the S3 query to upload data, using the following parameters:
 
 <dd>
 
@@ -58,6 +57,17 @@ Follow these steps to configure the S3 query in the Appsmith:
 ## Configure Filepicker widget
 
 Follow these steps to configure the Filepicker widget to upload files:
+
+* Configure the [**Allowed file types**](/reference/widgets/filepicker#allowed-file-typesarraystring) property of the Filepicker widget to allow users to upload files of specific formats.
+
+* Select "Base64" from the [**Data Format**](/reference/widgets/filepicker#data-format-string) property.
+
+* Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to run the S3 query.
+
+After completing these steps, select the file(s) and click the **Upload File(s)** button to send them to the Amazon S3.
+
+
+
 
 
 
