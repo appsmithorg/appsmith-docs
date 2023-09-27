@@ -747,6 +747,14 @@
       "destination": "/getting-started/tutorials"
     },
     {
+      "source": "/getting-started/tutorials/review-moderator-dashboard/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
+      "source": "/getting-started/tutorials/building-a-store-catalog-manager/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
       "source": "/core-concepts/connecting-to-data-sources",
       "destination": "/connect-data/how-to-guides/connect-datasource"
     },
