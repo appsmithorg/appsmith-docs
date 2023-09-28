@@ -4,18 +4,21 @@ description: Bind data dynamically in queries.
 ---
 
 The dynamic binding feature enables you to integrate user inputs into database and API queries.
-
 You can bind values dynamically using the mustache syntax `{{ }}`. 
 Appsmith sends payloads containing details of dynamic binding along with meta information when executing a query. During the evaluation, Appsmith replaces the mustache value with the actual value.
 
-This topic explains how dynamic binding works with queries and APIs in Appsmith.
+This page explains how dynamic binding works with queries and APIs in Appsmith.
 
 ### Database queries
 
-For example, you have a SQL data source with a `USERS` table, and an [Input widget](https://docs.appsmith.com/reference/widgets/input) named `username`. You can dynamically bind the **Text** property of the Input widget as a query parameter in your SQL query to insert the text using the following syntax:
+With dynamic binding, you can populate query parameters at runtime.
+For example, you have a SQL data source with a `users` table, and a [Select widget](https://docs.appsmith.com/reference/widgets/select) named `userid`.
+
+Use the following syntax to filter the data for the selected user id:
 
 ```js
-INSERT INTO USERS (name) VALUES ('{{username.text}}')
+select id, name, email, country
+from users u where u.id = ({{userid.selectedOptionValue}})
 ```
 
 ### API queries
@@ -27,37 +30,37 @@ You can use dynamic binding with the following:
 
 #### URI path
 
-For example, you have a REST API `https://appsmithdocs.example.com`, and an [Input widget](https://docs.appsmith.com/reference/widgets/input) named `uriparam`. You can dynamically bind the **Text** property of the Input widget to the API URL path using the following syntax:
+You can dynamically bind values to the path in your API requests. Appsmith appends the evaluated value to the endpoint URL.
+For example, you have a REST API `https://mock-api.appsmith.com`, and a [Select widget](https://docs.appsmith.com/reference/widgets/select) named `apiversion`. 
+
+Use the following syntax to append the selected api version dynamically:
 
 ```js
-https://appsmithdocs.example.com/{{uriparam.text}}
+https://mock-api.appsmith.com/{{apiversion.selectedOptionValue}}
 ```
 
 #### Query parameters
 
-For example, you have a REST API `https://appsmithdocs.example.com`, and an [Select widget](https://docs.appsmith.com/reference/widgets/select) named `queryparams`. You can dynamically bind the selected value of the Select widget as the query parameters using the following syntax:
+The dynamic binding feature lets you include parameters to any API request at runtime.
+For example, you have a REST API `https://mock-api.appsmith.com`, and a [Select widget](https://docs.appsmith.com/reference/widgets/select) named `indexid`.
+
+Use the following syntax to append the parameter to the API endpoint dynamically:
 
 ```js
-https://appsmithdocs.example.com/uri-param?{{<queryparams.selectedOptionValue>}}
+https://mock-api.appsmith.com/v1?{{<indexid.selectedOptionValue>}}
 ```
 
 #### Headers
 
-For example, you have a REST API `https://appsmithdocs.example.com`, and [Select widgets](https://docs.appsmith.com/reference/widgets/select) named `header_key` and `header_value`. 
-You can dynamically bind the selected value of the Select widgets to the header.
+You can dynamically add request headers to your API requests using dynamic binding.
+For example, you have a REST API `https://mock-api.appsmith.com`, and a [Select widget](https://docs.appsmith.com/reference/widgets/select) named `applicationid`. 
 
 <img src="/img/dynamic-binding-api-headers.png" style= {{width:"700px", height:"auto"}} alt="Dynamic binding in API headers"/>
 
-To do this, use the following syntax:
+Use the following syntax to populate the header values dynamically:
 
-##### Key in headers
 ```js
-{{header_key.selectedOptionValue}}
-```
-
-##### Value in headers
-```js
-{{header_value.selectedOptionValue}}
+{{applicationid.selectedOptionValue}}
 ```
 
 :::caution 
