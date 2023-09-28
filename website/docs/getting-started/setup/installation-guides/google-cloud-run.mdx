@@ -7,7 +7,8 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Google Cloud Run
-This guide shows you how to deploy Appsmith on Google Cloud Run.
+
+This page provides steps to install Appsmith on Google Cloud Run.
 
 ## Prerequisites
 
@@ -61,74 +62,9 @@ This guide shows you how to deploy Appsmith on Google Cloud Run.
 
 7. Click **Create**. A green check mark will appear next to the connector's name when it is ready to use.
 
+## Install Appsmith
 
-## Deploy Appsmith on Cloud Run
-
-<Tabs queryString="current-edition">
-<TabItem label="Community Edition" value="community_edition">
-
-This section shows how to install Appsmith on the Community edition. If you want to install Appsmith on the Business edition, see [Business Edition](?current-edition=business_edition).
-
-1. Go to [Cloud Run](https://console.cloud.google.com/run).
-
-2. Click **Create service**.
-
-3. In the form, select **Deploy one revision from an existing container image**.
-    - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ce`.
-
-4. Enter a desired name in the **Service name** field.
-
-5. Set **CPU allocation and pricing** to **CPU is always allocated**.
-
-6. Under **Autoscaling**:
-    - Set **Minimum number of instances** to `1`.
-    - Select **All** to allow direct access to your service from the Internet.
-
-7. Under **Authentication**, select **Allow unauthenticated invocations**.
-
-8. Click **Container, Networking, Security** to expand the service configuration page.
-
-9. Click the **Container** tab.
-    - In the **Container port** box, enter `80` to specify the port you want requests to be sent to.
-    - Under **Capacity**:
-        - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
-        - Set the CPU limit as **2** in the **CPU** dropdown list.
-    - Under **Execution environment**, select **Second generation**.
-    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
-
-    | Name | Value |
-    |------------------------|------------------------------------------| 
-    | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
-    | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
-    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
-    | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
-    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
-    | **owner** | `appsmith`|
-    | **APPSMITH_ENABLE_EMBEDDED_DB** |`0`|
-
-10. Click the **Networking** tab.
-    - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
-    - Keep the default **Route only requests to private IPs through the VPC connector** option.
-
-11. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
-
-12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
-
-13. Click the **Logs** tab to verify everything works fine. Click the open icon to the right of the screen to open the **Logs Explorer**. Wait a few minutes until you see the message `Appsmith is running` in the logs. 
-
-14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
-
-<figure>
-  <img src="/img/deply-gcp-community.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
-  <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
-</figure>
-
-15. Enter the details on the signup form to create an Appsmith account.
-    
-</TabItem>
-<TabItem label="Business Edition" value="business_edition">
-
-This section shows how to install Appsmith on the Business edition. If you want to install Appsmith on the Community edition, see [Community Edition](?current-edition=community_edition).
+Follow these steps to install Appsmith on Cloud Run:
 
 ### Assign roles to account
 
@@ -308,7 +244,69 @@ This guide is optional, and you can skip to [Create Service](#create-service). F
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
 
-15. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key. Enter your license key to activate the instance.
+15. Fill in your details to create an administrator account.
+
+16. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
+
+## Install Appsmith Community
+
+Follow these steps to install Appsmith open source (Community) on Cloud Run:
+
+1. Go to [Cloud Run](https://console.cloud.google.com/run).
+
+2. Click **Create service**.
+
+3. In the form, select **Deploy one revision from an existing container image**.
+    - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ce`.
+
+4. Enter a desired name in the **Service name** field.
+
+5. Set **CPU allocation and pricing** to **CPU is always allocated**.
+
+6. Under **Autoscaling**:
+    - Set **Minimum number of instances** to `1`.
+    - Select **All** to allow direct access to your service from the Internet.
+
+7. Under **Authentication**, select **Allow unauthenticated invocations**.
+
+8. Click **Container, Networking, Security** to expand the service configuration page.
+
+9. Click the **Container** tab.
+    - In the **Container port** box, enter `80` to specify the port you want requests to be sent to.
+    - Under **Capacity**:
+        - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
+        - Set the CPU limit as **2** in the **CPU** dropdown list.
+    - Under **Execution environment**, select **Second generation**.
+    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
+
+    | Name | Value |
+    |------------------------|------------------------------------------| 
+    | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
+    | **FILE_SHARE_NAME** | The file share name you noted down in step 4 of [Create a Filestore instance](#create-a-filestore-instance). |
+    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
+    | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
+    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
+    | **owner** | `appsmith`|
+    | **APPSMITH_ENABLE_EMBEDDED_DB** |`0`|
+
+10. Click the **Networking** tab.
+    - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
+    - Keep the default **Route only requests to private IPs through the VPC connector** option.
+
+11. Click the **Security** tab. Note that Cloud Run services or jobs run as the **Compute Engine default service account**.
+
+12. Click the **Create** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
+
+13. Click the **Logs** tab to verify everything works fine. Click the open icon to the right of the screen to open the **Logs Explorer**. Wait a few minutes until you see the message `Appsmith is running` in the logs. 
+
+14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
+
+<figure>
+  <img src="/img/deply-gcp-community.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
+  <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
+</figure>
+
+15. Enter the details on the signup form to create an Appsmith account.
 
 ### Manage traffic between revisions
 
@@ -331,8 +329,6 @@ Follow the steps below if you have created a Redis instance in the steps above t
   <figcaption align = "center"><i>Manage traffic between revisions</i></figcaption>
 </figure>
 
-</TabItem>
-</Tabs>
 
 ## See also
 
