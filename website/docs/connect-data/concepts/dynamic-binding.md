@@ -5,7 +5,7 @@ description: Bind data dynamically in Appsmith.
 
 Binding properties in Appsmith allow you to specify how data from a data source should be bound to UI components. For example, you can bind a table widget to a database query so that it displays the results of that query.
 
-Dynamic binding in Appsmith lets you use dynamic values within widget properties, query parameters, API paths, and search parameters.
+Dynamic binding in Appsmith lets you use dynamic values within query parameters, API paths, and search parameters.
 
 Appsmith supports dynamic binding with the following:
 
