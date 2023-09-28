@@ -14,7 +14,7 @@ This page shows you how to use the Filepicker widget to upload file data using A
 
 ## Configure query
 
-Follow these steps to configure the API in the Appsmith app:
+Follow these steps to configure the API:
 
 
 1. In the API configuration, specify the request method (POST or PUT) and provide your API URL, including any necessary path.
@@ -60,7 +60,7 @@ In this example:
    * If you want to upload all the details of a file, including format, type, name, and data, use: `{{ FilePicker1.files[0] }}`.
    * If you want to upload multiple files, use `{{ FilePicker1.files }}`.
 
-* The `key1` and `key2` parameters can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameters.
+* The `key1` and `key2` parameters can be customized to match the specific data you want to include in your API request. For instance, you can add  a filename, file path, access key, or any other relevant parameters.
   
 
 
