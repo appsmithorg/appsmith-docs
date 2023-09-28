@@ -79,9 +79,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/google-cloud-run',
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
-                'getting-started/setup/installation-guides/cloudjiffy',
                 'getting-started/setup/installation-guides/ansible',
-                'getting-started/setup/installation-guides/restack',
               ],
             },
             {
