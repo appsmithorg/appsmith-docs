@@ -3,7 +3,7 @@
 <div class="containerGridSampleApp">
 <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/concepts/dynamic-binding"><strong>Dynamic Binding</strong></a>
+            <a href="/connect-data/concepts/dynamic-binding-in-queries"><strong>Dynamic Binding in Queries</strong></a>
         </div> <hr/>
         <div class="containerDescription">Bind data dynamically to your queries in Appsmith.</div>
         <div class="containerTutorialLink"></div>
