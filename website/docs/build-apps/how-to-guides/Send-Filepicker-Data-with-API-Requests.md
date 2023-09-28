@@ -9,7 +9,7 @@ This page shows you how to use the Filepicker widget to upload file data using A
 ## Prerequisites
 
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
-* Access to a cloud platform with an [API](/connect-data/reference/rest-api) endpoints.
+* Access to a cloud platform with [API](/connect-data/reference/rest-api) endpoints.
 
 
 ## Configure query
@@ -17,16 +17,13 @@ This page shows you how to use the Filepicker widget to upload file data using A
 Follow these steps to configure the API in the Appsmith app:
 
 
-1. In the API configuration, specify the request method *(Generally POST or PUT)* and provide your API URL, including any necessary path or query parameters.
+1. In the API configuration, specify the request method (POST or PUT) and provide your API URL, including any necessary path.
 
-
-2. In the request **Body**, select the method and format that align with the API's requirements. 
+2. In the **Body** tab, select the encoding method that aligns with the API's requirements. 
 
 <dd>
 
-When uploading files using an API, the choice of data format or encoding method depends on the requirements of the API, the programming language or framework you're using, and the specific use case. 
-
-You can select any of the following methods based on your use case:
+You can select any of the following methods:
 
 
 
@@ -146,14 +143,24 @@ In this example:
     Raw binary data is best suited for single binary file uploads without additional form data or metadata. It's efficient for handling large files.
 
 ```json
-   {{ Filepicker1.files[0]?.data }}
+{
+  "file": "{{ Filepicker1.files[0]?.data }}",
+  "key1": "value1"
+}
 ```
+
+
+In this example:
+
+* `file`, corresponds to the file you want to upload, which should be selected from the FilePicker widget. The `?` operator is used to handle potential undefined values.
+
+* The `key1` parameter can be customized to match the specific data you want to include in your API request. For instance, you can add filename, filepath, access key, or any other relevant parameter.
 
 Use RAW if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the data property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.
 
 
-:::caution tip
-Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/connect-data/reference/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
+:::caution
+Be sure to turn off [**JSON Smart Substitution**](/connect-data/reference/query-settings#smart-json-substitution) in the query settings for this specific query.
 :::
 
   </TabItem>
@@ -163,7 +170,7 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 
 
 :::tip
-If you intend to upload files of significant size, adjust the timeout settings in the API configuration.
+If you want to upload files of significant size, adjust the [Query timeout](/connect-data/reference/query-settings#query-timeout) settings in the API configuration.
 :::
 
 
