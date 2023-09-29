@@ -81,14 +81,13 @@ messageContent="Cannot delete datasource since it has 1 action(s) using it."></M
 
 #### Cause
 
-Datasources are workspace-scoped, and there may be other apps within the workspace that rely on the datasource you are trying to delete. This dependency prevents deletion of the datasource.
-
+The datasource is workspace-scoped, and there may be other apps within the workspace that rely on the datasource you are trying to delete. This prevents the deletion of the datasource.
 
 #### Solution
 
-To resolve this issue, you need to delete any queries or actions that depend on this datasource before attempting to delete the datasource itself. The workaround here would be to use multiple workspaces if you want separate datasources.
+To resolve this issue, you need to delete any queries or actions that depend on this datasource before attempting to delete the datasource itself. If you wish to use different datasources, you may choose to create multiple workspaces.
 
-If you need to move an application from one workspace to another, you can use the import/export feature. For more details on how to import and export applications, you can refer to [Migrate Applications](/advanced-concepts/more/backup-restore#importexport-applications).
+If you need to move an application from one workspace to another, you can use the import/export feature. For more details on how to import and export applications, see the [Migrate Applications](/advanced-concepts/more/backup-restore#importexport-applications) guide.
 
 
 ### Error connecting to local DB or API
