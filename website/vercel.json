@@ -1077,6 +1077,16 @@
     {
       "source": "/getting-started/setup/installation-guides/restack",
       "destination": "https://www.restack.io/docs/deploy-appsmith-on-kubernetes"
+    },
+    {
+      "source": "/connect-data/how-to-guides/connect-datasource",
+      "destination": "/getting-started/tutorials/start-building#connect-to-a-database"
+    }
+    ,
+    {
+      "source": "/connect-data/how-to-guides/query-data",
+      "destination": "/connect-data/overview"
     }
   ]
 }
+

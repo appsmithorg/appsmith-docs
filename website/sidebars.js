@@ -223,8 +223,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
-            'connect-data/how-to-guides/connect-datasource',
-            'connect-data/how-to-guides/query-data',
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
