@@ -68,7 +68,7 @@ This message indicates that one of the mandatory fields, for example, `Access Ke
 
 This error can be fixed by filling the mentioned mandatory fields in the datasource creation form.
 
-### Can't delete datasource error
+### Cannot delete datasource error
 
 You may face this issue when deleting a [datasource](/connect-data/reference/).
 
