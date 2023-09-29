@@ -1,22 +1,5 @@
 # How-To Guides
 
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <a href="/getting-started/tutorials/start-building#connect-to-a-database"><strong>Connect Datasource</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">Shows you how to connect to a datasource on Appsmith.</div>
-        <div class="containerTutorialLink"></div>
-    </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
-           <a href="/connect-data/overview"><strong>Query Data</strong></a>
-        </div><hr/>
-        <div class="containerDescription">Shows you how to create queries on Appsmith. </div>
-         <div class="containerTutorialLink">
-         </div>
-    </div>
-</div>
 
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
