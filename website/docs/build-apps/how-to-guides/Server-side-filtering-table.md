@@ -21,7 +21,7 @@ Server-side filtering involves using a value to narrow down the results of a que
 
 ## Configure query
 
-To implement server-side filtering, you can use widgets such as the Select, Checkbox, Sliders and other similar widgets that allow users to select from a variety of available filters.
+To implement server-side filtering, you can use widgets such as Select, Checkbox, Sliders, and other similar widgets that allow users to select from a variety of available filters.
 
 <dd>
 
@@ -35,7 +35,7 @@ To implement server-side filtering, you can use widgets such as the Select, Chec
     SELECT * FROM users WHERE gender = {{Select1.selectedOptionValue}};
     ```
 
-  * For the REST API, configure query parameter as shown in the URL:
+  * For the REST API, configure the query parameter as shown in the URL:
 
     ```
     https://mock-api.appsmith.com/users?gender={{Select1.selectedOptionValue}}
