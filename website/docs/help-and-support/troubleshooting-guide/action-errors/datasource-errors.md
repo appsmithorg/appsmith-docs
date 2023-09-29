@@ -70,13 +70,26 @@ This error can be fixed by filling the mentioned mandatory fields in the datasou
 
 ### Can't delete datasource error
 
-```
-Cannot delete datasource since it has 1 action(s) using it.
-```
+If you are trying to delete a [datasource](/connect-data/reference/) and encounter an error message similar to:
 
-This message indicates that the [datasource](/connect-data/reference/) attempting to be deleted has some query action configured on it.
+#### Error message
 
-This error can be fixed by deleting any queries dependent on this [datasource](/connect-data/reference/) before attempting to delete the [datasource](../../../connect-data/reference/).
+<Message
+messageContainerClassName="error" 
+messageContent="Cannot delete datasource since it has 1 action(s) using it."></Message>
+
+
+#### Cause
+
+Datasources are workspace-scoped, and there may be other apps within the workspace that rely on the datasource you are trying to delete. This dependency prevents deletion of the datasource.
+
+
+#### Solution
+
+To resolve this issue, you need to delete any queries or actions that depend on this datasource before attempting to delete the datasource itself. The workaround here would be to use multiple workspaces if you want separate datasources.
+
+If you need to move an application from one workspace to another, you can use the import/export feature. For more details on how to import and export applications, you can refer to [Migrate Applications](https://docs.appsmith.com/advanced-concepts/more/backup-restore#importexport-applications).
+
 
 ### Error connecting to local DB or API
 
