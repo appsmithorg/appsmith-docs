@@ -70,7 +70,7 @@ This error can be fixed by filling the mentioned mandatory fields in the datasou
 
 ### Can't delete datasource error
 
-If you are trying to delete a [datasource](/connect-data/reference/) and encounter an error message similar to:
+You may face this issue when deleting a [datasource](/connect-data/reference/).
 
 #### Error message
 
