@@ -143,8 +143,6 @@ The instance will have the `exec` enabled once the new deployment is active.
 
 ## Troubleshooting
 
-## Troubleshooting
-
 Some common errors that you may face during installation:
 
 - [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith)
