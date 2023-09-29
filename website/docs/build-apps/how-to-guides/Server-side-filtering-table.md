@@ -47,10 +47,10 @@ To implement server-side filtering, you can use widgets such as Select, Checkbox
 
 Follow these steps to configure the Select widget to display data, and implement server-side filtering:
 
-* Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the fetch query. Make sure that the fetch query is connected to the Table widget.
+* Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the filter query. Make sure that the filter query is connected to the Table widget.
 
 
-* Update the [**Default selected value**](/reference/widgets/select#default-selected-value-string) property to align with the value provided by the option.
+* Update the [**Default selected value**](/reference/widgets/select#default-selected-value-string) property to align with the value provided in the options.
 
 
 After completing these steps, you can use the Select widget to filter data and display the filtered results in the Table widget.
