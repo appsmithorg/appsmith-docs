@@ -63,7 +63,7 @@ Following is an example of the Lodash `_.map` utility, in use. `fetchFruits` is 
 
 #### moment
 
-An example of the moment.js `format` utility, in use in a [query](/connect-data/how-to-guides/query-data).
+An example of the moment.js `format` utility, in use in a [query](/connect-data/overview).
 
 ```sql
 insert into users (name, email, createdDate) values
