@@ -188,7 +188,7 @@ Follow these steps to configure the Filepicker widget to upload files:
 
 * Configure the [**Data Format**](/reference/widgets/filepicker#data-format-string) property to align with the data format expected by the API or platform you are using.
 
-* Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to run the Cloudinary query.
+* Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to execute the query.
 
 After completing these steps, select your file(s) and click the **Upload File(s)** button to send them to the server.
 
