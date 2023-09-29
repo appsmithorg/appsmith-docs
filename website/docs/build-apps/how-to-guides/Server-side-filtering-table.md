@@ -16,11 +16,12 @@ Server-side filtering involves using a value to narrow down the results of a que
 ## Prerequisites
 
 * A [Table](/reference/widgets/table) widget connected to a query.
-* A widget which can be used t apply filter like selec, checkbox or slider. for this guide we will be suing select widget. 
+* A widget for applying filters, such as a [Select](/reference/widgets/select/), [Checkbox](/reference/widgets/checkbox), or [Sliders](/reference/widgets/category-slider). For this guide, let's use the Select widget as an example.
+
 
 ## Configure query
 
-To implement server-side filtering, you can use widgets such as the [Select](/reference/widgets/select/), [Checkbox](/reference/widgets/checkbox), [Sliders](/reference/widgets/category-slider) and other similar widgets that allow users to select from a variety of available filters.
+To implement server-side filtering, you can use widgets such as the Select, Checkbox, Sliders and other similar widgets that allow users to select from a variety of available filters.
 
 <dd>
 
@@ -46,12 +47,18 @@ To implement server-side filtering, you can use widgets such as the [Select](/re
 
 Follow these steps to configure the Select widget to display fetched data, and implement server-side filtering:
 
-* Set the Select widget's **onOptionChange** event to execute the fetch query. Make sure that the fetch query is connected to the Table widget.
+* Set the Select widget's [**onOptionChange**](/reference/widgets/select#onoptionchange) event to execute the fetch query. Make sure that the fetch query is connected to the Table widget.
 
 
-* Update the **Default selected value** property to align with the value provided by the option.
+* Update the [**Default selected value**](/reference/widgets/select#default-selected-value-string) property to align with the value provided by the option.
+
+
+After completing these steps, you can use the Select widget to filter data and display the filtered results in the Table widget.
+
+
+
+Check out this sample app for [Server Side Filtering](https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808?_gl=1*msr6dt*_ga*MTg0NzgzMjE2LjE2NjE3NTIyMzM.*_ga_D1VS24CQXE*MTY5NTk3MzA0Ni4zNjAuMS4xNjk1OTc0MjE0LjAuMC4w).
 
 
 
 
- 
