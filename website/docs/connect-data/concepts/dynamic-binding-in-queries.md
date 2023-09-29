@@ -32,9 +32,6 @@ Use the following syntax to append the selected api version dynamically:
 ```js
 https://mock-api.appsmith.com/{{apiversion.selectedOptionValue}}
 ```
-
-Dynamic binding also lets you construct JSON objects dynamically to include in your request bodies.
-
 You can use dynamic binding with the following:
 - URI path
 - Query parameters

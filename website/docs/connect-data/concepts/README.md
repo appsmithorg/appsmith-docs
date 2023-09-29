@@ -5,7 +5,7 @@
         <div class="containerCol">
             <a href="/connect-data/concepts/dynamic-binding-in-queries"><strong>Dynamic Binding in Queries</strong></a>
         </div> <hr/>
-        <div class="containerDescription">Bind data dynamically to your queries in Appsmith.</div>
+        <div class="containerDescription">Dynamic binding lets you integrate user inputs into the database and API queries using mustache syntax. During execution, Appsmith replaces the mustache value with the actual value.</div>
         <div class="containerTutorialLink"></div>
     </div>
 
