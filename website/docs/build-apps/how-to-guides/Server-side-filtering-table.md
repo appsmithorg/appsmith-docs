@@ -16,7 +16,7 @@ Server-side filtering involves using a value to narrow down the results of a que
 ## Prerequisites
 
 * A [Table](/reference/widgets/table) widget connected to a query.
-* A widget for applying filters, such as a [Select](/reference/widgets/select/), [Checkbox](/reference/widgets/checkbox), or [Sliders](/reference/widgets/category-slider). For this guide, let's use the Select widget as an example.
+* A widget for applying filters, such as a [Select](/reference/widgets/select/), [Checkbox](/reference/widgets/checkbox), or [Sliders](/reference/widgets/category-slider). For this guide, lets use the Select widget as an example.
 
 
 ## Configure query
