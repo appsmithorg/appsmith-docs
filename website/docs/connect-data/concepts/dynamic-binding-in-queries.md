@@ -23,13 +23,7 @@ from users u where u.id = {{userid.selectedOptionValue}}
 
 ### API queries
 
-You can dynamically bind values to your API requests. Appsmith then appends the evaluated value to the endpoint URL. Dynamic binding also lets you construct JSON objects dynamically to include in your request bodies.
-
-You can use dynamic binding with the following:
-- URI path
-- Query parameters
-- Headers
-- Body
+You can dynamically bind values to your API requests. Appsmith then appends the evaluated values to the endpoint URL.
 
 For example, you have a REST API `https://mock-api.appsmith.com`, and a [Select widget](https://docs.appsmith.com/reference/widgets/select) named `apiversion`. 
 
@@ -38,6 +32,15 @@ Use the following syntax to append the selected api version dynamically:
 ```js
 https://mock-api.appsmith.com/{{apiversion.selectedOptionValue}}
 ```
+
+Dynamic binding also lets you construct JSON objects dynamically to include in your request bodies.
+
+You can use dynamic binding with the following:
+- URI path
+- Query parameters
+- Headers
+- Body
+
 
 :::caution 
 Appsmith does not support dynamic binding in datasource configurations and recommends [multiple datasource environments](https://docs.appsmith.com/connect-data/how-to-guides/setup-datasource-environments).
