@@ -7,70 +7,65 @@ import TabItem from '@theme/TabItem';
 Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
 
 
-<Tabs>
-  <TabItem value="Ace-Editor" label="Ace Code Editor Library" default>
-    
-    Lets create a custom Code Editor Widget with the [Ace Code Editor Library](https://ace.c9.io/).
+## Prerequisites
 
-1. In the **srcDoc** property, add the following code:
+* You should have the code for the custom widget you want to embed, which can be written in JavaScript, React, Angular, or HTML.
+* Iframe Widget.
 
-```html
-<head>
-<style type="text/css" media="screen">
- #editor{ 
-        position: absolute;
-        top: 40px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-}
-</style>
-</head>
-<body>
-<div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}</div>
-<script src="https://cdn.jsdelivr.net/npm/ace-builds@1.19.0/src-min-noconflict/ace.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/javascript");
-    editor.on("change", function() {
-        // Get the value of the editor and send it to the parent window
-        var code = editor.getValue();
-        window.parent.postMessage(code, "*");
-    });
-</script>
-```
-This code creates a code editor widget using the Ace code editor library and sends the entered code to the [parent window](#communication-between-app-and-iframe) when the "Submit Code" button is clicked.
+## Configure Iframe
+
+Follow these steps to configure an Iframe widget for embedding custom widgets:
 
 
-2. Next, add Text widget and sets its **Text** property to:
+###  Custom Widgets Using JavaScript 
+
+1. In the **srcDoc** property, add the HTML and JavaScript code to define the custom widget:
+
+<dd>
+
+*Examples:*
+
+</dd>
+
+2. To access messages from the embedded widget, use the `message` reference property. For example, add Text widget and set its **Text** property to:
+
+<dd>
 
 ```js
 {{Iframe1.message}}
 ```
+
+</dd>
+
 This retrieves the entered code from the editor and displays it in a Text widget using the `message` reference property. 
 
-With this setup, users can edit the code in the code editor, and when the submit button is clicked, the entered code would be processed or displayed as desired.
 
 
-<figure>
-  <img src="/img/custom-widget-code.png" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
-</figure>
+### Custom Widgets Using React
+
+To create a custom widget using React, you need to develop a React component, host it on a platform of your choice, and then use it for integration.
+
+1. In the **URL** property, add the deployed app's link. For instance, if you have hosted your code on Replit, you can use:
+
+<dd>
+
+```
+https://appname.username.repl.co
+```
+
+</dd>
+
+2. To send a message to the react app, you can use the `postWindowMessage` function, like:
 
 
-  </TabItem>
-  <TabItem value="Accordion" label="Accordion Widget">
-    This is an orange 🍊
-  </TabItem>
-  <TabItem value="banana" label="Drawing Pad Widget">
-    This is a banana 🍌
-  </TabItem>
-    <TabItem value="Signature" label="Signature Pad Widget">
-    This is a banana 🍌
-  </TabItem>
-</Tabs>
+<dd>
+
+```js
+{{ postWindowMessage({"key": Select1.selectedOptionValue}, 'Iframe1', '*')}}
+```
+
+</dd>
+
+
+
 
