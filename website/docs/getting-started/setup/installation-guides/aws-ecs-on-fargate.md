@@ -1,13 +1,17 @@
+---
+description: Deploy Appsmith on the ECS cluster using Fargate.
+---
+
 # AWS ECS on Fargate
 
-This page provides steps to install Appsmith using AWS ECS on Fargate.
+This page provides steps to install Appsmith on AWS ECS using Fargate.
 
 ## Prerequisites
 
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 * Switch to the Classic Amazon Web Console.
-* If you already have an Application Load Balancer (ALB), ensure that you have listeners set up for ports 80 and 443. If you don't have one, provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html).
-* An Amazon Elastic File System (EFS) set up. If you don't have an Amazon EFS, create by following the below steps:
+* If you already have an Application Load Balancer (ALB) in place, make sure you have listeners set up for ports 80 and 443. Otherwise, provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html).
+* If you haven't set up an Amazon Elastic File System (EFS) yet, you can create one by following these steps:
     - Go to **AWS EFS** in the Amazon Management Console and click **Create**.
     - Configure parameters for VPC and storage class. 
     - Verify that the EFS, ECS cluster and Fargate instances are in the same VPC.
