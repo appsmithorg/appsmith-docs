@@ -10,7 +10,7 @@ This page provides steps to install Appsmith using AWS ECS on Fargate.
 * An Amazon Elastic File System (EFS) set up. If you don't have an Amazon EFS, create by following the below steps:
     - Go to **AWS EFS** in the Amazon Management Console and click **Create**.
     - Configure parameters for VPC and storage class. 
-    - Verify that the EFS, ECS cluster, and Fargate instances are in the same VPC.
+    - Verify that the EFS, ECS cluster and Fargate instances are in the same VPC.
     - Go to the Network tab for the ECS that you created, and ensure the mount-target is available in the same availability zone as the ECS cluster.
     - An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
     - To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port ranges 80, 443, and 22 to the security group you created above.
@@ -59,7 +59,7 @@ Follow these steps to create task and container definitions for your cluster:
 5. Select the default Network mode.
 6. Set Linux as the Operating system family.
 7. Select the **Create new role** option for **Task Execution Role**.
-8. Set the required task size for memory & CPU (Minimum of 2vCPU and 4 GB Memory is needed).
+8. Set the required task size for memory & CPU (you need at least 2vCPU and 4 GB Memory).
 9. Go to the **Volumes** section and add a new volume as shown below:
     * **Name** - Give a desired name.
     * **Volume type** - EFS.
@@ -71,13 +71,13 @@ Follow these steps to create task and container definitions for your cluster:
     3. Scroll down to the **Port mappings** section.
     4. Add port mappings for ports 80 and 443.
     4. Set the _Mount points Source volume_ to `appsmith_stack` and set the Container path to `/appsmith-stacks`.
-11. You can configure the environment values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** you create secrets and set the `env` value using the `ValueFrom` option by specifying the `arn` of the secret created.
+11. You can configure the environment values for the Appsmith in the Environment Section. For sensitive values, it's **recommended** that you create secrets and set the `env` value using the `ValueFrom` option by specifying the `arn` of the secret created.
 12. Set the following Environment Variables:
     - `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database.
     - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database.
-    - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to monitor the processes in the Appsmith container.
+    - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container.
     - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
-    - `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases which is not supported on EFS volume.
+    - `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases which are not supported on EFS volume.
 13. Configure the health check to the following settings:
     - Command: `CMD-SHELL, curl http://localhost/api/v1/health`
     - Interval: 10 seconds
@@ -105,8 +105,8 @@ Follow these steps to create and run an ECS service:
 4. Configure the Network:
     * Select the VPC and the subnets.
     * Select the security group that you created in the [prerequisites](#prerequisites) section, and add the security group with NFS access.
-    * Select Application Load Balancer that you created in the [prerequisites](#prerequisites) section.
-    * Set the listener for port 80 and click **Add to the load balancer** button.
+    * Select the Application Load Balancer that you created in the [prerequisites](#prerequisites) section.
+    * Set the listener for port 80 and click the **Add to the load balancer** button.
     * Create a new production listener port for port 80.
     * **Production listener protocol** - Set it to HTTP.
     * **Target Group** - Select **create new**.
@@ -129,7 +129,7 @@ Follow these steps to create and run an ECS service:
   ```bash
     aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
   ``` 
-The instance will have the `exec` enabled once the new deployment is active.
+The `exec` command will be available once the new deployment is active.
 
 2. Exec into the Fargate Appsmith instance with:
     ```bash
