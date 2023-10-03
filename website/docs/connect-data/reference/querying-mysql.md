@@ -24,14 +24,13 @@ The following section is a reference guide that provides a complete description 
 </figure>
 
 #### Connection method
-<dd>Sets how to connect to the database</dd>
+<dd>Sets the method used to connect to the database.</dd>
 <dd><i>Options:</i>
   <ul>
-    <li><b>Standard:</b> This method allows directly connecting to your database via host address, username and 
-password. This method should be chosen if your MySQL database is directly accessible at an IP address. You may want to  
-use this method if you are unsure which method to use.</li>
-    <li><b>SSH tunnel:</b> Connect via an SSH connection. This allows you to connect to a database instance which is 
-hidden / secured behind an SSH server.</li>
+    <li><b>Standard:</b> Connect to the database using host address, username and 
+password. Use this method if the MySQL database is directly accessible at an IP address or if you are unsure of which method to use.</li>
+    <li><b>SSH tunnel:</b> Connect over an SSH connection. This allows you to connect to a database instance which is 
+hidden or secured behind an SSH server.</li>
   </ul>
 </dd>
 
@@ -68,26 +67,16 @@ hidden / secured behind an SSH server.</li>
 </dd>
 
 #### SSH host address
-<dd>This field is only required if you have chosen <code>SSH tunnel</code> as <code>Connection method</code> </dd>
-
-<dd>It is the IP address of your remote SSH server where you want to connect to. </dd>
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the IP address of the remote SSH server you want to connect to. </dd>
 
 #### SSH port
-<dd>This field is only required if you have chosen <code>SSH tunnel</code> as <code>Connection method</code> </dd>
-
-<dd>It is the port number of your remote SSH server where you want to connect to. It would connect to port 
-<code>22</code> by default if left empty. </dd>
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the port number of the remote SSH server you want to connect to. Connects to port <code>22</code> by default if left empty. </dd>
 
 #### SSH username
-<dd>This field is only required if you have chosen <code>SSH tunnel</code> as <code>Connection method</code> </dd>
-
-<dd>It is the username of your SSH account.</dd>
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the username of your SSH account.</dd>
 
 #### SSH Key
-<dd>This field is only required if you have chosen <code>SSH tunnel</code> as <code>Connection method</code> </dd>
-
-<dd>It is your SSH key file. Current supported formats: `pem`, `pkcs5`, `pkcs8`. You need to click on the 
-<code>Select</code> button to choose the file from your local storage.</dd>
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. Upload the SSH key file. Current supported formats: `pem`, `pkcs5`, `pkcs8`.</dd>
 
 #### SSL mode
 
