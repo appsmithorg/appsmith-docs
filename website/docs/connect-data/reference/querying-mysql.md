@@ -78,7 +78,7 @@ hidden / secured behind an SSH server.</li>
 <dd>It is the port number of your remote SSH server where you want to connect to. It would connect to port 
 <code>22</code> by default if left empty. </dd>
 
-#### SSH Username
+#### SSH username
 <dd>This field is only required if you have chosen <code>SSH tunnel</code> as <code>Connection method</code> </dd>
 
 <dd>It is the username of your SSH account.</dd>
