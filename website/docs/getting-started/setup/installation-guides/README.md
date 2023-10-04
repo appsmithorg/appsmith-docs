@@ -118,7 +118,7 @@ Depending on your infrastructure, you can choose one of the following guides to 
             <img class="containerImage" src="/img/Elestio.png" alt="Elestio-logo"/>
             </a> 
         </div> 
-        <b><a href="/getting-started/setup/installation-guides/elestio">Elestio</a></b>
+        <b><a href="/getting-started/setup/installation-guides/elestio" width="100" height="100">Elestio</a></b>
         </div>
 </div>    
 
