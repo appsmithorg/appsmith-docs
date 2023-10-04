@@ -29,9 +29,9 @@
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"><strong>Upload Images to and from S3</strong></a>
+           <a href="/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"><strong>Upload Images Using Camera</strong></a>
         </div><hr/>
-        <div class="containerDescription">Shows you how to connect and configure the S3 datasource, use the Image and Camera widget, upload/download images using S3. </div>
+        <div class="containerDescription">Shows you how to connect and configure datasource, and use the Camera widget to upload images. </div>
          <div class="containerTutorialLink">
          </div>
     </div>

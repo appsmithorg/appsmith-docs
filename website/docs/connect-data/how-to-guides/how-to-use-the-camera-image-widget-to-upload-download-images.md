@@ -8,8 +8,8 @@ For more information, see [Camera](https://docs.appsmith.com/reference/widgets/c
 
 This page provides steps to upload images using the Camera widget to a datasource and uses the S3 datasource as an example.
 You will learn how to:
-- Create an S3 datasource and connect your app.
-- Upload an image to S3 using the Camera widget.
+- [Create an S3 datasource and connect your app.](#create-an-s3-datasource)
+- [Upload an image to S3 using the Camera widget.](#upload-an-image-using-the-camera-widget)
 
 ## Prerequisites
 - To upload your data to Amazon S3, you must first [create an Amazon S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) in one of the AWS Regions.
