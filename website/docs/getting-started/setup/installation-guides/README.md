@@ -112,6 +112,14 @@ Depending on your infrastructure, you can choose one of the following guides to 
         </div> 
         <b><a href="/getting-started/setup/installation-guides/cloudjiffy">CloudJiffy</a></b>
         </div>
+        <div class="columnGrid column-three" align="center">
+        <div class="containerCol">
+             <a href="/getting-started/setup/installation-guides/elestio">
+            <img class="containerImage" src="/img/Elestio.png" alt="Elestio-logo"/>
+            </a> 
+        </div> 
+        <b><a href="/getting-started/setup/installation-guides/elestio">Elestio</a></b>
+        </div>
 </div>    
 
 <div class="containerGrid">
@@ -130,3 +138,5 @@ Depending on your infrastructure, you can choose one of the following guides to 
 </div>
 
 </div>
+
+[def]: img/Elesti
