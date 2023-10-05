@@ -4,6 +4,7 @@ sidebar_position: 6
 
 # Upload Images to S3 Using Camera
 Appsmith provides object storage for storing and recovering information or data from anywhere over the internet using S3.
+
 This page provides steps to upload images using the Camera widget to the S3 datasource.
 
 ## Prerequisites
