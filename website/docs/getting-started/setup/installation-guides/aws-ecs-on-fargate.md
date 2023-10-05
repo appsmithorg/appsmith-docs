@@ -165,7 +165,7 @@ Follow these steps to create and run an ECS service:
            - **Health check path** - Set it to `/api/v1/health`.
            - Click the **Next step** button.
     * Click the **Next step** button.
-5. On the **Set Auto Scaling** screen, keep the default selection for the **Auto Scaling** page and click the **Next step** button.
+5. On the **Set Auto Scaling** screen, keep the default selection and click the **Next step** button.
 6. Review the details and click **Create Service**. 
 7. Get the Domain Name or public IP of your ALB to access Appsmith.
 
