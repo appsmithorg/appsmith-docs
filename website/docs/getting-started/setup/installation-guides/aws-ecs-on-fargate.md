@@ -9,13 +9,15 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
 ## Prerequisites
 
 * **Amazon Web Services (AWS) account** - If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
-* **Application Load Balancer (ALB)** - If you already have an ALB, make sure you have listeners set up for ports 80 and 443. Otherwise, provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer).
+* **Application Load Balancer (ALB)** - If you already have an ALB, follow these steps:
+    - Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
+    - Add or create a security group with ports 80 and 443 accessible. 
 * **Amazon Elastic File System (EFS)** - If you haven't set up an EFS yet, follow these steps:
     - Go to **AWS EFS** and click the **Create file system** button.
     - Give a meaningful name to your file system and configure VPC. 
     - Refresh the file system listing, and select the file system you created above.
     - Go to the **Network** tab, and click **Manage** button on the right side.
-    - Select the Amazon Security group with port `2049` accessible. If you don't have one:
+    - Select the security group with port `2049` accessible. If you don't have one:
         - [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
         - To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port `2049` for NFS access to the security group you created above.
         - Attach the security group to the EFS mount target.
@@ -90,7 +92,7 @@ Follow these steps to create task and container definitions for your cluster:
 7. Select the **Create new role** option for **Task Execution Role**.
 8. Set the required task size for memory & CPU (you need at least 2vCPU and 4 GB Memory).
 9. Scroll down to the **Volumes** section and add a new volume as shown below:
-    * **Name** - Give a desired name.
+    * **Name** - Give name as `appsmith_stack`.
     * **Volume type** - EFS.
     * **File System ID** - EFS file system created in the [Prerequisites](#prerequisites) section. 
     * Keep the default values for the remaining fields.
@@ -109,9 +111,9 @@ Follow these steps to create task and container definitions for your cluster:
             - Start periods: 160 seconds
             - Retries: 3
         * In the **ENVIRONMENT** section, set the below variables in the **Environment variables** subsection:
-            - `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database.
-            - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database.
-            - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container.
+            - `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
+            - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
+            - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
             - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
             - `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
         * In the **STORAGE AND LOGGING** section, provide details as below for **Mount points**:
@@ -132,7 +134,7 @@ Follow these steps to create task and container definitions for your cluster:
 
 Follow these steps to create and run an ECS service:
 
-1.  Go to the cluster dashboard and click the ECS cluster name that you created in [Create ECS Cluster](#create-ecs-cluster).
+1.  Go to the cluster dashboard and click the ECS cluster name that you created in [Create ECS Cluster](#create-ecs-cluster) section.
 2. On the cluster details, click **Create** button under the **Services** tab.
 3. On the **Configure the Service** screen, add below details:
     * **Launch Type** - Select Fargate.
@@ -146,12 +148,22 @@ Follow these steps to create and run an ECS service:
     * Select the VPC and the subnets.
     * Select the security group you created in the [Prerequisites](#prerequisites) section, and add the security group with NFS access.
     * Select the Application Load Balancer you created in the [Prerequisites](#prerequisites) section.
-    * Set the listener for port 80 and click the **Add to the load balancer** button.
-    * Create a new production listener port for port 80.
-    * **Production listener protocol** - Set it to HTTP.
-    * **Target Group** - Select **create new**.
-    * Set the Health Check pattern to `/api/v1/health` and evaluation order to 1.
-    * Repeat the same steps to add a listener for port 443 and protocol as HTTPS.
+        - Port 80 Configuration
+           - Choose the listener for port 80 and click the **Add to the load balancer** button.
+           - **Production listener port** - `create new`, and add the port as 80.
+           - **Production listener protocol** - Set it to `HTTP`.
+           - **Target group** - Select `create new`, and provide a meaningful name to the target group.
+           - **Target group protocol** - Set it to `HTTP`.
+           - **Health check path** - Set it to `/api/v1/health`.
+           - Click the **Next step** button.
+        - - Port 80 Configuration
+           - Choose the listener for port 443 and click the **Add to the load balancer** button.
+           - **Production listener port** - `create new`, and add the port as 443.
+           - **Production listener protocol** - Set it to `HTTPS`.
+           - **Target group** - Select `create new`, and provide a meaningful name to the target group.
+           - **Target group protocol** - Set it to `HTTP`.
+           - **Health check path** - Set it to `/api/v1/health`.
+           - Click the **Next step** button.
     * Click the **Next step** button.
 5. On the **Set Auto Scaling** screen, keep the default selection for the **Auto Scaling** page and click the **Next step** button.
 6. Review the details and click **Create Service**. 
