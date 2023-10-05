@@ -92,7 +92,7 @@ Follow these steps to create task and container definitions for your cluster:
 9. Scroll down to the **Volumes** section and add a new volume as shown below:
     * **Name** - Give a desired name.
     * **Volume type** - EFS.
-    * **File System ID** - EFS file system created in the [prerequisites](#prerequisites) section. 
+    * **File System ID** - EFS file system created in the [Prerequisites](#prerequisites) section. 
     * Keep the default values for the remaining fields.
     * Click **Add** button.
 10. Scroll up to configure the Appsmith container.
@@ -144,8 +144,8 @@ Follow these steps to create and run an ECS service:
     * Keep the default selection for other properties and click the **Next step** button.
 4. On the _Configure the Network_ screen, add below details:
     * Select the VPC and the subnets.
-    * Select the security group you created in the [prerequisites](#prerequisites) section, and add the security group with NFS access.
-    * Select the Application Load Balancer you created in the [prerequisites](#prerequisites) section.
+    * Select the security group you created in the [Prerequisites](#prerequisites) section, and add the security group with NFS access.
+    * Select the Application Load Balancer you created in the [Prerequisites](#prerequisites) section.
     * Set the listener for port 80 and click the **Add to the load balancer** button.
     * Create a new production listener port for port 80.
     * **Production listener protocol** - Set it to HTTP.
