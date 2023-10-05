@@ -12,8 +12,8 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
 * **Application Load Balancer (ALB)** - If you already have an ALB, make sure you have listeners set up for ports 80 and 443. Otherwise, provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer).
 * **Amazon Elastic File System (EFS)** - If you haven't set up an EFS yet, follow these steps:
     - Go to **AWS EFS** in the Amazon Management Console and click the **Create file system** button.
-    - Give a meaningful name to your file system, and configure VPC. 
-    - Refresh the file system listing, and select the file system that you created above.
+    - Give a meaningful name to your file system and configure VPC. 
+    - Refresh the file system listing, and select the file system you created above.
     - Go to the **Network** tab, and click **Manage** button on the right side.
     - Select the Amazon Security group with port 2049 accessible. If you don't have one:
         - [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
@@ -50,9 +50,9 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
     - Select the trusted entity type.
     - Choose **Elastic Container Service** as _Service or use case_.
     - Select **Elastic Container Service Task** for _Use case_.
-    - On the _Add permissions_ screen, search the policy name that you created above, and add it to the role. Similarly, search for `SecretsManagerReadWrite` policy and add it to the role.
+    - On the _Add permissions_ screen, search the policy name you created above and add it to the role. Similarly, search for the `SecretsManagerReadWrite` policy and add it to the role.
     
-* **External MongoDB Instance** - Ensure you have access to an external MongoDB instance hosting MongoDB V5.0 or later. You will not be able to use the built-in MongoDB with EFS as it causes the Appsmith instance to crash.
+* **External MongoDB Instance** - Ensure you can access an external MongoDB instance hosting MongoDB V5.0 or later. You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash.
 
 ## Install Appsmith
 Follow the below steps to install Appsmith:
@@ -113,13 +113,13 @@ Follow these steps to create task and container definitions for your cluster:
             - `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database.
             - `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container.
             - `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
-            - `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases which are not supported on EFS volume.
+            - `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
         * In the _STORAGE AND LOGGING_ section, provide details as below for **Mount points**:
             - **Source volume** - `appsmith_stack` 
             - **Container path** - `/appsmith-stacks`
     4. Check the **Auto-configure CloudWatch Logs** checkbox for **Log configuration**.
     5. Click **Add** button. You will see the container name available under _Container definitions_.
-11. Scroll down to the bottom of the page, and click the **Create** button.
+11. Scroll down to the bottom of the page and click the **Create** button.
 
 <figure>
     <img src="/img/aws_ecs_fargate_create_task_def_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the task definition status" />
@@ -132,7 +132,7 @@ Follow these steps to create task and container definitions for your cluster:
 
 Follow these steps to create and run an ECS service:
 
-1.  Go to the cluster dashboard and click the name of the ECS cluster that you created in [Create ECS Cluster](#create-ecs-cluster).
+1.  Go to the cluster dashboard and click the ECS cluster name that you created in [Create ECS Cluster](#create-ecs-cluster).
 2. On the cluster details, click **Create** button under the **Services** tab.
 3. On the _Configure the Service_ screen, add below details:
     * **Launch Type** - Select Fargate.
@@ -141,11 +141,11 @@ Follow these steps to create and run an ECS service:
     * **Service name** - Give a meaningful name to your service.
     * **Service type** - Select Replica.
     * **Number of Tasks** - Set as 1.
-    * For other attributes, move ahead with the default selection, and click the **Next step** button.
+    * Keep the default selection for other properties and click the **Next step** button.
 4. On the _Configure the Network_ screen, add below details:
     * Select the VPC and the subnets.
-    * Select the security group that you created in the [prerequisites](#prerequisites) section, and add the security group with NFS access.
-    * Select the Application Load Balancer that you created in the [prerequisites](#prerequisites) section.
+    * Select the security group you created in the [prerequisites](#prerequisites) section, and add the security group with NFS access.
+    * Select the Application Load Balancer you created in the [prerequisites](#prerequisites) section.
     * Set the listener for port 80 and click the **Add to the load balancer** button.
     * Create a new production listener port for port 80.
     * **Production listener protocol** - Set it to HTTP.
@@ -174,7 +174,7 @@ The `exec` command will be available once the new deployment is active.
         --interactive \
         --command "bash"
     ```
-3. Once you have access to the bash shell, you can execute all commands that are available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
+3. Once you can access the bash shell, you can execute all commands  available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
 ## Troubleshooting
 
@@ -190,4 +190,3 @@ If you continue to face issues, contact the support team using the chat widget a
 * [Configuring ECS Installations](/getting-started/setup/instance-configuration#configure-ecs-installations)
 * [Managing the Appsmith instance](/getting-started/setup/instance-management/)
 * [Tutorials](/getting-started/tutorials/)
-
