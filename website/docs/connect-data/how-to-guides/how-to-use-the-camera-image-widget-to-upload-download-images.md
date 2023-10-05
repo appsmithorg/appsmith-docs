@@ -15,7 +15,7 @@ To upload an image or a video to Amazon S3, follow these steps:
 1. Drag and drop the [Camera widget](/reference/widgets/camera) onto the canvas.
 2. In **Queries/JS**, click the **+ Add a new query/JS Object**.
 3. Select your S3 datasource.
-4. Select **Create a new file** from **Commands**, .
+4. Select **Create a new file** from **Commands**.
 5. In **Bucket Name**, enter the name of the Amazon S3 bucket.
 6. In **File Path**, enter the path of the location you want to store the file. For example, `images/camera_uploads`.
 Appsmith automatically creates intermediate folders if they don't exist.
