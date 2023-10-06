@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "trailingSlash" : false,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/v/:path*",
@@ -310,7 +310,7 @@
       "source": "/core-concepts/capturing-data-write/capture-form-data",
       "destination": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data"
     },
-   {
+    {
       "source": "/core-concepts/designing-an-application",
       "destination": "/core-concepts/building-ui/designing-an-application"
     },
@@ -747,6 +747,14 @@
       "destination": "/getting-started/tutorials"
     },
     {
+      "source": "/getting-started/tutorials/review-moderator-dashboard/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
+      "source": "/getting-started/tutorials/building-a-store-catalog-manager/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
       "source": "/core-concepts/connecting-to-data-sources",
       "destination": "/connect-data/how-to-guides/connect-datasource"
     },
@@ -821,7 +829,7 @@
     {
       "source": "/reference/datasources/querying-elasticsearch",
       "destination": "/connect-data/reference/querying-elasticsearch"
-    }, 
+    },
     {
       "source": "/reference/datasources/querying-firestore",
       "destination": "/connect-data/reference/querying-firestore"
@@ -866,7 +874,6 @@
       "source": "/reference/datasources/querying-redis",
       "destination": "/connect-data/reference/querying-redis"
     },
-
     {
       "source": "/reference/datasources/querying-redshift",
       "destination": "/connect-data/reference/querying-redshift"
@@ -891,7 +898,6 @@
       "source": "/learning-and-resources/how-to-guides/how-to-upload-to-s3",
       "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
     },
-
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
       "destination": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"
@@ -970,7 +976,7 @@
     },
     {
       "source": "/advanced-co",
-      "destination": "/advanced-concepts"   
+      "destination": "/advanced-concepts"
     },
     {
       "source": "/core-concepts/application-layout",
@@ -1028,12 +1034,10 @@
       "source": "../data-access-and-binding/querying-a-database",
       "destination": "/connect-data/how-to-guides/query-data"
     },
-  
     {
       "source": "/core-concepts/data-access-and-binding",
       "destination": "/build-apps/overview"
     },
-  
     {
       "source": "/core-concepts/building-ui/designing-an-application",
       "destination": "/build-apps/overview"
@@ -1042,7 +1046,6 @@
       "source": "/core-concepts/building-ui",
       "destination": "/build-apps/overview"
     },
-  
     {
       "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
       "destination": "/reference/widgets"
@@ -1051,12 +1054,10 @@
       "source": "/core-concepts/data-access-and-binding/displaying-data-read",
       "destination": "/build-apps/overview"
     },
-  
     {
       "source": "/core-concepts/data-access-and-binding/capturing-data-write",
       "destination": "/build-apps/overview"
     },
-  
     {
       "source": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data",
       "destination": "/reference/widgets/form"
@@ -1068,6 +1069,24 @@
     {
       "source": "/reference/appsmith-framework",
       "destination": "/write-code/reference"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/cloudjiffy",
+      "destination": "https://cloudjiffy.com/blog/solutions/one-click-solutions/install-appsmith-in-cloudjiffy-with-one-click/"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/restack",
+      "destination": "https://www.restack.io/docs/deploy-appsmith-on-kubernetes"
+    },
+    {
+      "source": "/connect-data/how-to-guides/connect-datasource",
+      "destination": "/getting-started/tutorials/start-building#connect-to-a-database"
+    }
+    ,
+    {
+      "source": "/connect-data/how-to-guides/query-data",
+      "destination": "/connect-data/overview"
     }
   ]
 }
+

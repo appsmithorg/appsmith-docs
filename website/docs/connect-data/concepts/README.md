@@ -1,14 +1,26 @@
 # Concepts
 
 <div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
+<div class="containerColumnSampleApp columnGrid column-one">
+        <div class="containerCol">
+            <a href="/connect-data/concepts/dynamic-binding-in-queries"><strong>Dynamic Binding in Queries</strong></a>
+        </div> <hr/>
+        <div class="containerDescription">Dynamic binding lets you integrate user inputs into the database and API queries using mustache syntax. During execution, Appsmith replaces the mustache value with the actual value.</div>
+        <div class="containerTutorialLink"></div>
+    </div>
+
+  <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
             <a href="/connect-data/concepts/connection-pooling"><strong>Connection Pooling</strong></a>
         </div> <hr/>
         <div class="containerDescription">The first time you connect a database to your application, Appsmith creates a new connection with the database server.</div>
         <div class="containerTutorialLink"></div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
+    
+</div>
+
+<div class="containerGridSampleApp">
+<div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
            <a href="/connect-data/concepts/Datasource-Environments"><strong>Datasource Environments</strong></a>
         </div><hr/>
@@ -16,22 +28,24 @@
          <div class="containerTutorialLink">
          </div>
     </div>
-</div>
-
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
+  <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
             <a href="/connect-data/concepts/how-to-use-prepared-statements"><strong>Prepared Statements</strong></a>
         </div> <hr/>
         <div class="containerDescription">Database Management Systems (DBMS) provide prepared statements to enable the execution of SQL statements with parameterized data bindings.</div>
         <div class="containerTutorialLink"></div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div class="containerGridSampleApp">
+<div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
            <a href="/connect-data/concepts/returning-data-from-a-stored-procedure"><strong>Stored Procedures</strong></a>
         </div><hr/>
         <div class="containerDescription">Stored procedures are SQL statements that can be defined and called as reusable pieces of code. </div>
          <div class="containerTutorialLink">
          </div>
-    </div>
+</div>
+<div class="columnGrid column-two">
+</div>
 </div>

@@ -1,27 +1,10 @@
 # How-To Guides
 
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <a href="/connect-data/how-to-guides/connect-datasource"><strong>Connect Datasource</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">Shows you how to connect to a datasource on Appsmith.</div>
-        <div class="containerTutorialLink"></div>
-    </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
-           <a href="/connect-data/how-to-guides/query-data"><strong>Query Data</strong></a>
-        </div><hr/>
-        <div class="containerDescription">Shows you how to create queries on Appsmith. </div>
-         <div class="containerTutorialLink">
-         </div>
-    </div>
-</div>
 
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><strong>Connect Datasource on Local Machine</strong></a>
+            <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><strong>Connect to Local Datasource</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows you how to connect a database or API that is hosted locally on the same machine as your Appsmith instance.</div>
         <div class="containerTutorialLink"></div>
