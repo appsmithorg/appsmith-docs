@@ -9,10 +9,6 @@ This page provides instructions to install Appsmith using Docker.
 <VideoEmbed host="youtube" videoId="Tde7GqE6FQQ" title="How to install Appsmith using Docker" 
 caption="How to install Appsmith using Docker Compose"/> 
 
-:::info
-To upgrade to a paid plan, follow the instructions in the [Upgrade to Paid Plan](/getting-started/setup/upgrade-to-business-edition/docker) guide.
-:::
-
 ## Prerequisites
 
 Before you begin, ensure you have the following prerequisites:
@@ -21,36 +17,14 @@ Before you begin, ensure you have the following prerequisites:
 2. [Docker-Compose](https://docs.docker.com/compose/install/) (version 1.29.2 or later)
 
 ## Install Appsmith
-Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command and follow the steps below:
 
-<Tabs queryString="current-edition">
-<TabItem label="Community Edition" value="community_edition">
+Follow these steps to install Appsmith:
 
-1. To download the `docker-compose.yml` file, run the following cURL command:
-   ```bash
-   curl -L https://bit.ly/docker-compose-CE -o $PWD/docker-compose.yml
-   ```
-This command saves the file in the current directory.
+1. Create a folder named `appsmith` on your machine for deployment and data storage. Navigate to this folder using the `cd` command.
 
-2. Start the Docker container using the following command. You may need to run with `sudo` if you don't have permission to run `docker-compose`. 
+<a id="docker-compose-file"></a>
 
-   ```bash
-   docker-compose up -d
-   ```
-If the image doesn't exist locally, this command downloads the necessary Docker image and starts the container.
-
-3. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
-
-</TabItem>
-<TabItem label="Business Edition" value="business_edition">
-
-:::info
-To upgrade your Community Edition to Business Edition, see [Upgrade to Business Edition](/getting-started/setup/upgrade-to-business-edition/docker).
-:::
-
-1. Sign up on [customer.appsmith.com](https://customer.appsmith.com) and generate a trial license key.
-
-2. To download the `docker-compose.yml` file, run the following cURL command:
+2. Run the below command to download `docker-compose.yml` file in the `appsmith` folder:
 
    ```bash
    curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
@@ -67,7 +41,7 @@ This command will download the necessary Docker image if it doesn't exist locall
 
 5. Fill in your details to create an administrator account.
 
-4. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [https://localhost](https://localhost).
+6. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
 
