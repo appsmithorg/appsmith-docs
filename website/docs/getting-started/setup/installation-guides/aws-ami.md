@@ -52,34 +52,34 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
  <figcaption align="center"><i>A launch status screen shows the server status</i></figcaption>
 </figure>
 
-11. Follow these steps to verify the Appsmith installation:
+### Verify Appsmith installation
 
- a. On the **Launch status** screen, click the **EC2 instance id** available in the bracket.
+1. On the **Launch status** screen, click the **EC2 instance id** available in the bracket.
 
- b. Click the **Instance ID** to access the **Instance Summary** page.
+2. Click the **Instance ID** to access the **Instance Summary** page.
 
- c. Copy the **Public IPv4 address** available on the **Instance Summary** page.
+3. Copy the **Public IPv4 address** available on the **Instance Summary** page.
 
  <figure>
  <img src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
  <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
  </figure>
  
- d. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
+4. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
  
- e. Once the server is up and running, you can see the login screen of Appsmith.
+5. Once the server is up and running, you can see the login screen of Appsmith.
 
-12. Follow these steps to log into the instance using default root admin credentials:
+### Login with root admin
 
- a. Username: `appsmith@example.com`
+1. Username: `appsmith@example.com`
 
- b. Find the password in one of the below ways:
+2. Find the password in one of the below ways:
 
-    * SSH into your server using your private key and find the application credentials with:
+  * SSH into your server using your private key and find the application credentials with:
     ```
     sudo cat /home/ubuntu/appsmith/credential
     ``` 
-    * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
+  * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
 
   :::caution Attention
   The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
@@ -90,7 +90,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
    <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
  </figure>
 
-13. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
+3. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
  
