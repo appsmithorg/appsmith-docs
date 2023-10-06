@@ -195,14 +195,25 @@ The `files` property stores file objects that the user has selected. Each file o
 *Example:*
 
 ```js
-// Accessing the data
+// Accessing the file data
 {{ FilePicker1.files[0].data }}
 
 // Accessing the data format
 {{FilePicker1.files[0].dataFormat}}
 
+// Accessing the file name
+{{FilePicker1.files[0].name}}
+
+// Accessing multiple files
+{{FilePicker1.files}}
+
+// Accessing metadata and data
+{{FilePicker1.files[0]}} 
+
+
 //here [0] represents index of the file.
 ```
+
 
 See how to [Upload Files to S3 using Filepicker](/connect-data/how-to-guides/how-to-upload-to-s3)
 
