@@ -68,15 +68,27 @@ This message indicates that one of the mandatory fields, for example, `Access Ke
 
 This error can be fixed by filling the mentioned mandatory fields in the datasource creation form.
 
-### Can't delete datasource error
+### Cannot delete datasource error
 
-```
-Cannot delete datasource since it has 1 action(s) using it.
-```
+You may face this issue when deleting a [datasource](/connect-data/reference/).
 
-This message indicates that the [datasource](/connect-data/reference/) attempting to be deleted has some query action configured on it.
+#### Error message
 
-This error can be fixed by deleting any queries dependent on this [datasource](/connect-data/reference/) before attempting to delete the [datasource](../../../connect-data/reference/).
+<Message
+messageContainerClassName="error" 
+messageContent="Cannot delete datasource since it has 1 action(s) using it."></Message>
+
+
+#### Cause
+
+The datasource is workspace-scoped, and there may be other apps within the workspace that rely on the datasource you are trying to delete. This prevents the deletion of the datasource.
+
+#### Solution
+
+To resolve this issue, you need to delete any queries or actions that depend on this datasource before attempting to delete the datasource itself. If you wish to use different datasources, create multiple workspaces.
+
+If you need to move an application from one workspace to another, you can use the import/export feature. For more details on how to import and export applications, see the [Migrate Applications](/advanced-concepts/more/backup-restore#importexport-applications) guide.
+
 
 ### Error connecting to local DB or API
 
