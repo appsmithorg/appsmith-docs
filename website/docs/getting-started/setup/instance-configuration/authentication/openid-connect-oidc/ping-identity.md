@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using Ping Identity
+title: Ping Identity
+hide_title: true
 ---
+<!-- vale off -->
 
-# Ping Identity
+<div className="tag-wrapper">
+ <h1>Ping Identity</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.html) as an OIDC provider, follow the steps below:
 
@@ -24,8 +38,12 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage, click **Add Environment** from the top right corner.
 2. On the Create Environment screen, select **Build your own solution**. 
 
+  <!-- vale off -->
+
   a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. 
-  
+
+  <!-- vale on -->
+
   b. Click **Next**.
 
   c. Enter the environment name and description. Click **Next**.

@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using AWS Cognito
+title: Amazon Cognito
+hide_title: true
 ---
+<!-- vale off -->
 
-# Amazon Cognito
+<div className="tag-wrapper">
+ <h1>Amazon Cognito</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) as an OIDC provider, follow these steps:
 

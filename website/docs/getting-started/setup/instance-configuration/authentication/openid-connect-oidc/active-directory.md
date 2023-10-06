@@ -1,8 +1,24 @@
 ---
 description: >-
   Setup OIDC using Active Directory
+title: Active Directory
+hide_title: true
 ---
-# Active Directory
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Active Directory</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as an OIDC provider, follow the steps below:
 

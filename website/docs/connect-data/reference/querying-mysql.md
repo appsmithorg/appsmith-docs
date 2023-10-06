@@ -23,6 +23,17 @@ The following section is a reference guide that provides a complete description 
   <figcaption align = "center"><i>MySQL Datasource configuration page</i></figcaption>
 </figure>
 
+#### Connection method
+<dd>Sets the method used to connect to the database.</dd>
+<dd><i>Options:</i>
+  <ul>
+    <li><b>Standard:</b> Connect to the database using host address, username and 
+password. Use this method if the MySQL database is directly accessible at an IP address or if you are unsure of which method to use.</li>
+    <li><b>SSH tunnel:</b> Connect over an SSH connection. This allows you to connect to a database instance which is 
+hidden or secured behind an SSH server.</li>
+  </ul>
+</dd>
+
 #### Connection mode
 
 <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd>
@@ -33,11 +44,11 @@ The following section is a reference guide that provides a complete description 
   </ul>
 </dd>
 
-#### Host address
+#### MySQL host address
 
 <dd>The network location of your MySQL database. This could be a domain or IP address. For a guide about connecting to a local MySQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a>.</dd>
 
-#### Port
+#### MySQL port
 
 <dd>The port number to connect to on the server. Appsmith connects to port <code>3306</code> by default if you do not specify one.</dd>
 
@@ -45,15 +56,27 @@ The following section is a reference guide that provides a complete description 
 
 <dd>The name of the database to connect.</dd>
 
-#### Username
+#### MySQL username
 
 <dd>The username for your MySQL user.
 </dd>
 
-#### Password
+#### MySQL password
 
 <dd>The password for your MySQL user.
 </dd>
+
+#### SSH host address
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the IP address of the remote SSH server you want to connect to. </dd>
+
+#### SSH port
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the port number of the remote SSH server you want to connect to. Connects to port <code>22</code> by default if left empty. </dd>
+
+#### SSH username
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the username of your SSH account.</dd>
+
+#### SSH Key
+<dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. Upload the SSH key file. Current supported formats: `pem`, `pkcs5`, `pkcs8`.</dd>
 
 #### SSL mode
 

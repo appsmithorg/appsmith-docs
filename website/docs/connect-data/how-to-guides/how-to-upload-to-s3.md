@@ -1,57 +1,73 @@
----
-sidebar_position: 5
----
+# Upload Files to S3 using Filepicker
 
-# Upload or Download Files to and from S3
+This page shows you how to use the Filepicker widget to upload file data to S3.
 
-Files can be uploaded to Amazon S3 using the S3 plugin and FilePicker Widget. This document presumes you have successfully [connected to your S3 instance](/connect-data/reference/querying-amazon-s3)
 
   <VideoEmbed host="youtube" videoId="pmEmQcd9_KA" /> 
 
-## Uploading a File
+## Prerequisites
 
-To upload a file
+* An [AWS S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html).
+* App connected to [S3](/connect-data/reference/querying-amazon-s3) Datasource.
+* A [Filepicker](/reference/widgets/filepicker) widget to upload files.
 
-1. Drag a [Filepicker widget](/reference/widgets/filepicker.md) onto the canvas.
-1. Create a new S3 query named upload\_file to be run onFileSelected.
-1. Select the [Create File Action](/connect-data/reference/querying-amazon-s3#create-file) option for the query.
-1. The action should be configured with the bucket name and relative path of the location you want to store the file. `ex. images/`any intermediate folders not existing are automatically created.
-1. The name of the file should be configured in the file path field. This value can be picked from the Filepicker using JavaScript `images/{{ Filepicker1.files[0].name }}`
-1. The content can be configured using the entire file object of the Filepicker. `{{Filepicker1.files[0]}}`
-1. Select a file from the file picker and hit upload.
+## Configure query
 
-![](</img/amazon\_s3\_upload\_query\_using\_filepicker_(1).png>)
+Configure the S3 query to upload file data, using the following parameters:
 
-## Downloading Files
+ <figure>
+  <img src="/img/s3-filepicler.png" style= {{width:"700px", height:"auto"}} alt="S3 query"/>
+  <figcaption align = "center"><i>Configure S3 query</i></figcaption>
+</figure>
 
-To download a file
 
-1. Drag a Table onto the canvas and name it **s3\_files.**
-2. Create a new S3 query named **`fetch\_files`** to fetch all the files in your bucket.
-   * Configure it with the [List Files](/connect-data/reference/querying-amazon-s3#list-files) action.
-   * Set the bucket name from where to fetch the files and run the query
-   *   Bind the response of the query to the Table using JavaScript in the Table Data Property `{{fetch_files.data}}`.
+<dd>
 
-       Now your table should list all the files present in your S3 bucket.
+1. In the **Commands** dropdown, select the appropriate command:
+    * For single-file uploads, select **Create a new file**.
+    * For multi-file uploads, select **Create multiple new files**.
 
-![Click to expand](/img/bind-list-files-to-table.png)
+2. Add the S3 bucket name to the **Bucket Name** field.
 
-1. Create a new S3 query named **read\_file** to read file data from S3 bucket.
-   * Configure it with the [Read File](/connect-data/reference/querying-amazon-s3#read-file) action.
-   * Set the bucket name from where to fetch the file
-   * Set `path` to the file path selected in the table using the JS expression `{{s3_files.selectedRow.fileName}}`
+3. Specify the file path in the **File Path** field. For instance, `images/any` or `users/files`. You can also use `/{{FilePicker1.files[0].name}}` to dynamically set the filename. It automatically creates a new folder if the specified folder does not exist.
 
-![Click to expand](/img/s3-read-file-query.png)
+ 4. For multi-file uploads, set the common path in the **Common file path** field, such as `gallery/images`.
 
-1.  To download the file selected in the table
+5. Select base64 from **File data type** dropdown.
 
-    *   Click the `JS` button next to `onRowSelected` Action and write the
+6. Define the expiry duration for the signed URL in the **Expiry Duration of Signed URL (Minutes)** field. The maximum allowed expiration time is one week from the time of creation.
 
-        following JavaScript query:
+7. In the **Content** field, add all the necessary details for uploading to S3, including the information related to the file you want to upload, which should be selected from the Filepicker widget:
 
-    ```javascript
-    {{read_file.run(
-    ()=>{download(atob(read_file.data.fileData),s3_files.selectedRow.fileName.split("/").pop())})}}
-    ```
+<dd>
 
-    * Click any row in table `s3_files` to download the corresponding file from your S3 bucket.
+```js
+// Single-file upload using the "Create a new file" command
+{{FilePicker1.files[0]}}
+
+// Multi-file upload when using the "Create multiple new files" command
+{{FilePicker1.files}}
+
+```
+
+</dd>
+
+</dd>
+
+## Configure Filepicker widget
+
+Follow these steps to configure the Filepicker widget to upload files:
+
+* Configure the [**Allowed file types**](/reference/widgets/filepicker#allowed-file-typesarraystring) property of the Filepicker widget to allow users to upload files of specific formats.
+
+* Select Base64 from the [**Data Format**](/reference/widgets/filepicker#data-format-string) property.
+
+* Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to execute the S3 query.
+
+After completing these steps, select the file(s) and click the **Upload File(s)** button to send them to the Amazon S3.
+
+
+
+
+
+
