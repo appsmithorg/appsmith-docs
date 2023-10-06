@@ -22,8 +22,7 @@ To upload an image or a video to Amazon S3, follow these steps:
    Appsmith automatically creates intermediate folders if they don't exist.
 7. Select **Base64** from **File Data Type** to upload data from the camera widget.
 8. In **Expiry Duration of Signed URL (Minutes)**, enter an expiration time for the signed URL. A signed URL has a maximum expiration date of one week.
-9. In **Content**, add data manually by writing an object with a text and data property, or fetch data from the camera widget.
-   For example:
+9. In **Content**, fetch data from the Camera widget using the following code:
 
      ```
      {
