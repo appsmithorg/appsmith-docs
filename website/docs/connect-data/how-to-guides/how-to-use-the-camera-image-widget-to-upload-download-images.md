@@ -3,13 +3,12 @@ sidebar_position: 6
 ---
 
 # Upload Images to S3 Using Camera
-Appsmith provides object storage for storing and recovering information or data from anywhere over the internet using S3.
 
 This page provides steps to upload images using the Camera widget to the S3 datasource.
 
 ## Prerequisites
 - An [Amazon S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) in one of the AWS Regions.
-- Connection to an [S3 datasource](https://docs.appsmith.com/connect-data/reference/querying-amazon-s3).
+- App connected to an [S3 datasource](https://docs.appsmith.com/connect-data/reference/querying-amazon-s3).
 
 ## Set up upload query
 To upload an image or a video to Amazon S3, follow these steps:
@@ -18,11 +17,12 @@ To upload an image or a video to Amazon S3, follow these steps:
 3. Select your S3 datasource.
 4. Select **Create a new file** from **Commands**.
 5. In **Bucket Name**, enter the name of the Amazon S3 bucket.
-6. In **File Path**, enter the path of the location you want to store the file. For example, `images/camera_uploads`.
+6. In **File Path**, enter the path of the location you want to store the file.
+   For example, `images/camera_uploads`.
    Appsmith automatically creates intermediate folders if they don't exist.
 7. Select **Base64** from **File Data Type** to upload data from the camera widget.
 8. In **Expiry Duration of Signed URL (Minutes)**, enter an expiration time for the signed URL. A signed URL has a maximum expiration date of one week.
-9. **Content**, add data manually by writing an object with a text and data property, or fetch data from the camera widget.
+9. In **Content**, add data manually by writing an object with a text and data property, or fetch data from the camera widget.
    For example:
 
      ```
