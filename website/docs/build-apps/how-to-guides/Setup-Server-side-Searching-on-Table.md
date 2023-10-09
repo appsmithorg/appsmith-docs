@@ -5,7 +5,7 @@ description: This page shows you how to set up server-side searching on the Tabl
 
 This page shows you how to set up server-side searching on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 
-If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side searching query for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
+If you are using the one-click binding feature to connect data, Appsmith automatically generates a server-side searching query for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
 <figure>
   <img src="/img/server-search-table.gif" style= {{width:"700px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
@@ -23,7 +23,7 @@ A [Table widget](/reference/widgets/table) connected to a query.
 
 Most databases and APIs support server-side searching, although the methods of implementation can vary.
 
-Configure the query to fetch data using [searchText](/reference/widgets/table#searchtext-string) reference property.
+Configure the query to fetch data using the [searchText](/reference/widgets/table#searchtext-string) reference property.
 
 <dd>
 
