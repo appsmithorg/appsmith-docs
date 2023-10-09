@@ -189,6 +189,23 @@ Determines the search behavior of the search bar in the table header. When enabl
 
 </dd>
 
+#### Server side filtering `boolean`
+
+<dd>
+
+Determines the filter behavior of the filter panel in the table header. When enabled, after the filters are applied the event onTableFilterUpdate will be triggered, which can be used to filter the table's data by passing the reference property <tableName>.filters in the query to filter data. When disabled, the applied filters will only filter records currently loaded in the table.
+
+</dd>
+
+#### onTableFilterUpdate
+
+<dd>
+
+Allows you to specify the action to be executed when the user applies or clears filters in the filters panel of the table widget.
+
+</dd>
+
+
 #### Default search text `string`
 
 <dd>
@@ -810,6 +827,22 @@ Refers to an array of indices corresponding to the rows that have been updated.
 {{Table1.updatedRowIndices}}
 ```
 </dd>
+
+#### filters `array`
+
+<dd>
+
+Refers to an array of filters applied on the table along with the conditions of each filter. 
+
+*Example:*
+
+
+```js
+{{Table1.filters}}
+```
+</dd>
+
+
 
 ## Methods
 
