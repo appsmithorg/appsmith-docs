@@ -39,7 +39,7 @@ Configure the query to fetch data using [searchText](/reference/widgets/table#se
 This SQL query fetches rows from the `users` table where the `name` column partially matches the `searchText` input.
 
 :::note
-Ensure that you turn off prepared statements in the query editor for this configuration. For more details, see [Prepared statements](/connect-data/concepts/how-to-use-prepared-statements).
+Ensure that you turn off prepared statements in the query editor for this configuration. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 :::
 
 * For the REST API, configure the query parameter as shown in the URL:
