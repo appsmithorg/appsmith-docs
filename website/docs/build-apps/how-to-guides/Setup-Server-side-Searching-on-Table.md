@@ -1,11 +1,11 @@
 ---
-description: This page shows you how to set up server-side filtering on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
+description: This page shows you how to set up server-side searching on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 ---
 # Setup Server-side Searching on Table
 
-This page shows you how to set up server-side filtering on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
+This page shows you how to set up server-side searching on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 
-If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side filtering query for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
+If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side searching query for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
 <figure>
   <img src="/img/server-search-table.gif" style= {{width:"700px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
@@ -16,18 +16,18 @@ If you are using the one-click binding feature to connect data, Appsmith automat
 
 ## Prerequisites
 
-* A [Table widget](/reference/widgets/table).
-* A query that contains the data you want to filter.
+A [Table widget](/reference/widgets/table) connected to a query.
+
 
 ## Configure query
 
-Most databases and APIs support server-side filtering, although the methods of implementation can vary.
+Most databases and APIs support server-side searching, although the methods of implementation can vary.
 
 Configure the query to fetch data using [searchText](/reference/widgets/table#searchtext-string) reference property.
 
 <dd>
 
-*Example:* if you want to filter data based on user names:
+*Example:* if you want to search data based on user names:
 
 * For PostgreSQL, you can configure the query as follows:
 
@@ -57,11 +57,11 @@ Ensure that you turn off prepared statements in the query editor for this config
 
 Follow these steps to configure the Table widget to display fetched data, and implement server-side searching:
 
-1. Connect the filter query to the [**Table data**](/reference/widgets/table#table-data-arrayobject).
+1. Connect the query to the [**Table data**](/reference/widgets/table#table-data-arrayobject).
 
 2. Enable the [**Allow searching**](/reference/widgets/table#allow-searching-boolean) property.
 
-3. Set the [**onSearchTextChange**](/reference/widgets/table#onsearchtextchanged) event to run the filter query.
+3. Set the [**onSearchTextChange**](/reference/widgets/table#onsearchtextchanged) event to run the query.
 
 After completing these steps, you can search for specific terms using the Table widget's search box.
 
