@@ -1,23 +1,68 @@
-# Setup Server-side Searching on Table 
+---
+description: This page shows you how to set up server-side filtering on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
+---
+# Setup Server-side Searching on Table
 
-Server-side searching is a technique of searching for specific records from the server using search terms, without relying on the client-side. To enable the search bar in the table header for server-side searching, you can turn on the **Allow Searching** property. 
+This page shows you how to set up server-side filtering on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 
-The `searchText` reference property can be used to filter records displayed in a table based on the user's search terms. When the user types into the search bar, the `onSearchTextChange` event of the table is triggered, which can be configured to query the table's datasource for the matching results. 
+If you are using the one-click binding feature to connect data, Appsmith automatically generates server-side filtering query for you. However, if you prefer to manually configure the server-side setup, you can do so by following the instructions in this guide.
 
-To use the server-side search with the Table widget, follow these steps:
+<figure>
+  <img src="/img/server-search-table.gif" style= {{width:"700px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
+   <figcaption align = "center"><i>Server-side Searching on Table</i></figcaption>
+</figure>
 
-1. Create a SQL query using the `searchText` reference property:
 
-   ```sql
-   SELECT * FROM users WHERE name LIKE {{"%" + Table1.searchText + "%"}} ORDER BY id LIMIT 10;
-   ```
 
-   You can also pass the `searchText` property as a URL parameter in an API request:
+## Prerequisites
+
+* A [Table widget](/reference/widgets/table).
+* A query that contains the data you want to filter.
+
+## Configure query
+
+Most databases and APIs support server-side filtering, although the methods of implementation can vary.
+
+Configure the query to fetch data using [searchText](/reference/widgets/table#searchtext-string) reference property.
+
+<dd>
+
+*Example:* if you want to filter data based on user names:
+
+* For PostgreSQL, you can configure the query as follows:
+
+
+ ```sql
+ SELECT * FROM users WHERE name LIKE '%{{Table1.searchText}}%' ORDER BY id LIMIT 10;
+ ```
+
+This SQL query fetches rows from the `users` table where the `name` column partially matches the `searchText` input.
+
+:::note
+Ensure that you turn off prepared statements in the query editor for this configuration. For more details, see [Prepared statements](/connect-data/concepts/how-to-use-prepared-statements).
+:::
+
+* For the REST API, configure the query parameter as shown in the URL:
+
+
    ```
    https://mock-api.appsmith.com/users?name={{Table1.searchText}}
    ```
 
-2. Set the table widget's **onSearchTextChange** event to run the query. 
 
-Watch this video to learn how to set up [server-side search](https://www.youtube.com/watch?v=3ayioaw5uj8) for the Table widget.
+</dd>
+
+
+## Configure Table widget
+
+Follow these steps to configure the Table widget to display fetched data, and implement server-side searching:
+
+1. Connect the filter query to the [**Table data**](/reference/widgets/table#table-data-arrayobject).
+
+2. Enable the [**Allow searching**](/reference/widgets/table#allow-searching-boolean) property.
+
+3. Set the [**onSearchTextChange**](/reference/widgets/table#onsearchtextchanged) event to run the filter query.
+
+After completing these steps, you can search for specific terms using the Table widget's search box.
+
 
