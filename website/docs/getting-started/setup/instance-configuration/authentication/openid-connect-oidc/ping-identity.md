@@ -57,14 +57,16 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
 5. Open your application, and go to the **Configurations** tab:
 
-  a. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
+  a. Click the edit ✏️ icon, and check the **Refresh Token** option. This allows Ping Identity to issue refresh tokens to Appsmith for refreshing access tokens when they expire.
+
+  b. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
 
    - **Authorization URL**
    - **Token Endpoint**
    - **UserInfo Endpoint**
    - **JWKS Endpoint**
 
-  b. Scroll down to the **General** dropdown, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
+  c. Scroll down to the **General** dropdown, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
 
 6. To configure the required scopes, go to the **Resources** tab, click the **Edit** icon and select **openid**, **email**, **profile** from the list of scopes.
 
