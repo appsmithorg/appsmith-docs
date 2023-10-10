@@ -78,7 +78,11 @@ To complete the OIDC configuration, you have to register the identity provider o
   | **User Info URL**      | userinfo_endpoint         |
   | **JWK Set URL**             |  jwks_uri          |
 
-3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information, see [Okta API scopes](https://developer.okta.com/docs/guides/configure-user-scoped-account-management/main/#grant-the-required-scopes).
+3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. 
+ 
+  Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended to use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. For more information, see [Okta API scopes](https://developer.okta.com/docs/reference/api/oidc/#scopes).
+
+
 
 4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
