@@ -106,7 +106,9 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - `openid`, `email`, `profile`. 
 
-  Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended to use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. For more information, see [Active Directory documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#offline_access).
+  Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended to use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. 
+  
+  Enabling the `offline_access` scope allows your app to receive refresh tokens that extend the duration that your users have access to their resources. For more information, see [Active Directory documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#offline_access).
 
 
 5. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
