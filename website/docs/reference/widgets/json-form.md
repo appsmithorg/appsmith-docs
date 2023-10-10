@@ -17,7 +17,31 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to add form data for the widget. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
+Connects the JSON Form to your datasource or widget, allowing you to add new records or edit existing ones. To bind data to the JSON Form, click on **Generate Form** and select either a datasource, query, or widget.
+
+If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the identifiable property. Appsmith automatically generates a customized JSON form for your datasource and creates an insert or update query connected to the **onSubmit** event. 
+
+* **Select table/collection:** enables the selection of the relevant table or collection type corresponding to the datasource.
+
+* **Form Type:** specifies the type of form to be created, with two options:
+
+  * Create records 
+  * Edit records
+
+* **Get values from:** enables the selection of the Table or List widget from which the form should retrieve its values. You can then view and edit the corresponding data in JSON Form. This option is available when the **Form Type**  is set to Edit Records and is only applicable to Table and List widget.
+
+
+* **Data Identifier:** serves as an attribute for the unique identification of a datasource object. By default, it's set to the primary column of the datasource. This option is available when the **Form Type**  is set to Edit Records.
+
+
+ <figure>
+  <img src="/img/edit-json-form-one.gif" style= {{width:"620px", height:"auto"}} alt="Create records"/>
+  <figcaption align = "center"><i>Edit records</i></figcaption>
+</figure>
+
+
+Additionally, you can use JavaScript by clicking on JS to write bindings for the **Source Data** property. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
+
 
 *Expected data structure:*
 ```json
