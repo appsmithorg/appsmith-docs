@@ -148,7 +148,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
     </div>
      <div class="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div class="containerCol">
-            <img class="containerImage" src="/img/sequin-logo.png" alt="Rowy-logo"/>
+            <img class="containerImage" src="/img/sequin-logo.png" alt="Sequin-logo"/>
         </div> <hr/>
         <div class="containerDescription"><strong>Sequin</strong> is a platform that allows developers to integrate with third-party services via SQL queries. <br/><br/> </div>
          <div class="containerTutorialLink"><a href="https://docs.sequin.io/guides/appsmith"><strong>View Tutorial</strong> </a></div>
