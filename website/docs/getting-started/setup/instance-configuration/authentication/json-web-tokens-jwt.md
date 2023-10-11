@@ -45,3 +45,20 @@ An access token is a self-contained object that holds claims, which are pieces o
 Once a user has successfully authenticated through a Single Sign-On (SSO) Provider, the access tokens can be used within Appsmith. The access token is stored on the server, and for security reasons, it is not accessible on the client side.
 
 You can reference the access token using the placeholder `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`. This placeholder is automatically substituted with the access token of the currently logged-in user.
+
+
+## User Claims
+
+User claims are pieces of information about the authenticated user, such as their name, email address, roles, or any custom attributes.
+
+These claims are included in the ID token and/or the access token. They provide information that can be used by the client application to personalize the user's experience or make authorization decisions.
+
+
+The specific claims included in the ID token and access token can vary depending on the identity provider and the scopes requested during authentication.
+
+ You can read the user info using the mustache syntax `{{}}` as shown below:
+
+ ```js
+  {{ appsmith.user.userClaims }}
+ ```
+
