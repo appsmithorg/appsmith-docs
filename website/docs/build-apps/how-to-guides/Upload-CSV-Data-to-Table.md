@@ -1,22 +1,40 @@
-# Upload CSV data in Table using Filepicker
+# Upload CSV/XLS data in Table using Filepicker
 
-To display CSV data in a [Table widget](/reference/widgets/text), use the Array data format. This format allows CSV data to be directly parsed into an array or array of objects that can be referenced throughout the platform. To achieve this, follow these steps:
+This page shows you how to upload an array of objects, such as CSV, XLS(X), JSON, or TSV files, into a Table widget using a Filepicker widget.
 
-* Select the **Array(Only CSV)** option.
-* Upload your **CSV** file using the Filepicker widget
-* In the Table widget property, add the following code:
+
+ <figure>
+  <img src="/img/uploadcsv.gif" style= {{width:"810px", height:"auto"}} alt="Upload CSV data in Table using Filepicker"/>
+  <figcaption align = "center"><i>Upload CSV data in Table using Filepicker</i></figcaption>
+</figure>
+
+## Prerequisites
+
+* A [Table](/reference/widgets/table) widget to display data.
+* A [Filepicker](/reference/widgets/filepicker) widget to upload files.
+
+
+## Display data
+
+Follow these steps to configure the Filepicker widget to upload files:
+
+1. In the Filepicker widget, select **Array of Objects** from the [**Data Format**](/reference/widgets/filepicker#data-format-string) property.
+
+2. Connect the file data to the [**Table data**](/reference/widgets/table#table-data-arrayobject) property of the Table widget, like:
+
+<dd>
+
 ```js
 {{FilePicker1.files[0].data}}
 ```
 
 
-This displays your CSV data in a tabular format.
+</dd>
 
-Similarly, you can use the [Image widget ](/reference/widgets/image) to display images that are base64 encoded, and the [Text widget ](/reference/widgets/text) to display text files with a `.txt` extension.
+
+This displays data in a tabular format, and similarly, you can use the [Image widget ](/reference/widgets/image) to display images that are base64 encoded, and the [Text widget ](/reference/widgets/text) to display text files with a `.txt` extension.
 
 
 :::caution
-Currently, only CSV data is supported; XLS or other formats aren't supported.
+Any file exceeding 5 MB is saved as a blob URL, and the upper limit for file size is 100 MB.
 :::
-
-
