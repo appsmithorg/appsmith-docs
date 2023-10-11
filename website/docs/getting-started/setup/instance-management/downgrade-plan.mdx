@@ -67,7 +67,7 @@ tags={[
 
 <!-- vale on -->
 
-Any roles and groups configured as part of a higher-tier plan will not be accessible after downgrading. If you choose your previous paid plan or a paid plan that includes GAC, these configurations will be available. You may need to change your application code if it relies on `{{appsmith.user.roles}}` or `{{appsmith.user.groups}}` bindings since these will no longer be available after downgrading.
+Any roles and groups configured as part of a higher-tier plan will not be accessible after downgrading. You may need to change your application code if it relies on `{{appsmith.user.roles}}` or `{{appsmith.user.groups}}` bindings since these will no longer be available after downgrading.
 
 <!-- vale off -->
 
@@ -193,7 +193,7 @@ tags={[
 
 <!-- vale on -->
 
-Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to adjust your application code if your application captures or interacts with messages from the parent application.
+Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to change your application code if your application captures or interacts with messages from the parent application.
 
 :::caution Important
 If, after downgrading, you choose to return to your previous paid plan or switch to another paid plan that includes some or all the features you've used in the past, Appsmith will restore your feature configurations upon plan activation, except the SCIM configurations which you will need to reconfigure.
