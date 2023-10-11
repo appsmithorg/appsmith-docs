@@ -2,7 +2,7 @@
 description: This page shows you how to set up server-side filtering on a Table widget, which allows you to refine query results based on specific criteria.
 ---
 
-# Setup Server-side Filtering on Table
+# Setup Server-side Filter on Table
 
 This page shows you how to set up server-side filtering on a Table widget, which allows you to refine query results based on specific criteria.
 
