@@ -61,7 +61,7 @@ Identifies which regional data center to connect to. This field appears when <b>
 </dd>
 
 :::note
-If the configuration is correct, but the credentials do not have the required permission, the test operation fails.
+If the configuration is correct but the credentials do not have the required permission, the test operation fails.
 :::
 
 
