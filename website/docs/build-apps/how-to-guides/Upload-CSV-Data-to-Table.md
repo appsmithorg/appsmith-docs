@@ -24,7 +24,7 @@ Follow these steps to configure the Filepicker widget to upload files:
 
 1. In the Filepicker widget, select **Array of Objects** from the [**Data Format**](/reference/widgets/filepicker#data-format-string) property.
 
-2. Connect the file data to the [**Table data**](/reference/widgets/table#table-data-arrayobject) property of the Table widget, like:
+2. Bind the uploaded CSV file to the Table widget using the [**Table data**](/reference/widgets/table#table-data-arrayobject) property, like:
 
 <dd>
 
