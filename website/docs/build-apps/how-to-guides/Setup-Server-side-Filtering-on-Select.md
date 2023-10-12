@@ -1,7 +1,7 @@
 ---
 description: This page shows you how to set up server-side filtering on a Select widget, which allows you to refine query results based on specific search terms.
 ---
-# Setup Server-side Filtering on Select 
+# Setup Server-side Filter on Select 
 
 This page shows you how to set up server-side filtering on the Select widget, which allows you to refine query results based on specific search terms.
 

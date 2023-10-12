@@ -1,7 +1,7 @@
 ---
 description: This page shows you how to set up server-side searching on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 ---
-# Setup Server-side Searching on Table
+# Setup Server-side Search on Table
 
 This page shows you how to set up server-side searching on the Table widget, which allows you to refine query results based on specific search terms, without relying on the client-side. 
 
