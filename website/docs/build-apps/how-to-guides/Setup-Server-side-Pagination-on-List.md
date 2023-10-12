@@ -6,10 +6,12 @@ description: This page shows you how to set up server-side pagination on a List 
 
 This page shows you how to set up server-side pagination on the List widget, which allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
- <figure>
-  <img src="/img/list-pagination.gif" style= {{width:"810px", height:"auto"}} alt="Setup Server-side Pagination on List"/>
-  <figcaption align = "center"><i>Setup Server-side Pagination on List</i></figcaption>
-</figure>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/QFU0eSthcvD1KWz9MxFq?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 
 ## Configure query
 
