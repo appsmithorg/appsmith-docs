@@ -2,7 +2,7 @@
 description: This page shows you how to upload an array of objects, such as CSV, XLS(X), JSON, or TSV files, into a Table widget using a Filepicker widget.
 ---
 
-# Upload CSV/XLS data in Table using Filepicker
+# Upload CSV and Display Data in Table
 
 This page shows you how to upload an array of objects, such as CSV, XLS(X), JSON, or TSV files, into a Table widget using a Filepicker widget.
 
