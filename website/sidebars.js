@@ -450,13 +450,23 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'write-code/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
             'reference/appsmith-framework/context-object',
             'reference/appsmith-framework/console-object',
             'reference/appsmith-framework/query-object',
+          ],
+        },
             {
               type: 'category',
               label: 'Global Functions',
@@ -487,8 +497,9 @@ const sidebars = {
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
             'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-          ],
-        },
+
+      ],
+    }, //Reference End
       ]
     }, //CODE end
 
