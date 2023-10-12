@@ -18,7 +18,7 @@ This page shows you how to upload an array of objects, such as CSV, XLS(X), JSON
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
 
 
-## Display data
+## Display CSV data in Table
 
 Follow these steps to configure the Filepicker widget to upload files:
 
