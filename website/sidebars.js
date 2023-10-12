@@ -236,8 +236,16 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Datasources',
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
@@ -272,9 +280,12 @@ const sidebars = {
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
             'connect-data/reference/twilio',
-            'connect-data/reference/query-settings',
+
           ],
         },
+        'connect-data/reference/query-settings',
+      ],
+    }, //Reference End
         {
           type: 'category',
           collapsed: true,
@@ -326,6 +337,7 @@ const sidebars = {
           //Reference start
           type: 'category',
           label: 'Reference',
+          collapsed: false,
           link: { type: 'doc', id: 'build-apps/reference/README' },
           items: [
             {
