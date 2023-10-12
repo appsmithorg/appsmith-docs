@@ -236,8 +236,16 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Datasources',
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
@@ -272,9 +280,12 @@ const sidebars = {
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
             'connect-data/reference/twilio',
-            'connect-data/reference/query-settings',
+
           ],
         },
+        'connect-data/reference/query-settings',
+      ],
+    }, //Reference End
         {
           type: 'category',
           collapsed: true,
@@ -326,6 +337,7 @@ const sidebars = {
           //Reference start
           type: 'category',
           label: 'Reference',
+          collapsed: false,
           link: { type: 'doc', id: 'build-apps/reference/README' },
           items: [
             {
@@ -438,13 +450,23 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'write-code/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
             'reference/appsmith-framework/context-object',
             'reference/appsmith-framework/console-object',
             'reference/appsmith-framework/query-object',
+          ],
+        },
             {
               type: 'category',
               label: 'Global Functions',
@@ -475,8 +497,9 @@ const sidebars = {
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
             'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-          ],
-        },
+
+      ],
+    }, //Reference End
       ]
     }, //CODE end
 
