@@ -114,10 +114,8 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     | **Container path** | `/appsmith-stacks` |
     | **Log configuration** | Check the **Auto-configure CloudWatch Logs** checkbox |
 
-18. Scroll down to the
-19. Click **Add** button.
-20. Scroll down to the bottom of the page.
-21. Click **Create** button.
+18. Scroll down to the bottom of the page, and click **Add** button.
+19. Scroll down to the bottom of the page, and click **Create** button.
 
 ### Create and run ECS service
 
