@@ -192,15 +192,35 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Upgrade to Business Edition',
+              label: 'Manage Plans',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/upgrade-to-business-edition/README',
               },
               items: [
-                'getting-started/setup/upgrade-to-business-edition/docker',
-                'getting-started/setup/upgrade-to-business-edition/kubernetes',
-                'getting-started/setup/upgrade-to-business-edition/downgrade-plan',
+                {
+                  type: 'category',
+                  label: 'Upgrade Plans',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/manage-plans/upgrade-plan',
+                  },
+                  items: [
+                    'getting-started/setup/upgrade-to-business-edition/docker',
+                    'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                  ]
+                },
+                {
+                  type: 'category',
+                  label: 'Downgrade Plans',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/manage-plans/downgrade-plan',
+                  },
+                  items: [
+
+                  ]
+                },
               ],
             },
             `getting-started/setup/best-practices`,

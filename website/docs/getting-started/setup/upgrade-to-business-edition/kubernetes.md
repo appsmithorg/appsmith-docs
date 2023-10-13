@@ -2,7 +2,7 @@
 description: Follow these steps to upgrade the Appsmith Community Kubernetes installation to the Business Edition.
 ---
 
-# Kubernetes
+# Upgrade Community Edition K8s
 
 This page provides steps to upgrade Appsmith Kubernetes Community Edition to Business Edition.
 
