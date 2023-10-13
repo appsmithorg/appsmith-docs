@@ -187,7 +187,6 @@ const sidebars = {
                 'getting-started/setup/instance-management/maintenance-window',
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/supervisor',
-                'getting-started/setup/instance-management/downgrade-plan',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
               ],
             },
@@ -201,6 +200,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/upgrade-to-business-edition/docker',
                 'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                'getting-started/setup/upgrade-to-business-edition/downgrade-plan',
               ],
             },
             `getting-started/setup/best-practices`,

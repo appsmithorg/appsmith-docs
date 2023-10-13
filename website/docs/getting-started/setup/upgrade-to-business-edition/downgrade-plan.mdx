@@ -14,184 +14,45 @@ This page provides information on downgrading your plan in Appsmith.
 
 Downgrading involves changing your subscription to a lower-tier plan, which may result in some features and capabilities not being available. Before beginning the downgrade process, consider the following aspects:
 
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
- ### Single Sign-On (SSO)
-
-<Tags
-tags={[
-{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
+### Single Sign-On (SSO)
 
 When you downgrade your plan, the use of Single Sign-On methods, such as OIDC or SAML, is no longer supported. Users who accessed Appsmith through an SSO provider using OIDC or SAML will have to sign up again using form login to access Appsmith securely. For added security, it's recommended to enable email verification in your Admin Settings.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### System for cross-domain identity management (SCIM)
-
-<Tags
-tags={[
-{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 After the downgrade, all users will remain available but disconnected from the identity provider (IDP). IDP configurations are no longer available, and you will need to reconfigure these settings if you choose a paid plan again that supports SCIM.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Granular access control (GAC)
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Any roles and groups configured as part of a higher-tier plan will not be accessible after downgrading. You may need to change your application code if it relies on `{{appsmith.user.roles}}` or `{{appsmith.user.groups}}` bindings since these will no longer be available.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Datasource environments
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Staging datasource environment configurations will no longer be accessible after a downgrade.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Git repositories
 
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
 
-</div>
-
-<!-- vale on -->
 
 The unlimited private repositories will no longer be available. For free plan subscribers, there's a limit of 3 private repositories. You can commit to and import new repositories until the total private repository count in your workspace is equal to or less than 3.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Branding
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Custom branding will no longer be available, and your application will use the default Appsmith branding.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Audit logs
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Access to audit logs will no longer be available, and Appsmith will not generate new audit logs.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Embed apps
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 You won't be able to embed private apps within your parent application after downgrading if the Single Sign-On (SSO) method is not available in the downgraded plan.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Ask AI
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Access to Ask AI for generating SQL queries and JavaScript code within the editor will no longer be available.
 
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
 ### Sending messages from the parent app to Appsmith
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
 
 Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to change your application code if your application captures or interacts with messages from the parent application.
 
