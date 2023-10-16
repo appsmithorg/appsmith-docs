@@ -8,9 +8,10 @@ This page shows you how to set up server-side pagination on the List widget, whi
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/QFU0eSthcvD1KWz9MxFq?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/V6vWLj9CgB3IgOjZmWlf?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
+
 
 
 ## Configure query
@@ -26,7 +27,10 @@ Example:
 * For PostgreSQL, you can configure the query as follows:
 
 ```sql
-SELECT * FROM users LIMIT {{ List1.pageSize }} OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
+SELECT * FROM users
+ORDER BY id
+LIMIT {{ List1.pageSize }}
+OFFSET {{ (List1.pageNo - 1) * List1.pageSize }}
 ```
 
 * For the REST API, the page number can be passed as a query parameter to retrieve the corresponding subset of data, like:
@@ -66,7 +70,8 @@ With this setup, users can paginate through data, ensuring an efficient browsing
 
 ## Configure total records
 
-To provide the user with information about the number of records in the List, you can configure the [**Total records**](/reference/widgets/list#total-records-number) property.
+To provide the user with information about the number of records in the List, you can configure the [**Total records**](/reference/widgets/list#total-records-number) property. The record count is displayed as part of the page number at the bottom of the list.
+
 
 1. Create a query to fetch the total record count.
 
