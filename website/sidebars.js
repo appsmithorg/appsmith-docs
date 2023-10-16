@@ -192,7 +192,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Manage Plans',
+              label: 'Manage Plans and License',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/upgrade-to-business-edition/README',

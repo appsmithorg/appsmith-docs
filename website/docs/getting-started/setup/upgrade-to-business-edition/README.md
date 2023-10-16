@@ -2,7 +2,7 @@
 description: This page gives you an overview of how to manage your paid plans on Appsmith.
 ---
 
-# Manage Plans
+# Manage Plans and License
 
 Appsmith offers a range of plans tailored to meet your specific business requirements. For more information, see [Pricing](https://www.appsmith.com/pricing). You can change your plan by adding or updating your license key. Here are some changes you might want to make:
 
