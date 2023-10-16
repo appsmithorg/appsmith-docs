@@ -556,3 +556,4 @@ Tabs
 Free
 Business
 Single Sign-On
+Appsmith
