@@ -30,7 +30,7 @@ To download multiple files from an S3 bucket, follow these steps:
 
 1. Drag and drop a [Button widget](https://docs.appsmith.com/reference/widgets/button) on to the canvas and rename it to `Download all`.
 2. In **Queries/JS**, click **+ Add a new query/JS Object**, and then select **New JS Object**.
-3. Rename it to `BulkDownload`.
+3. Rename it to `bulkDownload`.
 4. Paste the following code to add a JavaScript function to download the files:
    ```jsx
    export default {
@@ -41,6 +41,6 @@ To download multiple files from an S3 bucket, follow these steps:
 5. Set the widget's [onClick](https://docs.appsmith.com/reference/widgets/button#onclick) event to download all the files from the S3 bucket by pasting the following code:
 
    ```jsx
-   {{ListFiles.data.forEach(fileobject => BulkDownload.downloadFiles(object.signedUrl,object.fileName))}}
+   {{ListFiles.data.forEach(fileobject => bulkDownload.downloadFiles(object.signedUrl,object.fileName))}}
    ```
 6. To test the download, click the `Download all` button.
