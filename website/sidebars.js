@@ -40,7 +40,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Installation Guides',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -84,7 +84,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Configuration',
+              label: 'Configure Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-configuration/README',
@@ -167,7 +167,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Management',
+              label: 'Manage Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-management/README',
