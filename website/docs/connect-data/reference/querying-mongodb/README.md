@@ -46,7 +46,7 @@ The following section is a reference guide that provides a complete description 
 </code></pre></dd>
 <dd><i>Example:</i></dd>
 <dd><pre><code>
-  mongodb+srv://exampleDatabaseUser:D1fficultP%40ssw0rd@cluster0.example.mongodb.net/?retryWrites=true&w=majority
+  mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
 </code></pre></dd>
 
 ---
