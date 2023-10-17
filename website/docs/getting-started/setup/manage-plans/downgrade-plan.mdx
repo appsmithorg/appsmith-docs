@@ -8,11 +8,11 @@ import TabItem from '@theme/TabItem';
 
 # Downgrade Plan on Commercial Edition
 
-This page provides information on downgrading your plan in Appsmith.
+You can either directly downgrade to a free plan by removing your license, or you can downgrade to a lower tier plan by updating your license key. This page provides step-by-step instructions to downgrade your plan in Appsmith.
 
 ## Before you begin
 
-Downgrading involves changing your subscription to a lower-tier plan, which may result in some features and capabilities not being available. Before beginning the downgrade process, consider the following aspects:
+Downgrading your plan will result in the loss of access to one or more paid features, which may result in some features and capabilities not being available. Before beginning the downgrade process, consider the following aspects:
 
 ### Single Sign-On (SSO)
 
@@ -54,16 +54,16 @@ Access to Ask AI for generating SQL queries and JavaScript code within the edito
 
 Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to change your application code if your application captures or interacts with messages from the parent application.
 
-:::caution Important
+:::info Important
 If, after downgrading, you choose to return to your previous paid plan or switch to another paid plan that includes some or all the features you've used in the past, Appsmith will restore your feature configurations upon plan activation, except the SCIM configurations which you will need to reconfigure.
 :::
 
 ## Change plan
 
 <Tabs queryString="downgrade-plan-type">
-<TabItem label="Downgrade to Business plan" value="downgrade-to-business-plan">
+<TabItem label="Update license key" value="update-license-key">
 
-  Follow these steps to downgrade to a Business plan:
+ Follow these steps to update your license key in case you wish to downgrade your existing plan with a lower tier plan:
 
   1. Navigate to **Admin Settings** → **License & Plans**.
   2. On the **Update license** screen, enter the new license key in the **Enter license key** field.
@@ -74,9 +74,9 @@ The confirmation initiates the process, and your account moves to a Business pla
 
 </TabItem>
 
-<TabItem label="Downgrade to Free plan" value="downgrade-to-free-plan">
+<TabItem label="Remove license key" value="remove-license-key">
 
-Follow these steps to downgrade to a Free plan:
+Follow these steps to remove your license and downgrade your instance to a Free plan:
 
 1. Go to **Admin Settings** → **License & Plans**.
 2. Click the **Remove** button.

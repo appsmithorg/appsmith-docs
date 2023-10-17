@@ -198,15 +198,15 @@ const sidebars = {
                 id: 'getting-started/setup/manage-editions/README',
               },
               items: [
-                'getting-started/setup/manage-editions/upgrade-plan',
-                'getting-started/setup/manage-editions/downgrade-plan',
+                'getting-started/setup/manage-plans/upgrade-plan',
+                'getting-started/setup/manage-plans/downgrade-plan',
                 {
                   type: 'category',
                   label: 'Upgrade from Community Edition',
                   link: {
                     type: 'doc',
                     id: 'getting-started/setup/upgrade-to-business-edition/README',
-                    
+
                   },
                   items: [
                     'getting-started/setup/upgrade-to-business-edition/docker',

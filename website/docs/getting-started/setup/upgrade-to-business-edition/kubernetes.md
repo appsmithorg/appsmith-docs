@@ -82,4 +82,4 @@ Follow these steps to upgrade your Appsmith installation:
 If you face issues, continue to use the Community Edition namespace and contact the support team using the chat widget at the bottom right of this page.
 
 ## See also
-* [Upgrade plan](/getting-started/setup/manage-editions/upgrade-plan#add-or-update-your-license-key)
+* [Upgrade plan](/getting-started/setup/manage-plans/upgrade-plan#add-or-update-your-license-key)
