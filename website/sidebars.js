@@ -419,7 +419,6 @@ const sidebars = {
               ],
             },
             'core-concepts/building-ui/designing-an-application/app-theming',
-            'core-concepts/building-ui/designing-an-application/application-layout',
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
