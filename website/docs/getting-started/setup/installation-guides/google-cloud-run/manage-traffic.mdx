@@ -1,0 +1,68 @@
+---
+description: Configure Google Cloud Run for supporting the High Availability and Scalability.
+toc_max_heading_level: 2
+---
+
+# Configure Google Cloud Run for SSO
+
+This page provides steps to configure Google Cloud Run Appsmith installation for high availability and scalability.
+
+## Prerequisites
+
+* A [Google Cloud](https://console.cloud.google.com/) account.
+* An Appsmith installation on Google Cloud Run.
+* If you want scalable, secure, and highly available services, enable [Memorystore for Redis API](https://console.cloud.google.com/apis/dashboard).
+
+
+## Create a Redis instance
+
+This guide is optional, and you can skip to [Create Service](#create-service). Follow the steps below if you want scalable, secure, and highly available services. Ensure you have enabled the **Memorystore for Redis** API as mentioned in step 5 of the [Before you begin](#before-you-begin) section.
+
+1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
+
+2. Click **Create Instance**.
+    
+3. On the **Create a Redis instance** page, enter the configurations as shown below:
+
+    - In the **Instance ID** field, set an id. Example: `instanceid`.
+    - In the **Tier Selection** list, select one of the options:
+      - **Basic**: One primary Redis node. No automatic failover for High Availability.
+      - **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
+    For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
+    - In the **Capacity** box, enter `10`.
+    - In the **Region** box, select a region for your instance.
+    - In the **Zone** box, select a zone for your instance.
+    - If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
+    - Under **Set up connection**, select the **default** option for **Network**.
+    - Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
+
+4. Click the **Create** button.
+
+5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
+
+<figure>
+    <img src="/img/redis-primary-endpoint.png" style= {{width:"100%", height:"auto"}} alt="Primary Endpoint of the Redis Instance"/>
+    <figcaption align = "center"><i>Primary Endpoint of the Redis Instance</i></figcaption>
+</figure>
+
+
+## Manage traffic between revisions
+
+Follow the steps below if you have created a Redis instance in the steps above to split traffic between multiple revisions.
+
+1. Go to [Cloud Run](https://console.cloud.google.com/run).
+
+2. Locate the service in the services list, and click on it.
+
+3. Click the **Revisions** tab.
+
+4. Click the **︙** icon under **Actions** next to the service.
+
+5. Specify the percentage of traffic to be shared. To split traffic between more revisions, click **Add Revision**, select the desired revision, and set the percentage to the desired split.
+
+6. Click **Save**.
+
+<figure>
+  <img src="/img/manage_traffic_revisions.png" style= {{width:"100%", height:"auto"}} alt="Manage traffic between revisions"/>
+  <figcaption align = "center"><i>Manage traffic between revisions</i></figcaption>
+</figure>

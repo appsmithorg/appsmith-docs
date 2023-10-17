@@ -1,0 +1,90 @@
+---
+description: Configure Google Cloud Run before enabling SSO.
+toc_max_heading_level: 2
+---
+
+# Configure Google Cloud Run for SSO
+
+This page provides steps to configure Google Cloud Run Appsmith installation for using Single Sign-On (SSO).
+
+## Prerequisites
+
+* A [Google Cloud](https://console.cloud.google.com/) account.
+* An Appsmith installation on Google Cloud Run.
+
+### Assign roles to account
+
+1. Go to the [IAM & Admin](https://console.cloud.google.com/iam-admin) page in the Google Cloud console.
+
+2. Grant the **Cloud SQL Admin** and the **Cloud SQL Client** roles to the member for the project. 
+
+3. Click **Save**.
+
+<figure>
+  <img src="/img/grant_role_IAM.png" style= {{width:"100%", height:"auto"}} alt="Assign roles to account"/>
+  <figcaption align = "center"><i>Assign roles to account</i></figcaption>
+</figure>
+
+### Create a PostgreSQL instance
+
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
+2. Click **Create instance**.
+
+3. On the **Choose your database engine** panel of the **Create an instance** page, click **Choose PostgreSQL**.
+
+4. In the **Instance ID** field of the **Instance info** pane, enter an ID for your instance. Eg: `postgres`.
+
+5. In the **Password** field, enter a password for the postgres user.
+
+6. Select **PostgreSQL 12** in the **Database version** dropdown list.
+
+7. Select **Enterprise** in the **Choose a Cloud SQL edition** panel.
+
+8. In the **Choose region and zonal availability** section:
+    - In the **Region** dropdown list, select the region for your instance.   
+    - Select **Single zone** under **Zonal availability**.
+
+9. In the **Customize your instance** section, click **SHOW CONFIGURATION OPTIONS** to display the groups of settings.
+
+10. Under the **Storage** section: 
+    - Select **HDD** under **Storage type**.
+    - Select **10 GB** under **Storage capacity**.
+
+11. Under the **Connections** section, select the **Public IP** checkbox.
+
+12. Under the **Data protection** section, deselect the **Automate daily backups** and **Enable deletion protection** checkboxes.
+
+13. Under the **Maintenance** section:
+    - Select **Any window** in the **Maintenance window** dropdown list. 
+    - Select **Any** in the **Order of update** dropdown list. 
+
+14. Click **Create Instance**.
+
+### Create database
+
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
+2. To open the Overview page of an instance, click the instance name.
+
+3. Select **Databases** from the SQL navigation menu.
+
+4. Click **Create database**.
+
+5. In the **New database** dialog, specify the name of the database.
+
+6. Click **Create**.
+
+### Create users
+
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+
+2. To open the Overview page of an instance, click the instance name.
+
+3. Select **Users** from the SQL navigation menu.
+
+4. Click **Add user account**.
+
+5. In the **Add a user account to instance instance_name** page, select **Built-in authentication** (the default) and add a **User name** and **Password**.
+
+6. Click **Add**.
