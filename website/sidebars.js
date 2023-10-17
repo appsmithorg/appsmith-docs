@@ -192,33 +192,25 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Manage License and Plans',
+              label: 'Manage Editions',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/upgrade-to-business-edition/README',
+                id: 'getting-started/setup/manage-editions/README',
               },
               items: [
+                'getting-started/setup/manage-editions/upgrade-plan',
+                'getting-started/setup/manage-editions/downgrade-plan',
                 {
                   type: 'category',
-                  label: 'Upgrade Plans',
+                  label: 'Upgrade from Community Edition',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/manage-plans/upgrade-plan',
+                    id: 'getting-started/setup/upgrade-to-business-edition/README',
+                    
                   },
                   items: [
                     'getting-started/setup/upgrade-to-business-edition/docker',
                     'getting-started/setup/upgrade-to-business-edition/kubernetes',
-                  ]
-                },
-                {
-                  type: 'category',
-                  label: 'Downgrade Plans',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/manage-plans/downgrade-plan',
-                  },
-                  items: [
-
                   ]
                 },
               ],

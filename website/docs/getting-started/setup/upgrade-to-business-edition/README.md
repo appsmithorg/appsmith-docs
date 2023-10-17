@@ -1,25 +1,31 @@
 ---
-description: This page gives you an overview of how to manage your license and plans on Appsmith.
+description: Follow these steps to upgrade the Appsmith Community Edition to a Business Edition.
 ---
+# Upgrade from Community Edition
 
-# Manage License and Plans
+This page guides Community Edition users to upgrade their Appsmith installation to the Appsmith Commercial Edition. If you want to install Appsmith Commercial Edition directly, see [Installation Guides](/getting-started/setup/installation-guides).
 
-Appsmith offers a range of plans tailored to meet your specific business requirements. For more information, see [Pricing](https://www.appsmith.com/pricing). You can change your plan by adding or updating your license key. Here are some changes you might want to make:
+To proceed with the upgrade from the Community Edition, select your installation type below:
 
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-      <div class="containerCol"></div>
-      <b><a href="/getting-started/setup/manage-plans/upgrade-plan">Upgrade Plans</a></b>
-      <div class="containerDescription">
-         Instructions to upgrade your plan to a higher-tier plan.
-      </div>
-   </div>
-
-   <div class="containerColumnSampleApp columnGrid column-two">
-      <div class="containerCol"></div>
-      <b><a href="/getting-started/setup/manage-plans/downgrade-plan">Downgrade Plans</a></b>
-      <div class="containerDescription"> 
-         Get information and step-by-step guidance on downgrading your plan.
-      </div>
-   </div>
+<div class="containerBorder">
+    <div class="containerGrid">
+        <div class="columnGrid column-one" align="center">
+            <div class="containerCol">
+                <a href="/getting-started/setup/upgrade-to-business-edition/docker">
+                <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
+                </a> 
+            </div> 
+            <b><a href="/getting-started/setup/upgrade-to-business-edition/docker">Docker</a></b>
+        </div>
+        <div class="columnGrid column-two" align="center">
+            <div class="containerCol">
+                <a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">
+                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
+                </a> 
+            </div> 
+            <b><a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">Kubernetes</a></b>
+       </div>
+        <div class="columnGrid column-three" align="center">
+        </div>
+    </div>
 </div>
