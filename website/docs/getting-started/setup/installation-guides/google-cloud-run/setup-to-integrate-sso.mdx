@@ -1,16 +1,32 @@
 ---
 description: Configure Google Cloud Run before enabling SSO.
 toc_max_heading_level: 2
+hide_title: true
+title: Configure Google Cloud Run for SSO
 ---
 
-# Configure Google Cloud Run for SSO
+<!-- vale off -->
 
-This page provides steps to configure Google Cloud Run Appsmith installation for using Single Sign-On (SSO).
+<div className="tag-wrapper">
+ <h1> Configure Google Cloud Run for SSO</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+This page provides steps to configure Appsmith installation on Google Cloud Run for using Single Sign-On (SSO).
 
 ## Prerequisites
 
 * A [Google Cloud](https://console.cloud.google.com/) account.
-* An Appsmith installation on Google Cloud Run.
+* An Appsmith Commercial Edition installation on Google Cloud Run. If not installed yet, see the [Google Cloud Run installation guide](/getting-started/setup/installation-guides/google-cloud-run) for installing Appsmith.
+* Ensure that you have created a manual backup for your instance.
 
 ### Assign roles to account
 
@@ -42,22 +58,22 @@ This page provides steps to configure Google Cloud Run Appsmith installation for
 7. Select **Enterprise** in the **Choose a Cloud SQL edition** panel.
 
 8. In the **Choose region and zonal availability** section:
-    - In the **Region** dropdown list, select the region for your instance.   
-    - Select **Single zone** under **Zonal availability**.
+    * In the **Region** dropdown list, select the region for your instance.   
+    * Select **Single zone** under **Zonal availability**.
 
 9. In the **Customize your instance** section, click **SHOW CONFIGURATION OPTIONS** to display the groups of settings.
 
 10. Under the **Storage** section: 
-    - Select **HDD** under **Storage type**.
-    - Select **10 GB** under **Storage capacity**.
+    * Select **HDD** under **Storage type**.
+    * Select **10 GB** under **Storage capacity**.
 
 11. Under the **Connections** section, select the **Public IP** checkbox.
 
 12. Under the **Data protection** section, deselect the **Automate daily backups** and **Enable deletion protection** checkboxes.
 
 13. Under the **Maintenance** section:
-    - Select **Any window** in the **Maintenance window** dropdown list. 
-    - Select **Any** in the **Order of update** dropdown list. 
+    * Select **Any window** in the **Maintenance window** dropdown list. 
+    * Select **Any** in the **Order of update** dropdown list. 
 
 14. Click **Create Instance**.
 
@@ -88,3 +104,24 @@ This page provides steps to configure Google Cloud Run Appsmith installation for
 5. In the **Add a user account to instance instance_name** page, select **Built-in authentication** (the default) and add a **User name** and **Password**.
 
 6. Click **Add**.
+
+## Change Appsmith installation
+
+* Edit the Appsmith instance, and go to the **Autoscaling** section.
+* Under **Environment variables**, click **Add Variable** to add below variable in the **Name** and **Value** text boxes as shown below: <br/>
+
+| Name | Value |
+|------------------------|------------------------------------------| 
+|**APPSMITH_KEYCLOAK_DB_URL** | `jdbc:postgresql:///<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<POSTGRESQL_USER_NAME>&password=<POSTGRESQL_USER_PASSWORD>`|
+| **APPSMITH_KEYCLOAK_DB_USERNAME** |`appsmith`|
+| **APPSMITH_KEYCLOAK_DB_PASSWORD** |`appsmith`|
+| **APPSMITH_KEYCLOAK_DB_DRIVER** |`postgresql`|
+* --- Add steps to update the installation ---
+
+## Troubleshooting
+
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## Further reading
+* [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
+* [OIDC Single Sign-On](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc)

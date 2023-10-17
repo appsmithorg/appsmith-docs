@@ -1,18 +1,33 @@
 ---
 description: Configure Google Cloud Run for supporting the High Availability and Scalability.
 toc_max_heading_level: 2
+hide_title: true
+title: Configure High Availability and Scalability
 ---
 
-# Configure Google Cloud Run for SSO
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Configure High Availability and Scalability</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page provides steps to configure Google Cloud Run Appsmith installation for high availability and scalability.
 
 ## Prerequisites
 
 * A [Google Cloud](https://console.cloud.google.com/) account.
-* An Appsmith installation on Google Cloud Run.
+* An Appsmith Commercial Edition installation on Google Cloud Run. If not installed yet, see the [Google Cloud Run installation guide](/getting-started/setup/installation-guides/google-cloud-run) for installing Appsmith.
 * If you want scalable, secure, and highly available services, enable [Memorystore for Redis API](https://console.cloud.google.com/apis/dashboard).
-
+* Ensure that you have created a manual backup for your instance.
 
 ## Create a Redis instance
 
@@ -24,17 +39,17 @@ This guide is optional, and you can skip to [Create Service](#create-service). F
     
 3. On the **Create a Redis instance** page, enter the configurations as shown below:
 
-    - In the **Instance ID** field, set an id. Example: `instanceid`.
-    - In the **Tier Selection** list, select one of the options:
-      - **Basic**: One primary Redis node. No automatic failover for High Availability.
-      - **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
+    * In the **Instance ID** field, set an id. Example: `instanceid`.
+    * In the **Tier Selection** list, select one of the options:
+      * **Basic**: One primary Redis node. No automatic failover for High Availability.
+      * **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
     For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
-    - In the **Capacity** box, enter `10`.
-    - In the **Region** box, select a region for your instance.
-    - In the **Zone** box, select a zone for your instance.
-    - If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
-    - Under **Set up connection**, select the **default** option for **Network**.
-    - Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
+    * In the **Capacity** box, enter `10`.
+    * In the **Region** box, select a region for your instance.
+    * In the **Zone** box, select a zone for your instance.
+    * If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
+    * Under **Set up connection**, select the **default** option for **Network**.
+    * Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
 
 4. Click the **Create** button.
 
@@ -45,6 +60,17 @@ This guide is optional, and you can skip to [Create Service](#create-service). F
     <figcaption align = "center"><i>Primary Endpoint of the Redis Instance</i></figcaption>
 </figure>
 
+## Change Appsmith installation
+
+* Edit the Appsmith instance, and go to the **Autoscaling** section.
+* Set **Maximum number of instances** to `4`.
+* Under **Environment variables**, click **Add Variable** to add below variable in the **Name** and **Value** text boxes as shown below: <br/>
+
+| Name | Value |
+|------------------------|------------------------------------------| 
+| **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
+
+* ---Add steps to update the installation ---- TO DO.
 
 ## Manage traffic between revisions
 
@@ -66,3 +92,7 @@ Follow the steps below if you have created a Redis instance in the steps above t
   <img src="/img/manage_traffic_revisions.png" style= {{width:"100%", height:"auto"}} alt="Manage traffic between revisions"/>
   <figcaption align = "center"><i>Manage traffic between revisions</i></figcaption>
 </figure>
+
+## Troubleshooting
+
+If you face issues, contact the support team using the chat widget at the bottom right of this page.

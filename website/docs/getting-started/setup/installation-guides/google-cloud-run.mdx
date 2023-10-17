@@ -4,19 +4,28 @@ toc_max_heading_level: 2
 ---
 
 # Google Cloud Run
-This guide shows you how to deploy Appsmith on Google Cloud Run.
+This page provides steps to deploy Appsmith on Google Cloud Run.
+
+:::caution important
+Appsmith installation on Google Cloud Run operates in an isolated environment, which limits external access to the container for automated backup and restore. Before performing any configuration changes or maintenance tasks, ensure you take a manual backup of your data.
+:::
+
+## System requirements
+
+Before you begin, ensure you have the following:
+
+1. A [Google Cloud](https://console.cloud.google.com/) account.
+2. An external MongoDB instance for Appsmith data storage. We recommend using [MongoDB Atlas](https://www.mongodb.com/atlas/database).
 
 ## Prerequisites
 
-1. A [Google Cloud](https://console.cloud.google.com/) account.
-2. An external MongoDB instance for Appsmith data storage - It's recommended to use [MongoDB Atlas](https://www.mongodb.com/atlas/database).
-3.  **Select or Create a Google Cloud Project** -  In the [Google Cloud console](https://console.cloud.google.com/projectselector2/home/dashboard
-), select or create a Google Cloud project. For more information about creating projects, see [Create Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-4. Ensure that you have enabled billing for your Google Cloud project.
+Before you install Appsmith, it's important to set up the below prerequisites:
 
-## Configure Google Cloud run
-
-Before you begin installing Appsmith, create a filestore instance and a serverless VPC access connector.
+### Google Cloud setup
+1. Create or select a Google Cloud project. For more information, see [Creating a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
+2. Enable billing for your Google Cloud project.
+3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
+4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
 
 ### Create a Filestore instance
  
@@ -37,9 +46,6 @@ Follow these steps to create a filestore instance:
         <figcaption align = "center"><i>File share name and IP address of the filestore instance</i></figcaption>
 </figure>
 
-Enable [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
-
-
 ### Create a Serverless VPC Access connector
 
 Follow these steps to create a serverless VPC Access connector:
@@ -50,8 +56,6 @@ Follow these steps to create a serverless VPC Access connector:
 5. Click the **Subnet** menu. Select **Custom IP range** from the menu.
 6. In the **IP range** field, enter the first address in an unreserved CIDR /28 internal IP range.
 7. Click **Create**. A green check mark will appear next to the connector's name when it's ready to use.
-
-Enable [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
 
 ## Install Appsmith
 
@@ -70,7 +74,6 @@ Follow these steps to install Appsmith on Google Cloud Run:
 
 6. Under **Autoscaling**:
     - Set **Minimum number of instances** to `1`.
-    - Set **Maximum number of instances** to `4`.
     - Select **All** to allow direct access to your service from the Internet.
 
 7. Under **Authentication**, select **Allow unauthenticated invocations**.
@@ -93,16 +96,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
     | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
     | **APPSMITH_ENABLE_EMBEDDED_DB** | `0`|
-    | **APPSMITH_KEYCLOAK_DB_URL** | `jdbc:postgresql:///<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<POSTGRESQL_USER_NAME>&password=<POSTGRESQL_USER_PASSWORD>`|
-    | **APPSMITH_KEYCLOAK_DB_USERNAME** |`appsmith`|
-    | **APPSMITH_KEYCLOAK_DB_PASSWORD** |`appsmith`|
-    | **APPSMITH_KEYCLOAK_DB_DRIVER** |`postgresql`|
-    | **KC_DB_URL** | `jdbc:postgresql:///<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<POSTGRESQL_USER_NAME>&password=<POSTGRESQL_USER_PASSWORD>`|
-    | **KC_DB_USERNAME** |`appsmith`|
-    | **KC_DB_PASSWORD** |`appsmith`|
-    | **KC_TRANSACTION_XA_ENABLED** |`false`|
-    | **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
-
+    
 10. Scroll down to **Cloud SQL connections** section.
 
 11. Click **Add connection**.
@@ -143,141 +137,3 @@ If you face issues, contact the support team using the chat widget at the bottom
 * [Instance Management](/getting-started/setup/instance-management/)
 
 
-## Updated rewrite of the guide 
-
-# Google Cloud Run
-
-This page provides steps to deploy Appsmith on Google Cloud Run.
-
-:::caution important
-Appsmith installation on Google Cloud Run operates in an isolated environment, which limits external access to the container for automated backup and restore. To safeguard your data, it's advised to take proactive measures. Before performing any configuration changes or maintenance tasks, ensure you take a manual backup of your data.
-:::
-
-## System requirements
-
-Before you begin, ensure you have the following:
-
-1. A [Google Cloud](https://console.cloud.google.com/) account.
-2. An external MongoDB instance for Appsmith data storage. We recommend using [MongoDB Atlas](https://www.mongodb.com/atlas/database).
-
-## Prerequisites
-
-Before you install Appsmith, it's important to set up the below prerequisites:
-
-### Google Cloud setup
-1. Create or select a Google Cloud project. For more information, see [Creating a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
-2. Enable billing for your Google Cloud project.
-3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
-4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
-
-### Creating a Filestore Instance
-
-Follow these steps to create a Filestore instance:
-
-1. In the Google Cloud Console, navigate to [Filestore instances](https://console.cloud.google.com/filestore/instances).
-
-2. Click **Create Instance** and configure the instance as follows:
-   - Provide a name in the **Instance ID** field.
-   - Set **Instance type** to **Basic**.
-   - Choose **Storage type** as **HDD**.
-   - Set **VPC network** to **default**.
-   - Specify a name in the **Configure your file share** field.
-   - Set **Allocated IP range** to **Use an automatically allocated IP range**.
-   - Set **Access controls** to **Grant access to all clients on the VPC network**.
-     
-     <figure>
-        <img src="/img/file-share-name-and-ip-address.png" style= {{width:"100%", height:"auto"}} alt="File share name and IP address of the filestore instance"/>
-        <figcaption align = "center"><i>File share name and IP address of the filestore instance</i></figcaption>
-    </figure>
-
-3. Click **Create**.
-4. Once the instance is created, make note of the **File share name** and **IP address** for later use.
-
-### Creating a serverless VPC access connector
-
-Follow these steps to create a Serverless VPC Access connector:
-
-1. Go to the [Serverless VPC Access](https://console.cloud.google.com/networking/connectors) overview page.
-
-2. Click **Create connector**.
-3. In the **Name** field, provide a name for your connector.
-4. In the **Network** field, select the **default** option.
-5. In the **Subnet** menu, select **Custom IP range**.
-6. Enter the first address in an unreserved CIDR /28 internal IP range in the **IP range** field.
-7. Click **Create**. The connector is ready for use when a green check mark appears next to its name.
-
-## Install Appsmith
-
-Follow these steps to install Appsmith on Google Cloud Run:
-
-1. Access [Cloud Run](https://console.cloud.google.com/run).
-
-2. Click **Create service**.
-
-3. In the form, select **Deploy one revision from an existing container image**.
-   - In the **Container image URL** field, enter `docker.io/appsmith/appsmith-ee`.
-
-4. Provide a name in the **Service name** field.
-
-5. Set **CPU allocation and pricing** to **CPU is always allocated**.
-
-6. Under **Autoscaling**:
-   - Set the **Minimum number of instances** to `1`.
-   - Set the **Maximum number of instances** to `4`.
-   - Select **All** to allow direct access to your service from the Internet.
-
-7. Under **Authentication**, select **Allow unauthenticated invocations**.
-
-8. Click **Container, Networking, Security** to expand the service configuration page.
-
-9. Navigate to the **Container** tab.
-   - In the **Container port** field, set it to `80`.
-   - Under **Capacity**:
-     - Choose **4 GiB** from the **Memory** dropdown list.
-     - Set the CPU limit to **2** in the **CPU** dropdown list.
-   - Select **Second generation** for the execution environment.
-   - Add environment variables for the following:
-     - **FILESTORE_IP_ADDRESS**: Use the IP address noted down when creating the Filestore instance.
-     - **FILE_SHARE_NAME**: Use the file share name noted down during Filestore instance creation.
-     - **APPSMITH_MONGODB_URI**: Specify the connection string for the external MongoDB instance used for Appsmith data storage.
-     - **APPSMITH_ENCRYPTION_SALT**: Provide an encryption salt for securing data in the database.
-     - **APPSMITH_ENCRYPTION_PASSWORD**: Set an encryption password for database security.
-     - **APPSMITH_ENABLE_EMBEDDED_DB**: Set to `0`.
-     - **APPSMITH_KEYCLOAK_DB_URL**: Specify the URL for Keycloak database connection.
-     - **APPSMITH_KEYCLOAK_DB_USERNAME**: Set to `appsmith`.
-     - **APPSMITH_KEYCLOAK_DB_PASSWORD**: Set to `appsmith`.
-     - **APPSMITH_KEYCLOAK_DB_DRIVER**: Set to `postgresql`.
-     - **KC_DB_URL**: Specify the Keycloak database URL.
-     - **KC_DB_USERNAME**: Set to `appsmith`.
-     - **KC_DB_PASSWORD**: Set to `appsmith`.
-     - **KC_TRANSACTION_XA_ENABLED**: Set to `false`.
-     - **APPSMITH_REDIS_URL**: If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, provide the host and port from the Primary Endpoint of the Redis instance in the format: `redis://<HOST>:<PORT>`.
-
-10. Scroll down to the **Cloud SQL connections** section.
-11. Click **Add connection** and select the desired Cloud SQL instance from the dropdown list.
-12. On the **Networking** tab, choose the *Serverless VPC Access connector* you created in the [previous section](#create-a-serverless-vpc-access-connector) for the **VPC Network**.
-13. Keep the default option for routing requests through the VPC connector.
-14. On the **Security** tab, select the service account where you assigned the **Cloud SQL Admin** and **Cloud SQL Client** roles in the [Assign roles to account](#assign-roles-to-account) section.
-15. Click **Create** or **Deploy** to deploy the image to Cloud Run and wait for the deployment to complete. You'll see a green check mark when the service is ready.
-16. Check the **Logs** tab and open the **Logs Explorer**. Wait until you see the message "Appsmith is running" in the logs.
-17. Click the provided URL link to access your Appsmith instance.
-
-<figure>
-  <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
-  <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
-</figure>
-
-18. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key. Enter the key to activate the instance.
-
-## Install Appsmith Community
-
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce`.
-
-## Troubleshooting
-
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
-
-## See also
-
-* [Instance Configuration](/getting-started/setup/instance-configuration/)
-* [Instance Management](/getting-started/setup/instance-management/)

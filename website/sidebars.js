@@ -76,7 +76,19 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
-                'getting-started/setup/installation-guides/google-cloud-run',
+                {
+                  type: 'category',
+                  label: 'Google Cloud Run',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/google-cloud-run',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                  ],
+                },
+
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
