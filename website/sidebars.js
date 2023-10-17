@@ -84,8 +84,8 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/google-cloud-run',
                   },
                   items: [
-                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                     'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                   ],
                 },
 

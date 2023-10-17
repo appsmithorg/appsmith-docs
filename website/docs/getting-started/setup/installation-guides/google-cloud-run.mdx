@@ -73,8 +73,9 @@ Follow these steps to install Appsmith on Google Cloud Run:
 5. Set **CPU allocation and pricing** to **CPU is always allocated**.
 
 6. Under **Autoscaling**:
-    - Set **Minimum number of instances** to `1`.
-    - Select **All** to allow direct access to your service from the Internet.
+    * Set **Minimum number of instances** to `1`.
+    * Set **Maximum number of instances** to `4`.
+    * Select **All** to allow direct access to your service from the Internet.
 
 7. Under **Authentication**, select **Allow unauthenticated invocations**.
 
@@ -100,9 +101,10 @@ Follow these steps to install Appsmith on Google Cloud Run:
 10. Click the Networking tab.
     * In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.
     * Keep the default Route only requests to private IPs through the VPC connector option.
-
-11. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key. Enter your license key to activate the instance.
-
+11. Click the **Deploy** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it's ready. This can take up to 5 minutes.
+12. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
+13. Fill in your details to create an administrator account.
+14. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
 
