@@ -105,10 +105,11 @@ This page provides steps to configure Appsmith installation on Google Cloud Run 
 
 6. Click **Add**.
 
-## Change Appsmith installation
+## Edit and deploy new revision
 
-1. Edit the Appsmith instance, and go to the **Autoscaling** section.
-2. Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
+1. Go to your cloud run console.
+2. Select your Appsmith Service, and click **EDIT & DEPLOY NEW REVISION**.
+3. Under **Environment variables**, click **Add Variable** button to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
 
 | Name | Value |
 |------------------------|------------------------------------------| 
@@ -125,14 +126,13 @@ This page provides steps to configure Appsmith installation on Google Cloud Run 
 
 6. Click the **Security** tab. In the **Service account** dropdown list, select the account where you granted the **Cloud SQL Admin** and the **Cloud SQL Client** roles in the [Assign roles to account](#assign-roles-to-account) section. 
 
-
-
 <figure>
   <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
   <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
 </figure>
 
-10. --- Add steps to update the installation ---
+7. Click **Deploy** button. A green check mark will appear next to the newly deployed service name when it's ready.
+8. Verify that the new revision is working as expected by accessing Appsmith, and logging into your account.
 
 ## Troubleshooting
 

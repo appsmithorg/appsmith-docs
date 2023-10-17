@@ -59,6 +59,10 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 
 ##  Register Auth0 in Appsmith
 
+:::info
+If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
+:::
+
 To complete the OIDC configuration, you must register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the **Client ID** and **Client Secret** copied from the Auth0 application into the respective fields.
