@@ -1103,7 +1103,7 @@
       "destination": "/getting-started/setup/upgrade-to-business-edition/kubernetes"
     },
     {
-      "source": "core-concepts/building-ui/designing-an-application/application-layout",
+      "source": "/core-concepts/building-ui/designing-an-application/application-layout",
       "destination": "/build-apps/overview"
     }
   ]
