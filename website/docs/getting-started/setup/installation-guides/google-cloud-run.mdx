@@ -96,29 +96,6 @@ Follow these steps to install Appsmith on Google Cloud Run:
     | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
     | **APPSMITH_ENABLE_EMBEDDED_DB** | `0`|
-    
-10. Scroll down to **Cloud SQL connections** section.
-
-11. Click **Add connection**.
-
-12. Select the desired Cloud SQL instance from the dropdown list.
-
-10. Click the **Networking** tab.
-    - In the **VPC Network** field, choose the name of the *Serverless VPC Access connector* you created in the preceding [section](#create-a-serverless-vpc-access-connector).
-    - Keep the default **Route only requests to private IPs through the VPC connector** option.
-
-11. Click the **Security** tab. In the **Service account** dropdown list, select the account where you granted the **Cloud SQL Admin** and the **Cloud SQL Client** roles in the [Assign roles to account](#assign-roles-to-account) section. 
-
-12. Click the **Create** or **Deploy** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it is ready.
-
-13. Click the **Logs** tab to verify everything works fine. Click the open icon to the right of the screen to open the **Logs Explorer**. Wait a few minutes until you see the message `Appsmith is running` in the logs. 
-
-14. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
-
-<figure>
-  <img src="/img/deployed-service-url-cloud-run.png" style= {{width:"100%", height:"auto"}} alt="URL of Appsmith deployed on Cloud Run"/>
-  <figcaption align = "center"><i>URL of Appsmith deployed on Cloud Run</i></figcaption>
-</figure>
 
 15. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key. Enter your license key to activate the instance.
 
