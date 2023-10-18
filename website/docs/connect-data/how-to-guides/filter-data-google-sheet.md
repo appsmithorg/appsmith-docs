@@ -3,7 +3,7 @@ sidebar_position: 5
 description: This guide shows steps to fetch and filter data from Google Sheets.
 ---
 
-# Fetch and Filter Data in Google Sheet
+# Read Data from Google Sheet
 
 This page shows you steps to fetch and filter data from a Google Sheet.
 
@@ -58,17 +58,26 @@ To fetch data based on a condition using the where clause, follow these steps:
    For more information to set up pagination on the Table widget, see [Setup Server-Side Pagination on Table](https://docs.appsmith.com/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 ### Filter data using a cell range
-To fetch data corresponding to a specific block of cells, follow these steps:
+To filter data by a range to fetch data from designated cells in your sheet, follow these steps:
 1. In **Filter Format**, select **Cell range**.
 2. Specify the range of the cells to fetch data in the following format:
 
    `A2:Z`
 
+   Selecting cells in this mode uses Google Sheets' row number and column letter syntax.
+
    For example:
 
    `A1-B14`
 
+   Your fetched data still includes the column labels even if the column header row does not appear in your selection.
+   
    For more information, see [Cell Range](https://docs.appsmith.com/connect-data/reference/querying-google-sheets#cell-range).
+3. To dynamically bind the cell range using mustache syntax, use the following format where `Cell_range_row` and `Cell_range_col` are input fields:
+
+   ```jsx
+   {{Cell_range_row.text}}:{{Cell_range_col.text}}
+   ```
 
 ## Further reading
 - [Google Sheets Reference](https://docs.appsmith.com/connect-data/reference/querying-google-sheets)
