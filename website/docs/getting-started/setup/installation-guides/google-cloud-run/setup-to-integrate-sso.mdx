@@ -26,6 +26,7 @@ This page outlines the steps to configure Appsmith installation on Google Cloud 
 
 * A [Google Cloud](https://console.cloud.google.com/) account.
 * An Appsmith Commercial Edition installation on Google Cloud Run. If not installed yet, see the [Google Cloud Run installation guide](/getting-started/setup/installation-guides/google-cloud-run) for installing Appsmith.
+* Enable the [Cloud SQL Admin API](https://console.cloud.google.com/marketplace/product/google/sqladmin.googleapis.com).
 * Ensure that you have taken a manual backup for your instance.
 
 ### Assign roles to account
@@ -118,6 +119,7 @@ This page outlines the steps to configure Appsmith installation on Google Cloud 
     | **APPSMITH_KEYCLOAK_DB_USERNAME** |`appsmith`|
     | **APPSMITH_KEYCLOAK_DB_PASSWORD** |`appsmith`|
     | **APPSMITH_KEYCLOAK_DB_DRIVER** |`postgresql`|
+    | **KC_TRANSACTION_XA_ENABLED** | `false`|
     
     * Remove the **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** environment variable by clicking the delete icon next to the environment variable value.
 
