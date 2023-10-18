@@ -112,7 +112,7 @@ SELECT * FROM users WHERE gender = {{Select1.selectedOptionValue}};
 ```
 
 :::note
-If prepared statements are enabled and you're using widget bindings, there's no need to use quotes.
+When prepared statements are enabled and widget bindings are used, quotes are not required.
 :::
 
 Learn more about [Server-side Filter on Table](/build-apps/how-to-guides/Server-side-filtering-table)
@@ -159,7 +159,7 @@ WHERE gender = {{Select1.selectedOptionValue}} AND country = {{Select2.selectedO
 ```
 
 :::note
-If prepared statements are enabled and you're using widget bindings, there's no need to use quotes.
+When prepared statements are enabled and widget bindings are used, quotes are not required.
 :::
 
 This SQL query is designed to retrieve user data from the "users" table based on selected options for gender, country, and a selected date of birth.
