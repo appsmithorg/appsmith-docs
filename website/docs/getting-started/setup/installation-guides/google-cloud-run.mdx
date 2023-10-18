@@ -15,7 +15,7 @@ Appsmith installation on Google Cloud Run operates in an isolated environment, w
 Before you begin, ensure you have the following:
 
 1. A [Google Cloud](https://console.cloud.google.com/) account.
-2. An external MongoDB instance for Appsmith data storage. We recommend using [MongoDB Atlas](https://www.mongodb.com/atlas/database).
+2. An external MongoDB instance for Appsmith data storage. It's recommended to use [MongoDB Atlas](https://www.mongodb.com/atlas/database).
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
 8. Click **Container, Networking, Security** to expand the service configuration page.
 
 9. Click the **Container** tab.
-    - In the **Container port** box, enter `80` to specify the port you want requests to be sent to.
+    - In the **Container port** box, enter 80 to specify the port you want route traffic to.
     - Under **Capacity**:
         - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
         - Set the CPU limit as **2** in the **CPU** dropdown list.
@@ -97,6 +97,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
     | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
     | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
     | **APPSMITH_ENABLE_EMBEDDED_DB** | `0`|
+    | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | 1 |
 
 10. Click the Networking tab.
     * In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.

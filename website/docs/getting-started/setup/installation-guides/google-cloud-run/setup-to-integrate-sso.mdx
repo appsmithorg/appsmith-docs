@@ -109,15 +109,17 @@ This page provides steps to configure Appsmith installation on Google Cloud Run 
 
 1. Go to your cloud run console.
 2. Select your Appsmith Service, and click **EDIT & DEPLOY NEW REVISION**.
-3. Under **Environment variables**, click **Add Variable** button to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
+3. Under **Environment variables**:
+  * Click **Add Variable** button to add each variable in the **Name** and **Value** text boxes as shown below: <br/> 
 
-| Name | Value |
-|------------------------|------------------------------------------| 
-|**APPSMITH_KEYCLOAK_DB_URL** | `jdbc:postgresql:///<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<POSTGRESQL_USER_NAME>&password=<POSTGRESQL_USER_PASSWORD>`|
-| **APPSMITH_KEYCLOAK_DB_USERNAME** |`appsmith`|
-| **APPSMITH_KEYCLOAK_DB_PASSWORD** |`appsmith`|
-| **APPSMITH_KEYCLOAK_DB_DRIVER** |`postgresql`|
+  | Name | Value |
+  |------------------------|------------------------------------------| 
+  |**APPSMITH_KEYCLOAK_DB_URL** | `jdbc:postgresql:///<DATABASE_NAME>?cloudSqlInstance=<INSTANCE_CONNECTION_NAME>&socketFactory=com.google.cloud.sql.postgres.SocketFactory&user=<POSTGRESQL_USER_NAME>&password=<POSTGRESQL_USER_PASSWORD>`|
+  | **APPSMITH_KEYCLOAK_DB_USERNAME** |`appsmith`|
+  | **APPSMITH_KEYCLOAK_DB_PASSWORD** |`appsmith`|
+  | **APPSMITH_KEYCLOAK_DB_DRIVER** |`postgresql`|
     
+  * Remove the **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** environment variable by clicking the delete icon next to the environment variable value .
 3. Scroll down to **Cloud SQL connections** section.
 
 4. Click **Add connection**.
