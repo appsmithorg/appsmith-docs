@@ -238,7 +238,7 @@ When working with IS keyword in MySQL, it's recommended to use:
 
 <dd>
 
-**Example**: To filter users by a selected country from a Select widget, use:
+**Example**: To filter users by a selected country in a Select widget, use:
 
 ```sql
 -- With prepared statements enabled
