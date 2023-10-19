@@ -3,7 +3,7 @@ sidebar_position: 5
 description: This guide shows steps to fetch and filter data from Google Sheets.
 ---
 
-# Read Data from Google Sheet
+# Fetch and Filter Data from Google Sheet
 
 This page shows you steps to fetch and filter data from a Google Sheet.
 
