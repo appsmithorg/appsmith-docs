@@ -230,7 +230,7 @@ SELECT * FROM users WHERE country = ANY (ARRAY[{{MultiSelect2.selectedOptionValu
 
 ## Using IS 
 
-When working with MySQL, it's recommended to use:
+When working with IS keyword in MySQL, it's recommended to use:
 
 * The `=` operator instead of `IS`. 
 * `true` / `false` values should be without quotes i.e. `{{true}}` instead of `{{”true”}}`.
