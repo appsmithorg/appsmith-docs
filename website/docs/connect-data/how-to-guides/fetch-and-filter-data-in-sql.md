@@ -19,41 +19,36 @@ The WHERE clause in SQL is a tool for filtering data based on specific condition
 
 <dd>
 
-*Example:* If you want to filter table data based on specific criteria, such as gender, you can use a Select widget with the required option. 
+**Example 1:** If you want to filter table data based on specific criteria, such as gender, you can use a Select widget with the required option. 
 
 Configure the query to fetch data using [selectedOptionValue](/reference/widgets/select#selectedoptionvalue-string) reference property, like:
 
 ```sql
+-- With prepared statements enabled
 SELECT * FROM users WHERE gender = {{Select1.selectedOptionValue}};
 ```
 
 
 
-Learn more about [Server-side Filter on Table](/build-apps/how-to-guides/Server-side-filtering-table)
-
-</dd>
+Learn more about [Server-side Filter on Table](/build-apps/how-to-guides/Server-side-filtering-table).
 
 
-## Using Dynamic WHERE Clauses
 
-The dynamic WHERE clauses involve conditions and expressions that depend on user input or other runtime factors. Prepared statements can't be effectively used in these cases because the structure of the query is not static. 
+**Example 2:** If you want to create a dynamic WHERE clause query that depends on user input, such as allowing users to specify a name using an Input widget, prepared statements can't be effectively used in these cases because the structure of the query is not static.
 
-<dd>
 
-*Example:* if you want to create a dynamic query that depends on user input. For instance, you have an [Input](/reference/widgets/input) widget where users can specify a name, and you want to retrieve data based on the entered name:
-
-1. Configure the query to fetch data using [text](/reference/widgets/input#text-string-1) reference property, like:
+Configure the query to fetch data using [text](/reference/widgets/input#text-string-1) reference property, like:
 
 ```sql
-SELECT * FROM users WHERE {{ NameInput.text ? "name = " + NameInput.text : "1=1" }}
+-- With prepared statements disabled
+SELECT * FROM users WHERE {{ Input1.text ? "name = '" + Input1.text + "'" : "1=1" }}
 ```
 
-Above, the conditional code in the WHERE clause checks whether an Input widget NameInput has a value from the user on its text property. If it does, the WHERE clause filters by that name. If not, the WHERE clause returns all records; for every record, 1 is equal to 1.
 
 
-2. Turn off Prepared Statements.
+Learn more about [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 
-Learn more about [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements)
+
 
 </dd>
 
@@ -65,7 +60,7 @@ You can use either a Table or List widget to display the paginated data, and you
 
 <dd>
 
-*Examples:* Create a query to fetch data from the database using `pageSize`, and `pageOffset` reference properties to implement pagination:
+*Example:* Create a query to fetch data from the database using `pageSize`, and `pageOffset` reference properties to implement pagination:
 
 
 ```sql
@@ -79,7 +74,7 @@ SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }};
 
 Learn more about [Server-side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table) and [Server-side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
-## Transform Data
+## Transform data
 
 If your retrieved data does not match a widget's expected format, you can either use JavaScript to transform it in the widget property pane or retrieve the required data directly from the query.
 
@@ -128,7 +123,7 @@ When using the LIKE or ILIKE keyword in SQL, it's important to handle it correct
 <dd>
 
 
-**Prepared statements enabled** (recommended)
+**Example 1**: If you want to search for values in SQL that start with specific terms, you can use the following query with prepared statements enabled:
 
 
 ```sql
@@ -137,20 +132,19 @@ SELECT * FROM public.users where name ilike {{Table1.searchText + "%"}}
 ```
 
 * The `%` character, which is used as a wildcard in LIKE and ILIKE patterns, needs to be inside the mustache binding `{{}}`.
-* Do not wrap the mustache binding `{{}}` within quotes.
+* Do not enclose the mustache binding `{{}}` within quotes.
 
 
 </dd>
 
 <dd>
 
-**Prepared statements disabled**
-
+**Example 2**: If you want to perform a partial text search that matches the search term anywhere in the data column, turn off the prepared statement and use this query:
 
 
 ```sql
 -- With prepared statements disabled
-SELECT * FROM public."features" where name ILIKE '%{{search_input.text}}%' order by created_at desc
+SELECT * FROM public.users where name ilike '%{{Table1.searchText}}%'
 ```
 
 
@@ -161,14 +155,14 @@ Placing the `%`character within single quotes can lead to unexpected results and
 
 
 
-## Working with the IN 
+## Using IN 
 
 The IN clause in SQL allows you to filter results based on multiple values. To use it correctly with prepared statements, follow these steps:
 
 
 <dd>
 
-**Prepared statements enabled** (recommended)
+**Example 1:** If you want to fetch data for specific products based on their individual IDs, you can use this query format: 
 
 
 ```sql
@@ -177,79 +171,80 @@ SELECT * FROM products WHERE product_id IN ({{productID1}}, {{productID2}}, ...)
 ```
 
 * Each value in the list should be provided as a separate mustache binding `{{}}` value.
-* Do not wrap the mustache binding `{{}}` within quotes.
+* Do not enclose the mustache binding `{{}}` within quotes.
 
-</dd>
 
-<dd>
-
-**Prepared statements disabled**
+**Example 2:** If you're working with a list of product IDs as strings, you can use this query format: 
 
 ```sql
 -- With prepared statements disabled
 SELECT * FROM products WHERE product_id IN {{productIDList}};
 -- productIDList = ["productID1", "productID2", ...]
 ```
-Placing multiple product IDs within a single mustache binding can lead to unexpected results and security vulnerabilities.
+
+This query uses a single mustache binding `{{productIDList}}` to represent an array of product IDs, where productIDList is expected to be an array like `["productID1", "productID2", ...]`.
+
+
+If you want to filter data based on countries selected in a multi-select widget, you can use this query:
+
+```sql
+-- With prepared statements disabled
+SELECT * FROM public.users where country IN ({{MultiSelect1.selectedOptionValues.map(value => "'" + value + "'").join(', ').replace('[\\"', '').replace('\\"]', '')}});
+```
+
 
 </dd>
 
-## Alternative to IN with ANY
+## Using ANY
 
 When working with IN statements, you may encounter situations where it's more convenient to use the ANY statement. The ANY keyword provides an alternative approach to achieving the same result.
 
 * When using this approach, provide all individual values in the list together, without separating them.
-* Do not wrap the binding within quotes.
+* Do not enclose the mustache binding `{{}}` within quotes.
+
 
 <dd>
 
-**Prepared statements enabled** (recommended)
+
+**Example :** 
 
 
 ```sql
-//Recommended format:
-SELECT * FROM public."employees" where name=ANY ({{myBinding.data}});
+--Recommended format:
+SELECT * FROM public."employees" where name=ANY ({{widgetName.data}});
 
-//Post evaluation it should look like:
-SELECT * FROM public."employees" where name=ANY ({{'{name, dept}'}});
+-- {{widgetName.data}} = '{name, dept}'
 ```
 
 This query uses the ANY keyword to match the `name` column in the `employees` table with both the `name` and `dept` values together in a structured array.
 
+If you want to filter data based on countries selected in a multi-select widget, you can use this query:
+
+```sql
+-- With prepared statements disabled
+SELECT * FROM users WHERE country = ANY (ARRAY[{{MultiSelect2.selectedOptionValues.map(value => "'" + value + "'").join(', ').replace('[\\"', '').replace('\\"]', '')}}]);
+```
+
 
 </dd>
 
 
-## Handling IS Keyword in Prepared Statements
+## Using IS 
 
-When working with prepared statements, the IS keyword is not supported. Instead, you should rewrite your queries using the `=` operator. 
-
-
-
-<dd>
-
-**Recommended**
-
-```sql
--- With prepared statements disabled
-SELECT * FROM student WHERE pass = {{true}};
-```
-
-Using the `=` operator for comparisons ensures that your query works as expected with prepared statements turned on.
+When working with MySQL, it's recommended to use the `=` operator instead of `IS`. 
 
 
-</dd>
+* `true` / `false` values should be without quotes i.e. `{{true}}` instead of `{{”true”}}`.
+* Do not enclose the mustache binding `{{}}` within quotes.
 
 <dd>
 
-**Avoid**
+**Example**: To filter users by a selected country from a Select widget, use:
 
 ```sql
--- With prepared statements disabled
-SELECT * FROM student WHERE pass IS {{true}};
+-- With prepared statements enabled
+SELECT * FROM users WHERE country = {{Select1.selectedOptionValue}};
 ```
-
-Using the IS keyword in your queries with prepared statements can lead to syntax errors. It's essential to switch to the = operator to maintain query integrity and functionality.
 
 </dd>
 
