@@ -40,7 +40,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Installation Guides',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -96,7 +96,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Configuration',
+              label: 'Configure Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-configuration/README',
@@ -179,7 +179,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Management',
+              label: 'Manage Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-management/README',
@@ -204,14 +204,27 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Upgrade to Business Edition',
+              label: 'Manage Editions',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/upgrade-to-business-edition/README',
+                id: 'getting-started/setup/manage-editions/README',
               },
               items: [
-                'getting-started/setup/upgrade-to-business-edition/docker',
-                'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                'getting-started/setup/manage-plans/upgrade-plan',
+                'getting-started/setup/manage-plans/downgrade-plan',
+                {
+                  type: 'category',
+                  label: 'Upgrade from Community Edition',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/upgrade-to-business-edition/README',
+
+                  },
+                  items: [
+                    'getting-started/setup/upgrade-to-business-edition/docker',
+                    'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                  ]
+                },
               ],
             },
             `getting-started/setup/best-practices`,

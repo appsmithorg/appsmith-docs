@@ -47,13 +47,24 @@ The table below shows the permissions available for each role when you share a w
 |**Developer**      | Create applications, pages and queries inside the workspace in any environment |Edit any application, page and query inside the workspace in any environment |View any application, page and query inside the workspace in any environment |Delete any application, page and query inside the workspace in any environment |	-             |Invite other users to the workspace |	-             |
 |**App Viewer**     |	-             |-             |View any application, page & execute actions inside the workspace in production environment (Cannot see queries and datasources) |-|           -     |Invite other users to the workspace only as **App Viewer** |	-|
 
-## Share application
+<div className="tag-wrapper">
 
-:::info
-Sharing a specific application is only available in the [business edition](https://www.appsmith.com/pricing).
-:::
+## Share application## Share application
 
-If you want the user to just have access to a specific application in a workspace, follow the steps below:
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
+
+If you want the user to have access to a specific application in a workspace, follow the steps below:
 
 1. Open the app you want to share and click **Share** at the top right corner.
 2. Enter the email of the user and select an appropriate role for them.

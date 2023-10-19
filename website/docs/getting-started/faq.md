@@ -23,6 +23,6 @@ We appreciate any information that can help improve the security of our systems 
 
 Appsmith supports multi-user editing with [version control using Git](/advanced-concepts/version-control-with-git) which provides a way for multiple users to edit the app pages on different branches before they can be merged into the master branch. Making changes to the same page on the same branch can lead to loss of work, so it's recommended to make edits to the same page on different branches before merging them. 
 
-## What is the pricing plan for the Business edition?
+## What is the pricing plan?
 
-See [Pricing](https://www.appsmith.com/pricing) for information about the Appsmith Business edition.
+See [Pricing](https://www.appsmith.com/pricing) for information about the Appsmith plans.

@@ -1,11 +1,11 @@
 ---
 description: Follow these steps to upgrade the Appsmith Community Edition to a Business Edition.
 ---
-# Upgrade to Business Edition
+# Upgrade from Community Edition
 
-This page guides Community Edition users to upgrade their Appsmith installation to the Business Edition. If you want to install Business Edition directly, see [Installation Guides](/getting-started/setup/installation-guides).
+This page guides Community Edition users to upgrade their Appsmith installation to the Appsmith Commercial Edition. If you want to install Appsmith Commercial Edition directly, see [Installation Guides](/getting-started/setup/installation-guides).
 
-To proceed with the upgrade from the Community Edition to the Business Edition, select your installation type below:
+To proceed with the upgrade from the Community Edition, select your installation type below:
 
 <div class="containerBorder">
     <div class="containerGrid">
