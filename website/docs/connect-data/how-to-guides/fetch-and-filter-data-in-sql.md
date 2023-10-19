@@ -1,12 +1,12 @@
 # Fetch and filter data in SQL
 
-This guide demonstrates how to retrieve and filter data by using a variety of SQL clauses.
+This guide shows you how to retrieve and filter data by using a variety of SQL clauses.
 
 
 
 ## Prerequisites
 
-* App Connected to [PostgreSQL](/connect-data/reference/querying-postgres) datasource.
+App Connected to [PostgreSQL](/connect-data/reference/querying-postgres) datasource.
 
 
 
@@ -16,11 +16,11 @@ When prepared statements are enabled and widget bindings are used, quotes are no
 
 ## Using WHERE Clause
 
-The WHERE clause in SQL is a tool for filtering data based on specific conditions. It allows you to retrieve only the rows that meet your defined criteria. 
+The WHERE clause in SQL filters data based on specific conditions, enabling you to retrieve rows that match your criteria.
 
 <dd>
 
-**Example 1:** If you want to filter table data based on specific criteria, such as gender, you can use a Select widget with the required option. 
+**Example 1:** If you want to filter Table data based on specific criteria, such as gender, you can use a Select widget with the required option. 
 
 Configure the query to fetch data using [selectedOptionValue](/reference/widgets/select#selectedoptionvalue-string) reference property, like:
 
@@ -57,11 +57,11 @@ Learn more about [Prepared Statements](/connect-data/concepts/how-to-use-prepare
 
 Server-side pagination allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the server at a time, enhancing performance.
 
-You can use either a Table or List widget to display the paginated data, and you can implement pagination with offset or cursor-based techniques by using the reference property of these widgets, like:
+You can use either a Table or List widget to display the paginated data, and you can implement pagination with offset or cursor-based techniques by using the reference properties of these widgets.
 
 <dd>
 
-*Example:* Create a query to fetch data from the database using `pageSize`, and `pageOffset` reference properties to implement pagination:
+*Example:* Create a query to fetch data from the database using `pageSize`, and `pageOffset` reference properties:
 
 
 ```sql
@@ -77,14 +77,15 @@ Learn more about [Server-side Pagination on Table](/build-apps/how-to-guides/Ser
 
 ## Transform data
 
-If your retrieved data does not match a widget's expected format, you can either use JavaScript to transform it in the widget property pane or retrieve the required data directly from the query.
+If the retrieved data does not match a widget's expected format, you can either use JavaScript to transform it in the widget property pane or retrieve the required data directly from the query, like:
 
 <dd>
 
-*Examples:* If you want to display formatted data in a Select widget, where the country name serves as the label and the ID as the value, you can use:
+*Examples:* To display formatted data in a Select widget, where the country name serves as the label and the ID as the value, you can use:
 
 
 ```sql
+-- With prepared statements enabled
 SELECT country AS name, id AS code
 FROM users
 LIMIT 10;
@@ -105,6 +106,7 @@ Conditional operators, like the AND operator, allow you to specify multiple cond
 Configure the query to fetch data using [selectedOptionValue](/reference/widgets/select#selectedoptionvalue-string), [formattedDate](/reference/widgets/datepicker#formatteddate-string) reference properties, like:
 
 ```sql
+-- With prepared statements enabled
 SELECT * FROM users
 WHERE gender = {{Select1.selectedOptionValue}} AND country = {{Select2.selectedOptionValue}} AND DATE(dob) > {{DatePicker1.formattedDate}};
 ```
@@ -118,7 +120,7 @@ WHERE gender = {{Select1.selectedOptionValue}} AND country = {{Select2.selectedO
 
 ## Using LIKE or ILIKE 
 
-When using the LIKE or ILIKE keyword in SQL, it's important to handle it correctly, especially when working with prepared statements. 
+If you want to perform search operations in your SQL queries, consider using LIKE or ILIKE operators, depending on your need for case sensitivity and partial matching. These operators enable pattern-based searches within your text data.
 
 
 <dd>
@@ -147,9 +149,6 @@ SELECT * FROM public.users where name ilike {{Table1.searchText + "%"}}
 -- With prepared statements disabled
 SELECT * FROM public.users where name ilike '%{{Table1.searchText}}%'
 ```
-
-
-Placing the `%`character within single quotes can lead to unexpected results and security vulnerabilities. It doesn't provide the same level of security and flexibility as the recommended format, making it more susceptible to SQL injection attacks. 
 
 </dd>
 
@@ -186,7 +185,7 @@ SELECT * FROM products WHERE product_id IN {{productIDList}};
 This query uses a single mustache binding `{{productIDList}}` to represent an array of product IDs, where productIDList is expected to be an array like `["productID1", "productID2", ...]`.
 
 
-If you want to filter data based on countries selected in a multi-select widget, you can use this query:
+If you want to filter data based on countries selected in a Multi-select widget, you can use this query:
 
 ```sql
 -- With prepared statements disabled
@@ -207,7 +206,8 @@ When working with IN statements, you may encounter situations where it's more co
 <dd>
 
 
-**Example :** 
+**Example :**  If you want to filter employee data based on a specific combination of name and department, you can use the following query format:
+
 
 
 ```sql
@@ -217,9 +217,7 @@ SELECT * FROM public."employees" where name=ANY ({{widgetName.data}});
 -- {{widgetName.data}} = '{name, dept}'
 ```
 
-This query uses the ANY keyword to match the `name` column in the `employees` table with both the `name` and `dept` values together in a structured array.
-
-If you want to filter data based on countries selected in a multi-select widget, you can use this query:
+If you want to filter data based on countries selected in a Multi-select widget, you can use this query:
 
 ```sql
 -- With prepared statements disabled
@@ -232,9 +230,9 @@ SELECT * FROM users WHERE country = ANY (ARRAY[{{MultiSelect2.selectedOptionValu
 
 ## Using IS 
 
-When working with MySQL, it's recommended to use the `=` operator instead of `IS`. 
+When working with MySQL, it's recommended to use:
 
-
+* The `=` operator instead of `IS`. 
 * `true` / `false` values should be without quotes i.e. `{{true}}` instead of `{{”true”}}`.
 * Do not enclose the mustache binding `{{}}` within quotes.
 
