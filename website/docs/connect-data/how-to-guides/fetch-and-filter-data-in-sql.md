@@ -1,6 +1,7 @@
 # Fetch and filter data in SQL
 
-This guide shows you how to read SQL data, apply filters, and display the results in widgets.
+This guide demonstrates how to retrieve and filter data by using a variety of SQL clauses.
+
 
 
 ## Prerequisites
