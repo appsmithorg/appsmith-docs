@@ -7,11 +7,11 @@ toc_max_heading_level: 2
 
 This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
 
-## Prerequisites
+## System requirements
 
 * At least 2 GB of free storage space for backup and update tasks.
 
-## Before you begin
+## Prerequisites
 
 * Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
 * Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
@@ -20,7 +20,7 @@ This page provides steps to update Appsmith to the latest version on your self-h
 
 Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.
 
-Follow these steps to update Appsmith, these instructions can be used to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
+Follow these steps to update Appsmith, use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
 1. Go to the Appsmith installation directory. If you don't know the directory, find it with:
 
@@ -61,12 +61,18 @@ Before you begin the update, ensure you have met all the [prerequisites](#prereq
 3. Choose the **cluster** that has the container instance you wish to update.
 4. Click the **Tasks** tab.
 5. Select and click the **task** you wish to update. 
-6. Click the **Stop** button to stop the task. Wait for the automatic deployment of a new task to be completed.
+6. Click the **Stop** button to stop the task. Wait for the automatic deployment of a new task to complete.
 7. Verify that the updated version of your application is running as expected.
+
+## Update on Azure container instance
+
+Before you begin the update, ensure you have met all the [prerequisites](#prerequisites).
+
+1. Navigate to the Azure Container Instance (ACI) on the Azure Portal.
+2. Click the **ACI** running Appsmith.
+3. Click the **Restart** button.
+4. Wait until the ACI restarts with the latest Appsmith release.
 
 ## Troubleshooting
 
-If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
-
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-
+If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
