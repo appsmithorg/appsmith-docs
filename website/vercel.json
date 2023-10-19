@@ -1081,12 +1081,30 @@
     {
       "source": "/connect-data/how-to-guides/connect-datasource",
       "destination": "/getting-started/tutorials/start-building#connect-to-a-database"
-    }
-    ,
+    },
     {
       "source": "/connect-data/how-to-guides/query-data",
       "destination": "/connect-data/overview"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/docker/install-business-edition",
+      "destination": "/getting-started/setup/installation-guides/docker"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/kubernetes/install-k8s-business-edition",
+      "destination": "/getting-started/setup/installation-guides/kubernetes"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition",
+      "destination": "/getting-started/setup/upgrade-to-business-edition/docker"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
+      "destination": "/getting-started/setup/upgrade-to-business-edition/kubernetes"
+    },
+    {
+      "source": "/core-concepts/building-ui/designing-an-application/application-layout",
+      "destination": "/build-apps/overview"
     }
   ]
 }
-

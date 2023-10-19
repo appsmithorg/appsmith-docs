@@ -561,3 +561,5 @@ SSO
 GAC
 AI
 K8s
+uncheck
+Community

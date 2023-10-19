@@ -40,6 +40,10 @@ The following section is a reference guide that provides a complete description 
 #### Connection String URI
 
 <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
+<dd>Use the following syntax to specify the MongoDB connection string:</dd>
+<dd><pre><code>
+   mongodb+srv://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;HOST&gt;/&lt;DATABASE_NAME&gt;
+</code></pre></dd>
 <dd><i>Example:</i></dd>
 <dd><pre><code>
   mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin

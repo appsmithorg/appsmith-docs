@@ -16,7 +16,7 @@ This page shows you how to use the Filepicker widget to upload file data to S3.
 Configure the S3 query to upload file data, using the following parameters:
 
  <figure>
-  <img src="/img/s3-filepicler.png" style= {{width:"700px", height:"auto"}} alt="S3 query"/>
+  <img src="/img/s3-file-upload-2.png" style= {{width:"700px", height:"auto"}} alt="S3 query"/>
   <figcaption align = "center"><i>Configure S3 query</i></figcaption>
 </figure>
 

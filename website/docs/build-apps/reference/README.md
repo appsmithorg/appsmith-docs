@@ -24,14 +24,3 @@ Technical descriptions and information about widgets and app settings.
 </div>
 
 
-<div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-                <a href="/core-concepts/building-ui/designing-an-application/application-layout"><strong>Canvas Size</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">You can choose the application layout to align with the device size for which the app is intended. </div>
-    </div>
-     <div class="columnGrid column-two" style={{margin: "10px"}}>
-    </div>
-</div>
-

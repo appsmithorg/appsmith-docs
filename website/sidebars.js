@@ -76,7 +76,19 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
-                'getting-started/setup/installation-guides/google-cloud-run',
+                {
+                  type: 'category',
+                  label: 'Google Cloud Run',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/google-cloud-run',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                  ],
+                },
+
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
@@ -249,8 +261,16 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Datasources',
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
@@ -285,9 +305,12 @@ const sidebars = {
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
             'connect-data/reference/twilio',
-            'connect-data/reference/query-settings',
+
           ],
         },
+        'connect-data/reference/query-settings',
+      ],
+    }, //Reference End
         {
           type: 'category',
           collapsed: true,
@@ -320,18 +343,18 @@ const sidebars = {
           items: [
             'core-concepts/building-ui/dynamic-ui/README',
             'build-apps/how-to-guides/Server-side-pagination-in-table',
-            'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-            'build-apps/how-to-guides/submit-form-data',
-            'build-apps/how-to-guides/refresh-table-data',
-            'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
             'reference/widgets/table/inline-editing',
+            'build-apps/how-to-guides/refresh-table-data',
+            'build-apps/how-to-guides/Server-side-filtering-table',
+            'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
+            'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+            'build-apps/how-to-guides/submit-form-data',
+            'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+            'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            'build-apps/how-to-guides/Create-Nested-Lists',
-            'build-apps/how-to-guides/Server-side-filtering-table',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
-            'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
           ]
         },
@@ -339,6 +362,7 @@ const sidebars = {
           //Reference start
           type: 'category',
           label: 'Reference',
+          collapsed: false,
           link: { type: 'doc', id: 'build-apps/reference/README' },
           items: [
             {
@@ -420,7 +444,6 @@ const sidebars = {
               ],
             },
             'core-concepts/building-ui/designing-an-application/app-theming',
-            'core-concepts/building-ui/designing-an-application/application-layout',
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
@@ -451,13 +474,23 @@ const sidebars = {
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'write-code/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
             'reference/appsmith-framework/context-object',
             'reference/appsmith-framework/console-object',
             'reference/appsmith-framework/query-object',
+          ],
+        },
             {
               type: 'category',
               label: 'Global Functions',
@@ -488,8 +521,9 @@ const sidebars = {
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
             'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
-          ],
-        },
+
+      ],
+    }, //Reference End
       ]
     }, //CODE end
 
