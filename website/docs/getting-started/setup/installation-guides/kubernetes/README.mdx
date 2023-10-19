@@ -11,17 +11,17 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 
 <VideoEmbed host="youtube" videoId="wZzYL1uZwds" title="How To Deploy Appsmith On Kubernetes" caption="How To Deploy Appsmith On Kubernetes" />
 
-## Prerequisites
+## System requirements
 * At least 15 GB of free storage space.
 * 4 GB of RAM.
 
-## Before you begin
+## Prerequisites
 1. Install Helm package manager on your local machine. See the official Helm documentation for your [operating system](https://helm.sh/docs/intro/install/#through-package-managers).
 2. Install and configure `kubectl` to interact with your Kubernetes cluster. Follow the below guides available on the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system: 
     * [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
     * [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
     * [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
-3. Setup a Kubernetes cluster. Follow these steps using a terminal to set up the cluster on AWS EKS:
+3. Set up a Kubernetes cluster. Follow these steps using a terminal to set up the cluster on AWS EKS:
 
   :::info
    You are free to choose your preferred platform for hosting the Kubernetes cluster. Make sure you have configured Kubeconfig and created a default storage class before proceeding with the Appsmith installation. If you face any issues, contact the support team using the chat widget at the bottom right of this page.
@@ -84,99 +84,63 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 
 ## Install Appsmith
 
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-  <TabItem label="Community Edition" value="communityEdition"> 
+Follow these steps to install Appsmith:
 
-  1. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
-  2. Add the Appsmith chart repository with:
+1. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
 
-  ```bash
-  helm repo add appsmith https://helm.appsmith.com
-  ```
-  3. Load the Appsmith chart repository with:
+<a id="update-helm-command"></a>
 
-  ```bash
-  helm repo update
-  ``` 
-  4. Generate the `values.yaml` file with:
-  ```bash
-  helm show values appsmith/appsmith  > values.yaml
-  ```
-  5. Deploy Appsmith with:
-
-  ```bash
-  helm install appsmith appsmith/appsmith -n appsmith --create-namespace -f values.yaml
-  ```
-
-  6. Get pod name with:
-
-  ```bash
-  kubectl get pods -n appsmith
-  ```
-  The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
-
-  7. To verify the installation locally, use the below command to forward the 8080 port to 80:
-  
-    ```bash
-    kubectl --namespace appsmith port-forward appsmith-0 8080:80
-    ```
-     In above command, `appsmith-0` is the Appsmith pod name.
-
-  8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080). To expose Appsmith installation on internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
-
-</TabItem>
-<TabItem label="Business Edition" value="businessEdition"> 
-
-:::note
-To upgrade from Community Edition to Business Edition, follow the instructions available at [Upgrade to Business Edition for Kubernetes](/getting-started/setup/upgrade-to-business-edition/kubernetes).
-:::
-
-1. Sign up on [customer.appsmith.com](https://customer.appsmith.com/) and generate a trial license key.
-
-2. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
-
-3. Add the Appsmith chart repository with:
+2. Add the Appsmith chart repository with:
 
   ```bash
   helm repo add appsmith-ee https://helm-ee.appsmith.com
   ```
-4. Load the Appsmith chart repository with:
+3. Load the Appsmith chart repository with:
 
   ```bash
   helm repo update
   ```
 
-5. Generate the `values.yaml` file with:
+4. Generate the `values.yaml` file with:
   ```bash
   helm show values appsmith-ee/appsmith  > values.yaml
   ```
-6. Run the below command to deploy Appsmith:
+5. Run the below command to deploy Appsmith:
 
   ```bash
   helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
   ```
-7. Get pod name with:
+6. Get pod name with:
 
   ```bash
   kubectl get pods -n appsmith-ee
   ```
  The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
-8. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
+7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
   
   ```bash
   kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
   ```
-  In above command, `appsmith-ee-0` is the Appsmith pod name.
+  In the above command, `appsmith-ee-0` is the Appsmith pod name.
 
-9. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
-10. Log into your Appsmith account, and enter your license key to activate the instance.
+9. Fill in your details to create an administrator account.
 
-For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
+10. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
-</TabItem>
-</Tabs>   
+For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on the internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
+
+## Install Appsmith Community
+
+To install the Appsmith open source edition (Appsmith Community):
+
+1. Use the open source helm chart by running the below command which adds the Appsmith chart repository: 
+  ```bash
+  helm repo add appsmith https://helm.appsmith.com
+  ```
+2. Replace `appsmith-ee` with `appsmith` in the commands on this page.
 
 ## Troubleshooting
 If you face issues, contact the support team using the chat widget at the bottom right of this page.
