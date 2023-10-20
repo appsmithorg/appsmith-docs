@@ -18,7 +18,7 @@ This page shows you how to fetch and filter data from Google Sheets.
 - A [Table](/reference/widgets/table) widget.
 - A query configured to fetch all the rows from a specific Google Sheet and bind to the Table widget.
 
-### Filter data using where clause
+### Using where clause
 To fetch data based on a condition using the where clause, follow these steps:
 1. In the query, select [Fetch Many](/connect-data/reference/querying-google-sheets#fetch-many) in **Operations**.
 2. In **Filter Format**, select **Where Clause**.
