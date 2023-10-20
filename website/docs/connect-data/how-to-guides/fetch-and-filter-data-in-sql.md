@@ -165,7 +165,7 @@ SELECT * FROM public.users where country IN ({{MultiSelect2.selectedOptionValues
 
 </dd>
 
-## Using ANY
+## Using ANY clause
 
 When working with IN statements, you may encounter situations where it's more convenient to use the ANY statement. The ANY keyword provides an alternative approach to achieving the same result.
 
