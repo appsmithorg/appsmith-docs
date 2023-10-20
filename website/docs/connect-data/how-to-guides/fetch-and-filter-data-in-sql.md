@@ -109,7 +109,7 @@ SELECT * FROM users WHERE dob > {{DatePicker1.selectedDate}} AND dob < {{DatePic
 
 
 
-## Using LIKE or ILIKE 
+## Using LIKE or ILIKE operator
 
 If you want to perform search operations in your SQL queries, consider using LIKE or ILIKE operators, depending on your need for case sensitivity and partial matching. These operators enable pattern-based searches within your text data.
 
