@@ -40,7 +40,7 @@ To fetch data based on a condition using the where clause, follow these steps:
 If the **Smart JSON substitution** setting is enabled, Appsmith adds or removes quotation marks from the mustache binding `{{}}` as necessary to correctly cast them into JSON. You must manually format the JSON data if this setting is off. For a video guide on using this feature, see [How to Use Smart JSON Substitution](https://www.youtube.com/watch?v=-Z3y-pdNhXc).
 :::
 
-### Filter data using a cell range
+### Using a cell range
 To filter data by a range to fetch data from designated cells in your sheet, follow these steps:
 1. In **Filter Format**, select **Cell range**.
 2. Specify the range of the cells to fetch data in the following format:
