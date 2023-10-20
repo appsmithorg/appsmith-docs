@@ -50,7 +50,7 @@ SELECT * FROM users WHERE {{ Input1.text ? "name = '" + Input1.text + "'" : "1=1
 Learn more about [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 
 :::caution
-* Using `IS` in MySQL is not supported. Instead, it's recommended to use  the `=` operator.
+* Using the `IS` keyword in MySQL is not supported in Appsmith. Use the `=` operator instead.
 * `true` / `false` values should be without quotes i.e. `{{true}}` instead of `{{”true”}}`.
 :::
 
