@@ -217,12 +217,12 @@ const sidebars = {
                   label: 'Upgrade from Community Edition',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/upgrade-to-business-edition/README',
+                    id: 'getting-started/setup/upgrade-from-community-edition/README',
 
                   },
                   items: [
-                    'getting-started/setup/upgrade-to-business-edition/docker',
-                    'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                    'getting-started/setup/upgrade-from-community-edition/docker',
+                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
                   ]
                 },
               ],
