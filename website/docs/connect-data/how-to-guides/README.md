@@ -46,7 +46,7 @@
     </div>
   <div class="containerColumnSampleApp columnGrid column-two">
     <div class="containerCol">
-        <a href="/connect-data/how-to-guides/filter-data-google-sheet"><strong>Read Data from Google Sheets</strong></a>
+        <a href="/connect-data/how-to-guides/filter-data-google-sheet"><strong>Fetch and Filter Data from Google Sheets</strong></a>
     </div><hr/>
      <div class="containerDescription">Shows you how to fetch and filter data from Google Sheets. </div>
   </div>

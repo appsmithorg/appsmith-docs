@@ -13,6 +13,11 @@ This page shows you how to fetch and filter data from Google Sheets.
 - A [Table](/reference/widgets/table) widget.
 - A query configured to fetch all the rows from a specific Google Sheet and bind to the Table widget.
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://app.arcade.software/share/BBnwCjRn6wTKkPDVjCkZ" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 ### Filter data using where clause
 To fetch data based on a condition using the where clause, follow these steps:
 1. In the query, select [Fetch Many](/connect-data/reference/querying-google-sheets#fetch-many) in **Operations**.
