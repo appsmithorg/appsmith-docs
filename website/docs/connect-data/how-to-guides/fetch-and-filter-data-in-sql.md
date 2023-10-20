@@ -136,7 +136,7 @@ SELECT * FROM public.users where name ilike {{"%" + Table1.searchText + "%"}}
 
 
 
-## Using IN 
+## Using IN clause
 
 The IN clause in SQL allows you to filter results based on multiple values. 
 
