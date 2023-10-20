@@ -61,7 +61,7 @@ To filter data by a range to fetch data from designated cells in your sheet, fol
    ```jsx
    {{Cell_range_row.text}}:{{Cell_range_col.text}}
    ```
-### Pagination
+### Server-side Pagination
 You can configure the page size in the response when the **Filter Format** is set to **Where Clause**.
 To set the number of records fetched in the response dynamically, follow these steps:
 1. In [Pagination Limit](/connect-data/reference/querying-google-sheets#pagination-limit) set the value according to the page size using the following code where `user_details_table` is the name of the Table widget:
