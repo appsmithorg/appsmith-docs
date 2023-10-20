@@ -251,6 +251,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
             'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
             'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',

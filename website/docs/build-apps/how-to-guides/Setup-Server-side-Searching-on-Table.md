@@ -61,7 +61,7 @@ Follow these steps to configure the Table widget to display fetched data, and im
 
 2. Enable the [**Allow searching**](/reference/widgets/table#allow-searching-boolean) property.
 
-3. Set the [**onSearchTextChange**](/reference/widgets/table#onsearchtextchanged) event to run the query.
+3. Set the [**onSearchTextChanged**](/reference/widgets/table#onsearchtextchanged) event to run the query.
 
 After completing these steps, you can search for specific terms using the Table widget's search box.
 
