@@ -84,7 +84,6 @@
 
 [class^="sidebar_"] {
   -webkit-padding-before: 1rem;
-  max-height: calc(100vh - var(--ifm-navbar-height));
   overflow-y: auto;
   padding-block-start: 1rem;
   position: static;
@@ -598,4 +597,13 @@ h3+.tags {
 h4+.tags {
   margin-left: -18px;
   top: -6px !important;
+}
+
+.copyright {
+  background-color: white;
+  font-size: 0.85em;
+  max-height: 10pv;
+  position: relative;
+  margin-top: -3.2em;
+  width: 200px;
 }

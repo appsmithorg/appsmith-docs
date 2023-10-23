@@ -101,10 +101,6 @@ const config = {
           
         ],
       },
-      footer: {
-        style: 'light',
-        copyright: `Copyright © ${new Date().getFullYear()} Appsmith, Inc.`,
-      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
