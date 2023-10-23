@@ -124,6 +124,12 @@ Depending on your infrastructure, you can choose one of the following guides to 
         <b><a href="/getting-started/setup/installation-guides/restack">Restack</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
+            <div class="containerCol">
+             <a href="/getting-started/setup/installation-guides/sealos">
+               <img class="containerImage" src="/img/sealos-logo.png" alt="Sealos-logo"/>
+             </a>   
+            </div> 
+            <b><a href="/getting-started/setup/installation-guides/sealos">Sealos</a></b>
         </div>
         <div class="columnGrid column-three" align="center">
         </div>

@@ -91,6 +91,7 @@ const sidebars = {
 
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
+                'getting-started/setup/installation-guides/sealos',
                 'getting-started/setup/installation-guides/ansible',
               ],
             },
