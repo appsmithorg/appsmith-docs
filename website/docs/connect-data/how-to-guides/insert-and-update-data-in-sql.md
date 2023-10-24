@@ -1,6 +1,7 @@
 # Insert and Update data in SQL
 
-This guide shows you how to insert and update data in a SQL database
+This guide shows you how to insert and update data in a PostgreSQL database. The query configuration may differ when working with other SQL database.
+
 
 ## Prerequisites
 
@@ -8,29 +9,23 @@ This guide shows you how to insert and update data in a SQL database
 * A [Table widget](/reference/widgets/table) connected to a query that holds the data you want to edit and update.
 * [Form](/reference/widgets/form) widget or a [JSON Form](/reference/widgets/json-form) Widget to insert or update data.
 
-:::info
-When prepared statements are enabled and widget bindings are used, quotes are not required.
-:::
 
-##  Insert query
+## Insert single row
 
-The INSERT query in SQL is a command used for adding new records to a database table, for managing and maintaining your database. To insert data, you can either use the Table widget's inline editing feature to insert data directly from the Table or use a JSON Form/Form widget.
-
-If you are using the one-click binding feature for Table or JSON form,  Appsmith automatically generates insert queries for you. However, if you prefer to manually configure the insert query, you can do so by following the instructions in this section.
-
-### Insert single row
-
-If you want to insert a single row of data into a specific table in your database, follow these steps:
+ To insert data, you can either use the Table widget's inline editing feature to insert data directly from the Table or use a JSON Form/Form widget. If you want to insert a single row of data into a specific table in your database, follow these steps:
 
 *Example*: you have a `user` table and you want to insert data into it using a JSON form.
 
-1. Connect the **Source Data** property of the JSON form with the Table widget to get the data format.
+1. Connect the [**Source Data**](/reference/widgets/json-form#source-data-json) property of the JSON form with the Table widget to get the data format.
 
 2. Configure the query to insert data using [formData](/reference/widgets/json-form#formdata-object) reference property:
 
 <dd>
 
 ```sql
+-- For Form widget, you can use {{Form1.data.Input1}}
+-- For Table inline editing: {{Table1.newRow.id}}
+
 INSERT INTO users 
 (id, phone, name, gender, latitude, longitude, dob, email, image, country) 
 VALUES 
@@ -47,19 +42,23 @@ VALUES
    {{ JSONForm1.formData.country }}
 );
 
--- For Form widget, you can use {{Form1.data.Input1}}
--- For Table inline editing: {{Table1.newRow.id}}
+
 ```
 
-This query inserts data from a JSON form into the `users` table, populating various columns with data from a JSON form.
+
 
 </dd>
 
-3. Set the JSON form widget's [onSubmit](/reference/widgets/json-form#onsubmit) event to execute the insert query.
+3. Turn off prepared statements in the query editor for this configuration. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 
-### Bulk Insert
 
-To insert or upload multiple rows of data, for instance, from a CSV or Excel file, you can use the FilePicker widget.
+
+
+4. Set the JSON form widget's [onSubmit](/reference/widgets/json-form#onsubmit) event to execute the insert query.
+
+## Insert multiple rows
+
+To insert multiple rows of data, for instance uploading data from a CSV or Excel file, you can use the FilePicker widget.
 
 
 1. In the Filepicker widget, select **Array of Objects** from the Data Format property. 
@@ -99,13 +98,7 @@ Ensure that you turn off prepared statements in the query editor for this config
 After completing the above steps, you can select a file from your local machine to upload and insert data.
 
 
-## Update query
-
-The UPDATE query in SQL is a command for modifying existing records in a database table. 
-
-If you are using the one-click binding feature for Table or JSON form,  Appsmith automatically generates update queries for you. However, if you prefer to manually configure the update query, you can do so by following the instructions in this section.
-
-### Update single row
+## Update single row
 
 To update single row, you can either use the Table widget's inline editing feature to update data directly from the Table or use a JSON Form/Form widget.
 
@@ -132,7 +125,7 @@ UPDATE users SET
 
 3. Set the JSON form widget's [onSubmit](/reference/widgets/json-form#onsubmit) event to execute the update query.
 
-### Update multiple rows
+## Update multiple rows
 
 To update multiple rows at once, use the Table widget's inline editing feature.
 
@@ -156,13 +149,16 @@ phone = CASE
 END
 WHERE id IN ({{Table1.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
-:::note
-Ensure that you turn off prepared statements in the query editor for this configuration. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
-:::
+
+The query updates the `name` and `phone` fields for multiple rows in the "users" table. It does so by applying conditional changes based on the data provided in the updatedRows property of a Table widget. 
 
 </dd>
 
-4. Configure a Button widget, and set its **onClick** event to run the update query, and the onSuccess callback to trigger the fetch query that refreshes the table data with the updated information.
+4. Turn off prepared statements in the query editor for this configuration. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
+
+
+
+5. Configure a Button widget, and set its **onClick** event to run the update query, and the onSuccess callback to trigger the fetch query that refreshes the table data with the updated information.
 
 
 
