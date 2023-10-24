@@ -602,8 +602,8 @@ h4+.tags {
 .copyright {
   background-color: white;
   font-size: 0.85em;
-  max-height: 10pv;
+  max-height: 20%;
   position: relative;
-  margin-top: -3.2em;
-  width: 284px;
+  margin-top: -3.1em;
+  width: 94%;
 }
