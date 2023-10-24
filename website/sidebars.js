@@ -239,7 +239,7 @@ const sidebars = {
       //Data start
       type: 'category',
       collapsed: false,
-      label: 'Connect Data',
+      label: 'Backend & Data',
       items: [
         'connect-data/overview',
         {
@@ -252,14 +252,12 @@ const sidebars = {
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
+            'connect-data/how-to-guides/filter-data-google-sheet',
             'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
             'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/download-files-from-s3',
-            'connect-data/how-to-guides/filter-data-google-sheet',
-            'connect-data/how-to-guides/how-to-integrate-dropbox',
-            'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
           ]
         },
@@ -313,7 +311,7 @@ const sidebars = {
         },
         'connect-data/reference/query-settings',
       ],
-    }, //Reference End
+        }, //Reference End
         {
           type: 'category',
           collapsed: true,
@@ -335,7 +333,7 @@ const sidebars = {
     { // UI start
       type: 'category',
       collapsed: false,
-      label: 'Build Apps',
+      label: 'UI & Widgets',
       items: [
         'build-apps/overview',
         {
