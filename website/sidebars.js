@@ -250,14 +250,6 @@ const sidebars = {
           items: [
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/setup-datasource-environments',
-            'connect-data/how-to-guides/how-to-pass-params-to-an-api',
-            'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
-            'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
-            'connect-data/how-to-guides/how-to-download-files-using-api',
-            'connect-data/how-to-guides/how-to-upload-to-s3',
-            'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'connect-data/how-to-guides/download-files-from-s3',
-            'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
@@ -344,21 +336,71 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
+            {
+              type: 'category',
+              label: 'Display, Search and Filter Data',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/display-search-filter-data/README',
+
+              },
+              items: [
+                'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
+                'connect-data/how-to-guides/filter-data-google-sheet',
+                'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+                'build-apps/how-to-guides/Server-side-filtering-table',
+                'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
+                'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Update Data Records',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/update-data-records/README',
+
+              },
+              items: [
+                'reference/widgets/table/inline-editing',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Manage Files',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/manage-files/README',
+
+              },
+              items: [
+                'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+                'connect-data/how-to-guides/how-to-download-files-using-api',
+                'connect-data/how-to-guides/how-to-upload-to-s3',
+                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+                'connect-data/how-to-guides/download-files-from-s3',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Create Rich Forms',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/create-rich-forms/README',
+              },
+              items: [
+                'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+                'build-apps/how-to-guides/submit-form-data',
+              ]
+            },
             'core-concepts/building-ui/dynamic-ui/README',
             'build-apps/how-to-guides/Server-side-pagination-in-table',
-            'reference/widgets/table/inline-editing',
             'build-apps/how-to-guides/refresh-table-data',
-            'build-apps/how-to-guides/Server-side-filtering-table',
-            'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
-            'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-            'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
           ]
         },
         {
@@ -469,6 +511,7 @@ const sidebars = {
             'core-concepts/writing-code/README',
             'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/how-to-guides/display-data-from-functions',
+            'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
             `core-concepts/writing-code/workflows`,
