@@ -111,13 +111,13 @@ To update single row, you can either use the Table widget's inline editing featu
 <dd>
 
 ```sql
+-- For Form widget, you can use {{Form1.data.Input1}}
+-- For Table inline editing: {{ Table1.updatedRow.id }}
+
 UPDATE users SET 
   name = {{JSONForm1.formData.name}},
   phone = {{JSONForm1.formData.phone}}
   WHERE id = {{ JSONForm1.formData.id }};
-
--- For Form widget, you can use {{Form1.data.Input1}}
--- For Table inline editing: {{ Table1.updatedRow.id }}
 ```
 
 
