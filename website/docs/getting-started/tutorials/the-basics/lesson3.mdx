@@ -1,0 +1,54 @@
+---
+id: lesson3
+slug: /getting-started/tutorials/the-basics/lesson3
+description:  Build UI and display data in widgets
+---
+
+1. Click the **Widgets** tab on the *Entity Explorer* to the left of the screen.
+
+2. Drag a **Table** widget and drop it to the left of the canvas.
+
+3. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
+
+4. In the **Table Data** property box, delete the default JSON data. 
+
+5. To display the data from the **getUsers** query, type in the mustache template `{{}}`. Enter `getUsers.data` between the curly braces. This JavaScript expression connects the data from the **getUsers** query to the Table widget.
+
+:::info
+The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
+:::
+
+<figure>
+  <img src="/img/display-data-in-table.png" style= {{width:"100%", height:"auto"}} alt="Display data in table"/>
+  <figcaption align = "center"><i>Display data in table</i></figcaption>
+</figure>
+
+You've displayed the results from the **getUsers** query on the Table widget.
+
+## Build form to view user details
+
+1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
+2. Select the title of the Form. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
+3. Now add widgets on the Form to view user details. For the user's name, drop an **Input** widget inside the Form. 
+    * On the property pane to the right, click on the default name **Input1** and rename it to `nameInput`. 
+    * In the **Text** property box, enter `Name`. 
+    * In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
+4. Let's do the same for the user's email. Drop another Input widget inside the Form. 
+    * Rename the widget to `emailInput`.
+    * Select **Email** from the list of options in the **Data Type** property.
+    * In the **Text** property box, enter `Email`.
+    * In the **Default Value** property box, type `{{usersTable.selectedRow.email}}`.
+5. You also need to view the user's date of birth. Drop a Datepicker widget inside the Form. 
+    * Rename the widget to `dobInput`.
+    * In the **Text** property box, enter `DOB`.
+    * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
+    * Type `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
+6. And finally to view the user's photo, drop an Image widget inside the Form. 
+    * In the **Image** property box, type `{{usersTable.selectedRow.image}}`.
+
+You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
+
+<figure>
+  <img src="/img/bind-data-to-widgets.gif" style= {{width:"100%", height:"auto"}} alt="Bind data to widgets"/>
+  <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
+</figure>
