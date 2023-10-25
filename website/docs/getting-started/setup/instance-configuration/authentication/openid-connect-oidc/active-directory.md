@@ -77,7 +77,7 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 2. On the **Request API permissions** panel, select **Microsoft Graph > Delegated permissions**.
 3. In the **Select permissions** section, select the following permissions from the **Openid permissions** dropdown:
 
-   - sub
+   - email
    - openid
    - offline_access
    - profile
@@ -108,9 +108,9 @@ To complete the OIDC configuration, you have to register the identity provider o
    | **JWK Set URL**                        | jwks_uri                              |
 
 
-4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - `openid`, `sub`, `profile`. 
+4. In the **Scopes** section, add the attributes that allow you to authorize access to user details after a user is successfully authenticated. By default, there are three scopes - `openid`, `email`, `profile`. 
 
-  Appsmith needs `openid` and `sub` as mandatory scopes. It’s also highly recommended you use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. 
+  Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended you use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. 
   
   Enabling the `offline_access` scope allows your app to receive refresh tokens that extend the duration that your users have access to their resources. For more information, see [Active Directory documentation](https://learn.microsoft.com/en-us/azure/active-directory/develop/v2-permissions-and-consent#offline_access).
 
