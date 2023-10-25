@@ -129,7 +129,7 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
       helm upgrade -i appsmith appsmith/appsmith -f values.yaml
       ```
 
-    * If you are on the **Business Edition**, update with:
+    * If you are on the **Commercial Edition**, update with:
 
       ```bash
       helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
@@ -199,7 +199,7 @@ Follow the steps below to turn off auto updates:
         helm upgrade --values values.yaml appsmith appsmith/appsmith
       ```
 
- * If you are on the **Business Edition** on Kubernetes, update the configuration as shown below:
+ * If you are on the **Commercial Edition** on Kubernetes, update the configuration as shown below:
 
     a. Go to the Appsmith installation directory, and edit `values.yaml`, and set `enabled` to `false` for `autoupdate` attribute:
 

@@ -1,5 +1,5 @@
 ---
-description: Follow these steps to upgrade the Appsmith Community Edition to a Business Edition.
+description: Follow these steps to upgrade the Appsmith Community Edition to a Commercial Edition.
 ---
 # Upgrade from Community Edition
 
@@ -11,19 +11,19 @@ To proceed with the upgrade from the Community Edition, select your installation
     <div class="containerGrid">
         <div class="columnGrid column-one" align="center">
             <div class="containerCol">
-                <a href="/getting-started/setup/upgrade-to-business-edition/docker">
+                <a href="/getting-started/setup/upgrade-from-community-edition/docker">
                 <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
                 </a> 
             </div> 
-            <b><a href="/getting-started/setup/upgrade-to-business-edition/docker">Docker</a></b>
+            <b><a href="/getting-started/setup/upgrade-from-community-edition/docker">Docker</a></b>
         </div>
         <div class="columnGrid column-two" align="center">
             <div class="containerCol">
-                <a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">
+                <a href="/getting-started/setup/upgrade-from-community-edition/kubernetes">
                 <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
                 </a> 
             </div> 
-            <b><a href="/getting-started/setup/upgrade-to-business-edition/kubernetes">Kubernetes</a></b>
+            <b><a href="/getting-started/setup/upgrade-from-community-edition/kubernetes">Kubernetes</a></b>
        </div>
         <div class="columnGrid column-three" align="center">
         </div>
