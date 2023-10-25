@@ -132,6 +132,6 @@ To configure the query to update multiple rows, follow these steps:
    ```
 10. To test, edit the data of a few rows in the table and click the `update_all` button.
 
-## Further reading
+## See also
 - [Google Sheets](/connect-data/reference/querying-google-sheets)
 - [Google Sheet Errors](/help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors)
