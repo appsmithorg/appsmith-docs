@@ -23,6 +23,7 @@ To insert a row into your Google Sheet, follow these steps:
 6. Enter the **Table heading row index**.
    This is the row index of the row in your spreadsheet that contains the headings or labels for your table columns.
 7. In **Row objects**, paste the following code to insert a new row into the sheet where `user_details_table` is the name of the Table widget:
+
    ```jsx
    {
 	  "id": {{ user_details_table.newRow.id }}, 
@@ -38,6 +39,7 @@ To insert a row into your Google Sheet, follow these steps:
    }
    ```
 8. Enable **Allow adding a row** in the Table widget and set it's **onSave** event by using the following code:
+
    ```jsx
    {{insertUserDetails.run()}}
    ```
@@ -54,6 +56,7 @@ To upload a CSV file and configure the query to insert multiple rows into your G
 5. Select **Sheet Rows** in **Entity**.
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
 7. In **Row objects**, paste the following code to insert data using the [files](/reference/widgets/filepicker#files-array) reference property of the Filepicker widget:
+
    ```jsx
    {{userDetailsFiles.files[0].data}}
    ```
@@ -73,10 +76,12 @@ To configure the query to update specific fields of a row, follow these steps:
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
 7. To update data in Google Sheets, you must specify a `rowIndex` to identify which row you wish to update.
    Use the following code to fetch the row index based on the row selected on the Table widget:
+
    ```jsx
    user_details_table.selectedRow.rowIndex
    ```
 8. Paste the following code in **Update row object**:
+
    ```jsx
 	{{
 		{
@@ -106,6 +111,7 @@ To configure the query to update multiple rows, follow these steps:
 5. Select **Sheet Rows** in **Entity**.
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
 7. Paste the following code in Update row objects:
+
    ```jsx
 	{{
     user_details_table.updatedRows.map(row => {
