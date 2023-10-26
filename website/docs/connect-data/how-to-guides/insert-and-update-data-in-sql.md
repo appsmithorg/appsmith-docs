@@ -90,7 +90,9 @@ This query inserts CSV data from the Filepicker widget into the `users` table. T
 
 
 
-
+:::note
+The column names must exactly match those in the database; otherwise, data for columns with mismatched names may not be included.
+:::
 
 
 </dd>
@@ -145,7 +147,7 @@ To update multiple rows at once, use the Table widget's [inline editing](/refere
 
 2. Enable the [**Editable**](/reference/widgets/table#editable-boolean) mode for the columns you intend to modify and specify the **Primary key** for row identification during updates.
 
-3. Configure the query to insert data using [updatedRows](/reference/widgets/table#updatedrows-arrayobject) reference property:
+3. Configure the query to update data using [updatedRows](/reference/widgets/table#updatedrows-arrayobject) reference property:
 
 <dd>
 
@@ -180,3 +182,10 @@ This query utilizes the `.map` function to efficiently update the `name` and `ph
   <img src="/img/multi-update-sql.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Update multiple rows</i></figcaption>
 </figure>
+
+
+## See also
+
+* [PostgreSQL](/connect-data/reference/querying-postgres)
+* [MySQL](/connect-data/reference/querying-mysql)
+* [Microsoft SQL Server (MS SQL)](/connect-data/reference/querying-mssql)
