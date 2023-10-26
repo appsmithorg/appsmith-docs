@@ -120,6 +120,7 @@ To send emails with various attachments, such as files, PDFs, and images, you ca
 
 // Accessing all files
 {{FilePicker1.files}}
+
 //here [0] represents index of the file.
 ```
 
@@ -138,5 +139,9 @@ Once your query is configured, you can send emails by executing the query in res
 Configure the **onClick** event of the Form widget's Submit button to execute the send email query.
 
 
+<figure>
+  <img src="/img/smtp-form.png" style= {{width:"650px", height:"auto"}} alt="Display external website"/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
 
 
