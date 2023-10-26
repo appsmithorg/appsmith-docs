@@ -21,7 +21,7 @@ Configure the query to send mail, using the following parameters:
 *Example 1*: If you have a Table widget displaying user details and you want to retrieve the email addresses for all user, you can use the following:
 
 ```js
-{{Table1.tableData.map(user => user.email);}}
+{{Table1.tableData.map(user => user.email)}}
 ```
 
 *Example 2*: To get the email provided by a user in a Form widget, you can use the following code:
@@ -111,4 +111,31 @@ Welcome Aboard!  {{appsmith.user.name}}
 </dd>
 
 
-## Add attachments to emails
+### Add attachments to emails
+
+To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the FilePicker widget to upload the desired files and then send them as email attachments.
+
+
+
+1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
+
+2. Select your preferred **Data format** based on the file type.
+
+3. In the **Attachment(s)** field, add the following code to upload files:
+
+<dd>
+
+```js
+ {{FilePicker1.files}}
+```
+
+
+
+ </dd>
+
+
+
+
+
+
+
