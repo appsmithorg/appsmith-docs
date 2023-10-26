@@ -12,7 +12,7 @@ This guide shows you how to insert and update data in a PostgreSQL database. The
 
 ## Insert single row
 
- To insert data, you can either use the Table widget's inline editing feature to insert data directly from the Table or use a JSON Form/Form widget. If you want to insert a single row of data into a specific table in your database, follow these steps:
+To insert single row, you can either use the Table widget's inline editing feature to update data directly from the Table or use a JSON Form or Form widget. If you want to insert a single row of data into a specific table in your database, follow these steps:
 
 *Example*: you have a `user` table and you want to insert data into it using a JSON form.
 
@@ -109,7 +109,7 @@ After completing the above steps, you can select a file from your local machine 
 
 ## Update single row
 
-To update single row, you can either use the Table widget's inline editing feature to update data directly from the Table or use a JSON Form/Form widget.
+To update single row, you can either use the Table widget's inline editing feature to update data directly from the Table or use a JSON Form or Form widget.
 
 *Example*: if you have a `user` table, and you need to update the `name` and `phone` fields for a specific record.
 
