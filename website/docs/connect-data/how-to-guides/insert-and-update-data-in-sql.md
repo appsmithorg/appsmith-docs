@@ -135,7 +135,7 @@ This query updates the `name` and `phone` columns in the `users` table based on 
 
 </dd>
 
-3. Set the JSON form widget's [onSubmit](/reference/widgets/json-form#onsubmit) event to execute the update query.
+3. Set the JSON form widget's [**onSubmit**](/reference/widgets/json-form#onsubmit) event to execute the update query.
 
 ## Update multiple rows
 
