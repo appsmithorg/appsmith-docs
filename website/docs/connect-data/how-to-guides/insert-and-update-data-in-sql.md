@@ -86,12 +86,11 @@ FROM json_populate_recordset(null::users, '{{FilePicker1.files[0].data}}');
 ```
 
 
-This query inserts CSV data from the Filepicker widget into the `users` table. The `null::users` syntax helps define the data type structure for rows generated from the JSON source. 
+This query inserts CSV data from the Filepicker widget into the `users` table. The `null::users` part helps determine column data types based on the `users` table and specifies `null` as the default value for missing CSV entries.
 
 
-
-:::note
-The column names must exactly match those in the database; otherwise, data for columns with mismatched names may not be included.
+:::caution
+Column details in the SQL database should match the column details in the data you are inserting. Appsmith does not insert data for a mismatched column.
 :::
 
 
@@ -162,7 +161,7 @@ END
 WHERE id IN ({{Table1.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
 
-This query utilizes the `.map` function to efficiently update the `name` and `phone` columns in the `users` table for multiple rows, each identified by its unique `id`.
+This SQL query updates the `name` and `phone` columns in the `users` table based on conditions specified for rows in the `updatedRows` array, using `CASE` statements. It only applies updates to rows with matching `id` values.
 
 </dd>
 
