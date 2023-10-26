@@ -86,8 +86,7 @@ FROM json_populate_recordset(null::users, '{{FilePicker1.files[0].data}}');
 ```
 
 
-This query inserts CSV data from the Filepicker widget into the `users` table. The `null::users` part helps determine column data types based on the `users` table and specifies `null` as the default value for missing CSV entries.
-
+This SQL query uses the [json_populate_recordset](https://www.postgresql.org/docs/current/functions-json.html) function to insert CSV data from the Filepicker widget into the `users` table. The `null::users` part helps determine column data types based on the `users` table and specifies `null` as the default value for missing CSV entries.
 
 :::caution
 Column details in the SQL database should match the column details in the data you are inserting. Appsmith does not insert data for a mismatched column.
