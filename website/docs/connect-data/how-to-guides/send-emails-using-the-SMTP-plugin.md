@@ -1,5 +1,8 @@
 # Send Emails Using the SMTP Plugin
 
+This page shows how to use the SMTP Plugin to send emails and attach files and images.
+
+
 ## Prerequisites
 * App Connected to [SMTP](/connect-data/reference/using-smtp) datasource.
 * A [Filepicker](/reference/widgets/filepicker) widget to upload files.
@@ -18,9 +21,13 @@ Configure the query to send mail, using the following parameters:
 
 <dd>
 
-*Example 1*: If you have a Table widget displaying user details and you want to retrieve the email addresses for all user, you can use the following:
+*Example 1*: If you have a Table widget displaying user details and you want to retrieve the email addresses, you can use the following:
 
 ```js
+// Retrieve the email of the selected row in the table
+{{Table1.selectedRow.email}}
+
+// Get the emails of all users in the table
 {{Table1.tableData.map(user => user.email)}}
 ```
 
@@ -44,7 +51,7 @@ Configure the query to send mail, using the following parameters:
 *Example*: if you want to display a welcome message to the current Appsmith user, you can use the following code:
 
 ```sql
-Welcome Aboard!  {{appsmith.user.name}}
+Welcome Aboard! {{appsmith.user.name}}
 ```
 
 </dd>
@@ -57,63 +64,45 @@ Welcome Aboard!  {{appsmith.user.name}}
 *Example*: 
 
 
-```js
+```html
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      border: 1px solid #e0e0e0;
-      padding: 20px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .header {
-      background-color: #007bff;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-    }
-    .content {
-      padding: 20px;
-    }
-  </style>
+    <title>Product Info</title>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <h2>Loan Approval Details</h2>
-    </div>
-    <div class="content">
-      <p><strong>Name:</strong> {{tbl_applications.selectedRow.Name}}</p>
-      <p><strong>Email:</strong> {{tbl_applications.selectedRow.Email}}</p>
-      <p><strong>Address:</strong> {{tbl_applications.selectedRow.Address}}</p>
-      <p><strong>Amount Requested:</strong> {{tbl_applications.selectedRow.Amount}}</p>
-      <p><strong>Amount Offered:</strong> {{tbl_applications.selectedRow.AmountOffered}}</p>
-      <p><strong>Approval Date:</strong> {{tbl_applications.selectedRow.AppliedOn}}</p>
-      
-      <!-- Add images here -->
-      <img src="https://cdn-icons-png.flaticon.com/512/748/748463.png" alt="Image 1" width="150" height="150">
-			
-			<p>If you have any questions about this receipt, simply reply to this email or reach out to our <a href="www.test.com">support team</a> for help.</p>
-<p>Cheers,
-  <br>The YBDC Bank Team</p>
-    </div>
-  </div>
+     <section>
+        <!-- Display the name of the selected row from Table1 -->
+        <h1>Name: {{Table1.selectedRow.name}}</h1>
+
+        <p>DOB: {{Table1.selectedRow.dob}}</p>
+
+        <p>Status: {{Select1.selectedOptionValue}}</p>
+ 
+        <p>Date of Purchase: {{DatePicker1.formattedDate}}</p>
+
+        <p>This is the description of the content. It provides more details about what this is all about.</p>
+    </section>
+
+    <!-- Display an image using a URL -->
+    <img src="https://assets.appsmith.com/widgets/default.png" alt="Text">
+    
+    <!-- Add a clickable button that links to https://example.com -->
+    <a href="https://example.com" class="action-button">Click Me</a>
+
+    <footer>
+        <p>If you have any questions, feel free to reply to this email or contact our support team.</p>
+    </footer>
 </body>
 </html>
-
 ```
 
 </dd>
 
 
-### Add attachments to emails
+### Add attachments
 
-To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the FilePicker widget to upload the desired files and then send them as email attachments.
+To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the Filepicker widget to upload the desired files and then send them as email attachments.
 
 
 
@@ -126,7 +115,12 @@ To send emails with various attachments, such as files, PDFs, and images, you ca
 <dd>
 
 ```js
- {{FilePicker1.files}}
+// Accessing single file data
+{{ FilePicker1.files[0].data }}
+
+// Accessing all files
+{{FilePicker1.files}}
+//here [0] represents index of the file.
 ```
 
 
@@ -135,6 +129,13 @@ To send emails with various attachments, such as files, PDFs, and images, you ca
 
 
 
+## Execute the query
+
+Once your query is configured, you can send emails by executing the query in response to a specific event, such as clicking a button or when files are uploaded using a Filepicker. 
+
+*Example:*
+
+Configure the **onClick** event of the Form widget's Submit button to execute the send email query.
 
 
 
