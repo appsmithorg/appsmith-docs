@@ -110,7 +110,7 @@ To send emails with various attachments, such as files, PDFs, and images, you ca
 
 2. Select your preferred **Data format** based on the file type.
 
-3. In the **Attachment(s)** field, add the following code to upload files:
+3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
 
 <dd>
 
