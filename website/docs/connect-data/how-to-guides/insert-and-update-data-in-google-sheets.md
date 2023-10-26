@@ -1,5 +1,4 @@
 ---
-sidebar_position: 5
 description: This guide shows steps to insert and update data in Google Sheets.
 ---
 
@@ -68,6 +67,10 @@ To upload a CSV file and configure the query to insert multiple rows into your G
   {{insert_new_users.run()}}
   ```
 10. To test, upload a CSV file using the Filepicker widget and click the `insert_users` button.
+    
+    :::caution important
+	 Column details in the Google Sheet should match the column details in the data you are inserting. Appsmith does not insert data for a mismatched column.
+	:::
 
 ## Update single row
 This guide uses the inline editing feature of the Table widget to update a single row of a Google Sheet. You can also use a [Form](/reference/widgets/form) widget to update data in Google Sheets.
