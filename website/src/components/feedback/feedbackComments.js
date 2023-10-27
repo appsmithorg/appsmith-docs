@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const FeedbackComments = ({ feedback, handleCommentSubmit, handleCommentChange }) => {
     const isButtonDisabled = feedback.comments.trim() === ''; // Determine if the button should be disabled
+    const commentsContainerRef = useRef(null);
+
+    useEffect(() => {
+        if (commentsContainerRef.current) {
+            commentsContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [feedback.comments]);
 
     return (
-        <div className="feedback-comments-container">
+        <div ref={commentsContainerRef} className="feedback-comments-container">
             <div className="feedback-heading">How can we improve this page?</div>
             <div className="feedback-textarea">
                 <textarea

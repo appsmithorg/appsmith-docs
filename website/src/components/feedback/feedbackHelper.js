@@ -20,15 +20,12 @@ const generateFeedbackComment = (comment) => {
       docId: docId || null,
       feedbackComment: comment || null,
     };
-    console.log(feedbackCommentData);
     return feedbackCommentData;
   }
   return null;
 };
 
 const sendToSegment = (feedbackJSON, eventType) => {
-  console.log("eventType", eventType);
-  console.log("feedbackJSON", feedbackJSON);
   if (ExecutionEnvironment.canUseDOM) {
     if (typeof window.analytics !== 'undefined') {
       window.analytics.track(eventType, feedbackJSON);
