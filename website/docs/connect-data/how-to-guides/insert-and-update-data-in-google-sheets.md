@@ -15,7 +15,7 @@ This guide shows you how to insert and update data in Google Sheets.
 
 ## Insert single row
 To insert a row into your Google Sheet, follow these steps:
-1. Drag and drop a [Button](/reference/widgets/button]) widget to the Form widget and rename it to `Submit`.
+1. Drag and drop a [Button](/reference/widgets/button) widget to the Form widget and rename it to `Submit`.
 2. In **Queries/JS**, add a new query.
 3. Select the datasource corresponding to your Google Sheet and rename it to `insertUserDetails`.
 4. In **Operation**, select **Insert One**.
