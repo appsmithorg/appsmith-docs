@@ -19,7 +19,7 @@ const sidebars = {
               label: 'The Basics',
               link: {
                 type: 'doc',
-                id: 'getting-started/tutorials/the-basics/README',
+                id: 'getting-started/tutorials/start-building',
               },
               items: [
                 'getting-started/tutorials/the-basics/lesson1',
@@ -27,22 +27,6 @@ const sidebars = {
                 'getting-started/tutorials/the-basics/lesson3',
               ],
             },
-            // {
-            //   type: 'category',
-            //   label: 'Customer Support Tool',
-            //   link: {
-            //     type: 'doc',
-            //     id: 'getting-started/tutorials/customer-support-tool/README',
-            //   },
-            //   items: [
-            //     'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-            //     'getting-started/tutorials/customer-support-tool/view-ticket-details',
-            //     'getting-started/tutorials/customer-support-tool/add-new-tickets',
-            //     'getting-started/tutorials/customer-support-tool/edit-ticket-details',
-            //     'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-            //     'getting-started/tutorials/customer-support-tool/application-settings'
-            //   ],
-            // },
           ],
         },
 
