@@ -13,21 +13,18 @@ const sidebars = {
           label: 'Tutorials',
           link: { type: 'doc', id: 'getting-started/tutorials/README' },
           items: [
-            'getting-started/tutorials/start-building',
             {
               type: 'category',
-              label: 'Customer Support Tool',
+              collapsed: false,
+              label: 'The Basics',
               link: {
                 type: 'doc',
-                id: 'getting-started/tutorials/customer-support-tool/README',
+                id: 'getting-started/tutorials/start-building',
               },
               items: [
-                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-                'getting-started/tutorials/customer-support-tool/view-ticket-details',
-                'getting-started/tutorials/customer-support-tool/add-new-tickets',
-                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
-                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-                'getting-started/tutorials/customer-support-tool/application-settings'
+                'getting-started/tutorials/the-basics/connect-query-display-data',
+                'getting-started/tutorials/the-basics/work-with-data-in-ui',
+                'getting-started/tutorials/the-basics/write-js-code',
               ],
             },
           ],
