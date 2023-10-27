@@ -450,6 +450,7 @@ ul.circle>li:before {
   margin-top: 20px;
 }
 
+
 .feedback-widget-container {
   display: flex;
   padding: 24px 32px;
@@ -459,7 +460,7 @@ ul.circle>li:before {
   border-radius: 8px;
   border: 1px solid #E3E8EF;
   box-shadow: 0px 1px 4px 0px rgba(76, 86, 100, 0.16);
-  height: 84px;
+  height: auto;
 }
 
 .feedback-heading {
@@ -471,13 +472,6 @@ ul.circle>li:before {
   align-items: center;
   max-width: 100%;
   overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .feedback-heading {
-    font-size: 0.8em;
-    overflow: hidden;
-  }
 }
 
 #thumbs-up,
@@ -508,7 +502,6 @@ ul.circle>li:before {
   border-color: #CDD5DF;
 }
 
-
 #thumbs-down:active,
 #thumbs-up:active {
   border-radius: 4px;
@@ -516,27 +509,49 @@ ul.circle>li:before {
   background: #E3E8EF;
 }
 
+.feedback-comments-container {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid #E3E8EF;
+  box-shadow: 0px 1px 4px 0px rgba(76, 86, 100, 0.16);
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.feedback-textarea {
+  margin-bottom: 10px;
+}
+
 #comments {
   display: flex;
-  width: 32em;
-  height: 36px;
-  flex-direction: column;
-  border-radius: 4px;
-  align-items: flex-start;
-  gap: 4px;
-  align-self: stretch;
-  background-color: #FFFFFF;
-  border: 1px solid #CDD5DF;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  margin-top: 10px;
+}
+
+.feedback-button-container {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .feedback-button {
   display: flex;
+  justify-content: flex-end;
   padding: 0px 16px;
   align-items: center;
   height: 36px;
   gap: 16px;
   border-radius: 4px;
-  margin: 10px;
+  margin: 1px;
   align-self: stretch;
   border: 0px !important;
   background-color: #f86a2b;
@@ -544,6 +559,7 @@ ul.circle>li:before {
   font-weight: 500;
   font-size: 1rem;
   line-height: 20px;
+  cursor: pointer;
 }
 
 .feedback-button:hover {
@@ -552,24 +568,10 @@ ul.circle>li:before {
 
 .feedback-button:active {
   background-color: #CF4D10;
-
 }
 
 .feedback-button:disabled {
-  opacity: 60%;
-}
-
-
-@media (max-width: 768px) {
-  #comments {
-    width: 18em;
-    height: 2em
-  }
-
-  .feedback-button {
-    margin: 5px;
-    height: 2em;
-  }
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
@@ -577,6 +579,22 @@ ul.circle>li:before {
     right: auto;
     left: 20px;
   }
+
+  .feedback-comments-container {
+    padding: 5px;
+  }
+
+  .feedback-button {
+    padding: 0px 10px;
+    font-size: 0.9rem;
+    line-height: 18px;
+  }
+}
+
+.transition {
+  transition-duration: 0.3s;
+  transition-property: transform, opacity, width, height, margin;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 body {

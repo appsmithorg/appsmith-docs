@@ -2,7 +2,7 @@ import React from 'react';
 
 const Feedback = ({ feedback, handleHelpfulChange }) => {
     return (
-        <div className="feedback-widget-container">
+        <div className="feedback-widget-container transition">
             {feedback.helpful === '' && (
                 <div className="feedback-heading">Was this page helpful?</div>
             )}
