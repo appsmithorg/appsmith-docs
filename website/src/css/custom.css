@@ -591,23 +591,16 @@ ul.circle>li:before {
   }
 }
 
-.transition {
-  transition-duration: 0.3s;
-  transition-property: transform, opacity, width, height, margin;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
 
 body {
   margin-top: -30px !important;
 }
-
 
 .tag-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 
 .tags {
   display: flex;

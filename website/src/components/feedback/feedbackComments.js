@@ -4,7 +4,7 @@ const FeedbackComments = ({ feedback, handleCommentSubmit, handleCommentChange }
     const isButtonDisabled = feedback.comments.trim() === ''; // Determine if the button should be disabled
 
     return (
-        <div className="feedback-comments-container transition">
+        <div className="feedback-comments-container">
             <div className="feedback-heading">How can we improve this page?</div>
             <div className="feedback-textarea">
                 <textarea
