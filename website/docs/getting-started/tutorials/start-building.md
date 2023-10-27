@@ -25,7 +25,7 @@ Let's get started!
 
 * An Appsmith account. If you don’t have one, sign up on [**Appsmith cloud**](https://app.appsmith.com/).
 
-## Set up!
+## Set up
 
 1. When you create a new account, Appsmith adds a workspace with an application titled **My first application** on the homepage by default. You need to create a new empty application for this tutorial. If you are inside an application and need to go to the homepage, click on the Appsmith logo at the top left of the screen to go to the homepage.
 
