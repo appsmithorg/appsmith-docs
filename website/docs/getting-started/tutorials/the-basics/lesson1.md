@@ -36,16 +36,20 @@ This tutorial takes you through the process of connecting a datasource and query
 
 ## Query Data
 
-1. Click the **+ New Query** button to the right of the screen.
+1. Click the **+ New Query** button to the right of the screen. You will see the query editor with a default fetch query to pull ten records from the `usersTutorialDB` database table.
 
 <figure>
   <img src="/img/create-new-query.png" style= {{width:"100%", height:"auto"}} alt="Create a new query on the datasource"/>
   <figcaption align = "center"><i>Create a new query on the datasource</i></figcaption>
 </figure>
 
-2. Click the **Select** query template from the list of query commands. It loads the query editor with a fetch query to pull ten records from the `usersTutorialDB` database table. 
+2. Click the pencil icon to rename the query from **Query1** to `getUsers`.
 
-3. Click the pencil icon to rename the query from **Query1** to `getUsers`.
+3. For this tutorial, modify the query as shown below to fetch the records in the ascdending order of the `id` field.
+
+  ```sql
+  SELECT * FROM public."users" ORDER BY id ASC LIMIT 10;
+  ```
 
 4. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
 
@@ -56,10 +60,9 @@ This tutorial takes you through the process of connecting a datasource and query
   <figcaption align = "center"><i>Fetch data from database</i></figcaption>
 </figure>
 
-You've created your first query to fetch the list of users in the database.
+You've created your first query to fetch the list of records in the database.
 
 ## Display data in Table
-
 
 1. Click the **Widgets** tab on the *Entity Explorer* to the left of the screen.
 
@@ -67,9 +70,9 @@ You've created your first query to fetch the list of users in the database.
 
 3. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
 
-4. In the **Table Data** property box, delete the default JSON data. 
+4. In the **Table Data** property, click the **JS** button next to it. 
 
-5. To display the data from the **getUsers** query, type in the mustache template `{{}}`. Enter `getUsers.data` between the curly braces. This JavaScript expression connects the data from the **getUsers** query to the Table widget.
+5. To display the data from the **getUsers** query, type in `getUsers.data` between the curly braces. This JavaScript expression connects the data from the **getUsers** query to the Table widget.
 
 :::info
 The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
@@ -81,3 +84,6 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 </figure>
 
 You've displayed the results from the **getUsers** query on the Table widget.
+
+## Next steps
+- [Interact with data in UI](/getting-started/tutorials/the-basics/lesson2)

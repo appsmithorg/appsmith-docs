@@ -13,7 +13,19 @@ const sidebars = {
           label: 'Tutorials',
           link: { type: 'doc', id: 'getting-started/tutorials/README' },
           items: [
-            'getting-started/tutorials/start-building',
+            {
+              type: 'category',
+              label: 'The Basics',
+              link: {
+                type: 'doc',
+                id: 'getting-started/tutorials/the-basics/README',
+              },
+              items: [
+                'getting-started/tutorials/the-basics/lesson1',
+                'getting-started/tutorials/the-basics/lesson2',
+                'getting-started/tutorials/the-basics/lesson3',
+              ],
+            },
             {
               type: 'category',
               label: 'Customer Support Tool',
