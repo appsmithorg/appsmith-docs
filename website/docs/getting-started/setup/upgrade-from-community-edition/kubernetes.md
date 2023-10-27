@@ -1,10 +1,10 @@
 ---
-description: Follow these steps to upgrade the Appsmith Community Kubernetes installation to the Business Edition.
+description: Follow these steps to upgrade the Appsmith Community Kubernetes installation.
 ---
 
 # Kubernetes
 
-This page provides steps to upgrade Appsmith Kubernetes Community Edition to Business Edition.
+This page provides steps to upgrade Appsmith Kubernetes Community Edition.
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ Before upgrading, ensure you have:
 - Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-on-kubernetes) to update the version.
 - Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
 
-## Upgrade to Business Edition
+## Upgrade Appsmith installation
 
 Follow these steps to upgrade your Appsmith installation:
 
@@ -33,7 +33,7 @@ Follow these steps to upgrade your Appsmith installation:
    helm repo update
    ```
 
-4. Generate the business edition `values.yaml` with:
+4. Generate the `values.yaml` with:
 
    ```bash
    helm show values appsmith-ee/appsmith > values.yaml
@@ -69,9 +69,9 @@ Follow these steps to upgrade your Appsmith installation:
 
 10. Open [https://localhost:8080](https://localhost:8080) and wait for the server to come up. It can take up to 5 minutes. Once the server is up and running, access Appsmith at [https://localhost:8080](https://localhost:8080).
 
-11. Log into your Appsmith account and enter your license key to activate the instance.
+11. Log into your Appsmith account.
 
-12. After successfully verifying the Appsmith Business Edition installation, you may choose to delete the Community Edition namespace:
+12. After successfully verifying the Appsmith installation, you may choose to delete the Appsmith Community Edition namespace:
 
    ```bash
    kubectl delete ns <COMMUNITY_EDITION_NAMESPACE>
@@ -79,4 +79,7 @@ Follow these steps to upgrade your Appsmith installation:
 
 ## Troubleshooting
 
-If you face issues, continue to use the Community Edition installation and contact the support team using the chat widget at the bottom right of this page.
+If you face issues, continue to use the Community Edition namespace and contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+* [Upgrade plan](/getting-started/setup/manage-plans/upgrade-plan#add-or-update-your-license-key)

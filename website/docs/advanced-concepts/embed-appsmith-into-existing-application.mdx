@@ -109,7 +109,24 @@ In self-hosted instances, you can restrict embedding an application to certain w
 
 In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
 #### From Appsmith to parent app
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
 
 ![](/img/postmessage_parent_outgoing.png)
 
@@ -123,11 +140,24 @@ To configure your Appsmith application to send messages to its parent page:
 The parent application where Appsmith is embedded should have an event listener set up to receive the message that you send from Appsmith. Read more about setting up message event handling [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
 :::
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
 #### From parent app to Appsmith
 
-:::info
-This feature is available only in Appsmith's [business edition](https://www.appsmith.com/pricing).
-:::
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
 
 ![](/img/postmessage_parent_incoming.png)
 

@@ -1,12 +1,12 @@
 ---
-description: Follow the steps to upgrade the Appsmith community Docker installation to a Business Edition.
+description: Follow the steps to upgrade the Appsmith community Docker installation.
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Docker
 
-The page provides steps to upgrade the Appsmith Docker Community Edition to the Business Edition.
+The page provides steps to upgrade the Appsmith Docker Community Edition.
 
 ## Prerequisites
 
@@ -17,7 +17,7 @@ Before upgrading, ensure you have:
 - Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-on-docker) to update the version.
 - Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#backup-instance).
 
-## Upgrade to Business Edition
+## Upgrade Appsmith instance
 
 Follow these steps to upgrade your Appsmith instance:
 
@@ -45,10 +45,13 @@ Follow these steps to upgrade your Appsmith instance:
   # verify the image name as (appsmith-ee) in use 
   docker ps
   ```
-You have successfully upgraded your Docker instance to the Business Edition. 
+You have successfully upgraded your Docker Appsmith instance. 
 
-7.  Log into your Appsmith account, and enter the license key to activate the instance.
+7.  Log into your Appsmith account.
 
 ## Troubleshooting
 
 If you face issues during the upgrade, rollback to the backup created in [prerequisites](#prerequisites) section by following the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) guide, and contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+* [Upgrade plan](/getting-started/setup/manage-plans/upgrade-plan#add-or-update-your-license-key)

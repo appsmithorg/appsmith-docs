@@ -192,7 +192,7 @@
     },
     {
       "source": "/setup/upgrade-to-business-edition/docker",
-      "destination": "/getting-started/setup/upgrade-to-business-edition/docker"
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
     },
     {
       "source": "/how-to-guides/:path*",
@@ -1095,16 +1095,28 @@
       "destination": "/getting-started/setup/installation-guides/kubernetes"
     },
     {
+      "source": "/core-concepts/building-ui/designing-an-application/application-layout",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/docker",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/kubernetes",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/kubernetes"
+    },
+    {
       "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition",
-      "destination": "/getting-started/setup/upgrade-to-business-edition/docker"
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
     },
     {
       "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
-      "destination": "/getting-started/setup/upgrade-to-business-edition/kubernetes"
-    },
-    {
-      "source": "/core-concepts/building-ui/designing-an-application/application-layout",
-      "destination": "/build-apps/overview"
+      "destination": "/getting-started/setup/upgrade-from-community-edition/kubernetes"
     },
     {
       "source": "/getting-started/tutorials/start-building",

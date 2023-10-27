@@ -53,7 +53,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Installation Guides',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -89,7 +89,19 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
-                'getting-started/setup/installation-guides/google-cloud-run',
+                {
+                  type: 'category',
+                  label: 'Google Cloud Run',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/google-cloud-run',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                  ],
+                },
+
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
@@ -97,7 +109,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Configuration',
+              label: 'Configure Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-configuration/README',
@@ -180,7 +192,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Management',
+              label: 'Manage Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-management/README',
@@ -205,14 +217,27 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Upgrade to Business Edition',
+              label: 'Manage Editions',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/upgrade-to-business-edition/README',
+                id: 'getting-started/setup/manage-editions/README',
               },
               items: [
-                'getting-started/setup/upgrade-to-business-edition/docker',
-                'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                'getting-started/setup/manage-plans/upgrade-plan',
+                'getting-started/setup/manage-plans/downgrade-plan',
+                {
+                  type: 'category',
+                  label: 'Upgrade from Community Edition',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/upgrade-from-community-edition/README',
+
+                  },
+                  items: [
+                    'getting-started/setup/upgrade-from-community-edition/docker',
+                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
+                  ]
+                },
               ],
             },
             `getting-started/setup/best-practices`,
@@ -239,10 +264,13 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
             'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+            'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/download-files-from-s3',
+            'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
