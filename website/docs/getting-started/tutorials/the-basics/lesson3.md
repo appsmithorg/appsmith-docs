@@ -6,7 +6,7 @@ description:  Now Code It
 
 # Lesson 3 - Now Code It
 
-This tutorial take you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single line code. If you want to write more complex code, you have to use JS Objects.
+This tutorial take you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single line coding. If you want to write more complex code, you have to use JS Objects.
 
 ## Create JS Object
 
@@ -20,14 +20,14 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
 
   ```javascript
   getBackground: (gender) => {
-		if (gender == 'male') return "#42f587";
-		else if (gender == 'female') return "#f5e942";
-		else return "#f57b42";
-	}
+    if (gender == 'male') return "#42f587";
+    else if (gender == 'female') return "#f5e942";
+    else return "#f57b42";
+  }
   ```
   This function returns a different hex color code based on gender. 
 
-5. Go back to the canvas by clicking on the page name or the **Widget** tab.
+5. Go back to the canvas by clicking the page name or the **Widget** tab.
 
 6. Select the `usersTable` Table. Click on the **Style** tab.
 
@@ -41,7 +41,7 @@ You will see the cell color change based on the value in the gender column.
 
 ## Use built-in objects and functions
 
-Appsmith provides global objects and functions within its framework that be used when building your apps. 
+Appsmith provides global objects and functions within its framework for building your apps. 
 
 1. Let's display the name of the currently logged in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
 
@@ -54,8 +54,8 @@ Here you are using the `appsmith` global object to extract information of the cu
 
 ```javascript
   {{updateUsers.run().then(() => {
-	showAlert('Record updated');
-	getUsers.run();
+  showAlert('Record updated');
+  getUsers.run();
   });}}
 ```
 
@@ -75,5 +75,13 @@ navigateTo('Page2')
 
 7. Click the **Next Page** button to test if it redirects you to the next page. 
 
-
 For more information on all the global functions available in the Appsmith framework, see [Global Functions](/reference/appsmith-framework/widget-actions).
+
+
+8. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode.
+
+🚩 Congratulations! You have built your first app that can display data from the database and save the updated data using a form.
+
+In this tutorial, you explored a few different widgets and created a simple database GUI to view, query, and update data on a sample PostgreSQL database. You can use these skills to build your own app.
+
+Happy App Building!

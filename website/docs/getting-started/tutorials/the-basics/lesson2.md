@@ -4,11 +4,11 @@ slug: /getting-started/tutorials/the-basics/lesson2
 description:  Interact with Data in UI
 ---
 
-# Lesson 2 - Interact with Data in UI
+# Lesson 2 - Work with Data in UI
 
 This tutorial take you through the process of viewing and editing individual records via forms.
 
-## View fields for each record
+## View details for each record
 
 1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
 2. Select the title of the Form. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
@@ -37,7 +37,7 @@ This tutorial take you through the process of viewing and editing individual rec
   <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
 </figure>
 
-## Update fields in each record
+## Update records
 
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 

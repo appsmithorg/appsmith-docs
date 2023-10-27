@@ -3,15 +3,14 @@ description:  Setup app
 ---
 # The Basics
 
-This tutorial covers the basic concepts of Appsmith and takes you through a series of steps to build a simple Database GUI app. 
+This tutorial covers the basic concepts of Appsmith and takes you through a series of steps to build a simple Database GUI application. 
 
 You'll learn to:
 * Create a new application
 * Connect to a database and fetch data 
 * Display the data in a Table widget
-* Build form to view user details
-* Edit and submit the user details
-* Deploy the application
+* Build form to view details
+* Edit and submit the details
 
 Here's a screenshot of the final result:
 

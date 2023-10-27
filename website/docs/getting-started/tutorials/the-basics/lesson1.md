@@ -86,4 +86,4 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 You've displayed the results from the **getUsers** query on the Table widget.
 
 ## Next steps
-- [Interact with data in UI](/getting-started/tutorials/the-basics/lesson2)
+- [Work with data in UI](/getting-started/tutorials/the-basics/lesson2)

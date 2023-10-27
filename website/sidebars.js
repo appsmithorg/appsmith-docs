@@ -15,6 +15,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
+              collapsed: false,
               label: 'The Basics',
               link: {
                 type: 'doc',
@@ -26,22 +27,22 @@ const sidebars = {
                 'getting-started/tutorials/the-basics/lesson3',
               ],
             },
-            {
-              type: 'category',
-              label: 'Customer Support Tool',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/customer-support-tool/README',
-              },
-              items: [
-                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-                'getting-started/tutorials/customer-support-tool/view-ticket-details',
-                'getting-started/tutorials/customer-support-tool/add-new-tickets',
-                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
-                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-                'getting-started/tutorials/customer-support-tool/application-settings'
-              ],
-            },
+            // {
+            //   type: 'category',
+            //   label: 'Customer Support Tool',
+            //   link: {
+            //     type: 'doc',
+            //     id: 'getting-started/tutorials/customer-support-tool/README',
+            //   },
+            //   items: [
+            //     'getting-started/tutorials/customer-support-tool/build-the-dashboard',
+            //     'getting-started/tutorials/customer-support-tool/view-ticket-details',
+            //     'getting-started/tutorials/customer-support-tool/add-new-tickets',
+            //     'getting-started/tutorials/customer-support-tool/edit-ticket-details',
+            //     'getting-started/tutorials/customer-support-tool/comments-on-tickets',
+            //     'getting-started/tutorials/customer-support-tool/application-settings'
+            //   ],
+            // },
           ],
         },
 
