@@ -82,6 +82,6 @@ This tutorial take you through the process of viewing and editing individual rec
   :::
 
 ## Next steps
-- [Now Code It](/getting-started/tutorials/the-basics/lesson3)
+- [Lesson 3 - Now Code It](/getting-started/tutorials/the-basics/lesson3)
 
 

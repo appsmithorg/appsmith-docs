@@ -49,4 +49,4 @@ Let's get started!
 
 
 ## Next steps
-- [Bring in Data](/getting-started/tutorials/the-basics/lesson1)
+- [Lesson 1 - Bring in Data](/getting-started/tutorials/the-basics/lesson1)

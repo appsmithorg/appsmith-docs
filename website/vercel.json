@@ -1105,6 +1105,10 @@
     {
       "source": "/core-concepts/building-ui/designing-an-application/application-layout",
       "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/getting-started/tutorials/start-building",
+      "destination": "/getting-started/tutorials/the-basics"
     }
   ]
 }

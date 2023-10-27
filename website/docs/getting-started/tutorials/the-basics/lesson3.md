@@ -37,7 +37,7 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
   {{JSObject1.getBackground(currentRow.gender)}}
   ```
 
-You will see the cell color change based on the value in the gender column.
+  You will see the cell color change based on the value in the gender column.
 
 ## Use built-in objects and functions
 
@@ -45,21 +45,22 @@ Appsmith provides global objects and functions within its framework for building
 
 1. Let's display the name of the currently logged in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
 
-```javascript
-Hello {{appsmith.user.name || appsmith.user.email}}
-```
-Here you are using the `appsmith` global object to extract information of the currently logged in user and append it to the text `Hello`. For more information, see [appsmith](/reference/appsmith-framework/context-object).
+  ```javascript
+  Hello {{appsmith.user.name || appsmith.user.email}}
+  ```
+  Here you are using the `appsmith` global object to extract information of the currently logged in user and append it to the text `Hello`. For more information, see [appsmith](/reference/appsmith-framework/context-object).
 
 2. Let's explore a few global functions. Click the **Update** button in the Form widget. In the **onClick** event, click the **JS** button to the right. Modify the code as shown below to show an alert message when the update query runs.
 
-```javascript
-  {{updateUsers.run().then(() => {
-  showAlert('Record updated');
-  getUsers.run();
-  });}}
-```
-
-Test by editing any record and click the **Update** button to see the alert message pop up on the top of the screen.
+  ```javascript
+  {{
+    updateUsers.run().then(() => {
+    showAlert('Record updated');
+    getUsers.run();
+    });
+  }}
+  ```
+  Test by editing any record and click the **Update** button to see the alert message pop up on the top of the screen.
 
 3. You can also navigate from one page to another. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen.
 
@@ -69,9 +70,9 @@ Test by editing any record and click the **Update** button to see the alert mess
 
 6. Between the curly braces `{{}}` enter the following code snippet
 
-```javascript
-navigateTo('Page2')
-```
+  ```javascript
+  navigateTo('Page2')
+  ```
 
 7. Click the **Next Page** button to test if it redirects you to the next page. 
 

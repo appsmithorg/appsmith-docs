@@ -48,7 +48,7 @@ This tutorial takes you through the process of connecting a datasource and query
 3. For this tutorial, modify the query as shown below to fetch the records in the ascdending order of the `id` field.
 
   ```sql
-  SELECT * FROM public."users" ORDER BY id ASC LIMIT 10;
+  SELECT * FROM public."users" ORDER BY id LIMIT 10;
   ```
 
 4. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
@@ -86,4 +86,4 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 You've displayed the results from the **getUsers** query on the Table widget.
 
 ## Next steps
-- [Work with data in UI](/getting-started/tutorials/the-basics/lesson2)
+- [Lesson 2 - Work with data in UI](/getting-started/tutorials/the-basics/lesson2)
