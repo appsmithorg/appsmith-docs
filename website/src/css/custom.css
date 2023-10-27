@@ -600,11 +600,13 @@ h4+.tags {
 }
 
 .copyright {
+  background-color: white;
+  padding: 10px;
+  text-align: 'left';
   color: #909193;
   font-size: 0.75em;
-  max-height: 20%;
-  position: relative;
-  margin-top: -3.1em;
-  margin-left: 0.1em;
-  width: 94%;
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  width: 92%;
 }
