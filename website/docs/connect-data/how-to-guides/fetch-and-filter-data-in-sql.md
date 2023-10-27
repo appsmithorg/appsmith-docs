@@ -1,4 +1,4 @@
-# Fetch and filter data in SQL
+# Fetch and Filter data in SQL
 
 This guide shows you how to retrieve and filter data by using a variety of SQL clauses.
 
