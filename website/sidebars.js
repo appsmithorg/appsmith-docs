@@ -251,6 +251,7 @@ const sidebars = {
             'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
             'connect-data/how-to-guides/insert-and-update-data-in-sql',
             'connect-data/how-to-guides/filter-data-google-sheet',
+            'connect-data/how-to-guides/insert-and-update-data-in-google-sheets',
             'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
             'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
