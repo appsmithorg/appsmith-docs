@@ -14,36 +14,34 @@ This guide shows you how to insert and update data in a PostgreSQL database. The
 
 To insert single row, you can either use the Table widget's inline editing feature to update data directly from the Table or use a JSON Form or Form widget. If you want to insert a single row of data into a specific table in your database, follow these steps:
 
-*Example*: you have a `user` table and you want to insert data into it using a JSON form.
+*Example*: you have a `user` table and you want to insert data into it using a Form widget.
 
-1. Connect the [**Source Data**](/reference/widgets/json-form#source-data-json) property of the JSON form with the Table widget to get the data format.
+1. To insert data, drag the relevant widgets into the Form widget (example: Text, Inputs, Select) and configure their properties.
 
-2. Configure the query to insert data using [formData](/reference/widgets/json-form#formdata-object) reference property:
+2. Configure the query to insert data using [data](/reference/widgets/form#data-object) reference property:
 
 <dd>
 
 ```sql
--- For Form widget, you can use {{Form1.data.Input1}}
+-- For JSON Form: {{JSONForm1.formData.id}} 
 -- For Table inline editing: {{Table1.newRow.id}}
 
 INSERT INTO users 
 (id, phone, name, gender, latitude, longitude, dob, email, image, country) 
 VALUES 
 (
-   {{ JSONForm1.formData.id}}, 
-   {{ JSONForm1.formData.phone }}, 
-   {{ JSONForm1.formData.name }}, 
-   {{ JSONForm1.formData.gender }}, 
-   {{ JSONForm1.formData.latitude }}, 
-   {{ JSONForm1.formData.longitude }}, 
-   {{ JSONForm1.formData.dob }}, 
-   {{ JSONForm1.formData.email }}, 
-   {{ JSONForm1.formData.image }}, 
-   {{ JSONForm1.formData.country }}
+   {{ Form1.data.TextID }},
+   {{ Form1.data.InputPhone }},
+   {{ Form1.data.InputName }},
+   {{ Form1.data.SelectGender }},
+   {{ Form1.data.InputLatitude }},
+   {{ Form1.data.InputLongitude }},
+   {{ Form1.data.DatePicker1 }}, -- To get date in the required format use: {{DatePicker1.formattedDate}}
+   {{ Form1.data.InputEmail }},
+   {{ Form1.data.InputImageURL }}, -- To add image from Filepicker widget use: {FilePicker1.files[0].data}}
+   {{ Form1.data.SelectCountry }}
 );
 ```
-
-
 
 </dd>
 
@@ -55,7 +53,8 @@ When prepared statements are enabled and widget bindings are used, quotes are no
 
 
 
-3. Set the JSON form widget's [**onSubmit**](/reference/widgets/json-form#onsubmit) event to execute the insert query.
+3. Set the Submit Button's **onClick** event to execute the query, and the **onSuccess** callback to trigger the fetch query that refreshes the data with the updated information.
+
 
 ## Insert multiple rows
 
