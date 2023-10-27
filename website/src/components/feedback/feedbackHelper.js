@@ -2,7 +2,7 @@ import React from "react";
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
 const generateFeedback = (feedbackOption) => {
-  if (ExecutionEnvironment.canUseDOM){
+  if (ExecutionEnvironment.canUseDOM) {
     const docId = window.location.pathname;
     const feedbackData = {
       docId: docId || null,
@@ -10,15 +10,27 @@ const generateFeedback = (feedbackOption) => {
     };
     return feedbackData;
   }
-    return null;
-  };
-  
-const sendToSegment = (feedbackJSON) => {
-    if (ExecutionEnvironment.canUseDOM){
-      if (typeof window.analytics !== 'undefined') {
-        window.analytics.track('Feedback Submitted', feedbackJSON);
-      }
+  return null;
+};
+
+const generateFeedbackComment = (comment) => {
+  if (ExecutionEnvironment.canUseDOM) {
+    const docId = window.location.pathname;
+    const feedbackCommentData = {
+      docId: docId || null,
+      feedbackComment: comment || null,
+    };
+    return feedbackCommentData;
+  }
+  return null;
+};
+
+const sendToSegment = (feedbackJSON, eventType) => {
+  if (ExecutionEnvironment.canUseDOM) {
+    if (typeof window.analytics !== 'undefined') {
+      window.analytics.track(eventType, feedbackJSON);
+    }
   }
 };
 
-export { generateFeedback, sendToSegment };
+export { generateFeedback, generateFeedbackComment, sendToSegment };

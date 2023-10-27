@@ -1,0 +1,57 @@
+---
+description: Follow the steps to upgrade the Appsmith community Docker installation.
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Docker
+
+The page provides steps to upgrade the Appsmith Docker Community Edition.
+
+## Prerequisites
+
+Before upgrading, ensure you have:
+
+- Signed up on [customer.appsmith.com](https://customer.appsmith.com/) and generated a trial license key.
+- At least 2 GB of free storage space for the backup process.
+- Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-on-docker) to update the version.
+- Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#backup-instance).
+
+## Upgrade Appsmith instance
+
+Follow these steps to upgrade your Appsmith instance:
+
+1. Go to the root directory of Appsmith installation.
+2. Open the `docker-compose.yml` file, and search for the `image:` key.
+3. Update the value of the `image:` key as below:
+
+  ``` yaml
+    services:
+      appsmith:
+      #highlight-next-line
+        image: index.docker.io/appsmith/appsmith-ee
+  ```
+4. Save the file.
+
+5. Recreate the instance with:
+
+  ```bash
+  docker-compose up -d --force-recreate
+  ```
+
+6. Open [https://localhost](https://localhost) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, verify the upgrade with:
+
+  ```bash
+  # verify the image name as (appsmith-ee) in use 
+  docker ps
+  ```
+You have successfully upgraded your Docker Appsmith instance. 
+
+7.  Log into your Appsmith account.
+
+## Troubleshooting
+
+If you face issues during the upgrade, rollback to the backup created in [prerequisites](#prerequisites) section by following the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) guide, and contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+* [Upgrade plan](/getting-started/setup/manage-plans/upgrade-plan#add-or-update-your-license-key)

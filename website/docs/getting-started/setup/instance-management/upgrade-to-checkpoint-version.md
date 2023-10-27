@@ -34,7 +34,7 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
             image: index.docker.io/appsmith/appsmith-ce:v1.9.2
             container_name: appsmith
         ```
-    * If you are on the **Business Edition**, update the image name as shown below:
+    * If you are on the **Commercial Edition**, update the image name as shown below:
         ```yaml
         services:
           appsmith:
@@ -55,7 +55,7 @@ Before you update to a checkpoint version, ensure you have met all the [prerequi
           image: index.docker.io/appsmith/appsmith-ce
           container_name: appsmith
         ```
-    * If you are on the **Business Edition**, update the image name as shown below:
+    * If you are on the **Commercial Edition**, update the image name as shown below:
         ```yaml
         services:
           appsmith:
