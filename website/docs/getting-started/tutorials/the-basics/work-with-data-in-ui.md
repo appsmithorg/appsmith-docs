@@ -1,5 +1,5 @@
 ---
-id: lesson2
+id: work-with-data-in-ui
 slug: /getting-started/tutorials/the-basics/lesson2
 description:  Interact with Data in UI
 ---

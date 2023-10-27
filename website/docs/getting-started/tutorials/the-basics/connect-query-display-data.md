@@ -1,5 +1,5 @@
 ---
-id: lesson1
+id: connect-query-display-data
 slug: /getting-started/tutorials/the-basics/lesson1
 description:  Connect a datasource on Appsmith
 ---

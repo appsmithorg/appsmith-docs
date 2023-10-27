@@ -1,5 +1,5 @@
 ---
-id: lesson3
+id: write-js-code
 slug: /getting-started/tutorials/the-basics/lesson3
 description:  Now Code It
 ---

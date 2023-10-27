@@ -22,9 +22,9 @@ const sidebars = {
                 id: 'getting-started/tutorials/start-building',
               },
               items: [
-                'getting-started/tutorials/the-basics/lesson1',
-                'getting-started/tutorials/the-basics/lesson2',
-                'getting-started/tutorials/the-basics/lesson3',
+                'getting-started/tutorials/the-basics/connect-query-display-data',
+                'getting-started/tutorials/the-basics/work-with-data-in-ui',
+                'getting-started/tutorials/the-basics/write-js-code',
               ],
             },
           ],
