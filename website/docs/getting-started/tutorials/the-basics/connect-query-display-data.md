@@ -1,6 +1,6 @@
 ---
 id: connect-query-display-data
-slug: /getting-started/tutorials/the-basics/lesson1
+slug: /getting-started/tutorials/the-basics/connect-query-display-data
 description:  Connect a datasource on Appsmith
 ---
 
@@ -86,4 +86,4 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 You've displayed the results from the **getUsers** query on the Table widget.
 
 ## Next steps
-- [Lesson 2 - Work with data in UI](/getting-started/tutorials/the-basics/lesson2)
+- [Lesson 2 - Work with data in UI](/getting-started/tutorials/the-basics/work-with-data-in-ui)

@@ -1,6 +1,6 @@
 ---
 id: write-js-code
-slug: /getting-started/tutorials/the-basics/lesson3
+slug: /getting-started/tutorials/the-basics/write-js-code
 description:  Now Code It
 ---
 

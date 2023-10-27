@@ -1,6 +1,6 @@
 ---
 id: work-with-data-in-ui
-slug: /getting-started/tutorials/the-basics/lesson2
+slug: /getting-started/tutorials/the-basics/work-with-data-in-ui
 description:  Interact with Data in UI
 ---
 
@@ -82,6 +82,6 @@ This tutorial take you through the process of viewing and editing individual rec
   :::
 
 ## Next steps
-- [Lesson 3 - Now Code It](/getting-started/tutorials/the-basics/lesson3)
+- [Lesson 3 - Now Code It](/getting-started/tutorials/the-basics/write-js-code)
 
 
