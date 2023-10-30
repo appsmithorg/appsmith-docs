@@ -47,10 +47,9 @@ If you encounter a 504 Gateway Timeout error while using Appsmith on a Kubernete
 
 #### Solution
 
-The issue is that Appsmith is timing out after 60 seconds when calling an upstream API, but the desired timeout is 300 seconds. The default timeout for Nginx (which Appsmith uses) is also 60 seconds, so increasing the timeout in Nginx to 300 seconds would solve this issue. 
+The challenge lies in the fact that when Appsmith calls an upstream API, it times out after 60 seconds, whereas the necessary timeout duration is 300 seconds. Furthermore, the default timeout for Nginx, the web server employed by Appsmith, is set at 60 seconds. To resolve this issue, one plausible approach is to extend the Nginx timeout to 300 seconds.
 
-However, it appears that Appsmith is currently limited by Nginx's default timeout and cannot go beyond 60 seconds. This is being addressed by the Appsmith team, but in the meantime, the solution is to optimize the upstream API to return a response within 60 seconds.
-
+However, Appsmith is constrained by the default 60-second timeout imposed by Nginx. While the Appsmith team is actively working on this constraint, a temporary solution involves optimizing the upstream API to deliver a response within the 60-second timeframe.
 
 
 ### Configuration error
