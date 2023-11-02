@@ -72,7 +72,7 @@ import TabItem from '@theme/TabItem';
            <strong>Row Selection Action</strong>
         </div><hr/>
         <div class="containerDescription">This app shows how to trigger an action on the row selection of the Table widget.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/></div>
-         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0134"><strong>View App</strong> </a>
+         <div class="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0135"><strong>View App</strong> </a>
          </div>
     </div>
 </div>
