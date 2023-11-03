@@ -33,6 +33,20 @@ You could resolve the error response by doing one of the following:
 - [Timeout Configuration](/connect-data/reference/query-settings): The Appsmith server has a default internal timeout of 60 seconds. If your queries take longer than this, you can set a value greater than 60 seconds. For self-hosted instances, you can set the `APPSMITH_SERVER_TIMEOUT` environment variable to a value greater than 60 seconds. For example, if you want a timeout of 80 seconds, use- `APPSMITH_SERVER_TIMEOUT=80`.
 
 
+### 504 gateway timeout
+
+#### Error message
+
+<Message
+ messageContainerClassName="error"
+messageContent="504 Gateway Timeout"></Message>
+
+#### Solution
+
+The challenge lies in the fact that when Appsmith calls an upstream API, it times out after 60 seconds, whereas the necessary timeout duration is 300 seconds. Furthermore, the default timeout for Nginx, the web server employed by Appsmith, is set at 60 seconds. To resolve this issue, one plausible approach is to extend the Nginx timeout to 300 seconds.
+
+However, Appsmith is constrained by the default 60-second timeout imposed by Nginx. While the Appsmith team is actively working on this constraint, a temporary solution involves optimizing the upstream API to deliver a response within the 60-second timeframe.
+
 
 ### Configuration error
 
