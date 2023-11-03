@@ -242,7 +242,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
@@ -255,7 +255,7 @@ const sidebars = {
         {
           //Reference start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Reference',
           link: { type: 'doc', id: 'connect-data/reference/overview' },
           items: [
@@ -330,7 +330,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             {
@@ -404,7 +404,7 @@ const sidebars = {
           //Reference start
           type: 'category',
           label: 'Reference',
-          collapsed: false,
+          collapsed: true,
           link: { type: 'doc', id: 'build-apps/reference/README' },
           items: [
             {
@@ -501,7 +501,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
 
@@ -519,7 +519,7 @@ const sidebars = {
         {
           //Reference start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
           items: [
