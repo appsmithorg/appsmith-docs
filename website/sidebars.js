@@ -242,7 +242,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'Guides',
+          label: 'How-To Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
@@ -330,7 +330,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'Guides',
+          label: 'How-To Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             {
@@ -501,7 +501,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'Guides',
+          label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
 
