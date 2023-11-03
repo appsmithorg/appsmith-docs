@@ -6,7 +6,7 @@ export default function DocSidebarWrapper(props) {
     <>
       <DocSidebar {...props} className="thin-scrollbar" />
 
-      <div className='copyright' style={{ background: 'white', padding: '10px', textAlign: 'center' }}>
+      <div className="copyright">
         © {new Date().getFullYear()} Appsmith, Inc.
       </div>
     </>

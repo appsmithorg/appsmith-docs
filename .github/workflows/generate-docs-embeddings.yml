@@ -1,0 +1,20 @@
+name: 'Generate Docs Embeddings'
+on:
+  workflow_run:
+    workflows: ["Run Crawler"]
+    types:
+      - completed
+
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: supabase/embeddings-generator@v0.0.5
+        with:
+          supabase-url: 'https://zxtoyfvpdjilxmpezgde.supabase.co'
+          supabase-service-role-key: ${{secrets.SUPABASE_SERVICE_ROLE_KEY}}
+          openai-key: ${{secrets.OPENAI_KEY}}
+          docs-root-path: 'website/docs' 

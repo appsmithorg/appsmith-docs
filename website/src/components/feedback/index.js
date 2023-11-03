@@ -1,56 +1,73 @@
 import React, { useState } from 'react';
-import { generateFeedback, sendToSegment } from '@site/src/components/feedback/feedbackHelper';
+import Feedback from '@site/src/components/feedback/feedback';
+import FeedbackMessage from '@site/src/components/feedback/feedbackMessage';
+import FeedbackComments from '@site/src/components/feedback/feedbackComments';
+import { generateFeedback, sendToSegment, generateFeedbackComment } from '@site/src/components/feedback/feedbackHelper';
 
 const FeedbackWidget = () => {
   const [feedback, setFeedback] = useState({
     helpful: '',
+    comments: '',
   });
 
-  const handleHelpfulChange = async (value) => {
-    // Send the feedback to Segment first
-    const feedbackJSON = generateFeedback(value);
-    await sendToSegment(feedbackJSON);
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
-    // Then open the Intercom survey to capture the feedback if "No" is chosen
+  const handleHelpfulChange = async (value) => {
+    const feedbackJSON = generateFeedback(value);
+    await sendToSegment(feedbackJSON, 'Feedback Submitted');
+
     if (value === 'no') {
-      if (typeof Intercom !== 'undefined') {
-        Intercom('startSurvey', 35583751);
-      }
+      setFeedback({
+        helpful: value,
+        comments: '',
+      });
+    } else {
+      setFeedback({
+        helpful: 'submitted',
+        comments: '',
+      });
+    }
+  };
+
+  const handleCommentSubmit = async () => {
+    if (feedback.comments.trim() === '') {
+      return;
     }
 
-    // Update the feedback state after handling
+    if (!feedbackSubmitted) {
+      const feedbackCommentJSON = generateFeedbackComment(feedback.comments);
+      await sendToSegment(feedbackCommentJSON, 'Feedback Comment Submitted');
+      setFeedbackSubmitted(true);
+    }
+
     setFeedback({
-      ...feedback,
-      helpful: value,
+      helpful: 'submitted',
+      comments: feedback.comments,
     });
   };
 
+  const handleCommentChange = (value) => {
+    setFeedback({
+      ...feedback,
+      comments: value,
+    });
+  };
+
+
   return (
-    <div className="feedback-widget-container">
-      {feedback.helpful === '' ? (
-        <>
-          <div className="feedback-heading">Was this page helpful?</div>
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <button
-              id="thumbs-up"
-              className={feedback.helpful === 'yes' ? 'selected' : ''}
-              onClick={() => handleHelpfulChange('yes')}
-            >
-              <img src="/img/thumbs-up-line.svg" alt="Thumbs Up" />
-            </button>
-            <button
-              id="thumbs-down"
-              className={feedback.helpful === 'no' ? 'selected' : ''}
-              onClick={() => handleHelpfulChange('no')}
-            >
-              <img src="/img/thumbs-down-line.svg" alt="Thumbs down" />
-              </button>
-            </div>
-        </>
-      ) : (
-        <div className="feedback-heading">Thank you for your feedback!</div>
+    <>
+      {feedback.helpful === 'submitted' && <FeedbackMessage />}
+      {feedback.helpful === '' && (
+        <Feedback feedback={feedback} handleHelpfulChange={handleHelpfulChange} />
       )}
-    </div>
+      {feedback.helpful === 'no' && (
+        <FeedbackComments
+          feedback={feedback}
+          handleCommentSubmit={handleCommentSubmit}
+          handleCommentChange={handleCommentChange}
+        />
+      )}
+    </>
   );
 };
 
