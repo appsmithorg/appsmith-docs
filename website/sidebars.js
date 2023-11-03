@@ -239,7 +239,7 @@ const sidebars = {
       //Data start
       type: 'category',
       collapsed: false,
-      label: 'Backend & Data',
+      label: 'Backend and Data',
       items: [
         'connect-data/overview',
         {
@@ -264,7 +264,7 @@ const sidebars = {
         {
           //Reference start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Reference',
           link: { type: 'doc', id: 'connect-data/reference/overview' },
           items: [
@@ -333,7 +333,7 @@ const sidebars = {
     { // UI start
       type: 'category',
       collapsed: false,
-      label: 'UI & Widgets',
+      label: 'UI and Widgets',
       items: [
         'build-apps/overview',
         {
@@ -363,7 +363,7 @@ const sidebars = {
           //Reference start
           type: 'category',
           label: 'Reference',
-          collapsed: false,
+          collapsed: true,
           link: { type: 'doc', id: 'build-apps/reference/README' },
           items: [
             {
@@ -477,7 +477,7 @@ const sidebars = {
         {
           //Reference start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
           items: [
