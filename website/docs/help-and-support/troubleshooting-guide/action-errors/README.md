@@ -41,10 +41,6 @@ You could resolve the error response by doing one of the following:
  messageContainerClassName="error"
 messageContent="504 Gateway Timeout"></Message>
 
-#### Cause
-
-If you encounter a 504 Gateway Timeout error while using Appsmith on a Kubernetes cluster and your application calls an upstream API, which takes longer than 60 seconds to complete, you might face this issue.
-
 #### Solution
 
 The challenge lies in the fact that when Appsmith calls an upstream API, it times out after 60 seconds, whereas the necessary timeout duration is 300 seconds. Furthermore, the default timeout for Nginx, the web server employed by Appsmith, is set at 60 seconds. To resolve this issue, one plausible approach is to extend the Nginx timeout to 300 seconds.
