@@ -50,7 +50,7 @@ To sort data in the Table widget, follow these steps:
    {{sort_data.run()}}
    ```
 
-### Hide columns
+## Hide columns
 To set the visibility of specific columns, follow these steps:
 1. In the Table widget's property pane, click the gear icon ⚙️ beside a column.
 2. Disable the **Visible** property of a column to hide the column.
@@ -69,7 +69,7 @@ To set the visibility of specific columns, follow these steps:
    ```
 For more information, see this [sample app](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918?_gl=1*bn3bvw*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjUzMzM3LjAuMC4w).
 
-### Format cells
+## Format cells
 To format cells of the table, follow these steps:
 1. Select **Editable** in the Table widget's property pane. This lets you update the data directly from the UI by double-clicking on the desired cell.
 
