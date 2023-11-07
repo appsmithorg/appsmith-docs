@@ -81,7 +81,7 @@ To format cells of the table, follow these steps:
 
 For more information, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8?_gl=1*189op77*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjU1OTMyLjAuMC4w).
 
-## Configure query to filter data for search text
+## Filter data using search text
 To filter data based on a search text, follow these steps:
 1. Drag and drop an [Input](/reference/widgets/input) widget and rename it to `search_text`.
 2. Create a query to fetch data corresponding to the search text using the following code:
@@ -97,7 +97,7 @@ To filter data based on a search text, follow these steps:
 
 For more information, see this [sample app](https://app.appsmith.com/applications/6548a90af1da8d53d9d538f0/pages/6548a90af1da8d53d9d53902/edit/queries/6548a90af1da8d53d9d53928).
 
-## Configure query to filter data for date range
+## Filter data for date range
 To filter data based on a date range, follow these steps:
 1. Drag and drop two [Date picker](/reference/widgets/datepicker) widgets.
 2. Create a query to fetch data using the **selectedDate** reference property of the widgets using the following code where `trip_start_date` and `trip_end_date` are the Date picker widgets:
@@ -115,7 +115,7 @@ To filter data based on a date range, follow these steps:
 3. Set the [onDateSelected](/reference/widgets/datepicker#ondateselected) event of the Date picker widgets to execute the query.
    The table data automatically updates to reflect the data from the selected date range when you select dates from `trip_start_date` or `trip_end_date`.
 
-## Configure query to filter data for value selection
+## Filter data for specific value
 To filter data based on specific criteria using a Select widget, follow these steps:
 1. Drag and drop a [Select](/reference/widgets/select) widget.
 2. Create a query to fetch data using the **selectedOptionValue** reference property of the widget using the following code:
