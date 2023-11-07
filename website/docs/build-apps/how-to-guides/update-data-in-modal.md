@@ -18,11 +18,13 @@ Follow these steps to set up a Form widget:
 
 1. To open a Modal based on row selection, you can either use a button as a new column or configure the **onRowSelected** event in the Table.
 
-2. Set up the event to show the Modal, and select your desired Modal.
+2. Select **Add a new column** and then click on the gear icon ⚙️ from the column's properties pane.
+
+3. Configure the column type as a Button and set the **onClick** event to show the Modal. If you want the Edit column to be visible at all times, you can use the **Column freeze** property to freeze the column.
 
 
 <figure>
-  <img src="/img/showmodal-table1.gif" style= {{width:"560px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
+  <img src="/img/show-modal-2.gif" style= {{width:"560px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
    <figcaption align = "center"><i></i></figcaption>
 </figure>
 
@@ -34,10 +36,7 @@ Modal widget remains hidden on the canvas and becomes visible only when an event
 :::
 
 
-3. Drag a [Form](/reference/widgets/form) widget within the Modal.
-
-
-4. To allow users to submit their information, drag the relevant widgets into the Form widget (example: Text, Inputs, Select) and configure their properties.
+3. Drag a [Form](/reference/widgets/form) widget within the Modal, and add the relevant widgets into the Form widget (example: Text, Inputs, Select) and configure their properties.
 
 
 5. To display data from the selected row in the table, bind the data to the widget's **Default value** property using mustache syntax `{{}}`:
@@ -56,7 +55,7 @@ For example, if the date is in `ISO` format and you want to display it in `DD/MM
 Check this guide to learn how to validate the form based on specific criteria.
 
 
-## Update Form
+## Update form
 
 Follow these steps to configure the query and update the data:
 
@@ -84,24 +83,27 @@ For more detailed information on updating data in different datasources, please 
 
 </dd>
 
-2. Set the Submit Button's **onClick** event to execute the update query, and the **onSuccess** callback to close the Modal and trigger the fetch query that refreshes the data with the updated information.
+2. Set the Submit Button's **onClick** event to execute the update query, and the **onSuccess** callback to trigger the fetch query. Set onSuccess event of the fetch query to close the Modal and display success alert.
+
+
 
 <dd>
 
-You can enable JS for the **onClick** event and execute multiple functions as shown below:
+
+<figure>
+  <img src="/img/trigger-multi-query-1.gif" style= {{width:"560px", height:"auto"}} alt="Setup Server-side Searching on Table"/>
+   <figcaption align = "center"><i></i></figcaption>
+</figure>
 
 
-```js
-{{ 
-    updateUsers.run()
-      .then(() => fetchUsers.run()
-                  .then(() => { 
-                      showAlert('User Updated'); 
-                      closeModal('Modal1'); 
-                    })
-        .catch(() => showAlert("Fetch Users Failed"))
-      ).catch(() => showAlert("Update User Failed", "error")) 
-}}
-```
+
 
 </dd>
+
+## See also
+
+* [Sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61efe524be698f35db551f91) - Row Selection Action
+* [Sample app](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd) - Show Data in Table
+* [Sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3) - Reset Table
+
+
