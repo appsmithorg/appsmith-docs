@@ -350,6 +350,7 @@ const sidebars = {
             'build-apps/how-to-guides/Server-side-filtering-table',
             'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
             'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+            'build-apps/how-to-guides/display-search-and-filter-table-data',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
