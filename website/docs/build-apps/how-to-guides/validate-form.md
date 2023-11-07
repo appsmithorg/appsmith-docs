@@ -1,17 +1,19 @@
 # Validate Form
 
-This page shows you how to validate Form fields based on specific criteria using regular expressions and validation properties. When it comes to validating form fields, it's essential to understand that different widgets may have different validation properties. 
-
-*  Each widget type may have its specific validation properties. For example, Input widgets can make use of regex or valid properties to validate user input.
-*  Enabling the **Required** property on a widget within a form ensures the submit button on the form widget remains disabled until the field contains a value.
-*  If the **Regex** or **Valid** properties are used and the input provided doesn't match the specified criteria, the submit button remains disabled until the correct value is entered.
-
+This page shows you how to validate Form fields based on specific criteria using regular expressions and validation properties. 
 
 ## Prerequisites
 
 A [Form widget](/reference/widgets/form) with all the relevant fields.
 
 ## Validation mechanism
+
+
+When it comes to validating form fields, it's essential to understand that different widgets may have different validation properties. 
+
+*  Each widget type may have its specific validation properties. For example, Input widgets can make use of regex or valid properties to validate user input.
+*  Enabling the **Required** property on a widget within a form ensures the submit button on the form widget remains disabled until the field contains a value.
+*  If the **Regex** or **Valid** properties are used and the input provided doesn't match the specified criteria, the submit button remains disabled until the correct value is entered.
 
 
 ## Using regular expressions
@@ -35,19 +37,12 @@ To validate whether an entered email is correct, use the following regular expre
 
 To get phone number in a specific format or length, you can use the following codes:
 
-*Example 1:* if you want to validate international phone numbers starting with a plus sign (+) and a total length between 6 and 14 digits, use the following code inside the **Regex** property:
+*Example:* if you want to validate international phone numbers starting with a plus sign (+) and a total length between 6 and 14 digits, use the following code inside the **Regex** property:
 
 
 ```js
 //regex
 ^\+(?:[0-9]●?){6,14}[0-9]$
-```
-
-*Example 2:* If you want users to enter a 10-digit phone number, use the following code within the **Valid** property of an Input widget:
-
-```js
-//Valid
-{{Input1.text.length == 10}}
 ```
 
 
@@ -81,6 +76,33 @@ This validation is used to ensure that URLs provided by users for files or image
 (https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?
 ```
 
-#### Date validation
+
+</dd>
+
+
+
+
+## Dynamic validation
+
+Dynamic validation involves real-time validation or validation that adapts to the user's input, providing immediate feedback based on changing conditions or data.
+
+<dd>
+
+
+#### Phone number validation
+
+To get phone number in a specific length, you can use the following codes:
+
+*Example:* If you want users to enter a 10-digit phone number, use the following code within the **Valid** property of an Input widget:
+
+```js
+//Valid
+{{Input1.text.length == 10}}
+```
+
+#### Stock Availability validation
+
+
+
 
 </dd>
