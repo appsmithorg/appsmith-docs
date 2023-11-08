@@ -11,45 +11,21 @@ This page shows you how to display and filter data based on a search text, date 
 - A datasource containing the data to display and filter.
 
 ## Display data
-To bind and display data on the Table widget using one-click binding, follow these steps:
-1. Select the datasource in **Table data** in the property pane of the Table widget.
-2. In **Select table from users**, select a table.
-3. Click **Connect data**.
+To bind and display data on the Table widget, follow these steps:
+1. In the **Table data** property of the widget, select the connected datasource.
+2. In **Select table from {your connected datasource}**, select a table.
+3. Select a column with unique values in **Select a searchable column**.
+   Appsmith auto-generates a query based on the search text for a searchable column after you select it. If you do not select a searchable column, the system searches all columns and filters the data.
+4. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
    
-   The Table widget displays the selected table data.
+   To display data conditionally from different queries, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61e11a42eb0501052b9fab41?_gl=1*mxtef4*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTMyNzAyNi4xNDguMS4xNjk5MzI3NjA3LjAuMC4w).
+5. To rename a column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
+   For more information to customize columns, see [Column](/reference/widgets/table/column-settings).
 
    :::info
    Appsmith automatically generates server-side pagination queries when you use the one-click binding feature to connect data. If you prefer to set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
    :::
-
-4. To display data conditionally from different queries, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61e11a42eb0501052b9fab41?_gl=1*mxtef4*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTMyNzAyNi4xNDguMS4xNjk5MzI3NjA3LjAuMC4w).
-5. To rename a column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
    
-   For more information to customize columns, see [Column](/reference/widgets/table/column-settings).
-6. To reorder the columns, drag and drop the columns in the Table widget's property pane.
-   
-## Sort data
-To sort data in the Table widget, follow these steps:
-1. Create a query and rename it to `sort_data`.
-2. Use the following code to fetch data from the table based on the sorted column, sort order, and page size where `trip_details` is the database table and `trip_details_table` is the Table widget:
-   
-   ```jsx
-   SELECT * FROM 
-    trip_details 
-   ORDER BY 
-    "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
-   LIMIT
-    {{trip_details_table.pageSize}}
-   OFFSET 
-    {{trip_details_table.pageOffset}}
-   ```
-3. In the property pane of the Table widget, enable **Column sorting**.
-4. Set the **onSort** event to run the `sort_data` query using the following code:
-   
-   ```jsx
-   {{sort_data.run()}}
-   ```
-
 ## Hide columns
 To set the visibility of specific columns, follow these steps:
 1. In the Table widget's property pane, click the gear icon ⚙️ beside a column.
@@ -124,8 +100,3 @@ To filter data based on specific criteria using a Select widget, follow these st
    SELECT * FROM trip_details WHERE vehicle_no = {{vehicles.selectedOptionValue}};
    ```
 3. Set the **onOptionChange** event of the Select widget to execute the query.
-
-## See also
-- [Sample app](https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd?_gl=1*bjjhr1*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI2Nzg2MS4xNDYuMS4xNjk5MjY4NTEzLjAuMC4w) to display data in a Table widget using different datasources.
-- [Sample app](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918?_gl=1*bjjhr1*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI2Nzg2MS4xNDYuMS4xNjk5MjY4NTEzLjAuMC4w) to control column visibility. 
-- [Sample app](https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/62c81d4801213a676a34bd35?_gl=1*1bao3r4*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI2Nzg2MS4xNDYuMS4xNjk5MjY4NTEzLjAuMC4w) to create external filters for Table.
