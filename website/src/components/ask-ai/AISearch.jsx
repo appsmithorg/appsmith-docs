@@ -11,7 +11,7 @@ const AISearch = forwardRef((props, ref) => {
     const [isLoading, setIsLoading] = useState(false);
     const [showExamples, setShowExamples] = useState(true);
     const [isModalOpen, setModalState] = useState(true);
-    const [isAnswerComplete, setIsAnswerComplete] = useState(false); // Added state for answer completeness
+    const [isAnswerComplete, setIsAnswerComplete] = useState(false);
     let eventSource;
     const commonSearchQueries = [
         "How to get started with Appsmith?",
