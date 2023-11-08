@@ -1,7 +1,8 @@
-import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useState, useImperativeHandle, forwardRef, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './css/AISearch.css';
 import { FaUser, FaComment } from 'react-icons/fa';
+import FeedbackWidget from '../feedback';
 
 const AISearch = forwardRef((props, ref) => {
     const [inputValue, setInputValue] = useState('');
@@ -10,12 +11,13 @@ const AISearch = forwardRef((props, ref) => {
     const [isLoading, setIsLoading] = useState(false);
     const [showExamples, setShowExamples] = useState(true);
     const [isModalOpen, setModalState] = useState(true);
+    const [isAnswerComplete, setIsAnswerComplete] = useState(false); // Added state for answer completeness
     let eventSource;
     const commonSearchQueries = [
         "How to get started with Appsmith?",
         "How to install Appsmith on Docker?",
         "How to display, filter and search data in a Table?",
-        "How to submit form data?"
+        "How to submit form data"
     ];
 
     const resetState = () => {
@@ -42,6 +44,7 @@ const AISearch = forwardRef((props, ref) => {
         closeModal,
     }));
 
+
     const fetchData = async (query) => {
         setIsLoading(true);
         setAnswer('');
@@ -61,9 +64,10 @@ const AISearch = forwardRef((props, ref) => {
         eventSource.addEventListener('message', (e) => {
             setIsLoading(false);
 
-            if (e.data === "[DONE]") {
+            if (e.data.includes("[DONE]")) {
                 eventSource.close();
                 setInputValue('');
+                setIsAnswerComplete(true);
                 return;
             }
 
@@ -71,7 +75,6 @@ const AISearch = forwardRef((props, ref) => {
             const text = completionResponse.choices[0].text;
 
             setAnswer((prevAnswer) => prevAnswer + text);
-
         });
     };
 
@@ -122,11 +125,10 @@ const AISearch = forwardRef((props, ref) => {
                         <FaUser className='user-icon' /> {searchTerm}
                     </div>
                 )}
-                {answer && (
-                    <div className='search-term-answer'>
-                        <FaComment className='comment-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
-                    </div>
-                )}
+                <div className='search-term-answer'>
+                    <FaComment className='comment-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
+                </div>
+                {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
             </div>
         </div>
     );
