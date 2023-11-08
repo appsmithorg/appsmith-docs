@@ -11,7 +11,7 @@ const AISearch = forwardRef((props, ref) => {
     const [isLoading, setIsLoading] = useState(false);
     const [showExamples, setShowExamples] = useState(true);
     const [isModalOpen, setModalState] = useState(true);
-    const [isAnswerComplete, setIsAnswerComplete] = useState(false);
+    const [isAnswerComplete, setIsAnswerComplete] = useState(false); // Added state for answer completeness
     let eventSource;
     const commonSearchQueries = [
         "How to get started with Appsmith?",
@@ -27,7 +27,6 @@ const AISearch = forwardRef((props, ref) => {
         setIsLoading(false);
         setShowExamples(true);
         setModalState(false);
-        setIsAnswerComplete(false);
     };
 
     const closeModal = () => {
@@ -51,7 +50,6 @@ const AISearch = forwardRef((props, ref) => {
         setAnswer('');
         setSearchTerm(query);
         setShowExamples(false);
-        setIsAnswerComplete(false);
 
         const projectURL = 'https://zxtoyfvpdjilxmpezgde.supabase.co/functions/v1/vector-search';
         const queryURL = `${projectURL}/stream?query=${query}`;
@@ -93,7 +91,6 @@ const AISearch = forwardRef((props, ref) => {
 
     const handleChange = (e) => {
         setInputValue(e.target.value);
-        resetState();
     };
 
     return (
