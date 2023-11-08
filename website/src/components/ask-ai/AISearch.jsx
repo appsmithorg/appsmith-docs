@@ -27,6 +27,7 @@ const AISearch = forwardRef((props, ref) => {
         setIsLoading(false);
         setShowExamples(true);
         setModalState(false);
+        setIsAnswerComplete(false);
     };
 
     const closeModal = () => {
@@ -50,6 +51,7 @@ const AISearch = forwardRef((props, ref) => {
         setAnswer('');
         setSearchTerm(query);
         setShowExamples(false);
+        setIsAnswerComplete(false);
 
         const projectURL = 'https://zxtoyfvpdjilxmpezgde.supabase.co/functions/v1/vector-search';
         const queryURL = `${projectURL}/stream?query=${query}`;
@@ -91,6 +93,7 @@ const AISearch = forwardRef((props, ref) => {
 
     const handleChange = (e) => {
         setInputValue(e.target.value);
+        resetState();
     };
 
     return (

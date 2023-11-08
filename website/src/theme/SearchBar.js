@@ -7,8 +7,8 @@ export default function SearchBarWrapper(props) {
   return (
     <>
       <div className="custom-search-container">
-        <SearchBar {...props} />
         <AISearchButton />
+        <SearchBar {...props} />
       </div>
     </>
   );

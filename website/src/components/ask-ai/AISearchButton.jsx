@@ -29,8 +29,6 @@ class AISearchButton extends Component {
                 <AISearchModal
                     show={this.state.isModalOpen}
                     closeModal={this.toggleModal}
-                    inputValue={this.state.inputValue}
-                    handleInputChange={this.handleInputChange}
                 />
             </div>
         );

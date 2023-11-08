@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import AISearch from '@site/src/components/ask-ai/AISearch';
 import './css/AISearch.css';
 
-const AISearchModal = ({ show, closeModal, inputValue, handleInputChange }) => {
+const AISearchModal = ({ show, closeModal }) => {
     const modalRef = useRef();
     const childRef = useRef();
 
