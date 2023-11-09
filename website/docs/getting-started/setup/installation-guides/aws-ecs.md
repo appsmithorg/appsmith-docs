@@ -3,7 +3,7 @@ description: Deploy Appsmith on the ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
-# AWS ECS for EC2
+# AWS ECS on EC2
 This page provides steps to install Appsmith on a single node EC2 Linux + Networking ECS Cluster using an EC2 instance.
 
 ## Prerequisites
@@ -165,10 +165,6 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 9. Fill in your details to create an administrator account.
 
 10. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
-
-## Install Appsmith Community
-
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
 
 ## Troubleshooting
 

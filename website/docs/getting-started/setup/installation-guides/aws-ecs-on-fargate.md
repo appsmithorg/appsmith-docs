@@ -189,10 +189,6 @@ The `exec` command will be available once the new deployment is active.
     ```
 3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
-## Install Appsmith Community
-
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
-
 ## Troubleshooting
 
 Some common errors that you may face during installation:
