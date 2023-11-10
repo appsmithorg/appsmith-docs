@@ -1,0 +1,36 @@
+name: Build PDF and Upload to OpenAI
+
+on:
+  schedule:
+    - cron: "0 0 * * 6"
+  workflow_dispatch:
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Prince
+        run: |
+          curl https://www.princexml.com/download/prince-14.2-linux-generic-x86_64.tar.gz -O
+          tar zxf prince-14.2-linux-generic-x86_64.tar.gz
+          cd prince-14.2-linux-generic-x86_64
+          yes "" | sudo ./install.sh
+
+      - name: Upload Files to OPEN API
+        id: upload-file-to-open-api
+        run: |
+          uploaded_file_id=$(curl -X POST "https://api.openai.com/v1/files" -H "Authorization: Bearer $OPENAI_API_KEY" -F "file=@prince-14.2-linux-generic-x86_64/pdf/appsmith-docs.pdf" -F "purpose=assistants" | jq -r '.id')
+          echo "::set-output name=uploaded_file_id::$uploaded_file_id"
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+
+      - name: Call Assistance API
+        run: |
+          uploaded_file_id=${{ needs.upload-file-to-open-api.outputs.uploaded_file_id }}
+          curl -X POST "https://api.openai.com/v1/assistants/asst_1hUtuL2Ae5nKP65VH1Od1w3o" -H "Authorization: Bearer $OPENAI_API_KEY" -d '{"file_ids": ["'$uploaded_file_id'"]}'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
