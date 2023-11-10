@@ -84,6 +84,8 @@ SET
 WHERE id = {{Table1.triggeredRow.id}};
 ```
 
+You can refer to the [datasource reference](/connect-data/reference) for specific instructions on setting up update query for your selected datasource.
+
 
 </dd>
 
