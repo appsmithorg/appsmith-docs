@@ -40,7 +40,7 @@ Modal widget remains hidden on the canvas and becomes visible only when an event
 
 3. You can access and edit the Modal widget from the entity explorer.
 
-4. Drag a [Form](/reference/widgets/form) widget within the Modal, and add the required widgets into the Form.
+4. Drag a [Form](/reference/widgets/form) widget within the Modal, and add the required widgets.
 
 5. To display data from the triggered row in the table, connect the data to the widget's property using mustache syntax `{{}}`:
 
