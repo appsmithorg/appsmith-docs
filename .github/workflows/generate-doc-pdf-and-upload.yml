@@ -3,6 +3,7 @@ name: Build PDF and Upload to OpenAI
 on:
   schedule:
     - cron: "0 0 * * 6"
+
   workflow_dispatch:
 
 jobs:
@@ -11,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install Prince
         run: |
@@ -28,7 +29,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
 
-      - name: Call Assistance API
+      - name: Call Assistants API
         run: |
           uploaded_file_id=${{ needs.upload-file-to-open-api.outputs.uploaded_file_id }}
           curl -X POST "https://api.openai.com/v1/assistants/asst_1hUtuL2Ae5nKP65VH1Od1w3o" -H "Authorization: Bearer $OPENAI_API_KEY" -d '{"file_ids": ["'$uploaded_file_id'"]}'
