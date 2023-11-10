@@ -166,7 +166,7 @@ This command updates a **Sheet Row(s)** entity. The following section lists all 
 }}
 ```
 
-See [Update single row](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets#update-single-row) guide
+See [Update single row](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets#update-single-row) guide.
 
 
 </dd>
