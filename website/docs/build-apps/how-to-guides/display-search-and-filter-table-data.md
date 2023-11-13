@@ -74,8 +74,6 @@ To filter data based on a search text, follow these steps:
    
    ```jsx
    async bindSearchData () {
-		//	use async-await or promises
-		//	await storeValue('varName', 'hello world')
 		search_data.run();
 		Table1.setData(search_data.data);
 	}
