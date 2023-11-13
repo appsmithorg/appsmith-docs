@@ -166,6 +166,10 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 10. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
+## Install Appsmith Community
+
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
+
 ## Troubleshooting
 
 Some common errors that you may face during installation:

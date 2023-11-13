@@ -92,6 +92,10 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
 3. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
+## Install Appsmith Community
+ 
+ To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in the [image selection](#select-appsmith-image) step, and then follow the instructions provided on this page.
+
 ## Troubleshooting
 
 Some common errors that you may face during installation:
