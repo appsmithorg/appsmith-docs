@@ -13,7 +13,7 @@ This page shows you how to display and filter data based on a search text, date 
 ## Display data
 To bind and display data on the Table widget, follow these steps:
 1. In the **Table data** property of the widget, select the connected datasource.
-2. In **Select table from {your connected datasource}**, select a table.
+2. In **Select table from [your connected datasource]**, select a table. The specific data source options may vary depending on your configured datasource.
 3. Select a column with unique values in **Select a searchable column**.
    Appsmith auto-generates a query based on the search text for a searchable column after you select it. If you do not select a searchable column, the system searches all columns and filters the data.
 4. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
@@ -63,13 +63,27 @@ To filter data based on a search text, follow these steps:
 2. Create a query to fetch data corresponding to the search text using the following code:
 
    ```jsx
-   SELECT * FROM trip_details WHERE driver_name LIKE '%' || {{search_text.text}} || '%';
+   SELECT * FROM trip_details a WHERE a::text LIKE '%'  || {{search_text.text}} || '%';
    ```
    If you are using a REST API, refer the following example to send the request:
    ```
    https://mock-api.logistics.com/trip_details?driver_name={{search_text.text}}
    ```
-3. Set the [onTextChanged](/reference/widgets/table#onsearchtextchanged) event of the Input widget to run the query.
+3. Drag and drop a [Button](/reference/widgets/button) widget.
+4. Use the following code to bind the search results to the Table widget:
+   
+   ```jsx
+   async bindSearchData () {
+		//	use async-await or promises
+		//	await storeValue('varName', 'hello world')
+		search_data.run();
+		Table1.setData(search_data.data);
+	}
+   ```
+5. Set the [onClick](/reference/widgets/button#onclick) event of the Button widget to execute the function using the following code:
+   ```jsx
+   {{JSObject1.bindSearchData()}}
+   ```
 
 For more information, see this [sample app](https://app.appsmith.com/applications/6548a90af1da8d53d9d538f0/pages/6548a90af1da8d53d9d53902/edit/queries/6548a90af1da8d53d9d53928).
 
@@ -79,7 +93,7 @@ To filter data based on a date range, follow these steps:
 2. Create a query to fetch data using the **selectedDate** reference property of the widgets using the following code where `trip_start_date` and `trip_end_date` are the Date picker widgets:
 
    ```jsx
-   SELECT * FROM trip_details WHERE selected_period > {{trip_start_date.selectedDate}} AND selected_period < {{trip_end_date.selectedDate}} ORDER BY id;
+   SELECT * FROM trip_details a WHERE selected_period BETWEEN SYMMETRIC {{trip_start_date.formattedDate}} AND {{trip_end_date.formattedDate}} ORDER BY id;
    ``` 
    Use either the `formattedDate` or `selectedDate` property based on your preferred date formatting.
    To configure queries for specific datasources, see [Datasources](/connect-data/reference).
@@ -88,7 +102,14 @@ To filter data based on a date range, follow these steps:
    When using an API that returns the date in a different format, use [Moment](https://momentjs.com/docs/) to format it. 
    For examples, see [moment](/core-concepts/writing-code/ext-libraries#moment).
    :::
-3. Set the [onDateSelected](/reference/widgets/datepicker#ondateselected) event of the Date picker widgets to execute the query.
+3. Set the [onDateSelected](/reference/widgets/datepicker#ondateselected) event of the Date picker widgets to execute the query using the following code:
+   ```jsx
+   async filterByDate () {
+		filter_by_date.run();
+		Table1.setData(filter_by_date.data);
+	}
+   ```
+
    The table data automatically updates to reflect the data from the selected date range when you select dates from `trip_start_date` or `trip_end_date`.
 
 ## Filter data for specific value
