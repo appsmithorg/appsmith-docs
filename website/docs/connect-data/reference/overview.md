@@ -1,10 +1,5 @@
 # Reference
 
-Technical descriptions and information about widgets and app settings.
-
-
-
-
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
@@ -19,5 +14,3 @@ Technical descriptions and information about widgets and app settings.
         <div class="containerDescription">This page is a reference guide that provides a description of all the settings available for configuring your queries. </div>
     </div>
 </div>
-
-

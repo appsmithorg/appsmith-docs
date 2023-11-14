@@ -21,12 +21,8 @@ Appsmith stores the last response from a query execution within the query object
 Appsmith's framework is inherently reactive, which means that changes in the state of any entity like widgets, queries, or JSObjects automatically trigger updates throughout the application. This reactivity eliminates the need for imperative command sequences to keep the user interface in sync with the application's state.
 Developers can describe the desired state of a widget through expressions that reference other entities in the application. For example, to hide or show a widget based on the existence of a selected row in a table, one might use:
 
-```javascript
-{
-  {
-    Table1.selectedRow !== undefined;
-  }
-}
+```
+{{  Table1.selectedRow !== undefined }}
 ```
 
 This reactive binding ensures that the visibility of the widget is automatically managed by Appsmith, without needing to write explicit event handlers or rely on callback functions which can be quite difficult to maintain.

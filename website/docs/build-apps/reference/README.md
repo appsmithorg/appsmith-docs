@@ -1,12 +1,6 @@
-
 import DocCardList from '@theme/DocCardList';
 
 # Reference
-
-Technical descriptions and information about widgets and app settings.
-
-
-
 
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
@@ -22,5 +16,3 @@ Technical descriptions and information about widgets and app settings.
         <div class="containerDescription">Theme allows you to style your pages and widgets using global controls, making it easy to change the visual layout with a single click. </div>
     </div>
 </div>
-
-

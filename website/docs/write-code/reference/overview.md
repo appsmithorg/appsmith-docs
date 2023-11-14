@@ -1,10 +1,5 @@
 # Reference
 
-Technical descriptions and information about widgets and app settings.
-
-
-
-
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
@@ -20,7 +15,6 @@ Technical descriptions and information about widgets and app settings.
     </div>
 </div>
 
-
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
@@ -35,7 +29,6 @@ Technical descriptions and information about widgets and app settings.
         <div class="containerDescription">The Fetch API provides an interface for executing network calls programmatically. You can use fetch() to programmatically configure and execute a REST API. </div>
     </div>
 </div>
-
 
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">

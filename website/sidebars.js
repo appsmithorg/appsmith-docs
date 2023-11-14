@@ -522,7 +522,6 @@ const sidebars = {
             },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
 
       ],
     }, //Reference End
