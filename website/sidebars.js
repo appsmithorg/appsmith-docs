@@ -464,8 +464,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-            'core-concepts/writing-code/javascript-editor-beta/README',
-            'write-code/how-to-guides/display-data-from-functions',
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
             `core-concepts/writing-code/workflows`,
@@ -518,6 +516,7 @@ const sidebars = {
 
               ]
             },
+            'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
 

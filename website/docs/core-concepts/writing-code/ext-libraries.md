@@ -24,7 +24,7 @@ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 
 ### Library compatibility
 
-Appsmith only supports libraries that have **[UMD](https://github.com/umdjs/umd)** builds. If a library supports the UMD build format, the source code of a library’s index file should conform to this [basic pattern](https://github.com/umdjs/umd/blob/master/templates/commonjsStrict.js). The index file for most compatible libraries can be found under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
+Appsmith only supports libraries that have **[UMD](https://github.com/umdjs/umd)** builds. The index file for most compatible libraries can be found under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
 
 ✅ Valid URL: `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
 
@@ -43,11 +43,11 @@ Appsmith also does not support libraries
   - setImmediate
   - navigator
 
-### Using external libraries
+### Accessing installed libraries
 
 External libraries once installed can be accessed as an object anywhere you can write Javascript in Appsmith. For information about the signature of the JavaScript libraries, see their official documentation.
 
-#### ExcelJS Example
+#### Example
 
 You can install excelJS library using this URL
 

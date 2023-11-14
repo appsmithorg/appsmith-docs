@@ -35,7 +35,7 @@ import DocCardList from '@theme/DocCardList';
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/core-concepts/writing-code/ext-libraries"><strong>Install external JS libraries</strong></a>
+            <a href="/core-concepts/writing-code/ext-libraries"><strong>Install External JS libraries</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows hwo to install external libraries for additional data manipulation or transformation capabilities.</div>
     </div>
