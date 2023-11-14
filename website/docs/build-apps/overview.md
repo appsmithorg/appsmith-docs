@@ -16,13 +16,13 @@ Queries function as 'controllers', shaping the flow of data between views and mo
 
 Appsmith stores the last response from a query execution within the query object's data property, thus bringing the server data models to the client as application state and making them accessible to the widgets (views).
 
-## Reactive Bindings
+### Reactive Bindings
 
 Appsmith's framework is inherently reactive, which means that changes in the state of any entity like widgets, queries, or JSObjects automatically trigger updates throughout the application. This reactivity eliminates the need for imperative command sequences to keep the user interface in sync with the application's state.
 Developers can describe the desired state of a widget through expressions that reference other entities in the application. For example, to hide or show a widget based on the existence of a selected row in a table, one might use:
 
 ```javascript
-isVisible: {
+{
   {
     Table1.selectedRow !== undefined;
   }
@@ -31,7 +31,7 @@ isVisible: {
 
 This reactive binding ensures that the visibility of the widget is automatically managed by Appsmith, without needing to write explicit event handlers or rely on callback functions which can be quite difficult to maintain.
 
-# Data Flows in Appsmith
+## Data Flows in Appsmith
 
 Most applications are a combination of read or write data flows.
 

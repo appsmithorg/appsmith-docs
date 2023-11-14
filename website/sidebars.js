@@ -488,9 +488,9 @@ const sidebars = {
           label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
+            'reference/appsmith-framework/query-object',
             'reference/appsmith-framework/context-object',
             'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
           ],
         },
             {
