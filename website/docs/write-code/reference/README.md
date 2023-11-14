@@ -39,9 +39,9 @@ To know more about the objects and functions, refer to the resources below:
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/write-code/reference/Built-in-JS-Libraries"><strong>Built-in JS Libraries</strong></a>
+            <a href="/write-code/reference/Built-in-JS-Libraries"><strong>JS Libraries</strong></a>
         </div> <hr/>
-        <div class="containerDescription">Built-in JavaScript libraries provide a comprehensive array of capabilities for common tasks such as data manipulation, numeric operations, date and time handling, and more. </div>
+        <div class="containerDescription">JavaScript libraries provide a comprehensive array of capabilities for common tasks such as data manipulation, numeric operations, date and time handling, and more. </div>
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">

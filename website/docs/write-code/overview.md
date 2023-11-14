@@ -90,7 +90,7 @@ Remember that while Appsmith provides significant power and flexibility for writ
       </div> 
       <b><a href="/write-code/how-to-guides">How-to Guides</a></b>
       <div class="containerDescription">
-      Directions and step-by-step guides covering key operations and common tasks.
+         Directions and step-by-step guides covering key operations and common tasks.
       </div>
    </div>
 
