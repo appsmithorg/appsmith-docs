@@ -2,31 +2,66 @@
 description: This page shows you how to display, search, and filter data in a Table widget. 
 ---
 
-# Display and Filter Data in Table Widget
+# Display and Lookup Data in Table Widget
 
 This page shows you how to display and filter data based on a search text, date range, or specific criteria.
 
 ## Prerequisites
-- A [Table widget](/reference/widgets/table).
-- A datasource containing the data to display and filter.
+- A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
 
 ## Display data
-To bind and display data on the Table widget, follow these steps:
-1. In the **Table data** property of the widget, select the connected datasource.
-2. In **Select table from [your connected datasource]**, select a table. The specific data source options may vary depending on your configured datasource.
-3. Select a column with unique values in **Select a searchable column**.
-   Appsmith auto-generates a query based on the search text for a searchable column after you select it. If you do not select a searchable column, the system searches all columns and filters the data.
-4. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
+You can display data in a Table widget in the following ways:
+- [Mustache binding](#mustache-binding)
+- [One-click binding](#one-click-binding)
+
+### Mustache binding
+To bind and display data on the Table widget using mustache binding, follow these steps:
+1. Drag and drop a [Table](/reference/widgets/table) widget.
+2. Create a new query to fetch data from the datasource and rename it to `fetch_trip_details`.
+   This topic uses the example of a PostgreSQL datasource to fetch data.
+
+   ```sql
+   SELECT * FROM trip_details
+   ```
+3. Click the **JS** button in the **Table data** property of the Table widget's property pane.
+4. Paste the following code to display the data from the `fetch_trip_details` query:
    
-   To display data conditionally from different queries, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61e11a42eb0501052b9fab41?_gl=1*mxtef4*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTMyNzAyNi4xNDguMS4xNjk5MzI3NjA3LjAuMC4w).
-5. To rename a column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
+   ```jsx
+   {{fetch_trip_details.data}}
+   ```
+
+For more information, see this [sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364?_gl=1*86f7ph*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTk0MjAzMi4xNTUuMS4xNjk5OTQzNjY2LjAuMC4w).
+
+### One-click binding
+To bind and display data on the Table widget using one-click binding, follow these steps:
+1. Drag and drop a [Table](/reference/widgets/table) widget.
+2. In the **Table data** property of the widget, select the connected datasource.
+3. In **Select table from [your connected datasource]**, select a table. The specific data source options may vary depending on your configured datasource.
+4. Select a column with unique values in **Select a searchable column**.
+   Appsmith auto-generates a query based on the search text for a searchable column after you select it. If you do not select a searchable column, the system searches all columns and filters the data.
+   Here is an example of an auto-generated query:
+
+   ```sql
+   SELECT * FROM trip_details
+   WHERE
+   "driver_name" ilike '%{{Table1.searchText}}%'
+   ORDER BY
+   "{{Table1.sortOrder.column || 'id'}}" {{Table1.sortOrder.order !== "desc" ? "" : "DESC"}}
+   LIMIT
+   {{Table1.pageSize}}
+   OFFSET
+   {{Table1.pageOffset}}
+   ```
+5. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
+6. Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. If you prefer to set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+   
+### Customize columns
+1. Drag and drop the columns to rearrange the order.
+2. To customize each column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
+3. You can select the **Column type**, set the **Computed value**, **Visible** property and other properties.
    For more information to customize columns, see [Column](/reference/widgets/table/column-settings).
 
-   :::info
-   Appsmith automatically generates server-side pagination queries when you use the one-click binding feature to connect data. If you prefer to set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
-   :::
-   
-## Hide columns
+### Hide columns
 To set the visibility of specific columns, follow these steps:
 1. In the Table widget's property pane, click the gear icon ⚙️ beside a column.
 2. Disable the **Visible** property of a column to hide the column.
@@ -45,7 +80,7 @@ To set the visibility of specific columns, follow these steps:
    ```
 For more information, see this [sample app](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918?_gl=1*bn3bvw*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjUzMzM3LjAuMC4w).
 
-## Format cells
+### Format cells
 To format cells of the table, follow these steps:
 1. Select **Editable** in the Table widget's property pane. This lets you update the data directly from the UI by double-clicking on the desired cell.
 
@@ -119,3 +154,30 @@ To filter data based on specific criteria using a Select widget, follow these st
    SELECT * FROM trip_details WHERE vehicle_no = {{vehicles.selectedOptionValue}};
    ```
 3. Set the **onOptionChange** event of the Select widget to execute the query.
+
+## Sort data
+To sort data in the Table widget, follow these steps:
+1. Create a query and rename it to `sort_data`.
+2. Use the following code to fetch data from the table based on the sorted column, sort order, and page size where `trip_details` is the database table and `trip_details_table` is the Table widget:
+
+   ```jsx
+   SELECT * FROM 
+    trip_details 
+   ORDER BY 
+    "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
+   LIMIT
+    {{trip_details_table.pageSize}}
+   OFFSET 
+    {{trip_details_table.pageOffset}}
+   ```
+3. In the property pane of the Table widget, enable **Column sorting**.
+4. Set the **onSort** event to run the `sort_data` query using the following code:
+
+   ```jsx
+   {{sort_data.run()}}
+   ```
+
+## See also
+- [Sample apps](https://docs.appsmith.com/learning-and-resources/sample-apps)
+- [Set up Table Inline Editing](/reference/widgets/table/inline-editing)
+- [Refresh Table Data After Updates](/build-apps/how-to-guides/Refresh-table-data)
