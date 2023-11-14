@@ -1,9 +1,8 @@
-# Use External JS Libraries 
+# Install External JS Libraries
 
 The Appsmith platform includes built-in JavaScript utility libraries, which can be used to work with data within `{{ }}` bindings or within JSObjects. You can also install and use other custom libraries to manipulate or transform data. These external libraries provide additional methods to help you build complex applications and business logic.
 
  <VideoEmbed host="youtube" videoId="xXssLXQvdyY" title="How To Use Custom JavaScript Libraries" caption="How To Use JavaScript Libraries"/>
-
 
 ## Custom JavaScript Libraries
 
@@ -108,10 +107,9 @@ createWorkbook: async () => {
 
 You may not be able to install or use methods of certain libraries due to platform limitations:
 
-* [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) access: Libraries that try to manipulate document objects won’t work. Example: https://d3js.org/
-* [XHR](https://developer.mozilla.org/en-US/docs/Glossary/XMLHttpRequest): Libraries that only rely on XHR won’t work.
-* Other APIs: Library methods that use the following APIs under the hood won’t work: [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval), [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval), [setImmediate](https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate), [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator).
-
+- [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction) access: Libraries that try to manipulate document objects won’t work. Example: https://d3js.org/
+- [XHR](https://developer.mozilla.org/en-US/docs/Glossary/XMLHttpRequest): Libraries that only rely on XHR won’t work.
+- Other APIs: Library methods that use the following APIs under the hood won’t work: [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/setInterval), [clearInterval](https://developer.mozilla.org/en-US/docs/Web/API/clearInterval), [setImmediate](https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate), [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) and [Navigator](https://developer.mozilla.org/en-US/docs/Web/API/Navigator).
 
 ### Troubleshooting
 

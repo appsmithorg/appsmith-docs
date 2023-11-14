@@ -464,8 +464,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-
-            'core-concepts/writing-code/README',
             'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/how-to-guides/display-data-from-functions',
             'core-concepts/writing-code/javascript-promises',
