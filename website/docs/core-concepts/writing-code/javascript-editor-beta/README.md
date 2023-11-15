@@ -1,10 +1,10 @@
-# JSObjects
+# JS Objects
 
-JSObjects in Appsmith are powerful tools that enable developers to encapsulate JavaScript code, including functions and variables, to enhance the functionality of their applications. They serve the purpose of segregating business logic, performing complex data manipulations, and interacting seamlessly with Appsmith's widgets and backend services. This updated document will provide a detailed understanding of JSObjects in Appsmith, focusing on the aspect of exporting a single default object and the behavior of variables within it.
+JS Objects in Appsmith are powerful tools that enable developers to encapsulate JavaScript code, including functions and variables, to enhance the capability of their applications. They serve the purpose of segregating business logic, performing complex data manipulations, and interacting seamlessly with Appsmith's widgets and backend services. This updated document will provide a detailed understanding of JSObjects in Appsmith, focusing on the aspect of exporting a single default object and the behavior of variables within it.
 
-## Defining a JSObject
+## Defining a JS Object
 
-To define a JSObject in Appsmith, you create a JavaScript module that contains an object which exports specific functions and variables. It's important to note that a JSObject can only export one default object. Here's the general structure of a JSObject:
+To define a JS Object in Appsmith, you create a JavaScript module that contains an object that exports specific functions and variables. It's important to note that a JS Object can only export one default object. Here's the general structure of a JS Object:
 
 ```javascript
 export default {
@@ -14,11 +14,11 @@ export default {
 
 Within this default object, you can define all your reusable code and state that can be accessed throughout the application.
 
-## Functions in JSObjects
+## Functions in JS Objects
 
 JSObjects can contain different types of function definitions.
 
-### Arrow Function Example
+### Arrow function example
 
 ```javascript
 export default {
@@ -26,7 +26,7 @@ export default {
 };
 ```
 
-### Traditional Function Syntax
+### Traditional function syntax
 
 ```javascript
 export default {
@@ -36,7 +36,7 @@ export default {
 };
 ```
 
-### ES6 Function Syntax
+### ES6 function syntax
 
 ```javascript
 export default {
@@ -46,7 +46,7 @@ export default {
 };
 ```
 
-## Variables in JSObjects
+## Variables in JS Objects
 
 Variables declared in a JSObject are assigned by value. This means that if you assign a changeable object or a primitive value to a variable within the JSObject, it will not automatically update if the original source changes. To update a variable in the object, you must explicitly re-assign it.
 

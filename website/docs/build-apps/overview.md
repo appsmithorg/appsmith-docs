@@ -16,7 +16,7 @@ Queries function as 'controllers', shaping the flow of data between views and mo
 
 Appsmith stores the last response from a query execution within the query object's data property, thus bringing the server data models to the client as application state and making them accessible to the widgets (views).
 
-### Reactive Bindings
+### Reactive bindings
 
 Appsmith's framework is inherently reactive, which means that changes in the state of any entity like widgets, queries, or JSObjects automatically trigger updates throughout the application. This reactivity eliminates the need for imperative command sequences to keep the user interface in sync with the application's state.
 Developers can describe the desired state of a widget through expressions that reference other entities in the application. For example, to hide or show a widget based on the existence of a selected row in a table, one might use:
@@ -27,12 +27,12 @@ Developers can describe the desired state of a widget through expressions that r
 
 This reactive binding ensures that the visibility of the widget is automatically managed by Appsmith, without needing to write explicit event handlers or rely on callback functions which can be quite difficult to maintain.
 
-## Data Flows in Appsmith
+## Data flows in Appsmith
 
 Most applications are a combination of read or write data flows.
 
 - ** Read data flows (Model -> Controller -> View) **: Data from a datasource (server data model) is fetched and transformed using a query & javascript (controller) and displayed on a widget like a table (view).
-- ** Write data flows (View -> Controller -> Model) **: Data captured from a widget like a form (view) is validated, sanitied and sent using a query & javascript (controller) to update a datasource (server data model).
+- ** Write data flows (View -> Controller -> Model) **: Data captured from a widget like a form (view) is validated, sanitised and sent using a query & javascript (controller) to update a datasource (server data model).
 
 Mastering these data flows allows developers to create applications that can seamlessly read and write data, creating a dynamic and reactive user experience. Understanding and utilizing these patterns is the key to efficiently build robust applications with Appsmith.
 
