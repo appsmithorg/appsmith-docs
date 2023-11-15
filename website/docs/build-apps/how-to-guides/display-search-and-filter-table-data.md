@@ -4,7 +4,7 @@ description: This page shows you how to display, search, and filter data in a Ta
 
 # Display and Lookup Data in Table Widget
 
-This page shows you how to display and filter data based on a search text, date range, or specific criteria.
+This page shows you how to display and lookup data based on a search text, date range, or specific criteria.
 
 ## Prerequisites
 - A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
