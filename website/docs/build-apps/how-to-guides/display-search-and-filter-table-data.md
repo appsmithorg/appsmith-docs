@@ -23,14 +23,14 @@ To bind and display data on the Table widget using mustache binding, follow thes
    ```sql
    SELECT * FROM trip_details
    ```
-3. Click the **JS** button in the **Table data** property of the Table widget's property pane.
+3. Click **JS** in the **Table data** property of the Table widget's property pane.
 4. Paste the following code to display the data from the `fetch_trip_details` query:
    
    ```jsx
    {{fetch_trip_details.data}}
    ```
-
-For more information, see this [sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364?_gl=1*86f7ph*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTk0MjAzMi4xNTUuMS4xNjk5OTQzNjY2LjAuMC4w).
+For more information, see [Write Code in Appsmith](/core-concepts/writing-code).
+For an example to display data, see this [sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364?_gl=1*86f7ph*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTk0MjAzMi4xNTUuMS4xNjk5OTQzNjY2LjAuMC4w).
 
 ### One-click binding
 To bind and display data on the Table widget using one-click binding, follow these steps:
@@ -39,21 +39,22 @@ To bind and display data on the Table widget using one-click binding, follow the
 3. In **Select table from [your connected datasource]**, select a table. The specific data source options may vary depending on your configured datasource.
 4. Select a column with unique values in **Select a searchable column**.
    Appsmith auto-generates a query based on the search text for a searchable column after you select it. If you do not select a searchable column, the system searches all columns and filters the data.
+
    Here is an example of an auto-generated query:
 
    ```sql
    SELECT * FROM trip_details
    WHERE
-   "driver_name" ilike '%{{Table1.searchText}}%'
+   "driver_name" ilike '%{{trip_details_table.searchText}}%'
    ORDER BY
-   "{{Table1.sortOrder.column || 'id'}}" {{Table1.sortOrder.order !== "desc" ? "" : "DESC"}}
+   "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
    LIMIT
-   {{Table1.pageSize}}
+   {{trip_details_table.pageSize}}
    OFFSET
-   {{Table1.pageOffset}}
+   {{trip_details_table.pageOffset}}
    ```
+   Where `trip_details_table.pageSize` is the pagination limit for the table and `trip_details_table.pageOffset` is the pagination offset. For more information, see [Reference properties](/reference/widgets/table#reference-properties).
 5. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
-6. Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. If you prefer to set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
    
 ### Customize columns
 1. Drag and drop the columns to rearrange the order.
@@ -61,7 +62,7 @@ To bind and display data on the Table widget using one-click binding, follow the
 3. You can select the **Column type**, set the **Computed value**, **Visible** property and other properties.
    For more information to customize columns, see [Column](/reference/widgets/table/column-settings).
 
-### Hide columns
+### Hide table columns
 To set the visibility of specific columns, follow these steps:
 1. In the Table widget's property pane, click the gear icon ⚙️ beside a column.
 2. Disable the **Visible** property of a column to hide the column.
@@ -80,7 +81,7 @@ To set the visibility of specific columns, follow these steps:
    ```
 For more information, see this [sample app](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918?_gl=1*bn3bvw*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjUzMzM3LjAuMC4w).
 
-### Format cells
+### Format table cells
 To format cells of the table, follow these steps:
 1. Select **Editable** in the Table widget's property pane. This lets you update the data directly from the UI by double-clicking on the desired cell.
 
@@ -92,7 +93,24 @@ To format cells of the table, follow these steps:
 
 For more information, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8?_gl=1*189op77*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjU1OTMyLjAuMC4w).
 
-## Filter data using search text
+## Server side pagination
+Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. 
+Here is an example of an auto-generated query with `pageSize` and `pageOffset`:
+
+```sql
+SELECT * FROM trip_details
+ORDER BY
+  "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{trip_details_table.pageSize}}
+OFFSET
+  {{trip_details_table.pageOffset}}
+```
+To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+
+## Filter table data 
+
+### Using search text
 To filter data based on a search text, follow these steps:
 1. Drag and drop an [Input](/reference/widgets/input) widget and rename it to `search_text`.
 2. Create a query to fetch data corresponding to the search text using the following code:
@@ -110,7 +128,7 @@ To filter data based on a search text, follow these steps:
    ```jsx
    async bindSearchData () {
 		search_data.run();
-		Table1.setData(search_data.data);
+		trip_details_table.setData(search_data.data);
 	}
    ```
 5. Set the [onClick](/reference/widgets/button#onclick) event of the Button widget to execute the function using the following code:
@@ -120,7 +138,7 @@ To filter data based on a search text, follow these steps:
 
 For more information, see this [sample app](https://app.appsmith.com/applications/6548a90af1da8d53d9d538f0/pages/6548a90af1da8d53d9d53902/edit/queries/6548a90af1da8d53d9d53928).
 
-## Filter data for date range
+### Using date range
 To filter data based on a date range, follow these steps:
 1. Drag and drop two [Date picker](/reference/widgets/datepicker) widgets.
 2. Create a query to fetch data using the **selectedDate** reference property of the widgets using the following code where `trip_start_date` and `trip_end_date` are the Date picker widgets:
@@ -139,21 +157,40 @@ To filter data based on a date range, follow these steps:
    ```jsx
    async filterByDate () {
 		filter_by_date.run();
-		Table1.setData(filter_by_date.data);
+		trip_details_table.setData(filter_by_date.data);
 	}
    ```
 
    The table data automatically updates to reflect the data from the selected date range when you select dates from `trip_start_date` or `trip_end_date`.
 
-## Filter data for specific value
+### Using list option
 To filter data based on specific criteria using a Select widget, follow these steps:
 1. Drag and drop a [Select](/reference/widgets/select) widget.
-2. Create a query to fetch data using the **selectedOptionValue** reference property of the widget using the following code:
+2. Create a query to populate the Select widget with the values you wish to filter by. For example, to populate all the vehicle numbers in the widget, use the following code:
+   
+   ```sql
+   SELECT DISTINCT vehicle_no FROM trip_details;
+   ```
+3. Create a query named `fetch_vehicle_details` to fetch data using the **selectedOptionValue** reference property of the widget using the following code where `vehicles` is the name of the Select widget:
    
    ```jsx
-   SELECT * FROM trip_details WHERE vehicle_no = {{vehicles.selectedOptionValue}};
+   SELECT * FROM trip_details WHERE ILIKE {{ "%" + vehicles.selectedOptionValue + "%"}};
    ```
-3. Set the **onOptionChange** event of the Select widget to execute the query.
+4. Add a JS object to execute the `fetch_vehicle_details` query and bind the data to the Table widget using the following code:
+   
+   ```jsx
+   async filter_data () {
+		fetch_vehicle_details.run();
+		trip_details_table.setData(fetch_vehicle_details.data);
+
+	}
+   ```
+5. Set the **onOptionChange** event of the Select widget to execute the JS object using the following code:
+6. 
+   ```jsx
+   {{JSObject1.filter_data();}}
+   ```
+7. Set the **Default selected value** of the Select widget to set a default value and load the data corresponding to the default value. For more information, see [Default selected value](/reference/widgets/select#default-selected-value-string).
 
 ## Sort data
 To sort data in the Table widget, follow these steps:
