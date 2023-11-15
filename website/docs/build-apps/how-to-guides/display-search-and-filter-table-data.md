@@ -60,7 +60,7 @@ To bind and display data on the Table widget using one-click binding, follow the
 1. Drag and drop the columns to rearrange the order.
 2. To customize each column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
 3. You can select the **Column type**, set the **Computed value**, **Visible** property and other properties.
-   For more information to customize columns, see [Column](/reference/widgets/table/column-settings).
+   For more information on customizing columns, see [Column](/reference/widgets/table/column-settings).
 
 ### Hide table columns
 To set the visibility of specific columns, follow these steps:
