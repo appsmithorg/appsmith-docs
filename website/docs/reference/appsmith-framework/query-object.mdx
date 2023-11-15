@@ -1,14 +1,14 @@
 ---
 sidebar_position: 3
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
 
 # query
 
 The `query` object contains the parameters required to run queries and access the query data.
-
 
 ## Properties
 
@@ -18,11 +18,12 @@ The query object has the following properties that you can use to reference the 
 
 <dd>
 
-`data` is a read-only property that contains the response body from the last successful execution of this query. 
+`data` is a read-only property that contains the response body from the last successful execution of this query.
 
 ```
 {{Query1.data}}
 ```
+
 If this property is referenced in a widget's property field, the query is automatically run on page load. You can manually enable a query to run on page load from the [query settings](/connect-data/reference/query-settings).
 
 </dd>
@@ -39,7 +40,6 @@ The `responseMeta` object contains details about the response, such as the statu
 
 </dd>
 
-
 ## Methods
 
 Query object has the following methods that enable you to run a query or clear a query response.
@@ -48,26 +48,25 @@ Query object has the following methods that enable you to run a query or clear a
 
 <dd>
 
-When you call the `run()` function of a query, it executes the query. 
+When you call the `run()` function of a query, it executes the query.
 
 #### Signature
 
 ```
-run(params: Object): Promise
+run(params: Object): Promise<data>
 ```
 
-| Argument      | Description                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| **params**    | An object containing key-value pairs to pass into the query. You can access it using the key - `{{ this.params.KEY_NAME }}`. |
+| Argument   | Description                                                                                                                  |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **params** | An object containing key-value pairs to pass into the query. You can access it using the key - `{{ this.params.KEY_NAME }}`. |
 
-
-`run()` is an asynchronous function and it returns a promise. This asynchronous nature allows you to handle sequential asynchronous actions using `.then()` and `.catch()` methods or the `async/await` syntax. It can't be used in [synchronous fields](/core-concepts/writing-code/workflows#display-data-from-async-js-function).
+`run()` is an asynchronous function that returns a promise and thus sequential code may not have the updated response of the query. Sequential code can be executed using the `.then()` and `.catch()` methods or the `async/await` syntax. The run function can't be invoked inside widget data properties but can be invoked from event handlers such as onClick.
 
 ```javascript
 // Using promise syntax to chain actions in sequence
 {{
     Query1.run(params)
-        .then(() => {...}) // run after the query is successful
+        .then((response) => {...}) // run after the query is successful
         .catch(() => {...}) // run if the query encounters any errors
 }}
 ```
@@ -76,14 +75,13 @@ In certain scenarios, such as when running a query inside a loop, it may be nece
 
 </dd>
 
-
 ### query.clear()
 
 <dd>
 
 This function clears all data from the query's `data` property.
 
-``` 
+```
 {{Query1.clear()}}
 ```
 

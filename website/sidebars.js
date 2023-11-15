@@ -464,10 +464,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-
-            'core-concepts/writing-code/README',
-            'core-concepts/writing-code/javascript-editor-beta/README',
-            'write-code/how-to-guides/display-data-from-functions',
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
             `core-concepts/writing-code/workflows`,
@@ -488,9 +484,9 @@ const sidebars = {
           label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
+            'reference/appsmith-framework/query-object',
             'reference/appsmith-framework/context-object',
             'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
           ],
         },
             {
@@ -520,9 +516,9 @@ const sidebars = {
 
               ]
             },
+            'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
 
       ],
     }, //Reference End
