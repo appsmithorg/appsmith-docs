@@ -4,7 +4,7 @@ description: This page shows you how to display, search, and filter data in a Ta
 
 # Display and Lookup Data in Table Widget
 
-This page shows you how to display and lookup data based on a search text, date range, or specific criteria.
+This page shows you how to display and lookup data based on a search text, date range, or list option.
 
 ## Prerequisites
 - A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
@@ -83,7 +83,7 @@ For more information, see this [sample app](https://app.appsmith.com/app/table-w
 
 ### Format table cells
 To format cells of the table, follow these steps:
-1. Select **Editable** in the Table widget's property pane. This lets you update the data directly from the UI by double-clicking on the desired cell.
+1. Select **Editable** in the Table widget's property pane. This lets you update the data directly from the UI by double clicking on the desired cell.
 
    For example, use the following code to set the background color of a cell:
    ```jsx
@@ -93,7 +93,7 @@ To format cells of the table, follow these steps:
 
 For more information, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8?_gl=1*189op77*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjU1OTMyLjAuMC4w).
 
-## Server side pagination
+## Server-side pagination
 Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. 
 Here is an example of an auto-generated query with `pageSize` and `pageOffset`:
 
@@ -118,7 +118,7 @@ To filter data based on a search text, follow these steps:
    ```jsx
    SELECT * FROM trip_details a WHERE a::text LIKE '%'  || {{search_text.text}} || '%';
    ```
-   If you are using a REST API, refer the following example to send the request:
+   If you are using a REST API, refer to the following example to send the request:
    ```
    https://mock-api.logistics.com/trip_details?driver_name={{search_text.text}}
    ```
