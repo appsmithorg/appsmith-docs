@@ -1117,6 +1117,10 @@
     {
       "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
       "destination": "/getting-started/setup/upgrade-from-community-edition/kubernetes"
+    },
+    {
+      "source": "/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings",
+      "destination": "/core-concepts/writing-code/javascript-editor-beta"
     }
   ]
 }
