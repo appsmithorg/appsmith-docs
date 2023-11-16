@@ -322,8 +322,6 @@ const sidebars = {
             'connect-data/concepts/dynamic-binding-in-queries',
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
-            'connect-data/concepts/how-to-use-prepared-statements',
-            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
       ]
