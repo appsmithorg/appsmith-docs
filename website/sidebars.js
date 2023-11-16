@@ -515,7 +515,6 @@ const sidebars = {
 
               ]
             },
-            'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
 
@@ -525,7 +524,12 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'write-code/concepts/overview',
+      },
       items: [
+        'write-code/concepts/JSObjects',
         'write-code/concepts/execute-onpageload',
       ],
     }
