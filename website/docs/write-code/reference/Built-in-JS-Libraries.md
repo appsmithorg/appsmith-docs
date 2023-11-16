@@ -2,7 +2,7 @@
 
 JavaScript libraries simplify common tasks such as data manipulation, date handling, and more. These libraries can be accessed using their imported names inside Appsmith.
 
-## Built-in JS libraries
+## Built-in JS Libraries
 
 Appsmith provides the following built-in JavaScript libraries that can be utilized in your applications.
 
@@ -56,6 +56,6 @@ export default {
 
 </dd>
 
-## External JS libraries
+## External JS Libraries
 
 You can also [follow this guide](core-concepts/writing-code/ext-libraries) to install external javascript libraries that are not loaded by default into your application.

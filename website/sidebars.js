@@ -323,8 +323,6 @@ const sidebars = {
             'connect-data/concepts/dynamic-binding-in-queries',
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
-            'connect-data/concepts/how-to-use-prepared-statements',
-            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
       ]
@@ -478,18 +476,17 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
-          items: [
-             {
+          items: [{
           type: 'category',
           collapsed: true,
           label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
-            'reference/appsmith-framework/query-object',
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-          ],
-        },
+              'reference/appsmith-framework/query-object',
+              'reference/appsmith-framework/context-object',
+              'reference/appsmith-framework/console-object',
+            ],
+          },
             {
               type: 'category',
               label: 'Global Functions',
@@ -517,12 +514,24 @@ const sidebars = {
 
               ]
             },
-            'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
 
       ],
     }, //Reference End
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'write-code/concepts/overview',
+      },
+      items: [
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/concepts/execute-onpageload',
+      ],
+    }
       ]
     }, //CODE end
 

@@ -101,4 +101,18 @@ Remember that while Appsmith provides significant power and flexibility for writ
       <div class="containerDescription"> Technical descriptions and information about framework and libraries.
       </div>
    </div>
+   
+</div>
+<div class="containerGridSampleApp">
+   <div class="containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+      </div> 
+      <b><a href="/write-code/concepts/overview">Concepts</a></b>
+      <div class="containerDescription">
+         Explanation of the Appsmith framework
+      </div>
+   </div>
+
+   <div class=" columnGrid column-two"/>
+   
 </div>
