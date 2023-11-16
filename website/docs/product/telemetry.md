@@ -8,7 +8,7 @@ Telemetry in Appsmith refers to the collection of data about how users interact 
 Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools. All data captured from a self hosted instance is completely anonymised.
 :::
 
-### Appsmith Server
+### Appsmith server
 
 The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors & captures anonymous usage data around which plugins are being used.
 
@@ -55,7 +55,7 @@ The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is
 }
 ```
 
-### Appsmith Client
+### Appsmith client
 
 The client captures anonymous behavioral data around navigation and clicks.
 
@@ -93,7 +93,7 @@ The client captures anonymous behavioral data around navigation and clicks.
 }
 ```
 
-## Disable Telemetry
+## Disable telemetry
 
 You can either disable the telemetry from [**Admin Settings**](telemetry.md#admin-settings) or by making changes to the [**`docker.env`**](telemetry.md#docker.env-file) file.
 
@@ -103,7 +103,7 @@ You can either disable the telemetry from [**Admin Settings**](telemetry.md#admi
 
 - Click Save & Restart to restart the container for the changes to take effect.
 
-### Docker.env file
+###Docker.env file
 
 - Navigate to the **directory** where the `docker.env` file is located.
 - Open the file in an editor and search for `APPSMITH_DISABLE_TELEMETRY`
