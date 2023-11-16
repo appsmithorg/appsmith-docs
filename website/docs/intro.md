@@ -16,9 +16,9 @@ Organizations build internal applications such as dashboards, database GUIs, adm
 
 Appsmith makes it easy to build a UI that talks to any datasource. You can create anything from simple CRUD apps to complicated multi-step workflows with a few simple steps:
 
-- **Connect Datasource**: Integrate with a datasource such as a database or an API. Appsmith has plug-and-play support for most popular databases and REST APIs.
-- **Build UI**: Use customizable built-in widgets to build an app layout.
-- **Write Logic**: Express business logic using queries and javascript anywhere in the editor.
+- **Connect Datasource**: Integrate with a database or API. Appsmith supports most popular databases and REST APIs.
+- **Build UI**: Use built-in widgets to build your app layout.
+- **Write Logic**: Express your business logic using queries and javascript anywhere in the editor.
 - **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and roll back changes. Deploy the app and share it with other users.
 
 ## Get started
