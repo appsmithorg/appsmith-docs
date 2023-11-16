@@ -1,10 +1,10 @@
 # JS Objects
 
-JS Objects in Appsmith are powerful tools that enable developers to encapsulate JavaScript code, including functions and variables, to enhance the capability of their applications. They serve the purpose of segregating business logic, performing complex data manipulations, and interacting seamlessly with Appsmith's widgets and backend services. This updated document will provide a detailed understanding of JSObjects in Appsmith, focusing on the aspect of exporting a single default object and the behavior of variables within it.
+JSObjects in Appsmith are powerful tools that enable developers to encapsulate JavaScript code, including functions and variables, to enhance the capability of their applications. They serve the purpose of segregating business logic, performing complex data manipulations, and interacting seamlessly with Appsmith's widgets and backend services. This updated document will provide a detailed understanding of JSObjects in Appsmith, focusing on the aspect of exporting a single default object and the behavior of variables within it.
 
 ## Defining a JS Object
 
-To define a JS Object in Appsmith, you create a JavaScript module that contains an object that exports specific functions and variables. It's important to note that a JS Object can only export one default object. Here's the general structure of a JS Object:
+To define a JSObject in Appsmith, you create a JavaScript module that contains an object that exports specific functions and variables. It's important to note that a JSObject can only export one default object. Here's the general structure of a JSObject:
 
 ```javascript
 export default {
