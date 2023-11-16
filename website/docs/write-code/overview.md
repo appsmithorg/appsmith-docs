@@ -2,11 +2,11 @@
 
 One of the key features of Appsmith is the ability to write custom code to enhance the functionality of your applications. This concept document introduces how to write code in Appsmith, the usage of mustache bindings, and the creation and use of functions within JSObjects.
 
-## Inline Code with Mustache Bindings
+## Inline code with mustache bindings
 
 Appsmith uses a templating syntax (known as mustache bindings) to write dynamic code inside widget properties and queries. Mustache bindings are expressed by wrapping the code inside `{{ }}`. This syntax allows you to insert JavaScript code directly into properties of widgets or as part of query configurations. Writing code inline does not allow for multi-line functions which are better suited to be written inside JSObjects.
 
-### Inline Code in Widget Properties
+### Inline code in widget properties
 
 ```
 // This code snippet can be used in a widget property to dynamically set its value
@@ -15,7 +15,7 @@ Appsmith uses a templating syntax (known as mustache bindings) to write dynamic 
 
 When used in widget properties, mustache bindings dynamically compute values based on the current state of the application, user inputs, or other variable data.
 
-### Inline Code in Queries
+### Inline code in queries
 
 ```javascript
 // This example shows a SQL query with mustache bindings to insert dynamic values
@@ -24,11 +24,11 @@ SELECT * FROM users WHERE id = {{ Input1.text }}
 
 Within queries, you can reference widgets JSObjects, & any application state. The bindings will be evaluated at runtime when the query is triggered, ensuring that the latest values are used in the query execution.
 
-## Creating Functions in JSObjects
+## Creating functions in JS Objects
 
 A JSObject is a collection of JavaScript functions and variables that can be used to transform data or perform custom logic in your application. It helps in centralizing code, reusability, and keeping the logic separate from the UI.
 
-### Simple Functions
+### Simple functions
 
 Simple functions in a JSObject can transform data, format values, or perform any JavaScript logic that doesn't involve asynchronous operations.
 
@@ -40,7 +40,7 @@ export default {
 };
 ```
 
-### Asynchronous Functions and Triggering Queries
+### Asynchronous functions and triggering queries
 
 Async functions within JSObjects allow you to perform asynchronous operations such as API calls, database queries, or any other operations that return a Promise.
 
@@ -61,7 +61,7 @@ Since async functions return promises, the value of their returned data can be a
 
 Async functions can only be triggered from other async functions or widget event handlers.
 
-## JavaScript Context in Appsmith
+## JavaScript context in Appsmith
 
 For security purposes, any JavaScript code executed within Appsmith does not have access to the global `window` object that you typically have in a web browser environment. This restriction helps prevent security vulnerabilities and ensures that the code within the application is self-contained.
 

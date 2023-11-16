@@ -245,3 +245,4 @@ exceptions:
   - Datasources (Server Data Models)
   - Widgets (Views)
   - Queries and JavaScript (Controllers)
+  - Prepared statements - On vs Off

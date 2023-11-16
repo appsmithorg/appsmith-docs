@@ -2,11 +2,11 @@
 
 In Appsmith, the execution of queries and JavaScript functions can be automated at the time a page loads. This feature is essential for initializing the page state, fetching data, and preparing the UI for interaction with the user. Automatically running queries and functions provides a smooth user experience by ensuring necessary data is available right from the start.
 
-## Automatic Execution on Page Load
+## Automatic execution on page load
 
 Appsmith intelligently determines which queries and JavaScript functions should be run on page load based on their bindings. If a query or function's response is bound to a widget's property, it will automatically be scheduled to run when the page loads.
 
-### Rules of Automatic Scheduling:
+### Rules of automatic scheduling:
 
 1. **Bound to a Widget**: When a query or function is used within a widget's properties, it's inferred that the widget's display depends on the data from that query or function. Hence, it is marked to run on page load automatically.
 
@@ -14,11 +14,11 @@ Appsmith intelligently determines which queries and JavaScript functions should 
 
 3. **User Settings**: Users have the flexibility to override default behavior. They can mark queries and functions to always run on page load by altering their settings.
 
-## User Configuration
+## User configuration
 
 Appsmith allows users to manually configure the execution behavior of queries and functions.
 
-### Steps to Configure:
+### Steps to configure:
 
 1. Navigate to the query or function you wish to configure.
 2. Click on the **Settings** tab within the query/function editor.
@@ -26,7 +26,7 @@ Appsmith allows users to manually configure the execution behavior of queries an
 
 Once you explicitly set a query or function to run on page load, Appsmith will respect this setting, and the system will not alter it based on bindings.
 
-## Example: Showing a Login Modal on Page Load
+## Example: show a login modal on page load
 
 Let's demonstrate how to display a login modal using a JavaScript function when the page loads.
 
