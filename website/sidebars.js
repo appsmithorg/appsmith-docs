@@ -16,7 +16,7 @@ const sidebars = {
             {
               type: 'category',
               collapsed: false,
-              label: 'The Basics',
+              label: 'Tutorial 1: The Basics',
               link: {
                 type: 'doc',
                 id: 'getting-started/tutorials/start-building',
@@ -227,9 +227,7 @@ const sidebars = {
             `getting-started/setup/best-practices`,
             'getting-started/setup/deployment-architecture',
           ],
-        },
-
-        'getting-started/faq',
+        }
       ],
     }, //getting started section end
     {
@@ -611,7 +609,6 @@ const sidebars = {
         },
         'help-and-support/troubleshooting-guide/js-errors',
         'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/application-errors',
         'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors',
       ],
@@ -622,6 +619,7 @@ const sidebars = {
       collapsed: false,
       label: 'Product',
       items: [
+        'getting-started/faq',
         'product/security',
         'product/telemetry',
         {

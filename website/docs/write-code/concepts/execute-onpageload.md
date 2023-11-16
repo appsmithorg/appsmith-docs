@@ -1,4 +1,4 @@
-# Executing Queries and JS on Page Load
+# Run Code On Page Load
 
 In Appsmith, the execution of queries and JavaScript functions can be automated at the time a page loads. This feature is essential for initializing the page state, fetching data, and preparing the UI for interaction with the user. Automatically running queries and functions provides a smooth user experience by ensuring necessary data is available right from the start.
 
