@@ -89,6 +89,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
+                'getting-started/setup/installation-guides/air-gapped',
               ],
             },
             {
