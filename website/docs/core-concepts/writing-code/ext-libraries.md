@@ -28,9 +28,9 @@ Appsmith only supports libraries that have **[UMD](https://github.com/umdjs/umd
 
 ✅ Valid URL: `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
 
-❌ Invalid URL: Unsupported build format: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+❌ Invalid URL: unsupported build format: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
 
-❌ Invalid URL: Doesn't point to the index file: `https://www.jsdelivr.com/package/npm/datejs`
+❌ Invalid URL: doesn't point to the index file: `https://www.jsdelivr.com/package/npm/datejs`
 
 Appsmith also does not support libraries
 
@@ -89,4 +89,4 @@ createWorkbook: async () => {
 
 ### Troubleshooting
 
-If you are experiencing difficulties installing external libraries, you can refer to the [JavaScript Errors troubleshooting guide](/help-and-support/troubleshooting-guide/js-errors) or reach out to our support team via the chat widget on this page.
+If you are experiencing difficulties installing external libraries, you can refer to the [JavaScript Errors troubleshooting guide](/help-and-support/troubleshooting-guide/js-errors) or reach out to the support team via the chat widget on this page.
