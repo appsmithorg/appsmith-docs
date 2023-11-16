@@ -8,17 +8,13 @@ Datasources are used to connect to your external databases & APIs. Appsmith can 
 
 ## Security
 
-Appsmith encrypts all your datasource credentials and stores them securely. Appsmith doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of queries. Read about our [Security Measures](/product/security#security-measures-within-appsmith).
+Appsmith encrypts all your datasource credentials and stores them securely. Appsmith doesn't store any data returned from your datasources and acts only as a proxy layer to orchestrate the execution of queries. Read about the [Security Measures](/product/security#security-measures-within-appsmith).
 
-Datasources connected and configured within an application can be accessed by all other applications in the same workspace, depending on the user's roles and access permissions.
+## Getting started
 
-## Sample datasets
-
-Appsmith provides sample datasets to help you connect the data and explore the platform. The sample datasets are public and shared by all Appsmith users, so ensure you don't input confidential information during testing. The datasources are automatically reset daily, so any updates are only temporary.
-
-- **API** - `https://mock-api.appsmith.com`
-- **PostgreSQL** - `users` table
-- **MongoDB** - `movies` collection
+1. [Find your datasource](/connect-data/reference) and connect to it
+2. Learn about [parameterising queries](/connect-data/concepts/dynamic-queries)
+3. Start [app building](/build-apps/overview)
 
 <div class="containerGridSampleApp">
    <div class="containerColumnSampleApp columnGrid column-one">
@@ -26,14 +22,14 @@ Appsmith provides sample datasets to help you connect the data and explore the p
       </div> 
       <b><a href="/connect-data/how-to-guides">How-to Guides</a></b>
       <div class="containerDescription">
-         Guides on how to connect to your datasources.
+         Guides on how to connect & query your datasources.
       </div>
    </div>
 
    <div class="containerColumnSampleApp columnGrid column-two">
    <div class="containerCol">
       </div>
-      <b><a href="/connect-data/reference"> Reference</a></b>
+      <b><a href="/connect-data/reference">Reference</a></b>
       <div class="containerDescription"> Technical information about datasources and queries.
       </div>
    </div>
