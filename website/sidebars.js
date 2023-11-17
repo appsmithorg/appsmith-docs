@@ -344,7 +344,6 @@ const sidebars = {
             'core-concepts/building-ui/dynamic-ui/README',
             'build-apps/how-to-guides/Server-side-pagination-in-table',
             'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Server-side-filtering-table',
             'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
             'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',

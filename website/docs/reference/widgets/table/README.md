@@ -538,8 +538,16 @@ When a user interacts with an actionable item *(like a button)* in a row, `trigg
 *Example:*
 
 ```js
+//To access the entire triggered row:
 {{Table1.triggeredRow}}
+
+//To access a specific cell value, such as the email field:
+{{Table1.triggeredRow.email}}
 ```
+
+
+For example, when using Datepicker if the date is in `ISO` format and you want to display it in `DD/MM/YYYY` format, then you can achieve this by binding the Table data to the **Default date** and changing the display format through the **Date format** property.
+
 
 </dd>
 
