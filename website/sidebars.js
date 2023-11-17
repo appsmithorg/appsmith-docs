@@ -13,21 +13,18 @@ const sidebars = {
           label: 'Tutorials',
           link: { type: 'doc', id: 'getting-started/tutorials/README' },
           items: [
-            'getting-started/tutorials/start-building',
             {
               type: 'category',
-              label: 'Customer Support Tool',
+              collapsed: false,
+              label: 'Tutorial 1: The Basics',
               link: {
                 type: 'doc',
-                id: 'getting-started/tutorials/customer-support-tool/README',
+                id: 'getting-started/tutorials/start-building',
               },
               items: [
-                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-                'getting-started/tutorials/customer-support-tool/view-ticket-details',
-                'getting-started/tutorials/customer-support-tool/add-new-tickets',
-                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
-                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-                'getting-started/tutorials/customer-support-tool/application-settings'
+                'getting-started/tutorials/the-basics/connect-query-display-data',
+                'getting-started/tutorials/the-basics/work-with-data-in-ui',
+                'getting-started/tutorials/the-basics/write-js-code',
               ],
             },
           ],
@@ -88,10 +85,10 @@ const sidebars = {
                     'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                   ],
                 },
-
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
+                'getting-started/setup/installation-guides/air-gapped',
               ],
             },
             {
@@ -230,9 +227,7 @@ const sidebars = {
             `getting-started/setup/best-practices`,
             'getting-started/setup/deployment-architecture',
           ],
-        },
-
-        'getting-started/faq',
+        }
       ],
     }, //getting started section end
     {
@@ -252,6 +247,9 @@ const sidebars = {
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
+            'connect-data/how-to-guides/insert-and-update-data-in-sql',
+            'connect-data/how-to-guides/filter-data-google-sheet',
+            'connect-data/how-to-guides/insert-and-update-data-in-google-sheets',
             'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
             'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
@@ -321,11 +319,10 @@ const sidebars = {
           label: 'Concepts',
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
+            'connect-data/concepts/dynamic-queries',
             'connect-data/concepts/dynamic-binding-in-queries',
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
-            'connect-data/concepts/how-to-use-prepared-statements',
-            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
       ]
@@ -348,7 +345,6 @@ const sidebars = {
             'core-concepts/building-ui/dynamic-ui/README',
             'build-apps/how-to-guides/Server-side-pagination-in-table',
             'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Server-side-filtering-table',
             'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
             'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
@@ -466,10 +462,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-
-            'core-concepts/writing-code/README',
-            'core-concepts/writing-code/javascript-editor-beta/README',
-            'write-code/how-to-guides/display-data-from-functions',
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
             `core-concepts/writing-code/workflows`,
@@ -483,18 +475,17 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
-          items: [
-             {
+          items: [{
           type: 'category',
           collapsed: true,
           label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
-          ],
-        },
+              'reference/appsmith-framework/query-object',
+              'reference/appsmith-framework/context-object',
+              'reference/appsmith-framework/console-object',
+            ],
+          },
             {
               type: 'category',
               label: 'Global Functions',
@@ -524,10 +515,22 @@ const sidebars = {
             },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
 
       ],
     }, //Reference End
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'write-code/concepts/overview',
+      },
+      items: [
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/concepts/execute-onpageload',
+      ],
+    }
       ]
     }, //CODE end
 
@@ -608,7 +611,6 @@ const sidebars = {
         },
         'help-and-support/troubleshooting-guide/js-errors',
         'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/application-errors',
         'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors',
       ],
@@ -619,6 +621,7 @@ const sidebars = {
       collapsed: false,
       label: 'Product',
       items: [
+        'getting-started/faq',
         'product/security',
         'product/telemetry',
         {

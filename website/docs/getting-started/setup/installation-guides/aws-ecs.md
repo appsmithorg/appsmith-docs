@@ -3,7 +3,7 @@ description: Deploy Appsmith on the ECS cluster using EC2 instance.
 sidebar_position: 5
 ---
 
-# AWS ECS for EC2
+# AWS ECS on EC2
 This page provides steps to install Appsmith on a single node EC2 Linux + Networking ECS Cluster using an EC2 instance.
 
 ## Prerequisites

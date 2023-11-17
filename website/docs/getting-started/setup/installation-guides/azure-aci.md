@@ -71,6 +71,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 		--azure-file-volume-share-name $fileShareName \
 		--azure-file-volume-mount-path "/appsmith-stacks/" \
 	```
+	
 ## Install Appsmith Community
 
 To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating an [Azure container instance](#container-instance-config) file on this page.
