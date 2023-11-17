@@ -102,28 +102,31 @@ Welcome Aboard! {{appsmith.user.name}}
 
 To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the Filepicker widget to upload the desired files and then send them as email attachments.
 
-### Using S3
+
+#### Using API
 
 
-### Using Filepicker
+#### Using S3
+
+If you are getting file/image from S3 datasource. 
+
+#### Using Filepicker
 
 1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
 
-2. Select your preferred **Data format** based on the file type.
+2. Select your **Data format** based on the file type.
 
 3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
 
 <dd>
 
 ```js
-// Accessing single file data
-{{ FilePicker1.files[0].data }}
-
-// Accessing all files
-{{FilePicker1.files}}
+// Accessing file data
+[{{FilePicker1.files[0]}}]
 
 //here [0] represents index of the file.
 ```
+
 
 
 
