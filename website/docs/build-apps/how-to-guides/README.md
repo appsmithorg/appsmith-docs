@@ -74,6 +74,19 @@
     </div>
 </div>
 
+### Chart
+
+<div class="containerGridSampleApp">
+    <div class="containerColumnSampleApp columnGrid column-one">
+        <div class="containerCol">
+            <a href="/build-apps/how-to-guides/Fusion-to-echart-guide.md"><strong>Convert fusion chart to e-chart</strong></a>
+        </div> <hr/>
+        <div class="containerDescription">Shows how to convert a custom fusion chart to a custom e chart using a bubble chart as example</div>
+</div>
+     <div class="columnGrid column-two" style={{margin: "10px"}}>
+    </div>
+</div>
+
 
 
 ### Filepicker 
