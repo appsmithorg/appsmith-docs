@@ -90,7 +90,7 @@ With this, you can create queries and switch between environments. As you toggle
 
 <!-- vale on -->
 
-This section shows how to set up a custom environment.
+By default, Appsmith provides two environments: *Production* and *Staging*. However, if you want to create and manage your own environments, follow these steps:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -108,7 +108,7 @@ Once you've successfully created a Custom environment, you can modify roles and 
 
 ## Use Git with Datasource Environments
 
-Using Git with environment configurations allows you to connect your application to version control and work on different branches, ensuring that changes made during development do not affect the Production environment. This approach enables you to thoroughly test changes on Staging data before merging them into the master branch for deployment.
+Using Git with environment configurations allows you to connect your application to version control and work on different branches, ensuring that changes made during development do not affect the production environment. This approach enables you to thoroughly test changes on Staging data before merging them into the master branch for deployment.
 
 You can create a new branch for each feature you're working on and commit changes to that branch as you make progress. Once a feature is stable and ready for deployment, you can merge it into the master branch.
 
@@ -117,10 +117,10 @@ To use environments with Git, you can follow these steps:
 1. If you haven't done it already, [connect your application to Git](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
 2. Connect to a datasource and configure the _Staging_ and _Production_ environments.
 3. In the _Staging_ environment, create and switch to a `feature` branch. See [Setup Branches](/advanced-concepts/version-control-with-git/working-with-branches) to create a branch.
-4. Use the _Staging_ environment to make edits to your application so that you can test the changes without affecting Production data.
-5. Once you have tested your changes and are ready to deploy to Production, commit your changes and merge into the `master` branch.
+4. Use the _Staging_ environment to make edits to your application so that you can test the changes without affecting production data.
+5. Once you have tested your changes and are ready to deploy to production, commit your changes and merge into the `master` branch.
 
-When you merge changes into the master branch, the Production data remains unchanged, ensuring that end-users continue to view the same data they did before the changes were made. 
+When you merge changes into the master branch, the production data remains unchanged, ensuring that end-users continue to view the same data they did before the changes were made. 
 
 
 
