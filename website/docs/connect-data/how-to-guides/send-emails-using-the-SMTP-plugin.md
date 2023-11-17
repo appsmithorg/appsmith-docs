@@ -11,8 +11,6 @@ This page shows how to use the SMTP Plugin to send emails and attach files and i
 
 Configure the query to send mail, using the following parameters:
 
-
-
 1. Select the Send email command from the **Commands** dropdown.
 
 2. Specify the email address you want to send the mail from in the **From email** field. You can also use mustache bindings `{{}}` to dynamically set the email.
@@ -104,7 +102,10 @@ Welcome Aboard! {{appsmith.user.name}}
 
 To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the Filepicker widget to upload the desired files and then send them as email attachments.
 
+### Using S3
 
+
+### Using Filepicker
 
 1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
 
@@ -134,14 +135,21 @@ To send emails with various attachments, such as files, PDFs, and images, you ca
 
 Once your query is configured, you can send emails by executing the query in response to a specific event, such as clicking a button or when files are uploaded using a Filepicker. 
 
+<dd>
+
 *Example:*
 
-Configure the **onClick** event of the Form widget's Submit button to execute the send email query.
+1. Set the **onClick** event of the Form widget's Submit button to execute the send email query.
+
+2. Set the **onSuccess** callback to show the success alert.
+
 
 
 <figure>
   <img src="/img/smtp-form.png" style= {{width:"650px", height:"auto"}} alt="Display external website"/>
   <figcaption align = "center"><i></i></figcaption>
 </figure>
+
+</dd>
 
 
