@@ -18,7 +18,7 @@ Within this default object, you can define all your reusable code and state that
 
 JSObjects can contain different types of function definitions.
 
-### Arrow function example
+### Arrow function syntax
 
 ```javascript
 export default {

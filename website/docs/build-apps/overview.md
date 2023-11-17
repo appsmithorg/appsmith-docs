@@ -42,7 +42,7 @@ Mastering these data flows allows developers to create applications that can sea
       </div> 
       <b><a href="/build-apps/how-to-guides">How-to Guides</a></b>
       <div class="containerDescription">
-      Directions and step-by-step guides covering key operations and common tasks.
+         Step-by-step guides to build common workflows.
       </div>
    </div>
 
@@ -50,7 +50,7 @@ Mastering these data flows allows developers to create applications that can sea
    <div class="containerCol">
       </div>
       <b><a href="/reference/widgets"> Reference</a></b>
-      <div class="containerDescription"> Technical descriptions and information about widgets and other actions.
+      <div class="containerDescription"> Technical information on widgets.
       </div>
    </div>
 </div>
