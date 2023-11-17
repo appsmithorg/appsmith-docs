@@ -1,21 +1,39 @@
-# Troubleshooting
+# Troubleshooting Errors
 
-This document aims to help debug common errors on the Appsmith platform.
+As with any technology, encountering errors is inevitable; however, knowing how to troubleshoot and resolve these errors is crucial for a smooth development experience.
 
-* [Action Errors](/help-and-support/troubleshooting-guide/action-errors/)
-* [Application Errors](/help-and-support/troubleshooting-guide/application-errors)
-* [Deployment Errors](/help-and-support/troubleshooting-guide/deployment-errors)
-* [JS Errors](/help-and-support/troubleshooting-guide/js-errors)
-* [Hint Messages](https://github.com/appsmithorg/appsmith-docs/tree/9fe81bb98cdc29e7f6ba351c3620699e98ca891e/troubleshooting-guide/hint-messages.md) (Coming Soon)
+<div class="containerGridSampleApp">
+   <div class="containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+      </div> 
+      <b><a href="/help-and-support/troubleshooting-guide/deployment-errors">Self-Hosting Errors</a></b>
+      <div class="containerDescription">
+         Guides on how to resolve common errors while self-hosting
+      </div>
+   </div>
 
-## Using the Linter and Debugger
+   <div class="containerColumnSampleApp columnGrid column-two">
+   <div class="containerCol">
+      </div>
+      <b><a href="/connect-data/how-to-guides">Datasource Connectivity Errors</a></b>
+      <div class="containerDescription">
+         Guides on how to debug errors with your datasource
+      </div>
+   </div>
+</div>
 
-The [Linter](/core-concepts/writing-code/javascript-editor-beta#linting-errors) and [Debugger](/core-concepts/writing-code/javascript-editor-beta#debugger-statements) are tools built right into the Editor to help you find and fix bugs quickly. The video below shows how to use the [Linter](/core-concepts/writing-code/javascript-editor-beta#linting-errors) and [Debugger](/core-concepts/writing-code/javascript-editor-beta#debugger-statements) to fix various bugs.
+<div class="containerGridSampleApp">
+   <div class="containerColumnSampleApp columnGrid column-one">
+    <div class="containerCol">
+      </div> 
+      <b><a href="/connect-data/concepts">App Building Errors</a></b>
+      <div class="containerDescription"> Guides on how to resolve errors while building your app.
+      </div>
+   </div>
+   <div class="columnGrid column-two" style={{margin: "10px"}}>
+   </div>
+</div>
 
+## Getting help
 
-<VideoEmbed host="youtube" videoId="DuDBMCqG2Zo" title="Using the Linter and Debugger" caption="Using the Linter and Debugger"/>
-
-
-## Getting Help
-
-If you are unable to debug an error, please reach out to us on our [Discord Server](https://discord.com/invite/rBTTVJp) or write to us at support@appsmith.com
+If you are unable to resolve your error, please reach out to support via the chat widget on the bottom of the screen.

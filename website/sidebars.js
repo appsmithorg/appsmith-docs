@@ -607,8 +607,21 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
           ],
         },
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Self-hosting Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/deployment-errors',
+          },
+          items: [
+            "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+          ],
+        },
         'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/deployment-errors',
         'help-and-support/troubleshooting-guide/query-errors',
         'help-and-support/troubleshooting-guide/widget-errors',
       ],
