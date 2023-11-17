@@ -90,7 +90,7 @@ With this, you can create queries and switch between environments. As you toggle
 
 <!-- vale on -->
 
-By default, Appsmith provides two environments: *Production* and *Staging*. However, if you want to create and manage your own environments, follow these steps:
+Appsmith provides two environments by default: *Production* and *Staging*. However, if you want to create and manage your own environments, follow these steps:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
