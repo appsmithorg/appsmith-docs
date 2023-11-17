@@ -29,27 +29,7 @@ tags={[
 This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 
 
-## Create a custom environment
-
-This section shows how to set up a custom environment, which allows you to customize environments according to your specific requirements.
-
-:::info
-Custom Multiple Environments feature is available on the [Enterprise plan](https://www.appsmith.com/pricing).
-:::
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-1. On the applications home page, click the **Menu icon** (three dots) in the workspace where you want to create a custom environment.
-
-2. Select **Environments** from the menu dropdown.
-
-3. Click the **+ Create new** button and create a new environment.
-
-Once you've successfully created a Custom environment, you can modify roles and configure the settings by clicking on the edit icon.
-
+#
 ## Configure an environment
 
 This section shows how to configure the environments in Appsmith. 
@@ -87,6 +67,44 @@ Select the environment on the bottom left corner of the screen to configure the 
 Developers can switch between Staging and Production environments in the *Edit mode*. In addition, users with the necessary permissions can also switch to the Staging environment configuration when accessing the app in *View mode*. For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
 With this, you can create queries and switch between environments. As you toggle between environments, the queries would automatically use the selected environment.
+
+
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
+## Custom environments
+
+<Tags
+  tags={[
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+This section shows how to set up a custom environment.
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. On the applications home page, click the **Menu icon** (three dots) in the workspace where you want to create a custom environment.
+
+2. Select **Environments** from the menu dropdown.
+
+3. Click the **+ Create new** button and create a new environment.
+
+Once you've successfully created a Custom environment, you can modify roles and configure the settings by clicking on the edit icon.
+
 
 ## Use Git with Datasource Environments
 

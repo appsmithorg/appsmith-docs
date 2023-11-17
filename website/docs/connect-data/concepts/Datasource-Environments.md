@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-This page explains multiple datasource environments, which allows developers to isolate their testing and Production datasources.
+This page explains multiple datasource environments, which allows developers to isolate their testing and production datasources.
 
 See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
