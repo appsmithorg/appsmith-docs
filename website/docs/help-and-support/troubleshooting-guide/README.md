@@ -36,4 +36,4 @@ As with any technology, encountering errors is inevitable; however, knowing how 
 
 ## Getting help
 
-If you are unable to resolve your error, please reach out to support via the chat widget on the bottom of the screen.
+If you are unable to resolve your error, please reach out to support via the chat widget on the page.
