@@ -1,4 +1,4 @@
-# Convert a bubble chart from custom fusion chart to custom e chart
+# Convert FusionCharts to ECharts
 
 Starting Mar 1, 2024 fusion chart will be deprecated in Appsmith, which means all instances of chart widgets where custom fusion chart is being used will show a watermark. We advise you to migrate your chart to e-chart as soon as possible. This how to guide covers an example on how to do so for a bubble chart type. 
 
