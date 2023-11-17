@@ -14,15 +14,45 @@ tags={[
 ]}
 />
 
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+
 </div>
 
 <!-- vale on -->
 
 This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 
+
+## Create a custom environment
+
+This section shows how to set up a custom environment, which allows you to customize environments according to your specific requirements.
+
+:::info
+Custom Multiple Environments feature is available on the [Enterprise plan](https://www.appsmith.com/pricing).
+:::
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. On the applications home page, click the **Menu icon** (three dots) in the workspace where you want to create a custom environment.
+
+2. Select **Environments** from the menu dropdown.
+
+3. Click the **+ Create new** button and create a new environment.
+
+Once you've successfully created a custom environment, you can modify roles and configure the settings by clicking on the edit icon.
+
 ## Configure an environment
 
-This section shows how to configure staging and production environments in Appsmith. 
+This section shows how to configure the environments in Appsmith. 
 
 <figure>
   <img src="/img/multi-env-3.gif" style= {{width:"850px", height:"auto"}} alt="Datasource Environments"/>
@@ -37,9 +67,9 @@ This section shows how to configure staging and production environments in Appsm
 SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not support datasource environments.
 :::
 
-3. Configure production and staging datasource connection parameters in the respective tabs. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource.
+3. Configure production, staging and custom datasource connection parameters in the respective tabs. For a complete description of the connection parameters, see the [Reference guide](/connect-data/reference) for your datasource.
 
-4. Test and save the configurations for both production and staging environments.
+4. Test and save the configurations for all the environments.
 
 
 

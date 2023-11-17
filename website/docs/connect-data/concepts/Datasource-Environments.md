@@ -31,11 +31,13 @@ This allows you to create queries and switch between environments, with the quer
 
 ## Environments on Appsmith
 
-Appsmith provides two environments:
+Appsmith provides two default environments: production and staging. However, with the enterprise plan, you have can create custom environments according to your requirements.
 
 - **Staging**: Environment for development, QA, and user acceptance testing. You can make modifications and experiment with new features before pushing them to the production environment.
 
 - **Production**: Live version with actual production data for end users.
+
+- **Custom**: The custom environment allows you to create a tailored environment to match your specific needs. Learn how to create a [custom multiple environment](/connect-data/how-to-guides/setup-datasource-environments#create-a-custom-environment).
 
 In Appsmith, environments work at the _Workspace_ level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
 
