@@ -12,25 +12,12 @@ As with any technology, encountering errors is inevitable; however, knowing how 
       </div>
    </div>
 
-   <div class="containerColumnSampleApp columnGrid column-two">
-   <div class="containerCol">
-      </div>
-      <b><a href="/connect-data/how-to-guides">Datasource Connectivity Errors</a></b>
-      <div class="containerDescription">
-         Guides on how to debug errors with your datasource
-      </div>
-   </div>
-</div>
-
-<div class="containerGridSampleApp">
    <div class="containerColumnSampleApp columnGrid column-one">
     <div class="containerCol">
       </div> 
-      <b><a href="/connect-data/concepts">App Building Errors</a></b>
+      <b><a href="/help-and-support/troubleshooting-guide/application-errors">Application Errors</a></b>
       <div class="containerDescription"> Guides on how to resolve errors while building your app.
       </div>
-   </div>
-   <div class="columnGrid column-two" style={{margin: "10px"}}>
    </div>
 </div>
 

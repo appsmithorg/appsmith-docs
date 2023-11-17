@@ -594,22 +594,6 @@ const sidebars = {
         {
           // Help & Support start
           type: 'category',
-          label: 'Action Errors',
-          link: {
-            type: 'doc',
-            id: 'help-and-support/troubleshooting-guide/action-errors/README',
-          },
-          items: [
-            'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
-          ],
-        },
-        {
-          // Help & Support start
-          type: 'category',
           label: 'Self-hosting Errors',
           link: {
             type: 'doc',
@@ -621,9 +605,22 @@ const sidebars = {
             "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
           ],
         },
-        'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/query-errors',
-        'help-and-support/troubleshooting-guide/widget-errors',
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Application Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/application-errors',
+          },
+          items: [
+            'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
+            'help-and-support/troubleshooting-guide/action-errors/README'
+          ],
+        },
+        // 'help-and-support/troubleshooting-guide/js-errors',
+        // 'help-and-support/troubleshooting-guide/query-errors',
+        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {
