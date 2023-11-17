@@ -19,13 +19,13 @@ tags={[
 
 <!-- vale on -->
 
-This page explains multiple datasource environments, which allows developers to isolate their testing and production datasources.
+This page explains multiple datasource environments, which allows developers to isolate their testing and Production datasources.
 
 See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
 ## Overview
 
-Datasource environments enable you to separate Staging and Production configurations of a datasource, providing controlled and isolated settings for specific tasks during different phases. This approach allows developers to test and validate changes without affecting the live production environment.
+Datasource environments enable you to separate Staging and Production configurations of a datasource, providing controlled and isolated settings for specific tasks during different phases. This approach allows developers to test and validate changes without affecting the live Production environment.
 
 This allows you to create queries and switch between environments, with the queries automatically using the selected environment.
 
@@ -39,7 +39,7 @@ Appsmith provides two default environments: Production and Staging. However, wit
 
 - **Custom**: The Custom environment allows you to create a tailored environment to match your specific needs. Learn how to create a [custom multiple environment](/connect-data/how-to-guides/setup-datasource-environments#create-a-custom-environment).
 
-In Appsmith, environments work at the _Workspace_ level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
+In Appsmith, environments work at the _Workspace_ level. This means that all the applications within a workspace share the same configuration values for both Staging and Production environments.
 
 For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
@@ -47,9 +47,9 @@ For more information on permissions, you can refer to the [Granular Access Contr
 
 Some core benefits of using datasource environments include:
 
-- **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
+- **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and Production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
 
 - **Efficient Development:** With datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
 
-- **Flexible Testing:** Having separate staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
+- **Flexible Testing:** Having separate Staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to Production.
 
