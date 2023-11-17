@@ -47,7 +47,7 @@ For more information on permissions, you can refer to the [Granular Access Contr
 
 Some core benefits of using datasource environments include:
 
-- **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and Production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
+- **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
 
 - **Efficient Development:** With datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
 
