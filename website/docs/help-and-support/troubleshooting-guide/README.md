@@ -1,4 +1,4 @@
-# Troubleshooting Errors
+# Introduction
 
 As with any technology, encountering errors is inevitable; however, knowing how to troubleshoot and resolve these errors is crucial for a smooth development experience.
 
