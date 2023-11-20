@@ -15,7 +15,9 @@ Follow the steps below to setup the pipeline:
 
 <dd>
 
+:::info 
 If you are an enterprise user, you can choose a different branch as the default, offering customization based on specific project requirements or preferences. Learn more about [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch).
+:::
 
 </dd>
 
