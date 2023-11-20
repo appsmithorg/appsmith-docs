@@ -86,7 +86,3 @@ createWorkbook: async () => {
   await download(url, "test.xls");
 };
 ```
-
-### Troubleshooting
-
-If you are experiencing difficulties installing external libraries, you can refer to the [JavaScript Errors troubleshooting guide](/help-and-support/troubleshooting-guide/js-errors) or reach out to the support team via the chat widget on this page.

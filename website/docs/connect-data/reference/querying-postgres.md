@@ -2,13 +2,14 @@
 sidebar_position: 13
 description: Connect Appsmith to a PostgreSQL database and create queries.
 ---
+
 # PostgreSQL
 
 This page gives information to connect Appsmith to a PostgreSQL database and to read and write data in your applications.
 
 ## Connect PostgreSQL
 
-:::caution 
+:::caution
 If you are a self-hosted user, you must configure the `pg_hba.conf` file to whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to a database. See [**Client Authentication**](https://www.postgresql.org/docs/current/auth-pg-hba-conf.html) for more details.
 :::
 
@@ -29,7 +30,7 @@ The following section is a reference guide that provides a complete description 
     <li><b>Read Only:</b> This mode permits read-only transactions by default.</li>
     <li><b>Read/Write:</b> This mode permits both read-write transactions by default.</li>
   </ul>
-</dd>  
+</dd>
 
 #### Host Address
 
@@ -74,7 +75,6 @@ The following section provides examples of creating basic CRUD queries on Postgr
   <figcaption align = "center"><i>Write SQL commands in the query editor</i></figcaption>
 </figure>
 
-
 :::info
 For the SQL syntax, see the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html).
 :::
@@ -87,7 +87,6 @@ SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOff
 ```
 
 In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table).
-
 
 ### Insert data
 
@@ -103,7 +102,7 @@ VALUES
 
 ```
 
-In the above example,  `nameInput`,  `genderDropdown`,  and `emailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
+In the above example,  `nameInput`,  `genderDropdown`, and `emailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
 
 ### Update data
 
@@ -115,7 +114,6 @@ UPDATE users
 ```
 
 In the above example, `emailInput` is the name of the Input widget used to capture the email entered by the user. `tableUsers` is the Table widget where the user selects the row to update the user's email.
-
 
 ### Delete data
 
@@ -131,14 +129,9 @@ Prepared statements are turned on by default in your queries to help prevent SQL
 :::
 
 ## Row Level Security (RLS)
+
 Row level security is a PostgreSQL security feature the database provides to limit what table rows are visible for querying. It allows the database admins to define security policies to control how the rows of a given table can be accessed or modified. Watch the [**video series**](https://youtu.be/8qPTZQvJ9fA) for details on using RLS on your apps.
 
 ## Troubleshooting
 
-If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
-
-* [Missing required parameter](/help-and-support/troubleshooting-guide/action-errors#missing-query-error)
-* [PostgreSQL query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)
-* [Query preparation failed while inserting value](/help-and-support/troubleshooting-guide/action-errors#invalid-query-error)
-
-If you still have trouble, you can contact the support team using the chat widget at the bottom right of this page.
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/application-errors), or contact the support team using the chat widget at the bottom right of this page.

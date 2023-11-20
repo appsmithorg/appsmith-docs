@@ -57,11 +57,11 @@ In the example above, values are collected from a Table widget and passed into a
     </ul>
 <dd>
 
-|  Key     |  Value                        |
-|----------|-------------------------------|
-| query    | `{{ UsersTable.searchText }}` |
-| limit    | `{{ UsersTable.pageSize }}`   |
-| offset   | `{{ UsersTable.pageOffset }}` |
+| Key    | Value                         |
+| ------ | ----------------------------- |
+| query  | `{{ UsersTable.searchText }}` |
+| limit  | `{{ UsersTable.pageSize }}`   |
+| offset | `{{ UsersTable.pageOffset }}` |
 
 <pre>{`// result
 "query=arjun&limit=10&offset=20"
@@ -72,11 +72,11 @@ In the example above, values are collected from a Table widget and passed into a
     </ul>
 <dd>
 
-|  Key     | Type |  Value                        |
-|----------|------|-------------------------------|
-| user     | Text | `{{ appsmith.user.email }}`   |
-| filename | Text | `{{ FileNameInput.text }}`    |
-| file     | File | `{{ Filepicker.files[0] }}`   |
+| Key      | Type | Value                       |
+| -------- | ---- | --------------------------- |
+| user     | Text | `{{ appsmith.user.email }}` |
+| filename | Text | `{{ FileNameInput.text }}`  |
+| file     | File | `{{ Filepicker.files[0] }}` |
 
 <pre>{`// result
 "query=arjun&limit=10&offset=20"
@@ -86,6 +86,7 @@ In the example above, values are collected from a Table widget and passed into a
 :::tip
 When uploading file data, check that your Filepicker widget's **Data Format** property is set correctly. When uploading as multipart/form-data, this should usually be set to `Binary`.
 :::
+
 </dd>
     <ul>
       <li><b>RAW:</b> Expects raw binary file data to be sent as the body.</li>
@@ -97,6 +98,7 @@ When uploading file data, check that your Filepicker widget's **Data Format** pr
 :::caution tip
 Be sure to turn off **JSON Smart Substitution** for this query in the [query settings](/connect-data/reference/query-settings). This option usually helps cast data into correct JSON, but it is problematic when used with RAW binary.
 :::
+
 </dd>
 
   </dd>
@@ -117,10 +119,4 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 
 ## Troubleshooting
 
-If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
-
-[Missing URL](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#missing-url-error)<br />
-[Missing client secret / client ID / access token](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#missing-client-secret--client-id--access-token-error)<br />
-[Secret key required](/help-and-support/troubleshooting-guide/action-errors/rest-api-errors#secret-key-required-error)
-
-If you experience difficulties, contact the support team using the chat widget at the bottom right of this page.
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team using the chat widget at the bottom right of this page.
