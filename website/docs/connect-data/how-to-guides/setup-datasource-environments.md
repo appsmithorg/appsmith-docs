@@ -29,7 +29,7 @@ tags={[
 This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 
 
-#
+
 ## Configure an environment
 
 This section shows how to configure the environments in Appsmith. 
