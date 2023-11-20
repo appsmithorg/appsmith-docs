@@ -140,7 +140,7 @@ Once you have configured the data, follow these steps to display the converted d
 
 1. Add a new Chart widget and select Custom EChart from the **Chart type** property.
 
-2. To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, `{{<your-chart-data>}}` in the **Custom EChart Configuration** property, like:
+2. To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, `{{<your-chart-data>}}` in the **Custom EChart Configuration** property.
 
 
 <dd>
@@ -154,7 +154,7 @@ To learn more about these charts and their specific configurations, you can refe
 
 *Example:* For the bubble chart, copy the bubble chart code from the [ECharts documentation](https://echarts.apache.org/examples/en/editor.html?c=bubble-gradient) and add it to the **Custom EChart Configuration** property. 
 
-In the E-charts configuration below within the `series` section, you can find the `data` property which needs to be linked to the function’s response from step 3. Please edit the `data` property as needed
+In the E-charts configuration's `series` section, you can find the `data` property and connect it to the respective function's response, for instance `JSObject1.fusionToEchartsDataFormatter.data`:
 
 ```js
 {{ {
@@ -218,10 +218,8 @@ In the E-charts configuration below within the `series` section, you can find th
 
 ```
 
-Post adding this in the e-chart configuration, the bubble chart should now be visible as seen below
-
  <figure>
-  <img src="/img/fusiontoechart.png" style= {{width:"700px", height:"auto"}} alt="Server-side Filtering on Select"/>
+  <img src="/img/fusiontoechart.png" style= {{width:"700px", height:"auto"}} alt="Bubble Chart configuration"/>
   <figcaption align = "center"><i>Bubble Chart configuration</i></figcaption>
 </figure>
 
