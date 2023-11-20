@@ -44,12 +44,10 @@ To insert a row into your Google Sheet, follow these steps:
 
 9.  In the Form widget, set the **onClick** event for the `Submit` button using the following code:
 
-```jsx
-{
-  {
+```
+{{
     insertUserDetails.run();
-  }
-}
+}}
 ```
 
 10. To test, enter the data in the form and click **Submit**.
@@ -68,23 +66,19 @@ To upload a CSV file and configure the query to insert multiple rows into your G
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
 7. In **Row objects**, paste the following code to insert data using the [files](/reference/widgets/filepicker#files-array) reference property of the Filepicker widget:
 
-   ```jsx
-   {
-     {
+   ```
+   {{
        userDetailsFiles.files[0].data;
-     }
-   }
+   }}
    ```
 
 8. Drag and drop a Button widget on the canvas and rename it to `insert_users`.
 9. Set the **onClick** event of the widget using the following code:
 
-```jsx
-{
-  {
+```
+{{
     insert_new_users.run();
-  }
-}
+}}
 ```
 
 10. To test, upload a CSV file using the Filepicker widget and click the `insert_users` button.
@@ -101,12 +95,10 @@ To configure the query to update specific fields of a row using the Form widget,
 
    For example, to set the `Name` Input widget's data property with the name of the selected row, paste the following code in **Default value**:
 
-   ```jsx
-   {
-     {
+   ```
+   {{
        user_details_table.selectedRow.name;
-     }
-   }
+   }}
    ```
 
 2. In **Queries/JS**, add a new query.
@@ -142,12 +134,10 @@ To configure the query to update specific fields of a row using the Form widget,
    ```
 
 8. In the Form widget, set the **onClick** event for the `Submit` button using the following code:
-   ```jsx
-   {
-     {
+   ```
+   {{
        updateUser.run();
-     }
-   }
+   }}
    ```
 9. To test, edit the data in the form and click **Submit**.
 
@@ -163,25 +153,19 @@ To configure the query to update multiple rows, follow these steps:
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
 7. Paste the following code in **Update row objects**:
 
-   ```jsx
-   {
-     {
+   ```
+   {{
        user_details_table.updatedRows.map((row) => {
          return row.allFields;
        });
-     }
-   }
+   }}
    ```
 
 8. Drag and drop a [Button](/reference/widgets/button) widget on the canvas and rename it to `update_all`.
 9. Set the **onClick** event of the button using the following code:
 
-   ```jsx
-   {
-     {
-       updateUsers.run();
-     }
-   }
+   ```
+   {{ updateUsers.run(); }}
    ```
 
 10. To test, edit the data of a few rows in the table and click the `update_all` button.

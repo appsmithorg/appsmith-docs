@@ -34,12 +34,8 @@ To fetch data based on a condition using the where clause, follow these steps:
 
    For example, to bind the value of a [Text](/reference/widgets/text) widget named `gender` to the where clause, use the following code:
 
-   ```jsx
-   {
-     {
-       gender.text;
-     }
-   }
+   ```
+   {{ gender.text; }}
    ```
 
 4. In **[Sort By](/connect-data/reference/querying-google-sheets#sort-by)** enter the column name you want your data sorted by.
@@ -84,24 +80,16 @@ To set the number of records fetched in the response dynamically, follow these s
 
 1. In [Pagination Limit](/connect-data/reference/querying-google-sheets#pagination-limit) set the value according to the page size using the following code where `user_details_table` is the name of the Table widget:
 
-   ```jsx
-   {
-     {
-       user_details_table.pageSize;
-     }
-   }
+   ```
+   {{ user_details_table.pageSize; }}
    ```
 
    When you set the **Pagination Limit** dynamically, Appsmith automatically updates the number of records to be fetched in the response based on your page or table size.
 
 2. Set the **Pagination Offset** based on the current page size using the following code:
 
-   ```jsx
-   {
-     {
-       user_details_table.pageOffset;
-     }
-   }
+   ```
+   {{ user_details_table.pageOffset; }}
    ```
 
 3. To set up the [Server-side pagination](/reference/widgets/table#server-side-pagination-boolean) for the Table widget,
