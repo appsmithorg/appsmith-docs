@@ -39,6 +39,69 @@ Please keep the following points in mind when creating a new branch:
 - When you switch to another branch, any uncommitted changes in your current branch are not transferred to the destination branch.
 - Attempting to check out a remote branch that already has a local version can result in an error.
 
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
+## Default branch
+
+<Tags
+  tags={[
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+The default branch is the branch where all changes are eventually merged back. It's the central hub from which new features, bug fixes, and other changes are based and into which they are integrated. In most cases, the default branch is named `master` or `main`.
+
+This is the base branch of the app. Users launching the app from the dashboard will see the deployed version from this branch.
+
+If you are enterprise user, you can choose a different branch as the default, offering customization based on specific project requirements or preferences.
+
+
+ <figure>
+  <img src="/img/git111.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
+  <figcaption align = "center"><i>Default branch</i></figcaption>
+</figure>
+
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
+## Branch protection
+
+<Tags
+  tags={[
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    }
+  ]}
+/>
+
+</div>
+
+Branch protection is a security feature designed to safeguard specific branches from unintentional or unauthorized changes. When branch protection is enabled, it enforces rules such as requiring code reviews, ensuring continuous integration checks pass, and preventing force pushes, providing a layer of control over critical branches. Changes to the app are not allowed in the protected branches. 
+
+If you are enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch.
+
+ <figure>
+  <img src="/img/git112.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
+  <figcaption align = "center"><i>Branch protection</i></figcaption>
+</figure>
+
+Learn how to [create and maintain multiple versions](/advanced-concepts/version-control-with-git/environments-with-git) of your applications and make changes to them in isolation using Git. 
+
 ## Further reading
 
 [Commit Changes](/advanced-concepts/version-control-with-git/commit-and-push)
