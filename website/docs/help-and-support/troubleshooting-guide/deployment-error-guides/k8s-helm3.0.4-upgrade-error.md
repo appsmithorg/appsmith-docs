@@ -23,7 +23,6 @@ Here's how you can use the plugin to remedy the upgrade problem:
 
 1. Commence by installing the `helm-mapkubeapis` plugin. Open your terminal and execute:
 
-
 ```bash
 helm plugin install https://github.com/helm/helm-mapkubeapis
 ```
@@ -34,7 +33,7 @@ helm plugin install https://github.com/helm/helm-mapkubeapis
 helm plugin list
 ```
 
-Please note: Sometimes the command may be `helm plugin ls`.
+Please note: sometimes the command may be `helm plugin ls`.
 
 3. Next, use the plugin on your Appsmith chart by replacing `&lt;APPSMITH-CHART-NAME&gt;` and `&lt;NAMESPACE&gt;` with your specific chart name and namespace:
 

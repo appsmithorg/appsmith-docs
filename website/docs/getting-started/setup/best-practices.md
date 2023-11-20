@@ -2,7 +2,7 @@
 description: Best practices for Appsmith deployment
 ---
 
-# Self-Hosting Best Practices
+# Self-hosting Best Practices
 
 This document is intended to share some best practices to follow when deploying Appsmith for production for a smooth and reliable experience.
 
