@@ -2,9 +2,9 @@
 
 This guide shows you how to convert your existing Fusion chart into Echarts.
 
-
+:::info
 Starting March 1, 2024, Fusion Charts face deprecation in Appsmith. Consequently, instances of Chart widgets with custom Fusion Charts display a watermark. Migration to ECharts is recommended at your earliest convenience. 
-
+:::
 
 
 ## FusionCharts Configuration
