@@ -64,7 +64,7 @@ The default branch is the branch where all changes are eventually merged back. I
 
 This is the base branch of the app. Users launching the app from the dashboard will see the deployed version from this branch.
 
-If you are enterprise user, you can choose a different branch as the default, offering customization based on specific project requirements or preferences.
+If you are an enterprise user, you can choose a different branch as the default, offering customization based on specific project requirements or preferences.
 
 
  <figure>
@@ -91,9 +91,9 @@ If you are enterprise user, you can choose a different branch as the default, of
 
 </div>
 
-Branch protection is a security feature designed to safeguard specific branches from unintentional or unauthorized changes. When branch protection is enabled, it enforces rules such as requiring code reviews, ensuring continuous integration checks pass, and preventing force pushes, providing a layer of control over critical branches. Changes to the app are not allowed in the protected branches. 
+Branch protection is a security feature designed to safeguard specific branches from unintentional or unauthorized changes. When branch protection is enabled, it enforces rules such as requiring code reviews, ensuring continuous integration checks pass, and preventing force push, providing a layer of control over critical branches. Changes to the app are not allowed in the protected branches. 
 
-If you are enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch.
+If you are an enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch.
 
  <figure>
   <img src="/img/git112.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
