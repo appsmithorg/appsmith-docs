@@ -49,7 +49,7 @@ The table below shows the permissions available for each role when you share a w
 
 <div className="tag-wrapper">
 
-## Share application## Share application
+## Share application
 
 <Tags
   tags={[
