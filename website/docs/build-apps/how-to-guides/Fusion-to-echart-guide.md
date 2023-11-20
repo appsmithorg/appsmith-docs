@@ -3,20 +3,21 @@
 This guide shows you how to convert your existing Fusion chart into Echarts.
 
 
-Starting March 1, 2024, Fusion Charts face deprecation in Appsmith. Consequently, instances of Chart widgets with custom Fusion Charts display a watermark. Migration to ECharts is recommended at your earliest convenience. This guide provides an example of how to migrate a bubble chart type.
-
-
-## Prerequisites
-
-* A Chart widget with Fusion Chart already configured.
+Starting March 1, 2024, Fusion Charts face deprecation in Appsmith. Consequently, instances of Chart widgets with custom Fusion Charts display a watermark. Migration to ECharts is recommended at your earliest convenience. 
 
 
 
-If you already have a bubble chart in your chart widget using the custom fusion chart option, please follow along with your own data.
+## FusionCharts Configuration
 
-If you don’t then, add a chart widget and select the chart type as custom fusion chart. Also create a new JSObject and replace it with the data below. In the JSObject we have a variable for fusionChartsData which will be used to show the bubble chart in the custom fusion chart.
 
-JSObject:
+This section shows the configuration of Fusion Charts before converting them to ECharts. You can follow the example below if you do not have Fusion Charts.
+
+<dd>
+
+*Example:* lets create a bubble chart, using FusionCharts:
+
+1.  Create a JSObject and add the following data:
+
 
 ```jsx
 export default {
@@ -86,23 +87,31 @@ export default {
 }
 ```
 
-In the chart widget’s custom fusion chart property add the binding suggested
+2. In the Chart widget’s **Custom fusion chart** property add:
 
 ```js
-{{<JSObjectName>.fusionChartsData}}
+{{JSObject1.fusionChartsData}}
 ```
-After this you can see the chart widget will show the bubble chart in this format
+
+This displays the bubble chart in the Chart widget.
 
 
-### Step 2: Add custom e-chart
+</dd>
 
-Add another chart widget and select the chart type as custom e-chart. You will see the custom e-chart with a default configuration. You can see the chart widget showing an e-chart example like below 
 
-### Step 3: Prepare the Data
+## Data conversion
 
-FusionCharts uses `categories` for the x-axis and `dataset > data` for the data points. ECharts uses a single array of data points with the format `[[x1, y1, z1], [x2, y2, z2], ...]`.
+When transitioning from FusionCharts to ECharts, the data structure differs. FusionCharts uses `categories` for the x-axis and `dataset > data` for data points. ECharts, on the other hand, requires a single array format: `[[x1, y1, z1], [x2, y2, z2], ...]`.
 
-Extract the data points from the FusionCharts configuration to create the ECharts dataset. To do so, create a new function in your JSObject which can format the data as expected
+
+Extract the data points from the FusionCharts configuration to create the ECharts dataset. Also, depending on your chart type, the configuration and data mapping may vary. 
+
+
+To do so, create a new function in your JSObject which can format the data as expected.
+
+<dd>
+
+*Example*: add the following code to the bubble chart JSObject mentioned earlier:
 
 ```js
 fusionToEchartsDataFormatter() {
@@ -117,11 +126,33 @@ fusionToEchartsDataFormatter() {
 }
 ```
 
-You can create similar mapping for different properties like title, axis names etc. as well so that you can fully base the e-chart data from fusion data.
+This code defines a function, `fusionToEchartsDataFormatter()`, which transforms FusionCharts data (`fusionData`) into the required format for ECharts (`echartsData`). It maps each data point's `x`, `y`, and `z` values, converting them to numbers, and assigns the name property accordingly.
 
-### Step 4: Configure the E-Charts Bubble Chart
+You can create similar mappings for other properties like title and axis names. This way, you ensure that your EChart data is fully based on Fusion data.
 
-In the chart widget which has custom e-chart as the selected type, please add the following configuration as shown below. This is the configuration suggested by e-charts documentation for bubble charts. 
+
+</dd>
+
+
+## Configure the E-Charts 
+
+Once you have configured the data, follow these steps to display the converted data in ECharts:
+
+1. Add a new Chart widget and select Custom EChart from the **Chart type** property.
+
+2. To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, `{{<your-chart-data>}}` in the **Custom EChart Configuration** property, like:
+
+
+<dd>
+
+To learn more about these charts and their specific configurations, you can refer to the official [ECharts documentation](https://echarts.apache.org/examples/en/index.html#chart-type-line). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
+
+</dd>
+
+<dd>
+
+
+*Example:* For the bubble chart, copy the bubble chart code from the [ECharts documentation](https://echarts.apache.org/examples/en/editor.html?c=bubble-gradient) and add it to the **Custom EChart Configuration** property. 
 
 In the E-charts configuration below within the `series` section, you can find the `data` property which needs to be linked to the function’s response from step 3. Please edit the `data` property as needed
 
@@ -159,7 +190,8 @@ In the E-charts configuration below within the `series` section, you can find th
       symbolSize: function (data) {
           return Math.sqrt(data[2]) * 10;
       },
-      data: <JSObjectName>.fusionToEchartsDataFormatter.data,
+      //highlight-next-line
+      data: JSObject1.fusionToEchartsDataFormatter.data,
       emphasis: {
           label: {
               show: true,
@@ -185,14 +217,24 @@ In the E-charts configuration below within the `series` section, you can find th
 } }}
 
 ```
+
 Post adding this in the e-chart configuration, the bubble chart should now be visible as seen below
 
+ <figure>
+  <img src="/img/fusiontoechart.png" style= {{width:"700px", height:"auto"}} alt="Server-side Filtering on Select"/>
+  <figcaption align = "center"><i>Bubble Chart configuration</i></figcaption>
+</figure>
 
-### Customization and Testing
+</dd>
 
-- Customize the appearance of your ECharts chart by modifying the `itemStyle`, `symbolSize`, and other style-related properties.
-- Test the functionality of your ECharts chart, such as tooltips and zooming.
-- Compare the visual result with the original FusionCharts to ensure that the conversion is successful.
 
-This guide provides a high-level overview of the process of converting a FusionCharts bubble chart to an ECharts bubble chart. Depending on the specific requirements, some steps may require further customization. Remember to import the correct versions of the libraries and handle any dependencies that each library may require.
+### Customization and testing
+
+To customize the appearance and capability of your ECharts chart, follow these steps:
+
+* **Customize the appearance:** Modify the `itemStyle`, `symbolSize`, and other style-related properties to achieve the desired look.
+* **Functional Testing:** Ensure the capability of your ECharts chart by testing tooltips, zooming, and other features.
+* **Visual Comparison:** Compare the visual output with the original FusionCharts to confirm a successful conversion.
+
+Depending on the specific requirements, some steps may require further customization. Remember to import the correct versions of the libraries and handle any dependencies that each library may require.
 
