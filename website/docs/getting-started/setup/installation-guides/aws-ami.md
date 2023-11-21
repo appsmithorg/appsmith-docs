@@ -4,6 +4,7 @@ sidebar_position: 4
 ---
 
 # AWS AMI
+
 This page provides steps to install Appsmith using an Amazon Machine Image (AMI).
 
 ## Prerequisites
@@ -24,25 +25,25 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-<a id="select-appsmith-image"></a>
+   <a id="select-appsmith-image"></a>
 7. Select the [Appsmith](https://aws.amazon.com/marketplace/pp/prodview-mrpgdd3mhpvbs) image.
 8. On the **Launch an instance** screen:
 
- a. Configure the instance as below:
+a. Configure the instance as below:
 
- | Attribute | Value |
- |------------------------|------------------------------------------| 
- | **Name** | Give a desired name. |
- | **Instance type** | A minimum `t3.medium` or `t3a.medium` is needed. |
- | **Key pair** | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
+| Attribute         | Value                                                                           |
+| ----------------- | ------------------------------------------------------------------------------- |
+| **Name**          | Give a desired name.                                                            |
+| **Instance type** | A minimum `t3.medium` or `t3a.medium` is needed.                                |
+| **Key pair**      | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
 
- b. Scroll down to the **Networking** section, and configure as below:
+b. Scroll down to the **Networking** section, and configure as below:
 
- | Attribute | Value |
- |------------------------|------------------------------------------| 
- | **Firewall (security groups)** | Choose **Select existing security group** checkbox.|
- | **Security groups** | Select the security group that you created in the [Prerequisites](#prerequisites) section. |
- 
+| Attribute                      | Value                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------ |
+| **Firewall (security groups)** | Choose **Select existing security group** checkbox.                                        |
+| **Security groups**            | Select the security group that you created in the [Prerequisites](#prerequisites) section. |
+
 9. Keep the default selection for other fields.
 
 10. Click the **Launch Instance** button. You see a launch status screen as shown below:
@@ -75,15 +76,15 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 
 2. Find the password in one of the below ways:
 
-  * SSH into your server using your private key and find the application credentials with:
-    ```
-    sudo cat /home/ubuntu/appsmith/credential
-    ``` 
-  * **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
+- SSH into your server using your private key and find the application credentials with:
+  ```
+  sudo cat /home/ubuntu/appsmith/credential
+  ```
+- **Or** review the system log, by selecting **Get System Log** from the **Actions** drop-down menu for your instance. The credentials are printed in the logs as shown below:
 
-  :::caution Attention
-  The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
-  :::
+:::caution Attention
+The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
+:::
 
  <figure>
    <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
@@ -93,20 +94,17 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 3. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
- 
- To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in the [image selection](#select-appsmith-image) step, and then follow the instructions provided on this page.
+
+To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in the [image selection](#select-appsmith-image) step, and then follow the instructions provided on this page.
 
 ## Troubleshooting
 
-Some common errors that you may face during installation:
-
-- [Unable to access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith)
-- [Containers failed to restart](/help-and-support/troubleshooting-guide/deployment-errors#containers-failed-to-start)
+If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
 
-* [Add super admins to your instance](/getting-started/setup/instance-configuration#add-super-admins).
-* [Configure Appsmith instance](/getting-started/setup/instance-configuration/)
-* [Managing Appsmith instance](/getting-started/setup/instance-management/)
+- [Add super admins to your instance](/getting-started/setup/instance-configuration#add-super-admins).
+- [Configure Appsmith instance](/getting-started/setup/instance-configuration/)
+- [Managing Appsmith instance](/getting-started/setup/instance-management/)

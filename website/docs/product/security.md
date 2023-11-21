@@ -1,46 +1,67 @@
 ---
 description: Learn about Appsmith's security features and how to protect your data on the Appsmith platform.
 ---
+
 # Security
 
-This page explains the security features and considerations that Appsmith has implemented in its platform, and steps you can take to make your apps as safe as possible.
+This page explains the security features and considerations that Appsmith has implemented to make your apps as safe as possible.
 
-## Safe data
+## Data security
 
 Appsmith applications are secure-by-default, with a number of strategies in place to protect your data.
 
-All sensitive credentials such as database credentials and Git SSH keys are encrypted with [AES-256 encryption](https://en.wikipedia.org/wiki/Advanced\_Encryption\_Standard), and each self-hosted Appsmith instance ensures [data-at-rest](https://en.wikipedia.org/wiki/Data\_at\_rest) security by configuring unique salt and password values. In the cloud, Appsmith is hosted in AWS data centers on **SOC 1** and **SOC 2** compliant servers, with data redundancy maintained by regular backups. Internal access to Appsmith Cloud is controlled with a two-factor authentication system and audit logs.
+- **Encryption**: Appsmith ensures that all sensitive information, such as database credentials and Git SSH keys, are protected using AES-256 encryption. This robust encryption standard safeguards your credentials, making them unreadable to unauthorized users.
 
-Appsmith Cloud only connects to your databases and API endpoints through specific whitelisted IPs: `18.223.74.85` and `3.131.104.27`. All connections to Appsmith Cloud are encrypted with [TLS](https://en.wikipedia.org/wiki/Public\_key\_certificate). For self-hosted instances, it's possible to set up [SSL](https://en.wikipedia.org/wiki/Public\_key\_certificate) certificates during installation via [LetsEncrypt](https://letsencrypt.org/), or administrators can upload their own SSL certificate to Appsmith.
+- **Data-at-Rest**: For self-hosted instances of Appsmith, security is enhanced through a unique configuration of salt and password values, mitigating the risk of data breaches when data is at rest.
 
-## Safe queries
+- **SSL Certification**: Self-hosted instances have the option to set up SSL certificates during the installation process using Let's Encrypt, or admins can choose to upload their own SSL certificates to establish a secure connection.
 
-Appsmith's backend system doesn't log or store any data returned from your databases or API endpoints, nor does it store information about responses or user input; Appsmith only acts as a proxy layer.
+- **Secure Connections**: Appsmith Cloud establishes connections with databases and API endpoints exclusively through whitelisted IP addresses `18.223.74.85` and `3.131.104.27`. All traffic to and from Appsmith Cloud is secured using TLS encryption.
 
-The configuration and body of your queries are securely stored and are never exposed to clients while the app is in **View** mode. Users can't access any data that would allow them to infer the query's content. When a query is executed, the Appsmith server appends sensitive credentials just before forwarding the request to your backend, without exposing any sensitive credentials to the client's browser.
+- **Compliant Hosting**: The cloud version of Appsmith is hosted on AWS data centers that adhere to SOC 1 and SOC 2 compliance standards. These servers provide a secure environment, and their integrity is bolstered by systematic backups to prevent data loss.
 
-It's safe to add secrets to APIs or datasource configurations, as they are not exposed while the app is in **View** mode. You can update the secrets in **Edit** mode, but it's not possible to view the current value of existing secrets, regardless of the app's mode.
+- **Access Control**: Internal access to Appsmith Cloud is strictly regulated. A two-factor authentication (2FA) system is in place, along with detailed audit logs to monitor and control access, providing an additional layer of security.
 
-To avoid SQL injections, all SQL queries have [prepared statements](/connect-data/concepts/how-to-use-prepared-statements) enabled by default.
+## Query Security
 
-## Safe JavaScript
+- **No Data Logging**: The backend system of Appsmith is designed to act solely as a proxy, without logging or storing any data retrieved from databases or API endpoints. This includes response data and user input, thereby preventing unauthorized data access or leakage.
 
-JavaScript code written in any Appsmith app is executed on the client, and a user can inspect the site to view your code in their browser. Similarly, when you sync applications to Git repositories, the JavaScript code in your app is stored and accessible as a JavaScript file in the repository. Therefore, it's recommended to implement the standard best practices for dealing with client-side code.
+- **Secure Storage of Queries**: Query configurations and bodies are securely stored within the platform. When an application is in View mode, this information is not disclosed to users, ensuring that sensitive data within the queries remains confidential.
 
-For example, it's important to avoid hard-coding sensitive keys or credentials in plain text. Similarly, it's not safe to store sensitive information using Appsmith's [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function, because it stores its data in the browser's local storage and can be viewed by the user.
+- **Credential Handling**: When executing a query, the Appsmith server securely appends sensitive credentials just prior to forwarding the request to your backend service. This process ensures that sensitive credentials are not exposed to the client's browser.
 
-Appsmith does not expose JavaScript DOM APIs directly to the user while writing JavaScript code, but it does implement some similar features like [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) which are available as global [framework functions](/reference/appsmith-framework/widget-actions).
+- **Secrets Management**: API secrets and datasource configurations containing sensitive information are securely handled. While in View mode, these secrets remain concealed, and although you can update secrets in Edit mode, it is not possible to view the current value of existing secrets, maintaining their confidentiality irrespective of the mode.
 
-The JavaScript `Fetch` API is supported, and it never sends cookies or session information when called from within Appsmith.
+- **SQL Injection Protection**: To safeguard against SQL injection attacks, all SQL queries on the Appsmith platform have [prepared statements](/connect-data/concepts/dynamic-binding-in-queries#mustache-bindings-with-prepared-statements) enabled by default. This feature helps prevent unauthorized commands from being executed via user input.
+
+## JavaScript Security
+
+Appsmith takes measures to ensure JavaScript security within the platform, but it is important to understand the context in which JavaScript code is executed and accessed.
+
+- **Client-Side Execution**: JavaScript code within an Appsmith app executes on the client's side. This implies that users can use browser tools to inspect and potentially view your JavaScript code. Code visibility is an inherent trait of client-side JavaScript, underscoring the need for caution when dealing with sensitive information.
+
+- **Handling Sensitive Data**: It is critical to avoid embedding sensitive keys or credentials within your JavaScript code in plain text. Best practices for securing client-side code should be implemented.
+
+- **Local Storage Caution**: Utilizing Appsmith's [`storeValue()`](/reference/appsmith-framework/widget-actions/store-value) function to store sensitive information is discouraged. Data stored using this function resides in the browser's local storage and can be inspected by users, posing a security risk.
+
+- **DOM API Exposure**: Direct access to JavaScript DOM APIs is not provided by Appsmith to minimize security risks. However, certain featuressuch as [`setInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#setinterval) and [`clearInterval()`](/reference/appsmith-framework/widget-actions/intervals-time-events#clearinterval) are offered through similar, global framework functions.
+
+- **Fetch API Specifics**: Although the JavaScript `Fetch` API is supported on Appsmith, it is configured to exclude cookies or session data in requests, further aligning with security protocols.
 
 ## Sandboxed Iframe widgets
 
-After v1.8.6 of Appsmith, [Iframe](/reference/widgets/iframe/) widgets have a `sandbox` attribute set on them by default to help protect from [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities. It reduces some capabilities of the iframe, but increases security and is unlikely to impede most real-world uses of this widget. The `sandbox` attribute is toggled using an environment variable in the Appsmith instance's `stacks/configuration/docker.env` file; setting `APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX` to `true` removes the `sandbox` attribute and its protections.
+With the update to version 1.8.6 and beyond, Appsmith has enhanced the security of [Iframe](/reference/widgets/iframe/) widgets through the use of the `sandbox` attribute.
+
+- **XSS Mitigation**: The `sandbox` attribute is enabled by default on Iframe widgets to mitigate the risk of [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks. While this may limit certain capabilities, it generally does not interfere with the anticipated functionalities of the Iframe widget in typical use cases.
+
+- **Sandboxing Control**: Administration of the `sandbox` attribute is possible through the `APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX` environment variable within the `stacks/configuration/docker.env` file of the Appsmith instance. Setting this variable to `true` removes the sandboxing attributes, and hence, should be done judiciously, acknowledging the potential implications for security.
 
 ```sh
 APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false
 ```
 
+These security implementations demonstrate Appsmith's commitment to maintaining a secure environment for developers and users alike. By following the guidelines provided, you can contribute to creating secure applications on the Appsmith platform.
+
 :::info
-Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email [security@appsmith.com](mailto:security@appsmith.com), and it'll be resolved as quickly as possible.
+Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email `security@appsmith.com`
 :::

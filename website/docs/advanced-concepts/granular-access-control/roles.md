@@ -49,7 +49,7 @@ This section contains permissions related to the actions a user can perform on d
 | | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> |
 | --- | --- | --- | --- | --- | --- |
 | **Workspace** | Execute queries on any datasource in the workspace. | Create queries on any datasource in the workspace. | Edit any datasource in the workspace. | Delete any datasource in the workspace. | View any datasource in the workspace. |
-| **Environments** | Execute queries for staging and production environment.  | - | - | - | - |
+| **Environments** | Execute queries for different environments.  | Create custom environments.  | Edit and configure different environments. |  Delete different environments.| View environments in the workspace. |
 | **Datasources** | Execute queries on that datasource provided they have access to execute on at least one environment. | Create queries on the datasource. | Edit values of datasource configurations parameters in all environments. | Add or remove datasource configuration parameters in all environments. | View datasource configuration values in all environments. |
 
 

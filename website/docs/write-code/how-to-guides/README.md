@@ -2,21 +2,6 @@ import DocCardList from '@theme/DocCardList';
 
 # How to Guides
 
-
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <a href="/core-concepts/writing-code"><strong>Write Code in Appsmith</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">Allows you to write JavaScript code almost everywhere on the GUI inside widget properties, events listeners, queries, and other settings.</div>
-    </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
-           <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>Create JS Objects</strong></a>
-        </div><hr/>
-        <div class="containerDescription">The JavaScript Editor in Appsmith enables you to create JS Objects with a page-level scope. </div>
-    </div>
-</div>
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
@@ -50,7 +35,7 @@ import DocCardList from '@theme/DocCardList';
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/core-concepts/writing-code/ext-libraries"><strong>Use external JS libraries</strong></a>
+            <a href="/core-concepts/writing-code/ext-libraries"><strong>Install External JS libraries</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows hwo to install external libraries for additional data manipulation or transformation capabilities.</div>
     </div>
@@ -62,4 +47,3 @@ import DocCardList from '@theme/DocCardList';
         </div>
     </div>
 </div>
-

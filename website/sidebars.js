@@ -16,7 +16,7 @@ const sidebars = {
             {
               type: 'category',
               collapsed: false,
-              label: 'The Basics',
+              label: 'Tutorial 1: The Basics',
               link: {
                 type: 'doc',
                 id: 'getting-started/tutorials/start-building',
@@ -85,10 +85,10 @@ const sidebars = {
                     'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                   ],
                 },
-
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
+                'getting-started/setup/installation-guides/air-gapped',
               ],
             },
             {
@@ -227,9 +227,7 @@ const sidebars = {
             `getting-started/setup/best-practices`,
             'getting-started/setup/deployment-architecture',
           ],
-        },
-
-        'getting-started/faq',
+        }
       ],
     }, //getting started section end
     {
@@ -319,11 +317,10 @@ const sidebars = {
           label: 'Concepts',
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
+            'connect-data/concepts/dynamic-queries',
             'connect-data/concepts/dynamic-binding-in-queries',
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
-            'connect-data/concepts/how-to-use-prepared-statements',
-            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
       ]
@@ -472,10 +469,6 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-
-            'core-concepts/writing-code/README',
-            'core-concepts/writing-code/javascript-editor-beta/README',
-            'write-code/how-to-guides/display-data-from-functions',
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
             `core-concepts/writing-code/workflows`,
@@ -489,18 +482,17 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
-          items: [
-             {
+          items: [{
           type: 'category',
           collapsed: true,
           label: 'Global Objects',
           link: { type: 'doc', id: 'write-code/reference/README' },
           items: [
-            'reference/appsmith-framework/context-object',
-            'reference/appsmith-framework/console-object',
-            'reference/appsmith-framework/query-object',
-          ],
-        },
+              'reference/appsmith-framework/query-object',
+              'reference/appsmith-framework/context-object',
+              'reference/appsmith-framework/console-object',
+            ],
+          },
             {
               type: 'category',
               label: 'Global Functions',
@@ -530,10 +522,22 @@ const sidebars = {
             },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings',
 
       ],
     }, //Reference End
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'write-code/concepts/overview',
+      },
+      items: [
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/concepts/execute-onpageload',
+      ],
+    }
       ]
     }, //CODE end
 
@@ -591,32 +595,38 @@ const sidebars = {
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
-      link: {
-        type: 'doc',
-        id: 'help-and-support/troubleshooting-guide/README',
-      },
       items: [
+        'help-and-support/troubleshooting-guide/README',
         {
           // Help & Support start
           type: 'category',
-          label: 'Action Errors',
+          label: 'Self-hosting Errors',
           link: {
             type: 'doc',
-            id: 'help-and-support/troubleshooting-guide/action-errors/README',
+            id: 'help-and-support/troubleshooting-guide/deployment-errors',
+          },
+          items: [
+            "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+          ],
+        },
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Application Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/application-errors',
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/README'
           ],
         },
-        'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/application-errors',
-        'help-and-support/troubleshooting-guide/query-errors',
-        'help-and-support/troubleshooting-guide/widget-errors',
+        // 'help-and-support/troubleshooting-guide/js-errors',
+        // 'help-and-support/troubleshooting-guide/query-errors',
+        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {
@@ -625,6 +635,7 @@ const sidebars = {
       collapsed: false,
       label: 'Product',
       items: [
+        'getting-started/faq',
         'product/security',
         'product/telemetry',
         {

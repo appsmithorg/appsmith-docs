@@ -146,12 +146,31 @@ This command updates a **Sheet Row(s)** entity. The following section lists all 
 #### Update Row Object
 
 <dd>A JSON-formatted object whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key to specify which record to update. If you fetched the record from another Google Sheets query, this index value should be available on its <code>rowIndex</code> property.</dd>
-<dd><i>Example:</i>
-<pre>{`{
-    ...{{ UsersTable.selectedRow }}, // includes rowIndex key
-    "status": "accepted"
-}`}</pre>
+
+<dd>
+
+*Example:*
+
+```js
+//For JSON Form: {{JSONForm1.formData.id}} 
+//For Table inline editing: {{ Table1.updatedRow.id }}
+
+{{
+    {
+        rowIndex: Table1.selectedRow.rowIndex, // includes rowIndex key
+        "id": Form1.data.TextID, 
+        "name": Form1.data.InputName, 
+        "country": Form1.data.SelectCountry 
+       
+    }
+}}
+```
+
+See [Update single row](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets#update-single-row) guide.
+
+
 </dd>
+
 
 ### Delete One
 
@@ -337,9 +356,23 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 #### Update Row Object(s)
 
 <dd>An array of JSON-formatted objects whose key/value pairs represent the columns and values from your table record. You must include a <code>rowIndex</code> key in each row object to specify which record to update in the spreadsheet. Note that the <code>rowIndex</code> property of your row objects in Appsmith refers to its index in the array of table records, not the record's row number in the Google spreadsheet.</dd>
-<dd><i>Example:</i>
-<pre>{`{{ UsersTable.updatedRows }} // includes rowIndex key in each object`}</pre>
+
+<dd>
+
+*Example:*
+
+```js
+{{
+        Table1.updatedRows.map(row => {    // includes rowIndex key in each object
+            return row.allFields
+        })
+ }}
+ ```
+
+ See [Update multiple rows](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets#update-multiple-rows) guide.
+
 </dd>
+
 
 ## Troubleshooting
 
