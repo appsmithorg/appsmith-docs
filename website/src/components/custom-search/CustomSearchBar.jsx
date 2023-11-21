@@ -10,12 +10,14 @@ const CustomSearchBar = () => {
     useEffect(() => {
         const searchInput = document.querySelector('.DocSearch-Button');
         const aiInput = document.querySelector('.custom-doc-Search-bar');
+
         if (searchInput) {
             searchInput.style.display = 'none';
         }
         if (aiInput) {
             aiInput.style.display = 'none';
         }
+
         if (searchType === 'ai') {
             if (aiInput) {
                 aiInput.click();
@@ -25,15 +27,18 @@ const CustomSearchBar = () => {
                 searchInput.click();
             }
         }
+
+        setSearchType('');
     }, [searchType]);
 
     return (
-        <div>
+        <div className="custom-search-bar">
             <label>
-                <select value={searchType} onChange={(e) => setSearchType(e.target.value)}>
-                    <option value="">Search</option>
-                    <option value="ai">Ask AI</option>
-                    <option value="docs">Search in Docs</option>
+                <FaSearch className="search-icon" />
+                <select className="search-select"  value={searchType} onChange={(e) => setSearchType(e.target.value)}>
+                    <option className="search-option"  value="">Search</option>
+                    <option className="search-option"  value="ai">Ask Appsmith AI</option>
+                    <option className="search-option"  value="docs">Search in Docs</option>
                 </select>
             </label>
             <AISearchButton />
