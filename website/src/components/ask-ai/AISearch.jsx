@@ -11,8 +11,11 @@ const AISearch = forwardRef((props, ref) => {
     const [isLoading, setIsLoading] = useState(false);
     const [showExamples, setShowExamples] = useState(true);
     const [isModalOpen, setModalState] = useState(true);
-    const [isAnswerComplete, setIsAnswerComplete] = useState(false); // Added state for answer completeness
+    const [isAnswerComplete, setIsAnswerComplete] = useState(false);
+    const [termSelected, setTermSelected] = useState(false);
+
     let eventSource;
+
     const commonSearchQueries = [
         "How to get started with Appsmith?",
         "How to install Appsmith on Docker?",
@@ -27,6 +30,7 @@ const AISearch = forwardRef((props, ref) => {
         setIsLoading(false);
         setShowExamples(true);
         setModalState(false);
+        setIsAnswerComplete(false);
     };
 
     const closeModal = () => {
@@ -50,8 +54,9 @@ const AISearch = forwardRef((props, ref) => {
         setAnswer('');
         setSearchTerm(query);
         setShowExamples(false);
+        setIsAnswerComplete(false);
 
-        const projectURL = 'https://zxtoyfvpdjilxmpezgde.supabase.co/functions/v1/vector-search';
+        const projectURL = 'https://ghgdtsupocntpodexlbh.supabase.co/functions/v1/vector-search';
         const queryURL = `${projectURL}/stream?query=${query}`;
 
         eventSource = new EventSource(queryURL);
@@ -87,6 +92,7 @@ const AISearch = forwardRef((props, ref) => {
 
     const handleCommonQueryClick = (query) => {
         fetchData(query);
+        setTermSelected(true);
     };
 
     const handleChange = (e) => {
