@@ -1,11 +1,8 @@
-
 import { FaSearch } from 'react-icons/fa';
 import './css/CustomSearch.css';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
 import DocSearch from '@theme-original/SearchBar';
-import React, { useState, useRef, useEffect } from 'react';
-
-
+import React, { useState, useEffect } from 'react';
 
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
@@ -24,33 +21,20 @@ const CustomSearchBar = () => {
                 aiInput.click();
             }
         } else if (searchType === 'docs') {
-
             if (searchInput) {
                 searchInput.click();
             }
         }
     }, [searchType]);
 
-
     return (
         <div>
             <label>
-                <input
-                    type="radio"
-                    value="ai"
-                    checked={searchType === 'ai'}
-                    onChange={() => setSearchType('ai')}
-                />
-                Ask AI
-            </label>
-            <label>
-                <input
-                    type="radio"
-                    value="docs"
-                    checked={searchType === 'docs'}
-                    onChange={() => setSearchType('docs')}
-                />
-                Search in Docs
+                <select value={searchType} onChange={(e) => setSearchType(e.target.value)}>
+                    <option value="">Search</option>
+                    <option value="ai">Ask AI</option>
+                    <option value="docs">Search in Docs</option>
+                </select>
             </label>
             <AISearchButton />
             <DocSearch />
@@ -59,4 +43,3 @@ const CustomSearchBar = () => {
 };
 
 export default CustomSearchBar;
-
