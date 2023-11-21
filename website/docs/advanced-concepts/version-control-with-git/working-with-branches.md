@@ -88,9 +88,10 @@ If you are an enterprise user and using Git across multiple instances, you have 
 
 </div>
 
-When branch protection is enabled, changes to the app are not allowed in the protected branches. It enforces rules such as preventing force push, and providing a layer of control over critical branches.
+Changes to the app are not allowed in protected branches, the user needs to create a new branch or checkout an existing branch to edit the app. This enforces Git Workflows, ensuring development happens securely and by following good development practices.
 
-If you are an enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch. You can exclude the default branch from branch protection if required.
+If you are an enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch. You have the option to exclude the default branch from branch protection if needed, from the Git settings located in the left corner.
+
 
  <figure>
   <img src="/img/git112.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
