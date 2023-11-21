@@ -20,29 +20,30 @@ To enable GitHub Sign in, log in to your [GitHub Account](https://github.com) an
 
 1. In your profile drop-down, navigate to **Settings > Developer Settings > OAuth Apps** and click **Register a new application** to create and register a new OAuth App.
 
-![Click to expand](</img/Github_Reg_App.png>)
+![Click to expand](/img/Github_Reg_App.png)
 
 2. Configure the following OAuth Credentials for a web application:
 
-    1. **Homepage URL:** the domain on which you host Appsmith with HTTPS (Eg: `https://app.appsmith.com`).
+   1. **Homepage URL:** the domain on which you host Appsmith with HTTPS (Eg: `https://app.appsmith.com`).
 
-    2. **Authorization Callback URL:** append `/login/oauth2/code/github` to the Homepage URL (Eg: `https://app.appsmith.com/login/oauth2/code/github`).
+   2. **Authorization Callback URL:** append `/login/oauth2/code/github` to the Homepage URL (Eg: `https://app.appsmith.com/login/oauth2/code/github`).
 
-    ![Click to expand](</img/Github_App_Config.png>)
+   ![Click to expand](/img/Github_App_Config.png)
 
-## Configure Appsmith instance  
+## Configure Appsmith instance
 
 :::caution
 Test the Client ID and Client Secret before disabling Form login on Appsmith. This ensures that users can access Appsmith with their GitHub credentials. To fix an invalid GitHub configuration, update the environment variables.
 :::
 
-There are two ways to configure the self-hosted Appsmith instance - 
+There are two ways to configure the self-hosted Appsmith instance -
+
 - Admin Settings
 - Environment Variables
 
 ### Admin settings
 
-Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and  `Client Secret`. Click the **Save & Restart** button at the bottom of the page. 
+Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and `Client Secret`. Click the **Save & Restart** button at the bottom of the page.
 
 ![](/img/as_github_auth_config.png)
 
@@ -54,9 +55,8 @@ If you have set values using [environment variables](#environment-variables) for
 
 Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
-* Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
-* Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
-    
+- Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
+- Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
   ```bash
   # Example configuration in docker.env file
   # ********* GitHub OAuth **********
@@ -64,10 +64,10 @@ Update the values for the following keys in the instance configuration file, for
   APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET=YOUR_GITHUB_CLIENT_SECRET
   APPSMITH_SIGNUP_ALLOWED_DOMAINS=exampledomain.com
   # ******************************
-   ```
-* Restart the Appsmith instance. 
+  ```
+- Restart the Appsmith instance.
 
-After these steps, your Appsmith installation should now enable GitHub Login. If you are running appsmith behind an ELB / Proxy, please update the [Nginx configuration](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+After these steps, your Appsmith installation should now enable GitHub Login.
 
 ## Further reading
 

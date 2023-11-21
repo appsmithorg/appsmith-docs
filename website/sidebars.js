@@ -586,31 +586,38 @@ const sidebars = {
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
-      link: {
-        type: 'doc',
-        id: 'help-and-support/troubleshooting-guide/README',
-      },
       items: [
+        'help-and-support/troubleshooting-guide/README',
         {
           // Help & Support start
           type: 'category',
-          label: 'Action Errors',
+          label: 'Self-hosting Errors',
           link: {
             type: 'doc',
-            id: 'help-and-support/troubleshooting-guide/action-errors/README',
+            id: 'help-and-support/troubleshooting-guide/deployment-errors',
+          },
+          items: [
+            "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+          ],
+        },
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Application Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/application-errors',
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/README'
           ],
         },
-        'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/query-errors',
-        'help-and-support/troubleshooting-guide/widget-errors',
+        // 'help-and-support/troubleshooting-guide/js-errors',
+        // 'help-and-support/troubleshooting-guide/query-errors',
+        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {

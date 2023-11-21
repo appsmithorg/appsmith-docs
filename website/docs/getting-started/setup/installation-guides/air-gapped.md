@@ -12,7 +12,7 @@ It is crucial to understand that air-gapping at the server level is distinct fro
 
 ## Telemetry and Privacy in Appsmith
 
-Privacy-minded users may equate air-gapping with the reluctance to share usage telemetry for privacy reasons. However, air-gapping is not a prerequisite for privacy within Appsmith. Users who wish to disable telemetry can do so regardless of their network setup. For instructions on disabling telemetry, please refer to our documentation on [disabling telemetry](/product/telemetry).
+Privacy-minded users may equate air-gapping with the reluctance to share usage telemetry for privacy reasons. However, air-gapping is not a prerequisite for privacy within Appsmith. Users who wish to disable telemetry can do so regardless of their network setup. For instructions on disabling telemetry, please refer to the documentation on [disabling telemetry](/product/telemetry).
 
 ## Appsmith Connectivity Requirements
 
