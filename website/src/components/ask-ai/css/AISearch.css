@@ -59,7 +59,6 @@
     cursor: pointer;
     color: #333;
     text-decoration: none;
-    margin-bottom: 10px;
     padding: 10px;
     font-size: 0.875rem;
 }
@@ -118,7 +117,7 @@
 }
 
 .ai-search-modal-content {
-    background: #f5f6f7;
+    background-color: #f5f6f7;
     padding: 20px;
     border-radius: 5px;
     text-align: center;

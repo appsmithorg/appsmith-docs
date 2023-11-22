@@ -33,17 +33,15 @@ const CustomSearchBar = () => {
                     <div
                         className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
                         onClick={() => setSearchType('ai')}
-                        title="Ask Appsmith AI"
                     >
-                        🧠 
+                        🧠 Ask AI
                     </div>
 
                     <div
                         className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                         onClick={() => setSearchType('docs')}
-                        title="Search in docs"
                     >
-                        🔍 
+                        🔍 Search
                     </div>
                 </label>
             </div>

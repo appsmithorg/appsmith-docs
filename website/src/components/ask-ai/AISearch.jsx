@@ -1,7 +1,7 @@
-import React, { useState, useImperativeHandle, forwardRef, useEffect } from 'react';
+import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './css/AISearch.css';
-import { FaUser, FaComment } from 'react-icons/fa';
+import { FaRobot } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
 
 const AISearch = forwardRef((props, ref) => {
@@ -10,7 +10,6 @@ const AISearch = forwardRef((props, ref) => {
     const [answer, setAnswer] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [showExamples, setShowExamples] = useState(true);
-    const [isModalOpen, setModalState] = useState(true);
     const [isAnswerComplete, setIsAnswerComplete] = useState(false);
     const [termSelected, setTermSelected] = useState(false);
 
@@ -28,7 +27,7 @@ const AISearch = forwardRef((props, ref) => {
         setAnswer('');
         setIsLoading(false);
         setShowExamples(true);
-        setModalState(false);
+        setTermSelected(false);
         setIsAnswerComplete(false);
     };
 
@@ -36,7 +35,10 @@ const AISearch = forwardRef((props, ref) => {
         if (props.closeModal) {
             props.closeModal();
         }
-        setModalState(false);
+        setTermSelected(false);
+        setAnswer('');
+        setIsLoading(false);
+        setShowExamples(true);
     };
 
     useImperativeHandle(ref, () => ({
@@ -47,7 +49,6 @@ const AISearch = forwardRef((props, ref) => {
         closeModal,
     }));
 
-
     const fetchData = async (query) => {
         setIsLoading(true);
         setAnswer('');
@@ -55,47 +56,58 @@ const AISearch = forwardRef((props, ref) => {
         setShowExamples(false);
         setIsAnswerComplete(false);
 
-        const projectURL = 'https://ghgdtsupocntpodexlbh.supabase.co/functions/v1/vector-search';
-        const queryURL = `${projectURL}/stream?query=${query}`;
+        try {
+            const projectURL = 'https://ghgdtsupocntpodexlbh.supabase.co/functions/v1/vector-search';
+            const queryURL = `${projectURL}/stream?query=${query}`;
 
-        eventSource = new EventSource(queryURL);
+            eventSource = new EventSource(queryURL);
 
-        eventSource.addEventListener('error', (err) => {
+            eventSource.addEventListener('error', (err) => {
+                setIsLoading(false);
+                console.error(err);
+            });
+
+            eventSource.addEventListener('message', (e) => {
+                setIsLoading(false);
+
+                if (e.data.includes("[DONE]")) {
+                    eventSource.close();
+                    setIsAnswerComplete(true);
+                    setInputValue('');
+                    return;
+                }
+
+                const completionResponse = JSON.parse(e.data);
+                const text = completionResponse.choices[0].text;
+
+                setAnswer((prevAnswer) => prevAnswer + text);
+            });
+        } catch (error) {
+            console.error(error);
             setIsLoading(false);
-            console.error(err);
-        });
-
-        eventSource.addEventListener('message', (e) => {
-            setIsLoading(false);
-
-            if (e.data.includes("[DONE]")) {
-                eventSource.close();
-                setInputValue('');
-                setIsAnswerComplete(true);
-                return;
-            }
-
-            const completionResponse = JSON.parse(e.data);
-            const text = completionResponse.choices[0].text;
-
-            setAnswer((prevAnswer) => prevAnswer + text);
-        });
+        }
     };
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            fetchData(inputValue);
+            if (!isLoading) {
+                fetchData(inputValue);
+            }
         }
     };
 
     const handleCommonQueryClick = (query) => {
-        fetchData(query);
-        setTermSelected(true);
+        if (!isLoading) {
+            setTermSelected(true);
+            fetchData(query);
+        }
     };
 
     const handleChange = (e) => {
-        setInputValue(e.target.value);
+        if (!isLoading) {
+            setInputValue(e.target.value);
+        }
     };
 
     return (
@@ -106,9 +118,10 @@ const AISearch = forwardRef((props, ref) => {
                     name="question-input"
                     placeholder="Ask Appsmith AI a question..."
                     type="text"
-                    value={inputValue}
+                    value={termSelected ? inputValue : searchTerm}
                     onKeyDown={handleKeyDown}
                     onChange={handleChange}
+                    disabled={isLoading}
                 />
                 {showExamples && (
                     <div className='ai-query-wrapper'>
@@ -124,16 +137,13 @@ const AISearch = forwardRef((props, ref) => {
                         ))}
                     </div>
                 )}
-               
-                {isLoading && <div></div>}
+
+                {isLoading && <div className='loading-indicator'>Loading...</div>}
                 {searchTerm && (
-                    <div className='user-search-term'>
-                        <FaUser className='user-icon' /> {searchTerm}
+                    <div className='search-term-answer'>
+                        <FaRobot className='robot-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
                     </div>
                 )}
-                <div className='search-term-answer'>
-                    <FaComment className='comment-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
-                </div>
                 {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
             </div>
         </div>
