@@ -6,7 +6,7 @@ slug: /
 
 # What is Appsmith
 
-Organizations build internal applications such as dashboards, database GUIs, admin panels, approval apps, customer support tools, etc. to help improve their business operations. Appsmith is an open-source developer tool that enables the rapid development of these applications. You can drag and drop pre-built widgets to build UI. Connect securely to your databases & APIs using its datasources. Write business logic to read & write data using queries & javascript.
+Organizations build internal applications such as dashboards, database GUIs, admin panels, approval apps, customer support tools, etc. to help improve their business operations. Appsmith is an open-source developer tool that enables the rapid development of these applications. You can drag and drop pre-built widgets to build UI. Connect securely to your databases & APIs using its datasources. Write business logic to read & write data using queries & JavaScript.
 
 <figure>
     <VideoEmbed host="youtube" videoId="NnaJdA1A11s"/> 
