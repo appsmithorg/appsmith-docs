@@ -118,7 +118,7 @@ const AISearch = forwardRef((props, ref) => {
                     name="question-input"
                     placeholder="Ask Appsmith AI a question..."
                     type="text"
-                    value={termSelected ? inputValue : searchTerm}
+                    value={isAnswerComplete ? '' : searchTerm || inputValue}
                     onKeyDown={handleKeyDown}
                     onChange={handleChange}
                     disabled={isLoading}
