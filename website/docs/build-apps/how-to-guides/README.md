@@ -45,7 +45,6 @@
 </div>
 
 ### List 
-
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">

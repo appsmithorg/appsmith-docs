@@ -30,7 +30,6 @@ SELECT * FROM users WHERE gender = {{Select1.selectedOptionValue}};
 ```
 
 
-
 Learn more about [Server-side Filter on Table](/build-apps/how-to-guides/search-and-filter-table-data).
 
 

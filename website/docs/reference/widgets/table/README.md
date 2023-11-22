@@ -199,7 +199,6 @@ Allows you to set the default search query for the search bar in the table heade
 Allows you to specify the action to be executed when the user enters a search text in the table's search bar. Learn more about [Server-side searching](/build-apps/how-to-guides/search-and-filter-table-data#using-search-text).
 
 
-
 </dd>
 
 #### Allow filtering `boolean`
