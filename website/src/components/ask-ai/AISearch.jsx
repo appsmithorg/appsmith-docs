@@ -17,7 +17,6 @@ const AISearch = forwardRef((props, ref) => {
     let eventSource;
 
     const commonSearchQueries = [
-        "How to get started with Appsmith?",
         "How to install Appsmith on Docker?",
         "How to display, filter and search data in a Table?",
         "How to submit form data"
