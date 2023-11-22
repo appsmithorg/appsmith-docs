@@ -1,8 +1,7 @@
-import { FaSearch } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
 import './css/CustomSearch.css';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
 import DocSearch from '@theme-original/SearchBar';
-import React, { useState, useEffect } from 'react';
 
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
@@ -18,32 +17,39 @@ const CustomSearchBar = () => {
             aiInput.style.display = 'none';
         }
 
-        if (searchType === 'ai') {
-            if (aiInput) {
-                aiInput.click();
-            }
-        } else if (searchType === 'docs') {
-            if (searchInput) {
-                searchInput.click();
-            }
+        if (searchType === 'ai' && aiInput) {
+            aiInput.click();
+        } else if (searchType === 'docs' && searchInput) {
+            searchInput.click();
         }
 
         setSearchType('');
     }, [searchType]);
 
     return (
-        <div className="custom-search-bar">
-            <label>
-                <FaSearch className="search-icon" />
-                <select className="search-select"  value={searchType} onChange={(e) => setSearchType(e.target.value)}>
-                    <option className="search-option"  value="">Search</option>
-                    <option className="search-option"  value="ai">Ask Appsmith AI</option>
-                    <option className="search-option"  value="docs">Search in Docs</option>
-                </select>
-            </label>
+        <>
+            <div className="custom-segmented-search-option">
+                <label>
+                    <div
+                        className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
+                        onClick={() => setSearchType('ai')}
+                        title="Ask Appsmith AI"
+                    >
+                        🧠 
+                    </div>
+
+                    <div
+                        className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
+                        onClick={() => setSearchType('docs')}
+                        title="Search in docs"
+                    >
+                        🔍 
+                    </div>
+                </label>
+            </div>
             <AISearchButton />
             <DocSearch />
-        </div>
+        </>
     );
 };
 
