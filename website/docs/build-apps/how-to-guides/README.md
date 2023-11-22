@@ -20,13 +20,13 @@
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/build-apps/how-to-guides/Server-side-filtering-table"><strong>Setup Server-side Filtering on Table</strong></a>
+            <a href="/build-apps/how-to-guides/search-and-filter-table-data"><strong>Setup Server-side Filtering on Table</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows how to implement server-side filtering on the Table widget, which allows you to filter data directly at the server. </div>
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/build-apps/how-to-guides/Setup-Server-side-Searching-on-Table"><strong>Setup Server-side Searching on Table</strong></a>
+           <a href="/build-apps/how-to-guides/search-and-filter-table-data#using-search-text"><strong>Setup Server-side Searching on Table</strong></a>
         </div><hr/>
         <div class="containerDescription">Shows how to implement server-side search on the Table widget, enabling effective search capability by performing searches directly on the server.
         </div>
@@ -66,7 +66,7 @@
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/build-apps/how-to-guides/Filter-table-data-using-Datepicker"><strong>Filter table data using Datepicker</strong></a>
+            <a href="/build-apps/how-to-guides/search-and-filter-table-data#using-date-range"><strong>Filter table data using Datepicker</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows how to filter table data using the Datepicker widget, allows users to narrow down and view information based on specific date ranges. </div>
 </div>
