@@ -15,7 +15,7 @@ You can display data in a Table widget in the following ways:
 - [One-click binding](#one-click-binding)
 
 ### Mustache binding
-Mustache syntax (`{{ }}`) is the common form of data binding in Appsmith and is useful when the data returned from your datasource or API is not an array, and you must map it to the desired format. It allows dynamic data substitution in widgets, queries, and APIs. 
+Mustache binding is useful when the data returned from your datasource or API is not an array, and you must map it to the desired format. 
 To bind and display data on the Table widget using mustache binding, follow these steps:
 1. Drag and drop a [Table](/reference/widgets/table) widget.
 2. Create a new query to fetch data from the datasource and rename it to `fetch_trip_details`.
@@ -30,8 +30,9 @@ To bind and display data on the Table widget using mustache binding, follow thes
    ```jsx
    {{fetch_trip_details.data}}
    ```
-For more information, see [Write Code in Appsmith](/core-concepts/writing-code).
-For an example to display data, see this [sample app](https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61fba49b2cd3d95ca414b364?_gl=1*86f7ph*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTk0MjAzMi4xNTUuMS4xNjk5OTQzNjY2LjAuMC4w).
+For more information, see [Write Code in Appsmith](/write-code/overview).
+
+To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 ### One-click binding
 One-click binding is Appsmith's way of simplifying the process of binding data. It doesn't require manual entry of mustache syntax and can be done by selecting options from a widget's property pane. When you want to bind a specific data property directly to a widget property without manipulation or additional logic, one-click binding is a quick and error-free method.
@@ -57,21 +58,28 @@ To bind and display data on the Table widget using one-click binding, follow the
    ```
    Where `trip_details_table.pageSize` is the pagination limit for the table and `trip_details_table.pageOffset` is the pagination offset. For more information, see [Reference properties](/reference/widgets/table#reference-properties).
 5. Click **Connect data** in the Table widget's property pane. The Table widget displays the selected table data.
+
+Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. 
+Here is an example of an auto-generated query with `pageSize` and `pageOffset`:
+
+```sql
+SELECT * FROM trip_details
+ORDER BY
+  "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{trip_details_table.pageSize}}
+OFFSET
+  {{trip_details_table.pageOffset}}
+```
    
-### Customize columns
+### Customize and hide columns
 1. Drag and drop the columns to rearrange the order.
 2. To customize each column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
 3. You can select the **Column type**, set the **Computed value**, **Visible** property and other properties.
    For more information on customizing columns, see [Column](/reference/widgets/table/column-settings).
-
-### Hide table columns
-To set the visibility of specific columns, follow these steps:
-1. Click on the Table widget in your application to bring up the property pane.
-2. In the Table widget's property pane, scroll to the **Columns** section where all the table columns are listed.
-3. Find the column you wish to hide, and click the eye icon ⚙️ beside a column.
+4. In the Table widget's property pane, scroll to the **Columns** section where all the table columns are listed.
+5. Find the column you wish to hide, and click the eye icon ⚙️ beside a column.
    Alternatively, you can click the eye icon beside the column to hide it or filter out the column from the table data.
-
-For more information, see this [sample app](https://app.appsmith.com/app/table-widget-show-hide-columns/show-column-onclick-62f2c34474d6e95d0a53c918?_gl=1*bn3bvw*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjUzMzM3LjAuMC4w).
 
 ### Format table cells
 Highlighting table cells enables you to visually distinguish specific cells from others.
@@ -85,22 +93,10 @@ To highlight cells of the table, follow these steps:
    ```
 2. To customize each cell of the Table widget, see [Style properties](/reference/widgets/table#color).
 
-For more information, see this [sample app](https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8?_gl=1*189op77*_ga*MTcyMjQxMTI3MS4xNjk1NzEzMDg0*_ga_D1VS24CQXE*MTY5OTI1MzI2My4xNDQuMS4xNjk5MjU1OTMyLjAuMC4w).
-
-## Server-side pagination
-Appsmith automatically generates server-side pagination queries when you use the [one-click binding](#one-click-binding) feature to connect data. 
-Here is an example of an auto-generated query with `pageSize` and `pageOffset`:
-
-```sql
-SELECT * FROM trip_details
-ORDER BY
-  "{{trip_details_table.sortOrder.column || 'id'}}" {{trip_details_table.sortOrder.order !== "desc" ? "" : "DESC"}}
-LIMIT
-  {{trip_details_table.pageSize}}
-OFFSET
-  {{trip_details_table.pageOffset}}
-```
-To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+## Search and filter table data
+- To search data in the Table widget, follow the instructions in [Search and filter table data using search text](/build-apps/how-to-guides/search-and-filter-table-data#using-search-text).
+- To filter data in the Table widget using a Date picker widget, follow the instructions in [Search and filter table data using date range](/build-apps/how-to-guides/search-and-filter-table-data#using-date-range).
+- To filter data in the Table widget using a Select widget, follow the instructions in [Search and filter table data using drop down](/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down).
 
 ## See also
 - [Sample apps](/learning-and-resources/sample-apps)

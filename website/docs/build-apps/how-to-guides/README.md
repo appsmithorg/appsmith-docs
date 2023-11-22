@@ -20,7 +20,7 @@
 <div class="containerGridSampleApp">
     <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/build-apps/how-to-guides/search-and-filter-table-data"><strong>Setup Server-side Filtering on Table</strong></a>
+            <a href="/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down"><strong>Setup Server-side Filtering on Table</strong></a>
         </div> <hr/>
         <div class="containerDescription">Shows how to implement server-side filtering on the Table widget, which allows you to filter data directly at the server. </div>
     </div>
