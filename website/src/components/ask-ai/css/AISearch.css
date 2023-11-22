@@ -1,6 +1,7 @@
 .custom-search-container {
     display: flex;
     align-items: center;
+    background-color: white;
 }
 
 .ask-ai-modal-button {
@@ -32,7 +33,7 @@
 }
 
 .ai-result-container {
-    background-color: white;
+    background-color: #f5f6f7;
     padding: 10px;
     margin-top: 10px;
     overflow-y: auto;
@@ -50,9 +51,8 @@
 .ai-query-heading {
     color: #333;
     text-decoration: none;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 1rem;
+    padding: 6px;
+    font-size: 0.9rem;
 }
 
 .ai-search-term {
@@ -118,7 +118,7 @@
 }
 
 .ai-search-modal-content {
-    background: white;
+    background: #f5f6f7;
     padding: 20px;
     border-radius: 5px;
     text-align: center;

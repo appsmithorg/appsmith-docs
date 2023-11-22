@@ -101,6 +101,15 @@ const AISearch = forwardRef((props, ref) => {
     return (
         <div className='ai-search-result-wrapper'>
             <div className='ai-result-container'>
+                <input
+                    id="question-input"
+                    name="question-input"
+                    placeholder="Ask Appsmith AI a question..."
+                    type="text"
+                    value={inputValue}
+                    onKeyDown={handleKeyDown}
+                    onChange={handleChange}
+                />
                 {showExamples && (
                     <div className='ai-query-wrapper'>
                         <span className='ai-query-heading'>Examples</span>
@@ -115,15 +124,7 @@ const AISearch = forwardRef((props, ref) => {
                         ))}
                     </div>
                 )}
-                <input
-                    id="question-input"
-                    name="question-input"
-                    placeholder="Ask Appsmith AI a question..."
-                    type="text"
-                    value={inputValue}
-                    onKeyDown={handleKeyDown}
-                    onChange={handleChange}
-                />
+               
                 {isLoading && <div></div>}
                 {searchTerm && (
                     <div className='user-search-term'>
