@@ -305,6 +305,7 @@ const sidebars = {
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
             'connect-data/reference/twilio',
+            'connect-data/reference/open-ai'
 
           ],
         },
