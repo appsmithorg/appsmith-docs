@@ -349,6 +349,7 @@ const sidebars = {
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+            'build-apps/how-to-guides/create-detail-view',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
