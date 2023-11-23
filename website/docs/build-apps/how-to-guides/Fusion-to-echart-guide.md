@@ -7,7 +7,7 @@ Starting March 1, 2024, Fusion Charts face deprecation in Appsmith. Consequently
 :::
 
 
-## Data conversion
+## Convert data
 
 
 This section shows the configuration of Fusion Charts before converting them to ECharts. Make sure that the FusionCharts data is placed inside a JavaScript object for the conversion process.
