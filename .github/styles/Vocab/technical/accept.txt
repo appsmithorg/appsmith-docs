@@ -563,3 +563,4 @@ AI
 K8s
 uncheck
 Community
+OpenAI
