@@ -79,8 +79,6 @@ It refers to the pre-trained language models provided by OpenAI. You can select 
 
 Messages serve as input interactions between the user and the model. The roles include two types: **user** and **system**. You can create multiple messages of each type to make your conversation just the way you want. 
 
-* **user**: Input provided by the user to instruct or guide the model. For example, if you are using an Input widget to enter the prompt, you can use `{{Input1.text}}`.
-
 * **system**: The system message serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the system message to give personality to the responses or add task-specific instructions. For example, you can set system as:
 
 <dd>
@@ -92,9 +90,13 @@ Messages serve as input interactions between the user and the model. The roles i
 
 </dd>
 
+* **user**: Input provided by the user to instruct or guide the model. For example, if you are using an Input widget to enter the prompt, you can use `{{Input1.text}}`.
+
+<dd>
 
 For more information refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
 
+</dd>
 
 
   <figure>
