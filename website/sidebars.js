@@ -296,6 +296,7 @@ const sidebars = {
             },
             'connect-data/reference/querying-mssql',
             'connect-data/reference/querying-mysql',
+            'connect-data/reference/open-ai',
             'connect-data/reference/querying-oracle',
             'connect-data/reference/querying-postgres',
             'connect-data/reference/querying-redis',
@@ -304,8 +305,7 @@ const sidebars = {
             'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
-            'connect-data/reference/twilio',
-            'connect-data/reference/open-ai'
+            'connect-data/reference/twilio'
 
           ],
         },

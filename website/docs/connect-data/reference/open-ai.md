@@ -6,7 +6,7 @@ This page provides information for connecting Appsmith to OpenAI, which allows y
 ## Connect OpenAI
 
  <figure>
-  <img src="/img/open-ai-main.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
+  <img src="/img/open-ai-main2.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
   <figcaption align = "center"><i>OpenAI datasource.</i></figcaption>
 </figure>
 
@@ -16,9 +16,11 @@ This page provides information for connecting Appsmith to OpenAI, which allows y
 The following section is a reference guide that provides a complete description of all the parameters to connect to a OpenAI datasource.
 
 
-#### Authentication Type
+#### Authentication type
 
 <dd>
+
+Authentication Type refers to the method used to verify the identity of users or systems interacting with the OpenAI API. 
 
 *Options:*
 
@@ -32,7 +34,7 @@ The following section is a reference guide that provides a complete description 
 
 <dd>
 
-The OpenAI uses API keys for authentication. Visit your [API Keys](https://platform.openai.com/account/api-keys) page to retrieve the API key for your requests.
+The OpenAI uses API keys for authentication. Visit the [API Keys](https://platform.openai.com/account/api-keys) page to retrieve the API key.
 
 </dd>
 
@@ -51,7 +53,7 @@ The Chat command generates human-like text based on input prompts. The following
 </figure>
 
 
-#### Models*
+#### Models
 
 <dd>
 
@@ -71,15 +73,15 @@ It refers to the pre-trained language models provided by OpenAI. You can select 
 
 </dd>
 
-#### Messages*
+#### Messages
 
 <dd>
 
-Messages serve as input interactions between the user and the model. The roles include two types: user and system. You can create multiple messages of each type to make your conversation just the way you want. 
+Messages serve as input interactions between the user and the model. The roles include two types: **user** and **system**. You can create multiple messages of each type to make your conversation just the way you want. 
 
-* **user**: Input provided by the user to instruct or guide the model. For example, you can use `{{Input1.text}}`.
+* **user**: Input provided by the user to instruct or guide the model. For example, if you are using an Input widget to enter the prompt, you can use `{{Input1.text}}`.
 
-* **system**: The system message serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the "system" message to give personality to the responses or add task-specific instructions. For example, you can set system as:
+* **system**: The system message serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the system message to give personality to the responses or add task-specific instructions. For example, you can set system as:
 
 <dd>
 
@@ -91,7 +93,7 @@ Messages serve as input interactions between the user and the model. The roles i
 </dd>
 
 
-To display the OpenAI response, you can use mustache binding `{{}}` in the widget's default property or JSObjects. For more information on responses refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
+For more information refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
 
 
 
@@ -115,7 +117,7 @@ The Embeddings command creates a vector representation of a given input, making 
   <figcaption align = "center"><i>OpenAI | Embeddings command</i></figcaption>
 </figure>
 
-#### Models*
+#### Models
 
 <dd>
 
@@ -123,7 +125,7 @@ Models are pre-trained language models provided by OpenAI. You can select from t
 
 </dd>
 
-#### Input*
+#### Input
 
 <dd>
 
@@ -132,24 +134,21 @@ Input text to embed, encoded as a string or array of tokens. To embed multiple i
 </dd>
 
 
-
-You cannot directly bind the output to a widget, as this vector cannot be consumed on its own. Instead, you can store it in a specialized database called a Vector DB. Later, you can leverage these vectors for semantic search operations to retrieve related content based on the meaning of a query. For more information on embedding refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/embeddings/object)
-
-
-
-
-
-
-#### Encoding Format
+#### Encoding format
 
 <dd>
 
-The encoding format determines how the embeddings are returned. You can choose from the following options:
+The encoding format determines how the embeddings are returned.
+
+*Options:*
 
 * **Float**: Returns the embeddings in float format.
 * **Base64**: Returns the embeddings encoded in Base64 format.
 
 </dd>
+
+
+You cannot directly bind the output to a widget, as this vector cannot be consumed on its own. Instead, you can store it in a specialized database called a Vector DB. Later, you can leverage these vectors for semantic search operations to retrieve related content based on the meaning of a query. For more information on embedding refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/embeddings/object)
 
 
 ### Vision
@@ -162,7 +161,7 @@ The Vision command allows the model to take in images and answer questions about
 </figure>
 
 
-#### Models*
+#### Models
 
 <dd>
 
@@ -170,7 +169,7 @@ Models are pre-trained vision models provided by OpenAI. You can select from the
 
 </dd>
 
-#### Max tokens*
+#### Max tokens
 
 
 <dd>
@@ -212,7 +211,7 @@ User messages consist of a list of messages or images provided by the user.
 
 
 
-To display the OpenAI response, you can use mustache binding `{{}}` in the widget's default property or JSObjects. For more information on responses refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
+For more information refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
 
 </dd>
 
