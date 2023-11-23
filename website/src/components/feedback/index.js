@@ -56,7 +56,7 @@ const FeedbackWidget = ({ isCalledFromAISearch, userTerm, generatedAnswer }) => 
 
   return (
     <>
-      {feedback.helpful === 'submitted' && <FeedbackMessage />}
+      {(feedback.helpful === 'submitted' || (feedback.helpful === 'no' && isCalledFromAISearch)) && <FeedbackMessage />}
       {feedback.helpful === '' && (
         <Feedback feedback={feedback} handleHelpfulChange={handleHelpfulChange} />
       )}
@@ -69,6 +69,7 @@ const FeedbackWidget = ({ isCalledFromAISearch, userTerm, generatedAnswer }) => 
       )}
     </>
   );
+
 };
 
 export default FeedbackWidget;

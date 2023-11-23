@@ -26,9 +26,6 @@ const generateFeedbackComment = (comment) => {
 };
 
 const generateAIFeedback = (feedbackOption, userSearchTerm, aiGeneratedResult) => {
-  console.log("feedbackOption", feedbackOption);
-  console.log("userSearchTerm", userSearchTerm);
-  console.log("aiGeneratedResult", aiGeneratedResult);
   if (ExecutionEnvironment.canUseDOM) {
     const docId = window.location.pathname;
     const feedbackData = {
@@ -45,7 +42,7 @@ const generateAIFeedback = (feedbackOption, userSearchTerm, aiGeneratedResult) =
 };
 
 const sendToSegment = (feedbackJSON, eventType) => {
-  
+
   console.log("feedbackJSON", feedbackJSON);
   console.log("eventType", eventType);
 
