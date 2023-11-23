@@ -4,35 +4,14 @@ description: This page shows you how to display and lookup data in a Table widge
 
 # Display and Lookup Data in Table Widget
 
-This page shows you how to display and lookup data based on a search text, date range, or list option.
-
+This page shows you how to display and lookup data in a Table widget.
 ## Prerequisites
 - A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
 
 ## Display data
 You can display data in a Table widget in the following ways:
-- [Mustache binding](#mustache-binding)
 - [One-click binding](#one-click-binding)
-
-### Mustache binding
-Mustache binding is useful when the data returned from your datasource or API is not an array, and you must map it to the desired format. 
-To bind and display data on the Table widget using mustache binding, follow these steps:
-1. Drag and drop a [Table](/reference/widgets/table) widget.
-2. Create a new query to fetch data from the datasource and rename it to `fetch_trip_details`.
-   This topic uses the example of a PostgreSQL datasource to fetch data.
-
-   ```sql
-   SELECT * FROM trip_details
-   ```
-3. Click **JS** in the **Table data** property of the Table widget's property pane.
-4. Paste the following code to display the data from the `fetch_trip_details` query:
-   
-   ```jsx
-   {{fetch_trip_details.data}}
-   ```
-For more information, see [Write Code in Appsmith](/write-code/overview).
-
-To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+- [Mustache binding](#mustache-binding)
 
 ### One-click binding
 One-click binding is Appsmith's way of simplifying the process of binding data. It doesn't require manual entry of mustache syntax and can be done by selecting options from a widget's property pane. When you want to bind a specific data property directly to a widget property without manipulation or additional logic, one-click binding is a quick and error-free method.
@@ -71,8 +50,27 @@ LIMIT
 OFFSET
   {{trip_details_table.pageOffset}}
 ```
+### Mustache binding
+Mustache binding is useful when the data returned from your datasource or API is not an array, and you must map it to the desired format. 
+To bind and display data on the Table widget using mustache binding, follow these steps:
+1. Drag and drop a [Table](/reference/widgets/table) widget.
+2. Create a new query to fetch data from the datasource and rename it to `fetch_trip_details`.
+   This topic uses the example of a PostgreSQL datasource to fetch data.
+
+   ```sql
+   SELECT * FROM trip_details
+   ```
+3. Click **JS** in the **Table data** property of the Table widget's property pane.
+4. Paste the following code to display the data from the `fetch_trip_details` query:
    
-### Customize and hide columns
+   ```jsx
+   {{fetch_trip_details.data}}
+   ```
+For more information, see [Write Code in Appsmith](/write-code/overview).
+
+To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+
+## Customize and hide columns
 1. Drag and drop the columns to rearrange the order.
 2. To customize each column, in the Table widget's property pane, click the gear icon ⚙️ beside a column.
 3. You can select the **Column type**, set the **Computed value**, **Visible** property and other properties.
@@ -81,7 +79,7 @@ OFFSET
 5. Find the column you wish to hide, and click the eye icon ⚙️ beside a column.
    Alternatively, you can click the eye icon beside the column to hide it or filter out the column from the table data.
 
-### Format table cells
+## Format table cells
 Highlighting table cells enables you to visually distinguish specific cells from others.
 For example, travel management applications highlight completed trips in green when displaying a table of trips to differentiate them quickly.
 To highlight cells of the table, follow these steps:
@@ -94,9 +92,10 @@ To highlight cells of the table, follow these steps:
 2. To customize each cell of the Table widget, see [Style properties](/reference/widgets/table#color).
 
 ## Search and filter table data
-- To search data in the Table widget, follow the instructions in [Search and filter table data using search text](/build-apps/how-to-guides/search-and-filter-table-data#using-search-text).
-- To filter data in the Table widget using a Date picker widget, follow the instructions in [Search and filter table data using date range](/build-apps/how-to-guides/search-and-filter-table-data#using-date-range).
-- To filter data in the Table widget using a Select widget, follow the instructions in [Search and filter table data using drop down](/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down).
+- [Using search text](/build-apps/how-to-guides/search-and-filter-table-data#using-search-text)
+- [Using date range](/build-apps/how-to-guides/search-and-filter-table-data#using-date-range)
+- [Using drop down list](/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down)
+- [Sort data](/build-apps/how-to-guides/search-and-filter-table-data#sort-data)
 
 ## See also
 - [Sample apps](/learning-and-resources/sample-apps)

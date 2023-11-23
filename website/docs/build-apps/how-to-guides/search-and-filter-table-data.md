@@ -2,6 +2,7 @@
 description: This page shows you how to search and filter data in a Table widget. 
 ---
 # Search and Filter Table Data
+This page shows you how to search and filter data in a Table widget based on a search text, date range, or dropdown list option.
 
 ## Using search text
 To filter data using the built-in search feature, follow these steps:
@@ -45,7 +46,7 @@ To filter data based on a date range, follow these steps:
 
    The table data automatically updates to reflect the data from the selected date range when you select dates from `trip_start_date` or `trip_end_date`.
 
-## Using drop down 
+## Using dropdown list
 To filter data based on specific criteria using a Select widget, follow these steps:
 1. Drag and drop a [Select](/reference/widgets/select) widget.
 2. Create a query to populate the Select widget with the values you wish to filter by. For example, to populate all the vehicle numbers in the widget, use the following code:
