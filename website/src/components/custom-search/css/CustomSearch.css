@@ -2,13 +2,13 @@
     display: flex;
     overflow: hidden;
     height: 38px;
-    border-radius: 0.25em;
-    background-color: #f86a2b;
-    color: #f3f5f7;
+    border-radius: 5em;
+    background-color: #000;
+    color: #fff;
 }
 
 .custom-search-option {
-    --primary-color: #f86a2b;
+    --primary-color: #000;
     --primary-light-color: #f9936b;
     flex: 1;
     cursor: pointer;
@@ -18,19 +18,30 @@
     justify-content: center;
     font-weight: 500;
     gap: 4px;
-    border-right: 2px solid #ccc;
+    border-right: none;
     float: left;
-    padding: 0.5rem 1rem;
-    text-transform: capitalize;
+    padding: 0.5rem;
     white-space: nowrap;
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     text-decoration: var(--ifm-link-decoration);
-    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+        background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
+        border-radius var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .custom-search-option:hover,
 .selected {
-    background-color: var(--ifm-color-primary-dark);
+    background-color: #f0f0f0;
+    color: #000;
+    padding: 11px;
+    border-radius: 7em;
+}
+
+.custom-search-option:hover .doc-search-icon,
+.custom-search-option:hover .ai-search-icon,
+.selected .doc-search-icon,
+.selected .ai-search-icon {
+    color: #000;
 }
 
 .custom-search-option:last-child {
@@ -38,21 +49,14 @@
 }
 
 .icon {
-    font-size: 18px;
+    font-size: 12px;
 }
 
-.doc-search-icon {
-    align-items: center;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    font-size: 1.25rem;
-}
-
+.doc-search-icon,
 .ai-search-icon {
     align-items: center;
     color: #fff;
     display: flex;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
