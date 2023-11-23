@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './css/CustomSearch.css';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
 import DocSearch from '@theme-original/SearchBar';
+import { FaRobot, FaSearch } from 'react-icons/fa';
 
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
@@ -34,14 +35,14 @@ const CustomSearchBar = () => {
                         className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
                         onClick={() => setSearchType('ai')}
                     >
-                        🧠 Ask AI
+                        <FaRobot className='ai-search-icon' style={{margin : '1px'}}/> Ask AI
                     </div>
 
                     <div
                         className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                         onClick={() => setSearchType('docs')}
                     >
-                        🔍 Search
+                        <FaSearch className='doc-search-icon'/> Search
                     </div>
                 </label>
             </div>

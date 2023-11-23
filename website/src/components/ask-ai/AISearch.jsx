@@ -117,17 +117,22 @@ const AISearch = forwardRef((props, ref) => {
 
     return (
         <div className='ai-search-result-wrapper'>
+            <header className='DocSearch-SearchBar'>
+                <div className="DocSearch-Form">
+                    <FaRobot className='ai-robot-icon' />
+                    <input
+                        id="question-input"
+                        name="question-input"
+                        placeholder="Ask Appsmith AI a question..."
+                        type="text"
+                        value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
+                        onKeyDown={handleKeyDown}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                    />
+                </div>
+            </header>
             <div className='ai-result-container'>
-                <input
-                    id="question-input"
-                    name="question-input"
-                    placeholder="Ask Appsmith AI a question..."
-                    type="text"
-                    value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
-                    onKeyDown={handleKeyDown}
-                    onChange={handleChange}
-                    disabled={isLoading}
-                />
                 {showExamples && (
                     <div className='ai-query-wrapper'>
                         <span className='ai-query-heading'>Examples</span>
@@ -150,12 +155,13 @@ const AISearch = forwardRef((props, ref) => {
                 }
                 {!isLoading && searchTerm && (
                     <div className='search-term-answer'>
-                        <FaRobot className='robot-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
+                        <FaRobot className='ai-robot-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
                     </div>
                 )}
                 {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
             </div>
         </div>
+
     );
 });
 

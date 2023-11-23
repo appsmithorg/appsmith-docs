@@ -14,18 +14,33 @@
 }
 
 .ai-search-result-wrapper {
-    margin-top: 20px;
+    margin-top: 0;
     width: 100%;
 }
 
-.ai-search-result-wrapper input {
-    background-color: transparent;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
+#question-input {
+    appearance: none;
+    background: #fff;
+    border: 0;
+    color: var(--docsearch-text-color);
+    flex: 1;
+    font: inherit;
+    font-size: 0.89em;
+    outline: none;
+    padding: 0 0 0 8px;
     width: 100%;
-    font-size: 0.875rem;
-    margin-left: 5px;
+    height: 56px;
+    box-sizing: border-box;
+}
+
+.ai-robot-icon {
+    align-items: center;
+    color: var(--docsearch-highlight-color);
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+    height: 24px;
+    width: 24px;
 }
 
 .ai-search-result-wrapper input:focus {
@@ -33,7 +48,7 @@
 }
 
 .ai-result-container {
-    background-color: #f5f6f7;
+    background-color: #ebedf0;
     padding: 10px;
     margin-top: 10px;
     overflow-y: auto;
@@ -49,7 +64,7 @@
 }
 
 .ai-query-heading {
-    color: #333;
+    color: var(--docsearch-highlight-color);
     text-decoration: none;
     padding: 6px;
     font-size: 0.9rem;
@@ -66,31 +81,6 @@
 .ai-search-term:hover {
     background-color: #FFF4;
     box-shadow: 0 1px 1px #ddd;
-}
-
-.user-search-term {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.user-icon {
-    color: orange;
-    border: 2px solid orange;
-    border-radius: 50%;
-    font-size: 24px;
-    padding: 4px;
-    margin-right: 8px;
-    margin-top: 10px;
-}
-
-.comment-icon {
-    color: orange;
-    border: 2px solid orange;
-    border-radius: 50%;
-    font-size: 24px;
-    padding: 4px;
-    margin-right: 8px;
 }
 
 .search-term-answer {
@@ -116,7 +106,7 @@
 }
 
 .ai-search-modal-content {
-    background-color: #f5f6f7;
+    background-color: #ebedf0;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -156,4 +146,12 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.DocSearch-Form {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.DocSearch-Input {
+    font-size: 0.89em !important;
 }
