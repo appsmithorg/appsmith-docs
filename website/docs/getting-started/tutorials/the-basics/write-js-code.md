@@ -29,9 +29,11 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
 
 5. Go back to the canvas by clicking the page name or the **Widget** tab.
 
-6. Select the `usersTable` Table. Click on the **Style** tab.
+6. Select the `usersTable` Table. 
 
-7. In the Cell Background property, click the **JS** button and paste the following code snippet to call the function to return the color code based on the gender of the user in the current table row.
+7. Click the gear icon ⚙️ next to the **gender** column. Click on the **Style** tab.
+
+7. In the **Cell Background** property, click the **JS** button and paste the following code snippet to call the function to return the color code based on the gender of the user in the current table row.
 
   ```
   {{JSObject1.getBackground(currentRow.gender)}}
@@ -48,9 +50,9 @@ Appsmith provides global objects and functions within its framework for building
   ```javascript
   Hello {{appsmith.user.name || appsmith.user.email}}
   ```
-  Here you are using the `appsmith` global object to extract information of the currently logged in user and append it to the text `Hello`. For more information, see [appsmith](/reference/appsmith-framework/context-object).
+  Here you are using the `appsmith` global object to extract information of the currently logged in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
 
-2. Let's explore a few global functions. Click the **Update** button in the Form widget. In the **onClick** event, click the **JS** button to the right. Modify the code as shown below to show an alert message when the update query runs.
+2. Let's explore a few other global functions. Click the **Update** button in the Form widget. In the **onClick** event, click the **JS** button to the right. Modify the code as shown below to show an alert message when the update query runs.
 
   ```javascript
   {{
@@ -62,16 +64,16 @@ Appsmith provides global objects and functions within its framework for building
   ```
   Test by editing any record and click the **Update** button to see the alert message pop up on the top of the screen.
 
-3. You can also navigate from one page to another. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen.
+3. You can also navigate from one page to another. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen. Rename the page to `Account Details`.
 
-4. Go back to the User Information page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
+4. Go back to the **User Information** page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
 
 5. In the **onClick** property, click the **JS** button. 
 
 6. Between the curly braces `{{}}` enter the following code snippet
 
   ```javascript
-  navigateTo('Page2')
+  navigateTo('Account Details')
   ```
 
 7. Click the **Next Page** button to test if it redirects you to the next page. 

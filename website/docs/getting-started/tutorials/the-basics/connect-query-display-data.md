@@ -10,9 +10,9 @@ This tutorial takes you through the process of connecting a datasource and query
 
 ## Connect datasource
 
-1. On the *Entity Explorer* to the left of the screen, go to the **Explorer** tab.
+1. In your application, go to the sidebar and click the **Data** button.
 
-2. Click the **+** icon next to **Datasources** to add a new datasource.
+2. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
 
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
@@ -21,7 +21,7 @@ This tutorial takes you through the process of connecting a datasource and query
   <figcaption align = "center"><i>Connect to PostgreSQL database</i></figcaption>
 </figure>
 
-4. Click the pencil icon next to the default database name on the top left and rename the database to `usersTutorialDB`.
+4. Rename the default database name from **Untitled datasource 1** to `usersTutorialDB`. You may have to click the pencil icon next to the database name if it is not already selected. 
 
 5. Enter the following details in the connection parameter fields:<br/>
   **Host Address**: `mockdb.internal.appsmith.com` <br/>
@@ -43,7 +43,7 @@ This tutorial takes you through the process of connecting a datasource and query
   <figcaption align = "center"><i>Create a new query on the datasource</i></figcaption>
 </figure>
 
-2. Click the pencil icon to rename the query from **Query1** to `getUsers`.
+2. Rename the query from **Query1** to `getUsers`. You may have to click the pencil icon if it is not already selected.
 
 3. For this tutorial, modify the query as shown below to fetch the records in the ascdending order of the `id` field.
 

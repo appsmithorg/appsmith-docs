@@ -11,7 +11,7 @@ This tutorial take you through the process of viewing and editing individual rec
 ## View details for each record
 
 1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
-2. Select the title of the Form. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
+2. Select the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
 3. Now add widgets on the Form to view user details. For the user's name, drop an **Input** widget inside the Form. 
     * On the property pane to the right, click on the default name **Input1** and rename it to `nameInput`. 
     * In the **Text** property box, enter `Name`. 
@@ -21,7 +21,7 @@ This tutorial take you through the process of viewing and editing individual rec
     * Select **Email** from the list of options in the **Data Type** property.
     * In the **Text** property box, enter `Email`.
     * In the **Default Value** property box, type `{{usersTable.selectedRow.email}}`.
-5. You also need to view the user's date of birth. Drop a Datepicker widget inside the Form. 
+5. You also need to view the user's date of birth. Drop a **Datepicker** widget inside the Form. 
     * Rename the widget to `dobInput`.
     * In the **Text** property box, enter `DOB`.
     * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
