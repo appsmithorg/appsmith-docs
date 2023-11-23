@@ -17,6 +17,8 @@ Follow the steps below to setup the pipeline:
 
 :::info 
 If you are an enterprise user, you can choose a different branch as the default, offering customization based on specific project requirements or preferences. Learn more about [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch).
+
+Additionally, you can add multiple branches to branch protection for additional security measures. Learn more about [Branch protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection).
 :::
 
 </dd>
