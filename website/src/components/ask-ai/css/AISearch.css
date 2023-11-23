@@ -23,6 +23,7 @@
 .ai-search-result-wrapper {
     margin-top: 0;
     width: 100%;
+    overflow-y: hidden;
 }
 
 #question-input {
@@ -117,6 +118,7 @@
     text-align: center;
     position: relative;
     width: 70%;
+    min-height: 60%;
     margin: 4% auto;
     border-radius: 6px;
     box-shadow: var(--docsearch-modal-shadow);

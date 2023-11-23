@@ -31,6 +31,16 @@ const AISearch = forwardRef((props, ref) => {
         setIsAnswerComplete(false);
     };
 
+    const resetGeneratedResponse = () => {
+        setInputValue('');
+        setSearchTerm('');
+        setAnswer('');
+        setIsLoading(false);
+        setShowExamples(false);
+        setTermSelected(false);
+        setIsAnswerComplete(false);
+    }
+
     const closeModal = () => {
         if (props.closeModal) {
             props.closeModal();
@@ -93,7 +103,7 @@ const AISearch = forwardRef((props, ref) => {
             if (!isLoading) {
                 fetchData(inputValue);
                 if (isAnswerComplete) {
-                    resetState();
+                    resetGeneratedResponse();
                 }
             }
         }
@@ -103,7 +113,7 @@ const AISearch = forwardRef((props, ref) => {
         if (!isLoading) {
             setInputValue(e.target.value);
             if (isAnswerComplete) {
-                resetState();
+                resetGeneratedResponse();
             }
         }
     };
@@ -128,11 +138,11 @@ const AISearch = forwardRef((props, ref) => {
                         value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
                         onKeyDown={handleKeyDown}
                         onChange={handleChange}
-                        disabled={isLoading}
+                        disabled={isLoading && !isAnswerComplete}
                     />
                 </div>
             </header>
-            <div className='ai-result-container DocSearch-Dropdown'>
+            <div className='ai-result-container'>
                 {showExamples && (
                     <div className='ai-query-wrapper'>
                         <span className='ai-query-heading'>Examples</span>
@@ -155,7 +165,7 @@ const AISearch = forwardRef((props, ref) => {
                 }
                 {!isLoading && searchTerm && (
                     <div className='search-term-answer'>
-                        <FaRobot className='ai-robot-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
+                        <ReactMarkdown>{answer}</ReactMarkdown>
                     </div>
                 )}
                 {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
