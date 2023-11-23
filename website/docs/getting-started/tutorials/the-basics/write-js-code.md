@@ -10,13 +10,19 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
 
 ## Create JS Object
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/vxkNgBJ8W2KJ1sXd9feT?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Create JS Object">
+  </iframe>
+</div>
+
+
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 
 2. Click the **+** icon next to **Queries/JS**. 
 
 3. Select **New JS Object** from the list of options. 
 
-4. Delete everything within `export default {}`. Instead paste the following function inside the braces.
+4. Delete everything within `export default {}`. Instead, paste the following function inside the braces.
 
   ```javascript
   getBackground: (gender) => {
@@ -45,15 +51,12 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
 
 Appsmith provides global objects and functions within its framework for building your apps. 
 
-1. Let's display the name of the currently logged in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/qVJL89nhp8HOstVI16Js?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Global Objects and Functions">
+  </iframe>
+</div>
 
-  ```javascript
-  Hello {{appsmith.user.name || appsmith.user.email}}
-  ```
-  Here you are using the `appsmith` global object to extract information of the currently logged in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
-
-2. Let's explore a few other global functions. Click the **Update** button in the Form widget. In the **onClick** event, click the **JS** button to the right. Modify the code as shown below to show an alert message when the update query runs.
-
+1. Let's show an alert message after the update query runs. Click the **Update** button in the Form widget. In the **onClick** event, click the **JS** button to the right. Modify the code as shown below.
   ```javascript
   {{
     updateUsers.run().then(() => {
@@ -64,9 +67,17 @@ Appsmith provides global objects and functions within its framework for building
   ```
   Test by editing any record and click the **Update** button to see the alert message pop up on the top of the screen.
 
-3. You can also navigate from one page to another. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen. Rename the page to `Account Details`.
+2. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen. Rename the page to `Account Details`.  
 
-4. Go back to the **User Information** page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
+
+3. Let's display the name of the currently logged in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
+
+  ```javascript
+  Hello {{appsmith.user.name || appsmith.user.email}}
+  ```
+  Here you are using the `appsmith` global object to extract information about the currently logged in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
+
+4. You can also navigate from one page to another. Go back to the **User Information** page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
 
 5. In the **onClick** property, click the **JS** button. 
 
@@ -76,7 +87,7 @@ Appsmith provides global objects and functions within its framework for building
   navigateTo('Account Details')
   ```
 
-7. Click the **Next Page** button to test if it redirects you to the next page. 
+7. Click the **Next Page** button to test if it redirects you to the **Account Details** page. 
 
 For more information on all the global functions available in the Appsmith framework, see [Global Functions](/reference/appsmith-framework/widget-actions).
 

@@ -6,9 +6,14 @@ description:  Interact with Data in UI
 
 # Lesson 2 - Work with Data in UI
 
-This tutorial take you through the process of viewing and editing individual records via forms.
+This tutorial takes you through the process of viewing and editing individual records via forms.
 
 ## View details for each record
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/yKaSPmIAmsJlrNgFyvg1?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | View Details in Form">
+  </iframe>
+</div>
 
 1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
 2. Select the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
@@ -32,12 +37,12 @@ This tutorial take you through the process of viewing and editing individual rec
 
 🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
-<figure>
-  <img src="/img/bind-data-to-widgets.gif" style= {{width:"100%", height:"auto"}} alt="Bind data to widgets"/>
-  <figcaption align = "center"><i>Bind data to widgets</i></figcaption>
-</figure>
-
 ## Update records
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/WLQXOb6b48yaKEQ8AlWU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
+  </iframe>
+</div>
 
 1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
 
@@ -59,6 +64,11 @@ This tutorial take you through the process of viewing and editing individual rec
 
 ## Run query on button click
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/8Dl3BXERPmUvIYJLWqX5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Run Query">
+  </iframe>
+</div>
+
 1. Go back to the canvas by clicking on the **User Information** page on the *Entity Explorer*.
 
 2. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
@@ -69,11 +79,6 @@ This tutorial take you through the process of viewing and editing individual rec
     * Select **Execute a query > getUsers**. 
     
     The button is now configured to execute the **updateUsers** query to save any modified user details on the Form and to refresh the Table widget with the updated information. 
-
-<figure>
-  <img src="/img/run-query-on-click-event.png" style= {{width:"100%", height:"auto"}} alt="Run query on the button's onClick event"/>
-  <figcaption align = "center"><i>Run query on the button's onClick event</i></figcaption>
-</figure>
 
 3. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see if the update worked.
 
