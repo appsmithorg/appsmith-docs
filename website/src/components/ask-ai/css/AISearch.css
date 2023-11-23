@@ -94,7 +94,6 @@
 }
 
 .search-term-answer {
-    margin-bottom: 16px;
     max-height: 400px;
     overflow-y: auto;
 }
@@ -136,4 +135,25 @@
 
 .show {
     display: block;
+}
+
+.loading-icon-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

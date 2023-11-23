@@ -1,7 +1,7 @@
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './css/AISearch.css';
-import { FaRobot } from 'react-icons/fa';
+import { FaRobot, FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
 
 const AISearch = forwardRef((props, ref) => {
@@ -143,8 +143,12 @@ const AISearch = forwardRef((props, ref) => {
                     </div>
                 )}
 
-                {isLoading && <div className='loading-indicator'>Loading...</div>}
-                {searchTerm && (
+                {
+                    isLoading && <div className='loading-icon-container'>
+                        <FaSpinner className='loading-icon' />
+                    </div>
+                }
+                {!isLoading && searchTerm && (
                     <div className='search-term-answer'>
                         <FaRobot className='robot-icon' /> <ReactMarkdown>{answer}</ReactMarkdown>
                     </div>
