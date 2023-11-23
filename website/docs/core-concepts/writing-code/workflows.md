@@ -19,8 +19,8 @@ To execute actions in a specific order, you can chain them using action selector
   </iframe>
 </div>
 
+<p></p>
 
-<dd>
 
 *Example:*  if you want to display a confirmation popup when the submit button of a Form is clicked. Once the user confirms the popup, you want to execute an update query, followed by a fetch query.
 
@@ -35,7 +35,6 @@ To execute actions in a specific order, you can chain them using action selector
 With this configuration, the action is executed only when a query or action is successful.
 
 
-</dd>
 
 ## Execute actions together
 
@@ -46,12 +45,14 @@ To execute actions together, you can add multiple action selectors for a specifi
   </iframe>
 </div>
 
-<dd>
-
-*Example:* You're working on a support app. Whenever you make changes to a user's ticket, it updates the database, and also sends them an email to let them know about the update.
+<p></p>
 
 
-1. Set the Button's **onClick** event to execute the update query, which updates the ticket database.
+
+
+*Example:* if you are working on a support app, and when you update a user's ticket, the database gets updated, and an email is sent to inform the user about the update.
+
+1. Set the Button's **onClick** event to execute the update query, to update the database.
 
 2. Create a new **onClick** event by clicking the **+** icon and set it to run the email query. 
 
@@ -59,7 +60,7 @@ To execute actions together, you can add multiple action selectors for a specifi
 With this configuration, all actions are executed at the same time, regardless of whether individual queries are successful or unsuccessful.
 
 
-</dd>
+
 
 
 ## Execute actions conditionally
@@ -69,7 +70,7 @@ This section covers conditional query execution, allowing queries to be executed
 
 It is recommended to use JSObject when writing custom expressions to ensure proper handling of custom JavaScript logic.
 
-#### Example 1: Based on user input
+*Example 1:* Based on user input
 
  You are working with an e-commerce app where users can filter products based on their preferences. You can conditionally execute queries to fetch products that match the selected category, price range, or brand. This example shows how the queries execute conditionally based on the option selected in the Select widget.
 
@@ -81,9 +82,9 @@ It is recommended to use JSObject when writing custom expressions to ensure prop
 
 In the above code, if the selected option is Categories, it triggers the `fetchCategories` query; otherwise, it runs the `fetchProducts` query.
 
-#### Example 2: Based on query response
+*Example 2:* Based on query response
 
-This example shows multiple conditional statements that execute queries based on the option chosen in the select widget and also display relevant messages based on the response from the `fetchPendingUsers` query.
+If you want to execute a query based on the response from another query, you can enable *JS* and add:
 
 ```javascript
 {{ 
@@ -97,7 +98,9 @@ This example shows multiple conditional statements that execute queries based on
 }}
 ```
 
-## Passing parameters to actions
+This code conditionally runs queries depending on the selected option in `statusDropdown` and shows alerts based on the response from `fetchPendingUsers`.
+
+
 
 
 
