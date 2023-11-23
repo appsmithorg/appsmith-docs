@@ -2,7 +2,7 @@
 
 This guide shows you how to convert your existing Fusion chart into Echarts.
 
-:::info
+:::caution
 Starting March 1, 2024, Fusion Charts face deprecation in Appsmith. Consequently, instances of Chart widgets with custom Fusion Charts display a watermark. Migration to ECharts is recommended at your earliest convenience. 
 :::
 
@@ -217,6 +217,8 @@ In the E-charts configuration's `series` section, you can find the `data` proper
 } }}
 
 ```
+
+Post adding this in the e-chart configuration, the bubble chart should now be visible as seen below
 
  <figure>
   <img src="/img/fusiontoechart.png" style= {{width:"700px", height:"auto"}} alt="Bubble Chart configuration"/>
