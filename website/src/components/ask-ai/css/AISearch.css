@@ -1,7 +1,14 @@
 .custom-search-container {
-    display: flex;
     align-items: center;
-    background-color: white;
+    background: var(--docsearch-searchbox-focus-background);
+    border-radius: 4px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
+    display: flex;
+    height: var(--docsearch-searchbox-height);
+    margin: 0;
+    padding: 0 var(--docsearch-spacing);
+    position: relative;
+    width: 100%;
 }
 
 .ask-ai-modal-button {
@@ -48,7 +55,6 @@
 }
 
 .ai-result-container {
-    background-color: #ebedf0;
     padding: 10px;
     margin-top: 10px;
     overflow-y: auto;
@@ -106,13 +112,20 @@
 }
 
 .ai-search-modal-content {
-    background-color: #ebedf0;
     padding: 20px;
-    border-radius: 5px;
+    background: var(--docsearch-modal-background);
     text-align: center;
     position: relative;
     width: 70%;
     margin: 4% auto;
+    border-radius: 6px;
+    box-shadow: var(--docsearch-modal-shadow);
+    position: relative;
+}
+
+.ai-search-bar-header {
+    display: flex;
+    padding: var(--docsearch-spacing) var(--docsearch-spacing) 0;
 }
 
 .close {

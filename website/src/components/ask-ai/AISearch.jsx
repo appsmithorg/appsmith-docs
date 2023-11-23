@@ -117,8 +117,8 @@ const AISearch = forwardRef((props, ref) => {
 
     return (
         <div className='ai-search-result-wrapper'>
-            <header className='DocSearch-SearchBar'>
-                <div className="DocSearch-Form">
+            <header className='ai-search-bar-header'>
+                <div className="custom-search-container">
                     <FaRobot className='ai-robot-icon' />
                     <input
                         id="question-input"
@@ -132,7 +132,7 @@ const AISearch = forwardRef((props, ref) => {
                     />
                 </div>
             </header>
-            <div className='ai-result-container'>
+            <div className='ai-result-container DocSearch-Dropdown'>
                 {showExamples && (
                     <div className='ai-query-wrapper'>
                         <span className='ai-query-heading'>Examples</span>
