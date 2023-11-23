@@ -73,7 +73,6 @@ const AISearch = forwardRef((props, ref) => {
                 if (e.data.includes("[DONE]")) {
                     eventSource.close();
                     setIsAnswerComplete(true);
-                    setInputValue('');
                     return;
                 }
 
@@ -93,6 +92,18 @@ const AISearch = forwardRef((props, ref) => {
             e.preventDefault();
             if (!isLoading) {
                 fetchData(inputValue);
+                if (isAnswerComplete) {
+                    resetState();
+                }
+            }
+        }
+    };
+
+    const handleChange = (e) => {
+        if (!isLoading) {
+            setInputValue(e.target.value);
+            if (isAnswerComplete) {
+                resetState();
             }
         }
     };
@@ -104,12 +115,6 @@ const AISearch = forwardRef((props, ref) => {
         }
     };
 
-    const handleChange = (e) => {
-        if (!isLoading) {
-            setInputValue(e.target.value);
-        }
-    };
-
     return (
         <div className='ai-search-result-wrapper'>
             <div className='ai-result-container'>
@@ -118,7 +123,7 @@ const AISearch = forwardRef((props, ref) => {
                     name="question-input"
                     placeholder="Ask Appsmith AI a question..."
                     type="text"
-                    value={isAnswerComplete ? '' : searchTerm || inputValue}
+                    value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
                     onKeyDown={handleKeyDown}
                     onChange={handleChange}
                     disabled={isLoading}
