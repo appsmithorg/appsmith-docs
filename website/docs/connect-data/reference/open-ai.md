@@ -149,8 +149,7 @@ The encoding format determines how the embeddings are returned.
 
 </dd>
 
-
-You cannot directly bind the output to a widget, as this vector cannot be consumed on its own. Instead, you can store it in a specialized database called a Vector DB. Later, you can leverage these vectors for semantic search operations to retrieve related content based on the meaning of a query. For more information on embedding refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/embeddings/object)
+While it is technically possible to bind the output of the embeddings API to a widget, doing so offers little practical value, as the vector representation is not meaningful for direct display in the UI. Instead, you can store it in a specialized database called a Vector DB. Later, you can leverage these vectors for semantic search operations to retrieve related content based on the meaning of a query. For more information on embedding refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/embeddings/object)
 
 
 ### Vision
