@@ -354,6 +354,7 @@ const sidebars = {
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+            `core-concepts/writing-code/workflows`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
           ]
         },
