@@ -78,7 +78,7 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
     <div class="columnGrid column-three" align="center">
         <div class="containerCol">
             <a href="/connect-data/reference/open-ai">
-            <img class="containerImage" src="/img/OpenAI-Logo-1.png" alt="OpenAI"/>
+            <img class="containerImage" src="/img/open-ai.svg" alt="OpenAI"/>
             </a> 
         </div> 
         <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
