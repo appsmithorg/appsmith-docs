@@ -36,9 +36,9 @@ With this configuration, the action is executed only when a query or action is s
 
 
 
-## Execute actions together
+## Execute actions in parallel 
 
-To execute actions together, you can add multiple action selectors for a specific event. Additionally, for more complex workflows, you can enable *JS* next to events.
+To execute actions in parallel, you can add multiple action selectors for a specific event. Additionally, for more complex workflows, you can enable *JS* next to events.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/weQmsVxt589vcXiLGTdc?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -50,7 +50,7 @@ To execute actions together, you can add multiple action selectors for a specifi
 
 
 
-*Example:* if you are working on a support app, and when you update a user's ticket, the database gets updated, and an email is sent to inform the user about the update.
+*Example:* When updating a user's ticket in a support application, you want to update the database and send an email to notify them.
 
 1. Set the Button's **onClick** event to execute the update query, to update the database.
 
@@ -70,9 +70,9 @@ This section covers conditional query execution, allowing queries to be executed
 
 It is recommended to use JSObject when writing custom expressions to ensure proper handling of custom JavaScript logic.
 
-*Example 1:* Based on user input
+**Based on user input**
 
- You are working with an e-commerce app where users can filter products based on their preferences. You can conditionally execute queries to fetch products that match the selected category, price range, or brand. This example shows how the queries execute conditionally based on the option selected in the Select widget.
+*Example:* If you are working with an e-commerce app where users can filter products based on their preferences. You can conditionally execute queries to fetch products that match the selected category, price range, or brand. This example shows how the queries execute conditionally based on the option selected in the Select widget.
 
 ```javascript
 {{
@@ -82,9 +82,12 @@ It is recommended to use JSObject when writing custom expressions to ensure prop
 
 In the above code, if the selected option is Categories, it triggers the `fetchCategories` query; otherwise, it runs the `fetchProducts` query.
 
-*Example 2:* Based on query response
+**Based on query response**
 
-If you want to execute a query based on the response from another query, you can enable *JS* and add:
+If you want to execute a query based on the response from another query, you can enable *JS* and add your JS Code.
+
+
+ *Example:* if you have a Select widget for status, and if the user selects `Pending`, this configuration executes the `fetchPendingUsers` query.  Upon completion,  it checks if there are no pending users and shows a relevant alert. If there are pending users, it shows a success alert. If the status is not `Pending`, execute the `fetchApprovedUsers` query.
 
 ```javascript
 {{ 
@@ -97,11 +100,4 @@ If you want to execute a query based on the response from another query, you can
       : fetchApprovedUsers.run();
 }}
 ```
-
-This code conditionally runs queries depending on the selected option in `statusDropdown` and shows alerts based on the response from `fetchPendingUsers`.
-
-
-
-
-
 
