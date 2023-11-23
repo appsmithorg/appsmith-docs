@@ -248,3 +248,6 @@ exceptions:
   - Prepared statements - On vs Off
   - Air-gapped Instance
   - Introduction
+  - Troubleshooting
+  - MongoDB Startup Error Post Migration to Version 5
+  - Schema Mismatch Error

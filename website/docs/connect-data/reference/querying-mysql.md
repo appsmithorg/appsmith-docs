@@ -2,6 +2,7 @@
 sidebar_position: 12
 description: Connect Appsmith to a MySQL database and create queries.
 ---
+
 # MySQL
 
 This page provides information for connecting your application to your MySQL database and for using queries to manage its content.
@@ -24,6 +25,7 @@ The following section is a reference guide that provides a complete description 
 </figure>
 
 #### Connection method
+
 <dd>Sets the method used to connect to the database.</dd>
 <dd><i>Options:</i>
   <ul>
@@ -67,15 +69,19 @@ hidden or secured behind an SSH server.</li>
 </dd>
 
 #### SSH host address
+
 <dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the IP address of the remote SSH server you want to connect to. </dd>
 
 #### SSH port
+
 <dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the port number of the remote SSH server you want to connect to. Connects to port <code>22</code> by default if left empty. </dd>
 
 #### SSH username
+
 <dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. It is the username of your SSH account.</dd>
 
 #### SSH Key
+
 <dd>This field is only required if you have selected <b>SSH tunnel</b> as the <b>Connection mode</b>. Upload the SSH key file. Current supported formats: `pem`, `pkcs5`, `pkcs8`.</dd>
 
 #### SSL mode
@@ -115,7 +121,6 @@ SELECT * FROM users LIMIT {{ UsersTable.pageSize }} OFFSET {{ UsersTable.pageOff
 
 In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
-
 ### Insert data
 
 ```sql
@@ -129,7 +134,7 @@ VALUES
 );
 ```
 
-In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender, and email fields, respectively.
+In the above example,  `NameInput`,  `GenderDropdown`, and `EmailInput` are the names of the widgets used to capture input from the user for name, gender, and email fields, respectively.
 
 ### Update data
 
@@ -155,11 +160,11 @@ Prepared statements are turned on by default in your queries to help prevent SQL
 
 ## SQL modes
 
-```SQL_MODE``` is a system variable in MySQL that can:
+`SQL_MODE` is a system variable in MySQL that can:
 
-* Configure the server's strictness when accepting input data,
-* Adjust syntax to conform more closely to standard SQL,
-* Provide better compatibility with other databases.
+- Configure the server's strictness when accepting input data,
+- Adjust syntax to conform more closely to standard SQL,
+- Provide better compatibility with other databases.
 
 In particular, [strict mode](https://dev.mysql.com/doc/refman/8.0/en/sql-mode.html#sql-mode-strict) can help you ensure the integrity of your data by preventing the database from automatically inserting default values for missing or invalid data.
 
@@ -167,4 +172,4 @@ For more information, see the docs for MySQL's [SQL Modes](https://dev.mysql.com
 
 ## Troubleshooting
 
-If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or the [MySQL Errors](/help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors) page, or contact the support team using the chat widget at the bottom right of this page.
+If you are experiencing difficulties, you can refer to the [Troubleshooting guide](/help-and-support/troubleshooting-guide/application-errors), or contact the support team using the chat widget at the bottom right of this page.
