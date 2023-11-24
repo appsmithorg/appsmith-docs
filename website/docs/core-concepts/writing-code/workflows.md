@@ -101,3 +101,4 @@ If you want to execute a query based on the response from another query, you can
 }}
 ```
 
+See [how to pass parameters at runtime](/connect-data/concepts/dynamic-queries#passing-parameters-at-runtime-using-run).
