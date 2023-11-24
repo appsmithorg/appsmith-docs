@@ -25,24 +25,29 @@
     white-space: nowrap;
     font-size: 0.7rem;
     background-color: #f0f0f0;
+    border-right: 2px solid #ccc;
     text-decoration: var(--ifm-link-decoration);
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
         background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
         border-radius var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-.custom-search-option:hover,
-.selected {
-    background-color: gray;
+.custom-search-option:last-child {
+    border-right: none;
+}
+
+.custom-search-option:hover {
+    background-color: var(--ifm-color-primary);
     color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
     padding-bottom: 11px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .custom-search-option:hover .doc-search-icon,
-.custom-search-option:hover .ai-search-icon,
-.selected .doc-search-icon,
-.selected .ai-search-icon {
+.custom-search-option:hover .ai-search-icon {
     color: #fff;
+    transition: color 0.3s ease;
 }
 
 .custom-search-option:last-child {
@@ -51,6 +56,7 @@
 
 .icon {
     font-size: 12px;
+    margin-right: 4px;
 }
 
 .doc-search-icon,
