@@ -68,7 +68,9 @@ With this configuration, all actions are executed at the same time, regardless o
 
 This section covers conditional query execution, allowing queries to be executed based on user input or based on the results of previous queries. You can enable *JS* next to the event and add your code. 
 
-It is recommended to use JSObject when writing custom expressions to ensure proper handling of custom JavaScript logic.
+:::note
+It is recommended to use JSObject when writing custom expressions to ensure proper handling of JavaScript logic.
+:::
 
 **Based on user input**
 
