@@ -1,8 +1,8 @@
 import React, { useState, useImperativeHandle, forwardRef } from 'react';
 import ReactMarkdown from 'react-markdown';
-import './css/AISearch.css';
 import { FaRobot, FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
+import './css/AISearch.css';
 
 const AISearch = forwardRef((props, ref) => {
     const [inputValue, setInputValue] = useState('');

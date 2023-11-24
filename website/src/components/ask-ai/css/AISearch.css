@@ -101,10 +101,87 @@
     overflow-y: auto;
 }
 
+.search-term-answer h2 {
+    font-size: 1rem;
+}
+
+.search-term-answer h3 {
+    font-size: 0.89rem;
+}
+
+.search-term-answer h4 {
+    font-size: 0.8rem;
+}
+
+.search-term-answer h5 {
+    font-size: 0.78rem;
+}
+
+.search-term-answer h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5 {
+    color: var(--docsearch-highlight-color);
+}
+
 .search-term-answer p {
     margin: 0;
     line-height: 1.4;
     color: #333;
+    font-size: .75em;
+}
+
+.search-term-answer ol {
+    list-style-type: decimal;
+    margin-left: 20px;
+    font-size: 0.75em;
+}
+
+.search-term-answer ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 0.75em;
+}
+
+.search-term-answer li {
+    margin-bottom: 5px;
+    font-size: inherit;
+}
+
+.search-term-answer li>p {
+    font-size: inherit;
+}
+
+.search-term-answer pre {
+    background-color: gray;
+    margin-top: 3px;
+}
+
+.search-term-answer code {
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75em;
+}
+
+.search-term-answer .callout {
+    background-color: #ffd700;
+    padding: 10px;
+    border: 1px solid #e6db55;
+    border-radius: 4px;
+    margin: 10px 0;
+    color: #333;
+    font-style: italic;
+}
+
+.ai-result-container>.feedback-widget-container>.feedback-heading {
+    font-size: 0.75em;
+
+}
+
+.ai-result-container>.feedback-widget-container {
+    padding: 16px 20px;
 }
 
 .ai-search-modal {
