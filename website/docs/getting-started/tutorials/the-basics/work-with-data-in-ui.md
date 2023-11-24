@@ -55,8 +55,7 @@ This tutorial takes you through the process of viewing and editing individual re
 
   ```sql
   UPDATE users 
-  SET name = {{nameInput.text}}, 
-  email = {{emailInput.text}}, 
+  SET name = {{nameInput.text}},
   dob = {{dobInput.selectedDate}}
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
