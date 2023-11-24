@@ -1127,6 +1127,10 @@
       "destination": "/build-apps/how-to-guides/submit-form-data#refresh-table-data-and-close-modal"
     },
     {
+      "source": "/getting-started/tutorials",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {  
       "source": "/build-apps/how-to-guides/Server-side-filtering-table",
       "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down"
     },
