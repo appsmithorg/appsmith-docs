@@ -29,7 +29,13 @@ Page name or URL to which you would like to be transported. `PageName` is case-s
 
 <dd>
 
-Query parameters passed via the URL. Used to share information with the destination page. It is important to use triple braces ({{{ }}}) to ensure that the parameters are encoded correctly as a part of the URL. Even if the value is a static string, the triple braces are required to include the parameter in the navigation. See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
+Query parameters passed via the URL. Used to share information with the destination page. 
+To bind an object with key-value pairs into a query parameter, use the following syntax in **Query params**:
+
+```jsx
+{{{ "key": "value" }}}
+```
+See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
 </dd>
 
