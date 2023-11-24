@@ -16,23 +16,22 @@ This tutorial takes you through the process of viewing and editing individual re
 </div>
 
 1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
-2. Select the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
+
+2. Click the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
+
 3. Now add widgets on the Form to view user details. For the user's name, drop an **Input** widget inside the Form. 
     * On the property pane to the right, click on the default name **Input1** and rename it to `nameInput`. 
     * In the **Text** property box, enter `Name`. 
     * In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
-4. Let's do the same for the user's email. Drop another Input widget inside the Form. 
-    * Rename the widget to `emailInput`.
-    * Select **Email** from the list of options in the **Data Type** property.
-    * In the **Text** property box, enter `Email`.
-    * In the **Default Value** property box, type `{{usersTable.selectedRow.email}}`.
-5. You also need to view the user's date of birth. Drop a **Datepicker** widget inside the Form. 
+
+4. You also need to view the user's date of birth. Drop a **Datepicker** widget inside the Form. 
     * Rename the widget to `dobInput`.
     * In the **Text** property box, enter `DOB`.
     * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
     * Type `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
     * In the **Date format** property, select the **LL** date format.
-6. And finally to view the user's photo, drop an Image widget inside the Form. 
+
+5. And finally to view the user's photo, drop an **Image** widget inside the Form. 
     * In the **Image** property box, type `{{usersTable.selectedRow.image}}`.
 
 🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
@@ -62,7 +61,7 @@ This tutorial takes you through the process of viewing and editing individual re
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
 
-## Run query on button click
+### Trigger update on button click
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/8Dl3BXERPmUvIYJLWqX5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Run Query">

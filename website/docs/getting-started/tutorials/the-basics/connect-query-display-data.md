@@ -17,7 +17,7 @@ This tutorial takes you through the process of connecting a datasource and query
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/7U7N3Fhx8NVvn0vgtU1O?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Connect Datasource">
+  <iframe src="https://demo.arcade.software/7U7N3Fhx8NVvn0vgtU1O?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "100%", colorScheme: "light" }} title="User Management | Connect Datasource">
   </iframe>
 </div>
 

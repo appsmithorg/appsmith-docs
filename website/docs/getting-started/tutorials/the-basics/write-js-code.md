@@ -8,7 +8,7 @@ description:  Now Code It
 
 This tutorial take you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single line coding. If you want to write more complex code, you have to use JS Objects.
 
-## Create JS Object
+## Write JS functions
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/vxkNgBJ8W2KJ1sXd9feT?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Create JS Object">
@@ -49,7 +49,7 @@ This tutorial take you through the process of writing JavaScript code in Appsmit
 
 ## Use built-in objects and functions
 
-Appsmith provides global objects and functions within its framework for building your apps. 
+Appsmith provides global objects and functions within its framework to help build your apps. 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/qVJL89nhp8HOstVI16Js?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Global Objects and Functions">
@@ -77,22 +77,26 @@ Appsmith provides global objects and functions within its framework for building
   ```
   Here you are using the `appsmith` global object to extract information about the currently logged in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
 
-4. You can also navigate from one page to another. Go back to the **User Information** page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
+### Navigate to another page  
 
-5. In the **onClick** property, click the **JS** button. 
+1. You can also navigate from one page to another. Go back to the **User Information** page. Drop a button widget anywhere on the canvas. Change its **Label** property to `Next Page`.
 
-6. Between the curly braces `{{}}` enter the following code snippet
+2. In the **onClick** property, click the **JS** button. 
+
+3. Between the curly braces `{{}}` enter the following code snippet
 
   ```javascript
   navigateTo('Account Details')
   ```
 
-7. Click the **Next Page** button to test if it redirects you to the **Account Details** page. 
+4. Click the **Next Page** button to test if it redirects you to the **Account Details** page. 
 
 For more information on all the global functions available in the Appsmith framework, see [Global Functions](/reference/appsmith-framework/widget-actions).
 
 
-8. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode.
+5. Click the **Deploy** button on the top right of the screen to deploy the application and test it in the *View* mode.
+
+---
 
 🚩 Congratulations! You have built your first app that can display data from the database and save the updated data using a form.
 

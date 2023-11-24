@@ -10,23 +10,12 @@ const sidebars = {
         'intro',
         {
           type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          label: 'Tutorial',
+          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
           items: [
-            {
-              type: 'category',
-              collapsed: false,
-              label: 'Tutorial 1: The Basics',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/start-building',
-              },
-              items: [
                 'getting-started/tutorials/the-basics/connect-query-display-data',
                 'getting-started/tutorials/the-basics/work-with-data-in-ui',
                 'getting-started/tutorials/the-basics/write-js-code',
-              ],
-            },
           ],
         },
 
