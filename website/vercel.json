@@ -1121,11 +1121,22 @@
     {
       "source": "/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings",
       "destination": "/core-concepts/writing-code/javascript-editor-beta"
-    }
-    ,
+    },
     {
       "source": "/build-apps/how-to-guides/refresh-table-data",
       "destination": "/build-apps/how-to-guides/submit-form-data#refresh-table-data-and-close-modal"
+    },
+    {
+      "source": "/build-apps/how-to-guides/Server-side-filtering-table",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down"
+    },
+    {
+      "source": "/build-apps/how-to-guides/Setup-Server-side-Searching-on-Table",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-search-text"
+    },
+    {
+      "source": "/build-apps/how-to-guides/Filter-Table-Data-using-Datepicker",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-date-range"
     }
   ]
 }
