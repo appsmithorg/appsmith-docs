@@ -71,10 +71,16 @@
 }
 
 .ai-query-heading {
+    background: var(--docsearch-modal-background);
     color: var(--docsearch-highlight-color);
-    text-decoration: none;
-    padding: 6px;
-    font-size: 0.9rem;
+    font-size: .85em;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0 -4px;
+    padding: 8px 4px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .ai-search-term {
