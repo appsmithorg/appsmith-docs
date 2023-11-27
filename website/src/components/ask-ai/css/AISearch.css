@@ -264,19 +264,10 @@ h5 {
     }
 }
 
-.DocSearch-Modal {
-    --docsearch-highlight-color: gray !important;
-
-}
-
 .DocSearch-Form {
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
 }
 
 .DocSearch-Input {
     font-size: 0.89em !important;
-}
-
-.DocSearch-Hit-source {
-    color: gray !important;
 }
