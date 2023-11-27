@@ -28,17 +28,6 @@ simplifies working with dates and times in JavaScript by providing functions for
 
 </dd>
 
-#### [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
-
-<dd>
-Fast XML Parser can be used to work with cryptographic algorithms and protocols in JavaScript.
-
-```
-{{ xmlParser.parse(xmlAPI.data) }}
-```
-
-</dd>
-
 #### [Forge](https://github.com/digitalbazaar/forge)
 
 <dd>
@@ -58,4 +47,4 @@ export default {
 
 ## External JS Libraries
 
-You can also [follow this guide](core-concepts/writing-code/ext-libraries) to install external javascript libraries that are not loaded by default into your application.
+You can also [follow this guide](/core-concepts/writing-code/ext-libraries) to install external javascript libraries that are not loaded by default into your application.

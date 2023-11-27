@@ -12,6 +12,16 @@ Follow the steps below to setup the pipeline:
 
 1. Create two workspaces for your staging and production versions of the app. These workspaces can be across two separate instances of Appsmith.
 2. Create your app in the staging workspace and [connect to a Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository) . Once connected, check out a staging branch from the default branch(you can name the default branch as production).
+
+<dd>
+
+:::info 
+If you are an enterprise user, you can set a [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch) and [Branch protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection), ensuring code quality, collaboration, and stability in a collaborative development environment. 
+
+:::
+
+</dd>
+
 3. Import the app into your production workspace using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository).
 4. Once the import is complete, add your production datasource configurations in the **Reconnect Datasources** Modal.
 

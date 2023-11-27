@@ -1,0 +1,52 @@
+# MongoDB Startup Error Post Migration to Version 5
+
+## Error Message
+
+When attempting to start MongoDB after migrating to version 5, you may encounter the following error:
+
+<Message
+  messageContainerClassName="error"
+  messageContent="Illegal instruction (core dumped) mongod `–fork –port 27017 –dbpath` “$MONGO_DB_PATH"
+></Message>
+
+## Cause
+
+MongoDB version 5 has elevated CPU architecture requirements, such as requiring support for AVX instructions. If your server's CPU does not meet these requirements, MongoDB will fail to start.
+
+## Solution
+
+To address this issue, you have the following options:
+
+1. Upgrade your infrastructure to ensure it is compliant with MongoDB's CPU requirements. Review the [System Requirements for MongoDB 5](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) to ensure compatibility.
+
+2. Utilize an external MongoDB service that meets the version 5 or higher standards. [MongoDB Atlas](https://www.mongodb.com/pricing) offers managed MongoDB hosting which you can use.
+
+3. If upgrading your infrastructure is not feasible at the moment, and you need a temporary workaround, consider temporarily downgrading Appsmith. Subsequently, when your MongoDB upgrade is complete, you can update to the latest version of Appsmith for the newest enhancements.
+
+<!-- -->
+
+To downgrade Appsmith to v1.8.15, follow these steps:
+
+### Downgrade process
+
+1. Navigate to your Appsmith server and modify the `docker-compose.yml` file to use the older version of Appsmith:
+
+<!-- -->
+
+- For the Community Edition:
+
+  yaml services: appsmith: image: index.docker.io/appsmith/appsmith-ce:v1.8.15 container_name: appsmith
+
+- For the Commercial Edition:
+
+  yaml services: appsmith: image: index.docker.io/appsmith/appsmith-ee:v1.8.15 container_name: appsmith
+
+<!-- -->
+
+2. Restart the services by executing:
+
+   bash docker-compose up -d
+
+<!-- -->
+
+Initiating the services with the downgraded version of Appsmith will apply the necessary schema adjustments to your instance.

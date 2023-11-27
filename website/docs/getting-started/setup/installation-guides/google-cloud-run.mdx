@@ -4,6 +4,7 @@ toc_max_heading_level: 2
 ---
 
 # Google Cloud Run
+
 This page provides steps to deploy Appsmith on Google Cloud Run.
 
 :::caution important
@@ -22,33 +23,42 @@ Before you begin, ensure you have the following:
 Before you install Appsmith, it's important to set up the below prerequisites:
 
 ### Set up Google Cloud Project
+
 1. Create or select a Google Cloud project. For more information, see [Creating a Google Cloud Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 2. Enable billing for your Google Cloud project.
 3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
 4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
 
 ### Create a Filestore instance
- 
+
 Follow these steps to create a filestore instance:
+
 1. In the Google Cloud console, go to the [Filestore instances](https://console.cloud.google.com/filestore/instances) page.
 2. Click **Create Instance** and configure the instance as follows:
-    * Provide a name in the **Instance ID** box.
-    * Set **Instance type** to **Basic**.
-    * Set **Storage type** to **HDD**.
-    * Set **VPC network** to **default**.
-    * Provide a name in the **Configure your file share** box.
-    * Set **Allocated IP range** to **Use an automatically allocated IP range**.
-    * Set **Access controls** to **Grant access to all clients on the VPC network**.
+   - Provide a name in the **Instance ID** box.
+   - Set **Instance type** to **Basic**.
+   - Set **Storage type** to **HDD**.
+   - Set **VPC network** to **default**.
+   - Provide a name in the **Configure your file share** box.
+   - Set **Allocated IP range** to **Use an automatically allocated IP range**.
+   - Set **Access controls** to **Grant access to all clients on the VPC network**.
 3. Click **Create**.
-4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the Filestore instance in the Cloud Run container.  
-<figure>
-        <img src="/img/file-share-name-and-ip-address.png" style= {{width:"100%", height:"auto"}} alt="File share name and IP address of the filestore instance"/>
-        <figcaption align = "center"><i>File share name and IP address of the filestore instance</i></figcaption>
-</figure>
+4. When the new instance creation is complete, note down the **File share name** and **IP address** to use later when mounting the Filestore instance in the Cloud Run container.
+   <figure>
+     <img
+       src="/img/file-share-name-and-ip-address.png"
+       style={{ width: "100%", height: "auto" }}
+       alt="File share name and IP address of the filestore instance"
+     />
+     <figcaption align="center">
+       <i>File share name and IP address of the filestore instance</i>
+     </figcaption>
+   </figure>
 
 ### Create a Serverless VPC Access connector
 
 Follow these steps to create a serverless VPC Access connector:
+
 1. Go to the [Serverless VPC Access](https://console.cloud.google.com/networking/connectors) overview page.
 2. Click **Create connector**.
 3. In the **Name** field, enter a name for your connector.
@@ -62,46 +72,49 @@ Follow these steps to create a serverless VPC Access connector:
 Follow these steps to install Appsmith on Google Cloud Run:
 
 1. Go to [Cloud Run](https://console.cloud.google.com/run).
-<a id="create-service"></a>
-2. Click **Create service**. 
+   <a id="create-service"></a>
+2. Click **Create service**.
 
 3. In the form, select **Deploy one revision from an existing container image**.
-    - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ee`.
+
+   - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ee`.
 
 4. Enter a desired name in the **Service name** field.
 
 5. Set **CPU allocation and pricing** to **CPU is always allocated**.
 
 6. Under **Autoscaling**:
-    * Set **Minimum number of instances** to `1`.
-    * Set **Maximum number of instances** to `4`.
-    * Select **All** to allow direct access to your service from the Internet.
+
+   - Set **Minimum number of instances** to `1`.
+   - Set **Maximum number of instances** to `4`.
+   - Select **All** to allow direct access to your service from the Internet.
 
 7. Under **Authentication**, select **Allow unauthenticated invocations**.
 
 8. Click **Container, Networking, Security** to expand the service configuration page.
 
 9. Click the **Container** tab.
-    - In the **Container port** box, enter 80 to specify the port you want route traffic to.
-    - Under **Capacity**:
-        - Set the memory size to **4 GiB** in the **Memory** dropdown list. 
-        - Set the CPU limit as **2** in the **CPU** dropdown list.
-    - Under **Execution environment**, select **Second generation**.
-    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
 
-    | Name | Value |
-    |------------------------|------------------------------------------| 
-    | **FILESTORE_IP_ADDRESS** | The IP address you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites). |
-    | **FILE_SHARE_NAME** | The file share name you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites). |
-    | **APPSMITH_MONGODB_URI** | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]`|
-    | **APPSMITH_ENCRYPTION_SALT** | Specify an encryption salt to encrypt values in the database.|
-    | **APPSMITH_ENCRYPTION_PASSWORD** | Specify an encryption password to encrypt values in the database.|
-    | **APPSMITH_ENABLE_EMBEDDED_DB** | `0`|
-    | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | 1 |
+   - In the **Container port** box, enter 80 to specify the port you want route traffic to.
+   - Under **Capacity**:
+     - Set the memory size to **4 GiB** in the **Memory** dropdown list.
+     - Set the CPU limit as **2** in the **CPU** dropdown list.
+   - Under **Execution environment**, select **Second generation**.
+   - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
+
+   | Name                                   | Value                                                                                                                                                                                                                                                 |
+   | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | **FILESTORE_IP_ADDRESS**               | The IP address you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites).                                                                                                                                           |
+   | **FILE_SHARE_NAME**                    | The file share name you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites).                                                                                                                                      |
+   | **APPSMITH_MONGODB_URI**               | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]` |
+   | **APPSMITH_ENCRYPTION_SALT**           | Specify an encryption salt to encrypt values in the database.                                                                                                                                                                                         |
+   | **APPSMITH_ENCRYPTION_PASSWORD**       | Specify an encryption password to encrypt values in the database.                                                                                                                                                                                     |
+   | **APPSMITH_ENABLE_EMBEDDED_DB**        | `0`                                                                                                                                                                                                                                                   |
+   | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | 1                                                                                                                                                                                                                                                     |
 
 10. Click the Networking tab.
-    * In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.
-    * Keep the default Route only requests to private IPs through the VPC connector option.
+    - In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.
+    - Keep the default Route only requests to private IPs through the VPC connector option.
 11. Click the **Deploy** button at the bottom of the page to deploy the image to Cloud Run and wait for the deployment to finish. A green check mark will appear next to the deployed service name when it's ready. This can take up to 5 minutes.
 12. Click the displayed URL link to open the unique and stable endpoint of the Appsmith instance.
 13. Fill in your details to create an administrator account.
@@ -113,11 +126,11 @@ To install the Appsmith open source edition (Appsmith Community), replace `appsm
 
 ## Troubleshooting
 
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
+If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
+
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## See also
 
-* [Instance Configuration](/getting-started/setup/instance-configuration/)
-* [Instance Management](/getting-started/setup/instance-management/)
-
-
+- [Instance Configuration](/getting-started/setup/instance-configuration/)
+- [Instance Management](/getting-started/setup/instance-management/)

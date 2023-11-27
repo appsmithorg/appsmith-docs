@@ -298,6 +298,7 @@ const sidebars = {
             },
             'connect-data/reference/querying-mssql',
             'connect-data/reference/querying-mysql',
+            'connect-data/reference/open-ai',
             'connect-data/reference/querying-oracle',
             'connect-data/reference/querying-postgres',
             'connect-data/reference/querying-redis',
@@ -306,7 +307,7 @@ const sidebars = {
             'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
-            'connect-data/reference/twilio',
+            'connect-data/reference/twilio'
 
           ],
         },
@@ -343,11 +344,20 @@ const sidebars = {
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             'core-concepts/building-ui/dynamic-ui/README',
-            'build-apps/how-to-guides/Server-side-pagination-in-table',
+            {
+              type: 'category',
+              label: 'Display and Lookup Table Data',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/display-search-and-filter-table-data',
+              },
+              items: [
+                'build-apps/how-to-guides/Server-side-pagination-in-table',
+                'build-apps/how-to-guides/search-and-filter-table-data'
+              ],
+            },
             'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/Server-side-filtering-table',
-            'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
-            'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+            'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
@@ -588,31 +598,38 @@ const sidebars = {
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
-      link: {
-        type: 'doc',
-        id: 'help-and-support/troubleshooting-guide/README',
-      },
       items: [
+        'help-and-support/troubleshooting-guide/README',
         {
           // Help & Support start
           type: 'category',
-          label: 'Action Errors',
+          label: 'Self-hosting Errors',
           link: {
             type: 'doc',
-            id: 'help-and-support/troubleshooting-guide/action-errors/README',
+            id: 'help-and-support/troubleshooting-guide/deployment-errors',
+          },
+          items: [
+            "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+          ],
+        },
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Application Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/application-errors',
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/README'
           ],
         },
-        'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/query-errors',
-        'help-and-support/troubleshooting-guide/widget-errors',
+        // 'help-and-support/troubleshooting-guide/js-errors',
+        // 'help-and-support/troubleshooting-guide/query-errors',
+        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {

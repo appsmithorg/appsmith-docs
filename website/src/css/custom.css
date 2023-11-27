@@ -665,12 +665,10 @@ a.appsmithtag.enterprise:hover {
 
 h2+.tags,
 h3+.tags {
-  margin-left: -26px;
   top: -6px !important;
 }
 
 h4+.tags {
-  margin-left: -18px;
   top: -6px !important;
 }
 
