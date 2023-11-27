@@ -129,7 +129,7 @@ const AISearch = forwardRef((props, ref) => {
         <div className='ai-search-result-wrapper'>
             <header className='ai-search-bar-header'>
                 <div className="custom-search-container">
-                    <FaRobot className='ai-robot-icon' />
+                    <img src="../../../img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> 
                     <input
                         id="question-input"
                         name="question-input"

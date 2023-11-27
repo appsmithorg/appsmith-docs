@@ -35,14 +35,14 @@ const CustomSearchBar = () => {
                         className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
                         onClick={() => setSearchType('ai')}
                     >
-                        <FaRobot className='ai-search-icon' style={{margin : '1px'}}/> Ask AI
+                        <img src="../../../img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
                     </div>
 
                     <div
                         className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                         onClick={() => setSearchType('docs')}
                     >
-                        <FaSearch className='doc-search-icon'/> Search
+                        <img src="../../../img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
                     </div>
                 </label>
             </div>

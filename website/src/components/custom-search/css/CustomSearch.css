@@ -1,8 +1,8 @@
 .custom-segmented-search-option {
     display: flex;
     overflow: hidden;
-    height: 38px;
-    border-radius: 5em;
+    height: 30px;
+    border-radius: 4px;
     box-sizing: border-box;
     background-color: #f0f0f0;
     color: #000;
@@ -21,7 +21,7 @@
     gap: 4px;
     border-right: none;
     float: left;
-    padding: 0.5rem;
+    padding: 0.3rem;
     white-space: nowrap;
     font-size: 0.7rem;
     background-color: #f0f0f0;
