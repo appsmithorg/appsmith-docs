@@ -24,7 +24,9 @@ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 
 ### Library compatibility
 
-Appsmith only supports libraries that have **[UMD](https://github.com/umdjs/umd)** builds. The index file for most compatible libraries can be found under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. If a library you wish to use doesn't support a UMD build, you may use [browserify](https://browserify.org/) to generate one and host it in a CDN of your choice.
+Appsmith supports libraries that are written in **[ESM](https://tc39.es/ecma262/#sec-modules)** or **[UMD](https://github.com/umdjs/umd)** pattern. ESM are the official standard format to package JavaScript code for reuse. ES Modules are defined using a variety of import and export statements. If the library you wish to use is not written in ESM, try looking an index file under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. You may optionally use [browserify](https://browserify.org/) to generate a UMD build and host it in a CDN of your choice.
+
+✅ Valid URL: `https://cdn.jsdelivr.net/npm/openai@4.19.0/+esm`
 
 ✅ Valid URL: `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
 
