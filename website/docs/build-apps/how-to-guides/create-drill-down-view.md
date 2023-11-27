@@ -18,12 +18,12 @@ This page shows you how to build a data drilldown view from a master dataset on 
 </div>
 
 To create a data drilldown view using a List widget, follow these steps:
-1. Drag and drop a List widget on to the canvas.
+1. Drag and drop a List widget onto the canvas.
 2. Set the **Items** of the widget under **Data** in the property pane, using the following code where `fetch_passengers` is the fetch query:
    ```jsx
    {{fetch_passengers.data}}
    ```
-3. Drag and drop a Container widget on to the canvas and disable the widget's **Visible** property in the property pane.
+3. Drag and drop a Container widget onto the canvas and disable the widget's **Visible** property in the property pane.
 4. Add the required widgets to the Container like Text, List, or Image to display details.
 5. Bind data to the widgets in the container based on the selected list item. For example, to bind the name of the passenger to the Text widget in the container, use the following code where `passengers_list` is the name of the List widget:
    ```jsx
@@ -71,19 +71,18 @@ To create a drilldown view side by side with the master list, follow these steps
 1. Drag and drop a Container widget onto the canvas. The left section displays the Table widget, while the right section displays the detail view.
 2. Add the required widgets to the Container like Text, List, or Image to display specific passenger details.
 3. Disable the **Visible** property of the Container in the property pane.
-4. In the Table widget's property pane, add a new column to include a Button widget to view details.
-5. Set the **onClick** event of the button to show the container using the following code where `passenger_details_container` is the name of the container:
+4. In the Table widget's property pane, set the **onRowSelected** event of the widget to show the container using the following code where `passenger_details_container` is the name of the container:
    ```jsx
    {{passenger_details_container.setVisibility(true)}}
    ```
 6. In the container, bind widgets to the data corresponding to the triggered row from the Table widget. For example, to bind the passenger name to a Text widget, use the following code:
    ```jsx
-   {{passengersTable.triggeredRow.passenger_name}}
+   {{passengersTable.selectedRow.passenger_name}}
    ```
    Bind other widgets similarly to display the complete details of the selected passenger.
-   To format dates in a specific format, use [Moment](https://momentjs.com/docs/). For example, to format the date of birth of a passenger use the followinf code:
+   To format dates in a specific format, use [Moment](https://momentjs.com/docs/). For example, to format the date of birth of a passenger use the following code:
    ```jsx
-   {{moment(passengersTable.triggeredRow.dob).format('MMMM Do YYYY, h:mm:ss a')}}
+   {{moment(passengersTable.selectedRow.dob).format('MMMM Do YYYY, h:mm:ss a')}}
    ```
 
 ## See also
