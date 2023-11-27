@@ -1,7 +1,6 @@
 .custom-search-container {
     align-items: center;
     background: var(--docsearch-searchbox-focus-background);
-    border-radius: px;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
     display: flex;
     height: var(--docsearch-searchbox-height);
@@ -69,17 +68,17 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    padding-bottom: 50px;
+    padding: 4px, 8px, 4px, 8px;
+    border-radius: 4px;
+    gap: 8px;
 }
 
 .ai-query-heading {
-    background: var(--docsearch-modal-background);
-    color: var(--docsearch-highlight-color);
-    font-size: .85em;
+    font-size: 14px;
     font-weight: 600;
     line-height: 32px;
     margin: 0 -4px;
-    padding: 8px 4px 0;
+    padding: 0px 4px 0;
     position: sticky;
     top: 0;
     z-index: 10;
@@ -90,40 +89,52 @@
     color: #333;
     text-decoration: none;
     padding: 10px;
-    font-size: 0.875rem;
+    font-size: 14px;
+    height: 36px;
+    border-radius: 4px;
+    line-height: 12px;
 }
 
 .ai-search-term:hover {
-    background-color: #FFF4;
+    background-color: #FFFFFF;
     box-shadow: 0 1px 1px #ddd;
 }
 
 .search-term-answer {
     max-height: 400px;
     overflow-y: auto;
+    padding: 4px 0px 0px;
+    gap: 8px;
+}
+
+.search-term-answer h1 {
+    font-size: 22px;
 }
 
 .search-term-answer h2 {
-    font-size: 1rem;
+    font-size: 18px;
+
 }
 
 .search-term-answer h3 {
-    font-size: 0.89rem;
+    font-size: 16px;
 }
 
 .search-term-answer h4 {
-    font-size: 0.8rem;
+    font-size: 14px;
 }
 
 .search-term-answer h5 {
-    font-size: 0.78rem;
+    font-size: 12px;
 }
 
-.search-term-answer h2,
-.markdown-content h3,
-.markdown-content h4,
-.markdown-content h5 {
-    color: var(--docsearch-highlight-color);
+.search-term-answer h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+    line-height: 24px;
 }
 
 .search-term-answer p {
@@ -135,13 +146,12 @@
 
 .search-term-answer ol {
     list-style-type: decimal;
-    margin-left: 20px;
     font-size: 0.75em;
+    text-indent: 8px;
 }
 
 .search-term-answer ul {
     list-style-type: disc;
-    margin-left: 20px;
     font-size: 0.75em;
 }
 
@@ -155,16 +165,22 @@
 }
 
 .search-term-answer pre {
-    background-color: gray;
+    background-color: #E3E8EF;
     margin-top: 3px;
+    border: 0.67px;
+    border-radius: 5.35px;
+    height: 62.07px;
+    width: 96%;
+    overflow: hidden;
 }
 
 .search-term-answer code {
-    color: #fff;
+    color: #4C5664;
     padding: 2px 5px;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
-    font-size: 0.75em;
+    font-size: 13px;
+    font-weight: 400;
 }
 
 .search-term-answer .callout {
@@ -203,9 +219,9 @@
     text-align: center;
     position: relative;
     width: 70%;
-    min-height: 60%;
+    min-height: 40%;
     margin: 4% auto;
-    border-radius: 6px;
+    border-radius: 8px;
     box-shadow: var(--docsearch-modal-shadow);
     position: relative;
 }
@@ -250,6 +266,7 @@
 
 .DocSearch-Modal {
     --docsearch-highlight-color: gray !important;
+
 }
 
 .DocSearch-Form {

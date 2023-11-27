@@ -1,35 +1,29 @@
 .custom-segmented-search-option {
     display: flex;
     overflow: hidden;
-    height: 30px;
-    border-radius: 4px;
+    background-color: #F1F5F9;
     box-sizing: border-box;
-    background-color: #f0f0f0;
-    color: #000;
+    border-radius: 4px;
 }
 
 .custom-search-option {
-    --primary-color: #000;
-    --primary-light-color: #f9936b;
-    flex: 1;
+    height: 36px;
+    display: flex;
     cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 500;
-    gap: 4px;
+    font-weight: 600;
+    gap: 8px;
     border-right: none;
     float: left;
-    padding: 0.3rem;
+    padding: 8px;
     white-space: nowrap;
-    font-size: 0.7rem;
-    background-color: #f0f0f0;
-    border-right: 2px solid #ccc;
-    text-decoration: var(--ifm-link-decoration);
-    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
-        background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default),
-        border-radius var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    font-size: 14px;
+    background-color: #F1F5F9;
+    color: #4C5664;
+    border-right: 1px solid #CDD5DF;
 }
 
 .custom-search-option:last-child {
@@ -37,33 +31,13 @@
 }
 
 .custom-search-option:hover {
-    background-color: var(--ifm-color-primary);
-    color: #fff;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding-bottom: 11px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #CDD5DF;
 }
 
-.custom-search-option:hover .doc-search-icon,
-.custom-search-option:hover .ai-search-icon {
-    color: #fff;
-    transition: color 0.3s ease;
+.custom-search-option:active {
+    background-color: #99A4B3;
 }
 
 .custom-search-option:last-child {
     border-right: none;
-}
-
-.icon {
-    font-size: 12px;
-    margin-right: 4px;
-}
-
-.doc-search-icon,
-.ai-search-icon {
-    align-items: center;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
 }
