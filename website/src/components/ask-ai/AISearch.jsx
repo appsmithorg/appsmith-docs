@@ -18,7 +18,7 @@ const AISearch = forwardRef((props, ref) => {
     const commonSearchQueries = [
         "How to install Appsmith on Docker?",
         "How to display, filter and search data in a Table?",
-        "How to submit form data"
+        "How to submit form data?"
     ];
 
     const resetState = () => {
@@ -133,7 +133,7 @@ const AISearch = forwardRef((props, ref) => {
                     <input
                         id="question-input"
                         name="question-input"
-                        placeholder="Ask Appsmith AI a question..."
+                        placeholder="How do I upload a file to S3?"
                         type="text"
                         value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
                         onKeyDown={handleKeyDown}
@@ -170,12 +170,12 @@ const AISearch = forwardRef((props, ref) => {
                 )}
                 {isAnswerComplete &&
                     <div className="ai-experimental">
-                        <img src="../../../img/ai-experimental-Icon.png" alt="experimental" style={{width: '24px', height:'24px'}}></img>                   
+                        <img src="../../../img/ai-experimental-Icon.png" alt="experimental" style={{ width: '24px', height: '24px' }}></img>
                         <span className='ai-experimental-info'>
                             Appsmith AI is experiemental and may produce incorrect answers. Always verify the output before executing.
                         </span>
                     </div>
-                
+
                 }
                 {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
             </div>

@@ -101,8 +101,7 @@
 }
 
 .search-term-answer {
-    max-height: 400px;
-    overflow-y: auto;
+    max-height: none;
     padding: 4px 0px 0px;
     gap: 8px;
 }
@@ -170,7 +169,6 @@ h5 {
     border: 0.67px;
     border-radius: 5.35px;
     height: 62.07px;
-    width: 96%;
     overflow: hidden;
 }
 
@@ -195,7 +193,6 @@ h5 {
 
 .ai-result-container>.feedback-widget-container {
     padding: 16px 20px;
-    width: 95%;
 }
 
 .ai-search-modal {
@@ -215,10 +212,12 @@ h5 {
     position: relative;
     width: 70%;
     min-height: 40%;
+    height: 50%;
     margin: 4% auto;
     border-radius: 8px;
     box-shadow: var(--docsearch-modal-shadow);
     position: relative;
+    overflow-y: auto;
 }
 
 .ai-search-bar-header {
@@ -277,13 +276,12 @@ h5 {
     gap: 8px;
     background-color: #e5ecf5;
     height: 40px;
-    width: 95%
 }
 
 .ai-experimental-info {
     font-size: 14px;
     line-height: 20px;
-    font-weight: 600;
+    font-weight: 400;
     text-indent: 6px;
     margin-top: 1px;
     overflow: hidden;
