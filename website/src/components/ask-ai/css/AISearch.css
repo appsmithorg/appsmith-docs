@@ -1,3 +1,36 @@
+.ai-search-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ai-search-modal-content {
+    background: var(--docsearch-modal-background);
+    text-align: center;
+    position: relative;
+    width: 55%;
+    min-height: 40%;
+    margin: 4% auto;
+    border-radius: 8px;
+    box-shadow: var(--docsearch-modal-shadow);
+    position: relative;
+}
+
+.ai-search-result-wrapper {
+    margin-top: 0;
+    width: 100%;
+}
+
+.ai-search-bar-header {
+    display: flex;
+    padding: var(--docsearch-spacing) var(--docsearch-spacing) 0;
+}
+
 .custom-search-container {
     align-items: center;
     background: var(--docsearch-searchbox-focus-background);
@@ -8,21 +41,6 @@
     padding: 0 var(--docsearch-spacing);
     position: relative;
     width: 100%;
-}
-
-.ask-ai-modal-button {
-    background-color: white;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.ai-search-result-wrapper {
-    margin-top: 0;
-    width: 100%;
-    overflow-y: hidden;
 }
 
 #question-input {
@@ -42,26 +60,15 @@
     box-sizing: border-box;
 }
 
-.ai-robot-icon {
-    align-items: center;
-    color: var(--docsearch-highlight-color);
-    display: flex;
-    justify-content: center;
-    font-size: 1.25rem;
-    height: 24px;
-    width: 24px;
-}
-
-.ai-search-result-wrapper input:focus {
-    outline: none;
-}
-
-.ai-result-container {
+.ai-search-term {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
     padding: 10px;
-    margin-top: 10px;
-    overflow-y: auto;
-    text-align: left;
-    color: black;
+    font-size: 14px;
+    height: 36px;
+    border-radius: 4px;
+    line-height: 12px;
 }
 
 .ai-query-wrapper {
@@ -84,20 +91,14 @@
     z-index: 10;
 }
 
-.ai-search-term {
-    cursor: pointer;
-    color: #333;
-    text-decoration: none;
+.ai-result-container {
     padding: 10px;
-    font-size: 14px;
-    height: 36px;
-    border-radius: 4px;
-    line-height: 12px;
-}
-
-.ai-search-term:hover {
-    background-color: #FFFFFF;
-    box-shadow: 0 1px 1px #ddd;
+    margin-top: 10px;
+    text-align: left;
+    color: black;
+    overflow-y: scroll;
+    max-height: calc(var(--docsearch-modal-height) - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
+    padding: 0 var(--docsearch-spacing);
 }
 
 .search-term-answer {
@@ -140,18 +141,18 @@ h5 {
     margin: 0;
     line-height: 1.4;
     color: #333;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .search-term-answer ol {
     list-style-type: decimal;
-    font-size: 14px;
+    font-size: 16px;
     text-indent: 8px;
 }
 
 .search-term-answer ul {
     list-style-type: disc;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .search-term-answer li {
@@ -181,48 +182,14 @@ h5 {
     font-weight: 400;
 }
 
-.search-term-answer .callout {
-    background-color: #ffd700;
-    padding: 10px;
-    border: 1px solid #e6db55;
-    border-radius: 4px;
-    margin: 10px 0;
-    color: #333;
-    font-style: italic;
-}
-
-.ai-result-container>.feedback-widget-container {
-    padding: 16px 20px;
-}
-
-.ai-search-modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.ai-search-modal-content {
-    background: var(--docsearch-modal-background);
-    text-align: center;
-    position: relative;
-    width: 70%;
-    min-height: 40%;
-    height: 50%;
-    margin: 4% auto;
-    border-radius: 8px;
-    box-shadow: var(--docsearch-modal-shadow);
-    position: relative;
-    overflow-y: auto;
-}
-
-.ai-search-bar-header {
+.ai-robot-icon {
+    align-items: center;
+    color: var(--docsearch-highlight-color);
     display: flex;
-    padding: var(--docsearch-spacing) var(--docsearch-spacing) 0;
+    justify-content: center;
+    font-size: 1.25rem;
+    height: 24px;
+    width: 24px;
 }
 
 .close {
@@ -285,4 +252,19 @@ h5 {
     text-indent: 6px;
     margin-top: 1px;
     overflow: hidden;
+}
+
+.ai-search-result-wrapper input:focus {
+    outline: none;
+}
+
+
+.ai-search-term:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px #ddd;
+}
+
+.ai-result-container>.feedback-widget-container {
+    padding: 16px 20px;
+    margin-bottom: 10px;
 }

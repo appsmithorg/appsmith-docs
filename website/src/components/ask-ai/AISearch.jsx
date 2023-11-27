@@ -112,6 +112,9 @@ const AISearch = forwardRef((props, ref) => {
     const handleChange = (e) => {
         if (!isLoading) {
             setInputValue(e.target.value);
+            if (isAnswerComplete) {
+                resetGeneratedResponse();
+            }
         }
     };
 
@@ -139,6 +142,11 @@ const AISearch = forwardRef((props, ref) => {
                     />
                 </div>
             </header>
+            {
+                isLoading && <div className='loading-icon-container'>
+                    <FaSpinner className='loading-icon' />
+                </div>
+            }
             <div className='ai-result-container'>
                 {showExamples && (
                     <div className='ai-query-wrapper'>
@@ -154,12 +162,6 @@ const AISearch = forwardRef((props, ref) => {
                         ))}
                     </div>
                 )}
-
-                {
-                    isLoading && <div className='loading-icon-container'>
-                        <FaSpinner className='loading-icon' />
-                    </div>
-                }
                 {!isLoading && searchTerm && (
                     <div className='search-term-answer'>
                         <ReactMarkdown>{answer}</ReactMarkdown>
