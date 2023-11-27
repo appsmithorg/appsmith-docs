@@ -112,9 +112,6 @@ const AISearch = forwardRef((props, ref) => {
     const handleChange = (e) => {
         if (!isLoading) {
             setInputValue(e.target.value);
-            if (isAnswerComplete) {
-                resetGeneratedResponse();
-            }
         }
     };
 
