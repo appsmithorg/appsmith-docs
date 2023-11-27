@@ -75,7 +75,7 @@ If you want to configure a Custom SSL on your Heroku or DigitalOcean Appsmith in
 
 - [How to Configure SSL for your Heroku dyno](https://devcenter.heroku.com/articles/ssl)
 - [How do I install an SSL Certificate on a DigitalOcean Droplet](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/)
-  :::
+:::
 
 If you already have an SSL Certificate and want to use that, follow the steps listed below:
 
