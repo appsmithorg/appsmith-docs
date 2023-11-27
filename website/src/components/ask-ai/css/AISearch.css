@@ -92,7 +92,6 @@
 }
 
 .ai-result-container {
-    padding: 10px;
     margin-top: 10px;
     text-align: left;
     color: black;
@@ -267,4 +266,18 @@ h5 {
 .ai-result-container>.feedback-widget-container {
     padding: 16px 20px;
     margin-bottom: 10px;
+}
+
+.ai-result-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ai-result-container::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}
+
+.ai-result-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 4px;
 }
