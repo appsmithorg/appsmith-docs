@@ -81,6 +81,10 @@ To create a drill down view side by side with the master list, follow these step
    {{passengersTable.triggeredRow.passenger_name}}
    ```
    Bind other widgets similarly to display the complete details of the selected passenger.
+   To format dates in a specific format, use [Moment](https://momentjs.com/docs/). For example, to format the date of birth of a passenger use the followinf code:
+   ```jsx
+   {{moment(passengersTable.triggeredRow.dob).format('MMMM Do YYYY, h:mm:ss a')}}
+   ```
 
 ## See also
 - [Sample apps for Modal](/learning-and-resources/sample-apps?current-sample-app-type=widgets#modal)
