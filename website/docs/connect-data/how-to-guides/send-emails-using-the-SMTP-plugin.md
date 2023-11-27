@@ -2,10 +2,14 @@
 
 This page shows how to use the SMTP Plugin to send emails and attach files and images.
 
+ <figure>
+  <img src="/img/smtp-1.png" style= {{width:"780px", height:"auto"}} alt="S3 query"/>
+  <figcaption align = "center"><i>Configure SMTP query</i></figcaption>
+</figure>
 
 ## Prerequisites
 * App Connected to [SMTP](/connect-data/reference/using-smtp) datasource.
-* A [Filepicker](/reference/widgets/filepicker) widget to upload files.
+* A [Filepicker](/reference/widgets/filepicker) widget or a file URL to upload files.
 
 ## Configure query
 
@@ -95,6 +99,9 @@ Welcome Aboard! {{appsmith.user.name}}
 </html>
 ```
 
+You can create multiple templates, and use JS to conditionally execute a specific template based on dynamic criteria or user interactions.
+
+
 </dd>
 
 
@@ -103,14 +110,61 @@ Welcome Aboard! {{appsmith.user.name}}
 To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the Filepicker widget to upload the desired files and then send them as email attachments.
 
 
-#### Using API
+#### Using URL
+
+If you want to upload a file from a URL, create a JavaScript function using JSObject to fetch and convert the file data.
+
+1. In JSObject, add a function to handle file uploads from a URL, like:
+
+<dd>
+
+```js
+// Define a function to handle file uploads from a URL
+export default {
+  file: async (url = Table4.selectedRow.avatar) => {
+    // Make an API request to fetch the file data from the URL
+    await Api1.run({ url });
+
+    // Extract file metadata
+    const type = Api1.responseMeta.headers['Content-Type'][0];
+    const data = type.includes('image') ? Api1.data : btoa(Api1.data);
+
+    // Prepare the file object with required details
+    return {
+      type,
+      size: 1, // Set an appropriate size value
+      name: url.substr(url.lastIndexOf('/') + 1), // Extract the file name from the URL
+      dataFormat: 'base64',
+      data: `data:${type};base64,${data}`,
+    };
+  },
+};
+```
+
+The provided function asynchronously fetches file data from a URL using an API request, extracts metadata such as type and size, and returns a file object with base64-encoded data.
 
 
-#### Using S3
 
-If you are getting file/image from S3 datasource. 
+</dd>
+
+2. In the REST API request, set the URL as: `{{this.params.url}}`, which serves as a dynamic parameter allowing customization of the endpoint URL.
+
+3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
+
+<dd>
+
+```js
+[{{JSObject1.file.data}}]
+```
+
+
+ </dd>
+
+
 
 #### Using Filepicker
+
+If you want to upload files from your local machine, you can use the Filepicker widget, as shown below:
 
 1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
 
@@ -126,9 +180,6 @@ If you are getting file/image from S3 datasource.
 
 //here [0] represents index of the file.
 ```
-
-
-
 
  </dd>
 
