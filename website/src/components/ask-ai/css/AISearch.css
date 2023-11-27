@@ -41,6 +41,8 @@
     padding: 0 var(--docsearch-spacing);
     position: relative;
     width: 100%;
+    border-radius: 4px;
+    gap: 8px;
 }
 
 #question-input {
@@ -58,6 +60,13 @@
     font-weight: 400;
     line-height: 20px;
     box-sizing: border-box;
+}
+
+.ai-submit-message {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #99A4B3;
 }
 
 .ai-search-term {

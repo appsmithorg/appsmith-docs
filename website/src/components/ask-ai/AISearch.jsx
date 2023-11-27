@@ -129,7 +129,7 @@ const AISearch = forwardRef((props, ref) => {
         <div className='ai-search-result-wrapper'>
             <header className='ai-search-bar-header'>
                 <div className="custom-search-container">
-                    <img src="../../../img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img>
+                    <img src="../../../img/ask-ai-robot-icon.svg" alt="Ask AI"></img>
                     <input
                         id="question-input"
                         name="question-input"
@@ -139,7 +139,8 @@ const AISearch = forwardRef((props, ref) => {
                         onKeyDown={handleKeyDown}
                         onChange={handleChange}
                         disabled={isLoading && !isAnswerComplete}
-                    />
+                    /><span className="ai-submit-message">Submit message</span>
+                    <img src="../../../img/ai-enter-icon.png" alt="Enter"></img>
                 </div>
             </header>
             {
