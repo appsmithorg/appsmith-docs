@@ -10,21 +10,21 @@ This page shows you how to build a data drilldown view from a master dataset on 
 - A datasource containing the data to display.
 - A query to fetch data from the datasource.
 
-## Create drill down view using list
+## Create drilldown view using list
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/d0YRgvug3zTUyniWTHKj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-To create a data drill down view using a List widget, follow these steps:
+To create a data drilldown view using a List widget, follow these steps:
 1. Drag and drop a List widget on to the canvas.
 2. Set the **Items** of the widget under **Data** in the property pane, using the following code where `fetch_passengers` is the fetch query:
    ```jsx
    {{fetch_passengers.data}}
    ```
 3. Drag and drop a Container widget on to the canvas and disable the widget's **Visible** property in the property pane.
-4. Add the required widgets to the Container like Text, List, or Image to display specific passenger details.
+4. Add the required widgets to the Container like Text, List, or Image to display details.
 5. Bind data to the widgets in the container based on the selected list item. For example, to bind the name of the passenger to the Text widget in the container, use the following code where `passengers_list` is the name of the List widget:
    ```jsx
    {{passengers_list.triggeredItem.name}}
@@ -34,14 +34,14 @@ To create a data drill down view using a List widget, follow these steps:
    ```jsx
    {{passenger_details.setVisibility(true)}}
    ```
-## Create drill down view using table
+## Create drilldown view using table
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/GLKZDBsFGuVbvA0zbuEJ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-To create a data drill down view using a Table widget, follow these steps:
+To create a data drilldown view using a Table widget, follow these steps:
 1. Drag and drop a Table widget on to the canvas.
 2. Set the **Table data** property of the widget in the property pane to bind data using the following code:
    ```jsx
@@ -60,15 +60,15 @@ To create a data drill down view using a Table widget, follow these steps:
    ```
    Bind other widgets similarly to display the complete details of the selected passenger.
 
-## Create side by side drill down view
+## Create side by side drilldown view
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/SAN1VNJSGgm66LBj5hVX?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-To create a drill down view side by side with the master list, follow these steps:
-1. Drag and drop a Container widget on to the canvas. The left section displays the Table widget, while the right section displays the detail view.
+To create a drilldown view side by side with the master list, follow these steps:
+1. Drag and drop a Container widget onto the canvas. The left section displays the Table widget, while the right section displays the detail view.
 2. Add the required widgets to the Container like Text, List, or Image to display specific passenger details.
 3. Disable the **Visible** property of the Container in the property pane.
 4. In the Table widget's property pane, add a new column to include a Button widget to view details.
