@@ -4,7 +4,7 @@ description: Create a detailed view using a modal or a new page.
 
 # Create Data Drill down View
 
-This page shows you how to build a data drill down view from a master dataset.
+This page shows you how to build a data drilldown view from a master dataset on a Table or a List widget.
 
 ## Prerequisites
 - A datasource containing the data to display.
