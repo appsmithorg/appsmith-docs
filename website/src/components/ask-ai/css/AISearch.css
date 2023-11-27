@@ -193,13 +193,9 @@ h5 {
     font-style: italic;
 }
 
-.ai-result-container>.feedback-widget-container>.feedback-heading {
-    font-size: 0.75em;
-
-}
-
 .ai-result-container>.feedback-widget-container {
     padding: 16px 20px;
+    width: 95%;
 }
 
 .ai-search-modal {
@@ -270,4 +266,26 @@ h5 {
 
 .DocSearch-Input {
     font-size: 0.89em !important;
+}
+
+.ai-experimental {
+    border-radius: 5.35px;
+    padding: 8px;
+    border: 0.67px;
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap: 8px;
+    background-color: #e5ecf5;
+    height: 40px;
+    width: 95%
+}
+
+.ai-experimental-info {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    text-indent: 6px;
+    margin-top: 1px;
+    overflow: hidden;
 }
