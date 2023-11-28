@@ -13,13 +13,12 @@ const CustomSearchBar = () => {
             const aiInput = document.querySelector('.custom-doc-Search-bar');
 
             if (searchInput) {
-                searchInput.style.display = 'none';
+                searchInput.classList.add("hideSearchButtons");
             }
             if (aiInput) {
-                aiInput.style.display = 'none';
+                aiInput.classList.add("hideSearchButtons");
             }
 
-            // Initial click to set the styles and hide the elements
             if (searchType === 'ai' && aiInput) {
                 aiInput.click();
             } else if (searchType === 'docs' && searchInput) {
@@ -47,8 +46,8 @@ const CustomSearchBar = () => {
                     <img src="../../../img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
                 </div>
             </div>
-            <AISearchButton style={{ display: 'none' }} />
-            <DocSearch style={{ display: 'none' }} />
+            <AISearchButton />
+            <DocSearch />
         </>
     );
 };

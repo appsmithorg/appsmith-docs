@@ -40,3 +40,7 @@
 .custom-search-option:last-child {
     border-right: none;
 }
+
+.hideSearchButtons {
+    display: none !important;
+}
