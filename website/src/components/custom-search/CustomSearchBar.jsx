@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import DocSearch from '@theme-original/SearchBar';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
@@ -7,7 +7,7 @@ import './css/CustomSearch.css';
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (ExecutionEnvironment.canUseDOM) {
             const searchInput = document.querySelector('.DocSearch-Button');
             const aiInput = document.querySelector('.custom-doc-Search-bar');
