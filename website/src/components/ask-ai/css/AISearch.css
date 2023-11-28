@@ -105,13 +105,13 @@
     text-align: left;
     color: black;
     overflow-y: scroll;
-    max-height: calc(var(--docsearch-modal-height) - var(--docsearch-searchbox-height) - var(--docsearch-spacing) - var(--docsearch-footer-height));
+    max-height: 30%;
     padding: 0 var(--docsearch-spacing);
 }
 
 .search-term-answer {
     max-height: none;
-    padding: 4px 0px 0px;
+    padding: 8px 0px 0px;
     gap: 8px;
 }
 
