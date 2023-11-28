@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Plot Chart with Filters
 
-This page shows you how to display and filter data in Chart widget, using the Select and Datepicker widgets.
+This page shows you how to display and filter data in Chart, using the Select and Datepicker widgets.
 
 
 ## Prerequisites
@@ -116,9 +116,11 @@ This section shows you how to use the Datepicker widget to filter and view Chart
    ```url
    https://yourproduct.api.com/2/searches?index=index&startDate={{DatePicker1.formattedDate}}&endDate={{DatePicker2.formattedDate}}
    ```
-</dd>
+
 
    You can also use a [JSObject](/core-concepts/writing-code/javascript-editor-beta) to create a custom function for displaying data in the Chart.
+  
+  </dd>
   
  3. For both Datepickers, configure the **onDateSelected** event to execute the filter query.
 
