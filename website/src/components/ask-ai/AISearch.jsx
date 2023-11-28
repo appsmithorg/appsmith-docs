@@ -32,18 +32,15 @@ const AISearch = forwardRef((props, ref) => {
     };
 
     const resetGeneratedResponse = () => {
-        setInputValue('');
-        setSearchTerm('');
         setAnswer('');
         setIsLoading(false);
         setShowExamples(false);
         setTermSelected(false);
         setIsAnswerComplete(false);
-    }
+    };
+
 
     const allowToAddAnotherRequest = () => {
-        setInputValue('');
-        setSearchTerm('');
         setIsLoading(false);
         setShowExamples(false);
         setTermSelected(false);
@@ -92,6 +89,8 @@ const AISearch = forwardRef((props, ref) => {
                 if (e.data.includes("[DONE]")) {
                     eventSource.close();
                     setIsAnswerComplete(true);
+                    setInputValue('');
+                    setSearchTerm('');
                     return;
                 }
 
@@ -144,7 +143,7 @@ const AISearch = forwardRef((props, ref) => {
                         name="question-input"
                         placeholder="How do I upload a file to S3?"
                         type="text"
-                        value={isAnswerComplete ? '' : termSelected ? searchTerm : inputValue}
+                        value={termSelected ? searchTerm : inputValue}
                         onKeyDown={handleKeyDown}
                         onChange={handleChange}
                         disabled={isLoading && !isAnswerComplete}
