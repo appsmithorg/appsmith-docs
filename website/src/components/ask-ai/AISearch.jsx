@@ -73,35 +73,35 @@ const AISearch = forwardRef((props, ref) => {
         setIsAnswerComplete(false);
 
         try {
-            const projectURL = 'https://ghgdtsupocntpodexlbh.supabase.co/functions/v1/vector-search';
-            const queryURL = `${projectURL}/stream?query=${query}`;
-
-            eventSource = new EventSource(queryURL);
-
-            eventSource.addEventListener('error', (err) => {
-                setIsLoading(false);
-                console.error(err);
+            const apiUrl = "https://hook.eu1.make.com/zw41brw94vfiwuue91riqmoe2ms2nhf6";
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ "input": query }),
             });
 
-            eventSource.addEventListener('message', (e) => {
+            if (response.ok) {
+                const data = await response.text();
                 setIsLoading(false);
+                setAnswer(data);
+                setIsAnswerComplete(true);
+                setInputValue('');
+                setSearchTerm('');
+                return;
+            }
 
-                if (e.data.includes("[DONE]")) {
-                    eventSource.close();
-                    setIsAnswerComplete(true);
-                    setInputValue('');
-                    setSearchTerm('');
-                    return;
-                }
+            if (!response.ok) {
+                console.log(`HTTP error! Status: ${response.status}`);
+                setIsLoading(false);
+                setAnswer("Sorry, I don't know how to help with that.");
+            }
 
-                const completionResponse = JSON.parse(e.data);
-                const text = completionResponse.choices[0].text;
-
-                setAnswer((prevAnswer) => prevAnswer + text);
-            });
         } catch (error) {
             console.error(error);
             setIsLoading(false);
+            setAnswer("Sorry, I don't know how to help with that.");
         }
     };
 
