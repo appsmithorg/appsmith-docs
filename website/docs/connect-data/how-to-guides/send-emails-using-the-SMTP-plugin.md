@@ -1,21 +1,19 @@
-# Send Emails Using the SMTP Plugin
+# Send Emails
 
 This page shows how to use the SMTP Plugin to send emails and attach files and images.
 
- <figure>
-  <img src="/img/smtp-1.png" style= {{width:"780px", height:"auto"}} alt="S3 query"/>
-  <figcaption align = "center"><i>Configure SMTP query</i></figcaption>
-</figure>
+<VideoEmbed host="youtube" videoId="hAln7o1aUA4" title="How To Send Emails With The SMTP Integration" caption="How To Send Emails With The SMTP Integration"/>
+
+
 
 ## Prerequisites
-* App Connected to [SMTP](/connect-data/reference/using-smtp) datasource.
-* A [Filepicker](/reference/widgets/filepicker) widget or a file URL to upload files.
+A connected [SMTP](/connect-data/reference/using-smtp) plugin.
 
 ## Configure query
 
-Configure the query to send mail, using the following parameters:
+Configure the query to send email, using the following parameters:
 
-1. Select the Send email command from the **Commands** dropdown.
+1. Select the **Send email** from the **Commands** dropdown.
 
 2. Specify the email address you want to send the mail from in the **From email** field. You can also use mustache bindings `{{}}` to dynamically set the email.
 
@@ -42,11 +40,10 @@ Configure the query to send mail, using the following parameters:
 
 </dd>
 
-4. In the **CC email(s)** field, specify the email addresses receiving a carbon copy (CC). To include multiple CC recipients, separate the addresses with commas. You can also use mustache bindings `{{}}` to dynamically set the email.
+4. In the **CC email(s)** and **BCC email(s)** fields, add the email addresses. Separate multiple addresses with commas, and use mustache bindings `{{}}` to dynamically set the email.
 
-5. In the **BCC email(s)** field, specify the email addresses receiving a blind carbon copy (BCC). To include multiple BCC recipients, separate the addresses with commas. You can also use mustache bindings `{{}}` to dynamically set the email.
 
-6. In the **Subject** field, add the email's subject, for example:
+5. In the **Subject** field, add the email's subject, for example:
 
 <dd>
 
@@ -107,12 +104,12 @@ You can create multiple templates, and use JS to conditionally execute a specifi
 
 ### Add attachments
 
-To send emails with various attachments, such as files, PDFs, and images, you can achieve this by using the Filepicker widget to upload the desired files and then send them as email attachments.
+To send emails with various attachments, such as files, PDFs, and images, you can do so with the Filepicker widget or by specifying a URL for uploading the desired files.
 
 
 #### Using URL
 
-If you want to upload a file from a URL, create a JavaScript function using JSObject to fetch and convert the file data.
+If you want to upload a file from a URL, create a JavaScript function using JSObject to fetch and convert the file data to base64 format.
 
 1. In JSObject, add a function to handle file uploads from a URL, like:
 
@@ -121,7 +118,7 @@ If you want to upload a file from a URL, create a JavaScript function using JSOb
 ```js
 // Define a function to handle file uploads from a URL
 export default {
-  file: async (url = Table4.selectedRow.avatar) => {
+  file: async (url = Table1.selectedRow.avatar) => {
     // Make an API request to fetch the file data from the URL
     await Api1.run({ url });
 
@@ -147,9 +144,9 @@ The provided function asynchronously fetches file data from a URL using an API r
 
 </dd>
 
-2. In the REST API request, set the URL as: `{{this.params.url}}`, which serves as a dynamic parameter allowing customization of the endpoint URL.
+2. In the REST API query, set the URL as: `{{this.params.url}}`, which dynamically adjusts the file URL based on specific criteria, such as the selected row on Table.
 
-3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
+3. In the **Attachment(s)** field of the SMTP query, add the following code to fetch data from JSObject.
 
 <dd>
 
@@ -185,13 +182,10 @@ If you want to upload files from your local machine, you can use the Filepicker 
 
 
 
-## Execute the query
+## Trigger email query
 
 Once your query is configured, you can send emails by executing the query in response to a specific event, such as clicking a button or when files are uploaded using a Filepicker. 
 
-<dd>
-
-*Example:*
 
 1. Set the **onClick** event of the Form widget's Submit button to execute the send email query.
 
@@ -199,11 +193,5 @@ Once your query is configured, you can send emails by executing the query in res
 
 
 
-<figure>
-  <img src="/img/smtp-form.png" style= {{width:"650px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-</dd>
 
 
