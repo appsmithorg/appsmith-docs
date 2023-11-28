@@ -65,7 +65,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 ## Install Appsmith
 
-- Create an Azure container instance for Appsmith with: <a id="container-instance-config"></a>
+- Create an Azure container instance for Appsmith with: 
 
   ```bash
   az container create \
@@ -85,7 +85,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating an [Azure container instance](#container-instance-config) file on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating an Azure container instance file on this page.
 
 ## Troubleshooting
 

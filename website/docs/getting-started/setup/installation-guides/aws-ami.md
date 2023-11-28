@@ -25,7 +25,6 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-   <a id="select-appsmith-image"></a>
 7. Select the [Appsmith](https://aws.amazon.com/marketplace/pp/prodview-mrpgdd3mhpvbs) image.
 8. On the **Launch an instance** screen:
 
@@ -95,7 +94,7 @@ The application password is **only** available in system logs for the initial 24
 
 ## Install Appsmith Community
 
-To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in the [image selection](#select-appsmith-image) step, and then follow the instructions provided on this page.
+To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in step 7 of the [Install Appsmith](#install-appsmith) section on this page.
 
 ## Troubleshooting
 
