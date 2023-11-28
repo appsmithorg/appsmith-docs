@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
-import ReactMarkdown from 'react-markdown';
-import { FaRobot, FaSpinner } from 'react-icons/fa';
+import Markdown from 'markdown-to-jsx';
+import { FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
 import './css/AISearch.css';
 
@@ -189,7 +189,7 @@ const AISearch = forwardRef((props, ref) => {
                 )}
                 {!isLoading && answer && (
                     <div className='search-term-answer'>
-                        <ReactMarkdown>{answer}</ReactMarkdown>
+                        <Markdown>{answer}</Markdown>
                     </div>
                 )}
                 {isAnswerComplete &&
