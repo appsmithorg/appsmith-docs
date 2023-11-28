@@ -291,3 +291,8 @@ h5 {
     background-color: #f1f1f1;
     border-radius: 4px;
 }
+
+.ai-search-result-wrapper li {
+    margin-left: 0;
+    padding-left: 0;
+}
