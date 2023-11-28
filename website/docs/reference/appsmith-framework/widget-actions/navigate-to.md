@@ -33,7 +33,9 @@ Query parameters passed via the URL. Used to share information with the destinat
 To bind an object with key-value pairs into a query parameter, use the following syntax in **Query params**:
 
 ```jsx
-{{{ "key": "value" }}}
+{{
+{ "key": "value" }
+}}
 ```
 See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
