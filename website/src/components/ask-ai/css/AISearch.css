@@ -181,7 +181,7 @@ h5 {
     align-self: stretch;
     border-radius: 5.345px;
     border: 1px solid #CDD5DF;
-    background:  #FFF;
+    background: #FFF;
     margin-top: 3px;
 }
 
@@ -299,4 +299,5 @@ h5 {
 .ai-search-result-wrapper li {
     margin-left: 0;
     padding-left: 0;
+    margin-bottom: 0;
 }
