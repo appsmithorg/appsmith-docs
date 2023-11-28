@@ -170,7 +170,6 @@ const AISearch = forwardRef((props, ref) => {
                 )}
                 {isAnswerComplete &&
                     <div className="ai-experimental">
-                        <img src="../../../img/ai-experimental-Icon.png" alt="experimental" style={{ width: '24px', height: '24px' }}></img>
                         <span className='ai-experimental-info'>
                             Appsmith AI is experiemental and may produce incorrect answers. Always verify the output before executing.
                         </span>
