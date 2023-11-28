@@ -173,12 +173,16 @@ h5 {
 }
 
 .search-term-answer pre {
-    background-color: #F8FAFC;
-    margin-top: 3px;
-    border: 0.67px;
-    border-radius: 4px;
-    height: 40px;
     overflow: hidden;
+    display: flex;
+    padding: 16.035px 21.38px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 5.345px;
+    border: 1px solid #CDD5DF;
+    background:  #FFF;
+    margin-top: 3px;
 }
 
 .search-term-answer code {
