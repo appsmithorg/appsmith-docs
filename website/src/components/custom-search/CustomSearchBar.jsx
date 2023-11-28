@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import DocSearch from '@theme-original/SearchBar';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
@@ -9,15 +9,15 @@ const CustomSearchBar = () => {
 
     useLayoutEffect(() => {
         if (ExecutionEnvironment.canUseDOM) {
+            document.querySelector('.DocSearch-Button').style.display = "none";
+            document.querySelector('.custom-doc-Search-bar').style.display = "none";
+        }
+    })
+
+    useEffect(() => {
+        if (ExecutionEnvironment.canUseDOM) {
             const searchInput = document.querySelector('.DocSearch-Button');
             const aiInput = document.querySelector('.custom-doc-Search-bar');
-
-            if (searchInput) {
-                searchInput.classList.add("hideSearchButtons");
-            }
-            if (aiInput) {
-                aiInput.classList.add("hideSearchButtons");
-            }
 
             if (searchType === 'ai' && aiInput) {
                 aiInput.click();
