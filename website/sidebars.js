@@ -350,6 +350,7 @@ const sidebars = {
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            `build-apps/how-to-guides/Display-and-filter-chart-data`,
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
