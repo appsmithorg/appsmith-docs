@@ -77,16 +77,14 @@ It refers to the pre-trained language models provided by OpenAI. You can select 
 
 <dd>
 
-Messages serve as input interactions between the user and the model. The roles include two types: **user** and **system**. You can create multiple messages of each type to make your conversation just the way you want. 
+Messages serve as input interactions between the user and the model. You can create multiple messages of each type to make your conversation just the way you want. In the **Roles** parameter, you can specify either `user` or `system`. In the **Content** property, add:
 
 * **system**: The system message serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the system message to give personality to the responses or add task-specific instructions. For example, you can set system as:
 
 <dd>
 
-```html
+
  "You are a technical support assistant. Provide clear and detailed solutions to user queries related to software issues. If the user mentions a bug, ask for additional details to troubleshoot effectively."
-```
- For more information on system and user message refer the [OpenAI guide](https://platform.openai.com/docs/guides/prompt-engineering/tactic-use-delimiters-to-clearly-indicate-distinct-parts-of-the-input).
 
 </dd>
 
@@ -208,9 +206,7 @@ User messages consist of a list of messages or images provided by the user.
 
 * **Text**: This represents the task input you want to send to OpenAI. For example, you can use it to instruct the model, such as "find a ball in this image," using `{{Input1.text}}`.
 
-* **Image**: This is the image on which the model performs tasks based on the provided text. You can pass a link to the image or the base64 encoded image directly in the request. You can also add multiple images as needed. For instance, you can use `{{Image1.image}}` to add images.
-
-
+* **Image**: This is the image on which the model performs tasks based on the provided text. You can pass a link to the image or the base64 encoded image directly in the request. You can also add multiple images as needed. For example, you can use the Filepicker to upload images, like as `{{FilePicker1.files[0].data}}`.
 
 For more information refer to the [OpenAI documentation.](https://platform.openai.com/docs/api-reference/chat/object)
 

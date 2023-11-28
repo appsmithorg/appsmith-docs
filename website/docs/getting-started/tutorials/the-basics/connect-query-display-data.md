@@ -10,18 +10,18 @@ This tutorial takes you through the process of connecting a datasource and query
 
 ## Connect datasource
 
-1. On the *Entity Explorer* to the left of the screen, go to the **Explorer** tab.
+1. In your application, go to the sidebar and click the **Data** button.
 
-2. Click the **+** icon next to **Datasources** to add a new datasource.
+2. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
 
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
-<figure>
-  <img src="/img/connect-to-postgreSQL-database.png" style= {{width:"100%", height:"auto"}} alt="Connect to PostgreSQL database"/>
-  <figcaption align = "center"><i>Connect to PostgreSQL database</i></figcaption>
-</figure>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/7U7N3Fhx8NVvn0vgtU1O?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "100%", colorScheme: "light" }} title="User Management | Connect Datasource">
+  </iframe>
+</div>
 
-4. Click the pencil icon next to the default database name on the top left and rename the database to `usersTutorialDB`.
+4. Rename the default database name from **Untitled datasource 1** to `usersTutorialDB`. You may have to click the pencil icon next to the database name if it is not already selected. 
 
 5. Enter the following details in the connection parameter fields:<br/>
   **Host Address**: `mockdb.internal.appsmith.com` <br/>
@@ -36,14 +36,14 @@ This tutorial takes you through the process of connecting a datasource and query
 
 ## Query Data
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/IiJZpgnlcoiV7Be9OVJ4?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Query Data">
+  </iframe>
+</div>
+
 1. Click the **+ New Query** button to the right of the screen. You will see the query editor with a default fetch query to pull ten records from the `usersTutorialDB` database table.
 
-<figure>
-  <img src="/img/create-new-query.png" style= {{width:"100%", height:"auto"}} alt="Create a new query on the datasource"/>
-  <figcaption align = "center"><i>Create a new query on the datasource</i></figcaption>
-</figure>
-
-2. Click the pencil icon to rename the query from **Query1** to `getUsers`.
+2. Rename the query from **Query1** to `getUsers`. You may have to click the pencil icon if it is not already selected.
 
 3. For this tutorial, modify the query as shown below to fetch the records in the ascdending order of the `id` field.
 
@@ -55,14 +55,14 @@ This tutorial takes you through the process of connecting a datasource and query
 
 5. Click the **Settings** tab. Switch on the **Run query on page load** option.
 
-<figure>
-  <img src="/img/fetch-data-query.png" style= {{width:"100%", height:"auto"}} alt="Fetch data from database"/>
-  <figcaption align = "center"><i>Fetch data from database</i></figcaption>
-</figure>
-
 You've created your first query to fetch the list of records in the database.
 
 ## Display data in Table
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/p8UCpX0afOcDKmSKLQFD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Display Data">
+  </iframe>
+</div>
 
 1. Click the **Widgets** tab on the *Entity Explorer* to the left of the screen.
 
@@ -77,11 +77,6 @@ You've created your first query to fetch the list of records in the database.
 :::info
 The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
 :::
-
-<figure>
-  <img src="/img/display-data-in-table.png" style= {{width:"100%", height:"auto"}} alt="Display data in table"/>
-  <figcaption align = "center"><i>Display data in table</i></figcaption>
-</figure>
 
 You've displayed the results from the **getUsers** query on the Table widget.
 

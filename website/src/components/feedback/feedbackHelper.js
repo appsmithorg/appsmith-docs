@@ -25,6 +25,20 @@ const generateFeedbackComment = (comment) => {
   return null;
 };
 
+const generateAIFeedback = (feedbackOption, userSearchTerm, aiGeneratedResult) => {
+  if (ExecutionEnvironment.canUseDOM) {
+    const docId = window.location.pathname;
+    const feedbackData = {
+      docId: docId || null,
+      feedbackOption: feedbackOption || null,
+      userSearchTerm: userSearchTerm || null,
+      aiGeneratedResult: aiGeneratedResult || null,
+    };
+    return feedbackData;
+  }
+  return null;
+};
+
 const sendToSegment = (feedbackJSON, eventType) => {
   if (ExecutionEnvironment.canUseDOM) {
     if (typeof window.analytics !== 'undefined') {
@@ -33,4 +47,4 @@ const sendToSegment = (feedbackJSON, eventType) => {
   }
 };
 
-export { generateFeedback, generateFeedbackComment, sendToSegment };
+export { generateFeedback, generateFeedbackComment, sendToSegment, generateAIFeedback };
