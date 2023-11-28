@@ -198,7 +198,7 @@ const AISearch = forwardRef((props, ref) => {
                 {isAnswerComplete &&
                     <div className="ai-experimental">
                         <span className='ai-experimental-info'>
-                            Appsmith AI is experiemental and may produce incorrect answers. Always verify the output before executing.
+                            Appsmith AI is experiemental and may produce incorrect answers.
                         </span>
                     </div>
 
