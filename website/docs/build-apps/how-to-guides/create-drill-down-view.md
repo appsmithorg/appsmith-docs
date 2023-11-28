@@ -53,3 +53,5 @@ To create a data drilldown view using a List widget, follow these steps:
    ```
 ## See also
 - [Update Form data in Modal](/build-apps/how-to-guides/submit-form-data)
+- [Display and Lookup Data in Table Widget](/how-to-guides/display-search-and-filter-table-data)
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data)
