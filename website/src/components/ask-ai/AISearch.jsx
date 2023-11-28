@@ -41,6 +41,15 @@ const AISearch = forwardRef((props, ref) => {
         setIsAnswerComplete(false);
     }
 
+    const allowToAddAnotherRequest = () => {
+        setInputValue('');
+        setSearchTerm('');
+        setIsLoading(false);
+        setShowExamples(false);
+        setTermSelected(false);
+        setIsAnswerComplete(false);
+    }
+
     const closeModal = () => {
         if (props.closeModal) {
             props.closeModal();
@@ -113,7 +122,7 @@ const AISearch = forwardRef((props, ref) => {
         if (!isLoading) {
             setInputValue(e.target.value);
             if (isAnswerComplete) {
-                resetGeneratedResponse();
+                allowToAddAnotherRequest();
             }
         }
     };
@@ -163,7 +172,7 @@ const AISearch = forwardRef((props, ref) => {
                         ))}
                     </div>
                 )}
-                {!isLoading && searchTerm && (
+                {!isLoading && answer && (
                     <div className='search-term-answer'>
                         <ReactMarkdown>{answer}</ReactMarkdown>
                     </div>
