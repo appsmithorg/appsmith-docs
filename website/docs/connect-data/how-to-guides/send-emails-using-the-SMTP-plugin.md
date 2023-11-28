@@ -182,7 +182,7 @@ If you want to upload files from your local machine, you can use the Filepicker 
 
 
 
-## Set up email trigger
+## Setup email trigger
 
 Once your query is configured, you can send emails by executing the query in response to a specific event, such as clicking a button or when files are uploaded using a Filepicker. 
 
