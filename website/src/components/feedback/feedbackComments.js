@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 const FeedbackComments = ({ feedback, handleCommentSubmit, handleCommentChange }) => {
-    const isButtonDisabled = feedback.comments.trim() === ''; // Determine if the button should be disabled
+    const isButtonDisabled = feedback.comments.trim() === '';
     const commentsContainerRef = useRef(null);
 
     useEffect(() => {
