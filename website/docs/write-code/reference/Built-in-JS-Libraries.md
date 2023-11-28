@@ -6,7 +6,7 @@ JavaScript libraries simplify common tasks such as data manipulation, date handl
 
 Appsmith provides the following built-in JavaScript libraries that can be utilized in your applications.
 
-#### [Lodash](https://lodash.com/docs/4.17.15)
+#### Lodash
 
 <dd>
 Lodash provides functions for common programming tasks such as formatting data, iterating over collections, and manipulating arrays and objects.
@@ -14,21 +14,21 @@ Lodash provides functions for common programming tasks such as formatting data, 
 ```
 {{ _.sortBy(fetchUsers.data, ["age"]) }}
 ```
-
+For more information, see [Lodash](https://lodash.com/docs/4.17.15)
 </dd>
 
-#### [Moment](https://momentjs.com/docs/)
+#### Moment
 
 <dd>
-simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
+Simplifies working with dates and times in JavaScript by providing functions for parsing, validating, manipulating, and displaying dates and times.
 
 ```
 {{ moment(datePicker1.selectedDate.format('DD MMM')) }}
 ```
-
+For more information, see [Moment](https://momentjs.com/docs/)
 </dd>
 
-#### [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
+#### Fast XML Parser
 
 <dd>
 Fast XML Parser can be used to work with cryptographic algorithms and protocols in JavaScript.
@@ -36,10 +36,10 @@ Fast XML Parser can be used to work with cryptographic algorithms and protocols 
 ```
 {{ xmlParser.parse(xmlAPI.data) }}
 ```
-
+For more information, see [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
 </dd>
 
-#### [Forge](https://github.com/digitalbazaar/forge)
+#### Forge
 
 <dd>
 Forge can be used to work with cryptographic algorithms and protocols in JavaScript.
@@ -53,7 +53,7 @@ export default {
   },
 };
 ```
-
+For more information, see [Forge](https://github.com/digitalbazaar/forge)
 </dd>
 
 ## External JS Libraries
