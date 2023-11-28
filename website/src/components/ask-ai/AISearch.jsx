@@ -140,7 +140,7 @@ const AISearch = forwardRef((props, ref) => {
                         onChange={handleChange}
                         disabled={isLoading && !isAnswerComplete}
                     /><span className="ai-submit-message">Submit message</span>
-                    <img src="../../../img/ai-enter-icon.png" alt="Enter"></img>
+                    <img src="../../../img/ai-enter-icon.svg" alt="Enter"></img>
                 </div>
             </header>
             {
