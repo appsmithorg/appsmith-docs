@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Markdown from 'markdown-to-jsx';
 import { FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
@@ -13,12 +14,12 @@ const AISearch = forwardRef((props, ref) => {
     const [isAnswerComplete, setIsAnswerComplete] = useState(false);
     const [termSelected, setTermSelected] = useState(false);
 
-    let eventSource;
-
     const commonSearchQueries = [
-        "How to install Appsmith on Docker?",
-        "How to display, filter and search data in a Table?",
-        "How to submit form data?"
+        "How do I setup appsmith ?",
+        "How do I connect to my local database ?",
+        "How can I send parameters to my query ?",
+        "How can I transform my query response ?",
+        "How can trigger multiple queries conditionally ?"
     ];
 
     const resetState = () => {
@@ -134,18 +135,20 @@ const AISearch = forwardRef((props, ref) => {
     };
 
     useEffect(() => {
-        const resultContainer = document.querySelector('.ai-result-container');
-        const handleScroll = () => {
-            resultContainer.classList.add('scrolled');
-        };
-        if (!resultContainer.classList.contains('scrolled'))
-            document.addEventListener('scroll', handleScroll);
+        if (ExecutionEnvironment.canUseDOM) {
+            const resultContainer = document.querySelector('.ai-result-container');
+            const handleScroll = () => {
+                resultContainer.classList.add('scrolled');
+            };
+            if (!resultContainer.classList.contains('scrolled'))
+                document.addEventListener('scroll', handleScroll);
 
 
-        return () => {
-            document.removeEventListener('scroll', handleScroll);
-            resultContainer.classList.remove('scrolled');
-        };
+            return () => {
+                document.removeEventListener('scroll', handleScroll);
+                resultContainer.classList.remove('scrolled');
+            };
+        }
     }, []);
 
 

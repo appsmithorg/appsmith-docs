@@ -5,6 +5,7 @@
     border: 1px solid #CDD5DF;
     box-sizing: border-box;
     border-radius: 4px;
+    flex-direction: row;
 }
 
 .custom-search-option {
@@ -12,13 +13,10 @@
     display: flex;
     cursor: pointer;
     position: relative;
-    display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
     gap: 8px;
-    border-right: none;
-    float: left;
     padding: 8px;
     white-space: nowrap;
     font-size: 14px;
