@@ -19,6 +19,7 @@ const CustomSearchBar = () => {
                 aiInput.style.display = 'none';
             }
 
+            // Initial click to set the styles and hide the elements
             if (searchType === 'ai' && aiInput) {
                 aiInput.click();
             } else if (searchType === 'docs' && searchInput) {
@@ -46,8 +47,8 @@ const CustomSearchBar = () => {
                     <img src="../../../img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
                 </div>
             </div>
-            <AISearchButton />
-            <DocSearch />
+            <AISearchButton style={{ display: 'none' }} />
+            <DocSearch style={{ display: 'none' }} />
         </>
     );
 };
