@@ -104,7 +104,7 @@
     margin-top: 10px;
     text-align: left;
     color: black;
-    overflow-y: scroll;
+    overflow-y: hidden;
     max-height: 80vh;
     padding: 0 var(--docsearch-spacing);
 }
@@ -294,6 +294,10 @@ h5 {
 .ai-result-container::-webkit-scrollbar-track {
     background-color: #f1f1f1;
     border-radius: 4px;
+}
+
+.ai-result-container.scrolled {
+    overflow: auto;
 }
 
 .ai-search-result-wrapper li {

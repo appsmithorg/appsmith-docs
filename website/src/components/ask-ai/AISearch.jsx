@@ -1,4 +1,4 @@
-import React, { useState, useImperativeHandle, forwardRef } from 'react';
+import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { FaRobot, FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
@@ -132,6 +132,22 @@ const AISearch = forwardRef((props, ref) => {
             fetchData(query);
         }
     };
+
+    useEffect(() => {
+        const resultContainer = document.querySelector('.ai-result-container');
+        const handleScroll = () => {
+            resultContainer.classList.add('scrolled');
+        };
+        if (!resultContainer.classList.contains('scrolled'))
+            document.addEventListener('scroll', handleScroll);
+
+
+        return () => {
+            document.removeEventListener('scroll', handleScroll);
+            resultContainer.classList.remove('scrolled');
+        };
+    }, []);
+
 
     return (
         <div className='ai-search-result-wrapper'>
