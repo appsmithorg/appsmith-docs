@@ -173,21 +173,22 @@ h5 {
 }
 
 .search-term-answer pre {
-    background-color: #E3E8EF;
+    background-color: #F8FAFC;
     margin-top: 3px;
     border: 0.67px;
-    border-radius: 5.35px;
-    height: 62.07px;
+    border-radius: 4px;
+    height: 40px;
     overflow: hidden;
 }
 
 .search-term-answer code {
-    color: #F8FAFC;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    color: #4C5664;
+    padding: 5px;
+    font-family: 'Menlo';
     font-size: 13px;
+    line-height: 15px;
     font-weight: 400;
+    justify-content: center;
 }
 
 .ai-robot-icon {
