@@ -105,12 +105,12 @@
     text-align: left;
     color: black;
     overflow-y: scroll;
-    max-height: 30%;
+    max-height: 80vh;
     padding: 0 var(--docsearch-spacing);
 }
 
 .search-term-answer {
-    max-height: none;
+    max-height: 100%;
     padding: 8px 0px 0px;
     gap: 8px;
 }
