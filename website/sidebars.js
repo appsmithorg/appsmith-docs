@@ -10,23 +10,12 @@ const sidebars = {
         'intro',
         {
           type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          label: 'Tutorial',
+          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
           items: [
-            {
-              type: 'category',
-              collapsed: false,
-              label: 'Tutorial 1: The Basics',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/start-building',
-              },
-              items: [
                 'getting-started/tutorials/the-basics/connect-query-display-data',
                 'getting-started/tutorials/the-basics/work-with-data-in-ui',
                 'getting-started/tutorials/the-basics/write-js-code',
-              ],
-            },
           ],
         },
 
@@ -255,6 +244,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/download-files-from-s3',
+            'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
@@ -296,6 +286,7 @@ const sidebars = {
             },
             'connect-data/reference/querying-mssql',
             'connect-data/reference/querying-mysql',
+            'connect-data/reference/open-ai',
             'connect-data/reference/querying-oracle',
             'connect-data/reference/querying-postgres',
             'connect-data/reference/querying-redis',
@@ -304,7 +295,7 @@ const sidebars = {
             'connect-data/reference/querying-amazon-s3',
             'connect-data/reference/querying-snowflake-db',
             'connect-data/reference/using-smtp',
-            'connect-data/reference/twilio',
+            'connect-data/reference/twilio'
 
           ],
         },
@@ -341,11 +332,20 @@ const sidebars = {
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             'core-concepts/building-ui/dynamic-ui/README',
-            'build-apps/how-to-guides/Server-side-pagination-in-table',
+            {
+              type: 'category',
+              label: 'Display and Lookup Table Data',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/display-search-and-filter-table-data',
+              },
+              items: [
+                'build-apps/how-to-guides/Server-side-pagination-in-table',
+                'build-apps/how-to-guides/search-and-filter-table-data'
+              ],
+            },
             'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/Server-side-filtering-table',
-            'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
-            'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
+            'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
@@ -353,6 +353,7 @@ const sidebars = {
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
           ]
