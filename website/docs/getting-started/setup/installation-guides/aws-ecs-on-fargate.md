@@ -100,7 +100,7 @@ Follow these steps to create task and container definitions for your cluster:
    - **File System ID** - EFS file system created in the [Prerequisites](#prerequisites) section.
    - Keep the default values for the remaining fields.
    - Click **Add** button.
-10. Scroll up to configure the Appsmith container. <a id="container-definition-ecs"></a>
+10. Scroll up to configure the Appsmith container.
     - Click the **Add container** button.
     - In the **STANDARD** section, provide details as below:
       - **Container Name** - Give a meaningful name to the container.
@@ -182,18 +182,22 @@ Follow these steps to create and run an ECS service:
   aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
 ```
 
-The `exec` command will be available once the new deployment is active. 2. Exec into the Fargate Appsmith instance with:
+The `exec` command will be available once the new deployment is active. 
+
+2. Exec into the Fargate Appsmith instance with:
 `bash
     aws ecs execute-command --cluster <Cluster Name>
-    --task <Task ID>\
+    --task <Task ID> \
     --container appsmith \
     --interactive \
     --command "bash"
-    ` 3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
+    ` 
+
+3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 10 of the [Install Appsmith](#install-appsmith) section on this page.
 
 ## Troubleshooting
 
