@@ -1,195 +1,79 @@
----
-sidebar_position: 3
----
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-# Deployment Errors
+# Troubleshooting Deployment Errors
 
-## Ports unavailable
+Deploying Appsmith is typically a smooth process, but sometimes you may encounter errors that prevent you from successfully setting up your instance. This guide walks through common deployment-related errors and provides strategies for troubleshooting them.
 
-If you encounter the error that ```ports 80 & 443``` aren't open, its is recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port.
+## Pre-deployment checklist
 
-1.  In the file `docker-compose.yml`, change the ports for the [Nginx](https://www.nginx.com) container to a custom port as shown in the below example.
+Before delving into specific errors, it is essential to ensure that the pre-deployment conditions are met:
 
-    ```
-        ports:
-          - "80:80"
-          - "443:443"
-          - "9001:9001"
-    ```
+- Confirm that the target server meets the [minimum hardware requirements](/getting-started/setup).
+- Verify that you have the necessary permissions to install and configure Appsmith on the server.
+- Ensure that all required ports (for example, 80 and 443 for web traffic) are open and not blocked by a firewall.
 
-    Change to
+## Common deployment errors
 
-    ```
-        ports:
-          - "8080:80"
-          - "8443:443"
-          - "9801:9001"
-    ```
-2. Run `docker-compose up -d`
+### 1\. Service Start-up Issues
 
-:::tip
-To stop a previous version of appsmith running on these ports, run the following:
+After installation, Appsmith services might fail to start due to configuration problems or port conflicts.
 
-* ```sudo su```
-* ```docker container kill $(docker ps -q)```
-:::
+**Troubleshooting Steps:**
 
-## Containers Failed to Start
+- **Examine Service Logs:** You can typically find logs in `/opt/appsmith` or by using Docker commands like `docker logs appsmith`.
+- **Check Port Availability:** Use `netstat` or similar tools to ensure the ports Appsmith needs are not already in use.
+- **Ensure Proper Configuration:** If you've modified any configuration files or environment variables, verify their correctness.
 
-If you chose to initialize a new database and are seeing this error, it could be due to an error while fetching dependencies during installation. Deleting the current installation direction, killing the docker containers, and restarting the installation should work. If it doesn't, please reach out on [discord](https://discord.com/invite/rBTTVJp)
+If you encounter the error that `ports 80 & 443` aren't open, its is recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port by editing the docker-compose.yml file and restarting the instance.
 
-If you are trying to connect to an existing [MongoDB](../../connect-data/reference/querying-mongodb/) and the containers failed to start it may be due to one of the following reasons:
+<!-- -->
 
-1. Incorrect [MongoDB](../../connect-data/reference/querying-mongodb/) credentials
-2. Empty Salt / Password for encryption
+### 2\. SSL/TLS Certification Errors
 
-Restart the installation process with valid values.
+When opting for an automatic SSL setup with Let's Encrypt, you may encounter certification errors.
 
-## Unable to access Appsmith
+**Troubleshooting Steps:**
 
-* Ensure your security groups are configured to allow traffic to ports 80 & 443 on your installation instance.
-* You can access the running application on[ localhost](http://localhost) in any browser or the `public IP` of your machine.
-* You may need to wait for a few minutes before accessing the application to allow [Nginx](https://www.nginx.com) to start.
+- **Domain Configuration:** Ensure that the domain name is properly configured and pointing to the server's IP address.
+- **Let's Encrypt Rate Limiting:** Be aware that Let's Encrypt has rate limits. If you've hit the limit, you may need to wait before trying again.
+- **Check Logs:** SSL-related errors will be logged in Let's Encrypt logs. Check these for specific error messages.
 
-## OAuth sign up not working
+<!-- -->
 
-If your deployment is behind an ELB / Proxy, you must update the [Nginx](https://www.nginx.com) configuration of the deployment. In the file `data/nginx/nginx.app.conf.template` modify the line:
+### 4\. Database Connection Failures
 
-```
-proxy_set_header X-Forwarded-Proto $scheme;
-```
+Appsmith requires a connection to its internal database. If it fails to connect, the deployment will not be successful.
 
-with
+**Troubleshooting Steps:**
 
-```
-proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
-```
+- **Review Database Logs:** Look for any errors in the database service logs that might indicate connection issues.
+- **Environment Variables:** Verify the environment variables related to the database configuration are set correctly, such as `APPSMITH_MONGODB_URI`.
+- **Network Accessibility:** Make sure the database is reachable from the Appsmith server if you're using an external database.
 
-This ensures that the redirect URLs are correct during [OAuth2](/connect-data/reference/authenticated-api) logins. This works even if the ELB is configured to run on a custom port.
+<!-- -->
 
-## Server not booting because of MongoCommandException
+### 5\. Environment-Specific Problems
 
-In release `v1.6.4`, Appsmith upgraded its libraries & [Spring framework](https://spring.io/projects/spring-framework). This caused a compatibility issue between the libraries used within Appsmith and the version of [MongoDB](/connect-data/reference/querying-mongodb/) that was shipped earlier. This didn't show up in testing because all testing happened against [MongoDB](/connect-data/reference/querying-mongodb/) clusters with replica sets, where the problem doesn't surface.
+Deployment errors can also be specific to the environment in which Appsmith is being installed, such as specific cloud providers or operating systems.
 
-If you see an error like the below, your instance is affected by the library upgrade performed in `v1.6.4`.
+**Troubleshooting Steps:**
 
-```
-Caused by: com.mongodb.MongoCommandException: Command failed with error 17 (ProtocolError): 'Attempt to switch database target during SASL authentication.' on server mongo:27017. The full response is {"ok": 0.0, "errmsg": "Attempt to switch database target during SASL authentication.", "code": 17, "codeName": "ProtocolError"}
-```
+- **Provider Documentation:** Consult the documentation of the specific environment for any quirks or additional steps required for a successful deployment.
+- **Security Groups/Firewalls:** Check any security groups or firewall rules to ensure they aren't blocking the necessary traffic for Appsmith.
 
-Please follow the steps mentioned below to fix your Appsmith installation.
+<!-- -->
 
-#### Step 1: Edit MongoDB URI
+## Error guides
 
-Adding `&authSource=admin` to the end of your `APPSMITH_MONGODB_URI` variable’s value in your `docker.env` file. For example, in your `docker.env` file, if you have the following line:
+Once you have the logs from your container, you can check whether the error you are facing matches a common error with a resolution guide.
 
-```bash
-# Old config
-APPSMITH_MONGODB_URI=mongodb://<your_username>:<your_password>@mongo/appsmith?retryWrites=true
-```
+- [MongoDb Startup Error](/help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5)
+- [MongoDb Schema Error](/help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error)
+- [K8s Helm 3.0.4 Error](/help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error)
 
-Change it to the following (notice the only change is `&authSource=admin`. Please don't paste this whole line. Only add the `&authSource=admin` part to your current value.
+## Getting help
 
-```bash
-# New config
-APPSMITH_MONGODB_URI=mongodb://<your_username>:<your_password>@mongo/appsmith?retryWrites=true&authSource=admin
-```
+If you are unable to resolve your error, please reach out to support via the chat widget on the page.
 
-Save the file.
-
-#### Step 2: Restart server
-
-Now restart your container with the following command:
-
-```bash
-sudo docker-compose up -d --force-recreate appsmith-internal-server
-```
-
-In a minute or two, the server should now come up and be ready.
-
-
-## Unable to send emails
-
-If you are having trouble with invitation emails not being sent, even though the **Admin email setup** is able to send test emails, it may be due to an issue with the configuration of the email parameters.
-
-If you aren't receiving the invitation email, please check the value for ```APPSMITH_REPLY_TO``` in the configuration file. If this value is empty, please set it to the same email address that you are using for ```APPSMITH_MAIL_FROM``` and **restart the application**.
-
-This should resolve the issue of not receiving the invitation email. Additionally, it may be helpful to verify that the email server being used is working correctly and there are no issues with the network or other components preventing the emails from being sent.
-
-However, if you encounter any issues, you can contact the support team on [Discord](https://discord.com/invite/rBTTVJp) or ask questions on the [community forum](https://community.appsmith.com).
-
-## Server shuts down with schema mismatch error
-
-The instance keeps restarting due to a server shutdown displaying a schema mismatch error.
-
-#### Error message
-
-<Message
-messageContainerClassName="error" 
-messageContent="Looks like you skipped some required updates, please go back to the mandatory upgrade path v1.9.2"></Message>
-
-#### Cause
-As the error message in the server logs suggests, your Appsmith instance has missed a required checkpoint upgrade. This occurs if you are manually upgrading and have skipped a version or are on an automatic upgrade but your instance hasn't checked for updates for a particular period.
-
-#### Solution
-
-To resolve this error, you must [upgrade to the checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version), in this case, `v1.9.2`.
-
-To prevent similar issues in the future, consider [enabling auto updates](/getting-started/setup/installation-guides/docker#enabling-appsmith-auto-updates) for your Appsmith instance. If you already had auto updates on and still encountered this issue, please contact the [Appsmith team](https://discord.com/invite/rBTTVJp) to determine the cause of the deployment problem
-
-## Illegal instruction (core dumped)
-MongoDB fails to start, after migrating to MongoDB version 5.
-
-#### Error message
-
-<Message
-messageContainerClassName="error" 
-messageContent="Illegal instruction (core dumped) mongod –fork –port 27017 –dbpath “$MONGO_DB_PATH"></Message>
-
-#### Cause
-MongoDB version 5 has specific CPU requirements. If these requirements are not met the server wouldn't start.
-
-#### Solution
-To resolve this error, you must upgrade your infrastructure. See the [List of complaint hardware](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support).
-
-If it is not possible for you to upgrade your infrastructure to support MongoDB version 5 or higher:
-* You may use an external MongoDB version 5 or higher on [MongoDB Atlas](https://www.mongodb.com/pricing).
-* If you are upgrading your infrastructure and need time, consider downgrading Appsmith. Once you have upgraded MongoDB, [Update Appsmith](/getting-started/setup/instance-management/update-appsmith) to the latest version to use new features.
-
-Follow the steps below to downgrade to v1.8.15:
-
-  1. Access your Appsmith instance and make the below change to the `docker-compose.yml` file:
-
-  <Tabs groupId="appsmithEditions" queryString="current-edition">
-    <TabItem value="CE" label="Community Edition" default>
-
-    ```yaml
-    services:
-    appsmith:
-      #highlight-next-line
-      image: index.docker.io/appsmith/appsmith-ce:v1.8.15
-      container_name: appsmith
-    ```
-    
-    </TabItem>
-    <TabItem value="BE" label="Business Edition">
-
-    ```yaml
-    services:
-    appsmith:
-       #highlight-next-line
-      image: index.docker.io/appsmith/appsmith-ee:v1.8.15
-      container_name: appsmith
-    ```
-    </TabItem>
-  </Tabs>
-
-
-  2. Run the restart command: 
-
-  ```bash
-  docker-compose up -d
-  ```
-Your server starts with version 1.8.15, which makes all the necessary schema changes to your Appsmith instance. 
+<!-- -->

@@ -10,26 +10,12 @@ const sidebars = {
         'intro',
         {
           type: 'category',
-          label: 'Tutorials',
-          link: { type: 'doc', id: 'getting-started/tutorials/README' },
+          label: 'Tutorial',
+          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
           items: [
-            'getting-started/tutorials/start-building',
-            {
-              type: 'category',
-              label: 'Customer Support Tool',
-              link: {
-                type: 'doc',
-                id: 'getting-started/tutorials/customer-support-tool/README',
-              },
-              items: [
-                'getting-started/tutorials/customer-support-tool/build-the-dashboard',
-                'getting-started/tutorials/customer-support-tool/view-ticket-details',
-                'getting-started/tutorials/customer-support-tool/add-new-tickets',
-                'getting-started/tutorials/customer-support-tool/edit-ticket-details',
-                'getting-started/tutorials/customer-support-tool/comments-on-tickets',
-                'getting-started/tutorials/customer-support-tool/application-settings'
-              ],
-            },
+                'getting-started/tutorials/the-basics/connect-query-display-data',
+                'getting-started/tutorials/the-basics/work-with-data-in-ui',
+                'getting-started/tutorials/the-basics/write-js-code',
           ],
         },
 
@@ -40,7 +26,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Installation Guides',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -76,17 +62,27 @@ const sidebars = {
                 'getting-started/setup/installation-guides/aws-ecs',
                 'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                 'getting-started/setup/installation-guides/azure-aci',
-                'getting-started/setup/installation-guides/google-cloud-run',
+                {
+                  type: 'category',
+                  label: 'Google Cloud Run',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/google-cloud-run',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                  ],
+                },
                 'getting-started/setup/installation-guides/digitalocean',
                 'getting-started/setup/installation-guides/heroku',
-                'getting-started/setup/installation-guides/cloudjiffy',
                 'getting-started/setup/installation-guides/ansible',
-                'getting-started/setup/installation-guides/restack',
+                'getting-started/setup/installation-guides/air-gapped',
               ],
             },
             {
               type: 'category',
-              label: 'Instance Configuration',
+              label: 'Configure Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-configuration/README',
@@ -169,7 +165,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Instance Management',
+              label: 'Manage Instance',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/instance-management/README',
@@ -187,29 +183,40 @@ const sidebars = {
                   ]
                 },
                 'getting-started/setup/instance-management/maintenance-window',
-                'getting-started/setup/instance-management/appsmithctl', 
+                'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
               ],
             },
             {
               type: 'category',
-              label: 'Upgrade to Business Edition',
+              label: 'Manage Editions',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/upgrade-to-business-edition/README',
+                id: 'getting-started/setup/manage-editions/README',
               },
               items: [
-                'getting-started/setup/upgrade-to-business-edition/docker',
-                'getting-started/setup/upgrade-to-business-edition/kubernetes',
+                'getting-started/setup/manage-plans/upgrade-plan',
+                'getting-started/setup/manage-plans/downgrade-plan',
+                {
+                  type: 'category',
+                  label: 'Upgrade from Community Edition',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/upgrade-from-community-edition/README',
+
+                  },
+                  items: [
+                    'getting-started/setup/upgrade-from-community-edition/docker',
+                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
+                  ]
+                },
               ],
             },
             `getting-started/setup/best-practices`,
             'getting-started/setup/deployment-architecture',
           ],
-        },
-
-        'getting-started/faq',
+        }
       ],
     }, //getting started section end
     {
@@ -225,21 +232,35 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
-            'connect-data/how-to-guides/connect-datasource',
-            'connect-data/how-to-guides/query-data',
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
             'connect-data/how-to-guides/setup-datasource-environments',
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
+            'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
+            'connect-data/how-to-guides/insert-and-update-data-in-sql',
+            'connect-data/how-to-guides/filter-data-google-sheet',
+            'connect-data/how-to-guides/insert-and-update-data-in-google-sheets',
+            'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+            'connect-data/how-to-guides/how-to-download-files-using-api',
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+            'connect-data/how-to-guides/download-files-from-s3',
+            'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
           ]
         },
         {
+          //Reference start
           type: 'category',
+          collapsed: false,
           label: 'Reference',
+          link: { type: 'doc', id: 'connect-data/reference/overview' },
+          items: [
+             {
+          type: 'category',
+          collapsed: true,
+          label: 'Datasources',
           link: { type: 'doc', id: 'connect-data/reference/README' },
           items: [
             'connect-data/reference/airtable',
@@ -253,234 +274,264 @@ const sidebars = {
             'connect-data/reference/graphql',
             'connect-data/reference/hubspot',
             {
-            type: 'category',
-            label: 'MongoDB',
-            link: {
+              type: 'category',
+              label: 'MongoDB',
+              link: {
                 type: 'doc',
                 id: 'connect-data/reference/querying-mongodb/README',
-            },
-            items: [
+              },
+              items: [
                 'connect-data/reference/querying-mongodb/mongo-syntax'
-            ],
-          },
-          'connect-data/reference/querying-mssql',
-          'connect-data/reference/querying-mysql',
-          'connect-data/reference/querying-oracle',
-          'connect-data/reference/querying-postgres',
-          'connect-data/reference/querying-redis',
-          'connect-data/reference/querying-redshift',
-          'connect-data/reference/rest-api',
-          'connect-data/reference/querying-amazon-s3',
-          'connect-data/reference/querying-snowflake-db',
-          'connect-data/reference/using-smtp',
-          'connect-data/reference/twilio',
-          'connect-data/reference/query-settings',
+              ],
+            },
+            'connect-data/reference/querying-mssql',
+            'connect-data/reference/querying-mysql',
+            'connect-data/reference/open-ai',
+            'connect-data/reference/querying-oracle',
+            'connect-data/reference/querying-postgres',
+            'connect-data/reference/querying-redis',
+            'connect-data/reference/querying-redshift',
+            'connect-data/reference/rest-api',
+            'connect-data/reference/querying-amazon-s3',
+            'connect-data/reference/querying-snowflake-db',
+            'connect-data/reference/using-smtp',
+            'connect-data/reference/twilio'
+
           ],
         },
+        'connect-data/reference/query-settings',
+      ],
+    }, //Reference End
         {
           type: 'category',
           collapsed: true,
           label: 'Concepts',
           link: { type: 'doc', id: 'connect-data/concepts/README' },
           items: [
+            'connect-data/concepts/dynamic-queries',
+            'connect-data/concepts/dynamic-binding-in-queries',
             'connect-data/concepts/connection-pooling',
             'connect-data/concepts/Datasource-Environments',
-            'connect-data/concepts/how-to-use-prepared-statements',
-            'connect-data/concepts/returning-data-from-a-stored-procedure',
           ]
         },
       ]
     }, //Data end
 
-// Build App Start
+    // Build App Start
 
-{ // UI start
-  type: 'category',
-  collapsed: false,
-  label: 'Build Apps',
-  items: [ 
-    'build-apps/overview',
-    {
+    { // UI start
       type: 'category',
-      collapsed: true,
-      label: 'How-To Guides',
-      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
+      collapsed: false,
+      label: 'Build Apps',
       items: [
-        'core-concepts/building-ui/dynamic-ui/README',
-        'build-apps/how-to-guides/Server-side-pagination-in-table',
-        'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-        'build-apps/how-to-guides/submit-form-data',
-        'build-apps/how-to-guides/refresh-table-data',
-        'build-apps/how-to-guides/Filter-Table-Data-using-Datepicker',
-        'reference/widgets/table/inline-editing',
-        'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-        'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-        'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
-        'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-        'build-apps/how-to-guides/Create-Nested-Lists',
-        'build-apps/how-to-guides/Server-side-filtering-table',
-        'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
-        'build-apps/how-to-guides/Setup-Server-side-Searching-on-Table',
-        'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
-      ]  
-    },
-    {
-      //Reference start
-      type: 'category',
-      label: 'Reference',
-      link: { type: 'doc', id:  'build-apps/reference/README' },
-      items: [
+        'build-apps/overview',
         {
           type: 'category',
-          label: 'Widgets',
-          link: { type: 'doc', id: 'reference/widgets/README' },
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
-            'reference/widgets/audio',
-            'reference/widgets/audio-recorder',
+            'core-concepts/building-ui/dynamic-ui/README',
             {
               type: 'category',
-              label: 'Button',
-              link: { type: 'doc', id: 'reference/widgets/button/README' },
-              items: ['reference/widgets/button/google-recaptcha'],
-            },
-            {
-              type: 'category',
-              label: 'Button Group',
-              link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+              label: 'Display and Lookup Table Data',
+              link: {
+                type: 'doc',
+                id: 'build-apps/how-to-guides/display-search-and-filter-table-data',
+              },
               items: [
-                'reference/widgets/button-group/buttons'
+                'build-apps/how-to-guides/Server-side-pagination-in-table',
+                'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
-            'reference/widgets/camera',
-            'reference/widgets/category-slider',
-            'reference/widgets/chart',
-            'reference/widgets/checkbox',
-            'reference/widgets/checkbox-group',
-            'reference/widgets/code-scanner',
-            'reference/widgets/container',
-            'reference/widgets/currency-input',
-            'reference/widgets/datepicker',
-            'reference/widgets/divider',
-            'reference/widgets/document-viewer',
-            'reference/widgets/form',
-            'reference/widgets/filepicker',
-            'reference/widgets/icon-button',
-            'reference/widgets/iframe',
-            'reference/widgets/image',
-            'reference/widgets/input',
-            'reference/widgets/json-form',
-            'reference/widgets/list',
-            'reference/widgets/maps',
-            'reference/widgets/map-chart',
-            {
-              type: 'category',
-              label: 'Menu Button',
-              link: { type: 'doc', id: 'reference/widgets/menu/README' },
-              items: [
-                'reference/widgets/menu/menu-items'
-              ],
-            },
-            'reference/widgets/modal',
-            'reference/widgets/multiselect',
-            'reference/widgets/multi-tree-select',
-            'reference/widgets/number-slider',
-            'reference/widgets/phone-input',
-            'reference/widgets/progress',
-            'reference/widgets/radio-group',
-            'reference/widgets/range-slider',
-            'reference/widgets/rating',
-            'reference/widgets/rich-text-editor',
-            'reference/widgets/select',
-            'reference/widgets/stat-box',
-            'reference/widgets/switch',
-            'reference/widgets/switch-group',
-            'reference/widgets/tabs',
-            {
-              type: 'category',
-              label: 'Table',
-              link: { type: 'doc', id: 'reference/widgets/table/README' },
-              items: [
-                'reference/widgets/table/column-settings'
-              ],
-            },
-            'reference/widgets/text',
-            'reference/widgets/tree-select',
-            'reference/widgets/video',
-          ],
+            'reference/widgets/table/inline-editing',
+            'build-apps/how-to-guides/refresh-table-data',
+            'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+            'build-apps/how-to-guides/submit-form-data',
+            'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+            'build-apps/how-to-guides/Create-Nested-Lists',
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+          ]
         },
-        'core-concepts/building-ui/designing-an-application/app-theming',
-        'core-concepts/building-ui/designing-an-application/application-layout',
-        'learning-and-resources/sample-apps'
-      ],
-    }, //Reference End
-  ]
-}, //Build Apps end
-
-{ // WRITE CODE start
-  type: 'category',
-  collapsed: false,
-  label: 'Write Code',
-  items: [ 
-    'write-code/overview',
-    {
-      type: 'category',
-      collapsed: true,
-      label: 'How-To Guides',
-      link: { type: 'doc', id: 'write-code/how-to-guides/README' },
-      items: [
-    
-        'core-concepts/writing-code/README',
-        'core-concepts/writing-code/javascript-editor-beta/README',
-        'write-code/how-to-guides/display-data-from-functions',
-        'core-concepts/writing-code/javascript-promises',
-        'advanced-concepts/sharing-data-across-pages',
-        `core-concepts/writing-code/workflows`,
-        'core-concepts/writing-code/ext-libraries',
-        'write-code/how-to-guides/debug-js-errors',
+        {
+          //Reference start
+          type: 'category',
+          label: 'Reference',
+          collapsed: false,
+          link: { type: 'doc', id: 'build-apps/reference/README' },
+          items: [
+            {
+              type: 'category',
+              label: 'Widgets',
+              link: { type: 'doc', id: 'reference/widgets/README' },
+              items: [
+                'reference/widgets/audio',
+                'reference/widgets/audio-recorder',
+                {
+                  type: 'category',
+                  label: 'Button',
+                  link: { type: 'doc', id: 'reference/widgets/button/README' },
+                  items: ['reference/widgets/button/google-recaptcha'],
+                },
+                {
+                  type: 'category',
+                  label: 'Button Group',
+                  link: { type: 'doc', id: 'reference/widgets/button-group/README' },
+                  items: [
+                    'reference/widgets/button-group/buttons'
+                  ],
+                },
+                'reference/widgets/camera',
+                'reference/widgets/category-slider',
+                'reference/widgets/chart',
+                'reference/widgets/checkbox',
+                'reference/widgets/checkbox-group',
+                'reference/widgets/code-scanner',
+                'reference/widgets/container',
+                'reference/widgets/currency-input',
+                'reference/widgets/datepicker',
+                'reference/widgets/divider',
+                'reference/widgets/document-viewer',
+                'reference/widgets/form',
+                'reference/widgets/filepicker',
+                'reference/widgets/icon-button',
+                'reference/widgets/iframe',
+                'reference/widgets/image',
+                'reference/widgets/input',
+                'reference/widgets/json-form',
+                'reference/widgets/list',
+                'reference/widgets/maps',
+                'reference/widgets/map-chart',
+                {
+                  type: 'category',
+                  label: 'Menu Button',
+                  link: { type: 'doc', id: 'reference/widgets/menu/README' },
+                  items: [
+                    'reference/widgets/menu/menu-items'
+                  ],
+                },
+                'reference/widgets/modal',
+                'reference/widgets/multiselect',
+                'reference/widgets/multi-tree-select',
+                'reference/widgets/number-slider',
+                'reference/widgets/phone-input',
+                'reference/widgets/progress',
+                'reference/widgets/radio-group',
+                'reference/widgets/range-slider',
+                'reference/widgets/rating',
+                'reference/widgets/rich-text-editor',
+                'reference/widgets/select',
+                'reference/widgets/stat-box',
+                'reference/widgets/switch',
+                'reference/widgets/switch-group',
+                'reference/widgets/tabs',
+                {
+                  type: 'category',
+                  label: 'Table',
+                  link: { type: 'doc', id: 'reference/widgets/table/README' },
+                  items: [
+                    'reference/widgets/table/column-settings'
+                  ],
+                },
+                'reference/widgets/text',
+                'reference/widgets/tree-select',
+                'reference/widgets/video',
+              ],
+            },
+            'core-concepts/building-ui/designing-an-application/app-theming',
+            'learning-and-resources/sample-apps'
+          ],
+        }, //Reference End
       ]
-    },
-    {
+    }, //Build Apps end
+
+    { // WRITE CODE start
       type: 'category',
-      label: 'Reference',
-      link: { type: 'doc', id: 'write-code/reference/README' },
+      collapsed: false,
+      label: 'Write Code',
       items: [
-        'reference/appsmith-framework/context-object',
-        'reference/appsmith-framework/console-object',
-        'reference/appsmith-framework/query-object',
+        'write-code/overview',
         {
           type: 'category',
-          label: 'Global Functions',
-          link: {
-            type: 'doc',
-            id: 'reference/appsmith-framework/widget-actions/README',
-          },
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
-            'reference/appsmith-framework/widget-actions/navigate-to',
-            'reference/appsmith-framework/widget-actions/show-alert',
-            'reference/appsmith-framework/widget-actions/show-modal',
-            'reference/appsmith-framework/widget-actions/close-modal',
-            'reference/appsmith-framework/widget-actions/store-value',
-            'reference/appsmith-framework/widget-actions/remove-value',
-            'reference/appsmith-framework/widget-actions/clear-store',
-            'reference/appsmith-framework/widget-actions/download',
-            'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-            'reference/appsmith-framework/widget-actions/reset-widget',
-            'reference/appsmith-framework/widget-actions/intervals-time-events',
-            'reference/appsmith-framework/widget-actions/clear-interval',
-            'reference/appsmith-framework/widget-actions/set-timeout',
-            'reference/appsmith-framework/widget-actions/post-message',
-            'reference/appsmith-framework/widget-actions/window-message-listener',
-            'reference/appsmith-framework/widget-actions/unlisten-window-message'
-            
-            ]
+            'core-concepts/writing-code/javascript-promises',
+            'advanced-concepts/sharing-data-across-pages',
+            `core-concepts/writing-code/workflows`,
+            'core-concepts/writing-code/ext-libraries',
+            'write-code/how-to-guides/debug-js-errors',
+          ]
+        },
+        {
+          //Reference start
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          link: { type: 'doc', id: 'write-code/reference/overview' },
+          items: [{
+          type: 'category',
+          collapsed: true,
+          label: 'Global Objects',
+          link: { type: 'doc', id: 'write-code/reference/README' },
+          items: [
+              'reference/appsmith-framework/query-object',
+              'reference/appsmith-framework/context-object',
+              'reference/appsmith-framework/console-object',
+            ],
           },
+            {
+              type: 'category',
+              label: 'Global Functions',
+              link: {
+                type: 'doc',
+                id: 'reference/appsmith-framework/widget-actions/README',
+              },
+              items: [
+                'reference/appsmith-framework/widget-actions/navigate-to',
+                'reference/appsmith-framework/widget-actions/show-alert',
+                'reference/appsmith-framework/widget-actions/show-modal',
+                'reference/appsmith-framework/widget-actions/close-modal',
+                'reference/appsmith-framework/widget-actions/store-value',
+                'reference/appsmith-framework/widget-actions/remove-value',
+                'reference/appsmith-framework/widget-actions/clear-store',
+                'reference/appsmith-framework/widget-actions/download',
+                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+                'reference/appsmith-framework/widget-actions/reset-widget',
+                'reference/appsmith-framework/widget-actions/intervals-time-events',
+                'reference/appsmith-framework/widget-actions/clear-interval',
+                'reference/appsmith-framework/widget-actions/set-timeout',
+                'reference/appsmith-framework/widget-actions/post-message',
+                'reference/appsmith-framework/widget-actions/window-message-listener',
+                'reference/appsmith-framework/widget-actions/unlisten-window-message'
+
+              ]
+            },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings', 
-          ],
-    },
-  ]
-}, //CODE end
+
+      ],
+    }, //Reference End
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'write-code/concepts/overview',
+      },
+      items: [
+        'core-concepts/writing-code/javascript-editor-beta/README',
+        'write-code/concepts/execute-onpageload',
+      ],
+    }
+      ]
+    }, //CODE end
 
     {
       //Advanced Concepts Start
@@ -494,9 +545,9 @@ const sidebars = {
         {
           type: 'category',
           label: 'Granular Access Control',
-          link: {type: 'doc', id:  'advanced-concepts/granular-access-control/README',},
+          link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
           items: [
-              'advanced-concepts/granular-access-control/roles', 
+            'advanced-concepts/granular-access-control/roles',
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,
@@ -522,7 +573,7 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/merging-branches',
             'advanced-concepts/version-control-with-git/revert-changes',
             'advanced-concepts/version-control-with-git/import-from-repository',
-            'advanced-concepts/version-control-with-git/environments-with-git',            
+            'advanced-concepts/version-control-with-git/environments-with-git',
           ],
         },
 
@@ -536,32 +587,38 @@ const sidebars = {
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
-      link: {
-        type: 'doc',
-        id: 'help-and-support/troubleshooting-guide/README',
-      },
       items: [
+        'help-and-support/troubleshooting-guide/README',
         {
           // Help & Support start
           type: 'category',
-          label: 'Action Errors',
+          label: 'Self-hosting Errors',
           link: {
             type: 'doc',
-            id: 'help-and-support/troubleshooting-guide/action-errors/README',
+            id: 'help-and-support/troubleshooting-guide/deployment-errors',
+          },
+          items: [
+            "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+          ],
+        },
+        {
+          // Help & Support start
+          type: 'category',
+          label: 'Application Errors',
+          link: {
+            type: 'doc',
+            id: 'help-and-support/troubleshooting-guide/application-errors',
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/rest-api-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mongodb-errors',
-            'help-and-support/troubleshooting-guide/action-errors/mysql-plugin-errors',
-            'help-and-support/troubleshooting-guide/action-errors/google-sheets-plugin-errors',
+            'help-and-support/troubleshooting-guide/action-errors/README'
           ],
         },
-        'help-and-support/troubleshooting-guide/js-errors',
-        'help-and-support/troubleshooting-guide/deployment-errors',
-        'help-and-support/troubleshooting-guide/application-errors',
-        'help-and-support/troubleshooting-guide/query-errors',
-        'help-and-support/troubleshooting-guide/widget-errors',
+        // 'help-and-support/troubleshooting-guide/js-errors',
+        // 'help-and-support/troubleshooting-guide/query-errors',
+        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {
@@ -570,6 +627,7 @@ const sidebars = {
       collapsed: false,
       label: 'Product',
       items: [
+        'getting-started/faq',
         'product/security',
         'product/telemetry',
         {

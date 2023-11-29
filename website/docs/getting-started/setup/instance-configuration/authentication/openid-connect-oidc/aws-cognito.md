@@ -1,15 +1,25 @@
 ---
 description: >-
   Setup OIDC using AWS Cognito
+title: Amazon Cognito
+hide_title: true
 ---
+<!-- vale off -->
 
-# Amazon Cognito
+<div className="tag-wrapper">
+ <h1>Amazon Cognito</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) as an OIDC provider, follow these steps:
-
-:::info
-OpenID Connect is available only in the [**business edition**](https://www.appsmith.com/pricing) for self-hosted instances. Note that only superusers of your Appsmith instance can set up OIDC.
-:::
 
 ## Prerequisites
 
@@ -57,6 +67,10 @@ In the **User pools** pane, select the user pool you created in the preceding st
     5. Click **Save changes**.
 
 ## Setup Cognito SSO on Appsmith
+
+:::info
+If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
+:::
 
 On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, click **Enable** and follow the steps below:
 

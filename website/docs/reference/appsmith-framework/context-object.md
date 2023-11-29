@@ -163,12 +163,25 @@ This object contains the data of the currently authenticated user.
   isAnonymous: boolean
 }
 ```
+<!-- vale off -->
 
-#### roles `object`
+<div className="tag-wrapper">
 
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+#### roles `object` 
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 <dd>
 
@@ -201,12 +214,25 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
 #### groups `object`
 
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
 
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+</div>
+
+<!-- vale on -->
 
 <dd>
 

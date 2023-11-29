@@ -1,55 +1,75 @@
 import React, { useState } from 'react';
-import { generateFeedback, sendToSegment } from '@site/src/components/feedback/feedbackHelper';
+import Feedback from '@site/src/components/feedback/feedback';
+import FeedbackMessage from '@site/src/components/feedback/feedbackMessage';
+import FeedbackComments from '@site/src/components/feedback/feedbackComments';
+import { generateFeedback, sendToSegment, generateFeedbackComment, generateAIFeedback } from '@site/src/components/feedback/feedbackHelper';
 
-const FeedbackWidget = () => {
+const FeedbackWidget = ({ isCalledFromAISearch, userTerm, generatedAnswer }) => {
   const [feedback, setFeedback] = useState({
     helpful: '',
+    comments: '',
   });
 
-  const handleHelpfulChange = async (value) => {
-    // Send the feedback to Segment first
-    const feedbackJSON = generateFeedback(value);
-    await sendToSegment(feedbackJSON);
+  const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
 
-    // Then open the Intercom survey to capture the feedback if "No" is chosen
+  const handleHelpfulChange = async (value) => {
+    const feedbackJSON = isCalledFromAISearch ? generateAIFeedback(value, userTerm, generatedAnswer) : generateFeedback(value);
+    const feedbackEvent = isCalledFromAISearch ? 'AISearch Feedback Submitted' : 'Feedback Submitted';
+    await sendToSegment(feedbackJSON, feedbackEvent);
+
     if (value === 'no') {
-      if (typeof Intercom !== 'undefined') {
-        Intercom('startSurvey', 35583751);
-      }
+      setFeedback({
+        helpful: value,
+        comments: '',
+      });
+    } else {
+      setFeedback({
+        helpful: 'submitted',
+        comments: '',
+      });
+    }
+  };
+
+  const handleCommentSubmit = async () => {
+    if (feedback.comments.trim() === '') {
+      return;
     }
 
-    // Update the feedback state after handling
+    if (!feedbackSubmitted) {
+      const feedbackCommentJSON = generateFeedbackComment(feedback.comments);
+      await sendToSegment(feedbackCommentJSON, 'Feedback Comment Submitted');
+      setFeedbackSubmitted(true);
+    }
+
+    setFeedback({
+      helpful: 'submitted',
+      comments: feedback.comments,
+    });
+  };
+
+  const handleCommentChange = (value) => {
     setFeedback({
       ...feedback,
-      helpful: value,
+      comments: value,
     });
   };
 
   return (
-    <div className="feedback-widget-container">
-      {feedback.helpful === '' ? (
-        <>
-          <p className="feedback-heading">Was this page helpful?</p>
-          <button
-            id="thumbs-up"
-            className={feedback.helpful === 'yes' ? 'selected' : ''}
-            onClick={() => handleHelpfulChange('yes')}
-          >
-            <img src="/img/thumbs-up-line.svg" alt="Thumbs Up" />
-          </button>
-          <button
-            id="thumbs-down"
-            className={feedback.helpful === 'no' ? 'selected' : ''}
-            onClick={() => handleHelpfulChange('no')}
-          >
-            <img src="/img/thumbs-down-line.svg" alt="Thumbs down" />
-          </button>
-        </>
-      ) : (
-        <p className="feedback-heading line-spacing">Thank you for your <br/> feedback!</p>
+    <>
+      {(feedback.helpful === 'submitted' || (feedback.helpful === 'no' && isCalledFromAISearch)) && <FeedbackMessage />}
+      {feedback.helpful === '' && (
+        <Feedback feedback={feedback} handleHelpfulChange={handleHelpfulChange} />
       )}
-    </div>
+      {feedback.helpful === 'no' && !isCalledFromAISearch && (
+        <FeedbackComments
+          feedback={feedback}
+          handleCommentSubmit={handleCommentSubmit}
+          handleCommentChange={handleCommentChange}
+        />
+      )}
+    </>
   );
+
 };
 
 export default FeedbackWidget;

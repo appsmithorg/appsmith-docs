@@ -1,16 +1,16 @@
 extends: capitalization
 message: "'%s' should use sentence-style capitalization."
-link: 'https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings'
+link: "https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings"
 level: warning
-scope: 
-- heading.h2
-- heading.h3
-- heading.h4
-- heading.h5
-- heading.h6
+scope:
+  - heading.h2
+  - heading.h3
+  - heading.h4
+  - heading.h5
+  - heading.h6
 match: $sentence
 indicators:
-  - ':'
+  - ":"
 exceptions:
   - Azure
   - CLI
@@ -53,7 +53,7 @@ exceptions:
   - Redis
   - DigitalOcean
   - Docker
-  - K8s   
+  - K8s
   - Framework
   - Promises
   - Actions
@@ -64,14 +64,14 @@ exceptions:
   - Async/Await
   - Amazon Web Services
   - SSH
-  - Business Edition 
+  - Business Edition
   - Community Edition
   - Connection Mode
   - Custom Domain
   - Custom SSL
   - SSL
   - HTTPS
-  - Let's 
+  - Let's
   - Encrypt
   - Git
   - TLS
@@ -120,8 +120,8 @@ exceptions:
   - ArangoDB
   - Camera
   - Image
-  - Container 
-  - Instance 
+  - Container
+  - Instance
   - Git
   - OS
   - APIs/Query
@@ -142,7 +142,7 @@ exceptions:
   - Property group - Events
   - Document Link
   - docUrl
-  - Select All Options 
+  - Select All Options
   - onSelectionChange
   - options
   - Default Selected Values
@@ -166,11 +166,11 @@ exceptions:
   - Benefits of Datasource Environments
   - Data Format
   - Maximum No. of files
-  - setValue  
+  - setValue
   - setSelectedOptions
   - selectedOptionValues
   - selectedOptionLabels
-  - MultiSelect  
+  - MultiSelect
   - TreeSelect
   - Promise
   - onFilesSelected
@@ -187,13 +187,13 @@ exceptions:
   - setData
   - onSrcDocChanged
   - onURLChanged
-  - Border Opacity	
+  - Border Opacity
   - onMessageReceived
   - source
   - title
   - message
   - Send Message Between App and Iframe
-  - Auto Play 
+  - Auto Play
   - playing
   - setPlaying
   - SendGrid
@@ -206,7 +206,7 @@ exceptions:
   - onMarkerClick
   - center
   - markers
-  - setPlaying 
+  - setPlaying
   - Use Git with Datasource Environments
   - Quick Dismiss
   - Colors, Borders and Shadows
@@ -224,9 +224,9 @@ exceptions:
   - videoDataURL
   - videoRawBinary
   - onImageSave
-  - onVideoSave  
+  - onVideoSave
   - setImage
-  - image 
+  - image
   - onDateSelected
   - key
   - persist
@@ -241,3 +241,13 @@ exceptions:
   - console.log
   - console.error
   - console.warn
+  - Community
+  - Datasources (Server Data Models)
+  - Widgets (Views)
+  - Queries and JavaScript (Controllers)
+  - Prepared statements - On vs Off
+  - Air-gapped Instance
+  - Introduction
+  - Troubleshooting
+  - MongoDB Startup Error Post Migration to Version 5
+  - Schema Mismatch Error

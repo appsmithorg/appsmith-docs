@@ -27,11 +27,6 @@ Allows you to connect the Table widget to your datasource. To connect your datas
 
 If you don't have a query, you can choose your datasource, select the desired table or collection, and specify the searchable property. Appsmith would automatically generate a query for you, enabling features such as server-side pagination, search capability, and the ability to edit and add new rows in the table.
 
-
-:::note
-Currently, this feature is compatible with PostgreSQL and MongoDB datasources. 
-:::
-
 Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data. The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
 *Expected data structure:*
@@ -201,8 +196,7 @@ Allows you to set the default search query for the search bar in the table heade
 
 <dd>
 
-Allows you to specify the action to be executed when the user enters a search text in the table's search bar. Learn more about [Server-side searching](/build-apps/how-to-guides/Setup-Server-side-Searching-on-Table).
-
+Allows you to specify the action to be executed when the user enters a search text in the table's search bar. Learn more about [Server-side searching](/build-apps/how-to-guides/search-and-filter-table-data#using-search-text).
 
 
 </dd>
@@ -543,8 +537,16 @@ When a user interacts with an actionable item *(like a button)* in a row, `trigg
 *Example:*
 
 ```js
+//To access the entire triggered row:
 {{Table1.triggeredRow}}
+
+//To access a specific cell value, such as the email field:
+{{Table1.triggeredRow.email}}
 ```
+
+
+For example, when using Datepicker if the date is in `ISO` format and you want to display it in `DD/MM/YYYY` format, then you can achieve this by binding the Table data to the **Default date** and changing the display format through the **Date format** property.
+
 
 </dd>
 

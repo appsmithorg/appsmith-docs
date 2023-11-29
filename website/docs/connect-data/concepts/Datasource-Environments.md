@@ -1,11 +1,25 @@
-# Datasource Environments
+---
+title: Datasource Environments
+description: This page provides information about datasource environments in Appsmith.
+hide_title: true
+---
 
-:::info
-The Datasource environments feature is only available on [Business Edition](https://www.appsmith.com/pricing). This feature is still in Beta. If you have questions and would like to test this feature and share feedback, please contact the support team using the chat widget at the bottom right of this page. 
-:::
+<!-- vale off -->
 
-This page explains multiple datasource environments, which allows developers to isolate their testing datasources from their production datasources.
+<div className="tag-wrapper">
+ <h1> Datasource Environments </h1>
 
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+This page explains multiple datasource environments, which allows developers to isolate their testing and production datasources.
 
 See how to [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
 
@@ -17,13 +31,15 @@ This allows you to create queries and switch between environments, with the quer
 
 ## Environments on Appsmith
 
-Appsmith provides two environments: 
+Appsmith provides two default environments: *Production* and *Staging*. However, with the enterprise plan, you can create custom environments according to your requirements.
 
-* **Staging**: Environment for development, QA, and user acceptance testing. You can make modifications and experiment with new features before pushing them to the production environment.
+- **Staging**: Environment for development, QA, and user acceptance testing. You can make modifications and experiment with new features before pushing them to the Production environment.
 
-* **Production**: Live version with actual production data for end users. 
+- **Production**: Live version with actual production data for end users.
 
-In Appsmith, environments work at the *Workspace* level. This means that all the applications within a workspace share the same configuration values for both staging and production environments.
+- **Custom**: The custom environment allows you to create and manage your own environments. See how to create [custom environments](/connect-data/how-to-guides/setup-datasource-environments#create-a-custom-environment).
+
+In Appsmith, environments work at the _Workspace_ level. This means that all the applications within a workspace share the same configuration values for both Staging and Production environments.
 
 For more information on permissions, you can refer to the [Granular Access Control.](/advanced-concepts/granular-access-control).
 
@@ -31,16 +47,9 @@ For more information on permissions, you can refer to the [Granular Access Contr
 
 Some core benefits of using datasource environments include:
 
-* **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
+- **Isolation and Risk Management:** Datasource environments allow developers to separate testing, and production environments, reducing the risk of unintended modifications and providing a controlled environment for each stage of the software development cycle.
 
-* **Efficient Development:** With datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
+- **Efficient Development:** With datasource environments, developers can easily switch between different datasources without manually modifying connection parameters. This streamlines the development process and enables quick testing and iteration.
 
-* **Flexible Testing:** Having separate staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
-
-
-:::info
-When using datasource environments in Appsmith, only predefined staging and production environments are supported, and custom or user-defined environments are currently unavailable.
-:::
-
-
+- **Flexible Testing:** Having separate Staging environments facilitates thorough testing and quality assurance activities. QA teams can confidently test new features, perform regression testing, and validate the application's behavior before deploying to production.
 

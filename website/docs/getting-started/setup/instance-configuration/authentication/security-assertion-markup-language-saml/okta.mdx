@@ -1,11 +1,27 @@
 ---
 description: >-
   Setup SAML using Okta
+title: Okta
+hide_title: true
 ---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Okta</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Okta
 
 To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, follow the steps below:
 
@@ -44,6 +60,10 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, f
 8. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
 
 ## Register Okta in Appsmith
+
+:::info
+If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
+:::
 
 To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 

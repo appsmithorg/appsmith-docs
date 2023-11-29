@@ -6,7 +6,6 @@ description: Connect Appsmith to a MongoDB database and create queries.
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 # MongoDB
 
 This page gives information to connect Appsmith to a MongoDB database and to read and write data in your applications.
@@ -15,7 +14,7 @@ This page gives information to connect Appsmith to a MongoDB database and to rea
 
 ## Connect MongoDB
 
-:::caution 
+:::caution
 If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. See [**How to whitelist IP addresses on MongoDB Atlas**](https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas) for more details.
 :::
 
@@ -40,14 +39,18 @@ The following section is a reference guide that provides a complete description 
 #### Connection String URI
 
 <dd>A MongoDB connection string URI (Uniform Resource Identifier) is a standardized way to specify the location and other details of a MongoDB database. This field is visible only if you select <b>Yes</b> in the <b>Use Mongo Connection String URI</b> list. See <a href="https://www.mongodb.com/docs/manual/reference/connection-string/#connection-string-uri-format"><b>Connection String URI Format</b></a> for details on how to specify the MongoDB connection string.</dd><br />
+<dd>Use the following syntax to specify the MongoDB connection string:</dd>
+<dd><pre><code>
+   mongodb+srv://&lt;USERNAME&gt;:&lt;PASSWORD&gt;@&lt;HOST&gt;/&lt;DATABASE_NAME&gt;
+</code></pre></dd>
 <dd><i>Example:</i></dd>
 <dd><pre><code>
   mongodb+srv://mockdb-admin:****@mockdb.kce5o.mongodb.net/movies?retryWrites=true&w=majority&authSource=admin
 </code></pre></dd>
 
 ---
- 
-The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the *Connection String URI* format.
+
+The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the _Connection String URI_ format.
 
 <figure>
   <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
@@ -62,7 +65,7 @@ The following section lists the parameters to connect MongoDB by configuring mul
     <li><b>Read Only:</b> This mode permits only read-only operations by default.</li>
     <li><b>Read/Write:</b> This mode permits both read-write operations by default.</li>
   </ul>
-</dd>  
+</dd>
 
 #### Connection Type
 
@@ -72,7 +75,7 @@ The following section lists the parameters to connect MongoDB by configuring mul
     <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
   </ul>
-</dd> 
+</dd>
 
 #### Host Address
 
@@ -142,7 +145,7 @@ The following section is a reference guide that provides a complete description 
 </figure>
 
 :::info
- See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
+See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
 :::
 
 ### Find Documents
@@ -191,7 +194,7 @@ This command fetches documents from a collection. The following section lists al
 `}</pre></dd>
 <dd>In the above example, <code>tableItems</code> is the name of the Table widget where you display the results from the query. The query limits the results based on the table widget's pageSize property.</dd>
 
-  #### Skip
+#### Skip
 
 <dd>This field specifies the number of documents to skip before returning results. </dd><br />
 <dd><i>Example:</i></dd>
@@ -204,10 +207,12 @@ This command fetches documents from a collection. The following section lists al
 This command inserts one or more documents and returns a document containing the status of all inserts. The following section lists all the fields for the **Insert Documents** command.
 
 #### Collection
+
 <dd>The name of the target collection where you want to insert the documents.
 </dd>
 
 #### Documents
+
 <dd>Specifies an array of one or more documents you want to insert into the collection.</dd><br />
 <dd><i>Example:</i></dd>
 <dd><pre>{`[
@@ -221,7 +226,7 @@ This command inserts one or more documents and returns a document containing the
 
 ### Update Documents
 
-This command modifies the documents in a collection based on a specified set of filters. The following section lists all the fields available for the **Update Documents** command. 
+This command modifies the documents in a collection based on a specified set of filters. The following section lists all the fields available for the **Update Documents** command.
 
 #### Collection
 
@@ -229,6 +234,7 @@ This command modifies the documents in a collection based on a specified set of 
 </dd>
 
 #### Query
+
 <dd>Specifies the criteria that match the documents you want to update.</dd>
 <dd><i>Example:</i></dd>
 <dd><pre>{`{ 
@@ -236,7 +242,7 @@ This command modifies the documents in a collection based on a specified set of 
 }`}</pre></dd>
 <dd>In the above example, the query filters the record where the <code>_id</code> field is equal to the value in the <code>id</code> column of the row selected on the Table widget named <code>tableItems</code>.</dd>
 
-#### Update 
+#### Update
 
 <dd>Specifies the modifications you want to make to the selected documents. 
 </dd><br />
@@ -250,6 +256,7 @@ This command modifies the documents in a collection based on a specified set of 
 <dd>In the above example, the query updates the <code>name</code> and <code>rating</code> fields with the values updated in the table cells using <a href="/reference/widgets/table/inline-editing"><b>inline editing</b></a>.</dd>
 
 #### Limit
+
 <dd>Specifies whether to delete single or multiple documents</dd><br />
 <dd><i>Options:</i>
   <ul>
@@ -327,7 +334,6 @@ This command finds the unique or distinct values for a specified field across a 
 <dd> Specifies the name of the field for which to return distinct values.
 </dd>
 
-
 ### Aggregate
 
 This command allows users to process data records and return computed results. The aggregation framework provides several operators to perform a variety of operations like filtering, grouping, sorting, projecting, and calculating. See <a href="https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/"><b>Aggregation Pipeline Stages</b></a> for information on the aggregation operators. The following section lists all the fields available for the **Aggregate** command.
@@ -351,18 +357,14 @@ This command allows users to process data records and return computed results. T
 <dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd>
 
 #### Limit
+
 <dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
 </dd>
 
 ### Raw
 
-This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/connect-data/reference/querying-mongodb/mongo-syntax) for more information. 
+This command allows you to write queries using the MongoDB database command syntax. See [**Raw Query Commands**](/connect-data/reference/querying-mongodb/mongo-syntax) for more information.
 
 ## Troubleshooting
 
-If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or guides for errors like:
-
-* [Mongo query failed to execute](/help-and-support/troubleshooting-guide/action-errors#configuration-error)
-* [Missing default database name](/help-and-support/troubleshooting-guide/query-errors#mongodb-name-can-not-be-null)
-
-If you still have trouble, you can contact the support team using the chat widget at the bottom right of this page.
+If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team using the chat widget at the bottom right of this page.

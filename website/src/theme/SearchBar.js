@@ -1,10 +1,12 @@
 import React from 'react';
-import SearchBar from '@theme-original/SearchBar';
+import CustomSearchBar from '../components/custom-search/CustomSearchBar';
 
 export default function SearchBarWrapper(props) {
   return (
     <>
-      <SearchBar {...props} />
+      <CustomSearchBar />
     </>
   );
 }
+
+

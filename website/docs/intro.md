@@ -3,11 +3,10 @@ sidebar_position: 1
 title: Introduction
 slug: /
 ---
+
 # What is Appsmith
 
-Organizations build internal applications (also known as admin tools or internal tools) such as dashboards, database GUIs, admin panels, approval apps, customer support tools, and more to help their teams perform specific tasks. Appsmith is an open source developer tool that helps the rapid creation of such internal tools.
-
-You can drag and drop pre-built widgets to build UI on a grid-style canvas. Appsmith simplifies front-end and back-end integration between the UI and the datasource to optimize building applications. It also supports JavaScript inside widgets, queries, and almost any other component to add logic, transform data, and define complex workflows.
+Organizations build internal applications such as dashboards, database GUIs, admin panels, approval apps, customer support tools, etc. to help improve their business operations. Appsmith is an open-source developer tool that enables the rapid development of these applications. You can drag and drop pre-built widgets to build UI. Connect securely to your databases & APIs using its datasources. Write business logic to read & write data using queries & JavaScript.
 
 <figure>
     <VideoEmbed host="youtube" videoId="NnaJdA1A11s"/> 
@@ -15,29 +14,24 @@ You can drag and drop pre-built widgets to build UI on a grid-style canvas. Apps
 
 ## Why Appsmith
 
-Appsmith makes it easy to build a UI that talks to any datasource. You can create anything from simple CRUD apps to complicated multi-step workflows with the simple steps below: 
+Appsmith makes it easy to build a UI that talks to any datasource. You can create anything from simple CRUD apps to complicated multi-step workflows with a few simple steps:
 
-* **Connect Datasource**: Integrate with a datasource such as a database or an API. Appsmith has plug-and-play support for many databases and the RESTful API interface to connect with most tools seamlessly.
-* **Build UI**: Use customizable built-in widgets to build an app layout.
-* **Access Data**: Connect UI to the datasource by writing queries and binding the data to widgets. Control everything with JavaScript.
-* **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and roll back changes. Deploy the app and share it with other users.
+- **Connect Datasource**: Integrate with a database or API. Appsmith supports the most popular databases and REST APIs.
+- **Build UI**: Use built-in widgets to build your app layout.
+- **Write Logic**: Express your business logic using queries and JavaScript anywhere in the editor.
+- **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and roll back changes. Deploy the app and share it with other users.
 
 ## Get started
 
-There are two ways of using Appsmith:
+1. Create an account on the cloud platform or self-host Appsmith for free.
 
-* [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
-* [Self-Host Appsmith](/getting-started/setup): Deploy and manage Appsmith on your local machine or private server instance.
+   - [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
+   - [Self-Host Appsmith](/getting-started/setup): Deploy Appsmith on your local machine or private server.
 
-## First steps
-
-If you are new to Appsmith, this is the place to start:
+2. Take the quick tutorial to learn the basics
 
 <div class="containerGridSampleApp">
    <div class=" containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-         <img class="containerImage" src="/img/quickstart.png" alt="Build your first app"/>
-      </div> 
       <b><a href="/getting-started/tutorials/start-building">Build your first app</a></b>
       <div class="containerDescription">A quickstart guide to help you build an app using Appsmith
       </div>
@@ -45,10 +39,3 @@ If you are new to Appsmith, this is the place to start:
      <div class="columnGrid column-two" style={{margin: "10px"}}>
     </div>
 </div>
-
-
-:::info
-
-* If you need any help, contact the support team at [support@appsmith.com](mailto:support@appsmith.com)
-* If you have suggestions to help improve the documentation, please complete this [short questionnaire](https://e1fms9m33tg.typeform.com/to/fRiiqHPt).
-:::

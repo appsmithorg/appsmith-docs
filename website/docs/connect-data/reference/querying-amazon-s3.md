@@ -54,7 +54,17 @@ The following section is a reference guide that provides a complete description 
 
 #### Region
 
-<dd>Identifies which regional data center to connect to. This field appears when <b>S3 service provider</b> is MinIO or Other.</dd>
+<dd>
+
+Identifies which regional data center to connect to. This field appears when <b>S3 service provider</b> is MinIO or Other.
+
+</dd>
+
+:::note
+If the configuration is correct but the credentials do not have the required permission, the test operation fails.
+:::
+
+
 
 ## Create queries
 

@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using Ping Identity
+title: Ping Identity
+hide_title: true
 ---
+<!-- vale off -->
 
-# Ping Identity
+<div className="tag-wrapper">
+ <h1>Ping Identity</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.html) as an OIDC provider, follow the steps below:
 
@@ -24,8 +38,12 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 1. Log into your [PingOne](https://www.pingidentity.com/en/account/sign-on.html) account. On the homepage, click **Add Environment** from the top right corner.
 2. On the Create Environment screen, select **Build your own solution**. 
 
+  <!-- vale off -->
+
   a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. 
-  
+
+  <!-- vale on -->
+
   b. Click **Next**.
 
   c. Enter the environment name and description. Click **Next**.
@@ -39,20 +57,26 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
 5. Open your application, and go to the **Configurations** tab:
 
-  a. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
+  a. Click the edit ✏️ icon, and check the **Refresh Token** option. This allows Ping Identity to issue refresh tokens to Appsmith for refreshing access tokens when they expire.
+
+  b. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
 
    - **Authorization URL**
    - **Token Endpoint**
    - **UserInfo Endpoint**
    - **JWKS Endpoint**
 
-  b. Scroll down to the **General** dropdown, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
+  c. Scroll down to the **General** dropdown, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
 
 6. To configure the required scopes, go to the **Resources** tab, click the **Edit** icon and select **openid**, **email**, **profile** from the list of scopes.
 
 7. On your application panel, switch the toggle button at the top right corner to enable user access to the application. 
 
 ## Register Ping Identity in Appsmith
+
+:::info
+If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
+:::
 
 To complete the OIDC configuration, you have to register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 

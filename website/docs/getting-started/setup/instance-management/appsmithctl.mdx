@@ -25,7 +25,7 @@ Subcommands allow you to trigger different operations like exporting or importin
 | --help                                          | Shows available subcommands and how to use `appsmithctl` |
 | [backup](#backup-instance)             | Creates a backup of the Appsmith instance                |
 | [ex, export_db](#backup-database)      | Creates a backup of Appsmith internal database           |
-| [--upload-to-s3](#sync-backup-to-s3-bucket)    | Upload the back up files to S3 bucket (Business Edition only) |
+| [--upload-to-s3](#sync-backup-to-s3-bucket)    | Upload the back up files to S3 bucket (Commercial Edition only) |
 | [restore](#restore-instance)           | Restores the Appsmith instance from a backup             |
 | [im, import_db](#restore-database)     | Restores the Appsmith internal database                  |
 
@@ -102,11 +102,25 @@ After running the above command, the backup archive is copied to your current di
 
 </Tabs>
 
-### Schedule automatic backups
+<!-- vale off -->
 
-:::info
-Scheduling automatic backups is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
-:::
+<div className="tag-wrapper">
+
+### Schedule automatic backups 
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 #### Docker
 Follow these steps to schedule backups only for Docker Appsmith installation:
@@ -131,12 +145,24 @@ APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
 APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
 ```
 For more information about creating the `Cron` expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
+<!-- vale off -->
+
+<div className="tag-wrapper">
 
 ### Sync backup to S3 bucket
 
-:::info
-Syncing backups with an AWS S3 bucket is a feature available only in the Appsmith [Business Edition](https://www.appsmith.com/pricing).
-:::
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
 
 Follow these steps to sync backups with an S3 bucket for your installation type:
 
@@ -188,14 +214,6 @@ After configuration, the restore command lists local and S3 bucket backups.
       ```
 
       b. Update the values:
-
-      * For the **Community Edition** with:
-
-      ```bash
-      helm upgrade appsmith appsmith/appsmith -f values.yaml 
-      ```
-
-      * For the **Business Edition** with:
 
       ```bash
       helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 

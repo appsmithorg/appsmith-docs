@@ -1,15 +1,26 @@
 ---
 description: >-
   Getting started with SAML integration in Appsmith.
+title: SAML SSO
+hide_title: true
 ---
 
-# SAML SSO
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>SAML SSO</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling users to sign in to the Appsmith account using their SAML identity providers.
-
-:::info
-Security Assertion Markup Language (SAML) is only available in Appsmith's [**Business edition**](https://www.appsmith.com/pricing). 
-:::
 
 ## SAML providers
 

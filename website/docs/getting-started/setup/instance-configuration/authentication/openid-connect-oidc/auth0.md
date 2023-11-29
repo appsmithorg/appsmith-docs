@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using Auth0
+title: Auth0
+hide_title: true
 ---
+<!-- vale off -->
 
-# Auth0
+<div className="tag-wrapper">
+ <h1>Auth0</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, follow the steps below:
 
@@ -45,6 +59,10 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 
 ##  Register Auth0 in Appsmith
 
+:::info
+If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
+:::
+
 To complete the OIDC configuration, you must register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the **Client ID** and **Client Secret** copied from the Auth0 application into the respective fields.
@@ -58,7 +76,10 @@ To complete the OIDC configuration, you must register the identity provider on A
       | **User Info URL**      |  OAuth User Info URL         |
       | **JWK Set URL**           | JSON Web Key Set             |
 
-3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information on scopes, see [OpenID Connect Scopes](https://auth0.com/docs/get-started/apis/scopes/openid-connect-scopes).
+3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. 
+  
+   Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended to use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. For more information, see [Auth0 documentation](https://auth0.com/docs/secure/tokens/refresh-tokens).
+
 
 4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 

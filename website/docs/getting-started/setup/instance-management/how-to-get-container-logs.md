@@ -93,21 +93,23 @@ Please switch to the old AWS console to follow the instructions here
 
 1. Navigate to your Storage Accounts in the Azure portal
 
-![Storage account Azure portal](/img/storage-account-azure-portal.png)
-
+    ![Storage account Azure portal](/img/storage-account-azure-portal.png)
 2. Click the File Share mounted to the Appsmith ACI instance.
 
-![Click the File Share](/img/file-share-mounted.png)
-
+    ![Click the File Share](/img/file-share-mounted.png)
 3. Click Browse on the sidebar menu
 
-![Click to Browse](/img/browse-on-sidebar.png)
-
-4. In the file share browser, open the `logs` directory
+    ![Click to Browse](/img/browse-on-sidebar.png)
+4. In the file share browser, open the `logs` directory.
 5. Open the directory for the service for which the logs are required.
 
-![Open logs directory](/img/select-the-log-directory.png)
+    ![Open logs directory](/img/select-the-log-directory.png)
+6. Select the log file and hit download.
 
-5. Select the log file and hit download.
+    ![Download the log file](/img/download-log-file.png)
 
-![Download the log file](/img/download-log-file.png)
+You may also choose to access the logs of the container instance using the [az container logs](https://learn.microsoft.com/en-us/cli/azure/container#az_container_logs) command.
+
+```bash
+az container logs --resource-group myResourceGroup --name mycontainer
+```
