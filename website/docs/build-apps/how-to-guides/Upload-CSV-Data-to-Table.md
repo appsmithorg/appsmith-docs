@@ -49,16 +49,16 @@ To insert multiple rows using CSV data and a Filepicker widget, follow these ste
       INSERT INTO users (id, phone, name, gender, latitude, longitude, dob, email, image, country)
       SELECT
       id,
-     phone, 
-     name,
-     gender, 
-     latitude, 
-     longitude,
-     dob, 
-     email, 
-     image, 
-     country
-     FROM json_populate_recordset(null::users, '{{user_details.files[0].data}}');
+      phone, 
+      name,
+      gender, 
+      latitude, 
+      longitude,
+      dob, 
+      email, 
+      image, 
+      country
+      FROM json_populate_recordset(null::users, '{{user_details.files[0].data}}');
    ```
    Appsmith automatically parses the CSV file and converts the data to JSON format. This example uses [json_populate_recordset](https://www.postgresql.org/docs/current/functions-json.html) function to the JSON array to a set of specified SQL-typed values.
    
