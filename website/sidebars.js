@@ -344,28 +344,9 @@ const sidebars = {
                 'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
-            {
-              type: 'category',
-              label: 'Update Data Using Form',
-              link: {
-                type: 'doc',
-                id:  'build-apps/how-to-guides/submit-form-data',
-              },
-              items: [
-                'reference/widgets/table/inline-editing'
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Insert Data Using Form',
-              link: {
-                type: 'doc',
-                id:  'build-apps/how-to-guides/submit-form-data',
-              },
-              items: [
-                'reference/widgets/table/inline-editing'
-              ],
-            },
+            `build-apps/how-to-guides/submit-form-data`,
+            `reference/widgets/table/inline-editing`,
+            `build-apps/how-to-guides/insert-data-using-table`,
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/Create-Nested-Lists',
