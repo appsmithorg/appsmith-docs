@@ -19,7 +19,7 @@ const AISearch = forwardRef((props, ref) => {
         "How do I connect to my local database ?",
         "How can I send parameters to my query ?",
         "How can I transform my query response ?",
-        "How can trigger multiple queries conditionally ?"
+        "How can I trigger multiple queries conditionally ?"
     ];
 
     const resetState = () => {
