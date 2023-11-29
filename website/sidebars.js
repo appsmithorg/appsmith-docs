@@ -334,7 +334,7 @@ const sidebars = {
             'core-concepts/building-ui/dynamic-ui/README',
             {
               type: 'category',
-              label: 'Display and Lookup Table Data',
+              label: 'Display and Lookup Data in Table Widget',
               link: {
                 type: 'doc',
                 id: 'build-apps/how-to-guides/display-search-and-filter-table-data',
@@ -344,10 +344,18 @@ const sidebars = {
                 'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
-            'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/refresh-table-data',
+            {
+              type: 'category',
+              label: 'Update Data Using Form',
+              link: {
+                type: 'doc',
+                id:  'build-apps/how-to-guides/submit-form-data',
+              },
+              items: [
+                'reference/widgets/table/inline-editing'
+              ],
+            },
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-            'build-apps/how-to-guides/submit-form-data',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
