@@ -15,11 +15,11 @@ const AISearch = forwardRef((props, ref) => {
     const [termSelected, setTermSelected] = useState(false);
 
     const commonSearchQueries = [
-        "How do I setup appsmith ?",
-        "How do I connect to my local database ?",
-        "How can I send parameters to my query ?",
-        "How can I transform my query response ?",
-        "How can I trigger multiple queries conditionally ?"
+        "How do I setup appsmith?",
+        "How do I connect to my local database?",
+        "How can I send parameters to my query?",
+        "How can I transform my query response?",
+        "How can I trigger multiple queries conditionally?"
     ];
 
     const resetState = () => {
