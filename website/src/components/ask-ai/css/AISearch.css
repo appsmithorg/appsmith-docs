@@ -14,7 +14,7 @@
     text-align: center;
     position: relative;
     width: 55%;
-    min-height: 72%;
+    min-height: 48%;
     margin: 4% auto;
     border-radius: 8px;
     box-shadow: var(--docsearch-modal-shadow);
