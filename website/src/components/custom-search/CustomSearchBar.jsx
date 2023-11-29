@@ -7,13 +7,6 @@ import './css/CustomSearch.css';
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
 
-    useLayoutEffect(() => {
-        if (ExecutionEnvironment.canUseDOM) {
-            document.querySelector('.DocSearch-Button').style.display = "none";
-            document.querySelector('.custom-doc-Search-bar').style.display = "none";
-        }
-    })
-
     useEffect(() => {
         if (ExecutionEnvironment.canUseDOM) {
             const searchInput = document.querySelector('.DocSearch-Button');
@@ -47,7 +40,10 @@ const CustomSearchBar = () => {
                 </div>
             </div>
             <AISearchButton />
-            <DocSearch />
+            <div style={{ display: 'none' }}>
+                <DocSearch />
+            </div>
+
         </>
     );
 };
