@@ -1,5 +1,6 @@
 ---
 description: appsmithctl is a backup and restore command-line utility. This troubleshooting guide helps to address the common errors encontered while using appsmithctl.
+toc_max_heading_level: 2
 ---
 
 # Backup and Restore Errors
@@ -32,7 +33,7 @@ docker stop appsmith
 ```
 Wait for the container to stop before proceeding.
 
-2. Go to the directory containing the `docker-compose.yaml` file using the `cd` command :
+2. Go to the directory containing the `docker-compose.yml` file using the `cd` command :
 
 ```bash 
 cd /path/to/docker-compose/directory
@@ -40,7 +41,7 @@ cd /path/to/docker-compose/directory
 
 Replace `/path/to/docker-compose/directory` with the actual path to the file.
 
-3. Start Appsmith with Docker-Compose using the `docker-compose.yaml` file in the current directory. Run the below command to start the Appsmith container:
+3. Start Appsmith with Docker-Compose using the `docker-compose.yml` file in the current directory. Run the below command to start the Appsmith container:
 
 ```bash 
 docker-compose up -d

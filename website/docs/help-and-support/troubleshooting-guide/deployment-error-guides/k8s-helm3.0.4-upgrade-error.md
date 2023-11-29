@@ -38,7 +38,7 @@ Please note: sometimes the command may be `helm plugin ls`.
 3. Next, use the plugin on your Appsmith chart by replacing `&lt;APPSMITH-CHART-NAME&gt;` and `&lt;NAMESPACE&gt;` with your specific chart name and namespace:
 
 ```bash
-helm mapkubeapis <appsmith-chart-name> -n <namespace></namespace></appsmith-chart-name>
+helm mapkubeapis <APPSMITH-CHART-NAME> -n <NAMESPACE></NAMESPACE></APPSMITH-CHART-NAME>
 ```
 
 4. Finally, perform the upgrade of your Appsmith installation by issuing the upgrade command, adapting the flags and values according to your deployment:
