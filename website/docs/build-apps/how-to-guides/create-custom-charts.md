@@ -7,23 +7,177 @@ import TabItem from '@theme/TabItem';
 This page shows you how to create a custom chart widget using the ECharts library, which allows you to customize charts to suit your specific needs, offering a level of customization not available with built-in charts.
 
 
-##
+## Configure Chart
 
 1. Drag a Chart widget and select Custom EChart from the **Chart type** property.
 
-2. Create a JSObject and add your ECharts code. To configure the ECharts code, simply copy the relevant examples from the ECharts documentation and paste them into your project.
+2. Create a JSObject and define a function within it to fetch data. You can display data dynamically from a query using `{{Query1.data}}`.
+
 
 <dd>
-
-Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [ECharts documentation](https://echarts.apache.org/examples/en/index.html#chart-type-line). 
 
 :::note
 You can directly bind data to a **Custom ECharts Configuration** property, using mustache syntax like this: `{{<your-chart-data>}}`. For structured and maintainable chart configurations, it is recommended to use a JSObject.
 :::
 
+</dd>
+
+<dd>
+
+*Example:* If you want to create a Stacked Area Chart, define a function and add your data as shown below:
+
+```js
+export default {
+  fetchData() {
+    // Implement logic to dynamically fetch data for all parts
+    return {
+      email: [120, 132, 101, 134, 90, 230, 210],
+      unionAds: [220, 182, 191, 234, 290, 330, 310],
+      videoAds: [150, 232, 201, 154, 190, 330, 410],
+      direct: [320, 332, 301, 334, 390, 330, 320],
+      searchEngine: [820, 932, 901, 934, 1290, 1330, 1320],
+      // Add more data as needed
+    };
+  },..
+};
+```
 
 
-*Examples:*
+</dd>
+
+3. Create a new function in the same JSObject to structure and configure the chart by copying the relevant code from the ECharts documentation.
+
+<dd>
+
+*Example:* For the Stacked Area Chart, create a new function and add the required `options` code from [ECharts documentation](https://echarts.apache.org/examples/en/editor.html?c=area-stack).
+
+```js
+export default {
+  fetchData() {}; //fetchData code
+
+  },
+  options: {
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'cross',
+        label: {
+          backgroundColor: '#6a7985',
+        },
+      },
+    },
+    legend: {
+      data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine'],
+    },
+    toolbox: {
+      feature: {
+        saveAsImage: {},
+      },
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true,
+    },
+    xAxis: [
+      {
+        type: 'category',
+        boundaryGap: false,
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      },
+    ],
+    yAxis: [
+      {
+        type: 'value',
+      },
+    ],
+    series: [
+      {
+        name: 'Email',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: this.fetchData().email,
+      },
+      {
+        name: 'Union Ads',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: this.fetchData().unionAds,
+      },
+      {
+        name: 'Video Ads',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: this.fetchData().videoAds,
+      },
+      {
+        name: 'Direct',
+        type: 'line',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: this.fetchData().direct,
+      },
+      {
+        name: 'Search Engine',
+        type: 'line',
+        stack: 'Total',
+        label: {
+          show: true,
+          position: 'top',
+        },
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: this.fetchData().searchEngine,
+      },
+    ],
+  },
+};
+```
+
+The `options` function configures the chart, using the `fetchData` data to set up different series, such as `Email` and `Union Ads`, with their respective visual properties. Additionally, if needed, you can dynamically set labels and other properties to further customize the chart.
+
+</dd>
+
+
+4. In the **Custom ECharts Configuration** property, add the following code to display data:
+
+<dd>
+
+```js
+{{JSObject1.options}}
+```
+</dd>
+   
+<figure>
+  <img src="/img/stacked-echart.gif" style= {{width:"700px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i></i></figcaption>
+</figure>
+
+
+## Additional examples
+
+This section presents more examples to help you better understand and use ECharts for effective data visualization.
+
+<dd>
+
 
 <Tabs>
   <TabItem value="stack-radial" label="Bar Polar Stack Radial" default>
@@ -88,115 +242,9 @@ Add the following code to the **Custom ECharts Configuration** property:
 ```
 
   </TabItem>
-  <TabItem value="Stacked-echarts" label="Stacked Area Chart">
-   
-<figure>
-  <img src="/img/stacked-echart.gif" style= {{width:"700px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-Add the following code to the **Custom ECharts Configuration** property:
-
-   ```js
-   {{
-{
-  tooltip: {
-    trigger: 'axis',
-    axisPointer: {
-      type: 'cross',
-      label: {
-        backgroundColor: '#6a7985'
-      }
-    }
-  },
-  legend: {
-    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
-  },
-  toolbox: {
-    feature: {
-      saveAsImage: {}
-    }
-  },
-  grid: {
-    left: '3%',
-    right: '4%',
-    bottom: '3%',
-    containLabel: true
-  },
-  xAxis: [
-    {
-      type: 'category',
-      boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-    }
-  ],
-  yAxis: [
-    {
-      type: 'value'
-    }
-  ],
-  series: [
-    {
-      name: 'Email',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [120, 132, 101, 134, 90, 230, 210]
-    },
-    {
-      name: 'Union Ads',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [220, 182, 191, 234, 290, 330, 310]
-    },
-    {
-      name: 'Video Ads',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [150, 232, 201, 154, 190, 330, 410]
-    },
-    {
-      name: 'Direct',
-      type: 'line',
-      stack: 'Total',
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [320, 332, 301, 334, 390, 330, 320]
-    },
-    {
-      name: 'Search Engine',
-      type: 'line',
-      stack: 'Total',
-      label: {
-        show: true,
-        position: 'top'
-      },
-      areaStyle: {},
-      emphasis: {
-        focus: 'series'
-      },
-      data: [820, 932, 901, 934, 1290, 1330, 1320]
-    }
-  ]
-}
-}}
-   ```
+ 
 
 
-  </TabItem>
   <TabItem value="3D-ECharts" label="Bar 3D">
 
 <figure>
@@ -289,9 +337,3 @@ To create a 3D Bar chart, it's recommended to use JavaScript objects for definin
 
 </dd>
 
-
-3. In the **Custom ECharts Configuration** property, add the following code to display data:
-
-```js
-  {{JSObject1.data()}}
-```
