@@ -25,7 +25,7 @@ class AISearchButton extends Component {
     render() {
         return (
             <div className='search-link'>
-                <button className='custom-doc-Search-bar' onClick={this.toggleModal}>Ask Appsmith AI</button>
+                <button className='custom-doc-Search-bar hideSearchButtons' onClick={this.toggleModal}>Ask Appsmith AI</button>
                 <AISearchModal
                     show={this.state.isModalOpen}
                     closeModal={this.toggleModal}
