@@ -1,6 +1,7 @@
 ---
-description: A troubleshooting guide to address the common errors of appsmithctl, a backup and restore command-line utility.
+description: appsmithctl is a backup and restore command-line utility. This troubleshooting guide helps to address the common errors encontered while using appsmithctl.
 ---
+
 # Backup and Restore Errors
 
 This guide helps you address common errors encountered while using `appsmithctl`, a command-line utility for backup and restore operations.
@@ -18,7 +19,7 @@ When attempting to execute `appsmithctl` commands, you may face this error even 
 
 ### Cause
 
-This error may occur even if the Appsmith service is running because the Appsmith container wasn't started with the `docker-compose` command, and Appsmith is not registered with Docker Compose which `appsmithctl` commands need.
+This error may occur even if the Appsmith service is up and running because the `docker-compose` command was not used to start the Appsmith container. Hence, Appsmith is not registered with Docker Compose, making it inaccessible while running the`appsmithctl` commands.
 
 ### Solution
 
@@ -29,7 +30,7 @@ To resolve this issue, follow these steps:
 ```bash 
 docker stop appsmith
 ```
-Wait for the container to fully stop before proceeding.
+Wait for the container to stop before proceeding.
 
 2. Go to the directory containing the `docker-compose.yaml` file using the `cd` command :
 
@@ -39,7 +40,7 @@ cd /path/to/docker-compose/directory
 
 Replace `/path/to/docker-compose/directory` with the actual path to the file.
 
-3. Start Appsmith with Docker-Compose with the `docker-compose.yaml` file in the current directory. Instantiate the Appsmith container under with:
+3. Start Appsmith with Docker-Compose using the `docker-compose.yaml` file in the current directory. Run the below command to start the Appsmith container:
 
 ```bash 
 docker-compose up -d
