@@ -351,6 +351,7 @@ const sidebars = {
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            `build-apps/how-to-guides/create-custom-charts`,
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
