@@ -218,10 +218,21 @@ h5 {
 }
 
 .loading-icon-container {
-    margin-top: 10px;
+    margin-top: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.ai-loading-time-info {
+    font-size: 12px;
+    line-height: 10px;
+    font-weight: 400;
+    text-indent: 6px;
+    margin-top: 2px;
+    gap: 4px;
 }
 
 .loading-icon {

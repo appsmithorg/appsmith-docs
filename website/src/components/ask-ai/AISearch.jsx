@@ -173,6 +173,9 @@ const AISearch = forwardRef((props, ref) => {
             {
                 isLoading && <div className='loading-icon-container'>
                     <FaSpinner className='loading-icon' />
+                    <span className='ai-loading-time-info'>
+                        AI generated responses can take upto a minute.
+                    </span>
                 </div>
             }
             <div className='ai-result-container'>
