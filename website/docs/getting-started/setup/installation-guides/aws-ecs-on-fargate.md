@@ -182,14 +182,18 @@ Follow these steps to create and run an ECS service:
   aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
 ```
 
-The `exec` command will be available once the new deployment is active. 2. Exec into the Fargate Appsmith instance with:
+The `exec` command will be available once the new deployment is active. 
+
+2. Exec into the Fargate Appsmith instance with:
 `bash
     aws ecs execute-command --cluster <Cluster Name>
-    --task <Task ID>\
+    --task <Task ID> \
     --container appsmith \
     --interactive \
     --command "bash"
-    ` 3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
+    ` 
+
+3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
 ## Install Appsmith Community
 
