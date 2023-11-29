@@ -1,0 +1,53 @@
+---
+description: A troubleshooting guide to address the common errors of appsmithctl, a backup and restore command-line utility.
+---
+# Backup and Restore Errors
+
+This guide helps you address common errors encountered while using `appsmithctl`, a command-line utility for backup and restore operations.
+
+## Service 'appsmith' is not running container
+
+When attempting to execute `appsmithctl` commands, you may face this error even if the appsmith service is up and running.
+
+### Error Message
+
+<Message
+  messageContainerClassName="error"
+  messageContent="Service 'appsmith' is not running container"
+/>
+
+### Cause
+
+This error may occur even if the Appsmith service is running because the Appsmith container wasn't started with the `docker-compose` command, and Appsmith is not registered with Docker Compose which `appsmithctl` commands need.
+
+### Solution
+
+To resolve this issue, follow these steps:
+
+1. Stop the current Appsmith container with: 
+
+```bash 
+docker stop appsmith
+```
+Wait for the container to fully stop before proceeding.
+
+2. Go to the directory containing the `docker-compose.yaml` file using the `cd` command :
+
+```bash 
+cd /path/to/docker-compose/directory
+```
+
+Replace `/path/to/docker-compose/directory` with the actual path to the file.
+
+3. Start Appsmith with Docker-Compose with the `docker-compose.yaml` file in the current directory. Instantiate the Appsmith container under with:
+
+```bash 
+docker-compose up -d
+```
+The -d flag runs the containers in detached mode, allowing them to run in the background.
+
+After completing these steps, Docker Compose will register the Appsmith container, resolving the error. The `appsmithctl` commands should now work as expected.
+
+## Getting help
+
+If you are unable to resolve your error, please reach out to support via the chat widget on the page.
