@@ -60,7 +60,7 @@ fetchData() {
 },
 ```
 
-The above code fetches and transforms data from `Api1` into an object with space-stripped product names as keys, and corresponding values as arrays.  The transformation logic may vary depending on the structure of the data.
+The above code fetches and transforms data from `Api1` into an object with space-stripped product names as keys, and corresponding values as arrays. The transformation logic may vary depending on the structure of the data.
 
 </dd>
 
