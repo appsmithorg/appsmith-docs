@@ -14,10 +14,12 @@ Follow these steps to configure and display a custom Chart:
 
 1. Drop a Chart widget and select **Custom EChart** from the **Chart type** property.
 
-2. Create a JSObject and define a function within it to fetch data for your Chart.
-
+2. Create a JSObject and define a function within it to fetch data for your Chart. 
 
 <dd>
+
+ECharts typically requires data in a single array format like: `[[x1, y1, z1], [x2, y2, z2], ...]`. However, the data format might vary depending on your specific chart type.
+
 
 *Example:* If you want to create a Stacked Area Chart, define a function and add your data as shown below:
 
