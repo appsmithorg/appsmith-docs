@@ -13,6 +13,9 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
   - Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
   - Add or create a security group with ports 80 and 443 accessible.
 - **Amazon Elastic File System (EFS)** - If you haven't set up an EFS yet, follow these steps:
+  :::danger
+  Do not share the EFS across ECS services, as doing so will cause Appsmith services to crash.
+  :::
   - Go to **AWS EFS** and click the **Create file system** button.
   - Give a meaningful name to your file system and configure VPC.
   - Refresh the file system listing, and select the file system you created above.
