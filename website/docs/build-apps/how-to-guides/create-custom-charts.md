@@ -52,7 +52,7 @@ fetchData() {
   const transformedData = {};
 
   inputData.forEach((item) => {
-    const key = item["Product"].toLowerCase().replace(" ", "");
+    const key = item["Product"].replace(" ", "");
     transformedData[key] = Object.values(item).slice(1, -1).map(Number);
   });
 
@@ -60,7 +60,7 @@ fetchData() {
 },
 ```
 
-The above code fetches and transforms data from `Api1` into an object with lowercase, space-stripped product names as keys, and corresponding values as arrays.  The transformation logic may vary depending on the structure of the data.
+The above code fetches and transforms data from `Api1` into an object with space-stripped product names as keys, and corresponding values as arrays.  The transformation logic may vary depending on the structure of the data.
 
 </dd>
 
