@@ -1,4 +1,4 @@
-# Introduction
+# Overview
 
 One of the key features of Appsmith is the ability to write custom code to enhance the functionality of your applications. This concept document introduces how to write code in Appsmith, the usage of mustache bindings, and the creation and use of functions within JSObjects.
 
