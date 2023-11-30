@@ -1,5 +1,18 @@
 # Insert data using Table 
 
+This page shows how to insert data directly using a Table widget's inline editing feature.
+
+## Prerequisites
+
+A [Table widget](/reference/widgets/table) connected to a query that holds the data you want to update.
+
+
+:::info
+Inline editing is supported for **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox** column types. Custom columns currently do not have this feature.
+:::
+
+## Add new row
+
 To dynamically add new rows to the table, follow these steps:
 
 1. Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.

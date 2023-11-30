@@ -1,6 +1,6 @@
 # Update Data Using Table
 
-This page shows you how to add and edit Table data through inline editing.
+This page shows you how to edit Table data through inline editing.
 
 
 <VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
@@ -8,7 +8,7 @@ This page shows you how to add and edit Table data through inline editing.
 
 ## Prerequisites
 
-* A [Table widget](/reference/widgets/table) connected to a query that holds the data you want to edit and update.
+A [Table widget](/reference/widgets/table) connected to a query that holds the data you want to edit and update.
 
 
 
