@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Plot Chart With Filters
 
-Appsmith offers various types of charts that can help you visualize your data. Charts make it easier to understand data trends and distributions at a glance. This guide shows you how to display and filter built-in Chart data.
+Appsmith offers various types of charts that can help you visualize your data. Charts make it easier to understand data trends and distributions at a glance. This guide shows you how to display and filter built-in charts data.
 
 ## Prerequisites
 A query that contains the data you want to filter.
@@ -42,7 +42,7 @@ If the query data is not in the [expected format](/reference/widgets/chart#serie
   <figcaption align = "center"><i></i></figcaption>
   </figure>  
 
-Learn more about [Chart widget](/reference/widgets/chart).
+Learn more about the [Chart widget](/reference/widgets/chart).
 
 
 
@@ -56,7 +56,7 @@ To filter information based on specific criteria, use widgets like the Datepicke
 
  1. Drop a Select widget, and set the [**Source data**](/reference/widgets/select#source-data-arrayobject) property to display options in the widget. 
 
- 2. Configure the query to fetch data using `selectedOptionValue` reference property, to filter data based on the sselected option in the Select widget.
+ 2. Configure the query to fetch data using `selectedOptionValue` reference property, to filter data based on the selected option in the Select widget.
    
    *Example*: 
    
@@ -65,7 +65,7 @@ To filter information based on specific criteria, use widgets like the Datepicke
    FROM product_location pl
    WHERE pl.product_variant_id = {{Select_product.selectedOptionValue ? Select_product.selectedOptionValue : 147}};
   ```
-  The SQL query fetches product information from the `product_location` table, filtered by a specified product variant ID. The ID is determined dynamically based on the selected option in Select widget, defaulting to `147` if not provided.
+  The SQL query fetches product information from the `product_location` table, filtered by a specified product ID. The ID is determined dynamically based on the selected option in Select widget, defaulting to `147` if not provided.
   
   To configure and filter queries for specific datasources, please refer to the [datasource](/connect-data/reference).
 
@@ -92,7 +92,7 @@ To filter information based on specific criteria, use widgets like the Datepicke
 
 This section shows you how to use the Datepicker widget to filter and view Chart data based on specific date ranges.
 
- 1. Drop two Datepicker widgets to choose a range of dates.
+ 1. Drop two Datepicker widgets to select a date range.
 
  2. Configure the query to fetch data using the [reference properties](/reference/widgets/datepicker#reference-properties) of the Datepicker widget, to retrieve data for selected date.
 
@@ -115,7 +115,7 @@ This section shows you how to use the Datepicker widget to filter and view Chart
    https://yourproduct.api.com/2/searches?index=index&startDate={{DatePicker1.formattedDate}}&endDate={{DatePicker2.formattedDate}}
    ```
    
-   If a specific date format is required, you can use `selectedDate` reference property. To configure and filter queries for specific datasources, please refer to the [datasource](/connect-data/reference).
+   If a specific date format is required, you can use the `selectedDate` reference property. To configure and filter queries for specific datasources, please refer to the [datasource](/connect-data/reference).
   
   </dd>
 
