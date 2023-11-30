@@ -17,7 +17,7 @@ To insert data in a new page, follow these steps:
    ```jsx
    {{ offerCode.setText(location.selectedOptionValue + code) }}
    ```
-   For more information, see [Dynamic data mapping](/reference/widgets/list#dynamic-data-mapping).
+   For more information, see [Bind Data to Wdigets](/core-concepts/building-ui/dynamic-ui).
 
 4. To validate data before inserting, scroll to the **Validation** section in the property pane of the Form widget. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The submit button remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
 5. Select the **Submit** button on the Form, and add an **Action** to the **onClick** property. Select **Execute a query**, and then select your insert query.
