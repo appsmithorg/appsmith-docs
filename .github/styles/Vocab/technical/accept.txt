@@ -1,3 +1,3 @@
 Install Appsmith
 Install Appsmith Community
-onPause
+
