@@ -13,9 +13,9 @@ const sidebars = {
           label: 'Tutorial',
           link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
           items: [
-                'getting-started/tutorials/the-basics/connect-query-display-data',
-                'getting-started/tutorials/the-basics/work-with-data-in-ui',
-                'getting-started/tutorials/the-basics/write-js-code',
+            'getting-started/tutorials/the-basics/connect-query-display-data',
+            'getting-started/tutorials/the-basics/work-with-data-in-ui',
+            'getting-started/tutorials/the-basics/write-js-code',
           ],
         },
 
@@ -257,51 +257,51 @@ const sidebars = {
           label: 'Reference',
           link: { type: 'doc', id: 'connect-data/reference/overview' },
           items: [
-             {
-          type: 'category',
-          collapsed: true,
-          label: 'Datasources',
-          link: { type: 'doc', id: 'connect-data/reference/README' },
-          items: [
-            'connect-data/reference/airtable',
-            'connect-data/reference/querying-arango-db',
-            'connect-data/reference/authenticated-api',
-            'connect-data/reference/curl-import',
-            'connect-data/reference/querying-dynamodb',
-            'connect-data/reference/querying-elasticsearch',
-            'connect-data/reference/querying-firestore',
-            'connect-data/reference/querying-google-sheets',
-            'connect-data/reference/graphql',
-            'connect-data/reference/hubspot',
             {
               type: 'category',
-              label: 'MongoDB',
-              link: {
-                type: 'doc',
-                id: 'connect-data/reference/querying-mongodb/README',
-              },
+              collapsed: true,
+              label: 'Datasources',
+              link: { type: 'doc', id: 'connect-data/reference/README' },
               items: [
-                'connect-data/reference/querying-mongodb/mongo-syntax'
+                'connect-data/reference/airtable',
+                'connect-data/reference/querying-arango-db',
+                'connect-data/reference/authenticated-api',
+                'connect-data/reference/curl-import',
+                'connect-data/reference/querying-dynamodb',
+                'connect-data/reference/querying-elasticsearch',
+                'connect-data/reference/querying-firestore',
+                'connect-data/reference/querying-google-sheets',
+                'connect-data/reference/graphql',
+                'connect-data/reference/hubspot',
+                {
+                  type: 'category',
+                  label: 'MongoDB',
+                  link: {
+                    type: 'doc',
+                    id: 'connect-data/reference/querying-mongodb/README',
+                  },
+                  items: [
+                    'connect-data/reference/querying-mongodb/mongo-syntax'
+                  ],
+                },
+                'connect-data/reference/querying-mssql',
+                'connect-data/reference/querying-mysql',
+                'connect-data/reference/open-ai',
+                'connect-data/reference/querying-oracle',
+                'connect-data/reference/querying-postgres',
+                'connect-data/reference/querying-redis',
+                'connect-data/reference/querying-redshift',
+                'connect-data/reference/rest-api',
+                'connect-data/reference/querying-amazon-s3',
+                'connect-data/reference/querying-snowflake-db',
+                'connect-data/reference/using-smtp',
+                'connect-data/reference/twilio'
+
               ],
             },
-            'connect-data/reference/querying-mssql',
-            'connect-data/reference/querying-mysql',
-            'connect-data/reference/open-ai',
-            'connect-data/reference/querying-oracle',
-            'connect-data/reference/querying-postgres',
-            'connect-data/reference/querying-redis',
-            'connect-data/reference/querying-redshift',
-            'connect-data/reference/rest-api',
-            'connect-data/reference/querying-amazon-s3',
-            'connect-data/reference/querying-snowflake-db',
-            'connect-data/reference/using-smtp',
-            'connect-data/reference/twilio'
-
+            'connect-data/reference/query-settings',
           ],
-        },
-        'connect-data/reference/query-settings',
-      ],
-    }, //Reference End
+        }, //Reference End
         {
           type: 'category',
           collapsed: true,
@@ -352,6 +352,7 @@ const sidebars = {
             'build-apps/how-to-guides/create-drill-down-view',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            `build-apps/how-to-guides/Display-and-filter-chart-data`,
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
@@ -476,61 +477,61 @@ const sidebars = {
           label: 'Reference',
           link: { type: 'doc', id: 'write-code/reference/overview' },
           items: [{
-          type: 'category',
-          collapsed: true,
-          label: 'Global Objects',
-          link: { type: 'doc', id: 'write-code/reference/README' },
-          items: [
+            type: 'category',
+            collapsed: true,
+            label: 'Global Objects',
+            link: { type: 'doc', id: 'write-code/reference/README' },
+            items: [
               'reference/appsmith-framework/query-object',
               'reference/appsmith-framework/context-object',
               'reference/appsmith-framework/console-object',
             ],
           },
-            {
-              type: 'category',
-              label: 'Global Functions',
-              link: {
-                type: 'doc',
-                id: 'reference/appsmith-framework/widget-actions/README',
-              },
-              items: [
-                'reference/appsmith-framework/widget-actions/navigate-to',
-                'reference/appsmith-framework/widget-actions/show-alert',
-                'reference/appsmith-framework/widget-actions/show-modal',
-                'reference/appsmith-framework/widget-actions/close-modal',
-                'reference/appsmith-framework/widget-actions/store-value',
-                'reference/appsmith-framework/widget-actions/remove-value',
-                'reference/appsmith-framework/widget-actions/clear-store',
-                'reference/appsmith-framework/widget-actions/download',
-                'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-                'reference/appsmith-framework/widget-actions/reset-widget',
-                'reference/appsmith-framework/widget-actions/intervals-time-events',
-                'reference/appsmith-framework/widget-actions/clear-interval',
-                'reference/appsmith-framework/widget-actions/set-timeout',
-                'reference/appsmith-framework/widget-actions/post-message',
-                'reference/appsmith-framework/widget-actions/window-message-listener',
-                'reference/appsmith-framework/widget-actions/unlisten-window-message'
-
-              ]
+          {
+            type: 'category',
+            label: 'Global Functions',
+            link: {
+              type: 'doc',
+              id: 'reference/appsmith-framework/widget-actions/README',
             },
+            items: [
+              'reference/appsmith-framework/widget-actions/navigate-to',
+              'reference/appsmith-framework/widget-actions/show-alert',
+              'reference/appsmith-framework/widget-actions/show-modal',
+              'reference/appsmith-framework/widget-actions/close-modal',
+              'reference/appsmith-framework/widget-actions/store-value',
+              'reference/appsmith-framework/widget-actions/remove-value',
+              'reference/appsmith-framework/widget-actions/clear-store',
+              'reference/appsmith-framework/widget-actions/download',
+              'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+              'reference/appsmith-framework/widget-actions/reset-widget',
+              'reference/appsmith-framework/widget-actions/intervals-time-events',
+              'reference/appsmith-framework/widget-actions/clear-interval',
+              'reference/appsmith-framework/widget-actions/set-timeout',
+              'reference/appsmith-framework/widget-actions/post-message',
+              'reference/appsmith-framework/widget-actions/window-message-listener',
+              'reference/appsmith-framework/widget-actions/unlisten-window-message'
+
+            ]
+          },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
 
-      ],
-    }, //Reference End
-    {
-      type: 'category',
-      collapsed: true,
-      label: 'Concepts',
-      link: {
-        type: 'doc',
-        id: 'write-code/concepts/overview',
-      },
-      items: [
-        'core-concepts/writing-code/javascript-editor-beta/README',
-        'write-code/concepts/execute-onpageload',
-      ],
-    }
+          ],
+        }, //Reference End
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: {
+            type: 'doc',
+            id: 'write-code/concepts/overview',
+          },
+          items: [
+            'core-concepts/writing-code/javascript-editor-beta/README',
+            'write-code/concepts/execute-onpageload',
+          ],
+        }
       ]
     }, //CODE end
 
@@ -601,7 +602,8 @@ const sidebars = {
           items: [
             "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
             "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
-            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error"
+            "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error",
+            "help-and-support/troubleshooting-guide/backup-restore-errors"
           ],
         },
         {
