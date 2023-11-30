@@ -4,7 +4,7 @@ description: This page shows you how to insert data in Appsmith.
 ---
 # Insert Data
 
-This guide shows you how to insert data into a datasource using the Form widget in a new page and a Modal. It explains steps to bind data to widgets, validate user input, and configure query.
+This guide shows you how to insert data into a datasource using the Form widget on a new page and a Modal. It explains steps to bind data to widgets, validate user input, and configure queries.
 
 ## Using new page
 To insert data in a new page, follow these steps:
@@ -12,11 +12,13 @@ To insert data in a new page, follow these steps:
    For more information, see [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to).
 2. In the new page, create a Form widget to capture the details you want to insert.
 3. You can update fields dynamically by setting the events of the widgets to bind data to other fields in the Form.
-   For example, to set the `offerCode` based on the selection of `location` for a new offer use the following code:
+   Example:
 
    ```jsx
    {{ offerCode.setText(location.selectedOptionValue + code) }}
    ```
+   Here, the selection of `location` sets the selection of `offerCode`.
+
    For more information, see [Bind Data to Wdigets](/core-concepts/building-ui/dynamic-ui).
 
 4. To validate data before inserting, scroll to the **Validation** section in the property pane of the Form widget. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The submit button remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
