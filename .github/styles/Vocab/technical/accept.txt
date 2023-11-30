@@ -1,2 +1,4 @@
 Install Appsmith
 Install Appsmith Community
+Table
+List
