@@ -1,4 +1,4 @@
-# Introduction
+# Overview
 
 Appsmith is a low-code development platform that enables the rapid creation of web applications through an architecture that supports reactive bindings and MVC-like separation. The platform revolves around widgets, datasources, queries, and JavaScript, each serving a unique role in the application's structure.
 

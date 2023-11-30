@@ -35,18 +35,26 @@ To downgrade Appsmith to v1.8.15, follow these steps:
 
 - For the Community Edition:
 
-  yaml services: appsmith: image: index.docker.io/appsmith/appsmith-ce:v1.8.15 container_name: appsmith
+```yaml 
+services: 
+  appsmith: 
+    image: index.docker.io/appsmith/appsmith-ce:v1.8.15 
+    container_name: appsmith
+```
 
 - For the Commercial Edition:
 
-  yaml services: appsmith: image: index.docker.io/appsmith/appsmith-ee:v1.8.15 container_name: appsmith
-
-<!-- -->
+```yaml 
+services: 
+  appsmith: 
+    image: index.docker.io/appsmith/appsmith-ee:v1.8.15 
+    container_name: appsmith
+```
 
 2. Restart the services by executing:
 
-   bash docker-compose up -d
-
-<!-- -->
+```bash 
+docker-compose up -d
+```
 
 Initiating the services with the downgraded version of Appsmith will apply the necessary schema adjustments to your instance.
