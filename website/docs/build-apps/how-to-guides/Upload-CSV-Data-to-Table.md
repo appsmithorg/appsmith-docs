@@ -1,10 +1,10 @@
 ---
-description: This page shows you how to bulk insert CSV data using a Filepicker widget.
+description: This page shows you how to insert CSV data using a Filepicker widget.
 ---
 
 # Insert CSV Data
 
-This page shows you how to bulk insert CSV data using a Filepicker widget.
+This guide walks you through the process of inserting multiple rows into a datasource using CSV data uploaded through the Filepicker widget.
 
 ## Prerequisites
 * A connected datasource to insert data. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
@@ -34,22 +34,24 @@ To insert multiple rows using CSV data and a Filepicker widget, follow these ste
    Column details in the CSV should match the column details in the datasource. Appsmith does not insert data for a mismatched column.
    :::
 
-  3. You can format the data within the JSON before inserting it into the datasource. For example, to format all the dates within the JSON array of objects, use the following code where `dob` is the date of birth of a user:
+  1. You can format the data within the JSON before inserting it into the datasource. 
+     Here is an example of a JS object that formats `dob` using Moment.js and concatenates the `name` and `lastname` to populate the name of users:
      
      ```jsx
      	async myFun2 () {
 		      let users = user_details.files[0].data;
 		      Object.keys(users).forEach(function(key) {
-			      users[key]["dob"] = moment(users[key]["dob"]).format('MMMM DD YYYY, h:mm:ss a');		
+			      users[key]["dob"] = moment(users[key]["dob"]).format('MMMM DD YYYY, h:mm:ss a');
+               users[key]["name"] = users[key]["name"] + users[key]["lastname"];		
      })
      ```
      You can then use this JSON object to insert data.
-  4. In the Filepicker widget's property pane, set the **onFileSelected** event to run the query to insert multiple records. For example:
+  1. In the Filepicker widget's property pane, set the **onFileSelected** event to run the query to insert multiple records. For example:
      
      ```jsx
      {{insert_users.run()}}
      ```
-  5. In **Callbacks**, add actions in **On success** to **Show alert** and **Reset widget** after data insertion.
-  6. To test, click the Filepicker widget and upload a CSV file.
+  2. In **Callbacks**, add actions in **On success** to **Show alert** and **Reset widget** after data insertion.
+  3. To test, click the Filepicker widget and upload a CSV file.
      
 For sample apps to bulk insert data in different datasources, see [PostgreSQL](/learning-and-resources/sample-apps?current-sample-app-type=datasources#postgresql), [MongoDB](/learning-and-resources/sample-apps?current-sample-app-type=datasources#mongodb), [Snowflake](/learning-and-resources/sample-apps?current-sample-app-type=datasources#snowflake).
