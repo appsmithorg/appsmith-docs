@@ -7,6 +7,7 @@ export default function FooterWrapper(props) {
     <>
     <div className="footerWrapper">
       <FeedbackWidget/>
+      <Footer/>
     </div>
     </>
   );
