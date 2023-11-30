@@ -331,8 +331,6 @@ const sidebars = {
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             'core-concepts/building-ui/dynamic-ui/README',
-            'build-apps/how-to-guides/insert-data',
-            'build-apps/how-to-guides/submit-form-data',
             {
               type: 'category',
               label: 'Display and Lookup Table Data',
@@ -345,6 +343,8 @@ const sidebars = {
                 'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
+            'build-apps/how-to-guides/insert-data',
+            'build-apps/how-to-guides/submit-form-data',
             'reference/widgets/table/inline-editing',
             'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
