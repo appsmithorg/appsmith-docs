@@ -32,7 +32,7 @@ Enable inline editing by checking the **Editable** checkbox for the desired colu
 To update a single row, follow these steps:
 
 
-1. Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
+1. Select **Single row** from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
 
 2. Create a new query that uses the `updatedRow` reference property to update the relevant data.
 
