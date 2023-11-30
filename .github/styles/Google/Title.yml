@@ -1,23 +1,6 @@
 extends: capitalization
 message: "'%s' should be in title case"
 level: warning
-# Could be `heading.h2`, `heading.h3`, etc.
 scope: heading.h1
 match: $title
-exceptions:
-  - k8s 
-  - is
-  - to
-  - clipboard
-  - from
-  - removeValue()
-  - clearStore()
-  - closeModal()
-  - copyToClipboard()
-  - resetWidget()
-  - download()
-  - copyToClipboard()
-  - showModal()
-  - console
-  - appsmith
-  - query
+style: Chicago
