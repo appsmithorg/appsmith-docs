@@ -2,14 +2,13 @@
 description: This page shows you how to bulk insert CSV data using a Filepicker widget.
 ---
 
-# Bulk Insert CSV Data
+# Insert CSV Data
 
 This page shows you how to bulk insert CSV data using a Filepicker widget.
 
 ## Prerequisites
 
 * A connected datasource to insert data. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
-* A [Filepicker](/reference/widgets/filepicker) widget to upload files.
 
 ## Insert multiple rows using CSV data
 To insert multiple rows using CSV data and a Filepicker widget, follow these steps:
@@ -30,7 +29,7 @@ To insert multiple rows using CSV data and a Filepicker widget, follow these ste
       country
       FROM json_populate_recordset(null::users, '{{user_details.files[0].data}}');
    ```
-   Appsmith automatically parses the CSV file and converts the data to JSON format. This example uses [json_populate_recordset](https://www.postgresql.org/docs/current/functions-json.html) function to the JSON array to a set of specified SQL-typed values.
+   Appsmith automatically parses the CSV file and converts the data to JSON format. This example uses [json_populate_recordset](https://www.postgresql.org/docs/current/functions-json.html) PostgreSQL function to convert the JSON array to a set of specified SQL-typed values.
    
    :::caution important
    Column details in the CSV should match the column details in the datasource. Appsmith does not insert data for a mismatched column.
@@ -54,10 +53,7 @@ To insert multiple rows using CSV data and a Filepicker widget, follow these ste
   5. In **Callbacks**, add actions in **On success** to **Show alert** and **Reset widget** after data insertion.
   6. To test, click the Filepicker widget and upload a CSV file.
      
-For sample apps to bulk insert data in different datasources, see:
-* [PostgreSQL](/learning-and-resources/sample-apps?current-sample-app-type=datasources#postgresql)
-* [MongoDB](/learning-and-resources/sample-apps?current-sample-app-type=datasources#mongodb)
-* [Snowflake](/learning-and-resources/sample-apps?current-sample-app-type=datasources#snowflake)
+For sample apps to bulk insert data in different datasources, see [PostgreSQL](/learning-and-resources/sample-apps?current-sample-app-type=datasources#postgresql), [MongoDB](/learning-and-resources/sample-apps?current-sample-app-type=datasources#mongodb), [Snowflake](/learning-and-resources/sample-apps?current-sample-app-type=datasources#snowflake).
 
 
 
