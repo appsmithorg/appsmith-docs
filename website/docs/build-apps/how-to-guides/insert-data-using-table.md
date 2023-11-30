@@ -1,4 +1,4 @@
-# Insert data using Table Inline Editing 
+# Insert data using Table 
 
 To dynamically add new rows to the table, follow these steps:
 

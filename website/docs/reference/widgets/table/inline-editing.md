@@ -1,4 +1,4 @@
-# Update Data Using Table Inline Editing
+# Update Data Using Table
 
 This page shows you how to add and edit Table data through inline editing.
 
