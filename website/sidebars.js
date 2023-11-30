@@ -352,6 +352,7 @@ const sidebars = {
             'build-apps/how-to-guides/create-drill-down-view',
             'build-apps/how-to-guides/Create-Nested-Lists',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            `build-apps/how-to-guides/Display-and-filter-chart-data`,
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
