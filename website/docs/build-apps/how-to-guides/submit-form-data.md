@@ -1,7 +1,7 @@
 ---
 description: This page shows you how to display a master-detail form and update table data using a JSON form and Form widget.
 ---
-# Update Form data in Modal
+# Update data
 
 This page shows how to update table data using the Form and Modal widgets.
 

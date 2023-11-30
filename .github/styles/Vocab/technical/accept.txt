@@ -3,3 +3,6 @@ Install Appsmith Community
 ECS
 EFS
 Appsmith
+Table
+List
+
