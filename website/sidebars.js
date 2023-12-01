@@ -347,7 +347,6 @@ const sidebars = {
             'build-apps/how-to-guides/insert-data',
             'build-apps/how-to-guides/submit-form-data',
             'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/refresh-table-data',
             'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/create-drill-down-view',

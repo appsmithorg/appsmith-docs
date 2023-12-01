@@ -8,7 +8,7 @@ This page shows how to update table data using the Form and Modal widgets.
 
 ## Prerequisites
 
-A [Table widget](/reference/widgets/table#table-data-arrayobject) connected to a fetch query. To connect data to a table, see the [Bind Data to Widgets guide](/core-concepts/building-ui/dynamic-ui) guide.
+A Table widget connected to a fetch query. To connect data to a table, see the [Bind Data to Widgets guide](/core-concepts/building-ui/dynamic-ui) guide.
 
 
 
@@ -18,13 +18,13 @@ A [Table widget](/reference/widgets/table#table-data-arrayobject) connected to
 This section guides you on how to open a Modal by clicking a button in a Table and configure a Form inside the Modal.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/aeKJ95XYVW3u3Bxs35vy?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/LmzO2gx2KzE4UZIjyC54?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 1. To open a Modal based on Table row selection, select **Add a new column** and then click on the gear icon ⚙️ from the column's properties pane.
 
-2. Set the [**Column type**](/reference/widgets/table/column-settings#properties) as a Button and set the **onClick** event to show the Modal. If you want the Edit column to be visible at all times, you can use the **Column freeze** property to freeze the column.
+2. Set the **Column type** as a Button and set the **onClick** event to show the Modal. If you want the Edit column to be visible at all times, you can use the **Column freeze** property to freeze the column.
 
 
 :::info
@@ -33,7 +33,7 @@ Modal widget remains hidden on the canvas and becomes visible only when an event
 
 3. You can access and edit the Modal widget from the entity explorer.
 
-4. Drag a [Form](/reference/widgets/form) or a [JSON Form](/reference/widgets/json-form) widget within the Modal, and add the required widgets. If you prefer a custom UI, use the Form widget; for a basic form setup, use the JSON Form. Additionally, you can configure the appearance of the form using the styles properties.
+4. Drag a Form or a JSON Form widget within the Modal, and add the required widgets. If you prefer a custom UI, use the Form widget; for a basic form setup, use the JSON Form. Additionally, you can configure the appearance of the form using the styles properties.
 
 5. To display data from the triggered row in the table, connect the data to the widget's **Default value** property using mustache syntax `{{}}`:
 
@@ -65,7 +65,7 @@ See [validation examples](/reference/widgets/input#regex-string) for the Input w
 </dd>
 
 
-2. Create an update query using the `data` [reference property](/reference/widgets/form#data-object) of the Form widget and [triggered row](/reference/widgets/table#triggeredrow-object) property of the Table widget.
+2. Create an update query using the `data` reference property of the Form widget and triggered row property of the Table widget.
 
 <dd>
 
@@ -112,6 +112,8 @@ When data is updated in a datasource, the Table widget does not automatically re
 </div>
 
 
+
+If you want to update data directly from the Table, see [Table Inline Editing](/reference/widgets/table/inline-editing).
 
 
 
