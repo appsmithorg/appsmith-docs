@@ -68,10 +68,6 @@ In the **User pools** pane, select the user pool you created in the preceding st
 
 ## Setup Cognito SSO on Appsmith
 
-:::info
-If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
-:::
-
 On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, click **Enable** and follow the steps below:
 
 ![](/img/Appsmith_OIDC_creds.png)
