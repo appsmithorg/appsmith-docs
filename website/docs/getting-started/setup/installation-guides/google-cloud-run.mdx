@@ -104,13 +104,13 @@ Follow these steps to install Appsmith on Google Cloud Run:
 
    | Name                                   | Value                                                                                                                                                                                                                                                 |
    | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | **FILESTORE_IP_ADDRESS**               | The IP address you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites).                                                                                                                                           |
-   | **FILE_SHARE_NAME**                    | The file share name you noted down in step for creating a Filestore instance in [Prerequisites]](#prereuisites).                                                                                                                                      |
+   | **FILESTORE_IP_ADDRESS**               | The IP address you noted down in step for creating a Filestore instance in [Prerequisites](#prerequisites).                                                                                                                                           |
+   | **FILE_SHARE_NAME**                    | The file share name you noted down in step for creating a Filestore instance in [Prerequisites](#prerequisites).                                                                                                                                      |
    | **APPSMITH_MONGODB_URI**               | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]` |
    | **APPSMITH_ENCRYPTION_SALT**           | Specify an encryption salt to encrypt values in the database.                                                                                                                                                                                         |
    | **APPSMITH_ENCRYPTION_PASSWORD**       | Specify an encryption password to encrypt values in the database.                                                                                                                                                                                     |
    | **APPSMITH_ENABLE_EMBEDDED_DB**        | `0`                                                                                                                                                                                                                                                   |
-   | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | 1                                                                                                                                                                                                                                                     |
+   | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | `1`                                                                                                                                                                                                                                                   |
 
 10. Click the Networking tab.
     - In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.
@@ -122,7 +122,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating a service in step 2 of the [Install Appsmith](#install-appsmith) section on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating a service in step 3 of the [Install Appsmith](#install-appsmith) section on this page.
 
 ## Troubleshooting
 
