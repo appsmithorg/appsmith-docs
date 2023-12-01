@@ -1,3 +1,6 @@
+Install Appsmith
+Install Appsmith Community
+disable
 Install 
 Community
 Table
@@ -10,3 +13,4 @@ Cognito
 SSO
 Okta
 Ping Identity
+
