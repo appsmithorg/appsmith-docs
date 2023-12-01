@@ -12,33 +12,58 @@ This guide shows you how to initiate and manage UI workflows, allowing you to ex
 
 ## Execute actions in a specific order
 
-To execute actions in a specific order, you can chain them using action selector. You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in a series. Additionally, for more complex workflows, you can enable *JS* next to events.
+There is an event listener associated with every widget that can be configured to perform various actions. To execute actions in a specific order, you can chain them using the action selector. You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in a series. 
+
+1. In the event property, click the **+** icon and select the action you want to execute. For instance, set the Submit Button's **onClick** event to execute a update query.
+
+2. Set the **onSuccess** callback to perform additional actions upon successful completion of the specified action. For instance, you can use the **onSuccess** callback to execute a fetch query or to close the Modal.
+
+3. To set up multiple **onSuccess** callbacks, click the **+** icon within the callback configuration, and select the desired actions.
+
+
+
+<dd>
+
+Additionally, you can enable *JS* next to events and add your code, like:
+
+*Example:* 
+
+```js
+{{update_query.run().then(() => {
+  fetch_query.run();
+  closeModal('Modal1');
+});}}
+```
+</dd>
+
+Learn more about [Global Functions](/reference/appsmith-framework/widget-actions).
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/6P4Z76FkgQ5LNXW3Oa5n?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/aP6NLTwiJTsGCmhDhnQM?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
+
+
+
 <p></p>
 
-
-*Example:*  if you want to display a confirmation popup when the submit button of a Form is clicked. Once the user confirms the popup, you want to execute an update query, followed by a fetch query.
-
-1. Set the Submit Button's **onClick** event to open a Modal. Inside the modal, add relevant widgets such as text or checkbox.
-
-2. Set the Modal's Submit Button's **onClick** event to execute the update query.
-
-3. Set the **onSuccess** callback to trigger the fetch query, which retrieves the updated data and displays it in the Table.
-
-4. Create a new **onSuccess** callback by clicking the **+** icon and set it to close the Modal.
-
-With this configuration, the action is executed only when a query or action is successful.
 
 
 
 ## Execute actions in parallel 
 
-To execute actions in parallel, you can add multiple action selectors for a specific event. Additionally, for more complex workflows, you can enable *JS* next to events.
+To execute actions in parallel, you can add multiple action selectors for a specific event. 
+
+1. In the event property, click the **+** icon and select the action you want to execute. For instance, set the Submit Button's **onClick** event to execute a status change query.
+
+2. Create a new **onClick** event by clicking the **+** icon and set it to execute another action. For instance, set it to run a query that logs the status change.
+
+
+
+You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in parallel. 
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/weQmsVxt589vcXiLGTdc?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -50,16 +75,6 @@ To execute actions in parallel, you can add multiple action selectors for a spec
 
 
 
-*Example:* When updating a user's ticket in a support application, you want to update the database and send an email to notify them.
-
-1. Set the Button's **onClick** event to execute the update query, to update the database.
-
-2. Create a new **onClick** event by clicking the **+** icon and set it to run the email query. 
-
-
-With this configuration, all actions are executed at the same time, regardless of whether individual queries are successful or unsuccessful.
-
-
 
 
 
@@ -68,39 +83,79 @@ With this configuration, all actions are executed at the same time, regardless o
 
 This section covers conditional query execution, allowing queries to be executed based on user input or based on the results of previous queries. You can enable *JS* next to the event and add your code. 
 
-:::note
-It is recommended to use JSObject when writing custom expressions to ensure proper handling of JavaScript logic.
-:::
 
-**Based on user input**
+#### Based on user input
 
 *Example:* If you are working with an e-commerce app where users can filter products based on their preferences. You can conditionally execute queries to fetch products that match the selected category, price range, or brand. This example shows how the queries execute conditionally based on the option selected in the Select widget.
 
 ```javascript
 {{
-  Query_Selector.selectedOptionValue === 'Categories' ? fetchCategories.run() : fetchProducts.run();
+  Select_Category.selectedOptionValue === 'Categories' ? fetchCategories.run() : fetchProducts.run();
 }}
 ```
 
 In the above code, if the selected option is Categories, it triggers the `fetchCategories` query; otherwise, it runs the `fetchProducts` query.
 
-**Based on query response**
+#### Based on query response
 
-If you want to execute a query based on the response from another query, you can enable *JS* and add your JS Code.
+If you want to execute a action based on the response from another query, you can enable *JS* and add your JS Code.  Alternatively, you can create a JSObject and define a JavaScript function for the desired logic.
 
 
- *Example:* if you have a Select widget for status, and if the user selects `Pending`, this configuration executes the `fetchPendingUsers` query.  Upon completion,  it checks if there are no pending users and shows a relevant alert. If there are pending users, it shows a success alert. If the status is not `Pending`, execute the `fetchApprovedUsers` query.
+1. Create a JSobject and add the code. 
+
+<dd>
+
+ *Example:* When the user selects Pending from the status dropdown, the system triggers a `fetchPendingUsers`'query. Subsequently, it displays a relevant alert based on whether there are pending users or not. 
 
 ```javascript
-{{ 
-  statusDropdown.selectedOptionValue === "Pending" ?
-      fetchPendingUsers.run(() => {
-          fetchPendingUsers.data.length === 0 
-         ? showAlert("No Users Pending Approval", "info") 
-          : showAlert("Fetched Users", "success");
-      }) 
-      : fetchApprovedUsers.run();
+function fetchData() {
+  if (statusDropdown.selectedOptionValue === "Pending") {
+    fetchPendingUsers.run(() => {
+      if (fetchPendingUsers.data.length === 0) {
+        showAlert("No Users Pending Approval", "info");
+      } else {
+        showAlert("Fetched Users", "success");
+      }
+    });
+  } else {
+    fetchApprovedUsers.run();
+  }
+}
+```
+
+</dd>
+
+2. In the event property, enable JS and call the JS function, like:
+
+<dd>
+
+```js
+{{JSObject1.fetchData();}}
+```
+
+</dd>
+
+#### Disable action
+
+To disable an action based on specific criteria, you can use *JS* in the Disabled property of the widget.
+
+<dd>
+
+*Example*: If specific criteria are not met, you want to disable the Refund button on the customer dashboard. Enable *JS* for **Disabled** property, and add:
+
+
+```js
+{{
+  lst_orderHistory.triggeredItem.payment_method === 'Cash On Delivery' ||
+  lst_orderHistory.triggeredItem.delivery_status === "Canceled" ||
+  lst_orderHistory.triggeredItem.refund >= lst_orderHistory.triggeredItem.amount
 }}
 ```
+
+This code determines whether to disable the Refund button on the customer dashboard based on conditions related to payment method, delivery status, and refund amount.
+
+</dd>
+
+
 
 See [how to pass parameters at runtime](/connect-data/concepts/dynamic-queries#passing-parameters-at-runtime-using-run).
