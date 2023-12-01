@@ -1,3 +1,16 @@
 Install Appsmith
 Install Appsmith Community
 disable
+Install 
+Community
+Table
+List
+Active
+Directory
+Auth0
+Appsmith
+Cognito
+SSO
+Okta
+Ping Identity
+

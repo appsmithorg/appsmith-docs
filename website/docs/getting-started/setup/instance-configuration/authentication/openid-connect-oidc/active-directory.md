@@ -88,10 +88,6 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
 ## Register Active Directory in Appsmith
 
-:::info
-If you are running Appsmith on Google Cloud Run, make sure to configure your service before setting up SSO. For detailed instructions, see the [Configure Google Cloud Run for SSO](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso) guide.
-:::
-
 To complete the OIDC configuration, you have to register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the  **Application (client) ID** copied from the Active Directory application in the  **Client ID** field. 

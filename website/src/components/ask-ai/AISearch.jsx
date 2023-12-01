@@ -13,13 +13,14 @@ const AISearch = forwardRef((props, ref) => {
     const [showExamples, setShowExamples] = useState(true);
     const [isAnswerComplete, setIsAnswerComplete] = useState(false);
     const [termSelected, setTermSelected] = useState(false);
+    const [userSearchTerm, setUserSearchTerm] = useState('');
 
     const commonSearchQueries = [
-        "How do I setup appsmith?",
-        "How do I connect to my local database?",
-        "How can I send parameters to my query?",
-        "How can I transform my query response?",
-        "How can I trigger multiple queries conditionally?"
+        "How do I install Appsmith using docker?",
+        "How do I connect to my local PostgreSQL database?",
+        "How do I pass inputs from a widget to a query?",
+        "How do I trigger multiple queries conditionally?",
+        "How do I fix the error: This value does not evaluate to type Array<Object>?"
     ];
 
     const resetState = () => {
@@ -72,6 +73,7 @@ const AISearch = forwardRef((props, ref) => {
         setSearchTerm(query);
         setShowExamples(false);
         setIsAnswerComplete(false);
+        setUserSearchTerm(query);
 
         try {
             const apiUrl = "https://hook.eu1.make.com/zw41brw94vfiwuue91riqmoe2ms2nhf6";
@@ -206,7 +208,7 @@ const AISearch = forwardRef((props, ref) => {
                     </div>
 
                 }
-                {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={searchTerm} generatedAnswer={answer} />}
+                {isAnswerComplete && <FeedbackWidget isCalledFromAISearch={true} userTerm={userSearchTerm} generatedAnswer={answer} />}
             </div>
         </div>
 
