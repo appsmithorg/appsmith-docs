@@ -8,7 +8,7 @@ toc_max_heading_level: 5
 
 # Trigger UI Workflow
 
-This guide shows you how to initiate and manage UI workflows, allowing you to execute multiple queries and functions for enhanced application functionality.
+This guide shows you how to initiate and manage UI workflows, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors. 
 
 ## Execute actions in a specific order
 
@@ -60,13 +60,27 @@ To execute actions in parallel, you can add multiple action selectors for a spec
 
 2. Create a new **onClick** event by clicking the **+** icon and set it to execute another action. For instance, set it to run a query that logs the status change.
 
+<dd>
+
+Additionally, you can enable *JS* next to events and add your code, like:
+
+*Example:* 
+
+```js
+{{update_status.run();
+log_status.run();
+showAlert('Update Success', 'success');}}
+```
+
+</dd>
+
 
 
 You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in parallel. 
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/weQmsVxt589vcXiLGTdc?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/TwqJvpTW4EMHkHIM1GnZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -86,7 +100,7 @@ This section covers conditional query execution, allowing queries to be executed
 
 #### Based on user input
 
-*Example:* If you are working with an e-commerce app where users can filter products based on their preferences. You can conditionally execute queries to fetch products that match the selected category, price range, or brand. This example shows how the queries execute conditionally based on the option selected in the Select widget.
+*Example:* If you want to conditionally queries execute based on the option selected in the Select widget.
 
 ```javascript
 {{
@@ -137,7 +151,7 @@ function fetchData() {
 
 #### Disable action
 
-To disable an action based on specific criteria, you can use *JS* in the Disabled property of the widget.
+To disable an action based on specific criteria, you can use *JS* in the **Disabled** property of the widget.
 
 <dd>
 
