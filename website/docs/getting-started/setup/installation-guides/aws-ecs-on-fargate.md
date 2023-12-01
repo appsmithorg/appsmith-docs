@@ -13,6 +13,9 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
   - Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
   - Add or create a security group with ports 80 and 443 accessible.
 - **Amazon Elastic File System (EFS)** - If you haven't set up an EFS yet, follow these steps:
+  :::danger
+  Do not share the EFS across ECS services, as doing so will cause Appsmith services to crash.
+  :::
   - Go to **AWS EFS** and click the **Create file system** button.
   - Give a meaningful name to your file system and configure VPC.
   - Refresh the file system listing, and select the file system you created above.
@@ -100,7 +103,7 @@ Follow these steps to create task and container definitions for your cluster:
    - **File System ID** - EFS file system created in the [Prerequisites](#prerequisites) section.
    - Keep the default values for the remaining fields.
    - Click **Add** button.
-10. Scroll up to configure the Appsmith container. <a id="container-definition-ecs"></a>
+10. Scroll up to configure the Appsmith container.
     - Click the **Add container** button.
     - In the **STANDARD** section, provide details as below:
       - **Container Name** - Give a meaningful name to the container.
@@ -182,18 +185,22 @@ Follow these steps to create and run an ECS service:
   aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
 ```
 
-The `exec` command will be available once the new deployment is active. 2. Exec into the Fargate Appsmith instance with:
+The `exec` command will be available once the new deployment is active. 
+
+2. Exec into the Fargate Appsmith instance with:
 `bash
     aws ecs execute-command --cluster <Cluster Name>
-    --task <Task ID>\
+    --task <Task ID> \
     --container appsmith \
     --interactive \
     --command "bash"
-    ` 3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
+    ` 
+
+3. Once you can access the bash shell, you can execute all commands available in the Appsmith container, like [appsmithctl](/getting-started/setup/instance-management/appsmithctl).
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 10 of the [Install Appsmith](#install-appsmith) section on this page.
 
 ## Troubleshooting
 

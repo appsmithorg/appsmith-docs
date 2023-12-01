@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import AISearch from '@site/src/components/ask-ai/AISearch';
 import './css/AISearch.css';
 
@@ -14,18 +15,20 @@ const AISearchModal = ({ show, closeModal }) => {
 
 
     useEffect(() => {
-        const checkIfClickedOutside = (e) => {
-            if (modalRef.current && !modalRef.current.contains(e.target) && show) {
-                handleResetModal();
-                closeModal();
-            }
-        };
+        if (ExecutionEnvironment.canUseDOM) {
+            const checkIfClickedOutside = (e) => {
+                if (modalRef.current && !modalRef.current.contains(e.target) && show) {
+                    handleResetModal();
+                    closeModal();
+                }
+            };
 
-        document.addEventListener('mousedown', checkIfClickedOutside);
+            document.addEventListener('mousedown', checkIfClickedOutside);
 
-        return () => {
-            document.removeEventListener('mousedown', checkIfClickedOutside);
-        };
+            return () => {
+                document.removeEventListener('mousedown', checkIfClickedOutside);
+            };
+        }
     }, [show, closeModal]);
 
     return (

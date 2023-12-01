@@ -100,7 +100,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 11. Click **Add container** button.
 
-12. Add container definition as shown below: <a id="container-definition-ecs"></a>
+12. Add container definition as shown below:
 
     | Attribute               | Value                                        |
     | ----------------------- | -------------------------------------------- |
@@ -171,7 +171,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the [container definition](#container-definition-ecs) on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 12 of the [Install Appsmith](#install-appsmith) section on this page.
 
 ## Troubleshooting
 

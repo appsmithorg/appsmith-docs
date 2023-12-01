@@ -1,7 +1,5 @@
 # Air-gapped Instance
 
-## Introduction
-
 In the context of Appsmith, air-gapped instances are addressed to a niche category of users operating within highly regulated industries or scenarios that necessitate the absolute isolation of the server from any external internet connectivity. This concept document provides an overview of air-gapped instances, reasons for their necessity, functionalities affected by such an environment, and guidance on setup and maintenance.
 
 ## The necessity of air-gapping
