@@ -101,7 +101,7 @@ In the above code, if the selected option is Categories, it triggers the `fetchC
 If you want to execute a action based on the response from another query, you can enable *JS* and add your JS Code.  Alternatively, you can create a JSObject and define a JavaScript function for the desired logic.
 
 
-1. Create a JSobject and add the code. 
+1. Create a JSObject and define a function to execute custom JavaScript logic.
 
 <dd>
 
