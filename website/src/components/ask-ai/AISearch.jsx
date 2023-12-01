@@ -17,9 +17,9 @@ const AISearch = forwardRef((props, ref) => {
 
     const commonSearchQueries = [
         "How do I install Appsmith using docker?",
-        "How do I connect to my local PostgreSQL database ?",
-        "How do I pass inputs from a widget to a query ?",
-        "How do I trigger multiple queries conditionally ?",
+        "How do I connect to my local PostgreSQL database?",
+        "How do I pass inputs from a widget to a query?",
+        "How do I trigger multiple queries conditionally?",
         "How do I fix the error: This value does not evaluate to type Array<Object>?"
     ];
 
