@@ -21,7 +21,7 @@ Follow these steps to configure and display a custom Chart:
 2. Select the EChart type from the [ECharts documentation](https://echarts.apache.org/examples/en/index.html).
 
 
-2. Create a JSObject and define a function within it to fetch data for your Chart. 
+3. Create a JSObject and define a function within it to fetch data for your Chart. 
 
 <dd>
 
@@ -73,7 +73,7 @@ The above code fetches and transforms data from `Api1` into an object with space
 
 </dd>
 
-3. Create a new function in the same JSObject to configure and style the chart by copying the relevant code from the ECharts documentation.
+4. Create a new function in the same JSObject to configure and style the chart by copying the relevant code from the ECharts documentation.
 
 <dd>
 
@@ -185,7 +185,7 @@ In the above example, the `options` function configures the chart, using the `fe
 </dd>
 
 
-4. In the **Custom ECharts Configuration** property, add the following code to display data:
+5. In the **Custom ECharts Configuration** property, add the following code to display data:
 
 <dd>
 
