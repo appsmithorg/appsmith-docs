@@ -10,16 +10,9 @@ import CodeBlock from "@theme/CodeBlock";
 
 In Appsmith, you have the ability to pass static [parameters to queries](connect-data/concepts/dynamic-queries) using mustache bindings `{{}}`. But if you need to execute a query multiple times with dynamic parameters, such as iterating through an array of ids and running a query to delete each record, then you will need to pass them in the `run()` function of the query.
 
-<VideoEmbed
-  host="youtube"
-  videoId="znaaDiQbAS8"
-  title="How to pass parameters to an API call"
-  caption="How to pass parameters to an API call"
-/>
-
 ## Using the `run()` Function with Parameters
 
-To pass different parameters every time a query is executed, you can leverage the `run()` function's `params` argument. Within the query, you can access the passed parameters by using the Mustache notation `{{this.params.key}}`.
+To pass different parameters every time a query is executed, you can leverage the [run()](/reference/appsmith-framework/query-object#queryrun) function's `params` argument. Within the query, you can access the passed parameters by using the Mustache notation `{{this.params.key}}`.
 
 ## Example Scenario: Bulk User Deletion
 

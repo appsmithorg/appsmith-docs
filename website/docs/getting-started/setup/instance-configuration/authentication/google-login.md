@@ -77,9 +77,7 @@ Update the values for the following keys in the instance configuration file, for
    ```
 
  
-After these steps, Google Login should be enabled for your Appsmith installation. 
-
-After these steps, your Appsmith installation should now enable Google Login. If you are running appsmith behind an ELB / Proxy, please update the [Nginx configuration](/help-and-support/troubleshooting-guide/deployment-errors#oauth-sign-up-not-working).
+After these steps, Google Login should be enabled for your Appsmith installation.
 
 ## Further reading
 
