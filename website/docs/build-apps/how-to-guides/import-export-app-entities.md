@@ -2,7 +2,7 @@
 description: A guide that outlines steps on how to export entities from a page to a JSON file and subsequently import it into another page.
 ---
 
-# Share Entities across Pages
+# Reuse App Entities
 
 When working on complex Appsmith applications, you might find the need to reuse a particular set of widgets, queries, JSObjects, and more across pages. Instead of recreating these entities from scratch each time, Appsmith provides a way for you to export entities from one page and import them into another. This guide outlines steps on how to export entities from a page to a JSON file and subsequently import it into another page.
 
@@ -13,7 +13,7 @@ Follow these steps to export your desired entities:
 * Open the Appsmith editor and access the app containing the page you wish to export.
 * Click the three vertical dots next to the page name for more actions, and select the **Export** option from the dropdown menu. A dialog box will appear, allowing you to choose the entities you want to reuse.
 <figure>
-  <img src="/img/share-entities-across-pages-export.png" style= {{width:"640px", height:"auto"}} alt="Export entities"/>
+  <img src="/img/reuse-entities-across-pages-export.png" style= {{width:"640px", height:"auto"}} alt="Export entities"/>
   <figcaption align = "center"><i>Select entities to export</i></figcaption>
 </figure>   
 * Make your selections and click **Export selected entities** to download the JSON file of your entities. The JSON file follows the naming convention - `application name.json`.
