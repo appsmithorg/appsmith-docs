@@ -62,14 +62,18 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 ### Create task and container definition
 
 1. Select **Task Definitions** from the ECS section in the sidebar of the AWS Management Console.
+
 2. Click the **Create new Task Definition** button and select **EC2** as your launch type compatibility, then proceed to the next step.
+
 3. Provide the details for your task definition:
-| Attribute | Value | |------------------------|--------------------------------------------------| 
-| **Task definition Name** | Your desired name | 
-| **Task role** | (Leave as default if not required) | 
-| **Task execution role** | (Leave as default if not required) | 
-| **Task memory (MiB)** | Minimum 3 GB | 
-| **Task CPU (unit)** | Minimum 1 virtual CPU |
+
+    || Attribute | Value||
+    |-----------|------| 
+    | **Task definition Name** | Your desired name | 
+    | **Task role** | (Leave as default if not required) | 
+    | **Task execution role** | (Leave as default if not required) | 
+    | **Task memory (MiB)** | Minimum 3 GB | 
+    | **Task CPU (unit)** | Minimum 1 virtual CPU |
 
 For other attributes, continue with the default selections.
 
@@ -77,7 +81,7 @@ For other attributes, continue with the default selections.
     * **Name**: Provide a desired name
     * **Volume type**: EFS File System
     * **EFS File System ID**: Select the EFS file system created in the [Create EFS volume](#create-efs-volume) section
-    * **Root directory**: `/appsmith-stacks`
+    * **Root directory**: `/`
 
  :::danger Attention 
  Do not share the EFS across ECS services, as doing so will cause Appsmith services to crash. 
@@ -95,9 +99,11 @@ For other attributes, continue with the default selections.
 8. Save your container definition and task definition by clicking on **Add** and then **Create** buttons.
 
 ### Create and run ECS service
+
 1. Navigate to the **Clusters** dashboard in the **ECS** section and select your cluster.
 2. Click **Services** and then click the **Create** button.
 3. Configure your service with the following settings:
+
    | Attribute | Value | 
    |--------------------|-------------------| 
    | **Launch type** | EC2 | 
@@ -115,6 +121,7 @@ For other attributes, continue with the default selections.
 </figure>
 
 ### Verify Appsmith installation
+
 1. Select your cluster from the **Clusters** section, and open the **Tasks** tab
 2. Locate the relevant task and click its **EC2 instance id**
 3. You can use the **Public IPv4 address** or **DNS** from the EC2 Instance Summary page
@@ -129,6 +136,7 @@ For other attributes, continue with the default selections.
 6. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 ## Install Appsmith Community
+
 For the Appsmith open source edition (Appsmith Community), substitute `appsmith/appsmith-ee` with `appsmith/appsmith-ce` in the container definition during the task creation on this page.
 
 ## Troubleshooting
