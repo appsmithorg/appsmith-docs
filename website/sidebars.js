@@ -358,6 +358,7 @@ const sidebars = {
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
             `core-concepts/writing-code/workflows`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'advanced-concepts/custom-authentication',
           ]
         },
         {
@@ -543,7 +544,6 @@ const sidebars = {
       label: 'Manage Apps and Users',
       items: [
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/custom-authentication',
         'advanced-concepts/invite-users',
         {
           type: 'category',

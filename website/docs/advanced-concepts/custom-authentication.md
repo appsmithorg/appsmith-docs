@@ -4,30 +4,19 @@ sidebar_position: 1
 description: In this guide, you'll learn how to implement a custom Auth flow using an API with JWTs.
 ---
 
-# Custom Authentication
+# Build Custom Authentication
 
-Custom authentication in Appsmith allows you to create your own sign-up and sign-in flows using third-party services. This page shows you how to set up your authentication API to secure your applications.
-
-<VideoEmbed host="youtube" videoId="5oPcF9dXZyU" title="How to Implement Custom Login/Authentication in Appsmith" caption="How to Implement Custom Login/Authentication in Appsmith"/>
+You can build custom authentication and integrate your Appsmith applications with any authentication provider. Using third-party services, you can create sign-up and sign-in flows that meet your application's needs. This guide walks you through the process of establishing a secure connection between Appsmith and your authentication API. This ensures that user credentials and access to your applications remain protected.
 
 ## Prerequisites
-- A Supabase account with a project setup.
+- A configured authentication service that you will integrate with Appsmith.
 - An Appsmith app with a home page.
 
 ## Set up signup flow
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/woTHhXJIEVhgHBCIDrHG?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-This topic uses Supabase as an example to set up the custom auth flow. To configure settings in your Supabse account, follow these steps:
+To configure a signup flow for custom authentication, follow these steps:
 1. Drop a Form widget to your app and design a signup screen by adding the Input widgets for email and password to the Form.
-2. In your Supabase project dashboard, go to **Authentication**, and then click **URL Configuration**.
-3. Copy your Appsmith app URL and paste it in **Site URL** and **Redirect URLs**. Save your settings. This allows Supabase to redirect users back to your Appsmith app after authentication.
-4. In Supabase, select **API Docs**, and then select **User Management**. Select **Bash** and copy the **USER SIGNUP** curl command.
-5. In Appsmith, import the signup curl command. Let's rename this to `sign_up`. Save it as a datasource to reuse the credentials.
-6. In the `sign_up` API's body, bind the values entered in the form using the following code where `username` and `password` are the input widgets:
+2. Import the signup curl command from the configured API. Let's rename this to `sign_up`. Save it as a datasource to reuse the credentials.
+3. In the `sign_up` API's body, bind the values entered in the form using the following code where `username` and `password` are the input widgets:
    
    ```jsx
       {
@@ -35,8 +24,8 @@ This topic uses Supabase as an example to set up the custom auth flow. To config
       "password": {{password.text}}
       }
    ```
-7. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_up` API.
-8. Set the **On success** callback of the **Submit** button to save the user details using the storeValue method and navigate to the App's home page.
+4. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_up` API.
+5. Set the **On success** callback of the **Submit** button to save the user details using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) method and navigate to the App's home page.
    
    Example:
    ```jsx
@@ -53,8 +42,8 @@ This topic uses Supabase as an example to set up the custom auth flow. To config
 ## Set up sign-in flow
 To set up the sign-in flow, follow these steps:
 1. Drop a Form widget to your app and design a login screen by adding the Input widgets for email and password to the Form.
-2. Create a new API from the datasource created in step 5 of [Set up signup flow](#set-up-signup-flow). This datasource contains all the user details alongwith the access toke. Let's rename this to `sign_in` and set the request type to **POST**. 
-3. In Supabase, select **API Docs**, and then select **User Management**. Select **Bash** and copy the **USER LOGIN** end point. Paste it in the sign_in API endpoint.
+2. Create a new API from the datasource created in step 5 of [Set up signup flow](#set-up-signup-flow). This datasource contains all the user details along with the access token. Let's rename this to `sign_in` and set the request type to **POST**. 
+3. Copy the **USER LOGIN** end point from the configured authentication service and paste it in the sign_in API endpoint.
    
    Example:
     ```jsx
@@ -68,7 +57,7 @@ To set up the sign-in flow, follow these steps:
       "password": {{password.text}}
       }
    ```
-5. Create a JS object to save the user details using the storeValue method and navigate to the app's home page.
+5. Create a JS object to save the user details using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) method and navigate to the app's home page.
 
    Example:
    ```jsx
@@ -86,8 +75,12 @@ To set up the sign-in flow, follow these steps:
 6. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_in` API.
 7. To test, enter a valid email address and password and then click **Submit**.
 
-## Log out users
+## Refresh access tokens
+Authentication with refresh tokens ensures a seamless user experience by allowing a user to obtain new access tokens without reauthenticating. You can do this by using a long-lived refresh token to obtain updated access tokens, even after the original access token expires. To do this, follow these steps:
+1. Create a new API endpoint to call the token refresh endpoint provided by your authentication service. For OAuth services, you must send the refresh token to receive a new access token.
+2. Create a JS object to check the token expiration and attempt to refresh it. To ensure token refresh happens seamlessly, you can invoke the function at page load before making an API call that requires authentication.
 
+## Log out users
 Providing your users with the ability to log out of your app when they're finished can help increase the security of your data.
 
 In the previous steps, you used the access token stored in the Appsmith store in a query that shows whether the user is authenticated. To remove their ability to be authenticated and see secure data, you should clear their access token from the Appsmith store so that they need to log in again if they want to get a new one.
@@ -108,9 +101,6 @@ Example:
 
 After clicking your button to sign out, they're brought to the **LoginPage**, where they must log in again to see your App's home page.
 
-## Custom OAuth guides
-
-It's possible to use third-party OAuth services to authenticate users for your app via SSO with like Google, GitHub, Twitter, and more. To do this, you'll need to connect with a service that integrates with your desired OAuth provider. You may like these video guides:
-
+## See also
 * [Custom Google authentication with Xano](https://www.youtube.com/watch?v=n3XSAA7q--I)
 * [Custom Google authentication with Supabase](https://www.youtube.com/watch?v=mfhHUDNCkoQ)
