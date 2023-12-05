@@ -102,7 +102,7 @@ To display a live marker on the map, use Appsmith's [geolocation](/reference/app
 
 If you have only addresses and want to show markers at the locations, you can use geocoding to convert addresses into geographical coordinates for mapping.
 
-1. Generate an API key by signing up for [geocoding service](https://developers.google.com/maps/documentation/geocoding/requests-geocoding). 
+1. Generate an API key by signing up for the [geocoding service](https://developers.google.com/maps/documentation/geocoding/requests-geocoding). 
 
 2. Create a REST API to forward geocode addresses by passing them to the URL, like:
 
@@ -112,7 +112,7 @@ If you have only addresses and want to show markers at the locations, you can us
 http://api.positionstack.com/v1/forward?access_key=d6234&query={{this.params.address}}
 ```
 
-The `access_key` provides authentication, and {`{this.params.address}}` allows dynamic querying based on the provided address parameter.
+The `access_key` provides authentication, and `{{this.params.address}}` allows dynamic querying based on the provided address parameter.
 
 </dd>
 
@@ -145,7 +145,7 @@ The `access_key` provides authentication, and {`{this.params.address}}` allows d
 
 If you only have coordinates and want to obtain the corresponding address, use the reverse geocoding.
 
-1. Generate an API key by signing up for [geocoding service](https://developers.google.com/maps/documentation/geocoding/requests-geocoding). 
+1. Generate an API key by signing up for the [geocoding service](https://developers.google.com/maps/documentation/geocoding/requests-geocoding). 
 
 2. Create a REST API to enable reverse geocoding, like:
 
@@ -163,7 +163,7 @@ This API performs reverse geocoding to retrieve location information based on pr
 
 3. Enable **Create new marker** property. 
 
-4. Enable *JS* and configure the **OnCreateMarker** and **onMarkerClick** property to execute the reverse geocoding:
+4. Enable *JS* and configure the **OnCreateMarker** and **onMarkerClick** properties to execute the reverse geocoding:
 
 <dd>
 
@@ -218,7 +218,7 @@ navigateToMap: async () => {
 // For existing map markers: {{Map1.markers[0].lat}}
 ```
 
- Above function uses Appsmith's `geolocation` to get the current position, creates a Google Maps URL for navigation to a selected location in `Table1`, and opens the route in a new window when executed. Similarly, you can create a route using multiple existing or new markers.
+ The above function uses Appsmith's `geolocation` to get the current position, creates a Google Maps URL for navigation to a selected location in `Table1`, and opens the route in a new window when executed. Similarly, you can create a route using multiple existing or new markers.
 
 
 
