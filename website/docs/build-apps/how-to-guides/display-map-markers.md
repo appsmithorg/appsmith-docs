@@ -141,7 +141,7 @@ The `access_key` provides authentication, and {`{this.params.address}}` allows d
 
 
 
-### With coordinates (Reverse geocoding)
+## Reverse geocoding for address lookup
 
 If you only have coordinates and want to obtain the corresponding address, use the reverse geocoding.
 
@@ -224,7 +224,7 @@ navigateToMap: async () => {
 
 </dd>
 
-2. Drop a Button widget and configure its **OnClick** event to trigger the JS function.
+2. Drop a Button widget and configure its **onClick** event to trigger the JS function.
 
 
 
