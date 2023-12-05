@@ -244,7 +244,6 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-upload-to-s3',
             'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
             'connect-data/how-to-guides/download-files-from-s3',
-            'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/how-to-integrate-dropbox',
             'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
@@ -359,6 +358,7 @@ const sidebars = {
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
             `core-concepts/writing-code/workflows`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'build-apps/how-to-guides/import-export-app-entities',
           ]
         },
         {
@@ -467,7 +467,6 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            `core-concepts/writing-code/workflows`,
             'core-concepts/writing-code/ext-libraries',
             'write-code/how-to-guides/debug-js-errors',
           ]
