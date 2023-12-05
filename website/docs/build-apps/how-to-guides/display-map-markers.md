@@ -161,6 +161,15 @@ This section shows how users can generate routes between two or multiple locatio
 
 
 
+
+
+### Directions from live location
+
+
+### Directions from new marker
+
+1. 
+
 ```js
 {{navigateTo('www.google.com/maps/dir/' + Map1.selectedMarker.lat + ',' + Map1.selectedMarker.long + '/' + Table1.selectedRow.latitude + ',' + Table1.selectedRow.longitude, {},'NEW_WINDOW')}}
 ```
