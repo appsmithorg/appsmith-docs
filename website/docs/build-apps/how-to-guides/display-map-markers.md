@@ -3,14 +3,14 @@
 
 This guide shows how to dynamically display markers on a Map widget and implement navigation, allowing users to draw paths between marked locations. 
 
+:::info IMPORTANT
+If you want to use the Map widget on your self-hosted instance, you must have Google Maps configured on your instance. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
+:::
+
 
 ## Implement markers
 
 You can display markers using multiple methods, such as:
-
-:::info IMPORTANT
-If you want to use the Map widget on your self-hosted instance, you must have Google Maps configured on your instance. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
-:::
 
 ### With query 
 
