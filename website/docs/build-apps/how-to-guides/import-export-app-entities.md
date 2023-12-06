@@ -4,7 +4,7 @@ description: A guide that outlines steps on how to export entities from a page t
 
 # Reuse App Entities
 
-When working on complex Appsmith applications, you might find the need to reuse a particular set of widgets, queries, JSObjects, and more across pages. Instead of recreating these entities from scratch each time, Appsmith provides a way for you to export entities from one page and import them into another. This guide outlines steps on how to export entities from a page to a JSON file and subsequently import it into another page.
+This guide shows how to export certain entities from a page and import them into another page or app. Reusable entities are widgets, datasources, queries, JS Objects, and custom libraries. 
 
 
 Follow the steps below to export desired app entities and import it into another page or an app.
