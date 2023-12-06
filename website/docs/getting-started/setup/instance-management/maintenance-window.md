@@ -17,7 +17,7 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
    ```bash
    docker-compose down
    ```
-2. Open the `docker-compose.yml` file and add the below code block after the restart attribute in the `appsmith` service. Note that you must add a 6 space-separated fields cron expression, not the traditional 5 space-separated fields to the `command` attribute. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more. Based on the specified cron expression, watchtower updates Appsmith at the stipulated time whenever a new version becomes available.
+2. Open the `docker-compose.yml` file and add the below code block after the `restart` attribute in the `appsmith` service. Note that you must add a 6 space-separated fields cron expression, not the traditional 5 space-separated fields to the `command` attribute. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more. Based on the specified cron expression, watchtower updates Appsmith at the stipulated time whenever a new version becomes available.
 
    ```yaml
     labels:
