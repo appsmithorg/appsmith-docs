@@ -357,6 +357,7 @@ const sidebars = {
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+            `build-apps/how-to-guides/browse-and-display-documents`,
             `core-concepts/writing-code/workflows`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
           ]
