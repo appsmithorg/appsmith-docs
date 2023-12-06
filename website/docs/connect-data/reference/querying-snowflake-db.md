@@ -21,28 +21,64 @@ The following section is a reference guide that provides a complete description 
 
 #### Account Name
 
-<dd>This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. You can find your organization name and account name on the Snowflake dashboard at the bottom-left of the page; click the string next to the Snowflake logo to open an information box with your details.</dd>
+<dd>
+
+This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. 
+
+To locate your organization name and account details on the Snowflake dashboard, navigate to the bottom-left corner of the page. Copy the Account URL, and then exclude both the prefix `https://` and the suffix `.snowflakecomputing.com` from the URL. For example: 
+
+Account Name: `gv14678.central-india.azure*`
+
+
+
+
 
 <figure>
-  <img src="/img/snowflake-account-name.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
+  <img src="/img/snow-1.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
   <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
 </figure>
 
+</dd>
+
 #### Warehouse
 
-<dd>Specifies the virtual warehouse to use once connected.</dd>
+<dd>
+
+Specifies the virtual warehouse to use once connected.
+
+To get the warehouse name, navigate to Admin > Warehouses on the left panel, and find the warehouse name in the top-right corner of the Admin section. For example, `COMPUTE_WH`
+
+
+
+</dd>
 
 #### Database
 
-<dd>Specifies the database to use once connected.</dd>
+<dd>
+
+Specifies the database to use once connected.
+
+To get the database name for connection, go to Data > Databases in the Snowflake dashboard, and select the desired database. For example, `TEST_DB`.
+
+</dd>
 
 #### Default Schema
 
-<dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd>
+<dd>
+
+Defines the database schema structure for preview in the Appsmith sidebar, showcasing tables and columns; note that this setting does not restrict your ability to query different schemas.
+
+To get the Default Schema, navigate to the Schemas section and copy the desired Schema name along with the corresponding Role. For example, `TPCDS_SF100TCL`.
+
+</dd>
 
 #### Role
 
-<dd>The role to use for performing queries.</dd>
+<dd>
+
+The role to use for performing queries. For example, `ACCOUNTADMIN`
+
+</dd>
 
 #### Username
 
