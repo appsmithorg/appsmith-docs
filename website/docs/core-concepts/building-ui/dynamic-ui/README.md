@@ -77,6 +77,15 @@ By following similar steps, you can create a JavaScript object, define variables
 
 See [How to display data from functions](/write-code/how-to-guides/display-data-from-functions).
 
+### Accessing Object values with spaces
+
+When dealing with object attributes that contain spaces in their names, you need to use a specific syntax to access their values. Instead of the conventional dot notation (`obj.attributeName`), you should use square brackets and quotes (`obj["attribute Name"]`). 
+
+*Example:* Suppose you have an object with an attribute named `income tax`, and you want to access its value. To achieve this, use the following syntax:
+
+```js
+return { label: obj["income tax"], value: obj["income tax"]};
+```
 
 ## Using widgets
 
