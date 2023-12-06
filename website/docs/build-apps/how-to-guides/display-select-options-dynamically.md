@@ -18,15 +18,15 @@ To configure the parent widget and dependent widgets, follow these steps:
    ```jsx
    {{fetch_permission_details.data.map((row) => ({label: row.role, value: row.role}))}}
    ```
-2. Create a separate query corresponding to the configured datasource. This query uses the selected value of the widget in step 1 to fetch a different set of records.
+2. Create a separate query corresponding to the configured datasource. This query uses the selected value of the widget in Step 1 to fetch a different set of records.
 
    Example:
    ```sql
    SELECT permissions FROM access_details WHERE role = {{ Select1.selectedOptionValue }};
    ```
-3. Drop a MultiSelect widget and bind data to it using the query from step 2. To dynamically populate the MultiSelect widget, set the **onOptionChange** property of the Select widget to run the query every time the selection changes.
+3. Drop a MultiSelect widget and bind data to it using the query in Step 2. To dynamically populate the MultiSelect widget, set the **onOptionChange** property of the Select widget to run the query every time the selection changes.
 To create cascading dropdowns, repeat these steps for each level of dependent Select widgets.
-4. To create more complex data manipulations or filtering, use JavaScript objects. Here is an example that filters roles based on department and then dynamically sets a second Select widget options for employee names:
+4. To create more complex data manipulations or filtering, use JavaScript objects. Here is an example that filters roles based on department and then dynamically sets second Select widget options for employee names:
 
     ```jsx
     export default { 
