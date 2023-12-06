@@ -351,6 +351,7 @@ const sidebars = {
             'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
             'build-apps/how-to-guides/create-drill-down-view',
             'build-apps/how-to-guides/Create-Nested-Lists',
+            'build-apps/how-to-guides/display-select-options-dynamically',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             `build-apps/how-to-guides/create-custom-charts`,
             `build-apps/how-to-guides/Display-and-filter-chart-data`,
