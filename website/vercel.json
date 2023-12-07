@@ -1141,6 +1141,14 @@
     {
       "source": "/build-apps/how-to-guides/Filter-Table-Data-using-Datepicker",
       "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-date-range"
+    },
+    {
+      "source": "/connect-data/how-to-guides/how-to-integrate-zoho",
+      "destination": "https://community.appsmith.com/content/guide/create-campaigns-zoho"
+    },
+    {
+      "source": "/connect-data/how-to-guides/how-to-integrate-dropbox",
+      "destination": "https://community.appsmith.com/content/guide/upload-files-dropbox"
     }
   ]
 }
