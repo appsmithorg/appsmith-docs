@@ -329,7 +329,6 @@ const sidebars = {
               type: 'category',
               label: 'Display Data',
               collapsed: true,
-              link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
@@ -343,7 +342,7 @@ const sidebars = {
               items: [
                 'build-apps/how-to-guides/search-and-filter-table-data',
                 'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select'
-            
+
               ],
             },
             {
@@ -365,7 +364,7 @@ const sidebars = {
 
               ],
             },
-             
+
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
@@ -390,7 +389,7 @@ const sidebars = {
                 'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
               ],
             },
-            
+
             'build-apps/how-to-guides/Create-Nested-Lists',
 
           ]

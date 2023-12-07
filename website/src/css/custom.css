@@ -85,6 +85,12 @@
   min-height: 29.5px;
   min-width: 1.5rem;
   width: 1.5rem;
+  margin-right: -5px;
+}
+
+.theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
 }
 
 
