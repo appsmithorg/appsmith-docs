@@ -328,7 +328,6 @@ const sidebars = {
             {
               type: 'category',
               label: 'Display Data',
-              collapsed: true,
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
