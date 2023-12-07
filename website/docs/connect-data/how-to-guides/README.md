@@ -62,20 +62,10 @@
     </div>
 <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-integrate-zoho"><strong>Create Campaigns with Zoho</strong></a>
+           <a href="/connect-data/integrations"><strong>Integrate With Third-Party Tools</strong></a>
         </div><hr/>
-        <div class="containerDescription">Shows you how to configure an Authenticated API datasource for Zoho with OAuth 2.0 and create a query that creates a campaign from your Appsmith app. </div>
+        <div class="containerDescription">Shows you how to connect Appsmith to many third-party tools via API. </div>
          <div class="containerTutorialLink">
          </div>
     </div>
-</div>
-<div class="containerGridSampleApp">
-<div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <a href="/connect-data/integrations"><strong>Integrate With Third-Party Tools</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">Shows you how to connect Appsmith to many third-party tools via API.</div>
-        <div class="containerTutorialLink"></div>
-    </div>
-<div class="columnGrid column-two"></div>
 </div>
