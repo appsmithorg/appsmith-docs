@@ -78,6 +78,16 @@
   width: 1.5rem;
 }
 
+.theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist.theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
+.theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyIDEwIDggNmwtNCA0IiBzdHJva2U9IiMxQjI3MzgiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=) 50% no-repeat;
+  height: 1.5rem;
+  min-height: 29.5px;
+  min-width: 1.5rem;
+  width: 1.5rem;
+}
+
+
 .menu__caret {
   padding: 0em 0.375em 0em 0.75em !important;
 }
