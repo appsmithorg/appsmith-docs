@@ -74,11 +74,9 @@ Welcome Aboard! {{appsmith.user.name}}
         <!-- Display the name of the selected row from Table1 -->
         <h1>Name: {{Table1.selectedRow.name}}</h1>
 
-        <p>DOB: {{Table1.selectedRow.dob}}</p>
+        <p>Date of Purchase: {{Form1.data.DatePicker1}}</p>
 
-        <p>Status: {{Select1.selectedOptionValue}}</p>
- 
-        <p>Date of Purchase: {{DatePicker1.formattedDate}}</p>
+        <p>Status: {{Form1.data.Select1}}</p>
 
         <p>This is the description of the content. It provides more details about what this is all about.</p>
     </section>
@@ -106,6 +104,29 @@ You can create multiple templates, and use JS to conditionally execute a specifi
 
 To send emails with various attachments, such as files, PDFs, and images, you can do so with the Filepicker widget or by specifying a URL for uploading the desired files.
 
+
+
+
+#### Using Filepicker
+
+If you want to upload files from your local machine, you can use the Filepicker widget, as shown below:
+
+1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
+
+2. Select your **Data format** based on the file type.
+
+3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
+
+<dd>
+
+```js
+// Accessing file data
+[{{FilePicker1.files[0]}}]
+
+//here [0] represents index of the file.
+```
+
+ </dd>
 
 #### Using URL
 
@@ -154,29 +175,6 @@ The provided function asynchronously fetches file data from a URL using an API r
 [{{JSObject1.file.data}}]
 ```
 
-
- </dd>
-
-
-
-#### Using Filepicker
-
-If you want to upload files from your local machine, you can use the Filepicker widget, as shown below:
-
-1. Drag a Filepicker widget and configure the **Allowed file types** property to specify the file formats that users can upload.
-
-2. Select your **Data format** based on the file type.
-
-3. In the **Attachment(s)** field of the SMTP query, add the following code to upload files:
-
-<dd>
-
-```js
-// Accessing file data
-[{{FilePicker1.files[0]}}]
-
-//here [0] represents index of the file.
-```
 
  </dd>
 

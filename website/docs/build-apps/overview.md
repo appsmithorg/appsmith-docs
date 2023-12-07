@@ -36,21 +36,19 @@ Most applications are a combination of read or write data flows.
 
 Mastering these data flows allows developers to create applications that can seamlessly read and write data, creating a dynamic and reactive user experience. Understanding and utilizing these patterns is the key to efficiently building robust applications with Appsmith.
 
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
-      </div> 
-      <b><a href="/build-apps/how-to-guides">How-to Guides</a></b>
-      <div class="containerDescription">
-         Step-by-step guides to build common workflows.
-      </div>
-   </div>
 
-   <div class="containerColumnSampleApp columnGrid column-two">
-   <div class="containerCol">
-      </div>
-      <b><a href="/reference/widgets"> Reference</a></b>
-      <div class="containerDescription"> Technical information on widgets.
-      </div>
-   </div>
+<div class="containerGridSampleApp">
+    <div class="containerColumnSampleApp columnGrid column-one">
+        <div class="containerCol">
+            <a href="/build-apps/how-to-guides"><strong>How-to Guides</strong></a>
+        </div> <hr/>
+        <div class="containerDescription">Step-by-step guides to build common workflows.</div>
+    </div>
+    <div class="containerColumnSampleApp columnGrid column-two">
+        <div class="containerCol">
+           <a href="/reference/widgets"><strong>Reference</strong></a>
+        </div><hr/>
+        <div class="containerDescription">Technical information on widgets.
+        </div>
+    </div>
 </div>
