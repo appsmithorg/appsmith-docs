@@ -26,10 +26,21 @@ Follow these steps to install Appsmith:
 
 1. Create a folder named `appsmith` on your machine for deployment and data storage. Navigate to this folder using the `cd` command.
 
-2. Run the below command to download `docker-compose.yml` file in the `appsmith` folder:
+2. Create a `docker-compose.yml` file with:
 
-   ```bash
-   curl -L https://bit.ly/docker-compose-be -o $PWD/docker-compose.yml
+   ```yaml
+   version: "3"
+      services:
+      appsmith:
+         #highlight-next-line
+         image: index.docker.io/appsmith/appsmith-ee
+         container_name: appsmith
+         ports:
+            - "80:80"
+            - "443:443"
+         volumes:
+            - ./stacks:/appsmith-stacks
+         restart: unless-stopped
    ```
 
 3. Start the Docker container by using the below command. You may need to use `sudo` if you don't have permission to run `docker-compose`:
@@ -48,7 +59,7 @@ Follow these steps to install Appsmith:
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 2 of the [Install Appsmith](#install-appsmith) section on this page.
+To install the Appsmith open source edition (Appsmith Community), under step 2 of the [Install Appsmith](#install-appsmith) section on this page, replace `appsmith-ee` with `appsmith-ce` for the `image` attribute while creating the `docker-compose.yml` file.
 
 ## Troubleshooting
 
