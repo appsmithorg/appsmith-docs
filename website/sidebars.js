@@ -250,14 +250,6 @@ const sidebars = {
             'connect-data/how-to-guides/insert-and-update-data-in-sql',
             'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/insert-and-update-data-in-google-sheets',
-            'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
-            'connect-data/how-to-guides/how-to-download-files-using-api',
-            'connect-data/how-to-guides/how-to-upload-to-s3',
-            'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-            'connect-data/how-to-guides/download-files-from-s3',
-            'connect-data/how-to-guides/filter-data-google-sheet',
-            'connect-data/how-to-guides/how-to-integrate-dropbox',
-            'connect-data/how-to-guides/how-to-integrate-zoho',
             'connect-data/integrations',
           ]
         },
@@ -345,31 +337,69 @@ const sidebars = {
             'core-concepts/building-ui/dynamic-ui/README',
             {
               type: 'category',
-              label: 'Display and Lookup Table Data',
-              link: {
-                type: 'doc',
-                id: 'build-apps/how-to-guides/display-search-and-filter-table-data',
-              },
+              label: 'Display Data',
               items: [
+                `build-apps/how-to-guides/display-search-and-filter-table-data`,
+                'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/search-and-filter-table-data'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
               ],
             },
-            'build-apps/how-to-guides/insert-data',
-            'build-apps/how-to-guides/submit-form-data',
-            'reference/widgets/table/inline-editing',
-            'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-            'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-            'build-apps/how-to-guides/create-drill-down-view',
-            'build-apps/how-to-guides/Create-Nested-Lists',
-            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-            `build-apps/how-to-guides/create-custom-charts`,
-            `build-apps/how-to-guides/Display-and-filter-chart-data`,
-            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
-            'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+            {
+              type: 'category',
+              label: 'Search, Sort, and Filter Data',
+              items: [
+                'build-apps/how-to-guides/search-and-filter-table-data',
+                'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select'
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Modify Data',
+              items: [
+                'build-apps/how-to-guides/insert-data',
+                'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
+                'build-apps/how-to-guides/submit-form-data',
+                'reference/widgets/table/inline-editing'
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Plot Charts',
+              items: [
+                `build-apps/how-to-guides/Display-and-filter-chart-data`,
+                `build-apps/how-to-guides/create-custom-charts`
+
+              ],
+            },
+
             `core-concepts/writing-code/workflows`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            {
+              type: 'category',
+              label: 'Manage Files',
+              items: [
+                'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
+                'connect-data/how-to-guides/how-to-download-files-using-api',
+                'connect-data/how-to-guides/how-to-upload-to-s3',
+                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
+                'connect-data/how-to-guides/download-files-from-s3',
+
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Custom Widgets',
+              items: [
+                'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+                'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
+              ],
+            },
+
+            'build-apps/how-to-guides/Create-Nested-Lists',
+
           ]
         },
         {
@@ -478,7 +508,6 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            `core-concepts/writing-code/workflows`,
             'core-concepts/writing-code/ext-libraries',
             'write-code/how-to-guides/debug-js-errors',
           ]

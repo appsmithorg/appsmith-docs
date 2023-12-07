@@ -22,16 +22,16 @@
 <div class="containerGridSampleApp">
   <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/how-to-guides/how-to-upload-to-s3"><strong>Upload or Download Files to and from S3</strong></a>
+            <a href="/connect-data/how-to-guides/setup-datasource-environments"><strong>Setup Multiple Datasource Environments</strong></a>
         </div> <hr/>
-        <div class="containerDescription">Shows you how to upload files to Amazon S3 using the S3 plugin and the FilePicker Widget.</div>
+        <div class="containerDescription">This page shows how to set up and manage multiple datasource environments for your application.</div>
         <div class="containerTutorialLink"></div>
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"><strong>Upload Images to S3 Using Camera</strong></a>
+           <a href="/connect-data/how-to-guides/fetch-and-filter-data-in-sql"><strong>Fetch and Filter data in SQL</strong></a>
         </div><hr/>
-        <div class="containerDescription">Shows you how to connect and configure datasource, and use the Camera widget to upload images. </div>
+        <div class="containerDescription">This guide shows you how to retrieve and filter data by using a variety of SQL clauses.</div>
          <div class="containerTutorialLink">
          </div>
     </div>
@@ -40,9 +40,9 @@
 <div class="containerGridSampleApp">
  <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/how-to-guides/download-files-from-s3"><strong>Download Files from S3 </strong></a>
+            <a href="/connect-data/how-to-guides/insert-and-update-data-in-sql"><strong>Insert and Update data in SQL</strong></a>
         </div><hr/>
-        <div class="containerDescription">Shows you how to download a file from an S3 datasource. </div>
+        <div class="containerDescription">This guide shows you how to insert and update data in a PostgreSQL database. </div>
     </div>
   <div class="containerColumnSampleApp columnGrid column-two">
     <div class="containerCol">
@@ -55,27 +55,17 @@
 <div class="containerGridSampleApp">
  <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/connect-data/how-to-guides/how-to-integrate-dropbox"><strong>Upload Files to Dropbox</strong></a>
+            <a href="/connect-data/how-to-guides/insert-and-update-data-in-google-sheets"><strong>Insert and Update Data in Google Sheets</strong></a>
         </div> <hr/>
-        <div class="containerDescription">Shows you how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.</div>
+        <div class="containerDescription">This guide shows you how to insert and update data in Google Sheets.</div>
         <div class="containerTutorialLink"></div>
     </div>
 <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-integrate-zoho"><strong>Create Campaigns with Zoho</strong></a>
+           <a href="/connect-data/integrations"><strong>Integrate With Third-Party Tools</strong></a>
         </div><hr/>
-        <div class="containerDescription">Shows you how to configure an Authenticated API datasource for Zoho with OAuth 2.0 and create a query that creates a campaign from your Appsmith app. </div>
+        <div class="containerDescription">Shows you how to connect Appsmith to many third-party tools via API. </div>
          <div class="containerTutorialLink">
          </div>
     </div>
-</div>
-<div class="containerGridSampleApp">
-<div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
-            <a href="/connect-data/integrations"><strong>Integrate With Third-Party Tools</strong></a>
-        </div> <hr/>
-        <div class="containerDescription">Shows you how to connect Appsmith to many third-party tools via API.</div>
-        <div class="containerTutorialLink"></div>
-    </div>
-<div class="columnGrid column-two"></div>
 </div>
