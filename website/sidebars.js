@@ -364,7 +364,6 @@ const sidebars = {
             },
 
             `core-concepts/writing-code/workflows`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             {
