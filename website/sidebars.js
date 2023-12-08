@@ -331,7 +331,8 @@ const sidebars = {
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                 'build-apps/how-to-guides/display-map-markers',
               ],
             },
             {
@@ -363,11 +364,14 @@ const sidebars = {
               ],
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
 =======
 >>>>>>> main
+=======
+>>>>>>> 9bae545f72d0e4398e5ef9fa4cb137bbfdea1894
             {
               type: 'category',
               label: 'Manage Files',
@@ -389,16 +393,23 @@ const sidebars = {
               ],
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
             'build-apps/how-to-guides/display-map-markers',
             'build-apps/how-to-guides/Create-Nested-Lists'
 
 =======
             `core-concepts/writing-code/workflows`,
+=======
+            'core-concepts/writing-code/workflows`,
+>>>>>>> 9bae545f72d0e4398e5ef9fa4cb137bbfdea1894
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'build-apps/how-to-guides/import-export-app-entities',
             'build-apps/how-to-guides/Create-Nested-Lists',
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 9bae545f72d0e4398e5ef9fa4cb137bbfdea1894
           ]
         },
         {
