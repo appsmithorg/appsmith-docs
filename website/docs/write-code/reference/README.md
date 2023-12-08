@@ -6,58 +6,58 @@ The Appsmith framework simplifies the creation of dynamic, data-driven applicati
 
 To know more about the objects and functions, refer to the resources below:
 
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
             <a href="/reference/appsmith-framework/context-object"><strong>Appsmith Object</strong>
             </a>
         </div> <hr/>
-        <div class="containerDescription">The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.</div>
+        <div className="containerDescription">The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.</div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
+    <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
            <a href="/reference/appsmith-framework/console-object"><strong>Console Object</strong></a>
         </div><hr/>
-        <div class="containerDescription">The console object provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs.</div>
+        <div className="containerDescription">The console object provides an easy way to send logging messages from the browser to the development console or to display messages in the browser when an error occurs.</div>
     </div>
 </div>
-<div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
             <a href="/reference/appsmith-framework/query-object"><strong>Query Object</strong></a>
         </div> <hr/>
-        <div class="containerDescription">The query object contains the parameters required to run queries and access the query data.</div>
+        <div className="containerDescription">The query object contains the parameters required to run queries and access the query data.</div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
+    <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
            <a href="/reference/appsmith-framework/widget-actions"><strong>Built-in functions</strong></a>
         </div><hr/>
-        <div class="containerDescription">The Appsmith framework allows triggering actions for widget events and inside JS Objects. There are functions to navigate to another page, show alert messages, open/close modals, and store data in local storage. </div>
+        <div className="containerDescription">The Appsmith framework allows triggering actions for widget events and inside JS Objects. There are functions to navigate to another page, show alert messages, open/close modals, and store data in local storage. </div>
     </div>
 </div>
 
-<div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
             <a href="/write-code/reference/Built-in-JS-Libraries"><strong>JS Libraries</strong></a>
         </div> <hr/>
-        <div class="containerDescription">JavaScript libraries provide a comprehensive array of capabilities for common tasks such as data manipulation, numeric operations, date and time handling, and more. </div>
+        <div className="containerDescription">JavaScript libraries provide a comprehensive array of capabilities for common tasks such as data manipulation, numeric operations, date and time handling, and more. </div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
+    <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
            <a href="/write-code/reference/Fetch-API"><strong>Fetch API</strong></a>
         </div><hr/>
-        <div class="containerDescription">The Fetch API provides an interface for executing network calls programmatically. You can use fetch() to programmatically configure and execute a REST API.</div>
+        <div className="containerDescription">The Fetch API provides an interface for executing network calls programmatically. You can use fetch() to programmatically configure and execute a REST API.</div>
     </div>
 </div>
 
-<div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
             <a href="/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings"><strong>Function Settings</strong></a>
         </div> <hr/>
-        <div class="containerDescription">Provides information on how to configure settings for functions </div>
+        <div className="containerDescription">Provides information on how to configure settings for functions </div>
 </div>
-     <div class="columnGrid column-two" style={{margin: "10px"}}>
+     <div className="columnGrid column-two" style={{margin: "10px"}}>
     </div>
 </div>
