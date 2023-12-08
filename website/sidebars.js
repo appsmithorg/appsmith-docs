@@ -342,7 +342,8 @@ const sidebars = {
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                'build-apps/how-to-guides/display-map-markers',
               ],
             },
             {
@@ -373,10 +374,6 @@ const sidebars = {
 
               ],
             },
-
-            `core-concepts/writing-code/workflows`,
-            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
-            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             {
               type: 'category',
               label: 'Manage Files',
@@ -397,9 +394,11 @@ const sidebars = {
                 'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
               ],
             },
-
+            `core-concepts/writing-code/workflows`,
+            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            'build-apps/how-to-guides/import-export-app-entities',
             'build-apps/how-to-guides/Create-Nested-Lists',
-
           ]
         },
         {

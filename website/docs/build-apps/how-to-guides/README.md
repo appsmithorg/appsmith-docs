@@ -6,7 +6,7 @@
 <div class="containerGridSampleApp">
 <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/core-concepts/building-ui/dynamic-ui"><strong>Trigger UI Workflow</strong></a>
+            <a href="/core-concepts/building-ui/dynamic-ui"><strong>Bind Data to Widgets</strong></a>
         </div> <hr/>
         <div class="containerDescription">This page shows how you can dynamically update widget properties using queries, JavaScript functions, and setter methods.</div>
         <div class="containerTutorialLink"></div>
@@ -204,21 +204,15 @@
     </div>
 </div>
 
-
 <div class="containerGridSampleApp">
-    <div class="containerColumnSampleApp columnGrid column-one">
+<div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
             <a href="/connect-data/how-to-guides/download-files-from-s3"><strong>Download Files from S3</strong></a>
         </div> <hr/>
         <div class="containerDescription">This page shows you steps to download a file from an S3 datasource.</div>
+        <div class="containerTutorialLink"></div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-integrate-dropbox"><strong>Upload Files to Dropbox</strong></a>
-        </div><hr/>
-        <div class="containerDescription">This guide describes how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.
-        </div>
-    </div>
+<div class="columnGrid column-two"></div>
 </div>
 
 ## Custom Widgets
