@@ -388,6 +388,7 @@ const sidebars = {
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'build-apps/how-to-guides/import-export-app-entities',
             'build-apps/how-to-guides/Create-Nested-Lists',
+            `build-apps/how-to-guides/display-select-options-dynamically`
           ]
         },
         {
