@@ -78,6 +78,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
                 'getting-started/setup/installation-guides/air-gapped',
+                'getting-started/setup/installation-guides/setup-postgresql-aws-ecs',
               ],
             },
             {

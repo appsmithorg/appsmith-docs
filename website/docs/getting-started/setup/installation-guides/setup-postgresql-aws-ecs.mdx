@@ -8,7 +8,7 @@ title: Setup PostgreSQL RDS
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1> Setup PostgreSQL RDS on AWS ECS for SAML SSO</h1>
+ <h1> Setup PostgreSQL RDS for SAML SSO</h1>
 
 <Tags
 tags={[
@@ -70,16 +70,16 @@ Follow the below steps to setup PostgreSQL RDS instance:
 - Click the **Create database** button to create the RDS instance
 - Once the instance is up note the endpoint URL to connect Keycloak RDS from the Appsmith Instance.
 
-## Configure Appsmith task definition
+## Modify Task Definition
 
 - Go to AWS ECS and select the Appsmith Service
 - Go to Task Definition and select the Appsmith Task definition
 - Edit the Task Definition
 - In the Environment variables section, add the below environment vairables
-    - APPSMITH_KEYCLOAK_DB_URL - Add endpoint url
-    - APPSMITH_KEYCLOAK_DB_DRIVER - Postgres
-    - APPSMITH_KEYCLOAK_DB_USERNAME - DB Username
-    - APPSMITH_KEYCLOAK_DB_PASSWORD - DB Password
+    - **APPSMITH_KEYCLOAK_DB_URL** - Add endpoint URL you noted down in the [Setup PostgreSQL](#setup-postgresql) section
+    - **APPSMITH_KEYCLOAK_DB_DRIVER** - postgresql
+    - **APPSMITH_KEYCLOAK_DB_USERNAME** -  Add database username you noted down in the [Setup PostgreSQL](#setup-postgresql) section
+    - **APPSMITH_KEYCLOAK_DB_PASSWORD** - Add database password you noted down in the [Setup PostgreSQL](#setup-postgresql) section
 - Save the Task Definition
 - Restart the Appsmith service.
 
