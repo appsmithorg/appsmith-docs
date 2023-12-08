@@ -103,7 +103,7 @@ You can either disable the telemetry from [**Admin Settings**](telemetry.md#admi
 
 - Click Save & Restart to restart the container for the changes to take effect.
 
-###Docker.env file
+### Docker.env file
 
 - Navigate to the **directory** where the `docker.env` file is located.
 - Open the file in an editor and search for `APPSMITH_DISABLE_TELEMETRY`
