@@ -197,7 +197,5 @@
         </div> <hr/>
         <div className="containerDescription">This page shows how to create nested lists to organize and structure information hierarchically.</div>
     </div>
-<div className="columnGrid column-two">
-
-</div>
+<div className="columnGrid column-two" style={{margin: "10px"}}></div>
 </div>
