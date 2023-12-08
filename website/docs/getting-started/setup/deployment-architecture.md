@@ -26,7 +26,7 @@ A single Docker container runs the following processes to deploy and get started
     3. An action execution module that executes your queries to your databases and APIs
     4. A git module that maintains clones of your Git-connected apps on the file system
 
-2. The **NGINX Server**, which routes:
+2. The **Caddy Server**, which routes:
     1. Requests to static assets like JavaScript, CSS, and images
     2. Incoming requests to the backend server, or the RTS depending on the request path
     3. Path-unidentified requests to an `index.html` page with a 200 status code. This is like a typical single-page application where the client React code is expected to understand the path and show the UI accordingly.
@@ -48,6 +48,6 @@ To manage the processes needed to function, Appsmith uses [Supervisor](http://su
 
 Supervisor comes with a command line tool called `supervisorctl` that's used to control these processes individually. For example, running `supervisorctl restart redis` restarts the Redis process. Or, as another example, the `Save and Restart` button under `Admin Settings` on the Appsmith UI is powered by the `supervisorctl` tool; clicking that button after making changes with the UI prompts the backend server to execute `supervisorctl restart backend`, which restarts the backend process.
 
-When the user runs the Docker command to start the Appsmith container, Supervisor identifies which processes are required to start and run. This includes the backend server, the RTS, and the NGINX server, as well as any additional processes that haven't been plugged in by the user externally, such as a custom MongoDB or Redis instance.
+When the user runs the Docker command to start the Appsmith container, Supervisor identifies which processes are required to start and run. This includes the backend server, the RTS, and the Caddy server, as well as any additional processes that haven't been plugged in by the user externally, such as a custom MongoDB or Redis instance.
 
 For each of the processes in Appsmith, the container’s entry-point script (which Docker invokes when the container starts) generates a config file with all the details needed for the Supervisor daemon. For example, the config file generated for the backend Java server includes the full set of commands for starting the process, as well as all necessary environment variables and settings. This same entry-point script also helps set up SSL certificates and install custom CA roots.
