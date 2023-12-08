@@ -6,11 +6,10 @@ description: In this guide, you'll learn how to implement a custom Auth flow usi
 
 # Build Custom Authentication
 
-You can build custom authentication and integrate your Appsmith applications with any authentication provider. Using third-party services, you can create sign-up and sign-in flows that meet your application's needs. This guide walks you through the process of establishing a secure connection between Appsmith and your authentication API. This ensures that user credentials and access to your applications remain protected.
+This guide walks you through the process of building custom authentication and integrating your Appsmith applications with any authentication provider.
 
 ## Prerequisites
-- A configured authentication service that you will integrate with Appsmith.
-- An Appsmith app with a home page.
+- A configured authentication service or a database with user credentials that you will integrate with Appsmith.
 
 ## Set up signup flow
 To configure a signup flow for custom authentication, follow these steps:
