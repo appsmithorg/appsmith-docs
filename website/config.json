@@ -1,19 +1,19 @@
 {
 	"index_name": "appsmith_docusaurus_index",
-  "start_urls": [
-    {
-      "url": "https://docs.appsmith.com/",
-      "selectors_key": "doc"
-    }
-  ],
+	"start_urls": [
+		{
+			"url": "https://docs.appsmith.com/",
+			"selectors_key": "doc"
+		}
+	],
 	"sitemap_urls": [
 		"https://docs.appsmith.com/sitemap.xml"
 	],
 	"sitemap_alternate_links": true,
 	"stop_urls": [
-		"https://docs.appsmith.com/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition", 
+		"https://docs.appsmith.com/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition",
 		"https://docs.appsmith.com/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
-		"https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes/install-k8s-business-edition", 
+		"https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes/install-k8s-business-edition",
 		"https://docs.appsmith.com/getting-started/setup/installation-guides/docker/install-business-edition"
 	],
 	"selectors": {
@@ -29,7 +29,7 @@
 		"lvl4": "article h4",
 		"lvl5": "article h5, article td:first-child",
 		"lvl6": "article h6",
-		"text": "article p, article li, article td:last-child, article .error div:last-child"
+		"text": "article p, article li, article td:last-child, article .error div:last-child, article .containerGridSampleApp strong, article .containerGridSampleApp .containerDescription"
 	},
 	"strip_chars": " .,;:#",
 	"custom_settings": {
