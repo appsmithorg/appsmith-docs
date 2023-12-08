@@ -1,7 +1,7 @@
 ---
 description: This page demonstrates how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget. 
 ---
-# Send Messages Between App and Iframe
+# Post Messages Between App and Iframe
 
 This page shows how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget.
 
