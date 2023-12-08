@@ -2,7 +2,7 @@
 description: This page shows you how to display and lookup data in a Table widget. 
 ---
 
-# Display and Lookup Data in Table Widget
+# Display and Lookup Data in Table
 
 This page shows you how to display and lookup data in a Table widget.
 ## Prerequisites

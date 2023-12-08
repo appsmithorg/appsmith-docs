@@ -168,6 +168,14 @@ To access the searched location, use the ``center`` reference property. This ret
 
 </dd>
 
+#### Enable map types `boolean`
+
+<dd>
+
+When enabled, this property allows users to switch between the default map view and satellite view.
+
+</dd>
+
 ### Create marker
 
 #### Create new marker `boolean`
