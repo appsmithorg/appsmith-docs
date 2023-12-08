@@ -362,9 +362,12 @@ const sidebars = {
 
               ],
             },
+<<<<<<< HEAD
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+=======
+>>>>>>> main
             {
               type: 'category',
               label: 'Manage Files',
@@ -385,9 +388,17 @@ const sidebars = {
                 'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
               ],
             },
+<<<<<<< HEAD
             'build-apps/how-to-guides/display-map-markers',
             'build-apps/how-to-guides/Create-Nested-Lists'
 
+=======
+            `core-concepts/writing-code/workflows`,
+            'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            'build-apps/how-to-guides/import-export-app-entities',
+            'build-apps/how-to-guides/Create-Nested-Lists',
+>>>>>>> main
           ]
         },
         {
