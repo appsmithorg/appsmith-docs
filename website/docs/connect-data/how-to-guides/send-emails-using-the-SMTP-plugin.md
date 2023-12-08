@@ -85,7 +85,7 @@ Welcome Aboard! {{appsmith.user.name}}
     <img src="https://assets.appsmith.com/widgets/default.png" alt="Text">
     
     <!-- Add a clickable button that links to https://example.com -->
-    <a href="https://example.com" class="action-button">Click Me</a>
+    <a href="https://example.com" className="action-button">Click Me</a>
 
     <footer>
         <p>If you have any questions, feel free to reply to this email or contact our support team.</p>

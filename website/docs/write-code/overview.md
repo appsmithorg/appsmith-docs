@@ -84,35 +84,35 @@ Remember that while Appsmith provides significant power and flexibility for writ
 
 ---
 
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
       </div> 
       <b><a href="/write-code/how-to-guides">How-to Guides</a></b>
-      <div class="containerDescription">
+      <div className="containerDescription">
          Directions and step-by-step guides covering key operations and common tasks.
       </div>
    </div>
 
-   <div class="containerColumnSampleApp columnGrid column-two">
-   <div class="containerCol">
+   <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
       </div>
       <b><a href="/write-code/reference"> Reference</a></b>
-      <div class="containerDescription"> Technical descriptions and information about framework and libraries.
+      <div className="containerDescription"> Technical descriptions and information about framework and libraries.
       </div>
    </div>
    
 </div>
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
       </div> 
       <b><a href="/write-code/concepts/overview">Concepts</a></b>
-      <div class="containerDescription">
+      <div className="containerDescription">
          Explanation of the Appsmith framework
       </div>
    </div>
 
-   <div class=" columnGrid column-two"/>
+   <div className=" columnGrid column-two"/>
    
 </div>
