@@ -3,7 +3,7 @@
 
 This guide shows how to display markers on a Map widget dynamically and implement navigation, allowing users to generate routes between the marked locations.
 
-:::info IMPORTANT
+:::caution
 To use the Map widget on your self-hosted instance, you must configure Google Maps. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
 
@@ -20,9 +20,9 @@ To use the Map widget on your self-hosted instance, you must configure Google Ma
 ```js
 [{
  "lat": {{parseFloat(tblUserData.selectedRow.latitude)}},   // latitude of the location
-"long": {{parseFloat(tblUserData.selectedRow.longitude)}},  // longitude of the location
-"title": "{{tblUserData.selectedRow.name}}",                // title or name of the location
-"color": "blue"                                             // color of the marker representing the location
+ "long": {{parseFloat(tblUserData.selectedRow.longitude)}},  // longitude of the location
+ "title": "{{tblUserData.selectedRow.name}}",                // title or name of the location
+ "color": "blue"                                             // color of the marker representing the location
 }]
 ```
 
