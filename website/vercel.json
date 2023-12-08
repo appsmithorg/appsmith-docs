@@ -928,11 +928,11 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-integrate-zoho",
-      "destination": "/connect-data/how-to-guides/how-to-integrate-zoho"
+      "destination": "https://community.appsmith.com/content/guide/create-campaigns-zoho"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-integrate-dropbox",
-      "destination": "/connect-data/how-to-guides/how-to-integrate-dropbox"
+      "destination": "https://community.appsmith.com/content/guide/upload-files-dropbox"
     },
     {
       "source": "/core-concepts/data-access-and-binding/querying-a-database/query-settings",

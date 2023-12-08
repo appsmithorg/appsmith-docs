@@ -214,7 +214,7 @@
     </div>
     <div class="containerColumnSampleApp columnGrid column-two">
         <div class="containerCol">
-           <a href="/connect-data/how-to-guides/how-to-integrate-dropbox"><strong>Upload Files to Dropbox</strong></a>
+           <a href="https://community.appsmith.com/content/guide/upload-files-dropbox"><strong>Upload Files to Dropbox</strong></a>
         </div><hr/>
         <div class="containerDescription">This guide describes how to configure an Authenticated API datasource for Dropbox with OAuth 2.0 and create a query that uploads a file to Dropbox from your Appsmith app.
         </div>
