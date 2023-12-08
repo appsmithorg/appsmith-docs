@@ -12,33 +12,33 @@ Appsmith encrypts all your datasource credentials and stores them securely. Apps
 2. Learn about [parameterising queries](/connect-data/concepts/dynamic-queries)
 3. Start [app building](/build-apps/overview)
 
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
       </div> 
       <b><a href="/connect-data/how-to-guides">How-to Guides</a></b>
-      <div class="containerDescription">
+      <div className="containerDescription">
          Guides on how to connect & query your datasources.
       </div>
    </div>
 
-   <div class="containerColumnSampleApp columnGrid column-two">
-   <div class="containerCol">
+   <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
       </div>
       <b><a href="/connect-data/reference">Reference</a></b>
-      <div class="containerDescription"> Technical information about datasources and queries.
+      <div className="containerDescription"> Technical information about datasources and queries.
       </div>
    </div>
 </div>
 
-<div class="containerGridSampleApp">
-   <div class="containerColumnSampleApp columnGrid column-one">
-    <div class="containerCol">
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
       </div> 
       <b><a href="/connect-data/concepts">Concepts</a></b>
-      <div class="containerDescription"> Explanation of datasources & queries.
+      <div className="containerDescription"> Explanation of datasources & queries.
       </div>
    </div>
-   <div class="columnGrid column-two" style={{margin: "10px"}}>
+   <div className="columnGrid column-two" style={{margin: "10px"}}>
    </div>
 </div>

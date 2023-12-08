@@ -22,12 +22,13 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to choose from a variety of built-in chart types to visualize your data. Each chart type has its own unique way of representing data, allowing you to choose the most suitable visualization for your specific needs. Here are the available chart types:
 
-* Line Chart, 
-* Bar Chart, 
-* Pie Chart, 
-* Column Chart, 
-* Area Chart, and  
-* Custom Chart
+* Line Chart 
+* Bar Chart 
+* Pie Chart 
+* Column Chart 
+* Area Chart 
+* Custom ECharts
+* Custom Fusion Chart
 
 </dd>
 
@@ -99,14 +100,56 @@ Allows you to add multiple chart series. With this you can populate the chart wi
 
 </dd>
 
-
-#### Custom Fusion Chart `array<object>`
+### Custom EChart Configuration
 
 <dd>
 
-:::info
-Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>
+[ECharts](https://echarts.apache.org/handbook/en/get-started/) is a JavaScript chart library by Apache that provides a wide range of chart types. 
+
+To display an ECharts in Appsmith, you can integrate it by embedding the ECharts code using mustache syntax, `{{<your-chart-data>}}` in the **Custom EChart Configuration** property, like:
+
+
+*Expected data structure:*
+
+```js
+//Basic line chart format
+{
+ xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      data: [150, 230, 224, 218, 135, 147, 260],
+      type: 'line'
+  }]}
+```
+
+
+* **xAxis** specifies the type of data on the x-axis. For instance, you can use `category` as the `type` and provide an array of labeled values in the `data` field. The [xAxis](https://echarts.apache.org/handbook/en/concepts/axis) field is limited to specific chart types.
+
+* **yAxis** specifies the type of data on the y-axis. For instance, to display values on the y-axis, you can set the `type` as `value`. The yAxis field is limited to specific chart types.
+
+* **series** defines the [data points](https://echarts.apache.org/en/option.html#dataset) and the type of chart:
+  * **type**: You can specify the type of chart you want to display, such as `line` for a line chart or `bar` for a bar chart. 
+  * **data**: Contains an array of values or categories, depending on the chart type. Alternatively, you can dynamically update the data using mustache syntax, like `{{Query1.data}}`, enabling real-time data integration from external sources or queries, provided the data format aligns with the chart type's requirements.
+
+
+See how to create a [Custom EChart](/build-apps/how-to-guides/create-custom-charts). 
+
+</dd>
+
+### Custom Fusion Chart 
+
+<dd>
+
+:::caution
+The support for Custom Fusion Charts ends on March 1st, 2024. Change the chart type to [Custom ECharts](#custom-echarts) to switch.
 :::
+
 
 Allows you to add data for Custom charts. You need to specify `type` for chart type and `dataSource` for the data to create a custom FusionChart. Below is an example of a configuration for the Custom Fusion Chart property:
 
@@ -127,423 +170,6 @@ Allows you to add data for Custom charts. You need to specify `type` for chart t
 * **Datasource :** The datasource defines the customization options and data points necessary for creating a chart, should be defined in JSON format. It consists of attributes such as chart and data, which may vary depending on the chart type.
 
 Each chart type has different configurations and options. To learn more about these charts and their specific configurations, you can refer to the official [FusionCharts documentation](https://www.fusioncharts.com/dev/chart-attributes/column2d). Copy the relevant code examples provided in the documentation and paste them into your project for easy implementation.
-
-
-*Examples:*
-
-Here are some examples of custom charts that you can use as a reference to create your own customized charts.
-
-
-<Tabs queryString="current-custom-chart">
-  <TabItem value="2D" label="2D column " default>
-
-Suppose you want to create a custom FusionChart to display monthly revenue data for Harry's SuperMart. You can use a two-dimensional column chart for this purpose.
-
-You can either embed the configuration directly or use a query to retrieve the required configuration. To plot a column chart in a 2-dimensional, you can use the configuration as below:
-
-```json
-{
-  "type": "column2d",
-  "dataSource": {
-    "chart": {
-      "caption": "Monthly Revenue for the year 2021",
-      "xAxisName": "Month",
-      "yAxisName": "Revenue",
-      "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Jan",
-        "value": 42000
-      },
-      {
-        "label": "Feb",
-        "value": 810000
-      },
-      {
-        "label": "Mar",
-        "value": 72000
-      },
-      {
-        "label": "Apr",
-        "value": 55000
-      },
-      {
-        "label": "May",
-        "value": 91000
-      }
-    ]
-  }
-}
-```
-
-In the preceding code snippet, you’ll see that you plotted a column chart to showcase the monthly revenue pattern for last year, say - 2021.
-
- If you have several sister companies operating under the same business name and you want to display the monthly revenue chart specifically for Harry's SuperMart, you can use the `subCaption` property to specify the name of the company.
-
-```js
- “subCaption”: "Harry's SuperMart"
-```
-
-
-To format the revenue values on the chart, you can choose a series (`y-axis`) to show `$` as a prefix. You can use `numberPrefix` and add the dollar($) sign.
-
-```js
- “numberPrefix": "$"
-```
-
-
-
-You have a monthly target revenue of say $70,000 and would want to plot it in the chart. You can use `trendlines` to add this detail to your chart.
-
-```js
-"trendlines": [
-    {
-      "line": [
-        {
-          "startValue": "700000",
-          "valueOnRight": "1",
-          "displayvalue": "Monthly Target"
-        }
-      ]
-    }
-  ]
-```
-
-
-`trendlines` are vertical or horizontal lines that help users understand the emphasized data point. For example, a monthly target.
-
-
-
-
-  </TabItem>
-
-  <TabItem value="p3" label=" Pareto 3D" default>
-  
-
-Pareto chart is a type of bar graph that display the frequency of change with bars following a pattern from longest on the left to shortest on the right. To visualize data, a Pareto 3D chart can be used which combines a line chart and a column chart.
-
-
-<figure>
-  <img src="/img/pareto-3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-
-To display a Pareto 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pareto3d`:
-
-```json
-{
-  "type": "pareto3d",
-  "dataSource": {
-     "chart": {
-      "caption": "Monthly Revenue for the year 2021",
-      "xAxisName": "Month",
-      "yAxisName": "Revenue",
-      "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Jan",
-        "value": 42000
-      },
-      {
-        "label": "Feb",
-        "value": 810000
-      },
-      {
-        "label": "Mar",
-        "value": 72000
-      },
-      {
-        "label": "Apr",
-        "value": 55000
-      },
-      {
-        "label": "May",
-        "value": 91000
-      }
-    ]
-  }
-}
-```
-
-You can add the below code snippet to have a customized tooltip.
-
-```
-"plottooltext": "$label accounted for &lt;b>$datavalue&lt;/b> revenue"
-```
-
-  </TabItem>
-  <TabItem value="p4" label="Pie 3D">
-
-
-Pie chart is a type of data visualization that represents numerical data in a circular graph, where the size of each "slice" of the pie corresponds to the proportion of data it represents.
-
-<figure>
-  <img src="/img/pie3d.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-
-To display a Pie 3D chart for "Harry's SuperMart" example, modify the type value in the configuration to `pie3d`:
-
-
-```
-{
-  "type": "pie3d",
-  "dataSource": {
-     "chart": {
-      "caption": "Monthly Revenue for the year 2021",
-      "xAxisName": "Month",
-      "yAxisName": "Revenue",
-      "theme": "fusion"
-    },
-    "data": [
-      {
-        "label": "Jan",
-        "value": 42000
-      },
-      {
-        "label": "Feb",
-        "value": 810000
-      },
-      {
-        "label": "Mar",
-        "value": 72000
-      },
-      {
-        "label": "Apr",
-        "value": 55000
-      },
-      {
-        "label": "May",
-        "value": 91000
-      }
-    ]
-  }
-}
-```
-
-For a sliced view, you can use a property `enablemultislicing`:
-
-```
-"enablemultislicing": "1"
-```
-  </TabItem>
-  <TabItem value="s3d" label="Stacked Column 3D">
-
-A stacked column chart is a type of data visualization that allows for the comparison of parts of a whole over time or across different sets of data.
-
-<figure>
-  <img src="/img/3d-chart.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-
-For example, here the chart is designed to show the number of reported deaths due to insect bites in India, broken down by the type of infection (`Hymenopter` or `Diptera`) and by year (`1994-1997`).
-
-```
-{
-  "type": "stackedcolumn3d",
-  "dataSource": {
-    "chart": {
-      "caption": "Deaths reported because of insect bites in India",
-      "yaxisname": "Number of deaths reported",
-      "subcaption": "(As per government records)",
-      "plottooltext": "&lt;b>$dataValue&lt;/b> people died because of $seriesName in $label",
-      "showsum": "0",
-      "theme": "fusion"
-    },
-    "categories": [
-      {
-        "category": [
-          {
-            "label": "1994"
-          },
-          {
-            "label": "1995"
-          },
-          {
-            "label": "1996"
-          },
-          {
-            "label": "1997"
-          }
-        ]
-      }
-    ],
-    "dataset": [
-      {
-        "seriesname": "Hymenoptera",
-        "data": [
-          {
-            "value": "15622"
-          },
-          {
-            "value": "10612"
-          },
-          {
-            "value": "15820"
-          },
-          {
-            "value": "26723"
-          }
-        ]
-      },
-      {
-        "seriesname": "Diptera",
-        "data": [
-          {
-            "value": "3622"
-          },
-          {
-            "value": "2612"
-          },
-          {
-            "value": "5820"
-          },
-          {
-            "value": "6723"
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-  </TabItem>
-
-
-
-
- <TabItem value="Dual" label="Dual axis">
-
-A dual-axis chart is a type of chart that combines columns, lines, and areas to display two sets of data with different value ranges. 
-<figure>
-  <img src="/img/dual-axis.png" style= {{width:"700px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
-The chart type used is  `mscombidy2d`, which stands for Multi-series Combination Dual Y-Axis 2D chart. 
-
-The chart displays data for revenue, profits, and number of employees over time, with revenue and profits represented by columns and an area, and the number of employees represented by a line. The chart also includes various chart properties, such as the chart caption, axis names, and chart theme.
- ```json
-{
-  "type": "mscombidy2d",
-  "dataSource": {
-    "chart": {
-    "caption": "Revenue, Profits & Number of employees",
-    "drawcrossline": "1",
-    "yaxisname": "Revenue / Profit (in $)",
-    "syaxisname": "Number of employees",
-    "showvalues": "0",
-    "showanchors": "0",
-    "numberprefix": "$",
-    "plothighlighteffect": "fadeout",
-    "theme": "fusion"
-  },
-	 "categories": [
-    {
-      "category": [
-        {
-          "label": "Mar-2012"
-        },
-        {
-          "label": "Jun-2012"
-        },
-        {
-          "label": "Sept-2012"
-        },
-        {
-          "label": "Dec-2012"
-        },
-        {
-          "label": "Mar-2013"
-        }
-        
-      ]
-    }
-  ],
-  "dataset": [
-    {
-      "seriesname": "Revenue",
-      "plottooltext": "Revenue in $label : <b>$dataValue</b>",
-      "data": [
-        {
-          "value": "36000"
-        },
-        {
-          "value": "22000"
-        },
-        {
-          "value": "24000"
-        },
-        {
-          "value": "42000"
-        },
-        {
-          "value": "35000"
-        }
-      ]
-    },
-    {
-      "seriesname": "Profit",
-      "plottooltext": "Profit in $label : <b>$dataValue</b>",
-      "renderas": "area",
-      "showvalues": "0",
-      "data": [
-        {
-          "value": "4000"
-        },
-        {
-          "value": "5000"
-        },
-        {
-          "value": "3000"
-        },
-        {
-          "value": "4000"
-        },
-        {
-          "value": "1000"
-        }
-      ]
-    },
-    {
-      "seriesname": "Number of Employees",
-      "parentyaxis": "S",
-      "renderas": "line",
-      "showvalues": "0",
-      "plottooltext": "$value employees",
-      "data": [
-        {
-          "value": "31"
-        },
-        {
-          "value": "25"
-        },
-        {
-          "value": "35"
-        },
-        {
-          "value": "29"
-        },
-        {
-          "value": "25"
-        }
-      ]
-    }
-  ]
-	
-  }
-}
-```
-  </TabItem>
-
-</Tabs>
-
 
 
 

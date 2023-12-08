@@ -17,7 +17,7 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
    ```bash
    docker-compose down
    ```
-2. Open the `docker-compose.yml` file and uncomment the below code block. Note that you must add a 6 space-separated fields cron expression, not the traditional 5 space-separated fields to the `command` attribute. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more. Based on the specified cron expression, watchtower updates Appsmith at the stipulated time whenever a new version becomes available.
+2. Open the `docker-compose.yml` file and add the below code block after the `restart` attribute in the `appsmith` service. Note that you must add a 6 space-separated fields cron expression, not the traditional 5 space-separated fields to the `command` attribute. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more. Based on the specified cron expression, watchtower updates Appsmith at the stipulated time whenever a new version becomes available.
 
    ```yaml
     labels:
@@ -95,7 +95,7 @@ Follow the below steps to schedule automatic updates for Appsmith Kubernetes ins
     scheduler: "0/10 * * * *"
    ```
 
-  The above 5 space-separated fields cron expression `0/10 * * * *` means that the task runs every day of the week and every month, regardless of the year, at the 0th minute of every hour. You can change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#update-on-kubernetes) guide.
+  The above 5 space-separated fields cron expression `0/10 * * * *` means that the task runs every day of the week and every month, regardless of the year, at the `0th` minute of every hour. You can change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#update-on-kubernetes) guide.
   
   Below are some examples of 5 space-separated fields cron expressions:
     * Check for updates every Sunday at 12:00 noon:
