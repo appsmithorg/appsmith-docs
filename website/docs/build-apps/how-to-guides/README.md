@@ -6,7 +6,7 @@
 <div class="containerGridSampleApp">
 <div class="containerColumnSampleApp columnGrid column-one">
         <div class="containerCol">
-            <a href="/core-concepts/building-ui/dynamic-ui"><strong>Trigger UI Workflow</strong></a>
+            <a href="/core-concepts/building-ui/dynamic-ui"><strong>Bind Data to Widgets</strong></a>
         </div> <hr/>
         <div class="containerDescription">This page shows how you can dynamically update widget properties using queries, JavaScript functions, and setter methods.</div>
         <div class="containerTutorialLink"></div>
