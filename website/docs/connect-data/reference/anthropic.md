@@ -1,7 +1,7 @@
 # Anthropic
 
 
-This page provides information for connecting Appsmith to Anthropic, which allows you to configure applications with advanced AI features.
+This page provides information for connecting Appsmith to Anthropic, which allows you to configure applications with advanced AI features, such as chat completion.
 
 
 ## Connect Anthropic
