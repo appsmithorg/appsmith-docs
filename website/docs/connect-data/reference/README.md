@@ -84,9 +84,19 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
         <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
     </div>
 
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/anthropic">
+            <img className="containerImage" src="/img/anthropic4.svg" alt="OpenAI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
+    </div>
 
 
 </div>
+
+
 
 ## Databases
 Databases are an essential part of many applications and are used to store and manage data. You can run queries to read and write data directly from the Appsmith editor. The following databases are supported by Appsmith:
