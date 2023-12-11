@@ -70,19 +70,29 @@ Follow the below steps to setup PostgreSQL RDS instance:
 - Click the **Create database** button to create the RDS instance
 - Once the instance is up note the endpoint URL to connect Keycloak RDS from the Appsmith Instance.
 
-## Modify Task Definition
+## Update Appsmith task definition
 
-- Go to AWS ECS and select the Appsmith Service
-- Go to Task Definition and select the Appsmith Task definition
-- Edit the Task Definition
-- In the Environment variables section, add the below environment vairables
+Follow the below steps to configure your Appsmith task definition to use the newly created EFS:
+
+1. Go to the AWS Management Console, open the Amazon ECS console, and select **Task Definitions** from the sidebar.
+2. Select your existing task definition, and click the **Create new revision** button to create a new revision of the task definition.
+3. Go to the **Container-1** section, click the **Add environment variable** button, and add the below environment variables in **Key** and their values in **Value**: 
     - **APPSMITH_KEYCLOAK_DB_URL** - Add endpoint URL you noted down in the [Setup PostgreSQL](#setup-postgresql) section
     - **APPSMITH_KEYCLOAK_DB_DRIVER** - postgresql
     - **APPSMITH_KEYCLOAK_DB_USERNAME** -  Add database username you noted down in the [Setup PostgreSQL](#setup-postgresql) section
     - **APPSMITH_KEYCLOAK_DB_PASSWORD** - Add database password you noted down in the [Setup PostgreSQL](#setup-postgresql) section
-- Save the Task Definition
-- Restart the Appsmith service.
+4. Keep default values for other settings, and click **Create** button.
 
+## Update Appsmith ECS service
+
+Follow the below steps to update your Appsmith service to use the newly created task definition:
+
+1. Go to the AWS Management Console, open the Amazon ECS console, select your ECS Cluster, and go to the **Services** tab.
+2. Select your service and click the **Update** button.
+3. Check the **Force new deployment** checkbox
+4. In the **Task definition**, select the newly created revision for the **Revision** setting.
+5. Click the **Update** button to save the changes and initiate a new deployment.
+6. Verify the service **Last status** shown as **Running**, which means that the service is up and running.
 
 ## Restore Keycloak data
 
