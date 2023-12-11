@@ -68,7 +68,7 @@ Follow the below steps to update your Appsmith service to use the newly created 
 ## Migrate data from Bind mount to EFS
 
 Follow the below steps to migrate data:
-1. Use the keypair that you set while creating the cluster to connect to your AWS account.
+1. Use the key pair created during the cluster creation process; this key pair will be necessary for connecting to your AWS account.
 
    ```bash
    ssh -i <keypair.pem> -o "StrictHostKeyChecking=no" ec2-user@<task-ip>
@@ -78,12 +78,12 @@ Follow the below steps to migrate data:
    ```bash
    sudo docker ps -a | grep appsmith
    ```
-3. Exec into the container with, replace the `<CONTAINER-ID>` with Appsmith container ID.
+3. Exec into the container with:
 
    ```bash
    sudo docker exec -it -u root <CONTAINER-ID> bash
    ```
-   You'll see both the old and new volumes attached to the Appsmith container.
+ Replace the `<CONTAINER-ID>` with Appsmith container ID. You'll see both the old and new volumes attached to the Appsmith container.
  4. Copy the backup tar to the EFS volume with:
 
    ```bash
@@ -95,22 +95,21 @@ Follow the below steps to migrate data:
    appsmithctl restore
    ```
    For more information, see [Restore Appsmith](/getting-started/setup/instance-management/appsmithctl#restore-instance).
-6. Verify the Appsmith service by logging into your Appsmith account, and verifying your apps.
+6. Verify the Appsmith service by logging into your Appsmith account and verifying your apps.
 
 ## Remove Bind mount storage
 
 Follow the below steps to remove the Bind mount:
 
 1. Go to the AWS Management Console, open the Amazon ECS console, and select **Task Definitions** from the sidebar.
-2. Select your existing task definition, and click the **Create new revision** button to create a new revision of the task definition.
+2. Select your existing task definition, and click the **Create new revision** button to create a new revision for the task definition.
 3. In the **Storage** section, click the **Remove** button next to the volume that uses Bind mount.
 4. Keep default values for other settings, and click **Create** button. 
 5. Update the ECS service to use the latest revision. Follow the steps in the [Update Appsmith ECS service](#update-appsmith-ecs-service) section.
-6. Verify the Appsmith service by logging into your Appsmith account, and verifying your apps.
+6. Verify the Appsmith service by logging into your Appsmith account and verifying your apps.
 
 ## Troubleshooting
 
-If you see errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. 
+If errors occur, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. 
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-

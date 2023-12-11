@@ -85,7 +85,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     * Configure the **Container mount points** as shown below:
         * **Container**- Choose **appsmith**
         * **Source volume**- Choose **appsmith**
-        * **Container path**- add path as `/appsmith-stacks`
+        * **Container path**- add the path as `/appsmith-stacks`
 
  :::danger Attention 
  Do not share the EFS across ECS services, as doing so will cause Appsmith services to crash. 
@@ -106,7 +106,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
         * **Revision**- Keep the default selection
         * **Service name**- Give a meaningful name to the service. For example, `appsmith-ecs-ec2-cluster-service` 
         * **Service type**- Choose **DAEMON**
-5. Keep the default setting for all other sections, and click **Create** button to create service. It will take about five minutes for Appsmith to be up and running. The **Last status** shown as **Running** means that the service is up and running.
+5. Keep the default setting for all other sections, and click the **Create** button to create a service. It will take about five minutes for Appsmith to be up and running. The **Last status** shown as **Running** means that the service is up and running.
 
 ### Verify Appsmith installation
 
