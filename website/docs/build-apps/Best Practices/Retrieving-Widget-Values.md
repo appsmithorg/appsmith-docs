@@ -1,4 +1,4 @@
-# Handle Widget Data 
+# Best Practices
 
 This guide explains best practices for retrieving and managing widget property data in Appsmith.
 
