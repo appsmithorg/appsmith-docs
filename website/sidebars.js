@@ -479,6 +479,14 @@ const sidebars = {
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Best Practices',
+          items: [
+            `build-apps/Best Practices/Retrieving-Widget-Values`
+          ]
+        },
       ]
     }, //Build Apps end
 
