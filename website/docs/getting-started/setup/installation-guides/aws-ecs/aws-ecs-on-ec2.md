@@ -48,7 +48,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     * **VPC**: Choose your existing VPC or create a new one VPC
     * **Subnets**: Select subnets that provide public access
     * **Security group**: Use the security group created earlier in the [Prerequisites] section
-     * **Auto-assign public IP**: Choose **Turn on**
+    * **Auto-assign public IP**: Choose **Turn on**
 8. Configure the **Monitoring** section by toggling on the **Use container insights** setting
 9. Click the **Create** button to create your cluster. You'll see the ECS cluster under Clusters.
 
@@ -64,7 +64,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 5. Configure the **Container-1** as shown below:
     * **Name** - Give a meaningful name. For example, `appsmith`
     * **Image URI** - `index.docker.io/appsmith/appsmith-ee`
-    * Under the **Environment variables** section, click the **Add environment variable** button, and add the below environment variables in **Key** and their values in **Value**:
+    * Under the **Environment variables** section, click the **Add environment variable** button, and add the below environment variables in the **Key** and their values in the **Value** fields:
         * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
@@ -106,7 +106,6 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
         * **Revision**- Keep the default selection
         * **Service name**- Give a meaningful name to the service. For example, `appsmith-ecs-ec2-cluster-service` 
         * **Service type**- Choose **DAEMON**
-    
 5. Keep the default setting for all other sections, and click **Create** button to create service. It will take about five minutes for Appsmith to be up and running. The **Last status** shown as **Running** means that the service is up and running.
 
 ### Verify Appsmith installation
