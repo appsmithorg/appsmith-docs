@@ -256,6 +256,7 @@ const sidebars = {
               link: { type: 'doc', id: 'connect-data/reference/README' },
               items: [
                 'connect-data/reference/airtable',
+                'connect-data/reference/anthropic',
                 'connect-data/reference/querying-arango-db',
                 'connect-data/reference/authenticated-api',
                 'connect-data/reference/curl-import',
