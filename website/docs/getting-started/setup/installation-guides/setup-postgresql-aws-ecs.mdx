@@ -51,6 +51,12 @@ Follow the below steps to backup Keycloak data:
     ```
     Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
 
+3. Start Keycloak with:
+
+    ```bash
+    supervisorctl start keycloak
+    ``` 
+
 ## Setup PostgreSQL
 
 Follow the below steps to set up PostgreSQL RDS instance:
@@ -98,7 +104,13 @@ Follow the below steps to update your Appsmith service to use the newly created 
 
 Follow the below steps to restore Keycloak data:
 
-1. Run the below command to restore the data:
+1. Stop the Keycloak with:
+
+    ```bash
+    supervisorctl stop keycloak
+    ```
+
+2. Run the below command to restore the data:
 
     ```bash
     /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml \
@@ -109,7 +121,7 @@ Follow the below steps to restore Keycloak data:
     ```
     Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
 
-2. Start Keycloak with:
+3. Start Keycloak with:
 
     ```bash
     supervisorctl start keycloak
