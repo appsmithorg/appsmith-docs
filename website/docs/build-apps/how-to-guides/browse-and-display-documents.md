@@ -53,7 +53,7 @@ export default {
 // If the image is in base64 format, you can handle it by checking if the imageUrl starts with the prefix `data:image/`.
 ```
 
-The above function displays an Image or a Document Viewer based on the file type of a selected row, showing the Image if it's a PNG or JPG file, and displaying the document otherwise. Execute the provided function during the **onRowselected** event.
+The above function displays an Image or a Document Viewer based on the file type of a selected row, showing the Image if it's a PNG or JPG file, and displaying the Document Viewer otherwise. Set the **onRowselected** event to execute the provided function.
 
 
 </dd>
