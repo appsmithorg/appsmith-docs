@@ -332,6 +332,7 @@ const sidebars = {
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                `build-apps/how-to-guides/browse-and-display-documents`,
                 'build-apps/how-to-guides/display-map-markers',
                 `build-apps/how-to-guides/display-select-options-dynamically`
               ],
