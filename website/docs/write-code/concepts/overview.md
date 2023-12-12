@@ -10,18 +10,18 @@ Understanding how to effectively write and integrate code is pivotal to harnessi
 
 Let's get started on your journey to creating dynamic and responsive applications on the Appsmith platform!
 
-<div class="containerGridSampleApp">
-  <div class="containerColumnSampleApp columnGrid column-one">
-        <div class="containerCol">
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
             <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>JSObjects</strong>
             </a>
         </div> <hr/>
-        <div class="containerDescription">JSObjects enable better organization of functions & variables</div>
+        <div className="containerDescription">JSObjects enable better organization of functions & variables</div>
     </div>
-    <div class="containerColumnSampleApp columnGrid column-two">
-        <div class="containerCol">
+    <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
            <a href="/write-code/concepts/execute-onpageload"><strong>Execute Queries & JS OnPageLoad</strong></a>
         </div><hr/>
-        <div class="containerDescription">Run code on page load and learn how the settings work</div>
+        <div className="containerDescription">Run code on page load and learn how the settings work</div>
     </div>
 </div>

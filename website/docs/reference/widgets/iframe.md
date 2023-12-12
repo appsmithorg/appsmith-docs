@@ -70,7 +70,7 @@ In addition to static HTML, you can display data generated dynamically from quer
     </style>
 </head>
 <body>
-    <div class="time-picker">
+    <div className="time-picker">
         <select id="hour">
             <!-- Add options for hours in 12-hour format with AM/PM -->
             <option value="12">12</option>
