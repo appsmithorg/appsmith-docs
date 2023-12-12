@@ -62,7 +62,7 @@ The code generates multiple markers on a map, extracting latitude, longitude, an
 
 
 
-## Display live location
+## Display current location
 
 To display a live location on the map, use Appsmith's [geolocation](/reference/appsmith-framework/context-object#geolocation-object) function.
 
@@ -94,10 +94,10 @@ If you have only addresses and want to show markers at the locations, you can us
 <dd>
 
 ```api
-http://api.positionstack.com/v1/forward?access_key=d6234&query={{this.params.address}}
+http://api.positionstack.com/v1/forward?access_key=d6234&query={{Tabel_address.selectedRow.address}}
 ```
 
-The `access_key` provides authentication, and `{{this.params.address}}` allows dynamic querying based on the provided address parameter.
+This API uses geocoding to fetch location details using the provided address from `Tabel_address.selectedRow.address`. The `access_key` serves as an authentication key for accessing the geocoding service.
 
 </dd>
 
@@ -107,17 +107,17 @@ The `access_key` provides authentication, and `{{this.params.address}}` allows d
 
 
 ```api
-{{Api1.data.data.map((item) => {return {lat: item.latitude, long: item.longitude}})}}
+{{fetchloc.data.map((item) => {return {lat: item.latitude, long: item.longitude}})}}
 ```
 
 </dd>
 
-4. On Button's **onClick** or Table's **onRowSelected**, use the following code to trigger the forward geocoding API with a address:
+4. Set Button's **onClick** or Table's **onRowSelected** to execute the forward geocoding API:
 
 <dd>
 
 ```js
-{{Api1.run({"address": Table1.selectedRow.address})}}  
+{{fetchloc.run()}}
 
 // Sample address: 1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA
 ```
@@ -125,60 +125,7 @@ The `access_key` provides authentication, and `{{this.params.address}}` allows d
 </dd>
 
 
-
-## Lookup address from coordinates (Reverse geocoding)
-
-If you only have coordinates and want to obtain the corresponding address, use reverse geocoding.
-
-1. Generate an API key by signing up for a geocoding service, such as [Google Maps API](https://developers.google.com/maps/documentation/geocoding/requests-geocoding) or [Positionstack](https://positionstack.com/). 
-
-2. Create a REST API to enable reverse geocoding, like:
-
-<dd>
-
-
-```api
-http://api.positionstack.com/v1/reverse?access_key=d23456&query={{this.params.lat}},{{this.params.long}}
-```
-
-This API performs reverse geocoding to retrieve location information based on provided latitude and longitude parameters. The `access_key` serves as an authentication key for accessing the geocoding service.
-
-
-</dd>
-
-3. Enable **Create new marker** property. 
-
-4. Click JS and set the **OnCreateMarker** and **onMarkerClick** properties to execute the query:
-
-<dd>
-
-
-```js
-{{Api1.run({"lat": Map1.selectedMarker.lat, "long": Map1.selectedMarker.long})}}
-```
-
-The above code executes the API with latitude and longitude parameters obtained from the selected marker. 
-
-</dd>
-
-5. Drop a Text widget to display reverse geocoded address information, like:
-
-<dd>
-
-
-```js
-Continent: {{Api1.data.data[0]?.continent}}
-Country: {{Api1.data.data[0].country  || ""}}
-Region: {{Api1.data.data[0].region || ""}}
-Locality: {{Api1.data.data[0].locality || ""}}
-```
-
-The above code extracts continent, country, region, and locality information from the response of the API. 
-
-</dd>
-
-
-With this setup, whenever you create a new marker or click on an existing marker, the Text widget dynamically displays address information.
+If you only have coordinates and want to obtain the corresponding address, use [reverse geocoding](https://community.appsmith.com/content/guide/lookup-address-coordinates-using-map-widget-reverse-geocoding).
 
 
 
