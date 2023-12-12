@@ -46,6 +46,7 @@ Follow the below steps to backup Keycloak data:
     /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml \
     -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 \
     -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=dir \
+    #highlight-next-line
     -Dkeycloak.migration.dir=<PATH_TO_THE_BACKUP_DIRECTORY>
     ```
     Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
@@ -103,6 +104,7 @@ Follow the below steps to restore Keycloak data:
     /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml \
     -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 \
     -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir \
+    #highlight-next-line
     -Dkeycloak.migration.dir=<PATH_TO_THE_BACKUP_DIRECTORY>
     ```
     Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
