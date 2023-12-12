@@ -333,6 +333,7 @@ const sidebars = {
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
                 'build-apps/how-to-guides/display-map-markers',
+                `build-apps/how-to-guides/display-select-options-dynamically`
               ],
             },
             {
@@ -387,8 +388,7 @@ const sidebars = {
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'build-apps/how-to-guides/import-export-app-entities',
-            'build-apps/how-to-guides/Create-Nested-Lists',
-            `build-apps/how-to-guides/display-select-options-dynamically`
+            'build-apps/how-to-guides/Create-Nested-Lists'
           ]
         },
         {
