@@ -39,6 +39,20 @@ const generateAIFeedback = (feedbackOption, userSearchTerm, aiGeneratedResult) =
   return null;
 };
 
+const registerAISearch = (userSearchTerm) => {
+  if (ExecutionEnvironment.canUseDOM) {
+    const docId = window.location.pathname;
+    const feedbackData = {
+      docId: docId || null,
+      userSearchTerm: userSearchTerm || null,
+    };
+    if (feedbackData) {
+      sendToSegment(feedbackData, "AI Search Performed");
+    }
+  }
+  return null;
+};
+
 const sendToSegment = (feedbackJSON, eventType) => {
   if (ExecutionEnvironment.canUseDOM) {
     if (typeof window.analytics !== 'undefined') {
@@ -47,4 +61,4 @@ const sendToSegment = (feedbackJSON, eventType) => {
   }
 };
 
-export { generateFeedback, generateFeedbackComment, sendToSegment, generateAIFeedback };
+export { generateFeedback, generateFeedbackComment, sendToSegment, generateAIFeedback, registerAISearch };
