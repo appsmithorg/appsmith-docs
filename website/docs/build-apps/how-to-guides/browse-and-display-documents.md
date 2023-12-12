@@ -30,30 +30,19 @@ This guide shows how to organize and display documents using the Tabs widget.
 {{Docs_Table.selectedRow.doc_type_passport}}
 ```
 
-If you don't know the file type of that column, you can create a JS function to change visibility of widgets dynamically:
+If you don't know the file type of that column, you can create a JS function to change the visibility of widgets dynamically. Enable JS and following code in **Visible** property:
 
 ```js
-export default {
-  myFun1() {
-    const imageUrl = Table1.selectedRow.doc_type_passport;
+//For Image 
+{{Docs_Table.selectedRow.doc_type_passport.includes(".jpg") || false}}
 
-    if (imageUrl.includes('.png') || imageUrl.includes('.jpg')) {
-      
-      Image1.setVisibility(true);
-      DocumentViewer1.setVisibility(false);
-      Image1.setImage(Table1.selectedRow.doc_type_passport);
-    } else {
+//For Document Viewer
+{{Docs_Table.selectedRow.doc_type_passport.includes(".pdf") || false}}
 
-      Image1.setVisibility(false);
-      DocumentViewer1.setVisibility(true);
-      DocumentViewer1.setURL(Table1.selectedRow.doc_type_passport);
-    }
-  }
-};
 // If the image is in base64 format, you can handle it by checking if the imageUrl starts with the prefix `data:image/`.
 ```
 
-The above function displays an Image or a Document Viewer based on the file type of a selected row, showing the Image if it's a PNG or JPG file, and displaying the Document Viewer otherwise. Set the **onRowselected** event to execute the provided function.
+The above code displays an Image or a Document Viewer based on the file type of a selected row, showing the Image if it's a JPG file, and displaying the Document Viewer otherwise. 
 
 
 </dd>
