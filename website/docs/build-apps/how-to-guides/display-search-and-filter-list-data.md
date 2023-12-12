@@ -24,18 +24,19 @@ To display data in a List widget, follow these steps:
    Where `fetch_users` is the query to fetch data from the connected datasource.
 
    To nest lists within a List widget, see [Create Nested Lists](build-apps/how-to-guides/Create-Nested-Lists).
-   
-2. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
+2. Use the `currentItem` property to configure the items after the data is bound.
 
-
-## Customize items
-1. To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
-2. To customize each widget within the List, go to the widget's property pane and set the properties like **Data**, **Visible**, and configure events associated with the widgets.
+   Example:
+   ```jsx
+   {{currentItem.name}}
+   ```
+3. To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
+4. To customize each widget within the List, go to the widget's property pane and set the properties like **Data**, **Visible**, and configure events associated with the widgets.
+5. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
 
 ## Format list cells
 Highlighting list cells enables you to visually distinguish specific cells from others.
-For example, user management applications highlight active users in green when displaying a list of users to differentiate them quickly.
 To highlight items of the List, follow these steps:
 1. Select the first item in the widget and click **Style** in the widget's property pane. 
 2. In **Background color**, set the item color.
