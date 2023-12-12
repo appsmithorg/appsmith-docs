@@ -329,9 +329,9 @@ const sidebars = {
               label: 'Display Data',
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
-                `build-apps/how-to-guides/display-search-and-filter-list-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
+                `build-apps/how-to-guides/display-search-and-filter-list-data`,
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
                 'build-apps/how-to-guides/display-map-markers',
               ],
