@@ -94,7 +94,7 @@ If you have only addresses and want to show markers at the locations, you can us
 <dd>
 
 ```api
-http://api.positionstack.com/v1/forward?access_key=d6234&query={{Tabel_address.selectedRow.address}}
+http://api.positionstack.com/v1/forward?access_key=d6234&query={{tbluserData.selectedRow.address}}
 ```
 
 This API uses geocoding to fetch location details using the provided address from `Tabel_address.selectedRow.address`. The `access_key` serves as an authentication key for accessing the geocoding service.
