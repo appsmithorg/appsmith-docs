@@ -42,11 +42,12 @@ To bind and display data on the Select widget using mustache binding, follow the
    SELECT DISTINCT role FROM "access_details" LIMIT 10;
    ```
 3. Click **JS** in the widget's property pane.
-4. Paste the following code to display the data in the widget where `query` is the name of the query to fetch data:
+4. Paste the following code to bind the data in the widget where `query` is the name of the query to fetch data:
    
    ```jsx
    {{query.data}}
    ```
+5. Set the **Label key** and the **Value key** to display data accordingly.
 ## Display options dynamically
 To display dropdown options dynamically based on the selection in another Select widget, follow these steps:
 1. Drop a Select widget.
