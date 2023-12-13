@@ -1,6 +1,6 @@
 # AWS ECS
 
-Explore the resources below to set up your Appsmith installation on Amazon Elastic Container Service (ECS) using Amazon Elastic Compute Cloud (EC2) or Amazon Elastic Container Service (ECS) using Amazon Fargate. You will also find instructions on migrating your existing Appsmith installation on an ECS cluster using Bind Mount volume to Amazon Elastic File System (EFS), and setting up a PostgreSQL RDS instance before configuring SAML SSO.
+Explore the resources below to set up your Appsmith installation on Amazon Elastic Container Service (ECS) using either Amazon Elastic Compute Cloud (EC2) or Amazon Fargate. You will also find detailed guides for migrating your ECS Appsmith installation with Bind Mount volume to Amazon EFS, and setting up a PostgreSQL RDS instance before configuring SAML SSO.
 
 <div class="containerGridSampleApp">
 
