@@ -70,6 +70,7 @@ const sidebars = {
                     'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
                     'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
                   ],
                 },
                 'getting-started/setup/installation-guides/azure-aci',
@@ -89,7 +90,6 @@ const sidebars = {
                 'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
                 'getting-started/setup/installation-guides/air-gapped',
-                'getting-started/setup/installation-guides/setup-postgresql-aws-ecs',
               ],
             },
             {
