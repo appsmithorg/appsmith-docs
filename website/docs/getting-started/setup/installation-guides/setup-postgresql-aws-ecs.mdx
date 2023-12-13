@@ -34,22 +34,18 @@ Before you configure Security Assertion Markup Language (SAML) Single Sign-On (S
 
 Follow the below steps to backup Keycloak data:
 
-1. Stop the Keycloak with:
+1. Go to Keycloak directory using a `cd` command:
 
     ```bash
-    supervisorctl stop keycloak
+    cd /opt/keycloak/bin
     ```
 
 2. Create a backup with:
 
     ```bash
-    /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml \
-    -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 \
-    -Dkeycloak.migration.action=export -Dkeycloak.migration.provider=dir \
-    #highlight-next-line
-    -Dkeycloak.migration.dir=<PATH_TO_THE_BACKUP_DIRECTORY>
+    ./kc.sh export --dir /appsmith-stacks/data/kc_data/
     ```
-    Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
+    The above command creates a backup of Keycloak data present in the `kc_data` directory.
 
 3. Start Keycloak with:
 
@@ -57,7 +53,7 @@ Follow the below steps to backup Keycloak data:
     supervisorctl start keycloak
     ``` 
 
-## Setup PostgreSQL
+## Create PostgreSQL RDS instance
 
 Follow the below steps to set up PostgreSQL RDS instance:
 
@@ -74,14 +70,14 @@ Follow the below steps to set up PostgreSQL RDS instance:
       Keep a note of these credentials, as you will need the credentials to connect Keycloak RDS from the Appsmith instance.
     * If you wish, you may choose to configure Backup, monitoring, and encryption details. For all other fields keep the default selections.
 - Click the **Create database** button to create the RDS instance
-- Once the instance is up note the endpoint URL to connect Keycloak RDS from the Appsmith Instance.
+- After launching the instance, note the endpoint available under **Connectivity & security** tab on the instance details screen. You need this endpoint for configuring the Appsmith instance, enabling it to establish a connection with the Keycloak RDS.
 
 ## Update Appsmith task definition
 
 Follow the below steps to configure your Appsmith task definition to use the newly created EFS:
 
 1. Go to the AWS Management Console, open the Amazon ECS console, and select **Task Definitions** from the sidebar.
-2. Select your existing task definition, and click the **Create new revision** button to create a new revision of the task definition.
+2. Select the existing Appsmith task definition, and click the **Create new revision** button to create a new revision of the task definition.
 3. Go to the **Container-1** section, click the **Add environment variable** button, and add the below environment variables in **Key** and their values in **Value**: 
     - **APPSMITH_KEYCLOAK_DB_URL** - Add the endpoint URL you noted down in the [Setup PostgreSQL](#setup-postgresql) section
     - **APPSMITH_KEYCLOAK_DB_DRIVER** - postgresql
@@ -104,22 +100,24 @@ Follow the below steps to update your Appsmith service to use the newly created 
 
 Follow the below steps to restore Keycloak data:
 
-1. Stop the Keycloak with:
+1. Go to Keycloak directory using a `cd` command:
+
+    ```bash
+    cd /opt/keycloak/bin
+    ```
+
+2. Stop the Keycloak with:
 
     ```bash
     supervisorctl stop keycloak
     ```
 
-2. Run the below command to restore the data:
+3. Run the below command to restore the data:
 
     ```bash
-    /bin/sh /opt/keycloak/bin/standalone.sh -c standalone.xml \
-    -b 0.0.0.0 -Djboss.socket.binding.port-offset=1 \
-    -Dkeycloak.migration.action=import -Dkeycloak.migration.provider=dir \
-    #highlight-next-line
-    -Dkeycloak.migration.dir=<PATH_TO_THE_BACKUP_DIRECTORY>
+    ./kc.sh import --db postgres --db-password ${APPSMITH_KEYCLOAK_DB_PASSWORD} --db-username ${APPSMITH_KEYCLOAK_DB_USERNAME} --db-url "jdbc:${APPSMITH_KEYCLOAK_DB_DRIVER}://${APPSMITH_KEYCLOAK_DB_URL}" --dir /appsmith-stacks/data/kc_data/
     ```
-    Ensure that you replace the `<PATH_TO_THE_BACKUP_DIRECTORY>` parameter with the path of the backup directory.
+    The above command imports the backup taken in the [Backup Keycloak Data](#backup-keycloak-data) section.
 
 3. Start Keycloak with:
 
