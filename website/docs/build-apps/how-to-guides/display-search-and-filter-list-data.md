@@ -5,7 +5,7 @@ description: This page shows you how to display and lookup data in a List widget
 # Display and Lookup Data in List
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/h3qV8jRXuy6LcNNIjeEo?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/pXo2KTTbWCYqvPdoQNh0?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -31,7 +31,7 @@ To display data in a List widget, follow these steps:
    {{currentItem.name}}
    ```
 3. To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
-4. To customize each widget within the List, go to the widget's property pane and set the properties like **Data**, **Visible**, and configure events associated with the widgets.
+4. To customize, select the individual widgets within the List item.
 5. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
 
@@ -49,20 +49,27 @@ To highlight items of the List, follow these steps:
 
 ## Configure search on List
 To configure search on List, follow these steps:
-1. Drop a Container widget and then add a List widget and an Input widget to the Container.
-2. Bind data to the List by following the steps in the [Display data](#display-data) section.
-3. Add a JS object and add code to filter the List data based on the search text in the Input widget.
+1. Drop a Select widget and bind data to the widget in the **Source Data** property using a query.
+
    Example:
-   ```jsx
-   export default {
-	searchByName: () => {
-		if(searchName.text.length==0){
-			return getUsers.data
-		}
-		else{
-			return(getUsers.data.filter(word => word.first_name.toLowerCase().includes(searchName.text.toLowerCase())))
-		}
-	}
+   ```sql
+   SELECT DISTINCT name from users;
    ```
+2. Set the **Label key** and **Value key** properties and enable the [Server-side filtering](/reference/widgets/select#server-side-filtering-boolean) property of the widget.
+3. Modify the List widget's fetch query to fetch data using the [filterText](/reference/widgets/select#filtertext-string) property of the Select widget.
+   
+   Example:
+   ```sql
+   SELECT * FROM users 
+   WHERE name LIKE '%{{filter.filterText}}%'
+   ORDER BY id LIMIT 10;
+   ```
+   :::info
+   When prepared statements are enabled and widget bindings are used, quotes are not required.
+   :::
+
+4. Add an **Action** to the Select widget's [onFilterUpdate](/reference/widgets/select#onfilterupdate) event to run the above query to filter List data.
+   For more information, see [Setup Server-side Filter on Select](/build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select).
+
 ## See also
 - [Sample apps](/learning-and-resources/sample-apps)
