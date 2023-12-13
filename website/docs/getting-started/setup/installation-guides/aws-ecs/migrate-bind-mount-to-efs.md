@@ -87,7 +87,7 @@ Follow the below steps to migrate data:
  4. Copy the backup tar to the EFS volume with:
 
    ```bash
-   cp /appsmith-stacks-old/data/backup/*.tar /appsmith-stacks/data/restore/
+   cp /appsmith-stacks-old/data/backup/*.tar /appsmith-stacks/data/backup/
    ```
 5. Restore the data with: 
 
