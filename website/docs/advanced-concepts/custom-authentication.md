@@ -4,45 +4,20 @@ sidebar_position: 1
 description: In this guide, you'll learn how to implement a custom Auth flow using an API with JWTs.
 ---
 
-# Build Custom Authentication
+# Integrate Custom Authentication
 
 This guide walks you through the process of building custom authentication and integrating your Appsmith applications with any authentication provider.
 
 ## Prerequisites
-- A configured authentication service or a database with user credentials that you will integrate with Appsmith.
+- An API endpoint for user signup.
+- An API endpoint for user sign-in.
+- A configured authentication service or a database with user credentials to integrate with Appsmith.
 
-## Set up signup flow
-To configure a signup flow for custom authentication, follow these steps:
-1. Drop a Form widget to your app and design a signup screen by adding the Input widgets for email and password to the Form.
-2. Import the signup curl command from the configured API. Let's rename this to `sign_up`. Save it as a datasource to reuse the credentials.
-3. In the `sign_up` API's body, bind the values entered in the form using the following code where `username` and `password` are the input widgets:
-   
-   ```jsx
-      {
-      "email": {{username.text}},
-      "password": {{password.text}}
-      }
-   ```
-4. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_up` API.
-5. Set the **On success** callback of the **Submit** button to save the user details using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) method and navigate to the App's home page.
-   
-   Example:
-   ```jsx
-      export default {
-      continue: async () => {
-        if(!appsmith.URL.fullPath.includes('#access_token')) return;
-          appsmith.URL.fullPath.split('#')[1].split('&').forEach(i => {
-          const [key, value] = i.split("=");
-          storeValue(key,value);
-        });
-        navigateTo('Home')
-      }
-   ```
 ## Set up sign-in flow
-To set up the sign-in flow, follow these steps:
-1. Drop a Form widget to your app and design a login screen by adding the Input widgets for email and password to the Form.
-2. Create a new API from the datasource created in step 5 of [Set up signup flow](#set-up-signup-flow). This datasource contains all the user details along with the access token. Let's rename this to `sign_in` and set the request type to **POST**. 
-3. Copy the **USER LOGIN** end point from the configured authentication service and paste it in the sign_in API endpoint.
+To secure your Appsmith application, you will need to set up a sign-in flow that requires users to authenticate before accessing the app. Follow these steps to create the sign-in flow:
+1. Drop a Form widget to your app and design a login screen by adding the Input widgets for username and password.
+2. Create a new API from the datasource that contains user details including the access token and rename this to `sign_in`. Set the request type to **POST**. 
+3. Copy the sign-in endpoint from your authentication service and paste it in the sign_in API endpoint.
    
    Example:
     ```jsx
@@ -56,47 +31,56 @@ To set up the sign-in flow, follow these steps:
       "password": {{password.text}}
       }
    ```
-5. Create a JS object to save the user details using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) method and navigate to the app's home page.
+5. Set the login screen as both the default screen and the home screen. This prevents users from accessing other parts of the app without authentication.
+
+## Store user data
+1. Create a JS object to handle sign-in, save the user details using the [storeValue](/reference/appsmith-framework/widget-actions/store-value) and navigate to the home page.
 
    Example:
    ```jsx
       signin: () =>{
       return sign_in.run()
         .then(data => {
-        delete data.user;
-        Object.keys(data).forEach(i => {
-          storeValue(i, data[i]);
+         storeValue(key, user.data[key]);
         })
       })
         .then(() => navigateTo('Home'));
     },
    ```
-6. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_in` API.
-7. To test, enter a valid email address and password and then click **Submit**.
+2. In the Form's property pane, set the **onClick** event of the **Submit** button to invoke the `sign_in` API.
+3. On the login screen, add a check to see if the user already has a valid access token. If a valid access token is detected, redirect the user to the home screen using navigateTo.
+
 
 ## Refresh access tokens
 Authentication with refresh tokens ensures a seamless user experience by allowing a user to obtain new access tokens without reauthenticating. You can do this by using a long-lived refresh token to obtain updated access tokens, even after the original access token expires. To do this, follow these steps:
 1. Create a new API endpoint to call the token refresh endpoint provided by your authentication service. For OAuth services, you must send the refresh token to receive a new access token.
-2. Create a JS object to check the token expiration and attempt to refresh it. To ensure token refresh happens seamlessly, you can invoke the function at page load before making an API call that requires authentication.
+2. Create a JS object to check the token expiration and attempt to refresh it. To ensure token refresh happens seamlessly, you can set the function to run on page load before making an API call that requires authentication.
+
+   Example:
+
+   ```jsx
+   export default { 
+      refreshAccessToken: () => { 
+         const refreshToken = appsmith.store.getValue('refreshtoken'); 
+         if (refreshToken) 
+         { 
+            return refreshAPI.run({ refreshtoken: refreshToken }) .then(newTokens => { storeValue('accesstoken', newTokens.accesstoken);
+            if(newTokens.refreshtoken) { 
+               storeValue('refreshtoken', newTokens.refresh_token); 
+               } 
+               }) .catch(error => { console.log('Error refreshing token:', error);
+            }); 
+         } 
+      } 
+   };
+   ```
 
 ## Log out users
 Providing your users with the ability to log out of your app when they're finished can help increase the security of your data.
 
 In the previous steps, you used the access token stored in the Appsmith store in a query that shows whether the user is authenticated. To remove their ability to be authenticated and see secure data, you should clear their access token from the Appsmith store so that they need to log in again if they want to get a new one.
 
-To clear that value from the store, set it to `undefined`. Then, redirect them to the **LoginPage** away from your secure data.
-
-Example:
-
-```javascript
-// In a Button widget or other custom workflow
-{{ 
-  (() => {
-    storeValue('#access_token', undefined);
-    navigateTo("LoginPage");
-  })()
-}}
-```
+To clear that user data from the store, set it to `undefined` by using an action selector on click of sign out and navigate user to the login page.
 
 After clicking your button to sign out, they're brought to the **LoginPage**, where they must log in again to see your App's home page.
 
