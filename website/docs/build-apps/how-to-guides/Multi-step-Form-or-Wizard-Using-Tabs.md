@@ -10,10 +10,9 @@ This page shows you how to create a multi-step form using the Tabs widget, which
 -->
 
 
-<iframe src="https://app.appsmith.com/app/anthropic-integration/page1-65769e76eba2285a9c3c78f2?embed=true&navbar=false" width="700" height="510" frameborder="0" allowfullscreen></iframe>
-
-
-
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://app.appsmith.com/app/anthropic-integration/page1-65769e76eba2285a9c3c78f2?embed=true&navbar=false" width="700" height="510" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Prerequisites
 
