@@ -118,13 +118,18 @@ This allows you to access the Tab name from the store using the `defaulttab` key
 
 With this setup, you can navigate between Tabs using Button widgets and the `storeValue` function.
 
+
+You can customize the style of your Tabs by adding Buttons and Progress bar. Additionally, use the Setter methods to configure the UI elements according to your preferences.
+
+
+
+See the [sample app](https://app.appsmith.com/app/create-a-multi-step-wizard/page1-65769e76eba2285a9c3c78f2).
+
 See how to [Submit Form data](/build-apps/how-to-guides/submit-form-data#submit-form-data).
 
-You can customize the style of your Tabs by adding Buttons and Progress bar. Take a look at the sample app to understand how these elements can enhance the appearance of your multi-step form.
 
 
 
-See the sample app to find out how these elements can enhance the appearance of your multi-step form.
 
 
 
