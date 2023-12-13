@@ -4,24 +4,24 @@ The Appsmith framework simplifies the creation of dynamic, data-driven applicati
 
 To know more about the objects and functions, refer to the resources below:
 
-<div class="containerGrid">
-    <div class="containerBorder">
-        <div class="columnGrid column-one" align="center">
+<div className="containerGrid">
+    <div className="containerBorder">
+        <div className="columnGrid column-one" align="center">
             <b><a href="/reference/appsmith-framework/context-object">Appsmith Object</a></b><br/>
         </div>
     </div>
-    <div class="containerBorder">
-        <div class="columnGrid column-two" align="center">
+    <div className="containerBorder">
+        <div className="columnGrid column-two" align="center">
             <b><a href="/reference/appsmith-framework/console-object">Console Object</a></b> 
         </div>  
     </div>
-    <div class="containerBorder">
-        <div class="columnGrid column-three" align="center">
+    <div className="containerBorder">
+        <div className="columnGrid column-three" align="center">
             <b><a href="/reference/appsmith-framework/query-object">Query Object</a></b><br/>     
         </div> 
     </div>
-        <div class="containerBorder">
-        <div class="columnGrid column-four" align="center">
+        <div className="containerBorder">
+        <div className="columnGrid column-four" align="center">
             <b><a href="/reference/appsmith-framework/widget-actions">Framework Functions</a></b><br/>     
         </div>
     </div>

@@ -59,8 +59,19 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/installation-guides/aws-ami',
-                'getting-started/setup/installation-guides/aws-ecs',
-                'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                {
+                  type: 'category',
+                  label: 'AWS ECS',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/README',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
+                    'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                  ],
+                },
                 'getting-started/setup/installation-guides/azure-aci',
                 {
                   type: 'category',
@@ -257,6 +268,7 @@ const sidebars = {
               link: { type: 'doc', id: 'connect-data/reference/README' },
               items: [
                 'connect-data/reference/airtable',
+                'connect-data/reference/anthropic',
                 'connect-data/reference/querying-arango-db',
                 'connect-data/reference/authenticated-api',
                 'connect-data/reference/curl-import',
@@ -333,7 +345,9 @@ const sidebars = {
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                `build-apps/how-to-guides/browse-and-display-documents`,
                 'build-apps/how-to-guides/display-map-markers',
+                `build-apps/how-to-guides/display-select-options-dynamically`
               ],
             },
             {
@@ -387,8 +401,8 @@ const sidebars = {
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            'build-apps/how-to-guides/import-export-app-entities',
-            'build-apps/how-to-guides/Create-Nested-Lists',
+            `build-apps/how-to-guides/navigate-between-pages`,
+            'build-apps/how-to-guides/Create-Nested-Lists'
           ]
         },
         {

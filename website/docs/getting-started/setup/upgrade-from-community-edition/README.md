@@ -7,25 +7,25 @@ This page guides Community Edition users to upgrade their Appsmith installation 
 
 To proceed with the upgrade from the Community Edition, select your installation type below:
 
-<div class="containerBorder">
-    <div class="containerGrid">
-        <div class="columnGrid column-one" align="center">
-            <div class="containerCol">
+<div className="containerBorder">
+    <div className="containerGrid">
+        <div className="columnGrid column-one" align="center">
+            <div className="containerCol">
                 <a href="/getting-started/setup/upgrade-from-community-edition/docker">
-                <img class="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
+                <img className="containerImage" src="/img/docker-logo.png" alt="Docker-logo"/>
                 </a> 
             </div> 
             <b><a href="/getting-started/setup/upgrade-from-community-edition/docker">Docker</a></b>
         </div>
-        <div class="columnGrid column-two" align="center">
-            <div class="containerCol">
+        <div className="columnGrid column-two" align="center">
+            <div className="containerCol">
                 <a href="/getting-started/setup/upgrade-from-community-edition/kubernetes">
-                <img class="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
+                <img className="containerImage" src="/img/Kubernetes_logo.png" alt="Kubernetes-logo"/>
                 </a> 
             </div> 
             <b><a href="/getting-started/setup/upgrade-from-community-edition/kubernetes">Kubernetes</a></b>
        </div>
-        <div class="columnGrid column-three" align="center">
+        <div className="columnGrid column-three" align="center">
         </div>
     </div>
 </div>

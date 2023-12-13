@@ -3,6 +3,7 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Markdown from 'markdown-to-jsx';
 import { FaSpinner } from 'react-icons/fa';
 import FeedbackWidget from '../feedback';
+import { registerAISearch } from '@site/src/components/feedback/feedbackHelper';
 import './css/AISearch.css';
 
 const AISearch = forwardRef((props, ref) => {
@@ -74,6 +75,7 @@ const AISearch = forwardRef((props, ref) => {
         setShowExamples(false);
         setIsAnswerComplete(false);
         setUserSearchTerm(query);
+        registerAISearch(query);
 
         try {
             const apiUrl = "https://hook.eu1.make.com/zw41brw94vfiwuue91riqmoe2ms2nhf6";
@@ -96,7 +98,7 @@ const AISearch = forwardRef((props, ref) => {
             }
 
             if (!response.ok) {
-                console.log(`HTTP error! Status: ${response.status}`);
+                console.error(`HTTP error! Status: ${response.status}`);
                 setIsLoading(false);
                 setAnswer("Sorry, I don't know how to help with that.");
             }
