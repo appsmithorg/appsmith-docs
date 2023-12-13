@@ -399,6 +399,7 @@ const sidebars = {
             },
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/navigate-between-pages',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             `build-apps/how-to-guides/navigate-between-pages`,
             'build-apps/how-to-guides/Create-Nested-Lists'
