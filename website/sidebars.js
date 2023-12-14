@@ -214,6 +214,7 @@ const sidebars = {
               ],
             },
             `getting-started/setup/best-practices`,
+            'getting-started/setup/environment-variables',
             'getting-started/setup/deployment-architecture',
           ],
         }

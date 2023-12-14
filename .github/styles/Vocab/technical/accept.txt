@@ -15,3 +15,5 @@ Okta
 Ping Identity
 application
 Application
+OAuth 2
+Domain
