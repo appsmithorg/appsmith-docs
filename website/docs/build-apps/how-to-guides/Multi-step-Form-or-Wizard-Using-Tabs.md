@@ -53,13 +53,12 @@ Follow these steps to navigate between Tabs using [storeValue()](/reference/apps
   </iframe>
 </div>
 
-1. To navigate to next Tab, configure the **onClick** event of the Button within each Tab to trigger the **Store value** action and specify: 
-
-
-1. On Tab 1 (`BasicInfo`), set the Submit Button's widget **onClick** event to trigger the **Store value** action and specify:  
-
+1. To navigate to the next Tab, configure the **onClick** event of the Button within each Tab to trigger the **Store value** action and specify a unique key and Tab name.
 
 <dd>
+
+*Example:* On Tab 1 (`BasicInfo`), set the Submit Button's widget **onClick** event to trigger the **Store value** action and specify:  
+
 
 <!--
 <figure>
@@ -82,10 +81,13 @@ This setup stores the next Tab's name in the `defaulttab` key, which can then be
 
 </dd>
 
+2. Similarly, to navigate to the previous tab, add a new Button widget to each tab and configure the **onClick** event to trigger the **Store value** action and specify the same unique key.
 
-2. Similarly, on Tab 2 (`LeadInfo`) tab, add a new Button widget and configure its **onClick** event to allow users to go back to the previous tab. For this, select **Store value** option from the action selector and specify:
-   
+
 <dd>
+
+*Example:* on Tab 2 (`LeadInfo`) tab, add a new Button widget and configure its **onClick** event to allow users to go back to the previous tab. For this, select **Store value** option from the action selector and specify:
+
 
 | Field Name	| Value    	|
 |-------	|---------------	|
@@ -113,7 +115,10 @@ This allows you to access the Tab name from the store using the `defaulttab` key
 
 </dd>
 
-5. Disable the **Show Tabs** property to hide tabs, which prevents manual selection and ensures controlled navigation.
+5. Configure the final submit Button's **onClick** event to execute the update query. See how to [Submit Form data](/build-apps/how-to-guides/submit-form-data#submit-form-data).
+
+
+6. Disable the **Show Tabs** property to hide tabs, which prevents manual selection and ensures controlled navigation.
 
 With this setup, you can navigate between Tabs using Button widgets and the `storeValue` function.
 
@@ -123,16 +128,76 @@ You can customize the style of your Tabs by adding Buttons and Progress bar. Add
 
 
 
-See how to [Submit Form data](/build-apps/how-to-guides/submit-form-data#submit-form-data).
+## Partial data save
+
+To persistently store data while users are in the process of filling out the form, you have two options:
+
+- Using the `storeValue` function to store data locally, so users can resume their form-filling journey even if they navigate away. The data gets inserted into the datasource only when the submit button (executing the update query), is triggered.
+
+- Direct server or datasource saving to ensure real-time, and storage of user data, which can be beneficial for immediate updates or backend integration. 
+
+For partial data saving using API, follow these steps:
+
+1. Set up an API endpoint to handle the initial insertion of data on `Next` button's **onClick** event. In this step, save the details that are already filled out in the form, and set the rest of the fields as null or with default values.
+
+<dd>
+
+*Example:* To insert data, add the following into the JSON body of the REST API.
 
 
+```js
+{
+   "name": {{user_name.text ? user_name.text : null}},
+   "role": {{user_role.text ? user_role.text : null}},
+   "lead_date": {{Date_created.formattedDate ? Date_created.formattedDate : null}}
+   // Add more fields as needed
+}
+
+```
+The above code dynamically constructs a JSON object with optional properties, setting them to input field values or `null` if unavailable.
+
+</dd>
+
+2. Following the initial data insertion, use the `storeValue` function to save the data's unique identifier or `ID`. 
 
 
+<dd>
+
+*Example:* To save the `ID` upon the successful execution of the API, add the following code in the **onClick** event of the Next button:
 
 
+```js
+{{user_api.run().then(() => {
+  storeValue('userid', Api1.data.id);
+});}}
+```
+
+</dd>
+
+3. Create a new API to update the existing record with additional data as the user advances through the form. Trigger this API execution when the user clicks on the Next buttons. 
 
 
+<dd>
 
+*Example:* For this, consider using the `PATCH` method, which is designed for partial updates: 
 
+```js
+//URL
+https://yourapi.in/api/users/{{appsmith.store.userid}}
+```
 
+And in the content BODY pass the input data:
 
+```js
+//BODY
+{
+   "company_name": {{company_name.text ? company_name.text : null}},
+   "product_name": {{product_name.text ? product_name.text : null}},
+      // Add more fields as needed
+}
+
+```
+
+</dd>
+
+3. When the user completes the form and clicks the final Submit button, trigger an API to send the remaining or updated data to the server.
