@@ -31,15 +31,15 @@ Follow these steps to install Appsmith:
    ```yaml
    version: "3"
    services:
-      appsmith:
-        image: index.docker.io/appsmith/appsmith-ee
-        container_name: appsmith
-        ports:
-            - "80:80"
-            - "443:443"
-        volumes:
-            - ./stacks:/appsmith-stacks
-        restart: unless-stopped
+     appsmith:
+       image: index.docker.io/appsmith/appsmith-ee
+       container_name: appsmith
+       ports:
+         - "80:80"
+         - "443:443"
+       volumes:
+         - ./stacks:/appsmith-stacks
+       restart: unless-stopped
    ```
 
 3. Start the Docker container by using the below command. You may need to use `sudo` if you don't have permission to run `docker-compose`:
