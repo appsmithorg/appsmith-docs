@@ -10,7 +10,7 @@ Environment variables play a crucial role in configuring different aspects of yo
 
 ## OAuth 2.0
 
-The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with your existing Google or GitHub credentials.
+The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google or GitHub credentials.
 
 #### `APPSMITH__OAUTH2_GOOGLE_CLIENT_ID`
 
