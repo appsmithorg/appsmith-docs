@@ -3,7 +3,7 @@
 
 This page provides information for connecting Appsmith to Google AI, which allows you to configure applications with advanced AI features, such as chat completion.
 
-## Connect Anthropic
+## Connect Google AI
 
  <figure>
   <img src="/img/google-ai-landingpage.png" style= {{width:"810px", height:"auto"}} alt="Anthropic"/>
@@ -64,10 +64,9 @@ It refers to the pre-trained language models provided by Google AI. You can sele
 #### Messages
 
 <dd>
+Messages serve as the input interface between the user and the model. You can create multiple messages as needed to facilitate a dynamic conversation.
 
-Messages serve as the input interface between the user and the model. You can configure the following parameters to customize interactions:
-
-* **Role**: This parameter determines the participant's role in the conversation. For now, `User` is the available option. 
+* **Role**: This parameter determines the participant's role in the conversation. Currently, only `User` is available.
 
 * **Type**: Specifies the format of the input and response. Currently, only `Text` is available.
 

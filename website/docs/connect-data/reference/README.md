@@ -94,6 +94,15 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
     </div>
 
 
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/google-ai">
+            <img className="containerImage" src="/img/google-ai.svg" alt="Google AI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/google-ai">Google AI</a></b>
+    </div>
+
 </div>
 
 
