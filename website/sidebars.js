@@ -70,6 +70,7 @@ const sidebars = {
                     'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
                     'getting-started/setup/installation-guides/aws-ecs-on-fargate',
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
                   ],
                 },
                 'getting-started/setup/installation-guides/azure-aci',
