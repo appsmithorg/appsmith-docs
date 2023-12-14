@@ -59,8 +59,20 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/installation-guides/aws-ami',
-                'getting-started/setup/installation-guides/aws-ecs',
-                'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                {
+                  type: 'category',
+                  label: 'AWS ECS',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/README',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
+                    'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
+                  ],
+                },
                 'getting-started/setup/installation-guides/azure-aci',
                 {
                   type: 'category',
@@ -389,6 +401,7 @@ const sidebars = {
             },
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/navigate-between-pages',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             `build-apps/how-to-guides/navigate-between-pages`,
             'build-apps/how-to-guides/Create-Nested-Lists'
