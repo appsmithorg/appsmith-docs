@@ -200,4 +200,4 @@ And in the content BODY pass the input data:
 
 </dd>
 
-3. When the user completes the form and clicks the final Submit button, trigger an API to send the remaining or updated data to the server.
+4. When the user completes the form and clicks the final Submit button, trigger an API to send the remaining or updated data to the server.
