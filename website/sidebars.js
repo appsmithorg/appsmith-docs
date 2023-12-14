@@ -336,36 +336,39 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
-            'core-concepts/building-ui/dynamic-ui/README',
+            //'core-concepts/building-ui/dynamic-ui/README',
             {
               type: 'category',
-              label: 'Display Data',
+              label: 'Display and Filter Data in Table',
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-                `build-apps/how-to-guides/browse-and-display-documents`,
-                'build-apps/how-to-guides/display-map-markers',
-                `build-apps/how-to-guides/display-select-options-dynamically`
+                'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
             {
               type: 'category',
-              label: 'Search, Sort, and Filter Data',
+              label: 'Display and Filter Data in List',
               items: [
-                'build-apps/how-to-guides/search-and-filter-table-data',
-                'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                'build-apps/how-to-guides/Create-Nested-Lists'
 
               ],
             },
             {
               type: 'category',
-              label: 'Modify Data',
+              label: 'Insert Data',
+              link: { type: 'doc', id: 'build-apps/how-to-guides/insert-data' },
               items: [
-                'build-apps/how-to-guides/insert-data',
                 'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-                'build-apps/how-to-guides/submit-form-data',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Update Data',
+              link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
+              items: [
                 'reference/widgets/table/inline-editing'
               ],
             },
@@ -380,30 +383,34 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Manage Files',
+              label: 'Upload Files',
               items: [
                 'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
-                'connect-data/how-to-guides/how-to-download-files-using-api',
                 'connect-data/how-to-guides/how-to-upload-to-s3',
-                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-                'connect-data/how-to-guides/download-files-from-s3',
+                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images'
 
               ],
             },
             {
               type: 'category',
-              label: 'Custom Widgets',
-              items: [
-                'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-                'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
+              label: 'Download Files',
+              items: [              
+                'connect-data/how-to-guides/how-to-download-files-using-api',
+                'connect-data/how-to-guides/download-files-from-s3',
+
               ],
             },
+              'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+              'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+              `build-apps/how-to-guides/display-select-options-dynamically`,
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
-            'build-apps/how-to-guides/navigate-between-pages',
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
+            `build-apps/how-to-guides/browse-and-display-documents`,
+            'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/navigate-between-pages`,
-            'build-apps/how-to-guides/Create-Nested-Lists'
+
           ]
         },
         {
