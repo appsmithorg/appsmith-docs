@@ -1,6 +1,7 @@
 # Create a Multi-step Wizard 
 
-This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps.
+This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps. See the [sample app](https://app.appsmith.com/app/create-a-multi-step-wizard/page1-65769e76eba2285a9c3c78f2).
+
 
 
 <figure>
@@ -26,10 +27,10 @@ Follow these steps to set up a Tabs widget with form fields and validation:
   </iframe>
 </div>
 
-*Example:* If you want to set up a multi-step form for lead creation with three tabs – one for basic info, another for lead details, and a third for company information:
+*Example:* If you want to set up a multi-step form with three tabs:
 
 
-1. Add and rename tabs as required. In this example, rename Tab 1 to `Basic-Info`, Tab 2 to `Lead-Info`, and Tab 3 to `Company-Info`.
+1. Add and rename tabs as required. For example, rename them to `BasicInfo`, `LeadInfo`, and `CompanyInfo`.
 
 2. Drop a Form widget for each tab and add relevant widgets like Input, Select, inside the form.
 
@@ -52,7 +53,10 @@ Follow these steps to navigate between Tabs using [storeValue()](/reference/apps
   </iframe>
 </div>
 
-1. On Tab 1 (`Basic-Info`), set the Submit Button's widget **onClick** event to trigger the **Store value** action and specify:  
+1. To navigate to next Tab, configure the **onClick** event of the Button within each Tab to trigger the **Store value** action and specify: 
+
+
+1. On Tab 1 (`BasicInfo`), set the Submit Button's widget **onClick** event to trigger the **Store value** action and specify:  
 
 
 <dd>
@@ -67,10 +71,10 @@ Follow these steps to navigate between Tabs using [storeValue()](/reference/apps
 | Field Name	| Value    	|
 |-------	|---------------	|
 | Key   	| `defaulttab`   	|
-| Value 	| `Lead-Info` 	|
+| Value 	| `LeadInfo` 	|
 
 
-In this configuration, `defaulttab` acts as a unique identifier, while the Value field represents the name of the tab you want to navigate to, which, in this case, is the next tab `Lead-Info`. 
+In this configuration, `defaulttab` acts as a unique identifier, while the Value field represents the name of the tab you want to navigate to, which, in this case, is the next tab `LeadInfo`. 
 
 This setup stores the next Tab's name in the `defaulttab` key, which can then be used for navigation in subsequent steps.
 
@@ -79,16 +83,16 @@ This setup stores the next Tab's name in the `defaulttab` key, which can then be
 </dd>
 
 
-2. Similarly, on Tab 2 (`Lead-Info`) tab, add a new Button widget and configure its **onClick** event to allow users to go back to the previous tab. For this, select **Store value** option from the action selector and specify:
+2. Similarly, on Tab 2 (`LeadInfo`) tab, add a new Button widget and configure its **onClick** event to allow users to go back to the previous tab. For this, select **Store value** option from the action selector and specify:
    
 <dd>
 
 | Field Name	| Value    	|
 |-------	|---------------	|
 | Key   	| `defaulttab`   	|
-| Value 	| `Basic-Info` 	|
+| Value 	| `BasicInfo` 	|
 
-In this configuration, the same `defaulttab` key is used to store the name of the previous tab, which, in this case, is `Basic-Info`. This setup stores the previous Tab's name in the `defaulttab` key, which can then be used for navigation in subsequent steps.
+In this configuration, the same `defaulttab` key is used to store the name of the previous tab, which, in this case, is `BasicInfo`. This setup stores the previous Tab's name in the `defaulttab` key, which can then be used for navigation in subsequent steps.
 
 Similarly, for each Tab, configure two Button widgets - one for navigating to the next tab and another for navigating to the previous tab.
 
@@ -118,7 +122,6 @@ You can customize the style of your Tabs by adding Buttons and Progress bar. Add
 
 
 
-See the [sample app](https://app.appsmith.com/app/create-a-multi-step-wizard/page1-65769e76eba2285a9c3c78f2).
 
 See how to [Submit Form data](/build-apps/how-to-guides/submit-form-data#submit-form-data).
 
