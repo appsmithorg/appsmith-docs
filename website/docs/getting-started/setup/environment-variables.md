@@ -27,7 +27,7 @@ The following environment variables assist in configuring OAuth 2.0 authenticati
 #### `APPSMITH__OAUTH2_GITHUB_CLIENT_ID`
 
 <dd>
-    This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Obtain your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and set it as the variable's value.
+    This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Obtain your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and setting it as the variable's value.
 </dd>
 
 
@@ -91,7 +91,7 @@ Used to authenticate with the email server and allows logging into your SMTP ser
 
 <dd>
 
-The password corresponding to the username for the SMTP server. You must protect the secret as it grants access to your email sending capabilities. Enter the password associated with your `APPSMITH_EMAIL_SERVER_USERNAME` to authenticate with the email server.
+The password corresponds to the username for the SMTP server. You must protect the secret as it grants access to your email-sending capabilities. Enter the password associated with your `APPSMITH_EMAIL_SERVER_USERNAME` to authenticate with the email server.
 </dd>
 
 #### `APPSMITH__EMAIL_FROM_ADDRESS`
@@ -114,7 +114,7 @@ The **ReplyTo** address is the email displayed in the response field of Appsmith
 #### `APPSMITH__SMTP_AUTH_ENABLED`
 
 <dd>
-Defines to use SMTP authentication when sending emails. Set it to `true` to authenticate your emails by the server, reducing the likelihood of them being marked as spam.
+Defines to use of SMTP authentication when sending emails. Set it to `true` to authenticate your emails by the server, reducing the likelihood of them being marked as spam.
 </dd>
 
 #### `APPSMITH__TLS_ENABLED`
@@ -159,7 +159,7 @@ Public key provided by Google reCAPTCHA for integrating the service into your we
 #### `APPSMITH__RECAPTCHA_SECRET_KEY`
 
 <dd>
-Secret key provided by Google reCAPTCHA that Google uses to verify the user input during a communication between your server and the reCAPTCHA server. The secret is confidential and used in server-side code. Set this variable with the secret key provided by reCAPTCHA.
+The secret key provided by Google reCAPTCHA that Google uses to verify the user input during communication between your server and the reCAPTCHA server. The secret is confidential and used in server-side code. Set this variable with the secret key provided by reCAPTCHA.
 </dd>
 
 
@@ -188,7 +188,7 @@ Appsmith can connect to external providers for MongoDB and Redis. The associated
 #### `APPSMITH__ENCRYPTION_SALT`
 
 <dd>
-    The encryption salt contributes to the security strategy by adding a layer of complexity during the encryption process. This long, unique string enhances encryption strength, making it more resistant to attacks such as brute force attempts.
+    The encryption salt contributes to the security strategy by adding a layer of complexity during the encryption process. This long, unique string enhances encryption strength, making it more resistant to attacks such as brute-force attempts.
 </dd>
 
 ## Custom Domain
@@ -203,7 +203,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 
 ## Signup and login
 
-With Appsmith, you have the ability to manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
+With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
 
 #### `APPSMITH__FORM_LOGIN_DISABLED`
 
@@ -225,4 +225,7 @@ Adjust the internal server timeout to optimize performance based on your Appsmit
 
 #### `APPSMITH__SERVER_TIMEOUT`
 
-<dd>Specifies the internal Appsmith server timeout in seconds. Defaults to a `60` seconds timeout. Increase or decrease based on your server's load and expected response times.</dd>
+<dd>
+
+Specifies the internal Appsmith server timeout in seconds. Defaults to a `60` second timeout. Increase or decrease based on your server's load and expected response times.
+</dd>
