@@ -2,17 +2,13 @@
 
 This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps.
 
-<!--
+
 <figure>
   <img src="/img/multi-step-form1.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
   <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
 </figure>
--->
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://app.appsmith.com/app/anthropic-integration/page1-65769e76eba2285a9c3c78f2?embed=true&navbar=false" width="700" height="510" frameborder="0" allowfullscreen></iframe>
-</div>
 
 ## Prerequisites
 
@@ -125,7 +121,6 @@ You can customize the style of your Tabs by adding Buttons and Progress bar. Add
 See the [sample app](https://app.appsmith.com/app/create-a-multi-step-wizard/page1-65769e76eba2285a9c3c78f2).
 
 See how to [Submit Form data](/build-apps/how-to-guides/submit-form-data#submit-form-data).
-
 
 
 
