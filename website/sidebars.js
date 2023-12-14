@@ -275,6 +275,7 @@ const sidebars = {
                 'connect-data/reference/querying-dynamodb',
                 'connect-data/reference/querying-elasticsearch',
                 'connect-data/reference/querying-firestore',
+                `connect-data/reference/google-ai`,
                 'connect-data/reference/querying-google-sheets',
                 'connect-data/reference/graphql',
                 'connect-data/reference/hubspot',
