@@ -10,12 +10,12 @@ Environment variables play a crucial role in configuring different aspects of yo
 
 ## OAuth 2.0
 
-The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google or GitHub credentials.
+The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with your existing Google or GitHub credentials.
 
 #### `APPSMITH__OAUTH2_GOOGLE_CLIENT_ID`
 
 <dd>
-    This variable stores the Client ID provided by Google during OAuth 2.0 configuration. It is unique to your application, identifying you during the authentication process with Google's servers. Set this variable to the Google OAuth 2.0 Client ID available in your Google Cloud Platform console under the credentials section for your project.
+    This variable stores the Client ID provided by Google during OAuth 2.0 configuration. It's unique to your application, identifying you during the authentication process with Google's servers. Set this variable to the Google OAuth 2.0 Client ID available in your Google Cloud Platform console under the credentials section for your project.
 </dd>
 
 #### `APPSMITH__OAUTH2_GOOGLE_CLIENT_SECRET`
@@ -27,7 +27,7 @@ The following environment variables assist in configuring OAuth 2.0 authenticati
 #### `APPSMITH__OAUTH2_GITHUB_CLIENT_ID`
 
 <dd>
-    This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Obtain your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and setting it as the variable's value.
+    This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Get your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and setting it as the variable's value.
 </dd>
 
 
