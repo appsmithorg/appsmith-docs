@@ -25,10 +25,10 @@ To bind and display data on the Select widget, follow these steps:
    SELECT DISTINCT country FROM users LIMIT 10;
    ```
 3. Click **JS** in the widget's property pane.
-4. Paste the following code to bind the data in the widget where `query` is the name of the query to fetch data:
+4. Paste the following code to bind the data in the widget where `fetch_country` is the name of the query to fetch data:
    
    ```jsx
-   {{query.data}}
+   {{fetch_country.data}}
    ```
 5. Set the **Label key** and the **Value key** to display data accordingly.
 ## Display options dynamically 
@@ -52,12 +52,12 @@ You can also use API responses as the source data for dynamic options, allowing 
 
 If you use the one-click binding feature to connect data, Appsmith automatically generates server-side filtering query for you. To manually configure the server-side setup, follow these steps:
 1. Enable the [Server-side filtering](/reference/widgets/select#server-side-filtering-boolean) property of the Select widget. 
-2. Update the query in the [Display options](#display-options) step to filter the Select options based on the [filterText] property.
+2. Update the query in the [Display options](#display-options) step to filter the Select options based on the [filterText](/reference/widgets/select#reference-properties) property.
    
    Example:
    ```sql
    SELECT DISTINCT country FROM users 
-   WHERE country LIKE '%{{Select1.filterText}}%'
+   WHERE country LIKE '%{{country.filterText}}%'
    ORDER BY id LIMIT 10;
    ```
    :::note
