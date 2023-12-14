@@ -66,6 +66,19 @@ Errors in widget properties are often related to the validation rules of those p
 
 You can use the `debugger` statement or `console.log()` to debug and inspect your code in the browser console or the **Console** tab. This allows you to check the state of your code and step through it line by line to help identify and fix any errors.
 
+While writing javascript in Appsmith, you may encounter the following errors in your code.
+
+#### Reference errors
+
+These occur when the code references an entity or variable that is not defined on the page. Review your bindings and the names of the entities to correct these errors.
+
+#### Lint errors
+
+Review the syntax of the mustache bindings for any syntax errors that could be causing issues. Javascript written inside mustache bindings can only be single line code. Use JSObjects for multi-line functions.
+
+#### Type errors
+Check your JavaScript operations to ensure you are not performing unsupported operations on certain data types.
+
 ### With debugger statement
 
 To invoke the debugger, insert a `debugger` keyword in your code where you want it to pause, and then run your app. The code execution pauses on the debugger statement. It works like a `breakpoint`. You can then use the debugger tools to step through your code, inspect variables, and see how your code is executing.
