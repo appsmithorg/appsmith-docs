@@ -1,17 +1,19 @@
 ---
-description: This page shows you how to display and lookup data in a List widget. 
+description: This page shows you how to display and lookup data in a List widget.
+toc_min_heading_level: 2
+toc_max_heading_level: 2
 ---
 
 # Display and Lookup Data in List
+This page shows you how to display and lookup data in a List widget.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/pXo2KTTbWCYqvPdoQNh0?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/peced2OWms56Oph4Mtn1?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-This page shows you how to display and lookup data in a List widget.
 ## Prerequisites
-- A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
+- A datasource containing the data to display and filter. See [Connect datasource](/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource) for a tutorial.
 
 ## Display data
 To display data in a List widget, follow these steps:
@@ -23,19 +25,17 @@ To display data in a List widget, follow these steps:
    ```
    Where `fetch_users` is the query to fetch data from the connected datasource.
 
-   To nest lists within a List widget, see [Create Nested Lists](build-apps/how-to-guides/Create-Nested-Lists).
-2. Use the `currentItem` property to configure the items after the data is bound.
+2. Add widgets within the List and use the [currentItem](/reference/widgets/list#currentitem-object) reference property to bind data to the List items from the query.
 
    Example:
    ```jsx
    {{currentItem.name}}
    ```
-3. To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
-4. To customize, select the individual widgets within the List item.
-5. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
+   To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
+3. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
 
-## Format list cells
+## Format list item
 Highlighting list cells enables you to visually distinguish specific cells from others.
 To highlight items of the List, follow these steps:
 1. Select the first item in the widget and click **Style** in the widget's property pane. 
@@ -47,7 +47,19 @@ To highlight items of the List, follow these steps:
    ```
    To customize each item of the List widget, see [Style properties](/reference/widgets/list#style-properties).
 
-## Configure search on List
+## Search list data
+To configure search on List, follow these steps:
+1. Drop an Input widget to the canvas.
+2. Modify the fetch query in [Display data](#display-data) to fetch data corresponding to the search text.
+   
+   Example:
+
+   ```sql
+   SELECT * FROM users WHERE name LIKE {{ "%" + np_search.searchText + "%"}};
+   ```
+3. Add an Action selector to the **onTextChanged** event of the Input widget to run the above query.
+
+## Filter List data
 To configure search on List, follow these steps:
 1. Drop a Select widget and bind data to the widget in the **Source Data** property using a query.
 
@@ -71,5 +83,39 @@ To configure search on List, follow these steps:
 4. Add an **Action** to the Select widget's [onFilterUpdate](/reference/widgets/select#onfilterupdate) event to run the above query to filter List data.
    For more information, see [Setup Server-side Filter on Select](/build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select).
 
-## See also
-- [Sample apps](/learning-and-resources/sample-apps)
+## Nested list
+You can nest lists within a List widget up to three levels deep. Each nested level can interact with its parent data through specific properties. 
+
+### Access parent data from a child list
+To access a parent list item's attributes or widget properties within a child list, use the [level_*](/reference/widgets/list#level_-object) property, where `*` is the level number (1 through 3).
+
+For example:
+
+Suppose you have a parent list named `parentList`.
+
+You have a nested child list within `parentList` called `childList1`.
+
+Widgets within `childList1` can access an attribute from `parentList` by using:
+```jsx
+{{level_1.currentItem.fieldName}}
+```
+
+
+Similarly, you can use [currentView](/reference/widgets/list#currentview-object) and [currentIndex](/reference/widgets/list#currentindex-number) properties to access the current state and position of the parent list's item.
+
+### Access multiple parent levels
+If there is another List widget, say `childList2`, inside `childList1`, the innermost list `childList2` can access properties from both `parentList` and `childList1`.
+
+Here's how the levels correspond:
+
+level_1 corresponds to the `parentList` data and state.
+
+level_2 corresponds to `childList1` data and state.
+
+Example of accessing data from both parent and first-level child list: 
+```jsx
+{{level_2.currentItem.fieldName}}
+```
+:::note
+Parent List widgets cannot access their child lists' data.
+:::
