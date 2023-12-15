@@ -41,7 +41,7 @@ import DocCardList from '@theme/DocCardList';
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
-           <a href="/write-code/how-to-guides/debug-js-errors"><strong>Debug JS Errors</strong></a>
+           <a href="/help-and-support/troubleshooting-guide/application-errors"><strong>Debug JS Errors</strong></a>
         </div><hr/>
         <div className="containerDescription">Allows you to check the state of your code and step through it line by line to help identify and fix any errors.
         </div>
