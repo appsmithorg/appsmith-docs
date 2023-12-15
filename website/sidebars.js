@@ -173,6 +173,7 @@ const sidebars = {
                 },
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
+                'getting-started/setup/environment-variables',
               ],
             },
             {
@@ -275,6 +276,7 @@ const sidebars = {
                 'connect-data/reference/querying-dynamodb',
                 'connect-data/reference/querying-elasticsearch',
                 'connect-data/reference/querying-firestore',
+                `connect-data/reference/google-ai`,
                 'connect-data/reference/querying-google-sheets',
                 'connect-data/reference/graphql',
                 'connect-data/reference/hubspot',
@@ -343,8 +345,7 @@ const sidebars = {
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
-                'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/search-and-filter-table-data'
+                'build-apps/how-to-guides/Server-side-pagination-in-table'
               ],
             },
             {
@@ -401,8 +402,7 @@ const sidebars = {
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/display-map-markers',
-            `build-apps/how-to-guides/navigate-between-pages`,
-
+            `build-apps/how-to-guides/navigate-between-pages`
           ]
         },
         {
@@ -511,8 +511,7 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            'core-concepts/writing-code/ext-libraries',
-            'write-code/how-to-guides/debug-js-errors',
+            'core-concepts/writing-code/ext-libraries'
           ]
         },
         {
