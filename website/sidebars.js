@@ -344,6 +344,7 @@ const sidebars = {
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
                 'build-apps/how-to-guides/Server-side-pagination-in-table',
+                `build-apps/how-to-guides/display-search-and-filter-list-data`,
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
                 `build-apps/how-to-guides/browse-and-display-documents`,
                 'build-apps/how-to-guides/display-map-markers',
@@ -403,7 +404,8 @@ const sidebars = {
             'build-apps/how-to-guides/navigate-between-pages',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             `build-apps/how-to-guides/navigate-between-pages`,
-            'build-apps/how-to-guides/Create-Nested-Lists'
+            'build-apps/how-to-guides/import-export-app-entities',
+            'build-apps/how-to-guides/Create-Nested-Lists',
           ]
         },
         {
