@@ -137,65 +137,54 @@
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
-            <a href="/connect-data/how-to-guides/download-files-from-s3"><strong>Download Files from S3</strong></a>
+            <a href="/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe"><strong>Create Custom Widgets Using Iframe</strong></a>
         </div> <hr/>
-        <div className="containerDescription">This page shows you steps to download a file from an S3 datasource.</div>
+        <div className="containerDescription">Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc.</div>
     </div>
 </div>
 
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe"><strong>Create Custom Widgets Using Iframe</strong></a>
-        </div> <hr/>
-        <div className="containerDescription">Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc.</div>
-    </div>
-<div className="containerColumnSampleApp columnGrid column-two">
 <div className="containerCol">
            <a href="/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs"><strong>Create a Multi-step Form or Wizard Using Tabs</strong></a>
         </div><hr/>
         <div className="containerDescription">This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps.
         </div>
 </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+ <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
             <a href="/core-concepts/writing-code/workflows"><strong>Trigger UI Workflow</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows you how to initiate and manage UI workflows, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors.</div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
          <div className="containerCol">
             <a href="/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin"><strong>Send Emails</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to use the SMTP Plugin to send emails and attach files and images.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-<div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerColumnSampleApp columnGrid column-two">
        <div className="containerCol">
             <a href="/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe"><strong>Post Messages Between App and Iframe</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget.</div>
     </div>
-<div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+<div className="containerColumnSampleApp columnGrid column-one">
  <div className="containerCol">
             <a href="/build-apps/how-to-guides/import-export-app-entities"><strong>Reuse Application Entities</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to reuse application entities by exporting certain entities from a page and importing them into another page or application.</div>
 </div>
-</div>
-
-
-<div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
        <div className="containerCol">
             <a href="/build-apps/how-to-guides/import-export-app-entities"><strong>Create Nested Lists</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to create nested lists to organize and structure information hierarchically.</div>
     </div>
-<div className="columnGrid column-two" style={{margin: "10px"}}></div>
 </div>

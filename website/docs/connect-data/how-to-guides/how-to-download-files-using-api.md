@@ -1,7 +1,7 @@
 ---
-description: This page shows you how to download files using an API.
+description: This page shows you how to download files.
 ---
-# Download Files Using API
+# Download Files
 
 This page shows you how to download a file using an API using PDF as the file format.
 
@@ -9,7 +9,7 @@ This page shows you how to download a file using an API using PDF as the file fo
 - Access to a cloud platform with [API](/connect-data/reference/rest-api) endpoints.
 - A [Table](/reference/widgets/table) widget to bind data and download files.
 
-## Download file using URL
+## Download file using public URL
 To download a file using the file URL, follow these steps:
 1. In the API configuration, specify the request method (GET) and provide your API URL, including any necessary path.
 2. Configure the [Table data](/reference/widgets/table#table-data-arrayobject) property of the Table widget to bind the response of the API using `{{download_image.data}}` where `download_image` is the name of the query.
@@ -20,7 +20,9 @@ To download a file using the file URL, follow these steps:
    ```
 4. To test the download, click on any row on the table.
 
-## Download file using file data
+
+## Download file using authenticated URL
+Authenticated URLs require a different approach since they cannot be opened directly in the browser. To download a file with authentication, you should fetch the file data, and then download the file using the retrieved data.
 To download a file using the file data, follow these steps:
 1. In the API configuration, specify the request method (GET) and provide your API URL, including any necessary path.
 2. In **Headers**, add the key `content_type` and enter the MIME type as its value. 
@@ -37,5 +39,23 @@ To download a file using the file data, follow these steps:
    ```jsx
    {{list_files.run(()=>{download(atob(list_files.data),"filename.pdf")})}}
    ```
+5. To test the download, select any row on the table.
 
-5. To test the download, click on any row on the table.
+## Download multiple files
+To download multiple files, follow these steps:
+1. Drag and drop a Button widget on to the canvas and rename it to Download all.
+2. In **Queries/JS**, click **+ Add a new query/JS Object**, and then select **New JS Object**. Add code to download multiple files.
+   
+   Example:
+   ```jsx
+   export default {
+   async downloadFiles (url, fileName) {
+         download(url, fileName.split("/").pop());
+   }}
+   ```
+3. Set the widget's **onClick** event to download all the files using the following code where `bulkDownload` is the JS Object:
+
+   ```jsx
+   {{ListFiles.data.forEach(fileobject => bulkDownload.downloadFiles(object.signedUrl,object.fileName))}}
+   ```
+4. To test the download, click the Download all button.

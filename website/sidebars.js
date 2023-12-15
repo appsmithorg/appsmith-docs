@@ -386,9 +386,7 @@ const sidebars = {
                 'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
                 'connect-data/how-to-guides/how-to-download-files-using-api',
                 'connect-data/how-to-guides/how-to-upload-to-s3',
-                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-                'connect-data/how-to-guides/download-files-from-s3',
-
+                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images'
               ],
             },
             {

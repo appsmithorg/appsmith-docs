@@ -1153,6 +1153,10 @@
     {
       "source": "/write-code/how-to-guides/debug-js-errors",
       "destination": "/help-and-support/troubleshooting-guide/application-errors#debug-js-errors"
+    },
+    {
+      "source": "connect-data/how-to-guides/download-files-from-s3",
+      "destination": "connect-data/how-to-guides/how-to-download-files-using-api"
     }
   ]
 }
