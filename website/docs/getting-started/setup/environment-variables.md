@@ -12,26 +12,26 @@ Environment variables play a crucial role in configuring different aspects of yo
 
 The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google or GitHub credentials.
 
-#### `APPSMITH__OAUTH2_GOOGLE_CLIENT_ID`
+### `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`
 
 <dd>
     This variable stores the Client ID provided by Google during OAuth 2.0 configuration. It's unique to your application, identifying you during the authentication process with Google's servers. Set this variable to the Google OAuth 2.0 Client ID available in your Google Cloud Platform console under the credentials section for your project.
 </dd>
 
-#### `APPSMITH__OAUTH2_GOOGLE_CLIENT_SECRET`
+### `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET`
 
 <dd>
     This variable holds the Client Secret provided by Google for OAuth 2.0. The secret is confidential and used in server-to-server communications. Assign this variable with the Google OAuth 2.0 Client Secret obtained from the Google Cloud Platform console where you configured your OAuth credentials.
 </dd>
 
-#### `APPSMITH__OAUTH2_GITHUB_CLIENT_ID`
+### `APPSMITH_OAUTH2_GITHUB_CLIENT_ID`
 
 <dd>
     This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Get your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and setting it as the variable's value.
 </dd>
 
 
-#### `APPSMITH__OAUTH2_GITHUB_CLIENT_SECRET`
+### `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`
 
 <dd>
     This variable, in conjunction with the Client ID, holds the secret key provided by GitHub OAuth 2.0 to authenticate your application's requests securely. Set this variable with the Client Secret provided by GitHub upon creating your OAuth application. Ensure that you store it securely and do not expose it publicly.
@@ -41,7 +41,7 @@ The following environment variables assist in configuring OAuth 2.0 authenticati
 
 Appsmith provides a way to enhance the log levels of your applications, aiding in monitoring client-side operations and troubleshooting issues. The following environment variable helps define the verbosity level of the logs that Appsmith will generate for client-side activities.
 
-#### `APPSMITH__CLIENT_LOG_LEVEL`
+### `APPSMITH_CLIENT_LOG_LEVEL`
 
 <dd> 
 This variable determines the level of detail that your client-side logs will capture. Ordered by their severity logging levels can also be adjusted based on the needs of your environment. The available levels are:
@@ -55,7 +55,7 @@ This variable determines the level of detail that your client-side logs will cap
 
 Configure your email server in Appsmith to handle application emailing needs. The following environment variables enable you to set up and manage these email-related capabilities for your Appsmith instance.
 
-#### `APPSMITH__EMAIL_ENABLED`
+### `APPSMITH_EMAIL_ENABLED`
 
 <dd>
 
@@ -63,7 +63,7 @@ Controls whether Appsmith can send emails. Use `true` to enable email capabiliti
 
 </dd>
 
-#### `APPSMITH__EMAIL_SERVER_HOST`
+### `APPSMITH_EMAIL_SERVER_HOST`
 
 <dd>
 
@@ -71,7 +71,7 @@ Specifies the host address of the email server that Appsmith will use to send em
 
 </dd>
 
-#### `APPSMITH__EMAIL_SERVER_PORT`
+### `APPSMITH_EMAIL_SERVER_PORT`
 
 <dd>
 
@@ -79,7 +79,7 @@ Indicates the port number on which the email server is listening. Different serv
 
 </dd>
 
-#### `APPSMITH__EMAIL_SERVER_USERNAME`
+### `APPSMITH_EMAIL_SERVER_USERNAME`
 
 <dd>
 
@@ -87,21 +87,21 @@ Used to authenticate with the email server and allows logging into your SMTP ser
 
 </dd>
 
-#### `APPSMITH__EMAIL_SERVER_PASSWORD`
+### `APPSMITH_EMAIL_SERVER_PASSWORD`
 
 <dd>
 
 The password corresponds to the username for the SMTP server. You must protect the secret as it grants access to your email-sending capabilities. Enter the password associated with your `APPSMITH_EMAIL_SERVER_USERNAME` to authenticate with the email server.
 </dd>
 
-#### `APPSMITH__EMAIL_FROM_ADDRESS`
+### `APPSMITH_EMAIL_FROM_ADDRESS`
 
 <dd>
 
 This is the email address displayed in the **From** field of the emails sent through Appsmith, essentially representing who the email is from. Set this to a valid email address that recipients of your emails can recognize and associate with.
 </dd>
 
-#### `APPSMITH__EMAIL_REPLY_TO_ADDRESS`
+### `APPSMITH_EMAIL_REPLY_TO_ADDRESS`
 
 <dd>
 
@@ -111,13 +111,13 @@ The **ReplyTo** address is the email displayed in the response field of Appsmith
 
 
 
-#### `APPSMITH__SMTP_AUTH_ENABLED`
+### `APPSMITH_SMTP_AUTH_ENABLED`
 
 <dd>
 Defines to use of SMTP authentication when sending emails. Set it to `true` to authenticate your emails by the server, reducing the likelihood of them being marked as spam.
 </dd>
 
-#### `APPSMITH__TLS_ENABLED`
+### `APPSMITH_TLS_ENABLED`
 
 <dd>
    
@@ -130,7 +130,7 @@ Determines whether the email server connection uses Transport Layer Security (TL
 
 Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation.
 
-#### `APPSMITH__TELEMETRY_ENABLED`
+### `APPSMITH_TELEMETRY_ENABLED`
 
 <dd>
 
@@ -141,7 +141,7 @@ Controls whether Appsmith sends telemetry data to its servers. You may choose to
 ## Security 
 Ensure the safety of your applications and data by configuring security settings, including reCAPTCHA, to safeguard your instance against automated threats. Use the environment variables below to manage these settings:
 
-#### `APPSMITH__RECAPTCHA_ENABLED`
+### `APPSMITH_RECAPTCHA_ENABLED`
 
 <dd> 
    
@@ -149,14 +149,14 @@ Enables Google reCAPTCHA verification on your Appsmith instance by embedding a r
 
 </dd>
 
-#### `APPSMITH__RECAPTCHA_SITE_KEY`
+### `APPSMITH_RECAPTCHA_SITE_KEY`
 
 <dd>
 Public key provided by Google reCAPTCHA for integrating the service into your web application. Set this variable with the site key you received after registering your Appsmith instance as a site under Google reCAPTCHA.
 </dd>
 
 
-#### `APPSMITH__RECAPTCHA_SECRET_KEY`
+### `APPSMITH_RECAPTCHA_SECRET_KEY`
 
 <dd>
 The secret key provided by Google reCAPTCHA that Google uses to verify the user input during communication between your server and the reCAPTCHA server. The secret is confidential and used in server-side code. Set this variable with the secret key provided by reCAPTCHA.
@@ -167,25 +167,25 @@ The secret key provided by Google reCAPTCHA that Google uses to verify the user 
 
 Appsmith can connect to external providers for MongoDB and Redis. The associated environment variables ensure that Appsmith establishes a connection to external hosting rather than using the embedded MongoDB or Redis servers.
 
-#### `APPSMITH__MONGODB_URI`
+### `APPSMITH_MONGODB_URI`
 
 <dd>
     Appsmith uses this variable to connect to an external MongoDB instance. Set it to the full MongoDB URI supplied by the hosting service. This enables Appsmith to store data in your MongoDB database, ensuring control and ownership of the application data.
 </dd>
 
-#### `APPSMITH__REDIS_URL`
+### `APPSMITH_REDIS_URL`
 
 <dd>
     Appsmith uses this variable to establish a link to an external Redis server, which Appsmith uses for session handling and caching operations. This connection string typically includes the Redis host, port number, and optionally, authentication credentials.
 </dd>
 
-#### `APPSMITH__ENCRYPTION_PASSWORD`
+### `APPSMITH_ENCRYPTION_PASSWORD`
 
 <dd>
     The encryption password is critical for safeguarding your datasource credentials through encryption. Select a strong password that exhibits a good level of entropy to prevent easy decryption.
  </dd>
 
-#### `APPSMITH__ENCRYPTION_SALT`
+### `APPSMITH_ENCRYPTION_SALT`
 
 <dd>
     The encryption salt contributes to the security strategy by adding a layer of complexity during the encryption process. This long, unique string enhances encryption strength, making it more resistant to attacks such as brute-force attempts.
@@ -195,7 +195,7 @@ Appsmith can connect to external providers for MongoDB and Redis. The associated
 
 If you prefer to host your Appsmith instance on a personalized domain, you can do so by setting up a custom domain. Appsmith also provisions an SSL certificate through Let’s Encrypt, securing your application with HTTPS.
 
-#### `APPSMITH__CUSTOM_DOMAIN`
+### `APPSMITH_CUSTOM_DOMAIN`
 
 <dd>
     Set this variable with your custom domain to access Appsmith.
@@ -205,14 +205,14 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 
 With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
 
-#### `APPSMITH__FORM_LOGIN_DISABLED`
+### `APPSMITH_FORM_LOGIN_DISABLED`
 
 <dd>
 
 Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
 </dd>
 
-#### `APPSMITH__SIGNUP_DISABLED`
+### `APPSMITH_SIGNUP_DISABLED`
 
 <dd>
 
@@ -223,7 +223,7 @@ Set to `true` to stop new user account creation. Useful when you want to restric
 
 Adjust the internal server timeout to optimize performance based on your Appsmith instance's load and expected response times.
 
-#### `APPSMITH__SERVER_TIMEOUT`
+### `APPSMITH_SERVER_TIMEOUT`
 
 <dd>
 
