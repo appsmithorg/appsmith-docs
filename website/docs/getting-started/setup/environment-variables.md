@@ -12,7 +12,7 @@ Environment variables play a crucial role in configuring different aspects of yo
 
 The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google or GitHub credentials.
 
-#### `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`
+### `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`
 
 <dd>
     This variable stores the Client ID provided by Google during OAuth 2.0 configuration. It's unique to your application, identifying you during the authentication process with Google's servers. Set this variable to the Google OAuth 2.0 Client ID available in your Google Cloud Platform console under the credentials section for your project.
