@@ -402,6 +402,7 @@ const sidebars = {
               ],
             },
             `core-concepts/writing-code/workflows`,
+            'advanced-concepts/custom-authentication',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/navigate-between-pages',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
@@ -591,7 +592,6 @@ const sidebars = {
       label: 'Manage Apps and Users',
       items: [
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/custom-authentication',
         'advanced-concepts/invite-users',
         {
           type: 'category',
