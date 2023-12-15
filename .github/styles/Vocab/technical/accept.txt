@@ -21,6 +21,7 @@ Ping Identity
 application
 Application
 OAuth 2
+OAuth
 Domain
 Keycloak
 PostgreSQL
@@ -32,3 +33,7 @@ ECS
 RDS
 SAML
 Bind
+OIDC
+Login
+Signup
+reCAPTCHA

@@ -8,11 +8,11 @@ toc_max_heading_level: 2
 
 Environment variables play a crucial role in configuring different aspects of your Appsmith instance, such as authentication, defining logging levels, customizing email settings, and more. This page provides a detailed description of each environment variable along with its purpose and usage.
 
-## OAuth 2.0
+## Google OAuth
 
-The following environment variables assist in configuring OAuth 2.0 authentication, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google or GitHub credentials.
+The following environment variables help in configuring OAuth 2.0 authentication with Google, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google credentials.
 
-### `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`
+#### `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID`
 
 <dd>
     This variable stores the Client ID provided by Google during OAuth 2.0 configuration. It's unique to your application, identifying you during the authentication process with Google's servers. Set this variable to the Google OAuth 2.0 Client ID available in your Google Cloud Platform console under the credentials section for your project.
@@ -24,18 +24,57 @@ The following environment variables assist in configuring OAuth 2.0 authenticati
     This variable holds the Client Secret provided by Google for OAuth 2.0. The secret is confidential and used in server-to-server communications. Assign this variable with the Google OAuth 2.0 Client Secret obtained from the Google Cloud Platform console where you configured your OAuth credentials.
 </dd>
 
+## Google OAuth
+
+The following environment variables help in configuring OAuth 2.0 authentication with GitHub, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing GitHub credentials.
+
 #### `APPSMITH_OAUTH2_GITHUB_CLIENT_ID`
 
 <dd>
     This variable represents the GitHub OAuth 2.0 Client ID used for authenticating users via GitHub. It's a public identifier for your application. Get your GitHub OAuth 2.0 Client ID by registering your Appsmith instance as a GitHub OAuth application and setting it as the variable's value.
 </dd>
 
-
 #### `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET`
 
 <dd>
     This variable, in conjunction with the Client ID, holds the secret key provided by GitHub OAuth 2.0 to authenticate your application's requests securely. Set this variable with the Client Secret provided by GitHub upon creating your OAuth application. Ensure that you store it securely and do not expose it publicly.
 </dd>
+
+## OIDC OAuth
+
+The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials.
+
+#### `APPSMITH_OAUTH2_OIDC_CLIENT_ID`
+
+<dd>
+    This variable represents your OIDC OAuth 2.0 Client ID used for authenticating users via the OIDC provider. It's a public identifier for your application. Get your OIDC OAuth 2.0 Client ID by registering your Appsmith instance with your provider and setting it as the variable's value.
+</dd>
+
+#### `APPSMITH_OAUTH2_OIDC_CLIENT_SECRET`
+
+<dd>
+    This variable, in conjunction with the OIDC Client ID, holds the secret key provided by your OIDC provider to authenticate your application's requests securely. Set this variable with the Client Secret provided by your provider upon creating your OIDC application. Ensure that you store it securely and do not expose it publicly.
+</dd>
+
+
+## Form Login and Signup
+
+With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
+
+#### `APPSMITH_FORM_LOGIN_DISABLED`
+
+<dd>
+
+Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
+</dd>
+
+#### `APPSMITH_SIGNUP_DISABLED`
+
+<dd>
+
+Set to `true` to stop new user account creation. Useful when you want to restrict access to your Appsmith instance, allowing only users who have been specifically invited to join.
+</dd>
+
 
 ## Client logging
 
@@ -51,7 +90,7 @@ This variable determines the level of detail that your client-side logs will cap
 
 </dd>
 
-## Email
+## Email server
 
 Configure your email server in Appsmith to handle application emailing needs. The following environment variables enable you to set up and manage these email-related capabilities for your Appsmith instance.
 
@@ -109,8 +148,6 @@ The **ReplyTo** address is the email displayed in the response field of Appsmith
 
 </dd>
 
-
-
 #### `APPSMITH_SMTP_AUTH_ENABLED`
 
 <dd>
@@ -134,11 +171,11 @@ Monitoring the performance of your Appsmith instance is crucial for making infor
 
 <dd>
 
-Controls whether Appsmith sends telemetry data to its servers. You may choose to turn off the setting if it conflicts with your privacy policies or preferences. Set to `true` to allow Appsmith to collect anonymous telemetry data or `false` to opt-out.
+Controls whether Appsmith sends telemetry data to its servers. You may choose to turn off the setting if it conflicts with your privacy policies or preferences. Set to `true` to allow Appsmith to collect anonymous telemetry data or `false` to opt out.
 
 </dd>
 
-## Security 
+## Google reCAPTCHA  
 Ensure the safety of your applications and data by configuring security settings, including reCAPTCHA, to safeguard your instance against automated threats. Use the environment variables below to manage these settings:
 
 #### `APPSMITH_RECAPTCHA_ENABLED`
@@ -173,6 +210,20 @@ Appsmith can connect to external providers for MongoDB and Redis. The associated
     Appsmith uses this variable to connect to an external MongoDB instance. Set it to the full MongoDB URI supplied by the hosting service. This enables Appsmith to store data in your MongoDB database, ensuring control and ownership of the application data.
 </dd>
 
+#### `APPSMITH_MONGODB_USER`
+
+<dd>
+    Defines the username credential used by Appsmith to establish a connection with an external MongoDB instance. This setting ensures secure access to the designated database.
+</dd>
+
+#### `APPSMITH_MONGODB_PASSWORD`
+
+<dd>
+
+Sets the password associated with the MongoDB user specified in `APPSMITH_MONGODB_USER`. This password is crucial for secure authentication, allowing Appsmith to connect and interact with the external MongoDB instance securely.
+
+</dd>
+
 #### `APPSMITH_REDIS_URL`
 
 <dd>
@@ -201,22 +252,35 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
     Set this variable with your custom domain to access Appsmith.
 </dd>
 
-## Signup and login
+## Supervisord 
 
-With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
+Access the Supervisord web interface seamlessly through Appsmith by setting login credentials using environment variables. Securely control your background processes, ensuring reliable application management.
 
-#### `APPSMITH_FORM_LOGIN_DISABLED`
+#### `APPSMITH_SUPERVISOR_USER`
 
 <dd>
+Specifies the username for authentication within Supervisord. Appsmith uses this credential to interact with Supervisord, facilitating the management and monitoring of background processes and tasks.
 
-Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
 </dd>
 
-#### `APPSMITH_SIGNUP_DISABLED`
+#### `APPSMITH_SUPERVISOR_PASSWORD`
 
 <dd>
 
-Set to `true` to stop new user account creation. Useful when you want to restrict access to your Appsmith instance, allowing only users who have been specifically invited to join.
+Sets the password associated with the Supervisord user specified in `APPSMITH_SUPERVISOR_USER`. This password is essential for secure authentication, enabling Appsmith to manage and control background processes seamlessly through Supervisord.
+
+</dd>
+
+## Schedule automatic backups
+
+In Appsmith, you have the flexibility to automate backups for your self-hosted instance. You can use the cron expression to schedule regular backups.
+
+#### `APPSMITH_BACKUP_CRON_EXPRESSION`
+
+<dd>
+
+Specify a `5-value` cron expression to define the schedule for automatic backups. This allows you to tailor the backup frequency according to your preferences.
+
 </dd>
 
 ## Server timeout
