@@ -26,7 +26,6 @@ Authentication Type refers to the method used to verify the identity of users or
 
 * **Bearer Token:** It is a type of access token that is included in the request headers to authenticate and authorize API requests.
 
-
 </dd>
 
 
