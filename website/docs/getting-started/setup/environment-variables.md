@@ -24,7 +24,7 @@ The following environment variables help in configuring OAuth 2.0 authentication
     This variable holds the Client Secret provided by Google for OAuth 2.0. The secret is confidential and used in server-to-server communications. Assign this variable with the Google OAuth 2.0 Client Secret obtained from the Google Cloud Platform console where you configured your OAuth credentials.
 </dd>
 
-## Google OAuth
+## GitHub OAuth
 
 The following environment variables help in configuring OAuth 2.0 authentication with GitHub, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing GitHub credentials.
 
