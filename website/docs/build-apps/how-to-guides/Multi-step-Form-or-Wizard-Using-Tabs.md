@@ -128,7 +128,7 @@ You can customize the style of your Tabs by adding Buttons and Progress bar. Add
 
 
 
-## Partial data save
+## Save Partial Data
 
 To persistently store data while users are in the process of filling out the form, you have two options:
 
