@@ -5,22 +5,9 @@ hide_title: true
 title: Create PostgreSQL RDS
 ---
 
-<!-- vale off -->
+# Create PostgreSQL RDS for AWS ECS
 
-<div className="tag-wrapper">
- <h1> Create PostgreSQL RDS for SAML SSO</h1>
-
-<Tags
-tags={[
-{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
-
-Before you configure Security Assertion Markup Language (SAML) Single Sign-On (SSO) for Appsmith installation on AWS ECS using EC2 or Fargate instances, you need to set up a PostgreSQL RDS instance to store the Keycloak data. This page outlines the steps to set up a PostgreSQL RDS for your AWS ECS on EC2 or Fargate instances.
+Before you configure Security Assertion Markup Language (SAML) Single Sign-On (SSO) or High availability for Appsmith installation on AWS ECS using EC2 or Fargate instances, you need to set up a PostgreSQL RDS instance to store the Keycloak data. This page outlines the steps to set up a PostgreSQL RDS for your AWS ECS on EC2 or Fargate instances.
 
 ## Prerequisites
 
@@ -124,3 +111,7 @@ After Keycloak is up and running, verify Appsmith by logging into your Appsmith 
 ## Troubleshooting
 
 If you see errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore instance](https://docs.appsmith.com/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## Further reading
+* [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
+* [Configure High availability for AWS ECS](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability)
