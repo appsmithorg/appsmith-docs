@@ -8,7 +8,7 @@ Appsmith provides the [navigateTo](/reference/appsmith-framework/widget-actions/
 ## Set up page navigation
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/waEowjpyuaxJGrTedlgN?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/4E2rERYsOCBeEoKHMK0j?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -21,15 +21,29 @@ To set up page navigation using an Icon button, follow these steps:
     ```jsx
     {{navigateTo("page_name")}}
     ```
-2. To pass data between the source and the target page as query parameters, use the following code:
-    
+    To navigate to an external URL, pass a full URL instead of a page name. 
+   
+    Example:
     ```jsx
-    {{navigateTo('page_name', { userId: 12345 })}}
+    {{navigateTo('https://www.example.com')}}
     ```
-    For more information, see [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
-3.  To open the linked page in a new browser tab or window, use the third parameter.
+2.  To open the linked page in a new browser tab or window, use the third parameter.
 
     Example:
     ```jsx
-    {{navigateTo('page_name', { userId: 12345 }, 'NEW_WINDOW') }}
+    {{navigateTo('page_name', { }, 'NEW_WINDOW') }}
     ```
+## Share data between pages
+
+### Use query parameters
+Use the query parameter to share data between pages across apps. To pass data between the source and the target page using query parameters, use the following code:
+    
+```jsx
+{{navigateTo('page_name', { userId: 12345 })}}
+```
+ 
+### Use local storage
+Local storage is ideal for persisting data between page navigations within the same app. 
+Key-value pairs can be stored within the local storage with the help of the [StoreValue action](/reference/appsmith-framework/widget-actions/store-value). To do so pick the `StoreValue` action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`.
+
+![Click to expand](/img/localStorage.gif)

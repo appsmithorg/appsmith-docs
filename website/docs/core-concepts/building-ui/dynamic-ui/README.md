@@ -78,6 +78,7 @@ By following similar steps, you can create a JavaScript object, define variables
 See [How to display data from functions](/write-code/how-to-guides/display-data-from-functions).
 
 
+
 ## Using widgets
 
 When working with widgets in Appsmith, you may need to update values in the widget properties dynamically. Appsmith follows the reactive programming paradigm. Instead of updating widget properties and states through direct variable assignment (x = 5), widgets are connected and share data. When a value is updated, any widgets that depend on that changed value also update automatically.
@@ -170,3 +171,13 @@ Similarly, you can use setter methods to programmatically update data, color, vi
 
 
 </dd>
+
+## Accessing object attributes
+
+When dealing with object attributes that contain spaces in their names, you need to use a specific syntax to access their values. Instead of the conventional dot notation (`obj.attributeName`), you should use square brackets and quotes (`obj["attribute Name"]`). 
+
+*Example:* Suppose you have an object with an attribute named `income tax`, and you want to access its value. To achieve this, use the following syntax:
+
+```js
+return { label: obj["income tax"], value: obj["income tax"]};
+```

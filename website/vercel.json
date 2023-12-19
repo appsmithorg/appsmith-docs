@@ -1149,7 +1149,15 @@
     {
       "source": "/connect-data/how-to-guides/how-to-integrate-dropbox",
       "destination": "https://community.appsmith.com/content/guide/upload-files-dropbox"
+    },
+    {
+      "source": "/write-code/how-to-guides/debug-js-errors",
+      "destination": "/help-and-support/troubleshooting-guide/application-errors#debug-js-errors"
+    }
+    ,
+    {
+      "source": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
+      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
     }
   ]
 }
-
