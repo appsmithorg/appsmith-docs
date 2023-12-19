@@ -3,7 +3,7 @@ description: This page shows you how to edit items on List through inline editin
 ---
 
 # Edit List Data
-This page shows you how to edit items on List through inline editing. You will learn how to edit, delete, and duplicate a List item using Action buttons within the widget.
+This page shows you how to edit items on the List widget. You will learn how to edit, delete, and duplicate a List item using Action buttons within the widget.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/dbdJIVamvNUvVhwYm5GU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -15,11 +15,22 @@ This page shows you how to edit items on List through inline editing. You will l
 
 ## Edit list item
 To edit a List item using an icon, follow these steps:
-1. Drop an Icon button in the List widget.
+1. Drop an Icon button to the List widget and select **edit** in **Icon** from the property pane.
 2. Add a **Show modal** action to the **onClick** event of the Icon.
 3. Select **New Modal** and add the required widgets to display specific details from the List item.
    Rename the buttons on the Modal to `Reset` and `Update`.
-4. Add **Execute a JS function** action to the **onClick** event of the `Update` button on the modal. 
+4. Create a new query to update the List data.
+
+   Example:
+   ```sql
+   UPDATE product
+    SET name = {{inp_addProductTitle.text}},
+    description = {{inp_addProductDescription.text}},
+    type = 'OTHER',
+		image = {{inp_addImgUrl.text}}
+    WHERE id = {{utils.activeEditProduct ? utils.activeEditProduct.id : ''}};
+   ```
+5. Add **Execute a JS function** action to the **onClick** event of the `Update` button on the modal. 
    
    Example:
    ```jsx
@@ -32,19 +43,9 @@ To edit a List item using an icon, follow these steps:
    ```
    The above function runs a query named `updateProduct` to update the data, closes the Modal named `mdl_manageProduct`, and fetches the updated data from the datasource.
 
-   Example of the update query:
-   ```sql
-   UPDATE product
-    SET name = {{inp_addProductTitle.text}},
-    description = {{inp_addProductDescription.text}},
-    type = 'OTHER',
-		image = {{inp_addImgUrl.text}}
-    WHERE id = {{utils.activeEditProduct ? utils.activeEditProduct.id : ''}};
-   ```
-
 ## Delete list item
 To delete a list item using an icon, follow these steps:
-1. Drop an Icon button in the List widget.
+1. Drop an Icon button to the List widget and select **trash** in **Icon** from the property pane.
 2. Add a **Show modal** action to the **onClick** event of the Icon.
 3. Select **New Modal** and add a confirmation message to it with `Close` and `Delete` buttons.
 4. Add **Execute query** action to the **onClick** event of the `Delete` button to run delete query.
@@ -58,7 +59,7 @@ To delete a list item using an icon, follow these steps:
 
 ## Duplicate list item
 To duplicate a list item using an icon, follow these steps:
-1. Drop an Icon button in the List widget.
+1. Drop an Icon button to the List widget and select **duplicate** in **Icon** from the property pane.
 2. Configure the Icon's **onClick** event to run a query to duplicate the data corresponding to the triggered item in the datasource except the Id.
    
    Example:
@@ -75,12 +76,12 @@ To duplicate a list item using an icon, follow these steps:
     )
 	RETURNING*;
    ```
-3. Execute the fetch query for the List widget to reflect the changes. 
+1. Execute the fetch query for the List widget to reflect the changes. 
 
-## Change status
-To change the status of a list item using a Select widget, follow these steps:
-1. Drop a Select widget to the List widget. Map the Select widget's options to the status values.
-2. Add an action to the **onOptionChange** event of the List widget to run the status change query.
+## Edit list item inline
+To implement inline editing of list items using a Select widget, follow these steps:
+1. Drop a Select widget to the List widget. Bind data to the widget to populate a specific column values.
+2. Add an action to the **onOptionChange** event of the Select widget to run the edit query.
 
    Example:
    ```sql

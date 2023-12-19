@@ -371,7 +371,7 @@ const sidebars = {
               link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
               items: [
                 'reference/widgets/table/inline-editing',
-                'build-apps/how-to-guides/update-list-data-inline'
+                'build-apps/how-to-guides/update-list-data'
               ],
             },
             {
