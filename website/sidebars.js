@@ -353,9 +353,7 @@ const sidebars = {
               label: 'Display and Filter Data in List',
               items: [
                 'build-apps/how-to-guides/display-search-and-filter-list-data',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-                'build-apps/how-to-guides/Create-Nested-Lists'
-
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
               ],
             },
             {

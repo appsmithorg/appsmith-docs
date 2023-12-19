@@ -37,22 +37,6 @@ To create a data drilldown view using a Table widget, follow these steps:
    ```
    For more information, see [Moment.js](/write-code/reference/Built-in-JS-Libraries#moment).
 
-## Side by side drilldown view
-To create a drilldown view side by side with the Table, follow these steps:
-1. Drag and drop a Container widget on to the canvas. The left section displays the Table widget, while the right section displays the detail view.
-2. Add the required widgets to the Container like Text, List, or Image to display specific details.
-3. Bind data to the widgets based on the selected row from the Table widget. For example, use the following code to bind the data to a Text widget where `txt_passenger_name` is the name of the Text widget:
-   ```jsx
-   {{tbl_passengersTable.selectedRow.txt_passenger_name}}
-   ```
-   Bind other widgets similarly to display the complete details of the selected passenger.
-4. Disable the Visible property of the Container in the property pane.
-5. Set the **onRowSelected** event of the Table widget to show the container using the following code where passenger_details_container is the name of the container:
-   
-   ```jsx
-   {{passenger_details_container.setVisibility(true)}}
-   ```
-
 ## Drilldown view from List
 To create a data drilldown view using a List widget, follow these steps:
 1. Set the **Items** property of the List widget under **Data**, using the following code where `fetch_passengers` is the fetch query:
