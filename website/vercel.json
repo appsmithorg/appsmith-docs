@@ -1158,6 +1158,10 @@
     {
       "source": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
       "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+    },
+    {
+      "source": "build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select",
+      "destination": "build-apps/how-to-guides/display-select-options-dynamically"
     }
   ]
 }

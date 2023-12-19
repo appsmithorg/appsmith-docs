@@ -352,6 +352,7 @@ const sidebars = {
               type: 'category',
               label: 'Display and Filter Data in List',
               items: [
+                'build-apps/how-to-guides/display-search-and-filter-list-data',
                 'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
                 'build-apps/how-to-guides/Create-Nested-Lists'
 
@@ -394,7 +395,6 @@ const sidebars = {
       
               'connect-data/how-to-guides/how-to-download-files-using-api',
               'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-              'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
               `build-apps/how-to-guides/display-select-options-dynamically`,
             `core-concepts/writing-code/workflows`,
             'advanced-concepts/custom-authentication',

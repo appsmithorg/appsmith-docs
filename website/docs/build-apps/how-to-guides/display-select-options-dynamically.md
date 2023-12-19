@@ -31,6 +31,7 @@ To bind and display data on the Select widget, follow these steps:
    {{fetch_country.data}}
    ```
 5. Set the **Label key** and the **Value key** to display data accordingly.
+
 ## Display options dynamically 
 If you have two Select widgets, `Select1` and `Select2` and want to populate `Select2` based on the selected value from `Select1`, follow these steps:
 1. Add a query to populate the widget based on the selected option of the `Select1` widget.
