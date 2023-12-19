@@ -20,6 +20,9 @@ Okta
 Ping Identity
 application
 Application
+OAuth 2
+OAuth
+Domain
 Keycloak
 PostgreSQL
 Task
@@ -30,4 +33,8 @@ ECS
 RDS
 SAML
 Bind
-
+OIDC
+Login
+Signup
+reCAPTCHA
+Edition

@@ -1,4 +1,4 @@
-# Upload Files to S3 using Filepicker
+# Upload Files to S3
 
 This page shows you how to use the Filepicker widget to upload file data to S3.
 
@@ -43,11 +43,19 @@ Configure the S3 query to upload file data, using the following parameters:
 
 ```js
 // Single-file upload using the "Create a new file" command
-{{FilePicker1.files[0]}}
+{{upload_FilePicker.files[0]}}
 
 // Multi-file upload when using the "Create multiple new files" command
-{{FilePicker1.files}}
+{{upload_FilePicker.files}}
 
+```
+
+Similarly, if you want to upload an image using the Camera widget, set the **OnImageCapture** event of the Camera widget to trigger the S3 query and set **Content** field to:
+
+```js
+{
+   "data": "{{userCamera.imageDataURL}}"
+}
 ```
 
 </dd>
