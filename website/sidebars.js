@@ -59,8 +59,20 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/installation-guides/aws-ami',
-                'getting-started/setup/installation-guides/aws-ecs',
-                'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                {
+                  type: 'category',
+                  label: 'AWS ECS',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/README',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
+                    'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
+                  ],
+                },
                 'getting-started/setup/installation-guides/azure-aci',
                 {
                   type: 'category',
@@ -161,6 +173,7 @@ const sidebars = {
                 },
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
+                'getting-started/setup/environment-variables',
               ],
             },
             {
@@ -263,6 +276,7 @@ const sidebars = {
                 'connect-data/reference/querying-dynamodb',
                 'connect-data/reference/querying-elasticsearch',
                 'connect-data/reference/querying-firestore',
+                `connect-data/reference/google-ai`,
                 'connect-data/reference/querying-google-sheets',
                 'connect-data/reference/graphql',
                 'connect-data/reference/hubspot',
@@ -324,36 +338,38 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
-            'core-concepts/building-ui/dynamic-ui/README',
+            //'core-concepts/building-ui/dynamic-ui/README',
             {
               type: 'category',
-              label: 'Display Data',
+              label: 'Display and Filter Data in Table',
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
-                'build-apps/how-to-guides/Server-side-pagination-in-table',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-                `build-apps/how-to-guides/browse-and-display-documents`,
-                'build-apps/how-to-guides/display-map-markers',
-                `build-apps/how-to-guides/display-select-options-dynamically`
+                'build-apps/how-to-guides/Server-side-pagination-in-table'
               ],
             },
             {
               type: 'category',
-              label: 'Search, Sort, and Filter Data',
+              label: 'Display and Filter Data in List',
               items: [
-                'build-apps/how-to-guides/search-and-filter-table-data',
-                'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
+                'build-apps/how-to-guides/Create-Nested-Lists'
 
               ],
             },
             {
               type: 'category',
-              label: 'Modify Data',
+              label: 'Insert Data',
+              link: { type: 'doc', id: 'build-apps/how-to-guides/insert-data' },
               items: [
-                'build-apps/how-to-guides/insert-data',
                 'build-apps/how-to-guides/Upload-CSV-Data-to-Table',
-                'build-apps/how-to-guides/submit-form-data',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Update Data',
+              link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
+              items: [
                 'reference/widgets/table/inline-editing'
               ],
             },
@@ -368,29 +384,26 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Manage Files',
+              label: 'Upload Files',
               items: [
                 'build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests',
-                'connect-data/how-to-guides/how-to-download-files-using-api',
-                'connect-data/how-to-guides/how-to-upload-to-s3',
-                'connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images',
-                'connect-data/how-to-guides/download-files-from-s3',
+                'connect-data/how-to-guides/how-to-upload-to-s3'
 
               ],
             },
-            {
-              type: 'category',
-              label: 'Custom Widgets',
-              items: [
-                'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-                'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
-              ],
-            },
+      
+              'connect-data/how-to-guides/how-to-download-files-using-api',
+              'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+              'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+              `build-apps/how-to-guides/display-select-options-dynamically`,
             `core-concepts/writing-code/workflows`,
+            'advanced-concepts/custom-authentication',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            `build-apps/how-to-guides/navigate-between-pages`,
-            'build-apps/how-to-guides/Create-Nested-Lists'
+            `build-apps/how-to-guides/browse-and-display-documents`,
+            'build-apps/how-to-guides/display-map-markers',
+            `build-apps/how-to-guides/navigate-between-pages`
           ]
         },
         {
@@ -499,8 +512,7 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            'core-concepts/writing-code/ext-libraries',
-            'write-code/how-to-guides/debug-js-errors',
+            'core-concepts/writing-code/ext-libraries'
           ]
         },
         {
@@ -575,7 +587,6 @@ const sidebars = {
       label: 'Manage Apps and Users',
       items: [
         'advanced-concepts/embed-appsmith-into-existing-application',
-        'advanced-concepts/custom-authentication',
         'advanced-concepts/invite-users',
         {
           type: 'category',

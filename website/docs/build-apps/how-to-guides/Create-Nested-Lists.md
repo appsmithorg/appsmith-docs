@@ -8,6 +8,7 @@ Suppose there is a parent list - `parentList`, and a child list - `childList1`. 
 {{level_1.currentItem.fieldName}}
 ```
 
+
 You can use the **currentView** and **currentIndex** properties similarly.
 
 Suppose there is another List widget `childList2` inside `childList1`. The innermost list, `childList2` can access two levels - **level_1** and **level_2**. Here, **level_1** represents the data and state of the topmost list widget, `parentList` and **level_2** represents `childList1`.

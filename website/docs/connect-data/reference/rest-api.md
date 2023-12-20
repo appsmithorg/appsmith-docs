@@ -6,7 +6,7 @@ description: Query a REST API from Appsmith.
 
 This page describes how to connect your application to a REST API and use queries to read and write data in your applications.
 
-Use this datasource to create a single query for an API that doesn't need complex authentication settings. If you plan to create multiple queries for the same API, you may want to use an [Authenticated API](/connect-data/reference/rest-api) datasource. Every query created from an Authenticated API datasource shares configuration (root URL, authentication, headers, and so on) to avoid re-entering details.
+Use this datasource to create a single query for an API that doesn't need complex authentication settings. If you plan to create multiple queries for the same API, you may want to use an [Authenticated API](/connect-data/reference/authenticated-api) datasource. Every query created from an Authenticated API datasource shares configuration (root URL, authentication, headers, and so on) to avoid re-entering details.
 
 ## Query REST API
 
