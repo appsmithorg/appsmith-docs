@@ -31,7 +31,7 @@ Sets the main color for all components, like buttons, creating a consistent them
 
 #### Background color
 
-Allows you to set the page's color / app's background (canvas). This customization option provides control over the backdrop, allowing you to create a specific ambiance or align with brand colors. 
+Allows you to set the background colour of the page or application. This customization option provides control over the backdrop, allowing you to create a specific theme or align it with brand colors. 
 
 #### Full color picker
 
