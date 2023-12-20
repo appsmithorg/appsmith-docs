@@ -45,10 +45,10 @@ Whenever you upgrade your Appsmith instance, the Domain Specific Language (DSL) 
 These commits appear in your repository as follows:
 
 ```
-commit System generated commit, to support new features after upgrading Appsmith to the version: #appsmithVersion
+System generated commit, to support new features after upgrading Appsmith to the version: #appsmithVersion
 ```
 
-The auto-commit feature ensures you are always aware of system-triggered updates without having to manually manage them.
+The auto-commit feature ensures you no longer have to manually manage version upgrade changes. You can disable the auto-commit feature by going to your app's Git settings. 
 
 :::info
 The auto-commit feature does not apply to the protected branches.
