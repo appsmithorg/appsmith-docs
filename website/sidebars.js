@@ -491,16 +491,8 @@ const sidebars = {
                 'reference/widgets/video',
               ],
             },
-            {
-              type: 'category',
-              label: 'App Settings',
-              items: [
-                `build-apps/reference/app-settings/share-embed`,
-                'core-concepts/building-ui/designing-an-application/app-theming',
-                `build-apps/reference/app-settings/navigation`,
-
-              ],
-            },
+            
+            'core-concepts/building-ui/designing-an-application/app-theming',
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
