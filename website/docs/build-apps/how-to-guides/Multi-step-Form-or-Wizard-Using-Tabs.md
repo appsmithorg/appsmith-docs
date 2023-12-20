@@ -201,3 +201,6 @@ And in the content BODY pass the input data:
 </dd>
 
 4. When the user completes the form and clicks the final Submit button, trigger an API to send the remaining or updated data to the server.
+
+
+With this setup, data is directly saved to the server as users click on the Next button. Additionally, you can implement functions to check tab status, open relevant tabs on login, and dynamically fetch and display stored data.
