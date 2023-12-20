@@ -38,6 +38,22 @@ Discarding changes have the following impact on the entities (pages, queries, JS
 - Any resources that are deleted after the last commit is restored. 
 - Changes made to any resource after the last commit is removed.
 
+## Auto-commit changes
+
+Whenever you upgrade your Appsmith instance, the Domain Specific Language (DSL) that describes your app's layout and interactions is also updated. These updates are essential to take advantage of new features and enhancements that come with each new version of Appsmith. Appsmith automatically commits these DSL version changes on your behalf. 
+
+These commits appear in your repository as follows:
+
+```
+commit System generated commit, to support new features after upgrading Appsmith to the version: #appsmithVersion
+```
+
+The auto-commit feature ensures you are always aware of system-triggered updates without having to manually manage them.
+
+:::info
+The auto-commit feature does not apply to the protected branches.
+:::
+
 ## Further reading
 
 [Merge and Pull changes](/advanced-concepts/version-control-with-git/merging-branches)
