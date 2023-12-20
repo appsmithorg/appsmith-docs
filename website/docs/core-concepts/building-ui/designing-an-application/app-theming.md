@@ -48,9 +48,3 @@ This property applies rounded corners to the outer edge of widgets, changing the
 This feature adds a subtle drop shadow effect around the frame of widgets, enhancing visual depth across all widgets.
 
 
-
-
-## ​Reset the theme of all widgets
-
-To transition your older apps to the new theming system, you can utilize the Reset widget styles button within the Theme Properties pane. Click the three dots, and then select "Reset Theme" from the menu.
-
