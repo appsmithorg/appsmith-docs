@@ -81,7 +81,6 @@ To configure search on List, follow these steps:
    :::
 
 4. Add an **Action** to the Select widget's [onFilterUpdate](/reference/widgets/select#onfilterupdate) event to run the above query to filter List data.
-   For more information, see [Setup Server-side Filter on Select](/build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select).
 
 ## Nested list
 You can nest lists within a List widget up to three levels deep. Each nested level can interact with its parent data through specific properties. 

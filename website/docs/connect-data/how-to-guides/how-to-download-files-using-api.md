@@ -3,11 +3,11 @@ description: This page shows you how to download files.
 ---
 # Download Files
 
-This page shows you how to download a file using an API using PDF as the file format.
+This page shows you how to download a file using an API and S3 datasource.
 
-## Prerequisites
-- Access to a cloud platform with [API](/connect-data/reference/rest-api) endpoints.
-- A [Table](/reference/widgets/table) widget to bind data and download files.
+## Using API
+
+This section shows how to download files using API or file paths. Make sure you have access to the cloud platform with API endpoints and a Table widget to display and manage the files.
 
 ## Download file using public URL
 To download a file using the file URL, follow these steps:
@@ -19,7 +19,6 @@ To download a file using the file URL, follow these steps:
    {{download_image.run(()=>download(imageCatalog.selectedRow.url,imageCatalog.selectedRow.fileName))}}
    ```
 4. To test the download, click on any row on the table.
-
 
 ## Download file using authenticated URL
 Authenticated URLs require a different approach since they cannot be opened directly in the browser. To download a file with authentication, you should fetch the file data, and then download the file using the retrieved data.
@@ -54,8 +53,4 @@ To download multiple files, follow these steps:
    }}
    ```
 3. Set the widget's **onClick** event to download all the files using the following code where `bulkDownload` is the JS Object:
-
-   ```jsx
-   {{ListFiles.data.forEach(fileobject => bulkDownload.downloadFiles(object.signedUrl,object.fileName))}}
-   ```
-4. To test the download, click the Download all button.
+4. To test the download, click on any row on the table.

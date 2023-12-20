@@ -50,92 +50,85 @@
 <div className="containerGridSampleApp">
     <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
-           <a href="/build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select"><strong>Setup Server-side Filter on Select</strong></a>
-        </div><hr/>
-        <div className="containerDescription">This page shows you how to set up server-side filtering on the Select widget, which allows you to refine query results based on specific search terms.
-        </div>
-    </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
             <a href="/build-apps/how-to-guides/insert-data"><strong>Insert Data</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows you how to insert data into a datasource using the Form widget on a new page and a Modal. It explains steps to bind data to widgets, validate user input, and configure queries.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/build-apps/how-to-guides/Upload-CSV-Data-to-Table"><strong>Insert CSV Data</strong></a>
         </div><hr/>
         <div className="containerDescription">This guide walks you through the process of inserting multiple rows into a datasource using CSV data uploaded through the Filepicker widget.
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
             <a href="/build-apps/how-to-guides/submit-form-data"><strong>Update data</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to update table data using the Form and Modal widgets.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/reference/widgets/table/inline-editing"><strong>Setup Table Inline Editing</strong></a>
         </div><hr/>
         <div className="containerDescription">This page shows you how to add and edit Table data through inline editing.
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/build-apps/how-to-guides/Display-and-filter-chart-data"><strong>Plot Chart With Filters</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows you how to display and filter built-in charts data.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/build-apps/how-to-guides/create-custom-charts"><strong>Create Custom Charts</strong></a>
         </div><hr/>
         <div className="containerDescription">Appsmith offers basic built-in charts, but for more flexible chart types, you can use the custom ECharts.
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests"><strong>Upload Files Using API</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows you how to use the Filepicker widget to upload file data using API.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/connect-data/how-to-guides/how-to-download-files-using-api"><strong>Download Files Using API</strong></a>
         </div><hr/>
         <div className="containerDescription">This page shows you how to download a file using an API using PDF as the file format.
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/connect-data/how-to-guides/how-to-upload-to-s3"><strong>Upload Files to S3 using Filepicker</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows you how to use the Filepicker widget to upload file data to S3.</div>
     </div>
-</div>
-
-<div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"><strong>Upload Images to S3 Using Camera</strong></a>
         </div><hr/>
         <div className="containerDescription">This page provides steps to upload images using the Camera widget to the S3 datasource.
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+</div>
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe"><strong>Create Custom Widgets Using Iframe</strong></a>
         </div> <hr/>
@@ -151,7 +144,7 @@
         <div className="containerDescription">This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps.
         </div>
 </div>
- <div className="containerColumnSampleApp columnGrid column-two">
+<div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
             <a href="/core-concepts/writing-code/workflows"><strong>Trigger UI Workflow</strong></a>
         </div> <hr/>
@@ -181,10 +174,12 @@
         </div> <hr/>
         <div className="containerDescription">This page shows how to reuse application entities by exporting certain entities from a page and importing them into another page or application.</div>
 </div>
-<div className="containerColumnSampleApp columnGrid column-one">
+
+<div className="containerColumnSampleApp columnGrid column-two">
        <div className="containerCol">
             <a href="/build-apps/how-to-guides/import-export-app-entities"><strong>Create Nested Lists</strong></a>
         </div> <hr/>
         <div className="containerDescription">This page shows how to create nested lists to organize and structure information hierarchically.</div>
     </div>
 </div>
+
