@@ -2,56 +2,72 @@
 description: This page shows you how to insert data in Appsmith. 
 
 ---
+
 # Insert Data
 
-This guide shows you how to insert data into a datasource using the Form widget on a new page and a Modal. It explains steps to bind data to widgets, validate user input, and configure queries.
+This guide shows you how to insert data into a datasource using the Form widget on a new page and a Modal. It explains the steps to bind data to widgets, validate user input, and configure queries.
 
-## Using new page
-To insert data in a new page, follow these steps:
-1. Add a Button widget. Set the widget's **onClick** event to open a new page by selecting the **Navigate to** action and selecting the appropriate page.
-   For more information, see [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to).
-2. In the new page, create a Form widget to capture the details you want to insert.
-3. You can update fields dynamically by setting the events of the widgets to bind data to other fields in the Form.
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/4HdgmwDfdpgGly9XxIsz?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+## Use Modal
+To insert data using a Modal, follow these steps:
+1. Drop a Modal widget onto the canvas, and then add the relevant widgets and configure their properties.
+2. To validate data before inserting, scroll to the **Validation** section in the property pane of each widget within the Modal. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The `Save` button on the Modal remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
+3. Configure the query to insert data.
+
    Example:
-
-   ```jsx
-   {{ offerCode.setText(location.selectedOptionValue + code) }}
-   ```
-   Here, the selection of `location` sets the selection of `offerCode`.
-
-   For more information, see [Bind Data to Wdigets](/core-concepts/building-ui/dynamic-ui).
-
-4. To validate data before inserting, scroll to the **Validation** section in the property pane of the Form widget. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The submit button remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
-5. Select the **Submit** button on the Form, and add an **Action** to the **onClick** property. Select **Execute a query**, and then select your insert query.
-
-   Here is an example where `offers` is the datasource, and `offer_details` is the form name:
    ```sql
-      INSERT INTO offers 
-      (id, title, description, valid_from, valid_till, offer_type, product_type, discount_type, discount_value) 
+   INSERT INTO person (first_name, last_name, email, phone)
+   VALUES 
+   (
+      {{inp_addFirstName.text}},
+      {{inp_addLastName.text}}, 
+      {{inp_addEmail.text}}, 
+      {{inp_addPhone.text}}
+   );
+   ```
+4. Create a JS Object to run the insert query, close the Modal, and fetch the updated data from the datasource.   
+   Example:
+   ```jsx
+   insertData: async () => {
+		const customer = await addCustomer.run();
+		closeModal('mdl_newCustomer');
+		showAlert('Customer Created', 'success');
+		getCustomers.run();
+	}
+   ```
+5. Set the **onClick** event of the `Save` button on the Modal to execute the JS Object.
+6. Drop a Button widget onto the canvas and set its **onClick** event to show the Modal by selecting the **Show modal** action and then selecting the Modal name created in Step 1.
+
+## Use new page
+To insert data in a new page, follow these steps:
+1. Create a new page and then drop a Form widget on the page. Add the relevant widgets into the Form widget and configure their properties.
+2. To validate data before inserting, scroll to the **Validation** section in the property pane of the Form widget. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The Form widget's `Submit` button remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
+3. Configure the query to insert data using [data](/reference/widgets/form#data-object) reference property of the Form.
+
+   Example:
+   ```sql
+      INSERT INTO person 
+      (first_name, last_name, email, phone)
       VALUES 
       (
-      {{ offer_details.data.id }},
-      {{ offer_details.data.title }},
-      {{ offer_details.data.description }},
-      {{ offer_details.data.valid_from }},
-      {{ offer_details.data.valid_till }},
-      {{ offer_details.data.offer_type }},
-      {{ offer_details.data.product_type }},
-      {{ offer_details.data.discount_type }},
-      {{ offer_details.data.discount_value }}
-     );
+         {{frm_new_customer.data.first_name}},
+         {{frm_new_customer.data.last_name}},
+         {{frm_new_customer.data.email}},
+         {{frm_new_customer.data.phone}}
+      );
    ```
-6. In **Callbacks** for the Form's **Submit** button, add an action in **On success**, select **Reset widget** in **Action**, and then select your Form in **Widget**.
+   :::info
+   When prepared statements are enabled and widget bindings are used, quotes are not required.
+   :::
 
-## Using Modal
-To insert data using a Modal, follow these steps:
-1. Add a Button widget. Set the widget's **onClick** event to show a Modal by selecting the **Show modal** action and then selecting the Modal name.
-2. In the Modal, create a Form widget to capture the details you want to insert.
-3. You can update fields dynamically by setting the events of the widgets to bind data to other fields in the Form.
-   For an example, refer to step 5 of [Using new page](#using-new-page).
-   For more information, see [Dynamic data mapping](/reference/widgets/list#dynamic-data-mapping).
-4. To validate data before inserting, Scroll to the **Validation** section in the property pane of the Form widget. Enter the validation criteria, such as **Required**, **Max Characters**, **Regex**, etc. The submit button remains disabled until all widgets meet the defined validation criteria. For more information, see [Validation](/reference/widgets/input#regex-string).
-5. Select the **Submit** button on the Form, and add an **Action** to the **onClick** property. Select **Execute a query**, and then select your insert query. For an example, refer to step 5 of [Using new page](#using-new-page).
-6. Add a Button widget to the page. Set its **onClick** event to open the Modal by selecting the **Show modal** action and then selecting the Modal name.
-7. In **Callbacks** for the Form's **Submit** button, add an action in **On success**, select **Reset widget** in **Action**, and then select your Modal in **Widget**.
+4. Set the `Submit` Button's **onClick** event to execute the insert query, and the **onSuccess** callback to navigate back to your home page and fetch the updated data.
+5. Add a Button widget to your home page and set its **onClick** event to navigate to the insert data page created in Step 1. 
+   For more information, see [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to).
 
+:::info
+To insert the ID value, choose a UUID generator or let your data source auto-generate the ID.
+:::
