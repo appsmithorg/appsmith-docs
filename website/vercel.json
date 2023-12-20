@@ -1162,6 +1162,10 @@
     {
       "source": "build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select",
       "destination": "build-apps/how-to-guides/display-select-options-dynamically"
+    },
+    {
+      "source": "build-apps/how-to-guides/Create-Nested-Lists",
+      "destination": "build-apps/how-to-guides/display-search-and-filter-list-data#nested-list"
     }
   ]
 }
