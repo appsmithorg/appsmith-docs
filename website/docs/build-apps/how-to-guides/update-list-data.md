@@ -76,7 +76,11 @@ To duplicate a list item using an icon, follow these steps:
     )
 	RETURNING*;
    ```
-1. Execute the fetch query for the List widget to reflect the changes. 
+3. Execute the fetch query for the List widget to reflect the changes.
+
+:::info
+To insert the ID value, choose a UUID generator or let your data source auto-generate the ID.
+:::
 
 ## Edit list item inline
 To implement inline editing of list items using a Select widget, follow these steps:
