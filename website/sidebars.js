@@ -490,6 +490,7 @@ const sidebars = {
                 'reference/widgets/video',
               ],
             },
+            
             'core-concepts/building-ui/designing-an-application/app-theming',
             'learning-and-resources/sample-apps'
           ],
