@@ -69,9 +69,9 @@ const sidebars = {
                   items: [
                     'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
                     'getting-started/setup/installation-guides/aws-ecs-on-fargate',
-                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                     'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
                     'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                   ],
                 },
                 'getting-started/setup/installation-guides/azure-aci',
@@ -392,11 +392,11 @@ const sidebars = {
 
               ],
             },
-      
-              'connect-data/how-to-guides/how-to-download-files-using-api',
-              'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-              'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
-              `build-apps/how-to-guides/display-select-options-dynamically`,
+
+            'connect-data/how-to-guides/how-to-download-files-using-api',
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
+            `build-apps/how-to-guides/display-select-options-dynamically`,
             `core-concepts/writing-code/workflows`,
             'advanced-concepts/custom-authentication',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
