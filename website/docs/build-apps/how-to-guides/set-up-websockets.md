@@ -1,11 +1,11 @@
-# Set Up Websockets in Appsmith
+# Set Up Websockets
 
 WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. 
 
 This page shows you how to set up Websockets in Appsmith, enabling you to leverage real-time communication capabilities. Additionally, an example to display live locations on a Map widget through WebSocket communication.
 
   <figure>
-  <img src="/img/track-locations.gif" style= {{width:"740px", height:"auto"}} alt=""/>
+  <img src="/img/order-track.gif" style= {{width:"750px", height:"auto"}} alt=""/>
   <figcaption align = "center"><i>Display live location on Map widget</i></figcaption>
   </figure>  
 
@@ -19,7 +19,7 @@ A Websocket endpoint - It can be any endpoint, whether public or your own.
 To configure and set up WebSocket connections, follow the steps:
 
 
-1. Create a new JSObject and add your Websocket URL. Define `socket` for the WebSocket instance, and set up `markersData` to store received data. Like:
+1. Create a new JSObject and add your Websocket URL. Define `socket` for the WebSocket instance, and `markersData` to store received data. Like:
 
 <dd>
 
@@ -72,7 +72,7 @@ const message = JSON.stringify({ action: 'onmessage' });
 this.socket.send(message);
 ```
 
-Upon successful connection, it logs a success message and sends a JSON-formatted message, allowing you to customize the payload based on your specific endpoint requirements.
+The above code sends a JSON-formatted message, allowing you to customize the payload based on your specific endpoint requirements.
 
 </dd>
 
@@ -80,7 +80,7 @@ Upon successful connection, it logs a success message and sends a JSON-formatted
 
 <dd>
 
-*Example:* If you want to implement live order tracking based on server location, add the following code to handle the incoming data. 
+*Example:* If you want to implement live order tracking based on real-time location information, add the following code to handle the incoming data. 
 
 ```js
 // Event handler for incoming messages
