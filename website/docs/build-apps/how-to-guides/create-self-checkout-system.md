@@ -8,6 +8,7 @@
 
 ## Prerequisites
 
+App connected to a datasource containing inventory information.
 
 ## Configure query and function
 
@@ -123,12 +124,17 @@ The `store` allows dynamic updates to the Table based on changes in the checkout
 
 </dd>
 
-2. Add a custom column in the Table and set the column type to Icon button and set its onclick event to remove the item:
+2. Add a new custom column in the Table, select the column type as an Icon button, and set its **OnClick** event to remove the item:
+
+<dd>
 
 ```js
 {{checkout_obj.removeFromCheckout(currentRow)}}
 ```
 
+When triggered, this code removes the item associated with the current row in the Table from the checkout.
+
+</dd>
 
 3. Set the Code Scanner widget's **OnCodeDetected** event to run the `getProduct()` function:
 
@@ -138,3 +144,6 @@ The `store` allows dynamic updates to the Table based on changes in the checkout
 {{checkout_obj.getProduct()}}
 ```
 </dd>
+
+
+With this setup, whenever a valid barcode is scanned using the Code Scanner, the system retrieves product information through the query and adds the data to the Table. You can create additional functions to handle the checkout process according to your specific requirements.
