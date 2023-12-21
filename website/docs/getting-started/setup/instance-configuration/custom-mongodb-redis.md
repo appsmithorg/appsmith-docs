@@ -20,6 +20,8 @@ Follow the steps below to configure Appsmith to use an external MongoDB instance
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 - Ensure that your external MongoDB has a replica set configuration in place. Connect to your database as an admin user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud, the replica set configuration is already set up for you.
 - Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
+- At least 2 GB of free storage space for backup and update tasks.
+- Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl#backup-instance) guide. (Recommended)
 
 ### Configure instance
 
@@ -87,9 +89,7 @@ docker-compose restart appsmith
 
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
-
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). You can also roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
 
