@@ -401,6 +401,7 @@ const sidebars = {
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             `build-apps/how-to-guides/browse-and-display-documents`,
+            `build-apps/how-to-guides/create-self-checkout-system`,
             'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/navigate-between-pages`
           ]
