@@ -6,7 +6,7 @@ This page shows you how to set up Websockets in Appsmith, enabling you to levera
 
   <figure>
   <img src="/img/track-locations.gif" style= {{width:"640px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i></i></figcaption>
+  <figcaption align = "center"><i>Display live location on Map widget</i></figcaption>
   </figure>  
 
 ## Prerequisites
@@ -37,7 +37,7 @@ markersData: [],
 
 </dd>
 
-2. Create a function to establish a Websocket connection and send a message based on your endpoint requirements.
+2. Create a function to establish a Websocket connection.
 
 <dd>
 
@@ -51,21 +51,32 @@ initWebSocket() {
   this.socket.onopen = () => {
   console.log('WebSocket connection established successfully');
 
-  // Send a message to the API when successfully connected
-  const message = JSON.stringify({ action: 'onmessage' });
-  // Customize the message payload based on your endpoint requirements
-
-  this.socket.send(message);
 };
 ```
 
 This function creates a new WebSocket connection using the specified URL.
 
+
+</dd>
+
+3. Implement code within the same function to send a message to the server based on your endpoint requirements.
+
+
+<dd>
+
+```js
+// Send a message to the API when successfully connected
+const message = JSON.stringify({ action: 'onmessage' });
+// Customize the message payload based on your endpoint requirements
+
+this.socket.send(message);
+```
+
 Upon successful connection, it logs a success message and sends a JSON-formatted message, allowing you to customize the payload based on your specific endpoint requirements.
 
 </dd>
 
-3. Implement a message handler for incoming Websocket data.
+4. Implement a message handler for incoming Websocket data.
 
 <dd>
 
@@ -98,12 +109,12 @@ this.socket.onmessage = (event) => {
 
 ```
 
-This code captures `latitude` and `longitude` data from Websocket endpoints. It then transforms this data into a format compatible with a Map widget.
+This code captures `latitude` and `longitude` data from Websocket endpoints. It then transforms this data into a format compatible with the Map widget.
 
 
 </dd>
 
-4. Implement error handling and connection closure events.
+5. Implement error handling and connection closure events.
 
 <dd>
 
@@ -124,7 +135,7 @@ This code sets up event handlers to log WebSocket errors and report the closure 
 </dd>
 
 
-5. Bind response data with widgets as needed. 
+6. Bind response data with widgets as needed. 
 
 <dd>
 
@@ -136,7 +147,7 @@ This code sets up event handlers to log WebSocket errors and report the closure 
 
 </dd>
 
-6. Drop a Button widget and set its **onClick** event to initiate the WebSocket function, like:
+7. Drop a Button widget and set its **onClick** event to initiate the WebSocket function, like:
 
 <dd>
 
