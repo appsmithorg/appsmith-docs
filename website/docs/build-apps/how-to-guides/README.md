@@ -66,9 +66,9 @@
 <div className="containerGridSampleApp">
     <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
-            <a href="/build-apps/how-to-guides/submit-form-data"><strong>Update data</strong></a>
+            <a href="/build-apps/how-to-guides/submit-form-data"><strong>Update or Delete Data</strong></a>
         </div> <hr/>
-        <div className="containerDescription">This page shows how to update table data using the Form and Modal widgets.</div>
+        <div className="containerDescription">This page shows how to update or delete data using the Form and Modal widgets.</div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
