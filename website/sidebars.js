@@ -379,7 +379,6 @@ const sidebars = {
               items: [
                 `build-apps/how-to-guides/Display-and-filter-chart-data`,
                 `build-apps/how-to-guides/create-custom-charts`
-
               ],
             },
             {
