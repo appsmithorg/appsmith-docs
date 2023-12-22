@@ -367,7 +367,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Update Data',
+              label: 'Update or Delete Data',
               link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
               items: [
                 'reference/widgets/table/inline-editing',
@@ -402,7 +402,7 @@ const sidebars = {
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/browse-and-display-documents`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
 
           ]
         },
@@ -557,7 +557,6 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/post-message',
               'reference/appsmith-framework/widget-actions/window-message-listener',
               'reference/appsmith-framework/widget-actions/unlisten-window-message'
-
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
