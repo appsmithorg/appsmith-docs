@@ -366,7 +366,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Update/Delete Data',
+              label: 'Update or Delete Data',
               link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
               items: [
                 'reference/widgets/table/inline-editing',
