@@ -24,7 +24,4 @@ Browse this section to learn about the different actions you can trigger on Apps
 * [postWindowMessage()](reference/appsmith-framework/widget-actions/post-message)
 * [windowMessageListener()](/reference/appsmith-framework/widget-actions/window-message-listener)
 * [unlistenWindowMessage()](/reference/appsmith-framework/widget-actions/unlisten-window-message)
-* [getGeolocation()](/reference/appsmith-framework/widget-actions/get-geolocation)
-* [watchGeolocation()](/reference/appsmith-framework/widget-actions/watch-geolocation)
-* [stopWatchGeolocation()](/reference/appsmith-framework/widget-actions/stop-watching-geolocation)
             
