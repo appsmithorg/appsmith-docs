@@ -345,7 +345,8 @@ const sidebars = {
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
-                'build-apps/how-to-guides/Server-side-pagination-in-table'
+                'build-apps/how-to-guides/Server-side-pagination-in-table',
+                'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
             {
@@ -390,18 +391,19 @@ const sidebars = {
 
               ],
             },
-      
-              'connect-data/how-to-guides/how-to-download-files-using-api',
-              'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-              `build-apps/how-to-guides/display-select-options-dynamically`,
+
+            'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/workflows`,
-            'advanced-concepts/custom-authentication',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            `build-apps/how-to-guides/display-select-options-dynamically`,
+            `build-apps/how-to-guides/navigate-between-pages`,
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            `build-apps/how-to-guides/browse-and-display-documents`,
+            'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
-            `build-apps/how-to-guides/navigate-between-pages`
+            `build-apps/how-to-guides/browse-and-display-documents`,
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+
           ]
         },
         {
@@ -489,7 +491,7 @@ const sidebars = {
                 'reference/widgets/video',
               ],
             },
-            
+
             'core-concepts/building-ui/designing-an-application/app-theming',
             'learning-and-resources/sample-apps'
           ],
