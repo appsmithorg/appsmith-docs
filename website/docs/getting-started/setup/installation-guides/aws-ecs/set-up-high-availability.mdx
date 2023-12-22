@@ -1,0 +1,44 @@
+---
+description: This page outlines how to setup high availability for Appsmith on AWS ECS using Fargate.
+---
+
+# Configure High Availability on Fargate
+
+The high availability configuration will ensure continuous access to your Appsmith installation. This page outlines how to setup high availability for Appsmith installation on AWS ECS using Fargate.
+
+## Prerequisites
+
+- Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+- An Appsmith Commercial Edition installation using AWS ECS on Fargate. If not installed yet, see the [AWS ECS on Fargate](/getting-started/setup/installation-guides/aws-ecs-on-fargate) installation guides for installing Appsmith.
+- At least 2 GB of free storage space for backup and update tasks.
+- Backup your [Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#backup-instance)
+- [Set up an external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb)
+- [Set up an external Redis server](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-redis)
+- [Set up a PostgreSQL RDS for Keycloak](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)
+
+## Update Appsmith task definition
+
+Follow the below steps to configure your Appsmith task definition to use the newly created EFS:
+
+1. Go to the AWS Management Console, open the Amazon ECS console, and select **Task Definitions** from the sidebar.
+2. Select the existing Appsmith task definition and click the **Create new revision** button to create a new revision for the task definition.
+3. Go to the **Container-1** section, click the **Add environment variable** button, and add the below environment variables in **Key** and their values in **Value**: 
+    - **APPSMITH_MONGODB_URI** - Add the external MongoDB URL you set up in [Prerequisites](#prerequisites) section.
+    - **APPSMITH_REDIS_URL** - Add the external Redis URL you set up in [Prerequisites](#prerequisites) section.
+4. Keep default values for other settings, and click the **Create** button.
+
+## Update Appsmith ECS service
+
+Follow the below steps to update your Appsmith service to use the newly created task definition:
+
+1. Go to the AWS Management Console, open the Amazon ECS console, select your ECS Cluster, and go to the **Services** tab.
+2. Select your service and click the **Update** button.
+3. Check the **Force new deployment** checkbox
+4. Update **Desired tasks** to 2
+4. In the **Task definition**, select the newly created revision for the **Revision** setting.
+5. Click the **Update** button to save the changes and initiate a new deployment.
+6. Verify the service **Last status** shown as **Running**, which means that the service is up and running.
+
+## Troubleshooting
+
+If you see errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
