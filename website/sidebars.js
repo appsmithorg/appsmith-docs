@@ -394,9 +394,6 @@ const sidebars = {
             },
 
             'connect-data/how-to-guides/how-to-download-files-using-api',
-            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-            'build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select',
-            `build-apps/how-to-guides/display-select-options-dynamically`,
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             `build-apps/how-to-guides/display-select-options-dynamically`,
