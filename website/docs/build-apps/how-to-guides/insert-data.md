@@ -85,7 +85,9 @@ To dynamically add new rows to the table, follow these steps:
 2. Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
 3. Create a new INSERT query, using the `newRow` reference property to retrieve values from the newly created row:
 
-   Example: If you want users to add data for new users, you can use:
+   Example: 
+   
+   If you want users to add data for new users, you can use:
 
    ```sql
    INSERT INTO users 

@@ -86,7 +86,6 @@ WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 
 You can refer to the [datasource](https://docs.appsmith.com/connect-data/reference) for specific instructions on setting up an update query for your selected datasource.
 
-
 </dd>
 
 4. Turn off prepared statements in the query editor for this configuration to facilitate dynamic SQL construction and maintain compatibility with the provided example. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
