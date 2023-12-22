@@ -54,7 +54,7 @@ External libraries once installed can be accessed as an object anywhere you can 
 You can install excelJS library using this URL
 
 ```
-https://www.jsdelivr.com/package/npm/exceljs
+https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 ```
 
 You can write code to create a workbook in a JS function as below
