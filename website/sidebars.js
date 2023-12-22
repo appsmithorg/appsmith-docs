@@ -402,7 +402,7 @@ const sidebars = {
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/browse-and-display-documents`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
 
           ]
         },
