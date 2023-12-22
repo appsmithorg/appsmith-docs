@@ -366,7 +366,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Update Data',
+              label: 'Update/Delete Data',
               link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
               items: [
                 'reference/widgets/table/inline-editing',
@@ -555,11 +555,7 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/set-timeout',
               'reference/appsmith-framework/widget-actions/post-message',
               'reference/appsmith-framework/widget-actions/window-message-listener',
-              'reference/appsmith-framework/widget-actions/unlisten-window-message',
-              'reference/appsmith-framework/widget-actions/get-geolocation',
-              'reference/appsmith-framework/widget-actions/watch-geolocation',
-              'reference/appsmith-framework/widget-actions/stop-watching-geolocation'
-
+              'reference/appsmith-framework/widget-actions/unlisten-window-message'
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
