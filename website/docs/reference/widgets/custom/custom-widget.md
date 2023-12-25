@@ -1,6 +1,6 @@
-# Custom Widget
+# Custom
 
-This page provides information on using the Custom Widget widget, which allows you to integrate React, HTML, and JavaScript components for additional functionality. 
+This page provides information on using the Custom widget, which allows you to integrate React, HTML, and JavaScript components for additional functionality. 
 
 To embed web pages or applications, use the IFrame widget.
 
@@ -15,6 +15,7 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to customize the code for the custom widget. When clicked, it opens a dedicated page where you can conveniently modify and update the widget's code to suit your requirements.
 
+Learn more about [Custom Widget Builder](/reference/widgets/custom/custom-widget-builder).
 
 #### Default Model
 
@@ -83,3 +84,35 @@ For example, if your custom widget necessitates a reset functionality, you can c
 
 
 
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `FilePicker1.isVisible`.
+
+#### model `string`
+
+<dd>
+
+
+The `model` property retrieves the value from the Default Model property.
+
+Example:
+
+```js
+{{Custom1.model}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
+
+Example:
+
+```js
+{{Custom1.isVisible}}
+```
+
+</dd>
