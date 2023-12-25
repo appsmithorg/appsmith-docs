@@ -443,6 +443,7 @@ const sidebars = {
                 'reference/widgets/code-scanner',
                 'reference/widgets/container',
                 'reference/widgets/currency-input',
+                'reference/widgets/custom-widget',
                 'reference/widgets/datepicker',
                 'reference/widgets/divider',
                 'reference/widgets/document-viewer',
