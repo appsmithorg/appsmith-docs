@@ -16,7 +16,6 @@ These properties are customizable options present in the property pane of the wi
 Allows you to customize the code for the custom widget. When clicked, it opens a dedicated page where you can conveniently modify and update the widget's code to suit your requirements.
 
 
-
 #### Default Model
 
 <dd>
