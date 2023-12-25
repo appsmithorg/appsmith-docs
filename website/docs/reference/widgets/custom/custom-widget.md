@@ -93,12 +93,15 @@ Reference properties are properties that are not available in the property pane 
 <dd>
 
 
-The `model` property retrieves the value from the Default Model property.
+The `model` property retrieves the value from the **Default Model** property and the Custom widget.
 
 Example:
 
 ```js
 {{Custom1.model}}
+
+// Accessing a specific property 
+{{Custom1.model.signatureImage}}
 ```
 
 </dd>
