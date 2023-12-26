@@ -1,11 +1,11 @@
 #  AWS Lambda 
 
-This page provides information for connecting your application to an Amazon Lambda function and using queries to manage its content.
+This page provides information for connecting your application to an Amazon Lambda function and using queries to manage and execute functions.
 
 ## Connect AWS Lambda
 
  <figure>
-  <img src="/img/connect-aws-lambda.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
+  <img src="/img/AWS-CONNECT.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
   <figcaption align = "center"><i>AWS Lambda datasource.</i></figcaption>
 </figure>
 
