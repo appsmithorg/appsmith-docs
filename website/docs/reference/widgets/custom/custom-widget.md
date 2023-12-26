@@ -10,30 +10,38 @@ To embed web pages or applications, use the IFrame widget.
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 
+### Widget 
 
 #### Edit Source
+
+<dd>
 
 Allows you to customize the code for the custom widget. When clicked, it opens a dedicated page where you can conveniently modify and update the widget's code to suit your requirements.
 
 Learn more about [Custom Widget Builder](/reference/widgets/custom/custom-widget-builder).
+
+</dd>
 
 #### Default Model
 
 <dd>
 
 
-This property allows you to pass data to the custom widget's code editor. 
+This property allows you to pass data to the custom widget's code editor. You can use mustache binding `{{}}` to pass data from queries or other widgets.
+
+*Example:* If you want to pass the name from a Table widget to the custom widget, use the following code:
+
+```js
+{
+  "name": "{{Table1.selectedRow.name}}"
+}
+```
 
 
-* To access the data in the javascript editor use `appsmith.model`.
+
+* To access the data in the javascript editor use `appsmith.model.property-name`.
 
 * To access data in CSS use `var(--appsmith-model-{property-name}`
-
-* Create events in the widget and trigger them in the javascript file using `appsmith.triggerEvent('eventName')`
-
-*Example:* if you want to pass 
-
-
 
 </dd>
 
@@ -74,9 +82,20 @@ For example, if you want to make the widget visible only when the user selects "
 </div>
 
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) tailored to your specific requirements. 
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) tailored to your specific requirements. Create events in the widget and trigger them in the javascript file using `appsmith.triggerEvent('eventName')`
 
-For example, if your custom widget necessitates a reset functionality, you can create an **onReset** event and specify the corresponding action to be executed. 
+
+*Example*: To reset the widget upon a button click, create a new event named **onResetClick** and add the following in the JavaScript code:
+
+```js
+const handleReset = () => {
+  setCurrentIndex(0);
+  appsmith.triggerEvent("onResetClick");
+};
+```
+
+
+
 
 </dd>
 
@@ -86,16 +105,16 @@ For example, if your custom widget necessitates a reset functionality, you can c
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `FilePicker1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Custom1.isVisible`.
 
 #### model `string`
 
 <dd>
 
 
-The `model` property retrieves the value from the **Default Model** property and the Custom widget.
+The `model` property retrieves the value from the Custom widget and **Default Model** property. 
 
-Example:
+*Example*:
 
 ```js
 {{Custom1.model}}
@@ -112,7 +131,7 @@ Example:
 
 The `isVisible` property indicates the visibility state of a widget, with true indicating it is visible and false indicating it is hidden.
 
-Example:
+*Example*:
 
 ```js
 {{Custom1.isVisible}}
