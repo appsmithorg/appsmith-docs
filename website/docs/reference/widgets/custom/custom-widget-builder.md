@@ -5,7 +5,7 @@ This page provides information on the Custom Widget Code Editor, which allows yo
 
 <figure>
   <img src="/img/Custom Widget Builder.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
-  <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
+  <figcaption align = "center"><i></i></figcaption>
 </figure>
 
 
