@@ -81,7 +81,7 @@ This command allows you to invoke Lambda functions, passing input parameters if 
 
 <dd>
 
-Name of the function you intend to trigger or execute. Additionally, you can enable *JS* to dynamically update the function name.
+Name of the function you intend to trigger or execute. Additionally, you can enable *JS* to dynamically update the function name using Mustache binding `{{}}`
 
 </dd>
 
