@@ -19,7 +19,7 @@ The following section is a reference guide that provides a complete description 
 
 <dd>
 
-Authentication Type refers to the method used to verify the identity of users or systems interacting with the AWS Lambda. 
+Authentication Type refers to the method used to verify the identity of users or systems interacting with AWS Lambda. 
 
 *Options:*
 
@@ -69,7 +69,7 @@ When this command is executed, it retrieves a comprehensive list of functions as
 
 ### Invoke a function
 
-This command allows you to invoke Lambda functions, passing input parameters if necessary, and retrieving the output of the function's execution. The following section lists all the fields available for the **Invoke a functions** command.
+This command allows you to invoke Lambda functions, passing input parameters if necessary, and retrieving the output of the function's execution. The following section lists all the fields available for the **Invoke a function** command.
 
  <figure>
   <img src="/img/Invokefunction.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
@@ -95,7 +95,7 @@ Specifies how a function is invoked and the behavior of the invocation. You can 
 
 * **Synchronous (Request Response)**: This option waits for the function to process the request and returns the result. It is suitable for scenarios where the calling application requires an immediate response.
 
-* **Asynchronous (Event)**: In this mode, the invocation is asynchronous, and the function is invoked without waiting for a response. It is suitable for background processing or scenarios where immediate feedback is not necessary.
+* **Asynchronous (Event)**: In this mode, the invocation is asynchronous, and the function is invoked without waiting for a response. It is suitable for background processing or in scenarios where immediate feedback is not necessary.
 
 * **Dry Run**: This option allows you to simulate an invocation without actually executing the function. This is useful for testing and validating the invocation setup without affecting the actual function.
 

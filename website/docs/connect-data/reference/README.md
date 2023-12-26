@@ -104,6 +104,18 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
     </div>
 
 </div>
+<div className="containerGrid">
+    
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/aws-lambda">
+            <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
+    </div>
+
+</div>
 
 
 
