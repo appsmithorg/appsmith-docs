@@ -2,7 +2,7 @@
 
 This page provides information on using the Custom widget, which allows you to integrate React, HTML, and JavaScript components for additional functionality. 
 
-To embed web pages or applications, use the IFrame widget.
+To embed web pages or applications, use the [IFrame widget](/reference/widgets/iframe).
 
 
 ## Content properties
