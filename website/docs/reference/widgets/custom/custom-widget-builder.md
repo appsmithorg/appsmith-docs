@@ -51,8 +51,6 @@ You can preview the custom widget in the left panel, and it automatically update
 
 Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. 
 
- Use the following functions and variables in your JavaScript file:
-
 #### model
 
 
