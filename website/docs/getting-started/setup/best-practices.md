@@ -20,7 +20,7 @@ This document is intended to share the best practices to follow when running App
 - Add a monitoring integration like BetterUptime or UptimeRobot, to monitor the uptime of your production Appsmith instance.
 - Always ensure you have an NFS persistant volume of 3GB. On AWS, EFS is what we recommend.
 - If using ECS, enable CloudWatch logging, so that you can easily retrieve your Appsmith logs.
-- Enable HTTPS for your Appsmith instance and deploy it under a subdomain as appsmith.<yourdomain>.com
+- Enable HTTPS for your Appsmith instance and deploy it under a subdomain as `appsmith.<yourdomain>.com`
 - A `t3.medium`, or a server of equivalent capacity, is the minimum requirement for running Appsmith. This should scale well for hundreds of users. If you expect ~500 concurrent users, consider picking a `t3.large`, or bigger.
 - Ensure you have a healthy free disk space, at least 10-15 GB free, on your server at all times.
 - Do not run other self-hosted applications on the same server as Appsmith.
