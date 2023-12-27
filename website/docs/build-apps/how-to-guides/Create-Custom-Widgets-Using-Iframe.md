@@ -42,9 +42,7 @@ The above code captures selected row data (document URL and ID) from the Table.
 
 1. Click the **Edit Source** button to configure the code for the Custom widget.
 
-2. Add your CSS, HTML, and JS code according to your requirements.
-
-3. To access the data passed into the **Default model** property, you can use:
+2. To access the data passed into the **Default model** property, you can use:
 
 <dd>
 
@@ -52,8 +50,21 @@ The above code captures selected row data (document URL and ID) from the Table.
 // Accessing a specific property 
 {{appsmith.model.images}}
 ```
-
 </dd>
+
+3. Add your CSS, HTML, and JS code according to your requirements.
+
+<dd>
+
+*Example:*:
+
+```js
+
+```
+</dd>
+
+
+
 
 
 
@@ -89,7 +100,7 @@ You can create events by clicking on the **Add Event** button, which allows you 
 
 ```js
 const handleChangeRequest = () => {
-  const imageUrl = appsmith.model.tips[currentIndex];
+  const imageUrl = appsmith.model.images[currentIndex];
   appsmith.updateModel({ "image": imageUrl });
   appsmith.triggerEvent('onChange');
 };
