@@ -443,12 +443,7 @@ const sidebars = {
                 'reference/widgets/code-scanner',
                 'reference/widgets/container',
                 'reference/widgets/currency-input',
-                {
-                  type: 'category',
-                  label: 'Custom',
-                  link: { type: 'doc', id: 'reference/widgets/custom/custom-widget' },
-                  items: ['reference/widgets/custom/custom-widget-builder'],
-                },
+                'reference/widgets/custom',
                 'reference/widgets/datepicker',
                 'reference/widgets/divider',
                 'reference/widgets/document-viewer',
