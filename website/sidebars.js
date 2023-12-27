@@ -273,6 +273,7 @@ const sidebars = {
                 'connect-data/reference/anthropic',
                 'connect-data/reference/querying-arango-db',
                 'connect-data/reference/authenticated-api',
+                'connect-data/reference/aws-lambda',
                 'connect-data/reference/curl-import',
                 'connect-data/reference/querying-dynamodb',
                 'connect-data/reference/querying-elasticsearch',
