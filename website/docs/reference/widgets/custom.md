@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to customize the code for the custom widget. When clicked, it opens a dedicated page where you can conveniently modify and update the widget's code to suit your requirements.
 
-Learn more about [Custom Widget Builder](/reference/widgets/custom-widget-builder).
+Learn more about [Custom Widget Builder](#custom-widget-builder).
 
 </dd>
 
@@ -135,6 +135,132 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 ```js
 {{Custom1.isVisible}}
+```
+
+</dd>
+
+## Custom Widget Builder
+
+This section provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. Accessible only when **Edit Source** is clicked. 
+
+These properties are accessible within the code editor.
+
+
+#### model
+
+
+<dd>
+
+The `model` property retrieves the value passed in the **Default Model** property of the Custom widget.
+
+```js
+// Access the entire model
+appsmith.model
+
+// Access a specific property in the model
+appsmith.model.propertyname
+```
+</dd>
+
+
+#### updateModel
+
+<dd>
+
+The `updateModel` property allows you to dynamically update the model properties. This enables real-time synchronization between the Custom widget and the model.
+
+*Example*: If you want to save a signature upon button click, use the following code:
+
+```js
+document.getElementById('saveBtn').addEventListener('click', function () {
+    var dataURL = signaturePad.toDataURL();
+    // Implement logic to save the signature data (e.g., send to server)
+    appsmith.updateModel({"signatureImage": dataURL});
+});
+
+```
+</dd>
+
+
+#### triggerEvent
+
+<dd>
+
+You can execute custom events by specifying the event name and providing optional data.
+
+*Example*: 
+
+```js
+function onClick() {
+    appsmith.triggerEvent("onClick", { itemId: 1 });
+}
+```
+</dd>
+
+#### onModelChange
+
+<dd>
+
+The `onModelChange` property allows you to implement a handler function, triggering updates whenever changes occur in the platform-induced model.
+
+
+*Example*: 
+
+```js
+useEffect(() => {
+    appsmith.onModelChange((model) => {
+        setSomething(model.something);
+    });
+}, []);
+```
+</dd>
+
+
+#### ui
+
+<dd>
+
+Provides access to the UI elements of the widget, such as width and height, in pixels.
+
+
+```js
+appsmith.ui
+```
+
+</dd>
+
+
+#### onUiChange
+
+<dd>
+
+Allows a handler function to be called whenever the UI changes, providing a useful mechanism for updating components affected by UI changes from the platform.
+
+
+```js
+useEffect(() => {
+    appsmith.onUiChange((ui) => {
+        setComponentWidth(ui.width);
+    });
+}, []);
+```
+
+</dd>
+
+#### onReady
+
+<dd>
+
+Use a handler function invoked when the Custom widget is prepared for rendering. Execute the entry point of your component within this function.
+
+
+
+```js
+useEffect(() => {
+    appsmith.onReady(() => {
+        /* Trigger the entry point of your component, e.g., reactDom.render(<App />, document.getElementById("root")); */
+    });
+}, []);
 ```
 
 </dd>
