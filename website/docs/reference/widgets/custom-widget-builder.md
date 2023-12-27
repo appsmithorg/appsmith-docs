@@ -1,6 +1,6 @@
 # Custom Widget Builder
 
-This page provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. Accessible only when **Edit Source** is clicked from the [Custom widget](/reference/widgets/custom/custom-widget).
+This page provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. Accessible only when **Edit Source** is clicked from the [Custom widget](/reference/widgets/custom-widget).
 
 
 <figure>
