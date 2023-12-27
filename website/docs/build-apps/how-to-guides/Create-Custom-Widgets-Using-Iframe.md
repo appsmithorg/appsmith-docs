@@ -54,14 +54,6 @@ The above code captures selected row data (document URL and ID) from the Table.
 
 3. Add your CSS, HTML, and JS code according to your requirements.
 
-<dd>
-
-*Example:*:
-
-```js
-
-```
-</dd>
 
 
 
