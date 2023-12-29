@@ -50,4 +50,4 @@ The environment variable `APPSMITH_ADMIN_EMAILS` can be set to a comma-separated
 APPSMITH_ADMIN_EMAILS=homer@appsmith.com,marge@yahoo.com
 ```
 
-These two email addresses can sign up on the Appsmith instance irrespective of the `APPSMITH_SIGNUP_ALLOWED_DOMAINS`and`APPSMITH_SIGNUP_DISABLED configurations`
+These two email addresses can sign up on the Appsmith instance irrespective of the `APPSMITH_SIGNUP_ALLOWED_DOMAINS` and `APPSMITH_SIGNUP_DISABLED` configurations
