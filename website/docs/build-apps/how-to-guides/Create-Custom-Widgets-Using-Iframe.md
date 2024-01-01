@@ -50,9 +50,37 @@ The above code captures selected row data (document URL and ID) from the Table.
 
 *Example:* If you want to create an image slider that displays user documents from a Table widget, add:
 
-```js
+<Tabs>
+  <TabItem value="html" label="HTML" default>
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>User Documents</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="app.js"></script>
+</body>
+
+</html>
 ```
+
+  </TabItem>
+  <TabItem value="css" label="CSS">
+    
+  </TabItem>
+  <TabItem value="jss" label="JS">
+    
+  </TabItem>
+</Tabs>
+
 
 
 With this, the Custom widget is displayed on your app.
