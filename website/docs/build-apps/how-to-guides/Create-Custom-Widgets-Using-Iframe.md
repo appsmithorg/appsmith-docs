@@ -5,17 +5,11 @@ import TabItem from '@theme/TabItem';
 
 While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widgets empower you to integrate unique functionalities with your own code, whether it's a personalized calendar, accordion, or social media widget.
 
+## Configure Custom Widget
 
-## Prerequisites
+1. Drag a [Custom widget](/reference/widgets/custom).
 
-* A [Custom widget](/reference/widgets/custom).
-* Familiarity with JS, HTML, and CSS for custom code implementation.
-
-
-
-## Pass Data to Custom Widget
-
-To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+2. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -38,11 +32,7 @@ The above code captures selected row data (document URL and ID) from the Table.
 </dd>
 
 
-## Configure Custom Widget
-
-1. Click the **Edit Source** button to configure the code for the Custom widget.
-
-2. To access the data passed into the **Default model** property, you can use:
+3. To access the data passed into the **Default model** property, you can use:
 
 <dd>
 
@@ -52,17 +42,25 @@ The above code captures selected row data (document URL and ID) from the Table.
 ```
 </dd>
 
-3. Add your CSS, HTML, and JS code according to your requirements.
+4. Click the **Edit Source** button to configure your CSS, HTML, and JS code according to your requirements.
 
 
 
+<dd>
+
+*Example:* If you want to create an image slider that displays user documents from a Table widget, add:
+
+```js
+
+```
 
 
+With this, the Custom widget is displayed on your app.
 
 
-## Pass Data from Custom Widget
- 
-You can use the `updateModel` property within JavaScript code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+</dd>
+
+5. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
 
 <dd>
 
@@ -81,14 +79,27 @@ To display data in a Text widget, set its **Text** property to:
 </dd>
 
 
+
+
+
+
+
 ## Trigger events
  
 You can create events by clicking on the **Add Event** button, which allows you to trigger actions based on events inside the Custom widget.
 
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/YJzU2ki4ykUA6hDsGT6c?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. Create a function inside the custom widget widget builder using the `triggerEvent` property, which allows you to
+
 <dd>
 
-*Example:* In the context of the same image slider,  if you want to execute an email query, when a button is clicked. 
+*Image slider Example:* 
+
 
 ```js
 const handleChangeRequest = () => {
@@ -99,10 +110,10 @@ const handleChangeRequest = () => {
 ```
  The above function updates the Appsmith model with the current image URL and triggers the **onChange** event.
 
- Now, create an event called **onChange** and configure it to execute the query. Use `{{Custom1.model.images}}` to inform the user that this image requires an update.
-
-
 </dd>
+
+2. In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action. 
+
 
 
 ## Sample apps
