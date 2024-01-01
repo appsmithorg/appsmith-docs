@@ -403,9 +403,9 @@ const sidebars = {
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
+            `build-apps/how-to-guides/set-up-websockets`,
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
-
           ]
         },
         {
