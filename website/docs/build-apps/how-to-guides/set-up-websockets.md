@@ -6,7 +6,7 @@ This page shows you how to set up Websockets in Appsmith, enabling you to levera
 
   <figure>
   <img src="/img/order-track.gif" style= {{width:"750px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i>Display live location on Map widget</i></figcaption>
+  <figcaption align = "center"><i>Display live location on the Map widget</i></figcaption>
   </figure>  
 
 ## Prerequisites
