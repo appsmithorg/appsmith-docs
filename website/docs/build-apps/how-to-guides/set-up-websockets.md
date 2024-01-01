@@ -1,4 +1,4 @@
-# Set Up Websockets
+# Fetch Real-Time Data with Websockets
 
 WebSocket is a communication protocol that provides full-duplex communication channels over a single, long-lived connection. 
 
