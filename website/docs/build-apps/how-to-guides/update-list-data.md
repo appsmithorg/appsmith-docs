@@ -53,34 +53,9 @@ To delete a list item using an icon, follow these steps:
    Example:
    ```sql
    DELETE FROM product 
-   WHERE id = {{lst_products.triggeredItem && lst_products.triggeredItem.id}}; 
+   WHERE id = {{lst_products.triggeredItem.id}}; 
    ```
 5. Add **Execute query** action to the **onClick** event of the `Delete` button to run delete query.
-
-## Duplicate list item
-To duplicate a list item using an icon, follow these steps:
-1. Drop an Icon button to the List widget and select **duplicate** in **Icon** from the property pane.
-2. Configure the Icon's **onClick** event to run a query to duplicate the data corresponding to the triggered item in the datasource except the Id.
-   
-   Example:
-   ```sql
-   INSERT INTO product
-  (name, description, type, image, updated)
-    VALUES
-    (
-        {{lst_products.triggeredItem.name}},
-        {{lst_products.triggeredItem.description}},
-        'OTHER',
-        {{lst_products.triggeredItem.image}},
-        {{new Date().toISOString()}}
-    )
-	RETURNING*;
-   ```
-3. Execute the fetch query for the List widget to reflect the changes.
-
-:::info
-To insert the ID value, choose a UUID generator or let your data source auto-generate the ID.
-:::
 
 ## Edit list item inline
 To implement inline editing of list items using a Select widget, follow these steps:

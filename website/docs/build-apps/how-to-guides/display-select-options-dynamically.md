@@ -2,7 +2,7 @@
 description: This page shows you how to display select options dynamically.
 ---
 
-# Display and Filter Dropdown Options
+# Display and Filter Select Options
 This page shows you how to display and filter dropdown options dynamically in the Select widget.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
