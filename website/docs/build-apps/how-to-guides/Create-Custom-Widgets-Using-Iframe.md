@@ -7,38 +7,48 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 ## Configure Custom Widget
 
-1. Drag a [Custom widget](/reference/widgets/custom).
+1. Drop a [Custom widget](/reference/widgets/custom).
 
-2. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+2. Click the **Edit Source** button to configure the code according to your requirements.
 
 <dd>
 
-*Example:* If you want to create an image slider that displays user documents from a Table widget, add:
+Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
+
+</dd>
+
+3. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+
+<dd>
+
+*Example:* To create an image slider that displays user documents from a Table widget, add code that captures selected row data, including document URL and ID, like:
+
 
 ```js
 {
   "images": [
-    "{{Docs_Table.selectedRow.doc_type_passport}}",
-    "{{Docs_Table.selectedRow.doc_type_dl}}",
-    "{{Docs_Table.selectedRow.doc_type_bank}}"
+    "{{tbl_docs.selectedRow.doc_type_passport}}",
+    "{{tbl_docs.selectedRow.doc_type_dl}}",
+    "{{tbl_docs.selectedRow.doc_type_bank}}"
   ],
   "id": [
-    "{{Docs_Table.selectedRow.id}}"
+    "{{tbl_docs.selectedRow.id}}"
 ]}
 ```
 
-The above code captures selected row data (document URL and ID) from the Table.
 
 </dd>
 
+4. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
 
-3. To access the data passed into the **Default model** property, you can use:
-
+ 
 <dd>
 
 ```js
 // Accessing a specific property 
-{{appsmith.model.images}}
+{{appsmith.model.data}}
+
+//To access data in CSS use var(--appsmith-model-{property-name}
 ```
 </dd>
 
@@ -54,30 +64,102 @@ The above code captures selected row data (document URL and ID) from the Table.
   <TabItem value="html" label="HTML" default>
 
 ```html
-<!DOCTYPE html>
-<html lang="en">
+<!-- no need to write html, head, body tags, it is handled by the widget -->
+<link href="
+https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/lib/styles/carousel.min.css
+" rel="stylesheet">
+<div id="root"></div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>User Documents</title>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="app.js"></script>
-</body>
-
-</html>
+<!-- Button element -->
+<button id="requestChangeButton">Request Change</button>
 ```
 
   </TabItem>
   <TabItem value="css" label="CSS">
-    
+
+    hft
+
+```css
+#container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100vw !important;
+  height: 150vh;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Style for the button */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+```
   </TabItem>
   <TabItem value="jss" label="JS">
-    
+
+thht
+
+```js
+import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';
+import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';
+import { Carousel } from 'https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/+esm'
+
+
+const contentStyle = {
+	margin: 0, 
+	maxHeight: 'calc(var(--appsmith-ui-height) * 1px)',
+	maxWidth: "calc(var(--appsmith-ui-width) * 1px)",
+	display: "block",
+	width: "100vw",
+	height: "100vh",
+	color: '#fff',
+	lineHeight: '160px',
+	textAlign: 'center',
+	background: '#364d79',
+};
+
+function App() {
+	const onChange = (currentSlide) => {
+		appsmith.triggerEvent("onSliderChange");
+		appsmith.updateModel({
+			"updated from widget builder": Math.random()
+		})
+	};
+	
+	return (
+		<Carousel showThumbs={false} showStatus={false} onChange={(d) => {
+		appsmith.updateModel({selectedIndex:d });
+		appsmith.triggerEvent("onItemChange");
+	}}>
+		{appsmith.model.data.map((d) => {
+					return (
+<img src={d} style={contentStyle} />
+						)
+		})}
+    </Carousel>
+	);
+}
+
+appsmith.onReady(() => {
+  reactDom.render(<App />, document.getElementById("root"));
+  
+  // Example: Handle button click event
+  const buttonElement = document.getElementById("requestChangeButton");
+  buttonElement.addEventListener("click", () => {
+    appsmith.triggerEvent("onRequestChange");
+  });
+});
+```
   </TabItem>
 </Tabs>
 
@@ -95,6 +177,7 @@ With this, the Custom widget is displayed on your app.
 *Example:*
 
 ```js
+// Inside the Custom Widget Builder
 appsmith.updateModel({ "image": imageUrl });
 ```
 
@@ -107,15 +190,10 @@ To display data in a Text widget, set its **Text** property to:
 </dd>
 
 
+6. To Trigger events ou can create events by clicking on the **Add Event** button, which allows you to trigger actions based on events inside the Custom widget.
 
 
-
-
-
-## Trigger events
- 
-You can create events by clicking on the **Add Event** button, which allows you to trigger actions based on events inside the Custom widget.
-
+<dd>
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/YJzU2ki4ykUA6hDsGT6c?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -124,7 +202,6 @@ You can create events by clicking on the **Add Event** button, which allows you 
 
 1. Create a function inside the custom widget widget builder using the `triggerEvent` property, which allows you to
 
-<dd>
 
 *Image slider Example:* 
 
