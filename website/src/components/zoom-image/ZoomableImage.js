@@ -1,5 +1,3 @@
-// ZoomableImage.js
-
 import React, { useState, useRef } from 'react';
 import './ZoomableImage.css';
 
@@ -45,9 +43,6 @@ const ZoomableImage = ({ src, alt, caption }) => {
                 <div className="zoomable-modal-overlay" onClick={closeModal}>
                     <div className="zoomable-modal-content">
                         <img src={src} alt={alt} />
-                        <figcaption align="center">
-                            <i>{caption}</i>
-                        </figcaption>
                     </div>
                 </div>
             )}
