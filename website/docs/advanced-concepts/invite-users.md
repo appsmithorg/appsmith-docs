@@ -6,7 +6,7 @@ description: >-
 
 # Invite Users
 
-Appsmith allows you to share your application with the end user or with a team member for collaboration. There are multiple ways to share your application in Appsmith. You can either share your workspace or share a specific application.
+Appsmith allows you to share your application with the end user or with a team member for collaboration. There are multiple ways to share your application in Appsmith. You can either share your workspace or share a specific application. You can create your own Appsmith account when invited to an app. The admin does not have to create login credentials.
 
 ## Default roles
 
