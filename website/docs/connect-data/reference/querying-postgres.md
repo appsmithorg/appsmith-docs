@@ -25,7 +25,8 @@ The following section is a reference guide that provides a complete description 
 #### Connection Mode
 
 <dd> Specifies the mode in which the Appsmith application can interact with the database. </dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> This mode permits read-only transactions by default.</li>
     <li><b>Read/Write:</b> This mode permits both read-write transactions by default.</li>
@@ -55,7 +56,8 @@ The following section is a reference guide that provides a complete description 
 #### SSL Mode
 
 <dd>Determines with what priority a secure SSL TCP/IP connection is negotiated with the server.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Default:</b> The default SSL Mode is <b>Prefer</b>.</li>
     <li><b>Allow:</b> First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.</li>

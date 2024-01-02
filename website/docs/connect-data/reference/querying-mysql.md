@@ -27,7 +27,8 @@ The following section is a reference guide that provides a complete description 
 #### Connection method
 
 <dd>Sets the method used to connect to the database.</dd>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Standard:</b> Connect to the database using host address, username and 
 password. Use this method if the MySQL database is directly accessible at an IP address or if you are unsure of which method to use.</li>
@@ -39,7 +40,8 @@ hidden or secured behind an SSH server.</li>
 #### Connection mode
 
 <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
     <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
@@ -60,13 +62,11 @@ hidden or secured behind an SSH server.</li>
 
 #### MySQL username
 
-<dd>The username for your MySQL user.
-</dd>
+<dd>The username for your MySQL user.</dd>
 
 #### MySQL password
 
-<dd>The password for your MySQL user.
-</dd>
+<dd>The password for your MySQL user.</dd>
 
 #### SSH host address
 
@@ -87,7 +87,8 @@ hidden or secured behind an SSH server.</li>
 #### SSL mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Default:</b> SSL is used if the server supports it.</li>
     <li><b>Required:</b> The connection is rejected if SSL isn't available.</li>
@@ -97,8 +98,7 @@ hidden or secured behind an SSH server.</li>
 
 #### Server Timezone Override
 
-<dd>Sets a custom timezone, which is useful if Appsmith doesn't automatically recognize the MySQL server's timezone. Expects a valid timezone string (For example: <code>UTC</code>) to use for your queries.
-</dd>
+<dd>Sets a custom timezone, which is useful if Appsmith doesn't automatically recognize the MySQL server's timezone. Expects a valid timezone string (For example: <code>UTC</code>) to use for your queries.</dd>
 
 ## Create queries
 

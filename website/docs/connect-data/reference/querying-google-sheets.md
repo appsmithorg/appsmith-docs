@@ -17,7 +17,8 @@ This page provides information for connecting Appsmith to Google Sheets and for 
 #### Permissions | Scope:
 
 <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
     <li><b>Read / Write / Delete | All Google Sheets:</b> Your app has read, write, and delete access for all sheets on your Google account.</li>
@@ -45,7 +46,8 @@ This command fetches metadata for a given **Spreadsheet** entity. The following 
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Spreadsheet:</b> Returns metadata for a spreadsheet document.</li>
   </ul>
@@ -64,7 +66,8 @@ This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
     <li><b>Spreadsheet:</b> Creates a new spreadsheet document. Optionally, you can use the <b>Row Objects</b> field to provide rows that should be created along with the document.</li>
@@ -122,7 +125,8 @@ This command updates a **Sheet Row(s)** entity. The following section lists all 
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Updates a single existing row in the spreadsheet.</li>
   </ul>
@@ -180,7 +184,8 @@ This command deletes a given entity: **Sheet Row(s)**, **Spreadsheet**, or **She
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Deletes a single row of a spreadsheet.</li>
     <li><b>Spreadsheet:</b> Deletes a new spreadsheet document.</li>
@@ -211,7 +216,8 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
     <li><b>Spreadsheet:</b> Fetches a list of existing spreadsheet documents.</li>
@@ -237,7 +243,8 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 <dd>Sets the method of selecting records from your spreadsheet.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Where Clause:</b> Fetches records based on logic and conditions. This also allows you to sort and paginate your results.</li>
     <li><b>Cell Range:</b> Fetches a block of spreadsheet cells defined by spreadsheet-style notation, such as `A2:B7`.</li>
@@ -287,7 +294,8 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
 
 <dd>Sets which entity type to query.
 </dd><br/>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Inserts several records as a rows in the spreadsheet.</li>
   </ul>
@@ -295,18 +303,15 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
 
 #### Spreadsheet
 
-<dd> The name of the spreadsheet document you'd like to query.
-</dd>
+<dd> The name of the spreadsheet document you'd like to query.</dd>
 
 #### Sheet Name
 
-<dd> The name of the page you'd like to query from your spreadsheet.
-</dd>
+<dd> The name of the page you'd like to query from your spreadsheet.</dd>
 
 #### Table Heading Row Index
 
-<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-</dd>
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.</dd>
 
 #### Row Objects
 
@@ -330,9 +335,9 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 
 #### Entity
 
-<dd>Sets which entity type to query.
-</dd><br/>
-<dd><i>Options:</i>
+<dd>Sets which entity type to query.</dd><br/>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Sheet Row(s):</b> Updates multiple existing rows in the spreadsheet.</li>
   </ul>
@@ -340,18 +345,15 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 
 #### Spreadsheet
 
-<dd> The name of the spreadsheet document you'd like to query.
-</dd>
+<dd> The name of the spreadsheet document you'd like to query.</dd>
 
 #### Sheet Name
 
-<dd> The name of the page you'd like to query from your spreadsheet.
-</dd>
+<dd> The name of the page you'd like to query from your spreadsheet.</dd>
 
 #### Table Heading Row Index
 
-<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.
-</dd>
+<dd>The index of the row in your spreadsheet that contains the headings or labels for your table columns. The first row of the spreadsheet is index 1.</dd>
 
 #### Update Row Object(s)
 

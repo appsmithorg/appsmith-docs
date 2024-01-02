@@ -15,7 +15,8 @@ These properties are customizable options present in the property pane of the wi
 
 #### Text `String`
 
- <dd>Sets the label of the Checkbox. 
+ <dd>
+ Sets the label of the Checkbox. 
  
  </dd>
 

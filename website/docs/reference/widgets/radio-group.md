@@ -316,7 +316,7 @@ RadioGroup1.setDisabled(false)
 
 </dd>
 
-#### setData (param: array<object\>): Promise
+#### setData (param: array< object >): Promise
 
 <dd>
 

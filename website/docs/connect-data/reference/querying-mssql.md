@@ -27,7 +27,8 @@ The following section is a reference guide that provides a complete description 
 #### Connection mode
 
 <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
     <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
@@ -57,7 +58,8 @@ The following section is a reference guide that provides a complete description 
 #### SSL mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
     <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>

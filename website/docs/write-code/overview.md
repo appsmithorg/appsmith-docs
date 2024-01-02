@@ -97,8 +97,11 @@ Remember that while Appsmith provides significant power and flexibility for writ
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div>
-      <b><a href="/write-code/reference"> Reference</a></b>
-      <div className="containerDescription"> Technical descriptions and information about framework and libraries.
+      <b>
+        <a href="/write-code/reference"> Reference</a>
+      </b>
+      <div className="containerDescription"> 
+        Technical descriptions and information about framework and libraries.
       </div>
    </div>
    
@@ -107,7 +110,9 @@ Remember that while Appsmith provides significant power and flexibility for writ
    <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
       </div> 
-      <b><a href="/write-code/concepts/overview">Concepts</a></b>
+      <b>
+        <a href="/write-code/concepts/overview">Concepts</a>
+      </b>
       <div className="containerDescription">
          Explanation of the Appsmith framework
       </div>

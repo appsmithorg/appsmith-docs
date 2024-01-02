@@ -44,7 +44,8 @@ The following section is a reference guide that provides a complete description 
 #### SSL Mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>TLS:</b> Connection is encrypted but no client verification is done.</li>
     <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
