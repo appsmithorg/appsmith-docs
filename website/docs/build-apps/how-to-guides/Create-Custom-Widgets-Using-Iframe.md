@@ -3,11 +3,11 @@ import TabItem from '@theme/TabItem';
 
 # Create Custom Widgets 
 
-While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widgets empower you to integrate unique functionalities with your own code, whether it's a personalized calendar, accordion, or social media widget.
+While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
 ## Configure Custom Widget
 
-1. Drop a [Custom widget](/reference/widgets/custom) and configure its properties according to your specific needs.
+1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
 2. Click the **Edit Source** button to configure the code for the Custom widget.
 
@@ -71,6 +71,10 @@ const contentStyle = {
   background: '#364d79',
 };
 
+function App() {
+  // Function to be expanded with widget components in subsequent steps
+}
+
 // Rendering the App component on Appsmith's root element
 appsmith.onReady(() => {
   reactDom.render(<App />, document.getElementById("root"));
@@ -92,7 +96,7 @@ appsmith.onReady(() => {
 
 ```js
 {
-  "images": [
+  "data": [
     "{{tbl_docs.selectedRow.doc_type_passport}}",
     "{{tbl_docs.selectedRow.doc_type_dl}}",
     "{{tbl_docs.selectedRow.doc_type_bank}}"
@@ -112,10 +116,6 @@ appsmith.onReady(() => {
 *Example:* For the image slider, create function that uses the React Carousel component to render images dynamically from Appsmith's data model, with specific styling. 
 
 ```js
-...
-  background: '#364d79',
-};
-
 function App() {
   return (
     <Carousel showThumbs={false} showStatus={false} onChange={(d) => {}}>
@@ -130,10 +130,7 @@ function App() {
   );
 }
 
-appsmith.onReady(() => {
-...
-
-// To access the data in the javascript editor use appsmith.model.property-name.
+// To access the data in the javascript editor use appsmith.model.property-name..
 //To access data in CSS use var(--appsmith-model-{property-name}
 ```
 
@@ -149,17 +146,13 @@ appsmith.onReady(() => {
 
 ```js
 //JS
-...
 Function App() {
 	return (
 		<Carousel showThumbs={false} showStatus={false} onChange={(d) => {
     // highlight-next-line
 		appsmith.updateModel({selectedIndex: d });
 	}}>
-		{appsmith.model.data.map((d) => {
-...
-// Inside the Custom Widget Builder
-appsmith.updateModel({ "image": imageUrl });
+		{appsmith.model.data.map((d) => {...
 ```
 
 To display data in a Text widget, set its **Text** property to:
@@ -184,6 +177,7 @@ To display data in a Text widget, set its **Text** property to:
 // Example: Handle button click event
 const buttonElement = document.getElementById("requestChangeButton");
 buttonElement.addEventListener("click", () => {
+      // highlight-next-line
    appsmith.triggerEvent("onRequestchange");
 });
 ```
@@ -218,7 +212,7 @@ button {
 In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action. 
 
 
-<div style={{ position: "relative", paddingBottom: "40.52%", height: "0", width: "82%" }}>
+<div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
   <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
 </div>
 
