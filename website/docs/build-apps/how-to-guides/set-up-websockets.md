@@ -4,10 +4,11 @@ WebSocket is a communication protocol that provides full-duplex communication ch
 
 This page shows you how to set up Websockets in Appsmith, enabling you to leverage real-time communication capabilities. Additionally, an example to display live locations on a Map widget through WebSocket communication.
 
-  <figure>
-  <img src="/img/order-track.gif" style= {{width:"750px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i>Display live location on the Map widget</i></figcaption>
-  </figure>  
+ <ZoomImage
+    src="/img/order-track.gif" 
+    alt="Display live location on the Map widget"
+    caption="Display live location on the Map widget"
+  /> 
 
 ## Prerequisites
 

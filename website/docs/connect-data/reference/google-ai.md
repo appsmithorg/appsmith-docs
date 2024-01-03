@@ -5,10 +5,11 @@ This page provides information for connecting Appsmith to Google AI, which allow
 
 ## Connect Google AI
 
- <figure>
-  <img src="/img/google-ai-landingpage.png" style= {{width:"810px", height:"auto"}} alt="Anthropic"/>
-  <figcaption align = "center"><i>Google AI datasource.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/google-ai-landingpage.png" 
+  alt="Google AI datasource"
+  caption="Google AI datasource"
+/>
 
 ### Connection parameters
 
@@ -48,10 +49,11 @@ The following section is a reference guide that provides a description of the av
 
 The Generate Content command generates human-like text based on input prompts. The following section lists all the available parameters:
 
-  <figure>
-  <img src="/img/google-ai-chat.png" style= {{width:"720px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>Google AI | Generate Content command</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/google-ai-chat.png" 
+  alt="Google AI - Generate Content Command"
+  caption="Google AI - Generate Content Command"
+/>
 
 #### Models
 

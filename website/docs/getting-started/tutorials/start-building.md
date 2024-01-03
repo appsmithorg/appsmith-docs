@@ -4,10 +4,7 @@ This tutorial covers the basic concepts of Appsmith and takes you through a seri
 
 Here's a screenshot of the final result:
 
-<figure>
-  <img src="/img/beginner-tutorial-output.png" style= {{width:"100%", height:"auto"}} alt="Simple Database GUI"/>
-  <figcaption align = "center"><i>Simple Database GUI</i></figcaption>
-</figure>
+<ZoomImage src="/img/beginner-tutorial-output.png" alt="Simple Database GUI" caption="Simple Database GUI" />
 
 Let's get started!
 
@@ -21,10 +18,7 @@ Let's get started!
 
 2. On the homepage, click the **+ New** button to the right of the screen under the default workspace. You'll land on a new application in the _Edit_ mode.
 
-<figure>
-  <img src="/img/create-new-app.png" style= {{width:"100%", height:"auto"}} alt="Create new application"/>
-  <figcaption align = "center"><i>Create new application</i></figcaption>
-</figure>
+<ZoomImage src="/img/create-new-app.png" alt="Create new application" caption="Create new application" />
 
 3. Click the **⌵** icon on the top left next to the default application name. Select the **Edit Name** option. Rename the app to `User Management`.
 
@@ -32,10 +26,7 @@ Let's get started!
 
 5. Select the **Edit Name** option. Rename the page to `User Information`.
 
-<figure>
-  <img src="/img/edit-page-name.png" style= {{width:"100%", height:"auto"}} alt="Edit page name"/>
-  <figcaption align = "center"><i>Edit page name</i></figcaption>
-</figure>
+<ZoomImage src="/img/edit-page-name.png" alt="Edit page name" caption="Edit page name" />
 
 ## Next steps
 

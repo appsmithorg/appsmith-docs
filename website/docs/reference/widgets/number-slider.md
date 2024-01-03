@@ -8,10 +8,7 @@ description: >-
 
 This page describes the properties of the Number Slider, which allows the user to select a numerical value from a set range of data. 
 
-<figure>
-  <img src="/img/num-slider-img.png" style= {{width:"700px", height:"auto"}} alt="Number Slider"/>
-  <figcaption align = "center"><i>Number Slider</i></figcaption>
-</figure>
+<ZoomImage src="/img/num-slider-img.png" alt="Number Slider" caption="Number Slider" />
 
 ## Content properties
 

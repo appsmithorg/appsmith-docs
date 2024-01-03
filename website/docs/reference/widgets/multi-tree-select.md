@@ -89,10 +89,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 }, []) }}
 ```
 
-<figure>
-  <img src="/img/multi-tree.png" style= {{width:"700px", height:"auto"}} alt="Transform data"/>
-  <figcaption align = "center"><i>Transform data</i></figcaption>
-</figure>
+<ZoomImage src="/img/multi-tree.png" alt="Transform data" caption="Transform data" />
 
 </dd>
 

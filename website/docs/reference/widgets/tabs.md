@@ -5,10 +5,7 @@ description: This page explains how the Tabs widget can be used to group related
 
 This page provides information on using the Tabs widget to organize related content and allow users to switch between different sets of information within a single container.
 
-<figure>
-  <img src="/img/tabs-img.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
-  <figcaption align = "center"><i>Display Tabs</i></figcaption>
-</figure>
+<ZoomImage src="/img/tabs-img.png" alt="Camera widget" caption="Display Tabs" />
 
 
 ## Content properties

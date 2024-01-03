@@ -3,10 +3,7 @@
 This page provides information on using the Icon button widget, which is useful when you need a compact button.
 
 
-<figure>
-  <img src="/img/iconimg.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display Icon Button</i></figcaption>
-</figure>
+<ZoomImage src="/img/iconimg.png" alt="Display images on table row selection" caption="Display Icon Button" />
 
 
 ## Content properties

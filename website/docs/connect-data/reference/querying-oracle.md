@@ -16,10 +16,7 @@ If you are a self-hosted user, you must whitelist the IP addresses 18.223.74.85 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Oracle database.
 
-<figure>
-  <img src="/img/oracle-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Oracle datasource." />
-  <figcaption align="center"><i>Configuring an Oracle datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/oracle-datasource-config.png" alt="Configuring an Oracle datasource." caption="Configuring an Oracle datasource." />
 
 #### Host Address
 

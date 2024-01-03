@@ -22,10 +22,7 @@ If you are a self-hosted user, you must whitelist the IP address of the Appsmith
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a MongoDB database.
 
-<figure>
-   <img src="/img/configure-mongodb-using-connection-string-uri.png" style= {{width:"100%", height:"auto"}} alt="Configure MongoDB using Connection String URI"/>
-   <figcaption align = "center"><i>Connect MongoDB using Connection String URI</i></figcaption>
-</figure>
+<ZoomImage src="/img/configure-mongodb-using-connection-string-uri.png" alt="Configure MongoDB using Connection String URI" caption="Connect MongoDB using Connection String URI" />
 
 #### Use Mongo Connection String URI
 
@@ -52,10 +49,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section lists the parameters to connect MongoDB by configuring multiple parameter fields instead of the _Connection String URI_ format.
 
-<figure>
-  <img src="/img/configure-mongodb-using-connection-mode.png" style= {{width:"100%", height:"auto"}} alt="Connect MongoDB using multiple parameter fields"/>
-  <figcaption align = "center"><i>Connect MongoDB using multiple parameter fields</i></figcaption>
- </figure>
+<ZoomImage src="/img/configure-mongodb-using-connection-mode.png" alt="Connect MongoDB using multiple parameter fields" caption="Connect MongoDB using multiple parameter fields" />
 
 #### Connection Mode
 
@@ -139,10 +133,7 @@ You cannot specify MONGODB-CR as the authentication mechanism when connecting to
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create MongoDB queries.
 
-<figure>
-  <img src="/img/query-mongo-ss.png" style= {{width:"100%", height:"auto"}} alt="Create MongoDB queries"/>
-  <figcaption align = "center"><i>Create MongoDB queries</i></figcaption>
-</figure>
+<ZoomImage src="/img/query-mongo-ss.png" alt="Create MongoDB queries" caption="Create MongoDB queries" />
 
 :::info
 See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.

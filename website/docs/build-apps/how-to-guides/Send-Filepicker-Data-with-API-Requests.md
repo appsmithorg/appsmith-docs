@@ -32,11 +32,11 @@ You can select any of the following methods:
 
    JSON is typically used when uploading files along with structured data, such as metadata or parameters. It is suitable for both single and multiple file uploads.
 
-
-<figure>
-  <img src="/img/filepicker-json.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/filepicker-json.png" 
+  alt="Filepicker Json"
+  caption=""
+/>
 
 <dd>
 
@@ -49,8 +49,6 @@ You can select any of the following methods:
 }
 // [0] represents index of the file.
 ```
-
-
 
 In this example:
 
@@ -73,11 +71,11 @@ In this example:
 
 <dd>
 
-   
-  <figure>
-  <img src="/img/filepicker-2-2.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+  <ZoomImage
+    src="/img/filepicker-2-2.png" 
+    alt="Filepicker Json"
+    caption=""
+  />
 
 *Example*: 
 
@@ -108,12 +106,11 @@ In this example:
 
 Multi-part form data is a flexible format for API requests. It is used when you need to upload multiple files or a combination of files and other form data.  
 
-
-<figure>
-  <img src="/img/filepicker-m-2.png" style= {{width:"570px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
-
+  <ZoomImage
+    src="/img/filepicker-m-2.png" 
+    alt="Filepicker Json"
+    caption=""
+  />
 
 <dd>
 

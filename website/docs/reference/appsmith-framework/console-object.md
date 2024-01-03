@@ -7,10 +7,7 @@ description: The console object provides a way to log messages to the logs tab.
 
 The `console` object provides a way to output messages for code debugging. This page gives information about the `console` object and its methods.
 
-<figure>
-  <img src="/img/global-objects-console-logs-tab.png" style= {{width:"700px", height:"auto"}} alt="The Logs tab"/>
-  <figcaption align = "center"><i>Logged messages</i></figcaption>
-</figure>
+<ZoomImage src="/img/global-objects-console-logs-tab.png" alt="The Logs tab" caption="Logged messages" />
 
 ## Methods
 The methods log the messages in the **Logs** tab of the JavaScript, API, and query editors. The messages are not saved and are only available for the current session. The console methods do not support string substitutions.

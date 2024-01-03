@@ -28,10 +28,7 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as an OIDC provider, fo
 3. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on  **OIDC**.
 4. Copy the **Redirect URL** from the **OIDC** configuration page to add it when creating the application in Auth0. 
 
-<figure>
-  <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="OIDC configurations"/>
-  <figcaption align = "center"><i>OIDC configurations in Appsmith</i></figcaption>
-</figure>
+<ZoomImage src="/img/oidc-configurations-in-appsmith.png" alt="OIDC configurations" caption="OIDC configurations in Appsmith" />
 
 ## Create application in Auth0
 
@@ -83,7 +80,4 @@ Once you have added the details, click the **SAVE & RESTART** button to save the
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH OIDC SSO** button.
 
-<figure>
-  <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="OIDC-login"/>
-  <figcaption align = "center"><i>Login with OIDC SSO </i></figcaption>
-</figure>
+<ZoomImage src="/img/Appsmith-Login-Screen-Shows-OIDC.png" alt="OIDC-login" caption="Login with OIDC SSO " />

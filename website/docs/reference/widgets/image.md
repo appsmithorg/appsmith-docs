@@ -29,10 +29,7 @@ You can also display images that dynamically change based on user input or other
 
 *Example:* Suppose you have a Table widget displaying a list of users with their respective image URLs stored in a column. To bind the images, use `{{Table1.selectedRow.image}}` in the Image property, where "Table1" is the name of your table widget, and "image" is the column name containing the image URL.
 
-<figure>
-  <img src="/img/imagetable.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display images on table row selection</i></figcaption>
-</figure>
+<ZoomImage src="/img/imagetable.gif" alt="Display images on table row selection" caption="Display images on table row selection" />
 
 If you are fetching an image from the [Amazon S3](/connect-data/reference/querying-amazon-s3) bucket, add the following code in the **Image** property to display the image on the widget:
 

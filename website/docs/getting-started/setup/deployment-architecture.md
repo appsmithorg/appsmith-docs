@@ -13,10 +13,7 @@ This page provides information about the self-hosted deployment architecture of 
 
 Appsmith is deployed as a single Docker container with a single volume for storing persistent data. The diagram below illustrates the different components and how these services communicate with each other.
 
-<figure>
-  <img src="/img/Appsmith_Deployment_Architecture.png" style= {{width:"700px", height:"auto"}} alt="Appsmith Deployment Architecture"/>
-  <figcaption align = "center"><i>Appsmith Deployment Architecture</i></figcaption>
-</figure>
+<ZoomImage src="/img/Appsmith_Deployment_Architecture.png" alt="Appsmith Deployment Architecture" caption="Appsmith Deployment Architecture" />
 
 A single Docker container runs the following processes to deploy and get started with Appsmith:
 

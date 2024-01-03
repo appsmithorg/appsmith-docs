@@ -11,10 +11,7 @@ This page provides information for connecting your application to your Firestore
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Firestore database.
 
-<figure>
-  <img src="/img/firestore-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore datasource." />
-  <figcaption align="center"><i>Configuring a Firestore datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/firestore-datasource-config.png" alt="Configuring a Firestore datasource." caption="Configuring a Firestore datasource." />
 
 #### Database URL
 
@@ -44,10 +41,7 @@ A string of credentials generated on Firebase that is used to authenticate your 
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Firestore queries.
 
-<figure>
-  <img src="/img/firestore-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore query." />
-  <figcaption align="center"><i>Configuring a Firestore query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/firestore-query-config.png" alt="Configuring a Firestore query." caption="Configuring a Firestore query." />
 
 ### List Documents
 
@@ -75,10 +69,7 @@ Defines conditions that documents' column values must meet to appear in your res
   </ul>
 </dd>
 <dd>
-  <figure>
-    <img src="/img/firestore-where-conditions.png" style={{width: "100%", height: "auto"}} alt="Use Where conditions to create multiple levels of filtering." />
-    <figcaption align="center"><i>Use Where conditions to create multiple levels of filtering.</i></figcaption>
-  </figure>
+  <ZoomImage src="/img/firestore-where-conditions.png" alt="Use Where conditions to create multiple levels of filtering." caption="Use Where conditions to create multiple levels of filtering." />
 </dd>
 
 #### Order by

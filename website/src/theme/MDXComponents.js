@@ -6,6 +6,7 @@ import Message from '@site/src/components/Message';
 import Highlighter from '@site/src/components/Highlighter';
 import HideElements from '@site/src/components/HideElements';
 import Tags from '@site/src/components/Tags';
+import ZoomImage from '@site/src/components/zoom-image/ZoomableImage';
 
 export default {
   // Re-use the default mapping
@@ -15,4 +16,5 @@ export default {
   Highlighter,
   HideElements,
   Tags,
+  ZoomImage,
 };

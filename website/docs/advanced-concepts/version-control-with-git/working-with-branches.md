@@ -64,11 +64,11 @@ The default branch is the base branch of the app. Users launching the app from t
 
 If you are an enterprise user and using Git across multiple instances, you have the option to select a different default branch for each instance, offering configuration based on specific project requirements or preferences.
 
- <figure>
-  <img src="/img/git111.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
-  <figcaption align = "center"><i>Default branch</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/git-default-branch.png" 
+  alt="Default branch"
+  caption="Default branch"
+/>
 
 <!-- vale off -->
 
@@ -92,11 +92,11 @@ Changes to the app are not allowed in protected branches, the user needs to crea
 
 If you are an enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch. You have the option to exclude the default branch from branch protection if needed, from the Git settings located in the left corner.
 
-
- <figure>
-  <img src="/img/git112.png" style= {{width:"700px", height:"auto"}} alt="Default branch"/>
-  <figcaption align = "center"><i>Branch protection</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/git-branch-protection.png" 
+  alt="Branch Protection"
+  caption="Branch Protection"
+/>
 
 Learn how to [create and maintain multiple versions](/advanced-concepts/version-control-with-git/environments-with-git) of your applications and make changes to them in isolation using Git. 
 

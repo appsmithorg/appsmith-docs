@@ -17,10 +17,11 @@ In addition to the [default](/advanced-concepts/invite-users#built-in-roles) rol
 
 With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button.
 
-<figure>
-  <img src="/img/add_custom_role.png" style= {{width:"700px", height:"auto"}} alt="Add a new Role"/>
-  <figcaption align = "center"><i>Add a custom role</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/add_custom_role.png" 
+  alt="Add a new Role"
+  caption="Add a custom role"
+/>
 
 The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily:
 
