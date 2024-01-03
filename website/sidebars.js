@@ -562,8 +562,7 @@ const sidebars = {
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
-            'write-code/reference/Fetch-API',
-
+            'write-code/reference/Fetch-API'
           ],
         }, //Reference End
         {
@@ -578,7 +577,8 @@ const sidebars = {
             'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/concepts/execute-onpageload',
           ],
-        }
+        },
+          `write-code/best-practices`,
       ]
     }, //CODE end
 
