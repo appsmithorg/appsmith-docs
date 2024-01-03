@@ -108,7 +108,6 @@ Reference properties are properties that are not available in the property pane 
 
 <dd>
 
-
 The `model` property retrieves the value from the Custom widget and **Default Model** property. 
 
 *Example*:
@@ -138,12 +137,19 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 ## Custom Widget Builder
 
-This section provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. Accessible only when **Edit Source** is clicked. 
+This section provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. These properties are accessible within the code editor.
 
-These properties are accessible within the code editor.
+:::info
+- When creating your custom component, skip `<html>` and `<body>` tags. Instead, directly write the tags essential for your app.
+- When importing libraries, opt for ESM (ECMAScript Module) or UMD (Universal Module Definition) method. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
+:::
+
+### Javascript API
+
+These properties are accessible within the JavaScript editor, providing specific functionalities and customization options.
 
 
-#### model
+#### model `object`
 
 
 <dd>
@@ -159,6 +165,94 @@ appsmith.model.propertyname
 ```
 </dd>
 
+#### mode `string`
+
+
+<dd>
+
+The `mode` property represents the current render context of the Custom widget. 
+
+```js
+appsmith.mode
+
+// Value: EDITOR | BUILDER | DEPLOYED
+```
+</dd>
+
+#### theme `object`
+
+<dd>
+
+The `theme` object reflects the current theme of the Appsmith application.
+
+- `primaryColor` (`string`): Represents the primary color of the application theme.
+- `backgroundColor` (`string`): Represents the background color of the application theme.
+- `borderRadius` (`string`): Specifies the border radius used in the application theme.
+- `boxShadow` (`string`): Represents the box shadow applied in the application theme.
+
+```js
+appsmith.theme
+```
+
+</dd>
+
+
+#### ui `object`
+
+<dd>
+
+Provides access to the UI elements of the widget, such as width and height, in pixels.
+
+
+```js
+appsmith.ui
+```
+
+</dd>
+
+
+
+### CSS API
+
+These properties are accessible within the CSS editor, providing specific functionalities and customization options.
+
+#### model
+
+
+<dd>
+
+The `model` property retrieves the value passed in the **Default Model** property of the Custom widget.
+
+```js
+// Access the entire model
+--appsmith-model
+
+// Access a specific property in the model
+--appsmith-model-color
+```
+</dd>
+
+#### UI and theme
+
+<dd>
+
+These CSS variables are available to control widget size and define the theme.
+
+```js
+//Widget size
+--appsmith-ui-width
+--appsmith-ui-height
+
+//Application theme
+--appsmith-theme-primaryColor
+--appsmith-theme-backgroundColor
+--appsmith-theme-borderRadius
+--appsmith-theme-boxShadow
+```
+
+</dd>
+
+### Methods
 
 #### updateModel
 
@@ -213,18 +307,6 @@ useEffect(() => {
 </dd>
 
 
-#### ui
-
-<dd>
-
-Provides access to the UI elements of the widget, such as width and height, in pixels.
-
-
-```js
-appsmith.ui
-```
-
-</dd>
 
 
 #### onUiChange
@@ -258,6 +340,24 @@ useEffect(() => {
         /* Trigger the entry point of your component, e.g., reactDom.render(<App />, document.getElementById("root")); */
     });
 }, []);
+```
+
+</dd>
+
+#### onThemeChange
+
+<dd>
+
+Subscribe to theme changes and execute a callback function.
+
+```js
+// Set the primaryColor of your component using a function.
+const unlisten = appsmith.onThemeChange((theme, oldTheme) => {
+	setPrimaryColor(theme.primaryColor);
+});
+
+// Unsubscribe when no longer interested in updates.
+unlisten();
 ```
 
 </dd>
