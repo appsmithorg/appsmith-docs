@@ -114,10 +114,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 2. Locate the relevant task and click its **EC2 instance id**
 3. Click the **Open address** link available next to the **Public IP** field to access Appsmith
 
-<figure>
-<img src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
-<figcaption align="center"><i>Use Public IP to access Appsmith</i></figcaption>
-</figure>
+<ZoomImage src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" alt="Use DNS or Public IP to access Appsmith." caption="Use Public IP to access Appsmith" />
 
 4. Fill in your details to create an administrator account
 5. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.

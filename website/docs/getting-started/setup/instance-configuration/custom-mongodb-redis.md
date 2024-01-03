@@ -34,10 +34,7 @@ On Appsmith, you can add your external MongoDB by using one of the below ways:
 
 You can use [Admin Settings](/getting-started/setup/instance-configuration#admin-settings) to set up an external MongoDB. The **MongoDB URI** property is present under **Advanced** Settings. Add your MongoDB URI to the setting and click the **SAVE & RESTART** button. The server restart establishes a connection with the external MongoDB.
 
-<figure>
-  <img src="/img/setup-external-mongodb-using-admin-settings.png" style= {{width:"700px", height:"auto"}} alt="Setup an external MongoDB using Admin settings"/>
-  <figcaption align = "center"><i>Setup an external MongoDB using Admin settings</i></figcaption>
-</figure>
+<ZoomImage src="/img/setup-external-mongodb-using-admin-settings.png" alt="Setup an external MongoDB using Admin settings" caption="Setup an external MongoDB using Admin settings" />
 
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
@@ -68,10 +65,7 @@ You can add your external Redis to Appsmith using one of the below ways:
 
 You can use [Admin Settings](/getting-started/setup/instance-configuration#admin-settings) to set up an external Redis. The **Redis URL** property is present under **Advanced** Settings. Add your Redis URL to the setting and click the **SAVE & RESTART** button. The server restart establishes a connection with the external Redis.
 
-<figure>
-  <img src="/img/setup-external-redis-using-admin-settings.png" style= {{width:"700px", height:"auto"}} alt="Setup an external Redis using Admin settings"/>
-  <figcaption align = "center"><i>Setup an external Redis using Admin settings</i></figcaption>
-</figure>
+<ZoomImage src="/img/setup-external-redis-using-admin-settings.png" alt="Setup an external Redis using Admin settings" caption="Setup an external Redis using Admin settings" />
 
 #### Environment variable
 

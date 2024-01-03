@@ -11,10 +11,7 @@ In this section, you'll learn to:
 
 Here's a screenshot of the final result:
 
-<figure>
-  <img src="/img/customer-support-tool-tickets.png" style= {{width:"100%", height:"auto"}} alt="Customer Support Tickets"/>
-  <figcaption align = "center"><i>Fig 1. Tickets</i></figcaption>
-</figure>
+<ZoomImage src="/img/customer-support-tool-tickets.png" alt="Customer Support Tickets" caption="Fig 1. Tickets" />
 
 ## Fetch tickets data
 
@@ -90,10 +87,7 @@ Here's a screenshot of the final result:
   
   The output should look something like this: 
 
-<figure>
-  <img src="/img/tickets-title-filters-button.png" style= {{width:"800px", height:"auto"}} alt="Tickets Title and Filters"/>
-  <figcaption align = "center"><i>Fig 2. Ticket filters</i></figcaption>
-</figure>
+<ZoomImage src="/img/tickets-title-filters-button.png" alt="Tickets Title and Filters" caption="Fig 2. Ticket filters" />
 
 ## Display ticket details
 
@@ -147,10 +141,7 @@ Here's a screenshot of the final result:
 
 Refer to Fig 3 for the output and placement of the widgets in the List. 
 
-<figure>
-  <img src="/img/tickets-in-list.png" style= {{width:"800px", height:"auto"}} alt="Tickets in List"/>
-  <figcaption align = "center"><i>Fig 3. Tickets in List</i></figcaption>
-</figure>
+<ZoomImage src="/img/tickets-in-list.png" alt="Tickets in List" caption="Fig 3. Tickets in List" />
 
 ## Filter tickets
 
@@ -209,10 +200,7 @@ Now, you have to program the Select widgets created in the [Build UI](#build-ui)
 
 10. Test the **Status** and **Priority** filters to see how the data in the List updates when options are changed.
 
-<figure>
-  <img src="/img/ticket-filters.gif" style= {{width:"800px", height:"auto"}} alt="Testing the filters"/>
-  <figcaption align = "center"><i>Fig 4. Testing the filters</i></figcaption>
-</figure>
+<ZoomImage src="/img/ticket-filters.gif" alt="Testing the filters" caption="Fig 4. Testing the filters" />
 
 ## Next steps
 [Add New Tickets](/getting-started/tutorials/customer-support-tool/add-new-tickets)

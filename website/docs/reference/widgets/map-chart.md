@@ -5,10 +5,7 @@ Description: Map Chart widget is useful for data visualizations on a map. The vi
 
 This page provides information on using the Map Chart widget for data visualizations on maps. The visualizations can be used in dashboards to denote areas of interest.
 
-<figure>
-  <img src="/img/mapschart.png" style= {{width:"700px", height:"auto"}} alt="Display Map Chart"/>
-  <figcaption align = "center"><i>Display Map Chart</i></figcaption>
-</figure>
+<ZoomImage src="/img/mapschart.png" alt="Display Map Chart" caption="Display Map Chart" />
 
 :::info
 Appsmith is integrated with [**FusionCharts**](https://www.fusioncharts.com) and has acquired a re-distribution license. This license lets you use FusionCharts on the Appsmith cloud and self-hosted platforms. The use of the license is permitted as long as what you are building on Appsmith isn't used to compete with FusionCharts.<br/>

@@ -2,10 +2,7 @@
 
 This page provides instructions on using the Switch widget, which allows users to toggle between two states.
 
-<figure>
-  <img src="/img/switch-img.png" style= {{width:"700px", height:"auto"}} alt="Display Switch"/>
-  <figcaption align = "center"><i>Display Switch</i></figcaption>
-</figure>
+<ZoomImage src="/img/switch-img.png" alt="Display Switch" caption="Display Switch" />
 
 
 ## Content properties

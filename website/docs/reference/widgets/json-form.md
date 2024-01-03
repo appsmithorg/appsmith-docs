@@ -29,10 +29,7 @@ If you don't have a query, you can choose your datasource, select the desired ta
 
 - **Data Identifier:** serves as an attribute for the unique identification of a datasource object. By default, it's set to the primary column of the datasource. This option is available when the **Form Type** is set to Edit Records.
 
- <figure>
-  <img src="/img/edit-json-form-one.gif" style= {{width:"620px", height:"auto"}} alt="Create records"/>
-  <figcaption align = "center"><i>Edit records</i></figcaption>
-</figure>
+ <ZoomImage src="/img/edit-json-form-one.gif" alt="Create records" caption="Edit records" />
 
 Additionally, you can use JavaScript by clicking on JS to write bindings for the **Source Data** property. To populate the JSON Form with data, you need to provide the data in a structured JSON format like this:
 

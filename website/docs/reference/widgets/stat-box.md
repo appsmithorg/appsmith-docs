@@ -6,10 +6,7 @@ description: Learn how to use the Stats Box widget to display statistical inform
 This page provides information on using the Stats Box widget, a container that presents statistics with customizable layout options. The Stats Box widget comes pre-built with a default layout, including three Text widgets and one Icon widget.
 
 
-<figure>
-  <img src="/img/stat-img.png" style= {{width:"700px", height:"auto"}} alt="Stats Box"/>
-  <figcaption align = "center"><i>Stats Box</i></figcaption>
-</figure>
+<ZoomImage src="/img/stat-img.png" alt="Stats Box" caption="Stats Box" />
 
 
 ## Content properties

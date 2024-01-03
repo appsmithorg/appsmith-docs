@@ -9,10 +9,7 @@ description: >-
 This page describes the properties of the Range Slider, which allows users to select a range of values within a specified minimum and maximum range. 
 
 
-<figure>
-  <img src="/img/as_range.png" style= {{width:"700px", height:"auto"}} alt="Range Slider"/>
-  <figcaption align = "center"><i>Range Slider</i></figcaption>
-</figure>
+<ZoomImage src="/img/as_range.png" alt="Range Slider" caption="Range Slider" />
 
 ## Content properties
 

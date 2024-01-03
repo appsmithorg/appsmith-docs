@@ -57,10 +57,7 @@ You have to create a query to fetch all the comments entered for the ticket.
 
 The output should look something like this: 
 
-<figure>
-  <img src="/img/add-comments.png" style= {{width:"800px", height:"auto"}} alt="Add Comments"/>
-  <figcaption align = "center"><i>Fig 1. Add Comments</i></figcaption>
-</figure>
+<ZoomImage src="/img/add-comments.png" alt="Add Comments" caption="Fig 1. Add Comments" />
 
 
 ## Write query to add comments

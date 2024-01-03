@@ -32,10 +32,7 @@ To secure your Appsmith application, you will need to set up a sign-in flow that
       }
    ```
 4. Select the **Menu icon** (three dots) in the login screen, and then select **Set as home page** to set the login screen as the home screen.
-   <figure>
-   <img src="/img/set-as-home-page.png" style= {{width:"700px", height:"auto"}} alt="Set as home page"/>
-   <figcaption align = "center"><i>Set as home page</i></figcaption>
-   </figure>
+   <ZoomImage src="/img/set-as-home-page.png" alt="Set as home page" caption="Set as home page" />
 5. Select the **Menu icon** (three dots) in other pages, and the select **Hide** to hide other pages in your app. This prevents users from accessing other parts of the app without authentication. 
 
 ## Store user data

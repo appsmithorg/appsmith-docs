@@ -68,20 +68,14 @@ Follow the below steps to install Appsmith:
 ### Create ECS cluster
 
 1. Go to Classic Amazon Web Console and click **Clusters** on the sidebar, and click **Create Cluster**.
- <figure>
-   <img src="/img/aws-ecs-ec2-classic-web-console.png" style={{width: "100%", height: "auto"}} alt="Create Cluster using Classic Amazon Web Console" />
-   <figcaption align="center"><i>Create Cluster using Classic Amazon Web Console</i></figcaption>
-</figure>
+ <ZoomImage src="/img/aws-ecs-ec2-classic-web-console.png" alt="Create Cluster using Classic Amazon Web Console" caption="Create Cluster using Classic Amazon Web Console" />
 
 2. Choose **Networking only** as the cluster template and click the **Next step** button.
 3. Give a meaningful name to the **Cluster name** field.
 4. Scroll down to the **CloudWatch Container Insights** section, and tick the **Enable container insights** checkbox.
 5. Click the **Create** button. You will see a launch status screen as shown below:
 
- <figure>
-    <img src="/img/aws_ecs_fargate_create_cluster_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the ECS Cluster status" />
-    <figcaption align="center"><i>A launch status screen shows the ECS Cluster status</i></figcaption>
- </figure>
+ <ZoomImage src="/img/aws_ecs_fargate_create_cluster_status.png" alt="A launch status screen shows the ECS Cluster status" caption="A launch status screen shows the ECS Cluster status" />
 
 6. Click the **View cluster** button to see your cluster.
 
@@ -129,10 +123,7 @@ Follow these steps to create task and container definitions for your cluster:
     - Click **Add** button. You will see the container name available under **Container definitions**.
 11. Scroll down to the bottom of the page and click the **Create** button.
 
-<figure>
-    <img src="/img/aws_ecs_fargate_create_task_def_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the task definition status" />
-    <figcaption align="center"><i>A launch status screen shows the task definition status</i></figcaption>
- </figure>
+<ZoomImage src="/img/aws_ecs_fargate_create_task_def_status.png" alt="A launch status screen shows the task definition status" caption="A launch status screen shows the task definition status" />
 
 12. Click the **View task definition** button to see your task definition.
 

@@ -2,10 +2,7 @@
 
 This page provides instructions on using the Checkbox widget to allow users to check or clear an item.
 
-<figure>
-  <img src="/img/checkbox-img-.png" style= {{width:"700px", height:"auto"}} alt="Display Checkbox"/>
-  <figcaption align = "center"><i>Display Checkbox</i></figcaption>
-</figure>
+<ZoomImage src="/img/checkbox-img-.png" alt="Display Checkbox" caption="Display Checkbox" />
 
 ## Content properties
 
