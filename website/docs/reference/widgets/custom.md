@@ -211,47 +211,6 @@ appsmith.ui
 </dd>
 
 
-
-### CSS API
-
-These properties are accessible within the CSS editor, providing specific functionalities and customization options.
-
-#### model
-
-
-<dd>
-
-The `model` property retrieves the value passed in the **Default Model** property of the Custom widget.
-
-```js
-// Access the entire model
---appsmith-model
-
-// Access a specific property in the model
---appsmith-model-color
-```
-</dd>
-
-#### UI and theme
-
-<dd>
-
-These CSS variables are available to control widget size and define the theme.
-
-```js
-//Widget size
---appsmith-ui-width
---appsmith-ui-height
-
-//Application theme
---appsmith-theme-primaryColor
---appsmith-theme-backgroundColor
---appsmith-theme-borderRadius
---appsmith-theme-boxShadow
-```
-
-</dd>
-
 ### Methods
 
 #### updateModel
@@ -361,3 +320,45 @@ unlisten();
 ```
 
 </dd>
+
+
+### CSS API
+
+These properties are accessible within the CSS editor, providing specific functionalities and customization options.
+
+#### model
+
+
+<dd>
+
+The `model` property retrieves the value passed in the **Default Model** property of the Custom widget.
+
+```js
+// Access the entire model
+--appsmith-model
+
+// Access a specific property in the model
+--appsmith-model-color
+```
+</dd>
+
+#### UI and theme
+
+<dd>
+
+These CSS variables are available to control widget size and define the theme.
+
+```js
+//Widget size
+--appsmith-ui-width
+--appsmith-ui-height
+
+//Application theme
+--appsmith-theme-primaryColor
+--appsmith-theme-backgroundColor
+--appsmith-theme-borderRadius
+--appsmith-theme-boxShadow
+```
+
+</dd>
+
