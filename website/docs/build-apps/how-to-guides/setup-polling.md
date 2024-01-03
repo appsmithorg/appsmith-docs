@@ -5,9 +5,16 @@ Polling is a communication technique used in computing to retrieve real-time dat
 This page shows you how to establish a real-time data polling mechanism for your applications.
 
 
+  <figure>
+  <img src="/img/polling-1.gif" style= {{width:"750px", height:"auto"}} alt=""/>
+  <figcaption align = "center"><i>Real-Time Data using Polling</i></figcaption>
+  </figure>  
+
+
+
 ## Prerequisites
 
-API/Datasource that supports real-time data retrieval and is compatible with polling mechanisms.
+API or Datasource that supports real-time data retrieval and is compatible with polling mechanisms.
 
 ## Configuration
 
@@ -26,8 +33,7 @@ To configure and set up Polling connections, follow the steps:
 
 2. Drop a Switch widget to enable toggling of auto-updates.
 
-3. Enable JS for the onChange event of the Switch and configure it to:
-
+3. Enable JS for the **onChange** event of the Switch and use the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) function to configure it like:
 
 <dd>
 
@@ -42,6 +48,8 @@ To configure and set up Polling connections, follow the steps:
 })()
 }}
 ```
+
+If the Switch is on, the query is executed every 2 seconds; otherwise, clear the update interval.
 
 </dd>
 
