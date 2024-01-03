@@ -9,10 +9,7 @@ This page provides information for connecting Appsmith to Google Sheets and for 
 
 ## Connection parameters
 
-<figure>
-  <img src="/img/gsheets_datasource_config.png" style={{width: "100%", height: "auto"}} alt="Configuring a new Google Sheets datasource."/>
-  <figcaption align="center"><i>Configuring a new Google Sheets datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/gsheets_datasource_config.png" alt="Configuring a new Google Sheets datasource." caption="Configuring a new Google Sheets datasource." />
 
 #### Permissions | Scope:
 
@@ -32,10 +29,7 @@ Clicking **Save and Authorize** takes you to a Google login where you can author
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to Google Sheets.
 
-<figure>
-  <img src="/img/gsheets-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a query from the query screen."/>
-  <figcaption align="center"><i>Configuring a query from the query screen.</i></figcaption>
-</figure>
+<ZoomImage src="/img/gsheets-query-config.png" alt="Configuring a query from the query screen." caption="Configuring a query from the query screen." />
 
 ### Fetch Details
 

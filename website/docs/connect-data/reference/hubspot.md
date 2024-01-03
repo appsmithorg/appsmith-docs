@@ -33,10 +33,11 @@ The following section is a reference guide that provides a complete description 
 
 The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
-<figure>
-  <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
-  <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/hubspot-query-config.png" 
+  alt="Create a HubSpot query."
+  caption="Create a HubSpot query."
+/>
 
 ### HubDB
 

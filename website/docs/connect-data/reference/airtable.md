@@ -11,10 +11,11 @@ This page provides information for connecting your application to your Airtable 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Airtable base.
 
-<figure>
-  <img src="/img/airtable-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Airtable datasource." />
-  <figcaption align="center"><i>Configuring an Airtable datasource.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/airtable-datasource-config.png" 
+  alt="Configuring an Airtable datasource"
+  caption="Configuring an Airtable datasource"
+/>
 
 #### Authentication type
 
@@ -30,10 +31,11 @@ The following section is a reference guide that provides a complete description 
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Airtable queries.
 
-<figure>
-  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
-  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/airtable-query-screen.png" 
+  alt="Configuring a List Records query"
+  caption="Configuring a List Records query"
+/>
 
 :::caution
 [The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
