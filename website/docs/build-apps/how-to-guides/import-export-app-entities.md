@@ -12,10 +12,12 @@ Follow the steps below to export desired application entities and import it into
 1. Open the page from which you want to export the entities. Click the vertical dots icon next to the page name for the action menu.
 
 2. Select the **Export** option from the action menu. A dialog box will appear, allowing you to choose the entities you want to reuse.
-<figure>
-  <img src="/img/reuse-entities-across-pages-import-export.png" style= {{width:"640px", height:"auto"}} alt="Import or Export entities"/>
-  <figcaption align = "center"><i>Select entities to export or import</i></figcaption>
-</figure>   
+
+<ZoomImage
+  src="/img/reuse-entities-across-pages-import-export.png" 
+  alt="Import or Export entities"
+  caption="Select entities to export or import"
+/>
 
 3.  Select the specific entities under each category and click **Export selected entities** to download the JSON file. The JSON file follows the naming convention - `applicationname.json`.
 

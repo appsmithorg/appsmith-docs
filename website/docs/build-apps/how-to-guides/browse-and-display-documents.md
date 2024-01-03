@@ -2,11 +2,11 @@
 
 This guide shows how to organize and display documents using the Tabs widget.
 
-
-<figure>
-  <img src="/img/display-doc.gif" style= {{width:"700px", height:"auto"}} alt="Browse and Display Documents"/>
-  <figcaption align = "center"><i>Browse and Display Documents</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/display-doc.gif" 
+  alt="Browse and Display Documents"
+  caption="Browse and Display Documents"
+/>
 
 1. Connect the Table widget to a query containing document-related columns, either in base64 or URL format.
 

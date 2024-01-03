@@ -26,12 +26,11 @@ When you share a workspace with a user, they can access all the applications in 
 3. In the **Invite users** modal, enter the email of the user and select an appropriate role for them.
 3. Click **Invite**.
 
-
-
-<figure>
-  <img src="/img/Share_workspace.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Sharing a workspace</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/Share_workspace.png" 
+  alt="Display images on table row selection"
+  caption="Sharing a workspace"
+/>
 
 :::info
 In Appsmith's community edition, you can only share your workspace, i.e, when you invite a user from the application, the entire workspace is shared with the assigned role.
@@ -70,10 +69,11 @@ If you want the user to have access to a specific application in a workspace, fo
 2. Enter the email of the user and select an appropriate role for them.
 3. Click **Invite**.
 
-<figure>
-  <img src="/img/share_application.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Inviting a user to an application</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/share_application.png" 
+  alt="Display images on table row selection"
+  caption="Inviting a user to an application"
+/>
 
 ### Default roles for application
 

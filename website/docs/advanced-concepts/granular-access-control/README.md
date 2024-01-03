@@ -26,12 +26,11 @@ Granular Access Control can be implemented in Appsmith using the following eleme
 - [Groups](#groups) 
 - [Roles](/advanced-concepts/granular-access-control/roles)
 
-
-<figure>
-  <img src="/img/GAC_overview.jpeg" style= {{width:"700px", height:"auto"}} alt="Add a new Role"/>
-  <figcaption align = "center"><i>Granular Access Control Overview</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/GAC_overview.jpeg" 
+  alt="Add a new Role"
+  caption="Granular Access Control Overview"
+/>
 
 ## Users
 
@@ -41,12 +40,11 @@ A user can access the Appsmith instance, workspaces, apps or other resources and
 - Users can be added to groups, and roles can be assigned to that group. In addition, a user can be assigned a role directly, and the roles assigned to the groups they belong to also apply to them.
 - To manage user roles and permissions, go to **Admin Settings** > **Access Control** > **Users**. It displays a list of all users with their roles and groups assigned to them. You can add a new user to your instance by clicking on **Add Users** at the top right corner of the screen.
 
-<figure>
-  <img src="/img/GAC_users.png" style= {{width:"auto", height:"auto"}} alt="Add a new Role"/>
-  <figcaption align = "center"><i>Users' Window</i></figcaption>
-</figure>
-
-
+<ZoomImage
+  src="/img/GAC_users.png" 
+  alt="Add a new Role"
+  caption="Users' Window"
+/>
 
 ## Groups
 
@@ -68,10 +66,11 @@ To enable Programmatic access control, follow the steps below -
 1. On the homepage, go to **Admin Settings > General**.
 2. Under the **Programmatic Access Control** section, select the **Access roles and user groups in code for conditional business logic** checkbox. 
 
-<figure>
-  <img src="/img/Enable_programmatic-access-control.png" style= {{width:"700px", height:"auto"}} alt="Programmatic Access Control"/>
-  <figcaption align = "center"><i>Enable Programmatic access control</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/Enable_programmatic-access-control.png" 
+  alt="Programmatic Access Control"
+  caption="Enable Programmatic access control"
+/>
 
 3. To manage access control programmatically, use the relevant properties of the Appsmith user object `appsmith.user.roles` or  `appsmith.user.groups` in JavaScript code to obtain an array of roles or groups assigned to the logged-in user. For more information, refer to the [roles](/reference/appsmith-framework/context-object#roles) and [groups](/reference/appsmith-framework/context-object#groups) properties of the Appsmith user object.
 

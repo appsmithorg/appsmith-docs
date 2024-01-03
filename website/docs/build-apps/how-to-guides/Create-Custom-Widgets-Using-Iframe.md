@@ -48,8 +48,8 @@ This retrieves the entered code from the editor and displays it in a Text widget
 
 With this setup, users can edit the code in the code editor, and when the submit button is clicked, the entered code would be processed or displayed as desired.
 
-
-<figure>
-  <img src="/img/custom-widget-code.png" style= {{width:"800px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Custom Code Editor</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/custom-widget-code.png" 
+  alt="Display images on table row selection"
+  caption="Custom Code Editor"
+/>

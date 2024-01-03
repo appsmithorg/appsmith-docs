@@ -9,10 +9,11 @@ This page shows how to establish secure cross-origin communication between the A
 
 You can send messages from Appsmith to an embedded page within an Iframe using [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage), and to receive the message on the embedded page, you can use the `addEventListener()` method.
 
-<figure>
-  <img src="/img/postmessage_child_incoming.png" style= {{width:"500px", height:"auto"}} alt="Admin Settings option is available in the left sidebar"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/postmessage_child_incoming.png" 
+  alt="post message"
+  caption=""
+/>
 
 <dd>
 
@@ -41,11 +42,11 @@ You can send messages from Appsmith to an embedded page within an Iframe using [
     {{postWindowMessage(Input1.text, 'Iframe1', "*");}}
     ```
 
-
-<figure>
-  <img src="/img/fromapptoiframe-1.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i>From Appsmith to embedded page</figcaption>
-</figure>
+<ZoomImage
+  src="/img/post-message-from-appsmith-embedded-page.gif" 
+  alt="Display external website"
+  caption="From Appsmith to embedded page"
+/>
 
 </dd>
 
@@ -82,8 +83,9 @@ When a message is received, you can also execute a set of actions using the Ifra
 
 See also [postWindowMessage()](/reference/appsmith-framework/widget-actions/post-message).
 
-<figure>
-  <img src="/img/iframe-2-.gif" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i>From embedded page to Iframe</figcaption>
-</figure>
+<ZoomImage
+  src="/img/post-message-page-to-iframe.gif" 
+  alt="Display external website"
+  caption="From embedded page to Iframe"
+/>
 
