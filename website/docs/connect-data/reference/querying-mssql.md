@@ -19,10 +19,7 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a MS SQL database.
 
-<figure>
-  <img src="/img/mssql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL datasource." />
-  <figcaption align="center"><i>Configuring an MS SQL datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-datasource-config.png" alt="Configuring an MS SQL datasource." caption="Configuring an MS SQL datasource." />
 
 #### Connection mode
 
@@ -68,10 +65,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries for MS SQL.
 
-<figure>
-  <img src="/img/mssql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL query." />
-  <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-query-config.png" alt="Configuring an MS SQL query." caption="Configuring an MS SQL query." />
 
 :::info
 You can query MS SQL databases using T-SQL syntax. Refer to Microsoft's documentation to learn how to [Write Transact-SQL statements](https://learn.microsoft.com/en-us/sql/t-sql/queries/queries?view=sql-server-ver16).
