@@ -61,7 +61,7 @@ const ZoomableImage = ({ src, alt, caption }) => {
                 onMouseEnter={handleHover}
                 onMouseLeave={handleHoverOut}
             >
-                <img src={src} alt={alt} ref={imageRef} />
+                <img src={src} alt={alt} style={{ width: '700px' }} ref={imageRef} />
                 <figcaption align="center">
                     <i>{caption}</i>
                     <span className="image-tooltip" ref={tooltipRef}>
