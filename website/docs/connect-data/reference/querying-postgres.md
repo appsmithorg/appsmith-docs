@@ -17,10 +17,7 @@ If you are a self-hosted user, you must configure the `pg_hba.conf` file to whit
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a PostgreSQL database.
 
-<figure>
-  <img src="/img/postgres-img.png" style= {{width:"100%", height:"auto"}} alt="Connect PostgreSQL Database"/>
-  <figcaption align = "center"><i>Connect PostgreSQL Database</i></figcaption>
-</figure>
+<ZoomImage src="/img/postgres-img.png" alt="Connect PostgreSQL Database" caption="Connect PostgreSQL Database" />
 
 #### Connection Mode
 
@@ -70,10 +67,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries on PostgreSQL.
 
-<figure>
-  <img src="/img/query-postgresql.png" style= {{width:"100%", height:"auto"}} alt="Write SQL commands in the query editor"/>
-  <figcaption align = "center"><i>Write SQL commands in the query editor</i></figcaption>
-</figure>
+<ZoomImage src="/img/query-postgresql.png" alt="Write SQL commands in the query editor" caption="Write SQL commands in the query editor" />
 
 :::info
 For the SQL syntax, see the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html).

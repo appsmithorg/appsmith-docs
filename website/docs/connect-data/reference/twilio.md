@@ -12,10 +12,7 @@ This page provides information for connecting Appsmith to Twilio and reading and
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to Twilio.
 
-<figure>
-   <img src="/img/twilio-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a Twilio datasource."/>
-   <figcaption align = "center"><i>Configuring a Twilio datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/twilio-datasource-config.png" alt="Configuring a Twilio datasource." caption="Configuring a Twilio datasource." />
 
 #### Authentication Type
 
@@ -39,10 +36,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Twilio queries.
 
-<figure>
-   <img src="/img/twilio-query-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a Twilio query."/>
-   <figcaption align = "center"><i>Configuring a Twilio query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/twilio-query-config.png" alt="Configuring a Twilio query." caption="Configuring a Twilio query." />
 
 ### Create message
 
