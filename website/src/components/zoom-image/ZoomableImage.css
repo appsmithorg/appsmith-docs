@@ -5,6 +5,10 @@
 
 .zoomable-image img {
     height: auto;
+    border: 2px solid #f2f2f2;
+    border-radius: 8px;
+    display: block;
+    margin: 1rem auto;
 }
 
 .image-tooltip {
