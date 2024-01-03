@@ -1,6 +1,6 @@
 # Custom
 
-This page provides information on using the Custom widget, which allows you to integrate React, HTML, and JavaScript components for additional functionality. 
+This page provides information on using the Custom widget, which allows you to integrate CSS, HTML, and JavaScript components for additional functionality. 
 
 To embed web pages or applications, use the [IFrame widget](/reference/widgets/iframe).
 
@@ -76,13 +76,7 @@ For example, if you want to make the widget visible only when the user selects "
 <dd>
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/FCh9XryZ3ymHeOdFnE7x?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) tailored to your specific requirements. Create events in the widget and trigger them in the javascript file using `appsmith.triggerEvent('eventName')`
+Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) tailored to your specific requirements. Create events in the widget and trigger them in the javascript file using `appsmith.triggerEvent("eventName")`
 
 
 *Example*: To reset the widget upon a button click, create a new event named **onResetClick** and add the following in the JavaScript code:
@@ -95,6 +89,9 @@ const handleReset = () => {
 ```
 
 
+<div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
+  <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
+</div>
 
 
 </dd>

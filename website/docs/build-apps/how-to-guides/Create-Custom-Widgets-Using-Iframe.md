@@ -15,7 +15,7 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
 
-*Example*: To create an image carousel(slider) that displays user documents from a Table widget, import the required React libraries and configure the CSS accordingly, like:
+*Example*: To create an image carousel(slider) that displays user documents, import the required React libraries and configure the CSS accordingly, like:
 
 <Tabs>
   <TabItem value="html" label="HTML" default>
