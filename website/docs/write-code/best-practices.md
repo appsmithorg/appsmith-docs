@@ -30,6 +30,7 @@ export default {
 You can also update the mutable variable directly in your widgets.
 
 Example:
+In this example, `vars` is the name of the JS Object.
 ```jsx
 {{vars.name = "Michael"}}
 ```
