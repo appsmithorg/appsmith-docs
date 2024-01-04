@@ -2,12 +2,12 @@
 description: Best practices for Writing Functions using JavaScript
 ---
 
-# JavaScript Best Practices
-JavaScript code is essential when developing apps on the Appsmith platform. Writing clean and performant code is crucial for maintaining codebase quality and ensuring a responsive user experience.
-This document provides best practices for writing JavaScript code within Appsmith applications. 
+# Best Practices
+Writing clean and performant code is crucial for maintaining codebase quality and ensuring a responsive user experience.
+This page provides best practices for writing JavaScript code within Appsmith applications. 
 
-## Use mutable JS variables to share data within page
-Appsmith supports mutable JS variables, which allows you to create global variables that can be read by other widgets and functions. You can update these variables at any time. With global variables, you can write code that is simpler and shorter without using the Appsmith store. Using this method, you can store and read data directly from memory, which makes your apps much faster.
+## Use mutable JS variables
+Appsmith supports mutable JS variables, which allows you to create global variables that other widgets and functions can read _within a page_. You can update these variables at any time. Using this method, you can store and read data directly from memory, which makes your apps much faster.
 
 Example:
 ```jsx
@@ -27,22 +27,28 @@ export default {
 	},
 }
 ```
-## Use Appsmith store to share data across pages
+You can also update the mutable variable directly in your widgets.
+
+Example:
+```jsx
+{{vars.name = "Michael"}}
+```
+## Use Appsmith store
 With mutable JS, each variable created in a JS file is only scoped to the page containing that file. This means these variables cannot be accessed on other pages in your app. JS variables are also limited to the lifetime of the app. When you close the window, the data stored in memory is automatically deleted.
-To share data across pages in your application, use the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
+To _share data across pages_ in your application and persist the data, use the storeValue() function.
 
 Example:
 
-In this example, the third parameter in the `storeValue` function is [persist](/reference/appsmith-framework/widget-actions/store-value#persist). When `persist` is set to `false`, the value does not persist and is removed when the page is refreshed or closed. To save the value in the browser's local storage and use it between sessions, set `persist` to `true`.
+In this example, the third parameter `persist` in the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function is set to `true`. This ensures that the value is stored in the browser's local storage and can be used between sessions. Set `persist` to `false` if you do not want to persist the data and remove it on page refresh.
 
 ```jsx
 export default {
 	fetch_name () {
-		storeValue('name', 'sam', false);
+		storeValue('name', 'sam', true);
 		return appsmith.store.name;
 	},
 	update_name () {
-		storeValue('name', 'ben', false);
+		storeValue('name', 'ben', true);
 		return appsmith.store.name;
 	},
 }
@@ -53,7 +59,7 @@ Example:
 ```jsx
 {{appsmith.store.name}}
 ```
-## Avoid nested operations
+## Avoid nested operations within widgets
 
 Using Lodash or native JavaScript functions around objects and arrays requires caution.
 Arrays and objects nested within each other can reduce performance. Using nested functions such as map, filter, and find can cause performance issues similar to nested loops.
@@ -62,7 +68,7 @@ Example:
 ```jsx
 const result = arrayValues.map(item => item.filter(value => value.find(() => {})));
 ```
-Complex logical functions like the above example can adversely affect the performance of your app when bound directly to widget properties like `Visible`, `Disabled`, or color attributes like `Text color` or `Background color`.
+Complex logical functions like the above example can adversely affect your app's performance when bound directly to widget properties like `Visible`, `Disabled`, or color attributes like `Text color` or `Background color`.
 Appsmith recommends clubbing array and object-related functions instead of deep nesting for improved performance.
 
 Example:
