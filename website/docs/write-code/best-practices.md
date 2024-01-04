@@ -27,9 +27,9 @@ export default {
 	},
 }
 ```
-## Use the Appsmith store to share data across pages
+## Use Appsmith store to share data across pages
 With mutable JS, each variable created in a JS file is only scoped to the page containing that file. This means these variables cannot be accessed on other pages in your app. JS variables are also limited to the lifetime of the app. When you close the window, the data stored in memory is automatically deleted.
-To share data across pages in you application, use the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
+To share data across pages in your application, use the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
 
 Example:
 
