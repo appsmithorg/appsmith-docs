@@ -1,8 +1,6 @@
 # Fetch Real-Time Data using Polling
 
-Polling is a communication technique used in computing to retrieve real-time data by periodically checking for updates. 
-
-This page shows you how to establish a real-time data polling mechanism for your applications.
+Polling is a communication technique used to retrieve real-time data by periodically checking for updates. This page shows you how to establish a real-time data polling mechanism for your applications.
 
 
   <figure>
@@ -12,15 +10,7 @@ This page shows you how to establish a real-time data polling mechanism for your
 
 
 
-## Prerequisites
-
-API or Datasource that supports real-time data retrieval and is compatible with polling mechanisms.
-
-## Configuration
-
-To configure and set up Polling connections, follow the steps:
-
-1. Configure the query and connect it with a Table widget to display the data.
+1. Configure the fetch query and connect it with a Table widget to display the data.
 
 <dd>
 
@@ -31,25 +21,30 @@ To configure and set up Polling connections, follow the steps:
 ```
 </dd>
 
-2. Drop a Switch widget to enable toggling of auto-updates.
+2. Drop a Switch widget to enable the toggling of updates at regular intervals.
 
-3. Enable JS for the **onChange** event of the Switch and use the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) function to configure it like:
+
+3. Enable JS for the **onChange** event of the Switch and use the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) function  to implement polling:
 
 <dd>
+
+*Example:* When the switch is turned on, the query is executed every 5 seconds. If the switch is turned off, use the [clearInterval()](/reference/appsmith-framework/widget-actions/clear-interval) function to stop the polling process:
+
 
 ```js
 {{
 (() => {
     if (Switch1.isSwitchedOn) {
-        setInterval(() => delivery_data.run(), 2000, "autoupdate");
+        setInterval(() => delivery_data.run(), 5000, "autorefresh");
     } else {
-        clearInterval("autoupdate");
+        clearInterval("autorefresh");
     }
 })()
 }}
 ```
 
-If the Switch is on, the query is executed every 2 seconds; otherwise, clear the update interval.
+Alternatively, you can add the following code in the JSObject and execute it on page load.
+
 
 </dd>
 
