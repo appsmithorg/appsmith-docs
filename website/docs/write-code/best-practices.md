@@ -3,7 +3,7 @@ description: Best practices for Writing Functions using JavaScript
 ---
 
 # Best Practices
-Writing clean and performant code is crucial for maintaining codebase quality and ensuring a responsive user experience.
+Writing clean and performant code following the best practices is crucial for maintaining code quality and improving app performance.
 This page provides best practices for writing JavaScript code within Appsmith applications. 
 
 ## Use mutable JS variables
@@ -35,6 +35,7 @@ Example:
 ```
 ## Use Appsmith store
 With mutable JS, each variable created in a JS file is only scoped to the page containing that file. This means these variables cannot be accessed on other pages in your app. JS variables are also limited to the lifetime of the app. When you close the window, the data stored in memory is automatically deleted.
+
 To _share data across pages_ in your application and persist the data, use the storeValue() function.
 
 Example:
@@ -62,36 +63,31 @@ Example:
 ## Avoid nested operations within widgets
 
 Using Lodash or native JavaScript functions around objects and arrays requires caution.
-Arrays and objects nested within each other can reduce performance. Using nested functions such as map, filter, and find can cause performance issues similar to nested loops.
+Arrays and objects nested within each other in a widget can reduce performance. Using nested functions such as map, filter, and find can cause performance issues.
 
 Example:
 ```jsx
 const result = arrayValues.map(item => item.filter(value => value.find(() => {})));
 ```
 Complex logical functions like the above example can adversely affect your app's performance when bound directly to widget properties like `Visible`, `Disabled`, or color attributes like `Text color` or `Background color`.
-Appsmith recommends clubbing array and object-related functions instead of deep nesting for improved performance.
+Appsmith recommends having a JS function run it once to store the value in the Appsmith store. Then, let the widget consume store value instead.
 
 Example:
 
 ```jsx
 export default {
-	merge_data: () => {
-		const personalData = fetch_user_personal_details.data;
-		const locationData = fetch_user_location_details.data;
-		return personalData.map(pd => {
-			const locationOfCurrentUser = locationData.find(ld => ld.id === pd.id);
-			return ({
-				...pd,
-				...(locationOfCurrentUser ?? {})
-			})
-		})
+	fetch_data: () => {
+		const result = arrayValues.map(item => item.filter(value => value.find(() => {})));
+		storeValue('data', result, true);
+		return appsmith.store.data;
 	}
 }
 ```
-You can then use the above JS object to populate a Table widget.
+You can then refer to the stored computed value in widgets to set the properties.
 
 Example:
-In the following example, `DataFactory` is the name of the JS object.
+
+In the following example, the visibility of a Table widget is set to `false` if `data` is empty.
 ```jsx
-{{DataFactory.merge_data()}}
+{{appsmith.store.data == null? false:true}}
 ```
