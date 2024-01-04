@@ -1,4 +1,4 @@
-# Fetch Real-Time Data using Polling
+# Use Polling for periodic data updates
 
 Polling is a communication technique used to retrieve real-time data by periodically checking for updates. This page shows you how to establish a real-time data polling mechanism for your applications.
 
