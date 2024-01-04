@@ -13,10 +13,7 @@ This page provides information for connecting Appsmith to HubSpot and for readin
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a HubSpot database.
 
-<figure>
-   <img src="/img/hubspot-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
-   <figcaption align = "center"><i>Configuring a HubSpot datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/hubspot-datasource-config.png" alt="Configuring a HubSpot datasource." caption="Configuring a HubSpot datasource." />
 
 
 #### Authentication Type
@@ -34,10 +31,11 @@ The following section is a reference guide that provides a complete description 
 
 The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
-<figure>
-  <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
-  <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/hubspot-query-config.png" 
+  alt="Create a HubSpot query."
+  caption="Create a HubSpot query."
+/>
 
 ### HubDB
 

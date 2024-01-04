@@ -19,11 +19,11 @@ You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an S3 bucket.
 
-<figure>
-  <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an S3 datasource." />
-  <figcaption align="center"><i>Configuring an S3 datasource.</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/s3-datasource-config.png" 
+  alt="Configure an S3 datasource."
+  caption="Configure an S3 datasource"
+/>
 
 #### S3 service provider
 
@@ -71,10 +71,11 @@ If the configuration is correct but the credentials do not have the required per
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create S3 queries.
 
-<figure>
-  <img src="/img/s3-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Files query." />
-  <figcaption align="center"><i>Configuring an S3 query.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/s3-query-config.png" 
+  alt="Configure a List Files query."
+  caption="Configure a List Files query"
+/>
 
 ### List files in bucket
 

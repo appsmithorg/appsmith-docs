@@ -38,10 +38,7 @@ Follow these steps to configure your email provider using Admin Settings:
 
 3. Select **Email** from the left nav bar.
 
-<figure>
-<img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
-<figcaption align="center"><i>Configure your email service provider</i></figcaption>
-</figure>
+<ZoomImage src="/img/admin-settings-configure-email.png" alt="Email service provider" caption="Configure your email service provider" />
 
 4. Add the configuration details for your email provider as below: 
 

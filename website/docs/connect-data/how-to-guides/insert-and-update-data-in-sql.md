@@ -169,17 +169,11 @@ This SQL query updates the `name` and `phone` columns in the `users` table based
 
 5. Drag a Button widget, and set its **onClick** event to run the update query, and the onSuccess callback to trigger the fetch query that refreshes the table data with the updated information.
 
-
-
-
-
-
-
-<figure>
-  <img src="/img/multi-update-sql.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Update multiple rows</i></figcaption>
-</figure>
-
+ <ZoomImage
+    src="/img/multi-update-sql.gif" 
+    alt="Update multiple rows"
+    caption="Update multiple rows"
+  />
 
 ## See also
 

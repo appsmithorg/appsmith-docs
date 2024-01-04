@@ -12,10 +12,7 @@ Use this datasource to create a single query for an API that doesn't need comple
 
 The following section is a reference guide that provides a description of the parameters to create REST API queries.
 
-<figure>
-  <img src="/img/restapi-query-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a REST API query."/>
-  <figcaption align = "center"><i>Configuring a REST API query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/restapi-query-config.png" alt="Configuring a REST API query." caption="Configuring a REST API query." />
 
 #### Method
 

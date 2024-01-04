@@ -2,10 +2,7 @@
 
 These properties provide options to customize the formatting of buttons. 
 
-<figure>
-  <img src="/img/buttons-items.png" style= {{width:"700px", height:"auto"}} alt="Display Buttons"/>
-  <figcaption align = "center"><i>Display Buttons</i></figcaption>
-</figure>
+<ZoomImage src="/img/buttons-items.png" alt="Display Buttons" caption="Display Buttons" />
 
 ## Content properties
 

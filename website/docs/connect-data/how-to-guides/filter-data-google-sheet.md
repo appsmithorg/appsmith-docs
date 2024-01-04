@@ -27,10 +27,7 @@ To fetch data based on a condition using the where clause, follow these steps:
 3. In **Filter By**, enter the filter conditions that you want to apply.
    You can add multiple conditions or group conditions and combine them using **AND**, **OR**.
 
-    <figure>
-      <img src="/img/gsheet-data-filter.png" style= {{width:"700px", height:"auto"}} alt="Filter Google Sheet data using where"/>
-      <figcaption align = "center"><i>Filter Google Sheet data using where clause</i></figcaption>
-    </figure>
+    <ZoomImage src="/img/gsheet-data-filter.png" alt="Filter Google Sheet data using where" caption="Filter Google Sheet data using where clause" />
 
    For example, to bind the value of a [Text](/reference/widgets/text) widget named `gender` to the where clause, use the following code:
 

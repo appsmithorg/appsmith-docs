@@ -16,10 +16,7 @@ Appsmith does not support connection to Redis using TLS. To connect to Redis, yo
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Redis database.
 
-<figure>
-  <img src="/img/redis-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis datasource." />
-  <figcaption align="center"><i>Configuring a Redis datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redis-datasource-config.png" alt="Configuring a Redis datasource." caption="Configuring a Redis datasource." />
 
 #### Host Address
 
@@ -45,10 +42,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries for Redis.
 
-<figure>
-  <img src="/img/redis-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis query." />
-  <figcaption align="center"><i>Configuring a Redis query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redis-query-config.png" alt="Configuring a Redis query." caption="Configuring a Redis query." />
 
 :::info
 See the [Redis documentation](https://redis.io/commands/) for a full list of Redis commands and how to use them.

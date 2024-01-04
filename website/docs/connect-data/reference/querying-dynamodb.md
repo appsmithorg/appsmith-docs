@@ -16,10 +16,7 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a DynamoDB database.
 
-<figure>
-  <img src="/img/dynamodb-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB datasource." />
-  <figcaption align="center"><i>Configuring a DynamoDB datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/dynamodb-datasource-config.png" alt="Configuring a DynamoDB datasource." caption="Configuring a DynamoDB datasource." />
 
 #### Region
 
@@ -49,10 +46,7 @@ The secret value used to authenticate your queries to DynamoDB. This value is ac
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create DynamoDB queries.
 
-<figure>
-  <img src="/img/dynamodb-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB scan query." />
-  <figcaption align="center"><i>Configuring a DynamoDB scan query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/dynamodb-query-config.png" alt="Configuring a DynamoDB scan query." caption="Configuring a DynamoDB scan query." />
 
 For more details about any of the operations below, see the [Amazon DynamoDB Actions documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations_Amazon_DynamoDB.html).
 

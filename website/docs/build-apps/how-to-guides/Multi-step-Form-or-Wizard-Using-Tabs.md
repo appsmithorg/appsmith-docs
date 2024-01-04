@@ -2,14 +2,11 @@
 
 This page shows you how to create a multi-step form using the Tabs widget, which allows you to collect user input over multiple steps. See the [sample app](https://app.appsmith.com/app/create-a-multi-step-wizard/page1-65769e76eba2285a9c3c78f2).
 
-
-
-<figure>
-  <img src="/img/multi-step-form1.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Multi-step form using Tabs</i></figcaption>
-</figure>
-
-
+<ZoomImage
+  src="/img/multi-step-form1.gif" 
+  alt="multi-step-form"
+  caption="Multi-step form using Tabs"
+/>
 
 ## Prerequisites
 
@@ -58,14 +55,6 @@ Follow these steps to navigate between Tabs using [storeValue()](/reference/apps
 <dd>
 
 *Example:* On Tab 1 (`BasicInfo`), set the Submit Button's widget **onClick** event to trigger the **Store value** action and specify:  
-
-
-<!--
-<figure>
-  <img src="/img/tabs-next.png" style= {{width:"530px", height:"auto"}} alt="Configure Store value"/>
-  <figcaption align = "center"><i>Configure Store value</i></figcaption>
-</figure>
--->
 
 | Field Name	| Value    	|
 |-------	|---------------	|

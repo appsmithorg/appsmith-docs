@@ -12,10 +12,7 @@ Use this datasource to create multiple queries for the same API. Every query cre
 
 The following section is a reference guide that provides a complete description of all the parameters available for REST APIs.
 
-<figure>
-   <img src="/img/restapi-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an Authenticated API datasource."/>
-   <figcaption align = "center"><i>Configuring an Authenticated API datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/restapi-datasource-config.png" alt="Configuring an Authenticated API datasource." caption="Configuring an Authenticated API datasource." />
 
 :::note
 The datasource configuration fields do not accept JavaScript code or mustache syntax.

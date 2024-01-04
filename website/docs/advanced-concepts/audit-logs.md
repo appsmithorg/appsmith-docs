@@ -33,16 +33,11 @@ There are several kinds of events that are logged:
 
 To access the audit logs, on the homepage, go to **Admin Settings > Others > Audit logs**. Within this tab, you can see a list of events that have been tracked under your organization's account. To view the details of a specific event, click on the event description to expand the event and display a complete set of details in JSON format.
 
-<figure>
-  <img
-    src="/img/audit-logs.png"
-    style={{ width: "700px", height: "auto" }}
-    alt="Audit logs"
-  />
-  <figcaption align="center">
-    <i>Audit logs</i>
-  </figcaption>
-</figure>
+<ZoomImage
+  src="/img/audit-logs.png" 
+  alt="Audit logs"
+  caption="Audit logs"
+/>
 
 ## Log contents
 

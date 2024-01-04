@@ -36,15 +36,13 @@ Use aggregate queries for better insights, like SQL for databases. In Google She
 
 3. Use the **Add Series** property to populate the chart with different sets of data.
 
-  <figure>
-  <img src="/img/bar-voter.png" style= {{width:"640px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i></i></figcaption>
-  </figure>  
+<ZoomImage
+  src="/img/bar-voter.png" 
+  alt="Bar voter"
+  caption="Display data"
+/> 
 
 Learn more about the [Chart widget](/reference/widgets/chart).
-
-
-
 
 ## Filter Chart data 
 

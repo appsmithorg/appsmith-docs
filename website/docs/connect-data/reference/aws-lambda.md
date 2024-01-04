@@ -4,11 +4,11 @@ This page provides information for connecting your application to an Amazon Lamb
 
 ## Connect AWS Lambda
 
- <figure>
-  <img src="/img/AWS-CONNECT.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>AWS Lambda datasource.</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/AWS-CONNECT.png" 
+  alt="AWS Lambda datasource"
+  caption="AWS Lambda datasource"
+/>
 
 ### Connection parameters
 
@@ -71,11 +71,11 @@ When this command is executed, it retrieves a comprehensive list of functions as
 
 This command allows you to invoke Lambda functions, passing input parameters if necessary, and retrieving the output of the function's execution. The following section lists all the fields available for the **Invoke a function** command.
 
- <figure>
-  <img src="/img/Invokefunction.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>Invoke a function</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/Invokefunction.png" 
+  alt="Invoke a function"
+  caption="Invoke a function"
+/>
 
 #### Function to invoke
 

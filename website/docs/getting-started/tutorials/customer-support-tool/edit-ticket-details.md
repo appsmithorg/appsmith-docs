@@ -145,10 +145,7 @@ This code displays all the details of the currently selected item in the List.
 
 The output should look something like this: 
 
-<figure>
-  <img src="/img/edit-ticket-modal.png" style= {{width:"800px", height:"auto"}} alt="Edit Ticket Details"/>
-  <figcaption align = "center"><i>Fig 1. Edit Ticket Details</i></figcaption>
-</figure>
+<ZoomImage src="/img/edit-ticket-modal.png" alt="Edit Ticket Details" caption="Fig 1. Edit Ticket Details" />
 
 
 ## Write update ticket query

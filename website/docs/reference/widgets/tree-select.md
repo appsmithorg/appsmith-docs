@@ -72,10 +72,7 @@ If the retrieved data is not in the desired format, you can use JavaScript to tr
 ```
 This code takes an array of products and creates a nested data structure that groups the products by their type, making it easier to display them in a hierarchical view.
 
-<figure>
-  <img src="/img/tree-js-3.png" style= {{width:"700px", height:"auto"}} alt="Display options dynamically"/>
-  <figcaption align = "center"><i>Transform data using JavaScript</i></figcaption>
-</figure>
+<ZoomImage src="/img/tree-js-3.png" alt="Display options dynamically" caption="Transform data using JavaScript" />
 
 </dd>
 

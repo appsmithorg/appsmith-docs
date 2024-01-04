@@ -5,11 +5,11 @@ This page provides information for connecting Appsmith to OpenAI, which allows y
 
 ## Connect OpenAI
 
- <figure>
-  <img src="/img/open-ai-main2.png" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI datasource.</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/open-ai-main2.png" 
+  alt="OpenAI datasource."
+  caption="OpenAI datasource"
+/>
 
 ### Connection parameters
 
@@ -46,11 +46,11 @@ The following section is a reference guide that provides a description of the av
 
 The Chat command generates human-like text based on input prompts. The following section lists all the available parameters:
 
-  <figure>
-  <img src="/img/open-ai-chat2.png" style= {{width:"720px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI | Chat command</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/open-ai-chat2.png" 
+  alt="OpenAI Chat command."
+  caption="OpenAI - Chat command"
+/>
 
 #### Models
 
@@ -95,14 +95,11 @@ For more information refer to the [OpenAI documentation.](https://platform.opena
 
 </dd>
 
-
-  <figure>
-  <img src="/img/open-ai-chat.gif" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI | Chat command</i></figcaption>
-</figure>
-
-
-
+<ZoomImage
+  src="/img/open-ai-chat.gif" 
+  alt="OpenAI Chat command."
+  caption="OpenAI - Chat command"
+/>
 
 </dd>
 
@@ -111,10 +108,11 @@ For more information refer to the [OpenAI documentation.](https://platform.opena
 
 The Embeddings command creates a vector representation of a given input, making it easier to perform tasks like semantic search or text similarity.
 
-  <figure>
-  <img src="/img/open-ai-embed.png" style= {{width:"720px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI | Embeddings command</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/open-ai-embed.png" 
+  alt="OpenAI Embeddings command."
+  caption="OpenAI - Embeddings command"
+/>
 
 #### Models
 
@@ -153,11 +151,11 @@ While it is technically possible to bind the output of the embeddings API to a w
 
 The Vision command allows the model to take in images and answer questions about them.
 
-  <figure>
-  <img src="/img/OPEN-AI-VISION.png" style= {{width:"720px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI | Vision command</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/OPEN-AI-VISION.png" 
+  alt="OpenAI Vision command."
+  caption="OpenAI - Vision command"
+/>
 
 #### Models
 
@@ -211,8 +209,10 @@ For more information refer to the [OpenAI documentation.](https://platform.opena
 
 </dd>
 
-  <figure>
-  <img src="/img/openai-vision-eg.gif" style= {{width:"810px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>OpenAI | Vision command</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/openai-vision-eg.gif" 
+  alt="OpenAI Vision command."
+  caption="OpenAI - Vision command"
+/>
+
 

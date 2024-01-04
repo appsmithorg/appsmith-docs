@@ -23,12 +23,7 @@ These properties are customizable options present in the property pane of the wi
 
 Allows you to specify the URL of the page or application you want to display within the Iframe. For instance, by adding `https://docs.appsmith.com/` to the **URL** property, you can display the Appsmith docs in your Appsmith application.
 
-
-<figure>
-  <img src="/img/iframe-website.png" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i>Display external website</figcaption>
-</figure>
-
+<ZoomImage src="/img/iframe-website.png" alt="Display external website" caption="Display external website" />
 
 </dd>
 
@@ -95,12 +90,7 @@ In addition to static HTML, you can display data generated dynamically from quer
 </html>
 ```
 
-
-<figure>
-  <img src="/img/iframe-time-pick.png" style= {{width:"700px", height:"auto"}} alt="Display external website"/>
-  <figcaption align = "center"><i></i>Custom Time-picker</figcaption>
-</figure>
-
+<ZoomImage src="/img/iframe-time-pick.png" alt="Custom Time-picker" caption="Custom Time-picker" />
 
 </dd>
 
