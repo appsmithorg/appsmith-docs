@@ -48,7 +48,6 @@ Mastering these data flows allows developers to create applications that can sea
         <div className="containerCol">
            <a href="/reference/widgets"><strong>Reference</strong></a>
         </div><hr/>
-        <div className="containerDescription">Technical information on widgets.
-        </div>
+        <div className="containerDescription">Technical information on widgets.</div>
     </div>
 </div>

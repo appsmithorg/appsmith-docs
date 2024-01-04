@@ -68,7 +68,8 @@ The name of the collection to query.
 Defines conditions that documents' column values must meet to appear in your results. The available comparison operators are `==`, `<`, `<=`, `>=`, `>`, `in`, `contains`, and `contains any`.
 
 </dd>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Add condition:</b> Adds another simple single-line expression.</li>
     <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>AND</code> statements.</li>
@@ -99,7 +100,7 @@ Sets a record that acts as a starting cursor for pagination. Expects an object t
 {{ ListQuery.data[ListQuery.data.length - 1] }}
 ```
 
-Each time the query is run, it fetches the next set of results that come after the previous execution. 
+Each time the query is run, it fetches the next set of results that come after the previous execution.
 
 </dd>
 
@@ -175,7 +176,7 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
   // ...
 }
 ```
-  
+
 </dd>
 
 ### Update Document

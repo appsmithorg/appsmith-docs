@@ -28,7 +28,8 @@ The following section is a reference guide that provides a complete description 
 #### S3 service provider
 
 <dd>Configures the datasource to connect to the specified S3 provider.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li>Amazon S3</li>
     <li>Upcloud</li>
@@ -179,7 +180,8 @@ The name under which to save the file. Be sure to include directories as prefixe
 #### File data type
 
 <dd>Sets the data format to use when sending the file content.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Base64:</b> Sends data from the <b>Content</b> field encoded in Base64 format.</li>
     <li><b>Text:</b> Sends data from the <b>Content</b> field as plain text.</li>
@@ -227,7 +229,8 @@ The prefix that is prepended to each of the new objects' file path as directorie
 #### File data type
 
 <dd>Sets the data format to use when sending the file content.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Base64:</b> Sends data from the <b>Content</b> field encoded in Base64 format.</li>
     <li><b>Text:</b> Sends data from the <b>Content</b> field as plain text.</li>
@@ -276,7 +279,8 @@ The path to the file in your S3 bucket.
 #### Base64 Encode File
 
 <dd>Sets whether Appsmith encodes the incoming file's content into Base64.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Yes:</b> Incoming file data is encoded into Base64 format before it is returned.</li>
     <li><b>No:</b> Incoming file data is returned as sent with no additional encoding.</li>

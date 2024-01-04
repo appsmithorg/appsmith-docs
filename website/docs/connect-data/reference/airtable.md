@@ -19,7 +19,8 @@ The following section is a reference guide that provides a complete description 
 #### Authentication type
 
 <dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>API key:</b> This authentication type has been deprecated by Airtable. For more information, see <a href="https://support.airtable.com/docs/airtable-api-key-deprecation-notice">Airtable Api Key Deprecation Notice</a>.</li>
     <li><b>Personal access token:</b> Connects to Airtable using the provided Airtable Personal Access Token.</li>

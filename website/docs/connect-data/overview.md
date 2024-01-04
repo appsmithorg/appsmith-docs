@@ -26,8 +26,7 @@ Appsmith encrypts all your datasource credentials and stores them securely. Apps
    <div className="containerCol">
       </div>
       <b><a href="/connect-data/reference">Reference</a></b>
-      <div className="containerDescription"> Technical information about datasources and queries.
-      </div>
+      <div className="containerDescription"> Technical information about datasources and queries.</div>
    </div>
 </div>
 
@@ -36,8 +35,7 @@ Appsmith encrypts all your datasource credentials and stores them securely. Apps
     <div className="containerCol">
       </div> 
       <b><a href="/connect-data/concepts">Concepts</a></b>
-      <div className="containerDescription"> Explanation of datasources & queries.
-      </div>
+      <div className="containerDescription"> Explanation of datasources & queries.</div>
    </div>
    <div className="columnGrid column-two" style={{margin: "10px"}}>
    </div>

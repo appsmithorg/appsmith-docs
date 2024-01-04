@@ -32,9 +32,9 @@ Scenarios where prepared statements must be turned off:
 2. Dynamic keywords such as limit or offset
 3. Dynamic where clauses
 4. Dynamic array with IN clause (= ANY syntax will work for Postgres)
-5. Mustache bindings in commented code (--{{Input1.text}} not supported)
+5. Mustache bindings in commented code (`--{{ Input1.text }}` not supported)
 
-In these scenarios, you will have to turn off prepared statements but your queries may be subject to SQL injection. As such it is recommended to create an API instead.
+In these scenarios, you will have to turn off prepared statements, but your queries may be subject to SQL injection. As such it's recommended to create an API instead.
 To toggle this setting:
 
 1. Open your SQL query in Appsmith.

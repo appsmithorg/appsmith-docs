@@ -63,10 +63,12 @@ To implement inline editing of list items using a Select widget, follow these st
 2. Create a new query to update the column value for the triggered row.
 
    Example:
+
    ```sql 
-   UPDATE public."product" SET
-    state = '{{lst_products.triggeredItem.sel_state.selectedOptionValue}}'
-  WHERE id = {{lst_products.triggeredItem.id}}; -- Specify a valid condition here. Removing the condition may update every row in the table!
+      UPDATE public."product" 
+      SET state = '{{lst_products.triggeredItem.sel_state.selectedOptionValue}}'
+         -- Specify a valid condition here. Removing the condition may update every row in the table!
+      WHERE id = {{lst_products.triggeredItem.id}}; 
    ```
 3. Add an action to the **onOptionChange** event of the Select widget to run the update query.
 4. Set the **On success** callback to execute the fetch query for the List widget to reflect the changes.

@@ -49,7 +49,8 @@ For details on building more complex queries, see the [Elasticsearch Document AP
 #### Method
 
 <dd>The HTTP method to use for your query.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>GET:</b> Method used for requesting and fetching data.</li>
     <li><b>POST:</b> Method used for creating or updating records.</li>
