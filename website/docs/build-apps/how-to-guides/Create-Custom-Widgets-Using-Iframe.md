@@ -113,7 +113,7 @@ appsmith.onReady(() => {
  
 <dd>
 
-*Example:* For the image slider, create function that uses the React Carousel component to render images dynamically from Appsmith's data model, with specific styling. 
+*Example:* For the image slider, create a function that uses the React Carousel component to render images dynamically from Appsmith's data model, with specific styling. 
 
 ```js
 function App() {
