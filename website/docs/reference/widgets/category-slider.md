@@ -7,10 +7,7 @@ description: >-
 
 This page describes the properties of the Category Slider, which allows users to make selections from a predetermined set of ascending options. 
 
-<figure>
-  <img src="/img/as_category.png" style= {{width:"700px", height:"auto"}} alt="Category Slider"/>
-  <figcaption align = "center"><i> Category Slider</i></figcaption>
-</figure>
+<ZoomImage src="/img/as_category.png" alt="Category Slider" caption=" Category Slider" />
 
 ## Content properties
 

@@ -20,10 +20,7 @@ This page provides steps for configuring SendGrid as an email service provider o
 4. Click **Choose** button.
 5. On <em>How to send email using the SMTP relay</em> screen:
 
- <figure>
- <img src="/img/email-configuration-sendgrid-api-key.png" style={{width: "100%", height: "auto"}} alt="SendGrid email configuration" />
- <figcaption align="center"><i>Configure SendGrid as your email service provider</i></figcaption>
- </figure>
+ <ZoomImage src="/img/email-configuration-sendgrid-api-key.png" alt="SendGrid email configuration" caption="Configure SendGrid as your email service provider" />
 
 a. Enter a unique name for <b>My First API Key Name</b> field.
 
@@ -53,10 +50,7 @@ Follow these steps to configure SendGrid using Admin Settings:
 
 3. Select **Email** from the left nav bar.
 
- <figure>
- <img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
- <figcaption align="center"><i>Configure SendGrid as your email service provider</i></figcaption>
- </figure>
+ <ZoomImage src="/img/admin-settings-configure-email.png" alt="Email service provider" caption="Configure SendGrid as your email service provider" />
 
 4. Add the configuration details for SendGrid as follows:
 <dl>
@@ -121,16 +115,10 @@ Follow these steps to configure SendGrid using environment variables:
 Follow these steps to verify your SendGrid integration:
 
 1. After triggering a test email, return to the SendGrid screen <em>Integrate using our Web API or SMTP Relay</em>.
-<figure>
-<img src="/img/email-configuration-sendgrid-api-key.png" style={{width: "100%", height: "auto"}} alt="SendGrid email configuration" />
-<figcaption align="center"><i>Configure SendGrid as your email service provider</i></figcaption>
-</figure>
+<ZoomImage src="/img/email-configuration-sendgrid-api-key.png" alt="SendGrid email configuration" caption="Configure SendGrid as your email service provider" />
 
 2. Check **I've updated my settings** checkbox, and click the **Next: Verify Integration** button.
 3. Click the **Verify Integration** button on the next screen and wait for SendGrid to verify the test email.
 4. A screen with the message <em>It worked!</em> is displayed on successful verification.
 
- <figure>
- <img src="/img/email-configuration-sendgrid-integration-success.png" style={{width: "100%", height: "auto"}} alt="SendGrid integration success message" />
- <figcaption align="center"><i>SendGrid integration success message</i></figcaption>
- </figure>
+ <ZoomImage src="/img/email-configuration-sendgrid-integration-success.png" alt="SendGrid integration success message" caption="SendGrid integration success message" />

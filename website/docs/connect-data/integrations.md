@@ -5,7 +5,7 @@ description: Browse resources for integrating Appsmith with various third-party 
 
 # Integrate With Third-Party Tools
 
-This page offers resources to guide you in connecting Appsmith to many third-party tools via API.          
+This page offers resources to guide you in connecting Appsmith to many third-party tools via API.
 
 <div className="containerGrid">
     <div className="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
@@ -13,16 +13,14 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/activecampaign_logo.jpeg" alt="ActiveCampaign-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>ActiveCampaign</strong> offers software for customer experience automation.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users"><strong >View Tutorial </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/apitemplate-logo.png" alt="APITemplate-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>APITemplate.io</strong> allows you to auto-generate images and PDF documents.<br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-a-tool-to-generate-pdf-files-with-apitemplate-and-n8n"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-a-tool-to-generate-pdf-files-with-apitemplate-and-n8n"><strong>View Tutorial</strong> </a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div className="containerCol">
@@ -39,24 +37,21 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/bigquery-logo.png" alt="BigQuery-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>BigQuery</strong> is an enterprise data warehouse with tools for managing and analyzing your data.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/integrate-bigquery">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/integrate-bigquery"><strong >View Tutorial </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/brex-logo_CNZYG94J4.png" alt="Brex-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Brex</strong> offers business credit cards and cash management accounts to tech companies.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.youtube.com/watch?v=3WSLex6f3yM">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.youtube.com/watch?v=3WSLex6f3yM"><strong >View Tutorial </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/cube-logo_S50__hLNq.jpeg" alt="CubeJS-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Cube.js</strong> is headless business intelligence for building data applications. <br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-appsmith-dashboard-with-cube"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-appsmith-dashboard-with-cube"><strong>View Tutorial</strong> </a></div>
     </div>
 </div>
 
@@ -73,16 +68,14 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/HarperDB-Logo_GLE5XlPJ6.png" alt="HarperDB-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>HarperDB</strong> is a distributed database that supports key-value, document store, and traditional SQL.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-inventory-management-tool-using-harperdb">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-inventory-management-tool-using-harperdb"><strong >View Tutorial </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/hasura-logo_T6L3JlHSt.png" alt="Hasura-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Hasura</strong> gives you instant GraphQL &#x26; REST APIs on new &#x26; existing data sources. <br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/e-commerce-order-management-dashboard-with-hasura-and-graphql"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/e-commerce-order-management-dashboard-with-hasura-and-graphql"><strong>View Tutorial</strong> </a></div>
     </div>
 </div>
 
@@ -99,16 +92,14 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/mixpanel-logo_nLTAstL7N.jpeg" alt="Mixpanel-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Mixpanel</strong> is a leading product analytics software company.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users"><strong >View Tutorial </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/n8n-logo_8BFnDWE3s.png" alt="n8n-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>n8n</strong> is a free and source-available workflow automation tool. <br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-employee-survey-dashboard-with-supabase-and-n8n"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-an-employee-survey-dashboard-with-supabase-and-n8n"><strong>View Tutorial</strong> </a></div>
     </div>
 </div>
 
@@ -118,8 +109,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/neon.png" alt="neon-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Neon</strong> is a serverless postgres built specifically for the cloud. <br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://community.appsmith.com/tutorial/build-powerful-and-scalable-tools-appsmith-and-neon"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://community.appsmith.com/tutorial/build-powerful-and-scalable-tools-appsmith-and-neon"><strong>View Tutorial</strong> </a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div className="containerCol">
@@ -133,8 +123,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/replyto-logo_6yaZHFIeU.jpeg" alt="Replyio-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Reply.io</strong> is a sales engagement platform that automates multichannel outreach.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/connecting-mixpanel-reply-io-and-activecampaign-using-appsmith-to-engage-with-your-users"><strong >View Tutorial </strong></a></div>
     </div>
 </div>
 
@@ -168,16 +157,14 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/Slack-logo.png" alt="Slack-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Slack</strong> is a messaging program designed specifically for the workplace.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-a-daily-standup-application-in-30-minutes">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/building-a-daily-standup-application-in-30-minutes"><strong >View Tutorial </strong></a></div>
     </div>
      <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div className="containerCol">
             <img className="containerImage" src="/img/supabase-logo_JCWmwonfL.png" alt="Supabase-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Supabase</strong> is an open source Firebase alternative. <br/><br/> </div>
-         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong> </a>
-         </div>
+         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-three">
         <div className="containerCol">
@@ -193,12 +180,10 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/zapier-logo_odZ9wZQ3vY.jpeg" alt="Zapier-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Zapier</strong> allows end users to integrate the web applications they use and automate workflows.<br/><br/>  </div>
-        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/want-to-automate-your-apps-use-zapier-to-connect-specialized-platforms">
-        <strong >View Tutorial </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/want-to-automate-your-apps-use-zapier-to-connect-specialized-platforms"><strong >View Tutorial </strong></a></div>
 </div>
 <div className="columnGrid column-two">
 </div>
 <div className="columnGrid column-three">
 </div>
 </div>
-

@@ -17,15 +17,13 @@ You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Redshift database.
 
-<figure>
-  <img src="/img/redshift-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redshift datasource." />
-  <figcaption align="center"><i>Configuring a Redshift datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redshift-datasource-config.png" alt="Configuring a Redshift datasource." caption="Configuring a Redshift datasource." />
 
 #### Connection Mode
 
 <dd>Determines which permissions your app has when querying the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.</li>
     <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.</li>
@@ -60,10 +58,7 @@ The following section provides examples of creating basic CRUD queries for Redsh
 For Redshift SQL syntax, see the official [**Redshift SQL Reference**](https://docs.aws.amazon.com/redshift/latest/dg/cm_chap_SQLCommandRef.html).
 :::
 
-<figure>
-  <img src="/img/redshift-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redshift query." />
-  <figcaption align="center"><i>Configuring a Redshift query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redshift-query-config.png" alt="Configuring a Redshift query." caption="Configuring a Redshift query." />
 
 ### Fetch data
 

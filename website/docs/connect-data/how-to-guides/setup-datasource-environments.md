@@ -28,16 +28,15 @@ tags={[
 
 This page shows how to set up and manage multiple datasource environments for your application. For more details see [datasource environments](/connect-data/concepts/Datasource-Environments).
 
-
-
 ## Configure an environment
 
 This section shows how to configure the environments in Appsmith. 
 
-<figure>
-  <img src="/img/multi-env-3.gif" style= {{width:"850px", height:"auto"}} alt="Datasource Environments"/>
-  <figcaption align = "center"><i>Datasource Environments | Postgres Example</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/multi-env-3.gif" 
+  alt="Datasource Environments"
+  caption="Datasource Environments - PostgreSQL Example"
+/>
 
 1. Click the **Explorer** tab on the _Entity Explorer_ to the screen's left.
 
@@ -55,12 +54,11 @@ SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not su
 
 ## Switch environments
 
-
-<figure>
-  <img src="/img/switch-img-.png" style= {{width:"600px", height:"420px"}} alt="Switch environments"/>
-  <figcaption align = "center"><i>Switch environments</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/switch-img-.png" 
+  alt="Switch Environments"
+  caption="Switch Environments"
+/>
 
 Select the environment on the bottom left corner of the screen to configure the application to execute queries in the Staging or Production environments. Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the Production environment is always used for the deployed version.
 

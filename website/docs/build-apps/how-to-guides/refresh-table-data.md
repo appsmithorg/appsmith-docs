@@ -7,12 +7,11 @@ This page shows you how to refresh table data after updates which allows you to 
 
 When data is updated in a datasource, the Table widget does not automatically reflect the changes. You need to manually refresh the Table using events or JS code to see the updated data.
 
-
- <figure>
-  <img src="/img/refresh-after-update.gif" style= {{width:"810px", height:"auto"}} alt="Refresh Table Data After Updates"/>
-  <figcaption align = "center"><i>Refresh Table Data After Updates</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/refresh-after-update.gif" 
+  alt="Refresh Table Data After Updates"
+  caption="Refresh Table Data After Updates"
+/>
 
 *Example:* if you have a Table that receives its data from a query called `getData`, and you have a Button that submits a Form with new user input through a query called `updateData`.
 

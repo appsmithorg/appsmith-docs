@@ -2,10 +2,7 @@
 
 This page provides information on using the Menu Button, which allows you to create customizable dropdown menus with a range of options for user selection.
 
-<figure>
-  <img src="/img/menu-btn.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display Menu Button</i></figcaption>
-</figure>
+<ZoomImage src="/img/menu-btn.png" alt="Display images on table row selection" caption="Display Menu Button" />
 
 
 ## Content properties

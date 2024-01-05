@@ -7,10 +7,7 @@ description: >-
 
 This page describes the properties of the camera widget, which is used for capturing images and videos.
 
-<figure>
-  <img src="/img/cam-image.png" style= {{width:"700px", height:"auto"}} alt="Camera widget"/>
-  <figcaption align = "center"><i>Using the Camera widget</i></figcaption>
-</figure>
+<ZoomImage src="/img/cam-image.png" alt="Camera widget" caption="Using the Camera widget" />
 
 ## Content properties
 

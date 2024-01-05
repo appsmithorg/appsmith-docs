@@ -10,10 +10,7 @@ This page provides information for connecting the SMTP datasource and for sendin
 
 The following section is a reference guide that provides a complete description of all the parameters to connect SMTP.
 
-<figure>
-  <img src="/img/smtp-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP datasource"/>
-  <figcaption align = "center"><i>Configuring an SMTP datasource</i></figcaption>
-</figure>
+<ZoomImage src="/img/smtp-datasource-config.png" alt="Configuring an SMTP datasource" caption="Configuring an SMTP datasource" />
 
 #### Host Address
 
@@ -55,10 +52,7 @@ Some SMTP providers use a multi-factor authentication flow and may require you t
 
 The following section is a reference guide that provides a complete description of all the parameters for sending emails.
 
-<figure>
-  <img src="/img/smtp_query_config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an SMTP query"/>
-  <figcaption align = "center"><i>Configuring an SMTP query</i></figcaption>
-</figure>
+<ZoomImage src="/img/smtp_query_config.png" alt="Configuring an SMTP query" caption="Configuring an SMTP query" />
 
 ## Send email
 

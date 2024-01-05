@@ -12,10 +12,7 @@ Use this datasource to create multiple queries for the same API. Every query cre
 
 The following section is a reference guide that provides a complete description of all the parameters available for REST APIs.
 
-<figure>
-   <img src="/img/restapi-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring an Authenticated API datasource."/>
-   <figcaption align = "center"><i>Configuring an Authenticated API datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/restapi-datasource-config.png" alt="Configuring an Authenticated API datasource." caption="Configuring an Authenticated API datasource." />
 
 :::note
 The datasource configuration fields do not accept JavaScript code or mustache syntax.
@@ -56,7 +53,8 @@ When enabled, you can enter a secret string of at least 32 characters in the <b>
 #### Authentication Type
 
 <dd>Sets the method used to authenticate requests. Configure details under the <b>Authentication</b> dropdown after selecting your Authentication Type.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>None:</b> Does not send any authentication information.</li>
     <li><b>Basic:</b> Expects a <b>Username</b> and <b>Password</b>, which are sent in each request as a base64-encoded string in the request's Authorization header.</li>

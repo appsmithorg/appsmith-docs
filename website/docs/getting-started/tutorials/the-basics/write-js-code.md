@@ -6,7 +6,7 @@ description:  Now Code It
 
 # Lesson 3 - Now Code It
 
-This tutorial take you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single line coding. If you want to write more complex code, you have to use JS Objects.
+This tutorial takes you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single-line coding. If you want to write more complex code, you have to use JS Objects.
 
 ## Write JS functions
 
@@ -70,12 +70,12 @@ Appsmith provides global objects and functions within its framework to help buil
 2. Create a new blank page by clicking on the **+** next to **Pages** on the Entity Explorer to the left of the screen. Rename the page to `Account Details`.  
 
 
-3. Let's display the name of the currently logged in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
+3. Let's display the name of the currently logged-in user. Drop a Text widget at the top of this page. You will see your name or email id by default. Take a look at the **Text** property on the right. It contains the following code snippet.
 
   ```javascript
   Hello {{appsmith.user.name || appsmith.user.email}}
   ```
-  Here you are using the `appsmith` global object to extract information about the currently logged in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
+  Here you are using the `appsmith` global object to extract information about the currently logged-in user and append it to the text `Hello`. For more information, refer to [appsmith](/reference/appsmith-framework/context-object) global object.
 
 ### Navigate to another page  
 

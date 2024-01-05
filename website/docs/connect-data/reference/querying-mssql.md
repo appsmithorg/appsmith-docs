@@ -19,15 +19,13 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a MS SQL database.
 
-<figure>
-  <img src="/img/mssql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL datasource." />
-  <figcaption align="center"><i>Configuring an MS SQL datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-datasource-config.png" alt="Configuring an MS SQL datasource." caption="Configuring an MS SQL datasource." />
 
 #### Connection mode
 
 <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
     <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
@@ -57,7 +55,8 @@ The following section is a reference guide that provides a complete description 
 #### SSL mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
     <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
@@ -68,10 +67,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries for MS SQL.
 
-<figure>
-  <img src="/img/mssql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL query." />
-  <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-query-config.png" alt="Configuring an MS SQL query." caption="Configuring an MS SQL query." />
 
 :::info
 You can query MS SQL databases using T-SQL syntax. Refer to Microsoft's documentation to learn how to [Write Transact-SQL statements](https://learn.microsoft.com/en-us/sql/t-sql/queries/queries?view=sql-server-ver16).

@@ -17,15 +17,13 @@ If you are a self-hosted user, you must configure the `pg_hba.conf` file to whit
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a PostgreSQL database.
 
-<figure>
-  <img src="/img/postgres-img.png" style= {{width:"100%", height:"auto"}} alt="Connect PostgreSQL Database"/>
-  <figcaption align = "center"><i>Connect PostgreSQL Database</i></figcaption>
-</figure>
+<ZoomImage src="/img/postgres-img.png" alt="Connect PostgreSQL Database" caption="Connect PostgreSQL Database" />
 
 #### Connection Mode
 
 <dd> Specifies the mode in which the Appsmith application can interact with the database. </dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> This mode permits read-only transactions by default.</li>
     <li><b>Read/Write:</b> This mode permits both read-write transactions by default.</li>
@@ -55,7 +53,8 @@ The following section is a reference guide that provides a complete description 
 #### SSL Mode
 
 <dd>Determines with what priority a secure SSL TCP/IP connection is negotiated with the server.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Default:</b> The default SSL Mode is <b>Prefer</b>.</li>
     <li><b>Allow:</b> First try a non-SSL connection; if that fails, try an SSL connection. The client can connect with or without SSL.</li>
@@ -70,10 +69,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries on PostgreSQL.
 
-<figure>
-  <img src="/img/query-postgresql.png" style= {{width:"100%", height:"auto"}} alt="Write SQL commands in the query editor"/>
-  <figcaption align = "center"><i>Write SQL commands in the query editor</i></figcaption>
-</figure>
+<ZoomImage src="/img/query-postgresql.png" alt="Write SQL commands in the query editor" caption="Write SQL commands in the query editor" />
 
 :::info
 For the SQL syntax, see the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html).

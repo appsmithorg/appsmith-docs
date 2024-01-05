@@ -19,16 +19,17 @@ You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an S3 bucket.
 
-<figure>
-  <img src="/img/s3-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an S3 datasource." />
-  <figcaption align="center"><i>Configuring an S3 datasource.</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/s3-datasource-config.png" 
+  alt="Configure an S3 datasource."
+  caption="Configure an S3 datasource"
+/>
 
 #### S3 service provider
 
 <dd>Configures the datasource to connect to the specified S3 provider.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li>Amazon S3</li>
     <li>Upcloud</li>
@@ -70,10 +71,11 @@ If the configuration is correct but the credentials do not have the required per
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create S3 queries.
 
-<figure>
-  <img src="/img/s3-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Files query." />
-  <figcaption align="center"><i>Configuring an S3 query.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/s3-query-config.png" 
+  alt="Configure a List Files query."
+  caption="Configure a List Files query"
+/>
 
 ### List files in bucket
 
@@ -179,7 +181,8 @@ The name under which to save the file. Be sure to include directories as prefixe
 #### File data type
 
 <dd>Sets the data format to use when sending the file content.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Base64:</b> Sends data from the <b>Content</b> field encoded in Base64 format.</li>
     <li><b>Text:</b> Sends data from the <b>Content</b> field as plain text.</li>
@@ -227,7 +230,8 @@ The prefix that is prepended to each of the new objects' file path as directorie
 #### File data type
 
 <dd>Sets the data format to use when sending the file content.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Base64:</b> Sends data from the <b>Content</b> field encoded in Base64 format.</li>
     <li><b>Text:</b> Sends data from the <b>Content</b> field as plain text.</li>
@@ -276,7 +280,8 @@ The path to the file in your S3 bucket.
 #### Base64 Encode File
 
 <dd>Sets whether Appsmith encodes the incoming file's content into Base64.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Yes:</b> Incoming file data is encoded into Base64 format before it is returned.</li>
     <li><b>No:</b> Incoming file data is returned as sent with no additional encoding.</li>

@@ -38,10 +38,7 @@ Follow these steps to configure your email provider using Admin Settings:
 
 3. Select **Email** from the left nav bar.
 
-<figure>
-<img src="/img/admin-settings-configure-email.png" style={{width: "100%", height: "auto"}} alt="Email service provider" />
-<figcaption align="center"><i>Configure your email service provider</i></figcaption>
-</figure>
+<ZoomImage src="/img/admin-settings-configure-email.png" alt="Email service provider" caption="Configure your email service provider" />
 
 4. Add the configuration details for your email provider as below: 
 
@@ -51,8 +48,7 @@ Follow these steps to configure your email provider using Admin Settings:
     <dt><b>SMTP port</b></dt>
     <dd> Add the SMTP port of your email service provider. </dd><br/>
     <dt><b>From address</b></dt>
-    <dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.
-    </dd> <br/>
+    <dd>Add a verified email address to be shown in the <b>From</b> field when users receive an email.</dd> <br/>
     <dt><b>Reply-to address</b></dt>
     <dd>Add a verified email address, so users can contact you.</dd> <br/>
     <dt><b>Enable TLS protected connection</b></dt>
@@ -79,8 +75,7 @@ Follow these steps to configure your email provider using environment variables:
     <dt><b>APPSMITH_MAIL_ENABLED</b></dt>
     <dd>Set it to <code> true </code> to enable the email service.</dd> <br/>
     <dt><b>APPSMITH_MAIL_FROM</b></dt>
-    <dd>Set it to the verified email of the sender.
-    </dd><br/>
+    <dd>Set it to the verified email of the sender.</dd><br/>
     <dt><b>APPSMITH_REPLY_TO</b></dt>
     <dd>Set it to the email that should receive replies by default.</dd><br/>
     <dt><b>APPSMITH_MAIL_HOST</b></dt>

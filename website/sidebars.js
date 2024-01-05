@@ -69,8 +69,9 @@ const sidebars = {
                   items: [
                     'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
                     'getting-started/setup/installation-guides/aws-ecs-on-fargate',
-                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                     'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
+                    'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                   ],
                 },
                 'getting-started/setup/installation-guides/azure-aci',
@@ -272,6 +273,7 @@ const sidebars = {
                 'connect-data/reference/anthropic',
                 'connect-data/reference/querying-arango-db',
                 'connect-data/reference/authenticated-api',
+                'connect-data/reference/aws-lambda',
                 'connect-data/reference/curl-import',
                 'connect-data/reference/querying-dynamodb',
                 'connect-data/reference/querying-elasticsearch',
@@ -345,7 +347,8 @@ const sidebars = {
               items: [
                 `build-apps/how-to-guides/display-search-and-filter-table-data`,
                 'build-apps/how-to-guides/create-drill-down-view',
-                'build-apps/how-to-guides/Server-side-pagination-in-table'
+                'build-apps/how-to-guides/Server-side-pagination-in-table',
+                'build-apps/how-to-guides/search-and-filter-table-data'
               ],
             },
             {
@@ -353,9 +356,7 @@ const sidebars = {
               label: 'Display and Filter Data in List',
               items: [
                 'build-apps/how-to-guides/display-search-and-filter-list-data',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-                'build-apps/how-to-guides/Create-Nested-Lists'
-
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
               ],
             },
             {
@@ -368,10 +369,11 @@ const sidebars = {
             },
             {
               type: 'category',
-              label: 'Update Data',
+              label: 'Update or Delete Data',
               link: { type: 'doc', id: 'build-apps/how-to-guides/submit-form-data' },
               items: [
-                'reference/widgets/table/inline-editing'
+                'reference/widgets/table/inline-editing',
+                'build-apps/how-to-guides/update-list-data'
               ],
             },
             {
@@ -380,7 +382,6 @@ const sidebars = {
               items: [
                 `build-apps/how-to-guides/Display-and-filter-chart-data`,
                 `build-apps/how-to-guides/create-custom-charts`
-
               ],
             },
             {
@@ -392,18 +393,20 @@ const sidebars = {
 
               ],
             },
-      
-              'connect-data/how-to-guides/how-to-download-files-using-api',
-              'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
-              `build-apps/how-to-guides/display-select-options-dynamically`,
+
+            'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/workflows`,
-            'advanced-concepts/custom-authentication',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            `build-apps/how-to-guides/display-select-options-dynamically`,
+            `build-apps/how-to-guides/navigate-between-pages`,
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
-            `build-apps/how-to-guides/browse-and-display-documents`,
+            'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
-            `build-apps/how-to-guides/navigate-between-pages`
+            `build-apps/how-to-guides/set-up-websockets`,
+             `build-apps/how-to-guides/setup-polling`,
+            `build-apps/how-to-guides/browse-and-display-documents`,
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
           ]
         },
         {
@@ -491,6 +494,7 @@ const sidebars = {
                 'reference/widgets/video',
               ],
             },
+
             'core-concepts/building-ui/designing-an-application/app-theming',
             'learning-and-resources/sample-apps'
           ],
@@ -556,12 +560,10 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/post-message',
               'reference/appsmith-framework/widget-actions/window-message-listener',
               'reference/appsmith-framework/widget-actions/unlisten-window-message'
-
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
-            'write-code/reference/Fetch-API',
-
+            'write-code/reference/Fetch-API'
           ],
         }, //Reference End
         {
@@ -576,7 +578,8 @@ const sidebars = {
             'core-concepts/writing-code/javascript-editor-beta/README',
             'write-code/concepts/execute-onpageload',
           ],
-        }
+        },
+          `write-code/best-practices`,
       ]
     }, //CODE end
 

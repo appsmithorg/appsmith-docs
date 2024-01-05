@@ -24,7 +24,7 @@ There is an event listener associated with every widget that can be configured t
 
 <dd>
 
-Additionally, you can enable *JS* next to events and add your code, like:
+You can only execute two levels of **onSuccess** callbacks from the UI. To add additional callbacks, enable JS and and add your code, like: 
 
 *Example:* 
 
@@ -35,6 +35,7 @@ Additionally, you can enable *JS* next to events and add your code, like:
 });}}
 ```
 </dd>
+
 
 Learn more about [Global Functions](/reference/appsmith-framework/widget-actions).
 

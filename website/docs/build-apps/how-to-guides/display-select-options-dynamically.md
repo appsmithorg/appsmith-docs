@@ -2,7 +2,7 @@
 description: This page shows you how to display select options dynamically.
 ---
 
-# Display and Filter Dropdown Options
+# Display and Filter Select Options
 This page shows you how to display and filter dropdown options dynamically in the Select widget.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -46,10 +46,12 @@ To create cascading dropdowns, repeat these steps for each level of dependent Se
 You can also use API responses as the source data for dynamic options, allowing for live updates from external systems. To do this, configure the **onOptionChange** or **onOptionSelected** action for the Select widget to trigger other widgets' updates by making a second API call to fetch related data.
 
 ## Set up server-side filter on select
-<figure>
-  <img src="/img/select-filter.gif" style= {{width:"700px", height:"auto"}} alt="Server-side Filtering on Select"/>
-  <figcaption align = "center"><i>Server-side Filtering on Select</i></figcaption>
-</figure>
+
+<ZoomImage
+  src="/img/select-filter.gif" 
+  alt="Server-side Filtering on Select"
+  caption="Server-side Filtering on Select"
+/> 
 
 If you use the one-click binding feature to connect data, Appsmith automatically generates server-side filtering query for you. To manually configure the server-side setup, follow these steps:
 1. Enable the [Server-side filtering](/reference/widgets/select#server-side-filtering-boolean) property of the Select widget. 

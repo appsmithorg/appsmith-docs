@@ -45,7 +45,7 @@ This tutorial takes you through the process of connecting a datasource and query
 
 2. Rename the query from **Query1** to `getUsers`. You may have to click the pencil icon if it is not already selected.
 
-3. For this tutorial, modify the query as shown below to fetch the records in the ascdending order of the `id` field.
+3. For this tutorial, modify the query as shown below to fetch the records in the ascending order of the `id` field.
 
   ```sql
   SELECT * FROM public."users" ORDER BY id LIMIT 10;

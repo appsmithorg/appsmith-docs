@@ -110,10 +110,7 @@ Reference properties are specific to the menu configuration pane and are not ava
 The `currentItem` property refers to the currently selected item on the menu button. It allows you to access and read the attributes of the selected menu item. 
 
 
-<figure>
-  <img src="/img/MenuButton-Dynamic-Menu-Label-CurrentItem.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display menu items using currentItem</i></figcaption>
-</figure>
+<ZoomImage src="/img/MenuButton-Dynamic-Menu-Label-CurrentItem.png" alt="Display images on table row selection" caption="Display menu items using currentItem" />
 
 *Example:*
 
@@ -130,10 +127,7 @@ If you want to dynamically display the label based on the selected item's name, 
 
 The `currentIndex` property is useful when you want to display a numbered list of menu items or apply alternate background colors to the menu items. You can use the `currentIndex` value to determine the index position of the currently selected menu item or to perform conditional styling based on the index value.
 
-<figure>
-  <img src="/img/MenuButton-dynamic-Menu-Label-NumberedList-CurrentIndex.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display menu items using currentIndex</i></figcaption>
-</figure>
+<ZoomImage src="/img/MenuButton-dynamic-Menu-Label-NumberedList-CurrentIndex.png" alt="Display images on table row selection" caption="Display menu items using currentIndex" />
 
 
 *Example:*

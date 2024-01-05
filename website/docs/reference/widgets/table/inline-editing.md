@@ -12,8 +12,6 @@ A Table widget connected to a query that holds the data you want to edit and upd
 
 ## Update single row
 
-
-
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/S8kwcnl9DTtJXbwCxqeB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
@@ -88,55 +86,21 @@ WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 
 You can refer to the [datasource](https://docs.appsmith.com/connect-data/reference) for specific instructions on setting up an update query for your selected datasource.
 
-
 </dd>
 
 4. Turn off prepared statements in the query editor for this configuration to facilitate dynamic SQL construction and maintain compatibility with the provided example. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 
 5. Drop a Button widget, and set its **onClick** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
 
+## Delete row
 
+To delete the data from a Table row, follow these steps:
+1. Add a new column to the Table widget and set its **Column Type** to **Button**.
+2. Add a query to delete the selected Table row based on the [triggeredRow](/reference/widgets/table#triggeredrow-object) property.
 
-## Add new rows
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/dEZaROvMJIEhkPBmNe82?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-To dynamically add new rows to the table, follow these steps:
-
-1. Enable the **Editable** property for all the required columns.
-
-
-2. Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
-
-
-3. Create a new INSERT query, using the `newRow` reference property to retrieve values from the newly created row:
-
-<dd>
-
-_Example_: If you want users to add data for new users, you can use:
-
-```sql
-INSERT INTO users 
-(id, phone, name, gender, latitude, longitude, dob, email, image, country) 
-VALUES 
-(
-   {{ Table1.newRow.id }}, 
-   {{ Table1.newRow.phone }}, 
-   {{ Table1.newRow.name }}, 
-   {{ Table1.newRow.gender }}, 
-   {{ Table1.newRow.latitude }}, 
-   {{ Table1.newRow.longitude }}, 
-   {{ Table1.newRow.dob }}, 
-   {{ Table1.newRow.email }}, 
-   {{ Table1.newRow.image }}, 
-   {{ Table1.newRow.country }}
-);
-```
-
-
-</dd>
-
-4. Set the Table widget's **onSave** event to run the query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
+   Example:
+   ```sql
+   DELETE FROM product 
+   WHERE id = {{tbl_products.triggeredRow.id}}; 
+   ```
+3. Add Execute query action to the **onClick** event of the Button you added in Step 1 to run delete query.

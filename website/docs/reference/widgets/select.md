@@ -420,7 +420,7 @@ Select1.setDisabled(false)
 
 </dd>
 
-#### setOptions (param: array<object\>): Promise
+#### setOptions (param: array< object >): Promise
 
 <dd>
 

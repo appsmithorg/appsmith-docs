@@ -17,10 +17,7 @@ If you are a self-hosted user, you must whitelist the IP address of the Appsmith
 
 The following is a reference guide that provides a description of the parameters for connecting to Elasticsearch.
 
-<figure>
-  <img src="/img/elasticsearch-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Connect to Elasticsearch"/>
-  <figcaption align = "center"><i>Connect to Elasticsearch</i></figcaption>
-</figure>
+<ZoomImage src="/img/elasticsearch-datasource-config.png" alt="Connect to Elasticsearch" caption="Connect to Elasticsearch" />
 
 #### Host URL
 
@@ -49,7 +46,8 @@ For details on building more complex queries, see the [Elasticsearch Document AP
 #### Method
 
 <dd>The HTTP method to use for your query.</dd><br />
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>GET:</b> Method used for requesting and fetching data.</li>
     <li><b>POST:</b> Method used for creating or updating records.</li>

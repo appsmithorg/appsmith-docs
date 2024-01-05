@@ -11,10 +11,7 @@ This page provides information for connecting your application to your Firestore
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Firestore database.
 
-<figure>
-  <img src="/img/firestore-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore datasource." />
-  <figcaption align="center"><i>Configuring a Firestore datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/firestore-datasource-config.png" alt="Configuring a Firestore datasource." caption="Configuring a Firestore datasource." />
 
 #### Database URL
 
@@ -44,10 +41,7 @@ A string of credentials generated on Firebase that is used to authenticate your 
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Firestore queries.
 
-<figure>
-  <img src="/img/firestore-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Firestore query." />
-  <figcaption align="center"><i>Configuring a Firestore query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/firestore-query-config.png" alt="Configuring a Firestore query." caption="Configuring a Firestore query." />
 
 ### List Documents
 
@@ -68,17 +62,15 @@ The name of the collection to query.
 Defines conditions that documents' column values must meet to appear in your results. The available comparison operators are `==`, `<`, `<=`, `>=`, `>`, `in`, `contains`, and `contains any`.
 
 </dd>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
     <li><b>Add condition:</b> Adds another simple single-line expression.</li>
     <li><b>Add group condition:</b> Adds a nested expression with multiple levels of <code>AND</code> statements.</li>
   </ul>
 </dd>
 <dd>
-  <figure>
-    <img src="/img/firestore-where-conditions.png" style={{width: "100%", height: "auto"}} alt="Use Where conditions to create multiple levels of filtering." />
-    <figcaption align="center"><i>Use Where conditions to create multiple levels of filtering.</i></figcaption>
-  </figure>
+  <ZoomImage src="/img/firestore-where-conditions.png" alt="Use Where conditions to create multiple levels of filtering." caption="Use Where conditions to create multiple levels of filtering." />
 </dd>
 
 #### Order by
@@ -99,7 +91,7 @@ Sets a record that acts as a starting cursor for pagination. Expects an object t
 {{ ListQuery.data[ListQuery.data.length - 1] }}
 ```
 
-Each time the query is run, it fetches the next set of results that come after the previous execution. 
+Each time the query is run, it fetches the next set of results that come after the previous execution.
 
 </dd>
 
@@ -175,7 +167,7 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
   // ...
 }
 ```
-  
+
 </dd>
 
 ### Update Document

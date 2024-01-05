@@ -6,11 +6,11 @@ This page provides information for connecting Appsmith to Anthropic, which allow
 
 ## Connect Anthropic
 
- <figure>
-  <img src="/img/connect-anthropic.png" style= {{width:"810px", height:"auto"}} alt="Anthropic"/>
-  <figcaption align = "center"><i>Anthropic datasource.</i></figcaption>
-</figure>
-
+<ZoomImage
+  src="/img/connect-anthropic.png" 
+  alt="Anthropic Datasource"
+  caption="Anthropic datasource"
+/>
 
 ### Connection parameters
 
@@ -33,10 +33,11 @@ The following section is a reference guide that provides a description of the av
 
 The Chat command generates human-like text based on input prompts. The following section lists all the available parameters:
 
-  <figure>
-  <img src="/img/anthropic-chat.png" style= {{width:"720px", height:"auto"}} alt="Server-side Filtering on Table"/>
-  <figcaption align = "center"><i>Anthropic | Chat command</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/anthropic-chat.png" 
+  alt="Anthropic Datasource - chat"
+  caption="Anthropic - Chat command"
+/>
 
 #### Models
 

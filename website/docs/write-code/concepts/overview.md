@@ -13,8 +13,7 @@ Let's get started on your journey to creating dynamic and responsive application
 <div className="containerGridSampleApp">
   <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
-            <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>JSObjects</strong>
-            </a>
+            <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>JSObjects</strong></a>
         </div> <hr/>
         <div className="containerDescription">JSObjects enable better organization of functions & variables</div>
     </div>

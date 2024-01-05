@@ -12,10 +12,7 @@ Use this datasource to create a single query for an API that doesn't need comple
 
 The following section is a reference guide that provides a description of the parameters to create REST API queries.
 
-<figure>
-  <img src="/img/restapi-query-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a REST API query."/>
-  <figcaption align = "center"><i>Configuring a REST API query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/restapi-query-config.png" alt="Configuring a REST API query." caption="Configuring a REST API query." />
 
 #### Method
 
@@ -36,40 +33,47 @@ The following section is a reference guide that provides a description of the pa
 
 #### Body
 
-<dd>Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
+<dd>
+Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
 </dd>
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>None:</b> Omits a body from the request.</li>
     <li><b>JSON:</b> Expects a JSON object to send as the body.</li>
   </ul>
+<dd>
+  <pre>
+    {` 
+      {
+        "q": {{ UsersTable.searchText }},
+        "limit": {{ UsersTable.pageSize }},
+        "offset": {{ UsersTable.pageOffset }}
+      }
+    `}
+  </pre>
+  In the example above, values are collected from a Table widget and passed into a JSON object.
+</dd>
+  <ul>
+    <li><b>FORM_URLENCODED:</b> Expects key/value pairs to be encoded into FORM_URLENCODED format as the body.</li>
+  </ul>
 
-<dd><pre>{` 
-{
-  "q": {{ UsersTable.searchText }},
-  "limit": {{ UsersTable.pageSize }},
-  "offset": {{ UsersTable.pageOffset }}
-}
-`}</pre>
-In the example above, values are collected from a Table widget and passed into a JSON object.</dd>
-    <ul>
-      <li><b>FORM_URLENCODED:</b> Expects key/value pairs to be encoded into FORM_URLENCODED format as the body.</li>
-    </ul>
 <dd>
 
-| Key    | Value                         |
-| ------ | ----------------------------- |
-| query  | `{{ UsersTable.searchText }}` |
-| limit  | `{{ UsersTable.pageSize }}`   |
-| offset | `{{ UsersTable.pageOffset }}` |
+  | Key    | Value                         |
+  | ------ | ----------------------------- |
+  | query  | `{{ UsersTable.searchText }}` |
+  | limit  | `{{ UsersTable.pageSize }}`   |
+  | offset | `{{ UsersTable.pageOffset }}` |
 
-<pre>{`// result
-"query=arjun&limit=10&offset=20"
-`}</pre>
-<p>Selecting <b>FORM_URLENCODED</b> (for <code>application/x-www-form-urlencoded</code>) automatically encodes your key/value pairs for sending in the request body.</p></dd>
-    <ul>
-      <li><b>MULTIPART_FORM_DATA:</b> Expects key/value pairs with a data type to be encoded into MULTIPART_FORM_DATA format as the body. Multipart requests can include several different types of data within them, such as a file along with some other related metadata.</li>
-    </ul>
+  <pre>{`// result
+  "query=arjun&limit=10&offset=20"
+  `}</pre>
+  <p>Selecting <b>FORM_URLENCODED</b> (for <code>application/x-www-form-urlencoded</code>) automatically encodes your key/value pairs for sending in the request body.</p>
+</dd>
+<ul>
+  <li><b>MULTIPART_FORM_DATA:</b> Expects key/value pairs with a data type to be encoded into MULTIPART_FORM_DATA format as the body. Multipart requests can include several different types of data within them, such as a file along with some other related metadata.</li>
+</ul>
 <dd>
 
 | Key      | Type | Value                       |
@@ -105,7 +109,8 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 
 #### Pagination
 
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>None:</b> Doesn't use any pagination.</li>
     <li><b>Paginate with Table Page No:</b> Use when your API expects an offset or increment value to determine which set of records to return. Follow the instructions that appear on the platform, or see <a href="/build-apps/how-to-guides/Server-side-pagination-in-table">Offset-based pagination</a> for more information.</li>

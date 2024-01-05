@@ -13,15 +13,13 @@ This page provides information for connecting Appsmith to HubSpot and for readin
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a HubSpot database.
 
-<figure>
-   <img src="/img/hubspot-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
-   <figcaption align = "center"><i>Configuring a HubSpot datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/hubspot-datasource-config.png" alt="Configuring a HubSpot datasource." caption="Configuring a HubSpot datasource." />
 
 
 #### Authentication Type
 
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
   <li><b>Bearer Token:</b> An access token that authenticates your queries to HubSpot. For more information on finding your access token, follow HubSpot's <a href="https://developers.hubspot.com/docs/api/private-apps">Private App integration guide</a>.</li>
   </ul>
@@ -33,10 +31,11 @@ The following section is a reference guide that provides a complete description 
 
 The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
-<figure>
-  <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
-  <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/hubspot-query-config.png" 
+  alt="Create a HubSpot query."
+  caption="Create a HubSpot query."
+/>
 
 ### HubDB
 
@@ -48,8 +47,7 @@ The **HubDB - get published tables** command fetches information for the HubDB t
 
 ##### Sort
 
-<dd>The name of a field by which to sort the fetched tables, such as <code>name</code> or creation time (<code>createdAt</code>). Requires a single field.
-</dd>
+<dd>The name of a field by which to sort the fetched tables, such as <code>name</code> or creation time (<code>createdAt</code>). Requires a single field.</dd>
 
 ##### Next Page Token
 
@@ -58,43 +56,35 @@ The **HubDB - get published tables** command fetches information for the HubDB t
 
 ##### Limit
 
-<dd>The maxiumum number of items that can be returned in a single query response.
-</dd>
+<dd>The maxiumum number of items that can be returned in a single query response.</dd>
 
 ##### Created at
 
-<dd>Returns only records that were created at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were created at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Created after
 
-<dd>Returns only records that were created after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were created after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Created before
 
-<dd>Returns only records that were created before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were created before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Updated at
 
-<dd>Returns only records that were updated at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were updated at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Updated after
 
-<dd>Returns only records that were updated after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were updated after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Updated before
 
-<dd>Returns only records that were updated before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-</dd>
+<dd>Returns only records that were updated before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
 ##### Archive
 
-<dd>A boolean value; when <code>true</code>, the query only returns table data for tables that are archived.
-</dd>
+<dd>A boolean value; when <code>true</code>, the query only returns table data for tables that are archived.</dd>
 
 #### Create table
 
@@ -103,8 +93,7 @@ The **HubDB - create table** command creates a new HubDB table. The following is
 
 ##### Name
 
-<dd>The name of the new table.
-</dd>
+<dd>The name of the new table.</dd>
 
 ##### Label
 
@@ -149,18 +138,15 @@ The **HubDB - get details of a published table** command fetches data about a Hu
 
 ##### Archived
 
-<dd>A boolean value; when <code>true</code>, the query includes data for tables that are archived.
-</dd>
+<dd>A boolean value; when <code>true</code>, the query includes data for tables that are archived.</dd>
 
 ##### Include foreign IDs
 
-<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-</dd>
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Archive table
 
@@ -168,8 +154,7 @@ The **HubDB - archive table** archives a HubDB table. The following is a list of
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 #### Update existing table
 
@@ -178,23 +163,19 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
 
 ##### Archived
 
-<dd>A boolean value; when <code>true</code>, the query returns data only for tables that are archived.
-</dd>
+<dd>A boolean value; when <code>true</code>, the query returns data only for tables that are archived.</dd>
 
 ##### Include foreign IDs
 
-<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-</dd>
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Name
 
-<dd>The name of the new table.
-</dd>
+<dd>The name of the new table.</dd>
 
 ##### Label
 
@@ -238,23 +219,19 @@ The **HubDB - clone table** command clones an existing HubDB table. The followin
 
 #### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### New name
 
-<dd>The name of your new HubDB table.
-</dd>
+<dd>The name of your new HubDB table.</dd>
 
 ##### New label
 
-<dd>The label of your new HubDB table.
-</dd>
+<dd>The label of your new HubDB table.</dd>
 
 ##### Copy rows
 
-<dd>A boolean that, when <code>true</code>, copies the rows from the cloned table into the new table.
-</dd>
+<dd>A boolean that, when <code>true</code>, copies the rows from the cloned table into the new table.</dd>
 
 #### Export published version table
 
@@ -262,13 +239,11 @@ The **HubDB - export published version table** command returns the file data for
 
 ##### Include foreign IDs
 
-<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-</dd>
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Unpublish table
 
@@ -276,13 +251,11 @@ The **HubDB - unpublish table** command unpublishes a given HubDB table. The fol
 
 ##### Include foreign IDs
 
-<dd>The file format of the exported table data. Allows <code>CSV</code>, <code>XLSX</code>, or <code>XLS</code>.
-</dd>
+<dd>The file format of the exported table data. Allows <code>CSV</code>, <code>XLSX</code>, or <code>XLS</code>.</dd>
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Get table rows
 
@@ -290,8 +263,7 @@ The **HubDB - get table rows** command fetches rows from a HubDB table. The foll
 
 ##### Sort
 
-<dd>The name of a field by which to sort the fetched records. Requires a single column name, such as <code>name</code>.
-</dd>
+<dd>The name of a field by which to sort the fetched records. Requires a single column name, such as <code>name</code>.</dd>
 
 ##### Next Page Token
 
@@ -300,44 +272,39 @@ The **HubDB - get table rows** command fetches rows from a HubDB table. The foll
 
 ##### Limit
 
-<dd>The maxiumum number of rows that can be returned in a single query response.
-</dd>
+<dd>The maxiumum number of rows that can be returned in a single query response.</dd>
 
 ##### Properties
 
-<dd>A comma-separated list of columns that should be fetched for each returned record.
-</dd>
+<dd>A comma-separated list of columns that should be fetched for each returned record.</dd>
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Add new table row
 
 The **HubDB - add new table row** command creates a new row in a HubDB table. The following is a list of all the fields available for **HubDB - add new table row**:
 
 ##### Table ID or name
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Path
-<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-</dd>
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
 
 ##### Name
 <dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
 
 ##### Child table ID
-<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-</dd>
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
 
 ##### Values
-<dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
-<pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+  <pre>{`{
+      "name": "MyProduct",
+      "buyer": "121529803132"
+  }`}</pre>
 </dd>
 
 ##### Update existing row
@@ -346,8 +313,7 @@ The **HubDB - update existing row** command updates an existing row in a HubDB t
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Row ID
 
@@ -355,8 +321,7 @@ The **HubDB - update existing row** command updates an existing row in a HubDB t
 
 ##### Path
 
-<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-</dd>
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
 
 ##### Name
 
@@ -364,16 +329,18 @@ The **HubDB - update existing row** command updates an existing row in a HubDB t
 
 ##### Child table ID
 
-<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-</dd>
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
 
 ##### Values
 
-  <dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
-  <pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+    <pre>
+      {`{
+          "name": "MyProduct",
+          "buyer": "121529803132"
+      }`}
+    </pre>
 </dd>
 
 ##### Replace existing row
@@ -382,8 +349,7 @@ The **HubDB - replace existing row** command replaces an existing row in a HubDB
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Row ID
 
@@ -391,8 +357,7 @@ The **HubDB - replace existing row** command replaces an existing row in a HubDB
 
 ##### Path
 
-<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-</dd>
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
 
 ##### Name
 
@@ -400,16 +365,16 @@ The **HubDB - replace existing row** command replaces an existing row in a HubDB
 
 ##### Child table ID
 
-<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-</dd>
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
 
 ##### Values
 
-<dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
-<pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+  <pre>{`{
+      "name": "MyProduct",
+      "buyer": "121529803132"
+  }`}</pre>
 </dd>
 
 #### Permanently delete row
@@ -418,8 +383,7 @@ The **HubDB - permanently delete row** command deletes an existing row from a Hu
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Row ID
 
@@ -431,13 +395,11 @@ The **HubDB - clone row** command clones an existing row in a HubDB table. The f
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Row ID
 
-<dd>The ID of the table row to clone.
-</dd>
+<dd>The ID of the table row to clone.</dd>
 
 #### Get set rows
 
@@ -446,13 +408,11 @@ The **HubDB - get set rows** command gets a batch of specific rows from a HubDB 
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Inputs
 
-<dd>A JSON array with the IDs of the rows to get.
-</dd>
+<dd>A JSON array with the IDs of the rows to get.</dd>
 
 #### Permanently delete rows
 
@@ -460,13 +420,11 @@ The **HubDB - permanently delete rows** command deletes a batch of specific rows
 
 ##### Table ID or name
 
-<dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-</dd>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 ##### Inputs
 
-<dd>A JSON array with the IDs of the rows to get.
-</dd>
+<dd>A JSON array with the IDs of the rows to get.</dd>
 
 
 ### CRM
@@ -478,8 +436,7 @@ The following sections describe the parameters for connecting to CRM type querie
 The **CRM - list objects** command returns a list of entries for a given type of CRM objects. The following is a list of all the fields available for **CRM - list objects**:
 
 ##### Objects
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 #### Create object
 
@@ -488,13 +445,11 @@ The **CRM - create objects** command creates a new object of the given type. The
 
 ##### Objects
 
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 ##### Properties
 
-<dd>A JSON object with key/value pairs that define the properties for the created CRM object.
-</dd>
+<dd>A JSON object with key/value pairs that define the properties for the created CRM object.</dd>
 
 #### Read object
 
@@ -502,33 +457,27 @@ The **CRM - read object** command returns the details for a specific CRM object.
 
 ##### Properties
 
-<dd>A comma-separated list of columns that should be fetched for the object.
-</dd>
+<dd>A comma-separated list of columns that should be fetched for the object.</dd>
 
 ##### Properties with history
 
-<dd>A comma-separated list of columns that should be fetched along with their history of previous values.
-</dd>
+<dd>A comma-separated list of columns that should be fetched along with their history of previous values.</dd>
 
 ##### Associations
 
-<dd>A comma-separated list of related CRM object types whose IDs should be returned.
-</dd>
+<dd>A comma-separated list of related CRM object types whose IDs should be returned.</dd>
 
 ##### Archive
 
-<dd>A boolean value; when <code>true</code>, the query only returns entries that are archived.
-</dd>
+<dd>A boolean value; when <code>true</code>, the query only returns entries that are archived.</dd>
 
 ##### Object type
 
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 ##### Object ID
 
-<dd>The ID of the CRM object to fetch.
-</dd>
+<dd>The ID of the CRM object to fetch.</dd>
 
 ##### Update object
 
@@ -536,78 +485,70 @@ The **CRM - create objects** command updates a given CRM object. The following i
 
 ##### Object type
 
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 ##### Object ID
 
-<dd>The ID of the CRM object to fetch.
-</dd>
+<dd>The ID of the CRM object to fetch.</dd>
 
 ##### Properties
 
-<dd>A JSON object with key/value pairs that define the properties for the created CRM object.
-</dd>
+<dd>A JSON object with key/value pairs that define the properties for the created CRM object.</dd>
 
 ##### Archive object
 
 The **CRM - Archive object** command archives a given CRM object. The following is a list of all the fields available for **CRM - Archive object**:
 
 ##### Object type
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 ##### Object ID
-<dd>The ID of the CRM object to fetch.
-</dd>
+<dd>The ID of the CRM object to fetch.</dd>
 
 #### Search object
 
 
 ##### Object type
 
-<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-</dd>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 ##### Property name
 
-<dd>The name of a property by which to filter results
-</dd>
+<dd>The name of a property by which to filter results</dd>
 
 ##### Value
 
-<dd>The value that returned records should have for the property specified in <b>Property name</b>.
-</dd>
+<dd>The value that returned records should have for the property specified in <b>Property name</b>.</dd>
 
 ##### Operator
 
-<dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.
-</dd>
+<dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.</dd>
 
 ##### Sorts
 
-<dd>A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:<pre>{`{[
-      {
-        "propertyName": "createdate",
-        "direction": "DESCENDING"
-      }
-]}`}</pre>
+<dd>
+  A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:
+  <pre>
+    {`{[
+        {
+          "propertyName": "createdate",
+          "direction": "DESCENDING"
+        }
+    ]}`}
+  </pre>
 </dd>
 
 ##### Query
 
-<dd>A word to search for in the default text property of all CRM objects.
-</dd>
+<dd>A word to search for in the default text property of all CRM objects.</dd>
 
 ##### Properties
 
-<dd>A comma-separated list of columns that should be fetched for each returned record.
-</dd>
+<dd>A comma-separated list of columns that should be fetched for each returned record.</dd>
 
 ##### Limit
 
-<dd>The maxiumum number of rows that can be returned in a single query response.
-</dd> 
+<dd>The maxiumum number of rows that can be returned in a single query response.</dd> 
 
 ##### After
 

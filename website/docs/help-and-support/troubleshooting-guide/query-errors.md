@@ -50,19 +50,13 @@ You may encounter this error when trying to run queries against a MongoDB dataso
 The error message might appear in a few different ways. For example:
 
 - As an error response in the console:
-<Message
- messageContainerClassName="error"
-messageContent="{ message: 'name can not be null', type: 'PLUGIN_EXECUTION', subType: undefined }"></Message>
+<Message messageContainerClassName="error" messageContent="{ message: 'name can not be null', type: 'PLUGIN_EXECUTION', subType: undefined }"></Message>
 
 - As a notification with the text:
-<Message
- messageContainerClassName="error"
-messageContent="Mongo is not correctly configured. Please fix the following and then re-run: [Missing default database name.]"></Message>
+<Message messageContainerClassName="error" messageContent="Mongo is not correctly configured. Please fix the following and then re-run: [Missing default database name.]"></Message>
   
 - Or,
-<Message
- messageContainerClassName="error"
-messageContent="Missing default database name."></Message>
+<Message messageContainerClassName="error" messageContent="Missing default database name."></Message>
 
 #### Cause
 

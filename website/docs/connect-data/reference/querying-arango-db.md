@@ -17,10 +17,11 @@ If you are a self-hosted user, you must whitelist the IP address ranges `18.223.
 
 The following is a reference guide that provides a description of the parameters for connecting to ArangoDB.
 
-<figure>
-  <img src="/img/Arango_configuration.jpeg" style= {{width:"100%", height:"auto"}} alt="Configuring an ArangoDB datasource."/>
-  <figcaption align = "center"><i>Configuring an ArangoDB datasource.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/Arango_configuration.jpeg" 
+  alt="Configure ArangoDB datasource."
+  caption="Configure ArangoDB datasource"
+/>
 
 #### Host Address
 
@@ -41,7 +42,8 @@ The following is a reference guide that provides a description of the parameters
 #### SSL mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
       <li><b>Default:</b> The same as Disabled.</li>
       <li><b>Enabled:</b> Only allows an SSL connection.</li>
@@ -53,10 +55,11 @@ The following is a reference guide that provides a description of the parameters
 
 The following section provides examples of basic CRUD queries for ArangoDB.
 
-<figure>
-  <img src="/img/arangodb-query-config.png" style= {{width:"100%", height:"auto"}} alt="Writing an ArangoDB query in the editor."/>
-  <figcaption align = "center"><i>Writing an ArangoDB query in the editor.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/arangodb-query-config.png" 
+  alt="Configure an ArangoDB query in the editor."
+  caption="Configure an ArangoDB query in the editor"
+/>
 
 :::info
 For the ArangoDB Query Language (AQL) syntax, see the official [**AQL documentation**](https://www.arangodb.com/docs/stable/aql/).

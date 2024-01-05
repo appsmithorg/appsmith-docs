@@ -14,10 +14,7 @@ To connect to Snowflake, you must whitelist the IP addresses 18.223.74.85 and 3.
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Snowflake database.
 
-<figure>
-  <img src="/img/snowflake-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Snowflake datasource." />
-  <figcaption align="center"><i>Configuring a Snowflake datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/snowflake-datasource-config.png" alt="Configuring a Snowflake datasource." caption="Configuring a Snowflake datasource." />
 
 #### Account Name
 
@@ -33,10 +30,7 @@ Account Name: `gv14678.central-india.azure*`
 
 
 
-<figure>
-  <img src="/img/snow-1.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
-  <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
-</figure>
+<ZoomImage src="/img/snow-1.png" alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." caption="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
 
 </dd>
 
@@ -82,13 +76,11 @@ The role to use for performing queries. For example, `ACCOUNTADMIN`
 
 #### Username
 
-<dd>The username for your Snowflake account.
-</dd>
+<dd>The username for your Snowflake account.</dd>
 
 #### Password
 
-<dd>The password for your Snowflake account.
-</dd>
+<dd>The password for your Snowflake account.</dd>
 
 ## Query Snowflake
 

@@ -18,10 +18,7 @@ This tutorial guides you through the steps to create a Customer Support tool usi
 
 Here's a view of the final result:
 
-<figure>
-  <img src="/img/customer-support-tool.gif" style= {{width:"100%", height:"auto"}} alt="Customer Support Tool"/>
-  <figcaption align = "center"><i>Customer Support Tool</i></figcaption>
-</figure>
+<ZoomImage src="/img/customer-support-tool.gif" alt="Customer Support Tool" caption="Customer Support Tool" />
 
 Let's get started!
 

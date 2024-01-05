@@ -47,10 +47,7 @@ b. Scroll down to the **Networking** section, and configure as below:
 
 10. Click the **Launch Instance** button. You see a launch status screen as shown below:
 
-<figure>
- <img src="/img/aws_ami_create_server_status.png" style={{width: "100%", height: "auto"}} alt="A launch status screen shows the server status." />
- <figcaption align="center"><i>A launch status screen shows the server status</i></figcaption>
-</figure>
+<ZoomImage src="/img/aws_ami_create_server_status.png" alt="A launch status screen shows the server status." caption="A launch status screen shows the server status" />
 
 ### Verify Appsmith installation
 
@@ -60,10 +57,7 @@ b. Scroll down to the **Networking** section, and configure as below:
 
 3. Copy the **Public IPv4 address** available on the **Instance Summary** page.
 
- <figure>
- <img src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" style={{width: "100%", height: "auto"}} alt="Use DNS or Public IP to access Appsmith." />
- <figcaption align="center"><i>Use DNS or Public IP to access Appsmith</i></figcaption>
- </figure>
+ <ZoomImage src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" alt="Use DNS or Public IP to access Appsmith." caption="Use DNS or Public IP to access Appsmith" />
  
 4. Paste it in a browser tab and wait for the server to come up. It can take up to 5 minutes. 
  
@@ -85,10 +79,7 @@ b. Scroll down to the **Networking** section, and configure as below:
 The application password is **only** available in system logs for the initial 24 hours. It's recommended that create a new admin user and delete the `appsmith@example.com user` immediately.
 :::
 
- <figure>
-   <img src="/img/aws-system-log.png" style={{width: "100%", height: "auto"}} alt="Appsmith default credentials" />
-   <figcaption align="center"><i>Appsmith default credentials</i></figcaption>
- </figure>
+ <ZoomImage src="/img/aws-system-log.png" alt="Appsmith default credentials" caption="Appsmith default credentials" />
 
 3. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 

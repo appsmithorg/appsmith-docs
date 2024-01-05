@@ -16,8 +16,7 @@ As with any technology, encountering errors is inevitable; however, knowing how 
     <div className="containerCol">
       </div> 
       <b><a href="/help-and-support/troubleshooting-guide/application-errors">Application Errors</a></b>
-      <div className="containerDescription"> Guides on how to resolve errors while building your app.
-      </div>
+      <div className="containerDescription"> Guides on how to resolve errors while building your app.</div>
    </div>
 </div>
 
