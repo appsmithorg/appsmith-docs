@@ -30,7 +30,19 @@ Here’s a step-by-step explanation of how Appsmith manages connection pooling:
 
 - **Resilience**: Connection pools often have mechanisms to automatically handle failed connections, thus improving the robustness of the application.
 
-## Configuration of connection pooling
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h2>Configuration of connection pooling</h2>
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Appsmith allows developers to configure the connection pooling options such as minimum/maximum pool size, idle connection timeout, etc., through the database configuration settings in the application. These settings can be tuned based on the specific requirements and expected workload of the application.
 
