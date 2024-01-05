@@ -3,12 +3,11 @@
 Polling is a communication technique used to retrieve real-time data by periodically fetching the data. This page shows you how to establish a data polling mechanism for your applications.
 
 
-  <figure>
-  <img src="/img/polling-1.gif" style= {{width:"750px", height:"auto"}} alt=""/>
-  <figcaption align = "center"><i>Real-Time Data using Polling</i></figcaption>
-  </figure>  
-
-
+<ZoomImage
+  src="/img/polling-1.gif" 
+  alt="Real-Time Data using Polling"
+  caption="Real-Time Data using Polling"
+/>
 
 1. Configure the fetch query and connect it with a Table widget to display the data.
 
@@ -33,7 +32,7 @@ Polling is a communication technique used to retrieve real-time data by periodic
 export default {
     startAutoRefresh() {
         if (Switch1.isSwitchedOn) {
-            setInterval(() => User_Api.run(), 5000, "autorefresh");
+            setInterval(() => delivery_data.run(), 5000, "autorefresh");
         } else {
              clearInterval("autorefresh");
         }
