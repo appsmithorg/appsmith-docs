@@ -36,7 +36,7 @@ The permissions are grouped into four categories, which helps users manage and a
 In this section, you'll find permissions related to the application and its resources such as pages, widgets, and queries. The table below illustrates the permissions that can be assigned to either a user or a group. Additionally, it explains how each permission behaves at various hierarchical levels.
 
 |   | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Public** </div> | <div style= {{width:"180px"}}> **Export** </div> | 
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- | --- | --- |
 | **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace. | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | - | Make any application inside the workspace public. | Export any application in the workspace. |
 | **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | - | Make the application public | Export that particular application. |
 | **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - | - |
