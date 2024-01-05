@@ -42,7 +42,8 @@ The following is a reference guide that provides a description of the parameters
 #### SSL mode
 
 <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br/>
-<dd><i>Options:</i>
+<dd>
+    <i>Options:</i>
   <ul>
       <li><b>Default:</b> The same as Disabled.</li>
       <li><b>Enabled:</b> Only allows an SSL connection.</li>

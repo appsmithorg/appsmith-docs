@@ -32,13 +32,11 @@ The following section is a reference guide that provides a complete description 
 
 #### Username
 
-<dd>The username for your Redis user.
-</dd>
+<dd>The username for your Redis user.</dd>
 
 #### Password
 
-<dd>The password for your Redis user.
-</dd>
+<dd>The password for your Redis user.</dd>
 
 ## Query Redis
 

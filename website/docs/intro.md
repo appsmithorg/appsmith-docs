@@ -33,8 +33,7 @@ Appsmith makes it easy to build a UI that talks to any datasource. You can creat
 <div className="containerGridSampleApp">
    <div className=" containerColumnSampleApp columnGrid column-one">
       <b><a href="/getting-started/tutorials/start-building">Build your first app</a></b>
-      <div className="containerDescription">A quickstart guide to help you build an app using Appsmith
-      </div>
+      <div className="containerDescription">A quickstart guide to help you build an app using Appsmith</div>
 </div>
      <div className="columnGrid column-two" style={{margin: "10px"}}>
     </div>

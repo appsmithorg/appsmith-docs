@@ -9,7 +9,8 @@ To know more about the objects and functions, refer to the resources below:
 <div className="containerGridSampleApp">
   <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
-            <a href="/reference/appsmith-framework/context-object"><strong>Appsmith Object</strong>
+            <a href="/reference/appsmith-framework/context-object">
+            <strong>Appsmith Object</strong>
             </a>
         </div> <hr/>
         <div className="containerDescription">The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.</div>

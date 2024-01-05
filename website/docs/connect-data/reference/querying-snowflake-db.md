@@ -76,13 +76,11 @@ The role to use for performing queries. For example, `ACCOUNTADMIN`
 
 #### Username
 
-<dd>The username for your Snowflake account.
-</dd>
+<dd>The username for your Snowflake account.</dd>
 
 #### Password
 
-<dd>The password for your Snowflake account.
-</dd>
+<dd>The password for your Snowflake account.</dd>
 
 ## Query Snowflake
 

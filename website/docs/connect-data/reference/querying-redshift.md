@@ -22,7 +22,8 @@ The following section is a reference guide that provides a complete description 
 #### Connection Mode
 
 <dd>Determines which permissions your app has when querying the database.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. This allows you to only fetch data from the database.</li>
     <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to execute all CRUD queries.</li>

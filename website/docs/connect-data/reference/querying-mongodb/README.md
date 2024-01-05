@@ -26,7 +26,8 @@ The following section is a reference guide that provides a complete description 
 
 #### Use Mongo Connection String URI
 
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Yes:</b> Connect to MongoDB database using the Connection String URI format</li>
     <li><b>No:</b> Connect to MongoDB database by configuring multiple parameter fields.</li>
@@ -54,7 +55,8 @@ The following section lists the parameters to connect MongoDB by configuring mul
 #### Connection Mode
 
 <dd> Specifies the mode in which the Appsmith application can interact with the database. This field and the subsequent fields are visible only if you select <b>No</b> in the <b>Use Mongo Connection String URI</b> list.  </dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Read Only:</b> This mode permits only read-only operations by default.</li>
     <li><b>Read/Write:</b> This mode permits both read-write operations by default.</li>
@@ -64,7 +66,8 @@ The following section lists the parameters to connect MongoDB by configuring mul
 #### Connection Type
 
 <dd> Specifies whether to connect to a MongoDB instance or replica set deployment.</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Direct Connection:</b> Enables you to connect to a single MongoDB instance</li>
     <li><b>Replicate Set:</b> Enables you to connect to a group of connected instances that store the same set of data. This configuration provides data redundancy and high data availability. To connect to a replica set deployment, you must specify each instance's hostname and port numbers.</li>
@@ -73,29 +76,25 @@ The following section lists the parameters to connect MongoDB by configuring mul
 
 #### Host Address
 
-<dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. 
-</dd>
+<dd>Specifies the server's IP address or domain name where MongoDB is running. If you want to connect to a local MongoDB database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions on configuring the connection parameters. </dd>
 
 #### Port
 
-<dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. 
-</dd>
+<dd>The port number on which MongoDB listens for incoming connections. Appsmith connects to port <code>27017</code> by default if you don't specify one. </dd>
 
 #### Default Database Name
 
-<dd>Specifies the default authentication database to use when authenticating a user. In MongoDB, when a user is authenticated, the authentication process checks the user's credentials against a specific database. By default, this database is <code>admin</code>, but you can specify a different database by using the <b>Default Database Name</b> parameter. 
-</dd>
+<dd>Specifies the default authentication database to use when authenticating a user. In MongoDB, when a user is authenticated, the authentication process checks the user's credentials against a specific database. By default, this database is <code>admin</code>, but you can specify a different database by using the <b>Default Database Name</b> parameter. </dd>
 
 #### Database Name
 
-<dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it
-defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.
-</dd>
+<dd>Specifies the database name associated with the user's credentials. If <b>Database Name</b> is unspecified, it defaults to the name specified in the <b>Default Database Name</b> field. If <b>Default Database Name</b> is unspecified, then <b>Database Name</b> defaults to <code>admin</code>.</dd>
 
 #### Authentication Type
 
 <dd>Specifies the authentication mechanism that MongoDB uses to authenticate the connection. </dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>SCRAM-SHA-1:</b> Provides secure password storage through the use of a salted hash function. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-1">SCRAM-SHA-1</a> for details.</li>
     <li><b>SCRAM-SHA-256:</b> Uses the SHA-256 hashing algorithm for password storage. See <a href="https://www.mongodb.com/docs/manual/core/security-scram/#std-label-authentication-scram-sha-256">SCRAM-SHA-256</a> for details.</li>
@@ -109,19 +108,17 @@ You cannot specify MONGODB-CR as the authentication mechanism when connecting to
 
 #### Username
 
-<dd>Provide the username required for authenticating connection requests to the database.
-</dd>
+<dd>Provide the username required for authenticating connection requests to the database.</dd>
 
 #### Password
 
-<dd>Provide the password required for authenticating connection requests for the given username to the database.
-</dd>
+<dd>Provide the password required for authenticating connection requests for the given username to the database.</dd>
 
 #### SSL Mode
 
-<dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. 
-</dd><br />
-<dd><i>Options:</i>
+<dd>SSL can be used to secure the connection between the client and the server by encrypting all data that is transmitted between them. </dd><br />
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Default:</b> Depends on <b>Connection Type</b> field. If using the <b>Replica set</b> option, this is <code>Enabled</code>. If using the <b>Direct Connection</b>, this is <code>Disabled</code>.</li>
     <li><b>Enabled:</b> Initiates the connection with TLS/SSL. Rejects the connection if SSL is not available.</li>
@@ -145,8 +142,7 @@ This command fetches documents from a collection. The following section lists al
 
 #### Collection
 
-<dd>The name of the target collection from which you want to retrieve documents.
-</dd>
+<dd>The name of the target collection from which you want to retrieve documents.</dd>
 
 #### Query
 
@@ -161,8 +157,7 @@ This command fetches documents from a collection. The following section lists al
 
 #### Sort
 
-<dd>Specifies the order in which the documents should be returned. 
-</dd><br/>
+<dd>Specifies the order in which the documents should be returned. </dd><br/>
 <dd><i>Example:</i></dd>
 <dd><pre>{`{ name: 1 }
 `}</pre></dd>
@@ -178,8 +173,7 @@ This command fetches documents from a collection. The following section lists al
 
 #### Limit
 
-<dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.
-</dd><br />
+<dd>Specifies the maximum number of documents to return. The default value is 10. If this field is not specified, the query returns 10 documents.</dd><br />
 <dd><i>Example:</i></dd>
 <dd><pre>{`{{tableItems.pageSize}}
 `}</pre></dd>
@@ -199,8 +193,7 @@ This command inserts one or more documents and returns a document containing the
 
 #### Collection
 
-<dd>The name of the target collection where you want to insert the documents.
-</dd>
+<dd>The name of the target collection where you want to insert the documents.</dd>
 
 #### Documents
 
@@ -221,8 +214,7 @@ This command modifies the documents in a collection based on a specified set of 
 
 #### Collection
 
-<dd>The name of the target collection where you want to update documents.
-</dd>
+<dd>The name of the target collection where you want to update documents.</dd>
 
 #### Query
 
@@ -235,8 +227,7 @@ This command modifies the documents in a collection based on a specified set of 
 
 #### Update
 
-<dd>Specifies the modifications you want to make to the selected documents. 
-</dd><br />
+<dd>Specifies the modifications you want to make to the selected documents.</dd><br />
 <dd><i>Example:</i></dd>
 <dd><pre>{`{ 
   $set: {
@@ -249,7 +240,8 @@ This command modifies the documents in a collection based on a specified set of 
 #### Limit
 
 <dd>Specifies whether to delete single or multiple documents</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
@@ -262,8 +254,7 @@ This command removes one or more documents from the collection based on specifie
 
 #### Collection
 
-<dd>The name of the target collection where you want to delete documents.
-</dd>
+<dd>The name of the target collection where you want to delete documents.</dd>
 
 #### Query
 
@@ -277,7 +268,8 @@ This command removes one or more documents from the collection based on specifie
 #### Limit
 
 <dd>Specifies whether to delete single or multiple documents</dd><br />
-<dd><i>Options:</i>
+<dd>
+  <i>Options:</i>
   <ul>
     <li><b>Single Document:</b> Limits the update to one document that meets the query criteria.</li>
     <li><b>All Matching Documents:</b> Updates the fields in all documents that meet the query criteria.</li>
@@ -290,8 +282,7 @@ This command counts the number of documents in a collection that match a specifi
 
 #### Collection
 
-<dd>The name of the target collection where you want to count the documents.
-</dd>
+<dd>The name of the target collection where you want to count the documents.</dd>
 
 #### Query
 
@@ -308,8 +299,7 @@ This command finds the unique or distinct values for a specified field across a 
 
 #### Collection
 
-<dd>Specifies the name of the target collection to query for distinct values.
-</dd>
+<dd>Specifies the name of the target collection to query for distinct values.</dd>
 
 #### Query
 
@@ -322,8 +312,7 @@ This command finds the unique or distinct values for a specified field across a 
 
 #### Key
 
-<dd> Specifies the name of the field for which to return distinct values.
-</dd>
+<dd> Specifies the name of the field for which to return distinct values.</dd>
 
 ### Aggregate
 
@@ -331,8 +320,7 @@ This command allows users to process data records and return computed results. T
 
 #### Collection
 
-<dd>Specifies the name of the target collection that serves as the input for the aggregation pipeline.
-</dd>
+<dd>Specifies the name of the target collection that serves as the input for the aggregation pipeline.</dd>
 
 #### Array of Pipelines
 
@@ -345,12 +333,11 @@ This command allows users to process data records and return computed results. T
     { $group: { _id: "$tags", count: { $sum : 1 } } }
   ] 
 }`}</pre></dd>
-<dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection.</dd>
+<dd>The preceding example performs an aggregate operation on the <code>articles</code> collection to calculate the count of each distinct element in the <code>tags</code> array that appears in the collection</dd>
 
 #### Limit
 
-<dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.
-</dd>
+<dd>Specifies the maximum number of documents to return. The default value is 10. If this field isn't specified, the query returns 10 documents.</dd>
 
 ### Raw
 
@@ -358,4 +345,4 @@ This command allows you to write queries using the MongoDB database command synt
 
 ## Troubleshooting
 
-If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team using the chat widget at the bottom right of this page.
+If you're experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team using the chat widget at the bottom right of this page.
