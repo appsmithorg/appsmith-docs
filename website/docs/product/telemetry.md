@@ -10,7 +10,7 @@ Appsmith is a lightweight proxy and **does not capture** any data returned by yo
 
 ### Appsmith server
 
-The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors & captures anonymous usage data around which plugins are being used.
+* The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is still running without any errors & captures anonymous usage data around which plugins are being used.
 
 **Sample event**
 
@@ -53,6 +53,27 @@ The Appsmith server sends a keep-alive ping every 6 hours to indicate that it is
   "type": "track",
   "userId": "70280e5dd9e61e5e91526ac8704bbd68d3f75ebad67ba439f4c354d7",
 }
+```
+* The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data collected on the server-side and sent to the Appsmith cloud services in batches every hour. Below is an example of the payload sent from the server to Appsmith cloud services:
+
+```javascript
+{
+  "usageData": [
+    {
+      "user": "f3273dd18d95bc19d51d3e6356e4a679e6f13824497272a270e7bb540b0abb9d", // unique hashed-id for each user
+      "tenantId": "6fh76357fbe7e44f3a47a", 
+      // flag to determine if usage occurred in view mode or edit mode of application. We don’t charge developers when they are building their apps in edit mode
+      "viewMode": false, 
+      "isAnonymousUser": false, // flag to determine if pulse was triggered by logged-in user or an anonymous user
+      "createdAt": 188474747 // timestamp of usage pulse
+    }
+  ],
+  //message and hashMessage are for cloud-services to check the integrity of the data, ensuring that the pulses are sent by the real instance owning this license key
+  "message": "hash-message",
+  "hashedMessage": "c8ec6166d030765ff0f88ce40f4494bc6ef99f9d65dfbecd974c6359d1cac7ac",
+  "instanceId": "63ef757fbe7e44f3a47a"
+}
+
 ```
 
 ### Appsmith client
