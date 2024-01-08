@@ -17,6 +17,9 @@ In the following example, `page_name` is the name of the target page.
 ```jsx
 {{navigateTo('page_name', { userId: 547916 })}}
 ```
+It is also possible to share data between pages by adding the **Navigate to** action to any event. To do this, select the target page and enter the query parameters as an object with key value pairs to share data.
+
+<ZoomImage src="/img/navigate-to-action.png" alt="Navigate to action" caption="Navigate to action" />
 
 ## Use store value
 Local storage is ideal for persisting data between page navigation within the same app. You can store key-value pairs within the local storage using the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
