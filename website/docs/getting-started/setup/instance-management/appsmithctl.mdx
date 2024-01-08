@@ -262,7 +262,7 @@ Keep these details handy, as you need them for restoring the Appsmith database.
 docker-compose exec appsmith appsmithctl export_db
 ```
 
-The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder. You can access it on the host machine at `./stacks/data/backup/`.
+The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
 
 4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
 
