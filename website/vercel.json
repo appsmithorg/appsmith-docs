@@ -1155,8 +1155,8 @@
       "destination": "/help-and-support/troubleshooting-guide/application-errors#debug-js-errors"
     },
     {
-      "source": "connect-data/how-to-guides/download-files-from-s3",
-      "destination": "connect-data/how-to-guides/how-to-download-files-using-api"
+      "source": "/connect-data/how-to-guides/download-files-from-s3",
+      "destination": "/connect-data/how-to-guides/how-to-download-files-using-api"
     }
     ,
     {
@@ -1164,12 +1164,12 @@
       "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
     },
     {
-      "source": "build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select",
-      "destination": "build-apps/how-to-guides/display-select-options-dynamically"
+      "source": "/build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select",
+      "destination": "/build-apps/how-to-guides/display-select-options-dynamically"
     },
     {
-      "source": "build-apps/how-to-guides/Create-Nested-Lists",
-      "destination": "build-apps/how-to-guides/display-search-and-filter-list-data#nested-list"
+      "source": "/build-apps/how-to-guides/Create-Nested-Lists",
+      "destination": "/build-apps/how-to-guides/display-search-and-filter-list-data#nested-list"
     }
   ]
 }
