@@ -79,6 +79,26 @@ Appsmith server sends a ping first time a new instance is created. This data is 
 
 ```
 
+### Usage pulse for billing
+
+The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour irrespective of whether telemetry is turned on or off. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected irrespective of whether telemetry is turned on or off.
+
+```javascript title="sample usage-payload billing"
+{
+    "usageData": [{
+        "user": "f3273dd18d95bc19d51d3e6356e4a679e6f13824497272a270e7bb540b0abb9d",
+        "tenantId": "6fh76357fbe7e44f3a47a",
+        "viewMode": false, // To determine if action was done in edit mode or view mode of application
+        "isAnonymousUser": false, // To determine if pulse was triggered by logged-in user or an anonymous user
+        "createdAt": 188474747
+    }],
+    "message": "hash-message",
+    "hashedMessage": "c8ec6166d030765ff0f88ce40f4494bc6ef99f9d65dfbecd974c6359d1cac7ac",
+    "instanceId": "63ef757fbe7e44f3a47a"
+}
+
+``` 
+
 ### Navigation and clicks
 
 The client captures anonymous behavioral data around navigation and clicks. This data is only collected if telemetry is turned on.
@@ -157,28 +177,6 @@ The server records anonymous information about successful query processes, new a
     "type": "track",
     "userId": "70280e5dd9e61e5e91526ac8704bbd68d3f75ebad67ba439f4c354d7",
 }
-```
-
-### Usage pulse for billing
-
-The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour irrespective of whether telemetry is turned on or off. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected irrespective of whether telemetry is turned on or off.
-
-```javascript title="sample usage-payload billing"
-{
-"usageData": [
-{
-"user": "f3273dd18d95bc19d51d3e6356e4a679e6f13824497272a270e7bb540b0abb9d",
-"tenantId": "6fh76357fbe7e44f3a47a",
-"viewMode": false, // To determine if action was done in edit mode or view mode of application
-"isAnonymousUser": false, // To determine if pulse was triggered by logged-in user or an anonymous user
-"createdAt": 188474747
-}
-],
-"message": "hash-message",
-"hashedMessage": "c8ec6166d030765ff0f88ce40f4494bc6ef99f9d65dfbecd974c6359d1cac7ac",
-"instanceId": "63ef757fbe7e44f3a47a"
-}
-
 ```
 
 ## Disable telemetry
