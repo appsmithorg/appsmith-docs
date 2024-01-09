@@ -105,7 +105,7 @@ The Appsmith client triggers a usage pulse whenever a user performs an action on
 
 ### Navigation and clicks
 
-The client captures anonymous behavioral data around navigation and clicks. This data is only collected if telemetry is turned on.
+The client captures anonymous behavioral data around navigation and clicks. This data is only collected when telemetry is turned on. 
 
 ```javascript title="Sample event"
 {
@@ -140,7 +140,7 @@ The client captures anonymous behavioral data around navigation and clicks. This
 ```
 
 ### Successful backend calls
-The server records anonymous information about successful query processes, new application creation, user logins, connections to additional plugins, etc. This data will only be collected if telemetry is turned on. 
+The server records anonymous information about successful query processes, new application creation, user logins, connections to additional plugins, etc. This data is only collected when telemetry is turned on. 
 
 ```javascript title="sample successful backend call"
 {
