@@ -62,6 +62,9 @@ A Personal Access Token is a secure authentication token used to access resource
 
 To create a Databricks personal access token, go to User Settings in your workspace, navigate to Developer, click Manage next to Access tokens, and generate a new token, `e.g., dapi69test66c547ee2sample51d9f1007`.
 
+Learn more about [Personal access tokens](https://docs.databricks.com/en/dev-tools/auth/pat.html)
+
+
 </dd>
 
 #### Host
