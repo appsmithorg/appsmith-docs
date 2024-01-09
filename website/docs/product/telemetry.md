@@ -1,3 +1,7 @@
+---
+description: This page provides information on the data collected by Appsmith.
+---
+
 # Telemetry
 
 Telemetry in Appsmith refers to the collection of data about how users interact with the platform. This data helps the Appsmith team identify usage patterns, troubleshoot issues, and make informed decisions about new features and improvements.
