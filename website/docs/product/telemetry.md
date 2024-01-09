@@ -93,7 +93,7 @@ The client captures anonymous behavioral data around navigation and clicks.
 
 ### Usage pulse for billing
 
-The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data collected on the server-side and sent to the Appsmith cloud services in batches every hour. Below is an example of the payload sent from the server to Appsmith cloud services:
+The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour. Below is an example of the payload sent from the server to Appsmith cloud services:
 
 ```javascript
 {
