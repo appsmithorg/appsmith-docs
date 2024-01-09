@@ -60,7 +60,7 @@ Learn more about [JDBC URL](https://docs.databricks.com/en/integrations/jdbc/aut
 
 A Personal Access Token is a secure authentication token used to access resources within Databricks. 
 
-To create a Databricks personal access token, go to User Settings in your workspace, navigate to Developer, click Manage next to Access tokens, generate a new token, `e.g., dapi69test66c547ee2sample51d9f1007`.
+To create a Databricks personal access token, go to User Settings in your workspace, navigate to Developer, click Manage next to Access tokens, and generate a new token, `e.g., dapi69test66c547ee2sample51d9f1007`.
 
 </dd>
 
@@ -149,9 +149,9 @@ This command dynamically updates customer details based on user input.
 ```sql
 INSERT INTO default.customer
 VALUES (
-    {{ nameInput.text }},
-    {{ genderDropdown.selectedOptionValue }},
-    {{ emailInput.text }}
+    '{{ nameInput.text }}',
+    '{{ genderDropdown.selectedOptionValue }}',
+    '{{ emailInput.text }}'
 );
 ```
 
@@ -166,7 +166,12 @@ DELETE FROM default.customer
 WHERE id = {{tableUsers.selectedRow.id}};
 ```
 
-This command dynamically deletes a customer based on their ID.
+This command dynamically deletes a customer based on their ID, obtained from the selected row in the Table.
+
+
+
+
+
 
 
 
