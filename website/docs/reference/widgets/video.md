@@ -5,10 +5,7 @@ Description: A widget for playing a variety of URLs, including file paths, YouTu
 
 This page provides information on using the Video widget, which allows playback of various URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
 
-<figure>
-  <img src="/img/video-img.png" style= {{width:"700px", height:"auto"}} alt="Display Video"/>
-  <figcaption align = "center"><i>Display Video</i></figcaption>
-</figure>
+<ZoomImage src="/img/video-img.png" alt="Display Video" caption="Display Video" />
 
 ## Content properties
 
@@ -76,7 +73,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
 
 #### onPlay
 

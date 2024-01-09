@@ -1,44 +1,34 @@
-# Setup Table Inline Editing
+# Edit Table Data Inline
 
-This page shows you how to add and edit Table data through inline editing.
+This page shows you how to add and edit rows on Table through inline editing.
 
-
-<VideoEmbed host="youtube" videoId="eIecDfvSOsU" title="" caption=""/>
 
 
 ## Prerequisites
 
-* A [Table widget](/reference/widgets/table) connected to a query that holds the data you want to edit and update.
+A Table widget connected to a query that holds the data you want to edit and update.
 
-
-
-:::info
-Inline editing is supported for **Text**, **Number**, **Date**, **Switch**, **Select**, and **Checkbox** column types. Custom columns currently do not have this feature.
-:::
-
-
-## Enable inline editing 
-
-Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel. Once inline editing is enabled, you can edit cell contents by clicking on the ✏️ icon or double-clicking on a cell.
-
-<figure>
-  <img src="/img/inline-22.png" style= {{width:"600px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Enable inline editing</i></figcaption>
-</figure>
 
 
 ## Update single row
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/S8kwcnl9DTtJXbwCxqeB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 To update a single row, follow these steps:
 
+1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel.
 
-1. Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
+2. Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
 
-2. Create a new query that uses the `updatedRow` reference property to update the relevant data.
+
+3. Create a query using the `updatedRow` reference property to retrieve the updated data from the Table.
 
 <dd>
 
-_Example_: Suppose you want to modify the `name`  and `phone` field in a `users` database.
+_Example_: If you want to modify the `name`  and `phone` field in a `users` database.
 
 ```sql
 UPDATE users SET 
@@ -47,32 +37,41 @@ UPDATE users SET
   WHERE id = {{ Table1.updatedRow.id }};
 ```
 
+You can refer to the [datasource](https://docs.appsmith.com/connect-data/reference) for specific instructions on setting up an update query for your selected datasource.
+
+
+
 </dd>
 
-3. Click on the gear icon ⚙️ next to the **Save/Discard** column in the property pane.
+4. Click on the gear icon ⚙️ next to the **Save/Discard** column in the property pane.
 
-4. Set the **onSave** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
+5. Set the **onSave** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
  
 Alternatively, you can configure the **onSubmit** event for each [Column](/reference/widgets/table/column-settings) to run a query that saves the new data. The **onSubmit** event is triggered when the user clicks away from the edited cell or presses the Enter key within it. 
 
-<figure>
-  <img src="/img/inline-single.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Edit cells</i></figcaption>
-</figure>
 
 ## Update multiple rows
 
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/S0qBslqcYGmCfBWTqWgd?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 To update multiple rows at once using the inline editing feature, follow these steps:
 
-1. Select **Multiple rows** from the **Update mode** property.
 
-2. Configure the columns you want to enable for inline editing and set the **Primary Key** column for row identification during updates.
+1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel.
 
-3. Create a new query that uses `updatedRows` reference property to update the relevant data. 
+
+2. Select **Multiple rows** from the **Update mode** property, and set the **Primary Key** column for row identification during updates.
+
+
+3. Create a query using the `updatedRows` reference property to retrieve the updated data from the Table.
 
 <dd>
 
-_Example_: Suppose you want to modify the `name`  and `phone` columns in a `users` database.
+_Example_: If you want to modify the `name`  and `phone` columns in a `users` database.
 
 ```sql
 UPDATE users
@@ -85,53 +84,23 @@ END
 WHERE id IN ({{Table2.updatedRows.map((user) => user.allFields.id).join(',')}});
 ```
 
-</dd>
-
-4. Drop a Button widget, and set its **onClick** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
-
-
-
-## Add new rows
-
-To dynamically add new rows to the table, follow these steps:
-
-1. Enable the **Allow adding a row** property in the table's property pane. This displays a button labeled _Add new row_ at the top of the table widget. When a user adds a new row to the table, they see **Save row** and **Discard** buttons to save or discard the new row and its data.
-
-2. Enable the **Editable** property for all the required columns.
-
-3. Create a new INSERT query, using the `newRow` reference property. 
-
-<dd>
-
-_Example_: Suppose you want users to add data for new users, you can use:
-
-```sql
-INSERT INTO users 
-(id, phone, name, gender, latitude, longitude, dob, email, image, country) 
-VALUES 
-(
-   {{ Table1.newRow.id }}, 
-   {{ Table1.newRow.phone }}, 
-   {{ Table1.newRow.name }}, 
-   {{ Table1.newRow.gender }}, 
-   {{ Table1.newRow.latitude }}, 
-   {{ Table1.newRow.longitude }}, 
-   {{ Table1.newRow.dob }}, 
-   {{ Table1.newRow.email }}, 
-   {{ Table1.newRow.image }}, 
-   {{ Table1.newRow.country }}
-);
-```
+You can refer to the [datasource](https://docs.appsmith.com/connect-data/reference) for specific instructions on setting up an update query for your selected datasource.
 
 </dd>
 
-4. Set the Table widget's **onSave** event to run the query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
+4. Turn off prepared statements in the query editor for this configuration to facilitate dynamic SQL construction and maintain compatibility with the provided example. For more details, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
 
+5. Drop a Button widget, and set its **onClick** event to run the update query, and the **onSuccess** callback to trigger the fetch query that refreshes the table data with the updated information.
 
+## Delete row
 
+To delete the data from a Table row, follow these steps:
+1. Add a new column to the Table widget and set its **Column Type** to **Button**.
+2. Add a query to delete the selected Table row based on the [triggeredRow](/reference/widgets/table#triggeredrow-object) property.
 
-
-
-
-
-
+   Example:
+   ```sql
+   DELETE FROM product 
+   WHERE id = {{tbl_products.triggeredRow.id}}; 
+   ```
+3. Add Execute query action to the **onClick** event of the Button you added in Step 1 to run delete query.

@@ -9,45 +9,40 @@ This page provides information for connecting your application to your Redis dat
 ## Connect Redis
 
 :::caution 
-To connect to Redis, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
+Appsmith does not support connection to Redis using TLS. To connect to Redis, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
 :::
 
 ### Connection parameters
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Redis database.
 
-<figure>
-  <img src="/img/redis-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis datasource." />
-  <figcaption align="center"><i>Configuring a Redis datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redis-datasource-config.png" alt="Configuring a Redis datasource." caption="Configuring a Redis datasource." />
 
-<dl>
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your Redis database. This can be a domain name or an IP address.</dd><br />
+#### Host Address
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd><br />
+<dd>The network location of your Redis database. This can be a domain name or an IP address.</dd>
 
-  <dt><b>Database Number</b></dt>
-  <dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd><br />
+#### Port
 
-  <dt><b>Username</b></dt>
-  <dd>The username for your Redis user.
-  </dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port <code>6379</code> by default if you do not specify one.</dd>
 
-  <dt><b>Password</b></dt>
-  <dd>The password for your Redis user.
-  </dd><br />
-</dl>
+#### Database Number
+
+<dd>The number that identifies which database on your Redis instance you're connecting to. This is a number between 0 and 15, and is 0 by default.</dd>
+
+#### Username
+
+<dd>The username for your Redis user.</dd>
+
+#### Password
+
+<dd>The password for your Redis user.</dd>
 
 ## Query Redis
 
 The following section provides examples of creating basic CRUD queries for Redis.
 
-<figure>
-  <img src="/img/redis-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Redis query." />
-  <figcaption align="center"><i>Configuring a Redis query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/redis-query-config.png" alt="Configuring a Redis query." caption="Configuring a Redis query." />
 
 :::info
 See the [Redis documentation](https://redis.io/commands/) for a full list of Redis commands and how to use them.

@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "trailingSlash" : false,
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/v/:path*",
@@ -192,7 +192,7 @@
     },
     {
       "source": "/setup/upgrade-to-business-edition/docker",
-      "destination": "/getting-started/setup/upgrade-to-business-edition/docker"
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
     },
     {
       "source": "/how-to-guides/:path*",
@@ -310,7 +310,7 @@
       "source": "/core-concepts/capturing-data-write/capture-form-data",
       "destination": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data"
     },
-   {
+    {
       "source": "/core-concepts/designing-an-application",
       "destination": "/core-concepts/building-ui/designing-an-application"
     },
@@ -747,6 +747,14 @@
       "destination": "/getting-started/tutorials"
     },
     {
+      "source": "/getting-started/tutorials/review-moderator-dashboard/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
+      "source": "/getting-started/tutorials/building-a-store-catalog-manager/:path*",
+      "destination": "/getting-started/tutorials"
+    },
+    {
       "source": "/core-concepts/connecting-to-data-sources",
       "destination": "/connect-data/how-to-guides/connect-datasource"
     },
@@ -821,7 +829,7 @@
     {
       "source": "/reference/datasources/querying-elasticsearch",
       "destination": "/connect-data/reference/querying-elasticsearch"
-    }, 
+    },
     {
       "source": "/reference/datasources/querying-firestore",
       "destination": "/connect-data/reference/querying-firestore"
@@ -866,7 +874,6 @@
       "source": "/reference/datasources/querying-redis",
       "destination": "/connect-data/reference/querying-redis"
     },
-
     {
       "source": "/reference/datasources/querying-redshift",
       "destination": "/connect-data/reference/querying-redshift"
@@ -891,7 +898,6 @@
       "source": "/learning-and-resources/how-to-guides/how-to-upload-to-s3",
       "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
     },
-
     {
       "source": "/learning-and-resources/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
       "destination": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images"
@@ -922,11 +928,11 @@
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-integrate-zoho",
-      "destination": "/connect-data/how-to-guides/how-to-integrate-zoho"
+      "destination": "https://community.appsmith.com/content/guide/create-campaigns-zoho"
     },
     {
       "source": "/learning-and-resources/how-to-guides/how-to-integrate-dropbox",
-      "destination": "/connect-data/how-to-guides/how-to-integrate-dropbox"
+      "destination": "https://community.appsmith.com/content/guide/upload-files-dropbox"
     },
     {
       "source": "/core-concepts/data-access-and-binding/querying-a-database/query-settings",
@@ -970,7 +976,7 @@
     },
     {
       "source": "/advanced-co",
-      "destination": "/advanced-concepts"   
+      "destination": "/advanced-concepts"
     },
     {
       "source": "/core-concepts/application-layout",
@@ -1005,8 +1011,165 @@
       "destination": "/getting-started/setup/instance-configuration/google-maps"
     },
     {
+      "source": "/reference/widgets/sliders",
+      "destination": "/reference/widgets"
+    },
+    {
+      "source": "/reference/widgets/sliders/category-slider",
+      "destination": "/reference/widgets/category-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/number-slider",
+      "destination": "/reference/widgets/number-slider"
+    },
+    {
+      "source": "/reference/widgets/sliders/range-slider",
+      "destination": "/reference/widgets/range-slider"
+    },
+    {
       "source": "/reference/readme-1/actions/:path*",
       "destination": "/reference/appsmith-framework/widget-actions/:path*"
+    },
+    {
+      "source": "../data-access-and-binding/querying-a-database",
+      "destination": "/connect-data/how-to-guides/query-data"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/building-ui/designing-an-application",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/building-ui",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/building-ui/dynamic-ui/widget-visibility",
+      "destination": "/reference/widgets"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/displaying-data-read",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/capturing-data-write",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/capturing-data-write/capture-form-data",
+      "destination": "/reference/widgets/form"
+    },
+    {
+      "source": "/core-concepts/data-access-and-binding/querying-a-database",
+      "destination": "/connect-data/how-to-guides/query-data"
+    },
+    {
+      "source": "/reference/appsmith-framework",
+      "destination": "/write-code/reference"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/cloudjiffy",
+      "destination": "https://cloudjiffy.com/blog/solutions/one-click-solutions/install-appsmith-in-cloudjiffy-with-one-click/"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/restack",
+      "destination": "https://www.restack.io/docs/deploy-appsmith-on-kubernetes"
+    },
+    {
+      "source": "/connect-data/how-to-guides/connect-datasource",
+      "destination": "/getting-started/tutorials/start-building#connect-to-a-database"
+    },
+    {
+      "source": "/connect-data/how-to-guides/query-data",
+      "destination": "/connect-data/overview"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/docker/install-business-edition",
+      "destination": "/getting-started/setup/installation-guides/docker"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/kubernetes/install-k8s-business-edition",
+      "destination": "/getting-started/setup/installation-guides/kubernetes"
+    },
+    {
+      "source": "/core-concepts/building-ui/designing-an-application/application-layout",
+      "destination": "/build-apps/overview"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/docker",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/kubernetes",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/kubernetes"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-docker-to-business-edition",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/docker"
+    },
+    {
+      "source": "/getting-started/setup/upgrade-to-business-edition/upgrade-k8s-to-business-edition",
+      "destination": "/getting-started/setup/upgrade-from-community-edition/kubernetes"
+    },
+    {
+      "source": "/core-concepts/writing-code/javascript-editor-beta/asynchronous-javascript-function-settings",
+      "destination": "/core-concepts/writing-code/javascript-editor-beta"
+    },
+    {
+      "source": "/build-apps/how-to-guides/refresh-table-data",
+      "destination": "/build-apps/how-to-guides/submit-form-data#refresh-table-data-and-close-modal"
+    },
+    {
+      "source": "/getting-started/tutorials",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {  
+      "source": "/build-apps/how-to-guides/Server-side-filtering-table",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down"
+    },
+    {
+      "source": "/build-apps/how-to-guides/Setup-Server-side-Searching-on-Table",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-search-text"
+    },
+    {
+      "source": "/build-apps/how-to-guides/Filter-Table-Data-using-Datepicker",
+      "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-date-range"
+    },
+    {
+      "source": "/connect-data/how-to-guides/how-to-integrate-zoho",
+      "destination": "https://community.appsmith.com/content/guide/create-campaigns-zoho"
+    },
+    {
+      "source": "/connect-data/how-to-guides/how-to-integrate-dropbox",
+      "destination": "https://community.appsmith.com/content/guide/upload-files-dropbox"
+    },
+    {
+      "source": "/write-code/how-to-guides/debug-js-errors",
+      "destination": "/help-and-support/troubleshooting-guide/application-errors#debug-js-errors"
+    },
+    {
+      "source": "connect-data/how-to-guides/download-files-from-s3",
+      "destination": "connect-data/how-to-guides/how-to-download-files-using-api"
+    }
+    ,
+    {
+      "source": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
+      "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
+    },
+    {
+      "source": "build-apps/how-to-guides/Setup-Server-side-Filtering-on-Select",
+      "destination": "build-apps/how-to-guides/display-select-options-dynamically"
+    },
+    {
+      "source": "build-apps/how-to-guides/Create-Nested-Lists",
+      "destination": "build-apps/how-to-guides/display-search-and-filter-list-data#nested-list"
     }
   ]
 }

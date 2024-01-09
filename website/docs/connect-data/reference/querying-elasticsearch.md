@@ -17,24 +17,23 @@ If you are a self-hosted user, you must whitelist the IP address of the Appsmith
 
 The following is a reference guide that provides a description of the parameters for connecting to Elasticsearch.
 
-<figure>
-  <img src="/img/elasticsearch-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Connect to Elasticsearch"/>
-  <figcaption align = "center"><i>Connect to Elasticsearch</i></figcaption>
-</figure>
+<ZoomImage src="/img/elasticsearch-datasource-config.png" alt="Connect to Elasticsearch" caption="Connect to Elasticsearch" />
 
-<dl>
-  <dt><b>Host URL</b></dt>
-  <dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+#### Host URL
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. </dd><br />
+<dd>The network location where your Elasticsearch data is hosted. This can be a domain name or an IP address. To connect to a local database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd>
 
-  <dt><b>Username/Password for Basic Auth</b></dt>
-  <dd>The account credentials used to log in to Elasticsearch.</dd><br />
+#### Port
 
-  <dt><b>Authorization Header</b></dt>
-  <dd>Instead of the username/password fields, you can provide an <b>Authorization Header</b> to authenticate your queries. This field is only used when the <b>Username/Password for Basic Auth</b> fields are empty.</dd><br />
-</dl>
+<dd>The port number to connect to on the server. </dd>
+
+#### Username/Password for Basic Auth
+
+<dd>The account credentials used to log in to Elasticsearch.</dd>
+
+#### Authorization Header
+
+<dd>Instead of the username/password fields, you can provide an <b>Authorization Header</b> to authenticate your queries. This field is only used when the <b>Username/Password for Basic Auth</b> fields are empty.</dd>
 
 ## Query Elasticsearch
 
@@ -44,24 +43,26 @@ The following section provides examples of creating basic CRUD queries to Elasti
 For details on building more complex queries, see the [Elasticsearch Document API documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html).
 :::
 
-<dl>
-  <dt><b>Method</b></dt>
-  <dd>The HTTP method to use for your query.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>GET:</b> Method used for requesting and fetching data.</li>
-      <li><b>POST:</b> Method used for creating or updating records.</li>
-      <li><b>PUT:</b> Method used for creating or updating records.</li>
-      <li><b>DELETE:</b> Method used for deleting records.</li>
-    </ul>
-  </dd>  
+#### Method
 
-  <dt><b>Path</b></dt>
-  <dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: <code>/users/_search</code> is the endpoint used for searching the <code>users</code> index.</dd><br />
+<dd>The HTTP method to use for your query.</dd><br />
+<dd>
+    <i>Options:</i>
+  <ul>
+    <li><b>GET:</b> Method used for requesting and fetching data.</li>
+    <li><b>POST:</b> Method used for creating or updating records.</li>
+    <li><b>PUT:</b> Method used for creating or updating records.</li>
+    <li><b>DELETE:</b> Method used for deleting records.</li>
+  </ul>
+</dd>  
 
-  <dt><b>Body</b></dt>
-  <dd>The body content of your query.</dd><br />
-</dl>
+#### Path
+
+<dd>The endpoint to which your query is sent. This usually is made up of the index name and the name of an operation. For example: <code>/users/_search</code> is the endpoint used for searching the <code>users</code> index.</dd>
+
+#### Body
+
+<dd>The body content of your query.</dd>
 
 ### Search documents
 

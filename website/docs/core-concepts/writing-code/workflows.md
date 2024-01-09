@@ -6,153 +6,171 @@ toc_min_heading_level: 2
 toc_max_heading_level: 5
 ---
 
-# Creating Workflows
+# Trigger UI Workflow
 
-When you build an app on Appsmith, you write code to add, update, delete, and retrieve data, and define actions on event triggers. You can use JavaScript functions, and database or API queries to build different workflows.
+This guide shows you how to initiate and manage UI workflows, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors. 
 
-## Trigger actions with event listeners
+## Execute actions in a specific order
 
-[Actions](/reference/appsmith-framework/widget-actions) in Appsmith are built-in functions that provide a way to perform specific operations in response to user interactions or other events in your application. 
+There is an event listener associated with every widget that can be configured to perform various actions. To execute actions in a specific order, you can chain them using the action selector. You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in a series. 
 
-You can trigger actions by binding them to Events(Async fields). For example, if you want to run a query on button click, you can bind the query's [run()](/reference/appsmith-framework/query-object#run) method on the button's `onClick` event.
+1. In the event property, click the **+** icon and select the action you want to execute. For instance, set the Submit Button's **onClick** event to execute a update query.
 
-<figure>
-  <img src="/img/trigger-action-on-events.png" style= {{width:"700px", height:"auto"}} alt="Trigger actions using event listeners"/>
-  <figcaption align = "center"><i>Trigger actions usings event listeners</i></figcaption>
-</figure>
+2. Set the **onSuccess** callback to perform additional actions upon successful completion of the specified action. For instance, you can use the **onSuccess** callback to execute a fetch query or to close the Modal.
 
-## Handle query success or error
-
-The property pane provides a way to configure an action to be performed when a query returns with a success or an error post execution. The HTTP status code or the query response status can help determine the success or error message returned by the query.
-
-For example, you can display a success message when the query has executed successfully or an error message when there are issues with the execution using the `showAlert()` action.
-
-<figure>
-  <img src="/img/handle-query-success-error.png" style= {{width:"700px", height:"auto"}} alt="Handle query success and error"/>
-  <figcaption align = "center"><i>Handle query success and error</i></figcaption>
-</figure>
+3. To set up multiple **onSuccess** callbacks, click the **+** icon within the callback configuration, and select the desired actions.
 
 
-## Complex workflows
 
-The Appsmith GUI is limited to a single `onSuccess` or `onError` callback, while the underlying framework has no limitation. To write complex workflows, you can enable JavaScript by clicking the `JS` toggle next to the event listener. You can perform operations such as chaining multiple queries and executing them in a specific order or conditionally executing a query based on the result of another query. 
+<dd>
 
-**Every query object has a [run()](/reference/appsmith-framework/query-object#run) method used to execute the query.**
+You can only execute two levels of **onSuccess** callbacks from the UI. To add additional callbacks, enable JS and and add your code, like: 
 
-:::tip
-Once you have configured actions using the GUI, you can click the `JS` icon next to the event to view the JavaScript equivalent of your configuration and then modify the code per your requirement.
-:::
+*Example:* 
 
-### Conditional execution
-You can chain queries to execute conditionally based on the value of a widget or the response from another query or a JS function. 
+```js
+{{update_query.run().then(() => {
+  fetch_query.run();
+  closeModal('Modal1');
+});}}
+```
+</dd>
 
-**Example**
 
-This example shows how the queries execute conditionally based on the option chosen in the Select widget.
+Learn more about [Global Functions](/reference/appsmith-framework/widget-actions).
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/aP6NLTwiJTsGCmhDhnQM?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+
+
+<p></p>
+
+
+
+
+## Execute actions in parallel 
+
+To execute actions in parallel, you can add multiple action selectors for a specific event. 
+
+1. In the event property, click the **+** icon and select the action you want to execute. For instance, set the Submit Button's **onClick** event to execute a status change query.
+
+2. Create a new **onClick** event by clicking the **+** icon and set it to execute another action. For instance, set it to run a query that logs the status change.
+
+<dd>
+
+Additionally, you can enable *JS* next to events and add your code, like:
+
+*Example:* 
+
+```js
+{{update_status.run();
+log_status.run();
+showAlert('Update Success', 'success');}}
+```
+
+</dd>
+
+
+
+You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in parallel. 
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/TwqJvpTW4EMHkHIM1GnZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+<p></p>
+
+
+
+
+
+
+
+## Execute actions conditionally
+
+
+This section covers conditional query execution, allowing queries to be executed based on user input or based on the results of previous queries. You can enable *JS* next to the event and add your code. 
+
+
+#### Based on user input
+
+*Example:* If you want to conditionally queries execute based on the option selected in the Select widget.
 
 ```javascript
 {{
-  Query_Selector.selectedOptionValue === 'Movies' ? fetch_movies.run() : fetch_users.run();
-}}
-
-```
-
-This example shows multiple conditional statements that execute queries based on the option chosen in the select widget and also display relevant messages based on the response from the `fetchPendingUsers` query.
-
-```javascript
-{{ 
-  statusDropdown.selectedOptionValue === "Pending" ?
-      fetchPendingUsers.run(() => {
-          fetchPendingUsers.data.length === 0 
-         ? showAlert("No Users Pending Approval", "info") 
-          : showAlert("Fetched Users", "success");
-      }) 
-      : fetchApprovedUsers.run();
+  Select_Category.selectedOptionValue === 'Categories' ? fetchCategories.run() : fetchProducts.run();
 }}
 ```
 
-### Parallel execution
+In the above code, if the selected option is Categories, it triggers the `fetchCategories` query; otherwise, it runs the `fetchProducts` query.
 
-The run() method is asynchronous, and you can execute multiple queries in parallel. To execute multiple queries, you have to separate the run() method in the buttons onClick handler with a semicolon(;). 
+#### Based on query response
 
-**Example**
+If you want to execute a action based on the response from another query, you can enable *JS* and add your JS Code.  Alternatively, you can create a JSObject and define a JavaScript function for the desired logic.
+
+
+1. Create a JSObject and define a function to execute custom JavaScript logic.
+
+<dd>
+
+ *Example:* When the user selects Pending from the status dropdown, the system triggers a `fetchPendingUsers`'query. Subsequently, it displays a relevant alert based on whether there are pending users or not. 
 
 ```javascript
-{{ Query1.run(); Query2.run(); Query3.run(); }}
+function fetchData() {
+  if (statusDropdown.selectedOptionValue === "Pending") {
+    fetchPendingUsers.run(() => {
+      if (fetchPendingUsers.data.length === 0) {
+        showAlert("No Users Pending Approval", "info");
+      } else {
+        showAlert("Fetched Users", "success");
+      }
+    });
+  } else {
+    fetchApprovedUsers.run();
+  }
+}
 ```
 
-### Serial execution
-Serial execution means that the queries are executed one after the other in a specific order. This can be useful when the results of one query depend on the results of another.
+</dd>
 
-**Example**
+2. In the event property, enable JS and call the JS function, like:
 
-This example shows how to execute `query1`, then `query2` and finally `query3`.
+<dd>
 
-```javascript
+```js
+{{JSObject1.fetchData();}}
+```
+
+</dd>
+
+#### Disable action
+
+To disable an action based on specific criteria, you can use *JS* in the **Disabled** property of the widget.
+
+<dd>
+
+*Example*: If specific criteria are not met, you want to disable the Refund button on the customer dashboard. Enable *JS* for **Disabled** property, and add:
+
+
+```js
 {{
-  query1.run()
-    .then(() => query2.run())
-    .then(() => query3.run());
+  lst_orderHistory.triggeredItem.payment_method === 'Cash On Delivery' ||
+  lst_orderHistory.triggeredItem.delivery_status === "Canceled" ||
+  lst_orderHistory.triggeredItem.refund >= lst_orderHistory.triggeredItem.amount
 }}
 ```
 
-This example shows how to chain queries and actions to execute one after the other, and other actions, such as showing messages and closing modals, are executed using callbacks.
+This code determines whether to disable the Refund button on the customer dashboard based on conditions related to payment method, delivery status, and refund amount.
 
-```javascript
-{{ 
-    updateUsers.run()
-      .then(() => fetchUsers.run()
-                  .then(() => { 
-                      showAlert('User Updated'); 
-                      closeModal('Modal1'); 
-                    })
-        .catch(() => showAlert("Fetch Users Failed"))
-      ).catch(() => showAlert("Update User Failed", "error")) 
-}}
-```
-
-## Fetch API
-The Fetch API provides an interface for executing network calls programmatically. You can use `fetch()` to programmatically configure and execute a REST API.  
-
-**Examples**
-
-**GET request**
-```javascript
-const questions = await fetch("https://opentdb.com/api.php?amount=10")
-return questions.json()
-```
-
-**POST request**
-```javascript
-fetch("https://63772c9a5c477765121615ba.mockapi.io/users", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    name: "Alex",
-    email: "alex@appsmith.com",
-  }),
-}).then((response) => {
-    console.log("Success:", response.json());
-}).catch((error) => {
-    console.error("Error:", error);
-});
-```
-
-**File upload**
-```javascript
-const formData = new FormData();
-formData.append("file", FilePicker1.files[0]);
-		
-let response = await fetch('https://httpbin.org/post', {
-	method: 'POST',
-	body: formData
-});
-```
+</dd>
 
 
-## Further reading
-* [Appsmith Framework](/reference/appsmith-framework/)
-* [Import External Libraries](/core-concepts/writing-code/ext-libraries) 
 
+See [how to pass parameters at runtime](/connect-data/concepts/dynamic-queries#passing-parameters-at-runtime-using-run).

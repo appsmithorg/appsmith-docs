@@ -17,15 +17,16 @@ In addition to the [default](/advanced-concepts/invite-users#built-in-roles) rol
 
 With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button.
 
-<figure>
-  <img src="/img/add_custom_role.png" style= {{width:"700px", height:"auto"}} alt="Add a new Role"/>
-  <figcaption align = "center"><i>Add a custom role</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/add_custom_role.png" 
+  alt="Add a new Role"
+  caption="Add a custom role"
+/>
 
 The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily:
 
 - [Application Resources](#application-resources)
-- [Datasource and Queries](#datasource-and-queries)
+- [Datasource and Environments](#datasource-and-environments)
 - [Groups and Roles](#groups-and-roles)
 - [Others](#others)
 
@@ -34,24 +35,23 @@ The permissions are grouped into four categories, which helps users manage and a
 
 In this section, you'll find permissions related to the application and its resources such as pages, widgets, and queries. The table below illustrates the permissions that can be assigned to either a user or a group. Additionally, it explains how each permission behaves at various hierarchical levels.
 
-|   | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> | <div style= {{width:"180px"}}> **Public** </div> | <div style= {{width:"180px"}}> **Export** </div> | 
-| --- | --- | --- | --- | --- | --- | --- |
-| **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace. | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | Make any application inside the workspace public. | Export any application in the workspace. |
-| **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | Make the application public | Export that particular application. |
-| **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - |
-| **Query** | - | Edit the query. | Delete the query. | View the query. | - | - |
+|   | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Public** </div> | <div style= {{width:"180px"}}> **Export** </div> | 
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace. | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | - | Make any application inside the workspace public. | Export any application in the workspace. |
+| **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | - | Make the application public | Export that particular application. |
+| **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - | - |
+| **Query** | - | Edit the query. | Delete the query. | View the query. | Execute the query. | - | - |
 
 
-### Datasource and queries
+### Datasource and environments
 
-This section contains permissions related to the actions a user can perform on datasources and queries. The table below lists the different permissions available and outlines how each permission operates at varying hierarchical levels:
+This section contains permissions related to the actions a user can perform on datasources and environments. The table below lists the different permissions available and outlines how each permission operates at varying hierarchical levels:
 
 | | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> |
 | --- | --- | --- | --- | --- | --- |
 | **Workspace** | Execute queries on any datasource in the workspace. | Create queries on any datasource in the workspace. | Edit any datasource in the workspace. | Delete any datasource in the workspace. | View any datasource in the workspace. |
-| **Environments** | Execute queries for staging and production environment.  | - | - | - | - |
-| **Datasource** | Execute queries on that datasource provided they have access to execute on at least one environment. | Create queries on the datasource. | Edit values of datasource configurations parameters in all environments. | Add or Remove datasource configuration parameters in all environments. | View datasource configuration values in all environments. |
-| **Query** | Execute the query. | - | - | - | - |
+| **Environments** | Execute queries for different environments.  | Create custom environments.  | Edit and configure different environments. |  Delete different environments.| View environments in the workspace. |
+| **Datasources** | Execute queries on that datasource provided they have access to execute on at least one environment. | Create queries on the datasource. | Edit values of datasource configurations parameters in all environments. | Add or remove datasource configuration parameters in all environments. | View datasource configuration values in all environments. |
 
 
 ### Groups and roles

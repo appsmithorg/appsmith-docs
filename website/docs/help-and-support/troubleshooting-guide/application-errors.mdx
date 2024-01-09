@@ -1,130 +1,122 @@
----
-sidebar_position: 4
-description: Troubleshoot the issues with your Appsmith applications. This page includes a list of common errors, causes, and solutions to help you resolve application issues.
----
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Application Errors
 
-## Invalid / empty name error
+Understanding how to effectively troubleshoot errors in your Appsmith applications can save you time and help maintain a smooth development process. This guide will walk you through common issues you may encounter and how to resolve them efficiently.
 
-![Click to expand](/img/application-name-error.png)
+## Testing datasource connection
 
-#### Error message
-<Message
-    messageContainerClassName="error"
-    messageContent="Application name can't be empty."
-></Message>
+If you suspect an error related to your datasource, the first step is to test the datasource connection. This will quickly tell you whether the issue is with the connectivity to your data source or something else.
 
-#### Cause
-This error indicates that the application name field has been left empty.
+1. Navigate to your Appsmith application's datasource page.
+2. Find the datasource in question and click on the "Test" button.
+3. If the "Test Configuration" option indicates failure, proceed to troubleshoot the datasource connectivity.
 
-#### Solution
-This error can be fixed by editing the application name field and providing a non-empty string as the application name.
+<!-- -->
 
-## Duplicate name error
+### Troubleshooting datasource connectivity
 
-#### Error message
+- Ensure that your datasource URL, authentication credentials, and other settings are correctly configured.
+- Verify that any IP whitelisting or firewall rules allow traffic from Appsmith's servers.
+- Review any error messages returned by the Test Configuration for clues to the problem.
 
-<Message
-    messageContainerClassName="error"
-    messageContent="Entity name: <name> is already being used."
-></Message>
+See guides on common [datasource errors](/help-and-support/troubleshooting-guide/action-errors/datasource-errors).
 
-#### Cause
-This error indicates that the name being assigned to the entity has been used before.
+<!-- -->
 
-#### Solution
-[JavaScript reserved keywords](https://www.w3schools.com/js/js\_reserved.asp) and [the window object methods and properties](https://www.w3schools.com/jsref/obj\_window.asp) can't be used as entity names. You can fix the error by assigning a new unique name to the entity.
+## Debugging query errors
 
-## Login / signup errors
+Once you have confirmed that your datasource is connected, the next step is to ensure your queries are running as expected.
 
+- Remove any mustache bindings temporarily and use hard-coded parameters to test the basic query.
+- If the query fails to run, analyze the SQL or command errors, and adjust your query accordingly.
 
-![Click to expand](/img/signup-error.png)
+See guides on common [query errors](/help-and-support/troubleshooting-guide/action-errors).
 
-### Account already registered error
+<!-- -->
 
-#### Error message
-<Message
-    messageContainerClassName="error"
-    messageContent="There is already an account registered with this email. Please sign in instead."
-></Message>
+### Inspecting evaluated values
 
-#### Cause
-This error indicates that the email used to sign up has already been used before.
+- In the Appsmith editor, inspect the evaluated value of the query to ensure that mustache parameters are being interpreted correctly.
+- Hover over parameters within your query to confirm they are present and formatted as expected.
 
-#### Solution
-This error can be fixed by either using a different email to signup or doing `login` instead of `signup`
+<!-- -->
 
-### Reset password error
+### Troubleshoot mustache bindings
 
-#### Error message
-<Message
-    messageContainerClassName="error"
-    messageContent="It looks like you may have entered incorrect/invalid credentials. Please try again or reset password using the button below."
-></Message>
+- Verify the syntax of your mustache bindings. Incorrect bindings can lead to errors when the query attempts to execute.
+- If the binding syntax is correct, check whether the widgets referenced in the bindings are configured correctly on the page.
 
-#### Cause
+<!-- -->
 
-This error appears when the user attempts to log into the Appsmith platform with invalid email and/or password.
+## Debugging widget errors
 
-#### Solution
-If you are unable to log in due to forgotten credentials, it's recommended to reset your account password. This can be done with the "Forgot Password" button on the Appsmith sign-in page; the page prompts you for the email address associated with your account, and then Appsmith sends an email to that address with a link for creating a new password.
+Errors in widget properties are often related to the validation rules of those properties.
 
-Alternatively, you may be able to access your account by using an SSO method like Google or GitHub. If you use SSO with an account that has the same email address as the one you normally use to log in via email and password, you should be signed in successfully.
+### Validation errors
 
-If you need to reset your password while using a self-hosted instance of Appsmith, the instance must first be [configured to send email notifications](/getting-started/setup/instance-configuration/email).
+- Ensure that any data bound to widgets is in the format expected by the property. For example, a Table widget expects an array of objects.
+- You may need to transform or access nested arrays differently if they do not match the expected input.
 
-### No user error
+**Example:** a Table widget is bound to the result of an API that returns a JSON object instead of an array of objects, which the Table widget expects for its data source.
 
-#### Error message
-<Message
-    messageContainerClassName="error"
-    messageContent="Unable to find user <email>."
-></Message>
+**Solution:** Transform the JSON object into an array of objects using JavaScript within the query or within a JS Object. You can use the `.map()` function to achieve the desired transformation if the data contains an array nested within the object.
 
-#### Cause
-The error indicates that the email provided to reset the password isn't registered with Appsmith.
+<!-- -->
 
-#### Solution
-You can fix the error by providing an email that has been used to register with Appsmith before. Alternatively, any new un-registered email can be used to create a new account using the sign-up option.
+## Debug JS Errors
 
-### Unable to log in with SSO
+You can use the `debugger` statement or `console.log()` to debug and inspect your code in the browser console or the **Console** tab. This allows you to check the state of your code and step through it line by line to help identify and fix any errors.
 
-If you configure Single Sign-On (SSO) before setting up a custom domain, you may encounter issues when trying to log in. In such cases, you may be redirected to the URL `https://user/login?error=true`.
+While writing javascript in Appsmith, you may encounter the following errors in your code.
 
-#### Error Message
+#### Reference errors
 
-If you check the [container logs](/getting-started/setup/instance-management/how-to-get-container-logs), you would see an error as shown below:
+These occur when the code references an entity or variable that is not defined on the page. Review your bindings and the names of the entities to correct these errors.
 
-```bash
-In the login failure handler. Cause: [invalid_client] AA**********: The reply address 'http://<IP>/login/oauth2/code/oidc' does not match the reply address 'https://<APPSMITH_CUSTOM_DOMAIN>/login/oauth2/code/oidc' provided when requesting Authorization code.
+#### Lint errors
+
+Review the syntax of the mustache bindings for any syntax errors that could be causing issues. Javascript written inside mustache bindings can only be single line code. Use JSObjects for multi-line functions.
+
+#### Type errors
+Check your JavaScript operations to ensure you are not performing unsupported operations on certain data types.
+
+### With debugger statement
+
+To invoke the debugger, insert a `debugger` keyword in your code where you want it to pause, and then run your app. The code execution pauses on the debugger statement. It works like a `breakpoint`. You can then use the debugger tools to step through your code, inspect variables, and see how your code is executing.
+
+**Syntax**
+
 ```
-#### Cause
+debugger;
+```
 
-This error means that you have configured SSO before configuring the custom domain.
+**Example**:
 
-#### Solution 
+```
+export default {
+    getUserDetails: async () => {
+        const userInfo = await userDetailsAPI.run();
+        debugger; // the execution is paused at this point
+        console.log(“user information: “+userInfo); // The value of the userInfo
+        variable is printed in the Logs tab.
+        return userInfo;
+    }
+}
+```
 
-To resolve the issue, go to **Admin Settings > Authentication > OIDC/SAML**, disconnect the configured SSO method and set up a new SSO configuration. 
+### With console.log()
 
-## Page access error
+In addition to using the debugger statement, you can use `console.log()` to print information about your code to the browser's console. This can help inspect the values of variables or the state of your app at different points during the execution of your code.
 
-![Click to expand](/img/page-not-found-error.png)
+**Syntax**
 
-#### Error message
-<Message
-    messageContainerClassName="error"
-    messageContent="Either this page does not exist, or you don't have access to this page."
-></Message>
+```
+console.log(<VARIABLE_NAME>);
+```
 
-#### Cause
-This message indicates one of the following:
+<VideoEmbed host="youtube" videoId="EYNPm9cJWGw" title="How To Debug JavaScript With Console.log" caption="How To Debug JavaScript With Console.log"/>
 
-* The page URL is invalid. 
-* The User doesn't have [permission](/advanced-concepts/invite-users) to access the page. 
 
-#### Solution
-You can fix the error by requesting access permission for the page from the `admin/developer`.
 
+## Getting help
+
+If after following these steps you're still encountering errors, the support team is here to help you. So don't hesitate to reach out for assistance via the chat widget on this page.

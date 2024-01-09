@@ -11,30 +11,32 @@ This page provides information for connecting your application to your Airtable 
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Airtable base.
 
-<figure>
-  <img src="/img/airtable-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an Airtable datasource." />
-  <figcaption align="center"><i>Configuring an Airtable datasource.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/airtable-datasource-config.png" 
+  alt="Configuring an Airtable datasource"
+  caption="Configuring an Airtable datasource"
+/>
 
-<dl>
-  <dt><b>Authentication type</b></dt>
-  <dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
-  <dd><i>Options:</i>
-    <ul>
-     <li><b>API key:</b> This authentication type has been deprecated by Airtable. For more information, see <a href="https://support.airtable.com/docs/airtable-api-key-deprecation-notice">Airtable Api Key Deprecation Notice</a>.</li>
-     <li><b>Personal access token:</b> Connects to Airtable using the provided Airtable Personal Access Token.</li>
-    </ul>
-  </dd>  
-</dl>
+#### Authentication type
+
+<dd>Sets the method to use for authenticating your queries to Airtable. Appsmith automatically handles sending your token in your request headers.</dd><br/>
+<dd>
+    <i>Options:</i>
+  <ul>
+    <li><b>API key:</b> This authentication type has been deprecated by Airtable. For more information, see <a href="https://support.airtable.com/docs/airtable-api-key-deprecation-notice">Airtable Api Key Deprecation Notice</a>.</li>
+    <li><b>Personal access token:</b> Connects to Airtable using the provided Airtable Personal Access Token.</li>
+  </ul>
+</dd>
 
 ## Create queries
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create Airtable queries.
 
-<figure>
-  <img src="/img/airtable-query-screen.png" style={{width: "100%", height: "auto"}} alt="Configuring a List Records query." />
-  <figcaption align="center"><i>Configuring a List Records query.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/airtable-query-screen.png" 
+  alt="Configuring a List Records query"
+  caption="Configuring a List Records query"
+/>
 
 :::caution
 [The Airtable Web API is rate-limited](https://support.airtable.com/hc/en-us/articles/203313985-Public-REST-API) to 5 requests per second, per base. If you exceed this rate, your requests fail with a 429 status code for the next 30 seconds.
@@ -56,23 +58,25 @@ For more information, see [Finding Airtable IDs](https://support.airtable.com/do
 
 This command to fetches data from your Airtable base. You can use the query configuration fields to filter, sort, and format the data that's returned to your app. The following section lists all the fields available for the **List records** command.
 
-<dl>
-  <dt><b>Base ID</b></dt>
-  <dd>
+#### Base ID
+
+<dd>
 
 A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
-  </dd>
+</dd>
 
-  <dt><b>Table name</b></dt>
-  <dd>
+#### Table name
+
+<dd>
 
 The name of the table to query from your base.
-  
-  </dd>
 
-  <dt><b>Fields</b></dt>
-  <dd>
+</dd>
+
+#### Fields
+
+<dd>
 
 Specifies which columns to return. If left blank, all columns are returned. The input to this field must be encoded using the JavaScript [`encodeURI()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) method. See below:
 
@@ -98,10 +102,11 @@ Below, a variable number of columns are chosen with a [Multi-Select widget](/ref
 }}
 ```
 
-  </dd>
+</dd>
 
-  <dt><b>Filter by formula</b></dt>
-  <dd>
+#### Filter by formula
+
+<dd>
 
 Expects an [Airtable formula](https://support.airtable.com/docs/formula-field-reference), which only returns the records where the formula evaluates to `true`. For example:
 
@@ -117,24 +122,27 @@ Or you can return records where the percentage of positive reviews are above an 
 goodReviews / SUM(goodReviews, badReviews) > .85
 ```
   
-  </dd>
+</dd>
 
-  <dt><b>Max records</b></dt>
-  <dd>
+#### Max records
+
+<dd>
 
 Sets a limit for how many records are allowed to be selected in this query.
   
-  </dd>
+</dd>
 
-  <dt><b>Page size</b></dt>
-  <dd>
+#### Page size
+
+<dd>
 
 Sets an integer limit for how many records can be returned at a time; further results are sent in subsequent requests. The default value for this field is `100`.
   
-  </dd>
+</dd>
 
-  <dt><b>Sort</b></dt>
-  <dd>
+#### Sort
+
+<dd>
 
 Specifies which column to sort results by. The input for this field must be encoded using the JavaScript [`encodeURI()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) method. See below:
   
@@ -160,59 +168,64 @@ Below, a variable number of columns are chosen with a [Multi-Select widget](/ref
 }}
 ```
 
-  </dd>
+</dd>
 
-  <dt><b>Cell format</b></dt>
-  <dd>
+#### Cell format
+
+<dd>
 
 Sets whether certain values are returned in `string` or `json` format. For example, ticked checkboxes are `"checked"` in string format, or `true` in JSON format.
   
-  </dd>
+</dd>
 
-  <dt><b>Time zone</b></dt>
-  <dd>
+#### Time zone
+
+<dd>
 
 Sets the time zone to use for displaying date values, expects value like `'America/Chicago'`. For more information, see [Supported Timezones for SET_TIMEZONE](https://support.airtable.com/docs/supported-timezones-for-set-timezone).
   
-  </dd>
+</dd>
 
-  <dt><b>User locale</b></dt>
-  <dd>
+#### User locale
+
+<dd>
 
 Sets format for displaying dates according to locale, expects a value like `'en-gb'` for British English. For more information, see [Supported locale modifiers for SET_LOCALE](https://support.airtable.com/docs/supported-locale-modifiers-for-set-locale).  
   
-  </dd>
+</dd>
 
-  <dt><b>Offset</b></dt>
-  <dd>
+#### Offset
+
+<dd>
 
 This field expects an `offset` token from the query's prior response. That token acts as a cursor to tell your base where in its records to begin returning results.
 
-  </dd>
+</dd>
 
-</dl>
 
 ### Create records
 
 This command creates new entries in your Airtable base. The following section lists all the fields available for the **Create records** command.
 
-<dl>
-  <dt><b>Base ID</b></dt>
-  <dd>
+#### Base ID
+
+<dd>
 
 A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
-  </dd>
+</dd>
 
-  <dt><b>Table name</b></dt>
-  <dd>
+#### Table name
+
+<dd>
 
 The name of the table to query from your base.
-  
-  </dd>
 
-  <dt><b>Records</b></dt>
-  <dd>
+</dd>
+
+#### Records
+
+<dd>
 
 Data for the new records to create. Expects an array of objects, where each object has a `fields` key containing an object of column key-value pairs. For example:
 
@@ -228,87 +241,88 @@ Data for the new records to create. Expects an array of objects, where each obje
 ]
 ```
   
-  </dd>
+</dd>
 
-</dl>
 
 ### Delete a record
 
 This command deletes one entry in your Airtable base. The following section lists all the fields available for the **Delete a record** command.
 
-<dl>
-  <dt><b>Base ID</b></dt>
-  <dd>
+#### Base ID
+
+<dd>
 
 A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
-  </dd>
+</dd>
 
-  <dt><b>Table name</b></dt>
-  <dd>
+#### Table name
+
+<dd>
 
 The name of the table to query from your base.
-  
-  </dd>
 
-  <dt><b>Record ID</b></dt>
-  <dd>
+</dd>
+
+#### Record ID
+
+<dd>
 
 The string ID of the record to delete.
-  
-  </dd>
 
-</dl>
+</dd>
 
 ### Retrieve a record
 
 This command fetches one entry from your Airtable base by its string ID. The following section lists all the fields available for the **Retrieve a record** command.
 
-<dl>
-  <dt><b>Base ID</b></dt>
-  <dd>
+#### Base ID
+
+<dd>
 
 A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
-  </dd>
+</dd>
 
-  <dt><b>Table name</b></dt>
-  <dd>
+#### Table name
+
+<dd>
 
 The name of the table to query from your base.
-  
-  </dd>
 
-  <dt><b>Record ID</b></dt>
-  <dd>
+</dd>
+
+#### Record ID
+
+<dd>
 
 The string ID of the record to retrieve.
-  
-  </dd>
 
-</dl>
+</dd>
 
 ### Update records
 
 This command updates entries in your Airtable base, selected by their string IDs. The following section lists all the fields available for the **Update records** command.
 
-<dl>
-  <dt><b>Base ID</b></dt>
-  <dd>
+#### Base ID
+
+<dd>
 
 A string that uniquely identifies your Airtable base. To find your Base ID, see [Find your Base ID](#find-your-base-id).
 
-  </dd>
+</dd>
 
-  <dt><b>Table name</b></dt>
-  <dd>
+#### Table name
+
+<dd>
 
 The name of the table to query from your base.
-  
-  </dd>
 
-  <dt><b>Records</b></dt>
-  <dd>
+</dd>
+
+#### Records
+
+<dd>
 
 Data for the records to update. Expects an array of objects, where each object has an `id` key containing the ID of the record to update, and a `fields` key containing an object of column key-value pairs. For example:
 
@@ -325,9 +339,7 @@ Data for the records to update. Expects an array of objects, where each object h
 ]
 ```
   
-  </dd>
-
-</dl>
+</dd>
 
 ## Troubleshooting
 

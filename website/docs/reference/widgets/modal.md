@@ -6,10 +6,7 @@ Description: This page explains how to use the Modal widget to create a dialog i
 This page provides information on using the Modal widget to create a dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more. It acts as a container used to group and handle related user inputs , and can be opened using actions such as setting a Button widget's onClick event. 
 
 
-<figure>
-  <img src="/img/modal-img.png" style= {{width:"600px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Display Modal</i></figcaption>
-</figure>
+<ZoomImage src="/img/modal-img.png" alt="Display images on table row selection" caption="Display Modal" />
 
 ## Content properties
 

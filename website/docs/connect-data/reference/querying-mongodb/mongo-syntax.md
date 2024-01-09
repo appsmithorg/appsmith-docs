@@ -86,10 +86,7 @@ When running a Raw query, the filter criteria must be included in the pipeline a
 
 
 
-<figure>
-  <img src="/img/Datasources__MongoDB__Pipeline_Keyword_not_supplied__Error_Generated.png" style= {{width:"700px", height:"auto"}} alt="Configure PostgreSQL Datasource"/>
-  <figcaption align = "center"><i>The error generated when the pipeline keyword  isn't added</i></figcaption>
-</figure>
+<ZoomImage src="/img/Datasources__MongoDB__Pipeline_Keyword_not_supplied__Error_Generated.png" alt="Configure PostgreSQL Datasource" caption="The error generated when the pipeline keyword  isn't added" />
 
 
 ## Raw query syntax

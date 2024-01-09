@@ -1,87 +1,61 @@
 ---
-description: Deploy Appsmith to a remote host using Ansible
+description: This page provides instructions to deploy Appsmith on a remote host using Ansible.
 ---
 
 # Ansible
 
-## Deployment steps:
+This page provides instructions to install Appsmith on a remote host using Ansible.
 
-* [Install Ansible](ansible.md#step-1-install-ansible)
-* [Ansible inventory setup](ansible.md#step-2-ansible-inventory-setup)
-* [Ansible configuration vars setup for Appsmith](ansible.md#step-3-ansible-configuration-vars-setup-for-appsmith)
-* [Run the Ansible playbook](ansible.md#step-4-run-the-ansible-playbook)
+## Prerequisites
 
-## Step 1: Install Ansible
+- Install Ansible on your local machine. See the official Ansible documentation for your [operating system](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-specific-operating-systems).
+- An Ubuntu server for hosting.
 
-> You can skip this step if you already have Ansible installed.
+## Install Appsmith
 
-There are two options for installing Ansible:
+1. Clone the Appsmith repository to your machine with:
 
-* Option 1: Using OS-specific Package Managers.
-  *   To install on Ubuntu, you can run the following commands:
+   ```bash
+   git clone https://github.com/appsmithorg/appsmith.git
+   ```
 
-      ```
-      $ sudo apt update
-      $ sudo apt install software-properties-common
-      $ sudo add-apt-repository --yes --update ppa:ansible/ansible
-      $ sudo apt install ansible
-      ```
-  * Please refer to [Ansible's official installation guide](https://docs.ansible.com/ansible/latest/installation\_guide/intro\_installation.html#installing-ansible-on-specific-operating-systems) for other operating systems.
-*   Option 2: Using `pip`:
+   The above command copies the `appsmith` repository into a `appsmith` folder, which serves as your installation directory.
 
-    ```
-    $ sudo pip install ansible
-    ```
+2. Go to the _ansible_playbook_ folder:
+   ```bash
+   cd appsmith/deploy/ansible/appsmith_playbook
+   ```
+3. Create an Ansible inventory file with:
 
-    * If you do not have pip installed on your system, please refer to [Ansible's official guide on installing with pip.](https://docs.ansible.com/ansible/latest/installation\_guide/intro\_installation.html#installing-and-upgrading-ansible-with-pip)
+   ```bash
+   touch inventory
+   ```
 
-## Step 2: Ansible inventory setup
+   An Ansible inventory file specifies the target hosts you want to manage with Ansible.
 
-1.  Clone the Appsmith repository to your machine & move it to the Ansible playbook folder.
+4. Open the `inventory` file and add the server details:
+   - If you are using an SSH key pair for authenticating your server, then add the hostname or Fully Qualified Domain Name (FQDN), port, and the SSH Key in the below format:
+     ```txt
+     appsmith ansible_host=<SERVER_HOST> ansible_port=<SERVER_PORT> ansible_user=<SERVER_USER> ansible_ssh_private_key_file=<PATH_TO_SSH_PRIVATE_KEY_FILE>
+     ```
+   - **Or** if you are using a username to log into your server, then add the hostname or Fully Qualified Domain Name (FQDN), port, and username in the below format:
+     ```txt
+     appsmith ansible_host=<SERVER_HOST> ansible_port=<SERVER_PORT> ansible_user=<SERVER_USER>
+     ```
+5. Run the Ansible playbook with:
 
-    ```
-    $ git clone https://github.com/appsmithorg/appsmith.git
-    $ cd ./appsmith/deploy/ansible/appsmith_playbook
-    ```
-2.  Create the `inventory` file.
+   If your default installation folder is not `appsmith`, then add the absolute path of your installation folder to the `install_dir` property in the `appsmith-vars.yml` file.
 
-    ```
-        $ touch inventory
-    ```
-3.  To configure the `inventory` file, open it with your editor and add the hostname or FQDN of the server on which you want to deploy Appsmith, along with the Ansible port and Ansible user.
+   ```bash
+   ansible-playbook -i inventory appsmith-playbook.yml --extra-vars "@appsmith-vars.yml"
+   ```
 
-    The inventory file should follow the given format:
+   The command above uses the host information from the `inventory` file and the configuration from the `appsmith-vars.yml` file before running the playbook.
 
-    ```
-    appsmith ansible_host={{ SERVER_HOST }} ansible_port={{ SERVER_PORT }} ansible_user={{ SERVER_USER }}
-    ```
-
-    If you are using SSH key pairs for authenticating your SSH connections to your server. You can specify your ssh private key file in the `inventory` file using `ansible_ssh_private_key_file`
-
-    ```
-    appsmith ansible_host={{ SERVER_HOST }} ansible_port={{ SERVER_PORT }} ansible_user={{ SERVER_USER }} ansible_ssh_private_key_file={{ SSH_PRIVATE_KEY_FILE }}
-    ```
-
-## Step 3: Ansible configuration vars setup for Appsmith
-
-1. Open `appsmith-vars.yml` file with your editor.<br/>
-Some variables need input from you to start the application correctly.
-   * `install_dir`: The absolute path of your app's installation folder on the server (required). Default value: `~/appsmith`
-
-## Step 4: Run the Ansible playbook
-
-You can run the Ansible playbook with the following command:
-
-```
-$ ansible-playbook -i inventory appsmith-playbook.yml --extra-vars "@appsmith-vars.yml"
-```
-
-The command above uses the host information from the `inventory` file & feeds your configuration vars from `appsmith-vars.yml` before running the playbook
-
-When it's all done, provided all went well and no parameters were changed, you should be able to visit your app on the browser using your `custom_domain` or by your `SERVER_HOST` (if you didn't provide value for `custom_domain` variable)
-
-> **Note**: You can put your `inventory` file in other folder and then specify its path with the `-i` flag, for more detail, please check [Ansible Inventory documentation](https://docs.ansible.com/ansible/latest/user\_guide/intro\_inventory.html)
+6. Access Appsmith using your custom domain or host. You will see a _Please wait_ screen while the server is starting, which may take up to 5 minutes. Once the server is up and running, you can access Appsmith using your custom domain or host.
 
 ## Troubleshooting
 
-If you encounter any errors during this process, check out the guide on [debugging deployment errors](/help-and-support/troubleshooting-guide/deployment-errors), if you are still facing an issue please reach out to [support@appsmith.com](mailto:support@appsmith.com)
+If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
+
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.

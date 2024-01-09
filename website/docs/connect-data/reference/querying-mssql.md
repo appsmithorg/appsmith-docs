@@ -19,54 +19,55 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a MS SQL database.
 
-<figure>
-  <img src="/img/mssql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL datasource." />
-  <figcaption align="center"><i>Configuring an MS SQL datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-datasource-config.png" alt="Configuring an MS SQL datasource." caption="Configuring an MS SQL datasource." />
 
-<dl>
-  <dt><b>Connection mode</b></dt>
-  <dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
-      <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
-    </ul>
-  </dd><br />
+#### Connection mode
 
-  <dt><b>Host Address</b></dt>
-  <dd>The network location of your MS SQL database. This can be a domain name or an IP address. To connect to a local MS SQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd><br />
+<dd>Sets which permissions to grant to Appsmith when establishing a connection to the database.</dd><br />
+<dd>
+  <i>Options:</i>
+  <ul>
+    <li><b>Read Only:</b> Gives Appsmith read-only permission on the database. Use this mode when you only need to fetch records, not write them.</li>
+    <li><b>Read / Write:</b> Gives Appsmith both read and write permissions on the database. This allows you to make changes to your data via all CRUD queries.</li>
+  </ul>
+</dd>
 
-  <dt><b>Port</b></dt>
-  <dd>The port number to connect to on the server. Appsmith connects to port <code>1433</code> by default if you do not specify one.</dd><br />
+#### Host Address
 
-  <dt><b>Database Name</b></dt>
-  <dd>The name of the database to connect.</dd><br />
+<dd>The network location of your MS SQL database. This can be a domain name or an IP address. To connect to a local MS SQL database, see <a href="/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith"><b>Connect Local Database</b></a> for directions. </dd>
 
-  <dt><b>Username</b></dt>
-  <dd>The username that you want to use to authenticate with the database server.</dd><br />
+#### Port
 
-  <dt><b>Password</b></dt>
-  <dd>Password to use if the server demands password authentication.</dd><br />
+<dd>The port number to connect to on the server. Appsmith connects to port <code>1433</code> by default if you do not specify one.</dd>
 
-  <dt><b>SSL mode</b></dt>
-  <dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
-  <dd><i>Options:</i>
-    <ul>
-      <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
-      <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
-    </ul>
-  </dd>
-</dl>
+#### Database Name
+
+<dd>The name of the database to connect.</dd>
+
+#### Username
+
+<dd>The username that you want to use to authenticate with the database server.</dd>
+
+#### Password
+
+<dd>Password to use if the server demands password authentication.</dd>
+
+#### SSL mode
+
+<dd>Determines whether your queries use an SSL connection to communicate with the database.</dd><br />
+<dd>
+  <i>Options:</i>
+  <ul>
+    <li><b>Enabled with no verify:</b> The connection is encrypted but no client verification is done.</li>
+    <li><b>Disabled:</b> Disables SSL completely, and all connections are established without encryption.</li>
+  </ul>
+</dd>
 
 ## Query MS SQL
 
 The following section provides examples of creating basic CRUD queries for MS SQL.
 
-<figure>
-  <img src="/img/mssql-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring an MS SQL query." />
-  <figcaption align="center"><i>Configuring an MS SQL query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/mssql-query-config.png" alt="Configuring an MS SQL query." caption="Configuring an MS SQL query." />
 
 :::info
 You can query MS SQL databases using T-SQL syntax. Refer to Microsoft's documentation to learn how to [Write Transact-SQL statements](https://learn.microsoft.com/en-us/sql/t-sql/queries/queries?view=sql-server-ver16).
@@ -80,7 +81,7 @@ OFFSET {{ UsersTable.pageOffset }} ROWS
 FETCH NEXT {{ UsersTable.pageSize }} ROWS ONLY;
 ```
 
-In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `UsersTable` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
 ### Insert data
 

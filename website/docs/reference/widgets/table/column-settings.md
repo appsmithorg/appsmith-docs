@@ -6,10 +6,7 @@ import TabItem from '@theme/TabItem';
 
 You can customize each table column separately by accessing properties through the gear icon ⚙️ in the table's properties pane. This includes editing existing column properties, adding new custom columns, rearranging columns, and hiding columns.
 
-<figure>
-  <img src="/img/col-settings.gif" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i></i></figcaption>
-</figure>
+<ZoomImage src="/img/col-settings.gif" alt="Display images on table row selection" caption="" />
 
 
 
@@ -41,10 +38,7 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 
 The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name column based on the value of the gender column in the current row.
 
-<figure>
-  <img src="/img/col-example.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Formatting Column</i></figcaption>
-</figure>
+<ZoomImage src="/img/col-example.png" alt="Display images on table row selection" caption="Formatting Column" />
 
 
 ## Cell styling
@@ -58,10 +52,7 @@ For example, lets say you have a column named `status` that reflects `approved` 
 ```
 If you want to keep the same background color for an entire row, you can use the same custom style expression in each column **Cell Background** property.
 
-<figure>
-  <img src="/img/cell-color.png" style= {{width:"700px", height:"auto"}} alt="Display images on table row selection"/>
-  <figcaption align = "center"><i>Color Formatting</i></figcaption>
-</figure>
+<ZoomImage src="/img/cell-color.png" alt="Display images on table row selection" caption="Color Formatting" />
 
 
 ## Properties

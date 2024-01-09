@@ -1,9 +1,23 @@
 ---
 description: >-
   Setup OIDC using Okta
+title: Okta
+hide_title: true
 ---
+<!-- vale off -->
 
-# Okta
+<div className="tag-wrapper">
+ <h1>Okta</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, follow the steps below:
 
@@ -14,10 +28,7 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 3. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on **OIDC**.
 4. Copy the **Redirect URL** from the **OIDC** configuration page to add it when creating the application in Okta.
 
-<figure>
-  <img src="/img/oidc-configurations-in-appsmith.png" style= {{width:"600px", height:"auto"}} alt="OIDC configurations"/>
-  <figcaption align = "center"><i>OIDC configurations in Appsmith</i></figcaption>
-</figure>
+<ZoomImage src="/img/oidc-configurations-in-appsmith.png" alt="OIDC configurations" caption="OIDC configurations in Appsmith" />
 
 ## Create application on Okta
 
@@ -64,7 +75,11 @@ To complete the OIDC configuration, you have to register the identity provider o
   | **User Info URL**      | userinfo_endpoint         |
   | **JWK Set URL**             |  jwks_uri          |
 
-3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. Appsmith needs `openid` and `email` as mandatory scopes. For more information, see [Okta API scopes](https://developer.okta.com/docs/guides/configure-user-scoped-account-management/main/#grant-the-required-scopes).
+3. In the **Scope** box, specify the scopes to be used by the application during authentication to authorize access to a user's details. By default, there are three scopes - `openid`, `email`, and `profile`. 
+ 
+  Appsmith needs `openid` and `email` as mandatory scopes. It’s also highly recommended to use the `offline_access` scope to avoid errors related to expired access tokens and excessive re-login requests. For more information, see [Okta API scopes](https://developer.okta.com/docs/reference/api/oidc/#scopes).
+
+
 
 4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
@@ -72,7 +87,4 @@ Once you have added the details, click the **SAVE & RESTART** button to save the
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH OIDC SSO** button.
 
-<figure>
-  <img src="/img/Appsmith-Login-Screen-Shows-OIDC.png" style= {{width:"400px", height:"auto"}} alt="OIDC-login"/>
-  <figcaption align = "center"><i>Login with OIDC SSO </i></figcaption>
-</figure>
+<ZoomImage src="/img/Appsmith-Login-Screen-Shows-OIDC.png" alt="OIDC-login" caption="Login with OIDC SSO " />

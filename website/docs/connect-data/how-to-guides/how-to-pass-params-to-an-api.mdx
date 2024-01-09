@@ -1,56 +1,71 @@
 ---
 description: Learn how to pass parameters to your queries with the run() framework function.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
-# Pass Parameters to Queries
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
 
-This page describes how to use the run() function in a loop to pass different parameters to your query each time it runs.
+# Pass Runtime Parameters to Queries
 
-<VideoEmbed host="youtube" videoId="znaaDiQbAS8" title="How to pass parameters to an API call" caption="How to pass parameters to an API call"/>
+In Appsmith, you have the ability to pass static [parameters to queries](/connect-data/concepts/dynamic-queries) using mustache bindings `{{}}`. But if you need to execute a query multiple times with dynamic parameters, such as iterating through an array of ids and running a query to delete each record, then you will need to pass them in the `run()` function of the query.
 
-In some cases, like running a query inside a loop, different parameters may need to be passed to the query each time with values contextual to the execution.
+## Using the `run()` Function with Parameters
 
-For this, you can use the [`run()` function's](/reference/appsmith-framework/query-object)  `params` argument to pass an object of key-value pairs into your query. You can access these values within the query using `{{ this.params.key }}`.
+To pass different parameters every time a query is executed, you can leverage the [run()](/reference/appsmith-framework/query-object#queryrun) function's `params` argument. Within the query, you can access the passed parameters by using the Mustache notation `{{this.params.key}}`.
 
----
+## Example Scenario: Bulk User Deletion
 
-As an example, the snippets below fetch specific users from the mock **users** database based on their `id` value. Below, you'll see how to configure a query and a helper function to take an array of ids and run the query  in a loop for each of them.
+Imagine having to delete a set of user records identified by their unique IDs. We will write a query to delete a user based on an ID and create a JavaScript function that iterates through an array of IDs to perform the deletion for each one.
 
-1. To begin, you should have a query to which you'd like to pass contextual parameters.
-1. Create a JS Object and rename it `utils`. This is where you write your helper function that calls the query and handles its responses.
-1. Create a function that calls your query's [`run()` function](/reference/appsmith-framework/query-object) in a loop, using the `run()` function's first argument to pass your parameter. On completion, the results of the queries are mapped into an array and stored in the [Appsmith store](/reference/appsmith-framework/widget-actions/store-value).
+### Configuring the Bulk Delete Operation
 
-    ```javascript
-    // Using promise syntax
-    getByIds: async (ids) => {
-        const queries = ids.map(id => {
-            // highlight-start
-            // each iteration of the loop will pass the next `id` from the `ids` array.
-            return GetUserById.run({"id": id})
-            // highlight-end
-        })
-        
-        Promise.all(queries)
-            // highlight-start
-            // once the queries have settled, they results are stored in an array in the Appsmith store.
-            .then(values => storeValue("results", values))
-            // highlight-end
-    }
-    ```
+1. Begin by writing a query named `DeleteUserById` that deletes a user record based on the passed ID:
 
-1. In the query where you want to pass parameters, reference the params with `{{this.params.id}}`.
+   ```sql
+   DELETE FROM users WHERE id = '{{this.params.userId}}'
+   ```
 
-1. To execute the query loop, configure a trigger or widget action that calls your helper function in the JS Object:
+2. Create a JavaScript Object (JS Object) that will contain the utility function for bulk deletion. In the entity explorer, create a new JS Object named `UserDeletionUtils`:
 
-    ```javascript
-    {{ utils.getByIds([1, 4, 8, 34, 16]) }}
-    ```
+   ```javascript
+   export default {
+     bulkDeleteUsers: async (userIds) => {
+       // Array to store the promises from the delete operations
+       const deletePromises = userIds.map((userId) => {
+         // Executing the delete query with the current userId
+         return DeleteUserById.run({ userId });
+       });
 
-1. Wherever you want to use the results of the queries, you can reference the array containing those results from the Appsmith store like below:
+       try {
+         // Wait for all delete operations to complete
+         const results = await Promise.all(deletePromises);
+         // Optional: Handle the results, such as updating the UI or notifying success
+         return results;
+       } catch (error) {
+         // Optional: Error handling logic
+         console.error("Bulk delete operation failed", error);
+         throw error;
+       }
+     },
+   };
+   ```
 
-    ```javascript
-    {{ appsmith.store.results }}
-    ```
+3. To initiate the bulk deletion process, trigger `UserDeletionUtils.bulkDeleteUsers` from an event in your application (like a button click):
+
+   ```
+   {{ UserDeletionUtils.bulkDeleteUsers([12, 34, 56, 78, 90]) }}
+   ```
+
+   This snippet executes the `bulkDeleteUsers` function with an array of user IDs to be deleted.
+
+## Important Considerations
+
+- Ensure that the `DeleteUserById` query correctly references the `userId` parameter.
+- Be mindful of potential race conditions or limits imposed by your data source during bulk operations.
+- It is critical to handle exceptions and rejections from the promises to avoid uncaught errors that could interrupt your application flow.
+- If your datasource query supports a bulk delete operation, it will be more efficient to use that.
+
+## Conclusion
+
+The `run()` function in Appsmith empowers developers to perform dynamic and complex database operations. By passing runtime parameters and processing responses, one can create robust applications capable of handling batch processing tasks seamlessly. Always remember to handle errors gracefully and test the system under different scenarios to ensure reliability.

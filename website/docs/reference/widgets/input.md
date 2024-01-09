@@ -114,6 +114,65 @@ For instance, if you want to validate that the user enters a value in multiples 
 .*[05]$
 ```
 
+*Examples:*
+
+**Email validation**
+
+To validate whether an entered email is correct, use the following regular expression code inside the [**Regex**](/reference/widgets/input#regex-string) property of an Input widget:
+
+
+
+```js
+//regex
+^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$
+```
+
+**Phone number validation**
+
+To get phone number in a specific format or length, you can use the following codes:
+
+*Example:* if you want to validate international phone numbers starting with a plus sign (+) and a total length between 6 and 14 digits, use the following code inside the **Regex** property:
+
+
+```js
+//regex
+^\+(?:[0-9]●?){6,14}[0-9]$
+```
+
+
+**Number validation**
+
+If you need to add number validation for fields like currency or prices, you can use the following regular expression code inside the **Regex** property of any Input widget:
+
+
+```js
+//Regex
+
+//Range Validation - 0 to 100:  
+^(0*100(\.0*)?)$|^([1-9]?[0-9](\.\d*)?)$
+
+//Positive Number Validation:  
+^[1-9][0-9]*$
+
+//Decimal Number Validation:  
+^-?\d+(\.\d{2})?$
+
+//Minimum and Maximum Value Validation(1000 and 10,000):
+Regex: ^(10000|[1-9][0-9]{3,4})$ 
+```
+
+**URL validation**
+
+This validation is used to ensure that URLs provided by users for files or images adhere to the required format.
+
+```js
+//Regex
+(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})(\.[a-zA-Z0-9]{2,})?
+```
+
+
+
+
 </dd>
 
 #### Valid `boolean`
@@ -142,6 +201,20 @@ _Example:_
 <dd>
 
 Allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic `"invalid input"` message.
+
+*Example:*  If you want to add password validation, ensuring it is greater than 10 characters and contains at least one digit, you can use the following code in the **Error message** property.
+
+```js
+//Valid property
+{{Input1.text.length > 10 && /\d/.test(Input1.text) ? true : false}}
+
+
+//Error message property
+{{Input1.text.length > 10 || !/\d/.test(Input1.text) ? "Error: Length should be at least 10 characters and contain at least one digit" : ""}}
+```
+
+This code checks the length of Input is exactly 10 characters and if it contains at least one digit. If not, it returns the error message
+
 
 </dd>
 
@@ -253,7 +326,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
-When the event is triggered, these event handlers can run queries, JS code, or other [actions](/reference/appsmith-framework/widget-actions).
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
+
 
 
 

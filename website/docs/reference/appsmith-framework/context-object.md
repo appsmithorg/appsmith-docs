@@ -5,9 +5,9 @@ description: >-
   the application
 ---
 
-# Appsmith Object
+# appsmith
 
-The Appsmith object is a global object that provides access to information and functionalities within an application through objects and utility functions.
+The `appsmith` object is a global object that provides access to information and functionalities within an application through objects and utility functions.
 
 ## Properties
 
@@ -153,22 +153,74 @@ This object contains the data of the currently authenticated user.
 
 ```javascript
 {
-  email: string
-  username: string
-  name: string
-  isEnabled: boolean
-  accountNonExpired: boolean
-  accountNonLocked: boolean
-  credentialsNonExpired: boolean
-  isAnonymous: boolean
+  "email": string,
+  "username": string,
+  "name": string,
+  "useCase": string,
+  "enableTelemetry": boolean,
+  "roles": object,
+  "groups": object,
+  "accountNonExpired": boolean,
+  "accountNonLocked": boolean,
+  "credentialsNonExpired": boolean,
+  "emptyInstance": boolean,
+  "isAnonymous": boolean,
+  "isEnabled": boolean,
+  "isSuperUser": boolean,
+  "isConfigurable": boolean,
+  "adminSettingsVisible": boolean,
+  "isIntercomConsentGiven": boolean
 }
 ```
 
-#### roles `object`
+#### email `string`
+The `email` property of user contains the email address of the user.
+To access the email, use the following code:
+```jsx
+{{appsmith.user.email}}
+```
 
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+#### username `string`
+The `username` attribute represents the unique username associated with the user's account.
+To access the username, use the following code:
+```jsx
+{{appsmith.user.username}}
+```
+
+#### name `string`
+The `name` attribute holds the full name of the user. To access the username, use the following code:
+```jsx
+{{appsmith.user.name}}
+```
+
+#### useCase `string`
+This attribute describes the use case that the user has specified, giving insight into what they intend to achieve with Appsmith. To access the username, use the following code:
+```jsx
+{{appsmith.user.useCase}}
+```
+#### enableTelemetry `boolean`
+This boolean flag indicates if the user has consented to send telemetry data to Appsmith. Telemetry data typically includes usage statistics and error reports that help improve the platform. To access the username, use the following code:
+```jsx
+{{appsmith.user.enableTelemetry}}
+```
+
+<div className="tag-wrapper">
+
+#### roles `object` 
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 <dd>
 
@@ -201,12 +253,25 @@ In the above example, the visibility of the button is determined by a role. Only
 
 </dd>
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
 #### groups `object`
 
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
 
-:::info
-This property is only available in Appsmith's [**Business Edition**](https://www.appsmith.com/pricing).
-:::
+</div>
+
+<!-- vale on -->
 
 <dd>
 
@@ -236,6 +301,57 @@ In the above example, the visibility of the button is determined by a group. Onl
 
 </dd>
 
+#### accountNonExpired `boolean`
+This attribute indicates whether the user's account is still active and has not expired. An expired account may be reactivated or may need subscription renewal. To access the username, use the following code:
+```jsx
+{{appsmith.user.accountNonExpired}}
+``` 
+
+#### accountNonLocked `boolean`
+The accountNonLocked attribute signifies whether the user's account is locked or unlocked. A locked account cannot be accessed until an administrator unlocks it. To access the username, use the following code:
+```jsx
+{{appsmith.user.accountNonLocked}}
+``` 
+#### credentialsNonExpired `boolean`
+This boolean attribute states if the user's credentials (such as their password) are still valid or if they need to be updated. Expired credentials typically require the user to reset their password. To access the username, use the following code:
+```jsx
+{{appsmith.user.credentialsNonExpired}}
+``` 
+#### emptyInstance `boolean`
+The emptyInstance attribute indicates whether this user object is an empty instance, lacking in actual data. This might occur when no user is logged in or in case of a system-level operation. To access the username, use the following code:
+```jsx
+{{appsmith.user.emptyInstance}}
+``` 
+#### isAnonymous `boolean`
+The isAnonymous attribute reflects whether the current user is anonymous (not logged in) or identified (logged in). This can affect the presentation and permissions of the user interface. To access the username, use the following code:
+```jsx
+{{appsmith.user.isAnonymous}}
+``` 
+#### isEnabled `boolean`
+This attribute indicates if the user's account is currently enabled. An enabled account can log in and interact with Appsmith applications, while disabled ones cannot. To access the username, use the following code:
+```jsx
+{{appsmith.user.isEnabled}}
+``` 
+#### isSuperUser `boolean`
+The isSuperUser flag shows whether the user has superuser status. Superusers typically have elevated privileges and access to all parts of the Appsmith application. To access the username, use the following code:
+```jsx
+{{appsmith.user.isSuperUser}}
+```
+#### isConfigurable `boolean`
+This attribute denotes whether the user has the ability to configure or alter settings within the Appsmith platform. To access the username, use the following code:
+```jsx
+{{appsmith.user.isConfigurable}}
+```
+#### adminSettingsVisible `boolean`
+The adminSettingsVisible attribute states if the user is able to see and possibly modify the admin settings area. To access the username, use the following code:
+```jsx
+{{appsmith.user.adminSettingsVisible}}
+```
+#### isIntercomConsentGiven `boolean`
+This boolean indicates whether the user has given consent to use Intercom, a messaging tool that might be used in Appsmith for support and communication purposes. To access the username, use the following code:
+```jsx
+{{appsmith.user.isIntercomConsentGiven}}
+```
 #### idToken `object`
 
 <dd>
@@ -370,7 +486,7 @@ This object contains functions that allow you to retrieve the current user's loc
 }
 ```
 
-#### getCurrentPosition `function`
+#### geolocation.getCurrentPosition()
 
 <dd>
 
@@ -388,7 +504,7 @@ Similar to the original browser API, the `getCurrentPosition` function retrieves
 
 </dd>
 
-#### watchPosition `function`
+#### geolocation.watchPosition()
 
 <dd>
 
@@ -406,7 +522,7 @@ Similar to the original browser API, the `getCurrentPosition` retrieves periodic
 
 </dd>
 
-#### clearWatch `function`
+#### geolocation.clearWatch()
 
 <dd>
 

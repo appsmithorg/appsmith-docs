@@ -14,40 +14,73 @@ To connect to Snowflake, you must whitelist the IP addresses 18.223.74.85 and 3.
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a Snowflake database.
 
-<figure>
-  <img src="/img/snowflake-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a Snowflake datasource." />
-  <figcaption align="center"><i>Configuring a Snowflake datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/snowflake-datasource-config.png" alt="Configuring a Snowflake datasource." caption="Configuring a Snowflake datasource." />
 
-<dl>
-  <dt><b>Account Name</b></dt>
-  <dd>This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. You can find your organization name and account name on the Snowflake dashboard at the bottom-left of the page; click the string next to the Snowflake logo to open an information box with your details.</dd><br />
+#### Account Name
 
-  <figure>
-    <img src="/img/snowflake-account-name.png" style={{width: "100%", height: "auto"}} alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
-    <figcaption align="center"><i>Find your account name on the Snowflake dashboard at the bottom-left of the page.</i></figcaption>
-  </figure>
+<dd>
 
-  <dt><b>Warehouse</b></dt>
-  <dd>Specifies the virtual warehouse to use once connected.</dd><br />
+This field expects an identifier for your Snowflake account. This consists of your organization name and your account name separated by a hyphen: <code>orgName-accountName</code>. 
 
-  <dt><b>Database</b></dt>
-  <dd>Specifies the database to use once connected.</dd><br />
+To locate your organization name and account details on the Snowflake dashboard, navigate to the bottom-left corner of the page. Copy the Account URL, and then exclude both the prefix `https://` and the suffix `.snowflakecomputing.com` from the URL. For example: 
 
-  <dt><b>Default Schema</b></dt>
-  <dd>Sets which database schema structure should appear as a preview in the Appsmith sidebar; when this is configured, you can see the tables and columns available under the specified schema. The field does not limit which schemas you are able to query.</dd><br />
-  
-  <dt><b>Role</b></dt>
-  <dd>The role to use for performing queries.</dd><br />
+Account Name: `gv14678.central-india.azure*`
 
-  <dt><b>Username</b></dt>
-  <dd>The username for your Snowflake account.
-  </dd><br />
 
-  <dt><b>Password</b></dt>
-  <dd>The password for your Snowflake account.
-  </dd><br />
-</dl>
+
+
+
+<ZoomImage src="/img/snow-1.png" alt="Find your account name on the Snowflake dashboard at the bottom-left of the page." caption="Find your account name on the Snowflake dashboard at the bottom-left of the page." />
+
+</dd>
+
+#### Warehouse
+
+<dd>
+
+Specifies the virtual warehouse to use once connected.
+
+To get the warehouse name, navigate to Admin > Warehouses on the left panel, and find the warehouse name in the top-right corner of the Admin section. For example, `COMPUTE_WH`
+
+
+
+</dd>
+
+#### Database
+
+<dd>
+
+Specifies the database to use once connected.
+
+To get the database name for connection, go to Data > Databases in the Snowflake dashboard, and select the desired database. For example, `TEST_DB`.
+
+</dd>
+
+#### Default Schema
+
+<dd>
+
+Defines the database schema structure for preview in the Appsmith sidebar, showcasing tables and columns; note that this setting does not restrict your ability to query different schemas.
+
+To get the Default Schema, navigate to the Schemas section and copy the desired Schema name along with the corresponding Role. For example, `TPCDS_SF100TCL`.
+
+</dd>
+
+#### Role
+
+<dd>
+
+The role to use for performing queries. For example, `ACCOUNTADMIN`
+
+</dd>
+
+#### Username
+
+<dd>The username for your Snowflake account.</dd>
+
+#### Password
+
+<dd>The password for your Snowflake account.</dd>
 
 ## Query Snowflake
 
@@ -61,7 +94,7 @@ OFFSET {{ CustomerTable.pageOffset }} ROWS
 FETCH NEXT {{ CustomerTable.pageSize }} ROWS ONLY;
 ```
 
-In the above example, `CustomerTable` is the name of the Table widget used to display the data using [**server-side pagination**](/reference/widgets/table#server-side-pagination) to control how much data is queried at once.
+In the above example, `CustomerTable` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table) to control how much data is queried at once.
 
 ### Insert data
 

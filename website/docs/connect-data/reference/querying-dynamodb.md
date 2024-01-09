@@ -16,42 +16,37 @@ You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the App
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a DynamoDB database.
 
-<figure>
-  <img src="/img/dynamodb-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB datasource." />
-  <figcaption align="center"><i>Configuring a DynamoDB datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/dynamodb-datasource-config.png" alt="Configuring a DynamoDB datasource." caption="Configuring a DynamoDB datasource." />
 
-<dl>
-  <dt><b>Region</b></dt>
-  <dd>
-  
+#### Region
+
+<dd>
+
 The region where your DynamoDB instance is hosted.
 
-  </dd><br/>
+</dd>
 
-  <dt><b>AWS Access Key ID</b></dt>
-  <dd>
+#### AWS Access Key ID
+
+<dd>
 
 The AWS access key used to identify your IAM user for DynamoDB. Be sure to use the access key for your IAM user with the set of privileges you want your Appsmith app to have. For more information on using an AWS access key, see [Create Access Key](https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/).
 
-  </dd>
+</dd>
 
-  <dt><b>AWS Secret Access Key</b></dt>
-  <dd>
+#### AWS Secret Access Key
+
+<dd>
 
 The secret value used to authenticate your queries to DynamoDB. This value is accessible from your AWS security credentials page. To learn more about your AWS Secret Key, see the [AWS Security Blog](https://aws.amazon.com/blogs/security/how-to-find-update-access-keys-password-mfa-aws-management-console/).
 
-  </dd>
-</dl>
+</dd>
 
 ## Create queries
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create DynamoDB queries.
 
-<figure>
-  <img src="/img/dynamodb-query-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a DynamoDB scan query." />
-  <figcaption align="center"><i>Configuring a DynamoDB scan query.</i></figcaption>
-</figure>
+<ZoomImage src="/img/dynamodb-query-config.png" alt="Configuring a DynamoDB scan query." caption="Configuring a DynamoDB scan query." />
 
 For more details about any of the operations below, see the [Amazon DynamoDB Actions documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations_Amazon_DynamoDB.html).
 

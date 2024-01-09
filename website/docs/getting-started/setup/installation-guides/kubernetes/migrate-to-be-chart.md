@@ -1,9 +1,9 @@
 ---
-description: Follow the guide to migrate to the Appsmith Business Edition running on v3 Helm chart.
+description: Follow the guide to migrate to the Appsmith Commercial Edition running on v3 Helm chart.
 ---
-# Migrate to Business Edition Helm Chart v3
+# Migrate to Commercial Edition Helm Chart v3
 
-Follow the below guide to migrate to the Business Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
+Follow the below guide to migrate to the Commercial Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
 
@@ -110,7 +110,7 @@ helm uninstall appsmith -n <namespace>
 
 ## Configure parameters
 
-To ensure that the Business Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure the parameters:
+To ensure that the Commercial Edition Helm chart runs, you need to make some changes to the `values.yaml` file. Follow the steps below to configure the parameters:
 
 1. Add the following snippet to the bottom of your `values.yaml` file. This snippet enables PostgreSQL.
 
@@ -150,7 +150,7 @@ Run the below command to add and deploy the new Helm chart:
    helm install appsmith appsmith-ee/appsmith-ee -n <namespace> -f values.yaml
    ```
 
-For more information, see [installing Business Edition with Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
+For more information, see [installing Kubernetes](/getting-started/setup/installation-guides/kubernetes#install-appsmith).
 
 ## Restore backup
 
@@ -201,7 +201,7 @@ To restore the backup, follow the below steps:
    kubectl rollout restart deployment/appsmith -n <namespace>
    ```
 
-Congratulations, you have successfully migrated to the Appsmith Business Edition Helm chart v2 installation.
+Congratulations, you have successfully migrated to the Appsmith Commercial Edition Helm chart v2 installation.
 
 ## Troubleshooting
-If any issues are encountered, please reach out to [support@appsmith.com](mailto:support@appsmith.com) or raise it on the [Discord Server](https://discord.com/invite/rBTTVJp).
+If you face issues, contact the support team using the chat widget at the bottom right of this page.

@@ -117,10 +117,7 @@ If you accidentally close the Modal, you can open it again by selecting the name
 
     The output should look something like this: 
 
-<figure>
-  <img src="/img/add-new-ticket-modal.png" style= {{width:"800px", height:"auto"}} alt="New Ticket Modal"/>
-  <figcaption align = "center"><i>Fig 1. New Ticket Modal</i></figcaption>
-</figure>
+<ZoomImage src="/img/add-new-ticket-modal.png" alt="New Ticket Modal" caption="Fig 1. New Ticket Modal" />
 
 ## Create add ticket query
 
@@ -156,10 +153,7 @@ createTicket: async () => {
 }
 ```
 
-<figure>
-  <img src="/img/code-to-create-new-ticket.png" style= {{width:"800px", height:"auto"}} alt="JS function to submit new ticket"/>
-  <figcaption align = "center"><i>Fig 2. JS function to submit new ticket</i></figcaption>
-</figure>
+<ZoomImage src="/img/code-to-create-new-ticket.png" alt="JS function to submit new ticket" caption="Fig 2. JS function to submit new ticket" />
 
 3. Go back to the canvas by clicking on the **Tickets** page. Drop a Button widget on the canvas to the top right of the screen above the **lstTicketDetails** List.
     - Change the **Label** property to `Add Ticket`.

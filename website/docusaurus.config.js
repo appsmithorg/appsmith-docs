@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer').themes.github;
+const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+
 const { EnvironmentCredentials } = require('aws-sdk');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -12,7 +13,7 @@ const config = {
   url: 'https://docs.appsmith.com',
   baseUrl: '/',
   favicon: 'img/Appsmith-Logo.png',
-  "trailingSlash" : false,
+  "trailingSlash": false,
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -28,20 +29,20 @@ const config = {
         allowedInDev: false,
       },
     ],
-    [    require.resolve('./plugins/scarfplugin'),   
-          {      
-            trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',      
-            domain: 'https://docs.appsmith.com',    
-          },  
+    [require.resolve('./plugins/scarfplugin'),
+    {
+      trackingCode: 'ae471d67-d95c-4a3a-b35b-799e8ee8fa17',
+      domain: 'https://docs.appsmith.com',
+    },
     ],
-  ],  
+  ],
 
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-       docs: {
+        docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
@@ -81,7 +82,7 @@ const config = {
         contextualSearch: false,
 
         //... other Algolia params
-      }, 
+      },
       navbar: {
         title: '',
         logo: {
@@ -97,85 +98,32 @@ const config = {
             href: 'https://app.appsmith.com',
             label: 'Try Appsmith',
             position: 'right'
-          }, 
-          
+          },
+
         ],
-      },
-      footer: {
-        style: 'light',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Advanced Concepts',
-                to: 'advanced-concepts/custom-authentication',
-              },
-              {
-                label: 'Reference',
-                to: '/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Forum',
-                href: 'https://community.appsmith.com/',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discord.com/invite/rBTTVJp',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/theappsmith?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: 'https://www.appsmith.com/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/appsmithorg/appsmith',
-              },
-              {
-                label: 'YouTube',
-                to: 'https://www.youtube.com/c/Appsmith',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Appsmith, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
-    scripts: [
-      ...(process.env.VERCEL_ENV === "production" ? [{
-        src:
-          '/scripts/intercomSettings.js',
-        async: false,
-      },
-      {
-        src:
-          '/scripts/smartlook.js',
-        async: false,
-      },    
-      {
-        src:
-          '/scripts/analyticsEvents.js',
-        defer: true,
-      }] : [])
-    ],
+  scripts: [
+    ...(process.env.VERCEL_ENV === "production" ? [{
+      src:
+        '/scripts/intercomSettings.js',
+      async: false,
+    },
+    {
+      src:
+        '/scripts/smartlook.js',
+      async: false,
+    },
+    {
+      src:
+        '/scripts/analyticsEvents.js',
+      defer: true,
+    }] : [])
+  ],
 };
 
 module.exports = config;

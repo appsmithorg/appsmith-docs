@@ -10,19 +10,21 @@ This page provides information for connecting your application to a GraphQL API 
 
 Authenticated GraphQL API datasources share configuration fields with the Authenticated API datasource. For a reference guide of the fields for configuring your Authenticated GraphQL API, see [Authenticated API](/connect-data/reference/authenticated-api).
 
-<figure>
-  <img src="/img/graphql-datasource-config.png" style={{width: "100%", height: "auto"}} alt="Configuring a GraphQL datasource" />
-  <figcaption align="center"><i>Configuring a GraphQL datasource.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/graphql-datasource-config.png" 
+  alt="Configure a GraphQL datasource"
+  caption="Configure a GraphQL datasource"
+/>
 
 ## Create queries
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create GraphQL queries.
 
-<figure>
-  <img src="/img/graphql-query-config.png" style={{width: "100%", height: "auto"}} alt="Creating a GraphQL query." />
-  <figcaption align="center"><i>Creating a GraphQL query.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/graphql-query-config.png" 
+  alt="Create a GraphQL query."
+  caption="Create a GraphQL query."
+/>
 
 GraphQL queries are written in the **Body** tab of the query screen. Use the **Query** window to construct your query or mutation, and the adjacent **Query Variables** window to add any variables to map into your query.
 
@@ -30,7 +32,7 @@ GraphQL queries are written in the **Body** tab of the query screen. Use the **Q
 
 Use a query like the one below to retrieve records from your datasource.
 
-In the example below, `UsersTable` is the name of a Table widget used to search for a user by name and display the results. This query uses `limit` and `offset` to implement [**server-side pagination**](/reference/widgets/table#server-side-pagination).
+In the example below, `UsersTable` is the name of a Table widget used to search for a user by name and display the results. This query uses `limit` and `offset` to implement [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 In the **Query** window:
 

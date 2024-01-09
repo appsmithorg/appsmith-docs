@@ -62,18 +62,12 @@ In this section, you'll learn to:
 
   The output should look like this: 
 
-<figure>
-  <img src="/img/dashboard-titles.png" style= {{width:"800px", height:"auto"}} alt="Dashboard Title and Greeting Message"/>
-  <figcaption align = "center"><i>Fig 1. Dashboard Title and Greeting Message</i></figcaption>
-</figure>
+<ZoomImage src="/img/dashboard-titles.png" alt="Dashboard Title and Greeting Message" caption="Fig 1. Dashboard Title and Greeting Message" />
 
 6. Drop a Stats Box widget on the canvas. Delete the default Icon Button and the Text widget with the value **21% more than last month**. Add an Image widget below the Text widget with the value **2.6 M**. 
     The output should look like this: 
 
-<figure>
-  <img src="/img/dashboard-stats.png" style= {{width:"800px", height:"auto"}} alt="Stats Box"/>
-  <figcaption align = "center"><i>Fig 2. Stats Box widget</i></figcaption>
-</figure>
+<ZoomImage src="/img/dashboard-stats.png" alt="Stats Box" caption="Fig 2. Stats Box widget" />
 
 7. Set the following values for the components in the Stat Box widget: 
 
@@ -94,10 +88,7 @@ In this section, you'll learn to:
 
     The output should look something like this: 
 
-<figure>
-  <img src="/img/dashboard-stats-style.png" style= {{width:"800px", height:"auto"}} alt="Stats Box Style"/>
-  <figcaption align = "center"><i>Fig 3. Customised Stats Box widget</i></figcaption>
-</figure>
+<ZoomImage src="/img/dashboard-stats-style.png" alt="Stats Box Style" caption="Fig 3. Customised Stats Box widget" />
 
 8. Select the Stats Box widget and duplicate using `CMD+C`(Mac) or `Ctrl+C`(Windows) and paste three copies next to each other, as shown in Fig 4. 
 
@@ -132,10 +123,7 @@ In this section, you'll learn to:
 
 The output should look something like this: 
 
-<figure>
-  <img src="/img/dashboard-stat-boxes.png" style= {{width:"800px", height:"auto"}} alt="Dashboard Issue Stats"/>
-  <figcaption align = "center"><i>Fig 4. Dashboard Issue Stats</i></figcaption>
-</figure>
+<ZoomImage src="/img/dashboard-stat-boxes.png" alt="Dashboard Issue Stats" caption="Fig 4. Dashboard Issue Stats" />
 
 ## Fetch data for charts
 
@@ -181,10 +169,7 @@ The output should look something like this:
 
   The output should look something like this: 
 
-<figure>
-  <img src="/img/final-dashboard-page.png" style= {{width:"800px", height:"auto"}} alt="Dashboard"/>
-  <figcaption align = "center"><i>Dashboard</i></figcaption>
-</figure>
+<ZoomImage src="/img/final-dashboard-page.png" alt="Dashboard" caption="Dashboard" />
 
 ## Next steps
 [View Ticket Details](/getting-started/tutorials/customer-support-tool/view-ticket-details)

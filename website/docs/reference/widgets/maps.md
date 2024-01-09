@@ -10,10 +10,7 @@ This page provides information on using the Map widget (powered by [Google Maps 
 If you want to use the Map widget on your self-hosted instance, it's essential to have Google Maps configured on your instance. See [Google Maps](/getting-started/setup/instance-configuration/google-maps).
 :::
 
-<figure>
-  <img src="/img/map-img.png" style= {{width:"700px", height:"auto"}} alt="Download image"/>
-  <figcaption align = "center"><i>Display Map</i></figcaption>
-</figure>
+<ZoomImage src="/img/map-img.png" alt="Download image" caption="Display Map" />
 
 
 ## Content properties
@@ -165,6 +162,14 @@ To access the searched location, use the ``center`` reference property. This ret
   {{Map1.center}}
 ]
 ```
+
+</dd>
+
+#### Enable map types `boolean`
+
+<dd>
+
+When enabled, this property allows users to switch between the default map view and satellite view.
 
 </dd>
 

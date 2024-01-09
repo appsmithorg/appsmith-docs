@@ -1,0 +1,318 @@
+.ai-search-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ai-search-modal-content {
+    background: var(--docsearch-modal-background);
+    text-align: center;
+    position: relative;
+    width: 55%;
+    min-height: 48%;
+    margin: 4% auto;
+    border-radius: 8px;
+    box-shadow: var(--docsearch-modal-shadow);
+    position: relative;
+}
+
+.ai-search-result-wrapper {
+    margin-top: 0;
+    width: 100%;
+}
+
+.ai-search-bar-header {
+    display: flex;
+    padding: var(--docsearch-spacing) var(--docsearch-spacing) 0;
+}
+
+.custom-search-container {
+    align-items: center;
+    background: var(--docsearch-searchbox-focus-background);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
+    display: flex;
+    height: var(--docsearch-searchbox-height);
+    margin: 0;
+    padding: 0 var(--docsearch-spacing);
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    gap: 8px;
+}
+
+#question-input {
+    appearance: none;
+    background: #fff;
+    border: 0;
+    color: var(--docsearch-text-color);
+    flex: 1;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    padding: 0 0 0 8px;
+    width: 100%;
+    height: 56px;
+    font-weight: 400;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+
+.ai-submit-message {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #99A4B3;
+}
+
+.ai-search-term {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    height: 36px;
+    border-radius: 4px;
+    line-height: 16px;
+}
+
+.ai-query-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 4px, 8px, 4px, 8px;
+    border-radius: 4px;
+    gap: 8px;
+}
+
+.ai-query-heading {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 0 -4px;
+    padding: 0px 4px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.ai-result-container {
+    margin-top: 10px;
+    text-align: left;
+    color: black;
+    overflow-y: hidden;
+    max-height: 80vh;
+    padding: 0 var(--docsearch-spacing);
+}
+
+.search-term-answer {
+    max-height: 100%;
+    padding: 8px 0px 0px;
+    gap: 8px;
+}
+
+.search-term-answer h1 {
+    font-size: 22px;
+}
+
+.search-term-answer h2 {
+    font-size: 18px;
+
+}
+
+.search-term-answer h3 {
+    font-size: 16px;
+}
+
+.search-term-answer h4 {
+    font-size: 14px;
+}
+
+.search-term-answer h5 {
+    font-size: 12px;
+}
+
+.search-term-answer h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.search-term-answer p {
+    margin: 0;
+    line-height: 1.4;
+    color: #333;
+    font-size: 16px;
+}
+
+.search-term-answer ol {
+    list-style-type: decimal;
+    font-size: 16px;
+    text-indent: 8px;
+}
+
+.search-term-answer ul {
+    list-style-type: disc;
+    font-size: 16px;
+}
+
+.search-term-answer li {
+    margin-bottom: 5px;
+    font-size: inherit;
+}
+
+.search-term-answer li>p {
+    font-size: inherit;
+}
+
+.search-term-answer pre {
+    overflow: hidden;
+    display: flex;
+    padding: 16.035px 21.38px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 5.345px;
+    border: 1px solid #CDD5DF;
+    background: #FFF;
+    margin-top: 3px;
+}
+
+.search-term-answer code {
+    color: #4C5664;
+    padding: 5px;
+    font-family: 'Menlo';
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+    justify-content: center;
+}
+
+.ai-robot-icon {
+    align-items: center;
+    color: var(--docsearch-highlight-color);
+    display: flex;
+    justify-content: center;
+    font-size: 1.25rem;
+    height: 24px;
+    width: 24px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+.loading-icon-container {
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.ai-loading-time-info {
+    font-size: 12px;
+    line-height: 10px;
+    font-weight: 400;
+    text-indent: 6px;
+    margin-top: 2px;
+    gap: 4px;
+}
+
+.loading-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.DocSearch-Form {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.DocSearch-Input {
+    font-size: 0.89em !important;
+}
+
+.ai-experimental {
+    border-radius: 5.35px;
+    padding: 8px;
+    border: 0.67px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 8px;
+    background-color: #e5ecf5;
+    height: 40px;
+}
+
+.ai-experimental-info {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-indent: 6px;
+    margin-top: 1px;
+    overflow: hidden;
+}
+
+.ai-search-result-wrapper input:focus {
+    outline: none;
+}
+
+
+.ai-search-term:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px #ddd;
+}
+
+.ai-result-container>.feedback-widget-container {
+    padding: 16px 20px;
+    margin-bottom: 10px;
+}
+
+.ai-result-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.ai-result-container::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 4px;
+}
+
+.ai-result-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+.ai-result-container.scrolled {
+    overflow: auto;
+}
+
+.ai-search-result-wrapper li {
+    margin-left: 10px;
+    padding: 0;
+    margin-bottom: 10px;
+}

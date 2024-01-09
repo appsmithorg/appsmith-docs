@@ -1,24 +1,34 @@
 ---
 description: Guide on how to configure SCIM
+title: Setup SCIM Provisioning
+hide_title: true
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Setup SCIM Provisioning
+<!-- vale off -->
 
-:::info
-SCIM Provisioning is only available in Appsmith's [Enterprise Edition](https://www.appsmith.com/pricing).
-:::
+<div className="tag-wrapper">
+ <h1>Setup SCIM Provisioning</h1>
 
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page shows how to configure Appsmith for SCIM to enable the automatic provisioning of users and groups based on your SSO provider.
 
 
 ## Prerequisites
 
-- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
-- A SAML SSO provider is configured on your Appsmith instance. See [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) for instructions.
+* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
+* Ensure that the Identity Provider (IDP) can connect with Appsmith.
 
 ## Enable SCIM provisioning on Appsmith
 
@@ -27,21 +37,20 @@ This page shows how to configure Appsmith for SCIM to enable the automatic provi
 3. Copy the **SCIM API endpoint** URL to add it later in your IdP application.
 4. Under **API key to setup SCIM**, click the **Generate API key** button and copy the API key to add it later in your IdP application.
 
-<figure>
-  <img src="/img/scim-setup-appsmith.png" style= {{width:"700px", height:"auto"}} alt="SCIM Provisioning"/>
-  <figcaption align = "center"><i>Configure SCIM in Appsmith</i></figcaption>
-</figure>
-
-
+<ZoomImage
+  src="/img/scim-setup-appsmith.png" 
+  alt="SCIM Provisioning"
+  caption="Configure SCIM in Appsmith"
+/>
 
 ## Configure identity provider
 
 To complete the setup, go to your IdP application that is connected to Appsmith and follow the steps below:
 
 <Tabs queryString="scim">
-<TabItem label="Active Directory (SAML)" value="scim-ad-saml">
+<TabItem label="Active Directory" value="scim-ad">
 
-1. On the Active Directory homepage, click **Enterprise application** on the sidebar and open the SAML application that is already connected to Appsmith.
+1. On the Active Directory homepage, click **Enterprise application** on the sidebar and open the application that is already connected to Appsmith.
 
 2. On the application **Overview** page, click **Provisioning** on the sidebar.
 
@@ -59,9 +68,9 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
     - **userPrincipalName**
     - **displayName**
-    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**
+    - **Switch([IsSoftDeleted], , "False", "True", "True", "False")**<!-- vale off -->
 
-    f. Click **Save**.
+    f. Click **Save**.<!-- vale on -->
 
     g. Go back to **Mappings** on the **Provisioning** page, click **Provision Azure Active Directory Groups**, and scroll down to **Attribute Mappings** to configure attributes for groups. Delete all the attributes except the following:
 
@@ -80,9 +89,9 @@ To complete the setup, go to your IdP application that is connected to Appsmith 
 
 </TabItem>
 
-<TabItem label="Okta (SAML)" value="scim-okta-saml">
+<TabItem label="Okta" value="scim-okta">
 
-1. On the Okta homepage, go to **Applications > Applications** on the sidebar, and open the SAML application that is already connected to Appsmith.
+1. On the Okta homepage, go to **Applications > Applications** on the sidebar, and open the application that is already connected to Appsmith.
 2. On the application page, go to the **General** tab, click **Edit** on **App Settings**, and select the **Enable SCIM provisioning** checkbox. Click **Save**.
 3. Go to the **Provisioning** tab, and click **Edit** on SCIM connection.
 

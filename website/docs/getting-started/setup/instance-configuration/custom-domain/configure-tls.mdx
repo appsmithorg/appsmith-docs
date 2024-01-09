@@ -1,20 +1,23 @@
 ---
 description: Follow these steps to configure TLS for Appsmith on Kubernetes.
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Configure TLS on Kubernetes
 
 This page provides steps to configure TLS for your Appsmith deployment using a free `Let's Encrypt` certificate.
 
 ## Prerequisites
-* A domain name.
-* Ports 80 and 443 are open and accessible.
-* A self-hosted Appsmith instance on Kubernetes. See the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
-* [Publish Appsmith Kubernetes installation to the internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
+
+- A domain name.
+- Ports 80 and 443 are open and accessible.
+- A self-hosted Appsmith instance on Kubernetes. See the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
+- [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
 
 ## Configure TLS (HTTPS) with Let's Encrypt
+
 :::tip
 If you see permission errors when running these commands on Google Kubernetes Engine (GKE), refer to the official cert-manager documentation on [how to elevate your permissions](https://docs.cert-manager.io/en/latest/getting-started/install/kubernetes.html).
 :::
@@ -23,9 +26,9 @@ Follow these steps to configure TLS:
 
 1. Get the `LoadBalancer` hostname with:
 
-  ```
-  kubectl get svc --namespace ingress-nginx ingress-nginx-controller  -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"
-  ```
+```
+kubectl get svc --namespace ingress-nginx ingress-nginx-controller  -o jsonpath="{.status.loadBalancer.ingress[0].hostname}"
+```
 
 2. Confirm that you can access your Appsmith instance by browsing the hostname.
 
@@ -33,49 +36,53 @@ Follow these steps to configure TLS:
 
 4. Add the repository with:
 
-  ```bash
-  helm repo add jetstack https://charts.jetstack.io
-  ```
+```bash
+helm repo add jetstack https://charts.jetstack.io
+```
+
 5. Create a namespace for cert-manager with:
-  ```bash
-  kubectl create namespace cert-manager
-  ```
+
+```bash
+kubectl create namespace cert-manager
+```
+
 6. Create custom resource definitions with:
-  ```bash
-  kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml
-  ```
+
+```bash
+kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v1.5.3/cert-manager.crds.yaml
+```
 
 7. Create a `ClusterIssuer` resource for Let's Encrypt certificates. Create a file with the below content. Replace the `<EMAIL_ADDRESS>` placeholder with a valid email address. Save the file as `letsencrypt-appsmith.yaml`.
 
-  ```yaml
-  apiVersion: cert-manager.io/v1
-  kind: ClusterIssuer
-  metadata:
-    name: letsencrypt-appsmith
-  spec:
-    acme:
-      #highlight-next-line
-      email: <EMAIL_ADDRESS>
-      server: https://acme-v02.api.letsencrypt.org/directory
-      privateKeySecretRef:
-        name: letsencrypt-appsmith
-      solvers:
+```yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-appsmith
+spec:
+  acme:
+    #highlight-next-line
+    email: <EMAIL_ADDRESS>
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: letsencrypt-appsmith
+    solvers:
       - http01:
           ingress:
             class: nginx
-  ```
+```
 
 8. Apply the changes to the cluster with:
 
-  ```
-  kubectl apply -f letsencrypt-appsmith.yaml
-  ```
+```
+kubectl apply -f letsencrypt-appsmith.yaml
+```
 
 9. Install cert-manager and set up `Let's Encrypt` as the default Certificate Authority (CA) with:
 
-  ```  
-  helm install cert-manager --namespace cert-manager jetstack/cert-manager --version v1.5.3
-  ```
+```
+helm install cert-manager --namespace cert-manager jetstack/cert-manager --version v1.5.3
+```
 
 8. Install Appsmith with integration to Ingress and cert-manager.
 
@@ -84,54 +91,56 @@ Follow these steps to configure TLS:
 
 You can use the `helm upgrade` command to update your Appsmith installation in one of two ways:
 
-  * Use the below command to update Appsmith using Helm parameters. In this command, replace `<DOMAIN>` with your domain name.
+- Use the below command to update Appsmith using Helm parameters. In this command, replace `<DOMAIN>` with your domain name.
 
-      ```bash
-        helm upgrade appsmith appsmith/appsmith \
-          --set service.type=ClusterIP \
-          --set ingress.enabled=true \
-          --set ingress.tls=true \
-          --set ingress.certManager=true \
-          --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-appsmith \
-          #highlight-next-line
-          --set ingress.hosts[0].host=<DOMAIN> \
-          #highlight-next-line
-          --set ingress.certManagerTls[0].hosts[0]=<DOMAIN> \
-          --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
-          --set ingress.className=nginx
-      ```     
-  * **Or** use `values.yaml file to update parameters. Follow these steps to update:
+  ```bash
+    helm upgrade appsmith appsmith/appsmith \
+      --set service.type=ClusterIP \
+      --set ingress.enabled=true \
+      --set ingress.tls=true \
+      --set ingress.certManager=true \
+      --set ingress.annotations."cert-manager\.io/cluster-issuer"=letsencrypt-appsmith \
+      #highlight-next-line
+      --set ingress.hosts[0].host=<DOMAIN> \
+      #highlight-next-line
+      --set ingress.certManagerTls[0].hosts[0]=<DOMAIN> \
+      --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
+      --set ingress.className=nginx
+  ```
 
-    1. Open the `values.yaml` file and make the necessary changes to the parameters as shown below:
+- **Or** use `values.yaml file to update parameters. Follow these steps to update:
 
-      ```yaml
-      ingress:
-          enabled: true
-          annotations:
-            cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
-          hosts:
-            - host: example.appsmith.com
-          tls: true
-          secrets: []
-          certManager: true
-          certManagerTls:
-            - hosts:
-                - example.appsmith.com
-              secretName: letsencrypt-appsmith
-          className: "nginx"
-      ```
-      2. Run the below command once the parameter values are updated:
+  1. Open the `values.yaml` file and make the necessary changes to the parameters as shown below:
 
-      ```bash
-      helm upgrade -i appsmith -f values.yaml appsmith appsmith/appsmith
-      ```
+  ```yaml
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
+    hosts:
+      - host: example.appsmith.com
+    tls: true
+    secrets: []
+    certManager: true
+    certManagerTls:
+      - hosts:
+          - example.appsmith.com
+        secretName: letsencrypt-appsmith
+    className: "nginx"
+  ```
+
+  2. Run the below command once the parameter values are updated:
+
+  ```bash
+  helm upgrade -i appsmith -f values.yaml appsmith appsmith/appsmith
+  ```
 
 </TabItem>
-  <TabItem label="Business Edition" value="businessEdition"> 
+  <TabItem label="Commercial Edition" value="commercialEdition">
 
- You can use the `helm upgrade` command in one of the two ways:
+You can use the `helm upgrade` command in one of the two ways:
 
-  * Use the below command to update Helm parameters. Replace `<DOMAIN>` with your domain name.
+- Use the below command to update Helm parameters. Replace `<DOMAIN>` with your domain name.
 
 ```bash
   helm upgrade appsmith appsmith-ee/appsmith \
@@ -146,47 +155,47 @@ You can use the `helm upgrade` command to update your Appsmith installation in o
     --set ingress.certManagerTls[0].hosts[0]=<DOMAIN> \
     --set ingress.certManagerTls[0].secretName=letsencrypt-appsmith
     --set ingress.className=nginx
-```     
+```
 
-  * **Or** use the `values.yaml` file to update parameters. Follow these steps to update:
+- **Or** use the `values.yaml` file to update parameters. Follow these steps to update:
 
-    1. Open the `values.yaml` file, and make changes to the parameters as shown below:   
+  1. Open the `values.yaml` file, and make changes to the parameters as shown below:
 
-    ```yaml
-    ingress:
-        enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
-        hosts:
-          - host: example.appsmith.com
-        tls: true
-        secrets: []
-        certManager: true
-        certManagerTls:
-          - hosts:
-              - example.appsmith.com
-            secretName: letsencrypt-appsmith
-        className: "nginx"
+  ```yaml
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: "letsencrypt-appsmith"
+    hosts:
+      - host: example.appsmith.com
+    tls: true
+    secrets: []
+    certManager: true
+    certManagerTls:
+      - hosts:
+          - example.appsmith.com
+        secretName: letsencrypt-appsmith
+    className: "nginx"
+  ```
 
-    ```
+  2. Run the below command once the parameter values are updated:
 
-    2. Run the below command once the parameter values are updated:
-
-    ```bash
-    helm upgrade -i appsmith -f values.yaml appsmith appsmith-ee/appsmith
-    ```
+  ```bash
+  helm upgrade -i appsmith -f values.yaml appsmith appsmith-ee/appsmith
+  ```
 
 </TabItem>
-</Tabs> 
+</Tabs>
 
 You can now access Appsmith via a secure TLS connection with a valid Let's Encrypt certificate. Verify this by opening the site in a browser.
 
 ## Troubleshooting
 
-If you’re having issues using Appsmith after configuring TLS, see the [Unable to Access Appsmith](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-access-appsmith) guide. 
+If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
 
-If you continue to face issues, reach out to [support@appsmith.com](mailto:support@appsmith.com).
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ## Further reading
+
 - [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
-- [Instance Management](/getting-started/setup/instance-management) 
+- [Instance Management](/getting-started/setup/instance-management)

@@ -13,29 +13,29 @@ This page provides information for connecting Appsmith to HubSpot and for readin
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a HubSpot database.
 
-<figure>
-   <img src="/img/hubspot-datasource-config.png" style= {{width:"100%", height:"auto"}} alt="Configuring a HubSpot datasource."/>
-   <figcaption align = "center"><i>Configuring a HubSpot datasource.</i></figcaption>
-</figure>
+<ZoomImage src="/img/hubspot-datasource-config.png" alt="Configuring a HubSpot datasource." caption="Configuring a HubSpot datasource." />
 
-<dl>
-  <dt><b>Authentication Type</b></dt>
-  <dd><i>Options:</i>
-    <ul>
-    <li><b>Bearer Token:</b> An access token that authenticates your queries to HubSpot. For more information on finding your access token, follow HubSpot's <a href="https://developers.hubspot.com/docs/api/private-apps">Private App integration guide</a>.</li>
-    </ul>
-  </dd>
 
-</dl>
+#### Authentication Type
+
+<dd>
+    <i>Options:</i>
+  <ul>
+  <li><b>Bearer Token:</b> An access token that authenticates your queries to HubSpot. For more information on finding your access token, follow HubSpot's <a href="https://developers.hubspot.com/docs/api/private-apps">Private App integration guide</a>.</li>
+  </ul>
+</dd>
+
+
 
 ## Query HubSpot
 
 The following section is a reference guide that provides a description of the read and write operation commands with their parameters to create HubSpot queries.
 
-<figure>
-  <img src="/img/hubspot-query-config.png" style= {{width:"100%", height:"auto"}} alt="Creating HubSpot queries."/>
-  <figcaption align = "center"><i>Creating HubSpot queries.</i></figcaption>
-</figure>
+<ZoomImage
+  src="/img/hubspot-query-config.png" 
+  alt="Create a HubSpot query."
+  caption="Create a HubSpot query."
+/>
 
 ### HubDB
 
@@ -45,406 +45,387 @@ The following sections describe the parameters for connecting to HubDB type quer
 
 The **HubDB - get published tables** command fetches information for the HubDB tables associated with your HubSpot account. The following is a list of all the fields available for **HubDB - get published tables**:
 
-<dl>
-  <dt><b>Sort</b></dt>
-  <dd>The name of a field by which to sort the fetched tables, such as <code>name</code> or creation time (<code>createdAt</code>). Requires a single field.
-  </dd><br />
+##### Sort
 
-  <dt><b>Next Page Token</b></dt>
-  <dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
-  <dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd><br />
+<dd>The name of a field by which to sort the fetched tables, such as <code>name</code> or creation time (<code>createdAt</code>). Requires a single field.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>The maxiumum number of items that can be returned in a single query response.
-  </dd><br />
+##### Next Page Token
 
-  <dt><b>Created at</b></dt>
-  <dd>Returns only records that were created at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+<dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
+<dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd>
 
-  <dt><b>Created after</b></dt>
-  <dd>Returns only records that were created after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+##### Limit
 
-  <dt><b>Created before</b></dt>
-  <dd>Returns only records that were created before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+<dd>The maxiumum number of items that can be returned in a single query response.</dd>
 
-  <dt><b>Updated at</b></dt>
-  <dd>Returns only records that were updated at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+##### Created at
 
-  <dt><b>Updated after</b></dt>
-  <dd>Returns only records that were updated after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+<dd>Returns only records that were created at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
-  <dt><b>Updated before</b></dt>
-  <dd>Returns only records that were updated before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.
-  </dd><br />
+##### Created after
 
-  <dt><b>Archive</b></dt>
-  <dd>A boolean value; when <code>true</code>, the query only returns table data for tables that are archived.
-  </dd><br />
+<dd>Returns only records that were created after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
 
-</dl>
+##### Created before
+
+<dd>Returns only records that were created before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
+
+##### Updated at
+
+<dd>Returns only records that were updated at this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
+
+##### Updated after
+
+<dd>Returns only records that were updated after the given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
+
+##### Updated before
+
+<dd>Returns only records that were updated before this given date/time. Format: <code>YYYY-MM-DDThh:mm:ss.sZ</code>.</dd>
+
+##### Archive
+
+<dd>A boolean value; when <code>true</code>, the query only returns table data for tables that are archived.</dd>
 
 #### Create table
 
 The **HubDB - create table** command creates a new HubDB table. The following is a list of all the fields available for **HubDB - create table**:
 
-<dl>
-  <dt><b>Name</b></dt>
-  <dd>The name of the new table.
-  </dd><br />
 
-  <dt><b>Label</b></dt>
-  <dd>The label of the new table.</dd><br />
+##### Name
 
-  <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd><br />
+<dd>The name of the new table.</dd>
 
-  <dt><b>Columns</b></dt>
-  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
+##### Label
 
-  <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd><br />
+<dd>The label of the new table.</dd>
 
-  <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd><br />
+##### Use for pages
 
-  <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
+<dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd>
 
-  <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
+##### Columns
 
-  <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
+<dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd>
 
-  <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
+##### Allow Public API access
 
-</dl>
+<dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd>
+
+##### Allow child tables
+
+<dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd>
+
+##### Allow child table pages 
+
+<dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd>
+
+##### Foreign table ID 
+
+<dd>The ID of another table that is related to the new table as a Foreign Key.</dd>
+
+##### Foreign table ID 
+
+<dd>The ID of a column from another table that is used as a Foreign Key.</dd>
+
+##### Dynamic meta tags
+
+<dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the **Meta description column** to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
 
 #### Get details of a published table
 
 The **HubDB - get details of a published table** command fetches data about a HubDB table. The following is a list of all the fields available for **HubDB - get details of a published table**:
 
-<dl>
-  <dt><b>Archived</b></dt>
-  <dd>A boolean value; when <code>true</code>, the query includes data for tables that are archived.
-  </dd><br />
 
-  <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-  </dd><br />
+##### Archived
 
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+<dd>A boolean value; when <code>true</code>, the query includes data for tables that are archived.</dd>
 
-</dl>
+##### Include foreign IDs
 
-#### Archive table
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
+
+##### Table ID or name
+
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
+
+##### Archive table
 
 The **HubDB - archive table** archives a HubDB table. The following is a list of all the fields available for **HubDB - archive table**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-</dl>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
 #### Update existing table
 
 The **HubDB - update existing table** command fetches rows from a HubDB table. The following is a list of all the fields available for **HubDB - update existing table**:
 
-<dl>
-  <dt><b>Archived</b></dt>
-  <dd>A boolean value; when <code>true</code>, the query returns data only for tables that are archived.
-  </dd><br />
 
-  <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-  </dd><br />
+##### Archived
 
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+<dd>A boolean value; when <code>true</code>, the query returns data only for tables that are archived.</dd>
 
-  <dt><b>Name</b></dt>
-  <dd>The name of the new table.
-  </dd><br />
+##### Include foreign IDs
 
-  <dt><b>Label</b></dt>
-  <dd>The label of the new table.</dd><br />
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
 
-  <dt><b>Use for pages</b></dt>
-  <dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd><br />
+##### Table ID or name
 
-  <dt><b>Columns</b></dt>
-  <dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd><br />
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-  <dt><b>Allow Public API access</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd><br />
+##### Name
 
-  <dt><b>Allow child tables</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd><br />
+<dd>The name of the new table.</dd>
 
-  <dt><b>Allow child table pages</b></dt> 
-  <dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd><br />
+##### Label
 
-  <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of another table that is related to the new table as a Foreign Key.</dd><br />
+<dd>The label of the new table.</dd>
 
-  <dt><b>Foreign table ID</b></dt> 
-  <dd>The ID of a column from another table that is used as a Foreign Key.</dd><br />
+##### Use for pages
 
-  <dt><b>Dynamic meta tags</b></dt>
-  <dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the <b>Meta description column</b> to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
+<dd>A boolean that, when <code>true</code>, allows the new table to be used for creating dynamic website pages.</dd>
 
-</dl>
+##### Columns
 
+<dd>A JSON array of column names to add to the new table: <code>["hello", "world", "apple"]</code></dd>
 
-#### Clone table
+##### Allow Public API access 
+
+<dd>A boolean that, when <code>true</code>, allows the table to be read via public API without authorization.</dd>
+
+##### Allow child tables 
+
+<dd>A boolean that, when <code>true</code>, allows the creation of related child tables.</dd>
+
+##### Allow child table pages 
+
+<dd>A boolean that, when <code>true</code>, allows the creation of multi-level dynamic pages referencing the child table.</dd>
+
+##### Foreign table ID 
+
+<dd>The ID of another table that is related to the new table as a Foreign Key.</dd>
+
+##### Foreign table ID 
+
+<dd>The ID of a column from another table that is used as a Foreign Key.</dd>
+
+##### Dynamic meta tags
+
+<dd>Key/value pairs to use for setting which table columns map to which metadata types. For example, to set the <b>Meta description column</b> to be the column with an <code>id</code> of <code>3</code>, use: <code>&#123; "DESCRIPTION": 3 &#125;</code></dd>
+
+##### Clone table
 
 The **HubDB - clone table** command clones an existing HubDB table. The following is a list of all the fields available for **HubDB - clone table**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+#### Table ID or name
 
-  <dt><b>New name</b></dt>
-  <dd>The name of your new HubDB table.
-  </dd><br />
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-  <dt><b>New label</b></dt>
-  <dd>The label of your new HubDB table.
-  </dd><br />
+##### New name
 
-  <dt><b>Copy rows</b></dt>
-  <dd>A boolean that, when <code>true</code>, copies the rows from the cloned table into the new table.
-  </dd><br />
+<dd>The name of your new HubDB table.</dd>
 
-</dl>
+##### New label
+
+<dd>The label of your new HubDB table.</dd>
+
+##### Copy rows
+
+<dd>A boolean that, when <code>true</code>, copies the rows from the cloned table into the new table.</dd>
 
 #### Export published version table
 
 The **HubDB - export published version table** command returns the file data for a HubDB table in a given format. The following is a list of all the fields available for **HubDB - export published version table**:
 
-<dl>
-  <dt><b>Include foreign IDs</b></dt>
-  <dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.
-  </dd><br />
+##### Include foreign IDs
 
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+<dd>A boolean value; when <code>true</code>, the details for related child/foreign tables are included in the results.</dd>
 
-</dl>
+##### Table ID or name
 
-#### Unpublish table
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
+
+##### Unpublish table
 
 The **HubDB - unpublish table** command unpublishes a given HubDB table. The following is a list of all the fields available for **HubDB - unpublish table**:
 
-<dl>
-  <dt><b>Include foreign IDs</b></dt>
-  <dd>The file format of the exported table data. Allows <code>CSV</code>, <code>XLSX</code>, or <code>XLS</code>.
-  </dd><br />
+##### Include foreign IDs
 
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+<dd>The file format of the exported table data. Allows <code>CSV</code>, <code>XLSX</code>, or <code>XLS</code>.</dd>
 
-</dl>
+##### Table ID or name
 
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-#### Get table rows
+##### Get table rows
 
 The **HubDB - get table rows** command fetches rows from a HubDB table. The following is a list of all the fields available for **HubDB - get table rows**:
 
-<dl>
-  <dt><b>Sort</b></dt>
-  <dd>The name of a field by which to sort the fetched records. Requires a single column name, such as <code>name</code>.
-  </dd><br />
+##### Sort
 
-  <dt><b>Next Page Token</b></dt>
-  <dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
-  <dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd>
+<dd>The name of a field by which to sort the fetched records. Requires a single column name, such as <code>name</code>.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>The maxiumum number of rows that can be returned in a single query response.
-  </dd><br />
+##### Next Page Token
 
-  <dt><b>Properties</b></dt>
-  <dd>A comma-separated list of columns that should be fetched for each returned record.
-  </dd><br />
+<dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
+<dd><pre>{`{{ GetRowsQuery.data.paging?.next.after || "" }}`}</pre></dd>
 
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Limit
 
-</dl>
+<dd>The maxiumum number of rows that can be returned in a single query response.</dd>
 
+##### Properties
 
-#### Add new table row
+<dd>A comma-separated list of columns that should be fetched for each returned record.</dd>
+
+##### Table ID or name
+
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
+
+##### Add new table row
 
 The **HubDB - add new table row** command creates a new row in a HubDB table. The following is a list of all the fields available for **HubDB - add new table row**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-  <dt><b>Path</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-  </dd><br />
+##### Path
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
 
-  <dt><b>Name</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
+##### Name
+<dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
 
-  <dt><b>Child table ID</b></dt>
-  <dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-  </dd><br />
+##### Child table ID
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
 
-  <dt><b>Values</b></dt>
-  <dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+##### Values
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
   <pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
-  </dd><br />
+      "name": "MyProduct",
+      "buyer": "121529803132"
+  }`}</pre>
+</dd>
 
-</dl>
-
-
-#### Update existing row
+##### Update existing row
 
 The **HubDB - update existing row** command updates an existing row in a HubDB table. The following is a list of all the fields available for **HubDB - update existing row**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-  <dt><b>Row ID</b></dt>
-  <dd>The <code>ID</code> of the table row that you'd like to update.</dd><rb/>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-  <dt><b>Path</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-  </dd><br />
+##### Row ID
 
-  <dt><b>Name</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
+<dd>The <code>ID</code> of the table row that you'd like to update.</dd>
 
-  <dt><b>Child table ID</b></dt>
-  <dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-  </dd><br />
+##### Path
 
-  <dt><b>Values</b></dt>
-  <dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
-  <pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
-  </dd><br />
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
 
-</dl>
+##### Name
 
-#### Replace existing row
+<dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
+
+##### Child table ID
+
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
+
+##### Values
+
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+    <pre>
+      {`{
+          "name": "MyProduct",
+          "buyer": "121529803132"
+      }`}
+    </pre>
+</dd>
+
+##### Replace existing row
 
 The **HubDB - replace existing row** command replaces an existing row in a HubDB table. The following is a list of all the fields available for **HubDB - replace existing row**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-  <dt><b>Row ID</b></dt>
-  <dd>The <code>ID</code> of the table row that you'd like to replace.</dd><rb/>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-  <dt><b>Path</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.
-  </dd><br />
+##### Row ID
 
-  <dt><b>Name</b></dt>
-  <dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd><rb/>
+<dd>The <code>ID</code> of the table row that you'd like to replace.</dd>
 
-  <dt><b>Child table ID</b></dt>
-  <dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.
-  </dd><br />
+##### Path
 
-  <dt><b>Values</b></dt>
-  <dd>A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
+<dd>If you're using HubSpot's dynamic pages, this field is the URL slug for the new page created for this table row.</dd>
+
+##### Name
+
+<dd>If you're using HubSpot's dynamic pages, this field is the page title for the new page created for this table row.</dd>
+
+##### Child table ID
+
+<dd>The ID for another HubDB table. This is used as a Foreign Key to create a relationship between records. To connect a specific record from the child table, pass its <code>ID</code> as a string value in the JSON object of your query's <b>Values</b> field.</dd>
+
+##### Values
+
+<dd>
+  A JSON object with key/value pairs representing the new record. If you are creating a relationship using the <b>Child table ID</b> field, you can pass the <code>ID</code> of a corresponding record from the child table as a string value. For example, if you refer to a child table called <code>buyer</code>:
   <pre>{`{
-    "name": "MyProduct",
-    "buyer": "121529803132"
-}`}</pre>
-  </dd><br />
-
-</dl>
-
+      "name": "MyProduct",
+      "buyer": "121529803132"
+  }`}</pre>
+</dd>
 
 #### Permanently delete row
 
 The **HubDB - permanently delete row** command deletes an existing row from a HubDB table. The following is a list of all the fields available for **HubDB - permanently delete row**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-  <dt><b>Row ID</b></dt>
-  <dd>The <code>ID</code> of the table row that you'd like to delete.</dd><br/>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-</dl>
+##### Row ID
+
+<dd>The <code>ID</code> of the table row that you'd like to delete.</dd>
 
 #### Clone row
 
 The **HubDB - clone row** command clones an existing row in a HubDB table. The following is a list of all the fields available for **HubDB - clone row**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-  <dt><b>Row ID</b></dt>
-  <dd>The ID of the table row to clone.
-  </dd><br />
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-</dl>
+##### Row ID
+
+<dd>The ID of the table row to clone.</dd>
 
 #### Get set rows
 
 The **HubDB - get set rows** command gets a batch of specific rows from a HubDB table. The following is a list of all the fields available for **HubDB - get set rows**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
 
-  <dt><b>Inputs</b></dt>
-  <dd>A JSON array with the IDs of the rows to get.
-  </dd><br />
+##### Table ID or name
 
-</dl>
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
+
+##### Inputs
+
+<dd>A JSON array with the IDs of the rows to get.</dd>
 
 #### Permanently delete rows
 
 The **HubDB - permanently delete rows** command deletes a batch of specific rows from a HubDB table. The following is a list of all the fields available for **HubDB - permanently delete rows**:
 
-<dl>
-  <dt><b>Table ID or name</b></dt>
-  <dd>The name of your HubDB table, or its numerical <code>ID</code> value.
-  </dd><br />
+##### Table ID or name
 
-  <dt><b>Inputs</b></dt>
-  <dd>A JSON array with the IDs of the rows to get.
-  </dd><br />
+<dd>The name of your HubDB table, or its numerical <code>ID</code> value.</dd>
 
-</dl>
+##### Inputs
+
+<dd>A JSON array with the IDs of the rows to get.</dd>
+
 
 ### CRM
 
@@ -454,139 +435,126 @@ The following sections describe the parameters for connecting to CRM type querie
 
 The **CRM - list objects** command returns a list of entries for a given type of CRM objects. The following is a list of all the fields available for **CRM - list objects**:
 
-<dl>
-  <dt><b>Objects</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
-
-</dl>
+##### Objects
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
 #### Create object
 
 The **CRM - create objects** command creates a new object of the given type. The following is a list of all the fields available for **CRM - create objects**:
 
-<dl>
-  <dt><b>Objects</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
 
-  <dt><b>Properties</b></dt>
-  <dd>A JSON object with key/value pairs that define the properties for the created CRM object.
-  </dd><br />
+##### Objects
 
-</dl>
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
+
+##### Properties
+
+<dd>A JSON object with key/value pairs that define the properties for the created CRM object.</dd>
 
 #### Read object
 
 The **CRM - read object** command returns the details for a specific CRM object. The following is a list of all the fields available for **CRM - read object**:
 
-<dl>
-  <dt><b>Properties</b></dt>
-  <dd>A comma-separated list of columns that should be fetched for the object.
-  </dd><br />
+##### Properties
 
-  <dt><b>Properties with history</b></dt>
-  <dd>A comma-separated list of columns that should be fetched along with their history of previous values.
-  </dd><br />
+<dd>A comma-separated list of columns that should be fetched for the object.</dd>
 
-  <dt><b>Associations</b></dt>
-  <dd>A comma-separated list of related CRM object types whose IDs should be returned.
-  </dd><br />
+##### Properties with history
 
-  <dt><b>Archive</b></dt>
-  <dd>A boolean value; when <code>true</code>, the query only returns entries that are archived.
-  </dd><br />
+<dd>A comma-separated list of columns that should be fetched along with their history of previous values.</dd>
 
-  <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
+##### Associations
 
-  <dt><b>Object ID</b></dt>
-  <dd>The ID of the CRM object to fetch.
-  </dd><br />
+<dd>A comma-separated list of related CRM object types whose IDs should be returned.</dd>
 
-</dl>
+##### Archive
 
-#### Update object
+<dd>A boolean value; when <code>true</code>, the query only returns entries that are archived.</dd>
+
+##### Object type
+
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
+
+##### Object ID
+
+<dd>The ID of the CRM object to fetch.</dd>
+
+##### Update object
 
 The **CRM - create objects** command updates a given CRM object. The following is a list of all the fields available for **CRM - create objects**:
 
-<dl>
-  <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
+##### Object type
 
-  <dt><b>Object ID</b></dt>
-  <dd>The ID of the CRM object to fetch.
-  </dd><br />
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
-  <dt><b>Properties</b></dt>
-  <dd>A JSON object with key/value pairs that define the properties for the created CRM object.
-  </dd><br />
+##### Object ID
 
-</dl>
+<dd>The ID of the CRM object to fetch.</dd>
 
-#### Archive object
+##### Properties
+
+<dd>A JSON object with key/value pairs that define the properties for the created CRM object.</dd>
+
+##### Archive object
 
 The **CRM - Archive object** command archives a given CRM object. The following is a list of all the fields available for **CRM - Archive object**:
 
-<dl>
-  <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
+##### Object type
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
-  <dt><b>Object ID</b></dt>
-  <dd>The ID of the CRM object to fetch.
-  </dd><br />
-
-</dl>
+##### Object ID
+<dd>The ID of the CRM object to fetch.</dd>
 
 #### Search object
 
-<dl>
-  <dt><b>Object type</b></dt>
-  <dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.
-  </dd><br />
 
-  <dt><b>Property name</b></dt>
-  <dd>The name of a property by which to filter results
-  </dd><br />
+##### Object type
 
-  <dt><b>Value</b></dt>
-  <dd>The value that returned records should have for the property specified in <b>Property name</b>.
-  </dd><br />
+<dd>The name of a type of CRM object to fetch, such as <code>contacts</code>.</dd>
 
-  <dt><b>Operator</b></dt>
-  <dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.
-  </dd><br />
+##### Property name
 
-  <dt><b>Sorts</b></dt>
-  <dd>A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:<pre>{`{[
-      {
-        "propertyName": "createdate",
-        "direction": "DESCENDING"
-      }
-]}`}</pre>
-  </dd><br />
+<dd>The name of a property by which to filter results</dd>
 
-  <dt><b>Query</b></dt>
-  <dd>A word to search for in the default text property of all CRM objects.
-  </dd><br />
+##### Value
 
-  <dt><b>Properties</b></dt>
-  <dd>A comma-separated list of columns that should be fetched for each returned record.
-  </dd><br />
+<dd>The value that returned records should have for the property specified in <b>Property name</b>.</dd>
 
-  <dt><b>Limit</b></dt>
-  <dd>The maxiumum number of rows that can be returned in a single query response.
-  </dd><br />  
+##### Operator
 
-  <dt><b>After</b></dt>
-  <dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
-  <dd><pre>{`{{ SearchObjectQuery.data.paging?.next.after || "" }}`}</pre></dd>
+<dd>The logical operator that should be used to compare the object's actual property value to the value specified in <b>Value</b>.</dd>
 
+##### Sorts
 
-</dl>
+<dd>
+  A sorting rule in the request body to list results in ascending or descending order. Only one sorting rule can be applied to any search. For example:
+  <pre>
+    {`{[
+        {
+          "propertyName": "createdate",
+          "direction": "DESCENDING"
+        }
+    ]}`}
+  </pre>
+</dd>
+
+##### Query
+
+<dd>A word to search for in the default text property of all CRM objects.</dd>
+
+##### Properties
+
+<dd>A comma-separated list of columns that should be fetched for each returned record.</dd>
+
+##### Limit
+
+<dd>The maxiumum number of rows that can be returned in a single query response.</dd> 
+
+##### After
+
+<dd>A token sent in the response to your query that is used in subsequent queries to fetch the next page of data:</dd>
+<dd><pre>{`{{ SearchObjectQuery.data.paging?.next.after || "" }}`}</pre></dd>
+
 
 ## Additional commands
 
