@@ -1,55 +1,228 @@
-# Create Custom Widgets Using Iframe
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-Appsmith offers a wide range of widgets for building applications. Still, sometimes you may need a custom widget for a specific purpose, such as a calendar, accordion, social media widget, etc. In such cases, you can create the widget in HTML or a language like React and display it in the Iframe widget.
+# Create Custom Widgets 
 
-Lets create a custom Code Editor Widget with the [Ace Code Editor Library](https://ace.c9.io/).
+While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
-1. In the **srcDoc** property, add the following code:
+## Configure Custom Widget
 
+1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
+
+2. Click the **Edit Source** button to configure the code for the Custom widget.
+
+<dd>
+
+Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
+
+*Example*: To create an image carousel(slider) that displays user documents, import the required React libraries and configure the CSS accordingly, like:
+
+<Tabs>
+  <TabItem value="html" label="HTML" default>
 
 ```html
-<head>
-<style type="text/css" media="screen">
-    #editor { 
-        position: absolute;
-        top: 40px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-</style>
-</head>
-<body>
-<div id="editor">function foo(items) {
-    var x = "All this is syntax highlighted";
-    return x;
-}</div>
-<script src="https://cdn.jsdelivr.net/npm/ace-builds@1.19.0/src-min-noconflict/ace.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/javascript");
-    editor.on("change", function() {
-        // Get the value of the editor and send it to the parent window
-        var code = editor.getValue();
-        window.parent.postMessage(code, "*");
-    });
-</script>
+<!-- no need to write html, head, body tags, it is handled by the widget -->
+<link href="
+https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/lib/styles/carousel.min.css
+" rel="stylesheet">
+<div id="root"></div>
 ```
-This code creates a code editor widget using the Ace code editor library and sends the entered code to the [parent window](#communication-between-app-and-iframe) when the "Submit Code" button is clicked.
+
+  </TabItem>
+  <TabItem value="css" label="CSS">
 
 
-2. Next, add Text widget and sets its **Text** property to:
+
+```css
+#container {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100vw !important;
+  height: 150vh;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+```
+  </TabItem>
+  <TabItem value="jss" label="JS">
+
+
 
 ```js
-{{Iframe1.message}}
+import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';
+import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';
+import { Carousel } from 'https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/+esm';
+
+// Styles for the carousel content
+const contentStyle = {
+  margin: 0,
+  maxHeight: 'calc(var(--appsmith-ui-height) * 1px)',
+  maxWidth: "calc(var(--appsmith-ui-width) * 1px)",
+  display: "block",
+  width: "100vw",
+  height: "100vh",
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
+
+function App() {
+  // Function to be expanded with widget components in subsequent steps
+}
+
+// Rendering the App component on Appsmith's root element
+appsmith.onReady(() => {
+  reactDom.render(<App />, document.getElementById("root"));
+});
 ```
-This retrieves the entered code from the editor and displays it in a Text widget using the `message` reference property. 
+  </TabItem>
+</Tabs>
 
-With this setup, users can edit the code in the code editor, and when the submit button is clicked, the entered code would be processed or displayed as desired.
 
-<ZoomImage
-  src="/img/custom-widget-code.png" 
-  alt="Display images on table row selection"
-  caption="Custom Code Editor"
-/>
+
+</dd>
+
+3. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+
+<dd>
+
+*Example:* For the image slider, add code that captures selected row data, including document URL and ID, like:
+
+
+```js
+{
+  "data": [
+    "{{tbl_docs.selectedRow.doc_type_passport}}",
+    "{{tbl_docs.selectedRow.doc_type_dl}}",
+    "{{tbl_docs.selectedRow.doc_type_bank}}"
+  ],
+  "id": [
+    "{{tbl_docs.selectedRow.id}}"
+]}
+```
+
+</dd>
+
+4. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+
+ 
+<dd>
+
+*Example:* For the image slider, create a function that uses the React Carousel component to render images dynamically from Appsmith's data model, with specific styling. 
+
+```js
+function App() {
+  return (
+    <Carousel showThumbs={false} showStatus={false} onChange={(d) => {}}>
+        // highlight-next-line
+      {appsmith.model.data.map((d, index) => {
+        // Rendering each image in the carousel
+        return (
+          <img key={index} src={d} style={contentStyle} />
+        );
+      })}
+    </Carousel>
+  );
+}
+
+// To access the data in the javascript editor use appsmith.model.property-name..
+//To access data in CSS use var(--appsmith-model-{property-name}
+```
+
+
+</dd>
+
+
+5. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+
+<dd>
+
+*Example:*
+
+```js
+//JS
+Function App() {
+	return (
+		<Carousel showThumbs={false} showStatus={false} onChange={(d) => {
+    // highlight-next-line
+		appsmith.updateModel({selectedIndex: d });
+	}}>
+		{appsmith.model.data.map((d) => {...
+```
+
+To display data in a Text widget, set its **Text** property to:
+
+```js
+{{Custom1.model.selectedIndex}}
+```
+
+</dd>
+
+
+6. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
+
+<dd>
+
+*Example:* To add a button within the Custom widget that, when clicked, executes a query, use the following code:
+
+<Tabs>
+  <TabItem value="js" label="JS" default>
+
+```js
+// Example: Handle button click event
+const buttonElement = document.getElementById("requestChangeButton");
+buttonElement.addEventListener("click", () => {
+      // highlight-next-line
+   appsmith.triggerEvent("onRequestchange");
+});
+```
+
+  </TabItem>
+  <TabItem value="html" label="HTML">
+
+```html
+<!-- Button element -->
+<button id="requestChangeButton">Request Change</button>
+```
+
+  </TabItem>
+  <TabItem value="css" label="CSS">
+
+```css
+/* Style for the button */
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+``` 
+
+  </TabItem>
+</Tabs>
+
+In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action. 
+
+
+<div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
+  <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
+</div>
+
+
+</dd>
+
+
+## Sample apps
+
+* Custom Calendar App
+* Signature Pad App
+* Image Slider App
+

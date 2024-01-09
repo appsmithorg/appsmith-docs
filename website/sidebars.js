@@ -446,6 +446,7 @@ const sidebars = {
                 'reference/widgets/container',
                 'reference/widgets/currency-input',
                 'reference/widgets/datepicker',
+                'reference/widgets/custom',
                 'reference/widgets/divider',
                 'reference/widgets/document-viewer',
                 'reference/widgets/form',
