@@ -5,6 +5,11 @@ description: This page shows you how to build a custom navigation bar.
 # Create Custom Navigation Bar
 A custom navigation bar improves the user experience in your application and allows you to structure it to make navigation easier. This page shows you steps to create a custom navigation bar.
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/HQlo5QgJJeUW6bGFS8F4?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 ## Create and export navigation bar
 1. Create a new page in your application for the navigation bar.
 2. Add a Container to your page and design it by adding Buttons to create a navigation bar. 
