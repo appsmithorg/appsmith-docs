@@ -243,8 +243,7 @@ Databases are an essential part of many applications and are used to store and m
         </div> 
             <b><a href="/connect-data/reference/querying-oracle">Oracle</a></b>
    </div>
-
-   <div className="columnGrid column-three" align="center">
+ <div className="columnGrid column-three" align="center">
         <div className="containerCol">
             <a href="/connect-data/reference/using-smtp">
             <img className="containerImage" src="/img/smtp-icon_1.png" alt="SMTP-logo"/>
@@ -252,4 +251,13 @@ Databases are an essential part of many applications and are used to store and m
         </div> 
             <b><a href="/connect-data/reference/using-smtp">SMTP</a></b>
 </div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/databricks">
+            <img className="containerImage" src="/img/logo-databricks-img.png" alt="SMTP-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/databricks">Databricks</a></b>
+</div>
+
 </div>
