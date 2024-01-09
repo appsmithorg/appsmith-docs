@@ -85,7 +85,7 @@ Appsmith server sends a ping first time a new instance is created. This data is 
 
 ### Usage pulse for billing
 
-The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour irrespective of whether telemetry is turned on or off. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected irrespective of whether telemetry is turned on or off.
+The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour irrespective of whether telemetry is turned on or off. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected irrespective of whether telemetry is turned on or off only for all paying customers.
 
 ```javascript title="sample usage-payload billing"
 {
