@@ -185,7 +185,7 @@ The server shares anonymous information about successful query processes, new ap
 
 ## Disable telemetry
 
-Telemetry sharing is an optional setting, and you can disable telemetry either from Admin Settings or by making changes to the environment variable.
+Sharing telemetry is optional, and you can disable telemetry either from Admin Settings or by making changes to the environment variable.
 
 ### Admin Settings
 
