@@ -1,9 +1,8 @@
 # Custom
 
-This page provides information on using the Custom widget, which allows you to integrate CSS, HTML, and JavaScript components for additional functionality. 
+While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code for additional functionality. 
 
-To embed web pages or applications, use the [IFrame widget](/reference/widgets/iframe).
-
+See [How to create Custom widgets](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe).
 
 ## Content properties
 
@@ -27,7 +26,7 @@ Learn more about [Custom Widget Builder](#custom-widget-builder).
 <dd>
 
 
-This property allows you to pass data to the custom widget's code editor. You can use mustache binding `{{}}` to pass data from queries or other widgets.
+This property allows you to pass JSON object data to the custom widget's code editor. You can use mustache binding `{{}}` to pass data from queries or other widgets.
 
 *Example:* If you want to pass the name from a Table widget to the custom widget, use the following code:
 
@@ -71,12 +70,12 @@ For example, if you want to make the widget visible only when the user selects "
 
 ### Events
 
-#### Custom Events	
-
 <dd>
 
+Allows you to create multiple events, providing the flexibility to configure various actions tailored to your specific requirements, such as Framework functions, queries, or JavaScript functions. 
 
-Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) tailored to your specific requirements. Create events in the widget and trigger them in the javascript file using `appsmith.triggerEvent("eventName")`
+These events can be triggered in the JavaScript code editor of the Custom widget using the `appsmith.triggerEvent("eventName")`.
+
 
 
 *Example*: To reset the widget upon a button click, create a new event named **onResetClick** and add the following in the JavaScript code:
@@ -89,9 +88,13 @@ const handleReset = () => {
 ```
 
 
-<div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
-  <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
-</div>
+
+<ZoomImage
+  src="/img/custom-ref-event.png" 
+  alt=""
+  caption="Left: Custom Widget Builder | Right: Widget Events"
+/>
+
 
 
 </dd>
@@ -140,7 +143,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 This section provides information on the Custom Widget Code Editor, which allows you to edit HTML, JS, and CSS code for your custom widgets. These properties are accessible within the code editor.
 
 :::info
-- When creating your custom component, skip `<html>` and `<body>` tags. Instead, directly write the tags essential for your app.
+- When creating your custom component, skip `<html>` and `<body>` tags. Instead, add only essential tags directly in your HTML code.
 - When importing libraries, opt for ESM (ECMAScript Module) or UMD (Universal Module Definition) method. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 :::
 

@@ -13,71 +13,83 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 <dd>
 
-Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
+Within the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
 
-*Example*: To create an image carousel(slider) that displays user documents, import the required React libraries and configure the CSS accordingly, like:
+</dd>
+
+3. In the Custom widget builder, select your template (e.g., Vue, React), and then import the required library.
+
+
+<dd>
+
+To import frameworks like React, add the required import statements at the beginning of your JavaScript file. For example:
+
+```js
+import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
+import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
+```
+
+To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
+
+* For UMD, include the library with a script tag in the HTML file:
+
+<dd>
+```html
+<script src="link-to-the-UMD-file"></script>
+```
+</dd>
+
+* For ESM, use an import statement at the top of the JavaScript file:
+
+<dd>
+
+```js
+import ThirdPartyComponent from "link-to-the-ESM-file";
+```
+
+</dd>
+
+</dd>
+
+4. Add your Custom widget's code and render it by calling the respective function or code inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
+
+<dd>
+
+If you want to dynamically update the `model` based on data changes, render the app inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
+
+*Example*: To create a simple calendar widget, import the necessary ESM libraries and initialize the calendar within the` appsmith.onReady` block:
 
 <Tabs>
   <TabItem value="html" label="HTML" default>
 
 ```html
 <!-- no need to write html, head, body tags, it is handled by the widget -->
-<link href="
-https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/lib/styles/carousel.min.css
-" rel="stylesheet">
-<div id="root"></div>
+<div id="calendar"></div>
 ```
 
-  </TabItem>
-  <TabItem value="css" label="CSS">
-
-
-
-```css
-#container {
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-  width: 100vw !important;
-  height: 150vh;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-}
-```
   </TabItem>
   <TabItem value="jss" label="JS">
 
 
 
 ```js
-import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';
-import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';
-import { Carousel } from 'https://cdn.jsdelivr.net/npm/react-responsive-carousel@3.2.23/+esm';
+import { Calendar } from 'https://cdn.skypack.dev/@fullcalendar/core@6.1.10';
+import dayGridPlugin from 'https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.10';
 
-// Styles for the carousel content
-const contentStyle = {
-  margin: 0,
-  maxHeight: 'calc(var(--appsmith-ui-height) * 1px)',
-  maxWidth: "calc(var(--appsmith-ui-width) * 1px)",
-  display: "block",
-  width: "100vw",
-  height: "100vh",
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
-
-function App() {
-  // Function to be expanded with widget components in subsequent steps
-}
-
-// Rendering the App component on Appsmith's root element
 appsmith.onReady(() => {
-  reactDom.render(<App />, document.getElementById("root"));
+  
+  const calendarEl = document.getElementById('calendar');
+  const calendar = new Calendar(calendarEl, {
+
+    plugins: [dayGridPlugin],
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: ''
+    }
+  });
+
+  calendar.render();
 });
 ```
   </TabItem>
@@ -87,7 +99,7 @@ appsmith.onReady(() => {
 
 </dd>
 
-3. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+5. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -108,7 +120,7 @@ appsmith.onReady(() => {
 
 </dd>
 
-4. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+6. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
 
  
 <dd>
@@ -138,7 +150,7 @@ function App() {
 </dd>
 
 
-5. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+7. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
 
 <dd>
 
@@ -164,7 +176,7 @@ To display data in a Text widget, set its **Text** property to:
 </dd>
 
 
-6. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
+8. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
 
 <dd>
 
