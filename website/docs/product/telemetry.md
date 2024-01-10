@@ -140,7 +140,7 @@ The client captures anonymous behavioral data around navigation and clicks. This
 ```
 
 ### Successful backend calls
-The server records anonymous information about successful query processes, new application creation, user logins, connections to additional plugins, etc. This data is only collected when telemetry is turned on. 
+The server shares anonymous information about successful query processes, new application creation, user logins, connections to additional plugins, etc. This data is only collected when telemetry is turned on. 
 
 ```javascript title="sample successful backend call"
 {
