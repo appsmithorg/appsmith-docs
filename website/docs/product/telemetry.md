@@ -12,7 +12,7 @@ Appsmith is a lightweight proxy and **does not capture** any data returned by yo
 
 ### Keep-alive ping
 
-The Appsmith server sends a keep-alive ping every 6 hours to indicate that it's still running without any errors & captures anonymous usage data around which plugins are being used. This data is collected irrespective of whether telemetry is turned on or off.
+The Appsmith server sends a keep-alive ping every 2 hours to indicate that it's still running without any errors. Additionally, it captures anonymous usage data to track the usage patterns of plugins. This data is collected irrespective of whether telemetry is turned on or off.
 
 ```javascript title="sample keep-alive ping"
 {
@@ -42,7 +42,7 @@ The Appsmith server sends a keep-alive ping every 6 hours to indicate that it's 
 ```
 
 ### Server setup ping
-Appsmith server sends a ping first time a new instance is created. This data is collected irrespective of telemetry is turned on or off.
+Appsmith server sends a ping first time a new instance is created. This data is collected irrespective of whether telemetry is turned on or off.
 
 ```javascript title="sample server-setup ping"
 {
@@ -85,7 +85,7 @@ Appsmith server sends a ping first time a new instance is created. This data is 
 
 ### Usage pulse for billing
 
-The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour irrespective of whether telemetry is turned on or off. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected only for paying customers, regardless of whether telemetry is on or off.
+The Appsmith client triggers a usage pulse whenever a user performs an action on their Appsmith instance. The usage pulse primarily contains information such as the timestamp, a hashed `userId` to map the user, and the app mode in which the action was performed. The data is collected on the server-side and sent to the Appsmith cloud services in batches every hour. These pulses are then processed to present aggregate information to customers on customer portal. This data is collected only for paying customers, regardless of whether telemetry is on or off.
 
 ```javascript title="sample usage-payload billing"
 {
