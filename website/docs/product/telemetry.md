@@ -8,7 +8,7 @@ Telemetry in Appsmith refers to the collection of data about how users interact 
 
 ## Data collected by Appsmith
 
-Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools. All data captured from a self-hosted instance is completely anonymised.
+Appsmith is a lightweight proxy and **does not capture** any data returned by your APIs, databases, or third-party tools. All data captured from a self-hosted instance is completely anonymised for user information.
 
 ### Keep-alive ping
 
