@@ -42,6 +42,8 @@ Follow these steps to install Appsmith:
         restart: unless-stopped
    ```
 
+   The `appsmith-ee` image installs the _Commercial edition_ (recommended), which offers a _free plan_ and the flexibility to upgrade to a paid plan at any point. To install the _Community edition_, replace `appsmith-ee` with `appsmith-ce` in the image attribute within the `docker-compose.yml` file.
+
 3. Start the Docker container by using the below command. You may need to use `sudo` if you don't have permission to run `docker-compose`:
 
    ```bash
@@ -55,10 +57,6 @@ Follow these steps to install Appsmith:
 5. Fill in your details to create an administrator account.
 
 6. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
-
-## Install Appsmith Community
-
-To install the Appsmith open source edition (Appsmith Community), under step 2 of the [Install Appsmith](#install-appsmith) section on this page, replace `appsmith-ee` with `appsmith-ce` for the `image` attribute while creating the `docker-compose.yml` file.
 
 ## Troubleshooting
 
