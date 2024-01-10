@@ -9,15 +9,10 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
-2. Click the **Edit Source** button to configure the code for the Custom widget.
+2. Click the **Edit Source** button to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
 
-<dd>
 
-Within the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
-
-</dd>
-
-3. In the Custom widget builder, select your template (e.g., Vue, React), and then import the required library.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), select your template (e.g., Vue, React), and then import the required library.
 
 
 <dd>
@@ -51,20 +46,29 @@ import ThirdPartyComponent from "link-to-the-ESM-file";
 
 </dd>
 
-4. Add your Custom widget's code and render it by calling the respective function or code inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
+4. Add your Custom widget code within the relevant tabs. 
 
 <dd>
 
+Configure the rendering logic in JavaScript by calling the respective function or code inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
+
+
 If you want to dynamically update the `model` based on data changes, render the app inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
 
-*Example*: To create a simple calendar widget, import the necessary ESM libraries and initialize the calendar within the` appsmith.onReady` block:
+*Example*:  To create an image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
 
 <Tabs>
   <TabItem value="html" label="HTML" default>
 
 ```html
 <!-- no need to write html, head, body tags, it is handled by the widget -->
-<div id="calendar"></div>
+<div id="root"></div>
+
+<!-- Including the stylesheet for the React Image Gallery from the specified CDN. -->
+ 
+<link href="
+https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css
+" rel="stylesheet">
 ```
 
   </TabItem>
@@ -73,23 +77,37 @@ If you want to dynamically update the `model` based on data changes, render the 
 
 
 ```js
-import { Calendar } from 'https://cdn.skypack.dev/@fullcalendar/core@6.1.10';
-import dayGridPlugin from 'https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.10';
+// Importing necessary React libraries
+import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
+import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
 
+// Importing the ImageGallery component from the specified CDN
+import ImageGallery from 'https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/+esm';
+
+// Array of image objects for the carousel
+const images = [
+  {
+    original: "https://picsum.photos/id/1018/1000/600/",
+    thumbnail: "https://picsum.photos/id/1018/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1015/1000/600/",
+    thumbnail: "https://picsum.photos/id/1015/250/150/",
+  },
+  {
+    original: "https://picsum.photos/id/1019/1000/600/",
+    thumbnail: "https://picsum.photos/id/1019/250/150/",
+  }
+];
+
+// App component using the ImageGallery with the specified images
+function App() {
+	return <ImageGallery.default items={images} />;
+}
+
+// Rendering the App component when widget is ready
 appsmith.onReady(() => {
-  
-  const calendarEl = document.getElementById('calendar');
-  const calendar = new Calendar(calendarEl, {
-
-    plugins: [dayGridPlugin],
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: ''
-    }
-  });
-
-  calendar.render();
+	reactDom.render(<App />, document.getElementById("root"));
 });
 ```
   </TabItem>
