@@ -12,7 +12,7 @@ Appsmith is a lightweight proxy and **does not capture** any data returned by yo
 
 ### Keep-alive ping
 
-The Appsmith server sends a keep-alive ping every 2 hours to indicate that it's still running without any errors. Additionally, it captures anonymous usage data to track the usage patterns of plugins. This data is collected irrespective of whether telemetry is turned on or off.
+The Appsmith server sends a keep-alive ping every 2 hours to indicate that it's still running without any errors. This data is collected irrespective of whether telemetry is turned on or off.
 
 ```javascript title="sample keep-alive ping"
 {
