@@ -111,8 +111,6 @@ appsmith.onReady(() => {
   </TabItem>
 </Tabs>
 
-
-
 </dd>
 
 5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
