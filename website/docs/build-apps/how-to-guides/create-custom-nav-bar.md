@@ -12,7 +12,7 @@ Custom navigation bars help you customize the menu items and group the related m
 
 To create a custom navigation bar, follow these steps:
 1. Create all the pages in the application you would like to display in the custom navigation bar.
-2. On the first page of your app, add a Button Group widget to hold the menu items for the navigation bar. To rearrange and configure the buttons, click the gear icon ⚙️ beside each button. You can later export the components of the navigation bar and use it in the rest of your application's pages.
+2. You can create a custom navigation bar using Buttons, Menu Buttons, or Button Groups. On the first page of your app, add a Button Group widget to hold the menu items for the navigation bar. To rearrange and configure the buttons, click the gear icon ⚙️ beside each button. You can later export the components of the navigation bar and use it in the rest of your application's pages.
 3. To configure the nested menu for the nav bar, click the gear icon ⚙️ beside the Menu button of the Button Group.
 4. Add the **Navigate to** action to each button's **OnClick** event to navigate to the desired page. To add action to the **onClick** event of the Menu items, click the gear icon ⚙️ beside the menu item.
 5. To export the navigation bar, click the menu icon (three dots) beside the page. Select **Export** and click the widgets you want to export.
