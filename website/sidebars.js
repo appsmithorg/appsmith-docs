@@ -356,8 +356,7 @@ const sidebars = {
               label: 'Display and Filter Data in List',
               items: [
                 'build-apps/how-to-guides/display-search-and-filter-list-data',
-                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List',
-                'build-apps/how-to-guides/add-remove-inputs-in-list'
+                'build-apps/how-to-guides/Setup-Server-side-Pagination-on-List'
               ],
             },
             {
@@ -399,6 +398,7 @@ const sidebars = {
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             `build-apps/how-to-guides/display-select-options-dynamically`,
+            'build-apps/how-to-guides/add-remove-inputs-in-list'
             `build-apps/how-to-guides/navigate-between-pages`,
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
