@@ -7,14 +7,8 @@ Creating a user-interactive app in Appsmith may require adding and removing UI e
 
 To add and remove Inputs from a List widget, follow these steps:
 1. Drag a List widget to the canvas.
-2. Appsmith autopopulates the items in the List with dummy values. In the widget's property pane, delete the values in **Items**. Set the **Items** to an empty array.
-
-   Example:
-   This code binds an empty array to the widget if the key `inputValue` does not have any value in the local storage.
-   ```jsx
-   {{(appsmith.store.inputValue || [])}}
-   ```
-3. Add an Input widget to the canvas. 
+2. Appsmith autopopulates the List with dummy values and widgets. Delete all the widgets from the List.
+3. Add an Input widget to the List. 
 4. In the Input widget's property pane, set the **Text** property in **Label**.
 
    Example:
@@ -54,6 +48,6 @@ To add and remove Inputs from a List widget, follow these steps:
    
    Example:
    ```jsx
-   {{!!appsmith.store.inputValue}}
+   {{!appsmith.store.inputValue}}
    ```
 10. To test, click on the **+ plus** Icon button to add an Input widget to the List.
