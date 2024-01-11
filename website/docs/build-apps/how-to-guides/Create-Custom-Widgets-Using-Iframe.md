@@ -143,7 +143,7 @@ appsmith.onReady(() => {
  
 <dd>
 
-*Example:* For the image carousel, create a function that uses the React Carousel component to render images dynamically from Appsmith's data model. 
+*Example:* For the image carousel, use a map function to dynamically render images sourced from Appsmith's data model.
 
 ```js
 function App() {
