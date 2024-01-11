@@ -47,9 +47,9 @@ While Appsmith provides an extensive array of built-in widgets for application d
 <dd>
 
 :::info
-* To render the custom widget in the desired format, add or call the relevant function within the  [**onReady**](/reference/widgets/custom#onready) method in your JavaScript configuration. This ensures that your Custom widget is properly rendered when the app is loaded.
+* To render the custom widget in the expected format, call the relevant function within the [**onReady**](/reference/widgets/custom#onready) method in your JavaScript configuration. This ensures that your Custom widget is properly rendered when the app is loaded.
 
-* If you want to dynamically update the `model` based on data changes, render it inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
+* If you want to dynamically update the widget based on data changes(e.g., change in query data), render it inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
 :::
 
 
