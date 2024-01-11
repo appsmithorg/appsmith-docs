@@ -143,23 +143,20 @@ appsmith.onReady(() => {
  
 <dd>
 
-*Example:* For the image slider, create a function that uses the React Carousel component to render images dynamically from Appsmith's data model, with specific styling. 
+*Example:* For the image carousel, create a function that uses the React Carousel component to render images dynamically from Appsmith's data model. 
 
 ```js
 function App() {
-  return (
-    <Carousel showThumbs={false} showStatus={false} onChange={(d) => {}}>
-        // highlight-next-line
-      {appsmith.model.data.map((d, index) => {
-        // Rendering each image in the carousel
-        return (
-          <img key={index} src={d} style={contentStyle} />
-        );
-      })}
-    </Carousel>
-  );
-}
+	const imageUrls = appsmith.model.data;
 
+	// Generating dynamic images using the map function
+	const images = imageUrls.map((url, index) => ({
+		original: url,
+		thumbnail: url
+	}));
+	
+  return <ImageGallery.default items={images} />;
+}
 // To access the data in the javascript editor use appsmith.model.property-name..
 //To access data in CSS use var(--appsmith-model-{property-name}
 ```
