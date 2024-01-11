@@ -12,44 +12,46 @@ While Appsmith provides an extensive array of built-in widgets for application d
 2. Click the **Edit Source** button to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
 
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), select your template (e.g., Vue, React), and then import the required library.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), select your template (e.g., Vue, React), and import the required libraries.
 
 
 <dd>
 
-* To import frameworks like React, add the required import statements at the beginning of your JavaScript file. For example:
+* The framework libraries are automatically imported if you have selected a template. If you haven't, you can manually import libraries at the beginning of your JavaScript file, like:
 
-```js
-import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
-import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
-```
+  ```js
+  import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
+  import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
+  ```
 
 * To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
     * For UMD, include the library with a script tag in the HTML file:
 
-    ```html
-    <script src="link-to-the-UMD-file"></script>
-    ```
+      ```html
+      <script src="link-to-the-UMD-file"></script>
+      ```
 
     * For ESM, use an import statement at the top of the JavaScript file:
 
-    ```js
-    import ThirdPartyComponent from "link-to-the-ESM-file";
-    ```
+      ```js
+      import ThirdPartyComponent from "link-to-the-ESM-file";
+      ```
 
 
 
 </dd>
 
-4. Add the code for Custom widget within the relevant tabs. 
+4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
 
 <dd>
 
-* Configure the rendering logic in JavaScript by calling the respective function inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
-
+:::info
+* To render the custom widget in the desired format, add or call the relevant function within the  [**onReady**](/reference/widgets/custom#onready) method in your JavaScript configuration. This ensures that your Custom widget is properly rendered when the app is loaded.
 
 * If you want to dynamically update the `model` based on data changes, render it inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
+:::
+
 
 *Example*:  Image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
 
@@ -80,30 +82,30 @@ import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
 // Importing the ImageGallery component from the specified CDN
 import ImageGallery from 'https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/+esm';
 
-// Array of image objects for the carousel
-const images = [
-  {
-    original: "https://picsum.photos/id/1018/1000/600/",
-    thumbnail: "https://picsum.photos/id/1018/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1015/1000/600/",
-    thumbnail: "https://picsum.photos/id/1015/250/150/",
-  },
-  {
-    original: "https://picsum.photos/id/1019/1000/600/",
-    thumbnail: "https://picsum.photos/id/1019/250/150/",
-  }
-];
-
 // App component using the ImageGallery with the specified images
 function App() {
-	return <ImageGallery.default items={images} />;
+  // Array of image objects for the carousel
+  const images = [
+    {
+      original: "https://picsum.photos/id/1018/1000/600/",
+      thumbnail: "https://picsum.photos/id/1018/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1015/1000/600/",
+      thumbnail: "https://picsum.photos/id/1015/250/150/",
+    },
+    {
+      original: "https://picsum.photos/id/1019/1000/600/",
+      thumbnail: "https://picsum.photos/id/1019/250/150/",
+    }
+  ];
+
+  return <ImageGallery.default items={images} />;
 }
 
 // Rendering the App component when widget is ready
 appsmith.onReady(() => {
-	reactDom.render(<App />, document.getElementById("root"));
+  reactDom.render(<App />, document.getElementById("root"));
 });
 ```
   </TabItem>
@@ -113,7 +115,7 @@ appsmith.onReady(() => {
 
 </dd>
 
-5. To pass data from Appsmith to Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
+5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -123,7 +125,7 @@ appsmith.onReady(() => {
 ```js
 {
   "data": [
-    "{{tbl_docs.selectedRow.doc_type_passport}}",
+    "{{tbl_docs.selectedRow.doc_type_passport}}", // Image URL
     "{{tbl_docs.selectedRow.doc_type_dl}}",
     "{{tbl_docs.selectedRow.doc_type_bank}}"
   ],
@@ -142,22 +144,24 @@ appsmith.onReady(() => {
 *Example:* For the image carousel, use a map function to dynamically render images sourced from the **Default model** property.
 
 ```js
-function App() {
-        // highlight-next-line
-	const imageUrls = appsmith.model.data;
 
-// Generating dynamic images using the map function
-    const images = imageUrls.map((url, index) => ({
-		original: url,
-		thumbnail: url
-	}));
-	
+function App() {
+  // Fetching image URLs 
+  // highlight-next-line
+  const imageUrls = appsmith.model.data;
+
+  // Generating dynamic images using the map function
+  const images = imageUrls.map((url, index) => ({
+    original: url,
+    thumbnail: url
+  }));
+
+  // Returning the ImageGallery component with the generated images
   return <ImageGallery.default items={images} />;
 }
-// To access the data in the javascript editor use appsmith.model.property-name..
+
 //To access data in CSS use var(--appsmith-model-{property-name}
 ```
-
 
 </dd>
 
@@ -166,17 +170,42 @@ function App() {
 
 <dd>
 
-*Example:*
+*Example*: To retrieve the index of the current slide, add an `onSlide` event handler(provided by the library), and use `updateModel` to store the selected index, like: 
 
 ```js
 //JS
-appsmith.updateModel({selectedIndex: d });
+function App() {
+  const imageUrls = appsmith.model.data;
+
+  // Generating dynamic images using the map function
+  const images = imageUrls.map((url, index) => ({
+    original: url,
+    thumbnail: url,
+  }));
+
+  const _onSlide = (index) => {
+    // You can perform any actions related to sliding here
+    console.log("Slid to index", index);
+    // highlight-next-line
+    appsmith.updateModel({ selectedIndex: index });
+  };
+
+  return (
+    <div id="root">
+      <h1 className="title">Image Carousel</h1>
+      <ImageGallery.default items={images} showIndex={true} onSlide={_onSlide} />
+    </div>
+  );
+}
+
 ```
 
 To display data in a Text widget, set its **Text** property to:
 
 ```js
-{{Custom1.model.selectedIndex}}
+{{ImageCarousel.model.selectedIndex}}
+
+//ImageCarousel, name of the custom widget 
 ```
 
 </dd>
@@ -237,7 +266,7 @@ In the Custom widget, create a new event with the same name as defined in the fu
 
 </dd>
 
-9. To customize your widget's appearance, add your CSS code and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
+9. To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
 
 
 <dd>
@@ -248,15 +277,18 @@ In the Custom widget, create a new event with the same name as defined in the fu
   <TabItem value="css" label="CSS">
 
 ```css
-#root {
-  background-color: #24424F; 
-  padding: 20px; /* Add padding for better appearance */
-}
-
-.title {
-  color: var(--appsmith-theme-primaryColor); /* White text color */
-  font-size: 24px; /* Adjust font size as needed */
-  margin-bottom: 15px; /* Add space below the title */
+/* Style for the button */
+button {
+  margin: 0;
+  margin-top: 10px;
+  padding: 10px;
+  // highlight-next-line
+  background-color: var(--appsmith-theme-primaryColor);
+  color: white;
+  border: none;
+  // highlight-next-line
+  border-radius: var(--appsmith-theme-borderRadius);
+  cursor: pointer;
 }
 ``` 
 
