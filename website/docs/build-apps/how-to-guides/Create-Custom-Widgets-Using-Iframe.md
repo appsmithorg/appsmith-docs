@@ -190,7 +190,6 @@ function App() {
 
   return (
     <div id="root">
-      <h1 className="title">Image Carousel</h1>
       <ImageGallery.default items={images} showIndex={true} onSlide={_onSlide} />
     </div>
   );
