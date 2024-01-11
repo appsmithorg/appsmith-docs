@@ -17,45 +17,41 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 <dd>
 
-To import frameworks like React, add the required import statements at the beginning of your JavaScript file. For example:
+* To import frameworks like React, add the required import statements at the beginning of your JavaScript file. For example:
 
 ```js
 import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
 import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
 ```
 
-To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
+* To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
-* For UMD, include the library with a script tag in the HTML file:
+    * For UMD, include the library with a script tag in the HTML file:
 
-<dd>
-```html
-<script src="link-to-the-UMD-file"></script>
-```
-</dd>
+    ```html
+    <script src="link-to-the-UMD-file"></script>
+    ```
 
-* For ESM, use an import statement at the top of the JavaScript file:
+    * For ESM, use an import statement at the top of the JavaScript file:
 
-<dd>
+    ```js
+    import ThirdPartyComponent from "link-to-the-ESM-file";
+    ```
 
-```js
-import ThirdPartyComponent from "link-to-the-ESM-file";
-```
+
 
 </dd>
 
-</dd>
-
-4. Add your Custom widget code within the relevant tabs. 
+4. Add the code for Custom widget within the relevant tabs. 
 
 <dd>
 
-Configure the rendering logic in JavaScript by calling the respective function or code inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
+* Configure the rendering logic in JavaScript by calling the respective function inside the [**onReady**](/reference/widgets/custom#onready) method. This ensures that your Custom widget is properly rendered when the app is loaded.
 
 
-If you want to dynamically update the `model` based on data changes, render the app inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
+* If you want to dynamically update the `model` based on data changes, render it inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
 
-*Example*:  To create an image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
+*Example*:  Image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
 
 <Tabs>
   <TabItem value="html" label="HTML" default>
@@ -117,7 +113,7 @@ appsmith.onReady(() => {
 
 </dd>
 
-5. To pass data from Appsmith to Custom widget, use the **Default model** property. You can bind data from queries or widgets using mustache bindings `{{}}`.
+5. To pass data from Appsmith to Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -143,14 +139,15 @@ appsmith.onReady(() => {
  
 <dd>
 
-*Example:* For the image carousel, use a map function to dynamically render images sourced from Appsmith's data model.
+*Example:* For the image carousel, use a map function to dynamically render images sourced from the **Default model** property.
 
 ```js
 function App() {
+        // highlight-next-line
 	const imageUrls = appsmith.model.data;
 
-	// Generating dynamic images using the map function
-	const images = imageUrls.map((url, index) => ({
+// Generating dynamic images using the map function
+    const images = imageUrls.map((url, index) => ({
 		original: url,
 		thumbnail: url
 	}));
@@ -173,13 +170,7 @@ function App() {
 
 ```js
 //JS
-Function App() {
-	return (
-		<Carousel showThumbs={false} showStatus={false} onChange={(d) => {
-    // highlight-next-line
-		appsmith.updateModel({selectedIndex: d });
-	}}>
-		{appsmith.model.data.map((d) => {...
+appsmith.updateModel({selectedIndex: d });
 ```
 
 To display data in a Text widget, set its **Text** property to:
@@ -242,6 +233,36 @@ In the Custom widget, create a new event with the same name as defined in the fu
 <div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
   <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
 </div>
+
+
+</dd>
+
+9. To customize your widget's appearance, add your CSS code and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
+
+
+<dd>
+
+
+<Tabs>
+
+  <TabItem value="css" label="CSS">
+
+```css
+#root {
+  background-color: #24424F; 
+  padding: 20px; /* Add padding for better appearance */
+}
+
+.title {
+  color: var(--appsmith-theme-primaryColor); /* White text color */
+  font-size: 24px; /* Adjust font size as needed */
+  margin-bottom: 15px; /* Add space below the title */
+}
+``` 
+
+  </TabItem>
+</Tabs>
+
 
 
 </dd>
