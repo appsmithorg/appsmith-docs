@@ -14,7 +14,7 @@ This page shows how to insert or delete input fields dynamically in a List widge
    ```jsx
    {{(appsmith.store.inputValue || [])}}
    ```
-4. Add an Input widget to the List. 
+4. Drop an Input widget to the first item in the List. 
 5. In the Input widget's property pane, set the **Text** property.
 
    Example:
