@@ -127,29 +127,31 @@ The following section provides examples of creating basic CRUD queries on Databr
 ### Fetch data
 
 ```sql
--- Pagination example
+-- Use quotes for non-integer values
 SELECT *
 FROM default.customer
 LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOffset }};
 ```
 
-This comment fetches customer data from the `default.customer` table using the page size and offset values provided by Table widget.
+This comment fetches customer data from the `default.customer` table using the page size and offset values provided by Table widget. If the values are non-integer, make sure to enclose them in quotes.
 
 ### Update data
 
 
 ```sql
+-- Use quotes for non-integer values
 UPDATE default.customer
   SET email = '{{emailInput.text}}'
   WHERE id = {{ tableUsers.selectedRow.id}};
 ```
 
-This command dynamically updates customer details based on user input.
+This command dynamically updates customer details based on user input. If the values are non-integer, make sure to enclose them in quotes.
 
 
 ### Insert data
 
 ```sql
+-- Use quotes for non-integer values
 INSERT INTO default.customer
 VALUES (
     '{{ nameInput.text }}',
@@ -158,18 +160,20 @@ VALUES (
 );
 ```
 
-This command dynamically inserts a new customer into the database.
+This command dynamically inserts a new customer into the database. If the values are non-integer, make sure to enclose them in quotes.
 
 
 
 ### Delete data
 
 ```sql
+-- Use quotes for non-integer values
 DELETE FROM default.customer
 WHERE id = {{tableUsers.selectedRow.id}};
 ```
 
-This command dynamically deletes a customer based on their ID, obtained from the selected row in the Table.
+This command dynamically deletes a customer based on their ID, obtained from the selected row in the Table. If the values are non-integer, make sure to enclose them in quotes.
+
 
 
 
