@@ -106,6 +106,14 @@ Depending on your infrastructure, you can choose one of the following guides to 
         </div>
         <div className="columnGrid column-three" align="center">
                 </div>
-</div>    
+</div>
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="https://repocloud.io/details/?app_id=239">
+                <img className="containerImage" src="https://d2uugwmy7vss2z.cloudfront.net/repocloud-100px.png" alt="RepoCloud-logo"/>
+            </a>   
+        </div> 
+        <b><a href="https://repocloud.io/details/?app_id=239">RepoCloud</a></b>
+    </div>
 
 </div>
