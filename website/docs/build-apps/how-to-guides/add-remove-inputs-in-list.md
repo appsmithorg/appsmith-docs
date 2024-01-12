@@ -7,7 +7,7 @@ This page shows how to insert or delete input fields dynamically in a List widge
 
 1. Drag a List widget onto the canvas.
 2. Appsmith auto-populates the List with default widgets. Delete the widgets from the first List item.
-3. Delete the items from the List widget's property pane and bind data using the local storage.
+3. In the **Items** property, delete the default JSON and bind data from the local storage.
 
    Example:
    This code binds the data corresponding to `inputValue` in the local storage.
