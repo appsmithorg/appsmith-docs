@@ -132,6 +132,8 @@ appsmith.onReady(() => {
 ]}
 ```
 
+The `tbl_docs` fetches data from a query, with each column containing the respective image URL for passport, driver's license, and bank document.
+
 </dd>
 
 6. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
@@ -299,7 +301,7 @@ button {
 
 ## Sample apps
 
-* Custom Calendar App
-* Signature Pad App
-* Image Slider App
+* [Custom Calendar App](https://app.appsmith.com/app/calendar/page1-6598cfcf98b47b2e26550dcf)
+* [Signature Pad App](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
+* [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
 
