@@ -19,7 +19,7 @@ You can create an Appsmith AI query from the entity explorer without the need to
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Appsmith AI queries.
 
-
+ You can try the examples provided in the query editor to understand and experiment with the capabilities of Appsmith AI.
 
 ### Generate text 
 
@@ -219,5 +219,42 @@ This field allows you to provide the image, either in the form of an image URL o
 This property allows you to provide additional instructions to fine-tune the caption. You can use this field to offer specific guidance or adjustments to the AI.
 
 For example, you can instruct the model to "Write a 200 word product description".
+
+</dd>
+
+### Extract entities from image
+
+<dd>
+ 
+This action involves the identification and extraction of specific pieces of information or entities from an image. This feature uses advanced image processing techniques to recognize and retrieve relevant data points, such as text, objects, or other elements, from the visual content captured in the image. 
+
+</dd>
+
+#### Input
+
+<dd>
+ 
+This field allows you to provide the image, either in the form of an image URL or as a base64 encoded image. If you want to upload an image from a Filepicker, you can use `{{upload_FilePicker.files[0]}}`.
+
+</dd>
+
+#### Entities
+
+<dd>
+
+Entities are specific pieces of information or features within the visual content of the image that you want to identify and retrieve. Entities could include text, objects, landmarks, or any other distinct elements present in the image.
+
+For example, if you want to extract details from an ID card, you can specify entities such as name, date of birth, gender, license number, and height.
+
+</dd>
+
+#### Additional Instructions
+
+<dd>
+
+This property allows you to provide additional instructions to fine-tune the entity extraction. You can use this field to offer specific guidance or adjustments to the AI.
+
+For example, you can instruct the model that "The date should be in dd/mm/yyyy format".
+
 
 </dd>
