@@ -271,6 +271,7 @@ const sidebars = {
               items: [
                 'connect-data/reference/airtable',
                 'connect-data/reference/anthropic',
+                'connect-data/reference/appsmith-ai',
                 'connect-data/reference/querying-arango-db',
                 'connect-data/reference/authenticated-api',
                 'connect-data/reference/aws-lambda',
