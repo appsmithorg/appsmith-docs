@@ -33,15 +33,6 @@ To set up page navigation using an Icon button, follow these steps:
     ```jsx
     {{navigateTo('page_name', { }, 'NEW_WINDOW') }}
     ```
-## Share data between pages
-
-### Use query parameters
-Use the query parameter to share data between pages across apps. To pass data between the source and the target page using query parameters, use the following code:
-    
-```jsx
-{{navigateTo('page_name', { userId: 12345 })}}
-```
- 
-### Use local storage
-Local storage is ideal for persisting data between page navigations within the same app. 
-Key-value pairs can be stored within the local storage with the help of the [StoreValue action](/reference/appsmith-framework/widget-actions/store-value). To do so pick the `StoreValue` action and provide the desired key and values. These can be consumed on the destination page with `appsmith.store.key`.
+## See also
+- [Create Custom Navigation Bar](/build-apps/how-to-guides/create-custom-nav-bar)
+- [Share Data Across Pages](/advanced-concepts/sharing-data-across-pages)
