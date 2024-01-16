@@ -14,7 +14,6 @@ You can create an Appsmith AI query from the entity explorer without the need to
 />
 
 
-
 ## Query Appsmith AI
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Appsmith AI queries.
