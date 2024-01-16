@@ -26,7 +26,7 @@ Learn more about [Custom Widget Builder](#custom-widget-builder).
 <dd>
 
 
-This property allows you to pass JSON object data to the custom widget's code editor. You can use mustache binding `{{}}` to pass data from queries or other widgets.
+This property allows you to pass object data to the custom widget's code editor. You can use mustache binding `{{}}` to pass data from queries or other widgets.
 
 *Example:* If you want to pass the name from a Table widget to the custom widget, use the following code:
 

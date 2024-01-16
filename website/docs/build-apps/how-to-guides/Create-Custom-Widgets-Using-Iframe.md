@@ -56,7 +56,7 @@ While Appsmith provides an extensive array of built-in widgets for application d
 *Example*:  Image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
 
 <Tabs>
-  <TabItem value="html" label="HTML" default>
+  <TabItem value="html" label="HTML">
 
 ```html
 <!-- no need to write html, head, body tags, it is handled by the widget -->
@@ -70,7 +70,7 @@ https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.
 ```
 
   </TabItem>
-  <TabItem value="jss" label="JS">
+  <TabItem value="jss" label="JS" default>
 
 
 
@@ -267,9 +267,8 @@ In the Custom widget, create a new event with the same name as defined in the fu
 
 
 <div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
-  <iframe src="https://demo.arcade.software/xiVATpXaTSOokxAncvLS?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
+  <iframe src="https://demo.arcade.software/RnW0oi1J3YTVdfoXL0Y6?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
 </div>
-
 
 </dd>
 
@@ -301,7 +300,6 @@ button {
 
   </TabItem>
 </Tabs>
-
 
 
 </dd>
