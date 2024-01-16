@@ -138,8 +138,7 @@ To dynamically add data, whether from a query or a widget, you can use something
 {"data": [
    "{{tbl_users.selectedRow.passport}}",
   // Add more entries as needed
- ]
-}
+]}
 ```
 
 
