@@ -196,7 +196,7 @@ appsmith.onReady(() => {
 To display data in a Text widget, set its **Text** property to:
 
 ```js
-{{Custom_cal.model.events}}
+{{Custom_cal.model.selectedEvent}}
 
 //Custom_cal, name of the custom widget 
 ```
@@ -207,6 +207,22 @@ To display data in a Text widget, set its **Text** property to:
 
 <dd>
 
-*Example:* To add a button within the Custom widget that, when clicked, executes a query, use the following code:
+*Example:* To show an alert when an event is clicked on the calendar widget, use the following code:
+
+```js
+eventClick: (e) => {        
+           // highlight-next-line
+	 appsmith.triggerEvent("onSelected");
+	appsmith.updateModel({                                  
+		selectedEvent: appsmith.model.events.find(d => {    
+			return d.id == e.event._def.publicId;              
+		})                                                  
+	})                                                      
+}, 
+```
+
+In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action.
+
+
 
 </dd>
