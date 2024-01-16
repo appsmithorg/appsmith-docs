@@ -269,45 +269,73 @@ const sidebars = {
               label: 'Datasources',
               link: { type: 'doc', id: 'connect-data/reference/README' },
               items: [
-                'connect-data/reference/airtable',
-                'connect-data/reference/anthropic',
-                'connect-data/reference/appsmith-ai',
-                'connect-data/reference/querying-arango-db',
-                'connect-data/reference/authenticated-api',
-                'connect-data/reference/aws-lambda',
-                'connect-data/reference/curl-import',
-                'connect-data/reference/databricks',
-                'connect-data/reference/querying-dynamodb',
-                'connect-data/reference/querying-elasticsearch',
-                'connect-data/reference/querying-firestore',
-                'connect-data/reference/google-ai',
-                'connect-data/reference/querying-google-sheets',
-                'connect-data/reference/graphql',
-                'connect-data/reference/hubspot',
-                {
+                 //category- Api
+              {
+                type: 'category',
+                label: 'APIs',
+                items: [
+                  'connect-data/reference/rest-api',
+                  'connect-data/reference/graphql',
+                  'connect-data/reference/authenticated-api',
+                  'connect-data/reference/curl-import'
+                ],
+              },
+                 //category- Databases
+                 {
                   type: 'category',
-                  label: 'MongoDB',
-                  link: {
-                    type: 'doc',
-                    id: 'connect-data/reference/querying-mongodb/README',
-                  },
+                  label: 'Databases',
                   items: [
-                    'connect-data/reference/querying-mongodb/mongo-syntax'
+                    'connect-data/reference/querying-postgres',
+                    {
+                      type: 'category',
+                      label: 'MongoDB',
+                      link: {
+                        type: 'doc',
+                        id: 'connect-data/reference/querying-mongodb/README',
+                      },
+                      items: [
+                        'connect-data/reference/querying-mongodb/mongo-syntax'
+                      ],
+                    },
+                  'connect-data/reference/querying-mysql',
+                  'connect-data/reference/querying-elasticsearch',
+                  'connect-data/reference/querying-dynamodb',
+                  'connect-data/reference/querying-redis',
+                  'connect-data/reference/querying-mssql',
+                  'connect-data/reference/querying-firestore',
+                  'connect-data/reference/querying-redshift',
+                  'connect-data/reference/querying-amazon-s3',
+                  'connect-data/reference/querying-snowflake-db',
+                  'connect-data/reference/querying-arango-db',
+                  'connect-data/reference/using-smtp',
+                'connect-data/reference/querying-oracle',
+                'connect-data/reference/databricks'              
+
                   ],
                 },
-                'connect-data/reference/querying-mssql',
-                'connect-data/reference/querying-mysql',
-                'connect-data/reference/open-ai',
-                'connect-data/reference/querying-oracle',
-                'connect-data/reference/querying-postgres',
-                'connect-data/reference/querying-redis',
-                'connect-data/reference/querying-redshift',
-                'connect-data/reference/rest-api',
-                'connect-data/reference/querying-amazon-s3',
-                'connect-data/reference/querying-snowflake-db',
-                'connect-data/reference/using-smtp',
-                'connect-data/reference/twilio'
-
+                   //category- SaaS Integrations
+              {
+                type: 'category',
+                label: 'SaaS Integrations',
+                items: [
+                  'connect-data/reference/querying-google-sheets',
+                  'connect-data/reference/aws-lambda',
+                  'connect-data/reference/hubspot',
+                  'connect-data/reference/twilio',
+                  'connect-data/reference/airtable'
+                ],
+              },
+                   //category- AI Integrations
+                   {
+                    type: 'category',
+                    label: 'AI Integrations',
+                    items: [
+                      'connect-data/reference/anthropic',
+                      'connect-data/reference/google-ai',
+                      'connect-data/reference/open-ai',
+                      'connect-data/reference/appsmith-ai'
+                    ],
+                  },
               ],
             },
             'connect-data/reference/query-settings',
