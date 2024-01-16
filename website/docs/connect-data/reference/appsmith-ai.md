@@ -118,11 +118,10 @@ This property allows you to provide additional instructions to fine-tune the tex
 
 ### Extract entities from text
 
-<dd>
 
 This action allows you to identify and extract specific pieces of information, such as names, addresses, and other entities, from a given text. 
 
-</dd>
+
 
 <dd>
 
