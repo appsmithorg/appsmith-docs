@@ -3,9 +3,7 @@
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
 
-## Connect Appsmith AI
 
-You can create an Appsmith AI query from the entity explorer without the need to create any datasource or authenticate using any API.
 
 <ZoomImage
   src="/img/appsmith-ai-img.png" 
@@ -22,15 +20,16 @@ The following section is a reference guide that provides a description of the av
 
 ### Generate text 
 
-<dd>
+
 
 The Generate Text action allows you to generate text based on specific prompts.
 
-</dd>
+
+<dd>
 
 #### Prompt
 
-<dd>
+
 
 This field allows you to input prompts for text generation. You can also add data from queries or JSObjects using mustache bindings `{{}}`.
 
@@ -44,16 +43,17 @@ For example, "Write a creative product description for an electric car named Rev
 
 ### Classify text
 
-<dd>
+
 
 This action allows you to analyze and categorize text based on its content. You can gain insights into the nature of the provided text, making it a valuable for text classification tasks in your applications.
 
-</dd>
+
+
+<dd>
 
 #### Input
 
 
-<dd>
 
 This field enables you to input prompts for text classification. You can provide either a simple text or an array of text, such as chat details, for classification. Additionally, you can add data from queries or JSObjects using mustache bindings `{{}}`.
 
@@ -63,9 +63,11 @@ For example, you can input a user's product review, like:
 
 </dd>
 
+<dd>
+
 #### Labels
 
-<dd>
+
 
 Labels refer to predefined categories or classes assigned to the analyzed text. These labels are essential for organizing and identifying the nature of the text content. 
 
@@ -73,9 +75,10 @@ For example, if you are classifying product reviews, labels could include catego
 
 </dd>
 
+<dd>
+
 #### Additional Instructions
 
-<dd>
 
 This property allows you to provide additional instructions to fine-tune the text classification process. You can use this field to offer specific guidance or adjustments to the AI.
 
@@ -86,28 +89,29 @@ For example, you can instruct the model to choose only one label that best suits
 
 ### Summarise text
 
-<dd>
+
 
 This action condenses and distills lengthy pieces of text into concise summaries, providing a quick overview of the main points or key information. This feature is particularly useful for extracting essential details from large bodies of text, making it easier to comprehend and work with voluminous content.
 
-</dd>
+
+<dd>
 
 #### Input
 
-<dd>
+
 
 This field allows you to provide input for text summarization.  For instance, you can input text from a support conversation or any other lengthy content that you want to condense into a concise summary. 
 
 </dd>
 
+<dd>
 
 #### Additional Instructions
 
-<dd>
+
 
 This property allows you to provide additional instructions to fine-tune the text summarization process. You can use this field to offer specific guidance or adjustments to the AI.
 
-For example, you can instruct the model to "summarise the conversation in less than 200 words."
 
 </dd>
 
@@ -120,9 +124,11 @@ This action allows you to identify and extract specific pieces of information, s
 
 </dd>
 
+<dd>
+
 #### Input
 
-<dd>
+
 
 This field allows you to provide text from which you want to extract entities. For example, you can pass a user's email content to extract information such as name, email, address, and other relevant details.
 
@@ -130,9 +136,11 @@ This field allows you to provide text from which you want to extract entities. F
 
 
 
+<dd>
+
 #### Entities
 
-<dd>
+
 
 Entities are specific pieces of information that you want to extract from the provided input text. In this field, you should provide a comma-separated list of the entities you want to extract. 
 
@@ -140,9 +148,11 @@ For example, if you are extracting information, your list might include entities
 
 </dd>
 
+<dd>
+
 #### Additional Instructions
 
-<dd>
+
 
 This property allows you to provide additional instructions to fine-tune the entity extraction process. You can use this field to offer specific guidance or adjustments to the AI.
 
@@ -153,16 +163,17 @@ For example, you can instruct the model that "If you’re unable to extract an e
 
 ### Classify Image
 
-<dd>
+
  
 This action is designed to analyze and categorize the content of an image, automatically assigning labels or categories to images.
 
 
-</dd>
+
+<dd>
 
 #### Input
 
-<dd>
+
 
 This field allows you to provide the image, either in the form of an image URL or as a base64 encoded image. If you want to upload an image from a Filepicker, you can use `{{upload_FilePicker.files[0]}}`.
 
@@ -171,19 +182,22 @@ This field allows you to provide the image, either in the form of an image URL o
 
 </dd>
 
+<dd>
 
 #### Labels
 
-<dd>
+
 
 In this field, provide a comma-separated list of labels to classify the input image. These labels serve as the identified categories or characteristics that the AI system uses to categorize and classify the content of the provided image.
 
 For example, you can add product categories such as Jacket, Shirt, Pant, T-Shirt, Shorts, Dress, Skirt in this field. 
 </dd>
 
+<dd>
+
 #### Additional Instructions
 
-<dd>
+
 
 This property allows you to provide additional instructions to fine-tune the classification process. You can use this field to offer specific guidance or adjustments to the AI.
 
@@ -193,16 +207,17 @@ For example, you can instruct the model to "Identify the category of clothing. A
 
 ### Describe Image
 
-<dd>
+
  
 This action generates textual information about an image, producing a descriptive summary of the visual content captured within the image.
 
-</dd>
 
+
+<dd>
 
 #### Input
 
-<dd>
+
 
 This field allows you to provide the image, either in the form of an image URL or as a base64 encoded image. If you want to upload an image from a Filepicker, you can use `{{upload_FilePicker.files[0]}}`.
 
@@ -211,9 +226,11 @@ This field allows you to provide the image, either in the form of an image URL o
 
 </dd>
 
+<dd>
+
 #### Additional Instructions
 
-<dd>
+
 
 This property allows you to provide additional instructions to fine-tune the caption. You can use this field to offer specific guidance or adjustments to the AI.
 
@@ -223,23 +240,24 @@ For example, you can instruct the model to "Write a 200 word product description
 
 ### Extract entities from image
 
-<dd>
+
  
 This action involves the identification and extraction of specific pieces of information or entities from an image. This feature uses advanced image processing techniques to recognize and retrieve relevant data points, such as text, objects, or other elements, from the visual content captured in the image. 
 
-</dd>
+<dd>
 
 #### Input
 
-<dd>
  
 This field allows you to provide the image, either in the form of an image URL or as a base64 encoded image. If you want to upload an image from a Filepicker, you can use `{{upload_FilePicker.files[0]}}`.
 
 </dd>
 
+<dd>
+
 #### Entities
 
-<dd>
+
 
 Entities are specific pieces of information or features within the visual content of the image that you want to identify and retrieve. Entities could include text, objects, landmarks, or any other distinct elements present in the image.
 
@@ -247,9 +265,11 @@ For example, if you want to extract details from an ID card, you can specify ent
 
 </dd>
 
+<dd>
+
 #### Additional Instructions
 
-<dd>
+
 
 This property allows you to provide additional instructions to fine-tune the entity extraction. You can use this field to offer specific guidance or adjustments to the AI.
 
