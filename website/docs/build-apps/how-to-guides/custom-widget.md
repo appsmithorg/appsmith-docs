@@ -120,7 +120,7 @@ appsmith.onReady(() => {
 ]}
 ```
 
-To bind data from a query or Table widget, you can add the following syntax:
+To bind data from a query or Table widget, you can add code like:
 
 ```js
 events: [
@@ -164,7 +164,7 @@ appsmith.onReady(() => {
 
 <dd>
 
-*Example*: To update the model with selected date once a date has been clicked, add:
+*Example*: To update the model with selected date once a event has been clicked, add:
 
 ```js
 // JS
