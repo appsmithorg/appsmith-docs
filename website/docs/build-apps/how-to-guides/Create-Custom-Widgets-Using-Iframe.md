@@ -117,22 +117,31 @@ appsmith.onReady(() => {
 
 <dd>
 
-*Example:* For the image slider, add code that captures selected row data, including document URL and ID, like:
+*Example:* For the image slider, add code that captures image or document URL, like:
 
 
 ```js
 {
   "data": [
-    "{{tbl_docs.selectedRow.doc_type_passport}}", // Image URL
-    "{{tbl_docs.selectedRow.doc_type_dl}}",
-    "{{tbl_docs.selectedRow.doc_type_bank}}"
-  ],
-  "id": [
-    "{{tbl_docs.selectedRow.id}}"
-]}
+    "https://img.freepik.com/premium-vector/vector-illustration-open-passport-template-document-travel-concept-passport-sample_212168-95.jpg?w=996",
+    "https://img.freepik.com/free-vector/flat-design-driving-license-template_23-2149944210.jpg?w=1060&t=st=1680096311~exp=1680096911~hmac=2ad65c94c28bc6db27104d8e791069f04af44763e5c07bafeddea1a89ec6dc5b",
+    "https://as1.ftcdn.net/v2/jpg/03/45/67/40/1000_F_345674072_QwzzCNH6PElHQxsow7DtAr50TyGmcYGs.jpg"
+  ]
+}
+
 ```
 
-The `tbl_docs` fetches data from a query, with each column containing the respective image URL for passport, driver's license, and bank document.
+To dynamically add data, whether from a query or a widget, you can use something like:
+
+
+```js
+{"data": [
+   "{{tbl_users.selectedRow.passport}}",
+  // Add more entries as needed
+ ]
+}
+```
+
 
 </dd>
 
