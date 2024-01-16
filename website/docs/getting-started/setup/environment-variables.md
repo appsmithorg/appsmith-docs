@@ -279,7 +279,7 @@ In Appsmith, you have the flexibility to automate backups for your self-hosted i
 
 <dd>
 
-Specify a `5-value` cron expression to define the schedule for automatic backups. This allows you to tailor the backup frequency according to your preferences.
+Specify a `5-value` cron expression to define the schedule for automatic backups. This allows you to tailor the backup frequency according to your preferences. Set this to `disable` to disable automatic backups.
 
 </dd>
 
