@@ -292,16 +292,16 @@ useEffect(() => {
 
 <dd>
 
-Use a handler function invoked when the Custom widget is prepared for rendering. Execute the entry point of your component within this function.
-
+ The **onReady** event in Appsmith is a mechanism to wait for the parent application to complete its initialization before executing custom widget logic. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
 
 
 ```js
-useEffect(() => {
-    appsmith.onReady(() => {
-        /* Trigger the entry point of your component, e.g., reactDom.render(<App />, document.getElementById("root")); */
-    });
-}, []);
+appsmith.onReady(() => {
+  /* you need to initiate the component here, for example,
+   * if you have a react component - call reactDom.render here
+   * if you have vanila JS component - call the contructor or initiate here
+   */
+});
 ```
 
 </dd>
@@ -327,21 +327,36 @@ unlisten();
 
 ### CSS API
 
-These properties are accessible within the CSS editor, providing specific functionalities and customization options.
+These properties, accessible within the CSS editor, offer specific functionalities and customization options. The variables fall into three groups: model variables, UI variables, and theme variables. Appsmith updates the values of these properties when the corresponding source changes.
+
+
 
 #### model
 
 
 <dd>
 
-The `model` property retrieves the value passed in the **Default Model** property of the Custom widget.
+The `model` property retrieves the value passed in the **Default Model** property of the Custom widget. Appsmith automatically generates corresponding CSS variables for each string and number property within your model. This feature is beneficial for transmitting CSS configurations, such as width or color, through your model.
+
 
 ```js
-// Access the entire model
---appsmith-model
+/* CSS Variable Naming Convention: --appsmith-model-<property-name> */
 
-// Access a specific property in the model
---appsmith-model-color
+// For instance, with the following Default Model:
+{
+	"mainColor": "#000",
+	"borderWidth": "1px"
+}
+
+// Appsmith automatically creates the corresponding variables:
+--appsmith-model-mainColor
+--appsmith-model-borderWidth
+
+// Utilize them as follows:
+button {
+	background-color: var(--appsmith-model-mainColor);
+	border: var(--appsmith-model-borderWidth) solid var(--appsmith-model-mainColor);
+}
 ```
 </dd>
 
@@ -349,7 +364,13 @@ The `model` property retrieves the value passed in the **Default Model** propert
 
 <dd>
 
-These CSS variables are available to control widget size and define the theme.
+These CSS variables, available to control widget size and define the theme:
+
+* `ui`: representing the height and width of the widget in pixels.
+* `theme`: representing the selected theme of your application.
+
+
+
 
 ```js
 //Widget size
@@ -362,6 +383,12 @@ These CSS variables are available to control widget size and define the theme.
 --appsmith-theme-borderRadius
 --appsmith-theme-boxShadow
 ```
+
+:::info
+`--appsmith-ui-width` and `--appsmith-ui-height` are number types, to convert them to px, you can use
+
+`calc(var(--appsmith-ui-width) * 1px)`
+:::
 
 </dd>
 

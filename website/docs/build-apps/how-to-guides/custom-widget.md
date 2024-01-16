@@ -41,10 +41,10 @@ To import a third-party library, you have two options: UMD and ESM. Use trusted 
 
 <dd>
 
-:::info
-* To render the custom widget in the expected format, call the relevant function within the [**onReady**](/reference/widgets/custom#onready) method in your JavaScript configuration. This ensures that your Custom widget is properly rendered when the app is loaded.
+:::warning
+* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
 
-* If you want to dynamically update the widget based on data changes(e.g., change in query data), render it inside the [**onModelChange**](/reference/widgets/custom#onmodelchange) method to reflect updates dynamically.
+* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
 :::
 
 In Vanilla JavaScript, you directly manipulate the DOM using methods like `document.getElementById`,` document.createElement`, etc.
