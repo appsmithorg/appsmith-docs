@@ -9,21 +9,15 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
-2. Click the **Edit Source** button to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
+2. Click the **Edit Source** button on the property pane to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is reloded automatically on the preview section on the left of the Custom widget Builder.
 
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), select your template (e.g., Vue, React), and import the required libraries.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS and JS editor.
 
+4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
 
 <dd>
-
-* The framework libraries are automatically imported if you have selected a template. If you haven't, you can manually import libraries at the beginning of your JavaScript file, like:
-
-  ```js
-  import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
-  import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
-  ```
-
+:::info
 * To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
     * For UMD, include the library with a script tag in the HTML file:
@@ -37,19 +31,6 @@ While Appsmith provides an extensive array of built-in widgets for application d
       ```js
       import ThirdPartyComponent from "link-to-the-ESM-file";
       ```
-
-
-
-</dd>
-
-4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
-
-<dd>
-
-:::warning
-* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
-
-* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
 :::
 
 
@@ -113,6 +94,12 @@ appsmith.onReady(() => {
 
 </dd>
 
+:::warning
+* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
+
+* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
+:::
+
 5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
@@ -136,7 +123,7 @@ To dynamically add data, whether from a query or a widget, you can use something
 
 ```js
 {"data": [
-   "{{tbl_users.selectedRow.passport}}",
+   {{tbl_users.selectedRow.passport}},
   // Add more entries as needed
 ]}
 ```
@@ -159,9 +146,13 @@ function App() {
   const imageUrls = appsmith.model.data;
 
   // Generating dynamic images using the map function
+  // highlight-next-line
   const images = imageUrls.map((url, index) => ({
+    // highlight-next-line
     original: url,
+    // highlight-next-line
     thumbnail: url
+    // highlight-next-line
   }));
 
   // Returning the ImageGallery component with the generated images
@@ -191,17 +182,19 @@ function App() {
     thumbnail: url,
   }));
 
+// highlight-next-line
   const _onSlide = (index) => {
     // You can perform any actions related to sliding here
+    // highlight-next-line
     console.log("Slid to index", index);
     // highlight-next-line
     appsmith.updateModel({ selectedIndex: index });
+    // highlight-next-line
   };
 
   return (
-    <div id="root">
-      <ImageGallery.default items={images} showIndex={true} onSlide={_onSlide} />
-    </div>
+    // highlight-next-line
+    <ImageGallery.default items={images} showIndex={true} onSlide={_onSlide} />
   );
 }
 
@@ -229,10 +222,13 @@ To display data in a Text widget, set its **Text** property to:
 
 ```js
 // Example: Handle button click event
+// highlight-next-line
 const buttonElement = document.getElementById("requestChangeButton");
+// highlight-next-line
 buttonElement.addEventListener("click", () => {
       // highlight-next-line
    appsmith.triggerEvent("onRequestchange");
+   // highlight-next-line
 });
 ```
 
