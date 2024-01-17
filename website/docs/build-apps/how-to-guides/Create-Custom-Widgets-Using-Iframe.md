@@ -12,13 +12,11 @@ While Appsmith provides an extensive array of built-in widgets for application d
 2. Click the **Edit Source** button on the property pane to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is reloded automatically on the preview section on the left of the Custom widget Builder.
 
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS and JS editor.
-
-4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors, and import the required libraries.
 
 <dd>
-:::info
-* To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
+
+To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
     * For UMD, include the library with a script tag in the HTML file:
 
@@ -31,8 +29,18 @@ While Appsmith provides an extensive array of built-in widgets for application d
       ```js
       import ThirdPartyComponent from "link-to-the-ESM-file";
       ```
-:::
+</dd>
 
+4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
+
+<dd>
+
+
+:::warning
+* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
+
+* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
+:::
 
 *Example*:  Image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
 
@@ -94,11 +102,6 @@ appsmith.onReady(() => {
 
 </dd>
 
-:::warning
-* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
-
-* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
-:::
 
 5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
@@ -215,55 +218,29 @@ To display data in a Text widget, set its **Text** property to:
 
 <dd>
 
-*Example:* To add a button within the Custom widget that, when clicked, executes a query, use the following code:
+*Example:* To trigger an action on Appsmith when the image is slid, use the following code:
 
 <Tabs>
   <TabItem value="js" label="JS" default>
 
 ```js
-// Example: Handle button click event
-// highlight-next-line
-const buttonElement = document.getElementById("requestChangeButton");
-// highlight-next-line
-buttonElement.addEventListener("click", () => {
+const _onSlide = (index) => {
+    // You can perform any actions related to sliding here
+    console.log("Slid to index", index);
       // highlight-next-line
-   appsmith.triggerEvent("onRequestchange");
-   // highlight-next-line
-});
+    appsmith.triggerEvent("onSlide");
+    appsmith.updateModel({ selectedIndex: index });
+  };
 ```
-
-  </TabItem>
-  <TabItem value="html" label="HTML">
-
-```html
-<!-- Button element -->
-<button id="requestChangeButton">Request Change</button>
-```
-
-  </TabItem>
-  <TabItem value="css" label="CSS">
-
-```css
-/* Style for the button */
-button {
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-``` 
 
   </TabItem>
 </Tabs>
 
-In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action. 
+In the Custom widget, create a new event with the same name `(i.e onSlide)` as defined in the function, and configure it to execute an action. 
 
 
 <div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
-  <iframe src="https://demo.arcade.software/RnW0oi1J3YTVdfoXL0Y6?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
+  <iframe src="https://demo.arcade.software/4gK4YuptByPSJPeB0cda?embed" frameBorder="0" loading="lazy" allowFullScreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data"></iframe>
 </div>
 
 </dd>
@@ -279,18 +256,13 @@ In the Custom widget, create a new event with the same name as defined in the fu
   <TabItem value="css" label="CSS">
 
 ```css
-/* Style for the button */
-button {
-  margin: 0;
-  margin-top: 10px;
-  padding: 10px;
-  // highlight-next-line
+#root {
+        // highlight-next-line
   background-color: var(--appsmith-theme-primaryColor);
-  color: white;
-  border: none;
-  // highlight-next-line
+  padding: 20px; 
+        // highlight-next-line
   border-radius: var(--appsmith-theme-borderRadius);
-  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 ``` 
 
@@ -306,4 +278,6 @@ button {
 * [Custom Calendar App](https://app.appsmith.com/app/calendar/page1-6598cfcf98b47b2e26550dcf)
 * [Signature Pad App](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
 * [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
+
+
 
