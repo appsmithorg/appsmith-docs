@@ -269,15 +269,19 @@ In the Custom widget, create a new event with the same name `(i.e onSlide)` as d
   </TabItem>
 </Tabs>
 
+See the sample app for the [Image carousel](https://app.appsmith.com/app/untitled-application-1/page1-65a77eecc7165278ae63151b).
+
+
+
 
 </dd>
 
 
 ## Sample apps
 
-* [Custom Calendar App](https://app.appsmith.com/app/calendar/page1-6598cfcf98b47b2e26550dcf)
-* [Signature Pad App](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
-* [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
+* [Custom Calendar widget](https://app.appsmith.com/app/calendar/page1-6598cfcf98b47b2e26550dcf)
+* [Signature Pad widget](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
+* [Data grid widget](https://app.appsmith.com/app/data-grid/page1-6597ff5559aa5450e0eb4eb9)
 
 
 
