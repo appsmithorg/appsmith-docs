@@ -6,7 +6,7 @@ This page provides information on creating queries with Appsmith AI, which allow
 
 
 <ZoomImage
-  src="/img/appsmith-ai-2.png" 
+  src="/img/appsmith-ai-connect.png" 
   alt="Appsmith AI"
   caption="Appsmith AI query"
 />
@@ -14,9 +14,11 @@ This page provides information on creating queries with Appsmith AI, which allow
 
 ## Query Appsmith AI
 
+You can create an Appsmith AI query from the entity explorer without the need to create any datasource.
+
+
 The following section is a reference guide that provides a description of the available commands with their parameters to create Appsmith AI queries.
 
- You can try the examples provided in the query editor to understand and experiment with the capabilities of Appsmith AI.
 
 ### Generate text 
 
@@ -30,8 +32,9 @@ The Generate Text action allows you to generate text based on specific prompts.
 #### Prompt
 
 
+This field allows you to input prompts for text generation. You can also add data from queries or JSObjects using mustache bindings `{{}}`, like `{{user_Input.text}}`.
 
-This field allows you to input prompts for text generation. You can also add data from queries or JSObjects using mustache bindings `{{}}`.
+
 
 For example, "Write a creative product description for an electric car named RevaX, with the keywords- fast charging, 200 miles per single charge, compact, eco-friendly, economical. This is targeted towards a climate concious tech/EV enthusiast who enjoys driving. Also describe the benefits of this product in less than 80 words."
 
@@ -71,7 +74,7 @@ For example, you can input a user's product review, like:
 
 Labels refer to predefined categories or classes assigned to the analyzed text. These labels are essential for organizing and identifying the nature of the text content. 
 
-For example, if you are classifying product reviews, labels could include categories such as "Positive," "Negative," or "Neutral."
+For example, if you are classifying product reviews, labels could include categories such as "Urgent," "High priority," or "Low."
 
 </dd>
 
@@ -82,7 +85,14 @@ For example, if you are classifying product reviews, labels could include catego
 
 This property allows you to provide additional instructions to fine-tune the text classification process. You can use this field to offer specific guidance or adjustments to the AI.
 
-For example, you can instruct the model to choose only one label that best suits the content.
+For example, you can use the following label descriptions:
+
+* Urgent: Issues that prevent a customer from using the product.
+* High priority: Issues that are impactful but still allow the product to be usable.
+* Low priority: Issues that, while present, can be lived with.
+
+
+
 
 </dd>
 
@@ -111,6 +121,10 @@ This field allows you to provide input for text summarization.  For instance, yo
 
 
 This property allows you to provide additional instructions to fine-tune the text summarization process. You can use this field to offer specific guidance or adjustments to the AI.
+
+
+For example, if the summary appears either too brief or detailed, customize the summarization length with the instruction: "Summarize the content in approximately 5 sentences."
+
 
 
 </dd>
