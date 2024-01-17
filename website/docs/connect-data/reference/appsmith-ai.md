@@ -6,8 +6,8 @@ This page provides information on creating queries with Appsmith AI, which allow
 
 
 <ZoomImage
-  src="/img/appsmith-ai-img.png" 
-  alt="Anthropic Datasource"
+  src="/img/appsmith-ai-2.png" 
+  alt="Appsmith AI"
   caption="Appsmith AI query"
 />
 
@@ -120,7 +120,6 @@ This property allows you to provide additional instructions to fine-tune the tex
 
 
 This action allows you to identify and extract specific pieces of information, such as names, addresses, and other entities, from a given text. 
-
 
 
 <dd>
@@ -242,6 +241,7 @@ For example, you can instruct the model to "Write a 200 word product description
 
  
 This action involves the identification and extraction of specific pieces of information or entities from an image. This feature uses advanced image processing techniques to recognize and retrieve relevant data points, such as text, objects, or other elements, from the visual content captured in the image. 
+
 
 <dd>
 
