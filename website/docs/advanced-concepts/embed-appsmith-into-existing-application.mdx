@@ -1,28 +1,28 @@
 ---
 sidebar_position: 3
-description: Guide on how to embed Appsmith apps into an existing application
+description: This page on how to embed Appsmith apps into an existing application
 ---
 
 # Share SSO Token with Embedded Appsmith
 
-When integrating an embedded Appsmith application with Single Sign-On (SSO), it's crucial to share SSO tokens to authenticate and authorize your app users. This doc outlines the steps to integrate and share SSO tokens from your app to an embedded Appsmith app.
+Integrating an embedded Appsmith application with Single Sign-On (SSO) is crucial for achieving seamless user authentication and authorization within your application ecosystem. This page shows how to embed an Appsmith app and share SSO tokens from your application to the embedded Appsmith app. 
 
 ## Prerequisites
 
-* A self-hosted Appsmith instance. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
-* Your Single Sign-On (SSO) provider configured on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) to configure your SSO provider.
-* The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
+* **Self-hosted Appsmith Instance**- Ensure that you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* **Configured SSO Provider**- Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider.
+* **Sub-domains under the Same Domain**- The Appsmith app and the parent app must be hosted under sub-domains of the same domain. For example, `appsmith.company.com` and `internal.company.com`. This ensures a seamless integration between the two applications.
 
 ## Embed Appsmith
 You may choose to embed Appsmith app in one of the following ways:
-* **Public application** - The Appsmith app is publicly available and doesn't need you to log into Appsmith to access it.
-* **Private application** - The Appsmith app has restricted access and only authorized users can access it. Embedding Appsmith in a private mode is only available as part of [paid plans](https://www.appsmith.com/pricing).
+* **Public application** - The Appsmith app is publicly accessible, and users do not need to log in to Appsmith to access it.
+* **Private Application (Paid Plans Only)** - For increased security, restrict access to the Appsmith app to authorized users. This feature is available exclusively in [paid plans](https://www.appsmith.com/pricing).
 
-Follow the steps below to embed your Appsmith app:
+To embed your Appsmith app, follow these steps:
 
-1. Open your Appsmith application and click **App Settings > Share & Embed**.
-2. Copy the **Embed URL**.
-3. On your application, use a HTML Iframe and set the **Embed URL** as the source of the iframe. In the below code, provide a unique id to the iframe. For example, `embeddedAppsmith`
+1. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
+2. Copy the provided **Embed URL**.
+3. In your application, use an HTML `<iframe>`, and set the **Embed URL** as its source. In the code snippet below, the iframe with a unique ID, `embeddedAppsmith` will host the embedded Appsmith app:
 
   ```bash
   <!DOCTYPE html>
@@ -34,7 +34,8 @@ Follow the steps below to embed your Appsmith app:
   <body>
   #highlight-next-line
       <!-- Remember to change the "<Embed_URL>" placeholder below.-->
-      <iframe id="embeddedAppsmith" src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+      <iframe id="embeddedAppsmith" src="<Embed_URL>" scrolling="yes"
+       seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
   </body>
   </html>
   ```
@@ -63,10 +64,11 @@ Follow the steps below to embed your Appsmith app:
 * For Google OAuth 2.0 configuration, the parent and child can be two OAuth 2.0 clients under the same project.
 :::
 
-When a user logs in to your application using SSO, and you have the SSO token from your authentication provider, share this token with the embedded Appsmith app to authenticate the user. Follow the below steps to share the SSO token:
+Sharing Single Sign-On (SSO) tokens is a crucial aspect, especially when dealing with private embeds that require user authentication. Once a user logs in to your application using SSO, and you have the SSO token from your SSO provider, share this token with the embedded Appsmith app to authenticate the user. Follow the below steps to share the SSO token:
 
 ### Send SSO token to Appsmith
-Pass the token to the embedded Appsmith app by using `postMessage` method:
+
+Once a user is successfully authenticated in your parent app, the next step is to pass the Single Sign-On (SSO) token to the embedded Appsmith app by using `postMessage` method. Below is a code snippet demonstrating how to post message to the embedded Appsmith:
 
   ```js
     const iframe = document.getElementById('embeddedAppsmith');
@@ -80,7 +82,7 @@ Pass the token to the embedded Appsmith app by using `postMessage` method:
 
 ### Read and verify token in Appsmith
 
-To read the token in the Appsmith use the [windowMessageListener](/reference/appsmith-framework/widget-actions/window-message-listener) method. For managing the token, use the Appsmith store to store the token, token's expiry and request to refresh the token on expiry. Follow the below steps to create a JS Object that serves as the token manager:
+To ensure secure authentication within Appsmith, follow these steps:
 
   * Create a JS Object named `js_manage_sso_tokens`, and remove the auto-generated code.
   * Add code to read the message sent from the parent app, parse the token for expiry, store the token and its expiry in the Appsmith store, and verify token expiry:
