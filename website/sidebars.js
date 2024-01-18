@@ -586,6 +586,38 @@ const sidebars = {
       ]
     }, //CODE end
 
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages',
+      items: [
+        'packages/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'packages/how-to-guides/README' },
+          items: [
+            'packages/how-to-guides/create-query-module'
+            
+          ]
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: {
+            type: 'doc',
+            id: 'write-code/concepts/overview',
+          },
+          items: [
+            'core-concepts/writing-code/javascript-editor-beta/README'
+          ],
+        },
+      ]
+    }, //module end
+
     {
       //Advanced Concepts Start
       type: 'category',
