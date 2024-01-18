@@ -1,11 +1,12 @@
 ---
+title: Build and use a query module
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Create Reusable Query Modules</h1>
+ <h1>Build and use a query module</h1>
 
 <Tags
 tags={[
@@ -19,7 +20,7 @@ tags={[
 
 Reusable query modules are sets of queries designed for use across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
-## Create a Package
+## Create a module
 
 A Package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
 
