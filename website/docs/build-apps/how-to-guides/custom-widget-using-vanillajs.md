@@ -53,7 +53,7 @@ In Vanilla JavaScript, you directly manipulate the DOM using methods like `docum
 
 
 <Tabs>
-  <TabItem value="html" label="HTML" default>
+  <TabItem value="html" label="HTML">
 
 
 ```html
@@ -66,7 +66,7 @@ In Vanilla JavaScript, you directly manipulate the DOM using methods like `docum
 ```
 
   </TabItem>
-  <TabItem value="jss" label="JS">
+  <TabItem value="jss" label="JS" default>
 
 
 
