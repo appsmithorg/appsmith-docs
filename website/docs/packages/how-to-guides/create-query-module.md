@@ -1,4 +1,21 @@
-# Create Reusable Query Modules
+---
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Create Reusable Query Modules</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Reusable query modules are sets of queries designed for use across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
