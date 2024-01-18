@@ -1,51 +1,49 @@
 ---
 sidebar_position: 3
 description: Guide on how to embed Appsmith apps into an existing application
-toc_min_heading_level: 2
-toc_max_heading_level: 2
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+# Share SSO Token with Embedded Appsmith
 
-# Embed Appsmith
+When integrating an embedded Appsmith application with Single Sign-On (SSO), it's crucial to share SSO tokens to authenticate and authorize your app users. This doc outlines the steps to integrate and share SSO tokens from your app to an embedded Appsmith app.
 
-To embed an Appsmith application into your website, follow the steps below:
+## Prerequisites
 
-## Public application
+* A self-hosted Appsmith instance. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+* Your Single Sign-On (SSO) provider configured on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) to configure your SSO provider.
+* The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
 
-### Prerequisites
+## Embed Appsmith
+You may choose to embed Appsmith app in one of the following ways:
+* **Public application** - The Appsmith app is publicly available and doesn't need you to log into Appsmith to access it.
+* **Private application** - The Appsmith app has restricted access and only authorized users can access it. Embedding Appsmith in a private mode is only available as part of [paid plans](https://www.appsmith.com/pricing).
 
-To embed Appsmith in your web page or web application, ensure that the hosting of the said web page or application is done on a server.
-
-### Get embed URL
+Follow the steps below to embed your Appsmith app:
 
 1. Open your Appsmith application and click **App Settings > Share & Embed**.
 2. Copy the **Embed URL**.
-3. On your web application, add the **Embed URL** to the `src` attribute of the `iframe` tag. You can set the dimensions of the embedded application using the `height` and `width` attributes as shown below:
+3. On your application, use a HTML Iframe and set the **Embed URL** as the source of the iframe. In the below code, provide a unique id to the iframe. For example, `embeddedAppsmith`
 
-```bash
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
-</head>
-<body>
-#highlight-next-line
-    <iframe src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
-</body>
-</html>
-```
+  ```bash
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1"
+      <title></title>
+  </head>
+  <body>
+  #highlight-next-line
+      <!-- Remember to change the "<Embed_URL>" placeholder below.-->
+      <iframe id="embeddedAppsmith" src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+  </body>
+  </html>
+  ```
 
-:::info
-In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
-:::
 <!-- vale off -->
 
 <div className="tag-wrapper">
 
-## Private application
+## Share SSO token
 
 <Tags
   tags={[
@@ -60,133 +58,134 @@ In self-hosted instances, you can restrict embedding an application to certain w
 
 <!-- vale on -->
 
-<VideoEmbed
-  host="youtube"
-  videoId="Zoiy1tKcjzU"
-  title="Embed Private Apps With SSO"
-  caption="Embed Private Apps With SSO"
-/>
-
-### Prerequisites
-
-- The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
-- You must configure the same SSO identity provider(IDP) on the Appsmith and the parent applications.
-
-### Get embed URL
-
-1. Open your Appsmith application and click **App Settings > Share & Embed**.
-2. To configure the Appsmith application with the SSO of your parent application, select the preferred SSO type from the **SSO method** list.
-3. Copy the **Embed URL**.
-4. On your web application, add the **Embed URL** to the `src` attribute of the `iframe` tag. You can set the dimensions of the embedded application using the `height` and `width` attributes as shown below:
-
-```bash
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
-</head>
-<body>
-#highlight-next-line
-    <iframe src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
-</body>
-</html>
-```
-
-:::info
-In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
+:::caution
+* SSO in private embeds isn't supported for GitHub OAuth 2.0.
+* For Google OAuth 2.0 configuration, the parent and child can be two OAuth 2.0 clients under the same project.
 :::
 
-### Important notes
+When a user logs in to your application using SSO, and you have the SSO token from your authentication provider, share this token with the embedded Appsmith app to authenticate the user. Follow the below steps to share the SSO token:
 
-- The feature may not work on `HTTP` URLs. Use `HTTPS` for both the Appsmith instance and the parent application.
-- Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
-- Users may see issues when strict third-party cookie-sharing restrictions are enabled on the browser.
-- SSO in private embeds isn't supported for GitHub OAuth 2.0.
-- For Google OAuth 2.0 configuration, the parent and child can be two OAuth 2.0 clients under the same project.
+### Send SSO token to Appsmith
+Pass the token to the embedded Appsmith app by using `postMessage` method:
 
-## Send messages between Appsmith and parent app
-
-In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
-#### From Appsmith to parent app
-
-<Tags
-  tags={[
-    {
-      name: "Business",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
+  ```js
+    const iframe = document.getElementById('embeddedAppsmith');
+    // verify that iframe and authToken are available
+    if (iframe && authToken) {
+      //replace the `<Appsmith_hosted_url>`placeholder with your Appsmith application domain
+      iframe.contentWindow.postMessage({ messageType: 'AUTH_TOKEN', token: authToken},
+      '<Appsmith_hosted_url>');
     }
-  ]}
-/>
-</div>
+  ```
 
-<!-- vale on -->
+### Read and verify token in Appsmith
 
-![](/img/postmessage_parent_outgoing.png)
+To read the token in the Appsmith use the [windowMessageListener](/reference/appsmith-framework/widget-actions/window-message-listener) method. For managing the token, use the Appsmith store to store the token, token's expiry and request to refresh the token on expiry. Follow the below steps to create a JS Object that serves as the token manager:
 
-To configure your Appsmith application to send messages to its parent page:
+  * Create a JS Object named `js_manage_sso_tokens`, and remove the auto-generated code.
+  * Add code to read the message sent from the parent app, parse the token for expiry, store the token and its expiry in the Appsmith store, and verify token expiry:
 
-1. Drag and drop a [Button](/reference/widgets/button/) widget and an [Input](/reference/widgets/input/) widget onto the canvas.
-2. In the button's properties, configure its **onClick** event to execute the **Post message** action. Set its **Message** field to `{{Input1.text}}`, and make sure that the **Target iframe** field is set to `window`.
-3. On the canvas, enter some data in the input widget's field and click the button widget. Appsmith has just emitted a message to its parent window.
-
-:::tip
-The parent application where Appsmith is embedded should have an event listener set up to receive the message that you send from Appsmith. Read more about setting up message event handling [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
-:::
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
-#### From parent app to Appsmith
-
-<Tags
-  tags={[
-    {
-      name: "Business",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
+    ```js
+    export default {
+      //read the message
+      async readAuthToken () {
+         //replace the '<origin' placeholder with your application domain
+        // from where the message had originated
+        await windowMessageListener('<origin>', (message) => {
+        const {type, token} = message;
+        if(type === 'AUTH_TOKEN')
+            this.storeTokenInAppsmithStore(token);
+        })
+      },
+      //store the token and its expiry in the store
+      storeTokenInAppsmithStore(ssoToken) {
+        // add the sso token and its expiry in the store
+        //using the storeValue() function
+        storeValue("authToken", ssoToken);
+        storeValue("authTokenExpiry", this.getTokenExpiry(ssoToken));
+      },
+      //parse the token for expiry
+      getTokenExpiry(token) {
+        try {
+          return JSON.parse(atob(token.split('.')[1])).exp;  
+        } catch (error) {
+          console.error('Error decoding token:', error);
+          return null; 
+        }
+      },
+      verifyAuthTokenExpiry() {
+        //verify the token expiry by accessing the token expiry from the store
+        // and comparing it with the current timestamp
+        return moment().utc() > moment().utc(appsmith.store.authTokenExpiry);
+      }
     }
-  ]}
-/>
-</div>
+    ```
+  
+  ### Bind token to call APIs in Appsmith
 
-<!-- vale on -->
+  Once you have the SSO token, you need to bind it to the Appsmith APIs and queries. Follow these steps to ensure the token is sent:
 
-![](/img/postmessage_parent_incoming.png)
+  * Retrieve the token from the Appsmith store and set it in the Authorization header or as per the expectation of the API that you are calling.
 
-When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website.
+    -- add a screenshot
+    
+  ### Request a token refresh on expiry
 
-On your Appsmith app, you can enable/disable a page to react to these messages using the following functions -
+  To request a new token, verify the token expiry by calling the method `verifyAuthTokenExpiry` of `js_manage_sso_tokens` that retrieves the expiry timestamp of the SSO token from the store and compares it with current timestamp, and returns `true` when a token expires. On token expiry, communicate with the parent app by using [postWindowMessage](/reference/appsmith-framework/widget-actions/post-message) method to send a token expiry message. Add a new function to `js_manage_sso_tokens` JS Object to request for refreshing the token:
 
-- [windowMessageListener()](/reference/appsmith-framework/widget-actions/window-message-listener)
-- [unlistenWindowMessage()](/reference/appsmith-framework/widget-actions/unlisten-window-message)
+   ```js
+   requestToRefreshToken() {
+    if(this.verifyAuthTokenExpiry()){
+      postWindowMessage('{ messageType: \'AUTH_TOKEN_EXPIRED\', 
+      token: ' + appsmith.store.authToken + ' }', "window", "*");
+    }
+   }
+   ```
 
-For example, a parent website (`https://mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked -
+### Read the updated token
 
-```javascript
-const iFrame = document.getElementById(”#appsmith-iframe”);
-iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
+In the parent app, listen for the message from the embedded Appsmith app indicating the token expiry, generate a new SSO token and send it back to the embedded app. Add the below code in your parent app:
+
+```js
+//add this code in your parent app to handle token refresh
+window.addEventListener('message', (event) => {
+  const { messageType } = event.data;
+  if (messageType === 'AUTH_TOKEN_EXPIRED') {
+
+    // Add coode to generate a new SSO token
+    
+    //replace the `<Appsmith_hosted_url>` and `new_token` placeholders 
+    // with your Appsmith application domain and the newly generated token respectively
+    iframe.contentWindow.postMessage({ messageType: 'REFRESH_AUTH_TOKEN', token: <new_token> }, '<Appsmith_hosted_url>');
+  }
+});
 ```
 
-In the Appsmith app, if you want to run an API called `Api1` in reaction to this message, you can use the `windowMessageListener()` function as follows -
+### Update token in store
 
-```javascript
-windowMessageListener(”https://mywebsite.com”, () => Api1.run());
+In the embedded Appsmith app, listen for the message from the parent app containing the new token and update the Appsmith store. Add a new function to `js_manage_sso_tokens` JS Object to update the store with the new token:
+
+```js
+  async readandUpdateNewAuthToken () {
+      //replace the '<origin' placeholder with your application domain
+    // from where the message had originated
+    await windowMessageListener('<origin>', (message) => {
+    const {type, token} = message;
+    if(type === 'REFRESH_AUTH_TOKEN')
+        this.storeTokenInAppsmithStore(token);
+    })
+  }
 ```
 
-To stop the Appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
+## Troubleshooting
 
-```javascript
-unlistenWindowMessage(”https://mywebsite.com”)
-```
+You may face some common errors as listed below:
 
-:::tip
-You can automatically set up an action on a page by calling the `windowMessageListener` in a JS object method and have it run when the page loads.
-:::
+  - If you have restricted the access for embedding Appsmith, ensure that the Frame ancesorts has the parent app domain added. For more information, see [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors).
+  - If you are not able to send or receive messages:
+    * Verify that the apps are available under sub-domains of the same domain.
+    * Use `HTTPS` for both the Appsmith instance and the parent application.
+    * If you are using Firefox, it has an additional third-party cookie restrictions that may cause issues with private embeds.
+    * Users may see issues when strict third-party cookie-sharing restrictions are enabled on the browser.
+
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
