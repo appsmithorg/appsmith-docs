@@ -274,10 +274,10 @@ const sidebars = {
                 type: 'category',
                 label: 'APIs',
                 items: [
-                  'connect-data/reference/rest-api',
-                  'connect-data/reference/graphql',
                   'connect-data/reference/authenticated-api',
-                  'connect-data/reference/curl-import'
+                  'connect-data/reference/curl-import',
+                  'connect-data/reference/graphql',
+                  'connect-data/reference/rest-api'
                 ],
               },
                  //category- Databases
@@ -285,7 +285,11 @@ const sidebars = {
                   type: 'category',
                   label: 'Databases',
                   items: [
-                    'connect-data/reference/querying-postgres',
+                    'connect-data/reference/querying-arango-db',
+                    'connect-data/reference/databricks',
+                    'connect-data/reference/querying-dynamodb',
+                    'connect-data/reference/querying-elasticsearch',
+                    'connect-data/reference/querying-firestore',
                     {
                       type: 'category',
                       label: 'MongoDB',
@@ -297,20 +301,15 @@ const sidebars = {
                         'connect-data/reference/querying-mongodb/mongo-syntax'
                       ],
                     },
-                  'connect-data/reference/querying-mysql',
-                  'connect-data/reference/querying-elasticsearch',
-                  'connect-data/reference/querying-dynamodb',
+                    'connect-data/reference/querying-mssql',
+                    'connect-data/reference/querying-mysql',
+                    'connect-data/reference/querying-oracle',
+                    'connect-data/reference/querying-postgres',
                   'connect-data/reference/querying-redis',
-                  'connect-data/reference/querying-mssql',
-                  'connect-data/reference/querying-firestore',
                   'connect-data/reference/querying-redshift',
                   'connect-data/reference/querying-amazon-s3',
                   'connect-data/reference/querying-snowflake-db',
-                  'connect-data/reference/querying-arango-db',
-                  'connect-data/reference/using-smtp',
-                'connect-data/reference/querying-oracle',
-                'connect-data/reference/databricks'              
-
+                  'connect-data/reference/using-smtp'
                   ],
                 },
                    //category- SaaS Integrations
@@ -318,11 +317,11 @@ const sidebars = {
                 type: 'category',
                 label: 'SaaS Integrations',
                 items: [
-                  'connect-data/reference/querying-google-sheets',
+                  'connect-data/reference/airtable',
                   'connect-data/reference/aws-lambda',
+                  'connect-data/reference/querying-google-sheets',
                   'connect-data/reference/hubspot',
-                  'connect-data/reference/twilio',
-                  'connect-data/reference/airtable'
+                  'connect-data/reference/twilio'
                 ],
               },
                    //category- AI Integrations
@@ -331,9 +330,9 @@ const sidebars = {
                     label: 'AI Integrations',
                     items: [
                       'connect-data/reference/anthropic',
+                      'connect-data/reference/appsmith-ai',
                       'connect-data/reference/google-ai',
-                      'connect-data/reference/open-ai',
-                      'connect-data/reference/appsmith-ai'
+                      'connect-data/reference/open-ai'
                     ],
                   },
               ],
