@@ -42,7 +42,7 @@ To import a third-party library, you have two options: UMD and ESM. Use trusted 
 <dd>
 
 :::warning
-* Ensure the parent application is fully initialized before interacting with the model or initiating events within the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) to pass a handler function. This handler gets called when the parent application is ready, and you should begin rendering your component from this handler.
+* Wait for the parent application to be ready before accessing the model or triggering events in the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) and pass a handler function, which is triggered when the parent application is ready, initiating the rendering of your component from this function.
 
 * For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
 :::
@@ -164,7 +164,7 @@ appsmith.onReady(() => {
 
 <dd>
 
-*Example*: To update the model with selected date once a event has been clicked, add:
+*Example*: To update the model with the selected date once an event has been clicked, add:
 
 ```js
 // JS
