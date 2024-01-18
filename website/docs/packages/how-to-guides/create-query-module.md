@@ -1,12 +1,12 @@
 # Create Reusable Query Modules
 
-Reusable query modules refer to components or sections of code that encapsulate a specific query or set of queries, designed to be easily reused in multiple applications in same workspace.
-
-With modules, you can create consistent search filters, develop universally applicable navigation bars, share forms between various apps, and a lot more. 
+Reusable query modules are sets of queries designed for use across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
 ## Create a Package
 
-A Package is a collection of modules that can be versioned and distributed across instances. Packages are ideal for enterprises driving standardization and governance inside their organization. 
+A Package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
+
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/9SAjlISVyEOMSp1OUgYv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -38,7 +38,7 @@ To customize the query based on your app's needs, follow these steps to pass inp
 
 1. Open the **Query module** you intend to use and set inputs.
 
-2. In the query editor's property pane, create **Inputs** and add **Default values**.
+2. In the query editor's property pane, create **Inputs** and add **Default values**. You can create multiple inputs and dynamically pass data to Default value from any other query or JSObject within that module.
 
 3. Configure the query by using `{{inputs.input_name_}}` for dynamic adjustments.
 
@@ -71,7 +71,7 @@ LIMIT {{inputs.user_limit}};
 
 3. To display query data, drop a Table widget and connect it to the **Query module**.
 
-4. For update the input values dynamically, use mustache binding `{{}}` to bind values.
+4. To update the query input values dynamically, use mustache binding `{{}}` to bind data.
 
 <dd>
 

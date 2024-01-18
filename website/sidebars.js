@@ -609,10 +609,10 @@ const sidebars = {
           label: 'Concepts',
           link: {
             type: 'doc',
-            id: 'write-code/concepts/overview',
+            id: 'packages/concepts/README',
           },
           items: [
-            'core-concepts/writing-code/javascript-editor-beta/README'
+           
           ],
         },
       ]
