@@ -50,3 +50,8 @@ Option to configure whether to open the page or URL in the same browser window o
 
 </dd>
 
+## See also
+- [Navigate Between Pages](/build-apps/how-to-guides/navigate-between-pages)
+- [Share Data Across Pages](/advanced-concepts/sharing-data-across-pages)
+- [Create Custom Navigation Bar](/build-apps/how-to-guides/create-custom-nav-bar)
+

@@ -207,3 +207,7 @@ Tabs1.setVisibility(true)
 
 </dd>
 
+## See also
+- [Browse and Display Documents](/build-apps/how-to-guides/browse-and-display-documents)
+- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs)
+

@@ -177,3 +177,6 @@ Form1.setVisibility(true)
 
 </dd>
 
+## See also
+- [Insert Data](/build-apps/how-to-guides/insert-data)
+

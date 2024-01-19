@@ -48,5 +48,6 @@ setInterval(() => { Query1.run() }, 10000, "myTimer");
 ```
 
 ## See also
-[clearInterval()](/reference/appsmith-framework/widget-actions/clear-interval)<br/>
-[setTimeout()](/reference/appsmith-framework/widget-actions/set-timeout)
+- [clearInterval()](/reference/appsmith-framework/widget-actions/clear-interval)
+- [setTimeout()](/reference/appsmith-framework/widget-actions/set-timeout)
+- [Polling for data updates](/build-apps/how-to-guides/setup-polling)

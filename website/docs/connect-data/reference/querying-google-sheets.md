@@ -370,3 +370,7 @@ This command updates multiple **Sheet Row(s)** entities. The following section l
 ## Troubleshooting
 
 If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+- [Fetch and Filter Data from Google Sheets](/connect-data/how-to-guides/filter-data-google-sheet)
+- [Insert and Update Data in Google Sheets](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets)

@@ -317,3 +317,7 @@ FilePicker1.setDisabled(false)
 
 See how to guide on [Upload CSV data in Table using Filepicker](/build-apps/how-to-guides/Upload-CSV-Data-to-Table)
 
+## See also
+- [Upload Files Using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests)
+- [Insert CSV Data](/build-apps/how-to-guides/Upload-CSV-Data-to-Table)
+- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3)

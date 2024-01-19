@@ -131,3 +131,7 @@ Row level security is a PostgreSQL security feature the database provides to lim
 ## Troubleshooting
 
 If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/application-errors), or contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+- [Fetch and Filter data in SQL](/connect-data/how-to-guides/fetch-and-filter-data-in-sql)
+- [Insert and Update data in SQL](/connect-data/how-to-guides/insert-and-update-data-in-sql)
