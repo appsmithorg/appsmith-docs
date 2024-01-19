@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Custom Widget using Vanilla JS
+# Using Vanilla JS
 
 This guide shows how to create a simple Custom widget using vanilla JavaScript.
 
@@ -226,3 +226,13 @@ In the Custom widget, create a new event with the same name as defined in the fu
 
 
 </dd>
+
+
+
+## Sample apps
+
+* [Custom Calendar widget](https://app.appsmith.com/app/calendar/page1-6598cfcf98b47b2e26550dcf)
+* [Signature Pad widget](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
+* [JSON viewer / editor](https://app.appsmith.com/app/json-editor-viewer/page1-659b8a776e6f515089938690)
+
+

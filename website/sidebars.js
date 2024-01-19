@@ -394,7 +394,14 @@ const sidebars = {
 
               ],
             },
-
+            {
+              type: 'category',
+              label: 'Create Custom Widgets',
+              link: { type: 'doc', id: 'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe' },
+              items: [
+                'build-apps/how-to-guides/custom-widget-using-vanillajs'
+              ],
+            },
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/workflows`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
@@ -402,7 +409,6 @@ const sidebars = {
             'build-apps/how-to-guides/add-remove-inputs-in-list',
             `build-apps/how-to-guides/navigate-between-pages`,
             `build-apps/how-to-guides/create-custom-nav-bar`,
-            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
