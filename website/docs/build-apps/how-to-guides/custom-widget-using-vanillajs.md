@@ -8,7 +8,7 @@ This guide shows how to create a simple Custom widget using vanilla JavaScript.
 While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
 :::info
-Currently, only cloud users have access to the Custom widget.
+Currently, Custom widget is only available on Appsmith Cloud.
 :::
 
 ## Configure Custom Widget
