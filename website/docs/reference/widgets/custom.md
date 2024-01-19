@@ -4,6 +4,10 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 See [How to create Custom widgets](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe).
 
+:::info
+Currently, only cloud users have access to the Custom widget.
+:::
+
 ## Content properties
 
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
