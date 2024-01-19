@@ -615,6 +615,23 @@ const sidebars = {
     }, //CODE end
 
     {
+      //Workflows section start
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows',
+      items: [
+            {
+              type: 'category',
+              collapsed: false,
+              label: 'Tutorials',
+              items: [
+                'workflows/tutorials/create-workflow'
+              ]
+            }
+          ]
+    }, //Workflows section end
+
+    {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
