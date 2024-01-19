@@ -3,6 +3,9 @@ import TabItem from '@theme/TabItem';
 
 # Create Custom Widgets 
 
+This guide shows how to create a Custom widget using React.
+
+
 While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
 ## Configure Custom Widget
