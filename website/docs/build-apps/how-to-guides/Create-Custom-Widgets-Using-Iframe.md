@@ -280,8 +280,7 @@ See the sample app for the [Image carousel](https://app.appsmith.com/app/untitle
 ## Sample apps
 
 * [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
-* [Tabulator widget](https://app.appsmith.com/app/tabulator/page1-659f8ec5fd5afa5cc06365ba)
 * [Data grid widget](https://app.appsmith.com/app/data-grid/page1-6597ff5559aa5450e0eb4eb9)
-
+* [Signature Pad widget](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
 
 
