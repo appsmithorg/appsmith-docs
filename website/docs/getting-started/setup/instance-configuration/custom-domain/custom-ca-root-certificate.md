@@ -14,7 +14,7 @@ You can easily do this:
 * Restart Appsmith
 
 :::info
-If your cert file has a `.pem` extension, rename it to `.crt.` You should add it to the `stacks/ca-certs` folder so that it can be picked up.
+If your cert file has a `.pem` extension, rename it to `.crt`. You should add it to the `stacks/ca-certs` folder so that it can be picked up.
 :::
 
 Appsmith checks the `ca-certs` folder for CA root certificates and applies them on startup.
