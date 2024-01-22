@@ -62,7 +62,7 @@ APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false
 
 ## Login rate limiting
 
-Rate limiting on password-based login attemps is implemented with the following traits:
+Rate limiting on password-based login attempts is implemented with the following traits:
 
 - Five consecutive failed login attempts will lock the account of that email address for 24 hours.
 - A successful forgot-password flow for that email, will immediately unlock the account for login.
