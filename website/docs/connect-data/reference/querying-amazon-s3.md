@@ -250,7 +250,7 @@ The length of time in minutes that the returned Signed URL is valid. Accepts num
 
 <dd>
 
-The file data to be sent to the bucket. Expects an array of file objects. You can use widgets such as a [Filepicker](/reference/widgets/filepicker) to upload files to S3. For a guide on this subject, see [Upload or Download Files to and from S3](/connect-data/how-to-guides/how-to-upload-to-s3).
+The file data to be sent to the bucket. Expects an array of file objects. You can use widgets such as a [Filepicker](/reference/widgets/filepicker) to upload files to S3. For a guide on this subject, see [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3) and [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api).
 
 </dd>
 
@@ -340,3 +340,6 @@ Expects a JSON array of file paths to be deleted from the S3 bucket.
 ## Troubleshooting
 
 If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3).

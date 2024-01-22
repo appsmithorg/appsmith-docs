@@ -135,6 +135,7 @@ WHERE id = {{tblUserData.selectedRow.id}};
 
 ## See also
 - [Insert Data](/build-apps/how-to-guides/insert-data#use-table)
+- [Update Form data in Modal](/build-apps/how-to-guides/submit-form-data)
 - [Edit Table Data Inline](/reference/widgets/table/inline-editing)
 - [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data)
 - [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view)

@@ -273,6 +273,11 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 
 <dd>This mode uses Google Sheets' row number and column letter syntax (such as `A1-B14`) to select cells. Even when the column header row isn't part of your selection, your fetched data still includes the column labels for your selected cells. This mode doesn't allow conditions, sorting, or pagination.</dd>
 
+<p>
+<br/>
+See how-to guide on [Fetch and Filter Data from Google Sheets](/connect-data/how-to-guides/filter-data-google-sheet).
+</p>
+
 ### Insert Many
 
 This command inserts multiple **Sheet Row(s)** entities. The following section lists all the fields available for the **Insert Many** command.
@@ -317,6 +322,8 @@ This command inserts multiple **Sheet Row(s)** entities. The following section l
   "status": "accepted"
 }]`}</pre>
 </dd>
+
+See how-to guide on [Insert and Update Data in Google Sheets](/connect-data/how-to-guides/insert-and-update-data-in-google-sheets).
 
 ### Update Many
 

@@ -84,6 +84,8 @@ SELECT * FROM users LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOff
 
 In the above example, `tableUsers` is the name of the Table widget used to display the data using [**server-side pagination**](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
+See how to guide on [Fetch and Filter data in SQL](/connect-data/how-to-guides/fetch-and-filter-data-in-sql).
+
 ### Insert data
 
 ```
@@ -99,6 +101,8 @@ VALUES
 ```
 
 In the above example,  `nameInput`,  `genderDropdown`, and `emailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
+
+See how-to guide on [Insert and Update data in SQL](/connect-data/how-to-guides/insert-and-update-data-in-sql).
 
 ### Update data
 
