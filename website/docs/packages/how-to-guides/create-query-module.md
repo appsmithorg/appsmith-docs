@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-A reusable query module is a set of queries that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
+A reusable query module is a queries that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
 ## Create a module
 
@@ -49,9 +49,10 @@ A Package is a collection of Modules that can be versioned and distributed acros
 To customize the query based on your app's needs, follow these steps to pass input values from any app to the query module for dynamic updates:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/r1hOjoWH223cGSvq7mw1?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/jGJZ8QTEqd4s2FGrIzCg?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
+
 
 
 1. Open the **Query module** you intend to use and set inputs.
@@ -62,13 +63,11 @@ To customize the query based on your app's needs, follow these steps to pass inp
 
 <dd>
 
-_Example_: If you want to add the limit for a SQL query, create an input named `user_limit`, assign a default value, and configure the query, like:
-
+_Example_: If you want to create a pagination query using LIMIT and OFFSET, create two inputs named `limit` and `offset`, assign default values, and configure the query as follows:
 
 
 ```sql
-SELECT * FROM users
-LIMIT {{inputs.user_limit}};
+SELECT * FROM public."users" OFFSET {{inputs.offset}} LIMIT {{inputs.limit}};
 ```
 
 </dd>
@@ -83,7 +82,7 @@ Once you've created a query module, follow these steps to access its data in any
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/BnrzBe3Jl8Do9qEMdVSh?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/UnflBQTrpoT9dMNNRz45?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -98,19 +97,23 @@ Once you've created a query module, follow these steps to access its data in any
 
 <dd>
 
-*Example*: If you want to pass the Table page size to the query module, update the `user_limit` value to:
+*Example*: If you want to pass the Table `pageSize` and `pageOffset` to the query module, update the input values to:
 
 ```js
+//limit input
 {{Table1.pageSize}}
+
+//offset input
+{{Table1.pageOffset}}
 ```
 
 
 </dd>
 
-5. Set the Table widget's **OnPageSizeChange** event to trigger the query module.
+5. Set the Table widget's **OnPageSizeChange** and **onPageChange** event to trigger the query module.
 
 
-Whenever there is a change in the Table page size, the query module is triggered, and the data is updated.
+Whenever there is a change in the Table page change, the query module is triggered, and the data is updated.
 
 
 
