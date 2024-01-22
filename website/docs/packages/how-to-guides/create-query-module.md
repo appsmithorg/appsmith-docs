@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-A reusable query module is a queries that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
+A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
 ## Create a module
 
