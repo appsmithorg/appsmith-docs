@@ -28,10 +28,10 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
     postWindowMessage("Message content", 'Iframe1', "<Appsmith_hosted_url>");
     ```
 
-* To capture the messages, use the `addEventListener()` method of the `window` object that adds an event listener in your embedded app. 
+* To receive the messages, use the `addEventListener()` method of the `window` object that adds an event listener in your parent app. 
 
     ```js
-    //add this code in your app that you've embedded in Appsmith using the Iframe widget
+    //add this code in your parent app that you've embedded in Appsmith using the Iframe widget
     window.addEventListener('message', (event) => {
         //The message sent is available in the event object.
         if(event) {
@@ -68,7 +68,7 @@ The Iframe widget also helps in sending messages to Appsmith from your embedded 
         }
     }
     ```
-    Call the `sendMessage()` function whenever you want to send a message. Alternatively, you can directly use `window.parent.postMessage(message, '*')` in your code.
+    Call the `sendMessage()` function whenever you want to send a message. Alternatively, you can directly use `window.parent.postMessage(message, "<Appsmith_hosted_url>")` in your code.
 
 * For receiving the message at Appsmith, configure the `onMessageReceived()` event of the Iframe widget in the Properties pane and show an alert or execute query by passing the received message. Read the received message using the `message` property of the Iframe widget (Iframe1) as shown below:
 
