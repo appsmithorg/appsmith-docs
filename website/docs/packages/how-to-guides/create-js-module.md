@@ -39,8 +39,10 @@ A Package is a collection of Modules that can be versioned and distributed acros
 2. Click **New Module** > **JS Module**.
 
 
-:::note
-You can create queries and JS objects specific to this module. The **Main** JS object represents the JS module code.
+:::info
+* You can create queries and JS objects specific to this module. The **Main** JS object represents the JS module code.
+
+* Passing Query Module data to JS modules is not supported.
 :::
 
 
@@ -48,10 +50,6 @@ You can create queries and JS objects specific to this module. The **Main** JS o
 3. To pass query data, create a datasource within this JS module.
 
 <dd>
-
-:::info
-Passing Query Module data to JS modules is not supported.
-:::
 
 *Example:* To fetch user data, create a new API and configure the URL:
 
