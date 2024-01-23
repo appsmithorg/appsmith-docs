@@ -23,7 +23,6 @@ A JavaScript module is a reusable code unit that encapsulates specific functiona
 
 ## Create a module
 
-A Package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
 
 
 
