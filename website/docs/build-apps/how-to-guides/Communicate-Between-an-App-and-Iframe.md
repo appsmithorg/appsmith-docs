@@ -23,8 +23,9 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
 
     ```js
     //replace the "Message content" with your actual message.
-    //Set the Target as an Iframe widget. Replace "Iframe1" with the name of the Iframe widget
-    //replace the "<Appsmith_hosted_url>" with the Appsmith domain
+    //Set the Target as an Iframe widget. Replace "Iframe1" with the name of the 
+    // Iframe widget, and "<Appsmith_hosted_url>" with the Appsmith domain
+    //highlight-next-line
     postWindowMessage("Message content", 'Iframe1', "<Appsmith_hosted_url>");
     ```
 
@@ -64,6 +65,7 @@ The Iframe widget also helps in sending messages to Appsmith from your embedded 
         if(message) {
             //Send the message in postMessage
             //replace the "<Appsmith_hosted_url>" with your Appsmith domain
+            //highlight-next-line   
             window.parent.postMessage(message, "<Appsmith_hosted_url>");
         }
     }
