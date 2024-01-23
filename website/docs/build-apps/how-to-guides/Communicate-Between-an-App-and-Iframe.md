@@ -3,7 +3,7 @@ description: This page demonstrates how to establish secure cross-origin communi
 ---
 # Post Messages Between Appsmith and Iframe widget
 
-Cross-origin communication between an Appsmith app and an embedded Iframe widget can be achieved through message passing. This page shows how to send messages between the Appsmith app and an embedded Iframe widget.
+Cross-origin communication between an Appsmith app and an embedded Iframe widget can be achieved through sending messages. This page shows how to send messages between the Appsmith app and an embedded Iframe widget.
 
 ## Prerequisites
 
@@ -14,9 +14,9 @@ Cross-origin communication between an Appsmith app and an embedded Iframe widget
 The Iframe widget serves as the communication bridge between Appsmith and the embedded app. To send messages from Appsmith to your embedded app follow these steps:
 
 <ZoomImage
-  src="/img/post-message-from-appsmith-to-iframe-widget.png" 
-  alt="Post message from Appsmith to Iframe widget"
-  caption="Post message from Appsmith to Iframe widget"
+  src="/img/send-message-from-appsmith-to-iframe-widget.svg" 
+  alt="Send message from Appsmith to Iframe widget"
+  caption="Send message from Appsmith to Iframe widget"
 />
 
 * To send a message from Appsmith to an embedded app within an Iframe widget, use the global function [postWindowMessage](/reference/appsmith-framework/widget-actions/post-message) in your JS Object or configure a post message action for your widget in the Properties pane. For example, to send a message on the click of a button widget, select the **Post message** action for the **onClick** event, add the message details in the **Message** field, and set the **Target** as the name of the Iframe widget (Iframe1). Alternatively, use the `postWindowMessage()` by enabling the JS as shown below:
@@ -50,9 +50,9 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
 The Iframe widget also helps in sending messages to Appsmith from your embedded app. To send messages from your embedded app follow these steps:
 
 <ZoomImage
-  src="/img/post-message-from-iframe-widget-to-appsmith.png" 
-  alt="Post message from Iframe widget to Appsmith"
-  caption="Post message from Iframe widget to Appsmith"
+  src="/img/send-message-from-iframe-widget-to-appsmith.svg" 
+  alt="Send message from Iframe widget to Appsmith"
+  caption="Send message from Iframe widget to Appsmith"
 />
 
 * To send messages to Appsmith, use the [postMessage()](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method of the `window` object. Add the below code snippet in your app to send a message:
