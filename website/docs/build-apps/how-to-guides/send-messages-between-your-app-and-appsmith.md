@@ -72,7 +72,7 @@ To send messages to the embedded Appsmith app from the parent app, follow these 
     ```
     Call the `sendMessage()` function whenever you want to send a message. Alternatively, you can directly use `iFrame.contentWindow.postMessage(message, "<Appsmith_hosted_url>")` in your code.
 
-* For receiving the message at Appsmith, use the global function [windowMessageListener()](reference/appsmith-framework/widget-actions/window-message-listener) in your JS Object. Alternatively, use the `windowMessageListener()` by enabling the JS as shown below:
+* For receiving the message at Appsmith, use the global function [windowMessageListener()](reference/appsmith-framework/widget-actions/window-message-listener) in your JS Object as shown below:
 
   ```js
   //replace the '<origin' placeholder with your application domain
