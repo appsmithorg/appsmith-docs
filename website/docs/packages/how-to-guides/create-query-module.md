@@ -44,6 +44,8 @@ A Package is a collection of Modules that can be versioned and distributed acros
 6. Publish the query module.
 
 
+Now, with these steps, you have successfully created a query module within your package. 
+
 ## Passing Inputs
 
 To customize the query based on your app's needs, follow these steps to pass input values from any app to the query module for dynamic updates:
