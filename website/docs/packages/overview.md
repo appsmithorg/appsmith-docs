@@ -38,6 +38,13 @@ A **Package** is a collection of Modules designed for enterprise users in Appsmi
 
 While Blocks serve as templates for reusable work, Modules extend this functionality by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
+<ZoomImage
+  src="/img/package.png" 
+  alt="Package"
+  caption=""
+/>
+
+
 * Feature: Modules
 * Description: Similar to Blocks, offering a single point of change for critical logic with tracking and versioning capabilities.
 * Benefits: Enables centralized management of queries and JavaScript objects.
