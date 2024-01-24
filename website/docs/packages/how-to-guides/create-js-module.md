@@ -64,64 +64,42 @@ https://mock-api.appsmith.com/users
 <dd>
 
 
-*Example:* If you want to format the date of user data, transforming the `updatedAt` column into the "x years ago" format, you can use the following code:
+*Example:* If you want to refresh the access token upon app loading:
+
+1. Create a new API endpoint in your backend to handle token refresh. This endpoint should communicate with the token refresh endpoint provided by your authentication service. For OAuth services, ensure that you send the refresh token to obtain a new access token.
+
+
+2. Within the JS module, add a function to refresh the token, like:
+
 
 ```js
-export default {
-  myVar1: [],
+export default { 
+    // Function to refresh the access token
+    refreshAccessToken: () => { 
+        // Retrieve the refresh token from the Appsmith store
+        const refreshToken = appsmith.store.getValue('refreshtoken'); 
 
-  // Function to process data and update myVar1
-  async myFun1() {
-    try {
-      // Assuming Api1.run() returns a promise
-      await Api1.run();
-      const dataArray = Api1.data.users;
+        // Check if a refresh token is present
+        if (refreshToken) 
+        { 
+            // Call the refreshAPI endpoint with the stored refresh token
+            return refreshAPI.run({ refreshtoken: refreshToken }) 
+                .then(newTokens => { 
+                    // Update the access token in the store
+                    storeValue('accesstoken', newTokens.accesstoken);
 
-      const currentDate = new Date();
-
-      // Map over dataArray and format the dates
-      const updatedDataArray = dataArray.map(item => {
-        const dateToFormat = new Date(item.updatedAt);
-        const timeDifference = currentDate - dateToFormat;
-
-        // Calculate years and months from timeDifference
-        const years = Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000));
-        const months = Math.floor((timeDifference % (365 * 24 * 60 * 60 * 1000)) / (30 * 24 * 60 * 60 * 1000));
-
-        let formattedDate = '';
-
-        // Build the formatted date string
-        if (years > 0) {
-          formattedDate += `${years} ${years === 1 ? 'year' : 'years'}`;
-        }
-
-        if (months > 0) {
-          if (years > 0) {
-            formattedDate += ' ';
-          }
-          formattedDate += `${months} ${months === 1 ? 'month' : 'months'}`;
-        }
-
-        formattedDate += ' ago';
-
-        return {
-          ...item,
-          formattedDate: formattedDate.trim()
-        };
-      });
-
-      // Assign the updated array to myVar1
-      this.myVar1 = updatedDataArray;
-
-      // Return the updated array if needed
-      return updatedDataArray;
-    } catch (error) {
-      // Handle errors during data processing
-      console.error('Error processing data:', error);
-    }
-  },
+                    // Check and update the refresh token if a new one is provided
+                    if(newTokens.refreshtoken) { 
+                        storeValue('refreshtoken', newTokens.refreshtoken); 
+                    } 
+                }) 
+                .catch(error => { 
+                    console.log('Error refreshing token:', error);
+                }); 
+        } 
+    } 
 };
-
+// Assumes that access and refresh tokens are already stored in the Appsmith store.
 ```
 
 </dd>
