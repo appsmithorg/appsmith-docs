@@ -60,8 +60,17 @@ With the update to version 1.8.6 and beyond, Appsmith has enhanced the security 
 APPSMITH_DISABLE_IFRAME_WIDGET_SANDBOX=false
 ```
 
+## Login rate limiting
+
+Rate limiting on password-based login attempts is implemented with the following traits:
+
+- Five consecutive failed login attempts will lock the account of that email address for 24 hours.
+- A successful forgot-password flow for that email, will immediately unlock the account for login.
+
+This method allows for a good balance between security, and convenience. Having the lock makes brute-force a lot less feasible, and yet the original owner of the email still has a way to unlock their account when needed.
+
 These security implementations demonstrate Appsmith's commitment to maintaining a secure environment for developers and users alike. By following the guidelines provided, you can contribute to creating secure applications on the Appsmith platform.
 
 :::info
-Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email `security@appsmith.com`
+Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email `security@appsmith.com`.
 :::

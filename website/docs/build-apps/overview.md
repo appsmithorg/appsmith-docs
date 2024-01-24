@@ -2,6 +2,8 @@
 
 Appsmith is a low-code development platform that enables the rapid creation of web applications through an architecture that supports reactive bindings and MVC-like separation. The platform revolves around widgets, datasources, queries, and JavaScript, each serving a unique role in the application's structure.
 
+<ZoomImage src="/img/appsmith-server-client-model.png" alt="Appsmith Client Server Model" caption="" />
+
 ### Datasources (server data models)
 
 Datasources encapsulate the connections to databases, APIs, and other services, and are shared across all applications within a workspace. This allows developers to securely connect to the data models in their databases.
