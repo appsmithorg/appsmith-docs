@@ -20,10 +20,9 @@ tags={[
 
 A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
-## Create a module
+## Create a query module
 
-A Package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
-
+Module are reusable entities that can be created within Packages. Within packages, you can create multiple query and JS modules.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -33,22 +32,21 @@ A Package is a collection of Modules that can be versioned and distributed acros
 
 1. **Create a new package** by clicking on the top-right corner of your workspace.
 
-2. Click **New Module** > **Query Module**, and select or create your datasource.
+2. Click **New Module** > **Query Module**, and select or create your datasource. 
 
-3. Configure the datasource parameters.
+3. Click **Create Reusable Query** either from the datasource editor or the entity explorer.
 
-4. Click **Create Reusable Query** either from the datasource editor or the entity explorer.
+4. Configure and Run the query.
 
-5. Configure the query, making it reusable across different apps.
-
-6. Publish the query module.
+5. Publish the query module.
 
 
-Now, with these steps, you have successfully created a query module within your package. 
+Now, with these steps, you have successfully created a query module within your package. You can now reuse this query across multiple applications.
 
-## Passing Inputs
+## Pass parameters
 
-To customize the query based on your app's needs, follow these steps to pass input values from any app to the query module for dynamic updates:
+To pass input values from any app to the query module for dynamic updates, follow these steps:
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/jGJZ8QTEqd4s2FGrIzCg?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -57,9 +55,9 @@ To customize the query based on your app's needs, follow these steps to pass inp
 
 
 
-1. Open the **Query module** you intend to use and set inputs.
+1. Open the **Package** and select the query module you want to configure.
 
-2. In the query editor's property pane, create **Inputs** and add **Default values**. You can create multiple inputs and dynamically pass data to Default value from any other query or JSObject within that module.
+2. In the query editor's property pane, create **Inputs** and add **Default values**. You can create multiple inputs and dynamically pass data to Default value using mustache binding `{{}}`.
 
 3. Configure the query by using `{{inputs.input_name_}}` for dynamic adjustments.
 
@@ -76,7 +74,7 @@ SELECT * FROM public."users" OFFSET {{inputs.offset}} LIMIT {{inputs.limit}};
 
 3. Run and publish the query module.
 
-## Integrate Modules into your App
+## Reuse modules
 
 
 Once you've created a query module, follow these steps to access its data in any application:
@@ -89,7 +87,7 @@ Once you've created a query module, follow these steps to access its data in any
 </div>
 
 
-1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
 
 2. In the entity explorer, select the query module to view inputs, default values, and query settings.
 
