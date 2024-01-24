@@ -2,7 +2,7 @@
 description: This page demonstrates how to establish communication between the embedded Appsmith app and your App. 
 ---
 
-# Post Messages Between your App and Appsmith
+# Post Messages Between Your App and Appsmith
 
 Cross-origin communication between an embedded Appsmith app and your app can be achieved through sending messages. This page shows how to send messages between the embedded Appsmith app and your parent app.
 
