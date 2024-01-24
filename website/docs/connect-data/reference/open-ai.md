@@ -6,7 +6,7 @@ This page provides information for connecting Appsmith to OpenAI, which allows y
 ## Connect OpenAI
 
 <ZoomImage
-  src="/img/open-ai-main2.png" 
+  src="/img/open-ai-new.png" 
   alt="OpenAI datasource."
   caption="OpenAI datasource"
 />
@@ -14,20 +14,6 @@ This page provides information for connecting Appsmith to OpenAI, which allows y
 ### Connection parameters
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to a OpenAI datasource.
-
-
-#### Authentication type
-
-<dd>
-
-Authentication Type refers to the method used to verify the identity of users or systems interacting with the OpenAI API. 
-
-*Options:*
-
-* **Bearer Token:** It is a type of access token that is included in the request headers to authenticate and authorize API requests.
-
-</dd>
-
 
 #### API Key
 
@@ -47,7 +33,7 @@ The following section is a reference guide that provides a description of the av
 The Chat command generates human-like text based on input prompts. The following section lists all the available parameters:
 
 <ZoomImage
-  src="/img/open-ai-chat2.png" 
+  src="/img/open-ai-chat-new.png" 
   alt="OpenAI Chat command."
   caption="OpenAI - Chat command"
 />
