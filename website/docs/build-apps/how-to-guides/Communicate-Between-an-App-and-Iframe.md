@@ -1,7 +1,7 @@
 ---
 description: This page demonstrates how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget. 
 ---
-# Communicate Between Appsmith and Iframe Widget
+# Communicate Between Iframe Widget and Appsmith
 
 Cross-origin communication between an Appsmith app and an embedded Iframe widget can be achieved through sending messages. This page shows how to send messages between the Appsmith app and an embedded Iframe widget.
 
@@ -51,7 +51,7 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
       // window.removeEventListener('message', messageHandler);
 
     ```
-    Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed. Achieve this by invoking the `removeEventListener()` method.
+    Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed by invoking the `removeEventListener()` method.
 
 
 ## Send messages to Appsmith

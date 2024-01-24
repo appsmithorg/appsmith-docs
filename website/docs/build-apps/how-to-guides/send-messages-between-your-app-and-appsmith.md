@@ -69,7 +69,7 @@ To send messages from the embedded Appsmith app to the parent app, follow these 
       // window.removeEventListener('message', messageHandler);
     
     ```
-   Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed. Achieve this by invoking the `removeEventListener()` method.
+   Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed by invoking the `removeEventListener()` method.
 
 ## Send messages to Appsmith
 
@@ -122,9 +122,7 @@ To send messages to the embedded Appsmith app from the parent app, follow these 
   // unlistenWindowMessage('<origin>');
   ```
 
-You may choose to execute APIs, and queries or store the message in Appsmith store by adding or updating the code in the `windowMessageListener()` method to process the received message. Customize the code within the `windowMessageListener()` method to handle and process the message as required. Ensure to include the necessary code modifications for your specific functionalities.
-
-Moreover, it's crucial to unlisten to the messages when they are no longer needed. Achieve this by invoking the `unlistenWindowMessage()` method. This ensures proper management of event listeners and helps maintain a clean and efficient communication setup.
+You may choose to execute APIs, and queries or store the message in Appsmith store by adding or updating the code in the `windowMessageListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed. Achieve this by invoking the `unlistenWindowMessage()` method. This ensures proper management of event listeners and helps maintain a clean and efficient communication.
 
 ## See also
 
