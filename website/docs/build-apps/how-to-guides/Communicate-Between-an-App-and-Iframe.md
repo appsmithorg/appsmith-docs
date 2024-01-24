@@ -90,5 +90,5 @@ The Iframe widget also helps in sending messages to Appsmith from your embedded 
 You may also choose to execute actions by adding callbacks to the [**onMessageReceived**](/reference/widgets/iframe#onmessagereceived) event, like showing a success or a failure message.
 
 ## See also
-* [Post messages Between your app and Appsmith](/build-apps/how-to-guides/send-messages-between-your-app-and-appsmith)
+* [Communicate Between Your App and Appsmith](/build-apps/how-to-guides/send-messages-between-your-app-and-appsmith)
 

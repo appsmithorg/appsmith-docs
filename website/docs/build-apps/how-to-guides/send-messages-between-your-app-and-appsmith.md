@@ -126,4 +126,4 @@ You may choose to execute APIs, and queries or store the message in Appsmith sto
 
 ## See also
 
-* [Post Messages Between Appsmith and Iframe widget](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
+* [Communicate Between Iframe widget and Appsmith](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
