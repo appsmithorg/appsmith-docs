@@ -1,7 +1,7 @@
 ---
 description: This page demonstrates how to establish secure cross-origin communication between the Appsmith app and an embedded Iframe widget. 
 ---
-# Post Messages Between Appsmith and Iframe Widget
+# Communicate Between Appsmith and Iframe Widget
 
 Cross-origin communication between an Appsmith app and an embedded Iframe widget can be achieved through sending messages. This page shows how to send messages between the Appsmith app and an embedded Iframe widget.
 
@@ -32,8 +32,8 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
 * To receive the messages, use the `addEventListener()` method of the `window` object that adds an event listener in your parent app. 
 
     ```js
-    //add this code in your parent app that you've embedded in Appsmith using the Iframe widget
-    window.addEventListener('message', (event) => {
+    //add this code in your app that you've embedded in Appsmith using the Iframe widget
+    const messageHandler = (event) => {
         //The message sent is available in the event object.
         if(event) {
         // Read the message by using the event.data property
@@ -41,9 +41,17 @@ The Iframe widget serves as the communication bridge between Appsmith and the em
         console.log(messageReceived);
         //Add code to manipulate the received message
         }
-    });
+    };
+
+    //add the event listener to read the incoming message
+    window.addEventListener('message', messageHandler);
+
+      // Remember to unlisten to the event when it's no longer needed
+      // For example, unlisten when you have successfully processed the message
+      // window.removeEventListener('message', messageHandler);
+
     ```
-    Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message.
+    Read the received message using the `event.data` property. Add or update the code in the `addEventListener()` method to process the received message. Moreover, it's crucial to unlisten to the messages when they are no longer needed. Achieve this by invoking the `removeEventListener()` method.
 
 
 ## Send messages to Appsmith

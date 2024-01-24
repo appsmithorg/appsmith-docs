@@ -5,11 +5,7 @@ description: Learn how to seamlessly embed Appsmith apps into your existing appl
 
 # Embed Appsmith
 
-Integrating an embedded Appsmith application with Single Sign-On (SSO) is essential for seamless user authentication and authorization within your application ecosystem. This page shows how to embed an Appsmith app in your parent application.
-
-## Prerequisites
-
-* **Self-hosted Appsmith Instance**- Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+Embedding Appsmith application is essential for a seamless user experience within your application ecosystem. This page shows how to embed an Appsmith app in your parent application.
 
 ## Public Embed
 
@@ -39,7 +35,7 @@ When embedding Appsmith in a public mode, the Appsmith app is publicly accessibl
 6. Launch and access your application. You will see that the embedded Appsmith app is rendered in the HTML iframe.
 
 <!-- vale off -->
-
+<br/>
 <div className="tag-wrapper">
 
 ## Private Embed
@@ -59,14 +55,19 @@ When embedding Appsmith in a public mode, the Appsmith app is publicly accessibl
 Single Sign-On (SSO) in private embeds isn't supported for GitHub OAuth 2.0.
 :::
 
+## Prerequisites
+
+* Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* Ensure that Frame ancestors include the parent app domain if you have restricted access for embedding Appsmith. For more information, see [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors).
+* Ensure that you've hosted Appsmith app under the sub-domain of the same domain as the parent app. For example, `appsmith.company.com` and `internal.company.com` sharing the same domain (`company.com`).
+
 When embedding Appsmith in private mode, access to the Appsmith app is restricted to ensure only authorized users can access it which helps in increased security. Follow the steps below to embed Appsmith in private mode:
 
-1. **Sub-domains under the Same Domain**: Host the Appsmith app under the sub-domain of the same domain as the parent app, that involves setting up both the parent app and the Appsmith app as sub-domains under the same domain. For example, appsmith.company.com and internal.company.com sharing the same domain (company.com).
-2. **Configured SSO Provider**- Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, configure the parent and child as two OAuth 2.0 clients under the same project.
-3. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
-4. Copy the provided **Embed URL**.
-5. Deploy the Appsmith app by clicking the **Deploy** button in the top right corner.
-6. Use an HTML `<iframe>` and set the **Embed URL** (from step 4) as its source in your application. See the code snippet below, where the `<iframe>` with a unique ID, `embeddedAppsmith` will host the embedded Appsmith app:
+1.Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, configure the parent and child as two OAuth 2.0 clients under the same project.
+2. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
+3. Copy the provided **Embed URL**.
+4. Deploy the Appsmith app by clicking the **Deploy** button in the top right corner.
+5. Use an HTML `<iframe>` and set the **Embed URL** (from step 4) as its source in your application. See the code snippet below, where the `<iframe>` with a unique ID, `embeddedAppsmith` will host the embedded Appsmith app:
   ```html
   <!DOCTYPE html>
   <html>
@@ -82,8 +83,8 @@ When embedding Appsmith in private mode, access to the Appsmith app is restricte
   </body>
   </html>
   ```
-7. Launch and log into your application. Once you login to your parent app and are authenticated, you can see that the embedded Appsmith app is rendered in the HTML iframe. You can also watch the video on [how to embed Appsmith in private mode](https://youtube.com/embed/Zoiy1tKcjzU?autoplay=1).
-8. Appsmith automatically populates the following tokens, which you can use in your Appsmith apps to interact securely with your APIs and queries:
+6. Launch and log into your application. Once you login to your parent app and are authenticated, you can see that the embedded Appsmith app is rendered in the HTML iframe. You can also watch the video on [how to embed Appsmith in private mode](https://youtube.com/embed/Zoiy1tKcjzU?autoplay=1).
+7. Appsmith automatically populates the following tokens, which you can use in your Appsmith apps to interact securely with your APIs and queries:
     * Client-side tokens - Use these tokens in JS Objects, APIs or queries on Appsmith
       * `{{appsmith.user.idToken}}`
       * `{{appsmith.user.rawIdToken}}`
@@ -91,19 +92,17 @@ When embedding Appsmith in private mode, access to the Appsmith app is restricte
     * Server-side token - Use this in your Appsmith API header to securely authorize your users.
       * `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`
 
-For more information, see [Identity and Access Tokens](/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt).
+  For more information, see [Identity and Access Tokens](/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt).
 
 ## Troubleshooting
 
 If you face difficulties viewing the embedded Appsmith App, consider the following solutions:
 
-* Ensure that Frame ancestors include the parent app domain if you have restricted access for embedding Appsmith. For more information, see [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors).
 * Use HTTPS for the Appsmith instance and the parent application to avoid potential issues.
 * If you use Firefox, be aware of additional third-party cookie restrictions that may affect private embeds.
 * Users might experience problems when strict third-party cookie-sharing restrictions are enabled on their browsers.
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-
 
 ## See also
 
