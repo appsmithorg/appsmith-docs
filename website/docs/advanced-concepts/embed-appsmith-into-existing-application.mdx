@@ -56,13 +56,13 @@ Single Sign-On (SSO) in private embeds isn't supported for GitHub OAuth 2.0.
 
 When embedding Appsmith in private mode, access to the Appsmith app is restricted to ensure only authorized users can access it which helps in increased security. Follow the steps below to embed Appsmith in private mode:
 
-## Prerequisites
+### Prerequisites
 
 * Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Ensure that Frame ancestors include the parent app domain if you have restricted access for embedding Appsmith. For more information, see [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors).
 * Ensure that you've hosted Appsmith app under the sub-domain of the same domain as the parent app. For example, `appsmith.company.com` and `internal.company.com` sharing the same domain (`company.com`).
 
-## Embed Appsmith
+### Embed Appsmith
 
 1. Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, configure the parent and child as two OAuth 2.0 clients under the same project.
 2. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
