@@ -8,7 +8,7 @@ Cross-origin communication between an embedded Appsmith app and your app can be 
 
 ## Prerequisites
 
-* A HTML Iframe configured to embed Appsmith app in your parent app. For more information, see [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application).
+* An HTML Iframe configured to embed the Appsmith app in your parent app. For more information, see [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application).
 
 ## Send messages to parent app
 
@@ -20,7 +20,7 @@ To send messages from the embedded Appsmith app to the parent app, follow these 
   caption="Send message from Embedded Appsmith to Parent app"
 />
 
-* To send a message from embeeded Appsmith to the parent app, use the global function [postWindowMessage](/reference/appsmith-framework/widget-actions/post-message) in your JS Object or configure a post message action for your widget in the Properties pane. For example, to send a message on the click of a button widget, select the **Post message** action for the **onClick** event, add the message details in the **Message** field, and set the **Target** as `window`. Alternatively, use the `postWindowMessage()` by enabling the JS as shown below:
+* To send a message from embedded Appsmith to the parent app, use the global function [postWindowMessage](/reference/appsmith-framework/widget-actions/post-message) in your JS Object or configure a post message action for your widget in the Properties pane. For example, to send a message at the click of a button widget, select the **Post message** action for the **onClick** event, add the message details in the **Message** field, and set the **Target** as `window`. Alternatively, use the `postWindowMessage()` by enabling the JS as shown below:
 
     ```js
     //replace the "Message content" with your actual message.
@@ -84,7 +84,7 @@ To send messages to the embedded Appsmith app from the parent app, follow these 
         //Add code to manipulate the received message
         }
   ```
-You may also choose to execute APIs, queries or store the message in Appsmith store by adding or updating the code in the `windowMessageListener()` method to process the received message.
+You may also choose to execute APIs, and queries or store the message in Appsmith store by adding or updating the code in the `windowMessageListener()` method to process the received message.
 
 ## See also
 
