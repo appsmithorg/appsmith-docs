@@ -68,7 +68,7 @@ https://api.example.io/api/user/token-auth/
 
 *Example:* In the JS module, add a function to refresh the token, like:
 
-1. Create a function named `verifyAccessToken` checks if the access token is still valid. If it's about to expire, another function, `refreshAccessToken`, automatically fetches a new token in the background. This ensures that users won't face interruptions while using the app, and their access remains secure and up-to-date.
+* Create a function named `verifyAccessToken` checks if the access token is still valid. If it's about to expire, another function, `refreshAccessToken`, automatically fetches a new token in the background. This ensures that users won't face interruptions while using the app, and their access remains secure and up-to-date.
 
 <dd>
 
@@ -121,7 +121,7 @@ Configuration may vary depending on the authentication provider or tool you are 
 </dd>
 
 
-2. Create a new API named `api_refreshAuthToken` and configure the API URL as required, for instance;
+* Create a new API and configure the API URL as required to refren the token, for instance;
 
 <dd>
 
@@ -145,7 +145,7 @@ In the API configuration, provide the refresh token from the store in the reques
 
 
 
-## Integrate Modules into your App
+## Reuse Modules 
 
 
 Once you've created a JS module, follow these steps to access its data in any application:
@@ -178,7 +178,7 @@ Once you've created a JS module, follow these steps to access its data in any ap
 </dd>
 
 
-3. If you have a function that retrieves data, to display the fetched information, connect it to any widget and bind using mustache syntax `{{}}`.
+3. If you have a function that retrieves data, to display the fetched information, connect it to any widget and bind it using mustache syntax `{{}}`.
 
 
 <dd>
@@ -186,7 +186,7 @@ Once you've created a JS module, follow these steps to access its data in any ap
 *Example:*
 
 ```js
-{{users_JSModule.getdataFun.data}}
+{{JSModule_manage_tokens.getAccessToken.data}}
 ```
 
 </dd>
