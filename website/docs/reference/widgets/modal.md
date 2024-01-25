@@ -133,3 +133,9 @@ WHERE id = {{tblUserData.selectedRow.id}};
 
 7. To close the Modal, configure the onSuccess event to include a **Close Modal** action. This would close the Modal once the `updateuserdata` query has been successfully executed.
 
+## See also
+- [Insert Data](/build-apps/how-to-guides/insert-data#use-table)
+- [Update Form data in Modal](/build-apps/how-to-guides/submit-form-data)
+- [Edit Table Data Inline](/reference/widgets/table/inline-editing)
+- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data)
+- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view)

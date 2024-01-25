@@ -81,3 +81,6 @@ downloadPDF: async () => {
 ```
 
 For files to be successfully downloaded, their contents must be served over HTTPS to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is CORS-enabled and returns the required headers in the response.
+
+## See also
+- [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api)

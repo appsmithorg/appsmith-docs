@@ -261,3 +261,7 @@ Databases are an essential part of many applications and are used to store and m
 </div>
 
 </div>
+
+## See also
+- [Connect to Local Datasource](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith)
+- [Setup Multiple Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments)
