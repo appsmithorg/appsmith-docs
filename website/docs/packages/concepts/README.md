@@ -60,6 +60,9 @@ JavaScript Modules in Appsmith are reusable JavaScript objects that can be share
 
 * Unlike Query Modules, JavaScript Modules have a limitation—they do not support direct value passing from the app. You can use Appsmith objects and functions to pass or store values between the application and the JavaScript Module.
 
+* Direct binding of Query Module data inside the JS modules is not supported. 
+
+
 See [How to create a JS Module](/packages/how-to-guides/create-js-module)
 
 
