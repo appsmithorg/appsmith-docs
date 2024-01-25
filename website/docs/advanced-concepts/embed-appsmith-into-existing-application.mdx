@@ -1,192 +1,111 @@
 ---
 sidebar_position: 3
-description: Guide on how to embed Appsmith apps into an existing application
-toc_min_heading_level: 2
-toc_max_heading_level: 2
+description: Learn how to seamlessly embed Appsmith apps into your existing application.
 ---
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 
 # Embed Appsmith
 
-To embed an Appsmith application into your website, follow the steps below:
+Embedding Appsmith application is essential for a seamless user experience within your application ecosystem. This page shows how to embed an Appsmith app in your parent application.
 
-## Public application
+## Public Embed
+
+When embedding Appsmith in a public mode, the Appsmith app is publicly accessible, and users do not need to log in to Appsmith to access it. Follow the steps below to embed Appsmith in public mode:
+
+1. Navigate to **App Settings** > **Share & Embed** in your Appsmith application.
+2. Copy the provided **Embed URL**.
+3. Within the same **App Settings** > **Share & Embed** section, toggle the **Make application public** setting.
+4. If you haven't already, deploy your app by clicking the **Deploy** button in the top right corner.
+5. After deployment, use the following HTML `<iframe>` code snippet to embed the Appsmith app in your application. Replace `<Embed_URL>` with the actual Embed URL obtained in Step 2:  
+    ```html
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Your App Title</title>
+      </head>
+      <body>
+          <!-- Replace "<Embed_URL>" with your actual Embed URL -->
+          <!--highlight-next-line-->
+          <iframe id="embeddedAppsmith" src="<Embed_URL>" scrolling="yes"
+          seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+      </body>
+      </html>
+    ```
+6. Launch and access your application. You will see that the embedded Appsmith app is rendered in the HTML iframe.
+
+<!-- vale off -->
+<br/>
+<div className="tag-wrapper">
+
+## Private Embed
+
+<Tags
+  tags={[
+    {
+      name: "Business",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "business",
+    }
+  ]}
+/>
+</div>
+
+:::info
+Single Sign-On (SSO) in private embeds isn't supported for GitHub OAuth 2.0.
+:::
+
+When embedding Appsmith in private mode, access to the Appsmith app is restricted to ensure only authorized users can access it which helps in increased security. Follow the steps below to embed Appsmith in private mode:
 
 ### Prerequisites
 
-To embed Appsmith in your web page or web application, ensure that the hosting of the said web page or application is done on a server.
+* Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* Ensure that Frame ancestors include the parent app domain if you have restricted access for embedding Appsmith. For more information, see [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors).
+* Ensure that you've hosted Appsmith app under the sub-domain of the same domain as the parent app. For example, `appsmith.company.com` and `internal.company.com` sharing the same domain (`company.com`).
 
-### Get embed URL
+### Embed Appsmith
 
-1. Open your Appsmith application and click **App Settings > Share & Embed**.
-2. Copy the **Embed URL**.
-3. On your web application, add the **Embed URL** to the `src` attribute of the `iframe` tag. You can set the dimensions of the embedded application using the `height` and `width` attributes as shown below:
+1. Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, it's recommended to configure the parent and child as two OAuth 2.0 clients under the same project.
+2. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
+3. If the **SSO Method** is not selected, select the preferred option.
+3. Copy the provided **Embed URL**.
+4. If you haven't already, deploy the Appsmith app by clicking the **Deploy** button in the top right corner.
+5. Use an HTML `<iframe>` and set the **Embed URL** (from step 4) as its source in your application. See the code snippet below, where the `<iframe>` with a unique ID, `embeddedAppsmith` will host the embedded Appsmith app:
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Your App Title</title>
+    </head>
+    <body>
+        <!-- Replace "<Embed_URL>" with your actual Embed URL -->
+        <!--highlight-next-line-->
+        <iframe id="embeddedAppsmith" src="<Embed_URL>" scrolling="yes"
+        seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
+    </body>
+    </html>
+    ```
+6. Launch and log into your application. Once you login to your parent app and are authenticated, you can see that the embedded Appsmith app is rendered in the HTML iframe. You can also watch the video on [how to embed Appsmith in private mode](https://youtube.com/embed/Zoiy1tKcjzU?autoplay=1).
+7. Appsmith automatically populates the following tokens, which you can use in your Appsmith apps to interact securely with your APIs and queries:
+    * Client-side tokens - Use these tokens in JS Objects, APIs or queries on Appsmith
+      * `{{appsmith.user.idToken}}`
+      * `{{appsmith.user.rawIdToken}}`
+      * `{{ appsmith.user.userClaims }}`
+    * Server-side token - Use this in your Appsmith API header to securely authorize your users.
+      * `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`
 
-```bash
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
-</head>
-<body>
-#highlight-next-line
-    <iframe src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
-</body>
-</html>
-```
+  For more information, see [Identity and Access Tokens](/getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt).
 
-:::info
-In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
-:::
-<!-- vale off -->
+## Troubleshooting
 
-<div className="tag-wrapper">
+If you face difficulties viewing the embedded Appsmith App, consider the following solutions:
 
-## Private application
+* Use HTTPS for the Appsmith instance and the parent application to avoid potential issues.
+* If you use Firefox, be aware of additional third-party cookie restrictions that may affect private embeds.
+* Users might experience problems when strict third-party cookie-sharing restrictions are enabled on their browsers.
 
-<Tags
-  tags={[
-    {
-      name: "Business",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
-    }
-  ]}
-/>
-</div>
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-<!-- vale on -->
+## See also
 
-<VideoEmbed
-  host="youtube"
-  videoId="Zoiy1tKcjzU"
-  title="Embed Private Apps With SSO"
-  caption="Embed Private Apps With SSO"
-/>
-
-### Prerequisites
-
-- The Appsmith app and the parent app should be under sub-domains of the same domain. For eg. `appsmith.company.com` and `internal.company.com`.
-- You must configure the same SSO identity provider(IDP) on the Appsmith and the parent applications.
-
-### Get embed URL
-
-1. Open your Appsmith application and click **App Settings > Share & Embed**.
-2. To configure the Appsmith application with the SSO of your parent application, select the preferred SSO type from the **SSO method** list.
-3. Copy the **Embed URL**.
-4. On your web application, add the **Embed URL** to the `src` attribute of the `iframe` tag. You can set the dimensions of the embedded application using the `height` and `width` attributes as shown below:
-
-```bash
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"
-    <title></title>
-</head>
-<body>
-#highlight-next-line
-    <iframe src="<Embed_URL>" scrolling="yes" seamless="seamless" style="display:block; width:100%; height:100vh;"></iframe>
-</body>
-</html>
-```
-
-:::info
-In self-hosted instances, you can restrict embedding an application to certain web applications. For more information, see **Embed settings** option in [Admin settings](/getting-started/setup/instance-configuration#configure-instance).
-:::
-
-### Important notes
-
-- The feature may not work on `HTTP` URLs. Use `HTTPS` for both the Appsmith instance and the parent application.
-- Firefox has additional third-party cookie restrictions that may cause issues with private embeds.
-- Users may see issues when strict third-party cookie-sharing restrictions are enabled on the browser.
-- SSO in private embeds isn't supported for GitHub OAuth 2.0.
-- For Google OAuth 2.0 configuration, the parent and child can be two OAuth 2.0 clients under the same project.
-
-## Send messages between Appsmith and parent app
-
-In this scenario, you are building an app outside of Appsmith, and you have used an [HTML iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) element to embed a deployed Appsmith app in that page. Now you are setting up communication between the non-Appsmith parent app and the Appsmith app embedded within it.
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
-#### From Appsmith to parent app
-
-<Tags
-  tags={[
-    {
-      name: "Business",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
-    }
-  ]}
-/>
-</div>
-
-<!-- vale on -->
-
-![](/img/postmessage_parent_outgoing.png)
-
-To configure your Appsmith application to send messages to its parent page:
-
-1. Drag and drop a [Button](/reference/widgets/button/) widget and an [Input](/reference/widgets/input/) widget onto the canvas.
-2. In the button's properties, configure its **onClick** event to execute the **Post message** action. Set its **Message** field to `{{Input1.text}}`, and make sure that the **Target iframe** field is set to `window`.
-3. On the canvas, enter some data in the input widget's field and click the button widget. Appsmith has just emitted a message to its parent window.
-
-:::tip
-The parent application where Appsmith is embedded should have an event listener set up to receive the message that you send from Appsmith. Read more about setting up message event handling [here](https://developer.mozilla.org/en-US/docs/Web/API/Window/message_event).
-:::
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
-
-#### From parent app to Appsmith
-
-<Tags
-  tags={[
-    {
-      name: "Business",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
-    }
-  ]}
-/>
-</div>
-
-<!-- vale on -->
-
-![](/img/postmessage_parent_incoming.png)
-
-When you embed an Appsmith app as an iframe on a website, the event listeners allow you to listen to the message from that parent website. You can use this method to make Appsmith react to events from the parent website.
-
-On your Appsmith app, you can enable/disable a page to react to these messages using the following functions -
-
-- [windowMessageListener()](/reference/appsmith-framework/widget-actions/window-message-listener)
-- [unlistenWindowMessage()](/reference/appsmith-framework/widget-actions/unlisten-window-message)
-
-For example, a parent website (`https://mywebsite.com`) where an appsmith app is embedded calls this function when a button is clicked -
-
-```javascript
-const iFrame = document.getElementById(”#appsmith-iframe”);
-iFrame.contentWindow.postMessage("Parent message", 'https://your-appsmith-domain.com');
-```
-
-In the Appsmith app, if you want to run an API called `Api1` in reaction to this message, you can use the `windowMessageListener()` function as follows -
-
-```javascript
-windowMessageListener(”https://mywebsite.com”, () => Api1.run());
-```
-
-To stop the Appsmith app from reacting to the incoming messages from the parent website (`https://mywebsite.com`), you can use the `unlistenWindowMessage` method as follows -
-
-```javascript
-unlistenWindowMessage(”https://mywebsite.com”)
-```
-
-:::tip
-You can automatically set up an action on a page by calling the `windowMessageListener` in a JS object method and have it run when the page loads.
-:::
+* [Communicate Between Your App and Appsmith](/build-apps/how-to-guides/send-messages-between-your-app-and-appsmith)

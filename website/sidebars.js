@@ -269,19 +269,19 @@ const sidebars = {
               label: 'Datasources',
               link: { type: 'doc', id: 'connect-data/reference/README' },
               items: [
-                 //category- Api
-              {
-                type: 'category',
-                label: 'APIs',
-                items: [
-                  'connect-data/reference/authenticated-api',
-                  'connect-data/reference/curl-import',
-                  'connect-data/reference/graphql',
-                  'connect-data/reference/rest-api'
-                ],
-              },
-                 //category- Databases
-                 {
+                //category- Api
+                {
+                  type: 'category',
+                  label: 'APIs',
+                  items: [
+                    'connect-data/reference/authenticated-api',
+                    'connect-data/reference/curl-import',
+                    'connect-data/reference/graphql',
+                    'connect-data/reference/rest-api'
+                  ],
+                },
+                //category- Databases
+                {
                   type: 'category',
                   label: 'Databases',
                   items: [
@@ -305,36 +305,36 @@ const sidebars = {
                     'connect-data/reference/querying-mysql',
                     'connect-data/reference/querying-oracle',
                     'connect-data/reference/querying-postgres',
-                  'connect-data/reference/querying-redis',
-                  'connect-data/reference/querying-redshift',
-                  'connect-data/reference/querying-amazon-s3',
-                  'connect-data/reference/querying-snowflake-db',
-                  'connect-data/reference/using-smtp'
+                    'connect-data/reference/querying-redis',
+                    'connect-data/reference/querying-redshift',
+                    'connect-data/reference/querying-amazon-s3',
+                    'connect-data/reference/querying-snowflake-db',
+                    'connect-data/reference/using-smtp'
                   ],
                 },
-                   //category- SaaS Integrations
-              {
-                type: 'category',
-                label: 'SaaS Integrations',
-                items: [
-                  'connect-data/reference/airtable',
-                  'connect-data/reference/aws-lambda',
-                  'connect-data/reference/querying-google-sheets',
-                  'connect-data/reference/hubspot',
-                  'connect-data/reference/twilio'
-                ],
-              },
-                   //category- AI Integrations
-                   {
-                    type: 'category',
-                    label: 'AI Integrations',
-                    items: [
-                      'connect-data/reference/anthropic',
-                      'connect-data/reference/appsmith-ai',
-                      'connect-data/reference/google-ai',
-                      'connect-data/reference/open-ai'
-                    ],
-                  },
+                //category- SaaS Integrations
+                {
+                  type: 'category',
+                  label: 'SaaS Integrations',
+                  items: [
+                    'connect-data/reference/airtable',
+                    'connect-data/reference/aws-lambda',
+                    'connect-data/reference/querying-google-sheets',
+                    'connect-data/reference/hubspot',
+                    'connect-data/reference/twilio'
+                  ],
+                },
+                //category- AI Integrations
+                {
+                  type: 'category',
+                  label: 'AI Integrations',
+                  items: [
+                    'connect-data/reference/anthropic',
+                    'connect-data/reference/appsmith-ai',
+                    'connect-data/reference/google-ai',
+                    'connect-data/reference/open-ai'
+                  ],
+                },
               ],
             },
             'connect-data/reference/query-settings',
@@ -437,11 +437,13 @@ const sidebars = {
             'build-apps/how-to-guides/add-remove-inputs-in-list',
             `build-apps/how-to-guides/navigate-between-pages`,
             `build-apps/how-to-guides/create-custom-nav-bar`,
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/set-up-websockets`,
-             `build-apps/how-to-guides/setup-polling`,
+            `build-apps/how-to-guides/setup-polling`,
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
           ]
@@ -617,7 +619,7 @@ const sidebars = {
             'write-code/concepts/execute-onpageload',
           ],
         },
-          `write-code/best-practices`,
+        `write-code/best-practices`,
       ]
     }, //CODE end
 
