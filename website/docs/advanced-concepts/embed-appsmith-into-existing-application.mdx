@@ -64,8 +64,9 @@ When embedding Appsmith in private mode, access to the Appsmith app is restricte
 
 ### Embed Appsmith
 
-1. Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, configure the parent and child as two OAuth 2.0 clients under the same project.
+1. Set up your Single Sign-On (SSO) provider on your Appsmith instance. See the [SSO configuration guides](/getting-started/setup/instance-configuration/authentication) for detailed steps on configuring your SSO provider. When configuring **Google OAuth 2.0**, it's recommended to configure the parent and child as two OAuth 2.0 clients under the same project.
 2. Go to the **App Settings** > **Share & Embed** within your Appsmith application.
+3. If the **SSO Method** is not selected, select the preferred option.
 3. Copy the provided **Embed URL**.
 4. If you haven't already, deploy the Appsmith app by clicking the **Deploy** button in the top right corner.
 5. Use an HTML `<iframe>` and set the **Embed URL** (from step 4) as its source in your application. See the code snippet below, where the `<iframe>` with a unique ID, `embeddedAppsmith` will host the embedded Appsmith app:
