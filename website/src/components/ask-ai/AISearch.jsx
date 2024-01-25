@@ -2,9 +2,9 @@ import React, { useEffect, useState, useImperativeHandle, forwardRef } from 'rea
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import Markdown from 'markdown-to-jsx';
 import { FaSpinner } from 'react-icons/fa';
-import FeedbackWidget from '../feedback';
+import FeedbackWidget from '@site/src/components/feedback';
 import { registerAISearch } from '@site/src/components/feedback/feedbackHelper';
-import './css/AISearch.css';
+import '@site/src/components/ask-ai/css/AISearch.css';
 
 const AISearch = forwardRef((props, ref) => {
     const [inputValue, setInputValue] = useState('');

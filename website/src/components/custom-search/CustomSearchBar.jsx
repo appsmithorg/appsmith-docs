@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import DocSearch from '@theme-original/SearchBar';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
-import './css/CustomSearch.css';
+import '@site/src/components/custom-search/css/CustomSearch.css';
 
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
