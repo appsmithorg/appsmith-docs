@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect, useEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import DocSearch from '@theme-original/SearchBar';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
-import './css/CustomSearch.css';
+import '@site/src/components/custom-search/css/CustomSearch.css';
 
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
@@ -29,14 +29,14 @@ const CustomSearchBar = () => {
                     className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
                     onClick={() => setSearchType('ai')}
                 >
-                    <img src="../../../img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
+                    <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
                 </div>
 
                 <div
                     className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                     onClick={() => setSearchType('docs')}
                 >
-                    <img src="../../../img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
+                    <img src="/img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
                 </div>
             </div>
             <AISearchButton />
