@@ -38,3 +38,4 @@ Login
 Signup
 reCAPTCHA
 Edition
+Embed
