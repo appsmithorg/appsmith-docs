@@ -46,15 +46,17 @@ A JavaScript module is a reusable code unit that encapsulates specific functiona
 
 
 
-3. To pass query data, create a datasource within this JS module.
+3. Create a datasource within this JS module to pass query data.
 
 <dd>
 
-*Example:* To fetch user data, create a new API and configure the URL:
+*Example:* To create a refresh token module, start by establishing a new API endpoint to call the token refresh endpoint provided by your authentication service. For OAuth services, ensure that you add the refresh token in the request payload to receive a new access token.
+
 
 ```js
-https://mock-api.appsmith.com/users
+https://api.example.io/api/user/token-auth/
 ```
+
 
 </dd>
 
@@ -64,43 +66,77 @@ https://mock-api.appsmith.com/users
 <dd>
 
 
-*Example:* If you want to refresh the access token upon app loading:
+*Example:* In the JS module, add a function to refresh the token, like:
 
-1. Create a new API endpoint in your backend to handle token refresh. This endpoint should communicate with the token refresh endpoint provided by your authentication service. For OAuth services, ensure that you send the refresh token to obtain a new access token.
+1. Create a function named `verifyAccessToken` checks if the access token is still valid. If it's about to expire, another function, `refreshAccessToken`, automatically fetches a new token in the background. This ensures that users won't face interruptions while using the app, and their access remains secure and up-to-date.
 
-
-2. Within the JS module, add a function to refresh the token, like:
-
+<dd>
 
 ```js
-export default { 
-    // Function to refresh the access token
-    refreshAccessToken: () => { 
-        // Retrieve the refresh token from the Appsmith store
-        const refreshToken = appsmith.store.getValue('refreshtoken'); 
+export default {
+  // Generate a new access token by calling the authorization API
+  async generateAccessToken() {
+    const generatedToken = await api_AuthToken.data;
+    if (generatedToken) this.storeToken(generatedToken.access_token, generatedToken.refresh_token);
+  },
 
-        // Check if a refresh token is present
-        if (refreshToken) 
-        { 
-            // Call the refreshAPI endpoint with the stored refresh token
-            return refreshAPI.run({ refreshtoken: refreshToken }) 
-                .then(newTokens => { 
-                    // Update the access token in the store
-                    storeValue('accesstoken', newTokens.accesstoken);
+  // Store the access token, refresh token, and expiry in the Appsmith store
+  storeToken(accessToken, refreshToken) {
+    storeValue("authAccessToken", accessToken);
+    storeValue("authRefreshToken", refreshToken);
+    storeValue("authAccessTokenExp", this.getTokenExpiry(accessToken));
+  },
 
-                    // Check and update the refresh token if a new one is provided
-                    if(newTokens.refreshtoken) { 
-                        storeValue('refreshtoken', newTokens.refreshtoken); 
-                    } 
-                }) 
-                .catch(error => { 
-                    console.log('Error refreshing token:', error);
-                }); 
-        } 
-    } 
-};
-// Assumes that access and refresh tokens are already stored in the Appsmith store.
+  // Extract the expiry timestamp from the access token payload
+  getTokenExpiry(token) {
+    try { return JSON.parse(atob(token.split('.')[1])).exp; }
+    catch (error) { console.error('Error decoding token:', error); return null; }
+  },
+
+  // Verify if the access token has expired
+  verifyAccessToken() {
+    return moment().utc() > moment().utc(appsmith.store.authAccessTokenExp);
+  },
+
+  // Refresh the access token by calling the API
+  async refreshAccessToken() {
+    const refreshToken = await api_refreshAuthToken.data;
+    if (refreshToken) this.storeToken(refreshToken.access_token, refreshToken.refresh_token);
+    else console.error('Failed to refresh access token');
+  },
+
+  // Get the access token, refresh it if needed, and return from the Appsmith store
+  getAccessToken() {
+    if (appsmith.store.authAccessToken) {
+      if (this.verifyAccessToken()) this.refreshAccessToken();
+      else this.generateAccessToken();
+    }
+    return appsmith.store.authAccessToken;
+  },
+}
 ```
+
+Configuration may vary depending on the authentication provider or tool you are using.
+
+</dd>
+
+
+2. Create a new API named `api_refreshAuthToken` and configure the API URL as required, for instance;
+
+<dd>
+
+```js
+https://api.example.io/api/user/token-refresh/
+``` 
+
+In the API configuration, provide the refresh token from the store in the request body:
+
+```js
+{
+    "refresh_token":{{appsmith.store.authRefreshToken}}
+}
+```
+</dd>
 
 </dd>
 
@@ -125,7 +161,24 @@ Once you've created a JS module, follow these steps to access its data in any ap
 
 2. In the entity explorer, select the JS module and configure the function settings as needed.
 
-3. To display data, add a Table widget and connect it to the **JS module** using mustache binding `{{}}`, like:
+<dd>
+
+*Example:* In function settings, enable the required function to run on page load. This ensures automatic token expiration verification and triggers a refresh when needed
+
+<ZoomImage
+  src="/img/funjs2.png" 
+  alt=""
+  caption=""
+/>
+
+
+
+
+
+</dd>
+
+
+3. If you have a function that retrieves data, to display the fetched information, connect it to any widget and bind using mustache syntax `{{}}`.
 
 
 <dd>
@@ -133,12 +186,21 @@ Once you've created a JS module, follow these steps to access its data in any ap
 *Example:*
 
 ```js
-{{JSModule1.myFun1.data}}
+{{users_JSModule.getdataFun.data}}
 ```
-
-With this, a new column displays the formatted data in the "year ago" format. You can connect events to execute the functions in the JS module.
-
 
 </dd>
 
 
+4. If you want to trigger a function based on a event, you can bind the JS module function to the event of that widget, like:
+
+<dd>
+
+*Example:*
+
+
+```js
+{{JSModule_manage_tokens.getAccessToken();}}
+```
+
+</dd>
