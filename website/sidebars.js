@@ -622,6 +622,16 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows',
+      items: [
+        'workflows/README',
+      ]
+
+    }, //Workflows end
 
     {
       //Advanced Concepts Start
