@@ -629,6 +629,15 @@ const sidebars = {
       label: 'Workflows',
       items: [
         'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorials',
+          items: [
+            'workflows/tutorials/set-up-webhook-workflow',
+            'workflows/tutorials/integrate-webhook-workflow',
+          ],
+        },
       ]
 
     }, //Workflows end
