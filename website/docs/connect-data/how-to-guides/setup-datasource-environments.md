@@ -38,9 +38,9 @@ This section shows how to configure the environments in Appsmith.
   caption="Datasource Environments - PostgreSQL Example"
 />
 
-1. Click the **Explorer** tab on the _Entity Explorer_ to the screen's left.
+1. Click the **Queries** tab on the _Entity Explorer_ to the screen's left.
 
-2. Click the **+** icon next to **Datasources** and select your datasource.
+2. Click the **+ New query / API** button and select your datasource.
 
 :::caution
 SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not support datasource environments.

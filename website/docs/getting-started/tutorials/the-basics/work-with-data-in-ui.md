@@ -11,7 +11,7 @@ This tutorial takes you through the process of viewing and editing individual re
 ## View details for each record
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/yKaSPmIAmsJlrNgFyvg1?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | View Details in Form">
+  <iframe src="https://demo.arcade.software/aAJdkemYDxficMkpsmCK?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | View Details in Form">
   </iframe>
 </div>
 
@@ -39,13 +39,13 @@ This tutorial takes you through the process of viewing and editing individual re
 ## Update records
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/WLQXOb6b48yaKEQ8AlWU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
+  <iframe src="https://demo.arcade.software/0Sf2FlrCzNCX2zapBlPF?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
   </iframe>
 </div>
 
-1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
+1. Select the **Queries** tab on the *Entity Explorer* to the screen's left. 
 
-2. Click the **+** icon next to **Queries/JS**. 
+2. Click the **+ New Query / API** button. 
 
 3. Select **usersTutorialDB query** from the list of options. 
 
@@ -63,11 +63,11 @@ This tutorial takes you through the process of viewing and editing individual re
 ### Trigger update on button click
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/8Dl3BXERPmUvIYJLWqX5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Run Query">
+  <iframe src="https://demo.arcade.software/Is54jOpZXtoGPUCEEFW5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Run Query">
   </iframe>
 </div>
 
-1. Go back to the canvas by clicking on the **User Information** page on the *Entity Explorer*.
+1. Go back to the canvas by clicking on the **UI** tab on the *Entity Explorer*.
 
 2. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
     * On the property pane to the right of the screen, in the **Label** property box, change the label to `Update`.

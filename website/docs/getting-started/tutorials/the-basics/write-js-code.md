@@ -11,18 +11,15 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
 ## Write JS functions
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/vxkNgBJ8W2KJ1sXd9feT?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Create JS Object">
+  <iframe src="https://demo.arcade.software/mp0l5PT6JndQqzxWAk0X?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Create JS Object">
   </iframe>
 </div>
 
+1. Select the **JS** tab on the *Entity Explorer* to the screen's left. 
 
-1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
+2. Click the **+ New JS object** to create new JS Object. 
 
-2. Click the **+** icon next to **Queries/JS**. 
-
-3. Select **New JS Object** from the list of options. 
-
-4. Delete everything within `export default {}`. Instead, paste the following function inside the braces.
+3. Delete everything within `export default {}`. Instead, paste the following function inside the braces.
 
   ```javascript
   getBackground: (gender) => {
@@ -33,15 +30,15 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
   ```
   This function returns a different hex color code based on gender. 
 
-5. Go back to the canvas by clicking the page name or the **Widget** tab.
+4. Go back to the canvas by clicking the page name or the **UI** tab.
 
-6. Select the `usersTable` Table. 
+5. Select the `usersTable` Table. 
 
-7. Click the gear icon ⚙️ next to the **gender** column. Click on the **Style** tab.
+6. Click the gear icon ⚙️ next to the **gender** column. Click on the **Style** tab.
 
 7. In the **Cell Background** property, click the **JS** button and paste the following code snippet to call the function to return the color code based on the gender of the user in the current table row.
 
-  ```
+  ```js
   {{JSObject1.getBackground(currentRow.gender)}}
   ```
 
@@ -52,7 +49,7 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
 Appsmith provides global objects and functions within its framework to help build your apps. 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/qVJL89nhp8HOstVI16Js?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Global Objects and Functions">
+  <iframe src="https://demo.arcade.software/5lOBkGnAvnfbBFsKpC4h?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Global Objects and Functions">
   </iframe>
 </div>
 

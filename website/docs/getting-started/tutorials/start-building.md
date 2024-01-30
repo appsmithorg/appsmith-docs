@@ -26,7 +26,7 @@ Let's get started!
 
 5. Select the **Edit Name** option. Rename the page to `User Information`.
 
-<ZoomImage src="/img/edit-page-name.png" alt="Edit page name" caption="Edit page name" />
+<ZoomImage src="/img/edit-page-name-t1.png" alt="Edit page name" caption="Edit page name" />
 
 ## Next steps
 
