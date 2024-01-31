@@ -24,10 +24,8 @@ A JavaScript module is a reusable code unit that encapsulates specific functiona
 ## Create a module
 
 
-
-
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/smRCw39JntP5g2IyVV8Q?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/3sTHVS5YLf5WTA05iplD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -76,52 +74,75 @@ https://api.example.io/api/user/token-auth/
 export default {
   // Generate a new access token by calling the authorization API
   async generateAccessToken() {
-    const generatedToken = await api_AuthToken.data;
-    if (generatedToken) this.storeToken(generatedToken.access_token, generatedToken.refresh_token);
+    await api_authToken.run();
+    const generatedToken = api_authToken.data;
+    if (generatedToken) {
+      this.storeToken(generatedToken.access_token, generatedToken.refresh_token);
+    }
   },
 
   // Store the access token, refresh token, and expiry in the Appsmith store
   storeToken(accessToken, refreshToken) {
     storeValue("authAccessToken", accessToken);
-    storeValue("authRefreshToken", refreshToken);
+    if (refreshToken) {
+      storeValue("authRefreshToken", refreshToken);
+    }
     storeValue("authAccessTokenExp", this.getTokenExpiry(accessToken));
   },
 
   // Extract the expiry timestamp from the access token payload
   getTokenExpiry(token) {
-    try { return JSON.parse(atob(token.split('.')[1])).exp; }
-    catch (error) { console.error('Error decoding token:', error); return null; }
+    try {
+      return JSON.parse(atob(token.split('.')[1])).exp;
+    } catch (error) {
+      console.error('Error decoding token:', error);
+      return null;
+    }
   },
 
   // Verify if the access token has expired
   verifyAccessToken() {
-    return moment().utc() > moment().utc(appsmith.store.authAccessTokenExp);
+    return new Date().getTime() > new Date(appsmith.store.authAccessTokenExp).getTime();
   },
 
   // Refresh the access token by calling the API
   async refreshAccessToken() {
-    const refreshToken = await api_refreshAuthToken.data;
-    if (refreshToken) this.storeToken(refreshToken.access_token, refreshToken.refresh_token);
-    else console.error('Failed to refresh access token');
-  },
-
-  // Get the access token, refresh it if needed, and return from the Appsmith store
-  getAccessToken() {
-    if (appsmith.store.authAccessToken) {
-      if (this.verifyAccessToken()) this.refreshAccessToken();
-      else this.generateAccessToken();
+    // call to 
+    await api_refreshAuthToken.run()
+    const refreshToken = api_refreshAuthToken.data;
+    if (refreshToken) {
+      // update the Appsmith store with the new access and refresh tokens
+      console.log("Token: " + refreshToken.access_token);
+      this.storeToken(refreshToken.access_token);
+    } else {
+      console.error('Failed to refresh access token');
     }
-    return appsmith.store.authAccessToken;
   },
-}
+  
+  // Get the access token, refresh it if needed, and return from the Appsmith store
+  async getAccessToken() {
+    // verify if the access token is present in the Appsmith store
+    if (appsmith.store.authAccessToken) {
+      // verify if the token expiry
+      if (!this.verifyAccessToken()) {
+        //generate an access token
+        await this.refreshAccessToken();
+        //this.generateAccessToken();
+      }
+    } else {
+      await this.generateAccessToken();
+    }
+    // return the access token from Appsmith store
+    return appsmith.store.authAccessToken;
+  }
+};
 ```
 
 Configuration may vary depending on the authentication provider or tool you are using.
 
 </dd>
 
-
-* Create a new API and configure the API URL as required to refren the token, for instance;
+* Create a new API to handle the generation of tokens when an authentication token expires.
 
 <dd>
 
@@ -151,7 +172,7 @@ In the API configuration, provide the refresh token from the store in the reques
 Once you've created a JS module, follow these steps to access its data in any application:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/4JWwouLYCxQ94M5Lb7YQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/dKtIOMZf54RgP5jxnkji?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
