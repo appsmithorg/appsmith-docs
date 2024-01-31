@@ -130,7 +130,7 @@ You cannot specify MONGODB-CR as the authentication mechanism when connecting to
 
 The following section is a reference guide that provides a complete description of all the read and write operation commands with their parameters to create MongoDB queries.
 
-<ZoomImage src="/img/query-mongo-ss.png" alt="Create MongoDB queries" caption="Create MongoDB queries" />
+<ZoomImage src="/img/mongoide.png" alt="Create MongoDB queries" caption="Create MongoDB queries" />
 
 :::info
 See [**Query and Write Operation Commands**](https://docs.mongodb.com/manual/reference/command/nav-crud/) for the MongoDB database commands.
