@@ -88,7 +88,11 @@ Sorts query results by a column value. Expects a JSON array containing a single 
 Sets a record that acts as a starting cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the last record from the most recent execution of a query:
 
 ```javascript
-{{ ListQuery.data[ListQuery.data.length - 1] }}
+//List example
+{{ users_List.data[users_List.data.length - 1] }}
+
+//Table example
+{{ user_Table.tableData[user_Table.tableData.length - 1] }}
 ```
 
 Each time the query is run, it fetches the next set of results that come after the previous execution.
