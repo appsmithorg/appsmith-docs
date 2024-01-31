@@ -26,7 +26,6 @@ Query Modules in Appsmith are specialized modules designed to encapsulate and re
 
 When working with queries, there might be scenarios where you need to change query parameters dynamically. Query Modules facilitate this by providing `inputs` that can be linked to widgets or app-level parameters. These inputs act as dynamic variables, enabling developers to modify query parameters based on user interactions or changing application requirements. 
 
-
 * Query Modules require a dedicated datasource creation for context-specific data retrieval. Datasources created at the app level won't work within Query Modules.
 
 * Any updates or modifications made to a Query Module are instantly reflected in all the applications where the module is used.
@@ -36,7 +35,7 @@ When working with queries, there might be scenarios where you need to change que
 * Ensure you publish the Query Module to reflect the latest changes across all applications.
 
 
-#### Limitation
+#### Limitations
 
 * Direct binding of JS Module or JSObject data inside the query modules is not supported. 
 
@@ -46,10 +45,7 @@ When working with queries, there might be scenarios where you need to change que
 
 * Importing CURL in packages is not supported in the closed beta.
 
-
-
 See [How to create a Query Module](/packages/how-to-guides/create-query-module)
-
 
 ### JavaScript Modules
 
@@ -63,7 +59,7 @@ JavaScript Modules in Appsmith are reusable JavaScript objects that can be share
 
 
 
-#### Limitation
+#### Limitations
 
 * Unlike Query Modules, JavaScript Modules have a limitation—they do not support direct value passing from the app. You can use Appsmith objects and functions to pass or store values between the application and the JavaScript Module.
 
