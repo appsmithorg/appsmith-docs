@@ -87,6 +87,8 @@ Sorts query results by a column value. Expects a JSON array containing a single 
 
 Sets a record that acts as a starting cursor for pagination. Expects an object that is a whole document, i.e. a document that was returned from a prior query. For example, you can pass the last record from the most recent execution of a query:
 
+*Firestore pagination Example:* 
+
 ```javascript
 //List example
 {{ users_List.data[users_List.data.length - 1] }}
