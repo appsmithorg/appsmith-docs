@@ -69,7 +69,7 @@ The following section is a reference guide that provides a complete description 
 
 The following section provides examples of creating basic CRUD queries on PostgreSQL.
 
-<ZoomImage src="/img/query-postgresql.png" alt="Write SQL commands in the query editor" caption="Write SQL commands in the query editor" />
+<ZoomImage src="/img/postgreside.png" alt="Write SQL commands in the query editor" caption="Write SQL commands in the query editor" />
 
 :::info
 For the SQL syntax, see the official [**PostgreSQL documentation**](https://www.postgresql.org/docs/12/index.html).
