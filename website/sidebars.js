@@ -623,6 +623,38 @@ const sidebars = {
       ]
     }, //CODE end
 
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages',
+      items: [
+        'packages/overview',
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-To Guides',
+          link: { type: 'doc', id: 'packages/how-to-guides/README' },
+          items: [
+            'packages/how-to-guides/create-query-module',
+            'packages/how-to-guides/create-js-module'
+          ]
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'Concepts',
+          link: {
+            type: 'doc',
+            id: 'packages/concepts/README',
+          },
+          items: [
+
+          ],
+        },
+      ]
+    }, //module end
+
     {
       //Advanced Concepts Start
       type: 'category',
