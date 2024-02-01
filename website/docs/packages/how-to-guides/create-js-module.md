@@ -25,13 +25,12 @@ A JavaScript module is a reusable code unit that encapsulates specific functiona
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/3sTHVS5YLf5WTA05iplD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/Nx2dcZBHP12JyiREzDZF?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-
-1. Click the **Create New** button from the top-right corner of your workspace and create a new package.
+1. Click the **Create New** button from the top-right corner of your workspace and **Create a new package**.
 
 2. Click **New Module** > **JS Module**.
 
@@ -180,42 +179,58 @@ In the API configuration, provide the refresh token from the store in the reques
 
 
 
-## Use JS Create a new package by clicking on the top-right corner of your workspace.
-
-Module
-
+## Use JS Module
 
 Once you've created a JS module, follow these steps to access its data in any application:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/dKtIOMZf54RgP5jxnkji?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/Nx2dcZBHP12JyiREzDZF?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
-
 
 
 1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
 2. In the entity explorer, select the JS module and configure the function settings as needed.
 
+3. Create a new API inside the app to fetch data using the generated token.
+
+
 <dd>
 
-*Example:* In function settings, enable the required function to run on page load. This ensures automatic token expiration verification and triggers a refresh when needed
+*Example:* 
 
-<ZoomImage
-  src="/img/funjs2.png" 
-  alt=""
-  caption=""
-/>
+```js
+https://api.baserow.io/api/database/rows/table/245748/?user_field_names=true
+```
 
+For the authorization header, add:
 
+```js
+Key: Authorization 
+Value: JWT {{Auth_Module.getAccessToken.data}}
+```
 
+Configure the query based on your specific endpoint or tool requirements.
 
 
 </dd>
 
+4. Create a new JavaScript object to execute the authentication module before fetching data, preventing potential errors in case of simultaneous execution on page load.
 
-3. If you have a function that retrieves data, to display the fetched information, connect it to any widget and bind it using mustache syntax `{{}}`.
+<dd>
+
+```js
+export default {
+	onPageLoad: () => {
+		Auth_Module.getAccessToken()
+			.then(() => getusers_API.run());
+}}
+```
+
+</dd>
+
+5. To display the data, drag a Table widget, enable JS, and bind the data, like:
 
 
 <dd>
@@ -223,7 +238,7 @@ Once you've created a JS module, follow these steps to access its data in any ap
 *Example:*
 
 ```js
-{{JSModule_manage_tokens.getAccessToken.data}}
+{{getusers_API.data.results}}
 ```
 
 </dd>
