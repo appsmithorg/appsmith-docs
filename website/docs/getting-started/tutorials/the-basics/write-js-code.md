@@ -11,7 +11,7 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
 ## Write JS functions
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/mp0l5PT6JndQqzxWAk0X?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Create JS Object">
+  <iframe src="https://demo.arcade.software/mp0l5PT6JndQqzxWAk0X?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -49,7 +49,7 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
 Appsmith provides global objects and functions within its framework to help build your apps. 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/5lOBkGnAvnfbBFsKpC4h?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Global Objects and Functions">
+  <iframe src="https://demo.arcade.software/5lOBkGnAvnfbBFsKpC4h?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
