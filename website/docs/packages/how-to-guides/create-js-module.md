@@ -216,7 +216,7 @@ Configure the query based on your specific endpoint or tool requirements.
 
 </dd>
 
-4. Create a new JavaScript object to execute the authentication module before fetching data, preventing potential errors in case of simultaneous execution on page load.
+4. Create a new JavaScript object to execute the authentication module before fetching data, preventing potential errors in case of simultaneous execution on page load. 
 
 <dd>
 
@@ -227,6 +227,10 @@ export default {
 			.then(() => getusers_API.run());
 }}
 ```
+
+Set this JSobject to run on page load.
+
+
 
 </dd>
 
