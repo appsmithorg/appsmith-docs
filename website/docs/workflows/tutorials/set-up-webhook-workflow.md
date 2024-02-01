@@ -17,7 +17,7 @@ By the end of this lesson, you will learn how to:
 
 * Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Ensure you are on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
-* Ensure you are aware of basic knowledge of creating datasource, queries and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+* Ensure you have basic knowledge of creating datasource, queries, and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create workflow
 
@@ -45,7 +45,7 @@ export default {
 6. Copy and save the **URL** and the **Bearer Token**.
 7. Click **Publish** in the top right corner to publish your workflow.
 
-You've created your first workflow, and it's available in your workspace for integrating it in your apps.
+You've created your first workflow, and it's available in your workspace for integrating it into your apps.
 
 ## Integrate workflow with app
 
@@ -68,7 +68,7 @@ Follow the steps below to integrate the workflow with your app:
     ```javascript
     {
     "success": true,
-    "message": "Workflow instance started running succesfully",
+    "message": "Workflow instance started running successfully",
     "data": {
         "workflowInstanceId": "workflowInstance-rjwbe41QF1P1s90YwYw-1"
         }
