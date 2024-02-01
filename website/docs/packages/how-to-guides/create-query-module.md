@@ -6,7 +6,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Reuse query modules</h1>
+ <h1>Reuse queries</h1>
 
 <Tags
 tags={[
