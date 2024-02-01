@@ -2,25 +2,26 @@
 description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
 ---
 
-# Lesson 2 - Trigger Workflow from your App
+# Lesson 2 - Trigger Workflow from Your App
 
-In this lesson, you will create an approval workflow designed to update refund requests according to user actions, either approval or rejection, send an email notification to customer for notifying the outcome, and triggered from your Appsmith app.
+In the preceding lesson, you integrated a workflow into your application. This lesson will guide you through adding complexity to your workflow to advance your skills. You will customize the workflow to update a record in your database based on user actions, notify the user via email about the update, and trigger the workflow execution when the user performs a specific action within your Appsmith app.
+
+Let's take an example of handling refund requests initiated by users, where users can approve or reject a refund request, and the individuals involved will receive a notification about the outcome.
 
 By the end of this lesson, you will learn how to:
-
 * Read parameters from the app and pass them to the workflow
-* Write workflow logic to read parameters, pass them to queries for approval, and send an email
+* Craft workflow logic to interpret parameters, pass them to queries, and send email notifications
 * Execute the workflow from the app
 
 ## Prerequisites
 * Ensure you have completed [Lesson 1- Set up Webhook Workflow](/workflows/tutorials/set-up-webhook-workflow) and have a workflow configured in your workspace.
-* Ensure you are aware of basic knowledge of creating datasource, queries and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+* Ensure you have basic knowledge of creating datasource, queries and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
-## Bring approval data into app
+## Bring data into app
 
-Follow these steps to display pending refund requests in the app:
+Follow these steps to display your refund data in the app:
 
-1. In your application, go to the sidebar and click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [PostgreSQL](/connect-data/reference/querying-postgres) datasource. Give it a meaningful and unique name, such as _CustomerRefunds_.
+1. In your application, go to the sidebar and click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [PostgreSQL](/connect-data/reference/querying-postgres) datasource, and name it as _CustomerRefunds_.
 
 2. Enter the following details in the PostgreSQL connection parameter fields:
     * **Host Address**: `mockdb.internal.appsmith.com`
@@ -46,19 +47,19 @@ Follow these steps to display pending refund requests in the app:
 
 9. Click the _Queries_ tab on the sidebar, click the **TriggerApproval** query and replace `{}` with `{{this.params}}` in the **Trigger data** property.
 
-10. Click the _JS_ tab on the sidebar and create a new JS object, and rename it to _JS\_Approve\_Or\_Reject\_Refund_. Remove the auto-generated code and add the below code to it:
+10. Click the  _JS_ tab on the sidebar, create a new JS object, and name it  _JS\_Approve\_Or\_Reject\_Refund_. Delete the auto-generated code and add the below code to it:
     ```javascript
     export default {
         async getApproveOrRejectAction(action) {
             if (action) {
                 try {
-                     // This JS Object calls the workflow query configured in your app
-                     // that executes the workflow
+                    // This JS Object calls the workflow query configured in your app
+                    // that executes the workflow
                     await TriggerApprovals.run({
                         "id": tbl_refund_requests.triggeredRow.refund_id,
                         "approve_or_reject_status": action,
                         "name": tbl_refund_requests.triggeredRow.customer_name,
-					    "email": tbl_refund_requests.triggeredRow.customer_email
+                        "email": tbl_refund_requests.triggeredRow.customer_email
                     });
                 } catch (error) {
                     console.error("Error:", error.message || error);
@@ -68,16 +69,16 @@ Follow these steps to display pending refund requests in the app:
     };
     ```
 
-11. Bind the JS object execution to the **Approve** and **Reject** buttons in the Table Widget, setting `action` parameter as `Approved` and `Rejected` for the buttons respectively.
+11. Bind the JS object execution to the **Approve** and **Reject** buttons in the Table Widget, setting `action` parameter as `Approved` and `Rejected` for the buttons, respectively.
 
 
 ## Manage approvals in workflow
 
-To manage the approvals in the workflow, you will need to configure datasources, create queries and write JavaScript code in the JS object. The process works similar to how you configure datasources, create queries, and JS Objects in your Appsmith apps.
+To manage approvals within the workflow, you'll configure datasources, create queries, and write JavaScript code in the JS object. This process is similar to configuring datasources, creating queries, and JS Objects in your Appsmith apps.
 
 ### Set up SMTP datasource and query
 
-Follow these steps to set up datasources, and create query for sending email:
+Follow these steps to set up datasources and create query for sending email:
 
 1. Click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [SMTP](/connect-data/reference/using-smtp) datasource.
 
@@ -138,7 +139,7 @@ Follow these steps to manage the query execution and pass parameters to appropri
             return true;
         }
         , 
-         // Email content generation logic based on approval or rejection action
+        // Email content generation logic based on approval or rejection action
         getEmailBody(approve_or_reject_status, customer_name){
             if (approve_or_reject_status === 'Approved') {
                 return 'Dear ' +  customer_name + ',\n\nWe are pleased to inform you that your refund request has been approved. The refunded amount will be processed and credited to your account shortly.\n\nThank you for your patience and understanding.\n\nSincerely,\nThe Customer Support Team'

@@ -31,7 +31,7 @@ Follow these steps to create a new workflow within your workspace. The newly cre
 
 1. Click the **Create New** button in your workspace, and from the available options, choose **New Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor.
 2. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1**. For example, _Approve Refund Requests and Notify Customers_.
-3. In the JS code editor, delete the boilerplate code and add the below code snippet:
+3. In the JS code editor, delete the auto-generated code and add the below code to it:
 
 ```javascript
 export default {
@@ -45,7 +45,7 @@ export default {
 6. Copy and save the **URL** and the **Bearer Token**.
 7. Click **Publish** in the top right corner to publish your workflow.
 
-You've created your first workflow, and it's available in your workspace for integration with your apps.
+You've created your first workflow, and it's available in your workspace for integrating it in your apps.
 
 ## Integrate workflow with app
 
@@ -76,7 +76,6 @@ Follow the steps below to integrate the workflow with your app:
     ```
 You've integrated your workflow with the app.
 
-
 ## Next steps
 
-* [Lesson 2 - Create Single Approval Workflow](/workflows/tutorials/trigger-workflow-from-app)
+* [Lesson 2 - Trigger Workflow from Your App](/workflows/tutorials/trigger-workflow-from-app)
