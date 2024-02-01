@@ -79,4 +79,4 @@ You've integrated your workflow with the app.
 
 ## Next steps
 
-* [Lesson 2 - Create Single Approval Workflow](/workflows/tutorials/single-approval-workflow)
+* [Lesson 2 - Create Single Approval Workflow](/workflows/tutorials/trigger-workflow-from-app)
