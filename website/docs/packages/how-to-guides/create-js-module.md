@@ -1,12 +1,12 @@
 ---
-title: Build and use a JS module
+title: Reuse JS modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Build and use a JS module</h1>
+ <h1>Reuse JS modules</h1>
 
 <Tags
 tags={[
@@ -21,7 +21,7 @@ tags={[
 A JavaScript module is a reusable code unit that encapsulates specific functionalities, facilitating organized code structure and maintenance. It enables developers to group related variables, functions, or classes, promoting code reusability and separation of concerns.
 
 
-## Create a module
+## Create JS module
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -31,15 +31,13 @@ A JavaScript module is a reusable code unit that encapsulates specific functiona
 
 
 
-1. **Create a new package** by clicking on the top-right corner of your workspace.
+1. Click the **Create New** button from the top-right corner of your workspace and create a new package.
 
 2. Click **New Module** > **JS Module**.
 
 
 :::info
-* You can create queries and JS objects specific to this module. The **Main** JS object represents the JS module code.
-
-* Passing Query Module data to JS modules is not supported.
+The JS module allows you to create queries and JS objects. The Main JS object represents the code for the JS module.
 :::
 
 
@@ -57,6 +55,10 @@ https://api.example.io/api/user/token-auth/
 
 
 </dd>
+
+:::caution
+Passing Query Module data to JS modules is not supported.
+:::
 
 4. Configure the Main JS Object / JS Module Code based on your requirements.
 
@@ -76,9 +78,11 @@ export default {
   async generateAccessToken() {
     await api_authToken.run();
     const generatedToken = api_authToken.data;
-    if (generatedToken) {
-      this.storeToken(generatedToken.access_token, generatedToken.refresh_token);
-    }
+    if (generatedToken)
+      this.storeToken(
+        generatedToken.access_token,
+        generatedToken.refresh_token,
+      );
   },
 
   // Store the access token, refresh token, and expiry in the Appsmith store
@@ -93,48 +97,58 @@ export default {
   // Extract the expiry timestamp from the access token payload
   getTokenExpiry(token) {
     try {
-      return JSON.parse(atob(token.split('.')[1])).exp;
+      return JSON.parse(atob(token.split(".")[1])).exp * 1000;
     } catch (error) {
-      console.error('Error decoding token:', error);
+      console.error("Error decoding token:", error);
       return null;
     }
   },
 
   // Verify if the access token has expired
-  verifyAccessToken() {
-    return new Date().getTime() > new Date(appsmith.store.authAccessTokenExp).getTime();
+  verifyAccessTokenExpired() {
+    console.log(
+      "time left",
+      (new Date(appsmith.store.authAccessTokenExp).getTime() -
+        new Date().getTime()) /
+        (1000 * 60),
+      "mins",
+    );
+    return (
+      new Date().getTime() >
+      new Date(appsmith.store.authAccessTokenExp).getTime()
+    );
   },
 
-  // Refresh the access token by calling the API
+  // Refresh the access token when expired by calling the API
   async refreshAccessToken() {
-    // call to 
-    await api_refreshAuthToken.run()
+    // call to
+    await api_refreshAuthToken.run();
     const refreshToken = api_refreshAuthToken.data;
     if (refreshToken) {
       // update the Appsmith store with the new access and refresh tokens
       console.log("Token: " + refreshToken.access_token);
       this.storeToken(refreshToken.access_token);
     } else {
-      console.error('Failed to refresh access token');
+      console.error("Failed to refresh access token");
     }
   },
-  
+
   // Get the access token, refresh it if needed, and return from the Appsmith store
   async getAccessToken() {
     // verify if the access token is present in the Appsmith store
     if (appsmith.store.authAccessToken) {
-      // verify if the token expiry
-      if (!this.verifyAccessToken()) {
-        //generate an access token
+      // verify if the token has expired
+      if (this.verifyAccessTokenExpired()) {
+        //refresh the access token
         await this.refreshAccessToken();
-        //this.generateAccessToken();
       }
     } else {
+      //generate initial access token with authorization
       await this.generateAccessToken();
     }
     // return the access token from Appsmith store
     return appsmith.store.authAccessToken;
-  }
+  },
 };
 ```
 
@@ -166,7 +180,9 @@ In the API configuration, provide the refresh token from the store in the reques
 
 
 
-## Reuse Modules 
+## Use JS Create a new package by clicking on the top-right corner of your workspace.
+
+Module
 
 
 Once you've created a JS module, follow these steps to access its data in any application:
