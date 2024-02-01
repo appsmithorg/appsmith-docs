@@ -1,12 +1,12 @@
 ---
-title: Build and use a query module
+title: Reuse query modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Build and use a query module</h1>
+ <h1>Reuse query modules</h1>
 
 <Tags
 tags={[
@@ -20,7 +20,7 @@ tags={[
 
 A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
-## Create a query module
+## Create query module
 
 Module are reusable entities that can be created within Packages. Within packages, you can create multiple query and JS modules.
 
@@ -43,7 +43,7 @@ Module are reusable entities that can be created within Packages. Within package
 
 Now, with these steps, you have successfully created a query module within your package. You can now reuse this query across multiple applications.
 
-## Pass parameters
+## Pass parameters to module
 
 To pass input values from any app to the query module for dynamic updates, follow these steps:
 
@@ -75,7 +75,7 @@ SELECT * FROM public."users" OFFSET {{inputs.offset}} LIMIT {{inputs.limit}};
 
 3. Run and publish the query module.
 
-## Reuse modules
+## Use query module
 
 
 Once you've created a query module, follow these steps to access its data in any application:
