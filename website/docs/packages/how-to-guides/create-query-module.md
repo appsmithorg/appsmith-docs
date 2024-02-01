@@ -1,5 +1,5 @@
 ---
-title: Reuse query modules
+title: Reuse queries
 hide_title: true
 ---
 
