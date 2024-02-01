@@ -35,8 +35,6 @@ While Blocks serve as templates for reusable work, Modules extend this functiona
 
 See [What are Modules](/packages/concepts)
 
-
-
 <ZoomImage
   src="/img/modules-con.png" 
   alt=""
@@ -52,6 +50,14 @@ Query Modules encapsulate and reuse database queries across multiple application
 * Modifications to a Query Module are instantly reflected in all applications where it's used.
 * Allows passing distinct inputs from various apps without impacting the overall query configuration.
 
+**Limitations**
+
+* Direct binding of JS Module or JSObject data inside the query modules is not supported. 
+* The feature of binding dynamic values to query modules using `this.params.(…)` is not yet supported.
+* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
+* Importing CURL in packages is not supported in the closed beta.
+
+
 See How to [Reuse query modules](/packages/how-to-guides/create-query-module)
 
 #### JavaScript Modules
@@ -60,7 +66,16 @@ JavaScript Modules in Appsmith are reusable objects for JavaScript functions and
 
 * Supports the creation of datasource queries and JS objects for effective data manipulation.
 * Like Query Modules, any updates or modifications to a JavaScript Module are reflected instantly across all applications using the module.
-* To pass JSObject values to queries, use Appsmith Global Objects, like this.params.paramName.
+* To pass JSObject values to queries use Appsmith [Global Objects](/write-code/reference), like `this.params.paramName`.
+
+
+**Limitations**
+
+* Unlike Query Modules, JavaScript Modules have a limitation—they do not support direct value passing from the app. You can use Appsmith objects and functions to pass or store values between the application and the JavaScript Module.
+* Direct binding of Query Module data inside the JS modules is not supported. 
+* Support for custom JS libraries is not available in the closed beta.
+
+
 
 See How to [Reuse JS modules](/packages/how-to-guides/create-js-module)
 

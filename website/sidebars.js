@@ -627,7 +627,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Packages',
+      label: 'Modules',
       items: [
         'packages/overview',
         {
