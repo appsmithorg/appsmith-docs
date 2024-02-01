@@ -2,9 +2,9 @@
 description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
 ---
 
-# Lesson 2 - Create Single Approval Workflow
+# Lesson 2 - Trigger Workflow from your App
 
-In this lesson, you will create a single approval workflow designed to update refund requests according to user actions, either approval or rejection, and send an email notification to customer for notifying the outcome.
+In this lesson, you will create an approval workflow designed to update refund requests according to user actions, either approval or rejection, send an email notification to customer for notifying the outcome, and triggered from your Appsmith app.
 
 By the end of this lesson, you will learn how to:
 

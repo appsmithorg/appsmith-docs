@@ -635,7 +635,7 @@ const sidebars = {
           label: 'Tutorials',
           items: [
             'workflows/tutorials/set-up-webhook-workflow',
-            'workflows/tutorials/single-approval-workflow',
+            'workflows/tutorials/trigger-workflow-from-app',
           ],
         },
       ]
