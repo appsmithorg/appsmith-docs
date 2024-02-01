@@ -47,6 +47,12 @@ When working with queries, there might be scenarios where you need to change que
 
 See [How to create a Query Module](/packages/how-to-guides/create-query-module)
 
+<ZoomImage
+  src="/img/modulesintro.png" 
+  alt=""
+  caption=""
+/>
+
 ### JavaScript Modules
 
 JavaScript Modules in Appsmith are reusable JavaScript objects that can be shared across different applications within the same workspace. These modules empower developers to encapsulate and reuse JavaScript functions and objects, promoting code reusability and a standardized approach to data manipulation.

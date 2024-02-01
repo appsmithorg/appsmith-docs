@@ -33,16 +33,35 @@ Modules in Appsmith are integral components of a **Package** tailored for enterp
 
 While Blocks serve as templates for reusable work, Modules extend this functionality by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
+See [What are Modules](/packages/concepts)
+
+
 
 <ZoomImage
-  src="/img/modulesintro.png" 
+  src="/img/modules-con.png" 
   alt=""
   caption=""
 />
 
 
-* [What are Modules](/packages/concepts)
-* [How to Build and use a JS module](/packages/how-to-guides/create-js-module)
-* [Build and use a query module](/packages/how-to-guides/create-query-module)
+#### Query Modules
+
+Query Modules encapsulate and reuse database queries across multiple applications. They offer dynamic inputs for changing query parameters based on user interactions.
+
+* Requires a dedicated datasource creation for context-specific data retrieval.
+* Modifications to a Query Module are instantly reflected in all applications where it's used.
+* Allows passing distinct inputs from various apps without impacting the overall query configuration.
+
+See How to [Reuse query modules](/packages/how-to-guides/create-query-module)
+
+#### JavaScript Modules
+
+JavaScript Modules in Appsmith are reusable objects for JavaScript functions and objects. They promote code reusability and a standardized approach to data manipulation.
+
+* Supports the creation of datasource queries and JS objects for effective data manipulation.
+* Like Query Modules, any updates or modifications to a JavaScript Module are reflected instantly across all applications using the module.
+* To pass JSObject values to queries, use Appsmith Global Objects, like this.params.paramName.
+
+See How to [Reuse JS modules](/packages/how-to-guides/create-js-module)
 
 
