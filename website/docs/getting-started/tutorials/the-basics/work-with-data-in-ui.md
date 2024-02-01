@@ -37,6 +37,7 @@ This tutorial takes you through the process of viewing and editing individual re
 5. And finally to view the user's photo, drop an **Image** widget inside the Form. 
     * In the **Image** property box, type `{{usersTable.selectedRow.image}}`.
 
+
 🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
 ## Update records
@@ -62,6 +63,7 @@ This tutorial takes you through the process of viewing and editing individual re
   dob = {{dobInput.selectedDate}}
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
+
 
 ### Trigger update on button click
 
