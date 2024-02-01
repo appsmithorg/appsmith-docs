@@ -39,3 +39,9 @@ Signup
 reCAPTCHA
 Edition
 Embed
+Datasources
+Workflow
+Workflows
+Webhook
+workflow
+SMTP
