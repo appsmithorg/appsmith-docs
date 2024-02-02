@@ -1,6 +1,6 @@
 ---
 description: This page demonstrates how to establish communication between the embedded Appsmith app and your App. 
-title: CCommunicate with Embedded Appsmith
+title: Communicate with Embedded Appsmith
 hide_title: true
 ---
 <!--vale off-->
