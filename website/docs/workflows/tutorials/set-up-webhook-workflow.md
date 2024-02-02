@@ -16,7 +16,7 @@ By the end of this lesson, you will learn how to:
 ## Prerequisites
 
 * Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Ensure you are on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
+* The Workflows feature is only available on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 * Ensure you have basic knowledge of creating datasource, queries, and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create workflow
