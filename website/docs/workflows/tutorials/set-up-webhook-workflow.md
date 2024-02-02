@@ -4,7 +4,7 @@ description: This page provides detailed steps to set up a Webhook workflow on A
 
 # Lesson 1 - Set up Webhook Workflow
 
-Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial takes you through the process of setting up a Webhook workflow, integrating it with your Appsmith app, and triggering the workflow execution from your Appsmith app.
+Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial takes you through the process of setting up a Webhook workflow, integrating it with your Appsmith app, and triggering the workflow execution from your Appsmith app. The Workflows feature is only available on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 
 By the end of this lesson, you will learn how to:
 
@@ -16,7 +16,6 @@ By the end of this lesson, you will learn how to:
 ## Prerequisites
 
 * Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* The Workflows feature is only available on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 * Ensure you have basic knowledge of creating datasource, queries, and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create workflow
