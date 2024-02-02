@@ -1,12 +1,12 @@
 ---
 description: This page demonstrates how to establish communication between the embedded Appsmith app and your App. 
-title: Communicate Between Your App and Appsmith
+title: CCommunicate with Embedded Appsmith
 hide_title: true
 ---
 <!--vale off-->
 <div className="tag-wrapper">
 
-# Communicate Between Your App and Appsmith
+# Communicate with Embedded Appsmith
 
 <Tags
   tags={[
@@ -126,4 +126,4 @@ You may choose to execute APIs, and queries or store the message in Appsmith sto
 
 ## See also
 
-* [Communicate Between Iframe widget and Appsmith](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
+* [Communicate with Iframe Widget](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
