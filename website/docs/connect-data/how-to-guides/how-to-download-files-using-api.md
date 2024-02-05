@@ -48,7 +48,7 @@ To download a file using the file data, follow these steps:
 ## Download multiple files
 To download multiple files, follow these steps:
 1. Drag and drop a Button widget on to the canvas and rename it to `Download all`.
-2. In **Queries/JS**, click **+ Add a new query/JS Object**, and then select **New JS Object**. Add code to download multiple files.
+2. In **JS** tab, create a **New JS Object**, and add code to download multiple files.
    
    Example:
    ```jsx

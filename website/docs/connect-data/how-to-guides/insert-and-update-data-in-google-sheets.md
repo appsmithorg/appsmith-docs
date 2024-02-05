@@ -18,7 +18,7 @@ This guide shows you how to insert and update data in Google Sheets.
 To insert a row into your Google Sheet, follow these steps:
 
 1. Drag and drop a [Button](/reference/widgets/button) widget to the Form widget and rename it to `Submit`.
-2. In **Queries/JS**, add a new query.
+2. Select the **Queries** tab and create a new query.
 3. Select the datasource corresponding to your Google Sheet and rename it to `insertUserDetails`.
 4. In **Operation**, select **Insert One**.
 5. Select **Sheet Rows** in **Entity**.
@@ -60,7 +60,7 @@ To upload a CSV file and configure the query to insert multiple rows into your G
 
 1. Drag and drop a [Filepicker](/reference/widgets/filepicker) widget on the canvas and rename it to `userDetailsFiles`.
 2. In the **Data format** property, select **Array of Objects**.
-3. In **Queries/JS**, select the datasource corresponding to your Google Sheet and rename it to `insert_new_users`.
+3. In **Queries** tab, select the datasource corresponding to your Google Sheet and rename it to `insert_new_users`.
 4. In **Operation**, select **Insert Many**.
 5. Select **Sheet Rows** in **Entity**.
 6. Select the **Spreadsheet**, **Sheet name**, and enter the **Table heading row index**.
@@ -101,7 +101,7 @@ To configure the query to update specific fields of a row using the Form widget,
    }}
    ```
 
-2. In **Queries/JS**, add a new query.
+2. In **Queries** tab, create a new query.
 3. Select the datasource corresponding to your Google Sheet and rename it to `updateUser`.
 4. In **Operation**, select **Update One**.
 5. Select **Sheet Rows** in **Entity**.
@@ -146,7 +146,7 @@ To configure the query to update specific fields of a row using the Form widget,
 To configure the query to update multiple rows, follow these steps:
 
 1. In the **Update mode** property of the Table widget, select **Multiple Rows**.
-2. In **Queries/JS**, add a new query.
+2. Select the **Queries** tab and create a new query.
 3. Select the datasource corresponding to your Google Sheet and rename it to `updateUsers`.
 4. In **Operation**, select **Update Many**.
 5. Select **Sheet Rows** in **Entity**.

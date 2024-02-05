@@ -14,7 +14,6 @@ A Table widget connected to a fetch query. To connect data to a table, see the 
 
 ## Configure Form and Modal
 
-
 This section guides you on how to open a Modal by clicking a button in a Table and configure a Form inside the Modal.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>

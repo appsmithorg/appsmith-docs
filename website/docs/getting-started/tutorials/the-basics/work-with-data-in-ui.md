@@ -10,21 +10,24 @@ This tutorial takes you through the process of viewing and editing individual re
 
 ## View details for each record
 
+
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/yKaSPmIAmsJlrNgFyvg1?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | View Details in Form">
+  <iframe src="https://demo.arcade.software/NrxLsXWwZvT7dRLX0ahx?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-1. From the **Widgets** tab, drag and drop a **Form** widget on the canvas to the right of the Table widget. 
+1. On the **UI** tab, click **+ New Widget** and drop a **Form** widget on the canvas to the right of the Table widget. 
 
 2. Click the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
 
-3. Now add widgets on the Form to view user details. For the user's name, drop an **Input** widget inside the Form. 
+3. Now add widgets on the Form to view user details. 
+    * For the user's name, drop an **Input** widget inside the Form. 
     * On the property pane to the right, click on the default name **Input1** and rename it to `nameInput`. 
     * In the **Text** property box, enter `Name`. 
     * In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
 
-4. You also need to view the user's date of birth. Drop a **Datepicker** widget inside the Form. 
+4. You also need to view the user's date of birth. 
+    * Drop a **Datepicker** widget inside the Form. 
     * Rename the widget to `dobInput`.
     * In the **Text** property box, enter `DOB`.
     * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
@@ -34,18 +37,19 @@ This tutorial takes you through the process of viewing and editing individual re
 5. And finally to view the user's photo, drop an **Image** widget inside the Form. 
     * In the **Image** property box, type `{{usersTable.selectedRow.image}}`.
 
+
 🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
 ## Update records
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/WLQXOb6b48yaKEQ8AlWU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
+  <iframe src="https://demo.arcade.software/2xvW1VXHyYtXYz3mKTIj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
   </iframe>
 </div>
 
-1. Select the **Explorer** tab on the *Entity Explorer* to the screen's left. 
+1. Select the **Queries** tab on the *Entity Explorer* to the screen's left. 
 
-2. Click the **+** icon next to **Queries/JS**. 
+2. Click the **+ New Query / API** button. 
 
 3. Select **usersTutorialDB query** from the list of options. 
 
@@ -60,14 +64,15 @@ This tutorial takes you through the process of viewing and editing individual re
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
 
+
 ### Trigger update on button click
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/8Dl3BXERPmUvIYJLWqX5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Run Query">
+  <iframe src="https://demo.arcade.software/Qe2cAW1gB3YeGPJugBrl?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-1. Go back to the canvas by clicking on the **User Information** page on the *Entity Explorer*.
+1. Go back to the canvas by clicking on the **UI** tab on the *Entity Explorer*.
 
 2. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
     * On the property pane to the right of the screen, in the **Label** property box, change the label to `Update`.
