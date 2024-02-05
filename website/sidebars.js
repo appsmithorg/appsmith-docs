@@ -627,7 +627,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Modules',
+      label: 'Packages',
       items: [
         'packages/overview',
         {
@@ -652,6 +652,14 @@ const sidebars = {
 
           ],
         },
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/create-js-module',
+          ],
+        },
+        
       ]
     }, //module end
 
