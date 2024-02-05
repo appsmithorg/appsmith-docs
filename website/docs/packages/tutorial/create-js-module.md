@@ -43,17 +43,17 @@ Follow these steps to create a new module within your workspace. The newly creat
 
 1. Click the **Create New** button from the top-right corner of your workspace and **Create a new package**.
 
+2. Rename the Package to **DateformatPackage**.
 
-2. Click **New Module** > **JS Module**.
+3. Click **New Module** > **JS Module**.
 
-3. Rename it to **formatTimeZone**.
-
+4. Rename the module to **formatTimeZone**.
 
 :::note
 You can create queries and JSObjects specific to this module. The **Main** JS object represents the JS module code.
 :::
 
-4. In the Main JS Object, delete the auto-generated code and add the below code to it:
+5. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
 <dd>
 
@@ -83,81 +83,9 @@ formatWithTimeZone: (dateString) => {
 
 </dd>
 
-<dd>
 
 
-*Example:* Create a function that formats the date ("x years ago" or in a specific time zone format), you can add code like:
-
-* **Time Zone Formatter:** Formats a given date string using the specified time zone ('Asia/Kolkata') and returns the formatted result, including year, month, day, hour, minute, and second.
-* **Year Ago Formatter:** Determines the time difference between the current date and a provided creation date.
-
-
-
-<Tabs>
-  <TabItem value="apple" label="Format Time Zone" default>
-    
-   ```js
-  // Example: Converts '2023-03-08T09:45:15Z' to '03/08/2023, 03:45:15 IST'
-
-  export default {
-      // Function to format a date string with a specific time zone
-  formatWithTimeZone: (dateString) => {
-    const date = new Date(dateString);
-    const options = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      timeZone: 'Asia/Kolkata', // Setting the time zone
-    };
-
-    return date.toLocaleString('en-US', options);
-  },
-};
-
-    ```
-
-  </TabItem>
-  <TabItem value="orange" label="Time Ago Formatter">
-   
-   ```js
-  // Example: Converts '2023-03-28T12:54:35Z' to '3 years ago'
-
-  export default {
-  // Calculate time difference in a human-readable format
-  timeAgo: (createdAt) => {
-    const currentDate = new Date(); // Get current date
-    const createdAtDate = new Date(createdAt); // Get creation date
-
-    const timeDifference = currentDate - createdAtDate; // Calculate time difference in milliseconds
-    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Calculate days
-
-    if (days < 30) {
-      return `${days} days ago`; // Display days ago if less than 30 days
-    }
-
-    const months = Math.floor(days / 30); // Calculate months
-
-    if (months < 12) {
-      return `${months} months ago`; // Display months ago if less than 12 months
-    }
-
-    const years = Math.floor(months / 12); // Calculate years and remaining months
-
-    return `${years} years and ${months % 12} months ago`; // Display years and remaining months ago
-  },
-};
-  ```
-  </TabItem>
-</Tabs>
-
-
-
-</dd>
-
-5. Run and Publish the JS Module.
+6. Publish the JS Module.
 
 
 
@@ -174,14 +102,13 @@ Follow the steps below to integrate the modules into your App
 
 1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
-2. Select the JS tab on the Entity Explorer to the screen's left.
+2. Drag a Table widget and connect it to **Users** datasource. 
 
-3. Click the **+ New JS object** and select the JS module.
+3. Select the JS tab on the Entity Explorer to the screen's left.
 
-4. Configure the function to run on page load.
+4. Click the **+ New JS object** and select the **formatTimeZone** JS module.
 
-5. To pass the date data to the JS module, create a query and connect it to the Table widget. Ensure that the table data includes a field with date information.
-
+5. Configure the function to run on page load.
 
 6. Drop a text widget, and set the **Text** property to:
 
@@ -191,20 +118,17 @@ Follow the steps below to integrate the modules into your App
 {{formatTimeZone_1.formatWithTimeZone(user_Table.selectedRow.created_at)}}
 ```
 
+This code ensures that when a row is selected in the Table, the Text widget displays the converted date and time.
+
 </dd>
 
-3. To display data, add a Table widget and connect it to the **JS module** using mustache binding `{{}}`, like:
 
+7. To modify the Table column directly, open the column settings through the gear icon and update the computed value to:
 
 <dd>
 
-*Example:*
-
 ```js
-{{JSModule1.myFun1.data}}
+{{formatTimeZone_1.formatWithTimeZone(currentRow['created_at'])}}
 ```
-
-With this, a new column displays the formatted data in the "year ago" format. You can connect events to execute the functions in the JS module.
-
 
 </dd>
