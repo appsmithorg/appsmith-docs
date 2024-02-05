@@ -18,8 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-A JavaScript module is a reusable code unit that encapsulates specific functionalities, facilitating organized code structure and maintenance. It enables developers to group related variables, functions, or classes, promoting code reusability and separation of concerns.
-
+This guide demonstrates how to use JS modules to refresh OAuth tokens across all apps, enabling you to renew and extend your authentication access.
 
 ## Create JS module
 
@@ -41,7 +40,7 @@ The JS module allows you to create queries and JS objects. The Main JS object re
 
 
 
-3. Create a datasource within this JS module to pass query data.
+3. Create a datasource within this JS module.
 
 <dd>
 
@@ -59,17 +58,16 @@ https://api.example.io/api/user/token-auth/
 Passing Query Module data to JS modules is not supported.
 :::
 
-4. Configure the Main JS Object / JS Module Code based on your requirements.
+4. Inside Main JS Object / JS Module Code and add a function to refresh the token, like:
 
 
 <dd>
 
+*Example:* 
 
-*Example:* In the JS module, add a function to refresh the token, like:
+Create a function named `verifyAccessToken` checks if the access token is still valid. If it's about to expire, another function, `refreshAccessToken`, automatically fetches a new token in the background. This ensures that users won't face interruptions while using the app, and their access remains secure and up-to-date.
 
-* Create a function named `verifyAccessToken` checks if the access token is still valid. If it's about to expire, another function, `refreshAccessToken`, automatically fetches a new token in the background. This ensures that users won't face interruptions while using the app, and their access remains secure and up-to-date.
 
-<dd>
 
 ```js
 export default {
@@ -155,7 +153,7 @@ Configuration may vary depending on the authentication provider or tool you are 
 
 </dd>
 
-* Create a new API to handle the generation of tokens when an authentication token expires.
+5. Create a new API to handle the generation of tokens when an authentication token expires.
 
 <dd>
 
@@ -172,7 +170,7 @@ In the API configuration, provide the refresh token from the store in the reques
 ```
 </dd>
 
-</dd>
+
 
 5. Run and Publish the JS Module.
 
@@ -248,7 +246,7 @@ Set this JSobject to run on page load.
 </dd>
 
 
-4. If you want to trigger a function based on a event, you can bind the JS module function to the event of that widget, like:
+4. If you want to trigger a function based on an event, you can bind the JS module function to the event of that widget, like:
 
 <dd>
 

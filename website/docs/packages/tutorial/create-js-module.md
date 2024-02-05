@@ -20,7 +20,8 @@ tags={[
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A JavaScript module is a reusable code unit that encapsulates specific functionalities, facilitating organized code structure and maintenance. It enables developers to group related variables, functions, promoting code reusability and separation of concerns.
+
+A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure and ease of maintenance. This tutorial takes you through the process of setting up a JS module and integrating it with your Appsmith app.
 
 The Module feature is only available on a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 
