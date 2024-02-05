@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Appsmith AI
 
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
@@ -72,20 +75,34 @@ The Generate Text action allows you to generate text based on specific prompts.
 This field allows you to input prompts for text generation. You can also add data from queries or JSObjects using mustache bindings `{{}}`, like `{{user_Input.text}}`.
 
 
-
 *Example*:
 
-```
-You are helpful assistant who can help loan agents with loan approval or rejection recommendations. Analyse the loan details and generate a recommendation based on the SOP document that you have access to. 
+<Tabs>
+  <TabItem value="apple" label="With file as context" default>
+    
+    ```
+  You are helpful assistant who can help loan agents with loan approval or rejection recommendations. Analyse the loan details and generate a recommendation based on the SOP document that you have access to. 
 
-Loan details: 
-Credit score: `{{tbl_users.selectedRow.creditscore}}`
-DTI Ratio: `{{tbl_users.selectedRow.dtiratio}}`
+  Loan details: 
+  Credit score: `{{tbl_users.selectedRow.creditscore}}`
+  DTI Ratio: `{{tbl_users.selectedRow.dtiratio}}`
 
-Your response should contain a recommendation followed by a list of all reasons. The format should be: 
-Recommendation: `<your recommendation. Possible values: (Approve/Conditional Approve/Reject)>`
-Reasons: `<your reasons>`
-```
+  Your response should contain a recommendation followed by a list of all reasons. The format should be: 
+  Recommendation: `<your recommendation. Possible values: (Approve/Conditional Approve/Reject)>`
+  Reasons: `<your reasons>`
+    ```
+
+  </TabItem>
+  <TabItem value="orange" label="Without File">
+    ```
+    Write a creative product description for an electric car named RevaX, with the keywords- fast charging, 200 miles per single charge, compact, eco-friendly, economical. This is targeted towards a climate concious tech/EV enthusiast who enjoys driving. Also describe the benefits of this product in less than 80 words.
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+
 
 </dd>
 
