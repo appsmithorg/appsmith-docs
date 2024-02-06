@@ -1,12 +1,12 @@
 ---
-title: Refresh OAuth Tokens using JS Modules
+title: Reuse JS Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Refresh OAuth Tokens using JS Modules</h1>
+ <h1>Reuse JS Modules</h1>
 
 <Tags
 tags={[
