@@ -1,12 +1,12 @@
 ---
-title: Reuse JS modules
+title: Create and use JS modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Reuse JS modules</h1>
+ <h1>Create and use JS modules</h1>
 
 <Tags
 tags={[
@@ -33,7 +33,6 @@ By the end of this lesson, you will learn how to:
 
 ## Create module
 
-Follow these steps to create a new module within your workspace. The newly created module will be accessible across all apps in the same workspace:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/gCgCD9xeF0wRUFPO9hEO?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -50,9 +49,6 @@ Follow these steps to create a new module within your workspace. The newly creat
 
 4. Rename the module to **formatTimeZone**.
 
-:::note
-You can create queries and JSObjects specific to this module. The **Main** JS object represents the JS module code.
-:::
 
 5. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
@@ -103,15 +99,15 @@ Follow the steps below to integrate the modules into your App
 
 1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
-2. Drag a Table widget and connect it to **Users** datasource. 
+2. Drag a Table widget and connect it to **Users** datasource to fetch and convert date data.
 
 3. Select the JS tab on the Entity Explorer to the screen's left.
 
-4. Click the **+ New JS object** and select the **formatTimeZone** JS module.
+4. Click the **+ New JS object** and select the **formatWithTimeZone** JS module.
 
-5. Configure the function to run on page load.
+5. Configure the **formatWithTimeZone** function to run on page load.
 
-6. Drop a text widget, and set the **Text** property to:
+6. Drop a Datepicker widget, and set the **Default Date** property to:
 
 <dd>
 
@@ -119,12 +115,12 @@ Follow the steps below to integrate the modules into your App
 {{formatTimeZone_1.formatWithTimeZone(user_Table.selectedRow.created_at)}}
 ```
 
-This code ensures that when a row is selected in the Table, the Text widget displays the converted date and time.
+This code ensures that when a row is selected in the Table, the Datepicker widget displays the converted date and time.
 
 </dd>
 
 
-7. To modify the Table column directly, open the column settings through the gear icon and update the computed value to:
+7. To modify the Table column directly, open the column settings through the gear icon and update the **Computed value** property to:
 
 <dd>
 
