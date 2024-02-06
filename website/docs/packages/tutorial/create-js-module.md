@@ -97,7 +97,7 @@ Follow the steps below to integrate the modules into your App
 </div>
 
 
-1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+1. Create or open an existing **App** from the homepage and ensure that both the app and modules share the same workspace.
 
 2. Drag a Table widget and connect it to **Users** datasource to fetch and convert date data.
 
