@@ -85,8 +85,6 @@ formatWithTimeZone: (dateString) => {
 6. Publish the JS Module.
 
 
-
-
 ## Integrate Modules into your App
 
 Follow the steps below to integrate the modules into your App
