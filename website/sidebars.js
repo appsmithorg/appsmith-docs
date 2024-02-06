@@ -632,10 +632,16 @@ const sidebars = {
         //category- Api
         {
           type: 'category',
-          label: 'Tutorials',
+          label: 'Tutorial',
           items: [
             'workflows/tutorials/set-up-webhook-workflow',
-            'workflows/tutorials/trigger-workflow-from-app',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reference',
+          items: [
+            'workflows/workflow-requests',
           ],
         },
       ]
