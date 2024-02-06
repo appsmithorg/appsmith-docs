@@ -27,20 +27,12 @@ The following section is a reference guide that provides a complete description 
 <dd>
 
 
-You have the option to enhance text generation by uploading specific files for context. The maximum allowable file size is 20 MB; compress your file if the size exceeds 20 MB.
+You have the option to enhance [text generation](#generate-text) by uploading specific files for context. The maximum allowable file size is 20 MB; compress your file if the size exceeds 20 MB.
 
 Submission of files is not mandatory, and you can use Appsmith AI without uploading any files.
 
 
 For example, if you are working on a loan approval application and want to upload an SOP for insights into user preferences and financial details, the system uses the provided information to generate tailored recommendations and guidance.
-
-
-
-
-
-
-
-
 
 
 </dd>
