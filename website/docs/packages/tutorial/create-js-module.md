@@ -1,12 +1,12 @@
 ---
-title: Create and use JS modules
+title: Create and use modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Create and use JS modules</h1>
+ <h1>Create and use modules</h1>
 
 <Tags
 tags={[
@@ -87,7 +87,6 @@ formatWithTimeZone: (dateString) => {
 
 ## Integrate Modules into your App
 
-Follow the steps below to integrate the modules into your App
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/uAjFJw61QMAS6wGptSlf?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
