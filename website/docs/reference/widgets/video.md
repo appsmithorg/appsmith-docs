@@ -18,14 +18,13 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to set the video source to be played. Supports the following URL components:
+Allows you to set the video source to be played, supporting IP-based URLs with the following components:
 
-* Protocol
-* Auth
-* Hostname or IP
-* Port
-* Path/params
-
+* **Protocol:** `https://`
+* **Auth:** `username:password@`
+* **Hostname or IP:** `www.example.com` or `192.168.0.1`
+* **Port:** `:8080` 
+* **Path/params:** `/path/to/video.mp4`
 
 *Example*:
 ```js
