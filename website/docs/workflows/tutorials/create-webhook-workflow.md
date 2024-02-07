@@ -116,10 +116,10 @@ You've triggered the workflow run from your app.
 
 To execute the workflow from your app whenever a user performs an action in your app, you will have to integrate workflow execution with the events. Follow the steps below to integrate the workflow with your app:
 
-1. Create a new **Workflows Query** with the below details:
+1. In your application, create a new **Workflows Query**, name it _readMessageSentByWorkflow_ with the below details:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
     * **Request type** - Select **Get requests**
-    * **Request name** - `readMessageSentByWorkflow`. This is the same request name in the `appsmith.workflows.assignRequest()` method in the [Create Workflow](#create-workflow) section.
+    * **Request name** - `SendMessageToApp`. This is the same request name in the `appsmith.workflows.assignRequest()` method in the [Create Workflow](#create-workflow) section.
     * **Request status** - Set it as `Pending`
 2. Create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it:
 
@@ -164,7 +164,10 @@ To execute the workflow from your app whenever a user performs an action in your
     * Name it _Send\_message\_to\_Workflow_
     * Set the label as _Send Message_
     * Bind the **onClick** event to the `sendMessage` method of _Send\_Receive\_Message_ JS object
-5. Drag a Text widget onto the canvas, name it _showMessage_
+5. Drag a Text widget onto the canvas, name it _showMessage_, and add the below code in the text property:
+    ```javascript
+    {{appsmith.store.messageSentByWorkflow}}
+    ```
 6. Drag another Button widget onto the canvas and configure it as shown below:
     * Name it _Read\_message\_from\_Workflow_
     * Set the label as _Read Message_
