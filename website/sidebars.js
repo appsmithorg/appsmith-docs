@@ -633,15 +633,22 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
+          link: { type: 'doc', id: 'workflows/tutorials/create-webhook-workflow' },
           items: [
-            'workflows/tutorials/set-up-webhook-workflow',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-To Guides',
+          items: [
+            'workflows/how-to-guides/create-approval-workflow'
           ],
         },
         {
           type: 'category',
           label: 'Reference',
           items: [
-            'workflows/workflow-requests',
+            'workflows/reference/workflow-requests',
           ],
         },
       ]

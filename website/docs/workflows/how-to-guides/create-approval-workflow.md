@@ -1,48 +1,40 @@
 ---
 description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
+title: Create Approval Workflow
+hide_title: true
 ---
 
-# Create Approval Workflow
+<!-- vale off -->
 
-Appsmith Workflows empower you to automate processes, bringing efficiency to your applications. In this tutorial, you'll set up a Webhook approval workflow using Appsmith. This workflow seamlessly integrates automated approvals and allows human intervention through your Appsmith app.
+<div className="tag-wrapper">
+ <h1> Create Approval Workflow </h1>
 
-By the end of this lesson, you will learn how to:
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+</div>
 
-- Create a workflow
-- Configure the workflow as a webhook
-- Craft workflow logic for approving or rejecting refund requests, including:
-  - Configuring datasources and queries for sending emails
-  - Setting up datasources and queries to fetch pending requests
-  - Conditionally automating the workflow to approve records
-  - Generating approval requests
-- Test the workflow using Postman
-- Integrate the workflow with the Appsmith app
-- Execute the workflow from the app for manual approval
+<!-- vale on -->
 
+In an approval workflow, for instance a refund request approval, you can automate approvals for certain types of requests based on your business guidelines and also want a human to verify certain requests before approving or rejecting a request. The human intervention can happen through your Appsmith app. This page shows how to set up a Webhook approval workflow using Appsmith. 
 
 ## Prerequisites
 
 Before you start, make sure you have the following:
 
-- A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-- Familiarity with basic Appsmith concepts. If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* Ensure you have basic knowledge of creating webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
 
-## Create workflow
+## Set up Webhook workflow
 
-Follow these steps to create a new workflow within your workspace. This newly created workflow will be accessible across all apps in the same workspace:
+Follow these steps to set up a webhook workflow within your workspace. 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/TwBt2bvGNABi1Q0yZLS8?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-<br/><br/>
-
-1. In the top right corner of your workspace, Click **Create New** and select **New Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor.
-2. Give a meaningful and unique name by editing the name **Untitled Workflow 1** to _Refunds_.
-4. Click the gear icon ⚙️ in the bottom left corner to configure the workflow settings.
-5. Toggle the **Webhook trigger** property to configure the workflow as a webhook.
-6. Copy and save the **URL** and the **Bearer Token**.
-7. Click the **Run** button to test the workflow. You will see the response as shown below:
+1. Create a new workflow in your workspace.
+2. Give a meaningful and unique name to it. For example, _Refunds_.
+4. Click the gear icon ⚙️ in the bottom left corner to configure it as a webhook workflow.
+5. Click the **Run** button to test the workflow. You will see the response as shown below:
     ```javascript
     {
     "success": true,
@@ -55,15 +47,17 @@ Follow these steps to create a new workflow within your workspace. This newly cr
 
 ## Configure datasource
 
-To manage refunds and notify users, you'll configure datasources, create queries, and write JavaScript code in the JS object. This process is similar to configuring datasources, creating queries, and JS Objects in your Appsmith apps. 
+To manage refunds and notify users of the outcome of their refund requests, you'll configure datasources, create queries, and write JavaScript code in the JS object. This process is similar to configuring datasources, creating queries, and JS Objects in your Appsmith apps.
 
 ### Set up SMTP datasource and query
 
-Follow these steps to set up datasources and create query for sending email:
+To notify the users of the outcome of their refund request, set up an SMTP datasource and connect it with your email service provider. Follow these steps to set up datasources and create query for sending email:
 
 1. Click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [SMTP](/connect-data/reference/using-smtp) datasource.
 
-2. Enter the following details in the SMTP connection parameter fields:
+2. Give it a meaningful and unique name. For example, _Send_Email_SMTP_
+
+3. Enter the following details in the SMTP connection parameter fields:
     * **Host Address**: Add your SMTP host address
     * **Port**: Add your SMTP port. For example, 587
     * **Username**: Add your SMTP Username
@@ -111,44 +105,32 @@ Follow these steps to set up datasources and create query for sending email:
 
 ### Set up datasource to manage data
 
-Follow these steps to display your refund requests data in the app:
+To access refund request data, set up a datasource which hosts your refund data. Follow these steps to fetch and update your refund requests data in the workflow:
 
-1. Go to your application and click the **Data** tab in the sidebar. Click the **+** icon next to _Datasources in your workspace_ to add a new [PostgreSQL](/connect-data/reference/querying-postgres) datasource, and name it as _CustomerRefunds_.
+1. If the datasource is already available in your workspace, use it to create queries. If not, click the **Data** tab in the sidebar, add your datasource, and name it as _CustomerRefunds_. For more information about configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
-2. Enter the following details in the PostgreSQL connection parameter fields:
-    * **Host Address**: `mockdb.internal.appsmith.com`
-    * **Port**: `5432`
-    * **Database Name**: `users`
-    * **Username**: `users`
-    * **Password**: `new-users-db-pass`
+2. Test and save the datasource configuration.
 
-3. Test and save the datasource configuration.
+3. Add a select query to retrieve the pending records. For example, you've a table `customer_refunds` that stores the details of refund requests raised by user, and has a column `refund_status` that stores the status of the request like `Approved`, `Rejected` and `Pending` then use the below query to retrieve the pending requests:
 
-### Create queries to manage data
-
-First, add the query to retrieve the pending records:
-
-1. Add a new query for fetching pending approval requests from the _CustomerRefunds_ datasource. Give it a meaningful and unique name, for example, _Select\_pending\_refund\_reqs_ and add the SQL code below to it:
     ```sql
     select * from public. "customer_refunds" where refund_status = 'Pending';
     ```
-2. Click the **Run** button in the top right corner to execute and verify the query result.
+   Give this query a meaningful and unique name. For example, _Select\_pending\_refund\_reqs_.
 
-Second, create a query to update the given record:
+4. Click the **Run** button in the top right corner to execute and verify the query result.
 
-1. Add a new query for updating the status of a given refund request. Give it a meaningful and unique name, for example, _Update\_refund\_status_.
-
-2. Add the SQL code below to it:
+5. Add a new query for updating the status of a given refund request. For example, create a query to update the status of refund request available in the `customer_refunds` table as shown below:
     ```sql
     -- {{this.params.id}} is replaced by the parameter value (refund_id). 
     -- highlight-next-line
     Update public. "customer_refunds" set refund_status = {{this.params.status}} where refund_id = {{this.params.id}}
     ```
-    You've set up a query to update the status of the given refund request.
+    Give it a meaningful and unique name, for example, _Update\_refund\_status_.
 
-### Write code to manage workflow
+## Manage approval
 
-Follow these steps to manage the query execution, and pass parameters to appropriate queries, write code in the Main JS object:
+To manage automatic as well as manual approval, write the JavaScript code in the Main JS object as shown below:
 
 1. Click the **Main** under _JS Objects_.
 
@@ -222,59 +204,25 @@ Follow these steps to manage the query execution, and pass parameters to appropr
         }
     };
     ```
-    This code sets up a process to retrieve refund requests with a specified status. If the refund amount is less than 10, the refunds are automatically approved, and a notification is sent to the customer. For requests with a refund amount of 10 or more, a manual approval request is generated. The resolution is processed based on user action, either approving or rejecting the request.
+    This code sets up a process to retrieve refund requests with a specified status. If the refund amount is less than 10, approve the refunds automatically, and notify the customer. For requests with a refund amount of 10 or more, generate an approval request for a human to verify and manually approval or reject the request. Based on the user action process the resolution, either by approving or rejecting the request.
 
 3. Click **Publish** in the top right corner to publish your workflow.
 
-You've created your first workflow, and it's available in your workspace for integrating it into your apps.
+## Get requests in Appsmith app
 
-## Test workflow with postman
+To manually allow users to take action on the pending requests, display the requests in your Appsmith app as shown below:
 
-Follow these steps to test the workflow execution:
-
-1. Launch the Postman application on your system.
-2. Click the **New** button in Postman to create a new request.
-3. Choose the HTTP method as **POST**
-4. Enter the workflow URL that you copied in the [Create workflow](#create-workflow) section.
-5. Set the below details in the request header:
-    * `X-Requested-By` - `Appsmith`
-    * `x-appsmith-key` - Add the Bearer token that you in the [Create workflow](#create-workflow) section
-6. Add the below code the request body that sets the parameter values:
-    ```javascript
-    {
-        "id": 12,
-        "refund_status": "Approved",
-        "name": "John Doe",
-        "email": "Add your email address to verify the email receipt"
-    }
-
-    ```
-7. Click the **Send** button to execute the request.
-8. Verify the workflow response and the email you received. 
-
-The workflow is ready for integration in your Appsmith app.
-
-## Integrate workflow with app
-
-To integrate a workflow into your app, you will create workflow queries. Follow the steps below to create workflow queries:
-
-### Initialize workflow
-To initialize a workflow from an app, you'll create a trigger workflow query as shown below:
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/BEOHUAssHhLWnNCIQNVB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-<br/><br/>
-
-1. In your application, under **Editor** > **Queries**, click **New query/API**.
-2. In the _Create new query/API_, click **Workflows Query**.
-3. Name it _initializeApprovals_.
-4. Add the below details to configure the workflow query:
+1. Initialize the workflow, create a workflow query and configure the `Trigger workflow` request as shown below:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select _Refunds_
     * **Request type** - Select **Trigger workflow**
-    * **Trigger Data** - Add an empty JSON `{}`
-5. Click the **Run** button to test the workflow. You will see the response as shown below:
+    * **Trigger Data** - Add the below JSON
+    ```javascript
+    {
+        "req_status" : "Pending"
+    }
+    ```
+    Give it a meaningful and unique name. For example, _initializeApprovalWorkflow_.
+2. Click the **Run** button to initialize the workflow. You will see the response as shown below:
     ```javascript
     {
     "success": true,
@@ -284,26 +232,18 @@ To initialize a workflow from an app, you'll create a trigger workflow query as 
         }
     }
     ```
-You've integrated your workflow with the app, and is ready to process requests.
-
-### Get pending requests
-To fetch the refund requests awaiting verification, you will create an approval request as shown below:
-
-1. In your application, under **Editor** > **Queries**, click **New query/API**.
-2. In the _Create new query/API_, click **Workflows Query**.
-3. Name it as _fetchPendingRefundRequests_.
-4. Add the below details to configure the workflow query:
+3. To fetch the pending requests from workflow, create a workflow query and configure `Get requests` as shown below:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select _Refunds_
     * **Request type** - Select **Get requests**
-    * **Request name** - Add `getPendingRefundRequests` to it
+    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow Main JS object in `appsmith.workflows.assignRequest()` in the [Manage approval](#manage-approval) section.
     * **Request status** - Set it as `Pending`
-4. Click the **Run** button to test the request. You'll see that the requests awaiting action are available as part of response. You will see the response as shown below:
+    Give it a meaningful and unique name. For example, _fetchPendingRefundRequests_
+4. Click the **Run** button to test the request. The requests awaiting action are available as part of response in the `metadata` attribute. You will see the response as shown below:
     ```javascript
     // TO-DO
     ```
-5. Drag a Table widget, rename it as _pendingRefunds_, and bind the _fetchPendingRefundRequests_ query to it.
-
-You've successfully bind the workflow query response to your Table widget. 
+5. Create a JS object, to execute the _fetchPendingRefundRequests_ query and transform the `metadta` attribute.
+5. Drag a Table widget, give it a meaningful and unique name like _pendingRefunds_, and bind the _fetchPendingRefundRequests_ query to it.
 
 ### Capture user action
 To capture the user action, when a user clicks Approve or Reject and accordingly call the workflow to update the refund request, you will create a resolve request as shown below:
@@ -350,8 +290,3 @@ To capture the user action, when a user clicks Approve or Reject and accordingly
 
 Once you click Approve or Reject, the workflow executes, updates the refund status as `Approved` or `Rejected`, and intimates the user by sending an email.
 
-🚩 Congratulations. You have built your first approval workflow, and integrated it with your Appsmith app.
-
-In this tutorial, you explored how to create an approval workflow, integrated it with your app, pass parameters from app to workflow and to the queries. You can use these skills to build your own workflow and integrate it with your apps.
-
-Happy App Building!
