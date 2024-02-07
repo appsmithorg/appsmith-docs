@@ -1170,6 +1170,34 @@
     {
       "source": "/build-apps/how-to-guides/Create-Nested-Lists",
       "destination": "/build-apps/how-to-guides/display-search-and-filter-list-data#nested-list"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/build-the-dashboard",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/view-ticket-details",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/add-new-tickets",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/edit-ticket-details",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/comments-on-tickets",
+      "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/tutorials/customer-support-tool/application-settings",
+      "destination": "/getting-started/tutorials/start-building"
     }
   ]
 }

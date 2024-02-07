@@ -17,7 +17,7 @@ This tutorial takes you through the process of connecting a datasource and query
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/7U7N3Fhx8NVvn0vgtU1O?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "100%", colorScheme: "light" }} title="User Management | Connect Datasource">
+  <iframe src="https://demo.arcade.software/ZxulwwwVawWob7PKKg14?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -36,12 +36,13 @@ This tutorial takes you through the process of connecting a datasource and query
 
 ## Query Data
 
+
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/IiJZpgnlcoiV7Be9OVJ4?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Query Data">
+  <iframe src="https://demo.arcade.software/MM3BJkA2TOWlfO5BidcE?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-1. Click the **+ New Query** button to the right of the screen. You will see the query editor with a default fetch query to pull ten records from the `usersTutorialDB` database table.
+1. In the **Editor pane** click the **New Query/API** button and select the connected datasource. You will see the query editor with a default fetch query to pull ten records from the `usersTutorialDB` database table.
 
 2. Rename the query from **Query1** to `getUsers`. You may have to click the pencil icon if it is not already selected.
 
@@ -59,21 +60,20 @@ You've created your first query to fetch the list of records in the database.
 
 ## Display data in Table
 
+
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/p8UCpX0afOcDKmSKLQFD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Display Data">
+  <iframe src="https://demo.arcade.software/Zi4Miio6MS4RDYeV4heb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Display Data">
   </iframe>
 </div>
 
-1. Click the **Widgets** tab on the *Entity Explorer* to the left of the screen.
+1. Click the **UI** tab on the *Entity Explorer* to the left of the screen.
 
-2. Drag a **Table** widget and drop it to the left of the canvas.
+2. Click **+ New Widget** and drag a **Table** widget and drop it to the left of the canvas.
 
 3. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
 
-4. In the **Table Data** property, click the **JS** button next to it. 
-
-5. To display the data from the **getUsers** query, type in `getUsers.data` between the curly braces. This JavaScript expression connects the data from the **getUsers** query to the Table widget.
-
+4. Connect the Table to the query **getUsers** to display the data. Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data.
+ 
 :::info
 The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
 :::
