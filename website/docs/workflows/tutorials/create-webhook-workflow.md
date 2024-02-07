@@ -95,7 +95,7 @@ Follow the steps below to integrate the workflow with your app:
 4. Add the below details to configure the workflow query:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
     * **Request type** - Select **Trigger workflow**
-    * **Trigger Data** - Add below JSON 
+    * **Trigger Data** - Add below code: 
         ```javascript
          {{this.params}}
         ```
