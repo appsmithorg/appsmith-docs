@@ -7,6 +7,9 @@ description: Connect Appsmith to an Airtable base and create queries.
 
 This page provides information for connecting your application to your Airtable base and for using queries to manage its content.
 
+<VideoEmbed host="youtube" videoId="9aQe18DPYXI" title="Build a MongoDB Panel" caption="Build a MongoDB Panel"/>
+
+
 ## Connection parameters
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Airtable base.
