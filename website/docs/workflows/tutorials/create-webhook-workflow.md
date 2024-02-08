@@ -9,7 +9,6 @@ Appsmith Workflows allow you to automate processes, bringing efficiency and conn
 To learn workflows in Appsmith, you'll build a notification workflow that sends notification to users. By the end of this tutorial, you will learn how to:
 
 * Create a workflow and configure it as a webhook
-* Test workflow using Postman
 * Integrate the workflow into your Appsmith app
 * Execute the workflow from your Appsmith app
 
@@ -222,30 +221,7 @@ To execute the workflow from your app whenever a user performs an action to send
 
 🚩 Congratulations. You have built your first webhook workflow and integrated it with your Appsmith app.
 
-## Test workflow with Postman
-
-You can connect your workflow with external applications. Here you will use Postman to simulate as an external app. Follow these steps to integrate your the workflow with Postman:
-
-1. Launch the Postman application on your system.
-2. Click the **New** button in Postman to create a new request.
-3. Choose the HTTP method as **POST**
-4. Enter the workflow URL that you copied in the [Create workflow](#create-workflow) section.
-5. Set the below details in the request header:
-    * `X-Requested-By` - `Appsmith`
-    * `x-appsmith-key` - Add the Bearer token that you have copied in the [Create workflow](#create-workflow) section
-7. Click the **Send** button to execute the request.
-8. Verify the workflow response. You will see the below response:
-    ```javascript
-    {
-    "success": true,
-    "message": "Workflow instance started running successfully",
-    "data": {
-        "workflowInstanceId": "workflowInstance-rjwbe41QF1P1s90YwYw-1"
-        }
-    }
-    ```
-
-In this tutorial, you explored how to create a webhook workflow, tested it using Postman, triggered it from your Appsmith app, passed parameters from app to workflow, and executed the workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
+In this tutorial, you explored how to create a webhook workflow, triggered it from your Appsmith app, passed parameters from app to workflow, and executed the workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
 
 Happy App Building!
 
