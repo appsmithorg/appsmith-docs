@@ -432,6 +432,7 @@ const sidebars = {
             },
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/workflows`,
+            `build-apps/how-to-guides/refresh-oauth-tokens`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             `build-apps/how-to-guides/display-select-options-dynamically`,
             'build-apps/how-to-guides/add-remove-inputs-in-list',
@@ -444,7 +445,6 @@ const sidebars = {
             'build-apps/how-to-guides/display-map-markers',
             `build-apps/how-to-guides/set-up-websockets`,
             `build-apps/how-to-guides/setup-polling`,
-            `build-apps/how-to-guides/refresh-oauth-tokens`,
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
           ]
