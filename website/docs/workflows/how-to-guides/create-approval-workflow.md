@@ -3,14 +3,14 @@ description: This page provides detailed steps to set up an approval Webhook wor
 ---
 # Create Approval Workflow
 
-In an approval workflow, for instance a refund request approval, you can automate approvals for certain types of requests based on your business guidelines and also want a human to verify certain requests before approving or rejecting a request. The human intervention can happen through your Appsmith app. This page shows how to set up a Webhook approval workflow using Appsmith. 
+In a human-in-the-loop approval workflow, such as for processing refund requests, you can automate approvals for specific types of requests based on your business guidelines. Additionally, you may require human verification before approving or rejecting certain requests. This human intervention can happen through your Appsmith app. This page shows how to set up human-in-the-loop approval workflow using Appsmith. 
 
 ## Prerequisites
 
 Before you start, make sure you have the following:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Ensure you have basic knowledge of creating webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
+* You have basic knowledge of creating a webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
 * You've set up a Form in your app that allows users to raise refund requests.
 
 ## Set up Webhook workflow

@@ -51,10 +51,13 @@ To interact with workflow, you will have to write workflow queries. In this tuto
 
 ### Send notification to workflow
 
-When you have new users joining your organization, and you want to send them a welcome notification message available on their dashboard, you could use workflows to do that. Follow these steps to create notifications by building an interface, and write query:
+When you have new users joining your organization, and you want to send them a welcome notification message, you can use workflows to do that. For this tutorial, you'll send notification to a selected user. Follow these steps to create a notification by building an interface, and write query:
 
 1. In your application, drag an Input widget onto the canvas, name it _inp\_Message_, and set its label as **Message**.
-2. Drag a Select widget onto the canvas, name it _sel\_Users_, set its source data as below, and set the value property in the property pane to `username`. Remember to add your name, and your Appsmith username in the below dataset, by replacing `Add_your_name` and `add_your_appsmith_username`. 
+2. Drag a Select widget onto the canvas and configure it as shown below:
+    * Name it _sel\_Users_
+    * Set the **label** as _Users_
+    * Set its source data as below (remember to add your name, and your Appsmith username in the below dataset, by replacing `Add_your_name` and `add_your_appsmith_username`)
     ```javascript
     [
         {
@@ -75,12 +78,15 @@ When you have new users joining your organization, and you want to send them a w
         }
     ]
     ```
+    *  Set the value property in the property pane to `username`. 
 3. Drag a Button widget onto the canvas, name it _btn\_SendNotification_, and set the label as _Send Notification_
 4. Under **Editor** > **Queries**, click **New query/API**.
+
    <br/> <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
     <iframe src="https://demo.arcade.software/ZPYyhcNQL9EhIOmCvatB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
     </iframe>
     </div><br/><br/>
+    
 5. In the _Create new query/API_, click **Workflows Query**, and name it as _triggerWorkflowRun_. 
 6. Add the below details to configure the workflow query:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**.
@@ -222,7 +228,7 @@ Follow the steps below to receive notification requests in your Appsmith app:
     }
     ```
    
-4. Type a message into the Input widget (**Message**) and click the **Send Message** button. You will see an alert `Message sent` that confirms delivery.
+4. Type a message into the Input widget (**Message**), select your name from the  and click the **Send Message** button. You will see an alert `Message sent` that confirms delivery.
 5. Click the **notification** button. You will see the _ShowNotification_ Modal as below:
 
     <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
