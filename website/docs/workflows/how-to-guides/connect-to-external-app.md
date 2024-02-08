@@ -17,7 +17,7 @@ Before you start, make sure you have the following:
 1. Create a `HTTP POST` request.
 2. Set the `POST` URL to the workflow URL which is available under the workflow settings. If you don't have the URL, navigate to your workflow, access the workflow settings by clicking the gear icon ⚙️ in the bottom left corner, and copy the _URL_.
 3. Set the bearer token as a query parameter. If you don't have the token, you may choose to regenerate it by clicking the **Regenerate** button next to the _Bearer token_ field.
-4. Execute the `HTTP POST` request from your external application. For example, below is a sample code in JavaScript to connect to a workflow:
+4. Execute the `HTTP POST` request from your external application. For example, below is a sample code in JavaScript to connect to a webhook workflow:
     ```javascript
     const executeRequest = async () => {
 
