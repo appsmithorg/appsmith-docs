@@ -1,22 +1,7 @@
 ---
-description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
-title: Create Approval Workflow
-hide_title: true
+description: This page provides detailed steps to set up an approval Webhook workflow on Appsmith.
 ---
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
- <h1> Create Approval Workflow </h1>
-
-<Tags
-tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
-]}
-/>
-</div>
-
-<!-- vale on -->
+# Create Approval Workflow
 
 In an approval workflow, for instance a refund request approval, you can automate approvals for certain types of requests based on your business guidelines and also want a human to verify certain requests before approving or rejecting a request. The human intervention can happen through your Appsmith app. This page shows how to set up a Webhook approval workflow using Appsmith. 
 
@@ -26,7 +11,7 @@ Before you start, make sure you have the following:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Ensure you have basic knowledge of creating webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
-* You've set up a Form widget that allows users to raise refund requests.
+* You've set up a Form in your app that allows users to raise refund requests.
 
 ## Set up Webhook workflow
 
@@ -66,12 +51,12 @@ To notify the users of the outcome of their refund request, set up an SMTP datas
 
 3. Test and save the datasource configuration.
 
-4. Create queries with below configuration for sending emails:
-    * Create a query and name it- _Send\_refund\_approval_\_email_
+4. Create queries to send approval and rejection email to the user. You can set up the queries with the below configuration:
+    * Create a _Send_Email_SMTP_ query and name it- _Send\_approval_\_email_
         - **From Email**: Add your SMTP Username
         - **To Email**: Add this as a parameter (`{{this.params.recipient}}`)
         - **Subject**: Refund Request Approved
-        - **Body**: Add the below details:
+        - **Body**: For example, add the below details:
             ```text
             Dear {{this.params.customer_name}},
             
@@ -83,11 +68,11 @@ To notify the users of the outcome of their refund request, set up an SMTP datas
             Sincerely,
             The Customer Support Team
             ```
-    * Create a query and name it- _Send\_refund\_rejection_\_email_
+    * Create another _Send_Email_SMTP_ query and name it- _Send\_rejection_\_email_
         - **From Email**: Add your SMTP Username
         - **To Email**: Add this as a parameter (`{{this.params.recipient}}`).
         - **Subject**: Refund Request Rejected.
-        - **Body**: Add the below details:
+        - **Body**: For example, add the below details:
             ```text
             Dear {{this.params.customer_name}},
 
@@ -102,13 +87,11 @@ To notify the users of the outcome of their refund request, set up an SMTP datas
             The Customer Support Team
             ```
 
-    You've set up an SMTP datasource, and created a query to send email.
-
 ### Set up datasource to manage data
 
 To access refund request data, set up a datasource which hosts your refund data. Follow these steps to fetch and update your refund requests data in the workflow:
 
-1. If the datasource is already available in your workspace, use it to create queries. If not, click the **Data** tab in the sidebar, add your datasource, and name it as _CustomerRefunds_. For more information about configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+1. If the datasource is already available in your workspace, use it to create queries. If not, click the **Data** tab in the sidebar, add your datasource, and give it a meaningful and unique name. For example, _CustomerRefunds_. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 2. Test and save the datasource configuration.
 
@@ -131,11 +114,11 @@ To access refund request data, set up a datasource which hosts your refund data.
 
 ## Manage approval
 
-To manage automatic as well as manual approval, write the JavaScript code in the Main JS object as shown below:
+To manage automatic as well as manual approval, write the JavaScript code in the _Main_ JS object as shown below:
 
 1. Click the **Main** under _JS Objects_.
 
-2. In the JS code editor, delete the auto-generated code and add the below code to it:
+2. In the JS code editor, delete the auto-generated code and add the below code to it. This code sets up a process to retrieve refund requests with a specified status. If the refund amount is less than 10, approve the refunds automatically, and notify the customer. For requests with a refund amount of 10 or more, generate an approval request for a human to verify and manually approval or reject the request. Based on the user action process the resolution, either by approving or rejecting the request.
 
     ```javascript
     export default {
@@ -205,8 +188,6 @@ To manage automatic as well as manual approval, write the JavaScript code in the
         }
     };
     ```
-    This code sets up a process to retrieve refund requests with a specified status. If the refund amount is less than 10, approve the refunds automatically, and notify the customer. For requests with a refund amount of 10 or more, generate an approval request for a human to verify and manually approval or reject the request. Based on the user action process the resolution, either by approving or rejecting the request.
-
 3. Click **Publish** in the top right corner to publish your workflow.
 
 ## Get requests in Appsmith app
