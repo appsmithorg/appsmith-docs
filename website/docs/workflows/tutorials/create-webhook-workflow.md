@@ -85,9 +85,9 @@ When you have new users joining your organization, and you want to send them a w
 6. Add the below details to configure the workflow query:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**.
     * **Request type** - Select **Trigger workflow**.
-    * **Trigger Data** - Add `{{this.params}}` to pass the required parameters so that the workflow can process the data.
+    * **Trigger Data** - Add `{{this.params}}` to pass the parameters to the workflow for processing.
     
-7. Click the **Run** button to test the workflow query. This query triggers the workflow run and executes the code written in the JS object (_Main_) in your workflow. You will see the below response that shows a successful integration.
+7. Click the **Run** button to test the workflow query. This query triggers the workflow and executes the code written in the JS object (_Main_) in your workflow. You will see the below response that shows a successful integration.
     ```javascript
     {
     "success": true,
@@ -97,7 +97,7 @@ When you have new users joining your organization, and you want to send them a w
         }
     }
     ```
-8. To send message to the selected user, you'll have to capture message, selected user and then send these details to the workflow for processing. To achieve this, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
+8. To send message to the selected user, you'll have to capture message, selected user and then send these details to the workflow for processing. To achieve this, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying the parameters.
     ```javascript
     export default {
         //Trigger the workflow and send a message to the workflow
