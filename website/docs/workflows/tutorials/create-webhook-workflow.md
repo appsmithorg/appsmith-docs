@@ -29,7 +29,7 @@ Follow these steps to create a webhook workflow within your workspace. The newly
 
 1. Click the **Create New** button in your workspace, and choose **New Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor.
 2. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _My\_First\_Workflow_.
-3. In the JS code editor, delete the auto-generated code and add the code provided below:
+3. In the JS code editor, delete the auto-generated code and add the code provided below. The function `executeWorkflow` is executed whenever a workflow run is triggered, and in the below code prints the supplied parameter to console.
     ```javascript
     export default {
         async executeWorkflow(args) {
@@ -131,6 +131,7 @@ To execute the workflow from your app whenever a user performs an action to send
             await appsmith.workflows.assignRequest({
                 requestName: "sendNotifications",
                 message: "Notify users",
+                //highlight-next-line
                 requestToUsers: ["add your appsmith user name"], 
                 resolutions: ["Read"],
                 metadata: { "name": args.name, "message": args.message }
@@ -141,20 +142,21 @@ To execute the workflow from your app whenever a user performs an action to send
     }
     ```
 6. Click the **Publish** button to publish your latest changes to the workflow.
-7. In your application, edit the _triggerWorkflowRun_ query, and add the below code to the * **Trigger Data** attribute. The code below passes the required parameters from the application to the workflow _Main_ JS object: 
+7. In your application, edit the _triggerWorkflowRun_ query, and add the below code to the **Trigger Data** attribute. The below code passes the required parameters from the application to the workflow _Main_ JS object: 
 
     ```javascript
         {{this.params}}
     ```
 7. Drag an Icon button widget onto the canvas, name it _icn\_notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
-    * Name the modal as _mod\_ShowNotification_ 
-    * Name the title Text as _txt\_messageFrom_, and delete the content of the **Text** property
-    * Drag another Text widget, name it _txt\_messageReceived_, and delete the content of the **Text** property
+    * Name the modal as _mod\_ShowNotification_.
+    * Name the title Text as _txt\_messageFrom_, and delete the content of the **Text** property.
+    * Drag another Text widget, name it _txt\_messageReceived_, and delete the content of the **Text** property.
 8. Create a new **Workflows Query**, name it _receiveNotification_ with the below details:
-    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
-    * **Request type** - Select **Get requests**
+    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**.
+    * **Request type** - Select **Get requests**.
     * **Request name** - `sendNotifications`. This is the same request name in the `appsmith.workflows.assignRequest()` method in the [Create Workflow](#create-workflow) section.
-    * **Request status** - Set it as `Pending`
+    * **Request status** - Set it as `Pending`.
+    
     The `Get requests` query retrieves the data or information generated for the logged-in user by the workflow.
 9. Update the JS Object (_Send\_Receive\_Message_), and add the `receiveMessage()` code to it. The `receiveMessage` function executes the `receiveNotification` query to retrieve messages sent by the webhook workflow, and reads the first notification, and displays the user's name and the received message in a modal.
 
