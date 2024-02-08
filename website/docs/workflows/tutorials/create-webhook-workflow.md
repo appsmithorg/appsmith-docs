@@ -15,7 +15,7 @@ To learn workflows in Appsmith, you'll build a notification workflow that sends 
 ## Prerequisites
 
 * Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Ensure you have basic knowledge of creating datasource, queries, and displaying data on Appsmith. For more information, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+*  If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create workflow
  
@@ -45,23 +45,49 @@ Follow these steps to create a webhook workflow within your workspace. The newly
 
 You've created your first workflow, and it's available in your workspace for integrating it into your apps.
 
-## Trigger workflow
+## Write workflow queries
 
-To execute workflow, you will have to trigger the workflow run. Follow the steps below to trigger the workflow from your app:
+To interact with workflow, you will have to write workflow queries. In this tutorial, you will write queries to send data to workflow, process the received data, and send notifications to the users from workflow.
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ZPYyhcNQL9EhIOmCvatB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-<br/><br/>
+### Send notification to workflow
 
-1. In your application, under **Editor** > **Queries**, click **New query/API**.
-2. In the _Create new query/API_, click **Workflows Query**, and name it as _triggerWorkflowRun_. 
-4. Add the below details to configure the workflow query:
-    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
-    * **Request type** - Select **Trigger workflow**
+When you have new users joining your organization, and you want to send them a welcome notification message available on their dashboard, you could use workflows to do that. Follow these steps to create notifications by building an interface, and write query:
+
+1. In your application, drag an Input widget onto the canvas, name it _inp\_Message_, and set its label as **Message**.
+2. Drag a Select widget onto the canvas, name it _sel\_Users_, set its source data as below, and set the value property in the property pane to `username`. Remember to add your name, and your Appsmith username in the below dataset, by replacing `Add_your_name` and `add_your_appsmith_username`. 
+    ```javascript
+    [
+        {
+            "name": "John Doe",
+            "username": "john.doe@test.com"
+        },
+        {
+            "name": "Bob Anderson",
+            "username": "bob.anderson@test.com"
+        },
+        {
+            "name": "Eva Williams",
+            "username": "eva.williams@test.com"
+        },
+        {
+            "name": "add_your_name",
+            "username": "add_your_appsmith_username"
+        }
+    ]
+    ```
+3. Drag a Button widget onto the canvas, name it _btn\_SendNotification_, and set the label as _Send Notification_
+4. Under **Editor** > **Queries**, click **New query/API**.
+   <br/> <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+    <iframe src="https://demo.arcade.software/ZPYyhcNQL9EhIOmCvatB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+    </iframe>
+    </div><br/><br/>
+5. In the _Create new query/API_, click **Workflows Query**, and name it as _triggerWorkflowRun_. 
+6. Add the below details to configure the workflow query:
+    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**.
+    * **Request type** - Select **Trigger workflow**.
+    * **Trigger Data** - Add `{{this.params}}` to pass the required parameters so that the workflow can process the data.
     
-5. Click the **Run** button to test the workflow. This query triggers the workflow run and executes the code written in the JS object (_Main_) in your workflow. You will see the below response:
+7. Click the **Run** button to test the workflow query. This query triggers the workflow run and executes the code written in the JS object (_Main_) in your workflow. You will see the below response that shows a successful integration.
     ```javascript
     {
     "success": true,
@@ -71,31 +97,7 @@ To execute workflow, you will have to trigger the workflow run. Follow the steps
         }
     }
     ```
-
-## Execute workflow
-
-To execute the workflow from your app whenever a user performs an action to send notification in your app, you will have to integrate workflow execution with the events. Follow the steps below to integrate the workflow with your app:
-
-1. Drag an Input widget onto the canvas, name it _inp\_Message_, and set its label as **Message**.
-2. Drag a Select widget onto the canvas, name it _sel\_Users_, and set its source data as below:
-    ```javascript
-    [
-        {
-            "name": "John Doe",
-            "email": "john.doe@test.com"
-        },
-        {
-            "name": "Bob Anderson",
-            "email": "bob.anderson@test.com"
-        },
-        {
-            "name": "Eva Williams",
-            "email": "eva.williams@test.com"
-        }
-    ]
-    ```
-2. Drag a Button widget onto the canvas, name it _btn\_SendNotification_, and set the label as _Send Notification_
-3. To capture the message, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
+8. To send message to the selected user, you'll have to capture message, selected user and then send these details to the workflow for processing. To achieve this, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
     ```javascript
     export default {
         //Trigger the workflow and send a message to the workflow
@@ -120,8 +122,19 @@ To execute the workflow from your app whenever a user performs an action to send
         }
     }
     ```
- 4. Bind the **onClick** event to the `sendMessage` method of _Send\_Receive\_Message_ JS object.
- 5. In your workflow, update the JS object _Main_ and add `assignRequest()` function. In the below code, the `assignRequest()` function assigns a request to specified users (`requestToUsers`) within the Appsmith app. This assignment ensures that the request and its data is accessible only to the specified user or users. Add your Appsmith username to `requestToUsers` attribute by replacing `add your appsmith user name` in the code snippet below. 
+ 9. Bind the **onClick** event of the **Send notification** button to execute the `sendMessage` function.
+ 
+You've set up the Appsmith app to capture the information using widgets and created queries to send the data to workflow for processing.
+
+### Receive data and send notification to user
+
+In your workflow, you will read the parameters sent from the Appsmith app, write code to send the notification to the given user. You can achieve this by using a `assignRequest()` function provided by Appsmith in your workflow, and adding widgets to receive the notification in your Appsmith app. 
+
+#### Create notification requests
+
+Follow the steps below to create notification requests in your workflow:
+
+ 1. Update the JS object _Main_ and add `assignRequest()` function. In the below code, the `assignRequest()` function is building a request based on the parameters sent to the workflow. The specified users (`requestToUsers`) are users within the Appsmith app. This assignment ensures that the request and its data is accessible only to the specified user or users.
 
     ```javascript
     export default {
@@ -132,7 +145,7 @@ To execute the workflow from your app whenever a user performs an action to send
                 requestName: "sendNotifications",
                 message: "Notify users",
                 //highlight-next-line
-                requestToUsers: ["add your appsmith user name"], 
+                requestToUsers: [args.notify], 
                 resolutions: ["Read"],
                 metadata: { "name": args.name, "message": args.message }
             });
@@ -141,24 +154,25 @@ To execute the workflow from your app whenever a user performs an action to send
         }
     }
     ```
-6. Click the **Publish** button to publish your latest changes to the workflow.
-7. In your application, edit the _triggerWorkflowRun_ query, and add the below code to the **Trigger Data** attribute. The below code passes the required parameters from the application to the workflow _Main_ JS object: 
+2. Click the **Publish** button to publish your latest changes to the workflow.
 
-    ```javascript
-        {{this.params}}
-    ```
-7. Drag an Icon button widget onto the canvas, name it _icn\_notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
+#### Receive notification
+
+Follow the steps below to receive notification requests in your Appsmith app:
+
+1. Drag a Modal widget and configure the modal as below:
     * Name the modal as _mod\_ShowNotification_.
     * Name the title Text as _txt\_messageFrom_, and delete the content of the **Text** property.
     * Drag another Text widget, name it _txt\_messageReceived_, and delete the content of the **Text** property.
-8. Create a new **Workflows Query**, name it _receiveNotification_ with the below details:
+2. Drag an Icon button widget onto the canvas. Set the Icon property select the **notifications** bell icon, and set the **onClick** event to show the _mod\_ShowNotification_ modal.
+3. Create a new **Workflows Query**, name it _receiveNotification_ with the below details:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**.
     * **Request type** - Select **Get requests**.
     * **Request name** - `sendNotifications`. This is the same request name in the `appsmith.workflows.assignRequest()` method in the [Create Workflow](#create-workflow) section.
     * **Request status** - Set it as `Pending`.
     
     The `Get requests` query retrieves the data or information generated for the logged-in user by the workflow.
-9. Update the JS Object (_Send\_Receive\_Message_), and add the `receiveMessage()` code to it. The `receiveMessage` function executes the `receiveNotification` query to retrieve messages sent by the webhook workflow, and reads the first notification, and displays the user's name and the received message in a modal.
+4. Update the JS Object (_Send\_Receive\_Message_), and add the `receiveMessage()` code to it. The `receiveMessage` function executes the `receiveNotification` query to retrieve messages sent by the webhook workflow, and reads the first notification, and displays the user's name and the received message in a modal.
 
     ```javascript
     export default {
@@ -208,8 +222,8 @@ To execute the workflow from your app whenever a user performs an action to send
     }
     ```
    
-10. Type a message into the Input widget (**Message**) and click the **Send Message** button. You will see an alert `Message sent` that confirms delivery.
-11. Click the **notification** button. You will see the _ShowNotification_ Modal as below:
+4. Type a message into the Input widget (**Message**) and click the **Send Message** button. You will see an alert `Message sent` that confirms delivery.
+5. Click the **notification** button. You will see the _ShowNotification_ Modal as below:
 
     <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
     <iframe src="https://demo.arcade.software/j8Uzw0upc5PAXJkVxVx3?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -221,7 +235,7 @@ To execute the workflow from your app whenever a user performs an action to send
 
 🚩 Congratulations. You have built your first webhook workflow and integrated it with your Appsmith app.
 
-In this tutorial, you explored how to create a webhook workflow, triggered it from your Appsmith app, passed parameters from app to workflow, and executed the workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
+In this tutorial, you explored how to create a webhook workflow, triggered it from your Appsmith app, pass parameters from app to workflow, and execute the workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
 
 Happy App Building!
 
