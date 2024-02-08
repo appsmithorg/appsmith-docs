@@ -23,7 +23,7 @@ Allows you to set the video source to be played, supporting both URL and IPv4-ba
 *Example*:
 
 * **IP Based:** `127.0.0.10:8080/path/to/video.mp4`
-* **URL Based:** https://assets.appsmith.com/widgets/bird.mp4
+* **URL Based:** `https://assets.appsmith.com/widgets/bird.mp4`
 
 
 You can display dynamic data by binding the response from a query or a JavaScript function to the **URL** property. For instance, if you have a table with a column containing video URLs, clicking on a specific row plays the corresponding video:
