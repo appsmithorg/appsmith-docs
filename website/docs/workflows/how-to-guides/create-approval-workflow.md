@@ -26,6 +26,7 @@ Before you start, make sure you have the following:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Ensure you have basic knowledge of creating webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
+* You've set up a Form widget that allows users to raise refund requests.
 
 ## Set up Webhook workflow
 

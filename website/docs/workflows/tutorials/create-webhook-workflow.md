@@ -45,7 +45,7 @@ Follow these steps to create a webhook workflow within your workspace. The newly
 
 You've created your first workflow, and it's available in your workspace for integrating it into your apps.
 
-## Trigger workflow from your Appsmith app
+## Trigger workflow
 
 To execute workflow, you will have to trigger the workflow run. Follow the steps below to trigger the workflow from your app:
 
@@ -56,15 +56,12 @@ To execute workflow, you will have to trigger the workflow run. Follow the steps
 <br/><br/>
 
 1. In your application, under **Editor** > **Queries**, click **New query/API**.
-2. In the _Create new query/API_, click **Workflows Query**, and name it as _triggerWorkflowRun_. This query triggers the workflow run and executes the code written in the JS object (_Main_) in your workflow.
+2. In the _Create new query/API_, click **Workflows Query**, and name it as _triggerWorkflowRun_. 
 4. Add the below details to configure the workflow query:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
     * **Request type** - Select **Trigger workflow**
-    * **Trigger Data** - Add below code: 
-        ```javascript
-         {{this.params}}
-        ```
-5. Click the **Run** button to test the workflow. You will see the below response:
+    
+5. Click the **Run** button to test the workflow. This query triggers the workflow run and executes the code written in the JS object (_Main_) in your workflow. You will see the below response:
     ```javascript
     {
     "success": true,
@@ -75,9 +72,7 @@ To execute workflow, you will have to trigger the workflow run. Follow the steps
     }
     ```
 
-You've triggered the workflow run from your app.
-
-## Execute workflow from your Appsmith app
+## Execute workflow
 
 To execute the workflow from your app whenever a user performs an action to send notification in your app, you will have to integrate workflow execution with the events. Follow the steps below to integrate the workflow with your app:
 
@@ -100,7 +95,7 @@ To execute the workflow from your app whenever a user performs an action to send
     ]
     ```
 2. Drag a Button widget onto the canvas, name it _SendNotification_, and set the label as _Send Notification_
-3. To capture the message, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it:
+3. To capture the message, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
     ```javascript
     export default {
         //Trigger the workflow and send a message to the workflow
@@ -125,10 +120,8 @@ To execute the workflow from your app whenever a user performs an action to send
         }
     }
     ```
-    In the above code, the `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
-
- 4. Bind the **onClick** event to the `sendMessage` method of _Send\_Receive\_Message_ JS object
- 5. In your workflow, update the JS object _Main_ and add `assignRequest()` function. In the below code, the `assignRequest()` function assigns a request to specified users (`requestToUsers`) within the Appsmith app. This assignment ensures that the request and its data is accessible only to the specified user or users. Add your Appsmith username to `requestToUsers` attribute. 
+ 4. Bind the **onClick** event to the `sendMessage` method of _Send\_Receive\_Message_ JS object.
+ 5. In your workflow, update the JS object _Main_ and add `assignRequest()` function. In the below code, the `assignRequest()` function assigns a request to specified users (`requestToUsers`) within the Appsmith app. This assignment ensures that the request and its data is accessible only to the specified user or users. Add your Appsmith username to `requestToUsers` attribute by replacing `add your appsmith user name` in the code snippet below. 
 
     ```javascript
     export default {
@@ -148,7 +141,12 @@ To execute the workflow from your app whenever a user performs an action to send
     }
     ```
 6. Click the **Publish** button to publish your latest changes to the workflow.
-7. In your application, drag an Icon button widget onto the canvas, name it _notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
+7. In your application, edit the _triggerWorkflowRun_ query, and add the below code to the * **Trigger Data** attribute. The code below passes the required parameters from the application to the workflow _Main_ JS object: 
+
+    ```javascript
+        {{this.params}}
+    ```
+7. Drag an Icon button widget onto the canvas, name it _notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
     * Name the modal as _ShowNotification_ 
     * Name the title Text as _messageFrom_, and delete the content of the **Text** property
     * Drag another Text widget, name it _messageReceived_, and delete the content of the **Text** property
