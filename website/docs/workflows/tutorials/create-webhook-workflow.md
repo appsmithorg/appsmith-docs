@@ -76,8 +76,8 @@ To execute workflow, you will have to trigger the workflow run. Follow the steps
 
 To execute the workflow from your app whenever a user performs an action to send notification in your app, you will have to integrate workflow execution with the events. Follow the steps below to integrate the workflow with your app:
 
-1. Drag an Input widget onto the canvas, name it _Message_, and set its label as **Message**.
-2. Drag a Select widget onto the canvas, name it _Users_, and set its source data as below:
+1. Drag an Input widget onto the canvas, name it _inp\_Message_, and set its label as **Message**.
+2. Drag a Select widget onto the canvas, name it _sel\_Users_, and set its source data as below:
     ```javascript
     [
         {
@@ -94,7 +94,7 @@ To execute the workflow from your app whenever a user performs an action to send
         }
     ]
     ```
-2. Drag a Button widget onto the canvas, name it _SendNotification_, and set the label as _Send Notification_
+2. Drag a Button widget onto the canvas, name it _btn\_SendNotification_, and set the label as _Send Notification_
 3. To capture the message, create a JS object, name it _Send\_Receive\_Message_, delete the auto-generated code, and add the below code to it. The `sendMessage` function captures the message, selected user's name and email, and then triggers the workflow by supplying them as parameters.
     ```javascript
     export default {
@@ -102,13 +102,13 @@ To execute the workflow from your app whenever a user performs an action to send
         async sendMessage() {
             //Message is the input widget
             //Check if the user has supplied a message and selected the user
-            if(Message.text && Users.selectedOptionValue){
+            if(inp_Message.text && sel_Users.selectedOptionValue){
                 //trigger the workflow run with the message, 
                 // user's email and name as parameters
                 await triggerWorkflowRun.run({
-					"message": Message.text,
-					"notify": Users.selectedOptionValue, 
-					"name": Users.selectedOptionLabel
+					"message": inp_Message.text,
+					"notify": sel_Users.selectedOptionValue, 
+					"name": sel_Users.selectedOptionLabel
 				}).then((response) => {
                     if(response)
                         showAlert('Message sent');
@@ -146,10 +146,10 @@ To execute the workflow from your app whenever a user performs an action to send
     ```javascript
         {{this.params}}
     ```
-7. Drag an Icon button widget onto the canvas, name it _notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
-    * Name the modal as _ShowNotification_ 
-    * Name the title Text as _messageFrom_, and delete the content of the **Text** property
-    * Drag another Text widget, name it _messageReceived_, and delete the content of the **Text** property
+7. Drag an Icon button widget onto the canvas, name it _icn\_notification_, set the icon as notifications, and set the **onClick** event to show modal. Select **+New Modal** and configure the modal as below:
+    * Name the modal as _mod\_ShowNotification_ 
+    * Name the title Text as _txt\_messageFrom_, and delete the content of the **Text** property
+    * Drag another Text widget, name it _txt\_messageReceived_, and delete the content of the **Text** property
 8. Create a new **Workflows Query**, name it _receiveNotification_ with the below details:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **My_First_Workflow**
     * **Request type** - Select **Get requests**
@@ -164,13 +164,13 @@ To execute the workflow from your app whenever a user performs an action to send
         async sendMessage() {
             //Message is the input widget
             //Check if the user has supplied a message and selected the user
-            if(Message.text && Users.selectedOptionValue){
+            if(inp_Message.text && sel_Users.selectedOptionValue){
                 //trigger the workflow run with the message, 
                 // user's email and name as parameters
                 await triggerWorkflowRun.run({
-					"message": Message.text,
-					"notify": Users.selectedOptionValue, 
-					"name": Users.selectedOptionLabel
+					"message": inp_Message.text,
+					"notify": sel_Users.selectedOptionValue, 
+					"name": sel_Users.selectedOptionLabel
 				}).then((response) => {
                     if(response)
                         showAlert('Message sent');
@@ -192,10 +192,10 @@ To execute the workflow from your app whenever a user performs an action to send
                     //verify if userInfo is available
                     if (userInfo){
                         // set the value of the Message from field in the modal
-                        messageFrom.setText(userinfo.name);
+                        txt_messageFrom.setText(userinfo.name);
                         // set the value of the Message received field in the modal
-					    messageReceived.setText(userinfo.message);
-                        showModal('ShowNotification');
+					    txt_messageReceived.setText(userinfo.message);
+                        showModal('mod_ShowNotification');
                     }
                 }
             }).catch((error)=> {
@@ -206,7 +206,7 @@ To execute the workflow from your app whenever a user performs an action to send
     }
     ```
    
-10. Write a message in the Input widget (_Message_), and click the **Send Message** button. You will see an alert `Message sent`. This marks that the workflow run is successful, and the workflow has received the message.
+10. Type a message into the Input widget (**Message**) and click the **Send Message** button. You will see an alert `Message sent` that confirms delivery.
 11. Click the **notification** button. You will see the _ShowNotification_ Modal as below:
 
     <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
