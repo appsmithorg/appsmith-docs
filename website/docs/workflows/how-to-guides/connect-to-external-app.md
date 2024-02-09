@@ -37,7 +37,7 @@ Before you start, make sure you have the following:
 
         try {
 
-            // trigger the workflow
+            // trigger the workflow and pass the token as query param
             const response = await fetch(`${url}?${queryParams}`, {
                 method: 'POST',
                 body: JSON.stringify(requestBody),
