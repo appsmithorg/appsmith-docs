@@ -161,7 +161,7 @@ To access refund requests, set up a datasource which hosts your refund data. Fol
 ## Display pending requests
 
 :::info
- Bind the workflow `Trigger workflow` query whenever a refund request is raised by a user. This will ensure that the refund request can be validated for automatic approvals.
+ Bind the workflow `Trigger workflow` query whenever a refund request is raised by a user. This will ensure that the refund request can be validated for automatic approvals and processed accordingly.
 :::
 
 To manually allow users to take action on the pending requests, display the requests in your Appsmith app as shown below:
