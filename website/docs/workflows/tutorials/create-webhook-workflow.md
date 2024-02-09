@@ -20,14 +20,14 @@ Before you start, make sure you have the following:
 
 ## Send notification
  
-When you have new users joining your organization, and you want to send them a welcome notification email, you can use workflows to do that. For this tutorial, you'll send a welcome email to a selected user. You'll:
+When you have new users joining your organization, and you want to send them a welcome notification email, you can use workflows to do that. For this tutorial, you'll send a welcome email to a specified user. You'll:
 
 * [Create a webhook workflow](#create-workflow)
 * [Configure an SMTP datasource in your workflow](#configure-smtp-datasource)
 * [Write a query to send email](#write-query-to-send-email)
-* [Write code in workflow to trigger email](#write-code-in-workflow-to-trigger-email)
+* [Write code in workflow to trigger email](#write-code-to-trigger-email)
 * [Send email using Postman](#send-email-using-postman)
-* [Trigger workflow using a Button Widget](#trigger-workflow-on-button-click)
+* [Trigger workflow using a Button Widget](#trigger-workflow-using-button-widget)
 
 ### Create workflow
 
