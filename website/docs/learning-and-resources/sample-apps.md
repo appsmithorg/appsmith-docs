@@ -49,7 +49,7 @@ import TabItem from '@theme/TabItem';
            <strong>Server-side Search</strong>
         </div><hr/>
         <div className="containerDescription">This app shows how to implement server-side search on the Table widget.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/></div>
-         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/623ce9d84d9aea1b062b365f"><strong>View App</strong></a></div>
+         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd013d"><strong>View App</strong></a></div>
     </div>
 </div>
 
@@ -60,7 +60,7 @@ import TabItem from '@theme/TabItem';
         </div> <hr/>
         <div className="containerDescription">This app shows how to create an external filter for your table data.<br/><br/> <strong>Datasource</strong> - MongoDB, PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink">
-            <a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61e11a42eb0501052b9fab41"><strong>View App 1 </strong></a>
+            <a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0134"><strong>View App 1 </strong></a>
             <a href="https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808"><strong> View App 2</strong></a>
         </div>
     </div>
@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
             <strong>Cell Background Colour</strong>
         </div> <hr/>
         <div className="containerDescription">This app shows how to change a table cell background colour conditionally.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
-        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6228808306971d5d538946e8"><strong >View App </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd013c"><strong >View App </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
@@ -96,14 +96,14 @@ import TabItem from '@theme/TabItem';
             <strong>Show Data from Multiple Queries</strong>
         </div> <hr/>
         <div className="containerDescription">This app shows how to conditionally show data in the table from different queries depending on the queryParams passed to URL.<br/><br/> <strong>Datasource</strong> - PostgreSQL, MongoDB<br/><br/> </div>
-        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f8c72f9d6d6a6720c9b90d"><strong >View App </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0138"><strong >View App </strong></a></div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <strong>Polling Data in real time</strong>
         </div><hr/>
         <div className="containerDescription">This app shows how to use the interval functions to update data in a table periodically.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/></div>
-         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6256ffb40d3d384069c08487"><strong>View App</strong></a></div>
+         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0142"><strong>View App</strong></a></div>
     </div>
 </div>
 
@@ -130,7 +130,7 @@ import TabItem from '@theme/TabItem';
             <strong>Reset Table</strong>
         </div> <hr/>
         <div className="containerDescription">This app shows how to reset the Table widget using the resetWidget() function of the Appsmith Framework.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
-        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/6241f4e8c99df2369931a9c3"><strong >View App </strong></a></div>
+        <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd013e"><strong >View App </strong></a></div>
     </div>
      <div className="columnGrid column-two" style={{margin: "10px"}}>
     </div>
@@ -896,7 +896,7 @@ import TabItem from '@theme/TabItem';
            <strong>Upload CSV File</strong>
         </div><hr/>
         <div className="containerDescription">This app shows how to upload CSV data and display it in a Table widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/></div>
-         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/62547025e52b06350af370e8"><strong>View App</strong> </a></div>
+         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0139"><strong>View App</strong> </a></div>
     </div>
 </div>
 
@@ -982,7 +982,7 @@ import TabItem from '@theme/TabItem';
            <strong>Sequential ID Generator</strong>
         </div><hr/>
         <div className="containerDescription">This app shows how to generate custom sequence-based IDs for table data using JavaScript.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/></div>
-         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e11a42eb0501052b9fab3e/pages/61f641559d6d6a6720c99777"><strong>View App</strong> </a></div>
+         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0136"><strong>View App</strong> </a></div>
     </div>
 </div>
 
