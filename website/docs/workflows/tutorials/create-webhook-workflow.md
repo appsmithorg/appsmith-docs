@@ -14,7 +14,9 @@ To learn workflows in Appsmith, you'll build a notification workflow that sends 
 
 ## Prerequisites
 
-* Ensure you have a self-hosted instance of Appsmith. See the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+Before you start, make sure you have the following:
+
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 *  If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create workflow
@@ -40,7 +42,7 @@ Follow these steps to create a webhook workflow within your workspace. The newly
     ```
 4. Click the gear icon ⚙️ in the bottom left corner to configure the workflow settings.
 5. Toggle the **Webhook trigger** property to configure the workflow as a webhook.
-6. Copy and save the **URL** and the **Bearer Token**.
+6. Copy and save the **URL** and the **Bearer Token**. If you wish to connect your workflow with an external app then you will need the **URL** and the **Bearer Token**. For more information, see [Connect to External App](/workflows/how-to-guides/connect-to-external-app).
 7. Click **Publish** in the top right corner to publish your workflow.
 
 You've created your first workflow, and it's available in your workspace for integrating it into your apps.

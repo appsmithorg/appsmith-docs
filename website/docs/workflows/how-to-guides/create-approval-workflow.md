@@ -37,7 +37,7 @@ To manage refunds and notify users of the outcome of their refund requests, you'
 
 ### Set up SMTP datasource and query
 
-To notify the users of the outcome of their refund request, set up an SMTP datasource and connect it with your email service provider. Follow these steps to set up datasources and create query for sending email:
+To notify the users of the outcome of their refund request, set up an [SMTP](/connect-data/reference/using-smtp) datasource and connect it with your email service provider. Follow these steps to set up an SMTP datasource and create query for sending email:
 
 1. Click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [SMTP](/connect-data/reference/using-smtp) datasource.
 
