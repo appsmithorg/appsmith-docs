@@ -641,8 +641,7 @@ const sidebars = {
           type: 'category',
           label: 'How-To Guides',
           items: [
-            'workflows/how-to-guides/create-approval-workflow',
-            'workflows/how-to-guides/connect-to-external-app'
+            'workflows/how-to-guides/create-approval-workflow'
           ],
         },
         {
@@ -650,13 +649,7 @@ const sidebars = {
           label: 'Reference',
           items: [
             'workflows/reference/workflow-queries',
-            {
-              type: 'category',
-              label: 'Workflow Functions',
-              items: [
-                'workflows/reference/workflow-functions/assign-request',
-              ],
-            },
+            'workflows/reference/workflow-functions'
           ],
         },
       ]

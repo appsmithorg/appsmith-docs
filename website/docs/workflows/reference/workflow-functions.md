@@ -1,5 +1,7 @@
 
-# Assign Request
+# Workflow Functions
+
+## Assign Request
 
 In your workflow, to create requests that need human intervention, use `assignRequests`. These requests are generated for every workflow run, and eligible requests are added to the stack. The `assignRequests` needs below parameters:
 
