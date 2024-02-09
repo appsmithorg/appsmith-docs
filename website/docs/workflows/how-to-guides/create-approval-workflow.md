@@ -167,9 +167,9 @@ To access refund requests, set up a datasource which hosts your refund data. Fol
 To manually allow users to take action on the pending requests, display the requests in your Appsmith app as shown below:
 
 1. To fetch the pending requests from workflow, create a workflow query and configure `Get requests` as shown below:
-    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select _Refunds_
+    * **Workflow name** - Select **Refunds**
     * **Request type** - Select **Get requests**
-    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow Main JS object in `appsmith.workflows.assignRequest()` in the [Manage approval](#manage-approval) section.
+    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the [Manage approval](#manage-approval) section.
     * **Request status** - Set it as `Pending`
     Give it a meaningful and unique name. For example, _fetchPendingRefundRequests_
 2. Create a JS object, to execute the _manageRefundRequests_ query and transform the `metadta` attribute.
