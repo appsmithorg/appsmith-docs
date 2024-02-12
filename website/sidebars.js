@@ -630,6 +630,15 @@ const sidebars = {
       label: 'Packages',
       items: [
         'packages/overview',
+
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
         {
           type: 'category',
           collapsed: true,
