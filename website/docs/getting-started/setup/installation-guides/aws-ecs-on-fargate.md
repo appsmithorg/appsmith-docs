@@ -18,7 +18,7 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
 
 ## Create EFS volume
 
-Follow these steps to create Elastic File System (EFS):
+Follow these steps to create an Elastic File System (EFS):
 
  :::danger
   Do not share the Elastic File System (EFS) across ECS services, as doing so will cause Appsmith services to crash.
@@ -37,7 +37,7 @@ Follow these steps to create Elastic File System (EFS):
  Follow the below steps to set up a policy to allow ECS Exec capability:
 
 1. Go to the **IAM** console and select **Policies**, and click the **Create Policy** button.
-2. Choose **JSON** for policy editor, and update the policy with the below details:
+2. Choose **JSON** for the policy editor, and update the policy with the below details:
 
     ```javascript
     {
@@ -56,9 +56,8 @@ Follow these steps to create Elastic File System (EFS):
             ]
     }
     ```
-
 3. Click the **Next** button.
-4. On **Review and Create** screen, give a meaningful name to your policy and click the **Create Policy** button. Your policy is available in the list of policies.
+4. On the **Review and Create** screen, give a meaningful name to your policy and click the **Create Policy** button. Your policy is available in the list of policies.
 
 ## Create ECS task role
 
@@ -100,6 +99,7 @@ Follow these steps to create task and container definitions for your cluster:
     * **Task Roles** - Select the role you created in the [Create ECS task role](#create-ecs-task-role) section for the **Task role** setting.
 
    Keep the default for other settings in this section.
+   
 4. In the **Container-1** section:
     * **Name** - Give a meaningful and unique name. For example, `appsmith`.
     * **Image/URI** - `appsmith/appsmith-ee`
@@ -114,7 +114,8 @@ Follow these steps to create task and container definitions for your cluster:
       * **Port name** - Give a meaningful and unique name.
       * **App protocol** - HTTP
 
-  Keep the default values for other settings in this section.
+    Keep the default values for other settings in this section.
+
 5. In the **Environment variables** section, add the following environment variables:
     * `APPSMITH_ENCRYPTION_PASSWORD`- Add a password to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_ENCRYPTION_SALT`- Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
@@ -128,7 +129,8 @@ Follow these steps to create task and container definitions for your cluster:
     * **Start period** - 160
     * **Retries** - 3
 
-  Keep the default values for all the other settings, and scroll down to the **Storage** section.
+    Keep the default values for all the other settings, and scroll down to the **Storage** section.
+
 7. In the **Storage** section, click the **Add volume** button, and configure **Volume - 1** as shown below:
     * **Volume name** - Give a meaningful and unique name.
     * **Configuration type** - Keep the default value (Configure at task definition creation).
@@ -140,7 +142,9 @@ Follow these steps to create task and container definitions for your cluster:
       * **Container** - Select the container name that you gave in the **Container - 1** section above.
       * **Source volume** - Select the name, you gave in the **Volume name** in the **Volume - 1** section.
       * **Container path** - Set it as `/appsmith-stacks`.
-Keep default values for all other settings.
+
+    Keep default values for all other settings.
+
 8. Scroll down to the bottom of the page and click the **Create** button. You'll see your task definition listed under **Task definitions**.
 9. Click the **Task definition** link to review the details.
 
@@ -148,29 +152,30 @@ Keep default values for all other settings.
 
 Follow these steps to create and run an ECS service:
 
-1.  Go to the cluster dashboard and click the ECS cluster name that you created in [Create ECS Cluster](#create-ecs-cluster) section.
+1.  Go to the cluster dashboard and click the ECS cluster name that you created in the [Create ECS Cluster](#create-ecs-cluster) section.
 2.  On the cluster details, click **Create** button available on the **Services** tab, and you will be on the **Create** screen.
 3.  You will see the cluster name pre-selected in the **Existing cluster** field. This will be the Cluster that you created in [Create ECS Cluster](#create-ecs-cluster).
-3.  In the **Compute configuration** section, add below details:
+4.  In the **Compute configuration** section, add below details:
     * **Compute options** - Select **Launch type**.
     * **Launch Type** - Select **Fargate**.
-4. In the **Deployment configuration** section, add below details:
+5. In the **Deployment configuration** section, add below details:
     * **Application type** - Keep the default selection (Service).
-    * For the **Family** setting under **Task definition**- Select the task definition you created in [Create task and container definitions](#create-task-and-container-definitions) section.
+    * For the **Family** setting under **Task definition**- Select the task definition you created in the [Create task and container definitions](#create-task-and-container-definitions) section.
     * **Service name** - Give a meaningful name to the service.
     * **Service type** - Select **Replica**.
     * **Desired tasks** - Set as **1**.
 
-Keep the default values for all the other settings.
-5. In the **Networking** section, add below details:
+    Keep the default values for all the other settings.
+
+6. In the **Networking** section, add below details:
     * **VPC** - Select or review the existing VPC and the subnets.
     * **Security group** - Select **Use the existing security group**.
     * **Security group name** - Select the security group you created in the [Prerequisites](#prerequisites) section. Ensure that you have added the NFS access to the security group.
-6. In the **Load balancing** section, add the below details:
+7. In the **Load balancing** section, add the below details:
     * **Load balancer type** - Select **Application load balancer**.
     * **Application load balancer** - Select **Use an existing load balancer**.
     * **Load balancer** - Select the Application Load Balancer you created in the [Prerequisites](#prerequisites) section.
-7. Under **Container**, set up listener as follows:
+8. Under **Container**, set up listener as follows:
     * **Listener** - Select **Create new listener**.
     * **Port** - `443`
     * **Protocol** - Set it to `HTTPS`.
@@ -179,23 +184,22 @@ Keep the default values for all the other settings.
     * **Target group name** - Give a meaningful and unique name.
     * **Health check protocol** - Set it to `HTTPS`.
     * **Health check path** - Set it to `/`.
-8.  In the **Service auto scaling** section, add the below details: 
+9.  In the **Service auto scaling** section, add the below details: 
     * **Use service auto scaling** - Check this setting.
     * **Minimum number of tasks** - Set it to `1`.
     * **Maximum number of tasks** - Set it to `1`.
 
-  Keep the default values for all other settings.
-9. Scroll down to the bottom of the page and click the **Create** button. You'll see your service listed under **Services**. This may take some time and once ready the **Status** is shown as **Active**. 
-10. Click the **Tasks** tab, and verify the status of the task. The **Last status** shown will be **Running**.
+    Keep the default values for all other settings.
+
+10. Scroll down to the bottom of the page and click the **Create** button. You'll see your service listed under **Services**. This may take some time and once ready the **Status** is shown as **Active**. 
+11. Click the **Tasks** tab, and verify the status of the task. The **Last status** shown will be **Running**.
 
 ### Verify Appsmith installation
 
 1. Select your cluster from the **Clusters** section, and click the **Tasks** tab.
 2. Click the **Task** link to view configurations.
 3. Click the **Open address** link available next to the **Public IP** field to access Appsmith.
-
 <ZoomImage src="/img/aws-ecs-ami-find-DNS-to-access-appsmith.png" alt="Use DNS or Public IP to access Appsmith." caption="Use Public IP to access Appsmith" />
-
 4. Fill in your details to create an administrator account.
 5. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
@@ -203,12 +207,10 @@ Keep the default values for all the other settings.
 ## Connect to Fargate instance
 
 1. Enable the `exec` on the Fargate instance with:
-
-```bash
-  aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
-```
-
-The `exec` command will be available once the new deployment is active. 
+  ```bash
+    aws ecs update-service --cluster <CLUSTER_NAME>  --service <SERVICE_NAME> --region <REGION> --enable-execute-command --force-new-deployment
+  ```
+  The `exec` command will be available once the new deployment is active. 
 
 2. Exec into the Fargate Appsmith instance with:
 `bash
