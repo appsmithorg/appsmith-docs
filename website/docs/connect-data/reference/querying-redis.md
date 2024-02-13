@@ -9,7 +9,7 @@ This page provides information for connecting your application to your Redis dat
 ## Connect Redis
 
 :::caution 
-Appsmith does not support connection to Redis using TLS. To connect to Redis, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
+Appsmith does not support connection to Redis using TLS. If you are a cloud user, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. If you're using Redis Cloud, you can see [**Configure CIDR allow list**](https://docs.redis.com/latest/rc/security/cidr-whitelist/) for more details.
 :::
 
 ### Connection parameters

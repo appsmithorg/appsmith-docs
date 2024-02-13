@@ -12,7 +12,7 @@ Appsmith supports MySQL versions **5.5**, **5.6**, **5.7**, and **8.0**.
 ## Connect MySQL
 
 :::caution
-To connect to MySQL, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to the database.
+If you are a cloud user, you should whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to the database.
 :::
 
 ### Connection parameters
