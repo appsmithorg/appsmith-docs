@@ -36,13 +36,9 @@ Ensure that you have already created a package, as discussed in [lesson 1](/pack
 
 
 
-
-
-
-
 ## Configure JS module 
 
-A Package is a collection of JS and query modules that can be versioned and distributed across instances. 
+A package is a collection of JS and query modules that can be versioned and distributed across instances. 
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
