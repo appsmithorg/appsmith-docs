@@ -1,12 +1,12 @@
 ---
-title: Lesson 2 - Reuse JS Modules
+title: Lesson 3 - Create JS Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Reuse JS Modules</h1>
+ <h1>Lesson 3 - Create JS Modules</h1>
 
 <Tags
 tags={[
@@ -18,18 +18,29 @@ tags={[
 
 <!-- vale on -->
 
-A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. This tutorial takes you through the process of setting up a JS module and integrating it with your Appsmith app.
+A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. 
 
-This tutorial will teach you how to create a JavaScript function that formats dates into a designated time zone. The function can be utilized across multiple applications, providing a consistent method for date formatting tailored to a particular time zone.
+This lesson will teach you how to create a JavaScript function that formats dates into a designated time zone. The function can be utilized across multiple applications, providing a consistent method for date formatting tailored to a particular time zone.
 
 
 By the end of this lesson, you will learn how to:
 
-* Create a JS module
-* Configure the module 
-* Integrate and Execute the module in your app
+* Create and configure the JS module 
+* Integrate and execute the module in your app
 
-## Create package
+## Prerequisites
+
+Ensure that you have already created a package, as discussed in [lesson 1](/packages/tutorial/create-package).
+
+
+
+
+
+
+
+
+
+## Configure JS module 
 
 A Package is a collection of JS and query modules that can be versioned and distributed across instances. 
 
@@ -41,16 +52,12 @@ A Package is a collection of JS and query modules that can be versioned and dist
 
 
 
-1. Click the **Create New** button from the top-right corner of your workspace and **Create a new package**.
+1. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
-2. Rename the Package to **DateformatPackage**.
-
-3. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
-
-4. Rename the module to **formatTimeZone**.
+2. Rename the module to **formatTimeZone**.
 
 
-5. In the Main JS Object, delete the auto-generated code and add the below code to it:
+3. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
 <dd>
 

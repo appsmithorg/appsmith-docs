@@ -1,12 +1,12 @@
 ---
-title: Lesson 1 - Reuse Query Modules
+title: Lesson 2 - Create Query Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Reuse Query Modules</h1>
+ <h1>Lesson 2 - Create Query Modules</h1>
 
 <Tags
 tags={[
