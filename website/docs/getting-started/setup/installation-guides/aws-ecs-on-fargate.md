@@ -225,7 +225,7 @@ Follow these steps to create and run an ECS service:
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 10 of the [Install Appsmith](#install-appsmith) section on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 4 of the [Create task and container definitions](#create-task-and-container-definitions) section on this page.
 
 ## Troubleshooting
 
