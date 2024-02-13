@@ -1,20 +1,44 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Appsmith AI
 
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
 
 
+## Connect Appsmith AI
 
 <ZoomImage
-  src="/img/appsmith-ai-connect.png" 
+  src="/img/-appsmith-ai-home.png" 
   alt="Appsmith AI"
   caption="Appsmith AI query"
 />
 
 
-## Query Appsmith AI
 
-You can create an Appsmith AI query from the entity explorer without the need to create any datasource.
+### Connection parameters
+
+The following section is a reference guide that provides a complete description of all the parameters to connect to the datasource.
+
+
+#### Files
+
+<dd>
+
+
+You have the option to enhance [text generation](#generate-text) by uploading specific files for context. The maximum allowable file size is 20 MB; compress your file if the size exceeds 20 MB.
+
+Submission of files is not mandatory, and you can use Appsmith AI without uploading any files.
+
+
+For example, if you are working on a loan approval application and want to upload an SOP for insights into user preferences and financial details, the system uses the provided information to generate tailored recommendations and guidance.
+
+
+</dd>
+
+
+## Query Appsmith AI
 
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Appsmith AI queries.
@@ -26,6 +50,14 @@ The following section is a reference guide that provides a description of the av
 
 The Generate Text action allows you to generate text based on specific prompts.
 
+<ZoomImage
+  src="/img/appsmith-ai-loan-example.png" 
+  alt="Appsmith AI"
+  caption="Generate text query"
+/>
+
+
+
 
 <dd>
 
@@ -35,14 +67,46 @@ The Generate Text action allows you to generate text based on specific prompts.
 This field allows you to input prompts for text generation. You can also add data from queries or JSObjects using mustache bindings `{{}}`, like `{{user_Input.text}}`.
 
 
+*Example*:
 
-For example, "Write a creative product description for an electric car named RevaX, with the keywords- fast charging, 200 miles per single charge, compact, eco-friendly, economical. This is targeted towards a climate concious tech/EV enthusiast who enjoys driving. Also describe the benefits of this product in less than 80 words."
+<Tabs>
+  <TabItem value="apple" label="With file as context" default>
+    
+    ```
+  You are helpful assistant who can help loan agents with loan approval or rejection recommendations. Analyse the loan details and generate a recommendation based on the SOP document that you have access to. 
+
+  Loan details: 
+  Credit score: `{{tbl_users.selectedRow.creditscore}}`
+  DTI Ratio: `{{tbl_users.selectedRow.dtiratio}}`
+
+  Your response should contain a recommendation followed by a list of all reasons. The format should be: 
+  Recommendation: `<your recommendation. Possible values: (Approve/Conditional Approve/Reject)>`
+  Reasons: `<your reasons>`
+    ```
+
+  </TabItem>
+  <TabItem value="orange" label="Without File">
+    ```
+    Write a creative product description for an electric car named RevaX, with the keywords- fast charging, 200 miles per single charge, compact, eco-friendly, economical. This is targeted towards a climate concious tech/EV enthusiast who enjoys driving. Also describe the benefits of this product in less than 80 words.
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 
 
 </dd>
 
+<dd>
 
+#### Use context from files
+
+Enhance the quality of AI responses by selecting relevant files that provide context. 
+
+Upload your files through the [datasource](#files) to enable the system to better understand and generate more accurate and context-aware responses.
+
+</dd>
 
 ### Classify text
 
