@@ -437,7 +437,6 @@ const sidebars = {
             'build-apps/how-to-guides/add-remove-inputs-in-list',
             `build-apps/how-to-guides/navigate-between-pages`,
             `build-apps/how-to-guides/create-custom-nav-bar`,
-            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'advanced-concepts/custom-authentication',
