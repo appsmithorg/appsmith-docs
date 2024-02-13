@@ -6,10 +6,6 @@ description: This page provides detailed steps to set up a Webhook workflow on A
 
 Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial guides you through the process of setting up a Webhook workflow, integrating it with your Appsmith app, and triggering the workflow execution from your Appsmith app.  
 
-To learn workflows in Appsmith, you'll build a notification workflow that sends a notification to users. By the end of this tutorial, you will know how to:
-
-* Create a workflow and configure it as a webhook
-* Execute the workflow from your Appsmith app
 
 ## Prerequisites
 
@@ -17,17 +13,16 @@ Before you start, make sure you have the following:
 
 * A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 *  If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+* A Postman account. If you don't have one, [Create a Postman Account](https://identity.getpostman.com/signup).
 
-## Send notification
+To learn workflows in Appsmith, you'll build a notification workflow that sends a notification to users. By the end of this tutorial, you will know how to:
+
+* Create a workflow and configure it as a webhook
+* Execute the workflow from your Appsmith app
+
+## Send notification using workflow
  
-When you have new users joining your organization, and you want to send them a welcome notification email, you can use workflows to do that. For this tutorial, you'll send a welcome email to a specified user. You'll:
-
-* [Create a webhook workflow](#create-workflow)
-* [Configure an SMTP datasource in your workflow](#configure-smtp-datasource)
-* [Write a query to send email](#write-query-to-send-email)
-* [Write code in workflow to trigger email](#write-code-to-trigger-email)
-* [Send email using Postman](#send-email-using-postman)
-* [Trigger workflow using a Button Widget](#trigger-workflow-using-button-widget)
+When you have new users joining your organization, and you want to send them a welcome notification email, you can use workflows to do that. Follow these steps to build a notification workflow:
 
 ### Create workflow
 
@@ -78,7 +73,7 @@ To send notifications from the workflow, you will need to set up an SMTP datasou
     * **Username**: Add `demo.smtp.send.email@gmail.com` in the Username field.
     * **Password**: Add the below key in the SMTP password field.
         ```bash
-        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-QBwn6DG0RjShXMz5
+        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-ZR1zJ9tFgTPnsNDM
         ```
 
 4. Test and save the datasource configuration.
