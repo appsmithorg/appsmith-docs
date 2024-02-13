@@ -635,7 +635,6 @@ const sidebars = {
           type: 'category',
           label: 'Tutorial',
           items: [
-            'packages/tutorial/create-package',
             'packages/tutorial/query-module',
             'packages/tutorial/js-module'
           ],

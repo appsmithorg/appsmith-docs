@@ -1,12 +1,12 @@
 ---
-title: Lesson 3 - Create JS Modules
+title: Create Reusable JS Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 3 - Create JS Modules</h1>
+ <h1>Create Reusable JS Modules</h1>
 
 <Tags
 tags={[
@@ -28,17 +28,10 @@ By the end of this lesson, you will learn how to:
 * Create and configure the JS module 
 * Integrate and execute the module in your app
 
-## Prerequisites
 
-Ensure that you have already created a package, as discussed in [lesson 1](/packages/tutorial/create-package).
+## Create package
 
-
-
-
-
-## Configure JS module 
-
-A package is a collection of JS and query modules that can be versioned and distributed across instances. 
+A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
