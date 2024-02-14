@@ -75,36 +75,6 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
 </div>
 
 <div className="containerGrid">
-    <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/open-ai">
-            <img className="containerImage" src="/img/open-ai.svg" alt="OpenAI"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
-    </div>
-
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/anthropic">
-            <img className="containerImage" src="/img/anthropic4.svg" alt="OpenAI"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
-    </div>
-
-
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/google-ai">
-            <img className="containerImage" src="/img/google-ai.svg" alt="Google AI"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/google-ai">Google AI</a></b>
-    </div>
-
-</div>
-<div className="containerGrid">
     
    <div className="columnGrid column-three" align="center">
         <div className="containerCol">
@@ -261,6 +231,47 @@ Databases are an essential part of many applications and are used to store and m
 </div>
 
 </div>
+
+
+## AI Integrations
+With AI integrations, you can add intelligent AI capabilties to automate human tasks on your internal apps. Execute AI queries with a custom prompt and optional file context for enhanced responses.
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/open-ai">
+            <img className="containerImage" src="/img/appsmith-ai-logo.svg" alt="Appsmith AI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/appsmith-ai">Appsmith AI</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/open-ai">
+            <img className="containerImage" src="/img/open-ai.svg" alt="OpenAI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+         <div className="containerCol">
+            <a href="/connect-data/reference/anthropic">
+            <img className="containerImage" src="/img/anthropic4.svg" alt="OpenAI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
+   </div>
+  <div className="columnGrid column-three" align="center">
+       <div className="containerCol">
+            <a href="/connect-data/reference/google-ai">
+            <img className="containerImage" src="/img/google-ai.svg" alt="Google AI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/google-ai">Google AI</a></b>
+   </div>
+
+</div>
+
 
 ## See also
 - [Connect to Local Datasource](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith)
