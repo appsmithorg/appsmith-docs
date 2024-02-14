@@ -8,6 +8,7 @@ description: Find resources for managing your data in Appsmith.
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Appsmith supports the following databases and APIs.
 
 
+
 ## APIs
 With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a supported datasource, you can connect using the REST API. Following APIs are supported by Appsmith:
 
@@ -23,16 +24,6 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
         <b><a href="/connect-data/reference/authenticated-api">API</a></b>
     </div>
   
- <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/querying-google-sheets">
-            <img className="containerImage" src="/img/gsheets_.png" alt="GoogleSheets"/>
-            </a>   
-        </div> 
-            <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
-   </div>
-   
-
    <div className="columnGrid column-three" align="center">
         <div className="containerCol">
             <a href="/connect-data/reference/graphql">
@@ -42,50 +33,19 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
             <b><a href="/connect-data/reference/graphql">GraphQL</a></b>
    </div>
 
-
-</div>
-
-<div className="containerGrid">
-    <div className="columnGrid column-one" align="center">
+ <div className="columnGrid column-three" align="center">
         <div className="containerCol">
-            <a href="/connect-data/reference/airtable">
-            <img className="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/airtable">Airtable</a></b>
-    </div>
-   <div className="columnGrid column-two" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/twilio">
-            <img className="containerImage" src="/img/twilio_.png" alt="twilio-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/connect-data/reference/twilio">Twilio</a></b>
-    </div>
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/hubspot">
-            <img className="containerImage" src="/img/hubspot_.png" alt="hubspot-logo"/>
+            <a href="/connect-data/reference/rest-api">
+            <img className="containerImage" src="/img/api-logo_.png" alt="GoogleSheets"/>
             </a>   
         </div> 
-            <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
+            <b><a href="/connect-data/reference/rest-api">REST API</a></b>
    </div>
-
-
+   
 </div>
 
-<div className="containerGrid">
-    
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/aws-lambda">
-            <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
-    </div>
 
-</div>
+
 
 
 
@@ -230,6 +190,62 @@ Databases are an essential part of many applications and are used to store and m
             <b><a href="/connect-data/reference/databricks">Databricks</a></b>
 </div>
 
+</div>
+
+
+## SaaS Integrations
+
+Appsmith also supports integration with various Software as a Service (SAAS) platforms:
+
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/airtable">
+            <img className="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/airtable">Airtable</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/twilio">
+            <img className="containerImage" src="/img/twilio_.png" alt="twilio-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/connect-data/reference/twilio">Twilio</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/hubspot">
+            <img className="containerImage" src="/img/hubspot_.png" alt="hubspot-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
+   </div>
+
+
+</div>
+
+
+<div className="containerGrid">
+    
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/aws-lambda">
+            <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
+    </div>
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-google-sheets">
+            <img className="containerImage" src="/img/gsheets_.png" alt="GoogleSheets"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
+   </div>
 </div>
 
 
