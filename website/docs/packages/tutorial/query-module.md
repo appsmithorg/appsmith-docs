@@ -76,7 +76,9 @@ SELECT * FROM public."product" LIMIT 10;
 
 ## Pass parameters to module
 
-To pass input values from any app to the query module for dynamic updates, follow these steps:
+
+In this section, we will update the query module to accept dynamic inputs, allowing us to pass parameters from the app to the query module for tailored and responsive data retrieval. 
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/lSjwblDc3E1UlH1LxWd5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
