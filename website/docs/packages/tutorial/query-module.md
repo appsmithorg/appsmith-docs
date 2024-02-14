@@ -140,7 +140,7 @@ Once you've created a query module, follow these steps to access its data in any
 
 <dd>
 
-This code extracts unique product types and formats them into format suitable for a Select widget.
+This code extracts unique product types and formats them into objects suitable for a Select widget.
 
 
 
