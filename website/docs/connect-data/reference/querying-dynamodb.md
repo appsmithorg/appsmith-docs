@@ -8,8 +8,9 @@ This page provides information for connecting your application to your DynamoDB 
 
 ## Connect DynamoDB
 
+
 :::caution important
-You must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to your database. Create an IAM Policy with a condition statement to allow these IP addresses. To learn more, see [IP address condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress).
+If you are a cloud user, you must whitelist the IP addresses `18.223.74.85` and `3.131.104.27` of the Appsmith deployment on your database instance before connecting to your database. Create an IAM Policy with a condition statement to allow these IP addresses. To learn more, see [IP address condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_IPAddress).
 :::
 
 ### Connection parameters

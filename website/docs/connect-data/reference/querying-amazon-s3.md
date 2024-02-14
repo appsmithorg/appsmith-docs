@@ -12,7 +12,7 @@ This datasource can also be used to connect to any S3-compatible object storage 
 ## Connect S3
 
 :::caution
-You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your S3 instance before connecting to the bucket. For more information about whitelisting on Amazon, see [Managing access based on specific IP addresses](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-IP).
+If you are a cloud user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your S3 instance before connecting to the bucket. For more information about whitelisting on Amazon, see [Managing access based on specific IP addresses](https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-IP).
 :::
 
 ### Connection parameters
