@@ -105,11 +105,13 @@ Once you've created a JS module, follow these steps to access its data in any ap
 
 <dd>
 
+This code passes the date value from a Date Picker widget to the JS module using the `formatWithTimeZone` function.
+
 ```js
 {{formatTimeZone_1.formatWithTimeZone(DatePicker1.formattedDate)}}
 ```
 
-This code ensures that whenever a date is selected in the Datepicker, the Text widget displays the formatted date. It provides a versatile solution for formatting date data in various contexts, such as tables or any other location within your application.
+Whenever a date is selected in the Datepicker, the Text widget displays the formatted date. It provides a versatile solution for formatting date data in various contexts, such as tables or any other location within your application.
 
 </dd>
 
