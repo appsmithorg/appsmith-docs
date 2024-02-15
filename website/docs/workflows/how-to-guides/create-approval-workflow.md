@@ -20,7 +20,7 @@ Follow these steps to set up a webhook workflow within your workspace.
 
 1. Create a new workflow (_Refunds_) in your workspace.
 2. Configure it as a webhook workflow.
-3. Create a query to Fetch refund (_getRefundDetails_) details. For example, the below query fetches pending refund requests for the given `order-id` from the `customer_refunds`table.
+3. Create a query to fetch refund (_getRefundDetails_) details. For example, the below query fetches pending refund requests for the given `order_id` from the `customer_refunds`table.
     ```sql
     -- The order_id is a parameter and replaced by actual value passed by the application
     select * from public. "customer_refunds" where order_id = {{this.params.order_id}} and refund_status = 'Pending';
@@ -31,7 +31,17 @@ Follow these steps to set up a webhook workflow within your workspace.
     -- highlight-next-line
     Update public. "customer_refunds" set refund_status = {{this.params.status}} where refund_id = {{this.params.refund_id}};
     ```
-5. Ceate queries to send emails to inform users of the outcome. For example, you can create two queries - one to notify approval and the other for rejection. Parameterize the query to include the customer name (`{{this.params.customer_name}}`) who raised the request. Additionally, for the rejection query, add a parameter for the rejection reason (`{{this.params.rejection_reason}}`). Pass these parameters from your app to the workflow.
+5. Ceate queries to send emails to inform users of the outcome. For example, you can create two queries:
+    *  To notify approval (_notifyUser_):
+        * Parameterize the query to include:
+            * Customer name (`{{this.params.customer_name}}`) who raised the request.
+            * Customer email (`{{this.params.customer_email}}`) to send email notification. 
+    * To notify rejection (_notifyRejectionToUser_):
+        * Parameterize the query to include:
+            * Customer name (`{{this.params.customer_name}}`) who raised the request.
+            * Customer email (`{{this.params.customer_email}}`) to send email notification.
+            * Rejection reason (`{{this.params.rejection_reason}}`). 
+    * Pass these parameters from your app to the workflow.
 
 6. Click the **Publish** button to publish the workflow.
 
