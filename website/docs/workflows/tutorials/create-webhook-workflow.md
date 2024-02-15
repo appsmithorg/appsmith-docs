@@ -73,7 +73,7 @@ To send notifications from the workflow, you will need to set up an SMTP datasou
     * **Username**: Add `demo.smtp.send.email@gmail.com` in the Username field.
     * **Password**: Add the below key in the SMTP password field.
         ```bash
-        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-ZR1zJ9tFgTPnsNDM
+        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-zkJC7SarXVE3YPhg
         ```
 
 4. Test and save the datasource configuration.
