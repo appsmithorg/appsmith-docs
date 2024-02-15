@@ -40,7 +40,7 @@ A package is a collection of JS and query modules that can be versioned and dist
   </iframe>
 </div>
 
-1. **Create a new package** by clicking on the top-right corner of your workspace.
+1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
 
 2. Click **New Module** > **Query Module**, and create a new datasource by selecting PostgreSQL.
 
@@ -72,6 +72,12 @@ SELECT * FROM public."product" LIMIT 10;
 </dd>
 
 6. Run and Publish the module. 
+
+With this, you've created a new query module. To access the module inside any app, follow the instructions in the [use query-module section](#use-query-module).
+
+
+
+
 
 
 ## Pass parameters to module
@@ -132,11 +138,15 @@ Once you've created a query module, follow these steps to access its data in any
 
 1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
 
-2. From the **Queries** Tab, select the `GetProducts` query module to view inputs, default values, and query settings.
+2. From the **Queries** Tab, click **+ New query / API**.
 
-3. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
+3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
 
-4. Drop a Select widget(`Select_type`) and set its **Source Data** property to:
+4. Run the query module.
+
+5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
+
+6. Drop a Select widget(`Select_type`) and set its **Source Data** property to:
 
 <dd>
 
@@ -148,14 +158,14 @@ This code extracts unique product types and formats them into objects suitable f
 {{GetProducts_1.data
   .map(obj => obj.type) // Extract all types
   .filter((value, index, self) => self.indexOf(value) === index) // Filter unique types
-  .map(type => { return { 'label': type, 'value': type } })
+  .map(type => { return { 'name': type, 'code': type } })
 }}
 ```
 </dd>
 
-5. Set the **onOptionChange** event of the Select widget to execute the `GetProducts` query. 
+7. Set the **onOptionChange** event of the Select widget to execute the `GetProducts` query. 
 
-6. From the **Queries** Tab, select the `GetProducts` query module and set the **type** property to:
+8. From the **Queries** Tab, select the `GetProducts` query module and set the **type** property to:
 
 <dd>
 

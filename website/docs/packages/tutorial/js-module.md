@@ -40,13 +40,14 @@ A package is a collection of JS and query modules that can be versioned and dist
 </div>
 
 
+1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
 
-1. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
+2. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
-2. Rename the module to **formatTimeZone**.
+3. Rename the module to **formatTimeZone**.
 
 
-3. In the Main JS Object, delete the auto-generated code and add the below code to it:
+4. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
 <dd>
 
@@ -80,7 +81,7 @@ formatWithTimeZone: (dateString) => {
 
 
 
-6. Publish the JS Module.
+5. Publish the JS Module.
 
 ## Integrate Modules into your App
 
