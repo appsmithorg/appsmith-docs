@@ -3,14 +3,11 @@
 
 This page provides information for connecting Appsmith to Google AI, which allows you to configure applications with advanced AI features, such as chat completion.
 
-:::note Data, Privacy and Security
-Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings and data: 
-- are **NOT** available to other Appsmith customers.
-- are **NOT** used to fine-tune or train Google Gemini models.
-- are **NOT** used to improve Appsmith's products or services.
 
-Learn more about Google's privacy policy [here](https://support.google.com/gemini/answer/13594961?hl=en).
+:::note Data, Privacy and Security
+Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. Learn more about Google's privacy policy [here](https://support.google.com/gemini/answer/13594961?hl=en).
 :::
+
 
 ## Connect Google AI
 

@@ -255,7 +255,7 @@ With AI integrations, you can add intelligent AI capabilties to automate human t
 <div className="containerGrid">
     <div className="columnGrid column-one" align="center">
         <div className="containerCol">
-            <a href="/connect-data/reference/open-ai">
+            <a href="/connect-data/reference/appsmith-ai">
             <img className="containerImage" src="/img/appsmith-ai-logo.svg" alt="Appsmith AI"/>
             </a> 
         </div> 
