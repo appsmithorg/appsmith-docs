@@ -175,15 +175,26 @@ Follow these steps to create and run an ECS service:
     * **Load balancer type** - Select **Application load balancer**.
     * **Application load balancer** - Select **Use an existing load balancer**.
     * **Load balancer** - Select the Application Load Balancer you created in the [Prerequisites](#prerequisites) section.
-8. Under **Container**, set up listener as follows:
-    * **Listener** - Select **Create new listener**.
-    * **Port** - `443`
-    * **Protocol** - Set it to `HTTPS`.
-    * **Certificate** - Choose the desired certificates.
-    * **Target group** - Select **Create new target group**. 
-    * **Target group name** - Give a meaningful and unique name.
-    * **Health check protocol** - Set it to `HTTPS`.
-    * **Health check path** - Set it to `/`.
+8. Under **Container**, set up listeners as follows:
+    * Port `80` listener - 
+        * **Listener** - Select **Create new listener**.
+        * **Port** - `80`
+        * **Protocol** - Set it to `HTTP`.
+        * **Certificate** - Choose the desired certificates.
+        * **Target group** - Select **Create new target group**. 
+        * **Target group name** - Give a meaningful and unique name.
+        * **Health check protocol** - Set it to `HTTP`.
+        * **Health check path** - Set it to `/`.
+    * Port `443` listener- 
+        * **Listener** - Select **Create new listener**.
+        * **Port** - `443`
+        * **Protocol** - Set it to `HTTPS`.
+        * **Certificate** - Choose the desired certificates.
+        * **Target group** - Select **Create new target group**. 
+        * **Target group name** - Give a meaningful and unique name.
+        * **Health check protocol** - Set it to `HTTP`.
+        * **Health check path** - Set it to `/`.
+
 9.  In the **Service auto scaling** section, add the below details: 
     * **Use service auto scaling** - Check this setting.
     * **Minimum number of tasks** - Set it to `1`.
