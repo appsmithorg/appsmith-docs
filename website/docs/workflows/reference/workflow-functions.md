@@ -8,7 +8,7 @@ The `assignRequest()` function creates a pending request that requires user inte
 ### Signature
 
 ```javascript
-assignRequest(options <Object>) : <Confirm Return type>
+assignRequest({
   "requestName": "String", 
   "message": "String", 
   "resolutions": ["Strings"], 
