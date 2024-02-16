@@ -128,7 +128,7 @@ When managing approvals or rejections, create refund requests and track user act
 3. In your app, create a workflow query (_getRefunds_) to fetch these requests. Configure it as follows:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Get requests**.
-    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the above step.
+    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the step 1 of this section.
 4. Drag a Table widget, and bind the **getRefunds** query to it. You may need to transform data based on your user interface requirements. In which case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget.
 5. Create another workflow query (_resolveReqs_) to capture **Approve** or **Reject** actions:
     * **Workflow name** - Select **Refunds**.
