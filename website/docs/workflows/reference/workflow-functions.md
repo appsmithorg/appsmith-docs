@@ -37,7 +37,7 @@ assignRequest(options <Object>) : <Confirm Return type>
 
 #### metadata `JSON` `Optional `
     <dd>
-    Additional data that you may need to process the request. For example, you may want the unique identifier of the record, so that in Appsmith app you can query the data and fetch the details. Bind this to the view button in a Table widget and open a modal to show the detailed view to users.
+    Add data that you may need to process the request. For example, you may want the unique identifier of the record, so that in Appsmith app you can query the data and fetch the details. Bind this to the view button in a Table widget and open a modal to show the detailed view to users.
     </dd>
 
 #### requestToUsers  

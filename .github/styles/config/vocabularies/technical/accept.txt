@@ -46,3 +46,10 @@ Webhook
 workflow
 SMTP
 Postman
+assignRequest
+message
+resolutions
+requestName
+metadata
+requestToUsers
+requestToGroups
