@@ -24,13 +24,13 @@ Follow these steps to set up a webhook workflow within your workspace.
     -- The order_id is a parameter and replaced by actual value passed by the application
     select * from public. "orders" where order_id = {{this.params.order_id}};
     ``` 
-4. Create a query to update the order status, once a refund is processed. For example, once a refund is approved, update the order status in the `order` table to `Refunded`. In case of rejection, the order status remains unchanged.
+4. Create a query to update the order status, once a refund is processed. For example, once a refund is approved, update the order status in the `order` table to `Refund Processed`. In case of rejection, the order status remains unchanged.
     ```sql
     -- The order_id are parameters and replaced by actual value passed by the application
     -- highlight-next-line
-    Update public. "orders" set status = 'Refunded' where order_id = {{this.params.order_id}};
+    Update public. "orders" set status = 'Refund Processed' where order_id = {{this.params.order_id}};
     ```
-5. Ceate queries to send emails to inform users of the outcome. For example, you can create two queries:
+5. Create queries to send emails to inform users of the outcome. For example, you can create two queries:
     *  To notify approval (_notifyUser_):
         * Parameterize the query to include:
             * Customer name (`{{this.params.customer_name}}`) who raised the request.
@@ -48,7 +48,7 @@ Follow these steps to set up a webhook workflow within your workspace.
 
 When a user submits a refund request through your application, you may want to process automatic refunds based on predefined business rules. For example, you might automatically approve refunds where the refund amount is less than $10. Here's how you can handle this scenario:
 
-1. In your workflow, go to **Main** under _JS Objects_. In the JS code editor, replace the auto-generated code with the following snippet. This code fetches the refund request with the given `order_id`. If the refund amount is less than $10, it initiates a refund and notifies the customer via email.
+1. In your workflow, go to **Main** under _JS Objects_. In the JS code editor, replace the auto-generated code with the following snippet. This code fetches the order details with the given `order_id`. If the order value is less than $10, it initiates a refund and notifies the customer via email.
 
     ```javascript
     export default {
@@ -59,18 +59,18 @@ When a user submits a refund request through your application, you may want to p
                 const order = await getOrderDetails.run({ "order_id":  order.order_id });
                 // Iterate through requests 
                 if(order){
-                    // Verify the refund amount
-                    if (order.refund_amount < 10) {
+                    // Verify the order value
+                    if (order.amount < 10) {
+                        // Add logic for refund processing if any
                         // Initiate refund for amounts less than $10 
                         await initiateRefund.run({
-                            "id": refund_req.refund_id,
-                            "status": 'Approved'
-                        }).then(async() => {
-                            // Send refund approval email to the customer 
-                            await notifyUser.run({
-                                "customer_email": refund_req.customer_email ,
-                                "customer_name": refund_req.customer_name
-                            });
+                            "id": order.order_id,
+                            "status": 'Refund Processed'
+                        });
+                        // Send refund approval email to the customer 
+                        await notifyUser.run({
+                            "customer_email": refund_req.customer_email ,
+                            "customer_name": refund_req.customer_name
                         });
                     }
                 }
@@ -88,26 +88,27 @@ When managing approvals or rejections, create refund requests and track user act
 1. In your workflow, go to **Main** under _JS Objects_, and add the following function. This function generates a pending request using the `assignRequest` workflow function. For more information, see the [assignRequest](/workflows/reference/workflow-functions#assign-request) function. 
     ```javascript
     // manage refunds for amounts equal to or more than $10 
-    async createandManageRequests(refundReq) {
+    async createandManageRequests(order) {
         const resolution = await appsmith.workflows.assignRequest({
             requestName: "getPendingRefundRequests", 
-            message: "Refund raised by " + refundReq.customer_name+ " for amount " + refundReq.refund_amount, 
-            requestToUsers: [refundReq.approver_email], 
+            message: "Refund raised by " + order.customer_name+ " for amount " + order.amount, 
+            requestToUsers: [order.approver_email], 
             resolutions: ["Approve", "Reject"],
-            metadata: { "req": refund_req } 
+            metadata: { "order": order } 
         });
 
         if (resolution && resolution === "Approve") {
+            //Add logic for refund processing if any
             // Initiate refund when user approves
             await initiateRefund.run({
-                "id": refund_req.refund_id,
-                "status": 'Approved'
-            }).then(async() => {
-                // Send refund approval email to the customer 
-                await notifyUser.run({
-                    "customer_email": refund_req.customer_email ,
-                    "customer_name": refund_req.customer_name
-                });
+                "id": order.order_id,
+                "status": 'Refund Processed'
+            });
+            // Send refund approval email to the customer 
+            await notifyUser.run({
+                "customer_email": refund_req.customer_email ,
+                "customer_name": refund_req.customer_name
+
             });
         } else if (resolution && resolution === "Reject") {
             // Send refund rejection email to the customer 
@@ -120,12 +121,12 @@ When managing approvals or rejections, create refund requests and track user act
         }
     }          
     ```
-2. Call the above function when the refund amount is equal to or more than $10.
-3. In your app, create a workflow query (_getRefunds_) to fetch these requests. Configure it as follows:
+2. Call the above function when the order value is equal to or more than $10.
+3. In your app, create a workflow query (_getRefundReqs_) to fetch these requests. Configure it as follows:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Get requests**.
     * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the step 1 of this section.
-4. Drag a Table widget, and bind the **getRefunds** query to it. You may need to transform data based on your user interface requirements. In which case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget.
+4. Drag a Table widget, and bind the **getRefundReqs** query to it. You may need to transform data based on your user interface requirements. In which case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget.
 5. Create another workflow query (_resolveReqs_) to capture **Approve** or **Reject** actions:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Resolve Requests**.
