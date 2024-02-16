@@ -1,9 +1,11 @@
 
 # Workflow Functions
 
+Workflow functions in Appsmith enable the creation of dynamic and interactive workflows, facilitating data manipulation, process automation, and user intervention within applications. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+
 ## assignRequest()
 
-The `assignRequest()` function creates a pending request that requires user intervention, and can be later accessed in your apps to build an interface for users to take action. 
+The `assignRequest()` function creates a pending request that requires user intervention and can be accessed later in your apps to enable users to take action.
 
 ### Signature
 
@@ -11,10 +13,10 @@ The `assignRequest()` function creates a pending request that requires user inte
 assignRequest({
   "requestName": "String", 
   "message": "String", 
-  "resolutions": ["Strings"], 
-  "metadata": {"any": "json"}, 
-  "requestToUsers": ["emails in Strings"], 
-  "requestToGroups": ["user group names in Strings"] 
+  "resolutions": ["String"], 
+  "metadata": {"key": "value"}, 
+  "requestToUsers": ["String"], 
+  "requestToGroups": ["String"] 
 });
 ```
 ### Parameters
@@ -22,31 +24,31 @@ assignRequest({
 #### requestName `String`
 
     <dd>
-    The name of the request that identifies it within the workflow. This request name can be used to filter the requests as part of [Get requests](/workflows/reference/workflow-queries#get-requests) by adding it in the `Request name` attribute.
+    The name of the request, which serves as its identifier within the workflow. This name can be used to filter requests in as part of [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query by adding it in the `Request name` attribute.
     </dd>
 
 #### message `String` `Optional`
     <dd>
-      Add the information associated with the request that you may want to share with app. For example, when creating a refund request, you may want to create a descriptive message _Refund raised by User 1_. 
+      A descriptive message associated with the request, providing additional context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
     </dd>
 
 #### resolutions `String[]`
     <dd>
-    An array of strings representing the possible resolutions/actions that can be taken for the request. For example, `['Approve', 'Reject']`
+    Represents the possible actions a user can take on the request. The resolution is passed to the [Resolve requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the selected resolution. For example, `['Approve', 'Reject']`.
     </dd>
 
 #### metadata `JSON` `Optional `
     <dd>
-    Add data that you may need to process the request. For example, you may want the unique identifier of the record, so that in Appsmith app you can query the data and fetch the details. Bind this to the view button in a Table widget and open a modal to show the detailed view to users.
+    Add data that may be needed to process the request or display more information to the user in your app. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your app to fetch and show the details to user.
     </dd>
 
 #### requestToUsers  
    <dd>
-   Specifies the user or users to whom the request is assigned for approval or rejection. Each element in the array should be the email address of the user. This is mandatory if you are not supplying `requestToGroups`.
+   Specifies the user or users to whom the request will be assigned for resolution. Each element in the array has to be the username for logging into your app. It's mandatory to supply this attribute if you are not supplying `requestToGroups` atribute.
    </dd>
 
 #### requestToGroups `String[]` `Optional`
 
 <dd>
-An array of user group names specifying the groups of users to whom the request is assigned. If supplied, the request will be available for users belonging to these groups to take action. This is mandatory if you are not supplying `requestToUsers`.
+Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the group or groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
  </dd>

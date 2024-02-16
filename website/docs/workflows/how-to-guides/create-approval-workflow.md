@@ -11,9 +11,9 @@ Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
-* Configured your datasource that manages your data, and SMTP datasource if you want to notify users in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* Configured your datasource that manages your data, and SMTP datasource (to notify users) in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
-## Setup workflow
+## Create workflow
 
 Follow these steps to set up a webhook workflow within your workspace. 
 

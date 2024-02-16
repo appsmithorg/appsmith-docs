@@ -6,6 +6,10 @@ description: This page provides detailed steps to set up a Webhook workflow on A
 
 Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial guides you through the process of setting up a Webhook workflow, integrating it with your Appsmith app, and triggering the workflow execution from your Appsmith app.  
 
+To learn workflows in Appsmith, you'll build a notification workflow that sends a notification to users. By the end of this tutorial, you will know how to:
+
+* Create a workflow and configure it as a webhook
+* Execute the workflow from your Appsmith app
 
 ## Prerequisites
 
@@ -15,16 +19,9 @@ Before you start, make sure you have the following:
 *  If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 * A Postman account. If you don't have one, [Create a Postman Account](https://identity.getpostman.com/signup).
 
-To learn workflows in Appsmith, you'll build a notification workflow that sends a notification to users. By the end of this tutorial, you will know how to:
+## Create workflow
 
-* Create a workflow and configure it as a webhook
-* Execute the workflow from your Appsmith app
-
-## Send notification using workflow
- 
 When you have new users joining your organization, and you want to send them a welcome notification email, you can use workflows to do that. Follow these steps to build a notification workflow:
-
-### Create workflow
 
 To send notifications to the users you will create a workflow, and configure it as a webhook. Follow these steps to create a webhook workflow within your workspace. The newly created workflow can be accessed in all apps in the same workspace:
 
@@ -59,7 +56,7 @@ To send notifications to the users you will create a workflow, and configure it 
 
 You've set up your first webhook workflow.
 
-### Configure SMTP datasource 
+## Configure SMTP datasource 
 
 To send notifications from the workflow, you will need to set up an SMTP datasource and connect it with an email service provider. Follow these steps to set up an SMTP datasource:
 
@@ -78,7 +75,7 @@ To send notifications from the workflow, you will need to set up an SMTP datasou
 
 4. Test and save the datasource configuration.
 
-### Write query to send email
+## Write query to send email
 
 Follow these steps to write a query for sending email:
 
@@ -104,7 +101,7 @@ Follow these steps to write a query for sending email:
         ```
 2. Click the **Run** button to send an email. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`. 
 
-### Write code to trigger email
+## Write code to trigger email
 
 Follow these steps to update the workflow to send an email:
 

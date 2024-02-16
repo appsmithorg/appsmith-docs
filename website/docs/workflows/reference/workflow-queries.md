@@ -1,101 +1,89 @@
 # Workflow Queries
 
-To interact with workflow you use Workflow queries in an Appsmith application. This page provides information on workflow queries and their parameters, so that you can use them in your apps.
+Workflow queries in Appsmith applications enable interaction with workflows, allowing users to execute operations within their apps. This page provides detailed information on workflow queries and their parameters.
 
 ## Workflow name
 <dd>
-The workflow with which you want the Appsmith application to interact and execute operation. Select the name of the workflow from the dropdown.
+Specifies the workflow with which the Appsmith application will interact and execute operations. It allows users to select a specific workflow from all the workflows available in the workspace for interaction and execution.
 </dd>
 
 ## Request type
 <dd>
-It defines the operation to execute on the workflow. The available types are:
+Request type defines the operation to execute on the workflow. The available types are:
 
-- **Get Requests:** Retrieve information about the requests created as part of the workflow.
-  
-- **Trigger Workflow:** Triggers the workflow run, and execute the workflow based on predefined conditions or events, and the parameters supplied.
-  
-- **Resolve Requests:** Handle and conclude existing workflow requests.
+* **Trigger Workflow:** Triggers the workflow and executes it based on predefined conditions or events, along with the supplied parameters.
+* **Get Requests:** Retrieve information about the requests generated as part of the workflow.
+* **Resolve Requests:** Handles and concludes existing workflow requests raised as part of the `Get Requests` operation.
 </dd>
 
 ### Trigger Workflow
 <dd>
-A trigger workflow request initiates a workflow run with the given parameters so that the workflow executes with the given parameters and the predefined set of operations.
+A `Trigger Workflow` request initiates a workflow run with supplied parameters, and executes the predefined operations within the workflow.
 </dd>
 
 #### Trigger data
 <dd>
-Sends the parameters if needed for running the workflow like parameters. The expected format is JSON.
+Trigger data supplies the parameters needed by the workflow to execute. The parameters are supplied in a JSON format. For example:
+```json
+{
+  "parameter1": "value1",
+  "parameter2": "value2"
+}
+```
 </dd>
 
 ### Get requests
 <dd>
-Retrieve the requests created as part of the workflow. These requests needs human intervention so that user can verify and take action on them.
+A `Get Requests` request retrieves the requests created as part of the workflow, specific to the logged-in user. These requests require human intervention for the user to verify and take action.
 </dd>
 
 #### Request names
 <dd>
-Add filters to the request based on the given request names.
+Filters the requests based on their name. One or more request names can be added to retrieve requests.
 </dd>
 
 #### Request name
 <dd>
-Specify the name of the request you want to fetch as part of this request type. You must use the same name provided in the workflow.
-**Example:**
-```javascript
-Request Name: ApprovalWorkflow
-```
+Specifies the name of the request to fetch, as defined while creating request using the `assignRequests` workflow function. For more information, see [assignRequests](/workflows/reference/workflow-functions#assignrequest).
 </dd>
 
 #### Request status
 
 <dd>
-Add a filter based on the status of the request.
-**Example:**
-```javascript
-Request Status: Pending
-```
+Filters requests based on their status. The available statuses are: `Pending` and `Resolved`.
 </dd>
 
 #### Limit
 
 <dd>
-Specify the limit for the number of requests to be retrieved.
-**Example:**
-```javascript
-Limit: 10
-```
+Specifies the maximum number of requests to retrieve. The default value is set to `10`.
 </dd>
 
 #### Skip
 
 <dd>
-Specify the number of requests to skip before starting to return data.
-**Example:**
-```javascript
-Skip: 5
-```
+Specifies the number of requests to skip before returning data. The default value is set to `0`.
 </dd>
 
 ### Resolve requests
 <dd>
-The request that is used to apply the resolution like based on the action; the request will be resolved. For example, in a refund flow, if you want to resolve the request as approval based on user request, then use this request to apply the approval resolution to it.
+The `Resolve requests` request applies resolutions to existing workflow requests based on user actions.
 </dd>
 
 #### Request Id
 
 <dd>
-The request id for which the resolution is needed.
+Specifies the ID of the request for which resolution is needed.
 </dd>
 
 #### Resolution
 
 <dd>
-Add the resolution from the available resolutions. For example, if a user has selected to Approve from the given resolutions, then supply that value to this property.
+Applies a resolution to the request based on the action taken. The resolution must match those specified while creating the request using the `assignRequests` workflow function. For example, during request creation, if you defined available resolutions as `Approve` and `Reject`, only these resolutions can be applied to the request when a user takes action. Therefore, when passing resolutions to this attribute, ensure they match the predefined options.
 </dd>
 
 #### Metadata
 
 <dd>
-The metadata needed for resolution, like parameters that the workflow will need to apply the resolution.
+Add data that may be needed to process the request or perform additional operation in the workflow. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your workflow to fetch details and perform additional operation.
 </dd>
