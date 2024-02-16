@@ -42,7 +42,7 @@ assignRequest({
 
 #### requestToUsers  
    <dd>
-   An array of email addresses specifying the users to whom the request is assigned. The request will be available for these users to take action. This is mandatory if you are not supplying `requestToGroups`.
+   Specifies the user or users to whom the request is assigned for approval or rejection. Each element in the array should be the email address of the user. This is mandatory if you are not supplying `requestToGroups`.
    </dd>
 
 #### requestToGroups `String[]` `Optional`

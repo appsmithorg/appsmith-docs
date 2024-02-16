@@ -3,7 +3,7 @@ description: This page provides detailed steps to set up an approval Webhook wor
 ---
 # Create Refund Approval Workflow
 
-In a human-in-the-loop refund approval workflow, such as for processing refund requests, you can automate approvals for specific types of requests based on your business guidelines. Additionally, you may require human verification before approving or rejecting certain requests. This human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
+In a human-in-the-loop approval workflow, such as for processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
 
 ## Prerequisites
 
@@ -11,8 +11,7 @@ Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a webhook workflow in Appsmith. For more information, see [Tutorial - Create Webhook Workflow](/workflows/tutorials/create-webhook-workflow).
-* Set up a Form in your app that allows users to raise refund requests.
-* Configured your Refund datasource and SMTP datasource in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* Configured your datasource that manages your data, and SMTP datasource if you want to notify users in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 ## Setup workflow
 
@@ -20,16 +19,16 @@ Follow these steps to set up a webhook workflow within your workspace.
 
 1. Create a new workflow (_Refunds_) in your workspace.
 2. Configure it as a webhook workflow.
-3. Create a query to fetch refund (_getRefundDetails_) details. For example, the below query fetches pending refund requests for the given `order_id` from the `customer_refunds`table.
+3. Create a query to fetch order details (_getOrderDetails_) details. For example, the below query fetches the order details for the given `order_id` from the `orders` table.
     ```sql
     -- The order_id is a parameter and replaced by actual value passed by the application
-    select * from public. "customer_refunds" where order_id = {{this.params.order_id}} and refund_status = 'Pending';
+    select * from public. "orders" where order_id = {{this.params.order_id}};
     ``` 
-4. Create a query to update the refund status (_initiateRefund_). For example, once a refund is approved or rejected, update the refund status in the `customer_refunds` table:
+4. Create a query to update the order status, once a refund is processed. For example, once a refund is approved, update the order status in the `order` table to `Refunded`. In case of rejection, the order status remains unchanged.
     ```sql
-    -- The refund_id and status are parameters and replaced by actual value passed by the application
+    -- The order_id are parameters and replaced by actual value passed by the application
     -- highlight-next-line
-    Update public. "customer_refunds" set refund_status = {{this.params.status}} where refund_id = {{this.params.refund_id}};
+    Update public. "orders" set status = 'Refunded' where order_id = {{this.params.order_id}};
     ```
 5. Ceate queries to send emails to inform users of the outcome. For example, you can create two queries:
     *  To notify approval (_notifyUser_):
@@ -57,26 +56,23 @@ When a user submits a refund request through your application, you may want to p
             if (order && order.order_id) {
                 console.log('data' + order.order_id);
                 // Fetch refund details based on the given refund detail
-                const refund_reqs = await getRefundDetails.run({ "order_id":  order.order_id });
+                const order = await getOrderDetails.run({ "order_id":  order.order_id });
                 // Iterate through requests 
-                if(refund_reqs){
-                    refund_reqs.forEach(async (refund_req) => {
-                        console.log(refund_req);
-                        // Verify the refund amount
-                        if (refund_req.refund_amount < 10) {
-                            // Initiate refund for amounts less than $10 
-                            await initiateRefund.run({
-                                "id": refund_req.refund_id,
-                                "status": 'Approved'
-                            }).then(async() => {
-                                // Send refund approval email to the customer 
-                                await notifyUser.run({
-                                    "customer_email": refund_req.customer_email ,
-                                    "customer_name": refund_req.customer_name
-                                });
+                if(order){
+                    // Verify the refund amount
+                    if (order.refund_amount < 10) {
+                        // Initiate refund for amounts less than $10 
+                        await initiateRefund.run({
+                            "id": refund_req.refund_id,
+                            "status": 'Approved'
+                        }).then(async() => {
+                            // Send refund approval email to the customer 
+                            await notifyUser.run({
+                                "customer_email": refund_req.customer_email ,
+                                "customer_name": refund_req.customer_name
                             });
-                        }
-                    });
+                        });
+                    }
                 }
             }
         }
