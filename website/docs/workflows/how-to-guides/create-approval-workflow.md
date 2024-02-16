@@ -1,7 +1,7 @@
 ---
 description: This page provides detailed steps to set up an approval Webhook workflow on Appsmith.
 ---
-# Create Refund Approval Workflow
+# Create Approval Workflow
 
 In a human-in-the-loop approval workflow, such as for processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
 
