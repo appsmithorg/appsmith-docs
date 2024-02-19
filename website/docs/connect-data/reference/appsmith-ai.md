@@ -5,6 +5,9 @@ import TabItem from '@theme/TabItem';
 
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
+:::note Data, Privacy and Security
+Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. 
+:::
 
 
 ## Connect Appsmith AI

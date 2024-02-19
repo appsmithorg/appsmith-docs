@@ -4,6 +4,12 @@
 This page provides information for connecting Appsmith to Anthropic, which allows you to configure applications with advanced AI features, such as chat completion.
 
 
+:::note Data, Privacy and Security
+Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. Learn more about Anthropic's privacy policy [here](https://www.anthropic.com/responsible-disclosure-policy).
+:::
+
+
+
 ## Connect Anthropic
 
 <ZoomImage
