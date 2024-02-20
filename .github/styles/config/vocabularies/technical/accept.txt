@@ -54,3 +54,7 @@ metadata
 requestToUsers
 requestToGroups
 Metadata
+Queries
+queries
+Functions
+functions

@@ -89,7 +89,7 @@ When managing approvals or rejections, create refund requests and track user act
     ```javascript
     // manage refunds for amounts equal to or more than $10 
     async createandManageRequests(order) {
-        const resolution = await appsmith.workflows.assignRequest({
+        const response = await appsmith.workflows.assignRequest({
             requestName: "getPendingRefundRequests", 
             message: "Refund raised by " + order.customer_name+ " for amount " + order.amount, 
             requestToUsers: [order.approver_email], 
@@ -97,7 +97,7 @@ When managing approvals or rejections, create refund requests and track user act
             metadata: { "order": order } 
         });
 
-        if (resolution && resolution === "Approve") {
+        if (response && response.resolution === "Approve") {
             //Add logic for refund processing if any
             // Initiate refund when user approves
             await initiateRefund.run({
@@ -110,7 +110,7 @@ When managing approvals or rejections, create refund requests and track user act
                 "customer_name": refund_req.customer_name
 
             });
-        } else if (resolution && resolution === "Reject") {
+        } else if (resolution && response.resolution === "Reject") {
             // Send refund rejection email to the customer 
             // Supply the rejection reason as a parameter
             await notifyRejectionToUser.run({
