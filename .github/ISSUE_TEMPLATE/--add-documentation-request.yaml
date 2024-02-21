@@ -4,7 +4,6 @@ title: "[Docs]: "
 labels: ["Documentation", "User Education Pod"]
 assignees:
 - Nikhil-Nandagopal
-- danciaclara
 - jnikhila
 body:
 - type: markdown
@@ -25,21 +24,21 @@ body:
     label: Engineering Ticket Link
     description: Add a link to the engineering ticket 
   validations:
-    required: true
+    required: false
 - type: input
   id: featureReleaseDate
   attributes:
     label: Release Date
     description: Add actual/tentative release date
   validations:
-    required: true
+    required: false
 - type: input
   id: featureReleaseNumber
   attributes:
     label: Release Number
     description: Add actual/tentative release number
   validations:
-    required: true
+    required: false
 - type: input
   id: FirstDraftLink
   attributes:
