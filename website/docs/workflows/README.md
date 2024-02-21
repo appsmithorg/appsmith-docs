@@ -6,7 +6,7 @@ description: This page provides an overview of the workflows feature in Appsmith
 Appsmith Workflows are specifically designed for Human-in-the-Loop (HITL) interactions, seamlessly integrating human decision-making into automated processes, ensuring control over critical decision points.
 
 
-The following diagram shows an example of creating a Human-in-the-Loop workflow to enable human interaction:
+The diagram below depicts an example of establishing a Human-in-the-Loop workflow for managing a request initiated by an application user. This setup allows for human intervention to review the request and execute necessary actions:
 
 <ZoomImage
   src="/img/appsmith-human-in-the-loop-workflow-overview.svg" 
