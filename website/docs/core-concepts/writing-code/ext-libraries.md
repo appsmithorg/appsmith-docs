@@ -4,7 +4,7 @@ You can install custom libraries to help you build complex applications and busi
 
 ## Prerequisites
 
-* Find a distribution of the library in either ECMAScript Modules [(ESM)](https://tc39.es/ecma262/#sec-modules) or Universal Module Definition [(UMD)](https://github.com/umdjs/umd) format on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). For more information on library compatibility, see the [Library Compatibility](#library-compatibility) section.
+* Find a distribution of the library in either ECMAScript Modules [(ESM)](https://tc39.es/ecma262/#sec-modules) or Universal Module Definition [(UMD)](https://github.com/umdjs/umd) format on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). For more information on library compatibility, see the [Library Compatibility](#library-compatibility) section.
 
 ## Install external library
 
@@ -51,13 +51,13 @@ Libraries that fall under the below categories do not meet compatibility require
 
 * Manipulate the DOM
 * Rely on XHR requests
-* Invoke or require access to certain browser methods such as:
+* Invoke or require access to some browser methods such as:
   * `setInterval`
   * `clearInterval`
   * `localStorage`
   * `setImmediate`
   * `navigator`
-* Are distributed in unsupported build formats, such as plain `.js` files as shown below:
+* Are distributed in unsupported build formats, such as plain `.js` files, as shown below:
 
 ```javascript
   ❌ https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
