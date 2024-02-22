@@ -40,3 +40,6 @@ reCAPTCHA
 Edition
 Embed
 Exec
+Libraries
+libraries
+JS

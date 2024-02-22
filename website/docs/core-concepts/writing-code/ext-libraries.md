@@ -30,7 +30,7 @@ Follow these steps if you want to install a specific library that you found onli
     ```javascript
     const workbook = new ExcelJS.Workbook();
     ```
-  * Use the `workbook` variable to perform operations on it.
+  * Use the `workbook` variable to perform operations provided by the library on it.
 
 ## Library compatibility
 
