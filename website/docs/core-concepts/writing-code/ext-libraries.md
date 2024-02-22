@@ -39,7 +39,7 @@ For libraries not available in ESM format, look for an index file under the `roo
 
 Libraries that fall under the following categories do not meet compatibility requirements and are not supported by Appsmith:
 
-* Appsmith does not support libraries that:
+* Libraries that:
   * Manipulate the DOM
   * Rely on XHR requests
   * Invoke or require access to certain browser methods such as:
