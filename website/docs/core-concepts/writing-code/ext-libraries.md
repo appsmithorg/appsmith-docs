@@ -24,7 +24,7 @@ Follow these steps if you want to install a specific library that you found onli
     ```URL
     https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
     ```
-5. Click the `Install` button to install the library. You will see the _ExcelJS_ library available under installed Libraries.
+5. Click the **Install** button to install the library. You will see the _ExcelJS_ library available under installed Libraries.
 6. The installed library can be accessed as an object in your JavaScript code in Appsmith. 
     * If you want to access `excelJS` library in your JS object in a function, you can do that as follows:
       ```javascript
