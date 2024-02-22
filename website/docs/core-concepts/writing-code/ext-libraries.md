@@ -29,8 +29,8 @@ Appsmith supports libraries written in either the ECMAScript Modules [(ESM)](htt
 Below are the examples of valid URLs for libraries supported by Appsmith:
 
 ```javascript
-  ✅ `https://cdn.jsdelivr.net/npm/openai@4.19.0/+esm`
-  ✅ `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
+  ✅ https://cdn.jsdelivr.net/npm/openai@4.19.0/+esm
+  ✅ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 ```
 
 For libraries not available in ESM format, look for an index file under the `root`, `/umd`, or `/browser` folders with a `.min.js` extension. You may use [browserify](https://browserify.org/) to generate a UMD build and host it on a CDN of your choice.
@@ -52,12 +52,12 @@ Libraries that fall under the following categories do not meet compatibility req
 * Libraries distributed in unsupported build formats, such as plain `.js` files without a designated entry point. Below is an example of an invalid URL in an unsupported build format:
 
 ```javascript
-  ❌ `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+  ❌ https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
 ```
 * Libraries that do not point to an index file within their distribution may also cause compatibility issues. Below is an example of an invalid URL not pointing to an index file:
 
 ```javascript
-  ❌ Not pointing to index file - `https://www.jsdelivr.com/package/npm/datejs`
+  ❌ https://www.jsdelivr.com/package/npm/datejs
 ```
 
 ### Accessing installed libraries
