@@ -37,7 +37,7 @@ To filter data based on a date range, follow these steps:
    
    :::info
    When using an API that returns the date in a different format, use [Moment](https://momentjs.com/docs/) to format it. 
-   For examples, see [moment](/core-concepts/writing-code/ext-libraries#moment).
+   For examples, see [moment](/write-code/reference/Built-in-JS-Libraries#moment).
    :::
 3. Set the [onDateSelected](/reference/widgets/datepicker#ondateselected) event of the Date picker widgets to execute the query using the following code:
    ```jsx
