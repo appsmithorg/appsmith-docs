@@ -49,12 +49,12 @@ Libraries that fall under the following categories do not meet compatibility req
     * `setImmediate`
     * `navigator`
 
-* Libraries distributed in unsupported build formats, such as plain `.js` files without a designated entry point. Below is an example of an invalid URL in an unsupported build format:
+* Libraries distributed in unsupported build formats, such as plain `.js` files as shown below:
 
 ```javascript
   ❌ https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
 ```
-* Libraries that do not point to an index file within their distribution may also cause compatibility issues. Below is an example of an invalid URL not pointing to an index file:
+* Libraries that do not point to an index file as shown below:
 
 ```javascript
   ❌ https://www.jsdelivr.com/package/npm/datejs
