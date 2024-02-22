@@ -34,16 +34,16 @@ Appsmith supports libraries that are written in **[ESM](https://tc39.es/ecma262/
 
 ❌ Invalid URL: doesn't point to the index file: `https://www.jsdelivr.com/package/npm/datejs`
 
-Appsmith also does not support libraries
+Appsmith also does not support libraries that:
 
-- Libraries that manipulate the DOM
-- Libraries that reply on making XHR requests
-- Libraries that try to invoke or access certain browser methods
-  - setInterval
-  - clearInterval
-  - localStorage
-  - setImmediate
-  - navigator
+- manipulate the DOM
+- rely on XHR requests
+- invoke or require access to certain browser methods such as:
+  - `setInterval`
+  - `clearInterval`
+  - `localStorage`
+  - `setImmediate`
+  - `navigator`
 
 ### Accessing installed libraries
 
