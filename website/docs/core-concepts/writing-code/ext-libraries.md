@@ -37,9 +37,8 @@ For libraries not available in ESM format, look for an index file under the `roo
 
 #### Unsupported libraries
 
-Libraries that fall under the following categories do not meet compatibility requirements and are not supported by Appsmith:
+Libraries that fall under the below categories do not meet compatibility requirements and are not supported by Appsmith:
 
-* Libraries that:
   * Manipulate the DOM
   * Rely on XHR requests
   * Invoke or require access to certain browser methods such as:
@@ -48,13 +47,12 @@ Libraries that fall under the following categories do not meet compatibility req
     * `localStorage`
     * `setImmediate`
     * `navigator`
-
-* Libraries distributed in unsupported build formats, such as plain `.js` files as shown below:
+* Are distributed in unsupported build formats, such as plain `.js` files as shown below:
 
 ```javascript
   ❌ https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js
 ```
-* Libraries that do not point to an index file as shown below:
+* Do not point to an index file as shown below:
 
 ```javascript
   ❌ https://www.jsdelivr.com/package/npm/datejs
