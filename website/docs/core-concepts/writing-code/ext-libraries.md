@@ -36,9 +36,9 @@ Appsmith supports libraries that are written in **[ESM](https://tc39.es/ecma262/
 
 Appsmith also does not support libraries that:
 
-- manipulate the DOM
-- rely on XHR requests
-- invoke or require access to certain browser methods such as:
+- Manipulate the DOM
+- Rely on XHR requests
+- Invoke or require access to certain browser methods such as:
   - `setInterval`
   - `clearInterval`
   - `localStorage`
