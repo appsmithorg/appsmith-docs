@@ -9,12 +9,12 @@ You can install custom libraries to help you build complex applications and busi
 Appsmith provides a set of recommended libraries that you can install by clicking the + icon next to libraries in the entity explorer and clicking on the install icon next to the library.
 If you want to install a specific library that you found online, the steps are:
 
-- Find a [compatible](#library-compatibility) distribution of the library on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/)
-- Copy the URL to its index file
-- Navigate to the Explorer tab
-- Click the `+` sign next to `Libraries`
-- Paste the URL into the designated field
-- Click `Install`
+* Find a [compatible](#library-compatibility) distribution of the library on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/)
+* Copy the URL to its index file
+* Navigate to the Explorer tab
+* Click the `+` sign next to `Libraries`
+* Paste the URL into the designated field
+* Click `Install`
 
 Example URL:
 
@@ -24,26 +24,41 @@ https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js
 
 ### Library compatibility
 
-Appsmith supports libraries that are written in **[ESM](https://tc39.es/ecma262/#sec-modules)** or **[UMD](https://github.com/umdjs/umd)** pattern. ESM are the official standard format to package JavaScript code for reuse. ES Modules are defined using a variety of import and export statements. If the library you wish to use is not written in ESM, try looking an index file under the `root`, `/umd` or `/browser` folders and have a `.min.js` file extension. You may optionally use [browserify](https://browserify.org/) to generate a UMD build and host it in a CDN of your choice.
+Appsmith supports libraries written in either the ECMAScript Modules [(ESM)](https://tc39.es/ecma262/#sec-modules) or [UMD](https://github.com/umdjs/umd) pattern. ESM is the standard format for packaging JavaScript code for reuse. ES Modules use import and export statements for defining modules.
 
-✅ Valid URL: `https://cdn.jsdelivr.net/npm/openai@4.19.0/+esm`
+Below are the examples of valid URLs for libraries supported by Appsmith:
 
-✅ Valid URL: `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
+```javascript
+  ✅ `https://cdn.jsdelivr.net/npm/openai@4.19.0/+esm`
+  ✅ `https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js`
+```
 
-❌ Invalid URL: unsupported build format: `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+For libraries not available in ESM format, look for an index file under the `root`, `/umd`, or `/browser` folders with a `.min.js` extension. You may use [browserify](https://browserify.org/) to generate a UMD build and host it on a CDN of your choice.
 
-❌ Invalid URL: doesn't point to the index file: `https://www.jsdelivr.com/package/npm/datejs`
+#### Unsupported libraries
 
-Appsmith also does not support libraries that:
+Libraries that fall under the following categories do not meet compatibility requirements and are not supported by Appsmith:
 
-- Manipulate the DOM
-- Rely on XHR requests
-- Invoke or require access to certain browser methods such as:
-  - `setInterval`
-  - `clearInterval`
-  - `localStorage`
-  - `setImmediate`
-  - `navigator`
+* Appsmith does not support libraries that:
+  * Manipulate the DOM
+  * Rely on XHR requests
+  * Invoke or require access to certain browser methods such as:
+    * `setInterval`
+    * `clearInterval`
+    * `localStorage`
+    * `setImmediate`
+    * `navigator`
+
+* Libraries distributed in unsupported build formats, such as plain `.js` files without a designated entry point. Below is an example of an invalid URL in an unsupported build format:
+
+```javascript
+  ❌ `https://cdn.jsdelivr.net/npm/uuid@9.0.0/dist/index.js`
+```
+* Libraries that do not point to an index file within their distribution may also cause compatibility issues. Below is an example of an invalid URL not pointing to an index file:
+
+```javascript
+  ❌ Not pointing to index file - `https://www.jsdelivr.com/package/npm/datejs`
+```
 
 ### Accessing installed libraries
 
