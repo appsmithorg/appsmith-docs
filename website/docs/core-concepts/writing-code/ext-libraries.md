@@ -4,7 +4,7 @@ You can install custom libraries to help you build complex applications and busi
 
 ## Prerequisites
 
-* Find a distribution of the library in either ECMAScript Modules [(ESM)](https://tc39.es/ecma262/#sec-modules) or Universal Module Definition [(UMD)](https://github.com/umdjs/umd) format on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). For more information on library compatibility, see the [Library Compatibility](#library-compatibility) section.
+* Find a distribution of the library in either [ECMAScript Modules](https://tc39.es/ecma262/#sec-modules) (ESM) or [Universal Module Definition](https://github.com/umdjs/umd) (UMD) format on a popular CDN service like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). For more information on library compatibility, see the [Library Compatibility](#library-compatibility) section.
 
 ## Install external library
 
@@ -34,7 +34,7 @@ Follow these steps if you want to install a specific library that you found onli
 
 ## Library compatibility
 
-Appsmith supports libraries written in either the ECMAScript Modules [(ESM)](https://tc39.es/ecma262/#sec-modules) or [UMD](https://github.com/umdjs/umd) pattern. ESM is the standard format for packaging JavaScript code for reuse. ES Modules use import and export statements for defining modules.
+Appsmith supports libraries written in either the [ECMAScript Modules](https://tc39.es/ecma262/#sec-modules) (ESM) or [Universal Module Definition](https://github.com/umdjs/umd) (UMD) pattern. ESM is the standard format for packaging JavaScript code for reuse. ES Modules use import and export statements for defining modules.
 
 Below are the examples of valid URLs for libraries supported by Appsmith:
 
