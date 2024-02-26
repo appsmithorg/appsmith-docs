@@ -29,51 +29,41 @@ By the end of this lesson, you will learn how to:
 * Integrate and execute the module in your app
 
 
-## Create package
-
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+## Create JS Module
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/gCgCD9xeF0wRUFPO9hEO?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/pB3QuP30nOH0g4Pn7W5B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
+1. Open the `ProductUtils` package created in lesson 1.
 
 2. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
-3. Rename the module to **formatTimeZone**.
-
+3. Rename the module to **formatDate**.
 
 4. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
 <dd>
 
-To pass data from app to JS modules, you can pass it by calling the respective function with the necessary parameters, like  `functionName(parameter)`. For example,`formatWithTimeZone('2023-03-08T09:45:15Z')`.
+To pass data from app to JS modules, you can pass it by calling the respective function with the necessary parameters, like  `functionName(parameter)`. For example,`formatDDMMYYYY('2023-03-08T09:45:15Z')`.
 
-The following code formats a given date string to a specified time zone and returns the formatted result, including year, month, day, hour, minute, and second.
-
+The following code formats a given date string into the `DD/MM/YYYY` format.
 ```js
-// Example: Converts '2023-03-08T09:45:15Z' to '03/08/2023, 03:45:15 IST'
-
 export default {
-   // Function to format a date string with a specific time zone
-formatWithTimeZone: (dateString) => {
- const date = new Date(dateString);
- const options = {
-   year: 'numeric',
-   month: '2-digit',
-   day: '2-digit',
-   hour: '2-digit',
-   minute: '2-digit',
-   second: '2-digit',
-   timeZone: 'Asia/Kolkata', // Setting the time zone
- };
+  // Function to format a date string as 'DD/MM/YYYY'
+  formatDDMMYYYY: (dateString) => {
+    const date = new Date(dateString);
+    const options = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    };
 
- return date.toLocaleString('en-US', options);
-},
+    return date.toLocaleString('en-GB', options);
+  },
 };
 ```
 
@@ -89,30 +79,27 @@ Once you've created a JS module, follow these steps to access its data in any ap
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/9JSxpqoIatUsdkmv5lB3?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/ZonOto4ANGQ93dPSGN9Q?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. Create or open an existing **App** from the homepage and ensure that both the app and modules share the same workspace.
+1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
 2. Select the JS tab on the Entity Explorer to the screen's left.
 
-3. Click the **+ New JS object** and select the **formatWithTimeZone** JS module.
+3. Click the **+ New JS object** and select the **formatDate** JS module.
 
-4. Configure the **formatWithTimeZone** function to run on page load.
-
-5. Drop a Datepicker and Text widget, and set the **Text** property to:
+4. From the UI tab, select Table widget and open the `update` column by clicking ⚙️ gear icon. 
 
 <dd>
 
-This code passes the date value from a Date Picker widget to the JS module using the `formatWithTimeZone` function.
-
 ```js
-{{formatTimeZone_1.formatWithTimeZone(DatePicker1.formattedDate)}}
+{{formatDate_1.formatDDMMYYYY(currentRow["updated"])}}
 ```
 
-Whenever a date is selected in the Datepicker, the Text widget displays the formatted date. It provides a versatile solution for formatting date data in various contexts, such as tables or any other location within your application.
+This code formats all `updated` column data into the `DD/MM/YYYY` format for each row in the data array.
+
 
 </dd>
 

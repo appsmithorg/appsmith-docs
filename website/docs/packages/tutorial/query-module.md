@@ -42,9 +42,11 @@ A package is a collection of JS and query modules that can be versioned and dist
 
 1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
 
-2. Click **New Module** > **Query Module**, and create a new datasource by selecting PostgreSQL.
+2. Rename the package to `ProductUtils`.
 
-3. Enter the following details in the connection parameter fields:
+3. Click **New Module** > **Query Module**, and create a new datasource by selecting PostgreSQL.
+
+4. Enter the following details in the connection parameter fields:
 
 <dd>
 
@@ -56,11 +58,11 @@ A package is a collection of JS and query modules that can be versioned and dist
 
 </dd>
 
-3. Click **+ New Reusable Query** from the top-right corner of datasource editor.
+5. Click **+ New Reusable Query** from the top-right corner of datasource editor.
 
-4. Rename the query module to `GetProducts`.
+6. Rename the query module to `GetProducts`.
 
-5. Configure the query to retrieve product details using the following SQL:
+7. Configure the query to retrieve product details using the following SQL:
 
 
 <dd>
@@ -71,7 +73,7 @@ SELECT * FROM public."product" LIMIT 10;
 
 </dd>
 
-6. Run and Publish the module. 
+8. Run and Publish the module. 
 
 With this, you've created a new query module. To access the module inside any app, follow the instructions in the [use query-module section](#use-query-module).
 
@@ -101,7 +103,7 @@ Inputs allow you to pass parameters from your application to modules, facilitati
 
 
 
-3. Update the query by using `inputs` property for dynamic adjustments. 
+2. Update the query by using `inputs` property for dynamic adjustments. 
 
 <dd>
 
@@ -112,7 +114,7 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 </dd>
 
-7. Run and Publish the query module.
+3. Run and Publish the query module.
 
 ## Use query module
 
@@ -153,3 +155,4 @@ Once you've created a query module, follow these steps to access its data in any
 7. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
 
+ This module can be utilized across various apps with distinct use cases. If dynamic inputs are not provided, it defaults to predetermined values.
