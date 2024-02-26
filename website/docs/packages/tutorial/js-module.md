@@ -1,12 +1,12 @@
 ---
-title: Create Reusable JS Modules
+title: Lesson 2 - Create Reusable JS Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Create Reusable JS Modules</h1>
+ <h1>Lesson 2 - Create Reusable JS Modules</h1>
 
 <Tags
 tags={[
