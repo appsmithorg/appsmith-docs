@@ -119,7 +119,7 @@ This property defines the default schema to be used in the connection. A schema 
 The UserAgent tag identifies the client making a request, aiding in tracking and customization based on the environment. By default, the UserAgent tag is set as `Appsmith`, persisting even when not explicitly specified. 
 
 
-This information is useful for analytics and server-side customization. 
+This is a recommended practice by Databricks, and the user agent tag would appear in the audit logs on Databricks for all queries executed from Appsmith Databricks datasources.
 
 </dd>
 
