@@ -24,6 +24,10 @@ A reusable query module is a query that can be used across multiple applications
 In this tutorial, you will learn how to use a query module to fetch and display product data within a Table widget. Additionally, leverage the same query to populate a Select widget with product categories.
 
 By the end of this lesson, you will learn how to:
+* Create a package
+* Create a query module in a package
+* Integrate the query module into your Appsmith app
+* Pass parameters from your app to the query module
 
 * Create and configure the query module
 * Pass parameters to the module
