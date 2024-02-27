@@ -1,12 +1,12 @@
 ---
-title: Lesson 2 - Create Reusable JS Modules
+title: Lesson 1 - Create package and query modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 2 - Create Reusable JS Modules</h1>
+ <h1>Lesson 1 - Create package and query modules</h1>
 
 <Tags
 tags={[
@@ -17,6 +17,9 @@ tags={[
 </div>
 
 <!-- vale on -->
+
+
+
 
 A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. 
 

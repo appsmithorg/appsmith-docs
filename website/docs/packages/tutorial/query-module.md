@@ -1,12 +1,12 @@
 ---
-title: Lesson 1 - Create Reusable Query Modules
+title: Lesson 1 - Create package and query modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Create Reusable Query Modules</h1>
+ <h1>Lesson 1 - Create package and query modules</h1>
 
 <Tags
 tags={[
@@ -18,21 +18,18 @@ tags={[
 
 <!-- vale on -->
 
-A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
+A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
-
-In this tutorial, you will learn how to use a query module to fetch and display product data within a Table widget. Additionally, leverage the same query to populate a Select widget with product categories.
-
-By the end of this lesson, you will learn how to:
+To learn query modules in Appsmith, you'll build a query module to fetch and display product data within a Table widget. By the end of this tutorial, you will know how to:
 
 * Create and configure the query module
-* Pass parameters to the module
 * Integrate the module into your app
+* Pass parameters to the module
 
 
-## Create package
+## Create query module
 
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -44,7 +41,7 @@ A package is a collection of JS and query modules that can be versioned and dist
 
 2. Rename the package to `ProductUtils`.
 
-3. Click **New Module** > **Query Module**, and create a new datasource by selecting PostgreSQL.
+3. Click the **New Module** button located at the center of the screen. Choose **Query Module** and proceed to create a **new datasource** by selecting PostgreSQL.
 
 4. Enter the following details in the connection parameter fields:
 
@@ -75,11 +72,28 @@ SELECT * FROM public."product" LIMIT 10;
 
 8. Run and Publish the module. 
 
-With this, you've created a new query module. To access the module inside any app, follow the instructions in the [use query-module section](#use-query-module).
+With this, you've created a new query module. 
 
 
+## Integrate query module
+
+Once you've created a query module, follow these steps to access its data in any application:
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
 
 
+1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
+
+2. From the **Queries** Tab, click **+ New query / API**.
+
+3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
+
+4. Run the query module.
+
+5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
 
 
 ## Pass parameters to module
@@ -128,15 +142,6 @@ Once you've created a query module, follow these steps to access its data in any
 </div>
 
 
-1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
-
-2. From the **Queries** Tab, click **+ New query / API**.
-
-3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
-
-4. Run the query module.
-
-5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
 
 6. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to:
 
