@@ -72,17 +72,37 @@ SELECT * FROM public."product" LIMIT 10;
 
 8. Run and Publish the module. 
 
+With this, you've created a new query module. 
+
 You have successfully created the first query module.
 
+## Use query module
+
+Once you've created a query module, follow these steps to access its data in any application:
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
 
 
+1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
 
+2. From the **Queries** Tab, click **+ New query / API**.
+
+3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
+
+4. Run the query module.
+
+5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
+
+You have successfully integrated the query module into your app.
 
 
 ## Pass parameters to module
 
 
-In this section, we will update the query module to accept dynamic inputs, allowing us to pass parameters from the app to the query module for tailored and responsive data retrieval. 
+In this section, you will update the query module to accept dynamic inputs, allowing us to pass parameters from the app to the query module for tailored and responsive data retrieval. 
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -90,7 +110,7 @@ In this section, we will update the query module to accept dynamic inputs, allow
   </iframe>
 </div>
 
-1. In the `GetProducts` query editor's property pane, create **Inputs** and add **Default values**. For this tutorial use `LIMIT` and `OFFSET`, create two inputs named `limit` and `offset`, assign default values.
+1. In the `ProductUtils` package, open the `GetProducts` query editor's property pane, create **Inputs** and add **Default values**. For this tutorial use `LIMIT` and `OFFSET`, create two inputs named `limit` and `offset`, assign default values.
 
 <dd>
 
@@ -113,22 +133,15 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 3. Run and Publish the query module.
 
-## Use query module
 
-Once you've created a query module, follow these steps to access its data in any application:
-
+4. Open your app from the homepage to dynamically pass Table widget values to the module.
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-
-6. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to:
+5. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to:
 
 <dd>
+
+This configuration dynamically sets the limit and offset based on the values from the Table widget(`Table1`).
 
 ```js
 //limit input
@@ -140,7 +153,7 @@ Once you've created a query module, follow these steps to access its data in any
 
 </dd>
 
-7. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
+6. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
 
  This module can be utilized across various apps with distinct use cases. If dynamic inputs are not provided, it defaults to predetermined values.

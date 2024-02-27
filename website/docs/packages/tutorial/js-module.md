@@ -1,12 +1,12 @@
 ---
-title: Lesson 1 - Create package and query modules
+title: Lesson 2 - Create JS modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Create package and query modules</h1>
+ <h1>Lesson 2 - Create JS modules</h1>
 
 <Tags
 tags={[
@@ -23,7 +23,7 @@ tags={[
 
 A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. 
 
-This lesson will teach you how to create a JavaScript function that formats dates into a designated time zone. The function can be utilized across multiple applications, providing a consistent method for date formatting tailored to a particular time zone.
+To learn JS modules in Appsmith, you'll be building a function that formats dates into DD/MM/YYYY format. This function will be used to format the product data obtained from the query module in lesson 1.
 
 
 By the end of this lesson, you will learn how to:
@@ -41,19 +41,21 @@ By the end of this lesson, you will learn how to:
 </div>
 
 
-1. Open the `ProductUtils` package created in lesson 1.
+1. Open the `ProductUtils` package created in [lesson 1](/packages/tutorial/query-module#create-query-module).
 
-2. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
+2. Click the **+** icon in the top-left corner and select JS Module. With JS Modules you can create datasource queries and JS objects inside the module.
 
 3. Rename the module to _formatDate_.
 
-4. In the Main JS Object, delete the auto-generated code and add the below code to it:
+4. In the _Main_ JS Object, delete the auto-generated code and add the below code to it:
 
 <dd>
 
-To pass data from app to JS modules, you can pass it by calling the respective function with the necessary parameters, like  `functionName(parameter)`. For example,`formatDDMMYYYY('2023-03-08T09:45:15Z')`.
+To pass data from the app to JS modules, you can pass it by calling the respective function with the necessary parameters, like `formatDDMMYYYY('2023-03-08T09:45:15Z')`.
 
-The following code formats a given date string into the `DD/MM/YYYY` format.
+The following code takes a parameter `dateString` and uses the `toLocalString()` method of the date object to convert the given date into the `DD/MM/YYYY` format.
+
+
 ```js
 export default {
   // Function to format a date string as 'DD/MM/YYYY'
@@ -89,7 +91,7 @@ Once you've created a JS module, follow these steps to access its data in any ap
 
 1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
-2. Select the JS tab on the Entity Explorer to the screen's left.
+2. Select the _JS_ tab on the Entity Explorer to the screen's left.
 
 3. Click the **+ New JS object** and select the **formatDate** JS module.
 
