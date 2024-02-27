@@ -63,7 +63,7 @@ To refresh access token, follow these steps:
    ```jsx
    export default { 
       refreshAccessToken: () => { 
-         const refreshToken = appsmith.store.getValue('refreshtoken'); 
+         const refreshToken = appsmith.store.value('refreshtoken'); 
          if (refreshToken) 
          { 
             return refreshAPI.run({ refreshtoken: refreshToken }) .then(newTokens => { storeValue('accesstoken', newTokens.accesstoken);
