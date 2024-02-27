@@ -72,28 +72,11 @@ SELECT * FROM public."product" LIMIT 10;
 
 8. Run and Publish the module. 
 
-With this, you've created a new query module. 
+You have successfully created the first query module.
 
 
-## Integrate query module
-
-Once you've created a query module, follow these steps to access its data in any application:
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
 
 
-1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
-
-2. From the **Queries** Tab, click **+ New query / API**.
-
-3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
-
-4. Run the query module.
-
-5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
 
 
 ## Pass parameters to module

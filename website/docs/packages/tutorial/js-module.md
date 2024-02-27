@@ -45,7 +45,7 @@ By the end of this lesson, you will learn how to:
 
 2. Click **New Module** > **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
-3. Rename the module to **formatDate**.
+3. Rename the module to _formatDate_.
 
 4. In the Main JS Object, delete the auto-generated code and add the below code to it:
 
