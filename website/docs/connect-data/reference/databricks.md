@@ -110,6 +110,18 @@ This property defines the default schema to be used in the connection. A schema 
 
 </dd>
 
+#### UserAgent Tag
+
+
+<dd>
+
+
+The User-Agent tag in HTTP headers identifies the client making a request, aiding in tracking and customization based on the environment.  By default, the User-Agent tag is set as `Appsmith`, persisting even when not explicitly specified. 
+
+
+This information is useful for analytics and server-side customization. 
+
+</dd>
 
 ## Query Databricks
 
