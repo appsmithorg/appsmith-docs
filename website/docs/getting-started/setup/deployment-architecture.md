@@ -11,11 +11,13 @@ This page provides information about the self-hosted deployment architecture of 
 
 ## Components
 
-Appsmith is deployed as a single Docker container with a single volume for storing persistent data. The diagram below illustrates the different components and how these services communicate with each other.
+Appsmith is deployed as a single Docker container with a single volume for storing persistent data. A single Docker container runs the following processes to deploy and get started with Appsmith:
 
-<ZoomImage src="/img/Appsmith_Deployment_Architecture.png" alt="Appsmith Deployment Architecture" caption="Appsmith Deployment Architecture" />
+<!--
+The diagram below illustrates the different components and how these services communicate with each other.
 
-A single Docker container runs the following processes to deploy and get started with Appsmith:
+<ZoomImage src="/img/Appsmith_Deployment_Architecture.png" alt="Appsmith Deployment Architecture" caption="Appsmith Deployment Architecture" /> 
+-->
 
 1. The **Appsmith Server** (backend) as a Java process, which handles:
     1. Authentication: login credentials, OAuth 2.0 with [Google](/getting-started/setup/instance-configuration/authentication/google-login) and [GitHub](http://localhost:3000/getting-started/setup/instance-configuration/authentication/github-login), SSO with [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) and [SAML](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
