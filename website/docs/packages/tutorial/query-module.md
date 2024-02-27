@@ -79,7 +79,7 @@ SELECT * FROM public."product" LIMIT 10;
 
 8. Run and Publish the module. 
 
-With this, you've created a new query module. To access the module inside any app, follow the instructions in the [use query-module section](#use-query-module).
+You have successfully created the first query module.
 
 
 
