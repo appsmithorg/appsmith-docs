@@ -1,8 +1,23 @@
 ---
 description: This page provides an overview of the workflows feature in Appsmith, detailing its key components and functionality.
+title: Overview
+hide_title: true
 ---
+<!-- vale off -->
 
-# Overview 
+<div className="tag-wrapper">
+ <h1>Overview </h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 Appsmith Workflows are specifically designed for Human-in-the-Loop (HITL) interactions, seamlessly integrating human decision-making into automated processes, ensuring control over critical decision points.
 
 

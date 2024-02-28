@@ -58,3 +58,11 @@ Queries
 queries
 Functions
 functions
+JavaScript
+javascript
+Datasource
+datasource
+Human-in-the-Loop
+workflowInstanceId
+resolution
+payload

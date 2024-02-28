@@ -1,4 +1,22 @@
-# Workflow Queries
+---
+description: This page provides detailed information on workflow queries available in Appsmith.
+title: Workflow Queries
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Workflow Queries</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Workflow queries in Appsmith applications enable interaction with workflows, allowing users to execute operations within their apps. This page provides detailed information on workflow queries and their parameters.
 

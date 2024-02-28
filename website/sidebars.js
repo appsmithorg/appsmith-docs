@@ -626,7 +626,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Workflows',
+      label: 'Workflows (Beta)',
       items: [
         'workflows/README',
         //category- Api
@@ -646,10 +646,18 @@ const sidebars = {
         },
         {
           type: 'category',
+          collapsed: false,
           label: 'Reference',
           items: [
             'workflows/reference/workflow-queries',
             'workflows/reference/workflow-functions'
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Concepts',
+          items: [
+            'workflows/concepts/workflows-in-appsmith'
           ],
         },
       ]

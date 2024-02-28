@@ -1,7 +1,22 @@
 ---
 description: This page provides detailed steps to set up an approval Webhook workflow on Appsmith.
+title: Create Approval Workflow
+hide_title: true
 ---
-# Create Approval Workflow
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Create Approval Workflow</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 In a human-in-the-loop approval workflow, such as for processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
 

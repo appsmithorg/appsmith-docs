@@ -1,8 +1,22 @@
 ---
 description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
+title:  Create Webhook Workflow
+hide_title: true
 ---
+<!-- vale off -->
 
-# Create Webhook Workflow
+<div className="tag-wrapper">
+ <h1> Create Webhook Workflow</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial guides you through the process of setting up a Webhook workflow, integrating it with your Appsmith app, and triggering the workflow execution from your Appsmith app.  
 
