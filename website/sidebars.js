@@ -645,7 +645,7 @@ const sidebars = {
           label: 'How-To Guides',
           link: { type: 'doc', id: 'packages/how-to-guides/README' },
           items: [
-            'packages/how-to-guides/create-query-module',
+            //'packages/how-to-guides/create-query-module',
             'packages/how-to-guides/create-js-module'
           ]
         },

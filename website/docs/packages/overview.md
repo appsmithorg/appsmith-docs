@@ -3,7 +3,7 @@
 
 Reusability is an integral part of application development, offering various advantages like speeding up the development process, centralizing business logic, and introducing standardization into applications.
 
-Appsmith enhances reusability by providing a feature set, allowing you to reuse widgets, datasource, queries, JS logic, and more across your applications.
+Appsmith enhances reusability by providing a feature set, allowing you to reuse widgets, queries, and JS logic across your applications.
 
 The introduction of Blocks, Modules, and Packages aligns with the diverse needs of developers, community members, and businesses, promoting efficiency and collaboration in application development.
 
@@ -43,16 +43,13 @@ See [What are Modules](/packages/concepts)
 
 Query Modules encapsulate and reuse database queries across multiple applications. They offer dynamic inputs for changing query parameters based on user interactions.
 
-* Requires a dedicated datasource creation for context-specific data retrieval.
-* Modifications to a Query Module are instantly reflected in all applications where it's used.
+* Modifications to a Query Module are instantly reflected in all applications where it's used. These updates apply to the application in edit mode and do not impact the deployed version.
 * Allows passing distinct inputs from various apps without impacting the overall query configuration.
 
 **Limitations**
 
 * Direct binding of JS Module or JSObject data inside the query modules is not supported. 
-* The feature of binding dynamic values to query modules using `this.params.(…)` is not yet supported.
 * Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
-* Importing CURL in packages is not supported in the closed beta.
 
 
 See How to [Reuse query modules](/packages/how-to-guides/create-query-module)
@@ -62,7 +59,7 @@ See How to [Reuse query modules](/packages/how-to-guides/create-query-module)
 JavaScript Modules in Appsmith are reusable objects for JavaScript functions and objects. They promote code reusability and a standardized approach to data manipulation.
 
 * Supports the creation of datasource queries and JS objects for effective data manipulation.
-* Like Query Modules, any updates or modifications to a JavaScript Module are reflected instantly across all applications using the module.
+* Like Query Modules, any updates or modifications to a JavaScript Module are reflected instantly across all applications using the module. These updates apply to the application in edit mode and do not impact the deployed version.
 * To pass JSObject values to queries use Appsmith [Global Objects](/write-code/reference), like `this.params.paramName`.
 
 
