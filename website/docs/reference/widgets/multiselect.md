@@ -43,6 +43,14 @@ You can dynamically generate options by fetching data from queries or JS functio
 ```js
 {{fetchData.data}}
 ```
+
+If the retrieved data is not in the desired format, you can use JavaScript to transform the data by adding it to the **Source Data** property, like:
+
+```js
+{{fetchData.data.map( p => ({label: p.country, value: p.country}))}}
+```
+
+
 If you are generating options for MutliSelect widget using JS code as shown above, you must define both the [**Label**](#label-string) and [**Value**](#value-string) properties.
 
 </dd>
