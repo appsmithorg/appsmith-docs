@@ -61,10 +61,24 @@ _Options_:
 * **Binary**: Binary files store data in the form of contiguous bytes, without a defined reading method.
 * **Text**: Text files store data as human-readable characters. 
 * **Base64**: Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format.
-* **Array (CSV)**: CSV files store tabular data as plain text, with each row separated by a line break and each value separated by a comma. 
+* **Array of Object(CSV, XLS, JSON, TSV)**: This data format accommodates various file formats, including CSV, XLS, JSON, and TSV, enabling versatile handling of tabular data. For file types other than CSV, XLS(X), JSON, or TSV, an empty value is assigned. Importantly, using large files directly in widgets may lead to a slowdown in the application.
 
 
 </dd>
+
+#### Infer data types from CSV	`boolean`
+
+<dd>
+
+When enabled, it automatically determines and assigns data types to columns in a CSV file based on content characteristics.
+
+
+</dd>
+
+
+
+
+
 
 #### Maximum No. of files	`number`
 
