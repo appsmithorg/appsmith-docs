@@ -33,7 +33,7 @@ The unique identifier for your Firestore project, accessible in your Firebase pr
 
 <dd>
 
-A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase project's **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration. For
+A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase project's **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration.
 
 </dd>
 
