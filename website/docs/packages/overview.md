@@ -52,7 +52,7 @@ Query Modules encapsulate and reuse database queries across multiple application
 * Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
 
 
-See How to [Reuse query modules](/packages/how-to-guides/create-query-module)
+See How to [Reuse query modules](/packages/tutorial/query-module)
 
 #### JavaScript Modules
 
@@ -71,5 +71,5 @@ JavaScript Modules in Appsmith are reusable objects for JavaScript functions and
 
 
 
-See How to [Reuse JS modules](/packages/how-to-guides/create-js-module)
+See How to [Reuse JS modules](/packages/tutorial/js-module)
 
