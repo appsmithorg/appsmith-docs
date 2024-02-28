@@ -70,8 +70,7 @@ _Options_:
 
 <dd>
 
-When enabled, it automatically determines the data types for columns in a CSV file based on content characteristics. This option is only available when the **Array of Object** data format is selected
-
+When enabled, it automatically determines the data types for columns in a CSV file based on content characteristics. This option is only available when the **Array of Object** data format is selected.
 
 </dd>
 
