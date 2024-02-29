@@ -18,9 +18,9 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows offer a comprehensive solution for automating tasks and orchestrating processes within your applications. They redefine workflow management by seamlessly integrating code-based and node-based systems, and enable you to automate repetitive tasks, orchestrate complex workflows, and integrate with external services. 
+Appsmith Workflows provide a solution for automating tasks and orchestrating processes within your applications. They enable workflow management by integrating code-based and node-based systems, allowing you to automate repetitive tasks, manage complex workflows, and integrate with external services.
 
-Workflows serve as entities created at the workspace level, offering a flexible and intuitive solution for building automation into your applications. The workflow process in Appsmith involves key steps as shown below:
+Workflows are entities created within the workspace, offering an easy way to integrate automation into applications present within the same workspace. Below are the key steps involved in the workflow process:
 
 <ZoomImage
   src="/img/appsmith-workflow-concept.svg" 
@@ -30,10 +30,10 @@ Workflows serve as entities created at the workspace level, offering a flexible 
 
 1. **Client Interaction** - The process begins with a client initiating a request, which is then routed to the Appsmith server by Nginx.
 2. **Request Handling in Appsmith Server** - Upon receipt of the request, the Appsmith server identifies its type and determines the necessary processing.
-3. **Workflow Identification** - If the request involves workflow processing, the server identifies and directs it to the appropriate workflow handling components.
+3. **Workflow Identification** - If the request needs to invoke workflow for processing, the server identifies and directs it to the appropriate workflow handling components.
 4. **Interaction with Workflow Proxy** - The Appsmith server communicates with the workflow proxy using workflow queries and routes the request to the workflow cluster that identifies the designated workflow. 
 5. **Execution of Workflow Logic** - Inside the workflow, the `executeworkflow()` function acts as the central control unit, executing the defined logic. Here, you can configure or use workspace data sources, execute queries, make API calls, or perform custom logic using JS objects. You can also use workflow functions to create human-in-the-loop interactions by generating requests that need user interaction.
-6. **Response Generation** - After all the logic processing is completed, the workflow generates a response based on the outcome of the workflow execution. Once the response is ready, it's transitioned back to the Appsmith server. The Appsmith server then handles the processing and sends the appropriate response back to the client that initiated the request, completing the flow of events.
+6. **Response Generation** - After the logic is processed, the workflow generates a response based on the outcome of the workflow execution, and sends it to the Appsmith server. The Appsmith server then handles the processing and sends the appropriate response back to the client that initiated the request, completing the flow of events.
 
 These steps illustrate the comprehensive workflow process in Appsmith, highlighting the dynamic interaction between clients, the Appsmith server, workflow components, and the generation of responses.
 
@@ -43,7 +43,7 @@ Appsmith Workflows provide unique features to enhance app building capabilities 
 
 ### Human-in-the-Loop interactions
 
-Appsmith Workflows enable human-in-the-loop interactions, allowing you to engage in the workflow process. This feature enables intervention or decision-making within automated processes. You can use Workflow functions in workflow logic to build human-in-the-loop interactions, enabling you to create dynamic decision points and integrate user input into workflow execution by capturing user actions in the Appsmith app.
+Appsmith Workflows enable human-in-the-loop interactions, allowing you to engage in workflow process. This feature enables intervention or decision-making within automated processes. You can use Workflow functions in workflow logic to build human-in-the-loop interactions, enabling you to create dynamic decision points and integrate user input into workflow execution by capturing user actions in the Appsmith app.
 
 ### Run history
 
@@ -72,4 +72,3 @@ You can also interact with Appsmith workflows from your external applications us
 ## Conclusion
 
 Workflows in Appsmith offer robust capabilities for organizing and automating processes within applications. Understanding the components and dynamics of workflows helps you customize solutions that meet your specific automation and human-in-the-loop interaction requirements, both within the Appsmith platform and in collaboration with external applications.
-
