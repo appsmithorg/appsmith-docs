@@ -1,12 +1,12 @@
 ---
 description: Learn about the Workflows feature in Appsmith for automating tasks and orchestrating processes within your applications.
-title: Workflows in Appsmith
+title: Workflows
 hide_title: true
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Workflows in Appsmith</h1>
+ <h1>Workflows</h1>
 
 <Tags
 tags={[
