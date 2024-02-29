@@ -70,15 +70,13 @@ SELECT * FROM public."product" LIMIT 10;
 
 </dd>
 
-8. Run and Publish the module. 
-
-With this, you've created a new query module. 
+8. Run and publish the module. 
 
 You have successfully created the first query module.
 
 ## Use query module
 
-Once you've created a query module, follow these steps to access its data in any application:
+Follow these steps to access its data in any application:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -94,9 +92,10 @@ Once you've created a query module, follow these steps to access its data in any
 
 4. Run the query module.
 
-5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**.
+5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**. 
 
-You have successfully integrated the query module into your app.
+You have successfully integrated the query module into your app, displaying its data in the Table widget.
+
 
 
 ## Pass parameters to module
@@ -110,17 +109,19 @@ In this section, you will update the query module to accept dynamic inputs, allo
   </iframe>
 </div>
 
-1. In the `ProductUtils` package, open the `GetProducts` query editor's property pane, create **Inputs** and add **Default values**. For this tutorial use `LIMIT` and `OFFSET`, create two inputs named `limit` and `offset`, assign default values.
+1. Open the `ProductUtils` package, 
+
+2. Navigate to the property pane of the `GetProducts` query. Inputs allow you to pass parameters from your application to modules, facilitating dynamic query adjustments based on user inputs or application requirements.
 
 <dd>
 
-Inputs allow you to pass parameters from your application to modules, facilitating dynamic query adjustments based on user inputs or application requirements
+Create two inputs, named `limit` and `offset`, and assign default values to them.
 
 </dd>
 
 
 
-2. Update the query by using `inputs` property for dynamic adjustments. 
+3. Update the query by using `inputs` property for dynamic adjustments. 
 
 <dd>
 
@@ -131,13 +132,13 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 </dd>
 
-3. Run and Publish the query module.
+4. Run and publish the query module.
 
 
-4. Open your app from the homepage to dynamically pass Table widget values to the module.
+5. Open your app from the homepage to dynamically pass Table widget values to the module.
 
 
-5. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to:
+6. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
 
 <dd>
 
@@ -153,7 +154,8 @@ This configuration dynamically sets the limit and offset based on the values fro
 
 </dd>
 
-6. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
+7. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
 
- This module can be utilized across various apps with distinct use cases. If dynamic inputs are not provided, it defaults to predetermined values.
+
+You've successfully integrated query modules; If dynamic inputs are not provided, it defaults to predetermined values.

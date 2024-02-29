@@ -43,7 +43,7 @@ By the end of this lesson, you will learn how to:
 
 1. Open the `ProductUtils` package created in [lesson 1](/packages/tutorial/query-module#create-query-module).
 
-2. Click the **+** icon in the top-left corner and select JS Module. With JS Modules you can create datasource queries and JS objects inside the module.
+2. Click the **+** icon in the top-left corner and select **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
 3. Rename the module to _formatDate_.
 
@@ -80,7 +80,7 @@ export default {
 
 ## Integrate Modules into your App
 
-Once you've created a JS module, follow these steps to access its data in any application:
+Follow these steps to access its data in any application:
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -89,9 +89,9 @@ Once you've created a JS module, follow these steps to access its data in any ap
 </div>
 
 
-1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+1. Open the **App**  created in Lesson 1.
 
-2. Select the _JS_ tab on the Entity Explorer to the screen's left.
+2. Select the _JS_ tab on the Entity Explorer.
 
 3. Click the **+ New JS object** and select the **formatDate** JS module.
 
