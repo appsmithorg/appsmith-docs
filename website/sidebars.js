@@ -657,7 +657,7 @@ const sidebars = {
           type: 'category',
           label: 'Concepts',
           items: [
-            'workflows/concepts/workflows-in-appsmith'
+            'workflows/concepts/workflows'
           ],
         },
       ]
