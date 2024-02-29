@@ -33,7 +33,7 @@ Workflows are entities created within the workspace, offering an easy way to int
 3. **Workflow Identification** - If the request needs to invoke workflow for processing, the server identifies and directs it to the appropriate workflow handling components.
 4. **Interaction with Workflow Proxy** - The Appsmith server communicates with the workflow proxy using workflow queries and routes the request to the workflow cluster that identifies the designated workflow. 
 5. **Execution of Workflow Logic** - Inside the workflow, the `executeworkflow()` function acts as the central control unit, executing the defined logic. Here, you can configure or use workspace data sources, execute queries, make API calls, or perform custom logic using JS objects. You can also use workflow functions to create human-in-the-loop interactions by generating requests that need user interaction.
-6. **Response Generation** - After the logic is processed, the workflow generates a response based on the outcome of the workflow execution, and sends it to the Appsmith server. The Appsmith server then handles the processing and sends the appropriate response back to the client that initiated the request, completing the flow of events.
+6. **Response Generation** - The workflow generates a response based on the outcome of the workflow execution and sends it to the Appsmith server. The Appsmith server then handles the processing and sends the appropriate response back to the client that initiated the request, completing the flow of events.
 
 These steps illustrate the comprehensive workflow process in Appsmith, highlighting the dynamic interaction between clients, the Appsmith server, workflow components, and the generation of responses.
 
