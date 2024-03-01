@@ -36,8 +36,8 @@ Below are the parameters required by the `executeWorkflow()` function to execute
 #### data `JSON`
 
 <dd>
-  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, a data passed to the workflow:
-  
+  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow:
+
     ```javascript
       {
         "userId": 123,
@@ -50,10 +50,10 @@ Below are the parameters required by the `executeWorkflow()` function to execute
       }
 
     ```
-  You can access the `userId` from the above data in your workflow by using a `.` operator in the `data.userId`.
+  In your workflow, you can access properties within the `data` object like `userId` using dot notation. To access the `userId`, use `data.userId`.
 </dd>
 
-### Return type
+### Return type `Promise<boolean>`
 
 The `executeWorkflow()` returns a Promise that resolves to a boolean value, either `true` or `false`, indicating the success or failure of the workflow execution.
 
@@ -103,9 +103,9 @@ Below are the parameters required by the `assignRequest()` function to execute:
 Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
  </dd>
 
-### Return type
+### Return type `Promise<JSON>`
 
-The `assignRequest()` function returns a Promise representing the generated response. The response includes the following data:
+The `assignRequest()` function returns a Promise in a JSON format representing the generated response. The response includes the following data:
 
 #### workflowInstanceId `String`
 
