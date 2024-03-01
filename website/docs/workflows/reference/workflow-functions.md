@@ -53,7 +53,7 @@ Below are the parameters required by the `executeWorkflow()` function to execute
   In your workflow, you can access properties within the `data` object like `userId` using dot notation. To access the `userId`, use `data.userId`.
 </dd>
 
-### Return type `Promise<boolean>`
+### Return type
 
 The `executeWorkflow()` returns a Promise that resolves to a boolean value, either `true` or `false`, indicating the success or failure of the workflow execution.
 
@@ -103,7 +103,7 @@ Below are the parameters required by the `assignRequest()` function to execute:
 Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
  </dd>
 
-### Return type `Promise<JSON>`
+### Return type 
 
 The `assignRequest()` function returns a Promise in a JSON format representing the generated response. The response includes the following data:
 
