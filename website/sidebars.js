@@ -633,7 +633,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
-          link: { type: 'doc', id: 'workflows/tutorials/create-webhook-workflow' },
+          link: { type: 'doc', id: 'workflows/tutorials/create-workflow' },
           items: [
           ],
         },
