@@ -41,8 +41,8 @@ A `Trigger Workflow` request initiates a workflow run with supplied parameters, 
 
 #### Trigger data
 <dd>
-Trigger data supplies the parameters needed by the workflow to execute. The parameters are supplied in a JSON format. For example:
-```json
+Trigger data supplies the parameters needed by the workflow to execute. The parameters are supplied in a JSON object. For example:
+```javascript
 {
   "parameter1": "value1",
   "parameter2": "value2"

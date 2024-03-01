@@ -24,7 +24,7 @@ Appsmith Workflows are specifically designed for Human-in-the-Loop (HITL) intera
 The diagram below depicts an example of establishing a Human-in-the-Loop workflow for managing a request initiated by an application user. This setup allows for human intervention to review the request and execute necessary actions:
 
 <ZoomImage
-  src="/img/appsmith-human-in-the-loop-workflow-overview.svg" 
+  src="/img/appsmith-workflow-overview.png" 
   alt="Human-in-the-Loop workflow"
   caption="Human-in-the-Loop workflow"
 /> 
@@ -40,6 +40,7 @@ The diagram below depicts an example of establishing a Human-in-the-Loop workflo
 Appsmith supports following types of workflows that users can configure:
 
 * **Webhook Workflows**: Triggered by external events or HTTP requests for real-time data processing and action execution based on incoming data.
+* **Schedule Workflows**: Coming soon.
 
 ## Getting started
 

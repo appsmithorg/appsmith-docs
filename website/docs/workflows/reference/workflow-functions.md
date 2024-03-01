@@ -18,7 +18,43 @@ tags={[
 
 <!-- vale on -->
 
-Workflow functions in Appsmith enable the creation of dynamic and interactive workflows, facilitating data manipulation, process automation, and user intervention within applications. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+Workflow functions are in build framework functions that enables you to build human-in-the-loop automation. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+
+## executeWorkflow()
+
+The `executeWorkflow()` function serves as a central control unit for executing workflows within Appsmith. This function allows you to create a workflow logic for execution of tasks.
+
+### Signature
+
+```javascript
+executeWorkflow(data: JSON): Promise<boolean>
+```
+### Parameters
+
+Below are the parameters required by the `executeWorkflow()` function to execute:
+
+#### data `JSON`
+
+<dd>
+  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, a data passed to the workflow:
+    ```javascript
+      {
+        "userId": 123,
+        "action": "updateProfile",
+        "data": {
+          "firstName": "John",
+          "lastName": "Doe",
+          "email": "john.doe@example.com"
+        }
+      }
+
+    ```
+  You can access the `userId` from the above data in your workflow by using a `.` operator in the `data.userId`.
+</dd>
+
+### Return type
+
+The `executeWorkflow()` returns a Promise that resolves to a boolean value, either `true` or `false`, indicating the success or failure of the workflow execution.
 
 ## assignRequest()
 
@@ -27,8 +63,9 @@ The `assignRequest()` function creates a pending request that requires user inte
 ### Signature
 
 ```javascript
-assignRequest({requestName: string, message: string, resolutions: string[], metadata:{key: string, value: any}, requestToUsers: string[], requestToGroups: string[] }) : JSON
+assignRequest({requestName: string, message: string, resolutions: string[], metadata:{key: string, value: any}, requestToUsers: string[], requestToGroups: string[] }) : Promise<JSON>
 ```
+
 ### Parameters
  
 Below are the parameters required by the `assignRequest()` function to execute:
@@ -56,18 +93,18 @@ Below are the parameters required by the `assignRequest()` function to execute:
 
 #### requestToUsers  
    <dd>
-   Specifies the user or users to whom the request will be assigned for resolution. Each element in the array has to be the username for logging into your app. It's mandatory to supply this attribute if you are not supplying `requestToGroups` atribute.
+   Specifies the user or users to whom the request will be assigned for resolution. Each element in the array has to be the email that you use for logging into your Appsmith app. It's mandatory to supply this attribute if you are not supplying `requestToGroups` atribute.
    </dd>
 
 #### requestToGroups `String[]` `Optional`
 
 <dd>
-Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the group or groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
+Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
  </dd>
 
 ### Return type
 
-The `assignRequest()` function returns a JSON object representing the generated response. The response includes the following data:
+The `assignRequest()` function returns a Promise representing the generated response. The response includes the following data:
 
 #### workflowInstanceId `String`
 
