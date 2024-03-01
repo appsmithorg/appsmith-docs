@@ -50,7 +50,7 @@ Appsmith supports following types of triggers in workflows that you can use to c
 ## Getting started
 
 1. Self-host Appsmith. For detailed instructions on installing Appsmith, see the [Appsmith installation guides](/getting-started/setup/installation-guides).
-2. Learn the basics with a quick tutorial on [Creating Basic Workflow](/workflows/tutorials/create-webhook-workflow).
+2. Learn the basics with a quick tutorial on [Creating Basic Workflow](/workflows/tutorials/create-workflow).
 
 
 <div className="containerGridSampleApp">
