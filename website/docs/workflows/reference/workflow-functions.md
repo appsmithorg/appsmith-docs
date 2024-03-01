@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Workflow functions are in build framework functions that enables you to build human-in-the-loop automation. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+Workflow functions are in build framework functions that enables you to build human-in-the-loop integration. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
 
 ## executeWorkflow()
 
