@@ -1,6 +1,6 @@
 ---
-description: This page provides detailed steps to set up a Webhook workflow on Appsmith.
-title:  Create Webhook Workflow
+description: This page provides detailed steps to set up a workflow on Appsmith.
+title:  Create Basic Workflow
 hide_title: true
 ---
 <!-- vale off -->
@@ -41,10 +41,10 @@ Follow these steps to build a notification workflow:
 To send notifications to the users you will create a workflow, and configure it as a webhook. Follow these steps to create a webhook workflow within your workspace. The newly created workflow can be accessed in all apps in the same workspace:
 
 <br/>
-    <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-    <iframe src="https://demo.arcade.software/BzEnldkGHkIJ91SDxubA?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow">
-    </iframe>
-    </div>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+<iframe src="https://demo.arcade.software/BzEnldkGHkIJ91SDxubA?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow">
+</iframe>
+</div>
 <br/><br/>
 
 1. Click the **Create New** button in your workspace, and choose **Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _Send\_Email\_Workflow_.
@@ -136,10 +136,12 @@ You've successfully integrated the email query in workflow.
 
 Follow these steps to configure a webhook trigger for the workflow:
 
- <br/>  <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+ <br/>  
+ <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
     <iframe src="https://demo.arcade.software/1LnNGcbCRDlB2AKQpxz3?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Configure webhook trigger">
     </iframe>
-    </div><br/><br/>
+    </div>
+<br/><br/>
  
 1. Click the gear icon ⚙️ in the bottom left corner to configure the workflow settings.
 2. Toggle the **Webhook trigger** property to configure the workflow as a webhook.
@@ -188,10 +190,12 @@ To interact with the workflow from your Appsmith app, Appsmith provides workflow
 
 Follow these steps to send email from your app:
 
- <br/>  <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+ <br/>  
+ <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
     <iframe src="https://demo.arcade.software/e6ZQ55iJFE9vZdOHOOe9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow Query">
     </iframe>
-    </div><br/><br/>
+</div>
+<br/><br/>
 
 1. In your application, drag an Input widget onto the canvas, name it _inp\_Email_, and set its label as **Email**.
 2. Drag a Button widget onto the canvas, configure it as shown below:
