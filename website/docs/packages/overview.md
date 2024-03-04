@@ -85,13 +85,13 @@ UI Modules provide the capability to encapsulate widgets and other UI components
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div>
-      <b><a href="/workflows/reference/workflow-queries">Tutorial</a></b>
+      <b><a href="/packages/tutorial/query-module">Tutorial</a></b>
       <div className="containerDescription"> Take the quick tutorial to learn the basics.</div>
    </div>
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div>
-      <b><a href="/workflows/reference/workflow-queries">Concepts</a></b>
+      <b><a href="/packages/concepts">Concepts</a></b>
       <div className="containerDescription"> Explanation of Modules.</div>
    </div>
 </div>
