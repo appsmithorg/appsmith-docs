@@ -5,32 +5,17 @@ Reusability is an integral part of application development, offering various adv
 
 Appsmith enhances reusability by providing a feature set, allowing you to reuse widgets, queries, and JS logic across your applications.
 
-The introduction of Blocks, Modules, and Packages aligns with the diverse needs of developers, community members, and businesses, promoting efficiency and collaboration in application development.
+## Packages
 
+A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
-### Blocks
-
-Blocks are reusable components in Appsmith, consisting of **widgets**, **queries**, **custom libraries**, **databases**, and/or **JavaScript** bundled into a single **JSON** document. This exportable format allows developers to capture and reuse their work across various applications. 
-
-To reuse entities, just click on the page settings and choose the import/export option. You can select the entities you want to export, allowing you to reuse elements available on that page. This feature proves particularly beneficial for developers looking to avoid the tedious task of copying code across different pages and applications.
-
-<ZoomImage
-  src="/img/blocks-overview.png" 
-  alt=""
-  caption=""
-/>
-
-
-See [How to Reuse Application Entities](https://appsmith-docs-git-feat-partial-import-export-get-appsmith.vercel.app/build-apps/how-to-guides/import-export-app-entities)
-
+Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
 
 ### Modules
 
-Modules in Appsmith are integral components of a **Package** tailored for enterprise users. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace.
+Modules in Appsmith are integral components of a **Package** tailored. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace.
 
-While Blocks serve as templates for reusable work, Modules extend this functionality by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
-
-See [What are Modules](/packages/concepts)
+Modules extend this functionality by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
 <ZoomImage
   src="/img/modules-con.png" 
@@ -38,38 +23,75 @@ See [What are Modules](/packages/concepts)
   caption=""
 />
 
+* **Tracking**: Modules enable effortless tracking of updates across all subscribing applications.
+* **Centralized Management**: Provides a centralized mechanism for efficiently managing and deploying updates.
+* **Versioned Control**: Modules support versioning, allowing users to manage different versions of the same module concurrently.
+* **Standardization Support**: Ideal for organizations aiming to enforce standardization in reusable work within their software ecosystem.
+
+
+**Limitations**
+
+* Direct binding of JS modules or query modules within each other is not possible, meaning you cannot call query modules inside other modules.
+* Importing or using custom JS libraries is not yet supported.
+* The creation of JSObjects within query modules is not supported
+* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
+
+
+
+
+### Types of Modules
 
 #### Query Modules
 
 Query Modules encapsulate and reuse database queries across multiple applications. They offer dynamic inputs for changing query parameters based on user interactions.
 
-* Modifications to a Query Module are instantly reflected in all applications where it's used. These updates apply to the application in edit mode and do not impact the deployed version.
-* Allows passing distinct inputs from various apps without impacting the overall query configuration.
-
-**Limitations**
-
-* Direct binding of JS Module or JSObject data inside the query modules is not supported. 
-* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
+* **Dynamic Configurability:** Allows passing distinct inputs from various apps without impacting the overall query configuration.
+* **Deployment Independence**: Updates to Query Modules only affect applications in _edit mode_, and do not impact the deployed version.
 
 
-See How to [Reuse query modules](/packages/tutorial/query-module)
 
 #### JavaScript Modules
 
 JavaScript Modules in Appsmith are reusable objects for JavaScript functions and objects. They promote code reusability and a standardized approach to data manipulation.
 
-* Supports the creation of datasource queries and JS objects for effective data manipulation.
-* Like Query Modules, any updates or modifications to a JavaScript Module are reflected instantly across all applications using the module. These updates apply to the application in edit mode and do not impact the deployed version.
-* To pass JSObject values to queries use Appsmith [Global Objects](/write-code/reference), like `this.params.paramName`.
+* **Efficient Data Manipulation:** Facilitates the creation of datasource queries and JS objects, enabling efficient and standardized data manipulation within applications.
+* **Global Object Integration:** Allows seamless passing of JSObject values to queries using Appsmith Global Objects, enhancing flexibility in data handling.
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h4>UI Modules</h4>
+
+<Tags
+tags={[
+{ name: "Coming Soon", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+UI Modules provide the capability to encapsulate widgets and other UI components, promoting reusability in the user interface. 
+
+* **Enhanced Modularity:** UI Modules allow for the encapsulation of diverse UI components, promoting modular design practices for a more organized and maintainable user interface.
+* **Reusable Components:** Developers can create reusable UI components within UI Modules, reducing redundancy and accelerating the development process.
+
+## Getting started
 
 
-**Limitations**
+<div className="containerGridSampleApp">
 
-* Unlike Query Modules, JavaScript Modules have a limitation—they do not support direct value passing from the app. You can use Appsmith objects and functions to pass or store values between the application and the JavaScript Module.
-* Direct binding of Query Module data inside the JS modules is not supported. 
-* Support for custom JS libraries is not available in the closed beta.
-
-
-
-See How to [Reuse JS modules](/packages/tutorial/js-module)
-
+   <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
+      </div>
+      <b><a href="/workflows/reference/workflow-queries">Tutorial</a></b>
+      <div className="containerDescription"> Take the quick tutorial to learn the basics.</div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
+      </div>
+      <b><a href="/workflows/reference/workflow-queries">Concepts</a></b>
+      <div className="containerDescription"> Explanation of Modules.</div>
+   </div>
+</div>
