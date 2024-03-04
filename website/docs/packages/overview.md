@@ -64,7 +64,7 @@ JavaScript Modules in Appsmith are reusable objects for JavaScript functions and
 
 <Tags
 tags={[
-{ name: "Coming Soon", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+{ name: "Coming Soon", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
 ]}
 />
 

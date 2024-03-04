@@ -651,14 +651,9 @@ const sidebars = {
         },
         {
           type: 'category',
-          collapsed: true,
           label: 'Concepts',
-          link: {
-            type: 'doc',
-            id: 'packages/concepts/README',
-          },
           items: [
-
+            'packages/concepts/README',
           ],
         },
       ]
