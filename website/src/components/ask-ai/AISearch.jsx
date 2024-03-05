@@ -78,7 +78,7 @@ const AISearch = forwardRef((props, ref) => {
         registerAISearch(query);
 
         try {
-            const apiUrl = "https://release-ai.appsmith.com/api/v1/docs/query";
+            const apiUrl = "https://ai.appsmith.com/api/v1/docs/query";
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: {
