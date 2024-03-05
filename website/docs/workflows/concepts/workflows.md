@@ -28,46 +28,34 @@ Workflows are entities created within the workspace, offering an easy way to int
   caption="Workflows in Appsmith"
 /> 
 
-1. **Client Interaction** - The process begins with a client initiating a request, which is then routed to the Appsmith server by Nginx.
-2. **Request Handling in Appsmith Server** - Upon receipt of the request, the Appsmith server identifies its type and determines the necessary processing.
-3. **Workflow Identification** - If the request needs to invoke workflow for processing, the server identifies and directs it to the appropriate workflow handling components.
-4. **Interaction with Workflow Proxy** - The Appsmith server communicates with the workflow proxy using workflow queries and routes the request to the workflow cluster that identifies the designated workflow. 
+1. **Client Interaction** - When a client initiates a request, Nginx handles and routes it to the Appsmith server.
+2. **Workflow Identification** - Upon receiving the request, the Appsmith server identifies its type and determines if it requires workflow interaction. It then forwards the request to the Workflow component.
+3. **Interaction with Workflow Proxy** - The Workflow component identifies the required workflow for processing and communicates with the workflow proxy using workflow queries. It then routes the request to the workflow cluster, which identifies the designated workflow.
+4. **Start Workflow Execution** - The workflow cluster invokes the workflow instance, triggering the `executeWorkflow()` function.
 5. **Execution of Workflow Logic** - Inside the workflow, the `executeworkflow()` function acts as the central control unit, executing the defined logic. Here, you can configure or use workspace data sources, execute queries, make API calls, or perform custom logic using JS objects. You can also use workflow functions to create human-in-the-loop interactions by generating requests that need user interaction.
 6. **Response Generation** - The workflow generates a response based on the outcome of the workflow execution and sends it to the Appsmith server. The Appsmith server then handles the processing and sends the appropriate response back to the client that initiated the request, completing the flow of events.
 
-These steps illustrate the comprehensive workflow process in Appsmith, highlighting the dynamic interaction between clients, the Appsmith server, workflow components, and the generation of responses.
+These steps illustrate the comprehensive workflow process in Appsmith, highlighting the dynamic interaction between client, the Appsmith server, workflow component, workflow processing, and the generation of response.
 
-## Key features
+## Long-running workflows
 
-Appsmith Workflows provide unique features to enhance app building capabilities of Appsmith, simplifying the process of integrating automation into your applications.
+Appsmith Workflows designed to handle a variety of scenarios, including both automated processes and human-in-the-loop interactions. Long-running workflows play a crucial role in scenarios where tasks require extended processing times or user intervention.
 
-### Human-in-the-Loop interactions
+### Automated processing
 
-Appsmith Workflows enable human-in-the-loop interactions, allowing you to engage in workflow process. This feature enables intervention or decision-making within automated processes. You can use Workflow functions in workflow logic to build human-in-the-loop interactions, enabling you to create dynamic decision points and integrate user input into workflow execution by capturing user actions in the Appsmith app.
+In automated processing, workflows may remain in progress until a specific task completes. Once the task execution finishes, the workflow transitions to either a successful or failed state based on the outcome of the execution.
 
-### Run history
+### Human-in-the-Loop processing
 
-Appsmith provides a run history feature within workflows, allowing you to track and review the execution history of your workflows. View a detailed workflow execution history including run statuses (successful, failed, or In progress), input and output data, and timestamps for comprehensive monitoring, troubleshooting, and auditing.
+For workflows involving human-in-the-loop interactions, the workflow remains in progress until a user takes action. These interactions allow for dynamic decision-making within automated processes, where users can provide input or make decisions based on the context of the workflow. Temporal, the underlying workflow engine in Appsmith, facilitates this capability by enabling the orchestration of tasks and managing the workflow's lifecycle until user intervention occurs.
 
-### Create Datasource and queries
+Temporal provides robust support for managing long-running workflows in Appsmith. It leverages efficient task queuing mechanisms, such as long polling, to handle state changes and respond to workflow events. This ensures that workflows can efficiently handle extended processing times without compromising performance.
 
-Create datasources within your workflows, or access datasources available in your workspace, enabling integration with different data sources such as databases, APIs, and external services. Use the same query building experience available in Appsmith app development to execute database queries, interact with REST APIs, and perform data operations within your workflows.
+### Monitoring and management
 
-### Custom logic with JS objects
+Appsmith offers comprehensive monitoring and management capabilities for long-running workflows. The run history feature allows users to track and review the execution history of their workflows, including status updates (successful, failed, or in progress), input and output data, and timestamps. This provides users with valuable insights into workflow performance, enabling them to identify and troubleshoot issues effectively.
 
-Incorporate custom JavaScript code to write complex business logic and automate tasks in JS objects. This flexibility allows you to tailor workflows to specific requirements and integrate with external systems or services, and manipulate data or responses as needed. 
-
-### Debugging and linting
-
-Use debugging tools like _Response_, _Errors_, and _Logs_ tab to troubleshoot and optimize your workflows effectively. The same liniting experience as in Appsmith apps is available so that you can diagnose issues, track error messages, and analyze runtime behavior to streamline development and improve workflow reliability.
-
-## Interacting with Workflows
-
-You can interact with workflows directly from your Appsmith apps without the need for configuring webhooks on the client side. Appsmith simplifies this process by providing workflow queries, enabling efficient communication between your apps and workflows within the workspace.
-
-You create workflow queries using the Appsmith query editor, and interact with the workflow by choosing its name from the available workflows within your workspace. This feature allows you to trigger workflows, pass parameters, and read responses.
-
-You can also interact with Appsmith workflows from your external applications using webhook URLs and token supplied as a query parameter, allowing you to automate processes across your entire application ecosystem.
+The run history feature with Appsmith Workflows enhances visibility and transparency into workflow executions. Users can verify the progress of their workflows, analyze execution patterns, and make informed decisions to optimize workflow performance.
 
 ## Conclusion
 
