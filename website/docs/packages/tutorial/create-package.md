@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 By the end of this tutorial, you will learn how to:
 
@@ -49,9 +49,9 @@ By the end of this tutorial, you will learn how to:
 
 <dd>
 
-* Query Modules allows you to reuse datasource queries across various applications, providing dynamic inputs that adapt query parameters based on user interactions. Learn how to [Create Query Modules](/packages/tutorial/query-module)
+* Query Modules allow you to reuse datasource queries across various applications, providing dynamic inputs that adapt query parameters based on user interactions. Learn how to [Create Query Modules](/packages/tutorial/query-module)
 
-* JS modules allows you to reuse functions and JavaScript logic across multiple applications. Learn how to [Create JS Modules](/packages/tutorial/js-module)
+* JS modules allow you to reuse functions and JavaScript logic across multiple applications. Learn how to [Create JS Modules](/packages/tutorial/js-module)
 
 </dd>
 

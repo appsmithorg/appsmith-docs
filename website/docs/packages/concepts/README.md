@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-A package is a collection of JS, query and UI modules that can be versioned and distributed across applications. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently. This modular approach supports independent creation, updating, and distribution of specific modules, contributing to enhanced code reusability and maintainability.
+A package is a collection of JS, query and UI modules that can be versioned and distributed across applications. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently. This modular approach supports the independent creation, updating, and distribution of specific modules, contributing to enhanced code reusability and maintainability.
 
 Within a package, there are three types of Modules:
 
@@ -40,7 +40,7 @@ Query modules provide a dynamic query configuration feature, allowing you to cus
 
 ### Create queries within JS Modules
 
-The integration of entity references within JS modules, provides developers with the capability to create and manage private entities such as JS objects and queries. These entities, created within JS modules, can be referenced and manipulated using the Appsmith global object and functions, ensuring a seamless connection between the module and the application's main JS code.
+The integration of entity references within JS modules provides developers with the capability to create and manage private entities such as JS objects and queries. These entities, created within JS modules, can be referenced and manipulated using the Appsmith global object and functions, ensuring a seamless connection between the module and the application's main JS code.
 
 * Modules can reference global objects and functions such as store, user, and navigate.
 * Use the store object for efficient data storage and retrieval within the module.
@@ -75,7 +75,7 @@ When you update and publish a package, these modifications automatically apply i
 
 
 
-### Package Import/Export
+### Package import/export
 
 This feature allows you to seamlessly import and export packages across different workspaces, similar to how apps are handled. When exporting a package, it is saved as a JSON file, and you can import it into another workspace or application as needed. When importing a package, you can upload the file into your workspace, and Appsmith automatically recognizes and categorizes it as a package or an app.
 

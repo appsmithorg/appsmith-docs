@@ -20,7 +20,7 @@ tags={[
 
 Reusability is an integral part of application development, offering various advantages like speeding up the development process, centralizing business logic, and introducing standardization into applications.
 
-Appsmith enhances reusability by providing a feature set, allowing you to reuse widgets, queries, and JS logic across your applications.
+Appsmith enhances reusability by providing a feature set, which allows you to reuse widgets, queries, and JS logic across your applications.
 
 ## Packages
 

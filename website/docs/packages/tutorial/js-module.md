@@ -89,7 +89,7 @@ Follow these steps to access its data in any application:
 </div>
 
 
-1. Open the **App**  created in Lesson 1.
+1. Open the **App** created in Lesson 1.
 
 2. Select the _JS_ tab on the Entity Explorer.
 
