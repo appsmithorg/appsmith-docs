@@ -1,12 +1,12 @@
 ---
-title: Lesson 2 - Create JS modules
+title: Lesson 2 - JS modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 2 - Create JS modules</h1>
+ <h1>Lesson 2 - JS modules</h1>
 
 <Tags
 tags={[
@@ -23,7 +23,7 @@ tags={[
 
 A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. 
 
-To learn JS modules in Appsmith, you'll be building a function that formats dates into DD/MM/YYYY format. This function will be used to format the product data obtained from the query module in lesson 1.
+To learn JS modules in Appsmith, you'll be building a function that formats dates into DD/MM/YYYY format. This function will be used to format the product data obtained from the query module in [lesson 1](/packages/tutorial/query-module).
 
 
 By the end of this lesson, you will learn how to:

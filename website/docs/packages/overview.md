@@ -1,5 +1,22 @@
-# Overview
+---
+description: Learn about the Modules feature in Appsmith.
+title: Overview
+hide_title: true
+---
+<!-- vale off -->
 
+<div className="tag-wrapper">
+ <h1>Overview</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Reusability is an integral part of application development, offering various advantages like speeding up the development process, centralizing business logic, and introducing standardization into applications.
 
@@ -64,7 +81,7 @@ JavaScript Modules in Appsmith are reusable objects for JavaScript functions and
 
 <Tags
 tags={[
-{ name: "Coming Soon", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
+{ name: "Coming Soon", link: "", additionalClass: "neutral" }
 ]}
 />
 

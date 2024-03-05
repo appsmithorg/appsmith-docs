@@ -1,12 +1,12 @@
 ---
-title: Lesson 1 - Create package and query modules
+title: Lesson 1 - Package and query modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Create package and query modules</h1>
+ <h1>Lesson 1 - Package and query modules</h1>
 
 <Tags
 tags={[
