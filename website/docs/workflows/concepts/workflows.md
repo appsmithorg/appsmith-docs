@@ -55,8 +55,6 @@ Temporal provides robust support for managing long-running workflows in Appsmith
 
 Appsmith offers comprehensive monitoring and management capabilities for long-running workflows. The run history feature allows users to track and review the execution history of their workflows, including status updates (successful, failed, or in progress), input and output data, and timestamps. This provides users with valuable insights into workflow performance, enabling them to identify and troubleshoot issues effectively.
 
-The run history feature with Appsmith Workflows enhances visibility and transparency into workflow executions. Users can verify the progress of their workflows, analyze execution patterns, and make informed decisions to optimize workflow performance.
-
 ## Conclusion
 
 Workflows in Appsmith offer robust capabilities for organizing and automating processes within applications. Understanding the components and dynamics of workflows helps you customize solutions that meet your specific automation and human-in-the-loop interaction requirements, both within the Appsmith platform and in collaboration with external applications.
