@@ -137,7 +137,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
     </div>
     <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
         <div className="containerCol">
-            <img className="containerImage" src="/img/Salesforce-logo.png" alt="Salesforce-logo"/>
+            <img className="containerImage" src="/img/Salesforcelg2.png" alt="Salesforce-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Salesforce</strong> is a cloud-based customer relationship management (CRM) platform designed to streamline sales, service, and marketing processes for businesses. <br/><br/> </div>
          <div className="containerTutorialLink"><a href="https://community.appsmith.com/tutorial/how-integrate-salesforce-oauth2-appsmith"><strong>View Tutorial</strong> </a></div>
