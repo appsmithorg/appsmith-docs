@@ -6,29 +6,47 @@ import TabItem from '@theme/TabItem';
 
 # Connect Git Repository
 
-The first step to using version control in Appsmith is to connect your remote repository with the app. Please follow the steps given below:
+This guide shows how to connect your Appsmith application to a remote Git repository. Select the appropriate tabs based on your Git service provider and follow the steps.
 
-:::info
-Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
-:::
 
-### Generate a deploy key
-
-1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
-2. Select the Git service provider of your choice and create a new Git repository if you don't already have one.
-3. Paste the repository's `SSH URL` in step 2 to generate the SSH key.
-4. Copy the **SSH key**.
-
-## Add the deploy key in the Repository
  
 <Tabs queryString="version-control">
 <TabItem label="GitHub" value="github">
 
-1. In your repository, go to the **Settings** tab.
-2. On the navigation bar, under **Security**, click **Deploy Keys**. 
-3. Click **Add deploy key**. Add a title for the key and paste the generated `SSH key` in the **Key** input box.
-4. Select the **Allow write access** checkbox.
-5. Click **Add key**.
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/DCYRQLLanyMru29sVk9i?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+
+1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
+
+2. Select **Github** as the service provider. 
+
+<dd>
+:::info
+Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+:::
+
+</dd>
+
+3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty.
+
+4. After setting up an empty repository, navigate to the repository's landing page, click on the Code button, and copy the **SSH** URL.
+
+5. Paste the URL in the **Generate SSH Key** section on Appsmith.
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
+
+8. Check the **Allow write access** option and then add the key.
+
+9. In Appsmith, click the **Connect Git** button.
+
+With these steps, you have successfully connected to Git.
+
 
 </TabItem>
 <TabItem label="GitLab" value="gitlab">
@@ -53,9 +71,6 @@ Version Control works with any Git hosting service that supports **SSH protocol*
 </TabItem>
 </Tabs>
 
-## Complete Git setup
-
-Go back to Git connection Modal in Appsmith and click **Connect**, it may take some time and when the connection is successful, the app is added to your repository by system generated commit.
 
 :::caution
 A user needs to have **Create** permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see [Default Roles](/advanced-concepts/invite-users#default-roles-for-workspace) and [Granular Access Control](/advanced-concepts/granular-access-control/roles#application-resources).
