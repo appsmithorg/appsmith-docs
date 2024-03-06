@@ -40,7 +40,34 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/docker/README',
                   },
                   items: [
-                    'getting-started/setup/installation-guides/docker/migrate',
+                    {
+                      type: 'category',
+                      label: 'Install',
+                      items: [
+                        'getting-started/setup/installation-guides/docker/migrate',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Configure',
+                      items: [
+                        'getting-started/setup/installation-guides/docker/migrate',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Update',
+                      items: [
+                        'getting-started/setup/installation-guides/docker/migrate',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Backup and Restore',
+                      items: [
+                        'getting-started/setup/installation-guides/docker/migrate',
+                      ],
+                    },
                   ],
                 },
                 {

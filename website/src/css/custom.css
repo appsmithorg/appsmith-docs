@@ -98,6 +98,11 @@
   margin-top: -6px;
 }
 
+.theme-doc-sidebar-item-category-level-5>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
+}
+
 
 .menu__caret {
   padding: 0em 0.375em 0em 0.75em !important;
