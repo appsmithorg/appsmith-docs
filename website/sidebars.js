@@ -26,7 +26,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Install Appsmith',
+              label: 'Deployment Options',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -57,6 +57,13 @@ const sidebars = {
                     {
                       type: 'category',
                       label: 'Update',
+                      items: [
+                        'getting-started/setup/installation-guides/docker/migrate',
+                      ],
+                    },
+                    {
+                      type: 'category',
+                      label: 'Upgrade',
                       items: [
                         'getting-started/setup/installation-guides/docker/migrate',
                       ],
