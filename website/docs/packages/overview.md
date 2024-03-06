@@ -24,7 +24,7 @@ Appsmith enhances reusability by providing a feature set, which allows you to re
 
 ## Packages
 
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
 
