@@ -645,31 +645,39 @@ const sidebars = {
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,
+        //git-start
         {
+          
           type: 'category',
-          label: 'Version Control with Git',
-          link: {
-            type: 'doc',
-            id: 'advanced-concepts/version-control-with-git/README',
-          },
+          collapsed: false,
+          label: 'Versioning with Git',
+          link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
           items: [
             {
               type: 'category',
-              label: 'Connect to a Git Repository',
-              link: {
-                type: 'doc',
-                id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository',
-              },
-              items: ['advanced-concepts/version-control-with-git/updating-local-file-path',],
+              collapsed: true,
+              label: 'How-To Guides',
+              items: [
+                'advanced-concepts/version-control-with-git/connecting-to-git-repository',
+              ]
             },
-            'advanced-concepts/version-control-with-git/working-with-branches',
-            'advanced-concepts/version-control-with-git/commit-and-push',
-            'advanced-concepts/version-control-with-git/merging-branches',
-            'advanced-concepts/version-control-with-git/revert-changes',
-            'advanced-concepts/version-control-with-git/import-from-repository',
-            'advanced-concepts/version-control-with-git/environments-with-git',
-          ],
-        },
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'Concepts',
+              link: { type: 'doc', id: 'connect-data/concepts/README' },
+              items: [
+                'connect-data/concepts/dynamic-queries',
+                'connect-data/concepts/dynamic-binding-in-queries',
+                'connect-data/concepts/connection-pooling',
+                'connect-data/concepts/Datasource-Environments',
+              ]
+            },
+          ]
+        }, 
+    
+       //git-end
+        
 
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
