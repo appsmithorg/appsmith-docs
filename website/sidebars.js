@@ -658,7 +658,16 @@ const sidebars = {
               collapsed: true,
               label: 'How-To Guides',
               items: [
-                'advanced-concepts/version-control-with-git/connecting-to-git-repository',
+                {
+                  type: 'category',
+                  label: 'Connect Git Repository',
+                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository' },
+                  items: [
+                    'advanced-concepts/version-control-with-git/guides/setup-github',
+                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                  ],
+                },
+                ,
               ]
             },
             {
@@ -668,9 +677,6 @@ const sidebars = {
               link: { type: 'doc', id: 'connect-data/concepts/README' },
               items: [
                 'connect-data/concepts/dynamic-queries',
-                'connect-data/concepts/dynamic-binding-in-queries',
-                'connect-data/concepts/connection-pooling',
-                'connect-data/concepts/Datasource-Environments',
               ]
             },
           ]
