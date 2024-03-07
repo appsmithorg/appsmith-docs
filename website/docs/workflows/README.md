@@ -20,63 +20,31 @@ tags={[
 
 Appsmith Workflows offer developers the capability to develop automations for their applications, as well as the ability to integrate human-in-the-loop (HITL) interactions. Developers can use Workflows to specify decision points within a process, enabling users to review and make informed decisions by taking appropriate actions.
 
-## Key interactions
+## Workflow capabilities
 
-Appsmith workflows combine the strengths of both code-based and node-based integration approaches. They offer seamless integration with external services via webhooks and provide out-of-the-box integration within Appsmith apps. Through a user-friendly interface, users can build human-in-the-loop interactions and leverage Appsmith apps for user interaction. Moreover, developers can write complex logic using JavaScript, enhancing the versatility of workflow.
+Appsmith Workflows are long-running and designed to handle a variety of scenarios:
 
-The diagram below depicts an example of establishing a Human-in-the-Loop workflow for managing a request initiated by an application user. This setup allows for human intervention to review the request and execute necessary actions:
-
-<ZoomImage
-  src="/img/appsmith-workflow-overview.png" 
-  alt="Human-in-the-Loop workflow"
-  caption="Human-in-the-Loop workflow"
-/> 
-
-* **Webhook**: Configure the workflow to use a Webhook trigger, allowing you to trigger the workflow execution from an external app. 
-* **Integrated with Appsmith Apps**: Appsmith provides an out-of-the-box integration between workflows and applications. Use configurable workflow queries to interact with workflows, allowing you to execute operations within the app and trigger workflow actions.
-* **Human-in-the-Loop interactions**: Build human-in-the-loop interactions using workflows, and Appsmith app.
-   * In workflows, use the built-in framework functions known as workflow functions to define decision points and incorporate human decision-making. 
-   * Write complex logic in workflow using JavaScript to add capabilities for processing.
-   * Build interactions using workflow queries for human decision-making in your Appsmith apps.
-
-## Types of triggers
-
-Appsmith supports following types of triggers in workflows that you can use to configure:
-
-* **Webhook Workflows**: Triggered by external events or HTTP requests for real-time data processing and action execution based on incoming data.
-* **Integrated Datasource for use in Appsmith Apps**: Seamlessly connect workflows with Appsmith applications using prebuilt integrations. This allows you to execute operations within the app and manage workflows directly from the Appsmith app.
-* **Scheduled Jobs (Cron Jobs)**: Scheduled to run at specific times or intervals for automated execution of tasks using Cron expressions. (Coming soon).
+* **Automate business critical processes** - Automate critical tasks based on business rules and requirements, by leveraging Appsmith app-building capabilities like datasource integration, writing queries, and custom JavaScript code. For example, assigning a ticket to a customer support agent.
+* **Enable Human-in-the-Loop Interactions** - Create decision points in Appsmith workflows for human interventions, and perform decision-making using Appsmith app. For example, enabling loan approvals or facilitating refunds.
 
 ## Getting started
 
-1. Self-host Appsmith. For detailed instructions on installing Appsmith, see the [Appsmith installation guides](/getting-started/setup/installation-guides).
-2. Learn the basics with a quick tutorial on [Creating Basic Workflow](/workflows/tutorials/create-workflow).
-
+Learn the basics of Appsmith workflows with a quick tutorial:
 
 <div className="containerGridSampleApp">
    <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
       </div> 
-      <b><a href="/workflows/how-to-guides/create-approval-workflow">How-to Guides</a></b>
+      <b><a href="/workflows/tutorials/create-workflow">Lesson 1 - Create Basic Workflow</a></b>
       <div className="containerDescription">
-         Guide on how to create approval workflow.
+        Learn how to create your first workflow and understand its fundamental structure.
       </div>
    </div>
 
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div>
-      <b><a href="/workflows/reference/workflow-queries">Reference</a></b>
-      <div className="containerDescription"> Technical information about workflow queries and functions.</div>
-   </div>
-</div>
-<div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      </div> 
-      <b><a href="/workflows/concepts/workflows">Concepts</a></b>
-      <div className="containerDescription"> Explanation of Workflows.</div>
-   </div>
-   <div className="columnGrid column-two" style={{margin: "10px"}}>
+      <b><a href="/workflows/tutorials/add-hitl-interactions">Lesson 2 - Add Human-in-the-Loop interactions</a></b>
+      <div className="containerDescription"> Understand how to integrate human-in-the-loop interactions into your workflows, and capturing user action using Appsmith app.</div>
    </div>
 </div>

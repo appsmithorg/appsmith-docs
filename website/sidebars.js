@@ -633,14 +633,16 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
-          link: { type: 'doc', id: 'workflows/tutorials/create-workflow' },
           items: [
+            'workflows/tutorials/create-workflow',
+            'workflows/tutorials/add-hitl-interactions',
           ],
         },
         {
           type: 'category',
           label: 'How-To Guides',
           items: [
+            'workflows/how-to-guides/create-notification-workflow',
             'workflows/how-to-guides/create-approval-workflow'
           ],
         },
