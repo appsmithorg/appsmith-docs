@@ -40,10 +40,8 @@ Query modules provide a dynamic query configuration feature, allowing you to cus
 
 ### Create queries within JS Modules
 
-The integration of entity references within JS modules provides developers with the capability to create and manage private entities such as JS objects and queries. These entities, created within JS modules, can be referenced and manipulated using the Appsmith global object and functions, ensuring a seamless connection between the module and the application's main JS code.
+The integration of entity references within JS modules provides developers with the capability to create and manage private entities such as JS objects and queries. These entities, created within JS modules, can be referenced and manipulated using the Appsmith Global [Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions), ensuring a seamless connection between the module and the application's main JS code.
 
-* Modules can reference global objects and functions such as store, user, and navigate.
-* Use the store object for efficient data storage and retrieval within the module.
 
 
 <!-- vale off -->
