@@ -665,6 +665,7 @@ const sidebars = {
                   items: [
                     'advanced-concepts/version-control-with-git/guides/setup-github',
                     'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
                   ],
                 },
                 ,

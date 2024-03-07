@@ -1,16 +1,9 @@
----
-sidebar_position: 2
----
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# GitLab
 
-# Gitlab
-
-This guide shows how to connect your Appsmith application to a remote Gitlab repository. 
-
+GitLab is a web-based platform that provides version control and collaborative features for software development projects. This guide shows how to connect your Appsmith application to a remote GitLab repository.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/DCYRQLLanyMru29sVk9i?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/E3R3wF3mFywz7HvmnMsa?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -25,40 +18,28 @@ Version Control works with any Git hosting service that supports **SSH protocol*
 
 </dd>
 
+3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty. See [How to create a new repository / project](https://docs.gitlab.com/ee/user/project/index.html)
 
 
+4. After setting up an empty repository, navigate to the repository's landing page, click on the Code button, and copy the **SSH** URL.
 
+5. Paste the URL in the **Generate SSH Key** section on Appsmith.
 
-<Tabs>
-  <TabItem value="apple" label="World" default>
-    | Country Code | Short Label | Label          |
-|--------------|-------------|----------------|
-| AF           | AF          | Africa         |
-| AS           | AS          | Asia           |
-| AU           | AU          | Australia      |
-| EU           | EU          | Europe         |
-| NA           | NA          | North America  |
-| SA           | SA          | South America  |
-  </TabItem>
-  <TabItem value="orange" label="ANTARCTICA">
-  | Country Code | Short Label | Label          |
-|--------------|-------------|----------------|
-| AF           | AF          | Africa         |
-| AT           | AT          | Antarctica     |
-| AS           | AS          | Asia           |
-| AU           | AU          | Australia      |
-| EU           | EU          | Europe         |
-| NA           | NA          | North America  |
-| SA           | SA          | South America  |
-  </TabItem>
-  <TabItem value="banana" label="EUROPE">
-  | Country Code | Short Label | Label                   |
-|--------------|-------------|-------------------------|
-| 001          | AL          | Albania                 |
-| 002          | AD          | Andorra                 |
-| 003          | AT          | Austria                 |
-| 004          | BY          | Belarus                 |
-| 005          | BE          | Belgium                 |
-| ...          | ...         | ...                     |
-  </TabItem>
-</Tabs>
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
+
+8. Check the **Allow write access** option and then add the key.
+
+9. In Appsmith, click the **Connect Git** button.
+
+With these steps, you have successfully connected to Git.
+
+:::caution
+A user needs to have **Create** permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see [Default Roles](/advanced-concepts/invite-users#default-roles-for-workspace) and [Granular Access Control](/advanced-concepts/granular-access-control/roles#application-resources).
+:::
+
+## Next steps
+
+[Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
+
