@@ -18,11 +18,11 @@ tags={[
 
 <!-- vale on -->
 
-Workflow functions are in build framework functions that enables you to build human-in-the-loop integration. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+Workflow functions are in-built framework functions that enables you to build human-in-the-loop integration. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
 
 ## executeWorkflow()
 
-The `executeWorkflow()` function serves as a central control unit for executing workflows within Appsmith. This function allows you to create a workflow logic for execution of tasks.
+The `executeWorkflow()` function serves as a central control unit for executing workflows and marks the starting point of the workflow execution within Appsmith. This function allows you to create a workflow logic for execution of tasks.
 
 ### Signature
 
@@ -36,7 +36,7 @@ Below are the parameters required by the `executeWorkflow()` function to execute
 #### data `JSON`
 
 <dd>
-  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow:
+  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow where `data` holds the body of the post request when triggered via webhook, and holds `Trigger Data` property of the [Trigger Workflow](/workflows/reference/workflow-queries#trigger-workflow) query when workflow is executed from an Appsmith app.
 
     ```javascript
       {
@@ -59,7 +59,7 @@ The `executeWorkflow()` returns a Promise that resolves to a boolean value, eith
 
 ## assignRequest()
 
-The `assignRequest()` function creates a pending request that requires user intervention and can be accessed later in your apps to enable users to take action.
+The `assignRequest()` function is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that require users intervention. The decision point is created as a pending request in the workflow and can be accessed later in your apps to enable users to take action by using [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once the pending requests are created the workflow pauses and awaits for user action. 
 
 ### Signature
 
@@ -92,15 +92,15 @@ Below are the parameters required by the `assignRequest()` function to execute:
     Add data that may be needed to process the request or display more information to the user in your app. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your app to fetch and show the details to user.
     </dd>
 
-#### requestToUsers  
+#### requestToUsers `String[]`
    <dd>
-   Specifies the user or users to whom the request will be assigned for resolution. Each element in the array has to be the email that you use for logging into your Appsmith app. It's mandatory to supply this attribute if you are not supplying `requestToGroups` atribute.
+   The `requestToUsers` parameter allows for targeted assignment of requests to specific Appsmith users. It specifies an array of emails for users to whom the pending requests will be assigned. The users specified here will be able to take action and resolve the pending request. These users need to be a part of the Appsmith instance for assigning the request to them. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment.
    </dd>
 
 #### requestToGroups `String[]` `Optional`
 
 <dd>
-Specifies the group name or names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply this attribute if you are not supplying the `requestToUsers` attribute.
+The `requestToGroups` parameter allows for targeted assignment of requests to specific User groups in Appsmith. If specifies the user group names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment. The workflow restarts upon the first action taken by any user within the assigned group.
  </dd>
 
 ### Return type 
@@ -122,6 +122,6 @@ The `assignRequest()` function returns a Promise in a JSON format representing t
 #### payload `JSON`
 
 <dd>
-  Contains the data supplied in the `metadata` attribute while processing the [Resolve Requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the resolution to the request based on user action.
+  It holds the data from the `metadata` attribute used during the processing of the [Resolve Requests](/workflows/reference/workflow-queries#resolve-requests) workflow query.
 </dd>
  
