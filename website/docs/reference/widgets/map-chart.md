@@ -64,7 +64,7 @@ Allows you to display data in the chart.
 
 In this format, the `id` refers to the pre-defined label ID, and the `value` represents the corresponding value associated with that label. If a label ID has no corresponding value, the map displays grey color, to signify the absence of data.
 
-Each **Map Type** has different configurations. To learn more about these charts and their specific configurations, you can refer to the [List of Entities](#list-of-entities) section.
+Each **Map Type** has different configurations. To learn more about these charts and their specific configurations, you can refer to the [List of Entities](#country-codes) section.
 
 Additionally, you can display dynamic data from queries or JS functions by binding the response to the **Chart data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
@@ -246,7 +246,7 @@ MapChart1.setVisibility(true)
 </dd>
 
 
-## List of Entities
+## Country codes
 
 | Map Type               | ID   | Value                          |
 |------------------------|------|--------------------------------|
