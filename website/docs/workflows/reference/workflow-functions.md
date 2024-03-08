@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Workflow functions are in-built framework functions that enables you to build human-in-the-loop integration. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
+Workflow functions are in-built framework functions that enables you to interact with different entities like datasources, queries, external systems, and human-in-the-loop interactions. This page provides information about the workflow functions available in Appsmith, including their signatures, parameters, and usage examples.
 
 ## executeWorkflow()
 
@@ -59,7 +59,7 @@ The `executeWorkflow()` returns a Promise that resolves to a boolean value, eith
 
 ## assignRequest()
 
-The `assignRequest()` function is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that require users intervention. The decision point is created as a pending request in the workflow and can be accessed later in your apps to enable users to take action by using [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once the pending requests are created the workflow pauses and awaits for user action. 
+The `assignRequest()` function is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that require users intervention. The decision point is created as a pending request in the workflow and can be accessed later in your apps to enable users to take action by using [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once you create pending requests, the workflow pauses and awaits for user action. 
 
 ### Signature
 
@@ -79,12 +79,12 @@ Below are the parameters required by the `assignRequest()` function to execute:
 
 #### message `String` `Optional`
     <dd>
-      A descriptive message associated with the request, providing additional context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
+      A descriptive message associated with the request, providing more context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
     </dd>
 
 #### resolutions `String[]`
     <dd>
-    Represents the possible actions a user can take on the request. The resolution is passed to the [Resolve requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the selected resolution. For example, `['Approve', 'Reject']`.
+    Represents the possible actions a user can take on the request. The applicable resolution passed to the [Resolve requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the selected resolution. For example, `['Approve', 'Reject']`.
     </dd>
 
 #### metadata `JSON` `Optional `
