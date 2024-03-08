@@ -1,12 +1,12 @@
 ---
 description: This page provides detailed steps to set up a workflow on Appsmith.
-title:  Create Basic Workflow
+title:  Create Notification Workflow
 hide_title: true
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1> Create Basic Workflow</h1>
+ <h1> Create Notification Workflow</h1>
 
 <Tags
 tags={[
