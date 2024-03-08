@@ -20,6 +20,13 @@ tags={[
 
 In a human-in-the-loop approval workflow, such as for processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
 
+<ZoomImage
+  src="/img/appsmith-workflow-overview.png" 
+  alt="Human-in-the-Loop Approval Workflow"
+  caption="Human-in-the-Loop Approval Workflow"
+/> 
+
+
 ## Prerequisites
 
 Before you start, make sure you have:

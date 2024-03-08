@@ -1,12 +1,12 @@
 ---
 description: This page provides detailed steps to set up a workflow on Appsmith.
-title:  Lesson 1 - Create Basic Workflow
+title:  Create Basic Workflow
 hide_title: true
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1> Lesson 1 - Create Basic Workflow</h1>
+ <h1> Create Basic Workflow</h1>
 
 <Tags
 tags={[
@@ -20,15 +20,11 @@ tags={[
 
 Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial guides you through the process of setting up a basic workflow, configuring it as a webhook trigger, integrating and triggering the workflow execution from your Appsmith app.  
 
-In this lesson, you'll learn how to:
+To learn workflows in Appsmith, you'll build workflow that sends a welcome notification email when new users join your organization. By the end of this tutorial, you will know how to:
 
-* Create a workflow 
-* Integrate with datasource
-* Write query
-* Write code in workflow
-* Configure workflow as a webhook
-* Execute workflow from an external system (Postman)
-* Execute workflow from an Appsmith app
+* Create a workflow and configure it as a webhook
+* Trigger the workflow from an external app (Postman)
+* Integrate and execute the workflow from your Appsmith app
 
 ## Prerequisites
 
@@ -40,7 +36,9 @@ Before you start, make sure you have the following:
 
 ## Create workflow
 
-Follow these steps to create a workflow. The newly created workflow can be accessed in all apps in the same workspace:
+Follow these steps to build a notification workflow:
+
+To send notifications to the users you will create a workflow, and configure it as a webhook. Follow these steps to create a webhook workflow within your workspace. The newly created workflow can be accessed in all apps in the same workspace:
 
 <br/>
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -49,8 +47,8 @@ Follow these steps to create a workflow. The newly created workflow can be acces
 </div>
 <br/><br/>
 
-1. Click the **Create New** button in your workspace, and choose **Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _Basic\_Workflow_.
-2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function, and add code in the [Write code in workflow](#write-code-in-workflow) section.
+1. Click the **Create New** button in your workspace, and choose **Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _Send\_Email\_Workflow_.
+2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function, and add code in the [Write code in workflow to trigger email](#write-code-in-workflow-to-trigger-email) section.
 
     ```javascript
     export default {
@@ -71,71 +69,68 @@ Follow these steps to create a workflow. The newly created workflow can be acces
 
 You've created your first workflow.
 
-## Integrate with datasource and write query
+## Configure SMTP datasource 
 
-Appsmith workflows can integrate with external systems like databases, REST APIs and more. Follow these steps to connect with a datasource and write queries.
+To send notifications from the workflow, you will need to set up an SMTP datasource and connect it with an email service provider. Follow these steps to set up an SMTP datasource:
 
-1. Click the **Data** tab. Click the **Bring your data** button in the _Datasources in your workspace_ section to add a datasource.
+1. Click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [SMTP](/connect-data/reference/using-smtp) datasource.
 
-2. Select **Users** from the _Sample datasources_. You'll see the _Users_ datasource is visible under _Databases_ in the left sidebar. You can also configure your own [datasource](/connect-data/reference).
+2. Give it a meaningful and unique name. For example, _Send\_Email\_SMTP_
 
-3. Click the **+ New query** button to create a query. You'll see the below SQL code in the query editor:
-    ```SQL
-    SELECT * FROM public."users" LIMIT 10;
-    ```
-4. Give a meaningful and unique name to it _getAllUsers_.
+3. Enter the following details in the SMTP connection parameter fields:
+    * **Host Address**: Add `smtp-relay.brevo.com` in the SMTP host address field.
+    * **Port**: Add `587` in the SMTP port field.
+    * **Username**: Add `demo.smtp.send.email@gmail.com` in the Username field.
+    * **Password**: Add the below key in the SMTP password field.
+        ```bash
+        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-zkJC7SarXVE3YPhg
+        ```
 
-4. Click the **Run** button to test the query, and observe the response. You'll see the user data displayed in the _Response_ tab.
+4. Test and save the datasource configuration.
 
-You've successfully integrated a datasource with the workflow and written a query to fetch users.
+## Write query to send email
 
-## Write code in workflow
+Follow these steps to write a query for sending email:
 
-Follow these steps to add JavaScript code:
+1. Add a query to send a welcome email to the user, and configure it as shown below:
+    * Rename the query to _Send\_Welcome\_Email_
+    * **Commands** - Select `Send email`.
+    * **From Email** - Add `demo.smtp.send.email@gmail.com`.
+    * **To Email** - Add your email address in this field.
+    * **Subject** - Add `Welcome to the Team!`.
+    * **Body** - Add the below text:
+        ```text
+        Dear Employee,
+        
+        Welcome to the team!
 
-1. In your workflow, click the **Main** JS object. In the code editor, remove the existing code and paste the below code snippet in it. The below code executes the _getUsers_ query and prints the user's name to console whenever workflow runs.
+        We're thrilled to have you on board and look forward to working together. 
+        If you have any questions or need help as you settle in, feel free to reach out.
 
-    ```javascript
+        Let's achieve great heights together!
+
+        Best regards,
+        Company
+        ```
+2. Click the **Run** button to send an email. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`. 
+3. Update the _Send\_Welcome\_Email_ query and remove your email from the **To** field, and add `{{this.params.send_email_to}}` to it. Adding `{{this.params.send_email_to}}` replaces the parameter `send_email_to` with the actual value at run time.
+4. Go to the _Main_ JS object and update the `executeworkflow()` function to read the email sent as a parameter.
+
+     ```javascript
     export default {
-        // This function executes whenever workflow runs.
         async executeWorkflow(data) {
-            // The below name of the user is printed whenever workflow runs.
-            const response = await getUsers.run();
-            if(response) {
-                response.forEach((user)=> {
-                    console.log(user.name);
-                })
-            }
+            //pass email `send_email_to` the query to send email
+           const response = await Send_Welcome_Email.run({"send_email_to": data.email});
+            // log the response
+            console.log(response);
+        
             return true;
         }
     }
     ```
-2. Click the **Run** button in the top right corner to execute the code. You'll see _true_ printed in the Response tab.
-3. Click the **Logs** tab, and you'll see the names printed.
-4. Now, update the query to add a where clause to retrieve the record for the given name. At run time, in the below query, the parameter value passed to the query replaces `{{this.params.name}}`.
-    ```SQL
-    SELECT * FROM public."users" where name = {{this.param.name}};
-    ```
-5. The parameter `data` in the `executeWorkflow()` function holds all the parameters passed to the workflow. You can read the parameter (name) by using `data.name`. Click the **Main** JS object and pass the name parameter to the _getUsers_ query as shown below:
+5. Click the **Publish** button to publish your latest changes.
 
-    ```javascript
-    export default {
-        // This function executes whenever workflow runs.
-        async executeWorkflow(data) {
-            // The below user data is printed whenever workflow runs.
-            const response = await getUsers.run(data.name);
-            if(response) {
-                response.forEach((user)=> {
-                    console.log(user);
-                })
-            }
-            return true;
-        }
-    }
-    ```
-6. Click the **Publish** button to publish your latest changes.
-
-You've successfully executed query from the workflow and added parameters to it. 
+You've successfully integrated the email query in workflow. 
 
 ## Configure Webhook trigger
 
@@ -155,35 +150,45 @@ Follow these steps to configure a webhook trigger for the workflow:
 
 You've configured the webhook trigger for the workflow, and it can be integrated and triggered from external apps.
 
-## Execute workflow from external system
+## Send email using Postman
 
-To simulate the workflow connection from external system, here you will use Postman, and execute the workflow. Follow these steps to trigger the workflow execution:
+To simulate the workflow connection from external app, here you will use Postman, and execute the workflow. Follow these steps to trigger the workflow execution:
 
 1. Launch the Postman application on your system.
 2. Click on the **New** button, and choose **HTTP** request in Postman to create a new request.
 3. Choose the HTTP method as **POST**.
 4. Enter the workflow URL that you copied in the [Configure Webhook trigger](#configure-webhook-trigger) section.
-5. Click the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `name`.
+5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `send_email_to`. Remember to replace `<add_your_email_address>` with your email.
     ```javascript
     {
-        "name": "Terry Hayes"
+        "email": "<add_your_email_address>"
     }
 
     ```
 6. Click the **Send** button to execute the request.
-7. The below response is generated:
-
-     ```javascript
+7. The below response is generated, and you will receive an email from `demo.smtp.send.email@gmail.com`.
+    ```javascript
     {
-        "workflowRunId": "EG3L584A"
+    "success": true,
+    "message": "Workflow instance started running successfully",
+    "data": {
+        "workflowInstanceId": "workflowInstance-rjwbe41QF1P1s90YwYw-1"
+        }
     }
     ```
 
-You've successfully executed your first workflow externally using Postman. The Appsmith workflows can't return the data in the response. Use the Appsmith app to retrieve the data from workflow and display it in the App.
+You've successfully executed your first workflow externally, and can integrate the workflow in your external or Appsmith app.
 
-## Execute workflow from Appsmith app
+## Send email using Appsmith app
 
-To interact with the workflow from your Appsmith app, Appsmith provides workflow queries. Follow these steps to create a workflow query, pass the parameter to the workflow in the workflow query, and retrieve the data sent by workflow:
+To interact with the workflow from your Appsmith app, Appsmith provides workflow queries. In this section, you'll:
+
+* Write a workflow query
+* Bind the workflow query to the Button widget
+* Pass parameter (_email_) from Appsmith app to workflow
+* Trigger the workflow by clicking the Button widget
+
+Follow these steps to send email from your app:
 
  <br/>  
  <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -192,35 +197,35 @@ To interact with the workflow from your Appsmith app, Appsmith provides workflow
 </div>
 <br/><br/>
 
-1. In your application, under **Editor** > **Queries**, click **New query/API**.
-4. In the _Create new query/API_, click **Workflows Query**, and name it as _getUserData_. 
+1. In your application, drag an Input widget onto the canvas, name it _inp\_Email_, and set its label as **Email**.
+2. Drag a Button widget onto the canvas, configure it as shown below:
+    * Name it _btn\_SendEmail_
+    * Set the label as _Send Welcome Email_
+3. Under **Editor** > **Queries**, click **New query/API**.
+4. In the _Create new query/API_, click **Workflows Query**, and name it as _SendEmailQuery_. 
 5. Add the below details to configure the workflow query:
-    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **Basic_Workflow**.
+    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **Send_Email_Workflow**.
     * **Request type** - Select **Trigger workflow**.
     * **Trigger Data** - This is used to pass the parameters to the workflow for processing. Add the below code to pass email parameter to the workflow:
 
         ```javascript
         {
-            "name": "Terry Hayes"
+            "email" : "{{inp_Email.text}}"
         }
         ```
-6. Click the **Run** button to execute the workflow. You'll see the response as below:
-
-    ```javascript
-    {
-        "workflowRunId": "EG3L584A"
-    }
-    ```
+6. Bind the **onClick** event of the **Send Email** button to execute the `SendEmailQuery` query. 
+7. Input your email in the **inp_Email** field, and click **Send Email** button. You'll see an _Email sent_ prompt. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`.
     
 You've successfully executed your workflow within your Appsmith app.
 
-🚩 Congratulations. You have built your first basic workflow and integrated it with your Appsmith app.
+🚩 Congratulations. You have built your first webhook workflow and integrated it with your Appsmith app.
 
-In this lesson, you explored how to create a basic workflow, pass parameters to the workflow, and execute workflow from your Appsmith app.
+In this tutorial, you explored how to create a webhook workflow, pass parameters to the workflow, and execute workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
 
-## Next steps
+Happy Workflow Building!
 
-Learn how to add human-in-the-loop interactions using Appsmith workflow and app.
+## See also
 
-* [Lesson 2 - Add Human-in-the-Loop interactions](/workflows/tutorials/add-hitl-interactions)
- 
+* [How-to Guides](/workflows/how-to-guides/create-approval-workflow)
+* [Workflow Queries](/workflows/reference/workflow-queries)
+* [Workflow Functions](/workflows/reference/workflow-functions)

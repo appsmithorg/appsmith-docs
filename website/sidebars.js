@@ -633,16 +633,17 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
           items: [
-            'workflows/tutorials/create-workflow',
-            'workflows/tutorials/add-hitl-interactions',
           ],
         },
         {
           type: 'category',
           label: 'How-To Guides',
           items: [
-            'workflows/how-to-guides/create-notification-workflow',
             'workflows/how-to-guides/create-approval-workflow'
           ],
         },
@@ -654,14 +655,7 @@ const sidebars = {
             'workflows/reference/workflow-queries',
             'workflows/reference/workflow-functions'
           ],
-        },
-        {
-          type: 'category',
-          label: 'Concepts',
-          items: [
-            'workflows/concepts/workflows'
-          ],
-        },
+        }
       ]
 
     }, //Workflows end
