@@ -171,14 +171,11 @@ To simulate the workflow connection from external system, here you will use Post
 
     ```
 6. Click the **Send** button to execute the request.
-7. The below response is generated.
-    ```javascript
+7. The below response is generated:
+
+     ```javascript
     {
-    "success": true,
-    "message": "Workflow instance started running successfully",
-    "data": {
-        "workflowInstanceId": "workflowInstance-rjwbe41QF1P1s90YwYw-1"
-        }
+        "workflowRunId": "EG3L584A"
     }
     ```
 
@@ -207,7 +204,13 @@ To interact with the workflow from your Appsmith app, Appsmith provides workflow
             "name": "Terry Hayes"
         }
         ```
-6. Click the **Run** button to execute the workflow.
+6. Click the **Run** button to execute the workflow. You'll see the response as below:
+
+    ```javascript
+    {
+        "workflowRunId": "EG3L584A"
+    }
+    ```
     
 You've successfully executed your workflow within your Appsmith app.
 
@@ -220,3 +223,4 @@ In this lesson, you explored how to create a basic workflow, pass parameters to 
 Learn how to add human-in-the-loop interactions using Appsmith workflow and app.
 
 * [Lesson 2 - Add Human-in-the-Loop interactions](/workflows/tutorials/add-hitl-interactions)
+ 
