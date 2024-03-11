@@ -660,6 +660,25 @@ const sidebars = {
 
     }, //Workflows end
 
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
+
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+      ]
+    }, //module end
+
     {
       //Advanced Concepts Start
       type: 'category',
