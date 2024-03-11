@@ -627,7 +627,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Packages',
+      label: 'Packages (Beta)',
       items: [
         'packages/overview',
 
