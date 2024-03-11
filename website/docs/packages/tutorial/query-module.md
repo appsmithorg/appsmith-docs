@@ -88,7 +88,7 @@ You have successfully integrated the query module into your app, displaying its 
 ## Pass parameters to module
 
 
-In this section, you will update the query module to accept dynamic inputs, allowing us to pass parameters from the app to the query module for tailored and responsive data retrieval. 
+In this section, you will update the query module to accept dynamic inputs, allowing you to pass parameters from the app to the query module for tailored and responsive data retrieval. 
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>

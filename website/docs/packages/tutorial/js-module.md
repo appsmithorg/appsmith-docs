@@ -32,7 +32,7 @@ By the end of this lesson, you will learn how to:
 * Integrate and execute the module in your app
 
 
-## Create JS Module
+## Create JS modules
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -78,7 +78,7 @@ export default {
 
 5. Publish the JS Module.
 
-## Integrate Modules into your App
+## Integrate modules into your App
 
 Follow these steps to access its data in any application:
 

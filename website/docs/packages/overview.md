@@ -32,7 +32,7 @@ Its primary purpose is to streamline the organization, distribution, and sharing
 
 Modules in Appsmith are integral components of a **Package** tailored. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace.
 
-Modules extend this functionality by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
+Modules extend this capability by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
 <ZoomImage
   src="/img/modules-con.png" 
@@ -56,9 +56,9 @@ Modules extend this functionality by enabling users to track and manage updates 
 
 
 
-### Types of Modules
+### Types of modules
 
-#### Query Modules
+#### Query modules
 
 Query Modules encapsulate and reuse database queries across multiple applications. They offer dynamic inputs for changing query parameters based on user interactions.
 
@@ -67,7 +67,7 @@ Query Modules encapsulate and reuse database queries across multiple application
 
 
 
-#### JavaScript Modules
+#### JavaScript modules
 
 JavaScript Modules in Appsmith are reusable objects for JavaScript functions and objects. They promote code reusability and a standardized approach to data manipulation.
 
