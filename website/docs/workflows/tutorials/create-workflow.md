@@ -52,17 +52,15 @@ To send notifications to the users you will create a workflow, and configure it 
 
     ```javascript
     export default {
-    // This is a main file for building your workflows. All activities to be executed should be defined within the executeWorkflow
-    // function.
-    async executeWorkflow(data) {
-        // This function takes in a json object as arguments (data) which can be passed when you trigger the workflow.
-        // Complete the following line to set up your first activity. Place the cursor after activities, and select the action you'd like"
-        // to execute from the list menu that appears.
+        /**
+        * Entry point for Workflow execution. All activities to be executed should be defined here.
+        * @param data  This function takes in a json object as arguments (data) which can be passed when you trigger the workflow.
+        * @returns boolean Shall return true or false.
+        */
+        async executeWorkflow(data) {
+            // start writing your code here.
 
-        // await Query1.run();
-        // await Api1.run();
-
-        return true;
+            return true;
         }
     }
     ```
