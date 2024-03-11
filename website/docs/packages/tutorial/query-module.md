@@ -34,9 +34,10 @@ A reusable query module is a query that can be used across multiple applications
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/AEb2f22LKzYLFh0jS8bv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/IPU9f2WQccAiY8oalORZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
+
 
 1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
 
@@ -80,7 +81,7 @@ You have successfully created the first query module.
 Follow these steps to access its data in any application:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ut7D5qD3Osxmg5NjMGHm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/AEb2f22LKzYLFh0jS8bv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
