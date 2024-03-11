@@ -48,7 +48,7 @@ To send notifications to the users you will create a workflow, and configure it 
 <br/><br/>
 
 1. Click the **Create New** button in your workspace, and choose **Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _Send\_Email\_Workflow_.
-2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function, and add code in the [Write code in workflow to trigger email](#write-code-in-workflow-to-trigger-email) section.
+2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function and add code in the [Write code in workflow to trigger email](#write-code-in-workflow-to-trigger-email) section.
 
     ```javascript
     export default {
@@ -92,7 +92,7 @@ To send notifications from the workflow, you will need to set up an SMTP datasou
 
 Follow these steps to write a query for sending email:
 
-1. Add a query to send a welcome email to the user, and configure it as shown below:
+1. Add a query to send a welcome email to the user and configure it as shown below:
     * Rename the query to _Send\_Welcome\_Email_
     * **Commands** - Select `Send email`.
     * **From Email** - Add `demo.smtp.send.email@gmail.com`.
@@ -105,7 +105,7 @@ Follow these steps to write a query for sending email:
         Welcome to the team!
 
         We're thrilled to have you on board and look forward to working together. 
-        If you have any questions or need help as you settle in, feel free to reach out.
+        Feel free to reach out if you have any questions or need help. 
 
         Let's achieve great heights together!
 
@@ -152,12 +152,12 @@ You've configured the webhook trigger for the workflow, and it can be integrated
 
 ## Send email using Postman
 
-To simulate the workflow connection from external app, here you will use Postman, and execute the workflow. Follow these steps to trigger the workflow execution:
+To simulate the workflow connection from external app, you will use Postman and execute the workflow. Follow these steps to trigger the workflow execution:
 
 1. Launch the Postman application on your system.
 2. Click on the **New** button, and choose **HTTP** request in Postman to create a new request.
 3. Choose the HTTP method as **POST**.
-4. Enter the workflow URL that you copied in the [Configure Webhook trigger](#configure-webhook-trigger) section.
+4. Enter the workflow URL you copied in the [Configure Webhook trigger](#configure-webhook-trigger) section.
 5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `send_email_to`. Remember to replace `<add_your_email_address>` with your email.
     ```javascript
     {
@@ -198,7 +198,7 @@ Follow these steps to send email from your app:
 <br/><br/>
 
 1. In your application, drag an Input widget onto the canvas, name it _inp\_Email_, and set its label as **Email**.
-2. Drag a Button widget onto the canvas, configure it as shown below:
+2. Drag a Button widget onto the canvas and configure it as shown below:
     * Name it _btn\_SendEmail_
     * Set the label as _Send Welcome Email_
 3. Under **Editor** > **Queries**, click **New query/API**.
@@ -206,7 +206,7 @@ Follow these steps to send email from your app:
 5. Add the below details to configure the workflow query:
     * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **Send_Email_Workflow**.
     * **Request type** - Select **Trigger workflow**.
-    * **Trigger Data** - This is used to pass the parameters to the workflow for processing. Add the below code to pass email parameter to the workflow:
+    * **Trigger Data** - Trigger Data passes the parameters from app to the workflow for processing. Add the below code to pass email parameter to the workflow:
 
         ```javascript
         {

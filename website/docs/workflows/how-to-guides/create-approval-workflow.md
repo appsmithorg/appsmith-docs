@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-In a human-in-the-loop approval workflow, such as for processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
+In a human-in-the-loop approval workflow, such as processing refund requests, you can use workflows in Appsmith. The human intervention can happen through your Appsmith app. This page shows how to set up a human-in-the-loop approval workflow using Appsmith. 
 
 <ZoomImage
   src="/img/appsmith-workflow-overview.png" 
@@ -33,7 +33,7 @@ Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a basic workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
-* Configured your datasource that manages your data, and SMTP datasource (to notify users) in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* Configured your datasource that manages your data and SMTP datasource (to notify users) in your workspace. If not, configure these datasources. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 ## Create workflow
 
@@ -43,10 +43,10 @@ Follow these steps to set up a webhook workflow within your workspace.
 2. Configure it as a webhook workflow.
 3. Create a query to fetch order details (_getOrderDetails_) details. For example, the below query fetches the order details for the given `order_id` from the `orders` table.
     ```sql
-    -- The order_id is a parameter and replaced by actual value passed by the application
+    -- The order_id is a parameter, and replaced by actual value passed by the application
     select * from public. "orders" where order_id = {{this.params.order_id}};
     ``` 
-4. Create a query to update the order status, once a refund is processed. For example, once a refund is approved, update the order status in the `order` table to `Refund Processed`. In case of rejection, the order status remains unchanged.
+4. Create a query to update the order status once a refund is processed. For example, once a refund is approved, update the order status in the `order` table to `Refund Processed`. In case of rejection, the order status remains unchanged.
     ```sql
     -- The order_id are parameters and replaced by actual value passed by the application
     -- highlight-next-line
@@ -147,8 +147,8 @@ When managing approvals or rejections, create refund requests and track user act
 3. In your app, create a workflow query (_getRefundReqs_) to fetch these requests. Configure it as follows:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Get requests**.
-    * **Request name** - Add `getPendingRefundRequests` to it. This is the same request name that you've added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the step 1 of this section.
-4. Drag a Table widget, and bind the **getRefundReqs** query to it. You may need to transform data based on your user interface requirements. In which case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget.
+    * **Request name** - Add `getPendingRefundRequests` to it. It is the same request name you added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the step 1 of this section.
+4. Drag a Table widget and bind the **getRefundReqs** query to it. You may need to transform data based on your user interface requirements. In which case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget.
 5. Create another workflow query (_resolveReqs_) to capture **Approve** or **Reject** actions:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Resolve Requests**.
