@@ -91,7 +91,7 @@ tags={[
 
 UI Modules provide the capability to encapsulate widgets and other UI components, promoting reusability in the user interface. 
 
-* **Enhanced Modularity:** UI Modules allow for the encapsulation of diverse UI components, promoting modular design practices for a more organized and maintainable user interface.
+* **Enhanced Modularity:** UI Modules allow for the encapsulation of widgets, queries and JS, promoting modular design practices for a more organized and maintainable user interface.
 * **Reusable Components:** You can create reusable UI components, reducing redundancy and accelerating the development process.
 
 ## Getting started
@@ -105,10 +105,5 @@ UI Modules provide the capability to encapsulate widgets and other UI components
       <b><a href="/packages/tutorial/query-module">Tutorial</a></b>
       <div className="containerDescription"> Take the quick tutorial to learn the basics.</div>
    </div>
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
-      </div>
-      <b><a href="/packages/concepts">Concepts</a></b>
-      <div className="containerDescription"> Explanation of Modules.</div>
-   </div>
+  
 </div>

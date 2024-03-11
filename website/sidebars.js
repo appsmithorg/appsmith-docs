@@ -639,13 +639,6 @@ const sidebars = {
             'packages/tutorial/js-module'
           ],
         },
-        {
-          type: 'category',
-          label: 'Concepts',
-          items: [
-            'packages/concepts/README',
-          ],
-        },
       ]
     }, //module end
 
