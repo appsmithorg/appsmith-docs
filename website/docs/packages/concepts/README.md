@@ -33,10 +33,12 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 
 
-### Dynamic parameters in query modules
+### Dynamic Parameter
 
-Query modules provide a dynamic query configuration feature, allowing you to customize query parameters based on specific application requirements and user interactions. This feature enables the adaptation of queries to varying contexts within different applications.
+The dynamic parameters feature in query modules aims to provide developers with the flexibility to tailor query configurations based on specific application requirements and user interactions. This feature facilitates adaptability, customization, and efficient resource utilization within the development process.
 
+
+Passing dynamic parameters is crucial for adapting queries to specific needs and user interactions within applications. It allows for real-time adjustments, ensuring the search or data retrieval aligns with varying contexts.
 
 ### Create queries within JS Modules
 
@@ -75,7 +77,12 @@ When you update and publish a package, these modifications automatically apply i
 
 ### Package import/export
 
-This feature allows you to seamlessly import and export packages across different workspaces, similar to how apps are handled. When exporting a package, it is saved as a JSON file, and you can import it into another workspace or application as needed. When importing a package, you can upload the file into your workspace, and Appsmith automatically recognizes and categorizes it as a package or an app.
+This feature allows you to seamlessly import and export packages across different workspaces, similar to how apps are handled. When exporting a package, it is saved as a JSON file, and you can import it into another workspace or application as needed. When importing a package, you can upload the file into your workspace, and Appsmith automatically recognizes and categorizes it as a package or an app. However, there are some key details to consider:
+
+* **Overriding Existing Packages:** When importing a package, it overwrites existing packages in the destination workspace. This ensures that the latest configuration is applied.
+* **Deployment**: The imported package is not auto-deployed. Deployment occurs only when explicitly triggered. This means changes made to the package won't immediately reflect in the live version of the app.
+* **Updates**: If you're using an exported version of a package in another workspace, updates won't happen automatically. You need to re-import the latest version to get the changes.
+
 
 ### Conclusion
 
