@@ -18,12 +18,13 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to set the video source to be played. 
+Allows you to set the video source to be played, supporting both URL and IPv4-based addresses:
 
 *Example*:
-```js
-https://assets.appsmith.com/widgets/bird.mp4
-```
+
+* **IP Based:** `127.0.0.10:8080/path/to/video.mp4`
+* **URL Based:** `https://assets.appsmith.com/widgets/bird.mp4`
+
 
 You can display dynamic data by binding the response from a query or a JavaScript function to the **URL** property. For instance, if you have a table with a column containing video URLs, clicking on a specific row plays the corresponding video:
 

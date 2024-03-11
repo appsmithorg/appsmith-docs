@@ -10,7 +10,7 @@ This page provides information for connecting Appsmith to a Redshift database an
 ## Connect Redshift
 
 :::caution 
-You must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a Redshift database. See Amazon's [**Security Groups**](https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html) for more details.
+If you are a cloud user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a Redshift database. See Amazon's [**Security Groups**](https://docs.aws.amazon.com/vpc/latest/userguide/security-groups.html) for more details.
 :::
 
 ## Connection parameters

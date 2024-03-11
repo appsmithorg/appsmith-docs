@@ -2,7 +2,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Custom Charts
+# Create Custom Charts using ECharts
 
 Appsmith offers basic built-in charts, but for more flexible chart types, you can use the custom [ECharts](https://echarts.apache.org/handbook/en/get-started/). This guide shows you how to configure these custom charts. 
 

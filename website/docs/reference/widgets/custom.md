@@ -61,6 +61,24 @@ For example, if you want to make the widget visible only when the user selects "
 
 </dd>
 
+#### Height `string`
+
+<dd>
+
+This property determines how the widget's height adjusts to changes in its content. There are three available options:
+
+- **Fixed**: The widget's height remains as set using drag and resize.
+- **Auto Height**: The widget's height adjusts dynamically in response to changes in its content.
+- **Auto Height with limits**: Same as **Auto height**, with a configurable option to set the minimum and maximum number of rows the widget can occupy.
+
+</dd>
+
+:::warning
+
+- For the auto height feature to work properly, you should not set height of the container of the custom widget in the source editor. Setting a height
+  will restrict the container from growing as a result the auto height feature will not kick in.
+  :::
+
 ### Events
 
 <dd>

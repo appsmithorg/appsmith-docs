@@ -10,7 +10,7 @@ toc_max_heading_level: 4
 
 Appsmith enables writing JavaScript code almost everywhere on the GUI inside widget properties, events listeners, queries, and other settings. With the help of the JavaScript editor and the debugging tools, you can write complex reusable code and build scalable applications.
 
-Appsmith also provides the ability to [import external libraries](/core-concepts/writing-code/ext-libraries#custom-javascript-libraries), helping you expand the capabilities of your applications.
+Appsmith also provides the ability to [import external libraries](/core-concepts/writing-code/ext-libraries#install-external-library), helping you expand the capabilities of your applications.
 
 ## Code in JavaScript
 You can write JS code inside the **mustache syntax `{{ }}`**. You can reference entities (widgets, queries, JS objects) and their associated data and properties as JavaScript variables and perform operations on them using built-in functions.  

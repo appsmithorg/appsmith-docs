@@ -3,6 +3,10 @@
 This page provides information for connecting Appsmith to OpenAI, which allows you to configure applications with advanced AI capabilities such as natural language processing and image analysis.
 
 
+:::note Data, Privacy and Security
+Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. Learn more about OpenAI's privacy policy [here](https://openai.com/enterprise-privacy).
+:::
+
 ## Connect OpenAI
 
 <ZoomImage

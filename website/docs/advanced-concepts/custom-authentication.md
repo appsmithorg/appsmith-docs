@@ -60,22 +60,32 @@ To refresh access token, follow these steps:
 
    Example:
 
-   ```jsx
-   export default { 
-      refreshAccessToken: () => { 
-         const refreshToken = appsmith.store.getValue('refreshtoken'); 
-         if (refreshToken) 
-         { 
-            return refreshAPI.run({ refreshtoken: refreshToken }) .then(newTokens => { storeValue('accesstoken', newTokens.accesstoken);
-            if(newTokens.refreshtoken) { 
-               storeValue('refreshtoken', newTokens.refresh_token); 
-               } 
-               }) .catch(error => { console.log('Error refreshing token:', error);
-            }); 
-         } 
-      } 
-   };
-   ```
+```jsx
+export default {
+    refreshAccessToken: () => {
+        // Retrieving the refresh token from the appsmith store
+        const refreshToken = appsmith.store.refreshtoken;
+
+        // Checking if a refresh token exists
+        if (refreshToken) {
+            // Executing the refresh API with the retrieved refresh token
+            return refreshAPI.run({ refreshtoken: refreshToken })
+                .then(newTokens => {
+                    // Updating the access token in the appsmith store
+                    storeValue('accesstoken', newTokens.accesstoken);
+
+                    // Checking if a new refresh token is provided and updating it
+                    if (newTokens.refreshtoken) {
+                        storeValue('refreshtoken', newTokens.refresh_token);
+                    }
+                })
+                .catch(error => {
+                    console.log('Error refreshing token:', error);
+                });
+        }
+    }
+};
+```
 
 ## Log out users
 

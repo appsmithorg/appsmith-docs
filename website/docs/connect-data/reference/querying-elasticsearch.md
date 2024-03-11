@@ -10,7 +10,7 @@ This page describes how to connect to your Elasticsearch database and query it f
 ## Connect Elasticsearch
 
 :::caution 
-If you are a self-hosted user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. For instructions on IP Filtering in Elasticsearch, see the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ip-filtering.html).
+If you are a cloud user, you must whitelist the IP address of the Appsmith deployment `18.223.74.85` and `3.131.104.27` on your database instance or VPC before connecting to a database. For instructions on IP Filtering in Elasticsearch, see the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ip-filtering.html).
 :::
 
 ### Connection parameters

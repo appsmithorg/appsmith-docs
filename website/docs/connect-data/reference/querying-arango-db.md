@@ -10,7 +10,7 @@ This page describes how to connect Appsmith to your ArangoDB data and query it f
 ## Connect ArangoDB
 
 :::caution
-If you are a self-hosted user, you must whitelist the IP address ranges `18.223.74.0/24` and `3.131.104.0/24` of the Appsmith deployment on your ArangoDB instance. For more information about whitelisting in ArangoDB, see [the ArangoDB documentation](https://www.arangodb.com/docs/stable/security-security-options.html#endpoint-access).
+If you are a cloud user, you must whitelist the IP address ranges `18.223.74.0/24` and `3.131.104.0/24` of the Appsmith deployment on your ArangoDB instance. For more information about whitelisting in ArangoDB, see [the ArangoDB documentation](https://www.arangodb.com/docs/stable/security-security-options.html#endpoint-access).
 :::
 
 ### Connection parameters

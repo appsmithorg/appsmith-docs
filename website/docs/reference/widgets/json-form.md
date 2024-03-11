@@ -2,6 +2,9 @@
 
 This page provides information on how to use the JSON form widget, which efficiently generates forms from JSON data, eliminating the need for manual form creation.
 
+The submit button on the JSON form is always visible and cannot be disabled or hidden.
+
+
 <VideoEmbed host="youtube" videoId="Zk6df9mOtQA" title="Configure JSON Form Widget" caption="Configure JSON Form Widget"/>
 
 ## Content properties
