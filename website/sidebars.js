@@ -638,7 +638,7 @@ const sidebars = {
         },
       ]
     }, //module end
-    /* //Workflows start
+    //Workflows start
     {
       type: 'category',
       collapsed: false,
@@ -674,8 +674,7 @@ const sidebars = {
         }
       ]
 
-    }, //Workflows end */
-
+    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
