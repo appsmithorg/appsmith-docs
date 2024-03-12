@@ -26,7 +26,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Deployment Options',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/installation-guides/README',
@@ -40,41 +40,7 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/docker/README',
                   },
                   items: [
-                    {
-                      type: 'category',
-                      label: 'Install',
-                      items: [
-                        'getting-started/setup/installation-guides/docker/migrate',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Configure',
-                      items: [
-                        'getting-started/setup/installation-guides/docker/migrate',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Update',
-                      items: [
-                        'getting-started/setup/installation-guides/docker/migrate',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Upgrade',
-                      items: [
-                        'getting-started/setup/installation-guides/docker/migrate',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'Backup and Restore',
-                      items: [
-                        'getting-started/setup/installation-guides/docker/migrate',
-                      ],
-                    },
+                    'getting-started/setup/installation-guides/docker/migrate',
                   ],
                 },
                 {
