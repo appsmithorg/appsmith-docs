@@ -88,6 +88,11 @@
   margin-right: -5px;
 }
 
+.theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible>.menu__link--sublist {
+  margin-bottom: -6px;
+  margin-top: -6px;
+}
+
 .theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist {
   margin-bottom: -6px;
   margin-top: -6px;
@@ -615,11 +620,6 @@ ul.circle>li:before {
     font-size: 0.9rem;
     line-height: 18px;
   }
-}
-
-
-body {
-  margin-top: -30px !important;
 }
 
 .tag-wrapper {
