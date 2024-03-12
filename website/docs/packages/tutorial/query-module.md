@@ -50,10 +50,11 @@ A reusable query module is a query that can be used across multiple applications
 <dd>
 
 * **Connection mode:** `READ_WRITE`
-* **Host address:** `mockdb.internal.appsmith.com`
+* **Host address:** `aws-0-ap-southeast-1.pooler.supabase.com`
 * **Port:** `5432`
-* **Database name:** `mockdb_v2`
-* **Username:** `postgres`
+* **Database name:** `postgres`
+* **Username:** `postgres.tosawjwzlmhruubghtqd`
+* **Password:*** `R#9aL$7zP*3q`
 
 </dd>
 
