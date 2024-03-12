@@ -41,7 +41,7 @@ In this section, you'll find permissions related to the application and its reso
 | **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | - | Make the application public | Export that particular application. |
 | **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - | - |
 | **Query** | - | Edit the query. | Delete the query. | View the query. | Execute the query. | - | - |
-
+| **Workflows** | Create new workflows and resources inside a workflow. | Required to make changes to the Workflow.| Required to delete a workflow. Users will need **Edit** permission to delete individual actions inside the workflow. | An **Edit** permission also enables the permission to view workflow run history.| An **Edit** permission also enables the **Execute** permission to run workflow.| - | -|
 
 ### Datasource and environments
 

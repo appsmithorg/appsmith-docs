@@ -620,7 +620,61 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
 
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+      ]
+    }, //module end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows (Beta)',
+      items: [
+        'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
+          items: [
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-To Guides',
+          items: [
+            'workflows/how-to-guides/create-approval-workflow'
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'workflows/reference/workflow-queries',
+            'workflows/reference/workflow-functions'
+          ],
+        }
+      ]
+
+    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
