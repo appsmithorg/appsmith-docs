@@ -50,11 +50,11 @@ A reusable query module is a query that can be used across multiple applications
 <dd>
 
 * **Connection mode:** `READ_WRITE`
-* **Host address:** `aws-0-ap-southeast-1.pooler.supabase.com`
+* **Host address:** `aws-0-us-east-1.pooler.supabase.com`
 * **Port:** `5432`
 * **Database name:** `postgres`
-* **Username:** `postgres.tosawjwzlmhruubghtqd`
-* **Password:** `R#9aL$7zP*3q`
+* **Username:** `postgres.hazwlkzitjmrmqbpkqch`
+* **Password:** `w9uDFMhmMzOOvPbv`
 
 </dd>
 
