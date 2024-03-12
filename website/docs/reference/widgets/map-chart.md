@@ -246,7 +246,7 @@ MapChart1.setVisibility(true)
 </dd>
 
 
-## Region and Country codes
+## Region and country codes
 
 | Map Type               | ID   | Value                          |
 |------------------------|------|--------------------------------|
