@@ -54,7 +54,7 @@ A reusable query module is a query that can be used across multiple applications
 * **Port:** `5432`
 * **Database name:** `postgres`
 * **Username:** `postgres.tosawjwzlmhruubghtqd`
-* **Password:*** `R#9aL$7zP*3q`
+* **Password:** `R#9aL$7zP*3q`
 
 </dd>
 
