@@ -75,7 +75,7 @@ SELECT * FROM public."product" LIMIT 10;
 
 </dd>
 
-8. Run and publish the module. 
+9. Run and publish the module. 
 
 You have successfully created the first query module.
 
