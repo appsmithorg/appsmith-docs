@@ -58,11 +58,13 @@ A reusable query module is a query that can be used across multiple applications
 
 </dd>
 
-5. Click **+ New Reusable Query** from the top-right corner of datasource editor.
+5. Test and save the datasource.
 
-6. Rename the query module to `GetProducts`.
+6. Click **+ New Reusable Query** from the top-right corner of the datasource editor.
 
-7. Configure the query to retrieve product details using the following SQL:
+7. Rename the query module to `GetProducts`.
+
+8. Configure the query to retrieve product details using the following SQL:
 
 
 <dd>
@@ -73,7 +75,7 @@ SELECT * FROM public."product" LIMIT 10;
 
 </dd>
 
-8. Run and publish the module. 
+9. Run and publish the module. 
 
 You have successfully created the first query module.
 
@@ -91,7 +93,7 @@ Follow these steps to access its data in any application:
 
 2. From the **Queries** Tab, click **+ New query / API**.
 
-3. Select the `Add GetProducts` query module to view inputs, default values, and query settings.
+3. Select the `Add GetProducts` query module. You can add multiple modules from the package.
 
 4. Run the query module.
 
@@ -118,7 +120,7 @@ In this section, you will update the query module to accept dynamic inputs, allo
 
 <dd>
 
-Create two inputs, named `limit` and `offset`, and assign default values to them.
+Create two inputs, named `limit` and `offset` with default values of `5` and `4` respectively.
 
 </dd>
 
@@ -137,6 +139,9 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 4. Run and publish the query module.
 
+:::info
+When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
+:::
 
 5. Open your app from the homepage to dynamically pass Table widget values to the module.
 
@@ -157,8 +162,11 @@ This configuration dynamically sets the limit and offset based on the values fro
 
 </dd>
 
-7. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
+7. Enable the Server-side pagination property in the Table.
+
+
+8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
 
 
-You've successfully integrated query modules; If dynamic inputs are not provided, it defaults to predetermined values.
+You've successfully integrated query modules; If dynamic inputs are not provided, it sets to default values.

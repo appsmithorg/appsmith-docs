@@ -45,7 +45,7 @@ By the end of this lesson, you will learn how to:
 
 2. Click the **+** icon in the top-left corner and select **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
 
-3. Rename the module to _formatDate_.
+3. Rename the module to _formatDate_. The Main JS object represents the code for the JS module.
 
 4. In the _Main_ JS Object, delete the auto-generated code and add the below code to it:
 
@@ -53,13 +53,14 @@ By the end of this lesson, you will learn how to:
 
 To pass data from the app to JS modules, you can pass it by calling the respective function with the necessary parameters, like `formatDDMMYYYY('2023-03-08T09:45:15Z')`.
 
+
 The following code takes a parameter `dateString` and uses the `toLocalString()` method of the date object to convert the given date into the `DD/MM/YYYY` format.
 
 
 ```js
 export default {
   // Function to format a date string as 'DD/MM/YYYY'
-  formatDDMMYYYY: (dateString) => {
+  formatDDMMYYYY: (dateString = '2023-03-08T09:45:15Z') => {
     const date = new Date(dateString);
     const options = {
       day: '2-digit',
@@ -95,7 +96,9 @@ Follow these steps to access its data in any application:
 
 3. Click the **+ New JS object** and select the **formatDate** JS module.
 
-4. From the UI tab, select Table widget and open the `update` column by clicking ⚙️ gear icon. 
+4. From the UI tab, select Table widget and open the `updated` column by clicking ⚙️ gear icon. 
+
+5. In the **Computed value** property, add:
 
 <dd>
 
@@ -103,9 +106,14 @@ Follow these steps to access its data in any application:
 {{formatDate_1.formatDDMMYYYY(currentRow["updated"])}}
 ```
 
-This code formats all `updated` column data into the `DD/MM/YYYY` format for each row in the data array.
+The `formatDate_1` represents the module instance, and the number corresponds to the order in which the module was added.
 
+
+This code formats all `updated` column data into the `DD/MM/YYYY` format for each row in the data array.
 
 </dd>
 
 
+:::info
+When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
+:::
