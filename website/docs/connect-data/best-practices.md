@@ -20,7 +20,7 @@ For machine-to-machine interactions or when accessing application-specific resou
 
 ## Scopes
 
-When configuring OAuth scopes, define precise permissions to limit access to resources and operations based on your application requirements. Granular scopes reduce the risk of unauthorized access to sensitive data. For example, if you want to read files from a folder in Dropbox, you will need file read permission, setting `files.content.read` will allow the file reading operation. These scopes are available in the official documentation of the provider with which you have integrated Appsmith.
+When configuring OAuth scopes, define precise permissions to limit access to resources and operations based on your application requirements. Granular scopes reduce the risk of unauthorized access to sensitive data. For example, if you want to read files from a folder in Dropbox, you will need file read permission, and setting scope as `files.content.read` will allow the file reading operation. These scopes are available in the official documentation of the provider with which you have integrated Appsmith.
 
 ## Refresh tokens
 
