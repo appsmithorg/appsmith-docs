@@ -501,7 +501,7 @@ const sidebars = {
                   label: 'Menu Button',
                   link: { type: 'doc', id: 'reference/widgets/menu/README' },
                   items: [
-                    'reference/widgets/menu/menu-items',
+                    'reference/widgets/menu/menu-items'
                   ],
                 },
                 'reference/widgets/modal',
@@ -722,8 +722,6 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/revert-changes',
             'advanced-concepts/version-control-with-git/import-from-repository',
             'advanced-concepts/version-control-with-git/environments-with-git',
-            'advanced-concepts/version-control-with-git/continuous-delivery-with-git',
-            'advanced-concepts/version-control-with-git/continuous-delivery-with-github-actions',
           ],
         },
 
