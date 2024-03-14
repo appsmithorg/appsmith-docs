@@ -56,7 +56,7 @@ Referencing modules inside an app works similarly to referencing app-level query
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h3> Referencing Modules Inside Modules</h3>
+ <h3> Referencing modules inside modules</h3>
 
 <Tags
 tags={[
