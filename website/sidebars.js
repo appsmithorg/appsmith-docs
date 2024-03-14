@@ -722,8 +722,8 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/revert-changes',
             'advanced-concepts/version-control-with-git/import-from-repository',
             'advanced-concepts/version-control-with-git/environments-with-git',
-            'advanced-concepts/version-control-with-git/continuous-delivery-with-git',
-            'advanced-concepts/version-control-with-git/continuous-delivery-with-github-actions',
+            'advanced-concepts/version-control-with-git/cd-with-git',
+            'advanced-concepts/version-control-with-git/cd-with-github-actions',
           ],
         },
 
