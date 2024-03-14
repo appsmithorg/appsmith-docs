@@ -21,7 +21,6 @@ tags={[
 
 This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master/main branch with GitHub Actions. This eliminates the need for manual pulling after each update.
 
-
 ## Prerequisites
 
 * [Enterprise edition plan](https://www.appsmith.com/pricing).
