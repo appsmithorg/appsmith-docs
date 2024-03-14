@@ -29,29 +29,30 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 ## Configure continuous delivery
 
-To configure continuous delivery follow these steps:
+Follow these steps to set up continuous delivery in Appsmith:
 
 1. Open Git Settings located on the left side of the bottom bar.
 
-2. Click on the Continuous Delivery tab.
+2. Click on the **Continuous Delivery** tab.
 
 3. Select the branch where you want to implement continuous delivery. For example, the `master`/`main` branch or any `feature` branch.
 
 4. Copy the provided endpoints to integrate them into your CI/CD pipeline configuration. 
 
-5. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference or use in subsequent steps.
+5. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
 
-6. Click the Finish Setup button.
+6. Click the **Finish Setup**.
 
 
 ## Set Up GitHub Actions Workflow
 
+Follow these steps to configure a GitHub Actions workflow and automate continuous delivery for your Appsmith application:
 
 1. Open the GitHub repository connected with your Appsmith application.
 
-2. Open the [GitHub code editor](https://docs.github.com/en/codespaces/the-githubdev-web-based-editor) by pressing `.`, or change the URL from `github.com` to `github.dev`.
+2. Create a directory called `.github/workflows` in the root of the repo.
 
-3. Create a new GitHub Actions workflow file within the `.github` folder, like `.github/workflows/deploy-appsmith.yaml`.
+3. Create a workflow `yaml` file in the `workflows` directory with an appropriate name, for example, `.github/workflows/deploy-appsmith.yaml`.
 
 4. In the `deploy-appsmith.yaml` file, add the following code to enable automatic deployment of changes to your Appsmith application.
 
@@ -60,58 +61,55 @@ To configure continuous delivery follow these steps:
 Replace the `curl` command with the command provided by Appsmith.
 
 ```yaml
-name: appsmith-cd
+name: appsmith-cd  # Workflow name
 
 on:
   push:
     branches:
-      - main
+      - main  # Trigger on push to main branch
 
 jobs:
   deploy-appsmith:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Run on Ubuntu
+
     steps:
-     // highlight-next-line
-      - run: "curl --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f28036aa8d2a48b3e96f68?branchName=main --header 'Authorization: Bearer <bearer token>'"
+      - run: "curl --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f2806f68?branchName=main --header 'Authorization: Bearer <bearer token>'"
 ```
 
 This YAML code defines a GitHub Actions workflow named `appsmith-cd` that triggers on every push to the `main` branch. Within this job, a single step is defined to execute a `curl` command. 
 
 </dd>
 
-
-5. For the bearer token, it is recommended to avoid direct inclusion in the repository when using GitHub Actions. Instead, use GitHub Secrets for secure storage and access. Secrets are encrypted variables that you can create in your repository and are securely stored by GitHub.
+5. For the bearer token, it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 
 <dd>
 
-In the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
+
+*Example:* You can use GitHub Secrets, where you can securely add your token in the repository's **Secrets and Variables** settings.
+
+And in the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
 
 
+Learn more about [Github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
 </dd>
 
-6. Commit and push the changes from the Github code editor.
 
 
-7. Open the GitHub repository settings, then navigate to the **Secrets and Variables** section under the **Security** tab, and select **Actions**.
+## Test the Continuous Delivery
 
+Follow these steps to test continuous delivery after you have committed the YAML workflow file and added the bearer token:
 
-8. Create a new repository secret named `APPSMITH_CD_KEY`, and add the **bearer token** from Appsmith as the secret value.
-
-
-
-
-## Test the Workflow
-
-1. Open your Appsmith App and create a new feature branch.
+1. Open the Appsmith App and create a new feature branch.
 
 2. **Commit & Push** your modifications to the designated feature branch.
 
-3. Open GitHub and raise a pull request.
+3. Open the GitHub repository and raise a pull request.
 
-4. When you merge this into the master/main or specified branch, the GitHub Actions workflow automatically triggers and updates the deployed version and branch accordingly.
+4. When you merge this into the `master`/`main` or specified branch, the GitHub Actions workflow automatically triggers and updates the deployed version and branch accordingly.
 
 
+The changes are deployed to that branch without the need to pull the changes manually. Additionally, the live version of the Appsmith app reflects those changes. 
 
 
 
