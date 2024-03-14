@@ -73,6 +73,7 @@ jobs:
     runs-on: ubuntu-latest  # Run on Ubuntu
 
     steps:
+    // highlight-next-line
       - run: "curl --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f2806f68?branchName=main --header 'Authorization: Bearer <bearer token>'"
 ```
 
