@@ -352,6 +352,7 @@ const sidebars = {
             'connect-data/concepts/Datasource-Environments',
           ]
         },
+        'connect-data/best-practices',
       ]
     }, //Data end
 
