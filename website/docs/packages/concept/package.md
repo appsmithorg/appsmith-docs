@@ -35,7 +35,7 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 ### Entities
 
 * **Package Editor:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
-* **Instance of Package in App Editor:** When you incorporate a module from the package into your application, you create a package instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
+* **Instance of Module in app editor:** When you incorporate a module from the package into your application, you create a Module instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
 
     These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
 
@@ -88,7 +88,7 @@ The **Main** JS file represents the JS module code; however, other entities such
 
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 
-* **Edit mode update:** Updating and publishing a package immediately impacts the app in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
+* **Edit mode update:** Updating and publishing a package makes the changes available to the apps in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
 * **Redeployment:** To bring the changes to the live application, a manual redeployment is necessary. This ensures controlled and intentional updates to the deployed version of the app.
 
 For example, you have a query module that displays data. When you publish the package containing this module, all the apps using that module will get updated in edit mode. However, if you want to reflect these changes in the deployed version of the app, you need to redeploy the app with the latest updates.
