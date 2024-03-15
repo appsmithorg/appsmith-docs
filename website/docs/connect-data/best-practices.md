@@ -24,8 +24,10 @@ When configuring OAuth scopes, define precise permissions to limit access to res
 
 ### Refresh tokens
 
-Ensure that refresh tokens have a longer expiry than access tokens to maintain long-term access to resources without frequent user re-authentication. By configuring refresh tokens with extended expiry, you can provide a seamless user experience while maintaining security. On refresh token expiry, you will have to re-authorize the datasource to keep the integration working. Below are some considerations why you are dealing with refresh tokens:
+Ensure that refresh tokens have a longer expiry than access tokens to maintain long-term access to resources without frequent user re-authentication. Some providers allow refresh tokens to never expire, while others set a long expiry, such as 6 months. Once every 6 months, the user will need to come in and perform authentication again. Upon refresh token expiry, you'll need to re-authorize the datasource on Appsmith to re-establish the connection. 
+
+Below are some considerations when dealing with refresh tokens:
 
 * Some providers, for example, Salesforce, doesn't allow sending the refresh token in scope and rejects the requests. For such cases, you will have to set `Send Scope with Refresh Token` as `No`. This field is available under **Advanced Settings** section, when the grant type is `Authorization Code`.
 
-* There are policies governing refresh tokens based on the provider you are using. Ensure that you have set up the refresh token rotation or understand the limit on validity of consecutive availability of refresh tokens.
+* Policies governing refresh tokens differ depending on your provider. It's advisable to either set up refresh token rotation, if provided by your provider, or understand any restrictions on the number of active refresh tokens that can exist at the same time.
