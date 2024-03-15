@@ -66,7 +66,7 @@ Follow these steps to set up a webhook workflow within your workspace.
 
 6. Click the **Publish** button to publish the workflow.
 
-## Create pending refund requests
+## Create approval requests
 
 Follow these steps to create refund requests which are awaiting user interaction: 
 
