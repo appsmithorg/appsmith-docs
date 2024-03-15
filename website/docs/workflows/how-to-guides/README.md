@@ -1,4 +1,4 @@
-# How-To Guides
+# Workflow Guides
 
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
