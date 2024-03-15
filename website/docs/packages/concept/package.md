@@ -50,7 +50,7 @@ Referencing modules inside an app works similarly to referencing app-level query
 
 * **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
 * **Parameter Passing(JS Module):** To pass data from the app to JS modules, you can do so by calling the respective function with the necessary parameters. For instance, you can use `funName('params')` to pass the parameter.
-* **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{input.param}}` and referencing them directly from the app's UI.
+* **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{inputs.param}}` and referencing them directly from the app's UI.
 
 
 <!-- vale off -->
