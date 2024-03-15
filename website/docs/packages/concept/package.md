@@ -46,10 +46,10 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 ### Referencing modules inside app
 
-Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JavaScript module's function with `{{jsmodule.functionName()}}`.
+Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JS module's function with `{{jsmodule.functionName()}}`.
 
 * **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
-* **Parameter Passing(JS Module):** When passing parameters from the app to a JavaScript module, you include them within the function call. For example, invoking a function `functionName(params)` within a JavaScript module allows the module to receive and process these parameters accordingly. 
+* **Parameter Passing(JS Module):** When passing parameters from the app to a JS module, you include them within the function call. For example, invoking a function `functionName(params)` within a JS module allows the module to receive and process these parameters accordingly. 
 * **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{input.param}}` and referencing them directly from the app's UI.
 
 
@@ -70,9 +70,9 @@ tags={[
 
 
 
-Currently, referencing modules is limited to within the app. Similar to how you reference query or JavaScript objects, you can only reference modules within the app. However, in the future, you can reference modules inside modules. For instance, you could reference a query module inside a JavaScript module to configure data dynamically.
+Currently, referencing modules is limited to within the app. Similar to how you reference query or JavaScript objects, you can only reference modules within the app. However, in the future, you can reference modules inside modules. For instance, you could reference a query module inside a JS module to configure data dynamically.
 
-## Entity references inside JS module
+### Entity references inside JS module
 
 Inside JS modules, you can create multiple JS objects and datasource queries to configure and manipulate data. For example, you can create a query to fetch the data and then reference it using` {{this.params.name}}` within the JSObject/Module. 
 
@@ -88,7 +88,7 @@ The **Main** JS file represents the JS module code; however, other entities such
 
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 
-* **Immediate Edit Mode Impact:** Updating and publishing a package immediately impacts the app in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
+* **Edit mode update:** Updating and publishing a package immediately impacts the app in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
 * **Redeployment:** To bring the changes to the live application, a manual redeployment is necessary. This ensures controlled and intentional updates to the deployed version of the app.
 
 For example, you have a query module that displays data. When you publish the package containing this module, all the apps using that module will get updated in edit mode. However, if you want to reflect these changes in the deployed version of the app, you need to redeploy the app with the latest updates.
