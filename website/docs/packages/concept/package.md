@@ -49,7 +49,7 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JS module's function with `{{jsmodule.functionName()}}`.
 
 * **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
-* **Parameter Passing(JS Module):** When passing parameters from the app to a JS module, you include them within the function call. For example, invoking a function `functionName(params)` within a JS module allows the module to receive and process these parameters accordingly. 
+* **Parameter Passing(JS Module):** To pass data from the app to JS modules, you can do so by calling the respective function with the necessary parameters. For instance, you can use `funName('params')` to pass the parameter.
 * **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{input.param}}` and referencing them directly from the app's UI.
 
 
