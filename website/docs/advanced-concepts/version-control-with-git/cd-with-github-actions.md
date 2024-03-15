@@ -44,7 +44,7 @@ Follow these steps to set up continuous delivery in Appsmith:
 6. Click the **Finish Setup**.
 
 
-## Set Up GitHub Actions Workflow
+## Set Up GitHub Actions 
 
 Follow these steps to configure a GitHub Actions workflow and automate continuous delivery for your Appsmith application:
 

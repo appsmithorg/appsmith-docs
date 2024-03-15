@@ -1,13 +1,13 @@
 ---
 description: Continuous Delivery with Git
-title: Continuous Delivery with Git
+title: Continuous Delivery (CI/CD) with Git
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Continuous Delivery with Git</h1>
+ <h1>Continuous Delivery (CI/CD) with Git</h1>
 
 <Tags
 tags={[
@@ -19,47 +19,40 @@ tags={[
 
 <!-- vale on -->
 
-This guide shows how to integrate Continuous Delivery with Git in Appsmith. This allows for automatic updates to the master/main branch, eliminating the need to manually pull changes after each update.
+Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App using Git. This feature enables automatic updates to the master/main branch, eliminating the need for manual pulling of changes after each update. You can access the CI/CD configuration from Git settings located at the bottom left side of the bottom bar. 
+
+You can leverage CI/CD with any platform or tool of your choice. Here are a few guides for popular options like GitHub Actions, and Bitbucket Pipelines.
 
 
+<div className="containerGridSampleApp">
+<div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
+            <a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong>GitHub Actions</strong></a>
+        </div> <hr/>
+        <div className="containerDescription">GitHub Actions is an automation tool integrated with GitHub repositories, enabling you to automate workflows for building, testing, and deploying code directly from your repository.</div>
+        <div className="containerTutorialLink"></div>
+    </div>
+</div>
 
-
-
-## Prerequisites
-
-* [Enterprise edition plan](https://www.appsmith.com/pricing).
-* An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository)
-
-
-## Configure continuous delivery
-
-To configure continuous delivery follow these steps:
-
-
-
-1. Open Git Settings located on the left side of the bottom bar.
-
-2. Click on the Continuous Delivery tab.
-
-3. Select the branch where you want to implement continuous delivery. For example, the `master`/`main` branch or any `feature` branch.
-
-4. Copy the provided endpoints and integrate them into your CI/CD pipeline configuration, deployment scripts, or any other relevant tool. 
-
-<dd>
-
-*Example:* You can integrate this command into your GitHub Actions workflow to automate deployments after successful builds. Add it as a step in your workflow YAML file, specifying the endpoint URL and bearer token as environment variables or directly in the script.
-
-
-```api
-curl --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f28?branchName=main --header 'Authorization: Bearer <bearer token>'
-```
-
-This curl command sends a POST request to deploy an application to the specified branch (main), using the provided endpoint URL and authorization token.
-
-</dd>
-
-5. Generate a bearer token for authenticating requests to the provided endpoint. 
-
-6. Click the Finish Setup button.
-
-
+<!-- <div className="containerGrid">
+    <div className="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
+        <div className="containerCol">
+            <img className="containerImage" src="/img/githubaction1.png" alt="ActiveCampaign-logo"/>
+        </div> <hr/>
+        <div className="containerDescription"><strong>GitHub Actions</strong> is an automation tool integrated with GitHub repositories, enabling you to automate workflows for building, testing, and deploying code directly from your repository.<br/><br/>  </div>
+        <div className="containerTutorialLink"><a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong >View Guide </strong></a></div>
+    </div>
+    <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
+        <div className="containerCol">
+            <img className="containerImage" src="/img/bitbucket-cd1.png" alt="APITemplate-logo"/>
+        </div> <hr/>
+        <div className="containerDescription"><strong>Bitbucket Pipelines</strong> is a CI/CD service built into Bitbucket Cloud that enables you to build, test, and deploy code directly from your Bitbucket repository.<br/><br/> </div>
+    </div>
+    <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+        <div className="containerCol">
+            <img className="containerImage" src="/img/gitlabcd1.png" alt="Appwrite-logo"/>
+        </div> <hr/>
+        <div className="containerDescription"><strong>GitLab CI/CD</strong> is a built-in continuous integration and continuous deployment service offered by GitLab, allowing developers to automate the testing and delivery of their code directly from their GitLab repository.<br/><br/></div>
+        
+    </div>
+</div> -->
