@@ -170,3 +170,7 @@ This configuration dynamically sets the limit and offset based on the values fro
 
 
 You've successfully integrated query modules; If dynamic inputs are not provided, it sets to default values.
+
+## Next steps
+
+* [Lesson 2 - JS modules](/packages/tutorial/js-module)
