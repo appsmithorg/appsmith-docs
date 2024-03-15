@@ -201,7 +201,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user modifies the text input. This
+Enables you to specify [supported actions](/reference/appsmith-framework/widget-actions) that would be triggered whenever the user modifies the text input. 
 
 
 </dd>
