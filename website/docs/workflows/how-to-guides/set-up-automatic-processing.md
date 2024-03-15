@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-Automating processes within your application can improve efficiency and reduce manual workload. This page ahows how to set up automatic processing using Appsmith workflows.
+Automating processes within your application can improve efficiency and reduce manual workload. This page shows how to set up automatic processing using Appsmith workflows.
 
 
 ## Prerequisites
