@@ -34,8 +34,8 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 ### Entities
 
-* **Package Editor:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
-* **Instance of Module in app editor:** When you incorporate a module from the package into your application, you create a Module instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
+* **Package editor:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
+* **Instance of module in app editor:** When you incorporate a module from the package into your application, you create a Module instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
 
     These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
 
