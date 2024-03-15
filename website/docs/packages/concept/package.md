@@ -34,10 +34,10 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 ### Entities
 
-* **Package Editing in Workspace:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
-* **Package Instance in Edit Mode:** When you incorporate a module from the package into your application, you create a package instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
+* **Package Editor:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
+* **Instance of Package in App Editor:** When you incorporate a module from the package into your application, you create a package instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
 
-    These instances, often named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
+    These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
 
 
 
@@ -48,7 +48,7 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JavaScript module's function with `{{jsmodule.functionName()}}`.
 
-* **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JavaScript modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
+* **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
 * **Parameter Passing(JS Module):** When passing parameters from the app to a JavaScript module, you include them within the function call. For example, invoking a function `functionName(params)` within a JavaScript module allows the module to receive and process these parameters accordingly. 
 * **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{input.param}}` and referencing them directly from the app's UI.
 
@@ -72,11 +72,23 @@ tags={[
 
 Currently, referencing modules is limited to within the app. Similar to how you reference query or JavaScript objects, you can only reference modules within the app. However, in the future, you can reference modules inside modules. For instance, you could reference a query module inside a JavaScript module to configure data dynamically.
 
+## Entity references inside JS module
+
+Inside JS modules, you can create multiple JS objects and datasource queries to configure and manipulate data. For example, you can create a query to fetch the data and then reference it using` {{this.params.name}}` within the JSObject/Module. 
+
+The **Main** JS file represents the JS module code; however, other entities such as queries and JS objects are not reflected in the app. This feature is only available in JS modules and not in query modules. In query modules, you can only create datasource queries.
+
+
+
+
+
+
+
 ### Updating packages
 
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 
-* **Immediate Edit Mode Impact:** Updating and publishing a package immediately impacts the app in the edit mode. This ensures that developers can see and work with the latest configurations while making changes within the application.
+* **Immediate Edit Mode Impact:** Updating and publishing a package immediately impacts the app in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
 * **Redeployment:** To bring the changes to the live application, a manual redeployment is necessary. This ensures controlled and intentional updates to the deployed version of the app.
 
 For example, you have a query module that displays data. When you publish the package containing this module, all the apps using that module will get updated in edit mode. However, if you want to reflect these changes in the deployed version of the app, you need to redeploy the app with the latest updates.
