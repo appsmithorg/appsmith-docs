@@ -243,7 +243,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
@@ -366,7 +366,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             //'core-concepts/building-ui/dynamic-ui/README',
@@ -549,7 +549,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
             'core-concepts/writing-code/javascript-promises',
@@ -658,9 +658,15 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'How-To Guides',
+          label: 'How-to Guides',
+          link: {
+            type: 'doc',
+            id: 'workflows/how-to-guides/README',
+          },
           items: [
-            'workflows/how-to-guides/create-approval-workflow'
+            'workflows/how-to-guides/create-approval-workflow',
+            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/set-up-automatic-processing',
           ],
         },
         {

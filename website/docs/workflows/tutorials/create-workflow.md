@@ -24,7 +24,6 @@ To learn workflows in Appsmith, you'll build workflow that sends a welcome notif
 
 * Create a workflow and configure it as a webhook
 * Trigger the workflow from an external app (Postman)
-* Integrate and execute the workflow from your Appsmith app
 
 ## Prerequisites
 
@@ -177,48 +176,9 @@ To simulate the workflow connection from external app, you will use Postman and 
 
 You've successfully executed your first workflow externally, and can integrate the workflow in your external or Appsmith app.
 
-## Send email using Appsmith app
+🚩 Congratulations. You have built your first workflow, configured it as a webhook and integrated it with an external app (Postman).
 
-To interact with the workflow from your Appsmith app, Appsmith provides workflow queries. In this section, you'll:
-
-* Write a workflow query
-* Bind the workflow query to the Button widget
-* Pass parameter (_email_) from Appsmith app to workflow
-* Trigger the workflow by clicking the Button widget
-
-Follow these steps to send email from your app:
-
- <br/>  
- <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-    <iframe src="https://demo.arcade.software/e6ZQ55iJFE9vZdOHOOe9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow Query">
-    </iframe>
-</div>
-<br/><br/>
-
-1. In your application, drag an Input widget onto the canvas, name it _inp\_Email_, and set its label as **Email**.
-2. Drag a Button widget onto the canvas and configure it as shown below:
-    * Name it _btn\_SendEmail_
-    * Set the label as _Send Welcome Email_
-3. Under **Editor** > **Queries**, click **New query/API**.
-4. In the _Create new query/API_, click **Workflows Query**, and name it as _SendEmailQuery_. 
-5. Add the below details to configure the workflow query:
-    * **Workflow name** - The workflow name dropdown has all the available workflows in your workspace. Select **Send_Email_Workflow**.
-    * **Request type** - Select **Trigger workflow**.
-    * **Trigger Data** - Trigger Data passes the parameters from app to the workflow for processing. Add the below code to pass email parameter to the workflow:
-
-        ```javascript
-        {
-            "email" : "{{inp_Email.text}}"
-        }
-        ```
-6. Bind the **onClick** event of the **Send Email** button to execute the `SendEmailQuery` query. 
-7. Input your email in the **inp_Email** field, and click **Send Email** button. You'll see an _Email sent_ prompt. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`.
-    
-You've successfully executed your workflow within your Appsmith app.
-
-🚩 Congratulations. You have built your first webhook workflow and integrated it with your Appsmith app.
-
-In this tutorial, you explored how to create a webhook workflow, pass parameters to the workflow, and execute workflow from your Appsmith app. You can use these skills to build your own workflow and integrate it with your apps.
+In this tutorial, you explored how to create a workflow, pass parameters to the workflow, configure a webhook trigger for it, and execute workflow from an external app (Postman). You can use these skills to build your own workflow and integrate it with your apps.
 
 Happy Workflow Building!
 
