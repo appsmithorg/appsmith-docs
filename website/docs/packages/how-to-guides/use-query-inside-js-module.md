@@ -20,6 +20,9 @@ tags={[
 
 This guide shows how to use database queries within JavaScript modules, enabling efficient data handling and manipulation for applications.
 
+You can create queries and JS objects specific to this JS module. The **Main JS object** represents the JS module code.
+
+
 
 ## Create a package
 
@@ -36,12 +39,6 @@ A package is a collection of Modules that can be versioned and distributed acros
 1. **Create a new package** by clicking on the top-right corner of your workspace.
 
 2. Click **New Module** > **JS Module**.
-
-
-:::note
-You can create queries and JS objects specific to this module. The **Main** JS object represents the JS module code.
-:::
-
 
 
 3. To pass query data, create a datasource within this JS module.
