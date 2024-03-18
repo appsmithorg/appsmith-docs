@@ -4,7 +4,7 @@ import CustomSearchBar from '../components/custom-search/CustomSearchBar';
 export default function SearchBarWrapper(props) {
   return (
     <>
-      <CustomSearchBar />
+      
     </>
   );
 }
