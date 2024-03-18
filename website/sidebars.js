@@ -638,7 +638,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'How-to Guides',
           items: [
             'packages/how-to-guides/use-query-inside-js-module',
