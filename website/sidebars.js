@@ -636,6 +636,15 @@ const sidebars = {
             'packages/tutorial/js-module'
           ],
         },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'packages/reference/query-module',
+            'packages/reference/package'
+          ],
+        }
       ]
     }, //module end
     //Workflows start
