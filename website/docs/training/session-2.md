@@ -7,7 +7,7 @@ hide_title: false
 
 ## Getting Started
 
-1. Sign up on this instance: [Optum Demo Instance](https://optum-demo.app.appsmith.com/) (Ignore if already done)
+1. Sign up on this instance: [Optum Training Instance](https://optum-training.app.appsmith.com/) (Ignore if already done)
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
