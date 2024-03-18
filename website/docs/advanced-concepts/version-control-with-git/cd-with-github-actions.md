@@ -31,6 +31,13 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 Follow these steps to set up continuous delivery in Appsmith:
 
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/qyXQyJVooFHKHPPyqfvU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
 1. Open Git Settings located on the left side of the bottom bar.
 
 2. Click on the **Continuous Delivery** tab.
