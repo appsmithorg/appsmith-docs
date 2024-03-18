@@ -233,6 +233,17 @@ const sidebars = {
         }
       ],
     }, //getting started section end
+
+    //training start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Training',
+      items: [
+        'training/sample'
+      ]
+    }, //training end
+
     {
       //Data start
       type: 'category',
