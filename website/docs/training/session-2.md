@@ -7,7 +7,7 @@ hide_title: false
 
 ## Getting Started
 
-1. Sign up on this instance: [Optum Training Instance](https://optum-training.app.appsmith.com/) (Ignore if already done)
+1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/) (Ignore if already done)
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
@@ -86,7 +86,7 @@ Name, Gender, Date of Birth, Phone, Email and Country
 
 * Create a new Page
 * Introduce a Chart on the canvas
-* Write an SQL query to show all the males and females distribution of users in the database
+* Write an SQL query **getGenderRatioQuery** to show all the males and females distribution of users in the database
 <details>
   <summary>Show Hint</summary>
   <div>
@@ -97,12 +97,18 @@ Name, Gender, Date of Birth, Phone, Email and Country
 </details>
 
 * Notice that chart that takes values only in x,y format.
-* Create a JSObject and call it **Utils**.  Introduce a function that formats the Query’s data in x & y format
-```jsx
-getChartDataByGender: () => {
-    return Query1.data.map(item => ({ x: item.gender, y: item.count });
-}
-``` 
+* Create a JSObject and call it **Utils**.  Introduce a function called **getChartDataByGender** that formats the Query’s data in x & y format
+<details>
+  <summary>Show Hint</summary>
+  <div>
+   ```jsx
+    getChartDataByGender: () => {
+        return getGenderRatioQuery.data.map(item => ({ x: item.gender, y: item.count });
+    }
+    ```
+  </div>
+</details>
+
 * Connect the JS Object function directly to the Chart’s source data `{{Utils.getChartDataByGender()}}`
 
 </dd>
