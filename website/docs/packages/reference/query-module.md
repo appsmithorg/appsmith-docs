@@ -1,4 +1,4 @@
-# Package Settings Inside App
+# App-Level Package Settings
 
 This page provides information about the package settings and properties available within the App.
 
@@ -14,6 +14,8 @@ Additionally, you can add multiple query modules from the same package, each wit
   alt=""
   caption="∂"
 />
+
+### Property 
 
 #### Inputs
 
@@ -42,7 +44,8 @@ If you have two inputs named `limit` and `offset`, you can pass data like this:
 
 
 
-
+### Settings 
+ 
 #### Run query on page load
 
 <dd>

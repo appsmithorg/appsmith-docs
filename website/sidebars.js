@@ -639,6 +639,15 @@ const sidebars = {
         {
           type: 'category',
           collapsed: false,
+          label: 'How-to Guides',
+          items: [
+            'packages/how-to-guides/use-query-inside-js-module',
+            'packages/how-to-guides/create-js-module',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
           label: 'Reference',
           items: [
             'packages/reference/query-module',
