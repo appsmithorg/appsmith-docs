@@ -75,7 +75,9 @@ WHERE "id"= {{Table1.updatedRow.id}};
 * Create a new Page
 * Introduce a Chart on the canvas
 * Create a Query to show all the males and females distribution
-`SELECT gender, COUNT(*) FROM public."users" group by gender;`
+```jsx
+SELECT gender, COUNT(*) FROM public."users" group by gender;
+```
 * Notice that chart that takes values only in x,y format.
 * Create a JSObject and call it **Utils**.  Introduce a function that formats the Query’s data in x & y format
 ```jsx

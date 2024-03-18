@@ -48,18 +48,18 @@ hide_title: false
 
 ## Widgets
 
-1. Table Widget
+1. **Table Widget**
 <dd>
 
 * Introduce a Table widget
 * Connect it to your datasource
-* Checkout the auto generated CRUD queries
+* Go to the **Queries** Tab on the left and check out the Appsmith generated CRUD queries
 * See how the table supports Server Side Pagination
 * Play around with the inline editing and add row to table
 
 </dd>
 
-2. Button Widget
+2. **Button Widget**
 <dd>
 
 * Introduce a Button widget on top of the table placed on the right
@@ -68,20 +68,21 @@ hide_title: false
 
 </dd>
 
-3. Select Widget
+3. **Select Widget**
 <dd>
 
 * Introduce a Select widget
 * Enable JS binding, and hardcode inside it to have label and value for male and female
 * Update the Table’s Select query to have an additional Where clause to filter based on gender
 ```jsx
-WHERE “name” ilike ‘%{{Table1.searchText}}%’ AND “gender” ilike '{{Select1.selectedOptionValue}}%'
+WHERE “name” ilike ‘%{{Table1.searchText}}%’
+AND “gender” ilike '{{Select1.selectedOptionValue}}%'
 ```
 * Connect the onChange of the Select Widget to trigger the Table’s Select Query
 
 </dd>
 
-4. Container Widget
+4. **Container Widget**
 <dd>
 
 * Place the 3 widgets Table, Button and Select as per your choice
