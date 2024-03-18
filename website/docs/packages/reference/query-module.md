@@ -12,7 +12,7 @@ Additionally, you can add multiple query modules from the same package, each wit
 <ZoomImage
   src="/img/inputs_mod_app.png" 
   alt=""
-  caption="∂"
+  caption=""
 />
 
 ### Property 
@@ -45,7 +45,7 @@ If you have two inputs named `limit` and `offset`, you can pass data like this:
 
 
 ### Settings 
- 
+
 #### Run query on page load
 
 <dd>
@@ -75,7 +75,7 @@ Additionally, you can add multiple JS modules from the same package, each with d
 <ZoomImage
   src="/img/js-module-setting.png" 
   alt=""
-  caption="∂"
+  caption=""
 />
 
 ### Function name
