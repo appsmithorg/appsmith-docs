@@ -88,7 +88,7 @@ This YAML code defines a GitHub Actions workflow named `appsmith-cd` that trigge
 
 </dd>
 
-5. For the bearer token, it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
+5. For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 
 <dd>
@@ -99,7 +99,7 @@ This YAML code defines a GitHub Actions workflow named `appsmith-cd` that trigge
 And in the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
 
 
-Learn more about [Github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+Learn more about [Github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
 </dd>
 
 
