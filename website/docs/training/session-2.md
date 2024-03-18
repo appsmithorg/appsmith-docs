@@ -29,11 +29,17 @@ getUserData: () ⇒ {
 },
 ```
 * Introduce a function to get current age from date of birth
-```jsx
-getUserAge: (dob) ⇒ {
-  return moment(this.currentDate).dif(moment(dob), ‘years’)
-}
-```
+<details>
+  <summary>Show Hint</summary>
+  <div>
+    ```jsx
+    getUserAge: (dob) ⇒ {
+        return moment(this.currentDate).diff(moment(dob), ‘years’)
+    }
+    ```
+  </div>
+</details>
+
 * Add new column in table widget and name it **Age**
 * Connect the value of the column to the getUserAge function
 `{{Utils.getUserAge(currentRow.dob)}}`
@@ -51,17 +57,23 @@ Name, Gender, Date of Birth, Phone, Email and Country
 ```
 * Rename the widgets inside the Form for better reference
 * Change the existing **Update Users** Query to use the Form data instead
-```jsx
-UPDATE public.users SET
-"gender"= '{{Form1.data.gender}}',
-"dob"= '{{Form1.data.dob}}',
-"phone"= '{{Form1.data.phone}}',
-"email"= '{{Form1.data.email}}',
-"country"= '{{Form1.data.country}}',
-"name"= '{{Form1.data.name}}',
-"updated_at"= '{{new Date()}}'
-WHERE "id"= {{Table1.updatedRow.id}};
-```
+<details>
+  <summary>Show Hint</summary>
+  <div>
+    ```jsx
+    UPDATE public.users SET
+    "gender"= '{{Form1.data.gender}}',
+    "dob"= '{{Form1.data.dob}}',
+    "phone"= '{{Form1.data.phone}}',
+    "email"= '{{Form1.data.email}}',
+    "country"= '{{Form1.data.country}}',
+    "name"= '{{Form1.data.name}}',
+    "updated_at"= '{{new Date()}}'
+    WHERE "id"= {{Table1.updatedRow.id}};
+    ```
+  </div>
+</details>
+
 * Rename the button label inside the Form to `Update Details`
 * Connect the onClick of the button to the Update Query
 * Inside the success of the onClick, connect it to Select Query
@@ -74,10 +86,16 @@ WHERE "id"= {{Table1.updatedRow.id}};
 
 * Create a new Page
 * Introduce a Chart on the canvas
-* Create a Query to show all the males and females distribution
-```jsx
-SELECT gender, COUNT(*) FROM public."users" group by gender;
-```
+* Write an SQL query to show all the males and females distribution of users in the database
+<details>
+  <summary>Show Hint</summary>
+  <div>
+    ```jsx
+    SELECT gender, COUNT(*) FROM public."users" group by gender;
+    ```
+  </div>
+</details>
+
 * Notice that chart that takes values only in x,y format.
 * Create a JSObject and call it **Utils**.  Introduce a function that formats the Query’s data in x & y format
 ```jsx

@@ -74,10 +74,16 @@ hide_title: false
 * Introduce a Select widget
 * Enable JS binding, and hardcode inside it to have label and value for male and female
 * Update the Table’s Select query to have an additional Where clause to filter based on gender
-```jsx
-WHERE “name” ilike ‘%{{Table1.searchText}}%’
-AND “gender” ilike '{{Select1.selectedOptionValue}}%'
-```
+<details>
+  <summary>Show Hint</summary>
+  <div>
+    ```jsx
+    WHERE “name” ilike ‘%{{Table1.searchText}}%’
+    AND “gender” ilike '{{Select1.selectedOptionValue}}%'
+    ```
+  </div>
+</details>
+
 * Connect the onChange of the Select Widget to trigger the Table’s Select Query
 
 </dd>

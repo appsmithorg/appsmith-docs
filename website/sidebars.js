@@ -4,7 +4,7 @@ const sidebars = {
     //training start
     {
       type: 'category',
-      label: 'Training',
+      label: 'Appsmith Training 101',
       collapsed: false,
       items: [
         'training/session-1',
