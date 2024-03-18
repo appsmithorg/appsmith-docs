@@ -22,10 +22,10 @@ hide_title: false
 ```jsx
 currentDate: new Date(),
 ```
-* Introduce a function to get Select Querys data
+* Introduce a function to get **Select_public_users1** data
 ```jsx
 getUserData: () ⇒ {
-   return SelectQuery.data
+   return Select_public_users1.data
 },
 ```
 * Introduce a function to get current age from date of birth
@@ -56,7 +56,7 @@ getUserData: () ⇒ {
 Name, Gender, Date of Birth, Phone, Email and Country
 ```
 * Rename the widgets inside the Form for better reference
-* Change the existing **Update Users** Query to use the Form data instead
+* Change the existing **Update_public_users1** Query to use the Form data instead
 <details>
   <summary>Show Hint</summary>
   <div>
@@ -69,14 +69,14 @@ Name, Gender, Date of Birth, Phone, Email and Country
     "country"= '{{Form1.data.country}}',
     "name"= '{{Form1.data.name}}',
     "updated_at"= '{{new Date()}}'
-    WHERE "id"= {{Table1.updatedRow.id}};
+    WHERE "id"= {{Table1.selectedRow.id}};
     ```
   </div>
 </details>
 
 * Rename the button label inside the Form to `Update Details`
-* Connect the onClick of the button to the Update Query
-* Inside the success of the onClick, connect it to Select Query
+* Connect the onClick of the button to the **Update_public_users1** Query
+* Inside the success of the onClick, connect it to the **Select_public_users1** Query
 
 </dd>
 
@@ -103,7 +103,12 @@ Name, Gender, Date of Birth, Phone, Email and Country
   <div>
    ```jsx
     getChartDataByGender: () => {
-        return getGenderRatioQuery.data.map(item => ({ x: item.gender, y: item.count });
+      return getGenderRatioQuery.data.map(item => {
+        return {
+          x: item.gender,
+          y: item.count
+        };
+      )
     }
     ```
   </div>
