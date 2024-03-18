@@ -67,14 +67,12 @@ https://mock-api.appsmith.com/products
 
 ```js
 export default {
-  myVar1: [],
-
-  // Function to process data and update myVar1
+  // Function to process data and return the updated array
   async myFun1() {
     try {
-      // Assuming Api1.run() returns a promise
-      await Product_Api.run();
-      const dataArray = Product_Api.data.products;
+      // Assuming Product_Api.run() returns a promise
+      await Api1.run();
+      const dataArray = Api1.data.products;
 
       // Map over dataArray and format the availabilityDate
       const updatedDataArray = dataArray.map(item => {
@@ -90,14 +88,13 @@ export default {
         };
       });
 
-      // Assign the updated array to myVar1
-      this.myVar1 = updatedDataArray;
-
-      // Return the updated array if needed
+      // Return the updated array directly
       return updatedDataArray;
     } catch (error) {
       // Handle errors during data processing
       console.error('Error processing data:', error);
+      // Return an empty array or handle the error as per requirement
+      return [];
     }
   },
 };
