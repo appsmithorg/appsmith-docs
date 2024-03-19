@@ -21,7 +21,7 @@ tags={[
 
 Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App using Git. This feature enables automatic updates to the master/main branch, eliminating the need for manual pulling of changes after each update. You can access the CI/CD configuration from Git settings located at the bottom left side of the bottom bar. 
 
-You can leverage CI/CD with any platform or tool of your choice. Here are a few guides for popular options like GitHub Actions, and Bitbucket Pipelines.
+You can leverage CI/CD with any platform or tool of your choice. Here are a few guides for popular options like GitHub Actions.
 
 
 <div className="containerGridSampleApp">
