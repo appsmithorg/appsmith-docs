@@ -7,9 +7,9 @@ hide_title: false
 
 ## Getting Started
 
-1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/) (Ignore if already done)
+1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/user/signup) (Ignore if already done)
 
-2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
+2. Now you will be guided through the Onboarding. Select your profiency with Appsmith.
 
 ##  Datasources
 1. **REST API**
@@ -45,6 +45,14 @@ hide_title: false
 * Great!! You have successfully created a Postgres Datasource and a Query on top of it
 
 </dd>
+
+## Workspaces and Apps
+
+1. In the Editor mode, on the top, you will see your App name as **My First Application**. Click on it and Rename it as **Activity 1**.
+2. Now click on the Appsmith Logo on the top left corner of the page, and it will take you back to the Appsmith Workspaces page.
+3. You will be able to see your workspaces or what workspaces you have access to. And also see what all Apps are accessible for you.
+4. On the rightmost, next to the **Create new** button, you will see a three-dot menu. Click on it and you will see your workspace name.
+5. Click on the Edit icon next to it and rename your workspace as **\<Name\>-Training-Workspace**
 
 ## Widgets
 

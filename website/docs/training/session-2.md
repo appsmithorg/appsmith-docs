@@ -5,13 +5,15 @@ hide_title: false
 
 <!-- vale off -->
 
-## Getting Started
+## Getting Started 
 
-1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/) (Ignore if already done)
+**Ignore this if you were able to attend the previous Session, create a Workspace with your name and already have an App called Activity 1.**
+
+1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/user/signup)
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
-3. Go to this Workspace and fork **Activty 1** App to your Workspace (Ignore if you already having existing App)
+3. Go to this [Training Workspace](https://training.app.appsmith.com/applications?workspaceId=65f83394a687aa57eb42cf0b) and fork **Activity 1** App to your newly created Workspace.
 
 ##  JSObjects
 
@@ -71,6 +73,7 @@ Name, Gender, Date of Birth, Phone, Email and Country
     "updated_at"= '{{new Date()}}'
     WHERE "id"= {{Table1.selectedRow.id}};
     ```
+    The above is just a sample solution. Ensure you correctly refer to the widgets' names you had renamed inside the Form, inside this **Query** after copy pasting it.
   </div>
 </details>
 
