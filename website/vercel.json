@@ -1080,7 +1080,7 @@
     },
     {
       "source": "/connect-data/how-to-guides/connect-datasource",
-      "destination": "/getting-started/tutorials/start-building#connect-to-a-database"
+      "destination": "/getting-started/tutorials/the-basics/connect-query-display-data#connect-datasource"
     },
     {
       "source": "/connect-data/how-to-guides/query-data",

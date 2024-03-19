@@ -32,7 +32,7 @@ Example: if you are executing a `storeValue()` function in a `TableData` propert
 
 
 #### Solution
-Invoke the data property) of an API, Query or JS object.
+Invoke the data property of an API, Query or JS object.
 
 For example, you have a JS Object `getLoggedInUserInfo`, which has a function ```getFullNameOfLoggedInUser```. The function returns the full name of the logged-in user. You wish to add the full name and create a welcome text, `Welcome! <LOGGED_IN_USER_NAME>`. Bind the response of ```getFullNameOfLoggedInUser``` function to a text widget by calling the `.data` property. To bind the response, add the below code snippet in a mustache (`{{}}`) sign.
 
