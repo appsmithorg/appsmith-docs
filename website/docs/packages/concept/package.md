@@ -34,43 +34,28 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
 ### Entities
 
-* **Package editor:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
-* **Instance of module in app editor:** When you incorporate a module from the package into your application, you create a Module instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
+* **Package:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
+* **Package Instance:** A package instance represents the specific version of the package incorporated into your application.  You can include only one instance of a package version in your application.
+* **Module Instance:** When you incorporate a module from the package into your application, you create a Module instance. You can create multiple instances of the same package. This instance is specific to the edit mode, meaning updates here do not immediately affect the live application until it's deployed.
 
-    These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
-
-
-
+    Each module instance can have different settings and configurations. These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
 
 
 
-### Referencing modules inside app
+### Package Scope
 
-Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JS module's function with `{{jsmodule.functionName()}}`.
-
-* **Appsmith Global Objects and Functions:** You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
-* **Parameter Passing(JS Module):** To pass data from the app to JS modules, you can do so by calling the respective function with the necessary parameters. For instance, you can use `funName('params')` to pass the parameter.
-* **Parameter Passing(Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{inputs.param}}` and referencing them directly from the app's UI.
-
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
- <h3> Referencing modules inside modules</h3>
-
-<Tags
-tags={[
-{ name: "Coming Soon", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
-]}
-/>
-
-</div>
-
-<!-- vale on -->
+* **Packages are workspace level:** Packages are accessible at the workspace level, meaning all apps within the workspace can use the package.
+* **Package access inside the package (coming soon):** This upcoming feature enables access to packages within packages, expanding the scope of package functionality. This enhancement offers increased flexibility and capabilities for organizing and utilizing package resources effectively.
 
 
 
-Currently, referencing modules is limited to within the app. Similar to how you reference query or JavaScript objects, you can only reference modules within the app. However, in the future, you can reference modules inside modules. For instance, you could reference a query module inside a JS module to configure data dynamically.
+### Modules Scope
+
+* **Referencing modules inside app** Referencing modules inside an app works similarly to referencing app-level query and JavaScript objects. For instance, accessing a query module's data is done using syntax like `{{querymodule_1.data}}` or invoking a JS module's function with `{{jsmodule.functionName()}}`.
+* **Referencing modules inside modules (coming soon)** Currently, referencing modules is limited to within the app. Similar to how you reference query or JavaScript objects, you can only reference modules within the app. However, in the future, you can reference modules inside modules. For instance, you could reference a query module inside a JS module to configure data dynamically.
+* **Passing Parameter (JS Module):** To pass data from the app to JS modules, you can do so by calling the respective function with the necessary parameters. For instance, you can use `funName('params')` to pass the parameter.
+* **Passing Parameter (Query Module):** Passing parameters from the app to a query module involves creating input fields within the query module like `{{inputs.param}}` and referencing them directly from the app's UI.
+
 
 ### Entity references inside JS module
 
@@ -78,7 +63,7 @@ Inside JS modules, you can create multiple JS objects and datasource queries to 
 
 The **Main** JS file represents the JS module code; however, other entities such as queries and JS objects are not reflected in the app. This feature is only available in JS modules and not in query modules. In query modules, you can only create datasource queries.
 
-
+You can use Global Objects and Functions within JS modules to achieve dynamic execution within the app. For instance, invoking the `navigateTo` function inside a JS module allows you to initiate navigation actions, redirecting users to different pages within the app.
 
 
 
@@ -103,7 +88,7 @@ For example, you have a query module that displays data. When you publish the pa
 
 This feature allows you to import and export packages across different workspaces. When exporting a package, it is saved as a JSON file, and you can import it into another workspace or application as needed. When importing a package, you can upload the file into your workspace, and Appsmith automatically recognizes and categorizes it as a package or an app. However, there are some key details to consider:
 
-* **Overriding Existing Packages:** When importing a package, it overwrites the existing package in the destination workspace. This ensures that the latest configuration is applied.
+* **Overriding Existing Packages:** Importing a package involves overwriting the existing package in the destination workspace, ensuring that the latest configuration is applied. To import a package, navigate to the package **Settings**, click on **Import**, and then add the JSON file.
 * **Updates**: If you're using an exported version of a package in another workspace, updates won't happen automatically. You need to re-import the latest version to get the changes.
 * **Deployment**: The imported package is not auto-deployed. Deployment occurs only when explicitly triggered. This means changes made to the package won't immediately reflect in the live version of the app.
 <!-- vale off -->
