@@ -25,7 +25,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 * [Enterprise edition plan](https://www.appsmith.com/pricing).
 * An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
-* Basic knowledge of how [GitHub Actions](https://docs.github.com/en/actions) work.
+* Basic knowledge of how [GitHub Actions](https://docs.github.com/en/actions).
 
 ## Configure continuous delivery
 
