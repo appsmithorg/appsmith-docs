@@ -1,28 +1,15 @@
----
-sidebar_position: 1
----
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# GitLab
 
-# Connect Git Repository
-
-This guide shows how to connect your Appsmith application to a remote Git repository. Select the appropriate tabs based on your Git service provider and follow the steps.
-
-
- 
-<Tabs queryString="version-control">
-<TabItem label="GitHub" value="github">
+GitLab is a web-based platform that provides version control and collaborative features for software development projects. This guide shows how to connect your Appsmith application to a remote GitLab repository.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/DCYRQLLanyMru29sVk9i?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/E3R3wF3mFywz7HvmnMsa?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-
-
 1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
 
-2. Select **Github** as the service provider. 
+2. Select **Gitlab** as the service provider. 
 
 <dd>
 :::info
@@ -31,7 +18,8 @@ Version Control works with any Git hosting service that supports **SSH protocol*
 
 </dd>
 
-3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty.
+3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty. See [How to create a new repository / project](https://docs.gitlab.com/ee/user/project/index.html)
+
 
 4. After setting up an empty repository, navigate to the repository's landing page, click on the Code button, and copy the **SSH** URL.
 
@@ -47,24 +35,6 @@ Version Control works with any Git hosting service that supports **SSH protocol*
 
 With these steps, you have successfully connected to Git.
 
-
-</TabItem>
-<TabItem label="GitLab" value="gitlab">
-
-
-
-</TabItem>
-<TabItem label="Bitbucket" value="bitbucket">
-
-
-</TabItem>
-<TabItem label="Azure" value="azure">
-
-
-</TabItem>
-</Tabs>
-
-
 :::caution
 A user needs to have **Create** permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see [Default Roles](/advanced-concepts/invite-users#default-roles-for-workspace) and [Granular Access Control](/advanced-concepts/granular-access-control/roles#application-resources).
 :::
@@ -72,3 +42,4 @@ A user needs to have **Create** permission for application resources on the work
 ## Next steps
 
 [Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
+
