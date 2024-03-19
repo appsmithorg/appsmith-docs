@@ -1,6 +1,6 @@
 ---
 description: >-
-  Learn how to build effective workflows with Appsmith using multiple queries and execute them in the serial, parallel or conditional manner and programming widgets for smooth user interaction.
+  Learn how to build effective actions with Appsmith using multiple queries and execute them in the serial, parallel or conditional manner and programming widgets for smooth user interaction.
 
 toc_min_heading_level: 2
 toc_max_heading_level: 5
@@ -8,7 +8,7 @@ toc_max_heading_level: 5
 
 # Trigger UI Actions
 
-This guide shows you how to initiate and manage UI workflows, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors. 
+This guide shows you how to initiate and manage UI actions, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors. 
 
 ## Execute actions in a specific order
 
