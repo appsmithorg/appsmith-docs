@@ -4,18 +4,13 @@ This page provides information about the package settings and properties availab
 
 ## Query module
 
-These properties are customizable options available within the query editor of the query module. They can be accessed by adding the query module in the App.
-
-Additionally, you can add multiple query modules from the same package, each with different configurations.
+When you add the query module inside the app, you can access these customizable options within the query editor. You can add multiple query modules from the same package, each with different configurations.
 
 
-<ZoomImage
-  src="/img/inputs_mod_app.png" 
-  alt=""
-  caption=""
-/>
 
-### Property 
+### Properties 
+
+These properties facilitate dynamic value transmission from your app to the query module. 
 
 #### Inputs
 
@@ -26,17 +21,20 @@ The input property enables you to pass dynamic values from your app to the query
 
 You cannot edit the input name or query configuration from the App; you can only pass values to the available inputs. 
 
+<ZoomImage
+  src="/img/inputs_mod_app.png" 
+  alt=""
+  caption=""
+/>
+
 
 *Example:*
 
-If you have two inputs named `limit` and `offset`, you can pass data like this:
+If you have an input named `distinct_id`, you can pass data like this:
 
 ```js
-//limit input
-{{Table1.pageSize}}
-
-//offset input
-{{Table1.pageOffset}}
+//distinct_id
+{{appsmith.user.email}}
 ```
 
 
@@ -46,11 +44,14 @@ If you have two inputs named `limit` and `offset`, you can pass data like this:
 
 ### Settings 
 
+These settings allow you to configure the query module according to your requirements
+
 #### Run query on page load
 
 <dd>
 
-When enabled, this property allows the query to automatically execute each time the page is loaded. This ensures that the data is refreshed dynamically, providing users with the most up-to-date information whenever they access the page.
+When enabled, this property allows the query to automatically execute each time the page is loaded. You can choose to enable it based on your specific requirements and configure it to execute on page load.
+
 
 </dd>
 
@@ -78,7 +79,11 @@ Additionally, you can add multiple JS modules from the same package, each with d
   caption=""
 />
 
-### Function name
+### Function setting
+
+This setting allows you to configure each function available in the JS module according to your requirements.
+
+#### Function name
 
 <dd>
 
@@ -92,7 +97,7 @@ This setting displays all the function names available in the JS module.
 
 <dd>
 
-When enabled, this property allows the specified JS function to run when the page loads. You can set this property for all the available functions.
+When enabled, this property allows the specified JS function to run when the page loads. You can set this property for each JS function available.
 
 
 </dd>

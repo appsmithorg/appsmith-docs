@@ -18,10 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-This guide shows how to use database queries within JavaScript modules, enabling efficient data handling and manipulation for applications.
-
-You can create queries and JS objects specific to this JS module. The **Main JS object** represents the JS module code.
-
+This guide shows how to use datasource queries and JSObjects within JavaScript modules, enabling efficient data handling and manipulation for applications.
 
 
 ## Create a package
@@ -31,29 +28,22 @@ A package is a collection of Modules that can be versioned and distributed acros
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/cEtKWdgXbr8zXooVxkg3?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/yIAUcYcB6uPPuBxoaahD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
 1. **Create a new package** by clicking on the top-right corner of your workspace.
 
-2. Click **New Module** > **JS Module**.
+2. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
 
-
-3. To pass query data, create a datasource within this JS module.
+3. To pass or format the query data, create a datasource query within this JS module.
 
 <dd>
 
 :::info
-Passing Query Module data to JS modules is not supported.
+Using the query module inside a JavaScript module is not supported.
 :::
-
-*Example:* To fetch product data, create a new API and configure the URL:
-
-```js
-https://mock-api.appsmith.com/products
-```
 
 </dd>
 
@@ -63,7 +53,9 @@ https://mock-api.appsmith.com/products
 <dd>
 
 
-*Example:*  If you want to format the availability date of the products into the `DD Mon, YYYY` format (eg: "April 2, 2024"), you can add the following code:
+*Example:* If you want to format the product data and implement a `showAlert()` function whenever a product's stock falls below 10, you can use:
+
+ You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App.
 
 ```js
 export default {
@@ -71,20 +63,20 @@ export default {
   async myFun1() {
     try {
       // Assuming Product_Api.run() returns a promise
-      await Api1.run();
-      const dataArray = Api1.data.products;
+      await Query1.run();
+      const dataArray = Query1.data;
 
-      // Map over dataArray and format the availabilityDate
+      // Check stock availability
       const updatedDataArray = dataArray.map(item => {
-        const dateToFormat = new Date(item.availabilityDate);
+        // Check if stock is below threshold (e.g., 10)
+        if (item.stock < 10) {
+          // Call showAlert function to display alert
+           showAlert(`Low stock for ${item.product_name} [ID: ${item.id}]`, 'warning');
+        }
 
-        // Format the availabilityDate using toLocaleDateString()
-        const formattedDate = dateToFormat.toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' });
-
-        // Create a new formattedDate property with the formatted date
+        // Return the item without the formattedDate property
         return {
-          ...item,
-          formattedDate: formattedDate
+          ...item
         };
       });
 
@@ -112,7 +104,7 @@ export default {
 Once you've created a JS module, follow these steps to access its data in any application:
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/qIaxZg11BtrJBPQBuxJm?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/ELyb3WmDXhnZa3WxJC8L?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -132,7 +124,8 @@ Once you've created a JS module, follow these steps to access its data in any ap
 {{JSModule1_1.myFun1.data}}
 ```
 
-With this, a new column displays the formatted data in the new format. 
+With this, when the product stock drops below 10, an alert is shown in both the app and the package.
+
 
 
 </dd>

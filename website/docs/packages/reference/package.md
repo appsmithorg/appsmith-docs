@@ -1,6 +1,6 @@
 # Package Settings
 
-This page provides information about the settings and properties available within Packages, including configuration options for query modules and JavaScript modules.
+This page provides information about the settings and properties available within Packages.
 
 ## Query module properties
 
@@ -14,13 +14,21 @@ The property allows you to create dynamic inputs for queries, which enables you 
 
 To use an input within the query, enclose the input name within double curly braces like this: `{{ inputs.input_name }}`.
 
+
+<ZoomImage
+  src="/img/INPUT-pack.png" 
+  alt=""
+  caption=""
+/>
+
+
 *Example:*
 
 ```sql
 SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 ```
 
-The query may fail if no default values have been set for the inputs.
+Setting default input values ensures successful query execution.
 
 
 
@@ -29,7 +37,15 @@ The query may fail if no default values have been set for the inputs.
 
 ### Package import
 
+
 <dd>
+
+<ZoomImage
+  src="/img/settings-pack.png" 
+  alt=""
+  caption=""
+/>
+
 
 You can access the package import feature from the package settings page at the bottom left of the screen. This feature enables you to import package JSON files, facilitating integration and updates within your project. 
 
