@@ -26,7 +26,7 @@ currentDate: new Date(),
 ```
 * Introduce a function to get **Select_public_users1** data
 ```jsx
-getUserData: () ⇒ {
+getUserData: () => {
    return Select_public_users1.data
 },
 ```
@@ -35,7 +35,7 @@ getUserData: () ⇒ {
   <summary>Show Hint</summary>
   <div>
     ```jsx
-    getUserAge: (dob) ⇒ {
+    getUserAge: (dob) => {
         return moment(this.currentDate).diff(moment(dob), ‘years’)
     }
     ```
