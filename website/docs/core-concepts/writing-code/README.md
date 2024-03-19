@@ -106,7 +106,6 @@ JS Objects stores a collection of variables and functions, and you can use it to
 
 ## Further reading
 
-* [Creating Workflows](/core-concepts/writing-code/workflows)
 * [Using JavaScript Promises](/core-concepts/writing-code/javascript-promises)
 * [Importing External Libraries](/core-concepts/writing-code/ext-libraries)
 * [Working with Appsmith Framework Functions](/reference/appsmith-framework)

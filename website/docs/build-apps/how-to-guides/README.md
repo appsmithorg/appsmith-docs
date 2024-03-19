@@ -138,7 +138,7 @@
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
-            <a href="/core-concepts/writing-code/workflows"><strong>Trigger UI Workflow</strong></a>
+            <a href="/core-concepts/writing-code/ui-actions"><strong>Trigger UI Workflow</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows you how to initiate and manage UI workflows, which allows you to trigger multiple queries or JavaScript functions in response to user actions. They can be executed serially, in parallel, or conditionally to create complex, dynamic behaviors.</div>
     </div>

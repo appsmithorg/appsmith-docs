@@ -1196,6 +1196,10 @@
       "destination": "/getting-started/tutorials/start-building"
     },
     {
+      "source": "/core-concepts/writing-code/workflows",
+      "destination": "/workflows"
+    },
+    {
       "source": "/getting-started/tutorials/customer-support-tool/application-settings",
       "destination": "/getting-started/tutorials/start-building"
     }
