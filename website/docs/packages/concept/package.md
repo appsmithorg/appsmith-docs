@@ -40,6 +40,7 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
     Each module instance can have different settings and configurations. These instances, named sequentially (e.g., `productutil_1`, `productutil_2`), allow for the integration of diverse functionalities. With each instance, you can customize and add specific features.
 
+    For example, if you have a module for user authentication and you want to use it for multiple cases, such as login and registration functionalities, you can create separate instances with different configurations for each use case.
 
 
 ### Package Scope
@@ -74,7 +75,7 @@ You can use Global Objects and Functions within JS modules to achieve dynamic ex
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 
 * **Edit mode update:** Updating and publishing a package makes the changes available to the apps in the edit mode. You may need to refresh the app to see those changes. This ensures that you can see and work with the latest configurations while making changes within the application.
-* **Redeployment:** To bring the changes to the live application, a manual redeployment is necessary. This ensures controlled and intentional updates to the deployed version of the app.
+* **Redeployment:** To bring the changes to the live application, a redeployment is necessary. 
 
 For example, you have a query module that displays data. When you publish the package containing this module, all the apps using that module will get updated in edit mode. However, if you want to reflect these changes in the deployed version of the app, you need to redeploy the app with the latest updates.
 
