@@ -8,7 +8,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'training/session-1',
-        'training/session-2'
+        /*'training/session-2'*/
       ]
     }, //training end
   ],
