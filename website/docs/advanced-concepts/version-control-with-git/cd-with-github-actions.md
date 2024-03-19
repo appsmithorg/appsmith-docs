@@ -51,7 +51,7 @@ Follow these steps to set up continuous delivery in Appsmith:
 6. Click the **Finish Setup**.
 
 
-## Set Up GitHub Actions 
+## Set Up GitHub Action
 
 Follow these steps to configure a GitHub Actions workflow and automate continuous delivery for your Appsmith application:
 
@@ -59,13 +59,13 @@ Follow these steps to configure a GitHub Actions workflow and automate continuou
 
 2. Create a directory called `.github/workflows` in the root of the repo.
 
-3. Create a workflow `yaml` file in the `workflows` directory with an appropriate name, for example, `.github/workflows/deploy-appsmith.yaml`.
+3. Create a workflow `yaml` file in the `workflows` directory with an appropriate name, for example, `deploy-appsmith.yaml`.
 
 4. In the `deploy-appsmith.yaml` file, add the following code to enable automatic deployment of changes to your Appsmith application.
 
 <dd>
 
-Replace the `curl` command with the command provided by Appsmith.
+Replace the `curl` command with the command provided by Appsmith(as mentioned in step 4 of section 1).
 
 ```yaml
 name: appsmith-cd  # Workflow name
@@ -94,12 +94,10 @@ This YAML code defines a GitHub Actions workflow named `appsmith-cd` that trigge
 <dd>
 
 
-*Example:* You can use GitHub Secrets, where you can securely add your token in the repository's **Secrets and Variables** settings.
-
-And in the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
+*Example:* You can use GitHub Secrets, where you can securely add your token in the repository's **Secrets and Variables** settings. In the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
 
 
-Learn more about [Github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
+For information see [Github action secrets](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository).
 </dd>
 
 
