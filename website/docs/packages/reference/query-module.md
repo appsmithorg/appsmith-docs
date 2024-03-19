@@ -6,7 +6,7 @@ This page provides information about the package settings and properties availab
 
 ## Query module
 
-When you add the query module inside the app, you can access these customizable options within the query editor. You can add multiple query modules from the same package, each with different configurations.
+When you integrate the query module into the app, you can access and modify the parameters that have been set up for the query module using the query editor. You have the option to include multiple query modules, whether they're from the same package or different ones, and supply parameters to each module according to your specific needs.
 
 
 
