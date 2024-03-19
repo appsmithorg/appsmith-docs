@@ -1,6 +1,8 @@
 # App-Level Package Settings
 
-This page provides information about the package settings and properties available within the App.
+This page provides information about the package settings and properties available within the App, which allows you to configure the query and JS modules.
+
+
 
 ## Query module
 

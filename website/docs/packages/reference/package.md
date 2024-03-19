@@ -1,6 +1,7 @@
 # Package Settings
 
-This page provides information about the settings and properties available within Packages.
+This page provides information about the settings and properties available within Packages, which allows you to configure the package and module settings.
+
 
 ## Query module properties
 
@@ -49,7 +50,8 @@ Setting default input values ensures successful query execution.
 
 You can access the package import feature from the package settings page at the bottom left of the screen. This feature enables you to import package JSON files, facilitating integration and updates within your project. 
 
-Importing a package file overrides your existing package. Please proceed with caution when selecting the file to import.
+Importing a package file overrides your existing package. For instance, when you import a package containing display data, the existing queries are overwritten with the new queries, reflecting these changes in the app.
+
 
 
 
