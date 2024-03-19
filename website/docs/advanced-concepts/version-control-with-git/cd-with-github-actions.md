@@ -81,7 +81,7 @@ jobs:
 
     steps:
     // highlight-next-line
-      - run: "curl --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f2806f68?branchName=main --header 'Authorization: Bearer <bearer token>'"
+      - run: "curl -f --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f14c735?branchName=main --header 'Authorization: Bearer <bearer token>'"
 ```
 
 This YAML code defines a GitHub Actions workflow named `appsmith-cd` that triggers on every push to the `main` branch. Within this job, a single step is defined to execute a `curl` command. 
