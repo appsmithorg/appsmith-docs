@@ -636,6 +636,13 @@ const sidebars = {
             'packages/tutorial/js-module'
           ],
         },
+        {
+          type: 'category',
+          label: 'Concepts',
+          items: [
+            'packages/concept/package'
+          ],
+        },
       ]
     }, //module end
     //Workflows start
