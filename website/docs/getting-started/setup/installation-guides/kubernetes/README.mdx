@@ -40,17 +40,18 @@ You are free to choose your preferred platform for hosting the Kubernetes cluste
 
 1. Verify if you have access to AWS CLI with:
 
-```bash
-  aws sts get-caller-identity
-```
+  ```bash
+    aws sts get-caller-identity
+  ```
 
-The above command provides information related to your account and ARN, indicating that you can connect and access your Amazon account using a terminal.
+  The above command provides information related to your account and ARN, indicating that you can connect and access your Amazon account using a terminal.
 
 2. Create KubeConfig with:
 
   ```bash
   aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile <PROFILE_NAME>
   ```
+
   In the above command, add the profile name that has access to the EKS cluster to the `--profile` parameter.
 
 3. Test your Kubernetes configuration with:
@@ -58,6 +59,7 @@ The above command provides information related to your account and ARN, indicati
   ```bash
   kubectl cluster-info
   ```
+  
   The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information.
 
 4. Define a storage class.
