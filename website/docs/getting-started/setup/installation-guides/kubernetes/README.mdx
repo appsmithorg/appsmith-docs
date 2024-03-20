@@ -20,7 +20,6 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 ## System requirements
 
 - At least 15 GB of free storage space.
-- Incase you are deploying on a cloud-provider like AWS,GCP you need a persistent volume.
 - 4 GB of RAM.
 
 ## Prerequisites
@@ -30,37 +29,40 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
    - [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
    - [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
    - [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
-3. Set up a Kubernetes cluster. Follow these steps using a terminal to set up the cluster on AWS EKS:
 
-  :::info
-  You are free to choose your preferred platform for hosting the Kubernetes cluster. Make sure you have configured Kubeconfig and created a default storage class before proceeding with the Appsmith installation. If you face any issues, contact the support team using the chat widget at the bottom right of this page.
-  :::
+## Set up Kubernetes cluster
 
-    a. Verify if you have access to AWS CLI with:
+Installing Appsmith via Kubernetes requires a persistent volume. In this section, you will create a KubeConfig and define a storage class that automatically generates a persistent volume during installation. If you're using a different cloud provider, ensure that your Kubernetes cluster can access a persistent volume for Appsmith to function properly. Follow these steps using a terminal to set up the cluster on AWS EKS:
 
-    ```bash
-      aws sts get-caller-identity
-    ```
+:::info
+You are free to choose your preferred platform for hosting the Kubernetes cluster. Ensure you have configured Kubeconfig, created a default storage class, and verified that the cluster can access a persistent volume before proceeding with the Appsmith installation. If you encounter any issues, contact the support team using the chat widget at the bottom right of this page.
+:::
 
-    The above command provides information related to your account and ARN, indicating that you can connect and access your Amazon account using a terminal.
+1. Verify if you have access to AWS CLI with:
 
-    b. Create KubeConfig with:
+```bash
+  aws sts get-caller-identity
+```
 
-    ```bash
-    aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile <PROFILE_NAME>
-    ```
-    In the above command, add the profile name that has access to the EKS cluster to the `--profile` parameter.
+The above command provides information related to your account and ARN, indicating that you can connect and access your Amazon account using a terminal.
 
-    c. Test your Kubernetes configuration with:
+2. Create KubeConfig with:
 
-    ```bash
-    kubectl cluster-info
-    ```
-    The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information.
+  ```bash
+  aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile <PROFILE_NAME>
+  ```
+  In the above command, add the profile name that has access to the EKS cluster to the `--profile` parameter.
 
-    d. Define a storage class.
+3. Test your Kubernetes configuration with:
 
-    * For Kubernetes version earlier than `1.23`, define the storage class with:
+  ```bash
+  kubectl cluster-info
+  ```
+  The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information.
+
+4. Define a storage class.
+
+  * For Kubernetes version earlier than `1.23`, define the storage class with:
 
     ```bash
     kubectl apply -f - <<EOF
@@ -72,24 +74,24 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
       provisioner: kubernetes.io/aws-ebs
       EOF
     ```
-    * For Kubernetes version `1.23` and later, define the storage class with:
-      1. Create an IAM role by following the Amazon official documentation for [Creating the Amazon EBS CSI driver IAM role](https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html).
-      2. Add the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver chart repository with:
-        ```bash
-        helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
-        ```
-      3. Update the Amazon EBS CSI driver repository with:
-        ```bash
-        helm repo update
-        ```
-      4. Install Amazon EBS CSI driver with:
-        ```bash
-        helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver aws-ebs-csi-driver
-        ```
-      5. Verify the Amazon EBS CSI driver installation with:
-        ```
-        kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
-        ```
+  * For Kubernetes version `1.23` and later, define the storage class with:
+    1. Create an IAM role by following the Amazon official documentation for [Creating the Amazon EBS CSI driver IAM role](https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html).
+    2. Add the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver chart repository with:
+      ```bash
+      helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
+      ```
+    3. Update the Amazon EBS CSI driver repository with:
+      ```bash
+      helm repo update
+      ```
+    4. Install Amazon EBS CSI driver with:
+      ```bash
+      helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver aws-ebs-csi-driver
+      ```
+    5. Verify the Amazon EBS CSI driver installation with:
+      ```
+      kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
+      ```
 
 ## Install Appsmith
 

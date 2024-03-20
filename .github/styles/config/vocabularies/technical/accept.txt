@@ -76,3 +76,6 @@ Libraries
 libraries
 JS
 UserAgent
+k8s
+K8s
+Kubernetes
