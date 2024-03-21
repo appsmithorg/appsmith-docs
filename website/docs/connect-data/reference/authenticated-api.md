@@ -190,7 +190,7 @@ NOTE to self - I'm a bit confused yet with how audience works.
 <dd>
 The _Resource_ parameter expects a URL and designates an application acting as a resource server. This indicates the protected resource that Appsmith accesses on behalf of the user. The resource can encompass different entities such as API endpoints, web services, files, or any other resource that require access control. The responsibility of hosting and providing access to these protected resources lies with the resource server.
 
-NOTE to self - Though, generally I aling but still not sure how it ties up with the audience setting.
+NOTE to self - Though, generally, I'm aligned with this but still not sure how it ties up with the audience setting.
 </dd>
 
 #####  Send scope with refresh token
