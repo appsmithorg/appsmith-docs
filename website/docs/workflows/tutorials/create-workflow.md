@@ -37,7 +37,7 @@ Before you start, make sure you have the following:
 
 Follow these steps to build a notification workflow:
 
-To send notifications to the users you will create a workflow, and configure it as a webhook. Follow these steps to create a webhook workflow within your workspace. The newly created workflow can be accessed in all apps in the same workspace:
+To send notifications to the users you will create a workflow, and configure it as a webhook. Follow these steps to create a webhook workflow within your workspace. All apps in the same workspace can now access the newly created workflow:
 
 <br/>
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -66,51 +66,23 @@ To send notifications to the users you will create a workflow, and configure it 
 
 You've created your first workflow.
 
-## Configure SMTP datasource 
-
-To send notifications from the workflow, you will need to set up an SMTP datasource and connect it with an email service provider. Follow these steps to set up an SMTP datasource:
-
-1. Click the **Data** tab. Click the **+** icon next to _Datasources in your workspace_ to add a new [SMTP](/connect-data/reference/using-smtp) datasource.
-
-2. Give it a meaningful and unique name. For example, _Send\_Email\_SMTP_
-
-3. Enter the following details in the SMTP connection parameter fields:
-    * **Host Address**: Add `smtp-relay.brevo.com` in the SMTP host address field.
-    * **Port**: Add `587` in the SMTP port field.
-    * **Username**: Add `demo.smtp.send.email@gmail.com` in the Username field.
-    * **Password**: Add the below key in the SMTP password field.
-        ```bash
-        xsmtpsib-b80d2e2a0c90517b7fc8f831270473d56621b3fa7b574f340f2f1687dbd904c4-zkJC7SarXVE3YPhg
-        ```
-
-4. Test and save the datasource configuration.
-
 ## Write query to send email
 
-Follow these steps to write a query for sending email:
+Follow these steps to write a blank API query for sending email:
 
-1. Add a query to send a welcome email to the user and configure it as shown below:
+1. Add a **New blank API** query to send a welcome email to the user and configure it as shown below:
     * Rename the query to _Send\_Welcome\_Email_
-    * **Commands** - Select `Send email`.
-    * **From Email** - Add `demo.smtp.send.email@gmail.com`.
-    * **To Email** - Add your email address in this field.
-    * **Subject** - Add `Welcome to the Team!`.
-    * **Body** - Add the below text:
-        ```text
-        Dear Employee,
-        
-        Welcome to the team!
-
-        We're thrilled to have you on board and look forward to working together. 
-        Feel free to reach out if you have any questions or need help. 
-
-        Let's achieve great heights together!
-
-        Best regards,
-        Company
+    * **HTTP Method** - Select `POST`.
+    * **URL** - Add `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d` in the input box.
+    * **Body** - In the **Body** tab, add the below JSON. Remember to replace `<add_your_email_address>` with your email.
+        ```javascript
+        {
+            "email": "<add_your_email_address>"
+            
+        }
         ```
 2. Click the **Run** button to send an email. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`. 
-3. Update the _Send\_Welcome\_Email_ query and remove your email from the **To** field, and add `{{this.params.send_email_to}}` to it. Adding `{{this.params.send_email_to}}` replaces the parameter `send_email_to` with the actual value at run time.
+3. Update the _Send\_Welcome\_Email_ query and remove your email, and add `{{this.params.send_email_to}}` to it. Adding `{{this.params.send_email_to}}` replaces the parameter `send_email_to` with the actual value at run time.
 4. Go to the _Main_ JS object and update the `executeworkflow()` function to read the email sent as a parameter.
 
      ```javascript
@@ -142,10 +114,10 @@ Follow these steps to configure a webhook trigger for the workflow:
  
 1. Click the gear icon ⚙️ in the bottom left corner to configure the workflow settings.
 2. Toggle the **Webhook trigger** property to configure the workflow as a webhook.
-3. Copy and save the **URL** and the **Bearer Token**. If you wish to connect your workflow with an external app then you will need the **URL** and the **Bearer Token**. You'll see this in action in the [Send email using Postman](#send-email-using-postman) section.
+3. Copy and save the **URL**. If you wish to connect your workflow with an external app then you will need the **URL**. You'll see this in action in the [Send email using Postman](#send-email-using-postman) section.
 4. Click the **Publish** button in the top right corner to publish your workflow.
 
-You've configured the webhook trigger for the workflow, and it can be integrated and triggered from external apps.
+You've configured the webhook trigger for the workflow. You can now integrate and trigger it from external apps.
 
 ## Send email using Postman
 
