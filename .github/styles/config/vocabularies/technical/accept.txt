@@ -88,3 +88,4 @@ parameters
 k8s
 K8s
 Kubernetes
+CLI
