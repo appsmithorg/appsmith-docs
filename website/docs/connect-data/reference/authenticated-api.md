@@ -58,7 +58,7 @@ Query parameters consist of key-value pairs passed as parameters in the URL of y
 
 <dd>
 The authentication type setting determines the method used to authenticate requests. You can configure the details under the Authentication dropdown menu. The available options are:
-  - **None**- When selected, Appsmith doesn't send authentication information with the request. Use this option if your API doesn't require authentication details in the request.  
+  - ** ne**- When selected, Appsmith doesn't send authentication information with the request. Use this option if your API doesn't require authentication details in the request.  
   - **Basic**- When selected, Appsmith sends the Username and Password in the Authorization header of each request as a base64-encoded string. Use this option if your API requires username and password details in the request.
   - **OAuth 2.0**- When selected, Appsmith enables integration with APIs that require OAuth 2.0 authentication. With OAuth 2.0 you can configure secure authorization flows, allowing you to grant limited access to resources. For more information, see the [OAuth 2.0 Configuration](#oauth-20) section.
   - **API Key**- When selected, Appsmith sends a key-value pair in the Authorization header of each request. This method is commonly used for API authentication, where the API hosting provider supplies a unique API key to the client for securely accessing the APIs.
@@ -99,10 +99,7 @@ Specifies the string that should precede the access token when included as a hea
 ### Access token URL
 
 <dd>
-   The Access Token URL is the endpoint on the authentication server used to exchange the authorization code for an access token. This URL is essential for obtaining access tokens, which are necessary for authenticating requests to protected resources. In some providers, the same URL can be used to generate new access tokens when an existing token expires, ensuring uninterrupted access to resources without requiring user re-authentication. 
-  
-   NOTE To self - Confirmation pending
-    TO DO - I beileve that we should tell users to use the Refresh token URL here so that the access token refresh flow can work once the access token is expired. The access token generation happens using the authorization url when an auth code is exchanged in place of the access token.
+   The Access Token URL is the endpoint on the authentication server used to exchange the authorization code for an access token. This URL is essential for obtaining access tokens, which are necessary for authenticating requests to protected resources. Appsmith uses the same URL to also generate new access tokens when an existing token expires, ensuring uninterrupted access to resources without requiring user re-authentication. You can get this API information from the official API documentation of the provider.
 </dd>
 
 
@@ -122,7 +119,9 @@ The _Client secret_ is a confidential string issued to your client application b
 ### Scopes
 
 <dd>
-  _Scopes_ specify the permissions required by your application to access protected resources on behalf of the user. When making requests to the authentication server of the OAuth provider, you can specify one or more scopes that define the level of access your application needs. The OAuth provider defines the scopes that correspond to different types of user data or actions within their ecosystem. You can add one or more scopes defined by the provider as comma-separated values. For example, when integrating with a user's Google Account using OAuth 2.0, you might request scopes such as `profile` to access basic profile information or `email` to access the user's email address. Similarly, when reading files from Dropbox, you define a scope such as `files.content.read` to allow file reading operations.     
+  _Scopes_ specify the permissions required by your application to access protected resources on behalf of the user. When making requests to the authentication server of the OAuth provider, you can specify one or more scopes that define the level of access your application needs. The OAuth provider defines the scopes that correspond to different types of user data or actions within their ecosystem, you add these scopes when registering your application with the provider. 
+  
+  During configuring the parameter on Appsmith, you may choose to add one or more scopes as comma-separated values from the defined list of scopes supplied during registering the application with the provider. For example, when integrating with a user's Google Account using OAuth 2.0, you might request scopes such as `profile` to access basic profile information or `email` to access the user's email address. Similarly, when reading files from Dropbox, you define a scope such as `files.content.read` to allow file reading operations.     
 </dd>
 
 ### Client Authentication
@@ -148,7 +147,10 @@ Client Authentication determines how Appsmith can share the client credentials (
 ### Authorization URL
 
 <dd>
-    The _Authorization URL_ parameter is specific to the Authorization code grant type. It denotes the endpoint on the authentication server used to initiate the authentication process for the client application, which seeks authorization on behalf of the user. Appsmith uses this URL to redirect users to start the authentication flow. When redirected, users log in and grant permissions to Appsmith. Subsequently, after successful authentication and authorization, the authorization server redirects the user back to Appsmith with an authorization code.
+    The _Authorization URL_ parameter is specific to the Authorization code grant type. It denotes the endpoint on the authentication server used to start the authentication process for the client application, which seeks authorization on behalf of the user.
+
+    Appsmith uses this URL to redirect users to the provider's end and starts the authentication flow. When redirected, users log in and grant permissions to Appsmith. Subsequently, after successful authentication and authorization, the authorization server redirects the user back to Appsmith with an authorization code.
+
 </dd>
 
 ### Redirect URL
@@ -160,31 +162,29 @@ The _Redirect URL_ parameter is only available for the Authorization code grant 
 ### Custom Authentication Parameters
 
 <dd>
-_Custom Authentication Parameters_ setting is available only for the Authorization code grant type. It allows users to tailor the OAuth 2.0 authorization code flow to their specific needs or preferences. These parameters provide more control over the authentication process and enable the implementation of custom logic or processing at the OAuth provider level. If configured, users can leverage these parameters to customize authentication interactions and behaviors. For example, in Google OAuth 2.0, you can configure the `prompt` parameter to force users to select an account or provide consent. Similarly, in Dropbox OAuth 2.0, you can configure the `token_access_type` parameter to specify whether the access token is short-lived or long-lived and affects the token's validity period. 
+_Custom Authentication Parameters_ setting is available only for the Authorization code grant type. It allows users to tailor the OAuth 2.0 authorization code flow to their specific needs or preferences. These parameters provide more control over the authentication process and enable the implementation of custom logic or processing at the OAuth provider level. 
+
+Configure these parameters on Appsmith to customize authentication interactions and behaviors. For example, in Google OAuth 2.0, you can configure the `prompt` parameter to force users to select an account or provide consent. Similarly, in Dropbox OAuth 2.0, you can configure the `token_access_type` parameter to specify whether the access token is short-lived or long-lived and affects the token's validity period. 
 </dd>
 
 
 ###  Authorization expires in (seconds)
 
 <dd> 
-Appsmith uses refresh tokens to generate new access tokens whenever the existing ones expire. Some OAuth provider doesn't specify the expiry duration (`expires_in` or `expires_at`) for access tokens. In such cases, use the _Authorization expires in (seconds)_ parameter that specifies the expiry time for the access token. This parameter is available only for the Authorization code grant type. When set, Appsmith uses the duration to invalidate the access token, and determines when to refresh the access token. For example, Salesforce doesn't provide an expiry for the access token. You can configure this parameter for Appsmith to determine when to expire and refresh the access token after expiry.
+Appsmith uses refresh tokens to generate new access tokens whenever the existing ones expire. Some OAuth provider doesn't specify the expiry duration (`expires_in` or `expires_at`) for access tokens. In such cases, use the _Authorization expires in (seconds)_ parameter that specifies the expiry time for the access token. This parameter is available only for the Authorization code grant type. When set, Appsmith uses the duration to determine when to invalidate the existing access token and generate a new access token. For example, Salesforce doesn't provide an expiry for the access token. You can configure this parameter for Appsmith to determine when to expire and refresh the access token after expiry.
 </dd>
 
 
 ###  Audience
 
 <dd>
-The _Audience_ parameter expects a URL and specifies the intended audience for the OAuth access token. Appsmith uses this parameter to recognize the designated resource server or API endpoint that can accept access tokens and access protected resources. This restriction adds an extra layer of security to OAuth 2.0 authorization by ensuring that the access token is only accepted by the intended audience, thereby preventing unauthorized access to resources.
-
-NOTE to self - I'm a bit confused yet with how the audience works.
+The _Audience_ parameter expects a URI and identifies the resource server or API endpoint that will accept the access token. When configuring the parameter on Appsmith to pass the audience value, refer to the official documentation of the OAuth provider and the specific requirements and guidelines around audience setting.
 </dd>
 
 ###  Resource
 
 <dd>
-The _Resource_ parameter expects an application URL that act as a protected resource server that Appsmith accesses on behalf of the user. The resource can contain different entities such as API endpoints, web services, files, or any other resource that requires access control. The responsibility of hosting and providing access to these protected resources lies with the resource server.
-
-NOTE to self - Though, generally, I'm aligned with this but still not sure how it ties up with the audience setting, that Appsmith uses internally. This is important to know - to instruct users when to use this setting.
+The _Resource_ parameter expects an application URL that act as a protected resource server that Appsmith accesses on behalf of the user. The resource can contain different entities such as API endpoints, web services, files, or any other resource that requires access control. The responsibility of hosting and providing access to these protected resources lies with the resource server. When configuring the parameter on Appsmith to pass the resource value, refer to the official documentation of the OAuth provider and the specific requirements and guidelines around resource setting.
 </dd>
 
 ###  Send scope with refresh token
@@ -211,8 +211,6 @@ The _Send client credentials with (on refresh token)_ setting is available only 
   ```javascript
   Authorization: Basic bXlfY2xpZW50X2lkOm15X2NsaWVudF9zZWNyZXQ=
   ```
-
-  NOTE to self - When the client authentication parameter is already present, why this parameter is needed as part of the advanced setting for authorization code flow?
 
 </dd>
 
