@@ -83,5 +83,5 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
 
 ## Troubleshooting
 
-If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you are facing issues contact the support team using the chat widget at the bottom right of this page.
 
