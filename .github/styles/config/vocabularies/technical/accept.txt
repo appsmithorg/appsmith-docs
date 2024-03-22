@@ -79,3 +79,4 @@ UserAgent
 k8s
 K8s
 Kubernetes
+CLI

@@ -51,6 +51,7 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
                     'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                     'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
@@ -641,7 +642,7 @@ const sidebars = {
           collapsed: true,
           label: 'How-to Guides',
           items: [
-            'packages/how-to-guides/use-query-inside-js-module',          ],
+            'packages/how-to-guides/use-query-inside-js-module',],
         },
         {
           type: 'category',
