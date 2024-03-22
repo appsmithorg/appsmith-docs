@@ -58,7 +58,7 @@ Query parameters consist of key-value pairs passed as parameters in the URL of y
 
 <dd>
 The authentication type setting determines the method used to authenticate requests. You can configure the details under the Authentication dropdown menu. The available options are:
-  - ** ne**- When selected, Appsmith doesn't send authentication information with the request. Use this option if your API doesn't require authentication details in the request.  
+  - **None**- When selected, Appsmith doesn't send authentication information with the request. Use this option if your API doesn't require authentication details in the request.  
   - **Basic**- When selected, Appsmith sends the Username and Password in the Authorization header of each request as a base64-encoded string. Use this option if your API requires username and password details in the request.
   - **OAuth 2.0**- When selected, Appsmith enables integration with APIs that require OAuth 2.0 authentication. With OAuth 2.0 you can configure secure authorization flows, allowing you to grant limited access to resources. For more information, see the [OAuth 2.0 Configuration](#oauth-20) section.
   - **API Key**- When selected, Appsmith sends a key-value pair in the Authorization header of each request. This method is commonly used for API authentication, where the API hosting provider supplies a unique API key to the client for securely accessing the APIs.
