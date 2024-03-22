@@ -67,7 +67,7 @@ The authentication type setting determines the method used to authenticate reque
 
 ## OAuth 2.0
 
-Configuring OAuth 2.0 involves selecting the appropriate authorization flows and specifying configuration parameters for them. This includes defining the Grant type, Authorization URL, Access Token URL, Client ID, Client Secret, Scopes, and other relevant parameters required for integration APIs that use OAuth 2.0 as an authentication method.
+Configuring OAuth 2.0 involves selecting the appropriate authorization flows and specifying configuration parameters for them. This includes defining the Grant type, Authorization URL, Access Token URL, Client ID, Client Secret, Scopes, and other relevant parameters required for integrating APIs that use OAuth 2.0 as an authentication method.
 
 ### Grant type
 <dd>
