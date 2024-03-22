@@ -6,7 +6,7 @@ toc_max_heading_level: 4
 
 # Authenticated API
 
-Authenticated APIs require secure access, typically involving some form of authentication. Use this datasource to create queries within the same API, sharing common settings such as base URL, authentication, headers, and more, thereby minimizing redundant configurations. For single-query setup, consider using a [REST API](/connect-data/reference/rest-api) datasource. This page provides information on how to connect your application to an API that requires authentication.
+Authenticated APIs require secure access, typically involving some form of authentication. Use this datasource to create queries within the same API, sharing common settings such as base URL, authentication, headers, and more, thereby minimizing redundant configurations. For a single-query setup, consider using a [REST API](/connect-data/reference/rest-api) datasource. This page provides information on how to connect your application to an API that requires authentication.
 
 ## Connection parameters
 
@@ -22,7 +22,7 @@ The datasource configuration fields do not accept JavaScript code or bindings us
 
 <dd>
 
-The uniform resource locator (URL) specifies the address of the service or endpoint to which the requests will be made. This is typically the base URL of the REST API you are connecting to. If you wish to connect to a local database or API, see [Connect Local Datasource](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith) guide.
+The uniform resource locator (URL) specifies the address of the service or endpoint to which the requests will be made. This is typically the base URL of the REST API you are connecting to. If you wish to connect to a local database or API, see the [Connect Local Datasource](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith) guide.
 
 </dd>
 
@@ -36,14 +36,14 @@ When enabled, Appsmith adds an extra header, `X-Appsmith-Signature`, to your req
 ### Use self-signed certificate
 
 <dd>
-When enabled, this option allows you to the upload a self-signed certificate in the .PEM (Privacy Enhanced Mail) format, which is securely stored in an encrypted format. This certificate is then included in the request made by Appsmith to the endpoint.
+When enabled, this option allows you to upload a self-signed certificate in the .PEM (Privacy Enhanced Mail) format, which is securely stored in an encrypted format. This certificate is then included in the request made by Appsmith to the endpoint.
 </dd>
 
 ### Headers
 
 <dd>
 
-Headers contain key-value pairs that you include in the header section of your HTTP requests. You use headers to provide information to the server, such as authentication tokens, content-type, or custom headers required by the API you are connecting to.
+Headers contain key-value pairs that you include in the header section of your HTTP requests. You use headers to provide information to the server, such as authentication tokens, content types, or custom headers required by the API you are connecting to.
 
 </dd>
 
@@ -60,7 +60,7 @@ Query parameters consist of key-value pairs passed as parameters in the URL of y
 The authentication type setting determines the method used to authenticate requests. You can configure the details under the Authentication dropdown menu. The available options are:
   - **None**- When selected, Appsmith doesn't send authentication information with the request. Use this option if your API doesn't require authentication details in the request.  
   - **Basic**- When selected, Appsmith sends the Username and Password in the Authorization header of each request as a base64-encoded string. Use this option if your API requires username and password details in the request.
-  - **OAuth 2.0**- When selected, Appsmith enables integration with APIs that require OAuth 2.0 authentication. With OAuth 2.0 you can configure secure authorization flows, allowing you to grant limited access to resources. For more information, see [OAuth 2.0 Configuration](#oauth-20) section.
+  - **OAuth 2.0**- When selected, Appsmith enables integration with APIs that require OAuth 2.0 authentication. With OAuth 2.0 you can configure secure authorization flows, allowing you to grant limited access to resources. For more information, see the [OAuth 2.0 Configuration](#oauth-20) section.
   - **API Key**- When selected, Appsmith sends a key-value pair in the Authorization header of each request. This method is commonly used for API authentication, where the API hosting provider supplies a unique API key to the client for securely accessing the APIs.
   - **Bearer Token**- When selected, Appsmith sends a bearer token value in the Authorization header of each request. This method is commonly used for token-based authentication, where the API hosting provider supplies a token to the client for securely accessing the APIs.
 </dd>
@@ -73,7 +73,7 @@ Configuring OAuth 2.0 involves selecting the appropriate authorization flows and
 <dd>
   Grant type determines the method for a client application to receive an access token for authenticating requests to a resource server on behalf of a user. The below grant types are available for integration:
 
-  * **Authorization Code** - The authorization code grant type is commonly used for Appsmith user authorization. It works by redirecting the user to the authorization server, where user logs in and give consent to Appsmith. Afterward, the authorization server redirects the user back to Appsmith with an authorization code. This code is then exchanged by Appsmith for an access token. The access token acts as a credential, allowing Appsmith to access protected resources on your behalf for requests.
+  * **Authorization Code** - The authorization code grant type is commonly used for Appsmith user authorization. It works by redirecting the user to the authorization server, where the user logs in and gives consent to Appsmith. Afterward, the authorization server redirects the user back to Appsmith with an authorization code. This code is then exchanged by Appsmith for an access token. The access token acts as a credential, allowing Appsmith to access protected resources on your behalf for requests.
 
   * **Client Credentials** - The client credentials grant type is commonly used when the Appsmith application needs access to its own resources, rather than acting on behalf of a user. In this scenario, the client (Appsmith) must be configured on the provider side with its own set of client credentials, typically consisting of a client ID and client secret. Once configured, Appsmith authenticates itself with the authorization server using these credentials. Upon successful authentication, the authorization server issues an access token directly to Appsmith. This access token then serves as the Appsmith credential, enabling it to access its own resources in requests.
 
@@ -86,7 +86,7 @@ The parameter Add Access Token To defines where to include the access token in t
 
   * **Request Header** - This method is commonly used for security reasons, as it keeps the token hidden from users and prevents it from being exposed in the URL. When selected, Appsmith includes the access token in a request header. Choose this option if the API requires the access token to be provided as part of the request header. 
 
-  * **Request URL** - This method is simpler and more straightforward, but it may be less secure if the URL, containing sensitive information like access tokens, is stored or recorded. When selected, Appsmith includes the access token as a query parameter in the request URL. Choose this option if the API requires the access token to be passed as a query parameter in the request URL. 
+  * **Request URL** - This method is simple and straightforward, but it may be less secure if the URL, containing sensitive information like access tokens, is stored or recorded. When selected, Appsmith includes the access token as a query parameter in the request URL. Choose this option if the API requires the access token to be passed as a query parameter in the request URL. 
 </dd>
 
 ### Header prefix
@@ -102,7 +102,7 @@ Specifies the string that should precede the access token when included as a hea
    The Access Token URL is the endpoint on the authentication server used to exchange the authorization code for an access token. This URL is essential for obtaining access tokens, which are necessary for authenticating requests to protected resources. In some providers, the same URL can be used to generate new access tokens when an existing token expires, ensuring uninterrupted access to resources without requiring user re-authentication. 
   
    NOTE To self - Confirmation pending
-    TO DO - I beileve that we should tell users to use the Refresh token URL here, so that the access token refresh flow can work once the access token is expired. The access token generation happens using the authorization url when an auth code is exchanged in place of access token.
+    TO DO - I beileve that we should tell users to use the Refresh token URL here so that the access token refresh flow can work once the access token is expired. The access token generation happens using the authorization url when an auth code is exchanged in place of the access token.
 </dd>
 
 
@@ -122,7 +122,7 @@ The _Client secret_ is a confidential string issued to your client application b
 ### Scopes
 
 <dd>
-  _Scopes_ specify the permissions required by your application to access protected resources on behalf of the user. When making requests to the authentication server of the OAuth provider, you can specify one or more scopes that define the level of access your application needs. The OAuth provider defines the scopes that correspond to different types of user data or actions within their ecosystem. You can add one or more scopes defined by the provider as comma-separated values. For example, when integrating with a user's Google Account using OAuth 2.0, you might request scopes such as `profile` to access basic profile information or `email` to access the user's email address. Similarly, when reading files from Dropbox, you would define a scope such as `files.content.read` to allow file reading operations.     
+  _Scopes_ specify the permissions required by your application to access protected resources on behalf of the user. When making requests to the authentication server of the OAuth provider, you can specify one or more scopes that define the level of access your application needs. The OAuth provider defines the scopes that correspond to different types of user data or actions within their ecosystem. You can add one or more scopes defined by the provider as comma-separated values. For example, when integrating with a user's Google Account using OAuth 2.0, you might request scopes such as `profile` to access basic profile information or `email` to access the user's email address. Similarly, when reading files from Dropbox, you define a scope such as `files.content.read` to allow file reading operations.     
 </dd>
 
 ### Client Authentication
@@ -130,14 +130,14 @@ The _Client secret_ is a confidential string issued to your client application b
 <dd>
 Client Authentication determines how Appsmith can share the client credentials (client ID and client secret) when communicating with the OAuth 2.0 authorization server. The available options are:
 
-* **Send client credentials in body** - When selected, the client credentials are directly added in the request body as parameters. Typically, you add the client ID and client secret as form parameters in a URL-encoded or JSON-encoded request body as shown below:
+* **Send client credentials in body** - When selected, the client credentials are directly added in the request body as parameters. Typically, you add the client ID and client secret as form parameters in a URL-encoded or JSON-encoded request body.
 
  <ZoomImage src="/img/rest-api-form-encoded.png" alt="Client ID and secret sent as form URL encoded." caption="Client ID and secret sent as form URL encoded" />
 
 
-* **Send as Basic Auth header** - When selected, the client ID and client secret are merged into a unified string and included in the Authorization header utilizing the Basic Authentication scheme. This amalgamated string, consisting of the client ID and client secret separated by a colon, is then encoded in base64. Subsequently, this encoded string is prefixed with the term _Basic_.
+* **Send as Basic Auth header** - When selected, the client ID and client secret are merged into a unified string and included in the Authorization header using the Basic Authentication scheme. This amalgamated string, consisting of the client ID and client secret separated by a colon, is then encoded in base64. Subsequently, this encoded string is prefixed with the term _Basic_.
 
-  For example, if the client ID is `my_client_id` and the client secret is `my_client_secret`, the resulting string after concatenation and base64 encoding would be `my_client_id:my_client_secret`, and the final header would appear as:
+  For example, if the client ID is `my_client_id` and the client secret is `my_client_secret`. The resulting string after concatenation and base64 encoding is `my_client_id:my_client_secret` and the final header appears as:
   
   ```javascript
   Authorization: Basic bXlfY2xpZW50X2lkOm15X2NsaWVudF9zZWNyZXQ=
@@ -148,26 +148,26 @@ Client Authentication determines how Appsmith can share the client credentials (
 ### Authorization URL
 
 <dd>
-    The _Authorization URL_ parameter is only available for Authorization code grant type, and refers to the endpoint on the authentication server used to request authentication for the client application that is requesting authorization on behalf of the user. Appsmith uses this URL to redirect the user to start the authentication process. The user is prompted to log in and grant permissions to Appsmith. After successful authentication and authorization, the authorization server redirects the user back to Appsmith with an authorization code.
+    The _Authorization URL_ parameter is specific to the Authorization code grant type. It denotes the endpoint on the authentication server used to initiate the authentication process for the client application, which seeks authorization on behalf of the user. Appsmith uses this URL to redirect users to start the authentication flow. When redirected, users log in and grant permissions to Appsmith. Subsequently, after successful authentication and authorization, the authorization server redirects the user back to Appsmith with an authorization code.
 </dd>
 
 ### Redirect URL
 
 <dd>
-The _Redirect URL_ parameter is only available for Authorization code grant type. Use the **Copy** button next to the parameter to copy and configure it on the OAuth provider. It acts as the endpoint to which the OAuth server redirects the flow after the user authenticates and authorizes Appsmith. While redirecting, the OAuth server includes an authorization code for further interaction between Appsmith and the OAuth server. 
+The _Redirect URL_ parameter is only available for the Authorization code grant type. Use the **Copy** button next to the parameter to copy and configure it on the OAuth provider. It acts as the endpoint to which the OAuth server redirects the flow after the user authenticates and authorizes Appsmith. While redirecting, the OAuth server includes an authorization code for further interaction between Appsmith and the OAuth server. 
 </dd>
 
 ### Custom Authentication Parameters
 
 <dd>
-_Custom Authentication Parameters_ setting is available only for Authorization code grant type. It allows users to tailor the OAuth 2.0 authorizatoin code flow to their specific needs or preferences. These parameters provide more control over the authentication process and enable the implementation of custom logic or processing at the OAuth provider level. If configured, users can leverage these parameters to customize authentication interactions and behaviors. For example, in Google OAuth 2.0, you can configure the `prompt` parameter and use it to force users to select an account or provide consent. Similarly, in Dropbox OAuth 2.0, you can configure the `token_access_type` parameter to specify whether the access token has a short-lived or long-lived duration, thereby affecting the token's validity period. 
+_Custom Authentication Parameters_ setting is available only for the Authorization code grant type. It allows users to tailor the OAuth 2.0 authorization code flow to their specific needs or preferences. These parameters provide more control over the authentication process and enable the implementation of custom logic or processing at the OAuth provider level. If configured, users can leverage these parameters to customize authentication interactions and behaviors. For example, in Google OAuth 2.0, you can configure the `prompt` parameter to force users to select an account or provide consent. Similarly, in Dropbox OAuth 2.0, you can configure the `token_access_type` parameter to specify whether the access token is short-lived or long-lived and affects the token's validity period. 
 </dd>
 
 
 ###  Authorization expires in (seconds)
 
 <dd> 
-Appsmith uses refresh tokens to generate new access tokens whenever the existing ones expire. At times, the OAuth provider doesn't specify the expiry duration (`expires_in` or `expires_at`) for access tokens. In such cases, use the _Authorization expires in (seconds)_ parameter that specifies the expiry time for the access token. This parameter is available only for Authorization code grant type. When set this parameter uses the duration to invalidate the access token, and Appsmith uses it to determine when to refresh the access token. For example, Salesforce doesn't provide an expiry for the access token. You can configure this parameter, so that Appsmith can determine and refresh the access token after expiry.
+Appsmith uses refresh tokens to generate new access tokens whenever the existing ones expire. Some OAuth provider doesn't specify the expiry duration (`expires_in` or `expires_at`) for access tokens. In such cases, use the _Authorization expires in (seconds)_ parameter that specifies the expiry time for the access token. This parameter is available only for the Authorization code grant type. When set, Appsmith uses the duration to invalidate the access token, and determines when to refresh the access token. For example, Salesforce doesn't provide an expiry for the access token. You can configure this parameter for Appsmith to determine when to expire and refresh the access token after expiry.
 </dd>
 
 
@@ -176,13 +176,13 @@ Appsmith uses refresh tokens to generate new access tokens whenever the existing
 <dd>
 The _Audience_ parameter expects a URL and specifies the intended audience for the OAuth access token. Appsmith uses this parameter to recognize the designated resource server or API endpoint that can accept access tokens and access protected resources. This restriction adds an extra layer of security to OAuth 2.0 authorization by ensuring that the access token is only accepted by the intended audience, thereby preventing unauthorized access to resources.
 
-NOTE to self - I'm a bit confused yet with how audience works.
+NOTE to self - I'm a bit confused yet with how the audience works.
 </dd>
 
 ###  Resource
 
 <dd>
-The _Resource_ parameter expects a URL and designates an application acting as a resource server. This indicates the protected resource that Appsmith accesses on behalf of the user. The resource can encompass different entities such as API endpoints, web services, files, or any other resource that require access control. The responsibility of hosting and providing access to these protected resources lies with the resource server.
+The _Resource_ parameter expects an application URL that act as a protected resource server that Appsmith accesses on behalf of the user. The resource can contain different entities such as API endpoints, web services, files, or any other resource that requires access control. The responsibility of hosting and providing access to these protected resources lies with the resource server.
 
 NOTE to self - Though, generally, I'm aligned with this but still not sure how it ties up with the audience setting, that Appsmith uses internally. This is important to know - to instruct users when to use this setting.
 </dd>
@@ -190,21 +190,21 @@ NOTE to self - Though, generally, I'm aligned with this but still not sure how i
 ###  Send scope with refresh token
 
 <dd>
-The _Send scope with refresh token_ setting is available only for Authorization code grant type, and determines whether to include the scopes with the refresh token when requesting a new access token. Some OAuth providers require a client application, which is requesting an access token using a refresh token, to include scopes in the authorization request. These scopes indicate the specific actions or resources the application needs access to when generating a new access token. In such cases, you need to configure this setting so that Appsmith includes the original scopes, defined as part of the [Scopes](#scopes) parameter in the authorization request for generating a new access token using a refresh token. 
+The _Send scope with refresh token_ setting is available only for the Authorization code grant type and determines whether to include the scopes with the refresh token when requesting a new access token. Some OAuth providers require a client application, which requests an access token using a refresh token, to include scopes in the authorization request. These scopes indicate the specific actions or resources the application needs access to when generating a new access token. In such cases, you need to configure this setting so that Appsmith includes the original scopes, defined as part of the [Scopes](#scopes) parameter in the authorization request for generating a new access token using a refresh token. 
 </dd>
 
 ###   Send client credentials with (on refresh token) 
 
 <dd>
-The _Send client credentials with (on refresh token)_ setting is available only for Authorization code grant type, and determines how Appsmith can share the client credentials (client ID and client secret) when communicating with the OAuth 2.0 authorization server for requesting a new access token using a refresh token. The available options are:
+The _Send client credentials with (on refresh token)_ setting is available only for the Authorization code grant type. It determines how Appsmith can share the client credentials (client ID and client secret) when communicating with the OAuth 2.0 authorization server for requesting a new access token using a refresh token. The available options are:
 
 
-* **Body** - When selected, the client credentials are directly added in the request body as parameters. Typically, you add the client ID and client secret as form parameters in a URL-encoded or JSON-encoded request body as shown below:
+* **Body** - When selected, the client credentials are directly added to the request body as parameters. Typically, you add the client ID and client secret as form parameters in a URL-encoded or JSON-encoded request body as shown below:
 
  <ZoomImage src="/img/rest-api-form-encoded.png" alt="Client ID and secret sent as form URL encoded." caption="Client ID and secret sent as form URL encoded" />
 
 
-* **Header** - When selected, the client ID and client secret are merged into a unified string and included in the Authorization header and uses the Basic Authentication encryption. This amalgamated string, consisting of the client ID and client secret separated by a colon, is then encoded in base64. Subsequently, this encoded string is prefixed with the term _Basic_.
+* **Header** - When selected, Appsmith merges the client ID and client secret into a unified string separated by a colon, uses the Basic Authentication (base64) encryption,  prefixed with the term _Basic_, and adds it in the Authorization header. 
 
   For example, if the client ID is `my_client_id` and the client secret is `my_client_secret`, the resulting string after concatenation and base64 encoding would be `my_client_id:my_client_secret`, and the final header would appear as:
   
@@ -212,10 +212,9 @@ The _Send client credentials with (on refresh token)_ setting is available only 
   Authorization: Basic bXlfY2xpZW50X2lkOm15X2NsaWVudF9zZWNyZXQ=
   ```
 
-  NOTE to self - When the client authentication parameter is already present, why this parameter is needed as part of advanced setting for authorization code flow.
+  NOTE to self - When the client authentication parameter is already present, why this parameter is needed as part of the advanced setting for authorization code flow?
 
 </dd>
-
 
 ## Queries
 
