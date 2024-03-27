@@ -753,7 +753,8 @@ const sidebars = {
                 id: 'advanced-concepts/version-control-with-git/cd-with-git'
               },
               items: [
-                'advanced-concepts/version-control-with-git/cd-with-github-actions'
+                'advanced-concepts/version-control-with-git/cd-with-github-actions',
+                'advanced-concepts/version-control-with-git//cd-with-bitbucket'
               ],
             },
             ,

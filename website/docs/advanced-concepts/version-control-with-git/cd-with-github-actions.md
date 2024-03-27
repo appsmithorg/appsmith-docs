@@ -1,13 +1,13 @@
 ---
 description: Continuous Delivery with GitHub Actions
-title: Continuous Delivery with GitHub Actions
+title: Using GitHub Actions
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Continuous Delivery with GitHub Actions</h1>
+ <h1>Using GitHub Actions</h1>
 
 <Tags
 tags={[

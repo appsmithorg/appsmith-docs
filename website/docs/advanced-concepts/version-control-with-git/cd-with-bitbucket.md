@@ -7,7 +7,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Continuous Delivery Using Bitbucket Pipelines</h1>
+ <h1>Using Bitbucket Pipelines</h1>
 
 <Tags
 tags={[
@@ -60,7 +60,7 @@ Follow these steps to configure Bitbucket Pipelines workflow and automate contin
 
 1. In Bitbucket, go to your repository and select **Pipelines**.
 
-2. Select one of the available templates. If you're unsure, feel free to use the one that is recommended.
+2. Select one of the available templates. If you're unsure, use the one that is recommended.
 
 3. Configure the `bitbucket-pipelines.yml` file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your codebase.
 
