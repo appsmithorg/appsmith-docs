@@ -20,6 +20,12 @@ tags={[
 
 A package is a collection of JS, query and UI modules that can be versioned and distributed across applications. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently. This modular approach supports the independent creation, updating, and distribution of specific modules, contributing to enhanced code reusability and maintainability.
 
+<ZoomImage
+  src="/img/modules-con.png" 
+  alt=""
+  caption=""
+/>
+
 Within a package, there are three types of Modules:
 
 * **Query Modules:** Allows you to reuse database queries across different applications in the same workspace. They support dynamic parameters, facilitating adaptable data retrieval without modifying the overall query configuration.
@@ -27,12 +33,21 @@ Within a package, there are three types of Modules:
 * **UI Modules:** UI Modules provide the capability to encapsulate widgets, queries and JS, promoting reusability in the user interface. (Coming Soon)
 
 
-## Package Structure and Key Features 
+
+
+## Package Structure
 
 Appsmith Modules provide unique features that enhance the app-building capabilities of Appsmith, simplifying the process of designing and developing reusable applications.
 
 
 ### Entities
+
+<ZoomImage
+  src="/img/modules-diagram.png" 
+  alt=""
+  caption=""
+/>
+
 
 * **Package:** The package you actively edit in your workspace serves as the developmental version. This is where you introduce changes and updates to configurations. Apps won't get updated until the package is published.
 * **Package Instance:** A package instance represents the specific version of the package incorporated into your application.  You can include only one instance of a package version in your application.
@@ -42,6 +57,7 @@ Appsmith Modules provide unique features that enhance the app-building capabilit
 
     For example, if you have a module for user authentication and you want to use it for multiple cases, such as login and registration functionalities, you can create separate instances with different configurations for each use case.
 
+## Key Features 
 
 ### Package Scope
 
