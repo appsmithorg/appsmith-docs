@@ -5,7 +5,7 @@ description: The Migrate Applications feature gives you the flexibility to move 
 
 # Migrate Applications
 
-On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications. To migrate entire Appsmith data, use the [backup/restore](/getting-started/setup/instance-management/appsmithctl) feature. To move specific applications only, read along.
+On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications. To migrate all Appsmith data, use the [backup/restore](/getting-started/setup/instance-management/appsmithctl) feature. To move specific applications only, read along.
 
 ## Import/Export applications
 
