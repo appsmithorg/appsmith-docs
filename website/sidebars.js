@@ -668,6 +668,7 @@ const sidebars = {
                     'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
                   ],
                 },
+                'advanced-concepts/version-control-with-git/working-with-branches',
                 ,
               ]
             },
