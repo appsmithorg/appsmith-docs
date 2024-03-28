@@ -34,14 +34,7 @@ Once the pull is successful, the app is automatically deployed. To check the dep
 The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
 
 
-## Delete a branch
 
-Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. If you want to delete a branch from Appsmith, follow the steps given below:
-
-1. Click the current branch at the bottom left corner.
-2. Go to the branch you want to delete, click options, and **Delete**.
-
-![](/img/delete_branch.gif)
 
 ## Further reading
 

@@ -1,43 +1,64 @@
 ---
 sidebar_position: 1
 ---
-# Setup Branches
+# Manage Branches
 
-Similar to using Git flow in SDLC, you can make separate branches in Appsmith for different stages of your app development. It's recommended to set up the branches for the development phases as given below:
+This guide shows you how to create, switch, and delete Git branches within your Appsmith application.
 
-- **Master** - The master branch contains the final version of the app that's accessible to the app viewer. You can make this branch protected from the settings in the remote repository.
-- **Release** - Create a  new branch `release` from the master branch where all the feature branches should be merged. In this branch, the app goes through testing and QA. When the QA is completed, raise a PR from the release to the master branch in the remote repository.
-- **Feature** - A feature branch is for the developers to work on building the app. Each developer should have an individual feature branch and on completion, raise a PR to the release branch in the remote repository
 
-:::info
-It is recommended that each developer should have an individual feature branch.
-:::
 
-## Branch URLs
+Similar to using Git flow in SDLC, you can establish separate branches in Appsmith to manage different stages of your app development process. It's recommended to organize branches according to development phases, such as having a `master/main` branch for stable releases, `feature` branches for new features, and `release` branches for testing and QA purposes.
 
 Each branch that you create has its own unique URL in the following format:
 
 ```javascript
 <APPSMITH-APP-URL>?branch=<BRANCH-NAME>
 ```
-For instance, if you want to open your app in the release branch, replace `<BRANCH-NAME>` with "release" in the URL. These URLs can be shared with others to view the deployed version of the app for that branch.
 
 In case the branch name is not mentioned in the URL, the URL directs to the default branch, which is the master branch. 
 
-## Create a branch
+By default, Appsmith enables the protected branch feature for the `master/main` branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the `main/master` branch.
+
+
+## Create branch
 
 To create these branches in your Appsmith app, follow the steps below:
 
-1. Click the current branch at the bottom left corner to open the branch Modal that shows the list of existing branches.
-2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch.
 
-![](/img/create_branch.gif)
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/lpXnJuEduL502KIavxLb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
 
-Please keep the following points in mind when creating a new branch:
+1. Select the current branch located at the bottom left corner to access the branch Modal, which displays the available branches.
 
-- When you create a new branch, it includes any uncommitted changes from its parent branch.
-- When you switch to another branch, any uncommitted changes in your current branch are not transferred to the destination branch.
-- Attempting to check out a remote branch that already has a local version can result in an error.
+2. To create a new branch, enter the new branch name (Eg. feature) in the input box and click on **Create branch: feature**. Your application switches to the new `(feature)` branch.
+
+After creating a new branch, you can make changes to the branch and commit them.
+
+:::note
+* When you create a new branch, it includes any uncommitted changes from its parent branch.
+* When you switch to another branch, any uncommitted changes in your current branch are not transferred to the destination branch.
+:::
+
+
+
+
+
+## Delete a branch
+
+Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. If you want to delete a branch from Appsmith, follow the steps given below:
+
+1. Click the current branch at the bottom left corner.
+2. Go to the branch you want to delete, click options, and **Delete**.
+
+![](/img/delete_branch.gif)
+
+## Sync branches
+
+To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
+
+![](/img/Sync_branches.png)
 
 
 <!-- vale off -->
