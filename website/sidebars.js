@@ -666,6 +666,7 @@ const sidebars = {
                     'advanced-concepts/version-control-with-git/guides/setup-github',
                     'advanced-concepts/version-control-with-git/guides/setup-gitlab',
                     'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
+                    'advanced-concepts/version-control-with-git/guides/setup-azure',
                   ],
                 },
                 'advanced-concepts/version-control-with-git/working-with-branches',
