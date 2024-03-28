@@ -1,74 +1,66 @@
 ---
 sidebar_position: 1
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Connect Git Repository
 
-This guide shows how to connect your Appsmith application to a remote Git repository. Select the appropriate tabs based on your Git service provider and follow the steps.
+Appsmith allows you to connect your applications to any remote Git repository. This capability enables you to integrate your Appsmith apps with your preferred version control system. 
+
+You can connect to Git using any provider of your choice with a Remote SSH URL. The following guides are tailored to popular Git providers such as GitHub, Bitbucket, GitLab, and Azure.
+
+<!-- <div className="containerGridSampleApp">
+<div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong>GitHub Actions</strong></a>
+       </div> <hr/>
+       <div className="containerDescription">GitHub Actions is an automation tool integrated with GitHub repositories, enabling you to automate workflows for building, testing, and deploying code directly from your repository.</div>
+       <div className="containerTutorialLink"></div>
+   </div>
+</div> -->
 
 
- 
-<Tabs queryString="version-control">
-<TabItem label="GitHub" value="github">
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/DCYRQLLanyMru29sVk9i?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+<div className="containerGrid">
+   <div className="containerColumnSampleApp columnGrid column-one" style={{padding:"20px"}}>
+       <div className="containerCol">
+           <img className="containerImage" src="/img/github-logo.png" alt="ActiveCampaign-logo"/>
+       </div> <br/>
+        <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/guides/setup-github"><strong>GitHub</strong></a>
+       </div> <hr/>
+       <div className="containerDescription">GitHub is a web-based platform built around Git that offers hosting for software development projects. This guide shows how to connect your Appsmith application to a remote GitHub repository.</div>
+       <div className="containerTutorialLink"></div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
+       <div className="containerCol">
+           <img className="containerImage" src="/img/bit-1.webp" alt="APITemplate-logo"/>
+       </div> <br/>
+       <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/guides/setup-gitlab"><strong>Bitbucket</strong></a>
+       </div> <hr/>
+       <div className="containerDescription">Bitbucket is a web-based platform, similar to GitHub, providing hosting for software development projects and using Git for version control. This guide shows the process of connecting your Appsmith application to a remote Bitbucket repository.</div>
+       <div className="containerTutorialLink"></div>
+   </div>
 </div>
 
-
-
-1. Open the Appsmith app you want to connect to Git and click the **Connect Git** button on the left of the bottom bar.
-
-2. Select **Github** as the service provider. 
-
-<dd>
-:::info
-Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
-:::
-
-</dd>
-
-3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty.
-
-4. After setting up an empty repository, navigate to the repository's landing page, click on the Code button, and copy the **SSH** URL.
-
-5. Paste the URL in the **Generate SSH Key** section on Appsmith.
-
-6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
-
-7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
-
-8. Check the **Allow write access** option and then add the key.
-
-9. In Appsmith, click the **Connect Git** button.
-
-With these steps, you have successfully connected to Git.
-
-
-</TabItem>
-<TabItem label="GitLab" value="gitlab">
-
-
-
-</TabItem>
-<TabItem label="Bitbucket" value="bitbucket">
-
-
-</TabItem>
-<TabItem label="Azure" value="azure">
-
-
-</TabItem>
-</Tabs>
-
-
-:::caution
-A user needs to have **Create** permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see [Default Roles](/advanced-concepts/invite-users#default-roles-for-workspace) and [Granular Access Control](/advanced-concepts/granular-access-control/roles#application-resources).
-:::
-
-## Next steps
-
-[Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
+<div className="containerGrid">
+  <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+       <div className="containerCol">
+           <img className="containerImage" src="/img/gitlab-git.webp" alt="Appwrite-logo"/>
+       </div> <br/>
+       <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/guides/setup-bitbucket"><strong>GitLab</strong></a>
+       </div> <hr/>
+       <div className="containerDescription">GitLab is a web-based platform, designed for hosting software development projects and leveraging Git for version control. This guide outlines how to establish a connection between your Appsmith application and a remote GitLab repository.</div>
+       <div className="containerTutorialLink"></div>      
+   </div>
+     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+       <div className="containerCol">
+           <img className="containerImage" src="/img/azure-git.png" alt="azure-git"/>
+       </div> <br/>
+       <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/guides/setup-bitbucket"><strong>Azure</strong></a>
+       </div> <hr/>
+       <div className="containerDescription">Azure Git is a version control service provided by Microsoft Azure, offering hosting for software development projects similar to other Git providers. This guide demonstrates how to connect your Appsmith application to a remote Azure Git repository.</div>
+       <div className="containerTutorialLink"></div>      
+   </div>
+   </div>
