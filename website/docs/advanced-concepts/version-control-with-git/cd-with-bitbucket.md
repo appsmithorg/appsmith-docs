@@ -62,12 +62,17 @@ Follow these steps to configure Bitbucket Pipelines workflow and automate contin
 
 2. Select one of the available templates. If you're unsure, use the one that is recommended.
 
-3. Configure the `bitbucket-pipelines.yml` file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your codebase.
-
+3. Configure the YAML file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your project directory.
 
 <dd>
 
-This YAML code snippet configures a Bitbucket Pipeline to execute a deployment task using the `curl` command provided by Appsmith(as mentioned in step 4 of section 1).
+:::note
+Bitbucket requires the filename to be exactly as `bitbucket-pipelines.yml`.
+:::
+
+
+
+This YAML code configures a Bitbucket Pipeline to execute a deployment task using the `curl` command provided by Appsmith(as mentioned in step 4 of section 1).
 
 ```yaml
 image: atlassian/default-image:3
@@ -90,13 +95,27 @@ pipelines:
 <dd>
 
 
-*Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $app_cd`, where `app_cd` represents the variable name.
+*Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $APP_CD_TOKEN`, where `APP_CD_TOKEN` represents the variable name.
 
 
 For information see [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
 </dd>
 
-5. Click on the **Run pipeline** button. Here, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other useful data.
+5. Commit the YAML file changes to the repository.
+
+6. Click the **Run initial pipeline** button, and choose the branch and pipeline.
+
+
+ <ZoomImage
+        src="/img/bit-cd-status-.png"
+        alt=""
+        caption="Pipeline Status"
+        lazyLoad="true"
+/>
+
+
+Upon successful completion of the run, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other data.
+
 
 
 
@@ -112,7 +131,6 @@ Follow these steps to test continuous delivery after you have committed the YAML
 
 4. When you merge this into the `master`/`main` or specified branch, the pipeline workflow automatically triggers and updates the deployed version and branch accordingly.
 
-5. You can see stauts from the pipeline section. 
 The changes are deployed to that branch without the need to pull the changes manually. Additionally, the live version of the Appsmith app reflects those changes. 
 
 
