@@ -37,8 +37,8 @@ Version Control works with any Git hosting service that supports **SSH protocol*
 
 With these steps, you have successfully connected to Git.
 
-:::info
-Deploying Appsmith with Azure Files as the file system (FS) has been linked to performance deterioration. Therefore, we recommend exploring alternative storage solutions to ensure optimal performance during Appsmith deployment.
+:::caution
+A user needs to have Create permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see Default Roles and Granular Access Control.
 :::
 
 ## Next steps
