@@ -85,7 +85,7 @@ image: atlassian/default-image:3
 
 pipelines: 
   branches:
-    main:
+    master:
       - step:
           script:
               // highlight-next-line
@@ -135,7 +135,7 @@ Follow these steps to test continuous delivery after you have committed the YAML
 
 3. Open the repository and raise a pull request.
 
-4. When you merge this into the `master`/`main` or specified branch, the pipeline workflow automatically triggers and updates the deployed version and branch accordingly.
+4. When you merge this into the `master` or specified branch, the pipeline workflow automatically triggers and updates the deployed version and branch accordingly.
 
 The changes are deployed to that branch without the need to pull the changes manually. Additionally, the live version of the Appsmith app reflects those changes. 
 

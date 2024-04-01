@@ -42,7 +42,7 @@ Follow these steps to set up continuous delivery in Appsmith:
 
 2. Click on the **Continuous Delivery** tab.
 
-3. Select the branch where you want to implement continuous delivery. For example, the `master`/`main` branch or any `feature` branch.
+3. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
 4. Copy the provided endpoints to integrate them into your CI/CD pipeline configuration. 
 
@@ -73,7 +73,7 @@ name: appsmith-cd  # Workflow name
 on:
   push:
     branches:
-      - main  # Trigger on push to main branch
+      - master  # Trigger on push to master branch
 
 jobs:
   deploy-appsmith:
@@ -81,10 +81,10 @@ jobs:
 
     steps:
     // highlight-next-line
-      - run: "curl -f --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f14c735?branchName=main --header 'Authorization: Bearer <bearer token>'"
+      - run: "curl -f --location --request POST https://app.appsmith.com/api/v1/git/deploy/app/65f14c735?branchName=master --header 'Authorization: Bearer <bearer token>'"
 ```
 
-This YAML code defines a GitHub Actions workflow named `appsmith-cd` that triggers on every push to the `main` branch. Within this job, a single step is defined to execute a `curl` command. 
+This YAML code defines a GitHub Actions workflow named `appsmith-cd` that triggers on every push to the `master` branch. Within this job, a single step is defined to execute a `curl` command. 
 
 </dd>
 
@@ -112,7 +112,7 @@ Follow these steps to test continuous delivery after you have committed the YAML
 
 3. Open the GitHub repository and raise a pull request.
 
-4. When you merge this into the `master`/`main` or specified branch, the GitHub Actions workflow automatically triggers and updates the deployed version and branch accordingly.
+4. When you merge this into the `master` or specified branch, the GitHub Actions workflow automatically triggers and updates the deployed version and branch accordingly.
 
 
 The changes are deployed to that branch without the need to pull the changes manually. Additionally, the live version of the Appsmith app reflects those changes. 
