@@ -47,7 +47,7 @@ To send notifications to the users you will create a workflow, and configure it 
 <br/><br/>
 
 1. Click the **Create New** button in your workspace, and choose **Workflow**. This action creates a new workflow in your workspace and takes you to the **Main** JS object code editor. Give a meaningful and unique name to your workflow by editing the name **Untitled Workflow 1** to _Send\_Email\_Workflow_.
-2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function and add code in the [Write code in workflow to trigger email](#write-code-in-workflow-to-trigger-email) section.
+2. In the **Main** JS object code editor, you will see the `executeWorkflow` function (as shown below). This function executes whenever a workflow run is triggered. It serves as the main function for writing your logic. You'll update the `executeWorkflow()` function and add code in the [Write query to send email](#write-query-to-send-email) section.
 
     ```javascript
     export default {

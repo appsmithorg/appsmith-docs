@@ -2,6 +2,8 @@
 description: This page provides detailed information on workflow queries available in Appsmith.
 title: Workflow Queries
 hide_title: true
+toc_min_heading_level: 2
+toc_max_heading_level: 4
 ---
 <!-- vale off -->
 
@@ -62,7 +64,7 @@ Filters the requests based on their name. One or more request names can be added
 
 #### Request name
 <dd>
-Specifies the name of the request to fetch, as defined while creating request using the `assignRequests` workflow function. For more information, see [assignRequests](/workflows/reference/workflow-functions#assignrequest).
+Specifies the name of the request to fetch, as defined while creating request using the `assignRequests` workflow function. For more information, see [assignRequests](/workflows/reference/workflow-functions#requestname-string).
 </dd>
 
 #### Request status
