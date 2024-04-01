@@ -56,6 +56,12 @@ Follow these steps to set up continuous delivery in Appsmith:
 
 ## Set Up Bitbucket Pipelines
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/tOESOR4JMTtaniUAk1ob?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
 Follow these steps to configure Bitbucket Pipelines workflow and automate continuous delivery for your Appsmith application:
 
 1. In Bitbucket, go to your repository and select **Pipelines**.
@@ -83,7 +89,7 @@ pipelines:
       - step:
           script:
               // highlight-next-line
-            - curl --location --request POST "https://app.appsmith.com/api/v1/git/deploy/app/660f7b?branchName=main" --header "Authorization: Bearer <bearer token>"
+            - "curl --location --fail-early --request POST https://release-ee.appsmith.com/api/v1/git/deploy/app/660427bb3927480dc0720914?branchName=master --header \"Authorization: Bearer <bearer token>\""
 ```
 
 </dd>
