@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows are essential for automating tasks and orchestrating processes within applications. Integrate Appsmith workflows with external systems or apps to trigger processing and build practical solutions.
+Appsmith Workflows are essential for automating tasks and orchestrating processes within applications. They provide a practical solution for automating tasks, managing workflows, enabling human interactions, and integrating with external services or Appsmith apps.
 
 ## Workflow capabilities
 

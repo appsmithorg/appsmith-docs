@@ -35,7 +35,7 @@ executeWorkflow(data: JSON): Promise<boolean>
 
 Below are the parameters required by the `executeWorkflow()` function to execute:
 
-#### data `JSON`
+#### data <code className="parameterCodeBlock">JSON</code>
 
 <dd>
   The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow where `data` holds the body of the post request when triggered via webhook, and holds `Trigger Data` property of the [Trigger Workflow](/workflows/reference/workflow-queries#trigger-workflow) query when workflow is executed from an Appsmith app.
@@ -73,33 +73,33 @@ assignRequest({requestName: string, message: string, resolutions: string[], meta
  
 Below are the parameters required by the `assignRequest()` function to execute:
 
-#### requestName `String`
+#### requestName <code className="parameterCodeBlock">String</code>
 
     <dd>
     The name of the request, which serves as its identifier within the workflow. This name can be used to filter requests as part of [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query by adding it in the `Request name` attribute.
     </dd>
 
-#### message `String` `Optional`
+#### message <code className="parameterCodeBlock">String</code> <code className="parameterCodeBlock">Optional</code>
     <dd>
       A descriptive message associated with the request, providing more context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
     </dd>
 
-#### resolutions `String[]`
+#### resolutions <code className="parameterCodeBlock">String[]</code>
     <dd>
     Represents the possible actions a user can take on the request. The applicable resolution passed to the [Resolve requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the selected resolution. For example, `['Approve', 'Reject']`.
     </dd>
 
-#### metadata `JSON` `Optional `
+#### metadata <code className="parameterCodeBlock">JSON</code> <code className="parameterCodeBlock">Optional</code>
     <dd>
     Add data that may be needed to process the request or display more information to the user in your app. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your app to fetch and show the details to user.
     </dd>
 
-#### requestToUsers `String[]`
+#### requestToUsers <code className="parameterCodeBlock">String[]</code>
    <dd>
    The `requestToUsers` parameter allows for targeted assignment of requests to specific Appsmith users. It specifies an array of emails for users to whom the pending requests will be assigned. The users specified here will be able to take action and resolve the pending request. These users need to be a part of the Appsmith instance for assigning the request to them. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment.
    </dd>
 
-#### requestToGroups `String[]` `Optional`
+#### requestToGroups <code className="parameterCodeBlock">String[]</code> <code className="parameterCodeBlock">Optional</code>
 
 <dd>
 The `requestToGroups` parameter allows for targeted assignment of requests to specific User groups in Appsmith. If specifies the user group names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment. The workflow restarts upon the first action taken by any user within the assigned group.
@@ -109,19 +109,19 @@ The `requestToGroups` parameter allows for targeted assignment of requests to sp
 
 The `assignRequest()` function returns a Promise in a JSON format representing the generated response. The response includes the following data:
 
-#### workflowInstanceId `String`
+#### workflowInstanceId <code className="parameterCodeBlock">String</code>
 
 <dd>
   Represents the unique identifier for the workflow instance.
 </dd>
 
-#### resolution `String`
+#### resolution <code className="parameterCodeBlock">String</code>
 
 <dd>
   Indicates the resolution applied to the request based on the user action.
 </dd>
 
-#### payload `JSON`
+#### payload <code className="parameterCodeBlock">JSON</code>
 
 <dd>
   It holds the data from the `metadata` attribute used during the processing of the [Resolve Requests](/workflows/reference/workflow-queries#resolve-requests) workflow query.
