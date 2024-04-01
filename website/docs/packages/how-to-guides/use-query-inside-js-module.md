@@ -21,23 +21,27 @@ tags={[
 This guide shows how to use datasource queries and JSObjects within JavaScript modules, enabling efficient data handling and manipulation for applications.
 
 
-## Create a package
+In this guide, we take an example of a simple login form where a JavaScript module checks if a user exists and logs the user in. 
+
+## Prerequisites
+
+* 
+* 
+
+## Configure package
 
 A package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
 
 
-
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/yIAUcYcB6uPPuBxoaahD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/HNVD0NV1FGH0HSD5cz3B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. **Create a new package** by clicking on the top-right corner of your workspace.
+1. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
 
-2. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
-
-3. To pass or format the query data, create a datasource query within this JS module.
+2. Create a new Datasource query inside the JS module to retrieve user data based on email:
 
 <dd>
 
@@ -45,51 +49,60 @@ A package is a collection of Modules that can be versioned and distributed acros
 Using the query module inside a JavaScript module is not supported.
 :::
 
+```sql
+//findUserByEmail
+SELECT * FROM user_auth WHERE email = {{this.params.email}};
+```
+
+`this.params` allows you to pass data from JS modules to queries, enabling efficient communication and dynamic data handling within your application.
+
+When calling the `run()` function with parameters inside JS modules, you can access those parameters using `this.params` within the query.
+
 </dd>
 
+3. Create a new Datasource query for updating the last login timestamp:
+
+<dd>
+
+```sql
+//updateLogin
+UPDATE user_auth
+  SET last_login = {{new Date().toISOString()}}
+  WHERE id = {{ this.params.id }};
+```
+
+</dd>
 4. Configure the Main JS Object / JS Module Code based on your requirements.
 
 
 <dd>
 
 
-*Example:* If you want to format the product data and implement a `showAlert()` function whenever a product's stock falls below 10, you can use:
-
  You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App.
 
 ```js
 export default {
-  // Function to process data and return the updated array
-  async myFun1() {
-    try {
-      // Assuming Product_Api.run() returns a promise
-      await Query1.run();
-      const dataArray = Query1.data;
+    // The login function attempts to authenticate a user
+    login: async (email, passwordHash) => {
+        // Retrieve user data from the database based on the provided email
+        const [user] = await findUserByEmail.run({ email });
 
-      // Check stock availability
-      const updatedDataArray = dataArray.map(item => {
-        // Check if stock is below threshold (e.g., 10)
-        if (item.stock < 10) {
-          // Call showAlert function to display alert
-           showAlert(`Low stock for ${item.product_name} [ID: ${item.id}]`, 'warning');
+        // Check if a user with the provided email exists and the password hash matches
+        if (user && passwordHash === user?.password_hash) {
+            // Generate a token using the current timestamp and email, and store it
+            await storeValue('token', btoa(new Date().toISOString() + email));
+            
+            // Update the last login timestamp for the user in the database
+            await updateLogin.run({ id: user.id });
+            
+            // Show a success alert indicating successful login
+            await showAlert('Login Success', 'success');
+            
+            // Navigate to the 'App' page in the same window after successful login
+            await navigateTo('App', {}, 'SAME_WINDOW');
         }
-
-        // Return the item without the formattedDate property
-        return {
-          ...item
-        };
-      });
-
-      // Return the updated array directly
-      return updatedDataArray;
-    } catch (error) {
-      // Handle errors during data processing
-      console.error('Error processing data:', error);
-      // Return an empty array or handle the error as per requirement
-      return [];
     }
-  },
-};
+}
 ```
 
 </dd>
