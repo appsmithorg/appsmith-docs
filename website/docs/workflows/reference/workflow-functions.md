@@ -76,7 +76,7 @@ Below are the parameters required by the `assignRequest()` function to execute:
 #### requestName <code className="parameterCodeBlock">String</code>
 
     <dd>
-    The name of the request, which serves as its identifier within the workflow. This name can be used to filter requests as part of [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query by adding it in the `Request name` attribute.
+    The name of the request, which serves as its identifier within the workflow. Give a unique name to the request, and use it to filter requests as part of [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query by adding it in the `Request name` attribute.
     </dd>
 
 #### message <code className="parameterCodeBlock">String</code> <code className="parameterCodeBlock">Optional</code>
