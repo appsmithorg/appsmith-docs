@@ -74,5 +74,5 @@ You can leverage CI/CD with any platform or tool of your choice. Here are a few 
        </div> <hr/>
        <div className="containerDescription">GitLab CI/CD is a built-in continuous integration and continuous deployment service offered by GitLab, allowing developers to automate the testing and delivery of their code.</div>
        <div className="containerTutorialLink"></div>       -->
-   </div>
+
 </div>
