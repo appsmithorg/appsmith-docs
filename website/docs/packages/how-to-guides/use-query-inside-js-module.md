@@ -72,7 +72,8 @@ UPDATE user_auth
 ```
 
 </dd>
-4. Configure the Main JS Object / JS Module Code based on your requirements.
+
+4. Configure the Main JS Object / JS Module Code based on your requirements. For login flow, implement authentication functions such as login, token generation, and navigation upon successful login.
 
 
 <dd>
@@ -107,38 +108,31 @@ export default {
 
 </dd>
 
-5. Run and Publish the JS Module.
+5. Publish the JS Module.
 
+6. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
+7. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
 
+8. In the entity explorer, select the JS module and configure the function settings as needed.
 
-## Integrate Modules into your App
-
-Once you've created a JS module, follow these steps to access its data in any application:
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ELyb3WmDXhnZa3WxJC8L?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
-
-2. In the entity explorer, select the JS module and configure the function settings as needed.
-
-3. To display data, add a Table widget and connect it to the **JS module** using mustache binding `{{}}`, like:
-
+9. Set the **onClick** event of the Submit/Login button to:
 
 <dd>
 
-*Example:*
-
 ```js
-{{JSModule1_1.myFun1.data}}
+{{LoginModule.login(inp_email.text, inp_password.text);}}
 ```
 
-With this, when the product stock drops below 10, an alert is shown in both the app and the package.
+This code retrieves values from the email input and password inputs.
+
+
+When the button is clicked, the JS module verifies if the user's email exists in the database. If found, it redirects the user to a new page.
+
 
 
 
 </dd>
+
+
+
