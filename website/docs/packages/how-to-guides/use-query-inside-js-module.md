@@ -119,15 +119,15 @@ UPDATE user_auth
 
 </dd>
 
-5. Publish the package.
+4. Publish the package.
 
-6. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+5. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
-7. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
+6. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
 
-8. In the entity explorer, add the Login JS module.
+7. In the entity explorer, add the Login JS module.
 
-9. Set the **onClick** event of the Submit/Login button to:
+8. Set the **onClick** event of the Submit/Login button to:
 
 <dd>
 
