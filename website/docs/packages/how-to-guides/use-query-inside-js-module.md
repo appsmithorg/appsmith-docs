@@ -20,7 +20,6 @@ tags={[
 
 This guide shows how to use datasource queries and JSObjects within JavaScript modules, enabling efficient data handling and manipulation for applications.
 
-In this guide, we'll create a simple reusable login authentication module, enabling user authentication via email.
 
 
 
@@ -40,14 +39,14 @@ Follow these steps to set up JS modules within the package.
 </div>
 
 
-1. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code. For login function, implement authentication functions such as login, token generation, and navigation upon successful login.
+1. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
 
 
 <dd>
 
+*Example:* You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database. To implement this, in the **Main** JS code, add authentication functions like login, token generation, and navigation upon successful login.
 
-
-You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App.
+You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App, like:
 
 ```js
 export default {
@@ -74,23 +73,24 @@ export default {
 }
 ```
 
- Above code retrieves user data from the database based on the provided email, checks password hash matches, and updates login timestamps upon successful authentication.
-
 * To pass data from the **App to JS modules**, you can pass it by calling the respective function with the necessary parameters, like `login(hello@email.com, password@123)`.
 
 * To pass data from **JS modules to queries**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`
 
 
 
-:::info
+</dd>
+
+2. Within the JS module, create a new Datasource query that allows you to fetch data based on the JS code. 
+
+<dd>
+
+
+:::caution
 Using the query module inside a JavaScript module is not supported.
 :::
 
-</dd>
-
-2. Within the JS module, create a new Datasource query that allows you to fetch user data based on the provided email address.
-
-<dd>
+*Example:* In the login authentication flow, generate a query to verify whether the user's email exists within the database.
 
 
 ```sql
@@ -99,9 +99,7 @@ SELECT * FROM user_auth WHERE email = {{this.params.email}};
 ```
 
 
-`this.params.email` provides access to the data passed within the JS module, enabling efficient communication and dynamic data handling within your application.
-
-For more information, see [Parameterised Queries](/connect-data/concepts/dynamic-queries#accessing-runtime-parameters-inside-the-query).
+`this.params.email` provides access to the data passed within the JS module, enabling efficient communication and dynamic data handling within your application. For more information, see [Parameterised Queries](/connect-data/concepts/dynamic-queries#accessing-runtime-parameters-inside-the-query).
 
 </dd>
 
@@ -125,7 +123,7 @@ UPDATE user_auth
 
 6. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
 
-7. In the entity explorer, add the Login JS module.
+7. Select the *JS* tab on the Entity Explorer, and add the Login JS module.
 
 8. Set the **onClick** event of the Submit/Login button to:
 
@@ -135,10 +133,16 @@ UPDATE user_auth
 {{LoginModule.login(inp_email.text, inp_password.text);}}
 ```
 
-This code retrieves values from the email input and password inputs.
+In this code snippet, the login function within the LoginModule is invoked, effectively passing the email and password data to the JS module for further processing.
 
 
-When the button is clicked, the JS module verifies if the user's email exists in the database. If found, it redirects the user to a new page.
+When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.
+
+
+
+
+
+
 
 
 
