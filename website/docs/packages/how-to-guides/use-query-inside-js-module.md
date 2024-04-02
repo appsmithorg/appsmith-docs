@@ -46,7 +46,7 @@ Follow these steps to set up JS modules within the package.
 
 *Example:* You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database. To implement this, in the **Main** JS code, add authentication functions like login, token generation, and navigation upon successful login.
 
-You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App, like:
+You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which can be executed in the App, like:
 
 ```js
 export default {
