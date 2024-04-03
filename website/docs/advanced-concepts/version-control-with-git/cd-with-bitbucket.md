@@ -60,9 +60,11 @@ image: atlassian/default-image:3
 
 pipelines:
   branches:
+      // highlight-next-line
     master:
       - step:
           script:
+              // highlight-next-line
             - "curl --location --request POST https://internal.appsmith.com/api/v1/git/deploy/app/660d20f5d4a9150802bb8098?branchName=master --header \"Authorization: Bearer $NEW_APP_CD\""
 ```
 

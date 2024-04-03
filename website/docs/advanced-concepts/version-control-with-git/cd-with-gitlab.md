@@ -63,11 +63,13 @@ stages:
 deploy-job:
   stage: deploy
   rules:
+      // highlight-next-line
     - if: '$CI_COMMIT_BRANCH == "master"'
       when: always
     - when: never
   script:
     # - echo $APPSMITH_CD
+        // highlight-next-line
     - "curl --location --fail-early --request POST https://app.appsmith.com/api/v1/git/deploy/app/66042fd670bf652918?branchName=master --header \"Authorization: Bearer $APPSMITH_CD\""
 ```
 
