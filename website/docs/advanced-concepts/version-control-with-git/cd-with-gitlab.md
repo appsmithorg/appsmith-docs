@@ -1,13 +1,13 @@
 ---
-description: Continuous Delivery with Bitbucket Pipelines
-title: Using Bitbucket Pipelines
+description: Continuous Delivery with GitLab CI/CD
+title: Using GitLab CI/CD
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Using Bitbucket Pipelines</h1>
+ <h1>Using GitLab CI/CD</h1>
 
 <Tags
 tags={[
@@ -27,43 +27,47 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 * [Enterprise edition plan](https://www.appsmith.com/pricing).
 * An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
-* You need to have a Bitbucket Cloud account.
-* Basic knowledge of [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/).
+* Basic knowledge of [GitLab CI/CD](https://docs.gitlab.com/ee/ci/).
 
 ## Configure continuous delivery
 
-Follow these steps to configure Bitbucket Pipelines workflow and automate continuous delivery for your Appsmith application:
+Follow these steps to configure GitLab CI/CD workflow and automate continuous delivery for your Appsmith application:
+
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/f7cbRH8QjLrSbZGuP18W?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/n7sYdZoQIEZe62Ji5oo4?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
-1. In Bitbucket, go to your repository and select **Pipelines**.
+1. In GitLab, go to your **Build** and select **Pipelines**.
 
-2. Select one of the available templates. If you're unsure, use the one that is recommended.
+2. Select one of the available templates. If you're unsure, use the test template.
 
-3. Configure the YAML file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your project directory.
+3. Configure the YAML file. Alternatively, you can directly create a file named `gitlab-ci.yml` within your project directory.
 
 <dd>
 
 :::note
-Bitbucket requires the filename to be exactly as `bitbucket-pipelines.yml`.
+GitLab requires the filename to be exactly as `gitlab-ci.yml`.
 :::
 
 
 
-This YAML code configures a Bitbucket Pipeline to execute a deployment task using the `curl` command provided by Appsmith.
+This YAML code configures a GitLab Pipeline to execute a deployment task using the `curl` command provided by Appsmith.
 
 ```yaml
-image: atlassian/default-image:3
+stages:
+  - deploy
 
-pipelines:
-  branches:
-    master:
-      - step:
-          script:
-            - "curl --location --request POST https://internal.appsmith.com/api/v1/git/deploy/app/660d20f5d4a9150802bb8098?branchName=master --header \"Authorization: Bearer $NEW_APP_CD\""
+deploy-job:
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "master"'
+      when: always
+    - when: never
+  script:
+    # - echo $APPSMITH_CD
+    - "curl --location --fail-early --request POST https://release-ee.appsmith.com/api/v1/git/deploy/app/66042fd670bf0d44d5652918?branchName=master --header \"Authorization: Bearer $APPSMITH_CD\""
 ```
 
 </dd>
@@ -76,12 +80,6 @@ pipelines:
 
 7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in step 3).
 
-<dd>
-
-Remove the `--fail-early` option from the endpoint, as it is not supported by bitbucket.
-
-
-</dd>
 
 8. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
 
@@ -89,18 +87,19 @@ Remove the `--fail-early` option from the endpoint, as it is not supported by bi
 
 For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
-*Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $APP_CD_TOKEN`, where `APP_CD_TOKEN` represents the variable name, like:
+*Example:* You can use GitLab's variables and secrets to securely store your bearer token. Add your token as a variable within the CI/CD settings of your repository. Subsequently, in your YAML file, use the token using `$GITLAB_CD_TOKEN`, like:
+
 
 ```yaml
 Replace:
   - 'Authorization: Bearer <bearer token>'
 With:
-  - "Authorization: Bearer $APP_CD\"
+  - "Authorization: Bearer $GITLAB_CD_TOKEN\"
 ```
 
 
 
-For information see [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
+For information see [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/variables/).
 
 </dd>
 
@@ -108,11 +107,11 @@ For information see [Variables and secrets](https://support.atlassian.com/bitbuc
 
 10. Click the **Finish Setup** in your Appsmith application.
 
-11. To check the status, click the **Run initial pipeline** button, and choose the branch and pipeline.
+11. To check the status, open the **Pipeline** tab:
 
 
  <ZoomImage
-        src="/img/bit-cd-status-.png"
+        src="/img/gitlab-cd-img.png"
         alt=""
         caption="Pipeline Status"
         lazyLoad="true"

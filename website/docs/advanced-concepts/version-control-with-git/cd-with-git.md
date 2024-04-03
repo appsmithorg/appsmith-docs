@@ -65,14 +65,15 @@ You can leverage CI/CD with any platform or tool of your choice. Here are a few 
        <div className="containerDescription">Bitbucket Pipelines is a CI/CD service built into Bitbucket Cloud that enables you to build, test, and deploy code directly from your Bitbucket repository</div>
        <div className="containerTutorialLink"></div>
    </div>
- <!--   <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
+     <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
        <div className="containerCol">
            <img className="containerImage" src="/img/gitlabcd1.png" alt="Appwrite-logo"/>
        </div> <br/>
        <div className="containerCol">
-           <a href="/advanced-concepts/version-control-with-git/cd-with-bitbucket"><strong>GitLab CI/CD</strong></a>
+           <a href="/advanced-concepts/version-control-with-git/cd-with-gitlab"><strong>GitLab CI/CD</strong></a>
        </div> <hr/>
        <div className="containerDescription">GitLab CI/CD is a built-in continuous integration and continuous deployment service offered by GitLab, allowing developers to automate the testing and delivery of their code.</div>
-       <div className="containerTutorialLink"></div>       -->
-
+       <div className="containerTutorialLink">
+       </div>   
+   </div>
 </div>
