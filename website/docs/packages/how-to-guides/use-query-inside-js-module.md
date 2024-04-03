@@ -25,8 +25,7 @@ This guide shows how to use datasource queries and JSObjects within JavaScript m
 
 ## Prerequisites
 
-* A package that has already been created. For more information, see [tutorials](/packages/tutorial/query-module).
-* Knowledge of how the Package works.
+* A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
 
 ## Configure package
 
@@ -39,7 +38,7 @@ Follow these steps to set up JS modules within the package.
 </div>
 
 
-1. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
+1. Click **New Module** > **JS Module**. The **Main JSObject** represents the JS module code.
 
 
 <dd>
@@ -90,7 +89,7 @@ export default {
 Using the query module inside a JavaScript module is not supported.
 :::
 
-*Example:* In the login authentication flow, generate a query to verify whether the user's email exists within the database.
+*Example:* In the login authentication flow, create a query to verify whether the user's email exists within the database.
 
 
 ```sql
@@ -133,8 +132,7 @@ UPDATE user_auth
 {{LoginModule.login(inp_email.text, inp_password.text);}}
 ```
 
-In this code snippet, the login function within the LoginModule is invoked, effectively passing the email and password data to the JS module for further processing.
-
+With this, the login function within the module is executed, effectively passing the email and password data to the JS module for further processing.
 
 When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.
 
@@ -149,9 +147,4 @@ When the button is clicked, the JS module verifies whether the user's email exis
 
 </dd>
 
-
-
-## See also
-
-* Sample App for Login Module
 
