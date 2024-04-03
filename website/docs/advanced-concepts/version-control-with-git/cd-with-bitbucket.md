@@ -32,37 +32,12 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 ## Configure continuous delivery
 
-Follow these steps to set up continuous delivery in Appsmith:
-
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/qyXQyJVooFHKHPPyqfvU?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-1. Open Git Settings located on the left side of the bottom bar.
-
-2. Click on the **Continuous Delivery** tab.
-
-3. Select the branch where you want to implement continuous delivery. For example, the `master`/`main` branch or any `feature` branch.
-
-4. Copy the provided endpoints to integrate them into your CI/CD pipeline configuration. 
-
-5. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
-
-6. Click the **Finish Setup**.
-
-
-## Set Up Bitbucket Pipelines
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/tOESOR4JMTtaniUAk1ob?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
 Follow these steps to configure Bitbucket Pipelines workflow and automate continuous delivery for your Appsmith application:
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/f7cbRH8QjLrSbZGuP18W?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
 
 1. In Bitbucket, go to your repository and select **Pipelines**.
 
@@ -83,33 +58,57 @@ This YAML code configures a Bitbucket Pipeline to execute a deployment task usin
 ```yaml
 image: atlassian/default-image:3
 
-pipelines: 
+pipelines:
   branches:
     master:
       - step:
           script:
-              // highlight-next-line
-            - "curl --location --fail-early --request POST https://release-ee.appsmith.com/api/v1/git/deploy/app/660427bb3927480dc0720914?branchName=master --header \"Authorization: Bearer <bearer token>\""
+            - "curl --location --request POST https://internal.appsmith.com/api/v1/git/deploy/app/660d20f5d4a9150802bb8098?branchName=master --header \"Authorization: Bearer $NEW_APP_CD\""
 ```
 
 </dd>
 
+4. Open your Appsmith application and then select **Git Settings** located on the left side of the bottom bar.
 
-4. For the bearer token, it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
+5. Click on the **Continuous Delivery** tab.
 
+6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
+
+7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in step 3).
 
 <dd>
 
+Remove the `--fail-early` option from the endpoint, as it is not supported by bitbucket.
 
-*Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $APP_CD_TOKEN`, where `APP_CD_TOKEN` represents the variable name.
+
+</dd>
+
+8. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
+
+<dd>
+
+For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
+
+*Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $APP_CD_TOKEN`, where `APP_CD_TOKEN` represents the variable name, like:
+
+```yaml
+Replace:
+  - 'Authorization: Bearer <bearer token>'
+With:
+  - "Authorization: Bearer $APP_CD\""
+```
+
 
 
 For information see [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/).
+
 </dd>
 
-5. Commit the YAML file changes to the repository.
+9. Commit the YAML file changes to the repository.
 
-6. Click the **Run initial pipeline** button, and choose the branch and pipeline.
+10. Click the **Finish Setup** in your Appsmith application.
+
+11. To check the status, click the **Run initial pipeline** button, and choose the branch and pipeline.
 
 
  <ZoomImage
