@@ -95,7 +95,7 @@ Follow these steps to create refund requests which are awaiting user interaction
                     "customer_name": refund_req.customer_name
 
                 });
-            } else if (resolution && response.resolution === "Reject") {
+            } else if (response && response.resolution === "Reject") {
                 // Send refund rejection email to the customer 
                 // Supply the rejection reason as a parameter
                 await notifyRejectionToUser.run({
