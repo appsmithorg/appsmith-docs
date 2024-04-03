@@ -2,6 +2,8 @@
 description: This page provides detailed information on workflow functions available in Appsmith.
 title: Workflow Functions
 hide_title: true
+toc_min_heading_level: 2
+toc_max_heading_level: 4
 ---
 <!-- vale off -->
 
