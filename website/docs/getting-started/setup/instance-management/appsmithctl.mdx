@@ -56,7 +56,7 @@ You can create a backup archive of the Appsmith instance. The backup includes th
     * **Without encryption** - To create a backup archive without encryption, execute the following command:
 
       ```bash
-      docker-compose exec appsmith appsmithctl backup `--non-interactive`
+      docker-compose exec appsmith appsmithctl backup --non-interactive
       ```
 
       The above command creates a backup without encryption, and the backup archive won't include `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Make sure to note them separately if you choose this option.
