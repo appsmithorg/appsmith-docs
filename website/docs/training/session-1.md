@@ -7,7 +7,7 @@ hide_title: false
 
 ## Getting Started
 
-1. Sign up on this instance: [Optum Training Instance](https://training.app.appsmith.com/user/signup) (Ignore if already done)
+1. Sign up on this instance: [Optum Training Instance](https://optum-training.app.appsmith.com/user/signup) (Ignore if already done)
 
 2. Now you will be guided through the Onboarding. Select your profiency with Appsmith.
 
