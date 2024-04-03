@@ -103,7 +103,7 @@ You can create a backup archive of the Appsmith instance. The backup includes th
     * **Without encryption** - To create a backup without encryption use the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
 
       ```bash
-      #highlight-next-line
+      # Replace ANY_APPSMITH_POD_NAME with the name of a running Appsmith pod.
       kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup --non-interactive
       ```
 
