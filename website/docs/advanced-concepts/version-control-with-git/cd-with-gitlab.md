@@ -19,9 +19,10 @@ tags={[
 
 <!-- vale on -->
 
-Bitbucket Pipelines is a CI/CD service integrated into Bitbucket repositories, automating build, test, and deployment workflows for software development.
+GitLab CI/CD is a continuous integration and continuous deployment service integrated into GitLab repositories. It automates the processes of building, testing, and deploying software, streamlining software development workflows.
 
-This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with Bitbucket Pipelines. This eliminates the need for manual pulling after each update.
+
+This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with GitLab CI/CD. This eliminates the need for manual pulling after each update.
 
 ## Prerequisites
 
@@ -67,7 +68,7 @@ deploy-job:
     - when: never
   script:
     # - echo $APPSMITH_CD
-    - "curl --location --fail-early --request POST https://release-ee.appsmith.com/api/v1/git/deploy/app/66042fd670bf0d44d5652918?branchName=master --header \"Authorization: Bearer $APPSMITH_CD\""
+    - "curl --location --fail-early --request POST https://app.appsmith.com/api/v1/git/deploy/app/66042fd670bf652918?branchName=master --header \"Authorization: Bearer $APPSMITH_CD\""
 ```
 
 </dd>
@@ -107,7 +108,7 @@ For information see [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/varia
 
 10. Click the **Finish Setup** in your Appsmith application.
 
-11. To check the status, open the **Pipeline** tab:
+11. To check the status, open the **Pipelines** tab:
 
 
  <ZoomImage
