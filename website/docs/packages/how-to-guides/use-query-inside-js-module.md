@@ -21,111 +21,130 @@ tags={[
 This guide shows how to use datasource queries and JSObjects within JavaScript modules, enabling efficient data handling and manipulation for applications.
 
 
-## Create a package
 
-A package is a collection of Modules that can be versioned and distributed across instances. Within packages, you can create multiple query and JS modules.
 
+## Prerequisites
+
+* A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
+
+## Configure package
+
+Follow these steps to set up JS modules within the package.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/yIAUcYcB6uPPuBxoaahD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/HNVD0NV1FGH0HSD5cz3B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. **Create a new package** by clicking on the top-right corner of your workspace.
-
-2. Click **New Module** > **JS Module**. The **Main JS object** represents the JS module code.
-
-3. To pass or format the query data, create a datasource query within this JS module.
-
-<dd>
-
-:::info
-Using the query module inside a JavaScript module is not supported.
-:::
-
-</dd>
-
-4. Configure the Main JS Object / JS Module Code based on your requirements.
+1. Click **New Module** > **JS Module**. The **Main JSObject** represents the JS module code.
 
 
 <dd>
 
+*Example:* You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database. To implement this, in the **Main** JS code, add authentication functions like login, token generation, and navigation upon successful login.
 
-*Example:* If you want to format the product data and implement a `showAlert()` function whenever a product's stock falls below 10, you can use:
-
- You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which would be executed in the App.
+You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which can be executed in the App, like:
 
 ```js
 export default {
-  // Function to process data and return the updated array
-  async myFun1() {
-    try {
-      // Assuming Product_Api.run() returns a promise
-      await Query1.run();
-      const dataArray = Query1.data;
+    // The login function attempts to authenticate a user
+    login: async (email, passwordHash) => {
+        // Retrieve user data from the database based on the provided email
+        const [user] = await findUserByEmail.run({ email });
 
-      // Check stock availability
-      const updatedDataArray = dataArray.map(item => {
-        // Check if stock is below threshold (e.g., 10)
-        if (item.stock < 10) {
-          // Call showAlert function to display alert
-           showAlert(`Low stock for ${item.product_name} [ID: ${item.id}]`, 'warning');
+        // Check if a user with the provided email exists and the password hash matches
+        if (user && passwordHash === user?.password_hash) {
+            // Generate a token using the current timestamp and email, and store it
+            await storeValue('token', btoa(new Date().toISOString() + email));
+            
+            // Update the last login timestamp for the user in the database
+            await updateLogin.run({ id: user.id });
+            
+            // Show a success alert indicating successful login
+            await showAlert('Login Success', 'success');
+            
+            // Navigate to the 'App' page in the same window after successful login
+            await navigateTo('App', {}, 'SAME_WINDOW');
         }
-
-        // Return the item without the formattedDate property
-        return {
-          ...item
-        };
-      });
-
-      // Return the updated array directly
-      return updatedDataArray;
-    } catch (error) {
-      // Handle errors during data processing
-      console.error('Error processing data:', error);
-      // Return an empty array or handle the error as per requirement
-      return [];
     }
-  },
-};
+}
 ```
+
+* To pass data from the **App to JS modules**, you can pass it by calling the respective function with the necessary parameters, like `login(hello@email.com, password@123)`.
+
+* To pass data from **JS modules to queries**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`
+
+
 
 </dd>
 
-5. Run and Publish the JS Module.
-
-
-
-
-## Integrate Modules into your App
-
-Once you've created a JS module, follow these steps to access its data in any application:
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ELyb3WmDXhnZa3WxJC8L?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
-
-2. In the entity explorer, select the JS module and configure the function settings as needed.
-
-3. To display data, add a Table widget and connect it to the **JS module** using mustache binding `{{}}`, like:
-
+2. Within the JS module, create a new Datasource query that allows you to fetch data based on the JS code. 
 
 <dd>
 
-*Example:*
 
-```js
-{{JSModule1_1.myFun1.data}}
+:::caution
+Using the query module inside a JavaScript module is not supported.
+:::
+
+*Example:* In the login authentication flow, create a query to verify whether the user's email exists within the database.
+
+
+```sql
+//findUserByEmail
+SELECT * FROM user_auth WHERE email = {{this.params.email}};
 ```
 
-With this, when the product stock drops below 10, an alert is shown in both the app and the package.
+
+`this.params.email` provides access to the data passed within the JS module, enabling efficient communication and dynamic data handling within your application. For more information, see [Parameterised Queries](/connect-data/concepts/dynamic-queries#accessing-runtime-parameters-inside-the-query).
+
+</dd>
+
+3. Create a new Datasource query for updating the last login timestamp:
+
+<dd>
+
+```sql
+//updateLogin
+UPDATE user_auth
+  SET last_login = {{new Date().toISOString()}}
+  WHERE id = {{ this.params.id }};
+```
+
+
+</dd>
+
+4. Publish the package.
+
+5. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+
+6. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
+
+7. Select the *JS* tab on the Entity Explorer, and add the Login JS module.
+
+8. Set the **onClick** event of the Submit/Login button to:
+
+<dd>
+
+```js
+{{LoginModule.login(inp_email.text, inp_password.text);}}
+```
+
+With this, the login function within the module is executed, effectively passing the email and password data to the JS module for further processing.
+
+When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.
+
+
+
+
+
+
+
 
 
 
 </dd>
+
+
