@@ -43,17 +43,25 @@ You can create a backup archive of the Appsmith instance. The backup includes th
 
 1. Go to the directory that has the `docker-compose.yml` file.
 
-2. Create a backup archive with:
+2. You may choose to create a backup archive with or without encryption.
 
-   ```bash
-   docker-compose exec appsmith appsmithctl backup
-   ```
+    * **With encryption** - To create a backup archive with encryption, execute the following command:
 
-   This command will ask for a password to encrypt the backup archive. Please enter a password and keep it safe. If you lose this password, restoring from this backup archive will be impossible.
+      ```bash
+      docker-compose exec appsmith appsmithctl backup
+      ```
 
-   If you don't want to encrypt the backup archive, you can add `--non-interactive` to the above command, but then note that the backup archive won't include the values of `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Please make a note of them separately.
+      The above command encrypts the backup archive with a password. When prompted, enter the password and ensure you remember it. You need this password if you ever want to restore from this backup. If you forget it, you won't be able to restore this backup.
 
-   The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
+    * **Without Encryption** - To create a backup archive without encryption, execute the following command:
+
+      ```bash
+      docker-compose exec appsmith appsmithctl backup `--non-interactive`
+      ```
+
+      The above command creates a backup without encryption, and the backup archive won't include `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Make sure to note them separately if you choose this option.
+
+    The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
 
 3. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
 
@@ -73,18 +81,27 @@ You can create a backup archive of the Appsmith instance. The backup includes th
    kubectl get pods -n APPSMITH_NAMESPACE
    ```
 
-2. Create a backup using the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
+2. You may choose to create a backup archive with or without encryption.
 
-   ```bash
-   #highlight-next-line
-   kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
-   ```
+    * **With Encryption** - To create a backup with encryption use the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
 
-   This command will ask for a password to encrypt the backup archive. Please enter a password and keep it safe. If you lose this password, restoring from this backup archive will be impossible.
+      ```bash
+      #highlight-next-line
+      kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
+      ```
 
-   If you don't want to encrypt the backup archive, you can add `--non-interactive` to the above command, but then note that the backup archive won't include the values of `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Please make a note of them separately.
+      The above command encrypts the backup archive with a password. When prompted, enter the password and ensure you remember it. You need this password if you ever want to restore from this backup. If you forget it, you won't be able to restore this backup.
 
-   The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+    * **Without Encryption** - To create a backup without encryption use the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
+
+      ```bash
+      #highlight-next-line
+      kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup --non-interactive
+      ```
+
+      The above command creates a backup without encryption, and the backup archive won't include `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Make sure to note them separately if you choose this option.
+
+    The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
 
 3. Copy the archive file using the below command, ensure that you replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name, APPSMITH_BACKUP_FILENAME with your Appsmith backup filename, and APPSMITH_NAMESPACE with your Appsmith namespace:
 
