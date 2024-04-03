@@ -114,7 +114,7 @@ You can create a backup archive of the Appsmith instance. The backup includes th
 3. Copy the archive file using the below command, ensure that you replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name, APPSMITH_BACKUP_FILENAME with your Appsmith backup filename, and APPSMITH_NAMESPACE with your Appsmith namespace:
 
    ```bash
-   #highlight-next-line
+      # Replace placeholders in capitals with appropriate values based on your deployment.
    kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/APPSMITH_BACKUP_FILENAME -n APPSMITH_NAMESPACE GIVE_NAME_FOR_COPIED_BACKUP_FILE
    ```
    After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
