@@ -28,13 +28,19 @@ hide_title: false
 
 </dd>
 
-## Merge Dev Branch to Master
+## Merge your feature branch
 
 <dd>
 
 * Next, lets go back to the same Modal by clicking on the + symbol button on the bottom left.
 * This time lets head to the **Merge** Tab.
-* Select the branch you want to merge your dev branch's changes to. In this case it will be the **master** branch.
+* Select the branch you want to merge your dev branch's changes to. In this case it will be the **develop** branch.
 * Now lets see if you are all good to merge or will there be any conflicts.
 
 </dd>
+
+## Best practices
+
+When you are working as team and collaborating using Version Control, some best practices need to be followed to ensure consistency and synchronisation across your org.
+
+Here is a [documentation](https://www.appsmith.com/blog/appsmith-git-internal-tools-3) stating some of these practices that you can follow.
