@@ -28,7 +28,7 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
 Using app-building capabilities of Appsmith in workflows, developers can automate critical tasks based on business rules and requirements. From ticket assignments in customer support workflows to complex data processing operations, Workflows streamline processes efficiently.
 
-### Enable human decision-making
+### Enable Human-in-the-Loop interactions
 
 Appsmith Workflows allow for human interventions when necessary. Developers use the Appsmith app to access workflows and create interfaces for users to interact with and take actions based on decision points. This integration between workflows and the Appsmith app enhances the efficiency and effectiveness of workflows.
 
