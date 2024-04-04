@@ -26,7 +26,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 ## Prerequisites
 
-* [Enterprise edition plan](https://www.appsmith.com/pricing).
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
 * Basic knowledge of [GitLab CI/CD](https://docs.gitlab.com/ee/ci/).
 
@@ -40,17 +40,17 @@ Follow these steps to configure GitLab CI/CD workflow and automate continuous de
   </iframe>
 </div>
 
-1. In GitLab, go to your **Build** and select **Pipelines**.
+1. In GitLab, go to **Build** tab and select **Pipelines**.
 
 2. Select one of the available templates. If you're unsure, use the test template.
 
-3. Configure the YAML file. Alternatively, you can directly create a file named `gitlab-ci.yml` within your project directory.
+3. Configure the YAML file. Alternatively, you can directly create a file named `gitlab-ci.yml` within your project directory. GitLab requires the filename to be exactly as `gitlab-ci.yml`.
+
 
 <dd>
 
-:::note
-GitLab requires the filename to be exactly as `gitlab-ci.yml`.
-:::
+
+
 
 
 
@@ -81,14 +81,15 @@ deploy-job:
 
 6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
-7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in step 3).
+7. Copy the Appsmith-provided endpoint and paste it into your CI/CD pipeline configuration. Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
 
+8. Generate and copy the bearer token for authenticating requests to the provided endpoint. Save this token for future reference. Once done, click the **Finish Setup** button in your Appsmith application.
 
-8. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
+9. In GitLab, add the **bearer token**. It is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
+
 
 <dd>
 
-For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 *Example:* You can use GitLab's variables and secrets to securely store your bearer token. Add your token as a variable within the CI/CD settings of your repository. Subsequently, in your YAML file, use the token using `$GITLAB_CD_TOKEN`, like:
 
@@ -106,9 +107,8 @@ For information see [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/varia
 
 </dd>
 
-9. Commit the YAML file changes to the repository.
+10. Commit the YAML file changes to the repository.
 
-10. Click the **Finish Setup** in your Appsmith application.
 
 11. To check the status, open the **Pipelines** tab:
 
@@ -121,12 +121,12 @@ For information see [GitLab CI/CD variables](https://docs.gitlab.com/ee/ci/varia
 />
 
 
-Upon successful completion of the run, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other data.
+Upon successful completion of the run, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other data. For information see [GitLab CI/CD pipelines](https://docs.gitlab.com/ee/ci/pipelines/).
 
 
 
 
-## Test the Continuous Delivery
+## Test the continuous delivery
 
 Follow these steps to test continuous delivery after you have committed the YAML workflow file and added the bearer token:
 

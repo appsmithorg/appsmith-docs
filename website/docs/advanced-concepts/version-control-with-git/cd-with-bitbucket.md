@@ -25,7 +25,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 ## Prerequisites
 
-* [Enterprise edition plan](https://www.appsmith.com/pricing).
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
 * You need to have a Bitbucket Cloud account.
 * Basic knowledge of [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/).
@@ -43,15 +43,9 @@ Follow these steps to configure Bitbucket Pipelines workflow and automate contin
 
 2. Select one of the available templates. If you're unsure, use the one that is recommended.
 
-3. Configure the YAML file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your project directory.
+3. Configure the YAML file. Alternatively, you can directly create a file named `bitbucket-pipelines.yml` within your project directory. Bitbucket requires the filename to be exactly as `bitbucket-pipelines.yml`.
 
 <dd>
-
-:::note
-Bitbucket requires the filename to be exactly as `bitbucket-pipelines.yml`.
-:::
-
-
 
 This YAML code configures a Bitbucket Pipeline to execute a deployment task using the `curl` command provided by Appsmith.
 
@@ -76,20 +70,20 @@ pipelines:
 
 6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
-7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in step 3).
+7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
+
+
+
+8. Remove the `--fail-early` option from the endpoint, as it is not supported by bitbucket.
+
+
+
+
+9. Generate and copy the bearer token for authenticating requests to the provided endpoint. Save this token for future reference. Once done, click the **Finish Setup** button in your Appsmith application.
+
+10. In Bitbucket, add the **bearer token**. It is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 <dd>
-
-Remove the `--fail-early` option from the endpoint, as it is not supported by bitbucket.
-
-
-</dd>
-
-8. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
-
-<dd>
-
-For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 *Example:* You can use Bitbucket's variables and secrets to store the bearer token. Add your token as a variable in the repository settings, then in the YAML file, use `Authorization: Bearer $APP_CD_TOKEN`, where `APP_CD_TOKEN` represents the variable name, like:
 
@@ -106,11 +100,9 @@ For information see [Variables and secrets](https://support.atlassian.com/bitbuc
 
 </dd>
 
-9. Commit the YAML file changes to the repository.
+11. Commit the YAML file changes to the repository.
 
-10. Click the **Finish Setup** in your Appsmith application.
-
-11. To check the status, click the **Run initial pipeline** button, and choose the branch and pipeline.
+12. To check the status, click the **Run initial pipeline** button, and choose the branch and pipeline.
 
 
  <ZoomImage
@@ -121,12 +113,10 @@ For information see [Variables and secrets](https://support.atlassian.com/bitbuc
 />
 
 
-Upon successful completion of the run, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other data.
+Upon successful completion of the run, you can monitor the pipeline's status, access detailed log information from its execution, and gather various other data. For information see [Bitbucket pipelines](https://support.atlassian.com/bitbucket-cloud/docs/view-your-pipeline/).
 
 
-
-
-## Test the Continuous Delivery
+## Test the continuous delivery
 
 Follow these steps to test continuous delivery after you have committed the YAML workflow file and added the bearer token:
 

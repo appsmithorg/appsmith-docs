@@ -24,7 +24,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 
 ## Prerequisites
 
-* [Enterprise edition plan](https://www.appsmith.com/pricing).
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
 * Basic knowledge of [GitHub Actions](https://docs.github.com/en/actions).
 
@@ -75,14 +75,14 @@ This YAML code defines a GitHub Actions workflow named `appsmith-cd` that trigge
 
 6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
-7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in step 3).
+7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
 
-5. Generate a bearer token for authenticating requests to the provided endpoint. Save this token for future reference.
+
+8. Generate and copy the bearer token for authenticating requests to the provided endpoint. Save this token for future reference. Once done, click the **Finish Setup** button in your Appsmith application.
+
+9. In Github, add the **bearer token**. It is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
 
 <dd>
-
- For the [bearer token](https://oauth.net/2/bearer-tokens/), it is recommended that you create secrets or secure variables instead of directly adding them to the repository. 
-
 
 *Example:* You can use GitHub Secrets, where you can securely add your token in the repository's **Secrets and Variables** settings. In the `deploy-appsmith.yaml` file, replace the `Authorization: Bearer <bearer token>` with `Authorization: Bearer ${{ secrets.APPSMITH_CD_KEY }}`
 
@@ -92,15 +92,25 @@ For information see [Github action secrets](https://docs.github.com/en/actions/s
 
 
 
-9. Commit the YAML file changes to the repository.
+10. Commit the YAML file changes to the repository.
 
-10. Click the **Finish Setup** in your Appsmith application.
-
-
+11. To check the status, click the **Actions** tab:
 
 
+ <ZoomImage
+        src="/img/github-status-pipeline.png"
+        alt=""
+        caption="Workflow Status"
+        lazyLoad="true"
+/>
 
-## Test the Continuous Delivery
+
+Upon successful completion of the run, you can monitor the workflow's status, access detailed log information from its execution, and gather various other data. 
+
+
+
+
+## Test the continuous delivery
 
 Follow these steps to test continuous delivery after you have committed the YAML workflow file and added the bearer token:
 
