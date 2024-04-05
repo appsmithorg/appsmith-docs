@@ -70,7 +70,7 @@ pipelines:
 
 6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
-7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
+7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration. Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
 
 
 

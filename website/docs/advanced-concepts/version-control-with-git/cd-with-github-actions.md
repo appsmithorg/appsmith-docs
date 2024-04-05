@@ -75,7 +75,7 @@ This YAML code defines a GitHub Actions workflow named `appsmith-cd` that trigge
 
 6. Select the branch where you want to implement continuous delivery. For example, the `master` branch or any `feature` branch.
 
-7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration.  Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
+7. Copy the provided endpoints and paste them into your CI/CD pipeline configuration. Replace the `curl` command with the command provided by Appsmith(as mentioned in the YAML file in step 3).
 
 
 8. Generate and copy the bearer token for authenticating requests to the provided endpoint. Save this token for future reference. Once done, click the **Finish Setup** button in your Appsmith application.
