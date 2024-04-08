@@ -11,6 +11,7 @@ After developing your app on a feature branch, to commit and push changes to you
 
 ![](/img/commit_changes_git.gif)
 
+
 When you push your feature branch to the remote repository, you can see the deployed version of the branch in Appsmith. To check the deployed app for your branch, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**.
 
 ## Upstream changes

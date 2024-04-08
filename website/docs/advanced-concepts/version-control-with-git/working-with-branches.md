@@ -6,8 +6,6 @@ sidebar_position: 1
 This guide shows you how to create, switch, and delete Git branches within your Appsmith application, which allows you to establish separate branches to manage different stages of your app development process.
 
 
-Each branch has a unique URL format: `<APPSMITH-APP-URL>?branch=<BRANCH-NAME>`. If the branch name is not specified, the URL defaults to the `master` branch.
-
 By default, Appsmith enables the protected branch feature for the `master/main` branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the `main/master` branch.
 
 :::note
@@ -29,7 +27,7 @@ To create these branches in your Appsmith app, follow the steps below:
 
 2. To create a new branch, enter the new branch name (Eg. feature) in the input box and click on **Create branch: feature**. Your application switches to the new `(feature)` branch.
 
-After creating a new branch, you can make changes to the branch and commit them.
+After creating a new branch, you can make changes to the branch and commit them. Each branch has a unique URL format: `<APPSMITH-APP-URL>?branch=<BRANCH-NAME>`. If the branch name is not specified, the URL defaults to the `master` branch.
 
 :::note
 * When you create a new branch, it includes any uncommitted changes from its parent branch.
