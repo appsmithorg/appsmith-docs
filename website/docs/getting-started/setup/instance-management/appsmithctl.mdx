@@ -39,64 +39,85 @@ Subcommands allow you to trigger different operations like exporting or importin
 You can create a backup archive of the Appsmith instance. The backup includes the database, `docker.env`, and Git data. Follow these steps to create a backup archive:
 
 <Tabs queryString="current-command-type">
-<TabItem label="Docker" value="docker-commands"> 
+<TabItem label="Docker" value="docker-commands">
 
 1. Go to the directory that has the `docker-compose.yml` file.
 
-2. Get your encryption details with:
+2. You may choose to create a backup archive with or without encryption.
 
-```bash
-docker-compose exec appsmith cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
-```
-Keep these details handy, as you need them for restoring the Appsmith instance.
+    * **With encryption** - To create a backup archive with encryption, execute the following command:
 
-3. Create a backup archive with:
+      ```bash
+      docker-compose exec appsmith appsmithctl backup
+      ```
 
-```bash
-docker-compose exec appsmith appsmithctl backup
-```
-The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
+      The above command encrypts the backup archive with a password. When prompted, enter a password and ensure you remember it. You need this password if you ever want to restore from this backup. If you forget it, you won't be able to restore this backup.
 
-4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
+    * **Without encryption** - To create a backup archive without encryption, execute the following command:
 
-```bash
-# Replace the appsmith-backup-DATE_AND_TIMESTAMP.tar.gz with the backup file name
-docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz .
-```
-After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
+      ```bash
+      docker-compose exec appsmith appsmithctl backup --non-interactive
+      ```
+
+      The above command creates a backup without encryption, and the backup archive won't include `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Make sure to note them separately if you choose this option.
+
+    The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
+
+3. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
+
+   * Copy the encrypted archive with:
+
+      ```bash
+      # Replace the appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc with the backup file name
+      docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc .
+      ```
+    * Copy the unencrypted archive with:
+
+      ```bash
+      # Replace the appsmith-backup-DATE_AND_TIMESTAMP.tar.gz with the backup file name
+      docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz .
+      ```
+   After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
 
 </TabItem>
 
-<TabItem label="Kubernetes" value="kubernetes-commands"> 
+<TabItem label="Kubernetes" value="kubernetes-commands">
 
 1. Get the name of the Appsmith pod with (replace the `APPSMITH_NAMESPACE` with your Appsmith namespace):
 
-```bash
-kubectl get pods -n APPSMITH_NAMESPACE
-```
-2. Get your encryption details using the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
+   ```bash
+   kubectl get pods -n APPSMITH_NAMESPACE
+   ```
 
-```bash
-#highlight-next-line
-kubectl exec ANY_APPSMITH_POD_NAME -- cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
-```
-Keep these details handy, as you need them for restoring the Appsmith instance.
+2. You may choose to create a backup archive with or without encryption.
 
-3. Create a backup using the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
- 
-```bash
-#highlight-next-line
-kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
-```
-The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+    * **With encryption** - To create a backup with encryption use the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
 
-4. Copy the archive file using the below command, ensure that you replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name, APPSMITH_BACKUP_FILENAME with your Appsmith backup filename, and APPSMITH_NAMESPACE with your Appsmith namespace:
+      ```bash
+      # Replace ANY_APPSMITH_POD_NAME with the name of a running Appsmith pod.
+      kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup
+      ```
 
-```bash
-#highlight-next-line
-kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/APPSMITH_BACKUP_FILENAME -n APPSMITH_NAMESPACE GIVE_NAME_FOR_COPIED_BACKUP_FILE
-```
-After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
+      The above command encrypts the backup archive with a password. When prompted, enter a password and ensure you remember it. You need this password if you ever want to restore from this backup. If you forget it, you won't be able to restore this backup.
+
+    * **Without encryption** - To create a backup without encryption use the below command (replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name):
+
+      ```bash
+      # Replace ANY_APPSMITH_POD_NAME with the name of a running Appsmith pod.
+      kubectl exec ANY_APPSMITH_POD_NAME appsmithctl backup --non-interactive
+      ```
+
+      The above command creates a backup without encryption, and the backup archive won't include `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` environment variables in the `docker.env` file. Make sure to note them separately if you choose this option.
+
+    The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+
+3. Copy the archive file using the below command, ensure that you replace the `ANY_APPSMITH_POD_NAME` with your Appsmith pod name, APPSMITH_BACKUP_FILENAME with your Appsmith backup filename, and APPSMITH_NAMESPACE with your Appsmith namespace:
+
+   ```bash
+      # Replace placeholders in capitals with appropriate values based on your deployment.
+   kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/APPSMITH_BACKUP_FILENAME -n APPSMITH_NAMESPACE GIVE_NAME_FOR_COPIED_BACKUP_FILE
+   ```
+   After running the above command, the backup archive is copied to your current directory, indicating that the backup process is completed. You can now proceed with the remaining steps of the process you were performing.
 
 </TabItem>
 
@@ -106,7 +127,7 @@ After running the above command, the backup archive is copied to your current di
 
 <div className="tag-wrapper">
 
-### Schedule automatic backups 
+### Schedule automatic backups
 
 <Tags
   tags={[
@@ -167,15 +188,15 @@ For more information about creating the `Cron` expressions, see [Cron Schedule E
 Follow these steps to sync backups with an S3 bucket for your installation type:
 
 <Tabs queryString="current-command-type">
-<TabItem label="Docker" value="docker-commands"> 
+<TabItem label="Docker" value="docker-commands">
 
 1. Go to the directory where the `docker.env` file is located.
 2. Open the `docker.env` file and add the below entries:
 
 ```bash
-APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY 
+APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY
 APPSMITH_BACKUP_S3_SECRET_KEY=AWS_SECRET_KEY
-APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME 
+APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME
 APPSMITH_BACKUP_S3_REGION=AWS_BUCKET_REGION
 ```
 3. Sync your backups to the S3 bucket with:
@@ -186,7 +207,7 @@ docker-compose exec appsmithctl backup --upload-to-s3
 After configuration, the restore command lists local and S3 bucket backups.
 
 </TabItem>
-<TabItem label="Kubernetes" value="kubernetes-commands"> 
+<TabItem label="Kubernetes" value="kubernetes-commands">
 
 1. Set the Amazon S3 bucket:
 
@@ -198,8 +219,8 @@ After configuration, the restore command lists local and S3 bucket backups.
     --set applicationConfig.APPSMITH_BACKUP_S3_SECRET_KEY=<AWS_SECRET_KEY \
     --set applicationConfig.APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME  \
     --set applicationConfig.APPSMITH_BACKUP_S3_REGION=AWS_BUCKET_REGION \
-      appsmith appsmith/appsmith 
-    ```  
+      appsmith appsmith/appsmith
+    ```
 
     * **Or** using `values.yaml` file:
 
@@ -207,16 +228,16 @@ After configuration, the restore command lists local and S3 bucket backups.
 
       ```yaml
       applicationConfig:
-        APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY 
+        APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY
         APPSMITH_BACKUP_S3_SECRET_KEY=AWS_SECRET_KEY
-        APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME 
+        APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME
         APPSMITH_BACKUP_S3_REGION=AWS_BUCKET_REGION
       ```
 
       b. Update the values:
 
       ```bash
-      helm upgrade appsmith appsmith-ee/appsmith -f values.yaml 
+      helm upgrade appsmith appsmith-ee/appsmith -f values.yaml
       ```
 
 2. Get the name of the Appsmith pod with:
@@ -245,7 +266,7 @@ Ensure that the name of the backup archive (`appsmith-data.archive`) isn't chang
 :::
 
 <Tabs queryString="current-command-type">
-<TabItem label="Docker" value="docker-commands"> 
+<TabItem label="Docker" value="docker-commands">
 
 1. Go to the directory that has the `docker-compose.yml` file.
 
@@ -280,7 +301,7 @@ This command copies the `docker.env` file in your current directory.
 
 </TabItem>
 
-<TabItem label="Kubernetes" value="kubernetes-commands"> 
+<TabItem label="Kubernetes" value="kubernetes-commands">
 
 1. Get the name of the Appsmith pod with:
 
@@ -324,7 +345,7 @@ kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/appsmith-data.arch
 Follow these steps to restore your Appsmith instance from a backup archive:
 
 <Tabs queryString="current-command-type">
-<TabItem label="Docker" value="docker-commands"> 
+<TabItem label="Docker" value="docker-commands">
 
 1. Restore your Appsmith instance with:
 ```bash
@@ -348,7 +369,7 @@ If you restore an older version of Appsmith, a warning message may appear. Updat
 
 </TabItem>
 
-<TabItem label="Kubernetes" value="kubernetes-commands"> 
+<TabItem label="Kubernetes" value="kubernetes-commands">
 
 1. Get the name of the Appsmith pod with:
 
@@ -357,11 +378,20 @@ kubectl get pods
 ```
 2. Copy the archive file to the pod with:
 
-```bash
-# Replace `ANY_APPSMITH_POD_NAME` with the pod name
-#highlight-next-line
-kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
-```
+    * Encrypted archive file - 
+
+      ```bash
+      # Replace `ANY_APPSMITH_POD_NAME` with the pod name
+      #highlight-next-line
+      kubectl cp appsmith-backup-TIMESTAMP.tar.gz.enc ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
+      ```
+    * Unencrypted archive file - 
+
+      ```bash
+      # Replace `ANY_APPSMITH_POD_NAME` with the pod name
+      #highlight-next-line
+      kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
+      ```
 
 3. Go to the `/appsmith-stacks/configuration/` folder
 
@@ -403,7 +433,7 @@ kubectl exec ANY_APPSMITH_POD_NAME appsmithctl restore
 Follow these steps to restore the Appsmith internal database:
 
 <Tabs queryString="current-command-type">
-<TabItem label="Docker" value="docker-commands"> 
+<TabItem label="Docker" value="docker-commands">
 
 1. Copy the archive file into the container with:
 
@@ -432,7 +462,7 @@ docker-compose exec appsmith supervisorctl restart backend
 
 </TabItem>
 
-<TabItem label="Kubernetes" value="kubernetes-commands"> 
+<TabItem label="Kubernetes" value="kubernetes-commands">
 
 1. Get the name of the Appsmith pod with:
 

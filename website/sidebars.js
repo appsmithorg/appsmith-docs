@@ -51,6 +51,7 @@ const sidebars = {
                     id: 'getting-started/setup/installation-guides/kubernetes/README',
                   },
                   items: [
+                    'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
                     'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                     'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                     'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
@@ -243,7 +244,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
             'connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith',
@@ -366,7 +367,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
           items: [
             //'core-concepts/building-ui/dynamic-ui/README',
@@ -431,7 +432,7 @@ const sidebars = {
               ],
             },
             'connect-data/how-to-guides/how-to-download-files-using-api',
-            `core-concepts/writing-code/workflows`,
+            `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             `build-apps/how-to-guides/display-select-options-dynamically`,
             'build-apps/how-to-guides/add-remove-inputs-in-list',
@@ -549,7 +550,7 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
-          label: 'How-To Guides',
+          label: 'How-to Guides',
           link: { type: 'doc', id: 'write-code/how-to-guides/README' },
           items: [
             'core-concepts/writing-code/javascript-promises',
@@ -620,7 +621,83 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
 
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-to Guides',
+          items: [
+            'packages/how-to-guides/use-query-inside-js-module',],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'packages/reference/query-module',
+            'packages/reference/package'
+          ],
+        }
+      ]
+    }, //module end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows (Beta)',
+      items: [
+        'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
+          items: [
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-to Guides',
+          link: {
+            type: 'doc',
+            id: 'workflows/how-to-guides/README',
+          },
+          items: [
+            'workflows/how-to-guides/create-approval-workflow',
+            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/set-up-automatic-processing',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'workflows/reference/workflow-queries',
+            'workflows/reference/workflow-functions'
+          ],
+        }
+      ]
+
+    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
@@ -655,38 +732,21 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              collapsed: true,
-              label: 'How-To Guides',
-              items: [
-                {
-                  type: 'category',
-                  label: 'Connect Git Repository',
-                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository' },
-                  items: [
-                    'advanced-concepts/version-control-with-git/guides/setup-github',
-                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
-                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
-                    'advanced-concepts/version-control-with-git/guides/setup-azure',
-                  ],
-                },
-                'advanced-concepts/version-control-with-git/working-with-branches',
-                ,
-              ]
+              label: 'Connect to a Git Repository',
+              link: {
+                type: 'doc',
+                id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository',
+              },
+              items: ['advanced-concepts/version-control-with-git/updating-local-file-path',],
             },
-            {
-              type: 'category',
-              collapsed: true,
-              label: 'Concepts',
-              link: { type: 'doc', id: 'connect-data/concepts/README' },
-              items: [
-                'connect-data/concepts/dynamic-queries',
-              ]
-            },
-          ]
-        }, 
-    
-       //git-end
-        
+            'advanced-concepts/version-control-with-git/working-with-branches',
+            'advanced-concepts/version-control-with-git/commit-and-push',
+            'advanced-concepts/version-control-with-git/merging-branches',
+            'advanced-concepts/version-control-with-git/revert-changes',
+            'advanced-concepts/version-control-with-git/import-from-repository',
+            'advanced-concepts/version-control-with-git/environments-with-git',
+          ],
+        },
 
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',

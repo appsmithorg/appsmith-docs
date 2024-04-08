@@ -5,26 +5,7 @@ description: The Migrate Applications feature gives you the flexibility to move 
 
 # Migrate Applications
 
-On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications.
-
-### **Steps to Migrate entire Appsmith Data onto instances:**
-
-#### **Backup the old VM**
-
-1. Dump the MongoDB data from the old VM via the command: `mongodump --uri "mongodb://<rootUsername>:<rootPassword>@localhost:27017/appsmith" --out=/tmp/appsmith-mongo-dump`
-2. Copy the dump file to the new VM
-3. Open the file `encryption.env` and note the values in this file. The values here are important for Appsmith to be able to read sensitive information in the new installation.
-
-## **Restore the backup on the new VM:**
-
-:::caution
-The restore would end up deleting all the existing data in the mongo database of the newly installed appsmith instance
-:::
-
-1. Install Appsmith via the install.sh script.
-2. Restore the dump on the newly created MongoDB container via the command: `mongorestore --drop /tmp/appsmith-mongo-dump -d appsmith --uri=mongodb://<rootUsername>:<rootPassword>@localhost/appsmith`
-3. Open the file `encryption.env` and change the variables `APPSMITH_ENCRYPTION_PASSWORD` & `APPSMITH_ENCRYPTION_SALT` to the same ones as the old VM. This is important because sensitive data in Mongo is encrypted using these credentials. Without this, you risk corrupting any passwords you've saved.
-4. Restart the Appsmith system using the command: `sudo docker-compose down && sudo docker-compose up -d`
+On Appsmith, you can migrate all Appsmith data from one instance to another or just migrate necessary applications. To migrate all Appsmith data, use the [backup/restore](/getting-started/setup/instance-management/appsmithctl) feature. To move specific applications only, read along.
 
 ## Import/Export applications
 
