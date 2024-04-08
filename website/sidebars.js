@@ -745,6 +745,19 @@ const sidebars = {
             'advanced-concepts/version-control-with-git/revert-changes',
             'advanced-concepts/version-control-with-git/import-from-repository',
             'advanced-concepts/version-control-with-git/environments-with-git',
+            {
+              type: 'category',
+              label: 'Continuous Delivery (CI/CD)',
+              link: {
+                type: 'doc',
+                id: 'advanced-concepts/version-control-with-git/cd-with-git'
+              },
+              items: [
+                'advanced-concepts/version-control-with-git/cd-with-github-actions',
+                'advanced-concepts/version-control-with-git/cd-with-bitbucket',
+                'advanced-concepts/version-control-with-git/cd-with-gitlab'
+              ],
+            },
           ],
         },
 

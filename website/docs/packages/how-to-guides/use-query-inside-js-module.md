@@ -18,14 +18,14 @@ tags={[
 
 <!-- vale on -->
 
-This guide shows how to use datasource queries and JSObjects within JavaScript modules, enabling efficient data handling and manipulation for applications.
+This guide shows how to use datasource queries and JSObjects within the JS module, enabling efficient data handling and manipulation for applications.
 
 
 
 
 ## Prerequisites
 
-* A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
+A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
 
 ## Configure package
 
@@ -86,7 +86,7 @@ export default {
 
 
 :::caution
-Using the query module inside a JavaScript module is not supported.
+Using the query module inside a JS module is not supported.
 :::
 
 *Example:* In the login authentication flow, create a query to verify whether the user's email exists within the database.
@@ -124,15 +124,18 @@ UPDATE user_auth
 
 7. Select the *JS* tab on the Entity Explorer, and add the Login JS module.
 
-8. Set the **onClick** event of the Submit/Login button to:
+8. Set the **onClick** event of the Submit/Login button to pass data to a JS module and execute the corresponding function.
 
 <dd>
+
+*Example:* To pass the email and password, you can configure the **onClick** event as follows:
+
+
 
 ```js
 {{LoginModule.login(inp_email.text, inp_password.text);}}
 ```
 
-With this, the login function within the module is executed, effectively passing the email and password data to the JS module for further processing.
 
 When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.
 
