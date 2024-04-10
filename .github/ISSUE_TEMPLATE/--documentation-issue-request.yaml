@@ -1,0 +1,62 @@
+name: 📖 Documentation Feature
+description: Add Documentation for New Feature
+title: "[Docs]: "
+labels:
+  - "Documentation"
+  - "User Education Pod"
+assignees:
+  - Nikhil-Nandagopal
+  - jnikhila
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The document outlines a structure of the documentation issue template that can be used to gather all necessary information for quickly updating or creating documentation with minimal dependency on other teams.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Problem Statement**
+
+        Clearly articulate the problem or challenge the documentation aims to address.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Proposed Changes**
+
+        Outline the changes or additions needed to resolve the problem stated above. Please be specific and explain why this change is necessary.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Use Cases / User query reference**
+
+        Describe the primary use cases or scenarios or user queries and how it is impacting users. 
+
+        - Use Case 1: [Description] - Add  [Link to Use case document]
+        - Use Query 1: [Description] - Add [Link to support query] [Link to slack or discord discussion]
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Supporting Media**
+
+        Attach any relevant media (e.g., Loom recordings, screenshots) to aid in understanding the documentation request.
+
+        - **PRD (Product Requirements Document)**: If available, provide a link to the PRD related to this documentation request. [PRD Link]
+        - **Feature Recording:** Link to any recordings or demonstrations related to the feature. [Recording Link]
+        - **Other Relevant Links:** Include any other relevant links or resources related to this documentation request. For example, Designs or ERDs.
+        - **Additional Context:**
+
+            Provide any further details or context that might help address this request effectively.
+
+  - type: checkboxes
+    id: checkFeatureExistingIssues
+    attributes:
+      label: Checklist
+      options:
+        - label: Reviewed existing documentation to ensure this request is not duplicated.
+          required: true
+        - label: Attached relevant media or supporting materials like links to the PRD, feature recordings, Slack or Discord links, and any other relevant resources.
+          required: true
