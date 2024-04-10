@@ -1,4 +1,5 @@
 ## Description 
+
 Provide a concise summary of the changes made in this pull request
 - 
 
@@ -15,10 +16,12 @@ Check the appropriate box:
 - [ ] Maintenance
 
 ## Documentation tickets
+
  Link to one or more documentation tickets:
  - 
 
 ## Checklist
+
 From the below options, select the ones that are applicable:
 
 - [ ] Checked for Grammarly suggestions.
