@@ -1,8 +1,10 @@
 ## Description 
+
 Provide a concise summary of the changes made in this pull request
 - 
 
 ## Pull request type
+
 Check the appropriate box:
 
 - [ ] Review Fixes
@@ -15,10 +17,12 @@ Check the appropriate box:
 - [ ] Maintenance
 
 ## Documentation tickets
+
  Link to one or more documentation tickets:
  - 
 
 ## Checklist
+
 From the below options, select the ones that are applicable:
 
 - [ ] Checked for Grammarly suggestions.

@@ -1,5 +1,5 @@
-name: 📖 Documentation Feature
-description: Add Documentation for New Feature
+name: 📖 Documentation Issue
+description: Use this template for creating or updating documentation.
 title: "[Docs]: "
 labels:
   - "Documentation"
@@ -11,14 +11,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        The document outlines a structure of the documentation issue template that can be used to gather all necessary information for quickly updating or creating documentation with minimal dependency on other teams.
+        Thanks for taking the time to fill out this documentation request!
 
-  - type: markdown
+  - type: textarea
+    id: txtProblemStatement
     attributes:
-      value: |
-        ## **Problem Statement**
-
-        Clearly articulate the problem or challenge the documentation aims to address.
+      label: Problem Statement
+      description: Clearly articulate the problem or challenge the documentation aims to address.
 
   - type: markdown
     attributes:
@@ -27,15 +26,11 @@ body:
 
         Outline the changes or additions needed to resolve the problem stated above. Please be specific and explain why this change is necessary.
 
-  - type: markdown
+  - type: textarea
+    id: txtusecaseoruserquery
     attributes:
-      value: |
-        ## **Use Cases / User query reference**
-
-        Describe the primary use cases or scenarios or user queries and how it is impacting users. 
-
-        - Use Case 1: [Description] - Add  [Link to Use case document]
-        - Use Query 1: [Description] - Add [Link to support query] [Link to slack or discord discussion]
+      label: Use Cases / User query reference
+      description: Describe the primary use cases or scenarios or user queries and how it is impacting users.
 
   - type: markdown
     attributes:
@@ -44,12 +39,21 @@ body:
 
         Attach any relevant media (e.g., Loom recordings, screenshots) to aid in understanding the documentation request.
 
-        - **PRD (Product Requirements Document)**: If available, provide a link to the PRD related to this documentation request. [PRD Link]
-        - **Feature Recording:** Link to any recordings or demonstrations related to the feature. [Recording Link]
-        - **Other Relevant Links:** Include any other relevant links or resources related to this documentation request. For example, Designs or ERDs.
-        - **Additional Context:**
-
-            Provide any further details or context that might help address this request effectively.
+  - type: input
+    id: inprecording
+    attributes:
+      label: Audio/Video Recording
+      description: Loom recordings that will help in understanding the feature/updates.
+  - type: input
+    id: inpPRD
+    attributes:
+      label: Product Requirements Document
+      description: If available, provide a link to the PRD related to this documentation request.
+  - type: input
+    id: inpOthers
+    attributes:
+      label: Other Relevant Links
+      description: Include any other relevant links or resources related to this documentation request. For example, Designs or ERDs.
 
   - type: checkboxes
     id: checkFeatureExistingIssues
