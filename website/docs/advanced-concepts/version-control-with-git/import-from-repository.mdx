@@ -46,10 +46,30 @@ After completing the import process, you'll need to reconfigure the datasource s
 </TabItem>
 <TabItem label="GitLab" value="gitlab">
 
-1. Open your repository and from the sidebar, go to the **Settings** > **Repository** and expand the **Deploy keys** section.
-2. Click **Add key**. Add the title and paste the generated key in the key section.
-3. Enable the **Grant write permissions to this key** checkbox 
-4. Click **Add key**.
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Gitlab** as the service provider, and click on **Configure Git**.
+
+4. Navigate to the repository's landing page, click on the Code button, and copy the **SSH URL**.
+
+5. Paste the URL in the **Generate SSH Key** section on Appsmith.
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
+
+8. Check the **Allow write access** option and then add the key.
+
+9. In Appsmith, click the **Connect Git** button.
+
+With this capability, you can collaborate on the same Git repository across different applications, enabling the management of multi-instance deployments.
+
+
+After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
+
+
 
 </TabItem>
 <TabItem label="Bitbucket" value="bitbucket">
