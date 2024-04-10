@@ -2,17 +2,34 @@
 sidebar_position: 2
 ---
 
-# Commit and Push Changes
-
-After developing your app on a feature branch, to commit and push changes to your remote repository, follow the steps below:
-
-1.  Click the **+** icon at the bottom left corner to commit the changes. 
-2. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
-
-![](/img/commit_changes_git.gif)
+# Manage Changes
 
 
-When you push your feature branch to the remote repository, you can see the deployed version of the branch in Appsmith. To check the deployed app for your branch, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**.
+
+## Commit and Push changes
+
+After creating a new branch, follow these steps to commit and push changes to your remote repository:
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "90%" }}>
+  <iframe src="https://demo.arcade.software/urZJd1ad19VGRAFFuXSs?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+1. Make modifications to the application, including creating queries and configuring widgets.
+
+2. Click the **+** icon at the bottom left corner to commit the changes. The plus sign reflects the number of entities you have modified.
+
+3. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your repository with the latest changes. 
+
+
+
+
+
+After pushing your feature branch to the remote repository, you can review the deployed version of the branch in Appsmith. To check the deployed app associated with your branch, select the **Deploy button** located at the top right corner. 
+
+This deployed version corresponds to the specific branch. To update the `master` branch, you must merge the changes into the `master` branch.
+
 
 ## Upstream changes
 

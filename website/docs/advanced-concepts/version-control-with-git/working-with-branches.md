@@ -8,6 +8,14 @@ This guide shows you how to create, switch, and delete Git branches within your 
 
 By default, Appsmith enables the protected branch feature for the `master/main` branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the `main/master` branch.
 
+Direct merges to protected branches are not allowed, users should merge via PR
+
+
+
+
+
+
+
 :::note
 It's recommended to organize branches according to development phases, such as having a `master/main` branch for stable releases, `feature` branches for new features, and `release` branches for testing and QA purposes.
 :::
@@ -27,7 +35,7 @@ To create these branches in your Appsmith app, follow the steps below:
 
 2. To create a new branch, enter the new branch name (Eg. feature) in the input box and click on **Create branch: feature**. Your application switches to the new `(feature)` branch.
 
-After creating a new branch, you can make changes to the branch and commit them. Each branch has a unique URL format: `<APPSMITH-APP-URL>?branch=<BRANCH-NAME>`. If the branch name is not specified, the URL defaults to the `master` branch.
+After creating a new branch, you can make changes to the branch and commit them. Each branch has a unique URL format: `<APPSMITH-APP-URL>?branch=<BRANCH-NAME>`. If the branch name is not specified, the URL defaults to the `default` branch.
 
 :::note
 * When you create a new branch, it includes any uncommitted changes from its parent branch.

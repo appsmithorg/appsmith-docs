@@ -749,6 +749,7 @@ const sidebars = {
                     
                     'advanced-concepts/version-control-with-git/working-with-branches',
                     'advanced-concepts/version-control-with-git/commit-and-push',
+                    'advanced-concepts/version-control-with-git/import-from-repository',
                     {
                       type: 'category',
                       label: 'Continuous Delivery (CI/CD)',
