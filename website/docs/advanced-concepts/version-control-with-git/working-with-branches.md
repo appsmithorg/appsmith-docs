@@ -7,7 +7,7 @@ This guide shows you how to create, switch, and delete Git branches within your 
 
 
 :::info
-By default, Appsmith enables the protected branch feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
+By default, Appsmith enables the [protected branch](#change-protected-branch) feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
 :::
 
 
@@ -40,23 +40,6 @@ It's recommended to organize branches according to development phases, such as h
 
 
 
-
-
-## Delete local branch
-
-Follow the steps to delete a local branch that is no longer needed:
-
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/jq9yBSnhA8GBOF7VRdb7?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-1. Open the branch menu from the bottom left corner.
-
-2. Navigate to the branch you want to delete, click options, and select **Delete**.
-
-With these steps, the local branch gets deleted. To delete a remote branch, you need to delete/remove it from your Git service provider.
 
 ## Merge branches
 
@@ -99,6 +82,23 @@ Follow these steps to sync your local branch with its remote counterpart:
 
 
 
+
+## Delete local branch
+
+Follow the steps to delete a local branch that is no longer needed:
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/jq9yBSnhA8GBOF7VRdb7?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. Open the branch menu from the bottom left corner.
+
+2. Navigate to the branch you want to delete, click options, and select **Delete**.
+
+With these steps, the local branch gets deleted. To delete a remote branch, you need to delete/remove it from your Git service provider.
+
 <!-- vale off -->
 
 <div className="tag-wrapper">
@@ -121,11 +121,10 @@ Follow these steps to sync your local branch with its remote counterpart:
 
 The default branch is the base branch of the app. You have the option to select a different default branch for each instance.
 
-<ZoomImage
-  src="/img/git-default-branch.png" 
-  alt="Default branch"
-  caption="Default branch"
-/>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/p4gmMV9148bi2ON1vCnr?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
 
 
 1. Open **Git Settings** located on the left side of the bottom bar.
@@ -161,20 +160,18 @@ Protected branches mean that changes to the app are not allowed within those bra
 
 If you are an enterprise user, you can select multiple branches as protected. Follow these steps to change protected branches:
 
-
-However, for non-enterprise users,
-
 1. Open **Git Settings** located on the left side of the bottom bar.
 
 2. Navigate to the branch tab.
 
-3. Select the list of branches you want to designate as protected. 
+3. Select the list of branches you want to designate as protected. To make changes to these branches, you need to raise a PR and merge manually from the git provider.
 
 <ZoomImage
   src="/img/git-branch-protection.png" 
   alt="Branch Protection"
   caption="Branch Protection"
 />
+
 
 
 ## Next steps
