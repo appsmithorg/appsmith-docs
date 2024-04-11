@@ -4,61 +4,92 @@ sidebar_position: 2
 
 # Manage Changes
 
+This guide shows you how to commit, pull, merge and manage changes within your application.
 
 
 ## Commit and Push changes
 
-After creating a new branch, follow these steps to commit and push changes to your remote repository:
+After creating a new branch and making changes to the app, follow these steps to commit and push the changes to your remote repository:
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "1000%" }}>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/urZJd1ad19VGRAFFuXSs?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. Make modifications to the application. For example, creating queries and configuring widgets.
-
-2. Click the **+** icon at the bottom left corner to commit the changes. The plus sign also reflects the number of entities you have modified.
+1. Click the **+** icon at the bottom left corner to commit the changes. The **+** icon also reflects the number of entities you have modified. Entities refer to changes in the app, such as queries, JSObjects, and page edits.
 
 <dd>
-  Entities refer to changes in the app, such as creating queries, JSObjects, and page edits. For example, when you rename a file, it's like deleting the old one and creating a new one in the Git file system. For example, if you rename a query, you might see 2 queries modified during commit, indicating both the deletion of the old query and the creation of the new one.
+
+*Example:* if you rename a query, you might see 2 queries modified during commit, indicating both the deletion of the old query and the creation of the new one.
+
 </dd>
 
-
-3. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your branch with the latest changes. 
-
-
-After pushing your feature branch to the remote repository, you can view the deployed version of the branch in Appsmith. To check the deployed app associated with your branch, select the **Deploy button** located at the top right corner. 
-
-This deployed version corresponds to the specific branch. Once the remote feature branch is updated in the repository, you can raise a PR to merge the changes with the master branch.
 
 :::note
 If the remote counterpart of your current branch contains commits not present on the local branch, the push command fails. In such a scenario, you'll need to pull the changes to continue. Once you've pulled the changes, re-attempt the push command, and all changes, including the last commit, are successfully pushed to the repository.
 :::
 
+2. In the deploy tab on the Modal, enter your commit message and click **Commit and Push** to update your branch with the latest changes. 
+
+3. To check the deployed app associated with your branch, click the down arrow next to the **Deploy** button, and select the **Currently Deployed Version**.
+
+
+Once the remote feature branch is updated in the repository, you can raise a PR to merge the changes with the `master` branch.
+
+
+
+## Merge changes
+
+If you want to merge changes from one branch to another, follow these steps:
+
+:::note
+Directly merging changes into the default branch (master) is not possible; you must either raise a PR or pull the changes.
+:::
+
+1. Open the branch from which you want to merge the changes. For example, if merging changes from branch b1 to b2, open branch b1.
+
+2. Click the **Merge** icon at the bottom left corner. 
+
+3. Select the branch into which you want to merge the changes. For example merging changes from b1 to b2.
+
+4. Ensure both branches have no uncommitted changes, are synchronized with the remote repository, and have no conflicting changes before merging.
+
+5. If there are no conflicts between the branches, click the **Merge Changes** button.
+
+If you want to merge branch changes into the `base`/`master` branch, you must raise a Pull Request from the Git provider and merge the changes through the platform.
+
+
+## Pull changes
+
+To fetch the latest version from the remote repository, follow these steps to pull changes.
+
+1. Open the branch from which you want to pull the changes.
+
+2. Click the **Pull** icon at the bottom left corner to commit the changes. The **Pull** icon also reflects the number of changes.
+
+Once the pull is successful, the app is automatically deployed. To check the deployed version, click the **Deploy** button from the top right corner and in the deploy modal, click **Current Deployed Version**
+
+
+:::note
+In cases where changes are made to the same files in both local and remote branches, the pull operation may encounter merge conflicts. In such instances, conflict resolution must be performed manually on the remote repository.
+:::
+
+
+
+
 
 ## Discard changes
 
 
+Discarding changes removes newly added entities, restores deleted resources, and reverts changes made to any resource after the last commit. Follow these steps to discard current changes and return to a previous committed version:
 
 
-Follow these steps to discard current changes and go back to a previous stable version:
-
-* Click on the **Commit and Push** icon within Appsmith.
+* Click on the **+** icon at the bottom left corner.
 * In the Deploy Modal, select the **Discard Changes** button.
 
-This action discards any current modifications and reverts the application to reflect the latest deployment changes from the repository.
+This action discards any current modifications and reverts the application to reflect the last committed changes from the repository.
 
-:::note
-When you discard changes, it affects various entities (such as pages, queries, JSObjects, etc.) in the following ways:
-
-* Any newly added entity (pages, queries, JSObjects, etc.) after the last commit gets removed.
-* Any resources that were deleted after the last commit are restored.
-* Changes made to any resource after the last commit are undone.
-:::
-
-
-## Merge changes
 
 
 ## Auto-commit changes
