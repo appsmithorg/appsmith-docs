@@ -39,25 +39,6 @@ Once the remote feature branch is updated in the repository, you can raise a PR 
 
 
 
-## Merge changes
-
-If you want to merge changes from one branch to another, follow these steps:
-
-:::note
-Directly merging changes into the default branch (master) is not possible; you must either raise a PR or pull the changes.
-:::
-
-1. Open the branch from which you want to merge the changes. For example, if merging changes from branch b1 to b2, open branch b1.
-
-2. Click the **Merge** icon at the bottom left corner. 
-
-3. Select the branch into which you want to merge the changes. For example merging changes from b1 to b2.
-
-4. Ensure both branches have no uncommitted changes, are synchronized with the remote repository, and have no conflicting changes before merging.
-
-5. If there are no conflicts between the branches, click the **Merge Changes** button.
-
-If you want to merge branch changes into the `base`/`master` branch, you must raise a Pull Request from the Git provider and merge the changes through the platform.
 
 
 ## Pull changes

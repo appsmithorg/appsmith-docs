@@ -58,6 +58,31 @@ Follow the steps to delete a local branch that is no longer needed:
 
 With these steps, the local branch gets deleted. To delete a remote branch, you need to delete/remove it from your Git service provider.
 
+## Merge branches
+
+You can merge changes from one branch to another, ensuring project cohesion and progress. Follow these steps to merge changes between branches:
+
+:::info
+Directly merging changes into the default branch (master) is not possible; you must either raise a PR or pull the changes.
+:::
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/VujLmtTJGdKSQIwNgcRb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. Open the branch from which you want to merge the changes. For example, if merging changes from the `feature` branch to `release`, open the `feature` branch.
+
+2. Click the **Merge** icon at the bottom left corner. 
+
+3. Select the branch into which you want to merge the changes. For example, merging changes from `feature` to `release`.
+
+4. Ensure both branches have no uncommitted changes, are synchronized with the remote repository, and have no conflicting changes before merging.
+
+5. If there are no conflicts between the branches, click the **Merge Changes** button.
+
+If you want to merge branch changes into the `base`/`master` branch, you must raise a Pull Request from the Git provider and merge the changes through the platform.
 
 ## Sync branches
 
