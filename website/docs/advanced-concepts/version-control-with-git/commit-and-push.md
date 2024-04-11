@@ -21,11 +21,7 @@ After creating a new branch, follow these steps to commit and push changes to yo
 2. Click the **+** icon at the bottom left corner to commit the changes. The plus sign also reflects the number of entities you have modified.
 
 <dd>
-  Entities refer to changes in the app, such as creating queries, JSObjects, and page edits.
-
-
-**Renaming files:**  if you rename an entity (query, widgets etc), it's the same as deleting the old entity and creating a new one in the Git file system. For example, when you rename a query, you may see `2 queries modified` while trying to commit; the 2 changes are the old query being deleted and the new one being created.
-
+  Entities refer to changes in the app, such as creating queries, JSObjects, and page edits. For example, when you rename a file, it's like deleting the old one and creating a new one in the Git file system. For example, if you rename a query, you might see 2 queries modified during commit, indicating both the deletion of the old query and the creation of the new one.
 </dd>
 
 
@@ -44,19 +40,25 @@ If the remote counterpart of your current branch contains commits not present on
 ## Discard changes
 
 
-Discarding changes have the following impact on the entities (pages, queries, JSObjects etc.): 
-- Any entity (pages, queries, JSObjects etc.) added after the last commit is removed. 
-- Any resources that are deleted after the last commit is restored. 
-- Changes made to any resource after the last commit is removed.
-
-Follow these steps to discard changes and revert to the last deployed changes:
-
-* Click on the Commit and Push icon within Appsmith.
-* In the Deploy Modal, select the Discard Changes option.
-* This action will discard any current modifications and restore the application to reflect the latest deployment changes from the repository.
 
 
-While developing an application in Appsmith, sometimes, you may want to discard the current changes and revert to the previous stable version. To discard the changes, click **Commit and Push** icon and in the Deploy Modal, click the **Discard Changes** button. When this button is clicked, along with the current changes being discarded, the latest changes are pulled from the remote repository so that your application is in sync. 
+Follow these steps to discard current changes and go back to a previous stable version:
+
+* Click on the **Commit and Push** icon within Appsmith.
+* In the Deploy Modal, select the **Discard Changes** button.
+
+This action discards any current modifications and reverts the application to reflect the latest deployment changes from the repository.
+
+:::note
+When you discard changes, it affects various entities (such as pages, queries, JSObjects, etc.) in the following ways:
+
+* Any newly added entity (pages, queries, JSObjects, etc.) after the last commit gets removed.
+* Any resources that were deleted after the last commit are restored.
+* Changes made to any resource after the last commit are undone.
+:::
+
+
+## Merge changes
 
 
 ## Auto-commit changes
