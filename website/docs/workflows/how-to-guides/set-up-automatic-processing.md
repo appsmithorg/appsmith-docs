@@ -27,7 +27,8 @@ Automating processes within your application can improve efficiency and reduce m
 Before you begin, ensure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Basic knowledge of creating a workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
+* Basic knowledge of creating a workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow - Create Workflow](/workflows/tutorials/create-workflow#create-workflow) section.
+* Basic knowledge of writing queries in Workflow. For more information, see [Tutorial - Create Basic Workflow - Write query to send email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
 
 
 Follow these steps to configure the workflow to automatically process requests based on your business requirements:

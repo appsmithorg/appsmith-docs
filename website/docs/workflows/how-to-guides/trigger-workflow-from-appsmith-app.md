@@ -26,7 +26,8 @@ Appsmith workflows seamlessly integrate with the Appsmith app. This page shows h
 Before you begin, ensure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Basic knowledge of creating a workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
+* Basic knowledge of creating a workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow - Create Workflow](/workflows/tutorials/create-workflow#create-workflow) section.
+* Basic knowledge of writing queries in Workflow. For more information, see [Tutorial - Create Basic Workflow - Write query to send email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
 
 Follow these steps to integrate and trigger your workflow within an Appsmith app:
 

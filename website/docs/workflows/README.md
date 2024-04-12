@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows are essential for automating tasks and orchestrating processes within applications. By integrating code-based and node-based systems, they provide a practical solution for automating tasks, managing workflows, enabling human-in-the-loop (HITL) interactions, and integrating with external services.
+Appsmith Workflows are essential for automating tasks and orchestrating processes within applications. They provide a practical solution for automating tasks, managing workflows, enabling human interactions, and integrating with external services or Appsmith apps.
 
 ## Workflow capabilities
 
@@ -30,15 +30,15 @@ Using app-building capabilities of Appsmith in workflows, developers can automat
 
 ### Enable Human-in-the-Loop interactions
 
-Appsmith Workflows allow for human interventions within automated processes, facilitating informed decision-making through the Appsmith app. Decision points within workflows empower users to review and take appropriate actions, enhancing the efficiency and effectiveness of workflows.
+Appsmith Workflows allow for human interventions when necessary. Developers use the Appsmith app to access workflows and create interfaces for users to interact with and take actions based on decision points. This integration between workflows and the Appsmith app enhances the efficiency and effectiveness of workflows.
 
 ## Explore trigger types
 
 Appsmith supports different trigger types to configure actions and processes within workflows:
 
-- **Webhook**- Triggered by external events or HTTP requests, Webhook triggers enable real-time data processing and action execution based on incoming data. Learn how to use the Webhook triggers in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
+- **Webhook**- Triggered by external events or HTTP requests, Webhook triggers enable real-time data processing and action execution based on incoming data. Use this trigger type to integrate Appsmith workflow with external system or app. Learn how to use the Webhook triggers in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
   
-- **Integrated Datasource for use in Appsmith Apps**- Seamlessly connect workflows with Appsmith applications using prebuilt integrations. This allows for seamless execution of operations within the app and direct management of workflows from the Appsmith interface. Delve deeper into integrated datasource triggers using Appsmith app in the [Trigger workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
+- **Integrated Datasource for use in Appsmith Apps**- Connect workflows with Appsmith applications using prebuilt workflow queries. Use this trigger type to define decision points in workflows, build interface for decision-making and users to take action using Appsmith app, and process user actions when user verifies and takes action on the Appsmith app. Delve deeper into integrated datasource using Appsmith app in the [Trigger workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
 
 - **Scheduled Jobs (Cron Jobs)**- Scheduled to run at specific times or intervals, Scheduled Jobs automate tasks using Cron expressions. Stay tuned for updates on the availability and usage of Scheduled Jobs within Appsmith. (**Coming Soon**)
 
