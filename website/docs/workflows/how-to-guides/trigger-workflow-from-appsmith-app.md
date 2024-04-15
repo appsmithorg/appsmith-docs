@@ -32,7 +32,7 @@ Before you begin, ensure you have:
 Follow these steps to integrate and trigger your workflow within an Appsmith app:
 
 1. Open your Appsmith app.
-2. Create a new query by clicking **Editor** > **Queries** > **New query/API**.
+2. Create a new workflow query by clicking **Editor** > **Queries** > **New query/API**.
 3. In the _Create new query/API_ dialog, select **Workflows Query**, and give it a meaningful and unique name.
 4. Configure the workflow query as shown below:
     * **Workflow name**: Choose the desired workflow from the list of available workflows in your workspace.
@@ -43,7 +43,7 @@ Follow these steps to integrate and trigger your workflow within an Appsmith app
             "email": "{{inp_Email.text}}"
         }
         ```
-5. Bind the execution of workflow query from where you want to trigger the workflow in your app. For example, if you want to trigger the workflow on a button click, bind the `onClick` event of the button to execute the workflow query.
+5. Bind the workflow query from where you want to trigger the workflow in your app. For example, if you want to trigger the workflow on a button click, bind the `onClick` event of the button to execute the workflow query.
 6. Test the workflow integration and execution by clicking the button.
 
 ## Troubleshooting
