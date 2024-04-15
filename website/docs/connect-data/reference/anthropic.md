@@ -51,6 +51,14 @@ The Chat command generates human-like text based on input prompts. The following
 
 It refers to the pre-trained language models provided by Anthropic. You can select from the available list of models, including options like claude-2, claude-3, and others. 
 
+* For models belonging to the claude-3 family, the response format follows the [messages API](https://docs.anthropic.com/claude/reference/messages_post). 
+
+* For claude-instant-1.2 and claude-2.1, the response format is based on the [completion API](https://docs.anthropic.com/claude/reference/complete_post).
+
+
+
+
+
 </dd>
 
 
@@ -124,6 +132,10 @@ The Vision command allows the model to take in images and answer questions about
 <dd>
 
 It refers to the pre-trained language models provided by Anthropic. You can select from the available list of models, including Claude-3-Opus, Claude-3-Sonnet, Claude-3-Haiku.
+
+* For models belonging to the claude-3 family, the response format follows the [messages API](https://docs.anthropic.com/claude/reference/messages_post). 
+
+* For claude-instant-1.2 and claude-2.1, the response format is based on the [completion API](https://docs.anthropic.com/claude/reference/complete_post).
 
 </dd>
 
