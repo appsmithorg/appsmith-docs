@@ -38,7 +38,7 @@ Appsmith supports different trigger types to configure actions and processes wit
 
 - **Webhook**- Triggered by external events or HTTP requests, Webhook triggers enable real-time data processing and action execution based on incoming data. Use this trigger type to integrate Appsmith workflow with external system or app. Learn how to use the Webhook triggers in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
   
-- **Integrated Datasource for use in Appsmith Apps**- Connect workflows with Appsmith applications using prebuilt workflow queries. Use this trigger type to define decision points in workflows, build interface for decision-making and users to take action using Appsmith app, and process user actions when user verifies and takes action on the Appsmith app. Delve deeper into integrated datasource using Appsmith app in the [Trigger workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
+- **Integrated Datasource for use in Appsmith Apps**- [Trigger your workflow from Appsmith apps](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) in the same workspace by creating workflow queries.
 
 - **Scheduled Jobs (Cron Jobs)**- Scheduled to run at specific times or intervals, Scheduled Jobs automate tasks using Cron expressions. Stay tuned for updates on the availability and usage of Scheduled Jobs within Appsmith. (**Coming Soon**)
 
