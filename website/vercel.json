@@ -400,7 +400,8 @@
     },
     {
       "source": "/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
+      "destination": "/connect-data/reference/querying-mongodb",
+      "permanent": true
     },
     {
       "source": "/datasource-reference/querying-mssql",
@@ -1208,4 +1209,3 @@
     }
   ]
 }
-
