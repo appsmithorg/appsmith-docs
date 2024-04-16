@@ -67,7 +67,7 @@ It refers to the pre-trained language models provided by Anthropic. You can sele
 
 <dd>
 
-The maximum number of tokens the response should contain. It allows you to control the length of the generated output.
+The maximum number of tokens the response should contain. It allows you to control the length of the generated output. For example, if you set it to 50, the response contains a maximum of 50 tokens, ensuring concise outputs.
 
 </dd>
 
@@ -75,7 +75,9 @@ The maximum number of tokens the response should contain. It allows you to contr
 
 <dd>
 
-These messages help shape the behavior of the model's responses and can be used to add personality, offer instructions, or guide the model in generating more contextually relevant outputs. For instance, in a customer service chatbot, you can design a system prompt that guides the AI to embrace a friendly and supportive demeanor when addressing user queries about products.
+These messages help shape the behavior of the model's responses and can be used to add personality, offer instructions, or guide the model in generating more contextually relevant outputs. For example, you can use the system message to give personality to the responses or add task-specific instructions, like:
+
+ "You are a chat assistant designed to provide friendly and helpful responses to user inquiries. Aim to maintain a positive and supportive tone throughout the conversation, offering clear guidance and assistance."
 
 </dd>
 
@@ -85,7 +87,7 @@ These messages help shape the behavior of the model's responses and can be used 
 
 Messages serve as input interactions between the user and the model. You can create multiple messages of each type to make your conversation just the way you want. In the **Roles** parameter, you can select either `Human` or `Assistant`. In the **Content** property, add:
 
-* **Assistant**: It serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the system message to give personality to the responses or add task-specific instructions. For example, you can set `Assistant` as:
+* **Assistant**: It serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses, like:
 
 <dd>
 
@@ -145,18 +147,20 @@ It refers to the pre-trained language models provided by Anthropic. You can sele
 
 <dd>
 
-The maximum number of tokens the response should contain. It allows you to control the length of the generated output.
+The maximum number of tokens the response should contain. It allows you to control the length of the generated output. For example, if you set it to 50, the response contains a maximum of 50 tokens, ensuring concise outputs.
 
 </dd>
 
 #### System Prompt
 
+
 <dd>
 
-These messages help shape the behavior of the model's responses and can be used to add personality, offer instructions, or guide the model in generating more contextually relevant outputs. For instance, in a customer service chatbot, you can design a system prompt that guides the AI to embrace a friendly and supportive demeanor when addressing user queries about products.
+These messages help shape the behavior of the model's responses and can be used to add personality, offer instructions, or guide the model in generating more contextually relevant outputs. For instance, you can add a system prompt like:
+
+ "Your task is to analyze and interpret the content of each image, offering detailed descriptions and contextual information to enrich the viewer's understanding. Ensure your responses are informative, accurate, and engaging, enhancing the viewer's appreciation of the visual content."
 
 </dd>
-
 
 #### Messages
 
@@ -166,12 +170,12 @@ Messages serve as input interactions between the user and the model. You can cre
 
 **Roles:**
 
-* **Assistant**: It serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses. For example, you can use the system message to give personality to the responses or add task-specific instructions. For example, you can set `Assistant` as:
+* **Assistant**: It serves as a means to provide additional context, set guidelines, or convey the overall objective of the task. It helps shape the behavior of the model's responses, like:
 
 <dd>
 
 
- "You are a technical support assistant. Provide clear and detailed solutions to user queries related to software issues. If the user mentions a bug, ask for additional details to troubleshoot effectively."
+ "Focus on delivering clear and relevant information tailored to the task at hand."
 
 </dd>
 
@@ -189,8 +193,8 @@ For more information refer to the [Anthropic documentation.](https://docs.anthro
 
 * **Image**: This is the image on which the model performs tasks based on the provided text. You can pass the base64 encoded image directly in the request. You can also add multiple images as needed. For example, you can use the Filepicker to upload images, like as `{{FilePicker.files[0].data}}`.
 
-:::note
-Currently, only base64 encoded images are supported; image URLs and links are not supported.
+:::info
+Vision command supports only base64 encoded images; URLs and links are not supported.
 :::
 
 For more information refer to the [Anthropic documentation](https://docs.anthropic.com/claude/docs/vision).
