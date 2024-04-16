@@ -185,9 +185,9 @@ For more information refer to the [Anthropic documentation.](https://docs.anthro
 
 **Type:**
 
-* **Text**: This represents the task input you want to send to Anthropic. For example, you can use it to instruct the model, such as "find a ball in this image," using `{{Input1.text}}`.
+* **Text**: This represents the task input you want to send to Anthropic. For example, you can use it to instruct the model, such as "find a ball in this image," using `{{UserInput.text}}`.
 
-* **Image**: This is the image on which the model performs tasks based on the provided text. You can pass the base64 encoded image directly in the request. You can also add multiple images as needed. For example, you can use the Filepicker to upload images, like as `{{FilePicker1.files[0].data}}`.
+* **Image**: This is the image on which the model performs tasks based on the provided text. You can pass the base64 encoded image directly in the request. You can also add multiple images as needed. For example, you can use the Filepicker to upload images, like as `{{FilePicker.files[0].data}}`.
 
 :::note
 Currently, only base64 encoded images are supported; image URLs and links are not supported.
