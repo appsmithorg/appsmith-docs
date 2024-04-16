@@ -74,7 +74,7 @@ You can use either a Table or List widget to display the paginated data, and you
 SELECT * FROM users LIMIT {{ Table1.pageSize }} OFFSET {{ Table1.pageOffset }};
 ```
 
-2. Connect the query data to the [Table data](reference/widgets/table#table-data-arrayobject) property of the Table widget.
+2. Connect the query data to the [Table data](/reference/widgets/table#table-data-arrayobject) property of the Table widget.
 
 
 3. Set the Table widget's [onPageChange](/reference/widgets/table#onpagechange) event to run the pagination query.

@@ -21,7 +21,7 @@ Browse this section to learn about the different actions you can trigger on Apps
 * [resetWidget()](/reference/appsmith-framework/widget-actions/reset-widget)
 * [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events)
 * [clearInterval()](/reference/appsmith-framework/widget-actions/clear-interval)
-* [postWindowMessage()](reference/appsmith-framework/widget-actions/post-message)
+* [postWindowMessage()](/reference/appsmith-framework/widget-actions/post-message)
 * [windowMessageListener()](/reference/appsmith-framework/widget-actions/window-message-listener)
 * [unlistenWindowMessage()](/reference/appsmith-framework/widget-actions/unlisten-window-message)
             

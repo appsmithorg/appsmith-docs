@@ -300,7 +300,7 @@
     },
     {
       "source": "/core-concepts/displaying-data-read/display-data-tables",
-      "destination": "https://docs.appsmith.com/reference/widgets/table#table-data-arrayobject"
+      "destination": "/reference/widgets/table#table-data-arrayobject"
     },
     {
       "source": "/core-concepts/capturing-data-write",
@@ -1130,7 +1130,7 @@
       "source": "/getting-started/tutorials",
       "destination": "/getting-started/tutorials/start-building"
     },
-    {  
+    {
       "source": "/build-apps/how-to-guides/Server-side-filtering-table",
       "destination": "/build-apps/how-to-guides/search-and-filter-table-data#using-drop-down"
     },
@@ -1157,8 +1157,7 @@
     {
       "source": "/connect-data/how-to-guides/download-files-from-s3",
       "destination": "/connect-data/how-to-guides/how-to-download-files-using-api"
-    }
-    ,
+    },
     {
       "source": "/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images",
       "destination": "/connect-data/how-to-guides/how-to-upload-to-s3"
