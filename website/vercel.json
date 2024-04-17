@@ -400,8 +400,7 @@
     },
     {
       "source": "/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/connect-data/reference/querying-mongodb",
-      "permanent": true
+      "destination": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud"
     },
     {
       "source": "/datasource-reference/querying-mssql",
@@ -1206,6 +1205,36 @@
     {
       "source": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory",
       "destination": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id"
-    }
+    },
+	{
+	"source": "/widget-reference/file-picker",
+      "destination": "/reference/widgets/filepicker",
+      "permanent": true
+    },
+    {
+      "source": "/widget-reference/map",
+      "destination": "/reference/widgets/maps",
+      "permanent": true
+    },
+    {
+      "source": "/widget-reference/dropdown",
+      "destination": "/reference/widgets/select",
+      "permanent": true
+    },
+    {
+      "source": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud?q=error",
+      "destination": " /connect-data/reference/querying-mongodb/whitelist-mongodb-cloud",
+      "permanent": true
+    },
+    {
+      "source": "/write-code/reference/core-concepts/writing-code/ext-libraries",
+      "destination": "/core-concepts/writing-code/ext-libraries",
+      "permanent": true
+    },
+    {
+      "source": "/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "/connect-data/reference/querying-mongodb",
+      "permanent": true
+	}
   ]
 }
