@@ -34,7 +34,7 @@ tags={[
 Priority Support is available to Business plan customers, offering expedited assistance for their queries. Here's how Business plan customers can contact support:
 
 - **Email**: Business plan customers can reach the support team via email at [support@appsmith.com](mailto:support@appsmith.com).
-- **In-Product Help**: Click the **Help** button within the Appsmith platform, then select **Chat with Us** to reach out to the support team directly from within the Appsmith platform.
+- **In-Product Help**: Click the **Help** button within the Appsmith, then select **Chat with Us** to reach out to the support team directly from within the Appsmith.
 
 <br/>
 <!-- vale off -->
@@ -55,5 +55,5 @@ tags={[
 Dedicated Support is available exclusively to Enterprise plan customers, offering personalized assistance for their queries. Here's how Enterprise plan customers can contact support:
 
 - **Email**: Enterprise plan customers can reach the dedicated support team via email at [support@appsmith.com](mailto:support@appsmith.com).
-- **In-Product Help**: Click the **Help** button within the Appsmith platform, then select **Chat with Us** to reach out to the support team directly from within the Appsmith platform.
+- **In-Product Help**: Click the **Help** button within the Appsmith, then select **Chat with Us** to reach out to the support team directly from within the Appsmith.
 - **Slack or Teams**: As defined in the contract, Enterprise plan customers may also reach out to support via Slack or Microsoft Teams for real-time assistance.
