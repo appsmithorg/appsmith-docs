@@ -41,9 +41,10 @@ The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name 
 <ZoomImage src="/img/col-example.png" alt="Display images on table row selection" caption="Formatting Column" />
 
 
-## Cell styling
+## Cell Background Color (Column Color)
 
- You can style each column type from style property pane. However, if you need more advanced customization, you can use the `currentRow` and `currentIndex` references to create custom style expressions. These expressions allow you to dynamically change the style of individual cells based on their content, rather than simply applying a static style to an entire column.
+
+You can style each column type from the style property pane, including options to change column color. However, if you need more advanced customization, such as changing table color/column color, you can use the `currentRow` and `currentIndex` references to create custom color expressions. These expressions enable you to dynamically change the style of individual cells based on their content, offering more flexibility than simply applying a static style to an entire column.
 
 For example, lets say you have a column named `status` that reflects `approved` and `pending` values. You can set the color for these values using the following expression in the **Cell Background** property:
 
