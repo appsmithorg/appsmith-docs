@@ -14,7 +14,20 @@ The Discord community serves as a valuable resource for users seeking support an
 1. Join Appsmith on [Discord Server](https://discord.gg/b6CbJ9nr).
 2. Navigate to the [Support channel](https://discord.com/channels/725602949748752515/1006426744129069096) to raise queries.
 
-### Dedicated Support (Enterprise Plan)
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
+ ## Dedicated support
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+</div>
+
+<!-- vale on -->
 
 Dedicated Support is available exclusively to Enterprise plan customers, offering personalized assistance for their queries. Here's how Enterprise plan customers can contact support:
 
@@ -22,7 +35,21 @@ Dedicated Support is available exclusively to Enterprise plan customers, offerin
 - **In-Product Help**: Click the **Help** button within the Appsmith platform, then select **Chat with Us** to reach out to the support team directly from within the Appsmith platform.
 - **Slack or Teams**: As defined in the contract, Enterprise plan customers may also reach out to support via Slack or Microsoft Teams for real-time assistance.
 
-### Priority Support (Business Plan)
+<!-- vale off -->
+
+<div className="tag-wrapper">
+
+ ## Priority support
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Priority Support is available to Business plan customers, offering expedited assistance for their queries. Here's how Business plan customers can contact support:
 
