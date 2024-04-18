@@ -1,6 +1,6 @@
 # Environments With Git
 
-This guide shows you how to set up multiple instances/environments in Appsmith using Git, making application development easier. Appsmith allows you manage multiple app versions easily, making development streamlined with separate staging and production workspaces.
+This guide shows you how to set up multiple instances/environments in Appsmith using Git, making application development easier. Appsmith allows you manage multiple app versions, making development streamlined with separate staging and production workspaces.
 
 :::info
 This method doesn't support APIs, Google Sheets, Twilio, or any authenticated API datasources.
@@ -18,7 +18,7 @@ If you're using two different self-hosted instances for production and staging, 
 
 ## Setup environments
 
-Follow the steps below to setup the pipeline:
+Follow these steps to set up multiple environments for your app:
 
 1. Create separate workspaces for each phase, such as staging and production.
 
@@ -45,7 +45,7 @@ Once you've configured the different environments, follow these steps to build a
 
 3. Once a milestone is completed, merge the `staging` branch into the `master` branch.
 
-4. In the production instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up Git CD to automatically pull and deploy the `master` branch.
+4. In the production instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 
 5. Share and invite apps with users and developers:
 
