@@ -1,6 +1,12 @@
 
 # Revert Changes
 
+This guide shows how to revert a committed change to a specific branch or base branch in Git.
+
+
+
+
+
 If you need to fix a mistake, undo an unwanted change, or simply view an earlier version of your app, you can revert changes that have already been committed to your Git repository. To revert a commit, you can use the `git revert` command in the remote repository. This command creates a new commit that reverts the changes made by a previous commit.
 
 To revert a commit, follow these steps:
