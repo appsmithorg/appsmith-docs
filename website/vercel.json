@@ -1223,7 +1223,7 @@
     },
     {
       "source": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud?q=error",
-      "destination": " /connect-data/reference/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas",
       "permanent": true
     },
     {
