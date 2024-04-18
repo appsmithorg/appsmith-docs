@@ -120,7 +120,7 @@ Lower values for temperature result in more focused and analytical outputs (e.g.
 
 ### Vision
 
-The Vision command allows the model to take in images and answer questions about them.
+The Vision command allows the model to process images and respond to queries related to them.
 
 
 <ZoomImage
