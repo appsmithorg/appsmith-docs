@@ -816,6 +816,7 @@ const sidebars = {
         'getting-started/faq',
         'product/security',
         'product/telemetry',
+        'product/support',
         {
           type: 'link',
           label: 'Release Notes', // The link label
