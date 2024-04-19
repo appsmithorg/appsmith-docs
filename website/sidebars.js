@@ -225,7 +225,6 @@ const sidebars = {
                     'getting-started/setup/upgrade-from-community-edition/kubernetes',
                   ]
                 },
-                'getting-started/setup/manage-plans/downgrade-to-free-plan',
                 'getting-started/setup/manage-plans/downgrade-plan',
               ],
             },
