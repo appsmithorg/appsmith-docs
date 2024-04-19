@@ -89,3 +89,7 @@ k8s
 K8s
 Kubernetes
 CLI
+Us
+Discord
+discord
+us
