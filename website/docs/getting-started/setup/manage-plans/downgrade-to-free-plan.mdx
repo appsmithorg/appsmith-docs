@@ -9,7 +9,58 @@ This page provides instructions on downgrading your subscription to a free plan 
 
 ## Before you begin
 
-Downgrading your plan will result in the loss of access to one or more paid features, which may result in some features and capabilities not being available. Before beginning the downgrade process, read about [what happens when you downgrade your plan](/getting-started/setup/manage-plans/downgrade-plan).
+Downgrading your plan will result in the loss of access to one or more paid features, which may result in some features and capabilities not being available. Before beginning the downgrade process, read about what happens when you downgrade your plan.
+
+<details id="when_downgrading_from_paid_plan">
+    <summary>When Downgrading from Paid Plan</summary>
+
+    You can either directly downgrade to a free plan by removing your license, or you can downgrade to a lower tier plan by updating your license key. This page provides you information on what happens when you downgrade to your paid plan.
+
+    <h3>Single Sign-On (SSO)</h3>
+
+    When you downgrade your plan, the use of Single Sign-On methods, such as OIDC or SAML, is no longer supported. Users who accessed Appsmith through an SSO provider using OIDC or SAML will have to sign up again using form login to access Appsmith securely. For added security, it's recommended to enable email verification in your Admin Settings.
+
+    <h3>System for cross-domain identity management (SCIM)</h3>
+
+    After the downgrade, all users will remain available but disconnected from the identity provider (IDP). IDP configurations are no longer available, and you will need to reconfigure these settings if you choose a paid plan again that supports SCIM.
+
+    <h3>Granular access control (GAC)</h3>
+
+    Any roles and groups configured as part of a higher-tier plan will not be accessible after downgrading. You may need to change your application code if it relies on `{{appsmith.user.roles}}` or `{{appsmith.user.groups}}` bindings since these will no longer be available.
+
+    <h3>Datasource environments</h3>
+
+    Staging datasource environment configurations will no longer be accessible after a downgrade.
+
+    <h3>Git repositories</h3> 
+
+    The unlimited private repositories will no longer be available. For free plan subscribers, there's a limit of 3 private repositories. You can commit to and import new repositories until the total private repository count in your workspace is equal to or less than 3.
+
+    <h3>Branding</h3>
+
+    Custom branding will no longer be available, and your application will use the default Appsmith branding.
+
+    <h3>Audit logs</h3>
+
+    Access to audit logs will no longer be available, and Appsmith will not generate new audit logs.
+
+    <h3>Embed apps</h3>
+
+    You won't be able to embed private apps within your parent application after downgrading if the Single Sign-On (SSO) method is not available in the downgraded plan.
+
+    <h3> Ask AI</h3>
+
+    Access to Ask AI for generating SQL queries and JavaScript code within the editor will no longer be available.
+
+    <h3>Sending messages from the parent app to Appsmith</h3>
+
+    Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to change your application code if your application captures or interacts with messages from the parent application.
+</details>
+
+:::info Important
+    If, after downgrading, you choose to return to your previous paid plan or switch to another paid plan that includes some or all the features you've used in the past, Appsmith will restore your feature configurations upon plan activation, except the SCIM configurations which you will need to reconfigure.
+:::
+
 
 ## Prerequisites
 
