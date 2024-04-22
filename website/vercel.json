@@ -1232,9 +1232,19 @@
       "permanent": true
     },
     {
-      "source": "/datasource-reference/querying-mongodb/whitelist-mongodb-cloud",
-      "destination": "/connect-data/reference/querying-mongodb",
+      "source": "/quick-start",
+      "destination": "/getting-started/tutorials/start-building",
       "permanent": true
-	}
+    },
+    {
+      "source": "/core-concepts/building-the-ui",
+      "destination": "/build-apps/overview",
+      "permanent": true
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/connect-to-apis",
+      "destination": "/connect-data/reference/rest-api",
+      "permanent": true
+    }
   ]
 }
