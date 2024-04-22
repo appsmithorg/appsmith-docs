@@ -61,7 +61,7 @@ const ZoomableImage = ({ src, alt, caption }) => {
                 onMouseEnter={handleHover}
                 onMouseLeave={handleHoverOut}
             >
-                <img src={src} alt={alt} style={{ width: '700px' }} ref={imageRef} />
+                <img src={src} alt={alt || "Image"} style={{ width: '700px' }} ref={imageRef} />
                 <figcaption align="center">
                     <i>{caption}</i>
                     <span className="image-tooltip" ref={tooltipRef}>
@@ -73,7 +73,7 @@ const ZoomableImage = ({ src, alt, caption }) => {
             {isModalOpen && (
                 <div className="zoomable-modal-overlay" onClick={closeModal}>
                     <div className="zoomable-modal-content">
-                        <img src={src} alt={alt} />
+                        <img src={src} alt={alt || "Image"} />
                         <figcaption align="center">
                             <i>{caption}</i>
                         </figcaption>

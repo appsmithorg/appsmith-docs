@@ -21,13 +21,12 @@ The Admin Settings page allows [superusers](#add-super-admins) on self-hosted in
 If you don’t see the “Admin Settings” icon on the top-right corner, you’re not a super admin for the Appsmith instance and must be granted admin privileges by an existing super admin.
 :::
 
- <ZoomImage
-        src="/img/admin-settings-topbar.png"
-        alt="Admin Settings option is available in the left sidebar"
-        caption="Access admin settings from the top-right corner of the homepage."
-        lazyLoad="true"
+<ZoomImage
+  src='/img/admin-settings-topbar.png'
+  alt='Admin Settings option is available in the left sidebar'
+  caption='Access admin settings from the top-right corner of the homepage.'
+  lazyLoad='true'
 />
-
 
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
@@ -37,18 +36,18 @@ If you have set values using [environment variables](#environment-variables) for
 Users who are granted super admin privileges are authorized to access and make changes to instance & platform settings. If you are a super admin and want to grant super admin privileges to other users, add their email addresses in the **Admin Email** field on the **General** settings page so they can access and modify instance settings as shown below:
 
 <ZoomImage
-  src="/img/admin-email-settings.png" 
-  alt="Use Admin Settings to configure super admins"
-  caption="Configure a super admin"
+  src='/img/admin-email-settings.png'
+  alt='Use Admin Settings to configure super admins'
+  caption='Configure a super admin'
 />
 
 ### Configure instance
 The Admin settings enable the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
 
 <ZoomImage
-  src="/img/Instance-Configuration-using-Admin-Settings.png" 
-  alt="Use Admin Settings to configure your instance"
-  caption="Configure Your Appsmith Instance"
+  src='/img/Instance-Configuration-using-Admin-Settings.png'
+  alt='Use Admin Settings to configure your instance'
+  caption='Configure Your Appsmith Instance'
 />
 
 | Name | Type | Description |
@@ -160,7 +159,7 @@ To configure an ECS installation, follow these steps:
 2. Click the Task Definition used by your ECS instance, and hit Create new revision.
 3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs, as shown below.
 
-![](/img/ecs-task-env_(1).png)
+![ECS environment image](</img/ecs-task-env_(1).png>)
 
 It's recommended to use AWS Secrets for sensitive information. Follow these steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
 
@@ -169,7 +168,7 @@ It's recommended to use AWS Secrets for sensitive information. Follow these step
 3. Click Update, and select the latest revision of the Task Definition.
 4. Hit Skip to review and then Update Service. The screen below shows the status.
 
-![](/img/instance-configuration-ecs-service-restart.png)
+![Instance configuration ECS service restart image](/img/instance-configuration-ecs-service-restart.png)
 
 It may take a minute for the new ECS Task to start running.
 
