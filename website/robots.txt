@@ -30,3 +30,5 @@ Disallow: /how-to-
 Disallow: /github-exposed-private-ssh-key/
 Disallow: /core-concepts/dynamic-ui/application-layout
 Disallow: /core-concepts/connecting-to-data-source/connecting-to-databases
+Disallow: /widget-reference/file-picker
+Disallow: /widget-reference/map
