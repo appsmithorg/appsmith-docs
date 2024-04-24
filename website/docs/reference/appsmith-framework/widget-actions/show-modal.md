@@ -52,7 +52,7 @@ If you want to use JavaScript instead of the action selector, you can enable *JS
 ```
 </dd>
 
-#### Example 2
+#### Example 2 - Show Modal on Page Load
 
 <dd>
 
@@ -73,7 +73,7 @@ export default {
 </dd>
 
 
-#### Example 3
+#### Example 3 - Show Modals conditionally
 
 <dd>
 
