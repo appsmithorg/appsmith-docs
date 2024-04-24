@@ -27,19 +27,19 @@ Below are the parameters required by the `showModal()` function to execute:
 
 <dd>
 
-The name of the Modal widget you want to open or show. You can choose the modal name from the action selector. If you don't have a Modal widget already set up, you can create a new one from the action selector. Only a single modal can be selected, and nesting of Modals is not supported.
+The name of the Modal widget you want to open or show. You can choose the Modal name from the action selector. If you don't have a Modal widget already set up, you can create a new one from the action selector. Only a single modal can be selected, and nesting of Modals is not supported.
 
 
 
 </dd>
 
-## Examples 
+## Usage 
 
 Here are a few examples to show Modals in different situations:
 
 
 
-#### Example 1
+#### Show Modal using JS
 
 <dd>
 
@@ -52,7 +52,7 @@ If you want to use JavaScript instead of the action selector, you can enable *JS
 ```
 </dd>
 
-#### Example 2 - Show Modal on Page Load
+#### Show Modal on Page Load
 
 <dd>
 
@@ -62,7 +62,7 @@ If you want to show a Modal on page load, you can achieve this by using a JSObje
 ```javascript
 // JSObject code
 export default {
-    // Function to show modal
+    // Function to show Modal
     showMyModal() {
         showModal('UserDetailsModal'); 
     }
@@ -73,7 +73,8 @@ export default {
 </dd>
 
 
-#### Example 3 - Show Modals conditionally
+#### Show Modals Conditionally
+
 
 <dd>
 
@@ -90,7 +91,7 @@ This code shows either the `adminModal` or `userModal` based on the role of the 
 
 </dd>
 
-#### Example 4
+#### Handling Success and Failure
 
 <dd>
 
