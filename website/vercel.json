@@ -171,10 +171,6 @@
       "destination": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta"
     },
     {
-      "source": "/setup/instance-configuration/single-sign-on-sso/security-assertion-markup-language-saml/active-directory",
-      "destination": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory"
-    },
-    {
       "source": "/setup/instance-configuration/custom-ca-root-certificate",
       "destination": "/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate"
     },
@@ -1205,6 +1201,11 @@
     {
       "source": "/getting-started/setup/installation-guides/heroku",
       "destination": "/getting-started/setup/installation-guides"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory",
+      "destination": "/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id"
     }
   ]
 }
+
