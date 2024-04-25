@@ -1201,6 +1201,10 @@
     {
       "source": "/getting-started/tutorials/customer-support-tool/application-settings",
       "destination": "/getting-started/tutorials/start-building"
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/heroku",
+      "destination": "/getting-started/setup/installation-guides"
     }
   ]
 }
