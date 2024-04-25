@@ -1,13 +1,13 @@
 ---
 description: >-
-  Setup SAML using Active Directory
-title: Active Directory
+  Setup SAML using Microsoft Entra ID
+title: Microsoft Entra ID
 hide_title: true
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Active Directory</h1>
+ <h1>Microsoft Entra ID</h1>
 
 <Tags
 tags={[
@@ -22,23 +22,38 @@ tags={[
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.azure.com/#allservices) as a SAML provider, follow the steps below:
+To configure Appsmith to use [Microsoft Entra ID (Azure AD)](https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id) as a SAML provider, follow the steps below:
 
 ## Prerequisites
 
 1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 2. Before setting up Single Sign-On (SSO), ensure that you have already configured a [custom domain](/getting-started/setup/instance-configuration/custom-domain) for your instance.
 3. In Appsmith, go to **Admin Settings > Authentication** and click **Enable** on  **SAML 2.0**.
-4. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Active Directory settings. 
+4. Copy the **Redirect URL** and **Entity URL** from the **SAML 2.0** configuration page to add them later in the Entra ID settings. 
 
 <ZoomImage src="/img/SAML-config_appsmith.png" alt="SAML configurations" caption="SAML configuration in Appsmith" />
 
-## Create application on Active Directory
+## Create application on Microsoft Entra ID
 
-1. Log in to your [Azure](https://portal.azure.com/#allservices) account and under **Azure Services**, click **Azure Active Directory**.
+1. Log in to your [Azure](https://portal.azure.com/#allservices) account and under **Azure Services**, click **Microsoft Entra ID**.
+ 
+<dd>
+<ZoomImage src="/img/Entra-home.png" alt="Azure Home" caption="Azure Home" />
+
+</dd>
+
 2. Go to **Manage Tenants** from the navigation bar, select your directory and click **Switch**.
+
+<dd>
+<ZoomImage src="/img/Entra-manage.png" alt="Manage Tenants" caption="Manage Tenants" />
+
+</dd>
+
 3. In your directory's homepage, click **+ Add** > **Enterprise Application** from the navigation bar. 
+
 4. Under the **Browse AD Azure Gallery** page, click **Create your own application** from the navigation bar.
+
+<dd>
 
   a. Add your application's name.
 
@@ -46,8 +61,18 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
   c. Click **Create**.
 
+</dd>
+
 5. In your Application's Overview page, Click **Set up single sign on > SAML**.
+
+<dd>
+<ZoomImage src="/img/entra-sso.png" alt="Set up single sign on" caption="Set up single sign on" />
+
+</dd>
+
 6. In the **SAML-based Sign-on** page, go to the **Basic SAML Configuration** section under **Set up Single Sign-On with SAML** and click **Edit**. 
+
+<dd>
 
   a. Add the **Entity URL** under **Identifier (Entity ID)**.
 
@@ -55,7 +80,11 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
 
   c. Click **Save** on the navigation bar.
 
+</dd>
+
 7. In the **Attributes & Claims** section, click **Edit**.
+
+<dd>
 
   a. Click the **Unique User Identifier (Name ID)** claim and update the following fields:
 
@@ -70,10 +99,13 @@ To configure Appsmith to use [Azure Active Directory (Azure AD)](https://portal.
     - Once saved, ensure that it is visible in the **Additional claims** section. 
     - Copy the **claim name** for the newly created claim to add it later in the SAML configurations in Appsmith.
 
+</dd>
+
 8. Go to the **SAML Certificates** section and copy the **App Federation Metadata Url** to add it later in the SAML configurations in Appsmith.
+
 9. Go back to the Application's Overview page, click **Assign users and groups** and add the users or groups to this application.
 
-## Register Active Directory in Appsmith
+## Register Entra ID in Appsmith
 
 :::caution
 If you are running Appsmith on **Google Cloud Run** or **AWS ECS**, make sure to configure your service before setting up SSO. For detailed instructions, see the [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso), or [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs) guide.
@@ -83,26 +115,35 @@ To complete the SAML configuration, you’ll have to register the identity provi
 
 
 1. Open the copied **App Federation Metadata Url** in a browser tab.
+
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
-| <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
+<dd>
+
+| <div style= {{width:"200px"}}> **IdP Data Field** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
 | **Entity ID**               | Enter the value of the **entityID** attribute specified in the `<EntityDescriptor>` tag.                 |
 | **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
 | **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
 | **Email**                   | Enter this value - `urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress` |
 
-3. To configure custom SAML claims (if added in the Active Direcorty's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
+</dd>
+
+3. To configure custom SAML claims (if added in the Entra ID's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
+
+<dd>
 
   a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
 
-  b. In the **Value** field, enter the exact **claim name** that you copied from the Active Directory's **Attributes and Claims** section.
+  b. In the **Value** field, enter the exact **claim name** that you copied from the Entra ID's **Attributes and Claims** section.
+
+</dd>
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
 
-<ZoomImage src="/img/Appsmith-Login-Screen-Shows-SAML.png" alt="SAML-login" caption="Login with SAML SSO " />
+<ZoomImage src="/img/Appsmith-Login-Screen-Shows-SAML.jpg" alt="SAML-login" caption="Login with SAML SSO " />
 
 ## See also
 - [Setup SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith)
