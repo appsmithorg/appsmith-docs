@@ -8,7 +8,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Microsoft Entra ID</h1>
+ <h1>Microsoft Entra ID(Azure AD)</h1>
 
 <Tags
 tags={[
