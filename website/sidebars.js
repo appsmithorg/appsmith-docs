@@ -119,7 +119,7 @@ const sidebars = {
                         id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
                       },
                       items: [
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
@@ -133,7 +133,7 @@ const sidebars = {
                         id: 'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README',
                       },
                       items: [
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
