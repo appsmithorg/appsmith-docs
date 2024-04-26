@@ -211,7 +211,6 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/manage-plans/upgrade-plan',
-                'getting-started/setup/manage-plans/downgrade-plan',
                 {
                   type: 'category',
                   label: 'Upgrade from Community Edition',
@@ -225,6 +224,7 @@ const sidebars = {
                     'getting-started/setup/upgrade-from-community-edition/kubernetes',
                   ]
                 },
+                'getting-started/setup/manage-plans/downgrade-plan',
               ],
             },
             `getting-started/setup/best-practices`,
