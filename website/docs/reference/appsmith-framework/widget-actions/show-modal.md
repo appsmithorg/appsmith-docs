@@ -80,31 +80,14 @@ export default {
 
 
 
-If you need to display Modals conditionally, based on user roles or status, you can achieve this by implementing logic that evaluates user attributes. For instance, when a user clicks on a button, you can check if the selected row in a Table meets certain criteria, like:
+If you need to display Modals conditionally, based on user roles or status, you can achieve this by implementing logic that evaluates user attributes. For example, create a new custom column, change **Column type** to a button, and set its **onClick** event to:
 
 ```js
 // Enable JS next to the event and add the code
-{{userTable.selectedRow.role === 'admin' ? showModal('adminModal') : showModal('userModal')}}
+{{currentRow.role === 'admin' ? showModal('adminModal') : showModal('userModal')}}
 ```
 
 This code shows either the `adminModal` or `userModal` based on the role of the selected row in the `userTable`.
 
 </dd>
 
-#### Handling Success and Failure
-
-<dd>
-
-If you want to add success and failure callback functions, triggering a series of events upon Modal display or upon encountering an error, you can use the following code:
-
-```js
-// Enable JS next to the event and add the code
-{{showModal('adminModal').then(() => {
-  showAlert('Success! Modal displayed successfully.', 'success');
-}).catch(() => {
-  showAlert('Failed to display the Modal.', 'error');
-});}}
-```
-
-
-</dd>
