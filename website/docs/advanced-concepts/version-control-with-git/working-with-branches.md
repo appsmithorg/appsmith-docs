@@ -3,16 +3,12 @@ sidebar_position: 1
 ---
 # Manage Branches
 
-This guide shows you how to create, switch, and delete Git branches within your Appsmith application, allowing you to better manage your app development process at different stages.
+This guide shows you how to create, and manage Git branches within your Appsmith application, allowing you to better manage your app development process at different stages.
 
 
 :::info
 By default, Appsmith enables the [protected branch](#change-protected-branch) feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
 :::
-
-
-
-
 
 
 
@@ -34,70 +30,22 @@ To create these branches in your Appsmith app, follow the steps below:
 
 Each branch has a unique URL format: `<APPSMITH-APP-URL>?branch=<BRANCH-NAME>`. If the branch name is not specified, the app URL defaults to the `default` branch.
 
-:::note
+:::tip
 It's recommended to organize branches according to development phases, such as having a `master/main` branch for stable releases, `feature` branches for new features, and `release` branches for testing and QA purposes.
 :::
 
+* To **Merge branches**, click on the **Merge** icon at the bottom left corner. Then, select the branch where you want to merge the changes. Make sure both branches are updated and free of conflicts. To merge changes into the `default`/`master` branch, raise a Pull Request and merge it.
 
 
-
-## Merge branches
-
-You can merge changes from one branch to another, ensuring project cohesion and progress. Follow these steps to merge changes between branches:
-
-:::info
-Directly merging changes into the default branch (master) is not possible; you must either raise a PR or pull the changes.
-:::
-
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/VujLmtTJGdKSQIwNgcRb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-1. Open the branch from which you want to merge the changes. For example, if merging changes from the `feature` branch to `release`, open the `feature` branch.
-
-2. Click the **Merge** icon at the bottom left corner. 
-
-3. Select the branch into which you want to merge the changes. For example, merging changes from `feature` to `release`.
-
-4. Ensure both branches have no uncommitted changes, are synchronized with the remote repository, and have no conflicting changes before merging.
-
-5. If there are no conflicts between the branches, click the **Merge Changes** button.
-
-If you want to merge branch changes into the `base`/`master` branch, you must raise a Pull Request from the Git provider and merge the changes through the platform.
-
-## Sync branches
-
-Follow these steps to sync your local branch with its remote counterpart:
-
-![](/img/Sync_branches.png)
-
-
-1. Open the branch menu from the bottom left corner.
-
-2. Select and open the branch you want to sync.
-
-3. Click on the sync icon 🔄 located at the top-left corner of the branch menu. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
+* To **Sync** your local branch with its remote counterpart, open the desired branch from the bottom branch menu, and click on the sync icon at the top-left corner. Syncing doesn't automatically merge remote changes; use the pull button to update your local branch with the latest changes from the remote branch.
 
 
 
 
-## Delete local branch
-
-Follow the steps to delete a local branch that is no longer needed:
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/jq9yBSnhA8GBOF7VRdb7?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
 
-1. Open the branch menu from the bottom left corner.
 
-2. Navigate to the branch you want to delete, click options, and select **Delete**.
-
-With these steps, the local branch gets deleted. To delete a remote branch, you need to delete/remove it from your Git service provider.
 
 <!-- vale off -->
 
@@ -119,7 +67,9 @@ With these steps, the local branch gets deleted. To delete a remote branch, you 
 
 <!-- vale on -->
 
-The default branch is the base branch of the app. You have the option to select a different default branch for each instance.
+The default branch is the base branch of the app. If there is no branch tag in the URL, the user is directed to the app associated with this branch.
+
+When you create a new repository, Git automatically creates a default branch, often named `master` or `main`. You have the option to select a different default branch for each instance.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/p4gmMV9148bi2ON1vCnr?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -131,7 +81,7 @@ The default branch is the base branch of the app. You have the option to select 
 
 2. Navigate to the branch tab.
 
-3. Change the default branch and click on the **Update** button. Once the default branch is updated, users launching the app from the dashboard will see the deployed version from this branch.
+3. Change the default branch and click on the **Update** button. Once the default branch is updated, users launching the app from the dashboard sees the deployed version from this branch.
 
 
 
