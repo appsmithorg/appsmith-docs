@@ -1206,8 +1206,8 @@
       "source": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory",
       "destination": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id"
     },
-	{
-	"source": "/widget-reference/file-picker",
+    {
+      "source": "/widget-reference/file-picker",
       "destination": "/reference/widgets/filepicker",
       "permanent": true
     },
@@ -1224,11 +1224,6 @@
     {
       "source": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud",
       "destination": "https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas",
-      "permanent": true
-    },
-    {
-      "source": "/write-code/reference/core-concepts/writing-code/ext-libraries",
-      "destination": "/core-concepts/writing-code/ext-libraries",
       "permanent": true
     },
     {
