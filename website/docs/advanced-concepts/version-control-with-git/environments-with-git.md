@@ -1,64 +1,53 @@
 # Multi-instance setup with Git 
 
+An instance in Appsmith refers to a workspace where you develop and deploy your applications.  With Git, you can create multiple instances for different stages like staging, development, or production, each with different datasource settings for the same app. With Multi-instance:
+
+* You can work in an isolated environment, ensuring that any changes made in one instance do not affect the other instance.
+* Configure each instance with different datasource settings to streamline development according to varied needs.
+* You can collaborate within instances, allowing different teams to access specific instances; for example, QA/testing teams can user the staging instance for their tasks.
+
+
 This guide shows you how to set up multiple instances in Appsmith using Git, making application development easier. 
-
-An instance in Appsmith refers to a workspace where you develop and deploy your applications. Using Git for managing these instances enables you to handle multiple app versions, each configured with different datasource settings, facilitating streamlined development with separate development and production workspaces.
-
 
 ## Prerequisites
 
-* Basic knowledge of Git.
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
-
-:::note
-If you're using two different self-hosted instances for production and development, take a backup of both instances before updating Appsmith. Update only the development instance and test all your apps on it before updating the production instance. In the event of an error, you can rollback by following the instructions on [Restore Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#restore-instance)
-:::
+* Basic knowledge of Git.
 
 ## Setup instances
 
 Follow these steps to set up multiple instances for your app:
 
-1. Create separate workspaces(instances) for each phase, such as **Development** and **Production**.
+1. Create two separate workspaces, for example, **Development** and **Production**, each corresponding to a separate instance.
 
-2. Create an app within the development instance and [connect to a Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, check out a `development` branch from the default branch.
+2. Create an app within the development instance and [connect to a Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `development` branch from the default `master` branch.
 
-3. In the Development instance(workspace), set up the datasource using the `development` database configuration.
+3. In the Development instance, configure the datasource using either the `development` or `testing` settings.
 
-4. In the Production instance(workspace) import the app using the [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) feature.
+4. In the Production instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the Development instance.
 
-4. In the Production instance(workspace), click on the **Create New** button, and select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the Production instance.
+5. Once the import is complete, you can either use the same datasource configuration or add a different `production` datasource in the **Reconnect Datasources** Modal.
 
-5. Once the import is complete, add your `production` datasource configurations in the **Reconnect Datasources** Modal.
-
-6. To ensure the security and management of branches in both instances:
-
+6. To protect app from unnecessary commits, in the Development instance:
 
 <dd>
 
-* Protect `development` and `master` branches in development instances and make `development` branch default.
-* Protect `master` branch in `production` instance and make `master` branch default.
+* Protect the `development` and `master` branches.
+* Set the `development` branch as the default.
 
-Learn more about [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch) and [Branch protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection).
 </dd>
 
+7. In the Production instance:
 
-7. If you are an enterprise user, set up the [Git CI/CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically deploy changes on the `master` branch in the `production` instance.
+<dd>
 
+* Protect the `master` branch.
+* Set the `master` branch as the default.
 
-## Build and deploy
+For more information see [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch) and [Branch protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection).
+</dd>
 
-Once you've configured the different environments, follow these steps to build apps, manage changes, and deploy them:
-
-
-1. Build the app in the `development` workspace with development datasources.
-
-2. Create feature branches from the `development` branch and merge them into `development` regularly through pull requests.
-
-3. Once a milestone is completed, merge the `development` branch into the `master` branch.
-
-4. In the production instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
-
-5. Share and invite apps with users and developers:
+7. After setting up both instances, you can share and invite apps with users and developers:
 
 <dd>
 
@@ -68,4 +57,18 @@ Once you've configured the different environments, follow these steps to build a
 
 </dd>
 
+
+
+## Build and deploy
+
+Once you've configured the different instances, follow these steps to build apps, manage changes, and deploy them:
+
+
+1. Build the app in the `development` workspace with development/testing datasources.
+
+2. Create different feature branches from the `development` branch and merge them into `development` regularly through pull requests.
+
+3. Once a milestone is completed, merge the `development` branch into the `master` branch.
+
+4. In the production instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 
