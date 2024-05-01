@@ -22,7 +22,7 @@ git checkout <branch-name>
 git log
 ```
 
-This displays a list of commits in reverse chronological order, starting with the most recent commit. Each commit entry includes information such as the commit hash, author name, date, and commit message.
+This displays a list of commits in reverse chronological order, starting with the most recent commit. Each commit entry includes information such as the commit hash, author name, date, and commit message, like:
 
 ```sql
 commit 2f50d7dd1dc4874b7ca6054099b54 (HEAD -> feature, origin/feature)
@@ -76,6 +76,10 @@ Some Git platforms, like [GitHub](https://docs.github.com/en/desktop/managing-co
 
 
 
+## See also
+
+* Git Best Practices
+* Resolve Merge Conflicts
 
 
 
