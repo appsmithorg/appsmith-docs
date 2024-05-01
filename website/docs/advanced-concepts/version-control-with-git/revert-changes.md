@@ -61,6 +61,8 @@ git revert 2f50d7dd1dc4874b7ca6054099b54^..af0e737a28e0d5c816912a336
 //git revert <commit-hash-1>^..<commit-hash-2>
 ```
 
+Make sure to revert changes in chronological order, starting with the newest commit first.
+
 Some Git platforms, like [GitHub](https://docs.github.com/en/desktop/managing-commits/reverting-a-commit-in-github-desktop) & [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/revert_changes.html#revert-a-commit), also offer a graphical user interface that allows you to revert changes directly from the platform's interface.
 
 
