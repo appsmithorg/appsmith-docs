@@ -775,6 +775,7 @@ const sidebars = {
                     'advanced-concepts/version-control-with-git/concepts/auto-commit',
                   ]
                 },
+                'advanced-concepts/version-control-with-git/best-practices',
               ]
             }, 
         
