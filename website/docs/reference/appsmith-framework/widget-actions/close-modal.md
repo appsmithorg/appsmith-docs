@@ -26,4 +26,4 @@ A string which is the name of the modal widget to close.
 _Example:_
 
 ```javascript
-{{ closeModal("Modal1") }}
+{{ closeModal(Modal1.name) }}
