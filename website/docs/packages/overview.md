@@ -36,7 +36,7 @@ Modules extend this capability by enabling users to track and manage updates acr
 
 <ZoomImage
   src="/img/modules-con.png" 
-  alt=""
+  alt="Modules image"
   caption=""
 />
 

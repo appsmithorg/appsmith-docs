@@ -30,7 +30,7 @@ To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) a
 
 Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security, Identity & Compliance** > **Cognito** and follow the steps below:
 
- ![](/img/AWS_cognito_create-userpool.png)
+![AWS Cognito create userpool image](/img/AWS_cognito_create-userpool.png)
 
 1. In the **User Pools** pane, click the **Create user pool** button.
 2. In the **Configure sign-in experience** pane,  select the **Email** checkbox under the **Cognito user pool sign-in options** section. Click **Next**.
@@ -48,18 +48,18 @@ Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to
 
 In the **User pools** pane, select the user pool you created in the preceding steps. Click the **App Integration** tab and follow the steps below:
 
-![](/img/configure-domain-and-app-client.png)
+![Domain and app client configuration image](/img/configure-domain-and-app-client.png)
 
 1. In the **Domain** section, click the **Actions** list and select **Create a Cognito domain**. You can also select **Create a custom domain** to add a domain that you own.
 2. On the **Create Cognito domain** screen, enter a domain prefix in the **Cognito domain** box. Click **Create Cognito domain**.
-![](/img/AWS-cognito_create_domain.png)
+   ![Create a domain image](/img/AWS-cognito_create_domain.png)
 
 3. Back on the **App Integration** tab, scroll down to the **App client list** section and click the name of the app client you created in step 6 of [Create user pool](#create-user-pool).
 
 4. Copy the **Client ID** and **Client Secret** and save them for later use.
 
 5. Scroll down to the **Hosted UI** section and click **Edit**. On the **Edit Hosted UI** pane, follow the steps below:
-    ![](/img/edit-hosted-ui.png)
+    ![Edit hosted UI image](/img/edit-hosted-ui.png)
     1. Click the **Add Callback URL** button. In the **URL** box and enter the **Redirect URL** copied from the [OIDC configuration in Appsmith](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc#capture-redirect-url-for-oidc-configuration).
     2. In the **Identity providers** list, select **Cognito user pool** .
     3. In the **OAuth 2.0 grant types** list, select **Authorization code grant**.
@@ -70,7 +70,7 @@ In the **User pools** pane, select the user pool you created in the preceding st
 
 On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, click **Enable** and follow the steps below:
 
-![](/img/Appsmith_OIDC_creds.png)
+![Configure Appsmith OIDC credentials image](/img/Appsmith_OIDC_creds.png)
 
 1. Refer to the table below when entering data in the input boxes to configure the instance:
 
@@ -84,7 +84,7 @@ On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, cli
     | JWK Set URL                          | Format - `https://cognito-idp.<region>.amazonaws.com/<user-pool-id>/.well-known/jwks.json`<br/>**region** - The region's code where your AWS Cognito is set up.<br/>**user-pool-id** -  The unique ID of the user pool you've created.  | 
 
    
-    ![](/img/AWS_Urls.png)
+   ![AWS URLs image](/img/AWS_Urls.png)
 
 2. Save the changes and restart your application by clicking `SAVE & RESTART` button. If you try to login to Appsmith again, you'll see the **SIGN IN WITH OIDC SSO** button on the login screen.
 
