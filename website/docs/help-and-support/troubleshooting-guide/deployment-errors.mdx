@@ -1,3 +1,9 @@
+---
+description: This page shows you how to troubleshoot common Appsmith deployment errors.
+toc_min_heading_level: 2
+toc_max_heading_level: 2
+---
+
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
@@ -7,29 +13,41 @@ Deploying Appsmith is typically a smooth process, but sometimes you may encounte
 
 ## Pre-deployment checklist
 
-Before delving into specific errors, it is essential to ensure that the pre-deployment conditions are met:
+Before delving into specific errors, it's essential to ensure that the pre-deployment conditions are met:
 
 - Confirm that the target server meets the [minimum hardware requirements](/getting-started/setup).
 - Verify that you have the necessary permissions to install and configure Appsmith on the server.
 - Ensure that all required ports (for example, 80 and 443 for web traffic) are open and not blocked by a firewall.
 
-## Common deployment errors
-
-### 1\. Service Start-up Issues
+## Service start-up issues
 
 After installation, Appsmith services might fail to start due to configuration problems or port conflicts.
 
-**Troubleshooting Steps:**
+### Port conflicts
 
 - **Examine Service Logs:** You can typically find logs in `/opt/appsmith` or by using Docker commands like `docker logs appsmith`.
 - **Check Port Availability:** Use `netstat` or similar tools to ensure the ports Appsmith needs are not already in use.
 - **Ensure Proper Configuration:** If you've modified any configuration files or environment variables, verify their correctness.
 
-If you encounter the error that `ports 80 & 443` aren't open, its is recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port by editing the docker-compose.yml file and restarting the instance.
+If you encounter the error that `ports 80 & 443` aren't open, it's recommended that you stop all processes on these ports and start again. If the processes on these ports cannot be stopped, you can run appsmith on another port by editing the docker-compose.yml file and restarting the instance.
 
-<!-- -->
+### Configuration problems
 
-### 2\. SSL/TLS Certification Errors
+You can typically find logs in `/opt/appsmith` or by using Docker commands like `docker logs appsmith`. For more information about where to find logs, see [Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs#docker).
+
+    If you encourter the below error:
+
+    <Message
+    messageContainerClassName="error"
+    messageContent="`org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongockInitializingBeanRunner' defined in class path resource [com/appsmith/server/configurations/MongoConfig.class]: Error in method[Migration020TransferToDatasourceStorage.executeMigration] : Unable to invoke Cipher due to bad padding`"
+    ></Message>
+
+    To resolve the error, you may choose one of the below options:
+
+    * If you want to overwrite the previous Appsmith installation, delete the `/stacks` folder from the installation directory, and re-run the Docker command.
+    * If you want to keep the previous Appsmith installation, create a new installation directory and follow the [installation](/getting-started/setup/installation-guides/docker#install-appsmith) instructions.
+
+## SSL/TLS certification errors
 
 When opting for an automatic SSL setup with Let's Encrypt, you may encounter certification errors.
 
@@ -37,11 +55,10 @@ When opting for an automatic SSL setup with Let's Encrypt, you may encounter cer
 
 - **Domain Configuration:** Ensure that the domain name is properly configured and pointing to the server's IP address.
 - **Let's Encrypt Rate Limiting:** Be aware that Let's Encrypt has rate limits. If you've hit the limit, you may need to wait before trying again.
-- **Check Logs:** SSL-related errors will be logged in Let's Encrypt logs. Check these for specific error messages.
+- **Check Logs:** SSL-related errors will be logged in Let's Encrypt logs. Check these for specific Error messages.
 
-<!-- -->
 
-### 4\. Database Connection Failures
+## Database connection failures
 
 Appsmith requires a connection to its internal database. If it fails to connect, the deployment will not be successful.
 
@@ -51,9 +68,8 @@ Appsmith requires a connection to its internal database. If it fails to connect,
 - **Environment Variables:** Verify the environment variables related to the database configuration are set correctly, such as `APPSMITH_MONGODB_URI`.
 - **Network Accessibility:** Make sure the database is reachable from the Appsmith server if you're using an external database.
 
-<!-- -->
 
-### 5\. Environment-Specific Problems
+## Environment-specific problems
 
 Deployment errors can also be specific to the environment in which Appsmith is being installed, such as specific cloud providers or operating systems.
 
@@ -62,11 +78,9 @@ Deployment errors can also be specific to the environment in which Appsmith is b
 - **Provider Documentation:** Consult the documentation of the specific environment for any quirks or additional steps required for a successful deployment.
 - **Security Groups/Firewalls:** Check any security groups or firewall rules to ensure they aren't blocking the necessary traffic for Appsmith.
 
-<!-- -->
+## See also
 
-## Error guides
-
-Once you have the logs from your container, you can check whether the error you are facing matches a common error with a resolution guide.
+Once you have the logs from your container, you can verify whether the error you are facing matches a common error with a resolution guide.
 
 - [MongoDb Startup Error](/help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5)
 - [MongoDb Schema Error](/help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error)
@@ -76,4 +90,123 @@ Once you have the logs from your container, you can check whether the error you 
 
 If you are unable to resolve your error, please reach out to support via the chat widget on the page.
 
-<!-- -->
+# Troubleshooting Deployment Errors
+
+Deploying Appsmith is typically a smooth process, but sometimes you may encounter errors that prevent you from successfully setting up your instance. This guide walks through common deployment-related errors and provides strategies for troubleshooting them.
+
+## Pre-deployment checklist
+
+Before delving into specific errors, it's essential to ensure that the pre-deployment conditions are met:
+
+- Confirm that the target server meets the [minimum hardware requirements](/getting-started/setup).
+- Verify that you have the necessary permissions to install and configure Appsmith on the server.
+- Ensure that all required ports (for example, 80 and 443 for web traffic) are open and not blocked by a firewall.
+
+## Port conflicts
+
+After installation, Appsmith services might fail to start due to port not being available.
+
+### Error message
+
+<Message
+  messageContainerClassName="error"
+  messageContent="Ports `80` and `443` aren't open."
+></Message>
+
+### Cause
+
+The error occurs when the required ports `80` and `443` are not available for Appsmith to use due to other processes being using it.
+
+### Solution
+
+To address this issue, you have the following options:
+
+- Stop all processes on ports `80` and `443` and start again. This ensures that the processes using the ports may free the ports and Appsmith can use it. This only helps if there were processes which were using ports but are no longer running on those ports.
+- If stopping processes on these ports is not viable, or there are other processes which continue to run on these ports then edit the `docker-compose.yml` file to assign different ports to Appsmith and restart the instance.
+
+## Configuration problems
+
+After installation, Appsmith services might fail to start due to some configuration problems.
+
+### Error message
+
+If you encounter the below error:
+
+<Message
+  messageContainerClassName="error"
+  messageContent="`org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongockInitializingBeanRunner' defined in class path resource [com/appsmith/server/configurations/MongoConfig.class]: Error in method[Migration020TransferToDatasourceStorage.executeMigration] : Unable to invoke Cipher due to bad padding`"
+></Message>
+
+### Cause
+
+The error occurs due to MongoDB hosting Appsmith data. That is the machine you are trying to install Appsmith on already has an Appsmith installation and MongoDB is hosting that data. The newly installed Appsmith data cannot be overridden as the existing data is encrypted using the encryption password (`APPSMITH_ENCRYPTION_PASSWORD`)and encryption salt (`APPSMITH_ENCRYPTION_SALT`).
+
+### Solution
+
+To resolve the error, you may choose one of the below options:
+
+- If you want to overwrite the previous Appsmith installation, delete the `/stacks` folder from the installation directory, and re-run the Docker command.
+- If you want to keep the previous Appsmith installation, create a new installation directory and follow the [installation](/getting-started/setup/installation-guides/docker#install-appsmith) instructions.
+
+## SSL/TLS certification errors
+
+### Error message
+
+When opting for an automatic SSL setup with Let's Encrypt, you may encounter certification errors.
+
+### Cause
+
+SSL/TLS certification errors occur due to issues with domain configuration, Let's Encrypt rate limiting, or specific rrror messages in the Let's Encrypt logs.
+
+### Solution
+
+Follow the below steps to troubleshoot the error:
+
+- Ensure that the domain name is properly configured and pointing to the server's IP address.
+- Be aware of Let's Encrypt rate limits and wait if you've hit the limit before trying again.
+- Check Let's Encrypt logs for specific Error messages related to SSL/TLS certification.
+
+## Database connection failures
+
+### Error message
+
+Appsmith requires a connection to its internal database. If it fails to connect, the deployment will not be successful.
+
+### Cause
+
+Database connection failures can occur due to issues with database service logs, incorrect environment variables related to database configuration, or network accessibility problems.
+
+### Solution
+
+Follow the below steps to resolve the error:
+
+- Look for any errors in the database service logs that might indicate connection issues.
+- Verify that environment variables related to the database configuration are set correctly, such as APPSMITH_MONGODB_URI.
+- Ensure that the database is reachable from the Appsmith server if you're using an external database.
+
+## Environment-specific problems
+
+### Error message
+Deployment errors can also be specific to the environment in which Appsmith is being installed, such as specific cloud providers or operating systems.
+
+### Cause
+Environment-specific problems arise due to quirks or additional steps required for successful deployment on certain cloud providers or operating systems.
+
+### Solution
+
+Follow the below steps to troubleshoot the error:
+
+- Consult the documentation of the specific environment for any quirks or additional steps required for a successful deployment.
+- Check any security groups or firewall rules to ensure they aren't blocking the necessary traffic for Appsmith.
+
+## See also
+
+Once you have the logs from your container, you can verify whether the error you are facing matches a common error with a resolution guide.
+
+- [MongoDb Startup Error](/help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5)
+- [MongoDb Schema Error](/help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error)
+- [K8s Helm 3.0.4 Error](/help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error)
+
+## Getting help
+
+If you are unable to resolve your error, please reach out to support via the chat widget on the page.
