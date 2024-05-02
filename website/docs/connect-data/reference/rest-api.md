@@ -34,7 +34,7 @@ The following section is a reference guide that provides a description of the pa
 #### Body
 
 <dd>
-Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor.<br/>
+Appsmith supports a variety of encoding types for sending data in API queries. The encoding type can be selected via the Body dropdown on the API editor. For step-by-step instructions on uploading files using an API, see <a href="/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests">Upload Files using API</a> guide.<br/>
 </dd>
 <dd>
   <i>Options:</i>
@@ -92,10 +92,18 @@ When uploading file data, check that your Filepicker widget's **Data Format** pr
 :::
 
 </dd>
-    <ul>
-      <li><b>RAW:</b> Expects raw binary file data to be sent as the body.</li>
-    </ul>
-      <dd><pre>{`{{ Filepicker1.files[0]?.data }}
+<ul>
+  <li><b>BINARY:</b> Expects image data as the body. You can include additional key/value pairs as needed by the API you are connecting with. When uploading images using Binary, ensure that you set the [Data Format](/reference/widgets/filepicker#data-format-string) property of the Filepicker widget as `Base64`.</li>
+</ul>
+<dd>
+<pre>`{{ imgFilepicker.files[0].data }}`</pre>
+<p>In the above example, if the API expects to supply only the image data, use the `data` property of the Filepicker widget to send the data of the selected image file.</p>
+
+</dd>
+<ul>
+  <li><b>RAW:</b> Expects raw binary file data to be sent as the body.</li>
+</ul>
+  <dd><pre>{`{{ Filepicker1.files[0]?.data }}
 `}</pre>
 <p>Use <b>RAW</b> if your endpoint can't accept multipart-encoded data and requires raw body binary instead. Above, the <code>data</code> property of the file is passed to the query instead of the file object itself because the endpoint expects only raw binary data.</p>
 
@@ -105,7 +113,7 @@ Be sure to turn off **JSON Smart Substitution** for this query in the [query set
 
 </dd>
 
-  </dd>
+</dd>
 
 #### Pagination
 
