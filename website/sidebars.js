@@ -771,9 +771,8 @@ const sidebars = {
                   type: 'category',
                   collapsed: true,
                   label: 'Concepts',
-                  link: { type: 'doc', id: 'connect-data/concepts/README' },
                   items: [
-                    'connect-data/concepts/dynamic-queries',
+                    'advanced-concepts/version-control-with-git/concepts/auto-commit',
                   ]
                 },
               ]

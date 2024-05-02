@@ -3,6 +3,9 @@
 
 This guide shows how to revert a committed change to a specific branch or default branch in Git, allowing you to fix a mistake or undo an unwanted change.
 
+You can revert changes from Git user interfaces provided by some platforms, but it is recommended to perform reverts from the local system using Git commands.
+
+
 1. Open your Appsmith Git repository and clone it to your local system.
 
 2. Switch to the branch where you want to revert the change:
