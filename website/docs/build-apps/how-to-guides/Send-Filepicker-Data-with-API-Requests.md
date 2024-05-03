@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upload Files Using API 
+# Upload Files using API 
 
 This page shows you how to use the Filepicker widget to upload file data using API.
 
@@ -28,7 +28,7 @@ You can select any of the following methods:
 
 
 <Tabs>
-  <TabItem value="json" label="JSON">
+<TabItem value="json" label="JSON">
 
    JSON is typically used when uploading files along with structured data, such as metadata or parameters. It is suitable for both single and multiple file uploads.
 
@@ -64,8 +64,8 @@ In this example:
 
 </dd>
    
-  </TabItem>
-    <TabItem value="FORM_URLENCODED" label="FORM_URLENCODED">
+</TabItem>
+<TabItem value="FORM_URLENCODED" label="FORM_URLENCODED">
 
   Form-urlencoded is a simple data format for API requests. It is suitable for single file uploads along with some form data. Each key-value pair represents a specific piece of information to be submitted to the API.
 
@@ -101,8 +101,8 @@ In this example:
 </dd>
 
 
-  </TabItem>
-  <TabItem value="MULTIPART_FORM_DATA" label="MULTIPART_FORM_DATA">
+</TabItem>
+<TabItem value="MULTIPART_FORM_DATA" label="MULTIPART_FORM_DATA">
 
 Multi-part form data is a flexible format for API requests. It is used when you need to upload multiple files or a combination of files and other form data.  
 
@@ -135,8 +135,47 @@ In this example:
 </dd>
 
 
-  </TabItem>
-  <TabItem value="RAW" label="RAW">
+</TabItem>
+<TabItem value="BINARY" label="BINARY">
+ Binary format is ideal for image uploads. Appsmith automatically adds the appropriate content-type (`application/octet-stream`) for image uploads when Binary is selected to simplifying the process for you. 
+
+  <ZoomImage
+    src="/img/appsmith-uploadimage-using-api.png" 
+    alt="Upload images using Binary Format"
+    caption="Upload images using Binary Format"
+  />
+
+  
+  <dd>
+  **Example - Underlying API Only Requires Image Data**
+
+    If your underlying API only needs the image data, you can provide the image content as part of the payload. Here's how you can do it:
+    
+  ```javascript
+  {{imgFilePicker.files[0].data}}
+  ```
+  In this example, `imgFilePicker.files[0].data` corresponds to the image data of the selected image file using the `imgFilePicker` widget.
+
+  **Example - Underlying API Requires Image Data Supplied as Part of Parameter**
+
+  If your underlying API requires the image data to be supplied as part of a parameter, you can structure the payload accordingly. Here's an example:
+
+      ```json
+      {
+        "image_data": {{imgFilePicker.files[0].data}},
+        "image_name": {{imgFilePicker.files[0].name}},
+        "key1": "value1"
+      }
+      ```
+
+    In this example:
+
+    * `image` corresponds to the image data of the image file selected from the `imgFilePicker` widget. 
+    * `image_name` corresponds to the name of the image file.
+    * The `key1` parameter can be customized to add more parameters as needed by the underlying API.
+  </dd>
+</TabItem>
+<TabItem value="RAW" label="RAW">
     Raw binary data is best suited for single binary file uploads without additional form data or metadata. It's efficient for handling large files.
 
 ```json
@@ -160,7 +199,7 @@ Use RAW if your endpoint can't accept multipart-encoded data and requires raw bo
 Be sure to turn off [**JSON Smart Substitution**](/connect-data/reference/query-settings#smart-json-substitution) in the query settings for this specific query.
 :::
 
-  </TabItem>
+</TabItem>
 </Tabs>
 
 </dd>
@@ -170,28 +209,14 @@ Be sure to turn off [**JSON Smart Substitution**](/connect-data/reference/query-
 If you want to upload files of significant size, adjust the [Query timeout](/connect-data/reference/query-settings#query-timeout) settings in the API configuration.
 :::
 
-
-
-
-
-
-
-
 ## Configure Filepicker widget
 
 Follow these steps to configure the Filepicker widget to upload files:
 
 * Configure the [**Allowed file types**](/reference/widgets/filepicker#allowed-file-typesarraystring) property of the Filepicker widget to allow users to upload files of specific formats.
 
-* Configure the [**Data Format**](/reference/widgets/filepicker#data-format-string) property to align with the data format expected by the API or platform you are using.
+* Configure the [**Data Format**](/reference/widgets/filepicker#data-format-string) property to align with the data format expected by the API or platform you are using. When uploading image files using the FilePicker widget, ensure you select `Base64` as Data Format.
 
 * Set the Filepicker widget's [**onFilesSelected**](/reference/widgets/filepicker#onfilesselected) event to execute the query.
 
 After completing these steps, select your file(s) and click the **Upload File(s)** button to send them to the server.
-
-
-
-
-
-
-
