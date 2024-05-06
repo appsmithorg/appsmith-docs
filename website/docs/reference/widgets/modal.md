@@ -100,6 +100,19 @@ Reflects whether the widget is visible or not.
 
 </dd>
 
+#### name `string`
+
+<dd>
+
+Reflects the widget name of the modal.
+
+*Example:*
+```js
+{{Modal1.name}}
+```
+
+</dd>
+
 
 ## Update data with Modal
 
