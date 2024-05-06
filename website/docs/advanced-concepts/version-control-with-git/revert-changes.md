@@ -6,7 +6,7 @@ This guide shows how to revert a committed change to a specific branch or defaul
 You can revert changes from Git user interfaces provided by some platforms, but it is recommended to perform reverts from the local system using Git commands.
 
 
-1. Open your Appsmith Git repository and clone it to your local system.
+1. Open your App Git repository and clone it to your local system.
 
 2. Switch to the branch where you want to revert the change:
 

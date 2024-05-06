@@ -746,8 +746,6 @@ const sidebars = {
                         'advanced-concepts/version-control-with-git/guides/setup-azure',
                       ],
                     },
-                    'advanced-concepts/version-control-with-git/guides/change-default-branch',
-                    'advanced-concepts/version-control-with-git/guides/protected-branch',
                     'advanced-concepts/version-control-with-git/revert-changes',
                     'advanced-concepts/version-control-with-git/import-from-repository',
                     'advanced-concepts/version-control-with-git/environments-with-git',
@@ -775,10 +773,17 @@ const sidebars = {
                     'advanced-concepts/version-control-with-git/concepts/auto-commit',
                   ]
                 },
+                {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Reference',
+                  items: [
+                    'advanced-concepts/version-control-with-git/reference/git-settings',
+                  ]
+                },
                 'advanced-concepts/version-control-with-git/best-practices',
               ]
             }, 
-        
            //git-end
         //git-start
 
