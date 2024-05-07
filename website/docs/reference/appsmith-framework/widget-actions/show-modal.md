@@ -48,7 +48,7 @@ If you want to use JavaScript instead of the action selector, you can enable *JS
 
 
 ```javascript
-{{ showModal("ProductDetailsModal") }}
+{{ showModal(ProductDetailsModal.name) }}
 ```
 </dd>
 
@@ -64,7 +64,7 @@ If you want to show a Modal on page load, you can achieve this by using a JSObje
 export default {
     // Function to show Modal
     showMyModal() {
-        showModal('UserDetailsModal'); 
+        showModal(UserDetailsModal.name); 
     }
 }
 // Enable "Run on Page Load" from JSObject settings
@@ -84,7 +84,7 @@ If you need to display Modals conditionally, based on user roles or status, you 
 
 ```js
 // Enable JS next to the event and add the code
-{{currentRow.role === 'admin' ? showModal('adminModal') : showModal('userModal')}}
+{{currentRow.role === 'admin' ? showModal(adminModal.name) : showModal(userModal.name)}}
 ```
 
 This code shows either the `adminModal` or `userModal` based on the role of the selected row in the `userTable`.

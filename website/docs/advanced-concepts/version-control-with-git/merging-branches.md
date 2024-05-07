@@ -27,12 +27,11 @@ Once the merge is successful, you can either merge your feature branch directly 
 
 When a feature branch is merged with the master branch in the remote repository, the local counterpart has to be updated with those changes. To sync the local branch with the remote updates, pull the latest changes by clicking on the **pull** icon at the bottom left corner. 
 
-![](/img/pull_changes.gif)
+![Pull latest changes gif](/img/pull_changes.gif)
 
 Once the pull is successful, the app is automatically deployed. To check the deployed version, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**
 
 The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
-
 
 ## Delete a branch
 
@@ -41,7 +40,7 @@ Similar to the Git flow, you can delete a branch in Appsmith that's no longer ne
 1. Click the current branch at the bottom left corner.
 2. Go to the branch you want to delete, click options, and **Delete**.
 
-![](/img/delete_branch.gif)
+![Delete a branch gif](/img/delete_branch.gif)
 
 ## Further reading
 

@@ -25,7 +25,7 @@ You cannot edit the input name or query configuration from the App; you can only
 
 <ZoomImage
   src="/img/inputs_mod_app.png" 
-  alt=""
+  alt="Inputs image"
   caption=""
 />
 
@@ -77,7 +77,7 @@ Additionally, you can add multiple JS modules from the same package, each with d
 
 <ZoomImage
   src="/img/js-module-setting.png" 
-  alt=""
+  alt="JS modules image"
   caption=""
 />
 

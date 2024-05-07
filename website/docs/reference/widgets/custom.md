@@ -98,7 +98,7 @@ const handleReset = () => {
 
 <ZoomImage
   src="/img/custom-ref-event.png" 
-  alt=""
+  alt="Custom widget image"
   caption="Left: Custom Widget Builder | Right: Widget Events"
 />
 
@@ -145,7 +145,7 @@ This section, which you can open by clicking on the edit source button on proper
 
 <ZoomImage
   src="/img/custom-widget-builder.png" 
-  alt=""
+  alt="Custom widget builder image"
   caption="Custom Widget Builder"
 />
 
@@ -262,7 +262,7 @@ function onClick() {
 
 <ZoomImage
   src="/img/custom-widget-onClick-event.png" 
-  alt=""
+  alt="Custom widget onClick event image"
   caption="Custom Widget custom event: onClick"
 />
 

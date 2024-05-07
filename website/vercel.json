@@ -1205,7 +1205,41 @@
     {
       "source": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory",
       "destination": "/getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id"
+    },
+    {
+      "source": "/widget-reference/file-picker",
+      "destination": "/reference/widgets/filepicker",
+      "permanent": true
+    },
+    {
+      "source": "/widget-reference/map",
+      "destination": "/reference/widgets/maps",
+      "permanent": true
+    },
+    {
+      "source": "/widget-reference/dropdown",
+      "destination": "/reference/widgets/select",
+      "permanent": true
+    },
+    {
+      "source": "/reference/datasources/querying-mongodb/whitelist-mongodb-cloud",
+      "destination": "https://studio3t.com/knowledge-base/articles/mongodb-atlas-login-ip-whitelisting/#how-to-whitelist-ip-addresses-on-mongodb-atlas",
+      "permanent": true
+    },
+    {
+      "source": "/quick-start",
+      "destination": "/getting-started/tutorials/start-building",
+      "permanent": true
+    },
+    {
+      "source": "/core-concepts/building-the-ui",
+      "destination": "/build-apps/overview",
+      "permanent": true
+    },
+    {
+      "source": "/core-concepts/connecting-to-data-sources/connect-to-apis",
+      "destination": "/connect-data/reference/rest-api",
+      "permanent": true
     }
   ]
 }
-

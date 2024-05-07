@@ -28,7 +28,6 @@ If you don’t see the “Admin Settings” icon on the top-right corner, you’
         lazyLoad="true"
 />
 
-
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
 :::
@@ -160,7 +159,7 @@ To configure an ECS installation, follow these steps:
 2. Click the Task Definition used by your ECS instance, and hit Create new revision.
 3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs, as shown below.
 
-![](/img/ecs-task-env_(1).png)
+![ECS environment image](</img/ecs-task-env_(1).png>)
 
 It's recommended to use AWS Secrets for sensitive information. Follow these steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
 
@@ -169,7 +168,7 @@ It's recommended to use AWS Secrets for sensitive information. Follow these step
 3. Click Update, and select the latest revision of the Task Definition.
 4. Hit Skip to review and then Update Service. The screen below shows the status.
 
-![](/img/instance-configuration-ecs-service-restart.png)
+![Instance configuration ECS service restart image](/img/instance-configuration-ecs-service-restart.png)
 
 It may take a minute for the new ECS Task to start running.
 

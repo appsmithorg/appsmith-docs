@@ -31,7 +31,7 @@ To create these branches in your Appsmith app, follow the steps below:
 1. Click the current branch at the bottom left corner to open the branch Modal that shows the list of existing branches.
 2. To create a new branch, enter the new branch name (Eg. release) in the input box and click on **Create branch:release**. Your application switches to the new (release) branch.
 
-![](/img/create_branch.gif)
+![Create a branch gif](/img/create_branch.gif)
 
 Please keep the following points in mind when creating a new branch:
 
