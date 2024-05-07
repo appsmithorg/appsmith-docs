@@ -116,7 +116,7 @@ Follow these steps to create approval requests that are awaiting user interactio
     }          
     ```
     
-3. Click the **Publish** button to publish the workflow.
+3. Click the **Deploy** button to deploy the workflow.
 
 ## Handle approvals or rejections
 

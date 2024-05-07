@@ -97,7 +97,7 @@ Follow these steps to write a blank API query for sending email:
         }
     }
     ```
-5. Click the **Publish** button to publish your latest changes.
+5. Click the **Deploy** button to deploy your latest changes.
 
 You've successfully integrated the email query in workflow. 
 
