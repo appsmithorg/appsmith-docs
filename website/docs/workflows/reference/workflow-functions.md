@@ -79,31 +79,31 @@ Below are the parameters required by the `assignRequest()` function to execute:
     The name of the request, which serves as its identifier within the workflow. Give a unique name to the request, and use it to filter requests as part of [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query by adding it in the `Request name` attribute.
     </dd>
 
-#### message <code className="parameterCodeBlock">String</code> <code className="parameterCodeBlock">Optional</code>
-    <dd>
-      A descriptive message associated with the request, providing more context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
-    </dd>
-
 #### resolutions <code className="parameterCodeBlock">String[]</code>
     <dd>
     Represents the possible actions a user can take on the request. The applicable resolution passed to the [Resolve requests](/workflows/reference/workflow-queries#resolve-requests) workflow query to apply the selected resolution. For example, `['Approve', 'Reject']`.
+    </dd>
+
+#### requestToUsers <code className="parameterCodeBlock">String[]</code> <code className="parameterCodeBlock">Optional</code>
+   <dd>
+   The `requestToUsers` parameter allows for targeted assignment of requests to specific Appsmith users. It specifies an array of emails for users to whom the pending requests will be assigned. The users specified here will be able to take action and resolve the pending request. These users need to be a part of the Appsmith instance for assigning the request to them. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment. The workflow resumes upon the first action taken by any user within the assigned users.
+   </dd>
+
+#### requestToGroups <code className="parameterCodeBlock">String[]</code> <code className="parameterCodeBlock">Optional</code>
+
+<dd>
+The `requestToGroups` parameter allows for targeted assignment of requests to specific User groups in Appsmith. If specifies the user group names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment. The workflow resumes upon the first action taken by any user within the assigned users.
+ </dd>
+
+#### message <code className="parameterCodeBlock">String</code> <code className="parameterCodeBlock">Optional</code>
+    <dd>
+      A descriptive message associated with the request, providing more context for users. For example, when creating a refund request, you might include a message like "Refund request raised by User 1".
     </dd>
 
 #### metadata <code className="parameterCodeBlock">JSON</code> <code className="parameterCodeBlock">Optional</code>
     <dd>
     Add data that may be needed to process the request or display more information to the user in your app. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your app to fetch and show the details to user.
     </dd>
-
-#### requestToUsers <code className="parameterCodeBlock">String[]</code>
-   <dd>
-   The `requestToUsers` parameter allows for targeted assignment of requests to specific Appsmith users. It specifies an array of emails for users to whom the pending requests will be assigned. The users specified here will be able to take action and resolve the pending request. These users need to be a part of the Appsmith instance for assigning the request to them. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment.
-   </dd>
-
-#### requestToGroups <code className="parameterCodeBlock">String[]</code> <code className="parameterCodeBlock">Optional</code>
-
-<dd>
-The `requestToGroups` parameter allows for targeted assignment of requests to specific User groups in Appsmith. If specifies the user group names to which the request will be assigned for resolution. When specified, the request will be assigned to all the users belonging to the groups. Each group name must be configured in your app and have appropriate permissions to perform actions. It's mandatory to supply either `requestToUsers` or `requestToGroups` atribute for request assignment. The workflow restarts upon the first action taken by any user within the assigned group.
- </dd>
 
 ### Return type 
 
