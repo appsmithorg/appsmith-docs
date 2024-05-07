@@ -66,7 +66,7 @@ The `assignRequest()` function is part of the `workflows` object within the glob
 ### Signature
 
 ```javascript
-assignRequest({requestName: string, message: string, resolutions: string[], metadata:{key: string, value: any}, requestToUsers: string[], requestToGroups: string[] }) : Promise<JSON>
+assignRequest({requestName: string, resolutions: string[], requestToUsers: string[], requestToGroups: string[], message: string,  metadata:{key: string, value: any}}) : Promise<JSON>
 ```
 
 ### Parameters
