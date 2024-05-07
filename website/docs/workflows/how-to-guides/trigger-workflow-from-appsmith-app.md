@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith workflows seamlessly integrate with the Appsmith app. This page shows how to integrate and trigger workflow from your Appsmith app.
+Appsmith workflows seamlessly integrate with the Appsmith apps. This page shows how to integrate and trigger workflow from your Appsmith app.
 
 ## Prerequisites
 
