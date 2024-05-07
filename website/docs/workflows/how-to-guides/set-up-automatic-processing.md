@@ -19,58 +19,56 @@ tags={[
 
 <!-- vale on -->
 
-Automating processes within your application can improve efficiency and reduce manual workload. This page shows how to set up automatic processing using Appsmith workflows.
-
+Automating processes within your business can boost efficiency and reduce manual workloads. This guide shows you how to set up automated processing using Appsmith Workflows.
 
 ## Prerequisites
 
-Before you begin, ensure you have:
+Before you start, make sure you have:
 
-* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Basic knowledge of creating a workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow - Create Workflow](/workflows/tutorials/create-workflow#create-workflow) section.
-* Basic knowledge of writing queries in Workflow. For more information, see [Tutorial - Create Basic Workflow - Write query to send email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
+* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for instructions.
+* Basic knowledge of creating workflows in Appsmith. See [Create Workflow Tutorial](/workflows/tutorials/create-workflow#create-workflow) for guidance.
+* Basic understanding of writing queries in workflows. Check out [Write Query to Send Email](/workflows/tutorials/create-workflow#write-query-to-send-email) for details.
 
+## Steps to Configure Automated Processing:
 
-Follow these steps to configure the workflow to automatically process requests based on your business requirements:
+1. Open your workflow and edit the **Main** JS Object under _JS Objects_.
 
-1. Go to your workflow and edit the **Main** JS Object available under _JS Objects_.
+2. Set up SQL queries or APIs to modify data based on automated processing requirements.
 
-2. Configure SQL queries or APIs for your datasources to alter data based on automatic processing.
-
-3. Replace the auto-generated code in the **Main** JS Object with your custom logic for automatic processing. For example, the below snippet demonstrates how to process orders based on specific criteria, such as order amount. When the order value is less than `$10`, the system updates the order record, initiates a refund, and notifies users via email about the outcome.
+3. Replace the code in the **Main** JS Object with custom logic for automatic processing. For instance, the following snippet processes orders based on criteria like order value. If it's below $10, the workflow updates the record, processes a refund, and sends a notification email.
 
     ```javascript
     export default {
       async executeWorkflow(order) {
         if (order && order.order_id) {
           console.log('Processing order: ' + order.order_id);
-          // Fetch order details based on the given order ID
-          const orderDetails = await getOrderDetails.run({ "order_id":  order.order_id });
-          // Check if the order meets the processing condition
+          // Fetch order details using the provided order ID
+          const orderDetails = await getOrderDetails.run({ "order_id": order.order_id });
+          // Check if the order meets processing criteria
           if (orderDetails && orderDetails.amount < 10) {
-            // Add logic for processing if any
-            // initiates a refund
+            // Process refund
             await initiateRefund.run({
               "order_id": order.order_id,
               "status": 'Refund Processed'
             });
-            // Notifies the user about the processing
+            // Notify the customer
             await notifyUser.run({
-              "user_email": orderDetails.customer_email ,
+              "user_email": orderDetails.customer_email,
               "user_name": orderDetails.customer_name
             });
           }
         }
       }
-    }                              
+    }
     ```
 
-4. Trigger the workflow to automatically process requests. You can trigger the workflow in one of the following ways:
-    * If triggering the automated processing from within the Appsmith app, create a workflow query using **Trigger Workflow** as a request type, pass the parameters needed for processing, and bind it to the action from where the triggering happens. For more information, see [Trigger workflow from Appsmith app](/workflows/how-to-guides/trigger-workflow-from-appsmith-app).
-    * If triggering the automated processing from an external application, configure the workflow as a webhook trigger, pass the parameters in the body for processing, and use the workflow URL to trigger the workflow. For more information about triggering workflow from an external app, see [Trigger workflow using Postman](/workflows/tutorials/create-workflow#send-email-using-postman).
-6. Click the **Publish** button in the top right corner to apply your changes.
-7. Execute the workflow whenever a relevant event occurs. For example, a user submits a new request.
+4. Trigger the workflow to automatically process requests. You can do this in two ways:
+    * **Within an Appsmith app:** Create a workflow query with **Trigger Workflow** as the request type. Pass in the parameters for processing, and link it to the triggering action. Learn more in [Trigger Workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app).
+    * **From an external system:** Configure the webhook trigger in the workflow, Call the webhook through a POST request and pass the required parameters in the request body. Learn more in [Trigger Workflow using Postman](/workflows/tutorials/create-workflow#send-email-using-postman).
+
+6. Click **Deploy** in the top right to apply your changes.
+7. Execute the workflow when relevant events occur, like a new order request.
 
 ## Troubleshooting
 
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
+For assistance, contact support via the chat widget at the bottom right.
