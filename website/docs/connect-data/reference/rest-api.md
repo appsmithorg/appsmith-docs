@@ -93,7 +93,7 @@ When uploading file data, check that your Filepicker widget's **Data Format** pr
 
 </dd>
 <ul>
-  <li><b>BINARY:</b> For any Base64 upload, including text files, images, videos, and more, ensure that you include the file data in the body. If you're using Binary to upload files, remember to set the [Data Format](/reference/widgets/filepicker#data-format-string) property of the Filepicker widget to `Base64`. This ensures that the file data is encoded correctly before transmission. Moreover, if the API you are connecting with expects additional key/value pairs, you can include them along in the body.</li>
+  <li><b>BINARY:</b> For any Base64 upload, including text files, images, videos, and more, ensure that you include the file data in the body. If you're using Binary to upload files, remember to set the [Data Format](/reference/widgets/filepicker#data-format-string) property of the Filepicker widget to `Base64`. This ensures that the file data is encoded correctly before transmission. Moreover, if the API you are connecting with expects additional key/value pairs, you can include them along with file data in the body.</li>
 </ul>
 <dd>
 <pre>`{{ imgFilepicker.files[0].data }}`</pre>
