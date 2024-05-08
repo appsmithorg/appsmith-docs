@@ -100,6 +100,16 @@ Many popular code editors have interfaces for resolving a merge conflict when yo
 
 This error typically occurs when attempting to merge branches in Git, and it indicates that there are conflicting changes between the source and target branches. These conflicts can arise when integrating changes from one branch to another, typically due to conflicting modifications in the same application entities. 
 
+1. Manually open the conflicted file(s) in a text editor.
+
+
+
+
+
+
+
+
+-------
 Conflicts during branch merging: When merging changes from one branch into another, conflicts may arise if changes in the same file conflict between the source and target branches. To resolve:
 Manually open the conflicted file(s) in a text editor.
 Identify and edit the conflicting sections to integrate desired changes.
