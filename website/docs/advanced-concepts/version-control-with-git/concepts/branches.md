@@ -1,72 +1,41 @@
 
-Similar to using Git flow in SDLC, you can establish separate branches in Appsmith to manage different stages of your app development process. It's recommended to organize branches according to development phases, such as having a `master/main` branch for stable releases, `feature` branches for new features, and `release` branches for testing and QA purposes.
+## Understand the Conflict
 
-Each branch that you create has its own unique URL in the following format:
+Merge conflicts occur when Git is unable to automatically reconcile differences between two branches being merged. This happens because Git doesn't know which changes to prioritize, especially when conflicting changes occur in the same part of a file or when changes conflict logically.
 
-```javascript
-<APPSMITH-APP-URL>?branch=<BRANCH-NAME>
-```
+*Example:* 
 
-In case the branch name is not mentioned in the URL, the URL directs to the default branch, which is the master branch. 
+<dd>
 
-By default, Appsmith enables the protected branch feature for the `master/main` branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the `main/master` branch.
+Imagine there are two developers, John and Alex, working on the same branch. John pulls changes from the remote repository and commits some modifications, such as adding a Table widget displaying user data. Meanwhile, Alex, without syncing his local repository with the remote, starts working on the same page and adds a Table with the same name but connected with movie data.
 
-<!-- vale off -->
+In this scenario, Alex's action of not syncing with the remote repository means he's unaware of John's recent changes. Hence, both developers unintentionally work on the same page, resulting in conflicting modifications. Git is not able to automatically resolve the conflict because it can't determine which changes should take precedence.
 
-<div className="tag-wrapper">
+In such a situation, Alex would need to manually resolve the conflict by reviewing the changes, and he can take one action from the following:
 
-## Default branch
 
-<Tags
-  tags={[
-    {
-      name: "Enterprise",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "enterprise",
-    }
-  ]}
-/>
+* Keep Alex's changes and remove John's
+* Keep John's changes and remove Alex's
+* Keep both sets of changes
+* Remove both changes
 
-</div>
+</dd>
 
-<!-- vale on -->
+### Types of Merge Conflicts
 
-The default branch is the base branch of the app. Users launching the app from the dashboard will see the deployed version from this branch. It is the branch where all changes are eventually merged back. It's the central hub from which new features, bug fixes, and other changes are based and into which they are integrated.
+When working with Git, different scenarios can lead to merge conflicts. Here are the primary types:
 
-If you are an enterprise user and using Git across multiple instances, you have the option to select a different default branch for each instance, offering configuration based on specific project requirements or preferences.
+#### Entity Conflicts
 
-<ZoomImage
-  src="/img/git-default-branch.png" 
-  alt="Default branch"
-  caption="Default branch"
-/>
+These conflicts occur when two developers make changes to the same application entities within Appsmith, such as pages, widgets, or queries. When merging branches, Git may encounter conflicts if modifications conflict with each other, requiring manual resolution by developers.
 
-<!-- vale off -->
+#### Rename/Move Conflict:
+ Similar to conflicts in traditional code repositories, rename/move conflicts in Appsmith occur when one developer renames or moves an application entity (e.g., renaming a page or moving a widget to a different location) while another developer makes conflicting changes to the same entity. Resolving these conflicts involves deciding which changes to retain or merge.
 
-<div className="tag-wrapper">
+#### Submodule Conflict: 
+In larger Appsmith projects or projects with dependencies, conflicts can arise with submodules. These conflicts occur when changes are made to submodules by multiple developers simultaneously, leading to merge conflicts during branch integration. Resolving submodule conflicts involves ensuring consistency across submodule references and synchronizing changes between branches.
 
-## Branch protection
+#### Branch Behind Remote: 
+This conflict occurs when a developer attempts to merge changes into their branch while their branch is behind the remote repository. Git detects the difference between the local and remote branches and requires the developer to pull the latest changes from the remote repository before merging. Resolving this conflict involves pulling the latest changes from the remote repository and then merging them into the local branch.
 
-<Tags
-  tags={[
-    {
-      name: "Enterprise",
-      link: "https://www.appsmith.com/pricing",
-      additionalClass: "enterprise",
-    }
-  ]}
-/>
-
-</div>
-
-Changes to the app are not allowed in protected branches, the user needs to create a new branch or checkout an existing branch to edit the app. This enforces Git Workflows, ensuring development happens securely and by following good development practices.
-
-If you are an enterprise user, you can select multiple branches as protected, enhancing security measures across various aspects of the codebase. However, for non-enterprise users, the default branch is automatically set as the protected branch. You have the option to exclude the default branch from branch protection if needed, from the Git settings located in the left corner.
-
-<ZoomImage
-  src="/img/git-branch-protection.png" 
-  alt="Branch Protection"
-  caption="Branch Protection"
-/>
-
-Learn how to [create and maintain multiple versions](/advanced-concepts/version-control-with-git/environments-with-git) of your applications and make changes to them in isolation using Git. 
+Merge conflicts can occur in various scenarios while working with version control systems like Git. Here are some common types of merge conflicts:
