@@ -63,7 +63,7 @@ Before you begin, make sure you have:
     ```
 
 4. Trigger the workflow to process requests automatically. You can do this in one of the following ways:
-    * **Within an Appsmith app:** Create a workflow query with **Trigger Workflow** as the request type. Pass in the parameters for processing, and link it to the triggering action. Learn more in [Trigger Workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app).
+    * **From within an Appsmith app - ** Create a workflow query with **Trigger Workflow** as the request type. Pass the required parameters for processing, and bind it to the action from where the triggering happens. For more information on triggering a workflow, see [Trigger Workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
     * **From an external system -** Configure the webhook trigger in the workflow. Call the webhook through a POST request and pass the required parameters in the request body. For more information, see [Trigger Workflow using Postman](/workflows/tutorials/create-workflow#send-email-using-postman).
 
 6. Click **Deploy** in the top right to apply your changes.
