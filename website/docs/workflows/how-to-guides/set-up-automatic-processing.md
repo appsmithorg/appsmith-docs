@@ -23,7 +23,7 @@ Automating processes within your business can boost efficiency and reduce manual
 
 ## Prerequisites
 
-Before you start, make sure you have:
+Before you begin, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for instructions.
 * Basic knowledge of creating workflows in Appsmith. See [Create Workflow Tutorial](/workflows/tutorials/create-workflow#create-workflow) for guidance.
