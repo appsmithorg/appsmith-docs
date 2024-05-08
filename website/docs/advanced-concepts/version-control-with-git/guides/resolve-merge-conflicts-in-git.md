@@ -1,17 +1,13 @@
 # Resolve Merge Conflicts in Git
 
-Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be seamlessly merged. 
+Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. 
 
-This guide provides strategies for resolving different types of merge conflicts and offers few tips to mitigate them, ensuring smoother collaboration and project management in Git.
-
-
-
-## Resolve Merge Conflicts
+This guide provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
 
 
-### Resolve via Interface
-Resolving conflicts via the Git interface is recommended when conflicts involve a small number of files with straightforward changes.
 
+### Resolve via PR Interface
+Resolving conflicts via the Git PR interface is recommended when conflicts involve a small number of files with straightforward changes.
 
 1. Once you have committed the changes to a particular branch, go to your Git provider and raise a Pull Request. For example, if you encounter merge conflicts while merging branch `b1` into `b2`, raise a PR.
 
@@ -125,5 +121,3 @@ git push
 
 8. Pull the changes into your Appsmith App by clicking the pull icon located on the left side of the bottom bar.
 
-
-## Reduce Merge Conflicts/ Prevent Merge Conflicts
