@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-Automating processes within your business can boost efficiency and reduce manual workloads. This guide shows you how to set up automated processing using Appsmith Workflows.
+Automating processes within your business can boost efficiency and reduce manual workloads. This page shows you how to set up automated processing using Appsmith Workflows.
 
 ## Prerequisites
 
