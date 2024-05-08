@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows blend the best of both code-based and node-based approaches. They simplify external service integration with an intuitive interface, letting developers focus on logic while handling APIs and authentication. By using JavaScript, they offer flexibility for complex processes without visual clutter, making them ideal for efficient and sophisticated workflow automation.
+Appsmith Workflows combine the strengths of code-based and node-based approaches. They offer an intuitive interface for integrating external services, allowing developers to focus on logic while managing APIs and authentication. By leveraging JavaScript, they provide flexibility for complex processes without clutter, making them suitable for efficient and advanced workflow automation.
 
 ## Workflow capabilities
 
@@ -26,11 +26,11 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
 ### Automate business-critical processes
 
-Appsmith Workflows can automate business-critical processes by seamlessly connecting databases and external services. For example, they can streamline lead management by automatically syncing new leads from CRM to marketing tools. They also simplify inventory management by automating stock alerts and supplier orders. With flexible JavaScript logic, you can automate complex tasks efficiently, reduce errors, and enhance consistency in managing intricate business operations.
+Appsmith Workflows enable you to automate key business processes by linking databases and external services. For instance, you can automatically sync new leads from your CRM to marketing tools or handle inventory management by setting up stock alerts and supplier orders. With JavaScript logic, complex tasks can be automated to minimize errors and maintain consistency in managing business operations.
 
 ### Enable Human-in-the-Loop interactions
 
-Appsmith Workflows empower you to automate human-in-the-loop (HITL) flows by combining intuitive interfaces and powerful automation. They allow seamless integration of automated tasks with manual checkpoints, ensuring that critical human decisions are incorporated when needed. Developers can easily design workflows where data validation, approvals, or feedback are required before proceeding, enabling efficient collaboration and reducing errors while maintaining oversight and control in crucial processes.
+Appsmith Workflows allow you to automate human-in-the-loop (HITL) flows by combining user-friendly interfaces with server-side automation. They integrate automated tasks with manual checkpoints, ensuring that essential human decisions are included as needed. Developers can design workflows that require data validation, approvals, or feedback before continuing, improving collaboration and reducing errors while maintaining oversight in critical processes.
 
 ## Explore Trigger Types
 
