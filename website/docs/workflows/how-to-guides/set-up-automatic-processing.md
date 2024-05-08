@@ -71,4 +71,4 @@ Before you begin, make sure you have:
 
 ## Troubleshooting
 
-For assistance, contact support via the chat widget at the bottom right.
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
