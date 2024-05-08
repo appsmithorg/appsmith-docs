@@ -29,7 +29,7 @@ Before you begin, make sure you have:
 * Basic knowledge of creating workflows in Appsmith. For more information, see the [Create Workflow Tutorial](/workflows/tutorials/create-workflow#create-workflow).
 * Basic understanding of writing queries in workflows. For more information, see the [Write Query to Send Email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
 
-## Steps to Configure Automated Processing:
+## Configure automated processing
 
 1. Open your workflow and edit the **Main** JS Object under _JS Objects_.
 
