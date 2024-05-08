@@ -27,7 +27,7 @@ Before you begin, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for instructions.
 * Basic knowledge of creating workflows in Appsmith. For more information, see the [Create Workflow Tutorial](/workflows/tutorials/create-workflow#create-workflow).
-* Basic understanding of writing queries in workflows. Check out [Write Query to Send Email](/workflows/tutorials/create-workflow#write-query-to-send-email) for details.
+* Basic understanding of writing queries in workflows. For more information, see the [Write Query to Send Email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
 
 ## Steps to Configure Automated Processing:
 
