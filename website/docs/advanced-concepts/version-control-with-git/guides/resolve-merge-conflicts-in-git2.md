@@ -14,6 +14,11 @@ This guide provides strategies for resolving different types of merge conflicts,
 These conflicts can arise when integrating changes from one branch to another, typically due to conflicting modifications in the same application entities. 
 
 
+<dd>
+
+<ZoomImage src="/img/merge-error-git.png" alt="" caption=""/>
+
+</dd>
 
 
 <Tabs>
