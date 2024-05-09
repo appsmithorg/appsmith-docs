@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows combine the strengths of code-based and node-based approaches. They offer an intuitive interface for integrating external services, allowing developers to focus on logic while managing APIs and authentication. By leveraging JavaScript, they provide flexibility for complex processes without clutter, making them suitable for efficient and advanced workflow automation.
+Appsmith Workflows combines code-based and node-based approaches, giving developers an intuitive interface to connect with external services. This lets developers focus on their app's logic while handling APIs and authentication. Appsmith Workflows use JavaScript to simplify the management of complex tasks, making them perfect for efficient and advanced workflow automation.
 
 ## Workflow capabilities
 
@@ -32,9 +32,9 @@ Appsmith Workflows enable you to automate key business processes by linking data
 
 Appsmith Workflows allow you to automate human-in-the-loop (HITL) flows by combining user-friendly interfaces with server-side automation. They integrate automated tasks with manual checkpoints, ensuring that essential human decisions are included as needed. Developers can design workflows that require data validation, approvals, or feedback before continuing, improving collaboration and reducing errors while maintaining oversight in critical processes.
 
-## Explore Trigger Types
+## Explore trigger types
 
-Appsmith provides various trigger types to configure actions and processes within workflows:
+Appsmith provides different trigger types to configure actions and processes within workflows:
 
 - **Webhook:** Triggered by external events or HTTP requests, webhooks enable real-time data processing and action execution based on incoming data. Use them to integrate Appsmith workflows with external systems. Learn how to use webhooks in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
 
