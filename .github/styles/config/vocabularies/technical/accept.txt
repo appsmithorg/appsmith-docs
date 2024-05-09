@@ -107,3 +107,10 @@ Database
 SSL/TLS
 Cause
 Filepicker
+Default Roles for All Users
+Instance Administrator Role
+Administrator Role for a Workspace 
+Developer Role for a Workspace 
+App Viewer Role for a Workspace 
+Tasks
+ User management

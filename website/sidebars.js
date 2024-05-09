@@ -717,7 +717,31 @@ const sidebars = {
           label: 'Granular Access Control',
           link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
           items: [
-            'advanced-concepts/granular-access-control/roles',
+            {
+              type: 'category',
+              label: 'How-to Guides',
+              items: [
+                'advanced-concepts/granular-access-control/roles',
+              ]
+            },
+            {
+              type: 'category',
+              collapsed: false,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
+                'advanced-concepts/granular-access-control/reference/workspace-administrator-role',
+                'advanced-concepts/granular-access-control/reference/workspace-developer-role',
+                'advanced-concepts/granular-access-control/reference/workspace-appviewer-role',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Concepts',
+              items: [
+                'advanced-concepts/granular-access-control/concepts/default-roles',
+              ]
+            },
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,

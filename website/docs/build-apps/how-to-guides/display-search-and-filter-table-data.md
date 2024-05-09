@@ -101,4 +101,4 @@ To highlight cells of the table, follow these steps:
 - [Sample apps](/learning-and-resources/sample-apps)
 - [Set up Table Inline Editing](/reference/widgets/table/inline-editing)
 - [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data)
-- [Refresh Table Data After Updates](/build-apps/how-to-guides/Refresh-table-data)
+- [Refresh Table Data After Updates](/build-apps/how-to-guides/refresh-table-data)

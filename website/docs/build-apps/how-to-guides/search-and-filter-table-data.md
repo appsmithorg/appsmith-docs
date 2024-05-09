@@ -91,4 +91,4 @@ To sort data in the Table widget, follow these steps:
 ## See also
 - [Sample apps](https://docs.appsmith.com/learning-and-resources/sample-apps)
 - [Set up Table Inline Editing](/reference/widgets/table/inline-editing)
-- [Refresh Table Data After Updates](/build-apps/how-to-guides/Refresh-table-data)
+- [Refresh Table Data After Updates](/build-apps/how-to-guides/refresh-table-data)
