@@ -28,7 +28,7 @@ To view the default roles available for your Appsmith instance, toggle the **Def
 
 ## Significance
 
-Default roles provide standardized permission sets tailored to different user roles and responsibilities within the application environment. Their significance lies in:
+Default roles provide standardized permission sets tailored to meet different user roles and responsibilities within app-building experience on Appsmith. Their significance lies in:
 
 - **Ready-to-Use Permission Models:** Default roles provide ready-to-use sets of permissions for roles like administrators, developers, and viewers. Users can assign these roles to app users if the permissions align with their access control needs.
   
