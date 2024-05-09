@@ -1,8 +1,6 @@
 # Git Settings
 
-This page provides information on all Git-related settings available within Appsmith. These settings become available once you've connected your app to Git.
-
-You can access these settings by clicking on the settings icon located on the left side of the bottom bar.
+This page provides information on all Git-related settings available within Appsmith. These settings become available once you've connected your app to Git. You can access these settings by clicking on the settings icon located on the left side of the bottom bar.
 
 
 <ZoomImage src="/img/git-settings.png" alt="" caption="" />

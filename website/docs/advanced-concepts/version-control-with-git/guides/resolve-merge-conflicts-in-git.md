@@ -12,52 +12,42 @@ Merge conflicts are a regular part of working with Git, arising when changes fro
 This method allows you to resolve merge conflicts via Git (Pull Request), ideally suited for situations involving a small number of files or straightforward changes. The steps may vary depending on your Git service provider; please refer to the documentation of your provider for specific instructions.
 
 
-1. Once you have made changes to your Appsmith app, you might encounter merge conflicts in the Appsmith UI when you try to pull changes or when you try to merge changes.
+1. Once you have made changes to your Appsmith app, you might encounter merge conflicts in the Appsmith when you try to pull changes or when you try to merge changes.
 
 
 2. Based on the nature of your conflict, raise a Pull request for your source branch, targeting the destination branch where you intend to merge the changes.
 
 <dd>
 
-<Tabs groupId="method">
-  <TabItem value="separate" label="Branch Merge Conflicts">
-
 <dd>
 
-   <ZoomImage src="/img/1-merge-error-git.png" alt="" caption=""/>
 
-   </dd>
-   
+***Example 1:* Separate Branch Merge Conflicts**
+
 If you're working on branch `feature-development` and want to merge changes into `staging`, and you are facing conflicts in the Appsmith UI. In this case, you can raise a Pull request for your `feature-development` branch on your Git provider, targeting the `staging` branch for merging.
 
 
-  </TabItem>
-  <TabItem value="Remote" label="Remote Branch Conflicts">
+
+
+   <ZoomImage src="/img/branch-issue-1.png" alt="" caption=""/>
+
+
+
+***Example 2:* Remote Branch Conflicts**
 
   If you're working on the `feature-update` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. In such cases, instead of committing and pushing directly which risks overriding remote changes and potentially losing important files.
 
-  <dd>
-
-   <ZoomImage src="/img/1branch-issue-git.png" alt="" caption=""/>
-
-   </dd>
+Create a new branch from your local `feature-update` branch, name it `feature-update-fix`, and then raise a pull request from this new branch against the original `feature-update` branch.
 
 
-   - Create a new branch from your local branch. For example, if your branch name is `feature-update`, then set the new branch to `feature-update-fix`. 
-
-   - Raise a pull request from the `feature-update-fix` branch against the original `feature-update` branch.
-
-  </TabItem>
-</Tabs>
-
-
-
+   <ZoomImage src="/img/remote-issue1.png" alt="" caption=""/>
 
 
 </dd>
+</dd>
 
 
-2. Scroll down to the bottom of the PR page and click the **Resolve conflicts** button. If the resolve button is disabled, you need to resolve using the command-line interface to resolve conflicts.
+2. Scroll down to the bottom of the PR page and click the **Resolve conflicts** button. If the resolve button is disabled, you need to resolve using the [Command Line Interface](#resolve-via-command-line-interface). 
 
 <dd>
 
@@ -65,14 +55,13 @@ If you're working on branch `feature-development` and want to merge changes into
 
 </dd>
 
-3. You can see a list of files and pages with merge conflicts. Select a conflicted file/page to begin resolving conflicts.
+3. You can see a list of files with merge conflicts. Select a conflicted file to begin resolving conflicts.
 
 
-4. In the editor, you can see the lines where the conflicts have occurred:
+4. In the editor, you can see the lines where the conflicts have occurred. The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` 
 
 <dd>
 
-The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` 
 
 - The code from `<<<<<<<` to `=======` represents changes made in your source branch that have not yet been pushed to the remote repository.
 - The code from `=======` to `>>>>>>>` includes changes from the destination branch or another remote repository branch.
@@ -86,35 +75,53 @@ The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.`
 ```
 </dd>
 
-5. Decide which version to keep based on your project needs. 
+5. Decide which version to keep based on your project needs. You can:
 
 <dd>
 
-For example, if the dynamic retrieval of data is crucial for the app, keep the line `totalRecordsCount": "{{Total_record_movies1.data.n}}`,  and remove the other version `totalRecordsCount": 0`, along with the conflict markers.
+- Remove one version and keep the other.
+- Keep both versions, or remove both versions.
+- Create a custom one to best fit the requirements of your project.
 
 </dd>
 
 
-6. If other files also show conflicts, follow the same steps as described earlier for each file. In some situations, you might need to retain both sets of changes from a conflict. If that's the case, you can keep both lines from the conflicting sections, making sure their integration preserves the code’s functionality and integrity.
+6. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge**. 
 
-7. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge** in the top right corner of your version control system’s interface. 
+7. Merge the pull request.
 
-8. Merge the pull request and pull changes into your Appsmith App.
+8. Update your Appsmith app based on the resolved conflicts:
+
+<dd>
+
+**Example 1: Separate Branch Merge Conflicts**
+
+
+If you encounter conflicts from merging separate branches, after merging the PR, pull the changes into your Appsmith app in the destination branch.  If you are facing issues merging from a `feature` branch to `staging`, then ensure you are on the `staging` branch in your Appsmith app and pull the updates there.
+
+**Example 2: Remote Branch Conflicts**
+
+
+If you face conflicts within the same branch due to changes made remotely, open your Appsmith app, click on the **+** icon, and click **Discard and Pull**. This discards any local changes that have not been saved and updates your app with the latest changes from the remote branch.
 
 
 
 
-### Resolve Merge Conflicts via Command Line
 
-Resolving merge conflicts through the command line is a method suited for handling complex conflicts or when precise control is needed over the merging process. Many popular code editors have interfaces for resolving a merge conflict when you try to merge locally, providing a visual aid to complement the command-line tools.
 
-This approach allows you to directly edit the files in conflict and decide manually which changes to keep, which can be particularly useful in large projects or when merging significant changes.
-Many popular code editors have interfaces for resolving a merge conflict when you try to merge locally.
+
+
+</dd>
+
+
+### Resolve via Command-line interface
+
+Resolving merge conflicts through the command line is a method suited for handling complex conflicts or when precise control is needed over the merging process. Many popular code editors have interfaces for resolving a merge conflict, providing a visual aid to complement the command-line tools.
 
 
 1. Clone your App repository to your local system and open it in any code editor.
 
-2. Switch to the branch where you want to resolve the change:
+2. Switch to the destination branch where you want to resolve the change:
 
 <dd>
 
@@ -124,11 +131,13 @@ git checkout <branch-name>
 
 </dd>
 
-3. Merge the branch; for example, if you want to merge `b1` into `b2`, use:
+3. Merge the branch based on our conflict; if you're merging changes from a feature-development branch into a main branch, switch to the main
 
 <dd>
 
 *Example:*
+
+
 
 ```js
 git checkout b2
