@@ -45,7 +45,7 @@ C4Context
   Enterprise_Boundary(appsmithInstance, "Appsmith Instance", "") {
     System_Boundary(instanceBoundary, "Instance") {
       Person(instanceAdmin, "Instance Administrator", "Manages instance-level settings and roles.")
-      System(defaultRoles, "Default Roles", "Pre-defined roles for managing permissions.")
+      System(defaultRoles, "Default Roles for All Users", "Pre-defined roles for managing permissions.")
     }
 
     System_Boundary(workspaceBoundary, "Workspace") {
