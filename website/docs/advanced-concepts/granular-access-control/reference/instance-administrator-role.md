@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-The Instance Administrator Role operates at the highest level within the platform, primarily focusing on tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. Users assigned to this role ensure the operation and security of the instance but do not access individual workspaces or app content. This page provides detailed insights into the individual permissions associated with the Instance Administrator role.
+The Instance Administrator Role operates at the highest level within the platform, primarily focusing on tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. This page provides detailed insights into the individual permissions associated with the Instance Administrator role.
 
 ### Permissions
 

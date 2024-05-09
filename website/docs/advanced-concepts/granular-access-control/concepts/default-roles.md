@@ -22,6 +22,10 @@ tags={[
 
 Default roles in Appsmith are fundamental components of Granular Access Control in Appsmith, designed to simplify access management. This page provides an in-depth explanation of default roles and their significance in the Granular Access Control.
 
+:::info
+To view the default roles available for your Appsmith instance, toggle the **Default Role** option on the Roles screen. 
+:::
+
 ## Significance
 
 Default roles provide standardized permission sets tailored to different user roles and responsibilities within the application environment. Their significance lies in:
@@ -32,7 +36,7 @@ Default roles provide standardized permission sets tailored to different user ro
 
 ## Scopes
 
-Default roles in Appsmith have two primary scopes, each serving distinct purposes within the access control framework:
+Default roles in Appsmith have two primary scopes, each serving distinct purposes within the access control framework. 
 
 ```mermaid
 C4Context
