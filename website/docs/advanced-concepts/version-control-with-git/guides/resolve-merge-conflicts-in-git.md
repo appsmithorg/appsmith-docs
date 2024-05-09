@@ -1,15 +1,61 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Resolve Merge Conflicts in Git
 
-Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. 
-
-This guide provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
+Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. This page provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
 
 
 
-### Resolve via PR Interface
-Resolving conflicts via the Git PR interface is recommended when conflicts involve a small number of files with straightforward changes.
+### Resolve via Pull Request
 
-1. Once you have committed the changes to a particular branch, go to your Git provider and raise a Pull Request. For example, if you encounter merge conflicts while merging branch `b1` into `b2`, raise a PR.
+This method allows you to resolve merge conflicts via Git (Pull Request), ideally suited for situations involving a small number of files or straightforward changes. The steps may vary depending on your Git service provider; please refer to the documentation of your provider for specific instructions.
+
+
+1. Once you have made changes to your Appsmith app, you might encounter merge conflicts in the Appsmith UI when you try to pull changes or when you try to merge changes.
+
+
+2. Based on the nature of your conflict, raise a Pull request for your source branch, targeting the destination branch where you intend to merge the changes.
+
+<dd>
+
+<Tabs groupId="method">
+  <TabItem value="separate" label="Branch Merge Conflicts">
+
+<dd>
+
+   <ZoomImage src="/img/1-merge-error-git.png" alt="" caption=""/>
+
+   </dd>
+   
+If you're working on branch `feature-development` and want to merge changes into `staging`, and you are facing conflicts in the Appsmith UI. In this case, you can raise a Pull request for your `feature-development` branch on your Git provider, targeting the `staging` branch for merging.
+
+
+  </TabItem>
+  <TabItem value="Remote" label="Remote Branch Conflicts">
+
+  If you're working on the `feature-update` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. In such cases, instead of committing and pushing directly which risks overriding remote changes and potentially losing important files.
+
+  <dd>
+
+   <ZoomImage src="/img/1branch-issue-git.png" alt="" caption=""/>
+
+   </dd>
+
+
+   - Create a new branch from your local branch. For example, if your branch name is `feature-update`, then set the new branch to `feature-update-fix`. 
+
+   - Raise a pull request from the `feature-update-fix` branch against the original `feature-update` branch.
+
+  </TabItem>
+</Tabs>
+
+
+
+
+
+</dd>
+
 
 2. Scroll down to the bottom of the PR page and click the **Resolve conflicts** button. If the resolve button is disabled, you need to resolve using the command-line interface to resolve conflicts.
 
@@ -51,6 +97,7 @@ For example, if the dynamic retrieval of data is crucial for the app, keep the l
 7. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge** in the top right corner of your version control system’s interface. 
 
 8. Merge the pull request and pull changes into your Appsmith App.
+
 
 
 
