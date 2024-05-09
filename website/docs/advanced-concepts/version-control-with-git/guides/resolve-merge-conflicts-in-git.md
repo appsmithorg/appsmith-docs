@@ -72,7 +72,10 @@ If you're working on branch `feature-development` and want to merge changes into
 
 <dd>
 
-The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` The code between `<<<<<<<` and `=======` includes your local changes that haven't been pushed to the remote repository yet. The code between `=======` and `>>>>>>>` contains changes from the remote repository or another branch.
+The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` 
+
+- The code from `<<<<<<<` to `=======` represents changes made in your source branch that have not yet been pushed to the remote repository.
+- The code from `=======` to `>>>>>>>` includes changes from the destination branch or another remote repository branch.
 
 ```js
 <<<<<<< HEAD  // Changes from the local
