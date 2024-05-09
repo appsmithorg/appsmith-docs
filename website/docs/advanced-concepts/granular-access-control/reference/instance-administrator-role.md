@@ -60,13 +60,13 @@ The configuration for groups and roles management is available under the _Groups
 
   - **User management -** A user is an authenticated entity that has access to the Appsmith instance. Users interact with Appsmith to perform different tasks, such as creating and editing apps, accessing data, and collaborating with other users. The Instance Administrator manages users within the Appsmith instance by associating them with specific roles, inviting them to join workspaces or apps, and removing them when necessary, thus securing the Appsmith instance.
 
-    - **Associate Role:** Allows the assignee to assign or update roles of users.
-    - **Invite User:** Allows the assignee to invite new users to Appsmith workspaces and applications.
-    - **Remove User:** Allows the assignee to remove existing users from the Appsmith instance.
+    - **Associate Role:** Allows the assignee to assign or update roles of users or groups of users.
+    - **Invite User:** Allows the assignee to invite new users or groups of users to Appsmith workspaces and applications.
+    - **Remove User:** Allows the assignee to remove existing users or groups of users from the Appsmith instance.
 
 ## Limitations
 
 Despite having extensive permissions, the Instance Administrator role in Appsmith cannot perform the following tasks:
 
-- Access or update individual workspaces or app content.
-- Perform actions that require workspace-level permissions, such as creating, editing, or deleting apps within a workspace.
+- Inability to access or update individual workspaces or app content. This means that Instance Administrators cannot view or edit the specific content within each workspace or app, such as queries, datasources, or their configurations. 
+- Inability to execute actions that require workspace-level permissions, such as creating, editing, or deleting apps within a workspace.
