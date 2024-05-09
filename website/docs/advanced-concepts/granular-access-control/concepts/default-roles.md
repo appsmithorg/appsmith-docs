@@ -56,11 +56,11 @@ C4Context
   
   }
     
-UpdateElementStyle(instanceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="orange", $borderColor="orange", $height="155", $width="200")
-UpdateElementStyle(defaultRoles, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="orange", $borderColor="orange", $height="155", $width="200")
-UpdateElementStyle(workspaceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="orange", $borderColor="orange", $height="155", $width="200")
-UpdateElementStyle(workspaceDeveloper, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="orange", $borderColor="orange", $height="155", $width="200")
-UpdateElementStyle(appViewer, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="orange", $borderColor="orange", $height="155", $width="200")
+UpdateElementStyle(instanceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
+UpdateElementStyle(defaultRoles, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
+UpdateElementStyle(workspaceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
+UpdateElementStyle(workspaceDeveloper, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
+UpdateElementStyle(appViewer, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
 ```
 
 ### Instance level
