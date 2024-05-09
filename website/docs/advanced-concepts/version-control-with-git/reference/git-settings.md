@@ -20,6 +20,9 @@ These properties are customizable options accessible within the Git settings mod
 
 This section allows you to modify the name and email associated with the author. You can choose to either use the default settings or disable the **Use Default Configuration** button and add a new name and email.
 
+* **Name**: You can update the Git author's name, which changes how your identity is displayed in the commit history. 
+* **Email**: Similarly, you can specify a new email address. This change affects how your contributions are linked and identified across the repository's history.
+
 </dd>
 
 #### Danger zone
@@ -98,12 +101,7 @@ You can choose a different default branch for each instance, while the default b
 This property allows you to set multiple branches as protected, meaning that changes to the app are not allowed within those branches. To make changes to these branches, you need to raise a PR and merge manually from the Git provider.
 
 
-The default branch is automatically set as the protected branch. You have the option to exclude the default branch from branch protection if needed. 
-
-:::info
 By default, Appsmith enables the [protected branch](#change-protected-branch) feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
-:::
-
 
 
 </dd>

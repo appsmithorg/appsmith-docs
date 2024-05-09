@@ -1,4 +1,4 @@
-# Azure Repos
+# Connect Git Repository using Azure Repos
 
 Azure Repos is a collaborative version control service provided by Microsoft Azure, enabling teams to securely host, manage, and collaborate on code repositories using Git or Team Foundation Version Control (TFVC).
 

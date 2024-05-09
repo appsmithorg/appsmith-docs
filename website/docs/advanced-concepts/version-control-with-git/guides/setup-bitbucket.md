@@ -1,4 +1,4 @@
-# Bitbucket
+# Connect Git Repository using Bitbucket
 
 This guide shows how to connect your Appsmith application to a remote Bitbucket repository.
 

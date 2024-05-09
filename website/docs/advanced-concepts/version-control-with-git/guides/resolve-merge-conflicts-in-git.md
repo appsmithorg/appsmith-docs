@@ -3,13 +3,13 @@ import TabItem from '@theme/TabItem';
 
 # Resolve Merge Conflicts in Git
 
-Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. This page provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
+Git merge conflicts occur when changes in different/same branches clash and Git cannot automatically resolve them, typically happening when multiple users edit the same file. This page provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
 
-
+You can resolve merge conflicts in two main ways: by raising a Pull Request to handle conflicts via your Git provider's interface, or by manually resolving them in your local environment using Command-line interface:
 
 ### Resolve via Pull Request
 
-This method allows you to resolve merge conflicts via Git (Pull Request), ideally suited for situations involving a small number of files or straightforward changes. The steps may vary depending on your Git service provider; please refer to the documentation of your provider for specific instructions.
+This method allows you to resolve merge conflicts via Git PR (Pull Request), ideally suited for situations involving a small number of files or straightforward changes. The steps may vary depending on your Git service provider; please refer to the documentation of your provider for specific instructions.
 
 
 1. Once you have made changes to your Appsmith app, you might encounter merge conflicts in the Appsmith when you try to pull changes or when you try to merge changes.
@@ -24,9 +24,7 @@ This method allows you to resolve merge conflicts via Git (Pull Request), ideall
 
 ***Example 1:* Separate Branch Merge Conflicts**
 
-If you're working on branch `feature-development` and want to merge changes into `staging`, and you are facing conflicts in the Appsmith UI. In this case, you can raise a Pull request for your `feature-development` branch on your Git provider, targeting the `staging` branch for merging.
-
-
+If you're working on the `feature` branch and want to merge changes into `staging`, but are facing conflicts in the Appsmith UI, you can raise a pull request for your `feature` branch on your Git provider, targeting the `staging` branch for merging.
 
 
    <ZoomImage src="/img/branch-issue-1.png" alt="" caption=""/>
@@ -47,7 +45,7 @@ Create a new branch from your local `feature-update` branch, name it `feature-up
 </dd>
 
 
-2. Scroll down to the bottom of the PR page and click the **Resolve conflicts** button. If the resolve button is disabled, you need to resolve using the [Command Line Interface](#resolve-via-command-line-interface). 
+2. Once the PR is created, scroll down to the bottom of the PR page and click the **Resolve conflicts** button. If the resolve button is disabled, you need to resolve using the [Command Line Interface](#resolve-via-command-line-interface). The interface and steps may vary depending on your Git service provider.
 
 <dd>
 
@@ -67,11 +65,11 @@ Create a new branch from your local `feature-update` branch, name it `feature-up
 - The code from `=======` to `>>>>>>>` includes changes from the destination branch or another remote repository branch.
 
 ```js
-<<<<<<< HEAD  // Changes from the local
+<<<<<<< HEAD  // Changes from the source
  "totalRecordsCount": "{{Total_record_movies1.data.n}}", 
 =======  // Separator for conflict resolution
  "totalRecordsCount": 0, 
->>>>>>> feature  // End of changes from the feature branch
+>>>>>>> feature  // End of changes from the destination branch
 ```
 </dd>
 
@@ -121,32 +119,36 @@ Resolving merge conflicts through the command line is a method suited for handli
 
 1. Clone your App repository to your local system and open it in any code editor.
 
-2. Switch to the destination branch where you want to resolve the change:
+2. Switch and Merge the branch based on the type of merge conflict:
+
 
 <dd>
 
-```js
-git checkout <branch-name>
-```
+**Example 1: Separate Branch Merge Conflicts** 
 
-</dd>
-
-3. Merge the branch based on our conflict; if you're merging changes from a feature-development branch into a main branch, switch to the main
-
-<dd>
-
-*Example:*
+If you are having merge conflicts when trying to merge changes from the `feature` branch into the `staging` branch, then:
 
 
 
 ```js
-git checkout b2
-git merge b1
+git checkout staging
+git merge feature
+```
+
+
+**Example 2: Remote Branch Conflicts** 
+
+If you are having merge conflicts with the remote counterpart of a `feature` branch, open your Appsmith app, create a new branch from your local `feature` branch, and name it `feature-fix`. Then:
+
+
+```js
+git checkout feature-fix
+git merge feature
 ```
 
 </dd>
 
-4. If there are conflicts, Git pauses the merge and lists the files that need to be resolved. Open these files in your code editor and look for the conflict markers `<<<<<<<,` `=======,` and `>>>>>>>.` These markers delineate the differing blocks of code that Git couldn't merge automatically, highlighting the areas that require your attention for resolution.
+4. In the editor, you can see the lines where the conflicts have occurred. The conflict markers used by Git are `<<<<<<<,` `=======,` and `>>>>>>>.` Depending on your IDE, you can resolve these conflicts through the graphical interface or use command-line to address them.
 
 5. Decide which version to keep based on your project needs. You can either manually remove the conflict markers and update the code, or select one of the options provided and modify the changes as needed.
 
@@ -156,27 +158,45 @@ git merge b1
 
 </dd>
 
-6. After resolving the conflicts, commit your changes by running the following command to automatically stage and commit:
-
+6. After resolving the conflicts, commit and push your changes to the remote branch
 
 <dd>
 
 ```js
 git commit -am "Your message"
-```
-
-</dd>
-
-7. Push your changes to the remote branch:
-
-<dd>
-
-```js
 git push
 ```
 
+</dd>
+
+
+7. Update your Appsmith app based on the resolved conflicts:
+
+
+<dd>
+
+**Example 1: Separate Branch Merge Conflicts**
+
+
+If you are facing issues merging from a `feature` branch to `staging`, then ensure you are on the `staging` branch in your Appsmith app and pull the updates there.
+
+**Example 2: Remote Branch Conflicts**
+
+
+If you face conflicts within the same branch due to changes made remotely, open your Appsmith app, click on the **+** icon, and click **Discard and Pull**. This discards any local changes that have not been saved and updates your app with the latest changes from the remote branch.
+
+
+
+
+
+
+
+
+
+
+
+
 
 </dd>
 
-8. Pull the changes into your Appsmith App by clicking the pull icon located on the left side of the bottom bar.
 

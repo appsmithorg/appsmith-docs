@@ -735,17 +735,10 @@ const sidebars = {
                   collapsed: true,
                   label: 'How-To Guides',
                   items: [
-                    {
-                      type: 'category',
-                      label: 'Connect Git Repository',
-                      link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/connecting-to-git-repository' },
-                      items: [
-                        'advanced-concepts/version-control-with-git/guides/setup-github',
-                        'advanced-concepts/version-control-with-git/guides/setup-gitlab',
-                        'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
-                        'advanced-concepts/version-control-with-git/guides/setup-azure',
-                      ],
-                    },
+                    'advanced-concepts/version-control-with-git/guides/setup-github',
+                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
+                    'advanced-concepts/version-control-with-git/guides/setup-azure',
                     'advanced-concepts/version-control-with-git/revert-changes',
                     'advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git',
                     'advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git2',

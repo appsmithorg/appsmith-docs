@@ -1,4 +1,4 @@
-# GitHub
+# Connect Git Repository using GitHub
 
 This guide shows how to connect your Appsmith application to a remote GitHub repository. 
 

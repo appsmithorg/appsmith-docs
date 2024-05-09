@@ -3,10 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Resolve Merge Conflicts in Git
 
-Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. 
-
-This guide provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
-
+Merge conflicts are a regular part of working with Git, arising when changes from separate branches cannot be merged. This page provides strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
 
 
 ## Conflicts when merging branches
@@ -37,11 +34,13 @@ These conflicts can arise when integrating changes from one branch to another, t
 3. You can see a list of files and pages with merge conflicts. Select a conflicted file/page to begin resolving conflicts.
 
 
-4. In the editor, you can see the lines where the conflicts have occurred:
+4. In the editor, you can see the lines where the conflicts have occurred. The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` 
 
 <dd>
 
-The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` The code between `<<<<<<<` and `=======` includes your local changes that haven't been pushed to the remote repository yet. The code between `=======` and `>>>>>>>` contains changes from the remote repository or another branch.
+
+- The code from `<<<<<<<` to `=======` represents changes made in your source branch that have not yet been pushed to the remote repository.
+- The code from `=======` to `>>>>>>>` includes changes from the destination branch or another remote repository branch.
 
 ```js
 <<<<<<< HEAD  // Changes from the local
@@ -178,11 +177,13 @@ If someone else has pushed changes to the same branch on the remote repository t
 4. You can see a list of files and pages with merge conflicts. Select a conflicted file/page to begin resolving conflicts.
 
 
-5. In the editor, you can see the lines where the conflicts have occurred:
+5. In the editor, you can see the lines where the conflicts have occurred. The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` 
 
 <dd>
 
-The conflict markers used by Git are `<<<<<<<`, `=======`, and `>>>>>>>.` The code between `<<<<<<<` and `=======` includes your local changes that haven't been pushed to the remote repository yet. The code between `=======` and `>>>>>>>` contains changes from the remote repository or another branch.
+
+- The code from `<<<<<<<` to `=======` represents changes made in your source branch that have not yet been pushed to the remote repository.
+- The code from `=======` to `>>>>>>>` includes changes from the destination branch or another remote repository branch.
 
 ```js
 <<<<<<< feature-update-fix
