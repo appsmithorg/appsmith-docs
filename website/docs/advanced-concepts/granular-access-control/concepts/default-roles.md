@@ -64,7 +64,7 @@ UpdateElementStyle(appViewer, $fontColor="black", $font="Tahoma", $fontsize="25"
 ```
 
  <ZoomImage
-    src="/img/GAC-Default-roles.png" 
+    src="/img/GAC-Default-Roles.png" 
     alt="Default Roles in Granular Access Control"
     caption="Default Roles in Granular Access Control"
   />
