@@ -23,7 +23,7 @@ Default roles in Appsmith have below primary scopes, each serving distinct purpo
 
 Instance-level roles have permissions that govern access to Appsmith instance, affecting all workspaces and users within the instance. Some instance-level roles can be tailored to provide specific access to all users. The instance-level roles include:
 
-* **Instance Administrator Role -** The Instance Administrator Role operates at the highest level of the Granular Access Control, and performs tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. The below table shows the groups and roles permission configuration for an Instance Administrator role.
+* **Instance Administrator Role -** The Instance Administrator Role operates at the highest level of the Granular Access Control, and performs tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. The below table shows the permission configuration for an Instance Administrator role.
 
     <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
