@@ -34,7 +34,7 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
     | Audit Logs | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) |(x) |
     | Groups     | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) |(x) |
     | Roles      | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
-    | Default Roles | (-) | (-) | (-) | (✓) | (x) | (x) | (x) | (✓) |(x) |
+    | Default Roles | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (✓) |(x) |
     | Custom Roles | (-) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
     </div>
 
