@@ -63,6 +63,12 @@ UpdateElementStyle(workspaceDeveloper, $fontColor="black", $font="Tahoma", $font
 UpdateElementStyle(appViewer, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
 ```
 
+ <ZoomImage
+    src="/img/GAC-Default-roles.png" 
+    alt="Default Roles in Granular Access Control"
+    caption="Default Roles in Granular Access Control"
+  />
+
 ### Instance level
 
 Instance-level roles have permissions that govern access to Appsmith instance, affecting all workspaces and users within the instance. Some instance-level roles can be tailored to provide specific access to all users. The instance-level roles include:
