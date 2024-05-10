@@ -708,3 +708,11 @@ h4+.tags {
 .parameterCodeBlock {
   font-size: small;
 }
+
+.container_node_modules-\@docusaurus-theme-mermaid-lib-theme-Mermaid-styles-module {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 1rem auto;
+}
