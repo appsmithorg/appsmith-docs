@@ -35,8 +35,102 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
     | Groups     | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) |(x) |
     | Roles      | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
     | Default Roles | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (✓) |(x) |
-    | Custom Roles | (-) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
+    | Custom Roles | (x) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
     </div>
+<div className="gac-permissions">
+    <p className="permission-footnote">
+    <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned |
+    <span style={{color: 'gray', fontWeight: 'bold'}}>(-)</span> Permission Not Assigned |
+    <span style={{color: '#ed6227', fontWeight: 'bold'}}>(x)</span> Permission Not Applicable
+  </p>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Create</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+                <th>Execute</th>
+                <th>Invite User</th>
+                <th>Remove User</th>
+                <th>Associate Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Workspace</td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+            </tr>
+            <tr>
+                <td>Audit Logs</td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+            </tr>
+            <tr>
+                <td>Groups</td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+            </tr>
+            <tr>
+                <td>Roles</td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            </tr>
+            <tr>
+                <td>Default Roles</td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            </tr>
+            <tr>
+                <td>Custom Roles</td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: '#ed6227', fontWeight: 'bold', fontSize: '16px'}}>(x)</span></td>
+                <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 
 * **Default Roles for All Users -** Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance. Initially, these roles have no specific permissions assigned and act as blank templates. Instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users] guide.
 
