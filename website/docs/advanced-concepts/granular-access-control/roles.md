@@ -25,14 +25,18 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
 
 * **Instance Administrator Role -** The Instance Administrator Role operates at the highest level of the Granular Access Control, and performs tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. The below table shows the groups and roles permission configuration for an Instance Administrator role.
 
-  |             | Create | Edit | Delete | View | Execute | Invite User | Remove User | Associate Role |
-  |------------|-------|-------|--------|---|---|---|--|--|
-  | Workspace  | <input type="checkbox" checked/> | ❌  |❌  |❌  |❌  |❌  |❌  |❌  |
-  | Audit Logs | ❌  |❌  |❌  | <input type="checkbox" checked/>  |❌  |❌  |❌  |❌  |
-  | Groups   | <input type="checkbox" checked/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | <input type="checkbox" checked/> | <input type="checkbox" checked/>| ❌ |
-  | Roles   | <input type="checkbox" checked/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
-  | Default Roles   | <input type="checkbox"/> | <input type="checkbox"/> | <input type="checkbox"/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
-  | Custom Roles   | <input type="checkbox"/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
+    <div className="gac-permissions">
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+
+    |             | Create | Edit | Delete | View | Execute | Invite User | Remove User | Associate Role |
+    |-------------|--------|------|--------|------|---------|-------------|-------------|----------------|
+    | Workspace  | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Audit Logs | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) |(x) |
+    | Groups     | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) |(x) |
+    | Roles      | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
+    | Default Roles | (-) | (-) | (-) | (✓) | (x) | (x) | (x) | (✓) |(x) |
+    | Custom Roles | (-) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (✓) |(x) |
+    </div>
 
 * **Default Roles for All Users -** Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance. Initially, these roles have no specific permissions assigned and act as blank templates. Instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users] guide.
 

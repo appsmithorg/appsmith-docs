@@ -723,3 +723,26 @@ h4+.tags {
 }
 
 /*Mermaid styles end*/
+
+.gac-permissions {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gac-permissions th,
+.gac-permissions td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.gac-permissions th {
+  background-color: #f2f2f2;
+}
+
+.permission-footnote {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #777;
+}
