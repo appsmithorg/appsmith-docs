@@ -721,7 +721,7 @@ const sidebars = {
               type: 'category',
               label: 'How-to Guides',
               items: [
-                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
+                'advanced-concepts/granular-access-control/roles',
               ]
             },
             {
@@ -729,7 +729,7 @@ const sidebars = {
               collapsed: false,
               label: 'Reference',
               items: [
-                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
+                'advanced-concepts/granular-access-control/reference/permissions',
               ]
             },
             {

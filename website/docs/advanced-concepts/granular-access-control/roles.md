@@ -1,8 +1,24 @@
 ---
 description: >-
   Use Default and Custom Roles in Appsmith to configure Granular Access Control
+title: Roles
+hide_title: true
 ---
-# Roles
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Roles</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 To configure Granular Access Control (GAC), Appsmith provides pre-defined roles along with the flexibility to create your own roles. This page provides information on default and custom roles in Appsmith.
 
 ## Default roles
@@ -150,7 +166,8 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
 
 Workspace-level roles control access within a specific workspace. These roles are pre-defined, offering standard access controls tailored to each workspace. The workspace level roles are not available for customization. They include:
 
-* **Administrator Role for Workspace -** The Administrator role can create, edit, view and delete all apps, queries and datasources. For more information on permission, see [Permissions].
+* **Administrator Role for Workspace -** The Administrator role can create, edit, view and delete all apps, queries and datasources. The below table shows the permission configuration for an Administrator role. For more information about each permission, see [Permissions].
+
   <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
@@ -166,7 +183,8 @@ Workspace-level roles control access within a specific workspace. These roles ar
     | Workflows              | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
     </div>
 
-* **Developer Role for Workspace -** The Developer role can create apps, pages, queries, datasources, and environments within a workspace. For more information on permission, see [Permissions].
+* **Developer Role for Workspace -** The Developer role can create apps, pages, queries, datasources, and environments within a workspace. The below table shows the permission configuration for a Developer role. For more information about each permission, see [Permissions].
+
     <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
@@ -182,7 +200,8 @@ Workspace-level roles control access within a specific workspace. These roles ar
     | Workflows              | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
     </div>
 
-* **App Viewer Role for Workspace -** The App Viewer Role provides read-only access to apps within a workspace. For more information on permission, see [Permissions]. 
+* **App Viewer Role for Workspace -** The App Viewer Role provides read-only access to apps within a workspace. The below table shows the permission configuration for an App Viewer role. For more information about each permission, see [Permissions].
+ 
     <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
@@ -201,7 +220,8 @@ Workspace-level roles control access within a specific workspace. These roles ar
 
 Application level roles control access within a specific application. These roles are pre-defined with standard access controls for each application. The application level roles are not available for customization, and are on-the-fly created when you share an application by providing Developer or App viewer access to the user. They include:
 
-* **Developer role for application -** The Developer role can create pages, queries, datasources, and environments within an Appsmith app, but cannot create workspaces, and apps. For more information on permission, see [Permissions].
+* **Developer role for application -** The Developer role can create pages, queries, datasources, and environments within an Appsmith app, but cannot create workspaces, and apps. The below table shows the permission configuration for a Developer role. For more information about each permission, see [Permissions].
+
    <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
@@ -216,7 +236,8 @@ Application level roles control access within a specific application. These role
     | Staging Environment    | (x) | (-) | (-) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
     </div>
 
-* **App Viewer role for application -** The App Viewer role provides read-only access to the shared app. They can view the app content, but cannot edit or delete app, pages, and more. For more information on permission, see [Permissions].
+* **App Viewer role for application -** The App Viewer role provides read-only access to the shared app. They can view the app content, but cannot edit or delete app, pages, and more. The below table shows the permission configuration for an App Viewer role. For more information about each permission, see [Permissions].
+
     <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
