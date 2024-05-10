@@ -709,6 +709,7 @@ h4+.tags {
   font-size: small;
 }
 
+/*Mermaid styles start*/
 .container_node_modules-\@docusaurus-theme-mermaid-lib-theme-Mermaid-styles-module {
   border: 2px solid #f2f2f2;
   border-radius: 8px;
@@ -716,3 +717,9 @@ h4+.tags {
   height: auto;
   margin: 1rem auto;
 }
+
+.person-man text:first-of-type {
+  display: none;
+}
+
+/*Mermaid styles end*/
