@@ -39,6 +39,16 @@ The Instance Administrator Role operates at the highest level of the Granular Ac
     caption="Instance Administrator - Group and Roles Permissions"
   />
 
+
+|             | Create | Edit | Delete | View | Execute | Invite User | Remove User | Associate Role |
+|------------|-------|-------|--------|---|---|---|--|--|
+| Workspace  | <input type="checkbox" checked/> | ❌  |❌  |❌  |❌  |❌  |❌  |❌  |
+| Audit Logs | ❌  |❌  |❌  | <input type="checkbox" checked/>  |❌  |❌  |❌  |❌  |
+| Groups   | <input type="checkbox" checked/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | <input type="checkbox" checked/> | <input type="checkbox" checked/>| ❌ |
+| Roles   | <input type="checkbox" checked/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
+| Default Roles   | <input type="checkbox"/> | <input type="checkbox"/> | <input type="checkbox"/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
+| Custom Roles   | <input type="checkbox"/> | <input type="checkbox" checked/> | <input type="checkbox" checked/> |<input type="checkbox" checked/> | ❌  | ❌  |❌ | <input type="checkbox" checked/> | 
+
 ##### Default Roles for All Users
 
 Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance. Initially, these roles have no specific permissions assigned and act as blank templates. Instance administrators can fully customize this role according to your business needs.

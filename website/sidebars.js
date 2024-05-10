@@ -721,7 +721,7 @@ const sidebars = {
               type: 'category',
               label: 'How-to Guides',
               items: [
-                'advanced-concepts/granular-access-control/roles',
+                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
               ]
             },
             {
@@ -730,16 +730,13 @@ const sidebars = {
               label: 'Reference',
               items: [
                 'advanced-concepts/granular-access-control/reference/instance-administrator-role',
-                'advanced-concepts/granular-access-control/reference/workspace-administrator-role',
-                'advanced-concepts/granular-access-control/reference/workspace-developer-role',
-                'advanced-concepts/granular-access-control/reference/workspace-appviewer-role',
               ]
             },
             {
               type: 'category',
               label: 'Concepts',
               items: [
-                'advanced-concepts/granular-access-control/concepts/default-roles',
+                'advanced-concepts/granular-access-control/roles',
               ]
             },
           ]
