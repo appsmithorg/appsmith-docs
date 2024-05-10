@@ -109,8 +109,9 @@ Cause
 Filepicker
 Default Roles for All Users
 Instance Administrator Role
-Administrator Role for a Workspace 
-Developer Role for a Workspace 
-App Viewer Role for a Workspace 
+Administrator Role for Workspace 
+Developer Role for Workspace 
+App Viewer Role for Workspace 
 Tasks
- User management
+User management
+Custom roles

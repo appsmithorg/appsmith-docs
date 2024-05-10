@@ -38,31 +38,6 @@ Default roles provide standardized permission sets tailored to meet different us
 
 Default roles in Appsmith have two primary scopes, each serving distinct purposes within the access control framework. 
 
-```mermaid
-C4Context
-  title Granular Access Control - Instance and Workspace Roles
-
-  Enterprise_Boundary(appsmithInstance, "Appsmith Instance", "") {
-    System_Boundary(instanceBoundary, "Instance") {
-      Person(instanceAdmin, "Instance Administrator", "Manages instance-level settings and roles.")
-      System(defaultRoles, "Default Roles for All Users", "Pre-defined roles for managing permissions.")
-    }
-
-    System_Boundary(workspaceBoundary, "Workspace") {
-      Person(workspaceAdmin, "Admininstrator - Workspace", "Manages workspace.")
-      Person(workspaceDeveloper, "Developer - Workspace", "Creates, edits, and deletes apps.")
-      Person(appViewer, "App Viewer - Workspace", "Has read-only access to apps.")
-    }
-  
-  }
-    
-UpdateElementStyle(instanceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
-UpdateElementStyle(defaultRoles, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
-UpdateElementStyle(workspaceAdmin, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
-UpdateElementStyle(workspaceDeveloper, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
-UpdateElementStyle(appViewer, $fontColor="black", $font="Tahoma", $fontsize="25", $bgColor="#f9936b", $borderColor="#f9936b", $height="155", $width="200")
-```
-
  <ZoomImage
     src="/img/GAC-Default-Roles.png" 
     alt="Default Roles in Granular Access Control"
@@ -86,15 +61,15 @@ Default Roles serve as a basic set of permissions assigned to all users across t
 
 Workspace-level roles control access within a specific workspace. These roles are pre-defined, offering standard access controls tailored to each workspace, and user cannot customize them. They include:
 
-#### Administrator Role for a Workspace 
+#### Administrator Role for Workspace 
 
 An Administrator Role assigned to a Workspace grants full control over all entities within a workspace, allowing users to perform actions such as creating, editing, and deleting entities. Administrators do have some limitations; they lack authority to create workspaces, view audit logs, or manage roles, groups, or users. For more information about permissions assigned to an administrator role for a workspace, see [Administrator Role] reference.
 
-#### Developer Role for a Workspace 
+#### Developer Role for Workspace 
 
 The Developer Role grants users extensive access to different elements within a workspace, such as apps, pages, queries, datasources, and environments. For example, users assigned a developer role can create, edit, and delete apps within the workspace, and manage associated entities like pages. For more detailed information about the permissions associated with the Developer Role, see the [Developer Role] reference.
 
-#### App Viewer Role for a Workspace
+#### App Viewer Role for Workspace
 
 The App Viewer Role offers users read-only access to apps within a workspace. For example, users assigned an App Viewer role can only view app content and are restricted from making any modifications like editing or deleting apps, pages, and more. For more detailed information about the permissions associated with the App Viewer Role, see [App Viewer Role] reference.
 
