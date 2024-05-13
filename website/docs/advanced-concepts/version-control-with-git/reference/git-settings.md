@@ -21,7 +21,7 @@ These properties are customizable options accessible within the Git settings mod
 This section allows you to modify the name and email associated with the author. You can choose to either use the default settings or disable the **Use Default Configuration** button and add a new name and email.
 
 * **Name**: You can update the Git author's name, which changes how your identity is displayed in the commit history. 
-* **Email**: Similarly, you can specify a new email address. This change affects how your contributions are linked and identified across the repository's history.
+* **Email**: You can specify a new email address. This change affects how your contributions are linked and identified across the repository's history.
 
 </dd>
 
@@ -136,7 +136,7 @@ This section provides configuration for CI/CD, enabling automatic updates to the
 
 * **CURL command**: The provided CURL command is specifically intended for configuring automatic updates within Appsmith's CI/CD setup. It triggers a POST request to the specified endpoint, initiating the deployment process for the designated app and branch.
 
-* **Bearer token**: A bearer token is a type of access token used for authentication. You can add this bearer token to your secrets or environment variables for secure access. Once generated, paste your bearer token immediately. You won't be able to do this later.
+* **Bearer token**: You can use this bearer token for authenticating CI/CD requests. You can add this bearer token to your secrets or environment variables for secure access. Once generated, paste your bearer token immediately. You won't be able to do this later.
 
 
 For more information see [Continuous Delivery (CI/CD) with Git](/advanced-concepts/version-control-with-git/cd-with-git)

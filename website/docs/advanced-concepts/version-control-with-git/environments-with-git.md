@@ -27,7 +27,7 @@ Follow these steps to set up multiple instances for your app:
 
 1. Create two separate instances: one for *Staging* and the other for *Production*.
 
-2. Create an app within the *Staging* instance and [connect to a Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `Staging` branch from the default `master` branch.
+2. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `Staging` branch from the default `master` branch.
 
 3. In the *Staging* instance, configure the datasource using the `Staging` settings.
 
