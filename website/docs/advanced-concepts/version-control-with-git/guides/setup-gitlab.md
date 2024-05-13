@@ -1,4 +1,4 @@
-# Connect Git Repository using GitLab
+# Connect to GitLab
 
 GitLab is a web-based platform that provides version control and collaborative features for software development projects. This guide shows how to connect your Appsmith application to a remote GitLab repository.
 
