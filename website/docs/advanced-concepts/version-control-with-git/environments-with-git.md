@@ -10,9 +10,8 @@ This guide shows you how to set up multiple instances in Appsmith using Git, mak
 
 ## Prerequisites
 
-* A self-hosted instance of Appsmith. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
+* Two separate self-hosted instances: one for *Staging* and the other for *Production*. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of Git.
-
 
 
 ## Setup instances
@@ -25,17 +24,15 @@ Follow these steps to set up multiple instances for your app:
   </iframe>
 </div>
 
-1. Create two separate instances: one for *Staging* and the other for *Production*.
+1. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `staging` branch from the default `master` branch.
 
-2. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `Staging` branch from the default `master` branch.
+2. In the *Staging* instance, configure the datasource using the `staging` settings, then **Commit and push** the changes.
 
-3. In the *Staging* instance, configure the datasource using the `Staging` settings.
+3. In the *Production* instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the *Staging* instance.
 
-4. In the *Production* instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the *Staging* instance.
+4. Once the import is complete, configure the datasource using the `production` datasource in the **Reconnect Datasources** modal.
 
-5. Once the import is complete, configure the datasource using the `production` datasource in the **Reconnect Datasources** modal.
-
-6. To protect the app from unnecessary commits, in the *Staging* instance:
+5. To protect the app from unnecessary commits, in the *Staging* instance:
 
 <dd>
 
@@ -44,7 +41,7 @@ Follow these steps to set up multiple instances for your app:
 
 </dd>
 
-7. In the *Production* instance:
+6. In the *Production* instance:
 
 <dd>
 

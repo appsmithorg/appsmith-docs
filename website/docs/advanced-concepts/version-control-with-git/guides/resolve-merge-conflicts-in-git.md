@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Git merge conflicts arise when changes in different or the same branches clash, requiring manual resolution due to Git's inability to automatically resolve them. The page shows you strategies for resolving different types of merge conflicts, ensuring smoother collaboration and project management in Git.
 
-You can resolve merge conflicts in two main ways: by raising a Pull Request to handle conflicts via your Git provider's interface, or by manually resolving them in your local environment using Command-line interface. The specific steps may vary depending on your Git service provider and local code editor; please refer to the documentation of your provider for specific instructions.
+The specific steps may vary depending on your Git service provider and local code editor; please refer to the documentation of your provider for specific instructions.
 
 
 1. Once you have made changes to your Appsmith app, you might encounter merge conflicts in the Appsmith when you try to pull changes, push changes or when you try to merge changes.

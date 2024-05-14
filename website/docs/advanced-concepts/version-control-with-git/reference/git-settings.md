@@ -98,7 +98,7 @@ You can choose a different default branch for each instance, while the default b
 <dd>
 
 
-This property allows you to set multiple branches as protected, meaning that changes to the app are not allowed within those branches. To make changes to these branches, you need to raise a PR and merge manually from the Git provider.
+This property allows you to set multiple branches as protected, meaning that changes to the app are not allowed within those branches. To make changes to these branches, you need to raise a PR and merge it manually from the Git provider.
 
 
 By default, Appsmith enables the [protected branch](#change-protected-branch) feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
@@ -127,14 +127,14 @@ By default, Appsmith enables the [protected branch](#change-protected-branch) fe
 
 </div>
 
-This section provides configuration for CI/CD, enabling automatic updates to the selected branch, eliminating the need for manual pulling of changes after each update.
 
 
+The CI/CD feature in Appsmith enables you to automatically deploy changes to the selected branch, eliminating the need to manually pull updates after each change.
 
 
 <dd>
 
-* **CURL command**: The provided CURL command is specifically intended for configuring automatic updates within Appsmith's CI/CD setup. It triggers a POST request to the specified endpoint, initiating the deployment process for the designated app and branch.
+* **CURL command**: The provided CURL command is specifically intended for configuring automatic deployments within Appsmith's CI/CD setup. It triggers a POST request to the specified endpoint, initiating the deployment process for the designated app and branch.
 
 * **Bearer token**: You can use this bearer token for authenticating CI/CD requests. You can add this bearer token to your secrets or environment variables for secure access. Once generated, paste your bearer token immediately. You won't be able to do this later.
 
