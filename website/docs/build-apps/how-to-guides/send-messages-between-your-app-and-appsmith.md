@@ -11,9 +11,9 @@ hide_title: true
 <Tags
   tags={[
     {
-      name: "Business",
+      name: "Enterprise",
       link: "https://www.appsmith.com/pricing",
-      additionalClass: "business",
+      additionalClass: "enterprise",
     }
   ]}
 />
