@@ -40,8 +40,8 @@ Default roles in Appsmith have below primary scopes, each serving distinct purpo
 Instance-level roles have permissions that govern access to Appsmith instance, affecting all workspaces and users within the instance. Some instance-level roles can be tailored to provide specific access to all users. The instance-level roles include:
 
 * **Instance Administrator Role -** The Instance Administrator Role operates at the highest level of the Granular Access Control, and performs tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. The below table shows the permission configuration for an Instance Administrator role.
-
     <div className="gac-permissions">
+    <p> **Tabular representation of permission mapping** </p>
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
 
     |             | Create | Edit | Delete | View | Execute | Invite User | Remove User | Associate Role |
@@ -55,6 +55,7 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
     </div>
 
   <div className="gac-permissions">
+      <p>**Option 2**</p>
       <p className="permission-footnote">✅ Permission Assigned | ➖ Permission Not Assigned | ❌ Permission Not Applicable</p>
 
   |         | Create | Edit | Delete | View | Execute | Invite User | Remove User | Associate Role |
@@ -68,13 +69,12 @@ Instance-level roles have permissions that govern access to Appsmith instance, a
   </div>
 
   <div className="gac-permissions">
+     <p>**Option 3**</p>
       <p className="permission-footnote">
       <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned |
       <span style={{color: 'gray', fontWeight: 'bold'}}>(-)</span> Permission Not Assigned |
-      <span style={{color: '#ed6227', fontWeight: 'bold'}}>(x)</span> Permission Not Applicable
+      <span style={{color: '#ed6227', fontWeight: 'bold'}} disabled>(x)</span> Permission Not Applicable
     </p>
-
-
       <table>
           <thead>
               <tr>

@@ -115,3 +115,11 @@ App Viewer Role for Workspace
 Tasks
 User management
 Custom roles
+Application Resources
+Datasources and Environments
+Groups and Roles
+Make Public
+Invite User
+Remove User
+Associate Role
+Applications
