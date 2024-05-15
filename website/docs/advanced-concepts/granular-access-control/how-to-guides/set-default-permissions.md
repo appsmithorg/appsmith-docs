@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-You may need to set some default permissions for all users, simplifying access management and ensuring consistent security measures across your Appsmith instance. This page shows how to set default permissions for all users accessing Appsmith instance.
+To simplify access management and ensure consistency across Appsmith instance, you may need to set some default permissions for all users. This page shows how to set default permissions for all users accessing Appsmith instance.
  
 ## Prerequisites:
 
