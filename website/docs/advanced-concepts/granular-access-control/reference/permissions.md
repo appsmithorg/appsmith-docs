@@ -32,7 +32,7 @@ This category governs access privileges to resources associated with workspaces 
 
 #### Workspace
 
-Beneath the workspace name, all the applications created in that workspace are displayed. Permissions assigned at the workspace level cascade down to all applications within it. To assign specific permissions to specific apps, see [Application](#application).
+Below the workspace name, all the applications created in that workspace are displayed. Permissions assigned at the workspace level cascade down to all applications within it. To assign specific permissions to specific apps, see [Application](#application).
 
 | Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
@@ -45,7 +45,7 @@ Beneath the workspace name, all the applications created in that workspace are d
 
 #### Application
 
-Underneath the application name, all the resources created in that application are displayed. Permissions assigned at the application level cascade down to all resources within it. 
+Under the application name, all the resources created in that application are displayed. Permissions assigned at the application level cascade down to all resources within it. 
 
 | Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
