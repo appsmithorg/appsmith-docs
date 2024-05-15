@@ -19,51 +19,54 @@ tags={[
 
 <!-- vale on -->
 
-Permissions in Appsmith determine the level of access and actions users can take on specific resources within the platform. This page offers insights into the range of permissions available in Appsmith and the corresponding access levels they provide.
+Permissions in Appsmith determine the level of access and actions users can take on specific resources within the platform. This page provides insights into the permissions available in Appsmith and their corresponding impact on resource access.
 
 ## Resources
 
-Resources defines different components of an application that users can access or modify. These include individual pages or queries within the application, specific datasources or environments, groups, roles, and workspaces. In Appsmith, access to these resources is categorized as follows:
+Resources in Appsmith include pages, queries, datasources, environments, groups, roles, and workspaces. Access permissions are categorized as follows:
+
 
 ### Application Resources
 
-This category governs access privileges to resources associated with applications built in Appsmith, such as individual pages or queries. Below are the permissions available to manage access to application-level resources:
+This category governs access privileges to resources associated with workspaces and applications built in Appsmith, such as apps, pages or queries. 
 
 #### Workspace
 
-Beneath the workspace name, all the applications created in that workspace are displayed. You can specify who can access these applications by individually assigning permissions to these apps or opt to grant similar permissions to all apps under the workspace by selecting the permissions available next to your workspace name. Workspace permissions are as follows:
+Beneath the workspace name, all the applications created in that workspace are displayed. Permissions assigned at the workspace level cascade down to all applications within it. To assign specific permissions to specific apps, see [Application](#application).
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
-| Create | Edit, View, Delete, Execute | All apps, their pages, and the ability to execute their queries |
-| Edit | View, Execute | View - All apps and their pages. View and Execute - their queries   | 
-| Delete |  View, Execute | View - All apps and their pages. View and Execute - their queries  | 
+| Create | Edit, View, Delete, Execute | All apps, their pages, and queries |
+| Edit | View, Execute | View - All apps and pages. View and Execute - queries   | 
+| Delete |  View, Execute | View - All apps and pages. View and Execute - queries  | 
 | View | Execute | View - All pages of all apps. Execute - all queries of all apps  | 
 | Make Public |  View, Execute | View - All pages of all apps. Execute - all queries of all apps | 
 | Export | View, Execute | View - All pages of all apps. Execute - all queries of all apps|
 
 #### Application
 
-Underneath the application name, all the resources created in that application are displayed. You can specify who can access these resources by individually assigning permissions to these apps or opt to grant similar permissions to all app resources under the application by selecting the permissions available next to your application name. Application permissions are as follows:
+Underneath the application name, all the resources created in that application are displayed. Permissions assigned at the application level cascade down to all resources within it. 
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
-| Create | Edit, View, Delete, Execute | All pages and also grants Execute permissions to their queries |
-| Edit | View, Execute | View - All pages. View and Execute - their queries   | 
-| Delete |  View, Execute | View - All pages. View and Execute - their queries  | 
-| View | Execute | View - All pages. Execute - all queries of all apps  | 
-| Make Public |  View, Execute | View - All pages. Execute - all queries of all apps | 
-| Export | View, Execute | View - All pages. Execute - all queries of all apps|
+| Create | Edit, View, Delete, Execute | All pages and grants Execute permissions to queries |
+| Edit | View, Execute | View - All pages. View and Execute - queries   | 
+| Delete |  View, Execute | View - All pages. View and Execute - queries  | 
+| View | Execute | View - All pages. Execute - queries of all apps  | 
+| Make Public |  View, Execute | View - All pages. Execute - queries of all apps | 
+| Export | View, Execute | View - All pages. Execute - queries of all apps|
+
+You can assign specific permissions to pages and queries by selecting permissions for every page and query individually.
 
 ### Datasources and Environments
 
-This category controls access to datasources and environments created at the workspace level in Appsmith. These permissions are applicable to all the Datasources and Environments, or you may also choose to assign permissions to individual datasources and environments within the workspace. The permissions assigned to datasources and environments do not cascade automatically to queries, and you must assign individual permissions to queries under the [Application Resources](#application-resources) tab. 
+The datasources and environments display all the datasources available within the workspace and their corresponding environments. This category controls access to datasources and environments at the workspace level in Appsmith. You must assign individual permissions to both datasources and environments as they are not mutually exclusive. 
 
 #### Datasources
 
-These permissions control the access to datasources within a workspace, and are applicable to all datasources within that workspace. These permissions are also to be individually assigned environments under the [Environments](#environments) section, and are not mutually exclusive. The table below shows the permissions available at the datasource level, their cascading impact, and applicability to individual resources:
+These permissions control the access to datasources within a workspace, and are applicable to all datasources within that workspace. The permissions assigned to datasources do not cascade automatically to queries, and you must assign individual permissions to queries under the [Application Resources](#application-resources) tab. 
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, View, Delete, Execute | All datasources within the workspace |
 | Edit | View, Execute | All datasources within the workspace   | 
@@ -73,9 +76,9 @@ These permissions control the access to datasources within a workspace, and are 
 
 #### Datasource
 
-The Permissions govern the access to a specific datasource within the workspace. The table below shows the permissions available at the datasource level, their cascading impact, and applicability to individual resources:
+These permissions control access to a specific datasource within the workspace. 
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, View, Delete, Execute | The specific datasource |
 | Edit | View, Execute | The specific datasource   | 
@@ -86,9 +89,9 @@ The Permissions govern the access to a specific datasource within the workspace.
 
 #### Environments
 
-Permissions control the access to the environments within a workspace, and are applicable to all environments for the accessible datasources as defined in the [Datasources](#datasources) section within the workspace. The table below shows the permissions available at the environments level, their cascading impact, and applicability to individual resources:
+Permissions control the access to the environments within a workspace, and are applicable to all environments for the accessible datasources as defined in the [Datasources](#datasources) section within the workspace. The permissions assigned to environments do not cascade automatically to queries, and you must assign individual permissions to queries under the [Application Resources](#application-resources) tab. 
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, View, Delete, Execute | All environments for accessible datasources |
 | Edit | View, Execute | All environments for accessible datasources  | 
@@ -98,9 +101,9 @@ Permissions control the access to the environments within a workspace, and are a
 
 #### Environment
 
-These permissions govern the access to a specific environment for the accessible datasources as defined in the [Datasources](#datasources) section within the workspace. The table below shows the permissions available at the environment level, their cascading impact, and applicability to individual resources:
+These permissions govern access to a specific environment for the accessible datasources as defined in the [Datasources](#datasources) section within the workspace.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, View, Delete, Execute | Specific environment for accessible datasources |
 | Edit | View, Execute | Specific environment for accessible datasources  | 
@@ -110,9 +113,9 @@ These permissions govern the access to a specific environment for the accessible
 
 ### Workflows
 
-In this category, the permissions govern the access provided to Appsmith workflows, and are applicable to all the workflows within the workspace. You must grant access to each workspace individually to provide access to the workflows present in each workspace. The table below shows the permissions available at workspace levels for workflows, their cascading impact, and their applicability:
+In this category, the permissions govern access to Appsmith workflows. Permissions are assigned at the workspace level, and apply to all workflows within that workspace. 
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, Delete | All workflows within the workspace |
 | Edit | - | All workflows within the workspace | 
@@ -121,13 +124,13 @@ In this category, the permissions govern the access provided to Appsmith workflo
 
 ### Groups and Roles
 
-This permission group manages access privileges for default roles available within workspaces and instances, as well as custom roles created to define access privileges for an Appsmith instance. 
+This permission group manages access privileges for default roles and custom roles. 
 
 #### Groups
 
-These permissions govern the access provided to Groups and are applicable at the Appsmith instance level. The users assigned to this permission group can manage all users of the Appsmith instance based on permissions assigned. The table below showcases the permissions available, their cascading impact, and applicability:
+These permissions govern the access provided to Groups and are applicable at the instance level. Permissions assigned at the groups level apply to all groups within the instance.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, View, Delete, Invite User, Remove User | - |
 | Edit | View, Invite User, Remove User | - |
@@ -138,24 +141,21 @@ These permissions govern the access provided to Groups and are applicable at the
 
 #### Roles
 
-The permissions govern the access provided default and custom roles at the Appsmith instance level. The users associated with this permission group can manage all roles of the Appsmith instance based on permissions assigned. The default roles cannot be removed or modified. For more information about default roles, see [Default Roles](/advanced-concepts/granular-access-control/roles#default-roles).
+The permissions govern the access provided default and custom roles at the Appsmith instance level. Permissions assigned at the roles level apply to all roles within the instance. The default roles cannot be removed or modified. For more information about default roles, see [Default Roles](/advanced-concepts/granular-access-control/roles#default-roles).
 
-The table below showcases the permissions available, their cascading impact, and applicability:
-
-
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
-| Create | Edit, View, Delete, Associate Role | For all Custom Roles. View and Associate Role for Default Roles|
-| Edit | View, Associate Role | For all Custom Roles. View and Associate Role for Default Roles| 
-| Delete |  View, Associate Role | For all Custom Roles. View and Associate Role for Default Roles | 
-| View | Associate Role | For all Custom and Default Roles | 
-| Associate Role|  - | For all Custom Roles. View and Associate Role for Default Roles| 
+| Create | Edit, View, Delete, Associate Role | Custom Roles. View and Associate Role for Default Roles|
+| Edit | View, Associate Role | Custom Roles. View and Associate Role for Default Roles| 
+| Delete |  View, Associate Role | Custom Roles. View and Associate Role for Default Roles | 
+| View | Associate Role | Custom and Default Roles | 
+| Associate Role|  - | Custom Roles. View and Associate Role for Default Roles| 
 
 ##### Custom roles
 
-These permissions define the access applicable to the custom roles created within the Appsmith instance. The users assigned to this permission group can manage one or more custom roles based on permissions assigned. The table below showcases the permissions available, their cascading impact, and applicability:
+These permissions define the access applicable to the custom roles created within the Appsmith instance. Permissions assigned at the custom roles level apply to the specified custom role.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Edit | View, Associate Role | Specified Custom Role| 
 | Delete |  View, Associate Role | Specified Custom Role| 
@@ -164,13 +164,13 @@ These permissions define the access applicable to the custom roles created withi
 
 ### Others
 
-This category oversees access privileges for workspaces and audit logs within the Appsmith instance. The permissions available are:
+This category oversees access privileges for workspaces and audit logs within the Appsmith instance. 
 
 #### Workspaces
 
 Permissions under this allow users to manage permissions across workspaces in the Appsmith instance.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | - | Allows creating new workspaces in the Instance.| 
 
@@ -178,7 +178,7 @@ Permissions under this allow users to manage permissions across workspaces in th
 
 Permissions under this allow users to manage workspaces in the Appsmith instance.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Edit | - | Allows editing the specified workspace. | 
 | Delete |  - | Allows editing the specified workspace.| 
@@ -187,6 +187,6 @@ Permissions under this allow users to manage workspaces in the Appsmith instance
 
 Permissions under this allow users to monitor the Appsmith instance by auditing logs.
 
-| Permission | Cascades |  Impact on Resources |
+| Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | View | - | Allows monitoring instance logs. | 
