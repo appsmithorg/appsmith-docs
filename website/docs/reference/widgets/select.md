@@ -456,7 +456,7 @@ Select1.setRequired(true)
 
 </dd>
 
-#### setSelectedOption (param: object): Promise
+#### setSelectedOption (param: String): Promise
 
 <dd>
 
@@ -465,7 +465,7 @@ Sets the selected option of the Select widget.
 *Example*:
 
 ```js
-Select1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+Select1.setSelectedOption({ "BLUE" })
 ```
 
 </dd>
