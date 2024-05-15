@@ -730,7 +730,6 @@ const sidebars = {
               label: 'Reference',
               items: [
                 'advanced-concepts/granular-access-control/reference/permissions',
-                'advanced-concepts/granular-access-control/reference/roles-permissions',
               ]
             },
             {
