@@ -721,7 +721,7 @@ const sidebars = {
               type: 'category',
               label: 'How-to Guides',
               items: [
-                'advanced-concepts/granular-access-control/roles',
+                'advanced-concepts/granular-access-control/how-to-guides/set-default-permissions',
               ]
             },
             {

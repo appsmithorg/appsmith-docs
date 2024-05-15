@@ -30,6 +30,12 @@ Resources in Appsmith include pages, queries, datasources, environments, groups,
 
 This category governs access privileges to resources associated with workspaces and applications built in Appsmith, such as apps, pages or queries. 
 
+ <ZoomImage
+        src="/img/GAC-Application-Resources-permissions.png" 
+        alt="Permissions for Application Resources"
+        caption="Permissions for Application Resources"
+    />
+
 #### Workspace
 
 Below the workspace name, all the applications created in that workspace are displayed. Permissions assigned at the workspace level cascade down to all applications within it. To assign specific permissions to specific apps, see [Application](#application).
@@ -61,6 +67,12 @@ You can assign specific permissions to pages and queries by selecting permission
 ### Datasources and Environments
 
 The datasources and environments display all the datasources available within the workspace and their corresponding environments. This category controls access to datasources and environments at the workspace level in Appsmith. You must assign individual permissions to both datasources and environments as they are not mutually exclusive. 
+
+ <ZoomImage
+        src="/img/GAC-Datasources-and-Environments-permissions.png" 
+        alt="Permissions for Datasources & Environments"
+        caption="Permissions for Datasources & Environments"
+    />
 
 #### Datasources
 
@@ -115,6 +127,13 @@ These permissions govern access to a specific environment for the accessible dat
 
 In this category, the permissions govern access to Appsmith workflows. Permissions are assigned at the workspace level, and apply to all workflows within that workspace. 
 
+ <ZoomImage
+        src="/img/GAC-Workflows-permissions.png" 
+        alt="Permissions for Workflows"
+        caption="Permissions for Workflows"
+    />
+
+
 | Permission | Automatically assigns |  Cascades to resources |
 |------------|-------------|--------------|
 | Create | Edit, Delete | All workflows within the workspace |
@@ -125,6 +144,12 @@ In this category, the permissions govern access to Appsmith workflows. Permissio
 ### Groups and Roles
 
 This permission group manages access privileges for default roles and custom roles. 
+
+   <ZoomImage
+        src="/img/GAC-Groups-and-Roles-permissions.png" 
+        alt="Permissions for Groups & Roles"
+        caption="Permissions for Groups & Roles"
+    />
 
 #### Groups
 
@@ -165,6 +190,12 @@ These permissions define the access applicable to the custom roles created withi
 ### Others
 
 This category oversees access privileges for workspaces and audit logs within the Appsmith instance. 
+
+   <ZoomImage
+        src="/img/GAC-Others-permissions.png" 
+        alt="Permissions for Workspaces and Audit Logs"
+        caption="Permissions for Workspaces and Audit Logs"
+    />
 
 #### Workspaces
 
