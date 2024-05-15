@@ -183,7 +183,7 @@ Permissions under this allow users to manage workspaces in the Appsmith instance
 | Edit | - | Allows editing the specified workspace. | 
 | Delete |  - | Allows editing the specified workspace.| 
 
-### Audit logs
+#### Audit logs
 
 Permissions under this allow users to monitor the Appsmith instance by auditing logs.
 
