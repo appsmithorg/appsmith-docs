@@ -19,61 +19,28 @@ tags={[
 
 <!-- vale on -->
 
-Granular Access Control (GAC) enables you to specify which users or groups have access to different system components and what actions they can perform within that access. In Appsmith, you can use roles to define access to different parts of your Appsmith instance, such as workspaces, apps, pages, and datasources, and then assign these roles to individual users or groups of users.
+Granular access control is a fundamental aspect of Appsmith's security architecture, offering management over user permissions within workspaces. This feature helps organizations to finely tune access levels, ensuring that users only have the necessary privileges to perform their designated tasks, thereby enhancing security and mitigating risks.
 
-Granular Access Control can be implemented in Appsmith using the following elements:
-- [Users](#users)
-- [Groups](#groups) 
-- [Roles](/advanced-concepts/granular-access-control/roles)
+## Key features
 
-<ZoomImage
-  src="/img/GAC_overview.jpeg" 
-  alt="Add a new Role"
-  caption="Granular Access Control Overview"
-/>
+- **Role-Based Access:** Appsmith uses a role-based access control (RBAC) system, enabling instance administrators to assign distinct roles to users based on their responsibilities and authority levels within the organization. It also provides Default Roles to enable easy integration of access control. For more information, see [Default Roles](/advanced-concepts/granular-access-control/roles#default-roles).
 
-## Users
+- **Workspace Permissions:** With granular control over workspace permissions, administrators can dictate precisely which actions users can perform within a given workspace, such as creating, editing, or deleting apps, managing pages, queries, datasources, and environments. For more information, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
-A user can access the Appsmith instance, workspaces, apps or other resources and perform authorized actions based on the roles assigned to them. Here are some key points to keep in mind:
+- **Resource-Level Permissions:** Users are granted permissions at a granular level, regulating access to individual resources like apps, pages, queries, datasources, and environments, ensuring that sensitive data and functionalities remain protected. For more information, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
-- Users can be assigned multiple roles. The permissions a user receives are a combination of the permissions in all the roles assigned to them. For example, if a user has been assigned two roles - "Sales" and "Product," the permissions they receive are a combination of the permissions in both roles.
-- Users can be added to groups, and roles can be assigned to that group. In addition, a user can be assigned a role directly, and the roles assigned to the groups they belong to also apply to them.
-- To manage user roles and permissions, go to **Admin Settings** > **Access Control** > **Users**. It displays a list of all users with their roles and groups assigned to them. You can add a new user to your instance by clicking on **Add Users** at the top right corner of the screen.
+- **Customizable Permissions:** Administrators have the flexibility to create custom roles and tailoring access rights to align with organizational policies and security requirements. For more information, see [Custom Roles](/advanced-concepts/granular-access-control/roles#custom-roles).
 
-<ZoomImage
-  src="/img/GAC_users.png" 
-  alt="Add a new Role"
-  caption="Users' Window"
-/>
+## Benefits
 
-## Groups
+- **Enhanced Security:** Granular access control reduces the risk of unauthorized access and data breaches by restricting users' access to only the necessary resources and functionalities required to fulfill their roles.
 
-A group is a collection of users that allows you to assign roles to multiple users at once, simplifying permission management. Here are some important things to know about groups:
+- **Compliance Adherence:** Appsmith's granular access control features aid organizations in meeting regulatory compliance standards by enforcing strict access controls and maintaining audit trails of user activities.
 
-- You can assign multiple roles to a group, and users can belong to multiple groups.
-- To create a new group, navigate to **Admin Settings** > **Access Control** > **Groups**, and click the **Add group** button in the upper-right corner of the screen.
-- To manage groups and the roles assigned to them, go to **Admin Settings** > **Access Control** > **Groups**. This page shows all the groups, and clicking on one displays the users who are members of the group, along with the roles assigned to them.
+- **Improved Collaboration:** By granting users access to specific resources based on their roles and responsibilities, granular access control facilitates seamless collaboration while maintaining data integrity and confidentiality.
 
-When you share an application or workspace, you can invite a group and assign the desired role to it. This makes it easy to grant permissions to multiple users at once, and you can modify the group's roles to update the permissions for all its members simultaneously.
+- **Scalability:** As organizations grow and evolve, Appsmith's granular access control scales effortlessly, accommodating changes in user roles, permissions, and resource access requirements without compromising security or efficiency.
 
+## Getting started
 
-## Programmatic access control
-
-You can utilize roles and groups assigned to a user to programmatically manage access to various entities such as widgets, datasources, APIs, and queries. 
-
-To enable Programmatic access control, follow the steps below - 
-
-1. On the homepage, go to **Admin Settings > General**.
-2. Under the **Programmatic Access Control** section, select the **Access roles and user groups in code for conditional business logic** checkbox. 
-
-<ZoomImage
-  src="/img/Enable_programmatic-access-control.png" 
-  alt="Programmatic Access Control"
-  caption="Enable Programmatic access control"
-/>
-
-3. To manage access control programmatically, use the relevant properties of the Appsmith user object `appsmith.user.roles` or  `appsmith.user.groups` in JavaScript code to obtain an array of roles or groups assigned to the logged-in user. For more information, refer to the [roles](/reference/appsmith-framework/context-object#roles) and [groups](/reference/appsmith-framework/context-object#groups) properties of the Appsmith user object.
-
-## Further reading
-
-[Roles](/advanced-concepts/granular-access-control/roles)
+Granular access control is an indispensable component of Appsmith's comprehensive security framework, providing organizations with the tools needed to enforce stringent access controls, safeguard sensitive data, and promote secure collaboration across teams. By leveraging granular access control features, organizations can strengthen their security posture, enhance regulatory compliance, and foster a culture of responsible data management and governance.
