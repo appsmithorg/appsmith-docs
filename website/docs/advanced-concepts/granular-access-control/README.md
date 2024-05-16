@@ -33,7 +33,7 @@ Granular access control is a fundamental aspect of Appsmith's security architect
 
 ## Benefits
 
-- **Enhanced Security:** Granular access control reduces the risk of unauthorized access and data breaches by restricting users' access to only the necessary resources and functionalities required to fulfill their roles.
+- **Enhanced Security:** Granular access control reduces the risk of unauthorized access by restricting users' access to only the necessary resources and functionalities required to fulfill their roles.
 
 - **Improved Collaboration:** By granting users access to specific resources based on their roles and responsibilities, granular access control facilitates seamless collaboration while maintaining data integrity and confidentiality.
 
