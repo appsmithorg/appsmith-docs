@@ -43,4 +43,19 @@ Granular access control is a fundamental aspect of Appsmith's security architect
 
 ## Getting started
 
-Granular access control is an indispensable component of Appsmith's comprehensive security framework, providing organizations with the tools needed to enforce stringent access controls, safeguard sensitive data, and promote secure collaboration across teams. By leveraging granular access control features, organizations can strengthen their security posture, enhance regulatory compliance, and foster a culture of responsible data management and governance.
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-one">
+   <div className="containerCol">
+           <a href="/advanced-concepts/granular-access-control/reference/instance-administrator-role"><strong>Instance Administrator</strong></a>
+        </div><hr/>
+        <div className="containerDescription">Learn the role of instance adminstrator in setting up Granular Access Control.</div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <b><a href="/advanced-concepts/granular-access-control/reference/permissions">Permissions</a></b>
+      </div> <hr/>
+      <div className="containerDescription">
+        Learn Permissions available as part of Granular Access Control.
+      </div>
+    </div>
+</div>
