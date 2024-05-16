@@ -23,7 +23,7 @@ To configure Granular Access Control (GAC), Appsmith provides pre-defined roles 
 
 ## Default roles
 
-Default roles provide standardized permission sets tailored to meet different user's responsibilities within app-building experience on Appsmith. They come up with a collection of ready-to-use permissions assigned to roles like administrators, developers, and app viewers, and cannot be modified or removed. You can assign these roles to your users based on your desired permission model. To see the default roles available for your Appsmith instance, toggle the **Default Roles** option on the Roles screen.
+Default roles provide standardized permission sets tailored to meet different user's responsibilities within app-building experience on Appsmith. They come up with a collection of ready-to-use permissions assigned to roles like administrators, developers, and app viewers, and cannot be modified or removed. You can assign these roles to your users if the permissions align with your desired permission model. To see the default roles available for your Appsmith instance, toggle the **Default Roles** option on the Roles screen.
 
  <ZoomImage
     src="/img/GAC-Default-Roles-toggle.png" 

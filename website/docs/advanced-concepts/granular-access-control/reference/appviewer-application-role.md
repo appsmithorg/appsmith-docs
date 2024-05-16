@@ -19,3 +19,19 @@ tags={[
 </div>
 
 <!-- vale on -->
+
+
+
+ <div className="gac-permissions">
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+
+    |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
+    |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
+    | Application            | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Pages in Application   | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Queries in Pages       | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
+    | Datasources            | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
+    | Environments           | (x) | (x) | (x) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
+    | Production Environment | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
+    | Staging Environment    | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
+    </div>
