@@ -23,7 +23,7 @@ To configure Granular Access Control (GAC), Appsmith provides pre-defined roles 
 
 ## Default roles
 
-Default roles provide standardized permission sets tailored to meet different user's responsibilities within app-building experience on Appsmith. They come up with a collection of ready-to-use permissions assigned to roles like administrators, developers, and app viewers, and cannot be modified or removed. You can assign these roles to your users if the permissions align with your desired permission model. To see the default roles available for your Appsmith instance, toggle the **Default Roles** option on the Roles screen.
+Default roles provide standardized permission sets designed to match different user responsibilities in Appsmith. They include pre-defined permissions tailored for roles such as administrators, developers, and app viewers, and cannot be altered or deleted. You can assign these roles to your users if the permissions align with your desired permission model. To view the default roles available for your Appsmith instance, toggle the **Default Roles**  option on the Roles screen.
 
  <ZoomImage
     src="/img/GAC-Default-Roles-toggle.png" 
@@ -33,7 +33,11 @@ Default roles provide standardized permission sets tailored to meet different us
 
   ### Scopes
 
-Default roles in Appsmith have below primary scopes, each serving distinct purposes within the access control framework. 
+Default roles in Appsmith have below primary scopes, each serving distinct purposes within the access control framework:
+
+* [Instance level](#instance-level)
+* [Workspace level](#workspace-level)
+* [Application level](#application-level)
 
 #### Instance level
 
@@ -232,3 +236,13 @@ Custom roles in Appsmith allow users to define specific permission sets tailored
     alt="Click the Add role button to create a custom role"
     caption="Click the Add role button to create a custom role"
   />
+
+### Scopes
+
+Custom roles in Appsmith can have the following primary scopes, each based on the way permissions are assigned to the role:
+
+- **Instance level** - This scope is suitable if you need a role capable of handling instance maintenance, group and role creation tasks. It's recommended to exercise caution when granting the instance level permissions to individuals on your team. This permission grants them the ability to potentially take over any sensitive app, datasource, or other resources with ease.
+
+- **Workspace level** - This scope is suitable for assigning permissions to manage the workspace and its resources.
+
+- **Application level** - This scope is suitable for assigning permissions to manage the application and its resources.
