@@ -465,7 +465,7 @@ Sets the selected option of the Select widget.
 *Example*:
 
 ```js
-Select1.setSelectedOption({ "BLUE" })
+Select1.setSelectedOption("BLUE")
 ```
 
 </dd>
