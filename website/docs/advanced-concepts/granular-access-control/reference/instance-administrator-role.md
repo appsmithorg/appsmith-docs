@@ -123,6 +123,8 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
         </table>
     </div>
 
+For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+
 ## Limitations
 
 Despite having extensive permissions, the Instance Administrator role in Appsmith cannot perform the following tasks:

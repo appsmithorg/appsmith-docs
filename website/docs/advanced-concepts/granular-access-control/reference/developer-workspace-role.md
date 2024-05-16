@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-The Developer role grants users extensive access to different resources within a workspace, such as apps, pages, queries, datasources, and environments. This page provides detailed insights into the individual permissions associated with the Developer - Workspace role.
+The Developer role grants users extensive access to different resources within a workspace, including apps, pages, queries, datasources, and environments. This page provides detailed insights into the specific permissions associated with the Developer - Workspace role.
 
  <ZoomImage
     src="/img/GAC-developer-workspace-role.png" 
@@ -30,7 +30,7 @@ The Developer role grants users extensive access to different resources within a
 
 ## Permissions
 
-To perform different tasks, the Developer - Workspace role in Appsmith has the following permissions:
+The Developer role enables users to create, edit, and delete apps within a workspace. They also have control over managing pages, queries, datasources, and environments. These responsibilities are governed by the permissions allocated to the Developer - Workspace role in Appsmith, as shown below:
 
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
@@ -45,8 +45,10 @@ To perform different tasks, the Developer - Workspace role in Appsmith has the f
     | Production Environment | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
     | Staging Environment    | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
     | Workflows              | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
-    </div>
+</div>
+
+For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
 ## Limitations
 
-Developers do have some limitations; they lack permissions to create workspaces, view audit logs, make apps public or export apps, manage roles, groups, or users. 
+Developers do have some constraints; they lack permissions to create workspaces, view audit logs, make apps public or export apps, and manage roles, groups, or users.

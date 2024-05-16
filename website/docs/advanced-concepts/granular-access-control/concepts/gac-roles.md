@@ -51,21 +51,8 @@ Workspace-level roles control access within a specific workspace. These roles ar
 
 * **Developer Role for Workspace -** The Developer role can create apps, pages, queries, datasources, and environments within a workspace. For more information, see [Developer - Workspace Role](/advanced-concepts/granular-access-control/reference/developer-workspace-role).
 
-* **App Viewer Role for Workspace -** The App Viewer Role provides read-only access to apps within a workspace. The below table shows the permission configuration for an App Viewer role. For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+* **App Viewer Role for Workspace -** The App Viewer Role provides read-only access to apps within a workspace. The below table shows the permission configuration for an App Viewer role. For more information, see [App Viewer - Workspace Role](/advanced-concepts/granular-access-control/reference/appviewer-workspace-role).
  
-    <div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
-
-    |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
-    |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Workspace - Apps       | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Pages in Apps          | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Queries in Pages       | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Datasources            | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Environments           | (x) | (x) | (x) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Production Environment | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Staging Environment    | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
-    </div>
 
 #### Application level
 
