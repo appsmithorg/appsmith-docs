@@ -721,7 +721,7 @@ const sidebars = {
               type: 'category',
               label: 'How-to Guides',
               items: [
-                'advanced-concepts/granular-access-control/how-to-guides/set-default-permissions',
+                'advanced-concepts/granular-access-control/how-to-guides/set-up-default-permissions',
               ]
             },
             {
@@ -730,6 +730,14 @@ const sidebars = {
               label: 'Reference',
               items: [
                 'advanced-concepts/granular-access-control/reference/permissions',
+                'advanced-concepts/granular-access-control/reference/page-level-access',
+                'advanced-concepts/granular-access-control/reference/restrict-page-access',
+                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
+                'advanced-concepts/granular-access-control/reference/administrator-workspace-role',
+                'advanced-concepts/granular-access-control/reference/developer-workspace-role',
+                'advanced-concepts/granular-access-control/reference/appviewer-workspace-role',
+                'advanced-concepts/granular-access-control/reference/developer-application-role',
+                'advanced-concepts/granular-access-control/reference/appviewer-application-role',
               ]
             },
             {
@@ -737,6 +745,7 @@ const sidebars = {
               label: 'Concepts',
               items: [
                 'advanced-concepts/granular-access-control/roles',
+                'advanced-concepts/granular-access-control/concepts/gac-roles',
               ]
             },
           ]
