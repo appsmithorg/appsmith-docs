@@ -35,11 +35,7 @@ Granular access control is a fundamental aspect of Appsmith's security architect
 
 - **Enhanced Security:** Granular access control reduces the risk of unauthorized access and data breaches by restricting users' access to only the necessary resources and functionalities required to fulfill their roles.
 
-- **Compliance Adherence:** Appsmith's granular access control features aid organizations in meeting regulatory compliance standards by enforcing strict access controls and maintaining audit trails of user activities.
-
 - **Improved Collaboration:** By granting users access to specific resources based on their roles and responsibilities, granular access control facilitates seamless collaboration while maintaining data integrity and confidentiality.
-
-- **Scalability:** As organizations grow and evolve, Appsmith's granular access control scales effortlessly, accommodating changes in user roles, permissions, and resource access requirements without compromising security or efficiency.
 
 ## Getting started
 
