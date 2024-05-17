@@ -1,14 +1,14 @@
 ---
 description: >-
-  Set up default permissions for all users in Granular Access Control
-title: Default Permissions for All Users
+  Set up default access to apps in Granular Access Control
+title: Default Access to Apps
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Set up Default Permissions for All Users</h1>
+ <h1>Set up Default Access to Apps</h1>
 
 <Tags
 tags={[

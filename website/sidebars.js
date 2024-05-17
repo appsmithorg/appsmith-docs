@@ -729,15 +729,9 @@ const sidebars = {
               collapsed: false,
               label: 'Reference',
               items: [
+                'advanced-concepts/granular-access-control/reference/default-roles',
+                'advanced-concepts/granular-access-control/reference/custom-roles',
                 'advanced-concepts/granular-access-control/reference/permissions',
-                'advanced-concepts/granular-access-control/reference/page-level-access',
-                'advanced-concepts/granular-access-control/reference/restrict-page-access',
-                'advanced-concepts/granular-access-control/reference/instance-administrator-role',
-                'advanced-concepts/granular-access-control/reference/administrator-workspace-role',
-                'advanced-concepts/granular-access-control/reference/developer-workspace-role',
-                'advanced-concepts/granular-access-control/reference/appviewer-workspace-role',
-                'advanced-concepts/granular-access-control/reference/developer-application-role',
-                'advanced-concepts/granular-access-control/reference/appviewer-application-role',
               ]
             },
             {
@@ -745,7 +739,6 @@ const sidebars = {
               label: 'Concepts',
               items: [
                 'advanced-concepts/granular-access-control/roles',
-                'advanced-concepts/granular-access-control/concepts/gac-roles',
               ]
             },
           ]
