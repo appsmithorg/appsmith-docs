@@ -45,9 +45,9 @@ Instance-level default roles have permissions that govern access to Appsmith ins
 
 Workspace-level default roles control access within a specific workspace. These roles are pre-defined, offering standard access controls tailored to each workspace. The workspace level roles are not available for customization. They include:
 
-* [Administrator - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#administrator-role-for-workspace) - to create, edit, view and delete all apps, queries and datasources, export and make apps public.
+* [Administrator - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#administrator-role-for-workspace) - to create, edit, view and delete apps, queries, datasources, environments, export apps and make apps public within a workpsace.
 
-* [Developer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-workspace) - to create apps, pages, queries, datasources, and environments within a workspace.
+* [Developer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-workspace) - to create, edit, and delete apps, pages, queries, datasources, and environments within a workspace.
 
 * [App Viewer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-workspace) - to provide read-only access to apps within a workspace.
  
