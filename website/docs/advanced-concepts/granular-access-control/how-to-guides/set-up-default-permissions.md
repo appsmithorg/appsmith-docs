@@ -38,7 +38,11 @@ Follow these steps to configure permissions:
 3. Toggle **Default Roles** to show all the default roles.
 4. Click the pencil icon next to _Default Role For All Users_ that opens a configuration screen as shown below:
 
-   ![Configuration screen for Default Role for All users](/img/GAC-Default-roles-for-all-users-configuration.png)
+   <ZoomImage
+   src="/img/GAC-Default-roles-for-all-users-configuration.png" 
+   alt="Configuration screen for Default Role for All users"
+   caption="Configuration screen for Default Role for All users"
+   />
 
 5. Based on your permission needs, provide access to resources. For example, if you want to provide read-only access to the Annual Sales report app so that all authenticated users can view it, assign permissions as below:
 

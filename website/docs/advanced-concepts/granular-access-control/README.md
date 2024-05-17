@@ -19,25 +19,71 @@ tags={[
 
 <!-- vale on -->
 
-Granular access control is a fundamental aspect of Appsmith's security architecture, offering management over user permissions within workspaces. This feature helps organizations to finely tune access levels, ensuring that users only have the necessary privileges to perform their designated tasks, thereby enhancing security and mitigating risks.
+Granular Access Control (GAC) in Appsmith allows you to specify precise access permissions for every entity within your Appsmith instance. This includes applications, users, workspaces, queries, and more. Here’s a quick overview of how GAC works:
 
-TO DO - ADD Diagram and explanation for Users, Groups, Roles, and their association
+  <ZoomImage
+   src="/img/gac-overview.png" 
+   alt="Granular Access Control in Appsmith"
+   caption="Granular Access Control in Appsmith"
+   />
+
+## Core components
+
+* **Permissions** - define what actions a user can perform on specific entities. Every entity in Appsmith whether it’s an app, a page, a datasource, or a query can have granular permissions set for actions like create, read, update, and delete.
+* **Roles** - are collections of permissions. Instead of assigning individual permissions to users or groups, you can bundle permissions into roles. This simplifies the management of permissions.
+* **Users** - Individual users who need access to the Appsmith instance.
+* **User Groups** - Collections of users that allow you to assign roles to multiple users simultaneously. Users in a group inherit the roles assigned to that group.
+
+## How GAC works
+
+  <ZoomImage
+   src="/img/gac-overview.svg" 
+   alt="Granular Access Control in Appsmith"
+   caption="Granular Access Control in Appsmith"
+   />
+
+1. **Create Roles** - Bundle permissions into custom roles for easier management.
+2. **Assign Roles** - Assign roles to individual users or user groups to grant the necessary permissions.
 
 ## Getting started
 
+To help you get started with Granular Access Control in Appsmith, here are some key areas you can explore. Click on the cards to learn more about each aspect.
+
 <div className="containerGridSampleApp">
    <div className="containerColumnSampleApp columnGrid column-one">
-   <div className="containerCol">
+       <div className="containerCol">
            <a href="/advanced-concepts/granular-access-control/reference/instance-administrator-role"><strong>Instance Administrator</strong></a>
-        </div><hr/>
-        <div className="containerDescription">Learn the role of instance adminstrator in setting up Granular Access Control.</div>
+       </div>
+       <hr/>
+       <div className="containerDescription">
+           Learn the role of the instance administrator in setting up Granular Access Control.
+       </div>
    </div>
    <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-      <b><a href="/advanced-concepts/granular-access-control/reference/permissions">Permissions</a></b>
-      </div> <hr/>
-      <div className="containerDescription">
-        Learn Permissions available as part of Granular Access Control.
-      </div>
-    </div>
+       <div className="containerCol">
+           <a href="/advanced-concepts/granular-access-control/reference/permissions"><strong>Permissions</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">
+           Understand the permissions available as part of Granular Access Control.
+       </div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/advanced-concepts/granular-access-control/reference/roles"><strong>Default Roles</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">
+           Learn how to manage default roles in Appsmith.
+       </div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-four">
+       <div className="containerCol">
+           <a href="/advanced-concepts/granular-access-control/reference/users"><strong>Custom Role</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">
+           Learn how to create Custom role to manage users and user groups in Appsmith.
+       </div>
+   </div>
 </div>
