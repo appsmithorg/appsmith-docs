@@ -44,8 +44,6 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith allows developers to configure the connection pooling options such as minimum/maximum pool size, idle connection timeout, etc., through the database configuration settings in the application. These settings can be tuned based on the specific requirements and expected workload of the application.
-
-By default, Appsmith provides a pool limit of 5 that works well for standard use cases. However, developers can tweak these parameters in the admin settings of their instance.
+By default, Appsmith provides a pool limit of 5 that works well for standard use cases. However, developers can tweak these parameters in the _Admin Settings_ of their instance.
 
 Connection pooling is a fundamental aspect of Appsmith's backend infrastructure, critical for developers building scalable and efficient applications. It ensures that database operations are handled gracefully, providing a better user experience and making the best use of available resources.
