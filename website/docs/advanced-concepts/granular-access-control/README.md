@@ -52,7 +52,7 @@ To help you get started with Granular Access Control in Appsmith, here are some 
 <div className="containerGridSampleApp">
    <div className="containerColumnSampleApp columnGrid column-one">
        <div className="containerCol">
-           <a href="/advanced-concepts/granular-access-control/reference/instance-administrator-role"><strong>Instance Administrator</strong></a>
+           <a href="/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role"><strong>Instance Administrator</strong></a>
        </div>
        <hr/>
        <div className="containerDescription">
@@ -69,15 +69,6 @@ To help you get started with Granular Access Control in Appsmith, here are some 
        </div>
    </div>
    <div className="containerColumnSampleApp columnGrid column-three">
-       <div className="containerCol">
-           <a href="/advanced-concepts/granular-access-control/reference/roles"><strong>Default Roles</strong></a>
-       </div>
-       <hr/>
-       <div className="containerDescription">
-           Learn how to manage default roles in Appsmith.
-       </div>
-   </div>
-   <div className="containerColumnSampleApp columnGrid column-four">
        <div className="containerCol">
            <a href="/advanced-concepts/granular-access-control/reference/users"><strong>Custom Role</strong></a>
        </div>
