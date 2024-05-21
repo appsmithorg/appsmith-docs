@@ -60,10 +60,10 @@ This command inserts a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 <dd>Sets which entity type to query.</dd><br/>
 <dd>
 <i>Options:</i>
-  <ul>
-    <li><b>Sheet Row(s):</b> Inserts a single record as a row in the spreadsheet.</li>
-    <li><b>Spreadsheet:</b> Creates a new spreadsheet document. Optionally, you can use the <b>Row Objects</b> field to provide rows that should be created along with the document.</li>
-  </ul>
+
+  - **Sheet Row(s):** Inserts a single record as a row in the spreadsheet.
+   - **Spreadsheet:** Creates a new spreadsheet document. Optionally, use the **Row Objects** field to add rows during creation. The **Spreadsheet** option is available if the datasource has access to all spreadsheets. If access is restricted to selected sheets, the **Spreadsheet** option is disabled.
+
 </dd>
 
 #### Spreadsheet
