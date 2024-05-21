@@ -203,10 +203,10 @@ This command fetches a given entity type: **Sheet Row(s)** or **Spreadsheet**. T
 <dd>Sets which entity type to query.</dd><br/>
 <dd>
 <i>Options:</i>
-  <ul>
-    <li><b>Sheet Row(s):</b> Fetches a subset of horizontal records from a page of a spreadsheet document.</li>
-    <li><b>Spreadsheet:</b> Fetches a list of existing spreadsheet documents.</li>
-  </ul>
+
+  - **Sheet Row(s)**: Fetches a subset of horizontal records from a page of a spreadsheet document.
+  - **Spreadsheet**: Fetches a list of existing spreadsheet documents. 
+
 </dd>
 
 #### Spreadsheet
