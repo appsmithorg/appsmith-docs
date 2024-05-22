@@ -56,3 +56,25 @@ Merge conflicts can occur in various scenarios while working with version contro
 * **Conflicts with submodule changes:** If your repository contains submodules (nested Git repositories within a Git repository), conflicts may arise if the submodule references in the parent repository are updated differently in different branches.
 * **Conflicts in pull requests:** When collaborating with others using pull requests, conflicts can occur when the changes proposed in the pull request cannot be automatically merged into the target branch due to conflicting changes.
 * **Conflicts with file renaming/moving:** If a app entity is renamed or moved in one branch while another branch contains modifications to the same file under its old name or location, conflicts may arise during merging.
+
+
+- **Simultaneous Changes on the Same Branch or Application:** When multiple developers work on the same branch or within the same Appsmith application and make changes to the same lines of code or entities, merge conflicts are likely. For instance, if two developers edit the same widget or API configuration concurrently, merging their changes can result in conflicts.
+
+- **Editing and Deleting the Same Entity:** Conflicts arise when one developer deletes an entity (like a widget, API, or query) while another developer makes edits to it. If both try to merge their changes to the same branch, Git cannot reconcile the deletion with the modifications.
+
+- **Deleting and Editing the Same Line:** Similar to entity conflicts, if one developer deletes a line of code while another edits it, a conflict will occur when attempting to merge both sets of changes into the same branch.
+
+- **Cherry-Picking Commits:** When a developer cherry-picks a commit (selecting a specific commit from one branch and applying it to another), conflicts can happen if the cherry-picked changes overlap with existing changes in the target branch.
+
+- **Rebasing Branches:** Rebasing involves moving a sequence of commits to a new base commit. Conflicts occur if the rebased commits introduce changes that conflict with existing changes in the target base.
+
+- **Branch Behind Remote:** When your local branch is behind the remote branch and you attempt to push changes, Git will reject the push. You need to pull the latest changes from the remote branch first, which may lead to conflicts if there are overlapping modifications.
+
+- **Conflicts with Upstream Changes:** If you're working on a feature branch and the main branch (e.g., 'master' or 'main') gets updated with new changes, merging your feature branch into the main branch can lead to conflicts if there are overlapping changes.
+
+- **Conflicts with Submodule Changes:** In repositories with submodules (nested repositories within a repository), conflicts can arise if submodule references in the parent repository are updated differently across branches.
+
+- **Conflicts in Pull Requests:** When collaborating through pull requests, conflicts occur when the proposed changes cannot be automatically merged into the target branch due to conflicting modifications.
+
+- **File Renaming/Moving Conflicts:** If an entity (such as a widget, API, or query) is renamed or moved in one branch while another branch contains modifications to the same entity under its old name or location, conflicts will arise during merging.
+
