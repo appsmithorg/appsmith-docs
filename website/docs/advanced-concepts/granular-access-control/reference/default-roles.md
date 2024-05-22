@@ -143,18 +143,18 @@ Administrator Role assigned to a workspace grants full control over all entities
 To perform different tasks, the Administrator - Workspace role in Appsmith has the following permissions:
 
 <div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned |  Permission Not Applicable</p>
 
     |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
     |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Workspace - Apps       | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) | (x) | (x) |
-    | Pages in Apps          | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Queries in Pages       | (x) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Datasources            | (✓) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Production Environment | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Staging Environment    | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Workflows              | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Workspace - Apps       | (✓) | (✓) | (✓) | (✓) |  | (✓) | (✓) |  |  |  |
+    | Pages in Apps          | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |  |
+    | Queries in Pages       |  | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Datasources            | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Production Environment |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
+    | Staging Environment    |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
+    | Workflows              | (✓) | (✓) | (✓) |  |  |  |  |  |  |  |
     </div>
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
@@ -172,18 +172,18 @@ The Developer role grants users extensive access to different resources within a
 The Developer role enables users to create, edit, and delete apps within a workspace. They also have control over managing pages, queries, datasources, and environments. These responsibilities are governed by the permissions allocated to the Developer - Workspace role in Appsmith, as shown below:
 
 <div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned |  Permission Not Applicable</p>
 
     |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
     |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Workspace - Apps       | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) | (x) | (x) |
-    | Pages in Apps          | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Queries in Pages       | (x) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Datasources            | (✓) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Production Environment | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Staging Environment    | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Workflows              | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Workspace - Apps       | (✓) | (✓) | (✓) | (✓) |  | (✓) | (✓) |  |  |  |
+    | Pages in Apps          | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |  |
+    | Queries in Pages       |  | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Datasources            | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  |
+    | Production Environment |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
+    | Staging Environment    |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
+    | Workflows              | (✓) | (✓) | (✓) |  |  |  |  |  |  |  |
 </div>
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
@@ -202,17 +202,17 @@ The App Viewer - Workspace Role is specific to each workspace and provides view-
 The App Viewer role enables users to view apps, governed by the permissions allocated to the App Viewer - Workspace role in Appsmith, as shown below:
 
   <div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned |  Permission Not Applicable</p>
 
     |                        | Create | Edit | Delete | View | Execute | Make Public | Export | 
     |------------------------|--------|------|--------|------|---------|-------------|--------|
-    | Workspace - Apps       | (x)    | (x) | (x)     | (✓)  | (x)     | (x)         | (x)    | 
-    | Pages in Apps          | (x)    | (x) | (x)     | (✓)  | (x)     | (x)         | (x)    | 
-    | Queries in Pages       | (x)    | (x) | (x)     | (x)  | (✓)     | (x)         | (x)    | 
-    | Datasources            | (x)    | (x) | (x)     | (x)  | (✓)     | (x)         | (x)    | 
-    | Environments           | (x)    | (x) | (x)     | (✓)  | (✓)     | (x)         | (x)    | 
-    | Production Environment | (x)    | (x) | (x)     | (x)  | (✓)     | (x)         | (x)    | 
-    | Staging Environment    | (x)    | (x) | (x)     | (x)  | (x)     | (x)         | (x)    | 
+    | Workspace - Apps       |     |  |      | (✓)  |      |          |     | 
+    | Pages in Apps          |     |  |      | (✓)  |      |          |     | 
+    | Queries in Pages       |     |  |      |   | (✓)     |          |     | 
+    | Datasources            |     |  |      |   | (✓)     |          |     | 
+    | Environments           |     |  |      | (✓)  | (✓)     |          |     | 
+    | Production Environment |     |  |      |   | (✓)     |          |     | 
+    | Staging Environment    |     |  |      |   |      |          |     | 
   </div>
 
   For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
@@ -224,40 +224,50 @@ The App Viewer role enables users to view apps, governed by the permissions allo
 
 ## Developer Role for Application
 
+The Developer role grants users extensive access to different resources within the given app, including pages, queries, datasources, and environments. When a user is invited to an app and provided developer access, this role is created if not already present.
+
 ### Permissions
 
-<div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+The Developer role enables users to manage pages, queries, datasources, and environments within the given app. These responsibilities are governed by the permissions allocated to the Developer - Application role in Appsmith, as shown below:
 
-    |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
-    |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Application            | (✓) | (✓) | (✓) | (✓) | (x) | (✓) | (✓) | (x) | (x) | (x) |
-    | Pages in Application   | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Queries in Pages       | (x) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Datasources            | (✓) | (-) | (-) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Production Environment | (x) | (✓) | (✓) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Staging Environment    | (x) | (-) | (-) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
+<div className="gac-permissions">
+    <p className="permission-footnote">(✓) Permission Assigned </p>
+    |             | Create | Edit | Delete | View | Execute | Make Public | Export |
+    |-------------|--------|------|--------|------|---------|-------------|-------------|
+    | Application            | (✓) | (✓) | (✓) | (✓) |  |  |  |  
+    | Pages in Application   | (✓) | (✓) | (✓) | (✓) |  |  |  |  
+    | Queries in Pages       |  | (✓) | (✓) | (✓) | (✓) |  |  |  
+    | Datasource            | (✓) |  |  | (✓) | (✓) |  |  |  
+    | Production Environment |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
+    | Staging Environment    |  |  |  |  | (✓) |  |  |  |  |  |
     </div>
 
 ### Limitations
+
+Developers do have some constraints; they lack permissions to create applications in workspace, view audit logs, manage workflows, make apps public or export apps, and manage roles, groups, or users.
 
 ## App Viewer Role for Application
 
+The App Viewer - Application Role is specific to each workspace and provides view-only access to apps within that application.
+
 ### Permissions
 
+The App Viewer role enables users to view pages, governed by the permissions allocated to the App Viewer - Application role in Appsmith, as shown below:
+
  <div className="gac-permissions">
-    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned | (x) Permission Not Applicable</p>
+    <p className="permission-footnote">(✓) Permission Assigned | (-) Permission Not Assigned |  Permission Not Applicable</p>
 
     |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
     |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Application            | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Pages in Application   | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) | (x) |
-    | Queries in Pages       | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Datasources            | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Environments           | (x) | (x) | (x) | (✓) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Production Environment | (x) | (x) | (x) | (x) | (✓) | (x) | (x) | (x) | (x) | (x) |
-    | Staging Environment    | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) | (x) |
+    | Application            |  |  |  | (✓) |  |  |  |  |  |  |
+    | Pages in Application   |  |  |  | (✓) |  |  |  |  |  |  |
+    | Queries in Pages       |  |  |  |  | (✓) |  |  |  |  |  |
+    | Datasources            |  |  |  |  | (✓) |  |  |  |  |  |
+    | Environments           |  |  |  | (✓) | (✓) |  |  |  |  |  |
+    | Production Environment |  |  |  |  | (✓) |  |  |  |  |  |
+    | Staging Environment    |  |  |  |  |  |  |  |  |  |  |
     </div>
     
 ### Limitations
+
+ App Viewers do not have permission to create, edit, or delete pages, queries in the app and does not include permissions to manage apps within workspace.

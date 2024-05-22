@@ -1,0 +1,94 @@
+---
+description: >-
+  Set up default access to apps in Granular Access Control
+title: Default Access to Apps
+hide_title: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Set up Default Access to Apps</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+To simplify access management and ensure consistency across the Appsmith instance, you may need to set default permissions for all users. This page explains how to set default permissions for all users accessing the Appsmith instance.
+
+## Prerequisites
+
+Before beginning the configuration process, ensure you have:
+
+- A self-hosted Appsmith Commercial Edition installation. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides)
+- Access to update role configuration.
+
+## Configure permissions
+
+Follow these steps to configure permissions:
+
+1. Navigate to Admin Settings by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
+2. From the sidebar, under **Access Control**, select **Roles**.
+3. Toggle **Default Roles** to show all the default roles.
+4. Click the pencil icon next to _Default Role For All Users_ that opens a configuration screen as shown below:
+
+   <ZoomImage src="/img/GAC-Default-roles-for-all-users-configuration.png" alt="Configuration for Default Roles for All Users" caption="Configuration for Default Roles for All Users"/>
+
+5. Based on your permission needs, provide access to resources. For example, if you want to provide read-only access to the Annual Sales report app so that all authenticated users can view it, assign permissions as below:
+
+  
+<Tabs queryString="gac-resource">
+   <TabItem label="Application Resources" value="application-resources">
+      <ZoomImage
+         src="/img/default-roles-app-resources-config.png" 
+         alt="Configuration for Application Resources"
+         caption="Configuration for Application Resources"
+      ></ZoomImage>
+   </TabItem>
+      <TabItem label="Datasources & Environments" value="datasources-and-environments">
+      <ZoomImage
+         src="/img/default-roles-datasource-env-config.png" 
+         alt="Configuration for Datasources and Environments"
+         caption="Configuration for Datasources and Environments"
+      ></ZoomImage>
+   </TabItem>
+</Tabs>
+
+
+<Tabs queryString="gac-resource">
+   <TabItem label="Application Resources" value="application-resources">
+   <p className="permission-footnote">(✓) Permission Assigned</p>
+   | Resource  Permission    | Create | Edit    |Delete| View   | Execute | Make Public | Export |
+   | ------------------------| --------|--------|------|--------|---------|-------------|--------|
+   | Sales Report            |         |        |      |   (✓)  |          |            |        |
+   | Annual Sales Report     |         |        |      |   (✓)  |          |            |        |
+   | sel_annual_sales_report |         |        |      |        |   (✓)    |            |        |
+  
+      
+   </TabItem>
+      <TabItem label="Datasources & Environments" value="datasources-and-environments">
+       | Resource  Permission                          | Execute | Create    |Edit| Delete   | View | 
+      | -----------------------------------------------| --------|--------|------|--------|---------|
+      | Datasources                                    |         |        |      |        |         | 
+      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Sales          |    (✓)  |        |      |        |         | 
+      | Environment                                    |         |        |      |        |         | 
+      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production      |   (✓)   |        |      |        |         |
+   </TabItem>
+</Tabs>
+
+6. Once you have configured the permissions, click the **Save changes** button. 
+
+This configuration provides read-only access to all users once authenticated to the Annual Sales Report app. For more information about permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+
+## Troubleshooting
+
+If you encounter any issues, contact the support team using the chat widget at the bottom right of this page.

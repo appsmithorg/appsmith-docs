@@ -64,7 +64,7 @@ To help you get started with Granular Access Control in Appsmith, here are some 
    </div>
    <div className="containerColumnSampleApp columnGrid column-three">
        <div className="containerCol">
-           <a href="/advanced-concepts/granular-access-control/reference/users"><strong>Custom Role</strong></a>
+           <a href="/advanced-concepts/granular-access-control/reference/custom-roles"><strong>Custom Role</strong></a>
        </div>
        <hr/>
        <div className="containerDescription">
