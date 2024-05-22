@@ -128,3 +128,6 @@ Associate Role
 Applications
 Conclusion
 Users
+User
+permission
+Permissions

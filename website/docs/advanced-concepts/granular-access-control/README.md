@@ -23,8 +23,8 @@ Granular Access Control (GAC) in Appsmith allows you to specify precise access p
 
   <ZoomImage
    src="/img/gac-overview.png" 
-   alt="Granular Access Control in Appsmith"
-   caption="Granular Access Control in Appsmith"
+   alt="How Granular Access Control works in Appsmith"
+   caption="How Granular Access Control works in Appsmith"
    />
 
 ## Core components
@@ -35,12 +35,6 @@ Granular Access Control (GAC) in Appsmith allows you to specify precise access p
 * **User Groups** - Collections of users that allow you to assign roles to multiple users simultaneously. Users in a group inherit the roles assigned to that group.
 
 ## How GAC works
-
-  <ZoomImage
-   src="/img/gac-overview.svg" 
-   alt="Granular Access Control in Appsmith"
-   caption="Granular Access Control in Appsmith"
-   />
 
 1. **Create Roles** - Bundle permissions into custom roles for easier management.
 2. **Assign Roles** - Assign roles to individual users or user groups to grant the necessary permissions.
@@ -78,3 +72,4 @@ To help you get started with Granular Access Control in Appsmith, here are some 
        </div>
    </div>
 </div>
+
