@@ -1,9 +1,6 @@
 # Git Common Errors
 
-This page walks through common Git errors and how to resolve them on Appsmith.
-
-
-
+This page explains how to resolve common Git errors on Appsmith.
 
 
 ### Invalid Git repo

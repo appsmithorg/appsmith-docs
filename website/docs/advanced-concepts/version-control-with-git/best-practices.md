@@ -1,7 +1,7 @@
 # Best Practices
 
 
-This page provides essential Git best practices to help teams avoid conflicts, ensuring a smoother and more efficient workflow.
+This page provides essential Git best practices to help teams avoid merge conflicts, ensuring a smoother and more efficient workflow.
 
 
 ## Use Branching Strategy
