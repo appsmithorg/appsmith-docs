@@ -13,26 +13,25 @@ Merge conflicts occur when different branches of code cannot be automatically re
 
 ## Use Branching Strategy
 
-Adopt a clear and effective branching strategy for efficient collaboration and code management in Git. Here are some key points to consider:
+Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. Key points to consider:
 
-- Select a branching model that aligns with your team's workflow and project requirements. Popular models like GitFlow, GitHub Flow, and Trunk-Based Development offer different approaches suited for various scenarios. For example;
-    - **Master Branch:** Contains the final version of the app for production; make it protected in the Git settings.
-    - **Development Branch:** For testing and QA; merge feature branches here and raise a PR to master after testing.
-    - **Feature Branches:** Individual branches for developers to work on app development; raise PRs to Development branch upon completion.
+
+- Select a branching model that aligns with your team's workflow and project requirements. Popular models like GitFlow, GitHub Flow, and Trunk-Based Development offer different approaches suited for various scenarios. 
 
 - Reserve the `master` branch for production-ready code. Only merge thoroughly tested and reviewed changes into this branch to ensure stability.
-- Encourage developers to create feature branches for implementing new features or fixing bugs. 
 
-- Use release branches for preparing releases and hotfix branches for addressing critical issues in production.
+- Create a `development` branch for testing features. Merge feature branches into this branch and raise pull requests to master after testing.
+
+- Encourage developers to create `feature` branches for implementing new features or fixing bugs. 
 
 - Establish a clear and consistent naming convention for branches to enhance clarity and organization. Include relevant information such as feature name, issue number, or task description in branch names.
 
-- This is also useful if you are self-hosting Appsmith and want to stick with an older platform version in production while you test that your apps are compatible with an updated release. You can create a new branch, fire up a Docker container running the latest version of Appsmith, and test and tweak it without affecting your production deployment.
+- If you are self-hosting Appsmith and want to stick with an older platform version in `production` while you test that your apps are compatible with an updated `release`. You can create a new branch, fire up a Docker container running the latest version of Appsmith, and test and tweak it without affecting your production deployment.
 
 
 ## Keep Commits Atomic
 
-Maintaining atomic commits is essential for a clear and manageable version history in Git. Here's how:
+Atomic commits are small, self-contained changes that address a single concern or fix. This practice is essential for maintaining a clear and manageable version history in Git. Here's how to achieve atomic commits:
 
 - Each commit should represent a single logical change or fix. Avoid mixing unrelated changes within a single commit to maintain a clean and understandable history.
 
@@ -42,10 +41,10 @@ Maintaining atomic commits is essential for a clear and manageable version histo
 
 
 
-## Never Commit Directly to the Main Branch
+## Never Commit Directly to the Master Branch
 
 
-The main branch should be reserved for production-ready code. Developers should use separate branches for each feature or improvement to maintain code stability and reduce conflicts.
+The `master` branch should be reserved for production-ready code. Developers should use separate branches for each feature or improvement to maintain code stability and reduce conflicts.
 
 - To prevent accidental commits, make the base branch protected from [Git settings](/advanced-concepts/version-control-with-git/reference/git-settings).
 
@@ -65,6 +64,8 @@ You should avoid editing the UI on the same page, even across branches, as it of
 - Create new feature branches if needed to isolate UI changes and avoid conflicts.
 
 - Consider breaking down large UI modifications into smaller tasks.
+
+- Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
 
 
 ## Regularly Pull Changes
