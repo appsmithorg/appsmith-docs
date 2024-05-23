@@ -1,6 +1,6 @@
 # Git Common Errors
 
-The section illustrates common Git errors and how to resolve them on Appsmith.
+This page walks through common Git errors and how to resolve them on Appsmith.
 
 
 

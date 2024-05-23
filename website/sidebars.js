@@ -751,14 +751,6 @@ const sidebars = {
                 {
                   type: 'category',
                   collapsed: true,
-                  label: 'Concepts',
-                  items: [
-                    'advanced-concepts/version-control-with-git/concepts/auto-commit',
-                  ]
-                },
-                {
-                  type: 'category',
-                  collapsed: true,
                   label: 'Reference',
                   items: [
                     'advanced-concepts/version-control-with-git/reference/git-settings',
