@@ -31,13 +31,10 @@ Controlling access to specific pages within your Appsmith application is vital f
 
 ### Permissions
 
-To restrict page access, you must configure permissions for individual pages within an Appsmith app. For example, to provide access to two different sets of users, you have to create two custom roles. Let's name them **Manage Roles** and **Manage Reports**, and assign appropriate permissions to these roles.
-
-The tables below show the permissions assigned to these roles so that each role has access to different pages in the application. The **Manage Loans** role has access to review loan applications, and the **Manage Reports** role has access to review reports:
+To restrict page access, you must configure permissions for individual pages within an Appsmith app. For example, to provide access to two different sets of users, create two custom roles, assign appropriate permissions, and assign them to users or groups of users. Let's name the roles **Manage Loans** and **Manage Reports**, and permissions so that each role has access to different pages in the application. The **Manage Loans** role has access to review loan applications, and the **Manage Reports** role has access to review reports:
 
 #### Manage loans role
-
-
+The tabs below show the permissions assigned to different resources for Manage loans role:
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
     <ZoomImage
@@ -55,29 +52,9 @@ The tables below show the permissions assigned to these roles so that each role 
    </TabItem>
 </Tabs>
 
-
-<Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-   <p className="permission-footnote">(✓) Permission Assigned</p>
-   | Resource                      | Create | Edit  | Delete | View  | Execute | Make Public | Export |
-   | ----------------------------- | ------ | ----- | ------ | ----- | ------- | ----------- | ------ |
-   | Application - Loans           |        |       |        |   (✓) |         |             |        |
-   | Page - Loan Application       |        |  (✓)  |        |   (✓) |         |             |        |
-   | Query - getLoansDetailsforLoanId |        |  (✓)  |        |   (✓) |   (✓)   |             |        |
-   </TabItem>
-   <TabItem label="Datasources & Environments" value="datasources-and-environments">
-    <p className="permission-footnote">(✓) Permission Assigned</p>
-   | Resource                  | Execute | Create | Edit | Delete | View |
-   | ------------------------- | ------- | ------ | ---- | ------ | ---- |
-   | Datasources               |         |        |      |        |      |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; LoanDB |   (✓)   |        |      |        |      |
-   | Environment               |         |        |      |        |      |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Production |   (✓)   |        |      |        |      |
-   </TabItem>
-</Tabs>
-
 #### Manage reports role
 
+The tabs below show the permissions assigned to different resources for Manage reports role:
 
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
@@ -93,26 +70,6 @@ The tables below show the permissions assigned to these roles so that each role 
          alt="Configuration for Application Resources"
          caption="Configuration for Datasources & Environments"
       ></ZoomImage>
-   </TabItem>
-</Tabs>
-
-
-<Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-   <p className="permission-footnote">(✓) Permission Assigned</p>
-   | Resource                      | Create | Edit  | Delete | View  | Execute | Make Public | Export |
-   | ----------------------------- | ------ | ----- | ------ | ----- | ------- | ----------- | ------ |
-   | Application - Loans           |        |       |        |   (✓) |         |             |        |
-   | Page - Compliance Report      |        |  (✓)  |        |   (✓) |         |             |        |
-   | Query - getComplianceReport   |        |  (✓)  |        |   (✓) |   (✓)   |             |        |
-   </TabItem>
-   <TabItem label="Datasources & Environments" value="datasources-and-environments">
-   | Resource                  | Execute | Create | Edit | Delete | View |
-   | ------------------------- | ------- | ------ | ---- | ------ | ---- |
-   | Datasources               |         |        |      |        |      |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; LoanDB |   (✓)   |        |      |        |      |
-   | Environment               |         |        |      |        |      |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Production |   (✓)   |        |      |        |      |
    </TabItem>
 </Tabs>
 
