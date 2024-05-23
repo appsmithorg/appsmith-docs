@@ -37,7 +37,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
             <thead>
                 <tr>
                     <th></th>
-                    <th>Create</th>
+                    <th><a href="/advanced-concepts/granular-access-control/reference/permissions-2#create-permission">Create</a></th>
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>View</th>
