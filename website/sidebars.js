@@ -807,7 +807,8 @@ const sidebars = {
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/README'
+            'help-and-support/troubleshooting-guide/action-errors/README',
+            'help-and-support/troubleshooting-guide/git-errors'
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',
