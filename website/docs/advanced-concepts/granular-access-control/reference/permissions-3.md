@@ -91,6 +91,25 @@ The **Create** permission defines which resources users are allowed to create. O
     </tbody>
   </table>
 </details>
+<details>
+  <summary>Workflows</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Cascading Permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Workspaces</b></td>
+          <td>Edit, Delete</td>
+          <td>Allows adding new workflows, editing and deleting existing workflows within the Appsmith workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
 
 <details>
   <summary>Groups & Roles</summary>
@@ -212,7 +231,25 @@ The **Edit** permission defines which resources users are allowed to modify. Onc
       </tbody>
     </table>
 </details>
-
+<details>
+  <summary>Workflows</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Cascading Permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Workspaces</b></td>
+          <td>NA</td>
+          <td>Allows editing existing workflows within the Appsmith workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
 <details>
   <summary>Groups & Roles</summary>
   <table>
@@ -311,6 +348,25 @@ The **Delete** permission defines which resources users are allowed to remove. O
       </tbody>
     </table>
 </details>
+<details>
+  <summary>Workflows</summary>
+    <table>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Cascading Permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Workspaces</b></td>
+          <td>NA</td>
+          <td>Allows deleting existing workflows within the Appsmith workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
 <details>
   <summary>Groups & Roles</summary>
   <table>
