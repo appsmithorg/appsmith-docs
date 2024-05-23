@@ -31,9 +31,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
 
   <div className="gac-permissions">
         <p className="permission-footnote">
-        <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned |
-        <span style={{color: 'gray', fontWeight: 'bold'}}>( )</span> Permission Not Assigned |
-        <span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span> Permission Not Applicable
+        <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned
         </p>
         <table>
             <thead>
@@ -53,24 +51,24 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                 <tr>
                     <td>Workspace</td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Audit Logs</td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Groups</td>
@@ -78,10 +76,10 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Roles</td>
@@ -89,31 +87,31 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
                     <td>Default Roles</td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
                     <td>Custom Roles</td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
-                    <td><span style={{color: '#ed6227', fontWeight: 'bold'}}>-</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
             </tbody>
@@ -145,17 +143,103 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    |             | Create | Edit | Delete | View | Execute | Make Public | Export |
-    |-------------|--------|------|--------|------|---------|-------------|-------------|
-    | Workspace - Apps       | (✓) | (✓) | (✓) | (✓) |  | (✓) | (✓) | 
-    | Pages in Apps          | (✓) | (✓) | (✓) | (✓) |  |  |  |  |  | 
-    | Queries in Pages       |  | (✓) | (✓) | (✓) | (✓) |  |  |  |  | 
-    | Datasources            | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  | 
-    | Environments           | (✓) | (✓) | (✓) | (✓) | (✓) |  |  |  | 
-    | Production Environment |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
-    | Staging Environment    |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
-    | Workflows              | (✓) | (✓) | (✓) |  |  |  |  |  |  |  |
-    </div>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+            <th>Execute</th>
+            <th>Make Public</th>
+            <th>Export</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Workspace - Apps</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Pages in Apps</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Queries in Pages</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Datasources</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Environments</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Production Environment</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Staging Environment</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Workflows</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
@@ -174,16 +258,84 @@ The Developer role enables users to create, edit, and delete apps within a works
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    |                        | Create | Edit | Delete | View | Execute | 
-    |------------------------|--------|------|--------|------|---------|
-    | Workspace - Apps       | (✓)    | (✓)  | (✓)    | (✓)  |         |   
-    | Pages in Apps          | (✓)    | (✓)  | (✓)    | (✓)  |         |   
-    | Queries in Pages       |        | (✓)  | (✓)    | (✓)  | (✓)     | 
-    | Datasources            |    (✓) | (✓)  | (✓)    | (✓)  | (✓)     |    
-    | Environments           | (✓)    | (✓)  | (✓)    | (✓)  | (✓)     |   
-    | Production Environment |        | (✓)  | (✓)    |      | (✓)     |
-    | Staging Environment    |        | (✓)  | (✓)    |      | (✓)     |  
-    | Workflows              | (✓)    | (✓)  | (✓)    |      |         |
+    <table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+            <th>Execute</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Workspace - Apps</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pages in Apps</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Queries in Pages</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Datasources</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Environments</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Production Environment</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Staging Environment</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Workflows</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 </div>
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
@@ -204,16 +356,77 @@ The App Viewer role enables users to view apps, governed by the permissions allo
   <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    |                        | Create | Edit | Delete | View | Execute | Make Public | Export | 
-    |------------------------|--------|------|--------|------|---------|-------------|--------|
-    | Workspace - Apps       |     |  |      | (✓)  |      |          |     | 
-    | Pages in Apps          |     |  |      | (✓)  |      |          |     | 
-    | Queries in Pages       |     |  |      |   | (✓)     |          |     | 
-    | Datasources            |     |  |      |   | (✓)     |          |     | 
-    | Environments           |     |  |      | (✓)  | (✓)     |          |     | 
-    | Production Environment |     |  |      |   | (✓)     |          |     | 
-    | Staging Environment    |     |  |      |   |      |          |     | 
-  </div>
+    <table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+            <th>Execute</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Workspace - Apps</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pages in Apps</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Queries in Pages</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Datasources</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Environments</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Production Environment</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Staging Environment</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
   For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
@@ -232,15 +445,70 @@ The Developer role enables users to manage pages, queries, datasources, and envi
 
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
-    |             | Create | Edit | Delete | View | Execute | Make Public | Export |
-    |-------------|--------|------|--------|------|---------|-------------|-------------|
-    | Application            | (✓) | (✓) | (✓) | (✓) |  |  |  |  
-    | Pages in Application   | (✓) | (✓) | (✓) | (✓) |  |  |  |  
-    | Queries in Pages       |  | (✓) | (✓) | (✓) | (✓) |  |  |  
-    | Datasource            | (✓) |  |  | (✓) | (✓) |  |  |  
-    | Production Environment |  | (✓) | (✓) |  | (✓) |  |  |  |  |  |
-    | Staging Environment    |  |  |  |  | (✓) |  |  |  |  |  |
-    </div>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+            <th>Execute</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Application</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pages in Application</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Queries in Pages</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Datasource</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Production Environment</td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Staging Environment</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
 ### Limitations
 
@@ -257,15 +525,84 @@ The App Viewer role enables users to view pages, governed by the permissions all
  <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    |             | Create | Edit | Delete | View | Execute | Make Public | Export | Invite User | Remove User | Associate Role |
-    |-------------|--------|------|--------|------|---------|-------------|-------------|-------------|-------------|----------------|
-    | Application            |  |  |  | (✓) |  |  |  |  |  |  |
-    | Pages in Application   |  |  |  | (✓) |  |  |  |  |  |  |
-    | Queries in Pages       |  |  |  |  | (✓) |  |  |  |  |  |
-    | Datasources            |  |  |  |  | (✓) |  |  |  |  |  |
-    | Environments           |  |  |  | (✓) | (✓) |  |  |  |  |  |
-    | Production Environment |  |  |  |  | (✓) |  |  |  |  |  |
-    | Staging Environment    |  |  |  |  |  |  |  |  |  |  |
+    <table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Create</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>View</th>
+            <th>Execute</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Application</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Pages in Application</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Queries in Pages</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Datasources</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Datasource</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Environments</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Production Environment</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>Staging Environment</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
     </div>
     
 ### Limitations
