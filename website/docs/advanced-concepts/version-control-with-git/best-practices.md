@@ -16,7 +16,7 @@ Merge conflicts occur when different branches of code cannot be automatically re
 Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. Key points to consider:
 
 
-- Select a branching model that aligns with your team's workflow and project requirements. Popular models like GitFlow, GitHub Flow, and Trunk-Based Development offer different approaches suited for various scenarios. 
+- Select a branching model that aligns with your team's workflow and project requirements. Popular models like [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow), and [Trunk-Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) offer different approaches suited for various scenarios. 
 
 - Reserve the `master` branch for production-ready code. Only merge thoroughly tested and reviewed changes into this branch to ensure stability.
 
@@ -81,7 +81,7 @@ Keep your local repository up-to-date with changes from the remote counterpart t
 
 Properly managing secrets is crucial for maintaining the security of your application. Secrets include credentials used to access databases, APIs, communication services, and other sensitive information. Here are some best practices for handling secrets in your projects:
 
-- In Appsmith, credentials used to access configured datasources are automatically redacted and will never enter version control. 
+- In Appsmith, credentials used to access configured datasources are automatically redacted and never enters version control. 
 
 - If you have other types of secrets that need to be kept out of version control, ensure they are retrieved from a secure location at runtime so they are not present in your code.
 

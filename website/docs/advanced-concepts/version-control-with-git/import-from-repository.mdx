@@ -102,6 +102,32 @@ After completing the import process, you'll need to reconfigure the datasource s
 
 
 </TabItem>
+<TabItem label="Azure Repos" value="azure">
+
+
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Others** as the service provider, and click on **Configure Git**.
+
+4. After setting up an empty repository, navigate to the repository's landing page, click on the **Clone** button, select **SSH** and copy the **SSH** URL.
+
+5. Paste the SSH URL into the **Generate SSH Key** section in Appsmith. 
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are generated. Select the `RSA 4096` key when connecting to Azure Repos.
+
+7. Copy the key, then navigate to **User Settings** from the top right corner and open **SSH public keys**.
+
+8. Click **+ New key**, add the key name and paste the generated `RSA 4096` key in the Public Key Data input box.
+
+9. In Appsmith, click the **Connect Git** button.
+
+
+After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
+
+
+</TabItem>
 </Tabs>
 
 
@@ -109,6 +135,7 @@ After completing the import process, you'll need to reconfigure the datasource s
 
 
 
-## Further reading
+## See Also
 
-[Setup Environments With Git](/advanced-concepts/version-control-with-git/environments-with-git)
+* [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git)
+* [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
