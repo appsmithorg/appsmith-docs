@@ -1,8 +1,9 @@
 ---
-description: >-
+description: >
   Examples showcasing permissions while creating custom roles in granular access control.
 title: Custom Roles
 hide_title: true
+toc_max_heading_level: 2
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,38 +24,44 @@ tags={[
 
 <!-- vale on -->
 
-To secure applications and provide access based on your business needs, Appsmith allows you to create your own custom roles. This page showcases different scenarios and examples for creating custom roles to manage granular access effectively.
+To secure applications and provide access based on your business needs, Appsmith allows you to create custom roles. This page showcases different scenarios and examples for creating custom roles to manage granular access effectively.
 
 ## Restrict page access
 
-Controlling access to specific pages within your Appsmith application is vital for maintaining security and privacy. This page provides information on how to restrict page access to designated users or user groups, enabling you to enforce access control effectively.
+To restrict access to specific pages within your Appsmith application, you need to configure permissions at the page level. Create custom roles, assign appropriate permissions, and assign them to users or groups of users.
 
-### Permissions
+For example, in a loan application, you may want to:
+- Restrict access to the loan application page for users designated to review reports.
+- Restrict access to reports for users designated to review loan applications.
 
-To restrict page access, you must configure permissions for individual pages within an Appsmith app. For example, to provide access to two different sets of users, create two custom roles, assign appropriate permissions, and assign them to users or groups of users. Let's name the roles **Manage Loans** and **Manage Reports**, and permissions so that each role has access to different pages in the application. The **Manage Loans** role has access to review loan applications, and the **Manage Reports** role has access to review reports:
+Here, you define two roles:
+- **Manage loans** - Access to review loan applications.
+- **Manage reports** - Access to review reports.
 
-#### Manage loans role
-The tabs below show the permissions assigned to different resources for Manage loans role:
+### Manage loans role
+
+The tabs below show the permissions assigned to different resources for the Manage Loans role:
+
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
     <ZoomImage
          src="/img/restrict-page-access-manage-loan-app-resources.png" 
          alt="Configuration for Application Resources"
          caption="Configuration for Application Resources"
-      ></ZoomImage>
+    ></ZoomImage>
    </TabItem>
    <TabItem label="Datasources & Environments" value="datasources-and-environments">
    <ZoomImage
          src="/img/restrict-page-access-manage-loan-data-envs.png" 
-         alt="Configuration for Application Resources"
+         alt="Configuration for Datasources & Environments"
          caption="Configuration for Datasources & Environments"
-      ></ZoomImage>
+    ></ZoomImage>
    </TabItem>
 </Tabs>
 
-#### Manage reports role
+### Manage reports role
 
-The tabs below show the permissions assigned to different resources for Manage reports role:
+The tabs below show the permissions assigned to different resources for the Manage Reports role:
 
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
@@ -62,17 +69,17 @@ The tabs below show the permissions assigned to different resources for Manage r
          src="/img/restrict-page-access-manage-report-app-resources.png" 
          alt="Configuration for Application Resources"
          caption="Configuration for Application Resources"
-      ></ZoomImage>
+    ></ZoomImage>
    </TabItem>
    <TabItem label="Datasources & Environments" value="datasources-and-environments">
    <ZoomImage
          src="/img/restrict-page-access-manage-loan-data-envs.png" 
-         alt="Configuration for Application Resources"
+         alt="Configuration for Datasources & Environments"
          caption="Configuration for Datasources & Environments"
-      ></ZoomImage>
+    ></ZoomImage>
    </TabItem>
 </Tabs>
 
 ## See also
 
-* [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+* [Permissions](/advanced-concepts/granular-access-control/reference/permissions)
