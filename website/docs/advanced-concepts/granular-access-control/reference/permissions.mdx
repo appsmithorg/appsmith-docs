@@ -156,6 +156,61 @@ The **Create** permission defines which resources users are allowed to create. O
   </TabItem>
 </Tabs>
 
+## Create permission
+
+The **Create** permission determines which resources users are permitted to create within the Appsmith instance. Depending on the resource to which the permission is assigned, it will have cascading effects on child resources, inheriting the same permissions.
+
+### Cascading permissions
+
+Below is a summary of the cascading permissions associated with the **Create** permission for different resource categories:
+
+| Resource         | Cascading Permissions       |
+|------------------|-----------------------------|
+| Workspace        | Edit, View, Delete, Execute |
+| Application      | Edit, View, Delete, Execute |
+| Page             | Edit, View, Delete, Execute |
+| Datasources      | Edit, View, Delete, Execute |
+| Datasource       | Edit, View, Delete, Execute |
+| Environments     | Edit, View, Delete, Execute |
+| Environment      | Edit, View, Delete, Execute |
+| Workflows        | Edit, Delete                 |
+| Groups           | Edit, View, Delete, Invite User, Remove User |
+| Roles            | Edit, View, Delete, Associate Role         |
+| Custom Roles     | Edit, View, Delete, Associate Role         |
+| Workspaces       | NA                                      |
+
+### Permissions impact
+
+Below is a summary of the permissions impact associated with the **Create** permission for different resource categories:
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="application-resources">
+    <table>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Workspace</b></td>
+          <td>Allows creating, editing, viewing, and deleting applications, pages, and queries. It also permits running queries within the given workspace.</td>
+        </tr>
+        <tr>
+          <td><b>Application</b></td>
+          <td>Allows creating, editing, viewing, and deleting pages and queries within the application. It also permits running queries within the given application.</td>
+        </tr>
+        <tr>
+          <td><b>Page</b></td>
+          <td>Allows creating, editing, viewing, deleting, and running queries within the given application.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+
 ## Edit permission
 
 The **Edit** permission defines which resources users are allowed to modify. Once granted, it permits users to edit existing resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
