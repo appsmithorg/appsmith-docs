@@ -34,11 +34,6 @@ Granular Access Control (GAC) in Appsmith allows you to specify precise access p
 * **Users** - Individual users who need access to the Appsmith instance.
 * **User Groups** - Collections of users that allow you to assign roles to multiple users simultaneously. Users in a group inherit the roles assigned to that group.
 
-## How GAC works
-
-1. **Create Roles** - Bundle permissions into custom roles for easier management.
-2. **Assign Roles** - Assign roles to individual users or user groups to grant the necessary permissions.
-
 ## Getting started
 
 To help you get started with Granular Access Control in Appsmith, here are some key areas you can explore. Click on the cards to learn more about each aspect.
