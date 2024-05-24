@@ -1,4 +1,4 @@
-# Git Common Errors
+# Git Errors
 
 This page shows how to resolve common Git errors on Appsmith.
 
