@@ -34,7 +34,7 @@ Implement a well-defined branching strategy to enhance collaboration and maintai
 
 ## Keep Commits Atomic
 
-Atomic commits are small, self-contained changes that address a single concern or fix. Each commit should represent a single logical change or fix. Avoid mixing unrelated changes within a single commit to maintain a clean and understandable history. 
+Atomic commits are small, self-contained changes that address a single concern. Each commit should represent a single logical change or fix. Avoid mixing unrelated changes within a single commit to maintain a clean and understandable history. 
 
 For example, if you made a specific JSObject-related change, you can easily revert that commit without affecting other parts of your codebase. This ensures that each commit is easy to understand, test, and debug, making collaboration and code maintenance more efficient.
 
@@ -60,13 +60,13 @@ Keep your local repository up-to-date with changes from the remote counterpart t
 
 - Pull changes frequently to incorporate updates from the remote repository into your local branch. You can do this by clicking on the **Pull icon** at the bottom left corner.
 
-- Merge changes from the `master` branch regularly into the feature branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
+- Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
 
 ## Storing secrets
 
 Properly managing secrets is crucial for maintaining the security of your application. Secrets include credentials used to access databases, APIs, communication services, and other sensitive information. Here are some best practices for handling secrets in your projects:
 
-- In Appsmith, credentials used to access configured datasources are automatically redacted and never enter version control.
+- In Appsmith, credentials used to access configured datasources are automatically redacted and never enter the version control system.
 
 - For other types of secrets that need to be kept out of version control, store them in a secure location such as repository environment variables or dedicated secret management tools like Secrets Manager, Azure Key Vault, or HashiCorp Vault.
 
@@ -81,5 +81,5 @@ Properly managing secrets is crucial for maintaining the security of your applic
 
  ## Push Your Code to a Remote Repository Often
 
-Regularly push your Appsmith changes to a remote repository. This practice helps protect against data loss due to hardware failures and keeps your team synchronized with the latest project updates. This can be done by clicking on the **+** plus icon located in the bottom left corner. 
+Regularly push your Appsmith changes to the remote repository. This practice helps protect against data loss due to hardware failures and keeps your team synchronized with the latest project updates. This can be done by clicking on the **+** plus icon located in the bottom left corner. 
 
