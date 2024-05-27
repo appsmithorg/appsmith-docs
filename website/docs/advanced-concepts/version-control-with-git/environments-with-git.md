@@ -68,11 +68,9 @@ For more information see [Default Branch](/advanced-concepts/version-control-wit
 
 Once you've configured the different instances, follow these steps to build apps, manage changes, and deploy them:
 
-1. Make changes in the *Staging* instance.
+1. Create different feature branches from the `Staging` branch and merge them into `Staging` regularly through pull requests.
 
-2. Create different feature branches from the `Staging` branch and merge them into `Staging` regularly through pull requests.
+2. Once a milestone is completed, merge the `Staging` branch into the `master` branch via a pull request.
 
-3. Once a milestone is completed, merge the `Staging` branch into the `master` branch.
-
-4. In the *Production* instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
+3. In the *Production* instance manually pull the `master` branch to deploy the app for end users. For Enterprise, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 

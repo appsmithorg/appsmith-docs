@@ -59,23 +59,6 @@ If facing conflicts in the Appsmith UI while merging branch `A` into branch `B`,
 See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
 
 
-### Your current branch has uncommitted changes
-
-<Message
- messageContainerClassName='error'
-messageContent='Your current branch has uncommitted changes. Please commit them before proceeding to merge.'></Message>
-
-
-
-#### Cause
-
-This error occurs when you attempt to merge branches without committing the changes in the current branch.
-
-
-#### Solution
-
- Before merging the changes, commit and push the changes to the remote counterpart. You can click on the **+** icon on the bottom left to commit the changes.
-
 
  ### Git push failed for pending upstream changes
 
@@ -101,4 +84,5 @@ To resolve this:
 - In Appsmith, discard and pull the changes into branch `A`. 
 
 
+See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
 
