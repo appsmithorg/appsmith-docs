@@ -33,11 +33,11 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
         <p className="permission-footnote">
         <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned
         </p>
-        <table>
+        <table className="permissions-table">
             <thead>
                 <tr>
                     <th></th>
-                    <th><a href="/advanced-concepts/granular-access-control/reference/permissions-2#create-permission">Create</a></th>
+                    <th>Create</th>
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>View</th>
@@ -49,29 +49,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
             </thead>
             <tbody>
                 <tr>
-                    <td>Workspace</td>
-                    <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Audit Logs</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Groups</td>
+                    <td>**Groups**</td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -82,7 +60,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Roles</td>
+                    <td>**Roles**</td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -93,7 +71,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
-                    <td>Default Roles</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Default Roles</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -104,7 +82,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
-                    <td>Custom Roles</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Custom Roles</td>
                     <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -113,6 +91,28 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td></td>
                     <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                </tr>
+                <tr>
+                    <td>**Workspace**</td>
+                    <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>**Audit Logs**</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -143,7 +143,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table>
+<table className="permissions-table">
     <thead>
         <tr>
             <th></th>
@@ -157,8 +157,8 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Workspace - Apps</td>
+         <tr>
+            <td>**Workspace**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -168,7 +168,17 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Pages in Apps</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Applications</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Pages</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -178,7 +188,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Queries in Pages</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;All Queries</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -188,7 +198,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Datasources</td>
+            <td>**Datasources**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -198,7 +208,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Datasources</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -208,7 +218,17 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Production Environment</td>
+            <td>**Environments**</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -218,7 +238,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Staging Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Staging</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -228,7 +248,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
             <td></td>
         </tr>
         <tr>
-            <td>Workflows</td>
+            <td>**Workflows**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -258,7 +278,7 @@ The Developer role enables users to create, edit, and delete apps within a works
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    <table>
+<table className="permissions-table">
     <thead>
         <tr>
             <th></th>
@@ -270,8 +290,8 @@ The Developer role enables users to create, edit, and delete apps within a works
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Workspace - Apps</td>
+         <tr>
+            <td>**Workspace**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -279,7 +299,7 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td></td>
         </tr>
         <tr>
-            <td>Pages in Apps</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Applications</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -287,7 +307,15 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td></td>
         </tr>
         <tr>
-            <td>Queries in Pages</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Pages</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Queries</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -295,7 +323,7 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Datasources</td>
+            <td>**Datasources**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -303,7 +331,7 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Datasources</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -311,7 +339,15 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Production Environment</td>
+            <td>**Environments**</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -319,7 +355,7 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Staging Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Staging</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -327,7 +363,7 @@ The Developer role enables users to create, edit, and delete apps within a works
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Workflows</td>
+            <td>**Workflows**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -356,7 +392,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
   <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    <table>
+<table className="permissions-table">
     <thead>
         <tr>
             <th></th>
@@ -369,7 +405,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
     </thead>
     <tbody>
         <tr>
-            <td>Workspace - Apps</td>
+            <td>**Workspace**</td>
             <td></td>
             <td></td>
             <td></td>
@@ -377,7 +413,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
             <td></td>
         </tr>
         <tr>
-            <td>Pages in Apps</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Applications</td>
             <td></td>
             <td></td>
             <td></td>
@@ -385,7 +421,15 @@ The App Viewer role enables users to view apps, governed by the permissions allo
             <td></td>
         </tr>
         <tr>
-            <td>Queries in Pages</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Pages</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Queries</td>
             <td></td>
             <td></td>
             <td></td>
@@ -393,7 +437,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Datasources</td>
+            <td>**Datasources**</td>
             <td></td>
             <td></td>
             <td></td>
@@ -401,15 +445,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Environments</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-        </tr>
-        <tr>
-            <td>Production Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Datasources</td>
             <td></td>
             <td></td>
             <td></td>
@@ -417,12 +453,20 @@ The App Viewer role enables users to view apps, governed by the permissions allo
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Staging Environment</td>
+            <td>**Environments**</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
     </tbody>
 </table>
@@ -446,7 +490,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table>
+<table className="permissions-table">
     <thead>
         <tr>
             <th></th>
@@ -459,7 +503,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
     </thead>
     <tbody>
         <tr>
-            <td>Application</td>
+            <td>**Application**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -467,7 +511,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
             <td></td>
         </tr>
         <tr>
-            <td>Pages in Application</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Pages</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -475,7 +519,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
             <td></td>
         </tr>
         <tr>
-            <td>Queries in Pages</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Queries</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -483,7 +527,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Datasource</td>
+            <td>**Datasources**</td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td></td>
             <td></td>
@@ -491,7 +535,23 @@ The Developer role enables users to manage pages, queries, datasources, and envi
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Production Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Datasource Name</td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td></td>
+            <td></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+            <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+            <td>**Environments**</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production</td>
             <td></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -499,7 +559,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Staging Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Staging</td>
             <td></td>
             <td></td>
             <td></td>
@@ -525,7 +585,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
  <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-    <table>
+<table className="permissions-table">
     <thead>
         <tr>
             <th></th>
@@ -538,7 +598,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
     </thead>
     <tbody>
         <tr>
-            <td>Application</td>
+            <td>**Application**</td>
             <td></td>
             <td></td>
             <td></td>
@@ -546,7 +606,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td></td>
         </tr>
         <tr>
-            <td>Pages in Application</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Pages</td>
             <td></td>
             <td></td>
             <td></td>
@@ -554,7 +614,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td></td>
         </tr>
         <tr>
-            <td>Queries in Pages</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;All Queries</td>
             <td></td>
             <td></td>
             <td></td>
@@ -562,7 +622,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Datasources</td>
+            <td>**Datasources**</td>
             <td></td>
             <td></td>
             <td></td>
@@ -570,7 +630,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td></td>
         </tr>
         <tr>
-            <td>Datasource</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Datasource Name</td>
             <td></td>
             <td></td>
             <td></td>
@@ -578,7 +638,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Environments</td>
+            <td>**Environments**</td>
             <td></td>
             <td></td>
             <td></td>
@@ -586,7 +646,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td></td>
         </tr>
         <tr>
-            <td>Production Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production</td>
             <td></td>
             <td></td>
             <td></td>
@@ -594,7 +654,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
             <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
         </tr>
         <tr>
-            <td>Staging Environment</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Staging</td>
             <td></td>
             <td></td>
             <td></td>

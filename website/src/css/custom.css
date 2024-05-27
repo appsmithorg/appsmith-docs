@@ -746,3 +746,7 @@ h4+.tags {
   font-size: 14px;
   color: #777;
 }
+
+.permissions-table td {
+  text-align: left;
+}
