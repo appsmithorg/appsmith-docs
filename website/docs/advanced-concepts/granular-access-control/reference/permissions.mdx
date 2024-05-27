@@ -30,7 +30,7 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="create-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -45,12 +45,12 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
           <td>Allows creating, editing, viewing, and deleting applications, pages, and queries. It also permits running queries within the given workspace.</td>
         </tr>
         <tr>
-          <td><b>Application</b></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Application</td>
           <td>Edit, View, Delete, Execute</td>
           <td>Allows creating, editing, viewing, and deleting pages and queries. It also permits running queries within the given application.</td>
         </tr>
         <tr>
-          <td><b>Page</b></td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Page</td>
           <td>Edit, View, Delete, Execute</td>
           <td>Allows creating, editing, viewing, deleting, and running queries within the given application.</td>
         </tr>
@@ -58,7 +58,7 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
     </table>
   </TabItem>
   <TabItem label="Datasources & Environments" value="create-datasources-and-environments">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -91,7 +91,7 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
     </table>
   </TabItem>
   <TabItem label="Workflows" value="create-workflows">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -109,7 +109,7 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
     </table>
   </TabItem>
   <TabItem label="Groups & Roles" value="create-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -137,7 +137,7 @@ The **Create** permission permits users to create new resources in Appsmith. Whe
     </table>
   </TabItem>
   <TabItem label="Others" value="create-others">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -162,7 +162,7 @@ The **Edit** permission defines permits users to edit existing resources in Apps
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="edit-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -190,7 +190,7 @@ The **Edit** permission defines permits users to edit existing resources in Apps
     </table>
   </TabItem>
   <TabItem label="Datasources & Environments" value="edit-datasources-and-environments">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -223,7 +223,7 @@ The **Edit** permission defines permits users to edit existing resources in Apps
     </table>
   </TabItem>
   <TabItem label="Workflows" value="edit-workflows">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -241,7 +241,7 @@ The **Edit** permission defines permits users to edit existing resources in Apps
     </table>
   </TabItem>
   <TabItem label="Groups & Roles" value="edit-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -276,7 +276,7 @@ The **Delete** permission defines permits users to delete existing resources in 
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="delete-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -304,7 +304,7 @@ The **Delete** permission defines permits users to delete existing resources in 
     </table>
   </TabItem>
   <TabItem label="Datasources & Environments" value="delete-datasources-and-environments">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -337,7 +337,7 @@ The **Delete** permission defines permits users to delete existing resources in 
     </table>
   </TabItem>
   <TabItem label="Workflows" value="delete-workflows">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -355,7 +355,7 @@ The **Delete** permission defines permits users to delete existing resources in 
     </table>
   </TabItem>
   <TabItem label="Groups & Roles" value="delete-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -390,7 +390,7 @@ The **View** permission permits users to view existing resources in Appsmith. Wh
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="view-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -418,7 +418,7 @@ The **View** permission permits users to view existing resources in Appsmith. Wh
     </table>
   </TabItem>
   <TabItem label="Datasources & Environments" value="view-datasources-and-environments">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -451,7 +451,7 @@ The **View** permission permits users to view existing resources in Appsmith. Wh
     </table>
   </TabItem>
   <TabItem label="Groups & Roles" value="view-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -479,7 +479,7 @@ The **View** permission permits users to view existing resources in Appsmith. Wh
     </table>
   </TabItem>
   <TabItem label="Others" value="view-others">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -504,7 +504,7 @@ The **Execute** permission permits users to execute actions such as running quer
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="execute-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -532,7 +532,7 @@ The **Execute** permission permits users to execute actions such as running quer
     </table>
   </TabItem>
   <TabItem label="Datasources & Environments" value="execute-datasources-and-environments">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -572,7 +572,7 @@ The **Make Public** permission permits users to change the access level of resou
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="make-public-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -602,7 +602,7 @@ The **Export** permission permits users to export data and resources from Appsmi
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="execute-application-resources">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -632,7 +632,7 @@ The Invite User permission it permits users to invite other users to Appsmith wo
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="invite-user-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -657,7 +657,7 @@ The Remove User permission permits users to remove other users from the resource
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="remove-user-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
@@ -682,7 +682,7 @@ The Associate Role permission permits users to assign or change roles of other u
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="associate-role-groups-and-roles">
-    <table>
+    <table className="permissions-table">
       <thead>
         <tr>
           <th>Resource</th>
