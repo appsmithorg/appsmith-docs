@@ -29,7 +29,7 @@ Permissions in Appsmith govern the level of access and actions users can perform
 The **Create** permission defines which resources users are allowed to create. Once granted, it permits users to create new resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="create-application-resources">
     <table>
       <thead>
         <tr>
@@ -57,7 +57,7 @@ The **Create** permission defines which resources users are allowed to create. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+  <TabItem label="Datasources & Environments" value="create-datasources-and-environments">
     <table>
       <thead>
         <tr>
@@ -90,7 +90,7 @@ The **Create** permission defines which resources users are allowed to create. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Workflows" value="workflows">
+  <TabItem label="Workflows" value="create-workflows">
     <table>
       <thead>
         <tr>
@@ -108,7 +108,7 @@ The **Create** permission defines which resources users are allowed to create. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="create-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -136,7 +136,7 @@ The **Create** permission defines which resources users are allowed to create. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Others" value="others">
+  <TabItem label="Others" value="create-others">
     <table>
       <thead>
         <tr>
@@ -156,67 +156,12 @@ The **Create** permission defines which resources users are allowed to create. O
   </TabItem>
 </Tabs>
 
-## Create permission
-
-The **Create** permission determines which resources users are permitted to create within the Appsmith instance. Depending on the resource to which the permission is assigned, it will have cascading effects on child resources, inheriting the same permissions.
-
-### Cascading permissions
-
-Below is a summary of the cascading permissions associated with the **Create** permission for different resource categories:
-
-| Resource         | Cascading Permissions       |
-|------------------|-----------------------------|
-| Workspace        | Edit, View, Delete, Execute |
-| Application      | Edit, View, Delete, Execute |
-| Page             | Edit, View, Delete, Execute |
-| Datasources      | Edit, View, Delete, Execute |
-| Datasource       | Edit, View, Delete, Execute |
-| Environments     | Edit, View, Delete, Execute |
-| Environment      | Edit, View, Delete, Execute |
-| Workflows        | Edit, Delete                 |
-| Groups           | Edit, View, Delete, Invite User, Remove User |
-| Roles            | Edit, View, Delete, Associate Role         |
-| Custom Roles     | Edit, View, Delete, Associate Role         |
-| Workspaces       | NA                                      |
-
-### Permissions impact
-
-Below is a summary of the permissions impact associated with the **Create** permission for different resource categories:
-
-<Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
-    <table>
-      <thead>
-        <tr>
-          <th>Resource</th>
-          <th>Permission Impact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><b>Workspace</b></td>
-          <td>Allows creating, editing, viewing, and deleting applications, pages, and queries. It also permits running queries within the given workspace.</td>
-        </tr>
-        <tr>
-          <td><b>Application</b></td>
-          <td>Allows creating, editing, viewing, and deleting pages and queries within the application. It also permits running queries within the given application.</td>
-        </tr>
-        <tr>
-          <td><b>Page</b></td>
-          <td>Allows creating, editing, viewing, deleting, and running queries within the given application.</td>
-        </tr>
-      </tbody>
-    </table>
-  </TabItem>
-</Tabs>
-
-
 ## Edit permission
 
 The **Edit** permission defines which resources users are allowed to modify. Once granted, it permits users to edit existing resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="edit-application-resources">
     <table>
       <thead>
         <tr>
@@ -244,7 +189,7 @@ The **Edit** permission defines which resources users are allowed to modify. Onc
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+  <TabItem label="Datasources & Environments" value="edit-datasources-and-environments">
     <table>
       <thead>
         <tr>
@@ -277,7 +222,7 @@ The **Edit** permission defines which resources users are allowed to modify. Onc
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Workflows" value="workflows">
+  <TabItem label="Workflows" value="edit-workflows">
     <table>
       <thead>
         <tr>
@@ -295,7 +240,7 @@ The **Edit** permission defines which resources users are allowed to modify. Onc
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="edit-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -330,7 +275,7 @@ The **Edit** permission defines which resources users are allowed to modify. Onc
 The **Delete** permission defines which resources users are allowed to remove. Once granted, it permits users to delete existing resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="delete-application-resources">
     <table>
       <thead>
         <tr>
@@ -358,7 +303,7 @@ The **Delete** permission defines which resources users are allowed to remove. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+  <TabItem label="Datasources & Environments" value="delete-datasources-and-environments">
     <table>
       <thead>
         <tr>
@@ -391,7 +336,7 @@ The **Delete** permission defines which resources users are allowed to remove. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Workflows" value="workflows">
+  <TabItem label="Workflows" value="delete-workflows">
     <table>
       <thead>
         <tr>
@@ -409,7 +354,7 @@ The **Delete** permission defines which resources users are allowed to remove. O
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="delete-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -444,7 +389,7 @@ The **Delete** permission defines which resources users are allowed to remove. O
 The **View** permission defines which resources users are allowed to see. Once granted, it permits users to view existing resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="view-application-resources">
     <table>
       <thead>
         <tr>
@@ -472,7 +417,7 @@ The **View** permission defines which resources users are allowed to see. Once g
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+  <TabItem label="Datasources & Environments" value="view-datasources-and-environments">
     <table>
       <thead>
         <tr>
@@ -505,7 +450,7 @@ The **View** permission defines which resources users are allowed to see. Once g
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="view-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -533,7 +478,7 @@ The **View** permission defines which resources users are allowed to see. Once g
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Others" value="others">
+  <TabItem label="Others" value="view-others">
     <table>
       <thead>
         <tr>
@@ -558,7 +503,7 @@ The **View** permission defines which resources users are allowed to see. Once g
 The **Execute** permission defines which resources users are allowed to run. Once granted, it permits users to execute actions such as running queries in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="execute-application-resources">
     <table>
       <thead>
         <tr>
@@ -586,7 +531,7 @@ The **Execute** permission defines which resources users are allowed to run. Onc
       </tbody>
     </table>
   </TabItem>
-  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+  <TabItem label="Datasources & Environments" value="execute-datasources-and-environments">
     <table>
       <thead>
         <tr>
@@ -626,7 +571,7 @@ The **Execute** permission defines which resources users are allowed to run. Onc
 The **Make Public** permission allows users to make certain resources publicly accessible. Once granted, it permits users to change the access level of resources, making them available to the public. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="make-public-application-resources">
     <table>
       <thead>
         <tr>
@@ -656,7 +601,7 @@ The **Make Public** permission allows users to make certain resources publicly a
 The **Export** permission defines which resources users are allowed to export. Once granted, it permits users to export data and resources from Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Application Resources" value="application-resources">
+  <TabItem label="Application Resources" value="execute-application-resources">
     <table>
       <thead>
         <tr>
@@ -686,7 +631,7 @@ The **Export** permission defines which resources users are allowed to export. O
 The Invite User permission defines which resources users are allowed to invite new users to. Once granted, it permits users to invite other users to access the resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="invite-user-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -711,7 +656,7 @@ The Invite User permission defines which resources users are allowed to invite n
 The Remove User permission defines which users can be removed from specific resources. Once granted, it permits users to remove other users from the resources in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="remove-user-groups-and-roles">
     <table>
       <thead>
         <tr>
@@ -736,7 +681,7 @@ The Remove User permission defines which users can be removed from specific reso
 The Associate Role permission defines which users can be assigned to specific roles within resources. Once granted, it permits users to assign or change roles of other users in Appsmith. Depending on the resource to which the permission is assigned, it will have a cascading effect on the child resources, and the same permissions will be inherited by them.
 
 <Tabs queryString="gac-resource">
-  <TabItem label="Groups & Roles" value="groups-and-roles">
+  <TabItem label="Groups & Roles" value="associate-role-groups-and-roles">
     <table>
       <thead>
         <tr>

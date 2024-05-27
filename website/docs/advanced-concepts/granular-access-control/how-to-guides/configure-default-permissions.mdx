@@ -39,63 +39,21 @@ Follow these steps to configure permissions:
 1. Navigate to Admin Settings by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
 2. From the sidebar, under **Access Control**, select **Roles**.
 3. Toggle **Default Roles** to show all the default roles.
-4. Click the pencil icon next to _Default Role For All Users_ that opens a configuration screen as shown below:
 
-   <ZoomImage src="/img/GAC-Default-roles-for-all-users-configuration.png" alt="Configuration for Default Roles for All Users" caption="Configuration for Default Roles for All Users"/>
+   <ZoomImage src="/img/GAC-Default-Roles-toggle.png" alt="Toggle the Default roles options to view Default Roles" caption="Toggle the Default roles options to view Default Roles"
+   />
 
-5. Based on your permission needs, provide access to resources. For example, if you want to provide read-only access to the _Annual Sales report_ app so that all authenticated users can view it, assign permissions as below:
-
-  
-<Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-
-      ![Configuration for Application Resources](/img/default-roles-app-resources.png)
-
-     <!-- <ZoomImage
-         src="/img/default-roles-app-resources-config.png" 
-         alt="Configuration for Application Resources"
-         caption="Configuration for Application Resources"
-      ></ZoomImage>-->
-   </TabItem>
-      <TabItem label="Datasources & Environments" value="datasources-and-environments">
-
- ![Configuration for Application Resources](/img/default-roles-datasource-envs.png)
-     <!-- <ZoomImage
-         src="/img/default-roles-datasource-env-config.png" 
-         alt="Configuration for Datasources and Environments"
-         caption="Configuration for Datasources and Environments"
-      ></ZoomImage> -->
-   </TabItem>
-</Tabs>
-
-<Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-
-     <ZoomImage
-         src="/img/default-roles-app-resources.png" 
-         alt="Configuration for Application Resources"
-         caption="Configuration for Application Resources"
-      ></ZoomImage>
-   </TabItem>
-      <TabItem label="Datasources & Environments" value="datasources-and-environments">
-
-     <ZoomImage
-         src="/img/default-roles-datasource-envs.png" 
-         alt="Configuration for Datasources and Environments"
-         caption="Configuration for Datasources and Environments"
-      ></ZoomImage>
-   </TabItem>
-</Tabs>
-
+4. Click the pencil icon next to _Default Role For All Users_ that opens a configuration screen.
+5. Based on your permission needs, provide access to resources. For example, if you want to provide read-only access to an application so that all authenticated users can view it, assign permissions as below:
 
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
    <p className="permission-footnote">(✓) Permission Assigned</p>
    | Resource  Permission    | Create | Edit    |Delete| View   | Execute | Make Public | Export |
    | ------------------------| --------|--------|------|--------|---------|-------------|--------|
-   | Sales Report            |         |        |      |   (✓)  |          |            |        |
-   | Annual Sales Report     |         |        |      |   (✓)  |          |            |        |
-   | sel_annual_sales_report |         |        |      |        |   (✓)    |            |        |
+   | Workspace          |         |        |      |   (✓)  |          |            |        |
+   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Application |         |        |      |   (✓)  |          |            |        |
+   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  Query |     |        |      |        |   (✓)    |            |        |
   
       
    </TabItem>
@@ -103,15 +61,15 @@ Follow these steps to configure permissions:
        | Resource  Permission                          | Execute | Create    |Edit| Delete   | View | 
       | -----------------------------------------------| --------|--------|------|--------|---------|
       | Datasources                                    |         |        |      |        |         | 
-      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Sales          |    (✓)  |        |      |        |         | 
-      | Environment                                    |         |        |      |        |         | 
+      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Datasource name          |    (✓)  |        |      |        |         | 
+      | Environments                                    |         |        |      |        |         | 
       | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production      |   (✓)   |        |      |        |         |
    </TabItem>
 </Tabs>
 
 6. Once you have configured the permissions, click the **Save changes** button. 
 
-This configuration provides read-only access to all users once authenticated to the Annual Sales Report app. For more information about permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+This configuration provides read-only access to all users once authenticated to the application. For more information about permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
 ## Troubleshooting
 
