@@ -37,3 +37,7 @@ This command generates static content into the `build` directory. You can use th
 $ npm run serve
 ```
 This command is used to verify the content generated in the `build` directory. It acts as a simulator on your local machine to verify the actual build once the content is merged/deployed to the website.
+
+## One-Click Deploymentx
+
+[![Deploy to RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploylobe.svg)](https://repocloud.io/details/?app_id=239)
