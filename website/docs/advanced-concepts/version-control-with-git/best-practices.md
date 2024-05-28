@@ -6,7 +6,9 @@ This page provides essential Git best practices to help teams avoid merge confli
 
 ## Use Branching Strategy
 
-Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. Key points to consider:
+Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git).
+
+
 
  <ZoomImage
         src="/img/gitflow.webp"
@@ -18,17 +20,17 @@ Implement a well-defined branching strategy to enhance collaboration and maintai
 
 - Select a branching model that aligns with your team's workflow and project requirements. Popular models like [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow), and [Trunk-Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) offer different approaches suited for various scenarios. 
 
-- Developers should create separate `feature` branches for implementing features and improvements.
+- Create different feature branches from the `Staging` branch and merge them into `Staging` regularly through pull requests.
 
-- Create a `staging` branch for testing features. Merge feature branches into this branch and raise pull requests to `master` after testing.
+- Create a `Staging` branch for testing features. Once a milestone is completed, merge the `Staging` branch into the `master` branch via a pull request.
 
 - Reserve the `master` branch for production-ready code. Only merge thoroughly tested and reviewed changes into this branch to ensure stability.
 
 - To prevent accidental commits, make the `master` branch protected from [Git settings](/advanced-concepts/version-control-with-git/reference/git-settings).
 
-- If you are self-hosting Appsmith and want to stick with an older platform version in `production` while you test that your apps are compatible with an updated `release`. You can create a new branch, fire up a Docker container running the latest version of Appsmith, and test and tweak it without affecting your production deployment.
+- If you have configured a multi-instance setup, manually pull the `master` branch in the *Production* instance to deploy changes. If you are an enterprise user, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 
-- To prevent conflicts, multiple developers should avoid editing the UI on the same page, even across different branches.
+- To prevent conflicts, multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
 
 - Keep branches and pull requests short-lived to streamline the development process and minimize conflicts.
 
@@ -55,7 +57,7 @@ Atomic commits are small, self-contained changes that address a single concern. 
 
 
 
-## Regularly Pull Changes
+## Regularly Update Changes
 
 Keep your local repository up-to-date with changes from the remote counterpart to minimize conflicts and ensure smooth collaboration.
 

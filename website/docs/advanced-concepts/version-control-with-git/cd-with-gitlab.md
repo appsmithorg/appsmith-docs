@@ -1,13 +1,13 @@
 ---
 description: Continuous Delivery with GitLab CI/CD
-title: Setup CI/CD Using GitLab
+title: Configure CI/CD Using GitLab
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Setup CI/CD Using GitLab</h1>
+ <h1>Configure CI/CD Using GitLab</h1>
 
 <Tags
 tags={[

@@ -1,13 +1,13 @@
 ---
 description: Continuous Delivery with Bitbucket Pipelines
-title: Setup CI/CD Using Bitbucket Pipelines
+title: Configure CI/CD Using Bitbucket Pipelines
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Setup CI/CD Using Bitbucket Pipelines</h1>
+ <h1>Configure CI/CD Using Bitbucket Pipelines</h1>
 
 <Tags
 tags={[

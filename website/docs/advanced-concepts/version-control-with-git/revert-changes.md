@@ -81,10 +81,7 @@ Some Git platforms, like [GitHub](https://docs.github.com/en/desktop/managing-co
 
 
 
-## See also
+## See Also
 
-* Git Best Practices
-* Resolve Merge Conflicts
-
-
-
+- [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
+- [Best Practices](/advanced-concepts/version-control-with-git/best-practices)

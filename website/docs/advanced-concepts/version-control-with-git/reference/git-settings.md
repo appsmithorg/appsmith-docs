@@ -1,12 +1,21 @@
-# Git Settings
+# Git 
 
-This page provides information on all Git-related settings available within Appsmith. These settings become available once you've connected your app to Git. You can access these settings by clicking on the settings icon located on the left side of the bottom bar.
+This page provides information on all Git-related properties and settings available within Appsmith. These properties become available once you've connected your app to Git. 
 
 
 <ZoomImage src="/img/git-settings.png" alt="" caption="" />
 
 
-## General
+
+### Commit and Push
+
+
+
+## Git Settings 
+
+You can access these settings by clicking on the settings icon located on the left side of the bottom bar.
+
+### General
 
 These properties are customizable options accessible within the Git settings modal.
 
@@ -40,7 +49,7 @@ This section allows you to change important Git settings such as disabling auto-
 
 </dd>
 
-## Branch
+### Branch
 
 These settings are customizable options available for modifying branch-related settings.
 
@@ -112,7 +121,7 @@ By default, Appsmith enables the [protected branch](#change-protected-branch) fe
 <div className="tag-wrapper">
 
 
-## Continuous delivery
+### Continuous delivery
 
 
 <Tags

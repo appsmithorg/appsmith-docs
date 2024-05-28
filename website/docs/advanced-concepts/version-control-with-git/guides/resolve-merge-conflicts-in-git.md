@@ -77,3 +77,7 @@ If you face conflicts within the same branch due to changes made remotely, open 
 </dd>
 
 
+## See Also
+
+- [Revert Changes](/advanced-concepts/version-control-with-git/revert-changes)
+- [Best Practices](/advanced-concepts/version-control-with-git/best-practices)

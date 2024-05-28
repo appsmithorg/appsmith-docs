@@ -41,6 +41,8 @@ With these steps, you have successfully connected to Git.
 A user needs to have **Create** permission for application resources on the workspace to be able to connect or disconnect an app to Git. This permission can be shared through Workspace Administrator and Developer roles or through custom roles using granular access control. For more information, see [Default Roles](/advanced-concepts/invite-users#default-roles-for-workspace) and [Granular Access Control](/advanced-concepts/granular-access-control/roles#application-resources).
 :::
 
-## Next steps
 
-[Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
+## See Also
+
+- [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
+- [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git)
