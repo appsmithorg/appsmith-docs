@@ -50,7 +50,7 @@ Atomic commits are small, self-contained changes that address a single concern. 
 
 - Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
 
-- Regularly push your Appsmith changes to the remote repository. This can be done by clicking on the **+** plus icon located in the bottom left corner. 
+- Regularly push your Appsmith changes to the remote repository. 
 
 - Communicate with your teammates before making any changes to ensure coordination.
 
