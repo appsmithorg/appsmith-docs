@@ -14,6 +14,17 @@ This guide shows you how to set up multiple instances in Appsmith using Git, mak
 * Basic knowledge of Git.
 
 
+
+
+
+ <ZoomImage
+        src="/img/git-new-ins.png"
+        alt=""
+        caption=""
+        lazyLoad="true"
+/>
+
+
 ## Setup instances
 
 Follow these steps to set up multiple instances for your app:
@@ -63,4 +74,3 @@ For more information see [Default Branch](/advanced-concepts/version-control-wit
 </dd>
 
 8. To build and deploy your application, follow this [branching strategy](/advanced-concepts/version-control-with-git/best-practices#use-branching-strategy) for your multi-instance setup. 
-
