@@ -6,7 +6,7 @@ This page provides essential Git best practices to help teams avoid merge confli
 
 ## Use Branching Strategy
 
-Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git).
+Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. 
 
 - Select a branching model that aligns with your team's workflow and project requirements. Popular models like [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow), and [Trunk-Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) offer different approaches suited for various scenarios. 
 
@@ -17,6 +17,8 @@ Implement a well-defined branching strategy to enhance collaboration and maintai
 - Reserve the `master` branch for production-ready code. Only merge thoroughly tested and reviewed changes into this branch to ensure stability.
 
 - To prevent accidental commits, make the `master` branch protected from [Git settings](/advanced-concepts/version-control-with-git/reference/git-settings).
+
+- For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git).
 
 - If you have configured a multi-instance setup, manually pull the `master` branch in the *Production* instance to deploy changes. If you are an enterprise user, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 
@@ -50,7 +52,7 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 - Communicate with your teammates before making any changes to ensure coordination.
 
 
-
+For more information, see [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git).
 
 ## Regularly Update Changes
 
