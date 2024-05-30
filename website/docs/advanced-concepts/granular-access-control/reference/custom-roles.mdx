@@ -26,7 +26,7 @@ tags={[
 
 Appsmith allows the creation of custom roles to manage granular access control, ensuring applications are secure and access is provided based on business needs. This document provides examples of how to create custom roles and configure permissions.
 
-## Restrict page access
+## Restrict access to specific page
 
 To restrict access to specific pages within an Appsmith application, modify the permissions at the page level. For a given custom role, remove the permissions assigned to page (Page1) to make it inaccessible. The table below illustrates the permissions setup for restricting page access.
 
@@ -90,7 +90,7 @@ To restrict access to specific pages within an Appsmith application, modify the 
   </TabItem>
 </Tabs>
 
-## Grant application access
+## Give access to specific application
 
 To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role. Granting **Edit** permissions automatically includes **View** permissions for all pages and **View** and **Execute** permissions for all queries. When creating a new custom role, it's necessary to also configure **Edit** permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access.
 
