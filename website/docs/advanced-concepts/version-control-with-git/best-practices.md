@@ -48,19 +48,18 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 
 - Regularly push your Appsmith changes to the remote repository. 
 
+- Pull changes frequently to incorporate updates from the remote repository into your local branch. You can do this by clicking on the **Pull icon** at the bottom left corner.
+
+
+- Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
+
 - Communicate with your teammates before making any changes to ensure coordination.
 
 
 For more information, see [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git).
 
-## Regularly Update Changes
-
-Keep your local repository up-to-date with changes from the remote counterpart to minimize conflicts and ensure smooth collaboration.
 
 
-- Pull changes frequently to incorporate updates from the remote repository into your local branch. You can do this by clicking on the **Pull icon** at the bottom left corner.
-
-- Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
 
 ## Storing secrets
 

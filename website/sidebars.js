@@ -734,6 +734,7 @@ const sidebars = {
                   type: 'category',
                   collapsed: true,
                   label: 'How-To Guides',
+                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
                   items: [
                     'advanced-concepts/version-control-with-git/guides/setup-github',
                     'advanced-concepts/version-control-with-git/guides/setup-gitlab',
