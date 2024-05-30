@@ -26,4 +26,4 @@ If you are using the Appsmith Community Edition, you can only share your entire 
 
 ### Troubleshooting
 
-If you encounter any issues, please contact the support team using the chat widget at the bottom right of this page.
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
