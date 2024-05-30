@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 <Tags
 tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+  { name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
 ]}
 />
 
@@ -24,60 +24,209 @@ tags={[
 
 <!-- vale on -->
 
-To secure applications and provide access based on your business needs, Appsmith allows you to create custom roles. This page showcases different scenarios and examples for creating custom roles to manage granular access effectively.
+Appsmith allows the creation of custom roles to manage granular access control, ensuring applications are secure and access is provided based on business needs. This document provides examples of how to create custom roles and configure permissions.
 
 ## Restrict page access
 
-To restrict access to specific pages within your Appsmith application, you need to configure permissions at the page level. Create custom roles, assign appropriate permissions, and assign them to users or groups of users.
-
-For example, in a loan application, you may want to:
-- Restrict access to the loan application page for users designated to review reports.
-- Restrict access to reports for users designated to review loan applications.
-
-Here, you define two roles:
-- **Manage loans** - Access to review loan applications.
-- **Manage reports** - Access to review reports.
-
-### Manage loans role
-
-The tabs below show the permissions assigned to different resources for the Manage Loans role:
+To restrict access to specific pages within an Appsmith application, modify the permissions at the page level. For a given custom role, remove the permissions assigned to page (Page1) to make it inaccessible. The table below illustrates the permissions setup for restricting page access.
 
 <Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-    <ZoomImage
-         src="/img/restrict-page-access-manage-loan-app-resources.png" 
-         alt="Configuration for Application Resources"
-         caption="Configuration for Application Resources"
-    ></ZoomImage>
-   </TabItem>
-   <TabItem label="Datasources & Environments" value="datasources-and-environments">
-   <ZoomImage
-         src="/img/restrict-page-access-manage-loan-data-envs.png" 
-         alt="Configuration for Datasources & Environments"
-         caption="Configuration for Datasources & Environments"
-    ></ZoomImage>
-   </TabItem>
+  <TabItem label="Application Resources" value="application-resources">
+    <p className="permission-footnote">(✓) Permission Assigned</p>
+    <table className="permissions-table">
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+          <th>Execute</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Application 1</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Page 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Page 2</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 2</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
 </Tabs>
 
-### Manage reports role
+## Grant application access
 
-The tabs below show the permissions assigned to different resources for the Manage Reports role:
+To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role. Granting **Edit** permissions automatically includes **View** permissions for all pages and **View** and **Execute** permissions for all queries. When creating a new custom role, it's necessary to also configure **Edit** permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access.
+
+Example permissions setup:
 
 <Tabs queryString="gac-resource">
-   <TabItem label="Application Resources" value="application-resources">
-    <ZoomImage
-         src="/img/restrict-page-access-manage-report-app-resources.png" 
-         alt="Configuration for Application Resources"
-         caption="Configuration for Application Resources"
-    ></ZoomImage>
-   </TabItem>
-   <TabItem label="Datasources & Environments" value="datasources-and-environments">
-   <ZoomImage
-         src="/img/restrict-page-access-manage-loan-data-envs.png" 
-         alt="Configuration for Datasources & Environments"
-         caption="Configuration for Datasources & Environments"
-    ></ZoomImage>
-   </TabItem>
+  <TabItem label="Application Resources" value="application-resources">
+    <p className="permission-footnote">(✓) Permission Assigned</p>
+    <table className="permissions-table">
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+          <th>Execute</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace 1</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Application 1</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page 1</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 1</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page 2</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 2</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td>(✓)</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+    <p className="permission-footnote">(✓) Permission Assigned</p>
+    <table className="permissions-table">
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Execute</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Datasources</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource Name</td>
+          <td>(✓)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Environments</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Production</td>
+          <td>(✓)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Staging</td>
+          <td>(✓)</td>
+          <td></td>
+          <td>(✓)</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
 </Tabs>
 
 ## See also
