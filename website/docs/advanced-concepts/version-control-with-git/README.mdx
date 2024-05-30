@@ -15,20 +15,30 @@ Version control in Appsmith with Git offers a streamlined solution for applicati
         lazyLoad="true"
 />
 
+<ZoomImage
+        src="/img/git-new-ins.png"
+        alt=""
+        caption=""
+        lazyLoad="true"
+/>
+
 ## Core components
 
 
 - **Version Control Integration:** You can connect with any Git hosting provider of your choice, such as [GitHub](/advanced-concepts/version-control-with-git/guides/setup-github), [GitLab](/advanced-concepts/version-control-with-git/guides/setup-gitlab), [Azure](/advanced-concepts/version-control-with-git/guides/setup-azure), [Bitbucket](/advanced-concepts/version-control-with-git/guides/setup-bitbucket), and more.
 
-- **Granular Commit Control:** The Git commit modal in Appsmith provides detailed control over changes, allowing you to track and rollback specific changes with precision.
-
-- **Auto-Commit:** Automatically commits changes related to DSL version upgrades, ensuring your app stays updated with the latest features without manual intervention.
-
-- **Secure Secret Management:** Stores configuration securely while excluding sensitive data from version control.
-
 - **CI/CD Integration:** Supports Continuous Integration and Continuous Delivery workflows, enabling automatic updates to the `master` branch and integration with platforms like [GitHub Actions](/advanced-concepts/version-control-with-git/cd-with-github-actions), [Bitbucket Pipelines](/advanced-concepts/version-control-with-git/cd-with-bitbucket) and [GitLab CI/CD](/advanced-concepts/version-control-with-git/cd-with-gitlab).
 
-- **Automated Source File Management:** Converts Appsmith application components into source files for Git.
+- **Auto-Commit:** Automatically commits changes related to Domain Specific Language (DSL) version upgrades, ensuring your app stays updated with the latest features without manual intervention. Whenever you upgrade your Appsmith instance, the DSL that describes your app's layout and interactions is updated.
+
+- **Secure Secret Management:** Securely stores configurations while excluding sensitive data from version control. Credentials used for accessing configured datasources are automatically redacted.
+
+
+- **Multiple Branch Protection:** You can secure multiple branches by designating them as protected, preventing unnecessary commits and ensuring the integrity of your codebase.
+
+- **Multiple Instances:** You can create separate development environments with different configurations for the same app.
+
+
 
 
 

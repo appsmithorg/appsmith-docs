@@ -13,12 +13,12 @@ GitLab is a web-based platform that provides version control and collaborative f
 
 <dd>
 :::info
-Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+Version Control works with any Git hosting service that supports the SSH protocol and deploy keys. HTTPS Git connections are not currently supported in Appsmith.
 :::
 
 </dd>
 
-3. Create a new Git repository if you don't already have one. The connection may fail if the repository is not empty. See [How to create a new repository / project](https://docs.gitlab.com/ee/user/project/index.html)
+3. Create a new Git repository or open an existing empty repository. The connection may fail if the repository is not empty. See [How to create a new repository / project](https://docs.gitlab.com/ee/user/project/index.html)
 
 
 4. After setting up an empty repository, navigate to the repository's landing page, click on the Code button, and copy the **SSH** URL.

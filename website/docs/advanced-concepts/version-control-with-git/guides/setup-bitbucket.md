@@ -14,7 +14,7 @@ This guide shows how to connect your Appsmith application to a remote Bitbucket 
 
 <dd>
 :::info
-Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+Version Control works with any Git hosting service that supports the SSH protocol and deploy keys. HTTPS Git connections are not currently supported in Appsmith.
 :::
 
 </dd>

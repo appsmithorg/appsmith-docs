@@ -7,8 +7,8 @@ This guide shows you how to import an existing app connected to Git into a new w
 
 You can connect to Git using any provider of your choice with a Remote SSH URL. The following steps are tailored to popular Git providers such as GitHub, Bitbucket, and GitLab.
 
-:::info
-If the imported workspace already has a datasource with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB datasource - "movies" and you are importing it to a workspace that has a Postgres datasource also named "movies." In such a case, the import fails.
+:::caution
+If the imported workspace already has a datasource with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB datasource - "movies" and you are importing it to a workspace that has a PostgreSQL datasource also named "movies." In such a case, the import fails.
 :::
 
 <Tabs queryString="import-repo">
@@ -33,16 +33,18 @@ If the imported workspace already has a datasource with the same name but a diff
 
 6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
 
-7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on Add deploy keys, paste the copied key, and provide a meaningful title for future reference.
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to *Deploy keys*, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
 
-8. Check the Allow write access option and then add the key.
+8. Check the **Allow write access** option and then add the key.
 
-9. In Appsmith, click the Connect Git button.
+9. In Appsmith, click the **Connect Git** button.
+
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
 
 With this capability, you can collaborate on the same Git repository across different applications, enabling management of multi-instance deployments.
 
 
-After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
 
 
 
@@ -68,10 +70,9 @@ After completing the import process, you'll need to reconfigure the datasource s
 
 9. In Appsmith, click the **Connect Git** button.
 
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
 With this capability, you can collaborate on the same Git repository across different applications, enabling the management of multi-instance deployments.
-
-
-After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
 
 
 
@@ -95,10 +96,9 @@ After completing the import process, you'll need to reconfigure the datasource s
 
 8. In Appsmith, click the **Connect Git** button.
 
+9. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
 With this capability, you can collaborate on the same Git repository across different applications, enabling the management of multi-instance deployments.
-
-
-After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
 
 
 </TabItem>
@@ -123,8 +123,7 @@ After completing the import process, you'll need to reconfigure the datasource s
 
 9. In Appsmith, click the **Connect Git** button.
 
-
-After completing the import process, you'll need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the Reconnect Datasources modal or choose to configure them later.
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
 
 
 </TabItem>

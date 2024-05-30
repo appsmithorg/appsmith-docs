@@ -3,9 +3,15 @@
 This guide shows you how to set up multiple instances in Appsmith using Git, making application development easier. With Multi-instance:
 
 * You can work in an isolated environment, ensuring that any changes made in one instance do not affect the other instance.
-* Configure each instance with different datasource settings to streamline Staging according to varied needs.
+* Configure each instance with different datasource settings to streamline development according to varied needs.
 * You can collaborate within instances, allowing different teams to access specific instances; for example, QA teams can use the staging instance for their tasks.
 
+<ZoomImage
+        src="/img/git-new-ins.png"
+        alt=""
+        caption=""
+        lazyLoad="true"
+/>
 
 
 ## Prerequisites
@@ -17,13 +23,7 @@ This guide shows you how to set up multiple instances in Appsmith using Git, mak
 
 
 
- <ZoomImage
-        src="/img/git-new-ins.png"
-        alt=""
-        caption=""
-        lazyLoad="true"
-/>
-
+ 
 
 ## Setup instances
 
@@ -37,20 +37,24 @@ Follow these steps to set up multiple instances for your app:
 
 1. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `staging` branch from the default `master` branch.
 
-2. In the *Staging* instance, configure the datasource using the `staging` settings, then **Commit and push** the changes.
+2. In the *Staging* instance, configure the datasource using the `staging` database configuration, then **Commit and push** the changes.
 
-3. In the *Production* instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the *Staging* instance.
-
-4. Once the import is complete, configure the datasource using the `production` datasource in the **Reconnect Datasources** modal.
-
-5. To protect the app from unnecessary commits, in the *Staging* instance:
+3. In the *Staging* instance, open Git settings and:
 
 <dd>
 
-* Protect the `Staging` and `master` branches.
-* Set the `Staging` branch as the default.
+* Protect the `staging` and `master` branches.
+* Set the `staging` branch as the default.
+
+For more information see [Default Branch](/advanced-concepts/version-control-with-git/reference/git-settings#branch) and [Branch Protection](/advanced-concepts/version-control-with-git/reference/git-settings#branch).
+
 
 </dd>
+
+4. In the *Production* instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the *Staging* instance.
+
+
+5. Once the import is complete, configure the datasource by using the `production` database configuration in the **Reconnect Datasources** modal.
 
 6. In the *Production* instance:
 
@@ -59,18 +63,16 @@ Follow these steps to set up multiple instances for your app:
 * Protect the `master` branch.
 * Set the `master` branch as the default.
 
-For more information see [Default Branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch) and [Branch Protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection).
 
 </dd>
 
-7. After setting up both instances, you can share and invite apps with users and developers:
+7. After setting up both instances, share the app by inviting users and developers. You can assign different roles to each developer or create custom roles based on your needs.
+
 
 <dd>
 
-* **App Viewer Role:** Assign this role to end users for viewing access to the production app.
-* **Administrator Role:** Give this role to trusted individuals in the *Production* instance to manage datasources and deploy the app periodically.
-* **Developer Role:** Assign this role to developers for building and testing changes in the *Staging* instance.
+For more information, see [Roles](/advanced-concepts/granular-access-control/roles).
 
 </dd>
 
-8. To build and deploy your application, follow this [branching strategy](/advanced-concepts/version-control-with-git/best-practices#use-branching-strategy) for your multi-instance setup. 
+8. To manage your instances, follow this [branching strategy](/advanced-concepts/version-control-with-git/best-practices#use-branching-strategy). 

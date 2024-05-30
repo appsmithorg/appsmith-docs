@@ -16,12 +16,12 @@ This guide shows how to connect your Appsmith application to a remote Azure repo
 
 <dd>
 :::info
-Version Control works with any Git hosting service that supports **SSH protocol** and **deploy keys**. HTTPS Git connections are currently not supported on Appsmith.
+Version Control works with any Git hosting service that supports the SSH protocol and deploy keys. HTTPS Git connections are not currently supported in Appsmith.
 :::
 
 </dd>
 
-3. Create a new repository within your Azure project if one doesn't exist already. The connection may fail if the repository is not empty.
+3. Create a new Git repository or open an existing empty repository. The connection may fail if the repository is not empty.
 
 4. After setting up an empty repository, navigate to the repository's landing page, and copy the **SSH** URL.
 

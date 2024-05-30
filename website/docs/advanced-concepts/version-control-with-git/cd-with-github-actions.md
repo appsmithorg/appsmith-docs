@@ -1,13 +1,13 @@
 ---
-description: Continuous Delivery with GitHub Actions
-title: Configure CI/CD Using GitHub Actions
+description: GitHub Actions
+title: Using GitHub Actions
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Configure CI/CD Using GitHub Actions</h1>
+ <h1>Using GitHub Actions</h1>
 
 <Tags
 tags={[
