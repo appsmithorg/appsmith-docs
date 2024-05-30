@@ -722,6 +722,7 @@ const sidebars = {
               label: 'How-to Guides',
               items: [
                 'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
+                'advanced-concepts/granular-access-control/how-to-guides/share-application',
               ]
             },
             {
