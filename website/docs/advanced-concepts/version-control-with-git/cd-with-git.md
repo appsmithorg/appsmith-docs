@@ -58,7 +58,7 @@ Here are a few guides for popular options like GitHub Actions, Bitbucket Pipelin
    </div>
    <div className="containerColumnSampleApp columnGrid column-two" style={{padding:"20px"}}>
        <div className="containerCol">
-           <img className="containerImage" src="/img/bitbucket-cd1.png" alt="APITemplate-logo"/>
+           <img className="containerImage" src="/img/bitbucket-pipeline.png" alt="APITemplate-logo"/>
        </div> <br/>
        <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-bitbucket"><strong>Bitbucket Pipelines</strong></a>
