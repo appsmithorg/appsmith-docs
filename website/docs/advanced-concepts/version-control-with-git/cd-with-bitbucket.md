@@ -1,5 +1,5 @@
 ---
-description: Continuous Delivery with Bitbucket Pipelines
+description: Bitbucket Pipelines
 title: Using Bitbucket Pipelines
 hide_title: true
 ---
@@ -26,7 +26,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 ## Prerequisites
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
+* An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository).
 * You need to have a Bitbucket Cloud account.
 * Basic knowledge of [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/).
 

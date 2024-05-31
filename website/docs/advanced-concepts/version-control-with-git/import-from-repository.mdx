@@ -1,59 +1,138 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Import From Repository
+# Import apps from Git 
 
-​If you already have an Appsmith App in a Git repository, you can import it to a new workspace or a different Appsmith account.
+This guide shows you how to import an existing app connected to Git into a new workspace or a different Appsmith account, enabling you to manage multiple instances of the same app for tasks like feature development, testing, and deployment.
 
- <VideoEmbed host="youtube" videoId="B4gR4XligTo" title="Import Apps from Git" caption="Import Apps from Git"/>
+You can connect to Git using any provider of your choice with a Remote SSH URL. The following steps are tailored to popular Git providers such as GitHub, Bitbucket, and GitLab.
 
-
-Follow the steps given below:
-
-1. On the Appsmith workspace home, click on desired workspace Menu button and select **Import**.
-2. Choose the **Import from a Git repository** option on the import application pop-up.
-3. On the import from the Git repository modal, add your Repository’s SSH URL and click on **Generate key** and copy the key.
-4. Add the Deploy key to your repository.
+:::caution
+If the imported workspace already has a datasource with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB datasource - "movies" and you are importing it to a workspace that has a PostgreSQL datasource also named "movies." In such a case, the import fails.
+:::
 
 <Tabs queryString="import-repo">
 <TabItem label="GitHub" value="github">
 
-1. In your repository, go to the **Settings** tab.
-2. On the navigation bar, under **Security**, click **Deploy Keys**. 
-3. Click **Add deploy key**. Add a title for the key and paste the generated `SSH key` in the **Key** input box.
-4. Select the **Allow write access** checkbox.
-5. Click **Add key**.
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/eRkh73W8KOhj9UcKygGZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Github** as the service provider, and click on **Configure Git**.
+
+4. Navigate to the repository's landing page, click on the Code button, and copy the **SSH URL**.
+
+5. Paste the URL in the Generate SSH Key section on Appsmith.
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to *Deploy keys*, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
+
+8. Check the **Allow write access** option and then add the key.
+
+9. In Appsmith, click the **Connect Git** button.
+
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
+
+With this capability, you can collaborate on the same Git repository across different applications, enabling management of multi-instance deployments.
+
+
+
+
+
 
 </TabItem>
 <TabItem label="GitLab" value="gitlab">
 
-1. Open your repository and from the sidebar, go to the **Settings** > **Repository** and expand the **Deploy keys** section.
-2. Click **Add key**. Add the title and paste the generated key in the key section.
-3. Enable the **Grant write permissions to this key** checkbox 
-4. Click **Add key**.
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Gitlab** as the service provider, and click on **Configure Git**.
+
+4. Navigate to the repository's landing page, click on the Code button, and copy the **SSH URL**.
+
+5. Paste the URL in the **Generate SSH Key** section on Appsmith.
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Repository settings**. Proceed to **Deploy keys**, click on **Add deploy keys**, paste the copied key, and provide a meaningful title for future reference.
+
+8. Check the **Allow write access** option and then add the key.
+
+9. In Appsmith, click the **Connect Git** button.
+
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
+With this capability, you can collaborate on the same Git repository across different applications, enabling the management of multi-instance deployments.
+
+
 
 </TabItem>
 <TabItem label="Bitbucket" value="bitbucket">
 
-1. Open **Personal Bitbucket settings** from the top right corner and under security go to **SSH keys**.
-2. Click **Add key**, add the label and paste the generated key in the **Key** input box.
+
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Bitbucket** as the service provider, and click on **Configure Git**.
+
+4. After setting up an empty repository, navigate to the repository's landing page, click on the **Clone** button, select **SSH** and copy the **SSH** URL.
+
+5. Paste the SSH URL into the **Generate SSH Key** section in Appsmith, remove the `git clone` from the URL. 
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are displayed. Choose the appropriate key based on your specific security requirements and system constraints.
+
+7. Copy one of the keys, then navigate to your **Workspace settings**. Proceed to **SSH keys**, click on **Add SSH key**, paste the copied key, and provide a meaningful title for future reference.
+
+8. In Appsmith, click the **Connect Git** button.
+
+9. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
+With this capability, you can collaborate on the same Git repository across different applications, enabling the management of multi-instance deployments.
+
+
+</TabItem>
+<TabItem label="Azure Repos" value="azure">
+
+
+1. Open the Appsmith workspace homepage, then click on the **Create New** button at the top-right corner, and select **Import**.
+
+2. Select the **Import from a Git repository** option from the import menu.
+
+3. Select **Others** as the service provider, and click on **Configure Git**.
+
+4. Navigate to the repository's landing page, click on the **Clone** button, select **SSH** and copy the **SSH** URL.
+
+5. Paste the SSH URL into the **Generate SSH Key** section in Appsmith. 
+
+6. Click the **Generate SSH Keys** button, and unique `ECDSA 256` and `RSA 4096` keys are generated. Select the `RSA 4096` key when connecting to Azure Repos.
+
+7. Copy the key, then navigate to **User Settings** from the top right corner and open **SSH public keys**.
+
+8. Click **+ New key**, add the key name and paste the generated `RSA 4096` key in the Public Key Data input box.
+
+9. In Appsmith, click the **Connect Git** button.
+
+10. After completing the import process, you need to reconfigure the datasource since Appsmith doesn't export any configuration values used for connecting a datasource. You can do this in the **Reconnect Datasources** modal or choose to configure them later.
+
 
 </TabItem>
 </Tabs>
 
-5. Go back to the Git connection modal and click **Import**.
-6. Once the import is complete, you’ll see a **Reconnect Datasources** modal where you can configure the data sources used by the imported Application. Appsmith doesn't export any configuration values used for connecting a data source. So either you have to configure it in the Reconnect Datasources modal, or you can skip this and choose to configure it later.
 
-:::info
-If the imported workspace already has a datasource with the same name but a different type, the import fails due to name conflicts. For example, a git-connected application has a MongoDB data source - "movies" and you are importing it to a workspace that has a Postgres data source also named "movies." In such a case, the import fails.
-:::
 
-## Sync branches
 
-To sync the local with the remote branch (fetching or pruning), click on the branch pop-up and hit the **Sync branches** button. Syncing the branches won’t merge any change you’ve made on the remote branch. You’ll have to click on the pull button to get the latest changes.
+## See Also
 
-![Sync branches image](/img/Sync_branches.png)
-
-## Further reading
-
-[Setup Environments With Git](/advanced-concepts/version-control-with-git/environments-with-git)
+* [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)
+* [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)

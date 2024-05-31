@@ -1,41 +1,72 @@
-# Environments With Git
+# Configure Multiple Environments Using Git
 
-Appsmith enables you to create and maintain multiple versions of your applications and make changes to them in isolation using Git. Having separate staging and production workspaces ensures that users can continue to use your apps even while they're being changed or upgraded.
+This guide shows you how to set up multiple instances in Appsmith using Git, making application development easier. With Multi-instance:
 
-:::info
-This method doesn't support APIs, Google Sheets, Twilio, or any authenticated API datasources.
-:::
+* You can work in an isolated environment, ensuring that any changes made in one instance do not affect the other instance.
+* Configure each instance with different datasource settings to streamline development according to varied needs.
+* You can collaborate within instances, allowing different teams to access specific instances; for example, QA teams can use the staging instance for their tasks.
 
-Follow the steps below to setup the pipeline:
 
-### Setup environments
 
-1. Create two workspaces for your staging and production versions of the app. These workspaces can be across two separate instances of Appsmith.
-2. Create your app in the staging workspace and [connect to a Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository) . Once connected, check out a staging branch from the default branch(you can name the default branch as production).
+## Prerequisites
+
+* Two separate self-hosted instances: one for *Staging* and the other for *Production*. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
+* Basic knowledge of Git.
+
+
+
+
+
+ 
+
+## Setup instances
+
+Follow these steps to set up multiple instances for your app:
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/KW8UHVsaBJquF3TNfNiE?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+1. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository). Once connected, create and check out a `staging` branch from the default `master` branch.
+
+2. In the *Staging* instance, configure the datasource using the `staging` database configuration, then **Commit and push** the changes.
+
+3. In the *Staging* instance, open Git settings and:
 
 <dd>
 
-:::info 
-If you are an enterprise user, you can set a [Default branch](/advanced-concepts/version-control-with-git/working-with-branches#default-branch) and [Branch protection](/advanced-concepts/version-control-with-git/working-with-branches#branch-protection), ensuring code quality, collaboration, and stability in a collaborative development environment. 
+* Protect the `staging` and `master` branches.
+* Set the `staging` branch as the default.
 
-:::
+For more information see [Default Branch](/advanced-concepts/version-control-with-git/reference/git-settings#branch) and [Branch Protection](/advanced-concepts/version-control-with-git/reference/git-settings#branch).
+
 
 </dd>
 
-3. Import the app into your production workspace using [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository).
-4. Once the import is complete, add your production datasource configurations in the **Reconnect Datasources** Modal.
+4. In the *Production* instance, click on the **Create New** button, select [Import from Git](/advanced-concepts/version-control-with-git/import-from-repository) and import the same app used in the *Staging* instance.
 
-### Build and deploy app
-1. Build the app in the staging workspace with staging datasources. 
-2. Use the Git workflow to make changes in the staging branch(or feature branches), before merging to the production branch through a pull request.
-3. When you're ready to deploy, [pull the changes](/advanced-concepts/version-control-with-git/merging-branches#pull-changes) on the production branch in the production workspace app.
 
-### Share app
-1. Invite end users to your production app with the *App Viewer* role. They only have access to view the deployed app.
-2. Invite a few trusted individuals with *Administrator* roles to the production app to setup datasources and deploy the app periodically.
-3. Invite your developers to the staging app with the *Developer* role to build the app and test out changes on the staging datasources.
-4. QA team members can be invited to both staging and production apps with the *App Viewer* role to test out the changes deployed.
+5. Once the import is complete, configure the datasource by using the `production` database configuration in the **Reconnect Datasources** modal.
 
-### General notes
-- If you're using two different self-hosted instances for production and staging, take a backup of both instances before updating Appsmith. Update only the staging instance and test all your apps on it before updating the production instance.
-- In the event of an error, you can rollback by following the instructions on [Restore Appsmith Instance](/getting-started/setup/instance-management/appsmithctl#restore-instance)
+6. In the *Production* instance:
+
+<dd>
+
+* Protect the `master` branch.
+* Set the `master` branch as the default.
+
+
+</dd>
+
+7. After setting up both instances, share the app by inviting users and developers. You can assign different roles to each developer or create custom roles based on your needs.
+
+
+<dd>
+
+For more information, see [Roles](/advanced-concepts/granular-access-control/roles).
+
+</dd>
+
+8. To manage your instances, follow this [branching strategy](/advanced-concepts/version-control-with-git/merging-branches#use-branching-strategy). 

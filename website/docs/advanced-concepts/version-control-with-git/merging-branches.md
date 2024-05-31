@@ -1,48 +1,62 @@
-# Merge and Pull Changes
+# Git Best Practices
 
-In Git, you typically merge branches when you want to combine changes from one branch into another. Before merging the branches, please ensure that the following conditions have been met:
 
-- Both the base and head branches have no uncommitted changes.
-- The remote version of the base branch is synchronized with the local version, with no missing commits.
-- The base and head branches have no conflicting changes that could cause issues during the merge.
+This page provides essential Git best practices to help teams avoid merge conflicts, enhance collaboration, maintain code quality, and manage secrets, ensuring a smoother and more efficient workflow.
 
-There are 2 scenarios when you may want to merge branches in Appsmith:
+## Use Branching Strategy
 
-**Update master branch:** after developing an app on your feature branch, you must update the master branch with the new feature. If the update does not require a review, you can merge your feature branch directly into the master branch. Follow these steps to merge the feature branch into the master branch:
-1. Open your app in the feature branch and locate the **Merge** icon at the bottom left corner of the screen to open the merge modal.
-2. Select **master** as the base branch and verify the merge status.
-3. If there are no conflicts, click **Merge Changes** to complete the merge.
+Implement a well-defined branching strategy to enhance collaboration and maintain code quality in Git. 
 
-If you are working collaboratively with your team, it is recommended that you create a Pull Request (PR) in the remote repository to get your changes reviewed before merging them into the master branch. This allows other team members to review and provide feedback on your changes before they are merged into the master branch.
+- Select a branching model that aligns with your team's workflow and project requirements. Popular models like [GitFlow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow), and [Trunk-Based Development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) offer different approaches suited for various scenarios. 
 
-**Avoid conflicts:** If you have been working on your feature branch for a while, the master branch may have been updated with new changes. In this case, to prevent conflicts, you should merge the master branch into your feature branch to ensure that it is up-to-date with the latest changes. Follow these steps to merge your master branch with your feature branch:
+- Create different feature branches from the `Staging` branch and merge them into `Staging` regularly through pull requests.
 
-1. Click the **Merge** icon at the bottom left corner of the screen. It opens the merge modal.
-2. Select the **feature** as the base branch and verify the merge status.
-3. Click **Merge Changes** if there are no conflicts.
+- Create a `Staging` branch for testing features. Once a milestone is completed, merge the `Staging` branch into the `master` branch via a pull request.
 
-Once the merge is successful, you can either merge your feature branch directly into the master branch in Appsmith or create a PR in the remote repository.
+- Reserve the `master` branch for production-ready code. Only merge thoroughly tested and reviewed changes into this branch to ensure stability.
 
-## Pull changes
+- To prevent accidental commits, make the `master` branch protected from [Git settings](/advanced-concepts/version-control-with-git/reference/git-settings).
 
-When a feature branch is merged with the master branch in the remote repository, the local counterpart has to be updated with those changes. To sync the local branch with the remote updates, pull the latest changes by clicking on the **pull** icon at the bottom left corner. 
+- For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git).
 
-![Pull latest changes gif](/img/pull_changes.gif)
+- If you have configured a multi-instance setup, manually pull the `master` branch in the *Production* instance to deploy changes. If you are an enterprise user, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 
-Once the pull is successful, the app is automatically deployed. To check the deployed version, click the **Deploy** button from the top right corner and in the deploy modal, click **Latest Deploy Preview**
 
-The pull function can sometimes result in merge conflicts if there are changes made to the same files in both the local and remote branches. In such cases, resolve the conflicts manually on the remote repository.
+- Keep branches and pull requests short-lived to streamline the development process and minimize conflicts.
 
-## Delete a branch
 
-Similar to the Git flow, you can delete a branch in Appsmith that's no longer needed. If you want to delete a branch from Appsmith, follow the steps given below:
 
-1. Click the current branch at the bottom left corner.
-2. Go to the branch you want to delete, click options, and **Delete**.
 
-![Delete a branch gif](/img/delete_branch.gif)
 
-## Further reading
 
-- [Revert Changes](/advanced-concepts/version-control-with-git/revert-changes)
-- [Import from a Git Repository](/advanced-concepts/version-control-with-git/import-from-repository)
+
+## Avoid Merge Conflicts
+
+While working with Git, you may face merge conflicts. To avoid these conflicts, follow these best practices:
+
+
+
+- Break down changes into small, self-contained updates that address a single concern. Each commit should represent a single logical change or fix. 
+
+- Multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
+
+- Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
+
+- Pull changes frequently to incorporate updates from the remote repository into your local branch. 
+
+- Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
+
+- Communicate with your teammates before making any changes to ensure coordination.
+
+
+For more information, see [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push).
+
+
+
+
+
+
+
+
+
+

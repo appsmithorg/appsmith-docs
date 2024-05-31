@@ -328,7 +328,7 @@
     },
     {
       "source": "/core-concepts/version-control-with-git/connecting-to-git-repository",
-      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository"
     },
     {
       "source": "/core-concepts/version-control-with-git/import-from-repository",
@@ -340,7 +340,7 @@
     },
     {
       "source": "/core-concepts/version-control-with-git/working-with-branches",
-      "destination": "/advanced-concepts/version-control-with-git/working-with-branches"
+      "destination": "/advanced-concepts/version-control-with-git"
     },
     {
       "source": "/core-concepts/version-control-with-git/pull-and-sync",
@@ -672,7 +672,7 @@
     },
     {
       "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
-      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository"
     },
     {
       "source": "/advanced-concepts/access-control",
@@ -1240,6 +1240,15 @@
       "source": "/core-concepts/connecting-to-data-sources/connect-to-apis",
       "destination": "/connect-data/reference/rest-api",
       "permanent": true
+    }
+    ,
+    {
+      "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/working-with-branches",
+      "destination": "/advanced-concepts/version-control-with-git"
     }
   ]
 }
