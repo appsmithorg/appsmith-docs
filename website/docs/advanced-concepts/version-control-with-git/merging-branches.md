@@ -17,7 +17,7 @@ Implement a well-defined branching strategy to enhance collaboration and maintai
 
 - To prevent accidental commits, make the `master` branch protected from [Git settings](/advanced-concepts/version-control-with-git/reference/git-settings).
 
-- For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git).
+- For large-scale deployment, it is recommended to use a multi-instance setup. For more information, see [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git).
 
 - If you have configured a multi-instance setup, manually pull the `master` branch in the *Production* instance to deploy changes. If you are an enterprise user, set up [Git CD](/advanced-concepts/version-control-with-git/cd-with-git) to automatically pull and deploy the `master` branch.
 

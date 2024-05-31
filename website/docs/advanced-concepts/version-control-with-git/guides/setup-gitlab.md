@@ -43,5 +43,5 @@ A user needs to have **Create** permission for application resources on the work
 ## See Also
 
 - [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
-- [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git)
+- [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)
 - [Configure CI/CD Using GitLab CI/CD](/advanced-concepts/version-control-with-git/cd-with-gitlab)

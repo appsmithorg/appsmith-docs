@@ -1,4 +1,4 @@
-# Connect to Azure Repos
+# Connect to Other Git Providers
 
 This guide shows how to connect your Appsmith application to a remote Azure repository. 
 
@@ -43,4 +43,4 @@ A user needs to have **Create** permission for application resources on the work
 ## See Also
 
 - [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
-- [Multi-instance setup with Git](/advanced-concepts/version-control-with-git/environments-with-git)
+- [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)

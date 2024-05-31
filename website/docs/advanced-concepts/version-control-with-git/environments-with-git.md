@@ -1,4 +1,4 @@
-# Multi-instance setup with Git 
+# Configure Multiple Environments Using Git
 
 This guide shows you how to set up multiple instances in Appsmith using Git, making application development easier. With Multi-instance:
 
@@ -6,12 +6,6 @@ This guide shows you how to set up multiple instances in Appsmith using Git, mak
 * Configure each instance with different datasource settings to streamline development according to varied needs.
 * You can collaborate within instances, allowing different teams to access specific instances; for example, QA teams can use the staging instance for their tasks.
 
-<ZoomImage
-        src="/img/git-new-ins.png"
-        alt=""
-        caption=""
-        lazyLoad="true"
-/>
 
 
 ## Prerequisites

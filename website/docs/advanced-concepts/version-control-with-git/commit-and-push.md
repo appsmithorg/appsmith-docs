@@ -56,7 +56,7 @@ If you are facing issues merging from a `feature` branch to `staging`, then ensu
 These conflicts arise when changes in your local branch cannot be directly merged with changes in the remote branch. For example, If you're working on the `feature` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. 
 
 
-   <ZoomImage src="/img/remote-issue1.png" alt="" caption=""/>
+   <ZoomImage src="/img/remote-branch-issue.png" alt="" caption=""/>
 
 
 1. Create a new branch from the conflicted branch and raise a Pull Request.
