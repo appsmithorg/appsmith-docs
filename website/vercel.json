@@ -1249,10 +1249,6 @@
     {
       "source": "/advanced-concepts/version-control-with-git/working-with-branches",
       "destination": "/advanced-concepts/version-control-with-git"
-    },
-    {
-      "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
-      "destination": "/advanced-concepts/version-control-with-git"
     }
   ]
 }

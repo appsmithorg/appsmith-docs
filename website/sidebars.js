@@ -175,6 +175,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/frame-ancestors',
                 'getting-started/setup/environment-variables',
+                'advanced-concepts/version-control-with-git/updating-local-file-path',
               ],
             },
             {
