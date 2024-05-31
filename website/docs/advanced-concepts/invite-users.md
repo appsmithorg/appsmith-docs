@@ -3,18 +3,10 @@ description: >-
   Learn how to invite users to collaborate on your Appsmith workspace or specific applications.
 ---
 
-# Share Workspace
+# Invite Users
 
-To enhance productivity and efficiency, collaboration within your team is essential. Sharing your applications facilitates this collaboration. This page provides instructions on how to share your workspace and its app.
+Collaboration in a business environment often requires sharing applications or workspaces among team members who work on different projects simultaneously. Appsmith provides different methods to collaborate by inviting users to access applications and workspaces within the platform.
 
-## Invite users to workspace
-
-Follow these steps to invite users to a workspace:
-
-1. Navigate to the homepage and select the workspace you wish to share.
-2. Click the **Share** button located in the top right corner.
-3. In the **Invite users** modal, enter the email address of the user and select an appropriate role for them.
-4. Click the **Invite** button to send the invitation.
 
 <ZoomImage
   src="/img/Share_workspace.png" 
@@ -22,8 +14,19 @@ Follow these steps to invite users to a workspace:
   caption="Share workspace with users"
 />
 
-If you are using the Appsmith Community Edition, you can only share your entire workspace, along with all the applications within the workspace with the users. However, with the Appsmith Business plan, you have the capability to share specific applications with users. For more information, see the [Share Application](/advanced-concepts/granular-access-control/how-to-guides/share-application) guide that provides instructions on sharing individual applications.
+## Invite users to workspace
 
-### Troubleshooting
+Inviting users to a workspace grants them access to all the applications and resources within it. This is ideal for teams working on different projects within the same workspace. To invite users, click the **Share** button located in the top right corner of your workspace. Select the desired role to provide appropriate access. Learn more about roles and permissions in [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles) and [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
 
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## Invite users to application
+
+Inviting users to a specific application grants them access only to that application within your workspace. This is useful when different teams or individuals are responsible for different applications. To invite users to an application, click the **Share** button in the top right corner of the application. Select default roles such as [Developer](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-application) or [App Viewer](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-application). You can also assign custom roles by modifying group configurations. For more information, see [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
+
+:::info Note
+Inviting a user from an application in the Community edition or when you are on a Free plan shares the entire workspace and all applications within it.
+:::
+
+## Make application public
+
+You can share an application with external users by making it publicly available. This allows access to the application without requiring users to log into Appsmith. To do so, enable the **Make application public** switch in the **Invite User** modal. Copy the application URL and share it with external users. You can define who can make the application public when using granular access control by assigning _Make Public_ permission to users or user groups. For more information, see [Make Public Permission](/advanced-concepts/granular-access-control/reference/permissions#make-public-permission).

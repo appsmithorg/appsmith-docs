@@ -711,7 +711,6 @@ const sidebars = {
             'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
           ]
         },
-        'advanced-concepts/invite-users',
         {
           type: 'category',
           label: 'Granular Access Control',
@@ -722,7 +721,6 @@ const sidebars = {
               label: 'How-to Guides',
               items: [
                 'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
-                'advanced-concepts/granular-access-control/how-to-guides/share-application',
               ]
             },
             {
@@ -740,6 +738,7 @@ const sidebars = {
               label: 'Concepts',
               items: [
                 'advanced-concepts/granular-access-control/roles',
+                'advanced-concepts/invite-users',
               ]
             },
           ]
