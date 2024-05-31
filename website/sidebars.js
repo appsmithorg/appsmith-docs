@@ -726,7 +726,7 @@ const sidebars = {
              {
           
               type: 'category',
-              collapsed: false,
+              collapsed: true,
               label: 'Versioning with Git',
               link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
               items: [
