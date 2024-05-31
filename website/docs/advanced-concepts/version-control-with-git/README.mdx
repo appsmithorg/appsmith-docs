@@ -8,12 +8,9 @@ import TabItem from '@theme/TabItem';
 
 Version control in Appsmith with Git offers a streamlined solution for application management, enabling change tracking, rollback, collaboration, multi-instance setup, and more.
 
- <ZoomImage
-        src="/img/git-appsmith.webp"
-        alt=""
-        caption=""
-        lazyLoad="true"
-/>
+
+
+<img src="/img/git-appsmith.webp" alt="" width="500" height="600" />
 
 <ZoomImage
         src="/img/git-new-ins.png"
@@ -25,19 +22,20 @@ Version control in Appsmith with Git offers a streamlined solution for applicati
 ## Core components
 
 
+
 - **Version Control Integration:** You can connect with any Git hosting provider of your choice, such as [GitHub](/advanced-concepts/version-control-with-git/guides/setup-github), [GitLab](/advanced-concepts/version-control-with-git/guides/setup-gitlab), [Azure](/advanced-concepts/version-control-with-git/guides/setup-azure), [Bitbucket](/advanced-concepts/version-control-with-git/guides/setup-bitbucket), and more.
 
-- **CI/CD Integration:** Supports Continuous Integration and Continuous Delivery workflows, enabling automatic updates to the `master` branch and integration with platforms like [GitHub Actions](/advanced-concepts/version-control-with-git/cd-with-github-actions), [Bitbucket Pipelines](/advanced-concepts/version-control-with-git/cd-with-bitbucket) and [GitLab CI/CD](/advanced-concepts/version-control-with-git/cd-with-gitlab).
+- **Multiple Branch Protection:** You can set multiple branches as protected, preventing unnecessary commits and ensuring the integrity of your codebase.
 
 - **Auto-Commit:** Automatically commits changes related to Domain Specific Language (DSL) version upgrades, ensuring your app stays updated with the latest features without manual intervention. Whenever you upgrade your Appsmith instance, the DSL that describes your app's layout and interactions is updated.
 
+- **CI/CD Integration:** Supports Continuous Integration and Continuous Delivery workflows, enabling automatic updates to the `master` branch and integration with platforms like [GitHub Actions](/advanced-concepts/version-control-with-git/cd-with-github-actions), [Bitbucket Pipelines](/advanced-concepts/version-control-with-git/cd-with-bitbucket) and [GitLab CI/CD](/advanced-concepts/version-control-with-git/cd-with-gitlab).
+
+- **Multiple Instances:** You can create separate development environments with different configurations for the same app. For more information see [Multi-instance setup with Git.](/advanced-concepts/version-control-with-git/environments-with-git)
+
+
+
 - **Secure Secret Management:** Securely stores configurations while excluding sensitive data from version control. Credentials used for accessing configured datasources are automatically redacted.
-
-
-- **Multiple Branch Protection:** You can secure multiple branches by designating them as protected, preventing unnecessary commits and ensuring the integrity of your codebase.
-
-- **Multiple Instances:** You can create separate development environments with different configurations for the same app.
-
 
 
 
@@ -48,10 +46,11 @@ Version control in Appsmith with Git offers a streamlined solution for applicati
 Version control in Appsmith is similar to the traditional Git workflow. Follow these steps to get started:
 
 1. **Connect Your App:** Connect your Appsmith app to any Git hosting provider using the SSH URL and Deploy keys.
-2. **Setup Branches:** Create separate branches based on your project requirements. Each branch that you create has its own unique URL.
+2. **Setup Branches:** Create separate branches based on your project requirements. Each branch you create has its own unique app URL, allowing you to manage different versions of your app independently.
 3. **Commit Changes:** Commit and push changes to the remote repository using the **+** plus icon available on the bottom navigation bar.
 4. **Merge and Pull:** Merge and pull changes using the properties available on the bottom navigation bar.
-5. **Automate:** Configure CI/CD to automate the integration process.
+5. **Automate:** Configure CI/CD to automate the integration process from the Git settings available on the bottom navigation bar.
+
 
 
 For more information, you can explore the following:

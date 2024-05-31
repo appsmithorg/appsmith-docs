@@ -1,7 +1,5 @@
 # Connect to Azure Repos
 
-Azure Repos is a collaborative version control service provided by Microsoft Azure, enabling teams to securely host, manage, and collaborate on code repositories using Git or Team Foundation Version Control (TFVC).
-
 This guide shows how to connect your Appsmith application to a remote Azure repository. 
 
 
