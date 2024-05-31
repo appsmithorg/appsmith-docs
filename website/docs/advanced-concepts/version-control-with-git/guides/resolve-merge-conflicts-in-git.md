@@ -5,7 +5,7 @@ import TabItem from '@theme/TabItem';
 
 Git merge conflicts happen when changes in different or the same branches overlap, requiring manual resolution. This guide offers strategies for resolving these conflicts to ensure smoother collaboration and project management in Git. The specific steps may vary depending on your Git service provider and local code editor; please refer to the documentation of your provider for specific instructions.
 
-You can encounter merge conflicts in two cases: when merging two separate branches or when pulling or pushing changes to a remote branch. 
+You can encounter merge conflicts in two cases: when merging two separate branches or when updating changes to a local or remote branch.
 
 ## Separate Branch Merge Conflicts
 

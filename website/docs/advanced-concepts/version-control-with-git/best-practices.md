@@ -40,7 +40,7 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 
 - Avoid mixing unrelated changes within a single commit to maintain a clean and understandable history. 
 
-- To prevent conflicts, multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
+- Multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
 
 - Consider breaking down large UI modifications into smaller tasks.
 
@@ -48,7 +48,7 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 
 - Regularly push your Appsmith changes to the remote repository. 
 
-- Pull changes frequently to incorporate updates from the remote repository into your local branch. You can do this by clicking on the **Pull icon** at the bottom left corner.
+- Pull changes frequently to incorporate updates from the remote repository into your local branch. 
 
 
 - Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.

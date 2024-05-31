@@ -1,7 +1,7 @@
 
 # Revert Changes
 
-This guide shows how to revert a committed change to a specific branch or default branch in Git, allowing you to fix a mistake or undo an unwanted change.
+This page shows how to revert a committed change to a specific branch or default branch in Git, allowing you to fix a mistake or undo an unwanted change.
 
 You can revert changes from Git user interfaces provided by some platforms, but it is recommended to perform reverts from the local system using Git commands.
 
@@ -26,20 +26,6 @@ git log
 ```
 
 This displays a list of commits in reverse chronological order, starting with the most recent commit. Each commit entry includes information such as the commit hash, author name, date, and commit message, like:
-
-```sql
-commit 2f50d7dd1dc4874b7ca6054099b54 (HEAD -> feature, origin/feature)
-Author: John Doe <john.doe@appsmith.com>
-Date:   Wed May 1 08:34:56 2024 +0000
-
-    Fixed bug in user authentication logic
-
-commit af0e737a28e0d5c816912a336
-Author: James <j.james@appsmith.com>
-Date:   Wed May 1 08:27:00 2024 +0000
-
-    Added new feature to user dashboard
-```
 
 </dd>
 
