@@ -56,7 +56,7 @@ Conflicts arise during the merging process when the same file has been edited on
 
 If facing conflicts in the Appsmith UI while merging branch `A` into branch `B`, raise a pull request targeting branch `B` on your Git provider, and manually resolve the conflicts.
 
-See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
+See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)
 
 
 
@@ -84,5 +84,5 @@ To resolve this:
 - In Appsmith, discard and pull the changes into branch `A`. 
 
 
-See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
+See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)
 

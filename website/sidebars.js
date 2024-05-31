@@ -753,7 +753,7 @@ const sidebars = {
                       ]
                     },
                     'advanced-concepts/version-control-with-git/revert-changes',
-                    'advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git',
+                    'advanced-concepts/version-control-with-git/commit-and-push',
        
                   ]
                 },
@@ -765,7 +765,7 @@ const sidebars = {
                     'advanced-concepts/version-control-with-git/reference/git-settings',
                   ]
                 },
-                'advanced-concepts/version-control-with-git/best-practices',
+                'advanced-concepts/version-control-with-git/merging-branches',
               ]
             }, 
            //git-end

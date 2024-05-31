@@ -340,7 +340,7 @@
     },
     {
       "source": "/core-concepts/version-control-with-git/working-with-branches",
-      "destination": "/advanced-concepts/version-control-with-git/working-with-branches"
+      "destination": "/advanced-concepts/version-control-with-git"
     },
     {
       "source": "/core-concepts/version-control-with-git/pull-and-sync",
@@ -1245,6 +1245,14 @@
     {
       "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
       "destination": "/advanced-concepts/version-control-with-git/guides/overview"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/working-with-branches",
+      "destination": "/advanced-concepts/version-control-with-git"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
+      "destination": "/advanced-concepts/version-control-with-git"
     }
   ]
 }

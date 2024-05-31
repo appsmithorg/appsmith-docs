@@ -68,7 +68,7 @@ These guides help you manage Git integration, from resolving merge conflicts to 
     </div>
 <div className="containerColumnSampleApp columnGrid column-two">
 <div className="containerCol">
-            <a href="/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git"><strong>Resolve Merge Conflicts in Git</strong></a>
+            <a href="/advanced-concepts/version-control-with-git/commit-and-push"><strong>Resolve Merge Conflicts in Git</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide offers strategies for resolving these conflicts to ensure smoother collaboration and project management in Git. </div>
 </div>

@@ -75,4 +75,4 @@ For more information, see [Roles](/advanced-concepts/granular-access-control/rol
 
 </dd>
 
-8. To manage your instances, follow this [branching strategy](/advanced-concepts/version-control-with-git/best-practices#use-branching-strategy). 
+8. To manage your instances, follow this [branching strategy](/advanced-concepts/version-control-with-git/merging-branches#use-branching-strategy). 

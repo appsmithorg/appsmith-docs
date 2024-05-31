@@ -1,105 +1,111 @@
----
-sidebar_position: 2
----
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-# Manage Changes
+# Resolve Merge Conflicts in Git
 
-This guide shows you how to commit, pull, and manage Git changes within your application.
+Git merge conflicts happen when changes in different or the same branches overlap, requiring manual resolution. This guide offers strategies for resolving these conflicts to ensure smoother collaboration and project management in Git. The specific steps may vary depending on your Git service provider and local code editor; please refer to the documentation of your provider for specific instructions.
 
+You can encounter merge conflicts in two cases: when merging two separate branches or when updating changes to a local or remote branch.
 
+## Separate Branch Merge Conflicts
 
-## Commit and Push changes
+Merge conflicts occur when changes from different branches overlap, leading to conflicts that need manual resolution.
 
+<ZoomImage src="/img/branch-issue-1.png" alt="" caption=""/>
 
-After creating a new branch and making changes to the app, follow these steps to commit and push the changes to your remote repository:
+1. To resolve these conflicts, raise a pull request for your source branch, targeting the destination branch where you intend to merge the changes.
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/urZJd1ad19VGRAFFuXSs?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-1. Click the **+** icon at the bottom left corner to commit the changes. The **+** icon also reflects the number of entities you have modified. Entities refer to changes in the app, such as queries, JSObjects, and page edits.
 
 <dd>
 
-*Example:* if you rename a query, you might see 2 queries modified during commit, indicating both the deletion of the old query and the creation of the new one.
+*Example:*
+
+If you're working on the `feature` branch and want to merge changes into `staging`, but are facing conflicts, you can raise a pull request for your `feature` branch on your Git provider, targeting the `staging` branch for merging.
+
+</dd>
+
+ 2. Once the PR is created, scroll down to the bottom of the PR page, and click the **Resolve conflicts** button to resolve conflicts directly from the pull request interface.
+
+
+<dd>
+
+
+If the resolve button is disabled, you need to resolve the conflicts using your [local Git environment](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line). The interface and steps may vary depending on your Git service provider. For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
+
+<ZoomImage src="/img/conflicts-git-ui.png" alt="" caption=""/>
+
+</dd>
+
+3. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge**, and Merge the pull request.
+
+4. Update your Appsmith app by pulling the changes.
+
+<dd>
+
+*Example:*
+
+If you are facing issues merging from a `feature` branch to `staging`, then ensure you are on the `staging` branch in your Appsmith app and pull the changes there.
+
 
 </dd>
 
 
-:::info
-If the remote counterpart of your current branch contains commits not present on the local branch, the push command fails. In such a scenario, you'll need to pull the changes to continue. Once you've pulled the changes, re-attempt the push command, and all changes, including the last commit, are successfully pushed to the repository.
-:::
 
-2. In the deploy tab, enter your commit message and click **Commit and Push** to update your branch with the latest changes. 
+## Remote Branch Conflicts
 
-3. To check the deployed app associated with your branch, click the down arrow next to the **Deploy** button, and select the **Currently Deployed Version**.
+These conflicts arise when changes in your local branch cannot be directly merged with changes in the remote branch. For example, If you're working on the `feature` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. 
 
 
-Once the remote feature branch is updated in the repository, you can raise a PR to merge the changes with the `master` branch.
+   <ZoomImage src="/img/remote-issue1.png" alt="" caption=""/>
 
 
+1. Create a new branch from the conflicted branch and raise a Pull Request.
 
 
+<dd>
 
-## Pull changes
+*Example:*
 
-To fetch the latest version from the remote repository, follow these steps to pull changes.
-
-:::info
-In cases where changes are made to the same files in both local and remote branches, the pull operation may encounter merge conflicts. In such instances, conflict resolution must be performed manually on the remote repository.
-:::
+ Create a new branch from your local `feature` branch, name it `feature-fix`, and then raise a pull request from this new branch against the original `feature` branch.
 
 
-1. Open the branch from which you want to pull the changes.
-
-2. Click the **Pull** icon at the bottom left corner to commit the changes. The **Pull** icon also reflects the number of changes.
-
-Once the pull is successful, the app is automatically deployed. To check the deployed version, click the **Deploy** button from the top right corner and in the deploy modal, click **Current Deployed Version**
+</dd>
 
 
 
+2. Once the PR is created, scroll down to the bottom of the PR page, and click the **Resolve conflicts** button to resolve conflicts directly from the pull request interface.
+
+
+<dd>
+
+
+If the resolve button is disabled, you need to resolve the conflicts using your [local Git environment](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line). The interface and steps may vary depending on your Git service provider. For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
 
 
 
-## Discard changes
+</dd>
 
 
-Discarding changes removes newly added entities, restores deleted resources, and reverts changes made to any resource after the last commit. Follow these steps to discard current changes and return to a previous committed version:
+3. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge**, and Merge the pull request.
 
-
-1. Click on the **+** icon at the bottom left corner.
-
-2. In the Deploy Modal, select the **Discard Changes** button.
-
-This action discards any current modifications and reverts the application to reflect the last committed changes from the repository.
+4. In Appsmith, click **Discard and Pull** from the commit modal to update the app.
 
 
 
-## Auto-commit changes
+<dd>
 
+*Example:*
 
-When Appsmith is updated, the changes are automatically committed to the designated branch, including updates to the Domain Specific Language (DSL) that describes your app's layout and interactions. This ensures that you can take advantage of new features and enhancements with each new version of Appsmith.
-
-These commits appear in your repository as follows:
-
-```
-System generated commit, to support new features after upgrading Appsmith to the version: #appsmithVersion
-```
-
-The auto-commit feature ensures you no longer have to manually manage version upgrade changes. You can disable the auto-commit feature by going to your app's Git settings. 
-
-:::info
-The auto-commit feature does not apply to the protected branches.
-:::
-
-## Further reading
-
-[Merge and Pull changes](/advanced-concepts/version-control-with-git/merging-branches)
+If you face conflicts within the same branch due to changes made remotely, open your Appsmith app, click on the **+** icon, and click **Discard and Pull**. This discards any local changes that have not been saved and updates your app with the latest changes from the remote branch.
 
 
 
 
+</dd>
 
+
+## See Also
+
+- [Revert Changes](/advanced-concepts/version-control-with-git/revert-changes)
+- [Best Practices](/advanced-concepts/version-control-with-git/merging-branches)

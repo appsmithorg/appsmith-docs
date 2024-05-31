@@ -69,5 +69,5 @@ Some Git platforms, like [GitHub](https://docs.github.com/en/desktop/managing-co
 
 ## See Also
 
-- [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git)
-- [Best Practices](/advanced-concepts/version-control-with-git/best-practices)
+- [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)
+- [Best Practices](/advanced-concepts/version-control-with-git/merging-branches)
