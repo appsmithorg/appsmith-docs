@@ -1,6 +1,9 @@
 # Guides
 
 
+## Connect Git Repository
+
+You can connect to Git using any provider of your choice with a Remote SSH URL. The following guides are tailored to popular Git providers such as GitHub, Bitbucket, GitLab, and Azure.
 
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
@@ -34,6 +37,11 @@
 </div>
 </div>
 
+## Manage Git
+
+These guides help you manage Git integration, from resolving merge conflicts to setting up multiple environments.
+
+
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
@@ -66,12 +74,32 @@
 </div>
 </div>
 
+## Continuous Delivery (CI/CD) with Git
+
+Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App using Git. Here are a few guides for popular options like GitHub Actions, Bitbucket Pipelines and GitLab CI/CD.
+
+<div className="containerGridSampleApp">
+<div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
+            <a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong>CI/CD Using GitHub Actions</strong></a>
+        </div> <hr/>
+        <div className="containerDescription">This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with GitHub Actions.</div>
+        <div className="containerTutorialLink"></div>
+    </div>
+<div className="containerColumnSampleApp columnGrid column-two">
+<div className="containerCol">
+            <a href="/advanced-concepts/version-control-with-git/cd-with-gitlab"><strong>CI/CD Using GitLab</strong></a>
+        </div> <hr/>
+        <div className="containerDescription">This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with GitLab CI/CD.</div>
+</div>
+</div>
+
 <div className="containerGridSampleApp">
     <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
-           <a href="/advanced-concepts/version-control-with-git/cd-with-git"><strong>Continuous Delivery (CI/CD) with Git</strong></a>
+           <a href="/advanced-concepts/version-control-with-git/cd-with-bitbucket"><strong>CI/CD Using Bitbucket Pipelines</strong></a>
         </div><hr/>
-        <div className="containerDescription">These guides shows how to setup CI/CD from your deployments.</div>
+        <div className="containerDescription">This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with Bitbucket Pipelines.</div>
     </div>
     <div className="columnGrid column-two" style={{margin: "10px"}}>
    </div>

@@ -336,7 +336,7 @@
     },
     {
       "source": "/core-concepts/version-control-with-git/connecting-to-git-repository",
-      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository"
     },
     {
       "source": "/core-concepts/version-control-with-git/import-from-repository",
@@ -680,7 +680,7 @@
     },
     {
       "source": "/advanced-concepts/version-control-with-git/disconnect-the-git-repository",
-      "destination": "/advanced-concepts/version-control-with-git/connecting-to-git-repository"
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository"
     },
     {
       "source": "/advanced-concepts/access-control",
@@ -1202,6 +1202,11 @@
     {
       "source": "/getting-started/tutorials/customer-support-tool/application-settings",
       "destination": "/getting-started/tutorials/start-building"
+    }
+    ,
+    {
+      "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
+      "destination": "/advanced-concepts/version-control-with-git/guides/overview"
     }
   ]
 }

@@ -38,18 +38,11 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 
 - Break down changes into small, self-contained updates that address a single concern. Each commit should represent a single logical change or fix. 
 
-- Avoid mixing unrelated changes within a single commit to maintain a clean and understandable history. 
-
 - Multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
-
-- Consider breaking down large UI modifications into smaller tasks.
 
 - Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
 
-- Regularly push your Appsmith changes to the remote repository. 
-
 - Pull changes frequently to incorporate updates from the remote repository into your local branch. 
-
 
 - Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
 
@@ -59,15 +52,6 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 For more information, see [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/guides/resolve-merge-conflicts-in-git).
 
 
-
-
-## Storing secrets
-
-Properly managing secrets is crucial for maintaining the security of your application. Secrets include credentials used to access databases, APIs, communication services, and other sensitive information. Here are some best practices for handling secrets in your projects:
-
-- In Appsmith, credentials used to access configured datasources are automatically redacted and never enter the version control system.
-
-- For other types of secrets that need to be kept out of version control, store them in a secure location such as repository environment variables. For example, you can store your CI/CD bearer token in an environment variable.
 
 
 

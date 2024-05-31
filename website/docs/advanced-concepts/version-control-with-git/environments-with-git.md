@@ -35,7 +35,7 @@ Follow these steps to set up multiple instances for your app:
   </iframe>
 </div>
 
-1. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository). Once connected, create and check out a `staging` branch from the default `master` branch.
+1. Create an app within the *Staging* instance or connect an existing app to a [Git repository](/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository). Once connected, create and check out a `staging` branch from the default `master` branch.
 
 2. In the *Staging* instance, configure the datasource using the `staging` database configuration, then **Commit and push** the changes.
 
