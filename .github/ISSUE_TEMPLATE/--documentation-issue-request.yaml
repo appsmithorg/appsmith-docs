@@ -1,0 +1,66 @@
+name: 📖 Documentation Issue
+description: Use this template for creating or updating documentation.
+title: "[Docs]: "
+labels:
+  - "Documentation"
+  - "User Education Pod"
+assignees:
+  - Nikhil-Nandagopal
+  - jnikhila
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this documentation request!
+
+  - type: textarea
+    id: txtProblemStatement
+    attributes:
+      label: Problem Statement
+      description: Clearly articulate the problem or challenge the documentation aims to address.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Proposed Changes**
+
+        Outline the changes or additions needed to resolve the problem stated above. Please be specific and explain why this change is necessary.
+
+  - type: textarea
+    id: txtusecaseoruserquery
+    attributes:
+      label: Use Cases / User query reference
+      description: Describe the primary use cases or scenarios or user queries and how it is impacting users.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## **Supporting Media**
+
+        Attach any relevant media (e.g., Loom recordings, screenshots) to aid in understanding the documentation request.
+
+  - type: input
+    id: inprecording
+    attributes:
+      label: Audio/Video Recording
+      description: Loom recordings that will help in understanding the feature/updates.
+  - type: input
+    id: inpPRD
+    attributes:
+      label: Product Requirements Document
+      description: If available, provide a link to the PRD related to this documentation request.
+  - type: input
+    id: inpOthers
+    attributes:
+      label: Other Relevant Links
+      description: Include any other relevant links or resources related to this documentation request. For example, Designs or ERDs.
+
+  - type: checkboxes
+    id: checkFeatureExistingIssues
+    attributes:
+      label: Checklist
+      options:
+        - label: Reviewed existing documentation to ensure this request is not duplicated.
+          required: true
+        - label: Attached relevant media or supporting materials like links to the PRD, feature recordings, Slack or Discord links, and any other relevant resources.
+          required: true

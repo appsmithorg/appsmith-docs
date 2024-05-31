@@ -37,7 +37,7 @@ In the example below, `UsersTable` is the name of a Table widget used to search 
 In the **Query** window:
 
 ```javascript
-query GetUserData (name: String!, $limit: Int!, $offset: Int!) {
+query GetUserData ($name: String!, $limit: Int!, $offset: Int!) {
   user (name: $name, first: $first, offset: $offset) {
     id
     name

@@ -1,11 +1,9 @@
-
 ## Description 
 
-Provide a concise summary of the changes made in this pull request.
-
+Provide a concise summary of the changes made in this pull request
 - 
 
-## Type of PR
+## Pull request type
 
 Check the appropriate box:
 
@@ -13,24 +11,24 @@ Check the appropriate box:
 - [ ] Documentation Overhaul
 - [ ] Feature/Story
     - Link one or more Engineering Tickets
-
         * 
-
 - [ ] A-Force
 - [ ] Error in documentation
+- [ ] Maintenance
 
 ## Documentation tickets
+
  Link to one or more documentation tickets:
- 
  - 
 
 ## Checklist
-Choose only the ones that are applicable.
+
+From the below options, select the ones that are applicable:
 
 - [ ] Checked for Grammarly suggestions.
 - [ ] Adhered to the writing checklist.
-- [ ] Adhered the media checklist.
+- [ ] Adhered to the media checklist.
 - [ ] Verified and updated cross-references or added redirect rules.
 - [ ] Tested the redirect rules on deploy preview.
-- [ ] Validated the modifications made to the content on deploy preview.
+- [ ] Validated the modifications made to the content on the deploy preview.
 - [ ] Validated the CSS modifications on different screen sizes.

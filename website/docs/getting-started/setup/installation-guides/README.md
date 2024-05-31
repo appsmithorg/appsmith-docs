@@ -90,19 +90,13 @@ Depending on your infrastructure, you can choose one of the following guides to 
 <div className="containerGrid">
         <div className="columnGrid column-one" align="center">
             <div className="containerCol">
-             <a href="/getting-started/setup/installation-guides/heroku">
-               <img className="containerImage" src="/img/heroku-logo.png" alt="Heroku-logo"/>
-             </a>   
-            </div> 
-            <b><a href="/getting-started/setup/installation-guides/heroku">Heroku</a></b>
-        </div>
-        <div className="columnGrid column-two" align="center">
-        <div className="containerCol">
             <a href="/getting-started/setup/installation-guides/ansible">
             <img className="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
             </a>     
         </div> 
         <b><a href="/getting-started/setup/installation-guides/ansible">Ansible</a></b>
+        </div>
+        <div className="columnGrid column-two" align="center">
         </div>
         <div className="columnGrid column-three" align="center">
                 </div>

@@ -704,3 +704,7 @@ h4+.tags {
   left: 2%;
   width: 92%;
 }
+
+.parameterCodeBlock {
+  font-size: small;
+}

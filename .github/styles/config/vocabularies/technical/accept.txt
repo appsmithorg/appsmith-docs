@@ -89,3 +89,23 @@ k8s
 K8s
 Kubernetes
 CLI
+Plan
+Paid
+Sign-On
+GAC
+Ask AI
+Us
+Discord
+discord
+us
+modalName
+Show Modal using JS
+Show Modal on page load
+Show Modals conditionally
+Microsoft Entra ID
+Database
+SSL/TLS
+Cause
+Filepicker
+MongoDB
+Redis

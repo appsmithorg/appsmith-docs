@@ -89,7 +89,6 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/installation-guides/digitalocean',
-                'getting-started/setup/installation-guides/heroku',
                 'getting-started/setup/installation-guides/ansible',
                 'getting-started/setup/installation-guides/air-gapped',
               ],
@@ -120,7 +119,7 @@ const sidebars = {
                         id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
                       },
                       items: [
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
@@ -134,7 +133,7 @@ const sidebars = {
                         id: 'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README',
                       },
                       items: [
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/active-directory',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
@@ -212,7 +211,6 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/manage-plans/upgrade-plan',
-                'getting-started/setup/manage-plans/downgrade-plan',
                 {
                   type: 'category',
                   label: 'Upgrade from Community Edition',
@@ -226,6 +224,7 @@ const sidebars = {
                     'getting-started/setup/upgrade-from-community-edition/kubernetes',
                   ]
                 },
+                'getting-started/setup/manage-plans/downgrade-plan',
               ],
             },
             `getting-started/setup/best-practices`,
@@ -827,6 +826,7 @@ const sidebars = {
         'getting-started/faq',
         'product/security',
         'product/telemetry',
+        'product/support',
         {
           type: 'link',
           label: 'Release Notes', // The link label

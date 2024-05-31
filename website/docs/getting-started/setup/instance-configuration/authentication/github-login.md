@@ -45,7 +45,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 Click **Admin Settings > Authentication > Enable**(GitHub). Add the `Client ID` and `Client Secret`. Click the **Save & Restart** button at the bottom of the page.
 
-![](/img/as_github_auth_config.png)
+![Github authentication configuration image](/img/as_github_auth_config.png)
 
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.

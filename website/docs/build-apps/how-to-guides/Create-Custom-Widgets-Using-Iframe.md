@@ -107,8 +107,11 @@ appsmith.onReady(() => {
 
 </dd>
 
+## Pass data from Appsmith to Custom widget
 
-5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
+Follow these steps to pass parameters from Appsmith to the Custom widget:
+
+1. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -139,7 +142,7 @@ To dynamically add data, whether from a query or a widget, you can use something
 
 </dd>
 
-6. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+2. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
 
  
 <dd>
@@ -172,8 +175,13 @@ function App() {
 
 </dd>
 
+## Pass data from Custom widget to Appsmith
 
-7. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+
+Follow these steps to pass parameters from the Custom widget to Appsmith:
+
+
+1. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
 
 <dd>
 
@@ -219,7 +227,7 @@ To display data in a Text widget, set its **Text** property to:
 </dd>
 
 
-8. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
+2. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
 
 <dd>
 
@@ -250,7 +258,7 @@ In the Custom widget, create a new event with the same name `(i.e onSlide)` as d
 
 </dd>
 
-9. To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
+3. To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
 
 
 <dd>

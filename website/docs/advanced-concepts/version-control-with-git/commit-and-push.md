@@ -7,7 +7,9 @@ sidebar_position: 2
 This guide shows you how to commit, pull, and manage Git changes within your application.
 
 
+
 ## Commit and Push changes
+
 
 After creating a new branch and making changes to the app, follow these steps to commit and push the changes to your remote repository:
 

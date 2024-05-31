@@ -20,7 +20,7 @@ Once logged in, follow the steps listed below:
 - Find Appsmith from the DigitalOcean marketplace [here](https://marketplace.digitalocean.com/apps/appsmith).
 - Click the Create Appsmith Droplet button; that redirects you to a new page where you can set up all your configurations.
 
-![](/img/appsmith_droplet.gif)
+![Appsmith droplet gif](/img/appsmith_droplet.gif)
 
 For a base configuration, use the following settings.
 
@@ -31,20 +31,20 @@ Data Center Region: (Choose the nearest location to your place)
 Additional Options: IPV6 Enabled
 ```
 
-![](/img/droplet_config.gif)
+![Droplet configuration gif](/img/droplet_config.gif)
 
 - In the authentication section, you can either choose SSH or set up a password if you want to log in to your server.
 - Lastly, click on the Create Droplet button.
 
-![](/img/droplet_password.gif)
+![Droplet password gif](/img/droplet_password.gif)
 
 It takes a few minutes (approximately 3-4 minutes) to install Appsmith on the DigitalOcean droplet. You’ll find the deployed droplet on your dashboard with all the details of the selected configuration.
 
-![](/img/DO_dashboard.png)
+![Dashboard image](/img/DO_dashboard.png)
 
 To use Appsmith, copy the IPv4 address from the settings and open it in a new tab. This takes you to Appsmith’s login page. Since this is a new instance, click on sign up to create a new account on Appsmith.
 
-![](/img/signup_appsmoith.gif)
+![Appsmith sign up gif](/img/signup_appsmoith.gif)s
 
 ## Updating to the latest Appsmith release
 

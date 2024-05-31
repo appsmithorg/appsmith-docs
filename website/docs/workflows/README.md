@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows are essential for automating tasks and orchestrating processes within applications. By integrating code-based and node-based systems, they provide a practical solution for automating tasks, managing workflows, enabling human-in-the-loop (HITL) interactions, and integrating with external services.
+Appsmith Workflows combines code-based and node-based approaches, giving developers an intuitive interface to connect with external services. This lets developers focus on their app's logic while handling APIs and authentication. Appsmith Workflows use JavaScript to simplify the management of complex tasks, making them perfect for efficient and advanced workflow automation.
 
 ## Workflow capabilities
 
@@ -26,21 +26,21 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
 ### Automate business-critical processes
 
-Using app-building capabilities of Appsmith in workflows, developers can automate critical tasks based on business rules and requirements. From ticket assignments in customer support workflows to complex data processing operations, Workflows streamline processes efficiently.
+Appsmith Workflows enable you to automate key business processes by linking databases and external services. For instance, you can automatically sync new leads from your CRM to marketing tools or handle inventory management by setting up stock alerts and supplier orders. With JavaScript logic, complex tasks can be automated to minimize errors and maintain consistency in managing business operations.
 
 ### Enable Human-in-the-Loop interactions
 
-Appsmith Workflows allow for human interventions within automated processes, facilitating informed decision-making through the Appsmith app. Decision points within workflows empower users to review and take appropriate actions, enhancing the efficiency and effectiveness of workflows.
+Appsmith Workflows allow you to automate human-in-the-loop (HITL) flows by combining user-friendly interfaces with server-side automation. They integrate automated tasks with manual checkpoints, ensuring that essential human decisions are included as needed. Developers can design workflows that require data validation, approvals, or feedback before continuing, improving collaboration and reducing errors while maintaining oversight in critical processes.
 
 ## Explore trigger types
 
-Appsmith supports different trigger types to configure actions and processes within workflows:
+Appsmith provides different trigger types to configure actions and processes within workflows:
 
-- **Webhook**- Triggered by external events or HTTP requests, Webhook triggers enable real-time data processing and action execution based on incoming data. Learn how to use the Webhook triggers in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
-  
-- **Integrated Datasource for use in Appsmith Apps**- Seamlessly connect workflows with Appsmith applications using prebuilt integrations. This allows for seamless execution of operations within the app and direct management of workflows from the Appsmith interface. Delve deeper into integrated datasource triggers using Appsmith app in the [Trigger workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
+- **Webhook:** Triggered by external events or HTTP requests, webhooks enable real-time data processing and action execution based on incoming data. Use them to integrate Appsmith workflows with external systems. Learn how to use webhooks in the [Getting started with workflows](/workflows/tutorials/create-workflow) tutorial.
 
-- **Scheduled Jobs (Cron Jobs)**- Scheduled to run at specific times or intervals, Scheduled Jobs automate tasks using Cron expressions. Stay tuned for updates on the availability and usage of Scheduled Jobs within Appsmith. (**Coming Soon**)
+- **Integrated Datasource for Appsmith Apps:** [Trigger workflows sealmessly from your Appsmith apps](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) within the same workspace by creating workflow queries.
+
+- **Scheduled Jobs (Cron Jobs):** Run tasks at specific times or intervals using Cron expressions. Stay tuned for updates on Scheduled Jobs availability in Appsmith. (**Coming Soon**)
 
 ## Getting started with workflows
 

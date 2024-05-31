@@ -18,7 +18,7 @@ To use an input within the query, enclose the input name within double curly bra
 
 <ZoomImage
   src="/img/INPUT-pack.png" 
-  alt=""
+  alt="Inputs image"
   caption=""
 />
 
@@ -43,7 +43,7 @@ Setting default input values ensures successful query execution.
 
 <ZoomImage
   src="/img/settings-pack.png" 
-  alt=""
+  alt="Package settings image"
   caption=""
 />
 

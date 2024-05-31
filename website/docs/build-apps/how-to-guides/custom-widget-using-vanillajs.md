@@ -99,7 +99,11 @@ appsmith.onReady(() => {
 
 </dd>
 
-5. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
+## Pass data from Appsmith to Custom widget
+
+Follow these steps to pass parameters from Appsmith to the Custom widget:
+
+1. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
@@ -135,7 +139,7 @@ events: [
 
 </dd>
 
-6. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+2. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
 
  
 <dd>
@@ -162,7 +166,13 @@ appsmith.onReady(() => {
 
 </dd>
 
-7. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+## Pass data from Custom widget to Appsmith
+
+
+Follow these steps to pass parameters from the Custom widget to Appsmith:
+
+
+1.  To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
 
 <dd>
 
@@ -205,7 +215,7 @@ To display data in a Text widget, set its **Text** property to:
 
 </dd>
 
-8. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
+2. For widget interaction, you can create events using the **Add Event** button on the Custom widget and use the `triggerEvent` property inside the Custom widget builder.
 
 <dd>
 

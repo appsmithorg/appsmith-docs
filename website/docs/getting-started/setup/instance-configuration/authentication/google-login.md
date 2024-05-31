@@ -53,7 +53,7 @@ There are two ways to configure the self-hosted Appsmith instance -
 
 You can add the Client ID, Client Secret and allowed domains from [Admin Settings](/getting-started/setup/instance-configuration/). Go to **Admin Settings> Authentication> Google**, fill the required fields and click the **Save & Restart** button at the bottom of the page.
 
-![](/img/as_google_auth_config.png)
+![Google authentication configuration image](/img/as_google_auth_config.png)
 
 :::info
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.

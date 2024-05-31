@@ -17,10 +17,6 @@ By default, Appsmith enables the [protected branch](#change-protected-branch) fe
 To create these branches in your Appsmith app, follow the steps below:
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/lpXnJuEduL502KIavxLb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
 
 
 1. Select the branch menu located at the bottom left corner to access the branch Modal. This modal displays all available remote and local branches.
