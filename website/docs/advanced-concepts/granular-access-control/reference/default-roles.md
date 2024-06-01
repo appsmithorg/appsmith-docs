@@ -33,7 +33,7 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
         <p className="permission-footnote">
         <span style={{color: 'green', fontWeight: 'bold'}}>(✓)</span> Permission Assigned
         </p>
-        <table className="permissions-table">
+        <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
             <thead>
                 <tr>
                     <th></th>
@@ -143,7 +143,7 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table className="permissions-table">
+<table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
     <thead>
         <tr>
             <th></th>
@@ -278,7 +278,7 @@ The Developer role enables users to create, edit, and delete apps within a works
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table className="permissions-table">
+<table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
     <thead>
         <tr>
             <th></th>
@@ -392,7 +392,7 @@ The App Viewer role enables users to view apps, governed by the permissions allo
   <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table className="permissions-table">
+<table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
     <thead>
         <tr>
             <th></th>
@@ -490,7 +490,7 @@ The Developer role enables users to manage pages, queries, datasources, and envi
 <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table className="permissions-table">
+<table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
     <thead>
         <tr>
             <th></th>
@@ -585,7 +585,7 @@ The App Viewer role enables users to view pages, governed by the permissions all
  <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
 
-<table className="permissions-table">
+<table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
     <thead>
         <tr>
             <th></th>
