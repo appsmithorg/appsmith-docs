@@ -6,7 +6,7 @@ This page shows how to revert a committed change to a specific branch or default
 You can revert changes from Git user interfaces provided by some platforms, but it is recommended to perform reverts from the local system using Git commands.
 
 
-1. Open your App Git repository and clone it to your local system.
+1. Open your App Git repository and clone it to your local system. Alternatively, you can use [GitHub.dev](https://github.com/github/dev) to revert changes directly from your browser.
 
 2. Switch to the branch where you want to revert the change:
 

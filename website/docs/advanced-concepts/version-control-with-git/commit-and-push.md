@@ -17,10 +17,6 @@ Merge conflicts occur when changes from different branches overlap, leading to c
 <ZoomImage src="/img/seperate-conflicts.png" alt="" caption=""/>
 
 
-
-
-<ZoomImage src="/img/branch-issue-1.png" alt="" caption=""/>
-
 1. To resolve these conflicts, raise a pull request for your source branch, targeting the destination branch where you intend to merge the changes.
 
 
@@ -37,7 +33,9 @@ If you're working on the `feature` branch and want to merge changes into `stagin
 
 <dd>
 
-If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
+If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface.  Alternatively, you can use [GitHub.dev](https://github.com/github/dev) to resolve conflicts directly from your browser.
+
+For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
 
 </dd>
@@ -64,10 +62,6 @@ These conflicts arise when changes in your local branch cannot be directly merge
 <ZoomImage src="/img/remote-Conflicts.png" alt="" caption=""/>
 
 
-
-   <ZoomImage src="/img/remote-branch-issue.png" alt="" caption=""/>
-
-
 1. Create a new branch from the conflicted branch and raise a Pull Request.
 
 
@@ -87,7 +81,10 @@ These conflicts arise when changes in your local branch cannot be directly merge
 
 <dd>
 
-If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
+If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface.  Alternatively, you can use [GitHub.dev](https://github.com/github/dev) to resolve conflicts directly from your browser.
+
+
+For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
 
 
