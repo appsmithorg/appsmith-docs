@@ -1,6 +1,6 @@
 # Connect to Other Git Providers
 
-This guide shows how to connect your Appsmith application to a remote Azure repository. 
+This guide shows how to connect your Appsmith application to any Git provider, using an Azure repos as an example.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
