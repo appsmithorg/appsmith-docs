@@ -3,7 +3,7 @@ description: >
   Examples showcasing permissions while creating custom roles in granular access control.
 title: Custom Roles
 hide_title: true
-toc_max_heading_level: 2
+toc_max_heading_level: 3
 ---
 
 import Tabs from '@theme/Tabs';
@@ -38,7 +38,7 @@ To create a custom role, click the **Add role** button on the Roles screen. On t
 
 Below are some examples configurations that help you configure custom roles:
 
-### Restrict access to specific page
+### Restrict access to page
 
 To restrict access to specific pages within an Appsmith application, modify the permissions at the page level available under the _Application Resources_ tab. Choose the appropriate custom role, remove the permissions assigned to page (Page1) to make it inaccessible. The table below illustrates the permissions setup for restricting page access.
 
@@ -104,7 +104,7 @@ To restrict access to specific pages within an Appsmith application, modify the 
   </TabItem>
 </Tabs>
 
-### Give access to specific application
+### Give app access
 
 To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role. When creating a new custom role, it's necessary to also configure permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access.
 

@@ -16,16 +16,31 @@ Collaboration in a business environment often requires sharing applications or w
 
 ## Invite users to workspace
 
-Inviting users to a workspace grants them access to all the applications and resources within it. This is ideal for teams working on different projects within the same workspace. To invite users, click the **Share** button located in the top right corner of your workspace. Select the desired role to provide appropriate access. Learn more about roles and permissions in [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles) and [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
+Inviting users to a workspace grants them access to all the applications and resources within it. This is ideal for teams working on different projects within the same workspace. To invite users, click the **Share** button located in the top right corner of your workspace on the dashboard. Select the desired role to provide appropriate access. Learn more about roles and its permissions in [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles) and [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
 
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
 
 ## Invite users to application
 
-Inviting users to a specific application grants them access only to that application within your workspace. This is useful when different teams or individuals are responsible for different applications. To invite users to an application, click the **Share** button in the top right corner of the application. Select default roles such as [Developer](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-application) or [App Viewer](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-application). You can also assign custom roles by modifying group configurations. For more information, see [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
+<Tags
+tags={[
+  { name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
 
-:::info Note
+</div>
+
+<!-- vale on -->
+
+:::caution Note
 Inviting a user from an application in the Community edition or when you are on a Free plan shares the entire workspace and all applications within it.
 :::
+
+Inviting users to a specific application grants them access only to that application within your workspace. This is useful when different teams or individuals are responsible for different applications. To invite users to an application, click the **Share** button in the top right corner of the application. Select default roles such as [Developer](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-application) or [App Viewer](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-application). You can also assign custom roles by modifying group configurations. For more information, see [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
+
 
 ## Make application public
 
