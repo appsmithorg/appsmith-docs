@@ -731,6 +731,7 @@ const sidebars = {
                 'advanced-concepts/granular-access-control/reference/default-roles',
                 'advanced-concepts/granular-access-control/reference/custom-roles',
                 'advanced-concepts/granular-access-control/reference/permissions',
+                'advanced-concepts/invite-users',
               ]
             },
             {
@@ -738,7 +739,6 @@ const sidebars = {
               label: 'Concepts',
               items: [
                 'advanced-concepts/granular-access-control/roles',
-                'advanced-concepts/invite-users',
               ]
             },
           ]
