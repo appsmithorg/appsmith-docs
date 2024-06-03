@@ -289,7 +289,6 @@ See the sample app for the [Image carousel](https://app.appsmith.com/app/untitle
 
 </dd>
 
-
 ## Sample apps
 
 * [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
