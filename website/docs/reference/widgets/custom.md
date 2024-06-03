@@ -5,7 +5,7 @@ While Appsmith provides an extensive array of built-in widgets for application d
 See [How to create Custom widgets](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe).
 
 :::info
-While custom widgets support integrating HTML or React components, iframes with src URLs will not be loaded within custom widgets. To use iframes, consider using the [Iframe widget](/reference/widgets/iframe).
+While Custom widgets support integrating HTML or React components, iframes with src URLs will not be loaded within Custom widgets. To use iframes, consider using the [Iframe widget](/reference/widgets/iframe).
 :::
 
 ## Content properties
