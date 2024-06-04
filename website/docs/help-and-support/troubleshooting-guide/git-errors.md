@@ -86,7 +86,7 @@ To resolve this:
 
 See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)
 
- ### Maximum Call Size Exceeded Error
+ ### Maximum call size exceeded error
 
 <Message
  messageContainerClassName='error'
@@ -107,7 +107,7 @@ Split the merge operation into smaller chunks and remove any unnecessary large f
 
 
 
- ### Private Repo Limit Error
+ ### Private repo limit error
 
 
 <Message
@@ -122,7 +122,10 @@ messageContent='Private Repo Limit Error'></Message>
 
 #### Solution
 
-In the community edition, you are only able to connect to 3 private repositories. To connect to more private repositories, you need to upgrade your plan to the business or enterprise edition. For more information, see [Pricing](https://www.appsmith.com/pricing).
+In the community edition, you can only connect to 3 private repositories. To connect to more private repositories, you need to upgrade your plan to the business or enterprise edition. For more information, see [Pricing](https://www.appsmith.com/pricing).
+
+
+
 
 
 

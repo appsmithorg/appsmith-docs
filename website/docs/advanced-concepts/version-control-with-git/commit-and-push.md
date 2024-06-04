@@ -10,7 +10,7 @@ You can encounter merge conflicts in two cases:
 * When merging two separate branches.
 * When updating changes to a local or remote branch.
 
-## Branch Merge Conflicts
+## Branch merge conflicts
 
 Merge conflicts occur when changes from different branches overlap, leading to conflicts that need manual resolution.
 
@@ -57,7 +57,7 @@ If you are facing issues merging from a `feature` branch to `staging`, then ensu
 
 
 
-## Remote Branch Pull Conflicts
+## Remote branch pull conflicts
 
 These conflicts arise when changes in your local branch cannot be directly merged with changes in the remote branch. For example, If you're working on the `feature` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. 
 
