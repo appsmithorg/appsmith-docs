@@ -1,0 +1,57 @@
+---
+description: >-
+  Learn how to restrict query access and hide widgets based on user permissions in Appsmith.
+title: Restrict Query Access
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Restrict Query Access</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+
+
+To ensure that users have appropriate access to data and functionalities, it's essential to manage query permissions in your Appsmith applications. This page shows how to restrict query access and dynamically show/hide widgets based on query permissions.
+
+## Prerequisites
+
+- A self-hosted Appsmith Commercial Edition installation. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides).
+- Enabled the Programmatic Access Control feature. For more information, see [Programmatic Access Control](/getting-started/setup/instance-configuration/configure-instance-1). 
+- Access to edit roles and applications.
+
+## Restrict query access and hide widgets
+
+Follow these steps to amend your existing role, revoke query permissions, and hide widgets on UI for an enhanced user experience:
+
+1. Identify the query (Query1) for which you want to control access.
+2. Determine which roles should have permission to execute the query and view associated widgets.
+3. In your application, set up conditional rendering for widgets based on the roles allowed to execute the query. Use the `appsmith.user.roles` object to verify the role assignment.
+
+   - **Example: Show Button Based on User Role**
+      To display a button widget based on specific roles, set the **Visible** property in the button widget's property pane to the following JavaScript code. The widget is hidden for all the other roles except the one that is added in the below code, ensuring only the users with access permission to execute queries will see the widget.
+
+      ```javascript
+      // Replace <ROLE_NAME> with the name of roles that have access
+      {{appsmith.user.roles.includes('<ROLE_NAME>')}}
+      ```
+   For more information about roles object, see [appsmith.user.roles](/reference/appsmith-framework/context-object#roles-object).
+
+4. Once the widget visibility logic is set up, navigate to the _Admin Settings_ by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
+2. Under **Access Control** in the sidebar, select **Roles**, and edit the permissions of the role where you want to restrict query (Query1) access, by revoking the **Execute** permission for Query1.
+5. Click **Save changes** to apply the updated permissions.
+6. Revoke **Execute** permission for queries in its associated roles except for those allowed to execute the query.
+
+## Troubleshooting
+
+If you face any issues, reach out to the support team via the chat widget located at the bottom right of this page.

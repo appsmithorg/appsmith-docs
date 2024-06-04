@@ -131,3 +131,5 @@ Users
 User
 permission
 Permissions
+widgets
+Hide
