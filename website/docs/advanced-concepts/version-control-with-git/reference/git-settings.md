@@ -33,14 +33,13 @@ This section allows you to change important Git settings such as disabling auto-
 
 **Disable Auto-Commit**: 
 
-The Auto Commit feature in Appsmith automatically commits changes related to version upgrades. If you disable auto-commit, it prevents automatic migrations from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
+The Auto Commit feature in Appsmith automatically commits changes related to version upgrades. If you disable auto-commit, it prevents automatic changes from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
 
+When auto-commit is enabled, it:
 
-- Whenever you upgrade your Appsmith instance, the Domain Specific Language (DSL) that describes your app's layout and interactions is updated. 
+- Automatically commits changes to a non-protected branch when you open the branch in your app. If the app is not actively in use, the auto-commit will not take place.
 
-- Auto commit occurs to a non-protected branch when you open the branch in your app. If the app is not actively in use, the auto-commit will not take place.
-
-- With the auto commit, only the changes related to Appsmith's DSL components are committed, not your specific app changes. 
+- Commits only the changes related to Appsmith's Domain Specific Language (DSL) components, not your specific app changes.
 
 <dd>
 
@@ -54,6 +53,7 @@ If you are working on a Table widget in your app. When Appsmith updates its vers
 <dd>
 
  ```js
+ //example dsl code
  "dsl": {
           "widgetName": "MainContainer",
           "parentRowSpace": 1,

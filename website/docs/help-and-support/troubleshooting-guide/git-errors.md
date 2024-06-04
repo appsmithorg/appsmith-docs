@@ -118,7 +118,7 @@ messageContent='Private Repo Limit Error'></Message>
 
 #### Cause
 
- This occurs due to server resource limitations or restrictions on the number of private repositories that can be connected.
+ This occurs due to restrictions on the number of private repositories that can be connected.
 
 #### Solution
 
