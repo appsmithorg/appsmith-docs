@@ -733,7 +733,6 @@ const sidebars = {
                 'advanced-concepts/granular-access-control/reference/default-roles',
                 'advanced-concepts/granular-access-control/reference/custom-roles',
                 'advanced-concepts/granular-access-control/reference/permissions',
-                'advanced-concepts/invite-users',
               ]
             },
             {

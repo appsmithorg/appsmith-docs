@@ -1240,6 +1240,10 @@
       "source": "/core-concepts/connecting-to-data-sources/connect-to-apis",
       "destination": "/connect-data/reference/rest-api",
       "permanent": true
+    },
+    {
+      "source": "/advanced-concepts/invite-users",
+      "destination": "/advanced-concepts/granular-access-control/reference/permissions"
     }
   ]
 }
