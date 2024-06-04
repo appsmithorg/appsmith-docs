@@ -823,7 +823,8 @@ const sidebars = {
           },
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
-            'help-and-support/troubleshooting-guide/action-errors/README'
+            'help-and-support/troubleshooting-guide/action-errors/README',
+            'help-and-support/troubleshooting-guide/gac-errors',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',
