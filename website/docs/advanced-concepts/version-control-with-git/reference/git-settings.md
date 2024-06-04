@@ -31,8 +31,48 @@ This section allows you to modify the name and email associated with the author.
 
 This section allows you to change important Git settings such as disabling auto-commit or disconnecting Git from Appsmith.
 
-* **Disable Auto-Commit**: This action prevents automatic migrations from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
-* **Disconnect Git**: This action permanently disconnects your Appsmith app from Git. Once disconnected, it is not possible to reconnect to the same repository. If you want to reconnect, you need to connect a new empty repository.
+**Disable Auto-Commit**: 
+
+The Auto Commit feature in Appsmith automatically commits changes related to version upgrades. If you disable auto-commit, it prevents automatic migrations from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
+
+
+- Whenever you upgrade your Appsmith instance, the Domain Specific Language (DSL) that describes your app's layout and interactions is updated. 
+
+- Auto commit occurs to a non-protected branch when you open the branch in your app. If the app is not actively in use, the auto-commit will not take place.
+
+- With the auto commit, only the changes related to Appsmith's DSL components are committed, not your specific app changes. 
+
+<dd>
+
+*Example:*
+
+If you are working on a Table widget in your app. When Appsmith updates its version and auto commits, only the changes related to the updated Table widget—like new properties or methods—are committed. Your specific customizations, such as styling or behavior modifications, remain unaffected and aren't committed. You can find DSL-related changes in your Git repository inside the relevant page folder.
+
+
+
+
+<dd>
+
+ ```js
+ "dsl": {
+          "widgetName": "MainContainer",
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          // highlight-next-line
+          "version": 89,
+          "minHeight": 1292,
+          "parentColumnSpace": 1,
+        },
+    ```
+
+</dd>
+
+</dd>
+
+**Disconnect Git**: 
+
+This action permanently disconnects your Appsmith app from Git. Once disconnected, it is not possible to reconnect to the same repository. If you want to reconnect, you need to connect a new empty repository.
 
 
 

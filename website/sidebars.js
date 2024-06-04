@@ -764,7 +764,6 @@ const sidebars = {
                   label: 'Reference',
                   items: [
                     'advanced-concepts/version-control-with-git/reference/git-settings',
-                    'advanced-concepts/version-control-with-git/reference/auto-commit',
                   ]
                 },
                 'advanced-concepts/version-control-with-git/merging-branches',

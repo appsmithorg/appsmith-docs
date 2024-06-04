@@ -86,3 +86,43 @@ To resolve this:
 
 See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push)
 
+ ### Maximum Call Size Exceeded Error
+
+<Message
+ messageContainerClassName='error'
+messageContent='Maximum call size exceeded'></Message>
+
+
+
+#### Cause
+
+This error is due to the size limit on the merge operation being exceeded, possibly from large files or too many changes.
+
+
+
+
+#### Solution
+
+Split the merge operation into smaller chunks and remove any unnecessary large files from the repository.
+
+
+
+ ### Private Repo Limit Error
+
+
+<Message
+ messageContainerClassName='error'
+messageContent='Private Repo Limit Error'></Message>
+
+
+
+#### Cause
+
+ This occurs due to server resource limitations or restrictions on the number of private repositories that can be connected.
+
+#### Solution
+
+In the community edition, you are only able to connect to 3 private repositories. To connect to more private repositories, you need to upgrade your plan to the business or enterprise edition. For more information, see [Pricing](https://www.appsmith.com/pricing).
+
+
+

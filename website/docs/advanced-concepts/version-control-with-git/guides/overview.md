@@ -31,7 +31,7 @@ You can connect to Git using any provider of your choice with a Remote SSH URL. 
     </div>
 <div className="containerColumnSampleApp columnGrid column-two">
 <div className="containerCol">
-            <a href="/advanced-concepts/version-control-with-git/guides/setup-other-provider"><strong>Connect to Azure Repos</strong></a>
+            <a href="/advanced-concepts/version-control-with-git/guides/setup-other-provider"><strong>Connect to Other Git Providers</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows how to connect your Appsmith application to a remote Azure repository.</div>
 </div>

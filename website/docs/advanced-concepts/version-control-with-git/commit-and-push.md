@@ -14,7 +14,7 @@ You can encounter merge conflicts in two cases:
 
 Merge conflicts occur when changes from different branches overlap, leading to conflicts that need manual resolution.
 
-<ZoomImage src="/img/seperate-conflicts.png" alt="" caption=""/>
+<ZoomImage src="/img/seperate-conflicts-git.png" alt="" caption=""/>
 
 
 1. To resolve these conflicts, raise a pull request for your source branch, targeting the destination branch where you intend to merge the changes.
@@ -28,12 +28,14 @@ If you're working on the `feature` branch and want to merge changes into `stagin
 
 </dd>
 
- 2. Once the PR is created, scroll down to the bottom of the PR page, and click the **Resolve conflicts** button to resolve conflicts directly from the pull request interface.
-
+ 2. Once the PR is created, scroll down to the bottom of the PR page: 
+ 
 
 <dd>
 
-If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface.  Alternatively, you can use [GitHub.dev](https://github.com/github/dev) to resolve conflicts directly from your browser.
+*  If the Resolve conflicts button is available, you can resolve conflicts directly from the pull request interface by selecting the conflicting files and making the necessary changes.
+
+* If the Resolve conflicts button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If you don't want to resolve conflicts locally, you can use tools like [GitHub.dev](https://github.com/github/dev), [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide/) to resolve conflicts directly from your browser.
 
 For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
@@ -59,7 +61,7 @@ If you are facing issues merging from a `feature` branch to `staging`, then ensu
 
 These conflicts arise when changes in your local branch cannot be directly merged with changes in the remote branch. For example, If you're working on the `feature` branch and someone else pushes changes to the remote counterpart of the same branch, you may encounter conflicts if both have edited the same files. 
 
-<ZoomImage src="/img/remote-Conflicts.png" alt="" caption=""/>
+<ZoomImage src="/img/remote-Conflicts.drawio.png" alt="" caption=""/>
 
 
 1. Create a new branch from the conflicted branch and raise a Pull Request.
@@ -76,17 +78,16 @@ These conflicts arise when changes in your local branch cannot be directly merge
 
 
 
-2. Once the PR is created, scroll down to the bottom of the PR page, and click the **Resolve conflicts** button to resolve conflicts directly from the pull request interface.
-
+ 2. Once the PR is created, scroll down to the bottom of the PR page: 
+ 
 
 <dd>
 
-If the resolve button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface.  Alternatively, you can use [GitHub.dev](https://github.com/github/dev) to resolve conflicts directly from your browser.
+*  If the Resolve conflicts button is available, you can resolve conflicts directly from the pull request interface by selecting the conflicting files and making the necessary changes.
 
+* If the Resolve conflicts button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If you don't want to resolve conflicts locally, you can use tools like [GitHub.dev](https://github.com/github/dev), [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide/) to resolve conflicts directly from your browser.
 
 For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
-
-
 
 
 </dd>
