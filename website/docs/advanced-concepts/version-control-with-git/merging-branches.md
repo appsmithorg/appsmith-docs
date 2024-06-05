@@ -1,7 +1,7 @@
 # Git Best Practices
 
 
-This page provides essential Git best practices to help teams avoid merge conflicts, enhance collaboration, maintain code quality, and manage secrets, ensuring a smoother and more efficient workflow.
+This page provides essential Git best practices to help teams avoid merge conflicts, enhance collaboration, and maintain code quality, ensuring a smoother and more efficient workflow.
 
 ## Use Branching Strategy
 
@@ -40,11 +40,11 @@ While working with Git, you may face merge conflicts. To avoid these conflicts, 
 
 - Multiple developers should avoid making changes to the same UI elements on the same page, even if they are working on different branches
 
-- Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
-
 - Pull changes frequently to incorporate updates from the remote repository into your local branch. 
 
 - Merge changes from the `master` branch regularly into the `feature` branch to keep it updated with the latest developments. You can do this by clicking on the **Merge icon** at the bottom left and merging changes from the `master` branch to the `feature` branch.
+
+- Divide work among developers so each person is responsible for different parts of the app to avoid overlap and conflicts.
 
 - Communicate with your teammates before making any changes to ensure coordination.
 
