@@ -88,18 +88,24 @@ Depending on your infrastructure, you can choose one of the following guides to 
 <br/>
 
 <div className="containerGrid">
-        <div className="columnGrid column-one" align="center">
-            <div className="containerCol">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
             <a href="/getting-started/setup/installation-guides/ansible">
-            <img className="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
+                <img className="containerImage" src="/img/Ansible-logo.png" alt="Ansible-logo"/>
             </a>     
         </div> 
         <b><a href="/getting-started/setup/installation-guides/ansible">Ansible</a></b>
-        </div>
-        <div className="columnGrid column-two" align="center">
-        </div>
-        <div className="columnGrid column-three" align="center">
-                </div>
-</div>    
+    </div>
+    <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="https://repocloud.io/details/?app_id=239">
+                <img className="containerImage" src="https://d16t0pc4846x52.cloudfront.net/repocloud-square.png" alt="RepoCloud-logo"/>
+            </a>     
+        </div> 
+        <b><a href="https://repocloud.io/details/?app_id=239">RepoCloud</a></b>
+    </div>
+    <div className="columnGrid column-three" align="center">
+    </div>
+</div> 
 
 </div>
