@@ -122,7 +122,7 @@ messageContent='Private Repo Limit Error'></Message>
 
 #### Solution
 
-In the community edition, you can only connect to 3 private repositories. To connect to more private repositories, you need to upgrade your plan to the business or enterprise edition. For more information, see [Pricing](https://www.appsmith.com/pricing).
+In the community edition, you can only connect to 3 private repositories. If you want to connect more private repositories, you must upgrade to a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 
 
 

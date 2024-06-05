@@ -31,16 +31,13 @@ If you're working on the `feature` branch and want to merge changes into `stagin
  2. Once the PR is created, scroll down to the bottom of the PR page: 
  
 
-<dd>
 
 *  If the Resolve conflicts button is available, you can resolve conflicts directly from the pull request interface by selecting the conflicting files and making the necessary changes.
 
 * If the Resolve conflicts button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If you don't want to resolve conflicts locally, you can use tools like [GitHub.dev](https://github.com/github/dev), [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide/) to resolve conflicts directly from your browser.
 
-For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
+    For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
-
-</dd>
 
 3. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge**, and Merge the pull request.
 
@@ -81,16 +78,14 @@ These conflicts arise when changes in your local branch cannot be directly merge
  2. Once the PR is created, scroll down to the bottom of the PR page: 
  
 
-<dd>
 
 *  If the Resolve conflicts button is available, you can resolve conflicts directly from the pull request interface by selecting the conflicting files and making the necessary changes.
 
 * If the Resolve conflicts button is disabled, you need to clone the Git repository to your local machine and resolve the conflicts using the command-line interface. If you don't want to resolve conflicts locally, you can use tools like [GitHub.dev](https://github.com/github/dev), [GitLab Web IDE](https://docs.gitlab.com/ee/user/project/web_ide/) to resolve conflicts directly from your browser.
 
-For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
+    For more information, see how to resolve a merge conflict on [GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github), [GitLab](https://docs.gitlab.com/ee/user/project/merge_requests/conflicts.html#methods-of-resolving-conflicts), [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/resolve-merge-conflicts/).
 
 
-</dd>
 
 
 3. After resolving all conflicts in all files and ensuring that the changes are correctly edited, click on **Commit merge**, and Merge the pull request.
