@@ -10,9 +10,10 @@ This guide shows you how to set up multiple instances in Appsmith using Git, mak
 
 ## Prerequisites
 
-* Two separate self-hosted instances: one for *Staging* and the other for *Production*. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
+* Two separate self-hosted instances in different environments: one for *Staging* and the other for *Production*. Refer to the [Appsmith installation](/getting-started/setup/installation-guides) guides for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of Git.
 
+<ZoomImage src="/img/git-multi-appsmith.drawio.png" alt="" caption=""/>
 
 
 
@@ -70,3 +71,8 @@ For more information, see [Roles](/advanced-concepts/granular-access-control/rol
 </dd>
 
 8. To manage your instances, follow this [branching strategy](/advanced-concepts/version-control-with-git/merging-branches#use-branching-strategy). 
+
+## See Also
+
+- [Continuous Delivery (CI/CD) with Git](/advanced-concepts/version-control-with-git/cd-with-git)
+- [Best Practices](/advanced-concepts/version-control-with-git/merging-branches)

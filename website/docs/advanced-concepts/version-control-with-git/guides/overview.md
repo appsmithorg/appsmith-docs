@@ -31,7 +31,7 @@ You can connect to Git using any provider of your choice with a Remote SSH URL. 
     </div>
 <div className="containerColumnSampleApp columnGrid column-two">
 <div className="containerCol">
-            <a href="/advanced-concepts/version-control-with-git/guides/setup-other-provider"><strong>Connect to Azure Repos</strong></a>
+            <a href="/advanced-concepts/version-control-with-git/guides/setup-other-provider"><strong>Connect to Other Git Providers</strong></a>
         </div> <hr/>
         <div className="containerDescription">This guide shows how to connect your Appsmith application to a remote Azure repository.</div>
 </div>
@@ -76,7 +76,9 @@ These guides help you manage Git integration, from resolving merge conflicts to 
 
 ## Continuous Delivery (CI/CD) with Git
 
-Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App using Git. Here are a few guides for popular options like GitHub Actions, Bitbucket Pipelines and GitLab CI/CD.
+Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App using Git. The integration is service-agnostic and is **compatible with any CI/CD tool** capable of calling a URL via cURL. 
+
+Here are a few guides for popular options like GitHub Actions, Bitbucket Pipelines and GitLab CI/CD.
 
 <div className="containerGridSampleApp">
 <div className="containerColumnSampleApp columnGrid column-one">
@@ -99,8 +101,9 @@ Appsmith allows you to integrate Continuous Delivery (CI/CD) within your App usi
         <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-bitbucket"><strong>CI/CD Using Bitbucket Pipelines</strong></a>
         </div><hr/>
-        <div className="containerDescription">This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to the master branch with Bitbucket Pipelines.</div>
+        <div className="containerDescription">This guide shows how to integrate Continuous Delivery with Git in Appsmith, enabling automatic updates to any branch with Bitbucket Pipelines.</div>
     </div>
     <div className="columnGrid column-two" style={{margin: "10px"}}>
    </div>
 </div>
+
