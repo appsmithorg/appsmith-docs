@@ -33,21 +33,19 @@ This section allows you to change important Git settings such as disabling auto-
 
 **Disable Auto-Commit**: 
 
-The Auto Commit feature in Appsmith automatically commits changes related to version upgrades. If you disable auto-commit, it prevents automatic changes from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
-
-When auto-commit is enabled, it:
+The Auto Commit feature in Appsmith automatically commits changes related to version upgrades. When auto-commit is enabled, it:
 
 - Automatically commits changes to a non-protected branch when you open the branch in your app. If the app is not actively in use, the auto-commit will not take place.
 
 - Commits only the changes related to Appsmith's Domain Specific Language (DSL) components, not your specific app changes.
 
-<dd>
+If you disable auto-commit, it prevents automatic changes from Appsmith, potentially resulting in uncommitted system changes after an Appsmith instance upgrade. This may require manual handling and could lead to discrepancies in Git versioning.
+
+
 
 *Example:*
 
-If you are working on a Table widget in your app. When Appsmith updates its version and auto commits, only the changes related to the updated Table widget—like new properties or methods—are committed. Your specific customizations, such as styling or behavior modifications, remain unaffected and aren't committed. You can find DSL-related changes in your Git repository inside the relevant page folder.
-
-
+When Appsmith updates its version and auto-commits changes, only updates related to the Table widget—such as new properties or methods—are committed. Your customizations, like styling or data updates, remain unaffected. DSL-related changes can be found in your Git repository within the relevant page folder.
 
 
 <dd>
@@ -68,7 +66,7 @@ If you are working on a Table widget in your app. When Appsmith updates its vers
 
 </dd>
 
-</dd>
+
 
 **Disconnect Git**: 
 
