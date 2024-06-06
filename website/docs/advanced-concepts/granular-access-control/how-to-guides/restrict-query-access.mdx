@@ -20,37 +20,49 @@ tags={[
 
 <!-- vale on -->
 
-
-
-To ensure that users have appropriate access to data and functionalities, it's essential to manage query permissions in your Appsmith applications. This page shows how to restrict query access and dynamically show/hide widgets based on query permissions.
+When you need to secure sensitive data and provide access only to specific users, you can manage this by setting the right permissions for queries. This guide shows how to restrict query access and dynamically show or hide widgets based on user permissions.
 
 ## Prerequisites
 
-- A self-hosted Appsmith Commercial Edition installation. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides).
-- Enabled the Programmatic Access Control feature. For more information, see [Programmatic Access Control](/getting-started/setup/instance-configuration). 
-- Access to edit roles and applications.
+Before you start, ensure you have:
+
+- A self-hosted Appsmith instance running the Commercial Edition. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides).
+- A Business Plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
+- Enabled the Programmatic Access Control feature and have access to read roles assigned to users. For more information, see [Admin Settings - Programmatic Access Control](/getting-started/setup/instance-configuration).
+- Access to edit role configuration and applications.
 
 ## Restrict query access and hide widgets
 
-Follow these steps to amend your existing role, revoke query permissions, and hide widgets on UI for an enhanced user experience:
+Follow these steps to update your existing role, revoke query permissions, and hide widgets for a better user experience.
 
-1. Identify the query (Query1) for which you want to control access.
-2. Determine which roles should have permission to execute the query and view associated widgets.
-3. In your application, set up conditional rendering for widgets based on the roles allowed to execute the query. Use the `appsmith.user.roles` object to verify the role assignment.
+### Change role configuration
 
-   - **Example: Show Button Based on User Role**
-      To display a button widget based on specific roles, set the **Visible** property in the button widget's property pane to the following JavaScript code. The widget is hidden for all the other roles except the one that is added in the below code, ensuring only the users with access permission to execute queries will see the widget.
+To allow only specific users to execute a query, identify the query that processes sensitive data (e.g., *query_process_sensitive_data*) and the roles that need access to execute the query, as well as roles that no longer need this permission. Then update the role configuration as follows:
 
-      ```javascript
-      // Replace <ROLE_NAME> with the name of roles that have access
-      {{appsmith.user.roles.includes('<ROLE_NAME>')}}
-      ```
-   For more information about roles object, see [appsmith.user.roles](/reference/appsmith-framework/context-object#roles-object).
+1. Navigate to the _Admin Settings_ by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
+2. Under **Access Control** in the sidebar, select **Roles**.
+3. Find the role you no longer want to have permission to perform the operation on sensitive data (Role1) from the list of existing roles.
+4. Click the pencil icon next to the role to edit its permissions.
+5. In the _Application Resources_ tab, revoke the **Execute** permission by unchecking the checkbox under **Execute** permission for the relevant query. For example, *query_process_sensitive_data*. By removing execute permissions from roles that no longer need access, you prevent unauthorized data operations.
+6. Click **Save changes** to apply the updated permissions.
+7. Repeat the steps for all roles where you need to revoke access to execute the query.
 
-4. Once the widget visibility logic is set up, navigate to the _Admin Settings_ by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
-2. Under **Access Control** in the sidebar, select **Roles**, and edit the permissions of the role where you want to restrict query (Query1) access, by revoking the **Execute** permission for Query1.
-5. Click **Save changes** to apply the updated permissions.
-6. Revoke **Execute** permission for queries in its associated roles except for those allowed to execute the query.
+After saving the changes, the updated roles will no longer have access to perform operations on sensitive data. The application developers can use the `appsmith.user.roles` object to hide widgets.
+
+### Hide widgets
+
+To ensure data security and a smooth user experience, hide widgets from users without the necessary permissions. For example, if a button triggers a sensitive data query, show the button only to users allowed to run that query:
+
+1. Select the button widget in your application.
+2. Enable the **JS** label for **Visible** property in the property pane.
+3. Use the following JavaScript code to set up conditional rendering based on the role that has permission to execute the query. In the below code, the `roles` object holds all the roles assigned to the user. For more information, see [roles](/reference/appsmith-framework/context-object#roles-object). 
+
+   ```javascript
+   //Replace 'Role1' with the name of the role that has permission to execute the query. 
+   {{appsmith.user.roles.includes('Role1')}}
+   ```   
+
+4. Deploy your application and verify the access using different user accounts - one with permission to execute the query, and one without.
 
 ## Troubleshooting
 
