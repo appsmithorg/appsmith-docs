@@ -27,11 +27,11 @@ To simplify access management and ensure consistency across the Appsmith instanc
 
 ## Prerequisites
 
-Before beginning the configuration process, ensure you have:
+Before you start, ensure you have:
 
-- A self-hosted Appsmith Commercial Edition installation. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides)
-- A Business Plan. For more information, see [Pricing](https://www.appsmith.com/pricing)
-- Access to update role configuration.
+- A self-hosted Appsmith instance running the Commercial Edition. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides).
+- A Business Plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
+- Access to update the role configuration.
 
 ## Configure permissions
 
@@ -49,23 +49,109 @@ Follow these steps to configure permissions:
 
 <Tabs queryString="gac-resource">
    <TabItem label="Application Resources" value="application-resources">
-   <p className="permission-footnote">(✓) Permission Assigned</p>
-   | Resource  Permission    | Create | Edit    |Delete| View   | Execute | Make Public | Export |
-   | ------------------------| --------|--------|------|--------|---------|-------------|--------|
-   | Workspace          |         |        |      |   (✓)  |          |            |        |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Application |         |        |      |   (✓)  |          |            |        |
-   | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  Query |     |        |      |        |   (✓)    |            |        |
-  
+  <p className="permission-footnote">
+        <span style={{color: 'green', fontWeight: 'bold'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span> Permission Assigned
+    </p>
+      <table className="permissions-table" style={{ width: '100%', display: 'table' }}>
+         <thead>
+            <tr>
+               <th>Resource</th>
+               <th>Create</th>
+               <th>Edit</th>
+               <th>Delete</th>
+               <th>View</th>
+               <th>Execute</th>
+               <th>Make Public</th>
+               <th>Export</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Workspace</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp; Application</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Query</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+            </tr>
+         </tbody>
+         </table>
       
    </TabItem>
       <TabItem label="Datasources & Environments" value="datasources-and-environments">
-      <p className="permission-footnote">(✓) Permission Assigned</p>
-      | Resource  Permission                          | Execute | Create    |Edit| Delete   | View | 
-      | -----------------------------------------------| --------|--------|------|--------|---------|
-      | Datasources                                    |         |        |      |        |         | 
-      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; Datasource name          |    (✓)  |        |      |        |         | 
-      | Environments                                    |         |        |      |        |         | 
-      | &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Production      |   (✓)   |        |      |        |         |
+      <p className="permission-footnote">
+        <span style={{color: 'green', fontWeight: 'bold'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span> Permission Assigned
+    </p>
+         <table className="permissions-table" style={{ width: '100%', display: 'table' }}>
+            <thead>
+               <tr>
+                  <th>Resource</th>
+                  <th>Execute</th>
+                  <th>Create</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                  <th>View</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Datasources</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; Datasource name</td>
+                  <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>Environments</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; Production</td>
+                  <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+            </tbody>
+            </table>
+
+
    </TabItem>
 </Tabs>
 
