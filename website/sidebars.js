@@ -722,7 +722,6 @@ const sidebars = {
               items: [
                 'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
                 'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access',
-                'advanced-concepts/granular-access-control/how-to-guides/give-query-access',
               ]
             },
             {
