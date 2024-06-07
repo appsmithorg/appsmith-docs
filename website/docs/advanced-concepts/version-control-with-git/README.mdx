@@ -6,21 +6,43 @@ import TabItem from '@theme/TabItem';
 
 # Version Control With Git
 
-Appsmith provides a way to version control your apps by connecting them to a Git hosting provider (GitHub, GitLab, Bitbucket), making it easier to track changes, rollback changes or collaborate using Git branches.
-
-:::info
-In the Community edition, you can connect to **unlimited** public repositories but only up to **three** private repositories in a workspace. To connect more private repositories, you can upgrade to the [Business or Enterprise plan](https://www.appsmith.com/pricing).
-:::
-
-<VideoEmbed host="youtube" videoId="emdZaG-tzgw" title="Version Control with Git " caption="Version Control with Git "/>
-
-## Using Git in Appsmith
-
-Version control in Appsmith is similar to the traditional Git workflow. The basic Git Workflow in Appsmith involves the following steps:
-
-1. [Connect to Git repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository)
-2. [Setup branches](/advanced-concepts/version-control-with-git/working-with-branches)
-3. [Commit changes](/advanced-concepts/version-control-with-git/commit-and-push)
-4. [Merge and Pull changes](/advanced-concepts/version-control-with-git/merging-branches) 
+Version control with Git in Appsmith provides a comprehensive solution for managing your application throughout the Software Development Life Cycle (SDLC). It allows you to effectively track changes, roll back to previous states, and collaborate with your team. 
 
 
+
+<ZoomImage src="/img/git-version-control.png" alt="" caption=""/>
+
+
+
+## Core components
+
+
+- **Version Control Integration:** You can connect with any Git hosting provider of your choice, such as [GitHub](/advanced-concepts/version-control-with-git/guides/setup-github), [GitLab](/advanced-concepts/version-control-with-git/guides/setup-gitlab), [Azure](/advanced-concepts/version-control-with-git/guides/setup-other-provider), [Bitbucket](/advanced-concepts/version-control-with-git/guides/setup-bitbucket), and more.
+
+- **Branch Protection:** You can protect multiple branches to prevent unnecessary commits and maintain the integrity of your codebase. For more information, see [Branch protection](/advanced-concepts/version-control-with-git/reference/git-settings#branch-protection).
+
+- **Default Branch:**  You can change your default branch to set different branches for various environments, such as development, staging, and production. This flexibility helps manage and isolate changes at different stages of the software development lifecycle (SDLC). For more information, see [Default branch.](/advanced-concepts/version-control-with-git/reference/git-settings#default-branch)
+
+
+- **CI/CD Integration:** Supports Continuous Integration and Continuous Delivery workflows, enabling automatic updates to any branch and integration with various CI/CD tools and platforms. For more information, see [Continuous Delivery (CI/CD) with Git](/advanced-concepts/version-control-with-git/cd-with-git).
+
+- **Multiple Instances:** You can create separate isolated environments with different versions and configurations for each stage of the software development lifecycle (SDLC). For more information, see [ Multiple Environments Using Git](/advanced-concepts/version-control-with-git/environments-with-git).
+
+
+
+## Getting started
+
+Version control in Appsmith is similar to the traditional Git workflow. For more information, you can explore the following:
+
+
+
+<div className="containerGridSampleApp">
+    <div className="containerColumnSampleApp columnGrid column-one">
+        <div className="containerCol">
+           <a href="/advanced-concepts/version-control-with-git/guides/overview"><strong>Guides</strong></a>
+        </div><hr/>
+        <div className="containerDescription">Learn to set up Git, automate with CI/CD, and more.</div>
+    </div>
+    <div className="columnGrid column-two" style={{margin: "10px"}}>
+   </div>
+</div>

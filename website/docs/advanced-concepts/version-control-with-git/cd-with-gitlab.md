@@ -1,5 +1,5 @@
 ---
-description: Continuous Delivery with GitLab CI/CD
+description: Using GitLab CI/CD
 title: Using GitLab CI/CD
 hide_title: true
 ---
@@ -27,7 +27,7 @@ This guide shows how to integrate Continuous Delivery with Git in Appsmith, enab
 ## Prerequisites
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/connecting-to-git-repository).
+* An app that is already connected with Git. See [How to Connect Git Repository](/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository).
 * Basic knowledge of [GitLab CI/CD](https://docs.gitlab.com/ee/ci/).
 
 ## Configure continuous delivery
@@ -148,3 +148,7 @@ The changes are deployed to that branch without the need to pull the changes man
 
 
 
+## See Also
+
+- [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
+- [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)

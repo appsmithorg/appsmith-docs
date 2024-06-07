@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your applications. This tutorial guides you through the process of setting up a basic workflow, configuring it as a webhook trigger, integrating and triggering the workflow execution from your Appsmith app.  
+Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your business. This tutorial guides you through the process of setting up a basic workflow, configuring it as a webhook trigger, integrating and triggering the workflow execution from your Appsmith app.  
 
 To learn workflows in Appsmith, you'll build workflow that sends a welcome notification email when new users join your organization. By the end of this tutorial, you will know how to:
 
@@ -97,7 +97,7 @@ Follow these steps to write a blank API query for sending email:
         }
     }
     ```
-5. Click the **Publish** button to publish your latest changes.
+5. Click the **Deploy** button to deploy your latest changes.
 
 You've successfully integrated the email query in workflow. 
 
