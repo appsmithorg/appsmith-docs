@@ -29,7 +29,7 @@ Granular Access Control (GAC) in Appsmith allows you to specify precise access p
 
 ## Core components
 
-* **Permissions** - define what actions a user can perform on specific resources. Every resource in Appsmith whether it’s an app, a page, a workflow, a datasource and environment, or a query can have granular permissions set for actions like create, read, update, and delete.
+* **Permissions** - define the actions users can perform on specific resources. In Appsmith, each resource, whether an app, page, workflow, datasource, environment, or query, can have detailed permissions for actions such as create, read, update, and delete.
 * **Roles** - are sets of permissions bundled together that can be assigned to users or user groups. They provide varying levels of access to Appsmith resources.
 * **Users** - Individual users who need access to the Appsmith instance.
 * **User Groups** - Collections of users that allow you to assign roles to multiple users simultaneously. Users in a group inherit the roles assigned to that group.
