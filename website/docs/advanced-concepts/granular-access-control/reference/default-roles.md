@@ -41,7 +41,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <th>Edit</th>
                     <th>Delete</th>
                     <th>View</th>
-                    <th>Execute</th>
                     <th>Invite User</th>
                     <th>Remove User</th>
                     <th>Associate Role</th>
@@ -54,7 +53,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td></td>
@@ -67,7 +65,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
@@ -78,7 +75,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                 </tr>
                 <tr>
@@ -87,7 +83,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
@@ -101,7 +96,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                 </tr>
                 <tr>
                     <td>**Audit Logs**</td>
@@ -109,7 +103,6 @@ To perform different tasks, the Instance Administrator role in Appsmith has the 
                     <td></td>
                     <td></td>
                     <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -265,7 +258,7 @@ For more information about each permission, see [Permissions](/advanced-concepts
 
 ### Limitations
 
-Administrators do have some limitations; they lack authority to create workspaces, view audit logs, or manage roles, groups, or users.
+Workspace Administrators do have some limitations; they lack authority to create workspaces, view audit logs, or manage roles, groups, or users.
 
 ## Developer Role for Workspace
 
@@ -378,7 +371,7 @@ For more information about each permission, see [Permissions](/advanced-concepts
 
 ### Limitations
 
-Developers do have some constraints; they lack permissions to create workspaces, view audit logs, make apps public or export apps, and manage roles, groups, or users.
+Workspace Developers do have some constraints; they lack permissions to create workspaces, view audit logs, make apps public or export apps, and manage roles, groups, or users.
 
 ## App Viewer Role for Workspace
 
@@ -387,7 +380,7 @@ The App Viewer - Workspace Role is specific to each workspace and provides view-
 
 ### Permissions
 
-The App Viewer role enables users to view apps, governed by the permissions allocated to the App Viewer - Workspace role in Appsmith, as shown below:
+The workspace App Viewer role enables users to view apps, governed by the permissions allocated to the App Viewer - Workspace role in Appsmith, as shown below:
 
   <div className="gac-permissions">
     <p className="permission-footnote">(✓) Permission Assigned </p>
@@ -477,11 +470,11 @@ The App Viewer role enables users to view apps, governed by the permissions allo
 
 ### Limitations
 
- App Viewers do not have permission to create, edit, or delete apps that is does not include permissions to manage apps within workspace.
+ Workspace App Viewers do not have permission to create, edit, or delete apps that is does not include permissions to manage apps within workspace.
 
 ## Developer Role for Application
 
-The Developer role grants users extensive access to different resources within the given app, including pages, queries, datasources, and environments. When a user is invited to an app and provided developer access, this role is created if not already present.
+The Developer role for application grants users extensive access to different resources within the given app, including pages, queries, datasources, and environments. When a user is invited to an app and provided developer access, this role is created if not already present.
 
 ### Permissions
 
@@ -572,11 +565,11 @@ The Developer role enables users to manage pages, queries, datasources, and envi
 
 ### Limitations
 
-Developers do have some constraints; they lack permissions to create applications in workspace, view audit logs, manage workflows, make apps public or export apps, and manage roles, groups, or users.
+Application Developers do have some constraints; they lack permissions to create applications in workspace, view audit logs, manage workflows, make apps public or export apps, and manage roles, groups, or users.
 
 ## App Viewer Role for Application
 
-The App Viewer - Application Role is specific to each workspace and provides view-only access to apps within that application.
+The App Viewer for Application Role is specific to each workspace and provides view-only access to apps within that application.
 
 ### Permissions
 
@@ -667,4 +660,4 @@ The App Viewer role enables users to view pages, governed by the permissions all
     
 ### Limitations
 
- App Viewers do not have permission to create, edit, or delete pages, queries in the app and does not include permissions to manage apps within workspace.
+ Application App Viewers do not have permission to create, edit, or delete pages, queries in the app and does not include permissions to manage apps within workspace.
