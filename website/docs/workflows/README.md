@@ -31,7 +31,7 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
 ## Getting started with workflows
 
-Mastering the fundamentals of Appsmith Workflows is crucial for maximizing productivity and building robust applications. Begin exploring Appsmith Workflows with the comprehensive getting started tutorial. 
+Learning the fundamentals of Appsmith Workflows is crucial for maximizing productivity and building robust applications. Begin exploring Appsmith Workflows with the comprehensive getting started tutorial. 
 
 <div className="containerGridSampleApp">
    <div className="containerColumnSampleApp columnGrid column-one">
