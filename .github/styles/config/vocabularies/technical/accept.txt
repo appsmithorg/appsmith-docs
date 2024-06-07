@@ -137,3 +137,4 @@ MongoDB
 Redis
 See Also
 disabled
+permissions
