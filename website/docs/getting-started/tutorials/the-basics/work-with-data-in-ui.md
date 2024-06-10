@@ -16,7 +16,7 @@ This tutorial takes you through the process of viewing and editing individual re
   </iframe>
 </div>
 
-1. On the **UI** tab, click **+ New Widget** and drop a **Form** widget on the canvas to the right of the Table widget. 
+1. On the **UI** tab, click **+ New UI element** and drop a **Form** widget on the canvas to the right of the Table widget. 
 
 2. Click the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
 

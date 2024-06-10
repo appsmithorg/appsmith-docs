@@ -135,6 +135,6 @@ widgets
 Hide
 MongoDB
 Redis
-See Also
 disabled
 permissions
+
