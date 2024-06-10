@@ -371,7 +371,7 @@ For more information about each permission, see [Permissions](/advanced-concepts
 
 ### Limitations
 
-Workspace Developers do have some constraints; they lack permissions to create workspaces, view audit logs, make apps public or export apps, and manage roles, groups, or users.
+Workspace Developers have the same limitations as Workspace Administrators and, in addition, cannot make apps public or export them.
 
 ## App Viewer Role for Workspace
 
@@ -470,7 +470,7 @@ The workspace App Viewer role enables users to view apps, governed by the permis
 
 ### Limitations
 
- Workspace App Viewers do not have permission to create, edit, or delete apps that is does not include permissions to manage apps within workspace.
+ Workspace App Viewers do not have permission to create, edit, or delete apps that is it does not include permissions to manage apps within workspace.
 
 ## Developer Role for Application
 
