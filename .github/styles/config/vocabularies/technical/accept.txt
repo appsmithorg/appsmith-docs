@@ -107,7 +107,34 @@ Database
 SSL/TLS
 Cause
 Filepicker
+Default Roles for All Users
+Instance Administrator Role
+Administrator Role for Workspace 
+Developer Role for Workspace 
+App Viewer Role for Workspace 
+Developer Role for Application
+App Viewer Role for Application 
+Default Role for All Users
+Tasks
+User management
+Custom roles
+Application Resources
+Datasources and Environments
+Groups and Roles
+Make Public
+Invite User
+Remove User
+Associate Role
+Applications
+Conclusion
+Users
+User
+permission
+Permissions
+widgets
+Hide
 MongoDB
 Redis
 See Also
 disabled
+permissions

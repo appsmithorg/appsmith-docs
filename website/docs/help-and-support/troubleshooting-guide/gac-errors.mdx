@@ -1,0 +1,66 @@
+---
+description: This page shows you how to troubleshoot common Granular access control errors.
+toc_min_heading_level: 2
+toc_max_heading_level: 2
+---
+
+# Granular Access Control Errors
+
+Granular Access Control (GAC) errors can impede your ability to manage and use applications effectively. This page helps you troubleshoot some of the most common GAC errors you might encounter. 
+
+## 404 - page not found
+
+You have access to the application. However, after a successful login, you receive a 404 - Page Not Found error when trying to access it.
+
+#### Cause
+
+The 404 - Page Not Found error occurs when you do not have access to the requested page. In this case, the access to the Home page is not provided and thorws an error.
+
+#### Solution
+
+Contact your instance administrator and request access to the Home page.
+
+## Make application public toggle is not available
+
+The _Make Application Public_ toggle in the invite users modal is disabled, preventing you from making an application public.
+
+#### Cause
+
+The _Make Application Public_ toggle is controlled by the _Make Public_ permission. If you do not have this permission, the toggle is disabled. For more information, see [Make Public Permission](/advanced-concepts/granular-access-control/reference/permissions#make-public-permission)
+
+#### Solution
+
+
+* Contact your instance administrator to request the required permission.
+* Alternatively, reach out to users who have the necessary permissions to make an application public.
+
+## Sharing application shares entire workspace
+
+When you share an application using the Share button, the entire workspace is shared with the user instead of the application.
+
+#### Cause
+
+* Your instance may not be activated with your license key, causing this paid feature to malfunction.
+* If you are using the Community Edition or a Free plan on the Appsmith Commercial Edition, sharing an application is not available. Consequently, sharing an application results in the entire workspace being shared.
+
+#### Solution
+
+* Activate your instance by adding your license key. For more details, see [Add a license key to your instance](/getting-started/setup/manage-plans/upgrade-plan?current-license-mode=add-license-key).
+* IIf you are on a Community Edition or Free plan and need this feature, consider reviewing the [Business plan](https://www.appsmith.com/pricing) offerings and sign up on [customer.appsmith.com](https://customer.appsmith.com) to generate a license key.
+
+## Unable to access application
+
+A custom role that provides access to the application is created, but users are still unable to access the application.
+
+#### Cause
+
+The custom role may not be assigned to the user trying to access the application. Additionally, access to the application's datasources and environments might not be granted.
+
+#### Solution
+
+* Verify if the custom role access is provided by checking the groups and role mapping or user and role assignment. If not, add users to groups that have access or assign roles to the appropriate users.
+* Ensure you have granted the necessary access to the datasources used by the application under the _Datasources & Environments_ tab when configuring the custom role. For more details on permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+
+## Getting help
+
+If you are unable to resolve your error, please reach out to support via the chat widget on the page.
