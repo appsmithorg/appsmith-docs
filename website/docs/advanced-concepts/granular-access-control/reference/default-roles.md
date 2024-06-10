@@ -121,7 +121,7 @@ Despite having extensive permissions, the Instance Administrator role in Appsmit
 
 ## Default Role for All Users
 
-Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance.  Initially, the role has [permission to create workspace](/advanced-concepts/granular-access-control/reference/permissions#create-permission), and serves as a blank template for all other permissions. Instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
+Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance.  Initially, the role has [permission to create workspace](/advanced-concepts/granular-access-control/reference/permissions?gac-resource=create-others). For all other permissions, Instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 ## Administrator Role for Workspace
 
