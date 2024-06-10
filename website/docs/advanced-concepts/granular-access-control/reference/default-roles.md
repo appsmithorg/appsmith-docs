@@ -117,7 +117,6 @@ For more information about each permission, see [Permissions](/advanced-concepts
 
 Despite having extensive permissions, the Instance Administrator role in Appsmith cannot perform the following tasks:
 
-- Inability to access or update individual workspaces or app content. This means that Instance Administrators cannot view or edit the specific content within each workspace or app, such as queries, datasources, or their configurations. 
 - Inability to execute actions that require workspace-level permissions, such as creating, editing, or deleting apps within a workspace.
 
 ## Default Role for All Users
