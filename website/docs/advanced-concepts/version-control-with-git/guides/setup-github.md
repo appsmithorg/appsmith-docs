@@ -41,7 +41,7 @@ A user needs to have **Create** permission for application resources on the work
 :::
 
 
-## See Also
+## See also
 
 - [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
 - [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)

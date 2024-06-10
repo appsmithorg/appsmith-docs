@@ -66,7 +66,7 @@ You've created your first query to fetch the list of records in the database.
 
 1. Click the **UI** tab on the *Entity Explorer* to the left of the screen.
 
-2. Click **+ New Widget** and drag a **Table** widget and drop it to the left of the canvas.
+2. Click **+ New UI element** and drag a **Table** widget and drop it to the left of the canvas.
 
 3. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
 
