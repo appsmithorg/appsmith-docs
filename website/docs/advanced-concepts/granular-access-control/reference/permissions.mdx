@@ -519,17 +519,7 @@ The **Execute** permission permits users to execute actions such as running quer
       </thead>
       <tbody>
         <tr>
-          <td>Workspace</td>
-          <td>NA</td>
-          <td>Allows running queries within the given workspace.</td>
-        </tr>
-        <tr>
-          <td>Application</td>
-          <td>NA</td>
-          <td>Allows running queries for the given application.</td>
-        </tr>
-        <tr>
-          <td>Page</td>
+          <td>Query</td>
           <td>NA</td>
           <td>Allows running queries for the given page.</td>
         </tr>
@@ -573,7 +563,7 @@ The **Execute** permission permits users to execute actions such as running quer
 
 ## Make Public permission
 
-The **Make Public** permission permits users to change the access level of resources, making them available to the public. When the **Make Public** permission is assigned to a workspace or an application, it, along with the automatically assigned permissions, are inherited by the child resources. Once granted, users can enable the **Make application public** option on the _Invite Users_ modal to make an application publicly available. This option allows external users to access the app without the need to log in to Appsmith.
+The **Make Public** permission permits users to change the access level of applications, making them available to the public. When the **Make Public** permission is assigned to a workspace or an application, it, along with the automatically assigned permissions, are inherited by the child resources. Once granted, users can enable the **Make application public** option on the _Invite Users_ modal to make an application publicly available. This option allows external users to access the app without the need to log in to Appsmith.
 
 <Tabs queryString="gac-resource">
   <TabItem label="Application Resources" value="make-public-application-resources">
@@ -589,12 +579,12 @@ The **Make Public** permission permits users to change the access level of resou
         <tr>
           <td>Workspace</td>
           <td>View, Execute</td>
-          <td>Allows making all applications publicly accessible within the given workspace, and allows viewing the applications and running queries to view the applications when applications are publicly accessible.</td>
+          <td>Allows making all applications publicly accessible within the given workspace.</td>
         </tr>
         <tr>
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application</td>
           <td>View, Execute</td>
-          <td>Allows making the given application publicly accessible, and allows viewing the application and running the queries to view the application when it's publicly accessible.</td>
+          <td>Allows making the given application publicly accessible.</td>
         </tr>
       </tbody>
     </table>
@@ -633,7 +623,7 @@ The **Export** permission permits users to export data and resources from Appsmi
 
 ## Invite User permission
 
-The **Invite User** permission permits users to invite other users to Appsmith workspace or applications and provides access to the resources within workspace.
+The **Invite User** permission permits users to invite other users to groups. Once granted, users can see the **Add user** button enabled on the groups configuration screen, and allows them to invite other users to the groups within the instance.
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="invite-user-groups-and-roles">
@@ -649,7 +639,7 @@ The **Invite User** permission permits users to invite other users to Appsmith w
         <tr>
           <td>Groups</td>
           <td>View</td>
-          <td>Allows inviting users to the groups within the instance. It also allows viewing the groups and their configurations. </td>
+          <td>Allows inviting users to the groups within the instance. It also allows viewing the groups and group's configurations. </td>
         </tr>
       </tbody>
     </table>
@@ -658,7 +648,7 @@ The **Invite User** permission permits users to invite other users to Appsmith w
 
 ## Remove User permission
 
-The **Remove User** permission permits users to remove other users from the resources in Appsmith.
+The **Remove User** permission permits users to remove other users from the groups wihtin the Appsmith instance.
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="remove-user-groups-and-roles">
@@ -683,7 +673,7 @@ The **Remove User** permission permits users to remove other users from the reso
 
 ## Associate Role permission
 
-The **Associate Role** permission permits users to assign or change roles of other users in Appsmith.
+The **Associate Role** permission permits users to assign or change roles of other users within the instance in Appsmith.
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="associate-role-groups-and-roles">
