@@ -20,7 +20,7 @@ Let's get started!
 
 <ZoomImage src="/img/create-new-app.png" alt="Create new application" caption="Create new application" />
 
-3. Click the **⌵** icon on the top left next to the default application name. Select the **Edit Name** option. Rename the app to `User Management`.
+3. Click the **⌵** icon on the top center. Select the **Edit Name** option. Rename the app to `User Management`.
 
 4. On the _Entity Explorer_ to the left of the screen, you'll see that **Page 1** is the default page on the application. Hover over the page name and click the **︙** icon.
 

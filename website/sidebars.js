@@ -712,13 +712,36 @@ const sidebars = {
             'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
           ]
         },
-        'advanced-concepts/invite-users',
         {
           type: 'category',
           label: 'Granular Access Control',
           link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
           items: [
-            'advanced-concepts/granular-access-control/roles',
+            {
+              type: 'category',
+              label: 'How-to Guides',
+              items: [
+                'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
+                'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access',
+              ]
+            },
+            {
+              type: 'category',
+              collapsed: false,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/granular-access-control/reference/default-roles',
+                'advanced-concepts/granular-access-control/reference/custom-roles',
+                'advanced-concepts/granular-access-control/reference/permissions',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Concepts',
+              items: [
+                'advanced-concepts/granular-access-control/roles',
+              ]
+            },
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,
@@ -810,7 +833,8 @@ const sidebars = {
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
             'help-and-support/troubleshooting-guide/action-errors/README',
-            'help-and-support/troubleshooting-guide/git-errors'
+            'help-and-support/troubleshooting-guide/git-errors',
+            'help-and-support/troubleshooting-guide/gac-errors',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',

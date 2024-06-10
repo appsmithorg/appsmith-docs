@@ -1,77 +1,72 @@
 ---
 description: >-
-  Configure Roles in Appsmith to use GAC
+  Use Default and Custom Roles in Appsmith to configure Granular Access Control
+title: Roles
+hide_title: true
+toc_max_heading_level: 2
 ---
-# Roles
-Roles in Appsmith are collections of permissions that enable users or groups to access certain operations on resources. Rather than giving individual permissions to users or groups, roles allow users to manage multiple permissions.
+<!-- vale off -->
 
-## Instance roles
+<div className="tag-wrapper">
+ <h1>Roles</h1>
 
-In addition to the [default](/advanced-concepts/invite-users#built-in-roles) roles for applications and workspace, Appmith provides two instance-level roles - **Default Role for all Users** and **Instance Administrator**.
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
 
-- **Default Role For All Users**: This role applies to all users and can be used to assign a default set of permissions in an instance. It is editable and does not come with any predefined permissions, and Instance Administrators can customize it and assign default permissions to new users joining the instance. By adjusting the permissions in this role, they can ensure that new users have an appropriate level of access.
+</div>
 
-- **Instance Administrator**: This role provides a user with permission to modify settings at the instance level from the Admin settings. This includes changing the general settings of the instance, such as authentication, email, custom branding, access to view audit logs and granular access control actions. It's important to note that this role has significant control over the instance, so it should only be assigned to trusted users who need these capabilities.
+<!-- vale on -->
+
+To configure Granular Access Control (GAC), Appsmith provides pre-defined roles along with the flexibility to create your own roles. This page provides information on default and custom roles in Appsmith.
+
+## Default roles
+
+Default roles provide standardized permission sets designed to match different user responsibilities in Appsmith. They include pre-defined permissions tailored for roles such as administrators, developers, and app viewers, and cannot be altered or deleted. You can assign these roles to your users if the permissions align with your desired permission model. To view the default roles available for your Appsmith instance, toggle the **Default Roles**  option on the Roles screen.
+
+ <ZoomImage
+    src="/img/GAC-Default-Roles-toggle.png" 
+    alt="Toggle the Default roles options to view Default Roles"
+    caption="Toggle the Default roles options to view Default Roles"
+  />
+
+
+### Instance level
+
+Instance-level default roles have permissions that govern access to Appsmith instance, affecting all workspaces and users within the instance. Some instance-level roles can be tailored to provide specific access to all users. The instance-level roles include:
+
+* [Instance Administrator role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) - to configure instances, manage user groups and roles, create workspaces, and monitor audit logs.
+
+* [Default Roles for All Users](/advanced-concepts/granular-access-control/reference/default-roles#default-role-for-all-users) - helps you define some default permissions that will be applicable to all users across your Appsmith instance.
+
+### Workspace level
+
+Workspace-level default roles control access within a specific workspace. These roles are pre-defined, offering standard access controls tailored to each workspace. The workspace level roles are not available for customization. They include:
+
+* [Administrator - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#administrator-role-for-workspace) - to create, edit, view and delete apps, queries, datasources, environments, export apps and make apps public within a workpsace.
+
+* [Developer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-workspace) - to create, edit, and delete apps, pages, queries, datasources, and environments within a workspace.
+
+* [App Viewer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-workspace) - to provide read-only access to apps within a workspace.
+ 
+
+### Application level
+
+Application level default roles control access within a specific application. These roles are pre-defined with standard access controls for each application. The application level roles are not available for customization, and are on-the-fly created when you share an application by providing Developer or App viewer access to the user. They include:
+
+* [Developer - Application Role](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-application) - to create pages, queries, datasources, and environments within an Appsmith app, but cannot create workspaces, and apps.
+
+
+* [App Viewer - Application Role](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-application) - to provide read-only access to the shared app.
 
 ## Custom roles
 
-With custom roles, you can provide fine-grained access control by configuring multiple permissions for the role you are creating. To create a custom role, go to **Admin Settings** > **Access Control** > **Roles** and click the **Add Role** button.
+Custom roles in Appsmith allow users to define specific permission sets tailored to their business needs. With custom roles, instance administrators can fine-tune access levels by assigning granular permissions to different users or user groups. To create a custom role, click the **Add role** button on the Roles screen. For more information about setting up a custom role, see [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles).
 
-<ZoomImage
-  src="/img/add_custom_role.png" 
-  alt="Add a new Role"
-  caption="Add a custom role"
-/>
-
-The permissions are grouped into four categories, which helps users manage and access the necessary permissions easily:
-
-- [Application Resources](#application-resources)
-- [Datasource and Environments](#datasource-and-environments)
-- [Groups and Roles](#groups-and-roles)
-- [Others](#others)
-
-
-### Application resources
-
-In this section, you'll find permissions related to the application and its resources such as pages, widgets, and queries. The table below illustrates the permissions that can be assigned to either a user or a group. Additionally, it explains how each permission behaves at various hierarchical levels.
-
-|   | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Public** </div> | <div style= {{width:"180px"}}> **Export** </div> | 
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Workspace** |  Create applications, pages and queries inside the workspace | Edit any application, page and query inside the workspace. | Delete any application, page and query inside the workspace | View any application, page and query inside the workspace. | - | Make any application inside the workspace public. | Export any application in the workspace. |
-| **App** | Create pages and queries inside the app | Edit pages and queries inside the app. | Delete the app and its pages and queries. | View the app and its pages and queries. | - | Make the application public | Export that particular application. |
-| **Page** | Create queries on the page. | Edit the page and its queries. | Delete the page and its queries. | View the page and its queries. | - | - | - |
-| **Query** | - | Edit the query. | Delete the query. | View the query. | Execute the query. | - | - |
-| **Workflows** | Create new workflows and resources inside a workflow. | Required to make changes to the Workflow.| Required to delete a workflow. Users will need **Edit** permission to delete individual actions inside the workflow. | An **Edit** permission also enables the permission to view workflow run history.| An **Edit** permission also enables the **Execute** permission to run workflow.| - | -|
-
-### Datasource and environments
-
-This section contains permissions related to the actions a user can perform on datasources and environments. The table below lists the different permissions available and outlines how each permission operates at varying hierarchical levels:
-
-| | <div style= {{width:"180px"}}> **Execute** </div> | <div style= {{width:"180px"}}> **Create** </div>| <div style= {{width:"180px"}}> **Edit** </div> | <div style= {{width:"180px"}}> **Delete** </div> | <div style= {{width:"180px"}}> **View** </div> |
-| --- | --- | --- | --- | --- | --- |
-| **Workspace** | Execute queries on any datasource in the workspace. | Create queries on any datasource in the workspace. | Edit any datasource in the workspace. | Delete any datasource in the workspace. | View any datasource in the workspace. |
-| **Environments** | Execute queries for different environments.  | Create custom environments.  | Edit and configure different environments. |  Delete different environments.| View environments in the workspace. |
-| **Datasources** | Execute queries on that datasource provided they have access to execute on at least one environment. | Create queries on the datasource. | Edit values of datasource configurations parameters in all environments. | Add or remove datasource configuration parameters in all environments. | View datasource configuration values in all environments. |
-
-
-### Groups and roles
-
-This section includes permissions for managing the groups and roles of an Appsmith instance. The table below presents the available permissions that can be assigned to either a user or a group:
-
-| | <div style= {{width:"150px"}}> **Create** </div>| <div style= {{width:"150px"}}> **Edit** </div> | <div style= {{width:"150px"}}> **Delete** </div> | <div style= {{width:"150px"}}> **View** </div> | <div style= {{width:"150px"}}> **Invite User** </div> | <div style= {{width:"150px"}}> **Remove User** </div> | <div style= {{width:"150px"}}> **Associate Role** </div>|
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| **Groups** | Create a User Group. | Edit any User Group. | Delete any User Group. | View any User Group | Invite an email to any User Group. | Remove another user from any User Group. | - |
-| **Group** | - | Edit the User Group. | Delete the User Group. | View the User Group. | Invite an email to the User Group | Remove another user from the User Group. | - |
-| **Roles** | Create a Role | Edit any Role. | Delete any Role. | View any Role. | - | - | Assign any role to any User or User Group. |
-| **Role** | - | Edit the Role. | Delete the Role. | View the Role. | - | - | Assign the role to any User or User Group. |
-
-
-### Others
-
-In this section, users can assign permissions for workspaces and Audit logs.
-
-|  | <div style= {{width:"150px"}}> **Create** </div>| <div style= {{width:"150px"}}> **Edit** </div> | <div style= {{width:"150px"}}> **Delete** </div> | <div style= {{width:"150px"}}> **View** </div> |
-| --- | --- | --- | --- | --- |
-| **Workspaces** | Create a workspace. | Edit any workspace. | Delete any workspace. | View any workspace. |
-| **Workspace** | - | Edit the workspace. | Delete the workspace. | View the workspace. |
-| **Audit Logs** | - | - | - | View the audit logs. |
+ <ZoomImage
+    src="/img/GAC-Create-Custom-Roles-Add-Role-button.png" 
+    alt="Click the Add role button to create a custom role"
+    caption="Click the Add role button to create a custom role"
+  />

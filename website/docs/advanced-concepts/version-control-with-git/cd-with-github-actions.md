@@ -130,7 +130,7 @@ The changes are deployed to that branch without the need to pull the changes man
 
 
 
-## See Also
+## See also
 
 - [Git Reference](/advanced-concepts/version-control-with-git/reference/git-settings)
 - [Multi environments using Git](/advanced-concepts/version-control-with-git/environments-with-git)
