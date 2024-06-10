@@ -6,7 +6,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 3 - Integrate Workflow with Appsmith App</h1>
+ <h1>Lesson 3 - Connect Workflow with Appsmith App</h1>
 
 <Tags
 tags={[
