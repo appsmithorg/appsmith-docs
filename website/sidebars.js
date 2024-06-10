@@ -712,64 +712,87 @@ const sidebars = {
             'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
           ]
         },
-        'advanced-concepts/invite-users',
         {
           type: 'category',
           label: 'Granular Access Control',
           link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
           items: [
-            'advanced-concepts/granular-access-control/roles',
+            {
+              type: 'category',
+              label: 'How-to Guides',
+              items: [
+                'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
+                'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access',
+              ]
+            },
+            {
+              type: 'category',
+              collapsed: false,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/granular-access-control/reference/default-roles',
+                'advanced-concepts/granular-access-control/reference/custom-roles',
+                'advanced-concepts/granular-access-control/reference/permissions',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Concepts',
+              items: [
+                'advanced-concepts/granular-access-control/roles',
+              ]
+            },
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,
-             //git-start
-             {
-          
+        //git-start
+        {
+
+          type: 'category',
+          collapsed: true,
+          label: 'Versioning with Git',
+          link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
+          items: [
+            {
               type: 'category',
               collapsed: true,
-              label: 'Versioning with Git',
-              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
+              label: 'How-To Guides',
+              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
               items: [
+                'advanced-concepts/version-control-with-git/guides/setup-github',
+                'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
+                'advanced-concepts/version-control-with-git/guides/setup-other-provider',
+                'advanced-concepts/version-control-with-git/import-from-repository',
+                'advanced-concepts/version-control-with-git/environments-with-git',
                 {
                   type: 'category',
                   collapsed: true,
-                  label: 'How-To Guides',
-                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
+                  label: 'Continuous Delivery (CI/CD) with Git',
+                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
                   items: [
-                    'advanced-concepts/version-control-with-git/guides/setup-github',
-                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
-                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
-                    'advanced-concepts/version-control-with-git/guides/setup-other-provider',
-                    'advanced-concepts/version-control-with-git/import-from-repository',
-                    'advanced-concepts/version-control-with-git/environments-with-git',
-                    {
-                      type: 'category',
-                      collapsed: true,
-                      label: 'Continuous Delivery (CI/CD) with Git',
-                      link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
-                      items: [
-                         'advanced-concepts/version-control-with-git/cd-with-github-actions',
-                          'advanced-concepts/version-control-with-git/cd-with-gitlab',
-                          'advanced-concepts/version-control-with-git/cd-with-bitbucket',
-                      ]
-                    },
-                    'advanced-concepts/version-control-with-git/revert-changes',
-                    'advanced-concepts/version-control-with-git/commit-and-push',
-       
+                    'advanced-concepts/version-control-with-git/cd-with-github-actions',
+                    'advanced-concepts/version-control-with-git/cd-with-gitlab',
+                    'advanced-concepts/version-control-with-git/cd-with-bitbucket',
                   ]
                 },
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'Reference',
-                  items: [
-                    'advanced-concepts/version-control-with-git/reference/git-settings',
-                  ]
-                },
-                'advanced-concepts/version-control-with-git/merging-branches',
+                'advanced-concepts/version-control-with-git/revert-changes',
+                'advanced-concepts/version-control-with-git/commit-and-push',
+
               ]
-            }, 
-           //git-end
+            },
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/version-control-with-git/reference/git-settings',
+              ]
+            },
+            'advanced-concepts/version-control-with-git/merging-branches',
+          ]
+        },
+        //git-end
         //git-start
 
         'advanced-concepts/more/backup-restore',
@@ -810,7 +833,8 @@ const sidebars = {
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
             'help-and-support/troubleshooting-guide/action-errors/README',
-            'help-and-support/troubleshooting-guide/git-errors'
+            'help-and-support/troubleshooting-guide/git-errors',
+            'help-and-support/troubleshooting-guide/gac-errors',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',

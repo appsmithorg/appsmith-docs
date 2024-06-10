@@ -1,0 +1,164 @@
+---
+description: >-
+  Set up default access to apps in Granular Access Control
+title: Configure Default Access to Apps
+hide_title: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Configure Default Access to Apps</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+To simplify access management and ensure consistency across the Appsmith instance, you may need to provide default access to all users. This page explains how to provide default access to all users accessing the Appsmith instance.
+
+## Prerequisites
+
+Before you start, ensure you have:
+
+- A self-hosted Appsmith instance running the Commercial Edition. If not installed yet, see the [Installation Guides](/getting-started/setup/installation-guides).
+- A Business Plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
+- Access to update the role configuration. If you need access, contact your Instance Administrator.
+
+## Configure permissions
+
+Follow these steps to configure permissions:
+
+1. Navigate to Admin Settings by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
+2. From the sidebar, under **Access Control**, select **Roles**.
+3. Toggle **Default Roles** to show all the default roles.
+
+   <ZoomImage src="/img/GAC-Default-Roles-toggle.png" alt="Toggle the Default roles options to view Default Roles" caption="Toggle the Default roles options to view Default Roles"
+   />
+
+4. Click the _Default Role For All Users_ that opens a configuration screen.
+5. Based on your permission needs, provide access to resources. For example, if you want to provide read-only access to an application so that all authenticated users can view it, assign permissions as below:
+
+<Tabs queryString="gac-resource">
+   <TabItem label="Application Resources" value="application-resources">
+  <p className="permission-footnote">
+        <span style={{color: 'green', fontWeight: 'bold'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span> Permission Assigned
+    </p>
+      <table className="permissions-table" style={{ width: '100%', display: 'table' }}>
+         <thead>
+            <tr>
+               <th>Resource</th>
+               <th>Create</th>
+               <th>Edit</th>
+               <th>Delete</th>
+               <th>View</th>
+               <th>Execute</th>
+               <th>Make Public</th>
+               <th>Export</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Workspace</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp; Application</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+            <tr>
+               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Query</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+               <td></td>
+               <td></td>
+            </tr>
+         </tbody>
+         </table>
+      
+   </TabItem>
+      <TabItem label="Datasources & Environments" value="datasources-and-environments">
+      <p className="permission-footnote">
+        <span style={{color: 'green', fontWeight: 'bold'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span> Permission Assigned
+    </p>
+         <table className="permissions-table" style={{ width: '100%', display: 'table' }}>
+            <thead>
+               <tr>
+                  <th>Resource</th>
+                  <th>Execute</th>
+                  <th>Create</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                  <th>View</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Datasources</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; Datasource name</td>
+                  <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>Environments</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+               <tr>
+                  <td>&nbsp;&nbsp;&nbsp;&nbsp; Production</td>
+                  <td style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+               </tr>
+            </tbody>
+            </table>
+
+
+   </TabItem>
+</Tabs>
+
+6. Once you have configured the permissions, click the **Save changes** button. 
+
+This configuration provides read-only access to all users once authenticated to the application. For more information about permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
+
+## Troubleshooting
+
+If you encounter any issues, contact the support team using the chat widget at the bottom right of this page.
