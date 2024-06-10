@@ -668,9 +668,9 @@ const sidebars = {
           label: 'Tutorial',
           items: [
             'workflows/tutorials/create-workflow',
-            'workflows/tutorials/configure-webhook-trigger',
             'workflows/tutorials/execute-workflow-from-appsmith-app',
-            'workflows/tutorials/execute-workflow-from-postman',
+            'workflows/tutorials/configure-webhook-trigger',
+            'workflows/tutorials/execute-workflow-from-external-system',
           ],
         },
         {

@@ -137,4 +137,5 @@ MongoDB
 Redis
 disabled
 permissions
-
+Request
+HTTPie
