@@ -666,11 +666,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
-          link: {
-            type: 'doc',
-            id: 'workflows/tutorials/create-workflow',
-          },
           items: [
+            'workflows/tutorials/create-workflow',
+            'workflows/tutorials/configure-webhook-trigger',
+            'workflows/tutorials/execute-workflow-from-appsmith-app',
+            'workflows/tutorials/execute-workflow-from-postman',
           ],
         },
         {
@@ -722,54 +722,54 @@ const sidebars = {
           ]
         },
         `advanced-concepts/user-provisioning-group-sync`,
-             //git-start
-             {
-          
+        //git-start
+        {
+
+          type: 'category',
+          collapsed: true,
+          label: 'Versioning with Git',
+          link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
+          items: [
+            {
               type: 'category',
               collapsed: true,
-              label: 'Versioning with Git',
-              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
+              label: 'How-To Guides',
+              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
               items: [
+                'advanced-concepts/version-control-with-git/guides/setup-github',
+                'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
+                'advanced-concepts/version-control-with-git/guides/setup-other-provider',
+                'advanced-concepts/version-control-with-git/import-from-repository',
+                'advanced-concepts/version-control-with-git/environments-with-git',
                 {
                   type: 'category',
                   collapsed: true,
-                  label: 'How-To Guides',
-                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
+                  label: 'Continuous Delivery (CI/CD) with Git',
+                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
                   items: [
-                    'advanced-concepts/version-control-with-git/guides/setup-github',
-                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
-                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
-                    'advanced-concepts/version-control-with-git/guides/setup-other-provider',
-                    'advanced-concepts/version-control-with-git/import-from-repository',
-                    'advanced-concepts/version-control-with-git/environments-with-git',
-                    {
-                      type: 'category',
-                      collapsed: true,
-                      label: 'Continuous Delivery (CI/CD) with Git',
-                      link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
-                      items: [
-                         'advanced-concepts/version-control-with-git/cd-with-github-actions',
-                          'advanced-concepts/version-control-with-git/cd-with-gitlab',
-                          'advanced-concepts/version-control-with-git/cd-with-bitbucket',
-                      ]
-                    },
-                    'advanced-concepts/version-control-with-git/revert-changes',
-                    'advanced-concepts/version-control-with-git/commit-and-push',
-       
+                    'advanced-concepts/version-control-with-git/cd-with-github-actions',
+                    'advanced-concepts/version-control-with-git/cd-with-gitlab',
+                    'advanced-concepts/version-control-with-git/cd-with-bitbucket',
                   ]
                 },
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'Reference',
-                  items: [
-                    'advanced-concepts/version-control-with-git/reference/git-settings',
-                  ]
-                },
-                'advanced-concepts/version-control-with-git/merging-branches',
+                'advanced-concepts/version-control-with-git/revert-changes',
+                'advanced-concepts/version-control-with-git/commit-and-push',
+
               ]
-            }, 
-           //git-end
+            },
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/version-control-with-git/reference/git-settings',
+              ]
+            },
+            'advanced-concepts/version-control-with-git/merging-branches',
+          ]
+        },
+        //git-end
         //git-start
 
         'advanced-concepts/more/backup-restore',

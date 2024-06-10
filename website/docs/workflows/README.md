@@ -25,9 +25,9 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
   * **Automate business-critical processes:** Streamline operations by automating tasks such as: syncing leads from CRM to marketing tools, or managing inventory with stock alerts and supplier orders.
 
-  * **Enable Human-in-the-Loop interactions:** Combine user-friendly interfaces with server-side automation to design workflows that require human decisions for: Data validation, Approvals, Feedback, and more.
+  * **Enable Human-in-the-Loop interactions:** Combine user-friendly interfaces with server-side automation to design workflows that require human decisions for: Data validation, Approvals, Feedback, and more. (**Coming Soon**)
 
-  * **Explore trigger types:** Appsmith offers different trigger types including Webhooks, Integrated Datasource for Appsmith Apps, and Scheduled Cron Jobs. (**Scheduled Cron Jobs feature coming soon**)
+  * **Explore trigger types:** Appsmith offers different trigger types including Webhooks, Integrated Datasource for Appsmith Apps, and Scheduled Cron Jobs. (**Coming Soon**)
 
 ## Getting started with workflows
 
@@ -37,11 +37,35 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Create Your First Basic Workflow</a></b>
+      <b><a href="/workflows/tutorials/create-workflow">Lesson 1 - Create Your First Basic Workflow</a></b>
       <div className="containerDescription">
-        Learn how to create your first workflow, configure webhook trigger to connect with external system, and integrate workflow natively with Appsmith app.
+        Learn how to create your first workflow.
       </div>
    </div>
-   <div className="columnGrid column-two" style={{margin: "10px"}}>
+   <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
+      </div> 
+      <b><a href="/workflows/tutorials/create-workflow">Lesson 2 - Configure Webhook Trigger</a></b>
+      <div className="containerDescription">
+        Learn how to configure webhook trigger to connect with external system.
+      </div>
+   </div>
+</div>
+<div className="containerGridSampleApp">
+   <div className="containerColumnSampleApp columnGrid column-three">
+    <div className="containerCol">
+      </div> 
+      <b><a href="/workflows/tutorials/create-workflow">Lesson 3 - Integrate Workflow with Appsmith App</a></b>
+      <div className="containerDescription">
+        Learn how to integrate workflow natively with Appsmith app.
+      </div>
+   </div>
+   <div className="containerColumnSampleApp columnGrid column-four">
+   <div className="containerCol">
+      </div> 
+      <b><a href="/workflows/tutorials/create-workflow">Lesson 4 - Connect Workflow with External System</a></b>
+      <div className="containerDescription">
+        Learn how to connect Workflow with external system.
+      </div>
    </div>
 </div>
