@@ -1,21 +1,21 @@
 ---
 description: This page provides detailed steps to set up a workflow on Appsmith.
-title: Lesson 1 - Create Basic Workflow in Appsmith
+title: Lesson 1 - Create Basic Workflow
 hide_title: true
 ---
 
-# Lesson 1: Create Basic Workflow in Appsmith
+# Lesson 1: Create Basic Workflow
 
 Appsmith Workflows allow you to automate processes, bringing efficiency and connectivity to your business. This tutorial guides you through the process of setting up a basic workflow. You'll learn to create, test, and deploy a workflow that sends a welcome notification email when new users join your organization.
 
-## Objectives
+## What you'll learn
 
 By the end of this lesson, you will be able to:
 * Create a basic workflow in Appsmith.
 * Test and execute the workflow.
 * Deploy the workflow for use within your workspace.
 
-## Prerequisites
+## What you'll need
 
 Before you start, ensure you have the following:
 * A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). For more information about setup instructions, see the [Appsmith installation guides](/getting-started/setup/installation-guides).
@@ -34,29 +34,30 @@ Follow these steps to create a new workflow in your Appsmith workspace:
 <br/><br/>
 
 1. **Create a New Workflow**:
-   - In your Appsmith workspace, click the **Create New** button and select **Workflow**. This action opens the workflow creation interface.
+   - In your Appsmith workspace, click the **Create New** button and select **Workflow**. This action creates a new workflow in your workspace.
    - Rename your workflow from **Untitled Workflow 1** to a more meaningful name, like *Send_Email_Workflow*.
 
 2. **Understand the Main Function**: 
     - In the **Main** JS object code editor, you'll see the `executeWorkflow` function. This function is the entry point for your workflow execution.
-    :::danger Caution
-    Do not remove the `executeWorkflow()` function. It's essential for your workflow to run without which the workflow will not be executed.
-    :::
 
-    ```javascript
-    export default {
-        /**
-        * Entry point for Workflow execution. All activities to be executed should be defined here.
-        * @param data  This function takes in a JSON object as arguments (data) which can be passed when you trigger the workflow.
-        * @returns boolean Shall return true or false.
-        */
-        async executeWorkflow(data) {
-            // Start writing your code here.
+        :::danger Caution
+        Do not remove the `executeWorkflow()` function. It's essential for your workflow to run, without which the workflow will not be executed.
+        :::
 
-            return true;
+        ```javascript
+        export default {
+            /**
+            * Entry point for Workflow execution. All activities to be executed should be defined here.
+            * @param data  This function takes in a JSON object as arguments (data) which can be passed when you trigger the workflow.
+            * @returns boolean Shall return true or false.
+            */
+            async executeWorkflow(data) {
+                // Start writing your code here.
+
+                return true;
+            }
         }
-    }
-    ```
+        ```
 
 ## Test Workflow
 

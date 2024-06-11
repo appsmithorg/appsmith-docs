@@ -8,14 +8,14 @@ hide_title: true
 
 In this lesson, you'll learn how to connect the workflow you created in Lesson 1 with an Appsmith app. You'll use an API call to trigger the workflow and send a welcome email to new users. 
 
-## Objectives 
+## What you'll learn 
 
 By the end of this lesson, you will be able to:
 * Update the workflow to accept parameters.
 * Create a workflow query to link the workflow with your app.
 * Pass parameters from the app to the workflow and trigger it.
 
-## Prerequisites
+## What you'll need
 
 Before starting, make sure you have:
 * Completed [Lesson 1 - Create Basic Workflow](/workflows/tutorials/create-workflow).

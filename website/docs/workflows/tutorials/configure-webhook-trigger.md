@@ -8,13 +8,13 @@ hide_title: true
 
 In this lesson, you will learn how to configure a webhook trigger for your workflow. A webhook allows external systems to trigger your workflow automatically based on specific events or conditions. 
 
-## Objectives 
+## What you'll learn 
 
 By the end of this lesson, you will be able to:
 * Enable webhook triggers for your workflow.
 * Copy and use the webhook URL.
 
-## Prerequisites
+## What you'll need
 
 Before you start, make sure you have:
 * Completed [Lesson 1 - Create Basic Workflow](/workflows/tutorials/create-workflow).

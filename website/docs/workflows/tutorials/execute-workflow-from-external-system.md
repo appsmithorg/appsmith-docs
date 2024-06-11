@@ -8,7 +8,7 @@ hide_title: true
 
 In this lesson, you will learn how to connect and trigger your Appsmith workflow using an external tool, like HTTPie. 
 
-## Objectives
+## What you'll learn
 
 By the end of this lesson, you will be able to:
 * Set up a new request in HTTPie.
@@ -16,7 +16,7 @@ By the end of this lesson, you will be able to:
 * Pass parameters to the workflow from HTTPie.
 * Verify the workflow execution through HTTPie.
 
-## Prerequisites
+## What you'll need
 
 Before you start, ensure you have:
 * Completed [Lesson 3 - Configure Webhook Trigger](/workflows/tutorials/configure-webhook-trigger).
@@ -76,5 +76,3 @@ You have completed the tutorial series on building and connecting workflows in A
 * [How-to Guides](/workflows/how-to-guides/create-approval-workflow) - Learn more advanced workflow configurations and integrations.
 * [Workflow Queries](/workflows/reference/workflow-queries) - Understand how to use queries within your workflows.
 * [Workflow Functions](/workflows/reference/workflow-functions) - Explore the different functions available for your workflows.
-
-Happy Workflow Building!

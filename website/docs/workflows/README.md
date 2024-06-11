@@ -45,9 +45,9 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Lesson 2 - Configure Webhook Trigger</a></b>
+      <b><a href="/workflows/tutorials/execute-workflow-from-appsmith-app">Lesson 2 - Connect Workflow with Appsmith App</a></b>
       <div className="containerDescription">
-        Learn how to configure webhook trigger to connect with external system.
+        Learn how to integrate workflow natively with Appsmith app.
       </div>
    </div>
 </div>
@@ -55,15 +55,15 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-three">
     <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Lesson 3 - Integrate Workflow with Appsmith App</a></b>
+      <b><a href="/workflows/tutorials/configure-webhook-trigger">Lesson 3 - Configure Webhook Trigger</a></b>
       <div className="containerDescription">
-        Learn how to integrate workflow natively with Appsmith app.
+        Learn how to configure webhook trigger that enables the workflow to connect with external system.
       </div>
    </div>
    <div className="containerColumnSampleApp columnGrid column-four">
    <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Lesson 4 - Connect Workflow with External System</a></b>
+      <b><a href="/workflows/tutorials/execute-workflow-from-external-system">Lesson 4 - Connect Workflow with External System</a></b>
       <div className="containerDescription">
         Learn how to connect Workflow with external system.
       </div>
