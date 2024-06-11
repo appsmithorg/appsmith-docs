@@ -196,7 +196,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
         <div className="containerCol">
             <img className="containerImage" src="/img/meilisearch-logo.png" alt="meilisearch-logo"/>
         </div> <hr/>
-        <div className="containerDescription"><strong>Meilisearch</strong> allows you to integrate an open-source, lightning-fast search engine into internal dashboards and enterprise apps.<br/><br/>  </div>
+        <div className="containerDescription"><strong>Meilisearch</strong> allows you to integrate a lightning-fast search engine into internal dashboards and enterprise apps.<br/><br/>  </div>
         <div className="containerTutorialLink"><a href="https://community.appsmith.com/guide/appsmith-meilisearch"><strong >View Tutorial </strong></a></div>
     </div>
  
