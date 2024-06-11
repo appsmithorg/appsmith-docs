@@ -18,9 +18,9 @@ Imagine you have a form in your Appsmith app that collects user information such
 
     ```javascript
     {
-      "name": "{{NameInput.text}}",    // Collects the value from the "NameInput" widget
-      "email": "{{EmailInput.text}}",  // Collects the value from the "EmailInput" widget
-      "phone": "{{PhoneInput.text}}"   // Collects the value from the "PhoneInput" widget
+      "name": "{{NameInput.text}}",    // reads the value from the "NameInput" widget
+      "email": "{{EmailInput.text}}",  // reads the value from the "EmailInput" widget
+      "phone": "{{PhoneInput.text}}"   // reads the value from the "PhoneInput" widget
     }
     ```
 
