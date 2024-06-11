@@ -6,7 +6,15 @@ toc_max_heading_level: 2
 
 # navigateTo()
 
-The `navigateTo()` function enables you to navigate between the internal pages of the App or to an external URL. 
+The `navigateTo()` function allows you to navigate between internal app pages or external URLs, enhancing user experience by enabling smooth transitions and intuitive navigation paths.
+
+
+
+
+
+<ZoomImage src="/img/navigate-fun.png" alt="navigateTo()" caption="navigateTo()" />
+
+
 
 
 ## Signature
@@ -17,11 +25,18 @@ navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW"):
 
 ### Parameters
 
+Below are the parameters required by the `navigateTo()` function to execute:
+
 #### pageNameOrUrl
 
 <dd>
 
-Page name or URL to which you would like to be transported. `PageName` is case-sensitive.
+The name of the page or URL you want to navigate to. For events, you can use the action selector to choose the page name or add URLs. If you want to call the `navigateTo()` function inside JS code, use:
+
+* For App Page: `{{navigateTo('NewPage', {}, 'SAME_WINDOW');}}`
+* For External URL: `{{navigateTo('www.appsmith.com', {}, 'SAME_WINDOW');}}`
+
+
 
 </dd>
 
@@ -29,15 +44,24 @@ Page name or URL to which you would like to be transported. `PageName` is case-s
 
 <dd>
 
-Query parameters passed via the URL. Used to share information with the destination page. 
-To bind an object with key-value pairs into a query parameter, use the following syntax in **Query params**:
+This parameter allows you to pass data across pages or external URLs. It uses the [URL](/reference/appsmith-framework/context-object#url-object) global object to pass data.
 
-```jsx
+
+To pass data from one page to another or external URL, use:
+
+```js
 {{
 { "key": "value" }
 }}
 ```
-See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
+
+To access these values on the destination page, use:
+
+
+```js
+{{appsmith.URL.queryParams.key}}
+```
+
 
 </dd>
 
@@ -46,12 +70,57 @@ See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages
 <dd>
 
 
-Option to configure whether to open the page or URL in the same browser window or a new window/tab. The default value is set to `SAME_WINDOW`.
+This parameter allows you to configure whether to open the page or URL in the same browser window/tab or a new window/tab. The default value is `SAME_WINDOW`, and you can select it from the action selector. If you are using it inside JS code, you can use:
+
+```js
+{{navigateTo('NextPage', { "key": "value" }, 'SAME_WINDOW');}}
+```
+
+</dd>
+
+## Usage
+
+Here are a few examples to navigate in different situations:
+
+
+
+
+#### Conditional Navigation:
+
+
+<dd>
+
+If you need to navigate conditionally, based on user roles or status, you can achieve this by implementing logic that evaluates user attributes. For example, if you want to navigate logged-in users to the dashboard page and anonymous users to the login page, you can use:
+
+
+```js
+// Enable JS next to the event and add the code
+{{appsmith.user.isAnonymous ? navigateTo('LoginPage', {}, 'SAME_WINDOW') : navigateTo('DashboardPage', {}, 'SAME_WINDOW');}}
+```
+
+</dd>
+
+#### Share Data Across Pages
+
+<dd>
+
+To pass data across pages, you can use:
+
+```js
+{{navigateTo('LoginPage', { userId: 547916 })}}
+```
+
+To access this value on the destination page, use:
+
+```js
+{{appsmith.URL.queryParams.userId}}
+```
+
+See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
 </dd>
 
 ## See also
 - [Navigate Between Pages](/build-apps/how-to-guides/navigate-between-pages)
-- [Share Data Across Pages](/advanced-concepts/sharing-data-across-pages)
 - [Create Custom Navigation Bar](/build-apps/how-to-guides/create-custom-nav-bar)
 
