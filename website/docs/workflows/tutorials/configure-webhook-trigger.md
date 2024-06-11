@@ -36,7 +36,7 @@ To begin, you'll need to access the settings for your workflow.
     </div>
 <br/><br/>
 
-1. **Open Workflow Settings**:
+**Open Workflow Settings**:
    - Navigate to your workflow in the Appsmith interface.
    - Click the gear icon (⚙️) located in the bottom left corner to open the workflow settings.
 
