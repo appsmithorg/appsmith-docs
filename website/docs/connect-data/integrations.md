@@ -27,7 +27,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
             <img className="containerImage" src="/img/appwrite-logo_DGkbk_MxO.png" alt="Appwrite-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Appwrite</strong> is a self-hosted BaaS platform that provides developers with all the  core APIs required to build any application.<br/><br/></div>
-         <div className="containerTutorialLink"><a href="https://www.youtube.com/watch?v=uENmCvSusMI"><strong>View Tutorial</strong></a> </div>
+         <div className="containerTutorialLink"><a href="https://community.appsmith.com/guide/appsmith-appwrite"><strong>View Tutorial</strong></a> </div>
     </div>
 </div>
 
@@ -174,6 +174,9 @@ This page offers resources to guide you in connecting Appsmith to many third-par
          <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/build-an-equipment-checkout-app-for-the-admin-team-at-your-company"><strong>View Tutorial</strong></a></div>
     </div>
 </div>
+
+
+
 <div className="containerGrid">
      <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
@@ -189,6 +192,13 @@ This page offers resources to guide you in connecting Appsmith to many third-par
         <div className="containerDescription"><strong>Zapier</strong> allows end users to integrate the web applications they use and automate workflows.<br/><br/>  </div>
         <div className="containerTutorialLink"><a href="https://www.appsmith.com/blog/want-to-automate-your-apps-use-zapier-to-connect-specialized-platforms"><strong >View Tutorial </strong></a></div>
     </div>
-    <div className="columnGrid column-three">
+     <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
+            <img className="containerImage" src="/img/meilisearch-logo.png" alt="meilisearch-logo"/>
+        </div> <hr/>
+        <div className="containerDescription"><strong>Meilisearch</strong> allows you to integrate an open-source, lightning-fast search engine into internal dashboards and enterprise apps.<br/><br/>  </div>
+        <div className="containerTutorialLink"><a href="https://community.appsmith.com/guide/appsmith-meilisearch"><strong >View Tutorial </strong></a></div>
     </div>
+ 
+    
 </div>
