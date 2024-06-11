@@ -55,8 +55,6 @@ When connecting to an external system, you pass parameters in the request body.
     }
     ```
 
-    Ensure the external system sends this JSON in the request body when invoking the workflow.
-
 * **Specific parameter**: Include the specific parameter in JSON format in the request body when executing the workflow.
 
     ```javascript
@@ -65,15 +63,13 @@ When connecting to an external system, you pass parameters in the request body.
     }
     ```
 
-    This method is useful when you only need to send specific data to the workflow.
-
 ### Accessing parameters in workflows
 
 Once parameters are passed to a workflow, you can access them within the workflow's logic.
 
 #### Read parameter values in workflow
 
-You can access the parameter values using `data.parameter_name`. For example:
+You can access the parameter values using dot notation with the `data` object. For example:
 
 ```javascript
 const userEmail = data.email;  // Accesses the "email" parameter
@@ -87,7 +83,7 @@ Use these parameters to call queries within the workflow and pass the parameters
 
 * Pass all parameters: Pass all parameters to the underlying queries by spreading data.
     ```javascript
-    // Example: Passing all parameters to an underlying query named "SaveUserDetails"
+    // Passing all parameters to an underlying query named SaveUserDetails
     SaveUserDetails.run({
     ...data  // Passes all parameters from the workflow to the query
     });
@@ -99,8 +95,11 @@ Use these parameters to call queries within the workflow and pass the parameters
     "email": data.email  // Passes only the "email" parameter to the query
     });
     ```
+
 #### Read parameters to process queries
+
 In the underlying queries within the workflow, read the parameters using the `{{ this.params.parameter_name }} `syntax.
+
 ```javascript
 // Example: Reading parameters in a query
 const userEmail = {{ this.params.email }};  // Reads the "email" parameter
