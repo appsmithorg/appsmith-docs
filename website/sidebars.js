@@ -666,11 +666,11 @@ const sidebars = {
         {
           type: 'category',
           label: 'Tutorial',
-          link: {
-            type: 'doc',
-            id: 'workflows/tutorials/create-workflow',
-          },
           items: [
+            'workflows/tutorials/create-workflow',
+            'workflows/tutorials/execute-workflow-from-appsmith-app',
+            'workflows/tutorials/configure-webhook-trigger',
+            'workflows/tutorials/execute-workflow-from-external-system',
           ],
         },
         {
@@ -692,7 +692,8 @@ const sidebars = {
           label: 'Reference',
           items: [
             'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions'
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows',
           ],
         }
       ]

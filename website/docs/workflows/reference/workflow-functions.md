@@ -24,7 +24,7 @@ Workflow functions are in-built framework functions that enables you to interact
 
 ## executeWorkflow()
 
-The `executeWorkflow()` function serves as a central control unit for executing workflows and marks the starting point of the workflow execution within Appsmith. This function allows you to create a workflow logic for execution of tasks.
+The `executeWorkflow()` function acts as a central control unit for executing workflows and marks the starting point of the workflow execution within Appsmith. This function allows you to define the workflow logic for execution of tasks. It must be present in the _Main_ JS object; if it's not, the workflow will not be executed.
 
 ### Signature
 
@@ -38,7 +38,7 @@ Below are the parameters required by the `executeWorkflow()` function to execute
 #### data <code className="parameterCodeBlock">JSON</code>
 
 <dd>
-  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow where `data` holds the body of the post request when triggered via webhook, and holds `Trigger Data` property of the [Trigger Workflow](/workflows/reference/workflow-queries#trigger-workflow) query when workflow is executed from an Appsmith app.
+  The parameter `data` holds the data passed from your App to trigger and process the workflow. For example, consider the following data passed to the workflow where `data` holds the body of the post request when triggered via webhook, and holds `Trigger Data` property of the [Trigger Workflow](/workflows/reference/workflow-queries#trigger-workflow) query when workflow is executed from an Appsmith app. For more information about reading parameters, see [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows).
 
     ```javascript
       {

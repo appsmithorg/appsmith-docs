@@ -50,6 +50,7 @@ Trigger data supplies the parameters needed by the workflow to execute. The para
   "parameter2": "value2"
 }
 ```
+For more information about passing parameters, see [ Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows).
 </dd>
 
 ### Get requests
