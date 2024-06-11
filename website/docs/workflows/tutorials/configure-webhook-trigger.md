@@ -60,5 +60,3 @@ You've successfully configured a webhook trigger for your workflow. This webhook
 
 In the next lesson, you will learn how to connect your workflow to an external system, such as Postman, using the webhook you configured. Proceed to [Lesson 4 - Connect Workflow with External System](/workflows/tutorials/execute-workflow-from-external-system) to continue.
 
----
-

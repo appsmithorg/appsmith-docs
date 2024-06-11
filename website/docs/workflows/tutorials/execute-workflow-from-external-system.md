@@ -20,11 +20,11 @@ By the end of this lesson, you will be able to:
 
 Before you start, ensure you have:
 * Completed [Lesson 3 - Configure Webhook Trigger](/workflows/tutorials/configure-webhook-trigger).
-* Access to the [HTTPie web application](https://httpie.io/app).
+* Access to the [HTTPie web application](https://httpie.io/app) or any REST client for testing.
 
 ## Connect to external system
 
-Connecting your Appsmith workflow to external systems, such as HTTPie, allows you to trigger actions and automate processes from outside the Appsmith environment. This is particularly useful for integrating with other services or testing workflows in different scenarios.
+Connecting your Appsmith workflow to external systems, such as HTTPie, allows you to trigger actions and automate processes from outside the Appsmith environment. This is useful for integrating with other services or testing workflows in different scenarios.
 
 ### Set Up new Request in HTTPie
 

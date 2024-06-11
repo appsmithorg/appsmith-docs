@@ -139,3 +139,4 @@ disabled
 permissions
 Request
 HTTPie
+UI
