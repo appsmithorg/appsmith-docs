@@ -37,7 +37,7 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-one">
     <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Lesson 1 - Create Your First Basic Workflow</a></b>
+      <b><a href="/workflows/tutorials/create-workflow">Tutorial - Create Your First Basic Workflow</a></b>
       <div className="containerDescription">
         Learn how to create your first workflow.
       </div>
@@ -45,7 +45,7 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/execute-workflow-from-appsmith-app">Lesson 2 - Connect Workflow with Appsmith App</a></b>
+      <b><a href="/workflows/tutorials/-workflow-with-appsmith-app">How-To guide - Connect Workflow with Appsmith App</a></b>
       <div className="containerDescription">
         Learn how to integrate workflow natively with Appsmith app.
       </div>
@@ -55,17 +55,12 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
    <div className="containerColumnSampleApp columnGrid column-three">
     <div className="containerCol">
       </div> 
-      <b><a href="/workflows/tutorials/configure-webhook-trigger">Lesson 3 - Configure Webhook Trigger</a></b>
-      <div className="containerDescription">
-        Learn how to configure webhook trigger that enables the workflow to connect with external system.
-      </div>
-   </div>
-   <div className="containerColumnSampleApp columnGrid column-four">
-   <div className="containerCol">
-      </div> 
-      <b><a href="/workflows/tutorials/execute-workflow-from-external-system">Lesson 4 - Connect Workflow with External System</a></b>
+      <b><a href="/workflows/how-to-guides/connect-workflow-with-external-system">How-To - Connect Workflow with External System</a></b>
       <div className="containerDescription">
         Learn how to connect Workflow with external system.
       </div>
+   </div>
+   <div className="columnGrid column-four" style={{padding:"20px"}}>
+   
    </div>
 </div>
