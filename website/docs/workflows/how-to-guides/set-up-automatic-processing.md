@@ -66,8 +66,8 @@ Before you begin, make sure you have:
     * **From within an Appsmith app -** Create a workflow query with **Trigger Workflow** as the request type. Pass the required parameters for processing, and bind it to the action from where the triggering happens. For more information on triggering a workflow, see [Trigger Workflow from Appsmith App](/workflows/how-to-guides/connect-workflow-with-appsmith-app) guide.
     * **From an external system -** Configure the webhook trigger in the workflow. Call the webhook through a POST request and pass the required parameters in the request body. For more information, see [Trigger Workflow from external system](/workflows/how-to-guides/connect-workflow-with-external-system).
 
-6. Click **Deploy** in the top right to apply your changes.
-7. Execute the workflow when relevant events occur, like a new order request.
+5. Click **Deploy** in the top right to apply your changes.
+6. Execute the workflow when relevant events occur, like a new order request.
 
 ## Troubleshooting
 
