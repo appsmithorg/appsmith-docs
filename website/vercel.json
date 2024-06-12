@@ -1244,8 +1244,7 @@
     {
       "source": "/advanced-concepts/invite-users",
       "destination": "/advanced-concepts/granular-access-control/reference/permissions"
-    }
-    ,
+    },
     {
       "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
       "destination": "/advanced-concepts/version-control-with-git/guides/overview"
@@ -1253,6 +1252,11 @@
     {
       "source": "/advanced-concepts/version-control-with-git/working-with-branches",
       "destination": "/advanced-concepts/version-control-with-git"
+    },
+    {
+      "source": "/workflows/how-to-guides/trigger-workflow-from-appsmith-app",
+      "destination": "/workflows/how-to-guides/connect-workflow-with-appsmith-app",
+      "permanent": true
     }
   ]
 }
