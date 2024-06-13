@@ -94,7 +94,7 @@ If you need to navigate conditionally, based on user roles or status, you can ac
 
 ```js
 // Enable JS next to the event and add the code
-{{currentRow.role === 'admin' ? navigateTo('LoginPage', {}, 'SAME_WINDOW') : navigateTo('DashboardPage', {}, 'SAME_WINDOW');}}
+{{currentRow.role === 'admin' ? navigateTo('AdminPage', {}, 'SAME_WINDOW') : navigateTo('DashboardPage', {}, 'SAME_WINDOW');}}
 ```
 
 </dd>
