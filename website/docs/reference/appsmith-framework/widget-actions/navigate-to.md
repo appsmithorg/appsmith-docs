@@ -6,10 +6,7 @@ toc_max_heading_level: 2
 
 # navigateTo()
 
-The `navigateTo()` function allows you to navigate between internal app pages or external URLs, enhancing user experience by enabling smooth transitions and intuitive navigation paths.
-
-
-
+The `navigateTo() `function allows you to navigate and pass data between internal app pages or external URLs.
 
 
 <ZoomImage src="/img/navigate-fun.png" alt="navigateTo()" caption="navigateTo()" />
