@@ -28,7 +28,7 @@ Below are the parameters required by the `navigateTo()` function to execute:
 
 <dd>
 
-The name of the page or URL you want to navigate to. For events, you can use the action selector to choose the page name or add URLs. If you want to call the `navigateTo()` function inside JS code, use:
+The name of the page or URL you want to navigate to. For widget events, you can use the action selector to select a page name or add a URL. If you want to call the `navigateTo()` function inside the JS code, use:
 
 * For App Page: `{{navigateTo('NewPage', {}, 'SAME_WINDOW');}}`
 * For External URL: `{{navigateTo('www.appsmith.com', {}, 'SAME_WINDOW');}}`
@@ -41,15 +41,19 @@ The name of the page or URL you want to navigate to. For events, you can use the
 
 <dd>
 
-This parameter allows you to pass data across pages or external URLs. It uses the [URL](/reference/appsmith-framework/context-object#url-object) global object to pass data.
+This property allows you to pass data across pages or external URLs. It uses the [URL](/reference/appsmith-framework/context-object#url-object) global object to pass data.
 
 
-To pass data from one page to another or external URL, use:
+To pass data from one page to another or an external URL, use:
 
 ```js
+//For action selector
 {{
 { "key": "value" }
 }}
+
+//For JS code
+{{navigateTo('NextPage', { "key": "value" }, 'SAME_WINDOW');}}
 ```
 
 To access these values on the destination page, use:
