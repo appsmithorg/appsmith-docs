@@ -87,41 +87,22 @@ If you want to download a file that is coming from a URL, you can use the `downl
 download(UsersTable.selectedRow.documentUrl, UsersTable.selectedRow.id + '.pdf');
 ```
 
-
-
-If you want to download a plain text document, the data passed to the download action should be a `string` representation of the text content to be downloaded. Additionally, a `fileName` and an optional `fileType` should be provided as parameters to the download function. 
-
-```javascript
-download(data: string, fileName: string, fileType?: string): void
-```
-
-
-*Example 2:*
-
-To download an image, the data passed to the download action should be the image's URL or Base64 string representation of the image. A `fileName` and an optional `fileType` should be provided as parameters to the download function. 
+See [Download file using authenticated URL](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url)
 
 #### Format and download data
 
-
-If you have data in one format and need to convert it to another format before downloading, you can use JSObject to transform the data and then download it. For example, if you want to convert JSON data into a CSV file and download it to your local machine, you can do so as follows:
-
+If you have data in one format and need to convert it to another format before downloading, you can use JSObject to transform the data and then download it. For example, if you want to convert JSON data into a CSV file, you can create code like:
 
 
 ```js
-const jsonData = [
-  { issue: "Login Error", count: 12 },
-  { issue: "Payment Failure", count: 7 },
-  { issue: "Page Not Loading", count: 5 }
-];
+// Assuming userdata.data contains the JSON data from the query
+const jsonData = userdata.data; 
 
-// Convert JSON to CSV
-let csvData = "Issue,Count\n";
-jsonData.forEach(row => {
-  csvData += `${row.issue},${row.count}\n`;
-});
+// Convert JSON to CSV 
+let csvData = jsonData.map(row => `${row.id},${row.name},${row.email},${row.country}`).join('\n');
 
-// Download the CSV file
-download(csvData, "issues.csv", "text/csv");
+// Use Appsmith's download function to download the CSV file
+download(csvData, "users.csv", "text/csv");
 ```
 
 #### Download using JSObject
@@ -140,6 +121,7 @@ downloadPDF: async () => {
 
 For files to be successfully downloaded, their contents must be served over HTTPS to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is CORS-enabled and returns the required headers in the response.
 
+See [Download multiple files](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url)
 
 ## See also
 - [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api)
