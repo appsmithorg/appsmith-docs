@@ -107,8 +107,7 @@ download(csvData, "users.csv", "text/csv");
 
 #### Download using JSObject
 
-Files of various types can be downloaded using the download action by providing the URL of the file to be downloaded. To download a file from a URL using a JSObject, you can use the following approach:
-
+If you want to download data based on certain criteria, you can use a JSObject to download, like:
 
 ```javascript
 downloadPDF: async () => {
