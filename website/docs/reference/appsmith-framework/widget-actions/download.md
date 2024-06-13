@@ -87,7 +87,7 @@ If you want to download a file that is coming from a URL, you can use the `downl
 download(UsersTable.selectedRow.documentUrl, UsersTable.selectedRow.id + '.pdf');
 ```
 
-See [Download file using authenticated URL](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url)
+See [Download file using authenticated URL](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url).
 
 #### Format and download data
 
@@ -120,7 +120,7 @@ downloadPDF: async () => {
 
 For files to be successfully downloaded, their contents must be served over HTTPS to prevent requests from being blocked. To prevent Cross-Origin Resource Sharing (CORS) errors, ensure that the server where the file is fetched from is CORS-enabled and returns the required headers in the response.
 
-See [Download multiple files](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url)
+See [Download multiple files](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-authenticated-url).
 
 ## See also
 - [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api)
