@@ -47,7 +47,7 @@ This property allows you to set the name of the file. You can specify a name or 
 
 This property allows you to set the MIME content-type of the file to download. If you do not specify the file type, make sure to include the appropriate file extension in the **filename** property, for example, `file_name.csv.`
 
-The Download action doesn't convert the file to a specific type and it's downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
+The Download action does not convert the file into a specific format; it downloads the file in its original form. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
 
 *Supported file types:*
 
