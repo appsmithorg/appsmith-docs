@@ -26,7 +26,7 @@ Below are the parameters required by the `download()` function to execute:
 
 <dd>
 
- This parameter specifies the data you want to download, which can be a `URL`, Query data, `Blob`, or any `String`. You can pass the data using `{{}}` Mustache binding, for example `{{Userquery.data}}`.
+ This parameter specifies the data you want to download, which can be a URL, Query data, Blob, or any String. You can pass the data using `{{}}` Mustache binding, for example `{{Userquery.data}}`.
 
 </dd>
 
@@ -81,7 +81,7 @@ download(UserData.data, 'UsersData.csv', 'text/csv');
 
 #### Download using URL
 
-If you want to download a file that is coming from a URL, you can use the `download()` function. For example, you have a Table widget where there is a column containing documents for each user in URL format. To download the document, you can use:
+If you want to download a file from a URL, you can pass the file URL to the` download()` function.  For example, if you have a Table widget with a column containing document URLs for each user, to download the document, you can use:
 
 ```js
 download(UsersTable.selectedRow.documentUrl, UsersTable.selectedRow.id + '.pdf');
@@ -91,7 +91,7 @@ See [Download file using authenticated URL](/connect-data/how-to-guides/how-to-d
 
 #### Format and download data
 
-If you have data in one format and need to convert it to another format before downloading, you can use JSObject to transform the data and then download it. For example, if you want to convert JSON data into a CSV file, you can create code like:
+If you have data in one format and need to convert it to another format before downloading, you can use JSObject to transform the data and then download it. For example, if you want to convert JSON data into a CSV file, you can create JS code like:
 
 
 ```js
@@ -105,9 +105,11 @@ let csvData = jsonData.map(row => `${row.id},${row.name},${row.email},${row.coun
 download(csvData, "users.csv", "text/csv");
 ```
 
-#### Download using JSObject
+#### Download using Blob
 
-If you want to download data based on certain criteria, you can use a JSObject to download, like:
+If you want to download data based on certain criteria, you can use a JSObject.
+
+*Example*: This code retrieves PDF data, creates a Blob from it, generates a temporary URL for the Blob, and triggers a download of the PDF file named "sample.pdf".
 
 ```javascript
 downloadPDF: async () => {

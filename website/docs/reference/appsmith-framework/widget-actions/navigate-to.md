@@ -47,12 +47,12 @@ This property allows you to pass data across pages or external URLs. It uses the
 To pass data from one page to another or an external URL, use:
 
 ```js
-//For action selector
+//Action selector
 {{
 { "key": "value" }
 }}
 
-//For JS code
+//JS code
 {{navigateTo('NextPage', { "key": "value" }, 'SAME_WINDOW');}}
 ```
 
@@ -71,7 +71,7 @@ To access these values on the destination page, use:
 <dd>
 
 
-This parameter allows you to configure whether to open the page or URL in the same browser window/tab or a new window/tab. The default value is `SAME_WINDOW`, and you can select it from the action selector. If you are using it inside JS code, you can use:
+This parameter allows you to configure whether to open the page or URL in the same browser window or a new window. The default value is `SAME_WINDOW`, and you can select it from the action selector. If you are using it inside JS code, you can use:
 
 ```js
 {{navigateTo('NextPage', { "key": "value" }, 'SAME_WINDOW');}}
