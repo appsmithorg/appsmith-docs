@@ -74,22 +74,22 @@ Follow these steps to write a blank API query for sending email:
     * Rename the query to _Send\_Welcome\_Email_
     * **HTTP Method** - Select `POST`.
     * **URL** - Add `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d` in the input box.
-    * **Body** - In the **Body** tab, add the below JSON. Remember to replace `<add_your_email_address>` with your email.
+    * **Body** - In the **Body** tab, add the below JSON. Remember to replace `add_your_email_address` with your email.
         ```javascript
         {
-            "email": "<add_your_email_address>"
+            "email": "add_your_email_address"
             
         }
         ```
 2. Click the **Run** button to send an email. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`. 
-3. Update the _Send\_Welcome\_Email_ query and remove your email, and add `{{this.params.send_email_to}}` to it. Adding `{{this.params.send_email_to}}` replaces the parameter `send_email_to` with the actual value at run time.
+3. Update the _Send\_Welcome\_Email_ query and remove your email, and add `{{this.params.email}}` to it. Adding `{{this.params.email}}` replaces the parameter `email` with the actual value at run time.
 4. Go to the _Main_ JS object and update the `executeworkflow()` function to read the email sent as a parameter.
 
      ```javascript
     export default {
         async executeWorkflow(data) {
-            //pass email `send_email_to` the query to send email
-           const response = await Send_Welcome_Email.run({"send_email_to": data.email});
+            //pass email `email` the query to send email
+           const response = await Send_Welcome_Email.run({"email": data.email});
             // log the response
             console.log(response);
         
@@ -115,7 +115,7 @@ Follow these steps to configure a webhook trigger for the workflow:
 1. Click the gear icon ⚙️ in the bottom left corner to configure the workflow settings.
 2. Toggle the **Webhook trigger** property to configure the workflow as a webhook.
 3. Copy and save the **URL**. If you wish to connect your workflow with an external app then you will need the **URL**. You'll see this in action in the [Send email using Postman](#send-email-using-postman) section.
-4. Click the **Publish** button in the top right corner to publish your workflow.
+4. Click the **Deploy** button in the top right corner to publish your workflow.
 
 You've configured the webhook trigger for the workflow. You can now integrate and trigger it from external apps.
 
@@ -127,10 +127,10 @@ To simulate the workflow connection from external app, you will use Postman and 
 2. Click on the **New** button, and choose **HTTP** request in Postman to create a new request.
 3. Choose the HTTP method as **POST**.
 4. Enter the workflow URL you copied in the [Configure Webhook trigger](#configure-webhook-trigger) section.
-5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `send_email_to`. Remember to replace `<add_your_email_address>` with your email.
+5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `email`. Remember to replace `add_your_email_address` with your email.
     ```javascript
     {
-        "email": "<add_your_email_address>"
+        "email": "add_your_email_address"
     }
 
     ```
