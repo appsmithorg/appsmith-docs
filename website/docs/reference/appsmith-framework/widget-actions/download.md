@@ -6,7 +6,9 @@ toc_max_heading_level: 2
 
 # download()
 
-The `download()` function allows you to download any data as a file to your local machine. It leverages the capabilities of the  [downloadjs](https://github.com/rndme/download) library.
+This page provides information about the` download()` function, which allows you to download any data as a file to your local machine. It uses the capabilities of the [downloadjs](https://github.com/rndme/download) library.
+
+
 
 <ZoomImage src="/img/table-data-csv.png" alt="" caption=""/>
 

@@ -6,7 +6,8 @@ toc_max_heading_level: 2
 
 # navigateTo()
 
-The `navigateTo() `function allows you to navigate and pass data between internal app pages or external URLs.
+This page provides information about the `navigateTo()` function signature and parameters, which allows you to navigate and pass data between internal app pages or external URLs.
+
 
 
 <ZoomImage src="/img/navigate-fun.png" alt="navigateTo()" caption="navigateTo()" />
@@ -17,7 +18,7 @@ The `navigateTo() `function allows you to navigate and pass data between interna
 ## Signature
 
 ```javascript
-navigateTo(pageName: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW"): Promise
+navigateTo(pageNameOrUrl: string, params?: {}, target: "SAME_WINDOW" | "NEW_WINDOW"): Promise
 ```
 
 ### Parameters
@@ -44,14 +45,17 @@ The name of the page or URL you want to navigate to. For widget events, you can 
 This property allows you to pass data across pages or external URLs. It uses the [URL](/reference/appsmith-framework/context-object#url-object) global object to pass data.
 
 
-To pass data from one page to another or an external URL, use:
+To pass data using the Action selector, use:
 
 ```js
-//Action selector
 {{
 { "key": "value" }
 }}
+```
+To pass data using JS, use:
 
+
+```js
 //JS code
 {{navigateTo('NextPage', { "key": "value" }, 'SAME_WINDOW');}}
 ```
