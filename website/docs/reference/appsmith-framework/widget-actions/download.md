@@ -36,7 +36,7 @@ Below are the parameters required by the `download()` function to execute:
 
 <dd>
 
-This property allows you to set the name of the file. You can specify a name or dynamically set it based on query or user data. For example, you can use Mustache binding to create a dynamic file name like `{{Table1.selectedRow.id}}`.
+This property allows you to set the name of the file. You can specify a name or dynamically set it based on query or user data. For example, you can use Mustache binding to create a dynamic file name like `{{Table1.selectedRow.id}}`. If there is no filename or extension specified, the download will fail. 
 
 
 </dd>
@@ -46,6 +46,8 @@ This property allows you to set the name of the file. You can specify a name or 
 <dd>
 
 The MIME content-type of the file to download. If you do not specify the file type, make sure to include the appropriate file extension in the **filename** property, for example, `file_name.csv.`
+
+The Download action doesn't convert the file to a specific type and it's downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
 
 *Supported file types:*
 
@@ -58,10 +60,6 @@ The MIME content-type of the file to download. If you do not specify the file ty
 * SVG
 
 </dd>
-
-:::info
-The Download action doesn't convert the file to a specific type and it's downloaded in the original format. If you need to change the file type, you would need to convert the data to a specific format using JavaScript before downloading.
-:::
 
 
 ## Usage
