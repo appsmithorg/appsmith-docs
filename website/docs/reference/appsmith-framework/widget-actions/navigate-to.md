@@ -99,7 +99,11 @@ If you need to navigate conditionally, based on user roles or status, you can ac
 
 ```js
 // Enable JS next to the event and add the code
-{{currentRow.role === 'admin' ? navigateTo('AdminPage', {}, 'SAME_WINDOW') : navigateTo('DashboardPage', {}, 'SAME_WINDOW');}}
+{{
+  currentProduct.available === true 
+  ? navigateTo('ProductDetailsPage', {}, 'SAME_WINDOW') 
+  : navigateTo('ProductUnavailablePage', {}, 'SAME_WINDOW');
+}}
 ```
 
 </dd>
@@ -108,19 +112,9 @@ If you need to navigate conditionally, based on user roles or status, you can ac
 
 <dd>
 
-To pass data across pages, you can use:
 
-```js
-{{navigateTo('LoginPage', { userId: 547916 })}}
-```
+When navigating across pages within your app or to external URLs, you can share data from your current page using query parameters. For more information, see [Share Data Across Pages](/advanced-concepts/sharing-data-across-pages).
 
-To access this value on the destination page, use:
-
-```js
-{{appsmith.URL.queryParams.userId}}
-```
-
-See [Sharing data via query params](/advanced-concepts/sharing-data-across-pages#sharing-data-via-query-params).
 
 </dd>
 
