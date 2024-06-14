@@ -95,7 +95,7 @@ Here are a few examples to navigate in different situations:
 
 <dd>
 
-If you need to navigate conditionally, based on user roles or status, you can achieve this by implementing logic that evaluates user attributes. For example, create a new custom column in Table widget, change Column type to a button, and set its **onClick** event to:
+If you need to navigate conditionally, based on user roles or status, you can achieve this by implementing logic that evaluates user attributes. For example, create a new custom column in the Table widget, change the Column type to a button, and set its **onClick** event to:
 
 ```js
 // Enable JS next to the event and add the code
