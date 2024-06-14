@@ -82,14 +82,14 @@ Follow these steps to write a blank API query for sending email:
         }
         ```
 2. Click the **Run** button to send an email. Check your inbox, you must have received an email from `demo.smtp.send.email@gmail.com`. 
-3. Update the _Send\_Welcome\_Email_ query and remove your email, and add `{{this.params.send_email_to}}` to it. Adding `{{this.params.send_email_to}}` replaces the parameter `send_email_to` with the actual value at run time.
+3. Update the _Send\_Welcome\_Email_ query and remove your email, and add `{{this.params.email}}` to it. Adding `{{this.params.email}}` replaces the parameter `email` with the actual value at run time.
 4. Go to the _Main_ JS object and update the `executeworkflow()` function to read the email sent as a parameter.
 
      ```javascript
     export default {
         async executeWorkflow(data) {
-            //pass email `send_email_to` the query to send email
-           const response = await Send_Welcome_Email.run({"send_email_to": data.email});
+            //pass email `email` the query to send email
+           const response = await Send_Welcome_Email.run({"email": data.email});
             // log the response
             console.log(response);
         
@@ -127,7 +127,7 @@ To simulate the workflow connection from external app, you will use Postman and 
 2. Click on the **New** button, and choose **HTTP** request in Postman to create a new request.
 3. Choose the HTTP method as **POST**.
 4. Enter the workflow URL you copied in the [Configure Webhook trigger](#configure-webhook-trigger) section.
-5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `send_email_to`. Remember to replace `add_your_email_address` with your email.
+5. On the _Body_ tab, select **raw**, and add the below code in the request body. Here you are setting the parameter value for `email`. Remember to replace `add_your_email_address` with your email.
     ```javascript
     {
         "email": "add_your_email_address"
