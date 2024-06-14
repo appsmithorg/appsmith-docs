@@ -99,11 +99,11 @@ If you need to navigate conditionally, based on user roles or status, you can ac
 
 ```js
 // Enable JS next to the event and add the code
-{{
-  currentProduct.available === true 
-  ? navigateTo('ProductDetailsPage', {}, 'SAME_WINDOW') 
-  : navigateTo('ProductUnavailablePage', {}, 'SAME_WINDOW');
+  currentRow.status === 'pending' 
+  ? navigateTo('OrderDetailsPage', {}, 'SAME_WINDOW') 
+  : navigateTo('OrderHistoryPage', {}, 'SAME_WINDOW');
 }}
+
 ```
 
 </dd>
