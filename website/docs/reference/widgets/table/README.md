@@ -856,7 +856,8 @@ Table1.setData([{ name: 'John', age: 36 }, { name: 'Jane', age: 28 }])
 
 <dd>
 
- Sets the selected row index of the table widget.
+
+This method allows you to programmatically select a single row in the Table.
 
 *Example*:
 
@@ -865,6 +866,23 @@ Table1.setSelectedRowIndex(2)
 ```
 
 </dd>
+
+#### setSelectedRowIndices (param: [?]): Promise
+
+<dd>
+
+This method allows you to programmatically select multiple rows in the Table. It is available when the [**Enable multi-row selection**](/reference/widgets/table#enable-multi-row-selection-boolean) property is enabled.
+
+*Example*:
+
+```js
+{{Table1.setSelectedRowIndices([1,2,5,8])}}
+```
+
+</dd>
+
+
+
 
 ## See also
 - [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data)
