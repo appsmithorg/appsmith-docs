@@ -56,6 +56,51 @@ If you want to keep the same background color for an entire row, you can use the
 <ZoomImage src="/img/cell-color.png" alt="Display images on table row selection" caption="Color Formatting" />
 
 
+## Editable
+
+When enabled, this property allows users to modify a field or cell. You can then use the Column's **onSubmit** or **onClick** event to run a query to update the data. 
+
+If the property is enabled from the column settings, it won't make the column editable unless it's also enabled from the Table column level. Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally.
+
+<dd>
+
+*Example*: If you want to allow only certain users to edit the Table:
+
+* Enable the Editable property at the Table Column level.
+
+* Open the column settings, click *JS* for the **Editable** property, and add your code.
+
+```javascript
+{{appsmith.user.email === 'john@appsmith.com' ? true : false}}
+```
+
+This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
+
+
+<ZoomImage
+  src="/img/column-editable.gif" 
+  alt=""
+  caption=""
+/>
+
+
+</dd>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+
 ## Properties
 
 These common properties allow you to edit the column, and customize the user actions.
