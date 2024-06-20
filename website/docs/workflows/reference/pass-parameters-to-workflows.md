@@ -1,7 +1,8 @@
 ---
 description: This page provides comprehensive information on passing parameters to workflows in Appsmith.
 title: Pass Parameters to Workflows
-hide_title: false
+hide_title: true
+toc_max_heading_level: 2
 ---
 
  <!-- vale off -->
@@ -19,13 +20,9 @@ tags={[
 
 <!-- vale on -->
 
-In Appsmith, passing parameters to workflows enables dynamic configuration and execution, allowing for flexible data handling and processing. This page explains how to effectively pass parameters to workflows in different scenarios.
+Passing parameters to workflows enables dynamic configuration and execution, allowing for flexible data handling and processing. This page explains how to effectively pass parameters to workflows from Appsmith app or external systems.
 
-## Example usage
-
-Imagine you have a form in your Appsmith app that collects user information such as name, email, and phone number. You need to pass this information to a workflow for further processing.
-
-### From the Appsmith app
+## From the Appsmith app
 
 * **All parameters**: Read data from different widgets, create a JSON object, set all parameters, and their values as shown below:
 
@@ -54,7 +51,7 @@ Imagine you have a form in your Appsmith app that collects user information such
     {{ this.params.email }}
     ```
 
-### From external systems
+## From external systems
 
 When connecting to an external system, you pass parameters in the request body.
 
@@ -76,11 +73,11 @@ When connecting to an external system, you pass parameters in the request body.
     }
     ```
 
-### Accessing parameters in workflows
+## Accessing parameters in workflows
 
 Once parameters are passed to a workflow, you can access them within the workflow's logic.
 
-#### Read parameter values in workflow
+### Read parameter values in workflow
 
 You can access the parameter values using dot notation with the `data` object. For example:
 
@@ -90,7 +87,7 @@ const userName = data.name;    // Accesses the "name" parameter
 const userPhone = data.phone;  // Accesses the "phone" parameter
 ```
 
-#### Pass parameters to internal queries
+### Pass parameters to internal queries
 
 Use these parameters to call queries within the workflow and pass the parameters to them.
 
@@ -109,7 +106,7 @@ Use these parameters to call queries within the workflow and pass the parameters
     });
     ```
 
-#### Read parameters to process queries
+### Read parameters to process queries
 
 In the underlying queries within the workflow, read the parameters using the `{{ this.params.parameter_name }} `syntax.
 
