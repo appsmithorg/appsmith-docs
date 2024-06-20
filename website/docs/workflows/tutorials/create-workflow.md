@@ -96,7 +96,7 @@ To automate tasks within your workflow, you can add processing logic to your wor
 
     ```javascript
     {
-        "email": "{{this.params.email}}"
+        "email": {{this.params.email}}
     }
     ```
 
