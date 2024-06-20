@@ -60,7 +60,7 @@ If you want to keep the same background color for an entire row, you can use the
 
 When enabled, this property allows users to modify a field or cell. You can then use the Column's **onSubmit** or **onClick** event to run a query to update the data. 
 
-If the property is enabled from the column settings, it won't make the column editable unless it's also enabled from the Table column level. Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally.
+Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code.
 
 <dd>
 
@@ -76,6 +76,8 @@ If the property is enabled from the column settings, it won't make the column ed
 
 This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
 
+Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+
 
 <ZoomImage
   src="/img/column-editable.gif" 
@@ -87,19 +89,6 @@ This code checks if the email of the logged-in user is `john@appsmith.com`. If i
 </dd>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Learn more about [Inline editing](/reference/widgets/table/inline-editing).
 
 ## Properties
 

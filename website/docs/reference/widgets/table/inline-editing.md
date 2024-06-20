@@ -19,7 +19,7 @@ A Table widget connected to a query that holds the data you want to edit and upd
 
 To update a single row, follow these steps:
 
-1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel. To make a column editable programmatically using JS logic, see [Column](/reference/widgets/table/column-settings#editable).
+1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel. To make columns editable programmatically using JS logic, see [Column](/reference/widgets/table/column-settings#editable).
 
 
 2. Select **Single row**  from the **Update mode** property. This enables the **Save/Discard** column with Save and Discard buttons.
@@ -62,7 +62,7 @@ Alternatively, you can configure the **onSubmit** event for each [Column](/refer
 To update multiple rows at once using the inline editing feature, follow these steps:
 
 
-1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel.
+1. Enable inline editing by checking the **Editable** checkbox for the desired columns in the Table widget properties panel. To make columns editable programmatically using JS logic, see [Column](/reference/widgets/table/column-settings#editable).
 
 
 2. Select **Multiple rows** from the **Update mode** property, and set the **Primary Key** column for row identification during updates.
