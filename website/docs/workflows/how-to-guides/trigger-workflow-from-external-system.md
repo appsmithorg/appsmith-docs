@@ -14,7 +14,7 @@ Before starting, make sure you have:
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a basic workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
 * Basic knowledge of Appsmith apps and API integration. If you're new, see [Tutorial - Basics](/getting-started/tutorials/start-building).
-* - A REST client like HTTPie for testing workflows.
+* A REST client like HTTPie for testing workflows.
 
 ### Enable Webhook trigger
 

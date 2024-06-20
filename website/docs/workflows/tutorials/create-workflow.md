@@ -33,9 +33,9 @@ In this tutorial, you’ll create a workflow to send email to a user. This exerc
 By following this tutorial, you will gain a comprehensive understanding of:
 
 1. What workflows are, how they automate tasks, and their structure.
-2. How to create workflows in Appsmith and set up webhook triggers to integrate with external applications.
+2. How to create workflows in Appsmith.
 3. The role of queries in workflows, with an example of writing and executing a query to send emails.
-4. Integrating workflows with external applications, using Postman for testing and verification.
+4. Testing and verification workflows.
 
 ## Prerequisites
 
@@ -139,4 +139,4 @@ You have completed the tutorial on building workflows in Appsmith. Here are some
 * [How-to Guides](/workflows/how-to-guides) - Learn more advanced workflow configurations and integrations.
 * [Workflow Queries](/workflows/reference/workflow-queries) - Understand how to use queries within your Appsmith applications and connect workflows to Appsmith apps.
 * [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.
-* [Pass Parameters to Workflows][/workflows/reference/pass-parameters-to-workflows] - Learn how to pass parameters to workflows from Appsmith app or from external systems.
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from Appsmith app or from external systems.

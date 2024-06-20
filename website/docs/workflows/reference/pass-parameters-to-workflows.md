@@ -77,7 +77,7 @@ const userName = data.name;    // Accesses the "name" parameter
 const userPhone = data.phone;  // Accesses the "phone" parameter
 ```
 
-#### Pass parameters to process queries
+#### Pass parameters to internal queries
 
 Use these parameters to call queries within the workflow and pass the parameters to them.
 
