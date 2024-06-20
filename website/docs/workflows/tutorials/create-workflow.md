@@ -43,7 +43,6 @@ Before starting, ensure you have:
 
 - A self-hosted Appsmith instance with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) if needed.
 - Familiarity with basic Appsmith operations. Check out the [Getting Started Tutorial](/getting-started/tutorials/start-building) if you're new to Appsmith.
-- A REST client like Postman for testing workflows.
 
 ## Create workflow
 
