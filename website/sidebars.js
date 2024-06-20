@@ -681,8 +681,9 @@ const sidebars = {
             id: 'workflows/how-to-guides/README',
           },
           items: [
-            'workflows/how-to-guides/create-approval-workflow',
             'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/trigger-workflow-from-external-system',
+            'workflows/how-to-guides/create-approval-workflow',
             'workflows/how-to-guides/set-up-automatic-processing',
           ],
         },
@@ -692,7 +693,8 @@ const sidebars = {
           label: 'Reference',
           items: [
             'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions'
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows'
           ],
         }
       ]
