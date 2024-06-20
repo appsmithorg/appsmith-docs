@@ -75,9 +75,9 @@ In this section, you’ll create a workflow to send email to a user.
     }
     ```
 
-## Write query
+## Add processing logic
 
-Queries in Appsmith are used to interact with external APIs and databases. In this step, you’ll create a query within your workflow to send an email when the workflow is triggered.
+To automate tasks within your workflow, you can add processing logic to your workflow. For example, to enable the workflow to send emails when triggered, create an API query and configure it as shown below:
 
 1. Add a new **Blank API** query to your workflow.
 2. Configure the query as shown below:
@@ -93,7 +93,7 @@ Queries in Appsmith are used to interact with external APIs and databases. In th
         }
         ```
 3. Click the **Run** button to send the email. Check your inbox for an email from `demo.smtp.send.email@gmail.com`.
-4. Update the JSON body in your query to use a dynamic email address supplied as a parameter:
+4. Update the JSON body in your query to use a dynamic email address supplied as a parameter, allowing you to pass parameters to the workflow at runtime.
 
     ```javascript
     {
@@ -101,7 +101,7 @@ Queries in Appsmith are used to interact with external APIs and databases. In th
     }
     ```
 
-   This setup allows the workflow to send emails to different addresses provided at runtime.
+   
 5. Integrate the query in the workflow by updating the `executeWorkflow` function to call the query and pass the email parameter. The `data` parameter of the `executeWorkflow` function holds all the parameters sent to the workflow in JSON format. Use dot notation to access the parameters.
 
     ```javascript
