@@ -68,38 +68,3 @@ To download multiple files, follow these steps:
 4. To test the download, click the button created in Step 1.
 
 
-## Download Table data
-
-You can use the built-in [download property](/reference/widgets/table#allow-download-boolean) of the Table widget to download data directly. However, **if the data is paginated, only the rows on the current page are downloaded.** To download the entire dataset, follow these steps:
-
-1. Create a new query to fetch the entire dataset without pagination.
-
-<dd>
-
-*Example:*
-
-```sql
--- Entire data
-SELECT * FROM users;
-```
-
-</dd>
-
-
-2. Drag a Button widget, and set its **onClick** event to trigger the [Download](/reference/appsmith-framework/widget-actions/download) action, like:
-
-<dd>
-
-
-* Data to download: `{{fetchAllData.data}}`,
-* File name: `tabledata`,
-* Type: `CSV`
-
-<ZoomImage src="/img/table-data-csv.png" alt="" caption=""/>
-
-
-</dd>
-
-With this, whenever you click on the Button widget, the entire query data is downloaded. You can also customize the query based on your specific requirements, such as getting data in a particular order or retrieving data with specific parameters.
-
-
