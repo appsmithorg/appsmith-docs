@@ -4,7 +4,20 @@ title: Pass Parameters to Workflows
 hide_title: false
 ---
 
-# Pass Parameters to Workflows
+ <!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Pass Parameters to Workflows</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 In Appsmith, passing parameters to workflows enables dynamic configuration and execution, allowing for flexible data handling and processing. This page explains how to effectively pass parameters to workflows in different scenarios.
 

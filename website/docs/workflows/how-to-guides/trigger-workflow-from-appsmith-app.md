@@ -3,8 +3,20 @@ description: This page provides detailed steps to integrate and trigger a workfl
 title: Trigger Workflow with Appsmith App
 hide_title: true
 ---
+ <!-- vale off -->
 
-# Trigger Workflow with Appsmith App
+<div className="tag-wrapper">
+ <h1>Trigger Workflow with Appsmith App</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Connecting your Appsmith workflow to an Appsmith app, allows you to trigger actions and automate processes from inside the Appsmith environment. This page shows how to connect Appsmith workflow with Appsmith app.
 

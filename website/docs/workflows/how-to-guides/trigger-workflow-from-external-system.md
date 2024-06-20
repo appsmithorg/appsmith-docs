@@ -4,7 +4,20 @@ title: Trigger Workflow from External System
 hide_title: true
 ---
 
-# Trigger Workflow from External System
+ <!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Trigger Workflow from External System</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Connecting your Appsmith workflow to external systems allows you to trigger actions and automate processes from outside the Appsmith environment. This page shows how to connect Appsmith workflow with external system by using a REST client HTTPie.
 
