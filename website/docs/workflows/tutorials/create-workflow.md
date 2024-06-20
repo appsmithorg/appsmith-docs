@@ -18,15 +18,15 @@ tags={[
 
 <!-- vale on -->
 
-In Appsmith, workflows are sequences of tasks that automate specific actions. They respond to triggers like webhooks or user actions and interact with different APIs and services.
+In Appsmith, workflows help automate specific processes. They respond to triggers like webhooks or user actions and can also interact with different APIs and services.
 
-The key components of a workflow are:
+A workflow has:
 
-- **Workflow definition**: The core logic and steps involved in the workflow, defined in the `executeWorkflow` function.
-- **Triggers**: Conditions or events that start the workflow, such as webhooks.
-- **Actions**: Tasks performed by the workflow, such as making API calls, processing data, or sending notifications.
+- **Main JS function**: This is where you write the core logic within the `executeWorkflow` function.
+- **Processes**: Define tasks for the workflow, such as making API calls, processing data, or sending notifications, inside the `executeWorkflow` function.
+- **Triggers**: Define conditions or events that initiate the workflow, such as webhooks.
 
-In this tutorial, you’ll create a workflow to send email to a user. This exercise will help you understand these components and design effective applications.
+In this tutorial, you’ll create a workflow to send email to a user. This exercise will help you understand workflows.
 
 ## What you'll learn
 
