@@ -74,6 +74,7 @@ In this section, you’ll create a workflow to send email to a user.
         }
     }
     ```
+4. Click **Deploy** button to save and publish your workflow.
 
 ## Add processing logic
 
@@ -88,7 +89,6 @@ To automate tasks within your workflow, you can add processing logic to your wor
 
         ```javascript
         {
-            // replace add_your_email_address with your actual email address
             "email": "add_your_email_address"
         }
         ```
@@ -116,6 +116,13 @@ To automate tasks within your workflow, you can add processing logic to your wor
         }
     }
     ```
+6. In the _Main_ JS, go to the **Response** tab, click **Run** button, and under the *Test values for function arguments* section, add the following JSON. Replace `add_your_email_address` with your email address:
+    ```javascript
+    {
+        "email": "add_your_email_address"
+    }
+    ```
+7. Click the Run button to trigger the workflow. The right pane in the Response tab will display the message `Workflow execution started`, indicating the workflow has started successfully. Check your inbox for an email from `demo.smtp.send.email@gmail.com`.
 
 6. Click **Deploy** button to save and publish your workflow.
 
