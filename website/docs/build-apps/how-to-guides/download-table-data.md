@@ -25,7 +25,7 @@ SELECT * FROM public."users" LIMIT 50 OFFSET 0
 
 *Example:*
 
-- This function retrieves user data in 100-row chunks from a database, continuously adding each chunk to a usersData array until the entire dataset is obtained.
+- This function retrieves user data in 100-row chunks from a database, continuously adding each chunk to a `usersData` array until the entire dataset is obtained.
 - It uses the [download()](/reference/appsmith-framework/widget-actions/download) function to download the data to your local machine.
 - Upon successfully fetching and downloading all data, it resets the `usersData` array to clear the data.
 
@@ -89,7 +89,7 @@ The code may vary based on your datasource, so update the query and parameters a
 
 </dd>
 
- 3. Update the query to dynamically pass the limit and offset parameters.
+ 3. Update the query to dynamically pass the `limit` and `offset` parameters.
 
 
 <dd>
