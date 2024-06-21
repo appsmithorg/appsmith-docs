@@ -25,8 +25,8 @@ SELECT * FROM public."users" LIMIT 50 OFFSET 0
 
 *Example:*
 
-- This function retrieves user data in 100-row chunks from a database, continuously adding each chunk to a `usersData` array until the entire dataset is obtained.
-- It uses the [download()](/reference/appsmith-framework/widget-actions/download) function to download the data to your local machine.
+- Create a function that retrieves user data in batches of 100 rows from a database, continuously appending each batch to a `usersData` array until the entire dataset is retrieved.
+- To download the data to your local machine, use the [download()](/reference/appsmith-framework/widget-actions/download) function.
 - Upon successfully fetching and downloading all data, it resets the `usersData` array to clear the data.
 
 
