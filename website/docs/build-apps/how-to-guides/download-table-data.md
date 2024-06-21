@@ -84,6 +84,8 @@ export default {
 }
 ```
 
+The code may vary based on your datasource, so update the query and parameters accordingly to fit your specific data structure and requirements.
+
 
 </dd>
 
@@ -92,13 +94,16 @@ export default {
 
 <dd>
 
-*Example:*
+*Example:* This query retrieves data from the `users` table, dynamically using the provided `limit` and `offset` parameters. If no `limit` is specified, it defaults to 50 rows; if no `offset` is specified, it defaults to 0.
 
  ```sql
- SELECT * FROM public."users" LIMIT {{this.params.limit}} OFFSET {{this.params.offset}}
+ SELECT * FROM public."users" 
+LIMIT COALESCE({{this.params.limit}}, 50) 
+OFFSET COALESCE({{this.params.offset}}, 0)
 ```
 
 The `this.params` object provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+
 
 </dd>
 
