@@ -89,7 +89,7 @@ The code may vary based on your datasource, so update the query and parameters a
 
 </dd>
 
- 3. Update the query to dynamically pass the `limit` and `offset` parameters.
+ 3. Update the query to dynamically pass the `limit` and `offset` parameters using the `this.params` object, which provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
 
 
 <dd>
@@ -102,8 +102,15 @@ LIMIT COALESCE({{this.params.limit}}, 50)
 OFFSET COALESCE({{this.params.offset}}, 0)
 ```
 
-The `this.params` object provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+*Example 2:* This query retrieves all user data from the `users` table where the country is set to `Canada`, with the ability to dynamically adjust the `limit` and `offset` parameters.
 
+
+```sql
+SELECT * FROM public."users"
+WHERE country = 'Canada'
+LIMIT COALESCE({{this.params.limit}}, 50)
+OFFSET COALESCE({{this.params.offset}}, 0)
+```
 
 </dd>
 
