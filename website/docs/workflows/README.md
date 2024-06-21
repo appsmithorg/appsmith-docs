@@ -27,7 +27,7 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 
   * **Enable Human-in-the-Loop interactions:** Combine user-friendly interfaces with server-side automation to design workflows that require human decisions for: Data validation, Approvals, Feedback, and more. (**Coming Soon**)
 
-  * **Explore trigger types:** Appsmith offers different trigger types including Webhooks, Integrated Datasource for Appsmith Apps, and Scheduled Cron Jobs. (**Coming Soon**)
+  * **Explore trigger types:** Appsmith offers different trigger types including Webhooks, Integrated Datasource for Appsmith Apps, and Scheduled Cron Jobs. (**Scheduled Cron Jobs - Coming Soon**)
 
 ## Getting started with workflows
 
