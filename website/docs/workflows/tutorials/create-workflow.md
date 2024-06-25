@@ -6,7 +6,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Create Basic workflow</h1>
+ <h1>Create Basic Workflow</h1>
 
 <Tags
 tags={[
@@ -18,46 +18,44 @@ tags={[
 
 <!-- vale on -->
 
-In Appsmith, workflows help automate specific processes. They respond to triggers like webhooks or user actions and can also interact with different APIs and services.
+Imagine missing a crucial task or update because an email notification wasn't sent. Whether it's informing your team about a critical task update or notifying your manager about a task completion, missing these notifications can disrupt your business processes and cause unnecessary delays. In this tutorial, you’ll learn how to set up a workflow in Appsmith to send emails to users automatically.
 
-A workflow has:
-
-- **Main JS function**: This is where you write the core logic within the `executeWorkflow` function.
-- **Processes**: Define tasks for the workflow, such as making API calls, processing data, or sending notifications, inside the `executeWorkflow` function.
-- **Triggers**: Define conditions or events that initiate the workflow, such as webhooks.
-
-In this tutorial, you’ll create a workflow to send email to a user. This exercise will help you understand workflows.
-
-## What you'll learn
-
+:::tip What you'll learn
 By following this tutorial, you will gain a comprehensive understanding of:
+* The structure of workflows in Appsmith
+* How to add processing logic that automatically sends emails
+* Configuring a webhook trigger to connect the workflow to external systems
+* Triggering the workflow from an external system to send emails
+:::
 
-1. What workflows are, how they automate tasks, and their structure.
-2. How to create workflows in Appsmith.
-3. The role of queries in workflows, with an example of writing and executing a query to send emails.
-4. Testing and verification workflows.
-
-## Prerequisites
+## Before you begin
 
 Before starting, ensure you have:
 
-- A self-hosted Appsmith instance with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) if needed.
-- Familiarity with basic Appsmith operations. Check out the [Getting Started Tutorial](/getting-started/tutorials/start-building) if you're new to Appsmith.
+- A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
+- Basic familiarity with Appsmith operations. If you're new to Appsmith, follow the [Getting Started Tutorial](/getting-started/tutorials/start-building) to learn the basics.
+- A REST client like [HTTPie](https://httpie.io) for testing workflows.
 
 ## Create workflow
 
-In this section, you’ll create a workflow to send email to a user.
+An Appsmith workflow includes:
+
+- **Main JS Function**: Write the core logic within the `executeWorkflow` function.
+- **Processes**: Define tasks such as sending emails, making API calls, or processing data inside the `executeWorkflow` function.
+- **Workflow Settings**: Define the trigger that initiates the workflow, like webhooks.
+
+Let's create your first workflow and understand its structure.
 
 <br/>
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
 <iframe src="https://demo.arcade.software/BzEnldkGHkIJ91SDxubA?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow">
 </iframe>
-</div>
+</div> 
 <br/><br/>
 
-1. Open your Appsmith workspace. Click **Create New** and choose **Workflow**.
-2. In the **Main** JS object code editor, rename your workflow from **Untitled Workflow 1** to *Send_Email*.
-3.  The `executeWorkflow` function serves as the entry point for your workflow and must be present in the _Main_ JS object. If this function is not present, the workflow will not be invoked when triggered. Here’s the default structure:
+1. On your instance, go to your Appsmith workspace, click the **Create New** button and choose **Workflow**.
+2. In the **Main** JS object code editor, rename your workflow from **Untitled Workflow 1** to **Send_Email**. This helps you track different workflows in your workspace, each with a unique name.
+3. Examine the `executeWorkflow` function in the JS editor. This function is the entry point for your workflow and must be present in the _Main_ JS object. If it is not present, the workflow won't be invoked when triggered. You'll write the processing logic for the workflow inside this function. Here’s the default structure:
 
     ```javascript
     export default {
@@ -73,26 +71,28 @@ In this section, you’ll create a workflow to send email to a user.
         }
     }
     ```
-4. Click **Deploy** button to save and publish your workflow.
+
+Now that you've understood the basic skeleton of a workflow, let's add the processing logic to send emails.
 
 ## Add processing logic
 
-To automate tasks within your workflow, you can add processing logic to your workflow. For example, to enable the workflow to send emails when triggered, create an API query and configure it as shown below:
+To automate tasks within your workflow, you can add processing logic. Here, you will create a query to send an email to a user. Follow these steps:
 
-1. Add a new **Blank API** query to your workflow.
-2. Configure the query as shown below:
-   - **Name**: Rename the query to *qs_send_email*.
+1. In your workflow, add a new **Blank API** query.
+2. Configure the query as follows:
+   - **Name**: Rename the query to **qs_send_email**. Giving a meaningful and unique name to your query helps manage and identify its purpose.
    - **HTTP Method**: Set to `POST`.
-   - **URL**: Enter the URL `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d`. This is a preconfigured external API that will send an email.
-   - **Body**: In the **Body** tab, add the following JSON. Replace `add_your_email_address` with your email for testing.
+   - **URL**: Enter the URL `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d`. This is a preconfigured external API that takes an email as a parameter and sends an email to it.
+   - **Body**: In the **Body** tab, add the following JSON. Replace `add_your_email_address` with your email to see the workflow in action as you will receive an email.
 
         ```javascript
         {
             "email": "add_your_email_address"
         }
         ```
+
 3. Click the **Run** button to send the email. Check your inbox for an email from `demo.smtp.send.email@gmail.com`.
-4. Update the JSON body in your query to use a dynamic email address supplied as a parameter, allowing you to pass parameters to the workflow at runtime.
+4. Update the JSON body in your query to accept the email as a parameter, allowing you to pass the email address to the workflow at runtime.
 
     ```javascript
     {
@@ -100,8 +100,7 @@ To automate tasks within your workflow, you can add processing logic to your wor
     }
     ```
 
-   
-5. Integrate the query in the workflow by updating the `executeWorkflow` function to call the query and pass the email parameter. The `data` parameter of the `executeWorkflow` function holds all the parameters sent to the workflow in JSON format. Use dot notation to access the parameters.
+5. Integrate the query into the workflow by updating the `executeWorkflow` function to call the query and pass the email parameter. The `data` parameter of the `executeWorkflow` function holds all the parameters sent to the workflow in JSON format. Use dot notation to access the parameters.
 
     ```javascript
     export default {
@@ -116,27 +115,69 @@ To automate tasks within your workflow, you can add processing logic to your wor
     }
     ```
 
+You've successfully configured your workflow to accept `email` as a parameter and call the `qs_send_email` query to send email whenever the workflow is triggered. You can connect the workflow with an external app or system, and trigger it using a webhook.
+
+## Enable Webhook trigger
+
+To trigger the workflow from an external system, like [HTTPie](https://httpie.io), you need to configure a webhook trigger. Follow these steps:
+
+<br/>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+    <iframe src="https://demo.arcade.software/VnWRWB1N8ez0WqQjVGsw?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Configure webhook trigger">
+    </iframe>
+</div>
+<br/><br/>
+
+1. Navigate to your workflow in the Appsmith interface.
+2. Click the gear icon (⚙️) located in the bottom left corner to open the workflow settings.
+3. In the workflow settings, toggle the **Webhook trigger** switch. This action enables your workflow to be triggered via a webhook URL and generates a unique Webhook URL.
+4. Copy this **Webhook URL**. You will need it to connect the workflow to external systems.
+5. Click the **Deploy** button in the top right corner to publish your workflow with the new webhook settings.
+
+Now that you have configured the webhook trigger for the workflow, use it to connect to an external system.
+
 ## Test workflow
 
-Follow these steps to test and publish your workflow:
+Appsmith workflows with webhook triggers can be invoked from external systems. Use the REST client [HTTPie](https://httpie.io) to simulate an external system and trigger the workflow. Follow these steps to verify the email:
 
-1. In the _Main_ JS, go to the **Response** tab, click **Run** button, and under the *Test values for function arguments* section, add the following JSON. Replace `add_your_email_address` with your email address:
+1. Visit [https://httpie.io/app](https://httpie.io/app) in your web browser.
+2. In the HTTPie web application, click the **New Request** button to create a new request.
+3. Configure the request as follows:
+   - Set the request method to **POST**.
+   - In the request URL field, paste the webhook URL you copied from the workflow settings in the [Enable the Webhook Trigger](#enable-the-webhook-trigger) section.
+4. Pass any parameters needed for processing by adding them in the request body. For example, if the workflow requires an `email` parameter, pass it in JSON format in the request body.
+
     ```javascript
     {
-        "email": "add_your_email_address"
+        "email": "your_email@example.com"
     }
     ```
-2. Click the **Run** button in the *Test values for function arguments* section to trigger the workflow. The right pane in the Response tab will display the message `Workflow execution started`, indicating the workflow has started successfully. Check your inbox for an email from `demo.smtp.send.email@gmail.com`.
 
-3. Click **Deploy** button to save and publish your workflow.
+5. Click the **Send** button in the HTTPie web application to execute the request.
+6. You should see a response in HTTPie indicating that the workflow has been triggered successfully. The response may include a `workflowRunId` confirming the execution.
 
-🚩 Congratulations. You've successfully built your first workflow.
+    ```javascript
+    {
+        "responseMeta": {
+            "status": 200,
+            "success": true
+        },
+        "data": {
+            "workflowRunId": "XMXWTMOS"
+        },
+        "errorDisplay": ""
+    }
+    ```
+
+🚩 Congratulations! You've successfully built and tested your first workflow. With this knowledge, you can automate various tasks, such as triggering workflows based on events like refund requests or support tickets and passing necessary parameters for processing.
+
+Happy Workflow Building!
 
 ## Next steps
 
-You have completed the tutorial on building workflows in Appsmith. Here are some additional resources to explore:
+You've completed the tutorial on building workflows in Appsmith. Here are some additional resources to explore:
 
 * [How-to Guides](/workflows/how-to-guides) - Learn more advanced workflow configurations and integrations.
 * [Workflow Queries](/workflows/reference/workflow-queries) - Understand how to use queries within your Appsmith applications and connect workflows to Appsmith apps.
 * [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.
-* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from Appsmith app or from external systems.
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
