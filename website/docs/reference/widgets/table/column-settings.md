@@ -64,7 +64,7 @@ Additionally, you can use JavaScript by clicking on *JS* next to the **Editable*
 
 <dd>
 
-*Example*: If you want to allow only certain users to edit the Table:
+*Example*: if you want to allow only certain users to edit the Table:
 
 * Enable the Editable property at the Table Column level.
 
