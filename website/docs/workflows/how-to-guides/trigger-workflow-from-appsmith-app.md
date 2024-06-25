@@ -20,12 +20,13 @@ tags={[
 
 Connecting your Appsmith workflow to an Appsmith app, allows you to trigger actions and automate processes from inside the Appsmith environment. This page shows how to connect Appsmith workflow with Appsmith app.
 
-## What you'll need
+## Before you begin
 
 Before starting, make sure you have:
-* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Basic knowledge of creating a basic workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
-* Basic knowledge of Appsmith apps and API integration. If you're new, see [Tutorial - Basics](/getting-started/tutorials/start-building).
+- A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
+- Basic familiarity with Appsmith operations. If you're new to Appsmith, follow the [Getting Started Tutorial](/getting-started/tutorials/start-building) to learn the basics.
+* Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
+
 
 ## Connect Workflow with Appsmith App
 
