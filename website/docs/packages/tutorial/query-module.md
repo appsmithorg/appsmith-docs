@@ -1,12 +1,12 @@
 ---
-title: Lesson 1 - Package and query modules
+title: Package and query modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 1 - Package and query modules</h1>
+ <h1>Package and query modules</h1>
 
 <Tags
 tags={[
@@ -20,12 +20,16 @@ tags={[
 
 A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
-To learn query modules in Appsmith, you'll build a query module to fetch and display product data within a Table widget. By the end of this tutorial, you will know how to:
+:::tip What will I learn? 📝
+You'll build a query module to fetch and display Product data within a Table widget. By the end of this tutorial, you will know how to:
 
-* Create and configure the query module
-* Integrate the module into your app
-* Pass parameters to the module
+* 🔧 **Basics:** Learn how to create and configure the query module
+* 🔄 **Dynamic Data:** Learn how to pass data between the app and module
+* ♻️ **Reusability:** Discover how to reuse the query module within applications
 
+
+⏱️ **Time**: Less than 10 mins
+:::
 
 
 ## Create query module
@@ -34,7 +38,7 @@ A reusable query module is a query that can be used across multiple applications
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/IPU9f2WQccAiY8oalORZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/Zm91UIkEM0nSlq2MGzOQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -70,63 +74,22 @@ A reusable query module is a query that can be used across multiple applications
 <dd>
 
 ```sql
-SELECT * FROM public."product" LIMIT 10;
+SELECT * FROM public."product" LIMIT 10 OFFSET 2;
 ```
 
 </dd>
 
-9. Run and publish the module. 
-
-You have successfully created the first query module.
-
-## Use query module
-
-Follow these steps to access its data in any application:
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/AEb2f22LKzYLFh0jS8bv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-
-1. Open your App from the homepage and ensure that both the app and modules share the same workspace.
-
-2. From the **Queries** Tab, click **+ New query / API**.
-
-3. Select the `Add GetProducts` query module. You can add multiple modules from the package.
-
-4. Run the query module.
-
-5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**. 
-
-You have successfully integrated the query module into your app, displaying its data in the Table widget.
-
-
-
-## Pass parameters to module
-
-
-In this section, you will update the query module to accept dynamic inputs, allowing us to pass parameters from the app to the query module for tailored and responsive data retrieval. 
-
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/5c0ccNd04T81vRQGaqru?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-1. Open the `ProductUtils` package, 
-
-2. Navigate to the property pane of the `GetProducts` query. Inputs allow you to pass parameters from your application to modules, facilitating dynamic query adjustments based on user inputs or application requirements.
+9. Create two inputs, `limit` and `offset`, from the right-side property pane, with default values set to `5` and `4` respectively. 
 
 <dd>
 
-Create two inputs, named `limit` and `offset` with default values of `5` and `4` respectively.
+Inputs allow you to pass parameters from your application to modules, facilitating dynamic query adjustments based on user inputs or application requirements.
 
 </dd>
 
 
 
-3. Update the query by using `inputs` property for dynamic adjustments. 
+10. Update the query by using `inputs` property for dynamic adjustments. 
 
 <dd>
 
@@ -137,16 +100,38 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 </dd>
 
-4. Run and publish the query module.
+11. **Run** and **Publish** the query module.
 
-:::info
-When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
+
+
+:::tip Great Work!
+🎉 You have successfully created a query module!
 :::
 
-5. Open your app from the homepage to dynamically pass Table widget values to the module.
+
+## Use query module
+
+Great job on creating a query module! Now, let's see how you can reuse it in different apps.
 
 
-6. From the **Queries** Tab, select the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/AEb2f22LKzYLFh0jS8bv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+1. Open your App or create a new one from the homepage and ensure that both the app and modules share the same workspace.
+
+2. From the **Queries** Tab, click **+ New query / API**.
+
+3. Select the `Add GetProducts` query module. You can add multiple modules from the package.
+
+4. Run the query module.
+
+5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**. 
+
+
+6. From the **Queries** Tab, Open the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
 
 <dd>
 
@@ -168,9 +153,7 @@ This configuration dynamically sets the limit and offset based on the values fro
 8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
 
+:::tip Great!!
+You have successfully integrated the query module into your app, displaying its data in the Table widget.
+:::
 
-You've successfully integrated query modules; If dynamic inputs are not provided, it sets to default values.
-
-## Next steps
-
-* [Lesson 2 - JS modules](/packages/tutorial/js-module)
