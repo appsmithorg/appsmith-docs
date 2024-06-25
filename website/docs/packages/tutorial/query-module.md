@@ -21,15 +21,18 @@ tags={[
 A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 :::tip What will I learn? 📝
-You'll build a query module to fetch and display Product data within a Table widget. By the end of this tutorial, you will know how to:
+You'll create a reusable query module using product inventory data and display that data in a Table widget. By the end of this tutorial, you will learn:
 
 * 🔧 **Basics:** Learn how to create and configure the query module
 * 🔄 **Dynamic Data:** Learn how to pass data between the app and module
 * ♻️ **Reusability:** Discover how to reuse the query module within applications
-
-
-⏱️ **Time**: Less than 10 mins
 :::
+
+## Prerequisites
+Before you start, make sure you have the following:
+
+* A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 
 ## Create query module
@@ -43,7 +46,7 @@ A reusable query module is a query that can be used across multiple applications
 </div>
 
 
-1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**
+1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**.
 
 2. Rename the package to `ProductUtils`.
 
@@ -74,22 +77,27 @@ A reusable query module is a query that can be used across multiple applications
 <dd>
 
 ```sql
-SELECT * FROM public."product" LIMIT 10 OFFSET 2;
+SELECT * FROM public."product" LIMIT 5 OFFSET 4;
 ```
 
 </dd>
 
-9. Create two inputs, `limit` and `offset`, from the right-side property pane, with default values set to `5` and `4` respectively. 
+9. Click on the **+ Add Inputs** button from the right-side property pane. These inputs allow you to pass parameters from your application to query module, facilitating dynamic query adjustments based on user inputs or application requirements. 
 
 <dd>
 
-Inputs allow you to pass parameters from your application to modules, facilitating dynamic query adjustments based on user inputs or application requirements.
+Create two inputs:
+
+
+* `limit`, with a default value of `5`.
+* `offset`, with a default value of `4`.
+
+If dynamic values are not passed, it takes the default value.
 
 </dd>
 
 
-
-10. Update the query by using `inputs` property for dynamic adjustments. 
+10. Update the query by using `inputs` property for dynamic adjustments: 
 
 <dd>
 
@@ -104,10 +112,6 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 
 
-:::tip Great Work!
-🎉 You have successfully created a query module!
-:::
-
 
 ## Use query module
 
@@ -115,7 +119,7 @@ Great job on creating a query module! Now, let's see how you can reuse it in dif
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/AEb2f22LKzYLFh0jS8bv?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/t77RIouwmGGXyyuUN8j8?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -124,14 +128,14 @@ Great job on creating a query module! Now, let's see how you can reuse it in dif
 
 2. From the **Queries** Tab, click **+ New query / API**.
 
-3. Select the `Add GetProducts` query module. You can add multiple modules from the package.
+3. Select the `Add GetProducts` query module. You can add multiple instances of the same module and pass different parameters to each one.
 
 4. Run the query module.
 
-5. To display query data, drop a Table widget and connect it to the `GetProducts` **Query module**. 
+5. To display query data, drop a Table widget and connect it to the `GetProducts1` **Query module**. 
 
 
-6. From the **Queries** Tab, Open the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
+6. From the **Queries** Tab, open the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
 
 <dd>
 
@@ -147,7 +151,7 @@ This configuration dynamically sets the limit and offset based on the values fro
 
 </dd>
 
-7. Enable the Server-side pagination property in the Table.
+7. Enable the **Server-side pagination** property in the Table.
 
 
 8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 

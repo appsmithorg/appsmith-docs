@@ -1,12 +1,12 @@
 ---
-title: Lesson 2 - JS modules
+title: JS modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Lesson 2 - JS modules</h1>
+ <h1>JS modules</h1>
 
 <Tags
 tags={[
