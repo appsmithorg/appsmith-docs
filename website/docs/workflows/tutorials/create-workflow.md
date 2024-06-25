@@ -169,7 +169,7 @@ Appsmith workflows with webhook triggers can be invoked from external systems. U
     }
     ```
 
-🚩 Congratulations! You've successfully built and tested your first workflow. With this knowledge, you can automate various tasks, such as triggering workflows based on events like refund requests or support tickets and passing necessary parameters for processing.
+🚩 Congratulations. You've successfully built and tested your first workflow. With this knowledge, you can automate different tasks, such as triggering workflows based on events like refund requests or support tickets and passing necessary parameters for processing.
 
 Happy Workflow Building!
 
