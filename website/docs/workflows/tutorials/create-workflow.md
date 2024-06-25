@@ -79,6 +79,7 @@ Now that you've understood the basic skeleton of a workflow, let's add the proce
 To automate tasks within your workflow, you can add processing logic. Here, you will create a query to send an email to a user. Follow these steps:
 
 1. In your workflow, add a new **Blank API** query.
+
 2. Configure the query as follows:
    - **Name**: Rename the query to **qs_send_email**. Giving a meaningful and unique name to your query helps manage and identify its purpose.
    - **HTTP Method**: Set to `POST`.
@@ -92,6 +93,7 @@ To automate tasks within your workflow, you can add processing logic. Here, you 
         ```
 
 3. Click the **Run** button to send the email. Check your inbox for an email from `demo.smtp.send.email@gmail.com`.
+
 4. Update the JSON body in your query to accept the email as a parameter, allowing you to pass the email address to the workflow at runtime.
 
     ```javascript
@@ -129,9 +131,13 @@ To trigger the workflow from an external system, like [HTTPie](https://httpie.io
 <br/><br/>
 
 1. Navigate to your workflow in the Appsmith interface.
+
 2. Click the gear icon (⚙️) located in the bottom left corner to open the workflow settings.
+
 3. In the workflow settings, toggle the **Webhook trigger** switch. This action enables your workflow to be triggered via a webhook URL and generates a unique Webhook URL.
+
 4. Copy this **Webhook URL**. You will need it to connect the workflow to external systems.
+
 5. Click the **Deploy** button in the top right corner to publish your workflow with the new webhook settings.
 
 Now that you have configured the webhook trigger for the workflow, use it to connect to an external system.
