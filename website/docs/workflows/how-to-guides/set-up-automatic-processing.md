@@ -72,3 +72,8 @@ Before you begin, make sure you have:
 ## Troubleshooting
 
 If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
+* [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.

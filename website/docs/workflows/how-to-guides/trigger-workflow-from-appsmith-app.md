@@ -61,8 +61,11 @@ To connect workflows with Appsmith app, you need to create workflow query. Follo
 
 Now, you can trigger the workflow run whenever an event happens. For example, bind the workflow query to a `onClick` event of a Button widget and pass appropriate parameters needed by the workflow for processing on button's click event.
 
+## Troubleshooting
+
+If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
 ## See also
 
-* [How-to Guides](/workflows/how-to-guides) - Learn more advanced workflow configurations and integrations.
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
 * [Workflow Queries](/workflows/reference/workflow-queries) - Understand how to use queries within your workflows.
-* [Workflow Functions](/workflows/reference/workflow-functions) - Explore the different functions available for your workflows.
