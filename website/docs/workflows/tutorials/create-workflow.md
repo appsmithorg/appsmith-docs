@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Imagine missing a crucial task or update because an email notification wasn't sent. Whether it's informing your team about a critical task update or notifying your manager about a task completion, missing these notifications can disrupt your business processes and cause unnecessary delays. In this tutorial, you’ll learn how to set up a workflow in Appsmith to send emails to users automatically.
+Communicating important updates and task completions to your team or management is crucial for keeping projects on track Automating these notifications helps prevent delays and miscommunication. In this tutorial, you’ll learn how to set up automated email notifications using the Appsmith workflow.
 
 :::tip What you'll learn
 By following this tutorial, you will gain a comprehensive understanding of:
@@ -78,13 +78,21 @@ Now that you've understood the basic skeleton of a workflow, let's add the proce
 
 To automate tasks within your workflow, you can add processing logic. Here, you will create a query to send an email to a user. Follow these steps:
 
+
+<br/>
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+<iframe src="https://demo.arcade.software/OtswfVRPQN4BaHjUt76l?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow | Add Processing Logic">
+</iframe>
+</div> 
+<br/><br/>
+
 1. In your workflow, add a new **Blank API** query.
 
 2. Configure the query as follows:
    - **Name**: Rename the query to **qs_send_email**. Giving a meaningful and unique name to your query helps manage and identify its purpose.
    - **HTTP Method**: Set to `POST`.
    - **URL**: Enter the URL `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d`. This is a preconfigured external API that takes an email as a parameter and sends an email to it.
-   - **Body**: In the **Body** tab, add the following JSON. Replace `add_your_email_address` with your email to see the workflow in action as you will receive an email.
+   - **Body**: In the **Body** tab, select JSON, and add the following JSON. Replace `add_your_email_address` with your email to see the workflow in action as you will receive an email.
 
         ```javascript
         {
@@ -151,11 +159,11 @@ Appsmith workflows with webhook triggers can be invoked from external systems. U
 3. Configure the request as follows:
    - Set the request method to **POST**.
    - In the request URL field, paste the webhook URL you copied from the workflow settings in the [Enable the Webhook Trigger](#enable-the-webhook-trigger) section.
-4. Pass any parameters needed for processing by adding them in the request body. For example, if the workflow requires an `email` parameter, pass it in JSON format in the request body.
+4. Pass `email` parameter needed for processing by adding it in JSON format in the request body. Replace `add_your_email_address` with your email to see the workflow in action as you will receive an email.
 
     ```javascript
     {
-        "email": "your_email@example.com"
+        "email": "add_your_email_address"
     }
     ```
 
