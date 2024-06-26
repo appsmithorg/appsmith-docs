@@ -18,13 +18,13 @@ tags={[
 
 <!-- vale on -->
 
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of query and JS modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 :::tip What will I learn? 📝
 You'll create a reusable query module using product inventory data and display that data in a Table widget. By the end of this tutorial, you will learn:
 
 * 🔧 **Basics:** Learn how to create and configure the query module
-* 🔄 **Dynamic Data:** Learn how to pass data between the app and module
+* 🔄 **Dynamic Data:** Learn how to pass data between the app and query module
 * ♻️ **Reusability:** Discover how to reuse the query module within applications
 :::
 
@@ -108,9 +108,18 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 
 </dd>
 
-11. **Run** and **Publish** the query module.
+11. **Run** the query to ensure it retrieves the data correctly.
 
 
+12. **Publish** the query module from top-right corner.
+
+<dd>
+
+- If the package is not published, changes won't reflect on the app side.
+
+- Publishing the package does not impact the live version of the app; you need to redeploy the app to make changes live.
+
+</dd>
 
 
 ## Use query module
@@ -130,7 +139,7 @@ Great job on creating a query module! Now, let's see how you can reuse it in dif
 
 3. Select the `Add GetProducts` query module. You can add multiple instances of the same module and pass different parameters to each one.
 
-4. Run the query module.
+4. **Run** the query module.
 
 5. To display query data, drop a Table widget and connect it to the `GetProducts1` **Query module**. 
 
@@ -141,13 +150,11 @@ Great job on creating a query module! Now, let's see how you can reuse it in dif
 
 This configuration dynamically sets the limit and offset based on the values from the Table widget(`Table1`).
 
-```js
-//limit input
-{{Table1.pageSize}}
 
-//offset input
-{{Table1.pageOffset}}
-```
+- Limit: `{{Table1.pageSize}}`
+
+- Offset: `{{Table1.pageOffset}}`
+
 
 </dd>
 
@@ -156,8 +163,14 @@ This configuration dynamically sets the limit and offset based on the values fro
 
 8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
 
+With this, you have connected the query module to the Table widget and enabled server-side pagination, which allows you to dynamically fetch and display data based on the current page and page size.
+
+
 
 :::tip Great!!
 You have successfully integrated the query module into your app, displaying its data in the Table widget.
 :::
 
+## Next steps
+
+- [Create JS Module](/packages/tutorial/js-module)
