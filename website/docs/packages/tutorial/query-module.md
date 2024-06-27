@@ -52,7 +52,7 @@ A reusable query module is a query that can be used across multiple applications
 
 3. Click the **New Module** button located at the center of the screen. Choose **Query Module** and proceed to create a **new datasource** by selecting PostgreSQL.
 
-4. Enter the following details in the connection parameter fields:
+4. Enter the following details in the connection parameter fields. For this tutorial, we will use a product inventory database as an example to create queries and display data.
 
 <dd>
 
@@ -79,6 +79,12 @@ A reusable query module is a query that can be used across multiple applications
 ```sql
 SELECT * FROM public."product" LIMIT 5 OFFSET 4;
 ```
+
+With this, you don't need to create multiple same queries for different pages or applications. You can reuse this same query module in various contexts, such as:
+
+- Displaying the entire inventory data in a Table widget.
+- Displaying low stock data (e.g., `< 50`) in a List widget on a different page.
+- Displaying stock data in a chart widget, and more.
 
 </dd>
 
@@ -111,15 +117,8 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 11. **Run** the query to ensure it retrieves the data correctly.
 
 
-12. **Publish** the query module from top-right corner.
+12. **Publish** the query module from top-right corner. This allows the changes to reflect on the app side.
 
-<dd>
-
-- If the package is not published, changes won't reflect on the app side.
-
-- Publishing the package does not impact the live version of the app; you need to redeploy the app to make changes live.
-
-</dd>
 
 
 ## Use query module
