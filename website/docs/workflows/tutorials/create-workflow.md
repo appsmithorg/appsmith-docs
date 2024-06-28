@@ -91,7 +91,7 @@ To automate tasks within your workflow, you can add processing logic. Here, you 
 2. Configure the query as follows:
    - **Name**: Rename the query to **qs_send_email**. Giving a meaningful and unique name to your query helps manage and identify its purpose.
    - **HTTP Method**: Set to `POST`.
-   - **URL**: Enter the URL `https://hook.us1.make.com/tg6y1fgjds3ysp3x4snt3tfjgu7s747d`. This is a preconfigured external API that takes an email as a parameter and sends an email to it.
+   - **URL**: Enter the URL `https://run.relay.app/api/v1/playbook/clxy6bw0x1nfd0okqf071h5xq/trigger/Pjb5qBRcOe3jdG1QghMD7w`. This is a preconfigured external API that takes an email as a parameter and sends an email to it.
    - **Body**: In the **Body** tab, select JSON, and add the following JSON. Replace `add_your_email_address` with your email to see the workflow in action as you will receive an email.
 
         ```javascript
