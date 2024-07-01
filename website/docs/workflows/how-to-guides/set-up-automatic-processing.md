@@ -40,6 +40,7 @@ Before you begin, make sure you have:
     ```javascript
     export default {
       async executeWorkflow(order) {
+        // add custom logic to verify required parameters
         if (order && order.order_id) {
           console.log('Processing order: ' + order.order_id);
           // Fetch order details using the provided order ID
