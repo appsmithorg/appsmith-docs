@@ -7,7 +7,7 @@ hide_title: true
 <!-- vale off -->
 
 <div class="tag-wrapper">
- <h1>Debugging Workflows</h1>
+ <h1>Debug Workflows</h1>
 
 <Tags
 tags={[
