@@ -52,7 +52,7 @@ To connect workflows with Appsmith app, you need to create workflow query. Follo
       }
 
 
-4. Click the **Run** button to trigger the workflow. You will see the below response, indicating the workflow ran successfully.
+4. Click the **Run** button to trigger the workflow. You will see the below response, where a unique `workflowRunID` is available that indicates the run has successfully started.
 
     ```javascript
     {
