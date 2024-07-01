@@ -21,6 +21,12 @@ tags={[
 
 Appsmith Workflows combine code-based and node-based approaches, providing developers with an intuitive interface to connect with external services. By simplifying complex tasks with JavaScript logic, Appsmith Workflows are ideal for efficient and advanced workflow automation.
 
+<ZoomImage
+  src="/img/appsmith-workflows.png" 
+  alt="Appsmith Workflows"
+  caption="Appsmith Workflows"
+/>
+
 Appsmith Workflows are versatile and designed to handle a wide range of scenarios:
 
   * **Automate business-critical processes:** Streamline operations by automating tasks such as: syncing leads from CRM to marketing tools, or managing inventory with stock alerts and supplier orders.
