@@ -75,5 +75,6 @@ If you face issues, contact the support team using the chat widget at the bottom
 
 ## See also
 
+* [Debug Workflow](/workflows/how-to-guides/debug-workflow) - Learn to debug workflows as you build them.
 * [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
 * [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.

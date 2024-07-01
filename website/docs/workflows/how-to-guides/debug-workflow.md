@@ -25,7 +25,7 @@ Debugging workflows is crucial for identifying and resolving issues while buildi
 
 Before you begin, make sure you have:
 
-* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for instructions.
+- A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
 
 ## Set up and run workflow with test values
 
