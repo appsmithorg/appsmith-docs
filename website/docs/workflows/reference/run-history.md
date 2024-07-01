@@ -55,6 +55,7 @@ Each workflow run has a unique ID generated when the workflow run is triggered a
     "success": true
   },
   "data": {
+  //highlight-next-line
     "workflowRunId": "JV4FA7WS"
   },
   "errorDisplay": ""
@@ -68,7 +69,7 @@ The log details provide a comprehensive view of each task’s execution within a
 
  <ZoomImage src="/img/workflows-run-history.png" alt="Workflow Log Details" caption="Workflow Log Details" />
 
-	* **Timestamps** -  Each log entry, from the start to the completion of the workflow execution, has an associated timestamp indicating when each action started and ended. This helps in understanding the duration of each activity and the overall workflow completion time.
+	* **Timestamps** -  Each log entry, from the start to the completion of the workflow execution, has an associated timestamp indicating when each activity started and ended. This helps in understanding the duration of each activity and the overall workflow completion time.
 	* **Activity** - The logs present the sequence of activities performed during the workflow, including the parameters passed and any errors encountered. Each activity is identified by its name (e.g., query name or JS object name) and includes start and end timestamps for detailed analysis.
 
 ## Important considerations
