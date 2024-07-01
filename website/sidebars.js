@@ -629,14 +629,6 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Embed Appsmith',
-          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
-          items: [
-            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
-          ]
-        },
-        {
-          type: 'category',
           label: 'Granular Access Control',
           link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
           items: [
@@ -667,7 +659,6 @@ const sidebars = {
             },
           ]
         },
-        `advanced-concepts/user-provisioning-group-sync`,
         //git-start
         {
 
@@ -716,7 +707,15 @@ const sidebars = {
           ]
         },
         //git-end
-        //git-start
+        `advanced-concepts/user-provisioning-group-sync`,
+        {
+          type: 'category',
+          label: 'Embed Appsmith',
+          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
+          items: [
+            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
+          ]
+        },
 
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
