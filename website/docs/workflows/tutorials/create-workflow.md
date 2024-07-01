@@ -18,7 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-Communicating important updates and task completions to your team or management is crucial for keeping projects on track Automating these notifications helps prevent delays and miscommunication. In this tutorial, you’ll learn how to set up automated email notifications using the Appsmith workflow.
+Communicating important updates and task completions to your team or management is crucial for keeping projects on track. Automating these notifications helps prevent delays and miscommunication. In this tutorial, you’ll learn how to set up automated email notifications using the Appsmith workflow.
 
 :::tip What you'll learn
 By following this tutorial, you will gain a comprehensive understanding of:

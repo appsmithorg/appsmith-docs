@@ -30,7 +30,7 @@ The **Run History** feature in workflows is essential for monitoring and managin
 
 ## Workflow runs
 
-You can access the Run History by clicking the **Run History** button located at the bottom left corner of the workflow editor. The workflow run logs are categorized into two tabs:
+You can access the history of all workflow runs of your workflow by clicking the **Run History** button located at the bottom left corner of the workflow editor. The workflow run logs are categorized into two tabs:
 
 - **All Runs**
   - Lists all workflow executions, including both successful and failed runs, with the most recent run displayed at the top.
@@ -63,7 +63,7 @@ Each workflow run has a unique ID generated when the workflow run is triggered a
 ```
 The detailed execution of each workflow run can be viewed by selecting a specific run, which opens up a detailed view on the right side.
 
-#### Details
+#### Detailed view
 
 The run details provide a comprehensive view of each activity's execution within a workflow run, showing timestamps, unique IDs, and detailed logs in chronological order from initiation to completion.
 
