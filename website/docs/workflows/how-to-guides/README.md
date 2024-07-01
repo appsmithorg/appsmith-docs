@@ -23,7 +23,10 @@
         </div><hr/>
         <div className="containerDescription">Learn how to set up automatic processing using Appsmith workflows.</div>
     </div>
-    <div className="columnGrid column-two" style={{margin: "10px"}}>
-    
-   </div>
+    <div className="containerColumnSampleApp columnGrid column-two">
+        <div className="containerCol">
+           <a href="/workflows/how-to-guides/debug-workflow"><strong>Debug Workflow</strong></a>
+        </div><hr/>
+        <div className="containerDescription">Learn to debug workflows as you build them.</div>
+    </div>
 </div>
