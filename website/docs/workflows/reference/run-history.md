@@ -28,7 +28,7 @@ The **Run History** feature in workflows is essential for monitoring and managin
 </div>
 <br/><br/>
 
-## Logs
+## Workflow runs
 
 You can access the Run History by clicking the **Run History** button located at the bottom left corner of the workflow editor. The workflow run logs are categorized into two tabs:
 
@@ -38,7 +38,7 @@ You can access the Run History by clicking the **Run History** button located at
 - **Failed Runs**
   - Displays only the workflow runs that encountered issues and did not complete successfully, also with the most recent run displayed at the top.
 
-### Workflow run details
+### Run details
 
 Each workflow run can be uniquely identified by its timestamp and ID:
 
@@ -61,11 +61,11 @@ Each workflow run has a unique ID generated when the workflow run is triggered a
   "errorDisplay": ""
 }
 ```
-The detailed execution of each workflow run can be viewed by selecting a specific run, which opens up the detailed view in the right pane.
+The detailed execution of each workflow run can be viewed by selecting a specific run, which opens up a detailed view on the right side.
 
-### Log details
+#### Details
 
-The log details provide a comprehensive view of each task’s execution within a workflow run, showing timestamps, unique IDs, and detailed logs in chronological order from initiation to completion.
+The run details provide a comprehensive view of each activity's execution within a workflow run, showing timestamps, unique IDs, and detailed logs in chronological order from initiation to completion.
 
  <ZoomImage src="/img/workflows-run-history.png" alt="Workflow Log Details" caption="Workflow Log Details" />
 
@@ -74,7 +74,7 @@ The log details provide a comprehensive view of each task’s execution within a
 
 ## Important considerations
 
-	* **Unique ID** - Use the unique ID to quickly locate and review specific workflow runs.
-	* **Timestamps** - Check the timestamps to understand the timeline and duration of each activity.
-	* **Expand activities** - Expand activities to verify the details of each processing step.
-	* **Failed runs** - Focus on the *Failed Runs* tab to diagnose and resolve issues efficiently.
+* **Unique ID** - Use the unique ID to quickly locate and review specific workflow runs.
+* **Timestamps** - Check the timestamps to understand the timeline and duration of each activity.
+* **Expand activities** - Expand activities to verify the details of each processing step.
+* **Failed runs** - Focus on the *Failed Runs* tab to diagnose and resolve issues.

@@ -41,7 +41,7 @@ Follow these steps to set up test values and debug the workflow:
 <br/><br/>
 
 1. In your workflow, go to the *Response* tab and click the **Run** button.
-2. Under the *Test values for function arguments* section, in the *Define test values for function arguments* field, enter your data in JSON format. For example, your workflow requires an email, order_id, and status as parameters:
+2. Under the *Test values for function arguments* section, in the *Define test values for function arguments* field, enter your data in JSON format. For example, your workflow requires a `order_id`, and `status` as parameters:
 
     ```javascript
     {
@@ -55,10 +55,9 @@ Follow these steps to set up test values and debug the workflow:
     ```javascript
     console.log("Parameters: Order ID - ", data.order_id, " Status - ", data.status);
     ```
-
 4. Click the **Run** button in the *Test values for function arguments* section to execute the workflow with the provided test data.
 
-5. After running the workflow, review the logs to understand its behavior and identify any issues in the log details available in the right pane. A sample workflow log details are as follows:
+5. After running the workflow, review the run details to understand its behavior and identify any issues in the run details available on the right side. A sample workflow log details are as follows:
 
    <ZoomImage src=" /img/workflows-log-details.png" alt="Workflow Log Details" caption="Workflow Log Details" />
 
