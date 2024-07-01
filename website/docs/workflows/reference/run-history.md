@@ -2,7 +2,7 @@
 description: This page provides comprehensive information on reading and understanding the execution of each workflow run.
 title: Run History
 hide_title: true
-toc_max_heading_level: 2
+toc_max_heading_level: 3
 ---
 
 <!-- vale off -->
@@ -38,14 +38,14 @@ You can access the Run History by clicking the **Run History** button located at
 - **Failed Runs**
   - Displays only the workflow runs that encountered issues and did not complete successfully, also with the most recent run displayed at the top.
 
-## Workflow run details
+### Workflow run details
 
 Each workflow run can be uniquely identified by its timestamp and ID:
 
-### Timestamp
+#### Timestamp
 Each workflow run has a timestamp associated with it indicating when the run was triggered. The timestamp format used is `DD/MM/YY | HH:MM:SS`. For example, `28/06/24 | 20:08:17`.
 
-### ID
+#### ID
 Each workflow run has a unique ID generated when the workflow run is triggered and is available in the response that indicates the run has successfully started. Below is an example response generated when a workflow run is triggered:
 
 ```javascript
@@ -63,7 +63,7 @@ Each workflow run has a unique ID generated when the workflow run is triggered a
 ```
 The detailed execution of each workflow run can be viewed by selecting a specific run, which opens up the detailed view in the right pane.
 
-## Log details
+### Log details
 
 The log details provide a comprehensive view of each task’s execution within a workflow run, showing timestamps, unique IDs, and detailed logs in chronological order from initiation to completion.
 
