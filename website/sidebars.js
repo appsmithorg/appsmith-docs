@@ -621,86 +621,6 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
-    //module start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Packages (Beta)',
-      items: [
-        'packages/overview',
-
-        {
-          type: 'category',
-          label: 'Tutorial',
-          items: [
-            'packages/tutorial/query-module',
-            'packages/tutorial/js-module'
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'How-to Guides',
-          items: [
-            'packages/how-to-guides/use-query-inside-js-module',],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'packages/reference/query-module',
-            'packages/reference/package'
-          ],
-        }
-      ]
-    }, //module end
-    //Workflows start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Workflows (Beta)',
-      items: [
-        'workflows/README',
-        //category- Api
-        {
-          type: 'category',
-          label: 'Tutorial',
-          link: {
-            type: 'doc',
-            id: 'workflows/tutorials/create-workflow',
-          },
-          items: [
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How-to Guides',
-          link: {
-            type: 'doc',
-            id: 'workflows/how-to-guides/README',
-          },
-          items: [
-            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
-            'workflows/how-to-guides/create-approval-workflow',
-            'workflows/how-to-guides/set-up-automatic-processing',
-            'workflows/how-to-guides/debug-workflow',
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions',
-            'workflows/reference/pass-parameters-to-workflows',
-            'workflows/reference/run-history'
-          ],
-        }
-      ]
-
-    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
@@ -803,6 +723,86 @@ const sidebars = {
         'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
+
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-to Guides',
+          items: [
+            'packages/how-to-guides/use-query-inside-js-module',],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'packages/reference/query-module',
+            'packages/reference/package'
+          ],
+        }
+      ]
+    }, //module end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows (Beta)',
+      items: [
+        'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
+          items: [
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-to Guides',
+          link: {
+            type: 'doc',
+            id: 'workflows/how-to-guides/README',
+          },
+          items: [
+            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/create-approval-workflow',
+            'workflows/how-to-guides/set-up-automatic-processing',
+            'workflows/how-to-guides/debug-workflow',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'workflows/reference/workflow-queries',
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows',
+            'workflows/reference/run-history'
+          ],
+        }
+      ]
+
+    }, //Workflows end
     {
       // Help & Support start
       type: 'category',
