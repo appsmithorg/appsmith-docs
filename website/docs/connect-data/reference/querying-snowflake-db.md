@@ -88,20 +88,22 @@ Basic authentication is a simple method that uses a username and password to aut
 
 #### Key Pair
 
-Key Pair authentication is a secure method that uses a pair of cryptographic keys for authentication, providing enhanced security.
+Key Pair authentication is a secure method that uses a pair of cryptographic keys for authentication, providing enhanced security. For more information, see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth).
 
 
  * **Username** - The username is the unique identifier for your Snowflake account. It is typically assigned by your Snowflake administrator or created when you set up your Snowflake account. You can find your username in your Snowflake account settings. 
 
  * **Private key**: The private key is a confidential cryptographic key used to sign authentication requests. It is generated during the key pair creation process and should be kept secure and encrypted. You can upload the private key file from your local machine, like `~/.ssh/snowflake_rsa_key`.
 
-* **Private key passphrase:** The private key passphrase is an optional password that you set when generating the private key. It adds an extra layer of security by encrypting the private key file. You can set the passphrase during the key generation process using `ssh-keygen`.
+* **Private key passphrase:** The private key passphrase is an optional password that you set when generating the private key. It adds an extra layer of security by encrypting the private key file. 
 
 <dd>
 
-For more information, see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+For more information, see [How to generate the private key](https://docs.snowflake.com/en/user-guide/key-pair-auth#generate-the-private-key).
 
 </dd>
+
+
 
 ## Query Snowflake
 
