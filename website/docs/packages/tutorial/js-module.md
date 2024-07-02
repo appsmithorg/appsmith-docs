@@ -26,11 +26,19 @@ A JavaScript module serves as a reusable code unit, encapsulating specific funct
 To learn JS modules in Appsmith, you'll be building a function that formats dates into DD/MM/YYYY format. This function will be used to format the product data obtained from the query module in [lesson 1](/packages/tutorial/query-module).
 
 
-By the end of this lesson, you will learn how to:
+:::tip What will I learn? 📝
+You'll learn how to reuse JavaScript code to format dates within your applications. By the end of this tutorial, you will learn:
 
-* Create and configure the JS module 
-* Integrate and execute the module in your app
+* 🔧 **Basics:** Learn how to create and configure the JS module
+* 🔄 **Dynamic Data:** Learn how to pass data between the app and JS module
+* ♻️ **Reusability:** Discover how to reuse the JS module within applications
+:::
 
+## Prerequisites
+Before you start, make sure you have the following:
+
+* A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
+* If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
 ## Create JS modules
 
@@ -41,11 +49,11 @@ By the end of this lesson, you will learn how to:
 </div>
 
 
-1. Open the `ProductUtils` package created in [lesson 1](/packages/tutorial/query-module#create-query-module).
+1. Open an existing package or create a new one from the top-right corner of your workspace.
 
-2. Click the **+** icon in the top-left corner and select **JS Module**. With JS Modules you can create datasource queries and JS objects inside the module.
+2. Click the **+** icon in the top-left corner and select **JS Module**. 
 
-3. Rename the module to _formatDate_. The Main JS object represents the code for the JS module.
+3. Rename the module to _formatDate_. 
 
 4. In the _Main_ JS Object, delete the auto-generated code and add the below code to it:
 
@@ -77,7 +85,7 @@ export default {
 
 
 
-5. Publish the JS Module.
+5. **Publish** the JS Module.
 
 ## Integrate modules into your App
 
