@@ -99,7 +99,7 @@ Key Pair authentication is a secure method that uses a pair of cryptographic key
 
 <dd>
 
-To generate keys for secure authentication, you can use tools like [OpenSSL](https://www.openssl.org/). With OpenSSL, you can create two keys: a private key and a public key. The private key, encrypted with AES-256, is used for signing authentication requests, while the public key is extracted from the private key for verification purposes. For more information, see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth#generate-the-private-key).
+To generate keys for secure authentication, you can use tools like [OpenSSL](https://www.openssl.org/). With OpenSSL, you can create two keys: a private key and a public key. The private key, encrypted with AES-256, is used for signing authentication requests, while the public key is extracted from the private key for verification purposes. For more information, see [How to generate the private key](https://docs.snowflake.com/en/user-guide/key-pair-auth#generate-the-private-key).
 
 
 To use the keys:
@@ -108,7 +108,6 @@ To use the keys:
 
 * **Private Key**: Store this private key on your local machine and use it to configure the datasource in Appsmith. You can use the same key for multiple authentication.
 
-For more information, see [How to generate the private key](https://docs.snowflake.com/en/user-guide/key-pair-auth#generate-the-private-key).
 
 </dd>
 
