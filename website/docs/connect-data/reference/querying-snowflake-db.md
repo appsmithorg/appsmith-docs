@@ -95,7 +95,7 @@ Key Pair authentication is a secure method that uses a pair of cryptographic key
 
  * **Private key**: The private key is a confidential cryptographic key used to sign authentication requests. It is generated during the key pair creation process and should be kept secure and encrypted. You can upload the private key file from your local machine.
 
-* **Private key passphrase:** The private key passphrase is an optional password that you set when generating the private key. It adds an extra layer of security by encrypting the private key file. 
+* **Passphrase:** The passphrase is an optional password that you set when generating the private key. It adds an extra layer of security by encrypting the private key file. 
 
 <dd>
 
