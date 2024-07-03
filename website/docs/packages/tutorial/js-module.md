@@ -23,8 +23,6 @@ tags={[
 
 A JavaScript module serves as a reusable code unit, encapsulating specific functionalities to promote an organized code structure. 
 
-To learn JS modules in Appsmith, you'll be building a function that formats dates into DD/MM/YYYY format. This function will be used to format the product data obtained from the query module in [lesson 1](/packages/tutorial/query-module).
-
 
 :::tip What will I learn? 📝
 You'll learn how to reuse JavaScript code to format dates within your applications. By the end of this tutorial, you will learn:
@@ -40,11 +38,11 @@ Before you start, make sure you have the following:
 * A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
 
+
 ## Create JS modules
 
-
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/pB3QuP30nOH0g4Pn7W5B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/VBtAmKvKHfMS4PDnhMFu?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -59,7 +57,7 @@ Before you start, make sure you have the following:
 
 <dd>
 
-To pass data from the app to JS modules, you can pass it by calling the respective function with the necessary parameters, like `formatDDMMYYYY('2023-03-08T09:45:15Z')`.
+To **pass data from the app to JS modules,** you can pass it by calling the respective function with the necessary parameters, like `formatDDMMYYYY('2023-03-08T09:45:15Z')`.
 
 
 The following code takes a parameter `dateString` and uses the `toLocalString()` method of the date object to convert the given date into the `DD/MM/YYYY` format.
@@ -87,40 +85,45 @@ export default {
 
 5. **Publish** the JS Module.
 
-## Integrate modules into your App
+## Use JS module
 
-Follow these steps to access its data in any application:
+Great job on creating a JS module! Now, let's see how you can reuse it in different apps.
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/ZonOto4ANGQ93dPSGN9Q?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/oZ02GhtPTyTKZFN6eUv5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
 
-1. Open the **App** created in Lesson 1.
+1. Open your App or create a new one from the homepage and ensure that both the app and modules share the same workspace.
 
 2. Select the _JS_ tab on the Entity Explorer.
 
-3. Click the **+ New JS object** and select the **formatDate** JS module.
+3. Click the **+ New JS object** and add the **formatDate** JS module.
 
-4. From the UI tab, select Table widget and open the `updated` column by clicking ⚙️ gear icon. 
+4. To use this JS module, from the UI tabs, drop a Table widget onto the canvas.
 
-5. In the **Computed value** property, add:
+5. Connect the Table widget to the sample `user` data.
+
+6. In the Table widget, open the `created_at` column by clicking ⚙️ gear icon.
+
+7. In the **Computed value** property, add:
 
 <dd>
 
 ```js
-{{formatDate_1.formatDDMMYYYY(currentRow["updated"])}}
+{{formatDate1.formatDDMMYYYY(currentRow["created_at"])}}
 ```
 
-The `formatDate_1` represents the module instance, and the number corresponds to the order in which the module was added.
+The `formatDate1` represents the module instance, and the number corresponds to the order in which the module was added.
 
 
-This code formats all `updated` column data into the `DD/MM/YYYY` format for each row in the data array.
+This code formats all `created_at` column data into the `DD/MM/YYYY` format for each row in the data array.
 
 </dd>
 
+With this, you can format dates using the JS module in multiple places throughout your application for consistent date formatting.
 
 :::info
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
@@ -129,4 +132,3 @@ When you update and publish a package, these modifications automatically apply i
 ### See Also
 
 * [How to Use queries inside JS module](/packages/how-to-guides/use-query-inside-js-module)
-* [Refresh OAuth Tokens Using JS Modules](/packages/how-to-guides/create-js-module)
