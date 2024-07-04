@@ -60,7 +60,8 @@ WHERE country IS NOT NULL;
 
 * To pass data from the **JS module to Query modules**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`
 
-* To pass data from the **App to JS modules**, call the respective function with the required parameters. For instance, `formatUserDetails(currentUser)`.
+* To access the **JS module data in the Query module**, create input parameters and use them inside the query, like `{{inputs.id}}`.
+
 
 
 
