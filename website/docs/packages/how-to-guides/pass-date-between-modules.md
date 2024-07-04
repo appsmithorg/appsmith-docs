@@ -88,6 +88,8 @@ export default {
 };
 ```
 
+This code fetches country data, formats it into a list of country names and codes, which can be reused to display the data in a Select widget.
+
 </dd>
 
 3. Publish the package.
