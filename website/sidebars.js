@@ -642,6 +642,7 @@ const sidebars = {
           collapsed: true,
           label: 'How-to Guides',
           items: [
+            'packages/how-to-guides/pass-date-between-modules',
             'packages/how-to-guides/use-query-inside-js-module',],
         },
         {
