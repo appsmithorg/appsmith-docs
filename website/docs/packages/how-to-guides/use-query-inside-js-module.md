@@ -1,12 +1,12 @@
 ---
-title: Use queries inside JS module
+title: Create a Login Authentication Module
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Use queries inside JS module</h1>
+ <h1>Create a Login Authentication Module</h1>
 
 <Tags
 tags={[
@@ -18,19 +18,19 @@ tags={[
 
 <!-- vale on -->
 
-This guide shows how to use datasource queries and JSObjects within the JS module, enabling efficient data handling and manipulation for applications.
-
-
+This page shows how to create a reusable login authentication module, enabling you to implement user authentication across multiple applications.
 
 
 ## Prerequisites
 
-A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
+* A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
+* db
 
 ## Configure package
 
 Follow these steps to set up JS modules within the package.
 
+You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/HNVD0NV1FGH0HSD5cz3B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
@@ -38,12 +38,48 @@ Follow these steps to set up JS modules within the package.
 </div>
 
 
-1. Click **New Module** > **JS Module**. The **Main JSObject** represents the JS module code.
+1. Create a new query module that allows you to verify whether the user's email exists within the database.
+
 
 
 <dd>
 
-*Example:* You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database. To implement this, in the **Main** JS code, add authentication functions like login, token generation, and navigation upon successful login.
+Create inputs from the right-side property pane to pass the email dynamically from the JS module. Use the `inputs` in the query, like:
+
+
+```sql
+//findUserByEmail
+SELECT * FROM public.auth_users WHERE email = {{inputs.email}};
+```
+
+</dd>
+
+
+2. Create a new Datasource query for updating the last login timestamp:
+
+
+
+<dd>
+
+Create inputs from the right-side property pane to pass the user ID dynamically from the JS module. Use the `inputs` in the query, like this:
+
+```sql
+//updateLogin
+UPDATE public.auth_users
+  SET last_login = {{new Date().toISOString()}}
+  WHERE id = {{ inputs.id }};
+```
+
+
+</dd>
+
+
+3. Create a new JS module to handle the authentication process:
+
+
+<dd>
+
+This JS module verifies user credentials, updates the last login timestamp upon successful authentication, generates a session token, and provides feedback through alerts for user login attempts.
 
 You can use the [Appsmith Object](/write-code/reference) and [Functions](/reference/appsmith-framework/widget-actions) within the JS module code, which can be executed in the App, like:
 
@@ -67,7 +103,10 @@ export default {
             
             // Navigate to the 'App' page in the same window after successful login
             await navigateTo('App', {}, 'SAME_WINDOW');
-        }
+        } else {
+                // Show an error alert indicating login failure
+                await showAlert('Login Failed: Invalid email or password', 'error');
+            }
     }
 }
 ```
@@ -80,69 +119,43 @@ export default {
 
 </dd>
 
-2. Within the JS module, create a new Datasource query that allows you to fetch data based on the JS code. 
-
-<dd>
-
-
-:::caution
-Using the query module inside a JS module is not supported.
-:::
-
-*Example:* In the login authentication flow, create a query to verify whether the user's email exists within the database.
-
-
-```sql
-//findUserByEmail
-SELECT * FROM user_auth WHERE email = {{this.params.email}};
-```
-
-
-`this.params.email` provides access to the data passed within the JS module, enabling efficient communication and dynamic data handling within your application. For more information, see [Parameterised Queries](/connect-data/concepts/dynamic-queries#accessing-runtime-parameters-inside-the-query).
-
-</dd>
-
-3. Create a new Datasource query for updating the last login timestamp:
-
-<dd>
-
-```sql
-//updateLogin
-UPDATE user_auth
-  SET last_login = {{new Date().toISOString()}}
-  WHERE id = {{ this.params.id }};
-```
-
-
-</dd>
 
 4. Publish the package.
 
-5. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
-6. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
 
-7. Select the *JS* tab on the Entity Explorer, and add the Login JS module.
+## Integrate the Login Module
 
-8. Set the **onClick** event of the Submit/Login button to pass data to a JS module and execute the corresponding function.
+Follow these steps to use the login authentication module within your application:
+
+
+
+1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
+
+2. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
+
+3. Select the JS tab on the Entity Explorer, add the **Login JS module**, and pass login form data into function parameters for authentication:
+
 
 <dd>
 
-*Example:* To pass the email and password, you can configure the **onClick** event as follows:
+* email: `{{emailInput.text}}`
+* passwordHash: `{{passwordInput.text}}`
 
 
+<ZoomImage
+  src="/img/pass-data-js-login.png" 
+  alt="Inputs image"
+  caption=""
+/>
 
-```js
-{{LoginModule.login(inp_email.text, inp_password.text);}}
-```
+</dd>
 
+4. Set the **onClick** event of the Submit/Login button to run the JS module.
+
+<dd>
 
 When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.
-
-
-
-
-
 
 
 
