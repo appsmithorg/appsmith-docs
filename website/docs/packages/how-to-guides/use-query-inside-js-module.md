@@ -18,19 +18,18 @@ tags={[
 
 <!-- vale on -->
 
-This page shows how to create a reusable login authentication module, enabling you to implement user authentication across multiple applications.
-
+This page shows how to create a reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database.
 
 ## Prerequisites
 
 * A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
-* db
+* A datasource connected to that workspace with user authentication credentials.
+
 
 ## Configure package
 
-Follow these steps to set up JS modules within the package.
+Follow these steps to set up modules within the package.
 
-You want to create a simple, reusable login authentication module that allows users to authenticate through email and password credentials stored in an SQL database.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/HNVD0NV1FGH0HSD5cz3B?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">

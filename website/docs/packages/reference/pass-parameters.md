@@ -79,10 +79,30 @@ export default {
 To pass data from the app to JS modules, you can use either:
 
 1. Inputs property in the JS editor
+
+<dd>
+
+<ZoomImage
+  src="/img/pass-data-js-login.png" 
+  alt="Inputs image"
+  caption=""
+/>
+
+</dd>
+
 2. Directly pass data when the JS module function is called
+
+<dd>
 
 Example of directly passing data when calling the function:
 
 ```js
 myFunction({{Table1.selectedRow.id}}, {{Input1.text}});
 ```
+
+</dd>
+
+
+
+## Between Modules
+
