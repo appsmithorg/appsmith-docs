@@ -156,7 +156,7 @@ When the button is clicked, the JS module verifies whether the user's email exis
 </dd>
 
 
-To log out a user, call the revoke API to invalidate the access token, use the  [clear store()](/reference/appsmith-framework/widget-actions/clear-store) action to remove stored user data, and redirect the user to the `LoginPage`.
+To log out a user, call the revoke API to invalidate the access token, use the [clear store()](/reference/appsmith-framework/widget-actions/clear-store) action to remove stored user data, and redirect the user to the `LoginPage`.
 
 
 
