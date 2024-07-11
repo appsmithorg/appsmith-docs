@@ -83,7 +83,6 @@ SELECT * FROM public."product" LIMIT 5 OFFSET 4;
 With this, you don't need to create multiple same queries for different pages or applications. You can reuse this same query module in various contexts, such as:
 
 - Displaying the entire inventory data in a Table widget.
-- Displaying low stock data (e.g., `< 50`) in a List widget on a different page.
 - Displaying stock data in a chart widget, and more.
 
 </dd>

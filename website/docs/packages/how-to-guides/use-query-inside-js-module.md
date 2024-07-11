@@ -126,21 +126,21 @@ For any future user actions, use the stored access token to access the relevant 
 Follow these steps to use the login authentication module within your application:
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/iOLfuhd6zlqPbgP7iSW2?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
 
 1. Open your **App** from the homepage and ensure that both the app and modules share the same workspace.
 
 2. Create a simple login form using widgets such as Text and Input fields, tailored to meet your specific requirements.
 
-3. Select the JS tab on the Entity Explorer, add the **Login JS module**, and pass login form data into function parameters for authentication. To pass data from the **App to a JS module**, you can set **Inputs** parameters or pass it by calling the respective function with parameters. 
-
+3. Select the JS tab on the Entity Explorer, add the **Login JS module**, and pass login form data into function parameters for authentication. 
 
 
 <dd>
 
+
+To pass data from the **App to a JS module**, you can set **Inputs** parameters or pass it by calling the respective function with parameters, like `login(hello@email.com, password@123)`.
+
+
+   <ZoomImage src="/img/inputs-js1.png" alt="" caption="" />
 
 </dd>
 
@@ -148,10 +148,6 @@ Follow these steps to use the login authentication module within your applicatio
 
 <dd>
 
-
-```js
-{{auth_module1.signin(email_input.text, pasword_input.text)}}
-```
 
 
 When the button is clicked, the JS module verifies whether the user's email exists in the database. If the email and password match, it redirects the user to a new page.

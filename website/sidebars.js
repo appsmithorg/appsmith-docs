@@ -650,7 +650,6 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
-           'packages/reference/pass-parameters',
             'packages/reference/query-module',
             'packages/reference/package'
           ],

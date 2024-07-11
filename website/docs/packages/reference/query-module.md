@@ -70,20 +70,43 @@ When enabled, this property displays a confirmation modal each time before refre
 
 ## JS module
 
-These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App.
-
-Additionally, you can add multiple JS modules from the same package, each with different configurations.
+These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App. Additionally, you can add multiple JS modules from the same package, each with different configurations.
 
 
-<ZoomImage
-  src="/img/js-module-setting.png" 
-  alt="JS modules image"
-  caption=""
-/>
+### Parameters 
+
+This property displays all the parameters available for the specified function.
+
+
+#### Inputs
+
+
+The input property allows you to pass dynamic values from your app to the JS module. You can use these inputs to pass data into a function within the JS module. You cannot edit the input name or JS configuration from the App; you can only pass values to the available inputs. 
+
+To access the data in the JS Module, create a function with parameters that can be utilized when the function is called.
+
+   <ZoomImage src="/img/inputs-js1.png" alt="" caption="" />
+
+
+*Example*:
+
+```js
+//access the data in JS Module
+export default {
+  myFunction: (email, password) => {
+    console.log("Parameter 1: ", email);
+    console.log("Parameter 2: ", password);
+    // Perform operations using param1 and param2
+  }
+}
+```
+
+
 
 ### Function setting
 
 This setting allows you to configure each function available in the JS module according to your requirements.
+
 
 #### Function name
 
@@ -104,22 +127,3 @@ When enabled, this property allows the specified JS function to run when the pag
 
 </dd>
 
-
-#### Confirm before calling
-
-
-<dd>
-
-When enabled, this property displays a confirmation modal before calling the specified function. You can set this property for all the available functions.
-
-
-</dd>
-
-#### Parameters
-
-<dd>
-
-This property displays all the parameters available for the specified function.
-
-
-</dd>
