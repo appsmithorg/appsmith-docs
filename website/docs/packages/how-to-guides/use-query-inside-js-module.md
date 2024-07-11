@@ -48,7 +48,7 @@ To secure your Appsmith application, you will need to set up a sign-in flow that
 *Example*: 
 
 ```js
-//sign_in
+//POST METHOD
 https://example.api.co/auth/v1/token?grant_type=password
 ```
 
