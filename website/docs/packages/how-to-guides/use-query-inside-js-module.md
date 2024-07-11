@@ -18,12 +18,14 @@ tags={[
 
 <!-- vale on -->
 
-This page shows how to create a reusable login authentication module that allows users to authenticate through email and password credentials.
+This page shows how to create a custom authentication module using packages, which allows you to reuse the same module across different applications to authenticate users efficiently.
+
+
 
 ## Prerequisites
 
 - A package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
-- An authenticated datasource with a user sign-in endpoint.
+- An authenticated datasource with user sign-in endpoints.
 
 
 
@@ -83,7 +85,8 @@ https://example.api.co/auth/v1/token?grant_type=password
 
 <dd>
 
-* To pass data from the **JS module to the query module**, you can pass parameters at runtime using `run()`, like `sign_in.run({ email: email, password: password })`
+* To pass data from the **JS module to the query module**, you can pass parameters at runtime using `run()`, like `sign_in.run({ email: email, password: password })`.
+
 * To read the **JS module data in the query module**, create **Inputs** with the same parameter name, like `email` and `password`.
 
 
@@ -133,7 +136,7 @@ Follow these steps to use the login authentication module within your applicatio
 
 <dd>
 
-To pass data from the **App to a JS module**, you can set **Input** parameters or pass it by calling the respective function with parameters, like `login(hello@email.com, password@123)`.
+To pass data from the **App to a JS module**, you can set **Inputs** parameters or pass it by calling the respective function with parameters, like `login(hello@email.com, password@123)`.
 
 <ZoomImage
   src="/img/inputs-js1.png" 
