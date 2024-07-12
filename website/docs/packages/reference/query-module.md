@@ -80,12 +80,12 @@ This property displays all the parameters available for the specified function.
 
 #### Inputs
 
+   <ZoomImage src="/img/inputs-js1.png" alt="" caption="" />
 
 The input property allows you to pass dynamic values from your app to the JS module. You can use these inputs to pass data into a function within the JS module. You cannot edit the input name or JS configuration from the App; you can only pass values to the available inputs. 
 
 To access the data in the JS Module, create a function with parameters that can be utilized when the function is called.
 
-   <ZoomImage src="/img/inputs-js1.png" alt="" caption="" />
 
 
 *Example*:

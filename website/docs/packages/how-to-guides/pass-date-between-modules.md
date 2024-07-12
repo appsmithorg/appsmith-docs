@@ -17,7 +17,8 @@ tags={[
 
 <!-- vale on -->
 
-This page shows how to pass data between a query and a JS module, enabling you to efficiently handle, process, and manipulate data fetched from queries within your JS code.
+This page shows how to pass data between a query and a JS module, which allows you to handle and manipulate data efficiently within your JS code.
+
 
 
 ## Prerequisites
