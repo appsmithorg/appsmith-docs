@@ -46,9 +46,8 @@ Follow these steps to set up JS and query modules within the package.
 
 
 ```sql
-SELECT DISTINCT country
-FROM public."users"
-WHERE country IS NOT NULL;
+SELECT * FROM public."product" 
+WHERE category = 'Apparel';
 ```
 
 </dd>
