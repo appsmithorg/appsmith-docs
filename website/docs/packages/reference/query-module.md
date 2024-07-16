@@ -1,7 +1,10 @@
-# App-Level Package Settings
+# Module Instance
 
-This page provides information about the package settings and properties available within the App, which allows you to configure the query and JS modules.
 
+
+When you incorporate a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`), allowing for customized functionalities.
+
+This page provides information about the module settings and properties available within the app, enabling you to configure the query and JS modules.
 
 
 ## Query module
