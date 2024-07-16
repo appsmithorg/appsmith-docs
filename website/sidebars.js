@@ -650,8 +650,8 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
-            'packages/reference/query-module',
-            'packages/reference/package'
+            'packages/reference/package',
+            'packages/reference/query-module'
           ],
         }
       ]
