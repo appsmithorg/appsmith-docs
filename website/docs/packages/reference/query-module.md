@@ -35,7 +35,7 @@ The input property enables you to pass dynamic values from your app to the query
 You cannot edit the input name or query configuration from the App; you can only pass values to the available inputs. 
 
 <ZoomImage
-  src="/img/inputs_mod_app.png" 
+  src="/img/query-module-instance.png" 
   alt="Inputs image"
   caption=""
 />
@@ -50,6 +50,7 @@ If you have an input named `distinct_id`, you can pass data like this:
 {{appsmith.user.email}}
 ```
 
+For more information on how to read the dynamic data, see [Module](/packages/reference/package).
 
 </dd>
 

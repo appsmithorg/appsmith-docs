@@ -1,6 +1,6 @@
 # Module
 
-Modules in Appsmith are integral components of a Package tailored. They are reusable components containing queries and JSOjects that can yield results across multiple applications within the same workspace.
+Modules in Appsmith are integral components of a Package tailored. They are reusable components containing queries and JSObjects that can yield results across multiple applications within the same workspace.
 
 This page provides information on the various properties and settings available within modules.
 
@@ -18,7 +18,7 @@ The property allows you to create dynamic inputs for queries, which enables you 
 
 - To access JS module data in the query module, create input parameters and use them inside the query, like `{{inputs.id}}`. You can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`.
 
-- To access app data in the query module, create input parameters and use them inside the query. Pass data from the module instance on the app side.
+- To access app data in the query module, create input parameters and use them inside the query. Pass data from the module instance on the app side. See [Module Instance](/packages/reference/query-module).
 
 
 
