@@ -51,23 +51,6 @@ SELECT * FROM public."product" LIMIT {{inputs.input1}} OFFSET {{inputs.input2}};
 </dd>
 
 
-### Package import
-
-
-<dd>
-
-
-
-You can access the package import feature from the package settings page at the bottom left of the screen. This feature enables you to import package JSON files, facilitating integration and updates within your project. 
-
-Importing a package file overrides your existing package. For instance, when you import a package containing display data, the existing queries are overwritten with the new queries, reflecting these changes in the app.
-
-
-<ZoomImage
-  src="/img/settings-pack.png" 
-  alt="Package settings image"
-  caption=""
-/>
 
 
 
@@ -76,14 +59,4 @@ Importing a package file overrides your existing package. For instance, when you
 
 
 
-
-
-
-
-
-
-
-
-
-</dd>
 
