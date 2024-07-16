@@ -7,6 +7,14 @@ When you incorporate a module from the package into your application, you create
 This page provides information about the module settings and properties available within the app, enabling you to configure the query and JS modules.
 
 
+<ZoomImage
+  src="/img/modules-diagram.png" 
+  alt=""
+  caption=""
+/>
+
+
+
 ## Query module
 
 When you integrate the query module into the app, you can access and modify the parameters that have been set up for the query module using the query editor. You have the option to include multiple query modules, whether they're from the same package or different ones, and supply parameters to each module according to your specific needs.
