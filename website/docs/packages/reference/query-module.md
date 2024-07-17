@@ -1,6 +1,17 @@
-# App-Level Package Settings
+# Module Instance
 
-This page provides information about the package settings and properties available within the App, which allows you to configure the query and JS modules.
+
+
+When you incorporate a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`), allowing for customized functionalities.
+
+This page provides information about the module settings and properties available within the app, which allows you to configure the query and JS modules.
+
+
+<ZoomImage
+  src="/img/modules-diagram.png" 
+  alt=""
+  caption=""
+/>
 
 
 
@@ -24,7 +35,7 @@ The input property enables you to pass dynamic values from your app to the query
 You cannot edit the input name or query configuration from the App; you can only pass values to the available inputs. 
 
 <ZoomImage
-  src="/img/inputs_mod_app.png" 
+  src="/img/query-module-instance.png" 
   alt="Inputs image"
   caption=""
 />
@@ -39,6 +50,7 @@ If you have an input named `distinct_id`, you can pass data like this:
 {{appsmith.user.email}}
 ```
 
+For more information on how to read the dynamic data, see [Module](/packages/reference/package).
 
 </dd>
 
@@ -70,20 +82,41 @@ When enabled, this property displays a confirmation modal each time before refre
 
 ## JS module
 
-These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App.
-
-Additionally, you can add multiple JS modules from the same package, each with different configurations.
+These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App. Additionally, you can add multiple JS modules from the same package, each with different configurations.
 
 
-<ZoomImage
-  src="/img/js-module-setting.png" 
-  alt="JS modules image"
-  caption=""
-/>
+### Parameters 
+
+This property displays all the parameters available for the specified function.
+
+
+#### Inputs
+
+   <ZoomImage src="/img/inputs-js-module.png" alt="" caption="" />
+
+The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only accessible if they are defined in the JS function. You cannot edit the input name or JS configuration from the App; you can only pass values to the available inputs. 
+
+To read the data in the JS module, create a function with parameters that will receive the input values when the function is called.
+
+*Example*:
+
+```js
+//access the data in JS Module
+export default {
+  myFunction: (email, password) => {
+    console.log("Parameter 1: ", email);
+    console.log("Parameter 2: ", password);
+    // Perform operations using param1 and param2
+  }
+}
+```
+
+
 
 ### Function setting
 
 This setting allows you to configure each function available in the JS module according to your requirements.
+
 
 #### Function name
 
@@ -100,26 +133,6 @@ This setting displays all the function names available in the JS module.
 <dd>
 
 When enabled, this property allows the specified JS function to run when the page loads. You can set this property for each JS function available.
-
-
-</dd>
-
-
-#### Confirm before calling
-
-
-<dd>
-
-When enabled, this property displays a confirmation modal before calling the specified function. You can set this property for all the available functions.
-
-
-</dd>
-
-#### Parameters
-
-<dd>
-
-This property displays all the parameters available for the specified function.
 
 
 </dd>
