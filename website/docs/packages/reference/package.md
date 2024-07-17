@@ -15,7 +15,6 @@ The property allows you to create dynamic inputs for queries, which enables you 
 
 To use an input within the query, enclose the input name within double curly braces like this: `{{ inputs.input_name }}`.
 
-
 <ZoomImage
   src="/img/INPUT-pack.png" 
   alt="Inputs image"
