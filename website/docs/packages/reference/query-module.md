@@ -96,7 +96,7 @@ This property displays all the parameters available for the specified function.
 The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
 
   
-*Example*: If you have a JS Function with predefined parameters like `email` and `password`, you can pass dynamic data from your application to the module using the **Inputs**.
+*Example*: If you have a JS function with predefined parameters like `email` and `passwordHash`, and you want to pass Input widget data from the app to the JS module, you can use the **Inputs** property.
 
 ```js
 //JS Module
