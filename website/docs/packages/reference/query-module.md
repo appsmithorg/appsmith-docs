@@ -92,16 +92,14 @@ This property displays all the parameters available for the specified function.
 
 #### Inputs
 
-   <ZoomImage src="/img/inputs-js-module.png" alt="" caption="" />
 
-The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only accessible if they are defined in the JS function. You cannot edit the input name or JS configuration from the App; you can only pass values to the available inputs. 
+The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
 
-To read the data in the JS module, create a function with parameters that will receive the input values when the function is called.
-
-*Example*:
+  
+*Example*: If you have a JS module with predefined parameters like `email` and `password`, you can pass dynamic data from your application to the module using the **Inputs**.
 
 ```js
-//access the data in JS Module
+//JS Module
 export default {
   myFunction: (email, password) => {
     console.log("Parameter 1: ", email);
@@ -110,6 +108,7 @@ export default {
   }
 }
 ```
+ <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance" />
 
 
 
