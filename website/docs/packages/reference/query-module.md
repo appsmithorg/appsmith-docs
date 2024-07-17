@@ -108,7 +108,16 @@ export default {
   }
 }
 ```
- <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance" />
+
+```js
+//App
+email: 
+{{email_input.text}}
+
+passwordHash:
+{{pass_input.text}}
+```
+ <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance | App" />
 
 
 
