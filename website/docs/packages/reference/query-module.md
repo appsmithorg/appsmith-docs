@@ -101,9 +101,9 @@ The input property allows you to pass dynamic values from your app to the JS mod
 ```js
 //JS Module
 export default {
-  myFunction: (email, password) => {
+  myFunction: (email, passwordHash) => {
     console.log("Parameter 1: ", email);
-    console.log("Parameter 2: ", password);
+    console.log("Parameter 2: ", passwordHash);
     // Perform operations using param1 and param2
   }
 }
