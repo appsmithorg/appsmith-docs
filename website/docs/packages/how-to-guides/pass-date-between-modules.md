@@ -89,19 +89,24 @@ WHERE category = {{inputs.category}};
 
 ```js
 export default {
-  async fetchCountriesData() {
+  async fetchProductsByCategory(categoryName) {
     try {
-      
-      const countriesData = await fetchCountryDataQuery.run();
-      this.countriesList = countriesData.map(country => {
+      // Pass category name to Query module
+      const productsData = await fetchProductsByCategoryQuery.run({ category: categoryName });
+
+      // Format product data for display
+      const formattedProductsData = productsData.map(product => {
         return {
-          name: country.name, // 'country.name' is where the country name is stored
-          code: country.code  
+          x: product.product_name,
+          y: product.stock,
+          // Add more fields as needed
         };
       });
-      return this.countriesList; // Return the formatted list of countries
+
+      return formattedProductsData; // Return formatted product data
     } catch (error) {
-      console.error('Error fetching country data:', error);
+      console.error('Error fetching product data:', error);
+      throw error; // Propagate the error for handling elsewhere if needed
     }
   },
 };
