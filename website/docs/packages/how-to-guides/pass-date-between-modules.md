@@ -68,24 +68,15 @@ WHERE category = {{inputs.category}};
 
 <dd>
 
-*Example:* If you want to visualize inventory data in a chart widget, this JavaScript module fetches product details based on the selected category. 
-
-</dd>
-
-<dd>
-
 * To access the **Query module data in the JS module**, use the reference properties of the query module, like: `userData.data`.
 
-* To pass data from the **JS module to Query modules**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`
+* To pass data from the **JS module to Query modules**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`.
 
 * To access the **JS module data in the Query module**, create input parameters and use them inside the query, like `{{inputs.id}}`.
 
 
 
-
-*Example*: If you want to transform query data into a format suitable for a Select widget, you can add a JS function like:
-
-
+*Example:* If you want to visualize inventory data in a chart widget, this JS module fetches product details based on the selected category. 
 
 ```js
 export default {
@@ -112,32 +103,42 @@ export default {
 };
 ```
 
-This code fetches country data, formats it into a list of country names and codes, which can be reused to display the data in a Select widget.
-
 </dd>
 
-3. Publish the package.
 
+
+3. Publish the package.
 
 4. Open your App from the homepage and ensure that both the app and modules share the same workspace.
 
 5. Select the *JS* tab on the Entity Explorer, add the JS module, and configure it to **Run on page load**.
 
-6. Drag a Select widget and set the **Source data** property to fetch the data:
+6. Drag a Chart widget and configure the Series data property to display data from the JS module.
 
+<dd>
+
+*Example:*
+
+```js
+{{JSModule11.fetchProductsByCategory.data}}
+```
+
+</dd>
+
+7. Drag a Select widget and configure the **Source data** property to display a list of product categories.
+
+
+8. Configure the **onOptionChange** event of the Select widget to run the JS module function when an option is selected.
 
 <dd>
 
 *Example:* 
 
 ```js
-{{ countryModule.fetchCountries.data }}
+{{JSModule11.fetchProductsByCategory(Select1.selectedOptionValue);}}
 ```
 
 </dd>
-
-With this, you can reuse the same JS module to display a list of countries in different apps and pages.
-
 
 
 
