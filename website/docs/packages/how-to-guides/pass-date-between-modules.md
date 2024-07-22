@@ -41,18 +41,36 @@ Follow these steps to set up JS and query modules within the package.
 
 <dd>
 
-*Example:* Suppose you want to display a list of countries in a Select widget. You can create a query to fetch a list of unique countries, like:
-
-
+*Example:* If you want to display product details in a chart widget based on the category selected by the user, you can create a SQL query like:
 
 ```sql
 SELECT * FROM public."product" 
-WHERE category = 'Apparel';
+WHERE category = `Apparel`;
 ```
 
 </dd>
 
-2. Create a JS module to format or transform the data fetched from the query module. 
+2. Create an **Input** from the right-side property pane to dynamically pass data to the query. 
+
+<dd>
+
+*Example:* To dynamically pass category information to your query, use the `inputs` property as shown below:
+
+```sql
+SELECT * FROM public."product" 
+WHERE category = {{inputs.category}};
+```
+
+</dd>
+
+
+3. 
+
+<dd>
+
+*Example:* If you want to visualize inventory data in a chart widget, this JavaScript module fetches product details based on the selected category. 
+
+</dd>
 
 <dd>
 
