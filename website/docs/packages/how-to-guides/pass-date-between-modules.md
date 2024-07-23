@@ -64,7 +64,8 @@ WHERE category = {{inputs.category}};
 </dd>
 
 
-3. 
+3. Create a new JS module to run the query module and manipulate the query data:
+
 
 <dd>
 
