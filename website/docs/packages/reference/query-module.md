@@ -8,14 +8,14 @@ This page provides information about the module settings and properties availabl
 
 
 <ZoomImage
-  src="/img/modules-diagram.png" 
+  src="/img/query-ins.drawio.png" 
   alt=""
   caption=""
 />
 
 
 
-## Query module
+## Query module instance
 
 When you integrate the query module into the app, you can access and modify the parameters that have been set up for the query module using the query editor. You have the option to include multiple query modules, whether they're from the same package or different ones, and supply parameters to each module according to your specific needs.
 
@@ -32,7 +32,8 @@ These properties facilitate dynamic value transmission from your app to the quer
 
 The input property enables you to pass dynamic values from your app to the query module. With inputs, you can incorporate dynamic data retrieval based on user interactions or other widget bindings. 
 
-You cannot edit the input name or query configuration from the App; you can only pass values to the available inputs. 
+You cannot edit the **Inputs** name or query configuration directly from the App. However, you can pass different values to the available inputs at runtime using the `.run()` function. The values passed through `.run()` will take precedence over the default values set on the module instance page.
+
 
 <ZoomImage
   src="/img/query-module-instance.png" 
@@ -80,7 +81,7 @@ When enabled, this property displays a confirmation modal each time before refre
 </dd>
 
 
-## JS module
+## JS module instance
 
 These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App. Additionally, you can add multiple JS modules from the same package, each with different configurations.
 
@@ -92,14 +93,15 @@ This property displays all the parameters available for the specified function.
 
 #### Inputs
 
+<dd>
 
 The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
 
 :::info
-When passing data from the app to the JS module using both **Inputs** and during **runtime** (e.g., `login.run({ email: <email>, password: <password> })`), the runtime parameters will take precedence over the values set in the UI.
+When passing data from the app to the JS module using both **Inputs** and during **runtime** (e.g., `authUtils.login('email@domain.com', 'dsoi3$dfssn');`), the runtime parameters will take precedence over the values set in the UI.
 :::
 
-<dd>
+
 
 *Example*: If you have a JS function with predefined parameters like `email` and `passwordHash`, and you want to pass Input widget data from the app to the JS module, you can use the **Inputs** property.
 
@@ -115,7 +117,7 @@ export default {
 ```
 
 ```js
-//App
+//JS module instance
 email: 
 {{email_input.text}}
 

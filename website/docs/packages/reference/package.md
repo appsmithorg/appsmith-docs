@@ -1,6 +1,6 @@
 # Module
 
-Modules in Appsmith are integral components of a Package tailored. They are reusable components containing queries and JSObjects that can yield results across multiple applications within the same workspace.
+Modules in Appsmith are integral parts of a Package. Packages consist of reusable Query and JSObject components, designed to provide consistent results across multiple applications within the same workspace.
 
 This page provides information on the various properties and settings available within modules.
 
@@ -19,7 +19,7 @@ The property allows you to create dynamic inputs for queries, which enables you 
 To use an input within the query, enclose the input name within double curly braces like this: `{{ inputs.input_name }}`.
 
 <ZoomImage
-  src="/img/INPUT-pack.png" 
+  src="/img/INPUT-pack-.png" 
   alt="Inputs image"
   caption=""
 />
