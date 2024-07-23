@@ -10,6 +10,7 @@ This page provides information about the `navigateTo()` function signature and p
 
 
 
+
 <ZoomImage src="/img/navigate-fun.png" alt="navigateTo()" caption="navigateTo()" />
 
 
