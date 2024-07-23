@@ -6,7 +6,13 @@ toc_max_heading_level: 2
 
 # setInterval()
 
-`setInterval()` executes a callback function with a fixed time interval between the calls.
+This page provides information about the `setInterval()` function signature and parameters, which allows you to execute a callback function with a fixed time interval between the calls.
+
+
+
+<ZoomImage src="/img/settimeout-function.png" alt="setTimeout()" caption="setTimeout()" />
+
+
 
 ## Signature
 
