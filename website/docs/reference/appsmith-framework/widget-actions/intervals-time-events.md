@@ -10,7 +10,7 @@ This page provides information about the `setInterval()` function signature and 
 
 
 
-<ZoomImage src="/img/settimeout-function.png" alt="setTimeout()" caption="setTimeout()" />
+<ZoomImage src="/img/settimeout-function.png" alt="setInterval()" caption="setInterval()" />
 
 
 
