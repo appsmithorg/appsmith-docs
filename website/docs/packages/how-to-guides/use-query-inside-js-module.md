@@ -171,10 +171,6 @@ To log out a user, call the revoke API to invalidate the access token, use the [
 
 To keep your access uninterrupted and secure across all apps, follow these steps to refresh OAuth tokens and extend your authentication:
 
-
-
-To refresh OAuth tokens across all apps, enabling you to renew and extend your authentication access, follow these steps:
-
 1. Create a query module to call the token refresh endpoint provided by your authentication service. For OAuth services, ensure that you add the refresh token in the request payload to receive a new access token.
 
 <dd>
