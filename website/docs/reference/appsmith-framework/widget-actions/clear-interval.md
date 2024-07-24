@@ -33,7 +33,7 @@ The `id` is a string that represents the unique identifier of the interval timer
 Here are a few examples of using `clearInterval()` in different situations:
 
 
-#### Stopping auto-refresh
+#### Stop auto-refresh
 
 <dd>
 

@@ -48,12 +48,13 @@ The type parameter allows you to configure the type of the alert message, which 
 - `error`
 - `warning`
 
-</dd>
-
 *Example*:
 ```javascript
 {{showAlert('Data submitted successfully', 'success');}}
 ```
+
+</dd>
+
 
 
 ## Usage
