@@ -29,9 +29,8 @@ A package that has already been created. For more information, see [Package and 
 
 Follow these steps to set up JS and query modules within the package.
 
-
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/vjD1OhwfW8Yz162XQ6KI?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  <iframe src="https://demo.arcade.software/xA1AYQZs2KIdFl5qwWD9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>
 </div>
 
@@ -69,11 +68,11 @@ WHERE category = {{inputs.category}};
 
 <dd>
 
-* To access the **Query module data in the JS module**, use the reference properties of the query module, like: `userData.data`.
+* To access the **Query module data in the JS module**, use the reference properties of the query module, like: `productData.data`.
 
-* To pass data from the **JS module to Query modules**, you can pass parameters at runtime using `run()`, like `{{ updateLogin.run({ id: user.id }) }}`.
+* To pass data from the **JS module to Query modules**, you can pass parameters at runtime using `run()`, like `{{ productData.run({ id: product.category }) }}`.
 
-* To access the **JS module data in the Query module**, create input parameters and use them inside the query, like `{{inputs.id}}`.
+* To access the **JS module data in the Query module**, create input parameters and use them inside the query, like `{{inputs.category}}`.
 
 
 
@@ -114,14 +113,14 @@ export default {
 
 5. Select the *JS* tab on the Entity Explorer, add the JS module, and configure it to **Run on page load**.
 
-6. Drag a Chart widget and configure the Series data property to display data from the JS module.
+6. Drag a Chart widget and configure the **Series data** property to display data from the JS module.
 
 <dd>
 
 *Example:*
 
 ```js
-{{JSModule11.fetchProductsByCategory.data}}
+{{productModule1.fetchProductsByCategory.data}}
 ```
 
 </dd>
@@ -136,7 +135,7 @@ export default {
 *Example:* 
 
 ```js
-{{JSModule11.fetchProductsByCategory(Select1.selectedOptionValue);}}
+{{productModule1.fetchProductsByCategory(Select1.selectedOptionValue);}}
 ```
 
 </dd>
