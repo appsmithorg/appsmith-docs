@@ -24,7 +24,7 @@ Appsmith enhances reusability by providing a feature set, which allows you to re
 
 ## Packages
 
-A package is a collection of JS and query modules that can be versioned and distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of JS and query modules that can be distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently.
 
 Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
 
@@ -34,11 +34,6 @@ Modules in Appsmith are integral components of a **Package** tailored. They are 
 
 Modules extend this capability by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
-<ZoomImage
-  src="/img/modules-con.png" 
-  alt="Modules image"
-  caption=""
-/>
 
 * **Tracking**: Modules enable effortless tracking of updates across all subscribing applications.
 * **Centralized Management**: Provides a centralized mechanism for efficiently managing and deploying updates.
@@ -46,53 +41,28 @@ Modules extend this capability by enabling users to track and manage updates acr
 * **Standardization Support**: Ideal for organizations aiming to enforce standardization in reusable work within their software ecosystem.
 
 
-**Limitations**
 
-* Direct binding of JS modules or query modules within each other is not possible, meaning you cannot call query modules inside other modules.
-* Importing or using custom JS libraries is not yet supported.
-* The creation of JSObjects within query modules is not supported
-* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
-
-
-
-
-### Types of modules
-
-#### Query modules
-
-Query Modules encapsulate and reuse database queries across multiple applications. They offer dynamic inputs for changing query parameters based on user interactions.
-
-* **Dynamic Configurability:** Allows passing distinct inputs from various apps without impacting the overall query configuration.
-* **Deployment Independence**: Updates to Query Modules only affect applications in _edit mode_, and do not impact the deployed version.
-
-
-
-#### JavaScript modules
-
-JavaScript Modules in Appsmith are reusable objects for JavaScript functions and objects. They promote code reusability and a standardized approach to data manipulation.
-
-* **Efficient Data Manipulation:** Facilitates the creation of datasource queries and JS objects, enabling efficient and standardized data manipulation within applications.
-* **Global Object Integration:** Allows seamless passing of JSObject values to queries using Appsmith Global Objects, enhancing flexibility in data handling.
-
-<!-- vale off -->
-
-<div className="tag-wrapper">
- <h4>UI Modules</h4>
-
-<Tags
-tags={[
-{ name: "Coming Soon", link: "", additionalClass: "neutral" }
-]}
+<ZoomImage
+  src="/img/modules-main.drawio.png" 
+  alt="Modules image"
+  caption=""
 />
 
-</div>
+### Types of Modules
 
-<!-- vale on -->
+* **Query Modules:** Encapsulate and reuse database queries, allowing dynamic inputs and deployment independence. Updates to Query Modules only affect applications in edit mode, and do not impact the deployed version.
 
-UI Modules provide the capability to encapsulate widgets and other UI components, promoting reusability in the user interface. 
+* **JavaScript Modules:** Reusable objects for JavaScript functions and objects, promoting efficient data manipulation and standardized data handling. You can pass data between query and JS modules for efficient data manipulation.
 
-* **Enhanced Modularity:** UI Modules allow for the encapsulation of widgets, queries and JS, promoting modular design practices for a more organized and maintainable user interface.
-* **Reusable Components:** You can create reusable UI components, reducing redundancy and accelerating the development process.
+* **UI Modules (Coming Soon):** Encapsulate widgets and UI components, enhancing modularity and reusability in the user interface.
+
+
+
+:::info
+* Importing or using custom JS libraries is not yet supported.
+* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
+:::
+
 
 ## Getting started
 
@@ -107,3 +77,6 @@ UI Modules provide the capability to encapsulate widgets and other UI components
    </div>
   
 </div>
+
+
+
