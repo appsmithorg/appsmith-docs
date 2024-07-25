@@ -40,7 +40,7 @@ This setting is not part of the action selection in the UI but can be configured
 #### format
 <dd> 
 
-The string specifies the MIME type of the copied text, which indicates the format of the content being copied to the clipboard. This parameter can be useful when dealing with specialized content types or when you need to ensure that the copied data is recognized correctly by other applications or systems. For example, specifying `application/json` is beneficial when copying JSON data, ensuring that the content is correctly interpreted as JSON.
+The string specifies the MIME type of the copied text, which indicates the format of the content being copied to the clipboard. This parameter can be useful when dealing with specialized content types or when you need to ensure that the copied data is recognized correctly by other applications or systems. 
 
 </dd>
 
