@@ -123,7 +123,7 @@ const sidebars = {
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
-                        '/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/remove-update-account-info',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/remove-update-account-info',
                       ],
 
                     },
