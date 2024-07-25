@@ -13,6 +13,7 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 * An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
 * An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
 * To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port ranges 80, 443, and 22 to the security group you created above.
+* To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
 * Ensure you have created the security group and the SSH key pair in the same region.
 * You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash. Hence, ensure you have set up and can access an external MongoDB instance hosting MongoDB V5.0 or later. For more information, see [External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb).
 
