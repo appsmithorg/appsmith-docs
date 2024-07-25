@@ -1,4 +1,8 @@
-# Remove Account Update Screen
+---
+description: This page shows you how to turn off account update setting in Keycloak.
+---
+
+# Turn off Keycloak Account Update Setting
 
 Appsmith uses Keycloak for managing user authentication. When a new user signs up, Keycloak registers the user and requests their information. When you configure SAML, it's ideal to turn off Keycloak capturing user information for registration since the user is already registered with the Identity Provider (IDP). This page provides instructions to remove the update info screen on Keycloak.
 
@@ -10,7 +14,7 @@ Appsmith uses Keycloak for managing user authentication. When a new user signs u
     ```
     Copy the Keycloak credentials from the `/appsmith-stacks/configuration/docker.env` file.
 
-## Turn off user information screen setting
+## Delete user attributes
 
 Follow these steps to turn off the user information screen using the Keycloak admin console:
 
