@@ -8,6 +8,9 @@ toc_max_heading_level: 2
 
 This page provides information about the `clearInterval()` function signature and parameters, which allows you to stop a repeating callback that was started with the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) method.
 
+<ZoomImage src="/img/clear-fun.png" alt="clearInterval()" caption="clearInterval()" />
+
+
 
 ## Signature
 

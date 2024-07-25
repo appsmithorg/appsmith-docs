@@ -8,7 +8,7 @@ toc_max_heading_level: 2
 This page provides information about the `showAlert()` function signature and parameters, which allows you to display a temporary toast-style alert message to the user for precisely 5 seconds. The duration of the alert message can't be modified.
 
 
-<ZoomImage src="/img/alert-fun.png" alt="showAlert()" caption="navigateTo()" />
+<ZoomImage src="/img/alert-fun.png" alt="showAlert()" caption="showAlert()" />
 
 
 ## Signature
