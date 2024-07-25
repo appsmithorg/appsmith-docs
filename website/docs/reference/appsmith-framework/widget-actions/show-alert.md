@@ -100,12 +100,12 @@ try {
 
 <dd>
 
-Asynchronous function alerts provide feedback once an asynchronous operation completes. This is useful for showing alerts after operations like navigation or data fetching have finished. For example, if you need to show an alert after navigating to a new page, use async-await to ensure the navigation is complete before displaying the alert.
+Asynchronous function alerts provide feedback once an asynchronous operation completes. This is useful for showing alerts after operations like navigation or data fetching have finished. For example, if you need to show an alert after a query execution is completed, use async-await to ensure the query has finished running before displaying the alert.
 
 ```js
 async function logout() {
-    await navigateToLoginPage(); // Wait for navigation to complete
-    showAlert('Logout Successful', 'success'); // Show the message after navigation is complete
+    await getUsers.run(); // Wait for the query execution to complete
+    showAlert('Logout Successful', 'success'); // Show the message after execution is complete
 }
 ```
 
