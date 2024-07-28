@@ -75,7 +75,6 @@ To access these values on the destination page, use:
 
 <dd>
 
-
 This parameter allows you to configure whether to open the page or URL in the same browser window or a new window. The default value is `SAME_WINDOW`, and you can select it from the action selector. If you are using it inside JS code, you can use:
 
 ```js
