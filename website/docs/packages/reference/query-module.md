@@ -2,7 +2,7 @@
 
 
 
-When you incorporate a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`), allowing for customized functionalities.
+When you add a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`).
 
 This page provides information about the module settings and properties available within the app, which allows you to configure the query and JS modules.
 
@@ -17,13 +17,12 @@ This page provides information about the module settings and properties availabl
 
 ## Query module instance
 
-When you integrate the query module into the app, you can access and modify the parameters that have been set up for the query module using the query editor. You have the option to include multiple query modules, whether they're from the same package or different ones, and supply parameters to each module according to your specific needs.
-
+These are all the properties and settings available for a Query Module instance inside any app. You have the option to add multiple query modules, whether from the same package or different ones, and pass parameters to each module according to your specific needs.
 
 
 ### Properties 
 
-These properties facilitate dynamic value transmission from your app to the query module. 
+These properties are only available if they are defined in the Query Module. 
 
 #### Inputs
 
@@ -32,7 +31,9 @@ These properties facilitate dynamic value transmission from your app to the quer
 
 The input property enables you to pass dynamic values from your app to the query module. With inputs, you can incorporate dynamic data retrieval based on user interactions or other widget bindings. 
 
-You cannot edit the **Inputs** name or query configuration directly from the App. However, you can pass different values to the available inputs at runtime using the `.run()` function. The values passed through `.run()` will take precedence over the default values set on the module instance page.
+You cannot edit the **Inputs** name or query configuration directly from the App. You can pass different values to the available inputs at runtime using the `.run()` function. The values passed through `.run()` will take precedence over the default values set on the module instance page.
+
+
 
 
 <ZoomImage
@@ -97,11 +98,7 @@ This property displays all the parameters available for the specified function.
 
 The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
 
-:::info
-When passing data from the app to the JS module using both **Inputs** and during **runtime** (e.g., `authUtils.login('email@domain.com', 'dsoi3$dfssn');`), the runtime parameters will take precedence over the values set in the UI.
-:::
-
-
+You can pass data either using this **input** property or by providing values during runtime inside an event `(e.g., authUtils.login('email@domain.com', 'dsoi3$dfssn');)`. If both methods are used, the runtime parameters will take precedence over the values set in the UI.
 
 *Example*: If you have a JS function with predefined parameters like `email` and `passwordHash`, and you want to pass Input widget data from the app to the JS module, you can use the **Inputs** property.
 
