@@ -743,6 +743,7 @@ const sidebars = {
           collapsed: true,
           label: 'How-to Guides',
           items: [
+            'packages/how-to-guides/pass-date-between-modules',
             'packages/how-to-guides/use-query-inside-js-module',],
         },
         {
@@ -750,8 +751,8 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
-            'packages/reference/query-module',
-            'packages/reference/package'
+            'packages/reference/package',
+            'packages/reference/query-module'
           ],
         }
       ]

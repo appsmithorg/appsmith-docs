@@ -4,6 +4,7 @@ sidebar_position: 1
 description: In this guide, you'll learn how to implement a custom Auth flow using an API with JWTs.
 ---
 
+
 # Integrate Custom Authentication
 
 This guide walks you through the process of building custom authentication and integrating your Appsmith applications with any authentication provider.
