@@ -41,7 +41,8 @@ The `message` parameter is a string that contains the text displayed in the aler
 
 <dd>
 
-The type parameter allows you to configure the type of the alert message, which determines the icon displayed in the toast message. It accepts the following string values:
+The `type` is an optional parameter that allows you to configure the type of the alert message, which determines the icon displayed in the toast message. It accepts the following string values:
+
 
 - `info`
 - `success`
