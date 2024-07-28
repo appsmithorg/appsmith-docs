@@ -4,15 +4,23 @@ This page shows how to download the entire Table or Query data in manageable chu
 
 You can use the built-in [download property](/reference/widgets/table#allow-download-boolean) of the Table widget to download data directly. However, **if the data is paginated, only the rows on the current page are downloaded.** To download the entire dataset, follow these steps:
 
+
+## Download Data in Chunks via SQL
+
 1. Create a new query to fetch the data:
 
 <dd>
 
-*Example:*
 
-```sql
-SELECT * FROM public."users" LIMIT 50 OFFSET 0
+*Example:* This query retrieves data from the `users` table, dynamically using the provided `limit` and `offset` parameters. If no `limit` is specified, it defaults to 50 rows; if no `offset` is specified, it defaults to 0.
+
+ ```sql
+SELECT * FROM public."users" 
+LIMIT {{this.params.limit}} 
+OFFSET {{this.params.offset}}
 ```
+
+Update the query to dynamically pass the `limit` and `offset` parameters using the `this.params` object, which provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
 
 </dd>
 
@@ -43,35 +51,28 @@ export default {
     async fetchAndDownloadUsers() {
         const chunkSize = 100; // Number of rows per chunk
         let offset = 0; // Offset for pagination
-        let moreDataAvailable = true;
 
         try {
-            while (moreDataAvailable) {
-                // Run the query with the current offset and limit
-                 // highlight-next-line
-                await getUsers.run({ limit: chunkSize, offset: offset });
+            while (true) {
+                const result = await getUsers.run({ limit: chunkSize, offset });
 
                 // Check if the query returned any data
-                if (getUsers.data && getUsers.data.length > 0) {
-                    // Store the fetched data in a variable
-                    const chunkData = getUsers.data;
-
+                if (result && result.length > 0) {
                     // Append the fetched data to usersData
-                    this.usersData = this.usersData.concat(chunkData);
+                    this.usersData = [...this.usersData, ...result];
                     console.log('Fetched chunk at offset:', offset);
 
                     // Increment the offset for the next chunk
                     offset += chunkSize;
                 } else {
                     // No more data available, exit the loop
-                    moreDataAvailable = false;
+                    break;
                 }
             }
 
             // Download or process the data
-             // highlight-next-line
             download(this.usersData, 'userdata', 'text/csv');
-            console.log(this.usersData);
+            console.log('Data downloaded:', this.usersData);
 
         } catch (error) {
             console.error('An error occurred:', error);
@@ -79,9 +80,7 @@ export default {
             // Clear the data and reset variables
             this.resetData();
             console.log('Data has been reset:', this.usersData);
-        }
-    }
-}
+    }}}
 ```
 
 The code may vary based on your datasource, so update the query and parameters accordingly to fit your specific data structure and requirements.
@@ -89,32 +88,7 @@ The code may vary based on your datasource, so update the query and parameters a
 
 </dd>
 
- 3. Update the query to dynamically pass the `limit` and `offset` parameters using the `this.params` object, which provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
-
-
-<dd>
-
-*Example:* This query retrieves data from the `users` table, dynamically using the provided `limit` and `offset` parameters. If no `limit` is specified, it defaults to 50 rows; if no `offset` is specified, it defaults to 0.
-
- ```sql
- SELECT * FROM public."users" 
-LIMIT COALESCE({{this.params.limit}}, 50) 
-OFFSET COALESCE({{this.params.offset}}, 0)
-```
-
-*Example 2:* This query retrieves all user data from the `users` table where the country is set to `Canada`, with the ability to dynamically adjust the `limit` and `offset` parameters.
-
-
-```sql
-SELECT * FROM public."users"
-WHERE country = 'Canada'
-LIMIT COALESCE({{this.params.limit}}, 50)
-OFFSET COALESCE({{this.params.offset}}, 0)
-```
-
-</dd>
-
-4. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events:
+3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events:
 
 <dd>
 
@@ -127,6 +101,113 @@ OFFSET COALESCE({{this.params.offset}}, 0)
 If the fetched data is no longer needed, it is recommended to clear or delete the query to mitigate potential performance impacts.
 
 </dd>
+
+
+## Download Data in Chunks via API
+
+To handle large datasets efficiently and download them in chunks using API, follow these steps:
+
+1. Configure Your Backend API to Support Pagination.
+
+
+<dd>
+
+*Example:* You can set up your backend API to handle pagination by accepting `limit` and `offset` parameters. This approach enables you to fetch data in chunks rather than retrieving the entire dataset at once.
+
+
+```js
+// Backend API endpoint example
+app.get('/api/users', async (req, res) => {
+    const limit = parseInt(req.query.limit) || 50;
+    const offset = parseInt(req.query.offset) || 0;
+
+    try {
+        const users = await UserModel.findAll({
+            limit: limit,
+            offset: offset
+        });
+        res.json(users);
+    } catch (error) {
+        res.status(500).send('Server Error');
+    }
+});
+```
+
+Adjust the `limit` and `offset` parameters as needed for your specific API and data structure.
+
+
+</dd>
+
+2. Create a JS function to interact with the API and fetch data in manageable chunks. 
+
+<dd>
+
+
+```js
+export default {
+    usersData: [],
+
+    // Method to reset variables
+    resetData() {
+        this.usersData = [];
+    },
+
+    // Method to fetch and download user data in chunks
+    async fetchAndDownloadUsers() {
+        const chunkSize = 100; // Number of rows per chunk
+        let offset = 0; // Offset for pagination
+
+        try {
+            while (true) {
+                // Run the API9 query with the current limit and offset
+                await userAPI.run({ limit: chunkSize, offset: offset });
+                const result = userAPI.data; // Get the query data
+
+                // Check if the response contains data
+                if (result.length > 0) {
+                    // Append the fetched data to usersData
+                    this.usersData = [...this.usersData, ...result];
+                    console.log('Fetched chunk at offset:', offset);
+
+                    // Increment the offset for the next chunk
+                    offset += chunkSize;
+                } else {
+                    // No more data available, exit the loop
+                    break;
+                }
+            }
+
+            // Download or process the data
+            download(this.usersData, 'userdata', 'text/csv');
+            console.log('Data downloaded:', this.usersData);
+
+        } catch (error) {
+            console.error('An error occurred:', error);
+        } finally {
+            // Clear the data and reset variables
+            this.resetData();
+            console.log('Data has been reset:', this.usersData);
+        }
+    }
+}
+```
+
+</dd>
+
+3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events:
+
+<dd>
+
+*Example*:
+
+```js
+{{UserDataDownloader.fetchAndDownloadUsers();}}
+```
+
+If the fetched data is no longer needed, it is recommended to clear or delete the query to mitigate potential performance impacts.
+
+</dd>
+
 
 ## See also
 
