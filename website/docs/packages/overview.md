@@ -24,38 +24,29 @@ Appsmith enhances reusability by providing a feature set, which allows you to re
 
 ## Packages
 
-A package is a collection of JS and query modules that can be distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently.
-
-Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
-
-### Modules
-
-Modules in Appsmith are integral components of a **Package** tailored. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace.
-
-Modules extend this capability by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
-
-
-* **Tracking**: Modules enable effortless tracking of updates across all subscribing applications.
-* **Centralized Management**: Provides a centralized mechanism for efficiently managing and deploying updates.
-* **Versioned Control**: Modules support versioning, allowing users to manage different versions of the same module concurrently.
-* **Standardization Support**: Ideal for organizations aiming to enforce standardization in reusable work within their software ecosystem.
-
+A package is a collection of JS and query modules that can be distributed across instances. Inside packages, you can create multiple queries and JS modules, allowing you to bundle and organize your application logic efficiently. Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
 
 
 <ZoomImage
-  src="/img/modules-main.drawio.png" 
+  src="/img/modules-landing.png" 
   alt="Modules image"
   caption=""
 />
 
-### Types of Modules
+### Modules
 
-* **Query Modules:** Encapsulate and reuse database queries, allowing dynamic inputs and deployment independence. Updates to Query Modules only affect applications in edit mode, and do not impact the deployed version.
+Modules in Appsmith are integral components of a **Package** tailored. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace. Modules extend this capability by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
 
-* **JavaScript Modules:** Reusable objects for JavaScript functions and objects, promoting efficient data manipulation and standardized data handling. You can pass data between query and JS modules for efficient data manipulation.
 
-* **UI Modules (Coming Soon):** Encapsulate widgets and UI components, enhancing modularity and reusability in the user interface.
 
+
+#### Types of Modules
+
+* **Query Modules:**  A reusable datasource query that can be used across different apps and pages. Query Modules allow you to pass dynamic inputs and are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
+
+* **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. These modules support data passing between query and JS modules, facilitating seamless integration and reuse across applications.
+
+* **UI Modules (Coming Soon):** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
 
 
 :::info
