@@ -152,6 +152,9 @@ Adjust the `limit` and `offset` parameters as needed for your specific API and d
 GET https://mock-api.appsmith.com/users?limit={{this.params.limit}}&offset={{this.params.offset}}
 ```
 
+For information on parameters, see [Parameterised Queries](/connect-data/concepts/dynamic-queries). 
+
+
 </dd>
 
 
