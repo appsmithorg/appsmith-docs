@@ -71,6 +71,7 @@ export default {
             }
 
             // Download or process the data
+             // highlight-next-line
             download(this.usersData, 'userdata', 'text/csv');
             console.log('Data downloaded:', this.usersData);
 
@@ -141,7 +142,7 @@ Adjust the `limit` and `offset` parameters as needed for your specific API and d
 
 </dd>
 
-2. In Appsmith, create a new query to fetch data from the API using `limit` and `offset` parameters:
+2. In Appsmith, create a new API query to fetch data from the API using `limit` and `offset` parameters:
 
 <dd>
 
@@ -211,10 +212,8 @@ export default {
                 }
             }
 
-            // Log the accumulated data before downloading
-            console.log('Accumulated data:', this.usersData);
-
             // Download or process the data
+             // highlight-next-line
             download(this.usersData, 'userdata', 'text/csv');
             console.log('Data downloaded:', this.usersData);
 
