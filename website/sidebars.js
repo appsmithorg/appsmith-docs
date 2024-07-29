@@ -123,6 +123,7 @@ const sidebars = {
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
                       ],
 
                     },
@@ -177,7 +178,6 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/frame-ancestors',
                 'getting-started/setup/environment-variables',
                 'advanced-concepts/version-control-with-git/updating-local-file-path',
-                'getting-started/setup/instance-configuration/remove-update-account-info',
               ],
             },
             {

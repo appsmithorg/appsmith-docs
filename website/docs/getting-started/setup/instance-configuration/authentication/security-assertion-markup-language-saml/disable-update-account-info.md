@@ -1,10 +1,10 @@
 ---
-description: This page shows you how to turn off account update setting in Keycloak.
+description: This page shows you how to disable account update setting in Keycloak.
 ---
 
-# Turn off Keycloak Account Update Setting
+# Disable Account Update Setting
 
-Appsmith uses Keycloak for managing user authentication. When a new user signs up, Keycloak registers the user and requests their information. When you configure SAML, it's ideal to turn off Keycloak capturing user information for registration since the user is already registered with the Identity Provider (IDP). This page provides instructions to remove the update info screen on Keycloak.
+Appsmith uses Keycloak for managing user authentication. When a new user signs up, Keycloak registers the user and requests their information. When you configure SAML, it's ideal to disable Keycloak capturing user information for registration since the user is already registered with the Identity Provider (IDP). This page provides instructions to disable the account update screen on Keycloak.
 
 ## Prerequisites
 * Ensure you have access to the Keycloak admin console.
