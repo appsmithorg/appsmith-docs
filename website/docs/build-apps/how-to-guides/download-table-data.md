@@ -5,7 +5,7 @@ This page shows how to download the entire Table or Query data in manageable chu
 You can use the built-in [download property](/reference/widgets/table#allow-download-boolean) of the Table widget to download data directly. However, **if the data is paginated, only the rows on the current page are downloaded.** To download the entire dataset, follow these steps:
 
 
-## Download Data in Chunks via SQL
+## Download Data in chunks via SQL
 
 1. Create a new query to fetch the data:
 
@@ -104,7 +104,7 @@ If the fetched data is no longer needed, it is recommended to clear or delete th
 </dd>
 
 
-## Download Data in Chunks via API
+## Download Data in chunks via API
 
 To handle large datasets efficiently and download them in chunks using API, follow these steps:
 
