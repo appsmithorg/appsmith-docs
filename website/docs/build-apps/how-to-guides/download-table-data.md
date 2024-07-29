@@ -108,7 +108,7 @@ If the fetched data is no longer needed, it is recommended to clear or delete th
 
 To handle large datasets efficiently and download them in chunks using API, follow these steps:
 
-1. Configure Your Backend API to support pagination.
+1. Configure Your **Backend** API to support pagination.
 
 
 <dd>
