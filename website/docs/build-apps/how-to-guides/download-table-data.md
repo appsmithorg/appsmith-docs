@@ -177,7 +177,7 @@ export default {
 
         try {
             while (moreDataAvailable) {
-                // Run the API9 query with the current limit and offset
+                // Run the query with the current limit and offset
                 await userAPI.run({ limit: limit, offset: offset });
                 const result = userAPI.data; // Get the query data
 
