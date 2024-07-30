@@ -17,7 +17,9 @@ This page provides information about the module settings and properties availabl
 
 ## Query module instance
 
-These are all the properties and settings available for a Query Module instance within any app. You can add multiple query modules, whether from the same package or different ones, and pass parameters to each module according to your specific needs.
+These are all the properties and settings available for a Query Module instance within any app. When you add multiple query modules, whether from the same package or different ones, these properties will be available to configure each module instance according to your specific needs.
+
+
 
 
 ### Properties 
@@ -89,7 +91,8 @@ When enabled, this property displays a confirmation modal each time a query is e
 
 ## JS module instance
 
-These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App. Additionally, you can add multiple JS modules from the same package, each with different configurations.
+These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module to your app. When you add multiple JS modules, whether from the same package or different ones, you can configure each module instance using these properties to meet your specific needs.
+
 
 
 ### Parameters 
