@@ -97,7 +97,7 @@ These properties are customizable options available within the JS editor of the 
 
 ### Parameters 
 
-This property displays all the parameters available for the specified function.
+This property displays all the parameters available per function.
 
 
 #### Inputs
@@ -127,7 +127,7 @@ email:
 {{email_input.text}}
 
 passwordHash:
-{{pass_input.text}}
+{{PasswordUtils.hashPassword(pass_input.text)}}
 ```
  <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance | App" />
 
