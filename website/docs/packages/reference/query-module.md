@@ -8,7 +8,7 @@ This page provides information about the module settings and properties availabl
 
 
 <ZoomImage
-  src="/img/query-ins.drawio.png" 
+  src="/img/query-module-ins.drawio.png" 
   alt=""
   caption=""
 />
@@ -17,7 +17,7 @@ This page provides information about the module settings and properties availabl
 
 ## Query module instance
 
-These are all the properties and settings available for a Query Module instance inside any app. You have the option to add multiple query modules, whether from the same package or different ones, and pass parameters to each module according to your specific needs.
+These are all the properties and settings available for a Query Module instance within any app. You can add multiple query modules, whether from the same package or different ones, and pass parameters to each module according to your specific needs.
 
 
 ### Properties 
@@ -29,7 +29,7 @@ These properties are only available if they are defined in the Query Module.
 
 <dd>
 
-The input property enables you to pass dynamic values from your app to the query module. With inputs, you can incorporate dynamic data retrieval based on user interactions or other widget bindings. 
+The input property lets you pass dynamic values from your app to the query module, which allows you to update data based on user interactions or widget bindings.
 
 You cannot edit the **Inputs** name or query configuration directly from the App. You can pass different values to the available inputs at runtime using the `.run()` function. The values passed through `.run()` will take precedence over the default values set on the module instance page.
 
@@ -77,7 +77,10 @@ When enabled, this property allows the query to automatically execute each time 
 
 <dd>
 
-When enabled, this property displays a confirmation modal each time before refreshing the data. This ensures that users have the opportunity to confirm their action before executing the query, preventing unintended data refreshes.
+When enabled, this property displays a confirmation modal before each data refresh. This ensures that users can confirm their action before executing the query, preventing unintended data updates.
+
+
+
 
 </dd>
 
