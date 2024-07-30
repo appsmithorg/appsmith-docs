@@ -77,7 +77,9 @@ When enabled, this property allows the query to automatically execute each time 
 
 <dd>
 
-When enabled, this property displays a confirmation modal before each data refresh. This ensures that users can confirm their action before executing the query, preventing unintended data updates.
+When enabled, this property displays a confirmation modal each time a query is executed. This ensures that users can confirm their action before executing the query, preventing unintended data updates.
+
+
 
 
 
