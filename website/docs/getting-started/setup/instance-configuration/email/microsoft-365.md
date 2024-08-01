@@ -9,26 +9,18 @@ This page guides you through configuring Microsoft 365 (Outlook) as an email ser
 ## Prerequisites
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-- A valid [Microsoft 365](https://www.office.com/) subscription with access to Outlook services.
+- Your email address must be verified. For more information, visit how to verify your [Outlook account](https://support.microsoft.com/en-au/office/how-to-verify-your-outlook-com-account-0b493d5c-9390-45ca-81b6-1bb1314caba9).
+- Access to the Admin Settings page on your Appsmith instance. If you need access, contact your Instance Administrator.
+
+
+:::info
+Microsoft 365 limits sending messages. For more information, see [Sending limits in Outlook](https://support.microsoft.com/en-us/office/sending-limits-in-outlook-com-279ee200-594c-40f0-9ec8-bb6af7735c2e).
+:::
 
 ## Configure Microsoft 365 on Appsmith
 
-:::info
-Microsoft 365 limits sending messages. For more information, see [Sending limits in Outlook.com](https://support.microsoft.com/en-us/office/sending-limits-in-outlook-com-279ee200-594c-40f0-9ec8-bb6af7735c2e).
-:::
-
-On Appsmith, you can configure email by using one of the following ways:
-
-- [Admin settings](#admin-settings)
-- [Environment Variables](#environment-variables)
-
-### Admin settings
-
-:::caution Attention
-If you have configured email using [environment variables](#environment-variables) for your instance, it takes precedence over the configuration provided through the Admin Settings UI.
-:::
-
 Follow these steps to configure your email provider using Admin Settings:
+
 
 1. Log into your Appsmith instance as a superuser.
 
@@ -43,61 +35,66 @@ Follow these steps to configure your email provider using Admin Settings:
 
 <dd>
 
-**SMTP host**
+* **SMTP host**: Add the server address used to send emails. For Microsoft 365, set the SMTP host as:
 
-The SMTP host is the server address used to send emails. This address allows your self-hosted Appsmith instance to connect to Microsoft's email server and send emails. For Microsoft 365, the SMTP host is:
+<dd>
 
 ```
 smtp.office365.com
 ```
 
-This host is the same for both TLS and non-TLS configurations. For more information, see [SMTP settings](https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040)
+This host is the same for both TLS and non-TLS configurations. For more information, see [SMTP settings](https://support.microsoft.com/en-us/office/pop-imap-and-smtp-settings-for-outlook-com-d088b986-291d-42b8-9564-9c414e2aa040).
+
+
+</dd>
+
+
+* **SMTP port**: Set the network port based on your Transport Layer Security (TLS) configuration:
+
+
+<dd>
+
+* With TLS enabled: `587`
+
+* With TLS disabled: `25`
+
+</dd>
+
+* **From address**: Add the verified email address that you want to appear as the sender in the **From** field of outgoing emails. For example, use `support@yourcompany.com` .
+
+* **Reply-to Address**: Add the verified email address where replies to your emails should be sent. This is useful if you want replies to be sent to a different email address than the one in the From field. 
+
+
+* **Enable TLS protected connection**: When enabled, this property ensures that the communication between your self-hosted Appsmith instance and the Microsoft 365 SMTP server is encrypted and secure. 
+
+<dd>
+
+Use port `587` with STARTTLS for TLS, and port `25` without encryption if TLS is not used.
+
+
+</dd>
 
 
 
-**SMTP port**
-
-The SMTP port is the network port used by the SMTP server to communicate and send emails. Depending on whether you are using Transport Layer Security (TLS) or not, you need to use different port numbers:
-
-* With TLS: `587`
-
-* Without TLS: `25`
+* **SMTP username**: Add the SMTP username, which is used to authenticate with the SMTP server. This is usually the email address or username associated with your email account.
 
 
-**From address**
+* **SMTP password**: Add the SMTP password, which is used with the SMTP username to authenticate with the SMTP server. This is the same password you use to access your email account.
 
-
-The From address is the email address that appears in the **From** field of the emails sent from your application. It indicates the sender of the email. Add a verified email address to be shown in the From field when users receive an email. 
-
-To verify...
-
-
-**Reply-to Address**
-
-The Reply-to address is the email address where replies to your sent emails will be directed. This is useful if you want replies to be sent to a different email address than the one in the From field. Add a verified email address where users can send their replies and contact you.
-
-
-**Enable TLS protected connection**
-
-When enabled, this property ensures that the communication between your self-hosted Appsmith instance and the Microsoft 365 SMTP server is encrypted and secure. Transport Layer Security (TLS) helps protect the data being transmitted, preventing unauthorized access and eavesdropping.
-
-If you enable or disable TLS, the port configuration changes: use port `587` with STARTTLS for TLS, and port `25` without encryption if TLS is not used.
-
-
-**SMTP username**
-
-The SMTP username is the credential used to authenticate with the SMTP server to send emails. It typically corresponds to the email address or username associated with your email account.
-
-
-**SMTP password**
-
-The SMTP password is used along with the SMTP username to authenticate with the SMTP server for sending emails. It is the same password you use to access your email account.
+<dd>
 
 If your email account has two-step verification enabled, you need to generate an app-specific password for SMTP access. For more information, see [Manage app passwords](https://support.microsoft.com/en-us/account-billing/manage-app-passwords-for-two-step-verification-d6dc8c6d-4bf7-4851-ad95-6d07799387e9).
 
 
 </dd>
 
-5. Click the **Send test email** button to verify the configuration. A toast message appears at the top of the page, indicating the success or failure of the test. Additionally, a test email is sent to your inbox on successful verification.
+</dd>
+
+5. Click the ****Send test email**** button to verify the configuration. If verification is successful, a test email will be sent to your inbox, and a toast message will appear at the top of the page indicating the result.
 
 6. Click the **Save & Restart** button to save the configurations and restart the instance with the updated settings.
+
+
+:::caution Attention
+If you have configured email using [environment variables](#environment-variables) for your instance, it takes precedence over the configuration provided through the Admin Settings UI.
+:::
