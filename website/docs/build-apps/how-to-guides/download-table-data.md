@@ -2,7 +2,6 @@
 
 This page shows how to download the entire Table or Query data in manageable chunks to prevent performance issues on your application. 
 
-You can use the built-in [download property](/reference/widgets/table#allow-download-boolean) of the Table widget to download data directly. However, **if the data is paginated, only the rows on the current page are downloaded.** To download the entire dataset, follow these steps:
 
 
 ## Download Data in chunks via SQL
@@ -25,7 +24,7 @@ Update the query to dynamically pass the `limit` and `offset` parameters using t
 </dd>
 
 
-2. Create a new JSObject and add a function to fetch the data in chunks to handle large datasets efficiently and avoid performance issues.
+2. Create a new JSObject and add a function to fetch the data in chunks to handle large datasets efficiently.
 
 <dd>
 
@@ -34,7 +33,7 @@ Update the query to dynamically pass the `limit` and `offset` parameters using t
 *Example:*
 
 - Create a function that retrieves user data in batches of 100 rows from a database, continuously appending each batch to a `usersData` array until the entire dataset is retrieved.
-- To download the data to your local machine, use the [download()](/reference/appsmith-framework/widget-actions/download) function.
+- Use the [download()](/reference/appsmith-framework/widget-actions/download) function to download the data to your local machine.
 - Upon successfully fetching and downloading all data, it resets the `usersData` array to clear the data.
 
 
@@ -176,70 +175,44 @@ export default {
     async fetchAndDownloadUsers() {
         let offset = 0; // Initial offset
         const limit = 100; // Number of rows per chunk
-        let moreDataAvailable = true; // Control variable for the loop
 
         try {
-            while (moreDataAvailable) {
+            while (true) {
                 // Run the query with the current limit and offset
                 await userAPI.run({ limit: limit, offset: offset });
                 const result = userAPI.data; // Get the query data
 
-                // Log the result to check if data is being fetched
-                console.log('API result:', result);
-
                 // Check if the response contains data
-                if (result && result.users) {
-                    if (result.users.length > 0) {
-                        // Append the fetched data to usersData
-                        this.usersData = [...this.usersData, ...result.users];
-                        console.log('Fetched data from offset:', offset);
+                if (result && result.users && result.users.length > 0) {
+                    // Append the fetched data to usersData
+                    this.usersData = [...this.usersData, ...result.users];
 
-                        // Check if there are users on the next page
-                        // If result.users length is less than limit, assume no more data
-                        if (result.users.length < limit) {
-                            moreDataAvailable = false;
-                            console.log('No more data available.');
-                        } else {
-                            // Increment the offset for the next request
-                            offset += limit;
-                        }
-                    } else {
-                        // No users found, stop fetching
-                        moreDataAvailable = false;
-                        console.log('No users found with current offset.');
-                    }
+                    // Check if there are users on the next page
+                    if (result.users.length < limit) break;
+
+                    // Increment the offset for the next request
+                    offset += limit;
                 } else {
-                    // Unexpected API response structure
-                    moreDataAvailable = false;
-                    console.error('Unexpected API response structure.');
+                    // Stop fetching if no more data or unexpected response structure
+                    break;
                 }
             }
 
-            // Download or process the data
-             // highlight-next-line
-            download(this.usersData, 'userdata', 'text/csv');
-            console.log('Data downloaded:', this.usersData);
-
+            // Download the data
+            download(this.usersData, 'userdata.csv', 'text/csv');
         } catch (error) {
             console.error('An error occurred:', error);
         } finally {
             // Clear the data and reset variables
             this.resetData();
-            console.log('Data has been reset:', this.usersData);
-    }}}
+    }}};
 ```
 
 </dd>
 
-3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events:
+3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events.
 
 <dd>
-
-*Example*:
-
-```js
-{{UserDataDownloader.fetchAndDownloadUsers();}}
-```
 
 Once the function is executed, the data is downloaded to your local machine automatically. If the fetched data is no longer needed, it is recommended to clear or delete the query to mitigate potential performance impacts.
 
