@@ -166,7 +166,7 @@ Once you have completed the installation process, consider performing the tasks 
     <hr/>
     <div className="containerDescription">
       Set up a custom domain for your Appsmith instance and secure it with SSL. A default SSL certificate from Let's Encrypt is provided. If you use a custom SSL certificate, you will need to <a href="/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate">
-        <strong>install custom CA root certificates</strong>
+        install custom CA root certificates
       </a> to ensure proper security and integration. <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
     </div>
     
@@ -174,15 +174,15 @@ Once you have completed the installation process, consider performing the tasks 
 
   <div className="containerColumnSampleApp columnGrid column-two">
     <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/update-appsmith">
+      <a href="/getting-started/setup/instance-management/update-appsmith">
         <strong>Update Appsmith</strong>
       </a>
     </div>
     <hr/>
     <div className="containerDescription">
-      Update Appsmith to the latest version on your self-hosted Appsmith instance to benefit from the latest features and improvements.  <a href="/getting-started/setup/instance-configuration/update-appsmith">Learn more about updating Appsmith</a>
+      Update Appsmith to the latest version on your self-hosted Appsmith instance to benefit from the latest features and improvements. <a href="/getting-started/setup/instance-management/update-appsmith">Learn more about updating Appsmith</a>
     </div>
-   
+
   </div>
 </div>
 
