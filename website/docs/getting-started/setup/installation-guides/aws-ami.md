@@ -101,7 +101,7 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr/>
     <div className="containerDescription">
-      Configure SSO to allow users to sign in using your identity provider. Appsmith supports various SSO providers, including Google and GitHub, using protocols like SAML and OpenID. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+      Configure SSO to allow users to sign in using your identity provider. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
     </div>
     
   </div>
@@ -114,7 +114,7 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr/>
     <div className="containerDescription">
-      Set up an email service to enable Appsmith to send notifications and alerts. You can configure providers like AWS SES, Gmail, or others. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+      Set up an email service to enable Appsmith to send notifications and alerts. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
     </div>
     
   </div>
@@ -129,9 +129,7 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr/>
     <div className="containerDescription">
-      Set up a custom domain for your Appsmith instance and secure it with SSL. A default SSL certificate from Let's Encrypt is provided. If you use a custom SSL certificate, you will need to <a href="/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate">
-        <strong>install custom CA root certificates</strong>
-      </a> to ensure proper security and integration. <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
+      Set up a custom domain for your Appsmith instance and secure it with SSL <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
     </div>
     
   </div>
