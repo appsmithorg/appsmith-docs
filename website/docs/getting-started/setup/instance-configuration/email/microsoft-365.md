@@ -4,7 +4,7 @@ description: Configure Microsoft 365 to invite users to your Appsmith installati
 
 # Microsoft 365
 
-This page guides you through configuring Microsoft 365 (Outlook) as an email service provider on your self-hosted instance.
+This page shows you how to configure Microsoft 365 (Outlook) as an email service provider on your self-hosted instance.
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ Microsoft 365 limits sending messages. For more information, see [Sending limits
 Follow these steps to configure your email provider using Admin Settings:
 
 
-1. Log into your Appsmith instance as a superuser.
+1. Log into your Appsmith instance.
 
 2. Go to the **Admin Settings** screen.
 
@@ -39,7 +39,7 @@ Follow these steps to configure your email provider using Admin Settings:
 
 <dd>
 
-* **SMTP host**: Add the server address used to send emails. For Microsoft 365, set the SMTP host as:
+* **SMTP host**: Add the Microsoft 365 server address to send emails, as shown below:
 
 <dd>
 
@@ -53,14 +53,14 @@ This host is the same for both TLS and non-TLS configurations. For more informat
 </dd>
 
 
-* **SMTP port**: Set the network port based on your Transport Layer Security (TLS) configuration:
+* **SMTP port**: Set the network port based on your configuration:
 
 
 <dd>
 
-* With TLS enabled: `587`
+* If TLS is enabled, set it to `587`.
 
-* With TLS disabled: `25`
+* If TLS is disabled, set it to `25`.
 
 </dd>
 
@@ -69,7 +69,7 @@ This host is the same for both TLS and non-TLS configurations. For more informat
 * **Reply-to Address**: Add the verified email address where replies to your emails should be sent. This is useful if you want replies to be sent to a different email address than the one in the From field. 
 
 
-* **Enable TLS protected connection**: When enabled, this property ensures that the communication between your self-hosted Appsmith instance and the Microsoft 365 SMTP server is encrypted and secure. 
+* **Enable TLS protected connection**: Enable this property if you want to ensure that the communication between your self-hosted Appsmith instance and the Microsoft 365 SMTP server is encrypted and secure.
 
 <dd>
 
@@ -99,6 +99,3 @@ If your email account has two-step verification enabled, you need to generate an
 6. Click the **Save & Restart** button to save the configurations and restart the instance with the updated settings.
 
 
-:::caution Attention
-If you have configured email using [environment variables](#environment-variables) for your instance, it takes precedence over the configuration provided through the Admin Settings UI.
-:::
