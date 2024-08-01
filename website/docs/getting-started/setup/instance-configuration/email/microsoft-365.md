@@ -17,6 +17,12 @@ This page guides you through configuring Microsoft 365 (Outlook) as an email ser
 Microsoft 365 limits sending messages. For more information, see [Sending limits in Outlook](https://support.microsoft.com/en-us/office/sending-limits-in-outlook-com-279ee200-594c-40f0-9ec8-bb6af7735c2e).
 :::
 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+<iframe src="https://demo.arcade.software/t9NdlricNFdK0ZRAp0Jd?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Create workflow">
+</iframe>
+</div> 
+
+
 ## Configure Microsoft 365 on Appsmith
 
 Follow these steps to configure your email provider using Admin Settings:
@@ -27,8 +33,6 @@ Follow these steps to configure your email provider using Admin Settings:
 2. Go to the **Admin Settings** screen.
 
 3. Select **Email** from the left nav bar.
-
-<ZoomImage src="/img/admin-settings-configure-email.png" alt="Email service provider" caption="Configure Microsoft 365 as an email service provider" />
 
 4. Configure the parameters as shown below:
 
