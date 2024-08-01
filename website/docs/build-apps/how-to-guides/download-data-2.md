@@ -6,9 +6,10 @@ This page shows how to download the entire Table or Query data in manageable chu
 
 ## Download Data in chunks 
 
-To handle large datasets efficiently, download data in smaller, manageable chunks. Follow these steps to download data in chunks:
+Follow these steps to download data in chunks:
 
-1. Create a new query to fetch the data:
+1. Create a new query to fetch paginated data
+
 
 <dd>
 
@@ -16,7 +17,8 @@ To handle large datasets efficiently, download data in smaller, manageable chunk
 
 <dd>
 
-This query retrieves data from the `users` table using dynamic `limit` and `offset` parameters with `this.params` for pagination. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+To fetch user data using dynamic `limit` and `offset` values, create a query like this, passing the `limit` and `offset` values through `this.params`. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+
 
  ```sql
 SELECT * FROM public."users" 
@@ -161,6 +163,8 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 
 <dd>
 
+*Example:*
+
 
 ```js
 http://example.com/download-file
@@ -172,6 +176,9 @@ http://example.com/download-file
 3. Create a new JSObject and add a function to fetch and download the file:
 
 <dd>
+
+*Example:* If the API provides a file URL, you can download the data by using the following code:
+
 
 ```js
 // Assuming userAPI.data contains the file URL
