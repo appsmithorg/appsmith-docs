@@ -103,6 +103,65 @@ helm repo add appsmith https://helm.appsmith.com
 
 2. Replace `appsmith-ee` with `appsmith` in the commands on this page.
 
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/installation-guides/kubernetes/configure-high-availability">
+        <strong>Set Up High Availability (HA)</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Configure high availability and scalability for your Appsmith deployment on Kubernetes to ensure uninterrupted access to your applications. <a href="/getting-started/setup/installation-guides/kubernetes/configure-high-availability">Learn more about setting up high availability</a>
+    </div>
+   
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <a href="/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online">
+        <strong>Expose K8s to Internet</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Configure your Appsmith Kubernetes installation to be accessible from the internet, enabling remote access and usage. <a href="/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online">Learn more about exposing Appsmith online</a>
+    </div>
+    
+  </div>
+</div>
+
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/authentication">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Enable SSO to allow users to log in using your identity provider. Appsmith supports multiple SSO providers through SAML and OpenID protocols. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+    </div>
+   
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/email">
+        <strong>Configure Email Service</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. You can use providers such as AWS SES, Gmail, or others. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+    </div>
+      </div>
+</div>
+
 ## Troubleshooting
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
