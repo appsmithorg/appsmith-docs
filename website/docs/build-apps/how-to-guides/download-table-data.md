@@ -206,3 +206,7 @@ The code fetches the file content from this URL, and then triggers `download()` 
 
 </dd>
 
+## See also
+
+* [Download PDF File](/reference/appsmith-framework/widget-actions/download)
+* [Download file using authenticated URL](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-public-url)
