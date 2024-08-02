@@ -4,22 +4,51 @@ This page shows how to download the entire Table or Query data in manageable chu
 
 
 
-## Download Data in chunks via SQL
+## Download data in chunks 
 
-1. Create a new query to fetch the data:
+Follow these steps to download data in chunks:
+
+1. Create a new query to fetch paginated data
+
 
 <dd>
 
+*Example 1:* Using SQL
 
-*Example:* This query retrieves data from the `users` table, dynamically using the provided `limit` and `offset` parameters. If no `limit` is specified, it defaults to 50 rows; if no `offset` is specified, it defaults to 0.
+<dd>
+
+To fetch user data using dynamic `limit` and `offset` values, create a query like this, passing the `limit` and `offset` values through `this.params`. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+
 
  ```sql
 SELECT * FROM public."users" 
 LIMIT {{this.params.limit}} 
 OFFSET {{this.params.offset}}
 ```
+</dd>
 
-Update the query to dynamically pass the `limit` and `offset` parameters using the `this.params` object, which provides access to the data passed within the JSObject. See [Parameterised Queries](/connect-data/concepts/dynamic-queries).
+*Example 2:* Using API
+
+<dd>
+
+* Create backend code in your API to handle dynamic `limits` and `offsets`, like:
+
+```js
+// Backend code to fetch data with limit and offset
+const fetchData = async (limit = 50, offset = 0) => {
+  const response = await fetch(`/api/endpoint?limit=${limit}&offset=${offset}`);
+  const data = await response.json();
+  return data;
+};
+```
+
+* In Appsmith, configure the API query to fetch data using `limit` and `offset` parameters:
+
+```js
+GET https://mock-api.appsmith.com/users?limit={{this.params.limit}}&offset={{this.params.offset}}
+```
+
+</dd>
 
 </dd>
 
@@ -59,16 +88,13 @@ export default {
                 if (result && result.length > 0) {
                     // Append the fetched data to usersData
                     this.usersData = [...this.usersData, ...result];
-                    console.log('Fetched chunk at offset:', offset);
-
-                    // Increment the offset for the next chunk
                     offset += chunkSize;
+                
                 } else {
                     // No more data available, exit the loop
                     break;
                 }
             }
-
             // Download or process the data
              // highlight-next-line
             download(this.usersData, 'userdata', 'text/csv');
@@ -88,132 +114,95 @@ The code may vary based on your datasource, so update the query and parameters a
 
 </dd>
 
-3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events:
-
-<dd>
-
-*Example*:
-
-```js
-{{UserDataDownloader.fetchAndDownloadUsers();}}
-```
-
-If the fetched data is no longer needed, it is recommended to clear or delete the query to mitigate potential performance impacts.
-
-</dd>
+3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events.
 
 
-## Download Data in chunks via API
 
-To handle large datasets efficiently and download them in chunks using API, follow these steps:
+## Download file
 
-1. Configure Your **Backend** API to support pagination.
+To directly download a file from the datasource instead of fetching data in chunks, follow these steps:
+
+
+1. Configure the backend API/Database to convert data into a downloadable file format. Ensure that the API endpoint returns the file content or a URL to access the file.
 
 
 <dd>
 
-*Example:* You can set up your backend API to handle pagination by accepting `limit` and `offset` parameters. This approach enables you to fetch data in chunks rather than retrieving the entire dataset at once.
+
+*Example:* 
+
+You can use built-in functions provided by some databases to export data directly to a file. If your database does not support direct file exports, you can create a backend API to generate and serve the file. Here’s an example using `Node.js` with Express to generate and serve a CSV file.
 
 
 ```js
-// Backend API endpoint example
-app.get('/api/users', async (req, res) => {
-    const limit = parseInt(req.query.limit) || 50;
-    const offset = parseInt(req.query.offset) || 0;
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const app = express();
 
-    try {
-        const users = await UserModel.findAll({ limit, offset });
-        res.json(users);
-    } catch (error) {
-        res.status(500).send('Server Error');
-    }
+const filesDir = path.join(__dirname, 'files');
+
+// Ensure the files directory exists
+if (!fs.existsSync(filesDir)) {
+  fs.mkdirSync(filesDir);
+}
+
+app.get('/generate-file', (req, res) => {
+  const fileContent = 'Column1,Column2\nValue1,Value2\n';
+  const fileName = 'data.csv';
+  const filePath = path.join(filesDir, fileName);
+  
+  fs.writeFileSync(filePath, fileContent);
+  
+  const fileUrl = `${req.protocol}://${req.get('host')}/files/${fileName}`;
+  res.json({ fileUrl });
 });
-```
 
-Adjust the `limit` and `offset` parameters as needed for your specific API and data structure.
+app.use('/files', express.static(filesDir));
+
+app.listen(3000, () => console.log('Server running on port 3000'));
+```
 
 
 </dd>
 
-2. In Appsmith, create a new API query to fetch data from the API using `limit` and `offset` parameters:
+
+2. In Appsmith, create a new API query to access the file, and configure the headers as needed.
 
 <dd>
 
 *Example:*
 
-```js
-GET https://mock-api.appsmith.com/users?limit={{this.params.limit}}&offset={{this.params.offset}}
-```
-
-For information on parameters, see [Parameterised Queries](/connect-data/concepts/dynamic-queries). 
-
-
-</dd>
-
-
-2. Create a new JS function to interact with the API and fetch data in manageable chunks. 
-
-<dd>
-
 
 ```js
-export default {
-    usersData: [],
-
-    // Method to reset variables
-    resetData() {
-        this.usersData = [];
-    },
-
-    // Method to fetch and download user data in chunks
-    async fetchAndDownloadUsers() {
-        let offset = 0; // Initial offset
-        const limit = 100; // Number of rows per chunk
-
-        try {
-            while (true) {
-                // Run the query with the current limit and offset
-                await userAPI.run({ limit: limit, offset: offset });
-                const result = userAPI.data; // Get the query data
-
-                // Check if the response contains data
-                if (result && result.users && result.users.length > 0) {
-                    // Append the fetched data to usersData
-                    this.usersData = [...this.usersData, ...result.users];
-
-                    // Check if there are users on the next page
-                    if (result.users.length < limit) break;
-
-                    // Increment the offset for the next request
-                    offset += limit;
-                } else {
-                    // Stop fetching if no more data or unexpected response structure
-                    break;
-                }
-            }
-
-            // Download the data
-            download(this.usersData, 'userdata.csv', 'text/csv');
-        } catch (error) {
-            console.error('An error occurred:', error);
-        } finally {
-            // Clear the data and reset variables
-            this.resetData();
-    }}};
+http://example.com/generate-file
 ```
 
 </dd>
 
-3. Execute the defined JS function either directly from the JS editor or by triggering the function through widget events.
+
+3. Create a new JSObject and add a function to fetch and download the file:
 
 <dd>
 
-Once the function is executed, the data is downloaded to your local machine automatically. If the fetched data is no longer needed, it is recommended to clear or delete the query to mitigate potential performance impacts.
+*Example:* If the API provides a file URL, you can download the data by using the following code:
+
+
+```js
+// Assuming userAPI.data contains the file URL
+const fileUrl = userAPI.data.fileUrl; 
+
+// Fetch the file content
+const response = await fetch(fileUrl);
+const data = await response.blob();
+const fileName = 'data.csv';
+const fileType = 'text/csv';
+
+// Trigger the download
+await download(data, fileName, fileType);
+```
+
+The code fetches the file content from this URL, and then triggers `download()` function to download the file.
 
 </dd>
 
-
-## See also
-
-- [Download PDF File](/reference/appsmith-framework/widget-actions/download)
-- [Download file using URL](/connect-data/how-to-guides/how-to-download-files-using-api#download-file-using-public-url)

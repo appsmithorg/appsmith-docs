@@ -432,7 +432,6 @@ const sidebars = {
               ],
             }, 
             `build-apps/how-to-guides/download-table-data`,
-            `build-apps/how-to-guides/download-data-2`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
