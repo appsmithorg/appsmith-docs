@@ -9,7 +9,7 @@ This page shows you how to configure Microsoft 365 (Outlook) as an email service
 ## Prerequisites
 
 - A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) to set up your Appsmith instance.
-- Your email address must be verified. For more information, visit how to verify your [Outlook account](https://support.microsoft.com/en-au/office/how-to-verify-your-outlook-com-account-0b493d5c-9390-45ca-81b6-1bb1314caba9).
+- Your email address must be verified. For more information, see how to verify your [Outlook account](https://support.microsoft.com/en-au/office/how-to-verify-your-outlook-com-account-0b493d5c-9390-45ca-81b6-1bb1314caba9).
 - Access to the Admin Settings page on your Appsmith instance. If you need access, contact your Instance Administrator.
 
 
@@ -71,12 +71,6 @@ This host is the same for both TLS and non-TLS configurations. For more informat
 
 * **Enable TLS protected connection**: Enable this property if you want to ensure that the communication between your self-hosted Appsmith instance and the Microsoft 365 SMTP server is encrypted and secure.
 
-<dd>
-
-Use port `587` with STARTTLS for TLS, and port `25` without encryption if TLS is not used.
-
-
-</dd>
 
 
 
