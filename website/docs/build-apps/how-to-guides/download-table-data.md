@@ -118,17 +118,11 @@ To handle large datasets efficiently and download them in chunks using API, foll
 ```js
 // Backend API endpoint example
 app.get('/api/users', async (req, res) => {
-    // Parse limit and offset from query parameters; default to 50 and 0 if not provided
     const limit = parseInt(req.query.limit) || 50;
     const offset = parseInt(req.query.offset) || 0;
 
     try {
-        // Fetch users from the database with the specified limit and offset
-        const users = await UserModel.findAll({
-            limit: limit,
-            offset: offset
-        });
-        // Send the fetched users as a JSON response
+        const users = await UserModel.findAll({ limit, offset });
         res.json(users);
     } catch (error) {
         res.status(500).send('Server Error');
