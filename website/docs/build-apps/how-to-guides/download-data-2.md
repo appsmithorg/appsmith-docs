@@ -4,7 +4,7 @@ This page shows how to download the entire Table or Query data in manageable chu
 
 
 
-## Download Data in chunks 
+## Download data in chunks 
 
 Follow these steps to download data in chunks:
 
@@ -118,7 +118,7 @@ The code may vary based on your datasource, so update the query and parameters a
 
 
 
-## Download File
+## Download file
 
 To directly download a file from the datasource instead of fetching data in chunks, follow these steps:
 
