@@ -137,21 +137,28 @@ You can use built-in functions provided by some databases to export data directl
 ```js
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 const app = express();
 
-app.get('/download-file', (req, res) => {
-  // Generate file content
+const filesDir = path.join(__dirname, 'files');
+
+// Ensure the files directory exists
+if (!fs.existsSync(filesDir)) {
+  fs.mkdirSync(filesDir);
+}
+
+app.get('/generate-file', (req, res) => {
   const fileContent = 'Column1,Column2\nValue1,Value2\n';
   const fileName = 'data.csv';
+  const filePath = path.join(filesDir, fileName);
   
-  // Write to file
-  fs.writeFileSync(fileName, fileContent);
+  fs.writeFileSync(filePath, fileContent);
   
-  // Set headers and send file
-  res.setHeader('Content-Disposition', `attachment; filename=${fileName}`);
-  res.setHeader('Content-Type', 'text/csv');
-  res.sendFile(__dirname + '/' + fileName);
+  const fileUrl = `${req.protocol}://${req.get('host')}/files/${fileName}`;
+  res.json({ fileUrl });
 });
+
+app.use('/files', express.static(filesDir));
 
 app.listen(3000, () => console.log('Server running on port 3000'));
 ```
@@ -168,7 +175,7 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 
 
 ```js
-http://example.com/download-file
+http://example.com/generate-file
 ```
 
 </dd>
@@ -183,7 +190,7 @@ http://example.com/download-file
 
 ```js
 // Assuming userAPI.data contains the file URL
-const fileUrl = userAPI.data;
+const fileUrl = userAPI.data.fileUrl; 
 
 // Fetch the file content
 const response = await fetch(fileUrl);
