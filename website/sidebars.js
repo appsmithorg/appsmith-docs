@@ -155,6 +155,7 @@ const sidebars = {
                   items: [
                     'getting-started/setup/instance-configuration/email/gmail',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
+                     'getting-started/setup/instance-configuration/email/microsoft-365',
                     'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
