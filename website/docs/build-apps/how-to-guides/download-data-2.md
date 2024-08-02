@@ -131,7 +131,8 @@ To directly download a file from the datasource instead of fetching data in chun
 
 *Example:* 
 
-Some databases support built-in functions to export data directly to a file. If your database does not support direct file exports, you can create a backend API to generate and serve the file. Here’s an example using `Node.js` with Express to generate and serve a CSV file.
+You can use built-in functions provided by some databases to export data directly to a file. If your database does not support direct file exports, you can create a backend API to generate and serve the file. Here’s an example using `Node.js` with Express to generate and serve a CSV file.
+
 
 ```js
 const express = require('express');
