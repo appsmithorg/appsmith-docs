@@ -88,6 +88,66 @@ The application password is **only** available in system logs for the initial 24
 
 To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in step 7 of the [Install Appsmith](#install-appsmith) section on this page.
 
+
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/authentication">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+    </div>
+    
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/email">
+        <strong>Configure Email Service</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+    </div>
+    
+  </div>
+</div>
+
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/custom-domain">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
+    </div>
+    
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+     <div className="containerCol">
+      <a href="/getting-started/setup/instance-management/appsmithctl">
+        <strong>Backup and Restore</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. 
+      <a href="/getting-started/setup/instance-management/appsmithctl">Learn more about Backup and Restore</a>
+    </div>
+  </div>
+</div>
+
 ## Troubleshooting
 
 If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).

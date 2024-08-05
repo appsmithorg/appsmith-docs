@@ -239,6 +239,65 @@ Follow these steps to create and run an ECS service:
 
 To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 4 of the [Create task and container definitions](#create-task-and-container-definitions) section on this page.
 
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">
+        <strong>Set Up High Availability (HA)</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Configure high availability for your Appsmith deployment on AWS Fargate to handle increased load. <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">Learn more about setting up high availability</a>
+    </div>
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/authentication">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider.
+      <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+    </div>
+  </div>
+</div>
+
+<div className="containerGridSampleApp">
+  <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/email">
+        <strong>Configure Email Service</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts.
+      <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+    </div>
+  </div>
+
+  <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      <a href="/getting-started/setup/instance-configuration/custom-domain">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </a>
+    </div>
+    <hr/>
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL. 
+      <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
+    </div>
+  </div>
+</div>
+
 ## Troubleshooting
 
 If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
