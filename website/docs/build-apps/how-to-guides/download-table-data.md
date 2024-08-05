@@ -123,13 +123,13 @@ The code may vary based on your datasource, so update the query and parameters a
 To directly download a file from the datasource instead of fetching data in chunks, follow these steps:
 
 
-1. Create a backend API that uses built-in functions to convert data into a file format. Ensure that the output is either the file content or a URL that provides access to the file.
+1. Create a backend API that uses built-in functions provided by your datasource to convert data into a file format. Ensure that the output is either the file content or a URL that provides access to the file.
 
 
 
 <dd>
 
-Use built-in functions provided by your datasource to generate a file and return the file data as a response. For example, [MySQL](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-utilities-table-export.html), [PostgreSQL](https://www.postgresql.org/docs/current/sql-copy.html), [GraphQL](https://docs.celigo.com/hc/en-us/articles/6223964431003-Export-data-from-GraphQL#Configure_Export), and [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport_Requesting.html#S3DataExport_Requesting_SDK) offer functionalities to export data directly to files.
+ For example, [MySQL](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-utilities-table-export.html), [PostgreSQL](https://www.postgresql.org/docs/current/sql-copy.html), [GraphQL](https://docs.celigo.com/hc/en-us/articles/6223964431003-Export-data-from-GraphQL#Configure_Export), and [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport_Requesting.html#S3DataExport_Requesting_SDK) offer functionalities to export data directly to files.
 
 
 
