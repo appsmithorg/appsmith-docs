@@ -134,16 +134,16 @@ Once you have completed the installation process, consider performing the tasks 
   </div>
 
   <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-management/update-appsmith">
-        <strong>Update Appsmith</strong>
+     <div className="containerCol">
+      <a href="/getting-started/setup/instance-management/appsmithctl">
+        <strong>Backup and Restore</strong>
       </a>
     </div>
     <hr/>
     <div className="containerDescription">
-      Update Appsmith to the latest version on your self-hosted Appsmith instance to benefit from the latest features and improvements.  <a href="/getting-started/setup/instance-management/update-appsmith">Learn more about updating Appsmith</a>
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. 
+      <a href="/getting-started/setup/instance-management/appsmithctl">Learn more about Backup and Restore</a>
     </div>
-   
   </div>
 </div>
 
