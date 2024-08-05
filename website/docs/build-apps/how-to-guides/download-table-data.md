@@ -118,15 +118,19 @@ The code may vary based on your datasource, so update the query and parameters a
 
 
 
-## Download file
+## Download data as file
 
 To directly download a file from the datasource instead of fetching data in chunks, follow these steps:
 
 
-1. Configure the backend API/Database to convert data into a downloadable file format. Ensure that the API endpoint returns the file content or a URL to access the file.
+1. Configure the backend API/Database to convert data into a downloadable file format. Ensure that the output is either the file content or a URL that provides access to the file.
 
 
 <dd>
+
+* Use Built-in Functions: Some databases provide built-in functions to export data directly to a file. For example, databases like MySQL or PostgreSQL have commands to export data in CSV or other formats.
+
+* Create a Backend API: If your database does not support direct file exports, you can create a backend API that generates and serves the file.
 
 
 *Example:* 
