@@ -56,7 +56,7 @@ Browse this section to learn about the different actions you can trigger on Apps
     </div>
     <div className="containerColumnSampleApp columnGrid column-one" style={{padding: '20px'}}>
         <div className="containerCol">
-            <img className="containerImage" src="/img/download-1.png.png" alt="download-logo"/>
+            <img className="containerImage" src="/img/download-1.png" alt="download-logo"/>
         </div> <br/>
         <div className="containerCol">
             <a href="/reference/appsmith-framework/widget-actions/download"><strong>download</strong></a>
