@@ -123,7 +123,8 @@ The code may vary based on your datasource, so update the query and parameters a
 To directly download a file from the datasource instead of fetching data in chunks, follow these steps:
 
 
-1. Configure the backend API/Database to convert data into a downloadable file format. Ensure that the output is either the file content or a URL that provides access to the file.
+1. Create a backend API that uses built-in functions to convert data into a file format. Ensure that the output is either the file content or a URL that provides access to the file.
+
 
 
 <dd>
@@ -136,7 +137,7 @@ Use built-in functions provided by your datasource to generate a file and return
 </dd>
 
 
-2. In Appsmith, create a new query to access the file, and configure the headers as needed.
+2. In Appsmith, create a new query to connect with the backend API and access the file.
 
 <dd>
 
@@ -144,7 +145,7 @@ Use built-in functions provided by your datasource to generate a file and return
 
 
 ```js
-http://example.com/generate-file
+http://api.example.com/export-data-to-file
 ```
 
 </dd>
