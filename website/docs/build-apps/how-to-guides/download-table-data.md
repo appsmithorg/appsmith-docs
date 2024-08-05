@@ -128,50 +128,15 @@ To directly download a file from the datasource instead of fetching data in chun
 
 <dd>
 
-* Use Built-in Functions: Some databases provide built-in functions to export data directly to a file. For example, databases like MySQL or PostgreSQL have commands to export data in CSV or other formats.
-
-* Create a Backend API: If your database does not support direct file exports, you can create a backend API that generates and serves the file.
+Use built-in functions provided by your datasource to generate a file and return the file data as a response. For example, [MySQL](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-utilities-table-export.html), [PostgreSQL](https://www.postgresql.org/docs/current/sql-copy.html), [GraphQL](https://docs.celigo.com/hc/en-us/articles/6223964431003-Export-data-from-GraphQL#Configure_Export), and [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/S3DataExport_Requesting.html#S3DataExport_Requesting_SDK) offer functionalities to export data directly to files.
 
 
-*Example:* 
-
-You can use built-in functions provided by some databases to export data directly to a file. If your database does not support direct file exports, you can create a backend API to generate and serve the file. Here’s an example using `Node.js` with Express to generate and serve a CSV file.
-
-
-```js
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const app = express();
-
-const filesDir = path.join(__dirname, 'files');
-
-// Ensure the files directory exists
-if (!fs.existsSync(filesDir)) {
-  fs.mkdirSync(filesDir);
-}
-
-app.get('/generate-file', (req, res) => {
-  const fileContent = 'Column1,Column2\nValue1,Value2\n';
-  const fileName = 'data.csv';
-  const filePath = path.join(filesDir, fileName);
-  
-  fs.writeFileSync(filePath, fileContent);
-  
-  const fileUrl = `${req.protocol}://${req.get('host')}/files/${fileName}`;
-  res.json({ fileUrl });
-});
-
-app.use('/files', express.static(filesDir));
-
-app.listen(3000, () => console.log('Server running on port 3000'));
-```
 
 
 </dd>
 
 
-2. In Appsmith, create a new API query to access the file, and configure the headers as needed.
+2. In Appsmith, create a new query to access the file, and configure the headers as needed.
 
 <dd>
 
