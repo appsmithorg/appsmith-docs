@@ -81,7 +81,7 @@ download(UserData.data, 'UsersData.csv', 'text/csv');
 
 #### Download using URL
 
-If you want to download a file from a URL, you can pass the file URL to the` download()` function.  For example, if you have a Table widget with a column containing document URLs for each user, to download the document, you can use:
+If you want to download a file from a URL, you can pass the file URL to the` download()` function. For example, if you have a Table widget with a column containing document URLs for each user, to download the document, you can use:
 
 ```js
 download(UsersTable.selectedRow.documentUrl, UsersTable.selectedRow.id + '.pdf');
@@ -105,7 +105,7 @@ let csvData = jsonData.map(row => `${row.id},${row.name},${row.email},${row.coun
 download(csvData, "users.csv", "text/csv");
 ```
 
-#### Download using Blob
+#### Download using blob
 
 If you want to download data based on certain criteria, you can use a JSObject.
 

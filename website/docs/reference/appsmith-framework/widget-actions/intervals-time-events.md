@@ -65,7 +65,7 @@ Here are a few examples of using `setInterval()` in different situations:
 
 
 
-#### Data Polling
+#### Data polling
 
 <dd>
 

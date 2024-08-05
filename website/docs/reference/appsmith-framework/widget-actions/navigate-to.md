@@ -90,7 +90,7 @@ Here are a few examples to navigate in different situations:
 
 
 
-#### Conditional Navigation:
+#### Conditional navigation:
 
 
 <dd>
@@ -108,7 +108,7 @@ If you need to navigate conditionally, based on user roles or status, you can ac
 
 </dd>
 
-#### Share Data Across Pages
+#### Share data across pages
 
 <dd>
 
