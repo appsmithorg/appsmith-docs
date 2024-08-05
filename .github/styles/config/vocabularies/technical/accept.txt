@@ -138,3 +138,6 @@ Redis
 disabled
 permissions
 fileName
+admin
+Disable
+

@@ -32,7 +32,7 @@ In an approval workflow, where human intervention is necessary for decision-maki
 Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* Basic knowledge of creating a basic workflow in Appsmith. For more information, see [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow).
+* Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
 * Configured your datasource that manages data in your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 ## Create workflow
@@ -40,12 +40,15 @@ Before you start, make sure you have:
 Follow these steps to set up a workflow within your workspace: 
 
 1. Create a new workflow in your workspace to manage approvals. To understand the basics of creating a workflow, see the [Tutorial - Create Basic Workflow - Create Workflow](/workflows/tutorials/create-workflow#create-workflow) section.
+
 2. In your workflow, click the **+** icon under _Queries/JS_ to create a query, and write code to fetch data needed for decision-making. For example, for processing order refunds, you may want to fetch the order details (_getOrderDetails_). The below query fetches the order details for the given `order_id` from the `orders` table.
+
     ```sql
     -- The order_id is a parameter, and replaced by the actual value passed by the application
     select * from public. "orders" where order_id = {{this.params.order_id}};
     ``` 
 3. Create a query to capture and update the data based on actions taken by users. For example, you may want to update the order status once a user takes action to process a refund. The below query updates the order status in the `order` table to `Refund Processed`. In case of rejection, the order status remains unchanged.
+
     ```sql
     -- The order_id are parameters and replaced by the actual value passed by the application
     -- highlight-next-line
@@ -67,6 +70,7 @@ Follow these steps to set up a workflow within your workspace:
 Follow these steps to create approval requests that are awaiting user interaction: 
 
 1. In your workflow, go to **Main** under _JS Objects_. The `executeWorkflow` function is the main function that handles the workflow processing and will have code related to creating approval requests, and managing approvals. For more information, see the [executeWorkflow](/workflows/reference/workflow-functions#executeworkflow) function. 
+
 2. Write the code to create approval requests, and read the response and decision taken by the user. For example, in the below code, create the approval request for refund review and read the response of the decision taken by the user.
     * **STEP 1** - Use the `assignRequest` function to build an approval request. For more information, see the [assignRequest](/workflows/reference/workflow-functions#assign-request) function. 
     * **STEP 2** - Read the response generated which is available as part of the `response` object by reading the `resolution` property. The resolution property gives information about the action taken by the user.
@@ -126,16 +130,26 @@ Follow these steps to retrieve the approval requests, build an interface for use
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Get requests**.
     * **Request name** - Add `getPendingRefundRequests` to it. It's the same request name you added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the _Step 1_ of [Create approval requests](#create-approval-requests) section.
+
 2. Drag a Table widget and bind the approval request query to it. You may need to transform data based on your user interface requirements. In this case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget. For example, bind the **getRefundReqs** query. 
+
 3. Create another workflow query by clicking **Editor** > **Queries** > **New query/API**. For example, to read the action taken by the user for the refund approval requests (_resolveReqs_) when a user clicks the **Approve** or **Reject** buttons in the Table widget. Configure it as shown below:
     * **Workflow name** - Select **Refunds**.
     * **Request type** - Select **Resolve Requests**.
     * **Request Id** - Add `{{this.params.requestId}}` to it. Read and pass this value from the Table widget which is available as part of the `Get requests` query.
     * **Resolution** - Add `{{this.params.resolution}}` to it. Read and pass this value from the Table widget when the user clicks on the button to take action, and available as part of the `Get requests` query.
     * **Metadata** - Add any specific data you want to pass to the workflow in this field. You can use the metadata field to send data to your workflow for any specific processing needs. For example, you may want to pass a rejection reason when a user has rejected a refund request. The metadata details are available in the `response` object in your workflow. For more information, see [Payload](/workflows/reference/workflow-functions#payload-json) return type.
+
 4. Bind the query to the `onClick` event of buttons. For example, for refund processing, bind the _resolveReqs_ query to the `onClick` event of **Approve** and **Reject** buttons, and pass appropriate parameters. 
+
 5. Deploy your app to test approvals or rejections.
 
 ## Troubleshooting
 
 If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+* [Debug Workflow](/workflows/how-to-guides/debug-workflow) - Learn to debug workflows as you build them.
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
+* [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.

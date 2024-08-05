@@ -127,3 +127,6 @@ The `assignRequest()` function returns a Promise in a JSON format representing t
   It holds the data from the `metadata` attribute used during the processing of the [Resolve Requests](/workflows/reference/workflow-queries#resolve-requests) workflow query.
 </dd>
  
+ ## See also
+
+* [Debug Workflow](/workflows/how-to-guides/debug-workflow) - Learn to debug workflows as you build them.

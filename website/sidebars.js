@@ -123,7 +123,9 @@ const sidebars = {
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
                       ],
+
                     },
                     {
                       type: 'category',
@@ -153,6 +155,7 @@ const sidebars = {
                   items: [
                     'getting-started/setup/instance-configuration/email/gmail',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
+                     'getting-started/setup/instance-configuration/email/microsoft-365',
                     'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
@@ -622,97 +625,12 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
-    //module start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Packages (Beta)',
-      items: [
-        'packages/overview',
-
-        {
-          type: 'category',
-          label: 'Tutorial',
-          items: [
-            'packages/tutorial/query-module',
-            'packages/tutorial/js-module'
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'How-to Guides',
-          items: [
-            'packages/how-to-guides/use-query-inside-js-module',],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'packages/reference/query-module',
-            'packages/reference/package'
-          ],
-        }
-      ]
-    }, //module end
-    //Workflows start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Workflows (Beta)',
-      items: [
-        'workflows/README',
-        //category- Api
-        {
-          type: 'category',
-          label: 'Tutorial',
-          link: {
-            type: 'doc',
-            id: 'workflows/tutorials/create-workflow',
-          },
-          items: [
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How-to Guides',
-          link: {
-            type: 'doc',
-            id: 'workflows/how-to-guides/README',
-          },
-          items: [
-            'workflows/how-to-guides/create-approval-workflow',
-            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
-            'workflows/how-to-guides/set-up-automatic-processing',
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions'
-          ],
-        }
-      ]
-
-    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
       collapsed: false,
       label: 'Manage Apps and Users',
       items: [
-        {
-          type: 'category',
-          label: 'Embed Appsmith',
-          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
-          items: [
-            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
-          ]
-        },
         {
           type: 'category',
           label: 'Granular Access Control',
@@ -745,7 +663,6 @@ const sidebars = {
             },
           ]
         },
-        `advanced-concepts/user-provisioning-group-sync`,
         //git-start
         {
 
@@ -794,13 +711,102 @@ const sidebars = {
           ]
         },
         //git-end
-        //git-start
+        `advanced-concepts/user-provisioning-group-sync`,
+        {
+          type: 'category',
+          label: 'Embed Appsmith',
+          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
+          items: [
+            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
+          ]
+        },
 
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
       ],
     }, //Advanced Concepts end
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
+
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-to Guides',
+          items: [
+            'packages/how-to-guides/use-query-inside-js-module',],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+                  'packages/reference/package',
+                  'packages/reference/query-module'
+      
+          ],
+        }
+      ]
+    }, //module end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows (Beta)',
+      items: [
+        'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
+          items: [
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-to Guides',
+          link: {
+            type: 'doc',
+            id: 'workflows/how-to-guides/README',
+          },
+          items: [
+            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/create-approval-workflow',
+            'workflows/how-to-guides/set-up-automatic-processing',
+            'workflows/how-to-guides/debug-workflow',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'workflows/reference/workflow-queries',
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows',
+            'workflows/reference/run-history'
+          ],
+        }
+      ]
+
+    }, //Workflows end
     {
       // Help & Support start
       type: 'category',
