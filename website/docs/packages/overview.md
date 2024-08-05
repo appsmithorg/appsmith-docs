@@ -22,8 +22,7 @@ Reusability is an integral part of application development, offering various adv
 
 ## Packages
 
-A package is a collection of JS and query modules that can be distributed across instances. Its primary purpose is to streamline the organization, distribution, and sharing of application components across multiple instances. The modular nature of packages facilitates efficient code management, allowing developers to create, update, and distribute specific modules independently, contributing to enhanced code reusability and maintainability.
-
+A package is a collection of JS and Query modules that can be shared across apps within the same workspace. With packages, developers can create, update, and share specific modules independently, making code more reusable and easier to maintain.
 
 <ZoomImage
   src="/img/modules-landing.png" 
@@ -33,24 +32,14 @@ A package is a collection of JS and query modules that can be distributed across
 
 ### Modules
 
-Modules in Appsmith are integral components of a **Package** tailored. They are reusable components containing queries and JavaScript objects that can yield results across multiple applications within the same workspace. Modules extend this capability by enabling users to track and manage updates across all subscribing applications. This feature proves advantageous for organizations seeking standardization, allowing them to enforce consistency in reusable work. 
+Modules are part of Package. There are two types of modules, query and JS, that can be used in multiple applications within the same workspace. 
 
+* **Query Modules:** Reusable datasource queries that can be used across different apps and pages. You can pass dynamic inputs to the query module, which allows you to change query parameters based on user input or widget actions. They are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
 
-
-
-#### Types of Modules
-
-* **Query Modules:**  A reusable datasource query that can be used across different apps and pages. Query Modules allow you to pass dynamic inputs and are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
-
-* **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. These modules support data passing between query and JS modules, facilitating seamless integration and reuse across applications.
+* **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. It allows you to pass data between query and JS modules, ensuring smooth integration and reuse across different applications.
 
 * **UI Modules (Coming Soon):** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
 
-
-:::info
-* Importing or using custom JS libraries is not yet supported.
-* Authentication with Google Sheets inside a module is not supported. A workaround is to connect the datasource through the application.
-:::
 
 
 ## Getting started
