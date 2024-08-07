@@ -26,7 +26,7 @@ Follow these steps to connect your app to MongoDB to fetch the usage data:
 
 1. In Appsmith, open the admin settings page from the top-right corner.
 
-2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available there, you can open the environment variable file and copy the `APPSMITH_DB_URL`. The URI looks like:
+2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available, open the environment variable file and copy the `APPSMITH_DB_URL`. The URI looks like:
 
 <dd>
 
