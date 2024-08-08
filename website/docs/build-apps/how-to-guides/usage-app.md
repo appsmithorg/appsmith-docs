@@ -70,7 +70,7 @@ You can also manually enter information into the parameter fields. For more info
 
 ## Configure the query
 
-Follow this section to configure your MongoDB query:
+Follow this section to configure your [MongoDB query](/connect-data/reference/querying-mongodb#query-mongodb):
 
 1. Create a new query, set the appropriate **Command** based on your use case, and select `auditlog` as the **Collection**. For more information, [Log contents](/advanced-concepts/audit-logs#log-contents).
 
