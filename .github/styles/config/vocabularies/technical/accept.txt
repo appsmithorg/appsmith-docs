@@ -140,4 +140,7 @@ permissions
 fileName
 admin
 Disable
-
+SSL
+Domain
+Custom
+Let’s Encrypt
