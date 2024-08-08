@@ -25,6 +25,10 @@ You can use your custom domain with the HTTP protocol, even if you haven't set u
 
 ### SSL using Let’s Encrypt certificate
 
+:::warning Attention
+Let's Encrypt does not support provisioning a certificate for ephemeral domain names since they are high-risk.
+:::
+
 Follow these steps to generate and maintain an SSL certificate for your custom domain using Let’s Encrypt:
 
 ![Set up your custom domain using Admin settings](/img/setup-custom-domain-using-admin-settings.png)
