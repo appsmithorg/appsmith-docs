@@ -249,7 +249,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 #### `APPSMITH_CUSTOM_DOMAIN`
 
 <dd>
-    Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain).
+    Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
 ## Supervisord 
