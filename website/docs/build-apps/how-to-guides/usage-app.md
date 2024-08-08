@@ -3,11 +3,11 @@ import TabItem from '@theme/TabItem';
 
 # Build a Usage Monitoring App for Appsmith Applications
 
-This page shows you how to build an Appsmith app to monitor other Appsmith applications, allowing you to display data such as the number of applications created, user interactions with the apps, active applications based on monthly usage, and more.
+This page shows how to build an Appsmith app to monitor other Appsmith applications by fetching audit logs and displaying data.
 
 ## Prerequisites
 
-- Appsmith instance with Admin settings access.
+- Appsmith instance with access to Admin settings.
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
@@ -29,7 +29,14 @@ Follow these steps to connect your app to MongoDB to fetch the usage data:
 
 1. In Appsmith, open the **Admin settings** page from the top-right corner.
 
-2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available, open the environment variable file and copy the `APPSMITH_DB_URL`. The URI looks like:
+2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available, open the environment variable file (`docker.env` for Docker or `values.yaml` for Kubernetes) and copy the `APPSMITH_DB_URL`. The URI looks like:
+
+
+
+
+
+
+
 
 <dd>
 
@@ -45,7 +52,7 @@ mongodb://appsmith:Oabc123@localhost:27017/appsmith
 
 <dd>
 
-- For external MongoDB, add the URI without any changes.
+- For external MongoDB, use the provided URI or configure it according to your MongoDB setup.
 
 - For embedded MongoDB (internal), append `?authsource=appsmith` to the end of the URI, like this:
 
@@ -57,8 +64,7 @@ mongodb://appsmith:Oabc123@localhost:27017/appsmith?authsource=appsmith
 
 </dd>
 
-You can also manually enter information into the parameter fields. For more information, see [MongoDB](/connect-data/reference/querying-mongodb#connection-parameters).
-
+For more information on how to configure the MongoDB datasource, see [MongoDB](/connect-data/reference/querying-mongodb#connection-parameters).
 
 
 </dd>
@@ -72,15 +78,18 @@ You can also manually enter information into the parameter fields. For more info
 
 Follow this section to configure your [MongoDB query](/connect-data/reference/querying-mongodb#query-mongodb):
 
-1. Create a new query, set the appropriate **Command** based on your use case, and select `auditlog` as the **Collection**. For more information, [Log contents](/advanced-concepts/audit-logs#log-contents).
+
+1. Create a new query using `auditlog` as the **Collection** and configure other parameters as needed. For more information on how logs are stored, see [Log contents](/advanced-concepts/audit-logs#log-contents).
 
 <dd>
+
 
 *Examples*
 
 <Tabs>
   <TabItem value="apple" label="Number of New Apps Created" default>
-   To Get New Applications Created in the Last Month
+ To get the number of new applications created in the last month:
+
 
 1. Set `distinct` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
 
@@ -100,7 +109,7 @@ Follow this section to configure your [MongoDB query](/connect-data/reference/qu
 
 </dd>
 
-2. Set the Key to `resource._id` to identify each unique application by its resource ID.
+2. Set the **Key** to `resource._id` to identify each unique application by its resource ID.
 
 3. To display the number of applications created, set the **Text** property of the Text widget to:
 
@@ -119,6 +128,12 @@ Follow this section to configure your [MongoDB query](/connect-data/reference/qu
 
 To display the number of active apps by month on a Chart widget, follow these steps:
 
+
+<ZoomImage
+  src="/img/getAppsViewedByMonth.png" 
+  alt=""
+  caption=""
+/>
 
 1. Set `Aggregate` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
 
@@ -182,15 +197,104 @@ export default {
 </dd>
 
 
+  </TabItem>
+  <TabItem value="banana" label="Raw Logs">
+To access the raw logs displaying detailed application usage information, follow these steps:
+
+
 <ZoomImage
-  src="/img/getAppsViewedByMonth.png" 
+  src="/img/rawlogs.png" 
   alt=""
   caption=""
 />
 
-  </TabItem>
-  <TabItem value="banana" label="Raw Logs">
-    This is a banana 🍌
+
+1. Set `Find documents(s)` as the **Command**, `auditlog` as the **Collection**, and configure the query like this:
+
+<dd>
+
+```js
+{
+// This query retrieves logs for "page.viewed" or "query.executed" events, excluding untitled applications, within a selected date range and application mode.
+    event: {
+        $in: ["page.viewed", "query.executed"]
+    },
+    // Exclude documents where the application name contains "untitled" (case-insensitive)
+    "application.name": {
+        $not: { $regex: /untitled/i }
+    },
+    // Match documents where the application mode is the selected option from RadioGroup1
+    "application.mode": "{{RadioGroup1.selectedOptionValue}}",
+    // Filter documents where the timestamp is within the selected date range
+    "timestamp": {
+        $gte: ISODate('{{FromDate.selectedDate}}'),
+        $lte: ISODate('{{ToDate.selectedDate}}')			
+    }
+}
+```
+
+
+</dd>
+
+2. Set the **Sort** property to `{"timestamp": -1}` to display the most recent logs first.
+
+3. Configure the **Projection** property to include only the necessary fields:
+
+<dd>
+
+```js
+{ 
+  event: 1, 
+  "workspace.name": 1, 
+  "resource.name": 1, 
+  "resource.type": 1, 
+  "application.mode": 1, 
+  "application.name": 1, 
+  "user.name": 1, 
+  "user.email": 1, 
+  timestamp: 1, 
+  metadata: 1 
+}
+```
+
+</dd>
+
+4. Create a new JSObject to format and stringify unique audit logs by generating a unique key and converting the data to JSON.
+
+
+<dd>
+
+```js
+export default {
+    // Function to get unique audit logs
+	getUniqueAuditLogs: () => _.uniqBy(getAuditLogs.data, this.generateUniqueKey),
+    
+    // Helper function to generate a unique key for each log entry
+	generateUniqueKey: (item) => `${item.event}_${item.workspace.name}_${item.application.name}_${item.user.email}_${moment(item.timestamp * 1000).format("DD/MM/YYYY HH:mm")}`,
+    
+    // Function to get a stringified JSON representation of the unique audit logs
+	getStringifiedJSON: () => JSON.stringify(logsUtils.getUniqueAuditLogs().map(item => ({
+		timestamp: item.timestamp,
+		workspace: item.workspace?.name,
+		user: item.user?.email,
+		application: item.application?.name,
+		resource: item.resource?.page
+	})))
+}
+```
+
+</dd>
+
+5. Drag a Table widget and set its **Table Data** property to display the data, like:
+
+<dd>
+
+```js
+{{logsUtils.getUniqueAuditLogs()}}
+```
+
+</dd>
+
   </TabItem>
 </Tabs>
 
