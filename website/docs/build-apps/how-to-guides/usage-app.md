@@ -115,9 +115,17 @@ Follow this section to configure your MongoDB query:
 
 
   </TabItem>
-  <TabItem value="orange" label="Monthly App Views">
-    
-```json
+  <TabItem value="orange" label="Monthly Active Apps">
+
+To display the number of active apps by month on a Chart widget, follow these steps:
+
+
+1. Set `Aggregate` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
+
+<dd>
+
+```js
+//This query aggregates data to count the number of applications viewed each month, grouping by month and year.
 [
   {
     $match: {
@@ -147,6 +155,39 @@ Follow this section to configure your MongoDB query:
   }
 ]
 ```
+</dd>
+
+2. Create a new JSObject to format dates using `moment`, converting `{ month: 6, year: 2024 }` to `Jul 2024`.
+
+<dd>
+
+```JS
+export default {
+	formatDate: (item = { month: 6, year: 2024 }) => {
+		return moment(`${item.month}/01/${item.year}`)
+			.format('MMM\'YY');
+	}
+}
+```
+</dd>
+
+3. Drag a Chart widget and set its **Series Data** property to display the data, like:
+
+<dd>
+
+```js
+{{getAppsViewedByMonth.data.map((item) => ({ x: Utils.formatDate(item), y: item.count }))}}
+```
+
+</dd>
+
+
+<ZoomImage
+  src="/img/getAppsViewedByMonth.png" 
+  alt=""
+  caption=""
+/>
+
   </TabItem>
   <TabItem value="banana" label="Raw Logs">
     This is a banana 🍌
@@ -154,4 +195,8 @@ Follow this section to configure your MongoDB query:
 </Tabs>
 
 </dd>
+
+## Sample App
+
+- [Usage Analytics App](https://app.appsmith.com/app/usage-analytics/dashboard-660d304eca635a1aa4a8e909)
 
