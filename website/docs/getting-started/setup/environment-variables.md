@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 
 # Environment Variables
 
-Environment variables play a crucial role in configuring different aspects of your Appsmith instance, such as authentication, defining logging levels, customizing email settings, and more. The configuration file is available in your Appsmith installation directory. For example, if you have installed Appsmith using Docker, `docker.env` file under `<Appsmith_Installation_Director>/stacks/configuration`. This page provides a detailed description of each environment variable along with its purpose and usage.
+Environment variables play a crucial role in configuring different aspects of your Appsmith instance, such as authentication, logging levels, email settings, and more. These variables are available in a configuration file located in your Appsmith installation directory. For example, if you’ve installed Appsmith using Docker, you’ll find the `docker.env` file under `<Appsmith_Installation_Directory>/stacks/configuration`. This page provides a detailed description of each environment variable, along with its purpose and usage.
 
 ## Google OAuth
 
