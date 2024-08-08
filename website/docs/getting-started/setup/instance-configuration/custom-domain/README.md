@@ -17,13 +17,13 @@ Before configuring SSL for your custom domain, make sure you have the following:
 
 ## Configure SSL
 
-You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet, but it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#configure-ssl-with-lets-encrypt) or add a [custom certificate](#configure-custom-ssl) to secure your connections.
+You can use your custom domain with the HTTP protocol, even if you haven't set up an SSL certificate yet, but it's recommended to configure SSL to ensure secure connections by using HTTPS. You can either set up [SSL using Let's Encrypt](#ssl-with-lets-encrypt-certificate) or add your [custom certificate](#ssl-using-custom-certificate) to secure your connections.
 
   :::info
    For Kubernetes installations, see [How to configure TLS for Appsmith Kubernetes installation](/getting-started/setup/instance-configuration/custom-domain/configure-tls).
    :::
 
-### SSL using Let’s Encrypt
+### SSL using Let’s Encrypt certificate
 
 Follow these steps to generate and maintain an SSL certificate for your custom domain using Let’s Encrypt:
 
