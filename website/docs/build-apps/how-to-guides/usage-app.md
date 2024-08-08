@@ -1,10 +1,13 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Build a Usage Monitoring App for Appsmith Applications
 
 This page shows you how to build an Appsmith app to monitor other Appsmith applications, allowing you to display data such as the number of applications created, user interactions with the apps, active applications based on monthly usage, and more.
 
 ## Prerequisites
 
-- Appsmith instance with admin access.
+- Appsmith instance with Admin settings access.
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
@@ -24,7 +27,7 @@ Follow these steps to connect your app to MongoDB to fetch the usage data:
 </dd>
 
 
-1. In Appsmith, open the admin settings page from the top-right corner.
+1. In Appsmith, open the **Admin settings** page from the top-right corner.
 
 2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available, open the environment variable file and copy the `APPSMITH_DB_URL`. The URI looks like:
 
@@ -36,38 +39,31 @@ mongodb://appsmith:Oabc123@localhost:27017/appsmith
 
 
 
-If MongoDB is external, retrieve the URI from your external MongoDB setup or configuration file.
-
-
 </dd>
 
-3. Create a new MongoDB datasource using the MongoDB URI with the following configurations:
+3. Create a new MongoDB datasource using the MongoDB URI:
 
 <dd>
 
-- Set the **Use Mongo Connection String URI** parameter to **Yes**.
+- For external MongoDB, add the URI without any changes.
 
-- Configure the URI by adding `?authsource=appsmith` at the end of the URI, like this:
+- For embedded MongoDB (internal), append `?authsource=appsmith` to the end of the URI, like this:
 
+<dd>
 
 ```js
 mongodb://appsmith:Oabc123@localhost:27017/appsmith?authsource=appsmith
-
-// Breakdown:
-// mongodb://       - MongoDB scheme
-// appsmith         - Username
-// Oabc123          - Password
-// localhost:27017  - Server address and port
-// /appsmith        - Database name
-// ?authsource=appsmith - Authentication database
 ```
+
+</dd>
+
+You can also manually enter information into the parameter fields. For more information, see [MongoDB](/connect-data/reference/querying-mongodb#connection-parameters).
 
 
 
 </dd>
 
-4. Test and save the datasource. If the URI method does not work, you can manually add all the details by selecting No in the **Use Mongo Connection String URI** setting property.
-
+4. *Test* and *Save* the datasource. 
 
 
 
@@ -76,16 +72,23 @@ mongodb://appsmith:Oabc123@localhost:27017/appsmith?authsource=appsmith
 
 Follow this section to configure your MongoDB query:
 
-1. Create a new query, set the **Command** based on your use case, and select `auditlog` as the **Collection**.
-
-
-2. Configure the query parameters based on your use case:
+1. Create a new query, set the appropriate **Command** based on your use case, and select `auditlog` as the **Collection**. For more information, [Log contents](/advanced-concepts/audit-logs#log-contents).
 
 <dd>
 
-*Example 1:* To Get New Applications Created in the Last Month
+*Examples*
 
-```json
+<Tabs>
+  <TabItem value="apple" label="Number of New Apps Created" default>
+   To Get New Applications Created in the Last Month
+
+1. Set `distinct` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
+
+
+<dd>
+
+```js
+//This query retrieves a list of applications created in the last month.
 {
   event: "application.created",
   "resource.type": "Application",
@@ -95,9 +98,25 @@ Follow this section to configure your MongoDB query:
 }
 ```
 
-*Example 2:* To Get Apps Viewed by Month
+</dd>
+
+2. Set the Key to `resource._id` to identify each unique application by its resource ID.
+
+3. To display the number of applications created, set the **Text** property of the Text widget to:
 
 
+<dd>
+
+```js
+{{getNewApplicationsCreated.data.values.length}}
+```
+
+</dd>
+
+
+  </TabItem>
+  <TabItem value="orange" label="Monthly App Views">
+    
 ```json
 [
   {
@@ -128,11 +147,11 @@ Follow this section to configure your MongoDB query:
   }
 ]
 ```
+  </TabItem>
+  <TabItem value="banana" label="Raw Logs">
+    This is a banana 🍌
+  </TabItem>
+</Tabs>
 
 </dd>
-
-
-Format 2
-
-### Example
 
