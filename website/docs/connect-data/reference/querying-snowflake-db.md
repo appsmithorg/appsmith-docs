@@ -74,13 +74,44 @@ The role to use for performing queries. For example, `ACCOUNTADMIN`
 
 </dd>
 
-#### Username
+### Authentication type
 
-<dd>The username for your Snowflake account.</dd>
+#### Basic
 
-#### Password
+Basic authentication is a simple method that uses a username and password to authenticate users to Snowflake.
 
-<dd>The password for your Snowflake account.</dd>
+
+* **Username** - The username is the unique identifier for your Snowflake account. It is typically assigned by your Snowflake administrator or created when you set up your Snowflake account. You can find your username in your Snowflake account settings. 
+
+* **Password** - The password is the secret string of characters used in combination with your username to authenticate your identity to Snowflake. You can find your password in your Snowflake account settings.
+
+
+#### Key Pair
+
+Key Pair authentication is a secure method that uses a pair of cryptographic keys for authentication, providing enhanced security. For more information, see [Key-pair authentication](https://docs.snowflake.com/en/user-guide/key-pair-auth).
+
+
+ * **Username** - The username is the unique identifier for your Snowflake account. It is typically assigned by your Snowflake administrator or created when you set up your Snowflake account. You can find your username in your Snowflake account settings. 
+
+ * **Private key**: The private key is a confidential cryptographic key used to sign authentication requests. It is generated during the key pair creation process and should be kept secure and encrypted. You can upload the private key file from your local machine.
+
+* **Passphrase:** The passphrase is an optional password that you set when generating the private key. It adds an extra layer of security by encrypting the private key file. 
+
+<dd>
+
+To generate keys for secure authentication, you can use tools like [OpenSSL](https://www.openssl.org/). With OpenSSL, you can create two keys: a private key and a public key. The private key, encrypted with AES-256, is used for signing authentication requests, while the public key is extracted from the private key for verification purposes. For more information, see [How to generate the private key](https://docs.snowflake.com/en/user-guide/key-pair-auth#generate-the-private-key).
+
+
+To use the keys:
+
+* **Public Key**: Upload the public key to your Snowflake user profile. This can be done through the Snowflake web interface or using SQL commands. The public key will be used by Snowflake to verify the signatures created with your private key.
+
+* **Private Key**: Store this private key on your local machine and use it to configure the datasource in Appsmith. You can use the same key for multiple authentication.
+
+
+</dd>
+
+
 
 ## Query Snowflake
 
