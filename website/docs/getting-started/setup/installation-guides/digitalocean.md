@@ -11,8 +11,6 @@ sidebar_position: 6
 
 You can deploy Appsmith on DigitalOcean using the Appsmith droplet from Digital Ocean’s 1-Click Apps Marketplace and host it on your custom domain.
 
-Login to your DigitalOcean account to get started. If you are a new user, use this [link](https://marketplace.digitalocean.com/apps/appsmith?refcode=469c9f1431e4) and get a $25 credit on DigitalOcean.
-
 ## Deploying Appsmith on DigitalOcean
 
 Once logged in, follow the steps listed below:
