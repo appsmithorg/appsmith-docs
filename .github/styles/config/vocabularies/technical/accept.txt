@@ -144,3 +144,5 @@ SSL
 Domain
 Custom
 Let’s Encrypt
+Instance Administrator
+Docker

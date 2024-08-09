@@ -15,10 +15,10 @@ This page provides instructions on how to configure your self-hosted Appsmith in
 
 ## Admin settings
 
-The Admin Settings page allows [superusers](#add-super-admins) on self-hosted instances to manage various instance configurations, including email, authentication, and Google Maps integration, as well as user settings and permissions.
+The Admin Settings page allows [instance administrators](#add-instance-administrator) on self-hosted instances to manage instance configurations, including email, authentication, Google Maps integration, as well as user settings and permissions.
 
 :::info
-If you don’t see the “Admin Settings” icon on the top-right corner, you’re not a super admin for the Appsmith instance and must be granted admin privileges by an existing super admin.
+If you don’t see the _Admin Settings_ icon on the top-right corner, you’re not an Instance Administrator for the Appsmith instance and must be granted instance administrator role by an existing instance administrator.
 :::
 
  <ZoomImage
@@ -32,13 +32,15 @@ If you don’t see the “Admin Settings” icon on the top-right corner, you’
 If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
 :::
 
-### Add super admins
-Users who are granted super admin privileges are authorized to access and make changes to instance & platform settings. If you are a super admin and want to grant super admin privileges to other users, add their email addresses in the **Admin Email** field on the **General** settings page so they can access and modify instance settings as shown below:
+### Add Instance Administrator
+
+Users who are granted the Instance Administrator role have full access to all the instance settings. 
+If you want to grant Instance Administrator privileges to a user, add their email address to the **Admin email** field in the **Settings** > **General** section. Doing so automatically assigns them the Instance Administrator role, giving them full access to manage instance settings. For more information about Instance Administrator role, see [Instance Administrator Role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) reference.
 
 <ZoomImage
-  src="/img/admin-email-settings.png" 
-  alt="Use Admin Settings to configure super admins"
-  caption="Configure a super admin"
+  src="/img/admin-settings-assign-instance-administrator.png" 
+  alt="Add emails to assign the Instance Administrator role"
+  caption="Add emails to assign the Instance Administrator role"
 />
 
 ### Configure instance
@@ -53,7 +55,7 @@ The Admin settings enable the configuration of various settings such as user aut
 | Name | Type | Description |
 |----------------|----------------|----------------|
 | **Instance Name** | General | Modify the name of self-hosted instance|
-| **Admin Email** | General | Specify user emails whom you want to make the super admin of your self-hosted instance. Add comma-separated user's email to add more than one super administrator.|
+| **Admin Email** | General | Specify user emails whom you want to make the instance administrators of your self-hosted instance. Add comma-separated user's email to add more than one instance administrator.|
 | **Generated Docker Compose File** | General | Generate the Docker Compose file, which defines services for your Appsmith instance. |
 |**Share anonymous usage data** | General | Choose whether to share [anonymous usage data](/product/telemetry#opt-in-telemetry) with Appsmith to help improve the product.|
 | **Appsmith Watermark** | General | [Upgrade to Appsmith Commercial Edition](https://www.appsmith.com/pricing) to remove the **Built on qppsmith\_** badge on the app's bottom right corner.|
@@ -72,7 +74,7 @@ The Admin settings enable the configuration of various settings such as user aut
 | **Audit Logs** | Others | The audit log feature in Appsmith is only available to [Appsmith Commercial Edition](https://www.appsmith.com/pricing) users and provides a record of all significant activities on the platform. For more information, see [Audit Logs](/advanced-concepts/audit-logs). |
 
 ## Environment variables
-You may also choose to configure your self-hosted Appsmith instance using environment variables. Follow the instructions below for manually updating the configuration file for your installation type.
+You may also choose to configure your self-hosted Appsmith instance using environment variables. For more information about available environment variables in Appsmith, see [Environment Variables](/getting-started/setup/environment-variables) reference.
 
 ### Configure Docker installations
 
