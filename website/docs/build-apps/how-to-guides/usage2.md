@@ -11,9 +11,9 @@ This page shows how to build an Appsmith app to monitor other Appsmith applicati
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
-## Connect to MongoDB
+## Fetch usage data
 
-Follow these steps to connect your app to MongoDB to fetch the usage data:
+Follow these steps to connect your MongoDB and create queries to fetch usage data:
 
 
 <dd>
