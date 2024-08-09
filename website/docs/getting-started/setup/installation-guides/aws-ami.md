@@ -156,6 +156,6 @@ If you continue to face issues, contact the support team using the chat widget a
 
 ## Further reading
 
-- [Add super admins to your instance](/getting-started/setup/instance-configuration#add-super-admins).
+- [Add Instance Administrators to your instance](/getting-started/setup/instance-configuration#add-instance-administrator).
 - [Configure Appsmith instance](/getting-started/setup/instance-configuration/)
 - [Managing Appsmith instance](/getting-started/setup/instance-management/)
