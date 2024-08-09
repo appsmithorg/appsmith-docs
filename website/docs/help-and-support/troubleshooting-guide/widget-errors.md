@@ -122,3 +122,20 @@ This error occurs when there are duplicate values in the options property of the
 #### Solution
 
 To resolve this error, ensure that each value in the options property of the Select widget is unique. You can do this by checking the values and making sure that there are no duplicates. 
+
+
+
+#### Cyclic Dependency in Table Column Validation
+
+<Message
+messageContainerClassName="error" 
+messageContent="Cyclic dependency found while evaluating. Node was: Table1.primaryColumns.created_at.validation"></Message>
+
+#### Cause
+
+This error occurs when you try to use a Table widget's property inside the Table column validation. For example, using `Table1.updatedRow` inside the column validation property creates a cyclic dependency. This means that the validation logic relies on a property that is itself dependent on the result of the validation, causing an infinite loop of dependencies.
+
+#### Solution
+
+To resolve this issue, use `{{currentRow.name}}` in the Table column validation property instead of `Table1.updatedRow` or `Table1.newRow`. 
+
