@@ -91,7 +91,8 @@ Follow this section to configure your [MongoDB query](/connect-data/reference/qu
  To get the number of new applications created in the last month:
 
 
-1. Set `distinct` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
+
+1. Set the **Command** to `distinct`, the **Collection** to `auditlog`, and configure the query like this:
 
 
 <dd>
@@ -135,7 +136,8 @@ To display the number of active apps by month on a Chart widget, follow these st
   caption=""
 />
 
-1. Set `Aggregate` as the **Command** , `auditlog` as the **Collection**, and configure the query like this:
+1. Set the **Command** to `Aggregate`, the **Collection** to `auditlog`, and configure the query like this:
+
 
 <dd>
 
@@ -209,7 +211,8 @@ To access the raw logs displaying detailed application usage information, follow
 />
 
 
-1. Set `Find documents(s)` as the **Command**, `auditlog` as the **Collection**, and configure the query like this:
+1. Set the **Command** to `Find documents(s)`, the **Collection** to `auditlog`, and configure the query like this:
+
 
 <dd>
 
