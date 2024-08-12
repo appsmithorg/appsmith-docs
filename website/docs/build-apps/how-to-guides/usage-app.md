@@ -36,8 +36,6 @@ Follow these steps to connect your MongoDB and create queries to fetch usage dat
 
 <dd>
 
-The URI looks like:
-
 ```js
 mongodb://appsmith:Oabc123@localhost:27017/appsmith
 ```
@@ -67,10 +65,20 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
 
 </dd>
 
-3. Create a new query to fetch logs from the `auditlog` **Collection** and configure the parameters as needed. For more information on how logs are stored, see [Log contents](/advanced-concepts/audit-logs#log-contents).
+3. Create a new query to fetch logs from the `auditlog` **Collection** and configure the parameters as needed. 
 
 
 <dd>
+
+- For application lifecycle events, use ` application.created`, `application.updated`, `application.deleted`, and `application.deployed` to track when applications are created, modified, deleted, or deployed.
+
+- To keep track of user actions, use `user.logged_in`, `user.logged_out`, and `user.signed_up` to log user sign-ins, sign-outs, and new user registrations.
+
+- To track page activities, use `page.created`, `page.viewed`, `page.updated`, and `page.deleted` to monitor new page creation, views, edits, and deletions.
+
+
+For more information on how logs are stored, see [Log contents](/advanced-concepts/audit-logs#log-contents).
+
 
 
 *Example*: To display the number of active end users per month on a Chart widget, set the **Command** as `Aggregate` and configure the query as shown below:
@@ -79,26 +87,26 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
 
 
 ```js
-//This query counts the number of unique active users per month and year, excluding anonymous users, and sorts the results by date.
+// This query counts the number of unique active users per month and year, excluding anonymous users, and sorts the results by date.
 [
   {
     $match: {
-      "application.mode": "view",
-			"user.email": {
-				"$not": {
-					"$regex": "anonymousUser",
-					"$options": "i"
-				}
-			}
+      "application.mode": "view", // Only include records where the application is in view mode
+      "user.email": {
+        "$not": {
+          "$regex": "anonymousUser", // Exclude records with anonymous users
+          "$options": "i" // Case-insensitive matching
+        }
+      }
     }
   },
   {
     $group: {
       _id: {
-        month: { $month: { $toDate: "$timestamp" } },
-        year: { $year: { $toDate: "$timestamp" } }
+        month: { $month: { $toDate: "$timestamp" } }, // Extract month from timestamp
+        year: { $year: { $toDate: "$timestamp" } } // Extract year from timestamp
       },
-      uniqueUsers: { $addToSet: "$user.email" }
+      uniqueUsers: { $addToSet: "$user.email" } // Group by unique user emails
     }
   },
   {
@@ -106,11 +114,11 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
       _id: 0,
       month: "$_id.month",
       year: "$_id.year",
-      count: { $size: "$uniqueUsers" }
+      count: { $size: "$uniqueUsers" } // Count the number of unique users
     }
   },
   {
-    $sort: { year: 1, month: 1 }
+    $sort: { year: 1, month: 1 } // Sort results by year and month in ascending order
   }
 ]
 ```
