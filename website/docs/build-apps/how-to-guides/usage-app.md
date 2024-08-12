@@ -11,9 +11,9 @@ This page shows how to build an Appsmith app to monitor other Appsmith applicati
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
-## Connect to MongoDB
+## Fetch usage data
 
-Follow these steps to connect your app to MongoDB to fetch the usage data:
+Follow these steps to connect your MongoDB and create queries to fetch usage data:
 
 
 <dd>
@@ -34,21 +34,19 @@ Follow these steps to connect your app to MongoDB to fetch the usage data:
 
 
 
-
-
-
-
 <dd>
+
+The URI looks like:
 
 ```js
 mongodb://appsmith:Oabc123@localhost:27017/appsmith
 ```
 
 
-
 </dd>
 
-3. Create a new MongoDB datasource using the MongoDB URI:
+
+2. Create a new MongoDB datasource using the MongoDB URI:
 
 <dd>
 
@@ -69,85 +67,29 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
 
 </dd>
 
-4. *Test* and *Save* the datasource. 
-
-
-
-
-## Configure the query
-
-Follow this section to configure your [MongoDB query](/connect-data/reference/querying-mongodb#query-mongodb):
-
-
-1. Create a new query using `auditlog` as the **Collection** and configure other parameters as needed. For more information on how logs are stored, see [Log contents](/advanced-concepts/audit-logs#log-contents).
-
-<dd>
-
-
-*Examples*
-
-<Tabs>
-  <TabItem value="apple" label="Number of New Apps Created" default>
- To get the number of new applications created in the last month:
-
-
-
-1. Set the **Command** to `distinct`, the **Collection** to `auditlog`, and configure the query like this:
+3. Create a new query to fetch logs from the `auditlog` **Collection** and configure the parameters as needed. For more information on how logs are stored, see [Log contents](/advanced-concepts/audit-logs#log-contents).
 
 
 <dd>
+
+
+*Example*: To display the number of active end users per month on a Chart widget, set the **Command** as `Aggregate` and configure the query as shown below:
+
+
+
 
 ```js
-//This query retrieves a list of applications created in the last month.
-{
-  event: "application.created",
-  "resource.type": "Application",
-  "timestamp": {
-    $gte: ISODate('{{moment().subtract(1, 'month')}}')
-  }
-}
-```
-
-</dd>
-
-2. Set the **Key** to `resource._id` to identify each unique application by its resource ID.
-
-3. To display the number of applications created, set the **Text** property of the Text widget to:
-
-
-<dd>
-
-```js
-{{getNewApplicationsCreated.data.values.length}}
-```
-
-</dd>
-
-
-  </TabItem>
-  <TabItem value="orange" label="Monthly Active Apps">
-
-To display the number of active apps by month on a Chart widget, follow these steps:
-
-
-<ZoomImage
-  src="/img/getAppsViewedByMonth.png" 
-  alt=""
-  caption=""
-/>
-
-1. Set the **Command** to `Aggregate`, the **Collection** to `auditlog`, and configure the query like this:
-
-
-<dd>
-
-```js
-//This query aggregates data to count the number of applications viewed each month, grouping by month and year.
+//This query counts the number of unique active users per month and year, excluding anonymous users, and sorts the results by date.
 [
   {
     $match: {
       "application.mode": "view",
-      "resource.type": "Page"
+			"user.email": {
+				"$not": {
+					"$regex": "anonymousUser",
+					"$options": "i"
+				}
+			}
     }
   },
   {
@@ -156,7 +98,7 @@ To display the number of active apps by month on a Chart widget, follow these st
         month: { $month: { $toDate: "$timestamp" } },
         year: { $year: { $toDate: "$timestamp" } }
       },
-      uniqueApplications: { $addToSet: "$application._id" }
+      uniqueUsers: { $addToSet: "$user.email" }
     }
   },
   {
@@ -164,7 +106,7 @@ To display the number of active apps by month on a Chart widget, follow these st
       _id: 0,
       month: "$_id.month",
       year: "$_id.year",
-      count: { $size: "$uniqueApplications" }
+      count: { $size: "$uniqueUsers" }
     }
   },
   {
@@ -172,136 +114,29 @@ To display the number of active apps by month on a Chart widget, follow these st
   }
 ]
 ```
+
 </dd>
 
-2. Create a new JSObject to format dates using `moment`, converting `{ month: 6, year: 2024 }` to `Jul 2024`.
 
-<dd>
-
-```JS
-export default {
-	formatDate: (item = { month: 6, year: 2024 }) => {
-		return moment(`${item.month}/01/${item.year}`)
-			.format('MMM\'YY');
-	}
-}
-```
-</dd>
-
-3. Drag a Chart widget and set its **Series Data** property to display the data, like:
+4. Drag a Chart widget and set its **Series Data** property to display the data, like:
 
 <dd>
 
 ```js
-{{getAppsViewedByMonth.data.map((item) => ({ x: Utils.formatDate(item), y: item.count }))}}
+{{getAppViewersByMonth.data.map((item) => ({ x: Utils.formatDate(item), y: item.count }))}}
 ```
 
 </dd>
 
-
-  </TabItem>
-  <TabItem value="banana" label="Raw Logs">
-To access the raw logs displaying detailed application usage information, follow these steps:
-
-
 <ZoomImage
-  src="/img/rawlogs.png" 
+  src="/img/endusers.png" 
   alt=""
   caption=""
 />
 
 
-1. Set the **Command** to `Find documents(s)`, the **Collection** to `auditlog`, and configure the query like this:
 
 
-<dd>
-
-```js
-{
-// This query retrieves logs for "page.viewed" or "query.executed" events, excluding untitled applications, within a selected date range and application mode.
-    event: {
-        $in: ["page.viewed", "query.executed"]
-    },
-    // Exclude documents where the application name contains "untitled" (case-insensitive)
-    "application.name": {
-        $not: { $regex: /untitled/i }
-    },
-    // Match documents where the application mode is the selected option from RadioGroup1
-    "application.mode": "{{RadioGroup1.selectedOptionValue}}",
-    // Filter documents where the timestamp is within the selected date range
-    "timestamp": {
-        $gte: ISODate('{{FromDate.selectedDate}}'),
-        $lte: ISODate('{{ToDate.selectedDate}}')			
-    }
-}
-```
-
-
-</dd>
-
-2. Set the **Sort** property to `{"timestamp": -1}` to display the most recent logs first.
-
-3. Configure the **Projection** property to include only the necessary fields:
-
-<dd>
-
-```js
-{ 
-  event: 1, 
-  "workspace.name": 1, 
-  "resource.name": 1, 
-  "resource.type": 1, 
-  "application.mode": 1, 
-  "application.name": 1, 
-  "user.name": 1, 
-  "user.email": 1, 
-  timestamp: 1, 
-  metadata: 1 
-}
-```
-
-</dd>
-
-4. Create a new JSObject to format and stringify unique audit logs by generating a unique key and converting the data to JSON.
-
-
-<dd>
-
-```js
-export default {
-    // Function to get unique audit logs
-	getUniqueAuditLogs: () => _.uniqBy(getAuditLogs.data, this.generateUniqueKey),
-    
-    // Helper function to generate a unique key for each log entry
-	generateUniqueKey: (item) => `${item.event}_${item.workspace.name}_${item.application.name}_${item.user.email}_${moment(item.timestamp * 1000).format("DD/MM/YYYY HH:mm")}`,
-    
-    // Function to get a stringified JSON representation of the unique audit logs
-	getStringifiedJSON: () => JSON.stringify(logsUtils.getUniqueAuditLogs().map(item => ({
-		timestamp: item.timestamp,
-		workspace: item.workspace?.name,
-		user: item.user?.email,
-		application: item.application?.name,
-		resource: item.resource?.page
-	})))
-}
-```
-
-</dd>
-
-5. Drag a Table widget and set its **Table Data** property to display the data, like:
-
-<dd>
-
-```js
-{{logsUtils.getUniqueAuditLogs()}}
-```
-
-</dd>
-
-  </TabItem>
-</Tabs>
-
-</dd>
 
 ## Sample App
 
