@@ -154,7 +154,7 @@ The **ReplyTo** address is the email displayed in the response field of Appsmith
 Defines to use of SMTP authentication when sending emails. Set it to `true` to authenticate your emails by the server, reducing the likelihood of them being marked as spam.
 </dd>
 
-#### `APPSMITH_TLS_ENABLED`
+#### `APPSMITH_MAIL_SMTP_TLS_ENABLED`
 
 <dd>
    
