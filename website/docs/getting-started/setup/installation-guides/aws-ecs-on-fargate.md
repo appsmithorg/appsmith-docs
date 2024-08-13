@@ -29,7 +29,7 @@ Follow these steps to create an Elastic File System (EFS):
 3. Select the file system you created above from the list and switch to the **Network** tab.
 4. Click the **Manage** button, and assign the security group that allows NFS access on port 2049. If you don't have such a security group:
     * Follow the [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html) guide and include an inbound rule for NFS access on port 2049. 
-    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-security-group-rules.html) for the port `2049` for NFS access to the security group you created above.
+    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port `2049` for NFS access to the security group you created above.
     * To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
     * Once created, attach this security group to your EFS.
 
