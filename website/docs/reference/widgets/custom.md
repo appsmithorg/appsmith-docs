@@ -253,9 +253,10 @@ _Example_: You can bind signature pad data to an image widget by pasting followi
 
 <dd>
 
-You can execute custom events you created on the property pane of the custom widget, by calling this function with name of the event. You can also by some optional data by passing a second argument.
+You can execute custom events that you created in the property pane of the custom widget by calling this function with the name of the event. You can also pass some optional data by including a second argument.
 
-_Example_: Let's say you have buttons in your custom component, upon clicked, you want to trigger onClick event along the itemId
+
+_Example_: Let's say you have buttons in your custom component, upon clicked, you want to trigger `onClick` event along the itemId
 
 ```js
 function onClick() {
