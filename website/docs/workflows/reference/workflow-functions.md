@@ -3,7 +3,7 @@ description: This page provides detailed information on workflow functions avail
 title: Workflow Functions
 hide_title: true
 toc_min_heading_level: 2
-toc_max_heading_level: 4
+toc_max_heading_level: 3
 ---
 <!-- vale off -->
 
@@ -25,6 +25,21 @@ Workflow functions are in-built framework functions that enables you to interact
 ## executeWorkflow()
 
 The `executeWorkflow()` function serves as a central control unit for executing workflows and marks the starting point of the workflow execution within Appsmith. This function allows you to create a workflow logic for execution of tasks.
+
+#### Example
+
+    ```javascript
+    export default {
+        async executeWorkflow(data) {
+            //call a query and read values of parameters
+            const response = await qs_send_email.run({ "email": data.email });
+            // Log the response for debugging
+            console.log(response);
+        
+            return true;
+        }
+    }
+    ```
 
 ### Signature
 
@@ -63,7 +78,7 @@ The `executeWorkflow()` returns a Promise that resolves to a boolean value, eith
 
 The `assignRequest()` function is an asynchronous function that is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that requires user intervention. This decision point is created as a pending request in the workflow, which can be accessed later in your app to enable users to take action using the [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once a pending request is created, the workflow pauses and awaits user action. 
 
-### Example
+#### Example
 
 ```javascript
 async function handleUserRequest() {
