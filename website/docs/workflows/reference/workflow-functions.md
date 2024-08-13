@@ -63,6 +63,24 @@ The `executeWorkflow()` returns a Promise that resolves to a boolean value, eith
 
 The `assignRequest()` function is an asynchronous function that is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that requires user intervention. This decision point is created as a pending request in the workflow, which can be accessed later in your app to enable users to take action using the [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once a pending request is created, the workflow pauses and awaits user action. 
 
+### Example
+
+```javascript
+async function handleUserRequest() {
+  try {
+    await assignRequest({
+      requestName: "Approval",
+      resolutions: ["Approved", "Rejected"],
+      requestToUsers: ["user1", "user2"]
+    });
+    console.log("Request successfully assigned and workflow paused.");
+  } catch (error) {
+    console.error("An error occurred while assigning the request:", error);
+  }
+}
+
+```
+
 ### Signature
 
 ```javascript
