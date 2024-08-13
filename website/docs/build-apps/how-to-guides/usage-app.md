@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Build a Usage Monitoring App for Appsmith Applications
+# Monitor App Usage
 
 This page shows how to build an Appsmith app to monitor other Appsmith applications by fetching audit logs and displaying data.
 
@@ -148,5 +148,6 @@ For more information on how logs are stored, see [Log contents](/advanced-concep
 
 ## Sample App
 
-- [Usage Analytics App](https://app.appsmith.com/app/usage-analytics/dashboard-660d304eca635a1aa4a8e909)
-
+- [Usage Overview](https://app.appsmith.com/app/usage-analytics/dashboard-660d304eca635a1aa4a8e909): Get platform activity for the last 30 days.
+- [Monthly Usage](https://app.appsmith.com/app/usage-analytics/monthly-trends-660d304eca635a1aa4a8e90a): A page that shows detailed app usage for the month.
+- [Raw Logs](https://app.appsmith.com/app/usage-analytics/raw-logs-660d304eca635a1aa4a8e908): A page that displays raw logs in a tabular format.
