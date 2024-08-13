@@ -61,12 +61,12 @@ The `executeWorkflow()` returns a Promise that resolves to a boolean value, eith
 
 ## assignRequest()
 
-The `assignRequest()` function is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that require users intervention. The decision point is created as a pending request in the workflow and can be accessed later in your apps to enable users to take action by using [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once you create pending requests, the workflow pauses and awaits for user action. 
+The `assignRequest()` function is an asynchronous function that is part of the `workflows` object within the global `appsmith` object in Appsmith. It allows you to create a decision point in a workflow that requires user intervention. This decision point is created as a pending request in the workflow, which can be accessed later in your app to enable users to take action using the [Get requests](/workflows/reference/workflow-queries#get-requests) workflow query. Once a pending request is created, the workflow pauses and awaits user action. 
 
 ### Signature
 
 ```javascript
-assignRequest({requestName: string, resolutions: string[], requestToUsers: string[], requestToGroups: string[], message: string,  metadata:{key: string, value: any}}) : Promise<JSON>
+async assignRequest({requestName: string, resolutions: string[], requestToUsers: string[], requestToGroups: string[], message: string,  metadata:{key: string, value: any}}) : Promise<JSON>
 ```
 
 ### Parameters
