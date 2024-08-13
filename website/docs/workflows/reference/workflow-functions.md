@@ -66,7 +66,7 @@ The `assignRequest()` function is an asynchronous function that is part of the `
 ### Signature
 
 ```javascript
-async assignRequest({requestName: string, resolutions: string[], requestToUsers: string[], requestToGroups: string[], message: string,  metadata:{key: string, value: any}}) : Promise<JSON>
+assignRequest({requestName: string, resolutions: string[], requestToUsers: string[], requestToGroups: string[], message: string,  metadata:{key: string, value: any}}) : Promise<JSON>
 ```
 
 ### Parameters
