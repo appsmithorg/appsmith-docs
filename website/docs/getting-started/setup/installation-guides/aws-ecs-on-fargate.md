@@ -9,10 +9,10 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
 ## Prerequisites
 
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
-* An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
+* An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#having-ec2-create-your-key-pair).
 * An Application Load Balancer (ALB) - If you already have an ALB, follow these steps:
   * Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
-  * Add an Amazon Security group with ports 80, and 443 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group). 
+  * Add an Amazon Security group with ports 80, and 443 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html). 
 * You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash. Hence, ensure you have set up and can access an external MongoDB instance hosting MongoDB V5.0 or later. For more information, see [External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb).
 
 
@@ -28,8 +28,8 @@ Follow these steps to create an Elastic File System (EFS):
 2. Provide a meaningful name to your file system, configure the VPC settings as required, and click **Create**.
 3. Select the file system you created above from the list and switch to the **Network** tab.
 4. Click the **Manage** button, and assign the security group that allows NFS access on port 2049. If you don't have such a security group:
-    * Follow the [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) guide and include an inbound rule for NFS access on port 2049. 
-    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port `2049` for NFS access to the security group you created above.
+    * Follow the [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html) guide and include an inbound rule for NFS access on port 2049. 
+    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html#sg-rules-efs) for the port `2049` for NFS access to the security group you created above.
     * To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
     * Once created, attach this security group to your EFS.
 
