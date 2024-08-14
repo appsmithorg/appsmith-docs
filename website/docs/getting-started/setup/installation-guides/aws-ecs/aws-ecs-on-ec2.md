@@ -65,6 +65,16 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 5. Configure the **Container-1** as shown below:
     * **Name** - Give a meaningful name. For example, `appsmith`
     * **Image URI** - `index.docker.io/appsmith/appsmith-ee`
+    * Add the port mappings for Port `80` as follows:
+      * **Container port** - `80`
+      * **Protocol** - HTTP
+      * **Port name** - Give a meaningful and unique name.
+      * **App protocol** - HTTP
+    * Add the port mappings for Port `443` as follows:
+      * **Container port** - `443`
+      * **Protocol** - HTTP
+      * **Port name** - Give a meaningful and unique name.
+      * **App protocol** - HTTP
     * Under the **Environment variables** section, click the **Add environment variable** button, and add the below environment variables in the **Key** and their values in the **Value** fields:
         * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
