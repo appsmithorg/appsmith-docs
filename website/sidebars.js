@@ -449,7 +449,8 @@ const sidebars = {
             `build-apps/how-to-guides/setup-polling`,
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
-            'build-apps/how-to-guides/usage-app'
+            'build-apps/how-to-guides/usage-app',
+            'build-apps/how-to-guides/how-to-export-audit-logs'
           ]
         },
         {
