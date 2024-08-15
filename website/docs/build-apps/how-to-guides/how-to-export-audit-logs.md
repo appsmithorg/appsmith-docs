@@ -260,4 +260,14 @@ export default {
 </dd>
 
 
-3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger)
+3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. For instance, you can use the webhook URL to initiate a cron job.
+
+See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger)
+
+
+
+## See also
+
+- [Workflows](/workflows)
+- [Monitor App Usage](/build-apps/how-to-guides/usage-app)
+- [Dsownload data](/reference/appsmith-framework/widget-actions/download#format-and-download-data)
