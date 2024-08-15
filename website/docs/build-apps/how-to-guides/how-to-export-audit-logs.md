@@ -83,18 +83,19 @@ Follow these steps to fetch audit logs and format the data into a format suitabl
 
 ```js
 {
-	event: {
-		$in: ["page.viewed", "query.executed"]
-	},
-	"application.name": {
-		$not: { $regex: /untitled/i }
-	},
-	"application.mode": "view",
-	"timestamp": {
-		$gte: ISODate({{this.params.fromDate}}),
-		$lte: ISODate({{this.params.toDate}})			
-	}
+  "event": {
+    "$in": ["page.viewed", "query.executed"]
+  },
+  "application.name": {
+    "$not": { "$regex": /untitled/i }
+  },
+  "application.mode": "view",
+  "timestamp": {
+    "$gte": ISODate("{{this.params.fromDate}}"),
+    "$lte": ISODate("{{this.params.toDate}}")
+  }
 }
+s
 ```
 
 
@@ -262,7 +263,7 @@ export default {
 
 3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. For instance, you can use the webhook URL to initiate a cron job.
 
-See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger)
+    See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger)
 
 
 
