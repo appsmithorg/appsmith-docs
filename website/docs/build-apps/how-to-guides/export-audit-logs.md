@@ -95,9 +95,7 @@ Follow these steps to fetch audit logs and format the data into a format suitabl
     "$lte": ISODate("{{this.params.toDate}}")
   }
 }
-s
 ```
-
 
 - Set the **Sort** property to `{"timestamp": -1}` to display the most recent logs first.
 
@@ -118,6 +116,10 @@ s
   metadata: 1 
 }
 ```
+
+`{{this.params.data}}` allows you to pass data between the workflow and queries. For more information, see [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows).
+
+
 
 </dd>
 
@@ -169,11 +171,9 @@ export default {
 
 
 ```js
- // highlight-start
 export default {
   async executeWorkflow(fromDate, toDate) {
     // Code to fetch Raw logs 
-     // highlight-end
       const formatLogs = (rawLogs) => {
       const writeKey = "key";
 
@@ -205,17 +205,18 @@ export default {
     // Assuming `rawLogs` is available here
     const formattedData = formatLogs(rawLogs);
     console.log("Formatted data:", formattedData);
-   // highlight-start
+   
   }
 };
-  // highlight-end
 ```
 
 </dd>
 
-## Integrate with monitoring tools 
+## Send data to monitoring tool
 
-Follow these steps to send your logs to monitoring tools via API:
+Follow these steps to send your logs to monitoring tools via API. This section uses the [Segment API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/) as an example.
+
+
 
 1. In the same workflow, create a new API query that sends data to the monitoring platform. 
 
@@ -225,7 +226,7 @@ Follow these steps to send your logs to monitoring tools via API:
 
 - URL: `POST https://api.segment.io/v1/batch`
 
-- JSON Body: `{{this.params.data}}`
+- In the body, select JSON and set it to: `{{this.params.data}}`
 
 
 </dd>
@@ -239,13 +240,12 @@ Follow these steps to send your logs to monitoring tools via API:
 *Example:* To send the formatted raw logs to the Segment API, you can include the following code in your workflow:
 
 ```js
- // highlight-start
 export default {
   async executeWorkflow(fromDate, toDate) {
-    // Code to fetch Raw logs 
+    // <Code to fetch Raw logs>
 
-    // Formatting code
-   // highlight-end
+    // <Formatting code>
+  
       // Send the formatted data to the Segment API
       try {
         const apiResponse = await segment.run({ data: formattedData });
@@ -259,18 +259,14 @@ export default {
     } catch (error) {
       console.error("Error fetching raw logs:", error.message);
     }
-   // highlight-start
   }
 };
-  // highlight-end
 ```
 
 </dd>
 
 
-3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. For instance, you can use the webhook URL to initiate a cron job.
-
-    See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger).
+3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. For instance, you can use the webhook URL to initiate a cron job. See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger).
 
 
 
