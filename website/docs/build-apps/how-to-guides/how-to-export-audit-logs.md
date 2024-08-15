@@ -278,4 +278,4 @@ export default {
 
 - [Workflows](/workflows)
 - [Monitor App Usage](/build-apps/how-to-guides/usage-app)
-- [Dsownload data](/reference/appsmith-framework/widget-actions/download#format-and-download-data)
+- [Download data](/reference/appsmith-framework/widget-actions/download#format-and-download-data)
