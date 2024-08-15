@@ -1,11 +1,11 @@
-# How to export audit logs 
+# Export audit logs 
 
 This guide shows you how to export audit logs to monitoring tools, which allows you to efficiently track and analyze system events.
 
 
 ## Prerequisites
 
-- Appsmith instance with access to Admin settings.
+- Self-hosted Appsmith instance with access to [Admin setting](/getting-started/setup/instance-configuration#admin-settings).
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
@@ -125,7 +125,7 @@ s
 
 <dd>
 
-*Example:* This code defines an `executeWorkflow` method that fetches logs from MongoDB for a specified date range using `fromDate` and `toDate` parameters.
+*Example:* This code shows how to use the existing `executeWorkflow` method to fetch logs from MongoDB for a specified date range using `fromDate` and `toDate` parameters.
 
 ```js
 export default {
