@@ -146,3 +146,4 @@ Custom
 Let’s Encrypt
 Instance Administrator
 Docker
+HTTP
