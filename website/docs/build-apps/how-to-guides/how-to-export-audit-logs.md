@@ -159,7 +159,14 @@ export default {
 
 <dd>
 
-*Example:* Here we will format the logs into a format accepted by the [Segment API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/).
+*Example*: To format the logs into a format accepted by the [Segment API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/), use:
+
+
+
+
+
+
+
 
 ```js
  // highlight-start
@@ -263,7 +270,7 @@ export default {
 
 3. If you want to automate this process from an external system, set up a webhook trigger to execute the workflow and pass the required parameters. For instance, you can use the webhook URL to initiate a cron job.
 
-    See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger)
+    See [Enable Webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger).
 
 
 
