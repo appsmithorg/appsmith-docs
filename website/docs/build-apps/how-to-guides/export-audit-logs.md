@@ -158,61 +158,9 @@ export default {
 
 
 
-4. Add JS code in the same workflow function to format the fetched data into a structure acceptable by your monitoring tool or as required.
+4. Update the JS code to format the fetched data into the required structure if needed.
 
 
-<dd>
-
-*Example*: To format the logs into a format accepted by the [Segment API](https://segment.com/docs/connections/sources/catalog/libraries/server/http-api/), use:
-
-
-
-
-
-
-
-
-```js
-export default {
-  async executeWorkflow(fromDate, toDate) {
-    // Code to fetch Raw logs 
-      const formatLogs = (rawLogs) => {
-      const writeKey = "key";
-
-      return {
-        batch: rawLogs.map(item => ({
-          type: "track",
-          userId: item.user.email,
-          event: item.event,
-          properties: {
-            workspace: item.workspace.name,
-            appsmithVersion: item.metadata.appsmithVersion,
-            application: item.application.name,
-            resource: {
-              name: item.resource.name,
-              type: item.resource.type
-            }
-          },
-          timestamp: item.timestamp
-        })),
-        writeKey: writeKey,
-        context: {
-          device: {
-            type: "app",
-            name: "Appsmith"
-          }
-        }
-      };
-    };
-    // Assuming `rawLogs` is available here
-    const formattedData = formatLogs(rawLogs);
-    console.log("Formatted data:", formattedData);
-   
-  }
-};
-```
-
-</dd>
 
 ## Send data to monitoring tool
 
@@ -244,20 +192,28 @@ Follow these steps to send your logs to monitoring tools via API. This section u
 ```js
 export default {
   async executeWorkflow(fromDate, toDate) {
-    // <Code to fetch Raw logs>
+    try {
+      // Execute the query and get the response
+      const response = await rawlogs.run({
+        fromDate: fromDate,
+        toDate: toDate
+      });
 
-    // <Formatting code>
-  
-      // Send the formatted data to the Segment API
+      console.log("Response from rawlogs:", response);
+
+      // Extract data from the response
+      const rawLogs = response.data;
+
+      // Send the raw logs data to the Segment API
       try {
-        const apiResponse = await segment.run({ data: formattedData });
+        const apiResponse = await segment.run({ data: rawLogs });
         console.log("Data sent successfully to Segment API:", apiResponse);
         return true;
       } catch (error) {
         console.error("Error sending data to Segment API:", error.message);
         return false;
       }
-
+      
     } catch (error) {
       console.error("Error fetching raw logs:", error.message);
     }
