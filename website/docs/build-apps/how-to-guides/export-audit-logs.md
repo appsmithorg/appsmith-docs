@@ -1,6 +1,6 @@
 # Export audit logs 
 
-This guide shows you how to export audit logs, which allows you to share system events to monitoring tools for better tracking and analysis.
+This guide shows you how to export audit logs, which allows you to share system events with monitoring tools for better tracking and analysis.
 
 
 
