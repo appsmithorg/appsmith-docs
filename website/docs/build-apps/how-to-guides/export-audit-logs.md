@@ -78,7 +78,7 @@ Follow these steps to fetch audit logs and format the data into a format suitabl
 
 <dd>
 
-*Example:* To fetch the raw logs displaying detailed application usage information, follow these steps:
+*Example -* To fetch the raw logs displaying detailed application usage information, follow these steps:
 
 
 - Set the **Command** to `Find documents(s)`, the **Collection** to `auditlog`, and configure the query like this:
@@ -130,7 +130,7 @@ Follow these steps to fetch audit logs and format the data into a format suitabl
 
 <dd>
 
-*Example:* This code shows how to use the existing `executeWorkflow` method to fetch logs from MongoDB for a specified date range using `fromDate` and `toDate` parameters.
+*Example -* This code shows how to use the existing `executeWorkflow` method to fetch logs from MongoDB for a specified date range using `fromDate` and `toDate` parameters.
 
 ```js
 export default {
@@ -188,7 +188,7 @@ Follow these steps to send your logs to monitoring tools via API. This section u
 
 <dd>
 
-*Example:* To send the formatted raw logs to the Segment API, you can include the following code in your workflow:
+*Example -* To send the formatted raw logs to the Segment API, you can include the following code in your workflow:
 
 ```js
 export default {
