@@ -67,7 +67,7 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
 </dd>
 
 
-## Process and Format Logs
+## Process and format logs
 
 Follow these steps to fetch audit logs and format the data into a format suitable for monitoring tools:
 
