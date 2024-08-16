@@ -7,7 +7,7 @@ This page shows how to build an Appsmith app to monitor other Appsmith applicati
 
 ## Prerequisites
 
-- Appsmith instance with access to Admin settings.
+- Appsmith instance with access to [Admin setting](/getting-started/setup/instance-configuration#admin-settings).
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
