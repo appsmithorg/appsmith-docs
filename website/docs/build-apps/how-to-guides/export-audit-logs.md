@@ -1,11 +1,13 @@
 # Export audit logs 
 
-This guide shows you how to export audit logs to monitoring tools, which allows you to efficiently track and analyze system events.
+This guide shows you how to export audit logs, which allows you to share system events to monitoring tools for better tracking and analysis.
+
+
 
 
 ## Prerequisites
 
-- Self-hosted Appsmith instance with access to [Admin setting](/getting-started/setup/instance-configuration#admin-settings).
+- Self-hosted Appsmith instance with access to [Admin settings](/getting-started/setup/instance-configuration#admin-settings).
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
