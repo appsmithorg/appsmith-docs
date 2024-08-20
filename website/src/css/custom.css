@@ -750,3 +750,18 @@ h4+.tags {
 .permissions-table td {
   text-align: left;
 }
+
+.external-link::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.external-link {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.external-link:hover {
+  text-decoration: underline;
+}

@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # AWS AMI
 
-This page provides steps to install Appsmith using an Amazon Machine Image (AMI).
+This page provides steps to install Appsmith using an Amazon Machine Image (AMI). You may also follow the video tutorial on how to install Appsmith using an <a href="https://www.youtube.com/watch?v=nnyikBImju8" target="_blank" rel="noopener noreferrer" className="external-link">Amazon Machine Image (AMI)</a>. 
 
 ## Prerequisites
 
