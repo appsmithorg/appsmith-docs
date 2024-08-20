@@ -46,6 +46,14 @@ Learning the fundamentals of Appsmith Workflows is crucial for maximizing produc
         Learn how to create your first workflow.
       </div>
    </div>
+   <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerCol">
+      </div> 
+      <b><a href="https://chatgpt.com/g/g-1xRyQ8iAK-appsmith-workflows">Appsmith Workflows Custom GPT</a></b>
+      <div className="containerDescription">
+        Try out our custom GPT to help build your workflow.
+      </div>
+   </div>
    <div className="columnGrid column-four" style={{padding:"20px"}}>
    
    </div>

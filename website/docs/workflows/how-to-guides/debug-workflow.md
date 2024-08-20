@@ -27,6 +27,8 @@ Before you begin, make sure you have:
 
 - A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
 
+<VideoEmbed host="youtube" videoId="iOKL-O0B8ts" title="Build and Debug your Workflow" caption="Build and Debug your Workflow"/>
+
 ## Set up and run workflow with test values
 
 While developing the workflows, you can debug the workflows by passing test values and fix issues in your workflow for accuracy. The debug runs are not included in the [Run History](/workflows/reference/run-history).
