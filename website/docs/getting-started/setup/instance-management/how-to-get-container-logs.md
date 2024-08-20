@@ -9,37 +9,37 @@ sidebar_position: 6
 
 This guide applies to docker-compose and docker installations.
 
-Appsmith logs can be found in the stacks directory on the docker host
+The docker container contains a script located at `/opt/appsmith/diagnostics.sh` on the container. This command can be run from the docker host using the following command:
 
-`stacks/logs/`
+`docker exec -it <your-appsmith-container-id> /opt/appsmith/diagnostics.sh`
 
-The logs directory contains the sub-directories below for each **service**:
+You will see similar to the following output:
 
-`appsmithctl backend cron editor mongodb redis rts`
-
-If you don’t remember where your `stacks` directory is located, run
-
-`docker inspect -f '{{ (index .Mounts 0).Source }}' <your-appsmith-container-id>`
-
-Alternatively, you can run the commands below on your shell to create a zip file containing the logs.
-
-```bash
-appsmithContainerID=<your appsmith container id>
-targetZipFile=<path to target zip file>
-service=<choose one of: appsmithctl backend cron editor mongodb redis rts | leave blank for all services>
-stacksPath=$(docker inspect -f '{{ (index .Mounts 0).Source }}' $appsmithContainerID)
-zip -r $targetZipFile "$stacksPath/logs/$service" 
+```
+~/work/code/appsmith-monitoring$ docker exec -it appsmith /opt/appsmith/diagnostics.sh
+1830:
+Dumping heap to /tmp/tmp.iD1Lc6kRNX/a3829270825f/2024-08-17_21.40.32-UTC/java/heap-dump.log ...
+Heap dump file created [229851460 bytes in 0.814 secs]
+Diagnostics gathered in /opt/appsmith/a3829270825f-2024-08-17_21.40.32-UTC.tar.gz
 ```
 
-## Docker in remote servers
+Note the file name of the `.tar.gz` file and run the following command -- the below uses the filename outputted above as an example -- to copy it from the container to the host:
 
-- SSH into the remote server and note the absolute path of the `stacks` directory.
-- If you don’t remember the path, use the `docker inspect` command as shown in the above section to locate it.
-- Exit from the remote server
-- In your local shell, run the command
+`docker cp <your-appsmith-container-id>:/opt/appsmith/a3829270825f-2024-08-17_21.40.32-UTC.tar.gz ./a3829270825f-2024-08-17_21.40.32-UTC.tar.gz`
+
+The file can then be extracted for analysis or emailed to appsmith support for our engineers to analyze.
+
+## Docker in remote servers
+- To run the above command on a remote server you simply need to execute the `docker exec` and `docker cp` over ssh to create the report and copy it from the container to the host:
 
 ```bash
-scp -r -C -i <your-ssh-key>.pem <user>@<host-ip>:<abs-path-to-stacks-dir>/logs/<service> <target-local-dir>
+ssh -i <your-ssh-key>.pem <user>@<host-ip>  docker exec -it <your-appsmith-container-id> /opt/appsmith/diagnostics.sh
+ssh -i <your-ssh-key>.pem <user>@<host-ip>  docker cp <your-appsmith-container-id>:/opt/appsmith/<rendered-file-name>-UTC.tar.gz <target-local-dir>/<rendered-file-name>-UTC.tar.gz 
+```
+
+- Once the file is copied from the container to the host, simply scp the file to the local machine:
+```bash
+scp -C -i <your-ssh-key>.pem <user>@<host-ip>:<host-source-dir>/<rendered-file-name>-UTC.tar.gz <target-local-dir>
 ```
 
 ### AWS AMI
