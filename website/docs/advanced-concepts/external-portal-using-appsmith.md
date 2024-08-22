@@ -50,4 +50,4 @@ When your customers share the same core functionalities but require different pe
 When each customer requires a different set of features:
 
 - Set up and maintain separate instances for each application, allowing full control over configuration, management, and updates for each customer. For more information about installing Appsmith, see the [Installation guides](/getting-started/setup/installation-guides).
-- Use separate Git branches for each application to manage updates and changes efficiently, keeping each instance up-to-date while maintaining isolation. 
+- Use separate Git repository for each application to manage updates and changes efficiently, keeping each instance up-to-date while maintaining isolation. For more information about configuring Git repositories, see [Connect to Git Repository](/advanced-concepts/version-control-with-git/guides/overview#connect-git-repository) guide.
