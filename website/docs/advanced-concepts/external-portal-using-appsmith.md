@@ -27,7 +27,11 @@ Understanding the authentication needs of companies is the first step in configu
 
 ## Branding requirements
 
-If the company requires a specific look and feel for the external portal, you need to set up branding for the Appsmith instance. In this case, you must set up different instances for different companies, as branding is configured at the instance level. For more information about setting up branding, see the [Branding](/advanced-concepts/branding) guide. If branding is not needed by the companies, then host a single instance for all the companies.
+If the company requires a specific look and feel for their external portal, you need to set up branding for the Appsmith instance. In this case, you must set up different instances for different companies, as branding configuration is at the instance level. For more information about setting up branding, see the [Branding](/advanced-concepts/branding) guide. If branding is not needed by the companies, then host a single instance for all the companies.
+
+## Email service requirements
+
+If the company requires a company dedicated email service provider their external portal, you need to set up an email service provider for the Appsmith instance. In this case, you must set up different instances for different companies, as email service provider configuration is at the instance level. For more information about setting up an email service provider, see the available [Email](/getting-started/setup/instance-configuration/email) providers and follow their guides to set them up. If a company dedicated email service is not needed by the companies, then host a single instance for all the companies.
 
 ## Manage deployments
 
