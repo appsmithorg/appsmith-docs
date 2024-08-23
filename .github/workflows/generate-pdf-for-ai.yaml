@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies --legacy-peer-deps
-        run: npm install
+      - name: Install dependencies 
+        run: npm install --legacy-peer-deps
         working-directory: website
 
       - name: Install Prince
