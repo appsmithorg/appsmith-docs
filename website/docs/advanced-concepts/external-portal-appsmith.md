@@ -38,7 +38,7 @@ Deploying separate Appsmith instances is ideal when each company requires enhanc
   <ZoomImage src="/img/appsmith-multiple-instances.svg" alt="Set up Appsmith as multiple instances" caption="Set up Appsmith as multiple instances"/>
 
   - Each instance can be configured with its own Single Sign-On provider. For more information about setting up Single Sign-On, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
-  - Use Granular Access Control to manage [permissions](advanced-concepts/granular-access-control/reference/permissions) and default access levels for authenticated users. For more details, refer to [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions).
+  - Use Granular Access Control to manage [permissions](/advanced-concepts/granular-access-control/reference/permissions) and default access levels for authenticated users. For more details, refer to [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions).
 
 ## Deployment strategies
 
