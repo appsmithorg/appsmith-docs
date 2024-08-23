@@ -728,7 +728,6 @@ const sidebars = {
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
         'advanced-concepts/external-portal-using-appsmith',
-        'advanced-concepts/external-portal-appsmith',
       ],
     }, //Advanced Concepts end
     //module start
