@@ -78,6 +78,3 @@ Manage the deployments based on whether the companies use the same application w
 
 For more information about Git flow, see [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches).
 
-## Conclusion
-
-By following these best practices, you can optimize your Appsmith instance setup to meet your organization’s specific needs while ensuring secure, scalable, and customizable deployments.
