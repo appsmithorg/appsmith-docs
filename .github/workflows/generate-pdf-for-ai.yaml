@@ -8,10 +8,6 @@ on:
 jobs:
   generate-and-upload-pdf:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
-        shell: bash
 
     steps:
       - name: Checkout repository
@@ -22,8 +18,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: Install dependencies --legacy-peer-deps
+        run: npm install
+        working-directory: website
 
       - name: Install Prince
         run: |
@@ -37,20 +34,24 @@ jobs:
 
       - name: Generate PDF
         run: npx docusaurus-prince-pdf -u https://docs.appsmith.com --output pdf/appsmith-docs.pdf
+        working-directory: website
 
       - name: Check original PDF size
         run: ls -lh pdf/appsmith-docs.pdf
+        working-directory: website
 
       - name: Compress PDF with Ghostscript
         run: |
           gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 \
           -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH \
           -dDetectDuplicateImages=true -dDownsampleColorImages=true \
-          -dColorImageResolution=20 -dGrayImageResolution=20 \
-          -dMonoImageResolution=20 -sOutputFile=compressed-appsmith-docs.pdf pdf/appsmith-docs.pdf
+          -dColorImageResolution=10 -dGrayImageResolution=10 \
+          -dMonoImageResolution=10 -sOutputFile=compressed-appsmith-docs.pdf pdf/appsmith-docs.pdf
+        working-directory: website
 
       - name: Check compressed PDF size
         run: ls -lh compressed-appsmith-docs.pdf
+        working-directory: website
 
       - name: Upload compressed PDF to API
         run: |
@@ -59,3 +60,4 @@ jobs:
             --data-binary "@compressed-appsmith-docs.pdf" \
             https://hook.eu1.make.com/78ylobuaxpwb4w8k3lbfgmdlwow9d8m5)
           echo "Response: $response"
+        working-directory: website
