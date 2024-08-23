@@ -32,7 +32,8 @@ Deploying separate Appsmith instances is ideal when each company requires enhanc
 - High levels of security and data isolation are necessary.
 
 **Considerations**:
-- Use Granular Access Control (GAC) to manage permissions and provide default access levels for authenticated users. For more information about how to set up default access in Appsmith, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
+- Configure Single Sign-On provider to manage user authentication. For more information about how to set up Single Sign-On authentication for your Appsmith instance, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication) guide.
+- Use Granular Access Control (GAC) to manage [permissions](advanced-concepts/granular-access-control/reference/permissions) and provide default access levels for authenticated users. For more information about how to set up default access in Appsmith, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 ## Deployment strategies
 
@@ -49,6 +50,3 @@ Once you have chosen the instance setup, follow these deployment strategies base
       * Set up distinct instances for each unique application required by different customers.
       * Use separate Git repositories for each application to manage updates and configurations.
       * Handle updates and configurations independently for each instance to ensure tailored deployment.
-
-## See also 
-- [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication) - Learn how to set up Single Sign-On authentication for your Appsmith instance. 
