@@ -18,7 +18,7 @@ Consider reviewing the matrix below to help decide which instance setup suits yo
 | **Instance Type**            | **Single Sign-On Integration** | **Same Functionalities, No Customization** | **Different Functionalities or Customization** |
 |------------------------------|--------------------------------|--------------------------------------------|------------------------------------------------|
 | **Single Instance -> Multiple Customer**          | Not Suitable                    | Ideal                                       | Not Suitable                                   |
-| **Single Instance -> Single Customer**       | Ideal                           | Suitable                                    | Ideal                                          |
+| **Single Instance -> Single Customer**       | Ideal                           | Not Suitable                                    | Ideal                                          |
 
 ### Instance setup guidelines
 
