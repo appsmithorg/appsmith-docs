@@ -1,0 +1,31 @@
+name: Generate Markdown File and Upload
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at midnight UTC
+  workflow_dispatch:
+
+jobs:
+  merge-and-upload-markdown:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Merge markdown files
+      run: |
+        find website/docs \( -name '*.md' -o -name '*.mdx' \) -exec cat {} + > appsmith-docs.md
+
+    - name: Check file size
+      run: |
+        filesize=$(stat -c%s "appsmith-docs.md")
+        echo "File size: $filesize bytes"
+
+    - name: Upload merged markdown to API
+      run: |
+        response=$(curl -X POST \
+          -H "Content-Type: text/markdown" \
+          --data-binary "@appsmith-docs.md" \
+          https://hook.eu1.make.com/78ylobuaxpwb4w8k3lbfgmdlwow9d8m5)
+        echo "Response: $response"
