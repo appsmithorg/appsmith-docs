@@ -59,5 +59,6 @@ If you need help, reach out to the support team via the chat widget located at t
 
 ## See also
 
-- [Granular Access Control](/advanced-concepts/granular-access-control) - Manage user roles, permissions, and access configurations for your applications.
+-- [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) - Set up default access for apps to ensure users have access to the applications you want.
+- [Granular Access Control](/advanced-concepts/granular-access-control) - Learn how to manage user roles, permissions, and access configurations for your applications.
 - [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches) - Learn best practices for managing your application with Git.
