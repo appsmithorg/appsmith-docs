@@ -17,7 +17,6 @@ For a single instance dedicated to a single client, the following options are av
 * **Authentication** 
   - Configure individual Single Sign-On (SSO) providers for each client. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
   - Build a custom login solution if needed.
-  - Set up default access for apps by editing the default role for all users to ensure they have access to the applications you want. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 * **Application** 
   - The application is unique to each client and can be managed in the following ways:
@@ -46,8 +45,7 @@ For a single instance serving multiple clients, the following options are availa
 * **Authentication** 
   - Set up a shared Single Sign-On provider for all clients on the instance. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
   - Build a custom login solution if needed.
-  - Set up default access for apps by editing the default role for all users to ensure they have access to the applications you want. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
-
+  
 * **Application** 
   - The application is common to all clients and can be managed as follows:
     - Use Git branches to manage incremental updates to the application and deploy the main branch to the instance.
@@ -55,6 +53,9 @@ For a single instance serving multiple clients, the following options are availa
 
 * **Branding** 
   - The branding is platform specific and same for all clients.
+
+## Default access
+To ensure that authenticated users have access to the applications you want, configure default access by editing the default role for all users. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 ## Get help
 If you need help, reach out to the support team via the chat widget located at the bottom right of this page.
