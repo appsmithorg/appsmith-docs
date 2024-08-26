@@ -27,9 +27,9 @@ For a single instance dedicated to a single client, the following options are av
     - Centralize updates in a single branch and propagate changes to all instances as needed.
 
   - **Different application for different clients:**
-    - Set up distinct instances for each unique application required by different clients.
-    - Use separate Git repositories for each application to manage updates and configurations.
-    - Handle updates and configurations independently for each instance to ensure tailored deployment.
+    - Use separate Git repositories to manage client-specific updates and configurations.
+    - Set up separate instances for each client-specific repositories.
+    - Handle updates and configurations independently for each instance.
 
 * **Branding** 
   - Customize branding to align with the branding guidelines and preferences of each client.
@@ -59,4 +59,5 @@ If you need help, reach out to the support team via the chat widget located at t
 
 ## See also
 
-- [Granular Access Control](/advanced-concepts/granular-access-control) - Learn how to set up roles, assign roles to users, and configure default access to apps.
+- [Granular Access Control](/advanced-concepts/granular-access-control) - Manage user roles, permissions, and access configurations for your applications.
+- [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches) - Learn best practices for managing your application with Git.
