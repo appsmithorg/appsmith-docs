@@ -4,7 +4,7 @@ description: This page outlines the best practices for selecting the right insta
 
 # External Client Portal
 
-When building an external client portal, it's crucial to choose the setup that best aligns with your organization's needs. This page provides best practices for selecting the most suitable instance configuration.
+When building an external client portal, it's crucial to choose the setup that best aligns with your client's needs. This page provides best practices for selecting the most suitable instance configuration.
 
 ## Single instance → single client
 
