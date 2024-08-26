@@ -17,6 +17,7 @@ For a single instance dedicated to a single client, the following options are av
 * **Authentication** 
   - Configure individual Single Sign-On (SSO) providers for each client. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
   - Build a custom login solution if needed.
+  - Set up default access for apps to ensure users have access to the applications you want. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 * **Application** 
   - The application is unique to each client and can be managed in the following ways:
@@ -45,6 +46,7 @@ For a single instance serving multiple clients, the following options are availa
 * **Authentication** 
   - Set up a shared Single Sign-On provider for all clients on the instance. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
   - Build a custom login solution if needed.
+  - Set up default access for apps to ensure users have access to the applications you want. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
 
 * **Application** 
   - The application is common to all clients and can be managed as follows:
@@ -59,6 +61,5 @@ If you need help, reach out to the support team via the chat widget located at t
 
 ## See also
 
--- [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) - Set up default access for apps to ensure users have access to the applications you want.
 - [Granular Access Control](/advanced-concepts/granular-access-control) - Learn how to manage user roles, permissions, and access configurations for your applications.
 - [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches) - Learn best practices for managing your application with Git.
