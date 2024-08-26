@@ -155,7 +155,7 @@ const sidebars = {
                   items: [
                     'getting-started/setup/instance-configuration/email/gmail',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
-                     'getting-started/setup/instance-configuration/email/microsoft-365',
+                    'getting-started/setup/instance-configuration/email/microsoft-365',
                     'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
@@ -433,7 +433,7 @@ const sidebars = {
               items: [
                 'build-apps/how-to-guides/custom-widget-using-vanillajs'
               ],
-            }, 
+            },
             `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
@@ -593,18 +593,18 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/clear-store',
               'reference/appsmith-framework/widget-actions/close-modal',
               'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-                'reference/appsmith-framework/widget-actions/download',
-                'reference/appsmith-framework/widget-actions/navigate-to',
-                'reference/appsmith-framework/widget-actions/post-message',
-                'reference/appsmith-framework/widget-actions/remove-value',
-                  'reference/appsmith-framework/widget-actions/reset-widget',
-                 'reference/appsmith-framework/widget-actions/set-timeout',
-                 'reference/appsmith-framework/widget-actions/intervals-time-events',
-                  'reference/appsmith-framework/widget-actions/store-value',
-                  'reference/appsmith-framework/widget-actions/show-alert',
-                  'reference/appsmith-framework/widget-actions/show-modal',
-                  'reference/appsmith-framework/widget-actions/unlisten-window-message',
-                  'reference/appsmith-framework/widget-actions/window-message-listener'
+              'reference/appsmith-framework/widget-actions/download',
+              'reference/appsmith-framework/widget-actions/navigate-to',
+              'reference/appsmith-framework/widget-actions/post-message',
+              'reference/appsmith-framework/widget-actions/remove-value',
+              'reference/appsmith-framework/widget-actions/reset-widget',
+              'reference/appsmith-framework/widget-actions/set-timeout',
+              'reference/appsmith-framework/widget-actions/intervals-time-events',
+              'reference/appsmith-framework/widget-actions/store-value',
+              'reference/appsmith-framework/widget-actions/show-alert',
+              'reference/appsmith-framework/widget-actions/show-modal',
+              'reference/appsmith-framework/widget-actions/unlisten-window-message',
+              'reference/appsmith-framework/widget-actions/window-message-listener'
 
             ]
           },
@@ -664,7 +664,7 @@ const sidebars = {
                 'advanced-concepts/granular-access-control/roles',
               ]
             },
-          ]
+          ],
         },
         //git-start
         {
@@ -727,6 +727,7 @@ const sidebars = {
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
+        'advanced-concepts/external-portal-using-appsmith',
       ],
     }, //Advanced Concepts end
     //module start
@@ -757,9 +758,9 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
-                  'packages/reference/package',
-                  'packages/reference/query-module'
-      
+            'packages/reference/package',
+            'packages/reference/query-module'
+
           ],
         }
       ]
