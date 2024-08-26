@@ -1,79 +1,62 @@
 ---
-sidebar_position: 3
-description: This page outlines the best practices for selecting the right instance setup when building external portals using Appsmith.
+description: This page outlines the best practices for selecting the right instance setup when building external client portals using Appsmith.
 ---
 
-# External Portals using Appsmith
+# External Client Portal
 
-This page outlines best practices for selecting the right instance configuration when building external portals using Appsmith.
+When building an external client portal, it's crucial to choose the setup that best aligns with your organization's needs. This page provides best practices for selecting the most suitable instance configuration.
 
-## Single vs multiple instances
+## Single instance → single client
 
-Selecting between a single instance or multiple instances for deploying Appsmith affects how you manage applications, ensure security, and provide custom features. Consider the following best practices when making your decision:
+In a single instance single client setup, each client gets their own unique instance with client-specific configuration.
 
-- **Single instance setups** are generally more cost-effective and easier to manage but offer less flexibility for customization and isolation.
-- **Multiple instance setups** provide greater flexibility and security but require more resources and management overhead.
+<ZoomImage src="/img/appsmith-multiple-instances.svg" alt="Single Instance → Single client" caption="Single Instance → Single client"/>
 
-### Key deciding factors
+For a single instance dedicated to a single client, the following options are available for configuration:
 
-Refer to the matrix below that helps you determine the most suitable instance setup for your needs:
+* **Authentication** 
+  - Configure individual Single Sign-On (SSO) providers for each client. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
+  - Build a custom login solution if needed.
 
-| **Instance Type**            | **Single Sign-On Integration** | **Same Functionalities, No Customization** | **Different Functionalities or Customization** |
-|------------------------------|--------------------------------|--------------------------------------------|------------------------------------------------|
-| **Single Instance -> Multiple Companies**          | Limited<font color="red">*</font>                    | Yes                                       | No                                   |
-| **Single Instance -> Single Company**       | Yes                           | No                               | Yes                                          |
+* **Application** 
+  - The application is unique to each client and can be managed in the following ways:
 
-### Instance setup guidelines
+  - **Single application with client-specific customization:**
+    - Use Git branches to create client-specific versions of the application.
+    - Deploy each branch to a separate instance. For guidance on setting up and managing different instances using Git, see [Set up multiple instances with Git](/advanced-concepts/version-control-with-git/environments-with-git).
+    - Centralize updates in a single branch and propagate changes to all instances as needed.
 
-Once you have chosen the instance setup that best fits your needs, follow these guidelines for setting up and managing your instances:
+  - **Different application for different clients:**
+    - Set up distinct instances for each unique application required by different clients.
+    - Use separate Git repositories for each application to manage updates and configurations.
+    - Handle updates and configurations independently for each instance to ensure tailored deployment.
 
-#### Single instance → multiple companies
+* **Branding** 
+  - Customize branding to align with the branding guidelines and preferences of each client.
 
-For scenarios where multiple companies share the same functionalities and do not require extensive customization, a single instance setup is generally appropriate.
+## Single instance → multiple clients
 
-<ZoomImage src="/img/appsmith-single-instance.svg" alt="Single Instance → Multiple Companies" caption="Single Instance → Multiple Companies"/>
+In a single instance multiple client setup, a single instance is shared among multiple clients without client-specific configuration.
 
-Consider the following when configuring authentication:
+<ZoomImage src="/img/appsmith-single-instance.svg" alt="Single Instance → Multiple clients" caption="Single Instance → Multiple clients"/>
 
-- Use custom login solutions for each company to ensure secure access.
-- SSO can be configured, but it's not company-specific, offering limited flexibility. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
-- If SSO is configured, you can provide default access to authenticated users, though this may lack the granularity if needed by different companies. For more information about setting default access, see how to [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
-- All companies use the same application.
+For a single instance serving multiple clients, the following options are available for configuration:
 
-#### Deployment strategies
+* **Authentication** 
+  - Set up a shared Single Sign-On provider for all clients on the instance. For more information, see [Single Sign-On Configuration](/getting-started/setup/instance-configuration/authentication).
+  - Build a custom login solution if needed.
 
-To manage the same application for all companies follow the Git flow:
+* **Application** 
+  - The application is common to all clients and can be managed as follows:
+    - Use Git branches to manage incremental updates to the application and deploy the main branch to the instance.
+    - Create feature branches to develop and test your changes. Merge changes to the main branch to update the instance with a new version of the application.
 
-- Use Git branches to manage incremental updates to the application and deploy the main branch to the instance.
-- Create feature branches to develop and test your changes. Merge changes to the main branch to update the instance with a new version of the application.
+* **Branding** 
+  - The branding is platform specific and same for all clients.
 
-For more information about Git flow, see [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches).
+## Get help
+If you need help, reach out to the support team via the chat widget located at the bottom right of this page.
 
-### Single instance → single company
+## See also
 
-For scenarios where each company requires enhanced isolation and customization, a single instance setup per company is generally appropriate.
-
-<ZoomImage src="/img/appsmith-multiple-instances.svg" alt="Single Instance → Single Company" caption="Single Instance → Single Company"/>
-
-Consider the following when configuring authentication:
-
-- Configure each instance with its own Single Sign-On provider for better isolation and security.
-- Customize applications to meet the specific needs of each company.
-- Use Granular Access Control (GAC) in Appsmith to provide default access to authenticated users. For more information about configuring default access, see how to [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
-- Companies either use the same application with personalization or different applications.
-
-#### Deployment strategies
-
-Manage the deployments based on whether the companies use the same application with variations or different applications:
-
-- **Single application with company-specific customization:**
-  - Use Git branches to create company-specific versions of the application.
-  - Deploy each branch to a separate instance. For more information about how to set up and manage different instances using Git, see [Set up multiple instances with Git](/advanced-concepts/version-control-with-git/environments-with-git).
-  - Centralize updates in a single branch and propagate changes to all instances as needed.
-
-- **Different application for different companies:**
-  - Set up distinct instances for each unique application required by different companies.
-  - Use separate Git repositories for each application to manage updates and configurations.
-  - Handle updates and configurations independently for each instance to ensure tailored deployment.
-
-For more information about Git flow, see [Git Best Practices](/advanced-concepts/version-control-with-git/merging-branches).
+- [Granular Access Control](/advanced-concepts/granular-access-control) - Learn how to set up roles, assign roles to users, and configure default access to apps.
