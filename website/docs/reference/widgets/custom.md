@@ -285,25 +285,26 @@ However, it's important to ensure that changes triggered by your widget's own up
 _Example_:
 
 ```js
-// Keep track of the current model state
-let currentModel = null;
-
+// Monitor changes in the model (e.g., dropdown selection)
 const unlisten = appsmith.onModelChange((newModel) => {
-  // Check if the part of the model you care about has changed
-  if (!currentModel || newModel.selectedItem !== currentModel.selectedItem) {
-    // Only update if there's a relevant change
+  // Compare the selected item and update if there's a change
+  if (newModel.selectedItem !== appsmith.model.selectedItem) {
+    // Update the display only if the selected item has changed
     setSelectedItem(newModel.selectedItem);
   }
-
-  // Update the current model to the new state
-  currentModel = newModel;
 });
 
-// Unsubscribe when no longer interested in updates
+// Event listener to update the model when the dropdown value changes
+document.getElementById("itemSelect").addEventListener("change", function(event) {
+  appsmith.model.selectedItem = event.target.value;
+  setSelectedItem(event.target.value); // Ensure immediate update on change
+});
+
+// Unsubscribe when no longer interested in updates (optional in this simple case)
 unlisten();
 ```
 
-When you're no longer interested in listening to the model change , call the return value of the `appsmith.onModelChange` function.
+When the condition is applied, updates occur only when the selected item changes, preventing unnecessary updates and avoiding infinite loops. When you're no longer interested in listening to the model change , call the return value of the `appsmith.onModelChange` function.
 
 </dd>
 
