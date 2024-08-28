@@ -276,20 +276,35 @@ function onClick() {
 
 <dd>
 
-The `onModelChange` function allows you to register a handler function, which will get called whenever there is a change in the model either from the platform or from another part of the custom widget (see `updateModel` function).
+The `onModelChange` function allows you to register a handler function, which will be called whenever there is a change in the model, either from the platform or from within the custom widget (for example, via the `updateModel` function). This is useful for responding to changes in the widget's state.
+
+However, it's important to ensure that changes triggered by your widget's own updates don't lead to infinite loops. You can handle this by adding a condition to check if the relevant part of the model has actually changed before performing any updates.
+
+
 
 _Example_:
 
 ```js
-  const unlisten = appsmith.onModelChange((model) => {
-    setSelectedItem(model.selectedItem);
-  });
+// Monitor changes in the model (e.g., dropdown selection)
+const unlisten = appsmith.onModelChange((newModel) => {
+  // Compare the selected item and update if there's a change
+  if (newModel.selectedItem !== appsmith.model.selectedItem) {
+    // Update the display only if the selected item has changed
+    setSelectedItem(newModel.selectedItem);
+  }
+});
 
-  // Unsubscribe when no longer interested in updates.  
-  unlisten();
+// Event listener to update the model when the dropdown value changes
+document.getElementById("itemSelect").addEventListener("change", function(event) {
+  appsmith.model.selectedItem = event.target.value;
+  setSelectedItem(event.target.value); // Ensure immediate update on change
+});
+
+// Unsubscribe when no longer interested in updates (optional in this simple case)
+unlisten();
 ```
 
-When you're no longer interested in listening to the model change , call the return value of the appsmith.onModelChange function.
+When the condition is applied, updates occur only when the selected item changes, preventing unnecessary updates and avoiding infinite loops. When you're no longer interested in listening to the model change , call the return value of the `appsmith.onModelChange` function.
 
 </dd>
 
