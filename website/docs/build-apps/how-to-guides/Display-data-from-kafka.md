@@ -50,7 +50,7 @@ Copy the endpoints and credentials for the connector associated with the Kafka t
 
 
 
-## Set Up WebSocket Server
+## Configure WebSocket Server
 
 Follow these steps to set up a WebSocket server, either locally or on your preferred platform. This server will act as a bridge to stream real-time data from your Kafka topic to your Appsmith application.
 
