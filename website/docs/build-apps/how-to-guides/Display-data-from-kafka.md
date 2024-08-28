@@ -28,7 +28,8 @@ pkc-11ab.us-east-2.aws.confluent.cloud:1010
 
 
 
-3. Navigate to the Connector section and open the connector settings.
+3. Navigate to the Connector section and open the Connector for the topic from which you want to stream data.
+
 
 4. Inside the Connector settings, find the API Key, Kafka API Secret, and Topic Name. 
 
