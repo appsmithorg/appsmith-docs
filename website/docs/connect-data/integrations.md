@@ -24,7 +24,7 @@ This page offers resources to guide you in connecting Appsmith to many third-par
     </div>
     <div className="containerColumnSampleApp columnGrid column-three" style={{padding:"20px"}}>
         <div className="containerCol">
-            <img className="containerImage" src="/img/appwrite-logo_DGkbk_MxO.png" alt="Appwrite-logo"/>
+            <img className="containerImage" src="/img/appwrite.svg" alt="Appwrite-logo"/>
         </div> <hr/>
         <div className="containerDescription"><strong>Appwrite</strong> is a self-hosted BaaS platform that provides developers with all the  core APIs required to build any application.<br/><br/></div>
          <div className="containerTutorialLink"><a href="https://community.appsmith.com/guide/appsmith-appwrite"><strong>View Tutorial</strong></a> </div>
