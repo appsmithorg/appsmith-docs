@@ -44,7 +44,7 @@ pkc-11ab.us-east-2.aws.confluent.cloud:1010
 
 
 
-3. Navigate to the **Connector** page, and select the connector linked to the topic you want to stream data from.
+3. Navigate to the **Connector** page, and select the connector associated with your desired data streaming topic.
 
 
 4. Inside the Connector settings, find the API Key, Kafka API Secret, and Topic Name. 
@@ -151,9 +151,26 @@ console.log('Kafka to WebSocket bridge is running on port 8080');
 
 This Node.js script sets up a WebSocket server that listens on port `8080` and a Kafka consumer to read messages from a specified Kafka topic. It streams incoming Kafka messages to all connected WebSocket clients in real-time.
 
+:::info
+If you're setting up a secure WebSocket server (WSS), you'll need to generate a self-signed certificate or obtain one from a Certificate Authority. You can use [OpenSSL](/getting-started/setup/instance-configuration/custom-domain#ssl-using-custom-certificate) to generate a self-signed certificate.
+:::
+
 </dd>
 
 4. Run and test the WebSocket server script. 
+
+<dd>
+
+If you are using a local server setup and want to make your WebSocket server public, you can consider platforms like [Ngrok](https://ngrok.com/docs#websockets), [Heroku](https://devcenter.heroku.com/articles/websockets), [DigitalOcean](https://www.digitalocean.com/community/tutorials/nodejs-server-sent-events-build-realtime-app), or [AWS EC2](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html).
+
+
+
+
+
+
+</dd>
+
+
 
 
 ## Set Up WebSocket in Appsmith
@@ -170,7 +187,10 @@ Follow these steps to integrate and use the WebSocket server you set up with you
 export default {
   // WebSocket URL (change this URL based on your WebSocket server)
   // highlight-next-line
-  socketURL: 'ws://localhost:8080',
+  socketURL: 'ws://localhost:8080', 
+
+  // For local development: ws://localhost:8080
+  // If the server is hosted: wss://your-domain.ngrok.io
 
   // WebSocket instance
   socket: null,
