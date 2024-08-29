@@ -73,8 +73,7 @@ Follow these steps to set up a WebSocket server, either locally or on your prefe
 
 1. Select a WebSocket library or framework based on your preferred programming language, and decide whether to set up the WebSocket server locally or on a cloud platform (e.g., AWS, Azure, Google Cloud).
 
-2. Install required packages for Kafka and WebSocket setup.
-
+2. Install a Kafka client library and a WebSocket server library in your local development environment or on your cloud server.
 
 <dd>
 
@@ -161,7 +160,7 @@ If you're setting up a secure WebSocket server (WSS), you'll need to generate a 
 
 <dd>
 
-If you are using a local server setup and want to make your WebSocket server public, you can consider platforms like [Ngrok](https://ngrok.com/docs#websockets), [Heroku](https://devcenter.heroku.com/articles/websockets), [DigitalOcean](https://www.digitalocean.com/community/tutorials/nodejs-server-sent-events-build-realtime-app), or [AWS EC2](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html).
+If you are using a local server setup and want to make your WebSocket server public, you can consider using platforms like [Ngrok](https://ngrok.com/docs#websockets), [Heroku](https://devcenter.heroku.com/articles/websockets), [DigitalOcean](https://www.digitalocean.com/community/tutorials/nodejs-server-sent-events-build-realtime-app), or [AWS EC2](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html).
 
 
 
@@ -177,7 +176,7 @@ If you are using a local server setup and want to make your WebSocket server pub
 
 Follow these steps to integrate and use the WebSocket server you set up with your Appsmith application:
 
-1. In Appsmith, create a new JSObject and configure your WebSocket connection. Define `socket` for the WebSocket instance, like this:
+1. In Appsmith, create a new JSObject and configure your WebSocket connection. Define `socket` for the WebSocket instance, like:
 
 <dd>
 
