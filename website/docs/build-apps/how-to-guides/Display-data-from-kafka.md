@@ -1,24 +1,40 @@
-# Display Realtime data from kafka
+# Display Real-time Data from Kafka (Confluent Cloud)
 
-This page shows how to display and stream real-time data from Kafka using WebSockets. This guide uses Kafka Cloud - [Confluent Cloud](https://www.confluent.io/confluent-cloud/); if you are using a local Kafka setup, the steps might vary based on your configuration.
+This page shows how to display and stream real-time data from Kafka - [Confluent Cloud](https://www.confluent.io/confluent-cloud/) using WebSockets. 
+
+
+<ZoomImage
+  src="/img/kafka-dash-30fps.gif" 
+  alt=""
+  caption=""
+/> 
 
 ## Prerequisites
 
 * Ensure you have an active Kafka account with access to create and manage clusters and topics.
 * A configured [Kafka cluster](https://docs.confluent.io/cloud/current/get-started/index.html) with at least one topic set up to stream data. See [Topics in Confluent Cloud.](https://docs.confluent.io/cloud/current/client-apps/topics/manage.html)
-* Familiarity with Kafka (producers, topics, consumers) and [WebSocket protocols](https://www.npmjs.com/package/kafka-node).
+* Familiarity with Kafka (producers, topics, consumers) and [WebSocket protocols](https://www.npmjs.com/package/Kafka-node).
 
 ## Retrieve Kafka Credentials
 
 Follow these steps to fetch cluster and API credentials from Kafka:
 
-1. Go to [Confluent Cloud](https://confluent.cloud/home), navigate to the dashboard, and open your cluster.
+<dd>
 
-2. Click on Cluster settings and copy the server endpoint. Save it for future use. 
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/5iLQM1YQUugaAtMS1Mmc?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+</dd>
+
+1. Go to [Confluent Cloud](https://confluent.cloud/home), navigate to the dashboard, and open your Cluster.
+
+2. Click on **Cluster settings** and copy the server endpoint. Save it for future use. 
 
 <dd>
 
-Example: 
+*Example:* 
 
 ```js
 pkc-11ab.us-east-2.aws.confluent.cloud:1010
@@ -28,14 +44,14 @@ pkc-11ab.us-east-2.aws.confluent.cloud:1010
 
 
 
-3. Navigate to the Connector section and open the Connector for the topic from which you want to stream data.
+3. Navigate to the **Connector** page, and select the connector linked to the topic you want to stream data from.
 
 
 4. Inside the Connector settings, find the API Key, Kafka API Secret, and Topic Name. 
 
 <dd>
 
-Copy the endpoints and credentials for the connector associated with the Kafka topic from which you want to stream data.
+<dd>
 
 
 <ZoomImage
@@ -43,7 +59,7 @@ Copy the endpoints and credentials for the connector associated with the Kafka t
   alt=""
   caption=""
 /> 
-
+</dd>
 </dd>
 
 
@@ -57,12 +73,12 @@ Follow these steps to set up a WebSocket server, either locally or on your prefe
 
 1. Select a WebSocket library or framework based on your preferred programming language, and decide whether to set up the WebSocket server locally or on a cloud platform (e.g., AWS, Azure, Google Cloud).
 
-2. Install required packages for kafka and WebSocket setup.
+2. Install required packages for Kafka and WebSocket setup.
 
 
 <dd>
 
-*Example:* If you want to set up locally using Node.js, install:
+*Example:* If you want to set up locally using [Node.js](https://kafka.js.org/), install:
 
 ```js
 npm install kafkajs ws
@@ -81,21 +97,21 @@ const { Kafka } = require('kafkajs');
 const WebSocket = require('ws');
 
 // Kafka setup
-const kafka = new Kafka({
-  clientId: 'kafka-websocket-bridge',
+const Kafka = new Kafka({
+  clientId: 'Kafka-websocket-bridge',
   // highlight-next-line
   brokers: ['pkc-11ab.us-east-2.aws.confluent.cloud:1010'], // Replace with your Kafka broker URL
   ssl: true,
   sasl: {
     mechanism: 'plain',
     // highlight-next-line
-    username: 'your-kafka-api-key', // Replace with your Kafka API key
+    username: 'your-Kafka-api-key', // Replace with your Kafka API key
     // highlight-next-line
-    password: 'your-kafka-api-secret', // Replace with your Kafka API secret
+    password: 'your-Kafka-api-secret', // Replace with your Kafka API secret
   },
 });
 
-const consumer = kafka.consumer({ groupId: 'websocket-group' });
+const consumer = Kafka.consumer({ groupId: 'websocket-group' });
 
 // WebSocket server setup
 const wss = new WebSocket.Server({ port: 8080 });
@@ -133,7 +149,7 @@ run().catch(console.error);
 console.log('Kafka to WebSocket bridge is running on port 8080');
 ```
 
-This Node.js script sets up a WebSocket server that listens on port 8080 and a Kafka consumer to read messages from a specified Kafka topic. It streams incoming Kafka messages to all connected WebSocket clients in real-time.
+This Node.js script sets up a WebSocket server that listens on port `8080` and a Kafka consumer to read messages from a specified Kafka topic. It streams incoming Kafka messages to all connected WebSocket clients in real-time.
 
 </dd>
 
@@ -163,28 +179,36 @@ export default {
   initWebSocket() {
     this.socket = new WebSocket(this.socketURL);
 
-    // Event handler for successful connection
-    this.socket.onopen = () => {
-      console.log('WebSocket connection established successfully');
-    };
+	// Event handler for successful connection
+		this.socket.onopen = () => {
+			console.log('WebSocket connection established successfully');
+		};
 
-    // Event handler for incoming messages
-    this.socket.onmessage = (event) => {
-      const responseData = JSON.parse(event.data);
-      console.log('Received data:', responseData);
-      // Handle received data (e.g., update state, trigger actions)
-    };
+		// Event handler for incoming messages
+		this.socket.onmessage = (event) => {
+			// Parse the incoming data
+			const responseData = JSON.parse(event.data);
 
-    // Event handler for connection errors
-    this.socket.onerror = (error) => {
-      console.error('WebSocket error:', error);
-    };
+			// Log the raw data for reference
+			console.log('Received data:', event.data);
 
-    // Event handler for connection closure
-    this.socket.onclose = (event) => {
-      console.log('WebSocket connection closed:', event);
-    };
-  }
+			// Add the new data to the top of the receivedData array
+			this.receivedData.unshift(responseData);
+
+			// Log the updated array
+			console.log('Updated Data:', this.receivedData);
+		};
+
+		// Event handler for errors
+		this.socket.onerror = (error) => {
+			console.error('WebSocket error:', error);
+		};
+
+		// Event handler for connection closure
+		this.socket.onclose = (event) => {
+			console.log('WebSocket connection closed:', event);
+		};
+	}
 };
 ```
 
@@ -193,4 +217,18 @@ This code sets up a WebSocket connection to the specified server URL and handles
 
 </dd>
 
-2. Format the data and bind it to widgets based on your requirements. For more information on WebSockets, see [Websockets for real-time updates](/build-apps/how-to-guides/set-up-websockets).
+2. Bind response data with widgets as needed.
+
+<dd>
+
+*Example:* To display data in Table widget, set **Table data** property to:
+
+
+```js
+{{WebsocketUtils.receivedData}}
+```
+
+Format the data and bind it to widgets based on your requirements. For more information on WebSockets, see [Websockets for real-time updates](/build-apps/how-to-guides/set-up-websockets).
+
+</dd>
+
