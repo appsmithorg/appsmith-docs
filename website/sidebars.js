@@ -434,6 +434,16 @@ const sidebars = {
                 'build-apps/how-to-guides/custom-widget-using-vanillajs'
               ],
             },
+            {
+              type: 'category',
+              label: 'Real-Time Updates',
+              items: [
+                `build-apps/how-to-guides/set-up-websockets`,
+                `build-apps/how-to-guides/setup-polling`,
+                'build-apps/how-to-guides/Display-data-from-kafka',
+                'build-apps/how-to-guides/usage-app',
+              ],
+            },
             `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
@@ -445,13 +455,9 @@ const sidebars = {
             'build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe',
             'advanced-concepts/custom-authentication',
             'build-apps/how-to-guides/display-map-markers',
-            `build-apps/how-to-guides/set-up-websockets`,
-            `build-apps/how-to-guides/setup-polling`,
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
-            'build-apps/how-to-guides/usage-app',
             'build-apps/how-to-guides/export-audit-logs',
-            'build-apps/how-to-guides/Display-data-from-kafka'
           ]
         },
         {
