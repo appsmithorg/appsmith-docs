@@ -27,6 +27,10 @@ This property allows you to include a URL or base64-encoded content to view vari
 
 Additionally, you can populate the document by retrieving data from a source such as an API or Datasource Query. 
 
+:::info
+When using base64-encoded PDFs larger than 1.5MB, the Document Viewer may encounter rendering issues. It is recommended to use direct URLs or reduce the file size for optimal performance.
+:::
+
 </dd>
 
 #### Visible `Boolean`
