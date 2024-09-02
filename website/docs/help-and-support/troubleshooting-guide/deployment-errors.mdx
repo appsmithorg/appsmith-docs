@@ -125,6 +125,31 @@ When manually updating Appsmith without using the auto-update system, old and un
 
 After each manual update, run `docker system prune -a` to clean up unused Docker images, containers, volumes, and networks. This will free up disk space and prevent similar issues in the future.
 
+# Appsmith Unable to Connect to Azure PostgreSQL Database
+
+Appsmith, hosted on Azure Web App, cannot connect to a PostgreSQL database (Azure Database for PostgreSQL flexible server). Users receive the error: "" when trying to test the connection.
+
+
+#### Error message
+
+<Message
+  messageContainerClassName="error"
+  messageContent="Test failed, couldn't establish a connection"
+></Message>
+
+
+#### Cause
+
+The Appsmith instance is not integrated into the same Azure virtual network (vnet) as the PostgreSQL database. As a result, the two services are unable to communicate because they are on different networks.
+
+#### Solution
+
+- **Integrate Appsmith into the Azure Virtual Network (vnet):** Ensure that your Appsmith instance is part of the same Azure virtual network as your PostgreSQL database.
+
+- **Add a Private Endpoint:** Create a private endpoint for your PostgreSQL server within the same vnet. This allows the Appsmith instance to connect to the database through private network routing.
+
+- **Verify Connectivity:** After making these changes, test the connection again to ensure that the Appsmith instance can successfully connect to the PostgreSQL database.
+
 ## See also
 
 Once you have the logs from your container, you can verify whether the error you are facing matches a common error with a resolution guide.
