@@ -367,3 +367,7 @@ DatePicker1.setRequired(true)
 
 </dd>
 
+## See also
+
+- [Filter Table Data using date range](/build-apps/how-to-guides/search-and-filter-table-data#using-date-range) - Learn how to filter data in a table widget based on a specific date range.
+- [Create Conditional SQL Queries Using Datepicker](/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-conditional-operators) - See how to create SQL queries with conditional logic based on datepicker inputs.

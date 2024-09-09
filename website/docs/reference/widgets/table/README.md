@@ -69,6 +69,11 @@ If the retrieved data is not in the desired format, you can use JavaScript to **
 }}
 ```
 
+For more information, see [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data).
+
+
+
+
 
 </dd>
 
@@ -132,7 +137,7 @@ Allows you to implement pagination by limiting the number of results fetched per
 
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based-pagination or Cursor-based pagination.
 
-See how to guide on [Server-side Pagination](/build-apps/how-to-guides/Server-side-pagination-in-table).
+For more information on how to manage and display large datasets, see [Server-side Pagination](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 </dd>
 
@@ -207,6 +212,7 @@ Allows you to specify the action to be executed when the user enters a search te
 
 Controls the visibility of the **Filters** button, which is located in the table header. The button allows users to apply filters to the table data when enabled.
 
+For information on how to search and filter data in a Table widget based on search text, date range, or a select widget, see [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data).
 
 </dd>
 
@@ -322,6 +328,10 @@ This property controls whether the widget is displayed with a loading animation.
 <dd>
 
 Controls the visibility of the **Download** button in the table header. When enabled, users can download the table data as a `.csv` file or `Excel` file by clicking on the button.
+
+For more information on how to download table data in manageable chunks, see [Download Table Data](/build-apps/how-to-guides/download-table-data).
+
+
 </dd>
 
 #### Allow column freeze `boolean`
@@ -414,6 +424,7 @@ For example, lets say you have a column named `status` that reflects `approved` 
 
 If you want to keep the same background color for an entire row, you can use the same custom style expression in each column **Cell Background** property.
 
+For more information on updating cell background color, see [Cell Background Color](/reference/widgets/table/column-settings#cell-background-color-column-color).
 
 </dd>
 
@@ -627,6 +638,8 @@ Contains the data of the rows left after applying any selected filters, sort rul
 ```js
 {{Table1.filteredTableData}}
 ```
+
+
 
 </dd>
 

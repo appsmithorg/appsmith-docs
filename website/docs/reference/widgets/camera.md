@@ -131,7 +131,7 @@ Stores the captured image in Data URL format (Base64). You can use it to embed t
 {{Camera1.imageDataURL}}
 ```
 
-You can use this property to upload an image to Amazon S3. For more information, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images).
+You can use this property to upload an image to Amazon S3. For more information, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-upload-to-s3).
 
 </dd>
 
@@ -228,3 +228,10 @@ Camera1.setDisabled(false)
 ```
 
 </dd>
+
+
+# See Also
+
+- [Upload Images to S3](/reference/widgets/button/google-recaptcha) - See how to upload images to an S3 bucket directly from your application.
+- [Download Image using URL](/core-concepts/writing-code/ui-actions) - See how to download an image from a URL.
+- [Download using blob](/reference/appsmith-framework/widget-actions/download#download-using-blob) - See how to handle blob data and download it into files
