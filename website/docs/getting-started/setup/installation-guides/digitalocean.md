@@ -104,5 +104,5 @@ If you are facing issues during deployment, please refer to the guide on [troubl
 
 ## Further reading
 
-- [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-docker-installations)
-- [Manage Appsmith instance](/getting-started/setup/instance-management/)
+- [Configure Appsmith instance](/getting-started/setup/instance-configuration)
+- [Manage Appsmith instance](/getting-started/setup/instance-management)
