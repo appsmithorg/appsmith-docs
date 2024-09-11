@@ -147,3 +147,6 @@ Let’s Encrypt
 Instance Administrator
 Docker
 check
+DigitalOcean
+AWS ECS EC2
+Droplet
