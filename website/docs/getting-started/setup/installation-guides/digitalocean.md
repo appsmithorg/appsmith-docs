@@ -15,7 +15,6 @@ This page provides instructions to install Appsmith on DigitalOcean using a Drop
 Before you begin, ensure you have the following:
 
 * A [DigitalOcean](https://www.digitalocean.com/) account with access to create Droplets.
-* SSH access or a secure password for the Droplet.
 
 ## Install Appsmith
 
@@ -25,12 +24,12 @@ Follow these steps to install Appsmith using a pre-configured Droplet from the D
 1. Navigate to [DigitalOcean](https://cloud.digitalocean.com/login) and log into your DigitalOcean account.
 2. In your DigitalOcean dashboard, click the **Create** button at the top and select **Droplet**.
 3. Choose a data center region by selecting a data center closest to your users for optimal performance.
-4. In the **Choose an image** section, click the **Marketplace** tab. Search for **Appsmith** in the search bar and select the pre-configured Appsmith Droplet from the results.
+4. In **Choose an image** section, click the **Marketplace** tab. Search for **Appsmith** in the search bar and select the pre-configured Appsmith Droplet from the results.
 5. Choose a Droplet plan:
    * For production workloads, it’s recommended to use at least a at least a *General Purpose* Droplet Type with a **Premium Intel plan**.
 6. Configure backups (optional):
     * For production deployments, consider enabling **weekly backups** or choose the backup frequency that best suits your needs.
-7. Set up authentication by either creating an **SSH key** for more secure access or set up a **root password** for SSH access.
+7. Set up authentication by either creating an **SSH key** for more secure access or setting up a **root password** for SSH access. For more information on setting up SSH access, see [How to Connect to Droplets with SSH](https://docs.digitalocean.com/products/droplets/how-to/connect-with-ssh/) in the official DigitalOcean documentation. 
 8. Configure the Droplet:
     * Give a meaningful and unique name to the Droplet. For example, `Appsmith-DigitalOcean`.
     * Leave the quantity of Droplets at **1**, which works well for running Appsmith.
