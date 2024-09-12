@@ -474,3 +474,9 @@ MultiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
 ```
 
 </dd>
+
+## See also
+
+- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically) - Learn how to dynamically display and filter options in a Select/MultiSelect widget.
+- [Insert Data](/build-apps/how-to-guides/insert-data) – Learn how to insert data into a datasource using widgets.
+- [Update Data](/build-apps/how-to-guides/submit-form-data) – Discover how to update data using widgets.

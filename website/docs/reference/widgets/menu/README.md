@@ -273,3 +273,9 @@ MenuButton1.setDisabled(false).then(() => {
 ```
 
 </dd>
+
+## See also
+
+- [Create Custom Navigation Bar](/build-apps/how-to-guides/create-custom-nav-bar) - Learn how to create a custom navigation bar using Menu and other widgets to enhance your app's navigation experience.
+- [Menu Items](/reference/widgets/menu/menu-items) - Dive deeper into Menu item configurations, styles, and functionalities to make your app more interactive and user-friendly.
+
