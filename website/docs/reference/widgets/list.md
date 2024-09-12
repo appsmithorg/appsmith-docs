@@ -554,8 +554,8 @@ Always set the **Data Identifier** property with a valid unique identifier to bo
   ```
 
   ## See also
-  * [Display and Lookup Data in List](/build-apps/how-to-guides/display-search-and-filter-list-data)
-  * [Setup Server-side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List)
-  * [Edit List Data](/build-apps/how-to-guides/update-list-data)
-  * [Insert Input Fields Dynamically](/build-apps/how-to-guides/add-remove-inputs-in-list)
+  * [Display and Lookup Data in List](/build-apps/how-to-guides/display-search-and-filter-list-data) - See how to display, search, and filter data within a List widget.
+  * [Setup Server-side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List) - Learn how to configure server-side pagination for efficient data loading in a List.
+  * [Edit List Data](/build-apps/how-to-guides/update-list-data) - See how to update and modify data within a List widget.
+  * [Insert Input Fields Dynamically](/build-apps/how-to-guides/add-remove-inputs-in-list) - Learn how to add and remove input fields dynamically within a List widget.
 

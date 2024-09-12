@@ -175,7 +175,7 @@ Stores the recorded video in Data URL format (Base64). You can use it to embed t
 {{Camera1.videoDataURL}}
 ```
 
-You can use this property to upload a video to Amazon S3. For more information, see [Upload Images to and from S3](/connect-data/how-to-guides/how-to-use-the-camera-image-widget-to-upload-download-images)
+You can use this property to upload a video to Amazon S3. For more information, see [Upload Images to and from S3](/how-to-guides/how-to-upload-to-s3#configure-query)
 
 </dd>
 
@@ -228,3 +228,10 @@ Camera1.setDisabled(false)
 ```
 
 </dd>
+
+
+## See also
+
+- [Upload Images to S3](/how-to-guides/how-to-upload-to-s3#configure-query) - Learn how to upload images to S3 using the camera widget.
+- [Upload Files using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests) - Learn how to upload images using an API.
+
