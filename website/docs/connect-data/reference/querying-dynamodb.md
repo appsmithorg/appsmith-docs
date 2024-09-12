@@ -51,6 +51,9 @@ The following section is a reference guide that provides a complete description 
 
 For more details about any of the operations below, see the [Amazon DynamoDB Actions documentation](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Operations_Amazon_DynamoDB.html).
 
+See [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+
+
 ### BatchGetItem
 
 This operation fetches many specific records by their partition and sort keys. For example, the following fetches two specific records by their sort and partition keys:
@@ -215,6 +218,13 @@ This operation deletes an existing record, identified by its primary and sort ke
     }
 }
 ```
+
+For information on how to delete data in a Table, see [Delete Data in Table](/reference/widgets/table/inline-editing#delete-row).
+
+
+
+
+
 
 ### DeleteTable
 
@@ -602,6 +612,9 @@ This operation adds or removes replicas in a given global table. The global tabl
 }
 ```
 
+For more information on how to update Table data, see [Update Data Guide](/build-apps/how-to-guides/submit-form-data).
+
+
 ### UpdateGlobalTableSettings
 
 This operation updates settings for an existing global table. For example, the following updates a global table `users` so that the `GlobalTableBillingMode` is `"PROVISIONED"`:
@@ -661,3 +674,10 @@ This operation updates auto scaling settings on your global tables. For example,
 ## Troubleshooting
 
 If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
+
+## See Also
+
+- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - Learn how to display query results in a Table and enable users to look up data with ease.
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - Guide on adding search and filter functionality to Tables for better data navigation.
+- [Update Data](/build-apps/how-to-guides/submit-form-data) - Understand how to update data in your application using Form widget.
+- [Insert Data](/build-apps/how-to-guides/insert-data) - Step-by-step instructions on inserting new records into your database using Form widget.
