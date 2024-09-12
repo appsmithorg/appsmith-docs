@@ -14,6 +14,11 @@ Appsmith provides a way to integrate with Google OAuth 2.0, enabling end users t
 1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 2. A [Google Workspace](https://workspace.google.com/intl/en_in/) account.
 
+
+:::info
+Google Workspace does not support SCIM out of the box, and SCIM integration is not configurable within Google Workspace. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
+:::
+
 ## Configure Google API console
 
 To enable Google Sign-in, go to the [Google API console](https://console.cloud.google.com/apis) to get the authorization credentials that identify Appsmith to Google's OAuth 2.0 server. Create a new project and follow the steps below:
