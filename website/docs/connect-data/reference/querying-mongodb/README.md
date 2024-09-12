@@ -350,5 +350,5 @@ If you're experiencing difficulties, you can refer to the [Datasource troublesho
 ## See Also
 
 - [Raw Query Commands](/connect-data/reference/querying-mongodb/mongo-syntax) - Explore MongoDB raw query commands and syntax for advanced querying and data manipulation.
-- [Export Audit Logs](/how-to-guides/export-audit-logs) - Learn how to export audit logs for tracking and reviewing system activity and changes.
+- [Export Audit Logs](/build-apps/how-to-guides/export-audit-logs) - Learn how to export audit logs for tracking and reviewing system activity and changes.
 - [External MongoDB and Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis) - Guide on configuring and integrating external MongoDB and Redis instances with your application.

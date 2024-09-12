@@ -432,7 +432,7 @@ These CSS variables, available to control widget size and define the theme:
 
 If you’re looking to explore more, these guides are a great next step:
 
-- [Create Custom Widgets Using React](/how-to-guides/Create-Custom-Widgets-Using-Iframe) - Explore how to create custom widgets using React to add complex functionality to your app.
+- [Create Custom Widgets Using React](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe) - Explore how to create custom widgets using React to add complex functionality to your app.
 - [Create Custom Widgets Using Vanilla JS](/build-apps/how-to-guides/custom-widget-using-vanillajs) - Learn how to build custom widgets using Vanilla JS for lightweight and flexible customization.
 
 ## Sample apps
