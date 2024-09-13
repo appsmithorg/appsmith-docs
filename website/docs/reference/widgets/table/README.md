@@ -888,6 +888,6 @@ This method allows you to programmatically select multiple rows in the Table. It
 ## See Also
 
 - [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - See how to display and manage data in a Table and enable efficient data lookup.
-- [Create Data Drilldown View](/build-apps/how-to-guides/create-data-drilldown-view) - Learn how to create detailed drilldown views for exploring data at different levels.
+- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view) - Learn how to create detailed drilldown views for exploring data at different levels.
 - [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table) - Learn how to set up server-side pagination for handling large datasets in Table.
 - [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - See how to add search and filter functionality to tables for better data navigation.
