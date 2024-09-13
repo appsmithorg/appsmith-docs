@@ -16,7 +16,7 @@ Appsmith provides a way to integrate with Google OAuth 2.0, enabling end users t
 
 
 :::info
-Google Workspace does not support SCIM out of the box, and SCIM integration is not configurable within Google Workspace. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
+Google Workspace does not support SCIM, and integration cannot be configured within the platform. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
 :::
 
 ## Configure Google API console
