@@ -42,13 +42,14 @@ If you have set values using [environment variables](#environment-variables) for
 
 #### Environment variable
 
-To connect to an external MongoDB server, you need to update the environment variable `APPSMITH_MONGODB_URI` with your [MongoDB]((https://www.mongodb.com/cloud)) credentials in the connection string format. If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
+To connect to an external MongoDB server, you need to update the environment variable `APPSMITH_MONGODB_URI` with your [MongoDB]((https://www.mongodb.com/cloud) credentials in the connection string format. If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
 
 ```js
 // Syntax
 APPSMITH_MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
 
 // Example - password encoded
+
 APPSMITH_MONGODB_URI=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
 ```
 
