@@ -207,7 +207,21 @@ Appsmith can connect to external providers for MongoDB and Redis. The associated
 #### `APPSMITH_MONGODB_URI`
 
 <dd>
-    Appsmith uses this variable to connect to an external MongoDB instance. Set it to the full MongoDB URI supplied by the hosting service. This enables Appsmith to store data in your MongoDB database, ensuring control and ownership of the application data.
+
+Appsmith uses this variable to connect to an external MongoDB instance. Set it to the full MongoDB URI supplied by the hosting service. This enables Appsmith to store data in your MongoDB database, ensuring control and ownership of the application data.
+
+ If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
+
+```js
+// Syntax
+APPSMITH_MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
+
+// Example - password encoded
+APPSMITH_MONGODB_URI=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
+```
+
+To learn how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
+
 </dd>
 
 #### `APPSMITH_MONGODB_USER`
