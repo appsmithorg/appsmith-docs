@@ -49,7 +49,6 @@ To connect to an external MongoDB server, you need to update the environment var
 APPSMITH_MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
 
 // Example - password encoded
-
 APPSMITH_MONGODB_URI=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
 ```
 
