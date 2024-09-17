@@ -91,10 +91,16 @@ export default function NavbarWrapper(props) {
                   className="outlinedBtn"
                   to="/getting-started/tutorials/start-building"
                 >
+                  <button
+                className="outlinedBtn"
+                onClick={() => window.open("https://community.appsmith.com/", "_blank")}
+              >
+                Community
+              </button>
                 {/* // Tutorials */}
                 </Link>
 
-                {/* <DropDown /> */}
+                {/* <DropDown />  */}
               </div>
             </div>
             <div className="navBarSecondSection">
@@ -104,9 +110,9 @@ export default function NavbarWrapper(props) {
             <div className="navBarLastSection">
               <button
                 className="outlinedBtn"
-                onClick={() => window.open("https://community.appsmith.com/", "_blank")}
+                onClick={() => window.open("https://docs.appsmith.com/product/security", "_blank")}
               >
-                Community
+                Security
               </button>
               <button
                 className="outlinedBtn"
