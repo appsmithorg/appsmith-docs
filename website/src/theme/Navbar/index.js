@@ -91,10 +91,10 @@ export default function NavbarWrapper(props) {
                   className="outlinedBtn"
                   to="/getting-started/tutorials/start-building"
                 >
-                  Tutorials
+                {/* // Tutorials */}
                 </Link>
 
-                <DropDown />
+                {/* <DropDown /> */}
               </div>
             </div>
             <div className="navBarSecondSection">
