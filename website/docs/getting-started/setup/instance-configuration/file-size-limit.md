@@ -1,15 +1,15 @@
-# Allow Large Files
+# Configure File Size Limit
 
-In self-hosted Appsmith instances, the default file size limit is 150 MB. You can adjust the limit to support larger files. This page explains how to update the file upload limit and configure reverse proxies or load balancers, if used, to ensure the new limits are applied.
+In self-hosted Appsmith instances, the default file size limit is 150 MB. You can adjust the limit to support larger files. This page explains how to update the file size limit and configure reverse proxies or load balancers, if used, to ensure the new limits are applied.
 
 ## Change file size limit
 
-To accommodate larger file uploads, update the Appsmith instance configuration by setting the `APPSMITH_CODEC_SIZE` environment variable in your deployment configuration. When installed on:
+To accommodate large files, update the Appsmith instance configuration by setting the `APPSMITH_CODEC_SIZE` environment variable in your deployment configuration. When installed on:
 
 - **Docker**: Update the `docker.env` file.
 - **Kubernetes**: Update the `values.yaml` file.
 
-To increase the file upload limit to 500 MB, use the following configuration:
+To increase the file size limit to 500 MB, use the following configuration:
 
 ```bash
 APPSMITH_CODEC_SIZE=500MB
@@ -17,9 +17,9 @@ APPSMITH_CODEC_SIZE=500MB
 
 ## Change reverse proxy or load balancer limit
 
-If your Appsmith instance is behind a reverse proxy or load balancer, you also need to configure the file upload limits in the proxy or load balancer settings. Below are example configurations:
+If your Appsmith instance is behind a reverse proxy or load balancer, you also need to configure the file size limits in the proxy or load balancer settings. Below are example configurations:
 
-* **Nginx**: Add or update the following directive in your Nginx configuration file to support an upload limit of 500 MB:
+* **Nginx**: Add or update the following directive in your Nginx configuration file to support an size limit of 500 MB:
 
  ```bash
   client_max_body_size 500M;
