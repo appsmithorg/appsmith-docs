@@ -254,7 +254,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 
 ## File size limit
 
-Appsmith has a default limit of 150 MB for files. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
+The default file size limit in Appsmith is 150 MB. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
 
 #### `APPSMITH_CODEC_SIZE`
 <dd>
