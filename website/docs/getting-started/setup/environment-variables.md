@@ -252,6 +252,15 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
     Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
+## Upload limit
+
+Appsmith has a default limit of 150 MB for uploading files. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
+
+#### `APPSMITH_CODEC_SIZE`
+<dd>
+Specifies the allowed file size for uploads. To change the file upload limit, update the `APPSMITH_CODEC_SIZE` parameter in the configuration file specific to your deployment. For example, when installed on Docker, update the `docker.env` file, and when installed on Kubernetes, update the `values.yaml` file. For more information about large file uploads, see [large file uploads](/getting-started/setup/instance-configuration/large-file-uploads).
+</dd>
+
 ## Supervisord 
 
 Access the Supervisord web interface seamlessly through Appsmith by setting login credentials using environment variables. Securely control your background processes, ensuring reliable application management.

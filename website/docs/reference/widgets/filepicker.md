@@ -79,7 +79,7 @@ When enabled, it automatically determines the data types for columns in a CSV fi
 
 
 
-#### Maximum No. of files	`number`
+#### Max no. of files	`number`
 
 <dd>
 
@@ -89,30 +89,22 @@ Sets the maximum number of files that a user can select. The default value is `1
 ### Label
 
 #### Text `string`
-
 <dd>
-
 Sets the text on the widget. The default value is `Select Files`.
-
 </dd>
 
 ### Validation
 
+These properties define the types of validations available for the FilePicker widget.
+
 #### Required `boolean`
-
-
 <dd>
-
-Enabling this property makes the Filepicker widget mandatory, requiring users to select a file. I When the widget is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled untila a file is selected.
-
+Enabling this property makes the Filepicker widget mandatory, requiring users to select a file. When the widget is placed within a Form widget, enabling the **Required** property ensures that the Form's submit button remains disabled until a file is selected.
 </dd>
 
-#### Maximum File Size	`number`
-
+#### Max file size	`number`
 <dd>
-
-Sets the maximum allowed size of each file that a user can upload. The default value is set to `5 MB`.
-
+Use this property to set the size of each file that a user can upload. The default value is set to `5 MB`. 
 </dd>
 
 ### General
