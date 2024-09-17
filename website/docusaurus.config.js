@@ -132,8 +132,9 @@ const config = {
     {
       src:
         '/scripts/reotracking.js',
-      async: false,
-    }] : [])
+      async: true,
+    }
+    ] : [])
   ],
 };
 
