@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "@site/src/components/header/css/header.css";
 import { Logo } from "@site/src/components/icons/logo";
-import { TopAlert } from "../../components/header/TopAlert";
-import { DropDown } from "@site/src/components/header/dropdown";
-import { DocsSvg, MenuIcon, ExploreButton, RightArrow } from "@site/src/components/icons";
+import { MenuIcon, ExploreButton, RightArrow } from "@site/src/components/icons";
 import SearchBar from "@theme/SearchBar";
 import NavbarMobileSidebar from "@theme/Navbar/MobileSidebar";
 import AISearchButton from "../../components/ask-ai/AISearchButton";
@@ -13,7 +11,7 @@ export default function NavbarWrapper(props) {
 
   const [navbarHeight, setNavbarHeight] = useState("170px");
 
-  
+
   const onClose = () => {
     setNavbarHeight("45px");
   };
@@ -61,7 +59,6 @@ export default function NavbarWrapper(props) {
             zIndex: 70,
           }}
         >
-          <TopAlert onClose={onClose} />
           <div className="mobileNavbar">
             <div className="mobileNavbarFirstSection">
               <button
@@ -72,7 +69,6 @@ export default function NavbarWrapper(props) {
                 <MenuIcon />
               </button>
               <Logo />
-              <DocsSvg />
             </div>
             <div style={{ width: "50px" }}>
               <SearchBar />
@@ -80,32 +76,24 @@ export default function NavbarWrapper(props) {
           </div>
           <div className="navBarContainer">
             <div className="navBarFirstSection">
-            <a onClick={() => window.location.href = '/'}>
-               <Logo />
-            </a>
-             <a onClick={() => window.location.href = '/'}>
-            <DocsSvg />
-            </a>
-                 <div className="dropDownAndBtn">
-                <Link
-                  className="outlinedBtn"
-                  to="/getting-started/tutorials/start-building"
-                >
-                  <button
-                className="outlinedBtn"
-                onClick={() => window.open("https://community.appsmith.com/", "_blank")}
-              >
-                Community
-              </button>
-                {/* // Tutorials */}
-                </Link>
-
-                {/* <DropDown />  */}
+              <a onClick={() => window.location.href = '/'}>
+                <Logo />
+              </a>
+              <div className="dropDownAndBtn">
+                <nav className="outlinedBtn">
+                  <Link to="/connect-data/overview">Connect Data</Link>
+                </nav>
+                <nav className="outlinedBtn">
+                  <Link to="/build-apps/overview">Build Apps</Link>
+                </nav>
+                <nav className="outlinedBtn">
+                  <Link to="/write-code/overview">Write Code</Link>
+                </nav>
               </div>
             </div>
             <div className="navBarSecondSection">
               <SearchBar />
-                <AISearchButton />
+              <AISearchButton />
             </div>
             <div className="navBarLastSection">
               <button
@@ -136,7 +124,6 @@ export default function NavbarWrapper(props) {
         <div role="presentation" className="navbar-sidebar__backdrop"></div>
         <NavbarMobileSidebar />
       </nav>
-      <div style={{ paddingTop: navbarHeight }}></div>
     </>
   );
 }

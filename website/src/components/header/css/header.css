@@ -1,234 +1,251 @@
 * {
-    margin: 0px;
-  }
-  .headerContainer {
+  margin: 0px;
+}
+
+.headerContainer {
+  background-color: #f3f4f6;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.firstAlertTopContiner {
+  display: block;
+  width: 100%;
+  padding: 0.2rem;
+}
+
+.topAlertContainer {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  border-radius: 112px;
+  box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
+  padding: 0.75rem 1.4rem;
+}
+
+.alertText {
+  color: #4d5761;
+  margin: 0px;
+  font-size: 0.938rem;
+  font-weight: 500;
+}
+
+.clickHereText {
+  color: #EC5800;
+  cursor: pointer;
+}
+
+.navBarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 11px;
+}
+
+.navBarFirstSection {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.navBarLastSection {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navElements {
+  display: flex;
+  gap: 15px;
+  /* Space between the search bar and button */
+  align-items: center;
+  /* Vertically align elements */
+}
+
+.navBarSecondSection {
+  width: 450px;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  /* Align items to the right */
+}
+
+.alertDeleteIcon {
+  cursor: pointer;
+}
+
+.dropDown {
+  position: relative;
+}
+
+.selectedDropDown {
+  background-color: white;
+  box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+
+  color: #6c737f;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px 4px 16px;
+}
+
+.dropDownListContainer {
+  position: absolute;
+  left: 50%;
+  height: fit-content;
+  top: 0px;
+  padding-top: 40px;
+
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.dropDownValuesContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.dropDownValuesContainer>*:not(:last-child) {
+  box-shadow: 0 1px 2px 0 #EC5800, 0 1px 3px 0 #1c263f1a;
+}
+
+.dropDownValue {
+  border-bottom: 1px;
+  width: 100%;
+  padding: 4px 16px 4px 16px;
+  color: black;
+  /* border-color: #6c737f; */
+}
+
+.selectedOption {
+  color: #EC5800;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.dropDownAndBtn {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin: 0px 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .mobileHeader {
+    display: flex;
     background-color: #f3f4f6;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-      Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    flex-direction: column;
+    padding: 16px;
+    gap: 24px;
   }
-  
+
   .firstAlertTopContiner {
-    display: block;
-    width: 100%;
-    padding: 1.5rem;
+    display: none;
   }
-  .topAlertContainer {
+
+  .topAlertMobileContainer {
+    display: flex;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 4px;
     background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
-    z-index: 100;
-    border-radius: 112px;
-    box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
-    padding: 0.75rem 1.4rem;
   }
-  
-  .alertText {
-    color: #4d5761;
-    margin: 0px;
-    font-size: 0.938rem;
-    font-weight: 500;
-  }
-  
-  .clickHereText {
-    color: #EC5800;
-    cursor: pointer;
-  }
-  
-  .navBarContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 24px 48px;
-  }
-  
-  .navBarFirstSection {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-  }
-  
-  .navBarLastSection {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-  }
-  
-  .navElements {
-    display: flex;
-    gap: 15px; /* Space between the search bar and button */
-    align-items: center; /* Vertically align elements */
-  }
-  
-  .navBarSecondSection {
-    width: 450px;
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-  }
-  .alertDeleteIcon {
-    cursor: pointer;
-  }
-  
-  .dropDown {
-    position: relative;
-  }
-  
-  .selectedDropDown {
-    background-color: white;
-    box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 0.875rem;
-    border-radius: 9999px;
-  
-    color: #6c737f;
-    width: 120px;
-    display: flex;
-    align-items: center;
-    padding: 4px 8px 4px 16px;
-  }
-  
-  .dropDownListContainer {
-    position: absolute;
-    left: 50%;
-    height: fit-content;
-    top: 0px;
-    padding-top: 40px;
-  
-    transform: translateX(-50%);
-    width: 120px;
-  }
-  
-  .dropDownValuesContainer {
+
+  .mobileAlertText {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    box-shadow: 0 1px 2px 0 #1c263f0f, 0 1px 3px 0 #1c263f1a;
-    background-color: white;
-    border-radius: 10px;
   }
-  
-  .dropDownValuesContainer > *:not(:last-child) {
-    box-shadow: 0 1px 2px 0 #EC5800, 0 1px 3px 0 #1c263f1a;
-  }
-  
-  .dropDownValue {
-    border-bottom: 1px;
-    width: 100%;
-    padding: 4px 16px 4px 16px;
-    color: black;
-    /* border-color: #6c737f; */
-  }
-  
-  .selectedOption {
-    color: #EC5800;
-  }
-  
-  .pointer {
-    cursor: pointer;
-  }
-  
-  .dropDownAndBtn {
+
+  .mobileNavbar {
     display: flex;
-    gap: 15px;
+    padding: 24px;
     align-items: center;
-    margin: 0px 40px;
+    justify-content: space-between;
   }
-  
-  @media screen and (max-width: 600px) {
-    .mobileHeader {
-      display: flex;
-      background-color: #f3f4f6;
-      flex-direction: column;
-      padding: 16px;
-      gap: 24px;
-    }
-    .firstAlertTopContiner {
-      display: none;
-    }
-    .topAlertMobileContainer {
-      display: flex;
-      width: 100%;
-      border-radius: 1rem;
-      padding: 1rem;
-      gap: 4px;
-      background-color: white;
-    }
-    .mobileAlertText {
-      display: flex;
-      flex-direction: column;
-    }
-    .mobileNavbar {
-      display: flex;
-      padding: 24px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .mobileAlertContainer {
-      padding: 1.5rem;
-      background-color: #f3f4f6;
-    }
-    .navBarContainer {
-      display: none;
-    }
-    .mobileNavbarFirstSection {
-      display: flex;
-      margin: 0px;
-      align-items: center;
-      gap: 3px;
-    }
+
+  .mobileAlertContainer {
+    padding: 1.5rem;
+    background-color: #f3f4f6;
   }
-  
-  @media screen and (min-width: 600px) {
-    .mobileAlertContainer {
-      display: none;
-    }
-    .mobileNavbar {
-      display: none;
-    }
+
+  .navBarContainer {
+    display: none;
   }
-  
-  .customSearchBar {
-    width: 100%;
-    height: 50px; /* Set your desired height */
-  }
-  
-  .outlinedBtn {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    padding: 8px 12px;
-    color: #1f2a37;
-    font-weight: 500;
-    font-size: 0.875rem;
-    height: fit-content;
-  }
-  .primaryBtn {
-    border: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-    font-weight: 600;
-    outline: inherit;
-    background-color: #EC5800;
-    border-radius: 48px;
-    padding: 8px 12px;
-    padding-left: 1.5rem;
+
+  .mobileNavbarFirstSection {
     display: flex;
+    margin: 0px;
     align-items: center;
-    justify-content: center;
-    color: white;
+    gap: 3px;
   }
-  
-  
+}
+
+@media screen and (min-width: 600px) {
+  .mobileAlertContainer {
+    display: none;
+  }
+
+  .mobileNavbar {
+    display: none;
+  }
+}
+
+.customSearchBar {
+  width: 100%;
+  height: 50px;
+  /* Set your desired height */
+}
+
+.outlinedBtn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding: 8px 12px;
+  color: #1f2a37;
+  font-weight: 500;
+  font-size: 0.875rem;
+  height: fit-content;
+}
+
+.primaryBtn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  outline: inherit;
+  background-color: #EC5800;
+  border-radius: 48px;
+  padding: 8px 12px;
+  padding-left: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+
 .askAIbtn {
   border: none;
   cursor: pointer;
@@ -250,10 +267,12 @@
 
 
 .buttonAI {
-  height: 34px; /* Reduced height */
+  height: 34px;
+  /* Reduced height */
   width: 90px;
   display: flex;
-  align-items: center; /* Ensure content is vertically centered */
+  align-items: center;
+  /* Ensure content is vertically centered */
   justify-content: center;
   gap: 6px;
   background: linear-gradient(135deg, #0f0c29, #2e4d7a);
@@ -288,18 +307,21 @@
 
 .buttonContent {
   display: flex;
-  align-items: center; /* Vertically center the icon and text */
+  align-items: center;
+  /* Vertically center the icon and text */
   gap: 4px;
   justify-content: center;
-  height: 100%; /* Ensure full height for centering */
+  height: 100%;
+  /* Ensure full height for centering */
 }
 
 .svgIcon {
-  height: 18px; /* Slightly reduced icon size */
+  height: 18px;
+  /* Slightly reduced icon size */
   fill: #ffffff;
   transition: transform 0.5s;
 }
 
-.DocSearch-Button{
+.DocSearch-Button {
   background-color: white !important;
 }
