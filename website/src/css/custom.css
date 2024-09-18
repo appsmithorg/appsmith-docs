@@ -765,3 +765,109 @@ h4+.tags {
 .external-link:hover {
   text-decoration: underline;
 }
+/* Container for the cards */
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .card-container {
+    flex-wrap: wrap;
+  }
+}
+
+/* Common card styles */
+.cookie-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  height: 400px;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, .05);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-wrap: break-word; /* Prevent overflow */
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: rgb(31 41 55);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: rgb(75 85 99);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pref, .card-button {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.pref {
+  color: rgb(31 41 55);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.pref:hover {
+  color: rgb(156 163 175);
+}
+
+.card-button {
+  background-color: rgb(17 24 39);
+  color: #fff;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 1;
+  max-width: 100%; /* Add this line */
+}
+
+.card-button:hover {
+  background-color: rgb(55 65 81);
+}
+
+.card-button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.card-button svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 0.25rem;
+}
+
+.button-text {
+  margin-left: 0.25rem;
+}
