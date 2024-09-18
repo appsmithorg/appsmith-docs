@@ -9,7 +9,7 @@ To accommodate large files, update the Appsmith instance configuration by settin
 - **Docker**: Update the `docker.env` file.
 - **Kubernetes**: Update the `values.yaml` file.
 
-To increase the file size limit to 500 MB, use the following configuration:
+For example, to increase the file size limit to 500 MB, use the following configuration:
 
 ```bash
 APPSMITH_CODEC_SIZE=500MB
@@ -19,19 +19,19 @@ APPSMITH_CODEC_SIZE=500MB
 
 If your Appsmith instance is behind a reverse proxy or load balancer, you also need to configure the file size limits in the proxy or load balancer settings. Below are example configurations:
 
-* **Nginx**: Add or update the following directive in your Nginx configuration file to support an size limit of 500 MB:
+* **Nginx**: Add or update the following directive in your Nginx configuration file. For example, to set a size limit of 500 MB, update the configuration as below:
 
  ```bash
   client_max_body_size 500M;
  ```
 
-* **Caddy**: Set the `max_request_body` directive in your Caddy configuration file:
+* **Caddy**: Set the `max_request_body` directive in your Caddy configuration file. For example, to set a size limit of 500 MB, update the configuration as below:
 
  ```bash
   max_request_body 500M;
  ```
 
-* **Load balancers**: Configure the proxy-body-size or similar directive in your load balancer settings:
+* **Load balancers**: Configure the `proxy-body-size` or similar directive in your load balancer settings. For example, to set a size limit of 500 MB, update the configuration as below:
 
  ```bash
   proxy-body-size 500M;
@@ -39,7 +39,7 @@ If your Appsmith instance is behind a reverse proxy or load balancer, you also n
 
 ## Important considerations
 
-- Ensure that all relevant components—Appsmith instance, reverse proxy, and load balancer—are configured to handle the desired file size limits. 
+- Ensure that all relevant components: Appsmith instance, reverse proxy, and load balancer are configured to handle the desired file size limits. 
 - If you’re using the FilePicker widget, make sure that the limits set for the [Max number of files](/reference/widgets/filepicker#max-no-of-filesnumber) and [Max file size](/reference/widgets/filepicker#max-file-sizenumber) properties fall within the file size limits configured for your Appsmith instance.
 
 ## Troubleshooting
