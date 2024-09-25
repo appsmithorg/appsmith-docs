@@ -21,7 +21,7 @@
   --ifm-color-primary-light: #f9936b;
   --ifm-color-primary-lighter: #fbb195;
   --ifm-color-primary-lightest: #fbb195;
-  --ifm-font-family-base: 'Raleway', 'Roboto', 'Nunito', 'Fira Sans', 'Poppins', sans-serif;
+  --ifm-font-family-base: 'Nunito', 'Roboto', 'Fira Sans', 'Poppins', 'Raleway', sans-serif, system-ui, -apple-system;
   --ifm-code-font-size: 95%;
   --ifm-code-font-color: #202124;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
@@ -36,6 +36,10 @@
   --ifm-color-primary-lighter: #fbb195;
   --ifm-color-primary-lightest: #fbb195;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.menu__list {
+  font-size: 20px !important;
 }
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist {
@@ -387,7 +391,7 @@ h6 {
   line-height: 1.5;
   max-width: 100%;
   border: solid 2px #ee5867;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   padding: 10px 15px 10px 50px;
   margin: 15px 0;
   font-family: Nunito, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
