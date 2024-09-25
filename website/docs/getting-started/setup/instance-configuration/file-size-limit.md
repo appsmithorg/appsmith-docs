@@ -1,4 +1,4 @@
-# Configure File Size Limit
+# Configure Upload File Size Limit
 
 In self-hosted Appsmith instances, the default file size limit is 150 MB. You can adjust the limit to support larger files. This page explains how to update the file size limit and configure reverse proxies or load balancers, if used, to ensure the new limits are applied.
 
@@ -39,9 +39,9 @@ If your Appsmith instance is behind a reverse proxy or load balancer, you also n
 
 ## Important considerations
 
-- Ensure that all relevant components: Appsmith instance, reverse proxy, and load balancer are configured to handle the desired file size limits. 
+- Ensure you have configured all relevant components: Appsmith instance, reverse proxy, and load balancer to handle the desired file size limits. 
 - If you’re using the FilePicker widget, make sure that the limits set for the [Max number of files](/reference/widgets/filepicker#max-no-of-filesnumber) and [Max file size](/reference/widgets/filepicker#max-file-sizenumber) properties fall within the file size limits configured for your Appsmith instance.
 
 ## Troubleshooting
 
-If you face issues after updating configurations, review your reverse proxy logs for errors. If the issues persist, use the chat widget at the bottom of the page to contact the support team.
+After updating configurations, review your reverse proxy logs for errors if you encounter any issues. Use the chat widget at the bottom of the page to contact the support team if you need help.

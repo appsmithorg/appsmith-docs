@@ -54,4 +54,4 @@ Appsmith imposes a default file size limit of 150 MB. This is a configurable lim
 
 #### Solution
 
-Contact your instance administrator and request an increase in the file size limit. For more information on configuring file size limits, see [Configure File Size Limit](/getting-started/setup/instance-configuration/file-size-limit).
+Configure Appsmith instance to support larger files by changing the file size limit. For more information on configuring file size limits, see [Configure File Size Limit](/getting-started/setup/instance-configuration/file-size-limit).

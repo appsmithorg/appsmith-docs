@@ -1,5 +1,5 @@
 import React from "react";
-import { AiFillCloseCircle } from 'react-icons/ai';
+import { AiFillExclamationCircle } from 'react-icons/ai';
 
 /**
  * The component can be used to highlight the text in the documentation. 
@@ -18,7 +18,7 @@ export default function Message(props) {
         <div className={messageContainerClassName}>
             <div className={captionClassName}>{caption}</div>
             <div className={messageContentClassName}>
-                <AiFillCloseCircle className="error-icon" />
+                <AiFillExclamationCircle className="error-icon" />
                 {messageContent}
             </div>
         </div>
