@@ -38,10 +38,6 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.menu__list {
-  font-size: 20px !important;
-}
-
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist {
   margin-bottom: 6px;
   font-size: 1.2rem;
@@ -68,6 +64,7 @@
   line-height: 16px;
   transition: opacity 0.2s ease-out;
 }
+
 
 .theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
 .theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
