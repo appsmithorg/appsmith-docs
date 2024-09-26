@@ -17,7 +17,11 @@ The following section is a reference guide that provides a complete description 
 
 <dd>
 
-The domain or network location of your database instance. This value includes your **Project ID** in the format `https://PROJECT_ID.firebaseio.com`.
+The domain or network location of your database instance. This value includes your **Project ID** in the format 
+
+```
+https://PROJECT_ID.firebaseio.com
+```
 
 </dd>
 
@@ -207,7 +211,7 @@ You can update one or more fields in the document without affecting the other fi
 
 The path to the document that you want to update. The path must include both the collection name and the document reference.
 
-*Example:* if you are updating a user profile in the Profiles collection, the path could be Profiles/user123, where user123 is the document you want to update.
+*Example:* 
 
 ```js
 Profiles/user123
