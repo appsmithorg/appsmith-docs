@@ -21,7 +21,7 @@ Appsmith loads all widgets on a page at once, including those that are hidden or
 
 ### Optimize JavaScript code
 
-Optimizing your JavaScript code is crucial for enhancing application performance in Appsmith. With the flexibility to use various data structures and algorithms, it’s essential to choose efficient methods to minimize time and space complexities. Below are recommendations to ensure your JavaScript code runs efficiently:
+With JavaScript, you can improve performance by writing clean, efficient code. Here are some recommendations to ensure your code runs efficiently:
 
 - Use well-established libraries like lodash for common operations, as they are optimized and tested by the community. See [how to use external JS libraries](/core-concepts/writing-code/ext-libraries).
 
@@ -42,7 +42,7 @@ Appsmith’s key-value store serves as a wrapper around JavaScript’s local sto
 
 <dd>
 
-Example: Instead of calling `storeValue()` multiple times in a loop:
+*Example:* Instead of calling `storeValue()` multiple times in a loop:
 
 ```js
 for (let i = 0; i < 100; i++) {
@@ -62,7 +62,7 @@ storeValue("batchData", valuesToStore); // Store all values at once
 ```
 </dd>
 
-* **Leverage JS Object Mutations**: If you’re keeping data purely on the client side and do not need to pass it to the server, consider using JSObject variable [mutation](/write-code/best-practices#use-mutable-js-variables). This approach can offer better performance than using `storeValue()`.
+* **Leverage JS Object Mutations**: If you're storing data only on the client side and don't need to send it to the server, consider mutating JSObject variables [mutation](/write-code/best-practices#use-mutable-js-variables). This can perform better than using `storeValue()`.
 
 <dd>
 
@@ -113,7 +113,7 @@ You can configure queries and JavaScript functions to run automatically when a p
 
 </dd>
 
-* Implement Lazy Loading by fetching only essential data initially, and loading additional data as needed, such as triggering queries on button clicks. See [Trigger UI Actions](/core-concepts/writing-code/ui-actions).
+* Implement lazy loading by fetching only essential data initially, and loading additional data as needed, such as triggering queries on button clicks. See [Trigger UI Actions](/core-concepts/writing-code/ui-actions).
 
 
 
@@ -129,9 +129,7 @@ To improve application performance, especially for users with less powerful devi
 
 ## Optimizing the server side of your app
 
-The server side of your app handles all backend operations, including data processing, database interactions, and API requests. Optimizing the server side is crucial for reducing response times, improving scalability, and ensuring a smooth user experience, especially under high load.
-
-To enhance server performance, it’s important to focus on efficient resource management, robust error handling, and minimizing unnecessary operations. The following sections outline best practices you can follow to optimize the server side of your application.
+The server side of your app handles all backend operations, including data processing, database interactions, and API requests. Optimizing the server side is crucial for reducing response times, improving scalability, and ensuring a smooth user experience, especially under high load. The following sections outline best practices you can follow to optimize the server side of your application.
 
 ### Profile server calls
 
