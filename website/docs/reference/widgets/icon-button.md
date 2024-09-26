@@ -179,3 +179,10 @@ IconButton1.setDisabled(false)
 
 ## See also
 - [Edit List Data](/build-apps/how-to-guides/update-list-data)
+
+
+## See also
+
+- [Trigger UI Actions](/core-concepts/writing-code/ui-actions) - Learn how to trigger multiple queries or JavaScript functions in response to user actions.
+- [Navigate Between Pages](/build-apps/how-to-guides/navigate-between-pages) - Discover how to use buttons to navigate between pages in your app.
+- [Create Custom Navigation Bar](/build-apps/how-to-guides/create-custom-nav-bar) - Learn how to create a custom navigation bar using buttons and other widgets to enhance your app's navigation experience.

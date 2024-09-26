@@ -471,4 +471,6 @@ Select1.setSelectedOption("BLUE")
 </dd>
 
 ## See also
-- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically)
+
+- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically) – Learn how to dynamically display and filter options in a Select widget based on user input or server-side data.
+- [Set up server-side filter on select](/build-apps/how-to-guides/display-select-options-dynamically#set-up-server-side-filter-on-select) – Understand how to configure server-side filtering for Select widgets to provide relevant options based on user selection.
