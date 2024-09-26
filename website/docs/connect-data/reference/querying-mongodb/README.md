@@ -347,7 +347,7 @@ This command allows you to write queries using the MongoDB database command synt
 
 If you're experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team using the chat widget at the bottom right of this page.
 
-## See Also
+## See also
 
 - [Raw Query Commands](/connect-data/reference/querying-mongodb/mongo-syntax) - Explore MongoDB raw query commands and syntax for advanced querying and data manipulation.
 - [Export Audit Logs](/build-apps/how-to-guides/export-audit-logs) - Learn how to export audit logs for tracking and reviewing system activity and changes.

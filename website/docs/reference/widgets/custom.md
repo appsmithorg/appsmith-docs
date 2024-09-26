@@ -428,7 +428,7 @@ These CSS variables, available to control widget size and define the theme:
 </dd>
 
 
-## See Also
+## See also
 
 If you’re looking to explore more, these guides are a great next step:
 

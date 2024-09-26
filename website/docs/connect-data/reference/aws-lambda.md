@@ -114,7 +114,7 @@ The structure and content of the post body are customized based on the specific 
 
 </dd>
 
-## See Also
+## See also
 
 - [Display and Lookup Data in List](/build-apps/how-to-guides/display-search-and-filter-list-data) - Learn how to display query results in a List and enable users to look up data efficiently.
 - [Setup Server-side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List) - Guide on implementing server-side pagination in Lists for large datasets.

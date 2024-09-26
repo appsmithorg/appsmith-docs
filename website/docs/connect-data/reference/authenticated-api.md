@@ -223,7 +223,7 @@ Once you have configured your Authenticated API datasource, create queries to in
 
 If you are facing issues, refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact support via the chat widget at the bottom right of this page.
 
-## See Also
+## See also
 
 - [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api) - Learn how to download files using a URL with API integrations.
 - [Upload Files using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests) - Step-by-step guide on how to upload files via API using the Filepicker widget.
