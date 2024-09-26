@@ -33,7 +33,14 @@ The unique identifier for your Firestore project, accessible in your Firebase pr
 
 <dd>
 
-A string of credentials generated on Firebase that is used to authenticate your queries. You can generate these credentials from your Firebase project's **Project Settings** page under **Service Accounts**. Open the downloaded file and copy-paste its entire contents into the **Service account credentials** field in your Appsmith datasource configuration.
+Service account credentials are used to authenticate your queries to Firestore. To obtain them:
+
+1. In the Firebase console, navigate to **Project Settings** > **Service accounts**, and click Generate new private key to download the JSON file.
+
+2. Open the downloaded JSON file and copy its contents.
+
+3. Paste the copied credentials into the **Service account credentials** field in your Appsmith datasource configuration.
+
 
 </dd>
 
@@ -125,13 +132,24 @@ Sets a limit for how many documents may be returned by the query.
 
 ### Create Document
 
-This command creates a new document within a given collection. Firestore automatically generates an identifier for the created document. The following section lists all the fields available for the **Create Document** command.
+The Create Document command allows you to create a new document in a Firestore collection. To do this, you need to specify both the **collection name** and a unique **document reference** (or document ID). 
+
 
 #### Collection Name
 
 <dd>
 
-The name of the collection where the new document should be created.
+This is the path where the new document will be created. You need to specify both the collection name and a document reference (or ID) in the format:
+
+```js
+collection-name/document-id
+```
+
+*Example:* if you are creating a document in the `Users` collection with the document ID `user123`, the collection name field should be:
+
+```js
+Users/user123
+```
 
 </dd>
 
@@ -178,13 +196,22 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
 
 ### Update Document
 
-This command updates an existing document at a given path. The following section lists all the fields available for the **Update Document** command.
+The Update Document command allows you to modify an existing document at a specified path in Firestore. 
+
+You can update one or more fields in the document without affecting the other fields. If a field in the update does not already exist in the document, Firestore adds it. If the document is not found at the provided path, Firestore returns an error.
+
 
 #### Collection/Document path
 
 <dd>
 
-The path to the document to update. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
+The path to the document that you want to update. The path must include both the collection name and the document reference.
+
+*Example:* if you are updating a user profile in the Profiles collection, the path could be Profiles/user123, where user123 is the document you want to update.
+
+```js
+Profiles/user123
+```
 
 </dd>
 
@@ -196,7 +223,7 @@ Expects a JSON object that represents the new key-value pairs to update the docu
 
 ```javascript
 {
-	"name": {{ NewNameInput.text }}
+	"name": {{ NameInput.text }}
 }
 ```
 
@@ -237,25 +264,39 @@ For example, the value <code>["meta.lastModified"]</code> adds the following to 
 
 ### Delete Document
 
-This command deletes an existing document at a given path. The following section lists all the fields available for the **Delete Document** command.
+This command deletes an existing document at a given path. You must specify the collection name and document reference (ID) in the path to ensure the correct document is deleted. The following section lists all the fields available for the **Delete Document** command.
 
 #### Collection/Document path
 
 <dd>
 
-The path to the document to delete. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
+The path to the document you want to delete. The path should include both the collection name and the document reference (ID).
+
+*Example:* if you want to delete a document representing a user profile, where `user123` is the document to be deleted.
+
+```js
+Profiles/user123
+```
 
 </dd>
 
 ### Get Document
 
-This command fetches a single existing document at a given path. The following section lists all the fields available for the **Get Document** command.
+This command fetches a single existing document at a specified path. You need to provide the full collection and document reference (ID) to retrieve the correct document. The following section lists all the fields available for the **Get Document** command.
 
 #### Collection/Document path
 
 <dd>
 
-The path to the document to fetch. For example, the path `Users/Admins/admin001` refers to a document `admin001` in the the `Admins` directory of the `Users` Collection.
+
+The path to the document you want to fetch. The path must include both the collection name and the document reference (ID). 
+
+*Example:* 
+
+```js
+Profiles/JohnDoe
+```
+
 
 </dd>
 
@@ -316,13 +357,19 @@ For example, the value <code>["meta.dateCreated"]</code> adds the following to y
 
 ### Add document to collection
 
-This command creates a new document within a given collection, under the identifier you provide. The following section lists all the fields available for the **Add document to collection** command.
+This command creates a new document within a specified Firestore collection. Unlike the Create Document command, this command does not require you to specify a document ID; instead, Firestore will automatically generate a unique identifier for the document.
 
 #### Collection/Document path
 
 <dd>
 
-The path to where the document should be created. The last part of this string becomes the document's identifier. For example, a path `Users/Admins/admin001` will create a document `admin001` in the `Users` Collection in the `Admins` directory.
+The path to the collection where the new document should be added. You only need to provide the **collection name**. 
+
+*Example:* if you want to add a new user to the `Users` collection, set the collection path to `Users`, and Firestore will create a unique `document ID`.
+
+```js
+Users
+```
 
 </dd>
 
