@@ -62,7 +62,7 @@ storeValue("batchData", valuesToStore); // Store all values at once
 ```
 </dd>
 
-* **Leverage JS Object Mutations**: If you’re keeping data purely on the client side and do not need to pass it to the server, consider using JSObject variable mutation. This approach can offer better performance than using `storeValue()`.
+* **Leverage JS Object Mutations**: If you’re keeping data purely on the client side and do not need to pass it to the server, consider using JSObject variable [mutation](/write-code/best-practices#use-mutable-js-variables). This approach can offer better performance than using `storeValue()`.
 
 <dd>
 
@@ -127,7 +127,7 @@ To improve application performance, especially for users with less powerful devi
 
 
 
-## Optimizing the Server Side of your app
+## Optimizing the server side of your app
 
 The server side of your app handles all backend operations, including data processing, database interactions, and API requests. Optimizing the server side is crucial for reducing response times, improving scalability, and ensuring a smooth user experience, especially under high load.
 
