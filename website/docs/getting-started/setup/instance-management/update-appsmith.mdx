@@ -73,6 +73,20 @@ Before you begin the update, ensure you have met all the [prerequisites](#prereq
 3. Click the **Restart** button.
 4. Wait until the ACI restarts with the latest Appsmith release.
 
+## Update on DigitalOcean
+
+:::caution
+It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
+:::
+
+SSH into your droplet and run the following command:
+
+```
+cd /root/appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
+```
+
+If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive.
+
 ## Troubleshooting
 
 If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.

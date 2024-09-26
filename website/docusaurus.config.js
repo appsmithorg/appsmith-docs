@@ -128,7 +128,13 @@ const config = {
       src:
         '/scripts/analyticsEvents.js',
       defer: true,
-    }] : [])
+    },
+    {
+      src:
+        '/scripts/reotracking.js',
+      async: true,
+    }
+    ] : [])
   ],
 };
 

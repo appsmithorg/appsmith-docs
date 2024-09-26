@@ -11,7 +11,7 @@ When users need help with Appsmith, prompt access to support is crucial. This pa
 
 The Discord community serves as a valuable resource for users seeking help and community engagement. While it may not always be the primary channel for paid support, the support team is available to assist users in Discord. Here's how you can contact support through the Discord server:
 
-1. Join Appsmith on [Discord Server](https://discord.gg/b6CbJ9nr).
+1. Join Appsmith on [Discord Server](https://discord.com/invite/rBTTVJp).
 2. Navigate to the [Support channel](https://discord.com/channels/725602949748752515/1006426744129069096) to raise queries.
 
 ## Intercom
