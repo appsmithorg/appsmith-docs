@@ -133,7 +133,7 @@ The server side of your app handles all backend operations, including data proce
 
 To enhance server performance, it’s important to focus on efficient resource management, robust error handling, and minimizing unnecessary operations. The following sections outline best practices you can follow to optimize the server side of your application.
 
-### Profile Server Calls
+### Profile server calls
 
 
 Identifying slow server calls is crucial for diagnosing performance issues in your application. Latency from the server side often indicates that queries or API requests are not optimized. By profiling these calls, you can pinpoint bottlenecks and focus on optimizing them for better performance.
@@ -152,7 +152,7 @@ Identifying slow server calls is crucial for diagnosing performance issues in yo
 
 
 
-### Optimize Queries
+### Optimize queries
 
 
 
@@ -164,10 +164,9 @@ Optimizing queries is essential for improving your application's performance. In
 
 - If performance issues persist despite optimization, consider that the issue might be with the third-party datasource's backend infrastructure. Switching to a different provider may be necessary for better performance.
 
-### Upgrade Server Specifications
+### Upgrade server specifications
 
-<dd>
+
 
 If performance issues continue despite optimizing your front end and back end, your server hardware may need an upgrade. Enhancing your on-premises hardware or scaling up your cloud infrastructure can help you achieve better performance levels.
 
-</dd>
