@@ -5,12 +5,7 @@
  */
 @import url(https://rsms.me/);
 @import url(https://rsms.me/inter/inter.css);
-@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800;900&display=swap&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Fira+Sans:wght@wght@100;200;300;400;500;600;700;800;900&display=swap&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@wght@100;200;300;400;500;600;700;800;900&display=swap&display=swap);
 
 /* You can override the default Infima variables here. */
 :root {
@@ -21,12 +16,13 @@
   --ifm-color-primary-light: #f9936b;
   --ifm-color-primary-lighter: #fbb195;
   --ifm-color-primary-lightest: #fbb195;
-  --ifm-font-family-base: 'Nunito', 'Roboto', 'Fira Sans', 'Poppins', 'Raleway', sans-serif, system-ui, -apple-system;
+  --ifm-font-family-base: Inter, Inter var, sans-serif;
   --ifm-code-font-size: 95%;
   --ifm-code-font-color: #202124;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
   --ifm-color-primary: #f9936b;
   --ifm-color-primary-dark: #ed6227;
@@ -40,8 +36,8 @@
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link--sublist {
   margin-bottom: 6px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 0.938rem;
+  font-weight: 600;
   line-height: 100%;
   color: #000;
 }
@@ -58,13 +54,12 @@
 .menu__link {
   align-items: center;
   display: flex;
-  font-size: 1.02rem;
+  font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 16px;
   transition: opacity 0.2s ease-out;
 }
-
 
 .theme-doc-sidebar-menu .menu__list-item .menu__caret:before,
 .theme-doc-sidebar-menu .menu__list-item .menu__link--sublist:after {
@@ -391,7 +386,7 @@ h6 {
   font-size: 0.92rem;
   padding: 10px 15px 10px 50px;
   margin: 15px 0;
-  font-family: Nunito, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Segoe UI', sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: Nunito, system-ui, -apple-system;
   color: #b71c1c;
   overflow-x: auto;
   border-radius: 8px;
