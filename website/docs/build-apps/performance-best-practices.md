@@ -62,7 +62,7 @@ storeValue("batchData", valuesToStore); // Store all values at once
 ```
 </dd>
 
-* **Leverage JS Object Mutations**: If you're storing data only on the client side and don't need to send it to the server, consider mutating JSObject variables [mutation](/write-code/best-practices#use-mutable-js-variables). This can perform better than using `storeValue()`.
+* **Leverage JS Object Mutations**: If you're storing data only on the client side and don't need to send it to the server, consider mutating JSObject variables [mutation](/write-code/best-practices#use-mutable-js-variables). JS Object mutation means directly changing the properties of an object without creating a new one. This can perform better than using `storeValue()`.
 
 <dd>
 
