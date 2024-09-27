@@ -426,3 +426,19 @@ These CSS variables, available to control widget size and define the theme:
 :::
 
 </dd>
+
+
+## See also
+
+If you’re looking to explore more, these guides are a great next step:
+
+- [Create Custom Widgets Using React](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe) - Explore how to create custom widgets using React to add complex functionality to your app.
+- [Create Custom Widgets Using Vanilla JS](/build-apps/how-to-guides/custom-widget-using-vanillajs) - Learn how to build custom widgets using Vanilla JS for lightweight and flexible customization.
+
+## Sample apps
+
+* [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
+* [Data grid widget](https://app.appsmith.com/app/data-grid/page1-6597ff5559aa5450e0eb4eb9)
+* [Signature Pad widget](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
+
+

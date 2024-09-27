@@ -78,7 +78,10 @@ VALUES
 );
 ```
 
-In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively.
+In the above example,  `NameInput`,  `GenderDropdown`,  and `EmailInput` are the names of the widgets used to capture input from the user for name, gender and email fields, respectively. For more information on how to insert data, see [Insert Data](/build-apps/how-to-guides/insert-data).
+
+
+
 
 ### Update data
 
@@ -88,7 +91,8 @@ UPDATE users
   WHERE id = {{ UsersTable.selectedRow.id }};
 ```
 
-In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email.
+In the above example, `EmailInput` is the name of the Input widget used to capture the email entered by the user. `UsersTable` is the Table widget where the user selects the row to update the user's email. For more information on how to update Table data, see [Update Data Guide](/build-apps/how-to-guides/submit-form-data).
+
 
 ### Delete data
 
@@ -105,3 +109,10 @@ Prepared statements are turned on by default in your queries to help prevent SQL
 ## Troubleshooting
 
 If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - Learn how to display query results in a Table and enable users to look up data with ease.
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - Guide on adding search and filter functionality to Tables for better data navigation.
+- [Update Data](/build-apps/how-to-guides/submit-form-data) - Understand how to update data in your application using Form widget.
+- [Insert Data](/build-apps/how-to-guides/insert-data) - Step-by-step instructions on inserting new records into your database using Form widget.

@@ -311,4 +311,8 @@ MapChart1.setVisibility(true)
 </dd>
 
 ## See also
-- [Display Map Markers](/build-apps/how-to-guides/display-map-markers)
+
+- [Display Map Markers](/build-apps/how-to-guides/display-map-markers) - Learn how to display map markers to highlight locations on a map.
+- [Websockets for real-time updates](/build-apps/how-to-guides/set-up-websockets) - Learn how to use Websockets to display real-time data on a map widget
+- [Current Location](/build-apps/how-to-guides/display-map-markers#display-current-location) - Learn how to retrieve and display the user's current location on a map.
+- [Generate Routes Using Markers](/build-apps/how-to-guides/display-map-markers#generate-routes-using-markers) - Learn how to create and display routes on a map based on selected markers.
