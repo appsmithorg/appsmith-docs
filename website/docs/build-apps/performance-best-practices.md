@@ -1,6 +1,6 @@
 # Performance Best Practices
 
-This page provides essential performance best practices to help you optimize your Appsmith applications, covering both client-side and server-side improvements to ensure a smooth and efficient user experience.
+This page provides performance best practices to help you optimize your Appsmith applications, covering both client-side and server-side improvements to ensure a smooth and efficient user experience.
 
 ## Optimizing the client side of your app
 
