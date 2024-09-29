@@ -5,7 +5,10 @@ description: Reset a widget to its default state using the resetWidget() Appsmit
 ---
 # resetWidget()
 
-The `resetWidget()` framework function sets a widget to its default state. All user input changes are reverted and its properties' default values are applied.
+This page provides information about the `resetWidget()` function signature and parameters, which sets a widget to its default state. All user input changes are reverted and its properties' default values are applied.
+
+
+
 
 ### Signature
 
@@ -19,7 +22,8 @@ resetWidget(widgetName: string, resetChildren?: boolean = true) -> Promise
 
 <dd>
 
-A string which is the name of the widget to reset.
+This property specifies the name of the widget you want to reset, given as a string. For example, to reset an input widget named userInput, you can use: `{{resetWidget("userInput");}}`.
+
 
 </dd>
 
@@ -27,21 +31,36 @@ A string which is the name of the widget to reset.
 
 <dd>
 
-An optional boolean value which determines whether all child widgets should also be reset. This is `true` by default.
+An optional boolean value that determines whether all child widgets of the specified widget should also be reset. By default, this is set to true.
+
+* When `true`: All child widgets of the specified widget will be reset along with the parent widget. This ensures that the entire widget hierarchy is cleared to its default state.
+
+* When `false`: Only the specified widget will be reset, leaving any child widgets unchanged. This allows for more granular control if you only need to reset the parent widget without affecting its children.
 
 </dd>
 
-_Example 1:_
+## Usage
 
-Reset a Container widget and all other widgets that it contains:
+Here are a few examples of how to reset a widget in different situations:
+
+#### Reset all widgets in a container
+
+
+If you want to reset a Container widget and all the widgets contained within it, you can use the following code. 
+
+Example:
 
 ```javascript
 {{ resetWidget("Container1") }}
 ```
 
-_Example 2:_
 
-Reset the state of a List widget without affecting the contents of Input widgets contained within the list items:
+#### Reset a widget without affecting its child inputs
+
+
+ If you want to reset a List widget but keep the state of Input widgets contained within the list items unchanged, you can use this approach. 
+
+Example:
 
 ```javascript
 {{ resetWidget("List1", false) }}

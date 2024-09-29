@@ -1,0 +1,707 @@
+---
+description: Permissions in Granular Access Control in Appsmith
+title: Permissions
+hide_title: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Permissions</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+Permissions in Appsmith govern the level of access and actions users can perform on specific resources within the platform. To assign appropriate permissions to resources, so users can efficiently complete their tasks, it's crucial to understand the permissions, their interdependencies, and their cascading impact. This page provides an in-depth overview of permissions, their assignments, and interdependencies within the Appsmith access control system.
+
+## Create permission
+
+The **Create** permission allows users to add new resources in Appsmith. This permission not only grants the ability to create but also includes additional permissions for managing and interacting with those resources. When assigned to a parent resource, the **Create** permission and its associated permissions are inherited by child resources, ensuring consistent access across the hierarchy.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="create-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Allows creating new applications, pages, and queries. Additionally, users can edit, view, delete resources, and execute queries within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Application</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Permits creating new pages and queries within the application. It also includes permissions to edit, view, delete resources, and execute the application queries.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Page</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Grants permission to create new queries within the page and manage them by editing, viewing, deleting, and executing the queries.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="create-datasources-and-environments">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Datasources</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Enables creating new datasources and managing them by editing, viewing, deleting datasource configurations, and executing queries across all datasources within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Datasource</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Allows for the creation and management of the specified datasource, including permissions to edit, view, delete the given datasource configuration, and execute queries within it.</td>
+        </tr>
+        <tr>
+          <td>Environments</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Grants the ability to create new environments and manage them by editing, viewing, deleting configuration across all environments (Production, Staging, and custom), and executing queries in all environments.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment</td>
+          <td>Edit, View, Delete, Execute</td>
+          <td>Permits creating and managing the specified environment, with additional permissions to edit, view, delete environment configuration, and execute queries within that environment (Production, Staging, or custom).</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Workflows" value="create-workflows">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>Edit, Delete</td>
+          <td>Allows the creation of new workflows within the workspace and includes permissions to edit and delete existing workflows.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Groups & Roles" value="create-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>Edit, View, Delete, Invite User, Remove User</td>
+          <td>Permits creating new groups and managing them by editing, viewing, deleting group configurations, and inviting, or removing users from groups within the instance.</td>
+        </tr>
+        <tr>
+          <td>Roles</td>
+          <td>Edit, View, Delete, Associate Role</td>
+          <td>Allows the creation of custom roles and includes permissions to edit, view, delete custom roles, and associate both custom and default roles with users or groups.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Custom &nbsp;&nbsp;&nbsp;&nbsp;Roles</td>
+          <td>Edit, View, Delete, Associate Role</td>
+          <td>Enables creating and managing the specified custom role, with additional permissions to edit, view, delete the custom role, and assign the role to users or groups.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Others" value="create-others">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspaces</td>
+          <td>NA</td>
+          <td>Allows adding new workspaces to the Appsmith instance.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Edit permission
+
+The **Edit** permission permits users to edit existing resources in Appsmith. When the **Edit** permission is assigned to a parent resource, it, along with the automatically assigned permissions, are inherited by the child resources.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="edit-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Edit also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>View, Execute</td>
+          <td>Allows editing existing resources in the workspace. Additionally, grants permissions for viewing resources and running queries within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Application</td>
+          <td>View, Execute</td>
+          <td>Allows editing existing resources within the application. Additionally, grants permissions for viewing application resources and running queries within the application.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Page</td>
+          <td>View, Execute</td>
+          <td>Allows editing existing resources within the page. Additionally, grants permissions for viewing and running queries within the page.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="edit-datasources-and-environments">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Edit also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Datasources</td>
+          <td>View, Execute</td>
+          <td>Allows editing existing datasources in the workspace. Additionally, grants permissions for viewing datasource configuration and running queries in the given datasource.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Datasource</td>
+          <td>View, Execute</td>
+          <td>Allows editing the given datasource. Additionally, grants permissions for viewing datasource configuration and running queries in the given datasource.</td>
+        </tr>
+        <tr>
+          <td>Environments</td>
+          <td>View, Execute</td>
+          <td>Allows editing existing environments in the workspace. Additionally, grants permissions for viewing environment configurations and running queries in all environments within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment</td>
+          <td>View, Execute</td>
+          <td>Allows editing given environment like Production, Staging, or custom added. Additionally, grants permissions for viewing configurations and running queries in the given environment within the workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Workflows" value="edit-workflows">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Edit also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>NA</td>
+          <td>Allows editing existing workflows within the Appsmith workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Groups & Roles" value="edit-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Edit also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>View, Invite User, Remove User</td>
+          <td>Allows editing existing groups in the instance. Additionally, grants permissions for viewing, inviting users to, and removing users from the instance.</td>
+        </tr>
+        <tr>
+          <td>Roles</td>
+          <td>View, Associate Role</td>
+          <td>Allows editing existing roles in the instance. Additionally, grants permissions for viewing role configurations and associating custom and default roles with users or groups.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Custom Roles</td>
+          <td>View, Associate Role</td>
+          <td>Allows editing given custom role. Additionally, grants permissions for viewing role configuration and assigning the given custom role to users or groups.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Delete permission
+
+The **Delete** permission permits users to delete existing resources in Appsmith. When the **Delete** permission is assigned to a parent resource, it, along with the automatically assigned permissions, are inherited by the child resources.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="delete-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Delete also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>View, Execute</td>
+          <td>Allows deleting the resources in the workspace. Additionally, allows viewing resources and running queries within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Application</td>
+          <td>View, Execute</td>
+          <td>Allows deleting the resources in the application. Additionally, allows viewing resources and running queries within the application.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Page</td>
+          <td>View, Execute</td>
+          <td>Allows deleting the resources in the page. Additionally, allows viewing and running queries within the page.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="delete-datasources-and-environments">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Delete also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Datasources</td>
+          <td>View, Execute</td>
+          <td>Allows deleting all datasources within the workspace. Additionally, allows viewing datasource configurations and running queries in all datasources.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource</td>
+          <td>View, Execute</td>
+          <td>Allows deleting the given datasource. Additionally, allows viewing given datasource configuration and running queries in the given datasource.</td>
+        </tr>
+        <tr>
+          <td>Environments</td>
+          <td>View, Execute</td>
+          <td>Allows deleting all environments within the workspace. Additionally, allows viewing environment configuration and running queries in all environments.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment</td>
+          <td>View, Execute</td>
+          <td>Allows deleting the given environment within the workspace. Additionally, allows viewing configuration and running queries in the given environment.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Workflows" value="delete-workflows">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Delete also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>NA</td>
+          <td>Allows deleting existing workflows within the Appsmith workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Groups & Roles" value="delete-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Delete also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>View</td>
+          <td>Allows deleting groups within the instance. It also grants viewing groups and their configurations.</td>
+        </tr>
+        <tr>
+          <td>Roles</td>
+          <td>View, Associate Role</td>
+          <td>Allows deleting custom roles within the instance. Additionally, it grants viewing custom and default roles configurations, and assigning them to users or groups.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;Custom&nbsp;&nbsp;Roles</td>
+          <td>View, Associate Role</td>
+          <td>Allows deleting the given custom role within the instance. Additionally, it grants viewing the given custom role configuration, and assigning it to users or groups.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## View permission
+
+The **View** permission permits users to view existing resources in Appsmith. When the **View** permission is assigned to a parent resource, it, along with the automatically assigned permissions, are inherited by the child resources.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="view-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>View also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>Execute</td>
+          <td>Allows viewing resources and running queries within the given workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Application</td>
+          <td>Execute</td>
+          <td>Allows viewing resources and running queries within the given application.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Page</td>
+          <td>Execute</td>
+          <td>Allows viewing page and running queries within the given page.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="view-datasources-and-environments">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>View also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Datasources</td>
+          <td>Execute</td>
+          <td>Allows viewing all datasources, and running queries in all datasources within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource</td>
+          <td>Execute</td>
+          <td>Allows viewing the given datasource configuration and running queries in the given datasource.</td>
+        </tr>
+        <tr>
+          <td>Environments</td>
+          <td>Execute</td>
+          <td>Allows viewing all the environments and running queries in all environments within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment</td>
+          <td>Execute</td>
+          <td>Allows viewing the given environment configuration, and running queries in the given environment within the workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Groups & Roles" value="view-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>View also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>NA</td>
+          <td>Allows viewing groups and their configurations within the instance.</td>
+        </tr>
+        <tr>
+          <td>Roles</td>
+          <td>Associate Role</td>
+          <td>Allows viewing roles configuration and assigning custom and default roles to users or groups within the instance.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;Default Roles</td>
+          <td>Associate Role</td>
+          <td>Allows viewing all the default roles and assigning them to users or groups.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Custom &nbsp;&nbsp;&nbsp;&nbsp;Roles</td>
+          <td>Associate Role</td>
+          <td>Allows viewing the given custom role configuration and assigning it to users or groups.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Others" value="view-others">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>View also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Audit logs</td>
+          <td>NA</td>
+          <td>Allows viewing the Appsmith instance audit logs that help in monitoring the instance.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Execute permission
+
+The **Execute** permission permits users to execute actions such as running queries in Appsmith. When the **Execute** permission is assigned to a parent resource, it's also inherited by the child resources.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="execute-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Execute also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Query</td>
+          <td>NA</td>
+          <td>Allows running queries for the given page.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="execute-datasources-and-environments">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Execute also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Datasources</td>
+          <td>NA</td>
+          <td>Allows running queries in all datasources within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource</td>
+          <td>NA</td>
+          <td>Allows running queries in the given datasource.</td>
+        </tr>
+        <tr>
+          <td>Environments</td>
+          <td>NA</td>
+          <td>Allows running queries in all environments within the workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Environment</td>
+          <td>NA</td>
+          <td>Allows running queries in the given environment within the workspace.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Make Public permission
+
+The **Make Public** permission permits users to change the access level of applications, making them available to the public. When the **Make Public** permission is assigned to a workspace or an application, it, along with the automatically assigned permissions, are inherited by the child resources. Once granted, users can enable the **Make application public** option on the _Invite Users_ modal to make an application publicly available. This option allows external users to access the app without the need to log in to Appsmith.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="make-public-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Make Public also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>View, Execute</td>
+          <td>Allows making all applications publicly accessible within the given workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application</td>
+          <td>View, Execute</td>
+          <td>Allows making the given application publicly accessible.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Export permission
+
+The **Export** permission permits users to export data and resources from Appsmith. When the **Export** permission is assigned to a workspace or an application, it, along with the automatically assigned permissions, are inherited by the child resources.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="export-application-resources">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Export also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Workspace</td>
+          <td>View, Execute</td>
+          <td>Allows exporting all applications, their data and resources. It allows viewing the applications, and running queries required to view applications and exporting their data within the given workspace.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application</td>
+          <td>View, Execute</td>
+          <td>Allows exporting application data and resources. It allows viewing the application, and running queries required to view the application and exporting data within the given application.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Invite User permission
+
+The **Invite User** permission permits users to invite other users to groups. Once granted, users can see the **Add user** button enabled on the groups configuration screen, and allows them to invite other users to the groups within the instance.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Groups & Roles" value="invite-user-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Invite User also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>View</td>
+          <td>Allows inviting users to the groups within the instance. It also allows viewing the groups and group's configurations. </td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Remove User permission
+
+The **Remove User** permission permits users to remove other users from the groups wihtin the Appsmith instance.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Groups & Roles" value="remove-user-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Remove User also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Groups</td>
+          <td>View, Invite User</td>
+          <td>Allows removing users from groups within the instance that helps removing their access to the instance. It also allows viewing groups, their configurations, and inviting users to the groups.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## Associate Role permission
+
+The **Associate Role** permission permits users to assign or change roles of other users within the instance in Appsmith.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Groups & Roles" value="associate-role-groups-and-roles">
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Associate Role also grants below permissions</th>
+          <th>Permission Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Roles</td>
+          <td>NA</td>
+          <td>Allows assigning default and custom roles to users within the instance.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;Default&nbsp;&nbsp;Roles</td>
+          <td>NA</td>
+          <td>Allows assigning the given custom role to users within the instance.</td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;Custom&nbsp;&nbsp;Roles</td>
+          <td>NA</td>
+          <td>Allows assigning the given custom role to users within the instance.</td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>

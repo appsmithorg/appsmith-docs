@@ -1,0 +1,289 @@
+---
+description: >
+  Examples showcasing permissions while creating custom roles in granular access control.
+title: Custom Roles
+hide_title: true
+toc_max_heading_level: 3
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Custom Roles</h1>
+
+<Tags
+tags={[
+  { name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+Appsmith allows the creation of custom roles to manage granular access control, ensuring applications are secure and access is provided based on business needs. This document provides examples of how to create custom roles and configure permissions. 
+
+## Create custom role
+
+To create a custom role, click the **Add role** button on the Roles screen. On the roles configuration screen, assign permissions to resources in each tab based on your business needs.
+
+ <ZoomImage
+    src="/img/GAC-Create-Custom-Roles-Add-Role-button.png" 
+    alt="Click the Add role button to create a custom role"
+    caption="Click the Add role button to create a custom role"
+  />
+
+Below are some examples configurations that help you configure custom roles:
+
+### Restrict access to page
+
+To restrict access to specific pages within an Appsmith application, modify the permissions at the page level available under the _Application Resources_ tab. Choose the appropriate custom role, remove the permissions assigned to page (Page1) to make it inaccessible. The table below illustrates the permissions setup for restricting page access.
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="application-resources">
+    <p className="permission-footnote">
+        <span style={{color: 'green', fontWeight: 'bold'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span> Permission Assigned
+    </p>
+    <table className="permissions-table" style={{ width: '100%', display: 'table' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+          <th>Execute</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><i>⌄Application 1</i></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 2</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 2</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+### Give app access
+
+To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role. When creating a new custom role, it's necessary to also configure permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access.
+
+Example permissions setup to provide read-only access:
+
+<Tabs queryString="gac-resource">
+  <TabItem label="Application Resources" value="application-resources">
+    <p className="permission-footnote"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span> Permission Assigned</p>
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+          <th>Execute</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>⌄Workspace 1</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Application 1</i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Query 2</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+        </tr>
+         <tr>
+          <td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Application 2</i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Application 3</i></td>
+          <td></td> 
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;⌄Page 1</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+  <TabItem label="Datasources & Environments" value="datasources-and-environments">
+    <p className="permission-footnote"><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span> Permission Assigned</p>
+    <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
+      <thead>
+        <tr>
+          <th>Resource</th>
+          <th>Execute</th>
+          <th>Create</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>⌄Workspace</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><i>&nbsp;&nbsp;&nbsp;&nbsp;⌄Datasources</i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource 1</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource 2</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Datasource 3</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><i>&nbsp;&nbsp;&nbsp;&nbsp;⌄Environments</i></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Production</td>
+          <td><span style={{color: 'green', fontWeight: 'bold', fontSize: '16px'}}>(✓)</span></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </TabItem>
+</Tabs>
+
+## See also
+
+* [Restrict Query Access](/advanced-concepts/granular-access-control/how-to-guides/restrict-query-access)
+* [Permissions](/advanced-concepts/granular-access-control/reference/permissions)

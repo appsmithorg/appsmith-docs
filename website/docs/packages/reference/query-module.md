@@ -1,30 +1,45 @@
-# App-Level Package Settings
-
-This page provides information about the package settings and properties available within the App, which allows you to configure the query and JS modules.
+# Module Instance
 
 
 
-## Query module
+When you add a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`).
 
-When you integrate the query module into the app, you can access and modify the parameters that have been set up for the query module using the query editor. You have the option to include multiple query modules, whether they're from the same package or different ones, and supply parameters to each module according to your specific needs.
+This page provides information about the module settings and properties available within the app, which allows you to configure the query and JS modules.
+
+
+<ZoomImage
+  src="/img/query-module-ins.drawio.png" 
+  alt=""
+  caption=""
+/>
+
+
+
+## Query module instance
+
+These are all the properties and settings available for a Query Module instance within any app. When you add multiple query modules, whether from the same package or different ones, these properties will be available to configure each module instance according to your specific needs.
+
 
 
 
 ### Properties 
 
-These properties facilitate dynamic value transmission from your app to the query module. 
+These properties are only available if they are defined in the Query Module. 
 
 #### Inputs
 
 
 <dd>
 
-The input property enables you to pass dynamic values from your app to the query module. With inputs, you can incorporate dynamic data retrieval based on user interactions or other widget bindings. 
+The input property lets you pass dynamic values from your app to the query module, which allows you to update data based on user interactions or widget bindings.
 
-You cannot edit the input name or query configuration from the App; you can only pass values to the available inputs. 
+You cannot edit the **Inputs** name or query configuration directly from the App. You can pass different values to the available inputs at runtime using the `.run()` function. The values passed through `.run()` will take precedence over the default values set on the module instance page.
+
+
+
 
 <ZoomImage
-  src="/img/inputs_mod_app.png" 
+  src="/img/query-module-instance.png" 
   alt="Inputs image"
   caption=""
 />
@@ -39,6 +54,7 @@ If you have an input named `distinct_id`, you can pass data like this:
 {{appsmith.user.email}}
 ```
 
+For more information on how to read the dynamic data, see [Module](/packages/reference/package).
 
 </dd>
 
@@ -63,27 +79,64 @@ When enabled, this property allows the query to automatically execute each time 
 
 <dd>
 
-When enabled, this property displays a confirmation modal each time before refreshing the data. This ensures that users have the opportunity to confirm their action before executing the query, preventing unintended data refreshes.
+When enabled, this property displays a confirmation modal each time a query is executed. This ensures that users can confirm their action before executing the query, preventing unintended data updates.
+
+
+
+
+
 
 </dd>
 
 
-## JS module
+## JS module instance
 
-These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App.
-
-Additionally, you can add multiple JS modules from the same package, each with different configurations.
+These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module to your app. When you add multiple JS modules, whether from the same package or different ones, you can configure each module instance using these properties to meet your specific needs.
 
 
-<ZoomImage
-  src="/img/js-module-setting.png" 
-  alt="JS modules image"
-  caption=""
-/>
+
+### Parameters 
+
+This property displays all the parameters available per function.
+
+
+#### Inputs
+
+<dd>
+
+The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
+
+You can pass data either using this **input** property or by providing values during runtime inside an event `(e.g., authUtils.login('email@domain.com', 'dsoi3$dfssn');)`. If both methods are used, the runtime parameters will take precedence over the values set in the UI.
+
+*Example*: If you have a JS function with predefined parameters like `email` and `passwordHash`, and you want to pass Input widget data from the app to the JS module, you can use the **Inputs** property.
+
+```js
+//JS Module
+export default {
+  myFunction: (email, passwordHash) => {
+    console.log("Parameter 1: ", email);
+    console.log("Parameter 2: ", passwordHash);
+    // Perform operations using param1 and param2
+  }
+}
+```
+
+```js
+//JS module instance
+email: 
+{{email_input.text}}
+
+passwordHash:
+{{PasswordUtils.hashPassword(pass_input.text)}}
+```
+ <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance | App" />
+
+</dd>
 
 ### Function setting
 
 This setting allows you to configure each function available in the JS module according to your requirements.
+
 
 #### Function name
 
@@ -100,26 +153,6 @@ This setting displays all the function names available in the JS module.
 <dd>
 
 When enabled, this property allows the specified JS function to run when the page loads. You can set this property for each JS function available.
-
-
-</dd>
-
-
-#### Confirm before calling
-
-
-<dd>
-
-When enabled, this property displays a confirmation modal before calling the specified function. You can set this property for all the available functions.
-
-
-</dd>
-
-#### Parameters
-
-<dd>
-
-This property displays all the parameters available for the specified function.
 
 
 </dd>

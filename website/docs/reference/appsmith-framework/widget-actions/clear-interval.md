@@ -6,7 +6,11 @@ toc_max_heading_level: 2
 
 # clearInterval()
 
-`clearInterval()` stops a repeating callback that was started with the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) method.
+This page provides information about the `clearInterval()` function signature and parameters, which allows you to stop a repeating callback that was started with the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) method.
+
+<ZoomImage src="/img/clear-fun.png" alt="clearInterval()" caption="clearInterval()" />
+
+
 
 ## Signature
 
@@ -16,21 +20,37 @@ clearInterval(id: string)
 
 ### Parameters
 
+Below are the parameters required by the `clearInterval()` function to execute:
+
+
 #### id
 
 <dd>
 
-The string name of the timer that you want to clear. This should match the `id` parameter of the [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events) call that you want to stop.
+The `id` is a string that represents the unique identifier of the interval timer you want to stop. This identifier must match the id specified when creating the interval with the `setInterval()` function. 
+
+</dd>
+
+## Usage
+
+Here are a few examples of using `clearInterval()` in different situations:
+
+
+#### Stop auto-refresh
+
+<dd>
+
+If you have a timer set up to automatically refresh data every few seconds and you want to stop it based on user interaction or a specific condition, you can use clearInterval().
+
+```javascript
+clearInterval("autorefresh");
+```
+
+
 
 </dd>
 
 
-*Example:* If you want to clear a timer whose `id` is `myTimer`, refer to the code snippet given below:
-
-```javascript
-clearInterval("myTimer");
-```
-
 ## See also
-[setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events)<br/>
-[setTimeout()](/reference/appsmith-framework/widget-actions/set-timeout)
+* [setInterval()](/reference/appsmith-framework/widget-actions/intervals-time-events)<br/>
+* [setTimeout()](/reference/appsmith-framework/widget-actions/set-timeout)

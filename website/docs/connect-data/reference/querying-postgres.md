@@ -122,7 +122,13 @@ DELETE FROM users WHERE id = {{tableUsers.selectedRow.id}};
 
 ```
 
-In the above example, `tableUsers` is the name of the Table widget where the user selects the row for deletion.
+In the above example, `tableUsers` is the name of the Table widget where the user selects the row for deletion. For information on how to delete data in a Table, see [Delete Data in Table](/reference/widgets/table/inline-editing#delete-row).
+
+
+
+
+
+
 
 :::info
 Prepared statements are turned on by default in your queries to help prevent SQL injection attacks. For more details, see [**Prepared Statements**](/connect-data/concepts/how-to-use-prepared-statements).
@@ -137,5 +143,8 @@ Row level security is a PostgreSQL security feature the database provides to lim
 If you're experiencing difficulties, you can refer to to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/application-errors), or contact the support team using the chat widget at the bottom right of this page.
 
 ## See also
-- [Fetch and Filter data in SQL](/connect-data/how-to-guides/fetch-and-filter-data-in-sql)
-- [Insert and Update data in SQL](/connect-data/how-to-guides/insert-and-update-data-in-sql)
+
+- [Fetch and Filter Data in SQL](/connect-data/how-to-guides/fetch-and-filter-data-in-sql) - Learn how to fetch and filter data from SQL databases using queries.
+- [Insert and Update Data in SQL](/connect-data/how-to-guides/insert-and-update-data-in-sql) - Step-by-step guide on inserting new records and updating existing data in SQL databases.
+- [Update Data](/build-apps/how-to-guides/submit-form-data) - Understand how to update data in your application using Form widget.
+- [Insert Data](/build-apps/how-to-guides/insert-data) - Step-by-step instructions on inserting new records into your database using Form widget.

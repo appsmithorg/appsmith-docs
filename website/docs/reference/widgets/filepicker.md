@@ -331,6 +331,6 @@ FilePicker1.setDisabled(false)
 See how to guide on [Upload CSV data in Table using Filepicker](/build-apps/how-to-guides/Upload-CSV-Data-to-Table)
 
 ## See also
-- [Upload Files Using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests)
-- [Insert CSV Data](/build-apps/how-to-guides/Upload-CSV-Data-to-Table)
-- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3)
+- [Upload Files Using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests) - Learn how to upload files using the Filepicker widget and send the data via API requests.
+- [Insert CSV Data](/build-apps/how-to-guides/Upload-CSV-Data-to-Table) - Learn how to upload CSV files and insert the data into a Table widget.
+- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3) - See how to upload files directly to an Amazon S3 bucket using API queries.

@@ -27,6 +27,10 @@ This property allows you to include a URL or base64-encoded content to view vari
 
 Additionally, you can populate the document by retrieving data from a source such as an API or Datasource Query. 
 
+:::info
+When using base64-encoded files larger than 1.5MB, the Document Viewer may encounter rendering issues. It is recommended to use direct URLs or reduce the file size for optimal performance.
+:::
+
 </dd>
 
 #### Visible `Boolean`
@@ -105,3 +109,9 @@ DocumentViewer1.setURL('<https://example.com/file.txt>')
 
 
 
+
+## See also
+
+- [Browse and Display Documents](/build-apps/how-to-guides/browse-and-display-documents) –  Learn how to fetch and display documents in your app.
+- [Upload Files using API](/build-apps/how-to-guides/search-and-filter-table-data) – Learn how to upload files using an API.
+- [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api) - See how to download a file using an API and S3 datasource.

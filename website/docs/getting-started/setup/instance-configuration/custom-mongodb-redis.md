@@ -5,7 +5,7 @@ toc_max_heading_level: 4
 
 # External MongoDB and Redis
 
-Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB and Redis for data storage and session management. You can also switch to external instances. Using external instances makes the Appsmith container stateless, enabling better performance and scalability. Follow the steps on this page to set up external MongoDB and Redis for Appsmith.
+Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB and Redis for data storage and session management. You can also switch to external instances. Using external instances enable better performance and scalability. Follow the steps on this page to set up external MongoDB and Redis for Appsmith.
 
 :::caution Attention
 To use external MongoDB with Appsmith v1.9.0 onwards, you need MongoDB version 5 or higher. Follow the steps in the MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/)
@@ -42,11 +42,20 @@ If you have set values using [environment variables](#environment-variables) for
 
 #### Environment variable
 
-To connect to an external MongoDB server, update the environment variable `APPSMITH_MONGODB_URI`. For example, if you want to connect to [MongoDB Cloud](https://www.mongodb.com/cloud), set the value as shown below:
+To connect to an external MongoDB server, you need to update the environment variable `APPSMITH_MONGODB_URI` with your [MongoDB](https://www.mongodb.com/cloud) credentials in the connection string format. If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
 
-```bash
+```js
+// Syntax
 APPSMITH_MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
+
+// Example - password encoded
+APPSMITH_MONGODB_URI=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
 ```
+
+To learn how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
+
+
+
 
 Restart the Appsmith container by using the below command:
 

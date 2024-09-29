@@ -120,7 +120,3 @@ Follow these steps to configure Amazon SES using environment variables:
 ## Troubleshooting
 
 If you encounter errors that you are unable to resolve, contact the support team using the chat widget at the bottom right of this page.
-
-## See also
-
-[Invite Users](/advanced-concepts/invite-users)

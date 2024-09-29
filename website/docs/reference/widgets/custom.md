@@ -253,9 +253,10 @@ _Example_: You can bind signature pad data to an image widget by pasting followi
 
 <dd>
 
-You can execute custom events you created on the property pane of the custom widget, by calling this function with name of the event. You can also by some optional data by passing a second argument.
+You can execute custom events that you created in the property pane of the custom widget by calling this function with the name of the event. You can also pass some optional data by including a second argument.
 
-_Example_: Let's say you have buttons in your custom component, upon clicked, you want to trigger onClick event along the itemId
+
+_Example_: Let's say you have buttons in your custom component, upon clicked, you want to trigger `onClick` event along the itemId
 
 ```js
 function onClick() {
@@ -275,20 +276,35 @@ function onClick() {
 
 <dd>
 
-The `onModelChange` function allows you to register a handler function, which will get called whenever there is a change in the model either from the platform or from another part of the custom widget (see `updateModel` function).
+The `onModelChange` function allows you to register a handler function, which will be called whenever there is a change in the model, either from the platform or from within the custom widget (for example, via the `updateModel` function). This is useful for responding to changes in the widget's state.
+
+However, it's important to ensure that changes triggered by your widget's own updates don't lead to infinite loops. You can handle this by adding a condition to check if the relevant part of the model has actually changed before performing any updates.
+
+
 
 _Example_:
 
 ```js
-  const unlisten = appsmith.onModelChange((model) => {
-    setSelectedItem(model.selectedItem);
-  });
+// Monitor changes in the model (e.g., dropdown selection)
+const unlisten = appsmith.onModelChange((newModel) => {
+  // Compare the selected item and update if there's a change
+  if (newModel.selectedItem !== appsmith.model.selectedItem) {
+    // Update the display only if the selected item has changed
+    setSelectedItem(newModel.selectedItem);
+  }
+});
 
-  // Unsubscribe when no longer interested in updates.  
-  unlisten();
+// Event listener to update the model when the dropdown value changes
+document.getElementById("itemSelect").addEventListener("change", function(event) {
+  appsmith.model.selectedItem = event.target.value;
+  setSelectedItem(event.target.value); // Ensure immediate update on change
+});
+
+// Unsubscribe when no longer interested in updates (optional in this simple case)
+unlisten();
 ```
 
-When you're no longer interested in listening to the model change , call the return value of the appsmith.onModelChange function.
+When the condition is applied, updates occur only when the selected item changes, preventing unnecessary updates and avoiding infinite loops. When you're no longer interested in listening to the model change , call the return value of the `appsmith.onModelChange` function.
 
 </dd>
 
@@ -410,3 +426,19 @@ These CSS variables, available to control widget size and define the theme:
 :::
 
 </dd>
+
+
+## See also
+
+If you’re looking to explore more, these guides are a great next step:
+
+- [Create Custom Widgets Using React](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe) - Explore how to create custom widgets using React to add complex functionality to your app.
+- [Create Custom Widgets Using Vanilla JS](/build-apps/how-to-guides/custom-widget-using-vanillajs) - Learn how to build custom widgets using Vanilla JS for lightweight and flexible customization.
+
+## Sample apps
+
+* [Image Annotator](https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9)
+* [Data grid widget](https://app.appsmith.com/app/data-grid/page1-6597ff5559aa5450e0eb4eb9)
+* [Signature Pad widget](https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366)
+
+

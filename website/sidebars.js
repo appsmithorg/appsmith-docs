@@ -123,7 +123,9 @@ const sidebars = {
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
                         'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
                       ],
+
                     },
                     {
                       type: 'category',
@@ -153,6 +155,7 @@ const sidebars = {
                   items: [
                     'getting-started/setup/instance-configuration/email/gmail',
                     'getting-started/setup/instance-configuration/email/amazon-ses',
+                    'getting-started/setup/instance-configuration/email/microsoft-365',
                     'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
@@ -431,6 +434,7 @@ const sidebars = {
                 'build-apps/how-to-guides/custom-widget-using-vanillajs'
               ],
             },
+            `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
@@ -444,7 +448,9 @@ const sidebars = {
             `build-apps/how-to-guides/set-up-websockets`,
             `build-apps/how-to-guides/setup-polling`,
             `build-apps/how-to-guides/browse-and-display-documents`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'build-apps/how-to-guides/usage-app',
+            'build-apps/how-to-guides/export-audit-logs'
           ]
         },
         {
@@ -583,22 +589,23 @@ const sidebars = {
               id: 'reference/appsmith-framework/widget-actions/README',
             },
             items: [
+              'reference/appsmith-framework/widget-actions/clear-interval',
+              'reference/appsmith-framework/widget-actions/clear-store',
+              'reference/appsmith-framework/widget-actions/close-modal',
+              'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+              'reference/appsmith-framework/widget-actions/download',
               'reference/appsmith-framework/widget-actions/navigate-to',
+              'reference/appsmith-framework/widget-actions/post-message',
+              'reference/appsmith-framework/widget-actions/remove-value',
+              'reference/appsmith-framework/widget-actions/reset-widget',
+              'reference/appsmith-framework/widget-actions/set-timeout',
+              'reference/appsmith-framework/widget-actions/intervals-time-events',
+              'reference/appsmith-framework/widget-actions/store-value',
               'reference/appsmith-framework/widget-actions/show-alert',
               'reference/appsmith-framework/widget-actions/show-modal',
-              'reference/appsmith-framework/widget-actions/close-modal',
-              'reference/appsmith-framework/widget-actions/store-value',
-              'reference/appsmith-framework/widget-actions/remove-value',
-              'reference/appsmith-framework/widget-actions/clear-store',
-              'reference/appsmith-framework/widget-actions/download',
-              'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-              'reference/appsmith-framework/widget-actions/reset-widget',
-              'reference/appsmith-framework/widget-actions/intervals-time-events',
-              'reference/appsmith-framework/widget-actions/clear-interval',
-              'reference/appsmith-framework/widget-actions/set-timeout',
-              'reference/appsmith-framework/widget-actions/post-message',
-              'reference/appsmith-framework/widget-actions/window-message-listener',
-              'reference/appsmith-framework/widget-actions/unlisten-window-message'
+              'reference/appsmith-framework/widget-actions/unlisten-window-message',
+              'reference/appsmith-framework/widget-actions/window-message-listener'
+
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
@@ -621,6 +628,108 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
+    {
+      //Advanced Concepts Start
+      type: 'category',
+      collapsed: false,
+      label: 'Manage Apps and Users',
+      items: [
+        {
+          type: 'category',
+          label: 'Granular Access Control',
+          link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
+          items: [
+            {
+              type: 'category',
+              label: 'How-to Guides',
+              items: [
+                'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
+                'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access',
+              ]
+            },
+            {
+              type: 'category',
+              collapsed: false,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/granular-access-control/reference/default-roles',
+                'advanced-concepts/granular-access-control/reference/custom-roles',
+                'advanced-concepts/granular-access-control/reference/permissions',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Concepts',
+              items: [
+                'advanced-concepts/granular-access-control/roles',
+              ]
+            },
+          ],
+        },
+        //git-start
+        {
+
+          type: 'category',
+          collapsed: true,
+          label: 'Versioning with Git',
+          link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
+          items: [
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'How-To Guides',
+              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
+              items: [
+                'advanced-concepts/version-control-with-git/guides/setup-github',
+                'advanced-concepts/version-control-with-git/guides/setup-gitlab',
+                'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
+                'advanced-concepts/version-control-with-git/guides/setup-other-provider',
+                'advanced-concepts/version-control-with-git/import-from-repository',
+                'advanced-concepts/version-control-with-git/environments-with-git',
+                {
+                  type: 'category',
+                  collapsed: true,
+                  label: 'Continuous Delivery (CI/CD) with Git',
+                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
+                  items: [
+                    'advanced-concepts/version-control-with-git/cd-with-github-actions',
+                    'advanced-concepts/version-control-with-git/cd-with-gitlab',
+                    'advanced-concepts/version-control-with-git/cd-with-bitbucket',
+                  ]
+                },
+                'advanced-concepts/version-control-with-git/revert-changes',
+                'advanced-concepts/version-control-with-git/commit-and-push',
+
+              ]
+            },
+            {
+              type: 'category',
+              collapsed: true,
+              label: 'Reference',
+              items: [
+                'advanced-concepts/version-control-with-git/reference/git-settings',
+              ]
+            },
+            'advanced-concepts/version-control-with-git/merging-branches',
+          ]
+        },
+        //git-end
+        `advanced-concepts/user-provisioning-group-sync`,
+        {
+          type: 'category',
+          label: 'Embed Appsmith',
+          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
+          items: [
+            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
+          ]
+        },
+
+        'advanced-concepts/more/backup-restore',
+        'advanced-concepts/audit-logs',
+        'advanced-concepts/branding',
+        'advanced-concepts/external-portal-using-appsmith',
+      ],
+    }, //Advanced Concepts end
     //module start
     {
       type: 'category',
@@ -649,8 +758,9 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
-            'packages/reference/query-module',
-            'packages/reference/package'
+            'packages/reference/package',
+            'packages/reference/query-module'
+
           ],
         }
       ]
@@ -681,9 +791,10 @@ const sidebars = {
             id: 'workflows/how-to-guides/README',
           },
           items: [
-            'workflows/how-to-guides/create-approval-workflow',
             'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/create-approval-workflow',
             'workflows/how-to-guides/set-up-automatic-processing',
+            'workflows/how-to-guides/debug-workflow',
           ],
         },
         {
@@ -692,91 +803,14 @@ const sidebars = {
           label: 'Reference',
           items: [
             'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions'
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows',
+            'workflows/reference/run-history'
           ],
         }
       ]
 
     }, //Workflows end
-    {
-      //Advanced Concepts Start
-      type: 'category',
-      collapsed: false,
-      label: 'Manage Apps and Users',
-      items: [
-        {
-          type: 'category',
-          label: 'Embed Appsmith',
-          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
-          items: [
-            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
-          ]
-        },
-        'advanced-concepts/invite-users',
-        {
-          type: 'category',
-          label: 'Granular Access Control',
-          link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README', },
-          items: [
-            'advanced-concepts/granular-access-control/roles',
-          ]
-        },
-        `advanced-concepts/user-provisioning-group-sync`,
-             //git-start
-             {
-          
-              type: 'category',
-              collapsed: true,
-              label: 'Versioning with Git',
-              link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/README' },
-              items: [
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'How-To Guides',
-                  link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/guides/overview' },
-                  items: [
-                    'advanced-concepts/version-control-with-git/guides/setup-github',
-                    'advanced-concepts/version-control-with-git/guides/setup-gitlab',
-                    'advanced-concepts/version-control-with-git/guides/setup-bitbucket',
-                    'advanced-concepts/version-control-with-git/guides/setup-other-provider',
-                    'advanced-concepts/version-control-with-git/import-from-repository',
-                    'advanced-concepts/version-control-with-git/environments-with-git',
-                    {
-                      type: 'category',
-                      collapsed: true,
-                      label: 'Continuous Delivery (CI/CD) with Git',
-                      link: { type: 'doc', id: 'advanced-concepts/version-control-with-git/cd-with-git' },
-                      items: [
-                         'advanced-concepts/version-control-with-git/cd-with-github-actions',
-                          'advanced-concepts/version-control-with-git/cd-with-gitlab',
-                          'advanced-concepts/version-control-with-git/cd-with-bitbucket',
-                      ]
-                    },
-                    'advanced-concepts/version-control-with-git/revert-changes',
-                    'advanced-concepts/version-control-with-git/commit-and-push',
-       
-                  ]
-                },
-                {
-                  type: 'category',
-                  collapsed: true,
-                  label: 'Reference',
-                  items: [
-                    'advanced-concepts/version-control-with-git/reference/git-settings',
-                  ]
-                },
-                'advanced-concepts/version-control-with-git/merging-branches',
-              ]
-            }, 
-           //git-end
-        //git-start
-
-        'advanced-concepts/more/backup-restore',
-        'advanced-concepts/audit-logs',
-        'advanced-concepts/branding',
-      ],
-    }, //Advanced Concepts end
     {
       // Help & Support start
       type: 'category',
@@ -810,7 +844,8 @@ const sidebars = {
           items: [
             'help-and-support/troubleshooting-guide/action-errors/datasource-errors',
             'help-and-support/troubleshooting-guide/action-errors/README',
-            'help-and-support/troubleshooting-guide/git-errors'
+            'help-and-support/troubleshooting-guide/git-errors',
+            'help-and-support/troubleshooting-guide/gac-errors',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',

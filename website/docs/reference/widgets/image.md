@@ -220,3 +220,10 @@ Image1.setImage('data:image/png;base64,iVBORw0KG...')
 ```
 
 </dd>
+
+
+## See also
+
+- [Browse and Display Documents](/build-apps/how-to-guides/browse-and-display-documents) –  Learn how to fetch and display documents in your app.
+- [Upload Files using API](/build-apps/how-to-guides/search-and-filter-table-data) – Learn how to upload files using an API.
+- [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api) - See how to download a file using an API and S3 datasource.

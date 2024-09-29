@@ -28,17 +28,6 @@ Simplifies working with dates and times in JavaScript by providing functions for
 For more information, see [Moment](https://momentjs.com/docs/)
 </dd>
 
-#### Fast XML Parser
-
-<dd>
-Fast XML Parser can be used to work with cryptographic algorithms and protocols in JavaScript.
-
-```
-{{ xmlParser.parse(xmlAPI.data) }}
-```
-For more information, see [Fast XML Parser](https://github.com/NaturalIntelligence/fast-xml-parser#readme)
-</dd>
-
 #### Forge
 <dd>
 Forge can be used to work with cryptographic algorithms and protocols in JavaScript.

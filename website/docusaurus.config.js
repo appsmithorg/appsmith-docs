@@ -4,6 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer').themes.github;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
+const { default: themeMermaid } = require('@docusaurus/theme-mermaid');
 const { EnvironmentCredentials } = require('aws-sdk');
 
 /** @type {import('@docusaurus/types').Config} */
@@ -14,6 +15,9 @@ const config = {
   baseUrl: '/',
   favicon: 'img/Appsmith-Logo.png',
   "trailingSlash": false,
+  markdown: {
+    mermaid: true,
+  },
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -28,7 +32,15 @@ const config = {
         writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
         allowedInDev: false,
       },
-    ]
+    ],
+    [
+      '@docusaurus/theme-mermaid',
+      {
+        themeMermaid: {
+          theme: 'default',
+        },
+      }
+    ],
   ],
 
   presets: [
@@ -116,7 +128,13 @@ const config = {
       src:
         '/scripts/analyticsEvents.js',
       defer: true,
-    }] : [])
+    },
+    {
+      src:
+        '/scripts/reotracking.js',
+      async: true,
+    }
+    ] : [])
   ],
 };
 

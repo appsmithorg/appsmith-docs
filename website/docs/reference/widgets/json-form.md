@@ -435,3 +435,10 @@ JSONForm1.setSourceData(<data>)
 ```
 
 </dd>
+
+
+## See also
+
+- [Insert Data](/build-apps/how-to-guides/insert-data): Learn how to insert data into your datasource using Forms and queries.
+- [Update Table Data](/build-apps/how-to-guides/submit-form-data): Learn how to update Table data using JSON Form widget.
+- [Form](/reference/widgets/form): Learn how to use the Form widget.

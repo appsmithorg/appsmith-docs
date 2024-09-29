@@ -708,3 +708,60 @@ h4+.tags {
 .parameterCodeBlock {
   font-size: small;
 }
+
+/*Mermaid styles start*/
+.container_node_modules-\@docusaurus-theme-mermaid-lib-theme-Mermaid-styles-module {
+  border: 2px solid #f2f2f2;
+  border-radius: 8px;
+  display: block;
+  height: auto;
+  margin: 1rem auto;
+}
+
+.person-man text:first-of-type {
+  display: none;
+}
+
+/*Mermaid styles end*/
+
+.gac-permissions {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gac-permissions th,
+.gac-permissions td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.gac-permissions th {
+  background-color: #f2f2f2;
+}
+
+.permission-footnote {
+  margin-top: 10px;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #777;
+}
+
+.permissions-table td {
+  text-align: left;
+}
+
+.external-link::after {
+  content: " ↗";
+  font-size: 0.85em;
+  color: inherit;
+}
+
+.external-link {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.external-link:hover {
+  text-decoration: underline;
+}

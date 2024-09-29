@@ -14,6 +14,8 @@ Appsmith provides a way to integrate with Google OAuth 2.0, enabling end users t
 1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 2. A [Google Workspace](https://workspace.google.com/intl/en_in/) account.
 
+
+
 ## Configure Google API console
 
 To enable Google Sign-in, go to the [Google API console](https://console.cloud.google.com/apis) to get the authorization credentials that identify Appsmith to Google's OAuth 2.0 server. Create a new project and follow the steps below:

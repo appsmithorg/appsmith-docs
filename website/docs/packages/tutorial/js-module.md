@@ -118,7 +118,7 @@ This code formats all `updated` column data into the `DD/MM/YYYY` format for eac
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 :::
 
-### See Also
+### See also
 
 * [How to Use queries inside JS module](/packages/how-to-guides/use-query-inside-js-module)
 * [Refresh OAuth Tokens Using JS Modules](/packages/how-to-guides/create-js-module)
