@@ -1,38 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import AISearchModal from './AISearchModal';
+import {
+    AIlogo, ExploreButton
+} from "@site/src/components/icons";
 
-class AISearchButton extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isModalOpen: false,
-            inputValue: ''
-        };
-    }
 
-    toggleModal = () => {
-        this.setState((prevState) => ({
-            isModalOpen: !prevState.isModalOpen
-        }));
+
+
+const AISearchButton = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [inputValue, setInputValue] = useState('');
+
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
     };
 
-    handleInputChange = (event) => {
-        this.setState({
-            inputValue: event.target.value
-        });
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
     };
 
-    render() {
-        return (
-            <div className='search-link'>
-                <button className='custom-doc-Search-bar hideSearchButtons' onClick={this.toggleModal}>Ask Appsmith AI</button>
-                <AISearchModal
-                    show={this.state.isModalOpen}
-                    closeModal={this.toggleModal}
-                />
-            </div>
-        );
-    }
-}
+    return (
+        <div className="search-link">
+            <button className="buttonAI" onClick={toggleModal}><ExploreButton />
+            </button>
+            <AISearchModal
+                show={isModalOpen}
+                closeModal={toggleModal}
+                inputValue={inputValue}
+                handleInputChange={handleInputChange}
+            />
+        </div>
+    );
+};
 
 export default AISearchButton;
