@@ -6,41 +6,84 @@ description: >-
 ---
 
 # Share Data Across Pages
-You can share data between pages by utilizing query parameters or Appsmith's store value, which is a global state object. This page explains how to share data between different pages in your Appsmith applications.
 
-## Use query parameters
-Use the query parameter to share data between pages across apps. To pass data between the source and the target page using query parameters, use the [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) function.
+This guide shows how to share data across different pages in Appsmith using the `navigateTo()` or the `storeValue()` function.
 
-Example:
 
-In the following example, `page_name` is the name of the target page. 
-```jsx
-{{navigateTo('page_name', { userId: 547916 })}}
+## Using navigateTo() Function
+
+The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) function allows you to navigate between internal app pages or external URLs while passing data as query parameters, such as user inputs or query data.
+
+<dd>
+
+<ZoomImage src="/img/sharedata-page.png" alt="Navigate to action" caption="Navigate to action" />
+
+</dd>
+
+
+1. Select **Navigate to** from the action selector.
+
+2. Choose the **Target page** where you want to navigate. 
+
+3. In the **Query params**, pass the data (key-value pairs) that you want to share across pages.
+
+<dd>
+
+*Example:* If you want to pass the user ID from a Table's selected row, you can add:
+
+* To pass data using the Action selector, use:
+
+
+```js
+{{{ "id": usersTable.selectedRow.id }}}
 ```
-It is also possible to share data between pages by adding the **Navigate to** action to any event. To do this, select the target page and enter the query parameters as an object with key value pairs to share data.
 
-<ZoomImage src="/img/navigate-to-action.png" alt="Navigate to action" caption="Navigate to action" />
+* To pass data using JS, use:
+
+```js
+{{navigateTo('HomePage', { "id": usersTable.selectedRow.id}, 'SAME_WINDOW');}}
+```
+
+</dd>
+
+4. To access these values on the destination page, use:
+
+```js
+{{appsmith.URL.queryParams.id}}
+```
+
 
 ## Use store value
-Local storage is ideal for persisting data between page navigation within the same app. You can store key-value pairs within the local storage using the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
-To share data across pages, follow these steps:
-1. Create a JS Object to add value to the local storage.
-    
-   Example:
 
-   In the following example, `username` is the key and `Joseph` is the value.
-   ```jsx
+
+The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function allows you to persist data across page navigations within the same app by storing key-value pairs in local storage. Unlike using `navigateTo()` with query parameters, which is ideal for passing temporary data between pages, `storeValue()` is better suited for data that needs to persist longer, even after multiple navigations. 
+
+
+
+1. Create a JSObject to store the data in local storage.
+    
+*Example:* To store a user's name and phone number, create a function that saves these values using `storeValue()`.
+
+ ```jsx
    export default {
-        populate_store () {
-            storeValue('username', 'Joseph', true);
-            return appsmith.store.name;
-        }
+    saveUserData() {
+        const userName = InputName.text; // User's name from an input widget
+        const userPhone = InputPhone.text; // User's phone number from another input widget
+
+        storeValue('userName', userName, true); // Save the user's name
+        storeValue('userPhone', userPhone, true); // Save the user's phone number
+
+        return { name: appsmith.store.userName, phone: appsmith.store.userPhone };
     }
-    ```
+}
+```
+
     You can also use the **Store value** action to add store values. Make sure you use a unique key to avoid conflicts and retrieve value easily.
+
 2. Retrieve data from the store using the `appsmith.store` object followed by the key of the value you wish to access.
    
    Example:
-   ```
+
+   ```js
    {{appsmith.store.username}}
    ```
