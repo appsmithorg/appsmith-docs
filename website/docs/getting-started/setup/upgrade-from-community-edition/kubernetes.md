@@ -1,8 +1,9 @@
 ---
 description: Follow these steps to upgrade the Appsmith Community Kubernetes installation.
+title: Kubernetes (k8s)
 ---
 
-# Kubernetes
+# Migrate from Community Edition (Kubernetes)
 
 This page provides steps to upgrade Appsmith Kubernetes Community Edition.
 

@@ -1,10 +1,10 @@
 ---
-description: >-
-  This guide will help you migrate your Appsmith instance running on the old
+description: This guide will help you migrate your Appsmith instance running on the old
   stack (multiple containers), to the new stack (single container).
+title: Docker
 ---
 
-# Migrate from Multi-Container Setup
+# Migrate from Multi-Container Setup (Docker)
 
 Let's say your current Appsmith instance is located in the folder `~/appsmith-old`, and you'd like the new setup to be at `~/appsmith-new`. (These are just example folder names, please use what you prefer.)
 
