@@ -151,4 +151,6 @@ functionality
 DigitalOcean
 AWS ECS EC2
 Droplet
-
+Admin Settings
+Admin settings
+Docker Compose file

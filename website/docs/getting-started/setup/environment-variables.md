@@ -307,3 +307,108 @@ Adjust the internal server timeout to optimize performance based on your Appsmit
 
 Specifies the internal Appsmith server timeout in seconds. Defaults to a `60` second timeout. Increase or decrease based on your server's load and expected response times.
 </dd>
+
+
+
+
+
+## Environment variables
+You may also choose to configure your self-hosted Appsmith instance using environment variables. For more information about available environment variables in Appsmith, see [Environment Variables](/getting-started/setup/environment-variables) reference.
+
+### Configure Docker installations
+
+To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add the Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
+
+```bash
+APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+```
+
+After making changes, be sure to **restart the docker containers** for the changes to take effect. Run the below command to restart the Appsmith container.
+
+* Docker run
+  ```bash
+   docker restart appsmith
+  ```
+* Docker Compose
+  ```bash
+   docker-compose restart appsmith
+  ```
+
+### Configure Helm installations
+
+You can modify your Appsmith installation on Kubernetes using a `values.yaml` file. Follow these steps to update the values:
+
+<Tabs groupId="appsmithEditions" queryString="current-edition">
+<TabItem label="Community Edition" value="communityEdition"> 
+
+1. Go to the root directory of your installation.
+
+2. Generate the `values.yaml` file with:
+
+  ```bash
+  helm show values appsmith/appsmith > values.yaml
+  ```  
+
+3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
+
+  ```yaml
+  applicationConfig:
+    #highlight-next-line
+    APPSMITH_MAIL_FROM:"test@test.com"
+  ```
+
+4. Update the values with:
+
+  ```bash
+  helm upgrade appsmith appsmith/appsmith -f values.yaml -n appsmith
+  ```
+
+</TabItem>
+<TabItem label="Commercial Edition" value="commercialEdition"> 
+
+1. Go to the root directory of your installation.
+
+2. Generate the `values.yaml` file with:
+
+  ```bash
+  helm show values appsmith-ee/appsmith > values.yaml
+  ```  
+
+3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
+
+  ```yaml
+  applicationConfig:
+    #highlight-next-line
+    APPSMITH_MAIL_FROM:"test@test.com"
+  ```
+
+4. Update the values with:
+
+  ```bash
+  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
+  ```
+
+</TabItem>
+</Tabs> 
+
+
+### Configure ECS installations
+
+To configure an ECS installation, follow these steps:
+
+1. Navigate to the ECS console and select Task Definitions on the sidebar.
+2. Click the Task Definition used by your ECS instance, and hit Create new revision.
+3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs, as shown below.
+
+![ECS environment image](</img/ecs-task-env_(1).png>)
+
+It's recommended to use AWS Secrets for sensitive information. Follow these steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
+
+1. Hit the Update button, and hit Create to make a new task definition.
+2. Navigate back to the ECS console and select your cluster. Click your service to open the service details.
+3. Click Update, and select the latest revision of the Task Definition.
+4. Hit Skip to review and then Update Service. The screen below shows the status.
+
+![Instance configuration ECS service restart image](/img/instance-configuration-ecs-service-restart.png)
+
+It may take a minute for the new ECS Task to start running.

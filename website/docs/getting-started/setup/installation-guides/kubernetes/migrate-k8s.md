@@ -1,5 +1,6 @@
 ---
 description: Follow the steps in the guide to migrate the multi-container Kubernetes Appsmith installation to Single Container Helm chart installation.
+title: Kubernetes (k8s)
 
 ---
 # Migrate From Multi-Container Setup (k8s)
