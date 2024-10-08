@@ -7,7 +7,7 @@ description: >-
 
 # Share Data Across Pages
 
-This guide shows how to share data across different pages in Appsmith using the `navigateTo()` or the `storeValue()` function.
+This guide shows how to share data across different pages using the `navigateTo()` or the `storeValue()` function.
 
 ## Using navigateTo() Function
 
@@ -28,7 +28,7 @@ The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) fun
 
 <dd>
 
-*Example:* If you want to pass the user ID from a Table's selected row, you can add:
+*Example:* 
 
 * To pass data using the Action selector, use:
 
@@ -45,7 +45,7 @@ The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) fun
 
 </dd>
 
-4. To access these values on the destination page, use:
+4. To access these values on the destination page, use the [URL global object](/reference/appsmith-framework/context-object#url-object):
 
 ```js
 {{appsmith.URL.queryParams.id}}
@@ -61,6 +61,8 @@ The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) fun
 
 1. Create a JSObject to store the data in local storage.
     
+<dd>
+
 *Example:* To store a user's name and phone number, create a function that saves these values using `storeValue()`.
 
  ```jsx
@@ -77,9 +79,11 @@ The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) fun
 }
 ```
 
-    You can also use the **Store value** action to add store values. Make sure you use a unique key to avoid conflicts and retrieve value easily.
+  You can also use the **Store value** action to store values. When using `storeValue()`, make sure you provide a unique key to avoid conflicts and to retrieve the value easily later.
 
-2. Retrieve data from the store using the `appsmith.store` object followed by the key of the value you wish to access.
+</dd>
+
+2. Retrieve data from local storage by accessing the [store object](/reference/appsmith-framework/context-object#store-object), using the key associated with the stored value.
    
    Example:
 
