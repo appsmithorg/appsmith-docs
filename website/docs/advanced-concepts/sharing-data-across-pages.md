@@ -9,7 +9,7 @@ description: >-
 
 This guide shows how to share data across different pages using the `navigateTo()` or the `storeValue()` function.
 
-## Using navigateTo() Function
+## Using Navigate To function
 
 The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) function allows you to navigate between internal app pages or external URLs while passing data as query parameters, such as user inputs or query data.
 
@@ -52,7 +52,7 @@ The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) fun
 ```
 
 
-## Using the storeValue() Function
+## Store data across pages (storeValue()) 
 
 
 The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function allows you to persist data across page navigations within the same app by storing key-value pairs in local storage. Unlike using `navigateTo()` with query parameters, which is ideal for passing temporary data between pages, `storeValue()` is better suited for data that needs to persist longer, even after multiple navigations. 
