@@ -84,5 +84,5 @@ The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) fun
    Example:
 
    ```js
-   {{appsmith.store.username}}
+   {{appsmith.store.userName}}
    ```
