@@ -9,7 +9,6 @@ description: >-
 
 This guide shows how to share data across different pages in Appsmith using the `navigateTo()` or the `storeValue()` function.
 
-
 ## Using navigateTo() Function
 
 The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) function allows you to navigate between internal app pages or external URLs while passing data as query parameters, such as user inputs or query data.
