@@ -52,9 +52,22 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as a SAML provider, f
 
     e. Click **Next** to proceed.
 
-6. Fill in the required feedback or additional information in the final step and click **Finish**.
-7. On your application's homepage, go to the **Sign-on tab** and copy the **Metadata** URL from the **SAML 2.0** section to add it later in the SAML configurations in Appsmith.
-8. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
+6. If you are only interested in simple authentication via SAML, you can skip this step. However, if you want to configure custom claims, follow the steps below:
+
+<dd>
+
+In the **Attribute Statements** section, add your custom attributes:
+
+* **Name:** Enter the attribute name in the desired format (e.g.,  `firstName`, `lastName`, `email`). Copy the claim name for the newly created claim to add it later in the SAML configurations in Appsmith.
+* **Name Format:** Select a Name format. This is the format that the Name attribute is provided to your app:
+* **Value:** Choose the corresponding value from the predefined list (e.g., `user.firstName`, or `user.email`).
+
+
+</dd>
+
+7. Fill in the required feedback or additional information in the final step and click **Finish**.
+87. On your application's homepage, go to the **Sign-on tab** and copy the **Metadata** URL from the **SAML 2.0** section to add it later in the SAML configurations in Appsmith.
+9. Go to the Assignments tab, and click **Assign** to assign people or groups to this application.
 
 ## Register Okta in Appsmith
 
@@ -67,9 +80,23 @@ To complete the SAML configuration, you have to register the identity provider o
 <Tabs queryString="okta-saml">
 <TabItem label="Metadata URL (recommended)" value="okta-metadataurl">
 
+
 To register Okta as the identity provider on Appsmith, follow the steps below:
+
 1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+
 2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+3. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
+
+<dd>
+
+a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
+
+b. In the **Value** field, enter the exact **claim name** that you copied from the **Okta's Attribute Statements** section.
+
+
+</dd>
 
 </TabItem>
 
