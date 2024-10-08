@@ -52,7 +52,7 @@ The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) fun
 ```
 
 
-## Use store value
+## Using the storeValue() Function
 
 
 The [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function allows you to persist data across page navigations within the same app by storing key-value pairs in local storage. Unlike using `navigateTo()` with query parameters, which is ideal for passing temporary data between pages, `storeValue()` is better suited for data that needs to persist longer, even after multiple navigations. 
