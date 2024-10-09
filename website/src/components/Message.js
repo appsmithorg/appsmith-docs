@@ -1,4 +1,6 @@
 import React from "react";
+import { AiFillExclamationCircle } from 'react-icons/ai';
+
 /**
  * The component can be used to highlight the text in the documentation. 
  * For example, use it to highlight the errors, warnings in the troubleshooting guide.
@@ -15,7 +17,10 @@ export default function Message(props) {
     return (
         <div className={messageContainerClassName}>
             <div className={captionClassName}>{caption}</div>
-            <div className={messageContentClassName}> {messageContent}</div>
+            <div className={messageContentClassName}>
+                <AiFillExclamationCircle className="error-icon" />
+                {messageContent}
+            </div>
         </div>
     );
 };
