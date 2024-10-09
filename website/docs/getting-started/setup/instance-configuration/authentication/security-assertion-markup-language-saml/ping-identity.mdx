@@ -30,8 +30,11 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 ## Prerequisites
 
 1. A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+
 2. Before setting up Single Sign-On (SSO), ensure that you have already configured a [custom domain](/getting-started/setup/instance-configuration/custom-domain) for your instance.
+
 3. In Appsmith, go to **Admin Settings** > **Authentication** and click **Enable** on  **SAML 2.0**.
+
 4. Copy the **Redirect URL** and **Entity ID** from the **SAML 2.0** configuration page to add them later in the Ping Identity settings. 
 
 <ZoomImage src="/img/SAML-config_appsmith.png" alt="SAML configurations" caption="SAML configuration in Appsmith" />
@@ -43,25 +46,49 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
     a. Click **PingOne SSO** from **Cloud Services** under the **Select solution(s) for your Environment** section. Click **Next**
 
-    b. Enter the environment name and description. Click **Next**.
+    b. Enter the environment name and description. Click **Finish**.
 
-3. Open the newly created Environment, and from the sidebar, go to **Connections** > **Applications**.
-4. On the Applications homepage, click the **+** icon to create a new application. On the **Add Application** panel:
+3. Open the newly created environment and click on **Manage Environment**. 
 
-    a. Enter the application name and description.
+4. On the environment homepage, click on **Application** from the sidebar, then click the **+** icon to create a new application.
 
-    b. Select the **Application Type** as **SAML Application**. Click **Configure**.
+<dd>
 
-    c. On the SAML Configuration panel, select **Manually Enter**.
+a. Enter the application name and description.
 
-    d. Add the **Redirect URL** in the **ACS URLs** field.
+b. Select the **Application Type** as **SAML Application**. Click **Configure**.
 
-    e. Add the **Entity ID** in the  **Entity ID** field.
+c. On the SAML Configuration panel, select **Manually Enter**.
 
-    f. Click **Save**. 
+d. Add the **Redirect URL** in the **ACS URLs** field.
 
-5. Open your application, go to the **Configurations** tab, and copy the **IDP Metadata URL** to add it later in the SAML configurations in Appsmith.
-6. On your application panel, switch the toggle button at the top right corner to enable user access to the application. 
+e. Add the **Entity ID** in the  **Entity ID** field.
+
+f. Click **Save**.
+    
+<ZoomImage src="/img/ping-saml-setup.png" alt="SAML configurations" caption="" />
+
+</dd>    
+
+5. If you are only interested in simple authentication via SAML, you can skip this step. However, if you want to configure custom claims, follow the steps below:
+
+<dd>
+
+Open your application, go to the **Attribute Mapping** tab, click on the **Edit ✏️** icon, and add your custom claims:
+
+* **Attributes:** Enter the attribute name in the desired format (e.g.,  `userName`, `email`). Copy the claim name to add it later in the Appsmith SAML configurations.
+
+* **PingOne Mappings:** Select the appropriate value from the dropdown menu. This mapping connects the attribute in your application to the corresponding value in PingOne.
+
+<ZoomImage src="/img/ping-custom-claim.png" alt="SAML configurations" caption="" />
+
+
+</dd>
+
+
+6. Open your application, go to the **Configurations** tab, and copy the **IDP Metadata URL** to add it later in the SAML configurations in Appsmith.
+
+7. On your application panel, switch the toggle button at the top right corner to enable user access to the application. 
 
 
 ## Register Ping Identity in Appsmith
@@ -76,17 +103,44 @@ To complete the SAML configuration, you must register the identity provider on A
 <TabItem label="Metadata URL (recommended)" value="pingidentity-metadataurl">
 
 To register Ping Identity as the identity provider on Appsmith, follow the steps below:
+
 1. Go to the **SAML 2.0** configuration page in Appsmith, and navigate to **Register Identity Provider** section.
+
 2. Add the copied **IDP Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+
+<dd>
+
+a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
+
+b. In the **Value** field, enter the exact **Attributes name** that you copied from the **Attribute Mapping** section.
+
+
+</dd>
 
 </TabItem>
 
 <TabItem label="Metadata XML" value="pingidentity-metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
+
 1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**.
+
 2. Open the downloaded Metadata file in a browser and copy the XML content.
+
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+
+3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+
+<dd>
+
+a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
+
+b. In the **Value** field, enter the exact **Attributes name** that you copied from the **Attribute Mapping** section.
+
+
+</dd>
 
 </TabItem>
 <TabItem label="IdP data" value="pingidentity-idpdata">
@@ -94,16 +148,32 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
 1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**. 
+
 2. Open the downloaded Metadata file in a browser.
+
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
-| <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
+<dd>
+
+| <div style= {{width:"200px"}}> **IdP Data Field** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
 | **Entity ID**               | Enter the value of the **entityID** attribute specified in the `<EntityDescriptor>` tag.                 |
 | **Single Sign-On URL**      | Enter the value of **location** attribute specified in the `<SingleSignOnService>` tag. |
 | **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
 | **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
 
+</dd>
+
+3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+
+<dd>
+
+a. For each custom claim, enter a name in the **Key** field that references the custom SAML claim within Appsmith.
+
+b. In the **Value** field, enter the exact **Attributes name** that you copied from the **Attribute Mapping** section.
+
+
+</dd>
 
 </TabItem>
 </Tabs>
