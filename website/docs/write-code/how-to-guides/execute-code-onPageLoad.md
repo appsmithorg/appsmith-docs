@@ -9,7 +9,7 @@ This page shows you how to run queries or JavaScript functions during the initia
 
 <dd>
 
-**Example 1:** If you want to display a login modal when the page loads, you can create a function inside a JSObject using [showModal()](/reference/appsmith-framework/widget-actions/show-modal) like this:
+**Example 1:** If you want to display a login modal when the page loads, you can create a function inside a JSObject using [showModal()](/reference/appsmith-framework/widget-actions/show-modal) like:
 
 ```js
 export default {
