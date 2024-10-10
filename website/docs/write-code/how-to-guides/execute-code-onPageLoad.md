@@ -1,12 +1,8 @@
 # Execute Code on Page Load
 
-This page shows you how to run queries or JavaScript functions during the initial load of a page using the On Page Load property.
+This page shows you how to run queries or JavaScript functions during the initial load of a page using the Run on page load property.
 
-<ZoomImage
-  src="/img/showmodal-pageload.png" 
-  alt=""
-  caption=""
-/>
+
 
 
 1. Navigate to the query or JS function you want to execute on page load.
@@ -36,10 +32,10 @@ export default {
 
     // Fetch order details for the product
     const orderDetails = await getOrders.run(); 
-    console.log("getOrders query:", orderDetails); // Log success and result
+    console.log("getOrders query:", orderDetails);
 
     // Return or display the fetched data as needed
-    return { productStock, orderDetails }; // Return both results as an object
+    return { productStock, orderDetails }; 
   },
 };
 ```
@@ -51,7 +47,15 @@ This code defines a JSObject that asynchronously fetches product stock informati
 
 2. Click on the **Settings** tab within the query or JS editor.
 
-3. Enable the **On Page Load** property for the desired query or function.
+<dd>
+<ZoomImage
+  src="/img/showmodal-pageload.png" 
+  alt=""
+  caption=""
+/>
+</dd>
+
+3. Enable the **Run on page load property** property for the desired query or function.
 
 Once configured, the specified query or JS function will automatically run every time the app's page is loaded. If multiple queries and JS functions are set to run on page load, all of them will execute together
 
