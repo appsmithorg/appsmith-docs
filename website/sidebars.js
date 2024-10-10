@@ -802,6 +802,7 @@ const sidebars = {
           collapsed: false,
           label: 'Reference',
           items: [
+            'workflows/reference/workflow-triggers',
             'workflows/reference/workflow-queries',
             'workflows/reference/workflow-functions',
             'workflows/reference/pass-parameters-to-workflows',
