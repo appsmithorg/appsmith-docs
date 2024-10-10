@@ -562,7 +562,8 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            'core-concepts/writing-code/ext-libraries'
+            'core-concepts/writing-code/ext-libraries',
+            'write-code/how-to-guides/execute-code-onPageLoad'
           ]
         },
         {
