@@ -1,7 +1,7 @@
 # Execute Code on Page Load
 
 
-## Run Queries/JS onPageLoad
+## Run Queries/JS on Page Load
 
 The onPageLoad function allows you to run queries and JavaScript functions during the initial state or load of a page. Follow these steps to configure a query or function to run on page load:
 
@@ -32,11 +32,11 @@ export default {
   loadProductDetails: async () => {
     // Fetch product stock information
     const productStock = await getProducts.run(); 
-    console.log("getProducts query successful:", productStock); 
+    console.log("getProducts query:", productStock); 
 
     // Fetch order details for the product
     const orderDetails = await getOrders.run(); 
-    console.log("getOrders query successful:", orderDetails); // Log success and result
+    console.log("getOrders query:", orderDetails); // Log success and result
 
     // Return or display the fetched data as needed
     return { productStock, orderDetails }; // Return both results as an object
