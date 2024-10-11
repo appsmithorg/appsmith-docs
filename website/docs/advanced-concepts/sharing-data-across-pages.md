@@ -20,7 +20,7 @@ The [navigateTo()](/reference/appsmith-framework/widget-actions/navigate-to) fun
 </dd>
 
 
-1. Select **Navigate to** from the action selector.
+1. Select **Navigate** to from the action selector, for example, the **onClick** event of a Button widget.
 
 2. Choose the **Target page** where you want to navigate. 
 
