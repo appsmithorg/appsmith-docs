@@ -25,7 +25,7 @@ Workflow triggers start workflow runs based on specific conditions or events. Th
 
 ## Webhook trigger
 
-A webhook trigger allows external services to start a workflow by sending an HTTP request to a specific URL. This trigger is useful for integrating with applications and services that can send HTTP requests when certain events occur. For example, you can set up a webhook trigger to automatically start a workflow whenever a user signs up on your website, allowing you to send a welcome email or update a database in real time.
+A webhook trigger allows external services to start a workflow by sending a POST request to a specific URL. This trigger is useful for integrating with applications and services that can send HTTP requests when certain events occur. For example, you can set up a webhook trigger to automatically start a workflow whenever a user signs up on your website, allowing you to send a welcome email or update a database in real time.
 
 ### Enable webhook trigger
 
@@ -33,7 +33,7 @@ Toggle the switch to enable the webhook trigger. Once enabled, Appsmith generate
 
 ### URL
 
-Copy the provided endpoint URL to configure the webhook in your external service. This unique URL includes an API key for authentication and is not shown again for security reasons, so be sure to save it for future reference. If you forget to note the URL, you can regenerate it and must update all applications or services to use the new URL. To configure the workflow, use the HTTP POST method along with the webhook URL. For more information, see [Create Basic Workflow](/workflows/tutorials/create-workflow) using the webhook trigger.
+Copy the provided endpoint URL to configure the webhook in your external service. This unique URL includes an API key for authentication and is not shown again for security reasons, so be sure to save it for future reference. You can also use the embedded API key embedded in the URL as a bearer token. If you forget to note the URL, you can regenerate it and must update all applications or services to use the new URL. To configure the workflow, use the HTTP POST method along with the webhook URL. For more information, see [Create Basic Workflow](/workflows/tutorials/create-workflow) using the webhook trigger.
 
 ## Scheduled trigger
 
@@ -66,7 +66,7 @@ You can use the following syntax in each field to configure the schedule:
 | Every day at noon | `0 12 * * *`     | `0`    | `12` | `*`          | `*`   | `*`         |
 | Every Sunday at midnight | `0 0 * * 0`      | `0`    | `0`  | `*`          | `*`   | `0`         |
 
-For more help with generating cron expressions, you can use the [Appsmith Cron App](https://app.appsmith.com/app/cron/home-66fac6586931e9259851a137) or online tools like [Crontab Guru](https://crontab.guru/) and [CronMaker](http://www.cronmaker.com/).
+For more help with generating cron expressions, you can use the [Appsmith Cron App](https://app.appsmith.com/app/cron/home-66fac6586931e9259851a137).
 
 ### Save schedule 
 
