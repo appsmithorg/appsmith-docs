@@ -12,9 +12,14 @@ When working with arrays of objects, you often need to transform specific fields
 
 ```js
 {{getUsers.data.map(user => user.name)}}
+```
 
+*Example 2:* If you want to display the transformed data in a Select widget, you can bind the query like this:
+
+
+```js
 //Extracting Multiple Fields
-{{getUsers.data.map(user => ({ name: user.name, email: user.email }))}}
+{{getUsers.data.map(user => ({ name: user.name, code: user.id }))}}
 ```
 
 </dd>
