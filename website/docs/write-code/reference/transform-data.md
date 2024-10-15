@@ -78,7 +78,10 @@ This will format the price field from the product object, ensuring that it alway
 
 ## Parsing JSON string to object
 
-APIs often return data as JSON strings, and you may need to convert these strings into objects to work with them more effectively. You can use `JSON.parse()` to parse JSON strings into JSObjects, allowing you to access and manipulate the data.
+If you are receiving API data as JSON strings, you may need to convert these strings into objects to display the data in widgets. You can use `JSON.parse() `to parse JSON strings into JavaScript objects, enabling you to access and manipulate the data.
+
+
+
 
 <dd>
 
