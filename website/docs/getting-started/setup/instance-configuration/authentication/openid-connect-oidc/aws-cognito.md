@@ -130,5 +130,14 @@ On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, cli
 
 
 
-2. Save the changes and restart your application by clicking `SAVE & RESTART` button. If you try to login to Appsmith again, you'll see the **SIGN IN WITH OIDC SSO** button on the login screen.
+2. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the OIDC setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
 

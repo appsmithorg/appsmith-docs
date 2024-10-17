@@ -119,6 +119,18 @@ b. In the **Value** field, enter the exact **claim name** that you copied from t
 
 </dd>
 
+4. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
+
+
 </TabItem>
 
 <TabItem label="Metadata XML" value="okta-metdataxml">
@@ -138,6 +150,17 @@ a. For each custom claim, enter a name in the **Key** field that references the 
 b. In the **Value** field, enter the exact **claim name** that you copied from the **Okta's Attribute Statements** section.
 
 
+</dd>
+
+4. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
 </dd>
 
 
@@ -172,11 +195,21 @@ b. In the **Value** field, enter the exact **claim name** that you copied from t
 
 </dd>
 
+4. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
 
 </TabItem>
 </Tabs>
 
-Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
 

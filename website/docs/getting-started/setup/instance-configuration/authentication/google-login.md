@@ -67,16 +67,18 @@ Update the values for the following keys in the instance configuration file, for
 
 * Configure the `APPSMITH_OAUTH2_GOOGLE_CLIENT_ID` and `APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
 * Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (Eg: `abc.com`), to only allow users with an email address from that domain name to log in (Eg: `john@abc.com`). You can provide several domain names using a comma-separated list.
-* Restart the Appsmith instance.
-    
-  ```bash
-  # Example configuration in docker.env file
-  # ******** Google OAuth ********
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_ID=YOUR_CLIENT_ID
-  APPSMITH_OAUTH2_GOOGLE_CLIENT_SECRET=YOUR_CLIENT_SECRET
-  APPSMITH_SIGNUP_ALLOWED_DOMAINS=exampledomain.com
-  # ******************************
-   ```
+
+* Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
+
 
  
 After these steps, Google Login should be enabled for your Appsmith installation.

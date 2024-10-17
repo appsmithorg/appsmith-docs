@@ -35,10 +35,15 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 ##  Create application on Auth0
 
 1. Log in to your [Auth0](https://auth0.com/) account and go to **Applications** > **Create Application**. 
+
 2. In the **Create application** modal, select **Regular Web Application** and click **Create**.
+
 3. Once your application is created, you’re taken to the Quick Start screen. Go to the **Settings** tab.
+
 4. Scroll down to the **Application URIs** and paste the **Redirect URL** copied earlier in the **Allowed Callback URLs** field.
+
 5. Click **Save Changes**.
+
 6. On the **Settings** tab, go to **Advanced Settings** > **Endpoints**. Scroll down to the **SAML** section, and copy the SAML **Metadata URL** to add it later in the SAML configurations in Appsmith.
 
 
@@ -54,8 +59,21 @@ To complete the SAML configuration, you have to register the identity provider o
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
 To register Auth0 as the identity provider on Appsmith, follow the steps below:
+
 1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+
 2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+3. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
 
 </TabItem>
 
@@ -63,7 +81,20 @@ To register Auth0 as the identity provider on Appsmith, follow the steps below:
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
 1. Open the copied **Metadata URL** in a browser tab and copy the XML content.
+
 2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+
+3. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
+
 
 </TabItem>
 <TabItem label="IdP data" value="auth0idpdata">
@@ -71,6 +102,7 @@ To set up SAML using the raw Metadata XML file, follow the steps below:
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
 1. Open the Metadata URL in a browser tab or open the Metadata XML file.
+
 2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 | <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
@@ -80,11 +112,23 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 | **X509 Public Certificate** | Enter the value specified in the `<X509Certificate>` tag. |
 | **Email**                   | Enter the value specified in the `<NameIDFormat>` tag. |
 
+3. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the SAML setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+
+</dd>
 
 </TabItem>
 </Tabs>
 
-Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
 

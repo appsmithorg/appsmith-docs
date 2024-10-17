@@ -56,6 +56,7 @@ If you have set values using [environment variables](#environment-variables) for
 Update the values for the following keys in the instance configuration file, for example, in the `docker.env` file for Docker installation (`<PROJECT_ROOT>/stacks/configuration/`) and in the `values.yaml` file for Kubernetes:
 
 - Configure the `APPSMITH_OAUTH2_GITHUB_CLIENT_ID` and `APPSMITH_OAUTH2_GITHUB_CLIENT_SECRET` fields with the client ID and client secret generated in the preceding step.
+
 - Configure `APPSMITH_SIGNUP_ALLOWED_DOMAINS` with a second-level domain name (ex: `abc.com`), to only allow users with an email address from that domain name to log in (ex: `john@abc.com`). You can provide several domain names using a comma-separated list.
   ```bash
   # Example configuration in docker.env file
@@ -65,7 +66,17 @@ Update the values for the following keys in the instance configuration file, for
   APPSMITH_SIGNUP_ALLOWED_DOMAINS=exampledomain.com
   # ******************************
   ```
-- Restart the Appsmith instance.
+- Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
+
 
 After these steps, your Appsmith installation should now enable GitHub Login.
 

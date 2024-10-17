@@ -90,7 +90,16 @@ To complete the OIDC configuration, you must register the identity provider on A
 
 4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
-Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+5. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+
+<dd>
+
+- If you're running Appsmith on a **Kubernetes** cluster with a HA configuration, after completing the OIDC setup, we recommend running the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+</dd>
 
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH OIDC SSO** button.
 
