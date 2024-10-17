@@ -67,6 +67,14 @@ Update the values for the following keys in the instance configuration file, for
   ```
 - Restart the Appsmith instance.
 
+:::info
+If you're running Appsmith on a **Kubernetes** cluster with an HA configuration, after completing the setup, run the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+:::
+
 After these steps, your Appsmith installation should now enable GitHub Login.
 
 ## Further reading
