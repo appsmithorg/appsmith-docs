@@ -2,7 +2,7 @@
 
 This page provides information on how to transform data using JavaScript, which allows you to manipulate, format, and display data in your applications.
 
-## Array transformation
+## Transform arrays
 
 The `map()` function allows you to transform arrays of objects, such as extracting specific fields or formatting data. For example, if you want to transform an array of user objects to display only the names, you can bind the query like this:
 
@@ -19,8 +19,19 @@ The `map()` function allows you to transform arrays of objects, such as extracti
 ```
 
 
+## Parse JSON
 
-## Display based on conditions
+Use `JSON.parse()` to convert JSON strings into objects for easier data manipulation. For example, if you receive a JSON string from an API, you can create a function inside a JSObject and parse it like:
+
+```js
+const jsonString = getUsers.data; // {"name": "Alice", "age": 25}
+const parsedObject = JSON.parse(jsonString);
+console.log(parsedObject);
+// Output: { name: 'Alice', age: 25 }
+```
+
+
+## Conditional display
 
 
 You can use JavaScript expressions to enable or disable components, change styles, or adjust visibility based on data conditions. For example, if you want to disable a button based on a condition, you can bind the data to the **Disabled** property of the widget like:
@@ -45,22 +56,6 @@ The `filter()` function allows you to narrow down datasets, displaying only rele
 ```
 
 
-
-
-
-## Parse JSON
-
-Use `JSON.parse()` to convert JSON strings into objects for easier data manipulation. For example, if you receive a JSON string from an API, you can create a function inside a JSObject and parse it like:
-
-```js
-const jsonString = getUsers.data; // {"name": "Alice", "age": 25}
-const parsedObject = JSON.parse(jsonString);
-console.log(parsedObject);
-// Output: { name: 'Alice', age: 25 }
-```
-
-
-
 ## Aggregate value
 
 
@@ -82,6 +77,8 @@ Use `reduce()` to convert an array of objects into key-value pairs. For example,
     acc[user.id] = user.name;
     return acc;
 }, {})}}
+// Transforms [{ id: 1, name: "Alice" }, { id: 2, name: "Bob" }]
+// into { 1: "Alice", 2: "Bob" }.
 ```
 
 
