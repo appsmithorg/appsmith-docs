@@ -1,4 +1,4 @@
-# Transform Data 
+# Data Transformation
 
 This page provides information on how to transform data using JavaScript, which allows you to manipulate, format, and display data in your applications.
 
