@@ -1,15 +1,63 @@
 # Run Code On Page Load
 
-In Appsmith, the execution of queries and JavaScript functions can be automated at the time a page loads. This feature is essential for initializing the page state, fetching data, and preparing the UI for interaction with the user. Automatically running queries and functions provides a smooth user experience by ensuring necessary data is available right from the start.
+This page shows you how to run queries or JavaScript functions during the initial load of a page using the Run on page load property.
 
-## Automatic execution on page load
+Appsmith automatically runs queries and functions on page load if they are bound to widget properties, ensuring necessary data is available. Users can manually control this behavior through query or function settings.
 
-Appsmith intelligently determines which queries and JavaScript functions should be run on page load based on their bindings. If a query or function's response is bound to a widget's property, it will automatically be scheduled to run when the page loads.
+1. Navigate to the query or JS function you want to execute on page load.
 
-### Rules of automatic scheduling:
+<dd>
 
-1. **Bound to a Widget**: When a query or function is used within a widget's properties, it's inferred that the widget's display depends on the data from that query or function. Hence, it is marked to run on page load automatically.
+**Example 1:** If you want to display a login modal when the page loads, you can create a function inside a JSObject using [showModal()](/reference/appsmith-framework/widget-actions/show-modal) like:
 
-2. **Unbound from Widget**: If a query or a function is no longer used within any widget properties, it indicates the data may not be immediately required. In such cases, Appsmith removes the query or function from the page load execution list.
+```js
+export default {
+    // Function to show Modal
+    showMyModal() {
+        showModal(LoginModal.name); 
+    }
+}
+// Enable "Run on Page Load" from JSObject settings
+```
 
-3. **User Settings**: Users have the flexibility to override default behavior. They can mark queries and functions to always run on page load by altering their settings.
+**Example 2:** If you want to execute functions or queries in a specific order, create a new JSObject and use the `await` method to ensure each query or function completes before the next one starts.
+
+```js
+export default {
+  loadProductDetails: async () => {
+    // Fetch product stock information
+    const productStock = await getProducts.run(); 
+    console.log("getProducts query:", productStock); 
+
+    // Fetch order details for the product
+    const orderDetails = await getOrders.run(); 
+    console.log("getOrders query:", orderDetails);
+
+    // Return or display the fetched data as needed
+    return { productStock, orderDetails }; 
+  },
+};
+```
+
+This code defines a JSObject that asynchronously fetches product stock information and order details. If the initial query fails to load, the subsequent query/function will not run.
+
+
+</dd>
+
+2. Click on the **Settings** tab within the query or JS editor.
+
+<dd>
+<ZoomImage
+  src="/img/showmodal-pageload.png" 
+  alt=""
+  caption=""
+/>
+</dd>
+
+3. Enable the **Run on page load property** property for the desired query or function.
+
+Once configured, the specified query or JS function will automatically run every time the app's page is loaded. If multiple queries and JS functions are set to run on page load, all of them will execute together
+
+
+
+
