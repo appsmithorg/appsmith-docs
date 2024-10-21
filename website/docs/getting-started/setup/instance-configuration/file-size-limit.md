@@ -12,7 +12,7 @@ To accommodate large files, update the Appsmith instance configuration by settin
 For example, to increase the file size limit to 500 MB, use the following configuration:
 
 ```bash
-APPSMITH_CODEC_SIZE=500MB
+APPSMITH_CODEC_SIZE=500
 ```
 
 ## Change reverse proxy or load balancer limit
