@@ -232,7 +232,8 @@ const sidebars = {
                 'getting-started/setup/manage-plans/downgrade-plan',
               ],
             },
-            `getting-started/setup/best-practices`,
+            'getting-started/setup/whitelisting-appsmith',
+            'getting-started/setup/best-practices',
             'getting-started/setup/deployment-architecture',
           ],
         }
@@ -611,7 +612,7 @@ const sidebars = {
           },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-           'write-code/reference/transform-data'
+            'write-code/reference/transform-data'
           ],
         }, //Reference End
         {

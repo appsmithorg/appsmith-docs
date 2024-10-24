@@ -14,7 +14,9 @@ Privacy-minded users may equate air-gapping with the reluctance to share usage t
 
 ## Whitelisting and requesting Airgapped Edition
 
-The majority of users can effectively use Appsmith by allowing access to `cs.appsmith.com`. However, in organizations where maintaining complete internet isolation is a critical compliance requirement, obtaining an airgapped edition is imperative. To initiate this process, contact the Appsmith sales team at `sales@appsmith.com`.
+The majority of users can effectively use Appsmith by allowing access to `cs.appsmith.com`. To learn more about whitelisting `cs.appsmith.com`, [Whitelisting Appsmith](/getting-started/setup/whitelisting-appsmith). 
+
+For organizations where maintaining complete internet isolation is a critical compliance requirement, obtaining an airgapped edition is imperative. To initiate this process, contact the Appsmith sales team at `sales@appsmith.com`.
 
 ## Unsupported features in Airgapped Edition
 
