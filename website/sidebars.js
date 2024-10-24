@@ -532,7 +532,8 @@ const sidebars = {
                   label: 'Table',
                   link: { type: 'doc', id: 'reference/widgets/table/README' },
                   items: [
-                    'reference/widgets/table/column-settings'
+                    'reference/widgets/table/column-settings',
+                    'reference/widgets/table/editable'
                   ],
                 },
                 'reference/widgets/text',
