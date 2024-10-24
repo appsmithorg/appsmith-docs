@@ -21,31 +21,18 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
 
   ```yaml
        labels:
-       com.centurylinklabs.watchtower.enable: "true"
-   auto_update:
-     image: containrrr/watchtower
-     volumes:
-       - /var/run/docker.sock:/var/run/docker.sock
-     # Update check interval in seconds.
-     command: --schedule "0 0 * ? * *" --label-enable --cleanup
-     restart: unless-stopped
-     depends_on:
-       - appsmith
-     environment:
-       - WATCHTOWER_LIFECYCLE_HOOKS=true
-  labels:
-       com.centurylinklabs.watchtower.enable: "true"
-   auto_update:
-     image: containrrr/watchtower
-     volumes:
-       - /var/run/docker.sock:/var/run/docker.sock
-     # Update check interval in seconds.
-     command: --schedule "0 0 * ? * *" --label-enable --cleanup
-     restart: unless-stopped
-     depends_on:
-       - appsmith
-     environment:
-       - WATCHTOWER_LIFECYCLE_HOOKS=true
+         com.centurylinklabs.watchtower.enable: "true"
+     auto_update:
+       image: containrrr/watchtower
+       volumes:
+         - /var/run/docker.sock:/var/run/docker.sock
+         # Update check interval in seconds.
+       command: --schedule "0 0 * ? * *" --label-enable --cleanup
+       restart: unless-stopped
+       depends_on:
+         - appsmith
+       environment:
+         - WATCHTOWER_LIFECYCLE_HOOKS=true
    ```
 
   The above 6 space-separated fields cron expression `0 0 * ? * *` means that the task runs every day of every month, regardless of the day of the week or year, at midnight (0:00). You can change the schedule, adjust the cron expression accordingly. If you wish to update Appsmith immediately, you can opt for a manual update and follow the steps in the [Update Appsmith](/getting-started/setup/instance-management/update-appsmith/#update-on-docker) guide.
