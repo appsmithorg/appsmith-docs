@@ -115,13 +115,15 @@ This property allows you to define custom validation rules and error messages to
 </dd>
 
 
-- **currentRow**: This property displays the unedited values of the current row. If you're adding a new row, it represents the new row object. It only works once the save button is clicked.
+- **currentRow**: This property holds the original, unedited values of the current row. If you are adding a new row, it represents the new row object. The `currentRow` only reflects changes once the Save button is clicked, which means it does not update dynamically as you edit a cell.
 
 
 <dd>
 
+Example: You're editing a "discount" field in a table and want to validate that the discount percentage does not exceed the product’s original price. You would need to compare the edited discount value with the current row’s "price" column like this:
+
 ```js
-{{ currentRow.title }}
+{{ editedValue <= currentRow.price }}
 ```
 
 </dd>
