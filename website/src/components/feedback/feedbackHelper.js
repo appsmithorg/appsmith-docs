@@ -42,7 +42,7 @@ const generateAIFeedback = (feedbackOption, userSearchTerm, aiGeneratedResult) =
 const registerAISearch = (userSearchTerm) => {
   if (ExecutionEnvironment.canUseDOM) {
     const docId = window.location.pathname;
-    const feedbackData = { 
+    const feedbackData = {
       docId: docId || null,
       userSearchTerm: userSearchTerm || null,
     };
