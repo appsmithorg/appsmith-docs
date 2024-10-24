@@ -1,4 +1,4 @@
-import React, { useState, useLayoutEffect, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 import DocSearch from '@theme-original/SearchBar';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
@@ -22,19 +22,29 @@ const CustomSearchBar = () => {
         }
     }, [searchType]);
 
+    const handleClick = (type) => {
+        setSearchType(type);
+        if (ExecutionEnvironment.canUseDOM) {
+            const eventName = type === 'ai' ? 'Ask AI Button Click' : 'Search Button Click';
+            if (typeof window.analytics !== 'undefined') {
+                window.analytics.track(eventName, { searchType: type });
+            }
+        }
+    };
+
     return (
         <>
             <div className="custom-segmented-search-option">
                 <div
                     className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
-                    onClick={() => setSearchType('ai')}
+                    onClick={() => handleClick('ai')}
                 >
                     <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
                 </div>
 
                 <div
                     className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
-                    onClick={() => setSearchType('docs')}
+                    onClick={() => handleClick('docs')}
                 >
                     <img src="/img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
                 </div>
@@ -43,7 +53,6 @@ const CustomSearchBar = () => {
             <div style={{ display: 'none' }}>
                 <DocSearch />
             </div>
-
         </>
     );
 };
