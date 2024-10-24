@@ -221,7 +221,7 @@ This property allows the content of the cell to be wrapped, enabling the display
 
 You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
 
-Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code. For more information on all the editable properties, including validation, settings, and related events, see [Inline Editing](/reference/widgets/Table/editable).
+Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code. For more information on all the editable properties, including validation, settings, and related events, see [Inline Editing](/reference/widgets/table/editable).
 
 *Example*: if you want to allow only certain users to edit the Table:
 
