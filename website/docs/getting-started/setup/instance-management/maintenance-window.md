@@ -20,6 +20,19 @@ Follow the below steps to schedule automatic updates for Appsmith Docker install
 2. Open the `docker-compose.yml` file and add the below code block after the `restart` attribute in the `appsmith` service. Note that you must add a 6 space-separated fields cron expression, not the traditional 5 space-separated fields to the `command` attribute. See the [CRON Expression Format](https://pkg.go.dev/github.com/robfig/cron@v1.2.0#hdr-CRON_Expression_Format) section to learn more. Based on the specified cron expression, watchtower updates Appsmith at the stipulated time whenever a new version becomes available.
 
   ```yaml
+       labels:
+       com.centurylinklabs.watchtower.enable: "true"
+   auto_update:
+     image: containrrr/watchtower
+     volumes:
+       - /var/run/docker.sock:/var/run/docker.sock
+     # Update check interval in seconds.
+     command: --schedule "0 0 * ? * *" --label-enable --cleanup
+     restart: unless-stopped
+     depends_on:
+       - appsmith
+     environment:
+       - WATCHTOWER_LIFECYCLE_HOOKS=true
   labels:
        com.centurylinklabs.watchtower.enable: "true"
    auto_update:
