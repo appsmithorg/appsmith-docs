@@ -259,7 +259,7 @@ When enabled, it adds section within the Datepicker pop-up that contains options
 
 ## Events
 
-When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](reference/appsmith-framework/widget-actions). These events may be available only for specific column types or when certain properties are enabled
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions). These events may be available only for specific column types or when certain properties are enabled
 
 #### onSubmit
 
