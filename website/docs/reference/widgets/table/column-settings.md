@@ -9,6 +9,37 @@ You can customize each table column separately by accessing properties through t
 <ZoomImage src="/img/col-settings.gif" alt="Display images on table row selection" caption="" />
 
 
+## Content properties
+
+These properties are customizable options available in the property pane of the Column settings.
+
+### Column Types
+
+This property allows users to select the appropriate column type for their table. Each column type serves a specific function and enhances the table's interactivity. The available column types are as follows:
+
+- **Button**: A clickable cell that triggers an onClick event. The triggeredRow reference property retrieves data from the corresponding row.
+
+- **Checkbox**: Represents a binary value (True/False) with checked and unchecked states. This column type can be made editable by enabling the Editable property in the column settings.
+
+- **Icon Button**: A clickable button with an icon instead of text. It triggers an onClick event, and the triggeredRow reference property retrieves data from the corresponding row.
+
+- **Image**: Displays an image by interpreting the cell value as an image source URL or base64 data. It shows Invalid Image if the data is not valid.
+
+- **Menu Button**: A group of buttons that expands into a menu. Menu items can be added dynamically using the Menu Items Source as Dynamic, with `{{currentRow}}` referencing inside the Source Data property.
+
+- **Number**: Used for numeric data and supports inline editing. It can be made editable by enabling the Editable property in the column settings.
+
+- **Plain Text**: Represents data with readable characters. It supports inline editing and can be made editable by enabling the Editable property in the column settings.
+
+- **Switch**: Allows users to toggle a single item on or off, using binary values. It supports inline editing and can be made editable by enabling the Editable property in the column settings.
+
+- **URL**: Interprets the cell value as a hyperlink, allowing users to click on the cell to open the corresponding URL in a new browser tab. It requires the domain and suffix of the URL.
+
+- **Video**: Displays videos within a table. To add a video, provide a source file path or URL from supported platforms such as YouTube, Facebook, Twitch, and others.
+
+- **Date**: Allows custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties, and it supports inline editing.
+
+- **Select**: Allows users to select an option from a predefined list of choices. The Options property should be an array of objects with label and value properties. This column type can only be displayed or edited when the Editable property is enabled.
 
 ### Computed value
 

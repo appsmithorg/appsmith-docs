@@ -20,7 +20,7 @@ Additionally, you can use JavaScript by clicking on *JS* next to the **Editable*
 
 This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
 
-Learn more about [Inline editing](/reference/widgets/table/inline-editing).
+See how to add and edit rows in the Table using [Inline editing](/reference/widgets/table/inline-editing).
 
 
 <ZoomImage
@@ -120,7 +120,7 @@ This property allows you to define custom validation rules and error messages to
 
 <dd>
 
-Example: You're editing a "discount" field in a table and want to validate that the discount percentage does not exceed the product’s original price. You would need to compare the edited discount value with the current row’s "price" column like this:
+Example: You're editing a `discount` field in a Table and want to validate that the discount percentage does not exceed the product’s original price. You would need to compare the edited discount value with the current row’s `price` column like this:
 
 ```js
 {{ editedValue <= currentRow.price }}
@@ -139,13 +139,13 @@ Example: You're editing a "discount" field in a table and want to validate that 
 
 </dd>
 
-- **isNewRow**: This property indicates whether the current entry is for a new row. If the value is being entered for a new row, this property will be true; otherwise, it will be false. For example, you can check if a new row is being added and perform a comparison, such as:
+- **isNewRow**: This property indicates whether the current entry is for a new row. If a new row is being added, this property will be true; otherwise, it will be false.
 
 
 <dd>
 
 ```js
-{{ isNewRow > 10 }}
+{{ isNewRow }}
 ```
 
 </dd>
