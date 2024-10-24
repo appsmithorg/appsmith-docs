@@ -1,26 +1,8 @@
-# Editable
+# Inline Editing
 
-This page provides information related to all the editable column properties. 
+This page provides information related to all the editable column properties. You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
 
-You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
-
-Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code.
-
-<dd>
-
-*Example*: if you want to allow only certain users to edit the Table:
-
-* Enable the Editable property at the Table Column level.
-
-* Open the column settings, click *JS* for the **Editable** property, and add your code.
-
-```javascript
-{{appsmith.user.email === 'john@appsmith.com' ? true : false}}
-```
-
-This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
-
-See how to add and edit rows in the Table using [Inline editing](/reference/widgets/table/inline-editing).
+For more details on how to configure queries to edit or add rows using inline editing, see [Edit Table Data Inline](/reference/widgets/table/inline-editing).
 
 
 <ZoomImage
@@ -30,7 +12,7 @@ See how to add and edit rows in the Table using [Inline editing](/reference/widg
 />
 
 
-</dd>
+
 
 
 ## Properties
@@ -41,7 +23,7 @@ These common properties allow you to edit the column, and customize the user act
 
 ### Validation
 
-These properties allow you to ensure user input meets specific criteria and maintains data integrity.
+These properties help ensure user input follows specific rules to maintain data accuracy.
 
 #### Regex `string`
 
@@ -104,7 +86,7 @@ Indicates whether the input for this column is mandatory. If set to `true`, user
 
 This property allows you to define custom validation rules and error messages to guide users when their input does not meet the required criteria. To access the user's edited values, you can utilize the following reference properties:
 
-- **editedValue**: This property displays the current value of the column being edited or added. It reflects the in-progress value that the user is modifying in that specific cell. For example, if you want to ensure the input length is greater than 2 characters:
+- **editedValue**: This property shows the current value being edited in the column. It reflects what the user is typing or modifying in that specific cell.  For example, if you want to ensure the input length is greater than 2 characters:
 
 <dd>
 
@@ -115,12 +97,15 @@ This property allows you to define custom validation rules and error messages to
 </dd>
 
 
-- **currentRow**: This property holds the original, unedited values of the current row. If you are adding a new row, it represents the new row object. The `currentRow` only reflects changes once the Save button is clicked, which means it does not update dynamically as you edit a cell.
-
+- **currentRow**: This property holds the original, unedited values of the current row. 
 
 <dd>
 
-Example: You're editing a `discount` field in a Table and want to validate that the discount percentage does not exceed the product’s original price. You would need to compare the edited discount value with the current row’s `price` column like this:
+- *Editing Existing Rows:* The `currentRow` property holds the original, unedited values of the row being modified. This property does not reflect any dynamic changes while entering values and updates only when the Save button is clicked.
+
+- *Adding New Rows:* When adding a new row, the `currentRow` property represents the new row object.
+
+*Example*: If you are editing a `discount` field in a Table, you might want to ensure that the discount percentage does not exceed the product's original price. To do this, compare the edited discount value with the price from the current row, as shown below:
 
 ```js
 {{ editedValue <= currentRow.price }}
@@ -128,10 +113,13 @@ Example: You're editing a `discount` field in a Table and want to validate that 
 
 </dd>
 
-- **currentIndex**: This property indicates the index of the row being edited. For existing rows, it reflects the current index in the dataset. If you're adding a new row, it will display `-1` to signify that it does not yet exist in the dataset.
-
+- **currentIndex**: This property indicates the index of the row being edited or added. 
 
 <dd>
+
+- *Existing Rows:* For rows that already exist in the dataset, `currentIndex` reflects the actual index of the row being edited.
+
+- *New Rows:* When adding a new row, `currentIndex` is set to `-1`, indicating that the new row does not yet exist in the dataset.
 
 ```js
 {{ currentIndex >= 0 }}
@@ -139,8 +127,7 @@ Example: You're editing a `discount` field in a Table and want to validate that 
 
 </dd>
 
-- **isNewRow**: This property indicates whether the current entry is for a new row. If a new row is being added, this property will be true; otherwise, it will be false.
-
+- **isNewRow**: The `isNewRow` property indicates if a new row is being added. It is true for new rows, allowing you to apply specific logic for new entries. For existing rows, it is false.
 
 <dd>
 
@@ -155,14 +142,6 @@ Example: You're editing a `discount` field in a Table and want to validate that 
 </dd>
 
 
-#### Error Message `string`
-
-<dd>
-
-This property allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic `invalid input` message. 
-
-
-</dd>
 
 #### Min `number`
 
@@ -181,6 +160,15 @@ This property ensures that any value entered must be less than or equal to the s
 </dd>
 
 
+#### Error Message `string`
+
+<dd>
+
+This property allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic `invalid input` message. 
+
+
+</dd>
+
 
 ### Date settings
 
@@ -191,9 +179,7 @@ These editable properties become available only when the column type is set to D
 
 <dd>
 
-This property sets which day of the week appears first within the calendar of the Date type. It allows you to customize the starting point of the week according to regional preferences or organizational standards.
-
-For example, if you set this property to `0`, the calendar will start on Sunday, whereas setting it to `1` will start the week on Monday. 
+This property lets you decide which day the calendar starts on in a Date field. For example, setting it to `0` starts the week on Sunday, and setting it to `1` starts it on Monday. You can adjust this based on your regional or personal preferences.
 
 </dd>
 
@@ -201,7 +187,7 @@ For example, if you set this property to `0`, the calendar will start on Sunday,
 
 <dd>
 
-When enabled, it adds section within the Datepicker pop-up that contains options - **Today, 1 week ago, 1 month ago,3 months ago, 1 year ago**, for quick date selection.
+When enabled, it adds section within the Datepicker pop-up that contains options - **Today, 1 week ago, 1 month ago, 3 months ago, 1 year ago**, for quick date selection.
 
 
 </dd>
