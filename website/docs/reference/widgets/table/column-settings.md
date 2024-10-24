@@ -4,9 +4,9 @@ import TabItem from '@theme/TabItem';
 
 # Column
 
-You can customize each table column separately by accessing properties through the gear icon ⚙️ in the table's properties pane. This includes editing existing column properties, adding new custom columns, rearranging columns, and hiding columns.
+You can customize each Table column separately by accessing properties through the gear icon ⚙️ in the Table's properties pane. This includes editing existing column properties, adding new custom columns, rearranging columns, and hiding columns.
 
-<ZoomImage src="/img/col-settings.gif" alt="Display images on table row selection" caption="" />
+<ZoomImage src="/img/col-settings.gif" alt="Display images on Table row selection" caption="" />
 
 
 ## Content properties
@@ -15,53 +15,53 @@ These properties are customizable options available in the property pane of the 
 
 ### Column Types
 
-This property allows users to select the appropriate column type for their table. Each column type serves a specific function and enhances the table's interactivity. The available column types are as follows:
+<dd>
 
-- **Button**: A clickable cell that triggers an onClick event. The triggeredRow reference property retrieves data from the corresponding row.
+This property allows users to select the appropriate column type for their Table. Each column type serves a specific function and enhances the Table's interactivity. The available column types are as follows:
 
-- **Checkbox**: Represents a binary value (True/False) with checked and unchecked states. This column type can be made editable by enabling the Editable property in the column settings.
+- **Button:** A clickable cell that triggers an onClick event, allowing users to perform actions directly from the Table. The triggeredRow reference property retrieves data from the corresponding row, making it easy to reference that specific entry.
 
-- **Icon Button**: A clickable button with an icon instead of text. It triggers an onClick event, and the triggeredRow reference property retrieves data from the corresponding row.
+- **Checkbox:** Represents a binary value (True/False) and displays checked and unchecked states. Users can interact with this column to toggle values. This column type can be made editable by enabling the Editable property in the column settings, allowing users to modify the state directly.
 
-- **Image**: Displays an image by interpreting the cell value as an image source URL or base64 data. It shows Invalid Image if the data is not valid.
+- **Icon Button:** A button that displays an icon instead of text. When clicked, it triggers an onClick event, providing a streamlined interaction option. The triggeredRow reference property retrieves data from the corresponding row, similar to the Button type.
 
-- **Menu Button**: A group of buttons that expands into a menu. Menu items can be added dynamically using the Menu Items Source as Dynamic, with `{{currentRow}}` referencing inside the Source Data property.
+- **Image:** Displays images by interpreting the cell value as an image source URL or base64 data. If the provided data is invalid, the cell displays "Invalid Image," ensuring clarity for users when images fail to load.
 
-- **Number**: Used for numeric data and supports inline editing. It can be made editable by enabling the Editable property in the column settings.
+- **Menu Button:** A collection of buttons that expands into a menu upon interaction. Users can dynamically add menu items by setting the Menu Items Source to Dynamic, referencing `{{currentRow}}` in the Source Data property for seamless integration with the Table's data.
 
-- **Plain Text**: Represents data with readable characters. It supports inline editing and can be made editable by enabling the Editable property in the column settings.
+- **Number:** Specifically designed for numeric data entry, this column type supports inline editing, allowing users to modify values directly within the Table. The Editable property can be enabled to facilitate user interaction.
 
-- **Switch**: Allows users to toggle a single item on or off, using binary values. It supports inline editing and can be made editable by enabling the Editable property in the column settings.
+- **Plain Text:** Represents data using readable characters, allowing for easy comprehension. This column type supports inline editing, enabling users to update text directly within the Table when the Editable property is enabled.
 
-- **URL**: Interprets the cell value as a hyperlink, allowing users to click on the cell to open the corresponding URL in a new browser tab. It requires the domain and suffix of the URL.
+- **Switch:** A toggle feature that allows users to turn an item on or off, representing binary values. This column type supports inline editing, and enabling the Editable property provides users the flexibility to change the state as needed.
 
-- **Video**: Displays videos within a table. To add a video, provide a source file path or URL from supported platforms such as YouTube, Facebook, Twitch, and others.
+- **URL:** Interprets the cell value as a hyperlink, allowing users to click on the cell to open the corresponding URL in a new browser tab. It is essential to include both the domain and suffix of the URL for proper functionality.
 
-- **Date**: Allows custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties, and it supports inline editing.
+- **Video:** Displays videos directly within a Table. Users can add videos by providing a source file path or URL from supported platforms such as YouTube, Facebook, Twitch, and others, enhancing multimedia engagement.
 
-- **Select**: Allows users to select an option from a predefined list of choices. The Options property should be an array of objects with label and value properties. This column type can only be displayed or edited when the Editable property is enabled.
+- **Date:** Facilitates custom formatting options for date and time information. Users can format and display the date using the Date Format and Display Format properties. This column type also supports inline editing, allowing users to modify date entries directly.
+
+- **Select:** Enables users to choose from a predefined list of options. The Options property should be an array of objects, each containing label and value properties. This column type is editable only when the Editable property is enabled, allowing for direct selection within the Table.
+
+</dd>
 
 ### Computed value
 
-In the Table widget, computed value is a column property that allows you to display and manipulate the table data using JavaScript expressions. To make use of this feature, you can use the `currentRow` property within the column settings.
+<dd>
 
-The `currentRow` property is automatically generated by default in the Table widget when you add data to the table. For instance, the computed value of a column named `dob` that displays the date of birth for each row would be `{{currentRow['dob']}}`. Additionally, you can also create custom expressions that compute new values based on the data in the current row.
+This property allows you to display and manipulate Table data using JavaScript expressions. The currentRow property is automatically generated when data is added to the Table, representing the current row's data. For example, to display the date of birth in a column named dob, the computed value would be `{{currentRow['dob']}}`. You can also use custom expressions to calculate new values based on the data in each row.
 
-----
-**Example**: suppose you have a table with a `name` column and a `gender` column. If you want to add a prefix of `Mr.` or `Mrs.` to the names in the `name` column based on the data in the `gender` column, you can use a computed value.
 
-1.  Fetch data from the sample **users** database using a SELECT query `fetchData` to retrieve the data:
 
-```sql
-SELECT * FROM users ORDER BY id LIMIT 10;
-```
-2. In the Table's **Table Data** property, display the data using:
+*Example*: If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
+
+1. In the Table's **Table Data** property, display the data using:
 
 ```
 {{fetchData.data}}
 ```
 
-3. Select the `name` column from the list of columns, and add following code in the **Computed Value** property:
+2. Select the `name` column from the list of columns, and add following code in the **Computed Value** property:
 
 ```js
 {{currentRow.gender === "male" ? "Mr " + currentRow.name : "Mrs " + currentRow.name}}
@@ -69,106 +69,332 @@ SELECT * FROM users ORDER BY id LIMIT 10;
 
 The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name column based on the value of the gender column in the current row.
 
-<ZoomImage src="/img/col-example.png" alt="Display images on table row selection" caption="Formatting Column" />
+<ZoomImage src="/img/col-example.png" alt="Display images on Table row selection" caption="Formatting Column" />
+
+</dd>
+
+#### Currency `string`
+
+<dd>
+
+This property allows you to specify the currency type for the column. You can select from a list of countries and their corresponding currencies. Additionally, by enabling the JS option, you can use `ISO 4217` currency codes, which are three-letter codes assigned to each currency for international identification.
+
+</dd>
+
+#### Decimals Allowed `number`
+
+<dd>
+
+This property defines the maximum number of decimal places permitted. You can set it to 0, 1, or 2, depending on the level of precision required for the numeric value. 
+
+</dd>
+
+#### Notation `string`
 
 
-## Cell Background Color (Column Color)
+<dd>
+
+This property determines how the currency is displayed. It offers two options:
+
+- **Standard**: Displays the full currency value (e.g., $1,000.00).
+
+- **Compact**: Displays the currency in a shorter format (e.g., $1K for 1,000).
+
+</dd>
 
 
-You can style each column type from the style property pane, including options to change column color. However, if you need more advanced customization, such as changing table color/column color, you can use the `currentRow` and `currentIndex` references to create custom color expressions. These expressions enable you to conditionally change color and style of individual cells based on their content, offering more flexibility than simply applying a static style to an entire column.
+#### Date Format `string`
+<dd> 
 
-For example, lets say you have a column named `status` that reflects `approved` and `pending` values. You can set the color for these values using the following expression in the **Cell Background** property:
+This property defines the format of incoming date data used in the Computed Value property. For example, if the incoming date is in `YYYY-MM-DD HH:mm` format and the Date Format property matches, the date is parsed and displayed correctly. If the formats don’t match, 'Invalid date' is shown in the column. 
+
+</dd>
+
+#### Display Format `string`
+
+<dd> 
+
+This property controls how the date is presented to the user. For example, if the incoming date format is `YYYY-MM-DD` and you want to display it in `DD/MM/YYYY` format, the date is shown to the user in the selected format.
+
+
+</dd>
+
+
+### Basic
+
+#### Text
+
+<dd>
+
+This property sets the label for the column type. For example, if you set the column type as a button, you can specify the button's label using this property.
+
+</dd>
+
+#### Menu items source `string`
+
+<dd>
+
+This property allows you to specify the source of the menu items.
+
+Options:
+
+- **Static:** When the Static option is selected, the Menu Items property becomes visible, enabling you to add and manage the menu items directly from the UI. Click the ⚙️ gear icon to access the configuration options. For more information, see [Menu Items](/reference/widgets/menu/menu-items).
+
+- **Dynamic:** With the Dynamic source, menu items are populated by binding a query to the source data. To configure the properties of the menu items, click the Configure Menu Item button. The menu items do not display until configured using the currentItem or currentIndex property.
+
+</dd>
+
+#### Source data `array`
+
+<dd>
+
+This property is used to provide the data for dynamic menus. It accepts an array of values that can be defined statically or derived from any query.
+
+*Example*:
+
+```js
+{{[
+  { "label": "Admin", "value": "admin" },
+  { "label": "Editor", "value": "editor" },
+  { "label": "Viewer", "value": "viewer" }
+]}}
+```
+
+Once you have configured the **Source Data**, you need to configure the **Menu items** to display the data. You can reference the menu item using `{{currentItem.label}}` to dynamically populate the menu based on the specified values.
+
+
+
+</dd>
+
+
+
+#### Configure menu items `string`
+
+<dd>
+
+This property allows you to configure the menu items defined in the **Source Data** property. When you click on the **Configure** button, you can update the styles and label properties.
+
+To display the menu items, you need to set the label property using either `{{currentItem}}` or `{{currentIndex}}` to reference the corresponding values.
+
+*Example:*
+
+```js
+{{currentItem.label}}
+```
+
+</dd>
+
+#### Icon
+
+<dd>
+
+This property specifies the icon displayed on the button. You can also use JavaScript to dynamically set the icon. Appsmith utilizes icons from the [Blueprintjs](https://blueprintjs.com/docs/#icons) library.
+
+
+</dd>
+
+### General
+
+#### Visible `boolean`
+
+<dd>
+
+This property controls the visibility of the column. If set to false, the entire column is hidden from view in the Table.
+
+</dd>
+
+#### Cell Wrapping `boolean`
+
+<dd>
+
+This property allows the content of the cell to be wrapped, enabling the display of longer text within the cell without overflowing.
+
+</dd>
+
+#### Editable `boolean`
+
+<dd>
+
+This property determines whether users can modify a field or cell. When enabled, you can configure additional editable properties related to the column. For more information, see [Inline Editing](/reference/widgets/Table/editable).
+
+
+</dd>
+
+
+####  Column Freeze `boolean`
+
+<dd>
+
+This property allows you to freeze or unfreeze a column, keeping it fixed to the left or right of the Table as users scroll horizontally.
+
+</dd>
+
+#### Disabled `boolean`
+
+<dd>
+
+This property disables user input for the column. While the column remains visible, users will not be able to interact or make changes to it.
+
+</dd>
+
+
+### Select properties
+
+These properties become available only when the column type is set to Select. They enable you to customize the behavior and appearance of the select column
+
+
+#### Options `array`
+
+<dd>
+
+This property defines the options to be displayed in the select dropdown. It should be provided as an array of objects, where each object contains a `label` and a `value`. 
+
+Example: If you want to create a gender selection dropdown, you could define the options as follows:
+
+
+
+```js
+[
+  {"label": "Male", "value": "male"},
+  {"label": "Female", "value": "female"}
+]
+```
+
+</dd>
+
+#### Placeholder `string`
+
+<dd>
+
+The placeholder provides a hint to users about what type of information is expected in the field.
+
+</dd>
+
+#### Filterable `boolean`
+
+<dd>
+
+This property allows you to make the dropdown list filterable. When enabled, it adds a search bar inside the select component, letting users quickly find options by typing in the input field
+
+</dd>
+
+#### Reset filter text on close `boolean`
+
+<dd>
+
+This property determines whether the filter text in the dropdown is reset when the dropdown is closed. When set to `true`, any text entered in the search bar will be cleared upon closing the dropdown.
+
+</dd>
+
+#### Server Side Filtering `boolean`
+
+<dd> 
+This property enables server-side filtering of the dropdown data. When set to `true`, the application sends filter queries to the server based on user input, retrieving only the relevant options. This is beneficial for large datasets, improving performance and reducing loading times by fetching only necessary items as users type. 
+</dd>
+
+## Style
+
+Style properties let you customize the appearance of each column, including text alignment, colors, and fonts.
+
+### Text formatting
+
+#### Text size `string`
+
+<dd>
+
+Specifies the size of the text in the column. Options include Small (S), Medium (M), Large (L), and Extra Large (XL).
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Specifies the text styling options for the column. You can choose from **Bold**, **Italic**, and **Underline**, and select multiple options if needed to apply different styles.
+
+</dd>
+
+#### Text/Horizontal alignment `string`
+
+<dd>
+
+Controls the horizontal alignment of text/button within the column. Options include **Left**, **Center**, and **Right** alignment. 
+
+</dd>
+
+#### Vertical alignment `string`
+
+<dd>
+
+Sets the vertical alignment of the text/button within the column. Options include **Top**, **Middle**, and **Bottom** alignment. 
+
+</dd>
+
+#### Border Radius
+  <dd>
+    Allows you to apply rounded corners to cells within the column.
+  </dd>
+  
+  #### Box Shadow
+  <dd>
+    Adds a shadow effect to the cells in the column, giving them a raised appearance.
+  </dd>
+  
+  #### Button Variant
+  <dd>
+    Specifies the visual style for buttons in the column, such as primary, secondary, or custom styles.
+  </dd>
+  
+  #### Button Color
+  <dd>
+    Sets the background color of buttons within the column.
+  </dd>
+  
+  #### Cell Background (Column Color)
+  <dd>
+
+You can style each column type from the style property pane, including options to change column color. However, if you need more advanced customization, such as changing Table color/column color, you can use the `currentRow` and `currentIndex` references to create custom color expressions. These expressions enable you to conditionally change color and style of individual cells based on their content, offering more flexibility than simply applying a static style to an entire column.
+
+*Example:* You have a column named `status` that reflects `approved` and `pending` values. You can set the color for these values using the following expression in the **Cell Background** property:
 
 ```js
 {{currentRow.status === "approved" ? "#22c55e" : "#facc15"}}
 ```
 If you want to keep the same background color for an entire row, you can use the same custom style expression in each column **Cell Background** property.
 
-<ZoomImage src="/img/cell-color.png" alt="Display images on table row selection" caption="Color Formatting" />
-
-
-## Editable
-
-When enabled, this property allows users to modify a field or cell. You can then use the Column's **onSubmit** or **onClick** event to run a query to update the data. 
-
-Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code.
-
-<dd>
-
-*Example*: if you want to allow only certain users to edit the Table:
-
-* Enable the Editable property at the Table Column level.
-
-* Open the column settings, click *JS* for the **Editable** property, and add your code.
-
-```javascript
-{{appsmith.user.email === 'john@appsmith.com' ? true : false}}
-```
-
-This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
-
-Learn more about [Inline editing](/reference/widgets/table/inline-editing).
-
-
-<ZoomImage
-  src="/img/column-editable.gif" 
-  alt=""
-  caption=""
-/>
-
-
-</dd>
-
-#### Date Format `String`
-<dd>
-Specifies the date format of the incoming data specified in the Computed Value property. For example, if the incoming date is in the format `YYYY-MM-DD HH:mm` and the option selected in the Date Format property is `DD/MM/YYYY`, it cannot parse the date and displays 'Invalid date' in the column.
-</dd>
-
-#### Display Format `String`
-<dd>
-Specifies how the date information should be displayed to the user. For example, if the incoming date is in the format `YYYY-MM-DD` but the Display Format property is set to `DD/MM/YYYY`, the date information would be displayed to the user in the desired format.
-</dd>
+<ZoomImage src="/img/cell-color.png" alt="Display images on Table row selection" caption="Color Formatting" />
 
 
 
-## Column types
+  </dd>
 
-This property allows you to select the type of cell to use in the column. Currently, the following column types are available:
+  #### Text Color
+
+  <dd>
+
+    Defines the color of the text displayed in the column.
+
+  </dd>
+  
+  #### **Image Size**
+
+  <dd>
+
+    Adjusts the size of images when using an Image column type. Options include predefined sizes.
+
+  </dd>
+  
+  #### **Position**
+  <dd>
+    Defines the positioning of content within the cell, such as relative or absolute positioning.
+  </dd>
+  
+  #### **Icon**
+  <dd>
+    Displays an icon within the cell, which can be chosen from available icon sets or set dynamically using JS.
+  </dd>
 
 
-| Column type | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Button**      | The button column type is a cell that can be clicked by the user, which triggers an  `onClick`  event and the  `triggeredRow`  reference property retrieves the data of the corresponding row.                                                                                                                                                                                                                                                                                |
-| **Checkbox**    | The checkbox column type denotes a binary value, with the checked and unchecked states represented by True and False, respectively. This column type can be made [editable]( /reference/widgets/table/inline-editing) by enabling the Editable property in the column settings.                                                                                                                                                                                                             |
-| **Icon Button** | The Icon button column type is a clickable button with an icon instead of text. It triggers an `onClick` event and the `triggeredRow` reference property retrieves the data of the corresponding row.   |
-| **Image**       | The image column type displays an image by interpreting the cell value as an image source `URL` or `base64` data. It shows `Invalid Image` if the data is not valid.                                                                                                                                                               |
-| **Menu Button** | The menu button column type is a group of buttons that can be expanded into a menu. Menu items can be added dynamically using the Menu Items Source as Dynamic and the `{{currentRow}}` referencing inside the Source Data property. However, for configuring the menu items, only the `{{currentItem}}` and `{{currentIndex}}` can be used. |
-| **Number**      | The number column type is used for numeric data and supports [inline editing](/reference/widgets/table/inline-editing). It can be made editable by enabling the Editable property in the column settings.                                                                                                                                                  |
-| **Plain Text**  | The plain text column type represents data with readable characters and supports [inline editing](/reference/widgets/table/inline-editing). It can be made editable by enabling the Editable property in the column settings.                                                                                                                                                                       |
-| **Switch**      | The Switch column type allows users to toggle a single item on or off, using binary values. It supports [inline editing](/reference/widgets/table/inline-editing) and can be made editable by enabling the Editable property in the column settings.                                                                                                                   |
-| **URL**         | The URL column type interprets the cell value as a hyperlink, allowing users to click on the cell and open the corresponding URL in a new browser tab. It requires including the domain and suffix of the URL, such as `example.com`.                                                                                                                                                                                          |
-| **Video**       | With the video column type, you can display videos within a table. To add a video to a cell, simply provide a source file path or URL from platforms such as YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, or DailyMotion as the cell value. |
-| **Date**        | The Date column type allows you to set up custom formatting options for date and time information. You can format and display the date using the Date Format and Display Format properties. It supports [inline editing](/reference/widgets/table/inline-editing).                                                                                                                                                                                                                                                                                       |
-| **Select**      | The Select column type allows users to select an option from a predefined list of choices. The Options property should be an array of objects, with each object containing a  `label`  and a  `value`  property,  `[{ "label": "ABC", "value": "abc"}]` .   The select column type can only be displayed or edited when the [Editable](/reference/widgets/table/inline-editing) property is enabled in the column settings. |
 
 
-## Style properties
 
-Style properties allow you to change the look and feel of the column type.
-
-| **Property**             | **Data Type** | **Description**                                        |
-|--------------------------|---------------|--------------------------------------------------------|
-| **Text Size**            | String        | Sets the size of the text in the column.               |
-| **Emphasis**             | String        | Toggles bold or italic emphasis on the text.           |
-| **Text Align**           | String        | Sets the horizontal alignment of the text.             |
-| **Border Radius**        | String        | Allows you to define curved corners.                   |
-| **Box Shadow**           | String        | Applies a shadow effect to the cells in the column.    |
-| **Button Variant**       | String        | Sets the visual style for buttons in the column.       |
-| **Button Color**         | String        | Sets the background color for buttons in the column.   |
-| **Cell Background**      | String        | Sets the background color for the cells in the column. |
-| **Horizontal Alignment** | String        | Sets the horizontal alignment of content within cells. |
-| **Vertical Alignment**   | String        | Sets the vertical alignment of content within cells.   |
-| **Text Color**           | String        | Sets the color for the text in the column.             |
-| **Image Size**           | Options       | Allows you to resize an image for Image column type.   |
-| **Position**             | Options       | Sets the position of the cell.                         |
-| **Icon**                 | String        | Displays an icon within the cell.                      |

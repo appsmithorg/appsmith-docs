@@ -181,59 +181,6 @@ This property ensures that any value entered must be less than or equal to the s
 </dd>
 
 
-### Select properties
-
-These properties become available only when the column type is set to Select. They enable you to customize the behavior and appearance of the select column
-
-
-#### Options `array`
-
-<dd>
-
-This property defines the options to be displayed in the select dropdown. It should be provided as an array of objects, where each object contains a `label` and a `value`. 
-
-Example: If you want to create a gender selection dropdown, you could define the options as follows:
-
-
-
-```js
-[
-  {"label": "Male", "value": "male"},
-  {"label": "Female", "value": "female"}
-]
-```
-
-</dd>
-
-#### Placeholder `string`
-
-<dd>
-
-The placeholder provides a hint to users about what type of information is expected in the field.
-
-</dd>
-
-#### Filterable `boolean`
-
-<dd>
-
-This property allows you to make the dropdown list filterable. When enabled, it adds a search bar inside the select component, letting users quickly find options by typing in the input field
-
-</dd>
-
-#### Reset filter text on close `boolean`
-
-<dd>
-
-This property determines whether the filter text in the dropdown is reset when the dropdown is closed. When set to `true`, any text entered in the search bar will be cleared upon closing the dropdown.
-
-</dd>
-
-#### Server Side Filtering `boolean`
-
-<dd> 
-This property enables server-side filtering of the dropdown data. When set to `true`, the application sends filter queries to the server based on user input, retrieving only the relevant options. This is beneficial for large datasets, improving performance and reducing loading times by fetching only necessary items as users type. 
-</dd>
 
 ### Date settings
 
