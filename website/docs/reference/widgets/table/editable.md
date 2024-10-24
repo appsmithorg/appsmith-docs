@@ -2,7 +2,7 @@
 
 This page provides information related to all the editable column properties. 
 
-You can enable the **Editable** property either from the table column settings or directly within the table column. When enabled, this property allows users to modify a field or cell. You can then use the Column's **onSubmit** or **onClick** event to run a query to update the data. 
+You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
 
 Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code.
 
