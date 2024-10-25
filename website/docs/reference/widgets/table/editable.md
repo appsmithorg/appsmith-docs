@@ -1,12 +1,12 @@
 # Inline Editing
 
-This page provides information related to all the editable column properties. You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
+This page provides information related to all the editable column properties. You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing, users can update data directly from the UI by double-clicking on the desired cell
 
 For more details on how to configure queries to edit or add rows using inline editing, see [Edit Table Data Inline](/reference/widgets/table/inline-editing).
 
 
 <ZoomImage
-  src="/img/column-editable.gif" 
+  src="/img/new-edit-inline.gif" 
   alt=""
   caption=""
 />
@@ -29,15 +29,9 @@ These properties help ensure user input follows specific rules to maintain data 
 
 <dd>
 
-The Regex property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, an error message can be displayed. 
+The Regex property allows you to set custom validation for user input by specifying a regular expression pattern. If the input does not match this pattern, an error message is displayed.
 
 *Examples:* 
-
-If you want to validate that the user enters a value in multiples of 5, you can set the Regex as:
-
-```js
-.*[05]$
-```
 
 **Email Validation:** To validate whether an entered email is correct, use the following regular expression code inside the **Regex** property:
 
@@ -84,11 +78,13 @@ Indicates whether the input for this column is mandatory. If set to `true`, user
 
 <dd>
 
-This property allows you to define custom validation rules and error messages to guide users when their input does not meet the required criteria. To access the user's edited values, you can utilize the following reference properties:
+This property allows you to define custom validation rules and error messages to guide users when their input does not meet the required criteria. To access the user's edited values, you can use the following reference properties:
 
-- **editedValue**: This property shows the current value being edited in the column. It reflects what the user is typing or modifying in that specific cell.  For example, if you want to ensure the input length is greater than 2 characters:
+- **editedValue**: This property shows the current value being edited in the column. It reflects what the user is typing or modifying in that specific cell.  
 
 <dd>
+
+*Example:* To validate that the input is longer than 2 characters, you can use:
 
 ```js
 {{ editedValue.length > 2 }}
@@ -101,7 +97,7 @@ This property allows you to define custom validation rules and error messages to
 
 <dd>
 
-- *Editing Existing Rows:* The `currentRow` property holds the original, unedited values of the row being modified. This property does not reflect any dynamic changes while entering values and updates only when the Save button is clicked.
+- *Editing Existing Rows:* When editing, the `currentRow` property shows the row’s original values and does not update dynamically. It reflects changes only after the Save button is clicked.
 
 - *Adding New Rows:* When adding a new row, the `currentRow` property represents the new row object.
 
@@ -127,7 +123,7 @@ This property allows you to define custom validation rules and error messages to
 
 </dd>
 
-- **isNewRow**: The `isNewRow` property indicates if a new row is being added. It is true for new rows, allowing you to apply specific logic for new entries. For existing rows, it is false.
+- **isNewRow**: The `isNewRow` property indicates if a new row is being added. It is `true` for new rows, allowing you to apply specific logic for new entries. For existing rows, it is `false`.
 
 <dd>
 
@@ -179,7 +175,8 @@ These editable properties become available only when the column type is set to D
 
 <dd>
 
-This property lets you decide which day the calendar starts on in a Date field. For example, setting it to `0` starts the week on Sunday, and setting it to `1` starts it on Monday. You can adjust this based on your regional or personal preferences.
+This property defines the starting day of the week in a Date field's calendar. For instance, setting it to `0` begins the week on Sunday, while `1` starts it on Monday. This setting can be adjusted according to regional or organizational preferences.
+
 
 </dd>
 
@@ -194,7 +191,7 @@ When enabled, it adds section within the Datepicker pop-up that contains options
 
 ## Events
 
-When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions). These events may be available only for specific column types or when certain properties are enabled
+When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions). These events may be available only for specific column types or when certain properties are enabled.
 
 #### onSubmit
 

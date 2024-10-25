@@ -50,18 +50,15 @@ This property allows you to select the appropriate column type for your Table da
 
 <dd>
 
-This property allows you to display and manipulate Table data using JavaScript expressions. The `currentRow` property is automatically generated when data is added to the Table, representing the current row's data. For example, to display the date of birth in a column named `dob`, the computed value would be `{{currentRow['dob']}}`. You can also use custom expressions to calculate new values based on the data in each row.
+This property allows you to display and manipulate Table data using JavaScript expressions. The `currentRow` property is automatically generated when data is added to the Table, representing the current row's data. 
 
+*Example:* To display a date of birth in a column named `dob`, use: 
 
-*Example*: If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
-
-1. In the Table's **Table Data** property, display the data using:
-
-```
-{{fetchData.data}}
+```js
+{{currentRow['dob']}}
 ```
 
-2. Select the `name` column from the list of columns, and add following code in the **Computed Value** property:
+*Example 2*: If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
 
 ```js
 {{currentRow.gender === "male" ? "Mr " + currentRow.name : "Mrs " + currentRow.name}}
@@ -77,7 +74,7 @@ The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name 
 
 <dd>
 
-This property allows you to specify the currency type for the column. You can select from a list of countries and their corresponding currencies. Additionally, by enabling the JS option, you can use `ISO 4217` currency codes, which are three-letter codes assigned to each currency for international identification.
+This property allows you to specify the currency type for the column. You can select from a list of countries and their corresponding currencies. Additionally, by enabling the *JS* option, you can use `ISO 4217` currency codes, which are three-letter codes assigned to each currency for international identification.
 
 </dd>
 
@@ -144,7 +141,7 @@ Options:
 
 - **Static:** When the Static option is selected, the **Menu Items** property becomes visible, enabling you to add and manage the menu items directly from the UI. Click the ⚙️ gear icon to access the configuration options. For more information, see [Menu Items](/reference/widgets/menu/menu-items).
 
-- **Dynamic:** With the Dynamic source, menu items are populated by binding a query to the source data. To configure the properties of the menu items, click the **Configure Menu Item** button. The menu items do not display until configured using the `currentItem` or `currentIndex` property.
+- **Dynamic:** With the Dynamic source, menu items are populated by binding a query to the **Source data**. To configure the properties of the menu items, click the **Configure Menu Item** button. The menu items do not display until configured using the `currentItem` or `currentIndex` property.
 
 </dd>
 
@@ -176,9 +173,10 @@ Once you have configured the **Source Data**, you need to configure the **Menu i
 
 <dd>
 
+
 This property allows you to configure the menu items defined in the **Source Data** property. When you click on the **Configure** button, you can update the styles and label properties.
 
-To display the menu items, you need to set the label property using either `{{currentItem}}` or `{{currentIndex}}` to reference the corresponding values.
+To display the menu items, you need to set the label property using either [currentItem](/reference/widgets/menu/menu-items#currentitem-object) or [currentIndex](/reference/widgets/menu/menu-items#currentindex-number) to reference the corresponding values.
 
 *Example:*
 
@@ -186,13 +184,20 @@ To display the menu items, you need to set the label property using either `{{cu
 {{currentItem.label}}
 ```
 
+<dd>
+
+<ZoomImage src="/img/menu-item-column.png" alt="" caption="" />
+
+</dd>
+
+
 </dd>
 
 #### Icon
 
 <dd>
 
-This property specifies the icon displayed on the button. You can also use JavaScript to dynamically set the icon. Appsmith utilizes icons from the [Blueprintjs](https://blueprintjs.com/docs/#icons) library.
+This property specifies the icon displayed on the button. You can also use JavaScript to dynamically set the icon. Appsmith uses icons from the [Blueprintjs](https://blueprintjs.com/docs/#icons) library.
 
 
 </dd>
@@ -219,28 +224,24 @@ This property allows the content of the cell to be wrapped, enabling the display
 
 <dd>
 
-You can enable the **Editable** property either by selecting the checkbox in the Table's column property settings or directly from the individual column settings. By enabling inline editing and marking specific columns as editable, users can update data directly from the UI by double-clicking on the desired cell
+You can enable the **Editable** property by selecting the option in the individual column settings of the Table. By enabling inline editing and marking specific columns as Editable, users can update data directly from the UI by double-clicking on the desired cell.
 
-Additionally, you can use JavaScript by clicking on *JS* next to the **Editable** property to control it conditionally. If you are using JS, make sure to enable the **Editable checkbox** at the Table column level before adding your code. For more information on all the editable properties, including validation, settings, and related events, see [Inline Editing](/reference/widgets/table/editable).
+Additionally, you can control this property conditionally by clicking on JS next to the Editable option. For more information on all the editable properties, including validation, settings, and related events, see [Inline Editing](/reference/widgets/table/editable).
 
-*Example*: if you want to allow only certain users to edit the Table:
-
-* Enable the Editable property at the Table Column level.
-
-* Open the column settings, click *JS* for the **Editable** property, and add your code.
+*Example:* To allow only certain users to edit the Table, open the column settings, click JS next to the **Editable** property, and add your code:
 
 ```javascript
 {{appsmith.user.email === 'john@appsmith.com' ? true : false}}
 ```
 
-This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to true, making the column editable. If it is not, the property is set to false, keeping the column non-editable.
+This code checks if the email of the logged-in user is `john@appsmith.com`. If it is, the property is set to `true`, making the column editable. If it is not, the property is set to `false`, keeping the column non-editable.
 
 For more information on setting up queries to edit or add rows using inline editing, see [Edit Table Data Inline.](/reference/widgets/table/inline-editing).
 
 
 
 <ZoomImage
-  src="/img/column-editable.gif" 
+  src="/img/new-editable.png" 
   alt=""
   caption=""
 />
@@ -283,22 +284,13 @@ This property defines the options to be displayed in the select dropdown. It sho
 
 
 ```js
-[
+{{[
   {"label": "Male", "value": "male"},
   {"label": "Female", "value": "female"}
-]
+]}}
 ```
 
-*Example:* If you need to create a gender selection dropdown that dynamically indicates the selected option based on `currentRow.gender`, you can define the options like this:
 
-```js
-{{ 
-  [
-    { label: "Male", value: "male", selected: currentRow.gender === "male" }, 
-    { label: "Female", value: "female", selected: currentRow.gender === "female" }
-  ] 
-}}
-```
 
 </dd>
 
@@ -414,28 +406,24 @@ If you want to keep the same background color for an entire row, you can use the
 
   <dd>
 
-    Defines the color of the text displayed in the column.
+This property allows you to define the color of the text displayed in the column. By customizing text color, you can improve readability and emphasize important information for users.
+
+*Example:* To display the status of a project with different colors, you can use the following code:
+
+```js
+{{ currentRow.status === "completed" ? "#28a745" : currentRow.status === "in-progress" ? "#ffc107" : "#dc3545" }}
+```
 
   </dd>
   
-  #### **Image Size**
+  #### Image Size
 
   <dd>
 
-    Adjusts the size of images when using an Image column type. Options include predefined sizes.
+This property adjusts the size of images within an Image column type. You can choose from predefined sizes such as Small, Medium, or Large, ensuring that the images fit well within the layout of the Table without disrupting the overall design.
 
   </dd>
   
-  #### **Position**
-  <dd>
-    Defines the positioning of content within the cell, such as relative or absolute positioning.
-  </dd>
-  
-  #### **Icon**
-  <dd>
-    Displays an icon within the cell, which can be chosen from available icon sets or set dynamically using JS.
-  </dd>
-
 
 
 
