@@ -113,9 +113,9 @@ This property allows you to define custom validation rules and error messages to
 
 <dd>
 
-- *Existing Rows:* For rows that already exist in the dataset, `currentIndex` reflects the actual index of the row being edited.
+- *Editing Existing Rows:* For rows that already exist in the dataset, `currentIndex` reflects the actual index of the row being edited.
 
-- *New Rows:* When adding a new row, `currentIndex` is set to `-1`, indicating that the new row does not yet exist in the dataset.
+- *Adding New Rows:* When adding a new row, `currentIndex` is set to `-1`, indicating that the new row does not yet exist in the dataset.
 
 ```js
 {{ currentIndex >= 0 }}
