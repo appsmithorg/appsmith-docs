@@ -18,7 +18,7 @@ Appsmith applications are secure-by-default, with a number of strategies in plac
 
 - **Secure Connections**: Appsmith Cloud establishes connections with databases and API endpoints exclusively through whitelisted IP addresses `18.223.74.85` and `3.131.104.27`. All traffic to and from Appsmith Cloud is secured using TLS encryption.
 
-- **Domain Whitelisting**: For self-hosted Appsmith users, it’s necessary to whitelist the domain `cs.appsmith.com`. IP-based whitelisting is not allowed for this domain because it relies on dynamic IPs for scaling and load balancing. Domain-based whitelisting ensures a stable and reliable connection, preventing disruptions even when backend IP addresses change.
+- **Domain Whitelisting**: For self-hosted Appsmith users, it’s necessary to whitelist the domain `cs.appsmith.com`. IP-based whitelisting is not allowed for this domain because it relies on dynamic IPs for scaling and load balancing. 
 
 - **Compliant Hosting**: The cloud version of Appsmith is hosted on AWS data centers that adhere to SOC 1 and SOC 2 compliance standards. These servers provide a secure environment, and their integrity is bolstered by systematic backups to prevent data loss.
 
