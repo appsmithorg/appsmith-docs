@@ -85,18 +85,18 @@ For example, if your existing URL is `example.fusionauth.io`, it should be updat
 
 
 
-##  Register Okta in Appsmith
+##  Register FusionAuth in Appsmith
 
 To complete the OIDC configuration, you have to register the identity provider on Appsmith. Go to **Admin Settings > Authentication > OIDC**, and follow the steps below:
 
 1. Add the **Client ID** and **Client Secret** copied from the FusionAuth application into the respective fields.
 
-2. Add the URLs copied from the `<your-okta-domain>/.well-known/openid-configuration` page into OIDC configurations in Appsmith as per the table below:
+2. Add the URLs copied from the `<your-FusionAuth-domain>/.well-known/openid-configuration` page into OIDC configurations in Appsmith as per the table below:
 
 <dd>
 
 
-  | **OIDC configuration field**       | **Okta URL**  |
+  | **OIDC configuration field**       | **FusionAuth URL**  |
   | ----------------------- | --------------------- |
   | **Authorization URL** | authorization_endpoint     |
   | **Token URL**         | token_endpoint             |
