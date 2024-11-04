@@ -52,7 +52,7 @@ Follow these steps to set up your application in FusionAuth:
 
 4. Enter a name for your application.
 
-5. Go to the **OAuth** tab and add the **Authorized redirect URLs**. Copy the Redirect URL from the OIDC configuration in Appsmith (e.g.,`http://localhost/login/oauth2/code/oidc`).
+5. Go to the **OAuth** tab and add the **Authorized redirect URLs**. Copy the Redirect URL from the OIDC configuration in Appsmith, for instance, `http://localhost/login/oauth2/code/oidc`. 
 
 6. Save your application by clicking the Save icon at the top-right corner.
 
