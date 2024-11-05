@@ -140,6 +140,7 @@ const sidebars = {
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
                         'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
+                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/fusionauth',
                       ],
                     },
                     'getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt',
