@@ -61,7 +61,7 @@ Follow these steps to set up your application in FusionAuth:
 
 
 
-## Configure the Issuer in FusionAuth
+## Configure Issuer in FusionAuth
 
 Follow these steps to set the Issuer URL in FusionAuth, which is crucial for secure OIDC integration and ensures the authorization server is correctly identified.
  
