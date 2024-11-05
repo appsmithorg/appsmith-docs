@@ -33,7 +33,7 @@ This page shows you how to configure Appsmith to use [FusionAuth](https://fusion
 
 <dd>
 
-<ZoomImage src="/img/oidc-appsmith.png" alt="OIDC configurations" caption="OIDC configurations in Appsmith" />
+<ZoomImage src="/img/oidc-configurations-in-appsmith.png" alt="OIDC configurations" caption="OIDC configurations in Appsmith" />
 
 </dd>
 
@@ -131,6 +131,6 @@ After the Appsmith instance restarts, try logging in again to your account. You'
 
 <dd>
 
-<ZoomImage src="/img/oidc-homepage.png" alt="OIDC-login" caption="Login with OIDC SSO " />
+<ZoomImage src="/img/Appsmith-Login-Screen-Shows-OIDC.png" alt="OIDC-login" caption="Login with OIDC SSO " />
 
 </dd>
