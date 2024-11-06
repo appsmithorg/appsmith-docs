@@ -160,7 +160,15 @@ const sidebars = {
                     'getting-started/setup/instance-configuration/email/sendgrid',
                   ],
                 },
-                'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                {
+                  type: 'category',
+                  label: 'Appsmith Databases',
+                  items: [
+                    'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                    'getting-started/setup/instance-configuration/appsmith-databases/external-postgresql',
+                    'getting-started/setup/instance-configuration/appsmith-databases/migrate-mongodb-postgresql',
+                  ],
+                },
                 'getting-started/setup/instance-configuration/disable-intercom',
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-configuration/disable-user-signup',
@@ -613,7 +621,7 @@ const sidebars = {
           },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-           'write-code/reference/transform-data'
+            'write-code/reference/transform-data'
           ],
         }, //Reference End
         {
