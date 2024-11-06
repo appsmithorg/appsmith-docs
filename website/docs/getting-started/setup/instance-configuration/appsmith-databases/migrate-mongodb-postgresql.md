@@ -8,6 +8,7 @@ Starting from version [V.No] and above, Appsmith defaults to PostgreSQL as its p
 Before starting the migration, ensure the following requirements are met:
 
 - Back up the Appsmith instance to ensure you can revert if necessary. For more information, see the [Backup Appsmith instance](/getting-started/setup/instance-management/appsmithctl#backup-instance) guide.
+- Ensure you have PostgreSQL version 14 or higher. 
 - If using an external PostgreSQL instance, verify that the PostgreSQL instance has permissions for both `CREATE SCHEMA` and `CREATE EXTENSION`.
 
 ## Migrate Appsmith data
