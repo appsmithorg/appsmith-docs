@@ -29,7 +29,7 @@ To use an external PostgreSQL database with Appsmith, you can either use an exis
 
 Once the external PostgreSQL instance is set up, connect the Appsmith instance to the external PostgreSQL. Follow these steps to complete the connection:
 
-1. Go to the location where the Appsmith configuration file is located. For example, the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
+1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.
 
 2. Set the `APPSMITH_DB_URL` environment variable with the following format:
 
