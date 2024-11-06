@@ -6,7 +6,7 @@ Appsmith defaults to an embedded PostgreSQL database. Users may also choose to s
 
 Before you begin with the setup, ensure that your environment meets the necessary requirements.
 
-- Ensure you are on Appsmith version [V.No]. For more information, see [Update Appsmith](/getting-started/setup/instance-management/update-appsmith).
+- Ensure you are on Appsmith version v1.47 or greater. For more information, see [Update Appsmith](/getting-started/setup/instance-management/update-appsmith).
 - Make sure you have at least 2 GB of free storage space for backup and restore tasks.
 - Ensure you have PostgreSQL version 14 or higher. 
 - Create a backup of the current Appsmith database. For more information, see the [Backup Appsmith database](/getting-started/setup/instance-management/appsmithctl#backup-database) guide.
