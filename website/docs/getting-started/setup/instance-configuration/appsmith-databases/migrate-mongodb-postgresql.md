@@ -1,4 +1,4 @@
-# Migrate External MongoDB to External PostgreSQL
+# Migrate Data from External MongoDB to External PostgreSQL
 
 Starting from version v1.47 and above, Appsmith defaults to PostgreSQL as its primary database. When updating to a newer version, you must migrate your data from External MongoDB to External PostgreSQL. This page provides information and instructions for performing this migration.
 
