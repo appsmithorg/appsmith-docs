@@ -12,7 +12,7 @@ To set up custom CA certificates using the folder method, follow these steps:
 
 1. Create a `ca-certs` folder in your `stacks` folder.
 
-2. Save all your CA root certificates in the `ca-certs` folder. If your `cert` file has a `.pem` extension, rename it to `.crt` before adding it to the s`tacks/ca-certs` folder
+2. Save all your CA root certificates in the `ca-certs` folder. If your `cert` file has a `.pem` extension, rename it to `.crt` before adding it to the `stacks/ca-certs` folder
 
 3. Restart Appsmith.
 
