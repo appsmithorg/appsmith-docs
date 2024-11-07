@@ -41,14 +41,17 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
 1. Log in to your [Okta](https://www.okta.com/) account and click **Admin** from the top right corner.
 
-2. On the **Get started with Okta** page, click **Add App** for **Use single sign on**.
+2. Select **Create a new app integration** and configure as follows:
 
-3. On the **Browse App Integration Catalog** page, click **Create New App**. 
+<dd>
 
-4. A pop-up titled **Create a new app integration** appears. Choose **OIDC - OpenID Connect** as the Sign-in method and select Application type as **Web Application**.
+- **Sign-in method:** OIDC - OpenID Connect
+
+- **Application type:** Web Application
+
+</dd>
 
 5. On the **New Web App Integration** page, go to the general settings:
-
 
 <dd>
 
@@ -66,12 +69,34 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
 6. On your new application, go to the **General** tab, and copy the **Client ID** and **Client Secret** to add them later in the OIDC configurations in Appsmith.
 
-7. Open your account dropdown from the navigation bar, and copy your **Okta domain** that is mentioned below your Email. 
+<dd>
 
-8. Add `/.well-known/openid-configuration` at the end of your **Okta domain**, and open the `<your-okta-domain>/.well-known/openid-configuration` URL in your browser and copy the following URLs from that page:
+<ZoomImage src="/img/okta-id-oidc.png" alt="" caption="" />
+
+
+</dd>
+
+
+
+
+7. Open your account dropdown from the top-right corner of the navigation bar, and copy your **Okta domain** that is mentioned below your Email. 
 
 <dd>
 
+<ZoomImage src="/img/oidc-okta-url.png" alt="" caption="" />
+
+
+</dd>
+
+8. Open your Okta domain URL in your browser, add /.well-known/openid-configuration to the end, like:
+
+<dd>
+
+```js
+https://your-okta-domain.okta.com/.well-known/openid-configuration
+```
+
+Copy the following URLs from the page:
 
   - **authorization_endpoint**
 
@@ -81,7 +106,10 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
   - **jwks_uri**
 
+
 </dd>
+
+
 
 
 ##  Register Okta in Appsmith
