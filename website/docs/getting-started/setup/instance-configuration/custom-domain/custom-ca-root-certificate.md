@@ -25,7 +25,7 @@ If you **remove** a **certificate** from the `ca-certs` folder, it's also **remo
 
 ## Set Up Using values.yaml
 
-If you're using Kubernetes, you need to update the `values.yaml` configuration file to ensure the certificate is included correctly. Follow these steps to add custom CA certificates in `values.yaml`:
+For Appsmith installations on Kubernetes, you can add custom CA certificates by updating the `values.yaml` file. Follow these steps:
 
 1. Open `values.yaml`.
 
