@@ -6,27 +6,26 @@ You can install custom CA root certificates in your Appsmith container. It is us
 1. You interact with internal endpoints that use private [SSL certificates](./#custom-ssl-certificate) via Appsmith without disabling SSL verification.
 2. If you have your Appsmith instance behind a firewall or a proxy, that requires SSL decryption.
 
-## Setup custom CA root folder
+## Set Up Using Custom CA Root Folder
 
-You can easily do this:
+To set up custom CA certificates using the folder method, follow these steps:
 
-* By creating a `ca-certs` folder in your `stacks` folder
-* Saving all the CA root certificates in the `ca-certs` folder
-* Restart Appsmith
+1. Create a `ca-certs` folder in your `stacks` folder.
 
-:::info
-If your cert file has a `.pem` extension, rename it to `.crt`. You should add it to the `stacks/ca-certs` folder so that it can be picked up.
-:::
+2. Save all your CA root certificates in the `ca-certs` folder. If your `cert` file has a `.pem` extension, rename it to `.crt` before adding it to the s`tacks/ca-certs` folder
+
+3. Restart Appsmith.
+
 
 Appsmith checks the `ca-certs` folder for CA root certificates and applies them on startup.
 
-:::info
+:::caution
 If you **remove** a **certificate** from the `ca-certs` folder, it's also **removed** from the **trust store** and **won't** be **trusted** anymore.
 :::
 
-## values.yaml Configuration
+## Set Up Using values.yaml
 
-If you're using Kubernetes, you may need to update the `values.yaml` configuration file to ensure the certificate is included correctly. Follow these steps to add custom CA certificates in `values.yaml`:
+If you're using Kubernetes, you need to update the `values.yaml` configuration file to ensure the certificate is included correctly. Follow these steps to add custom CA certificates in `values.yaml`:
 
 1. Open `values.yaml`.
 
@@ -54,8 +53,7 @@ customCAcert:
 helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
 ```
 
-Certificates defined in `values.yaml` provide the same trusted CA functionality as those in the ca-certs folder for non-Helm setups.
-
+These steps add your custom certificates to the Appsmith trust store.
 
 
 </dd>
