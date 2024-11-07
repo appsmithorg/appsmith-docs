@@ -20,7 +20,7 @@ To set up custom CA certificates using the folder method, follow these steps:
 Appsmith checks the `ca-certs` folder for CA root certificates and applies them on startup.
 
 :::caution
-If you **remove** a **certificate** from the `ca-certs` folder, it's also **removed** from the **trust store** and **won't** be **trusted** anymore.
+Removing a certificate from the `ca-certs` folder will also remove it from the trust store, resulting in the certificate no longer being trusted.
 :::
 
 ## Set up using values.yaml
