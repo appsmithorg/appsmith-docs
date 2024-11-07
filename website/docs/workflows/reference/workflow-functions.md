@@ -83,7 +83,7 @@ The `assignRequest()` function is an asynchronous function that is part of the `
 ```javascript
 async function handleUserRequest() {
   try {
-    await assignRequest({
+    await appsmith.workflows.assignRequest({
       requestName: "Approval",
       resolutions: ["Approved", "Rejected"],
       requestToUsers: ["user1", "user2"]
