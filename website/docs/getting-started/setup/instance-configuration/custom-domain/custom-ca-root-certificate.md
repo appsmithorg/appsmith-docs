@@ -49,7 +49,7 @@ customCAcert:
 
 <dd>
 
-```js
+```bash
 helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
 ```
 
