@@ -35,7 +35,7 @@ For Appsmith installations on Kubernetes, you can add custom CA certificates by 
 
 <dd>
 
-```js
+```yaml
 customCAcert:
   cert1: |
     (Paste the certificate content here)
