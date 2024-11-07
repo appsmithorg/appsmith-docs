@@ -7,7 +7,7 @@ Starting from version v1.47, Appsmith uses PostgreSQL as the default primary dat
 Before starting the migration, ensure the following requirements are met:
 
 - Back up the Appsmith instance to ensure you can revert if necessary. For more information, see the [Backup Appsmith instance](/getting-started/setup/instance-management/appsmithctl#backup-instance) guide.
-- Take note of the external MongoDB URL that Appsmith connects to. If you don’t have it, retrieve the value from the `APPSMITH_DB_URL` environment variable in either the `docker.env` for Docker or `values.yaml` for Kubernetes.
+- Take note of the external MongoDB URL that Appsmith connects to. If you don’t have it, retrieve the value from the `APPSMITH_DB_URL` environment variable in either the `docker.env` file for Docker or the `values.yaml` file for Kubernetes.
 - Ensure you have PostgreSQL version 14 or higher. 
 - Use an existing PostgreSQL instance or set up a new one. For more information on creating a new PostgreSQL instance, see the [How to set up external PostgreSQL](/getting-started/setup/instance-configuration/appsmith-databases/external-postgresql.md) guide.
 - Verify that the external PostgreSQL instance has `CREATE SCHEMA` and `CREATE EXTENSION` permissions granted to the user that Appsmith will use to connect.
