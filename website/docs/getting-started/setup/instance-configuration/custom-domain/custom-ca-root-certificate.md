@@ -23,7 +23,7 @@ Appsmith checks the `ca-certs` folder for CA root certificates and applies them 
 If you **remove** a **certificate** from the `ca-certs` folder, it's also **removed** from the **trust store** and **won't** be **trusted** anymore.
 :::
 
-## Set Up Using values.yaml
+## Set up using values.yaml
 
 For Appsmith installations on Kubernetes, you can add custom CA certificates by updating the `values.yaml` file. Follow these steps:
 
