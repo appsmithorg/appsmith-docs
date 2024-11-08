@@ -88,7 +88,7 @@ To configure Appsmith to use [Okta](https://www.okta.com/) as an OIDC provider, 
 
 </dd>
 
-8. Open your Okta domain URL in your browser, add /.well-known/openid-configuration to the end, like:
+8. Open your Okta domain URL in your browser, add `/.well-known/openid-configuration` to the end, like:
 
 <dd>
 
