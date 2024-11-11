@@ -3,7 +3,7 @@
 A cyclic dependency occurs when two or more components depend on each other, either directly or indirectly, creating a loop. This page provides information on cyclic dependencies, and how to identify and resolve them.
 
 
-#### Cyclic dependency in Table column validation
+#### Using table properties in column validation
 
 <Message
 messageContainerClassName="error" 
