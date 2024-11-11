@@ -352,12 +352,20 @@ appsmith.onReady(() => {
 
 <dd>
 
-Subscribe to theme changes and execute a callback function.
+Allows you to subscribe to theme changes in your application and execute a callback function whenever the theme changes. This can be useful for dynamically adjusting UI elements to match the active theme.
+
+- `primaryColor`: Represents the primary color of the application theme. For example, `#FF5733`.
+- `backgroundColor`: Represents the background color of the application theme. For example, `#f0f0f0`.
+- `borderRadius`: Represents the border radius for rounded corners in the theme. For example, `0px` or `1.5rem`.
+- `borderShadow`: Represents the shadow applied to borders in the theme. For example, `0px 4px 6px rgba(0, 0, 0, 0.1)`.
 
 ```js
-// Set the primaryColor of your component using a function.
+// Set theme properties of your component using a function.
 const unlisten = appsmith.onThemeChange((theme, oldTheme) => {
   setPrimaryColor(theme.primaryColor);
+  setBackgroundColor(theme.backgroundColor);
+  setBorderRadius(theme.borderRadius);
+  setBorderShadow(theme.borderShadow);
 });
 
 // Unsubscribe when no longer interested in updates.
