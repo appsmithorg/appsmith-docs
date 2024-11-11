@@ -3,7 +3,7 @@
 A cyclic dependency occurs when two or more components depend on each other, either directly or indirectly, creating a loop. This page provides information on cyclic dependencies, and how to identify and resolve them.
 
 
-#### Using table properties in column validation
+#### Using Table properties in column validation
 
 <Message
 messageContainerClassName="error" 
@@ -17,3 +17,18 @@ This error occurs when you try to use a Table widget's property inside the Table
 
 To resolve this issue, use `{{currentRow.name}}` in the Table column validation property instead of `Table1.updatedRow` or `Table1.newRow`. 
 
+<dd>
+
+*Example:*
+
+
+```js
+//Cyclic Dependency:
+{{Table1.updatedRow.created_at}} 
+
+//No Cyclic Dependency:
+{{currentRow.created_at}} // This works without causing a cyclic dependency
+
+```
+
+</dd>
