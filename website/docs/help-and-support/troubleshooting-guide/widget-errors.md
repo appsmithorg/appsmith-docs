@@ -122,3 +122,5 @@ This error occurs when there are duplicate values in the options property of the
 #### Solution
 
 To resolve this error, ensure that each value in the options property of the Select widget is unique. You can do this by checking the values and making sure that there are no duplicates. 
+
+
