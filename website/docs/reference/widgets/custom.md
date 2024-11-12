@@ -374,29 +374,21 @@ unlisten();
 
 Example: If you want to create a button that adapts to the application's theme properties, you can use the `onThemeChange` function to dynamically apply styles like primary color, background color, border radius, and shadow.
 
-
-```js 
+```js
 function ThemedButton() {
-	const [themeStyles, setThemeStyles] = React.useState({
-		color: appsmith.theme.primaryColor,
-		backgroundColor: appsmith.theme.backgroundColor,
-		borderRadius: appsmith.theme.borderRadius,
-		boxShadow: appsmith.theme.borderShadow,
-	});
+	const [themeStyles, setThemeStyles] = React.useState({});
 
 	React.useEffect(() => {
-    // highlight-start
 		// Listen for theme changes and update button styles
 		const unlisten = appsmith.onThemeChange((theme) => {
-		setThemeStyles({
-			color: theme.primaryColor,
-			backgroundColor: theme.backgroundColor,
-			borderRadius: theme.borderRadius,
-			boxShadow: theme.borderShadow,
+			setThemeStyles({
+				color: theme.primaryColor,
+				backgroundColor: theme.backgroundColor,
+				borderRadius: theme.borderRadius,
+				boxShadow: theme.borderShadow,
 			});
 		});
 		return () => unlisten(); // Clean up listener on unmount
-    // highlight-end
 	}, []);
 
 	return (
