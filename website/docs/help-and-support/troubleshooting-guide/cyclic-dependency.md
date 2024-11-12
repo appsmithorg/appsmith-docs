@@ -13,6 +13,11 @@ messageContent="Cyclic dependency found while evaluating. Node was: Table1.prima
 
 This error occurs when you try to use a Table widget's property inside the Table column validation. For example, using `Table1.updatedRow` inside the column validation property creates a cyclic dependency. This means that the validation logic relies on a property that is itself dependent on the result of the validation, causing an infinite loop of dependencies.
 
+```js
+//Cyclic Dependency:
+{{Table1.updatedRow.created_at}} 
+```
+
 #### Solution
 
 To resolve this issue, use `{{currentRow.name}}` in the Table column validation property instead of `Table1.updatedRow` or `Table1.newRow`. 
@@ -21,14 +26,9 @@ To resolve this issue, use `{{currentRow.name}}` in the Table column validation 
 
 *Example:*
 
-
 ```js
-//Cyclic Dependency:
-{{Table1.updatedRow.created_at}} 
-
 //No Cyclic Dependency:
-{{currentRow.created_at}} // This works without causing a cyclic dependency
-
+{{currentRow.created_at}}
 ```
 
 </dd>
