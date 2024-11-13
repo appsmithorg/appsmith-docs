@@ -161,6 +161,7 @@ const sidebars = {
                   ],
                 },
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/custom-redis',
                 'getting-started/setup/instance-configuration/disable-intercom',
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-configuration/disable-user-signup',

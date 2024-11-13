@@ -11,10 +11,11 @@ Appsmith defaults to an embedded MongoDB database. Users may also choose to set 
 
 Before you begin with the setup, ensure that your environment meets the necessary requirements.
 
-- Ensure you are on Appsmith version v1.47 or greater. For more information, see [Update Appsmith](/getting-started/setup/instance-management/update-appsmith).
-- Make sure you have at least 2 GB of free storage space for backup and restore tasks.
-- Ensure you have PostgreSQL version 14 or higher. 
-- Create a backup of the current Appsmith database. For more information, see the [Backup Appsmith database](/getting-started/setup/instance-management/appsmithctl#backup-database) guide.
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
+- Ensure that your external MongoDB instance has a replica set configuration in place. Connect to your database as the `admin` user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud _excluding serverless instances of MongoDB Atlas, which don't support replica sets,_ the replica set configuration is already set up for you.
+- Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
+- At least 2 GB of free storage space for backup and update tasks.
+- Before migrating your Appsmith instance to connect with the new MongoDB, make sure to perform a [backup](/getting-started/setup/instance-management/appsmithctl#backup-database) of the old MongoDB and [restore](/getting-started/setup/instance-management/appsmithctl#restore-database) it to the new MongoDB.
 
 ## Set up external MongoDB instance
 
@@ -30,16 +31,19 @@ To use an external MongoDB instance with Appsmith, you can either use an existin
 
 ## Connect Appsmith to external MongoDB
 
-1. Go to the directory containing the Appsmith configuration file, such as docker.env for Docker or values.yaml for Kubernetes.
+Follow these steps to configure Appsmith to connect to an external MongoDB instance:
+
+
+1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.
 
 
 2. Set the `APPSMITH_MONGODB_URI` environment variable with the following format:
 
 <dd>
 
-To connect to an external MongoDB server, you need to update the environment variable APPSMITH_MONGODB_URI with your MongoDB credentials in the connection string format. 
+To connect to an external MongoDB server, you need to update the environment variable `APPSMITH_MONGODB_URI` with your MongoDB credentials in the connection string format. 
 
-If your password or username contains special characters, you need to URL encode them. For instance, if the password is Something@123, it should be URL encoded as Something%40123, like:
+If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
 
 ```js
 // Syntax
