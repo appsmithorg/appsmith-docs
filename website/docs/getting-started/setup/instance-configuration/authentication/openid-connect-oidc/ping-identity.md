@@ -53,13 +53,16 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
   b. Click **Next**.
 
-  c. Enter the environment name and description. Click **Next**.
+  c. Enter the Environment name, description, Environment type, region, and license. Then click **Finish**.
 
 </dd>
 
-3. Open the newly created Environment, and from the sidebar, go to **Connections** > **Applications**.
 
-4. On the Applications homepage, click the **+** icon to create a new application. On the **Add Application** panel:
+3. Open the newly created environment and click **Manage Environment**.
+
+4. From the sidebar, go to **Connections > Applications.**
+
+5. On the Applications homepage, click the **+** icon to create a new application. On the **Add Application** panel:
 
 <dd>
 
@@ -75,7 +78,18 @@ To configure Appsmith to use [Ping Identity](https://www.pingidentity.com/en.htm
 
   a. Click the edit ✏️ icon, and check the **Refresh Token** option. This allows Ping Identity to issue refresh tokens to Appsmith for refreshing access tokens when they expire.
 
-  b. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
+  b. Add the **Redirect URL** from the OIDC configurations in Appsmith into the **Redirect URI** field.
+
+<dd>
+
+<ZoomImage src="/img/ping-odic-uri.png" alt="" caption="" />
+
+
+</dd>
+
+
+
+  c. Copy the following URLs from the **URLs** dropdown to add them later in the OIDC configurations in Appsmith:
 
   <dd>
 
@@ -117,7 +131,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 4. In the **Username Attribute** box, specify the name of the claim which represents the email of the user. The default value is `email`.
 
-Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+5. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
 :::info
 If you're running Appsmith on a **Kubernetes** cluster with an HA configuration, after completing the setup, run the following command to ensure the new authentication settings are properly applied:

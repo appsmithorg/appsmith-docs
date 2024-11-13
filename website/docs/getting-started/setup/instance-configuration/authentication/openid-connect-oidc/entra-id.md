@@ -152,7 +152,7 @@ To complete the OIDC configuration, you have to register the identity provider o
 
 5. In the **Username Attribute** box, specify the name of the claim as `sub` that uniquely identifies the user.
 
-Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
+6. Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
 :::info
 If you're running Appsmith on a **Kubernetes** cluster with an HA configuration, after completing the setup, run the following command to ensure the new authentication settings are properly applied:
