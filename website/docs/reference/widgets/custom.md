@@ -359,20 +359,10 @@ The `onThemeChange` function allows theme changes from the application to be app
 - `borderRadius`: Represents the border radius for rounded corners in the theme. For example, `0px` or `1.5rem`.
 - `borderShadow`: Represents the shadow applied to borders in the theme. For example, `0px 4px 6px rgba(0, 0, 0, 0.1)`.
 
-```js
-// Set theme properties of your component using a function.
-const unlisten = appsmith.onThemeChange((theme, oldTheme) => {
-  setPrimaryColor(theme.primaryColor);
-  setBackgroundColor(theme.backgroundColor);
-  setBorderRadius(theme.borderRadius);
-  setBorderShadow(theme.borderShadow);
-});
 
-// Unsubscribe when no longer interested in updates.
-unlisten();
-```
+To improve performance and avoid unnecessary resource usage, call the function returned by `onThemeChange` (e.g., `unlisten()`) to unsubscribe from theme updates when they are no longer needed.
 
-Example: If you want to create a button that adapts to the application's theme properties, you can use the `onThemeChange` function to dynamically apply styles like primary color, background color, border radius, and shadow.
+*Example:* If you want to create a button that adapts to the application's theme properties, you can use the `onThemeChange` function to dynamically apply styles like primary color, background color, border radius, and shadow.
 
 ```js
 function ThemedButton() {
