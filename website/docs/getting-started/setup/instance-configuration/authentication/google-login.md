@@ -7,7 +7,8 @@ sidebar_position: 1
 
 # Google OAuth
 
-Appsmith provides a way to integrate with Google OAuth 2.0, enabling end users to sign in to the Appsmith account using their Google authentication credentials.
+This page shows how to configure Appsmith to use Google OAuth 2.0 as an authentication provider. By integrating with Google OAuth 2.0, Appsmith enables end users to sign in to their Appsmith accounts using their Google credentials.
+
 
 ## Prerequisites
 
