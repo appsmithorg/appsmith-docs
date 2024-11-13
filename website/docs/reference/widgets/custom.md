@@ -352,7 +352,7 @@ appsmith.onReady(() => {
 
 <dd>
 
-The `onThemeChange` function allows you to subscribe to theme changes within the application and execute a callback when the theme is updated. This facilitates the dynamic adjustment of UI elements to reflect the current theme. The following theme properties are accessible:
+The `onThemeChange` function allows theme changes from the application to be applied to a Custom widget. It triggers a callback whenever the theme changes, enabling your widget to automatically reflect the updated design and style. The following theme properties are accessible:
 
 - `primaryColor`: Represents the primary color of the application theme. For example, `#FF5733`.
 - `backgroundColor`: Represents the background color of the application theme. For example, `#f0f0f0`.
