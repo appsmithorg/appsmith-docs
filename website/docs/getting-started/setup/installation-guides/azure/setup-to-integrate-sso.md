@@ -58,9 +58,14 @@ Follow these steps to set up a PostgreSQL instance in Azure. It is recommended t
 
 - **Username**: Enter your preferred username (for example, `pgadmin`).
 
-- **Password**: Set a secure password and confirm it.
+- **Password**: Set a secure password.
 
 <ZoomImage src="/img/azure-pg-auth.webp" alt="" caption="" />
+
+
+7. Once the setup is complete, click **Next: Networking**.
+
+
 
 
 </dd>
