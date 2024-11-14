@@ -360,7 +360,7 @@ The `onThemeChange` function allows theme changes from the application to be app
 - `borderShadow`: Represents the shadow applied to borders in the theme. For example, `0px 4px 6px rgba(0, 0, 0, 0.1)`.
 
 
-To improve performance and avoid unnecessary resource usage, call the function returned by `onThemeChange` (e.g., `unlisten()`) to unsubscribe from theme updates when they are no longer needed.
+If you no longer need to listen for theme changes, you can unsubscribe by calling the function as a return statement to `onThemeChange` (e.g., `unlisten()`).
 
 *Example:* If you want to create a button that adapts to the application's theme properties, you can use the `onThemeChange` function to dynamically apply styles like primary color, background color, border radius, and shadow.
 
