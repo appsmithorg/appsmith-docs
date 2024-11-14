@@ -165,7 +165,7 @@ To connect your PostgreSQL database to Appsmith, follow these steps:
 
 <dd>
 
-Get the URL from the **Connection Strings** section of your Azure PostgreSQL instance. 
+Get the `APPSMITH_KEYCLOAK_DB_URL` from the **Connection Strings** section of your Azure PostgreSQL instance. 
 
 *Example:*
 
