@@ -75,7 +75,17 @@ const sidebars = {
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                   ],
                 },
-                'getting-started/setup/installation-guides/azure-aci',
+                {
+                  type: 'category',
+                  label: 'Azure Container Instance',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/azure-aci',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
+                   ],
+                },
                 {
                   type: 'category',
                   label: 'Google Cloud Run',
