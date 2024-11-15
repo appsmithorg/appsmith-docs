@@ -352,16 +352,39 @@ appsmith.onReady(() => {
 
 <dd>
 
-Subscribe to theme changes and execute a callback function.
+The `onThemeChange` function allows theme changes from the application to be applied to a Custom widget. It triggers a callback whenever the theme changes, allowing your widget to automatically reflect the updated design and style. The following theme properties are accessible:
+
+- `primaryColor`: Represents the primary color of the application theme. For example, `#FF5733`.
+- `backgroundColor`: Represents the background color of the application theme. For example, `#f0f0f0`.
+- `borderRadius`: Represents the border radius for rounded corners in the theme. For example, `0px` or `1.5rem`.
+- `borderShadow`: Represents the shadow applied to borders in the theme. For example, `0px 4px 6px rgba(0, 0, 0, 0.1)`.
+
+
+If you no longer need to listen for theme changes, you can unsubscribe by calling the function as a return statement to `onThemeChange` (e.g., `unlisten()`).
+
+*Example:* If you want to create a button that adapts to the application's theme properties, you can use the `onThemeChange` function to dynamically apply styles like primary color, background color, border radius, and shadow.
 
 ```js
-// Set the primaryColor of your component using a function.
-const unlisten = appsmith.onThemeChange((theme, oldTheme) => {
-  setPrimaryColor(theme.primaryColor);
-});
+function ThemedButton() {
+	const [themeStyles, setThemeStyles] = React.useState({});
 
-// Unsubscribe when no longer interested in updates.
-unlisten();
+	React.useEffect(() => {
+		// Listen for theme changes and update button styles
+		const unlisten = appsmith.onThemeChange((theme) => {
+			setThemeStyles({
+				color: theme.primaryColor,
+				backgroundColor: theme.backgroundColor,
+				borderRadius: theme.borderRadius,
+				boxShadow: theme.borderShadow,
+			});
+		});
+		return () => unlisten(); // Clean up listener on unmount
+	}, []);
+
+	return (
+		<Button style={themeStyles}>Next</Button>
+	);
+}
 ```
 
 </dd>
