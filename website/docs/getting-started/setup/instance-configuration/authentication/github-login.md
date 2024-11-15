@@ -54,9 +54,9 @@ This page shows how to configure Appsmith to use [GitHub OAuth](https://docs.git
 
 
 
-## Register Github in Appsmith
+## Register GitHub OAuth in Appsmith
 
-To complete the Github configuration, you have to register the provider on Appsmith. Go to **Admin Settings > Authentication > Github**, and follow the steps below:
+To complete the Github OAuth configuration, you have to register the provider on Appsmith. Go to **Admin Settings > Authentication > Github**, and follow the steps below:
 
 
 <ZoomImage src="/img/github-appsmith-settings.png" alt="" caption="" />

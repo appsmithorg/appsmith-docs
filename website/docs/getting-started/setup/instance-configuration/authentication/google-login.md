@@ -82,9 +82,9 @@ This page shows how to configure Appsmith to use [Google OAuth 2.0](https://deve
 </dd>
 
 
-## Register Google in Appsmith
+## Register Google OAuth in Appsmith
 
-To complete the Google configuration, you have to register the provider on Appsmith. Go to **Admin Settings > Authentication > Google**, and follow the steps below:
+To complete the Google OAuth configuration, you have to register the provider on Appsmith. Go to **Admin Settings > Authentication > Google**, and follow the steps below:
 
 <ZoomImage src="/img/google-auth-appsmith.png" alt="" caption="" />
 
