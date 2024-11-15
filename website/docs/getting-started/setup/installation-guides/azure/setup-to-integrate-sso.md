@@ -162,11 +162,11 @@ Replace `your_username` and `your_password` with your actual credentials.
 
 </dd>
 
-## Configure PostgreSQL in Appsmith
+## Connect PostgreSQL to Appsmith
 
 To connect your PostgreSQL database to Appsmith, follow these steps:
 
-1. Open your `docker-compose.yml` file for the Appsmith setup and add the PostgreSQL configuration under the `environment` section.
+1. Open your `docker-compose.yml` file for the Appsmith and add the PostgreSQL configuration under the `environment` section.
 
 <dd>
 
