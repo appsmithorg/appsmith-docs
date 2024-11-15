@@ -102,10 +102,6 @@ After setting up your PostgreSQL instance, connect to it using the provided cred
 <ZoomImage src="/img/azure-db-pg.webp" alt="" caption="" />
 
 
-
-
-
-
 1. In the Azure Portal, navigate to **All resources** and select your PostgreSQL server instance.
 
 2. Find your connection details (`host`, `port`, `username`, and `database name`).
@@ -124,7 +120,7 @@ psql -h appsmith.postgres.database.azure.com -p 5432 -U pgadmin postgres
 
 </dd>
 
-## Create the Keycloak Database and User
+## Create Keycloak Database and User
 
 Once connected to your PostgreSQL database, create a new database for Keycloak and a user with appropriate roles.
 
