@@ -31,15 +31,17 @@ This page shows how to configure Appsmith to use [Google OAuth 2.0](https://deve
 
 2. Create a new project, and navigate to the **OAuth consent screen** under APIs & Services. Configure and register your app based on your target users, and click **Create**.
 
+
+
+3. In the **OAuth consent screen**, enter the app information, contact email, and specify the **Authorized domains** where Appsmith is hosted. Click **Save and Continue**.
+
 <dd>
 
 <ZoomImage src="/img/auth-google-oauth.png" alt="" caption="" />
 
 </dd>
 
-3. In the **OAuth consent screen**, enter the app information, contact email, and specify the **Authorized domains** where Appsmith is hosted. Click **Save and Continue**.
-
-4. In the **Scopes** section, dd scopes such as `email`, `profile`, and `openid`, or others as needed. Click **Save and Continue**.
+4. In the **Scopes** section, add scopes such as `email`, `profile`, and `openid`, or others as needed. Click **Save and Continue**.
 
 
 <dd>
@@ -51,7 +53,7 @@ This page shows how to configure Appsmith to use [Google OAuth 2.0](https://deve
 
 5. Add **Test** users if needed, then click **Save**.
 
-6. Navigate to the **Credentials** screen, click **Create Credentials**, and select **OAuth client ID**.
+6. Navigate to the **Credentials** section, click **Create Credentials**, and select **OAuth client ID**.
 
 <dd>
 
