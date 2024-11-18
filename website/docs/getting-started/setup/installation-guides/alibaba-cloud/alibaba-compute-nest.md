@@ -1,11 +1,11 @@
 ---
-description: Deploy Appsmith on the ECS on Alibaba cloud.
+description: Deploy Appsmith on Alibaba cloud compute nest.
 
 ---
 
-# Alibaba ECS
+# Alibaba Cloud Compute Nest
 
-This page provides one click install Appsmith on Alibaba cloud using an ECS instance.
+This page provides one click install Appsmith on Alibaba cloud compute nest using an ECS instance.
 
 ## Prerequisites
 
@@ -17,13 +17,19 @@ This page provides one click install Appsmith on Alibaba cloud using an ECS inst
    deployment link and fill in the deployment parameters as prompted.
 2. Select payment type.
 3. Enter instance parameters and fill in the zone, and click Next: Confirm Order.
+   <ZoomImage src="/img/alibaba-cloud-confirm-order.jpg" alt="Confirm Order of Appsmith." caption="Confirm Order of Appsmith" />
+
 4. Confirm all parameters and estimate price, click Create Now and wait for the service instance deployment to complete.
 5. After the service instance is deployed, click the instance ID to go to the details page, and click serverAccess.
+   <ZoomImage src="/img/alibaba-cloud-service-instance.jpg" alt="Service Instance List." caption="ervice Instance List" />
+   <ZoomImage src="/img/alibaba-cloud-access-url.jpg" alt="Find Access Url." caption="Find Access Url" />
+
 6. Access the Appsmith dashboard.
+   <ZoomImage src="/img/alibaba-cloud-appsmith-dashboard.jpg" alt="Appsmith Dashboard." caption="Appsmith Dashboard" />
 
 ## Billing instructions
 
-The cost of Appsmith community edition deployment in computing nest mainly involves:
+The cost of Appsmith deployment in alibaba cloud compute nest mainly involves:
 
 1. selected vCPU and memory specifications
 2. System disk type and capacity
