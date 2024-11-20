@@ -1,7 +1,7 @@
 ---
 description: Follow the guide to migrate to the Appsmith Commercial Edition running on v3 Helm chart.
 ---
-# Migrate to Commercial Edition Helm Chart v3
+# Upgrade to Commercial Edition Helm Chart v3
 
 Follow the below guide to migrate to the Commercial Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 

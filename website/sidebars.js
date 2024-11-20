@@ -60,7 +60,7 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Installation Management',
+          label: 'Manage Installation',
           link: {
             type: 'doc',
             id: 'getting-started/setup/instance-configuration/README',
@@ -165,12 +165,13 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/disable-intercom',
               ],
             },
+            'getting-started/setup/instance-configuration/admin-settings',
             'getting-started/setup/environment-variables',
           ],
         },
         {
           type: 'category',
-          label: 'Installation Upgrade Guides',
+          label: 'Upgrade Installation Guides',
           link: {
             type: 'doc',
             id: 'getting-started/setup/instance-management/README',
@@ -195,9 +196,10 @@ const sidebars = {
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
             },
+            'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
             {
               type: 'category',
-              label: 'Upgrading to Commercial Editions',
+              label: 'Upgrade to Commercial Edition',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/manage-editions/README',
