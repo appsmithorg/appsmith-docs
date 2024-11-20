@@ -206,8 +206,19 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/manage-plans/upgrade-plan',
-                'getting-started/setup/upgrade-from-community-edition/docker',
-                'getting-started/setup/upgrade-from-community-edition/kubernetes',
+                {
+                  type: 'category',
+                  label: 'Upgrade from Community Edition',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/upgrade-from-community-edition/README',
+
+                  },
+                  items: [
+                    'getting-started/setup/upgrade-from-community-edition/docker',
+                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
+                  ]
+                },
               ],
             },
             'getting-started/setup/manage-plans/downgrade-plan',
