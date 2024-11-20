@@ -1,4 +1,4 @@
-# Install Appsmith
+# New Installation
 
 Depending on your infrastructure, you can choose one of the following guides to deploy Appsmith. 
 

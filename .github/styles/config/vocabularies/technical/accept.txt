@@ -154,3 +154,5 @@ Droplet
 Enable webhook trigger
 Validation
 Issuer
+Admin settings
+Helm
