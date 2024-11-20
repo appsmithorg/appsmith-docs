@@ -1,16 +1,33 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Custom Widgets 
+# Create Image Gallery Using Custom Widget
 
-This guide shows how to create a Custom widget using React.
+This guide shows how to create a image gallery or slider using the [Custom widget](/reference/widgets/custom).
 
 
 While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
+## Prerequisites
+
+- Basic knowledge of React, including JSX and component creation.
+- Basic knowledge of UMD and ESM module formats for importing third-party libraries.
+
+
 <VideoEmbed host="youtube" videoId="KUTBWhu_E5Y" title="How To Building an Image Gallery with React.js" caption="Building an Image Gallery with React.js"/>
 
 ## Configure Custom Widget
+
+<dd>
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/gWn3T07t0tVz1cZU5kXb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
+
+</dd>
 
 1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
@@ -21,64 +38,54 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 <dd>
 
+
 To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
-    * For UMD, include the library with a script tag in the HTML file:
-
-      ```html
-      <script src="link-to-the-UMD-file"></script>
-      ```
-
-    * For ESM, use an import statement at the top of the JavaScript file:
-
-      ```js
-      import ThirdPartyComponent from "link-to-the-ESM-file";
-      ```
-</dd>
-
-4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
-
-<dd>
-
-
-:::warning
-* Wait for the parent application to be ready before accessing the model or triggering events in the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) and pass a handler function, which is triggered when the parent application is ready, initiating the rendering of your component from this function.
-
-* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
-:::
-
-*Example*:  Image carousel using the [React image gallery](https://www.jsdelivr.com/package/npm/react-image-gallery) library, import the necessary libraries and render the app function accordingly.
+For the image gallery, you'll need to import the following libraries:
 
 <Tabs>
+  <TabItem value="js" label="JS" default>
+   
+You need to import React and ReactDOM to create and render the Custom Widget components. These libraries are fundamental for building interactive UIs. See [React Documentation](https://react.dev/).
+
+Additionally, the [React Image Gallery library](https://www.npmjs.com/package/react-image-gallery) provides an intuitive and customizable gallery interface with features like autoplay and thumbnails.
+
+```js
+import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';
+import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';
+import ImageGallery from 'https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/+esm';
+```
+  </TabItem>
   <TabItem value="html" label="HTML">
 
-```html
-<!-- no need to write html, head, body tags, it is handled by the widget -->
-<div id="root"></div>
+For styling the image gallery, you need to include the CSS file provided by the `react-image-gallery` library. This ensures the gallery's default appearance is correctly rendered.
 
-<!-- Including the stylesheet for the React Image Gallery from the specified CDN. -->
- 
-<link href="
-https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css
-" rel="stylesheet">
+Add the following `<link>` tag to include the library’s CSS file directly from a CDN:
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css" rel="stylesheet">
 ```
 
   </TabItem>
-  <TabItem value="jss" label="JS" default>
+</Tabs>
+
+</dd>
 
 
+4. Define an array of image objects for the gallery. You can use static images, but if needed, you can dynamically fetch images using a query. This step will set up the App component that renders the image gallery.
+
+<dd>
+
+<Tabs>
+  <TabItem value="js" label="JS" default>
+   
 
 ```js
-// Importing necessary React libraries
-import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm'
-import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm'
+// Import the required library
 
-// Importing the ImageGallery component from the specified CDN
-import ImageGallery from 'https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/+esm';
-
-// App component using the ImageGallery with the specified images
+// Define the App component with the image gallery
 function App() {
-  // Array of image objects for the carousel
+  // Array of image objects for the carousel (Static Images Example)
   const images = [
     {
       original: "https://picsum.photos/id/1018/1000/600/",
@@ -91,31 +98,80 @@ function App() {
     {
       original: "https://picsum.photos/id/1019/1000/600/",
       thumbnail: "https://picsum.photos/id/1019/250/150/",
-    }
+    },
   ];
 
+  // Render the ImageGallery component with the images
   return <ImageGallery.default items={images} />;
 }
-
-// Rendering the App component when widget is ready
-appsmith.onReady(() => {
-  reactDom.render(<App />, document.getElementById("root"));
-});
 ```
+  </TabItem>
+  <TabItem value="html" label="HTML">
+```html
+<!-- no need to write html, head, body tags, it is handled by the widget -->
+<div id="root"></div>
+
+<!-- Including the stylesheet for the React Image Gallery from the specified CDN. -->
+ 
+<link href="
+https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css
+" rel="stylesheet">
+```
+
   </TabItem>
 </Tabs>
 
 </dd>
 
+5. Use `appsmith.onReady()` to ensure the App component is rendered only after the application is fully loaded. This step ensures that the gallery is displayed only when the parent application is ready.
+
+
+<dd>
+
+:::warning
+* Wait for the parent application to be ready before accessing the model or triggering events in the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) and pass a handler function, which is triggered when the parent application is ready, initiating the rendering of your component from this function.
+
+* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
+:::
+
+<Tabs>
+  <TabItem value="js" label="JS" default>
+
+```js
+function App() {
+  // Image gallery code
+}
+
+//Render the App component into the container after the parent app is ready
+appsmith.onReady(() => {
+  ReactDOM.render(<App />, document.getElementById("widget-container"));
+});
+```
+
+
+
+  </TabItem>
+</Tabs>
+
+</dd>
+
+
+
 ## Pass data from Appsmith to Custom widget
 
 Follow these steps to pass parameters from Appsmith to the Custom widget:
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/RuWBzSnHKfN9KcdqXj2b?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
+  </iframe>
+</div>
+
 
 1. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.
 
 <dd>
 
-*Example:* For the image slider, add code that captures image or document URL, like:
+For the image gallery, add code that captures image or document URL, like:
 
 
 ```js
@@ -127,31 +183,34 @@ Follow these steps to pass parameters from Appsmith to the Custom widget:
   ]
 }
 
-```
 
-To dynamically add data, whether from a query or a widget, you can use something like:
-
-
-```js
+//To dynamically add data, you can use something like:
+/*
 {"data": [
    {{tbl_users.selectedRow.passport}},
   // Add more entries as needed
 ]}
+*/
 ```
 
 
 </dd>
 
-2. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+2. To retrieve the data provided to the **Default model** property, use `appsmith.model` inside Custom widget builder.
 
- 
 <dd>
 
-*Example:* For the image carousel, use a map function to dynamically render images sourced from the **Default model** property.
+- To access the data in the javascript editor in Custom widget builder page, use `appsmith.model.{property-name}`.
 
-```js
+- To access data in CSS Editor in Custom widget builder page, use `var(--appsmith-model-{property-name}`.
 
-function App() {
+For the image gallery, use a `map` function to dynamically render images sourced from the **Default model** property.
+
+<Tabs>
+  <TabItem value="js" label="JS" default>
+
+ ```js
+ function App() {
   // Fetching image URLs 
   // highlight-next-line
   const imageUrls = appsmith.model.data;
@@ -173,6 +232,10 @@ function App() {
 //To access data in CSS use var(--appsmith-model-{property-name}
 ```
 
+  </TabItem>
+</Tabs>
+
+
 </dd>
 
 ## Pass data from Custom widget to Appsmith
@@ -185,10 +248,12 @@ Follow these steps to pass parameters from the Custom widget to Appsmith:
 
 <dd>
 
-*Example*: To retrieve the index of the current slide, add an `onSlide` event handler(provided by the library), and use `updateModel` to store the selected index, like: 
+To retrieve the index of the current slide, add an `onSlide` event handler(provided by the library), and use `updateModel` to store the selected index, like: 
 
-```js
-//JS
+<Tabs>
+  <TabItem value="js" label="JS" default>
+
+ ```js
 function App() {
   const imageUrls = appsmith.model.data;
 
@@ -215,6 +280,9 @@ function App() {
 }
 
 ```
+  </TabItem>
+</Tabs>
+
 
 To display data in a Text widget, set its **Text** property to:
 
