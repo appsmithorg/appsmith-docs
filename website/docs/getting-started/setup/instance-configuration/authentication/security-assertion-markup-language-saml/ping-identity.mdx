@@ -93,14 +93,6 @@ Open your application, go to the **Attribute Mapping** tab, click on the **Edit 
 
 ## Register Ping Identity in Appsmith
 
-:::caution
-If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO.  
-
-For detailed instructions, see the following guides:  
-- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
-- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
-- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
-:::
 
 To complete the SAML configuration, you must register the identity provider on Appsmith. Appsmith provides three options to register the identity provider, as mentioned below:
 
@@ -109,11 +101,22 @@ To complete the SAML configuration, you must register the identity provider on A
 
 To register Ping Identity as the identity provider on Appsmith, follow the steps below:
 
-1. Go to the **SAML 2.0** configuration page in Appsmith, and navigate to **Register Identity Provider** section.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Add the copied **IDP Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
-3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Go to the **SAML 2.0** configuration page in Appsmith, and navigate to **Register Identity Provider** section.
+
+3. Add the copied **IDP Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+4. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
@@ -130,13 +133,24 @@ b. In the **Value** field, enter the exact **Attributes name** that you copied f
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
 
-1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Open the downloaded Metadata file in a browser and copy the XML content.
 
-2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+<dd>
 
-3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**.
+
+3. Open the downloaded Metadata file in a browser and copy the XML content.
+
+4. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+
+5. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
@@ -152,11 +166,22 @@ b. In the **Value** field, enter the exact **Attributes name** that you copied f
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**. 
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Open the downloaded Metadata file in a browser.
 
-2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open your Ping identity application, go to **Configurations**, and click **Download Metadata**. 
+
+3. Open the downloaded Metadata file in a browser.
+
+4. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 <dd>
 
@@ -169,7 +194,7 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 </dd>
 
-3. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
+5. To configure custom SAML claims (if added in the Ping Identity's User Attribute) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
