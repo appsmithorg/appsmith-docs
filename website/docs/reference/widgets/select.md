@@ -59,7 +59,7 @@ If you are generating options for Select widget using JS code as shown above, ma
 
 <dd>
 
-The Label Key property specifies which key in the **Source Data** should be used to display labels for dropdown options. When using the *JS* mode for dynamic configurations, the value must evaluate to a valid property name present in each object of the data array. You cannot manipulate the data directly (e.g., applying `.toLowerCase()` or `.toUpperCase()` within the key). 
+The Label Key property specifies the key in the **Source Data** used to display labels for dropdown options. When using the **JS** mode for dynamic configurations, the value must evaluate to a valid property name present in each object of the data array. Data cannot be manipulated directly (for example, applying `.toLowerCase()` or `.toUpperCase()`).
 
 *Example:* If your API provides multilingual data like:
 
@@ -85,7 +85,7 @@ And you want to display the label based on the selected language, you can config
 
 <dd>
 
-The Value Key property specifies which key in the **Source Data** should be used as the unique identifier for each dropdown option. When using the **JS** mode for dynamic configurations, the value must evaluate to a valid property name in the data object. This ensures that each dropdown option has a unique, identifiable value.
+The Value Key property specifies which key in the **Source Data** is used as the unique identifier for each dropdown option. When using the **JS** mode for dynamic configurations, the value must evaluate to a valid property name in the data object. This ensures that each dropdown option has a unique, identifiable value.
 
 </dd>
 
