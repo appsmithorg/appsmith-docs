@@ -92,10 +92,6 @@ In the **Attribute Statements** section, add your custom attributes:
 
 ## Register Okta in Appsmith
 
-:::caution
-If you are running Appsmith on **Google Cloud Run** or **AWS ECS**, make sure to configure your service before setting up SSO. For detailed instructions, see the [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso), or [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs) guide.
-:::
-
 To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
 <Tabs queryString="okta-saml">
@@ -104,11 +100,22 @@ To complete the SAML configuration, you have to register the identity provider o
 
 To register Okta as the identity provider on Appsmith, follow the steps below:
 
-1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
-3. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+
+3. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+4. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
@@ -125,11 +132,22 @@ b. In the **Value** field, enter the exact **claim name** that you copied from t
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
 
-1. Open the copied Metadata URL in a browser tab and copy the XML content.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
-3. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the copied Metadata URL in a browser tab and copy the XML content.
+
+3. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+
+4. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
@@ -146,9 +164,20 @@ b. In the **Value** field, enter the exact **claim name** that you copied from t
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the Metadata URL in a browser tab or open the Metadata XML file.
+
+3. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 <dd>
 
@@ -161,7 +190,7 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 </dd>
 
-3. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
+4. To configure custom SAML claims (if added in the Okta's Attribute Statements) in Appsmith, Click the **Advanced** section.
 
 <dd>
 
