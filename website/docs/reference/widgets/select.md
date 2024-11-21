@@ -55,7 +55,7 @@ If you are generating options for Select widget using JS code as shown above, ma
 
 </dd>
 
-#### Label Key `string`
+#### Label key `string`
 
 <dd>
 
@@ -81,7 +81,7 @@ And you want to display the label based on the selected language, you can config
 
 </dd>
 
-#### Value Key `string`
+#### Value key `string`
 
 <dd>
 
