@@ -3,7 +3,7 @@ description: This page provides steps to upgrade Appsmith to the checkpoint vers
 toc_max_heading_level: 2
 ---
 
-# Upgrade to Checkpoint Version
+# Upgrade to Checkpoint Version v1.9.2
 
 A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
 

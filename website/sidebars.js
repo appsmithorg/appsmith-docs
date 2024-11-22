@@ -163,6 +163,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/frame-ancestors',
                 'advanced-concepts/version-control-with-git/updating-local-file-path',
                 'getting-started/setup/instance-configuration/disable-intercom',
+                'getting-started/setup/instance-configuration/configure-using-environment-variables',
               ],
             },
             'getting-started/setup/instance-configuration/admin-settings',

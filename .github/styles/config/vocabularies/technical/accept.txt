@@ -156,3 +156,11 @@ Validation
 Issuer
 Admin settings
 Helm
+Environment Variables
+Checkpoint Version
+Upgrade
+v1.9.2
+Versions
+Commercial Edition
+AWS 
+EFS

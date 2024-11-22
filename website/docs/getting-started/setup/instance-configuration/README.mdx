@@ -1,125 +1,319 @@
 ---
-description: >-
-  Appsmith ships with third-party services & configurations that improve the app-
-  building experience. All services & configurations are entirely optional.
+description: Appsmith ships with third-party services and configurations that enhance the app-building experience. This page provides comprehensive guides to set up authentication, custom domains, email configurations, and more.
+---
+# Manage Installation  
+
+This page provides detailed resources to assist you in configuring and managing your Appsmith installations. The following guides will help you set up high availability, authentication methods, custom domains, email configurations, and more, enabling you to configure and maintain your Appsmith instance efficiently.
+
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+## High availability guides  
 
-# Manage Installation
+<div className="containerGridSampleApp">
 
-This page provides instructions on how to configure your self-hosted Appsmith instance. You can configure a self-hosted Appsmith instance by choosing any one of the below options:
-* [Admin Settings](#admin-settings) 
-* [Environment Variables](#environment-variables)
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/installation-guides/kubernetes/configure-high-availability"><strong>High Availability for Kubernetes</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up a highly available Appsmith instance on Kubernetes.</div>
+   </div>
 
-## Admin settings
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability"><strong>High Availability for AWS ECS</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Learn how to enable high availability for Appsmith on AWS ECS.</div>
+   </div>
 
-The Admin settings page allows [instance administrators](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) on self-hosted instances to manage instance configurations, including email, authentication, Google Maps integration, as well as user settings and permissions. for more information, see [Environment Variables](/getting-started/setup/environment-variables) reference guide.
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs"><strong>Setup PostgreSQL on AWS ECS</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Configure a PostgreSQL database for high availability on AWS ECS.</div>
+   </div>
 
-## Environment variables
-You may also choose to configure your self-hosted Appsmith instance using environment variables. For more information about available environment variables in Appsmith, see [Environment Variables](/getting-started/setup/environment-variables) reference.
+</div>
 
-### Configure Docker installations
+<div className="containerGridSampleApp">
 
-To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add the Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
+   <!-- Second Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/installation-guides/google-cloud-run/manage-traffic"><strong>Manage Traffic on Google Cloud Run</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up traffic management for Appsmith on Google Cloud Run.</div>
+   </div>
 
-```bash
-APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
-```
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso"><strong>Setup Google Cloud Run with SSO</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Integrate SSO with Appsmith on Google Cloud Run.</div>
+   </div>
 
-After making changes, be sure to **restart the docker containers** for the changes to take effect. Run the below command to restart the Appsmith container.
+   <div className="columnGrid column-three" style={{margin: "10px"}}></div>
 
-* Docker run
-  ```bash
-   docker restart appsmith
-  ```
-* Docker Compose
-  ```bash
-   docker-compose restart appsmith
-  ```
+</div>
 
-### Configure Helm installations
+---
 
-You can modify your Appsmith installation on Kubernetes using a `values.yaml` file. Follow these steps to update the values:
+## Authentication guides  
 
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-<TabItem label="Community Edition" value="communityEdition"> 
+<div className="containerGridSampleApp">
 
-1. Go to the root directory of your installation.
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/authentication"><strong>Authentication Overview</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Explore all available authentication setups for Appsmith.</div>
+   </div>
 
-2. Generate the `values.yaml` file with:
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/authentication/google-login"><strong>Google Login</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up Google Login for user authentication.</div>
+   </div>
 
-  ```bash
-  helm show values appsmith/appsmith > values.yaml
-  ```  
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/authentication/github-login"><strong>GitHub Login</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Enable GitHub Login for Appsmith users.</div>
+   </div>
 
-3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
+</div>
 
-  ```yaml
-  applicationConfig:
-    #highlight-next-line
-    APPSMITH_MAIL_FROM:"test@test.com"
-  ```
+<div className="containerGridSampleApp">
 
-4. Update the values with:
+   <!-- Second Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/authentication/saml-sso"><strong>SAML SSO</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Configure SAML SSO for secure user authentication.</div>
+   </div>
 
-  ```bash
-  helm upgrade appsmith appsmith/appsmith -f values.yaml -n appsmith
-  ```
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc"><strong>OpenID Connect SSO</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up OpenID Connect for seamless SSO integration.</div>
+   </div>
 
-</TabItem>
-<TabItem label="Commercial Edition" value="commercialEdition"> 
+   <div className="columnGrid column-three" style={{margin: "10px"}}></div>
 
-1. Go to the root directory of your installation.
+</div>
 
-2. Generate the `values.yaml` file with:
+---
 
-  ```bash
-  helm show values appsmith-ee/appsmith > values.yaml
-  ```  
+## Custom domain and SSL guides  
 
-3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
+<div className="containerGridSampleApp">
 
-  ```yaml
-  applicationConfig:
-    #highlight-next-line
-    APPSMITH_MAIL_FROM:"test@test.com"
-  ```
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/custom-domain"><strong>Custom Domain & SSL Overview</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Overview of setting up custom domains and SSL for Appsmith.</div>
+   </div>
 
-4. Update the values with:
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/custom-domain/configure-tls"><strong>Configure TLS</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Enable TLS for secure communication on custom domains.</div>
+   </div>
 
-  ```bash
-  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
-  ```
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate"><strong>Custom CA Root Certificate</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up a custom CA root certificate for Appsmith.</div>
+   </div>
 
-</TabItem>
-</Tabs> 
+</div>
 
+---
 
-### Configure ECS installations
+## Email setup guides  
 
-To configure an ECS installation, follow these steps:
+<div className="containerGridSampleApp">
 
-1. Navigate to the ECS console and select Task Definitions on the sidebar.
-2. Click the Task Definition used by your ECS instance, and hit Create new revision.
-3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs, as shown below.
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/email"><strong>Email Setup Overview</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up email for your Appsmith instance.</div>
+   </div>
 
-![ECS environment image](</img/ecs-task-env_(1).png>)
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/email/gmail"><strong>Gmail Setup</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Configure Gmail as your email provider.</div>
+   </div>
 
-It's recommended to use AWS Secrets for sensitive information. Follow these steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/email/amazon-ses"><strong>Amazon SES Setup</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up Amazon SES to send emails from Appsmith.</div>
+   </div>
 
-1. Hit the Update button, and hit Create to make a new task definition.
-2. Navigate back to the ECS console and select your cluster. Click your service to open the service details.
-3. Click Update, and select the latest revision of the Task Definition.
-4. Hit Skip to review and then Update Service. The screen below shows the status.
+</div>
 
-![Instance configuration ECS service restart image](/img/instance-configuration-ecs-service-restart.png)
+<div className="containerGridSampleApp">
 
-It may take a minute for the new ECS Task to start running.
+   <!-- Second Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/email/microsoft-365"><strong>Microsoft 365 Setup</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up Microsoft 365 for email integration with Appsmith.</div>
+   </div>
 
-## Further reading
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/email/sendgrid"><strong>SendGrid Setup</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up SendGrid to send emails from Appsmith.</div>
+   </div>
 
-* [Signup Restriction](/getting-started/setup/instance-configuration/disable-user-signup)
-* [Disable Intercom](/getting-started/setup/instance-configuration/disable-intercom)
-* [Frame Ancestors](/getting-started/setup/instance-configuration/frame-ancestors)
+   <div className="columnGrid column-three" style={{margin: "10px"}}></div>
+
+</div>
+
+---
+
+## Other configuration guides  
+
+<div className="containerGridSampleApp">
+
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/http-proxy"><strong>Set up HTTPS Proxy</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Configure an HTTPS proxy for Appsmith.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-management/supervisor"><strong>Setup Supervisor Monitoring</strong></a>
+       </div>
+              <hr/>
+       <div className="containerDescription">Monitor Appsmith processes using Supervisor.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-management/how-to-get-container-logs"><strong>Getting Container Logs</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Learn how to access and view container logs for troubleshooting.</div>
+   </div>
+
+</div>
+
+<div className="containerGridSampleApp">
+
+   <!-- Second Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/file-size-limit"><strong>Increase File Upload Size Limit</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Increase the file upload size limit for your Appsmith instance.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/disable-user-signup"><strong>Restrict Signups</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Disable or restrict user signups for Appsmith.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-three">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/google-maps"><strong>Configure Google Maps</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up Google Maps for location-based functionalities in Appsmith.</div>
+   </div>
+
+</div>
+
+<div className="containerGridSampleApp">
+
+   <!-- Third Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-management/maintenance-window"><strong>Schedule Maintenance Windows</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Learn how to schedule maintenance windows for Appsmith.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/frame-ancestors"><strong>Configure Frame Ancestors</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Set up frame ancestors to manage embedded content securely.</div>
+   </div>
+
+   <div className="columnGrid column-three" style={{margin: "10px"}}></div>
+
+</div>
+
+---
+
+## Admin settings  
+
+<div className="containerGridSampleApp">
+
+   <!-- First Row -->
+   <div className="containerColumnSampleApp columnGrid column-one">
+       <div className="containerCol">
+           <a href="/getting-started/setup/instance-configuration/admin-settings"><strong>Admin Settings</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Configure admin settings for managing your Appsmith instance.</div>
+   </div>
+
+   <div className="containerColumnSampleApp columnGrid column-two">
+       <div className="containerCol">
+           <a href="/getting-started/setup/environment-variables"><strong>Environment Variables</strong></a>
+       </div>
+       <hr/>
+       <div className="containerDescription">Manage environment variables for your Appsmith instance.</div>
+   </div>
+
+   <div className="columnGrid column-three" style={{margin: "10px"}}></div>
+
+</div>
