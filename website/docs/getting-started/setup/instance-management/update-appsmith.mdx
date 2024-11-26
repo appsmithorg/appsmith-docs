@@ -3,90 +3,97 @@ description: This page provides steps to update Appsmith to the latest version o
 toc_max_heading_level: 2
 ---
 
-# Update Appsmith
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
+# Upgrade Appsmith Versions
 
-## System requirements
-
-* At least 2 GB of free storage space for backup and update tasks.
+This page provides step-by-step instructions to update Appsmith to the latest version on your self-hosted instance.
 
 ## Prerequisites
 
-* Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
-* Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+Before updating, ensure the following prerequisites are met:
 
-## Update on Docker
+1. At least 2 GB of free storage for backup and update tasks.  
+2. Update your embedded or external MongoDB server to version 5.0 or later. Refer to the [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the [MongoDB Replica Set Upgrade Guide](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
+3. Create a backup of your Appsmith instance. Follow the [Backup instance guide](/getting-started/setup/instance-management/appsmithctl/#backup-instance).
 
-Before you begin the Appsmith update, ensure you have met all the [prerequisites](#prerequisites), and your current Appsmith version is v1.9.2 or later. If you're not on this version, see the [Upgrade to checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.
 
-Follow these steps to update Appsmith, use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
+## Update instance
 
-1. Go to the Appsmith installation directory. If you don't know the directory, find it with:
+Follow these steps to update Appsmith to latest version on your self-hosted instance:
 
-  ```bash
-  docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
-  ```
-2. Update the Appsmith installation to the latest version with:
+<Tabs queryString="current-platform-type">
 
-  ```bash
-  docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
-  ```
-The above command pulls the latest image of Appsmith and updates the installation after restarting the Docker container.
+<TabItem label="Docker" value="docker">
 
-You may choose to schedule automatic updates for your Appsmith Docker installation. For more information, see [Schedule Automatic Updates for Docker installation](/getting-started/setup/instance-management/maintenance-window#docker).
+1. Upgrade to the checkpoint version if your current version is older than v1.9.2. Refer to the [Upgrade to checkpoint version guide](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).  
+2. Locate your Appsmith installation directory by running:  
+   ```bash
+   docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
+   ``` 
+3. Pull the latest Appsmith image and restart the container:  
+   ```bash
+   docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
+   ```
 
-## Update on Kubernetes
+</TabItem>
 
-Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update Appsmith:
+<TabItem label="Kubernetes" value="kubernetes">
 
-* If you are on the **Community Edition**, update the installation to the latest release with:
+1. Upgrade to the checkpoint version if your current version is older than v1.9.2. Refer to the [Upgrade to checkpoint version guide](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).  
+2. Restart the container image:
+   - For **Commercial Edition**:  
+     ```bash
+     kubectl rollout restart deployment appsmith
+     ```
+   - For **Community Edition**:  
+     ```bash
+     kubectl rollout restart statefulset appsmith
+     ```
 
-  ```bash
-  kubectl rollout restart statefulset appsmith
-  ```
-* If you are on the **Commerical Edition**, update the Appsmith container image to the latest release with: 
+</TabItem>
 
-  ```bash
-  kubectl rollout restart deployment appsmith
-  ```
-You may choose to schedule automatic updates for your Appsmith Kubernetes installation. For more information, see [Schedule Automatic Updates for Kubernetes installation](/getting-started/setup/instance-management/maintenance-window#kubernetes ).
+<TabItem label="AWS ECS on EC2" value="aws-ecs-ec2">
 
-## Update on AWS ECS EC2
+1. Log in to your AWS account and navigate to the Amazon ECS console.  
+2. Select the cluster containing the container instance to update.  
+3. Stop the task and allow the system to deploy a new task automatically.  
+4. Verify the updated version is running successfully.
 
-Before you begin the update, ensure you have met all the [prerequisites](#prerequisites). Follow the below steps using the Classic Amazon Web Console to update Appsmith:
+</TabItem>
 
-1. Log in to your [AWS account](https://console.aws.amazon.com/ecs/).
-2. Go to the **Amazon ECS console**.
-3. Choose the **cluster** that has the container instance you wish to update.
-4. Click the **Tasks** tab.
-5. Select and click the **task** you wish to update. 
-6. Click the **Stop** button to stop the task. Wait for the automatic deployment of a new task to complete.
-7. Verify that the updated version of your application is running as expected.
+<TabItem label="Azure Container Instance" value="azure-ci">
 
-## Update on Azure container instance
+1. Navigate to the Azure Portal and locate the Azure Container Instance running Appsmith.  
+2. Restart the container by clicking the **Restart** button.
 
-Before you begin the update, ensure you have met all the [prerequisites](#prerequisites).
+</TabItem>
 
-1. Navigate to the Azure Container Instance (ACI) on the Azure Portal.
-2. Click the **ACI** running Appsmith.
-3. Click the **Restart** button.
-4. Wait until the ACI restarts with the latest Appsmith release.
+<TabItem label="DigitalOcean" value="digital-ocean">
 
-## Update on DigitalOcean
+1. SSH into your droplet and navigate to the Appsmith installation directory:  
 
-:::caution
-It's recommended to back up the Appsmith instance before performing an update. For more information, see [How to Create a backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
-:::
+   ```bash
+   cd /root/appsmith
+   ```  
+2. Pull the latest image and restart the installation:  
 
-SSH into your droplet and run the following command:
+   ```bash
+   docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
+   ```
 
-```
-cd /root/appsmith && docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
-```
+</TabItem>
 
-If you have updated your Appsmith instance and face any issues. You can roll back the changes and [restore the Appsmith instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) from a backup archive.
+</Tabs>
+
+
 
 ## Troubleshooting
 
-If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you encounter errors during the update, roll back to a previous version using the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) guide. If issues persist, contact support using the chat widget available on the bottom-right of this page.
+
+
+## See also
+
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date effortlessly.
