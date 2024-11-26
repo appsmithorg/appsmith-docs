@@ -164,3 +164,9 @@ Versions
 Commercial Edition
 AWS 
 EFS
+Admin
+docker
+URI
+domain
+Anonymous
+Git

@@ -1,74 +1,191 @@
 ---
-description: >-
-  Appsmith ships with third-party services & configurations that improve the app-
-  building experience. All services & configurations are entirely optional.
+description: This page provides information on configuring self-hosted Appsmith instance using Admin settings UI.
+toc_max_heading_level: 2
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Admin Settings
 
-The Admin Settings page allows [instance administrators](#add-instance-administrator) on self-hosted instances to manage instance configurations, including email, authentication, Google Maps integration, as well as user settings and permissions. This page provides instructions on how to manage your self-hosted Appsmith instance using Admin Settings.
+Appsmith allows instance administrators to manage settings through the **Admin Settings** page. These settings control all instance-wide configurations, including email settings, authentication methods, session management, and more. This page provides details about these settings and their configurations. 
 
-:::info
-If you don’t see the _Admin Settings_ icon in the top-right corner, you’re not an Instance Administrator for the Appsmith instance and must be granted instance administrator role by an existing instance administrator.
+:::caution important
+ **Note:** Settings configured via environment variables override any settings configured via the Admin Settings UI.
 :::
 
- <ZoomImage
-        src="/img/admin-settings-topbar.png"
-        alt="Admin Settings option is available in the left sidebar"
-        caption="Access admin settings from the top-right corner of the homepage."
-        lazyLoad="true"
-/>
+## General
 
-:::info
-If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
-:::
+This section provides information on configuration changes related to instance name, setting up instance administrators for your instance, Appsmith watermark and more.
 
-### Add Instance Administrator
+### Instance name
 
-Users who are granted the Instance Administrator role have full access to all the instance settings. 
-If you want to grant Instance Administrator privileges to a user, add their email address to the **Admin email** field in the **Settings** > **General** section. Doing so automatically assigns them the Instance Administrator role, giving them full access to manage instance settings. For more information about Instance Administrator role, see [Instance Administrator Role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) reference.
+<dd>
+Modify the name of your self-hosted Appsmith instance. This name is displayed in all places within the Appsmith platform, such as the top bar and login screen. You can customize this to suit your organization's branding.
+</dd>
 
-<ZoomImage
-  src="/img/admin-settings-assign-instance-administrator.png" 
-  alt="Add emails to assign the Instance Administrator role"
-  caption="Add emails to assign the Instance Administrator role"
-/>
+### Admin email
 
-### Configure instance
-The Admin settings enable the configuration of various settings such as user authentication, email notifications, integrations, and more using the user interface for your self-hosted Appsmith instance.
+<dd>
+Enter the email addresses of users you want to assign the **Instance Administrator** role. Multiple emails can be added, separated by commas. Instance Administrators have full control over instance settings and user management. For more information on the Instance Administrator role, see [Instance Administrator Role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role). 
 
-<ZoomImage
-  src="/img/Instance-Configuration-using-Admin-Settings.png" 
-  alt="Use Admin Settings to configure your instance"
-  caption="Configure Your Appsmith Instance"
-/>
+If you don’t see the Admin Settings icon on the top-right corner, you’re not an Instance Administrator for the Appsmith instance and must be granted instance administrator role by an existing instance administrator. 
+</dd>
 
-| Name | Type | Description |
-|----------------|----------------|----------------|
-| **Instance Name** | General | Modify the name of self-hosted instance|
-| **Admin Email** | General | Specify user emails whom you want to make the instance administrators of your self-hosted instance. Add comma-separated user's email to add more than one instance administrator.|
-| **Generated Docker Compose File** | General | Generate the Docker Compose file, which defines services for your Appsmith instance. |
-|**Share anonymous usage data** | General | Choose whether to share [anonymous usage data](/product/telemetry#opt-in-telemetry) with Appsmith to help improve the product.|
-| **Appsmith Watermark** | General | [Upgrade to Appsmith Commercial Edition](https://www.appsmith.com/pricing) to remove the **Built on qppsmith\_** badge on the app's bottom right corner.|
-| **User Session Limit** | General | When enabled, limits users to a single active session.|
-| **Session Timeout** | General | Sets a defined period of time, after which sessions with no user activity are automatically logged out. The minimum time you can set is 1 minute, and the maximum is 30 days, in `DD:HH:MM` format. The feature is exclusive to self-hosted, [Commercial Edition](https://www.appsmith.com/pricing) instances.
-| **Embed Settings** | General | Configure to allow users to embed Appsmith in external applications. You may choose to enable embedding on any domain, limit it to certain domains, or disable it completely.|
-| **Email** | Email | Configure Email on your Appsmith instance. For more information, see [Email](/getting-started/setup/instance-configuration/email).|
-| **Google Maps** | Google Maps | Configure to use the Maps widget on your instance. For more information, see [Google Maps](/getting-started/setup/instance-configuration/email). |
-| **Authentication** | Authentication | Configure the authentication type like [**Google OAuth**](/getting-started/setup/instance-configuration/authentication/google-login), [**GitHub OAuth**](/getting-started/setup/instance-configuration/authentication/github-login). If you are on the [Appsmith Commercial Edition](https://www.appsmith.com/pricing), you can also configure authentication using popular Single Sign-on (SSO) authentication protocols such as [**SAML**](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)  and [**OpenID Connect**](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).|
-| **MongoDB URI** | Advanced | Configure to use an external MongoDB database for your self-hosted instance. For more information about how to configure external MongoDB, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
-| **Redis URL** | Advanced |Configure to use an external Redis instance for your self-hosted instance. For more information about how to configure external Redis, see [Custom MongoDB & Redis](/getting-started/setup/instance-configuration/custom-mongodb-redis). |
-| **Custom Domain** | Advanced | Configure to [set up a custom domain](/getting-started/setup/instance-configuration/custom-domain) for your Appsmith instance. |
-| **Version** | Version | Shows the current version of Appsmith. |
-| **Branding** | Branding | Appsmith custom branding feature is exclusive to self-hosted, [Commercial Edition](https://www.appsmith.com/pricing) instances. It enables you to personalize workspaces and apps, including the login screen, invite emails, and error pages to match your company's branding. For more information about how to customize and apply branding, see [Branding](/advanced-concepts/branding).|
-| **Access Control** | Access Control | Access control is a feature exclusive to [Appsmith Commercial Edition](https://www.appsmith.com/pricing) users that implements Role Based Access Control by assigning specific permissions to different user roles. For more information, see [Access Control](/advanced-concepts/granular-access-control).|
-| **Audit Logs** | Others | The audit log feature in Appsmith is only available to [Appsmith Commercial Edition](https://www.appsmith.com/pricing) users and provides a record of all significant activities on the platform. For more information, see [Audit Logs](/advanced-concepts/audit-logs). |
+### Share anonymous usage data
 
-## Further reading
+<dd>
+This setting controls whether your Appsmith instance shares anonymous usage data with Appsmith to help improve the product. You can opt in or opt out at any time. This data helps Appsmith understand user behavior and make improvements.
+For more on the data shared, see [Appsmith Telemetry](#telemetry).
+</dd>
 
-* [Signup Restriction](/getting-started/setup/instance-configuration/disable-user-signup)
-* [Disable Intercom](/getting-started/setup/instance-configuration/disable-intercom)
-* [Frame Ancestors](/getting-started/setup/instance-configuration/frame-ancestors)
+### Appsmith watermark
+
+<dd>
+Enables the **Built on Appsmith** watermark, which appears on the bottom right corner of your app. If you want to remove this watermark, you need to upgrade to the [Appsmith Commercial Edition](https://www.appsmith.com/pricing).
+</dd>
+
+### Access roles and user groups 
+<dd>
+This settings controls whether you can access roles and user groups information of the users in Appsmith code. Enable this option to access the role and user groups information to build complex logic.
+</dd> 
+
+
+### User session limit
+
+<dd>
+When enabled, this setting ensures that users can only have a single active session at a time. If they try to log in from a new device or browser, the previous session will be logged out.
+For more details on managing sessions, refer to [User Sessions](#user-sessions).
+</dd>
+
+
+### Session timeout
+
+<dd>
+Set the inactivity timeout period for user sessions. If a user remains inactive for the specified time, they will automatically be logged out. The format is `DD:HH:MM`, with a minimum of 1 minute and a maximum of 30 days.
+This is useful for improving security and managing idle users. See [Managing User Sessions](#user-sessions).
+</dd>
+
+### Atomic pushes to Git
+
+<dd></dd>
+
+
+### Embed settings
+
+<dd>
+Configure whether users can embed Appsmith apps in external applications. You can choose to:
+- Allow embedding on any domain.
+- Restrict embedding to certain domains.
+- Disable embedding entirely.
+For more on how to embed Appsmith, see [Embed Appsmith](advanced-concepts/embed-appsmith-into-existing-application) guide.
+</dd>
+
+## Email
+
+<dd>
+Configure the email settings for your Appsmith instance. This includes setting up an SMTP server to handle email notifications and other communications such as password resets and invitations. You can quickly integrate with popular email service provider by following the guides:
+  * [Gmail](/getting-started/setup/instance-configuration/email/gmail) - to integrate Gmail as email service provider.
+  * [Amazon SES](getting-started/setup/instance-configuration/email/amazon-ses) - to integrate Amazon SES as email service provider.
+  * [Microsoft 365](/getting-started/setup/instance-configuration/email/microsoft-365) - to integrate Microsoft 365 as email service provider.
+  * [SendGrid](/getting-started/setup/instance-configuration/email/sendgrid) - to integrate SendGrid as email service provider.
+  
+  If you wish to setup other email service provider which is not listed above, follow the instructions available in the [Email Setup](/getting-started/setup/instance-configuration/email) guide.
+
+</dd>
+
+
+
+
+## Developer settings
+<dd>
+
+</dd>
+
+### Google maps configuration
+
+<dd>
+Configure the **Google Maps** integration for your Appsmith instance. This allows users to use the Maps widget to display Google maps in your apps. You need to enter a valid Google Maps API key for this functionality. For more on Google Maps integration, see [Google Maps Setup](/getting-started/setup/instance-configuration/google-maps) guide.
+</dd>
+
+
+### Authentication
+
+<dd>
+Set up the authentication method for your Appsmith instance. Supported methods include:
+- **Google OAuth**: Allow users to log in using their Google accounts.
+- **GitHub OAuth**: Enable GitHub authentication for users.
+- **SSO** (Single Sign-On): Available for Commercial Edition users, you can configure SSO with protocols like **SAML** or **OpenID Connect**.
+For more on configuring authentication, refer to [Authentication Methods](#authentication).
+</dd>
+
+
+### MongoDB URI
+
+<dd>
+Provide the connection URI for an external **MongoDB** database. If you're using a custom MongoDB setup instead of the default, enter the URI here. This allows Appsmith to connect to your MongoDB instance.
+For more information on setting up MongoDB, see [Custom MongoDB Setup](#custom-mongodb-setup).
+</dd>
+
+
+
+### Redis URL
+
+<dd>
+Specify the connection URI for an external **Redis** instance. Redis is used for caching and session management in Appsmith. If you're using a custom Redis setup, enter the URI here.
+For more on Redis configuration, see [Custom Redis Setup](#custom-redis-setup).
+</dd>
+
+
+
+### Custom domain
+
+<dd>
+Set up a **custom domain** for your Appsmith instance. This allows you to configure a personalized URL, replacing the default Appsmith URL with your own domain. 
+For more on setting up custom domains, refer to [Custom Domain Setup](#custom-domain-setup).
+</dd>
+
+
+
+### Version
+
+<dd>
+Displays the current version of Appsmith running on your instance. This is useful for keeping track of updates and ensuring compatibility with new features.
+</dd>
+
+
+
+### Branding
+
+<dd>
+Customize the branding of your Appsmith instance, including:
+- Login screen customization.
+- Email invitations.
+- Error pages.
+This feature is only available in the [Commercial Edition](https://www.appsmith.com/pricing).
+For more on branding, see [Appsmith Branding](#appsmith-branding).
+</dd>
+
+
+
+### Access control
+
+<dd>
+Enable **Role-Based Access Control** (RBAC) to define specific roles and permissions for users in your Appsmith instance. This allows you to control who can access which parts of the platform, enhancing security and user management.
+This feature is only available in the [Commercial Edition](https://www.appsmith.com/pricing).
+For more on access control, see [Role-Based Access Control](#role-based-access-control).
+</dd>
+
+
+
+### Audit logs
+
+<dd>
+Enable **Audit Logs** to keep track of significant actions taken by users in your Appsmith instance. This provides a detailed history of user activities for tracking, compliance, and security purposes.
+Audit logs are available only in the [Commercial Edition](https://www.appsmith.com/pricing).
+For more on audit logs, see [Audit Logs Setup](#audit-logs).
+</dd>
+
+
+
+### See also
+
+- [Signup restriction](/getting-started/setup/instance-configuration/disable-user-signup)
+- [Disable Intercom](/getting-started/setup/instance-configuration/disable-intercom)
+- [Frame ancestors](/getting-started/setup/instance-configuration/frame-ancestors)
