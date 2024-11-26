@@ -5,71 +5,68 @@ toc_max_heading_level: 2
 
 # Upgrade to Checkpoint Version v1.9.2
 
-A checkpoint version is a milestone release that ensures a proper application of any necessary database schema changes, optimizations, or other updates to prevent compatibility issues or data inconsistencies. When performing a manual update, you first need to upgrade to a checkpoint version if your Appsmith installation version is prior to `v1.9.2`. For a complete list of releases, see [Appsmith releases](https://github.com/appsmithorg/appsmith/releases).
-
-The available Appsmith checkpoint versions are as follows:
-
-  * `v1.9.2`
-  
-This page provides steps to upgrade Appsmith to the checkpoint version on your self-hosted Appsmith instance.
+Checkpoint versions are milestone releases that ensure your Appsmith instance applies necessary database schema updates, optimizations, and compatibility fixes. If your current Appsmith version is older than `v1.9.2`, upgrading to this checkpoint version is mandatory before moving to later releases. This page provides step-by-step instructions to upgrade your self-hosted Appsmith instance to checkpoint version `v1.9.2`.
 
 ## Prerequisites
 
-* At least 2 GB of free storage space for backup and update tasks.
+Before upgrading, ensure the following:
 
-## Before you begin
-
-* Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide. (_Recommended_)
-* Upgrade your embedded or external MongoDB server to MongoDB v5 or later. See the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+1. At least 2 GB of free storage for backup and update tasks.  
+2. Upgrade your embedded or external MongoDB server to v5.0 or later. For more information, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps available on MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
+3. Create a backup of your Appsmith instance. For more information, see the [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide.
 
 ## Docker
-Before you update to a checkpoint version, ensure you have met all the [prerequisites](#prerequisites). Follow these steps to update to the checkpoint version `v1.9.2`. You can use these instructions to update Appsmith on any platform that supports Docker (Docker, AWS AMI, or DigitalOcean).
 
-1. Access your Appsmith instance and change the image attribute in the `docker-compose.yml` file to point to the checkpoint version `v1.9.2`:
-    * If you are on the **Community Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ce:v1.9.2
-            container_name: appsmith
+Follow these steps to upgrade your Appsmith instance to checkpoint version `v1.9.2`. These instructions are applicable to platforms using Docker, including Docker standalone, AWS AMI, or DigitalOcean.
+
+1. Access your Appsmith installation directory and modify the `docker-compose.yml` file:  
+   - For **Community Edition**, set the image to:  
+      ```yaml  
+        services:  
+          appsmith:  
+          # highlight-next-line
+            image: index.docker.io/appsmith/appsmith-ce:v1.9.2  
+            container_name: appsmith  
+        ```  
+   - For **Commercial Edition**, set the image to:  
+      ```yaml  
+          services:  
+            appsmith:  
+            # highlight-next-line
+              image: index.docker.io/appsmith/appsmith-ee:v1.9.2  
+              container_name: appsmith  
         ```
-    * If you are on the **Commercial Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ee:v1.9.2
-            container_name: appsmith
+
+2. Save the changes and restart the instance with the following command:  
+    ```bash  
+      docker-compose up -d  
+    ```
+
+3. Allow the instance to start and apply the necessary schema changes automatically. After the schema updates are complete, revert the image in the `docker-compose.yml` file to point to the latest version:  
+   - For **Community Edition**, set the image to:  
+      ```yaml  
+          services:  
+            appsmith:  
+            # highlight-next-line
+              image: index.docker.io/appsmith/appsmith-ce  
+              container_name: appsmith  
+        ```  
+   - For **Commercial Edition**, set the image to:  
+      ```yaml  
+        services:  
+          appsmith:  
+          # highlight-next-line
+            image: index.docker.io/appsmith/appsmith-ee  
+            container_name: appsmith  
         ```
-2. Save the changes, and restart the Appsmith instance with:
-  ```bash
-  docker-compose up -d
-  ```
-3. The server starts with the older version and applies all the necessary schema changes to your Appsmith instance. Once completed, switch back to the original image version in the `docker-compose.yml` file and resume normal operations.
-    * If you are on the **Community Edition**, update the image name as shown below:
-        ```yaml
-        services:
-        appsmith:
-          #highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ce
-          container_name: appsmith
-        ```
-    * If you are on the **Commercial Edition**, update the image name as shown below:
-        ```yaml
-        services:
-          appsmith:
-            #highlight-next-line
-            image: index.docker.io/appsmith/appsmith-ee
-            container_name: appsmith
-        ```
-4. Save the changes and restart the Appsmith instance with: 
-  ```bash
-  docker-compose up -d
-  ```
+
+4. Save the changes and restart the instance again to finalise the update:  
+      ```bash  
+        docker-compose up -d  
+      ```
 
 ## Troubleshooting
 
-If you see errors, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl#restore-instance) section. 
+If you face issues during the upgrade, roll back to a previous version using the [Restore instance guide](/getting-started/setup/instance-management/appsmithctl#restore-instance).  
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+For further queries, contact the Appsmith support team using the chat widget in the bottom-right corner of this page.
