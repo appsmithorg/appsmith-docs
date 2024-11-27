@@ -1,0 +1,144 @@
+---
+description: This page provides steps to upgrade Appsmith to the checkpoint version on your self-hosted Appsmith instance.
+toc_max_heading_level: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Upgrade to checkpoint version v1.9.2
+
+Checkpoint versions are milestone releases that ensure your Appsmith instance applies necessary database schema updates, optimizations, and compatibility fixes. If your current Appsmith version is older than `v1.9.2`, upgrading to this checkpoint version is mandatory before moving to later releases. This page provides step-by-step instructions to upgrade your self-hosted Appsmith instance to checkpoint version `v1.9.2`.
+
+## Prerequisites
+
+Before upgrading, ensure the following:
+
+1. At least 2 GB of free storage for backup and update tasks.  
+2. Upgrade your embedded or external MongoDB server to v5.0 or later. For more information, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps available on MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
+3. Create a backup of your Appsmith instance. For more information, see the [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide.
+
+## Update instance
+
+Follow these steps to upgrade your Appsmith instance to checkpoint version `v1.9.2`.
+
+<Tabs queryString="current-checkpoint-platform">
+
+<TabItem label="Docker" value="docker">
+
+These instructions are applicable to platforms using Docker, including Docker standalone, AWS AMI, or DigitalOcean.
+
+1. Access your Appsmith installation directory and modify the `docker-compose.yml` file:
+
+    - For **Commercial Edition**, set the image to:  
+      ```yaml  
+      services:  
+        appsmith:  
+        # highlight-next-line
+          image: index.docker.io/appsmith/appsmith-ee:v1.9.2  
+          container_name: appsmith  
+      ``` 
+
+    - For **Community Edition**, set the image to:  
+      ```yaml  
+      services:  
+        appsmith:  
+        # highlight-next-line
+          image: index.docker.io/appsmith/appsmith-ce:v1.9.2  
+          container_name: appsmith  
+      ```  
+
+2. Save the changes and restart the instance with the following command:  
+    ```bash  
+    docker-compose up -d  
+    ```
+
+3. Allow the instance to start and apply the necessary schema changes automatically. After the schema updates are complete, revert the image in the `docker-compose.yml` file to point to the latest version:  
+
+    - For **Commercial Edition**, set the image to:  
+      ```yaml  
+      services:  
+        appsmith:  
+        # highlight-next-line
+          image: index.docker.io/appsmith/appsmith-ee  
+          container_name: appsmith  
+      ```  
+
+    - For **Community Edition**, set the image to:  
+      ```yaml  
+      services:  
+        appsmith:  
+        # highlight-next-line
+          image: index.docker.io/appsmith/appsmith-ce  
+          container_name: appsmith  
+      ```  
+
+4. Save the changes and restart the instance again to finalize the update:  
+    ```bash  
+    docker-compose up -d  
+    ```
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes">
+
+These instructions apply to platforms running Appsmith on Kubernetes.
+
+  #### Statefulsets
+
+      1. List the StatefulSets in your Appsmith namespace:
+          ```bash
+          kubectl get sts -n <appsmith-namespace>
+          ```
+
+          Note the name of the StatefulSet for Appsmith.
+
+      2. Update the image of the StatefulSet to checkpoint version `v1.9.2`:
+          ```bash
+          kubectl set image sts/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:v1.9.2
+          ```
+
+      3. Once the instance is running and stable, update to the latest version:
+          ```bash
+          kubectl set image sts/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:latest
+          ```
+
+  #### Deployments using high availability
+
+    1. List the Deployments in your Appsmith namespace:
+        ```bash
+        kubectl get deployments -n <appsmith-namespace>
+        ```
+
+        Note the name of the Deployment for Appsmith.
+
+    2. Update the image of the Deployment to checkpoint version `v1.9.2`:
+        ```bash
+        kubectl set image deployment/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:v1.9.2
+        ```
+
+    3. Once the instance is running and stable, update to the latest version:
+        ```bash
+        kubectl set image deployment/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:latest
+        ```
+
+</TabItem>
+
+<TabItem label="AWS ECS and Fargate" value="aws-ecs-and-fargate">
+
+> **Note:** This section will be populated with specific upgrade instructions for AWS ECS and Fargate in future updates.
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you face issues during the upgrade, roll back to a previous version using the [Restore instance guide](/getting-started/setup/instance-management/appsmithctl#restore-instance).
+
+For further queries, contact the Appsmith support team using the chat widget in the bottom-right corner of this page.
+
+## See also
+
+- [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith): Learn how to upgrade your Appsmith installation to the latest version.
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date.
