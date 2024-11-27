@@ -1,12 +1,13 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Create Image Gallery Using Custom Widget
+# Create Image Gallery using Custom Widget
 
-This guide shows how to create a image gallery or slider using the [Custom widget](/reference/widgets/custom).
+Appsmith provides different built-in widgets, but sometimes your application requires to add more capabilities. The Custom widget provided by Appsmith allows you to add unique features using your own HTML, CSS, and JavaScript, such as a custom calendar, accordion, or social media widget. 
+
+This page provides step-by-step instructions on creating an image gallery or slider using the [Custom widget](/reference/widgets/custom).
 
 
-While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
 
 ## Prerequisites
 
@@ -31,24 +32,20 @@ While Appsmith provides an extensive array of built-in widgets for application d
 
 1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
-2. Click the **Edit Source** button on the property pane to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is reloded automatically on the preview section on the left of the Custom widget Builder.
-
+2. Click the **Edit Source** button in the property pane to open the Custom Widget Builder.
 
 3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors, and import the required libraries.
 
+4. For the image gallery, import the required libraries using the ESM format. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
+
 <dd>
-
-
-To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
-
-For the image gallery, you'll need to import the following libraries:
-
-<Tabs>
-  <TabItem value="js" label="JS" default>
    
 You need to import React and ReactDOM to create and render the Custom Widget components. These libraries are fundamental for building interactive UIs. See [React Documentation](https://react.dev/).
 
 Additionally, the [React Image Gallery library](https://www.npmjs.com/package/react-image-gallery) provides an intuitive and customizable gallery interface with features like autoplay and thumbnails.
+
+<Tabs>
+  <TabItem value="js" label="JS" default>
 
 ```js
 import React from 'https://cdn.jsdelivr.net/npm/react@18.2.0/+esm';
@@ -56,23 +53,40 @@ import reactDom from 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/+esm';
 import ImageGallery from 'https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/+esm';
 ```
   </TabItem>
-  <TabItem value="html" label="HTML">
+</Tabs>
+
+</dd>
+
+5. Click on the **HTML** tab in the code editor to add styles for the image gallery.
+
+<dd>
 
 For styling the image gallery, you need to include the CSS file provided by the `react-image-gallery` library. This ensures the gallery's default appearance is correctly rendered.
 
 Add the following `<link>` tag to include the library’s CSS file directly from a CDN:
 
+<Tabs>
+  <TabItem value="html" label="HTML" default>
 ```html
-<link href="https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css" rel="stylesheet">
-```
+<!-- no need to write html, head, body tags, it is handled by the widget -->
+<div id="root"></div>
 
+<!-- Including the stylesheet for the React Image Gallery from the specified CDN. -->
+ 
+<link href="
+https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css
+" rel="stylesheet">
+```
   </TabItem>
 </Tabs>
+
+
 
 </dd>
 
 
-4. Define an array of image objects for the gallery. You can use static images, but if needed, you can dynamically fetch images using a query. This step will set up the App component that renders the image gallery.
+6. Create an array of image objects to display in the gallery. You can use static image URLs or display images dynamically using a query. This array will be passed to the App component, which renders the image gallery.
+
 
 <dd>
 
@@ -123,8 +137,7 @@ https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.
 
 </dd>
 
-5. Use `appsmith.onReady()` to ensure the App component is rendered only after the application is fully loaded. This step ensures that the gallery is displayed only when the parent application is ready.
-
+7. To ensure the App component is rendered only after the application is fully loaded, use the [appsmith.onReady()](/reference/widgets/custom#onready) method. This method acts as a listener that waits for the parent application to be fully initialized before triggering actions, such as rendering the Image gallery.
 
 <dd>
 
@@ -196,13 +209,9 @@ For the image gallery, add code that captures image or document URL, like:
 
 </dd>
 
-2. To retrieve the data provided to the **Default model** property, use `appsmith.model` inside Custom widget builder.
+2. To retrieve the data provided to the **[Default model](/reference/widgets/custom#default-model)** property, use `appsmith.model` inside Custom widget builder.
 
 <dd>
-
-- To access the data in the javascript editor in Custom widget builder page, use `appsmith.model.{property-name}`.
-
-- To access data in CSS Editor in Custom widget builder page, use `var(--appsmith-model-{property-name}`.
 
 For the image gallery, use a `map` function to dynamically render images sourced from the **Default model** property.
 
@@ -326,8 +335,12 @@ In the Custom widget, create a new event with the same name `(i.e onSlide)` as d
 
 </dd>
 
-3. To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
 
+### Customize widget appearance
+
+To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
+
+You can apply the app's primary color and other theme-specific styles to your Custom widget:
 
 <dd>
 
@@ -350,7 +363,9 @@ In the Custom widget, create a new event with the same name `(i.e onSlide)` as d
   </TabItem>
 </Tabs>
 
-See the sample app for the [Image carousel](https://app.appsmith.com/app/untitled-application-1/page1-65a77eecc7165278ae63151b).
+In this code, `var(--appsmith-theme-primaryColor)` uses the primary color defined in the app’s theme, and `var(--appsmith-theme-borderRadius)` adjusts the border radius according to the theme settings.
+
+See the sample app for the [Image gallery](https://app.appsmith.com/app/untitled-application-1/page1-65a77eecc7165278ae63151b).
 
 
 
