@@ -11,8 +11,8 @@ This page provides step-by-step instructions on creating an image gallery or sli
 
 ## Prerequisites
 
-- Basic knowledge of React, including JSX and component creation.
-- Basic knowledge of UMD and ESM module formats for importing third-party libraries.
+- Basic knowledge of [React](https://react.dev/), including JSX and component creation.
+- Basic knowledge of UMD and [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) module formats for importing third-party libraries.
 
 
 <VideoEmbed host="youtube" videoId="KUTBWhu_E5Y" title="How To Building an Image Gallery with React.js" caption="Building an Image Gallery with React.js"/>
