@@ -91,7 +91,7 @@ These instructions apply to platforms running Appsmith on Kubernetes.
           kubectl get sts -n <appsmith-namespace>
           ```
 
-          Note the name of the StatefulSet for Appsmith.
+          Replace the `<appsmith-namespace` in the above command with the Appsmith namespace you defined.
 
       2. Update the image of the StatefulSet to checkpoint version `v1.9.2`:
           ```bash
