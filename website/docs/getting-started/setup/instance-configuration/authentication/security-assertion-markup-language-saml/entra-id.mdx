@@ -107,16 +107,24 @@ This page shows how to configure [Microsoft Entra ID (Azure AD)](https://www.mic
 
 ## Register Entra ID in Appsmith
 
-:::caution
-If you are running Appsmith on **Google Cloud Run** or **AWS ECS**, make sure to configure your service before setting up SSO. For detailed instructions, see the [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso), or [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs) guide.
-:::
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith as mentioned below:
 
 
-1. Open the copied **App Federation Metadata Url** in a browser tab.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the copied **App Federation Metadata Url** in a browser tab.
+
+3. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 <dd>
 
@@ -129,7 +137,7 @@ To complete the SAML configuration, you’ll have to register the identity provi
 
 </dd>
 
-3. To configure custom SAML claims (if added in the Entra ID's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
+4. To configure custom SAML claims (if added in the Entra ID's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
 
 <dd>
 

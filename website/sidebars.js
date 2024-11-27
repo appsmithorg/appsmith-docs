@@ -17,91 +17,114 @@ const sidebars = {
             'getting-started/tutorials/the-basics/work-with-data-in-ui',
             'getting-started/tutorials/the-basics/write-js-code',
           ],
-        }
-      ],
-    }, //getting started section end
-    //self-hosting starts
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Self Hosting',
-      link: { type: 'doc', id: 'getting-started/setup/README' },
-      items: [
-        {
-          type: 'category',
-          label: 'New Installation Guides',
-          link: {
-            type: 'doc',
-            id: 'getting-started/setup/installation-guides/README',
-          },
-          items: [
-
-            'getting-started/setup/installation-guides/docker/README',
-            {
-              type: 'category',
-              label: 'Kubernetes',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/installation-guides/kubernetes/README',
-              },
-              items: [
-                'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
-              ],
-            },
-            'getting-started/setup/installation-guides/aws-ami',
-            'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
-            'getting-started/setup/installation-guides/aws-ecs-on-fargate',
-            'getting-started/setup/installation-guides/azure-aci',
-            'getting-started/setup/installation-guides/google-cloud-run',
-            'getting-started/setup/installation-guides/digitalocean',
-            'getting-started/setup/installation-guides/ansible',
-            'getting-started/setup/installation-guides/air-gapped',
-          ],
         },
+
         {
           type: 'category',
-          label: 'Manage Installation',
-          link: {
-            type: 'doc',
-            id: 'getting-started/setup/instance-configuration/README',
-          },
+          label: 'Self Hosting',
+          link: { type: 'doc', id: 'getting-started/setup/README' },
           items: [
             {
               type: 'category',
-              label: 'High Availability Guides',
-              items: [
-                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
-                'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
-                'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
-                'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
-                'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
-                'getting-started/setup/instance-configuration/custom-mongodb-redis',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Authentication Guides',
+              label: 'Install Appsmith',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/instance-configuration/authentication/README',
+                id: 'getting-started/setup/installation-guides/README',
               },
               items: [
-                'getting-started/setup/instance-configuration/authentication/google-login',
-                'getting-started/setup/instance-configuration/authentication/github-login',
                 {
                   type: 'category',
-                  label: 'SAML SSO',
+                  label: 'Docker',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
+                    id: 'getting-started/setup/installation-guides/docker/README',
                   },
                   items: [
-                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
-                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
-                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
-                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
-                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
+                    'getting-started/setup/installation-guides/docker/migrate',
                   ],
+                },
+                {
+                  type: 'category',
+                  label: 'Kubernetes',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/kubernetes/README',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
+                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                    'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
+                    'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
+                  ],
+                },
+                'getting-started/setup/installation-guides/aws-ami',
+                {
+                  type: 'category',
+                  label: 'AWS ECS',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/README',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
+                    'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
+                    'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                  ],
+                },
+                'getting-started/setup/installation-guides/azure-aci',
+                {
+                  type: 'category',
+                  label: 'Google Cloud Run',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/google-cloud-run',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                  ],
+                },
+                'getting-started/setup/installation-guides/digitalocean',
+                'getting-started/setup/installation-guides/ansible',
+                'getting-started/setup/installation-guides/air-gapped',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Configure Instance',
+              link: {
+                type: 'doc',
+                id: 'getting-started/setup/instance-configuration/README',
+              },
+              items: [
+                {
+                  type: 'category',
+                  label: 'Authentication',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/instance-configuration/authentication/README',
+                  },
+                  items: [
+                    'getting-started/setup/instance-configuration/authentication/google-login',
+                    'getting-started/setup/instance-configuration/authentication/github-login',
+                    {
+                      type: 'category',
+                      label: 'SAML SSO',
+                      link: {
+                        type: 'doc',
+                        id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
+                      },
+                      items: [
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
+                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
+                      ],
 
                 },
                 {
