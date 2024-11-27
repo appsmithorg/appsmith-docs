@@ -1,62 +1,36 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Using Vanilla JS
+# Create Calendar using Custom Widget
 
-This guide shows how to create a simple Custom widget using vanilla JavaScript.
+Appsmith provides different built-in widgets, but sometimes your application requires to add more capabilities. The Custom widget provided by Appsmith allows you to add unique features using your own HTML, CSS, and JavaScript, such as a custom calendar, accordion, or social media widget. 
 
-While Appsmith provides an extensive array of built-in widgets for application development, there are instances where your project demands a widget tailored to specific requirements. Appsmith's Custom widget allows you to integrate unique functionalities with your HTML, CSS, and JavaScript code, whether it's a personalized calendar, accordion, or social media widget.
+This page provides step-by-step instructions on creating an simple calendar widget using the [Custom widget](/reference/widgets/custom).
+
+
+## Prerequisites
+
+- Basic knowledge of Vanilla JS, including concepts such as DOM manipulation, event handling, and interacting with APIs.
+- Basic knowledge of UMD and [ESM](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) module formats for importing third-party libraries.
 
 
 
 ## Configure Custom Widget
 
+
 1. Drop a [Custom widget](/reference/widgets/custom) on the canvas.
 
-2. Click the **Edit Source** button to configure the code for the Custom widget. Within the Custom widget builder, you can add JS, CSS, and HTML code, and the Custom widget is displayed automatically on Appsmith.
+2. Click the **Edit Source** button in the property pane to open the Custom Widget Builder.
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder) import the required libraries.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors, and import the required libraries.
+
+4. For the calendar widget, import the [FullCalendar library](https://www.jsdelivr.com/package/npm/fullcalendar). Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
 
 <dd>
-
-To import a third-party library, you have two options: UMD and ESM. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
-
-    * For UMD, include the library with a script tag in the HTML file:
-
-      ```html
-      <script src="link-to-the-UMD-file"></script>
-      ```
-
-    * For ESM, use an import statement at the top of the JavaScript file:
-
-      ```js
-      import ThirdPartyComponent from "link-to-the-ESM-file";
-      ```
-
-
-
-</dd>
-
-
-4. Add the code for the Custom widget within the relevant tabs based on your library requirements.
-
-<dd>
-
-:::warning
-* Wait for the parent application to be ready before accessing the model or triggering events in the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) and pass a handler function, which is triggered when the parent application is ready, initiating the rendering of your component from this function.
-
-* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
-:::
-
-In Vanilla JavaScript, you directly manipulate the DOM using methods like `document.getElementById`,` document.createElement`, etc.
-
-*Example*: To build a simple calendar widget using the [FullCalendar library](https://www.jsdelivr.com/package/npm/fullcalendar), import the library and add the necessary code inside the `onReady` method.
-
 
 <Tabs>
-  <TabItem value="html" label="HTML">
-
+  <TabItem value="html" label="HTML" default>
 
 ```html
 <div id="calendar"></div>
@@ -68,6 +42,21 @@ In Vanilla JavaScript, you directly manipulate the DOM using methods like `docum
 ```
 
   </TabItem>
+</Tabs>
+
+
+</dd>
+
+5. Click on the **JS** tab in the Custom Widget Builder and add the following code to initialize the FullCalendar widget:
+
+<dd>
+
+To ensure the App component is rendered only after the application is fully loaded, use the [appsmith.onReady()](/reference/widgets/custom#onready) method. This method acts as a listener that waits for the parent application to be fully initialized before triggering actions. 
+
+In Vanilla JS, you interact directly with the DOM using methods like `document.getElementById`,` document.createElement`, etc., to dynamically modify the page's structure and content.
+
+
+<Tabs>
   <TabItem value="jss" label="JS" default>
 
 
@@ -97,6 +86,13 @@ appsmith.onReady(() => {
 </Tabs>
 
 
+:::warning
+* Wait for the parent application to be ready before accessing the model or triggering events in the custom widget. Use [appsmith.onReady](/reference/widgets/custom#onready) and pass a handler function, which is triggered when the parent application is ready, initiating the rendering of your component from this function.
+
+* For dynamic updates in response to model changes, such as new data from a query, use [appsmith.onModelChange](/reference/widgets/custom#onmodelchange). Pass a handler to this function, and it gets invoked each time the model undergoes a modification.
+:::
+
+
 </dd>
 
 ## Pass data from Appsmith to Custom widget
@@ -107,9 +103,11 @@ Follow these steps to pass parameters from Appsmith to the Custom widget:
 
 <dd>
 
-*Example:* For the calendar widget, you can pass relevant event data, like:
+For the calendar widget, you can pass relevant event data, like:
 
-
+<Tabs>
+  <TabItem value="jss" label="JS" default>
+  
 ```js
 {
   "events": [
@@ -124,28 +122,30 @@ Follow these steps to pass parameters from Appsmith to the Custom widget:
       "id": "2"
     }
 ]}
-```
 
-To bind data from a query or Table widget, you can add code like:
-
-```js
+//To bind data from a query or Table widget, you can add code like:
+/*
 events: [
   { title: tbl_user.event, start: tbl_user.date },
   // Add more entries as needed
 ]
+*/
 ```
-
-
+  </TabItem>
+</Tabs>
 
 </dd>
 
-2. To retrieve the data provided to the **Default model** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
+2. To retrieve the data provided to the **[Default model](/reference/widgets/custom#default-model)** property, use `appsmith.model.propertyName` within the JavaScript section of the Custom widget builder.
 
  
 <dd>
 
-*Example:* For the calendar widget, you can access the **Default model** data as follows:
+For the calendar widget, you can access the **Default model** data as follows:
 
+<Tabs>
+  <TabItem value="jss" label="JS" default>
+  
 ```js
 appsmith.onReady(() => {
 	const calendarEl = document.getElementById('calendar');
@@ -163,6 +163,8 @@ appsmith.onReady(() => {
   calendar.render();
 });
 ```
+  </TabItem>
+</Tabs>
 
 </dd>
 
@@ -176,7 +178,10 @@ Follow these steps to pass parameters from the Custom widget to Appsmith:
 
 <dd>
 
-*Example*: To update the model with the selected date once an event has been clicked, add:
+To update the model with the selected date once an event has been clicked, add:
+
+<Tabs>
+  <TabItem value="jss" label="JS" default>
 
 ```js
 // JS
@@ -204,6 +209,8 @@ appsmith.onReady(() => {
 });
 
 ```
+  </TabItem>
+</Tabs>
 
 To display data in a Text widget, set its **Text** property to:
 
@@ -219,8 +226,11 @@ To display data in a Text widget, set its **Text** property to:
 
 <dd>
 
-*Example:* To show an alert when an event is clicked on the calendar widget, use the following code:
+To show an alert when an event is clicked on the calendar widget, use the following code:
 
+<Tabs>
+  <TabItem value="jss" label="JS" default>
+  
 ```js
 eventClick: (e) => {        
            // highlight-next-line
@@ -232,6 +242,8 @@ eventClick: (e) => {
 	})                                                      
 }, 
 ```
+  </TabItem>
+</Tabs>
 
 In the Custom widget, create a new event with the same name as defined in the function, and configure it to execute an action.
 

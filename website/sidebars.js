@@ -428,14 +428,8 @@ const sidebars = {
 
               ],
             },
-            {
-              type: 'category',
-              label: 'Create Custom Widgets',
-              link: { type: 'doc', id: 'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe' },
-              items: [
-                'build-apps/how-to-guides/custom-widget-using-vanillajs'
-              ],
-            },
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            'build-apps/how-to-guides/custom-widget-using-vanillajs',
             `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
