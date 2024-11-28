@@ -34,7 +34,7 @@ This page provides step-by-step instructions on creating an image gallery or sli
 
 2. Click the **Edit Source** button in the property pane to open the Custom Widget Builder.
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors, and import the required libraries.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors.
 
 4. For the image gallery, import the required libraries using the ESM format. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
@@ -119,19 +119,6 @@ function App() {
   return <ImageGallery.default items={images} />;
 }
 ```
-  </TabItem>
-  <TabItem value="html" label="HTML">
-```html
-<!-- no need to write html, head, body tags, it is handled by the widget -->
-<div id="root"></div>
-
-<!-- Including the stylesheet for the React Image Gallery from the specified CDN. -->
- 
-<link href="
-https://cdn.jsdelivr.net/npm/react-image-gallery@1.3.0/styles/css/image-gallery.min.css
-" rel="stylesheet">
-```
-
   </TabItem>
 </Tabs>
 
@@ -253,7 +240,7 @@ For the image gallery, use a `map` function to dynamically render images sourced
 Follow these steps to pass parameters from the Custom widget to Appsmith:
 
 
-1. To pass data from the Custom widget to Appsmith, use the `updateModel` property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
+1. To pass data from the Custom widget to Appsmith, use the [updateModel](/reference/widgets/custom#updatemodel) property within your JS code to save or update data. Once the model is updated, you can retrieve the value using `{{Custom.model.propertyname}}` within any widget or query.
 
 <dd>
 
@@ -336,7 +323,7 @@ In the Custom widget, create a new event with the same name `(i.e onSlide)` as d
 </dd>
 
 
-### Customize widget appearance
+## Customize appearance
 
 To customize your widget's appearance, configure the CSS code, and use Appsmith's [CSS API](/reference/widgets/custom#css-api) to dynamically adjust styles based on the app's theme.
 

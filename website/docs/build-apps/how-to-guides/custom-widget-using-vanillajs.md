@@ -22,7 +22,7 @@ This page provides step-by-step instructions on creating an simple calendar widg
 
 2. Click the **Edit Source** button in the property pane to open the Custom Widget Builder.
 
-3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors, and import the required libraries.
+3. In the [Custom widget builder](/reference/widgets/custom#custom-widget-builder), remove the default component code in HTML, CSS, and JS editors.
 
 4. For the calendar widget, import the [FullCalendar library](https://www.jsdelivr.com/package/npm/fullcalendar). Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
