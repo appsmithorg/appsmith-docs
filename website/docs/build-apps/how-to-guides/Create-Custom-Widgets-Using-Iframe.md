@@ -295,7 +295,7 @@ To display data in a Text widget, set its **Text** property to:
 
 <dd>
 
-*Example:* To trigger an action on Appsmith when the image is slid, use the following code:
+To trigger an action on Appsmith when the image is slid, use the following code:
 
 <Tabs>
   <TabItem value="js" label="JS" default>
