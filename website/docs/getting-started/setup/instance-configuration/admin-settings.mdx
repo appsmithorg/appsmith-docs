@@ -54,7 +54,7 @@ Limits each user to a single active session at any time. If a user logs in on a 
 #### Session timeout
 
 <dd>
-Automatically logs users out after a specified period of inactivity. The duration is set in `DD:HH:MM` format. For example, setting this to `00:30:00` logs out inactive users after 30 minutes.
+Automatically logs users out after a specified period of inactivity. The default duration is set to `30:00:00` (30 days). The duration is set in `DD:HH:MM` format and can be set between 1 minute and 30 days. For example, setting this to `00:00:30` logs out inactive users after 30 minutes. To change it, enter the new duration in `DD:HH:MM` format.
 </dd>
 
 #### Atomic pushes to Git
@@ -155,13 +155,13 @@ The **Branding** section allows you to customize the visual identity of your App
 #### Logo
 
 <dd>
-Upload a custom logo for your Appsmith login screen and dashboard. This logo will be displayed across pages in the Appsmith instance, helping to align the visual identity with your organization.
+Upload a custom logo for your Appsmith login screen and dashboard. The logo is displayed across pages in the Appsmith instance, helping to align the visual identity with your organization. Accepted formats are **.SVG**, **.PNG**, and **.JPG** with a maximum size of **2 MB**.
 </dd>
 
 #### Favicon
 
 <dd>
-Set a favicon for your instance that will appear in the browser tab. This helps users to identify your Appsmith instance while navigating through different browser tabs.
+Set a favicon for your instance that will appear in the browser tab. This helps users to identify your Appsmith instance while navigating through different browser tabs. Accepted formats are **.ICO**, **.PNG**, and **.JPG** with a maximum size of **32x32 pixels**.
 </dd>
 
 #### Color
@@ -239,7 +239,7 @@ For more information, see [Granular Access Control](/advanced-concepts/granular-
 The **Audit Logs** section enables tracking of all significant actions performed by users within your Appsmith instance.
 
 <dd>
-The [Audit Logs](/advanced-concepts/audit-logs) provide a comprehensive record of significant activities in your Appsmith instance. These logs automatically capture details of each event, including the action performed, the user who performed it, and the timestamp. With audit logs, you can track critical actions, investigate potential issues, and ensure accountability within your instance. **Audit logs are available as part of the Appsmith Commercial Edition**. For more information on pricing, refer to the [Appsmith Commercial Edition plans](https://www.appsmith.com/pricing).
+The [Audit Logs](/advanced-concepts/audit-logs) provide a comprehensive record of significant activities in your Appsmith instance. These logs automatically capture details of each event, including the action performed, the user who performed it, and the timestamp. With audit logs, you can track critical actions, investigate potential issues, and ensure accountability within your instance. Audit logs are available as part of the Appsmith Commercial Edition. For more information on pricing, refer to the [Appsmith Commercial Edition plans](https://www.appsmith.com/pricing).
 
 You can also use audit logs to monitor app usage and export them for further analysis. For more details, see the [Monitor App Usage](/build-apps/how-to-guides/usage-app) and [How to Export Audit Logs](/build-apps/how-to-guides/export-audit-logs) guides.
 </dd>
