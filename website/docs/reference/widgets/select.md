@@ -75,7 +75,13 @@ Defines the key in the **Source Data** that specifies the labels for each option
 And you want to display the label based on the selected language, you can configure the **Label Key** as:
 
 ```js
-{{ selectedLanguage === 'Hindi' ? 'nameHindi' : selectedLanguage === 'Spanish' ? 'nameSpanish' : 'name' }}
+{{
+  LanguageDropdown.selectedOptionValue === 'Hindi' ? 'nameHindi' :
+  LanguageDropdown.selectedOptionValue === 'Spanish' ? 'nameSpanish' :
+  'name'
+}}
+
+//LanguageDropdown is a separate Select widget where the user selects the language.
 ```
 
 
