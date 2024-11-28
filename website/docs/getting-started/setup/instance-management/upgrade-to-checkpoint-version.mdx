@@ -30,7 +30,7 @@ These instructions are applicable to platforms using Docker, including Docker st
 
 1. Access your Appsmith installation directory and modify the `docker-compose.yml` file:
 
-    - For **Commercial Edition**, set the image to:  
+2. Set the image attribute to use tag `v1.9.2`:  
       ```yaml  
       services:  
         appsmith:  
@@ -39,41 +39,21 @@ These instructions are applicable to platforms using Docker, including Docker st
           container_name: appsmith  
       ``` 
 
-    - For **Community Edition**, set the image to:  
-      ```yaml  
-      services:  
-        appsmith:  
-        # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ce:v1.9.2  
-          container_name: appsmith  
-      ```  
-
-2. Save the changes and restart the instance with the following command:  
+3. Save the changes and restart the instance with the following command:  
     ```bash  
     docker-compose up -d  
     ```
 
-3. Allow the instance to start and apply the necessary schema changes automatically. After the schema updates are complete, revert the image in the `docker-compose.yml` file to point to the latest version:  
-
-    - For **Commercial Edition**, set the image to:  
+4. Allow the instance to start and apply the necessary schema changes automatically. After the schema updates are complete, revert the image in the `docker-compose.yml` file to point to the latest version:  
       ```yaml  
       services:  
         appsmith:  
         # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ee  
+          image: index.docker.io/appsmith/appsmith-ee:latest 
           container_name: appsmith  
-      ```  
+      ```   
 
-    - For **Community Edition**, set the image to:  
-      ```yaml  
-      services:  
-        appsmith:  
-        # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ce  
-          container_name: appsmith  
-      ```  
-
-4. Save the changes and restart the instance again to finalize the update:  
+4. Save the changes and restart the instance again to finalise the update:  
     ```bash  
     docker-compose up -d  
     ```
