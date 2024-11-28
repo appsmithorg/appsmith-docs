@@ -313,7 +313,7 @@ const _onSlide = (index) => {
   </TabItem>
 </Tabs>
 
-In the Custom widget, create a new event with the same name `(i.e onSlide)` as defined in the function, and configure it to execute an action. 
+3. In the Custom widget, create a new event with the same name `(i.e onSlide)` as defined in the function, and configure it to execute an action. 
 
 
 <div style={{ position: "relative", paddingBottom: "45.52%", height: "0", width: "82%" }}>
