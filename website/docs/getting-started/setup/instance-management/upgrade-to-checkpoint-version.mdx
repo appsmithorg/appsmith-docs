@@ -18,7 +18,7 @@ Before upgrading, ensure the following:
 2. Upgrade your embedded or external MongoDB server to v5.0 or later. For more information, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps available on MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
 3. Create a backup of your Appsmith instance. For more information, see the [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide.
 
-## Update instance
+## Update Appsmith
 
 Follow these steps to upgrade your Appsmith instance to checkpoint version `v1.9.2`.
 
@@ -84,49 +84,76 @@ These instructions are applicable to platforms using Docker, including Docker st
 
 These instructions apply to platforms running Appsmith on Kubernetes.
 
-  #### Statefulsets
+### StatefulSets
 
-      1. List the StatefulSets in your Appsmith namespace:
-          ```bash
-          kubectl get sts -n <appsmith-namespace>
-          ```
+1. List the StatefulSets in your Appsmith namespace:
+    ```bash
+    kubectl get sts -n <appsmith-namespace>
+    ```
 
-          Replace the `<appsmith-namespace` in the above command with the Appsmith namespace you defined.
+    Replace `<appsmith-namespace>` with your defined namespace.
 
-      2. Update the image of the StatefulSet to checkpoint version `v1.9.2`:
-          ```bash
-          kubectl set image sts/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:v1.9.2
-          ```
+2. Update the image of the StatefulSet to checkpoint version `v1.9.2`:
+    ```bash
+    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.9.2
+    ```
 
-      3. Once the instance is running and stable, update to the latest version:
-          ```bash
-          kubectl set image sts/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:latest
-          ```
+3. Pull and update Appsmith to version `v1.9.2`:
+    ```bash
+    kubectl rollout restart sts/<appsmith> -n <appsmith-namespace>
+    ```
 
-  #### Deployments using high availability
+4. Verify the update by checking the Appsmith apps.
 
-    1. List the Deployments in your Appsmith namespace:
-        ```bash
-        kubectl get deployments -n <appsmith-namespace>
-        ```
+5. Once the instance is stable, update to the latest version:
+    ```bash
+    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    ```
 
-        Note the name of the Deployment for Appsmith.
+6. Pull and update Appsmith to the latest version:
+    ```bash
+    kubectl rollout restart sts/<appsmith> -n <appsmith-namespace>
+    ```
 
-    2. Update the image of the Deployment to checkpoint version `v1.9.2`:
-        ```bash
-        kubectl set image deployment/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:v1.9.2
-        ```
+### Deployments for high availability
 
-    3. Once the instance is running and stable, update to the latest version:
-        ```bash
-        kubectl set image deployment/<appsmith> -n <namespace> appsmith=appsmith/appsmith-ee:latest
-        ```
+1. List the Deployments in your Appsmith namespace:
+    ```bash
+    kubectl get deployments -n <appsmith-namespace>
+    ```
+
+    Note the Deployment name for Appsmith.
+
+2. Update the Deployment image to checkpoint version `v1.9.2`:
+    ```bash
+    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.9.2
+    ```
+
+3. Once the instance is stable, update to the latest version:
+    ```bash
+    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    ```
 
 </TabItem>
 
-<TabItem label="AWS ECS and Fargate" value="aws-ecs-and-fargate">
+<TabItem label="AWS ECS (EC2) and Fargate" value="aws-ecs-and-fargate">
 
-> **Note:** This section will be populated with specific upgrade instructions for AWS ECS and Fargate in future updates.
+These instructions apply to platforms running Appsmith on AWS ECS (EC2) and Fargate.
+
+1. Log in to your AWS account and navigate to the Amazon ECS console.
+2. Select the cluster containing the container instance to update.
+3. Go to the task definition, and update the image tag to `v1.9.2`:
+    ```bash
+    appsmith/appsmith-ee:v1.9.2
+    ```
+4. Restart the ECS service.
+5. Verify the updated version is running successfully.
+6. Go to the task definition, and update the image tag to `latest`:
+    ```bash
+    appsmith/appsmith-ee:latest
+    ```
+7. Restart the ECS service.
+8. Verify the updated version is running successfully.   
 
 </TabItem>
 
