@@ -39,10 +39,8 @@ This page provides step-by-step instructions on creating an image gallery or sli
 4. For the image gallery, import the required libraries using the ESM format. Use trusted CDN providers like [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/) for library imports.
 
 <dd>
-   
-You need to import React and ReactDOM to create and render the Custom Widget components. These libraries are fundamental for building interactive UIs. See [React Documentation](https://react.dev/).
 
-Additionally, the [React Image Gallery library](https://www.npmjs.com/package/react-image-gallery) provides an intuitive and customizable gallery interface with features like autoplay and thumbnails.
+To create and render Custom Widget components, import React and ReactDOM, which are essential for building interactive UIs (see [React Documentation](https://react.dev/)), and use the [React Image Gallery library](https://www.npmjs.com/package/react-image-gallery) for an intuitive, customizable gallery interface with features like autoplay and thumbnails.
 
 <Tabs>
   <TabItem value="js" label="JS" default>
