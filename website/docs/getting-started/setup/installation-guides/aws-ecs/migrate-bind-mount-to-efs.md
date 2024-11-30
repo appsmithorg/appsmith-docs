@@ -1,7 +1,7 @@
 ---
-description: Migrate Appsmith installation on the ECS cluster on EC2 instance to use AWS EFS.
+description: Upgrade Appsmith ECS cluster installation on EC2 instance to use Amazon Elastic File System (EFS).
 ---
-# Migrate Bind Mount to AWS EFS
+# Upgrade to AWS EFS
 
 Migrating your existing Appsmith installation on an AWS ECS from Bind Mount to Amazon Elastic File System (EFS) can enhance flexibility and scalability. This page outlines steps for migrating your AWS ECS on EC2 Appsmith installation from Bind Mount to AWS EFS using the AWS Management Console.
 

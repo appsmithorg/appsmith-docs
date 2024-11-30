@@ -1,4 +1,10 @@
-# Configure Azure Container Instance for SAML SSO
+---
+description: This page provides information on configuring self-hosted Appsmith instance using Admin settings UI.
+title: PostgreSQL for SAML SSO (Azure)
+toc_max_heading_level: 2
+---
+
+# PostgreSQL on Azure Container Instance for SAML SSO
 
 This page shows how to configure Appsmith on Azure Container Instance for using Security Assertion Markup Language (SAML) Single Sign-On (SSO).
 
