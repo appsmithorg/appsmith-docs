@@ -155,6 +155,7 @@ const sidebars = {
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/http-proxy',
+                'getting-started/setup/instance-configuration/configure-using-environment-variables',
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-configuration/file-size-limit',
@@ -164,11 +165,16 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/frame-ancestors',
                 'advanced-concepts/version-control-with-git/updating-local-file-path',
                 'getting-started/setup/instance-configuration/disable-intercom',
-                'getting-started/setup/instance-configuration/configure-using-environment-variables',
               ],
             },
-            'getting-started/setup/instance-configuration/admin-settings',
-            'getting-started/setup/environment-variables',
+            {
+              type: 'category',
+              label: 'Reference',
+              items: [
+                'getting-started/setup/instance-configuration/admin-settings',
+                'getting-started/setup/environment-variables',
+              ],
+            },
           ],
         },
         {

@@ -1,5 +1,5 @@
 ---
-description: This page provides step-by-step instructions for configuring your Appsmith instance using environment variables, tailored to Docker, Helm, and ECS installations.
+description: Learn how to configure your Appsmith instance using environment variables for Docker, Helm, and ECS installations.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,105 +7,99 @@ import TabItem from '@theme/TabItem';
 
 # Configure using Environment Variables
 
-Appsmith provides environment variables to configure different services and enable different integrations. This page provides information on configuring your Appsmith instance using environment variables.
+Appsmith offers environment variables to tailor your setup for different services and integrations. This guide provides step-by-step instructions for configuring environment variables across different deployment methods.
 
-## Configure Docker installations
+<Tabs groupId="appsmithplatforms" queryString="current-platform">
 
-To configure a docker installation, go to your installation folder and edit the `stacks/configuration/docker.env` file with the environment variables for the service. For example, you wish to add the Google Maps API key. Add/update the environment variable `APPSMITH_GOOGLE_MAPS_API_KEY` and add the Google API key to it as shown below:
+<TabItem label="Docker" value="docker">
 
-```bash
-APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
-```
+To configure Appsmith in a Docker installation:
 
-After making changes, be sure to **restart the docker containers** for the changes to take effect. Run the below command to restart the Appsmith container.
+1. Navigate to your installation folder.
+2. Open the `stacks/configuration/docker.env` file.
+3. Add or update the required environment variables. For instance, to set the Google Maps API key:
 
-* Docker run
-  ```bash
-   docker restart appsmith
-  ```
-* Docker Compose
-  ```bash
-   docker-compose restart appsmith
-  ```
+    ```bash
+    APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
+    ```
 
-## Configure Helm installations
+4. Restart the Docker containers for the changes to take effect:
 
-You can modify your Appsmith installation on Kubernetes using a `values.yaml` file. Follow these steps to update the values:
-
-<Tabs groupId="appsmithEditions" queryString="current-edition">
-<TabItem label="Community Edition" value="communityEdition"> 
-
-1. Go to the root directory of your installation.
-
-2. Generate the `values.yaml` file with:
-
-  ```bash
-  helm show values appsmith/appsmith > values.yaml
-  ```  
-
-3. Modify the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, if you want to change the email address from which your messages are sent, as shown below:
-
-  ```yaml
-  applicationConfig:
-    #highlight-next-line
-    APPSMITH_MAIL_FROM:"test@test.com"
-  ```
-
-4. Update the values with:
-
-  ```bash
-  helm upgrade appsmith appsmith/appsmith -f values.yaml -n appsmith
-  ```
+    ```bash
+    docker-compose restart appsmith
+    ```
 
 </TabItem>
-<TabItem label="Commercial Edition" value="commercialEdition"> 
 
-1. Go to the root directory of your installation.
+<TabItem label="Helm" value="helm">
 
-2. Generate the `values.yaml` file with:
+For Kubernetes installations using Helm, modify the `values.yaml` file to configure environment variables.
 
-  ```bash
-  helm show values appsmith-ee/appsmith > values.yaml
-  ```  
+**Steps for Commercial Edition:**
 
-3. Change the parameter values in the `values.yaml` file available under the `applicationConfig` section. For example, change the email address from which your messages are sent, as shown below:
+1. Navigate to your installation's root directory.
+2. Generate a `values.yaml` file:
+    ```bash
+    helm show values appsmith-ee/appsmith > values.yaml
+    ```
+3. Update parameters under the `applicationConfig` section. For instance:
+    ```yaml
+    applicationConfig:
+      #highlight-next-line
+      APPSMITH_MAIL_FROM: "test@test.com"
+    ```
+4. Apply the updated values:
+    ```bash
+    helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
+    ```
+---
+**Steps for Community Edition:**
 
-  ```yaml
-  applicationConfig:
-    #highlight-next-line
-    APPSMITH_MAIL_FROM:"test@test.com"
-  ```
-
-4. Update the values with:
-
-  ```bash
-  helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
-  ```
+1. Navigate to your installation's root directory.
+2. Generate a `values.yaml` file:
+    ```bash
+    helm show values appsmith/appsmith > values.yaml
+    ```
+3. Modify parameters under the `applicationConfig` section. For example, to set the sender email address:
+    ```yaml
+    applicationConfig:
+      #highlight-next-line
+      APPSMITH_MAIL_FROM: "test@test.com"
+    ```
+4. Apply the updated values:
+    ```bash
+    helm upgrade appsmith appsmith/appsmith -f values.yaml -n appsmith
+    ```
 
 </TabItem>
-</Tabs> 
 
+<TabItem label="AWS ECS" value="aws-ecs">
 
-## Configure ECS installations
+To configure an ECS installation:
 
-To configure an ECS installation, follow these steps:
+1. Open the AWS ECS console.
+2. Select **Task Definitions** and choose the relevant task definition.
+3. Click **Create new revision**.
+4. In the **Task Definition config** page, edit the Appsmith container.
+5. Under **Environment**, add key-value pairs for the environment variables.
 
-1. Navigate to the ECS console and select Task Definitions on the sidebar.
-2. Click the Task Definition used by your ECS instance, and hit Create new revision.
-3. On the `Task Definition config` page, click the Appsmith container definition to edit it. In the Environment Section, enter the environment configuration as key-value pairs, as shown below.
+    <ZoomImage src="/img/ecs-task-env_(1).png" alt="ECS environment configuration example" />
 
-![ECS environment image](</img/ecs-task-env_(1).png>)
+For sensitive data, consider using [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Reference the secret's ARN in the environment variable using `ValueFrom`.
 
-It's recommended to use AWS Secrets for sensitive information. Follow these steps to [create a secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Use the ARN of the secret as the Environment value and set the option to ValueFrom.
+6. Click **Update**, then **Create** to generate a new task definition.
+7. In the ECS console, navigate to your cluster and select the service.
+8. Update the service to use the latest task definition revision.
+9. Review and confirm the update. 
 
-1. Hit the Update button, and hit Create to make a new task definition.
-2. Navigate back to the ECS console and select your cluster. Click your service to open the service details.
-3. Click Update, and select the latest revision of the Task Definition.
-4. Hit Skip to review and then Update Service. The screen below shows the status.
+    <ZoomImage src="/img/instance-configuration-ecs-service-restart.png" alt="ECS service restart example" />
 
-![Instance configuration ECS service restart image](/img/instance-configuration-ecs-service-restart.png)
+The new ECS task should be running within a minute.
 
-It may take a minute for the new ECS Task to start running.
+</TabItem>
+
+</Tabs>
 
 ## See also
-* [Environment Variables](/getting-started/setup/environment-variables)
+
+* [Environment Variables](/getting-started/setup/environment-variables).
