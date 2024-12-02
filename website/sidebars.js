@@ -167,7 +167,7 @@ const sidebars = {
               type: 'category',
               label: 'Reference',
               items: [
-                'advanced-concepts/version-control-with-git/updating-local-file-path',
+                'getting-started/setup/instance-configuration/file-size-limit',
                 'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/environment-variables',
               ],

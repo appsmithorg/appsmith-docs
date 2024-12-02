@@ -1264,6 +1264,10 @@
     {
       "source": "/getting-started/setup/instance-configuration/disable-intercom",
       "destination": "/getting-started/setup/environment-variables#intercom"
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
+      "destination": "/getting-started/setup/environment-variables#git-local-file-path"
     }
   ]
 }

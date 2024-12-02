@@ -339,6 +339,15 @@ This variable allows you to specify which domains can embed your Appsmith apps i
 </dd>
 For more information about embedding Appsmith, see the [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application) guide.
 
+### Git Local File Path
+
+For self-hosted instances, Appsmith clones Git repositories into the local file system, attached to a persistent volume within the Docker container. To ensure the repositories are persistent, you need to define a file path that points to the volume. You can customize this path using the following environment variable:
+
+#### `APPSMITH_GIT_ROOT`
+<dd>
+    Set the file path to specify a custom Git root where repositories will be stored. If this path is not set, the repositories will be cloned to a temporary location, which is not persistent. This means that if the repositories are deleted (for example, during a Docker restart), they may be lost. To ensure the repositories persist across restarts or other events, it’s essential to set up persistent storage. This way, your Git repositories will remain intact, and Appsmith won’t need to re-clone them.
+</dd>
+
 ### Supervisord 
 
 Access the Supervisord web interface seamlessly through Appsmith by setting login credentials using environment variables. Securely control your background processes, ensuring reliable application management.
