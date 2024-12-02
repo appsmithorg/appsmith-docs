@@ -84,7 +84,7 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
-                   ],
+                  ],
                 },
                 {
                   type: 'category',
@@ -623,7 +623,7 @@ const sidebars = {
           },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-           'write-code/reference/transform-data'
+            'write-code/reference/transform-data'
           ],
         }, //Reference End
         {
@@ -861,7 +861,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/README',
             'help-and-support/troubleshooting-guide/git-errors',
             'help-and-support/troubleshooting-guide/gac-errors',
-           'help-and-support/troubleshooting-guide/cyclic-dependency',
+            'help-and-support/troubleshooting-guide/cyclic-dependency',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',
@@ -879,6 +879,11 @@ const sidebars = {
         'product/security',
         'product/telemetry',
         'product/support',
+        {
+          type: 'link',
+          label: 'Privacy Policy', // The link label
+          href: 'https://www.appsmith.com/privacy-policy', // The external URL
+        },
         {
           type: 'link',
           label: 'Release Notes', // The link label

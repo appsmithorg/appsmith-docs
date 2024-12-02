@@ -24,6 +24,14 @@ Appsmith applications are secure-by-default, with a number of strategies in plac
 
 - **Access Control**: Internal access to Appsmith Cloud is strictly regulated. A two-factor authentication (2FA) system is in place, along with detailed audit logs to monitor and control access, providing an additional layer of security.
 
+## Appsmith AI
+
+Appsmith AI uses OpenAI’s APIs to provide chat completions and embeddings. Below is an overview of the data Appsmith processes and stores:
+
+1. **Chat completion data:** All interactions through Appsmith’s AI features are processed in real-time via OpenAI's APIs. All response data from OpenAI APIs is transient and **not** stored, logged or retained by Appsmith.
+    
+2. **File upload data:** When you upload files, Appsmith generates embeddings (vector representations of your data) using OpenAI’s embedding API. These embeddings are stored securely in a PostgreSQL database. The original files and content are not stored after processing.
+
 ## Query security
 
 - **No Data Logging**: The backend system of Appsmith is designed to act solely as a proxy, without logging or storing any data retrieved from databases or API endpoints. This includes response data and user input, thereby preventing unauthorized data access or leakage.
