@@ -686,6 +686,15 @@ a.appsmithtag.enterprise:hover {
   background: rgba(255, 109, 45, 0.05);
 }
 
+.ai {
+  color: #6a0dad; /* Adjusted to a purple shade */
+  border-radius: 4px;
+  border: 1px solid hsla(280, 80%, 45%, 0.5); /* Purple with transparency */
+  background: rgba(106, 13, 173, 0.05); /* Light purple background */
+}
+
+
+
 .neutral {
   color: #4C5664;
   border-radius: 4px;

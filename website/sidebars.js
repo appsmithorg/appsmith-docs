@@ -826,6 +826,56 @@ const sidebars = {
       ]
 
     }, //Workflows end
+
+ // AIStart
+
+ { 
+  type: 'category',
+  collapsed: false,
+  label: 'AI Assistants',
+  items: [
+    'AI-assistants/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-to Guides',
+      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
+      items: [
+              
+      ]
+    },
+    {
+      //Reference start
+      type: 'category',
+      label: 'Reference',
+      collapsed: false,
+      link: { type: 'doc', id: 'build-apps/reference/README' },
+      items: [
+        {
+          type: 'category',
+          label: 'Widgets',
+          link: { type: 'doc', id: 'reference/widgets/README' },
+          items: [
+  
+          'AI-assistants/reference/zone',
+          'AI-assistants/reference/paragraph',
+          'AI-assistants/reference/Heading',
+          'AI-assistants/reference/modal',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Integrations',
+          link: { type: 'doc', id: 'reference/widgets/README' },
+          items: [
+  
+                ],
+        },
+      ],
+    }, //Reference End
+  ]
+}, //ai end
+
     {
       // Help & Support start
       type: 'category',
