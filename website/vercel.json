@@ -1244,8 +1244,7 @@
     {
       "source": "/advanced-concepts/invite-users",
       "destination": "/advanced-concepts/granular-access-control/reference/permissions"
-    }
-    ,
+    },
     {
       "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
       "destination": "/advanced-concepts/version-control-with-git/guides/overview"
@@ -1253,6 +1252,18 @@
     {
       "source": "/advanced-concepts/version-control-with-git/working-with-branches",
       "destination": "/advanced-concepts/version-control-with-git"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/disable-user-signup",
+      "destination": "/getting-started/setup/environment-variables#appsmith_signup_disabled"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/frame-ancestors",
+      "destination": "/getting-started/setup/environment-variables#embed-appsmith"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/disable-intercom",
+      "destination": "/getting-started/setup/environment-variables#intercom"
     }
   ]
 }

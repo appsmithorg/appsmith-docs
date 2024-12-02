@@ -159,12 +159,8 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/configure-using-environment-variables',
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
-                'getting-started/setup/instance-configuration/file-size-limit',
-                'getting-started/setup/instance-configuration/disable-user-signup',
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-management/maintenance-window',
-                'getting-started/setup/instance-configuration/frame-ancestors',
-                'getting-started/setup/instance-configuration/disable-intercom',
               ],
             },
             {
