@@ -26,12 +26,17 @@ Follow these steps to update Appsmith to latest version on your self-hosted inst
 
 <TabItem label="Docker" value="docker">
 
-1. Upgrade to the checkpoint version if your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.  
-2. Locate your Appsmith installation directory by running:  
+These instructions are applicable to platforms using Docker, including Docker standalone, AWS AMI, and similar platforms:
+
+:::caution Important
+If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+:::
+
+1. Locate your Appsmith installation directory by running:  
    ```bash
    docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
    ``` 
-3. Pull the latest Appsmith image and restart the container:  
+2. Pull the latest Appsmith image and restart the container:  
    ```bash
    docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
    ```
@@ -40,8 +45,11 @@ Follow these steps to update Appsmith to latest version on your self-hosted inst
 
 <TabItem label="Kubernetes" value="kubernetes">
 
-1. Upgrade to the checkpoint version if your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide.  
-2. Restart the container image:
+:::caution Important
+If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+:::
+
+1. Restart the container image:
    - For **Commercial Edition**:  
      ```bash
      kubectl rollout restart deployment appsmith
@@ -70,6 +78,10 @@ Follow these steps to update Appsmith to latest version on your self-hosted inst
 </TabItem>
 
 <TabItem label="DigitalOcean" value="digital-ocean">
+
+:::caution Important
+If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+:::
 
 1. SSH into your droplet and navigate to the Appsmith installation directory:  
 

@@ -73,6 +73,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
                 'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
+                'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
                 'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
@@ -163,7 +164,6 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-management/maintenance-window',
                 'getting-started/setup/instance-configuration/frame-ancestors',
-                'advanced-concepts/version-control-with-git/updating-local-file-path',
                 'getting-started/setup/instance-configuration/disable-intercom',
               ],
             },
@@ -171,6 +171,7 @@ const sidebars = {
               type: 'category',
               label: 'Reference',
               items: [
+                'advanced-concepts/version-control-with-git/updating-local-file-path',
                 'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/environment-variables',
               ],
@@ -204,7 +205,6 @@ const sidebars = {
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
             },
-            'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
             {
               type: 'category',
               label: 'Upgrade to Commercial Edition',
@@ -214,19 +214,9 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/manage-plans/upgrade-plan',
-                {
-                  type: 'category',
-                  label: 'Upgrade from Community Edition',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/upgrade-from-community-edition/README',
+                'getting-started/setup/upgrade-from-community-edition/docker',
+                'getting-started/setup/upgrade-from-community-edition/kubernetes',
 
-                  },
-                  items: [
-                    'getting-started/setup/upgrade-from-community-edition/docker',
-                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
-                  ]
-                },
               ],
             },
             'getting-started/setup/manage-plans/downgrade-plan',

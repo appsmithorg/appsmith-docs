@@ -2,7 +2,7 @@
 description: Follow these steps to upgrade the Appsmith Community Kubernetes installation.
 ---
 
-# Kubernetes
+# Upgrade from Community Appsmith (Kubernetes)
 
 This page provides steps to upgrade Appsmith Kubernetes Community Edition.
 

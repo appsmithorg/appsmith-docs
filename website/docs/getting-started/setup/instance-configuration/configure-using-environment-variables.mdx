@@ -5,19 +5,19 @@ description: Learn how to configure your Appsmith instance using environment var
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Configure using Environment Variables
+# Configure Environment Variables
 
-Appsmith offers environment variables to tailor your setup for different services and integrations. This guide provides step-by-step instructions for configuring environment variables across different deployment methods.
+Appsmith offers environment variables to customize your setup for different services and integrations. These configurations are applicable only to [self-hosted Appsmith](/getting-started/setup/installation-guides) instances. The page provides step-by-step instructions for configuring environment variables in Appsmith across different deployment methods.
 
 <Tabs groupId="appsmithplatforms" queryString="current-platform">
 
 <TabItem label="Docker" value="docker">
 
-To configure Appsmith in a Docker installation:
+Follow these steps to configure Appsmith using environment variables for Docker-based installations, including setups on DigitalOcean, AWS AMI, and similar platforms:
 
 1. Navigate to your installation folder.
 2. Open the `stacks/configuration/docker.env` file.
-3. Add or update the required environment variables. For instance, to set the Google Maps API key:
+3. Add or update the required environment variables. For example, to set the Google Maps API key:
 
     ```bash
     APPSMITH_GOOGLE_MAPS_API_KEY=YOUR_API_KEY
@@ -75,17 +75,15 @@ For Kubernetes installations using Helm, modify the `values.yaml` file to config
 
 <TabItem label="AWS ECS" value="aws-ecs">
 
-To configure an ECS installation:
+To configure an Appsmith ECS installation:
 
 1. Open the AWS ECS console.
 2. Select **Task Definitions** and choose the relevant task definition.
 3. Click **Create new revision**.
 4. In the **Task Definition config** page, edit the Appsmith container.
-5. Under **Environment**, add key-value pairs for the environment variables.
+5. Under **Environment**, add or update the key-value pairs for the environment variables. For sensitive data, consider using [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). When referring a value from the AWS secrets manager, use `ValueFrom`  in the environment variable.
 
     <ZoomImage src="/img/ecs-task-env_(1).png" alt="ECS environment configuration example" />
-
-For sensitive data, consider using [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_create-basic-secret.html). Reference the secret's ARN in the environment variable using `ValueFrom`.
 
 6. Click **Update**, then **Create** to generate a new task definition.
 7. In the ECS console, navigate to your cluster and select the service.
