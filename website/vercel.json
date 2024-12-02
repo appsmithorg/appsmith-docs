@@ -1255,19 +1255,23 @@
     },
     {
       "source": "/getting-started/setup/instance-configuration/disable-user-signup",
-      "destination": "/getting-started/setup/environment-variables#appsmith_signup_disabled"
+      "destination": "/getting-started/setup/environment-variables#appsmith_signup_disabled",
+      "permanent": true
     },
     {
       "source": "/getting-started/setup/instance-configuration/frame-ancestors",
-      "destination": "/getting-started/setup/environment-variables#embed-appsmith"
+      "destination": "/getting-started/setup/environment-variables#embed-appsmith",
+      "permanent": true
     },
     {
       "source": "/getting-started/setup/instance-configuration/disable-intercom",
-      "destination": "/getting-started/setup/environment-variables#intercom"
+      "destination": "/getting-started/setup/environment-variables#intercom",
+      "permanent": true
     },
     {
       "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
-      "destination": "/getting-started/setup/environment-variables#git-local-file-path"
+      "destination": "/getting-started/setup/environment-variables#git-local-file-path",
+      "permanent": true
     }
   ]
 }
