@@ -856,7 +856,6 @@ const sidebars = {
           label: 'Widgets',
           link: { type: 'doc', id: 'reference/widgets/README' },
           items: [
-  
           'AI-assistants/reference/zone',
           'AI-assistants/reference/paragraph',
           'AI-assistants/reference/Heading',
