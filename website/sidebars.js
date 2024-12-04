@@ -864,6 +864,7 @@ const sidebars = {
           'AI-assistants/reference/Heading',
           'AI-assistants/reference/modal',
           'AI-assistants/reference/stats',
+          'AI-assistants/reference/switch',
           
           ],
         },
