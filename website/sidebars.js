@@ -856,10 +856,14 @@ const sidebars = {
           label: 'Widgets',
           link: { type: 'doc', id: 'reference/widgets/README' },
           items: [
+            'AI-assistants/reference/checkbox',
+            'AI-assistants/reference/checkbox-group',
           'AI-assistants/reference/zone',
           'AI-assistants/reference/paragraph',
           'AI-assistants/reference/Heading',
           'AI-assistants/reference/modal',
+          'AI-assistants/reference/stats',
+          
           ],
         },
         {
