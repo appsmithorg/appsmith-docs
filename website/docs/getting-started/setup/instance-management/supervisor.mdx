@@ -1,0 +1,45 @@
+---
+sidebar_position: 1
+description: Learn how to monitor and manage Appsmith processes using Supervisor's Web Interface and Command Line Interface (CLI) in your self-hosted Appsmith instance.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Monitor Processes
+
+In a self-hosted Appsmith instance, several key processes like the Appsmith server, Caddy, MongoDB, and others are managed within a single Docker container. These processes are started and continuously monitored by [Supervisor](http://supervisord.org/), a process control system. You can monitor and manage these processes using either the Web Interface or the Command Line Interface. This page provides instructions to set up and use these interfaces to manage the Appsmith processes.
+
+<Tabs queryString="current-interface-type">
+  <TabItem label="Web Interface" value="web">
+
+    The Supervisor Web Interface provides an easy-to-use, graphical way to monitor and manage Appsmith processes. Follow the steps below to configure and access the web interface.
+
+    1. Go to the `docker.env` file located in the `stacks/configuration` folder.
+    2. Set the following environment variables to configure the Supervisor credentials:
+        ```bash
+        APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
+        APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
+        ```
+    3. Once the credentials are set, you can access the Supervisor web interface at `http://[your-domain]/supervisor`. For example, if your Appsmith instance is available at `http://localhost`, the Supervisor web interface can be accessed at `http://localhost/supervisor`.
+
+        <ZoomImage src="/img/appsmith_supervisord_ui.png" alt="All managed processes listed in the web interface" caption="All managed processes listed in the web interface" />
+
+  </TabItem>
+  <TabItem label="Command Line Interface" value="commandline">
+
+    The Supervisor Command Line Interface (CLI) provides a way to interact with and manage processes directly from the terminal. Follow the steps below to monitor the processes using the CLI.
+
+    1. To check the status of all running processes, use the following command:
+        ```bash
+        docker-compose exec appsmith supervisorctl status
+        ```
+
+    2. To view the last few lines of the `stderr` output of a specific process, use:
+        ```bash
+        docker-compose exec appsmith supervisorctl tail <process_name> stderr
+        ```
+
+    For a complete list of `supervisorctl` commands, refer to the [Supervisor official documentation](http://supervisord.org/running.html#supervisorctl-actions).
+  </TabItem>
+</Tabs>
