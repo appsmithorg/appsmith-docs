@@ -31,7 +31,7 @@ This widget is only available in **AI Assistant Apps** and cannot be used in **C
 ::: 
 
  <ZoomImage
-    src="/img/checkbox-widget.png" 
+    src="/img/switch-widget.png" 
     alt=""
     caption=""
   /> 
