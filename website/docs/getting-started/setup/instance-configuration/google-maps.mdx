@@ -1,5 +1,5 @@
 ---
-description: Follow these steps to configure Google Maps Key for your self-hosted Appsmith instance.
+description: Follow these steps to configure Google Maps for your self-hosted Appsmith instance.
 ---
 
 import Tabs from '@theme/Tabs';
@@ -7,69 +7,52 @@ import TabItem from '@theme/TabItem';
 
 # Google Maps
 
-This page provides instructions to integrate Google Maps to use the [Map Widget](/reference/widgets/maps) in your applications on the self-hosted instance.
+This page provides instructions to integrate Google Maps for using the [Map Widget](/reference/widgets/maps) in your applications on a self-hosted instance.
 
 ## Prerequisites
 
-- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
-- A [Google Cloud](https://www.google.com/aclk?sa=l&ai=DChcSEwi0373S7OX_AhW7Vn0KHT5BD30YABABGgJzZg&sig=AOD64_3YNMGHJAu3vGJmjK-vrl8qni2BxA&q&adurl&ved=2ahUKEwjjs7XS7OX_AhWy3TgGHWtHAkYQ0Qx6BAgIEAE) account. 
+- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for details.
+- A [Google Cloud](https://console.cloud.google.com/) account.
+- You are either an [Instance Administrator](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) or have permissions to access Admin settings.
 
-## Generate Google Maps API key 
+## Generate Google Maps API key (optional)
+
+If you already have an API key, skip to the [Set up Maps API key](#set-up-maps-api-key) section. Otherwise, follow these steps to generate an API key:
 
 1. Log into the [Google Cloud console](https://console.cloud.google.com/).
-2. Generate a Google Maps API key. Follow the [Create API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys) guide on the official Google Maps platform documentation.
-3. Restrict the Google Maps API key. Follow the [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) guide on the official Google Maps platform documentation.
-4. Ensure that you've enabled Maps Embed API, Maps JavaScript API, Places API, and Geolocation API when following the [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) guide on the official Google Maps platform. 
+2. Generate a Google Maps API key by following the [Create API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#create-api-keys) guide.
+3. Restrict the Google Maps API key using the [Restrict API keys](https://developers.google.com/maps/documentation/javascript/get-api-key#restrict_key) guide.
+4. Ensure that **Maps Embed API**, **Maps JavaScript API**, **Places API**, and **Geolocation API** are enabled during the API key restriction process.
 
-## Configure Google Maps on Appsmith
+## Set up Maps API key
 
-You can add the API key in one of the below ways: 
-
-* [Admin Settings](#admin-settings)
-* [Environment Variable](#environment-variable)
-
-### Admin Settings
+To set up the API key via Admin Settings, follow these steps:
 
 :::caution Attention
-If you have assigned the API key value using an environment variable for your instance, it takes precedence over the value provided through the Admin Settings UI.
+If an API key is configured using an environment variable, it takes precedence over the value set via Admin Settings. To configure using environment variables, see the [Google Maps API key environment variable](/reference/environment-variables#APPSMITH_GOOGLE_MAPS_API_KEY) reference.
 :::
 
-Follow these steps to add the API key to your self-hosted instance using Admin Settings:
+1. Log into your Appsmith instance.
+2. Go to **Admin Settings** by clicking the gear (⚙️) icon in the top right corner of your Appsmith Dashboard.
+3. Click the **Developer settings** from the sidebar.
 
-1. Log into your Appsmith instance as a superuser.
-
-2. Go to **Admin Settings** screen.
-
-3. Select **Google Maps** from the left nav bar.
-
- <ZoomImage
+    <ZoomImage
         src="/img/admin-settings-configure-google-maps-api-key.png"
         alt="Google Maps API Key."
         caption="Add your Google Maps API Key"
-/>
+    />
 
-4. Add your API key to the **Google Maps API Key** field.
+4. Enter your API key in the **Google Maps API Key** field.
+5. Click **Save** to apply the changes.
 
-5. Click the **SAVE & RESTART** button to restart the instance.
-
-
-### Environment variable
-
-Follow these steps to add the API key to your self-hosted instance using an environment variable:
-
-1. Go to the location where the Appsmith configuration file is located. For example, the `docker.env` file for Docker and the `values.yaml` file for Kubernetes.
-
-2. Update the value of the `APPSMITH_GOOGLE_MAPS_API_KEY` variable as shown below:
-
-```bash
-# Google Maps API key
-APPSMITH_GOOGLE_MAPS_API_KEY=<YOUR_API_KEY>
-```
-
-3. Restart the instance.
-
-
-You're all set to use the Map widget in your Appsmith applications.
+You're all set to use the Map Widget in your Appsmith applications.
 
 ## Troubleshooting
+
 If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+- [Admin settings](/getting-started/setup/instance-configuration/admin-settings): Learn how to manage instance settings through the Appsmith Admin Settings UI.
+- [Configure environment variables](/getting-started/setup/instance-configuration/configure-using-environment-variables): Step-by-step instructions to set up environment variables for your Appsmith instance.
+- [Environment variables](/getting-started/setup/environment-variables): Overview of all available environment variables for configuring your Appsmith instance.

@@ -230,6 +230,20 @@ The secret key provided by Google reCAPTCHA that Google uses to verify the user 
 </dd>
 
 
+### Google Maps API
+
+The following environment variable is used to integrate Google Maps with your Appsmith applications on a self-hosted instance.
+
+#### `APPSMITH_GOOGLE_MAPS_API_KEY`
+
+This variable specifies the Google Maps API key required to enable the Map Widget in your applications. The key allows your Appsmith instance to communicate with the Google Maps API for displaying and interacting with maps.
+
+```yaml
+APPSMITH_GOOGLE_MAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY>
+```
+
+Replace `<YOUR_GOOGLE_MAPS_API_KEY>` with a valid API key obtained from the [Google Cloud Console](https://console.cloud.google.com/). You may also choose to set the Google Maps API key using the Admin settings UI on your Appsmith instance. For more information about configuring the Google Maps API key through the Admin settings, see the [Google Maps](/getting-started/setup/instance-configuration/google-maps) reference.
+
 ### Database and session management
 
 Appsmith can connect to external providers for MongoDB and Redis. The associated environment variables ensure that Appsmith establishes a connection to external hosting rather than using the embedded MongoDB or Redis servers.
