@@ -310,8 +310,3 @@ SwitchGroup1.setSelectedOptions(['BLUE', 'RED']);
 
 </dd>
 
-## See also
-
-- [Insert Data](/build-apps/how-to-guides/insert-data) – Learn how to insert data into a datasource using widgets.
-- [Update Data](/build-apps/how-to-guides/submit-form-data) – Discover how to update data using widgets.
-- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs) – See how to create a multi-step form.
