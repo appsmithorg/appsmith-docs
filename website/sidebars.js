@@ -161,6 +161,7 @@ const sidebars = {
                 'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-management/maintenance-window',
+                'getting-started/setup/instance-management/switch-off-automatic-updates',
               ],
             },
             {
