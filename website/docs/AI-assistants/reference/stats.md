@@ -14,11 +14,7 @@ tags={[
 ]}
 />
 
-<Tags
-tags={[
-{ name: "AI", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
-]}
-/>
+
 
 </div>
 
