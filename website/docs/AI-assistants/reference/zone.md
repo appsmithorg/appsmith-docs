@@ -24,11 +24,8 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the **Zone Widget**, a tool that helps you organize and structure your application layout by creating distinct sections. The Zone Widget uses a 12-column grid system to create responsive layouts. This system divides the layout into 12 equal-width columns, allowing users to structure content in flexible, proportional sections.
+This page provides information on using the **Zone Widget**(available in AI Assistant Apps), a tool that helps you organize and structure your application layout by creating distinct sections. The Zone Widget uses a 12-column grid system to create responsive layouts. This system divides the layout into 12 equal-width columns, allowing users to structure content in flexible, proportional sections.
 
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
 
  <ZoomImage
     src="/img/zone-ai.gif" 

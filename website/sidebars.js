@@ -854,7 +854,6 @@ const sidebars = {
         {
           type: 'category',
           label: 'Widgets',
-          link: { type: 'doc', id: 'reference/widgets/README' },
           items: [
         'AI-assistants/reference/checkbox',  
         'AI-assistants/reference/checkbox-group',  

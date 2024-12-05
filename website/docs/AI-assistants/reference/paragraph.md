@@ -24,7 +24,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Paragraph Widget to display and style longer text content such as paragraphs, descriptions, or detailed notes, helping to enhance readability and structure within your application.
+This page provides information on using the Paragraph Widget(available in AI Assistant Apps) to display and style longer text content such as paragraphs, descriptions, or detailed notes, helping to enhance readability and structure within your application.
 
  <ZoomImage
     src="/img/paragraph-widget.png" 

@@ -24,11 +24,8 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Stats Widget, which enables you to display numerical values, percentages, and associated text based on dynamic data. It is commonly used to showcase key metrics and performance indicators, offering quick insights to users.
+This page provides information on using the Stats Widget(available in AI Assistant Apps), which enables you to display numerical values, percentages, and associated text based on dynamic data. It is commonly used to showcase key metrics and performance indicators, offering quick insights to users.
 
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
 
  <ZoomImage
     src="/img/stats-widget.png" 

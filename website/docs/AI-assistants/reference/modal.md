@@ -24,7 +24,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Modal widget to create a dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
+This page provides information on using the Modal widget(available in AI Assistant Apps) to create a dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
 
 
  <ZoomImage

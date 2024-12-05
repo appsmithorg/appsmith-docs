@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Heading</h1>
+ <h1>Heading (AI Assistant)</h1>
 
 <Tags
 tags={[
@@ -24,7 +24,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Heading Widget to set and style text for creating titles, subtitles, and headers, helping you organize content and improve readability.
+This page provides information on using the Heading Widget(available in AI Assistant Apps) to set and style text for creating titles, subtitles, and headers, helping you organize content and improve readability.
 
 
  <ZoomImage

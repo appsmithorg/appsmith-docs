@@ -25,11 +25,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Checkbox Group widget, which allows users to select multiple options from a list. It is useful in scenarios where multiple selections are required, such as choosing preferences, filtering data, or managing user inputs in forms.
-
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
+This page provides information on using the Checkbox Group widget(available in AI Assistant Apps), which allows users to select multiple options from a list. It is useful in scenarios where multiple selections are required, such as choosing preferences, filtering data, or managing user inputs in forms.
 
  <ZoomImage
     src="/img/checkbox-group-widget.png" 
