@@ -1,12 +1,12 @@
 ---
-title: Checkbox Group
+title: Checkbox Group 
 hide_title: true
 toc_max_heading_level: 2
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Checkbox Group</h1>
+ <h1>Checkbox Group (AI Assistant)</h1>
 
 <Tags
 tags={[

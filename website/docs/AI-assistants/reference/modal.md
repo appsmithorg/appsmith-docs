@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Modal</h1>
+ <h1>Modal (AI Assistant)</h1>
 
 <Tags
 tags={[

@@ -1,12 +1,12 @@
 ---
-title: Checkbox
+title: Select
 hide_title: true
 toc_max_heading_level: 2
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Checkbox</h1>
+ <h1>Select (AI Assistant)</h1>
 
 <Tags
 tags={[
@@ -14,24 +14,17 @@ tags={[
 ]}
 />
 
-<Tags
-tags={[
-{ name: "AI", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
-]}
-/>
 
 </div>
 
 <!-- vale on -->
 
-This page provides information on using the Select Widget, which allows users to choose a single option from a dropdown list.
+This page provides information on using the Select Widget(available in AI Assistant Apps), which allows users to choose a single option from a dropdown list.
 
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
+
 
  <ZoomImage
-    src="/img/checkbox-widget.png" 
+    src="/img/select-widget.png" 
     alt=""
     caption=""
   /> 
@@ -313,7 +306,3 @@ Select1.setData([{ label: 'Apple', value: 'apple' }, { label: 'Banana', value: '
 </dd>
 
 
-## See also
-
-- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically) – Learn how to dynamically display and filter options in a Select widget based on user input or server-side data.
-- [Set up server-side filter on select](/build-apps/how-to-guides/display-select-options-dynamically#set-up-server-side-filter-on-select) – Understand how to configure server-side filtering for Select widgets to provide relevant options based on user selection.

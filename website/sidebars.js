@@ -859,6 +859,7 @@ const sidebars = {
         'AI-assistants/reference/checkbox',  
         'AI-assistants/reference/checkbox-group',  
         'AI-assistants/reference/Heading',  
+        'AI-assistants/reference/inline-button',  
         'AI-assistants/reference/modal',  
         'AI-assistants/reference/paragraph',  
         'AI-assistants/reference/radio-group',  

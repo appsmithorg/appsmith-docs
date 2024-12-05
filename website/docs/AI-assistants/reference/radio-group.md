@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Radio Group</h1>
+ <h1>Radio Group (AI Assistant)</h1>
 
 <Tags
 tags={[
