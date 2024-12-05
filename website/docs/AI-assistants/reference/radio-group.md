@@ -21,12 +21,9 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Radio Group widget(available in AI Assistant Apps), which allows users to select a single option from a predefined set of choices. It's ideal for scenarios where only one selection is allowed, such as choosing a category, setting a preference, or selecting a payment method.
+This page provides information on using the Radio Group widget *(available in AI Assistant Apps)*, which allows users to select a single option from a predefined set of choices. It's ideal for scenarios where only one selection is allowed, such as choosing a category, setting a preference, or selecting a payment method.
 
 
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
 
  <ZoomImage
     src="/img/radio-group-widget.png" 
@@ -84,6 +81,8 @@ This property defines the default option selected in the Radio Group widget. It 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -116,6 +115,9 @@ When enabled, this property makes the Radio Group a mandatory field. When the Ra
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 #### Visible `boolean`
@@ -161,6 +163,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onSelectionChange
@@ -289,11 +293,3 @@ RadioGroup1.setData([
 ```
 
 </dd>
-
-## See also
-
-- [Insert Data](/build-apps/how-to-guides/insert-data) – Learn how to insert data into a datasource using widgets.
-- [Update Data](/build-apps/how-to-guides/submit-form-data) – Discover how to update data using widgets.
-- [Form](/reference/widgets/form) – Learn more about the Form widget.
-- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs) – See how to create a multi-step form.
-

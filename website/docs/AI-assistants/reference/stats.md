@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Stats Widget(available in AI Assistant Apps), which enables you to display numerical values, percentages, and associated text based on dynamic data. It is commonly used to showcase key metrics and performance indicators, offering quick insights to users.
+This page provides information on the Stats Widget *(available in AI Assistant Apps)*, which allows you to display numerical values, percentages, and associated text based on dynamic data. It is commonly used to showcase key metrics and performance indicators, offering quick insights to users.
 
 
  <ZoomImage
@@ -36,11 +36,19 @@ These properties are customizable options present in the property pane of the wi
 
 ### Fields
 
-#### Label `string`
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  `string`
 
 <dd>
 
-The Label property sets the main text displayed in the Stats widget. You can add static text or dynamically set it using mustache bindings `{{}}`
+The Label property sets the main text displayed in the Stats widget. For example, the label could indicate `Active Users`, `Total Sales`, or `Completed Orders` depending on the data you want to showcase.
+
+You can also dynamically update the label based on user interactions or data:
+
+```js
+{{TimePeriodDropdown.selectedOptionValue === "Daily" ? "Stats for Today" : "Stats for This Month"}}
+```
 
 </dd>
 
@@ -82,7 +90,7 @@ You can enable JS to dynamically update the color. The value should be one of th
 
 <dd>
 
-Allows you to set an icon for the Stats widget. You can choose from a predefined list of available icons. By enabling JavaScript, you can dynamically change the icon based on data or user interactions.
+Allows you to set an icon for the Stats widget. You can choose from a predefined list of available icons. By enabling JS, you can dynamically change the icon based on data or user interactions.
 
 *Example:* Display a different icon based on stock levels:
 
@@ -102,7 +110,7 @@ Allows you to set the alignment of the icon within the Stats widget. You can eit
 </dd>
 
 
-#### Value change
+#### Value change `string`
 
 <dd>
 
@@ -118,7 +126,7 @@ Displays secondary information related to the main value, often used to indicate
 </dd>
 
 
-#### Color
+#### Color `string`
 
 <dd>
 
@@ -143,7 +151,7 @@ You can enable JS to dynamically update the color. The value should be one of th
 
 </dd>
 
-#### Caption
+#### Caption `string`
 
 <dd>
 
@@ -162,6 +170,9 @@ Defines the descriptive text displayed below the main value in the Stats widget.
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -169,6 +180,7 @@ Defines the descriptive text displayed below the main value in the Stats widget.
 Controls the visibility of the widget. If you turn off this property, the widget is not visible in View Mode. Additionally, you can use JavaScript by clicking on **JS** next to the **Visible** property to control the widget's visibility conditionally.
 
 For example, if you want to make the widget visible only when the user selects "Yes" from a Select widget, you can use the following JavaScript expression: 
+
 ```js
 {{Select1.selectedOptionValue === "Yes"}}
 ```
@@ -185,6 +197,9 @@ This property controls whether the widget is displayed with a loading animation.
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Visual Separation boolean
 

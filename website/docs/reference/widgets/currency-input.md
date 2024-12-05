@@ -55,6 +55,8 @@ Specifies the maximum number of decimal digits allowed. It can be set to either 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -150,6 +152,9 @@ Allows customization of the error message displayed when the user enters an inco
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 
 #### Tooltip `string`
 <dd>
@@ -237,6 +242,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 When the event is triggered, these event handlers can run queries, JS code, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 

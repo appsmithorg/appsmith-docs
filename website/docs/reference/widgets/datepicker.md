@@ -58,6 +58,8 @@ Decides whether a time is included within the Datepicker, and whether that time 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 <dd>
@@ -93,6 +95,9 @@ Sets a maximum date permitted to be selected with the widget. With **JS** enable
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Tooltip
 
@@ -166,7 +171,9 @@ This property determines how the widget's height adjusts to changes in its conte
 
 </dd>
 
-### Events 
+### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes. 
 
 When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 
@@ -198,7 +205,9 @@ Triggered when the widget loses focus, when the user clicks outside of the widge
 
 Style properties allow you to change the look and feel of the widget.
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 

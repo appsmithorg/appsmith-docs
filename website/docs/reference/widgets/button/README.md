@@ -13,7 +13,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### Basic
 
-#### Label `string`
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  `string`
 
 <dd>
 
@@ -30,6 +32,9 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Tooltip `string`
 
@@ -119,6 +124,9 @@ When this button property is turned on, the button can be used to reset all fiel
 Style properties allow you to change the look and feel of the button.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Button variant `string`
 

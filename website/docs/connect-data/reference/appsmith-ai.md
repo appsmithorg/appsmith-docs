@@ -135,7 +135,9 @@ For example, you can input a user's product review, like:
 
 <dd>
 
-#### Labels
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. s
 
 
 
@@ -263,7 +265,9 @@ This field allows you to provide the image, either in the form of an image URL o
 
 <dd>
 
-#### Labels
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. s
 
 
 

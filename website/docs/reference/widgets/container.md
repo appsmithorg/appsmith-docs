@@ -13,6 +13,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>

@@ -55,7 +55,9 @@ If you are generating options for Select widget using JS code as shown above, ma
 
 </dd>
 
-#### Label key `string`
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  key `string`
 
 <dd>
 
@@ -99,6 +101,8 @@ Sets the initial option that is automatically chosen when the widget is loaded. 
 </dd>
 
 ### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
 
 #### Text `string`
 
@@ -174,7 +178,10 @@ Enabling this property for a Select widget makes it a mandatory field, meaning t
 
 </dd>
 
-### General 
+### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+ 
 
 #### Visible `boolean`
 
@@ -226,6 +233,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 #### onOptionChange 
 
 <dd>
@@ -255,7 +264,9 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 Style properties allow you to change the look and feel of the widget.
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 

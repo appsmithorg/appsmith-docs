@@ -45,7 +45,10 @@ Specifies the label text displayed alongside the scanning widget. This property 
 
 </dd>
 
-### General 
+### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+ 
 
 #### Visible `boolean`
 
@@ -92,6 +95,8 @@ Sets a tooltip that appears when the user hovers over the widget. It enables you
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 

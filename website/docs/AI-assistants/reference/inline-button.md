@@ -19,7 +19,8 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on the Inline Buttons widget(available in AI Assistant Apps), which enables placing multiple buttons in a single row with a customizable separator. 
+This page provides information on the Inline Buttons widget *(available in AI Assistant Apps)*, which allows you to place multiple buttons in a single row with a customizable separator, providing a streamlined interface for user interactions.
+
 
  <ZoomImage
     src="/img/inline-button.png" 
@@ -39,11 +40,11 @@ Defines the options and datasources for the widget, determining the content disp
 
 <dd>
 
-This property allows you to add customizable buttons within the widget. You can add, delete, or rearrange buttons to fit your specific layout needs.
+This property allows you to define the buttons within the Inline Buttons widget. You can add multiple buttons, remove them, or rearrange them to customize the widget's layout based on your needs.
 
-By default, a **Separator** is included, which divides button groups. You can remove or reposition the Separator, but only one Separator is allowed in the widget.
+Each button is configured individually, and you can edit its label, action, and style by clicking the gear icon next to the button.For more details, see [Button Settings](#buttons-settings).
 
-Each button can be individually configured by clicking the gear icon next to it. For more details, see [Button Settings](#buttons-settings).
+By default, a **Separator** is included between button groups to visually separate them. This separator can be removed or repositioned, but only one separator is allowed in the widget at a time.
 
 </dd>
 
@@ -133,5 +134,57 @@ This property disables the specific button, preventing users from interacting wi
 
 Allows you to configure one or multiple actions (Framework functions, queries, or JS functions) to be executed when the button is clicked. You can chain multiple actions together, and all the nested actions would run simultaneously.
 
+
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `InlineButtons1.isVisible`.
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+
+```js
+{{InlineButtons1.isVisible}}
+```
+
+</dd> 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor. 
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+#### setVisibility `(param: boolean): Promise`
+
+<dd>
+
+Sets the visibility of the widget. This method allows you to show or hide a widget based on certain conditions or user interactions.
+
+*Example*:
+
+```js
+InlineButtons1.setVisibility(true)  // Makes the Heading widget visible
+```
+
+</dd>
+
+#### setDisabled `(param: boolean): Promise`
+
+<dd>
+
+Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
+
+*Example:*
+
+```js
+InlineButtons1.setDisabled(false)  // Enables the Heading widget
+```
 
 </dd>

@@ -20,11 +20,8 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Checkbox Widget, which allows you to collect boolean input from users. It enables you to create interactive checkboxes that users can check or uncheck. This widget is ideal for scenarios such as selecting options, agreeing to terms, or enabling/disabling settings in your app.
+This page provides information on using the Checkbox Widget *(available in AI Assistant Apps)*, which allows you to collect boolean input from users. This widget is ideal for scenarios such as selecting options, agreeing to terms, or enabling/disabling settings in your app.
 
-:::info
-This widget is only available in **AI Assistant Apps** and cannot be used in **Classic Apps**.
-::: 
 
  <ZoomImage
     src="/img/checkbox-widget.png" 
@@ -40,6 +37,8 @@ These properties are customizable options present in the property pane of the wi
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `String`
 
  <dd>
@@ -52,6 +51,7 @@ Sets the label for the Checkbox widget. This is the text displayed next to the c
 
 ### Validations
 
+The Validations property allows you to set rules and conditions to ensure the data entered or displayed in the widget meets specific criteria.
 
 #### Required `boolean`
 
@@ -63,6 +63,8 @@ Enables the checkbox as a mandatory field. When enabled, the form cannot be subm
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
 
 #### Default State `boolean`
 
@@ -114,6 +116,9 @@ This property controls whether the widget is displayed with a loading animation.
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 
 #### onCheckChange
 

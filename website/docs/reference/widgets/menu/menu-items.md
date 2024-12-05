@@ -11,7 +11,9 @@ These properties are customizable options present in the property pane of the wi
 ### Basic
 
 
-#### Label `string`
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  `string`
 
 <dd>
 

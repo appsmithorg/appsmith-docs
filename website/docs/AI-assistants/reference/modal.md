@@ -14,17 +14,12 @@ tags={[
 ]}
 />
 
-<Tags
-tags={[
-{ name: "AI", link: "https://www.appsmith.com/pricing", additionalClass: "ai" }
-]}
-/>
 
 </div>
 
 <!-- vale on -->
 
-This page provides information on using the Modal widget(available in AI Assistant Apps) to create a dialog in your app for displaying various types of content, such as alerts, confirmation pop-ups, forms, and more.
+This page provides information on using the Modal widget *(available in AI Assistant Apps)*, which allows you to create dialog boxes in your app to display various types of content, such as alerts, confirmation pop-ups, forms, and more,
 
 
  <ZoomImage
@@ -39,6 +34,9 @@ This page provides information on using the Modal widget(available in AI Assista
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Animate Loading `boolean`
 
@@ -63,11 +61,13 @@ The **Size** property determines the overall dimensions of the Modal. You can ch
 
 ### Header
 
+These properties allow you to control the header section of the Modal, which is used to display a title or additional context to the content inside the Modal.
+
 #### Header `boolean`
 
 <dd>
 
-When enabled, it displays the **Title** property, allowing you to add a title to the modal. When disabled, the header, including the title, is hidden. 
+When enabled, it displays the **Title** property, allowing you to add a title to the Modal. When disabled, the header, including the title, is hidden. 
 
 
 </dd>
@@ -82,11 +82,78 @@ Sets the title for the Modal. This property is only available when the **Header*
 
 ### Footer
 
+These properties allow you to customize the footer section of the Modal, which typically contains action buttons.
+
 #### Footer `boolean`
 
 <dd>
 
-When enabled, it displays the **Title** property, allowing you to add a title to the modal. When disabled, the header, including the title, is hidden. 
+When enabled, it displays the footer section, which includes two buttons: **Submit** and **Cancel** for user actions. When disabled, the footer, along with the buttons, is hidden.
+
 
 
 </dd>
+
+#### Submit
+
+<dd>
+
+When enabled, this property displays a **Submit** button in the Modal. The Submit button allows users to save their changes. It triggers an action defined by the **onSubmit** property, which performs the necessary operation, such as saving data or processing input.
+
+
+</dd>
+
+#### Submit Button Text `string`
+
+<dd>
+
+This property allows you to customize the text on the Submit button. By default, it shows "Submit," but you can change it to any label, such as "Save" or "Confirm."
+
+
+
+</dd>
+
+#### Cancel Button Text `string`
+
+<dd>
+
+This property allows you to customize the text on the Cancel button. By default, it shows "Cancel," but you can change it to any label, like "Dismiss" or "Go Back."
+
+The Cancel button does not trigger any events. When clicked, it simply closes the Modal without saving any changes.
+</dd>
+
+
+### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
+#### onClose
+
+<dd>
+
+Specifies the action (such as framework functions, queries, or JS functions) to be executed when the Modal is closed. This event is triggered whether the Modal is closed manually by the user or automatically through any action or condition.
+
+
+
+</dd>
+
+
+#### Close On Submit
+
+<dd>
+
+When enabled, this property automatically closes the Modal when the Submit button is clicked. It ensures that the Modal is dismissed after submitting the form or saving changes, providing a seamless user experience.
+
+
+</dd>
+
+#### onSubmit
+
+<dd>
+
+This event is only available when the **Submit** button is enabled. It defines the action to be performed when the Submit button is clicked, such as saving data or processing form inputs. You can specify framework functions, queries, or JS functions to run when the Submit button is pressed.
+
+
+
+</dd>
+

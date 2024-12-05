@@ -204,6 +204,9 @@ This property specifies the icon displayed on the button. You can also use JavaS
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -331,6 +334,8 @@ This property enables server-side filtering of the dropdown data. When set to `t
 Style properties let you customize the appearance of each column, including text alignment, colors, and fonts.
 
 ### Text formatting
+
+The Text Formatting properties allow you to customize the appearance of the text in the Widget. 
 
 #### Text size `string`
 

@@ -106,6 +106,8 @@ Sets the initial option that is automatically chosen when the widget is loaded. 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 <dd>
@@ -125,7 +127,10 @@ Enabling this property for a Select widget makes it a mandatory field, meaning t
 
 </dd>
 
-### General 
+### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+ 
 
 #### Tooltip `string`
 
@@ -182,6 +187,8 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onSelectionChange 
 

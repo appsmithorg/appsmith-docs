@@ -15,6 +15,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Mode `button`
 
 <dd>
@@ -58,7 +61,9 @@ Enabling this property mirrors the camera preview and the resulting captured ima
 
 </dd>
 
-### Events 
+### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes. 
 
 When an event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 

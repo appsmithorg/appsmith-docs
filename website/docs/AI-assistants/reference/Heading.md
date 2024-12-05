@@ -24,7 +24,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Heading Widget(available in AI Assistant Apps) to set and style text for creating titles, subtitles, and headers, helping you organize content and improve readability.
+This page provides information on using the Heading Widget *(available in AI Assistant Apps)*, which allows you to set and style text for creating titles, subtitles, and headers, helping organize content and enhance readability.
 
 
  <ZoomImage
@@ -38,6 +38,9 @@ This page provides information on using the Heading Widget(available in AI Assis
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Text `string`
 
@@ -92,6 +95,9 @@ Style properties allow you to change the look and feel of the widget.
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Font size `string`
 
 <dd>
@@ -107,6 +113,7 @@ By default, the size is set to **Heading**.
 
 ### Text formatting
 
+The Text Formatting properties allow you to customize the appearance of the text in the Widget. 
 
 #### Alignment `string`
 
@@ -127,4 +134,96 @@ Sets the horizontal alignment of the text within the cells.
 
 Allows you to choose a font style for the widget, including options like bold or italic. When JS is enabled, you can dynamically modify the font style using JavaScript functions.
 
+</dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `Heading1.isVisible`.
+
+#### text `string`
+
+<dd>
+
+The `text` property retrieves the current text value of the widget.
+
+*Example:*
+```js
+{{Heading1.text}}
+```
+
+</dd>
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+
+```js
+{{Heading1.isVisible}}
+```
+
+</dd> 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor. 
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+#### setVisibility `(param: boolean): Promise`
+
+<dd>
+
+Sets the visibility of the widget. This method allows you to show or hide a widget based on certain conditions or user interactions.
+
+*Example*:
+
+```js
+Heading1.setVisibility(true)  // Makes the Heading widget visible
+```
+
+</dd>
+
+#### setDisabled `(param: boolean): Promise`
+
+<dd>
+
+Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
+
+*Example:*
+
+```js
+Heading1.setDisabled(false)  // Enables the Heading widget
+```
+
+</dd>
+
+#### setRequired `(param: boolean): Promise`
+
+<dd>
+
+Sets whether the widget is required or not. This method is typically used for form elements where user input is mandatory.
+
+*Example:*
+
+```js
+Heading1.setRequired(true)  // Marks the Heading widget as required
+```
+
+</dd>
+
+#### setText `(param: string): Promise`
+
+<dd>
+
+Sets the text value of the widget. You can dynamically change the text content of the widget at runtime.
+
+*Example:*
+
+```js
+Heading1.setText('Welcome to the Dashboard!')  // Updates the Heading widget text
+```
 </dd>

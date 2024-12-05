@@ -65,6 +65,8 @@ After selecting an input type as **Markdown** or **HTML**, you can populate the 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 
@@ -123,6 +125,9 @@ When enabled, this property makes the Rich Text Editor a mandatory field, When t
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 #### Tooltip `string`
@@ -195,6 +200,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onTextChanged

@@ -117,6 +117,8 @@ When enabled, displays labels for each data point featured on the Map chart.
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 
 #### onDataPointClick
 
@@ -132,6 +134,9 @@ Sets the action (Framework functions, queries, or JS functions) to be executed w
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Color range `array<object>`
 

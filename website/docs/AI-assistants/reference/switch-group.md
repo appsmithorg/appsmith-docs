@@ -92,6 +92,8 @@ Allows you to set default options in a widget. These options are initially selec
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -133,6 +135,8 @@ Allows you to choose the placement of the label relative to the Switch. You can 
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `String`
 
@@ -152,6 +156,9 @@ Defines the label for the entire Switch Group widget. This label serves as the h
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Visible `boolean`
 
@@ -196,6 +203,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onSelectionChange

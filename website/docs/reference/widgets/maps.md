@@ -91,6 +91,9 @@ To fetch the current location, use `appsmith.geolocation.watchPosition()` action
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 
 #### Zoom Level `number`
 
@@ -192,6 +195,8 @@ This event is available only when the **Create new marker** property is turned o
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onMarkerClick	
 

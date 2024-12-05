@@ -291,6 +291,9 @@ Allows you to specify the values that would be automatically populated in a new 
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -348,6 +351,9 @@ Allows you to specify the separator character to use for formatting the download
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 #### Default Row Height `string`
 
 <dd>
@@ -361,6 +367,8 @@ Sets the height of the row in the table.
 </dd>
 
 ### Text formatting
+
+The Text Formatting properties allow you to customize the appearance of the text in the Widget. 
 
 #### Text Size `string`
 <dd>

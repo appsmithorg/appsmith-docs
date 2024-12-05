@@ -41,6 +41,8 @@ Allows you to specify an initial value for the widget when it's first displayed.
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 <dd>
@@ -236,6 +238,9 @@ Sets a maximum value allowed for user input. Only appears when **Data Type** is 
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 
 #### Tooltip `string`
 <dd>
@@ -326,6 +331,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 
@@ -389,7 +396,9 @@ Specifies the icon to be displayed on the widget. Additionally, you can use **JS
 
 </dd>
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 

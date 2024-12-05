@@ -52,6 +52,8 @@ Sets an initial number to be captured as user input unless it's changed by the u
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -98,6 +100,9 @@ This property is only available when you select **Left** from the Position prope
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 #### Tooltip `string`
@@ -208,6 +213,8 @@ Maintains the constant visibility of a tooltip containing the current value.
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 #### onChange
@@ -225,6 +232,9 @@ Style properties allow you to change the look and feel of the widget.
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Size `string`
 
 <dd>
@@ -238,7 +248,9 @@ Options:
 
 </dd>
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 

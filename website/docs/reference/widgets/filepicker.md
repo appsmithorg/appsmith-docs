@@ -88,6 +88,8 @@ Sets the maximum number of files that a user can select. The default value is `1
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 <dd>
 Sets the text on the widget. The default value is `Select Files`.
@@ -108,6 +110,9 @@ Use this property to set the size of each file that a user can upload. The defau
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Visible `boolean`
 
@@ -147,6 +152,8 @@ This property controls whether the widget is displayed with a loading animation.
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onFilesSelected	
 

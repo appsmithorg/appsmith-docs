@@ -20,7 +20,8 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the **Zone Widget**(available in AI Assistant Apps), a tool that helps you organize and structure your application layout by creating distinct sections. The Zone Widget uses a 12-column grid system to create responsive layouts. This system divides the layout into 12 equal-width columns, allowing users to structure content in flexible, proportional sections.
+
+This page provides information about the Zone Widget *(available in AI Assistant Apps)*, which allows you to organize and structure your app’s layout by grouping widgets into distinct sections. By default, whenever you add any widget to the canvas, it is automatically placed inside a Zone Widget to keep your layout organized.
 
 
  <ZoomImage
@@ -38,9 +39,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Section Split** property defines how a Zone is divided into multiple horizontal sections, with each section acting as a sub-container. You can split the Zone into a maximum of four sections, each of which can be configured independently.
-
-Each section contains columns that control the space allocation within that section. The number of columns determines the width of widgets placed in the section. Each section must have between 2 and 12 columns, providing flexibility in layout design and allowing precise control over the arrangement of widgets within the Zone.
+The Section Split property allows you to divide the Zone into up to four separate sections. Each section acts like a container for other widgets, and you can adjust how wide or narrow each section is by changing the number of columns it occupies. Each section can have between 2 and 12 columns, offering flexibility in how your app content is arranged.
 
 *Example:* If you want to create a layout with a small button section and a large Table section, you can divide the Zone into two sections:
 
@@ -54,11 +53,16 @@ Each section contains columns that control the space allocation within that sect
 
 <dd>
 
-Allows you to define the number of Zones. You can set a minimum of 1 Zone and a maximum of 4 Zones. By default, the section contains 1 Zone.
+The Zone property allows you to define how many Zones you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 Zone and a maximum of 4 Zones in a single layout. By default, when you create a new layout, it contains 1 Zone.
+
+
 
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Visible `boolean`
 
@@ -89,11 +93,51 @@ Style properties allow you to change the look and feel of the widget.
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visual Separation boolean
 
 <dd>
 
 Controls the visual distinction of the section by adding an elevated background and/or borders. This property helps to visually separate the section from other sections, making it easier for users to distinguish between different content areas on the page.
+
+
+</dd>
+
+## Reference properties
+
+These properties are not available in the property pane, but can be accessed using the dot operator in other widgets or JavaScript functions.
+
+
+#### isVisible `boolean`
+
+<dd>
+
+The `isVisible` property reflects the state of the widget's **Visible** setting. It is represented by a boolean value, where true indicates that the widget is visible, and false indicates that it is hidden or not displayed on the page.
+
+</dd>
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+This allows you to change the visibility of a Zone based on conditions or user interactions within JS.
+
+
+*Example*:
+
+```js
+Zone.setVisibility(true)  // Shows the Zone
+```
 
 
 </dd>

@@ -116,6 +116,8 @@ For example, if you want the default selected values to be `CLOTHING` and `LAPTO
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 
@@ -174,6 +176,9 @@ When enabled, this property makes the MultiTreeSelect a mandatory field, When th
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 #### Tooltip `string`
@@ -279,6 +284,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
 
@@ -313,7 +320,9 @@ Defines the action to be performed when the user closes the dropdown.
 ## Style properties
 Style properties allow you to change the look and feel of the widget.
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 

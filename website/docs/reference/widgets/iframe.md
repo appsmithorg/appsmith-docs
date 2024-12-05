@@ -104,6 +104,9 @@ See how to [create custom widgets](/build-apps/how-to-guides/Create-Custom-Widge
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Title `string`
 
 <dd>
@@ -122,6 +125,8 @@ This property controls whether the widget is displayed with a loading animation.
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 

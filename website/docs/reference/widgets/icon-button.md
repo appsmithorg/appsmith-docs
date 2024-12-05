@@ -30,6 +30,9 @@ Specifies the [action](/reference/appsmith-framework/widget-actions) to be perfo
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Tooltip `string`
 <dd>
 
@@ -78,6 +81,9 @@ This property controls whether the widget is displayed with a loading animation.
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Button variant `string`
 

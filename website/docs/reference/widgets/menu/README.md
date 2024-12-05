@@ -12,7 +12,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### Basic
 
-#### Label `string`
+#### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  `string`
 
 <dd>
 Sets the text on the widget.
@@ -75,6 +77,9 @@ The code filters the data to create a new array with unique items based on the `
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -122,6 +127,9 @@ When enabled, the widget is displayed in compact mode, occupying less space on t
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Button variant `string`
 
@@ -209,6 +217,8 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `MenuButton1.isVisible`.
 
 #### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
 
 <dd>
 Returns the value of the label associated with the widget.

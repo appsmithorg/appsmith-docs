@@ -21,7 +21,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Checkbox Group widget(available in AI Assistant Apps), which allows users to select multiple options from a list. It is useful in scenarios where multiple selections are required, such as choosing preferences, filtering data, or managing user inputs in forms.
+This page provides information on using the Checkbox Group widget *(available in AI Assistant Apps)*, which allows users to select multiple options from a list. It is useful in scenarios where multiple selections are required, such as choosing preferences, filtering data, or managing user inputs in forms.
 
  <ZoomImage
     src="/img/checkbox-group-widget.png" 
@@ -46,8 +46,7 @@ These properties are customizable options present in the property pane of the wi
 <dd>
 
 
-This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface or use JavaScript by providing options in JSON format, like:
-
+This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface or use JavaScript by providing options in JSON format, where each entry must follow the `label-value` format, like:
 
 ```js
 [
@@ -92,13 +91,15 @@ Allows you to set default options in a widget. These options are initially selec
 
 Allows you to set the layout direction of the checkboxes in the Checkbox Group. You can choose between:
 
-- Horizontal: Displays the checkboxes side by side in a single row.
-- Vertical: Stacks the checkboxes in a column.
+- **Horizontal**: Displays the checkboxes side by side in a single row.
+- **Vertical**: Stacks the checkboxes in a column.
 
 </dd>
 
 
 ### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
 
 
 #### Text `String`
@@ -133,6 +134,9 @@ This validation feature allows you to designate the Checkbox Group as a mandator
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 
@@ -181,6 +185,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onCheckChange
@@ -306,8 +312,3 @@ CheckboxGroup1.setRequired(true)
 </dd>
 
 
-## See also
-
-- [Insert Data](/build-apps/how-to-guides/insert-data) – Learn how to insert data into a datasource using widgets.
-- [Update Data](/build-apps/how-to-guides/submit-form-data) – Discover how to update data using widgets.
-- [Form](/reference/widgets/form) – Learn more about the Form widget.
