@@ -37,15 +37,16 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
+These properties allow you to configure the options and data displayed to users. 
 
 #### Data type `string`
 
 <dd>
 
-Defines how the dropdown behaves. You can choose between two modes:
+Specifies the behavior of the dropdown in the layout. You can choose between two modes:
 
-- **Select**: Provides a simple dropdown menu without a search feature, suitable for scenarios with a limited number of options.
-- **Combobox**: Includes a search capability, allowing users to filter and select options from larger datasets efficiently.
+- **Select**: A basic dropdown without search, ideal for situations where the number of options is small and easily visible to the user.
+- **Combobox**: A dropdown with search functionality, designed for scenarios where the dataset is large, allowing users to quickly filter and select the desired option. 
 
 </dd>
 
