@@ -53,7 +53,7 @@ The Section Split property allows you to divide the Zone into four separate sect
 
 <dd>
 
-The Zone property allows you to define how many Zones you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 section and a maximum of 4 section in a single layout. 
+The Zone property allows you to define how many section you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 section and a maximum of 4 section in a single layout. 
 
 
 
