@@ -248,7 +248,7 @@ Replace `<YOUR_GOOGLE_MAPS_API_KEY>` with a valid API key obtained from the [Goo
 
 Appsmith can connect to external providers for MongoDB and Redis. The associated environment variables ensure that Appsmith establishes a connection to external hosting rather than using the embedded MongoDB or Redis servers.
 
-##### `APPSMITH_MONGODB_URI`
+##### `APPSMITH_DB_URL`
 
 <dd>
 
@@ -258,10 +258,10 @@ Appsmith uses this variable to connect to an external MongoDB instance. Set it t
 
 ```js
 // Syntax
-APPSMITH_MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
+APPSMITH_DB_URL=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
 
 // Example - password encoded
-APPSMITH_MONGODB_URI=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
+APPSMITH_DB_URL=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
 ```
 
 To learn how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
