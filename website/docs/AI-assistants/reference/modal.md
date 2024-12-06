@@ -88,7 +88,8 @@ These properties allow you to customize the footer section of the Modal, which t
 
 <dd>
 
-When enabled, it displays the footer section, which includes two buttons: **Submit** and **Cancel** for user actions. When disabled, the footer, along with the buttons, is hidden.
+When enabled, it displays the footer section, which contains two buttons: **Submit** and **Cancel** for performing user actions. When disabled, the footer, along with the buttons, is hidden.
+
 
 
 
@@ -119,7 +120,8 @@ This property allows you to customize the text on the Submit button. By default,
 
 This property allows you to customize the text on the Cancel button. By default, it shows "Cancel," but you can change it to any label, like "Dismiss" or "Go Back."
 
-The Cancel button does not trigger any events. When clicked, it simply closes the Modal without saving any changes.
+You cannot set a custom event for the Cancel button. When clicked, it automatically closes the Modal without saving any changes.
+
 </dd>
 
 

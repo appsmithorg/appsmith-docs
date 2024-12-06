@@ -41,11 +41,16 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
+Defines the options and values for the widget, determining the content displayed to users.
+
+
 #### Options `array<object>`
 
 <dd>
 
-This property allows you to set the labels and values for the items. You can add these labels and values directly from the user interface. Ensure that the values assigned to each option are unique. Additionally, you can turn on **JS** and provide options in JSON format, like:
+This property allows you to define the options displayed in the widget by specifying the labels and corresponding values. The values must follow a `label-value` format, where each label is paired with a unique value. You can either add these options directly via the user interface or use JS to provide them in JSON format.
+
+
 
 *Example*:
 ```js

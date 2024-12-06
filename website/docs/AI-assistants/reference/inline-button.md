@@ -188,3 +188,70 @@ InlineButtons1.setDisabled(false)  // Enables the Heading widget
 ```
 
 </dd>
+
+## Style properties
+
+Style properties allow you to customize the appearance of the button. These properties are available inside the individual button settings, enabling you to modify the button's look and feel to match your design preferences.
+
+
+### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
+#### Button variant `string`
+
+<dd>
+
+Specifies the style type of the button to indicate its significance. You can choose from the following options:
+
+
+*Options:*
+
+* **Filled:** A solid button with a background color, typically used for primary actions or important buttons.
+* **Outlined:** A button with only a border and no background, used for secondary actions or less important buttons.
+* **Subtle:** A button with minimal styling, often used for less prominent actions, providing a cleaner and more subtle look.
+* **Ghost:** A button with no visible border or background, ideal for actions that are even more subtle or when you want to maintain a clean, unobtrusive interface.
+
+This property can also be dynamically set using JS, allowing you to change the button's appearance based on conditions or user interactions.
+
+
+
+
+</dd>
+
+#### Button color `string`
+
+<dd>
+
+Specifies the color of the button to emphasize its importance or action. You can select from the following predefined color options:
+
+- **Accent:** Uses the accent color from the app theme. You can change the accent color from the app theme settings.
+- **Neutral**: Uses a neutral color, which is black for light theme and white for dark theme.
+- **Positive**: Uses a green shade to indicate positive values. The color cannot be customized.
+- **Negative**: Uses a red shade to indicate negative values. The color cannot be customized.
+- **Warning**: Uses an orange shade to indicate caution or warnings. The color cannot be customized.
+
+You can enable JS to dynamically update the color. The value should be one of the predefined options such as `accent`, `neutral`, `positive`, `negative`, or `warning`.  You cannot set a custom color directly for this widget. To change the color, you can adjust it through the app theme settings.
+
+
+</dd>
+
+#### Icon `string`
+
+<dd>
+
+Specifies the icon to be displayed on the button. You can choose from a predefined set of icons or use custom icons by specifying their name.
+
+</dd>
+
+#### Position
+
+<dd>
+
+Specifies the alignment of the button within its container. You can set it to one of the following values:
+
+- **Left:** Aligns the icon to the left side of the button.
+- **Right:** Aligns the icon to the right side of the button.
+
+</dd>

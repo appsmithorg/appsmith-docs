@@ -14,11 +14,6 @@ tags={[
 ]}
 />
 
-<Tags
-tags={[
-{ name: "AI", link: "https://www.appsmith.com/pricing", additionalClass: "ai" }
-]}
-/>
 
 </div>
 
@@ -187,19 +182,6 @@ Heading1.setVisibility(true)  // Makes the Heading widget visible
 
 </dd>
 
-#### setDisabled `(param: boolean): Promise`
-
-<dd>
-
-Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
-
-*Example:*
-
-```js
-Heading1.setDisabled(false)  // Enables the Heading widget
-```
-
-</dd>
 
 #### setRequired `(param: boolean): Promise`
 

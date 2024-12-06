@@ -14,11 +14,6 @@ tags={[
 ]}
 />
 
-<Tags
-tags={[
-{ name: "AI", link: "https://www.appsmith.com/pricing", additionalClass: "ai" }
-]}
-/>
 
 </div>
 
@@ -183,20 +178,6 @@ Sets the visibility of the widget. This method allows you to show or hide a widg
 
 ```js
 Paragraph1.setVisibility(true)  // Makes the Heading widget visible
-```
-
-</dd>
-
-#### setDisabled `(param: boolean): Promise`
-
-<dd>
-
-Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
-
-*Example:*
-
-```js
-Paragraph1.setDisabled(false)  // Enables the Heading widget
 ```
 
 </dd>
