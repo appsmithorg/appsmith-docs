@@ -36,6 +36,8 @@ These properties are customizable options present in the property pane of the wi
 
 ### Fields
 
+These properties allow you to define specific text, values, and other relevant information within the widget.
+
 #### Label
 
 <dd>
@@ -83,6 +85,8 @@ You can enable JS to dynamically update the color. The value should be one of th
 </dd>
 
 ### Optional Fields
+
+Optional fields are additional properties you can configure to further customize the widget's appearance and behavior. 
 
 #### Icon 
 
@@ -199,7 +203,7 @@ This property controls whether the widget is displayed with a loading animation.
 General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
 
 
-#### Visual Separation boolean
+#### Visual Separation `boolean`
 
 <dd>
 
