@@ -39,12 +39,12 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The Section Split property allows you to divide the Zone into up to four separate sections. Each section acts like a container for other widgets, and you can adjust how wide or narrow each section is by changing the number of columns it occupies. Each section can have between 2 and 12 columns, offering flexibility in how your app content is arranged.
+The Section Split property allows you to divide the Zone into four separate sections. Each section acts like a container for other widgets, and you can adjust how wide or narrow each section is by changing the number of columns it occupies. You can resize sections by dragging the section divider. 
 
 *Example:* If you want to create a layout with a small button section and a large Table section, you can divide the Zone into two sections:
 
 - Section 1: 2 columns wide, suitable for small widgets like buttons.
-- Section 2: 10 columns wide, ideal for larger widgets like tables or forms.
+- Section 2: 10 columns wide, ideal for larger widgets like Tables or Forms.
 
 </dd>
 
@@ -53,7 +53,7 @@ The Section Split property allows you to divide the Zone into up to four separat
 
 <dd>
 
-The Zone property allows you to define how many Zones you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 Zone and a maximum of 4 Zones in a single layout. By default, when you create a new layout, it contains 1 Zone.
+The Zone property allows you to define how many Zones you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 section and a maximum of 4 section in a single layout. 
 
 
 

@@ -38,8 +38,6 @@ These properties are customizable options present in the property pane of the wi
 
 #### Label
 
-The Label property is a group of customizable settings that define the main text displayed on the widget.  `string`
-
 <dd>
 
 The Label property sets the main text displayed in the Stats widget. For example, the label could indicate `Active Users`, `Total Sales`, or `Completed Orders` depending on the data you want to showcase.
