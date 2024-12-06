@@ -70,9 +70,27 @@ Configure how Appsmith applications can be embedded in external websites or plat
 
 - **Allow embedding everywhere**: When selected, Appsmith can be embedded in any domain and application.
 - **Limit embedding to certain URLs**: When selected, Appsmith can be embedded in the specified applications only.
+      Below are some examples:
+
+            - **Specific domain**: To allow a specific domain add the domain as shown below:
+
+                  ```javascript
+                  http://trusted-other.com
+                  ```
+
+            - **Multiple domains**: To add more than one domain, separate them with spaces:
+
+                  ```javascript
+                  http://trusted-other.com http://another-trusted.com
+                  ```
+
+            - **Subdomains**: To allow all subdomains under `trusted-other.com`, use asterisk (*) as shown below:
+                  ```javascript
+                  http://*.trusted-other.com
+                  ```
 - **Disabling embedding everywhere**: When selected, Appsmith cannot be embedded.
 
-For more information about embedding Appsmith, see [Embed Appsmith](https://docs.appsmith.com/advanced-concepts/embed-appsmith-into-existing-application) guide.
+For more information about embedding Appsmith, see [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application) guide.
 </dd>
 
 ## Email

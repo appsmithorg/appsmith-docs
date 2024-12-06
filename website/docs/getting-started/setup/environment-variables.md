@@ -21,6 +21,24 @@ The following environment variable is used to set up instance administrator for 
     Specify the email addresses of users who will have Instance Administrator privileges. These administrators have full control over all instance settings. To assign more than one user as Instance Administrator, separate their email addresses with commas. For example: `admin@techcorp.com, supportadmin@techcorp.com`. This grants Instance Administrator access to both users. For more information about Instance Administrator permissions, see the [Instance Administrator](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) Role.
 </dd>
 
+
+### OIDC OAuth
+
+The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials.
+
+##### `APPSMITH_OAUTH2_OIDC_CLIENT_ID`
+
+<dd>
+    This variable represents your OIDC OAuth 2.0 Client ID used for authenticating users via the OIDC provider. It's a public identifier for your application. Get your OIDC OAuth 2.0 Client ID by registering your Appsmith instance with your provider and setting it as the variable's value.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_CLIENT_SECRET`
+
+<dd>
+    This variable, in conjunction with the OIDC Client ID, holds the secret key provided by your OIDC provider to authenticate your application's requests securely. Set this variable with the Client Secret provided by your provider upon creating your OIDC application. Ensure that you store it securely and do not expose it publicly.
+</dd>
+
+
 ### Google OAuth
 
 The following environment variables help in configuring OAuth 2.0 authentication with Google, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing Google credentials.
@@ -53,33 +71,9 @@ The following environment variables help in configuring OAuth 2.0 authentication
     This variable, in conjunction with the Client ID, holds the secret key provided by GitHub OAuth 2.0 to authenticate your application's requests securely. Set this variable with the Client Secret provided by GitHub upon creating your OAuth application. Ensure that you store it securely and do not expose it publicly.
 </dd>
 
-### OIDC OAuth
+### Signup
+With Appsmith, you can manage and control who can create accounts on the platform.
 
-The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials.
-
-##### `APPSMITH_OAUTH2_OIDC_CLIENT_ID`
-
-<dd>
-    This variable represents your OIDC OAuth 2.0 Client ID used for authenticating users via the OIDC provider. It's a public identifier for your application. Get your OIDC OAuth 2.0 Client ID by registering your Appsmith instance with your provider and setting it as the variable's value.
-</dd>
-
-##### `APPSMITH_OAUTH2_OIDC_CLIENT_SECRET`
-
-<dd>
-    This variable, in conjunction with the OIDC Client ID, holds the secret key provided by your OIDC provider to authenticate your application's requests securely. Set this variable with the Client Secret provided by your provider upon creating your OIDC application. Ensure that you store it securely and do not expose it publicly.
-</dd>
-
-
-### Form Login and Signup
-
-With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins and control who can create accounts on the platform.
-
-##### `APPSMITH_FORM_LOGIN_DISABLED`
-
-<dd>
-
-Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
-</dd>
 
 ##### `APPSMITH_SIGNUP_DISABLED`
 
@@ -110,19 +104,17 @@ This environment variable's value does not affect the login behavior of existing
 This configuration doesn't impact the sign-up of instance administrators, set using [`APPSMITH_ADMIN_EMAILS`](#appsmith_admin_emails) environment variables.
 </dd>
 
-### Client logging
+### Form Login
 
-Appsmith provides a way to enhance the log levels of your applications, aiding in monitoring client-side operations and troubleshooting issues. The following environment variable helps define the verbosity level of the logs that Appsmith will generate for client-side activities.
+With Appsmith, you can manage user access and authentication methods in your instance. This helps streamline logins.
 
-##### `APPSMITH_CLIENT_LOG_LEVEL`
+##### `APPSMITH_FORM_LOGIN_DISABLED`
 
-<dd> 
-This variable determines the level of detail that your client-side logs will capture. Ordered by their severity logging levels can also be adjusted based on the needs of your environment. The available levels are:
+<dd>
 
-* `debug`: Provides informational logs useful for debugging. Set the level to `0` to turn on the `debug` log level.
-* `error`: Logs error events that might signify a problem and warrant investigation. Set the level to `1` to turn on the `error` log level.
-
+Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
 </dd>
+
 
 ### Email server
 
@@ -209,46 +201,8 @@ Controls whether Appsmith sends telemetry data to its servers. You may choose to
 
 </dd>
 
-### Google reCAPTCHA  
-Ensure the safety of your applications and data by configuring security settings, including reCAPTCHA, to safeguard your instance against automated threats. Use the environment variables below to manage these settings:
 
-##### `APPSMITH_RECAPTCHA_ENABLED`
-
-<dd> 
-   
-Enables Google reCAPTCHA verification on your Appsmith instance by embedding a reCAPTCHA in the login page, offering protection against spam and abuse by automated bots. Configure this to true after setting up reCAPTCHA with your domain to activate this feature.
-
-</dd>
-
-##### `APPSMITH_RECAPTCHA_SITE_KEY`
-
-<dd>
-Public key provided by Google reCAPTCHA for integrating the service into your web application. Set this variable with the site key you received after registering your Appsmith instance as a site under Google reCAPTCHA.
-</dd>
-
-
-##### `APPSMITH_RECAPTCHA_SECRET_KEY`
-
-<dd>
-The secret key provided by Google reCAPTCHA that Google uses to verify the user input during communication between your server and the reCAPTCHA server. The secret is confidential and used in server-side code. Set this variable with the secret key provided by reCAPTCHA.
-</dd>
-
-
-### Google Maps API
-
-The following environment variable is used to integrate Google Maps with your Appsmith applications on a self-hosted instance.
-
-#### `APPSMITH_GOOGLE_MAPS_API_KEY`
-
-This variable specifies the Google Maps API key required to enable the Map Widget in your applications. The key allows your Appsmith instance to communicate with the Google Maps API for displaying and interacting with maps.
-
-```yaml
-APPSMITH_GOOGLE_MAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY>
-```
-
-Replace `<YOUR_GOOGLE_MAPS_API_KEY>` with a valid API key obtained from the [Google Cloud Console](https://console.cloud.google.com/). You may also choose to set the Google Maps API key using the Admin settings UI on your Appsmith instance. For more information about configuring the Google Maps API key through the Admin settings, see the [Google Maps](/getting-started/setup/instance-configuration/google-maps) reference.
-
-### Database and session management
+### External Database
 
 Appsmith can connect to external providers for MongoDB and Redis. The associated environment variables ensure that Appsmith establishes a connection to external hosting rather than using the embedded MongoDB or Redis servers.
 
@@ -324,15 +278,6 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
     Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
-### File size limit
-
-The default file size limit in Appsmith is 150 MB. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
-
-##### `APPSMITH_CODEC_SIZE`
-<dd>
-Specifies the allowed file size. To change the file size limit, update the `APPSMITH_CODEC_SIZE` parameter in the configuration file specific to your deployment. For example, when installed on Docker, update the `docker.env` file, and when installed on Kubernetes, update the `values.yaml` file. For more information about large file uploads, see [Configure File Size Limit](/getting-started/setup/instance-configuration/file-size-limit).
-</dd>
-
 
 ### Embed Appsmith
 
@@ -367,13 +312,66 @@ This variable allows you to specify which domains can embed your Appsmith apps i
 </dd>
 For more information about embedding Appsmith, see the [Embed Appsmith](/advanced-concepts/embed-appsmith-into-existing-application) guide.
 
-### Git Local File Path
+### Client logging
 
-For self-hosted instances, Appsmith clones Git repositories into the local file system, attached to a persistent volume within the Docker container. To ensure the repositories are persistent, you need to define a file path that points to the volume. You can customize this path using the following environment variable:
+Appsmith provides a way to enhance the log levels of your applications, aiding in monitoring client-side operations and troubleshooting issues. The following environment variable helps define the verbosity level of the logs that Appsmith will generate for client-side activities.
 
-#### `APPSMITH_GIT_ROOT`
+##### `APPSMITH_CLIENT_LOG_LEVEL`
+
+<dd> 
+This variable determines the level of detail that your client-side logs will capture. Ordered by their severity logging levels can also be adjusted based on the needs of your environment. The available levels are:
+
+* `debug`: Provides informational logs useful for debugging. Set the level to `0` to turn on the `debug` log level.
+* `error`: Logs error events that might signify a problem and warrant investigation. Set the level to `1` to turn on the `error` log level.
+
+</dd>
+
+### Google reCAPTCHA  
+Ensure the safety of your applications and data by configuring security settings, including reCAPTCHA, to safeguard your instance against automated threats. Use the environment variables below to manage these settings:
+
+##### `APPSMITH_RECAPTCHA_ENABLED`
+
+<dd> 
+   
+Enables Google reCAPTCHA verification on your Appsmith instance by embedding a reCAPTCHA in the login page, offering protection against spam and abuse by automated bots. Configure this to true after setting up reCAPTCHA with your domain to activate this feature.
+
+</dd>
+
+##### `APPSMITH_RECAPTCHA_SITE_KEY`
+
 <dd>
-    Set the file path to specify a custom Git root where repositories will be stored. If this path is not set, the repositories will be cloned to a temporary location, which is not persistent. This means that if the repositories are deleted (for example, during a Docker restart), they may be lost. To ensure the repositories persist across restarts or other events, it’s essential to set up persistent storage. This way, your Git repositories will remain intact, and Appsmith won’t need to re-clone them.
+Public key provided by Google reCAPTCHA for integrating the service into your web application. Set this variable with the site key you received after registering your Appsmith instance as a site under Google reCAPTCHA.
+</dd>
+
+
+##### `APPSMITH_RECAPTCHA_SECRET_KEY`
+
+<dd>
+The secret key provided by Google reCAPTCHA that Google uses to verify the user input during communication between your server and the reCAPTCHA server. The secret is confidential and used in server-side code. Set this variable with the secret key provided by reCAPTCHA.
+</dd>
+
+
+### Google Maps API
+
+The following environment variable is used to integrate Google Maps with your Appsmith applications on a self-hosted instance.
+
+#### `APPSMITH_GOOGLE_MAPS_API_KEY`
+
+This variable specifies the Google Maps API key required to enable the Map Widget in your applications. The key allows your Appsmith instance to communicate with the Google Maps API for displaying and interacting with maps.
+
+```yaml
+APPSMITH_GOOGLE_MAPS_API_KEY=<YOUR_GOOGLE_MAPS_API_KEY>
+```
+
+Replace `<YOUR_GOOGLE_MAPS_API_KEY>` with a valid API key obtained from the [Google Cloud Console](https://console.cloud.google.com/). You may also choose to set the Google Maps API key using the Admin settings UI on your Appsmith instance. For more information about configuring the Google Maps API key through the Admin settings, see the [Google Maps](/getting-started/setup/instance-configuration/google-maps) reference.
+
+### File size limit
+
+The default file size limit in Appsmith is 150 MB. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
+
+##### `APPSMITH_CODEC_SIZE`
+<dd>
+Specifies the allowed file size. To change the file size limit, update the `APPSMITH_CODEC_SIZE` parameter in the configuration file specific to your deployment. For example, when installed on Docker, update the `docker.env` file, and when installed on Kubernetes, update the `values.yaml` file. For more information about large file uploads, see [Configure File Size Limit](/getting-started/setup/instance-configuration/file-size-limit).
 </dd>
 
 ### Supervisord 
