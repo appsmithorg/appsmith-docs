@@ -55,7 +55,7 @@ Columns represent the space available inside each section. The total space in th
 
 <dd>
 
-The Zone property allows you to define how many section you want to have in your layout. Zones are the primary containers within the layout that hold your content. You can have a minimum of 1 section and a maximum of 4 section in a single layout. 
+The Zone property defines the number of sections in your layout. You can have a minimum of one section and a maximum of four sections within a single layout.
 
 
 
