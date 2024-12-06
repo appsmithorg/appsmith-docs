@@ -25,6 +25,9 @@ Specify the buttons available in the group. You can rearrange the buttons and co
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -65,6 +68,9 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Button variant `string`
 

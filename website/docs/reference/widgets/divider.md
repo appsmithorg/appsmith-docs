@@ -12,6 +12,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -41,6 +44,9 @@ This property controls whether the widget is displayed with a loading animation.
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Direction `string` 
 
