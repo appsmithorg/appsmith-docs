@@ -264,7 +264,7 @@ If your password or username contains special characters, URL encode them. For e
 APPSMITH_DB_URL=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
 ```
 
-To learn how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
+For more information about how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
 
 </dd>
 
