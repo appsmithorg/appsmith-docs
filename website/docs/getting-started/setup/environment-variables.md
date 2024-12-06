@@ -268,26 +268,6 @@ To learn how to URL encode your username and password, see [Encode to URL-encode
 
 </dd>
 
-##### `APPSMITH_MONGODB_USER`
-
-<dd>
-    Defines the username credential used by Appsmith to establish a connection with an external MongoDB instance. This setting ensures secure access to the designated database.
-</dd>
-
-##### `APPSMITH_MONGODB_PASSWORD`
-
-<dd>
-
-Sets the password associated with the MongoDB user specified in `APPSMITH_MONGODB_USER`. This password is crucial for secure authentication, allowing Appsmith to connect and interact with the external MongoDB instance securely.
-
-</dd>
-
-##### `APPSMITH_REDIS_URL`
-
-<dd>
-    Appsmith uses this variable to establish a link to an external Redis server, which Appsmith uses for session handling and caching operations. This connection string typically includes the Redis host, port number, and optionally, authentication credentials.
-</dd>
-
 ##### `APPSMITH_ENCRYPTION_PASSWORD`
 
 <dd>
@@ -298,6 +278,36 @@ Sets the password associated with the MongoDB user specified in `APPSMITH_MONGOD
 
 <dd>
     The encryption salt contributes to the security strategy by adding a layer of complexity during the encryption process. This long, unique string enhances encryption strength, making it more resistant to attacks such as brute-force attempts.
+</dd>
+
+##### `APPSMITH_KEYCLOAK_DB_URL`
+
+<dd>
+Specifies the URL for the external PostgreSQL database (RDS instance) to be used by Keycloak. This URL is critical for establishing a secure connection to the database and must be in the format: `jdbc:postgresql://<hostname>:<port>/<database_name>`. 
+</dd>
+
+##### `APPSMITH_KEYCLOAK_DB_DRIVER`
+
+<dd>
+Defines the database driver that Keycloak will use to interact with the external PostgreSQL database. For PostgreSQL databases, this value must be set to `postgresql`. The driver acts as an intermediary, facilitating smooth and efficient communication between Keycloak and the database.
+</dd>
+
+##### `APPSMITH_KEYCLOAK_DB_USERNAME`
+
+<dd>
+Sets the username required for authenticating with the external PostgreSQL database. This credential ensures secure access and grants Keycloak the necessary permissions to manage its database operations.
+</dd>
+
+##### `APPSMITH_KEYCLOAK_DB_PASSWORD`
+
+<dd>
+Specifies the password associated with the database username. This sensitive information is used to authenticate Keycloak's connection to the PostgreSQL database and must be kept secure to prevent unauthorized access.
+</dd>
+
+##### `APPSMITH_REDIS_URL`
+
+<dd>
+    Appsmith uses this variable to establish a link to an external Redis server, which Appsmith uses for session handling and caching operations. This connection string typically includes the Redis host, port number, and optionally, authentication credentials.
 </dd>
 
 ### Custom domain
