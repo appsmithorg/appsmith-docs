@@ -7,6 +7,10 @@ toc_max_heading_level: 3
 
 Environment variables play a crucial role in configuring different aspects of your Appsmith instance, such as authentication, logging levels, email settings, and more. These variables are available in a configuration file located in your Appsmith installation directory. For example, if you’ve installed Appsmith using Docker, you’ll find the `docker.env` file under `<Appsmith_Installation_Directory>/stacks/configuration`. This page provides a detailed description of each environment variable, along with its purpose and usage.
 
+:::caution important
+Settings configured using Environment Variables take precedence over those set through the [Admin Settings](/getting-started/setup/instance-configuration/admin-settings) UI.
+:::
+
 ### Admin email
 
 The following environment variable is used to set up instance administrator for your Appsmith instance.
