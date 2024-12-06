@@ -1270,7 +1270,7 @@
     },
     {
       "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
-      "destination": "/getting-started/setup/environment-variables#git-local-file-path",
+      "destination": "/getting-started/setup/environment-variables",
       "permanent": true
     }
   ]
