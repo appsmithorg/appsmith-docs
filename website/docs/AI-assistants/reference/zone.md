@@ -39,7 +39,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The Section Split property allows you to divide the Zone into four separate sections. Each section acts like a container for other widgets, and you can adjust how wide or narrow each section is by changing the number of columns it occupies. You can resize sections by dragging the section divider. 
+The Section Split property allows you to divide the Zone into four separate sections. Each section acts like a container for other widgets, and you can adjust how wide or narrow each section is by changing the number of columns it occupies, ranging from 2 to 12 columns. You can resize sections by dragging the section divider. 
 
 *Example:* If you want to create a layout with a small button section and a large Table section, you can divide the Zone into two sections:
 
