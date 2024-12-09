@@ -130,16 +130,15 @@ This page provides steps to schedule automatic updates using cron expressions fo
             ```
 
   3. Save the changes and update the Appsmith installation.
-      * If you are on the **Community Edition**, update with:
-
-          ```bash
-          helm upgrade -i appsmith appsmith/appsmith -f values.yaml
-          ```
-
       * If you are on the **Commercial Edition**, update with:
 
           ```bash
           helm upgrade -i appsmith appsmith-ee/appsmith -f values.yaml
+          ```
+      * If you are on the **Community Edition**, update with:
+
+          ```bash
+          helm upgrade -i appsmith appsmith/appsmith -f values.yaml
           ```
 </TabItem>
 </Tabs>

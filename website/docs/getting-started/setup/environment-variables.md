@@ -188,20 +188,6 @@ Determines whether the email server connection uses Transport Layer Security (TL
 
 </dd>
 
-
-### Telemetry
-
-Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation.
-
-##### `APPSMITH_TELEMETRY_ENABLED`
-
-<dd>
-
-Controls whether Appsmith sends telemetry data to its servers. You may choose to turn off the setting if it conflicts with your privacy policies or preferences. Set to `true` to allow Appsmith to collect anonymous telemetry data or `false` to opt out.
-
-</dd>
-
-
 ### External Database
 
 Appsmith can connect to external providers for MongoDB and Redis. The associated environment variables ensure that Appsmith establishes a connection to external hosting rather than using the embedded MongoDB or Redis servers.
@@ -278,6 +264,18 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
     Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
+
+### Telemetry
+
+Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation.
+
+##### `APPSMITH_TELEMETRY_ENABLED`
+
+<dd>
+
+Controls whether Appsmith sends telemetry data to its servers. You may choose to turn off the setting if it conflicts with your privacy policies or preferences. Set to `true` to allow Appsmith to collect anonymous telemetry data or `false` to opt out.
+
+</dd>
 
 ### Embed Appsmith
 
