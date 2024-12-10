@@ -56,27 +56,34 @@ This property allows you to select the appropriate column type for your Table da
 
 This property allows you to display and manipulate Table data using JavaScript expressions. The `currentRow` property is automatically generated when data is added to the Table, representing the current row's data. 
 
-*Example:* To display a date of birth in a column named `dob`, use: 
+#### Example 1: Display value
+
+To display a date of birth in a column named `dob`, use: 
 
 ```js
 {{currentRow['dob']}}
 ```
 
-*Example 2*: If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
+#### Example 2: Conditional formatting
+
+If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
 
 ```js
 {{currentRow.gender === "male" ? "Mr " + currentRow.name : "Mrs " + currentRow.name}}
 ```
 
-<dd>
-
 The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name column based on the value of the gender column in the current row.
+
+
+<dd>
 
 <ZoomImage src="/img/col-example.png" alt="Display images on Table row selection" caption="Formatting Column" />
 
 </dd>
 
-*Example 3:* If you want to display multiple custom tags for order status, order type, and order date, change the column type to HTML and add code like:
+#### Example 3: HTML Formatting
+
+If you want to display multiple custom tags for order status, order type, and order date, change the column type to HTML and add code like:
 
 ```html
 {{ 
