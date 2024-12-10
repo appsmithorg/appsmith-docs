@@ -820,6 +820,65 @@ const sidebars = {
       ]
 
     }, //Workflows end
+
+ // AIStart
+
+ { 
+  type: 'category',
+  collapsed: false,
+  label: 'AI Assistants',
+  items: [
+    'AI-assistants/overview',
+    {
+      type: 'category',
+      collapsed: true,
+      label: 'How-to Guides',
+      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
+      items: [
+              
+      ]
+    },
+    {
+      //Reference start
+      type: 'category',
+      label: 'Reference',
+      collapsed: false,
+      link: { type: 'doc', id: 'build-apps/reference/README' },
+      items: [
+        {
+          type: 'category',
+          label: 'Widgets',
+          items: [
+        'AI-assistants/reference/checkbox',  
+        'AI-assistants/reference/checkbox-group',  
+        'AI-assistants/reference/Heading',  
+        'AI-assistants/reference/inline-button',  
+        'AI-assistants/reference/input',  
+        'AI-assistants/reference/modal',  
+        'AI-assistants/reference/paragraph',  
+        'AI-assistants/reference/radio-group',  
+        'AI-assistants/reference/select', 
+        'AI-assistants/reference/stats',  
+        'AI-assistants/reference/switch',  
+        'AI-assistants/reference/switch-group',  
+        'AI-assistants/reference/zone',
+
+          
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Integrations',
+          link: { type: 'doc', id: 'reference/widgets/README' },
+          items: [
+  
+                ],
+        },
+      ],
+    }, //Reference End
+  ]
+}, //ai end
+
     {
       // Help & Support start
       type: 'category',
