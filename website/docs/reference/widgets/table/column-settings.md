@@ -44,6 +44,10 @@ This property allows you to select the appropriate column type for your Table da
 
 - **Select**: Enables choosing from a predefined list of options. The Options property should be an array of objects. This column type supports inline editing, allowing direct text updates when the Editable property is enabled. See [Select properties](/reference/widgets/table/column-settings#select-properties).
 
+- **HTML:** The HTML column type renders raw HTML content in the cell, allowing you to display custom-styled UI elements such as formatted text, icons, or embedded components. This column type does not support inline editing or event handling. You can pass raw HTML code directly from your datasource or update the **Computed value** for customization. When writing multi-line HTML, use the `{{}}` binding. For styling, you can use inline styles, as the` <style>` tag is not supported.
+
+
+
 </dd>
 
 ### Computed value
@@ -64,9 +68,28 @@ This property allows you to display and manipulate Table data using JavaScript e
 {{currentRow.gender === "male" ? "Mr " + currentRow.name : "Mrs " + currentRow.name}}
 ```
 
+<dd>
+
 The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name column based on the value of the gender column in the current row.
 
 <ZoomImage src="/img/col-example.png" alt="Display images on Table row selection" caption="Formatting Column" />
+
+</dd>
+
+*Example 3:* If you want to display multiple custom tags for order status, order type, and order date, change the column type to HTML and add code like:
+
+```html
+{{ 
+    `<div style="display: flex; align-items: center; flex-wrap: wrap;">
+        <span style="background-color: #4CAF50; color: white; padding: 5px; border-radius: 5px; margin-right: 8px;">${{currentRow.orderStatus}}</span>
+        <span style="background-color: #FF9800; color: white; padding: 5px; border-radius: 5px; margin-right: 8px;">Order Type: {{currentRow.orderType}}</span>
+        <span style="font-size: 12px; color: #888;">Order Date: {{currentRow.orderDate}}</span>
+    </div>`
+}}
+```
+
+<ZoomImage src="/img/html-table.png" alt="Display images on Table row selection" caption="HTML Column" />
+
 
 </dd>
 
