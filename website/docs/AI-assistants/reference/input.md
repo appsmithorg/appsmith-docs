@@ -24,7 +24,7 @@ tags={[
 This page provides information on using the Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate various types of user input, including text, numbers, emails, and passwords.
 
  <ZoomImage
-    src="/img/checkbox-group-widget.png" 
+    src="/img/input-widget-anvil.png" 
     alt=""
     caption=""
   /> 
