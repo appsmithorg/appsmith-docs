@@ -1,12 +1,12 @@
 ---
-title: Email Input
+title: Password Input
 hide_title: true
 toc_max_heading_level: 2
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Email Input (AI Assistant)</h1>
+ <h1>Password Input (AI Assistant)</h1>
 
 <Tags
 tags={[
@@ -20,8 +20,8 @@ tags={[
 
 <!-- vale on -->
 
+This page provides information on using the Password Input widget (available in AI Assistant Apps), which allows you to capture and validate password entries.
 
-This page provides information on using the Email Input widget (available in AI Assistant Apps), which allows you to capture and validate email addresses. 
 
  <ZoomImage
     src="/img/Email-Input.png" 
@@ -44,8 +44,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Data Type** property defines the type of input for the widget. For the Email Input widget, the **Data Type** is set to Email by default. If you change the data type, the widget’s properties and behavior change accordingly.
-
+The **Data Type** property defines the type of input for the widget. For the **Password Input** widget, the **Data Type** is set to Password by default. If you change the data type, the widget’s properties and behavior change accordingly.
 Options:
 
 - **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.s
@@ -66,10 +65,7 @@ Options:
 
 <dd>
 
-Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it.
-
-If the value entered is not in the correct email format, a red border appears to indicate an invalid input.
-
+Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it. The entered value is hidden by default. You can click on the eye icon to show the password.
 </dd>
 
 ### Label
@@ -107,10 +103,11 @@ This validation feature allows you to designate the Input as a mandatory field. 
 
 The Regex property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-For instance, if you want to validate that the user enters an email address that includes the `appsmith.com` domain, you can set Regex as:
+For instance, if you want to validate that the password entered contains at least one uppercase letter, one lowercase letter, and one number, you can set Regex as:
+
 
 ```js
-^[a-zA-Z0-9._%+-]+@appsmith\.com$
+^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$
 ```
 
 
@@ -123,15 +120,12 @@ For instance, if you want to validate that the user enters an email address that
 
 Allows you to define custom validation rules and error messages to guide users when their input doesn't meet required criteria. 
 
-For instance, you can use this property to validate that an email input field only accepts company-approved domains like `appsmith.com `or `mycompany.org`.
-
+For instance, you can use this property to validate that the password input field must be at least 8 characters long and contain at least one number.
 
 
 ```js
 {{
-  ["appsmith.com", "mycompany.org"].some(domain => {
-    return EmailInput1.text.toLowerCase().endsWith(`@${domain}`);
-  })
+  PasswordInput1.text.length >= 8 && /\d/.test(PasswordInput1.text)
 }}
 ```
 
@@ -148,12 +142,10 @@ Allows customization of the error message displayed when the user enters an inco
 
 ```js
 {{
-  !["appsmith.com", "mycompany.org"].some(domain => {
-    return EmailInput1.text.toLowerCase().endsWith(`@${domain}`);
-  })
-    ? "Error: Please enter an email address with an approved domain (e.g., @appsmith.com or @mycompany.org)"
+  PasswordInput1.text.length < 8 || !/\d/.test(PasswordInput1.text)
+    ? "Error: Password must be at least 8 characters long and contain at least one number"
     : ""
-}
+}}
 ```
 
 
@@ -307,7 +299,7 @@ Allows you to set an icon for the Stats widget. You can choose from a predefined
 *Example:* To display different icons based on whether the input is valid or not, you can use the following JavaScript expression:
 
 ```js
-{{ EmailInput1.isValid ? "check" : "alert-circle" }}
+{{ PasswordInput1.isValid ? "check" : "alert-circle" }}
 ```
 
 </dd>
@@ -315,7 +307,7 @@ Allows you to set an icon for the Stats widget. You can choose from a predefined
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `EmailInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `PasswordInput1.isVisible`.
 
 #### parsedText `string`
 
@@ -325,7 +317,7 @@ The `parsedText` property retrieves the input value of the widget.
 
 *Example:*
 ```js
-{{EmailInput1.text}}
+{{PasswordInput1.text}}
 ```
 
 </dd>
@@ -339,7 +331,7 @@ The `isValid` property indicates the validation status of a widget, providing in
 
 *Example:*
 ```js
-{{EmailInput1.isValid}}
+{{PasswordInput1.isValid}}
 ```
 
 </dd>
@@ -352,7 +344,7 @@ The `isReadOnly` property indicates the read-only state of a widget, with `true`
 
 *Example:*
 ```js
-{{EmailInput1.isReadOnly}}
+{{PasswordInput1.isReadOnly}}
 ```
 
 </dd>
@@ -365,7 +357,7 @@ The `isDisabled` property reflects the state of the widget's **Disabled** settin
 
 *Example:*
 ```js
-{{EmailInput1.isDisabled}}
+{{PasswordInput1.isDisabled}}
 ```
 
 </dd>
@@ -379,7 +371,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 *Example:*
 ```js
-{{EmailInput1.isVisible}}
+{{PasswordInput1.isVisible}}
 ```
 
 </dd>
@@ -402,7 +394,7 @@ Sets the visibility of the widget. This method is useful when you want to dynami
 *Example*:
 
 ```js
-EmailInput1.setVisibility(true)
+PasswordInput1.setVisibility(true)
 ```
 
 
@@ -419,15 +411,15 @@ Sets the disabled state of the widget. This method can be used to prevent user i
 *Example*:
 
 ```js
-EmailInput1.setDisabled(false)
+PasswordInput1.setDisabled(false)
 ```
 *Example:* If you want to disable an input field for anonymous users, you can use:
 
 ```js
 if (appsmith.user.isAnonymous) {
-  EmailInput1.setDisabled(true) // Disable input for anonymous users
+  PasswordInput1.setDisabled(true) // Disable input for anonymous users
 } else {
-  EmailInput1.setDisabled(false) // Enable input for logged-in users
+  PasswordInput1.setDisabled(false) // Enable input for logged-in users
 }
 ```
 
@@ -442,7 +434,7 @@ Allows you to dynamically set the value of the widget. This is useful when you n
 *Example*:
 
 ```js
-EmailInput1.setValue("John@appsmith.com")
+PasswordInput1.setValue("John@appsmith.com")
 ```
 
 </dd>
@@ -458,7 +450,7 @@ Sets whether the widget is required or not. This method can be used to dynamical
 *Example*:
 
 ```js
-EmailInput1.setRequired(true)
+PasswordInput1.setRequired(true)
 ```
 
 
@@ -473,15 +465,15 @@ Sets the read-only state of the widget. This method is useful when you want to p
 *Example:*
 
 ```js
-EmailInput1.setReadOnly(true)
+PasswordInput1.setReadOnly(true)
 ```
  *Example:* If you only want the widget to be editable for specific users (e.g., logged-in users), use:
 
 ```js
 if (appsmith.user.isAnonymous) {
-  EmailInput1.setReadOnly(true) // Prevent modification for anonymous users
+  PasswordInput1.setReadOnly(true) // Prevent modification for anonymous users
 } else {
-  EmailInput1.setReadOnly(false) // Allow modification for logged-in users
+  PasswordInput1.setReadOnly(false) // Allow modification for logged-in users
 }
 ```
 

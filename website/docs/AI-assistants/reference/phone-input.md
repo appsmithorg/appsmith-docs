@@ -1,12 +1,12 @@
 ---
-title: Email Input
+title: Phone Input
 hide_title: true
 toc_max_heading_level: 2
 ---
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Email Input (AI Assistant)</h1>
+ <h1>Phone Input (AI Assistant)</h1>
 
 <Tags
 tags={[
@@ -15,16 +15,14 @@ tags={[
 />
 
 
-
 </div>
 
 <!-- vale on -->
 
-
-This page provides information on using the Email Input widget (available in AI Assistant Apps), which allows you to capture and validate email addresses. 
+This page provides information on using the Phone Number Input widget (available in AI Assistant Apps), which allows you to capture and validate phone number user inputs.
 
  <ZoomImage
-    src="/img/Email-Input.png" 
+    src="/img/input-widget-anvil.png" 
     alt=""
     caption=""
   /> 
@@ -44,7 +42,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Data Type** property defines the type of input for the widget. For the Email Input widget, the **Data Type** is set to Email by default. If you change the data type, the widget’s properties and behavior change accordingly.
+The **Data Type** property defines the type of input for the widget. For the Phone Number Input widget, the Data Type is set to Phone Number by default. If you change the data type, the widget’s properties and behavior adjust accordingly to match the selected input type.
 
 Options:
 
@@ -66,11 +64,28 @@ Options:
 
 <dd>
 
-Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it.
+Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it. To dynamically populate the field with a value from a table, you can reference a selected row's data, such as a phone number from a database or table. For example:
 
-If the value entered is not in the correct email format, a red border appears to indicate an invalid input.
+```js
+{{Table1.selectedRow.phoneNumber}}
+```
 
 </dd>
+
+#### Default country code
+
+<dd>
+
+The Default Country Code property allows users to select a country from a dropdown or manually enter a country code (e.g., `+256`). You can dynamically update the country code based on the user's selection or input.
+
+```js
+{{CountryDropdown.selectedOptionValue === "Uganda" ? "+256" : "+1"}}
+```
+
+</dd>
+
+
+
 
 ### Label
 
@@ -101,17 +116,22 @@ This validation feature allows you to designate the Input as a mandatory field. 
 
 
 
+
 #### Regex `string`
 
 <dd>
 
 The Regex property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-For instance, if you want to validate that the user enters an email address that includes the `appsmith.com` domain, you can set Regex as:
+
+*Examples:*
+
 
 ```js
-^[a-zA-Z0-9._%+-]+@appsmith\.com$
+//Regex for phone number with country code
+^\+(\d{1,3})\s(\d{1,4})\s(\d{3})\s(\d{4})$
 ```
+
 
 
 
@@ -121,17 +141,16 @@ For instance, if you want to validate that the user enters an email address that
 
 <dd>
 
-Allows you to define custom validation rules and error messages to guide users when their input doesn't meet required criteria. 
+Allows you to define custom validation rules and error messages to guide users when their input doesn't meet required criteria.
 
-For instance, you can use this property to validate that an email input field only accepts company-approved domains like `appsmith.com `or `mycompany.org`.
+For instance, you can use this property to validate a Phone Number Input field, ensuring the number follows a valid format, such as a 10-digit phone number.
 
 
+_Example:_
 
 ```js
 {{
-  ["appsmith.com", "mycompany.org"].some(domain => {
-    return EmailInput1.text.toLowerCase().endsWith(`@${domain}`);
-  })
+  /^\d{10}$/.test(PhoneNumberInput.text)
 }}
 ```
 
@@ -144,21 +163,22 @@ For instance, you can use this property to validate that an email input field on
 
 Allows customization of the error message displayed when the user enters an incorrect value. By default, the input widget shows a generic `"invalid input"` message.
 
-*Example:* 
+*Example:* If you want to validate a Phone Number Input, ensuring it contains exactly 10 digits, you can use the following code in the Error message property.
+
 
 ```js
-{{
-  !["appsmith.com", "mycompany.org"].some(domain => {
-    return EmailInput1.text.toLowerCase().endsWith(`@${domain}`);
-  })
-    ? "Error: Please enter an email address with an approved domain (e.g., @appsmith.com or @mycompany.org)"
-    : ""
-}
+//Valid property
+{{/^\d{10}$/.test(PhoneNumberInput.text) ? true : false}}
+
+// Error message property
+{{!/^\d{10}$/.test(PhoneNumberInput.text) ? "Error: The phone number must be exactly 10 digits" : ""}}
 ```
 
+This ensures that the user is prompted with a custom error message when the number entered is outside the specified range of 10 to 100.
 
 
 </dd>
+
 
 ### General
 
@@ -292,30 +312,10 @@ Clears the input value after submission. This ensures that the field is reset to
 
 </dd>
 
-## Style properties
-
-Style properties allow you to change the look and feel of the widget.
-
-### Icon
-
-#### Icon `string`
-
-<dd>
-
-Allows you to set an icon for the Stats widget. You can choose from a predefined list of available icons. By enabling JS, you can dynamically change the icon based on data or user interactions.
-
-*Example:* To display different icons based on whether the input is valid or not, you can use the following JavaScript expression:
-
-```js
-{{ EmailInput1.isValid ? "check" : "alert-circle" }}
-```
-
-</dd>
-
 
 ## Reference properties
 
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `EmailInput1.isVisible`.
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `PhoneInput1.isVisible`.
 
 #### parsedText `string`
 
@@ -325,7 +325,7 @@ The `parsedText` property retrieves the input value of the widget.
 
 *Example:*
 ```js
-{{EmailInput1.text}}
+{{PhoneInput1.text}}
 ```
 
 </dd>
@@ -339,7 +339,7 @@ The `isValid` property indicates the validation status of a widget, providing in
 
 *Example:*
 ```js
-{{EmailInput1.isValid}}
+{{PhoneInput1.isValid}}
 ```
 
 </dd>
@@ -352,7 +352,7 @@ The `isReadOnly` property indicates the read-only state of a widget, with `true`
 
 *Example:*
 ```js
-{{EmailInput1.isReadOnly}}
+{{PhoneInput1.isReadOnly}}
 ```
 
 </dd>
@@ -365,7 +365,7 @@ The `isDisabled` property reflects the state of the widget's **Disabled** settin
 
 *Example:*
 ```js
-{{EmailInput1.isDisabled}}
+{{PhoneInput1.isDisabled}}
 ```
 
 </dd>
@@ -379,7 +379,7 @@ The `isVisible` property indicates the visibility state of a widget, with true i
 
 *Example:*
 ```js
-{{EmailInput1.isVisible}}
+{{PhoneInput1.isVisible}}
 ```
 
 </dd>
@@ -402,7 +402,7 @@ Sets the visibility of the widget. This method is useful when you want to dynami
 *Example*:
 
 ```js
-EmailInput1.setVisibility(true)
+PhoneInput1.setVisibility(true)
 ```
 
 
@@ -419,15 +419,15 @@ Sets the disabled state of the widget. This method can be used to prevent user i
 *Example*:
 
 ```js
-EmailInput1.setDisabled(false)
+PhoneInput1.setDisabled(false)
 ```
 *Example:* If you want to disable an input field for anonymous users, you can use:
 
 ```js
 if (appsmith.user.isAnonymous) {
-  EmailInput1.setDisabled(true) // Disable input for anonymous users
+  PhoneInput1.setDisabled(true) // Disable input for anonymous users
 } else {
-  EmailInput1.setDisabled(false) // Enable input for logged-in users
+  PhoneInput1.setDisabled(false) // Enable input for logged-in users
 }
 ```
 
@@ -442,7 +442,7 @@ Allows you to dynamically set the value of the widget. This is useful when you n
 *Example*:
 
 ```js
-EmailInput1.setValue("John@appsmith.com")
+PhoneInput1.setValue("+256241234567")
 ```
 
 </dd>
@@ -458,7 +458,7 @@ Sets whether the widget is required or not. This method can be used to dynamical
 *Example*:
 
 ```js
-EmailInput1.setRequired(true)
+PhoneInput1.setRequired(true)
 ```
 
 
@@ -473,15 +473,15 @@ Sets the read-only state of the widget. This method is useful when you want to p
 *Example:*
 
 ```js
-EmailInput1.setReadOnly(true)
+PhoneInput1.setReadOnly(true)
 ```
  *Example:* If you only want the widget to be editable for specific users (e.g., logged-in users), use:
 
 ```js
 if (appsmith.user.isAnonymous) {
-  EmailInput1.setReadOnly(true) // Prevent modification for anonymous users
+  PhoneInput1.setReadOnly(true) // Prevent modification for anonymous users
 } else {
-  EmailInput1.setReadOnly(false) // Allow modification for logged-in users
+  PhoneInput1.setReadOnly(false) // Allow modification for logged-in users
 }
 ```
 
