@@ -629,6 +629,7 @@ const sidebars = {
       collapsed: false,
       label: 'Manage Apps and Users',
       items: [
+        'getting-started/setup/instance-configuration/authentication/README',
         {
           type: 'category',
           label: 'Granular Access Control',
