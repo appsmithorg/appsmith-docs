@@ -56,7 +56,7 @@ This property allows you to select the appropriate column type for your Table da
 
 This property allows you to display and manipulate Table data using JavaScript expressions. The `currentRow` property is automatically generated when data is added to the Table, representing the current row's data. 
 
-#### Example 1: Display value
+#### Display value
 
 To display a date of birth in a column named `dob`, use: 
 
@@ -64,7 +64,14 @@ To display a date of birth in a column named `dob`, use:
 {{currentRow['dob']}}
 ```
 
-#### Example 2: Conditional formatting
+#### Conditional formatting
+
+<dd>
+
+<ZoomImage src="/img/table-col-mr-example.png" alt="Display images on Table row selection" caption="Formatting Column" />
+
+</dd>
+
 
 If you want to add a prefix like `Mr`. or `Mrs.` to names in the name column based on the `gender` column, you can use a computed value:
 
@@ -77,11 +84,13 @@ The code uses a ternary operator to add a prefix of `Mr.` or `Mrs.` to the name 
 
 <dd>
 
-<ZoomImage src="/img/col-example.png" alt="Display images on Table row selection" caption="Formatting Column" />
 
 </dd>
 
-#### Example 3: HTML Formatting
+#### HTML Formatting
+
+<ZoomImage src="/img/html-table.png" alt="Display images on Table row selection" caption="HTML Column" />
+
 
 If you want to display multiple custom tags for order status, order type, and order date, change the column type to HTML and add code like:
 
@@ -95,7 +104,6 @@ If you want to display multiple custom tags for order status, order type, and or
 }}
 ```
 
-<ZoomImage src="/img/html-table.png" alt="Display images on Table row selection" caption="HTML Column" />
 
 
 </dd>
