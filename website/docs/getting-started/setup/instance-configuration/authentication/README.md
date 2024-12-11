@@ -28,22 +28,27 @@ For SAML-based SSO, your Appsmith instance must be configured with high availabi
 ---
 
 <div className="containerGridSampleApp">
-
    <div className="containerColumnSampleApp columnGrid column-one">
+   <div className="containerCol">
+            <img className="containerImage containerImgDimensions" src="/img/authentication-google.png" alt="Google logo"/>
+        </div> <hr className="gradient-hr"/>
       <div className="containerCol">
          <b><a href="/getting-started/setup/instance-configuration/authentication/google-login">Integrate Google OAuth</a></b>
       </div>
-      <hr/>
+      <br/>
       <div className="containerDescription">
          Enable users to log in with their Google accounts for a simple and secure authentication experience.
       </div>
    </div>
 
    <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
+            <img className="containerImage containerImgDimensions" src="/img/authentication-github.png" alt="GitHub logo"/>
+        </div> <hr className="gradient-hr"/>
       <div className="containerCol">
          <b><a href="/getting-started/setup/instance-configuration/authentication/github-login">Integrate GitHub OAuth</a></b>
       </div>
-      <hr/>
+      <br/>
       <div className="containerDescription">
          Allow developers to authenticate with their GitHub accounts, ensuring seamless integration with developer workflows.
       </div>
@@ -54,20 +59,26 @@ For SAML-based SSO, your Appsmith instance must be configured with high availabi
 <div className="containerGridSampleApp">
 
    <div className="containerColumnSampleApp columnGrid column-one">
+   <div className="containerCol">
+            <img className="containerImage containerImgDimensions" src="/img/authentication-oidc.svg" alt="OIDC logo"/>
+        </div> <hr className="gradient-hr"/>
       <div className="containerCol">
          <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc">Integrate OpenID Connect (Enterprise Only)</a></b>
       </div>
-      <hr/>
+      <br/>
       <div className="containerDescription">
          Use OpenID Connect for secure and modern authentication, perfect for enterprise-grade applications.
       </div>
    </div>
 
    <div className="containerColumnSampleApp columnGrid column-two">
+   <div className="containerCol">
+            <img className="containerImage containerImgDimensions" src="/img/authentication-saml.svg" alt="SAML logo"/>
+        </div> <hr className="gradient-hr"/>
       <div className="containerCol">
          <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml">Integrate SAML (Enterprise Only)</a></b>
       </div>
-      <hr/>
+      <br/>
       <div className="containerDescription">
          Implement SAML-based SSO for enterprise users. Ensure your Appsmith instance is configured for high availability.
       </div>

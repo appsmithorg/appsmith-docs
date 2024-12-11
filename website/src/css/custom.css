@@ -221,9 +221,16 @@
 }
 
 .containerColumnSampleApp {
-  border: 1px solid #dadce0 !important;
+  border: 1px solid transparent;
   border-radius: 4px;
   margin: 10px;
+  border-image: linear-gradient(to right, #f4f4f4, #dadce0);
+  border-image-slice: 1;
+}
+
+.containerImgDimensions {
+  width: 90px !important;
+  height: 90px !important;
 }
 
 .columnGrid {
@@ -773,4 +780,11 @@ h4+.tags {
 
 .external-link:hover {
   text-decoration: underline;
+}
+
+.gradient-hr {
+  border: none;
+  height: 4px;
+  background: linear-gradient(to right, #0073e6, #ff6347);
+  margin: 20px 0;
 }
