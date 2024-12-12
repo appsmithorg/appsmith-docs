@@ -202,12 +202,18 @@
   vertical-align: center;
 }
 
-.containerTutorialLink {
+.containerIntegrationsLink {
   margin: 1px;
   font-size: 0.9rem;
   text-align: left;
   position: absolute;
   bottom: 10px;
+}
+
+.containerTutorialLink {
+  margin: 1px;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 .containerGrid {
