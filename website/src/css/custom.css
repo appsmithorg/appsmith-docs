@@ -277,23 +277,6 @@
   overflow: hidden;
 }
 
-.containerPaidFeature {
-  margin-top: 10px;
-}
-
-.containerPaidFeature a {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #0366d6;
-  text-decoration: none;
-}
-
-.containerPaidFeature a:hover {
-  text-decoration: underline;
-}
-
 .containerAnchor {
   text-decoration: none;
   color: inherit;
