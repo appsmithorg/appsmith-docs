@@ -25,7 +25,7 @@ This page provides information on using the Button widget (available in AI Assis
 
 
  <ZoomImage
-    src="/img/input-widget-anvil.png" 
+    src="/img/button-widget.png" 
     alt=""
     caption=""
   /> 
