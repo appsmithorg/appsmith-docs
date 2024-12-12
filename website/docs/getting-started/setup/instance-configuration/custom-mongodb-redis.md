@@ -1,100 +1,100 @@
 ---
-sidebar_position: 3
-toc_max_heading_level: 4
+description: Learn how to set up an external MongoDB instance for your Appsmith application to store application data.
+toc_max_heading_level: 2
 ---
 
-# External MongoDB and Redis
+# Configure External MongoDB
 
-Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB and Redis for data storage and session management. You can also switch to external instances. Using external instances enable better performance and scalability. Follow the steps on this page to set up external MongoDB and Redis for Appsmith.
+Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB for data storage. You can also switch to an external MongoDB instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external MongoDB instance and how to connect it to your Appsmith instance.
 
-:::caution Attention
-To use external MongoDB with Appsmith v1.9.0 onwards, you need MongoDB version 5 or higher. Follow the steps in the MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/)
-:::
+## Prerequisites
 
-## External MongoDB
+Before configuring an external MongoDB instance for your Appsmith application, ensure the following:
 
-Follow the steps below to configure Appsmith to use an external MongoDB instance:
+- This guide applies only to **self-hosted Appsmith** instances. If not already installed, refer to the [installation](/getting-started/setup/installation-guides) guides.
+- Ensure at least **2 GB of free storage space** is available on your server to manage backups and configurations.
 
-### Prerequisites
+## Create MongoDB instance (optional)
 
-- A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
-- Ensure that your external MongoDB instance has a replica set configuration in place. Connect to your database as the `admin` user and run [rs.initiate()](https://docs.mongodb.com/manual/reference/method/rs.initiate/). Note that if you're using MongoDB Cloud _excluding serverless instances of MongoDB Atlas, which don't support replica sets,_ the replica set configuration is already set up for you.
-- Ensure the MongoDB user account has `readWrite` and `clusterMonitor` roles assigned.
-- At least 2 GB of free storage space for backup and update tasks.
-- Before migrating your Appsmith instance to connect with the new MongoDB, make sure to perform a [backup](/getting-started/setup/instance-management/appsmithctl#backup-database) of the old MongoDB and [restore](/getting-started/setup/instance-management/appsmithctl#restore-database) it to the new MongoDB.
+Follow these steps to set up an external MongoDB instance for Appsmith. If you already have a MongoDB instance, skip this step and move to [Verify external MongoDB permissions](#verify-external-mongodb-permissions).
 
-### Configure instance
+1. Create a MongoDB instance using one of the following options:
+   - **Cloud-hosted MongoDB:** Refer to the [MongoDB Atlas setup guide](https://www.mongodb.com/cloud/atlas).
+   - **Self-hosted MongoDB:** Install and configure it by following the [MongoDB installation documentation](https://www.mongodb.com/docs/manual/installation/).
 
-On Appsmith, you can add your external MongoDB by using one of the below ways:
+2. Log in to your MongoDB instance as an admin user.
 
-- [Admin Settings](#admin-settings)
-- [Environment Variables](#environment-variable)
+3. Run the following command to set up the replica set:
 
-#### Admin settings
+   ```bash
+   rs.initiate()
+   ```
 
-You can use [Admin Settings](/getting-started/setup/instance-configuration#admin-settings) to set up an external MongoDB. The **MongoDB URI** property is present under **Advanced** Settings. Add your MongoDB URI to the setting and click the **SAVE & RESTART** button. The server restart establishes a connection with the external MongoDB.
+4. Retrieve the connection string for your MongoDB instance. For example:
 
-<ZoomImage src="/img/setup-external-mongodb-using-admin-settings.png" alt="Setup an external MongoDB using Admin settings" caption="Setup an external MongoDB using Admin settings" />
+   ```bash
+   mongodb+srv://{username}:{password}@{mongo.host.name}/{db_name}
+   ```
+   Store this connection string securely. You need this to configure the MongoDB instance on Appsmith.
 
-:::info
-If you have set values using [environment variables](#environment-variables) for your instance, those values take precedence over values specified in the Admin Settings UI.
-:::
+## Verify external MongoDB permissions
 
-#### Environment variable
+Ensure the user Appsmith uses to connect to the database has the necessary permissions:
 
-To connect to an external MongoDB server, you need to update the environment variable `APPSMITH_DB_URL` with your [MongoDB](https://www.mongodb.com/cloud) credentials in the connection string format. If your password or username contains special characters, you need to URL encode them. For instance, if the password is `Something@123`, it should be URL encoded as `Something%40123`, like:
+- **For a new user**: Create a new user and assign the following roles:  
+  - `readWrite`  
+  - `clusterMonitor`  
 
-```js
-// Syntax
-APPSMITH_DB_URL=mongodb+srv://<USERNAME>:<PASSWORD>@<MONGO.HOST.NAME>/<DATABASENAME>
+- **For an existing user**: Check if the user already has the required roles. If not, update the user to assign the following roles:  
+  - `readWrite`  
+  - `clusterMonitor`  
+## Restore MongoDB data
 
-// Example - password encoded
-APPSMITH_DB_URL=mongodb://appsmithadmin:Something%40123@1.3.4.5:27017/appsmith?retryWrites=true
-```
+Follow these steps to migrate the data from the old MongoDB instance to the new instance:
 
-To learn how to URL encode your username and password, see [Encode to URL-encoded format](https://www.urlencoder.org/).
+1. Take a backup of your existing MongoDB instance. For detailed steps, see the [Backup database](/getting-started/setup/instance-management/appsmithctl#backup-database) guide.
+2. Restore the backup to your new MongoDB instance. For detailed steps, see the [Restore database backup](/getting-started/setup/instance-management/appsmithctl#restore-database) guide.
 
+## Connect Appsmith to external MongoDB
 
+Follow these steps to connect the Appsmith instance to the external MongoDB instance:
 
+1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.
 
-Restart the Appsmith container by using the below command:
+2. Set the `APPSMITH_DB_URL` environment variable with the following format. If your `{username}` or `{password}` contains special characters, encode them before adding it to the environment variable. For more information, see [Encode special characters to URL-encoded format](https://www.urlencoder.org/).
 
-```bash
-docker-compose restart appsmith
-```
+    ```yaml
+    APPSMITH_DB_URL=mongodb+srv://{username}:{password}@{mongo.host.name}/{db_name}
+    ```
 
-## External Redis
+    Replace `{username}`, `{password}`, `{mongo.host.name}`, and `{db_name}` with the actual details of your MongoDB instance.
 
-You can add your external Redis to Appsmith using one of the below ways:
+3. Update the Appsmith server configuration to establish a connection with the external MongoDB database. This ensures that Appsmith starts using the configured MongoDB instance for all database operations.
+   - **Docker**:
 
-- [Admin Settings](#admin-settings-1)
-- [Environment Variables](#environment-variable-1)
+     ```bash
+     docker-compose down && docker-compose up -d
+     ```
 
-#### Admin settings
+   - **Kubernetes:**
 
-You can use [Admin Settings](/getting-started/setup/instance-configuration#admin-settings) to set up an external Redis. The **Redis URL** property is present under **Advanced** Settings. Add your Redis URL to the setting and click the **SAVE & RESTART** button. The server restart establishes a connection with the external Redis.
+     ```bash
+     helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+     ```
 
-<ZoomImage src="/img/setup-external-redis-using-admin-settings.png" alt="Setup an external Redis using Admin settings" caption="Setup an external Redis using Admin settings" />
+4. Log in to your Appsmith application and check if the instance is functioning as expected.
 
-#### Environment variable
-
-To connect to an external Redis server, update the environment variable `APPSMITH_REDIS_URL`:
-
-```bash
-APPSMITH_REDIS_URL=redis://hostname:6379
-```
-
-Restart the Appsmith container by using the below command:
-
-```bash
-docker-compose restart appsmith
-```
+5. Verify the data is being stored in the external MongoDB instance.
 
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+- If you face connection issues:
+   - Ensure your MongoDB instance is accessible from the Appsmith server.
+   - Verify the user credentials used for setting up the connection.
+   - Ensure the roles are accurately configured.
 
-## Further reading
+If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
 
-- [Container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
-- [Instance Management](/getting-started/setup/instance-management)
+## See also
+
+- [Configure external Redis](/getting-started/setup/instance-configuration/external-redis): Learn how to set up an external Redis instance.

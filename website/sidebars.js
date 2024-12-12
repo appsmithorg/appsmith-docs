@@ -78,6 +78,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
                 'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-redis',
               ],
             },
             {
