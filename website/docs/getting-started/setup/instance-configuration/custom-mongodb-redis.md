@@ -88,10 +88,10 @@ Follow these steps to connect the Appsmith instance to the external MongoDB inst
 
 ## Troubleshooting
 
-- If you face connection issues:
-   - Ensure your MongoDB instance is accessible from the Appsmith server.
-   - Verify the user credentials used for setting up the connection.
-   - Ensure the roles are accurately configured.
+If you face connection issues:
+- Ensure your MongoDB instance is accessible from the Appsmith server.
+- Verify the user credentials used for setting up the connection.
+- Ensure the roles are accurately configured.
 
 If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
 
