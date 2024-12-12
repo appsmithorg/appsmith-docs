@@ -228,6 +228,19 @@
   border-image-slice: 1;
 }
 
+.containerClick {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.containerClick:hover {
+  text-decoration: none;
+  color: #000;
+  transform: scale(1.05) translateY(-10px);
+}
+
+
 .containerImgDimensions {
   width: 90px !important;
   height: 90px !important;
