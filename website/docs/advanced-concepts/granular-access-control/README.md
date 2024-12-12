@@ -43,7 +43,7 @@ To help you get started with Granular Access Control in Appsmith, here are some 
        <div className="containerCol">
             <a href="/advanced-concepts/granular-access-control/reference/permissions"><strong>Permissions</strong></a>
        </div>
-       <hr/>
+       <hr className="gradient-hr" />
        <div className="containerDescription">
            Understand the permissions available as part of Granular Access Control.
        </div>
@@ -52,7 +52,7 @@ To help you get started with Granular Access Control in Appsmith, here are some 
     <div className="containerCol">
            <a href="/advanced-concepts/granular-access-control/reference/custom-roles"><strong>Custom Role</strong></a>
        </div>
-       <hr/>
+       <hr className="gradient-hr" />
        <div className="containerDescription">
            Learn how to create Custom role to manage users and user groups in Appsmith.
        </div>

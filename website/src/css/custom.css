@@ -193,6 +193,7 @@
 .containerDescription {
   margin: 1px;
   font-size: 0.9rem;
+  flex-grow: 1;
 }
 
 .containerImage {
@@ -228,6 +229,12 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 250px;
+  max-width: 500px;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .containerColumnSampleApp:hover {
@@ -259,7 +266,7 @@
 }
 
 .containerHeading {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #333;
   text-transform: capitalize;

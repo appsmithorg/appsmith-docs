@@ -14,13 +14,13 @@ Let's get started on your journey to creating dynamic and responsive application
   <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>JSObjects</strong></a>
-        </div> <hr/>
+        </div> <hr className="gradient-hr" />
         <div className="containerDescription">JSObjects enable better organization of functions & variables</div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/write-code/concepts/execute-onpageload"><strong>Execute Queries & JS OnPageLoad</strong></a>
-        </div><hr/>
+        </div><hr className="gradient-hr" />
         <div className="containerDescription">Run code on page load and learn how the settings work</div>
     </div>
 </div>

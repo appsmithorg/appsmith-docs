@@ -43,13 +43,13 @@ Mastering these data flows allows developers to create applications that can sea
     <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/build-apps/how-to-guides"><strong>How-to Guides</strong></a>
-        </div> <hr/>
+        </div> <hr className="gradient-hr" />
         <div className="containerDescription">Step-by-step guides to build common workflows.</div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/reference/widgets"><strong>Reference</strong></a>
-        </div><hr/>
+        </div><hr className="gradient-hr" />
         <div className="containerDescription">Technical information on widgets.</div>
     </div>
 </div>

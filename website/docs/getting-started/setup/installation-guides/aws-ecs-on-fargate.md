@@ -250,7 +250,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Set Up High Availability (HA)</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Configure high availability for your Appsmith deployment on AWS Fargate to handle increased load. <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">Learn more about setting up high availability</a>
     </div>
@@ -262,7 +262,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Single Sign-on (SSO)</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Configure SSO to allow users to sign in using your identity provider.
       <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
@@ -277,7 +277,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Email Service</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up an email service to enable Appsmith to send notifications and alerts.
       <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
@@ -290,7 +290,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Set Up Custom Domain and SSL</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up a custom domain for your Appsmith instance and secure it with SSL. 
       <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>

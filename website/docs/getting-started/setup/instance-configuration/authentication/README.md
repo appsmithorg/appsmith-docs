@@ -60,6 +60,11 @@ For SAML-based SSO, your Appsmith instance must be configured with high availabi
          <img className="containerImage containerImgDimensions" src="/img/authentication-oidc.png" alt="OIDC logo" />
          <div className="containerHeading">
             <b>Integrate OpenID Connect</b>
+            <div className="containerPaidFeature">
+               <a href="https://www.appsmith.com/pricing" target="_blank">
+                  <span>&nbsp;(Enterprise)</span>
+               </a>
+            </div>
          </div>
       </div>
       <hr className="gradient-hr" />

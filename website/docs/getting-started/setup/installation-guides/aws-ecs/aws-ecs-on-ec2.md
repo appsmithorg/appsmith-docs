@@ -145,7 +145,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Single Sign-on (SSO)</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Configure SSO to allow users to sign in using your identity provider. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
     </div>
@@ -158,7 +158,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Email Service</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up an email service to enable Appsmith to send notifications and alerts. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
     </div>
@@ -173,7 +173,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Set Up Custom Domain and SSL</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up a custom domain for your Appsmith instance and secure it with SSL.  <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
     </div>
@@ -186,7 +186,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Backup and Restore</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. 
       <a href="/getting-started/setup/instance-management/appsmithctl">Learn more about Backup and Restore</a>
