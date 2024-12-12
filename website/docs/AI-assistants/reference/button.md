@@ -24,12 +24,6 @@ tags={[
 This page provides information on using the Button widget (available in AI Assistant Apps), which allows you to trigger actions or perform specific tasks with a single click.
 
 
- <ZoomImage
-    src="/img/button-widget.png" 
-    alt=""
-    caption=""
-  /> 
-
 
 ## Content properties
 
@@ -298,19 +292,7 @@ Button1.setDisabled(false)
 
 </dd>
 
-#### setColor (param: string): Promise
 
-<dd>
-
-Sets the background color of the button widget.
-
-*Example*:
-
-```js
-Button1.setColor('#FF0000')
-```
-
-</dd>
 
 #### setLabel (param: string): Promise
 

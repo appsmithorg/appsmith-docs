@@ -462,7 +462,8 @@ const sidebars = {
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'build-apps/how-to-guides/usage-app',
-            'build-apps/how-to-guides/export-audit-logs'
+            'build-apps/how-to-guides/export-audit-logs',
+            'reference/widgets/button/google-recaptcha'
           ]
         },
         {
@@ -479,12 +480,8 @@ const sidebars = {
               items: [
                 'reference/widgets/audio',
                 'reference/widgets/audio-recorder',
-                {
-                  type: 'category',
-                  label: 'Button',
-                  link: { type: 'doc', id: 'reference/widgets/button/README' },
-                  items: ['reference/widgets/button/google-recaptcha'],
-                },
+                'reference/widgets/button/README',
+      
                 {
                   type: 'category',
                   label: 'Button Group',
