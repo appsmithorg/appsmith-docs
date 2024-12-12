@@ -225,7 +225,10 @@
   border-radius: 8px;
   margin: 10px;
   background-clip: padding-box;
-  border-image: linear-gradient(to right, #dadce0, #d07373) 1;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, #dadce0, #d07373);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -268,7 +271,7 @@
 .containerHeading {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  color: #03366f;
   text-transform: capitalize;
   padding: 12px 15px;
   border-radius: 8px;
