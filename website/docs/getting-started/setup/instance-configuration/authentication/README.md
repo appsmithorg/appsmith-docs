@@ -26,62 +26,62 @@ For SAML-based SSO, your Appsmith instance must be configured with high availabi
 :::
 
 ---
-
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-   <div className="containerCol">
-            <img className="containerImage containerImgDimensions" src="/img/authentication-google.png" alt="Google logo"/>
-        </div> <hr className="gradient-hr"/>
-      <div className="containerCol">
-         <b><a href="/getting-started/setup/instance-configuration/authentication/google-login">Integrate Google OAuth</a></b>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication/google-login">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-google.png" alt="Google logo" />
+         <div className="containerHeading">
+            <b>Integrate Google OAuth</b>
+         </div>
       </div>
-      <br/>
+      <hr className="gradient-hr" />
       <div className="containerDescription">
          Enable users to log in with their Google accounts for a simple and secure authentication experience.
       </div>
-   </div>
+   </a>
 
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
-            <img className="containerImage containerImgDimensions" src="/img/authentication-github.png" alt="GitHub logo"/>
-        </div> <hr className="gradient-hr"/>
-      <div className="containerCol">
-         <b><a href="/getting-started/setup/instance-configuration/authentication/github-login">Integrate GitHub OAuth</a></b>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication/github-login">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-github.png" alt="GitHub logo" />
+         <div className="containerHeading">
+            <b>Integrate GitHub OAuth</b>
+         </div>
       </div>
-      <br/>
+      <hr className="gradient-hr" />
       <div className="containerDescription">
          Allow developers to authenticate with their GitHub accounts, ensuring seamless integration with developer workflows.
       </div>
-   </div>
-
+   </a>
 </div>
 
 <div className="containerGridSampleApp">
-
-   <div className="containerColumnSampleApp columnGrid column-one">
-   <div className="containerCol">
-            <img className="containerImage containerImgDimensions" src="/img/authentication-oidc.svg" alt="OIDC logo"/>
-        </div> <hr className="gradient-hr"/>
-      <div className="containerCol">
-         <b><a href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc">Integrate OpenID Connect (Enterprise Only)</a></b>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-oidc.png" alt="OIDC logo" />
+         <div className="containerHeading">
+            <b>Integrate OpenID Connect</b>
+         </div>
       </div>
-      <br/>
+      <hr className="gradient-hr" />
       <div className="containerDescription">
          Use OpenID Connect for secure and modern authentication, perfect for enterprise-grade applications.
       </div>
-   </div>
-
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
-            <img className="containerImage containerImgDimensions" src="/img/authentication-saml.svg" alt="SAML logo"/>
-        </div> <hr className="gradient-hr"/>
-      <div className="containerCol">
-         <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml">Integrate SAML (Enterprise Only)</a></b>
+   </a>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-saml.png" alt="SAML logo" />
+         <div className="containerHeading">
+            <b>Integrate SAML</b>
+            <div className="containerPaidFeature">
+               <a href="https://www.appsmith.com/pricing" target="_blank">
+                  <span>&nbsp;(Enterprise)</span>
+               </a>
+            </div>
+         </div>
       </div>
-      <br/>
+      <hr className="gradient-hr" />
       <div className="containerDescription">
          Implement SAML-based SSO for enterprise users. Ensure your Appsmith instance is configured for high availability.
       </div>
-   </div>
-
+   </a>
 </div>

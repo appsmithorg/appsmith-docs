@@ -183,7 +183,6 @@
   display: block;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  /* vertical-align: left; */
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -221,11 +220,19 @@
 }
 
 .containerColumnSampleApp {
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   margin: 10px;
-  border-image: linear-gradient(to right, #f4f4f4, #dadce0);
-  border-image-slice: 1;
+  background-clip: padding-box;
+  border-image: linear-gradient(to right, #dadce0, #d07373) 1;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.containerColumnSampleApp:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 .containerClick {
@@ -240,10 +247,63 @@
   transform: scale(1.05) translateY(-10px);
 }
 
-
 .containerImgDimensions {
-  width: 90px !important;
-  height: 90px !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.containerHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerHeading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.containerPaidFeature {
+  margin-top: 10px;
+}
+
+.containerPaidFeature a {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.containerPaidFeature a:hover {
+  text-decoration: underline;
+}
+
+.containerAnchor {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.containerAnchor:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.containerAnchor:focus {
+  outline: none;
+}
+
+.containerAnchor img {
+  display: inline-block;
 }
 
 .columnGrid {
@@ -800,4 +860,5 @@ h4+.tags {
   height: 4px;
   background: linear-gradient(to right, #0073e6, #ff6347);
   margin: 20px 0;
+  padding-bottom: 5px;
 }
