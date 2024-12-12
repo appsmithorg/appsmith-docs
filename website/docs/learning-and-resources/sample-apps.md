@@ -20,14 +20,14 @@ import TabItem from '@theme/TabItem';
 ### Table
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Show Data in Table - Query</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows you how to bind data to a Table Widget from an API and a database query.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Show Data in Table - JSObject</strong>
         </div><hr className="gradient-hr" />
@@ -37,14 +37,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Server-side Pagination</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to implement server-side pagination on the Table widget.<br/><br/> <strong>Datasource</strong> - MongoDB, REST API, PostgreSQL, Google Sheets<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/623cca594d9aea1b062b33c6/pages/623cca594d9aea1b062b33cd"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Server-side Search</strong>
         </div><hr className="gradient-hr" />
@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>External Filters for Table</strong>
         </div> <hr className="gradient-hr" />
@@ -64,7 +64,7 @@ import TabItem from '@theme/TabItem';
             <a href="https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/61fbdf232cd3d95ca414b808"><strong> View App 2</strong></a>
         </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Row Selection Action</strong>
         </div><hr className="gradient-hr" />
@@ -74,14 +74,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Cell Background Colour</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to change a table cell background colour conditionally.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd013c"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Editable Table - Save Row</strong>
         </div><hr className="gradient-hr" />
@@ -91,14 +91,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Show Data from Multiple Queries</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to conditionally show data in the table from different queries depending on the queryParams passed to URL.<br/><br/> <strong>Datasource</strong> - PostgreSQL, MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/65420e152cf3bf5c05cd011f/pages/65420e152cf3bf5c05cd0138"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Polling Data in real time</strong>
         </div><hr className="gradient-hr" />
@@ -108,14 +108,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>External Search</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to implement external search capability in a Table widget.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/62c81d4801213a676a34bd35"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Control Column Visibility</strong>
         </div><hr className="gradient-hr" />
@@ -125,7 +125,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Reset Table</strong>
         </div> <hr className="gradient-hr" />
@@ -141,14 +141,14 @@ import TabItem from '@theme/TabItem';
 ### **Input**
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Input Data Validation</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to validate the form’s data for various input widget types before submission.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/62074c466b4b1e154a3bf017/pages/6245b7264f1a665b23047e5f"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Add Input Fields Dynamically</strong>
         </div><hr className="gradient-hr" />
@@ -162,14 +162,14 @@ import TabItem from '@theme/TabItem';
 ### Button
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Control Widget Visibility</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app demonstrates how to show or hide a widget on a button click.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/framework/hide-or-show-text-on-btn-click-6214df70da926877eb275728"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Reset Multiple Widgets</strong>
         </div><hr className="gradient-hr" />
@@ -179,7 +179,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Change Button Colour</strong>
         </div> <hr className="gradient-hr" />
@@ -195,14 +195,14 @@ import TabItem from '@theme/TabItem';
 ### Text
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Change Widget properties</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to update the value property of the Text widget dynamically.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fe22d62cd3d95ca414cd8b/pages/61fe22d62cd3d95ca414cd8e"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Download contents of Text widget</strong>
         </div><hr className="gradient-hr" />
@@ -216,7 +216,7 @@ import TabItem from '@theme/TabItem';
 ### Form
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Duplicate Record Check</strong>
         </div> <hr className="gradient-hr" />
@@ -232,14 +232,14 @@ import TabItem from '@theme/TabItem';
 ### List
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Show Data in List</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to bind data to a list widget from a query.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fa19d411f4c46e3dfd2250/pages/61fa19d411f4c46e3dfd2253"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Server-side Pagination</strong>
         </div><hr className="gradient-hr" />
@@ -249,7 +249,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>List Item Click Action</strong>
         </div> <hr className="gradient-hr" />
@@ -265,14 +265,14 @@ import TabItem from '@theme/TabItem';
 ### Chart
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Create Chart</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to build different charts and customise them using the Chart widget.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/620b668f6b4b1e154a3c2418/pages/620b668f6b4b1e154a3c241b"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Pie Chart</strong>
         </div><hr className="gradient-hr" />
@@ -282,7 +282,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Custom Chart (Fusion Chart)</strong>
         </div> <hr className="gradient-hr" />
@@ -298,14 +298,14 @@ import TabItem from '@theme/TabItem';
 ### Select
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Reset Select Widget</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to use the Select widget to filter a table and to reset the Select widget to use the default value.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fbdf232cd3d95ca414b805/pages/6200af5c2cd3d95ca414dc78"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Server-side Filtering</strong>
         </div><hr className="gradient-hr" />
@@ -315,7 +315,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Add List Options Dynamically</strong>
         </div> <hr className="gradient-hr" />
@@ -331,14 +331,14 @@ import TabItem from '@theme/TabItem';
 ### Custom
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Image Annotator</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app showcases how to create an Image Annotator, allowing users to annotate images with ease.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/image-annotator/image-labeler-react-659fb55bf645785f6fc6f9c9?_gl=1*2jur09*_gcl_au*MzcyNjQwOTguMTcwMTE4NjcxMg..*_ga*MTI0MTU2ODgzOC4xNjk4MzAxMTIx*_ga_D1VS24CQXE*MTcwNjA4NTI2My42MTAuMS4xNzA2MDg1NzY3LjAuMC4w"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Data grid widget</strong>
         </div><hr className="gradient-hr" />
@@ -348,14 +348,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Signature Pad widget</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app features a Signature Pad widget, allowing users to digitally sign and capture their signatures.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/signature-pad/page1-6597af1e21e083222a47e366?_gl=1*ox6b7o*_gcl_au*MzcyNjQwOTguMTcwMTE4NjcxMg..*_ga*MTI0MTU2ODgzOC4xNjk4MzAxMTIx*_ga_D1VS24CQXE*MTcwNjA4NTI2My42MTAuMS4xNzA2MDg1NzY3LjAuMC4w"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Custom Calendar widget</strong>
         </div><hr className="gradient-hr" />
@@ -365,14 +365,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Tabulator widget</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app showcases the Tabulator widget, providing a dynamic and interactive table interface for efficiently presenting and interacting with tabular data in your application.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/tabulator/page1-659f8ec5fd5afa5cc06365ba?_gl=1*ox6b7o*_gcl_au*MzcyNjQwOTguMTcwMTE4NjcxMg..*_ga*MTI0MTU2ODgzOC4xNjk4MzAxMTIx*_ga_D1VS24CQXE*MTcwNjA4NTI2My42MTAuMS4xNzA2MDg1NzY3LjAuMC4w"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>JSON viewer / editor</strong>
         </div><hr className="gradient-hr" />
@@ -386,14 +386,14 @@ import TabItem from '@theme/TabItem';
 ### Modal
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Open Modal</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to open a Modal using openModal() function of the Appsmith framework.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e4f761eb0501052b9fc407"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Close Modal</strong>
         </div><hr className="gradient-hr" />
@@ -407,14 +407,14 @@ import TabItem from '@theme/TabItem';
 ### Datepicker
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Filter Data Between Dates</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to use the Datepicker widget to filter data for a specific date range.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/61e02308eb0501052b9fa20c"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Set Min and Max Date</strong>
         </div><hr className="gradient-hr" />
@@ -424,14 +424,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Date Calculations</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to perform different date calculations.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fbff472cd3d95ca414b9ac/pages/6215f9a22882606a1df5c9d9"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Date Formatting</strong>
         </div><hr className="gradient-hr" />
@@ -441,7 +441,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Set and Clear Date</strong>
         </div> <hr className="gradient-hr" />
@@ -457,7 +457,7 @@ import TabItem from '@theme/TabItem';
 ### Audio
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Play Audio</strong>
         </div> <hr className="gradient-hr" />
@@ -473,14 +473,14 @@ import TabItem from '@theme/TabItem';
 ### Camera
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Get Base64 string of image</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to extract the Base64 encoded string of an image captured on the Camera widget.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61f10fb69d6d6a6720c9549b/pages/61f7d62c9d6d6a6720c9acfe"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Get image URL</strong>
         </div><hr className="gradient-hr" />
@@ -490,7 +490,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Insert Image into Database</strong>
         </div> <hr className="gradient-hr" />
@@ -506,7 +506,7 @@ import TabItem from '@theme/TabItem';
 ### Checkbox
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Using Checkbox in Queries</strong>
         </div> <hr className="gradient-hr" />
@@ -522,14 +522,14 @@ import TabItem from '@theme/TabItem';
 ### Filepicker
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Upload File</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to upload a file using the Filepicker widget and get the Base64 raw encoding of the uploaded file.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/6200a84f2cd3d95ca414dc0d/pages/6200a84f2cd3d95ca414dc10"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Upload File to Cloudinary</strong>
         </div><hr className="gradient-hr" />
@@ -543,7 +543,7 @@ import TabItem from '@theme/TabItem';
 ### IFrame
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Embed HTML</strong>
         </div> <hr className="gradient-hr" />
@@ -559,7 +559,7 @@ import TabItem from '@theme/TabItem';
 ### Map
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Default Map Markers</strong>
         </div> <hr className="gradient-hr" />
@@ -575,14 +575,14 @@ import TabItem from '@theme/TabItem';
 ### Multiselect
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Insert Multiselect Values into DB</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to insert values from a Multiselect widget into separate rows in a Google Sheet datasource.<br/><br/> <strong>Datasource</strong> - Google Sheets<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/62447342c99df2369931d23c"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Set Values on Multiselect</strong>
         </div><hr className="gradient-hr" />
@@ -596,7 +596,7 @@ import TabItem from '@theme/TabItem';
 ### Progress
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Use Progress Bar</strong>
         </div> <hr className="gradient-hr" />
@@ -612,7 +612,7 @@ import TabItem from '@theme/TabItem';
 ### Document Viewer
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Display Base64 content</strong>
         </div> <hr className="gradient-hr" />
@@ -628,14 +628,14 @@ import TabItem from '@theme/TabItem';
 ### UI components
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Custom Header and Footer</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to display app header and footer components.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fb97982cd3d95ca414b20a/pages/61fb97982cd3d95ca414b20d"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Sidebar Navigation</strong>
         </div><hr className="gradient-hr" />
@@ -645,14 +645,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Image Carousel</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to display an image carousel on the app.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/image-carousel/page1-624fca8f457aa64da9e028c3"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Loading Till Page is Ready</strong>
         </div><hr className="gradient-hr" />
@@ -667,14 +667,14 @@ import TabItem from '@theme/TabItem';
 ### Queries
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Pass Parameters to Query</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to pass parameters to a query in the run() function and how to access these parameters in the query.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e4fd98eb0501052b9fc476/pages/628e64d47901344ba8d2a584"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Pass Query Parameters to URL</strong>
         </div><hr className="gradient-hr" />
@@ -684,14 +684,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Run Query in JSObject</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to execute queries inside a JSObject.<br/><br/> <strong>Datasource</strong> - MongoDB, PostgreSQL, REST API<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61f8f51a9d6d6a6720c9bbb8"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Run Queries in Sequence</strong>
         </div><hr className="gradient-hr" />
@@ -701,7 +701,7 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Run Multiple Queries</strong>
         </div> <hr className="gradient-hr" />
@@ -717,7 +717,7 @@ import TabItem from '@theme/TabItem';
 ### REST API
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Dynamic API Headers</strong>
         </div> <hr className="gradient-hr" />
@@ -733,7 +733,7 @@ import TabItem from '@theme/TabItem';
 ### PostgreSQL
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Bulk Data Operations</strong>
         </div> <hr className="gradient-hr" />
@@ -749,14 +749,14 @@ import TabItem from '@theme/TabItem';
 ### MongoDB
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>MongoDB RAW Query</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to write a RAW MongoDB query to update the document.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e022f1eb0501052b9fa205/pages/6229a205f782567d61f16d2f"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Bulk Data Operations</strong>
         </div><hr className="gradient-hr" />
@@ -770,7 +770,7 @@ import TabItem from '@theme/TabItem';
 ### GraphQL
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Fetch Data</strong>
         </div> <hr className="gradient-hr" />
@@ -786,7 +786,7 @@ import TabItem from '@theme/TabItem';
 ### Snowflake
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Bulk Data Operations</strong>
         </div> <hr className="gradient-hr" />
@@ -804,14 +804,14 @@ import TabItem from '@theme/TabItem';
 ### Appsmith Framework
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Local Storage</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to use Appsmith storage to store and display values.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/framework/update-store-value-62051be26b4b1e154a3980a9"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Navigate to Page/External Link</strong>
         </div><hr className="gradient-hr" />
@@ -821,14 +821,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Persistent vs Session Storage</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows the difference between persistent vs session storage.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/appsmith-store/page1-627b8afe0b47255c28137dca"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Remove Items from Storage</strong>
         </div><hr className="gradient-hr" />
@@ -838,14 +838,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Pass Arguments to Function</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to pass arguments to a JS function defined in a JSObject.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/61e010e7eb0501052b9fa0f3"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>JS Async-Await</strong>
         </div><hr className="gradient-hr" />
@@ -855,14 +855,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>JS Promises (Callbacks)</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">Fetch Data from JS function &#x26; handle promise with callbacks.<br/><br/> <strong>Datasource</strong> - MongoDB<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61fae6cc2cd3d95ca414a84d/pages/61fae6cc2cd3d95ca414a850"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>JS Promises (Chaining)</strong>
         </div><hr className="gradient-hr" />
@@ -872,14 +872,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Current Date and Time</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to display the current date and time.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/framework/display-current-date-time-627cb8300b47255c2813c860"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Refresh Page</strong>
         </div><hr className="gradient-hr" />
@@ -889,14 +889,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Hide Page from Topbar</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to hide the pages of an app and how to navigate to pages only through button clicks.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/navigation-with-hidden-pages/page1-6305d094bc158514a170ca48"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Reset Multiple Widgets</strong>
         </div><hr className="gradient-hr" />
@@ -911,14 +911,14 @@ import TabItem from '@theme/TabItem';
 ### JS and utilities
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Merge Data from Multiple Queries</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to combine data from two queries using a JSObject.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/62572b3f0d3d384069c09390"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Merge CSV Data</strong>
         </div><hr className="gradient-hr" />
@@ -928,14 +928,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Convert CSV to JSON</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to convert a CSV file into an array of JSON objects.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/framework/csv-to-json-620b7d6c6b4b1e154a3c2596"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Upload CSV File</strong>
         </div><hr className="gradient-hr" />
@@ -945,14 +945,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Parse XML Data</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to parse XML data using the xmlParser library.<br/><br/> <strong>Datasource</strong> - REST API<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61efeb7dbe698f35db551ff5/pages/624dd2e751a8863d6c404b39"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Trigger Multiple Actions</strong>
         </div><hr className="gradient-hr" />
@@ -962,14 +962,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Basic HTML Editor</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to create a basic HTML editor using a Tabs widget, an Input widget, and a Text widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/62138e0bda926877eb273b34/pages/62b082b940b36d1624787802"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Download PDF from URL</strong>
         </div><hr className="gradient-hr" />
@@ -979,14 +979,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>PDF Generator</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to generate and download a PDF using third-party tools.<br/><br/> <strong>Datasource</strong> - REST API<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/pdf-files/generatepdf-fromformdata-62a76c1284b913372519db81"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Decode HTML Entities</strong>
         </div><hr className="gradient-hr" />
@@ -997,14 +997,14 @@ import TabItem from '@theme/TabItem';
 
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Simple Calculator</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app demonstrates - how to build a simple calculator using Button Groups, JSObject, and a Text widget.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61e010e7eb0501052b9fa0f0/pages/624c8ea151a8863d6c402cbb"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Simple Counter</strong>
         </div><hr className="gradient-hr" />
@@ -1014,14 +1014,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>Display Asset from URL</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to display an asset (image/video) using the given URL.<br/><br/> <strong>Datasource</strong> - NA<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/applications/61f3ad999d6d6a6720c9830d/pages/62583bd30d3d384069c0e27b"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Sequential ID Generator</strong>
         </div><hr className="gradient-hr" />
@@ -1031,14 +1031,14 @@ import TabItem from '@theme/TabItem';
 </div>
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
+    <div className="containerIntegrationSampleApp columnGrid column-one">
         <div className="containerHeading">
             <strong>UUID Generator</strong>
         </div> <hr className="gradient-hr" />
         <div className="containerDescription">This app shows how to generate UUIDs using JavaScript.<br/><br/> <strong>Datasource</strong> - PostgreSQL<br/><br/> </div>
         <div className="containerTutorialLink"><a href="https://app.appsmith.com/app/framework/custom-uuid-622e4e790bf98b2d5df75f26"><strong >View App </strong></a></div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
+    <div className="containerIntegrationSampleApp columnGrid column-two">
         <div className="containerHeading">
            <strong>Custom Time Picker</strong>
         </div><hr className="gradient-hr" />

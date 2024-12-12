@@ -245,7 +245,8 @@
   border: 2px solid transparent;
   border-radius: 8px;
   margin: 10px;
-  background-clip: padding-box;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   background-image: linear-gradient(white, white),
     linear-gradient(to right, #dadce0, #d07373);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
