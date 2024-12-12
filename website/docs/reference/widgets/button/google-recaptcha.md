@@ -4,7 +4,7 @@ description: >-
   click buttons
 ---
 
-# Configure Google reCAPTCHA for Button Widget
+# Configure Google reCAPTCHA
 
 This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. This can be integrated with Button widget to prevent bots from clicking the button on your website
 
