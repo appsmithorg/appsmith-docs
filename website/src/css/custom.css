@@ -206,6 +206,8 @@
   margin: 1px;
   font-size: 0.9rem;
   text-align: left;
+  position: absolute;
+  bottom: 10px;
 }
 
 .containerGrid {
@@ -214,10 +216,23 @@
   margin: 20px;
 }
 
-.containerGridSampleApp {
+.containerFlexSampleApp {
   display: flex;
   height: fit-content;
   margin: 10px;
+}
+
+.containerGridSampleApp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.containerIntegrationSampleApp {
+  border: 1px solid #dadce0 !important;
+  border-radius: 4px;
+  margin: 10px;
+  position: relative;
 }
 
 .containerColumnSampleApp {
@@ -227,14 +242,12 @@
   background-clip: padding-box;
   background-image: linear-gradient(white, white),
     linear-gradient(to right, #dadce0, #d07373);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
   min-height: 250px;
   max-width: 500px;
-  min-width: 350px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -260,6 +273,11 @@
 .containerImgDimensions {
   width: 50px !important;
   height: 50px !important;
+}
+
+.containerIntegrationsImgDimensions {
+  width: 100px !important;
+  height: 100px !important;
 }
 
 .containerHead {
