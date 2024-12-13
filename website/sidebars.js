@@ -72,13 +72,12 @@ const sidebars = {
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
-                'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
-                'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
-                'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
-                'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
                 'getting-started/setup/instance-configuration/external-redis',
+
+                'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
+                'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
               ],
             },
             {
@@ -203,6 +202,7 @@ const sidebars = {
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
             },
+            'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
             {
               type: 'category',
               label: 'Upgrade to Commercial Edition',
