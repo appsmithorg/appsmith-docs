@@ -21,7 +21,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Button widget (available in AI Assistant Apps), which allows you to trigger actions or perform specific tasks with a single click.
+This page provides information on using the Button widget *(available in AI Assistant Apps)*, which allows you to trigger actions or perform specific tasks with a single click.
 
 
  <ZoomImage
@@ -111,7 +111,7 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 <dd>
 
-Add a [Google reCAPTCHA](https://www.google.com/recaptcha/about/) site key to enable reCAPTCHA verification for the button, which helps protect your application from spam and automated bots. The token is available in the API pane under the `recaptchaToken` key. 
+Add a [Google reCAPTCHA](https://www.google.com/recaptcha/about/) site key to enable reCAPTCHA verification for the button, which helps protect your application from spam and automated bots. You can use the [recaptchaToken](#recaptchatoken-string) reference property to retrieve the token.
 
 See how to configure [Google reCAPTCHA Keys](/reference/widgets/button/google-recaptcha/).
 

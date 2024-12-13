@@ -6,13 +6,13 @@ description: >-
 
 # Configure Google reCAPTCHA
 
-This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. This can be integrated with Button widget to prevent bots from clicking the button.
+This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. It can be used with the Button widget to prevent bots from interacting with the button.
 
 
 ## Prerequisites
 
 - A [Google account](https://www.google.com/recaptcha/admin) to access the reCAPTCHA service.
-- An active [Google Cloud Platform](https://cloud.google.com/?hl=en) project to configure reCAPTCHA.
+- An active [Google Cloud Platform](https://cloud.google.com/?hl=en) project.
 
 ## Register reCAPTCHA with Google
 
@@ -60,7 +60,7 @@ Follow these steps to set up and configure Google reCAPTCHA in Appsmith:
 
 1. Drag a Button widget onto the canvas.
 
-2. In the Button widget's properties pane, paste the **Site Key** into the **Google reCAPTCHA Key** field.
+2. In the Button widget's properties pane, paste the **Site Key** into the **Google reCAPTCHA Key** property.
 
 3. Select the **reCAPTCHA** type (v2 or v3) from the **reCAPTCHA version** property.
 
@@ -90,7 +90,7 @@ POST https://www.google.com/recaptcha/api/siteverify
 
 <dd>
 
-- `secret`: Add your reCAPTCHA Secret Key as a key-value pair.
+- `secret`: Add your reCAPTCHA **Secret Key** as a key-value pair.
 - `response`: Bind the reCAPTCHA token from the Button widget's `recaptchaToken` property, like: `{{Button1.recaptchaToken}}`
 
 The `secret` parameter is necessary to authenticate the request to Google, and the `response` parameter holds the token that was generated after the user interacted with the reCAPTCHA widget.
@@ -117,7 +117,7 @@ The `secret` parameter is necessary to authenticate the request to Google, and t
 
 </dd>
 
-7. Set the Button widget's **onClick** event to run the API query. If the response is successful, proceed with the desired action (e.g., submitting data). If the verification fails, show an alert indicating the failure.
+7. Set the Button widget's **onClick** event to run the API query. Based on the response, execute the appropriate action if the verification is successful, or handle any errors if the verification fails.
 
 <dd>
 
@@ -137,4 +137,3 @@ The `secret` parameter is necessary to authenticate the request to Google, and t
 
 </dd>
 
-You’ve now integrated Google reCAPTCHA with the Button widget in Appsmith to prevent bot interactions. 
