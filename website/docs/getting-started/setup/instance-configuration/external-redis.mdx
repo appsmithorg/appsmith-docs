@@ -23,7 +23,7 @@ Follow these steps to set up an external Redis instance for Appsmith. If you alr
 
       - **Cloud-hosted Redis**: Set up a managed Redis instance using a cloud provider such as AWS ElastiCache, Redis Cloud, or Azure Cache for Redis.  
 
-2. Retrieve the connection details of your Redis instance, including the hostname and port. If authentication is enabled, also retrieve the password. Store these details securely. You need them to configure the Redis instance on Appsmith. 
+2. Retrieve the connection details of your Redis instance, including the hostname and port. Store these details securely. You need them to configure the Redis instance on Appsmith. 
 
 ## Connect Appsmith to external Redis
 
@@ -31,12 +31,14 @@ Follow these steps to connect your Appsmith instance to the external Redis insta
 
 1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.  
 
-2. Add or update the following environment variables with your Redis connection details:  
-   - `APPSMITH_REDIS_URL=redis://:{password}@{redis.host}:{port}`  
+2. Add or update the following environment variable with your Redis connection details:  
+
+   ```yaml
+   APPSMITH_REDIS_URL=redis://{redis.instance.hostname}:{port}
+   ```  
 
    Replace:
-   - `{password}` with the Redis password (leave blank if no authentication is required).  
-   - `{redis.host}` with the Redis instance hostname or IP address.  
+   - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
    - `{port}` with the Redis port (default: 6379).  
 
 3. Update the Appsmith server configuration to establish a connection with the external Redis instance.  
