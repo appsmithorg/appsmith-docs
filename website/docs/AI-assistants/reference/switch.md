@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Switch widget(available in AI Assistant Apps), which represents a boolean value. It allows users to toggle between two states: true (on) and false (off). The switch is commonly used for binary choices like enabled/disabled or on/off.
+This page provides information on using the Switch widget(available in AI Assistant Apps), which represents a boolean value. It allows users to toggle between two states: true (on) and false (off). 
 
 
  <ZoomImage

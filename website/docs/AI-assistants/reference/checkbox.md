@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Checkbox Widget *(available in AI Assistant Apps)*, which allows you to collect boolean input from users. This widget is ideal for scenarios such as selecting options, agreeing to terms, or enabling/disabling settings in your app.
+This page provides information on using the Checkbox Widget *(available in AI Assistant Apps)*, which allows you to collect boolean input from users.
 
 
  <ZoomImage

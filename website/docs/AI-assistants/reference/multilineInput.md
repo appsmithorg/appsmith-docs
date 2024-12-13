@@ -20,11 +20,11 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Multiline Input widget (available in AI Assistant Apps), which allows you to capture and validate longer user inputs.
+This page provides information on using the Multiline Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate longer user inputs.
 
 
  <ZoomImage
-    src="/img/input-widget-anvil.png" 
+    src="/img/multi-line-input-widget.png" 
     alt=""
     caption=""
   /> 
@@ -50,7 +50,7 @@ The **Data Type** property defines the type of input for the widget. For the **M
 
 Options:
 
-- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.s
+- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.
 - **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions.
 - **Number**: Accepts only numeric values.
 - **Password**:  Masks input for sensitive information such as passwords or pins.

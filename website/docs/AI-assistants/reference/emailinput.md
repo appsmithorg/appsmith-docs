@@ -21,7 +21,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Email Input widget (available in AI Assistant Apps), which allows you to capture and validate email addresses. 
+This page provides information on using the Email Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate email addresses. 
 
  <ZoomImage
     src="/img/Email-Input.png" 
@@ -48,7 +48,7 @@ The **Data Type** property defines the type of input for the widget. For the Ema
 
 Options:
 
-- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.s
+- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.
 - **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions.
 - **Number**: Accepts only numeric values.
 - **Password**:  Masks input for sensitive information such as passwords or pins.
@@ -66,9 +66,14 @@ Options:
 
 <dd>
 
-Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it.
+Defines the initial value displayed in the widget when it loads. If the value entered is not in the correct email format, a red border appears to indicate an invalid input.
 
-If the value entered is not in the correct email format, a red border appears to indicate an invalid input.
+*Example:* To display the email from the selected row in a Table:
+
+
+```js
+{{user_table.selectedRow.emailid}}
+```
 
 </dd>
 
@@ -107,7 +112,7 @@ This validation feature allows you to designate the Input as a mandatory field. 
 
 The Regex property, short for Regular Expression, enables you to apply custom validations on user input by defining specific constraints using regular expressions. If the user enters a value that does not adhere to the specified pattern, the widget displays an error message indicating `"invalid input"`.
 
-For instance, if you want to validate that the user enters an email address that includes the `appsmith.com` domain, you can set Regex as:
+*Example*: If you want to validate that the user enters an email address that includes the `appsmith.com` domain, you can set Regex as:
 
 ```js
 ^[a-zA-Z0-9._%+-]+@appsmith\.com$

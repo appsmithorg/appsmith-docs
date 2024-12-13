@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides details on the Currency Input widget, which allows users to input, format, and validate currency values with options for currency type, precision, and locale-based formatting.
+This page provides details on the Currency Input widget *(available in AI Assistant Apps)*, which allows users to input, format, and validate currency values.
 
 
 
@@ -45,11 +45,12 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-The **Data Type** property defines the type of input for the widget. Selecting a specific data type automatically adjusts the widget’s properties to match the input requirements.
+The **Data Type** property defines the type of input for the widget. For the Currency Input widget, the **Data Type** is set to Currency by default. If you change the data type, the widget’s properties and behavior change accordingly.
+
 
 Options:
 
-- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.s
+- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.
 - **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions.
 - **Number**: Accepts only numeric values.
 - **Password**:  Masks input for sensitive information such as passwords or pins.
@@ -69,7 +70,7 @@ Options:
 
 <dd>
 
-Sets an initial numeric value for the widget, displayed when the widget loads, prior to any user input. Sets the initial numeric value displayed in the widget. When the **Read Only** property is enabled, this value is shown but cannot be edited by the user. You can dynamically update this value using JS.
+Sets an initial numeric value for the widget, displayed when the widget loads, prior to any user input. When the **Read Only** property is enabled, this value is shown but cannot be edited by the user. You can dynamically update this value using JS.
 
 *Example:* To display the price from the selected row in a table:
 
@@ -85,7 +86,7 @@ Sets an initial numeric value for the widget, displayed when the widget loads, p
 
 Allows you to specify the currency type for the widget. You can choose from a list of countries and their respective currencies. Additionally, by clicking on **JS**, you can use ISO 4217 currency codes. These codes consist of three letters and are assigned to each currency for international identification.
 
-*Example:* If you want to dynamically set the currency based on a selected value in a Select widegt, use the following JS expression:
+*Example:* If you want to dynamically set the currency based on a selected value in a Select widget, use the following JS expression:
 
 
 ```JS
@@ -155,6 +156,13 @@ For instance, if you want to validate that the user enters a price in multiples 
 <dd>
 
 Allows you to set an expression to determine the validity of the user's input. When the specified expression evaluates to false, indicating that the input is invalid, the widget displays an error message. This feature enables you to define custom validation rules and provide informative error messages to guide the user when their input does not meet the required criteria.
+
+*Example:* If you want to ensure that the currency input only accepts values greater than $10, you can use the following expression:
+
+
+```js
+{{CurrencyInput1.parsedText}}
+```
 
 </dd>
 
@@ -342,16 +350,16 @@ The `parsedText` property stores the input value of the widget.
 
 </dd>
 
-#### value `number`
+#### rawText `number`
 
 <dd>
 
-The `value` property stores the input value of the widget as a number.
+The `rawText` property stores the input value of the widget as a number.
 
 
 *Example:*
 ```js
-{{CurrencyInput1.value}}
+{{CurrencyInput1.rawText}}
 ```
 
 </dd>

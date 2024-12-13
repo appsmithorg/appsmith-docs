@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Switch Group widget(available in AI Assistant Apps). The Switch Group allows users to select multiple boolean options from a predefined list. It is useful in scenarios where several related toggle choices need to be presented together, such as feature toggles or preference settings.
+This page provides information on using the Switch Group widget(available in AI Assistant Apps). The Switch Group allows users to select multiple boolean options from a predefined list. 
 
 
  <ZoomImage

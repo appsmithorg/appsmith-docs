@@ -6,12 +6,13 @@ description: >-
 
 # Configure Google reCAPTCHA
 
-This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. This can be integrated with Button widget to prevent bots from clicking the button on your website
+This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. This can be integrated with Button widget to prevent bots from clicking the button.
 
 
 ## Prerequisites
 
-- A Google account to access the reCAPTCHA service.
+- A [Google account](https://www.google.com/recaptcha/admin) to access the reCAPTCHA service.
+- An active [Google Cloud Platform](https://cloud.google.com/?hl=en) project to configure reCAPTCHA.
 
 ## Register reCAPTCHA with Google
 
@@ -24,8 +25,8 @@ Follow these steps to configure reCAPTCHA on Google:
 
 <dd>
 
-- **v3** (Score-based): Verifies requests based on a score.
-- **v2** (Challenge-based): Verifies requests through a challenge.
+- **v3** (Score-based): Assigns a score based on user interactions to detect suspicious behavior.
+- **v2** (Challenge-based): Uses challenges like image selection or checkboxes to verify human users.
 
 </dd>
 

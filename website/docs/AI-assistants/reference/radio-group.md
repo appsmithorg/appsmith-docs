@@ -21,7 +21,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on using the Radio Group widget *(available in AI Assistant Apps)*, which allows users to select a single option from a predefined set of choices. It's ideal for scenarios where only one selection is allowed, such as choosing a category, setting a preference, or selecting a payment method.
+This page provides information on using the Radio Group widget *(available in AI Assistant Apps)*, which allows users to select a single option from a predefined set of choices. 
 
 
 

@@ -23,12 +23,6 @@ tags={[
 This page provides information on using the Password Input widget (available in AI Assistant Apps), which allows you to capture and validate password entries.
 
 
- <ZoomImage
-    src="/img/Email-Input.png" 
-    alt=""
-    caption=""
-  /> 
-
 
 
 
@@ -47,7 +41,7 @@ These properties are customizable options present in the property pane of the wi
 The **Data Type** property defines the type of input for the widget. For the **Password Input** widget, the **Data Type** is set to Password by default. If you change the data type, the widget’s properties and behavior change accordingly.
 Options:
 
-- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.s
+- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.
 - **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions.
 - **Number**: Accepts only numeric values.
 - **Password**:  Masks input for sensitive information such as passwords or pins.
@@ -317,7 +311,7 @@ The `parsedText` property retrieves the input value of the widget.
 
 *Example:*
 ```js
-{{PasswordInput1.text}}
+{{PasswordInput1.parsedText}}
 ```
 
 </dd>
