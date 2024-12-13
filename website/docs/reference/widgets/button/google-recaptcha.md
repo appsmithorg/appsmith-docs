@@ -6,7 +6,8 @@ description: >-
 
 # Configure Google reCAPTCHA
 
-This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify that only humans can access critical functionalities, improving security. It can be used with the Button widget to prevent bots from interacting with the button.
+This guide shows how to integrate [Google reCAPTCHA](https://www.google.com/recaptcha) into your applications, which allows you to verify and prevent bots from accessing critical functionalities. It can be used with the Button widget to prevent bots from interacting with the button.
+
 
 
 ## Prerequisites
