@@ -71,11 +71,18 @@ const sidebars = {
               label: 'High Availability Guides',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
-                'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                {
+                  type: 'category',
+                  label: 'AWS ECS on Fargate',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                  ],
+                },
                 'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
-                'getting-started/setup/instance-configuration/custom-mongodb-redis',
-                'getting-started/setup/instance-configuration/external-redis',
-
                 'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
               ],
@@ -155,6 +162,8 @@ const sidebars = {
               type: 'category',
               label: 'Other Configuration Guides',
               items: [
+                'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-redis',
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/configure-using-environment-variables',
                 'getting-started/setup/instance-management/supervisor',
@@ -202,7 +211,6 @@ const sidebars = {
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
             },
-            'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
             {
               type: 'category',
               label: 'Upgrade to Commercial Edition',

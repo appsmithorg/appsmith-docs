@@ -32,14 +32,23 @@ Follow these steps to connect your Appsmith instance to the external Redis insta
 1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.  
 
 2. Add or update the following environment variable with your Redis connection details:  
+   * **Docker**:
 
-   ```yaml
-   APPSMITH_REDIS_URL=redis://{redis.instance.hostname}:{port}
-   ```  
+      ```yaml
+      APPSMITH_REDIS_URL=redis://{redis.instance.hostname}:{port}
+      ```  
 
-   Replace:
-   - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
-   - `{port}` with the Redis port (default: 6379).  
+        Replace:
+        - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
+        - `{port}` with the Redis port (default: 6379).  
+    * **Kubernetes**:
+
+      ```yaml
+      APPSMITH_REDIS_URL:redis://{redis.instance.hostname}:{port}
+      ```  
+        Replace:
+        - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
+        - `{port}` with the Redis port (default: 6379).  
 
 3. Update the Appsmith server configuration to establish a connection with the external Redis instance.  
    - **Docker**:  
