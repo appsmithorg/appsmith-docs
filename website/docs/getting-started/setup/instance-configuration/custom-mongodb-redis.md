@@ -18,10 +18,14 @@ Before configuring an external MongoDB instance for your Appsmith application, e
 
 Follow these steps to set up an external MongoDB instance for Appsmith. If you already have a MongoDB instance, skip this step and move to [Verify external MongoDB permissions](#verify-external-mongodb-permissions).
 
-1. Create a MongoDB instance using one of the following options:
-   - **Cloud-hosted MongoDB:** Refer to the [MongoDB Atlas setup guide](https://www.mongodb.com/cloud/atlas).
-   - **Self-hosted MongoDB:** Install and configure it by following the [MongoDB installation documentation](https://www.mongodb.com/docs/manual/installation/).
-
+1. From Appsmith v1.9.0 onwards, MongoDB version 5.0 or later is required. Create a MongoDB instance using one of the following options:  
+   - **Cloud-hosted MongoDB:** Refer to the [MongoDB Atlas setup guide](https://www.mongodb.com/cloud/atlas).  
+   - **Self-hosted MongoDB:** Install and configure it by following the [MongoDB installation documentation](https://www.mongodb.com/docs/manual/installation/).  
+    <br/>
+    :::caution Attention
+    If you're using an existing MongoDB instance with a version earlier than 5.0, refer to the [MongoDB 5.0 upgrade guide](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/) to upgrade.
+    :::
+    
 2. Log in to your MongoDB instance as an admin user.
 
 3. Run the following command to set up the replica set:
@@ -48,6 +52,7 @@ Ensure the user Appsmith uses to connect to the database has the necessary permi
 - **For an existing user**: Check if the user already has the required roles. If not, update the user to assign the following roles:  
   - `readWrite`  
   - `clusterMonitor`  
+
 ## Restore MongoDB data
 
 Follow these steps to migrate the data from the old MongoDB instance to the new instance:
@@ -67,9 +72,14 @@ Follow these steps to connect the Appsmith instance to the external MongoDB inst
     APPSMITH_DB_URL=mongodb+srv://{username}:{password}@{mongo.host.name}/{db_name}
     ```
 
-    Replace `{username}`, `{password}`, `{mongo.host.name}`, and `{db_name}` with the actual details of your MongoDB instance.
+    Replace the placeholders with the actual values:  
+      - **`{username}`:** The username for your MongoDB database.  
+      - **`{password}`:** The corresponding password for the specified username.  
+      - **`{mongo.host.name}`:** The hostname or IP address of your MongoDB server. 
+      - **`{db_name}`:** The name of your database within MongoDB. This is the database you want to connect to.  
 
 3. Update the Appsmith server configuration to establish a connection with the external MongoDB database. This ensures that Appsmith starts using the configured MongoDB instance for all database operations.
+
    - **Docker**:
 
      ```bash
@@ -84,7 +94,7 @@ Follow these steps to connect the Appsmith instance to the external MongoDB inst
 
 4. Log in to your Appsmith application and check if the instance is functioning as expected.
 
-5. Verify the data is being stored in the external MongoDB instance.
+5. Verify that the data is stored in the external MongoDB instance.
 
 ## Troubleshooting
 
@@ -97,4 +107,4 @@ If you continue facing issues, contact support using the chat widget available i
 
 ## See also
 
-- [Configure external Redis](/getting-started/setup/instance-configuration/external-redis): Learn how to set up an external Redis instance.
+- [Configure External Redis](/getting-started/setup/instance-configuration/external-redis): Learn how to set up an external Redis instance.
