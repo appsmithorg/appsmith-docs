@@ -265,7 +265,7 @@
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-image: linear-gradient(white, white),
-    linear-gradient(to right, #dadce0, #d07373);
+    linear-gradient(to right, #f0f4f7, #d3d3d3);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
   padding: 16px;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -894,7 +894,7 @@ h4+.tags {
 .gradient-hr {
   border: none;
   height: 4px;
-  background: linear-gradient(to right, #0073e6, #ff6347);
+  background: linear-gradient(to right, #80d5ff, #2483f7);
   margin: 20px 0;
   padding-bottom: 5px;
 }

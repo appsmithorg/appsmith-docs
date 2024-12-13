@@ -35,6 +35,26 @@ Browse through the guides below to find solutions tailored to your requirements.
 
 ---
 
+
+
+## Query management
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor" href="/connect-data/how-to-guides/how-to-pass-params-to-an-api">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Pass Parameters to Queries</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn to use the run() function in a loop to pass different parameters to your query each time it runs.
+      </div>
+    </div>
+  </a>
+</div>
+
+---
+
 ## Google sheets
 
 <div className="containerGridSampleApp">
@@ -86,25 +106,6 @@ Browse through the guides below to find solutions tailored to your requirements.
       <hr className="gradient-hr" />
       <div className="containerDescription">
         Shows you how to insert and update data in a PostgreSQL database.
-      </div>
-    </div>
-  </a>
-</div>
-
----
-
-
-## Query management
-
-<div className="containerGridSampleApp">
-  <a className="containerAnchor" href="/connect-data/how-to-guides/how-to-pass-params-to-an-api">
-    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
-      <div className="containerHeading">
-        <strong>Pass Parameters to Queries</strong>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-        Learn to use the run() function in a loop to pass different parameters to your query each time it runs.
       </div>
     </div>
   </a>
