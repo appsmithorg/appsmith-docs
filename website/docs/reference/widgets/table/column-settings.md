@@ -44,8 +44,7 @@ This property allows you to select the appropriate column type for your Table da
 
 - **Select**: Enables choosing from a predefined list of options. The Options property should be an array of objects. This column type supports inline editing, allowing direct text updates when the Editable property is enabled. See [Select properties](/reference/widgets/table/column-settings#select-properties).
 
-- **HTML:** The HTML column type renders raw HTML content in the cell, allowing you to display custom-styled UI elements such as formatted text, icons, or embedded components. This column type does not support inline editing or event handling. You can pass raw HTML code directly from your datasource or update the **Computed value** for customization. When writing multi-line HTML, use the `{{}}` binding. For styling, you can use inline styles, as the` <style>` tag is not supported.
-
+- **HTML:** The HTML column type allows you to display custom UI elements like formatted text, icons, or embedded components by rendering raw HTML content in table cells. You can provide HTML directly from your datasource or use [Computed values](/reference/widgets/table/column-settings#html-formatting) with `{{}}` bindings for multi-line content. For styling, you can use inline styles, as the` <style>` tag is not supported. This column type does not support inline editing or event handling.
 
 
 </dd>
