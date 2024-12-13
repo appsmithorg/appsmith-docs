@@ -20,7 +20,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Password Input widget (available in AI Assistant Apps), which allows you to capture and validate password entries.
+This page provides information on using the Password Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate password entries.
 
 
 

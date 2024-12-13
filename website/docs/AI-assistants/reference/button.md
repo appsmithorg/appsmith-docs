@@ -25,7 +25,7 @@ This page provides information on using the Button widget *(available in AI Assi
 
 
  <ZoomImage
-    src="/img/button-widget-ai.png" 
+    src="/img/submit-button.png" 
     alt=""
     caption=""
   /> 

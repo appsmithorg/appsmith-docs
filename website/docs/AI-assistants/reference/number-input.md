@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Number Input widget (available in AI Assistant Apps), which allows you to capture and validate numeric user inputs.
+This page provides information on using the Number Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate numeric user inputs.
 
 
  <ZoomImage
@@ -69,6 +69,11 @@ Options:
 
 Defines the initial value displayed in the widget when it loads. This value serves as the default input until the user modifies it.
 
+*Example:* To display the price from the selected row in a table:
+
+```js
+{{Orders_Table.selectedRow.price}}
+```
 
 </dd>
 

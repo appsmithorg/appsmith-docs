@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the Phone Number Input widget (available in AI Assistant Apps), which allows you to capture and validate phone number user inputs.
+This page provides information on using the Phone Number Input widget *(available in AI Assistant Apps)*, which allows you to capture and validate phone number user inputs.
 
  <ZoomImage
     src="/img/phone_input_widget.png" 
