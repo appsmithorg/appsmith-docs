@@ -1,14 +1,14 @@
 ---
-description: Configure Google Cloud Run for supporting the High Availability and Scalability.
-toc_max_heading_level: 2
-hide_title: true
+description: This page outlines how to set up high availability for Appsmith on Google Cloud Run.
 title: Google Cloud Run
+hide_title: true
+toc_max_heading_level: 2
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Google Cloud Run</h1>
+ <h1>Configure high availability on Google Cloud Run</h1>
 
 <Tags
 tags={[
@@ -20,71 +20,170 @@ tags={[
 
 <!-- vale on -->
 
-This page outlines the steps to configure Appsmith Google Cloud Run installation for high availability and scalability.
+This page outlines the steps required to set up high availability for your Appsmith installation on Google Cloud Run. High availability ensures that your Appsmith instance remains accessible without interruption, even during system disruptions.
 
 ## Prerequisites
 
-* A [Google Cloud](https://console.cloud.google.com/) account.
-* An Appsmith Commercial Edition installation on Google Cloud Run. If not installed yet, see the [Google Cloud Run installation guide](/getting-started/setup/installation-guides/google-cloud-run) for installing Appsmith.
-* For scalable, secure, and highly available services, enable [Memorystore for Redis API](https://console.cloud.google.com/apis/dashboard).
-* Ensure that you have taken a manual backup for your instance.
+Before setting up high availability for Appsmith, ensure you have completed the following:
 
-## Create a Redis instance
+1. You need to have [Appsmith Commercial Edition](https://www.appsmith.com/pricing) installed on Google Cloud Run. If not already installed, refer to the [Google Cloud Run installation guide](/getting-started/setup/installation-guides/google-cloud-run). This guide assumes you are working with an existing installation.
 
-1. Go to the [Memorystore for Redis](https://console.cloud.google.com/memorystore/redis/instances) page in the Google Cloud console.
+2. A [Google Cloud](https://console.cloud.google.com/) account with the required permissions to manage Cloud Run, Cloud SQL, and related resources.
 
+3. Appsmith installation on Google Cloud Run operates in an isolated environment, which limits external access to the container for automated backup and restore. Ensure you take a manual backup of your data.
+
+4. Enable the [Cloud SQL Admin API](https://console.cloud.google.com/marketplace/product/google/sqladmin.googleapis.com) and [Memorystore for Redis API](https://console.cloud.google.com/apis/dashboard) in your Google Cloud project.
+
+5. Ensure you've assigned `Cloud SQL Admin` and the `Cloud SQL Client` roles to your Google Cloud project.
+
+## Set up external databases
+
+High availability for Appsmith relies on correctly configured external databases. Follow the steps for each database to set up persistent, scalable environments.
+
+### Configure MongoDB
+
+Appsmith uses MongoDB to store application data. Follow these steps to set up MongoDB for high availability:
+
+1. Backup your existing MongoDB instance. For more details, see [How to back up MongoDB](/getting-started/setup/instance-management/appsmithctl#backup-database).
+2. Set up an external MongoDB instance using your preferred provider, such as MongoDB Atlas or another managed service.
+3. Log in to your MongoDB instance as an admin user. Run the following command to initiate replica set configuration:
+   ```bash
+   rs.initiate()
+   ```
+4. Assign or verify that the MongoDB user account Appsmith uses has `readWrite` and `clusterMonitor` roles assigned.
+5. Restore your Appsmith backup to the new MongoDB instance. For details, see the [Restore database guide](/getting-started/setup/instance-management/appsmithctl#restore-database).
+6. Record the MongoDB connection string for use in later steps.
+
+### Configure Redis
+
+Appsmith relies on Redis for caching and session storage. Set up a Redis instance using Google Cloud Memorystore. Follow these steps:
+
+1. Go to the [Memorystore for Redis page](https://console.cloud.google.com/memorystore/redis) in the Google Cloud console.
 2. Click **Create Instance**.
-    
 3. On the **Create a Redis instance** page, enter the configurations as shown below:
-
-    * In the **Instance ID** field, set an id. Example: `instanceid`.
-    * In the **Tier Selection** list, select one of the options:
-      * **Basic**: One primary Redis node. No automatic failover for High Availability.
-      * **Standard**: Provides *High Availability* and fails over to replica in case of primary node failure.
-    For more information about tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
-    * In the **Capacity** box, enter `10`.
-    * In the **Region** box, select a region for your instance.
-    * In the **Zone** box, select a zone for your instance.
-    * If you selected the **Standard** tier above, in the **Configure read replicas** dropdown list, select **2 Read Replicas** .
-    * Under **Set up connection**, select the **default** option for **Network**.
-    * Expand the **Configuration** section. Select **6.x** option(recommended) for **Version**.
-
-4. Click the **Create** button.
-
-5. Once the Redis instance is ready, note down the **Primary Endpoint** to use later.
+   - **Instance ID**: Provide a unique name for your Redis instance, e.g., `appsmith-redis`.
+   - **Tier**: Select the **Standard** tier for High Availability, which provides automatic failover to a replica in case the primary node fails. For more details on tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
+   - **Capacity**: Set a minimum of `10` (GB), or adjust based on your needs.
+   - **Region**: Choose the region where your Appsmith instance is located.
+   - **Zone**: Select a zone for your instance.
+   - **Configure read replicas**: Select `2 Read Replicas` if using the Standard tier to ensure high availability.
+4. Under **Set up connection**, choose the default option for **Network**.
+5. Expand the **Configuration** section and select **6.x** (recommended) for the Redis version.
+6. Click the **Create** button to deploy the Redis instance.
+7. Once the instance is ready, note down the **Primary Endpoint**, as this will be used later in your Appsmith configuration.
 
 <ZoomImage src="/img/redis-primary-endpoint.png" alt="Primary Endpoint of the Redis Instance" caption="Primary Endpoint of the Redis Instance" />
 
-## Edit and deploy new revision
+### Configure PostgreSQL
 
-1. Go to your cloud run console.
-2. Select your Appsmith Service, and click **EDIT & DEPLOY NEW REVISION**.
-3. Under **Environment variables**, click **Add Variable** button to add below variable in the **Name** and **Value** text boxes as shown below: <br/>
+PostgreSQL is required for storing Appsmith data. Set up a PostgreSQL instance using Google Cloud SQL. Follow these steps:
 
-| Name | Value |
-|------------------------|------------------------------------------| 
-| **APPSMITH_REDIS_URL** | If you followed the steps in the [Create Redis Instance](#create-a-redis-instance) section, add the host and port from the Primary Endpoint of the Redis instance you noted down in step 5. Ensure that there is no trailing spaces in the Redis URL.  <br/><br/> <i>Format</i>: <br/>`redis://<HOST>:<PORT>`|
+#### Set up PostgreSQL Cloud SQL instance
 
-4. Click **Deploy** button. A green check mark will appear next to the newly deployed service name when it's ready.
-5. Verify that the new revision is working as expected by accessing Appsmith, and logging into your account.
-6. Again click **EDIT & DEPLOY NEW REVISION**.
-7. Scroll down to the bottom of the page, and uncheck the **Serve this revision immediately** checkbox.
-8. Click **Deploy** button. A green check mark will appear next to the newly deployed revision when it's ready.
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+2. Click **Create instance**.
+3. On the **Choose your database engine** panel, click **Choose PostgreSQL**.
+4. Configure the instance:
+   - **Instance ID**: Provide a unique name for your PostgreSQL instance, e.g., `appsmith-postgres`.
+   - **Password**: Enter a password for the `postgres` user.
+   - **Database version**: Select **PostgreSQL 12** from the dropdown list.
+   - **Cloud SQL edition**: Select **Enterprise**.
+   - **Region**: Choose the region for your instance, ideally the same region as your Appsmith deployment.
+   - **Zonal availability**: Select **Single zone**.
+5. In the **Customize your instance** section, click **SHOW CONFIGURATION OPTIONS** to display the settings.
+6. Under **Storage**:
+   - Select **HDD** for the storage type.
+   - Set **Storage capacity** to at least **10 GB**.
+7. Under **Connections**:
+   - Select **Public IP** to allow connections.
+8. Under **Data protection**:
+   - Deselect **Automate daily backups** and **Enable deletion protection**.
+9. Under **Maintenance**:
+   - Select **Any window** in the **Maintenance window** dropdown.
+   - Choose **Any** in the **Order of update** dropdown.
+10. Click **Create Instance**.
 
-## Manage traffic between revisions
+#### Create database
 
-Follow the steps below to split traffic between among revisions.
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+2. Click on the instance name to open its **Overview** page.
+3. In the SQL navigation menu, select **Databases**.
+4. Click **Create database**.
+5. Enter a name for the database (e.g., `appsmith-db`).
+6. Click **Create** to finalize.
 
-<ZoomImage src="/img/manage_traffic_revisions.png" alt="Manage traffic between revisions" caption="Manage traffic between revisions" />
+#### Create users
 
-1. Go to [Cloud Run](https://console.cloud.google.com/run).
-2. Locate the service in the services list, and click on it.
-3. Click the **Revisions** tab.
-4. Click the **MANAGE TRAFFIC** button.
-5. Select the revisions that you created as part of [Edit and deploy new revision](#edit-and-deploy-new-revision) section.
-7. Specify the traffic percentage that you want to assign to each revision.
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+2. Open the **Overview** page of your instance by clicking the instance name.
+3. In the SQL navigation menu, select **Users**.
+4. Click **Add user account**.
+5. In the **Add a user account** dialog:
+   - Set the **Username** and **Password** for the new user.
+   - Choose **Built-in authentication** (default).
+6. Click **Add** to create the user.
+
+Once the PostgreSQL instance is set up, you'll need to record the following details:
+- **Public IP** address.
+- **Database name**. For example, `appsmith-db`.
+- **Username** and **Password** you created.
+
+You need these details while configuring Appsmith to connect to the PostgreSQL database.
+
+## Configure high availability
+
+After setting up external databases, configure Appsmith on Google Cloud Run for redundancy and reliability.
+
+### Deploy new revision
+1. Open the [Google Cloud Run console](https://console.cloud.google.com/run) and select your Appsmith service.
+2. Click **EDIT & DEPLOY NEW REVISION**.
+3. Add the following environment variables:
+
+    - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
+    - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
+    - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
+    - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: The driver is set to `postgresql` as Keycloak uses PostgreSQL for its database.
+    - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
+    - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the PostgreSQL user.
+    - `KC_TRANSACTION_XA_ENABLED`=`false`: To disable the XA transactions in your Keycloak setup.
+
+4. Remove the `APPSMITH_DISABLE_EMBEDDED_KEYCLOAK` environment variable by clicking the delete icon next to the environment variable value.
+5. Under the **Cloud SQL connections** section.
+6. Click **Add connection**.
+7. Select the desired Cloud SQL instance from the dropdown list.
+8. Click the **Security** tab. In the Service account dropdown list, select the account where you granted the *Cloud SQL Admin* and the *Cloud SQL Client* roles.
+9. Scroll down to the bottom of the page, and uncheck the **Serve this revision immediately** checkbox.
+5. Click **Deploy** button. A green check mark will appear next to the newly deployed revision when it's ready.
+
+
+### Manage traffic
+
+1. Locate the service in the services list, and click it.
+2. Click the **Revisions** tab.
+3. Click the **MANAGE TRAFFIC** button.
+4. Select the revisions that you created as part of [Deploy new revision](#deploy-new-revision) section.
+
+  <ZoomImage src="/img/manage_traffic_revisions.png" alt="Manage traffic between revisions" caption="Manage traffic between revisions" />
+
+5. Specify the traffic percentage that you want to assign to each revision.
 6. Click **Save**.
+
+### Verify high availability
+
+Perform the following checks:
+
+1. Access Appsmith and confirm its functionality under normal conditions.
+2. Simulate failover scenarios by disabling one of the running instances. Confirm that the remaining instances continue serving traffic.
+3. Monitor the **Logs** in the Cloud Run console for any errors.
 
 ## Troubleshooting
 
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
+If you encounter issues, follow these steps:
+- Verify the connection strings and ensure the databases are accessible.
+- Check Cloud Run logs for detailed error messages.
+
+If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
+
+## See also
+
+- [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
