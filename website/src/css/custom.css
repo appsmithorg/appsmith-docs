@@ -242,7 +242,7 @@
 }
 
 .containerColumnSampleAppNoGradient {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 8px;
   margin: 10px;
   background-origin: border-box;
@@ -259,7 +259,7 @@
 }
 
 .containerColumnSampleApp {
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 8px;
   margin: 10px;
   background-origin: border-box;
@@ -893,8 +893,8 @@ h4+.tags {
 
 .gradient-hr {
   border: none;
-  height: 4px;
-  background: linear-gradient(to right, #80d5ff, #2483f7);
+  height: 2px;
+  background: linear-gradient(to right, #f0f4f7, #d3d3d3);
   margin: 20px 0;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 }
