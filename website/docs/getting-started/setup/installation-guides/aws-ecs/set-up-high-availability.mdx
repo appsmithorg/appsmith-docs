@@ -89,9 +89,9 @@ Appsmith relies on Redis for caching and session storage. To configure Redis for
 
 Appsmith uses a PostgreSQL database to store its data. Keycloak data is used for Single Sign-On (SSO) configured using SAML and high availability. Follow the steps below to configure PostgreSQL:
 
-#### Backup Keycloak data
+#### Backup Keycloak data (optional)
 
-Before setting up PostgreSQL for Keycloak, it's important to back up Keycloak's data. This ensures you do not lose any configuration or user data during the migration process.
+Before setting up PostgreSQL for Keycloak, **backing up Keycloak’s data is only necessary if you have an Appsmith installation with user data** and are migrating to an external PostgreSQL database. Follow these steps to create a backup of the user data:
 
 1. Navigate to the Keycloak directory:
 ```
@@ -115,12 +115,12 @@ Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
    - **Templates**: Free tier  
    - **DB instance identifier**: For example, `appsmith-keycloak`  
    - **Credentials**: Set username (`postgres` by default) and a strong password.
-3. Click **Create database** to finalize the setup.
+3. Click **Create database** to create the database.
 4. Note the **endpoint URL** from the **Connectivity & security** tab, as you'll need this for the Keycloak setup.
 
-#### Restore Keycloak data
+#### Restore Keycloak data (optional)
 
-Once the PostgreSQL RDS instance is set up, you will need to restore the backed-up Keycloak data to the new PostgreSQL database.
+If you have created a back up of Keycloak data in the [Backup Keycloak data](#back-up-keycloak-data) section, you need to restore that data to the new PostgreSQL database to migrate the user data. Follow these steps to migrate the user data to the new database:
 
 1. Navigate to the Keycloak directory:
 ```
