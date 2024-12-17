@@ -25,25 +25,22 @@ High availability ensures that your Appsmith instance remains accessible without
 
 Before setting up high availability for Appsmith on AWS EKS, ensure the following requirements are met:
 
-- You need to have [Appsmith Commercial Edition](https://www.appsmith.com/pricing) installed on a Kubernetes cluster. If you have not installed Appsmith yet, follow the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes). This guide assumes you are working with an existing installation.
+1. You need to have [Appsmith Commercial Edition](https://www.appsmith.com/pricing) installed on a Kubernetes cluster. If you have not installed Appsmith yet, follow the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes). This guide assumes you are working with an existing installation.
 
-- Ensure you have the following tools installed and configured to interact with your Kubernetes cluster:  
-  - `kubectl` for managing Kubernetes clusters. Download it from the [Kubernetes CLI guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  
-  - `helm` for deploying Appsmith using Helm charts. Follow the [Helm installation guide](https://helm.sh/docs/intro/install/).
+2. Ensure you have the following tools installed and configured to interact with your Kubernetes cluster:  
+    - `kubectl` for managing Kubernetes clusters. Download it from the [Kubernetes CLI guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  
+    - `helm` for deploying Appsmith using Helm charts. Follow the [Helm installation guide](https://helm.sh/docs/intro/install/).
 
-- High availability requires distributing workloads across multiple nodes to avoid a single point of failure. Ensure you have a running Kubernetes cluster with more than one node. 
+3. High availability requires distributing workloads across multiple nodes to avoid a single point of failure. Ensure you have a running Kubernetes cluster with more than one node. 
 
-- Verify that you have at least 2 GB of free storage available to perform backup and update tasks.
+4. Verify that you have at least 2 GB of free storage available to perform backup and update tasks.
 
-- You must have an active Amazon Web Services (AWS) account with permissions to access and manage the following services:  
-  - Amazon Elastic Kubernetes Service (EKS)
-  - Amazon Elastic File System (EFS)
-  - Identity and Access Management (IAM)
- If you do not have an account, refer to the [AWS account creation guide](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+5. You must have an active [Amazon Web Services (AWS) account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) with permissions to access and manage the following services:  
+    - Amazon Elastic Kubernetes Service (EKS)
+    - Amazon Elastic File System (EFS)
+    - Identity and Access Management (IAM)
 
-- Appsmith requires AWS EFS to store application data persistently. If you are using local storage or any other type of persistent volume, you must configure EFS before proceeding. Follow the instructions in the [AWS EFS setup guide](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
-
-- Create a backup of your existing Appsmith instance to safeguard your data before proceeding. For instructions, see [How to back up your Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
+6. Create a backup of your existing Appsmith instance to safeguard your data. For more information, see [How to back up your Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
 
 ## Configure high availability
 
