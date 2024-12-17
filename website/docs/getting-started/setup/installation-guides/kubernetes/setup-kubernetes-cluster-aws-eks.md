@@ -3,9 +3,9 @@ description: Deploy Appsmith on a Kubernetes cluster
 toc_max_heading_level: 2
 ---
 
-# Set up Kubernetes Cluster on AWS-EKS
+# Set up Kubernetes cluster on AWS EKS
 
-This page provides steps to set up a Kubernetes Cluster with the persistent volume on AWS-EKS.
+This page provides steps to set up a Kubernetes Cluster with the persistent volume on Amazon Elastic Kubernetes Service (EKS).
 
 ## Prerequisites
 
