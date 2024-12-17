@@ -1287,6 +1287,11 @@
       "source": "/getting-started/setup/installation-guides/aws-ecs",
       "destination": "/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2",
       "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/upgrade-from-community-edition",
+      "destination": "/getting-started/setup/instance-management#upgrade-to-commercial-edition",
+      "permanent": true
     }
   ]
 }
