@@ -94,14 +94,14 @@ Appsmith uses a PostgreSQL database to store its data. Keycloak data is used for
 Before setting up PostgreSQL for Keycloak, **backing up Keycloak’s data is only necessary if you have an Appsmith installation with user data** and are migrating to an external PostgreSQL database. Follow these steps to create a backup of the user data:
 
 1. Navigate to the Keycloak directory:
-```
-   cd /opt/keycloak/bin
-```
+   ```
+      cd /opt/keycloak/bin
+   ```
 2. Export Keycloak data to a backup directory:
-```
-   ./kc.sh export --dir /appsmith-stacks/data/kc_data/
-```
-3. Verify that the data is backed up in the specified directory to ensure no data is lost.
+   ```
+      ./kc.sh export --dir /appsmith-stacks/data/kc_data/
+   ```
+3. Verify that the data back up is available in the specified directory.
 
 #### Create PostgreSQL RDS instance
 
@@ -123,21 +123,21 @@ Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
 If you have created a back up of Keycloak data in the [Backup Keycloak data](#backup-keycloak-data-optional) section, you need to restore that data to the new PostgreSQL database to migrate the user data. Follow these steps to migrate the user data to the new database:
 
 1. Navigate to the Keycloak directory:
-```
-   cd /opt/keycloak/bin
-```
+   ```
+      cd /opt/keycloak/bin
+   ```
 2. Stop the Keycloak service:
-```
-   supervisorctl stop keycloak
-```
+   ```
+      supervisorctl stop keycloak
+   ```
 3. Import the backup data into PostgreSQL:
-```
-   ./kc.sh import --db postgres --db-password ${APPSMITH_KEYCLOAK_DB_PASSWORD} --db-username ${APPSMITH_KEYCLOAK_DB_USERNAME} --db-url "jdbc:${APPSMITH_KEYCLOAK_DB_DRIVER}://${APPSMITH_KEYCLOAK_DB_URL}" --dir /appsmith-stacks/data/kc_data/
-```
+   ```
+      ./kc.sh import --db postgres --db-password ${APPSMITH_KEYCLOAK_DB_PASSWORD} --db-username ${APPSMITH_KEYCLOAK_DB_USERNAME} --db-url "jdbc:${APPSMITH_KEYCLOAK_DB_DRIVER}://${APPSMITH_KEYCLOAK_DB_URL}" --dir /appsmith-stacks/data/kc_data/
+   ```
 4. Once the data is restored, restart Keycloak:
-```
-   supervisorctl start keycloak
-```
+   ```
+      supervisorctl start keycloak
+   ```
 
 Verify that Keycloak is running properly by logging into the Appsmith dashboard after the restoration.
 
