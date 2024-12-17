@@ -1272,6 +1272,21 @@
       "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
       "destination": "/getting-started/setup/environment-variables",
       "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso",
+      "destination": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs",
+      "destination": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/aws-ecs",
+      "destination": "/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2",
+      "permanent": true
     }
   ]
 }

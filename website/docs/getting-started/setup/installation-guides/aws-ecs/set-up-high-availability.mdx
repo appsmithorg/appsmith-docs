@@ -87,7 +87,7 @@ Appsmith relies on Redis for caching and session storage. To configure Redis for
 
 ### Configure PostgreSQL
 
-PostgreSQL is required to store Keycloak data for SAML SSO and high availability. Follow the steps below to configure PostgreSQL, and ensure your system is ready to handle authentication services effectively.
+Appsmith uses a PostgreSQL database to store its data. Keycloak data is used for Single Sign-On (SSO) configured using SAML and high availability. Follow the steps below to configure PostgreSQL:
 
 #### Backup Keycloak data
 
@@ -103,9 +103,9 @@ Before setting up PostgreSQL for Keycloak, it's important to back up Keycloak's 
 ```
 3. Verify that the data is backed up in the specified directory to ensure no data is lost.
 
-#### Set up Keycloak PostgreSQL RDS
+#### Create PostgreSQL RDS instance
 
-Now, set up the PostgreSQL RDS instance that will be used by Keycloak for authentication storage.
+Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
 
 1. Go to the **RDS** section in the AWS Management Console and click **Create database**.
 2. Configure the database:
@@ -154,9 +154,9 @@ To ensure Appsmith is highly available, configure it to use multiple instances, 
    - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
    - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
    - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
-   - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: The driver is set to `postgresql` as Keycloak uses PostgreSQL for its database.
+   - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: Set the driver to `postgresql` as Keycloak uses PostgreSQL for its database.
    - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
-   - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the PostgreSQL user.
+   - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the `postgres` user.
 
 4. Save the updated task definition.
 

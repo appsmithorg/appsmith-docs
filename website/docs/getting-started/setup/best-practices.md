@@ -10,7 +10,7 @@ This page provides information on the best practices that are to be followed whe
 
 * Appsmith works best on AMD and ARM architectures on AWS, Azure, GCP, and DigitalOcean. By default, the recommendation is to run Appsmith using [Kubernetes](/getting-started/setup/installation-guides/kubernetes) in production, as it ensures high availability and scalability. Additionally, the Helm chart manages MongoDB and Redis as separate pods, eliminating the need for external instances.
 
-* If you decide to use a serverless deployment platform like [ECS](/getting-started/setup/installation-guides/aws-ecs), you’ll need to set up an external MongoDB and Redis instance. In this case, to use MongoDB Atlas and Elasticache is recommended.
+* If you decide to use a serverless deployment platform like [ECS](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2), you’ll need to set up an external MongoDB and Redis instance. In this case, to use MongoDB Atlas and Elasticache is recommended.
 
 ## Deployment setup
 
