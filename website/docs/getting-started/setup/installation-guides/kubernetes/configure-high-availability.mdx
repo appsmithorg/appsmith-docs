@@ -1,13 +1,13 @@
 ---
-description: Follow these steps to configure high availability for Appsmith on Kubernetes.
-title:  Kubernetes (K8s)
+description: Follow these steps to configure high availability for Appsmith on Amazon Elastic Kubernetes Service (EKS).
+title: AWS EKS (K8s)
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Kubernetes (K8s)</h1>
+ <h1>Configure High Availability on AWS EKS (K8s)</h1>
 
 <Tags
 tags={[
@@ -19,96 +19,127 @@ tags={[
 
 <!-- vale on -->
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-The high availability and scalability features of Kubernetes ensure continuous access to your applications. This page shows how to set up high availability and scalability for Appsmith.
+High availability ensures that your Appsmith instance remains accessible without interruption, even during system disruptions. This page outlines the steps required to set up high availability for your Appsmith installation on Amazon Elastic Kubernetes Service (EKS). 
 
 ## Prerequisites
 
-1. A self-hosted Appsmith Commercial Edition installation on a Kubernetes cluster. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
-2. A running Kubernetes cluster with more than one node to achieve high availability. 
-3. At least 2 GB of free storage space for backup and update tasks.
+Before setting up high availability for Appsmith on AWS EKS, ensure the following requirements are met:
 
-## Before you begin
-1. Create a backup of the Appsmith instance, See [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance) guide.
-2. Install a metrics server that provides vital metrics to the Horizontal Pod Autoscaler (HPA) to scale the pods with:
-  ```bash
-  kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-  ```
-3. Configure your Kubernetes cluster with Amazon Elastic File System (EFS) and set up the Persistent Volume Claim (PVC),follow these steps:
+- You need to have [Appsmith Commercial Edition](https://www.appsmith.com/pricing) installed on a Kubernetes cluster. If you have not installed Appsmith yet, follow the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes). This guide assumes you are working with an existing installation.
 
-    a. To create an IAM role to interact with the Amazon Elastic File System (EFS), see [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
-          
-    b. Amazon EFS Container Storage Interface (CSI) driver is a plugin for Kubernetes that allows you to mount Amazon Elastic File System (EFS) on your Kubernetes pods. To install the Amazon EFS CSI driver, see [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide. 
+- Ensure you have the following tools installed and configured to interact with your Kubernetes cluster:  
+  - `kubectl` for managing Kubernetes clusters. Download it from the [Kubernetes CLI guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/).  
+  - `helm` for deploying Appsmith using Helm charts. Follow the [Helm installation guide](https://helm.sh/docs/intro/install/).
 
-    c. To create the EFS file system, see [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
+- High availability requires distributing workloads across multiple nodes to avoid a single point of failure. Ensure you have a running Kubernetes cluster with more than one node. 
 
-    d. To configured the Persistent Volume Claim (PVC) for the Kubernetes cluster, follow these steps:
+- Verify that you have at least 2 GB of free storage available to perform backup and update tasks.
 
-      *  **Create a New Persistent Volume Claim** - Create a new PVC and update the `values.yaml` file as shown below:
+- You must have an active Amazon Web Services (AWS) account with permissions to access and manage the following services:  
+  - Amazon Elastic Kubernetes Service (EKS)
+  - Amazon Elastic File System (EFS)
+  - Identity and Access Management (IAM)
+ If you do not have an account, refer to the [AWS account creation guide](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 
-        ```yaml
-            existingClaim:
-              enabled: false
-              name: 
-              claimName: 
-            efs:
-              # highlight-next-line
-              enabled: true
-              driver: efs.csi.aws.com
-              # highlight-next-line
-              volumeHandle: FILE_SYSTEM_ID
-        ```
-        *  **Reuse an Existing Persistent Volume Claim** - If you already have a PVC that you want to reuse for EFS or if you have multiple deployments/pods needing access to the same EFS volume, update the `values.yaml` file as shown below:
+- Appsmith requires AWS EFS to store application data persistently. If you are using local storage or any other type of persistent volume, you must configure EFS before proceeding. Follow the instructions in the [AWS EFS setup guide](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
+
+- Create a backup of your existing Appsmith instance to safeguard your data before proceeding. For instructions, see [How to back up your Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
+
+## Configure high availability
+
+To ensure Appsmith is highly available, follow the steps below to configure AWS EKS and your Appsmith instance.
+
+### Configure AWS EKS
+
+Follow these steps to configure AWS EKS:
+
+1. The metrics server provides metrics to the Horizontal Pod Autoscaler (HPA) for scaling pods. Install the metrics server with:
+
+   ```bash
+   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+   ```
+
+2. Configure EFS and Persistent Volume Claims (PVC) for your cluster:
+   
+   * To enable your cluster to interact with EFS, create an IAM role. For more information, see the [Creating an IAM role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html#efs-create-iam-resources) guide.
+
+   * The Amazon EFS CSI driver mounts EFS volumes to your pods. Follow the instructions in the [Installing the Amazon EFS CSI driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/README.md#installation) guide to install the EFS CSI Driver.
+
+   * Create the EFS File System. For more information, see the [Create an Amazon EFS file system for Amazon EKS](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) guide.
+
+   * Use one of the following options to configure PVCs in the `values.yaml` file:
+
+      - **Create a new Persistent Volume Claim**
 
           ```yaml
-            existingClaim:
-                # highlight-next-line
-                enabled: true
-                name: efsappsmith
-                claimName: efsappsmith
-              efs:
-                enabled: true
-                # highlight-next-line
-                driver: efs.csi.aws.com
-                # highlight-next-line
-                volumeHandle: FILE_SYSTEM_ID
+          existingClaim:
+            enabled: false
+            name: 
+            claimName: 
+          efs:
+          # highlight-next-line
+            enabled: true
+            driver: efs.csi.aws.com
+            # highlight-next-line
+            volumeHandle: FILE_SYSTEM_ID
           ```
-      
 
-## Configure instance
+      - **Reuse an existing Persistent Volume Claim**  
+        Update the `values.yaml` file:
 
-1. Go to the Appsmith installation directory, open `values.yaml` file, and turn on autoscaling by changing the `enabled` attribute to `true` for autoscaling attribute.
+          ```yaml
+          existingClaim:
+          # highlight-next-line
+            enabled: true
+            name: efsappsmith
+            claimName: efsappsmith
+          efs:
+            enabled: true
+            # highlight-next-line
+            driver: efs.csi.aws.com
+            # highlight-next-line
+            volumeHandle: FILE_SYSTEM_ID
+          ```
 
-  ```yaml
-  autoscaling:
-    # highlight-next-line
-    enabled: true
-    minReplicas: 2
-    maxReplicas: 2
-  ```
+### Configure Appsmith instance
 
-2. Update the Appsmith installation with high availability configuration with: 
+Follow these steps to configure the Appsmith instance:
 
-  ```bash
-  helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
-  ``` 
- If the `values.yaml` file is not in the deployment directory specify the file location in the `-f` attribute.
+1. Open the `values.yaml` file in the Appsmith installation directory and enable autoscaling:
 
-3. Verify the pod status with:
+   ```yaml
+   autoscaling:
+     enabled: true
+     minReplicas: 2
+     maxReplicas: 2
+   ```
 
-  ```bash
-  kubectl get pods -n appsmith-ee
-  ```
-The above command displays the status of the pods. Once the process is completed, the pod status is shown as _RUNNING_.
+   If you plan to set up external MongoDB and Redis for high availability, refer to:  
+   - [External MongoDB setup](/getting-started/setup/instance-configuration/custom-mongodb-redis)  
+   - [External Redis setup](/getting-started/setup/instance-configuration/external-redis)
+
+2. Apply the high availability configuration using Helm:
+
+   ```bash
+   helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+   ```
+
+   If the `values.yaml` file is not in the deployment directory, specify its location with the `-f` flag.
+
+3. Check the status of the pods:
+
+   ```bash
+   kubectl get pods -n appsmith-ee
+   ```
+
+   Once the process completes, the pod status should show as **RUNNING**.
 
 ## Troubleshooting
-If you see errors, you can roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) section. 
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you encounter errors, roll back to a previous version. See the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#restore-instance) guide for more information. If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
 
-## Further reading
-* [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
-* [Configure Appsmith instance](/getting-started/setup/instance-configuration#configure-helm-installations)
-* [Manage Appsmith instance](/getting-started/setup/instance-management/)
+## See also
+
+- [Expose K8s to the Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)
+- [Restore Appsmith instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance)
+- [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
