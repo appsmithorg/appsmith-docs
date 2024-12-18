@@ -391,7 +391,7 @@ Sets the password associated with the Supervisord user specified in `APPSMITH_SU
 
 </dd>
 
-### Schedule automatic backups
+### Automatic backups
 
 In Appsmith, you have the flexibility to automate backups for your self-hosted instance. You can use the cron expression to schedule regular backups.
 

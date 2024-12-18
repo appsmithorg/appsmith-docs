@@ -60,7 +60,9 @@ Automatically logs users out after a specified period of inactivity. The default
 #### Atomic pushes to Git
 
 <dd>
-Ensures that Git pushes happen atomically, which minimizes errors during synchronization. This is critical for maintaining consistency in apps linked to version control. For more information, see [Version Control with Git](/advanced-concepts/version-control-with-git).
+Atomic pushes ensure that Git changes are pushed to the remote repository as a single, indivisible operation. This means that either all changes are applied, or none are, preventing partial updates that may lead to errors or inconsistent states in the repository.
+
+When using Bitbucket, atomic pushes can improve consistency like in complex workflows or when different systems are interacting with the repository. While Bitbucket supports atomic pushes, some other Git providers like Azure Repos may not fully support this feature in the same way. 
 </dd>
 
 #### Embed settings

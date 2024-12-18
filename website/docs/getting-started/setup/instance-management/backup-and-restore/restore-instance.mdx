@@ -1,0 +1,99 @@
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Restore instance
+
+## Prerequisites
+
+- The self-hosted instance should be up and running. If you haven't already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides).
+- Access to execute `docker-compose` or `kubectl` commands
+
+## Restore instance backup
+
+Follow these steps to restore your Appsmith instance from a backup archive:
+
+<Tabs queryString="current-command-type">
+<TabItem label="Docker" value="docker-commands">
+
+1. Restore your Appsmith instance with:
+```bash
+docker-compose exec appsmith appsmithctl restore
+```
+The command lists backup archives in the folder, with the latest backup at the bottom.
+
+2. Select the backup archive from the given list of backup archives to restore.
+
+<ZoomImage src="/img/restore-appsmith-instance.png" alt="Select a backup archive while restoring Appsmith instance" caption="Select a backup archive while restoring Appsmith instance" />
+
+:::caution Attention
+If you restore an older version of Appsmith, a warning message may appear. Update the `docker-compose.yml` file with the Appsmith image you wish to restore.
+:::
+
+3. You can either use the existing encryption or create new values for:
+    * APPSMITH_ENCRYPTION_PASSWORD
+    * APPSMITH_ENCRYPTION_SALT
+
+<ZoomImage src="/img/restore-appsmith-instance-encryption.png" alt="Option to use existing encryption values" caption="Option to use existing encryption values" />
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+1. Get the name of the Appsmith pod with:
+
+```bash
+kubectl get pods
+```
+2. Copy the archive file to the pod with:
+
+    * Encrypted archive file - 
+
+      ```bash
+      # Replace `ANY_APPSMITH_POD_NAME` with the pod name
+      #highlight-next-line
+      kubectl cp appsmith-backup-TIMESTAMP.tar.gz.enc ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
+      ```
+    * Unencrypted archive file - 
+
+      ```bash
+      # Replace `ANY_APPSMITH_POD_NAME` with the pod name
+      #highlight-next-line
+      kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
+      ```
+
+3. Go to the `/appsmith-stacks/configuration/` folder
+
+4. Open the `docker.env` file and update the below parameters:
+
+```bash
+# The one you generated and stored while creating a backup
+APPSMITH_ENCRYPTION_PASSWORD=APPSMITH_ENCRYPTION_PASSWORD
+APPSMITH_ENCRYPTION_SALT=APPSMITH_ENCRYPTION_SALT
+```
+
+5. Restore the backup with:
+
+```bash
+# Replace `ANY_APPSMITH_POD_NAME` with the pod name
+#highlight-next-line
+kubectl exec ANY_APPSMITH_POD_NAME appsmithctl restore
+```
+
+6. Restart the Appsmith pods:
+
+  a. When autoscaling is turned off, or you are using a Community Edition with:
+
+  ```bash
+  kubectl rollout restart statefulset appsmith
+  ```
+  b. When autoscaling is turned on with:
+
+  ```bash
+  kubectl rollout restart deployment appsmith
+  ```
+
+</TabItem>
+
+</Tabs>

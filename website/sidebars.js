@@ -155,7 +155,16 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/email/sendgrid',
               ],
             },
-            'getting-started/setup/instance-management/appsmithctl',
+            {
+              type: 'category',
+              label: 'Backup and Restore Guides',
+              items: [
+                'getting-started/setup/instance-management/backup-and-restore/backup-instance',
+                'getting-started/setup/instance-management/backup-and-restore/backup-database',
+                'getting-started/setup/instance-management/backup-and-restore/restore-instance',
+                'getting-started/setup/instance-management/backup-and-restore/restore-database',
+              ]
+            },
             {
               type: 'category',
               label: 'Other Configuration Guides',
@@ -177,6 +186,7 @@ const sidebars = {
               type: 'category',
               label: 'Reference',
               items: [
+                'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-configuration/file-size-limit',
                 'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/environment-variables',
