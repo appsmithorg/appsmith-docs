@@ -65,7 +65,7 @@ Appsmith relies on Redis for caching and session storage. Set up a Redis instanc
 1. Go to the [Memorystore for Redis page](https://console.cloud.google.com/memorystore/redis) in the Google Cloud console.
 2. Click **Create Instance**.
 3. On the **Create a Redis instance** page, enter the configurations as shown below:
-   - **Instance ID**: Provide a unique name for your Redis instance, e.g., `appsmith-redis`.
+   - **Instance ID**: Provide a unique name for your Redis instance. For exmaple, `appsmith-redis`.
    - **Tier**: Select the **Standard** tier for High Availability, which provides automatic failover to a replica in case the primary node fails. For more details on tiers, see [Redis Tier Capabilities](https://cloud.google.com/memorystore/docs/redis/redis-tiers).
    - **Capacity**: Set a minimum of `10` (GB), or adjust based on your needs.
    - **Region**: Choose the region where your Appsmith instance is located.
