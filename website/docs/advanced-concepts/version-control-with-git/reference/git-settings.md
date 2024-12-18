@@ -139,9 +139,6 @@ You can choose a different default branch for each instance, while the default b
 This property allows you to set multiple branches as protected, meaning that changes to the app are not allowed within those branches. To make changes to these branches, you need to raise a PR and merge it manually from the Git provider.
 
 
-By default, Appsmith enables the [protected branch](#change-protected-branch) feature for the default (`master/main`) branch. This means that direct edits to this branch are restricted. To make changes, you must create a new branch, implement the changes, and then merge them into the default branch via PR.
-
-
 </dd>
 
 

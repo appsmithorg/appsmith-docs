@@ -154,28 +154,3 @@ Droplet
 Enable webhook trigger
 Validation
 Issuer
-Admin settings
-Helm
-Environment Variables
-Checkpoint Version
-Upgrade
-v1.9.2
-Versions
-Commercial Edition
-AWS 
-EFS
-Admin
-docker
-URI
-domain
-Anonymous
-Git
-Usage
-plan
-Maps
-API
-key
-DB
-Intercom
-file
-AWS EKS
