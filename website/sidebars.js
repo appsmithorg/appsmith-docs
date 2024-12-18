@@ -878,6 +878,7 @@ const sidebars = {
           
           ],
         },
+         'AI-assistants/appsmith-ai',
         {
           type: 'category',
           label: 'Integrations',
