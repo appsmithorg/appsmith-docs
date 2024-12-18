@@ -852,10 +852,12 @@ const sidebars = {
           type: 'category',
           label: 'Widgets',
           items: [
+            'AI-assistants/reference/AIChat', 
             'AI-assistants/reference/button',  
         'AI-assistants/reference/checkbox',  
         'AI-assistants/reference/checkbox-group',  
         'AI-assistants/reference/currency-input',
+        'AI-assistants/reference/custom',  
         'AI-assistants/reference/emailinput',
         'AI-assistants/reference/Heading',  
         'AI-assistants/reference/inline-button',  
