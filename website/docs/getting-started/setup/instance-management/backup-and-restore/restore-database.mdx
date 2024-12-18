@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Restore Database
 
-This page explains how to restore the Appsmith internal database backup using the `appsmithctl` utility to recover your data.
+This page explains how to restore the Appsmith internal database backup using the `appsmithctl` utility.
 
 ## Prerequisites
 
@@ -16,6 +16,7 @@ Before starting, ensure the following:
 - You need a self-hosted Appsmith instance up and running. If you haven’t installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
 - Ensure you have at least 2 GB of free storage available to perform restore tasks.
 - Access to execute `docker-compose` or `kubectl` commands, depending on your deployment setup.
+- Verify that the backup archive file you want to restore is available. 
 
 ## Restore database backup
 
@@ -39,7 +40,7 @@ Follow these steps to restore Appsmith database backup for Docker-based installa
    docker-compose exec appsmith appsmithctl import_db
    ```
 
-3. Copy the `docker.env` file if it's not present in the installation folder:
+3. Copy the `docker.env` file and add the path for the `docker.env` file if not present in the installation folder.
 
    ```bash
    docker cp ./docker.env appsmith:/appsmith-stacks/configuration/

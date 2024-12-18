@@ -393,16 +393,35 @@ Sets the password associated with the Supervisord user specified in `APPSMITH_SU
 
 ### Automatic backups
 
-In Appsmith, you have the flexibility to automate backups for your self-hosted instance. You can use the cron expression to schedule regular backups.
+In Appsmith, you have the flexibility to automate backups for your self-hosted instance. You can use the `5-value` cron expression to schedule regular backups. For more details about cron expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
 
 ##### `APPSMITH_BACKUP_CRON_EXPRESSION`
 
 <dd>
 
-Specify a `5-value` cron expression to define the schedule for automatic backups. This allows you to tailor the backup frequency according to your preferences. Set this to `disable` to disable automatic backups.
+Specify a `5-value` cron expression to define the schedule for automatic backups. This allows you to tailor the backup frequency according to your preferences. Set this to `disable` to disable automatic backups. Some examples to schedule the backup are as follows:
+
+        - To schedule backups at 12:00 noon every Sunday:
+            ```bash
+            #highlight-next-line
+            APPSMITH_BACKUP_CRON_EXPRESSION="0 12 * * SUN"
+            ```
+
+        - To schedule backups daily at midnight:
+            ```bash
+            #highlight-next-line
+            APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
+            ```
 
 </dd>
 
+### Sync backup to S3
+   `APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY`
+   `APPSMITH_BACKUP_S3_SECRET_KEY=AWS_SECRET_KEY`
+   `APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME`
+   `APPSMITH_BACKUP_S3_REGION=AWS_BUCKET_REGION`
+
+ For more information about how to sync back up to s3, see [Sync Backup to S3 Bucket](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3) guide.
 ### Server timeout
 
 Adjust the internal server timeout to optimize performance based on your Appsmith instance's load and expected response times.

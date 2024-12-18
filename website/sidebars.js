@@ -161,6 +161,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/backup-and-restore/backup-instance',
                 'getting-started/setup/instance-management/backup-and-restore/backup-database',
+                'getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3',
                 'getting-started/setup/instance-management/backup-and-restore/restore-instance',
                 'getting-started/setup/instance-management/backup-and-restore/restore-database',
               ]
