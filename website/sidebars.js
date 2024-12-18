@@ -859,7 +859,8 @@ const sidebars = {
         'AI-assistants/reference/currency-input',
         'AI-assistants/reference/custom',  
         'AI-assistants/reference/emailinput',
-        'AI-assistants/reference/Heading',  
+        'AI-assistants/reference/Heading', 
+        'AI-assistants/reference/icon-button',  
         'AI-assistants/reference/inline-button',  
         'AI-assistants/reference/input',  
         'AI-assistants/reference/modal',  
@@ -873,6 +874,8 @@ const sidebars = {
         'AI-assistants/reference/stats',  
         'AI-assistants/reference/switch',  
         'AI-assistants/reference/switch-group',  
+        'AI-assistants/reference/table',
+        'AI-assistants/reference/toolbar', 
         'AI-assistants/reference/zone',
 
           
