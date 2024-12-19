@@ -21,8 +21,20 @@ The following environment variable is used to set up instance administrator for 
     Specify the email addresses of users who will have Instance Administrator privileges. These administrators have full control over all instance settings. To assign more than one user as Instance Administrator, separate their email addresses with commas. For example: `admin@techcorp.com, supportadmin@techcorp.com`. This grants Instance Administrator access to both users. For more information about Instance Administrator permissions, see the [Instance Administrator](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) Role.
 </dd>
 
+<!-- vale off -->
+<br/>
+<div className="tag-wrapper">
 
 ### OIDC OAuth
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+</div>
+
+<!-- vale on -->
 
 The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials.
 
@@ -79,7 +91,7 @@ With Appsmith, you can manage and control who can create accounts on the platfor
 
 <dd>
 
-Set to `true` to stop new user account creation. Useful when you want to restrict access to your Appsmith instance, allowing only users who have been specifically invited to join. The signup page continues to show up but throws an error when a user tries to sign up. This environment variable's value does not affect the login behavior of existing users. When set:
+Set to `true` to disable signup and prevent new user account creation. This is useful when you want to restrict access to your Appsmith instance, allowing only users who have been specifically invited to join. The signup page continues to show up but throws an error when a user tries to sign up. This environment variable's value does not affect the login behavior of existing users. When set:
 * New, uninvited users cannot sign up using the signup form or the OAuth buttons. Both modes of signing up are not allowed.
 * New, invited users can still signup using either the form or the OAuth buttons.
 
@@ -391,7 +403,20 @@ Sets the password associated with the Supervisord user specified in `APPSMITH_SU
 
 </dd>
 
+<!-- vale off -->
+<br/>
+<div className="tag-wrapper">
+
 ### Automatic backups
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+</div>
+
+<!-- vale on -->
 
 In Appsmith, you have the flexibility to automate backups for your self-hosted instance. You can use the `5-value` cron expression to schedule regular backups. For more details about cron expressions, see [Cron Schedule Expression Editor](https://crontab.guru/).
 
@@ -415,7 +440,21 @@ Specify a `5-value` cron expression to define the schedule for automatic backups
 
 </dd>
 
+<!-- vale off -->
+<br/>
+<div className="tag-wrapper">
+
 ### Sync backup to S3
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+</div>
+
+<!-- vale on -->
+
    `APPSMITH_BACKUP_S3_ACCESS_KEY=AWS_ACCESS_KEY`
    `APPSMITH_BACKUP_S3_SECRET_KEY=AWS_SECRET_KEY`
    `APPSMITH_BACKUP_S3_BUCKET_NAME=BUCKET_NAME`
