@@ -1,33 +1,115 @@
 ---
-description: Use the `appsmithctl` commandline utility provided by Appsmith to manage the self-hosted instance and its database.
+description: Learn about the `appsmithctl` command-line utility provided by Appsmith to manage your self-hosted instance and its database operations.
+toc_max_heading_level: 4
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # `appsmithctl`
 
-Appsmith comes with the `appsmithctl` command line utility. You can use the command line to interact with and manage your self-hosted instance. For example, back up and restore your Appsmith instance and database. This page provides steps to run the backup and restore commands.
+Appsmith comes with the `appsmithctl` command-line utility, which allows you to manage your self-hosted instance and its internal database. This page provides detailed information about the `appsmithctl` command-line utility provided by Appsmith.
 
 <VideoEmbed host="youtube" videoId="tlbK8Cke3sw" title="How To Use Appsmithctl For Instance Management" caption="How to use Appsmithctl for Docker"/>
 
 ## Usage
+<dd>
+  The general syntax for using the `appsmithctl` command-line utility is:
 
-```bash
-appsmithctl <subcommand> <options>
-```
+  ```bash
+  appsmithctl <subcommand> <options>
+  ```
 
-### Subcommands
+  - `appsmithctl`: This is the primary command used to interact with your self-hosted Appsmith instance.
 
-Subcommands allow you to trigger different operations like exporting or importing databases.
+  - `<subcommand>`: A placeholder for the specific operation you want to perform using [subcommands](#subcommands).
 
-| Subcommand                                      | Description                                              |
-| ------------------------------------------------| -------------------------------------------------------- |
-| --help                                          | Shows available subcommands and how to use `appsmithctl` |
-| [backup](#backup-instance)             | Creates a backup of the Appsmith instance                |
-| [ex, export_db](#backup-database)      | Creates a backup of Appsmith internal database           |
-| [--upload-to-s3](#sync-backup-to-s3-bucket)    | Upload the back up files to S3 bucket (Commercial Edition only) |
-| [restore](#restore-instance)           | Restores the Appsmith instance from a backup             |
-| [im, import_db](#restore-database)     | Restores the Appsmith internal database                  |
+  - `<options>`: Optional flags or parameters needed by the subcommand. For example, to specify details, such as file paths, encryption settings, or S3 configuration options. 
+</dd>
+## Subcommands
 
+<dd>
+Subcommands allow you to perform different operations like creating backups, restoring backups, and more. Below is a detailed explanation of each subcommand available in `appsmithctl`.
+</dd>
 
+### `--help`
+
+<dd>
+The `--help` subcommand provides a list of all subcommands and their options for the `appsmithctl` utility.
+
+  ```bash
+  appsmithctl --help
+  ```
+It's useful when you need guidance on the available commands or if you're unsure about the syntax of a specific subcommand.
+
+</dd>
+
+### `backup`
+
+<dd>
+To create a backup of the Appsmith instance, use the following command:
+
+  ```bash
+  appsmithctl backup
+  ```
+  - The `backup` command creates a backup of your Appsmith instance, including the internal database, `docker.env`, and Git data. The backup file is encrypted using a password that you provided. This password is essential for restoring the backup later, so make sure to store it securely. If the password is forgotten, the backup cannot be restored.
+  - The backup file is stored in the `/appsmith-stacks/data/backup/` directory within the container. On your local machine, it is accessible at `./stacks/data/backup/`.
+  - The backup file follows the naming pattern `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
+
+For more information about creating an Appsmith instance backup, see [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide.
+</dd>
+
+### `export_db`
+
+<dd>
+To create a backup of the Appsmith internal database, use the following command:
+
+  ```bash
+  appsmithctl export_db
+  ```
+  - The `export_db` command creates a backup of the Appsmith internal database. The backup file is encrypted using a password that you provide. Ensure that you store this password securely, as it is required for restoring the database backup. If you forget the password, the backup cannot be restored.
+  - The backup file is stored in the `/appsmith-stacks/data/backup/` directory within the container. On your local machine, it is accessible at `./stacks/data/backup/`.
+  - The backup file follows the naming pattern `appsmith-db-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
+
+For more information about creating a database backup, see [Database Backup Guide](/getting-started/setup/instance-management/backup-and-restore/database-backup).
+</dd>
+
+### `--upload-to-s3`
+
+<dd>
+For [Appsmith paid plans](https://www.appsmith.com/pricing), backups can be uploaded to an S3 bucket. To upload a backup file to an S3 bucket, use the following command:
+
+  ```bash
+  appsmithctl --upload-to-s3
+  ```
+  - This command uploads the backup file to the specified Amazon S3 bucket. If the S3 upload configuration is set up, the backup file is automatically uploaded to the specified bucket once created and becomes accessible there.
+  - Ensure you have configured your S3 access credentials and bucket information in your `docker.env` or Helm chart configuration. For more information about syncing backups to S3, see [Sync Backup to S3](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3).
+  
+</dd>
+
+### `restore`
+
+<dd>
+- To restore an Appsmith instance from a backup, use the following command:
+
+  ```bash
+  appsmithctl restore
+  ```
+- The `restore` command restores the Appsmith instance, including the internal database, `docker.env`, and Git data, from an encrypted backup file. You will need the password used during the backup process to decrypt the backup. Without this password, the restore process will fail.
+  - The restore process assumes that the backup file is located at `/appsmith-stacks/data/backup/` within the container.
+  - The backup file should follow the naming pattern `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
+
+For more information about restoring an Appsmith instance, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
+</dd>
+
+### `import_db`
+
+<dd>
+- To restore the Appsmith internal database from a backup, use the following command:
+
+  ```bash
+  appsmithctl import_db
+  ```
+- The `import_db` command restores the Appsmith internal database from an encrypted backup file. You will need the password used during the backup process to decrypt the database. If you forget the password, the restore process will fail.
+  - The restore process assumes that the backup file is located at `/appsmith-stacks/data/backup/` within the container.
+  - The backup file should follow the naming pattern `appsmith-db-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
+
+For more information about restoring the Appsmith database, see [Database Restore Guide](/getting-started/setup/instance-management/backup-and-restore/database-restore).
+</dd>
