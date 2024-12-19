@@ -14,4 +14,4 @@ As the error message in the server logs suggests, your Appsmith instance has mis
 
 ## Solution
 
-To resolve this error, you must [upgrade to the checkpoint version](/getting-started/setup/instance-management/upgrade-to-checkpoint-version), in this case, `v1.9.2`.
+To resolve this error, you must [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).

@@ -1,17 +1,82 @@
 ---
 sidebar_position: 1
-description: Learn how to configure Single Sign-On (SSO) in Appsmith using custom authentication methods. Improve security and user experience by integrating with the authentication system your users already trust. See the list of available SSO integrations to choose from."
+description: Discover the range of authentication options available in Appsmith. Learn how to enhance security and improve user experience with Single Sign-On (SSO), OAuth, and more.
 ---
+
 # Authentication
 
-This section covers different authentication methods available on Appsmith. The default form login allows users to sign in using their email address and password. Besides, you can authorize users into Appsmith apps using **Google OAuth**, **GitHub OAuth** and popular SSO authentication protocols like **SAML**(enterprise version) and **OpenID Connect**(enterprise version).
+Authentication is essential for securing access to your self-hosted Appsmith instances. By managing how users log in, you can enhance security, simplify user access, and ensure smooth interactions with the platform. Appsmith provides a variety of authentication options to meet your organization's specific needs, whether you need basic form login or more advanced Single Sign-On (SSO) integrations.
 
-**Single Sign-On (SSO)** is a convenient and secure way for users to access multiple applications with just one set of login credentials. This eliminates the need for users to remember multiple usernames and passwords, and also increases security by reducing the risk of password reuse. In Appsmith, SSO can be configured to use custom authentication methods, allowing users to securely access your apps using an authentication system they're already familiar with. For example, if a user logs into their email account using their SSO credentials, they can also be able to access other related systems such as the company's internal HR system, or a project management tool, without having to enter their login information again. This can save time and increase security by reducing the risk of forgotten passwords and phishing attacks.
+## Authentication options
 
-In Appsmith, you have the option to configure Single Sign-On (SSO) using custom authentication methods. This allows you to integrate with the authentication system your users are already familiar with, providing a more seamless and secure login experience. Below is a list of available SSO integrations that can be configured in Appsmith:
+By default, Appsmith supports form-based login, allowing users to authenticate with their email and password. For advanced needs, you can integrate additional methods, such as OAuth and SSO.
 
+#### Why choose advanced authentication?
 
-* [Google Login](/getting-started/setup/instance-configuration/authentication/google-login)
-* [GitHub Login](/getting-started/setup/instance-configuration/authentication/github-login)
-* [Security Assertion Markup Language (SAML)](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
-* [Openid Connect (OIDC)](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc)
+- **Enhanced security:** Protect sensitive data with modern authentication methods like OAuth and SAML.
+- **Seamless user experience:** Enable users to log in with their existing authentication methods, such as Google or GitHub.
+- **Scalability for enterprises:** Meet the needs of large teams with SAML and OpenID Connect.
+
+## Get started
+
+Below are the options available to extend Appsmith's authentication capabilities. Select an integration below to learn how to configure authentication methods in Appsmith.
+
+:::caution Important 
+For SAML-based SSO, your Appsmith instance must be configured with high availability to ensure reliable access.
+:::
+
+---
+<div className="containerGridSampleApp">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication/google-login">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-google.png" alt="Google logo" />
+         <div className="containerHeading">
+            <b>Integrate Google OAuth</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Enable users to log in with their Google accounts for a simple and secure authentication experience.
+      </div>
+   </a>
+
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication/github-login">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-github.png" alt="GitHub logo" />
+         <div className="containerHeading">
+            <b>Integrate GitHub OAuth</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Allow developers to authenticate with their GitHub accounts, ensuring seamless integration with developer workflows.
+      </div>
+   </a>
+</div>
+
+<div className="containerGridSampleApp">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication/openid-connect-oidc">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-oidc.png" alt="OIDC logo" />
+         <div className="containerHeading">
+            <b>Integrate OpenID Connect</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Use OpenID Connect for secure and modern authentication, perfect for enterprise-grade applications.
+      </div>
+   </a>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/authentication-saml.png" alt="SAML logo" />
+         <div className="containerHeading">
+            <b>Integrate SAML</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Implement SAML-based SSO for enterprise users. Ensure your Appsmith instance is configured for high availability.
+      </div>
+   </a>
+</div>

@@ -39,10 +39,10 @@ Appsmith offers seamless integration with various popular SAML providers. To get
         <div className="columnGrid column-two" align="center">
          <div className="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">
-                <img className="containerImage" src="/img/Azure-Active-Directory.png" alt="AD-logo"/>
+                <img className="containerImage" src="/img/Microsoft-Entra-ID.png" alt="AD-logo"/>
                 </a>     
             </div> 
-            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">Active Directory</a></b><br/>
+            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/active-directory">Microsoft Entra ID</a></b><br/>
         </div>
         <div className="columnGrid column-one" align="center">
           <div className="containerCol">

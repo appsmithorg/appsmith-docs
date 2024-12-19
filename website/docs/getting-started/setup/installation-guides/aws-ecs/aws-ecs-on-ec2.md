@@ -79,7 +79,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
         * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
-        * `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
+        * `APPSMITH_DB_URL` : Enter the URI of the external MongoDB (v5.0 or later) instance.
         * `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
 6. Configure the **HealthCheck** section as shown below: 
     * **HealthCheck Command** - `CMD-SHELL, curl http://localhost/ || exit 1`
@@ -145,7 +145,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Single Sign-on (SSO)</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Configure SSO to allow users to sign in using your identity provider. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
     </div>
@@ -158,7 +158,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Configure Email Service</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up an email service to enable Appsmith to send notifications and alerts. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
     </div>
@@ -173,7 +173,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Set Up Custom Domain and SSL</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up a custom domain for your Appsmith instance and secure it with SSL.  <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
     </div>
@@ -186,7 +186,7 @@ Once you have completed the installation process, consider performing the tasks 
         <strong>Backup and Restore</strong>
       </a>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. 
       <a href="/getting-started/setup/instance-management/appsmithctl">Learn more about Backup and Restore</a>
