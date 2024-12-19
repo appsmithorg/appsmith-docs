@@ -28,6 +28,7 @@ These properties are customizable options present in the property pane of the wi
 
 
 ### Basic
+The Basic properties allow you to configure the fundamental settings of the widget, such as its label, appearance, and layout.
 
 #### Label
 
@@ -61,7 +62,7 @@ The dynamic menu option supports a maximum of 10 menu items.
 
 Displays a list of available menu items in the dropdown. Each item can trigger specific actions or navigation events when selected. You can customize, rearrange, or configure these items by clicking on the ⚙️ gear icon. 
 
-Example: Display options like "Edit", "Delete", and "Share" in the menu or dynamically load actions based on user roles. See the <a href="/reference/widgets/menu/menu-items">Menu Items</a> reference guide for configuring menu items.
+See the <a href="/reference/widgets/menu/menu-items">Menu Items</a> reference guide for configuring menu items.
 
 </dd>
 
@@ -69,7 +70,7 @@ Example: Display options like "Edit", "Delete", and "Share" in the menu or dynam
 
 <dd>
 
-It is used to provide the datasource for **Dynamic** menus. It accepts an array of values, which can be obtained from queries. You can directly reference your query in the **Source Data** property, like: 
+It is used to provide the datasource for **Dynamic** menus. It accepts an array of values, which can be obtained from queries or JS. You can directly reference your query in the **Source Data** property, like: 
 
 ```js
 {{fetchData.data}}

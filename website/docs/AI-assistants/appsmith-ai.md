@@ -70,7 +70,7 @@ The following section is a reference guide that provides a description of the av
 ### AI Chat Assistant
 
 
-The AI Chat Assistant allows you to interact with AI models using the AI Chat Widget. It enables users to ask questions and receive responses directly within the chat interface. This feature works only with the AI Chat Widget.
+The AI Chat Assistant allows you to interact with AI models using the [AI Chat Widget](/AI-assistants/reference/AIChat). It enables users to ask questions and receive responses directly within the chat interface. This command works only with the AI Chat Widget.
 
 
 
@@ -79,9 +79,9 @@ The AI Chat Assistant allows you to interact with AI models using the AI Chat Wi
 
 <dd>
 
-The System Instructions property enables you to define specific behaviors and guidelines for the AI assistant, ensuring its responses align with your requirements. By providing clear directives, you can fine-tune the assistant's performance to meet particular standards or preferences.
+The System Instructions property enables you to define specific behaviors and guidelines for the AI assistant, ensuring its responses align with your requirements. 
 
-*Example:* You are an AI assistant designed to help users with customer support queries. Always respond concisely and professionally.
+*Example:* "You are an AI assistant integrated with Zendesk. Your primary task is to help users with support ticket inquiries. Always prioritize providing ticket status updates, customer issue resolutions, and guiding users through submitting new tickets in a clear and efficient manner."
 
 </dd>
 
@@ -101,7 +101,7 @@ Allows you to connect to various data sources or upload files to enhance AI capa
 
 *Available Options:*
 
-- **Google Drive:** Connect to your Google account to upload files. Grant access to your Google Drive, including permissions to view and manage files and view file metadata. You can connect multiple Google accounts and upload or delete files as needed.
+- **Google Drive:** Connect to your Google account to upload files. You need to grant access to your Google Drive, including permissions to view and manage files, as well as view file metadata. You can connect multiple Google accounts and upload or delete files as needed.
 
 - **Upload Files:** Upload files directly from your local machine. You can upload multiple files of various types, including `.pdf`, `.docx`, `.txt`, and others, with a maximum file size of 20 MB per file.
 
@@ -119,7 +119,7 @@ Allows you to connect to various data sources or upload files to enhance AI capa
 
 <dd>
 
-- Recursion Depth: pecifies the number of link levels the scraper traverses from the initial URL. For instance, a recursion depth of 2 means the scraper will process the initial page (depth 0), pages linked directly from it (depth 1), and pages linked from those (depth 2).
+- Recursion Depth: Specifies the number of link levels the scraper traverses from the initial URL. For instance, a recursion depth of 2 means the scraper will process the initial page (depth 0), pages linked directly from it (depth 1), and pages linked from those (depth 2).
 
 - Max Pages to Scrape: Defines the upper limit of pages to be processed. For example, setting this to 100 restricts the scraper to process only the first 100 pages encountered during the scraping process. These pages are typically processed in the order they are discovered (i.e., depth-first or breadth-first traversal), depending on the scraping logic, and not randomly. 
 

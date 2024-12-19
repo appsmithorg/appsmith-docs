@@ -19,11 +19,11 @@ tags={[
 
 <!-- vale on -->
 
-The Chat widget, part of the AI Assistant Apps, enables interaction with AI models using the Appsmith AI datasource. It automatically creates an Appsmith AI query, which you can configure as needed. 
+This page provides information on using the AI Chat Widget (available in AI Assistant Apps), which enables users to interact with AI models using the Appsmith AI Datasource.
 
-:::info
-Currently, the Chat widget only supports the Appsmith AI datasource and does not support other datasources or queries.
-:::
+The widget automatically creates an Appsmith AI query, which you can configure to provide additional context to the model by integrating data from various platforms (e.g., Zendesk, Salesforce, etc.) 
+
+
 
 <ZoomImage
   src="/img/appsmith-ai.gif" 
@@ -38,16 +38,22 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data 
 
+These properties allow you to set and manage data for the AI Chat widget. 
+
 #### Chat Query
 
 <dd>
 
-When the Chat widget is added to the canvas, a default AI Chat Query is automatically created to process messages. This query contains the main logic and data required for the Chat widget to function. You can change this query by selecting a different one from the Chat Query dropdown in the widget's property pane. 
+When the Chat widget is added to the canvas, a default AI Chat Query is automatically created to process messages. This query contains the main logic and data required for the Chat widget to function. You can change this query by selecting a different one from the Chat Query dropdown in the widget's property pane.
+
+In the query, you can upload files or connect to various platforms like Zendesk, Salesforce, Google, etc., to provide data. However, you can only connect a query from the Appsmith AI datasource with the [AI Chat Assistant](/AI-assistants/appsmith-ai#ai-chat-assistant) as a command. 
 
 
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance.
 
 #### Description
 
@@ -75,10 +81,9 @@ You can also use `{{}}` to dynamically generate placeholder text based on data f
 
 <dd>
 
-The Initial Assistant Suggestions property allows you to define a set of suggested messages that appear when the chat starts. These suggestions are displayed as quick replies, helping users know what to ask or interact with next. Each suggestion consists of a label (the text shown to the user) and a value (the underlying data that triggers actions or responses).
+The Initial Assistant Suggestions property allows you to define a set of pre-defined prompts that appear when the chat starts. These prompts help users by providing suggestions on what they can ask or interact with next. Each suggestion consists of a label (the text shown to the user) and a value (the underlying data that triggers specific actions or responses). When a user clicks on a prompt, the associated value is sent to the AI to initiate a response.
 
-When a user clicks on a prompt, the associated value is sent to the AI to initiate a response.
-
+*Format*:
 
 ```JS
 [
@@ -113,6 +118,8 @@ For example, if you want to make the widget visible only when the user selects "
 </dd>
 
 ### Assistant
+
+These properties allow you to configure the name and description of the Chat widget. 
 
 #### Assistant Name
 
@@ -150,11 +157,13 @@ General properties are essential configurations that provide overall control ove
 
 <dd>
 
-Controls the vertical size of the Chat widget.
+This property controls the vertical size of the Chat widget:
 
-- Medium: Standard height.
-- Large: Taller layout for extended conversations.
-- Fit to Page: Adjusts height to fill the available page space.
+- Medium
+- Large
+- Fit to Page
+
+You can also set it dynamically using JavaScript with `{{}}`, and apply values like `MEDIUM`, `LARGE`, or `FIT_PAGE`.
 
 </dd>
 

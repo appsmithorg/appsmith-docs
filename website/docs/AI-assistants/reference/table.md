@@ -20,8 +20,15 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on the Table widget (available in AI Assistant Apps), which allows you to display data in a structured tabular format, interact with data through sorting, filtering, and pagination, and trigger actions based on user selections or interactions.
+This page provides information on the Table widget (available in AI Assistant Apps), which allows you to display data in a structured tabular format and trigger actions based on user selections or interactions.
 
+
+
+<ZoomImage
+  src="/img/ai-table.png" 
+  alt=""
+  caption=""
+/>
 
 ## Content properties
 
@@ -31,11 +38,13 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
+These properties allow you to configure and manage the data displayed in the Table widget. 
+
 #### Table data `array<object>`
 
 <dd>
 
-Allows you to bind the Table widget to a datasource or provide static data in a tabular format. You can dynamically set the table data by using **JavaScript bindings** with the `{{}}` syntax.
+Allows you to bind the Table widget to a datasource or provide static data in a tabular format. You can dynamically set the Table data by using **JavaScript bindings** with the `{{}}` syntax.
 
 The data should be specified as an array of objects, where each object in the array represents a row, and the properties of the object represent the columns in the table. In the given example format, the table has three columns: `step`, `task`, and `status`. 
 
@@ -60,7 +69,7 @@ The data should be specified as an array of objects, where each object in the ar
 ]
 ```
 
-You can **dynamically generate** a table by fetching data from queries or JavaScript functions and binding the response to the **Table Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
+You can **dynamically generate** a Table by fetching data from queries or JavaScript functions and binding the response to the **Table Data** property. For example, if you have a query named `fetchData`, you can bind its response using:
 
 *Example:*
 ```js
@@ -94,7 +103,7 @@ Each column can be configured with a column type to display and interact with da
 
 * **Button**: Adds a button in the column to trigger actions such as running queries or executing JS code. You can style the button, set its label, and configure click actions.
 
-* **Number:** Displays data as numbers with optional formatting. Useful for numeric calculations or data that requires a numeric display.
+* **Number:** Displays data as numbers with additional formatting. 
 
 * **Plain Text:** Displays simple text content without any additional formatting.
 
@@ -118,12 +127,16 @@ Allows you to assign a unique column that helps maintain `selectedRows` and `tri
 
 ### Pagination
 
+These properties allow you to configure how the Table widget handles large sets of data by dividing it into pages. 
 
 #### Page size `string`
 
 <dd>
 
-Controls the page size for pagination. When changed, it adjusts the number of rows displayed per page. For example, if set to 4, only 4 rows are displayed.
+Controls the number of rows displayed per page in the Table widget. For example, if set to 4, only 4 rows will be visible per page. This property helps in managing large datasets by breaking them into smaller, more manageable pages.
+
+Pagination is managed within the widget itself, loading all data at once and then organizing it into pages on the client side. This means data is not fetched from the server dynamically as the user navigates between pages.
+
 
 </dd>
 
@@ -136,9 +149,7 @@ Controls the page size for pagination. When changed, it adjusts the number of ro
 Determines whether the pagination feature is displayed in the table header, allowing users to navigate through different pages of the table.
 </dd>
 
-:::info
-Server-side pagination is not available in AI Assistant apps. Only standard pagination is supported.
-:::
+
 
 ### Search & filters
 
@@ -146,14 +157,15 @@ Server-side pagination is not available in AI Assistant apps. Only standard pagi
 
 <dd>
 
-When enabled, the search bar is displayed, allowing users to search for specific data within the table.
+When enabled, the search bar is displayed, allowing users to search for specific data within the Table. The search is performed on the data already loaded in the widget, and it does not fetch new data from the server as the user types.
+
 </dd>
 
 #### Default search text `string`
 
 <dd>
 
-Allows you to set the default search query for the search bar in the table header.
+Allows you to set the default search query for the search bar in the Table header.
 
 </dd>
 
@@ -657,10 +669,3 @@ This method allows you to programmatically select multiple rows in the Table. It
 
 
 
-
-## See also
-
-- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - See how to display and manage data in a Table and enable efficient data lookup.
-- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view) - Learn how to create detailed drilldown views for exploring data at different levels.
-- [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table) - Learn how to set up server-side pagination for handling large datasets in Table.
-- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - See how to add search and filter functionality to tables for better data navigation.

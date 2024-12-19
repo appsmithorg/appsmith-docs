@@ -833,20 +833,10 @@ const sidebars = {
   items: [
     'AI-assistants/overview',
     {
-      type: 'category',
-      collapsed: true,
-      label: 'How-to Guides',
-      link: { type: 'doc', id: 'build-apps/how-to-guides/README' },
-      items: [
-              
-      ]
-    },
-    {
       //Reference start
       type: 'category',
       label: 'Reference',
       collapsed: false,
-      link: { type: 'doc', id: 'build-apps/reference/README' },
       items: [
         {
           type: 'category',
@@ -863,6 +853,7 @@ const sidebars = {
         'AI-assistants/reference/icon-button',  
         'AI-assistants/reference/inline-button',  
         'AI-assistants/reference/input',  
+        'AI-assistants/reference/menu-button',  
         'AI-assistants/reference/modal',  
         'AI-assistants/reference/multilineInput',
         'AI-assistants/reference/number-input',  

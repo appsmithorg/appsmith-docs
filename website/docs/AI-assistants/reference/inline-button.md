@@ -44,7 +44,8 @@ This property allows you to define the buttons within the Inline Buttons widget.
 
 Each button is configured individually, and you can edit its label, action, and style by clicking the gear icon next to the button.For more details, see [Button Settings](#buttons-settings).
 
-By default, a **Separator** is included between button groups to visually separate them. This separator can be removed or repositioned, but only one separator is allowed in the widget at a time.
+By default, a **Separator** is included between button groups to visually distinguish them. The separator can be removed or repositioned, but only one separator is allowed in the widget at a time. If you need multiple separators, you can use the [Toolbar widget](/AI-assistants/reference/toolbar).
+
 
 </dd>
 
@@ -137,58 +138,6 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 </dd>
 
-## Reference properties
-
-Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `InlineButtons1.isVisible`.
-
-#### isVisible `boolean`
-
-<dd>
-
-Reflects whether the widget is visible or not.
-
-*Example:*
-
-```js
-{{InlineButtons1.isVisible}}
-```
-
-</dd> 
-
-## Methods
-
-Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor. 
-
-These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
-
-#### setVisibility (param: boolean): Promise
-
-<dd>
-
-Sets the visibility of the widget. This method allows you to show or hide a widget based on certain conditions or user interactions.
-
-*Example*:
-
-```js
-InlineButtons1.setVisibility(true)  // Makes the Heading widget visible
-```
-
-</dd>
-
-#### setDisabled (param: boolean): Promise
-
-<dd>
-
-Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
-
-*Example:*
-
-```js
-InlineButtons1.setDisabled(false)  // Enables the Heading widget
-```
-
-</dd>
-
 ## Style properties
 
 Style properties allow you to customize the appearance of the button. These properties are available inside the individual button settings, enabling you to modify the button's look and feel to match your design preferences.
@@ -255,3 +204,56 @@ Specifies the alignment of the button within its container. You can set it to on
 - **Right:** Aligns the icon to the right side of the button.
 
 </dd>
+
+## Reference properties
+
+Reference properties are properties that are not available in the property pane but can be accessed using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to get the visibility status, you can use `InlineButtons1.isVisible`.
+
+#### isVisible `boolean`
+
+<dd>
+
+Reflects whether the widget is visible or not.
+
+*Example:*
+
+```js
+{{InlineButtons1.isVisible}}
+```
+
+</dd> 
+
+## Methods
+
+Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor. 
+
+These methods are asynchronous and return a [Promise](/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith). You can use the `.then()` block to ensure execution and sequencing of subsequent lines of code in Appsmith.
+
+#### setVisibility (param: boolean): Promise
+
+<dd>
+
+Sets the visibility of the widget. This method allows you to show or hide a widget based on certain conditions or user interactions.
+
+*Example*:
+
+```js
+InlineButtons1.setVisibility(true)  // Makes the Heading widget visible
+```
+
+</dd>
+
+#### setDisabled (param: boolean): Promise
+
+<dd>
+
+Sets the disabled state of the widget. When set to true, the widget becomes unresponsive, and users cannot interact with it.
+
+*Example:*
+
+```js
+InlineButtons1.setDisabled(false)  // Enables the Heading widget
+```
+
+</dd>
+

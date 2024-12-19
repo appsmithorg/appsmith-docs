@@ -19,7 +19,15 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on the Toolbar Button widget *(available in AI Assistant Apps)*, which allows you to group multiple actions or options into a compact toolbar
+This page provides information on the Toolbar Button widget *(available in AI Assistant Apps)*, which allows you to group multiple actions or options into a compact toolbar.
+
+<ZoomImage
+  src="/img/toolbar-widget.png" 
+  alt=""
+  caption=""
+/>
+
+
 
 ## Content properties
 
@@ -28,11 +36,13 @@ These properties are customizable options present in the property pane of the wi
 
 ### Data
 
+These properties allow you to configure the data for the widget, defining the content and behavior displayed. 
+
 #### Buttons
 
 <dd>
 
-Allows you to add multiple buttons within the Toolbar Button widget. Users can rearrange the **Buttons** and add **Separators** to create space between them for better organization. If the number of buttons exceeds the available space, a three-dot menu (ellipsis) is displayed to accommodate the overflow buttons.
+Allows you to add multiple buttons within the Toolbar Button widget. You can rearrange the **Buttons** and add **Separators** to create space between them for better organization. If the number of buttons exceeds the available space, a three-dot menu (ellipsis) is displayed to accommodate the overflow buttons.
 
 You can click on the ⚙️ gear icon to configure each button, such as setting the label, icon, and actions to be triggered when the button is clicked.
 
