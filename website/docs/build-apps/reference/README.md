@@ -6,13 +6,13 @@ import DocCardList from '@theme/DocCardList';
   <div className="containerColumnSampleApp columnGrid column-one">
         <div className="containerCol">
             <a href="/reference/widgets"><strong>Widgets</strong></a>
-        </div> <hr/>
+        </div> <hr className="gradient-hr" />
         <div className="containerDescription">References of all Appsmith widgets and their properties</div>
     </div>
     <div className="containerColumnSampleApp columnGrid column-two">
         <div className="containerCol">
            <a href="/core-concepts/building-ui/designing-an-application/app-theming"><strong>Theme</strong></a>
-        </div><hr/>
+        </div><hr className="gradient-hr" />
         <div className="containerDescription">Control the look and feel applications</div>
     </div>
 </div>

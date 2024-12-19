@@ -10,7 +10,7 @@ This page provides information on the best practices that are to be followed whe
 
 * Appsmith works best on AMD and ARM architectures on AWS, Azure, GCP, and DigitalOcean. By default, the recommendation is to run Appsmith using [Kubernetes](/getting-started/setup/installation-guides/kubernetes) in production, as it ensures high availability and scalability. Additionally, the Helm chart manages MongoDB and Redis as separate pods, eliminating the need for external instances.
 
-* If you decide to use a serverless deployment platform like [ECS](/getting-started/setup/installation-guides/aws-ecs), you’ll need to set up an external MongoDB and Redis instance. In this case, to use MongoDB Atlas and Elasticache is recommended.
+* If you decide to use a serverless deployment platform like [ECS](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2), you’ll need to set up an external MongoDB and Redis instance. In this case, to use MongoDB Atlas and Elasticache is recommended.
 
 ## Deployment setup
 
@@ -36,7 +36,7 @@ This page provides information on the best practices that are to be followed whe
 
 - Take a backup of your Appsmith Development, Staging & Production instances. [Backup](/getting-started/setup/instance-management/appsmithctl#backup-instance).
 - Always perform a manual upgrade of your Staging / Development instance first before you attempt it on the production instance.
-- Check if you need to upgrade to a [checkpoint release](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).
+- Check if you need to [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).
 - Verify that all your applications are working on the Staging & Development instances in both the edit & view modes.
 - Perform the upgrade on the Production instance after taking a backup.
 - Verify that all your applications are working on the production instance in both edit and view modes.
