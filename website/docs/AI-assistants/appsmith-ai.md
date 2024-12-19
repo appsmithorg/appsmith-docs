@@ -101,13 +101,13 @@ Allows you to connect to various data sources or upload files to enhance AI capa
 
 *Available Options:*
 
-- **Google Drive:** Connect to your Google account to upload files. You'll need to grant access to your Google Drive. Multiple Google accounts can be connected, allowing you to upload and delete multiple files.
+- **Google Drive:** Connect to your Google account to upload files. Grant access to your Google Drive, including permissions to view and manage files and view file metadata. You can connect multiple Google accounts and upload or delete files as needed.
 
-- **Upload Files:** Upload files directly from your local machine. Supported file types include .pdf, .docx, and .txt, with a maximum file size of 20 MB per file.
+- **Upload Files:** Upload files directly from your local machine. You can upload multiple files of various types, including `.pdf`, `.docx`, `.txt`, and others, with a maximum file size of 20 MB per file.
 
-- **Notion**: Connect to your Notion account to sync and upload Notion pages. This integration enables the AI to reference your Notion content in responses.
+- **Notion**: Connect to your Notion account to sync and upload multiple Notion pages. The AI can reference your Notion content in responses.
 
-- **Salesforce**: Connect using your Salesforce URL to access and upload files. This integration allows the AI to utilize your Salesforce data for generating informed responses.
+- **Salesforce**: Connect using your Salesforce URL, which can be found in your Salesforce account settings. You can connect multiple Salesforce accounts. This integration allows the AI to use your Salesforce data to generate responses.
 
 - **Zendesk**: Connect using your Zendesk domain to integrate tickets and customer data. This enables the AI to reference your Zendesk information in its responses.
 
