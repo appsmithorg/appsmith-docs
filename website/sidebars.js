@@ -882,15 +882,7 @@ const sidebars = {
           ],
         },
          'AI-assistants/appsmith-ai',
-        {
-          type: 'category',
-          label: 'Integrations',
-          link: { type: 'doc', id: 'reference/widgets/README' },
-          items: [
-  
-                ],
-        },
-      ],
+          ],
     }, //Reference End
   ]
 }, //ai end

@@ -70,13 +70,7 @@ The following section is a reference guide that provides a description of the av
 ### AI Chat Assistant
 
 
-The AI Chat Assistant enables dynamic interactions within the AI Chat Widget, facilitating intelligent suggestions and insights to streamline complex workflows. 
-
-<ZoomImage
-  src="/img/appsmithai-chat.gif" 
-  alt="Appsmith AI"
-  caption="AI Chat Assistant"
-/>
+The AI Chat Assistant allows you to interact with AI models using the AI Chat Widget. It enables users to ask questions and receive responses directly within the chat interface. This feature works only with the AI Chat Widget.
 
 
 
@@ -94,6 +88,14 @@ The System Instructions property enables you to define specific behaviors and gu
 #### Datasource 
 
 <dd>
+
+<ZoomImage
+  src="/img/appsmithai-chat.gif" 
+  alt="Appsmith AI"
+  caption="AI Chat Assistant"
+/>
+
+
 
 Allows you to connect to various data sources or upload files to enhance AI capabilities. Uploaded files or connected data can be referenced as citations in the Chat widget. You can upload multiple files, and each file becomes available for use in interactions. Files can be removed or resynced as needed.
 
@@ -117,9 +119,9 @@ Allows you to connect to various data sources or upload files to enhance AI capa
 
 <dd>
 
-- Recursion Depth: Specifies the number of link levels the scraper traverses from the initial URL. For instance, a recursion depth of 2 means the scraper will process the initial page (depth 0), pages linked directly from it (depth 1), and pages linked from those (depth 2). This setting helps manage the breadth of data collection.
+- Recursion Depth: pecifies the number of link levels the scraper traverses from the initial URL. For instance, a recursion depth of 2 means the scraper will process the initial page (depth 0), pages linked directly from it (depth 1), and pages linked from those (depth 2).
 
-- Max Pages to Scrape: Defines the upper limit of pages to be processed. For example, setting this to 100 restricts the scraper to process only the first 100 pages encountered, preventing excessive data retrieval and managing resource usage.
+- Max Pages to Scrape: Defines the upper limit of pages to be processed. For example, setting this to 100 restricts the scraper to process only the first 100 pages encountered during the scraping process. These pages are typically processed in the order they are discovered (i.e., depth-first or breadth-first traversal), depending on the scraping logic, and not randomly. 
 
 </dd>
 
