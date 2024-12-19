@@ -109,9 +109,9 @@ Allows you to connect to various data sources or upload files to enhance AI capa
 
 - **Salesforce**: Connect using your Salesforce URL, which can be found in your Salesforce account settings. You can connect multiple Salesforce accounts. This integration allows the AI to use your Salesforce data to generate responses.
 
-- **Zendesk**: Connect using your Zendesk domain to integrate tickets and customer data. This enables the AI to reference your Zendesk information in its responses.
+- **Zendesk**: Connect using your Zendesk domain to fetch ticket and customer information. You can connect multiple Zendesk accounts. This integration allows the AI to reference your Zendesk data in its responses.
 
-- **Web Scraper**: This tool allows you to extract information from websites. When you click on 'Add URL,' you can select between 'Website' or 'Sitemap.'
+- **Web Scraper**: This tool allows you to extract information from websites. When you click on 'Add URL,' you can select between `Website` or `Sitemap`.
 
 <dd>
 
