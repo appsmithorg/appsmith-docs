@@ -48,14 +48,15 @@ The **Data Type** property defines the type of input for the widget. For the Ema
 
 Options:
 
-- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed.
-- **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions.
-- **Number**: Accepts only numeric values.
-- **Password**:  Masks input for sensitive information such as passwords or pins.
-- **Email**: Validates and accepts text in email format.
-- **Phone number**: Accepts phone numbers, often formatted with country code and dashes.
-- **Currency**: Accepts numeric input displayed in currency format.
-- **Date**: Accepts date input, with a datepicker for selection.
+- **Single-line text**: Accepts a single line of text, such as names or titles. Additional text beyond one line is not displayed. See [Input widget]( /AI-assistants/reference/input )
+- **Multi-line text**: Allows multiple lines of text, ideal for longer entries like comments or descriptions. See [Multi-line text widget]( /AI-assistants/reference/multilineInput )
+- **Number**: Accepts only numeric values. See [Number widget]( /AI-assistants/reference/number-input )
+- **Password**: Masks input for sensitive information such as passwords or pins. See [Password widget]( /AI-assistants/reference/password-input )
+- **Email**: Validates and accepts text in email format. 
+- **Phone number**: Accepts phone numbers, often formatted with country code and dashes. See [Phone number widget]( /AI-assistants/reference/phone-input )
+- **Currency**: Accepts numeric input displayed in currency format. See [Currency widget]( /AI-assistants/reference/currency-input )
+- **Date**: Accepts date input, with a datepicker for selection. See [Date widget]( /AI-assistants/reference/date )
+
 
 
 </dd>
