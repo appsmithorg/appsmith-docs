@@ -19,10 +19,22 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on the Chat widget *(available in AI Assistant Apps)*, 
+The Chat widget, part of the AI Assistant Apps, enables interaction with AI models using the Appsmith AI datasource. It automatically creates an Appsmith AI query, which you can configure as needed. 
+
+:::info
+Currently, the Chat widget only supports the Appsmith AI datasource and does not support other datasources or queries.
+:::
+
+<ZoomImage
+  src="/img/appsmith-ai.gif" 
+  alt=""
+  caption=""
+/>
 
 
 ## Content Properties
+
+These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
 
 ### Data 
 

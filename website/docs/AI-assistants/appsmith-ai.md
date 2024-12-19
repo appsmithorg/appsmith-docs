@@ -1,7 +1,28 @@
+---
+title: Appsmith AI
+hide_title: true
+toc_max_heading_level: 2
+---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Appsmith AI
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Appsmith AI (AI Assistant)</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+
+</div>
+
+<!-- vale on -->
+
+
 
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
