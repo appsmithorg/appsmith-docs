@@ -68,7 +68,7 @@ To create a backup of the Appsmith internal database, use the following command:
   - The backup file is stored in the `/appsmith-stacks/data/backup/` directory within the container. On your local machine, it is accessible at `./stacks/data/backup/`.
   - The backup file follows the naming pattern `appsmith-db-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
 
-For more information about creating a database backup, see [Database Backup Guide](/getting-started/setup/instance-management/backup-and-restore/database-backup).
+For more information about creating a database backup, see [Backup Database](/getting-started/setup/instance-management/backup-and-restore/backup-database) guide.
 </dd>
 
 ### `--upload-to-s3`
@@ -96,7 +96,7 @@ For [Appsmith paid plans](https://www.appsmith.com/pricing), backups can be uplo
   - The restore process assumes that the backup file is located at `/appsmith-stacks/data/backup/` within the container.
   - The backup file should follow the naming pattern `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
 
-For more information about restoring an Appsmith instance, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
+For more information about restoring an Appsmith instance, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide.
 </dd>
 
 ### `import_db`
@@ -111,5 +111,5 @@ For more information about restoring an Appsmith instance, see [Restore Instance
   - The restore process assumes that the backup file is located at `/appsmith-stacks/data/backup/` within the container.
   - The backup file should follow the naming pattern `appsmith-db-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
 
-For more information about restoring the Appsmith database, see [Database Restore Guide](/getting-started/setup/instance-management/backup-and-restore/database-restore).
+For more information about restoring the Appsmith database, see [Restore Database](/getting-started/setup/instance-management/backup-and-restore/restore-database) guide.
 </dd>
