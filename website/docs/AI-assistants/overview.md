@@ -1,7 +1,7 @@
 
 # Overview
 
-Appsmith AI Assistants enable the creation of custom AI-driven assistants that integrate with your existing internal tools, databases, and APIs. These assistants are designed to help automate processes, improve workflows, and increase efficiency, all with minimal coding.
+Appsmith AI Assistants allow you to build custom AI-driven assistants that integrate with your internal tools, databases, and APIs. These assistants help automate tasks, streamline workflows, and enhance efficiency with minimal coding required.
 
 
 - **Citations:** AI responses are supported by citations derived from connected data sources. These citations provide verifiable references for the information used in AI-generated answers, ensuring data accuracy and transparency.
@@ -14,6 +14,7 @@ Appsmith AI Assistants enable the creation of custom AI-driven assistants that i
 
 - **LLM Integration:** You can choose from various large language models (LLMs) such as OpenAI, Anthropic, and others. Appsmith provides full control over API keys and model configurations, allowing you to tailor the AI assistant to your specific needs.
 
+- **Iterate Faster with Auto Layout:**  You can organize and rearrange your UI elements by dragging and dropping large and small blocks in one go. It automatically adjusts the layout to fit different screen sizes, eliminating the need for manual media queries.
 
 ## Getting started 
 
@@ -23,7 +24,7 @@ Appsmith AI Assistants enable the creation of custom AI-driven assistants that i
    <div className="containerCol">
       </div>
       <b><a href="/packages/tutorial/query-module">Widgets</a></b>
-      <div className="containerDescription"> Reference for all widgets designed for AI assistant applications</div>
+      <div className="containerDescription"> Reference for all widgets designed for AI assistant applications.</div>
    </div>
    <div className="containerColumnSampleApp columnGrid column-two">
    <div className="containerCol">
