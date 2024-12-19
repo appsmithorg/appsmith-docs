@@ -849,6 +849,7 @@ const sidebars = {
         'AI-assistants/reference/checkbox-group',  
         'AI-assistants/reference/currency-input',
         'AI-assistants/reference/custom',  
+        'AI-assistants/reference/date',  
         'AI-assistants/reference/emailinput',
         'AI-assistants/reference/Heading', 
         'AI-assistants/reference/icon-button',  
