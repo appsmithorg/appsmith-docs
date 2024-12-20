@@ -38,15 +38,18 @@ Appsmith Workflows are versatile and designed to handle a wide range of scenario
 Learning the fundamentals of Appsmith Workflows is crucial for maximizing productivity and building robust applications. Begin exploring Appsmith Workflows with the comprehensive getting started tutorial. 
 
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      </div> 
-      <b><a href="/workflows/tutorials/create-workflow">Tutorial - Create Your First Basic Workflow</a></b>
-      <div className="containerDescription">
-        Learn how to create your first workflow.
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/workflows/tutorials/create-workflow">
+      <div className="containerHead">
+         <img className="containerImage containerIntegrationsImgDimensions" src="/img/workflows-logo.png" alt="Workflows logo" />
+         <div className="containerHeading">
+            <b>Tutorial - Create Your First Basic Workflow</b>
+         </div>
       </div>
-   </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Learn how to create your first workflow in Appsmith. This hands-on tutorial teaches core workflow concepts by guiding you through creating and configuring a basic workflow to automate tasks like sending email notifications.
+      </div>
+   </a>
    <div className="columnGrid column-four" style={{padding:"20px"}}>
-   
    </div>
 </div>
