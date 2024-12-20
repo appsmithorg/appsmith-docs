@@ -25,6 +25,8 @@ Specifies the type of buttons to be included in the button group.
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -35,6 +37,9 @@ Sets the text label for a item. It can be a static text value or dynamically bou
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Visible `boolean`
 
@@ -106,6 +111,8 @@ Determines the color of the button displayed for each item in the button group.
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onClick
 
