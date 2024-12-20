@@ -31,7 +31,7 @@ Appsmith AI Assistants allow you to build custom AI-driven assistants that integ
    <div className="containerCol">
       </div>
       <b><a href="/packages/tutorial/query-module">Appsmith AI</a></b>
-      <div className="containerDescription">Technical information about datasources and queries.</div>
+      <div className="containerDescription">Technical information about Appsmith AI datasource and queries.</div>
    </div>
   
 </div>
