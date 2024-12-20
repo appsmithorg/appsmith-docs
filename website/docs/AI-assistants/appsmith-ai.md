@@ -24,7 +24,7 @@ tags={[
 
 
 
-This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
+This page provides information on creating queries with Appsmith AI (available in AI Assistant Apps), which allows you to configure applications with advanced AI features such as chat assistants, text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
 :::note Data, Privacy and Security
 Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. 
@@ -70,7 +70,7 @@ The following section is a reference guide that provides a description of the av
 ### AI Chat Assistant
 
 
-The AI Chat Assistant allows you to interact with AI models using the [AI Chat Widget](/AI-assistants/reference/AIChat). It enables users to ask questions and receive responses directly within the chat interface. This command works only with the AI Chat Widget.
+The AI Chat Assistant command allows you to interact with AI models using the [AI Chat Widget](/AI-assistants/reference/AIChat). Users can input queries and receive AI-generated responses directly within the chat interface, without the need to bind or pass additional data. 
 
 
 
@@ -97,7 +97,9 @@ The System Instructions property enables you to define specific behaviors and gu
 
 
 
-Allows you to connect to various data sources or upload files to enhance AI capabilities. Uploaded files or connected data can be referenced as citations in the Chat widget. You can upload multiple files, and each file becomes available for use in interactions. Files can be removed or resynced as needed.
+
+Allows you to connect to various datasources or upload files to provide additional context and enhance AI capabilities. Connected data or uploaded files can be referenced as citations in the AI Chat Widget, ensuring responses are backed by relevant information. You can resync, remove, or update uploaded files to ensure the AI Chat Assistant.
+
 
 *Available Options:*
 

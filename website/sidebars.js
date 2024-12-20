@@ -874,6 +874,7 @@ const sidebars = {
           
           ],
         },
+        'AI-assistants/reference/app-theming',
          'AI-assistants/appsmith-ai',
           ],
     }, //Reference End

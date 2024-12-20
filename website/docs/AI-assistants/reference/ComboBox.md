@@ -44,7 +44,7 @@ These properties allow you to configure the options and data displayed to users.
 
 Specifies the behavior of the dropdown in the layout. You can choose between two modes:
 
-- **Select**: A basic dropdown without search, ideal for situations where the number of options is small and easily visible to the user. See [ComboBox widget](/AI-assistants/reference/select).
+- **Select**: A basic dropdown without search, ideal for situations where the number of options is small and easily visible to the user. See [Select widget](/AI-assistants/reference/select).
 - **Combobox**: A dropdown with search functionality, designed for scenarios where the dataset is large, allowing users to quickly filter and select the desired option. 
 
 </dd>

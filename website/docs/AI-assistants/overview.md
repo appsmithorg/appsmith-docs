@@ -14,7 +14,8 @@ Appsmith AI Assistants allow you to build custom AI-driven assistants that integ
 
 - **LLM Integration:** You can choose from various large language models (LLMs) such as OpenAI, Anthropic, and others. Appsmith provides full control over API keys and model configurations, allowing you to tailor the AI assistant to your specific needs.
 
-- **Iterate Faster with Auto Layout:**  You can organize and rearrange your UI elements by dragging and dropping large and small blocks in one go. It automatically adjusts the layout to fit different screen sizes, eliminating the need for manual media queries.
+- **Responsive Layout:** You can adjusts the UI to fit any viewport, eliminating the need for complex media queries or breakpoint management, ensuring a flawless experience across devices.
+
 
 ## Getting started 
 
