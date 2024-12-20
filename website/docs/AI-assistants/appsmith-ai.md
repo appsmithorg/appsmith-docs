@@ -107,15 +107,17 @@ Allows you to connect to various datasources or upload files to provide addition
 
 - **Upload Files:** Upload files directly from your local machine. You can upload multiple files of various types, including `.pdf`, `.docx`, `.txt`, and others, with a maximum file size of 20 MB per file.
 
-- **Notion**: Connect to your Notion account to sync and upload multiple Notion pages. The AI can reference your Notion content in responses.
+- **Notion**: Connect to your Notion account to sync and upload multiple Notion pages. The AI can reference your Notion content in responses, such as pulling information from your databases, pages, and blocks, to generate personalized replies.
 
-- **Salesforce**: Connect using your Salesforce URL, which can be found in your Salesforce account settings. You can connect multiple Salesforce accounts. This integration allows the AI to use your Salesforce data to generate responses.
+- **Salesforce**: Connect using your Salesforce URL, which can be found in your Salesforce account settings. You can connect multiple Salesforce accounts. This integration allows the AI to access your Salesforce data, such as retrieving leads, accounts, opportunities, and case details, to generate responses based on your CRM data. 
 
-- **Zendesk**: Connect using your Zendesk domain to fetch ticket and customer information. You can connect multiple Zendesk accounts. This integration allows the AI to reference your Zendesk data in its responses.
+- **Zendesk**: Connect using your Zendesk domain to fetch ticket and customer information. You can connect multiple Zendesk accounts. This integration allows the AI to reference your Zendesk data in its responses, such as retrieving ticket details, fetching customer profiles, and analyzing support trends. 
 
-- **Web Scraper**: This tool allows you to extract information from websites. When you click on 'Add URL,' you can select between `Website` or `Sitemap`.
+- **Web Scraper**: This tool allows you to extract information from websites. This integration enables the AI to scrape data from specified web pages or sitemaps, pulling in details such as product listings, articles, or other structured content for use in generating responses or reports. When you click on **Add URL**, you can select between `Website` or `Sitemap`.
 
 <dd>
+
+
 
 - Website: Add multiple URLs and configure the following parameters to control the scraping process:
 
