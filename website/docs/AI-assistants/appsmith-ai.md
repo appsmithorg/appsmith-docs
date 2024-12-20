@@ -24,7 +24,7 @@ tags={[
 
 
 
-This page provides information on creating queries with Appsmith AI (available in AI Assistant Apps), which allows you to configure applications with advanced AI features such as chat assistants, text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
+This page provides information on creating queries with Appsmith AI *(available in AI Assistant Apps)*, which allows you to configure applications with advanced AI features such as chat assistants, text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 
 :::note Data, Privacy and Security
 Appsmith is committed to providing safe and responsible access to AI capabilities. Your prompts, outputs, embeddings, and data are not shared with other users and are never utilized to fine-tune models. 

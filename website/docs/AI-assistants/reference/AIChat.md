@@ -19,7 +19,7 @@ tags={[
 
 <!-- vale on -->
 
-This page provides information on using the AI Chat Widget (available in AI Assistant Apps), which enables users to interact with AI models using the Appsmith AI Datasource.
+This page provides information on using the AI Chat Widget *(available in AI Assistant Apps)*, which allows users to interact with AI models using the Appsmith AI Datasource.
 
 The widget automatically creates an Appsmith AI query, which you can configure to provide additional context to the model by integrating data from various platforms (e.g., Zendesk, Salesforce, etc.) 
 

@@ -23,7 +23,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information on app theme settings (available on Appsmith apps), which allows you to customize the appearance of your app. You can update widget colors, change font styles, and adjust border/shadow effects.
+This page provides information on app theme settings (available on Appsmith apps), which allows you to customize the appearance of your app. You can update widget colors, change font styles, and adjust border effects.
 
 <ZoomImage
   src="/img/ai-theme.gif" 
