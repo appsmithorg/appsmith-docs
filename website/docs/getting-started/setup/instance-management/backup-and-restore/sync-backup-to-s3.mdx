@@ -76,30 +76,30 @@ Once the configuration is complete, the Appsmith instance and database backups c
        APPSMITH_BACKUP_S3_BUCKET_NAME: <bucket_name>
        APPSMITH_BACKUP_S3_REGION: <aws_bucket_region>
      ```
-     Replace the placeholders with the following:
-      * `<aws_access_key>`: Your AWS access key.
-      * `<aws_secret_key>`: Your AWS secret key.
-      * `<bucket_name>`: The name of your S3 bucket.
-      * `<aws_bucket_region>`: The region where your S3 bucket is hosted.
+      Replace the placeholders with the following:
+         * `<aws_access_key>`: Your AWS access key.
+         * `<aws_secret_key>`: Your AWS secret key.
+         * `<bucket_name>`: The name of your S3 bucket.
+         * `<aws_bucket_region>`: The region where your S3 bucket is hosted.
 
 3. Apply the updated values with the following command:
 
-     ```bash
-     helm upgrade appsmith appsmith/appsmith -f values.yaml
-     ```
+      ```bash
+      helm upgrade appsmith appsmith/appsmith -f values.yaml
+      ```
 
 4. Use the following command to list the running pods:
 
-   ```bash
-   kubectl get pods
-   ```
+      ```bash
+      kubectl get pods
+      ```
 
 5. Sync backups to the S3 bucket by running the command:
 
-   ```bash
-   kubectl exec ANY_APPSMITH_POD_NAME -- appsmithctl backup --upload-to-s3
-   ```
-   Replace `ANY_APPSMITH_POD_NAME` with the name of your Appsmith pod
+      ```bash
+      kubectl exec ANY_APPSMITH_POD_NAME -- appsmithctl backup --upload-to-s3
+      ```
+      Replace `ANY_APPSMITH_POD_NAME` with the name of your Appsmith pod
 
 Once the configuration is complete, the Appsmith instance and database backups can be restored from both local storage and the configured S3 bucket.
 
