@@ -5,18 +5,14 @@ description: >-
 sidebar_position: 2
 ---
 
-# Email
+# Other Email Provider
 
-This page guides you through configuring an email service provider on your self-hosted instance. By configuring email, you can leverage the below capabilities:
-
-* Invite users to join your Appsmith workspace by sending email invitations.
-* Reset password using password reset emails.
-
-<VideoEmbed host="youtube" videoId="NOAofPbmJWw" title="Configure Email Service Provider." caption="Configure Email Service Provider" /> 
+This page guides you through configuring an email service provider on your self-hosted instance.
 
 ## Prerequisites
-* A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
-* Account with your email provider.
+
+- This guide applies only to **self-hosted Appsmith** instances. If not already installed, refer to the [installation](/getting-started/setup/installation-guides) guides.
+- Account with your email provider.
 
 ## Configure email
  On Appsmith, you can configure email by using one of the following ways:
@@ -102,7 +98,7 @@ You may encounter some common errors after configuring your email provider:
 
 - [Unable to send emails](/help-and-support/troubleshooting-guide/deployment-errors#unable-to-send-emails)
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you continue to face issues, contact the support team using the chat widget in the bottom right of this page.
 
 ## See also
 

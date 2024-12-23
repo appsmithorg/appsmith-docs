@@ -132,11 +132,8 @@ const sidebars = {
             {
               type: 'category',
               label: 'Custom Domain and SSL Guides',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/instance-configuration/custom-domain/README',
-              },
               items: [
+                'getting-started/setup/instance-configuration/custom-domain/README',
                 'getting-started/setup/instance-configuration/custom-domain/configure-tls',
                 'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
               ],
@@ -144,15 +141,12 @@ const sidebars = {
             {
               type: 'category',
               label: 'Email Setup Guides',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/instance-configuration/email/README',
-              },
               items: [
                 'getting-started/setup/instance-configuration/email/gmail',
                 'getting-started/setup/instance-configuration/email/amazon-ses',
                 'getting-started/setup/instance-configuration/email/microsoft-365',
                 'getting-started/setup/instance-configuration/email/sendgrid',
+                'getting-started/setup/instance-configuration/email/README',
               ],
             },
             {

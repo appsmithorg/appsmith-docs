@@ -7,7 +7,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Configure High Availability on AWS EKS (K8s)</h1>
+ <h1>High Availability on AWS EKS (K8s)</h1>
 
 <Tags
 tags={[
@@ -110,13 +110,12 @@ Follow these steps to configure the Appsmith instance:
      minReplicas: 2
      maxReplicas: 2
    ```
-2. Apply the high availability configuration using Helm:
+2. Apply the high availability configuration using Helm. If the `values.yaml` file is not in the deployment directory, specify its location with the `-f` flag. 
 
    ```bash
    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
    ```
-
-   If the `values.yaml` file is not in the deployment directory, specify its location with the `-f` flag.
+  If you already have an external MongoDB and Redis setup or wish to configure external instances, you can do so. For detailed instructions, refer to the [Set up External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis) and [Set up External Redis](/getting-started/setup/instance-configuration/external-redis) guides.
 
 3. Check the status of the pods:
 

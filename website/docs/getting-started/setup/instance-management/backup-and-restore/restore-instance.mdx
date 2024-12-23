@@ -113,6 +113,8 @@ Follow these steps to restore your Appsmith instance for Kubernetes-based instal
 If you encounter any issues during the restore process, consider the following:
 
 - Ensure you've copied the backup archive to the correct folder within the container or pod.
+- Ensure the S3 bucket has appropriate permissions to list the backup archives from the bucket.
+- Verify that you are on an [Appsmith paid plan](https://www.appsmith.com/pricing) and your plan is active to list backup archives from S3 bucket. For more information, see [License & plans](/getting-started/setup/instance-configuration/admin-settings#license--plans).
 - Verify that you have the required permissions to execute `docker-compose` or `kubectl` commands.
 - If using encrypted backups, confirm that the encryption password and salt match the original values used during backup creation.
 - If restarting the pods fails, check the logs for errors. For more information, see [Get Container logs](/getting-started/setup/instance-management/how-to-get-container-logs) guide.
