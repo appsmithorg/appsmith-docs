@@ -68,7 +68,7 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
         4. Install the Amazon EBS CSI driver:
 
             ```bash
-            helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver aws-ebs-csi-driver
+            helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
             ```
 
         5. Verify the installation of the Amazon EBS CSI driver:

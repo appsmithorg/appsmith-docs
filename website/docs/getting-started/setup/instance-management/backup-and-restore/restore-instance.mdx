@@ -31,7 +31,7 @@ Follow these steps to restore your Appsmith instance for Docker-based installati
 1. Restore the Appsmith instance:
 
    ```bash
-   docker-compose exec appsmith appsmithctl restore
+   docker-compose exec -it appsmith appsmithctl restore
    ```
 
    The command lists available backup archives, with the latest appearing at the bottom.
@@ -44,12 +44,33 @@ Follow these steps to restore your Appsmith instance for Docker-based installati
    If you are restoring an older version of Appsmith, a warning message may appear. Update the `docker-compose.yml` file with the Appsmith image version you wish to restore.
    :::
 
-3. Choose whether to use the existing encryption values or create new ones for the following parameters:
-   - `APPSMITH_ENCRYPTION_PASSWORD`
-   - `APPSMITH_ENCRYPTION_SALT`
+3. Decide how to handle encryption during the restore process.
 
    <ZoomImage src="/img/restore-appsmith-instance-encryption.png" alt="Option to use existing encryption values" caption="Option to use existing encryption values" />
 
+   - **Using existing encryption keys**: You can only use existing encryption keys, if you are restoring the backup to the **same Appsmith container** that generated it.  
+     - When prompted, press `Enter` to reuse the same encryption keys, or type `n` if you wish to manually provide the original encryption key and salt. You may see the following prompt in your terminal:
+
+       ```bash
+       If you are restoring to the same Appsmith deployment which generated the backup archive, you can use the existing encryption keys on the instance.
+       Press Enter to continue with existing encryption keys
+       Or Type "n"/"No" to provide encryption key & password corresponding to the original Appsmith instance that is being restored.
+       n
+       Enter the APPSMITH_ENCRYPTION_PASSWORD: *************
+       Enter the APPSMITH_ENCRYPTION_SALT: *************
+       ```
+
+   - **Providing new encryption keys**: If you are restoring the backup to a **different Appsmith container**, you must provide new encryption details. To do this, navigate to the `/appsmith-stacks/configuration/` folder and update the `docker.env` file with the following parameters:
+
+       ```bash
+       # The values generated and stored during the backup process
+       APPSMITH_ENCRYPTION_PASSWORD=<replace-with-encryption-password>
+       APPSMITH_ENCRYPTION_SALT=<replace-with-encryption-salt>
+       ```
+
+       Replace the placeholders with the actual encryption values used during the backup process:
+       - `<replace-with-encryption-password>`: The encryption password.  
+       - `<replace-with-encryption-salt>`: The encryption salt.  
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetes-commands">
@@ -64,30 +85,39 @@ Follow these steps to restore your Appsmith instance for Kubernetes-based instal
 
 2. Copy the backup archive file to the pod. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
 
-   - For encrypted archive files:
-
      ```bash
      kubectl cp appsmith-backup-TIMESTAMP.tar.gz.enc ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
      ```
 
-   - For unencrypted archive files:
+3. Decide how to handle encryption during the restore process.
 
-     ```bash
-     kubectl cp appsmith-backup-TIMESTAMP.tar.gz ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
-     ```
+   - **Using existing encryption keys**: You can only use existing encryption keys, if you are restoring the backup to the **same Appsmith container** that generated it.  
+     - When prompted, press `Enter` to reuse the same encryption keys, or type `n` if you wish to manually provide the original encryption key and salt. You may see the following prompt in your terminal:
 
-3. Navigate to the `/appsmith-stacks/configuration/` folder and update the `docker.env` file with the following parameters:
+       ```bash
+       If you are restoring to the same Appsmith deployment which generated the backup archive, you can use the existing encryption keys on the instance.
+       Press Enter to continue with existing encryption keys
+       Or Type "n"/"No" to provide encryption key & password corresponding to the original Appsmith instance that is being restored.
+       n
+       Enter the APPSMITH_ENCRYPTION_PASSWORD: *************
+       Enter the APPSMITH_ENCRYPTION_SALT: *************
+       ```
 
-   ```bash
-   # The values generated and stored during the backup process
-   APPSMITH_ENCRYPTION_PASSWORD=APPSMITH_ENCRYPTION_PASSWORD
-   APPSMITH_ENCRYPTION_SALT=APPSMITH_ENCRYPTION_SALT
-   ```
+   - **Providing new encryption keys**: If you are restoring the backup to a **different Appsmith container**, you must provide new encryption details. To do this, navigate to the `/appsmith-stacks/configuration/` folder and update the `docker.env` file with the following parameters:
+
+       ```bash
+       # The values generated and stored during the backup process
+       APPSMITH_ENCRYPTION_PASSWORD=<replace-with-encryption-password>
+       APPSMITH_ENCRYPTION_SALT=<replace-with-encryption-salt>
+       ```
+       Replace the placeholders with the actual encryption values used during the backup process:
+       - `<replace-with-encryption-password>`: The encryption password.  
+       - `<replace-with-encryption-salt>`: The encryption salt.  
 
 4. Restore the backup. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
 
    ```bash
-   kubectl exec ANY_APPSMITH_POD_NAME -- appsmithctl restore
+   kubectl exec -it ANY_APPSMITH_POD_NAME -- appsmithctl restore
    ```
 
 5. Restart the Appsmith pods based on your setup:
