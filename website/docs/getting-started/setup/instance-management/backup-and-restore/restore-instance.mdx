@@ -44,7 +44,12 @@ Follow these steps to restore your Appsmith instance for Docker-based installati
    If you are restoring an older version of Appsmith, a warning message may appear. Update the `docker-compose.yml` file with the Appsmith image version you wish to restore.
    :::
 
-3. Decide how to handle encryption during the restore process.
+3. Copy the backup archive file:
+
+   ```bash
+   docker cp appsmith-backup-TIMESTAMP.tar.gz.enc appsmith:/appsmith-stacks/data/backup/
+   ```
+4. Decide how to handle encryption during the restore process.
 
    <ZoomImage src="/img/restore-appsmith-instance-encryption.png" alt="Option to use existing encryption values" caption="Option to use existing encryption values" />
 
