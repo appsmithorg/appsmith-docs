@@ -80,6 +80,7 @@ const sidebars = {
                   },
                   items: [
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data',
                   ],
                 },
                 'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
