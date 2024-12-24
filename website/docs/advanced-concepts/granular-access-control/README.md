@@ -4,6 +4,7 @@ description: >-
 title: Granular Access Control
 hide_title: true
 ---
+
 <!-- vale off -->
 
 <div className="tag-wrapper">
@@ -34,28 +35,33 @@ Granular Access Control (GAC) in Appsmith allows you to specify precise access p
 * **Users** - Individual users who need access to the Appsmith instance.
 * **User Groups** - Collections of users that allow you to assign roles to multiple users simultaneously. Users in a group inherit the roles assigned to that group.
 
-## Getting started
+## Get started
 
-To help you get started with Granular Access Control in Appsmith, here are some key areas you can explore. Click on the cards to learn more about each aspect.
+Below are key areas you can explore to get started with Granular Access Control in Appsmith. Click on the cards to learn more about each aspect.
 
+---
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-       <div className="containerCol">
-            <a href="/advanced-concepts/granular-access-control/reference/permissions"><strong>Permissions</strong></a>
-       </div>
-       <hr className="gradient-hr" />
-       <div className="containerDescription">
-           Understand the permissions available as part of Granular Access Control.
-       </div>
-   </div>
-   <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-           <a href="/advanced-concepts/granular-access-control/reference/custom-roles"><strong>Custom Role</strong></a>
-       </div>
-       <hr className="gradient-hr" />
-       <div className="containerDescription">
-           Learn how to create Custom role to manage users and user groups in Appsmith.
-       </div>
-   </div>
-</div>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/advanced-concepts/granular-access-control/reference/permissions">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Permissions</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Understand the permissions available as part of Granular Access Control and how to apply them to users and user roles.
+      </div>
+   </a>
 
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/advanced-concepts/granular-access-control/reference/custom-roles">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Custom Role</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Learn how to create custom roles to manage users and user groups within your Appsmith instance.
+      </div>
+   </a>
+</div>
