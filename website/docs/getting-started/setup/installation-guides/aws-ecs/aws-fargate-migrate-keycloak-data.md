@@ -1,7 +1,5 @@
 ---
 description: This page outlines how to migrate Keycloak data for Appsmith Users on AWS ECS using Fargate.
-title: Migrate Keycloak data on Fargate
-hide_title: true
 toc_max_heading_level: 2
 ---
 
@@ -58,6 +56,6 @@ Verify that Keycloak is running properly by logging into the Appsmith dashboard 
 
 If you encounter issues, follow these steps:
 
-- Check the **logs** in the ECS console for detailed error messages that may indicate the root cause.
+- Check the **logs** in the ECS console for detailed error messages that may indicate the root cause. For more information, see [Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs?current-platform=ecs#get-logs) guide.
 
 If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.

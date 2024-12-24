@@ -110,6 +110,6 @@ Follow the below steps to remove the Bind mount:
 
 ## Troubleshooting
 
-If errors occur, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. 
+If errors occur, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) section. 
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
