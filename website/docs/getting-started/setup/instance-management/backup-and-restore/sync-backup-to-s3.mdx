@@ -41,7 +41,7 @@ Before syncing backups to an S3 bucket, ensure the following:
 
 2. Add the following environment variables to the `docker.env` file:
 
-   ```bash
+   ```javascript
    APPSMITH_BACKUP_S3_ACCESS_KEY=<aws_access_key>
    APPSMITH_BACKUP_S3_SECRET_KEY=<aws_secret_key>
    APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket_name>
@@ -56,7 +56,7 @@ Before syncing backups to an S3 bucket, ensure the following:
 3. Run the following command to back up your instance and upload the backup to the configured S3 bucket:
 
    ```bash
-   ddocker-compose exec <container_name> appsmithctl backup --upload-to-s3
+   docker-compose exec <container_name> appsmithctl backup --upload-to-s3
    ```
    Replace the placeholder `<container_name>` with Appsmith container.
 

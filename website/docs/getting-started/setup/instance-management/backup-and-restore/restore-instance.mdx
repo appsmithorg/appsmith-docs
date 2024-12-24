@@ -15,7 +15,7 @@ Before starting, ensure the following:
 
 - Your self-hosted Appsmith instance is running. If you haven’t already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
 - Ensure you have at least 2 GB of free storage available to perform restore tasks.
-- Ensure that you have the appropriate access to execute `docker-compose` or `kubectl` commands, depending on your deployment setup.
+- Ensure that you have the appropriate access to execute `docker-compose`, `kubectl`, or `supervisorctl` commands, depending on your deployment setup.
 - Verify that the backup archive file you want to restore is available.
 
 ## Restore instance backup
@@ -76,6 +76,13 @@ Follow these steps to restore your Appsmith instance for Docker-based installati
        Replace the placeholders with the actual encryption values used during the backup process:
        - `<replace-with-encryption-password>`: The encryption password.  
        - `<replace-with-encryption-salt>`: The encryption salt.  
+   
+5. Restart the Appsmith server to apply changes:
+
+   ```bash
+   docker-compose exec appsmith supervisorctl restart backend
+   ```
+
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetes-commands">
