@@ -72,8 +72,8 @@ These steps add your custom certificates to the Appsmith trust store.
 If you encounter issues while setting up custom CA certificates:  
 
 - **Unable to verify certificate**: Verify that the CA certificate is correctly formatted and added to the appropriate location (`stacks/ca-certs` for Docker or `values.yaml` for Kubernetes).  
-
 - **Changes not applied**: Ensure you've restarted the Appsmith server. If not, try restarting the server.
+- **Certificate no longer trusted**: Removing a certificate from the `ca-certs` folder removes it from the trust store, causing the certificate to no longer be trusted. Verify that you haven’t accidentally removed any required certificates.
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
