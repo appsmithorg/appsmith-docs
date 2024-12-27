@@ -36,7 +36,7 @@ Follow these steps to back up your Appsmith internal database:
 3. Create a backup archive with:
 
       ```bash
-      docker-compose exec appsmith appsmithctl export_db
+      docker-compose exec -it appsmith appsmithctl export_db
       ```
 
       * Ensure that the name of the backup archive (`appsmith-data.archive`) isn't changed. 
@@ -79,7 +79,7 @@ Follow these steps to back up your Appsmith internal database:
 
       ```bash
       #highlight-next-line
-      kubectl exec ANY_APPSMITH_POD_NAME appsmithctl export_db
+      kubectl exec -it ANY_APPSMITH_POD_NAME appsmithctl export_db
       ```
 
       * Replace `ANY_APPSMITH_POD_NAME` with the pod name.
