@@ -57,8 +57,8 @@ Ensure the user Appsmith uses to connect to the database has the necessary permi
 
 Follow these steps to migrate the data from the old MongoDB instance to the new instance:
 
-1. Take a backup of your existing MongoDB instance. For detailed steps, see the [Backup database](/getting-started/setup/instance-management/appsmithctl#backup-database) guide.
-2. Restore the backup to your new MongoDB instance. For detailed steps, see the [Restore database backup](/getting-started/setup/instance-management/appsmithctl#restore-database) guide.
+1. Take a backup of your existing MongoDB instance. For detailed steps, see the [Backup database](/getting-started/setup/instance-management/backup-and-restore/backup-database) guide.
+2. Restore the backup to your new MongoDB instance. For detailed steps, see the [Restore database backup](/getting-started/setup/instance-management/backup-and-restore/restore-database) guide.
 
 ## Connect Appsmith to external MongoDB
 

@@ -94,7 +94,7 @@ Follow the below steps to migrate data:
    ```bash
    appsmithctl restore
    ```
-   For more information, see [Restore Appsmith](/getting-started/setup/instance-management/appsmithctl#restore-instance).
+   For more information, see [Restore Appsmith](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
 6. Verify the Appsmith service by logging into your Appsmith account and verifying your apps.
 
 ## Remove Bind mount storage

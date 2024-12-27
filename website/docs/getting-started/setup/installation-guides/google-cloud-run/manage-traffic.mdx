@@ -44,7 +44,7 @@ High availability for Appsmith relies on correctly configured external databases
 
 Appsmith requires MongoDB to store application data. To use an external MongoDB instance with Appsmith, follow the steps below to back up your data, configure the new MongoDB instance, and restore your Appsmith data if needed.
 
-1. Take a backup of your existing MongoDB instance before proceeding. For more information, see [How to take back up of MongoDB data](/getting-started/setup/instance-management/appsmithctl#backup-database) guide.
+1. Take a backup of your existing MongoDB instance before proceeding. For more information, see [How to take back up of MongoDB data](/getting-started/setup/instance-management/backup-and-restore/backup-database) guide.
 
 2. If you don't already have a MongoDB instance, create a new one. You can either use an existing instance or set up a new one through your infrastructure or a cloud provider like MongoDB Atlas.
 
@@ -54,7 +54,7 @@ Appsmith requires MongoDB to store application data. To use an external MongoDB 
    ```
 4. Assign or verify that the MongoDB user account Appsmith uses has `readWrite` and `clusterMonitor` roles assigned.
 
-5. Restore your Appsmith backup you took earlier to the new MongoDB instance. For more information, see the [Restore database](/getting-started/setup/instance-management/appsmithctl#restore-database) guide.
+5. Restore your Appsmith backup you took earlier to the new MongoDB instance. For more information, see the [Restore database](/getting-started/setup/instance-management/backup-and-restore/restore-database) guide.
 
 6. Once your MongoDB setup is complete, note down the connection string as you’ll need it in the [Configure High Availability](#configure-high-availability) section.
 
