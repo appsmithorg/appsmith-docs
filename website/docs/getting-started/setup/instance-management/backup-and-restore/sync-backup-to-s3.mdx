@@ -56,9 +56,8 @@ Before syncing backups to an S3 bucket, ensure the following:
 3. Run the following command to back up your instance and upload the backup to the configured S3 bucket:
 
    ```bash
-   docker-compose exec <container_name> appsmithctl backup --upload-to-s3
+   docker-compose exec -it appsmith appsmithctl backup --upload-to-s3
    ```
-   Replace the placeholder `<container_name>` with Appsmith container.
 
 Once the configuration is complete, the Appsmith instance and database backups can be restored from both local storage and the configured S3 bucket.
 

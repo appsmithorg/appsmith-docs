@@ -29,7 +29,7 @@ Follow these steps to back up your Appsmith internal database:
 2. Get your encryption details with:
 
       ```bash
-      docker-compose exec appsmith cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
+      docker-compose exec -it appsmith cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
       ```
       Store the encryption details securely, as you need them for restoring the Appsmith database.
 

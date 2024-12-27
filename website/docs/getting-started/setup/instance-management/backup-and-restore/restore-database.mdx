@@ -37,7 +37,7 @@ Follow these steps to restore Appsmith database backup for Docker-based installa
 2. Import the backup data:
 
    ```bash
-   docker-compose exec appsmith appsmithctl import_db
+   docker-compose exec -it appsmith appsmithctl import_db
    ```
 
 3. Copy the `docker.env` file and add the path for the `docker.env` file if not present in the installation folder.
@@ -49,7 +49,7 @@ Follow these steps to restore Appsmith database backup for Docker-based installa
 4. Restart the Appsmith server to apply changes:
 
    ```bash
-   docker-compose exec appsmith supervisorctl restart backend
+   docker-compose exec -it appsmith supervisorctl restart backend
    ```
 
 </TabItem>
@@ -81,7 +81,7 @@ Follow these steps to restore Appsmith database backup for Kubernetes installati
 4. Import the backup data. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
 
    ```bash
-   kubectl exec ANY_APPSMITH_POD_NAME -- appsmithctl import_db
+   kubectl exec -it ANY_APPSMITH_POD_NAME -- appsmithctl import_db
    ```
 
 5. Restart the Appsmith pods based on your setup:
