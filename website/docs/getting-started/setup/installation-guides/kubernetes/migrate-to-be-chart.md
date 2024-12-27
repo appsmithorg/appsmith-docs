@@ -129,7 +129,7 @@ To ensure that the Commercial Edition Helm chart runs, you need to make some cha
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
    :::caution Attention
-   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls) section.
    :::
 
    ```yaml
