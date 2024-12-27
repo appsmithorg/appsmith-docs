@@ -25,11 +25,11 @@ This page shows how to configure Appsmith on Azure Container Instance for using 
 ## Prerequisites
 
 - [Azure account](https://portal.azure.com/#home) with permission to create and manage PostgreSQL resources.
-- Ensure that you have taken a manual backup for your instance. See [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#backup-instance)
+- Ensure that you have taken a manual backup for your instance. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance)
 
 ## Set up PostgreSQL in Azure
 
-Follow these steps to set up a PostgreSQL instance in Azure. It is recommended to create PostgreSQL in the same region and availability zone as your Appsmith deployment for optimized performance.
+Follow these steps to set up a PostgreSQL instance in Azure. It's recommended to create PostgreSQL in the same region and availability zone as your Appsmith deployment for optimized performance.
 
 
 
