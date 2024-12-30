@@ -1288,16 +1288,6 @@
       "source": "/getting-started/setup/upgrade-from-community-edition",
       "destination": "/getting-started/setup/instance-management#upgrade-to-commercial-edition",
       "permanent": true
-    },
-    {
-      "source": "/getting-started/setup/instance-management/appsmithctl#schedule-automatic-backups",
-      "destination": "/getting-started/setup/environment-variables#automatic-backups",
-      "permanent": true
-    },
-    {
-      "source": "/getting-started/setup/instance-management/appsmithctl#sync-backup-to-s3-bucket",
-      "destination": "/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3",
-      "permanent": true
     }
   ]
 }
