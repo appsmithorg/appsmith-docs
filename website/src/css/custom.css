@@ -321,6 +321,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  height: 60px;
 }
 
 .containerAnchor {

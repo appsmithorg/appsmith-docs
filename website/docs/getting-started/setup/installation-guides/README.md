@@ -19,7 +19,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Docker offers a quick and simple setup for deploying Appsmith in isolated containers, ideal for small-scale environments or testing.
+         Deploy Appsmith as a single container using Docker. Ideal for local testing, development, and small-scale use cases.
       </div>
    </a>
 
@@ -32,7 +32,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Kubernetes enables you to deploy Appsmith at scale with high availability, load balancing, and seamless resource management across a cluster.
+         Deploy Appsmith on Kubernetes for a production-grade setup with automatic scaling, load balancing, and high availability.
       </div>
    </a>
 </div>
@@ -52,7 +52,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Deploy Appsmith using Amazon Machine Images (AMI) for easy and fast provisioning of instances on AWS.
+         Use pre-configured Amazon Machine Images (AMI) for an easy and consistent Appsmith deployment on AWS EC2 instances.
       </div>
    </a>
 
@@ -65,7 +65,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Host Appsmith on AWS EC2 instances using Elastic Container Service (ECS) for reliable, scalable, and flexible container management.
+         Deploy Appsmith using AWS Elastic Container Service (ECS) on EC2 instances for reliable and flexible container management.
       </div>
    </a>
 </div>
@@ -80,7 +80,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Use AWS Fargate for serverless container management, allowing you to run Appsmith without the need to manage the underlying EC2 instances.
+         Run Appsmith on AWS ECS with Fargate for a serverless container experience without managing the underlying infrastructure.
       </div>
    </a>
 
@@ -93,7 +93,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Deploy Appsmith on Azure Container Instances for a fast and scalable container deployment option with minimal configuration.
+         Deploy Appsmith on Azure Container Instances (ACI) for a simplified container setup with minimal operational overhead.
       </div>
    </a>
 </div>
@@ -108,7 +108,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Deploy Appsmith using Google Cloud Run, a fully managed serverless solution that automatically scales your containerized applications.
+         Deploy Appsmith using Google Cloud Run, a serverless platform managed by Google that automatically scales your containerized applications.
       </div>
    </a>
 
@@ -121,7 +121,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         A detailed guide for deploying Appsmith on DigitalOcean, a cloud hosting service known for simplicity and cost-effectiveness.
+         Follow this guide to deploy Appsmith on DigitalOcean, a cost-effective and developer-friendly cloud hosting solution.
       </div>
    </a>
 </div>
@@ -136,7 +136,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Use Ansible for automated deployment of Appsmith across your infrastructure, streamlining the setup process with minimal manual intervention.
+         Automate the deployment of Appsmith with Ansible, enabling consistent configurations across your infrastructure.
       </div>
    </a>
 </div>
