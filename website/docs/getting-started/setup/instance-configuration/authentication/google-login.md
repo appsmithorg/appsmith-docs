@@ -113,7 +113,7 @@ After the Appsmith instance restarts, try logging in again to your account. You'
 
 
 
-## Further reading
+## See also
 
 - [Instance Configuration](/getting-started/setup/instance-configuration)
 - [Instance Management](/getting-started/setup/instance-management)

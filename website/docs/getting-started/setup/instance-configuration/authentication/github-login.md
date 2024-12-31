@@ -83,7 +83,7 @@ After the Appsmith instance restarts, log in to your account to see the GitHub L
 
 
 
-## Further reading
+## See also
 
 - [Instance Configuration](/getting-started/setup/instance-configuration)
 - [Instance Management](/getting-started/setup/instance-management)

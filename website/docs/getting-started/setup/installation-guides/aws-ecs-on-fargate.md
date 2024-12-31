@@ -301,7 +301,7 @@ If you are facing issues during deployment, please refer to the guide on [troubl
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-## Further reading
+## See also
 
 - [Configure ECS Installation](/getting-started/setup/instance-configuration#configure-ecs-installations)
 - [Manage instance](/getting-started/setup/instance-management/)

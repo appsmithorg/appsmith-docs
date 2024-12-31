@@ -229,7 +229,7 @@ docker-compose up -d
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, reach out to the support team via the chat widget on this page.
 
-## Further reading
+## See also
 
 - [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
 - [Manage Appsmith instance](/getting-started/setup/instance-management)
