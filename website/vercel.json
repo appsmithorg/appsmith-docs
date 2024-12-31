@@ -1271,12 +1271,12 @@
     },
     {
       "source": "/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso",
-      "destination": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql",
+      "destination": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql-optional",
       "permanent": true
     },
     {
       "source": "/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs",
-      "destination": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql",
+      "destination": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql-optional",
       "permanent": true
     },
     {
