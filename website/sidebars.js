@@ -873,13 +873,18 @@ const sidebars = {
         'product/support',
         {
           type: 'link',
-          label: 'Release Notes', // The link label
-          href: 'https://github.com/appsmithorg/appsmith/releases', // The external URL
+          label: 'Privacy Policy',
+          href: 'https://www.appsmith.com/privacy-policy',
         },
         {
           type: 'link',
-          label: 'Contribute', // The link label
-          href: 'https://github.com/appsmithorg/appsmith/blob/release/CONTRIBUTING.md', // The external URL
+          label: 'Release Notes',
+          href: 'https://github.com/appsmithorg/appsmith/releases',
+        },
+        {
+          type: 'link',
+          label: 'Contribute',
+          href: 'https://github.com/appsmithorg/appsmith/blob/release/CONTRIBUTING.md',
         },
       ],
     }, // Product End
