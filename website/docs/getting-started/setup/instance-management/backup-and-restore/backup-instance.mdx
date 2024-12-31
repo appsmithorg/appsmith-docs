@@ -1,0 +1,89 @@
+---
+description: Learn how to back up your Appsmith instance using the `appsmithctl` command-line utility.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Backup Instance
+
+When you create your Appsmith instance backup, a backup is created that includes database, configuration, and Git data. This page explains how to back up your self-hosted Appsmith instance using the `appsmithctl` utility.
+
+## Prerequisites
+
+Before starting, ensure the following:
+
+- Your self-hosted Appsmith instance is running. If you haven’t already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+- Ensure you have at least 2 GB of free storage available to perform backup tasks.
+- Ensure you have the appropriate access to execute `docker-compose` or `kubectl` commands, depending on your deployment setup.
+
+## Create instance backup
+
+You can create a backup archive of your Appsmith instance, including the database, `docker.env`, and Git data. Follow the steps below based on your deployment environment:
+
+<Tabs queryString="current-command-type">
+
+<TabItem label="Docker" value="docker-commands">
+
+1. Navigate to the directory containing the `docker-compose.yml` file.
+
+2. Create a backup archive with encryption by running:
+
+   ```bash
+   docker-compose exec -it appsmith appsmithctl backup
+   ```
+
+   - When prompted, enter a password for encryption and ensure you remember it. This password is required to restore the backup.
+   - The backup file is saved in `/appsmith-stacks/data/backup/` in the container. On your local machine, you can find it at `./stacks/data/backup/`.
+
+3. If you cannot access the backup file or have a different volume configuration, copy the archive file to your host disk:
+
+   ```bash
+   docker cp appsmith:/appsmith-stacks/data/backup/appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc .
+   ```
+   Replace `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc` with the backup file name. After completing this step, the backup archive will be available in your current directory.
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+1. Retrieve the name of the Appsmith pod (replace `APPSMITH_NAMESPACE` with your namespace):
+
+   ```bash
+   kubectl get pods -n APPSMITH_NAMESPACE
+   ```
+
+2. Create a backup archive with encryption by running:
+
+   ```bash
+   # Replace `ANY_APPSMITH_POD_NAME` with your Appsmith pod name
+   kubectl exec -it ANY_APPSMITH_POD_NAME -- appsmithctl backup
+   ```
+
+   - When prompted, enter a password for encryption and ensure you remember it. This password is required to restore the backup.
+   - The backup file is stored in `/appsmith-stacks/data/backup/`.
+
+3. Copy the backup file to your local machine:
+
+   ```bash
+   kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/APPSMITH_BACKUP_FILENAME -n APPSMITH_NAMESPACE LOCAL_BACKUP_FILENAME
+   ```
+
+   Replace placeholders in capitals with appropriate values. After completing this step, the backup archive will be available in your current directory.
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you encounter any issues during the restore process, consider the following:
+
+- Verify that you have the required permissions to execute `docker-compose` or `kubectl` commands.
+
+If you continue to face issues, contact support using the chat widget available in the bottom-right corner of this page.
+
+## See also
+* [Schedule automatic backups](/getting-started/setup/environment-variables#automatic-backups): You can configure Appsmith to create backups automatically by adding a cron expression to your environment configuration.
+
+

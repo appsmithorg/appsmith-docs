@@ -1,0 +1,107 @@
+---
+description: Learn how to back up your Appsmith instance's data using the `appsmithctl` command-line utility.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Backup Database
+
+When you create a backup of your Appsmith instance, it includes the database, configuration, and Git data. To back up your entire Appsmith instance, refer to the [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide. You may also choose to back up only the Appsmith data. This page explains how to back up Appsmith data specifically for your self-hosted Appsmith instance using the `appsmithctl` utility. 
+
+## Prerequisites
+
+Before starting, ensure the following:
+
+- Your self-hosted Appsmith instance is running. If you haven’t already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+- Ensure you have at least 2 GB of free storage available to perform backup tasks.
+- Ensure you have the appropriate access to execute `docker-compose` or `kubectl` commands, depending on your deployment setup.
+
+## Create database backup
+
+Follow these steps to back up your Appsmith internal database:
+
+<Tabs queryString="current-command-type">
+<TabItem label="Docker" value="docker-commands">
+
+1. Go to the directory that has the `docker-compose.yml` file.
+
+2. Get your encryption details with:
+
+      ```bash
+      docker-compose exec -it appsmith cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
+      ```
+      Store the encryption details securely, as you need them for restoring the Appsmith database.
+
+3. Create a backup archive with:
+
+      ```bash
+      docker-compose exec -it appsmith appsmithctl export_db
+      ```
+
+      * Ensure that the name of the backup archive (`appsmith-data.archive`) isn't changed. 
+      * The backup archive file is stored in the `/appsmith-stacks/data/backup/` folder in your container directory. You can access it at `./stacks/data/backup/` on your local machine.
+
+4. If you can't access or have a different volume configuration, copy the archive file to your host disk with:
+
+      ```bash
+      docker cp appsmith:/appsmith-stacks/data/backup/appsmith-data.archive .
+      ```
+      This command copies the backup archive into your current directory.
+
+5. To recreate the same environment elsewhere, copy the `docker.env` file with:
+
+      ```bash
+      docker cp appsmith:/appsmith-stacks/configuration/docker.env .
+      ```
+      This command copies the `docker.env` file into your current directory.
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+1. Get the name of the Appsmith pod with:
+
+      ```bash
+      kubectl get pods
+      ```
+
+2. Get your encryption details with:
+
+      ```bash
+      #highlight-next-line
+      kubectl exec ANY_APPSMITH_POD_NAME -- cat /appsmith-stacks/configuration/docker.env | grep ENCRYPTION
+      ```
+      * Replace `ANY_APPSMITH_POD_NAME` with the pod name. 
+      * Store the encryption details securely, as you need them for restoring the Appsmith database.
+
+3. Create a database backup with:
+
+      ```bash
+      #highlight-next-line
+      kubectl exec -it ANY_APPSMITH_POD_NAME appsmithctl export_db
+      ```
+
+      * Replace `ANY_APPSMITH_POD_NAME` with the pod name.
+      * Ensure that the name of the backup archive (`appsmith-data.archive`) isn't changed. 
+      * The archive file is stored in the container directory `/appsmith-stacks/data/backup/`.
+
+4. Copy the archive file with:
+
+      ```bash
+      #highlight-next-line
+      kubectl cp ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/appsmith-data.archive appsmith-data.archive
+      ```
+      Replace `ANY_APPSMITH_POD_NAME` with the pod name.
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you encounter any issues during the restore process, consider the following:
+
+- Verify that you have the required permissions to execute `docker-compose` or `kubectl` commands.
+
+If you continue to face issues, contact support using the chat widget available in the bottom-right corner of this page.

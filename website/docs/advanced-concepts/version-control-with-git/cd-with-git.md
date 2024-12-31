@@ -36,7 +36,7 @@ The integration is service-agnostic and is **compatible with any CI/CD tool** ca
 <div className="containerColumnSampleApp columnGrid column-one">
        <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong>GitHub Actions</strong></a>
-       </div> <hr/>
+       </div> <hr className="gradient-hr" />
        <div className="containerDescription">GitHub Actions is an automation tool integrated with GitHub repositories, enabling you to automate workflows for building, testing, and deploying code directly from your repository.</div>
        <div className="containerTutorialLink"></div>
    </div>
@@ -50,7 +50,7 @@ The integration is service-agnostic and is **compatible with any CI/CD tool** ca
        </div> <br/>
         <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-github-actions"><strong>GitHub Actions</strong></a>
-       </div> <hr/>
+       </div> <hr className="gradient-hr" />
        <div className="containerDescription">GitHub Actions is an automation tool integrated with GitHub repositories, enabling you to automate workflows for building, testing, and deploying code directly from your repository.</div>
        <div className="containerTutorialLink"></div>
    </div>
@@ -60,7 +60,7 @@ The integration is service-agnostic and is **compatible with any CI/CD tool** ca
        </div> <br/>
        <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-bitbucket"><strong>Bitbucket Pipelines</strong></a>
-       </div> <hr/>
+       </div> <hr className="gradient-hr" />
        <div className="containerDescription">Bitbucket Pipelines is a CI/CD service built into Bitbucket Cloud that enables you to build, test, and deploy code directly from your Bitbucket repository</div>
        <div className="containerTutorialLink"></div>
    </div>
@@ -70,7 +70,7 @@ The integration is service-agnostic and is **compatible with any CI/CD tool** ca
        </div> <br/>
        <div className="containerCol">
            <a href="/advanced-concepts/version-control-with-git/cd-with-gitlab"><strong>GitLab CI/CD</strong></a>
-       </div> <hr/>
+       </div> <hr className="gradient-hr" />
        <div className="containerDescription">GitLab CI/CD is a built-in continuous integration and continuous deployment service offered by GitLab, allowing developers to automate the testing and delivery of their code.</div>
        <div className="containerTutorialLink">
        </div>   

@@ -28,13 +28,4 @@ Appsmith makes it easy to build a UI that talks to any datasource. You can creat
    - [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
    - [Self-Host Appsmith](/getting-started/setup): Deploy Appsmith on your local machine or private server.
 
-2. Take the quick tutorial to learn the basics
-
-<div className="containerGridSampleApp">
-   <div className=" containerColumnSampleApp columnGrid column-one">
-      <b><a href="/getting-started/tutorials/start-building">Build your first app</a></b>
-      <div className="containerDescription">A quickstart guide to help you build an app using Appsmith</div>
-</div>
-     <div className="columnGrid column-two" style={{margin: "10px"}}>
-    </div>
-</div>
+2. Take the quick tutorial to learn the basics to help you build an app using Appsmith. For more information, see [Build your first app](/getting-started/tutorials/start-building).

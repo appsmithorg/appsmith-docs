@@ -1,15 +1,35 @@
-# Configure Azure Container Instance for SAML SSO
+---
+description: This page provides information on configuring self-hosted Appsmith instance using Admin settings UI.
+title: Configure PostgreSQL for SAML SSO (Azure)
+hide_title: true
+toc_max_heading_level: 2
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Configure PostgreSQL for SAML SSO (Azure)</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page shows how to configure Appsmith on Azure Container Instance for using Security Assertion Markup Language (SAML) Single Sign-On (SSO).
 
 ## Prerequisites
 
 - [Azure account](https://portal.azure.com/#home) with permission to create and manage PostgreSQL resources.
-- Ensure that you have taken a manual backup for your instance. See [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#backup-instance)
+- Ensure that you have taken a manual backup for your instance. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance)
 
 ## Set up PostgreSQL in Azure
 
-Follow these steps to set up a PostgreSQL instance in Azure. It is recommended to create PostgreSQL in the same region and availability zone as your Appsmith deployment for optimized performance.
+Follow these steps to set up a PostgreSQL instance in Azure. It's recommended to create PostgreSQL in the same region and availability zone as your Appsmith deployment for optimized performance.
 
 
 
@@ -209,7 +229,7 @@ docker-compose up -d
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, reach out to the support team via the chat widget on this page.
 
-## Further reading
+## See also
 
 - [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
 - [Manage Appsmith instance](/getting-started/setup/instance-management)

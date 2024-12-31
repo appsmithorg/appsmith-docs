@@ -145,7 +145,7 @@ Follow the below steps to install the Helm chart with the old configuration:
   2. After installation, verify that the pods are running. Use the below command to verify the new pod created by the Helm chart:
 
     :::caution Attention
-      Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+      Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls) section.
     :::
 
       ```bash

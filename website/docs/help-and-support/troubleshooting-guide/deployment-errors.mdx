@@ -65,7 +65,7 @@ To resolve the error, you may choose one of the below options:
 
 - If you want to overwrite the previous Appsmith installation, delete the `/stacks` folder from the installation directory, and re-run the Docker command.
 - If you want to keep the previous Appsmith installation, create a new installation directory and follow the [installation](/getting-started/setup/installation-guides/docker#install-appsmith) instructions.
-- If you want to use the Appsmith installation after restoring the data, go to the `docker.env` file and update the encryption password (`APPSMITH_ENCRYPTION_PASSWORD`)and encryption salt (`APPSMITH_ENCRYPTION_SALT`) with the values you copied during the backup process. For more information, see [Backup Database](/getting-started/setup/instance-management/appsmithctl#backup-database).
+- If you want to use the Appsmith installation after restoring the data, go to the `docker.env` file and update the encryption password (`APPSMITH_ENCRYPTION_PASSWORD`)and encryption salt (`APPSMITH_ENCRYPTION_SALT`) with the values you copied during the backup process. For more information, see [Backup Database](/getting-started/setup/instance-management/backup-and-restore/backup-database).
 
 ## SSL/TLS certification errors
 
@@ -96,7 +96,7 @@ Database connection failures can occur due to issues with database service logs,
 Follow the below steps to resolve the error:
 
 - Look for any errors in the database service logs that might indicate connection issues.
-- Verify that environment variables related to the database configuration are set correctly, such as APPSMITH_MONGODB_URI.
+- Verify that environment variables related to the database configuration are set correctly, such as APPSMITH_DB_URL.
 - Ensure that the database is reachable from the Appsmith server if you're using an external database.
 
 ## Environment-specific problems

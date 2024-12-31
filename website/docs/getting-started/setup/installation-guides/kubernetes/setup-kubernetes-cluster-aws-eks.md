@@ -3,9 +3,9 @@ description: Deploy Appsmith on a Kubernetes cluster
 toc_max_heading_level: 2
 ---
 
-# Set up Kubernetes Cluster on AWS-EKS
+# Set up Kubernetes cluster on AWS EKS
 
-This page provides steps to set up a Kubernetes Cluster with the persistent volume on AWS-EKS.
+This page provides steps to set up a Kubernetes Cluster with the persistent volume on Amazon Elastic Kubernetes Service (EKS).
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
         4. Install the Amazon EBS CSI driver:
 
             ```bash
-            helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver aws-ebs-csi-driver
+            helm upgrade --install aws-ebs-csi-driver --namespace kube-system aws-ebs-csi-driver/aws-ebs-csi-driver
             ```
 
         5. Verify the installation of the Amazon EBS CSI driver:

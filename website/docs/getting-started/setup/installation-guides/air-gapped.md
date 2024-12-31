@@ -29,7 +29,7 @@ When using the airgapped edition, these features will be unavailable or have lim
 Updates for the airgapped edition are specifically packaged and released once every quarter. Since the air-gapped servers cannot access the internet, these updates need to be manually downloaded from an authorized source with internet access and transferred to the isolated network, where they are applied to the Appsmith instance. Organizations using airgapped edition should plan for a regular update cycle to ensure the platform remains secure and up to date.
 
 :::info
-Always [backup your instance](/getting-started/setup/instance-management/appsmithctl) before attempting an update to protect your applications.
+Always [backup your instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) before attempting an update to protect your applications.
 :::
 
 ## Conclusion

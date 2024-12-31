@@ -1,7 +1,7 @@
 ---
 description: Follow the guide to migrate to the Appsmith Commercial Edition running on v3 Helm chart.
 ---
-# Migrate to Commercial Edition Helm Chart v3
+# Upgrade to Commercial Edition Helm Chart v3
 
 Follow the below guide to migrate to the Commercial Edition running on Helm chart (`helm-ee.appsmith.com`). This version includes Horizontal Pod Auto Scaling (HPA) capability, which enables Appsmith pods to scale automatically based on the current workload.
 
@@ -129,7 +129,7 @@ To ensure that the Commercial Edition Helm chart runs, you need to make some cha
 3. Add the license key and a few other variables related to Keycloak to `applicationConfig` section:
 
    :::caution Attention
-   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls) section.
    :::
 
    ```yaml

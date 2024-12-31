@@ -3,113 +3,146 @@ description: Guide on how to get container logs for different Appsmith deploymen
 sidebar_position: 6
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Get Container Logs
 
-## Docker
+This page provides instructions on how to access logs for Appsmith containers deployed on different platforms.
 
-This guide applies to docker-compose and docker installations.
+## Prerequisites
 
-Appsmith logs can be found in the stacks directory on the docker host
+- Self-hosted Appsmith instance. If not installed yet, see the [installation guides](/getting-started/setup/installation-guides) for installing Appsmith.
 
-`stacks/logs/`
+## Get logs
 
-The logs directory contains the sub-directories below for each **service**:
+Follow the instructions for your deployment platform to access and get logs.
 
-`appsmithctl backend cron editor mongodb redis rts`
+<Tabs queryString="current-platform">
 
-If you don’t remember where your `stacks` directory is located, run
+  <TabItem label="Docker" value="docker">
 
-`docker inspect -f '{{ (index .Mounts 0).Source }}' <your-appsmith-container-id>`
+Follow these steps to access logs for Appsmith containers running on Docker:
 
-Alternatively, you can run the commands below on your shell to create a zip file containing the logs.
+1. 	Go to the `stacks/logs/` directory on the Docker host where the Appsmith logs are located. If you’re unsure of the `stacks` directory location, run the following command to find it:
 
-```bash
-appsmithContainerID=<your appsmith container id>
-targetZipFile=<path to target zip file>
-service=<choose one of: appsmithctl backend cron editor mongodb redis rts | leave blank for all services>
-stacksPath=$(docker inspect -f '{{ (index .Mounts 0).Source }}' $appsmithContainerID)
-zip -r $targetZipFile "$stacksPath/logs/$service" 
-```
+    ```bash
+    docker inspect -f '{{ (index .Mounts 0).Source }}' <your-appsmith-container-id>
+    ```
 
-## Docker in remote servers
+2. The `logs` directory contains sub-directories for each service: `appsmithctl`, `backend`, `cron`, `editor`, `mongodb`, `redis`, `rts`. You can either copy the logs for each service manually or create a zip file containing the logs. To create a zip file:
 
-- SSH into the remote server and note the absolute path of the `stacks` directory.
-- If you don’t remember the path, use the `docker inspect` command as shown in the above section to locate it.
-- Exit from the remote server
-- In your local shell, run the command
+    ```bash
+    appsmithContainerID=<your appsmith container id>
+    targetZipFile=<path to target zip file>
+    service=<choose one of: appsmithctl backend cron editor mongodb redis rts | leave blank for all services>
+    stacksPath=$(docker inspect -f '{{ (index .Mounts 0).Source }}' $appsmithContainerID)
+    zip -r $targetZipFile "$stacksPath/logs/$service"
+    ```
 
-```bash
-scp -r -C -i <your-ssh-key>.pem <user>@<host-ip>:<abs-path-to-stacks-dir>/logs/<service> <target-local-dir>
-```
+  </TabItem>
 
-### AWS AMI
+  <TabItem label="Kubernetes" value="kubernetes">
 
-```bash
-scp -r -C -i <your-ssh-key>.pem appsmith@<host-ip>:/home/appsmith/appsmith/stacks/logs/<service> <target-local-dir>
-```
+Follow these steps to access logs for Appsmith containers running on Kubernetes:
 
-### DigitalOcean droplet
+1. Run the following command to get the name and namespace of the Appsmith POD:
 
-```bash
-scp -r -C root@<host-ip>:/root/appsmith/stacks/logs/<service> <target-local-dir>
-```
+    ```bash
+    kubectl get pods -A
+    ```
 
-## Kubernetes
+2. Run the following command to copy the logs:
 
-1. Run the command and note the name and namespace of the Appsmith POD.
-    
-    `kubectl get pods -A`
-    
-2. Run the command
+    ```bash
+    kubectl cp <namespace>/<appsmith-pod-name>:/appsmith-stacks/logs/<service> <target-local-dir>
+    ```
 
-```bash
-kubectl cp <namespace>/<appsmith-pod-name>:/appsmith-stacks/logs/<service> <target-local-dir>
-```
+  </TabItem>
 
-## ECS
+  <TabItem label="AWS ECS" value="ecs">
 
-:::info Important
-Please switch to the old AWS console to follow the instructions here
-:::
+Follow these steps to access logs for Appsmith containers running on AWS ECS:
 
-1. Navigate to your ECS cluster in the AWS console
+1. Log into your Amazon Web Console, switch to old AWS console, and go to your ECS cluster in the AWS console.
 
-![Navigate to the ECS cluster](/img/navigate-ecs-cluster.png)
+    <ZoomImage src="/img/navigate-ecs-cluster.png" alt="Navigate to the ECS cluster" caption="Navigate to the ECS cluster" />
 
-2. Select the service running Appsmith, and switch to the **Tasks** tab. Click the task running the Appsmith container.
-**Important** You may need to switch the **task filter** to see the **Stopped Tasks** to find the task where the issue occurred if ECS rolled out a new task after the crash.
+2. Select the service running Appsmith, and switch to the **Tasks** tab. Click the task running the Appsmith container. **Important**: You may need to switch the **task filter** to see the **Stopped Tasks** to find the task where the issue occurred if ECS rolled out a new task after the crash.
 
-![Select service and switch to the tasks tab](/img/select-service.png)
+    <ZoomImage src="/img/select-service.png" alt="Select service and switch to the tasks tab" caption="Select service and switch to the tasks tab" />
 
-3. In the Tasks page, Find **appsmith** in the **Container** Section and expand it, to find the **Log Configuration,** and click **view logs in CloudWatch**
+3. In the Tasks page, find **appsmith** in the **Container** section, expand it, find the **Log Configuration**, and click **view logs in CloudWatch**.
 
-![Log configuration](/img/log-configuration.png)
+    <ZoomImage src="/img/log-configuration.png" alt="Log configuration" caption="Log configuration" />
 
-4. In the CloudWatch Logs page, click the **Actions** button and hit `download search results in CSV`, to download the logs.
+4. In the CloudWatch Logs page, click the **Actions** button and hit `download search results in CSV` to download the logs.
 
-![CloudWatch logs](/img/cloudwatch-logs.png)
+    <ZoomImage src="/img/cloudwatch-logs.png" alt="CloudWatch logs" caption="CloudWatch logs" />
 
-## Azure Container Instance (ACI)
+  </TabItem>
 
-1. Navigate to your Storage Accounts in the Azure portal
+  <TabItem label="AWS AMI" value="aws-ami">
 
-    ![Storage account Azure portal](/img/storage-account-azure-portal.png)
+Follow these steps to access logs for Appsmith containers running on AWS AMI:
+
+1. SSH into the remote server and note the absolute path of the `stacks` directory.
+2. If you don’t remember the path, use the `docker inspect` command as shown in the Docker section to locate it.
+3. Exit from the remote server.
+4. In your local shell, run the following command to copy the logs:
+
+    ```bash
+    scp -r -C -i <your-ssh-key>.pem appsmith@<host-ip>:/home/appsmith/appsmith/stacks/logs/<service> <target-local-dir>
+    ```
+
+  </TabItem>
+
+  <TabItem label="DigitalOcean" value="digitalocean">
+
+Follow these steps to access logs for Appsmith containers running on DigitalOcean:
+
+1. SSH into the remote server and note the absolute path of the `stacks` directory.
+2. If you don’t remember the path, use the `docker inspect` command as shown in the Docker section to locate it.
+3. Exit from the remote server.
+4. In your local shell, run the following command to copy the logs:
+
+    ```bash
+    scp -r -C root@<host-ip>:/root/appsmith/stacks/logs/<service> <target-local-dir>
+    ```
+
+  </TabItem>
+
+  <TabItem label="Azure Container Instance" value="aci">
+
+Follow these steps to access logs for Appsmith containers running on Azure Container Instances:
+
+1. Navigate to your Storage Accounts in the Azure portal.
+
+        <ZoomImage src="/img/storage-account-azure-portal.png" alt="Storage account Azure portal" caption="Storage account in Azure portal" />
+
 2. Click the File Share mounted to the Appsmith ACI instance.
 
-    ![Click the File Share](/img/file-share-mounted.png)
-3. Click Browse on the sidebar menu
+        <ZoomImage src="/img/file-share-mounted.png" alt="Click the File Share" caption="Click the File Share" />
 
-    ![Click to Browse](/img/browse-on-sidebar.png)
-4. In the file share browser, open the `logs` directory.
+3. Click Browse on the sidebar menu.
+
+        <ZoomImage src="/img/browse-on-sidebar.png" alt="Click to Browse" caption="Click to Browse" />
+
+4. In the file share browser, open the `logs/` directory.
 5. Open the directory for the service for which the logs are required.
 
-    ![Open logs directory](/img/select-the-log-directory.png)
-6. Select the log file and hit download.
+        <ZoomImage src="/img/select-the-log-directory.png" alt="Select the log directory" caption="Select the log directory" />
 
-    ![Download the log file](/img/download-log-file.png)
+6. Select the log file and click download.
 
-You may also choose to access the logs of the container instance using the [az container logs](https://learn.microsoft.com/en-us/cli/azure/container#az_container_logs) command.
+        <ZoomImage src="/img/download-log-file.png" alt="Download the log file" caption="Download the log file" />
 
-```bash
-az container logs --resource-group myResourceGroup --name mycontainer
-```
+        You may also choose to access the logs of the container instance using the [az container logs](https://learn.microsoft.com/en-us/cli/azure/container#az_container_logs) command.
+
+        ```bash
+        az container logs --resource-group myResourceGroup --name mycontainer
+        ```
+
+  </TabItem>
+
+</Tabs>

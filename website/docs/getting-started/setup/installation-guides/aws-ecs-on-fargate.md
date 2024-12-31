@@ -121,7 +121,7 @@ Follow these steps to create task and container definitions for your cluster:
     * `APPSMITH_ENCRYPTION_PASSWORD`- Add a password to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_ENCRYPTION_SALT`- Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_SUPERVISOR_PASSWORD` - Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
-    * `APPSMITH_MONGODB_URI` - Enter the URI of the external MongoDB (v5.0 or later) instance.
+    * `APPSMITH_DB_URL` - Enter the URI of the external MongoDB (v5.0 or later) instance.
     * `APPSMITH_ENABLE_EMBEDDED_DB` - `0`. This disables embedded mock databases on EFS volume.
 6. Add the below configuration in the **HealthCheck** section:
     * **Command** - `CMD-SHELL, curl -f http://localhost/ || exit 1`
@@ -244,67 +244,62 @@ To install the Appsmith open source edition (Appsmith Community), replace `appsm
 Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
 
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Set Up High Availability (HA)</strong>
-      </a>
+      </div>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
-      Configure high availability for your Appsmith deployment on AWS Fargate to handle increased load. <a href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">Learn more about setting up high availability</a>
+      Configure high availability for your Appsmith deployment on AWS Fargate to handle increased load. 
     </div>
-  </div>
+  </a>
 
-  <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/authentication">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Configure Single Sign-on (SSO)</strong>
-      </a>
+      </div>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
-      Configure SSO to allow users to sign in using your identity provider.
-      <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+      Configure SSO to allow users to sign in using your identity provider. 
     </div>
-  </div>
+  </a>
 </div>
 
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/email">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Configure Email Service</strong>
-      </a>
+      </div>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
-      Set up an email service to enable Appsmith to send notifications and alerts.
-      <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+      Set up an email service to enable Appsmith to send notifications and alerts. 
     </div>
-  </div>
+  </a>
 
-  <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/custom-domain">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Set Up Custom Domain and SSL</strong>
-      </a>
+      </div>
     </div>
-    <hr/>
+    <hr className="gradient-hr" />
     <div className="containerDescription">
       Set up a custom domain for your Appsmith instance and secure it with SSL. 
-      <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
     </div>
-  </div>
+  </a>
 </div>
 
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
+If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-
-## Further reading
+## See also
 
 - [Configure ECS Installation](/getting-started/setup/instance-configuration#configure-ecs-installations)
 - [Manage instance](/getting-started/setup/instance-management/)

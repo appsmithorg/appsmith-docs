@@ -91,7 +91,7 @@ docker-compose exec mongo mkdir -pv /data/db/backup
 Dumping MongoDB data and compressing to a `gzip` file:
 
 ```
-docker-compose exec mongo sh -c 'mongodump --uri="$APPSMITH_MONGODB_URI" --archive=/data/db/backup/appsmith-data.archive --gzip'
+docker-compose exec mongo sh -c 'mongodump --uri="$APPSMITH_DB_URL" --archive=/data/db/backup/appsmith-data.archive --gzip'
 ```
 
 ## Migrate configuration
@@ -112,7 +112,7 @@ cat "$old_path"/docker.env "$old_path"/encryption.env >> "$new_path"/stacks/conf
 
 Now, in the file `"$new_path"/stacks/configuration/docker.env`:
 
-* Unless you are using an external MongoDB database, in `APPSMITH_MONGODB_URI`, please change the `@mongo` part to `@localhost`, and remove the query parameters (the `?` and everything after it). For example, if the current value is `mongodb://root:rootpass@mongo/appsmith?retryWrites=true&authSource=admin`, change it to just `mongodb://root:rootpass@localhost/appsmith`.
+* Unless you are using an external MongoDB database, in `APPSMITH_DB_URL`, please change the `@mongo` part to `@localhost`, and remove the query parameters (the `?` and everything after it). For example, if the current value is `mongodb://root:rootpass@mongo/appsmith?retryWrites=true&authSource=admin`, change it to just `mongodb://root:rootpass@localhost/appsmith`.
 * Unless you are using an external Redis instance, in `APPSMITH_REDIS_URL`, please change `redis://redis:6379` to `redis://localhost:6379`. That is, change the host from `redis` to `localhost.`
 
 At the end of this `docker.env` file, add the following new environment variables:
@@ -123,7 +123,7 @@ APPSMITH_MONGODB_PASSWORD=<MONGODB_PASSWORD>
 APPSMITH_API_BASE_URL=http://localhost:8080
 ```
 
-Here, in place of `<MONGODB_USER>` and `<MONGODB_PASSWORD>`, use the same username and password that were given to `APPSMITH_MONGODB_URI`. In the example values, these would be `root` for the user and `rootpass` for the password.
+Here, in place of `<MONGODB_USER>` and `<MONGODB_PASSWORD>`, use the same username and password that were given to `APPSMITH_DB_URL`. In the example values, these would be `root` for the user and `rootpass` for the password.
 
 ## 4. Export HTTPS config & certificate (optional)
 

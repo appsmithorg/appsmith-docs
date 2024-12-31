@@ -1,0 +1,78 @@
+---
+description: Learn how to set up an external Redis instance for your Appsmith application to manage session storage and caching effectively.
+toc_max_heading_level: 2
+---
+
+# Configure External Redis
+
+Appsmith runs an embedded Redis instance by default for session management and caching. You may choose to switch to an external Redis instance to enhance performance, scalability, and reliability. This page provides instructions on setting up an external Redis instance and how to connect it to your Appsmith instance.
+
+## Prerequisites
+
+Before configuring an external Redis instance for your Appsmith instance, ensure the following:
+
+- This guide applies only to **self-hosted Appsmith** instances. If not already installed, refer to the [installation guides](/getting-started/setup/installation-guides).  
+
+
+## Create Redis instance (optional)
+
+Follow these steps to set up an external Redis instance for Appsmith. If you already have a Redis instance, skip this step and move to [Connect Appsmith to external Redis](#connect-appsmith-to-external-redis) section.
+
+1. Create a Redis instance:
+      - **Self-hosted Redis**: Install and configure Redis on your server using the [Redis installation guide](https://redis.io/docs/getting-started/installation/).  
+
+      - **Cloud-hosted Redis**: Set up a managed Redis instance using a cloud provider such as AWS ElastiCache, Redis Cloud, or Azure Cache for Redis.  
+
+2. Retrieve the connection details of your Redis instance, including the hostname and port. Store these details securely. You need them to configure the Redis instance on Appsmith. 
+
+## Connect Appsmith to external Redis
+
+Follow these steps to connect your Appsmith instance to the external Redis instance:
+
+1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.  
+
+2. Add or update the following environment variable with your Redis connection details:  
+   * **Docker**:
+
+      ```yaml
+      APPSMITH_REDIS_URL=redis://{redis.instance.hostname}:{port}
+      ```  
+
+        Replace:
+        - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
+        - `{port}` with the Redis port (default: 6379).  
+    * **Kubernetes**:
+
+      ```yaml
+      APPSMITH_REDIS_URL:redis://{redis.instance.hostname}:{port}
+      ```  
+        Replace:
+        - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
+        - `{port}` with the Redis port (default: 6379).  
+
+3. Update the Appsmith server configuration to establish a connection with the external Redis instance.  
+   - **Docker**:  
+     ```bash
+     docker-compose down && docker-compose up -d
+     ```
+   - **Kubernetes**:  
+     ```bash
+     helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+     ```
+
+4. Log in to your Appsmith application and verify that the instance is functioning as expected.  
+5. Confirm that data caching and sessions management is happening by the external Redis instance.
+
+## Troubleshooting
+
+If you face connection issues:
+- Verify the connection details.
+- Check that the authentication credentials are accurate and properly configured.  
+- Verify if the Redis instance is accessible from the Appsmith server. 
+- Confirm if any firewall or security group rules are not blocking the access. 
+      
+If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
+
+## See also
+
+- [Configure External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis): Learn how to set up an external MongoDB instance.

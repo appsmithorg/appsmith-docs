@@ -1,70 +1,101 @@
 ---
-description: Efficiently manage your Appsmith instances.
+description: Manage key tasks for maintaining and upgrading your Appsmith instance.
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+# Upgrade installation
 
-# Manage Instance
-One of the key features of Appsmith is its instance management capabilities. This page is a gateway to various management tasks you can perform on your self-hosted instance. 
+This page provides resources for managing and upgrading your self-hosted Appsmith instance. It includes guides for upgrading to new Appsmith versions, scheduling updates, and handling other important tasks related to maintaining your instance.
 
-You can manage your instance by:
-* Updating Appsmith to a new version
-* Scheduling automatic updates for Appsmith installation
-* Creating backups for the Appsmith instance and database
-* Restoring backups
+---
 
-This page provides information to set up and maintain your Appsmith installation.
+## Upgrade Appsmith versions
 
 <div className="containerGridSampleApp">
+  <a className="containerAnchor" href="/getting-started/setup/instance-management/update-appsmith">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Upgrade Appsmith version</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Upgrade your Appsmith instance to the latest version with detailed instructions.
+      </div>
+    </div>
+  </a>
+</div>
 
-   <div className=" containerColumnSampleApp columnGrid column-one">
-      <div className="containerCol">
-         <img className="containerImage" src="/img/update-Appsmith.png" style= {{width:"60px", height:"60px", margin:"0"}} alt="Update Appsmith"/>
-      </div>
-      <b><a href="/getting-started/setup/instance-management/update-appsmith">Update Appsmith</a></b>
-      <div className="containerDescription"> 
-      </div>
-   </div>
+---
 
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
-         <img className="containerImage" src="/img/maintenance-window.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Schedule Automatic Updates"/>
-      </div>
-      <b><a href="/getting-started/setup/instance-management/maintenance-window">Schedule Automatic Updates</a></b>
-      <div className="containerDescription"> 
-      </div>
-   </div>
- 
-</div> 
+## Upgrade Helm versions
 
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-         <img className="containerImage" src="/img/backup-and-restore.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Backup and Restore"/>
-      </div> 
-      <b><a href="/getting-started/setup/instance-management/appsmithctl">Backup and Restore</a></b>
-      <div className="containerDescription">
-   </div>
-   </div>
-   <div className=" containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-         <img className="containerImage" src="/img/control-panel.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Monitor Processes"/>
-      </div> 
-      <b><a href="/getting-started/setup/instance-management/supervisor">Monitor Processes</a></b>
-      <div className="containerDescription">
+  <a className="containerAnchor" href="/getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Upgrade to Commercial Edition Helm Chart v3</strong>
       </div>
-   </div>
-</div> 
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn how to upgrade Appsmith on Kubernetes to the new Commercial Edition Helm chart version 3.
+      </div>
+    </div>
+  </a>
+  <a className="containerAnchor" href="/getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-two">
+      <div className="containerHeading">
+        <strong>Upgrade to Community Edition Helm Chart v2</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Upgrade to the new Helm Chart v2 for your Community Edition Appsmith Kubernetes-based instance.
+      </div>
+    </div>
+  </a>
+</div>
+
+---
+
+## Upgrade to commercial edition
+
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-         <img className="containerImage" src="/img/get-container-logs.png" style= {{width:"50px", height:"50px", 'margin-bottom': "4px", 'margin-top': "8px"}} alt="Get Container Logs"/>
-      </div> 
-      <b><a href="/getting-started/setup/instance-management/how-to-get-container-logs">Get Container Logs</a></b>
-      <div className="containerDescription">
+  <a className="containerAnchor" href="/getting-started/setup/manage-editions">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Upgrade to Commercial Edition</strong>
       </div>
-      
-   </div>
-   <div className="columnGrid column-two" style={{padding:"20px"}}></div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Follow this guide to upgrade to Appsmith's Commercial Edition for additional features and support.
+      </div>
+    </div>
+  </a>
+  <a className="containerAnchor" href="/getting-started/setup/manage-plans/upgrade-plan">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-two">
+      <div className="containerHeading">
+        <strong>Upgrade your plan</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn how to upgrade your Appsmith plan to access more resources and advanced features.
+      </div>
+    </div>
+  </a>
+</div>
+
+---
+
+## Downgrade plan
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor" href="/getting-started/setup/manage-plans/downgrade-plan">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Downgrade your plan</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn how to downgrade your Appsmith plan if needed.
+      </div>
+    </div>
+  </a>
 </div>

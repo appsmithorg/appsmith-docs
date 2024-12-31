@@ -1,0 +1,105 @@
+---
+description: Learn how to restore an Appsmith instance from a backup using the `appsmithctl` command-line utility.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Restore Instance
+
+This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility.
+
+## Prerequisites
+
+Before starting, ensure the following:
+
+- Your self-hosted Appsmith instance is running. If you haven’t already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+- Ensure you have at least 2 GB of free storage available to perform restore tasks.
+- Ensure that you have the appropriate access to execute `docker-compose`, `kubectl`, or `supervisorctl` commands, depending on your deployment setup.
+- Verify that the backup archive file you want to restore is available.
+
+## Restore instance backup
+
+Follow the appropriate instructions based on your deployment environment:
+
+<Tabs queryString="current-command-type">
+
+<TabItem label="Docker" value="docker-commands">
+
+Follow these steps to restore your Appsmith instance for Docker-based installations:
+
+1. Copy the backup archive file:
+
+   ```bash
+   docker cp appsmith-backup-TIMESTAMP.tar.gz.enc appsmith:/appsmith-stacks/data/backup/
+   ```
+   
+2. Restore the Appsmith instance:
+
+   ```bash
+   docker-compose exec -it appsmith appsmithctl restore
+   ```
+
+   The command lists available backup archives, with the latest appearing at the bottom.
+
+3. Select a backup archive from the list to restore.
+
+   <ZoomImage src="/img/restore-appsmith-instance.png" alt="Select a backup archive while restoring Appsmith instance" caption="Select a backup archive while restoring Appsmith instance" />
+
+   :::caution Attention
+   If you are restoring an older version of Appsmith, a warning message may appear. Update the `docker-compose.yml` file with the Appsmith image version you wish to restore.
+   :::
+
+4. When prompted, enter the password you entered when creating the backup. This password is required to restore the backup. The `restore` command restores the backup and restarts the Appsmith server to apply the changes.
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+Follow these steps to restore your Appsmith instance for Kubernetes-based installations:
+
+1. Retrieve the name of the Appsmith pod:
+
+   ```bash
+   kubectl get pods
+   ```
+
+2. Copy the backup archive file to the pod. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
+
+     ```bash
+     kubectl cp appsmith-backup-TIMESTAMP.tar.gz.enc ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/backup/
+     ```
+
+3. Restore the backup. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
+
+   ```bash
+   kubectl exec -it ANY_APPSMITH_POD_NAME -- appsmithctl restore
+   ```
+4. When prompted, enter the password you entered when creating the backup. This password is required to restore the backup. 
+
+5. Restart the Appsmith pods based on your setup:
+
+   - If autoscaling is **turned on**:
+
+     ```bash
+     kubectl rollout restart deployment appsmith
+     ```
+
+   - If autoscaling is **turned off**, or you’re using the Community Edition, the `restore` command restores the backup and restarts the Appsmith server to apply the changes.
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you encounter any issues during the restore process, consider the following:
+
+- Ensure you've copied the backup archive to the correct folder within the container or pod.
+- Ensure the S3 bucket has appropriate permissions to list the backup archives from the bucket.
+- Verify that you are on an [Appsmith paid plan](https://www.appsmith.com/pricing) and your plan is active to list backup archives from S3 bucket. For more information, see [License & plans](/getting-started/setup/instance-configuration/admin-settings#license--plans).
+- Verify that you have the required permissions to execute `docker-compose` or `kubectl` commands.
+- If using encrypted backups, confirm that the encryption password and salt match the original values used during backup creation.
+- If restarting the pods fails, check the logs for errors. For more information, see [Get Container logs](/getting-started/setup/instance-management/how-to-get-container-logs) guide.
+
+If you continue to face issues, contact support using the chat widget available in the bottom-right corner of this page.

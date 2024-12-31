@@ -103,7 +103,7 @@ The example below shows how to restructure an invalid code block using **IIFE**.
 #### JS Objects
 JS Objects stores a collection of variables and functions, and you can use it to write reusable code in Appsmith. With it, you can manipulate data, handle events, perform advanced operations, write complex logic and invoke them anywhere within the application where it's defined. You can create JS Objects in the JavaScript Editor. For more information, see [JS Objects](/core-concepts/writing-code/javascript-editor-beta).
 
-## Further reading
+## See also
 
 
 * [Using JavaScript Promises](/core-concepts/writing-code/javascript-promises)

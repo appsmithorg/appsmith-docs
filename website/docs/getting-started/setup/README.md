@@ -28,7 +28,7 @@ While Appsmith is a dockerized application that works on other platforms, offici
 Appsmith needs internet access for several important features such as templates, Google Sheets, and fetching release notes. If you would like an **[Air-gapped version](/getting-started/setup/installation-guides/air-gapped)**, you can write to sales@appsmith.com.
 :::
 
-## Further reading
+## See also
 
 - [Installation guides](/getting-started/setup/installation-guides)
 - [Instance configuration](/getting-started/setup/instance-configuration)

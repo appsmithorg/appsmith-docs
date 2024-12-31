@@ -183,7 +183,6 @@
   display: block;
   margin-bottom: 1rem;
   padding: 0.75rem;
-  /* vertical-align: left; */
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -194,12 +193,21 @@
 .containerDescription {
   margin: 1px;
   font-size: 0.9rem;
+  flex-grow: 1;
 }
 
 .containerImage {
   margin: 1px;
   font-weight: bold;
   vertical-align: center;
+}
+
+.containerIntegrationsLink {
+  margin: 1px;
+  font-size: 0.9rem;
+  text-align: left;
+  position: absolute;
+  bottom: 10px;
 }
 
 .containerTutorialLink {
@@ -214,16 +222,125 @@
   margin: 20px;
 }
 
-.containerGridSampleApp {
+.containerFlexSampleApp {
   display: flex;
   height: fit-content;
   margin: 10px;
 }
 
-.containerColumnSampleApp {
+.containerGridSampleApp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.containerIntegrationSampleApp {
   border: 1px solid #dadce0 !important;
   border-radius: 4px;
   margin: 10px;
+  position: relative;
+}
+
+.containerColumnSampleAppNoGradient {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 10px;
+  background-origin: border-box;
+  background-clip: padding-box;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 250px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containerColumnSampleApp {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 10px;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, #f0f4f7, #d3d3d3);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-height: 250px;
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.containerColumnSampleApp:hover,
+.containerColumnSampleAppNoGradient:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.containerClick {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+.containerClick:hover {
+  text-decoration: none;
+  color: #000;
+  transform: scale(1.05) translateY(-10px);
+}
+
+.containerImgDimensions {
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.containerIntegrationsImgDimensions {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+.containerHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.containerHeading {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #03366f;
+  text-transform: capitalize;
+  padding: 12px 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 60px;
+}
+
+.containerAnchor {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.containerAnchor:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.containerAnchor:focus {
+  outline: none;
+}
+
+.containerAnchor img {
+  display: inline-block;
 }
 
 .columnGrid {
@@ -773,4 +890,12 @@ h4+.tags {
 
 .external-link:hover {
   text-decoration: underline;
+}
+
+.gradient-hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, #f0f4f7, #d3d3d3);
+  margin: 20px 0;
+  padding-bottom: 2px;
 }

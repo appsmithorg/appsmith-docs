@@ -94,16 +94,20 @@ UI Modules provide the capability to encapsulate widgets and other UI components
 * **Enhanced Modularity:** UI Modules allow for the encapsulation of widgets, queries and JS, promoting modular design practices for a more organized and maintainable user interface.
 * **Reusable Components:** You can create reusable UI components, reducing redundancy and accelerating the development process.
 
-## Getting started
+## Get started
 
+Start with the following resources to get familiar with Appsmith's package features and functionalities:
 
 <div className="containerGridSampleApp">
-
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/packages/tutorial/query-module">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>Tutorial</strong>
+         </div>
       </div>
-      <b><a href="/packages/tutorial/query-module">Tutorial</a></b>
-      <div className="containerDescription"> Take the quick tutorial to learn the basics.</div>
-   </div>
-  
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Take the quick tutorial to learn the basics of working with packages in Appsmith, including how to create and manage them.
+      </div>
+   </a>
 </div>
