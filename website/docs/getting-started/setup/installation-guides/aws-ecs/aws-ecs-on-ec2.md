@@ -138,67 +138,64 @@ For the Appsmith open source edition (Appsmith Community), substitute `appsmith/
 ## Post-installation configuration
 
 Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+<br/>
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/authentication">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Configure Single Sign-on (SSO)</strong>
-      </a>
+      </div>
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Configure SSO to allow users to sign in using your identity provider. <a href="/getting-started/setup/instance-configuration/authentication">Learn more about configuring SSO</a>
+      Configure SSO to allow users to sign in using your identity provider. Learn more about configuring SSO.
     </div>
-    
-  </div>
+  </a>
 
-  <div className="containerColumnSampleApp columnGrid column-two">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/email">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Configure Email Service</strong>
-      </a>
+      </div>
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Set up an email service to enable Appsmith to send notifications and alerts. <a href="/getting-started/setup/instance-configuration/email">Learn more about configuring email services</a>
+      Set up an email service to enable Appsmith to send notifications and alerts. Learn more about configuring email services.
     </div>
-    
-  </div>
+  </a>
 </div>
 
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      <a href="/getting-started/setup/instance-configuration/custom-domain">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Set Up Custom Domain and SSL</strong>
-      </a>
+      </div>
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Set up a custom domain for your Appsmith instance and secure it with SSL.  <a href="/getting-started/setup/instance-configuration/custom-domain">Learn more about setting up custom domains and SSL</a>
+      Set up a custom domain for your Appsmith instance and secure it with SSL. Learn more about setting up custom domains and SSL.
     </div>
-    
-  </div>
+  </a>
 
-  <div className="containerColumnSampleApp columnGrid column-two">
-     <div className="containerCol">
-      <a href="/getting-started/setup/instance-management/appsmithctl">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-management/appsmithctl">
+    <div className="containerHead">
+      <div className="containerHeading">
         <strong>Backup and Restore</strong>
-      </a>
+      </div>
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. 
-      <a href="/getting-started/setup/instance-management/appsmithctl">Learn more about Backup and Restore</a>
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. Learn more about Backup and Restore.
     </div>
-  </div>
+  </a>
 </div>
 
 ## Troubleshooting
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, reach out to the support team via the chat widget on this page.
 
-## Further reading
+## See also
 
-- [Configuring ECS Installations](/getting-started/setup/instance-configuration#configure-ecs-installations)
-- [Manage Appsmith instance](/getting-started/setup/instance-management)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
