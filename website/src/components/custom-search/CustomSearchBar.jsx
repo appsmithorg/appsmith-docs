@@ -16,6 +16,11 @@ const CustomSearchBar = () => {
                 aiInput.click();
             } else if (searchType === 'docs' && searchInput) {
                 searchInput.click();
+                setTimeout(() => {
+                    const searchTerm = document.querySelector('.DocSearch-Input');
+                    searchTerm.focus();
+                    searchTerm.click();
+                }, 100);
             }
 
             setSearchType('');
