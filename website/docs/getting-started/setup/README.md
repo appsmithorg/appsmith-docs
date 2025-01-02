@@ -30,6 +30,5 @@ Appsmith needs internet access for several important features such as templates,
 
 ## See also
 
-- [Installation guides](/getting-started/setup/installation-guides)
-- [Instance configuration](/getting-started/setup/instance-configuration)
-- [Instance Management](/getting-started/setup/instance-management)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.

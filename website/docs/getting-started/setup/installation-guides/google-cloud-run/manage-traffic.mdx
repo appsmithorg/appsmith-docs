@@ -78,9 +78,9 @@ Appsmith relies on Redis for caching and session storage. Set up a Redis instanc
 
 <ZoomImage src="/img/redis-primary-endpoint.png" alt="Primary Endpoint of the Redis Instance" caption="Primary Endpoint of the Redis Instance" />
 
-### Configure PostgreSQL
+### Configure PostgreSQL (optional)
 
-Appsmith uses a PostgreSQL database to store its data. Keycloak data is used for Single Sign-On (SSO) configured using SAML and high availability. Follow the steps below to configure PostgreSQL.
+If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a PostgreSQL RDS instance for Keycloak. Follow these steps to create a PostgreSQL RDS instance for your Appsmith installation on Google Cloued Run:
 
 #### Create PostgreSQL instance
 

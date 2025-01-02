@@ -85,5 +85,5 @@ After the Appsmith instance restarts, log in to your account to see the GitHub L
 
 ## See also
 
-- [Instance Configuration](/getting-started/setup/instance-configuration)
-- [Instance Management](/getting-started/setup/instance-management)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
