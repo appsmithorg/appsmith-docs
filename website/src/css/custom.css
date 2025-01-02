@@ -312,7 +312,7 @@
 }
 
 .containerHeading {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: bold;
   color: #03366f;
   text-transform: capitalize;
@@ -320,8 +320,20 @@
   border-radius: 8px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   overflow: hidden;
-  height: 60px;
+  min-height: 60px;
+  height: auto;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .containerHeading {
+    font-size: 1rem;
+    padding: 10px;
+  }
 }
 
 .containerAnchor {
