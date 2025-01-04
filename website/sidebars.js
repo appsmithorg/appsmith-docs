@@ -68,7 +68,27 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'High Availability Guides',
+              label: 'High Availability Guides (MongoDB)',
+              items: [
+                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                {
+                  type: 'category',
+                  label: 'AWS ECS on Fargate',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data',
+                  ],
+                },
+                'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'High Availability Guides (PostgreSQL)',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 {
@@ -167,6 +187,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
                 'getting-started/setup/instance-configuration/external-redis',
+                'getting-started/setup/instance-configuration/external-postgresql',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
@@ -232,6 +253,13 @@ const sidebars = {
               ],
             },
             'getting-started/setup/manage-plans/downgrade-plan',
+            {
+              type: 'category',
+              label: 'Migrate to PostgreSQL',
+              items: [
+                'getting-started/setup/instance-configuration/migrate-external-mongodb-external-postgresql',
+              ],
+            },
           ],
         },
         {

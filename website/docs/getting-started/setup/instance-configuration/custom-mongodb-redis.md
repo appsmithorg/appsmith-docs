@@ -53,7 +53,7 @@ Ensure the user Appsmith uses to connect to the database has the necessary permi
   - `readWrite`  
   - `clusterMonitor`  
 
-## Restore MongoDB data
+## Restore MongoDB data (optional)
 
 Follow these steps to migrate the data from the old MongoDB instance to the new instance:
 
