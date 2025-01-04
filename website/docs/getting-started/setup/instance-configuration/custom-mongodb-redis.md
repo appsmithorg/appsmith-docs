@@ -1,9 +1,22 @@
 ---
 description: Learn how to set up an external MongoDB instance for your Appsmith application to store application data.
 toc_max_heading_level: 2
+title: Configure External MongoDB
+hide_title: true
 ---
+<!-- vale off -->
 
-# Configure External MongoDB
+<div className="tag-wrapper">
+ <h1> Configure External MongoDB </h1>
+
+<Tags
+tags={[
+{ name: "Deprecated", link: "https://www.appsmith.com/pricing", additionalClass: "neutral" }
+]}
+/>
+</div>
+
+<!-- vale on -->
 
 Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB for data storage. You can also switch to an external MongoDB instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external MongoDB instance and how to connect it to your Appsmith instance.
 
