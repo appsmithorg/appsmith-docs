@@ -105,6 +105,42 @@ If you face conflicts within the same branch due to changes made remotely, open 
 
 </dd>
 
+## Merge conflicts in newly created apps
+
+When creating a new app and connecting it to a Git repository, merge conflicts may occur during the initial merge into the `master` branch. These steps are intended for self-hosted Appsmith users with access to the backend file system. If you are using a cloud-hosted version, these steps do not apply. 
+
+1. Open and Navigate to the Git Directory: `appsmith-stacks/git-storage/<workspace-id>/<application-id>`.
+
+<dd> 
+
+- **Workspace ID**: Open the Appsmith UI, navigate to the workspace, and find the `workspaceId` in the browser URL (e.g., `https://internal.appsmith.com/applications?workspaceId=<workspace_id>`). 
+
+- **Application ID**: Edit the app, open the Network tab in developer tools, filter by `consolidated`, and copy the `applicationId` from the response. 
+
+</dd>
+
+
+2. Ensure Git is installed on your system. If it is not already installed, use the following command to install it:
+
+<dd>
+
+```bash
+apt-get update && apt-get install git
+```
+
+</dd>
+
+3. Navigate to the application directory (`appsmith-stacks/git-storage/<workspace-id>/<application-id>`) and execute the following command to perform a hard reset:
+
+<dd>
+
+```bash
+git reset origin/master --hard
+```
+
+</dd>
+
+4. Go to the app where you see the conflict, click **+** icon from the commit modal and click Discard and Pull. This discards any local changes that have not been saved and updates your app with the latest changes from the remote branch.
 
 ## See also
 
