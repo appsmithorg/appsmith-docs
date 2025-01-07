@@ -9,12 +9,12 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 To troubleshoot your issue, you can try the following:
 
 
-## Check Your Appsmith Version
+### Check Your Appsmith Version
 
- Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
+It is important to verify the version of Appsmith you are using. Knowing your version ensures compatibility with the latest features and fixes. This step can help you identify if your version is outdated and may require an update to resolve certain issues.
 
 
-- For Docker: Run the following command in your terminal: 
+- For Docker: 
 
 <dd>
 
@@ -24,7 +24,7 @@ docker exec -it appsmith cat info.json
 
 </dd>
 
-- For Kubernetes: Run the following command to check the version:
+- For Kubernetes: 
 
 <dd>
 
@@ -33,14 +33,14 @@ kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.
 ```
 </dd>
 
-After confirming your Appsmith version, visit the [Appsmith GitHub Release Notes](https://github.com/appsmithorg/appsmith/releases) to compare your version with the latest release. If your version is outdated, consider upgrading to resolve known issues and benefit from new features.
+Once you've confirmed your version, visit the [Appsmith GitHub Release Notes](https://github.com/appsmithorg/appsmith/releases) to compare your current version with the latest release. If your version is outdated, consider upgrading to the latest version to benefit from the latest fixes and features.
 
-See the [upgrade guides](/getting-started/setup/instance-management) for instructions on how to upgrade.
+For instructions on how to upgrade, please refer to our [upgrade guides](/getting-started/setup/instance-management).
 
 
 ### Verify Logs for Errors
 
-After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
+Logs provide valuable insights into the health of your Appsmith instance and can help identify underlying issues affecting the platform. Reviewing the logs is essential for troubleshooting errors that might occur during deployment or operation.
 
 - For Docker: You can view logs using the following command:
 
@@ -61,7 +61,7 @@ kubectl logs <appsmith-pod-name>
 </dd>
 
 
-## Restart Services
+### Restart Services
 
 To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
 
