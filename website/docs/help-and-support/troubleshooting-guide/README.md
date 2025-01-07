@@ -6,33 +6,17 @@ import TabItem from '@theme/TabItem';
 
 When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. Whether you're facing deployment issues, database connection problems, or application-specific errors, you can find the relevant troubleshooting guides below for step-by-step solutions.
 
+To start troubleshooting, it's important to first verify that you're using the latest version of Appsmith, as many issues can be resolved through updates.
 
-## Check Appsmith version
+1. Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. Follow these steps based on your deployment:
 
-If you need to check your Appsmith version, this can be helpful when sharing the version with the support team to debug issues or verify if you're running the latest version. Follow the steps based on your setup:
+<dd>
+
 
 <Tabs>
-  <TabItem value="cloud" label="Appsmith Cloud" default>
-
-If you are using Appsmith Cloud, follow these steps to check your version:
-
-<ZoomImage
-  src="/img/appsmith-cloud-version.png" 
-  alt=""
-  caption=""
-/>
-
-
-   1. Log in to your Appsmith Cloud account.
-   2. On the homepage, click on the **Help (?)** icon in the top-right corner.
-   3. A modal appears showing your current version, like: `Appsmith 728cbdc1`.
-
-  </TabItem>
   <TabItem value="Docker" label="Docker">
     
     If you are using Docker to host Appsmith and want to check your version, follow these steps:
-
-
 
     1. Run the following command in your terminal:
     
@@ -80,7 +64,19 @@ kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.
 </Tabs>
 
 
----
+
+</dd>
+
+2. After confirming your Appsmith version, visit the [Appsmith GitHub Release Notes](https://github.com/appsmithorg/appsmith/releases) to compare your version with the latest release. If your version is outdated, consider upgrading to resolve known issues and benefit from new features.
+
+<dd>
+
+
+See the [upgrade guides](/getting-started/setup/instance-management) for instructions on how to upgrade.
+
+</dd>
+
+3. If issues persist, explore specific troubleshooting guides:
 
 <div className="containerGridSampleApp">
    <!-- Self-Hosting Errors -->
@@ -109,7 +105,7 @@ kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.
    </a>
 </div>
 
----
+
 
 ## Contacting Support
 
