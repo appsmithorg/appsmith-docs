@@ -105,7 +105,8 @@ If you face conflicts within the same branch due to changes made remotely, open 
 
 </dd>
 
-## Merge conflicts in newly created apps
+## New app merge Conflicts
+
 
 When creating a new app and connecting it to a Git repository, merge conflicts may occur during the initial merge into the `master` branch. These steps are intended for self-hosted Appsmith users with access to the backend file system. If you are using a cloud-hosted version, these steps do not apply. 
 
