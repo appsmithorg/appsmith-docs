@@ -1,0 +1,154 @@
+---
+description: This page outlines how to setup high availability for Appsmith on AWS ECS using Fargate.
+title: AWS ECS on Fargate
+hide_title: true
+toc_max_heading_level: 2
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>High Availability on Fargate</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
+{ name: "Beta", link: "https://www.appsmith.com/pricing", additionalClass: "beta" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+High availability ensures that your Appsmith instance remains accessible without interruption, even during system disruptions. This page outlines the steps required to set up high availability for your Appsmith installation on AWS ECS with Fargate. 
+
+## Prerequisites
+
+Before setting up high availability for Appsmith, ensure you have completed the following:
+
+1. You need to have [Appsmith Commercial Edition](https://www.appsmith.com/pricing) installed on AWS ECS using Fargate. If not already installed, refer to the [AWS ECS on Fargate installation guide](/getting-started/setup/installation-guides/aws-ecs-on-fargate). This guide assumes you are working with an existing installation.
+
+2. Ensure you have at least 2 GB of free storage available to perform backups and handle update tasks without interruptions.
+
+3. You need an active Amazon Web Services (AWS) account with permissions to access and manage Elastic Container Service (ECS), Elastic File System (EFS), Relational Database Service (RDS), and ElastiCache. If you do not have an account, follow the [AWS account creation guide](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
+
+4. Appsmith requires AWS EFS to provide persistent storage of application data. If your current setup uses a local volume or bind mount, upgrade to EFS before proceeding. See the [Upgrade to AWS EFS guide](/getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs) for details.
+
+5. Create a backup of your existing Appsmith instance to safeguard your data before proceeding. For detailed instructions, see [How to back up your Appsmith instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance).
+
+6. Ensure you can run `supervisorctl` commands to manage Keycloak data backup and recovery.
+
+## Set up external databases
+
+High availability for Appsmith requires configuring external databases for **MongoDB**, **Redis**, and **PostgreSQL**. Each of these databases needs to be set up correctly to ensure a robust, scalable environment.
+
+### Configure Redis
+
+Appsmith relies on Redis for caching and session storage. To configure Redis for high availability, follow these steps to create and set up your Redis instance.
+
+1. If you don’t already have a Redis instance, create one using AWS ElastiCache. You can either create a new Redis cluster or use an existing one.
+
+2. Log in to the [AWS Management Console](https://aws.amazon.com/console/), search for **ElastiCache**, and select **ElastiCache** from the services list.
+
+3. Click on **Create Redis cache** under the **ElastiCache** dashboard.
+
+4. Choose the **Serverless - new** option for an auto-scaling Redis instance, or select **Design your own cache** to manually configure the cluster size and node types.
+
+5. For a simple setup, select **Easy create**, which will configure the cluster using the best practice configurations.
+
+6. **Name**: Provide a unique name for your cluster, for example, `test-redis`.
+
+7. **Choose Node Type**: Configure the Redis node type as follows:
+   - **Production**: `cache.r7g.large` (26.32 GiB memory, up to 12.5 Gigabit network performance).
+   - **Dev/Test**: `cache.r7g.large` (13.07 GiB memory, up to 12.5 Gigabit network performance).
+   - **Demo**: `cache.t4g.micro` (0.5 GiB memory, up to 5 Gigabit network performance).
+
+8. Review the settings, and once satisfied, click **Create** to launch the Redis instance.
+
+9. Once the Redis cluster is created, copy and securely store the endpoint and connection details. You'll need these when configuring high availability in the next steps.
+
+### Configure PostgreSQL
+
+If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a PostgreSQL RDS instance for Keycloak. Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
+
+#### Create PostgreSQL RDS instance 
+
+Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
+
+1. Go to the **RDS** section in the AWS Management Console and click **Create database**.
+2. Configure the database:
+   - **Database creation method**: Standard create  
+   - **Engine options**: PostgreSQL  
+   - **Engine version**: PostgreSQL 12.11-R1 or above  
+   - **Templates**: Free tier  
+   - **DB instance identifier**: For example, `appsmith`  
+   - **Credentials**: Set username (`postgres` by default) and a strong password.
+3. Click **Create database** to create the database.
+4. Note the **endpoint URL** from the **Connectivity & security** tab, need it in the [Configure High Availability](#configure-high-availability) section.
+
+#### Create PostgreSQL database for Keycloak (optional)
+Follow these steps to create a PostgreSQL database on Amazon cloud:
+1. Go to the **RDS** section in the AWS Management Console and click **Create database**.
+2. Configure the database:
+   - **Database creation method**: Standard create  
+   - **Engine options**: PostgreSQL  
+   - **Engine version**: PostgreSQL 12.11-R1 or above  
+   - **Templates**: Free tier  
+   - **DB instance identifier**: For example, `appsmith-keycloak`  
+   - **Credentials**: Set username (`postgres` by default) and a strong password.
+3. Click **Create database** to create the database.
+4. If your Appsmith instance has an existing user base and you wish to migrate their data, follow the instructions in [Migrate Keycloak Data on Fargate](/getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data) guide.
+5. Note the **endpoint URL** from the **Connectivity & security** tab, as you'll need this for the Keycloak setup.
+
+## Configure high availability
+
+To ensure Appsmith is highly available, configure it to use multiple instances, redundancy, and external databases.
+
+### Update task definition
+
+1. Go to the **Amazon ECS console** and select **Task Definitions**.
+2. Select your Appsmith task definition and click **Create new revision**.
+3. Add the following environment variables under **Container-1**. Use the values obtained during the [Set up external databases](#set-up-external-databases) section.
+
+   - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
+   - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
+   - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
+   - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: Set the driver to `postgresql` as Keycloak uses PostgreSQL for its database.
+   - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
+   - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the `postgres` user.
+
+4. Save the updated task definition.
+
+### Update ECS service
+
+To deploy your changes and ensure high availability, follow these steps:
+
+1. Go to the **Amazon ECS console** and select your ECS Cluster.
+2. Navigate to the **Services** tab and select your Appsmith service.
+3. Click **Update**, check **Force new deployment**, and select the latest task definition revision.
+4. Update the **Desired tasks** to `2` for redundancy.
+5. Save the changes to initiate a new deployment.
+6. Verify the service’s **Last status** is **Running**.
+
+### Verify high availability
+
+Once the deployment is complete, test the high availability setup by performing the following checks:
+
+1. Simulate a failover by terminating one task in your ECS service.
+2. Verify if the remaining task continues handling traffic seamlessly without any downtime.
+3. Ensure that no data is lost and that the system is highly available during the failover process.
+
+## Troubleshooting
+
+If you encounter issues, follow these steps:
+
+- Check the **logs** in the ECS console for detailed error messages that may indicate the root cause. For more information, see [Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs?current-platform=ecs#get-logs) guide.
+- To roll back to a previous version of the Appsmith instance, follow the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide.
+
+If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
+
+## See also
+
+- [Restore Appsmith instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance): Follow this guide to restore your Appsmith instance from a backup, ensuring minimal downtime and data loss.
+- [SAML Single Sign-On](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml): Learn how to configure SAML-based Single Sign-On (SSO) for secure authentication in your Appsmith instance.

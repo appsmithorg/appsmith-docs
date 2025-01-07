@@ -68,7 +68,7 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'High Availability Guides (MongoDB)',
+              label: 'High Availability Guides (PostgreSQL)',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 {
@@ -76,19 +76,19 @@ const sidebars = {
                   label: 'AWS ECS on Fargate',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
+                    id: 'getting-started/setup/instance-configuration/high-availability/aws-ecs-fargate',
                   },
                   items: [
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
                     'getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data',
                   ],
                 },
-                'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
+                'getting-started/setup/instance-configuration/high-availability/google-cloud-run',
               ],
             },
             {
               type: 'category',
-              label: 'High Availability Guides (PostgreSQL)',
+              label: 'High Availability Guides (MongoDB)',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 {
