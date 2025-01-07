@@ -140,7 +140,7 @@ git reset origin/master --hard
 
 </dd>
 
-4. Go to the app where you see the conflict, click **+** icon from the commit modal and click Discard and Pull. This discards any local changes that have not been saved and updates your app with the latest changes from the remote branch.
+4. Open the app displaying the conflict. From the commit modal, click the **+** icon and select **Discard and Pull**. This action removes unsaved local changes and updates your app with the latest changes from the remote branch.
 
 ## See also
 
