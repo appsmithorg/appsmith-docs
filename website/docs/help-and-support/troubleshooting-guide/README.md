@@ -6,9 +6,10 @@ import TabItem from '@theme/TabItem';
 
 When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. Whether you're facing deployment issues, database connection problems, or application-specific errors, you can find the relevant troubleshooting guides below for step-by-step solutions.
 
-These steps will help you quickly identify and address common issues:
+To troubleshoot your issue, you can try the following:
 
-1. Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
+
+- Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
 
 <dd>
 
@@ -31,19 +32,16 @@ kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.
 ```
 </dd>
 
-
-</dd>
-
-2. After confirming your Appsmith version, visit the [Appsmith GitHub Release Notes](https://github.com/appsmithorg/appsmith/releases) to compare your version with the latest release. If your version is outdated, consider upgrading to resolve known issues and benefit from new features.
-
-<dd>
-
+After confirming your Appsmith version, visit the [Appsmith GitHub Release Notes](https://github.com/appsmithorg/appsmith/releases) to compare your version with the latest release. If your version is outdated, consider upgrading to resolve known issues and benefit from new features.
 
 See the [upgrade guides](/getting-started/setup/instance-management) for instructions on how to upgrade.
 
+
 </dd>
 
-3. After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
+
+
+- After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
 
 <dd>
 
@@ -67,7 +65,7 @@ kubectl logs <appsmith-pod-name>
 
 </dd>
 
-4. To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
+- To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
 
 <dd>
 
