@@ -6,7 +6,7 @@ import TabItem from '@theme/TabItem';
 
 When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. Whether you're facing deployment issues, database connection problems, or application-specific errors, you can find the relevant troubleshooting guides below for step-by-step solutions.
 
-To start troubleshooting, it's important to first verify that you're using the latest version of Appsmith, as many issues can be resolved through updates.
+These steps will help you quickly identify and address common issues:
 
 1. Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
 
@@ -43,7 +43,58 @@ See the [upgrade guides](/getting-started/setup/instance-management) for instruc
 
 </dd>
 
-3. If issues persist, explore specific troubleshooting guides:
+3. After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
+
+<dd>
+
+- For Docker: You can view logs using the following command:
+
+<dd>
+
+```bash
+docker logs appsmith
+```
+</dd>
+
+- For Kubernetes: Use the following command to view logs for the Appsmith pod:
+
+<dd>
+
+```bash
+kubectl logs <appsmith-pod-name>
+```
+</dd>
+
+</dd>
+
+4. To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
+
+<dd>
+
+- For Docker:
+
+<dd>
+
+```bash
+docker restart appsmith
+```
+</dd>
+
+
+- For Kubernetes:
+
+<dd>
+
+```bash
+kubectl rollout restart deployment appsmith
+```
+
+</dd>
+
+</dd>
+
+If the steps above don’t resolve your issue, refer to more specific troubleshooting guides:
+
 
 <div className="containerGridSampleApp">
    <!-- Self-Hosting Errors -->
