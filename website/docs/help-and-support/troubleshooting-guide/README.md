@@ -9,9 +9,10 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 To troubleshoot your issue, you can try the following:
 
 
-- Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
+## Check Your Appsmith Version
 
-<dd>
+ Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
+
 
 - For Docker: Run the following command in your terminal: 
 
@@ -37,13 +38,9 @@ After confirming your Appsmith version, visit the [Appsmith GitHub Release Notes
 See the [upgrade guides](/getting-started/setup/instance-management) for instructions on how to upgrade.
 
 
-</dd>
+### Verify Logs for Errors
 
-
-
-- After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
-
-<dd>
+After checking your version, verify the logs to identify any errors or issues with your deployment. Logs provide critical information regarding Appsmith's health and any errors that might be affecting the platform.
 
 - For Docker: You can view logs using the following command:
 
@@ -63,11 +60,10 @@ kubectl logs <appsmith-pod-name>
 ```
 </dd>
 
-</dd>
 
-- To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
+## Restart Services
 
-<dd>
+To resolve potential issues related to resource allocation or configuration changes, restart the Appsmith services. This can help in clearing temporary issues and ensuring smooth operation.
 
 - For Docker:
 
@@ -89,7 +85,6 @@ kubectl rollout restart deployment appsmith
 
 </dd>
 
-</dd>
 
 If the steps above don’t resolve your issue, refer to more specific troubleshooting guides:
 
