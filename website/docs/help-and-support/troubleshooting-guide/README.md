@@ -8,61 +8,28 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 
 To start troubleshooting, it's important to first verify that you're using the latest version of Appsmith, as many issues can be resolved through updates.
 
-1. Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. Follow these steps based on your deployment:
+1. Check your Appsmith version. Knowing your version is crucial for debugging and ensuring compatibility with the latest features and fixes. 
 
 <dd>
 
+- For Docker: Run the following command in your terminal: 
 
-<Tabs>
-  <TabItem value="Docker" label="Docker">
-    
-    If you are using Docker to host Appsmith and want to check your version, follow these steps:
-
-    1. Run the following command in your terminal:
-    
-    <dd>
-
-   ```bash
-    docker exec -it appsmith cat info.json
-   ```
-
-    </dd>
-
-
-   2. Look for the version field in the output, which shows your current Appsmith version.
-
-
-  </TabItem>
-  <TabItem value="Kubernetes" label="Kubernetes">
-
-  If you are using Kubernetes (K8s) to deploy Appsmith and need to check the version, follow these steps:
-
-
-   1. Identify the name of the Appsmith pod:
-
- <dd>
+<dd>
 
 ```bash
-kubectl get pods  
+docker exec -it appsmith cat info.json
 ```
 
- </dd>
+</dd>
 
-2. Run the following command to check the version:
+- For Kubernetes: Run the following command to check the version:
 
- <dd>
+<dd>
 
 ```bash
-kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.json  
+kubectl exec -it <appsmith-pod-name> -- cat /appsmith-stacks/configuration/info.json
 ```
-
- </dd>
-
-3. Look for the `version` field in the output.
-
-  </TabItem>
-</Tabs>
-
+</dd>
 
 
 </dd>
