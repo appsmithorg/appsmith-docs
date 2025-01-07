@@ -16,6 +16,12 @@ If you need to check your Appsmith version, this can be helpful when sharing the
 
 If you are using Appsmith Cloud, follow these steps to check your version:
 
+<ZoomImage
+  src="/img/appsmith-cloud-version.png" 
+  alt=""
+  caption=""
+/>
+
 
    1. Log in to your Appsmith Cloud account.
    2. On the homepage, click on the **Help (?)** icon in the top-right corner.
