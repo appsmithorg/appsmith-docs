@@ -8,7 +8,7 @@ This guide shows you how to build a comprehensive customer support dashboard usi
 
 ## Prerequisites
 - A datasource containing customer support tickets. For the list of datasources supported by Appsmith, see [Datasources](/connect-data/reference).
-- Basic understanding of Appsmith's [Table](/reference/widgets/table/README), [Chart](/reference/widgets/chart), and [Stats Box](/reference/widgets/stat-box) widgets.
+- Basic understanding of Appsmith's [Table](/reference/widgets/table/README.md), [Chart](/reference/widgets/chart), and [Stats Box](/reference/widgets/stat-box) widgets.
 
 ## Dashboard Components
 
