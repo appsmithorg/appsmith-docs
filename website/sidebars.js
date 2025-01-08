@@ -257,7 +257,7 @@ const sidebars = {
           collapsed: true,
           label: 'Authentication',
           items: [
-            'connect-data/authentication/oauth2-authentication',
+            'connect-data/authentication/oauth2-authentication/README',
             'connect-data/authentication/oauth2-authentication/oauth2-flow-diagrams'
           ]
         },
