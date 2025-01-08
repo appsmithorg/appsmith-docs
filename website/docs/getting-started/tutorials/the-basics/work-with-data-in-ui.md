@@ -58,9 +58,9 @@ This tutorial takes you through the process of viewing and editing individual re
 4. Paste the below SQL update command in the query editor to update the `users` table in the database with the details modified in the Form.
 
   ```sql
-  UPDATE users 
-  SET name = {{nameInput.text}},
-  dob = {{dobInput.selectedDate}}
+  UPDATE public."users" 
+  SET name = "{{nameInput.text}}",
+  dob = "{{dobInput.selectedDate}}"
   WHERE id = {{usersTable.selectedRow.id}} 
   ```
 
