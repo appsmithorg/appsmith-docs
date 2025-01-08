@@ -255,6 +255,15 @@ const sidebars = {
         {
           type: 'category',
           collapsed: true,
+          label: 'Authentication',
+          items: [
+            'connect-data/authentication/oauth2-authentication',
+            'connect-data/authentication/oauth2-authentication/oauth2-flow-diagrams'
+          ]
+        },
+        {
+          type: 'category',
+          collapsed: true,
           label: 'How-to Guides',
           link: { type: 'doc', id: 'connect-data/how-to-guides/README' },
           items: [
