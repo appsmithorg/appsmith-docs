@@ -5,7 +5,7 @@ description: Learn about OAuth2 authentication for datasources in Appsmith and h
 
 # OAuth2 Authentication for Datasources
 
-OAuth2 is a widely-used authorization protocol that enables applications to obtain limited access to user accounts on various services. This guide provides comprehensive information about implementing OAuth2 authentication for datasources in Appsmith.
+OAuth2 is a widely used authorization protocol that enables applications to obtain limited access to user accounts on various services. This guide provides comprehensive information about implementing OAuth2 authentication for datasources in Appsmith.
 
 ## Understanding OAuth2 in Appsmith
 
