@@ -17,7 +17,7 @@
     "@docusaurus/core": "^3.6.3",
     "@docusaurus/plugin-client-redirects": "^3.6.3",
     "@docusaurus/preset-classic": "^3.6.3",
-    "@docusaurus/theme-mermaid": "^3.7.0",
+    "@docusaurus/theme-mermaid": "3.6.3",
     "@mdx-js/react": "^3.0.0",
     "@twilio-labs/docusaurus-plugin-segment": "^0.1.0",
     "@types/node": "^22.10.5",
