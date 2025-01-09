@@ -102,3 +102,7 @@ The **React Frontend** is the web client where users interact with Appsmith to d
 - Is hosted behind the **Application Load Balancer (ALB)** to ensure scalable and reliable access to the platform.
 
 Appsmith can be deployed on a variety of platforms depending on your environment and requirements. For more information, see the [Appsmith Installation Guides](/getting-started/setup/installation-guides). When deploying in a production environment, Appsmith recommends deployment on Kubernetes, ensuring scalability, high availability, and fault tolerance. For more information, see the [Appsmith Kubernetes Installation Guides](getting-started/setup/installation-guides/kubernetes).
+
+## See also
+
+* [Installation Guides](/getting-started/setup/installation-guides): Learn how to install Appsmith on different platforms.
