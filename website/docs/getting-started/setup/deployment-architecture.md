@@ -41,8 +41,7 @@ Appsmith when deployed on Kubernetes, spuns different pods, each responsible for
 
 **Temporal** orchestrates distributed workflows and long-running processes in the backend.
   - Temporal handles tasks that require persistence, such as handling business logic processes and approval or rejection actions.
-  - It ensures reliability and automatic retries for asynchronous tasks, improving the execution of background processes.
-
+  - It continuously polls the Temporal cluster to start or resume execution of pending or paused tasks within a workflow.
 
 #### Java Backend (Appsmith Server)
 
