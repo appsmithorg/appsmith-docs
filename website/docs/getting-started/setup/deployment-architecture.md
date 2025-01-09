@@ -46,7 +46,7 @@ Appsmith when deployed on Kubernetes, spuns different pods, each responsible for
 #### Java Backend (Appsmith Server)
 
 The **Java Backend** is the central hub for user interaction, integrating with all components of Appsmith to provide a seamless experience, and handles core business logic within Appsmith.
-  - **Authentication**: Manages login credentials, OAuth 2.0 authentication with [Google](getting-started/setup/instance-configuration/authentication/google-login) and [GitHub](http://localhost:3000/getting-started/setup/instance-configuration/authentication/github-login), and Single Sign-On (SSO) with [OIDC](getting-started/setup/instance-configuration/authentication/openid-connect-oidc) and [SAML](getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml).
+  - **Authentication**: Manages login credentials, OAuth 2.0 authentication with [Google](/getting-started/setup/instance-configuration/authentication/google-login) and [GitHub](/getting-started/setup/instance-configuration/authentication/github-login), and Single Sign-On (SSO) with [OIDC](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc) and [SAML](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml).
 - **CRUD API**: Provides APIs for managing users, workspaces, applications, pages, and widgets.
 - **Action Execution**: Executes queries on databases and external APIs.
 - **Git Integration**: Maintains clones of Git-connected apps on the file system, ensuring version control and codebase management.
@@ -101,7 +101,7 @@ The **React Frontend** is the web client where users interact with Appsmith to d
 - Communicates with the backend services using REST APIs and WebSocket protocols for real-time interactions.
 - Is hosted behind the **Application Load Balancer (ALB)** to ensure scalable and reliable access to the platform.
 
-Appsmith can be deployed on a variety of platforms depending on your environment and requirements. For more information, see the [Appsmith Installation Guides](/getting-started/setup/installation-guides). When deploying in a production environment, Appsmith recommends deployment on Kubernetes, ensuring scalability, high availability, and fault tolerance. For more information, see the [Appsmith Kubernetes Installation Guides](getting-started/setup/installation-guides/kubernetes).
+Appsmith can be deployed on a variety of platforms depending on your environment and requirements. For more information, see the [Appsmith Installation Guides](/getting-started/setup/installation-guides). When deploying in a production environment, Appsmith recommends deployment on Kubernetes, ensuring scalability, high availability, and fault tolerance. For more information, see the [Appsmith Kubernetes Installation Guides](/getting-started/setup/installation-guides/kubernetes).
 
 ## See also
 
