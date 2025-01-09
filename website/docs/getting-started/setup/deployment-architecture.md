@@ -12,7 +12,9 @@ This page provides an overview of the deployment architecture for Appsmith, focu
 
 ## Components
 
-Appsmith can be deployed as a single Docker container with a single volume for storing persistent data. For **production environments**, Appsmith recommends deploying Appsmith on a Kubernetes platform. The Kubernetes-based deployment ensures that all services are containerized and orchestrated efficiently to handle scaling and fault tolerance. The diagram below illustrates the key components, their interactions, and data flow when deployed on a Kubernetes platform:
+Appsmith can be deployed as a single Docker container with a single volume for storing persistent data. For **production environments**, Appsmith recommends deploying Appsmith on a Kubernetes platform. The Kubernetes-based deployment ensures that all services are containerized and orchestrated efficiently to handle scaling and fault tolerance. 
+
+The diagram below illustrates the key components, their interactions, and data flow when Appsmith is deployed on a Kubernetes platform:
 
 <ZoomImage src="/img/Appsmith_Deployment_Architecture.png" alt="Appsmith Deployment Architecture" caption="Appsmith Deployment Architecture" />
 
@@ -101,8 +103,7 @@ The **React Frontend** is the web client where users interact with Appsmith to d
 - Communicates with the backend services using REST APIs and WebSocket protocols for real-time interactions.
 - Is hosted behind the **Application Load Balancer (ALB)** to ensure scalable and reliable access to the platform.
 
-Appsmith can be deployed on a variety of platforms depending on your environment and requirements. For more information, see the [Appsmith Installation Guides](/getting-started/setup/installation-guides). When deploying in a production environment, Appsmith recommends deployment on Kubernetes, ensuring scalability, high availability, and fault tolerance. For more information, see the [Appsmith Kubernetes Installation Guides](/getting-started/setup/installation-guides/kubernetes).
-
 ## See also
 
 * [Installation Guides](/getting-started/setup/installation-guides): Learn how to install Appsmith on different platforms.
+* [Install Appsmith on Kubernetes](/getting-started/setup/installation-guides/kubernetes): Learn how to install Appsmith on Kubernetes.
