@@ -114,7 +114,15 @@ When creating a new app and connecting it to a Git repository, merge conflicts m
 
 <dd> 
 
-- **Workspace ID**: Open the Appsmith UI, navigate to the workspace, and find the `workspaceId` in the browser URL (e.g., `https://internal.appsmith.com/applications?workspaceId=<workspace_id>`). 
+- **Workspace ID**: Open the Appsmith UI, navigate to the workspace, and find the `workspaceId` in the browser URL, like:
+
+<dd>
+
+```js
+https://internal.appsmith.com/applications?workspaceId=<workspace_id>
+```
+
+</dd>
 
 - **Application ID**: Edit the app, open the Network tab in developer tools, filter by `consolidated`, and copy the `applicationId` from the response. 
 
