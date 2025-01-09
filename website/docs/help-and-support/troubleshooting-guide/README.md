@@ -1,7 +1,3 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-
 # Overview
 
 When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. Whether you're facing deployment issues, database connection problems, or application-specific errors, you can find the relevant troubleshooting guides below for step-by-step solutions.
