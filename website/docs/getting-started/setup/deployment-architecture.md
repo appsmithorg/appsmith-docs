@@ -22,7 +22,7 @@ The diagram below illustrates the key components, their interactions, and data f
 The **Appsmith Server** is a cloud service managed by Appsmith, and acts as the control layer for managing licenses and template configurations.
 
 ### Customer Data (Datasources)
-**Customer Data** refers to external systems that Appsmith interfaces with, such as:
+**Customer Data** refers to customer's external systems that Appsmith interfaces with, such as:
 - **SQL Databases**: PostgreSQL, MySQL, Microsoft SQL Server, etc.
 - **APIs**: REST APIs, GraphQL endpoints, and other third-party services.
 - **Cloud Storage Services**: AWS S3, DynamoDB, Redshift, and more.
