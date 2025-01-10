@@ -1,8 +1,6 @@
 # Overview
 
-When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. Whether you're facing deployment issues, database connection problems, or application-specific errors, you can find the relevant troubleshooting guides below for step-by-step solutions.
-
-To troubleshoot your issue, you can try the following:
+When using Appsmith, you may encounter errors related to both self-hosting the platform and building applications. This page provides detailed resources to help you troubleshoot and resolve common issues. To troubleshoot your issue, you can try the following:
 
 
 ### Check Your Appsmith Version
