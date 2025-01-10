@@ -5,8 +5,7 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 
 ### Check Your Appsmith Version
 
-It is important to verify the version of Appsmith you are using. Knowing your version ensures compatibility with the latest features and fixes. This step can help you identify if your version is outdated and may require an update to resolve certain issues.
-
+You can check your Appsmith version to ensure compatibility with the latest features and fixes. This helps identify if an update is needed to resolve any potential issues. Use the following command to check your Appsmith version:
 
 - For Docker: 
 
@@ -34,7 +33,7 @@ For instructions on how to upgrade, please refer to our [upgrade guides](/gettin
 
 ### Verify Logs for Errors
 
-Logs provide valuable insights into the health of your Appsmith instance and can help identify underlying issues affecting the platform. Reviewing the logs is essential for troubleshooting errors that might occur during deployment or operation.
+Logs provide key information about your Appsmith instance and help identify any issues during deployment or operation. Run the following command to check the logs:
 
 - For Docker: You can view logs using the following command:
 
