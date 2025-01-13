@@ -70,7 +70,7 @@ const sidebars = {
               type: 'category',
               label: 'High Availability Guides (PostgreSQL)',
               items: [
-                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                'getting-started/setup/instance-configuration/high-availability/aws-eks',
                 {
                   type: 'category',
                   label: 'AWS ECS on Fargate',
