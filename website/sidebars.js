@@ -333,7 +333,8 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
-                    'connect-data/reference/twilio'
+                    'connect-data/reference/twilio',
+                    'connect-data/reference/zendesk'
                   ],
                 },
                 //category- AI Integrations
