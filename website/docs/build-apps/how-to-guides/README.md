@@ -68,6 +68,68 @@ Browse through the categorized guides below to find solutions tailored to your r
 
 ---
 
+## Form Handling
+
+<div className="containerGridSampleApp">
+   <!-- Create Forms with Validations -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/create-forms-with-validations">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Create Forms with Validations</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This page shows you how to create forms with validations using the Form widget to ensure user inputs are correct.
+      </div>
+   </a>
+   <!-- Submit Form Data Using API -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/submit-form-data">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Submit Form Data Using API</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This page demonstrates how to submit form data to an API using the Form widget.
+      </div>
+   </a>
+</div>
+
+---
+
+## API Integrations
+
+<div className="containerGridSampleApp">
+   <!-- Fetch Data from an API -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/fetch-data-from-api">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Fetch Data from an API</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This page shows you how to fetch data from an API using Appsmith's API query capabilities.
+      </div>
+   </a>
+   <!-- Send Data to an API -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/send-data-to-api">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Send Data to an API</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This page shows how to send data from your Appsmith application to an external API using API queries.
+      </div>
+   </a>
+</div>
+
+---
+
 ## UI Customization
 
 <div className="containerGridSampleApp">
@@ -154,6 +216,53 @@ Browse through the categorized guides below to find solutions tailored to your r
       </div>
    </a>
 </div>
+
+---
+
+## Real-time Integrations
+
+<div className="containerGridSampleApp">
+   <!-- WebSockets -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/using-websockets">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Using WebSockets</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This guide explains how to implement WebSockets for real-time data exchange in your app.
+      </div>
+   </a>
+   <!-- Kafka -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/using-kafka">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Using Kafka</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This page shows how to integrate Kafka for streaming real-time data in your app.
+      </div>
+   </a>
+</div>
+
+<div className="containerGridSampleApp">
+   <!-- Setup Polling -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/setup-polling">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Setup Polling</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         This guide explains how to set up polling to fetch data at regular intervals, useful for fetching real-time data in situations where WebSockets are not ideal.
+      </div>
+   </a>
+</div>
+
 
 ---
 
