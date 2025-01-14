@@ -4,24 +4,19 @@ description: The page provides information about the deployment architecture of 
 
 # Deployment Architecture
 
-Appsmith can be accessed through the Cloud by signing up at [app.appsmith.com](https://app.appsmith.com/user/sign-up) or deployed on-premise using the setup instructions provided in the [Self Hosting](/getting-started/setup/installation-guides) guides.
+Appsmith can be deployed as a single Docker container with a single volume for storing persistent data. For **production environments**, Appsmith recommends deploying Appsmith on a Kubernetes platform. This page provides an overview of the deployment architecture for Self-hosted Appsmith, focusing on its key components and their interactions in a Kubernetes-based environment.
 
-In the cloud, Appsmith runs on distributed [Kubernetes](https://kubernetes.io/docs/concepts/overview/) clusters via AWS, offering scalability and high availability with minimal downtime during updates. For self-hosted environments, Appsmith runs in a single Docker container for simplified deployment.
-
-This page provides an overview of the deployment architecture for Appsmith, focusing on its key components and their interactions in a Kubernetes-based environment.
-
-## Components
-
-Appsmith can be deployed as a single Docker container with a single volume for storing persistent data. For **production environments**, Appsmith recommends deploying Appsmith on a Kubernetes platform. The Kubernetes-based deployment ensures that all services are containerized and orchestrated efficiently to handle scaling and fault tolerance. 
-
-The diagram below illustrates the key components, their interactions, and data flow when Appsmith is deployed on a Kubernetes platform:
+## Core components
+The Appsmith deployment architecture consists of several key components grouped by their purpose and functionality. These include the Appsmith server, customer data sources, Kubernetes pods, external managed services, and frontend architecture. The diagram below illustrates these key components, their interactions, and data flow when Appsmith is deployed on a Kubernetes platform:
 
 <ZoomImage src="/img/Appsmith_Deployment_Architecture.png" alt="Appsmith Deployment Architecture" caption="Appsmith Deployment Architecture" />
 
 ### Appsmith Server 
-The **Appsmith Server** is a cloud service managed by Appsmith, and acts as the control layer for managing licenses and template configurations.
+The **Appsmith Server** is a cloud service (`cs.appsmith.com`) managed by Appsmith that serves as the control layer. It's responsible for:  
+- **Licensing:** Managing deployment licenses.  
+- **Template configuration:** Handles the configuration and management of application templates within Appsmith.
 
-### Customer Data (Datasources)
+### Customer data (external systems)
 **Customer Data** refers to customer's external systems that Appsmith interfaces with, such as:
 - **SQL Databases**: PostgreSQL, MySQL, Microsoft SQL Server, etc.
 - **APIs**: REST APIs, GraphQL endpoints, and other third-party services.
@@ -31,7 +26,7 @@ These external datasources allow Appsmith to fetch, process, and visualize data 
 
 ### Kubernetes Pods
 
-Appsmith when deployed on Kubernetes, spuns different pods, each responsible for a specific service or function. These pods include:
+When deployed on Kubernetes, Appsmith uses different pods, each responsible for a specific service or functionality. These include:  
 
 #### Keycloak
 
@@ -68,7 +63,7 @@ The **Node.js Backend** is a lightweight server that handles several key feature
 
 ### External Managed Services
 
-Appsmith relies on several external managed services for persistent storage and caching, ensuring high availability and scalability:
+For high availability and scalability, Appsmith configures certain components as external managed services. These services handle persistent storage and caching, ensuring the system remains performant and reliable in demanding environments.
 
 #### MongoDB Appsmith database
 
