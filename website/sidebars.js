@@ -241,7 +241,6 @@ const sidebars = {
             [
               `getting-started/setup/best-practices`,
               'getting-started/setup/deployment-architecture',
-              'getting-started/setup/process-management',
             ],
         }
       ],
