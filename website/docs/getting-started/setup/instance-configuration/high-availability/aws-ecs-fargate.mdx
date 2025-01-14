@@ -70,7 +70,7 @@ Appsmith relies on Redis for caching and session storage. To configure Redis for
 
 ### Configure PostgreSQL
 
-If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a PostgreSQL RDS instance for Keycloak. Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
+Follow these steps to create a PostgreSQL RDS instance on Amazon cloud:
 
 #### Create PostgreSQL RDS instance 
 
@@ -111,9 +111,9 @@ To ensure Appsmith is highly available, configure it to use multiple instances, 
 2. Select your Appsmith task definition and click **Create new revision**.
 3. Add the following environment variables under **Container-1**. Use the values obtained during the [Set up external databases](#set-up-external-databases) section.
 
-   - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
+   - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your PostgreSQL (`appsmith`) database, configured during its setup.
    - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
-   - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
+   - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL (`appsmith-keycloak`) database you set up for Keycloak.
    - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: Set the driver to `postgresql` as Keycloak uses PostgreSQL for its database.
    - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
    - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the `postgres` user.

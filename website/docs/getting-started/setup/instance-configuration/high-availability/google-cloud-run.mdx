@@ -40,24 +40,6 @@ Before setting up high availability for Appsmith, ensure you have completed the 
 
 High availability for Appsmith relies on correctly configured external databases. Follow the steps for each database to set up persistent, scalable environments.
 
-### Configure MongoDB
-
-Appsmith requires MongoDB to store application data. To use an external MongoDB instance with Appsmith, follow the steps below to back up your data, configure the new MongoDB instance, and restore your Appsmith data if needed.
-
-1. Take a backup of your existing MongoDB instance before proceeding. For more information, see [How to take back up of MongoDB data](/getting-started/setup/instance-management/backup-and-restore/backup-database) guide.
-
-2. If you don't already have a MongoDB instance, create a new one. You can either use an existing instance or set up a new one through your infrastructure or a cloud provider like MongoDB Atlas.
-
-3. Log in to your MongoDB instance as an admin user. Then, run the following command to initiate the replica set configuration:
-   ```bash
-   rs.initiate()
-   ```
-4. Assign or verify that the MongoDB user account Appsmith uses has `readWrite` and `clusterMonitor` roles assigned.
-
-5. Restore your Appsmith backup you took earlier to the new MongoDB instance. For more information, see the [Restore database](/getting-started/setup/instance-management/backup-and-restore/restore-database) guide.
-
-6. Once your MongoDB setup is complete, note down the connection string as you’ll need it in the [Configure High Availability](#configure-high-availability) section.
-
 ### Configure Redis
 
 Appsmith relies on Redis for caching and session storage. Set up a Redis instance using Google Cloud Memorystore. Follow these steps:
@@ -78,9 +60,9 @@ Appsmith relies on Redis for caching and session storage. Set up a Redis instanc
 
 <ZoomImage src="/img/redis-primary-endpoint.png" alt="Primary Endpoint of the Redis Instance" caption="Primary Endpoint of the Redis Instance" />
 
-### Configure PostgreSQL (optional)
+### Configure PostgreSQL
 
-If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a PostgreSQL RDS instance for Keycloak. Follow these steps to create a PostgreSQL RDS instance for your Appsmith installation on Google Cloued Run:
+Follow these steps to create a PostgreSQL RDS instance for your Appsmith installation on Google Cloued Run:
 
 #### Create PostgreSQL instance
 
@@ -109,7 +91,7 @@ Follow these steps to create a PostgreSQL instance using Google Cloud SQL:
    - Choose **Any** in the **Order of update** dropdown.
 10. Click **Create Instance**.
 
-#### Create database
+#### Create database for Appsmith data
 
 1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
 2. Click on the instance name to open its **Overview** page.
@@ -136,6 +118,34 @@ Once the PostgreSQL instance is set up, you'll need to record the following deta
 
 You need these details while configuring Appsmith to connect to the PostgreSQL database.
 
+#### Create database for Keycloak data (optional)
+
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+2. Click on the instance name to open its **Overview** page.
+3. In the SQL navigation menu, select **Databases**.
+4. Click **Create database**.
+5. Enter a name for the database. For example, `appsmith-keycloak-db`.
+6. Click **Create** to create the database.
+
+#### Create users
+
+1. In the Google Cloud console, go to the [Cloud SQL Instances](https://console.cloud.google.com/sql) page.
+2. Open the **Overview** page of your instance by clicking the instance name.
+3. In the SQL navigation menu, select **Users**.
+4. Click **Add user account**.
+5. In the **Add a user account** dialog:
+   - Set the **Username** and **Password** for the new user.
+   - Choose **Built-in authentication** (default).
+6. Click **Add** to create the user.
+
+Once the PostgreSQL instance is set up, you'll need to record the following details:
+- **Public IP** address.
+- **Database name**. For example, `appsmith-keycloak-db`.
+- **Username** and **Password** you created.
+
+You need these details while configuring Appsmith to connect to the PostgreSQL Keycloak database.
+
+
 ## Configure high availability
 
 After setting up external databases, configure Appsmith on Google Cloud Run for redundancy and reliability.
@@ -145,9 +155,9 @@ After setting up external databases, configure Appsmith on Google Cloud Run for 
 2. Click **EDIT & DEPLOY NEW REVISION**.
 3. Add the following environment variables:
 
-    - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
+    - `APPSMITH_DB_URL=<PostgreSQL connection string>`: Use the connection string for your PostgreSQL (`appsmith-db`) database, configured during its setup.
     - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
-    - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
+    - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL (`appsmith-ksycloak-db`) database you set up for Keycloak.
     - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: Set the driver to `postgresql` as Keycloak uses PostgreSQL for its database.
     - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
     - `APPSMITH_KEYCLOAK_DB_PASSWORD=<PostgreSQL password>`: Use the password you created for the PostgreSQL user.
