@@ -11,9 +11,9 @@ This page outlines the best practices for deploying, managing, and maintaining A
 Selecting the right platform and deployment method is crucial for the scalability and reliability of your Appsmith instance.
 
 - **Platform recommendations**:
-  - Appsmith works best on **AMD** and **ARM** architectures across cloud providers like **AWS**, **Azure**, **GCP**, and **DigitalOcean**.
-  - The preferred method for production environments is **Kubernetes**, as it supports high availability and scalability, managing Appsmith's dependencies like MongoDB and Redis within Kubernetes pods without requiring external instances.
-  - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended.
+  - Appsmith works best on **AMD** and **ARM** architectures across cloud providers like **AWS**, **Azure**, **GCP**, and **DigitalOcean**. For more information, see [Installation](/getting-started/setup/installation-guides) guides.
+  - The preferred method for production environments is **Kubernetes**, as it supports high availability and scalability, managing Appsmith's dependencies like MongoDB and Redis within Kubernetes pods without requiring external instances. For more information, see [Kubernetes Installation](/getting-started/setup/installation-guides/kubernetes) guide.
+  - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended. For more information, see [AWS ECS Installation](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2) guide.
 
 - **Instance recommendations**:
   - **Minimum instance size**: `t3.medium` or equivalent. This should scale well for hundreds of users.
@@ -41,7 +41,7 @@ Proper instance and environment configuration ensures reliability, performance, 
 
 Ensuring the security of your Appsmith instance is vital for protecting sensitive data and maintaining compliance.
 
-- **Federated authentication**: Disable **form login** and configure federated authentication methods such as **[Google OAuth](/getting-started/setup/instance-management/authentication/google-oauth)** or **[SAML SSO](/getting-started/setup/instance-management/authentication/saml-sso)**.
+- **Federated authentication**: Disable **form login** and configure federated authentication methods such as **[Google OAuth](/getting-started/setup/instance-configuration/authentication/google-login)** or **[SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)**.
 
 - **SMTP server configuration**: Set up an **SMTP server** for email verification during new sign-ups and password reset requests.
 
