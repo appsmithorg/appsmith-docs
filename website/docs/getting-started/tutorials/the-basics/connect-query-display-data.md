@@ -4,9 +4,22 @@ slug: /getting-started/tutorials/the-basics/connect-query-display-data
 description:  Connect a datasource on Appsmith
 ---
 
-# Lesson 1 - Bring in Data
+# Connect and Display Data
 
-This tutorial takes you through the process of connecting a datasource and querying data on Appsmith. 
+In this tutorial, you learn how to connect a database, fetch data using SQL queries, and display it in a table widget.
+
+:::tip What will I learn? 📝
+By the end of this tutorial, you will learn:
+
+- Connect your app to a PostgreSQL database.
+- Fetch data using SQL queries.
+- Display data in a Table widget.
+:::
+
+<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
+  <iframe src="https://demo.arcade.software/fT4UI3z2O90bF6IKjdOj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Display Data">
+  </iframe>
+</div>
 
 ## Connect datasource
 
@@ -16,19 +29,19 @@ This tutorial takes you through the process of connecting a datasource and query
 
 3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/fT4UI3z2O90bF6IKjdOj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
 4. Rename the default database name from **Untitled datasource 1** to `usersTutorialDB`. You may have to click the pencil icon next to the database name if it is not already selected. 
 
-5. Enter the following details in the connection parameter fields:<br/>
+5. Enter the following details in the connection parameter fields:
+
+<dd>
+
   **Host Address**: `mockdb.internal.appsmith.com` <br/>
   **Port**: `5432`<br/>
   **Database Name**: `users`<br/>
   **Username**: `users`<br/>
   **Password**: `new-users-db-pass`<br/>
+
+</dd>
 
 6. Click the **Test Configuration** button to test the connection and ensure the database is valid.
 
@@ -79,4 +92,5 @@ The mustache template `{{}}` is used to write JS code inside widgets and queries
 You've displayed the results from the **getUsers** query on the Table widget.
 
 ## Next steps
-- [Lesson 2 - Work with data in UI](/getting-started/tutorials/the-basics/work-with-data-in-ui)
+
+You have successfully connected to a datasource, fetched data, and displayed it in a table widget. To enhance user interactions and edit data, proceed to Part 2: [Build UI Interactions](/getting-started/tutorials/the-basics/work-with-data-in-ui).
