@@ -846,8 +846,8 @@ const sidebars = {
           type: 'category',
           collapsed: true,
           label: 'Troubleshooting',
+          link: { type: 'doc', id: 'help-and-support/troubleshooting-guide/README', },
           items: [
-            'help-and-support/troubleshooting-guide/README',
             {
               // Help & Support start
               type: 'category',
