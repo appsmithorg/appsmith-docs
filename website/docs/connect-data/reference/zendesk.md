@@ -20,6 +20,7 @@ tags={[
 
 This page provides information for connecting Appsmith to Zendesk and interacting with your support data, such as tickets and users, in your applications.
 
+<ZoomImage src="/img/zendesk-appsmith.png" alt="" caption="" />
 
 ### Connection parameters
 
@@ -338,11 +339,7 @@ This property updates the type of the ticket. Use it to change the category of t
 - `Question`: General inquiries or support questions.
 - `Task`: Administrative or procedural tasks.
 
-*Example:* To set the type to `problem`:
 
-```javascript
-"problem"
-```
 
 #### Priority
 
@@ -353,11 +350,6 @@ This property updates the urgency of the ticket. Use it to adjust the priority a
 - `High`: Urgent issues requiring quick attention.
 - `Urgent`: Critical issues needing immediate resolution.
 
-*Example:* To dynamically set the priority to `high`:
-
-```javascript
-"high"
-```
 
 #### Status
 
@@ -369,11 +361,7 @@ This property updates the current status of the ticket, indicating its progress.
 - `Hold`: Waiting on a third party or process.
 - `Solved`: The ticket has been resolved but not yet closed.
 
-*Example:* To set the status to `pending`:
 
-```javascript
-"pending"
-```
 
 #### Due At
 
