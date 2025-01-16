@@ -18,7 +18,7 @@ tags={[
 <!-- vale on -->
 
 
-This page provides information for connecting Appsmith to Zendesk and interacting with your support data, such as tickets and users, in your applications.
+This page provides information for connecting Appsmith to Zendesk, which allows you to interact with support data such as tickets and users within your applications.
 
 <ZoomImage src="/img/zendesk-appsmith.png" alt="" caption="" />
 
@@ -46,9 +46,9 @@ For more details, refer to the [Zendesk documentation](https://support.zendesk.c
 
 After adding your subdomain, you are redirected to the authentication page. The page displays the authentication method based on your Zendesk account configuration. This could be:
 
+- **Basic Authentication (Email and Password):** Authenticate using your email address and password.
 - **API Token:** Authenticate using your email address and API token.
 - **OAuth:** Authenticate via OAuth if supported by your Zendesk account.
-- **Basic Authentication (Email and Password):** Authenticate using your email address and password.
 
 
 </dd>
@@ -129,7 +129,8 @@ This property defines the title or brief description of the issue or request. It
 
 <dd>
 
-This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, which helps the support team understand the context and provide better assistance. The description should include relevant details, such as steps to reproduce the issue, error messages, or any other information that can help resolve the ticket.
+This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, helping the support team understand the context and provide better assistance. The description must include relevant details, such as steps to reproduce the issue, error messages, or any other information that can aid in resolving the ticket.
+
 
 *Example:* If you want to dynamically set the subject from an input widget, use:
 
@@ -245,7 +246,7 @@ This property specifies the due date and time for the ticket, applicable only if
 
 This property allows associating tags with the ticket for categorization or easy search. Tags help to quickly filter tickets by specific topics or issues.
 
-*Example:* If the ticket is related to a particular feature or campaign, tags like "`homepage`", "`bug`", or "`marketing`" could be added.
+*Example:* For tickets related to a specific feature or campaign, tags such as `homepage`, `bug`, or `marketing` can be applied.
 
 </dd>
 
@@ -378,12 +379,6 @@ This property updates the due date for the ticket, applicable for tasks only. Th
 
 This property updates the tags associated with the ticket, allowing for better categorization or search. Add or modify tags to keep the ticket organized.
 
-*Example:* To add a new tag dynamically:
-
-```javascript
-{{Tag_Input.text}}
-// Example: "bug, homepage, urgent"
-```
 
 #### External Id
 
@@ -400,7 +395,7 @@ This property is used to associate the ticket with an external system or trackin
 
 ### Delete Ticket 
 
-The delete ticket command allows you to permanently remove a ticket from Zendesk. This action cannot be undone, so it should be used cautiously, typically for cleanup or administrative purposes.
+The delete ticket command permanently removes a ticket from Zendesk. This action is irreversible and intended for cleanup or administrative purposes.
 
 #### Ticket ID
 
