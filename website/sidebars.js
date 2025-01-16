@@ -4,29 +4,27 @@ const sidebars = {
       type: 'category',
       label: 'Build',
       items: [
-        // Getting Started
         {
           type: 'category',
-          collapsed: false,
-          label: 'Getting Started',
-          items: [
-            {
-              type: 'category',
-              label: 'Tutorial',
-              link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
-              items: [
-                'getting-started/tutorials/the-basics/connect-query-display-data',
-                'getting-started/tutorials/the-basics/work-with-data-in-ui',
-                'getting-started/tutorials/the-basics/write-js-code',
-              ],
-            },
+          collapsed: true,
+          label: 'Quick Start',
+          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
+          items: []
+        },
+        {
+          type: 'category',
+          label: 'Tutorial',
 
-          ]
+          items: [
+            'getting-started/tutorials/the-basics/connect-query-display-data',
+            'getting-started/tutorials/the-basics/work-with-data-in-ui',
+            'getting-started/tutorials/the-basics/write-js-code',
+          ],
         },
         {
           //Data start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Connect Data',
           items: [
             'connect-data/overview',
@@ -49,7 +47,7 @@ const sidebars = {
             {
               //Reference start
               type: 'category',
-              collapsed: false,
+              collapsed: true,
               label: 'Reference',
               link: { type: 'doc', id: 'connect-data/reference/overview' },
               items: [
@@ -149,7 +147,7 @@ const sidebars = {
 
         { // UI start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Build Apps',
           items: [
             'build-apps/overview',
@@ -237,7 +235,7 @@ const sidebars = {
               //Reference start
               type: 'category',
               label: 'Reference',
-              collapsed: false,
+              collapsed: true,
               link: { type: 'doc', id: 'build-apps/reference/README' },
               items: [
                 {
@@ -330,7 +328,7 @@ const sidebars = {
 
         { // WRITE CODE start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Write Code',
           items: [
             'write-code/overview',
@@ -348,7 +346,7 @@ const sidebars = {
             {
               //Reference start
               type: 'category',
-              collapsed: false,
+              collapsed: true,
               label: 'Reference',
               link: { type: 'doc', id: 'write-code/reference/overview' },
               items: [{
@@ -413,7 +411,7 @@ const sidebars = {
         // Packages (Beta)
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Packages (Beta)',
           items: [
             'packages/overview',
@@ -435,7 +433,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              collapsed: false,
+              collapsed: true,
               label: 'Reference',
               items: [
                 'packages/reference/package',
@@ -448,7 +446,7 @@ const sidebars = {
         //Workflows start
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Workflows (Beta)',
           items: [
             'workflows/README',
@@ -479,7 +477,7 @@ const sidebars = {
             },
             {
               type: 'category',
-              collapsed: false,
+              collapsed: true,
               label: 'Reference',
               items: [
                 'workflows/reference/workflow-triggers',
@@ -502,7 +500,7 @@ const sidebars = {
         {
           //Advanced Concepts Start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Manage Apps and Users',
           items: [
             {
@@ -520,7 +518,7 @@ const sidebars = {
                 },
                 {
                   type: 'category',
-                  collapsed: false,
+                  collapsed: true,
                   label: 'Reference',
                   items: [
                     'advanced-concepts/granular-access-control/reference/default-roles',
@@ -613,7 +611,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Self Hosting',
           link: { type: 'doc', id: 'getting-started/setup/README' },
           items: [
@@ -846,7 +844,7 @@ const sidebars = {
         {
           // Help & Support start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Troubleshooting',
           items: [
             'help-and-support/troubleshooting-guide/README',
@@ -889,7 +887,7 @@ const sidebars = {
         {
           // Product Start
           type: 'category',
-          collapsed: false,
+          collapsed: true,
           label: 'Product',
           items: [
             'getting-started/faq',
