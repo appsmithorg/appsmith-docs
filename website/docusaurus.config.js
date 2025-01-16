@@ -26,13 +26,6 @@ const config = {
     locales: ['en'],
   },
   plugins: [
-    process.env.VERCEL_ENV === "production" && [
-      '@twilio-labs/docusaurus-plugin-segment',
-      {
-        writeKey: 'tjqTIkJzeqSTB1SUookBTdWhZEoR031c',
-        allowedInDev: false,
-      },
-    ],
     [
       '@docusaurus/theme-mermaid',
       {
@@ -96,6 +89,30 @@ const config = {
           src: '/img/appsmith_logo_white.png',
         },
         items: [
+          {
+            type: 'docSidebar',
+            sidebarId: 'buildSidebar',
+            position: 'left',
+            label: 'Build',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'manageSidebar',
+            position: 'left',
+            label: 'Manage',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'deploySidebar',
+            position: 'left',
+            label: 'Deploy',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'otherSidebar',
+            position: 'left',
+            label: 'Other',
+          },
           {
             type: 'search',
             position: 'right',

@@ -1,6 +1,6 @@
 
 const sidebars = {
-  tutorialSidebar: [
+  buildSidebar: [
     {
       //getting started section start
       type: 'category',
@@ -889,6 +889,114 @@ const sidebars = {
       ],
     }, // Product End
   ],
+  manageSidebar: [
+    {
+      type: 'category',
+      label: 'Manage',
+      items: [
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Manage Apps and Users',
+          items: [
+            'getting-started/setup/instance-configuration/authentication/README',
+            {
+              type: 'category',
+              label: 'Granular Access Control',
+              link: { type: 'doc', id: 'advanced-concepts/granular-access-control/README' },
+              items: [
+                {
+                  type: 'category',
+                  label: 'How-to Guides',
+                  items: [
+                    'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
+                    'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access'
+                  ]
+                }
+              ]
+            },
+            'advanced-concepts/version-control-with-git/README',
+            'advanced-concepts/user-provisioning-group-sync',
+            'advanced-concepts/audit-logs',
+            'advanced-concepts/branding',
+            'advanced-concepts/external-portal-using-appsmith'
+          ]
+        }
+      ]
+    }
+  ],
+  deploySidebar: [
+    {
+      type: 'category',
+      label: 'Deploy',
+      items: [
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Self Hosting',
+          link: { type: 'doc', id: 'getting-started/setup/README' },
+          items: [
+            'getting-started/setup/installation-guides/docker/README',
+            'getting-started/setup/installation-guides/kubernetes/README',
+            'getting-started/setup/installation-guides/aws-ami',
+            'getting-started/setup/best-practices',
+            'getting-started/setup/deployment-architecture'
+          ]
+        }
+      ]
+    }
+  ],
+  otherSidebar: [
+    {
+      type: 'category',
+      label: 'Other',
+      items: [
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Troubleshooting',
+          items: [
+            'help-and-support/troubleshooting-guide/README',
+            {
+              type: 'category',
+              label: 'Self-hosting Errors',
+              link: { type: 'doc', id: 'help-and-support/troubleshooting-guide/deployment-errors' },
+              items: [
+                'help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5',
+                'help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error'
+              ]
+            }
+          ]
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Product',
+          items: [
+            'getting-started/faq',
+            'product/security',
+            'product/telemetry',
+            'product/support',
+            {
+              type: 'link',
+              label: 'Privacy Policy',
+              href: 'https://www.appsmith.com/privacy-policy'
+            },
+            {
+              type: 'link',
+              label: 'Release Notes',
+              href: 'https://github.com/appsmithorg/appsmith/releases'
+            },
+            {
+              type: 'link',
+              label: 'Contribute',
+              href: 'https://github.com/appsmithorg/appsmith/blob/release/CONTRIBUTING.md'
+            }
+          ]
+        }
+      ]
+    }
+  ]
 };
 
 module.exports = sidebars;
