@@ -5,23 +5,6 @@ const sidebars = {
       label: 'Build',
       items: [
         {
-          type: 'category',
-          collapsed: true,
-          label: 'Quick Start',
-          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
-          items: []
-        },
-        {
-          type: 'category',
-          label: 'Tutorial',
-
-          items: [
-            'getting-started/tutorials/the-basics/connect-query-display-data',
-            'getting-started/tutorials/the-basics/work-with-data-in-ui',
-            'getting-started/tutorials/the-basics/write-js-code',
-          ],
-        },
-        {
           //Data start
           type: 'category',
           collapsed: true,
@@ -609,6 +592,24 @@ const sidebars = {
       type: 'category',
       label: 'Deploy',
       items: [
+        {
+          //getting started section start
+          type: 'category',
+          collapsed: false,
+          label: 'Get Started',
+          items: [
+            {
+              type: 'category',
+              label: 'Tutorial',
+              link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
+              items: [
+                'getting-started/tutorials/the-basics/connect-query-display-data',
+                'getting-started/tutorials/the-basics/work-with-data-in-ui',
+                'getting-started/tutorials/the-basics/write-js-code',
+              ],
+            }
+          ],
+        },
         {
           type: 'category',
           collapsed: true,

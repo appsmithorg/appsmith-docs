@@ -98,6 +98,12 @@ const config = {
         items: [
           {
             type: 'docSidebar',
+            sidebarId: 'deploySidebar',
+            position: 'left',
+            label: 'Set Up',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'buildSidebar',
             position: 'left',
             label: 'Build',
@@ -106,13 +112,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'manageSidebar',
             position: 'left',
-            label: 'Manage',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'deploySidebar',
-            position: 'left',
-            label: 'Deploy',
+            label: 'Manage Apps and Users',
           },
           {
             type: 'docSidebar',
