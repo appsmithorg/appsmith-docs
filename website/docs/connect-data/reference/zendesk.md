@@ -54,7 +54,7 @@ After adding your subdomain, you are redirected to the authentication page. The 
 </dd>
 
 
-## Query Anthropic
+## Query Zendesk
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Zendesk queries.
 
