@@ -63,7 +63,9 @@ The following section is a reference guide that provides a description of the av
 
 <dd>
 
-The list command retrieves all tickets from your Zendesk account. The response includes ticket data along with metadata such as status, rate limits, and headers. An example response is shown below:
+The list command retrieves all tickets from your Zendesk account. The response includes ticket data along with metadata such as status, rate limits, and headers.
+
+*Example response:*
 
 ```js
 {
@@ -132,7 +134,7 @@ This property defines the title or brief description of the issue or request. It
 This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, helping the support team understand the context and provide better assistance. The description must include relevant details, such as steps to reproduce the issue, error messages, or any other information that can aid in resolving the ticket.
 
 
-*Example:* If you want to dynamically set the subject from an input widget, use:
+*Example:* If you want to dynamically set the subject from an Input widget, use:
 
 ```js
 {{Info_Input.text}}
