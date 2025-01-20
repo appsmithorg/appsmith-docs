@@ -2,7 +2,7 @@
 description: Follow these steps to upgrade the Appsmith Community Kubernetes installation.
 ---
 
-# Kubernetes
+# Upgrade from Community Appsmith (Kubernetes)
 
 This page provides steps to upgrade Appsmith Kubernetes Community Edition.
 
@@ -12,8 +12,8 @@ Before upgrading, ensure you have:
 
 - Signed up on [customer.appsmith.com](https://customer.appsmith.com/) and generated a trial license key.
 - At least 2 GB of free storage space for the backup process.
-- Deployed the latest version of Appsmith. Refer to [Update Appsmith](/getting-started/setup/instance-management/update-appsmith#update-on-kubernetes) to update the version.
-- Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=kubernetes-commands#backup-instance).
+- Deployed the latest version of Appsmith. Refer to [Upgrade Appsmith Versions](/getting-started/setup/instance-management/update-appsmith#update-on-kubernetes) to update the version.
+- Created a backup of your Appsmith instance. For instructions, see [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands).
 
 ## Upgrade Appsmith installation
 

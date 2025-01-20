@@ -1,7 +1,7 @@
 ---
-description: Migrate Appsmith installation on the ECS cluster on EC2 instance to use AWS EFS.
+description: Upgrade Appsmith ECS cluster installation on EC2 instance to use Amazon Elastic File System (EFS).
 ---
-# Migrate Bind Mount to AWS EFS
+# Upgrade to AWS EFS
 
 Migrating your existing Appsmith installation on an AWS ECS from Bind Mount to Amazon Elastic File System (EFS) can enhance flexibility and scalability. This page outlines steps for migrating your AWS ECS on EC2 Appsmith installation from Bind Mount to AWS EFS using the AWS Management Console.
 
@@ -36,7 +36,7 @@ Follow the below steps to configure your Appsmith task definition to use the new
    * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to that you noted while taking the backup in the [Prerequisites](#prerequisites) section.
    * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt that you noted while taking the backup in the [Prerequisites](#prerequisites) section.
    * `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
-   * `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
+   * `APPSMITH_DB_URL` : Enter the URI of the external MongoDB (v5.0 or later) instance.
    * `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
 3. Go to the **Storage** section and add a new volume with below details:
     * **Volume type**- EFS
@@ -94,7 +94,7 @@ Follow the below steps to migrate data:
    ```bash
    appsmithctl restore
    ```
-   For more information, see [Restore Appsmith](/getting-started/setup/instance-management/appsmithctl#restore-instance).
+   For more information, see [Restore Appsmith](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
 6. Verify the Appsmith service by logging into your Appsmith account and verifying your apps.
 
 ## Remove Bind mount storage
@@ -110,6 +110,6 @@ Follow the below steps to remove the Bind mount:
 
 ## Troubleshooting
 
-If errors occur, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/appsmithctl?current-command-type=docker-commands#restore-instance) section. 
+If errors occur, roll back to a previous version to fix the issue. For more information, see the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) section. 
 
 If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.

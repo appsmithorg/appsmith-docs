@@ -18,11 +18,21 @@ Appsmith applications are secure-by-default, with a number of strategies in plac
 
 - **Secure Connections**: Appsmith Cloud establishes connections with databases and API endpoints exclusively through whitelisted IP addresses `18.223.74.85` and `3.131.104.27`. All traffic to and from Appsmith Cloud is secured using TLS encryption.
 
+- **Domain Whitelisting**: For self-hosted Appsmith users, it’s necessary to whitelist the domain `cs.appsmith.com`. IP-based whitelisting is not allowed for this domain because it relies on dynamic IPs for scaling and load balancing. 
+
 - **Compliant Hosting**: The cloud version of Appsmith is hosted on AWS data centers that adhere to SOC 1 and SOC 2 compliance standards. These servers provide a secure environment, and their integrity is bolstered by systematic backups to prevent data loss.
 
 - **Access Control**: Internal access to Appsmith Cloud is strictly regulated. A two-factor authentication (2FA) system is in place, along with detailed audit logs to monitor and control access, providing an additional layer of security.
 
-## Query Security
+## Appsmith AI
+
+Appsmith AI uses OpenAI’s APIs to provide chat completions and embeddings. Below is an overview of the data Appsmith processes and stores:
+
+1. **Chat completion data:** All interactions through Appsmith’s AI features are processed in real-time via OpenAI's APIs. All response data from OpenAI APIs is transient and **not** stored, logged or retained by Appsmith.
+    
+2. **File upload data:** When you upload files, Appsmith generates embeddings (vector representations of your data) using OpenAI’s embedding API. These embeddings are stored securely in a PostgreSQL database. The original files and content are not stored after processing.
+
+## Query security
 
 - **No Data Logging**: The backend system of Appsmith is designed to act solely as a proxy, without logging or storing any data retrieved from databases or API endpoints. This includes response data and user input, thereby preventing unauthorized data access or leakage.
 
@@ -34,7 +44,7 @@ Appsmith applications are secure-by-default, with a number of strategies in plac
 
 - **SQL Injection Protection**: To safeguard against SQL injection attacks, all SQL queries on the Appsmith platform have [prepared statements](/connect-data/concepts/dynamic-binding-in-queries#mustache-bindings-with-prepared-statements) enabled by default. This feature helps prevent unauthorized commands from being executed via user input.
 
-## JavaScript Security
+## JavaScript security
 
 Appsmith takes measures to ensure JavaScript security within the platform, but it is important to understand the context in which JavaScript code is executed and accessed.
 

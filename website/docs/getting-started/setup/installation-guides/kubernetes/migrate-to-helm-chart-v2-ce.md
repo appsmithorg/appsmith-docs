@@ -2,11 +2,11 @@
 description: Migrate to the Appsmith Community Edition using Helm chart v2.
 ---
 
-# Migrate to Community Edition Helm Chart v2
+# Upgrade to Community Edition Helm Chart v2
 To migrate to the Community Edition running on Helm chart v2 (helm.appsmith.com), follow the instructions in the guide below. Helm chart v2 includes the Horizontal Pod Auto Scaling (HPA) feature, which allows the Appsmith pods to scale automatically based on the current workload.
 
 ## Backup data
-Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-management/appsmithctl#backup) command, follow the steps below:
+Take a backup using the [`appsmithctl backup`](/getting-started/setup/instance-management/backup-and-restore/backup-instance) command, follow the steps below:
 
 1. Run the following command in the old pods to create a data backup:
 
@@ -87,7 +87,7 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
 3. Run the below command to install Appsmith:
 
  :::caution Attention
-   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/installation-guides/kubernetes#configure-tls) section.
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls) section.
  :::
 
    ```bash
@@ -114,7 +114,7 @@ kubectl exec -it appsmith-0 -n <namespace> appsmithctl restore
 Congratulations, you have successfully migrated to the Appsmith Community Edition Helm chart v2 installation.
 
 ## Expose Appsmith
-You may choose to expose Appsmith service to internet. For more information, see [Expose K8s to internet](/getting-started/setup/installation-guides/kubernetes#publish-appsmith)?
+You may choose to expose Appsmith service to internet. For more information, see [Expose K8s to internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)?
 
 ## Troubleshooting
 If you face issues, contact the support team using the chat widget at the bottom right of this page.

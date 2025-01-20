@@ -208,6 +208,7 @@ Tabs1.setVisibility(true)
 </dd>
 
 ## See also
-- [Browse and Display Documents](/build-apps/how-to-guides/browse-and-display-documents)
-- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs)
 
+- [Browse and Display Documents](/build-apps/how-to-guides/browse-and-display-documents) – Learn how to implement functionality for browsing and displaying documents within your app.
+
+- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs) – See how to create a multi-step form or wizard using Tabs to gather information in a structured manner.

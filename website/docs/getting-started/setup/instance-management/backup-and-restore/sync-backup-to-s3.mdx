@@ -1,0 +1,126 @@
+---
+sidebar_position: 6
+description: This page provides information on how to sync backups to Amazon S3 bucket.
+title: Sync Backups to S3 Bucket
+hide_title: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+<div className="tag-wrapper">
+ <h1> Sync Backups to S3 Bucket </h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+</div>
+<!-- vale on -->
+
+You can sync Appsmith backups with an Amazon S3 bucket. This page explains how to sync Appsmith backups with an Amazon S3 bucket.
+
+## Prerequisites
+
+Before syncing backups to an S3 bucket, ensure the following:
+
+- Your self-hosted Appsmith instance is running. If you haven’t already installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+- You are on an [Appsmith paid plan](https://www.appsmith.com/pricing).
+- You have the Access Key, Secret Key, S3 bucket and AWS region information available with you.
+- The S3 bucket is created and has read and write permissions assigned. For more information about S3 bucket policies, see [S3 Bucket Policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html).
+
+<br/>
+
+<Tabs queryString="current-command-type">
+
+<TabItem label="Docker" value="docker-commands">
+
+1. Navigate to the directory containing the `docker.env` file.
+
+2. Add the following environment variables to the `docker.env` file:
+
+   ```javascript
+   APPSMITH_BACKUP_S3_ACCESS_KEY=<aws_access_key>
+   APPSMITH_BACKUP_S3_SECRET_KEY=<aws_secret_key>
+   APPSMITH_BACKUP_S3_BUCKET_NAME=<bucket_name>
+   APPSMITH_BACKUP_S3_REGION=<aws_bucket_region>
+   ```
+   Replace the placeholders with the following:
+      * `<aws_access_key>`: Your AWS access key.
+      * `<aws_secret_key>`: Your AWS secret key.
+      * `<bucket_name>`: The name of your S3 bucket.
+      * `<aws_bucket_region>`: The region where your S3 bucket is hosted.
+
+3. Run the following command to back up your instance and upload the backup to the configured S3 bucket:
+
+   ```bash
+   docker-compose exec -it appsmith appsmithctl backup --upload-to-s3
+   ```
+
+Once the configuration is complete, the Appsmith instance and database backups can be restored from both local storage and the configured S3 bucket.
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+1. Open the values.yaml file in the Appsmith installation directory
+
+2. Update the `applicationConfig` section in the `values.yaml` file:
+
+     ```yaml
+     applicationConfig:
+       APPSMITH_BACKUP_S3_ACCESS_KEY: <aws_access_key>
+       APPSMITH_BACKUP_S3_SECRET_KEY: <aws_secret_key>
+       APPSMITH_BACKUP_S3_BUCKET_NAME: <bucket_name>
+       APPSMITH_BACKUP_S3_REGION: <aws_bucket_region>
+     ```
+      Replace the placeholders with the following:
+         * `<aws_access_key>`: Your AWS access key.
+         * `<aws_secret_key>`: Your AWS secret key.
+         * `<bucket_name>`: The name of your S3 bucket.
+         * `<aws_bucket_region>`: The region where your S3 bucket is hosted.
+
+3. Apply the updated values with the following command:
+
+      ```bash
+      helm upgrade appsmith appsmith/appsmith -f values.yaml
+      ```
+
+4. Use the following command to list the running pods:
+
+      ```bash
+      kubectl get pods
+      ```
+
+5. Sync backups to the S3 bucket by running the command:
+
+      ```bash
+      kubectl exec ANY_APPSMITH_POD_NAME -- appsmithctl backup --upload-to-s3
+      ```
+      Replace `ANY_APPSMITH_POD_NAME` with the name of your Appsmith pod.
+
+Once the configuration is complete, the Appsmith instance and database backups can be restored from both local storage and the configured S3 bucket.
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you encounter any issues during the sync process, consider the following:
+- Backup files are not appearing in the S3 bucket.   
+      - Verify that the AWS credentials in the configuration are correct.  
+      - Check the Appsmith instance logs to ensure there are no permission issues. For more information, see [Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs)  
+- Unable to list backups from the S3 bucket after backup. 
+      - Confirm that you are on an [Appsmith paid plan](https://www.appsmith.com/pricing), and your plan is active. For more information, see [License & plans](/getting-started/setup/instance-configuration/admin-settings#license--plans). 
+      - Verify that the S3 bucket has appropriate permissions to list the backup archives from the bucket. 
+      - Check the Appsmith instance logs to ensure there are no permission issues. For more information, see [Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs)  
+
+## See Also
+
+- [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance): Learn how to create a complete backup of your Appsmith instance, including configurations and data.
+- [Backup Database](/getting-started/setup/instance-management/backup-and-restore/backup-database): Understand how to back up the Appsmith internal database for safe storage and restoration.  
+- [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance): Step-by-step guide to restoring a complete Appsmith instance from a backup.
+- [Restore Database](/getting-started/setup/instance-management/backup-and-restore/restore-database): Instructions to restore the Appsmith internal database from a previously created backup.

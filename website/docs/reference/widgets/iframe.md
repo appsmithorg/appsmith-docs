@@ -334,7 +334,7 @@ Appsmith currently does not support HTML formatting and error parsing. As a resu
 For complex widgets with frequent updates, it is advisable to utilize an external service like CodeSandbox or host your own code to maintain your solution more efficiently.
 
 ## See also
-- [Communicate with Iframe Widget](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe)
-- [Create Custom Widgets Using Iframe](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe)
+- [Communicate with Iframe Widget](/build-apps/how-to-guides/Communicate-Between-an-App-and-Iframe) - Learn how to communicate between your app and an Iframe widget.
+- [Create Custom Widgets](/build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe) - See how to create Custom widgets for enhanced functionality.
 
 

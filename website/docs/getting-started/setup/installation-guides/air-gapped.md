@@ -14,7 +14,7 @@ Privacy-minded users may equate air-gapping with the reluctance to share usage t
 
 ## Whitelisting and requesting Airgapped Edition
 
-The majority of users can effectively use Appsmith by allowing access to `cs.appsmith.com`. However, in organizations where maintaining complete internet isolation is a critical compliance requirement, obtaining an airgapped edition is imperative. To initiate this process, contact the Appsmith sales team at `sales@appsmith.com`.
+The majority of users can access Appsmith by allowing the domain `cs.appsmith.com`. When whitelisting, ensure that you add the domain `cs.appsmith.com`, as IP-based whitelisting is not allowed for this domain because it relies on dynamic IPs for scaling and load balancing. However, in organizations where maintaining complete internet isolation is a critical compliance requirement, obtaining an airgapped edition is imperative. To initiate this process, contact the Appsmith sales team at `sales@appsmith.com`.
 
 ## Unsupported features in Airgapped Edition
 
@@ -29,7 +29,7 @@ When using the airgapped edition, these features will be unavailable or have lim
 Updates for the airgapped edition are specifically packaged and released once every quarter. Since the air-gapped servers cannot access the internet, these updates need to be manually downloaded from an authorized source with internet access and transferred to the isolated network, where they are applied to the Appsmith instance. Organizations using airgapped edition should plan for a regular update cycle to ensure the platform remains secure and up to date.
 
 :::info
-Always [backup your instance](/getting-started/setup/instance-management/appsmithctl) before attempting an update to protect your applications.
+Always [backup your instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) before attempting an update to protect your applications.
 :::
 
 ## Conclusion

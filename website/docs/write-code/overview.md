@@ -83,41 +83,46 @@ The `appsmith` object includes information about the current user, application s
 Remember that while Appsmith provides significant power and flexibility for writing custom code, it is important to understand the execution context and keep security best practices in mind while developing your applications.
 
 ---
+## Get started
+
+Get started with writing code in Appsmith by exploring the following resources:
 
 <div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      </div> 
-      <b><a href="/write-code/how-to-guides">How-to Guides</a></b>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/write-code/how-to-guides">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>How-to Guides</strong>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
       <div className="containerDescription">
-         Directions and step-by-step guides covering key operations and common tasks.
+         Follow detailed step-by-step guides that cover key operations and common tasks in Appsmith, from setting up data sources to writing custom code.
       </div>
-   </div>
+   </a>
 
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/write-code/reference">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>Reference</strong>
+         </div>
       </div>
-      <b>
-        <a href="/write-code/reference"> Reference</a>
-      </b>
-      <div className="containerDescription"> 
-        Technical descriptions and information about framework and libraries.
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Find technical descriptions and in-depth information about the Appsmith framework, including supported libraries and syntax.
       </div>
-   </div>
-   
+   </a>
 </div>
-<div className="containerGridSampleApp">
-   <div className="containerColumnSampleApp columnGrid column-one">
-    <div className="containerCol">
-      </div> 
-      <b>
-        <a href="/write-code/concepts/overview">Concepts</a>
-      </b>
-      <div className="containerDescription">
-         Explanation of the Appsmith framework
-      </div>
-   </div>
 
-   <div className=" columnGrid column-two"/>
-   
+<div className="containerGridSampleApp">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/write-code/concepts/overview">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>Concepts</strong>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Understand the core concepts of the Appsmith framework, including how it integrates with external services and supports custom scripting.
+      </div>
+   </a>
 </div>

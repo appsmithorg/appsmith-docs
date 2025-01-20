@@ -107,3 +107,7 @@ Applies a resolution to the request based on the action taken. The resolution mu
 <dd>
 Add data that may be needed to process the request or perform additional operation in the workflow. For example, you can include a unique identifier for the record associated with the request. Use the identifier in your workflow to fetch details and perform additional operation.
 </dd>
+
+## See also
+
+* [Debug Workflow](/workflows/how-to-guides/debug-workflow) - Learn to debug workflows as you build them.

@@ -1,0 +1,112 @@
+---
+description: Learn how to restore the Appsmith database using the `appsmithctl` command-line utility.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Restore Database
+
+This page explains how to restore the Appsmith internal database backup using the `appsmithctl` utility.
+
+## Prerequisites
+
+Before starting, ensure the following:
+
+- You need a self-hosted Appsmith instance up and running. If you haven’t installed Appsmith, refer to the [Installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+- Ensure you have at least 2 GB of free storage available to perform restore tasks.
+- Access to execute `docker-compose` or `kubectl` commands, depending on your deployment setup.
+- Verify that the backup archive file you want to restore is available. 
+
+## Restore database backup
+
+Follow the appropriate instructions based on your deployment environment:
+
+<Tabs queryString="current-command-type">
+
+<TabItem label="Docker" value="docker-commands">
+
+Follow these steps to restore Appsmith database backup for Docker-based installations:
+
+1. Copy the backup file into the container:
+
+   ```bash
+   docker cp ./appsmith-data.archive appsmith:/appsmith-stacks/data/restore/
+   ```
+
+2. Import the backup data:
+
+   ```bash
+   docker-compose exec -it appsmith appsmithctl import_db
+   ```
+
+3. Copy the `docker.env` file and add the path for the `docker.env` file if not present in the installation folder.
+
+   ```bash
+   docker cp ./docker.env appsmith:/appsmith-stacks/configuration/
+   ```
+
+4. Restart the Appsmith server to apply changes:
+
+   ```bash
+   docker-compose exec -it appsmith supervisorctl restart backend
+   ```
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+Follow these steps to restore Appsmith database backup for Kubernetes installations:
+
+1. Retrieve the name of the Appsmith pod:
+
+   ```bash
+   kubectl get pods
+   ```
+
+2. Copy the backup file into the pod. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
+
+   ```bash
+   kubectl cp ./appsmith-data.archive ANY_APPSMITH_POD_NAME:/appsmith-stacks/data/restore/
+   ```
+
+3. Navigate to the `/appsmith-stacks/configuration/` folder and update the `docker.env` file with the following parameters:
+
+   ```bash
+   # The values generated and stored during the backup process
+   APPSMITH_ENCRYPTION_PASSWORD=APPSMITH_ENCRYPTION_PASSWORD
+   APPSMITH_ENCRYPTION_SALT=APPSMITH_ENCRYPTION_SALT
+   ```
+
+4. Import the backup data. Replace `ANY_APPSMITH_POD_NAME` with the pod name:
+
+   ```bash
+   kubectl exec -it ANY_APPSMITH_POD_NAME -- appsmithctl import_db
+   ```
+
+5. Restart the Appsmith pods based on your setup:
+
+   - If autoscaling is **turned on**:
+
+      ```bash
+      kubectl rollout restart deployment appsmith
+      ```
+
+   - If autoscaling is **turned off**, or you’re using the Community Edition:
+
+      ```bash
+      kubectl rollout restart statefulset appsmith
+      ```
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you encounter any issues during the restore process, consider the following:
+
+- Ensure you've copied the backup archive to the correct folder within the container or pod.
+- Verify that you have the required permissions to execute `docker-compose` or `kubectl` commands.
+- If restarting the pods fails, check the logs for errors. For more information, see [Get Container logs](/getting-started/setup/instance-management/how-to-get-container-logs) guide.
+
+If you continue to face issues, contact support using the chat widget available in the bottom-right corner of this page.

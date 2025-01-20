@@ -104,7 +104,7 @@ Reflects whether the widget is visible or not.
 
 <dd>
 
-Reflects the widget name of the modal.
+Reflects the widget name of the Modal.
 
 *Example:*
 ```js
@@ -146,9 +146,10 @@ WHERE id = {{tblUserData.selectedRow.id}};
 
 7. To close the Modal, configure the onSuccess event to include a **Close Modal** action. This would close the Modal once the `updateuserdata` query has been successfully executed.
 
+
 ## See also
-- [Insert Data](/build-apps/how-to-guides/insert-data#use-table)
-- [Update Form data in Modal](/build-apps/how-to-guides/submit-form-data)
-- [Edit Table Data Inline](/reference/widgets/table/inline-editing)
-- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data)
-- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view)
+- [Insert Data](/build-apps/how-to-guides/insert-data#use-table) - Learn how to insert data into a Table widget, including setting up data sources and handling user input.
+- [Update Form Data in Modal](/build-apps/how-to-guides/submit-form-data) - Discover how to update and submit form data within a Modal widget.
+- [Edit Table Data Inline](/reference/widgets/table/inline-editing) - Find out how to edit table data directly within the Table widget, allowing for real-time changes.
+- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - Learn how to display, search, and filter data in a Table widget to make data management more efficient.
+- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view) - Understand how to create a drilldown view to explore data in detail using a Table or other data widgets.

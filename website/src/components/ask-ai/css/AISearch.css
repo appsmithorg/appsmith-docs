@@ -214,7 +214,7 @@ h5 {
 }
 
 .show {
-    display: block;
+    display: block !important;
 }
 
 .loading-icon-container {

@@ -367,3 +367,7 @@ DatePicker1.setRequired(true)
 
 </dd>
 
+## See also
+
+- [Filter Data for Specific Date Ranges](/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-conditional-operators) – Learn how to filter data for specific date ranges using SQL queries.
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) – See how to search and filter Table data efficiently to display relevant results.

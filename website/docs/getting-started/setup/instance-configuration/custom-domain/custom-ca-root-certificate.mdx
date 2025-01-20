@@ -1,0 +1,83 @@
+---
+description: Learn how to configure custom CA root certificates in your self-hosted Appsmith instance. This page provides instructions for setting up custom certificates when interacting with internal endpoints or when your Appsmith instance is behind a firewall or proxy that requires SSL decryption.
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Custom CA Root Certificate
+
+When interacting with internal endpoints that use private SSL certificates, or if your Appsmith instance is behind a firewall or proxy requiring SSL decryption, you may need to configure custom CA root certificates. This page provides instructions on setting up custom CA root certificates in your Appsmith installation.
+
+## Prerequisites
+
+Before configuring custom CA root certificates for Appsmith installation, ensure the following requirements are met:
+1. A self-hosted Appsmith instance installed. If not already installed, refer to the [installation guides](/getting-started/setup/installation-guides). This guide assumes you are working with an existing installation.
+2. Ensure your CA certificates are valid and allow secure HTTPS connections to the server. Verify the certificate using the following command:  
+    ```bash
+    curl --cacert <cert_path> https://domain/
+    ```
+
+## Set up custom CA root certificates
+
+Follow the steps below to set up custom CA root certificates for your installation platform:
+
+<Tabs>
+<TabItem value="docker" label="Docker">
+
+To set up custom CA certificates in Docker:  
+
+:::caution
+Removing a certificate from the `ca-certs` folder will also remove it from the trust store, resulting in the certificate no longer being trusted.
+:::
+
+1. Create a `ca-certs` folder inside your `stacks` folder.  
+2. Save all CA root certificates in the `ca-certs` folder.  
+   - If your certificate file has a `.pem` extension, rename it to `.crt` before adding it to the `stacks/ca-certs` folder.  
+3. Restart Appsmith.  
+
+Appsmith checks the `ca-certs` folder for CA root certificates and applies them on startup.
+
+</TabItem>
+
+<TabItem value="kubernetes" label="Kubernetes">
+
+To set up custom CA certificates in Kubernetes:  
+
+1. Open the `values.yaml` file.  
+2. Locate the `customCAcert` section.  
+3. Add your certificates by pasting their content as shown:  
+
+    ```yaml
+    customCAcert:
+      cert1: |
+        (Paste the certificate content here)
+      cert2: |
+        (Paste additional certificate content here)
+    ```
+
+4. Save the file and run the following Helm upgrade command to apply your changes:  
+
+    ```bash
+    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+    ```
+
+These steps add your custom certificates to the Appsmith trust store.
+
+</TabItem>
+</Tabs>
+
+## Troubleshooting
+
+If you encounter issues while setting up custom CA certificates:  
+
+- **Unable to verify certificate**: Verify that the CA certificate is correctly formatted and added to the appropriate location (`stacks/ca-certs` for Docker or `values.yaml` for Kubernetes).  
+- **Changes not applied**: Ensure you've restarted the Appsmith server. If not, try restarting the server.
+- **Certificate no longer trusted**: Removing a certificate from the `ca-certs` folder removes it from the trust store, causing the certificate to no longer be trusted. Verify that you haven’t accidentally removed any required certificates.
+
+If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+- [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain): Learn how to set up Custom Domain and SSL for Appsmith installation.
+- [How Do I Export the Custom CA Certificate?](https://community.appsmith.com/solution/how-do-i-export-custom-ca-certificate): Learn how to export the SSL certificate from your Appsmith instance.

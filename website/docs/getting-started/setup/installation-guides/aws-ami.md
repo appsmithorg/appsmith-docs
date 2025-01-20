@@ -5,7 +5,7 @@ sidebar_position: 4
 
 # AWS AMI
 
-This page provides steps to install Appsmith using an Amazon Machine Image (AMI).
+This page provides steps to install Appsmith using an Amazon Machine Image (AMI). You may also follow the video tutorial on how to install Appsmith using an <a href="https://www.youtube.com/watch?v=nnyikBImju8" target="_blank" rel="noopener noreferrer" className="external-link">Amazon Machine Image (AMI)</a>. 
 
 ## Prerequisites
 
@@ -13,6 +13,7 @@ This page provides steps to install Appsmith using an Amazon Machine Image (AMI)
 - An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
 - An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group).
 - To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port ranges 80, 443, and 22 to the security group you created above.
+- To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
 - Ensure you have created the security group and the SSH key pair in the same region.
 
 ## Install Appsmith
@@ -87,14 +88,68 @@ The application password is **only** available in system logs for the initial 24
 
 To install the open source edition of Appsmith (Appsmith Community), choose the [Appsmith Community Edition](https://aws.amazon.com/marketplace/pp/prodview-mclslaty46ah4) in step 7 of the [Install Appsmith](#install-appsmith) section on this page.
 
+
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+<br/>
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider. Learn more about configuring SSO.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Email Service</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. Learn more about configuring email services.
+    </div>
+  </a>
+</div>
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL. Learn more about setting up custom domains and SSL.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-management/appsmithctl">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Backup and Restore</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. Learn more about Backup and Restore.
+    </div>
+  </a>
+</div>
+
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
+If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+## See also
 
-## Further reading
-
-- [Add super admins to your instance](/getting-started/setup/instance-configuration#add-super-admins).
-- [Configure Appsmith instance](/getting-started/setup/instance-configuration/)
-- [Managing Appsmith instance](/getting-started/setup/instance-management/)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.

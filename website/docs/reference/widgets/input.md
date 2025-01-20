@@ -562,3 +562,9 @@ Input1.setRequired(true)
 
 </dd>
 
+
+## See also
+
+- [Insert Data](/build-apps/how-to-guides/insert-data) – See how to Insert data to a datasource using the Input widget.
+- [Update Data](/build-apps/how-to-guides/submit-form-data) – See how to update data using the Input widget.
+- [Send Emails](/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin) – See how to send emails.

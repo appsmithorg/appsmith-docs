@@ -55,26 +55,20 @@ If you are generating options for Select widget using JS code as shown above, ma
 
 </dd>
 
-#### Label `string`
+#### Label key `string`
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the labels for each option in the Select widget. To define **Label** using code, click the **JS** button next to the property. 
+Defines the key in the **Source Data** that specifies the labels for each option in the Select widget. When using the **JS** mode for dynamic configurations, the value must evaluate to a valid property name present in each object of the data array. Data cannot be manipulated directly (for example, applying `.toLowerCase()` or `.toUpperCase()`).
 
-*Example:* If you prefer the label to be displayed in lowercase, you can achieve this using the following code snippet:
-
-```js
-{{ item.name.toLowerCase() }}
-```
-`item.name` represents the Source Data's property containing the label, and the `toLowerCase()` function is applied to convert the label to lowercase.
 
 </dd>
 
-#### Value `string`
+#### Value key `string`
 
 <dd>
 
-Defines the key from the **Source Data** property that specifies the values for each option in the Select widget. Value defined for each option must be unique. To define **Value** using code, click the **JS** button next to the property.
+The Value Key property specifies which key in the **Source Data** is used as the unique identifier for each dropdown option. When using the **JS** mode for dynamic configurations, the value must evaluate to a valid property name in the data object. This ensures that each dropdown option has a unique, identifiable value.
 
 </dd>
 
@@ -471,4 +465,6 @@ Select1.setSelectedOption("BLUE")
 </dd>
 
 ## See also
-- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically)
+
+- [Display and Filter Select Options](/build-apps/how-to-guides/display-select-options-dynamically) – Learn how to dynamically display and filter options in a Select widget based on user input or server-side data.
+- [Set up server-side filter on select](/build-apps/how-to-guides/display-select-options-dynamically#set-up-server-side-filter-on-select) – Understand how to configure server-side filtering for Select widgets to provide relevant options based on user selection.

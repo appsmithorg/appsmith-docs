@@ -44,9 +44,6 @@ To configure Appsmith to use [Auth0](https://auth0.com/) as a SAML provider, fol
 
 ## Register Auth0 in Appsmith
 
-:::caution
-If you are running Appsmith on **Google Cloud Run** or **AWS ECS**, make sure to configure your service before setting up SSO. For detailed instructions, see the [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso), or [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs) guide.
-:::
 
 To complete the SAML configuration, you have to register the identity provider on Appsmith. Appsmith provides three options to register the identity provider as mentioned below:
 
@@ -54,24 +51,62 @@ To complete the SAML configuration, you have to register the identity provider o
 <TabItem label="Metadata URL (recommended)" value="auth0metadataurl">
 
 To register Auth0 as the identity provider on Appsmith, follow the steps below:
-1. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
-2. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
+
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
+
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Go to the **SAML 2.0** configuration page in Appsmith and navigate to **Register Identity Provider** section.
+
+3. Add the copied **Metadata URL** in the **Metadata URL** field under the **Register Identity Provider** section.
 
 </TabItem>
 
 <TabItem label="Metadata XML" value="auth0metdataxml">
 
 To set up SAML using the raw Metadata XML file, follow the steps below:
-1. Open the copied **Metadata URL** in a browser tab and copy the XML content.
-2. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
+
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
+
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the copied **Metadata URL** in a browser tab and copy the XML content.
+
+3. Navigate to Appsmith and add the raw XML in the **Metadata XML** field under the **Register Identity Provider** section in the **SAML 2.0** configuration page.
 
 </TabItem>
 <TabItem label="IdP data" value="auth0idpdata">
 
 If you have Identity provider data like **X509 Public Certificate**, **Email**, you can choose this option to configure SAML.
 
-1. Open the Metadata URL in a browser tab or open the Metadata XML file.
-2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
+
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the Metadata URL in a browser tab or open the Metadata XML file.
+
+3. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 | <div style= {{width:"200px"}}> **IdP Data Field ** </div>  | <div style= {{width:"auto"}}> **Metadata XML Tag**  </div>                                                                      |
 | ------------------- | ------------------------------------------------------------------------------------------ |
@@ -86,6 +121,21 @@ If you have Identity provider data like **X509 Public Certificate**, **Email**, 
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
+:::info
+If you're running Appsmith on a **Kubernetes** cluster with an HA configuration, after completing the setup, run the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+:::
+
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
 
 <ZoomImage src="/img/Appsmith-Login-Screen-Shows-SAML.jpg" alt="SAML-login" caption="Login with SAML SSO " />
+
+## Troubleshooting
+
+If you are facing issues contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+- [Remove Account Update Screen](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info)

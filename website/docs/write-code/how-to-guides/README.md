@@ -1,51 +1,62 @@
-import DocCardList from '@theme/DocCardList';
+---
+description: This page provides detailed instructions for common tasks in Appsmith, helping you implement specific use cases efficiently.
+---
+# How-to guides
 
-# How to Guides
+This page provides detailed instructions for common tasks in Appsmith, helping you implement specific use cases efficiently.
+
+Browse through the guides below to find solutions tailored to your requirements.
+
+---
+
+## JavaScript Promises
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/write-code/how-to-guides/display-data-from-functions"><strong>Display Data from Functions</strong></a>
-        </div> <hr/>
-        <div className="containerDescription">Functions are blocks of code that can be defined and executed when needed. Functions within a JavaScript object can either be synchronous or asynchronous. </div>
+  <a className="containerAnchor" href="/core-concepts/writing-code/javascript-promises">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Use JavaScript promises</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Explains how to write asynchronous JavaScript code in Appsmith effectively.
+      </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
-           <a href="/core-concepts/writing-code/javascript-promises"><strong>Use JavaScript promises</strong></a>
-        </div><hr/>
-        <div className="containerDescription">
-            Explains how to write asynchronous Javascript code in Appsmith.
-        </div>
-    </div>
+  </a>
 </div>
 
+---
+
+## Data sharing
+
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/advanced-concepts/sharing-data-across-pages"><strong>Share Data Across Pages</strong></a>
-        </div> <hr/>
-        <div className="containerDescription">Allows easy data sharing between different pages.</div>
+  <a className="containerAnchor" href="/advanced-concepts/sharing-data-across-pages">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Share data across pages</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn how to easily share data between different pages in your application.
+      </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
-           <a href="/core-concepts/writing-code/workflows"><strong>Chain Functions and Promises</strong></a>
-        </div><hr/>
-        <div className="containerDescription">Create Complex Workflows by Chaining Functions and Promises. </div>
-    </div>
+  </a>
 </div>
+
+---
+
+## Extend functionality
+
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/core-concepts/writing-code/ext-libraries"><strong>Install External JS libraries</strong></a>
-        </div> <hr/>
-        <div className="containerDescription">Shows hwo to install external libraries for additional data manipulation or transformation capabilities.</div>
+  <a className="containerAnchor" href="/core-concepts/writing-code/ext-libraries">
+    <div className="containerColumnSampleAppNoGradient columnGrid column-one">
+      <div className="containerHeading">
+        <strong>Install external JS libraries</strong>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+        Learn how to install and use external libraries for advanced data manipulation or transformation.
+      </div>
     </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
-           <a href="/help-and-support/troubleshooting-guide/application-errors"><strong>Debug JS Errors</strong></a>
-        </div><hr/>
-        <div className="containerDescription">
-            Allows you to check the state of your code and step through it line by line to help identify and fix any errors.
-        </div>
-    </div>
+  </a>
 </div>

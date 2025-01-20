@@ -188,18 +188,21 @@ To access the username, use the following code:
 ```
 
 #### name `string`
-The `name` attribute holds the full name of the user. To access the username, use the following code:
+The `name` attribute holds the full name of the user. To access the name, use the following code:
 ```jsx
 {{appsmith.user.name}}
 ```
 
 #### useCase `string`
-This attribute describes the use case that the user has specified, giving insight into what they intend to achieve with Appsmith. To access the username, use the following code:
+
+This attribute describes the use case that the user has specified, giving insight into what they intend to achieve with Appsmith. To access the `useCase`, use the following code:
+
 ```jsx
 {{appsmith.user.useCase}}
 ```
 #### enableTelemetry `boolean`
-This boolean flag indicates if the user has consented to send telemetry data to Appsmith. Telemetry data typically includes usage statistics and error reports that help improve the platform. To access the username, use the following code:
+
+This boolean flag indicates if the user has consented to send telemetry data to Appsmith. Telemetry data typically includes usage statistics and error reports that help improve the platform. To access the `enableTelemetry`, use the following code:
 ```jsx
 {{appsmith.user.enableTelemetry}}
 ```
@@ -302,53 +305,53 @@ In the above example, the visibility of the button is determined by a group. Onl
 </dd>
 
 #### accountNonExpired `boolean`
-This attribute indicates whether the user's account is still active and has not expired. An expired account may be reactivated or may need subscription renewal. To access the username, use the following code:
+This attribute indicates whether the user's account is still active and has not expired. An expired account may be reactivated or may need subscription renewal. To access the `accountNonExpired`, use the following code:
 ```jsx
 {{appsmith.user.accountNonExpired}}
 ``` 
 
 #### accountNonLocked `boolean`
-The accountNonLocked attribute signifies whether the user's account is locked or unlocked. A locked account cannot be accessed until an administrator unlocks it. To access the username, use the following code:
+The `accountNonLocked` attribute signifies whether the user's account is locked or unlocked. A locked account cannot be accessed until an administrator unlocks it. To access the `accountNonLocked`, use the following code:
 ```jsx
-{{appsmith.user.accountNonLocked}}
+{{appsmith.user.accountNonLocked}}s
 ``` 
 #### credentialsNonExpired `boolean`
-This boolean attribute states if the user's credentials (such as their password) are still valid or if they need to be updated. Expired credentials typically require the user to reset their password. To access the username, use the following code:
+This boolean attribute states if the user's credentials (such as their password) are still valid or if they need to be updated. Expired credentials typically require the user to reset their password. To access the `credentialsNonExpired`, use the following code:
 ```jsx
 {{appsmith.user.credentialsNonExpired}}
 ``` 
 #### emptyInstance `boolean`
-The emptyInstance attribute indicates whether this user object is an empty instance, lacking in actual data. This might occur when no user is logged in or in case of a system-level operation. To access the username, use the following code:
+The `emptyInstance` attribute indicates whether this user object is an empty instance, lacking in actual data. This might occur when no user is logged in or in case of a system-level operation. To access the `emptyInstance`, use the following code:
 ```jsx
 {{appsmith.user.emptyInstance}}
 ``` 
 #### isAnonymous `boolean`
-The isAnonymous attribute reflects whether the current user is anonymous (not logged in) or identified (logged in). This can affect the presentation and permissions of the user interface. To access the username, use the following code:
+The `isAnonymous` attribute reflects whether the current user is anonymous (not logged in) or identified (logged in). This can affect the presentation and permissions of the user interface. To access the `isAnonymous`, use the following code:
 ```jsx
 {{appsmith.user.isAnonymous}}
 ``` 
 #### isEnabled `boolean`
-This attribute indicates if the user's account is currently enabled. An enabled account can log in and interact with Appsmith applications, while disabled ones cannot. To access the username, use the following code:
+This attribute indicates if the user's account is currently enabled. An enabled account can log in and interact with Appsmith applications, while disabled ones cannot. To access the `isEnabled`, use the following code:
 ```jsx
 {{appsmith.user.isEnabled}}
 ``` 
 #### isSuperUser `boolean`
-The isSuperUser flag shows whether the user has superuser status. Superusers typically have elevated privileges and access to all parts of the Appsmith application. To access the username, use the following code:
+The `isSuperUser` flag shows whether the user has superuser status. Superusers typically have elevated privileges and access to all parts of the Appsmith application. To access the `isSuperUser`, use the following code:
 ```jsx
 {{appsmith.user.isSuperUser}}
 ```
 #### isConfigurable `boolean`
-This attribute denotes whether the user has the ability to configure or alter settings within the Appsmith platform. To access the username, use the following code:
+This attribute denotes whether the user has the ability to configure or alter settings within the Appsmith platform. To access the `isConfigurable`, use the following code:
 ```jsx
 {{appsmith.user.isConfigurable}}
 ```
 #### adminSettingsVisible `boolean`
-The adminSettingsVisible attribute states if the user is able to see and possibly modify the admin settings area. To access the username, use the following code:
+The `adminSettingsVisible` attribute states if the user is able to see and possibly modify the admin settings area. To access the `adminSettingsVisible`, use the following code:
 ```jsx
 {{appsmith.user.adminSettingsVisible}}
 ```
 #### isIntercomConsentGiven `boolean`
-This boolean indicates whether the user has given consent to use Intercom, a messaging tool that might be used in Appsmith for support and communication purposes. To access the username, use the following code:
+This boolean indicates whether the user has given consent to use Intercom, a messaging tool that might be used in Appsmith for support and communication purposes. To access the `isIntercomConsentGiven`, use the following code:
 ```jsx
 {{appsmith.user.isIntercomConsentGiven}}
 ```

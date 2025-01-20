@@ -22,7 +22,7 @@ tags={[
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-To configure Appsmith to use [Microsoft Entra ID (Azure AD)](https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id) as a SAML provider, follow the steps below:
+This page shows how to configure [Microsoft Entra ID (Azure AD)](https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id) as a SAML provider on your Appsmith instance. You may also follow the video tutorial on how to configure SAML Single Sign-on with <a href="https://www.youtube.com/watch?v=_IUPUbu9tgI" target="_blank" rel="noopener noreferrer" className="external-link">Azure Entra ID</a>.
 
 ## Prerequisites
 
@@ -107,16 +107,24 @@ To configure Appsmith to use [Microsoft Entra ID (Azure AD)](https://www.microso
 
 ## Register Entra ID in Appsmith
 
-:::caution
-If you are running Appsmith on **Google Cloud Run** or **AWS ECS**, make sure to configure your service before setting up SSO. For detailed instructions, see the [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso), or [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs) guide.
-:::
 
 To complete the SAML configuration, you’ll have to register the identity provider on Appsmith as mentioned below:
 
 
-1. Open the copied **App Federation Metadata Url** in a browser tab.
+1. If you are running Appsmith on **Google Cloud Run**, **AWS ECS**, or **Azure Container Instances**, make sure to configure the service before setting up SSO. For more information, see: 
 
-2. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
+
+<dd>
+
+- [**Configure Google Cloud Run for SSO**](/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql)  
+- [**Create PostgreSQL RDS for SAML SSO**](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql)  
+- [**Configure Azure Container Instances for SSO**](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso)  
+
+</dd>
+
+2. Open the copied **App Federation Metadata Url** in a browser tab.
+
+3. Add the following values from XML tags in **IdP Data** under the **Register Identity Provider** section in the Appsmith **SAML 2.0** configuration page: 
 
 <dd>
 
@@ -129,7 +137,7 @@ To complete the SAML configuration, you’ll have to register the identity provi
 
 </dd>
 
-3. To configure custom SAML claims (if added in the Entra ID's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
+4. To configure custom SAML claims (if added in the Entra ID's **Claims and Attributes**) in Appsmith, Click the **Advanced** section. 
 
 <dd>
 
@@ -141,9 +149,22 @@ To complete the SAML configuration, you’ll have to register the identity provi
 
 Once you have added the details, click the **SAVE & RESTART** button to save the configuration and restart the instance. 
 
+:::info
+If you're running Appsmith on a **Kubernetes** cluster with an HA configuration, after completing the setup, run the following command to ensure the new authentication settings are properly applied:
+
+```js
+kubectl rollout restart deployment/appsmith -n
+```
+:::
+
 After the Appsmith instance restarts, try logging in again to your account. You'll see a login screen with the **SIGN IN WITH SAML SSO** button.
 
 <ZoomImage src="/img/Appsmith-Login-Screen-Shows-SAML.jpg" alt="SAML-login" caption="Login with SAML SSO " />
 
+## Troubleshooting
+
+If you are facing issues contact the support team using the chat widget at the bottom right of this page.
+
 ## See also
 - [Setup SCIM provisioning](/advanced-concepts/user-provisioning-group-sync#enable-scim-provisioning-on-appsmith)
+- [Remove Account Update Screen](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info)

@@ -87,13 +87,68 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating an Azure container instance file on this page.
 
+
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+<br/>
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider. Learn more about configuring SSO.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Email Service</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. Learn more about configuring email services.
+    </div>
+  </a>
+</div>
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL. Learn more about setting up custom domains and SSL.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-management/appsmithctl">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Backup and Restore</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. Learn more about Backup and Restore.
+    </div>
+  </a>
+</div>
+
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
-
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
+If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
 ### See also
 
-- [Configuring Self-Hosted Instances](/getting-started/setup/instance-configuration)
-- [Managing the Appsmith instance](/getting-started/setup/instance-management)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.

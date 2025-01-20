@@ -25,8 +25,8 @@ Automating processes within your business can boost efficiency and reduce manual
 
 Before you begin, make sure you have:
 
-* A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for instructions.
-* Basic knowledge of creating workflows in Appsmith. For more information, see the [Create Workflow Tutorial](/workflows/tutorials/create-workflow#create-workflow).
+* A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
+* Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
 * Basic understanding of writing queries in workflows. For more information, see the [Write Query to Send Email](/workflows/tutorials/create-workflow#write-query-to-send-email) section.
 
 ## Configure automated processing
@@ -40,6 +40,7 @@ Before you begin, make sure you have:
     ```javascript
     export default {
       async executeWorkflow(order) {
+        // add custom logic to verify required parameters
         if (order && order.order_id) {
           console.log('Processing order: ' + order.order_id);
           // Fetch order details using the provided order ID
@@ -64,7 +65,7 @@ Before you begin, make sure you have:
 
 4. Trigger the workflow to process requests automatically. You can do this in one of the following ways:
     * **From within an Appsmith app -** Create a workflow query with **Trigger Workflow** as the request type. Pass the required parameters for processing, and bind it to the action from where the triggering happens. For more information on triggering a workflow, see [Trigger Workflow from Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app) guide.
-    * **From an external system -** Configure the webhook trigger in the workflow. Call the webhook through a POST request and pass the required parameters in the request body. For more information, see [Trigger Workflow using Postman](/workflows/tutorials/create-workflow#send-email-using-postman).
+    * **From an external system -** [Configure the webhook trigger](/workflows/tutorials/create-workflow#enable-webhook-trigger) in the workflow. Call the webhook through a POST request and pass the required parameters in the request body. For more information, see [Trigger Workflow using REST Client](/workflows/tutorials/create-workflow#test-workflow).
 
 6. Click **Deploy** in the top right to apply your changes.
 7. Execute the workflow when relevant events occur, like a new order request.
@@ -72,3 +73,9 @@ Before you begin, make sure you have:
 ## Troubleshooting
 
 If you face issues, contact the support team using the chat widget at the bottom right of this page.
+
+## See also
+
+* [Debug Workflow](/workflows/how-to-guides/debug-workflow) - Learn to debug workflows as you build them.
+* [Pass Parameters to Workflows](/workflows/reference/pass-parameters-to-workflows) - Learn how to pass parameters to workflows from the Appsmith app or external systems.
+* [Workflow Functions](/workflows/reference/workflow-functions) - Explore the variety of functions available for your workflows.

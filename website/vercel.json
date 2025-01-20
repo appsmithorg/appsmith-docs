@@ -659,10 +659,6 @@
       "destination": "/reference/datasources/graphql"
     },
     {
-      "source": "/getting-started/setup/instance-configuration/admin-settings",
-      "destination": "/getting-started/setup/instance-configuration#admin-settings"
-    },
-    {
       "source": "/learning-and-resources/how-to-guides/use-git-to-create-different-environments",
       "destination": "/advanced-concepts/version-control-with-git/environments-with-git"
     },
@@ -1244,8 +1240,7 @@
     {
       "source": "/advanced-concepts/invite-users",
       "destination": "/advanced-concepts/granular-access-control/reference/permissions"
-    }
-    ,
+    },
     {
       "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",
       "destination": "/advanced-concepts/version-control-with-git/guides/overview"
@@ -1253,6 +1248,46 @@
     {
       "source": "/advanced-concepts/version-control-with-git/working-with-branches",
       "destination": "/advanced-concepts/version-control-with-git"
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/disable-user-signup",
+      "destination": "/getting-started/setup/environment-variables#appsmith_signup_disabled",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/frame-ancestors",
+      "destination": "/getting-started/setup/environment-variables#embed-appsmith",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/instance-configuration/disable-intercom",
+      "destination": "/getting-started/setup/environment-variables#intercom",
+      "permanent": true
+    },
+    {
+      "source": "/advanced-concepts/version-control-with-git/updating-local-file-path",
+      "destination": "/getting-started/setup/environment-variables#git-local-file-path",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso",
+      "destination": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql-optional",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs",
+      "destination": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql-optional",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/installation-guides/aws-ecs",
+      "destination": "/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/setup/upgrade-from-community-edition",
+      "destination": "/getting-started/setup/instance-management#upgrade-to-commercial-edition",
+      "permanent": true
     }
   ]
 }

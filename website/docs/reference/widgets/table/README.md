@@ -132,7 +132,7 @@ Allows you to implement pagination by limiting the number of results fetched per
 
 Appsmith can handle query responses of up to 5 MB. To display large datasets and optimise performance, use server-side pagination. It can be implemented using Offset-based-pagination or Cursor-based pagination.
 
-See how to guide on [Server-side Pagination](/build-apps/how-to-guides/Server-side-pagination-in-table).
+For more information on how to fetch paginated data, see [Setup Server-Side Pagination](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
 </dd>
 
@@ -321,7 +321,8 @@ This property controls whether the widget is displayed with a loading animation.
 
 <dd>
 
-Controls the visibility of the **Download** button in the table header. When enabled, users can download the table data as a `.csv` file or `Excel` file by clicking on the button.
+Controls the visibility of the **Download** button in the table header. When enabled, users can download the table data as a `.csv` file or `Excel` file by clicking on the button. For more information on how to download data in chunks, see [Download Table Data](/build-apps/how-to-guides/download-table-data).
+
 </dd>
 
 #### Allow column freeze `boolean`
@@ -885,7 +886,8 @@ This method allows you to programmatically select multiple rows in the Table. It
 
 
 ## See also
-- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data)
-- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view)
-- [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table)
-- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data)
+
+- [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - See how to display and manage data in a Table and enable efficient data lookup.
+- [Create Data Drilldown View](/build-apps/how-to-guides/create-drill-down-view) - Learn how to create detailed drilldown views for exploring data at different levels.
+- [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table) - Learn how to set up server-side pagination for handling large datasets in Table.
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - See how to add search and filter functionality to tables for better data navigation.

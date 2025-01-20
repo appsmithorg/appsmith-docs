@@ -9,10 +9,10 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
 ## Prerequisites
 
 * Amazon Web Services (AWS) account. If you don't have one, [Create an AWS Account](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
-* An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
+* An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-key-pairs.html#having-ec2-create-your-key-pair).
 * An Application Load Balancer (ALB) - If you already have an ALB, follow these steps:
   * Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
-  * Add an Amazon Security group with ports 80, and 443 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group). 
+  * Add an Amazon Security group with ports 80, and 443 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html). 
 * You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash. Hence, ensure you have set up and can access an external MongoDB instance hosting MongoDB V5.0 or later. For more information, see [External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb).
 
 
@@ -28,8 +28,9 @@ Follow these steps to create an Elastic File System (EFS):
 2. Provide a meaningful name to your file system, configure the VPC settings as required, and click **Create**.
 3. Select the file system you created above from the list and switch to the **Network** tab.
 4. Click the **Manage** button, and assign the security group that allows NFS access on port 2049. If you don't have such a security group:
-    * Follow the [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group) guide and include an inbound rule for NFS access on port 2049. 
-    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port `2049` for NFS access to the security group you created above.
+    * Follow the [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html) guide and include an inbound rule for NFS access on port 2049. 
+    * Enable the port access by [adding an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html#sg-rules-efs) for the port `2049` for NFS access to the security group you created above.
+    * To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
     * Once created, attach this security group to your EFS.
 
 ## Set up ECS Exec policy
@@ -120,7 +121,7 @@ Follow these steps to create task and container definitions for your cluster:
     * `APPSMITH_ENCRYPTION_PASSWORD`- Add a password to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_ENCRYPTION_SALT`- Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_SUPERVISOR_PASSWORD` - Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
-    * `APPSMITH_MONGODB_URI` - Enter the URI of the external MongoDB (v5.0 or later) instance.
+    * `APPSMITH_DB_URL` - Enter the URI of the external MongoDB (v5.0 or later) instance.
     * `APPSMITH_ENABLE_EMBEDDED_DB` - `0`. This disables embedded mock databases on EFS volume.
 6. Add the below configuration in the **HealthCheck** section:
     * **Command** - `CMD-SHELL, curl -f http://localhost/ || exit 1`
@@ -238,13 +239,67 @@ Follow these steps to create and run an ECS service:
 
 To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 4 of the [Create task and container definitions](#create-task-and-container-definitions) section on this page.
 
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Set Up High Availability (HA)</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Configure high availability for your Appsmith deployment on AWS Fargate to handle increased load. 
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider. 
+    </div>
+  </a>
+</div>
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Email Service</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. 
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL. 
+    </div>
+  </a>
+</div>
+
 ## Troubleshooting
 
-If you are facing issues during deployment, please refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors).
+If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
-
-## Further reading
+## See also
 
 - [Configure ECS Installation](/getting-started/setup/instance-configuration#configure-ecs-installations)
 - [Manage instance](/getting-started/setup/instance-management/)

@@ -135,6 +135,8 @@ LIMIT {{ tableUsers.pageSize }} OFFSET {{ tableUsers.pageOffset }};
 
 This comment fetches customer data from the `default.customer` table using the page size and offset values provided by Table widget. If the values are non-integer, make sure to enclose them in quotes.
 
+For more information on how to fetch paginated data, see [Setup Server-Side Pagination on Table](/build-apps/how-to-guides/Server-side-pagination-in-table).
+
 ### Update data
 
 
@@ -146,6 +148,8 @@ UPDATE default.customer
 ```
 
 This command dynamically updates customer details based on user input. If the values are non-integer, make sure to enclose them in quotes.
+
+For more information on how to update Table data, see [Update Data Guide](/build-apps/how-to-guides/submit-form-data).
 
 
 ### Insert data
@@ -163,6 +167,9 @@ VALUES (
 This command dynamically inserts a new customer into the database. If the values are non-integer, make sure to enclose them in quotes.
 
 
+For more information on how to insert data, see [Insert Data](/build-apps/how-to-guides/insert-data).
+
+
 
 ### Delete data
 
@@ -173,6 +180,12 @@ WHERE id = {{tableUsers.selectedRow.id}};
 ```
 
 This command dynamically deletes a customer based on their ID, obtained from the selected row in the Table. If the values are non-integer, make sure to enclose them in quotes.
+
+
+
+For information on how to delete data in a Table, see [Delete Data in Table](/reference/widgets/table/inline-editing#delete-row).
+
+
 
 
 

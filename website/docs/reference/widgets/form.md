@@ -177,6 +177,9 @@ Form1.setVisibility(true)
 
 </dd>
 
-## See also
-- [Insert Data](/build-apps/how-to-guides/insert-data)
 
+## See also
+
+- [Insert Data](/build-apps/how-to-guides/insert-data): Learn how to insert data into your datasource using Forms and queries.
+- [Update Table Data Using Form](/build-apps/how-to-guides/submit-form-data): Learn how to update Table data using Form widget.
+- [JSON Form](/reference/widgets/json-form): Learn how to use the JSON Form widget, which efficiently generates forms from JSON data, eliminating the need for manual form creation.

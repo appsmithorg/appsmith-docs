@@ -5,7 +5,12 @@ description: >-
 
 # clearStore()
 
-`clearStore()` function clears all the data that was stored in the local storage of the browser using the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
+This page provides information about the `clearStore()` function signature and parameters, which clears all the data that was stored in the local storage of the browser using the [storeValue()](/reference/appsmith-framework/widget-actions/store-value) function.
+
+
+<ZoomImage src="/img/clearStore.png" alt="clearStore()" caption="clearStore()" />
+
+
 
 ## Signature
 
@@ -13,9 +18,9 @@ description: >-
 clearStore()
 ```
 
-*Example:*
+## Usage
 
-Suppose you have stored an employee's basic information using the `storeValue()` function. You can remove all the values using the `clearStore()` function in a JS Object as shown below:
+If you have saved an employee's basic information using the `storeValue()` function, you can remove all the stored values by using the `clearStore()` function within a JSObject, as demonstrated below:
 
 ```js
 export default {

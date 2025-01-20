@@ -129,6 +129,6 @@ With this, you can format dates using the JS module in multiple places throughou
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
 :::
 
-### See Also
+### See also
 
 * [How to Use queries inside JS module](/packages/how-to-guides/use-query-inside-js-module)

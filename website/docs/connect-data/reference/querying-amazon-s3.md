@@ -342,4 +342,7 @@ Expects a JSON array of file paths to be deleted from the S3 bucket.
 If you are experiencing difficulties, you can refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors) or contact the support team using the chat widget at the bottom right of this page.
 
 ## See also
-- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3).
+- [Upload Files to S3](/connect-data/how-to-guides/how-to-upload-to-s3) - Learn how to upload files to an S3 bucket using built-in integration and API configurations.
+- [Display and Lookup Data in List](/build-apps/how-to-guides/display-search-and-filter-list-data) - Learn how to display query results in a List and enable users to look up data efficiently.
+- [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - Guide on adding search and filter functionality to Tables for better data navigation.
+

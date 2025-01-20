@@ -38,18 +38,32 @@ Most applications are a combination of read or write data flows.
 
 Mastering these data flows allows developers to create applications that can seamlessly read and write data, creating a dynamic and reactive user experience. Understanding and utilizing these patterns is the key to efficiently building robust applications with Appsmith.
 
+## Get started
+
+Get started with building applications using Appsmith by exploring the following resources:
 
 <div className="containerGridSampleApp">
-    <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/build-apps/how-to-guides"><strong>How-to Guides</strong></a>
-        </div> <hr/>
-        <div className="containerDescription">Step-by-step guides to build common workflows.</div>
-    </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
-           <a href="/reference/widgets"><strong>Reference</strong></a>
-        </div><hr/>
-        <div className="containerDescription">Technical information on widgets.</div>
-    </div>
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/build-apps/how-to-guides">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>How-to Guides</strong>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Follow these step-by-step guides to build common workflows and create applications with Appsmith's features and widgets.
+      </div>
+   </a>
+
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/reference/widgets">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>Reference</strong>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Access detailed technical information on Appsmith widgets, their configuration, and how to use them in your app.
+      </div>
+   </a>
 </div>

@@ -13,6 +13,7 @@ This page provides steps to install Appsmith on a single node EC2 Linux + Networ
 * An Amazon EC2 key pair. If you don't have one, [Generate an SSH Key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair).
 * An Amazon Security group with ports 80, 443, and 22 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#creating-security-group)
 * To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port ranges 80, 443, and 22 to the security group you created above.
+* To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
 * Ensure you have created the security group and the SSH key pair in the same region.
 * You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash. Hence, ensure you have set up and can access an external MongoDB instance hosting MongoDB V5.0 or later. For more information, see [External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb).
 
@@ -64,11 +65,21 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 5. Configure the **Container-1** as shown below:
     * **Name** - Give a meaningful name. For example, `appsmith`
     * **Image URI** - `index.docker.io/appsmith/appsmith-ee`
+    * Add the port mappings for Port `80` as follows:
+      * **Container port** - `80`
+      * **Protocol** - HTTP
+      * **Port name** - Give a meaningful and unique name.
+      * **App protocol** - HTTP
+    * Add the port mappings for Port `443` as follows:
+      * **Container port** - `443`
+      * **Protocol** - HTTP
+      * **Port name** - Give a meaningful and unique name.
+      * **App protocol** - HTTP
     * Under the **Environment variables** section, click the **Add environment variable** button, and add the below environment variables in the **Key** and their values in the **Value** fields:
         * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
-        * `APPSMITH_MONGODB_URI` : Enter the URI of the external MongoDB (v5.0 or later) instance.
+        * `APPSMITH_DB_URL` : Enter the URI of the external MongoDB (v5.0 or later) instance.
         * `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
 6. Configure the **HealthCheck** section as shown below: 
     * **HealthCheck Command** - `CMD-SHELL, curl http://localhost/ || exit 1`
@@ -123,11 +134,68 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 For the Appsmith open source edition (Appsmith Community), substitute `appsmith/appsmith-ee` with `appsmith/appsmith-ce` in the container definition for **Container-1** in the [Create task and container definition](#create-task-and-container-definition) section on this page.
 
+
+## Post-installation configuration
+
+Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
+<br/>
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Single Sign-on (SSO)</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Configure SSO to allow users to sign in using your identity provider. Learn more about configuring SSO.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/email">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure Email Service</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up an email service to enable Appsmith to send notifications and alerts. Learn more about configuring email services.
+    </div>
+  </a>
+</div>
+
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/custom-domain">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Set Up Custom Domain and SSL</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up a custom domain for your Appsmith instance and secure it with SSL. Learn more about setting up custom domains and SSL.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-management/appsmithctl">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Backup and Restore</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Ensure the safety of your Appsmith instance data by regularly backing up and restoring it when needed. Learn more about Backup and Restore.
+    </div>
+  </a>
+</div>
+
 ## Troubleshooting
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, reach out to the support team via the chat widget on this page.
 
-## Further reading
+## See also
 
-- [Configuring ECS Installations](/getting-started/setup/instance-configuration#configure-ecs-installations)
-- [Manage Appsmith instance](/getting-started/setup/instance-management)
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.

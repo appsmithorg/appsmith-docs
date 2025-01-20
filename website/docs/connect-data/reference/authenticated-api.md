@@ -218,6 +218,13 @@ The _Send client credentials with (on refresh token)_ setting is available only 
 
 Once you have configured your Authenticated API datasource, create queries to interact with the APIs. For detailed information on configuring queries, refer to the [REST API documentation](/connect-data/reference/rest-api).
 
+
 ## Troubleshooting
 
 If you are facing issues, refer to the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact support via the chat widget at the bottom right of this page.
+
+## See also
+
+- [Download Files](/connect-data/how-to-guides/how-to-download-files-using-api) - Learn how to download files using a URL with API integrations.
+- [Upload Files using API](/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests) - Step-by-step guide on how to upload files via API using the Filepicker widget.
+- [Setup Server-Side Pagination ](/build-apps/how-to-guides/Server-side-pagination-in-table) - Learn how to efficiently handle large datasets by implementing Server-side pagination in Table.

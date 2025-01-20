@@ -50,14 +50,17 @@ Modules are part of Package. There are two types of modules, query and JS, that 
 
 
 <div className="containerGridSampleApp">
-
-   <div className="containerColumnSampleApp columnGrid column-two">
-   <div className="containerCol">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/packages/tutorial/query-module">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <strong>Tutorial</strong>
+         </div>
       </div>
-      <b><a href="/packages/tutorial/query-module">Tutorial</a></b>
-      <div className="containerDescription"> Take the quick tutorial to learn the basics.</div>
-   </div>
-  
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Take the quick tutorial to learn the basics of working with packages in Appsmith, including how to create and manage them.
+      </div>
+   </a>
 </div>
 
 

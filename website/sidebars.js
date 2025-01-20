@@ -17,223 +17,234 @@ const sidebars = {
             'getting-started/tutorials/the-basics/work-with-data-in-ui',
             'getting-started/tutorials/the-basics/write-js-code',
           ],
-        },
-
+        }
+      ],
+    }, //getting started section end
+    //self-hosting starts
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Self Hosting',
+      link: { type: 'doc', id: 'getting-started/setup/README' },
+      items: [
         {
           type: 'category',
-          label: 'Self Hosting',
-          link: { type: 'doc', id: 'getting-started/setup/README' },
+          label: 'New Installation Guides',
+          link: {
+            type: 'doc',
+            id: 'getting-started/setup/installation-guides/README',
+          },
+          items: [
+
+            'getting-started/setup/installation-guides/docker/README',
+            {
+              type: 'category',
+              label: 'Kubernetes',
+              link: {
+                type: 'doc',
+                id: 'getting-started/setup/installation-guides/kubernetes/README',
+              },
+              items: [
+                'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
+              ],
+            },
+            'getting-started/setup/installation-guides/aws-ami',
+            'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
+            'getting-started/setup/installation-guides/aws-ecs-on-fargate',
+            'getting-started/setup/installation-guides/azure-aci',
+            'getting-started/setup/installation-guides/google-cloud-run',
+            'getting-started/setup/installation-guides/digitalocean',
+            'getting-started/setup/installation-guides/ansible',
+            'getting-started/setup/installation-guides/air-gapped',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Manage Installation',
+          link: {
+            type: 'doc',
+            id: 'getting-started/setup/instance-configuration/README',
+          },
           items: [
             {
               type: 'category',
-              label: 'Install Appsmith',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/installation-guides/README',
-              },
+              label: 'High Availability Guides',
               items: [
+                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 {
                   type: 'category',
-                  label: 'Docker',
+                  label: 'AWS ECS on Fargate',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/installation-guides/docker/README',
+                    id: 'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
                   },
                   items: [
-                    'getting-started/setup/installation-guides/docker/migrate',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Kubernetes',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/installation-guides/kubernetes/README',
-                  },
-                  items: [
-                    'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
-                    'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
-                    'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
-                    'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
-                    'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
-                    'getting-started/setup/installation-guides/kubernetes/migrate-k8s',
-                  ],
-                },
-                'getting-started/setup/installation-guides/aws-ami',
-                {
-                  type: 'category',
-                  label: 'AWS ECS',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/installation-guides/aws-ecs/README',
-                  },
-                  items: [
-                    'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
-                    'getting-started/setup/installation-guides/aws-ecs-on-fargate',
-                    'getting-started/setup/installation-guides/aws-ecs/setup-postgresql-aws-ecs',
-                    'getting-started/setup/installation-guides/aws-ecs/set-up-high-availability',
                     'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data',
                   ],
                 },
-                'getting-started/setup/installation-guides/azure-aci',
-                {
-                  type: 'category',
-                  label: 'Google Cloud Run',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/installation-guides/google-cloud-run',
-                  },
-                  items: [
-                    'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
-                    'getting-started/setup/installation-guides/google-cloud-run/setup-to-integrate-sso',
-                  ],
-                },
-                'getting-started/setup/installation-guides/digitalocean',
-                'getting-started/setup/installation-guides/ansible',
-                'getting-started/setup/installation-guides/air-gapped',
+                'getting-started/setup/installation-guides/google-cloud-run/manage-traffic',
               ],
             },
             {
               type: 'category',
-              label: 'Configure Instance',
+              label: 'Authentication Guides',
               link: {
                 type: 'doc',
-                id: 'getting-started/setup/instance-configuration/README',
+                id: 'getting-started/setup/instance-configuration/authentication/README',
               },
               items: [
+                'getting-started/setup/instance-configuration/authentication/google-login',
+                'getting-started/setup/instance-configuration/authentication/github-login',
                 {
                   type: 'category',
-                  label: 'Authentication',
+                  label: 'SAML SSO',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/instance-configuration/authentication/README',
+                    id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
                   },
                   items: [
-                    'getting-started/setup/instance-configuration/authentication/google-login',
-                    'getting-started/setup/instance-configuration/authentication/github-login',
-                    {
-                      type: 'category',
-                      label: 'SAML SSO',
-                      link: {
-                        type: 'doc',
-                        id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
-                      },
-                      items: [
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
-                        'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
-                      ],
-                    },
-                    {
-                      type: 'category',
-                      label: 'OpenID Connect SSO',
-                      link: {
-                        type: 'doc',
-                        id: 'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README',
-                      },
-                      items: [
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id',
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
-                        'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
-                      ],
-                    },
-                    'getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt',
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity',
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/disable-update-account-info',
                   ],
+
                 },
                 {
                   type: 'category',
-                  label: 'Email',
+                  label: 'OpenID Connect SSO',
                   link: {
                     type: 'doc',
-                    id: 'getting-started/setup/instance-configuration/email/README',
+                    id: 'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/README',
                   },
                   items: [
-                    'getting-started/setup/instance-configuration/email/gmail',
-                    'getting-started/setup/instance-configuration/email/amazon-ses',
-                    'getting-started/setup/instance-configuration/email/sendgrid',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/entra-id',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/aws-cognito',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/auth0',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/okta',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/ping-identity',
+                    'getting-started/setup/instance-configuration/authentication/openid-connect-oidc/fusionauth',
                   ],
                 },
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Custom Domain and SSL Guides',
+              items: [
+                'getting-started/setup/instance-configuration/custom-domain/README',
+                'getting-started/setup/instance-configuration/custom-domain/configure-tls',
+                'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Email Setup Guides',
+              items: [
+                'getting-started/setup/instance-configuration/email/gmail',
+                'getting-started/setup/instance-configuration/email/amazon-ses',
+                'getting-started/setup/instance-configuration/email/microsoft-365',
+                'getting-started/setup/instance-configuration/email/sendgrid',
+                'getting-started/setup/instance-configuration/email/README',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Backup and Restore Guides',
+              items: [
+                'getting-started/setup/instance-management/backup-and-restore/backup-instance',
+                'getting-started/setup/instance-management/backup-and-restore/backup-database',
+                'getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3',
+                'getting-started/setup/instance-management/backup-and-restore/restore-instance',
+                'getting-started/setup/instance-management/backup-and-restore/restore-database',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Other Configuration Guides',
+              items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
-                'getting-started/setup/instance-configuration/disable-intercom',
-                'getting-started/setup/instance-configuration/google-maps',
-                'getting-started/setup/instance-configuration/disable-user-signup',
-                {
-                  type: 'category',
-                  label: 'Custom Domain and SSL',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/instance-configuration/custom-domain/README',
-                  },
-                  items: [
-                    'getting-started/setup/instance-configuration/custom-domain/configure-tls',
-                    'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
-                  ],
-                },
+                'getting-started/setup/instance-configuration/external-redis',
+                'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
+                'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
-                'getting-started/setup/instance-configuration/frame-ancestors',
-                'getting-started/setup/environment-variables',
-                'advanced-concepts/version-control-with-git/updating-local-file-path',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Manage Instance',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/instance-management/README',
-              },
-              items: [
-                {
-                  type: 'category',
-                  label: 'Update Appsmith',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/instance-management/update-appsmith',
-                  },
-                  items: [
-                    'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
-                  ]
-                },
-                'getting-started/setup/instance-management/maintenance-window',
-                'getting-started/setup/instance-management/appsmithctl',
+                'getting-started/setup/instance-configuration/configure-using-environment-variables',
                 'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
+                'getting-started/setup/instance-configuration/google-maps',
+                'getting-started/setup/instance-management/maintenance-window',
+                'getting-started/setup/instance-management/switch-off-automatic-updates',
               ],
             },
             {
               type: 'category',
-              label: 'Manage Editions',
+              label: 'Reference',
+              items: [
+                'getting-started/setup/instance-management/appsmithctl',
+                'getting-started/setup/instance-configuration/file-size-limit',
+                'getting-started/setup/instance-configuration/admin-settings',
+                'getting-started/setup/environment-variables',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Upgrade Installation Guides',
+          link: {
+            type: 'doc',
+            id: 'getting-started/setup/instance-management/README',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Upgrade Appsmith Versions',
+              link: {
+                type: 'doc',
+                id: 'getting-started/setup/instance-management/update-appsmith',
+              },
+              items: [
+                'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Upgrade Helm Versions',
+              items: [
+                'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
+                'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Upgrade to Commercial Edition',
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/manage-editions/README',
               },
               items: [
                 'getting-started/setup/manage-plans/upgrade-plan',
-                {
-                  type: 'category',
-                  label: 'Upgrade from Community Edition',
-                  link: {
-                    type: 'doc',
-                    id: 'getting-started/setup/upgrade-from-community-edition/README',
+                'getting-started/setup/upgrade-from-community-edition/docker',
+                'getting-started/setup/upgrade-from-community-edition/kubernetes',
 
-                  },
-                  items: [
-                    'getting-started/setup/upgrade-from-community-edition/docker',
-                    'getting-started/setup/upgrade-from-community-edition/kubernetes',
-                  ]
-                },
-                'getting-started/setup/manage-plans/downgrade-plan',
               ],
             },
-            `getting-started/setup/best-practices`,
-            'getting-started/setup/deployment-architecture',
+            'getting-started/setup/manage-plans/downgrade-plan',
           ],
+        },
+        {
+          type: 'category',
+          label: 'Concepts',
+          items:
+            [
+              `getting-started/setup/best-practices`,
+              'getting-started/setup/deployment-architecture',
+            ],
         }
       ],
-    }, //getting started section end
+    },//self-hosting ends
     {
       //Data start
       type: 'category',
@@ -423,14 +434,9 @@ const sidebars = {
 
               ],
             },
-            {
-              type: 'category',
-              label: 'Create Custom Widgets',
-              link: { type: 'doc', id: 'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe' },
-              items: [
-                'build-apps/how-to-guides/custom-widget-using-vanillajs'
-              ],
-            },
+            'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
+            'build-apps/how-to-guides/custom-widget-using-vanillajs',
+            `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
@@ -444,7 +450,9 @@ const sidebars = {
             `build-apps/how-to-guides/set-up-websockets`,
             `build-apps/how-to-guides/setup-polling`,
             `build-apps/how-to-guides/browse-and-display-documents`,
-            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs'
+            'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
+            'build-apps/how-to-guides/usage-app',
+            'build-apps/how-to-guides/export-audit-logs'
           ]
         },
         {
@@ -525,7 +533,8 @@ const sidebars = {
                   label: 'Table',
                   link: { type: 'doc', id: 'reference/widgets/table/README' },
                   items: [
-                    'reference/widgets/table/column-settings'
+                    'reference/widgets/table/column-settings',
+                    'reference/widgets/table/editable'
                   ],
                 },
                 'reference/widgets/text',
@@ -555,7 +564,7 @@ const sidebars = {
           items: [
             'core-concepts/writing-code/javascript-promises',
             'advanced-concepts/sharing-data-across-pages',
-            'core-concepts/writing-code/ext-libraries'
+            'core-concepts/writing-code/ext-libraries',
           ]
         },
         {
@@ -583,26 +592,28 @@ const sidebars = {
               id: 'reference/appsmith-framework/widget-actions/README',
             },
             items: [
+              'reference/appsmith-framework/widget-actions/clear-interval',
+              'reference/appsmith-framework/widget-actions/clear-store',
+              'reference/appsmith-framework/widget-actions/close-modal',
+              'reference/appsmith-framework/widget-actions/copy-to-clipboard',
+              'reference/appsmith-framework/widget-actions/download',
               'reference/appsmith-framework/widget-actions/navigate-to',
+              'reference/appsmith-framework/widget-actions/post-message',
+              'reference/appsmith-framework/widget-actions/remove-value',
+              'reference/appsmith-framework/widget-actions/reset-widget',
+              'reference/appsmith-framework/widget-actions/set-timeout',
+              'reference/appsmith-framework/widget-actions/intervals-time-events',
+              'reference/appsmith-framework/widget-actions/store-value',
               'reference/appsmith-framework/widget-actions/show-alert',
               'reference/appsmith-framework/widget-actions/show-modal',
-              'reference/appsmith-framework/widget-actions/close-modal',
-              'reference/appsmith-framework/widget-actions/store-value',
-              'reference/appsmith-framework/widget-actions/remove-value',
-              'reference/appsmith-framework/widget-actions/clear-store',
-              'reference/appsmith-framework/widget-actions/download',
-              'reference/appsmith-framework/widget-actions/copy-to-clipboard',
-              'reference/appsmith-framework/widget-actions/reset-widget',
-              'reference/appsmith-framework/widget-actions/intervals-time-events',
-              'reference/appsmith-framework/widget-actions/clear-interval',
-              'reference/appsmith-framework/widget-actions/set-timeout',
-              'reference/appsmith-framework/widget-actions/post-message',
-              'reference/appsmith-framework/widget-actions/window-message-listener',
-              'reference/appsmith-framework/widget-actions/unlisten-window-message'
+              'reference/appsmith-framework/widget-actions/unlisten-window-message',
+              'reference/appsmith-framework/widget-actions/window-message-listener'
+
             ]
           },
             'write-code/reference/Built-in-JS-Libraries',
-            'write-code/reference/Fetch-API'
+            'write-code/reference/Fetch-API',
+            'write-code/reference/transform-data'
           ],
         }, //Reference End
         {
@@ -705,14 +716,7 @@ const sidebars = {
       collapsed: false,
       label: 'Manage Apps and Users',
       items: [
-        {
-          type: 'category',
-          label: 'Embed Appsmith',
-          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
-          items: [
-            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
-          ]
-        },
+        'getting-started/setup/instance-configuration/authentication/README',
         {
           type: 'category',
           label: 'Granular Access Control',
@@ -743,9 +747,8 @@ const sidebars = {
                 'advanced-concepts/granular-access-control/roles',
               ]
             },
-          ]
+          ],
         },
-        `advanced-concepts/user-provisioning-group-sync`,
         //git-start
         {
 
@@ -794,13 +797,105 @@ const sidebars = {
           ]
         },
         //git-end
-        //git-start
+        `advanced-concepts/user-provisioning-group-sync`,
+        {
+          type: 'category',
+          label: 'Embed Appsmith',
+          link: { type: 'doc', id: 'advanced-concepts/embed-appsmith-into-existing-application', },
+          items: [
+            'getting-started/setup/instance-configuration/authentication/json-web-tokens-jwt',
+            'build-apps/how-to-guides/send-messages-between-your-app-and-appsmith',
+          ]
+        },
 
         'advanced-concepts/more/backup-restore',
         'advanced-concepts/audit-logs',
         'advanced-concepts/branding',
+        'advanced-concepts/external-portal-using-appsmith',
       ],
     }, //Advanced Concepts end
+    //module start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Packages (Beta)',
+      items: [
+        'packages/overview',
+
+        {
+          type: 'category',
+          label: 'Tutorial',
+          items: [
+            'packages/tutorial/query-module',
+            'packages/tutorial/js-module'
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: true,
+          label: 'How-to Guides',
+          items: [
+            'packages/how-to-guides/use-query-inside-js-module',],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'packages/reference/package',
+            'packages/reference/query-module'
+
+          ],
+        }
+      ]
+    }, //module end
+    //Workflows start
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Workflows (Beta)',
+      items: [
+        'workflows/README',
+        //category- Api
+        {
+          type: 'category',
+          label: 'Tutorial',
+          link: {
+            type: 'doc',
+            id: 'workflows/tutorials/create-workflow',
+          },
+          items: [
+          ],
+        },
+        {
+          type: 'category',
+          label: 'How-to Guides',
+          link: {
+            type: 'doc',
+            id: 'workflows/how-to-guides/README',
+          },
+          items: [
+            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
+            'workflows/how-to-guides/create-approval-workflow',
+            'workflows/how-to-guides/set-up-automatic-processing',
+            'workflows/how-to-guides/debug-workflow',
+          ],
+        },
+        {
+          type: 'category',
+          collapsed: false,
+          label: 'Reference',
+          items: [
+            'workflows/reference/workflow-triggers',
+            'workflows/reference/workflow-queries',
+            'workflows/reference/workflow-functions',
+            'workflows/reference/pass-parameters-to-workflows',
+            'workflows/reference/run-history'
+          ],
+        }
+      ]
+
+    }, //Workflows end
     {
       // Help & Support start
       type: 'category',
@@ -836,6 +931,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/README',
             'help-and-support/troubleshooting-guide/git-errors',
             'help-and-support/troubleshooting-guide/gac-errors',
+            'help-and-support/troubleshooting-guide/cyclic-dependency',
           ],
         },
         // 'help-and-support/troubleshooting-guide/js-errors',
@@ -855,13 +951,18 @@ const sidebars = {
         'product/support',
         {
           type: 'link',
-          label: 'Release Notes', // The link label
-          href: 'https://github.com/appsmithorg/appsmith/releases', // The external URL
+          label: 'Privacy Policy',
+          href: 'https://www.appsmith.com/privacy-policy',
         },
         {
           type: 'link',
-          label: 'Contribute', // The link label
-          href: 'https://github.com/appsmithorg/appsmith/blob/release/CONTRIBUTING.md', // The external URL
+          label: 'Release Notes',
+          href: 'https://github.com/appsmithorg/appsmith/releases',
+        },
+        {
+          type: 'link',
+          label: 'Contribute',
+          href: 'https://github.com/appsmithorg/appsmith/blob/release/CONTRIBUTING.md',
         },
       ],
     }, // Product End

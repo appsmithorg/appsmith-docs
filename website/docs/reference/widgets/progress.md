@@ -170,3 +170,7 @@ Progress1.setProgress(50)
 ```
 
 </dd>
+
+## See also
+
+- [Create a Multi-step Wizard](/build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs) – See how to create a multi-step form.
