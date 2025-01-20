@@ -567,7 +567,6 @@ const sidebars = {
             },
           ],
         },
-        'getting-started/setup/instance-configuration/authentication/README',
         'advanced-concepts/branding',
         'advanced-concepts/audit-logs',
         {
