@@ -49,14 +49,3 @@ SELECT * FROM public."product" LIMIT {{inputs.input1}} OFFSET {{inputs.input2}};
 
 
 </dd>
-
-
-
-
-
-
-
-
-
-
-
