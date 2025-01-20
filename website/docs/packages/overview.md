@@ -21,7 +21,7 @@ tags={[
 Reusability is an integral part of application development, offering various advantages like speeding up the development process, centralizing business logic, and introducing standardization into applications. Appsmith enhances reusability by providing a feature set, which allows you to reuse widgets, queries, and JS logic across your applications.
 
 :::info
-For Appsmith version v1.56 or earlier, refer to the legacy documentation for the packages. For more information, see [Package Legacy Documentation](https://appsmith-docs-git-chore-embed-videos-get-appsmith.vercel.app/packages/overview).
+For Appsmith version v1.56 or earlier, refer to the legacy documentation for the packages. For more information, see [Package Legacy Documentation](https://appsmith-docs-git-packages-v156-get-appsmith.vercel.app/packages/overview).
 :::
 
 ## Packages
