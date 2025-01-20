@@ -12,7 +12,7 @@ This page provides steps to set up a Kubernetes Cluster with the persistent volu
 Ensure you have access to the AWS Command Line Interface (CLI). Use the following command to verify whether you can access information related to your account and ARN. This verification confirms that you can connect to and access your Amazon account using the CLI.
 
   ```bash
-    aws sts get-caller-identity
+  aws sts get-caller-identity
   ```
 
 ## Create and configure cluster
@@ -22,11 +22,14 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
 1. Create KubeConfig with:
 
     ```bash
-    aws eks update-kubeconfig --region ap-south-1 --name CLUSTER_NAME  --profile <PROFILE_NAME>
+    aws eks update-kubeconfig --region <REGION_NAME> --name <CLUSTER_NAME>  --profile <PROFILE_NAME>
     ```
 
-    In the above command, add the profile name that has access to the AWS-EKS cluster to the `--profile` parameter.
-
+    In the above command, replace:
+    *  `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
+    * `<CLUSTER_NAME>`: with the name of the cluster.
+    * `<PROFILE_NAME>`: the profile name that has access to the AWS EKS cluster to the `--profile` parameter.
+    
 2. Test your Kubernetes configuration with:
 
     ```bash
