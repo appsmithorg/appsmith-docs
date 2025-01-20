@@ -112,13 +112,13 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'manageSidebar',
             position: 'left',
-            label: 'Manage Apps and Users',
+            label: 'Manage',
           },
           {
             type: 'docSidebar',
             sidebarId: 'otherSidebar',
             position: 'left',
-            label: 'Other',
+            label: 'Help & FAQ',
           },
           {
             type: 'search',
