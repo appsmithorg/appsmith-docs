@@ -100,7 +100,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'deploySidebar',
             position: 'left',
-            label: 'Set Up',
+            label: 'Setup',
           },
           {
             type: 'docSidebar',

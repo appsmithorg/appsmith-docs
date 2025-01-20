@@ -587,7 +587,7 @@ const sidebars = {
   deploySidebar: [
     {
       type: 'category',
-      label: 'Set Up',
+      label: 'Setup',
       link: { type: 'doc', id: 'getting-started/setup/README' },
       items: [
         {
