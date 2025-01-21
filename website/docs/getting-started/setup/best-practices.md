@@ -6,6 +6,10 @@ description: This page outlines the best practices for Appsmith deployment.
 
 This page outlines the best practices for deploying, managing, and maintaining Appsmith in a production environment. Following these recommendations ensures high availability, security, performance, and smooth upgrades.
 
+:::tip Appsmith Managed Hosting
+Appsmith’s managed hosting service ensures your deployment adheres to industry best practices for hosting and maintaining Appsmith applications. For more information or to get started with Appsmith managed hosting, contact the sales team at [sales@appsmith.com](mailto:sales@appsmith.com).
+:::
+
 ## Platform selection and deployment
 
 Selecting the right platform and deployment method is crucial for the scalability and reliability of your Appsmith instance.
