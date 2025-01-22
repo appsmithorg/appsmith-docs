@@ -19,18 +19,27 @@ Ensure you have access to the AWS Command Line Interface (CLI). Use the followin
 
 Follow these steps to create a `KubeConfig` and define a storage class that automatically generates a persistent volume during [installation of Appsmith](/getting-started/setup/installation-guides/kubernetes).
 
-1. Create KubeConfig with:
+1. Create cluster with:
+
+    ```bash
+    eksctl create cluster --name <CLUSTER_NAME> --region <REGION_NAME> --node-type t2.2xlarge
+    ```
+    In the above command, replace:
+    * `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
+    * `<CLUSTER_NAME>`: with the name of the cluster.
+
+2. Create KubeConfig with:
 
     ```bash
     aws eks update-kubeconfig --region <REGION_NAME> --name <CLUSTER_NAME>  --profile <PROFILE_NAME>
     ```
 
     In the above command, replace:
-    *  `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
+    * `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
     * `<CLUSTER_NAME>`: with the name of the cluster.
     * `<PROFILE_NAME>`: the profile name that has access to the AWS EKS cluster to the `--profile` parameter.
     
-2. Test your Kubernetes configuration with:
+3. Test your Kubernetes configuration with:
 
     ```bash
     kubectl cluster-info
@@ -38,7 +47,7 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
 
     The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information.
 
-3. Define a storage class:
+4. Define a storage class:
 
    * If your Kubernetes version is prior to `1.23`, execute the following command:
 
@@ -55,6 +64,15 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
     * If your Kubernetes version is `1.23` or later, follow these steps:
 
         1. Create an IAM role by following the official Amazon documentation on [Creating the Amazon EBS CSI driver IAM role](https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html).
+
+        2. Add a web identity to the identity provider list with:
+
+            ```bash
+            eksctl utils associate-iam-oidc-provider --region <REGION_NAME> --cluster <CLUSTER_NAME> --approve
+            ```
+            In the above command, replace:
+            * `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
+            * `<CLUSTER_NAME>`: with the name of the cluster.
 
         2. Add the Amazon Elastic Block Store (Amazon EBS) Container Storage Interface (CSI) driver chart repository:
 
@@ -79,6 +97,11 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
             ```bash
             kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
             ```
+5. Add `AmazonEC2FullAccess` policy to the cluster and the node group.
+6. Mark the `gp2` class as default with:
+    ```bash
+    kubectl patch storageclass gp2 -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}
+    ```
 
 ## Next steps
 
