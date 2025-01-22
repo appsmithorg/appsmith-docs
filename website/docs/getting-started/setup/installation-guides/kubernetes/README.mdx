@@ -45,49 +45,50 @@ Follow these steps to install Appsmith:
 
 2. Add the Appsmith chart repository with:
 
-```bash
-helm repo add appsmith-ee https://helm-ee.appsmith.com
-```
+    ```bash
+    helm repo add appsmith-ee https://helm-ee.appsmith.com
+    ```
 
 3. Load the Appsmith chart repository with:
 
-```bash
-helm repo update
-```
+    ```bash
+    helm repo update
+    ```
 
 4. Generate the `values.yaml` file with:
 
-```bash
-helm show values appsmith-ee/appsmith  > values.yaml
-```
+    ```bash
+    helm show values appsmith-ee/appsmith  > values.yaml
+    ```
 
 5. Run the below command to deploy Appsmith:
 
-```bash
-helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
-```
+    ```bash
+    helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
+    ```
 
 6. Get pod name with:
 
-```bash
-kubectl get pods -n appsmith-ee
-```
+    ```bash
+    kubectl get pods -n appsmith-ee
+    ```
 
-The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
+    The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
 
 7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
 
-```bash
-kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
-```
+    ```bash
+    kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
+    ```
 
-In the above command, `appsmith-ee-0` is the Appsmith pod name.
+  In the above command, `appsmith-ee-0` is the Appsmith pod name.
 
 8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
 
 9. Fill in your details to create an administrator account.
 
 10. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
+
 
 For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. To expose Appsmith installation on the internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
 
