@@ -3,17 +3,22 @@ description: Deploy Appsmith on a Kubernetes cluster
 toc_max_heading_level: 2
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 # Set up Kubernetes cluster on AWS EKS
 
 This page provides steps to set up a Kubernetes Cluster with the persistent volume on Amazon Elastic Kubernetes Service (EKS).
 
 ## Prerequisites
 
-Ensure you have access to the AWS Command Line Interface (CLI). Use the following command to verify whether you can access information related to your account and ARN. This verification confirms that you can connect to and access your Amazon account using the CLI.
+1. Install `eksctl`. For installation instructions, see the official [eksctl](https://eksctl.io/installation/) documentation for instructions.
+2. Install `awscli`. For installation instructions, see the official [awscli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) documentation. 
+3. Use the following command to verify whether you can access information related to your account and ARN. This verification confirms that you can connect to and access your Amazon account using the CLI.
 
-  ```bash
-  aws sts get-caller-identity
-  ```
+    ```bash
+    aws sts get-caller-identity
+    ```
 
 ## Create and configure cluster
 
@@ -25,7 +30,7 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
     eksctl create cluster --name <CLUSTER_NAME> --region <REGION_NAME> --node-type t2.2xlarge
     ```
     In the above command, replace:
-    * `<REGION_NAME>`: with the region where the Kubernetes cluster is hosted.
+    * `<REGION_NAME>`: with the region where you'll host the Kubernetes cluster.
     * `<CLUSTER_NAME>`: with the name of the cluster.
 
 2. Create KubeConfig with:
@@ -47,21 +52,26 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
 
     The above command provides a summary of the current cluster configuration, including the Kubernetes master and other cluster information.
 
-4. Define a storage class:
+4. Define a storage class. Follow these instructions for your Kubernetes version:
 
-   * If your Kubernetes version is prior to `1.23`, execute the following command:
+    <Tabs queryString="scim">
+    <TabItem label="Version earlier than 1.23" value="before1.23"> 
+        
+        To define a storage class, execute the following command:
 
-        ```bash
-        kubectl apply -f - <<EOF
-        apiVersion: storage.k8s.io/v1
-        kind: StorageClass
-        metadata:
-        name: gp2
-        provisioner: kubernetes.io/aws-ebs
-        EOF
-        ```
+            ```bash
+            kubectl apply -f - <<EOF
+            apiVersion: storage.k8s.io/v1
+            kind: StorageClass
+            metadata:
+            name: gp2
+            provisioner: kubernetes.io/aws-ebs
+            EOF
+           ```
 
-    * If your Kubernetes version is `1.23` or later, follow these steps:
+    </TabItem>
+    <TabItem label="Version 1.23 or later" value="1.23orlater"> 
+        Follow these steps to define the storage class:
 
         1. Create an IAM role by following the official Amazon documentation on [Creating the Amazon EBS CSI driver IAM role](https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html).
 
@@ -97,6 +107,10 @@ Follow these steps to create a `KubeConfig` and define a storage class that auto
             ```bash
             kubectl get pods -n kube-system -l app.kubernetes.io/name=aws-ebs-csi-driver
             ```
+    </TabItem>
+
+    </Tabs>
+
 5. Add `AmazonEC2FullAccess` policy to the cluster and the node group.
 6. Mark the `gp2` class as default with:
     ```bash
