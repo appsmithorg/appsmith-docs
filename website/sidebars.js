@@ -440,6 +440,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/Generate-PDF',
             `build-apps/how-to-guides/display-select-options-dynamically`,
             'build-apps/how-to-guides/add-remove-inputs-in-list',
             `build-apps/how-to-guides/navigate-between-pages`,
