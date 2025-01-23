@@ -1,4 +1,4 @@
-# Dynamically Generate PDF
+# Generate PDF Dynamically
 
 This page shows you how to generate a PDF from input data, preview it in a Document Viewer widget, and send it as an email attachment. 
 
