@@ -2,85 +2,73 @@
 sidebar_position: 1
 title: Introduction
 slug: /
+hide_table_of_contents: true
 ---
 
-# Welcome to Appsmith Documentation
+# Build Internal Tools in Minutes with Appsmith
 
-Appsmith is an open-source, low-code platform that empowers you to build internal tools quickly and efficiently. Connect to APIs, databases, and other data sources, design intuitive UIs with a drag-and-drop interface, automate tasks through workflows, leverage AI for faster development, and deploy your applications in minutes—all with minimal coding.
-<br/><br/>
+Appsmith is an open-source platform for building custom internal tools with ease. Connect to any database, create dynamic UIs, and automate workflows—all with minimal coding.
+
 ---
 
-## Explore Appsmith
+## Key Features of Appsmith
 
-<div className="containerGridLandingPageCards">
-   <a className="landingpageCard landingpageCard--blue" href="https://app.appsmith.com/">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Appsmith Cloud</h3>
-         <p className="landingpageCardDescription">Sign up for a free account on Appsmith Cloud and start building internal tools effortlessly.</p>
-      </div>
-   </a>
+<div class="containerGridLandingPageCards">
+  <a class="landingpageCard landingpageCard--blue" href="http://app.appsmith.com">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Appsmith Cloud</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}>Get started instantly by signing up on Appsmith Cloud and build powerful internal tools.</p>
+    </div>
+  </a>
 
-   <a className="landingpageCard landingpageCard--orange" href="/getting-started/setup">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Self-Host Appsmith</h3>
-         <p className="landingpageCardDescription">Learn how to deploy Appsmith on your local machine or private server for complete control and customization.</p>
-      </div>
-   </a>
+  <a class="landingpageCard landingpageCard--green" href="/getting-started/setup">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Self-Host Appsmith</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}>Take full control by hosting Appsmith on your own servers with easy setup guides.</p>
+    </div>
+  </a>
+
+  <a class="landingpageCard landingpageCard--orange" href="/getting-started/tutorials/start-building">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Workflows & Automation</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}>Automate tasks and build workflows to optimize your internal tool processes.</p>
+    </div>
+  </a>
+
+  <a class="landingpageCard landingpageCard--purple" href="/connect-data/overview">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Bring Your Data</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}>Integrate with different data sources, APIs, and third-party services and .</p>
+    </div>
+  </a>
 </div>
 
-<br/>
 ---
 
-## Build and Manage Apps
+## Get Started with Appsmith
 
-<div className="containerGridLandingPageCards">
-   <a className="landingpageCard landingpageCard--blue" href="/getting-started/tutorials/start-building">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Quick Start Tutorial</h3>
-         <p className="landingpageCardDescription">Follow this tutorial to learn the basics and start building your first app in minutes.</p>
-      </div>
-   </a>
+<div class="containerGridLandingPageCards">
+  <a class="landingpageCard landingpageCard--blue" href="/getting-started/setup">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Quick Start Tutorial</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}>Begin building your first Appsmith app with our step-by-step tutorial.</p>
+    </div>
+  </a>
 
-   <a className="landingpageCard landingpageCard--orange" href="/connect-data/overview">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Bring your Data</h3>
-         <p className="landingpageCardDescription">Discover how to integrate APIs, databases, and third-party services to power your applications.</p>
-      </div>
-   </a>
+  <a class="landingpageCard landingpageCard--green" href="#">
+    <div class="landingpageCardHead">
+      <h3 class="landingpageCardHeading" style={{fontSize: '1.2rem', color: '#333', marginBottom: '15px'}}>Integrate Appsmith AI</h3>
+      <p class="landingpageCardDescription" style={{fontSize: '1rem', color: '#666'}}></p>
+    </div>
+  </a>
 </div>
 
-<div className="containerGridLandingPageCards">
-   <a className="landingpageCard landingpageCard--blue" href="/build-apps/overview">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Add complex functionalities to your Apps</h3>
-         <p className="landingpageCardDescription">Learn how to build your applications, including workflows, packages, and writing JavaScript code.</p>
-      </div>
-   </a>
-
-   <a className="landingpageCard landingpageCard--orange" href="/advanced-concepts/granular-access-control">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Application and User Management</h3>
-         <p className="landingpageCardDescription">Explore how to manage users, roles, and permissions for your applications.</p>
-      </div>
-   </a>
-</div>
-<br/>
 ---
 
-## Help & FAQ
+## Join the Appsmith Community
 
-<div className="containerGridLandingPageCards">
-   <a className="landingpageCard landingpageCard--blue" href="/product/support">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">Support</h3>
-         <p className="landingpageCardDescription">Need help? Reach out to the Appsmith support team or explore our community resources for assistance.</p>
-      </div>
-   </a>
+Get involved with Appsmith! Whether it's getting support or contributing to the open-source project, we’d love for you to join us.
 
-   <a className="landingpageCard landingpageCard--orange" href="/getting-started/faq">
-      <div className="landingpageCardHead">
-         <h3 className="landingpageCardHeading">FAQ</h3>
-         <p className="landingpageCardDescription">Find answers to frequently asked questions about Appsmith, including troubleshooting and best practices.</p>
-      </div>
-   </a>
-</div>
+[**Join our Discord Community**](https://discord.com/invite/rBTTVJp) | [**Follow us on GitHub**](https://github.com/appsmithorg/) | [**Contact Support**](/product/support)
+
+---

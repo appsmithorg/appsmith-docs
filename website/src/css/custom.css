@@ -929,30 +929,33 @@ h4+.tags {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   text-decoration: none;
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
-}
-
-.landingpageCard:hover {
-  transform: translateY(-10px);
-  text-decoration: none;
+  width: 100%;
 }
 
 .landingpageCard--blue {
   border-left: 5px solid #3E51FF;
 }
 
+.landingpageCard--green {
+  border-left: 5px solid #28a745;
+}
+
 .landingpageCard--orange {
   border-left: 5px solid #ed8709;
+}
+
+.landingpageCard--purple {
+  border-left: 5px solid #9b59b6;
 }
 
 .landingpageCardHeading {
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 15px;
-  text-decoration: none;
 }
 
 .landingpageCardDescription {
@@ -961,14 +964,22 @@ h4+.tags {
   text-decoration: none;
 }
 
-.landingpageCardHeading:hover,
-.landingpageCardDescription:hover {
+.landingpageCardIcon {
+  margin-bottom: 15px;
+}
+
+.landingpageCard:hover {
+  transform: translateY(-10px);
   text-decoration: none;
 }
 
 @media (max-width: 768px) {
   .containerGridLandingPageCards {
     grid-template-columns: 1fr;
+  }
+
+  .landingpageCard {
+    height: auto;
   }
 }
 
