@@ -178,6 +178,27 @@ The provided function asynchronously fetches file data from a URL using an API r
 
  </dd>
 
+#### Using Base64 Data
+
+<dd>
+
+If you have a JSObject that returns the file data in Base64 format (e.g., a PDF or image), you can use it to send an attachment in your email. To do this, in the **Attachment(s)** field of the SMTP query, add the following code. 
+
+*Example*: 
+
+
+```js
+[{
+      "type": "application/pdf",
+      "data": "{{PDFUtils.generateOfferPDF()}}",
+      "name": "{{firstName.text}}.pdf",
+      "dataFormat": "Base64"
+    }
+  ]
+```
+
+
+</dd>
 
 
 ## Setup email trigger
