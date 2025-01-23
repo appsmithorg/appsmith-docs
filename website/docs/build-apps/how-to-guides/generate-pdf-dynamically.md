@@ -12,7 +12,7 @@ This page shows you how to generate a dynamic PDF based on query data or user in
 https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js
 ```
 
-To add tables and other UI components to the PDF, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library.
+To add tables and other UI components to the PDF, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library (an extension for `jsPDF`).
 
 
 <ZoomImage
@@ -29,8 +29,7 @@ To add tables and other UI components to the PDF, import the [jsPDF AutoTable](h
 
 <dd>
 
-*Example:* If you want to generate an offer letter, capture the candidate’s information either from a form widget on Appsmith or query the database to retrieve details such as the candidate’s name, job title, start date, salary, and benefits.
-
+*Example:* If you want to generate an offer letter, set up a form widget to capture the candidate’s information or create a query to retrieve details such as the candidate’s name, job title, start date, salary, and benefits.
 
 </dd>
 
