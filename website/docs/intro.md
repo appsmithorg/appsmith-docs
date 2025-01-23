@@ -4,28 +4,83 @@ title: Introduction
 slug: /
 ---
 
-# What is Appsmith
+# Welcome to Appsmith Documentation
 
-Organizations build internal applications such as dashboards, database GUIs, admin panels, approval apps, customer support tools, etc. to help improve their business operations. Appsmith is an open-source developer tool that enables the rapid development of these applications. You can drag and drop pre-built widgets to build UI. Connect securely to your databases & APIs using its datasources. Write business logic to read & write data using queries & JavaScript.
+Appsmith is an open-source, low-code platform that empowers you to build internal tools quickly and efficiently. Connect to APIs, databases, and other data sources, design intuitive UIs with a drag-and-drop interface, automate tasks through workflows, leverage AI for faster development, and deploy your applications in minutes—all with minimal coding.
+<br/><br/>
+---
 
-<figure>
-    <VideoEmbed host="youtube" videoId="NnaJdA1A11s"/> 
-</figure>
+## Explore Appsmith
 
-## Why Appsmith
+<div className="containerGridLandingPageCards">
+   <a className="landingpageCard landingpageCard--blue" href="https://app.appsmith.com/">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Appsmith Cloud</h3>
+         <p className="landingpageCardDescription">Sign up for a free account on Appsmith Cloud and start building internal tools effortlessly.</p>
+      </div>
+   </a>
 
-Appsmith makes it easy to build a UI that talks to any datasource. You can create anything from simple CRUD apps to complicated multi-step workflows with a few simple steps:
+   <a className="landingpageCard landingpageCard--orange" href="/getting-started/setup">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Self-Host Appsmith</h3>
+         <p className="landingpageCardDescription">Learn how to deploy Appsmith on your local machine or private server for complete control and customization.</p>
+      </div>
+   </a>
+</div>
 
-- **Connect Datasource**: Integrate with a database or API. Appsmith supports the most popular databases and REST APIs.
-- **Build UI**: Use built-in widgets to build your app layout.
-- **Write Logic**: Express your business logic using queries and JavaScript anywhere in the editor.
-- **Collaborate, Deploy, Share**: Appsmith supports version control using Git to build apps in collaboration using branches to track and roll back changes. Deploy the app and share it with other users.
+<br/>
+---
 
-## Get started
+## Build and Manage Apps
 
-1. Create an account on the cloud platform or self-host Appsmith for free.
+<div className="containerGridLandingPageCards">
+   <a className="landingpageCard landingpageCard--blue" href="/getting-started/tutorials/start-building">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Quick Start Tutorial</h3>
+         <p className="landingpageCardDescription">Follow this tutorial to learn the basics and start building your first app in minutes.</p>
+      </div>
+   </a>
 
-   - [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
-   - [Self-Host Appsmith](/getting-started/setup): Deploy Appsmith on your local machine or private server.
+   <a className="landingpageCard landingpageCard--orange" href="/connect-data/overview">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Bring your Data</h3>
+         <p className="landingpageCardDescription">Discover how to integrate APIs, databases, and third-party services to power your applications.</p>
+      </div>
+   </a>
+</div>
 
-2. Take the quick tutorial to learn the basics to help you build an app using Appsmith. For more information, see [Build your first app](/getting-started/tutorials/start-building).
+<div className="containerGridLandingPageCards">
+   <a className="landingpageCard landingpageCard--blue" href="/build-apps/overview">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Add complex functionalities to your Apps</h3>
+         <p className="landingpageCardDescription">Learn how to build your applications, including workflows, packages, and writing JavaScript code.</p>
+      </div>
+   </a>
+
+   <a className="landingpageCard landingpageCard--orange" href="/advanced-concepts/granular-access-control">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Application and User Management</h3>
+         <p className="landingpageCardDescription">Explore how to manage users, roles, and permissions for your applications.</p>
+      </div>
+   </a>
+</div>
+<br/>
+---
+
+## Help & FAQ
+
+<div className="containerGridLandingPageCards">
+   <a className="landingpageCard landingpageCard--blue" href="/product/support">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">Support</h3>
+         <p className="landingpageCardDescription">Need help? Reach out to the Appsmith support team or explore our community resources for assistance.</p>
+      </div>
+   </a>
+
+   <a className="landingpageCard landingpageCard--orange" href="/getting-started/faq">
+      <div className="landingpageCardHead">
+         <h3 className="landingpageCardHeading">FAQ</h3>
+         <p className="landingpageCardDescription">Find answers to frequently asked questions about Appsmith, including troubleshooting and best practices.</p>
+      </div>
+   </a>
+</div>
