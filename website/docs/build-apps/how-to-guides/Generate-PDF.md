@@ -11,6 +11,8 @@ This page shows you how to generate a PDF from input data, preview it in a Docum
 
 1. On the canvas, add the necessary widgets, such as Text Input, Dropdown, and Date Picker, to capture the information needed to generate the PDF.
 
+
+
 <dd>
 
 *Example:* If you want to generate an offer letter, add widgets to capture details such as the recipient's name, job title, start date, salary, and benefits, which are included in the offer letter PDF.
