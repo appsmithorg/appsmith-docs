@@ -100,10 +100,12 @@ export default {
 </dd>
 
 
-## See Also:
+## See Also
 
-- If you want to send the generated PDF via email, connect to an SMTP datasource and create a **Send Email** query. For more information, see [How to Configure SMTP Datasource](/connect-data/reference/using-smtp#send-email).
+- To send the generated PDF via email, connect to an SMTP datasource and create a Send Email query. For more information, see [How to Configure SMTP Datasource](/connect-data/reference/using-smtp#send-email).
 
--  To download the PDF, use the [download()](/reference/appsmith-framework/widget-actions/download) function to save the file to your local machine.
+- To download the PDF, use the `download()` function to save the file locally.
 
-- Sample App - Offer Letter Generation
+- Sample App - Offer Letter Generation.
+
+
