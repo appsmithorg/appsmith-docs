@@ -41,6 +41,12 @@ const CustomSearchBar = () => {
         <>
             <div className="custom-segmented-search-option">
                 <div
+                    className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
+                    onClick={() => handleClick('ai')}
+                >
+                    <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
+                </div>
+                <div
                     className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                     onClick={() => handleClick('docs')}
                 >

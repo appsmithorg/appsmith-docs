@@ -1,43 +1,86 @@
 ---
-description: Best practices for Appsmith deployment
+description: This page outlines the best practices for Appsmith deployment.
 ---
 
 # Self-hosting Best Practices
 
-This page provides information on the best practices that are to be followed when running Appsmith in production.
+This page outlines the best practices for deploying, managing, and maintaining Appsmith in a production environment. Following these recommendations ensures high availability, security, performance, and smooth upgrades.
 
-## Choice of deployment platform
+:::tip Appsmith Managed Hosting
+Appsmith’s managed hosting service ensures your deployment adheres to industry best practices for hosting and maintaining Appsmith applications. For more information or to get started with Appsmith managed hosting, contact the sales team at [sales@appsmith.com](mailto:sales@appsmith.com).
+:::
 
-* Appsmith works best on AMD and ARM architectures on AWS, Azure, GCP, and DigitalOcean. By default, the recommendation is to run Appsmith using [Kubernetes](/getting-started/setup/installation-guides/kubernetes) in production, as it ensures high availability and scalability. Additionally, the Helm chart manages MongoDB and Redis as separate pods, eliminating the need for external instances.
+## Platform selection and deployment
 
-* If you decide to use a serverless deployment platform like [ECS](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2), you’ll need to set up an external MongoDB and Redis instance. In this case, to use MongoDB Atlas and Elasticache is recommended.
+Selecting the right platform and deployment method is crucial for the scalability and reliability of your Appsmith instance.
 
-## Deployment setup
+- **Platform recommendations**:
+  - Appsmith works best on **AMD** and **ARM** architectures across cloud providers like **AWS**, **Azure**, **GCP**, and **DigitalOcean**. For more information, see [Installation](/getting-started/setup/installation-guides) guides.
+  - The preferred method for production environments is **Kubernetes**, as it supports high availability and scalability, managing Appsmith's dependencies like MongoDB and Redis within Kubernetes pods without requiring external instances. For more information, see [Kubernetes Installation](/getting-started/setup/installation-guides/kubernetes) guide.
+  - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended. For more information, see [AWS ECS Installation](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2) guide.
 
-- Setup a separate instance for Production & Staging. You may also choose to have one for development.
-- Enable [scheduled backups](/getting-started/setup/environment-variables#automatic-backups) to run nightly on all your instances.
-- Have your backups [synced to S3](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3).
-- Add a monitoring integration like BetterUptime or UptimeRobot to monitor the uptime of your production Appsmith instance.
-- Always ensure you have an NFS persistent volume of 3GB. On AWS, EFS is what we recommend.
-- If using ECS, enable CloudWatch logging, so that you can easily retrieve your Appsmith logs.
-- Enable HTTPS for your Appsmith instance and deploy it under a subdomain as `appsmith.<yourdomain>.com`.
-- A `t3.medium`, or a server of equivalent capacity, is the minimum requirement for running Appsmith. This should scale well for hundreds of users. If you expect ~500 concurrent users, consider picking a `t3.large`, or bigger.
-- Ensure you have healthy free disk space, at least 10-15 GB free, on your server at all times.
-- Do not run other self-hosted applications on the same server as Appsmith.
+- **Instance recommendations**:
+  - **Minimum instance size**: `t3.medium` or equivalent. This should scale well for hundreds of users.
+  - **For 500 concurrent users**, we recommend `t3.large` or larger instances.
+  - **Free disk space**: Always ensure at least `10-15GB` of free space.
+  - **Node separation**: For better data safety, keep separate node groups for **MongoDB**, **Redis**, **Postgres**, and the **Appsmith pod** in Kubernetes.
+  
+## Environment configuration
 
-## Security
+Proper instance and environment configuration ensures reliability, performance, and easier maintenance.
 
-- Disable form login & configure a federated login method like Google OAuth or SAML SSO.
-- If you are using form login, enable email verification & disable allowing all users to signup. Users can still signup if they are invited.
-- Configure an SMTP server as this is necessary for email verification of new signups and resetting account passwords.
-- If deployed on AWS EC2, consider changing the Instance Metadata version to [IMDsv2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html), which is more secure, and harder to do SSRF attacks against.
+- Set up **separate instances** for **Production**, **Staging**, and **Development** to avoid testing or upgrade impacts on production.
 
-## Upgrading
+- To ensure that Appsmith remains available during traffic spikes, configure high availability. For Kubernetes follow the [High Availability Setup on Kubernetes](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. For AWS ECS, refer to the [High Availability Setup on AWS ECS](/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability) guide, and for Google Cloud Run, [High Availability Setup on Google Cloud Run](/getting-started/setup/installation-guides/google-cloud-run/manage-traffic) guide.
 
-- Take a backup of your Appsmith Development, Staging & Production instances. [Backup](/getting-started/setup/instance-management/backup-and-restore/backup-instance).
-- Always perform a manual upgrade of your Staging / Development instance first before you attempt it on the production instance.
-- Check if you need to [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version).
-- Verify that all your applications are working on the Staging & Development instances in both the edit & view modes.
-- Perform the upgrade on the Production instance after taking a backup.
-- Verify that all your applications are working on the production instance in both edit and view modes.
-- If you notice any degradation in your experience after the upgrade, [restore the backup](/getting-started/setup/instance-management/backup-and-restore/restore-instance) and reach out to our support via the chat widget on this page.
+- Ensure you have an NFS persistent volume setup and has allocated at least **`3GB` of persistent storage** for Appsmith. When using AWS Fargate as a deployment platform, ensure you've set up AWS EFS as a persistent volume. For more information, see [Upgrade to AWS EFS](/getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs) guide.
+
+- Avoid spot instances for **MongoDB**, **Redis**, and **Postgres** as the spot instances are unexpectedly terminated. Always opt for reserved or dedicated instances to ensure data persistence.
+
+- Enable logging to monitor Appsmith for errors. If using AWS ECS, enable **CloudWatch logging** for easy retrieval of Appsmith logs.
+
+- Integrate with **BetterUptime** or **UptimeRobot** to track the uptime and availability of your Appsmith instance. You may also choose to use `Supervisor` to monitor Appsmith. For more information, see [Configure Monitoring Tool](/getting-started/setup/instance-management/supervisor) guide.
+
+## Security and authentication
+
+Ensuring the security of your Appsmith instance is vital for protecting sensitive data and maintaining compliance.
+
+- **Federated authentication**: Disable **form login** and configure federated authentication methods such as **[Google OAuth](/getting-started/setup/instance-configuration/authentication/google-login)** or **[SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)**.
+
+- **SMTP server configuration**: Set up an **SMTP server** for email verification during new sign-ups and password reset requests.
+
+- **AWS security**: If using **AWS EC2**, ensure that **IMDsv2** is configured to protect against SSRF attacks. Refer to [IMDsv2 Configuration](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html) for more details.
+
+- **Form login**: If form login is enabled, ensure **email verification** is required, and disable **open signups** to allow users to sign up only through invitations.
+
+- **HTTPS & Subdomains**: Enable **HTTPS** for your Appsmith instance and deploy it under a subdomain such as `appsmith.<yourdomain>.com`.
+
+## Backup and recovery management
+
+Regular backups and recovery plans are critical to prevent data loss and ensure smooth recovery in case of failures.
+
+- **Regular backups**:
+  - Enable scheduled backups to run **nightly** on all your instances. For more information, see [Schedule automatic backup](/getting-started/setup/environment-variables#automatic-backups) reference.
+  - Use the `appsmithctl backup` command to create backups of your **production** and **staging** environments. For detailed backup configuration, refer to the [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide.
+  - Enable **automatic backups** and store them on **S3** to ensure easy recovery. For more information on syncing backups to S3, see the [Sync Backup to S3](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3) guide.
+
+- **Back up configuration files**:
+  - Always back up configuration files such as `/appsmith-stacks/configuration/docker.env`. 
+  - When deployed on Kubernetes, back up the `values.yaml` or store it in version control to recover configurations after a disaster.
+
+## Upgrades
+
+Having a proper upgrade strategy ensures that your environment remains up-to-date with the latest features and security patches.
+
+- Backup your environment and configuration files before upgrading. For more information, see the [Backup and recovery management(#backup-and-recovery-management) section.
+- Verify whether you need to **Upgrade to Checkpoint Version (v1.9.2)** before proceeding.
+- To stay up-to-date, enable **auto-updates**. For more information, see the [Schedule Automatic Updates](/getting-started/setup/instance-management/maintenance-window) guide.
+- It’s recommended to update your Appsmith instance every 2 weeks, or as needed for new features or security patches.
+- Always upgrade **Staging** or **Development environments** first and thoroughly test all apps (in both **edit** and **view** modes) before upgrading **Production**.
+- Backup your **Production** instance before the upgrade.For more information, see the [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide.
+- If you notice any degradation in your experience after the upgrade, [restore the backup](/getting-started/setup/instance-management/backup-and-restore/restore-instance) and reach out to support. For more information, see [Support at Appsmith](/product/support).
+
+## See also
+
+- [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
+- [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
