@@ -61,5 +61,5 @@ hide_title: true
 ## Need Help?
 
 <div class="landing-help-text">
-  If you need assistance, check out our community forums or get in touch with our support team. <a href="/product/support">Visit Support</a>
+   Need more help? Visit our <a href="/product/support">support page</a> or join the <a href="https://community.appsmith.com">community forum</a>.
 </div>
