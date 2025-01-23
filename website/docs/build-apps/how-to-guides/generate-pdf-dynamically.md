@@ -1,24 +1,22 @@
 # Generate PDF Dynamically
 
-This page shows you how to generate a PDF from input data, preview it in a Document Viewer widget, and send it as an email attachment. 
-
+This page shows you how to generate a dynamic PDF based on query data or user inputs and preview it in a Document Viewer widget.
 
 1. Open the **Libraries** section from the left pane, click the **+** icon, and add a JavaScript library to generate the PDF.
 
 <dd>
 
-Ensure the library is available in ECMAScript Modules (ESM) or Universal Module Definition (UMD) format from a reliable CDN, such as [jsDelivr](https://www.jsdelivr.com/) or [UNPKG](https://unpkg.com/). 
-
-*Example:* Import the [jsPDF](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html) library:
+*Example:* Import the [jsPDF](https://raw.githack.com/MrRio/jsPDF/master/docs/index.html) library.
 
 ```javascript
 https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js
 ```
- To enhance the PDF generation with tables and other UI components, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library.
+
+To add tables and other UI components to the PDF, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library.
 
 
 <ZoomImage
-  src="/img/jspdf-guide.png" 
+  src="/img/jspdf-lib.png" 
   alt=""
   caption=""
 />
@@ -27,11 +25,11 @@ https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js
 
 </dd>
 
-2. To generate the PDF, add data from user inputs (widgets) or fetch it dynamically from a database or API using a query.
+2. To generate the PDF, get data from user inputs (widgets) or fetch it dynamically from a database or API using a query.
 
 <dd>
 
-*Example:* If you want to generate an offer letter, add widgets to capture details such as the recipient's name, job title, start date, salary, and benefits, which are included in the offer letter PDF.
+*Example:* If you want to generate an offer letter, capture the candidate’s information either from a form widget on Appsmith or query the database to retrieve details such as the candidate’s name, job title, start date, salary, and benefits.
 
 
 </dd>
@@ -84,10 +82,9 @@ export default {
 	},
 };
 ```
-
-- The code dynamically generates an offer letter PDF by retrieving user inputs (name, email, job title, salary) and formatting them using `jspdf.jsPDF()`.
 - The data object stores values from input fields, and the `generateOfferPDF` function uses these values to populate the PDF content.
-- The final PDF is returned as a data URI, ready to be displayed or downloaded.
+- The code dynamically generates an offer letter PDF by retrieving user inputs (name, email, job title, salary) and formatting them using `jspdf.jsPDF()`.
+- The final PDF is returned as a data URI, which can be displayed or downloaded.
 
 </dd>
 
@@ -103,12 +100,11 @@ export default {
 
 </dd>
 
-5. If you want to send the generated PDF via email, connect to an SMTP datasource and create a **Send Email** query. For more information, see [How to Configure SMTP Datasource](/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin#using-base64-data).
-
-
-6. To download the PDF, use the [download()](/reference/appsmith-framework/widget-actions/download) function to save the file to your local machine.
-
 
 ## See Also:
 
-- Template - Offer Letter Generation
+- If you want to send the generated PDF via email, connect to an SMTP datasource and create a **Send Email** query. For more information, see [How to Configure SMTP Datasource](/connect-data/reference/using-smtp#send-email).
+
+-  To download the PDF, use the [download()](/reference/appsmith-framework/widget-actions/download) function to save the file to your local machine.
+
+- Sample App - Offer Letter Generation
