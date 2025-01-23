@@ -1050,4 +1050,26 @@ hr.landing-gradient {
   text-decoration: underline;
 }
 
+.resource-header,
+.tutorial-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.resource-header h3,
+.tutorial-header h4 {
+  font-size: 1.25rem;
+  color: #0a2540;
+  font-weight: bold;
+  margin: 0;
+}
+
+.resource-header IIcon,
+.tutorial-header IIcon {
+  color: #e57812;
+  flex-shrink: 0;
+}
+
 /* intro page css end*/
