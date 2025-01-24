@@ -91,6 +91,9 @@
 .theme-doc-sidebar-item-category-level-2>.menu__list-item-collapsible>.menu__link--sublist {
   margin-bottom: -6px;
   margin-top: -6px;
+  font-size: 0.938rem;
+  font-weight: 600;
+  color: black;
 }
 
 .theme-doc-sidebar-item-category-level-3>.menu__list-item-collapsible>.menu__link--sublist {
@@ -1073,3 +1076,80 @@ hr.landing-gradient {
 }
 
 /* intro page css end*/
+
+/* Journey Section */
+.option2-journey {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option2-journey h2 {
+  font-size: 1.5rem;
+  color: #0a2540;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.option2-journey p {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 15px;
+}
+
+.option2-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .option2-timeline {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.option2-step-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.option2-step-link:hover {
+  text-decoration: none;
+}
+
+.option2-step {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 25px;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  width: 400px;
+  height: 80px;
+  word-wrap: break-word;
+}
+
+.option2-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-color: #e57812;
+  text-decoration: none;
+}
+
+.option2-step IIcon {
+  color: #e57812;
+  flex-shrink: 0;
+}
+
+.option2-step span {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0a2540;
+  text-align: center;
+}

@@ -17,7 +17,7 @@ const sidebars = {
         {
           //Data start
           type: 'category',
-          collapsed: true,
+          collapsed: false,
           label: 'Connect Data',
           items: [
             'connect-data/overview',
@@ -140,7 +140,7 @@ const sidebars = {
 
         { // UI start
           type: 'category',
-          collapsed: true,
+          collapsed: false,
           label: 'Apps',
           items: [
             'build-apps/overview',
@@ -321,7 +321,7 @@ const sidebars = {
         //Workflows start
         {
           type: 'category',
-          collapsed: true,
+          collapsed: false,
           label: 'Workflows (Beta)',
           items: [
             'workflows/README',
@@ -367,7 +367,7 @@ const sidebars = {
         // Packages (Beta)
         {
           type: 'category',
-          collapsed: true,
+          collapsed: false,
           label: 'Packages (Beta)',
           items: [
             'packages/overview',
@@ -401,7 +401,7 @@ const sidebars = {
         }, //module end
         { // WRITE CODE start
           type: 'category',
-          collapsed: true,
+          collapsed: false,
           label: 'Write Code',
           items: [
             'write-code/overview',
@@ -591,6 +591,7 @@ const sidebars = {
       items: [
         {
           type: 'category',
+          collapsed: false,
           label: 'New Installation Guides',
           link: {
             type: 'doc',
@@ -623,6 +624,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Manage Installation',
+          collapsed: false,
           link: {
             type: 'doc',
             id: 'getting-started/setup/instance-configuration/README',
@@ -755,6 +757,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Upgrade Installation Guides',
+          collapsed: false,
           link: {
             type: 'doc',
             id: 'getting-started/setup/instance-management/README',
@@ -782,6 +785,7 @@ const sidebars = {
             {
               type: 'category',
               label: 'Upgrade to Commercial Edition',
+              collapsed: false,
               link: {
                 type: 'doc',
                 id: 'getting-started/setup/manage-editions/README',
@@ -799,6 +803,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'Advance Concepts',
+          collapsed: false,
           items:
             [
               `getting-started/setup/best-practices`,
