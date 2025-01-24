@@ -1288,6 +1288,46 @@
       "source": "/getting-started/setup/upgrade-from-community-edition",
       "destination": "/getting-started/setup/instance-management#upgrade-to-commercial-edition",
       "permanent": true
+    },
+    {
+      "source": "/getting-started",
+      "destination": "/getting-started/tutorials/start-building",
+      "permanent": true
+    },
+    {
+      "source": "/connect-data",
+      "destination": "/connect-data/overview",
+      "permanent": true
+    },
+    {
+      "source": "/build-apps",
+      "destination": "/build-apps/overview",
+      "permanent": true
+    },
+    {
+      "source": "/write-code",
+      "destination": "/write-code/overview",
+      "permanent": true
+    },
+    {
+      "source": "/advanced-concepts",
+      "destination": "/advanced-concepts/version-control-with-git",
+      "permanent": true
+    },
+    {
+      "source": "/packages",
+      "destination": "/packages/overview",
+      "permanent": true
+    },
+    {
+      "source": "/help-and-support",
+      "destination": "/help-and-support/troubleshooting-guide",
+      "permanent": true
+    },
+    {
+      "source": "/product",
+      "destination": "/getting-started/faq",
+      "permanent": true
     }
   ]
 }
