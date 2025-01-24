@@ -1,8 +1,8 @@
 # Generate PDF Dynamically
 
-This page shows you how to generate a dynamic PDF based on query data or user inputs and preview it in a Document Viewer widget.
+This page shows how to generate a PDF dynamically based on query data or user inputs and preview it in a Document Viewer widget.
 
-1. Open the **Libraries** section from the left pane, click the **+** icon, and add a JavaScript library to generate the PDF.
+1. In your Appsmith app, open the **Libraries** section from the sidebar, click the **+** icon, and add a JavaScript library to generate the PDF.
 
 <dd>
 
@@ -12,7 +12,7 @@ This page shows you how to generate a dynamic PDF based on query data or user in
 https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js
 ```
 
-To add tables and other UI components to the PDF, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library (an extension for `jsPDF`).
+To add tables and other UI components to the PDF, import the [jsPDF AutoTable](https://github.com/simonbengtsson/jsPDF-AutoTable) library *(an extension for `jsPDF`)*.
 
 
 <ZoomImage
@@ -104,8 +104,8 @@ export default {
 
 - To send the generated PDF via email, connect to an SMTP datasource and create a Send Email query. For more information, see [How to Configure SMTP Datasource](/connect-data/reference/using-smtp#send-email).
 
-- To download the PDF, use the `download()` function to save the file locally.
+- To download the PDF, use the [download()](/reference/appsmith-framework/widget-actions/download) function to save the file locally.
 
-- Sample App - Offer Letter Generation.
+- Sample App: Offer Letter Generation.
 
 
