@@ -6,7 +6,10 @@ description:  Connect a datasource on Appsmith
 
 # Connect and Display Data
 
-In this tutorial, you learn how to connect a database, fetch data using SQL queries, and display it in a table widget.
+In this tutorial, we’ll walk you through the essential steps of connecting your app to a database, retrieving real-time data, and displaying it in an organized table widget. This will set the foundation for creating dynamic and interactive applications that can interact with your backend data. Let’s dive in and get your app up and running with live data!
+
+
+
 
 :::tip What will I learn? 📝
 By the end of this tutorial, you will learn:
@@ -23,17 +26,19 @@ By the end of this tutorial, you will learn:
 
 
 
-1. In your application, go to the sidebar and click the **Data** button.
+1. Open your application and, from the sidebar, click the **Data** button. This section lists all the datasources configured in your app, where you can edit existing ones or add new datasources.
 
 2. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
 
-3. Select **Sample Users** under the **Databases** section. This opens a page where you can see multiple tables with different datasets.
+3. You’ll now see a list of APIs, databases, and SaaS integrations you can connect to. For this tutorial, select the **Sample Users** database. This is a PostgreSQL database that contains user-related data, such as names, email addresses, and user IDs, which we’ll use to display in the app.
 
-4. Click **+ New Query** from the top-right corner to open the query editor.
+4. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details 
 
-5. Rename the query from `Query1` to `getUsers` by clicking the pencil icon next to the query name.
+5. Click **+ New Query** from the top-right corner. This opens a query editor where you can write SQL queries.
 
-6. Update the query with the following to fetch records in ascending order of the `id` field:
+6. Rename the default query name `Query1` to `getUsers`. Click on the three dots next to the query name in the left pane and select Rename.
+
+7. Update the query with the following to fetch records in ascending order of the `id` field:
 
 <dd>
 
@@ -43,18 +48,20 @@ By the end of this tutorial, you will learn:
 
 </dd>
 
-7. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
+8. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
 
-8. Click the **UI** tab on the *Entity Explorer* to the left of the screen.
+9. Click the **UI** tab on the *Entity Explorer* to the left of the screen. The UI section allows you to view and edit existing widgets, or add new widgets to your app.
 
-9. Click **+ New UI element** and drag a **Table** widget and drop it to the left of the canvas.
+10. Click **+ New UI Element**. This displays a list of available widgets to choose from. Drag a **Table** widget and drop it onto the canvas to display the data in a structured format.
 
-9. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
+11. When you add the Table widget, a *Property Pane* appears on the right. The Property Pane contains all the configurable settings for the widget, such as its name, datasource, appearance, and behavior. To rename the widget, edit the name at the top of the pane, changing it from `Table1` to `usersTable`.
 
-10. Connect the Table to the query **getUsers** to display the data. Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data.
+12. In the Property Pane, click on the **Table Data** property and select the `getUsers` query to connect the Table to the data fetched by the query. Additionally, you can use JavaScript in the JS section if you want to manipulate or bind the data before displaying it in the Table.
+
+13. Click on the **Deploy** button in the top-right corner. This allows you to publish your changes and make your app live, which you can then share with others. 
  
 :::tip 🎉 Great job!  
-You’ve successfully connected to the database, fetched user data, and set up your first query to display the data in your app.
+You’ve successfully connected to a sample PostgreSQL database, fetched user details, and displayed them in a Table widget. With your app now live, you can share it with others and continue enhancing it by adding more data-driven features and interactivity.
 :::
 
 
