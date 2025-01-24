@@ -961,7 +961,6 @@ hr.landing-gradient {
   margin: 40px 0;
 }
 
-/* Core Resources Section */
 .landing-resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -998,45 +997,7 @@ hr.landing-gradient {
   margin-top: 10px;
 }
 
-/* Featured Tutorials Section */
-.landing-featured-tutorials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px 0;
-}
 
-.landing-tutorial-card {
-  display: block;
-  border-radius: 8px;
-  padding: 20px;
-  background: #ffffff;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.landing-tutorial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  border-color: #e57812;
-  text-decoration: none;
-}
-
-.landing-tutorial-card h4 {
-  font-size: 1.125rem;
-  font-weight: bold;
-  color: #0a2540;
-}
-
-.landing-tutorial-card p {
-  color: #495057;
-  margin-top: 10px;
-}
-
-/* Help Section */
 .landing-help-text {
   font-size: 1.125rem;
   color: #495057;
@@ -1076,80 +1037,3 @@ hr.landing-gradient {
 }
 
 /* intro page css end*/
-
-/* Journey Section */
-.option2-journey {
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.option2-journey h2 {
-  font-size: 1.5rem;
-  color: #0a2540;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.option2-journey p {
-  font-size: 1rem;
-  color: #495057;
-  margin-bottom: 15px;
-}
-
-.option2-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-@media (min-width: 768px) {
-  .option2-timeline {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.option2-step-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.option2-step-link:hover {
-  text-decoration: none;
-}
-
-.option2-step {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 25px;
-  border: 1px solid #e0e0e0;
-  background: #ffffff;
-  border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  width: 400px;
-  height: 80px;
-  word-wrap: break-word;
-}
-
-.option2-step:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-color: #e57812;
-  text-decoration: none;
-}
-
-.option2-step IIcon {
-  color: #e57812;
-  flex-shrink: 0;
-}
-
-.option2-step span {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #0a2540;
-  text-align: center;
-}
