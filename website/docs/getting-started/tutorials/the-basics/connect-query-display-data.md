@@ -6,8 +6,7 @@ description:  Connect a datasource on Appsmith
 
 # Connect and Display Data
 
-In this tutorial, we’ll walk you through the essential steps of connecting your app to a database, retrieving data, and displaying it in an Table widget. This will set the foundation for creating dynamic and interactive applications that can interact with your backend data. 
-
+In this tutorial, you will learn how to connect your app to a database, fetch data, and display it using a Table widget. By following these steps, you’ll gain a solid understanding of Appsmith’s core features, enabling you to build dynamic, data-driven applications.
 
 :::tip What will I learn? 📝
 By the end of this tutorial, you will learn to:
