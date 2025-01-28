@@ -281,11 +281,24 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 
 Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation.
 
-##### `APPSMITH_TELEMETRY_ENABLED`
+##### `APPSMITH_DISABLE_TELEMETRY`
 
 <dd>
 
-Controls whether Appsmith sends telemetry data to its servers. You may choose to turn off the setting if it conflicts with your privacy policies or preferences. Set to `true` to allow Appsmith to collect anonymous telemetry data or `false` to opt out.
+Telemetry allows Appsmith to collect anonymous usage data to improve the product and provide a better user experience.
+
+You can configure this environment variable to enable or disable anonymous usage data collection. By default, telemetry is `enabled`. To disable it, set this variable to `true`.  For more details, see [Appsmith Telemetry](/product/telemetry).
+
+
+
+
+```js
+//To ENABLE telemetry (default behavior)
+APPSMITH_DISABLE_TELEMETRY=false
+
+//To DISABLE telemetry 
+APPSMITH_DISABLE_TELEMETRY=true
+```
 
 </dd>
 
