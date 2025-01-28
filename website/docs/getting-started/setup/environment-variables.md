@@ -287,7 +287,7 @@ Monitoring the performance of your Appsmith instance is crucial for making infor
 
 Telemetry allows Appsmith to collect anonymous usage data to improve the product and provide a better user experience.
 
-You can configure this environment variable to enable or disable anonymous usage data collection. By default, telemetry is `enabled`. To disable it, set this variable to `true`.
+You can configure this environment variable to enable or disable anonymous usage data collection. By default, telemetry is `enabled`. To disable it, set this variable to `true`.  For more details, see [Appsmith Telemetry](/product/telemetry).
 
 
 
