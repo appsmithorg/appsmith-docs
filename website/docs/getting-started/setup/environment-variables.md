@@ -285,7 +285,8 @@ Monitoring the performance of your Appsmith instance is crucial for making infor
 
 <dd>
 
-Defines whether Appsmith sends anonymous telemetry data to its servers. By default, telemetry is enabled to help improve the product by collecting usage statistics. To disable telemetry, set this variable to `true`.
+Allows Appsmith to collect anonymous usage data to improve the product. By default, telemetry is `enabled`. To disable telemetry, set this variable to `true`.
+
 
 ```js
 //To ENABLE telemetry (default behavior)
