@@ -2,7 +2,7 @@
 
 This page shows how to generate a PDF dynamically based on query data or user inputs and preview it in a Document Viewer widget.
 
-1. In your Appsmith app, open the **Libraries** section from the sidebar, click the **+** icon, and add a JavaScript library to generate the PDF.
+1. In your Appsmith app, open the **Libraries** section from the sidebar, click the **+** icon, and add JavaScript library to generate the PDF.
 
 <dd>
 
@@ -20,8 +20,6 @@ To add tables and other UI components to the PDF, import the [jsPDF AutoTable](h
   alt=""
   caption=""
 />
-
-
 
 </dd>
 
