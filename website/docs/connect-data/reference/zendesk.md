@@ -59,6 +59,180 @@ After adding your subdomain, you are redirected to the authentication page. The 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Zendesk queries.
 
 
+### Create Ticket
+
+The create ticket command allows you to generate a new ticket in Zendesk by providing relevant details such as the subject, description, requester information, and optional fields like tags, priority, and due dates. It is used to log new issues or requests in the system for tracking and resolution.
+
+
+
+#### Ticket Subject `string`
+
+<dd>
+
+This property defines the title or brief description of the issue or request. It helps to summarize the content of the ticket in a concise manner, allowing for easier identification and prioritization.
+
+*Example:* If you want to dynamically set the subject from an Input widget, use:
+
+```js
+{{Title_Input.text}}
+// Example: "Broken link on homepage"
+```
+
+
+</dd>
+
+
+#### Ticket Description `string`
+
+<dd>
+
+This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, helping the support team understand the context and provide better assistance. The description must include relevant details, such as steps to reproduce the issue, error messages, or any other information that can aid in resolving the ticket.
+
+*Example:* If you want to dynamically set the subject from an Input widget, use:
+
+```js
+{{Info_Input.text}}
+```
+
+</dd>
+
+
+#### Ticket Requester Name `string`
+
+<dd>
+
+This property holds the name of the person submitting the ticket. It identifies the individual who needs assistance or support, allowing for personalized communication and a more effective resolution process. 
+
+*Example:* If you want to dynamically set the Requester Name from an Input widget, use:
+
+```javascript
+{{user_name.text}}
+// Example: "John Doe"
+```
+
+</dd>
+
+#### Ticket Requester Email `string`
+
+<dd>
+
+This property holds the email address of the person submitting the ticket. It ensures the requester can be contacted for updates, resolutions, or clarifications. 
+
+*Example:* If you want to dynamically set the Requester Email from an Input widget, use:
+
+```javascript
+{{user_email.text}}
+// Example: "john.doe@example.com"
+```
+</dd>
+
+
+#### Assignee Id `number`
+
+<dd>
+
+This property defines the Zendesk Agent assigned to handle the ticket. It helps track responsibility for resolving the issue, ensuring that each ticket is directed to the appropriate support representative. If not specified, the ticket remains unassigned.
+
+The Assignee ID is a unique numeric identifier for each Zendesk Agent. Users can find it in the Zendesk Admin Center under [Team Members](https://support.zendesk.com/hc/en-us/articles/8357765446554-Get-Assignee-ID-Group-ID-and-Field-ID-Zendesk-Support-Ultimate#:~:text=An%20Assignee%20Id%20is%20the,Admin%20Center%20%3E%20People%20%3E%20Team%20members).
+
+
+*Example:* To dynamically set the Assignee ID (*Agent ID*) from a Select widget, use:
+
+```js
+{{fetch_agent.selectedOptionValue}}
+//632345679
+```
+
+</dd>
+
+#### Ticket Type
+
+<dd>
+
+This property defines the type of ticket, helping categorize the request for better organization and management. It assists in determining the correct workflow for handling the ticket. If not provided, the default value is usually `question`.
+
+- Problem: For issues or bugs that need to be fixed.
+- Incident: For service disruptions or outages.
+- Question: For general inquiries or support questions.
+- Task: For administrative or procedural tasks.
+
+</dd>
+
+#### Ticket Priority
+
+<dd>
+
+This property defines the urgency of the ticket. It helps support teams prioritize tickets and address the most critical issues first. If not provided, the default value is usually `normal`.
+
+- Low: Non-urgent issues that can be handled later.
+- Normal: Standard tickets that need resolution within a reasonable time frame.
+- High: Urgent issues requiring quick attention.
+- Urgent: Critical issues that need immediate resolution.
+
+</dd>
+
+#### Ticket Status
+
+<dd>
+
+This property specifies the current status of the ticket, indicating its progress in the resolution process. It helps categorize tickets for better management and visibility.
+
+- New: The ticket has been created but not yet assigned or worked on.
+- Open: The ticket is currently being worked on.
+- Pending: Waiting for more information from the requester.
+- Hold: Waiting for a third party or internal process before proceeding.
+- Solved: The ticket has been resolved but not yet closed.
+
+
+</dd>
+
+#### Ticket Due At
+
+<dd>
+
+This property specifies the due date and time for the ticket, applicable only if the ticket type is set to task. The date must be provided in the ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`), which ensures accurate time tracking and scheduling.
+
+*Example:* To dynamically set the due date based on a Datepicker widget:
+
+```js
+{{DatePicker.selectedDate}}
+```
+
+</dd>
+
+#### Ticket Tags
+
+<dd>
+
+This property allows associating tags with the ticket for categorization or easy search. Tags help to quickly filter tickets by specific topics or issues.
+
+*Example:* For tickets related to a specific feature or campaign, tags such as `homepage`, `bug`, or `marketing` can be applied.
+
+</dd>
+
+
+#### Ticket External Id
+
+<dd>
+
+This property is used for associating the ticket with an external system or tracking reference. It helps link the ticket to an issue in a different tool or system.
+
+*Example:* If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
+
+</dd>
+
+#### Ticket Custom Fields
+
+<dd>
+
+This property is used for associating the ticket with an external system or tracking reference. It helps link the ticket to an issue in a different tool or system.
+
+*Example:* If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
+
+</dd>
+
+
+
 ### List
 
 <dd>
@@ -103,164 +277,6 @@ The response for the list command includes the following:
 
 </dd>
 
-
-### Create Ticket
-
-The create ticket command allows you to generate a new ticket in Zendesk by providing relevant details such as the subject, description, requester information, and optional fields like tags, priority, and due dates. It is used to log new issues or requests in the system for tracking and resolution.
-
-
-
-#### Subject
-
-<dd>
-
-This property defines the title or brief description of the issue or request. It helps to summarize the content of the ticket in a concise manner, allowing for easier identification and prioritization.
-
-*Example:* If you want to dynamically set the subject from an input widget, use:
-
-```js
-{{Title_Input.text}}
-// Example: "Broken link on homepage"
-```
-
-
-</dd>
-
-
-#### description
-
-<dd>
-
-This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, helping the support team understand the context and provide better assistance. The description must include relevant details, such as steps to reproduce the issue, error messages, or any other information that can aid in resolving the ticket.
-
-
-*Example:* If you want to dynamically set the subject from an Input widget, use:
-
-```js
-{{Info_Input.text}}
-```
-
-</dd>
-
-
-#### Requester Name
-
-<dd>
-
-This property holds the name of the person submitting the ticket. It identifies the individual who needs assistance or support, allowing for personalized communication and a more effective resolution process. If not provided, Zendesk will automatically use the name associated with the account.
-
-*Example:* To dynamically set the requester name from the logged-in user's information, use:
-
-```javascript
-{{appsmith.user.username}}
-// Example: "John Doe"
-```
-
-</dd>
-
-#### Requester Email
-
-<dd>
-
-This property holds the email address of the person submitting the ticket. It ensures the requester can be contacted for updates, resolutions, or clarifications. If not provided, Zendesk will automatically use the email associated with the account.
-
-*Example:* To dynamically set the requester email from the logged-in user's information, use:
-
-```javascript
-{{appsmith.user.email}}
-// Example: "john.doe@example.com"
-```
-</dd>
-
-
-#### Assignee Id
-
-<dd>
-
-This property defines the Zendesk Agent assigned to handle the ticket. It helps track responsibility for resolving the issue, ensuring that each ticket is directed to the appropriate support representative. If not provided, the ticket will remain unassigned.
-
-*Example:* To dynamically set the assignee ID from a dropdown or user selection, use:
-
-```js
-{{fetch_agent.selectedOptionValue}}
-```
-
-</dd>
-
-#### Type
-
-<dd>
-
-This property defines the type of ticket, helping categorize the request for better organization and management. It assists in determining the correct workflow for handling the ticket. If not provided, the default value is usually `question`.
-
-- Problem: For issues or bugs that need to be fixed.
-- Incident: For service disruptions or outages.
-- Question: For general inquiries or support questions.
-- Task: For administrative or procedural tasks.
-
-</dd>
-
-#### Priority
-
-<dd>
-
-This property defines the urgency of the ticket. It helps support teams prioritize tickets and address the most critical issues first. If not provided, the default value is usually `normal`.
-
-- Low: Non-urgent issues that can be handled later.
-- Normal: Standard tickets that need resolution within a reasonable time frame.
-- High: Urgent issues requiring quick attention.
-- Urgent: Critical issues that need immediate resolution.
-
-</dd>
-
-#### Status
-
-<dd>
-
-This property specifies the current status of the ticket, indicating its progress in the resolution process. It helps categorize tickets for better management and visibility.
-
-- New: The ticket has been created but not yet assigned or worked on.
-- Open: The ticket is currently being worked on.
-- Pending: Waiting for more information from the requester.
-- Hold: Waiting for a third party or internal process before proceeding.
-- Solved: The ticket has been resolved but not yet closed.
-
-
-</dd>
-
-#### Due At
-
-<dd>
-
-This property specifies the due date and time for the ticket, applicable only if the ticket type is set to task. The date must be provided in the ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`), which ensures accurate time tracking and scheduling.
-
-*Example:* To dynamically set the due date based on a Datepicker widget:
-
-```js
-{{DatePicker.selectedDate}}
-```
-
-</dd>
-
-#### Tags
-
-<dd>
-
-This property allows associating tags with the ticket for categorization or easy search. Tags help to quickly filter tickets by specific topics or issues.
-
-*Example:* For tickets related to a specific feature or campaign, tags such as `homepage`, `bug`, or `marketing` can be applied.
-
-</dd>
-
-#### External Id
-
-<dd>
-
-This property is used for associating the ticket with an external system or tracking reference. It helps link the ticket to an issue in a different tool or system.
-
-*Example:* If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
-
-</dd>
 
 
 ### Update Ticket
