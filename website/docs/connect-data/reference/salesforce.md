@@ -18,6 +18,24 @@ This tab contains all **Create Commands**, including creating records for **Cont
 | serialNumber      | Unique serial number for a product or asset     | SN123456789                    | Entered by the user during creation |
 | numberOfLocations | Number of locations associated with the account | 3                              | Entered by the user           |
 | accountPlan       | The account's strategic plan                     | Gold Plan                     | Selected from a predefined list or entered by the user |
+| accountId         | The ID of the associated Account                 | 0011t00000BHiNKAA3              | Found in the Account record URL |
+| name              | Name of the record (e.g., Opportunity Name)      | New Business Opportunity       | Entered by the user during creation |
+| stageName         | The stage of the Opportunity (e.g., "Prospecting")| Prospecting                    | Selected from a picklist field |
+| expectedRevenue   | Estimated revenue from the Opportunity           | $50,000                        | Entered by the user           |
+| closeDate         | The projected close date of the Opportunity      | 2025-06-30                     | Entered by the user           |
+| SLA               | Service Level Agreement related to the Opportunity | Standard SLA                  | Selected from the related SLA record |
+| serialNumber      | Unique serial number for a product or asset     | SN123456789                    | Entered by the user during creation |
+| numberOfLocations | Number of locations associated with the account | 3                              | Entered by the user           |
+| accountPlan       | The account's strategic plan                     | Gold Plan                     | Selected from a predefined list or entered by the user |
+| accountId         | The ID of the associated Account                 | 0011t00000BHiNKAA3              | Found in the Account record URL |
+| name              | Name of the record (e.g., Opportunity Name)      | New Business Opportunity       | Entered by the user during creation |
+| stageName         | The stage of the Opportunity (e.g., "Prospecting")| Prospecting                    | Selected from a picklist field |
+| expectedRevenue   | Estimated revenue from the Opportunity           | $50,000                        | Entered by the user           |
+| closeDate         | The projected close date of the Opportunity      | 2025-06-30                     | Entered by the user           |
+| SLA               | Service Level Agreement related to the Opportunity | Standard SLA                  | Selected from the related SLA record |
+| serialNumber      | Unique serial number for a product or asset     | SN123456789                    | Entered by the user during creation |
+| numberOfLocations | Number of locations associated with the account | 3                              | Entered by the user           |
+| accountPlan       | The account's strategic plan                     | Gold Plan                     | Selected from a predefined list or entered by the user |
 
 </TabItem>
 
