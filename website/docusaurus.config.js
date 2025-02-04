@@ -97,6 +97,30 @@ const config = {
         },
         items: [
           {
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
+            label: 'Docs',
+          },
+          {
+            type: 'doc',
+            docId: 'packages/overview',
+            position: 'left',
+            label: 'Packages (Beta)',
+          },
+          {
+            type: 'doc',
+            docId: 'workflows/README',
+            position: 'left',
+            label: 'Workflow (Beta)',
+          },
+          {
+            type: 'doc',
+            docId: 'help-and-support/troubleshooting-guide/README',
+            position: 'left',
+            label: 'Help & Support',
+          },
+          {
             type: 'search',
             position: 'right',
           },
@@ -105,7 +129,6 @@ const config = {
             label: 'Try Appsmith',
             position: 'right'
           },
-
         ],
       },
       prism: {
