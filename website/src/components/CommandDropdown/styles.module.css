@@ -1,32 +1,74 @@
 .container {
   margin: 1rem 0;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 
+/* Base dropdown styling */
 .dropdown {
-  width: 100%; /* Adjust width as needed, e.g., 300px */
-  max-width: 400px; /* Prevent it from being too wide */
-  padding: 0.75rem; /* Increase padding for better height */
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem; /* Extra padding for custom icon */
   font-size: 1rem;
   border: 1px solid var(--ifm-color-primary);
-  border-radius: var(--ifm-global-radius);
-  background-color: var(--ifm-color-emphasis-100); /* Light background */
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
   color: var(--ifm-font-color-base);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  appearance: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif; /* Modern font */
 }
 
+/* Custom dropdown arrow */
+.container::after {
+  content: "▼"; /* Unicode down arrow */
+  font-size: 0.9rem;
+  color: var(--ifm-color-primary);
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rotate arrow when dropdown is active */
+.dropdown:focus + .container::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Dropdown open effect */
 .dropdown:focus {
   outline: none;
   border-color: var(--ifm-color-primary-dark);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--ifm-color-emphasis-200);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Style the options */
+.dropdown option {
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+/* Style options when hovered */
+.dropdown option:hover {
+  background-color: var(--ifm-color-primary-light);
+  color: white;
+}
+
+/* Add transition effect for smooth selection */
+.dropdown:active {
+  transform: scale(0.98);
+}
+
+/* Optgroup styling */
 .dropdown optgroup {
   font-weight: bold;
   color: var(--ifm-color-emphasis-700);
-}
-
-.dropdown option {
-  padding: 0.75rem; /* Increase option height */
-  font-size: 1rem;
 }

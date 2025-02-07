@@ -42,7 +42,7 @@ export default function CommandContent() {
     };
 
     return content[selectedCommand] || (
-      <p>Select a command to view its details.</p>
+      <p></p>
     );
   };
 
