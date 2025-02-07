@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import CommandDropdown from './index';
 
 export default function CommandContent() {
@@ -9,7 +9,7 @@ export default function CommandContent() {
 
     const content = {
       'Create Record - Lead': (
-        <>
+        <Fragment>
           <h3>Create Record - Lead</h3>
           <p>Create a new lead record in Salesforce with specified details such as name, company, status, and other relevant information.</p>
           
@@ -36,7 +36,7 @@ export default function CommandContent() {
           
           <pre><code className="language-js">{`{{LeadStatus.selectedOptionValue}}
 // Example: "Open"`}</code></pre>
-        </>
+        </Fragment>
       ),
       // Add other command content here following the same pattern
     };
@@ -47,9 +47,9 @@ export default function CommandContent() {
   };
 
   return (
-    <>
+    <Fragment>
       <CommandDropdown onSelect={setSelectedCommand} />
       {renderCommandContent()}
-    </>
+    </Fragment>
   );
 }
