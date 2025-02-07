@@ -16,34 +16,26 @@ export default function CommandContent() {
           <h4>Name <code>string</code></h4>
           <p>The full name of the lead contact person.</p>
           
-          <pre><code className="language-js">
-          {`{{LeadName.text}}
-// Example: "John Smith"`}
-          </code></pre>
+          <pre><code className="language-js">{`{{LeadName.text}}
+// Example: "John Smith"`}</code></pre>
           
           <h4>Company <code>string</code></h4>
           <p>The company or organization the lead is associated with.</p>
           
-          <pre><code className="language-js">
-          {`{{CompanyName.text}}
-// Example: "Acme Corp"`}
-          </code></pre>
+          <pre><code className="language-js">{`{{CompanyName.text}}
+// Example: "Acme Corp"`}</code></pre>
           
           <h4>Email <code>string</code></h4>
           <p>The email address for the lead contact.</p>
           
-          <pre><code className="language-js">
-          {`{{LeadEmail.text}}
-// Example: "john.smith@acme.com"`}
-          </code></pre>
+          <pre><code className="language-js">{`{{LeadEmail.text}}
+// Example: "john.smith@acme.com"`}</code></pre>
           
           <h4>Status <code>string</code></h4>
           <p>The current status of the lead in the sales pipeline.</p>
           
-          <pre><code className="language-js">
-          {`{{LeadStatus.selectedOptionValue}}
-// Example: "Open"`}
-          </code></pre>
+          <pre><code className="language-js">{`{{LeadStatus.selectedOptionValue}}
+// Example: "Open"`}</code></pre>
         </>
       ),
       // Add other command content here following the same pattern

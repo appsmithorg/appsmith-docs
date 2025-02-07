@@ -4,6 +4,7 @@ hide_title: true
 ---
 
 import React from 'react';
+import ZoomImage from '@site/src/components/ZoomImage';
 import CommandContent from '@site/src/components/CommandDropdown/CommandContent';
 
 <div className="tag-wrapper">
