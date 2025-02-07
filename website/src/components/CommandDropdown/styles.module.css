@@ -1,0 +1,23 @@
+.container {
+  margin: 1rem 0;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.dropdown optgroup {
+  font-weight: bold;
+  color: var(--ifm-color-emphasis-700);
+}
