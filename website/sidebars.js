@@ -336,7 +336,6 @@ const sidebars = {
                     'connect-data/reference/salesforce',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
-
                   ],
                 },
                 //category- AI Integrations

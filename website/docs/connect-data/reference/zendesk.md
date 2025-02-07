@@ -22,7 +22,7 @@ This page provides information for connecting Appsmith to Zendesk, which allows 
 
 <ZoomImage src="/img/zendesk-appsmith.png" alt="" caption="" />
 
-### Connection parameters
+### Connect Zendesk
 
 The following section is a reference guide that provides a complete description of all the parameters to connect to an Zendesk datasource.
 
@@ -71,7 +71,7 @@ The create ticket command allows you to generate a new ticket in Zendesk by prov
 
 This property defines the title or brief description of the issue or request. It helps to summarize the content of the ticket in a concise manner, allowing for easier identification and prioritization.
 
-****Example:**** If you want to dynamically set the subject from an Input widget, use:
+*Example:* If you want to dynamically set the subject from an Input widget, use:
 
 ```js
 {{Title_Input.text}}
@@ -88,7 +88,7 @@ This property defines the title or brief description of the issue or request. It
 
 This property provides a detailed explanation of the issue or request. It allows the requester to fully describe the problem or inquiry, helping the support team understand the context and provide better assistance. The description must include relevant details, such as steps to reproduce the issue, error messages, or any other information that can aid in resolving the ticket.
 
-****Example:**** If you want to dynamically set the subject from an Input widget, use:
+*Example:* If you want to dynamically set the subject from an Input widget, use:
 
 ```js
 {{Info_Input.text}}
@@ -103,7 +103,7 @@ This property provides a detailed explanation of the issue or request. It allows
 
 This property holds the name of the person submitting the ticket. It identifies the individual who needs assistance or support, allowing for personalized communication and a more effective resolution process. 
 
-****Example:**** If you want to dynamically set the Requester Name from an Input widget, use:
+*Example:* If you want to dynamically set the Requester Name from an Input widget, use:
 
 ```javascript
 {{user_name.text}}
@@ -118,7 +118,7 @@ This property holds the name of the person submitting the ticket. It identifies 
 
 This property holds the email address of the person submitting the ticket. It ensures the requester can be contacted for updates, resolutions, or clarifications. 
 
-****Example:**** If you want to dynamically set the Requester Email from an Input widget, use:
+*Example:* If you want to dynamically set the Requester Email from an Input widget, use:
 
 ```javascript
 {{user_email.text}}
@@ -136,7 +136,7 @@ This property defines the Zendesk Agent assigned to handle the ticket. It helps 
 The Assignee ID is a unique numeric identifier for each Zendesk Agent. Users can find it in the Zendesk Admin Center under [Team Members](https://support.zendesk.com/hc/en-us/articles/8357765446554-Get-Assignee-ID-Group-ID-and-Field-ID-Zendesk-Support-Ultimate#:~:text=An%20Assignee%20Id%20is%20the,Admin%20Center%20%3E%20People%20%3E%20Team%20members).
 
 
-****Example:**** To dynamically set the Assignee ID (*Agent ID*) from a Select widget, use:
+*Example:* To dynamically set the Assignee ID (*Agent ID*) from a Select widget, use:
 
 ```js
 {{fetch_agent.selectedOptionValue}}
@@ -192,7 +192,7 @@ This property specifies the current status of the ticket, indicating its progres
 
 This property specifies the due date and time for the ticket, applicable only if the ticket type is set to task. The date must be provided in the ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`), which ensures accurate time tracking and scheduling.
 
-****Example:**** To dynamically set the due date based on a Datepicker widget:
+*Example:* To dynamically set the due date based on a Datepicker widget:
 
 ```js
 {{DatePicker.selectedDate}}
@@ -206,7 +206,7 @@ This property specifies the due date and time for the ticket, applicable only if
 
 This property allows associating tags with the ticket for categorization or easy search. Tags help to quickly filter tickets by specific topics or issues.
 
-****Example:**** For tickets related to a specific feature or campaign, tags such as `homepage`, `bug`, or `marketing` can be applied.
+*Example:* For tickets related to a specific feature or campaign, tags such as `homepage`, `bug`, or `marketing` can be applied.
 
 </dd>
 
@@ -217,7 +217,7 @@ This property allows associating tags with the ticket for categorization or easy
 
 This property is used for associating the ticket with an external system or tracking reference. It helps link the ticket to an issue in a different tool or system.
 
-****Example:**** If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
+*Example:* If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
 
 </dd>
 
@@ -228,7 +228,7 @@ This property is used for associating the ticket with an external system or trac
 
 This property is used for associating the ticket with an external system or tracking reference. It helps link the ticket to an issue in a different tool or system.
 
-****Example:**** If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
+*Example:* If the ticket is related to a bug tracked in an external issue tracker, the external ID could be the reference number from that system.
 
 </dd>
 
@@ -242,7 +242,7 @@ The update ticket command enables you to modify an existing ticket in Zendesk by
 
 This property specifies the unique identifier of the ticket to update. It is a mandatory field used to ensure the correct ticket is being modified. 
 
-****Example:**** To dynamically reference the ticket ID from a selected row in a Table widget, use:
+*Example:* To dynamically reference the ticket ID from a selected row in a Table widget, use:
 
 ```javascript
 {{Table1.selectedRow.ticketId}}
@@ -253,7 +253,7 @@ This property specifies the unique identifier of the ticket to update. It is a m
 
 This property allows you to update the title or brief description of the ticket. It helps to revise the summary of the issue for clarity or to reflect any changes in the request.
 
-****Example:**** To update the subject from an input widget, use:
+*Example:* To update the subject from an input widget, use:
 
 ```javascript
 {{Title_Input.text}}
@@ -264,7 +264,7 @@ This property allows you to update the title or brief description of the ticket.
 
 This property provides the ability to update the detailed explanation of the issue. Use it to add more information, clarify the problem, or reflect the current status of the ticket.
 
-****Example:**** To update the description dynamically from a text widget, use:
+*Example:* To update the description dynamically from a text widget, use:
 
 ```javascript
 {{Info_Input.text}}
@@ -275,7 +275,7 @@ This property provides the ability to update the detailed explanation of the iss
 
 This property allows you to update the name of the person associated with the ticket. It is useful if the requester changes or needs to be corrected.
 
-****Example:**** To update the requester name dynamically from the logged-in user’s details, use:
+*Example:* To update the requester name dynamically from the logged-in user’s details, use:
 
 ```javascript
 {{appsmith.user.username}}
@@ -286,7 +286,7 @@ This property allows you to update the name of the person associated with the ti
 
 This property updates the email address of the person associated with the ticket. It ensures the requester’s contact details remain accurate for ongoing communication.
 
-****Example:**** To update the requester email dynamically, use:
+*Example:* To update the requester email dynamically, use:
 
 ```javascript
 {{appsmith.user.email}}
@@ -297,7 +297,7 @@ This property updates the email address of the person associated with the ticket
 
 This property updates the Zendesk Agent assigned to the ticket. Use it to reassign the ticket to another agent or team.
 
-****Example:**** To update the assignee ID dynamically from a dropdown selection, use:
+*Example:* To update the assignee ID dynamically from a dropdown selection, use:
 
 ```javascript
 {{fetch_agent.selectedOptionValue}}
@@ -341,7 +341,7 @@ This property updates the current status of the ticket, indicating its progress.
 
 This property updates the due date for the ticket, applicable for tasks only. The date must be in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`).
 
-****Example:**** To update the due date dynamically from a date picker widget:
+*Example:* To update the due date dynamically from a date picker widget:
 
 ```javascript
 {{DatePicker.selectedDate}}
@@ -353,7 +353,7 @@ This property updates the due date for the ticket, applicable for tasks only. Th
 
 This property is used to associate the ticket with an external system or tracking reference. Update it to reflect changes in external issue trackers or related systems.
 
-****Example:**** To set the external ID dynamically:
+*Example:* To set the external ID dynamically:
 
 ```javascript
 {{ExternalId_Input.text}}
@@ -373,7 +373,7 @@ The Add Comments to Ticket command allows you to append a new comment to an exis
 
 This property specifies the unique identifier of the ticket where the comment is added. It ensures the comment is associated with the correct ticket for tracking and resolution.
 
-****Example:**** To dynamically reference the ticket ID from a selected row in a Table widget, use:
+*Example:* To dynamically reference the ticket ID from a selected row in a Table widget, use:
 
 ```js
 {{Table1.selectedRow.ticketId}}
@@ -388,7 +388,7 @@ This property specifies the unique identifier of the ticket where the comment is
 
 This property defines the content of the comment. It can be written in plain text or HTML, allowing for rich formatting if needed. The comment helps provide updates, additional information, or responses to inquiries.
 
-****Example:**** If you want to set the comment dynamically using a rich text editor, use:
+*Example:* If you want to set the comment dynamically using a rich text editor, use:
 
 ```js
 {{RichTextEditor1.text}}
@@ -415,7 +415,7 @@ The Search Tickets command allows you to retrieve tickets from Zendesk based on 
 
 This property filters results by the text in the ticket’s subject. It searches for tickets containing the specified keyword or phrase in their subject line.
 
-****Example:**** To dynamically filter tickets by a subject from an Input widget, use:
+*Example:* To dynamically filter tickets by a subject from an Input widget, use:
 
 ```js
 {{SearchInput.text}}
@@ -426,7 +426,7 @@ This property filters results by the text in the ticket’s subject. It searches
 
 This property filters tickets based on keywords in their description. It searches for tickets where the description contains the specified text, allowing you to find tickets with similar issues.
 
-****Example:**** To dynamically filter tickets based on an issue description from an Input widget, use:
+*Example:* To dynamically filter tickets based on an issue description from an Input widget, use:
 
 ```js
 {{IssueDescriptionInput.text}}
@@ -443,7 +443,7 @@ This property filters tickets based on their current status. You can select from
 - hold: Waiting for a third party or internal process before proceeding.
 - solved: The ticket has been resolved but not yet closed.
 
-****Example:**** To filter tickets by status from a Select widget, use:
+*Example:* To filter tickets by status from a Select widget, use:
 
 ```js
 {{StatusDropdown.selectedOptionValue}}
@@ -459,7 +459,7 @@ This property filters tickets based on their type, helping categorize them for b
 - question: For general inquiries or support questions.
 - task: For administrative or procedural tasks.
 
-****Example:**** To dynamically set the ticket type filter from a Select widget, use:
+*Example:* To dynamically set the ticket type filter from a Select widget, use:
 
 ```js
 {{TypeDropdown.selectedOptionValue}}
@@ -470,7 +470,7 @@ This property filters tickets based on their type, helping categorize them for b
 
 This property filters tickets by the ID of the person who created the ticket. It is useful when searching for tickets submitted by a specific user.
 
-****Example:**** To filter tickets by a requester’s ID from a Table widget selection, use:
+*Example:* To filter tickets by a requester’s ID from a Table widget selection, use:
 
 ```js
 {{UserTable.selectedRow.requesterId}}
@@ -481,7 +481,7 @@ This property filters tickets by the ID of the person who created the ticket. It
 
 This property filters tickets by the agent assigned to handle them. It helps track tickets by specific support representatives.
 
-****Example:**** To dynamically filter tickets assigned to a selected agent from a dropdown:
+*Example:* To dynamically filter tickets assigned to a selected agent from a dropdown:
 
 ```js
 {{AgentDropdown.selectedOptionValue}}
@@ -508,7 +508,7 @@ This property filters tickets by their urgency level. You can select from the op
 
 This property filters tickets based on their tags. Tags help categorize and quickly identify tickets related to a specific feature, campaign, or issue.
 
-****Example:**** To filter tickets by a selected tag from a MultiSelect widget, use:
+*Example:* To filter tickets by a selected tag from a MultiSelect widget, use:
 
 ```js
 {{TagMultiSelect.selectedOptionValues}}
@@ -519,7 +519,7 @@ This property filters tickets based on their tags. Tags help categorize and quic
 
 This property filters tickets by an external tracking identifier. It helps link tickets with an issue in an external system such as a bug tracker or CRM.
 
-****Example:**** To search tickets by an external system ID entered in an Input widget, use:
+*Example:* To search tickets by an external system ID entered in an Input widget, use:
 
 ```js
 {{ExternalIdInput.text}}
@@ -530,7 +530,7 @@ This property filters tickets by an external tracking identifier. It helps link 
 
 This property filters tickets with a due date on or after the specified date. The date must be in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`).
 
-****Example:**** To filter tickets due after a selected date:
+*Example:* To filter tickets due after a selected date:
 
 ```js
 {{DueDatePicker.selectedDate}}
@@ -541,7 +541,7 @@ This property filters tickets with a due date on or after the specified date. Th
 
 This property filters tickets with a due date on or before the specified date.
 
-****Example:**** To filter tickets due before a selected date:
+*Example:* To filter tickets due before a selected date:
 
 ```js
 {{DueDatePicker.selectedDate}}
@@ -600,7 +600,7 @@ The Get Ticket by ID command retrieves details of a specific ticket using its un
 
 This property specifies the unique identifier of the ticket to be retrieved. The Ticket ID is assigned when a ticket is created and remains unchanged throughout its lifecycle. Fetching a ticket by ID ensures you retrieve the correct ticket details.
 
-****Example:**** To dynamically reference the ticket ID from a selected row in a Table widget, use:
+*Example:* To dynamically reference the ticket ID from a selected row in a Table widget, use:
 
 ```js
 {{Table1.selectedRow.ticketId}}
