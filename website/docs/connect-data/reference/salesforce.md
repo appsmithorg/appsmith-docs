@@ -4,7 +4,6 @@ hide_title: true
 ---
 
 import React from 'react';
-import ZoomImage from '@site/src/components/ZoomImage';
 import CommandContent from '@site/src/components/CommandDropdown/CommandContent';
 
 <div className="tag-wrapper">
@@ -13,7 +12,7 @@ import CommandContent from '@site/src/components/CommandDropdown/CommandContent'
 
 This page provides information for connecting Appsmith to Salesforce, enabling interaction with CRM data such as leads and accounts.
 
-<ZoomImage src="/img/salesforce-appsmith.png" alt="" caption="" />
+<img src="/img/salesforce-appsmith.png" alt="Salesforce Integration" />
 
 ### Connection Parameters
 This section provides a complete reference for all parameters required to connect to a Salesforce data source.
