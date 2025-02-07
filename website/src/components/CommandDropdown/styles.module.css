@@ -3,21 +3,30 @@
 }
 
 .dropdown {
-  width: 100%;
-  padding: 0.5rem;
+  width: 100%; /* Adjust width as needed, e.g., 300px */
+  max-width: 400px; /* Prevent it from being too wide */
+  padding: 0.75rem; /* Increase padding for better height */
   font-size: 1rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-primary);
   border-radius: var(--ifm-global-radius);
-  background-color: var(--ifm-background-color);
+  background-color: var(--ifm-color-emphasis-100); /* Light background */
   color: var(--ifm-font-color-base);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: all 0.2s ease-in-out;
 }
 
 .dropdown:focus {
   outline: none;
-  border-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .dropdown optgroup {
   font-weight: bold;
   color: var(--ifm-color-emphasis-700);
+}
+
+.dropdown option {
+  padding: 0.75rem; /* Increase option height */
+  font-size: 1rem;
 }
