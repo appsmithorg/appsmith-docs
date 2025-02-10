@@ -93,101 +93,29 @@ Browse through the categorized guides below to find solutions tailored to your r
 
 ---
 
-## Insert and Manage Data
+## Advanced Customization
 
 <div className="containerGridSampleApp">
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/insert-data">
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/set-up-websockets">
       <div className="containerHead">
          <div className="containerHeading">
-            <b>Insert Data</b>
+            <b>Set Up WebSockets</b>
          </div>
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Learn how to insert data into a datasource using Appsmith.
+         Learn how to integrate WebSocket connections into your Appsmith applications.
       </div>
    </a>
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/submit-form-data">
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/export-audit-logs">
       <div className="containerHead">
          <div className="containerHeading">
-            <b>Upload CSV Data to Table</b>
+            <b>Export Audit Logs</b>
          </div>
       </div>
       <hr className="gradient-hr" />
       <div className="containerDescription">
-         Import CSV data into your table effortlessly.
-      </div>
-   </a>
-</div>
-
----
-
-## Update or Delete Data
-
-<div className="containerGridSampleApp">
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/widgets/table/inline-editing">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Update Table Data</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         This page shows how to update table data using the Form and Modal widgets.
-      </div>
-   </a>
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/build-apps/how-to-guides/update-list-data">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Update List Data</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to update and modify list data dynamically.
-      </div>
-   </a>
-</div>
-
----
-
-## Upload and Download Files
-
-<div className="containerGridSampleApp">
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/build-apps/how-to-guides/send-filepicker-data-with-api-requests">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Upload Files Using Filepicker</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to upload files using the Filepicker widget.
-      </div>
-   </a>
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/connect-data/how-to-guides/how-to-upload-to-s3">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Upload Files to S3</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to upload files directly to an S3 bucket.
-      </div>
-   </a>
-</div>
-
-<div className="containerGridSampleApp">
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/connect-data/how-to-guides/how-to-download-files-using-api">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Download Files Using API</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to download files using an API in Appsmith.
+         Set up and manage audit logs to track application changes.
       </div>
    </a>
 </div>
