@@ -1,74 +1,289 @@
+/* Base Styles */
 .container {
-  margin: 1rem 0;
   position: relative;
-  display: inline-block;
   width: 100%;
   max-width: 400px;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Base dropdown styling */
-.dropdown {
-  width: 100%;
-  padding: 0.75rem 2.5rem 0.75rem 1rem; /* Extra padding for custom icon */
+/* Dropdown Header */
+.dropdownHeader {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  padding: 14px 18px;
   font-size: 1rem;
-  border: 1px solid var(--ifm-color-primary);
-  border-radius: 8px;
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-font-color-base);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  appearance: none;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif; /* Modern font */
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Custom dropdown arrow */
-.container::after {
-  content: "▼"; /* Unicode down arrow */
-  font-size: 0.9rem;
-  color: var(--ifm-color-primary);
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
+.dropdownHeader:hover {
+  background-color: #f8f9fa;
+}
+
+/* Arrow Icon */
+.arrow {
+  margin-left: auto; /* Pushes arrow to the right */
+  font-size: 1rem;
+  color: #6b7280;
   transition: transform 0.3s ease-in-out;
 }
 
-/* Rotate arrow when dropdown is active */
-.dropdown:focus + .container::after {
-  transform: translateY(-50%) rotate(180deg);
+.arrow.open {
+  transform: rotate(180deg);
 }
 
-/* Dropdown open effect */
-.dropdown:focus {
-  outline: none;
-  border-color: var(--ifm-color-primary-dark);
-  background-color: var(--ifm-color-emphasis-200);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
-/* Style the options */
-.dropdown option {
-  padding: 0.75rem;
+/* Position dropdown dynamically */
+.menuBottom {
+  top: 110%;
+}
+
+.menuTop {
+  bottom: 110%;
+}
+
+/* Search Box */
+.searchInput {
+  width: calc(100% - 24px);
+  margin: 8px 12px;
+  padding: 10px;
   font-size: 1rem;
-  background-color: var(--ifm-color-emphasis-100);
-  color: var(--ifm-font-color-base);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
 }
 
-/* Style options when hovered */
-.dropdown option:hover {
-  background-color: var(--ifm-color-primary-light);
+.searchInput:focus {
+  border-color: #fd7e14;
+}
+
+/* Category Headers */
+.category {
+  padding: 8px 12px; /* Aligns category headers to the left */
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+  text-align: left;
+  list-style: none;
+}
+
+/* Category Title */
+.categoryTitle {
+  display: block;
+  padding: 10px 1px; /* Ensures alignment to the left */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+/* Commands List */
+.commands {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Command Items */
+.commandItem {
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.commandItem:hover {
+  background-color: #FEB57F;
   color: white;
 }
 
-/* Add transition effect for smooth selection */
-.dropdown:active {
-  transform: scale(0.98);
+/* Selected Command */
+.selected {
+  background-color: #FEB57F !important;
+  color: white !important;
 }
 
-/* Optgroup styling */
-.dropdown optgroup {
+/* No Results *//* Base Styles */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Dropdown Header */
+.dropdownHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dropdownHeader:hover {
+  background-color: #f8f9fa;
+}
+
+/* Arrow Icon */
+.arrow {
+  margin-left: auto;
+  font-size: 1rem;
+  color: #6b7280;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Position dropdown dynamically */
+.menuBottom {
+  top: 110%;
+}
+
+.menuTop {
+  bottom: 110%;
+}
+
+/* Fixed Search Container */
+.fixedSearchContainer {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Search Box */
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #fd7e14;
+}
+
+/* Commands List */
+.commandList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Category Headers */
+.category {
+  padding: 8px 12px;
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
   font-weight: bold;
-  color: var(--ifm-color-emphasis-700);
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+  text-align: left;
+  list-style: none;
+}
+
+/* Category Title */
+.categoryTitle {
+  display: block;
+  padding: 10px 1px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+/* Individual Command Items */
+.commandItem {
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.commandItem:hover {
+  background-color: #FEB57F;
+  color: white;
+}
+
+/* Selected Command */
+.selected {
+  background-color: #FEB57F !important;
+  color: white !important;
+}
+
+/* No Results */
+.noResults {
+  padding: 12px 14px;
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.noResults {
+  padding: 12px 14px;
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
 }
