@@ -106,7 +106,7 @@ export default function CommandDropdown({ onSelect }) {
             <input
               type="text"
               className={styles.searchInput}
-              placeholder="Search commands..."
+              placeholder="🔍  Search commands..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
