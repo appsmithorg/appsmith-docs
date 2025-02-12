@@ -54,17 +54,52 @@ SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not su
 
 ## Switch environments
 
+You can switch between Staging and Production environments to configure the application to execute queries in the selected environment.
+
+#### Switching in Edit Mode
+
+In Edit and Preview modes, select the environment from the bottom left corner of the screen. Switching environments in Edit mode does not affect the deployed version of the app, as the Production environment is always used for the deployed version.
+
+<dd>
+
 <ZoomImage
   src="/img/switch-img-.png" 
   alt="Switch Environments"
   caption="Switch Environments"
 />
 
-Select the environment on the bottom left corner of the screen to configure the application to execute queries in the Staging or Production environments. Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the Production environment is always used for the deployed version.
+</dd>
 
-You can switch between Staging and Production environments in the *Edit* and *Preview* modes. For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
+#### Switching in View Mode
 
-With this, you can create queries and switch between environments. As you toggle between environments, the queries would automatically use the selected environment.
+In the app’s *View mode*, switch environments by adding a query parameter to the URL:
+
+- Production: To use the Production environment, add the following query parameter to the app URL:
+
+<dd>
+
+```js
+?environment=production
+// Example: https://app.appsmith.com/app/customer-dashboard?environment=production
+```
+
+</dd>
+
+
+- Staging: To switch to the Staging environment, modify the URL as follows:
+
+<dd>
+
+```js
+?environment=staging
+// Example: https://app.example.com/app/customer-dashboard?environment=staging
+```
+
+</dd>
+
+
+ For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
+
 
 
 
