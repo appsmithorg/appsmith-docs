@@ -11,12 +11,12 @@ const COMMAND_CATEGORIES = {
     "Create Record - Any",
   ],
   "Update Record Commands": [
-    "Update Lead",
-    "Update Contact",
-    "Update Opportunity",
-    "Update Task",
-    "Update Account",
-    "Update Any",
+    "Update Record - Lead",
+    "Update Record - Contact",
+    "Update Record - Opportunity",
+    "Update Record - Task",
+    "Update Record - Account",
+    "Update Record - Any",
   ],
   "Get Record by ID Commands": [
     "Get Record - Lead",
