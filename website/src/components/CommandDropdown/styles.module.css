@@ -287,3 +287,28 @@
   font-size: 1rem;
   text-align: center;
 }
+
+/* Increased dropdown height */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10;
+  max-height: 400px; /* Increased from 300px */
+  overflow-y: auto;
+}
+
+/* Style for total commands text */
+.totalCommands {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  background: #f8f9fa;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}

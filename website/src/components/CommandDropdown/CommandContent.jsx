@@ -401,25 +401,22 @@ export default function CommandContent() {
         </Fragment>
       ),
 
-            /* ===================== Search Record - Contact ===================== */
-      'Search Record - Contact': (
+       /* ===================== Search Record - Contact ===================== */
+       'Search Record - Contact': (
         <Fragment>
           <h3>Search Record - Contact</h3>
           <p>Search for contact records in Salesforce using filters and pagination.</p>
           <h4>Filter Formula <code>string</code></h4>
           <dd>
-            <p>Filters help refine search results based on contact field values.</p>
-            <p>Example 1: Find contacts with exact first and last names.</p>
-            <pre><code>"FirstName = 'John' AND LastName = 'Doe'"</code></pre>
-            <p>Example 2: Find contacts whose first name starts with 'J'.</p>
-            <pre><code>"FirstName LIKE 'J%'"</code></pre>
+            The filter formula allows refining search results based on specified conditions. It helps fetch only the relevant records, reducing unnecessary data retrieval.
+            <br/><strong>Example 1:</strong> "FirstName = 'John' AND LastName = 'Doe'" retrieves contacts with the exact first and last name.
+            <br/><strong>Example 2:</strong> "FirstName LIKE 'J%'" finds contacts with names starting with J.
           </dd>
-          
           <h4>Pagination Parameters <code>object</code></h4>
           <dd>
-            <p>Pagination allows fetching records in batches.</p>
-            <pre><code>limit=10, offset=0 // Fetch first 10 records</code></pre>
-            <pre><code>limit=10, offset=10 // Fetch next 10 records</code></pre>
+            Pagination ensures data is retrieved in manageable chunks instead of fetching all records at once. 
+            <br/><strong>Example 1:</strong> limit=10, offset=0 fetches the first 10 records.
+            <br/><strong>Example 2:</strong> limit=10, offset=10 fetches the next 10 records (11-20).
           </dd>
         </Fragment>
       ),
@@ -431,15 +428,15 @@ export default function CommandContent() {
           <p>Search for lead records in Salesforce using filters and pagination.</p>
           <h4>Filter Formula <code>string</code></h4>
           <dd>
-            <p>Apply filters to refine lead searches.</p>
-            <p>Example 1: Find leads from Acme Corp.</p>
-            <pre><code>"Company = 'Acme Corp'"</code></pre>
-            <p>Example 2: Find leads from multiple companies.</p>
-            <pre><code>"Company = 'Acme Corp' OR Company = 'Globex'"</code></pre>
+            This property is used to specify conditions for filtering leads. By applying criteria, users can narrow results to leads that match specific attributes.
+            <br/><strong>Example 1:</strong> "Company = 'Acme Corp'" retrieves leads from Acme Corp.
+            <br/><strong>Example 2:</strong> "Company = 'Acme Corp' OR Company = 'Globex'" finds leads from either company.
           </dd>
           <h4>Pagination Parameters <code>object</code></h4>
           <dd>
-            Define how many records to fetch per request. Example: limit=10, offset=20 fetches leads 21-30.
+            Defines how many records should be retrieved per request and how to skip previously fetched records.
+            <br/><strong>Example 1:</strong> limit=10, offset=20 fetches leads 21-30.
+            <br/><strong>Example 2:</strong> limit=5, offset=15 fetches leads 16-20.
           </dd>
         </Fragment>
       ),
@@ -451,49 +448,15 @@ export default function CommandContent() {
           <p>Search for opportunity records in Salesforce using filters and pagination.</p>
           <h4>Filter Formula <code>string</code></h4>
           <dd>
-            <p>Use conditions to search opportunities.</p>
-            <p>Example 1: Find successful deals.</p>
-            <pre><code>"StageName = 'Closed Won'"</code></pre>
-            <p>Example 2: Find opportunities above $50,000.</p>
-            <pre><code>"Amount > 50000"</code></pre>
+            Filters opportunities based on specified conditions, making searches more precise and meaningful.
+            <br/><strong>Example 1:</strong> "StageName = 'Closed Won'" retrieves successfully closed deals.
+            <br/><strong>Example 2:</strong> "Amount > 50000" finds opportunities with a value greater than $50,000.
           </dd>
           <h4>Pagination Parameters <code>object</code></h4>
           <dd>
-            Manage large datasets by limiting records per request. Example: limit=5, offset=0 fetches the first five results.
-          </dd>
-        </Fragment>
-      ),
-
-      /* ===================== Search Record - Task ===================== */
-      'Search Record - Task': (
-        <Fragment>
-          <h3>Search Record - Task</h3>
-          <p>Search for task records in Salesforce using filters and pagination.</p>
-          <h4>Filter Formula <code>string</code></h4>
-          <dd>
-            Example: "Status = 'In Progress'" retrieves active tasks.
-            Filter by date: "ActivityDate >= '2024-01-01'" fetches tasks from January 2024 onwards.
-          </dd>
-          <h4>Pagination Parameters <code>object</code></h4>
-          <dd>
-            Specify batch size and position. Example: limit=10, offset=30 retrieves results 31-40.
-          </dd>
-        </Fragment>
-      ),
-
-      /* ===================== Search Record - Account ===================== */
-      'Search Record - Account': (
-        <Fragment>
-          <h3>Search Record - Account</h3>
-          <p>Search for account records in Salesforce using filters and pagination.</p>
-          <h4>Filter Formula <code>string</code></h4>
-          <dd>
-            Example: "Industry = 'Technology'" finds accounts in the tech sector.
-            Use conditions like "BillingCountry = 'USA'" to refine searches by location.
-          </dd>
-          <h4>Pagination Parameters <code>object</code></h4>
-          <dd>
-            Fetch records in batches using limit and offset. Example: limit=15, offset=0 fetches the first 15 results.
+            Allows users to navigate large datasets by defining how many records to fetch and where to start.
+            <br/><strong>Example 1:</strong> limit=5, offset=0 fetches the first five records.
+            <br/><strong>Example 2:</strong> limit=10, offset=10 retrieves records 11-20.
           </dd>
         </Fragment>
       ),
@@ -509,16 +472,275 @@ export default function CommandContent() {
           </dd>
           <h4>Filter Formula <code>string</code></h4>
           <dd>
-            Example: "Name LIKE '%Acme%'" searches for records containing "Acme" in the name.
-            Apply multiple conditions: "Industry = 'Finance' AND BillingState = 'NY'".
+            Allows filtering records based on multiple attributes for efficient data retrieval.
+            <br/><strong>Example 1:</strong> "Name LIKE '%Acme%'" searches for records containing "Acme" in the name.
+            <br/><strong>Example 2:</strong> "Industry = 'Finance' AND BillingState = 'NY'" fetches finance-related records in New York.
           </dd>
           <h4>Pagination Parameters <code>object</code></h4>
           <dd>
-            Define record batches with limit and offset. Example: limit=20, offset=50 fetches records 51-70.
+            Helps manage result sets efficiently by limiting records per request.
+            <br/><strong>Example 1:</strong> limit=20, offset=50 fetches records 51-70.
+            <br/><strong>Example 2:</strong> limit=30, offset=90 retrieves records 91-120.
           </dd>
         </Fragment>
       ),
 
+         /* ===================== Get Record by View ID - Contact ===================== */
+         'Get Record by View ID - Contact': (
+          <Fragment>
+            <h3>Get Record by View ID - Contact</h3>
+            <p>Retrieve contact records using a specific list view in Salesforce.</p>
+            <h4>List View ID <code>string</code></h4>
+            <dd>
+              A List View ID is a unique identifier assigned to a saved list view in Salesforce. It allows fetching records based on predefined filters.
+              Retrieve it from the Salesforce UI by opening the list view and copying the ID from the URL. Example: "00B5g00000Xyz123AAA".
+            </dd>
+            <h4>Pagination Parameters <code>object</code></h4>
+            <dd>
+              Used to control the number of records fetched at a time. 
+              <br/><strong>Example 1:</strong> limit=10, offset=0 fetches the first 10 records.
+              <br/><strong>Example 2:</strong> limit=20, offset=20 fetches records 21-40.
+            </dd>
+          </Fragment>
+        ),
+  
+        /* ===================== Get Record by View ID - Lead ===================== */
+        'Get Record by View ID - Lead': (
+          <Fragment>
+            <h3>Get Record by View ID - Lead</h3>
+            <p>Retrieve lead records using a specific list view in Salesforce.</p>
+            <h4>List View ID <code>string</code></h4>
+            <dd>
+              The List View ID uniquely identifies saved lead views. Find it by selecting a lead list view in Salesforce and copying the ID from the URL.
+              Example: "00B6x00000Abc789BBB".
+            </dd>
+            <h4>Pagination Parameters <code>object</code></h4>
+            <dd>
+              Adjusts the retrieval of records in batches.
+              <br/><strong>Example 1:</strong> limit=15, offset=0 retrieves the first 15 leads.
+              <br/><strong>Example 2:</strong> limit=10, offset=30 retrieves leads 31-40.
+            </dd>
+          </Fragment>
+        ),
+  
+        /* ===================== Get Record by View ID - Opportunity ===================== */
+        'Get Record by View ID - Opportunity': (
+          <Fragment>
+            <h3>Get Record by View ID - Opportunity</h3>
+            <p>Retrieve opportunity records using a specific list view in Salesforce.</p>
+            <h4>List View ID <code>string</code></h4>
+            <dd>
+              This ID is used to reference a saved list view for opportunities. Obtain it from the Salesforce UI by opening an opportunity list view.
+              Example: "00B7x00000Def567CCC".
+            </dd>
+            <h4>Pagination Parameters <code>object</code></h4>
+            <dd>
+              Helps manage large datasets efficiently.
+              <br/><strong>Example 1:</strong> limit=5, offset=0 fetches the first five opportunities.
+              <br/><strong>Example 2:</strong> limit=10, offset=10 retrieves records 11-20.
+            </dd>
+          </Fragment>
+        ),
+  
+        /* ===================== Get Record by View ID - Any ===================== */
+        'Get Record by View ID - Any': (
+          <Fragment>
+            <h3>Get Record by View ID - Any</h3>
+            <p>Retrieve records of any type using a specific list view in Salesforce.</p>
+            <h4>Record Type <code>string</code></h4>
+            <dd>
+              Specify the type of record (e.g., Contact, Lead, Account) to be fetched using the list view.
+            </dd>
+            <h4>List View ID <code>string</code></h4>
+            <dd>
+              The identifier for a saved list view, which can be obtained from the Salesforce UI by navigating to the desired view.
+              Example: "00B8x00000Ghi890DDD".
+            </dd>
+            <h4>Pagination Parameters <code>object</code></h4>
+            <dd>
+              Determines how records are retrieved in chunks to optimize performance.
+              <br/><strong>Example 1:</strong> limit=20, offset=50 fetches records 51-70.
+              <br/><strong>Example 2:</strong> limit=30, offset=90 retrieves records 91-120.
+            </dd>
+          </Fragment>
+        ),
+
+            /* ===================== Create Custom Field - Lead ===================== */
+     /* ===================== Create Custom Field - Lead ===================== */
+     'Create Custom Field - Lead': (
+      <Fragment>
+        <h3>Create Custom Field - Lead</h3>
+        <p>Add a custom field to the Lead object in Salesforce.</p>
+        <h4>Label <code>string</code></h4>
+        <dd>The display name for the custom field, shown in the UI. Choose a descriptive name that aligns with business terminology. Example: "Lead Source Category".</dd>
+        <h4>Type <code>string</code></h4>
+        <dd>The data type of the field, such as Text, Number, Boolean, or Picklist. Determines how data is stored and validated. Example: "Text" for a custom Lead Identifier.</dd>
+        <h4>Default Checkbox Value <code>boolean</code></h4>
+        <dd>For checkbox fields, define whether it should be checked (true) or unchecked (false) by default. Example: "Is Active" set to true.</dd>
+        <h4>Length <code>integer</code></h4>
+        <dd>Defines the maximum number of characters allowed for a text field. Helps prevent excessive data entry. Example: "Company Code" with a max length of 10.</dd>
+        <h4>Decimal Places <code>integer</code></h4>
+        <dd>Specifies how many decimal places a numeric field should allow. Useful for financial or measurement-related fields. Example: "Discount Percentage" with 2 decimal places (e.g., 15.75%).</dd>
+        <h4>Picklist Values <code>array</code></h4>
+        <dd>A set of predefined selectable values for picklist fields. Ensures data consistency. Example: "Lead Status" with options: "New, Contacted, Qualified".</dd>
+        <h4>Visible Lines <code>integer</code></h4>
+        <dd>Specifies the number of visible lines in a long text field. Helps with structured data entry. Example: "Notes" field with 5 visible lines.</dd>
+        <h4>Helper Text <code>string</code></h4>
+        <dd>Provides guidance on what to enter in the field. Displayed as a tooltip or inline text. Example: "Enter the primary reason for lead disqualification".</dd>
+        <h4>Default Field Value <code>string</code></h4>
+        <dd>The pre-populated value shown when creating a new record. Ensures faster data entry. Example: "Country" defaulting to "United States".</dd>
+      </Fragment>
+    ),
+
+    /* ===================== Create Custom Field - Contact ===================== */
+    'Create Custom Field - Contact': (
+      <Fragment>
+        <h3>Create Custom Field - Contact</h3>
+        <p>Add a custom field to the Contact object in Salesforce.</p>
+        <h4>Label <code>string</code></h4>
+        <dd>The name of the field as displayed in the UI. Example: "Preferred Contact Method".</dd>
+        <h4>Type <code>string</code></h4>
+        <dd>Defines the data type, such as Text, Boolean, or Picklist. Example: "Picklist" for selecting communication preferences.</dd>
+        <h4>Default Checkbox Value <code>boolean</code></h4>
+        <dd>Defines whether a checkbox should be checked by default. Example: "Subscribed to Newsletter" set to true.</dd>
+        <h4>Length <code>integer</code></h4>
+        <dd>Specifies the maximum number of characters for text fields. Example: "Nickname" with a max length of 30.</dd>
+        <h4>Decimal Places <code>integer</code></h4>
+        <dd>Determines how many decimal places a numeric field should support. Example: "Credit Score" with 2 decimal places.</dd>
+        <h4>Picklist Values <code>array</code></h4>
+        <dd>A predefined list of values for selection. Example: "Communication Preference" with options: "Email, Phone, SMS".</dd>
+        <h4>Visible Lines <code>integer</code></h4>
+        <dd>Defines how many lines are visible for long text fields. Example: "Additional Notes" with 4 visible lines.</dd>
+        <h4>Helper Text <code>string</code></h4>
+        <dd>Instructions or hints displayed to users. Example: "Enter the best way to contact this person".</dd>
+        <h4>Default Field Value <code>string</code></h4>
+        <dd>A default value pre-filled in new records. Example: "Preferred Language" defaulting to "English".</dd>
+      </Fragment>
+    ),
+
+      /* ===================== Create Custom Field - Opportunity ===================== */
+      'Create Custom Field - Opportunity': (
+        <Fragment>
+          <h3>Create Custom Field - Opportunity</h3>
+          <p>Add a custom field to the Opportunity object in Salesforce.</p>
+          <h4>Label <code>string</code></h4>
+          <dd>The display name for the field as shown in the UI. Choose a meaningful name like "Expected Revenue Category".</dd>
+          <h4>Type <code>string</code></h4>
+          <dd>Defines the kind of data the field holds, such as Text, Number, Boolean, or Picklist. Example: "Stage Progress Indicator" as a picklist field.</dd>
+          <h4>Default Checkbox Value <code>boolean</code></h4>
+          <dd>Determines whether a checkbox field is selected by default. Example: "Include in Forecast" set to true.</dd>
+          <h4>Length <code>integer</code></h4>
+          <dd>Defines character limits for text fields to maintain data quality. Example: "Sales Representative Name" with a 50-character limit.</dd>
+          <h4>Decimal Places <code>integer</code></h4>
+          <dd>Controls decimal precision for numeric values. Useful for currency or percentage fields. Example: "Projected Growth Rate" with 3 decimal places (e.g., 3.145%).</dd>
+          <h4>Picklist Values <code>array</code></h4>
+          <dd>A predefined list of selectable values for structured data entry. Example: "Sales Cycle Stage" with values: "Negotiation, Proposal, Closed".</dd>
+          <h4>Visible Lines <code>integer</code></h4>
+          <dd>Defines the number of lines visible in a long text field. Example: "Deal Summary" with 6 visible lines.</dd>
+          <h4>Helper Text <code>string</code></h4>
+          <dd>Provides additional instructions for users entering data. Example: "Specify the primary competitor involved in this deal".</dd>
+          <h4>Default Field Value <code>string</code></h4>
+          <dd>The automatically populated value when creating new records. Example: "Probability" defaulting to "50%".</dd>
+        </Fragment>
+      ),
+
+  /* ===================== Create Custom Field - Task ===================== */
+  'Create Custom Field - Task': (
+    <Fragment>
+      <h3>Create Custom Field - Task</h3>
+      <p>Add a custom field to the Task object in Salesforce.</p>
+      <h4>Label <code>string</code></h4>
+      <dd>The name displayed in the UI for this field. Example: "Task Category".</dd>
+      <h4>Type <code>string</code></h4>
+      <dd>Defines the type of data stored, such as Text, Boolean, or Picklist. Example: "Picklist" for task priority (High, Medium, Low).</dd>
+      <h4>Default Checkbox Value <code>boolean</code></h4>
+      <dd>Determines whether a checkbox field is selected by default. Example: "Send Reminder" set to true.</dd>
+      <h4>Length <code>integer</code></h4>
+      <dd>Defines character limits for text fields. Example: "Task Description" with a max length of 200 characters.</dd>
+      <h4>Decimal Places <code>integer</code></h4>
+      <dd>Determines decimal precision for numeric values. Example: "Estimated Duration (Hours)" with 1 decimal place (e.g., 2.5 hours).</dd>
+      <h4>Picklist Values <code>array</code></h4>
+      <dd>A predefined list of selectable values for task categorization. Example: "Task Type" with values: "Call, Meeting, Email".</dd>
+      <h4>Visible Lines <code>integer</code></h4>
+      <dd>Defines how many lines are visible for long text fields. Example: "Notes" with 3 visible lines.</dd>
+      <h4>Helper Text <code>string</code></h4>
+      <dd>Instructions or hints displayed to users. Example: "Enter specific instructions for completing this task".</dd>
+      <h4>Default Field Value <code>string</code></h4>
+      <dd>A default value pre-filled in new records. Example: "Task Status" defaulting to "Open".</dd>
+    </Fragment>
+  ),
+
+  /* ===================== Create Custom Field - Account ===================== */
+  'Create Custom Field - Account': (
+    <Fragment>
+      <h3>Create Custom Field - Account</h3>
+      <p>Add a custom field to the Account object in Salesforce.</p>
+      <h4>Label <code>string</code></h4>
+      <dd>The name displayed in the UI for this field. Example: "Account Tier".</dd>
+      <h4>Type <code>string</code></h4>
+      <dd>Defines the type of data stored, such as Text, Boolean, or Picklist. Example: "Picklist" for Tier selection (Gold, Silver, Bronze).</dd>
+      <h4>Default Checkbox Value <code>boolean</code></h4>
+      <dd>Defines whether a checkbox should be checked by default. Example: "Preferred Customer" set to true.</dd>
+      <h4>Length <code>integer</code></h4>
+      <dd>Defines character limits for text fields. Example: "Industry Type" with a max length of 50.</dd>
+      <h4>Decimal Places <code>integer</code></h4>
+      <dd>Specifies decimal precision for numeric values. Example: "Annual Revenue" with 2 decimal places.</dd>
+      <h4>Picklist Values <code>array</code></h4>
+      <dd>A predefined list of selectable values for account types. Example: "Business Type" with values: "Enterprise, Small Business, Nonprofit".</dd>
+      <h4>Visible Lines <code>integer</code></h4>
+      <dd>Defines the number of lines visible for long text fields. Example: "Account History" with 4 visible lines.</dd>
+      <h4>Helper Text <code>string</code></h4>
+      <dd>Instructions or hints displayed to users. Example: "Specify key details about the business relationship".</dd>
+      <h4>Default Field Value <code>string</code></h4>
+      <dd>A default value pre-filled in new records. Example: "Account Status" defaulting to "Active".</dd>
+    </Fragment>
+  ),
+
+  /* ===================== Write SOQL Query ===================== */
+  'Write SOQL Query': (
+    <Fragment>
+      <h3>Write SOQL Query</h3>
+      <p>SOQL (Salesforce Object Query Language) is used to fetch data from Salesforce objects. It follows a structured format similar to SQL but tailored for Salesforce.</p>
+      <h4>Query <code>string</code></h4>
+      <dd>
+        The SOQL query used to retrieve records from Salesforce. Queries must specify the object and fields to retrieve.
+        <br/><strong>Example 1:</strong> Retrieve all contacts with a specific last name:
+        <br/><code>SELECT Id, FirstName, LastName FROM Contact WHERE LastName = 'Smith'</code>
+        <br/><strong>Example 2:</strong> Fetch opportunities that are in the proposal stage:
+        <br/><code>SELECT Id, Name, StageName FROM Opportunity WHERE StageName = 'Proposal'</code>
+        <br/><strong>Example 3:</strong> Get accounts created in the last 30 days:
+        <br/><code>SELECT Id, Name FROM Account WHERE CreatedDate = LAST_N_DAYS:30</code>
+      </dd>
+    </Fragment>
+  ),
+
+  /* ===================== Create Custom Object ===================== */
+  'Create Custom Object': (
+    <Fragment>
+      <h3>Create Custom Object</h3>
+      <p>Defines a new custom object in Salesforce with specific properties.</p>
+      <h4>Label <code>string</code></h4>
+      <dd>The display name of the object. Example: "Project".</dd>
+      <h4>Plural Label <code>string</code></h4>
+      <dd>The plural form of the object label for UI display. Example: "Projects".</dd>
+      <h4>Description <code>string</code></h4>
+      <dd>A brief explanation of the object's purpose. Example: "Stores details about company projects."</dd>
+      <h4>Record Name <code>string</code></h4>
+      <dd>The unique name field for each record. Example: "Project Name".</dd>
+    </Fragment>
+  ),
+
+  /* ===================== Describe Action Schema ===================== */
+  'Describe Action Schema': (
+    <Fragment>
+      <h3>Describe Action Schema</h3>
+      <p>Provides metadata details about a Salesforce object or action.</p>
+      <h4>Record Type <code>string</code></h4>
+      <dd>The type of record being described. Example: "Lead".</dd>
+      <h4>Operation <code>string</code></h4>
+      <dd>The action being performed on the object, such as Create, Update, or Delete. Example: "Update".</dd>
+    </Fragment>
+  ),
 
 
       

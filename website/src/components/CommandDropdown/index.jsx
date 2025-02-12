@@ -27,13 +27,38 @@ const COMMAND_CATEGORIES = {
     "Get Record - Any",
   ],
   "Search Commands": [
-    "Search Lead",
-    "Search Contact",
-    "Search Opportunity",
-    "Search Task",
-    "Search Account",
-    "Search Any",
+    "Search Record - Lead",
+    "Search Record - Contact",
+    "Search Record - Opportunity",
+    "Search Record - Task",
+    "Search Record - Account",
+    "Search Record - Any",
   ],
+  "Get Records Commands": [
+    "Get Record by View ID - Lead",
+    "Get Record by View ID - Contact",
+    "Get Record by View ID - Opportunity",
+    "Get Record by View ID - Task",
+    "Get Record by View ID - Account",
+    "Get Record by View ID - Any",
+  ],
+  "Create Custom Fields Commands": [
+    "Create Custom Field - Lead",
+    "Create Custom Field - Contact",
+    "Create Custom Field - Opportunity",
+    "Create Custom Field - Task",
+    "Create Custom Field - Account",
+    "Create Custom Field - Any",
+  ],
+  "Query Commands": [
+    "Write SOQL Query",
+  ],
+  "Object Management Commands": [
+    "Create Custom Object"
+  ],
+  "Metadata Commands": [
+    "Describe Action Schema"
+  ]
 };
 
 export default function CommandDropdown({ onSelect }) {
@@ -106,7 +131,7 @@ export default function CommandDropdown({ onSelect }) {
             <input
               type="text"
               className={styles.searchInput}
-              placeholder="🔍  Search commands..."
+              placeholder="Search from 39 commands..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
