@@ -98,7 +98,7 @@ In the app’s *View mode*, switch environments by adding a query parameter to t
 </dd>
 
 
- For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
+Access to environments is restricted based on user permissions, ensuring that only authorized users can view or interact with the data. For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
 
 
 
