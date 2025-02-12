@@ -4,7 +4,7 @@ slug: /getting-started/setup
 sidebar_position: 3
 ---
 
-# Self Hosting
+# Self Host Appsmith
 
 You can host and manage Appsmith on your local machine or server, giving you complete control over your data privacy, security, and integrity.
 

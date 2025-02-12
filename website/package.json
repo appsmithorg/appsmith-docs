@@ -18,6 +18,7 @@
     "@docusaurus/plugin-client-redirects": "^3.6.3",
     "@docusaurus/preset-classic": "^3.6.3",
     "@docusaurus/theme-mermaid": "^3.6.3",
+    "@iconify/react": "^5.2.0",
     "@mdx-js/react": "^3.0.0",
     "@twilio-labs/docusaurus-plugin-segment": "^0.1.0",
     "aws-sdk": "^2.1354.0",
