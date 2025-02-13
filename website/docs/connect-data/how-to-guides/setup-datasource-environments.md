@@ -58,7 +58,7 @@ You can switch between Staging and Production environments to configure the appl
 
 #### Switching in Edit Mode
 
-In Edit and Preview modes, select the environment from the bottom left corner of the screen. Switching environments in Edit mode does not affect the deployed version of the app, as the Production environment is always used for the deployed version.
+In *Edit* and *Preview* modes, select the environment from the bottom left corner of the screen. Switching the environment in *Edit* mode does not affect the deployed version of the application. The Production environment is always used in the deployed version.
 
 <dd>
 
@@ -72,9 +72,9 @@ In Edit and Preview modes, select the environment from the bottom left corner of
 
 #### Switching in View Mode
 
-In the app’s *View mode*, switch environments by adding a query parameter to the URL:
+In View mode, you can switch environments by adding a query parameter to the application URL:
 
-- Production: To use the Production environment, add the following query parameter to the app URL:
+- To use the Production environment, append the following query parameter to the app URL:
 
 <dd>
 
@@ -85,8 +85,8 @@ In the app’s *View mode*, switch environments by adding a query parameter to t
 
 </dd>
 
+- To switch to the Staging environment, append the following query parameter to the app URL:
 
-- Staging: To switch to the Staging environment, modify the URL as follows:
 
 <dd>
 
