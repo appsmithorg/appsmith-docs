@@ -1462,7 +1462,7 @@ export default function CommandContent() {
   </Fragment>
 ),
 
-  /* ===================== Write SOQL Query ===================== */
+/* ===================== Write SOQL Query ===================== */
 'Write SOQL Query': (
   <Fragment>
     <h3>Write SOQL Query</h3>
@@ -1479,14 +1479,35 @@ export default function CommandContent() {
     <dd>
       The SOQL query used to retrieve records from Salesforce. Queries must specify the object and fields to retrieve.
       <br/><strong>Example 1:</strong> Retrieve all contacts with a specific last name:
-      <br/><code>SELECT Id, FirstName, LastName FROM Contact WHERE LastName = 'Smith'</code>
+      <pre>
+      <code>
+SELECT Id, FirstName, LastName 
+FROM Contact 
+WHERE LastName = 'Smith'
+      </code>
+      </pre>
+      
       <br/><strong>Example 2:</strong> Fetch opportunities that are in the proposal stage:
-      <br/><code>SELECT Id, Name, StageName FROM Opportunity WHERE StageName = 'Proposal'</code>
+      <pre>
+      <code>
+SELECT Id, Name, StageName 
+FROM Opportunity 
+WHERE StageName = 'Proposal'
+      </code>
+      </pre>
+
       <br/><strong>Example 3:</strong> Get accounts created in the last 30 days:
-      <br/><code>SELECT Id, Name FROM Account WHERE CreatedDate = LAST_N_DAYS:30</code>
+      <pre>
+      <code>
+SELECT Id, Name 
+FROM Account 
+WHERE CreatedDate = LAST_N_DAYS:30
+      </code>
+      </pre>
     </dd>
   </Fragment>
 ),
+
 
 /* ===================== Create Custom Object ===================== */
 'Create Custom Object': (
