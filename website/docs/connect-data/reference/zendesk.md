@@ -75,7 +75,7 @@ This property defines the title or brief description of the issue or request. It
 
 ```js
 {{Title_Input.text}}
-// ***Example:*** "Broken link on homepage"
+// Example: "Broken link on homepage"
 ```
 
 
@@ -107,7 +107,7 @@ This property holds the name of the person submitting the ticket. It identifies 
 
 ```javascript
 {{user_name.text}}
-// ***Example:*** "John Doe"
+// Example: "John Doe"
 ```
 
 </dd>
@@ -122,7 +122,7 @@ This property holds the email address of the person submitting the ticket. It en
 
 ```javascript
 {{user_email.text}}
-// ***Example:*** "john.doe@example.com"
+// Example: "john.doe@example.com"
 ```
 </dd>
 
@@ -240,16 +240,22 @@ The update ticket command enables you to modify an existing ticket in Zendesk by
 
 #### Ticket ID
 
+<dd>
+
 This property specifies the unique identifier of the ticket to update. It is a mandatory field used to ensure the correct ticket is being modified. 
 
 *Example:* To dynamically reference the ticket ID from a selected row in a Table widget, use:
 
 ```javascript
 {{Table1.selectedRow.ticketId}}
-// ***Example:*** "56690"
+// Example: "56690"
 ```
 
+</dd>
+
 #### Subject
+
+<dd>
 
 This property allows you to update the title or brief description of the ticket. It helps to revise the summary of the issue for clarity or to reflect any changes in the request.
 
@@ -257,10 +263,14 @@ This property allows you to update the title or brief description of the ticket.
 
 ```javascript
 {{Title_Input.text}}
-// ***Example:*** "Updated: Broken link on homepage"
+// Example: "Updated: Broken link on homepage"
 ```
 
+</dd>
+
 #### Description
+
+<dd>
 
 This property provides the ability to update the detailed explanation of the issue. Use it to add more information, clarify the problem, or reflect the current status of the ticket.
 
@@ -268,10 +278,14 @@ This property provides the ability to update the detailed explanation of the iss
 
 ```javascript
 {{Info_Input.text}}
-// ***Example:*** "The broken link is on the 'Contact Us' page and leads to a 404 error."
+// Example: "The broken link is on the 'Contact Us' page and leads to a 404 error."
 ```
 
+</dd>
+
 #### Requester Name
+
+<dd>
 
 This property allows you to update the name of the person associated with the ticket. It is useful if the requester changes or needs to be corrected.
 
@@ -279,10 +293,14 @@ This property allows you to update the name of the person associated with the ti
 
 ```javascript
 {{appsmith.user.username}}
-// ***Example:*** "Jane Doe"
+// Example: "Jane Doe"
 ```
 
+</dd>
+
 #### Requester Email
+
+<dd>
 
 This property updates the email address of the person associated with the ticket. It ensures the requester’s contact details remain accurate for ongoing communication.
 
@@ -290,10 +308,14 @@ This property updates the email address of the person associated with the ticket
 
 ```javascript
 {{appsmith.user.email}}
-// ***Example:*** "jane.doe@example.com"
+// Example: "jane.doe@example.com"
 ```
 
+</dd>
+
 #### Assignee Id
+
+<dd>
 
 This property updates the Zendesk Agent assigned to the ticket. Use it to reassign the ticket to another agent or team.
 
@@ -301,10 +323,14 @@ This property updates the Zendesk Agent assigned to the ticket. Use it to reassi
 
 ```javascript
 {{fetch_agent.selectedOptionValue}}
-// ***Example:*** "23456789" (Agent ID)
+// Example: "23456789" (Agent ID)
 ```
 
+</dd>
+
 #### Type
+
+<dd>
 
 This property updates the type of the ticket. Use it to change the category of the request to better reflect the nature of the issue.
 
@@ -324,8 +350,11 @@ This property updates the urgency of the ticket. Use it to adjust the priority a
 - `High`: Urgent issues requiring quick attention.
 - `Urgent`: Critical issues needing immediate resolution.
 
+</dd>
 
 #### Status
+
+<dd>
 
 This property updates the current status of the ticket, indicating its progress. Use it to track and manage the ticket’s resolution.
 
@@ -335,9 +364,11 @@ This property updates the current status of the ticket, indicating its progress.
 - `Hold`: Waiting on a third party or process.
 - `Solved`: The ticket has been resolved but not yet closed.
 
-
+</dd>
 
 #### Due At
+
+<dd>
 
 This property updates the due date for the ticket, applicable for tasks only. The date must be in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`).
 
@@ -345,11 +376,13 @@ This property updates the due date for the ticket, applicable for tasks only. Th
 
 ```javascript
 {{DatePicker.selectedDate}}
-// ***Example:*** "2025-01-25T15:00:00Z"
+// Example: "2025-01-25T15:00:00Z"
 ```
-
+</dd>
 
 #### External Id
+
+<dd>
 
 This property is used to associate the ticket with an external system or tracking reference. Update it to reflect changes in external issue trackers or related systems.
 
@@ -357,9 +390,10 @@ This property is used to associate the ticket with an external system or trackin
 
 ```javascript
 {{ExternalId_Input.text}}
-// ***Example:*** "BUG-4567"
+// Example: "BUG-4567"
 ```
 
+</dd>
 
 ### Add Comments to Ticket
 
@@ -377,7 +411,7 @@ This property specifies the unique identifier of the ticket where the comment is
 
 ```js
 {{Table1.selectedRow.ticketId}}
-// ***Example:*** "56690"
+// Example: "56690"
 ```
 
 </dd>
@@ -413,16 +447,22 @@ The Search Tickets command allows you to retrieve tickets from Zendesk based on 
 
 #### Ticket Subject `string`
 
+<dd>
+
 This property filters results by the text in the ticket’s subject. It searches for tickets containing the specified keyword or phrase in their subject line.
 
 *Example:* To dynamically filter tickets by a subject from an Input widget, use:
 
 ```js
 {{SearchInput.text}}
-// ***Example:*** "Login issue"
+// Example: "Login issue"
 ```
 
+</dd>
+
 #### Ticket Description `string`
+
+<dd>
 
 This property filters tickets based on keywords in their description. It searches for tickets where the description contains the specified text, allowing you to find tickets with similar issues.
 
@@ -430,10 +470,14 @@ This property filters tickets based on keywords in their description. It searche
 
 ```js
 {{IssueDescriptionInput.text}}
-// ***Example:*** "User unable to reset password"
+// Example: "User unable to reset password"
 ```
 
+</dd>
+
 #### Ticket Status `string`
+
+<dd>
 
 This property filters tickets based on their current status. You can select from the options below. When JavaScript is enabled, you can also dynamically assign values using JS.
 
@@ -447,10 +491,14 @@ This property filters tickets based on their current status. You can select from
 
 ```js
 {{StatusDropdown.selectedOptionValue}}
-// ***Example:*** "open"
+// Example: "open"
 ```
 
+</dd>
+
 #### Ticket Type `string`
+
+<dd>
 
 This property filters tickets based on their type, helping categorize them for better organization.
 
@@ -463,10 +511,14 @@ This property filters tickets based on their type, helping categorize them for b
 
 ```js
 {{TypeDropdown.selectedOptionValue}}
-// ***Example:*** "incident"
+// Example: "incident"
 ```
 
+</dd>
+
 #### Requester ID `number`
+
+<dd>
 
 This property filters tickets by the ID of the person who created the ticket. It is useful when searching for tickets submitted by a specific user.
 
@@ -474,10 +526,14 @@ This property filters tickets by the ID of the person who created the ticket. It
 
 ```js
 {{UserTable.selectedRow.requesterId}}
-// ***Example:*** 456789
+// Example: 456789
 ```
 
+</dd>
+
 #### Assignee ID `number`
+
+<dd>
 
 This property filters tickets by the agent assigned to handle them. It helps track tickets by specific support representatives.
 
@@ -485,10 +541,14 @@ This property filters tickets by the agent assigned to handle them. It helps tra
 
 ```js
 {{AgentDropdown.selectedOptionValue}}
-// ***Example:*** 512345
+// Example: 512345
 ```
 
+</dd>
+
 #### Ticket Priority `string`
+
+<dd>
 
 This property filters tickets by their urgency level. You can select from the options below or dynamically assign values using JavaScript.
 
@@ -501,10 +561,14 @@ This property filters tickets by their urgency level. You can select from the op
 
 ```js
 {{PriorityDropdown.selectedOptionValue}}
-// ***Example:*** "high"ß
+// Example: "high"ß
 ```
 
+</dd>
+
 #### Ticket Tags `array<string>`
+
+<dd>
 
 This property filters tickets based on their tags. Tags help categorize and quickly identify tickets related to a specific feature, campaign, or issue.
 
@@ -512,10 +576,14 @@ This property filters tickets based on their tags. Tags help categorize and quic
 
 ```js
 {{TagMultiSelect.selectedOptionValues}}
-// ***Example:*** ["billing", "refund"]
+// Example: ["billing", "refund"]
 ```
 
+</dd>
+
 #### External ID `string`
+
+<dd>
 
 This property filters tickets by an external tracking identifier. It helps link tickets with an issue in an external system such as a bug tracker or CRM.
 
@@ -523,10 +591,14 @@ This property filters tickets by an external tracking identifier. It helps link 
 
 ```js
 {{ExternalIdInput.text}}
-// ***Example:*** "BUG-4567"
+// Example: "BUG-4567"
 ```
 
+</dd>
+
 #### Due Date - Left `string` (ISO 8601)
+
+<dd>
 
 This property filters tickets with a due date on or after the specified date. The date must be in ISO 8601 format (`YYYY-MM-DDTHH:mm:ssZ`).
 
@@ -534,10 +606,14 @@ This property filters tickets with a due date on or after the specified date. Th
 
 ```js
 {{DueDatePicker.selectedDate}}
-// ***Example:*** "2024-02-01T00:00:00Z"
+// Example: "2024-02-01T00:00:00Z"
 ```
 
+</dd>
+
 #### Due Date - Right `string` (ISO 8601)
+
+<dd>
 
 This property filters tickets with a due date on or before the specified date.
 
@@ -545,52 +621,70 @@ This property filters tickets with a due date on or before the specified date.
 
 ```js
 {{DueDatePicker.selectedDate}}
-// ***Example:*** "2024-02-28T23:59:59Z"
+// Example: "2024-02-28T23:59:59Z"
 ```
+
+</dd>
 
 #### Created Date - Left `string` (ISO 8601)
 
+<dd>
+
 This property filters tickets created on or after the specified date.
 
-***Example:*** To search for tickets created from a selected start date:
+Example: To search for tickets created from a selected start date:
 
 ```js
 {{CreatedDatePicker.selectedDate}}
-// ***Example:*** "2024-01-01T00:00:00Z"
+// Example: "2024-01-01T00:00:00Z"
 ```
+
+</dd>
 
 #### Created Date - Right `string` (ISO 8601)
 
+<dd>
+
 This property filters tickets created on or before the specified date.
 
-***Example:*** To search for tickets created before a selected end date:
+Example: To search for tickets created before a selected end date:
 
 ```js
 {{CreatedDatePicker.selectedDate}}
-// ***Example:*** "2024-01-31T23:59:59Z"
+// Example: "2024-01-31T23:59:59Z"
 ```
+
+</dd>
 
 #### Updated Date - Left `string` (ISO 8601)
 
+<dd>
+
 This property filters tickets last updated on or after the specified date.
 
-***Example:*** To filter tickets updated from a given date:
+Example: To filter tickets updated from a given date:
 
 ```js
 {{UpdatedDatePicker.selectedDate}}
-// ***Example:*** "2024-02-01T00:00:00Z"
+// Example: "2024-02-01T00:00:00Z"
 ```
+
+</dd>
 
 #### Updated Date - Right `string` (ISO 8601)
 
+<dd>
+
 This property filters tickets last updated on or before the specified date.
 
-***Example:*** To filter tickets updated before a selected date:
+Example: To filter tickets updated before a selected date:
 
 ```js
 {{UpdatedDatePicker.selectedDate}}
-// ***Example:*** "2024-02-28T23:59:59Z"
+// Example: "2024-02-28T23:59:59Z"
 ```
+
+</dd>
 
 ### Get Ticket by ID
 
@@ -598,52 +692,70 @@ The Get Ticket by ID command retrieves details of a specific ticket using its un
 
 #### Ticket ID `number`
 
+<dd>
+
 This property specifies the unique identifier of the ticket to be retrieved. The Ticket ID is assigned when a ticket is created and remains unchanged throughout its lifecycle. Fetching a ticket by ID ensures you retrieve the correct ticket details.
 
 *Example:* To dynamically reference the ticket ID from a selected row in a Table widget, use:
 
 ```js
 {{Table1.selectedRow.ticketId}}
-// ***Example:*** 45678
+// Example: 45678
 ```
+
+</dd>
 
 ### Create User
 This command allows you to create a new user in Zendesk by providing essential details such as name, email, phone number, role, and additional information. It is useful for onboarding new users, assigning roles, and tracking users within the system.
 
 #### Name `string`
 
+<dd>
+
 This property defines the full name of the user being created. It helps identify the user in Zendesk and is used in communication.
 
-***Example:*** To dynamically set the name from an Input widget:
+Example: To dynamically set the name from an Input widget:
 
 ```js
 {{UserNameInput.text}}
-// ***Example:*** "Alice Johnson"
+// Example: "Alice Johnson"
 ```
+
+</dd>
 
 #### Email `string`
 
+<dd>
+
 This property specifies the email address of the user. It is used for communication, notifications, and authentication.
 
-***Example:*** To dynamically set the email from an Input widget:
+Example: To dynamically set the email from an Input widget:
 
 ```js
 {{UserEmailInput.text}}
-// ***Example:*** "alice.johnson@example.com"
+// Example: "alice.johnson@example.com"
 ```
+
+</dd>
 
 #### Phone `string`
 
+<dd>
+
 This property holds the phone number of the user. It can be used for contact purposes if phone support is enabled.
 
-***Example:*** To dynamically set the phone number from an Input widget:
+Example: To dynamically set the phone number from an Input widget:
 
 ```js
 {{UserPhoneInput.text}}
-// ***Example:*** "+1-202-555-0173"
+// Example: "+1-202-555-0173"
 ```
 
+</dd>
+
 #### Role `string`
+
+<dd>
 
 This property defines the user's role in Zendesk. It determines their access level and permissions. You can select from the following options:
 
@@ -651,45 +763,59 @@ This property defines the user's role in Zendesk. It determines their access lev
 - agent: Can manage and respond to tickets but has limited administrative control.
 - end user: Can submit and view their own tickets but cannot manage others.
 
-***Example:*** To dynamically assign a role from a Dropdown widget:
+Example: To dynamically assign a role from a Dropdown widget:
 
 ```js
 {{UserRoleDropdown.selectedOptionValue}}
-// ***Example:*** "agent"
+// Example: "agent"
 ```
+
+</dd>
 
 #### External ID `string`
 
+<dd>
+
 This property allows linking the user with an external system or reference ID from another application. It is useful for tracking users across multiple platforms.
 
-***Example:*** To dynamically set an external ID from an Input widget:
+Example: To dynamically set an external ID from an Input widget:
 
 ```js
 {{ExternalIDInput.text}}
-// ***Example:*** "CRM-987654"
+// Example: "CRM-987654"
 ```
 
+</dd>
+
 #### Details `string`
+
+<dd>
+
 This property provides additional details about the user, such as their department, location, or background.
 
-***Example:*** To dynamically set details from a Text Area widget:
+Example: To dynamically set details from a Text Area widget:
 
 ```js
 {{UserDetailsInput.text}}
-// ***Example:*** "Customer from the enterprise plan, prefers email communication."
+// Example: "Customer from the enterprise plan, prefers email communication."
 ```
+
+</dd>
 
 #### Note `string`
 
+<dd>
+
 This property allows adding internal notes about the user that are only visible to agents and administrators. Notes help keep track of user-specific preferences or history.
 
-***Example:*** To dynamically set a note from a Text Area widget:
+Example: To dynamically set a note from a Text Area widget:
 
 ```js
 {{UserNoteInput.text}}
-// ***Example:*** "VIP customer with priority support."
+// Example: "VIP customer with priority support."
 ```
 
+</dd>
 
 
 ### Update User
@@ -697,99 +823,137 @@ This command allows you to update an existing user's details in Zendesk. It is u
 
 #### User ID `number`
 
+<dd>
+
 This property specifies the unique identifier of the user whose details are being updated. It ensures that the correct user's information is modified. The User ID can be retrieved from a table or a previous API response.
 
-***Example:*** To update the selected user from a Table widget:
+Example: To update the selected user from a Table widget:
 
 ```js
 {{UsersTable.selectedRow.id}}
 // **Example:** "2123456"
 ```
 
-Name string
+</dd>
+
+#### Name `string`
+
+<dd>
+
 This property updates the full name of the user. Changing this value replaces the existing name associated with the user account.
 
-**Example:** If an input field is used to enter the updated name:
+*Example:* If an input field is used to enter the updated name:
 
 ```js
 {{UserNameInput.text}}
 // **Example:** "Alice Johnson"
 ```
 
+</dd>
+
 #### Email `string`
+
+<dd>
 
 This property updates the email address associated with a specific User ID. The email is used for communication and authentication purposes. Updating this field ensures that the user receives notifications and can log in with the correct credentials.
 
-**Example:** If an input field is used to update the email:
+*Example:* If an input field is used to update the email:
 
 ```js
 {{UserEmailInput.text}}
 // **Example:** "alice.johnson@example.com"
 ```
 
-Phone string
+</dd>
+
+#### Phone `string`
+
+<dd>
+
 This property updates the contact number associated with the user. The phone number can be used for customer support interactions or multi-factor authentication.
 
-**Example:** If an input field is used to update the phone number:
+*Example:* If an input field is used to update the phone number:
 
 ```js
 {{UserPhoneInput.text}}
 // **Example:** "+1-555-789-1234"
 ```
 
-Role string
+</dd>
+
+#### Role `string`
+
+<dd>
+
 This property defines the user's role in the system. Roles determine access levels and permissions within Zendesk.
 
 Available options:
 
-"admin" – Full access to manage settings and users
-"agent" – Can respond to tickets and assist users
-"end-user" – Can submit and view their own tickets
-**Example:** If a dropdown is used to select the role:
+- admin: Full access to manage settings and users
+- agent: Can respond to tickets and assist users
+- end-user: Can submit and view their own tickets
+
+*Example:* If a dropdown is used to select the role:
 
 ```js
 {{UserRoleDropdown.selectedOptionValue}}
 // **Example:** "agent"
 ```
 
+</dd>
+
 #### External ID `string`
+
+<dd>
 
 This property updates the external system identifier associated with the user. External IDs are used when integrating Zendesk with other platforms or databases.
 
-**Example:** If an input field is used to enter an external ID:
+*Example:* If an input field is used to enter an external ID:
 
 ```js
 {{UserExternalIDInput.text}}
 // **Example:** "EXT-98765"
 ```
 
+</dd>
+
 #### Details `string`
+
+<dd>
 
 This property updates additional details about the user, such as job title, company, or location.
 
-**Example:** If a text area is used to enter details:
+*Example:* If a text area is used to enter details:
 
 ```js
 {{UserDetailsInput.text}}
 // **Example:** "Senior Support Engineer at Acme Corp."
 ```
 
+</dd>
+
 #### Notes `string`
+
+<dd>
 
 This property updates internal notes about the user. Notes are visible to agents and administrators but not to the user.
 
-**Example:** If a text area is used to enter a note:
+*Example:* If a text area is used to enter a note:
 
 ```js
 {{UserNotesInput.text}}
 // **Example:** "VIP customer, prefers email communication."
 ```
 
+</dd>
+
 ### Search Users
 
 The Search Users command allows you to find users based on specific criteria such as name, email, role, or external ID. This command is useful for retrieving user details, managing accounts, and filtering users based on their attributes. The search query can match multiple users, returning a list of results.
 
 #### Name `string`
+
+<dd>
 
 This property filters the search results by the user's full name. It allows partial or full matches, making it easier to locate users even if only part of their name is known.
 
@@ -800,7 +964,11 @@ This property filters the search results by the user's full name. It allows part
 // *Example:* "John Doe"
 ```
 
+</dd>
+
 #### Email `string`
+
+<dd>
 
 This property filters users by their email address. Searching by email is useful for locating a specific user when the exact email is known.
 
@@ -811,7 +979,11 @@ This property filters users by their email address. Searching by email is useful
 // *Example:* "john.doe@example.com"
 ```
 
+</dd>
+
 #### Role `string`
+
+<dd>
 
 This property filters users based on their assigned role in Zendesk. Roles determine a user's permissions and access within the system.
 
@@ -826,7 +998,12 @@ This property filters users based on their assigned role in Zendesk. Roles deter
 // *Example:* "agent"
 ```
 
+</dd>
+
 #### External ID `string`
+
+<dd>
+
 This property filters users by their external system identifier. External IDs are used for integrations with third-party systems or databases.
 
 *Example:* If an input field is used to search by external ID:
@@ -836,10 +1013,16 @@ This property filters users by their external system identifier. External IDs ar
 // *Example:* "EXT-12345"
 ```
 
+</dd>
+
 ### Get Users by ID
+
 The Get Users by ID command allows you to retrieve specific user details using their unique identifier (User ID). This command is useful when you want to fetch information about a user after creating or updating their account, or to view specific details for a given user.
 
 #### User ID `number`
+
+<dd>
+
 This property specifies the unique identifier of the user whose details are being retrieved. The User ID is typically assigned when the user is created, and can be fetched from a table, list, or previous API response.
 
 *Example:* To get the details of a user based on a selected row from a table:
@@ -848,3 +1031,5 @@ This property specifies the unique identifier of the user whose details are bein
 {{UserTable.selectedRow.id}}
 // Example: "2123456"
 ```
+
+</dd>
