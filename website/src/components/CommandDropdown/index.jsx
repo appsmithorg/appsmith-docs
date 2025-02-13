@@ -3,8 +3,8 @@ import styles from "./styles.module.css";
 
 const COMMAND_CATEGORIES = {
   "Create Record Commands": [
-    "Create Record - Lead",
     "Create Record - Contact",
+    "Create Record - Lead",
     "Create Record - Opportunity",
     "Create Record - Task",
     "Create Record - Account",
