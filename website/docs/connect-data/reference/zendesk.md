@@ -31,7 +31,7 @@ The following section is a reference guide that provides a complete description 
 
 <dd>
 
-The subdomain is the unique identifier in your Zendesk account URL. It typically appears as the first part of your Zendesk domain and looks like this:
+The subdomain is the unique identifier in your Zendesk account URL. It appears as the first part of your Zendesk domain and looks like this:
 
 ```js
 https://<your-subdomain>.zendesk.com
@@ -44,11 +44,7 @@ For more details, refer to the [Zendesk documentation](https://support.zendesk.c
 
 <dd>
 
-After adding your subdomain, you are redirected to the authentication page. The page displays the authentication method based on your Zendesk account configuration. This could be:
-
-- **Basic Authentication (Email and Password):** Authenticate using your email address and password.
-- **API Token:** Authenticate using your email address and API token.
-- **OAuth:** Authenticate via OAuth if supported by your Zendesk account.
+After adding your subdomain, you are redirected to the authentication page. The page displays the authentication method based on your Zendesk account configuration. You can authenticate using your email address and password.
 
 
 </dd>
