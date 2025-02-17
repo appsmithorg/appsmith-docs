@@ -15,16 +15,23 @@ This page provides information for connecting Appsmith to Google Sheets and for 
 
 <dd>Defines the privileges your app has when querying spreadsheets. Use this to allow the minimum necessary privileges for your app's functions.</dd><br/>
 <dd>
-<i>Options:</i>
-  <ul>
-    <li><b>Read / Write / Delete | Selected Google Sheets:</b> Your app has read, write, and delete access only for the sheets that you specify while authorizing the datasource.</li>
-    <li><b>Read / Write / Delete | All Google Sheets:</b> Your app has read, write, and delete access for all sheets on your Google account.</li>
-    <li><b>Read / Write | All Google Sheets:</b> Your app has read and write (but not delete) access for all sheets on your Google account.</li>
-    <li><b>Read | All Google Sheets:</b> Your app has read-only access to all sheets on your Google account.</li>
-  </ul>
+
+Options:
+
+- **Read / Write / Delete | Selected Google Sheets:** Your app has full access (read, write, and delete) only to the specific sheets you authorize. It can modify data, delete rows, remove sheets, and even delete entire spreadsheets, but only for the selected files.
+
+- **Read / Write / Delete | All Google Sheets:** Your app has full access to all spreadsheets in your Google account. This includes the ability to read and modify data, delete specific rows, remove entire sheets, and even delete entire spreadsheets. Use this option only if your app needs unrestricted access.
+
+- **Read / Write | All Google Sheets:** Your app can read and modify all spreadsheets in your Google account but cannot delete entire sheets or spreadsheets. However, it can update cell values, modify rows, and clear data within sheets.
+
+- **Read | All Google Sheets:** Your app has read-only access to all spreadsheets in your Google account. It can fetch and display data but cannot make any modifications, including editing or deleting content.
+
+Clicking **Save and Authorize** prompts you to log in to your Google account, where you can grant access and select the sheets your app can use.
+
+
+
 </dd>
 
-Clicking **Save and Authorize** takes you to a Google login where you can authorize your account and select your sheets.
 
 ## Query Google Sheets
 
