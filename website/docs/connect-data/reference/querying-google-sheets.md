@@ -20,7 +20,7 @@ Options:
 
 - **Read / Write / Delete | Selected Google Sheets:** Your app has full access (read, write, and delete) only to the specific sheets you authorize. It can modify data, delete rows, remove sheets, and even delete entire spreadsheets, but only for the selected files.
 
-- **Read / Write / Delete | All Google Sheets:** Your app has full access to all spreadsheets in your Google account. This includes the ability to read and modify data, delete specific rows, remove entire sheets, and even delete entire spreadsheets. Use this option only if your app needs unrestricted access.
+- **Read / Write / Delete | All Google Sheets:** Your app has full access to all spreadsheets in your Google account. This includes the ability to read and modify data, delete specific rows, remove entire sheets, and even delete entire spreadsheets. 
 
 - **Read / Write | All Google Sheets:** Your app can read and modify all spreadsheets in your Google account but cannot delete entire sheets or spreadsheets. However, it can update cell values, modify rows, and clear data within sheets.
 
