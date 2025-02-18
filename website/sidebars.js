@@ -273,7 +273,6 @@ const sidebars = {
           type: 'category',
           collapsed: false,
           label: 'Reference',
-          link: { type: 'doc', id: 'connect-data/reference/overview' },
           items: [
             {
               type: 'category',
