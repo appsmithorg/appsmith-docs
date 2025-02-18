@@ -20,6 +20,7 @@ tags={[
 This guide demonstrates how to use JS modules to refresh OAuth tokens across all apps, enabling you to renew and extend your authentication access.
 
 ## Create JS module
+
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
   <iframe src="https://demo.arcade.software/3sTHVS5YLf5WTA05iplD?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
   </iframe>

@@ -2,9 +2,16 @@
 
 
 
-When you add a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`).
+When you incorporate a module from the package into your application, you create a module instance. You can create multiple instances of the same package, each with different settings and configurations. Instances are named sequentially (e.g., `productutil1`, `productutil2`), allowing for customized functionalities.
 
-This page provides information about the module settings and properties available within the app, which allows you to configure the query and JS modules.
+This page provides information about the module settings and properties available within the app, enabling you to configure the query and JS modules.
+
+
+<ZoomImage
+  src="/img/modules-diagram.png" 
+  alt=""
+  caption=""
+/>
 
 
 <ZoomImage
@@ -40,6 +47,7 @@ You cannot edit the **Inputs** name or query configuration directly from the App
 
 <ZoomImage
   src="/img/query-module-instance.png" 
+  src="/img/query-module-instance.png" 
   alt="Inputs image"
   caption=""
 />
@@ -54,6 +62,7 @@ If you have an input named `distinct_id`, you can pass data like this:
 {{appsmith.user.email}}
 ```
 
+For more information on how to read the dynamic data, see [Module](/packages/reference/package).
 For more information on how to read the dynamic data, see [Module](/packages/reference/package).
 
 </dd>
@@ -91,51 +100,43 @@ When enabled, this property displays a confirmation modal each time a query is e
 
 ## JS module instance
 
-These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module to your app. When you add multiple JS modules, whether from the same package or different ones, you can configure each module instance using these properties to meet your specific needs.
-
+These properties are customizable options available within the JS editor of the JS module. They can be accessed by adding the JS module in the App. Additionally, you can add multiple JS modules from the same package, each with different configurations.
 
 
 ### Parameters 
 
-This property displays all the parameters available per function.
+This property displays all the parameters available for the specified function.
 
 
 #### Inputs
 
-<dd>
+   <ZoomImage src="/img/inputs-js1.png" alt="" caption="" />
 
-The input property allows you to pass dynamic values from your app to the JS module. The input parameters are only available if they are defined in the JS function. You cannot edit the input name or JS module configuration from the App; you can only pass values to the available inputs. 
+The input property allows you to pass dynamic values from your app to the JS module. You can use these inputs to pass data into a function within the JS module. You cannot edit the input name or JS configuration from the App; you can only pass values to the available inputs. 
 
-You can pass data either using this **input** property or by providing values during runtime inside an event `(e.g., authUtils.login('email@domain.com', 'dsoi3$dfssn');)`. If both methods are used, the runtime parameters will take precedence over the values set in the UI.
+To access the data in the JS Module, create a function with parameters that can be utilized when the function is called.
 
-*Example*: If you have a JS function with predefined parameters like `email` and `passwordHash`, and you want to pass Input widget data from the app to the JS module, you can use the **Inputs** property.
+
+
+*Example*:
 
 ```js
-//JS Module
+//access the data in JS Module
 export default {
-  myFunction: (email, passwordHash) => {
+  myFunction: (email, password) => {
     console.log("Parameter 1: ", email);
-    console.log("Parameter 2: ", passwordHash);
+    console.log("Parameter 2: ", password);
     // Perform operations using param1 and param2
   }
 }
 ```
 
-```js
-//JS module instance
-email: 
-{{email_input.text}}
 
-passwordHash:
-{{PasswordUtils.hashPassword(pass_input.text)}}
-```
- <ZoomImage src="/img/inputs-js-module.png" alt="" caption="JS Module Instance | App" />
-
-</dd>
 
 ### Function setting
 
 This setting allows you to configure each function available in the JS module according to your requirements.
+
 
 
 #### Function name
@@ -156,3 +157,4 @@ When enabled, this property allows the specified JS function to run when the pag
 
 
 </dd>
+
