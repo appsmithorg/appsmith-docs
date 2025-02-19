@@ -4,11 +4,18 @@ slug: /getting-started/tutorials/the-basics/work-with-data-in-ui
 description:  Interact with Data in UI
 ---
 
-# Lesson 2 - Work with Data in UI
+# Work with Data in UI
 
-This tutorial takes you through the process of viewing and editing individual records via forms.
+In this lesson, you will learn how to display, update, and manage data. You will connect a table to a database, display user details in a form, and use the form to update user details directly from the UI.
 
-## View details for each record
+:::tip What will I learn? 📝
+By the end of this tutorial, you will learn to:
+
+- Connect UI widgets to a database.
+- Display and edit user details using a form.
+- Update user details from the UI and save changes to the database.
+- Trigger queries or JavaScript functions based on user actions.
+:::
 
 
 <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
@@ -16,74 +23,90 @@ This tutorial takes you through the process of viewing and editing individual re
   </iframe>
 </div>
 
-1. On the **UI** tab, click **+ New UI element** and drop a **Form** widget on the canvas to the right of the Table widget. 
+Before proceeding, ensure that you have completed [Lesson 1: Connect and Display Data](/getting-started/tutorials/the-basics/connect-query-display-data), where you will learn how to connect your app to a database, fetch data, and display it using a Table widget.
 
-2. Click the title **Form**. On the property pane to the right of the screen, in the **Text** property box, change the title from **Form** to `User Details`.
+1. Open your application and, from the Entity Explorer, click the **UI** tab. The UI tab opens a list of available widgets in Appsmith, which can be used to display data and design the app.
 
-3. Now add widgets on the Form to view user details. 
-    * For the user's name, drop an **Input** widget inside the Form. 
-    * On the property pane to the right, click on the default name **Input1** and rename it to `nameInput`. 
-    * In the **Text** property box, enter `Name`. 
-    * In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
+2. Click **+ New UI element** and drop a **Form** widget on the canvas to the right of the Table widget. The Form widget allows you to collect details from users, which can then be stored or used to update existing records in the database.
 
-4. You also need to view the user's date of birth. 
-    * Drop a **Datepicker** widget inside the Form. 
-    * Rename the widget to `dobInput`.
-    * In the **Text** property box, enter `DOB`.
-    * Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
-    * Type `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
-    * In the **Date format** property, select the **LL** date format.
+3. Rename the Form title to `User Details`. 
 
-5. And finally to view the user's photo, drop an **Image** widget inside the Form. 
-    * In the **Image** property box, type `{{usersTable.selectedRow.image}}`.
+4. Now, let's add different widgets inside the form to display and edit user details, including the user's name, date of birth, and photo.
 
+<dd>
 
-🚩 You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
+By doing this, whenever a row in the usersTable is selected, the corresponding user details will be displayed in the form. This allows you to view and update user information directly.
 
-## Update records
+#### User's Name
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/2xvW1VXHyYtXYz3mKTIj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Update Query">
-  </iframe>
-</div>
+To display and edit the user's name:
 
-1. Select the **Queries** tab on the *Entity Explorer* to the screen's left. 
+* Drop an **Input** widget inside the form and rename it to `nameInput`.
+* In the **Text** property box, enter `Name`. This serves as a label for the input field.
+* In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
 
-2. Click the **+ New Query / API** button. 
+#### User's Date of Birth
 
-3. Select **usersTutorialDB query** from the list of options. 
+* Drop an **Datepicker** widget inside the form and rename it to `dobInput`.
+* In the **Text** property box, enter `DOB`.
+* Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
+* Add `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
+* In the **Date format** property, select the **LL** date format.
 
-3. Rename the query to `updateUsers`. Delete the default fetch query template.  
+#### User's Photo
 
-4. Paste the below SQL update command in the query editor to update the `users` table in the database with the details modified in the Form.
+* Drop an **Image** widget inside the form.
+* In the **Image** property box, add `{{usersTable.selectedRow.image}}`.
 
-  ```sql
-  UPDATE public."users" 
-  SET name = {{nameInput.text}},
-  dob = {{dobInput.selectedDate}}
-  WHERE id = {{usersTable.selectedRow.id}} 
-  ```
+You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
+
+</dd>
 
 
-### Trigger update on button click
+5. Select the *Queries* tab on the Entity Explorer on the left side of the screen, then click the **+ New Query / API** button to create a new query.
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/Qe2cAW1gB3YeGPJugBrl?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
+6. Select the Users datasource from the list of options, then rename the query to `updateUsers`.
 
-1. Go back to the canvas by clicking on the **UI** tab on the *Entity Explorer*.
+7. Update the SQL command in the query editor to update the users table with the details edited in the Form.
 
-2. To connect the **updateUsers** query to a button, select the default **Submit** button on the Form.
-    * On the property pane to the right of the screen, in the **Label** property box, change the label to `Update`.
-    * Click the **+** icon next to the **onClick** event. 
-    * In the **Action** list, select **Execute a query > updateUsers** to run the query on button click. 
-    * Click the **+** icon next to the **onSuccess** callback. 
-    * Select **Execute a query > getUsers**. 
-    
-    The button is now configured to execute the **updateUsers** query to save any modified user details on the Form and to refresh the Table widget with the updated information. 
+<dd>
 
-3. Select the first row on the Table. Go ahead and modify the user's name on the Form and test the **Update** button to see if the update worked.
+```sql
+UPDATE public."users" 
+SET name = {{nameInput.text}},
+dob = {{dobInput.selectedDate}}
+WHERE id = {{usersTable.selectedRow.id}} 
+```
+
+</dd>
+
+8. Navigate back to the canvas by selecting the **UI** tab in the Entity Explorer.
+
+
+9. To update the database when the Submit button is clicked:
+
+<dd>
+
+- Select the default Submit button on the form and rename it to Update.
+- In the **onClick** event, set the action to Execute the `updateUsers`. This runs the query to update the database with the modified details.
+- In the onSuccess callback, set the action to Execute a query > getUsers. This refreshes the table data to reflect the updated user details.
+
+Now, select a row in the table widget to display the user's details in the form. After making the necessary updates, click Update to save the changes to the database and refresh the table with the updated data.
+
+
+
+
+
+
+
+
+
+</dd>
+
+
+
+
+
 
   :::caution
   The databases used in tutorials are public and shared by all Appsmith users, so ensure that you don't input confidential information during testing. The databases are automatically reset every day, so any updates made to these databases are temporary.
