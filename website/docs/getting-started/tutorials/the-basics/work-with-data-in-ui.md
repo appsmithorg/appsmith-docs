@@ -73,9 +73,9 @@ You've completed binding the data to the widgets on the Form. Select the rows on
 
 ```sql
 UPDATE public."users" 
-SET name = {{nameInput.text}},
-dob = {{dobInput.selectedDate}}
-WHERE id = {{usersTable.selectedRow.id}} 
+SET name = {{nameInput.text}}, 
+    dob = {{dobInput.selectedDate}} 
+WHERE id = {{usersTable.selectedRow.id}};
 ```
 
 </dd>
