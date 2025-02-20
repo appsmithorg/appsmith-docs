@@ -632,41 +632,6 @@ const sidebars = {
         `write-code/best-practices`,
       ]
     }, //CODE end
-    //module start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Packages (Beta)',
-      items: [
-        'packages/overview',
-
-        {
-          type: 'category',
-          label: 'Tutorial',
-          items: [
-            'packages/tutorial/query-module',
-            'packages/tutorial/js-module'
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'How-to Guides',
-          items: [
-            'packages/how-to-guides/pass-date-between-modules',
-            'packages/how-to-guides/use-query-inside-js-module',],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'packages/reference/package',
-            'packages/reference/query-module'
-          ],
-        }
-      ]
-    }, //module end
     {
       //Advanced Concepts Start
       type: 'category',
@@ -771,6 +736,42 @@ const sidebars = {
         'advanced-concepts/external-portal-using-appsmith',
       ],
     }, //Advanced Concepts end
+
+      //module start
+      {
+        type: 'category',
+        collapsed: false,
+        label: 'Packages (Beta)',
+        items: [
+          'packages/overview',
+  
+          {
+            type: 'category',
+            label: 'Tutorial',
+            items: [
+              'packages/tutorial/query-module',
+              'packages/tutorial/js-module'
+            ],
+          },
+          {
+            type: 'category',
+            collapsed: true,
+            label: 'How-to Guides',
+            items: [
+              'packages/how-to-guides/pass-date-between-modules',
+              'packages/how-to-guides/use-query-inside-js-module',],
+          },
+          {
+            type: 'category',
+            collapsed: false,
+            label: 'Reference',
+            items: [
+              'packages/reference/package',
+              'packages/reference/query-module'
+            ],
+          }
+        ]
+      }, //module end
   
     //Workflows start
     {
