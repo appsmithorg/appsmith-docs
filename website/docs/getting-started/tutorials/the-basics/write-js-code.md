@@ -4,7 +4,7 @@ slug: /getting-started/tutorials/the-basics/write-js-code
 description:  Now Code It
 ---
 
-# Lesson 3 - Now Code It
+# Lesson 3 - Write Code 
 
 This tutorial takes you through the process of writing JavaScript code in Appsmith. In the earlier lessons, you have written JS code inside the mustache syntax `{{}}` which is great for single-line coding. If you want to write more complex code, you have to use JS Objects.
 
@@ -15,11 +15,17 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
   </iframe>
 </div>
 
-1. Select the **JS** tab on the *Entity Explorer* to the screen's left. 
 
-2. Click the **+ New JS object** to create new JS Object. 
+Before proceeding, make sure you have completed Lesson 1 and Lesson 2, where you learned how to display, manage, and update data.
 
-3. Delete everything within `export default {}`. Instead, paste the following function inside the braces.
+
+
+1. Open your application and, from the Entity Explorer, click the JS tab, which allows you to create and manage JavaScript functions.
+
+2. Click the **+ New JS Object** to create a new `JSObject1`, where you can define variables, write functions, and reuse logic across your application.
+
+
+3. Delete the existing code inside `export default {}` and replace it with the following function, which returns a color code based on gender. This function will be used to dynamically change the background color of table cells in the next steps.
 
   ```javascript
   getBackground: (gender) => {
@@ -30,19 +36,27 @@ This tutorial takes you through the process of writing JavaScript code in Appsmi
   ```
   This function returns a different hex color code based on gender. 
 
-4. Go back to the canvas by clicking the page name or the **UI** tab.
+4. Navigate back to the canvas by selecting the **UI** tab in the Entity Explorer.
 
 5. Select the `usersTable` Table. 
 
-6. Click the gear icon ⚙️ next to the **gender** column. Click on the **Style** tab.
+6. Open the column settings by clicking the **⚙️** (gear icon) next to the gender column, then navigate to the **Style** tab.
 
-7. In the **Cell Background** property, click the **JS** button and paste the following code snippet to call the function to return the color code based on the gender of the user in the current table row.
+7. In the **Cell Background** property, click the **JS** button to enable JavaScript execution, then paste the following code snippet. This will dynamically set the background color of each row based on the user’s gender.
+
+<dd>
+
+The function inside `JSObject1` takes the gender value from each row and returns a corresponding color code, which is applied to the background.
 
   ```js
   {{JSObject1.getBackground(currentRow.gender)}}
   ```
 
   You will see the cell color change based on the value in the gender column.
+
+
+</dd>
+
 
 ## Use built-in objects and functions
 

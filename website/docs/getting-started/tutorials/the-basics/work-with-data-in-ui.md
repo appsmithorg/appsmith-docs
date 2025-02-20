@@ -51,7 +51,7 @@ Configure the properties as shown below:
 
 
 | **Widget**      | **Name**       | **Property**      | **Value**                          | **Description**                                       |
-|---------------|---------------|------------------|----------------------------------|--------------------------------------------------|
+|---------------|---------------|------------------|----------------------------------|---------------------|
 | **Input**     | `nameInput`    | Default Value   | `{{usersTable.selectedRow.name}}` | Displays the user's name and allows editing.  |
 | **Datepicker** | `dobInput`    | Default Date    | `{{usersTable.selectedRow.dob}}`  | Displays the user's date of birth for selection and modification. |
 |               |               | Date Format     | **LL**                           | Formats the date in a user-friendly format. |
