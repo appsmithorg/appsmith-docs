@@ -667,49 +667,6 @@ const sidebars = {
         }
       ]
     }, //module end
-    //Workflows start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Workflows (Beta)',
-      items: [
-        'workflows/README',
-        //category- Api
-        {
-          type: 'category',
-          label: 'Tutorial',
-          link: {
-            type: 'doc',
-            id: 'workflows/tutorials/create-workflow',
-          },
-          items: [
-          ],
-        },
-        {
-          type: 'category',
-          label: 'How-to Guides',
-          link: {
-            type: 'doc',
-            id: 'workflows/how-to-guides/README',
-          },
-          items: [
-            'workflows/how-to-guides/create-approval-workflow',
-            'workflows/how-to-guides/trigger-workflow-from-appsmith-app',
-            'workflows/how-to-guides/set-up-automatic-processing',
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'workflows/reference/workflow-queries',
-            'workflows/reference/workflow-functions'
-          ],
-        }
-      ]
-
-    }, //Workflows end
     {
       //Advanced Concepts Start
       type: 'category',
@@ -814,41 +771,7 @@ const sidebars = {
         'advanced-concepts/external-portal-using-appsmith',
       ],
     }, //Advanced Concepts end
-    //module start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Packages (Beta)',
-      items: [
-        'packages/overview',
-
-        {
-          type: 'category',
-          label: 'Tutorial',
-          items: [
-            'packages/tutorial/query-module',
-            'packages/tutorial/js-module'
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'How-to Guides',
-          items: [
-            'packages/how-to-guides/use-query-inside-js-module',],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'packages/reference/package',
-            'packages/reference/query-module'
-
-          ],
-        }
-      ]
-    }, //module end
+  
     //Workflows start
     {
       type: 'category',
