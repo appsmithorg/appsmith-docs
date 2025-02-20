@@ -85,6 +85,6 @@ If the library fails to load:
 
 ## See Also
 
-- [Air-Gapped Installation Guide](air-gapped-installation)
-- [Custom Widget Development](../../custom-widgets)
-- [Environment Variables Reference](../../core-concepts/environment-variables)
+- [Air-Gapped Installation Guide](/getting-started/setup/installation-guides/air-gapped)
+- [Custom Widget Development](/reference/widgets/custom)
+- [Environment Variables Reference](/getting-started/setup/environment-variables)
