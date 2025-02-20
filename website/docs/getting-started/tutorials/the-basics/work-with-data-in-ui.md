@@ -18,10 +18,22 @@ By the end of this tutorial, you will learn to:
 :::
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/nM2iq5FvdGmm2OHagdbB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/nM2iq5FvdGmm2OHagdbB?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
+
+
 
 Before proceeding, ensure that you have completed [Lesson 1: Connect and Display Data](/getting-started/tutorials/the-basics/connect-query-display-data), where you will learn how to connect your app to a database, fetch data, and display it using a Table widget.
 
@@ -31,34 +43,20 @@ Before proceeding, ensure that you have completed [Lesson 1: Connect and Display
 
 3. Rename the Form title to `User Details`. 
 
-4. Now, let's add different widgets inside the form to display and edit user details, including the user's name, date of birth, and photo.
+4. To display and edit user details, add an **Input** widget for the user's name, a **Datepicker** widget for the date of birth, and an **Image** widget for the profile photo inside the form.
 
 <dd>
 
-By doing this, whenever a row in the usersTable is selected, the corresponding user details will be displayed in the form. This allows you to view and update user information directly.
+Configure the properties as shown below:
 
-#### User's Name
 
-To display and edit the user's name:
+| **Widget**      | **Name**       | **Property**      | **Value**                          | **Description**                                       |
+|---------------|---------------|------------------|----------------------------------|--------------------------------------------------|
+| **Input**     | `nameInput`    | Default Value   | `{{usersTable.selectedRow.name}}` | Displays the user's name and allows editing.  |
+| **Datepicker** | `dobInput`    | Default Date    | `{{usersTable.selectedRow.dob}}`  | Displays the user's date of birth for selection and modification. |
+|               |               | Date Format     | **LL**                           | Formats the date in a user-friendly format. |
+| **Image**     | `profile` | Image Source  | `{{usersTable.selectedRow.image}}` | Displays the user's profile photo.            |
 
-* Drop an **Input** widget inside the form and rename it to `nameInput`.
-* In the **Text** property box, enter `Name`. This serves as a label for the input field.
-* In the **Default Value** property box, type `{{usersTable.selectedRow.name}}`. This displays the user's name of the selected row on the **usersTable** Table widget.
-
-#### User's Date of Birth
-
-* Drop an **Datepicker** widget inside the form and rename it to `dobInput`.
-* In the **Text** property box, enter `DOB`.
-* Click the **JS** button next to the **Default Date** property to connect the Datepicker widget to the user's date of birth on the Table. 
-* Add `{{usersTable.selectedRow.dob}}` in the **Default Date** property box.
-* In the **Date format** property, select the **LL** date format.
-
-#### User's Photo
-
-* Drop an **Image** widget inside the form.
-* In the **Image** property box, add `{{usersTable.selectedRow.image}}`.
-
-You've completed binding the data to the widgets on the Form. Select the rows on the Table to view the corresponding user details on the Form.
 
 </dd>
 
