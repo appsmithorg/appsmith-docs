@@ -14,7 +14,7 @@ This page provides steps to install Appsmith on AWS ECS using Fargate.
   * Provision an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-application-load-balancer.html#configure-load-balancer), and ensure that port 80 and 443 are available to configure ECS service.
   * Add an Amazon Security group with ports 80, and 443 accessible. If you don't have one, [Create a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-security-group.html). 
 * You will not be able to use the built-in MongoDB with EFS as it will cause the Appsmith instance to crash. Hence, ensure you have set up and can access an external MongoDB instance hosting MongoDB V5.0 or later. For more information, see [External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis#external-mongodb).
-
+* Ensure outbound HTTPS traffic is whitelisted for `cs.appsmith.com`. If using a custom firewall, add this domain to the allowlist.
 
 ## Create EFS volume
 

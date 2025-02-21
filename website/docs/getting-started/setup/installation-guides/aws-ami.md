@@ -15,6 +15,7 @@ This page provides steps to install Appsmith using an Amazon Machine Image (AMI)
 - To enable port access, [add an inbound rule](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-security-groups.html#adding-security-group-rule) for the port ranges 80, 443, and 22 to the security group you created above.
 - To allow outbound traffic, add an outbound rule to permit all traffic. If you need specific restrictions, customize the outbound rules according to your requirements.
 - Ensure you have created the security group and the SSH key pair in the same region.
+- Whitelist `cs.appsmith.com` in your security group’s outbound rules to allow outbound HTTPS traffic. If using a custom firewall, ensure these domains are permitted.
 
 ## Install Appsmith
 

@@ -21,6 +21,7 @@ Before launching an ACI instance, you need to have an Azure subscription and hav
 
 - [Azure Subscription](https://azure.com/free) - If you don't have an Azure subscription, you can sign up for a free trial.
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure).
+- Whitelist `cs.appsmith.com` in your firewall settings to allow outbound HTTPS traffic. If using Azure Firewall, add these domains under Application Rules.
 
 ## Configure variables
 
