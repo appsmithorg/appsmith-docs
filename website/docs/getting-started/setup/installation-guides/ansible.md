@@ -10,6 +10,7 @@ This page provides instructions to install Appsmith on a remote host using Ansib
 
 - Install Ansible on your local machine. See the official Ansible documentation for your [operating system](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-specific-operating-systems).
 - An Ubuntu server for hosting.
+- Whitelist `cs.appsmith.com` in your security group’s outbound rules to allow outbound HTTPS traffic. If using a custom firewall, ensure these domains are permitted.
 
 ## Install Appsmith
 
