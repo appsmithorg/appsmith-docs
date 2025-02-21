@@ -34,6 +34,9 @@ Allows you to specify a default tab by its name, which is automatically displaye
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 ####
 
 #### Visible `boolean`
@@ -86,6 +89,8 @@ This property determines how the widget's height adjusts to changes in its conte
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onTabSelected
