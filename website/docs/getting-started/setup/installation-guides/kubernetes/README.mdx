@@ -30,6 +30,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
    - [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
    - [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
 3. Set up a Kubernetes cluster and persistent volume on your preferred platform for hosting the Kubernetes cluster. If you are hosting the Kubernetes cluster on AWS-EKS, see [Set up Kubernetes cluster on AWS-EKS](/getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks)
+4. Whitelist `cs.appsmith.com` in your firewall or security group’s outbound rules to ensure proper connectivity to required services.
 
 :::caution
 A persistent volume configuration is required on the Kubernetes cluster before proceeding with the Appsmith installation.
