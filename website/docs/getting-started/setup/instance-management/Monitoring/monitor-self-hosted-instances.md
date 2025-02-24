@@ -2,13 +2,24 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Monitor Installations
+# Monitoring Installations
 
 This page shows you how to monitor a self-hosted Appsmith installation, which allows you to track system health, performance, and resource usage. By setting up monitoring, you can detect potential issues early, ensure smooth operation, and maintain high availability for your Appsmith instance.
 
-You can integrate the following API endpoints into monitoring tools to automate tracking and alerts.
 
-## Check System Health
+## Prerequisites
+
+Before you begin, ensure you have the following:
+
+- Access to your installation’s endpoints (e.g., health check and API endpoints).
+- A telemetry or monitoring system configured to receive data from your Appsmith instance (e.g., Datadog, Prometheus, New Relic, or Grafana).
+
+
+## Monitor key system metrics
+
+Monitoring key system metrics helps ensure the stability, performance, and reliability of your application. You can integrate the following API endpoints into monitoring tools to automate tracking and alerts.
+
+### Check System Health
 
 The Health Check API verifies whether your Appsmith instance is running and accessible. Regular monitoring helps detect downtime early and ensures system availability.
 
@@ -45,7 +56,7 @@ If the response status is `500`, the server may be down or misconfigured. A `503
 </dd>
 
 
-## Monitor Subsystems
+### Monitor Subsystems
 
 Appsmith uses [Supervisor](https://supervisord.org/) to manage and monitor the health of various subsystems, including the Appsmith server, Caddy, and MongoDB. If a subsystem becomes unresponsive, Supervisor attempts to restart it automatically. If the [Health Check API](#check-system-health) fails, you can use Supervisor to diagnose and manage subsystems.
 
@@ -89,7 +100,7 @@ You can monitor and manage processes using either the Web Interface or the Comma
 
 
 
-##  Application Performance Monitoring
+###  Application Performance Monitoring
 
 Application Performance Monitoring (APM) helps track API response times to ensure smooth application performance. It allows you to detect slow responses and take action to optimize performance.
 
@@ -126,14 +137,14 @@ Using monitoring tools helps track API performance, detect slow response times, 
 
 </dd>
 
-## Monitor Resource Utilization and SLO Compliance
+### Monitor Resource Utilization and SLO Compliance
 
 Monitoring resource usage ensures system stability and helps maintain performance within defined thresholds. Tracking CPU and memory usage allows you to prevent bottlenecks and meet Service Level Objectives (SLOs).
 
 
-1. Set up monitoring in your preferred tool. Use built-in cloud monitoring (e.g., [AWS CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingSetup.html), [GCP Monitoring](https://cloud.google.com/monitoring?hl=en)) or third-party tools (e.g., [Datadog](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/), [New Relic](https://newrelic.com/blog/how-to-relic/docker-kubernetes-monitoring), [Prometheus](https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.exporter.cadvisor/)).
+1. Set up monitoring in your preferred tool. Use built-in cloud monitoring (e.g., [AWS CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingSetup.html), G[CP Monitoring](https://cloud.google.com/monitoring?hl=en)) or third-party tools (e.g., [Datadog](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/), [New Relic](https://newrelic.com/blog/how-to-relic/docker-kubernetes-monitoring), [Prometheus](https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.exporter.cadvisor/)).
 
-2. Add CPU, memory usage, and network traffic metrics to your monitoring dashboard based on your monitoring tool’s requirements. This helps track system health and detect anomalies.
+2. Add CPU, memory usage, and network traffic metrics to your monitoring dashboard to track system health and detect anomalies.
 
 3. Configure alerts for resource thresholds.
 
@@ -152,7 +163,7 @@ Monitoring resource usage ensures system stability and helps maintain performanc
 
 
 
-## Check Feature Flags
+### Check Feature Flags
 
 If you want to check which feature flags are enabled for your instance, you can retrieve the list using the feature flags API. This lets you see available features, but you cannot enable or disable them manually.
 
