@@ -48,7 +48,7 @@ GET /api/v1/health
 - Response times exceeding 2 seconds may indicate performance issues.
 
 
-## Application Performance Monitoring
+## Application Performance API
 
 Application Performance Monitoring (APM) helps track API response times to ensure smooth application performance. It allows you to detect slow responses and take action to optimize performance.
 
