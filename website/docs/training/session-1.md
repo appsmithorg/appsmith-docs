@@ -50,6 +50,8 @@ hide_title: false
 
 ## Workspaces and Sharing Access
 
+<dd>
+
 1. In the Editor mode, on the top, you will see your App name as **My First Application**. Click on it and Rename it as **Activity 1**.
 2. Now click on the Appsmith Logo on the top left corner of the page, and it will take you back to the Appsmith Workspaces page.
 3. You will be able to see your workspaces or what workspaces you have access to. And also see what all Apps are accessible for you.
@@ -57,9 +59,12 @@ hide_title: false
 5. Click on the Edit icon next to it and rename your workspace as **\<Name\>-Training-Workspace**
 6. Also you can share access to your workspace by clicking on the **Share** button. Type in **Training Admin** and select the Administrator role and click Invite. This will allow us to view your Applications and help you in the case of any issue you face during the training.
 
+</dd>
+
 ## Widget Essentials and Displaying Data
 
 1. **Table Widget**
+
 <dd>
 
 * Introduce a Table widget from the Widget pane on the left.
@@ -81,7 +86,10 @@ hide_title: false
 * From its Style tab, you can customise many things like the size or the color of the Text widget
 * Set the Font size as **L** (Large) and select the Text color as the first **Theme color**
 
+</dd>
+
 3. **Button Widget**
+
 <dd>
 
 * Introduce a Button widget on to the canvas
@@ -92,6 +100,7 @@ hide_title: false
 </dd>
 
 4. **Select Widget**
+
 <dd>
 
 * Create an SQL query named **getGenderValues** that retrieves all the distinct values of the table from the “gender“ column
@@ -121,6 +130,7 @@ hide_title: false
 </dd>
 
 5. **Container Widget**
+
 <dd>
 
 * Drag and place the 4 widgets Table, Text, Button and Select on the canvas however you want
