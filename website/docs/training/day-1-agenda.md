@@ -43,7 +43,7 @@ Discover what Appsmith is, its key features, and how it empowers you to build ap
 
 </dd>
 
-### 5. Task: Create a Basic App
+### [5. Task: Create a Basic App](https://training.app.appsmith.com/app/task-1/home-67bdd31349bf245ac087e8fe)
 <dd>
 
 - **Hands-On Challenge:** Build a basic application integrating datasources, widgets, and custom code.

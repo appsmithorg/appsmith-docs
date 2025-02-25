@@ -9,7 +9,7 @@ hide_title: false
 
 **Ignore this if you were able to attend the previous Session.**
 
-1. Sign up on this instance: [Training Instance](https://training.app.appsmith.com/user/signup) (Ignore if already done)
+1. Sign up on this instance: [Training Instance](https://training.app.appsmith.com/user/signup)
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
