@@ -5,15 +5,13 @@ hide_title: false
 
 # Day 1: Appsmith Training Agenda
 ## Introduction and Core Concepts
-
-### 1. Introduction to Appsmith
 <dd>
 
-- **Overview:** Discover what Appsmith is, its key features, and how it empowers you to build applications quickly.
+Discover what Appsmith is, its key features, and how it empowers you to build applications quickly.
 
 </dd>
 
-### [2. Connecting and Managing Datasources](/training/session-1#connecting-and-managing-datasources)
+### [1. Connecting and Managing Datasources](/training/session-1#connecting-and-managing-datasources)
 <dd>
 
 - **Datasource Setup:** Learn to connect various datasources such as REST APIs and databases.
@@ -21,7 +19,7 @@ hide_title: false
 
 </dd>
 
-### [3. Widget Essentials and Displaying Data](/training/session-1#widget-essentials-and-displaying-data)
+### [2. Widget Essentials and Displaying Data](/training/session-1#widget-essentials-and-displaying-data)
 <dd>
 
 - **Core Widgets:** Explore essential widgets like Table, Button, Select, and Container.
@@ -29,7 +27,7 @@ hide_title: false
 
 </dd>
 
-### [4. Customizing and Enhancing Functionality with Code](/training/session-2#customizing-and-enhancing-functionality-with-code)
+### [3. Customizing and Enhancing Functionality with Code](/training/session-2#customizing-and-enhancing-functionality-with-code)
 <dd>
 
 - **Custom Code Integration:** Use JavaScript to extend widget functionality and manipulate data.
@@ -37,7 +35,7 @@ hide_title: false
 
 </dd>
 
-### [5. Building Interactive Dashboards and CRUD Interfaces](/training/session-2#building-interactive-dashboards-and-crud-interfaces)
+### [4. Building CRUD Interfaces and Interactive Dashboards](/training/session-2#building-crud-interfaces-and-interactive-dashboards)
 <dd>
 
 - **Dashboard Assembly:** Combine multiple widgets to create a cohesive, interactive dashboard.
@@ -45,7 +43,7 @@ hide_title: false
 
 </dd>
 
-### 6. Task: Create a Basic App
+### 5. Task: Create a Basic App
 <dd>
 
 - **Hands-On Challenge:** Build a basic application integrating datasources, widgets, and custom code.
@@ -53,7 +51,7 @@ hide_title: false
 
 </dd>
 
-### 7. Day 2 Preview: Get a sneak peek into Git Integration and Custom Widgets
+### 6. Get a sneak peek into Day 2 Agenda 
 <dd>
 
   - **Git Integration:** Understand version control for collaborative development.

@@ -19,10 +19,23 @@ hide_title: false
 
 1. **Inline JS**
 
+<dd>
+
+* You can write javascript code inside any widget's fields that has **JS** symbol next to it, by using the **Moustsache {{}}** operator
+* This allows you to logically customise a widget's functionality and styling based on some conditions
+* Introduce a checkbox and rename the Label as **Allow Filters**
+* Now go to the settings of the Select widget, and click on **JS** next to the Visible field
+* Bind the status of the Checkbox to that field like this **{{Checkbox1.isChecked}}**
+* Click on the Preview **:arrow_forward:** symbol next to the Share button on the top
+* Now toggle the checkbox to see the Select widget's visibility changing based on your selection
+
+</dd>
+
 2. **JSObjects**
 
 <dd>
 
+* You can also write functions and create variables to bind it to a widget's Data or an Event
 * From the left sidebar, click on **JS** and create a **New JS object** and name it as **Utils**
 * Introduce a variable with some initial value inside it
 ```jsx
@@ -52,7 +65,7 @@ getUserData() {
 
 </dd>
 
-## Building Interactive Dashboards and CRUD Interfaces
+## Building CRUD Interfaces and Interactive Dashboards
 
 1. **Forms**
 

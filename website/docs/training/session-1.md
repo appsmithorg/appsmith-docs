@@ -63,7 +63,7 @@ hide_title: false
 <dd>
 
 * Introduce a Table widget from the Widget pane on the left.
-* Connect it to your datasource by select the datasource **Postgres DB** which we just created.
+* Connect data from the table settings on the right, and select the datasource **Postgres DB** which we just created.
 * Select the table **public.users** and the searchable column as **name**, and click **Connect data**
 * Now go to the **Queries** Tab on the left and check out the automatically generated CRUD queries for your database
 * See how the table is connected to your Data and that it supports Server Side Pagination
@@ -72,16 +72,26 @@ hide_title: false
 
 </dd>
 
-2. **Button Widget**
+2. **Text Widget**
+
 <dd>
 
-* Introduce a Button widget on top of the table placed on the right
-* Name the button as Refresh, and possibly find an icon from the style to suit the Action
-* Connect the onClick of the widget to the Table’s Select Query
+* Drag and drop a text widget on to the canvas
+* Edit the Text from its settings on the right, and set the value it as **My User Database**
+* From its Style tab, you can customise many things like the size or the color of the Text widget
+* Set the Font size as **L** (Large) and select the Text color as the first **Theme color**
+
+3. **Button Widget**
+<dd>
+
+* Introduce a Button widget on to the canvas
+* Set the button value as Refresh, and possibly find an icon from the Style tab to suit this Action
+* You can also set the type of the button between Primary, Secondary and Teritary options
+* Finally connect the onClick of the widget to the Table’s **Select_public_users1** query
 
 </dd>
 
-3. **Select Widget**
+4. **Select Widget**
 <dd>
 
 * Create an SQL query named **getGenderValues** that retrieves all the distinct values of the table from the “gender“ column
@@ -106,17 +116,18 @@ hide_title: false
   </div>
 </details>
 
-* Connect the onChange of the Select Widget to trigger the Table’s Select Query
+* Connect the onOptionChange event of the Select Widget to trigger the Table’s **Select_public_users1** query
 
 </dd>
 
-4. **Container Widget**
+5. **Container Widget**
 <dd>
 
-* Place the 3 widgets Table, Button and Select as per your choice
-* Click and highlight all the widgets to select them, and you will see a minibar popup
-* Select the last option, ie the Container widget to wrap these widgets inside a container
-* Now move it around the canvas to align it centrally
+* Drag and place the 4 widgets Table, Text, Button and Select on the canvas however you want
+* You can also drag and highlight all the widgets to select them, and you will see a minibar pop up
+* Select the last option, to group these widgets inside a container
+* Now you can easily move it around the canvas and align it based on your need
+* Like other widgets, you can also configure its height either as **Fixed** or **Auto Height**
 
 </dd>
 
@@ -126,6 +137,7 @@ hide_title: false
 
 * Go to the bottom left Corner and click on the **:gear:** button that will take you to the App Settings
 * Click on Theme and explore changing the primary color, app border radius and shadow
+* Notice how you will see the changes happening across your widgets in real time based on your theming changes
 
 </dd>
 
