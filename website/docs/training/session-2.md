@@ -23,11 +23,11 @@ hide_title: false
 
 <dd>
 
-* You can write javascript code inside any widget's fields that has **JS** symbol next to it, by using the **Moustsache {{}}** operator
+* You can write javascript code inside any widget's fields that has **JS** symbol next to it, by using the `Moustache {{}}` operator
 * This allows you to logically customise a widget's functionality and styling based on some conditions
 * Introduce a checkbox and rename the Label as **Allow Filters**
 * Now go to the settings of the Select widget, and click on **JS** next to the Visible field
-* Bind the status of the Checkbox to that field like this **{{Checkbox1.isChecked}}**
+* Bind the status of the Checkbox to that field like this `{{Checkbox1.isChecked}}`
 * Click on the Preview symbol next to the Share button on the top
 * Now toggle the checkbox to see the Select widget's visibility changing based on your selection
 
