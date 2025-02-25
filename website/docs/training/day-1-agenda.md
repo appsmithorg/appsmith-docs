@@ -13,7 +13,7 @@ hide_title: false
 
 </dd>
 
-### 2. Connecting and Managing Datasources
+### [2. Connecting and Managing Datasources](/training/session-1#connecting-and-managing-datasources)
 <dd>
 
 - **Datasource Setup:** Learn to connect various datasources such as REST APIs and databases.
@@ -21,7 +21,7 @@ hide_title: false
 
 </dd>
 
-### 3. Widget Essentials and Displaying Data
+### [3. Widget Essentials and Displaying Data](/training/session-1#widget-essentials-and-displaying-data)
 <dd>
 
 - **Core Widgets:** Explore essential widgets like Table, Button, Select, and Container.
@@ -29,7 +29,7 @@ hide_title: false
 
 </dd>
 
-### 4. Customizing and Enhancing Functionality with Code
+### [4. Customizing and Enhancing Functionality with Code](/training/session-2#customizing-and-enhancing-functionality-with-code)
 <dd>
 
 - **Custom Code Integration:** Use JavaScript to extend widget functionality and manipulate data.
@@ -37,7 +37,7 @@ hide_title: false
 
 </dd>
 
-### 5. Building Interactive Dashboards and CRUD Interfaces
+### [5. Building Interactive Dashboards and CRUD Interfaces](/training/session-2#building-interactive-dashboards-and-crud-interfaces)
 <dd>
 
 - **Dashboard Assembly:** Combine multiple widgets to create a cohesive, interactive dashboard.
