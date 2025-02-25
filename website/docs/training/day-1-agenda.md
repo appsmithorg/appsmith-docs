@@ -1,11 +1,10 @@
 ---
-title: "Appsmith Training Agenda - Day 1: Introduction and Core Concepts"
+title: "Agenda"
 hide_title: false
 ---
 
-# Appsmith Training Agenda
-
-## Day 1: Introduction and Core Concepts
+# Day 1: Appsmith Training Agenda
+## Introduction and Core Concepts
 
 ### 1. Introduction to Appsmith
 <dd>
