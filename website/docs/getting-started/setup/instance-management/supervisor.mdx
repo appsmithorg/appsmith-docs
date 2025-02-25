@@ -4,14 +4,11 @@ import TabItem from '@theme/TabItem';
 
 # Monitor Installations
 
-This page shows you how to monitor a self-hosted Appsmith installation, which allows you to track system health, performance, and resource usage. By setting up monitoring, you can detect potential issues early, ensure smooth operation, and maintain high availability for your Appsmith instance.
-
-You can integrate the following API endpoints into monitoring tools to automate tracking and alerts.
+This page shows you how to monitor a self-hosted Appsmith installation, which allows you to track system health, performance, and resource usage. You can also integrate API endpoints into monitoring tools for automated tracking and alerts.
 
 ## Check System Health
 
-The Health Check API verifies whether your Appsmith instance is running and accessible. Regular monitoring helps detect downtime early and ensures system availability.
-
+To check the health of your Appsmith instance, use the Health Check API. This allows you to verify if the instance is running and accessible. Follow the steps to monitor system availability and detect downtime early.
 
 1. Run the following Health Check API to verify your instance’s status. Replace `your-appsmith-installation.com` with your actual instance domain.
 
@@ -59,12 +56,21 @@ You can monitor and manage processes using either the Web Interface or the Comma
     The Supervisor Web Interface provides an easy-to-use, graphical way to monitor and manage Appsmith processes. Follow the steps below to configure and access the web interface.
 
     1. Go to the `docker.env` file located in the `stacks/configuration` folder.
-    2. Set the following environment variables to configure the Supervisor credentials:
-        ```bash
+    2. Add the following environment variables to set the Supervisor credentials:
+
+      <dd>
+         ```bash
         APPSMITH_SUPERVISOR_USER=<SUPERVISOR-USER>
         APPSMITH_SUPERVISOR_PASSWORD=<SUPERVISOR-PASSWORD>
         ```
-    3. Once the credentials are set, you can access the Supervisor web interface at `http://[your-domain]/supervisor`. For example, if your Appsmith instance is available at `http://localhost`, the Supervisor web interface can be accessed at `http://localhost/supervisor`.
+
+        If these variables are not set, you must create a new Supervisor user by manually defining a username and password in the docker.env file. Supervisor uses these credentials for authentication when accessing the web interface.
+
+      </dd>
+
+    3. Save the file and restart your Appsmith instance for the changes to take effect.
+
+    3. You can access the Supervisor web interface at `http://[your-domain]/supervisor`. For example, if your Appsmith instance is available at `http://localhost`, the Supervisor web interface can be accessed at `http://localhost/supervisor`.
 
         <ZoomImage src="/img/appsmith_supervisord_ui.png" alt="All managed processes listed in the web interface" caption="All managed processes listed in the web interface" />
 
@@ -74,14 +80,28 @@ You can monitor and manage processes using either the Web Interface or the Comma
     The Supervisor Command Line Interface (CLI) provides a way to interact with and manage processes directly from the terminal. Follow the steps below to monitor the processes using the CLI.
 
     1. To check the status of all running processes, use the following command:
+      
+      <dd>
+
         ```bash
         docker-compose exec appsmith supervisorctl status
         ```
+      This lists all managed processes along with their current state (e.g., `RUNNING`, `STOPPED`, `FATAL`).
+
+
+      </dd>
 
     2. To view the last few lines of the `stderr` output of a specific process, use:
+
+      <dd>
+
         ```bash
         docker-compose exec appsmith supervisorctl tail <process_name> stderr
         ```
+
+        Replace `<process_name>` with the name of the process you want to check. You can get the process name from the `supervisorctl` status command output.  
+
+       </dd>
 
     For a complete list of `supervisorctl` commands, refer to the [Supervisor official documentation](http://supervisord.org/running.html#supervisorctl-actions).
   </TabItem>
@@ -107,14 +127,11 @@ Replace `your-appsmith-installation.com` with your instance domain.
 
 </dd>
 
-2. Verify the response. A successful request returns status: `200`.
+2. Verify the response. A successful request returns status: 200 with an expected latency of less than 300ms.
 
 <dd>
 
 Along with the status, you can see a list of key response elements, which help you monitor system health, track feature availability, and debug potential issues.
-
-- **Status Code:** `200` (success), `500` (server error), `503` (service unavailable).
-- **Expected Latency:** Less than 300ms
 
 </dd>
 
@@ -128,8 +145,7 @@ Using monitoring tools helps track API performance, detect slow response times, 
 
 ## Monitor Resource Utilization and SLO Compliance
 
-Monitoring resource usage ensures system stability and helps maintain performance within defined thresholds. Tracking CPU and memory usage allows you to prevent bottlenecks and meet Service Level Objectives (SLOs).
-
+If you want to maintain system stability and ensure optimal performance, monitor resource usage to track CPU and memory consumption. This helps prevent bottlenecks and ensures compliance with Service Level Objectives (SLOs).
 
 1. Set up monitoring in your preferred tool. Use built-in cloud monitoring (e.g., [AWS CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingSetup.html), [GCP Monitoring](https://cloud.google.com/monitoring?hl=en)) or third-party tools (e.g., [Datadog](https://www.datadoghq.com/blog/how-to-monitor-docker-resource-metrics/), [New Relic](https://newrelic.com/blog/how-to-relic/docker-kubernetes-monitoring), [Prometheus](https://grafana.com/docs/alloy/latest/reference/components/prometheus/prometheus.exporter.cadvisor/)).
 
@@ -154,7 +170,9 @@ Monitoring resource usage ensures system stability and helps maintain performanc
 
 ## Check Feature Flags
 
-If you want to check which feature flags are enabled for your instance, you can retrieve the list using the feature flags API. This lets you see available features, but you cannot enable or disable them manually.
+To check the feature flags enabled for your instance, use the Feature Flags API. This allows you to view available features, but you cannot enable or disable them manually.
+
+
 
 1. Run the API request to retrieve feature flags:
 
@@ -177,4 +195,4 @@ Replace `your-appsmith-installation.com` with your instance domain.
 
 ## Troubleshooting
 
-If resource usage exceeds defined thresholds or you face deployment issues, capture relevant monitoring screenshots. Refer to the troubleshooting guide for common errors. If the issue persists, contact Appsmith Support using the chat widget at the bottom right and provide the screenshots for further diagnostics.
+If resource usage exceeds defined thresholds or you face deployment issues, capture relevant monitoring screenshots. Refer to the [troubleshooting guide](/help-and-support/troubleshooting-guide/deployment-errors) for common errors. If the issue persists, contact Appsmith Support using the chat widget at the bottom right and provide the screenshots for further diagnostics.
