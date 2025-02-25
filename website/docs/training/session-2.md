@@ -7,26 +7,30 @@ hide_title: false
 
 ## Getting Started 
 
-**Ignore this if you were able to attend the previous Session, create a Workspace with your name and already have an App called Activity 1.**
+**Ignore this if you were able to attend the previous Session.**
 
-1. Sign up on this instance: [Optum Training Instance](https://optum-training.app.appsmith.com/user/signup)
+1. Sign up on this instance: [Training Instance](https://training.app.appsmith.com/user/signup) (Ignore if already done)
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
-3. Go to this [Training Workspace](https://optum-training.app.appsmith.com/applications?workspaceId=66053dafa476fb4189c2713d) and fork **Activity 1** App to your newly created Workspace.
+3. Go to this [Training Workspace](https://training.app.appsmith.com/applications?workspaceId=67bc411d08cb0b5962026d57) and fork **Activity 1** App to your newly created Workspace.
 
-##  JSObjects
+## Customizing and Enhancing Functionality with Code
+
+1. **Inline JS**
+
+2. **JSObjects**
 
 <dd>
 
-* Create a JSObject function and name it as **Utils**
+* From the left sidebar, click on **JS** and create a **New JS object** and name it as **Utils**
 * Introduce a variable with some initial value inside it
 ```jsx
 currentDate: new Date(),
 ```
 * Introduce a function to get **Select_public_users1** data
 ```jsx
-getUserData: () => {
+getUserData() {
    return Select_public_users1.data
 },
 ```
@@ -35,7 +39,7 @@ getUserData: () => {
   <summary>Show Hint</summary>
   <div>
     ```jsx
-    getUserAge: (dob) => {
+    getUserAge(dob) {
         return moment(this.currentDate).diff(moment(dob), ‘years’)
     }
     ```
@@ -48,7 +52,9 @@ getUserData: () => {
 
 </dd>
 
-## Forms
+## Building Interactive Dashboards and CRUD Interfaces
+
+1. **Forms**
 
 <dd>
 
@@ -58,6 +64,7 @@ getUserData: () => {
 Name, Gender, Date of Birth, Phone, Email and Country
 ```
 * Rename the widgets inside the Form for better reference
+* You can set which all fields that are required for Form submittion, and even add validations to it.
 * Change the existing **Update_public_users1** Query to use the Form data instead
 <details>
   <summary>Show Hint</summary>
@@ -73,7 +80,7 @@ Name, Gender, Date of Birth, Phone, Email and Country
     "updated_at"= '{{new Date()}}'
     WHERE "id"= {{Table1.selectedRow.id}};
     ```
-    The above is just a sample solution. Ensure you correctly refer to the widgets' names you had renamed inside the Form, inside this **Query** after copy pasting it.
+    The above is just a sample solution. Ensure you correctly refer to the widgets' names you had renamed in the Form, within this **Query** when you copy pasting it.
   </div>
 </details>
 
@@ -83,7 +90,7 @@ Name, Gender, Date of Birth, Phone, Email and Country
 
 </dd>
 
-## Charts
+2. **Charts**
 
 <dd>
 
@@ -123,12 +130,3 @@ Name, Gender, Date of Birth, Phone, Email and Country
 
 ## Deploy the App
 Go ahead and click on the Deploy button on the top right and redeploy your App and view it with the new changes you have made
-
-## Share App 
-Share the App (If not done already earlier)
-<dd>
-
-- Share to [tom@appsmith.com](mailto:tom@appsmith.com) and [sujoy@appsmith.com](mailto:sujoy@appsmith.com) as App Viewer
-- Also try making it a public App by enabling **Make application public** and try opening it in incognito mode 
-
-</dd>
