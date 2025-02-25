@@ -58,6 +58,7 @@ hide_title: false
 4. On the top-rightmost, next to the **Create new** button, you will see a three-dot menu. Click on it and you will see your workspace name.
 5. Click on the Edit icon next to it and rename your workspace as **\<Name\>-Training-Workspace**
 6. Also you can share access to your workspace by clicking on the **Share** button. Type in **Training Admin** and select the Administrator role and click Invite. This will allow us to view your Applications and help you in the case of any issue you face during the training.
+7. On the top right of the workspace, there is an info icon. From that click on **Chat with us**. This is our support assistant that can help you on any issues. Go ahead and send a test message
 
 </dd>
 

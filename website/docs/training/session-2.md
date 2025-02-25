@@ -13,7 +13,9 @@ hide_title: false
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
-3. Go to this [Training Workspace](https://training.app.appsmith.com/applications?workspaceId=67bc411d08cb0b5962026d57) and fork **Activity 1** App to your newly created Workspace.
+3. Share access to this workspace to **Training Admin** as Administrator
+
+4. Fromt the workspace, click on the top right info icon that click on **Chat with us**. This is our support assistant that can help you on any issues. Go ahead and send a test message
 
 ## Customizing and Enhancing Functionality with Code
 
@@ -26,7 +28,7 @@ hide_title: false
 * Introduce a checkbox and rename the Label as **Allow Filters**
 * Now go to the settings of the Select widget, and click on **JS** next to the Visible field
 * Bind the status of the Checkbox to that field like this **{{Checkbox1.isChecked}}**
-* Click on the Preview **:arrow_forward:** symbol next to the Share button on the top
+* Click on the Preview symbol next to the Share button on the top
 * Now toggle the checkbox to see the Select widget's visibility changing based on your selection
 
 </dd>
