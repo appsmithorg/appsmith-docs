@@ -38,8 +38,8 @@ Discover what Appsmith is, its key features, and how it empowers you to build ap
 ### [4. Building CRUD Interfaces and Interactive Dashboards](/training/session-2#building-crud-interfaces-and-interactive-dashboards)
 <dd>
 
-- **CRUD Operations:** Implement Create, Read, Update, and Delete functionalities using Appsmith’s auto-generated queries.
-- **Dashboard Assembly:** Combine multiple widgets to create a cohesive, interactive dashboard.
+- **CRUD Operations:** Implement functionalities to Create or Update data with Forms
+- **Dashboard Assembly:** Combine multiple widgets like Chart and Statbox to create an interactive Dashboard
 
 </dd>
 
