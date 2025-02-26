@@ -49,6 +49,9 @@ Sets a default image that would be displayed if no image is rendered via the **I
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Object fit `string`
 
 <dd>
@@ -119,7 +122,9 @@ Alternatively, you can use the built-in [Download](/reference/appsmith-framework
 
 </dd>
 
-### Events 
+### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes. 
 
 When the event is triggered, these event handlers can execute queries, JS code, or other supported [actions](/reference/appsmith-framework/widget-actions).
 

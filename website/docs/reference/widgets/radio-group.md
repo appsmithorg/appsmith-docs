@@ -53,6 +53,8 @@ This option allows you to set a default value in a widget, which is initially se
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `string`
 
@@ -115,6 +117,9 @@ When enabled, this property makes the Radio Group a mandatory field. When the Ra
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 
 #### Tooltip `String`
 <dd>
@@ -172,6 +177,8 @@ This property determines how the widget's height adjusts to changes in its conte
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onSelectionChange
