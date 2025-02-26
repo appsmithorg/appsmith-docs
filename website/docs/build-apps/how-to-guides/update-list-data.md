@@ -5,10 +5,22 @@ description: This page shows you how to edit items on List through inline editin
 # Edit List Data
 This page shows you how to edit items on the List widget. You will learn how to edit, delete, and duplicate a List item using action buttons within the widget.
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/0wn5llvSYN5A17GQUVKB?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/0wn5llvSYN5A17GQUVKB?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
+
 
 ## Prerequisites
 - A List widget connected to a query that holds the data you want to edit and update.

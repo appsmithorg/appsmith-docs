@@ -22,10 +22,21 @@ This page provides step-by-step instructions on creating an image gallery or sli
 <dd>
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/gWn3T07t0tVz1cZU5kXb?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/gWn3T07t0tVz1cZU5kXb?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
 
 
 </dd>
@@ -159,10 +170,21 @@ appsmith.onReady(() => {
 
 Follow these steps to pass parameters from Appsmith to the Custom widget:
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/RuWBzSnHKfN9KcdqXj2b?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/RuWBzSnHKfN9KcdqXj2b?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
 
 
 1. To pass data from Appsmith to the Custom widget, use the **Default model** property of Custom widget. You can bind data from queries or widgets using mustache bindings `{{}}`.

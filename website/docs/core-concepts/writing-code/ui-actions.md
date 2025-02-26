@@ -40,12 +40,21 @@ You can only execute two levels of **onSuccess** callbacks from the UI. To add a
 Learn more about [Global Functions](/reference/appsmith-framework/widget-actions).
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/aP6NLTwiJTsGCmhDhnQM?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/aP6NLTwiJTsGCmhDhnQM?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
-
-
 
 
 <p></p>
@@ -80,11 +89,19 @@ showAlert('Update Success', 'success');}}
 You can create multiple **Events** and **OnSuccess** callbacks to trigger different actions in parallel. 
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/TwqJvpTW4EMHkHIM1GnZ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/TwqJvpTW4EMHkHIM1GnZ?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
-
 <p></p>
 
 

@@ -39,11 +39,21 @@ Before you start, make sure you have the following:
 
 A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/Zm91UIkEM0nSlq2MGzOQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/Zm91UIkEM0nSlq2MGzOQ?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
+
 
 
 1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**.
@@ -125,9 +135,19 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 Great job on creating a query module! Now, let's see how you can reuse it in different apps.
 
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/t77RIouwmGGXyyuUN8j8?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/t77RIouwmGGXyyuUN8j8?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
 
 

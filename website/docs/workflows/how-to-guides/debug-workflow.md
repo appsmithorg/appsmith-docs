@@ -34,10 +34,20 @@ While developing the workflows, you can debug the workflows by passing test valu
 Follow these steps to set up test values and debug the workflow:
 
 <br/>
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-    <iframe src="https://demo.arcade.software/rCIbiKPeSjXvc5O3cSF5?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Debug Workflow">
-    </iframe>
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/rCIbiKPeSjXvc5O3cSF5?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
 <br/><br/>
 
 1. In your workflow, go to the *Response* tab and click the **Run** button.

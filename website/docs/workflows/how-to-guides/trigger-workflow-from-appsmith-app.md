@@ -33,10 +33,19 @@ Before starting, make sure you have:
 To connect workflows with Appsmith app, you need to create workflow query. Follow these steps to create workflow query and connect your workflow:
 
  <br/>  
- <div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-    <iframe src="https://demo.arcade.software/UA07mpIDNfWd8hyKzF2U?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Workflow with Appsmith App">
-    </iframe>
-    </div>
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/UA07mpIDNfWd8hyKzF2U?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
+</div>
 <br/><br/>
 
 1. In your Appsmith app, create a _New Workflow Query_ by navigating to the _Queries_ tab and click **+ New query / API**.
