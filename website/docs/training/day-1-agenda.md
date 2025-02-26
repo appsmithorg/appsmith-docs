@@ -22,7 +22,7 @@ Discover what Appsmith is, its key features, and how it empowers you to build ap
 ### [2. Widget Essentials and Displaying Data](/training/session-1#widget-essentials-and-displaying-data)
 <dd>
 
-- **Core Widgets:** Explore essential widgets like Table, Button, Select, and Container.
+- **Core Widgets:** Explore essential widgets like Table, Text, Button, Select, and Container.
 - **Data Binding:** Understand how to bind data to widgets for dynamic display and interactivity.
 
 </dd>
@@ -38,8 +38,8 @@ Discover what Appsmith is, its key features, and how it empowers you to build ap
 ### [4. Building CRUD Interfaces and Interactive Dashboards](/training/session-2#building-crud-interfaces-and-interactive-dashboards)
 <dd>
 
-- **Dashboard Assembly:** Combine multiple widgets to create a cohesive, interactive dashboard.
 - **CRUD Operations:** Implement Create, Read, Update, and Delete functionalities using Appsmith’s auto-generated queries.
+- **Dashboard Assembly:** Combine multiple widgets to create a cohesive, interactive dashboard.
 
 </dd>
 

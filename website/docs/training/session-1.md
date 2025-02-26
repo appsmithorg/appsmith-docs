@@ -11,17 +11,20 @@ hide_title: false
 
 2. Now you will be guided through the Onboarding. Select your profiency with Appsmith.
 
+3. Click on **Skip this step** so that we can head to the editor of your Application
+
+
 ##  Connecting and Managing Datasources
 1. **REST API**
 <dd>
 
-* Go to Data on the sidebar and Click on the button **Bring your data** and select Datasource **REST API**.
+* Click on the Datasoure icon, located third from the bottom of the left sidebar, and then click on the button **Bring your data** and select Datasource **REST API**.
 * Enter **https://mock-api.appsmith.com** in the field
 * Click **Save URL** and you will be taken to the Datasource configuration page
 * Name the Datasource as **Mock API** and go ahead and click Save.
 * Now rename the API as **getUsers** and append the path **/users** to the url 
 * Click on Run and see the results below on the page
-* Great!! You have successfully created an API Datasource and a Query on top of it
+* Great!! You have successfully created an REST API Datasource and ran an API on top of it
 
 </dd>
 
@@ -54,7 +57,7 @@ hide_title: false
 
 1. In the Editor mode, on the top, you will see your App name as **My First Application**. Click on it and Rename it as **Activity 1**.
 2. Now click on the Appsmith Logo on the top left corner of the page, and it will take you back to the Appsmith Workspaces page.
-3. You will be able to see your workspaces or what workspaces you have access to. And also see what all Apps are accessible for you.
+3. You will be able to see your Workspaces and Applications and what other workspaces you have access to.
 4. On the top-rightmost, next to the **Create new** button, you will see a three-dot menu. Click on it and you will see your workspace name.
 5. Click on the Edit icon next to it and rename your workspace as **\<Name\>-Training-Workspace**
 6. Also you can share access to your workspace by clicking on the **Share** button. Type in **Training Admin** and select the Administrator role and click Invite. This will allow us to view your Applications and help you in the case of any issue you face during the training.
@@ -72,9 +75,9 @@ hide_title: false
 * Connect data from the table settings on the right, and select the datasource **Postgres DB** which we just created.
 * Select the table **public.users** and the searchable column as **name**, and click **Connect data**
 * Now go to the **Queries** Tab on the left and check out the automatically generated CRUD queries for your database
+* Customise the columns like setting visibility, re-ordering the columns and even changing the column type
 * See how the table is connected to your Data and that it supports Server Side Pagination
 * Play around with the inline editing and add row to table
-* Customise the columns like setting visibility, re-ordering the columns and even changing the column type
 
 </dd>
 

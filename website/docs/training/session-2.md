@@ -15,7 +15,7 @@ hide_title: false
 
 3. Share access to this workspace to **Training Admin** as Administrator
 
-4. Fromt the workspace, click on the top right info icon that click on **Chat with us**. This is our support assistant that can help you on any issues. Go ahead and send a test message
+4. From the workspace, click on the top right info icon. Then click on **Chat with us**. This is our support assistant that can help you on any issues. Go ahead and send a test message
 
 ## Customizing and Enhancing Functionality with Code
 
