@@ -6,13 +6,15 @@ description:  Interact with Data in UI
 
 # Work with Data in UI
 
-In this lesson, you will learn how to display, update, and manage data. You will connect a table to a database, display user details in a form, and use the form to update user details directly from the UI.
+In the previous lesson, we learned how to connect a database and display data in a Table widget.
+
+Now, in this lesson, we will focus on updating data directly from the UI. Using widgets like Input, Datepicker, and Button, we will update user details and save the changes to the database.
 
 :::tip What will I learn? 📝
 By the end of this tutorial, you will learn to:
 
-- Connect UI widgets to a database.
-- Display and edit user details using a form.
+- Bind widget data to a database.
+- Display and edit table data using a form.
 - Update user details from the UI and save changes to the database.
 - Trigger queries or JavaScript functions based on user actions.
 :::
@@ -59,7 +61,7 @@ Configure the properties as shown below:
 
 With `{{}}` (mustache binding), you can dynamically display and update data from various sources, such as widgets, queries, and APIs, in other components.
 
-- `usersTable`: The name of the Table widget from which we want to fetch the selected user's data.
+- `usersTable`: The name of the Table widget from which we want to fetch the user's data.
 - `selectedRow`: The reference property of the Table widget that provides access to the currently selected row's data in `usersTable`.
 - The `name`, `dob`, and `image` are the selected user's properties retrieved from `selectedRow`.
 
