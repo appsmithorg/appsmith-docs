@@ -57,6 +57,14 @@ Configure the properties as shown below:
 |               |               | Date Format     | **LL**                           | Formats the date in a user-friendly format. |
 | **Image**     | `profile` | Image Source  | `{{usersTable.selectedRow.image}}` | Displays the user's profile photo.            |
 
+With `{{}}` (mustache binding), you can dynamically display and update data from various sources, such as widgets, queries, and APIs, in other components.
+
+- `usersTable`: The name of the Table widget from which we want to fetch the selected user's data.
+- `selectedRow`: The reference property of the Table widget that provides access to the currently selected row's data in `usersTable`.
+- The `name`, `dob`, and `image` are the selected user's properties retrieved from `selectedRow`.
+
+
+
 
 </dd>
 
@@ -76,6 +84,12 @@ SET name = {{nameInput.text}},
 WHERE id = {{usersTable.selectedRow.id}};
 ```
 
+In this SQL command, we are dynamically updating the users Table with the edited values from the form. The bindings inside `{{ }}` reference the widget properties:
+
+- `{{nameInput.text}}` pulls the updated name from the Input widget.
+- `{{dobInput.selectedDate}}` retrieves the selected date from the Datepicker widget.
+- `WHERE id = {{usersTable.selectedRow.id}}` ensures only the selected user’s record is updated.
+
 </dd>
 
 8. Navigate back to the canvas by selecting the **UI** tab in the Entity Explorer.
@@ -87,7 +101,7 @@ WHERE id = {{usersTable.selectedRow.id}};
 
 - Select the default Submit button on the form and rename it to Update.
 - In the **onClick** event, set the action to Execute the `updateUsers`. This runs the query to update the database with the modified details.
-- In the onSuccess callback, set the action to Execute a query > getUsers. This refreshes the table data to reflect the updated user details.
+- In the **onSuccess** callback, set the action to Execute a query > `getUsers`. This refreshes the table data to reflect the updated user details.
 
 Now, select a row in the table widget to display the user's details in the form. After making the necessary updates, click Update to save the changes to the database and refresh the table with the updated data.
 
