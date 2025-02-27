@@ -1,10 +1,10 @@
 # Monitoring API Reference
 
-This page provides details on APIs available for monitoring a self-hosted Appsmith instance. These APIs allow you to track system availability, performance, and feature flag statuses. You can integrate them with third-party monitoring tools like Prometheus, Datadog, or Grafana to automate health checks, analyze trends, and receive alerts for potential issues.
+This page provides details on APIs available for monitoring a self-hosted Appsmith instance. These APIs enable you to monitor system health, performance metrics, and configuration statuses. You can integrate them with third-party monitoring tools like Prometheus, Datadog, or Grafana to automate health checks, analyze trends, and receive alerts for potential issues.
 
 ## Health Check API
 
-The Health Check API allows you to monitor the availability and status of a self-hosted Appsmith instance. It helps detect downtime early and ensures the system is running as expected. You can also integrate this API with third-party monitoring tools like Prometheus, Datadog, or Grafana to automate health checks and receive alerts for potential issues.
+The Health Check API allows you to monitor the availability and status of a self-hosted Appsmith instance. It helps detect downtime early and ensures the system is running as expected. You can also integrate this API with third-party monitoring tools to automate health checks and receive alerts for potential issues.
 
 #### Endpoint
 
@@ -32,7 +32,7 @@ GET /api/v1/health
 }
 ```
 
-- 200 OK: The system is operational.
+- **200 OK**: The system is operational.
 
 **Error Responses**
 
@@ -50,7 +50,7 @@ GET /api/v1/health
 
 ## Application Performance API
 
-Application Performance Monitoring (APM) helps track API response times to ensure smooth application performance. It allows you to detect slow responses and take action to optimize performance.
+The Application Performance API provides insights into API response times, user session details, feature flag statuses, and system configuration. It helps monitor application health, track user authentication settings, and ensure optimal performance. This API can be used to analyze response metrics and identify potential performance bottlenecks.
 
 #### Endpoint
 
@@ -137,7 +137,7 @@ GET /api/v1/consolidated-api/view
 }
 ```
 
-- A successful request returns 200 OK with an expected latency of less than 300ms.
+- A successful request returns **200 OK** with an expected latency of less than **300ms**.
 
 
 **Error Responses**
@@ -150,46 +150,3 @@ GET /api/v1/consolidated-api/view
 **Notes:** You can integrate the API endpoint into a third-party monitoring tool to track latency, uptime, and response times.
 
 
-
-## Feature Flags API
-
-The Feature Flags API allows you to retrieve a list of enabled and disabled features for your instance.
-
-#### Endpoint
-
-```
-GET /api/v1/users/features
-```
-
-#### Request
-
-- **Base URL:** https://your-appsmith-installation.com
-- **Method:** GET
-- **Authentication:** Not required
-
-#### Response
-
-**Success Response**
-
-```js
-{
-  "responseMeta": {
-    "status": 200,
-    "success": true
-  },
-  "data": {
-    "FEATURE_A": true,
-    "FEATURE_B": false
-  },
-  "errorDisplay": ""
-}
-```
-
-Each key represents a feature flag with a boolean value indicating whether it is enabled (`true`) or disabled (`false`).
-
-**Error Responses**
-
-- **401 Unauthorized**: Authentication is required to access feature flags.
-- 5**00 Internal Server Error**: The request could not be processed
-
-**Note:** This API only supports retrieving feature flag statuses. Modifying feature flags (enabling or disabling) is not supported.
