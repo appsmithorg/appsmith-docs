@@ -4,7 +4,7 @@ This page provides details on APIs available for monitoring a self-hosted Appsmi
 
 ## Health Check API
 
-The Health Check API allows you to monitor the availability and status of a self-hosted Appsmith instance. It helps detect downtime early and ensures the system is running as expected. You can also integrate this API with third-party monitoring tools to automate health checks and receive alerts for potential issues.
+The Health Check API allows you to monitor the availability and status of a self-hosted Appsmith instance. It helps detect downtime early and ensures the system is running as expected. You can also integrate this API with third-party monitoring tools to automate health checks.
 
 #### Endpoint
 
