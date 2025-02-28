@@ -86,9 +86,9 @@ SET name = {{nameInput.text}},
 WHERE id = {{usersTable.selectedRow.id}};
 ```
 
-In this SQL command, we are dynamically updating the users Table with the edited values from the form. The bindings inside `{{ }}` reference the widget properties:
+In this SQL command, we are dynamically updating the users table with the edited values from the form. The bindings inside `{{ }}` reference the widget properties:
 
-- `{{nameInput.text}}` pulls the updated name from the Input widget.
+- `{{nameInput.text}}` retrieves the updated name from the Input widget.
 - `{{dobInput.selectedDate}}` retrieves the selected date from the Datepicker widget.
 - `WHERE id = {{usersTable.selectedRow.id}}` ensures only the selected user’s record is updated.
 
