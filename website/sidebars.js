@@ -16,6 +16,7 @@ const sidebars = {
       label: 'Appsmith Training Day 2',
       collapsed: false,
       items: [
+        'training/day-2-agenda',
         'training/session-3',
         'training/session-4'
       ]

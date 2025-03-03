@@ -20,7 +20,7 @@ Enhance your Appsmith skills by exploring version control, CI/CD, advanced integ
 
 </dd>
 
-### [2. Configuring Multiple Environments and Setting Up CI/CD Pipelines](/training/session-3#configuring-multiple-environments-and-setting-up-ci-cd-pipelines)
+### [2. Configuring Multiple Environments and Setting Up CI/CD Pipelines](/training/session-3#configuring-multiple-environments-and-setting-up-cicd-pipelines)
 <dd>
 
 - **Environment Variables:** Learn how to configure multiple environments like Development, Staging, and Production.
