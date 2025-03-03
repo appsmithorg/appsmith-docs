@@ -5,15 +5,19 @@ hide_title: false
 
 <!-- vale off -->
 
-## Getting Started
+## Getting Started 
 
-1. Sign up on this instance: [Optum Training Instance](https://optum-training.app.appsmith.com/user/signup) (Ignore if already done)
+**Ignore this if you were able to attend the previous Session.**
 
-2. Now you will be guided through the Onboarding. Select your profiency with Appsmith.
+1. Sign up on this instance: [Training Instance](https://training.app.appsmith.com/user/signup)
 
-3. Next you need to head to this [Training Workspace](https://optum-training.app.appsmith.com/applications?workspaceId=66053dafa476fb4189c2713d)
+2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
-##  Development with GIT Branch
+3. Share access to this workspace to **Training Admin** as Administrator
+
+4. From the workspace, click on the top right info icon. Then click on **Chat with us**. This is our support assistant that can help you on any issues. Go ahead and send a test message
+
+##  Version Control: Development Process and Collaboration
 
 <dd>
 
@@ -28,7 +32,7 @@ hide_title: false
 
 </dd>
 
-## Merge your feature branch
+## Configuring Multiple Environments and Setting Up CI/CD Pipelines
 
 <dd>
 
