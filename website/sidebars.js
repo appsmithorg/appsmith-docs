@@ -8,16 +8,17 @@ const sidebars = {
       label: 'Get Started',
       items: [
         'intro',
-        {
-          type: 'category',
-          label: 'Tutorial',
-          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
-          items: [
-            'getting-started/tutorials/the-basics/connect-query-display-data',
-            'getting-started/tutorials/the-basics/work-with-data-in-ui',
-            'getting-started/tutorials/the-basics/write-js-code',
-          ],
-        }
+        'getting-started/tutorials/build-your-first-app',
+        //{
+          //type: 'category',
+          //label: 'Tutorial',
+          //link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
+          //items: [
+           // 'getting-started/tutorials/the-basics/connect-query-display-data',
+           // 'getting-started/tutorials/the-basics/work-with-data-in-ui',
+            //'getting-started/tutorials/the-basics/write-js-code',
+          //],
+        //}
       ],
     }, //getting started section end
     //self-hosting starts
