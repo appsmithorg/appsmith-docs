@@ -108,7 +108,7 @@ SSL/TLS
 Cause
 Filepicker
 Default Roles for All Users
-Instance Administrator Role
+Organization Administrator Role
 Administrator Role for Workspace 
 Developer Role for Workspace 
 App Viewer Role for Workspace 
