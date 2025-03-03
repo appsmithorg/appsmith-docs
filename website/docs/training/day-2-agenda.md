@@ -33,7 +33,7 @@ Enhance your Appsmith skills by exploring version control, CI/CD, advanced integ
 
 - **JS Libraries:** Extend Appsmith’s capabilities with custom JavaScript libraries.
 - **API Chaining & Transformations:** Use JavaScript to modify API responses before displaying data.
-- **Error Handling & Debugging:** Learn best practices for handling API failures and debugging JavaScript.
+- **Error Handling & Debugging:** Learn best practices for handling API failures and debugging in Appsmith.
 
 </dd>
 

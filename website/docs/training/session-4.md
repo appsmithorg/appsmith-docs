@@ -19,51 +19,68 @@ hide_title: false
 
 ##  Advanced JavaScript and API Integrations
 
+1. **Custom JS Libraries**
+
 <dd>
 
-* On the workspace page, Click on **Create New** button and select New Package.
-* Once inside the package, name this package as **Utils**.
-* Then click on **New Module** and select JS Module and name it as **DateFns**.
-* Now you will see a main file created for your DateFns module.
-* Inside that introduce a function called **formatDate** that takes an argument dateString, and returns it formatted to **DD/MM/YYYY**
-```jsx
-formatDate: (dateString) => {
-  const date = new Date(dateString);
-  const options = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-  };
-  return date.toLocaleString('en-GB', options);
-}
-```
-* Now publish this package by clicking the button on the top right.
+* Click on the Libraries icon, second last from the bottom on the left pane
+* Here, you will find pre-installed libraries like **lodash** and **moment.js**, along with an option to **Add new libraries**.
+* Browse through the **Recommended Libraries** or search for other libraries via [jsDelivr](https://www.jsdelivr.com).
+* You will also see an option to add other libraries from the site [jsDelivr](https://www.jsdelivr.com)
+* Search for **currency.js** and select it.
+* Copy the URL from the **src** tag or use the direct link below:
+
+<details>
+  <summary>Show library url</summary>
+  <div>
+    ```jsx
+    https://cdn.jsdelivr.net/npm/currency.js@2.0.4/dist/currency.min.js
+    ```
+  </div>
+</details>
+
+* Paste the copied link into the Add JS Library input field and click Install.
+* Once installed, you can now use the currency.js functions anywhere in your Appsmith app.
+* Example:
+  - Drag and drop a Text widget.
+  - Enter a large numeric value with moustache brackets `{{}}`
+  - Surround the value with the currency function to display the amount in a properly formatted currency.
+  ```jsx currency(value).format()``` 
+
+</dd>
+
+2. **API Chaining and Error handling with Javascript**
+
+<dd>
+
+* Use async/await to chain multiple API calls and queries in a controlled sequence.
+* Implement try/catch or .then/.catch for error handling to manage failures gracefully.
+* Utilize Promises to run multiple actions in parallel while maintaining control over their execution flow.
+
+</dd>
+
+3. **Debugger**
+
+<dd>
+
+* Click the Debug button at the bottom-right corner of the Editor to open the Debugger Console
+* The Logs section displays:
+ - Actions triggered by widgets (e.g., button clicks).
+ - API requests and responses, including success/failure status.
+* The Linter tab highlights widgets with issues and clicking on an error will navigate directly to the affected widget for quick fixes
+* Open the Network Tab in the Developer tool of the Browser. Whenever an API/Query is triggered, the tab shows the follow details
+ - API requests wrapped in executeAction (in Edit mode).
+ - Sent parameters and the endpoint being called in the requests
+ - In View mode, the API request is seen but additional details like endpoint and parameters are hidden for security reasons.
 
 </dd>
 
 ## Embedding Appsmith Applications and Facilitating Communication
 
-* Now go to the edit mode of your App, and clicking on the JS tab on left sidebar.
-* Click on new JS Object, and you will be able to find your module **DateFns** that can be added under the Package **Utils**.
-* Click on the **DateFns** and it will connect the newly created module to your App.
-* Now head to your Table widget and go to any date column such as the dob.
-* In the settings of this column, inside the Computed value, surround it by your module's function.
-Example below
-```jsx
-DateFns1.formateDate(currentRow.dob)
-```
-* Now you should be seeing the dob column formatted with date type DD/MM/YYYY inside the Table.
-* Lets also head to the **List View** Page from the side bar, and do the same changes for the date inside the text widget.
-* Go ahead and click on the Deploy button on the top right to deploy your App and view it with the new changes you have made.
 
 ## Creating Custom Widgets
 
-* Let us also try changing the date format inside the package and see how the changes are reflected across these pages.
-* Head back to the workspace and click on Edit of your **Utils** package.
-* Inside the main file of your **DateFns** module, lets update the function to show the format as **Day Month Year** instead of DD/MM/YYYY. You can do this by modifying the month inside options to use **'long'** instead of '2-digit'.
-* Now lets publish and head back to the Edit mode of your Application, and you will already see your changes being reflected inside the Editor for both pages **Table View** and **List View**.
-* Click on deploy button again to start seeing your changes.
-* Great, you have successfully created a package with a module and reused it across multiple pages of your App.
+
 
 ## Deploy the App
 Go ahead and click on the Deploy button on the top right and redeploy your App and view it with the new changes you have made
