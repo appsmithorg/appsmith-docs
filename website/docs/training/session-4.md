@@ -63,13 +63,13 @@ hide_title: false
 
 * Click the Debug button at the bottom-right corner of the Editor to open the Debugger Console
 * The Logs section displays:
- - Actions triggered by widgets (e.g., button clicks).
- - API requests and responses, including success/failure status.
+  - Actions triggered by widgets (e.g., button clicks).
+  - API requests and responses, including success/failure status.
 * The Linter tab highlights widgets with issues and clicking on an error will navigate directly to the affected widget for quick fixes
 * Open the Network Tab in the Developer tool of the Browser. Whenever an API/Query is triggered, the tab shows the follow details
- - API requests wrapped in executeAction (in Edit mode).
- - Sent parameters and the endpoint being called in the requests
- - In View mode, the API request is seen but additional details like endpoint and parameters are hidden for security reasons.
+  - API requests wrapped in executeAction (in Edit mode).
+  - Sent parameters and the endpoint being called in the requests
+  - In View mode, the API request is seen but additional details like endpoint and parameters are hidden for security reasons.
 
 </dd>
 
@@ -107,7 +107,58 @@ hide_title: false
 
 ## Creating Custom Widgets
 
+1. **Configuring Custom Widget**
 
+<dd>
+
+* Drag and drop a **Custom Widget** from the **Widgets pane** onto the canvas.
+* In the widget settings, click **Go to Source Editor** to open the **Custom Widget Editor**.
+* The editor provides three coding tabs: **HTML, CSS, and JS**, along with an **AI tab** where our AI Copilot helps you generate code.
+* Click on **Editable Data Grid Widget** in the **AI Copilot**, and it will auto-generate code across the tabs for the custom widget.
+* Review the generated code to understand how it works.
+
+</dd>
+
+2. **Connecting data model**
+
+<dd>
+
+* Return to the **Main Editor** and select the **Custom Widget** to open its settings.
+* Locate the **Default Model** section, which contains dummy data.
+* Modify the **Default Model** to fetch data from one of your existing queries. Below is an example for a query named as getUsers.data
+  ```jsx
+  {{
+    {
+      data: getUsers.data
+    }
+  }}
+  ```
+* The widget will automatically re-render when the data updates, thanks to the onModelChange event in the Custom widget.
+* The onModelChange event ensures that the component updates whenever the Data Model changes
+  ```jsx
+  appsmith.onModelChange((model, prevModel) => {
+    if (JSON.stringify(model.data) !== JSON.stringify(prevModel?.data)) {
+        setData(model.data && Array.isArray(model.data) ? model.data : fallbackData);
+    }
+  });
+  ```
+
+</dd>
+
+3. **Configuring Custom Events**
+
+<dd>
+
+* Inside the Settings panel, navigate to Events and add a new event named onCellEdit.
+* Configure the action to Show Alert, and set the message as ```{{`Cell to Update: Column ${column}, Row: ${rowIndex}, Value: ${value}`}}```
+* Now, go back to the Custom Widget Editor and locate the following line of code like ```appsmith.triggerEvent```. This will trigger any event that you have configured if you pass the event name, and the data as an object. Below it calls the onCellEdit and passes the column, rowIndex and value
+```appsmith.triggerEvent("onCellEdit", { column: columList[col], rowIndex: row, value: newValue.data });```
+* Ensure that the event name matches the one you created in the settings. If different, update either the event name or the custom widget code accordingly.
+* You have successfully configured a Custom Widget and linked it with your app's data.
+  - Experiment with additional functionalities and customization options.
+  - For more details, refer to the [documentation](https://docs.appsmith.com/reference/widgets/custom)
+
+</dd>
 
 ## Deploy the App
-Go ahead and click on the Deploy button on the top right and redeploy your App and view it with the new changes you have made
+Go ahead and click on the Deploy button on the top right. This time you will have to commit your changes. Post that you can view the App with the latest changes you have made.
