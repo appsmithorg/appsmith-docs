@@ -43,7 +43,7 @@ hide_title: false
   - Drag and drop a Text widget.
   - Enter a large numeric value with moustache brackets `{{}}`
   - Surround the value with the currency function to display the amount in a properly formatted currency.
-  ```jsx currency(value).format()``` 
+  ```jsx currency(10899.99, { symbol: "$", precision: 0 }).format()``` 
 
 </dd>
 
@@ -154,11 +154,12 @@ hide_title: false
 * Now, go back to the Custom Widget Editor and locate the following line of code like ```appsmith.triggerEvent```. This will trigger any event that you have configured if you pass the event name, and the data as an object. Below it calls the onCellEdit and passes the column, rowIndex and value
 ```appsmith.triggerEvent("onCellEdit", { column: columList[col], rowIndex: row, value: newValue.data });```
 * Ensure that the event name matches the one you created in the settings. If different, update either the event name or the custom widget code accordingly.
-* You have successfully configured a Custom Widget and linked it with your app's data.
-  - Experiment with additional functionalities and customization options.
-  - For more details, refer to the [documentation](https://docs.appsmith.com/reference/widgets/custom)
 
 </dd>
+
+Congratulations :tada: You have successfully configured a Custom Widget and linked it with your app's data.
+  - Experiment with additional functionalities and customization options.
+  - For more details, refer to the [documentation](https://docs.appsmith.com/reference/widgets/custom)
 
 ## Deploy the App
 Go ahead and click on the Deploy button on the top right. This time you will have to commit your changes. Post that you can view the App with the latest changes you have made.
