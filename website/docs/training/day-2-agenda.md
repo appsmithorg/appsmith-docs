@@ -53,11 +53,12 @@ Enhance your Appsmith skills by exploring version control, CI/CD, advanced integ
 
 </dd>
 
-### [6. Hands-On Task](https://training.app.appsmith.com/app/task-2/home-67bdd31349bf245ac087e8fe)
+### [6. Hands-On Task](https://community.appsmith.com/tutorial/how-create-your-own-custom-navigation-bar-nested-items-and-icons)
 <dd>
 
-- **Objective:** Build an advanced app incorporating Git, custom JavaScript, and custom widgets.
-- **Challenge:** Implement a feature using multiple environments and integrate with a third-party API.
+* **Objective:** Build an advanced app using custom widgets and version control it with GIT.
+* **Challenge:** Create a custom navigation bar that is dynamic based on the data model. When an item is clicked, the app should navigate to the corresponding Appsmith page.
+* Share us the applications that you create and we will publish them in our [community](https://community.appsmith.com)
 
 </dd>
 

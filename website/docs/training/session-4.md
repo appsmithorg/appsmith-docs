@@ -33,9 +33,7 @@ hide_title: false
 <details>
   <summary>Show library url</summary>
   <div>
-    ```jsx
-    https://cdn.jsdelivr.net/npm/currency.js@2.0.4/dist/currency.min.js
-    ```
+    ```https://cdn.jsdelivr.net/npm/currency.js@2.0.4/dist/currency.min.js```
   </div>
 </details>
 
@@ -77,6 +75,35 @@ hide_title: false
 
 ## Embedding Appsmith Applications and Facilitating Communication
 
+1. **Embedding applications**
+
+<dd>
+
+* Click on the **Share** button in the top-right corner to open the **Share Modal**.
+* Navigate to the **Embed** tab to view the **Embed URL** and a **Preview embedded app** option.
+* Configure embed settings based on access requirements:
+  - **Public Embed:** Making the App public allows anyone to access the embedded app.
+  - **Private Embed:** Requires authentication to access the embedded content.
+* For **private embeds**, you can also pass an **SSO method** in the embed URL to authenticate users seamlessly.
+
+</dd>
+
+2. **Communicating between Appsmith Embeds and Parent page**
+
+<dd>
+
+* Appsmith provides methods to enable two-way communication between the **embedded app** and the **parent page**
+* Use `postWindowMessage()` to send data or events from Appsmith to the parent page.
+  ```postWindowMessage("Appsmith Ready", { status: "initialized" });```
+* Use `windowMessageListener()` in Appsmith to listen for messages from the parent page and trigger actions accordingly.
+  ```jsx
+  windowMessageListener((message) => {
+    if (message.data === "refresh") {
+      getData.run(); // Trigger an action inside Appsmith
+    }
+  });
+  ```
+</dd>
 
 ## Creating Custom Widgets
 
