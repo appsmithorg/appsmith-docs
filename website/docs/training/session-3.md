@@ -50,8 +50,8 @@ hide_title: false
   - Click **Commit & Push** to push changes to your remote branch.
 * Great, you have successfully commited your changes to your very own dev branch of this Application.
 * You can preview the deployed version by
- - Click on **Deploy > Latest deployed preview**
- - By changing value of branch to `?branch=<BRANCH_NAME>` in your app's URL.
+  - Click on **Deploy > Latest deployed preview**
+  - By changing value of branch to `?branch=<BRANCH_NAME>` in your app's URL.
 
 </dd>
 
