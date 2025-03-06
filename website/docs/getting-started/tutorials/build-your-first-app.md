@@ -4,7 +4,7 @@ Appsmith is a low-code platform that lets you connect to databases, create dynam
 
 In this tutorial, you will learn how to connect your app to a database, fetch data, and display it using a Table widget. By following these steps, you’ll gain a solid understanding of Appsmith’s core features, enabling you to build dynamic, data-driven applications.
 
-:::tip What will I learn? 📝
+:::tip ⏳ Estimated Time: ~10 minutes
 By the end of this tutorial, you will learn to:
 
 - Connect your app to a PostgreSQL database.
@@ -27,21 +27,24 @@ By the end of this tutorial, you will learn to:
   />
 </div>
 
+1. Open the [Appsmith Home](https://app.appsmith.com/applications) to view all workspaces and applications. A workspace is a collection of applications where teams can collaborate on building and managing different apps.
+
+2. To create a new app, click the **Create New** dropdown in the top-right corner of the workspace and select **Application**.
 
 
-1. Open your application and, from the sidebar, click the **Data** button. This section lists all the datasources configured in your app, where you can edit existing ones or add new datasources.
+3. In your application and, from the sidebar, click the **Data** button. This section lists all the datasources configured in your app, where you can edit existing ones or add new datasources.
 
-2. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
+4. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
 
-3. You’ll now see a list of APIs, databases, and SaaS integrations you can connect to. For this tutorial, select the **Sample Users** database. This is a PostgreSQL database that contains user-related data, such as names, email addresses, and user IDs, which will be used to display data in the app. 
+5. You’ll now see a list of APIs, databases, and SaaS integrations you can connect to. For this tutorial, select the **Sample Users** database. This is a PostgreSQL database that contains user-related data, such as names, email addresses, and user IDs, which will be used to display data in the app. 
 
-4. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details. Rename it to `UsersDB`.
+6. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details. Rename it to `UsersDB`.
 
-5. Click **+ New Query** from the top-right corner. This opens a query editor where you can write SQL queries.
+7. Click **+ New Query** from the top-right corner. This opens a query editor where you can write SQL queries.
 
-6. Click on the three dots next to the query name in the left pane and select Rename. Rename the default query name `Query1` to `getUsers`. 
+8. Click on the three dots next to the query name in the left pane and select Rename. Rename the default query name `Query1` to `getUsers`. 
 
-7. Update the query with the following to fetch records in ascending order of the `id` field:
+9. Update the query with the following to fetch records in ascending order of the `id` field:
 
 <dd>
 
@@ -51,23 +54,27 @@ By the end of this tutorial, you will learn to:
 
 </dd>
 
-8. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
+10. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
 
-9. Click the **UI** tab on the *Entity Explorer* to the left of the screen. The UI tab opens a list of available widgets in Appsmith, which can be used to display data and design the app.
+11. Click the **UI** tab on the *Entity Explorer* to the left of the screen. The UI tab opens a list of available widgets in Appsmith, which can be used to display data and design the app.
 
-10. Click **+ New UI Element**. This displays a list of available widgets to choose from. Drag a **Table** widget and drop it onto the canvas to display the data in a structured format.
+12. Click **+ New UI Element**. This displays a list of available widgets to choose from. Drag a **Table** widget and drop it onto the canvas to display the data in a structured format.
 
-11. When you add the Table widget, a *Property Pane* appears on the right. The Property Pane contains all the configurable settings for the widget, such as its name, datasource, appearance, and behavior. To rename the widget, edit the name at the top of the pane, changing it from `Table1` to `usersTable`.
+13. When you add the Table widget, a *Property Pane* appears on the right. The Property Pane contains all the configurable settings for the widget, such as its name, datasource, appearance, and behavior. To rename the widget, edit the name at the top of the pane, changing it from `Table1` to `usersTable`.
 
-12. In the Property Pane, click on the [**Table Data**](/reference/widgets/table#table-data-arrayobject) property and select the `getUsers` query to connect the Table to the data fetched by the query. The Table Data property allows you to bind your query or JS data to the Table widget.
+14. In the Property Pane, click on the [**Table Data**](/reference/widgets/table#table-data-arrayobject) property and select the `getUsers` query to connect the Table to the data fetched by the query. The Table Data property allows you to bind your query or JS data to the Table widget.
 
-13. Click on the **Deploy** button in the top-right corner. This allows you to publish your changes and make your app live, which you can then share with others. 
+15. Click on the **Deploy** button in the top-right corner. This allows you to publish your changes and make your app live, which you can then share with others. 
  
 :::tip 🎉 Great job!  
 You’ve successfully connected to a sample PostgreSQL database, fetched user details, and displayed them in a Table widget. With your app now live, you can share it with others and continue enhancing it by adding more data-driven features and interactivity.
 :::
 
 
-## Next steps
+### What's next?
 
-- [Build UI Interactions](/getting-started/tutorials/the-basics/work-with-data-in-ui).
+Now that you've connected data and built a basic UI, here are some next steps based on what you want to do next:
+
+- **Work with data:** Learn how to filter, sort, and manipulate data before displaying it. 
+- **Build more UI interactions:** Add buttons, forms, and other widgets to create an interactive experience. 
+- **Integrate APIs & databases:** Connect your app to external APIs or a custom database. 
