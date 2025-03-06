@@ -1,4 +1,4 @@
-# Monitoring API Reference
+# API Reference
 
 This page provides details on APIs available for monitoring a self-hosted Appsmith instance. These APIs enable you to monitor system health, performance metrics, and configuration statuses. You can integrate them with third-party monitoring tools like Prometheus, Datadog, or Grafana to automate health checks, analyze trends, and receive alerts for potential issues.
 
