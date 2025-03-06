@@ -1,10 +1,8 @@
 # Build Your First App
 
-Appsmith is a low-code platform that lets you connect to databases, create dynamic UIs, and build internal tools effortlessly. In this tutorial, you'll learn how to:
-
 In this tutorial, you will learn how to connect your app to a database, fetch data, and display it using a Table widget. By following these steps, you’ll gain a solid understanding of Appsmith’s core features, enabling you to build dynamic, data-driven applications.
 
-:::tip ⏳ Estimated Time: ~10 minutes
+:::tip ⏳ Estimated Time: 10 minutes
 By the end of this tutorial, you will learn to:
 
 - Connect your app to a PostgreSQL database.
@@ -67,7 +65,9 @@ By the end of this tutorial, you will learn to:
 15. Click on the **Deploy** button in the top-right corner. This allows you to publish your changes and make your app live, which you can then share with others. 
  
 :::tip 🎉 Great job!  
-You’ve successfully connected to a sample PostgreSQL database, fetched user details, and displayed them in a Table widget. With your app now live, you can share it with others and continue enhancing it by adding more data-driven features and interactivity.
+You have successfully created your first app by connecting to a sample PostgreSQL database, fetching user details, and displaying them in a Table widget.
+
+Your app is now live! You can share it with others and continue enhancing it by adding more data-driven features and interactivity. 
 :::
 
 
