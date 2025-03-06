@@ -26,7 +26,8 @@ const sidebars = {
       collapsed: false,
       items: [
         'training/day-3-agenda',
-        'training/session-5'
+        'training/session-5',
+        'training/session-6'
       ]
     } //training end*/
   ],

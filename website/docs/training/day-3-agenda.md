@@ -11,7 +11,7 @@ Enhance your Appsmith expertise by exploring **reusability**, **workflow automat
 
 </dd>
 
-### [1. Reusability with Appsmith Packages](/training/session-3#reusability-with-appsmith-packages)
+### [1. Reusability with Appsmith Packages](/training/session-5#reusability-with-appsmith-packages)
 <dd>
 
 * **Introduction to Appsmith Packages:** Learn how to create and use reusable JS Objects and Queries.
@@ -20,7 +20,7 @@ Enhance your Appsmith expertise by exploring **reusability**, **workflow automat
 
 </dd>
 
-### [2. Designing and Managing Complex Workflows](/training/session-3#designing-and-managing-complex-workflows)
+### [2. Designing and Managing Complex Workflows](/training/session-5#designing-and-managing-complex-workflows)
 <dd>
 
 * **Human-in-the-Loop Workflows:** Implement workflows where manual approvals or interventions are required before proceeding.  
@@ -28,7 +28,7 @@ Enhance your Appsmith expertise by exploring **reusability**, **workflow automat
 
 </dd>
 
-### [3. Implementing Granular Access Control and Programmatic Permissions](/training/session-3#implementing-granular-access-control-and-programmatic-permissions)
+### [3. Implementing Granular Access Control and Programmatic Permissions](/training/session-6#implementing-granular-access-control-and-programmatic-permissions)
 <dd>
 
 * **Role-Based Access Control (RBAC):** Configure user roles and permissions for better security.
@@ -36,7 +36,7 @@ Enhance your Appsmith expertise by exploring **reusability**, **workflow automat
 
 </dd>
 
-### [4. Utilizing Audit Logs for Monitoring and Compliance](/training/session-3#utilizing-audit-logs-for-monitoring-and-compliance)
+### [4. Utilizing Audit Logs for Monitoring and Compliance](/training/session-6#utilizing-audit-logs-for-monitoring-and-compliance)
 <dd>
 
 * **Understanding Audit Logs:** Track user activities and changes made within the application.
