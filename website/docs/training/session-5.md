@@ -30,7 +30,7 @@ hide_title: false
 * Inside that introduce a function called **getUserAge** that takes an argument **dateString**, and returns the age
 ```jsx
 getUserAge: (dateString) => {
-  return moment().diff(moment(dateString, 'years'));
+  return moment().diff(moment(dateString), 'years'));
 }
 ```
 * Now publish this package by clicking the button on the top right.
