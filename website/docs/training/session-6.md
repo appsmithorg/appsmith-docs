@@ -1,5 +1,5 @@
 ---
-title: Session 5
+title: Session 6
 hide_title: false
 ---
 
