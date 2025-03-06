@@ -13,7 +13,7 @@ hide_title: false
 
 2. Create a workspace of your own and name it as **\<Name\>-Training-Workspace**
 
-3. Share access to this workspace to **Training Admin** as an Administrator
+3. Share access to your workspace to **Training Admin** as an Administrator
 
 4. From the workspace, click on the top-right **info icon**, then select **Chat with us**. This is Appsmith’s support assistant that can help you with any issues. Send a test message to familiarize yourself with the support feature.
 
