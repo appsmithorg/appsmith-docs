@@ -179,3 +179,5 @@ DateFns1.getUserAge(currentRow.dob)
 * Set onSuccess of this query to run **getPendingRequests** and onFailure to show an alert message.
 * Now, go to the UI, click the **Action** button to open the **Modal**, enter a comment, and click Approve or Reject.
 * Return to the **Workflow Editor -> Run History**, and verify that the workflow is completed with the selected resolution and console message.
+
+</dd>
