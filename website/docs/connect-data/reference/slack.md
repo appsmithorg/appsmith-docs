@@ -118,7 +118,7 @@ In workflows where users need to select a recipient dynamically, you can use Con
 *Example:* If you want to dynamically select a recipient from a Select widget, use:
 
 ```javascript
-"{{UserSelect.selectedOptionValue}}"
+{{UserSelect.selectedOptionValue}}
 // Example: "U03B8PXXXX"
 ```
 
@@ -158,7 +158,7 @@ The Bot Name specifies the name of the bot that sends the message.
 *Example:* Set bot name dynamically using an Input widget
 
 ```javascript
-"{{BotNameInput.text}}"
+{{BotNameInput.text}}
 // Example: "SupportBot"
 ```
 
@@ -267,7 +267,7 @@ The Bot Name specifies the name of the bot that sends the message.
 *Example:* Set bot name dynamically using an Input widget
 
 ```javascript
-"{{BotNameInput.text}}"
+{{BotNameInput.text}}
 // Example: "SupportBot"
 ```
 
