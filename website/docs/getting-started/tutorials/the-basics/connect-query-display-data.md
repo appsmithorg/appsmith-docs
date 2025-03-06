@@ -4,79 +4,75 @@ slug: /getting-started/tutorials/the-basics/connect-query-display-data
 description:  Connect a datasource on Appsmith
 ---
 
-# Lesson 1 - Bring in Data
+# Connect and Display Data
 
-This tutorial takes you through the process of connecting a datasource and querying data on Appsmith. 
+In this tutorial, you will learn how to connect your app to a database, fetch data, and display it using a Table widget. By following these steps, you’ll gain a solid understanding of Appsmith’s core features, enabling you to build dynamic, data-driven applications.
 
-## Connect datasource
+:::tip What will I learn? 📝
+By the end of this tutorial, you will learn to:
 
-1. In your application, go to the sidebar and click the **Data** button.
+- Connect your app to a PostgreSQL database.
+- Fetch data using SQL queries.
+- Display data in a Table widget.
+:::
+
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/N0DGhXCaYUFdtc4h8M2b?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
+</div>
+
+
+
+
+1. Open your application and, from the sidebar, click the **Data** button. This section lists all the datasources configured in your app, where you can edit existing ones or add new datasources.
 
 2. Click the **+** icon next to **Datasources in your workspace** to add a new datasource.
 
-3. Select **PostgreSQL** under the **Databases** section. This opens the page where you can configure the fields to connect to your PostgreSQL database. 
+3. You’ll now see a list of APIs, databases, and SaaS integrations you can connect to. For this tutorial, select the **Sample Users** database. This is a PostgreSQL database that contains user-related data, such as names, email addresses, and user IDs, which will be used to display data in the app. `UsersDB`
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/fT4UI3z2O90bF6IKjdOj?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
+4. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details. Rename it to `UsersDB`.
 
-4. Rename the default database name from **Untitled datasource 1** to `usersTutorialDB`. You may have to click the pencil icon next to the database name if it is not already selected. 
+6. Click **+ New Query** from the top-right corner. This opens a query editor where you can write SQL queries.
 
-5. Enter the following details in the connection parameter fields:<br/>
-  **Host Address**: `mockdb.internal.appsmith.com` <br/>
-  **Port**: `5432`<br/>
-  **Database Name**: `users`<br/>
-  **Username**: `users`<br/>
-  **Password**: `new-users-db-pass`<br/>
+7. Click on the three dots next to the query name in the left pane and select Rename. Rename the default query name `Query1` to `getUsers`. 
 
-6. Click the **Test Configuration** button to test the connection and ensure the database is valid.
+8. Update the query with the following to fetch records in ascending order of the `id` field:
 
-7. Click **Save** to create and save the database connection. You'll see the `usersTutorialDB` database page.
-
-## Query Data
-
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/4SP3OXtmLb0KUzOLFsbp?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
-</div>
-
-1. In the **Editor pane** click the **New Query/API** button and select the connected datasource. You will see the query editor with a default fetch query to pull ten records from the `usersTutorialDB` database table.
-
-2. Rename the query from **Query1** to `getUsers`. You may have to click the pencil icon if it is not already selected.
-
-3. For this tutorial, modify the query as shown below to fetch the records in the ascending order of the `id` field.
+<dd>
 
   ```sql
   SELECT * FROM public."users" ORDER BY id LIMIT 10;
   ```
 
-4. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
+</dd>
 
-5. Click the **Settings** tab. Switch on the **Run query on page load** option.
+9. Click the **Run** button on the top right of the screen to execute the query and confirm that it returns data.
 
-You've created your first query to fetch the list of records in the database.
+10. Click the **UI** tab on the *Entity Explorer* to the left of the screen. The UI tab opens a list of available widgets in Appsmith, which can be used to display data and design the app.
 
-## Display data in Table
+11. Click **+ New UI Element**. This displays a list of available widgets to choose from. Drag a **Table** widget and drop it onto the canvas to display the data in a structured format.
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/gCyRZIWRg9iw8IMpPYBq?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "92%", height: "92%", colorScheme: "light" }} title="User Management | Display Data">
-  </iframe>
-</div>
+12. When you add the Table widget, a *Property Pane* appears on the right. The Property Pane contains all the configurable settings for the widget, such as its name, datasource, appearance, and behavior. To rename the widget, edit the name at the top of the pane, changing it from `Table1` to `usersTable`.
 
-1. Click the **UI** tab on the *Entity Explorer* to the left of the screen.
+14. In the Property Pane, click on the [**Table Data**](/reference/widgets/table#table-data-arrayobject) property and select the `getUsers` query to connect the Table to the data fetched by the query. The Table Data property allows you to bind your query or JS data to the Table widget.
 
-2. Click **+ New UI element** and drag a **Table** widget and drop it to the left of the canvas.
-
-3. A *Property Pane* appears to the right of the screen, which contains all the properties of the widget. On the top of the property pane, click on the default name **Table1** and rename it to `usersTable`.
-
-4. Connect the Table to the query **getUsers** to display the data. Additionally, you can use JavaScript by clicking on **JS** to write bindings for the table data.
+15. Click on the **Deploy** button in the top-right corner. This allows you to publish your changes and make your app live, which you can then share with others. 
  
-:::info
-The mustache template `{{}}` is used to write JS code inside widgets and queries on Appsmith.
+:::tip 🎉 Great job!  
+You’ve successfully connected to a sample PostgreSQL database, fetched user details, and displayed them in a Table widget. With your app now live, you can share it with others and continue enhancing it by adding more data-driven features and interactivity.
 :::
 
-You've displayed the results from the **getUsers** query on the Table widget.
 
 ## Next steps
-- [Lesson 2 - Work with data in UI](/getting-started/tutorials/the-basics/work-with-data-in-ui)
+
+- [Build UI Interactions](/getting-started/tutorials/the-basics/work-with-data-in-ui).
