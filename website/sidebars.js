@@ -20,7 +20,7 @@ const sidebars = {
         'training/session-3',
         'training/session-4'
       ]
-    },/*{
+    },{
       type: 'category',
       label: 'Appsmith Training Day 3',
       collapsed: false,
@@ -29,7 +29,7 @@ const sidebars = {
         'training/session-5',
         'training/session-6'
       ]
-    } //training end*/
+    } //training end
   ],
 };
 
