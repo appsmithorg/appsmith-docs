@@ -177,6 +177,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/file-size-limit',
                 'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/environment-variables',
+                'getting-started/setup/instance-management/API-Reference'
               ],
             },
           ],
