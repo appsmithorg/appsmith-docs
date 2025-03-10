@@ -321,7 +321,10 @@ This property controls whether the widget is displayed with a loading animation.
 
 <dd>
 
-Controls the visibility of the **Download** button in the table header. When enabled, users can download the table data as a `.csv` file or `Excel` file by clicking on the button. For more information on how to download data in chunks, see [Download Table Data](/build-apps/how-to-guides/download-table-data).
+Controls the visibility of the **Download** button in the table header. When enabled, users can download the table data as a `.csv` or `Excel` file by clicking the button. Excel file export is powered by [SheetJS](https://sheetjs.com/), an open-source library.
+
+
+For more information on how to download data in chunks, see [Download Table Data](/build-apps/how-to-guides/download-table-data).
 
 </dd>
 
