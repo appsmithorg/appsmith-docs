@@ -1328,6 +1328,12 @@
       "source": "/product",
       "destination": "/getting-started/faq",
       "permanent": true
+    },
+    {
+      "source": "/getting-started/tutorials/the-basics/connect-query-display-data",
+      "destination": "/getting-started/tutorials/build-your-first-app",
+      "permanent": true
     }
+    
   ]
 }
