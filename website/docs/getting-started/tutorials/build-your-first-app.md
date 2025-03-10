@@ -36,7 +36,7 @@ By the end of this tutorial, you will learn to:
 
 5. You’ll now see a list of APIs, databases, and SaaS integrations you can connect to. For this tutorial, select the **Sample Users** database. This is a PostgreSQL database that contains user-related data, such as names, email addresses, and user IDs, which will be used to display data in the app. 
 
-6. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details. Rename it to `UsersDB`.
+6. After selecting Sample Users, a page opens showing the database schema *(structure of tables and columns)*, tables, and configuration details.
 
 7. Click **+ New Query** from the top-right corner. This opens a query editor where you can write SQL queries.
 
@@ -75,6 +75,6 @@ Your app is now live! You can share it with others and continue enhancing it by 
 
 Now that you've connected data and built a basic UI, here are some next steps based on what you want to do next:
 
-- **Work with data:** Learn how to filter, sort, and manipulate data before displaying it. 
-- **Build more UI interactions:** Add buttons, forms, and other widgets to create an interactive experience. 
-- **Integrate APIs & databases:** Connect your app to external APIs or a custom database. 
+- [**Work with data:**](/getting-started/tutorials/the-basics/work-with-data-in-ui) Learn how to filter, sort, and manipulate data before displaying it. 
+- [**Build more UI interactions:**](/build-apps/how-to-guides) Add buttons, forms, and other widgets to create an interactive experience. 
+- [**Integrate APIs & databases:**](/connect-data/reference/overview) Connect your app to external APIs or a custom database. 

@@ -376,6 +376,7 @@ const sidebars = {
       label: 'Build Apps',
       items: [
         'build-apps/overview',
+        'getting-started/tutorials/the-basics/work-with-data-in-ui',
         {
           type: 'category',
           collapsed: true,
