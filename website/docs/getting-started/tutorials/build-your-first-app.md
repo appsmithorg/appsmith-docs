@@ -76,4 +76,4 @@ Now that you've connected data and built a basic UI, here are some next steps ba
 
 - [**Work with data:**](/getting-started/tutorials/the-basics/work-with-data-in-ui) Learn how to filter, sort, and manipulate data before displaying it. 
 - [**Build more UI interactions:**](/build-apps/how-to-guides) Add buttons, forms, and other widgets to create an interactive experience. 
-- [**Integrate APIs & databases:**](/connect-data/reference/overview) Connect your app to external APIs or a custom database. 
+- [**Integrate APIs & databases:**](/connect-data/reference) Connect your app to external APIs or a custom database. 
