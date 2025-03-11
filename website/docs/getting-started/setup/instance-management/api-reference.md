@@ -9,7 +9,7 @@ The Health Check API allows you to monitor the availability and status of a self
 #### Endpoint
 
 ```
-GET /api/v1/health
+GET https://your-appsmith-installation.com/api/v1/health
 ```
 
 #### Request
@@ -55,7 +55,7 @@ The Application Performance API provides insights into API response times, user 
 #### Endpoint
 
 ```
-GET /api/v1/consolidated-api/view
+GET https://your-appsmith-installation.com/api/v1/consolidated-api/view
 ```
 
 #### Request
