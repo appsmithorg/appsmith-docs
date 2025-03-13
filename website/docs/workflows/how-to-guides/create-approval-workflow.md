@@ -33,7 +33,7 @@ Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
-* Configured your datasource that manages data in your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* A configured datasource to manage data within your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 ## Create workflow
 
