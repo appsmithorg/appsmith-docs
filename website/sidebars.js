@@ -335,6 +335,7 @@ const sidebars = {
                     'connect-data/reference/anthropic',
                     'connect-data/reference/appsmith-ai',
                     'connect-data/reference/google-ai',
+                    'connect-data/reference/jira',
                     'connect-data/reference/open-ai'
                   ],
                 },
