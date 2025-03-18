@@ -28,8 +28,6 @@ To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) a
 
 ## Create user pool
 
-Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security, Identity & Compliance** > **Cognito** and follow the steps below:
-
 
 1. Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security**, **Identity & Compliance** > **Cognito**.
 
