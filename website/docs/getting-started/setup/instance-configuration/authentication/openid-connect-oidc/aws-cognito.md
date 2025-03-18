@@ -30,78 +30,67 @@ To configure Appsmith to use [Amazon Cognito](https://aws.amazon.com/cognito/) a
 
 Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security, Identity & Compliance** > **Cognito** and follow the steps below:
 
-<ZoomImage src="/img/AWS_cognito_create-userpool.png" alt="AWS Cognito create userpool image" caption="AWS Cognito create userpool image" />
 
+1. Log in to your [AWS account](https://console.aws.amazon.com/console/home). Go to **Services** > **Security**, **Identity & Compliance** > **Cognito**.
 
-1. In the **User Pools** pane, click the **Create user pool** button.
-
-2. In the **Configure sign-in experience** pane,  select the **Email** checkbox under the **Cognito user pool sign-in options** section. Click **Next**.
-
-3. In the **Configure security requirements** pane, select **No MFA** under the **Multi-factor authentication** section. Click **Next**. 
-
-4. In the **Configure sign-up experience** pane, keep the default configuration and click **Next**.
-
-5. In the **Configure message delivery** pane, you can choose one of the email providers - **Send email with Amazon SES** or **Send email with Cognito**. If you don't have an Amazon SES account, select **Send email with Cognito**. Click **Next**.
-
-6.  In the **Integrate your app** pane, follow the steps below:
+2. From the left-side pane, open **User pools** and click the **Create user pool** button.
 
 <dd>
 
-a. In the **User pool name** box, enter a name for your user pool.
-
-b. Under the **Initial app client** section, in the **App client name** box, enter a name for your app client.
-
-c. In the **Client secret** options, select **Generate a client secret**.
-
-d. Click **Next**.
+<ZoomImage src="/img/aws-user-pools.png" alt="AWS Cognito create userpool" caption="AWS Cognito create userpool" />
 
 </dd>
 
-7. In the **Review and create** pane, review the configurations and click **Create user pool**.
+3. On the Set up resources for your application page, configure the following settings:
 
-## Configure domain and app client
-
-In the **User pools** pane, select the user pool you created in the preceding steps. Click the **App Integration** tab and follow the steps below:
-
-<ZoomImage src="/img/configure-domain-and-app-client.png" alt="Domain and app client configuration image" caption="Domain and app client configuration image" />
-
-
-
-1. In the **Domain** section, click the **Actions** list and select **Create a Cognito domain**. You can also select **Create a custom domain** to add a domain that you own.
-
-2. On the **Create Cognito domain** screen, enter a domain prefix in the **Cognito domain** box. Click **Create Cognito domain**.
-   
 <dd>
 
-<ZoomImage src="/img/AWS-cognito_create_domain.png" alt="Create a domain image" caption="Create a domain image" />
+- **Application type:** Select Traditional web application.
+- **Application name:** Enter a name for your application, such as Appsmith.
+- **Sign-in identifiers:** Select Email, Phone, and Username.
+- **Required attributes for sign-up:** Choose Profile and Email. You can select additional attributes if required based on your application's needs.
+- **Return URL:** In the Add a return URL field, enter the **Redirect URL** copied from the [OIDC configuration in Appsmith](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc#capture-redirect-url-for-oidc-configuration).
 
+<ZoomImage src="/img/aws-url.png" alt="" caption="" />
 
 
 </dd>
 
-3. Back on the **App Integration** tab, scroll down to the **App client list** section and click the name of the app client you created in step 6 of [Create user pool](#create-user-pool).
+4. Click **Create user directory** to complete the setup. Once done, open the **Overview** page of the recently created **User Pool**.
 
-4. Copy the **Client ID** and **Client Secret** and save them for later use.
+5. From the Overview page, navigate to the **App clients** section using the left-side pane. 
 
-5. Scroll down to the **Hosted UI** section and click **Edit**. On the **Edit Hosted UI** pane, follow the steps below:
+<ZoomImage src="/img/aws-app-client.png" alt="" caption="" />
+
+
+
+6. On the App clients page, open your application to view its details. The page displays the **Client ID**, **Client Secret**, login page configuration, and other settings. Copy the Client ID and Client Secret for future use.
+
+7. Navigate to the **Domain** page from the left-side navigation panel. Copy the Cognito domain for future use. If you want to set up a custom domain, configure it based on your requirements.
+
+<ZoomImage src="/img/aws-ui-oidc.png" alt="" caption="" />
+
+
+
+
+8. Click the **Actions** button and open the **Cognito branding settings**. Select the **Hosted UI (Classic)** version and save the changes.
+
+
+9. Navigate to the **App clients** section and open the **Login** pages settings. Click Edit, then update the Scopes to include:
 
 <dd>
 
-
-
-a. Click the **Add Callback URL** button. In the **URL** box and enter the **Redirect URL** copied from the [OIDC configuration in Appsmith](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc#capture-redirect-url-for-oidc-configuration).
-
-b. In the **Identity providers** list, select **Cognito user pool** .
-
-c. In the **OAuth 2.0 grant types** list, select **Authorization code grant**.
-
-d. In the **OpenID Connect scopes** list, select **OpenID**, **Email**, and **Profile** options.
-
-e. Click **Save changes**.
-
-<ZoomImage src="/img/edit-hosted-ui.png" alt="Edit hosted UI image" caption="Edit hosted UI image" />
+- email
+- openid
+- profile
 
 </dd>
+
+10. Navigate to the Multi-Factor Authentication (MFA) and security settings. Configure MFA, password policies, and other security settings based on your requirements.
+
+
+
+
 
 ## Setup Cognito SSO on Appsmith
 
