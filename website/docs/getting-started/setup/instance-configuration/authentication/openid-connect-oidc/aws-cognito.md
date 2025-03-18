@@ -113,8 +113,6 @@ On your Appsmith instance, go to **Admin Settings > Authentication > OIDC**, cli
 </dd>
 
 
-<ZoomImage src="/img/AWS_Urls.png" alt="AWS URLs image" caption="AWS URLs image" />
-
 
 
 2. Save the changes and restart your application by clicking `SAVE & RESTART` button. 
