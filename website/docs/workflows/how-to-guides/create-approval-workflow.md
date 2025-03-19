@@ -100,14 +100,29 @@ WHERE order_id = {{this.params.order_id}};
 Follow these steps to create approval requests that are awaiting user interaction: 
 
 
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/5c6gbYZqNd3ko8vpkkeC?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
+</div>
+
+
 1. In your workflow, create a new **ApprovalRequest** query. This query allows you to define the approval request, including the requester name, approvers (individual emails or groups), metadata, and allowed resolutions such as `Approve` or `Reject`.
 
 2. Configure the **ApprovalRequest** query with the necessary details:
 
 <dd>
 
-- **Requester Name** – The name of the user initiating the approval request.
-- **Approver(s)** – Select individuals or groups who will approve or reject the request.
+- **Request Name** – The title or identifier of the approval request, describing its purpose. For example, `Marketing Budget Approval - Q3` or `New Vendor Onboarding Request`.
+- **Approver(s)** – Select individuals or groups who will approve or reject the request. The list of users depends on your workspace settings.
 - **Metadata** – Attach relevant data such as order details or request information. For example, `{ "order": order }`.
 - **Allowed Resolutions** – Define the actions approvers can take, such as "Approve" or "Reject."
 
@@ -122,30 +137,49 @@ For example, in the refund processing, if the resolution value is **Approve**, t
 ```javascript
 export default {
     async executeWorkflow(data) {
-        // Execute the approval request query
-        const response = await approval_request.run();
-        
-        // Workflow is now paused, awaiting approval.
-        if (response && response.resolution === "Approve") {
-            console.log("Request Approved");
-            await initiateRefund.run({
-                "id": data.order_id,
-                "status": "Refund Processed"
-            });
-            await notifyUser.run({
-                "customer_email": data.customer_email,
-                "customer_name": data.customer_name
-            });
-        } else if (response && response.resolution === "Reject") {
-            console.log("Request Rejected");
-            await notifyRejectionToUser.run({
-                "customer_email": data.customer_email,
-                "customer_name": data.customer_name,
-                "rejection_reason": data.rejection_reason
-            });
+        try {
+            // Execute the approval request query
+            const response = await approval_request.run();
+            
+            // Check if response is valid
+            if (!response || !response.resolution) {
+                console.error("Invalid approval response:", response);
+                return false;
+            }
+
+            console.log("Approval request resolution:", response.resolution);
+
+            if (response.resolution === "Approve") {
+                console.log("Request Approved");
+                
+                // Process refund
+                await initiateRefund.run({
+                    "id": data.order_id,
+                    "status": "Refund Processed"
+                });
+
+                // Notify user about approval
+                await notifyUser.run({
+                    "customer_email": data.customer_email,
+                    "customer_name": data.customer_name
+                });
+
+            } else if (response.resolution === "Reject") {
+                console.log("Request Rejected");
+
+                // Notify user about rejection
+                await notifyRejectionToUser.run({
+                    "customer_email": data.customer_email,
+                    "customer_name": data.customer_name,
+                    "rejection_reason": data.rejection_reason
+                });
+            }
+
+            return true;
+        } catch (error) {
+            console.error("Error executing workflow:", error);
+            return false;
         }
-        
-        return true;
     }
 }
 ```
