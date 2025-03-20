@@ -1,10 +1,8 @@
 # Version Control and Tagging
 
-This page provides information about versioning and tagging in Packages. If your Package is Git-connected, you can manage versions by creating releases, selecting versions in applications, and tracking changes through commits.
+This page provides information about versioning and tagging in Packages. You can connect a Package to any Git remote repository, similar to applications. When a Package is Git-connected, you can commit changes, merge branches, and create tagged releases.
 
-:::info
-If your Package is not connected to Git, the latest version is always used, and manual versioning is not available. To connect your Package to Git, see [Version Control With Git](/advanced-concepts/version-control-with-git).
-:::
+A Package repository is separate from the application's repository. If a Package is not connected to Git, the latest version is always used, and manual versioning is not available. To connect a Package to Git, see [Version Control With Git](/advanced-concepts/version-control-with-git).
 
 
 ## Managing Package Versions
