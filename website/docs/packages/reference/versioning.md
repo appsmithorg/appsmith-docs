@@ -1,17 +1,17 @@
 # Version Control and Tagging
 
-This page provides information about versioning and tagging in packages. If your package is Git-connected, you can manage versions by creating releases, selecting versions in applications, and tracking changes through commits.
+This page provides information about versioning and tagging in Packages. If your Package is Git-connected, you can manage versions by creating releases, selecting versions in applications, and tracking changes through commits.
 
 :::info
-If your package is not connected to Git, the latest version is always used, and manual versioning is not available. To connect your package to Git, see [Version Control With Git](/advanced-concepts/version-control-with-git).
+If your Package is not connected to Git, the latest version is always used, and manual versioning is not available. To connect your Package to Git, see [Version Control With Git](/advanced-concepts/version-control-with-git).
 :::
 
 
 ## Managing Package Versions
 
-You can manage versions of a Git-connected package using the Commit button in the top-right corner of the interface. This opens the Commit Modal, where you can commit changes, merge branches, and release a new package version.
+You can manage versions of a Git-connected Package using the Commit button in the top-right corner of the interface. This opens the Commit Modal, where you can commit changes, merge branches, and release a new Package version.
 
-If the package is not Git-connected, the Deploy button appears instead of Commit. Deploying applies changes immediately without version control.
+If the Package is not Git-connected, the Deploy button appears instead of Commit. Deploying applies changes immediately without version control.
 
 <div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
   <iframe
@@ -65,7 +65,7 @@ For more details, see [How to Resolve Merge Conflicts](/advanced-concepts/versio
 
 <dd>
 
-The Release tab allows you to tag a version based on the latest commit in the repository. This feature is built on [Git tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and currently applies only to packages. The latest commit is tagged with the selected version, and uncommitted changes are not included in the release.
+The Release tab allows you to tag a version based on the latest commit in the repository. This feature is built on [Git tagging](https://git-scm.com/book/en/v2/Git-Basics-Tagging) and currently applies only to Packages. The latest commit is tagged with the selected version, and uncommitted changes are not included in the release.
 
 Version tagging allows applications to reference a specific release instead of the latest changes. It follows semantic versioning, where each increment indicates the type of update.
 
@@ -98,11 +98,11 @@ Version tagging allows applications to reference a specific release instead of t
 
 
 
-You can select a package version from the **Libraries** section in the **Entity Explorer** by choosing from the available options. Only packages currently used in the application are listed. If a package or module is not used in the application, it will not appear in the selection menu.
+You can select a Package version from the **Libraries** section in the **Entity Explorer** by choosing from the available options. Only Packages currently used in the application are listed. If a Package or module is not used in the application, it will not appear in the selection menu.
 
-- **For Git-connected Packages:** You can choose from a list of available package versions that have been released. Each version corresponds to a tagged commit, allowing you to control which version is used in your application. 
+- **For Git-connected Packages:** You can choose from a list of available Package versions that have been released. Each version corresponds to a tagged commit, allowing you to control which version is used in your application. 
 
-- **For Non-Git-connected Packages:** Version selection is not available, and the application always uses the latest package version. Any updates to the package are immediately applied without version control.
+- **For Non-Git-connected Packages:** Version selection is not available, and the application always uses the latest Package version. Any updates to the Package are immediately applied without version control.
 
 
 
