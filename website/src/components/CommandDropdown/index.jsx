@@ -58,7 +58,11 @@ const COMMAND_CATEGORIES = {
   ],
   "Metadata Commands": [
     "Describe Action Schema"
+  ],
+  "Custom Action": [
+    "Custom Action"
   ]
+  
 };
 
 export default function CommandDropdown({ onSelect }) {

@@ -1562,6 +1562,46 @@ WHERE CreatedDate = LAST_N_DAYS:30
 ),
 
 
+/* ===================== Custom Action ===================== */
+'Custom Action': (
+  <Fragment>
+    <h3>Custom Action</h3>
+    <p>
+      The Custom Action command allows you to define and execute any API-based action within Salesforce. 
+    
+      With Custom Action, you can specify the HTTP method (GET, POST, PUT, DELETE), define the API endpoint, 
+      and add query parameters, headers, and request bodies to customize the request. 
+    </p>
+
+    <h4>Method <code>string</code></h4>
+    <dd> The HTTP method used for the API request. Options include <code>GET</code>, <code>POST</code>, <code>PUT</code>, and <code>DELETE</code>.
+    </dd>
+
+    <h4>Endpoint <code>string</code></h4>
+<dd>
+  The Salesforce API endpoint where the request is sent. This endpoint specifies the resource being accessed or modified within Salesforce. To locate the correct endpoint, refer to the <a href="https://developer.salesforce.com/docs" target="_blank">Salesforce API documentation</a> or use the Salesforce Developer Console to inspect API URLs.
+</dd>
+<br/>
+<dd>
+  Example: 
+  <code> https://yourInstance.salesforce.com/services/data/vXX.X/sobjects/ObjectName</code>  
+</dd>
+
+
+<h4>Query Parameters <code>JSON</code></h4>
+<dd>
+  Optional key-value pairs sent as query parameters in the API request URL. Query parameters help filter or modify the request results based on specific criteria.
+</dd>
+
+<h4>Body <code>JSON</code></h4>
+<dd>
+  The request payload for <code>POST</code> or <code>PUT</code> requests. This defines the structured data sent to the Salesforce API for processing.
+</dd>
+
+  </Fragment>
+),
+
+
       
     };
 
