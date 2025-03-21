@@ -33,7 +33,7 @@ To connect Appsmith to Jira, you need to authenticate your Appsmith application 
 
 The following section is a reference guide that provides a description of the available commands with their parameters to create Jira queries.
 
-### **Create Issue**  
+### Create Issue
 
 Creates a new issue in Jira. This command allows you to specify details such as project, issue type, and assignee while including a detailed description. Once the issue is successfully created, Jira returns an issue key (e.g., `JIRA-123`) that can be used for further operations like updates or queries.  
 
