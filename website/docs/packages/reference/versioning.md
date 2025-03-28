@@ -1,4 +1,4 @@
-# Version Control and Tagging
+# Package Version Control 
 
 This page provides information about versioning and tagging in Packages. You can connect a Package to any Git remote repository, similar to applications. When a Package is Git-connected, you can commit changes, merge branches, and create tagged releases.
 
@@ -10,20 +10,6 @@ A Package repository is separate from the application's repository. If a Package
 You can manage versions of a Git-connected Package using the Commit button in the top-right corner of the interface. This opens the Commit Modal, where you can commit changes, merge branches, and release a new Package version.
 
 If the Package is not Git-connected, the Deploy button appears instead of Commit. Deploying applies changes immediately without version control.
-
-<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
-  <iframe
-    src="https://demo.arcade.software/8YXnoaVs7aymi6L8VUDb?embed"
-    frameBorder="0"
-    loading="lazy"
-    webkitAllowFullScreen
-    mozAllowFullScreen
-    allowFullScreen
-    allow="fullscreen"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    title="Appsmith | Connect Data"
-  />
-</div>
 
 
 
@@ -78,23 +64,6 @@ Version tagging allows applications to reference a specific release instead of t
 
 
 ## Using Package Versions in Applications
-
-
-<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
-  <iframe
-    src="https://demo.arcade.software/uGBMPiHXi887JH4awT5i?embed"
-    frameBorder="0"
-    loading="lazy"
-    webkitAllowFullScreen
-    mozAllowFullScreen
-    allowFullScreen
-    allow="fullscreen"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    title="Appsmith | Connect Data"
-  />
-</div>
-
-
 
 You can select a Package version from the **Libraries** section in the **Entity Explorer** by choosing from the available options. Only Packages currently used in the application are listed. If a Package or module is not used in the application, it will not appear in the selection menu.
 

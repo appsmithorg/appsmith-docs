@@ -117,7 +117,13 @@ export default {
 
 
 
-3. Publish the package.
+3. **Publish** the Package from top-right corner. This allows the changes to reflect on the app side. 
+
+<dd>
+
+If the package is git-connected, you also need to release a new version for the changes to be available. For more details, refer to [Package Version Control](/packages/reference/versioning).
+
+</dd>
 
 4. Open your App from the homepage and ensure that both the app and modules share the same workspace.
 
