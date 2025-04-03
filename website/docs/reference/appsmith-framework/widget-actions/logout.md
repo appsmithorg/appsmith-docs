@@ -37,7 +37,7 @@ Specifies the URL where the user should be redirected after logging out. If not 
 Here are a few examples of using `logoutUser()` in different situations:
 
 
-#### Logout and Redirect to the Current Page
+#### Logout and redirect to current page
 
 <dd>
 
@@ -54,7 +54,7 @@ logoutUser();
 
 
 
-#### Logout and Redirect to the Same Page
+#### Logout and redirect to same page
 
 
 <dd>
@@ -71,7 +71,7 @@ This redirects the user to `/user/login?redirectUrl=<current_path>`, allowing th
 
 </dd>
 
-#### Logout and Redirect to a Custom Page
+#### Logout and redirect to custom page
 
 <dd>
 
