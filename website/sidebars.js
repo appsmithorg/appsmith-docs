@@ -596,6 +596,7 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/reset-widget',
               'reference/appsmith-framework/widget-actions/set-timeout',
               'reference/appsmith-framework/widget-actions/intervals-time-events',
+              'reference/appsmith-framework/widget-actions/logout',
               'reference/appsmith-framework/widget-actions/store-value',
               'reference/appsmith-framework/widget-actions/show-alert',
               'reference/appsmith-framework/widget-actions/show-modal',
