@@ -37,7 +37,7 @@ Default roles provide standardized permission sets designed to match different u
 
 Instance-level default roles have permissions that govern access to Appsmith instance, affecting all workspaces and users within the instance. Some instance-level roles can be tailored to provide specific access to all users. The instance-level roles include:
 
-* [Instance Administrator role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) - to configure instances, manage user groups and roles, create workspaces, and monitor audit logs.
+* [Organization Administrator Role](/advanced-concepts/granular-access-control/reference/default-roles#organization-administrator-role) - to configure instances, manage user groups and roles, create workspaces, and monitor audit logs.
 
 * [Default Roles for All Users](/advanced-concepts/granular-access-control/reference/default-roles#default-role-for-all-users) - helps you define some default permissions that will be applicable to all users across your Appsmith instance.
 
