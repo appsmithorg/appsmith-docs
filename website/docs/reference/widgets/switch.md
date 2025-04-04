@@ -11,6 +11,8 @@ These properties are customizable options present in the property pane of the wi
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
  <dd>
@@ -37,6 +39,9 @@ Alignment refers to how a label is positioned relative to a widget. By adjusting
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Default State `boolean`
 
@@ -96,6 +101,8 @@ This property determines how the widget's height adjusts to changes in its conte
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onChange
 
