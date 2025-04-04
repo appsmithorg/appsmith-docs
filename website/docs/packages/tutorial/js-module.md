@@ -92,8 +92,13 @@ export default {
 </dd>
 
 
+5. **Publish** the JS module from top-right corner. This allows the changes to reflect on the app side. 
 
-5. **Publish** the JS Module.
+<dd>
+
+If the package is git-connected, you also need to release a new version for the changes to be available. For more details, refer to [Package Version Control](/packages/reference/versioning).
+
+</dd>
 
 ## Use JS module
 
@@ -145,6 +150,8 @@ With this, you can format dates using the JS module in multiple places throughou
 
 :::info
 When you update and publish a package, these modifications automatically apply in the edit mode of the app. However, the live (deployed) version of the app remains unchanged until you redeploy the app. 
+
+If the package is git-connected, it continues to use the previous version until it is changed directly while editing the app.
 :::
 
 ### See also
