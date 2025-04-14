@@ -58,7 +58,7 @@ Google’s File Picker API requires a secure connection to return the selected s
 
 To resolve this issue, ensure that your self-hosted Appsmith instance is configured to use HTTPS by setting up a custom domain and installing an SSL certificate.
 
-[Configure a custom domain and SSL certificate](/getting-started/setup/instance-configuration/custom-domain).
+See how to [Configure a custom domain and SSL certificate](/getting-started/setup/instance-configuration/custom-domain).
 
 Once HTTPS is enabled, the Google File Picker will function correctly, and access will be granted only to the selected sheets as expected.
 
