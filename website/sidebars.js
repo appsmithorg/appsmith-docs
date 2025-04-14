@@ -324,8 +324,8 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
-                
                     'connect-data/reference/jira',
+                    'connect-data/reference/notion',
                      'connect-data/reference/slack',
                     'connect-data/reference/twilio'
                   ],
