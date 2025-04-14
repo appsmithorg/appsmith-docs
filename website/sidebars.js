@@ -324,6 +324,9 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
+                
+                    'connect-data/reference/jira',
+                     'connect-data/reference/slack',
                     'connect-data/reference/twilio'
                   ],
                 },
@@ -590,6 +593,7 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/close-modal',
               'reference/appsmith-framework/widget-actions/copy-to-clipboard',
               'reference/appsmith-framework/widget-actions/download',
+              'reference/appsmith-framework/widget-actions/logout-user',
               'reference/appsmith-framework/widget-actions/navigate-to',
               'reference/appsmith-framework/widget-actions/post-message',
               'reference/appsmith-framework/widget-actions/remove-value',
