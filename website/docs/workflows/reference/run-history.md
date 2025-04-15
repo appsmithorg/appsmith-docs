@@ -22,9 +22,19 @@ toc_max_heading_level: 3
 The **Run History** feature in workflows is essential for monitoring and managing your workflows. This page provides detailed information on how to read and understand the execution of each workflow run.
 
 <br/>
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-    <iframe src="https://demo.arcade.software/o8pHhnuLhI3GcCoBtcgJ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Debug Workflow">
-    </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/o8pHhnuLhI3GcCoBtcgJ?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
 <br/><br/>
 

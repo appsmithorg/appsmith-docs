@@ -8,16 +8,7 @@ const sidebars = {
       label: 'Get Started',
       items: [
         'intro',
-        {
-          type: 'category',
-          label: 'Tutorial',
-          link: { type: 'doc', id: 'getting-started/tutorials/start-building' },
-          items: [
-            'getting-started/tutorials/the-basics/connect-query-display-data',
-            'getting-started/tutorials/the-basics/work-with-data-in-ui',
-            'getting-started/tutorials/the-basics/write-js-code',
-          ],
-        }
+        'getting-started/tutorials/build-your-first-app',
       ],
     }, //getting started section end
     //self-hosting starts
@@ -186,6 +177,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/file-size-limit',
                 'getting-started/setup/instance-configuration/admin-settings',
                 'getting-started/setup/environment-variables',
+                'getting-started/setup/instance-management/api-reference',
               ],
             },
           ],
@@ -273,7 +265,6 @@ const sidebars = {
           type: 'category',
           collapsed: false,
           label: 'Reference',
-          link: { type: 'doc', id: 'connect-data/reference/overview' },
           items: [
             {
               type: 'category',
@@ -333,7 +324,8 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
-                    'connect-data/reference/salesforce',
+                    'connect-data/reference/jira',
+                     'connect-data/reference/slack',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
                   ],
@@ -377,6 +369,7 @@ const sidebars = {
       label: 'Build Apps',
       items: [
         'build-apps/overview',
+        'getting-started/tutorials/the-basics/work-with-data-in-ui',
         {
           type: 'category',
           collapsed: true,
@@ -442,6 +435,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
+            'build-apps/how-to-guides/generate-pdf-dynamically',
             `build-apps/how-to-guides/display-select-options-dynamically`,
             'build-apps/how-to-guides/add-remove-inputs-in-list',
             `build-apps/how-to-guides/navigate-between-pages`,
@@ -599,6 +593,7 @@ const sidebars = {
               'reference/appsmith-framework/widget-actions/close-modal',
               'reference/appsmith-framework/widget-actions/copy-to-clipboard',
               'reference/appsmith-framework/widget-actions/download',
+              'reference/appsmith-framework/widget-actions/logout-user',
               'reference/appsmith-framework/widget-actions/navigate-to',
               'reference/appsmith-framework/widget-actions/post-message',
               'reference/appsmith-framework/widget-actions/remove-value',
@@ -738,41 +733,44 @@ const sidebars = {
         'advanced-concepts/external-portal-using-appsmith',
       ],
     }, //Advanced Concepts end
-    //module start
-    {
-      type: 'category',
-      collapsed: false,
-      label: 'Packages (Beta)',
-      items: [
-        'packages/overview',
 
-        {
-          type: 'category',
-          label: 'Tutorial',
-          items: [
-            'packages/tutorial/query-module',
-            'packages/tutorial/js-module'
-          ],
-        },
-        {
-          type: 'category',
-          collapsed: true,
-          label: 'How-to Guides',
-          items: [
-            'packages/how-to-guides/use-query-inside-js-module',],
-        },
-        {
-          type: 'category',
-          collapsed: false,
-          label: 'Reference',
-          items: [
-            'packages/reference/package',
-            'packages/reference/query-module'
-
-          ],
-        }
-      ]
-    }, //module end
+      //module start
+      {
+        type: 'category',
+        collapsed: false,
+        label: 'Packages (Beta)',
+        items: [
+          'packages/overview',
+  
+          {
+            type: 'category',
+            label: 'Tutorial',
+            items: [
+              'packages/tutorial/query-module',
+              'packages/tutorial/js-module'
+            ],
+          },
+          {
+            type: 'category',
+            collapsed: true,
+            label: 'How-to Guides',
+            items: [
+              'packages/how-to-guides/pass-date-between-modules',
+              'packages/how-to-guides/use-query-inside-js-module',],
+          },
+          {
+            type: 'category',
+            collapsed: false,
+            label: 'Reference',
+            items: [
+              'packages/reference/package',
+              'packages/reference/query-module',
+              'packages/reference/versioning'
+            ],
+          }
+        ]
+      }, //module end
+  
     //Workflows start
     {
       type: 'category',

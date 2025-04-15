@@ -21,13 +21,13 @@ tags={[
 <!-- vale on -->
 This page provides detailed insights into the individual permissions associated with the default roles available in Appsmith.
 
-## Instance Administrator Role
+## Organization Administrator Role
 
-The Instance Administrator Role operates at the highest level within the platform, primarily focusing on tasks such as configuring instances, managing user groups and roles, creating workspaces, and monitoring audit logs. 
+The Organization Administrator Role (previously Instance Administrator role) operates at the highest level within the platform, managing organization-wide settings such as branding, GAC, licenses, provisioning, and audit logs.
 
 ### Permissions
 
-To perform different tasks, the Instance Administrator role in Appsmith has the following permissions:
+To perform different tasks, the Organization Administrator role in Appsmith has the following permissions:
 
   <div className="gac-permissions">
         <p className="permission-footnote">
@@ -115,7 +115,7 @@ For more information about each permission, see [Permissions](/advanced-concepts
 
 ### Limitations
 
-Despite having extensive permissions, the Instance Administrator role in Appsmith cannot perform the following tasks:
+Despite having extensive permissions, the Organization Administrator role in Appsmith cannot perform the following tasks:
 
 - Inability to execute actions that require workspace-level permissions, such as creating, editing, or deleting apps within a workspace.
 

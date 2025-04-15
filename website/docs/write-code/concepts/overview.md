@@ -10,17 +10,30 @@ Understanding how to effectively write and integrate code is pivotal to harnessi
 
 Let's get started on your journey to creating dynamic and responsive applications on the Appsmith platform!
 
+
 <div className="containerGridSampleApp">
-  <div className="containerColumnSampleApp columnGrid column-one">
-        <div className="containerCol">
-            <a href="/core-concepts/writing-code/javascript-editor-beta"><strong>JSObjects</strong></a>
-        </div> <hr className="gradient-hr" />
-        <div className="containerDescription">JSObjects enable better organization of functions & variables</div>
-    </div>
-    <div className="containerColumnSampleApp columnGrid column-two">
-        <div className="containerCol">
-           <a href="/write-code/concepts/execute-onpageload"><strong>Execute Queries & JS OnPageLoad</strong></a>
-        </div><hr className="gradient-hr" />
-        <div className="containerDescription">Run code on page load and learn how the settings work</div>
-    </div>
+   <!-- JS Libraries -->
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/core-concepts/writing-code/javascript-editor-beta">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>JSObjects</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+       JSObjects enable better organization of functions & variables
+      </div>
+   </a>
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/write-code/concepts/execute-onpageload">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Execute Queries & JS OnPageLoad</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Run code on page load and learn how the settings work
+      </div>
+   </a>
 </div>
+

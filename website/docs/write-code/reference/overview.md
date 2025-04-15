@@ -82,21 +82,3 @@ This page provides reference documentation for Appsmith's global objects, functi
    </a>
 </div>
 
----
-
-## Data Transformation
-
-<div className="containerGridSampleApp">
-   <!-- Data Transformation -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/write-code/reference/data-transformation">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Data Transformation</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to manipulate and transform data using JavaScript, allowing you to format, filter, and prepare data for display within your applications.
-      </div>
-   </a>
-</div>

@@ -6,14 +6,6 @@ description: This page provides reference documentation for Appsmith's datasourc
 
 This page provides reference documentation for Appsmith's datasource connections, query settings, and supported APIs. Browse the sections below to explore detailed references for connecting and configuring your data.
 
----
----
-sidebar_position: 1
-description: Find resources for managing your data in Appsmith.
----
-
-# Datasources
-
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Appsmith supports the following databases and APIs.
 
 

@@ -33,7 +33,30 @@ Toggle the switch to enable the webhook trigger. Once enabled, Appsmith generate
 
 ### URL
 
-Copy the provided endpoint URL to configure the webhook in your external service. This unique URL includes an API key for authentication and is not shown again for security reasons, so be sure to save it for future reference. You can also use the embedded API key embedded in the URL as a bearer token. If you forget to note the URL, you can regenerate it and must update all applications or services to use the new URL. To configure the workflow, use the HTTP POST method along with the webhook URL. For more information, see [Create Basic Workflow](/workflows/tutorials/create-workflow) using the webhook trigger.
+The unique webhook endpoint used to trigger the workflow. This URL includes an embedded API key for authentication and must be used in an external service’s `HTTP POST` request to start the workflow. The embedded API key can also be extracted and used as a Bearer token in the Authorization header.
+
+If the original webhook URL is lost, you can generate a new one. This action invalidates the previous URL, and any external services or integrations must be updated to use the new endpoint.
+
+#### Response Handling
+
+Appsmith workflows can send a response back to the service that triggered the webhook. Use the `appsmith.workflows.response()` function to return an HTTP status code and a response body. This is helpful when the calling service expects a confirmation or a specific output after the workflow runs.
+
+<dd>
+
+*Example*:
+
+```js
+appsmith.workflows.response({ statusCode: 200,
+  body: {
+    text: data,
+  },
+});
+```
+</dd>
+
+<ZoomImage src="/img/workflow-webhook.png" alt=""/>
+
+
 
 ## Scheduled trigger
 
