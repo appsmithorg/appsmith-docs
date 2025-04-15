@@ -764,7 +764,8 @@ const sidebars = {
             label: 'Reference',
             items: [
               'packages/reference/package',
-              'packages/reference/query-module'
+              'packages/reference/query-module',
+              'packages/reference/versioning'
             ],
           }
         ]

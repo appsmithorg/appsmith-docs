@@ -28,12 +28,6 @@ You'll create a reusable query module using product inventory data and display t
 * ♻️ **Reusability:** Discover how to reuse the query module within applications
 :::
 
-## Prerequisites
-Before you start, make sure you have the following:
-
-* A self-hosted instance of Appsmith with a [paid subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
-* If you are new to Appsmith, see [Tutorial - Basics](/getting-started/tutorials/start-building).
-
 
 ## Create query module
 
@@ -126,7 +120,13 @@ SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 11. **Run** the query to ensure it retrieves the data correctly.
 
 
-12. **Publish** the query module from top-right corner. This allows the changes to reflect on the app side.
+12. **Publish** the query module from top-right corner. This allows the changes to reflect on the app side. 
+
+<dd>
+
+If the package is git-connected, you also need to release a new version for the changes to be available. For more details, refer to [Package Version Control](/packages/reference/versioning).
+
+</dd>
 
 
 
