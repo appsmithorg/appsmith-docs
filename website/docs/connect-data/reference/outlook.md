@@ -167,7 +167,11 @@ Updates an existing calendar event in Outlook. Use this to modify subject, timin
 
 <dd>
 
-Unique identifier of the Outlook user whose calendar event is being updated. Refer to Microsoft Graph API or user context to retrieve this value.
+Unique identifier of the Outlook user whose calendar the event is created in.
+
+This should be an email address associated with a Microsoft account, such as `user@outlook.com` or a work email from Microsoft 365 (e.g., `user@company.com`).
+
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
 
 </dd>
 
@@ -341,8 +345,12 @@ Deletes a specific event from a user's Outlook calendar. Use this to permanently
 
 <dd>
 
-Unique identifier of the Outlook user whose calendar contains the event.
-Retrieve the User ID using the Microsoft Graph API `endpoint /users`, or from the authenticated user context. In organizational accounts, administrators can access this via Azure Active Directory.
+Unique identifier of the Outlook user whose calendar the event is created in.
+
+This should be an email address associated with a Microsoft account, such as `user@outlook.com` or a work email from Microsoft 365 (e.g., `user@company.com`).
+
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
+
 
 </dd>
 
@@ -387,14 +395,11 @@ Retrieves email messages from a specific folder in a user's Outlook mailbox. Use
 
 <dd>
 
-Unique identifier of the Outlook user whose mailbox is being accessed.
-To retrieve the User ID, use Microsoft Graph API's `/users` endpoint. For personal accounts, the authenticated context typically provides the ID automatically. In enterprise accounts, administrators can obtain it from Azure Active Directory.
+Unique identifier of the Outlook user whose calendar the event is created in.
 
-Example commands to get User ID:
+This should be an email address associated with a Microsoft account, such as `user@outlook.com` or a work email from Microsoft 365 (e.g., `user@company.com`).
 
-- Use: `GET /users` (for organization-wide listing)
-
-- Use: `GET /me` (for authenticated user)
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
 
 </dd>
 
@@ -457,8 +462,12 @@ Sends an email message from a specified Outlook user. You can include recipients
 
 <dd>
 
-Unique identifier of the Outlook user from whose account the email is sent.
-Retrieve the User ID using Microsoft Graph API’s /users endpoint, or refer to the current authenticated session via /me. For organizational accounts, the ID can also be accessed via Azure Active Directory.
+Unique identifier of the Outlook user whose calendar the event is created in.
+
+This should be an email address associated with a Microsoft account, such as `user@outlook.com` or a work email from Microsoft 365 (e.g., `user@company.com`).
+
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
+
 
 </dd>
 
