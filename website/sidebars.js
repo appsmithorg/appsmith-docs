@@ -321,6 +321,7 @@ const sidebars = {
                   label: 'SaaS Integrations',
                   items: [
                     'connect-data/reference/airtable',
+                    'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
