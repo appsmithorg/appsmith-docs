@@ -119,24 +119,7 @@ It expects an array of block objects, where each object represents a block type 
 
 <dd>
 
-The `cover` property allows you to set a cover image for the new Notion page. This image appears at the top of the page in Notion and helps visually distinguish the page.
-
-It expects an object with the following structure:
-
-- `type`: The type of image source. Currently, only "external" is supported.
-
-- `external`: An object that contains a valid image URL in the url field.
-
-*Example:*
-
-```js
-{
-  "type": "external",
-  "external": {
-    "url": "{{input1.text}}"
-  }
-}
-```
+The cover property allows you to set or update a cover image for the Notion page. This image appears at the top of the page in Notion and helps visually distinguish the page.
 
 The URL must point to a publicly accessible image. Notion does not currently support uploading local files directly through this property.
 
@@ -384,24 +367,32 @@ The **PDF** property allows you to update a PDF block within a Notion page by pr
 
 <dd>
 
-The **Table** property allows you to update a table block within a Notion page. While Notion databases are often used for tables, this block specifically refers to a simple table layout used within a page. You can update the structure or content within a table block.
+The Table block represents a simple (non-database) table. It must define structure using these fields:
+
+- `table_width`: Number of columns
+
+- `has_column_header`: Whether the first row is a column header
+
+- `has_row_header`: Whether the first column is a row header
+
 
 *Example*:
 
 ```js
-"table": {
-  "children": [
-    {
-      "type": "table_row",
-      "table_row": {
-        "cells": [
-          {"type": "text", "text": {"content": "Cell 1"}},
-          {"type": "text", "text": {"content": "Cell 2"}}
-        ]
-      }
-    }
-  ]
-}
+{
+  "table": {
+    "table_width": 2,
+    "has_column_header": true,
+    "has_row_header": false,
+    "children": [
+      {
+        "type": "table_row",
+        "table_row": {
+          "cells": [
+            [{"type": "text", "text": {"content": "Header 1"}}],
+            [{"type": "text", "text": {"content": "Header 2"}}]
+          ]
+}}]}}
 ```
 
 </dd>
