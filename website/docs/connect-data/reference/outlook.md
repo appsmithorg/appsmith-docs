@@ -4,7 +4,7 @@ This page provides information on how to connect to Outlook. This integration en
 
 ## Connect Outlook
 
-To connect to Outlook, you must authenticate using an OAuth2 connection. After initiating the connection, sign in with your Microsoft account and authorize access to calendar-related permissions. Once connected, you can interact with calendars and events using the available commands. Ensure you select the appropriate user ID and calendar ID for accessing or modifying events.
+To connect to Outlook, you must authenticate using an OAuth2 connection. After initiating the connection, sign in with your Microsoft account and authorize access to calendar-related permissions. Ensure you select the appropriate user ID and calendar ID for accessing or modifying events.
 
 ## Query Outlook
 
@@ -14,13 +14,15 @@ The following section is a reference guide that provides a description of the av
 
 Creates a new calendar event in Outlook for a specified user. You can define details such as the subject, timing, attendees, and event location.
 
-#### user id `string`
+#### User ID `string`
 
 <dd>
 
 Unique identifier of the Outlook user whose calendar the event is created in.
 
-To find the User ID, use Microsoft Graph API’s /users endpoint, or refer to the authenticated user context. In organization accounts, administrators can retrieve this from Azure Active Directory.
+This should be an email address associated with a Microsoft account, such as `user@outlook.com` or a work email from Microsoft 365 (e.g., `user@company.com`).
+
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
 
 </dd>
 
@@ -28,7 +30,7 @@ To find the User ID, use Microsoft Graph API’s /users endpoint, or refer to th
 
 <dd>
 
-Title or summary of the calendar event. Appears as the event label on the calendar.
+Title or summary of the calendar event. This appears prominently on the user’s calendar view, mobile app, and any synced notifications.
 
 </dd>
 
@@ -36,7 +38,18 @@ Title or summary of the calendar event. Appears as the event label on the calend
 
 <dd>
 
-Start time of the event in ISO 8601 format (e.g., 2025-04-15T10:00:00). Must be used along with Time Zone.
+
+Defines when the event begins. This must follow ISO 8601 format, such as:
+
+```js
+2025-04-15T10:00:00
+```
+
+You can also dynamically generate this from a Date widget:
+
+```js
+{{ startDatePicker.selectedDate }}
+```
 
 </dd>
 
@@ -44,8 +57,9 @@ Start time of the event in ISO 8601 format (e.g., 2025-04-15T10:00:00). Must be 
 
 <dd>
 
-Time zone for both Start Time and End Time. Use standard names like UTC, Pacific Standard Time, Eastern Standard Time, etc.
+The time zone in which the Start and End times are interpreted. 
 
+Providing the correct time zone ensures events display accurately for attendees across regions.
 </dd>
 
 #### End Time `string`
@@ -60,8 +74,14 @@ End time of the event in ISO 8601 format. Must be after the Start Time and align
 
 <dd>
 
-ID of the calendar where the event is added.
-To retrieve Calendar ID, use the Microsoft Graph API endpoint `/users/{user-id}/calendars`. The default calendar typically has the ID "calendar".
+The unique identifier of the calendar where the event will be created.
+
+For most users, the default calendar has an ID of `calendar`. However, users may have multiple calendars, including shared calendars, delegated calendars, or additional personal calendars they’ve created.
+
+You can use the Custom Action command to make a request to the Microsoft Graph endpoint:
+`/users/{user-id}/calendars`
+
+This allows you to fetch all calendar IDs programmatically and use them dynamically in your app.
 
 </dd>
 
@@ -77,7 +97,22 @@ Optional body text describing the event's agenda, context, or any additional not
 
 <dd>
 
-Format of the event description. Use "text" for plain text or "html" for rich content.
+Specifies the formatting of the Description field. Valid values are:
+
+- `text`: plain text only
+
+- `html`: allows rich content formatting like bold text, lists, or hyperlinks
+
+*HTML Example:*
+
+```html
+<p><strong>Agenda:</strong></p>
+<ul>
+  <li>Review Q2 metrics</li>
+  <li>Discuss campaign rollout</li>
+  <li>Assign next steps</li>
+</ul>
+```
 
 </dd>
 
@@ -85,7 +120,9 @@ Format of the event description. Use "text" for plain text or "html" for rich co
 
 <dd>
 
-Name of the event's physical or virtual location — such as a conference room or meeting space.
+Text label for the meeting location. This can be a room, office, or virtual session name.
+
+
 
 </dd>
 
@@ -93,7 +130,13 @@ Name of the event's physical or virtual location — such as a conference room o
 
 <dd>
 
-Optional URL for a virtual meeting or reference link (e.g., Teams, Zoom, Google Meet).
+Link to the virtual meeting location (e.g., Microsoft Teams, Zoom).
+
+*Example:*
+
+```js
+https://teams.microsoft.com/l/meetup-join/19%3ameeting... 
+```
 
 </dd>
 
@@ -101,7 +144,18 @@ Optional URL for a virtual meeting or reference link (e.g., Teams, Zoom, Google 
 
 <dd>
 
-List of attendees for the event. Each attendee should include an email and optionally their role (e.g., required, optional).
+A list of participants to invite. Each attendee should be an object with at least `emailAddress`. You can also include type (e.g., required, optional).
+
+*Example structure:*
+
+```js
+[
+  { "emailAddress": { "address": "john@example.com" }, "type": "required" },
+  { "emailAddress": { "address": "jane@example.com" }, "type": "optional" }
+]
+```
+
+Use dynamic forms or repeaters in Appsmith to collect attendee emails and roles.
 
 </dd>
 
@@ -121,8 +175,24 @@ Unique identifier of the Outlook user whose calendar event is being updated. Ref
 
 <dd>
 
-Unique identifier of the event to be updated.
-Use Microsoft Graph API’s `/users/{user-id}/calendars/{calendar-id}/events` to list events and find their Event ID.
+The unique identifier of the calendar event to be updated or deleted.
+
+To retrieve an Event ID without using external APIs, you can:
+
+- Use the Custom Action command to call
+`/users/{user-id}/calendars/{calendar-id}/events`
+
+  This will return a list of events with their associated id values. You can extract the Event ID from this response and use it in update or delete operations.
+
+- Alternatively, if you are viewing an event in Outlook Web, the Event ID appears in the URL when you open the event details.
+
+<dd>
+
+```js
+https://outlook.office.com/calendar/item/AAkALgAAAAAAHYQDEap...
+```
+</dd>
+
 
 </dd>
 
@@ -138,7 +208,11 @@ Updated event title or summary.
 
 <dd>
 
-Updated start time in ISO 8601 format.
+Defines when the event begins. This must follow ISO 8601 format, such as:
+
+```js
+2025-04-15T10:00:00
+```
 
 </dd>
 
@@ -162,7 +236,7 @@ Updated end time in ISO 8601 format.
 
 <dd>
 
-ID of the calendar containing the event.
+ID of the calendar where the event will be created. Most users have a default calendar with ID calendar, but users may have additional shared or personal calendars.
 
 </dd>
 
@@ -179,7 +253,11 @@ Updated event description or body content.
 
 <dd>
 
-Updated format of the description — either "text" or "html".
+Specifies the formatting of the Description field. Valid values are:
+
+- `text`: plain text only
+
+- `html`: allows rich content formatting like bold text, lists, or hyperlinks
 
 </dd>
 
@@ -195,7 +273,7 @@ Updated location name for the event.
 
 <dd>
 
-Updated URL for virtual meeting or location reference.
+Link to the virtual meeting location (e.g., Microsoft Teams, Zoom).
 
 </dd>
 
@@ -215,8 +293,10 @@ Retrieves detailed information for a specific calendar event in Outlook using it
 
 <dd>
 
-Unique identifier of the Outlook user whose calendar contains the event.
-To retrieve the User ID, use the Microsoft Graph API endpoint `/users`, or access the authenticated user context. In enterprise environments, administrators can locate this in Azure Active Directory.
+Unique identifier of the Outlook user whose calendar the event is created in.
+This should be an email address associated with a Microsoft account, such as user@outlook.com or a work email from Microsoft 365 (e.g.,` user@company.com`).
+
+Gmail or other non-Microsoft domains are not supported unless linked to a Microsoft identity.
 
 </dd>
 
@@ -224,8 +304,23 @@ To retrieve the User ID, use the Microsoft Graph API endpoint `/users`, or acces
 
 <dd>
 
-Unique identifier of the event to retrieve.
-To find the Event ID, use the Microsoft Graph API endpoint `/users/{user-id}/calendars/{calendar-id}/events`. Each event object returned includes an id field representing the Event ID.
+The unique identifier of the calendar event to be updated or deleted.
+
+To retrieve an Event ID without using external APIs, you can:
+
+- Use the Custom Action command to call
+`/users/{user-id}/calendars/{calendar-id}/events`
+
+  This will return a list of events with their associated id values. You can extract the Event ID from this response and use it in update or delete operations.
+
+- Alternatively, if you are viewing an event in Outlook Web, the Event ID appears in the URL when you open the event details.
+
+<dd>
+
+```js
+https://outlook.office.com/calendar/item/AAkALgAAAAAAHYQDEap...
+```
+</dd>
 
 </dd>
 
@@ -255,8 +350,23 @@ Retrieve the User ID using the Microsoft Graph API `endpoint /users`, or from th
 
 <dd>
 
-Unique identifier of the event to be deleted.
-To locate the Event ID, use the Microsoft Graph API endpoint `/users/{user-id}/calendars/{calendar-id}/events`. The id field in each event object corresponds to the Event ID.
+The unique identifier of the calendar event to be updated or deleted.
+
+To retrieve an Event ID without using external APIs, you can:
+
+- Use the Custom Action command to call
+`/users/{user-id}/calendars/{calendar-id}/events`
+
+  This will return a list of events with their associated id values. You can extract the Event ID from this response and use it in update or delete operations.
+
+- Alternatively, if you are viewing an event in Outlook Web, the Event ID appears in the URL when you open the event details.
+
+<dd>
+
+```js
+https://outlook.office.com/calendar/item/AAkALgAAAAAAHYQDEap...
+```
+</dd>
 
 </dd>
 
@@ -332,17 +442,10 @@ Filters can be combined using logical operators such as and, or, etc.
 
 Specifies the maximum number of messages to return. This helps manage large datasets by retrieving only a subset of records.
 
-*Example 1:* To fetch the 10 most recent messages in the inbox:
+*Example:* To fetch the 10 most recent messages in the inbox:
 Set Limit Results to 10.
 
-*Example 2:* To display a quick preview or summary (e.g., first 5 emails for a dashboard):
-Set Limit Results to 5.
 
-This value controls the top parameter in the Graph API request:
-
-```plaintext
-?$top=5
-```
 
 </dd>
 
@@ -380,9 +483,9 @@ The main content of the email message. Use plain text or HTML depending on the C
 
 Specifies the format of the Message Body. Accepted values are:
 
-- text – for plain text content
+- `text` – for plain text content
 
-- html – for rich text or HTML-formatted emails
+- `html` – for rich text or HTML-formatted emails
 
 </dd>
 
@@ -501,22 +604,5 @@ GET /users/{user-id}/calendarView?startDateTime=2025-04-01T00:00:00Z&endDateTime
 
 This returns all events between the provided dates. You can also apply filters or select specific fields using query parameters.
 
-Example 4: Get User’s Mail Tips
- Before sending an email, you want to check if recipients are out of office or if there are automatic replies configured.
-
-Endpoint:
-
-```http
-POST /users/{user-id}/getMailTips
-```
-
-Body:
-
-```json
-{
-  "EmailAddresses": ["user@example.com"],
-  "MailTipsOptions": "automaticReplies"
-}
-```
 
 </dd>
