@@ -42,7 +42,8 @@ The subject line of the email. This text appears as the title in the recipient's
 
 <dd>
 
-The main body of the email. You can pass plain text or HTML content. To create multiline messages or formatted text, you can use a rich text editor widget.
+The main body of the email. Supports both plain text and HTML content. When using HTML, ensure the MIME type is correctly set to text/html to enable proper rendering of formatting like bold, links, and images.
+
 
 ```js
 <p>Hello {{nameInput.text}},</p>
@@ -56,7 +57,8 @@ The main body of the email. You can pass plain text or HTML content. To create m
 
 <dd>
 
-A list of file objects to be attached to the email. Each object should include file name, content type, and base64-encoded file data.
+A list of file objects to be attached to the email. Each object must include the file name, MIME type, and base64-encoded content of the file. URLs are not supported.
+
 
 </dd>
 
@@ -64,7 +66,7 @@ A list of file objects to be attached to the email. Each object should include f
 
 <dd>
 
-Optional custom headers such as "Reply-To", "CC", or "BCC". Provide as key-value pairs.
+Optional custom headers such as "Reply-To", "CC", or "BCC". Provide as a JSON object representing MIME-style headers, using key-value pairs.
 
 ```js
 {
