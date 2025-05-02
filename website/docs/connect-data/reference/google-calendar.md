@@ -1,4 +1,4 @@
-# Google Calendar Integration
+# Google Calendar 
 
 This page provides information on how to connect to Google Calendar. It enables users to perform actions such as creating events, updating events, listing events, managing contacts, searching directory people, and checking availability.
 

@@ -1,4 +1,4 @@
-# Zoom Integration
+# Zoom 
 
 This page provides information on how to connect to Zoom. It enables users to perform actions such as creating meetings, updating meeting details, managing meeting registrants, and accessing meeting recordings.
 

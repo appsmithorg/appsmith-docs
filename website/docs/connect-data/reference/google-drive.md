@@ -1,4 +1,4 @@
-# Google Drive Integration
+# Google Drive 
 
 This page provides information on how to connect to Google Drive. It enables users to perform actions such as managing files and folders, exporting documents, and performing custom actions.
 

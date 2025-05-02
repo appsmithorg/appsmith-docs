@@ -1,4 +1,4 @@
-# GitHub Integration
+# GitHub 
 
 This page provides information on how to connect to GitHub. It enables users to perform actions such as creating issues, updating releases, and searching for issues.
 
