@@ -324,6 +324,7 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/google-calendar',
+                    'connect-data/reference/google-drive',
                     'connect-data/reference/github',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
