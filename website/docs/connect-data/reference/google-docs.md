@@ -10,9 +10,8 @@ You must have view or edit access to any document you intend to read or modify. 
 
 ## Query Google Docs
 
-The following section provides a **reference guide** describing available commands and their parameters.
+The following section is a reference guide that provides a description of the available commands with their parameters to create Google Docs queries.
 
----
 
 ### Fetch Google Docs Content
 
