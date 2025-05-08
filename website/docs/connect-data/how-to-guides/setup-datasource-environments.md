@@ -54,17 +54,52 @@ SaaS integrations such as Google Sheets, HubSpot, Twilio, and Airtable do not su
 
 ## Switch environments
 
+You can switch between Staging and Production environments to configure the application to execute queries in the selected environment.
+
+#### Switching in Edit Mode
+
+In *Edit* and *Preview* modes, select the environment from the bottom left corner of the screen. Switching the environment in *Edit* mode does not affect the deployed version of the application. The Production environment is always used in the deployed version.
+
+<dd>
+
 <ZoomImage
   src="/img/switch-img-.png" 
   alt="Switch Environments"
   caption="Switch Environments"
 />
 
-Select the environment on the bottom left corner of the screen to configure the application to execute queries in the Staging or Production environments. Switching between environments in the *Edit mode* does not affect the deployed version of the app, as the Production environment is always used for the deployed version.
+</dd>
 
-You can switch between Staging and Production environments in the *Edit* and *Preview* modes. For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
+#### Switching in View Mode
 
-With this, you can create queries and switch between environments. As you toggle between environments, the queries would automatically use the selected environment.
+In View mode, you can switch environments by adding a query parameter to the application URL:
+
+- To use the Production environment, append the following query parameter to the app URL:
+
+<dd>
+
+```js
+?environment=production
+// Example: https://app.appsmith.com/app/customer-dashboard?environment=production
+```
+
+</dd>
+
+- To switch to the Staging environment, append the following query parameter to the app URL:
+
+
+<dd>
+
+```js
+?environment=staging
+// Example: https://app.example.com/app/customer-dashboard?environment=staging
+```
+
+</dd>
+
+
+Access to environments is restricted based on user permissions, ensuring that only authorized users can view or interact with the data. For more information on permissions, you can refer to the [Granular Access Control](/advanced-concepts/granular-access-control/reference/permissions).
+
 
 
 
@@ -90,10 +125,21 @@ With this, you can create queries and switch between environments. As you toggle
 
 Appsmith provides two environments by default: *Production* and *Staging*. However, if you want to create and manage your own environments, follow these steps:
 
-<div style={{ position: "relative", paddingBottom: "calc(50.520833333333336% + 41px)", height: "0", width: "100%" }}>
-  <iframe src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", colorScheme: "light" }} title="Appsmith | Connect Data">
-  </iframe>
+
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/9imsTddUlDYM3yne8Ti9?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
 </div>
+
 
 1. On the applications home page, click the **Menu icon** (three dots) in the workspace where you want to create a custom environment.
 

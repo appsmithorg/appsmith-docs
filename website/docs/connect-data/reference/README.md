@@ -1,226 +1,295 @@
 ---
-sidebar_position: 1
-description: Find resources for managing your data in Appsmith.
+description: This page provides reference documentation for Appsmith's datasource connections, query settings, and supported APIs, enabling developers to easily integrate and configure data sources within their applications.
 ---
 
-# Datasources
+# Reference
+
+This page provides reference documentation for Appsmith's datasource connections, query settings, and supported APIs. Browse the sections below to explore detailed references for connecting and configuring your data.
 
 Appsmith offers plug-and-play support for many databases and the RESTful API interface for seamless integration with other tools. Appsmith supports the following databases and APIs.
 
----
+
+
+## APIs
+With Appsmith, you can connect with a wide range of tools and platforms; if there isn't a supported datasource, you can connect using the REST API. Following APIs are supported by Appsmith:
+
+
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/authenticated-api">
+            <img className="containerImage" src="/img/api-logo_.png" alt="RestAPI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/authenticated-api">API</a></b>
+    </div>
+  
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/graphql">
+            <img className="containerImage" src="/img/graphqllogo.png" alt="GraphQL"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/graphql">GraphQL</a></b>
+   </div>
+
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/rest-api">
+            <img className="containerImage" src="/img/api-logo_.png" alt="GoogleSheets"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/rest-api">REST API</a></b>
+   </div>
+   
+</div>
+
+
+
+
+
 
 ## Databases
+Databases are an essential part of many applications and are used to store and manage data. You can run queries to read and write data directly from the Appsmith editor. The following databases are supported by Appsmith:
 
-<div className="containerGridSampleApp">
-   <!-- MongoDB -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/mongodb">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>MongoDB</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         This page shows you how to connect and query MongoDB databases in Appsmith.
-      </div>
-   </a>
-   <!-- PostgreSQL -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/datasources/postgresql">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>PostgreSQL</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect and query PostgreSQL databases in your applications.
-      </div>
-   </a>
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-postgres">
+            <img className="containerImage" src="/img/postgresql.svg" alt="postgresql"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/querying-postgres">PostgreSQL</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-mongodb">
+            <img className="containerImage" src="/img/mongodb.svg" alt="MongoDB-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/connect-data/reference/querying-mongodb">MongoDB</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-mysql">
+            <img className="containerImage" src="/img/mysql.svg" alt="MySQL-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-mysql">MySQL</a></b>
+   </div>
+  <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-elasticsearch">
+            <img className="containerImage" src="/img/elastic.svg" alt="Elasticsearch-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-elasticsearch">Elasticsearch</a></b>
+   </div>
+
 </div>
 
-<div className="containerGridSampleApp">
-   <!-- MySQL -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/mysql">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>MySQL</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect and query MySQL databases in your applications.
-      </div>
-   </a>
-   <!-- ArangoDB -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/datasources/arangodb">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>ArangoDB</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect and query ArangoDB databases in Appsmith.
-      </div>
-   </a>
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-redis">
+            <img className="containerImage" src="/img/redis.svg" alt="Redis-logo"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/querying-redis">Redis</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-mssql">
+            <img className="containerImage" src="/img/mssql.svg" alt="MSSQL-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/connect-data/reference/querying-mssql">Microsoft SQL Server</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-firestore">
+            <img className="containerImage" src="/img/firestore.svg" alt="Firestore"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-firestore">Firestore</a></b>
+   </div>
+  <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-redshift">
+            <img className="containerImage" src="/img/aws-redshift.svg" alt="Redshift-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-redshift">Redshift</a></b>
+   </div>
+  
 </div>
 
-<div className="containerGridSampleApp">
-   <!-- Databricks -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/databricks">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Databricks</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to integrate Databricks with Appsmith for advanced data analytics.
-      </div>
-   </a>
+<div className="containerGrid">
+
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-amazon-s3">
+            <img className="containerImage" src="/img/aws-s3.svg" alt="Amazon-S3-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-amazon-s3">S3</a></b>
+   </div>
+   
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-dynamodb">
+            <img className="containerImage" src="/img/aws-dynamodb.svg" alt="DynamoDB-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-dynamodb">DynamoDB</a></b>
+   </div>
+
+ <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-snowflake-db">
+            <img className="containerImage" src="/img/snowflake.svg" alt="SnowflakeDB-logo"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/querying-snowflake-db">Snowflake</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-arango-db">
+            <img className="containerImage" src="/img/arangodb_.png" alt="ArangoDB-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/connect-data/reference/querying-arango-db">ArangoDB</a></b>
+    </div>
+ 
+
 </div>
 
----
+<div className="containerGrid">
+    <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-oracle">
+            <img className="containerImage" src="/img/oracle-logo.svg" alt="Oracle-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-oracle">Oracle</a></b>
+   </div>
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/using-smtp">
+            <img className="containerImage" src="/img/smtp-icon_1.png" alt="SMTP-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/using-smtp">SMTP</a></b>
+</div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/databricks">
+            <img className="containerImage" src="/img/logo-databricks-img.png" alt="SMTP-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/databricks">Databricks</a></b>
+</div>
+
+</div>
+
 
 ## SaaS Integrations
 
-<div className="containerGridSampleApp">
-   <!-- Google Sheets -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/google-sheets">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Google Sheets</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect Google Sheets and work with data seamlessly.
-      </div>
-   </a>
-   <!-- Airtable -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/datasources/airtable">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Airtable</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to integrate Airtable with Appsmith to manage your data efficiently.
-      </div>
-   </a>
+Appsmith also supports integration with various Software as a Service (SAAS) platforms:
+
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/airtable">
+            <img className="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/airtable">Airtable</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/twilio">
+            <img className="containerImage" src="/img/twilio_.png" alt="twilio-logo"/>
+            </a>     
+        </div> 
+         <b><a href="/connect-data/reference/twilio">Twilio</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/hubspot">
+            <img className="containerImage" src="/img/hubspot_.png" alt="hubspot-logo"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
+   </div>
+
+
 </div>
 
-<div className="containerGridSampleApp">
-   <!-- Salesforce -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/salesforce">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Salesforce</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect Salesforce to manage CRM data within Appsmith.
-      </div>
-   </a>
-   <!-- AWS Lambda -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/datasources/aws-lambda">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>AWS Lambda</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to integrate AWS Lambda for serverless function execution in Appsmith.
-      </div>
-   </a>
+
+<div className="containerGrid">
+    
+   <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/aws-lambda">
+            <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
+    </div>
+ <div className="columnGrid column-three" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/querying-google-sheets">
+            <img className="containerImage" src="/img/gsheets_.png" alt="GoogleSheets"/>
+            </a>   
+        </div> 
+            <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
+   </div>
 </div>
 
-<div className="containerGridSampleApp">
-   <!-- HubSpot -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/datasources/hubspot">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>HubSpot</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to connect HubSpot to manage your marketing and sales data.
-      </div>
-   </a>
-   <!-- Twilio -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/datasources/twilio">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Twilio</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to integrate Twilio for messaging and communication workflows.
-      </div>
-   </a>
+
+## AI Integrations
+With AI integrations, you can add intelligent AI capabilties to automate human tasks on your internal apps. Execute AI queries with a custom prompt and optional file context for enhanced responses.
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/appsmith-ai">
+            <img className="containerImage" src="/img/appsmith-ai-logo.svg" alt="Appsmith AI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/appsmith-ai">Appsmith AI</a></b>
+    </div>
+   <div className="columnGrid column-two" align="center">
+        <div className="containerCol">
+            <a href="/connect-data/reference/open-ai">
+            <img className="containerImage" src="/img/open-ai.svg" alt="OpenAI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
+    </div>
+   <div className="columnGrid column-three" align="center">
+         <div className="containerCol">
+            <a href="/connect-data/reference/anthropic">
+            <img className="containerImage" src="/img/anthropic4.svg" alt="OpenAI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
+   </div>
+  <div className="columnGrid column-three" align="center">
+       <div className="containerCol">
+            <a href="/connect-data/reference/google-ai">
+            <img className="containerImage" src="/img/google-ai.svg" alt="Google AI"/>
+            </a> 
+        </div> 
+        <b><a href="/connect-data/reference/google-ai">Google AI</a></b>
+   </div>
+
 </div>
 
----
 
-## AI & Automation
-
-<div className="containerGridSampleApp">
-   <!-- Appsmith AI -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/ai/appsmith-ai">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Appsmith AI</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Explore Appsmith's AI capabilities to enhance your applications with automation and intelligence.
-      </div>
-   </a>
-   <!-- Anthropic -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/ai/anthropic">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Anthropic</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Learn how to integrate Anthropic's AI for robust and ethical AI solutions in your apps.
-      </div>
-   </a>
-</div>
-
-<div className="containerGridSampleApp">
-   <!-- Google AI -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-one" href="/reference/ai/google-ai">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>Google AI</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Leverage Google AI tools to integrate advanced machine learning models.
-      </div>
-   </a>
-   <!-- OpenAI -->
-   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/reference/ai/openai">
-      <div className="containerHead">
-         <div className="containerHeading">
-            <b>OpenAI</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Integrate OpenAI's models to add natural language processing capabilities to your apps.
-      </div>
-   </a>
-</div>
-
----
+## See also
+- [Connect to Local Datasource](/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith)
+- [Setup Multiple Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments)

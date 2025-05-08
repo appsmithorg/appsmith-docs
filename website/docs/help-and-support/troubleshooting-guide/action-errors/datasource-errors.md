@@ -37,3 +37,34 @@ messageContent="Secret key is required when sending session details is switched 
 This message indicates that `Send Appsmith signature header` field has been marked as `Yes` but the `Session Details Signature Key` field is left empty.
 
 This error can be resolved by filling in the `Session Details Signature Key` field or by disabling the `Send Appsmith signature header` field by selecting `No`.
+
+## Malformed request error
+
+<Message  
+  messageContainerClassName="error"  
+  messageContent="malformed request"  
+/>
+
+This message appears when authorizing a Google Sheets datasource with selected sheet access on a self-hosted Appsmith instance.
+
+#### Cause
+
+This issue occurs when the self-hosted Appsmith instance is not configured with SSL (HTTPS).
+
+Google’s File Picker API requires a secure connection to return the selected sheet identifiers. In the absence of HTTPS, the request to the file picker fails, resulting in a malformed request error. As a fallback, Appsmith proceeds to authorize access to all sheets, even if only specific sheets were selected during the authorization flow.
+
+
+#### Solution
+
+To resolve this issue, ensure that your self-hosted Appsmith instance is configured to use HTTPS by setting up a custom domain and installing an SSL certificate.
+
+See how to [Configure a custom domain and SSL certificate](/getting-started/setup/instance-configuration/custom-domain).
+
+Once HTTPS is enabled, the Google File Picker will function correctly, and access will be granted only to the selected sheets as expected.
+
+
+
+
+
+
+

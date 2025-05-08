@@ -237,7 +237,7 @@ It returns an array of all the roles in your instance. For example:
 ```javascript
 
 [
-  "Instance Administrator Role",
+  "Organization Administrator Role",
   "Default Role For All Users",
   "Administrator",
   "Custom Role-1",

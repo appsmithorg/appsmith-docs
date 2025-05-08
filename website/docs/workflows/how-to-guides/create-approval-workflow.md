@@ -33,116 +33,181 @@ Before you start, make sure you have:
 
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
-* Configured your datasource that manages data in your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* A configured datasource to manage data within your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
 
 ## Create workflow
 
 Follow these steps to set up a workflow within your workspace: 
 
-1. Create a new workflow in your workspace to manage approvals. To understand the basics of creating a workflow, see the [Tutorial - Create Basic Workflow - Create Workflow](/workflows/tutorials/create-workflow#create-workflow) section.
+1. In your workspace, click **Create New** to create a new Workflow. To understand the basics of creating a workflow, see the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow#create-workflow).
 
-2. In your workflow, click the **+** icon under _Queries/JS_ to create a query, and write code to fetch data needed for decision-making. For example, for processing order refunds, you may want to fetch the order details (_getOrderDetails_). The below query fetches the order details for the given `order_id` from the `orders` table.
+2. Click **+** under *Queries/JS* to create a query that fetches data needed for decision-making.
 
-    ```sql
-    -- The order_id is a parameter, and replaced by the actual value passed by the application
-    select * from public. "orders" where order_id = {{this.params.order_id}};
-    ``` 
-3. Create a query to capture and update the data based on actions taken by users. For example, you may want to update the order status once a user takes action to process a refund. The below query updates the order status in the `order` table to `Refund Processed`. In case of rejection, the order status remains unchanged.
+<dd>
 
-    ```sql
-    -- The order_id are parameters and replaced by the actual value passed by the application
-    -- highlight-next-line
-    Update public. "orders" set status = 'Refund Processed' where order_id = {{this.params.order_id}};
-    ```
-4. You can also add capabilities in workflow to notify your users of the outcome. For this, you need to configure an [SMTP datasource](/connect-data/reference/using-smtp) and write queries to send emails. For example, you can create two queries:
-    *  To notify approval (_notifyUser_):
-        * Parameterize the query to include:
-            * Customer name (`{{this.params.customer_name}}`) who raised the request.
-            * Customer email (`{{this.params.customer_email}}`) to send email notification. 
-    * To notify rejection (_notifyRejectionToUser_):
-        * Parameterize the query to include:
-            * Customer name (`{{this.params.customer_name}}`) who raised the request.
-            * Customer email (`{{this.params.customer_email}}`) to send email notification.
-            * Rejection reason (`{{this.params.rejection_reason}}`).
+*Example:* If you are processing order refunds, fetch the order details using the following query:
 
-## Create approval requests
+```sql
+ -- The order_id is a parameter, and replaced by the actual value passed by the application
+SELECT * FROM public."orders" WHERE order_id = {{this.params.order_id}};
+```
+
+`{{this.params.order_id}}` is a dynamic binding in Appsmith that replaces the placeholder with an actual value at runtime.
+
+</dd>
+
+3. Create a query to update data based on user actions. After a user approves or rejects the request, the workflow must update the corresponding record in the database.
+
+<dd>
+
+*Example:* To update the status of an order after approval, use the following query:
+
+```sql
+-- The order_id are parameters and replaced by the actual value passed by the application
+UPDATE public."orders"  
+SET status = 'Refund Processed'  
+WHERE order_id = {{this.params.order_id}};
+```
+
+`{{this.params.order_id}}` dynamically retrieves the order_id from the workflow request.
+
+
+</dd>
+
+4. To send notifications, configure an [SMTP datasource](/connect-data/reference/using-smtp) and create queries for email alerts.
+
+<dd>
+
+*Example:*  To notify a customer when a refund is approved, create two SMTP queries:
+
+- To notify approval (`notifyUser`):
+
+    - Include the following parameters:
+    - Customer name (`{{this.params.customer_name}}`) – The user who raised the request.
+    - Customer email (`{{this.params.customer_email}}`) – The recipient of the notification.
+
+- To notify rejection (`notifyRejectionToUser`):
+    - Include the following parameters:
+    - Customer name (`{{this.params.customer_name}}`) – The user who raised the request.
+    - Customer email (`{{this.params.customer_email}}`) – The recipient of the notification.
+    - Rejection reason (`{{this.params.rejection_reason}}`) – The reason for rejection.
+
+
+</dd>
+
+## Create & handle requests
 
 Follow these steps to create approval requests that are awaiting user interaction: 
 
-1. In your workflow, go to **Main** under _JS Objects_. The `executeWorkflow` function is the main function that handles the workflow processing and will have code related to creating approval requests, and managing approvals. For more information, see the [executeWorkflow](/workflows/reference/workflow-functions#executeworkflow) function. 
 
-2. Write the code to create approval requests, and read the response and decision taken by the user. For example, in the below code, create the approval request for refund review and read the response of the decision taken by the user.
-    * **STEP 1** - Use the `assignRequest` function to build an approval request. For more information, see the [assignRequest](/workflows/reference/workflow-functions#assign-request) function. 
-    * **STEP 2** - Read the response generated which is available as part of the `response` object by reading the `resolution` property. The resolution property gives information about the action taken by the user.
-    * **STEP 3** - Write the code logic to handle user action based on `resolution`. For example, in the refund processing, if the resolution value is `Approve`, process the refund and send an approval email to the user notifying the outcome as `Refund processed`. If the resolution value is `Reject`, send a rejection email to the user notifying the outcome as refund rejected.
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/5c6gbYZqNd3ko8vpkkeC?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
+</div>
 
-    ```javascript
-    export default {
-        //highlight-next-line
-        async executeWorkflow(order) {
-            //The assignRequest function builds an approval request
-            //highlight-next-line
-            // STEP 1
-            const response = await appsmith.workflows.assignRequest({
-                requestName: "getPendingRefundRequests", 
-                message: "Refund raised by " + order.customer_name+ " for amount " + order.amount, 
-                requestToUsers: [order.approver_email], 
-                resolutions: ["Approve", "Reject"],
-                metadata: { "order": order } 
-            });
-             //highlight-next-line
-            //STEP 2
-            if (response && response.resolution === "Approve") {
-                //Add logic for refund processing if any
-                // When the user approves, execute the initiateRefund query 
-                 //highlight-next-line
-                //STEP 3
-                await initiateRefund.run({
-                    "id": order.order_id,
-                    "status": 'Refund Processed'
-                });
-                // Send refund approval email to the customer 
-                await notifyUser.run({
-                    "customer_email": refund_req.customer_email ,
-                    "customer_name": refund_req.customer_name
 
-                });
-            } else if (response && response.resolution === "Reject") {
-                // Send refund rejection email to the customer 
-                // Supply the rejection reason as a parameter
-                await notifyRejectionToUser.run({
-                        "customer_email": refund_req.customer_email ,
-                        "customer_name": refund_req.customer_name,
-                        "rejection_reason": refund_req.rejection_reason
-                    });
+1. In your workflow, create a new **ApprovalRequest** query. This query allows you to define the approval request, including the requester name, approvers (individual emails or groups), metadata, and allowed resolutions such as `Approve` or `Reject`.
+
+2. Configure the **ApprovalRequest** query with the necessary details:
+
+<dd>
+
+- **Request Name** – The title or identifier of the approval request, describing its purpose. For example, `Marketing Budget Approval - Q3` or `New Vendor Onboarding Request`.
+- **Approver(s)** – Select individuals or groups who will approve or reject the request. The list of users depends on your workspace settings.
+- **Metadata** – Attach relevant data such as order details or request information. For example, `{ "order": order }`.
+- **Allowed Resolutions** – Define the actions approvers can take, such as "Approve" or "Reject."
+
+</dd>
+
+3. In the **Main** JSObject, write the code to handle approval requests by executing the ApprovalRequest query and processing the approver’s decision.
+
+<dd>
+
+For example, in the refund processing, if the resolution value is **Approve**, the system processes the refund by executing the `initiateRefund` query and then sends an approval email to the user, notifying them that the refund has been processed. If the resolution value is **Reject**, the system triggers the `notifyRejectionToUser` query to send a rejection email, informing the user that their refund request has been denied.
+
+```javascript
+export default {
+    async executeWorkflow(data) {
+        try {
+            // Execute the approval request query
+            const response = await approval_request.run();
+            
+            // Check if response is valid
+            if (!response || !response.resolution) {
+                console.error("Invalid approval response:", response);
+                return false;
             }
+
+            console.log("Approval request resolution:", response.resolution);
+
+            if (response.resolution === "Approve") {
+                console.log("Request Approved");
+                
+                // Process refund
+                await initiateRefund.run({
+                    "id": data.order_id,
+                    "status": "Refund Processed"
+                });
+
+                // Notify user about approval
+                await notifyUser.run({
+                    "customer_email": data.customer_email,
+                    "customer_name": data.customer_name
+                });
+
+            } else if (response.resolution === "Reject") {
+                console.log("Request Rejected");
+
+                // Notify user about rejection
+                await notifyRejectionToUser.run({
+                    "customer_email": data.customer_email,
+                    "customer_name": data.customer_name,
+                    "rejection_reason": data.rejection_reason
+                });
+            }
+
+            return true;
+        } catch (error) {
+            console.error("Error executing workflow:", error);
+            return false;
         }
-    }          
-    ```
-    
-3. Click the **Deploy** button to deploy the workflow.
+    }
+}
+```
 
-## Handle approvals or rejections
 
-Follow these steps to retrieve the approval requests, build an interface for user interaction, and resolve requests based on the action taken by the user:
 
-1. In the Appsmith app, create a new query by clicking **Editor** > **Queries** > **New query/API**. Use the `Get requests` workflow query to read the approval requests created in the workflow. For example, to get approval requests for refund processing, create the `Get requests` (_getRefundReqs_). Configure it as shown below:
-    * **Workflow name** - Select **Refunds**.
-    * **Request type** - Select **Get requests**.
-    * **Request name** - Add `getPendingRefundRequests` to it. It's the same request name you added in your workflow _Main_ JS object in `appsmith.workflows.assignRequest()` in the _Step 1_ of [Create approval requests](#create-approval-requests) section.
+</dd>
 
-2. Drag a Table widget and bind the approval request query to it. You may need to transform data based on your user interface requirements. In this case, use a JS object to execute the query, perform transformations, and bind the transformed data to the Table widget. For example, bind the **getRefundReqs** query. 
+4. Click the **Deploy** button. After deployment, a modal appears prompting you to **Configure Approval Requests**. Select an application within this workspace to handle approval queries from this workflow. 
 
-3. Create another workflow query by clicking **Editor** > **Queries** > **New query/API**. For example, to read the action taken by the user for the refund approval requests (_resolveReqs_) when a user clicks the **Approve** or **Reject** buttons in the Table widget. Configure it as shown below:
-    * **Workflow name** - Select **Refunds**.
-    * **Request type** - Select **Resolve Requests**.
-    * **Request Id** - Add `{{this.params.requestId}}` to it. Read and pass this value from the Table widget which is available as part of the `Get requests` query.
-    * **Resolution** - Add `{{this.params.resolution}}` to it. Read and pass this value from the Table widget when the user clicks on the button to take action, and available as part of the `Get requests` query.
-    * **Metadata** - Add any specific data you want to pass to the workflow in this field. You can use the metadata field to send data to your workflow for any specific processing needs. For example, you may want to pass a rejection reason when a user has rejected a refund request. The metadata details are available in the `response` object in your workflow. For more information, see [Payload](/workflows/reference/workflow-functions#payload-json) return type.
 
-4. Bind the query to the `onClick` event of buttons. For example, for refund processing, bind the _resolveReqs_ query to the `onClick` event of **Approve** and **Reject** buttons, and pass appropriate parameters. 
+5. Click the **Generate New Page** button. This automatically creates a new page within the selected application, preconfigured with a Table widget and the necessary queries to retrieve and resolve approval requests. 
 
-5. Deploy your app to test approvals or rejections.
+6. Go to the application where the new page was generated and open it. In this new page, three queries are automatically created:
+
+<dd>
+
+- `getPendingRequests` – Fetches pending approval requests.
+- `getResolvedRequests` – Retrieves previously resolved requests.
+- `resolveRequest` – Processes user actions when a request is approved or rejected.
+
+The Table widget is preconfigured and connected to the `getPendingRequests` query, displaying pending approval requests. You can click on the **Resolve** button to approve or reject the requests.
+
+When you click **Approve**, the `resolveRequest` query is triggered, passing the request ID and resolution action to the workflow. When you click **Reject**, the `resolveRequest` query runs with the rejection action. If required, a rejection reason can be provided.
+
+</dd>
+
+7. Deploy your application to test approval and rejection actions. Users can now interact with approval requests, take necessary actions, and see updates in real time.
 
 ## Troubleshooting
 

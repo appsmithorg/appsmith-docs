@@ -15,6 +15,7 @@ This page provides instructions to install Appsmith on DigitalOcean using a Drop
 Before you begin, ensure you have the following:
 
 * A [DigitalOcean](https://www.digitalocean.com/) account with access to create Droplets.
+* Whitelist `cs.appsmith.com` in your firewall settings to allow outbound HTTPS traffic. If using a cloud firewall, add these domains under Allowed Rules.
 
 ## Install Appsmith
 
