@@ -325,9 +325,6 @@ const sidebars = {
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/salesforce',
-                    'connect-data/reference/twilio'
-                    'connect-data/reference/jira',
-                     'connect-data/reference/slack',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
                   ],
