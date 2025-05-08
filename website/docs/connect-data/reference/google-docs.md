@@ -4,15 +4,9 @@ This page provides information on how to connect to Google Docs. It enables user
 
 ## Connect Google Docs
 
-To connect to Google Docs, authenticate via OAuth 2.0 credentials to allow access permissions for document manipulation. Ensure you have completed the necessary consent procedures to use this integration effectively.
+To connect to Google Docs, authenticate via OAuth 2.0 credentials to allow access To connect to Google Docs, authenticate using OAuth 2.0. This enables secure access to retrieve, create, or update document content. During the authorization process, users must grant the necessary permissions through Google’s consent screen.
 
-To ensure that Get and Update actions function reliably across all documents, the following OAuth scopes must be enabled:
-
-- https://www.googleapis.com/auth/drive
-(Full drive access, needed for compatibility with existing files and shared documents.)
-
-- https://www.googleapis.com/auth/documents
-(Required for reading/writing Google Docs content.)
+You must have view or edit access to any document you intend to read or modify. Without the appropriate access level, requests to fetch or update content will fail.
 
 ## Query Google Docs
 
