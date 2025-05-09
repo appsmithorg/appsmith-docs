@@ -4,9 +4,14 @@ This page provides information on how to connect to Google Docs. It enables user
 
 ## Connect Google Docs
 
-To connect to Google Docs, authenticate via OAuth 2.0 credentials to allow access To connect to Google Docs, authenticate using OAuth 2.0. This enables secure access to retrieve, create, or update document content. During the authorization process, users must grant the necessary permissions through Google’s consent screen.
+To connect to Google Docs, authenticate using OAuth 2.0. This allows you to securely retrieve, create, and update documents through the integration. During authentication, you are prompted through a UI to authorize access to Google Drive and Google Docs.
 
-You must have view or edit access to any document you intend to read or modify. Without the appropriate access level, requests to fetch or update content will fail.
+During the authentication process, you must select **both permission checkboxes** in the authorization UI—one granting access to all Google Drive files, and the other granting access to specific files.
+Both permissions are required to ensure consistent access to newly created as well as existing documents.
+
+In addition, you must have **view or edit access** to any document you intend to fetch or update. Without the appropriate permissions on the file, requests will fail.
+
+
 
 ## Query Google Docs
 
@@ -179,44 +184,114 @@ Google Docs uses zero-based character indexing for all content positions in a do
 
 Tips:
 
+- When submitting multiple operations in a single update request, always order them by descending index values. This prevents earlier changes (e.g., inserted text) from shifting the positions of later operations.
 - Use the Fetch command to inspect current content and calculate index ranges.
 - Chained operations should account for index shifts — inserting text at index 1 will push all later indexes forward.
 - Use the appropriate request type depending on whether you're modifying structure (`insertText`) or style (`updateTextStyle`).
 
 </dd>
 
+
+### Search Google Docs
+
+Searches for Google Docs files that match the provided name using the Drive API.
+
+#### Document Name `string`
+
+<dd>
+The name or partial name of the document you are looking for. The search is case-insensitive and will return all matching Google Docs files the authenticated user has access to.
+
+*Example:*
+
+To find all documents with "Meeting Notes" in the name:
+
+```js
+{{ searchInput.text }}
+```
+
+</dd>
+
+### Create Google Docs File
+
+Creates a new blank Google Document in the user's Google Drive.
+
+#### Document Name `string`
+
+<dd>
+
+The name to assign to the new document. This will appear as the document's title both in the Google Docs editor and in Drive. The name must be provided; otherwise, the creation will fail.
+
+Example:
+
+```js
+{{ newDocInput.text }}
+```
+
+</dd>
+
 ### Custom Action
 
-Performs a fully customizable API call to the Google Docs or Google Drive endpoints. This command is designed for advanced use cases that are not supported by prebuilt actions, such as creating documents, listing files, or manipulating metadata.
+Performs a fully customizable API call to the Google Docs or Google Drive endpoints. This command is designed for advanced use cases not covered by prebuilt actions, such as retrieving metadata, exporting documents, or interacting with Drive-level features.
 
-*Example:* Create a New Google Document via Drive API
+
+**Example 1:** Retrieve Document Metadata
+
+Fetches metadata for a specific document, such as name, MIME type, last modified time, and more.
+
+<dd>
 
 **Endpoint**
 
 ```
-POST https://www.googleapis.com/drive/v3/files
+GET https://www.googleapis.com/drive/v3/files/<document_id>
 ```
 
 **Request**
 
-- Base URL: https://www.googleapis.com
-- Path: /drive/v3/files
-- Method: POST
+- Base URL: `https://www.googleapis.com`
+- Path: `/drive/v3/files/<document_id>`
+- Method: `GET`
 - Authentication: OAuth 2.0 (required)
 
-**Headers:**
+**Query Params**
 
-```json
-{
-  "Content-Type": "application/json"
-}
+- `fields`: Optional. To limit the response, you can specify fields such as name,mimeType,modifiedTime.
+
+```js
+https://www.googleapis.com/drive/v3/files/1Zu34TY5215td1NxQliZkqFjhX5s?fields=name,mimeType,modifiedTime
 ```
 
-**Body:**
+</dd>
 
-```json
-{
-  "name": "My New Document",
-  "mimeType": "application/vnd.google-apps.document"
-}
+
+**Example 2:** Export Document as PDF
+
+Exports a Google Document as a PDF file.
+
+
+<dd>
+
+**Endpoint**
+
 ```
+GET https://www.googleapis.com/drive/v3/files/<document_id>/export?mimeType=application/pdf
+```
+
+**Request**
+
+- Base URL: `https://www.googleapis.com`
+- Path: `/drive/v3/files/<document_id>/export`
+- Method: `GET`
+- Authentication: OAuth 2.0 (required)
+
+**Query Params**
+
+- `mimeType=application/pdf`
+
+```js
+https://www.googleapis.com/drive/v3/files/1Zu34TY5dR5td1NxQliZkqFjhX5s/export?mimeType=application/pdf
+```
+
+
+
+</dd>
