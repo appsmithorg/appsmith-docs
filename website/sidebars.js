@@ -322,6 +322,7 @@ const sidebars = {
                   items: [
                     'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
+                    'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
