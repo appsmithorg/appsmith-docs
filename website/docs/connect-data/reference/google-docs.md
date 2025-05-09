@@ -9,6 +9,13 @@ To connect to Google Docs, authenticate using OAuth 2.0. This allows you to secu
 During the authentication process, you must select **both permission checkboxes** in the authorization UI—one granting access to all Google Drive files, and the other granting access to specific files.
 Both permissions are required to ensure consistent access to newly created as well as existing documents.
 
+<ZoomImage
+  src="/img/google-docs-access.png" 
+  alt=""
+  caption=""
+/>
+
+
 In addition, you must have **view or edit access** to any document you intend to fetch or update. Without the appropriate permissions on the file, requests will fail.
 
 
@@ -251,7 +258,7 @@ GET https://www.googleapis.com/drive/v3/files/<document_id>
 - Base URL: `https://www.googleapis.com`
 - Path: `/drive/v3/files/<document_id>`
 - Method: `GET`
-- Authentication: OAuth 2.0 (required)
+
 
 **Query Params**
 
@@ -282,7 +289,7 @@ GET https://www.googleapis.com/drive/v3/files/<document_id>/export?mimeType=appl
 - Base URL: `https://www.googleapis.com`
 - Path: `/drive/v3/files/<document_id>/export`
 - Method: `GET`
-- Authentication: OAuth 2.0 (required)
+
 
 **Query Params**
 
