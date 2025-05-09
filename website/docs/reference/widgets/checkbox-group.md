@@ -66,6 +66,8 @@ Allows you to set default options in a widget. These options are initially selec
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 
 #### Text `String`
 
@@ -112,6 +114,9 @@ This validation feature allows you to designate the Checkbox Group as a mandator
 
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 
 #### Tooltip `String`
@@ -178,6 +183,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 
 #### onSelectionChange

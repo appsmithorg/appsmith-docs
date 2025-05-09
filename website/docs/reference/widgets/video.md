@@ -38,6 +38,9 @@ You can display dynamic data by binding the response from a query or a JavaScrip
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Auto Play `boolean`
 
 <dd>
@@ -73,6 +76,8 @@ This property controls whether the widget is displayed with a loading animation.
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 When the event is triggered, these event handlers can execute queries, JS functions, or other [supported actions](/reference/appsmith-framework/widget-actions).
 
