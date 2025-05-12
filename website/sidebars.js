@@ -740,7 +740,7 @@ const sidebars = {
       {
         type: 'category',
         collapsed: false,
-        label: 'Packages (Beta)',
+        label: 'Packages',
         items: [
           'packages/overview',
   
@@ -777,7 +777,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Workflows (Beta)',
+      label: 'Workflows',
       items: [
         'workflows/README',
         //category- Api
