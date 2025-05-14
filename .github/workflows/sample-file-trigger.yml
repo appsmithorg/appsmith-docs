@@ -22,21 +22,24 @@ jobs:
           echo "No relevant file found. Exiting."
           exit 0
         fi
+        echo "Changed file detected: $CHANGED_FILE"
         echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
 
     - name: Read file content
       id: read_file
       run: |
         echo "Reading changed file content..."
-        FILE_CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
-        echo "file_content=$FILE_CONTENT" >> $GITHUB_ENV
+        FILE_CONTENT=$(cat ${{ env.file_path }})
+        echo "file_content<<EOF" >> $GITHUB_ENV
+        echo "$FILE_CONTENT" >> $GITHUB_ENV
+        echo "EOF" >> $GITHUB_ENV
 
     - name: Extract Commands and Properties (OpenAI Part 1)
       id: extract_details
       run: |
         echo "Extracting commands and properties..."
-        SYSTEM_PROMPT=$(jq -Rs . < .github/prompts/extract_prompt.txt)
-        USER_CONTENT=${{ env.file_content }}
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
+        USER_CONTENT="${{ env.file_content }}"
 
         PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$USER_CONTENT" '{
           model: "gpt-4o",
@@ -56,8 +59,8 @@ jobs:
       id: generate_doc
       run: |
         echo "Generating final Markdown documentation..."
-        SYSTEM_PROMPT=$(jq -Rs . < .github/prompts/generate_prompt.txt)
-        EXTRACTED_CONTENT=$(jq -Rs . < extracted_info.md)
+        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
+        EXTRACTED_CONTENT=$(cat extracted_info.md)
 
         PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$EXTRACTED_CONTENT" '{
           model: "gpt-4o",
