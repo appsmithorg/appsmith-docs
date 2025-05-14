@@ -22,7 +22,6 @@ jobs:
           echo "No relevant file found. Exiting."
           exit 0
         fi
-        echo "Changed file detected: $CHANGED_FILE"
         echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
 
     - name: Read file content
@@ -35,41 +34,44 @@ jobs:
     - name: Extract Commands and Properties (OpenAI Part 1)
       id: extract_details
       run: |
-        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt | jq -Rs .)
+        echo "Extracting commands and properties..."
+        SYSTEM_PROMPT=$(jq -Rs . < .github/prompts/extract_prompt.txt)
+        USER_CONTENT=${{ env.file_content }}
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$USER_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0
+        }')
+
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d "$(cat <<EOF
-{
-  \"model\": \"gpt-4o\",
-  \"messages\": [
-    { \"role\": \"system\", \"content\": $SYSTEM_PROMPT },
-    { \"role\": \"user\", \"content\": ${{ env.file_content }} }
-  ],
-  \"temperature\": 0
-}
-EOF
-)" | jq -r '.choices[0].message.content' > extracted_info.md
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
 
     - name: Generate Markdown Documentation (OpenAI Part 2)
       id: generate_doc
       run: |
-        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt | jq -Rs .)
-        EXTRACTED_CONTENT=$(cat extracted_info.md | jq -Rs .)
+        echo "Generating final Markdown documentation..."
+        SYSTEM_PROMPT=$(jq -Rs . < .github/prompts/generate_prompt.txt)
+        EXTRACTED_CONTENT=$(jq -Rs . < extracted_info.md)
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$EXTRACTED_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0.3
+        }')
+
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d "$(cat <<EOF
-{
-  \"model\": \"gpt-4o\",
-  \"messages\": [
-    { \"role\": \"system\", \"content\": $SYSTEM_PROMPT },
-    { \"role\": \"user\", \"content\": $EXTRACTED_CONTENT }
-  ],
-  \"temperature\": 0.3
-}
-EOF
-)" | jq -r '.choices[0].message.content' > generated_doc.md
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
 
     - name: Upload documentation artifacts
       uses: actions/upload-artifact@v4
