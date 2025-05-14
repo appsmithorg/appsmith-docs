@@ -19,12 +19,12 @@ jobs:
         echo "Detecting changes..."
         git fetch origin main
         CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
-        
+
         if [ -z "$CHANGED_FILE" ]; then
           echo "No relevant file found. Exiting."
           exit 0
         fi
-        
+
         echo "Changed file detected: $CHANGED_FILE"
         echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
 
@@ -35,61 +35,67 @@ jobs:
         CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
         echo "file_content=$CONTENT" >> $GITHUB_ENV
 
-    - name: Extract Details from JSON (OpenAI Part 1)
+    - name: Extract Commands and Properties (OpenAI Part 1)
       id: extract_details
       run: |
-        echo "Sending JSON to OpenAI to extract details..."
+        echo "Sending JSON to OpenAI for extraction..."
+
+        EXTRACT_PROMPT=$(jq -n --arg json_content "${{ env.file_content }}" '{
+          "model": "gpt-4o",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are a technical parser.\n\nObjective:\nGiven the provided JSON, extract all available Commands and their Properties clearly.\n\nOutput Format (Strict Plain Text)\n\nTotal Commands: X\n\nCommand: <Command Name>\nIdentifier: <Command Identifier>\n\nProperties:\n- <Property Name>: <Tooltip Text> (Example: <Placeholder Text>)\n\nImportant:\n- No Markdown formatting.\n- No headings (#, ##, etc.).\n- No <dd> tags.\n- No backticks.\n- Just clean, readable text."
+            },
+            {
+              "role": "user",
+              "content": $json_content
+            }
+          ],
+          "temperature": 0
+        }')
+
+        echo "$EXTRACT_PROMPT" > extract_prompt.json
 
         EXTRACTED=$(curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d '{
-            "model": "gpt-4o",
-            "messages": [
-              {
-                "role": "system",
-                "content": "You are a technical extractor. From the following JSON input, extract and list all properties, labels, descriptions, controlTypes, and configProperties clearly in a flat structure."
-              },
-              {
-                "role": "user",
-                "content": '${{ env.file_content }}'
-              }
-            ],
-            "temperature": 0
-          }' | jq -r '.choices[0].message.content')
+          --data-binary @extract_prompt.json | jq -r '.choices[0].message.content')
 
-        echo "$EXTRACTED" > extracted_details.json
+        echo "$EXTRACTED" > extracted_details.txt
         echo "Extraction completed."
 
-    - name: Generate Documentation Text (OpenAI Part 2)
+    - name: Generate Markdown Documentation (OpenAI Part 2)
       id: generate_doc
       run: |
-        echo "Sending extracted details to OpenAI to generate documentation..."
+        echo "Generating final documentation..."
 
-        DETAILS=$(cat extracted_details.json | jq -Rs .)
+        GENERATED_PROMPT=$(jq -n --arg extracted_content "$(cat extracted_details.txt)" '{
+          "model": "gpt-4o",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are a professional technical writing assistant.\n\nObjective:\nYou will receive developer-extracted command and property data.\nYour task is to generate strict, professional Markdown integration documentation in a style consistent with platforms like Stripe, Slack, and Google Cloud.\n\n---\n\n# Output Format (Strict Markdown Only)\n\nUse the exact structure:\n\n```markdown\n# <Integration Name> Integration\n\nThis page provides information on how to connect to <Integration Name>. It enables users to perform actions such as <summary like creating events, managing contacts, checking availability>.\n\n## Connect <Integration Name>\n\nExplain how to authenticate and connect to this service.\n\n## Query <Integration Name>\n\nThe following section provides a reference guide describing available commands and their parameters.\n\n---\n\n### <Command Name>\n\n(One sentence summary explaining the purpose of this command.)\n\n#### <Property Name> `data type`\n\n<dd>\n\nWrite 2–4 full sentences in paragraph form.\nExplain what this property is used for, what formats it accepts (e.g., ISO 8601, Unix, array), and what happens if omitted (for optional fields).\nIf it's an ID, also explain where to find it and what format it follows.\n\n*example*:\n```\n<insert example value>\n```\n\n</dd>\n\n---\n\n(Repeat for each command)\n```"
+            },
+            {
+              "role": "user",
+              "content": $extracted_content
+            }
+          ],
+          "temperature": 0.3
+        }')
 
-        GENERATED_DOC=$(curl -s https://api.openai.com/v1/chat/completions \
+        echo "$GENERATED_PROMPT" > generate_prompt.json
+
+        FINAL_DOC=$(curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d '{
-            "model": "gpt-4o",
-            "messages": [
-              {
-                "role": "system",
-                "content": "You are a documentation generator. Given the extracted details, write a clean, structured Markdown documentation. Create a 'Properties' table listing each property, control type, label, and description."
-              },
-              {
-                "role": "user",
-                "content": '"$DETAILS"'
-              }
-            ],
-            "temperature": 0.3
-          }' | jq -r '.choices[0].message.content')
+          --data-binary @generate_prompt.json | jq -r '.choices[0].message.content')
 
-        echo "$GENERATED_DOC" > generated_doc.md
+        echo "$FINAL_DOC" > generated_doc.md
         echo "Documentation generated."
 
-    - name: Upload generated documentation as artifact
+    - name: Upload generated documentation
       uses: actions/upload-artifact@v4
       with:
         name: generated-doc
