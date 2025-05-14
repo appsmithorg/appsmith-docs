@@ -16,7 +16,6 @@ jobs:
     - name: Detect changed files
       id: detect_files
       run: |
-        echo "Detecting changes..."
         git fetch origin main
         CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
         if [ -z "$CHANGED_FILE" ]; then
@@ -29,60 +28,50 @@ jobs:
     - name: Read file content
       id: read_file
       run: |
-        echo "Reading file content..."
+        echo "Reading changed file content..."
         FILE_CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
         echo "file_content=$FILE_CONTENT" >> $GITHUB_ENV
 
     - name: Extract Commands and Properties (OpenAI Part 1)
       id: extract_details
       run: |
-        echo "Extracting commands and properties..."
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt | jq -Rs .)
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > extracted_info.md
+          -d "$(cat <<EOF
 {
-  "model": "gpt-4o",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are a technical parser.\n\nObjective:\nGiven the provided JSON, extract all available Commands and their Properties clearly.\n\nOutput Format (Strict Plain Text)\n\nTotal Commands: X\n\nCommand: <Command Name>\nIdentifier: <Command Identifier>\n\nProperties:\n- <Property Name>: <Tooltip Text> (Example: <Placeholder Text>)\n\nImportant:\n- No Markdown formatting.\n- No headings (#, ##, etc.).\n- No <dd> tags.\n- No backticks.\n- Just clean, readable text."
-    },
-    {
-      "role": "user",
-      "content": ${{ env.file_content }}
-    }
+  \"model\": \"gpt-4o\",
+  \"messages\": [
+    { \"role\": \"system\", \"content\": $SYSTEM_PROMPT },
+    { \"role\": \"user\", \"content\": ${{ env.file_content }} }
   ],
-  "temperature": 0
+  \"temperature\": 0
 }
 EOF
+)" | jq -r '.choices[0].message.content' > extracted_info.md
 
     - name: Generate Markdown Documentation (OpenAI Part 2)
       id: generate_doc
       run: |
-        echo "Generating final Markdown documentation..."
+        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt | jq -Rs .)
         EXTRACTED_CONTENT=$(cat extracted_info.md | jq -Rs .)
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > generated_doc.md
+          -d "$(cat <<EOF
 {
-  "model": "gpt-4o",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are a professional technical writing assistant.\n\nObjective:\nYou will receive developer-extracted command and property data.\nYour task is to generate strict, professional Markdown integration documentation in a style consistent with platforms like Stripe, Slack, and Google Cloud.\n\nUse:\n- Strict Markdown (#, ##, ### headings)\n- <dd> tags for properties\n- Example sections inside fenced code blocks\n- No bullet points or extra JSON\n- Write full sentences, professional tone."
-    },
-    {
-      "role": "user",
-      "content": $EXTRACTED_CONTENT
-    }
+  \"model\": \"gpt-4o\",
+  \"messages\": [
+    { \"role\": \"system\", \"content\": $SYSTEM_PROMPT },
+    { \"role\": \"user\", \"content\": $EXTRACTED_CONTENT }
   ],
-  "temperature": 0.3
+  \"temperature\": 0.3
 }
 EOF
+)" | jq -r '.choices[0].message.content' > generated_doc.md
 
-    - name: Upload generated documentation
+    - name: Upload documentation artifacts
       uses: actions/upload-artifact@v4
       with:
         name: documentation-files
