@@ -1,0 +1,43 @@
+name: Process Sample Workflow Files
+
+on:
+  push:
+    paths:
+      - 'website/docs/sample-workflow-tests/**'  # Only trigger when something changes inside this folder
+
+jobs:
+  detect_and_run_sample_api:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+
+    - name: Detect newly added or modified files
+      id: detect_files
+      run: |
+        echo "Detecting changes..."
+        git fetch origin main
+        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' || true)
+        
+        echo "Changed files:"
+        echo "$CHANGED_FILES"
+        
+        # Save changed files into output
+        echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+
+    - name: Run Sample API if new file detected
+      if: steps.detect_files.outputs.changed_files != ''
+      run: |
+        echo "Running Sample API call..."
+        
+        curl https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "model": "gpt-4o",
+            "messages": [{"role": "user", "content": "Test message from GitHub Actions"}],
+            "temperature": 0.2
+          }'
+
+        echo "Sample API call completed."
