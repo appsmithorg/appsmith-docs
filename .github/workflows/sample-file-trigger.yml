@@ -1,43 +1,96 @@
-name: Process Sample Workflow Files
+name: Process Sample Files and Generate Docs
 
 on:
   push:
     paths:
-      - 'website/docs/sample-workflow-tests/**'  # Only trigger when something changes inside this folder
+      - 'website/docs/sample-workflow-tests/**'
 
 jobs:
-  detect_and_run_sample_api:
+  process_sample_file:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the repository
+    - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Detect newly added or modified files
+    - name: Detect changed files
       id: detect_files
       run: |
         echo "Detecting changes..."
         git fetch origin main
-        CHANGED_FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' || true)
+        CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
         
-        echo "Changed files:"
-        echo "$CHANGED_FILES"
+        if [ -z "$CHANGED_FILE" ]; then
+          echo "No relevant file found. Exiting."
+          exit 0
+        fi
         
-        # Save changed files into output
-        echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+        echo "Changed file detected: $CHANGED_FILE"
+        echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
 
-    - name: Run Sample API if new file detected
-      if: steps.detect_files.outputs.changed_files != ''
+    - name: Read file content
+      id: read_file
       run: |
-        echo "Running Sample API call..."
-        
-        curl https://api.openai.com/v1/chat/completions \
+        echo "Reading file content..."
+        CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
+        echo "file_content=$CONTENT" >> $GITHUB_ENV
+
+    - name: Extract Details from JSON (OpenAI Part 1)
+      id: extract_details
+      run: |
+        echo "Sending JSON to OpenAI to extract details..."
+
+        EXTRACTED=$(curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
           -d '{
             "model": "gpt-4o",
-            "messages": [{"role": "user", "content": "Test message from GitHub Actions"}],
-            "temperature": 0.2
-          }'
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a technical extractor. From the following JSON input, extract and list all properties, labels, descriptions, controlTypes, and configProperties clearly in a flat structure."
+              },
+              {
+                "role": "user",
+                "content": '${{ env.file_content }}'
+              }
+            ],
+            "temperature": 0
+          }' | jq -r '.choices[0].message.content')
 
-        echo "Sample API call completed."
+        echo "$EXTRACTED" > extracted_details.json
+        echo "Extraction completed."
+
+    - name: Generate Documentation Text (OpenAI Part 2)
+      id: generate_doc
+      run: |
+        echo "Sending extracted details to OpenAI to generate documentation..."
+
+        DETAILS=$(cat extracted_details.json | jq -Rs .)
+
+        GENERATED_DOC=$(curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "model": "gpt-4o",
+            "messages": [
+              {
+                "role": "system",
+                "content": "You are a documentation generator. Given the extracted details, write a clean, structured Markdown documentation. Create a 'Properties' table listing each property, control type, label, and description."
+              },
+              {
+                "role": "user",
+                "content": '"$DETAILS"'
+              }
+            ],
+            "temperature": 0.3
+          }' | jq -r '.choices[0].message.content')
+
+        echo "$GENERATED_DOC" > generated_doc.md
+        echo "Documentation generated."
+
+    - name: Upload generated documentation as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: generated-doc
+        path: generated_doc.md
