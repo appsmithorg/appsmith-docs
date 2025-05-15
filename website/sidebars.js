@@ -749,7 +749,8 @@ const sidebars = {
             label: 'Tutorial',
             items: [
               'packages/tutorial/query-module',
-              'packages/tutorial/js-module'
+              'packages/tutorial/js-module',
+              'packages/tutorial/ui-module'
             ],
           },
           {
@@ -761,15 +762,31 @@ const sidebars = {
               'packages/how-to-guides/use-query-inside-js-module',],
           },
           {
-            type: 'category',
-            collapsed: false,
-            label: 'Reference',
-            items: [
-              'packages/reference/package',
-              'packages/reference/query-module',
-              'packages/reference/versioning'
-            ],
-          }
+  type: 'category',
+  collapsed: false,
+  label: 'Reference',
+  items: [
+    'packages/reference/versioning', // Package Version Control
+    {
+      type: 'category',
+      label: 'Code Packages',
+      collapsed: true,
+      items: [
+        'packages/reference/package',        // Module
+        'packages/reference/query-module',   // Module Instance
+      ],
+    },
+    {
+      type: 'category',
+      label: 'UI Packages',
+      collapsed: true,
+      items: [
+        'packages/reference/ui-module',          // UI Module
+        'packages/reference/ui-module-instance', // UI Module Instance
+      ],
+    },
+  ],
+}
         ]
       }, //module end
   
