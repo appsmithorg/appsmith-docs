@@ -50,7 +50,7 @@ messageContent="Payload too large. File size cannot exceed 100MB."></Message>
 
 #### Cause
 
-Appsmith imposes a default file size limit of 150 MB. This is a configurable limit if you're using a self-hosted Appsmith instance. The reason you may get this error is due to a file size limit set at 100 MB on your self-hosted instance.
+Appsmith imposes a default file size limit of 200 MB. This is a configurable limit if you're using a self-hosted Appsmith instance. The reason you may get this error is due to a file size limit set at 100 MB on your self-hosted instance.
 
 #### Solution
 
