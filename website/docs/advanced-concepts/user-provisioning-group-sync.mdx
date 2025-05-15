@@ -30,8 +30,10 @@ This page shows how to configure Appsmith for System for Cross-domain Identity M
 * Ensure that the Identity Provider (IDP) can connect with Appsmith.
 
 :::caution info
-Google Workspace does not support SCIM, and integration cannot be configured within the platform. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
+- Google Workspace does not support SCIM, and integration cannot be configured within the platform. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
+- Appsmith only supports [SCIM v2.0](https://scim.cloud/) for user and group provisioning. You must ensure that your Identity Provider (IdP) is compatible with SCIM v2.0.
 :::
+
 
 ## Enable SCIM provisioning on Appsmith
 
