@@ -1,16 +1,15 @@
 # UI Module Instance
 
 
-When you add a UI Module from a package into your application, you create a UI Module Instance.
-
-Each instance acts as a reusable, self-contained UI component that can be configured dynamically without modifying the internal structure of the module.
+When you add a UI Module from a package into your application, you create a UI Module Instance. Each instance acts as a reusable, self-contained UI component that can be configured dynamically without modifying the internal structure of the module.
 
 You can create multiple instances of the same UI Module with different input values and settings.
-Instances are named sequentially (e.g., customerProfile1, customerProfile2) for easier identification.
+Instances are named sequentially (e.g., `customerProfile1`, `customerProfile2`) for easier identification.
 
 This page provides information about the settings and properties available for configuring a UI Module Instance.
 
 
+ <ZoomImage src="/img/uimod.drawio.png" alt="" caption="" />
 
 
 

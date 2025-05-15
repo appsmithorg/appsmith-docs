@@ -2,11 +2,7 @@
 
 A UI Module is a reusable container that groups widgets, queries, and JavaScript logic into a single unit. It is created inside a UI Package and is designed for reuse across multiple applications.
 
-- You can add different types of widgets inside the module container. The entire container is rendered together when the module is used in an application.
-
-- Widgets inside the module cannot be edited directly from the application. All configurations must be done through defined Inputs.
-
-- UI Modules allow dynamic values to be passed from the application into the module using Inputs. Each module instance can receive different values based on application requirements.
+You can add different types of widgets inside the module container. The entire container is rendered together when the module is used in an application. Widgets inside the module cannot be edited directly from the application. All configurations must be done through defined Inputs.
 
 This page provides information about the properties, content settings, and style configurations available for UI Modules.
 
@@ -17,6 +13,10 @@ Content properties control the functional behavior of the UI Module container an
 #### Inputs
 
 <dd>
+
+ <ZoomImage src="/img/uimod.png" alt="" caption="" />
+
+
 
 Inputs allow you to pass dynamic values from the application into the UI Module.
 They act as a bridge between the app and the widgets, queries, or JavaScript logic inside the module.
@@ -110,7 +110,6 @@ Background Color is JavaScript configurable and can also be dynamically controll
 
 Sets the color of the border around the UI Module container. Accepts a hex code, RGB value, or color name.
 
-*Example:* If you want the container to have a grey border, set the Border Color to `#E0E0E0`.
 
 </dd>
 
@@ -122,7 +121,6 @@ Sets the color of the border around the UI Module container. Accepts a hex code,
 Sets the thickness of the border around the UI Module container.
 Default value is `1`.
 
-*Example:* If you want a thicker border for emphasis, set the Border Width to `2`.
 
 </dd>
 
