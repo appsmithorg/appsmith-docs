@@ -1,6 +1,6 @@
 # Upload File Size Limit
 
-In self-hosted Appsmith instances, the default file size limit is 150 MB. You can adjust the limit to support larger files. This page explains how to update the file size limit and configure reverse proxies or load balancers, if used, to ensure the new limits are applied.
+In self-hosted Appsmith instances, the default file size limit is 200 MB. You can adjust the limit to support larger files. This page explains how to update the file size limit and configure reverse proxies or load balancers, if used, to ensure the new limits are applied.
 
 ## Change file size limit
 
