@@ -1,18 +1,18 @@
-# UI Module 
+# UI Modules
 
-
-A UI Module is a reusable, self-contained component built using widgets, queries, and JS Objects.
-It enables you to package visual elements, business logic, and data integrations into a module that can be easily reused across applications.
+A UI Module is a reusable, self-contained component built using widgets, queries, and JS Objects. It allows you to group UI elements, logic, and data interactions into a single unit that can be reused across multiple applications.
 
 In this tutorial, you will learn how to create a reusable UI Module that accepts dynamic inputs from an application.
 
 
-:::tip What will I learn? 📝
-In this tutorial, you will create a reusable **User Profile Card** UI Module that displays basic user details dynamically.
+:::tip What will I build? 🧩
+You’ll build a **User Profile Card** UI Module that displays user details like name, email, and profile photo based on values passed from the app.
 
-- 🔧 **Basics**: Learn how to create and configure a UI Module.
-- 🔄 **Dynamic Data**: Learn how to pass data from an application into the UI Module.
-- ♻️ **Reusability**: Discover how to reuse the UI Module across multiple applications
+- **Basics**: Learn how to create and configure a UI Module.
+- **Dynamic Data**: Learn how to pass data from an application into the UI Module.
+- **Reusability**: Learn how to reuse the UI Module across multiple applications.
+
+⏱️ **Estimated time:** 15 minutes
 :::
 
 
@@ -132,6 +132,7 @@ Use the following bindings:
 | `userID`    | `{{Table1.selectedRow.id}}`     |
 | `userImg`   | `{{Table1.selectedRow.image}}` |
 
+Now, when you select any row in the Table widget, the corresponding user details will automatically be displayed in the UI Module.
 
 </dd>
 

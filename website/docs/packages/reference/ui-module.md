@@ -19,7 +19,7 @@ Content properties control the functional behavior of the UI Module container an
 
 
 Inputs allow you to pass dynamic values from the application into the UI Module.
-They act as a bridge between the app and the widgets, queries, or JavaScript logic inside the module.
+They act as a bridge between the app and the widgets, queries, or JS logic inside the module.
 
 You can create multiple Inputs when designing the module. Each Input has:
 
@@ -31,7 +31,7 @@ Inputs help you dynamically configure the behavior of widgets inside the UI Modu
 
 **Accessing Inputs**
 
-Inputs are accessed using the same syntax across widgets, queries, and JavaScript functions inside the module:
+Inputs can be accessed using the same syntax across widgets, queries, and JavaScript functions within the module:
 
 ```javascript
 {{inputs.inputName}}
@@ -90,7 +90,7 @@ Controls whether a loading animation appears while the UI Module's widgets, quer
 ### Style Properties
 
 Style properties control the appearance of the UI Module container, including background, border, and shadow settings.
-Some style properties are also JavaScript configurable and can accept dynamic values through Inputs.
+Some style properties are also JS configurable and can accept dynamic values through Inputs.
 
 #### Background Color `string`
 
@@ -98,7 +98,7 @@ Some style properties are also JavaScript configurable and can accept dynamic va
 
 Sets the background color of the UI Module container. You can define a static color value or bind a dynamic color using JavaScript expressions.
 
-Background Color is JavaScript configurable and can also be dynamically controlled by passing a color value through an **Input**.
+Background Color is JS configurable and can also be dynamically controlled by passing a color value through an **Input**.
 
 
 </dd>

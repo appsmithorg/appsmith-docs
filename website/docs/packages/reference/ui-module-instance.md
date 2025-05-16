@@ -29,7 +29,7 @@ Inputs enable you to dynamically populate widget properties, run queries, or exe
 You can bind static values, widget outputs, query results, or app/user data into Inputs using JavaScript bindings.
 
 
-If you want to pass customer details fetched from a query into the module, you can set Inputs using the query response fields.
+*Example:* If you want to pass customer details fetched from a query into the module, you can set Inputs using the query response fields.
 
 ```js
 //inputCustomerName
