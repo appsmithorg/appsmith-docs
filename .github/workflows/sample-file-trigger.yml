@@ -1,4 +1,4 @@
-name: Process Sample Files and Generate Docs
+name: Process Sample Files and Create PR
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'website/docs/sample-workflow-tests/**'
 
 jobs:
-  process_sample_file:
+  generate_docs_and_pr:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,10 +18,9 @@ jobs:
     - name: Detect newly added file
       id: detect_files
       run: |
-        echo "Detecting newly added files in sample-workflow-tests/..."
         ADDED_FILE=$(git diff --name-status HEAD~1 HEAD | awk '$1 == "A" && $2 ~ /^website\/docs\/sample-workflow-tests\// { print $2 }' | head -n 1)
         if [ -z "$ADDED_FILE" ]; then
-          echo "No new file added in target folder. Exiting."
+          echo "No new file added in sample-workflow-tests/. Exiting."
           exit 0
         fi
         echo "New file detected: $ADDED_FILE"
@@ -35,8 +34,6 @@ jobs:
 
     - name: Extract Commands and Properties (OpenAI Part 1)
       run: |
-        echo "Calling OpenAI to extract commands and properties..."
-
         SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
         USER_CONTENT=$(cat input_file.txt)
 
@@ -54,13 +51,8 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
 
-        echo "✅ Extracted content:"
-        cat extracted_info.md
-
     - name: Generate Markdown Documentation (OpenAI Part 2)
       run: |
-        echo "Generating final Markdown documentation..."
-
         SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
         EXTRACTED_CONTENT=$(cat extracted_info.md)
 
@@ -78,13 +70,42 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
 
-        echo "✅ Generated documentation:"
-        cat generated_doc.md
+    - name: Prepare output path and filename
+      id: prepare_path
+      run: |
+        RAW_FILENAME=$(basename "${{ env.file_path }}")
+        INTEGRATION_NAME=$(echo "$RAW_FILENAME" | sed 's/\.[^.]*$//' | tr '[:upper:]' '[:lower:]')
+        TARGET_PATH="connect-data/reference/${INTEGRATION_NAME}.md"
 
-    - name: Upload documentation artifacts
-      uses: actions/upload-artifact@v4
+        echo "Creating path: $TARGET_PATH"
+        mkdir -p "$(dirname $TARGET_PATH)"
+        cp generated_doc.md "$TARGET_PATH"
+
+        echo "integration_name=$INTEGRATION_NAME" >> $GITHUB_ENV
+        echo "target_path=$TARGET_PATH" >> $GITHUB_ENV
+
+    - name: Commit and push changes to new branch
+      run: |
+        BRANCH_NAME="auto/docs-${{ env.integration_name }}"
+
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git checkout -b "$BRANCH_NAME"
+        git add "${{ env.target_path }}"
+        git commit -m "docs: add integration reference for ${{ env.integration_name }}"
+        git push origin "$BRANCH_NAME"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
       with:
-        name: documentation-files
-        path: |
-          extracted_info.md
-          generated_doc.md
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "docs: add ${{ env.integration_name }} integration reference"
+        commit-message: "docs: add integration reference for ${{ env.integration_name }}"
+        branch: "auto/docs-${{ env.integration_name }}"
+        base: main
+        body: |
+          This PR was automatically generated from a newly added sample file for **${{ env.integration_name }}**.
+
+          The integration reference documentation has been created at:
+          `/connect-data/reference/${{ env.integration_name }}.md`
