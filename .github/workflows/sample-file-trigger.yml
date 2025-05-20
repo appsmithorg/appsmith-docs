@@ -12,32 +12,35 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
 
-    - name: Detect changed files
+    - name: Detect newly added file
       id: detect_files
       run: |
-        git fetch origin main
-        CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
-        if [ -z "$CHANGED_FILE" ]; then
-          echo "No relevant file found. Exiting."
+        echo "Detecting newly added files in sample-workflow-tests/..."
+        ADDED_FILE=$(git diff --name-status HEAD~1 HEAD | awk '$1 == "A" && $2 ~ /^website\/docs\/sample-workflow-tests\// { print $2 }' | head -n 1)
+        if [ -z "$ADDED_FILE" ]; then
+          echo "No new file added in target folder. Exiting."
           exit 0
         fi
-        echo "Changed file detected: $CHANGED_FILE"
-        echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
+        echo "New file detected: $ADDED_FILE"
+        echo "file_path=$ADDED_FILE" >> $GITHUB_ENV
 
-    - name: Read file content
-      id: read_file
+    - name: Show file name and content
+      id: show_file
       run: |
-        echo "Reading changed file content..."
-        FILE_CONTENT=$(cat ${{ env.file_path }})
+        echo "Reading content of: ${{ env.file_path }}"
+        echo "File path: ${{ env.file_path }}"
+        cat "${{ env.file_path }}"
+        FILE_CONTENT=$(cat "${{ env.file_path }}")
         echo "file_content<<EOF" >> $GITHUB_ENV
         echo "$FILE_CONTENT" >> $GITHUB_ENV
         echo "EOF" >> $GITHUB_ENV
 
     - name: Extract Commands and Properties (OpenAI Part 1)
-      id: extract_details
       run: |
-        echo "Extracting commands and properties..."
+        echo "Calling OpenAI to extract commands and properties..."
         SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
         USER_CONTENT="${{ env.file_content }}"
 
@@ -55,8 +58,10 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
 
+        echo "✅ Extracted content:"
+        cat extracted_info.md
+
     - name: Generate Markdown Documentation (OpenAI Part 2)
-      id: generate_doc
       run: |
         echo "Generating final Markdown documentation..."
         SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
@@ -75,6 +80,9 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
+
+        echo "✅ Generated documentation:"
+        cat generated_doc.md
 
     - name: Upload documentation artifacts
       uses: actions/upload-artifact@v4
