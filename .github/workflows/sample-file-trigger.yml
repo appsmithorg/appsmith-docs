@@ -28,21 +28,17 @@ jobs:
         echo "file_path=$ADDED_FILE" >> $GITHUB_ENV
 
     - name: Show file name and content
-      id: show_file
       run: |
         echo "Reading content of: ${{ env.file_path }}"
-        echo "File path: ${{ env.file_path }}"
         cat "${{ env.file_path }}"
-        FILE_CONTENT=$(cat "${{ env.file_path }}")
-        echo "file_content<<EOF" >> $GITHUB_ENV
-        echo "$FILE_CONTENT" >> $GITHUB_ENV
-        echo "EOF" >> $GITHUB_ENV
+        cp "${{ env.file_path }}" input_file.txt
 
     - name: Extract Commands and Properties (OpenAI Part 1)
       run: |
         echo "Calling OpenAI to extract commands and properties..."
+
         SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
-        USER_CONTENT="${{ env.file_content }}"
+        USER_CONTENT=$(cat input_file.txt)
 
         PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$USER_CONTENT" '{
           model: "gpt-4o",
@@ -64,6 +60,7 @@ jobs:
     - name: Generate Markdown Documentation (OpenAI Part 2)
       run: |
         echo "Generating final Markdown documentation..."
+
         SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
         EXTRACTED_CONTENT=$(cat extracted_info.md)
 
