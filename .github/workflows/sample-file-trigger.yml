@@ -1,4 +1,4 @@
-name: Process Sample Files and Create PR
+name: Generate Integration Docs and Create PR
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'website/docs/sample-workflow-tests/**'
 
 jobs:
-  generate_docs_and_pr:
+  generate_docs:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,9 +26,9 @@ jobs:
         echo "New file detected: $ADDED_FILE"
         echo "file_path=$ADDED_FILE" >> $GITHUB_ENV
 
-    - name: Show file name and content
+    - name: Read file content
       run: |
-        echo "Reading content of: ${{ env.file_path }}"
+        echo "Reading: ${{ env.file_path }}"
         cat "${{ env.file_path }}"
         cp "${{ env.file_path }}" input_file.txt
 
@@ -70,42 +70,35 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
 
-    - name: Prepare output path and filename
+    - name: Prepare target path
       id: prepare_path
       run: |
         RAW_FILENAME=$(basename "${{ env.file_path }}")
         INTEGRATION_NAME=$(echo "$RAW_FILENAME" | sed 's/\.[^.]*$//' | tr '[:upper:]' '[:lower:]')
-        TARGET_PATH="connect-data/reference/${INTEGRATION_NAME}.md"
+        TARGET_PATH="website/docs/connect-data/reference/${INTEGRATION_NAME}.md"
 
-        echo "Creating path: $TARGET_PATH"
-        mkdir -p "$(dirname $TARGET_PATH)"
+        echo "Target file: $TARGET_PATH"
+        mkdir -p "$(dirname "$TARGET_PATH")"
         cp generated_doc.md "$TARGET_PATH"
 
         echo "integration_name=$INTEGRATION_NAME" >> $GITHUB_ENV
         echo "target_path=$TARGET_PATH" >> $GITHUB_ENV
 
-    - name: Commit and push changes to new branch
-      run: |
-        BRANCH_NAME="auto/docs-${{ env.integration_name }}"
-
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-        git checkout -b "$BRANCH_NAME"
-        git add "${{ env.target_path }}"
-        git commit -m "docs: add integration reference for ${{ env.integration_name }}"
-        git push origin "$BRANCH_NAME"
-
-    - name: Create Pull Request
+    - name: Commit and create PR
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "docs: add ${{ env.integration_name }} integration reference"
-        commit-message: "docs: add integration reference for ${{ env.integration_name }}"
+        commit-message: "docs: add reference for ${{ env.integration_name }}"
         branch: "auto/docs-${{ env.integration_name }}"
         base: main
+        add-paths: |
+          ${{ env.target_path }}
         body: |
-          This PR was automatically generated from a newly added sample file for **${{ env.integration_name }}**.
+          This PR adds the generated integration reference for **${{ env.integration_name }}** to:
 
-          The integration reference documentation has been created at:
-          `/connect-data/reference/${{ env.integration_name }}.md`
+          ```
+          /website/docs/connect-data/reference/${{ env.integration_name }}.md
+          ```
+
+          Generated automatically from sample workflow input.
