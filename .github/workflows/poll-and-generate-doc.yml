@@ -1,0 +1,116 @@
+name: Daily Integration Doc Generator
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # every day at 3:00 AM UTC
+  workflow_dispatch:
+
+jobs:
+  generate_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout appsmith-docs
+      uses: actions/checkout@v4
+
+    - name: Ensure scripts/processed_files.txt exists
+      run: |
+        mkdir -p scripts
+        if [ ! -f scripts/processed_files.txt ]; then
+          touch scripts/processed_files.txt
+        fi
+
+    - name: Fetch file list from integration-resources
+      run: |
+        curl -s https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
+        | jq -r '.[] | select(.type=="file") | .name' > latest_files.txt
+
+    - name: Find first unprocessed file
+      id: detect
+      run: |
+        NEW_FILE=$(comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) | head -n 1 || true)
+
+        if [ -z "$NEW_FILE" ]; then
+          echo "No new file to process."
+          echo "continue=false" >> $GITHUB_ENV
+        else
+          echo "Found new file: $NEW_FILE"
+          echo "$NEW_FILE" > scripts/current_file.txt
+          echo "new_file=$NEW_FILE" >> $GITHUB_ENV
+          echo "continue=true" >> $GITHUB_ENV
+        fi
+
+    - name: Exit if no new file
+      if: env.continue != 'true'
+      run: exit 0
+
+    - name: Download new config file
+      run: |
+        FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/${{ env.new_file }}"
+        curl -sSL "$FILE_URL" -o input_file.txt
+
+    - name: Extract Commands (OpenAI Part 1)
+      run: |
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
+        USER_CONTENT=$(cat input_file.txt)
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$USER_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0
+        }')
+
+        curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
+
+    - name: Generate Markdown (OpenAI Part 2)
+      run: |
+        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
+        EXTRACTED_CONTENT=$(cat extracted_info.md)
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$EXTRACTED_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0.3
+        }')
+
+        curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
+
+    - name: Prepare target path
+      id: prep
+      run: |
+        INTEGRATION=$(echo "${{ env.new_file }}" | sed 's/\.[^.]*$//' | tr '[:upper:]' '[:lower:]')
+        FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
+        mkdir -p "$(dirname "$FINAL_PATH")"
+        cp generated_doc.md "$FINAL_PATH"
+        echo "integration_name=$INTEGRATION" >> $GITHUB_ENV
+        echo "final_path=$FINAL_PATH" >> $GITHUB_ENV
+
+    - name: Commit and open PR
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "docs: add ${{ env.integration_name }} integration reference"
+        commit-message: "docs: add reference for ${{ env.integration_name }}"
+        branch: "auto/docs-${{ env.integration_name }}"
+        base: main
+        add-paths: |
+          ${{ env.final_path }}
+        body: |
+          This PR adds the integration reference documentation for **${{ env.integration_name }}**, generated from:
+          [`integration-resources/uqi_configs/${{ env.new_file }}`](https://github.com/appsmithorg/integration-resources/blob/main/Generic%20UQI%20Creation/uqi_configs/${{ env.new_file }})
+
+    - name: Mark file as processed
+      run: |
+        echo "${{ env.new_file }}" >> scripts/processed_files.txt
