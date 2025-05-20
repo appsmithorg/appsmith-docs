@@ -163,9 +163,7 @@ This property becomes available only when **Server-side pagination** is enabled.
 
 - Infinite scroll dynamically updates the Table’s pagination properties and triggers data loads as users interact with the widget:
 
-- The `Table.pageNo` property is automatically incremented when the user scrolls to the bottom of the visible records.
-
-- The **onPageChange** event is triggered to run the linked query or API with the new pageNo.
+- The **onPageChange** event is triggered to run the linked query or API with the new `pageNo`.
 
 - The number of records fetched per scroll is determined by `Table.pageSize`.
 
