@@ -322,6 +322,7 @@ const sidebars = {
                   items: [
                     'connect-data/reference/airtable',
                     'connect-data/reference/aws-lambda',
+                     'connect-data/reference/confluence',
                     'connect-data/reference/querying-google-sheets',
                     'connect-data/reference/google-calendar',
                     'connect-data/reference/google-drive',
@@ -329,6 +330,7 @@ const sidebars = {
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
                      'connect-data/reference/slack',
+                      'connect-data/reference/stripe',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
                     'connect-data/reference/zoom',
