@@ -13,6 +13,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -48,6 +51,8 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onRecordingStart
 
