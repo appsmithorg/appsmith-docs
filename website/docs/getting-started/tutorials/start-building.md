@@ -10,7 +10,7 @@ Let's get started!
 
 ## Prerequisites
 
-- An Appsmith account. If you don’t have one, sign up on [**Appsmith cloud**](https://app.appsmith.com/).
+- An Appsmith account. If you don’t have one, sign up on [**Appsmith cloud**](https://login.appsmith.com/).
 
 ## Set up
 

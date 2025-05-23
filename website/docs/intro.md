@@ -25,7 +25,8 @@ Appsmith makes it easy to build a UI that talks to any datasource. You can creat
 
 1. Create an account on the cloud platform or self-host Appsmith for free.
 
-   - [Appsmith Cloud](https://app.appsmith.com/): Sign up for a free account and try Appsmith.
+   - [Appsmith Cloud](https://login.appsmith.com/): Sign up for a free account with your organization name (`orgname.appsmith.com`). Try the Business Edition free for 15 days, then continue with Community Edition or upgrade to a paid plan.
+
    - [Self-Host Appsmith](/getting-started/setup): Deploy Appsmith on your local machine or private server.
 
 2. Take the quick tutorial to learn the basics to help you build an app using Appsmith. For more information, see [Build your first app](/getting-started/tutorials/start-building).
