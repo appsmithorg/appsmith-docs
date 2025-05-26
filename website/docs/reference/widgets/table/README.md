@@ -151,6 +151,34 @@ For instance, you can create a Count query to retrieve the total number of recor
 
 </dd>
 
+#### Infinite scroll `boolean`
+
+<dd>
+
+When enabled, this property allows the Table widget to dynamically load more records as users scroll, creating an intuitive browsing experience for large datasets.
+
+This property becomes available only when **Server-side pagination** is enabled. Make sure both the **onPageChange** and **onPageSizeChange** events are configured to fetch the correct data based on the current scroll position.
+
+*How It Works*:
+
+- Infinite scroll dynamically updates the Table’s pagination properties and triggers data loads as users interact with the widget:
+
+- The **onPageChange** event is triggered to run the linked query or API with the new `pageNo`.
+
+- The number of records fetched per scroll is determined by `Table.pageSize`.
+
+- A loading indicator appears at the bottom while new records are being fetched.
+
+
+The following Table features are automatically disabled when infinite scroll is enabled to ensure consistent server-driven data behavior:
+
+- Client-side search
+- Client-side filtering and sorting
+- Inline editing
+- Adding new rows
+
+</dd>
+
 #### onPageChange
 
 <dd>
