@@ -1,7 +1,7 @@
 # Self-hosting
 Self-hosting Appsmith means hosting and managing Appsmith directly on your server rather than relying on third-party service providers. Self-hosting is often seen as more secure and private, as you have complete control over your data and how it's used.
 
-Appsmith provides a [cloud-hosted version](https://app.appsmith.com)[cloud-hosted] and the option to set up your own instance on some popular [platforms](# Deploy).
+Appsmith provides a [cloud-hosted version](https://login.appsmith.com)[cloud-hosted] and the option to set up your own instance on some popular [platforms](# Deploy).
 
 ## Cloud-hosted
 Cloud-hosted version is available over the internet, which makes it easy for users to sign up and start building apps. It's a perfect solution for users who don't have their own infrastructure setup. You can sign up on appsmith.com and follow the [Quick start guide](start-building) to get started.
