@@ -1,0 +1,19 @@
+{
+  "asana_uqi_config.json": "b716f8beddf2a5b6104dab926f78445033daeb2e",
+  "confluence_uqi_config.json": "707e4eefcb70a7722a9991ea359726d09569ae99",
+  "function_calling_schema_generator.py": "6c30b718d6eff852594ca7a4ffaccb11207f2cee",
+  "github_uqi_config.json": "f9736568d3ac7df9bb48e848eb42ce678af88a0a",
+  "gmail_uqi_config.json": "fc7d44a7c20d449942e41b9ec2998bc0f38ab535",
+  "googleCalendar_uqi_config.json": "1117707c6685680818df35f8c051670400a6a28f",
+  "googleDocs_uqi_config.json": "36014cd2aaecbd597808a6acca79ec72e5bb91db",
+  "googledrive_uqi_config.json": "ae955b580426f6c98aa8282f5fa39e28b27f45ae",
+  "jira_uqi_config.json": "27f2c16ac2a473a84beae7cc1950a3cb955056c3",
+  "notion_uqi_config.json": "856089b20a852d3a02c2878f8e2b5fa9a1ba3687",
+  "outlook_uqi_config.json": "65fe70466589f038aed92b29316eb67e15cd7624",
+  "salesforce_uqi_config.json": "2505ba04223ca5fcfbf15b3ea5025d8c499e5234",
+  "slack_uqi_config.json": "8390451dea8a0adf9fd072832702033055c52d1c",
+  "stripe_uqi_config.json": "aad9ae231383cb1864b420586347b5c901e05d5e",
+  "togetherAI_uqi_config.json": "2231424ba303d28cd21961478c50a34fc606cc6d",
+  "zendesk_uqi_config.json": "f39411f8619817182a17513586ce7201e090a057",
+  "zoom_uqi_config.json": "ec07db6c7969734c7a4c9b6b75b3b3d3364564bc"
+}
