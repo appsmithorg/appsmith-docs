@@ -13,6 +13,10 @@ on:
           - 'true'
           - 'false'
   
+  # Run multiple times per day
+  schedule:
+    - cron: "0 */8 * * *"  # Run every 8 hours (3 times per day)
+  
   # Event-based trigger - when changes are pushed to the integration-resources repo
   repository_dispatch:
     types: [integration_resources_updated]
@@ -26,7 +30,22 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}  # Use a PAT with access to both repos
-        fetch-depth: 0  # Fetch all history to check last commit
+
+    - name: Create exclusion list for new files
+      run: |
+        # Create list of SaaS integrations to exclude from new file detection
+        cat > saas_exclusions.txt << EOF
+        Asana_uqi_config.json
+        AWS_Lambda_uqi_config.json
+        Google_Docs_uqi_config.json
+        Google_Sheets_uqi_config.json
+        HubSpot_uqi_config.json
+        Jira_uqi_config.json
+        Salesforce_uqi_config.json
+        Slack_uqi_config.json
+        Twilio_uqi_config.json
+        Zendesk_uqi_config.json
+        EOF
 
     - name: Ensure scripts directory exists
       run: |
@@ -34,99 +53,93 @@ jobs:
         if [ ! -f scripts/processed_files.txt ]; then
           touch scripts/processed_files.txt
         fi
-        if [ ! -f scripts/last_commit_sha.txt ]; then
-          touch scripts/last_commit_sha.txt
+        if [ ! -f scripts/file_hashes.json ]; then
+          echo "{}" > scripts/file_hashes.json
         fi
 
-    - name: Get last processed commit
-      id: last_commit
+    - name: Fetch file list with retry logic
+      id: fetch_files
       run: |
-        if [ -s scripts/last_commit_sha.txt ]; then
-          LAST_COMMIT=$(cat scripts/last_commit_sha.txt)
-          echo "last_commit=$LAST_COMMIT" >> $GITHUB_ENV
-          echo "Last processed commit: $LAST_COMMIT"
-        else
-          echo "No previous commit found, will process all files"
-          echo "last_commit=" >> $GITHUB_ENV
-        fi
-
-    - name: Fetch file list and metadata from integration-resources
-      run: |
-        # Get the latest commit SHA from integration-resources repo
-        LATEST_COMMIT=$(curl -s -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
-                        -H "Accept: application/vnd.github+json" \
-                        https://api.github.com/repos/appsmithorg/integration-resources/commits/main | \
-                        jq -r '.sha' )
+        MAX_RETRIES=5
+        RETRY_COUNT=0
+        SUCCESS=false
         
-        echo "Latest commit in integration-resources: $LATEST_COMMIT"
-        echo "latest_commit=$LATEST_COMMIT" >> $GITHUB_ENV
+        while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" != "true" ]; do
+          echo "Attempt $(($RETRY_COUNT + 1)) to fetch files from integration-resources..."
+          
+          # Add a small delay between retries
+          if [ $RETRY_COUNT -gt 0 ]; then
+            SLEEP_TIME=$(( RETRY_COUNT * 5 ))
+            echo "Waiting $SLEEP_TIME seconds before retry..."
+            sleep $SLEEP_TIME
+          fi
+          
+          # Fetch file list with timeout
+          curl -s --max-time 30 -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
+               -H "Accept: application/vnd.github+json" \
+               https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
+               -o response.json
+          
+          # Check if we got a valid response
+          if jq -e 'type == "array"' response.json > /dev/null 2>&1; then
+            echo "✅ Successfully fetched file list"
+            SUCCESS=true
+          else
+            echo "❌ Failed to get valid file list. Response:"
+            cat response.json
+            RETRY_COUNT=$((RETRY_COUNT + 1 ))
+          fi
+        done
         
-        # Get all files in the repo
-        curl -s -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
-             -H "Accept: application/vnd.github+json" \
-             https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
-             -o response.json
-
-        # Validate it's an array (not an error message )
-        if ! jq 'type == "array"' response.json | grep -q true; then
-          echo "❌ GitHub API did not return a file list. Possible error:"
-          cat response.json
-          exit 1
+        if [ "$SUCCESS" != "true" ]; then
+          echo "❌ Failed to fetch file list after $MAX_RETRIES attempts"
+          echo "files_found=false" >> $GITHUB_ENV
+          exit 0  # Exit gracefully to allow workflow to continue
         fi
-
-        # Extract file names
+        
+        # Extract file names and their SHA hashes
+        jq -r '.[] | select(.type=="file") | [.name, .sha] | @tsv' response.json > latest_files_with_sha.txt
         jq -r '.[] | select(.type=="file") | .name' response.json > latest_files.txt
+        
+        echo "files_found=true" >> $GITHUB_ENV
 
-    - name: Identify changed files since last commit
+    - name: Identify new and modified files
       id: detect_changes
+      if: env.files_found == 'true'
       run: |
+        # Load previous file hashes
+        PREV_HASHES=$(cat scripts/file_hashes.json)
+        
         # Force check all files if requested
         if [ "${{ github.event.inputs.force_check_all }}" == "true" ]; then
           echo "🔄 Force checking all files as requested"
           cat latest_files.txt > files_to_process.txt
-          echo "files_found=true" >> $GITHUB_ENV
-        elif [ -z "${{ env.last_commit }}" ]; then
-          # No previous commit, process all files
-          cat latest_files.txt > files_to_process.txt
-          echo "files_found=true" >> $GITHUB_ENV
         else
-          # Get files changed since last commit
-          echo "🔍 Finding files changed since commit ${{ env.last_commit }}"
+          # Find new files (not in processed_files.txt) - excluding SaaS integrations
+          NEW_FILES=$(comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) | grep -v -f saas_exclusions.txt || true)
           
-          # Get list of files changed between commits
-          CHANGED_FILES=$(curl -s -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
-                         -H "Accept: application/vnd.github+json" \
-                         "https://api.github.com/repos/appsmithorg/integration-resources/compare/${{ env.last_commit }}...${{ env.latest_commit }}" | \
-                         jq -r '.files[] | select(.filename | startswith("Generic UQI Creation/uqi_configs/" )) | .filename | split("/") | last' | \
-                         grep -v "^$")
+          # Check for modified files (SHA changed) - including SaaS integrations
+          MODIFIED_FILES=""
+          while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
+            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
+            if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ] && grep -q "^$FILE_NAME$" scripts/processed_files.txt; then
+              echo "🔄 File modified: $FILE_NAME (SHA changed)"
+              MODIFIED_FILES="$MODIFIED_FILES$FILE_NAME"$'\n'
+            fi
+          done < latest_files_with_sha.txt
           
-          if [ -n "$CHANGED_FILES" ]; then
-            echo "$CHANGED_FILES" > files_to_process.txt
-            echo "🆕 Found files changed since last commit:"
-            cat files_to_process.txt
-            echo "files_found=true" >> $GITHUB_ENV
-          else
-            echo "✅ No files changed since last commit."
-            echo "files_found=false" >> $GITHUB_ENV
-          fi
+          # Combine new and modified files
+          { echo "$NEW_FILES"; echo "$MODIFIED_FILES"; } | grep -v "^$" > files_to_process.txt
         fi
         
-        # Check for existing documentation
-        if [ "${{ env.files_found }}" == "true" ]; then
-          echo "🔍 Checking for existing documentation..."
-          FILTERED_FILES=""
-          while IFS= read -r FILE_NAME; do
-            INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
-            DOC_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
-            
-            if [ -f "$DOC_PATH" ]; then
-              echo "🔄 Documentation exists for $INTEGRATION, will update"
-            fi
-            
-            FILTERED_FILES="${FILTERED_FILES}${FILE_NAME}"$'\n'
-          done < files_to_process.txt
-          
-          echo "$FILTERED_FILES" | grep -v "^$" > files_to_process.txt
+        # Check if we have files to process
+        if [ -s files_to_process.txt ]; then
+          echo "🆕 Found files to process:"
+          cat files_to_process.txt
+          echo "changes_found=true" >> $GITHUB_ENV
+        else
+          echo "✅ No new or modified files to process."
+          echo "changes_found=false" >> $GITHUB_ENV
         fi
         
         # Count files to process
@@ -134,29 +147,55 @@ jobs:
         echo "file_count=$FILE_COUNT" >> $GITHUB_ENV
 
     - name: Exit if no files to process
-      if: env.files_found != 'true' || env.file_count == '0'
+      if: env.files_found != 'true' || env.changes_found != 'true'
       run: |
-        echo "No files to process. Exiting."
+        echo "No new integration updates found. Workflow completed successfully."
         exit 0
 
     - name: Process files
+      if: env.changes_found == 'true'
       run: |
         # Create a directory for generated docs
         mkdir -p generated_docs
+        
+        # Update file hashes JSON for tracking changes
+        HASHES_JSON=$(cat scripts/file_hashes.json)
         
         # Process each file
         while IFS= read -r FILE_NAME; do
           echo "⏳ Processing: $FILE_NAME"
           
-          # Download the file
-          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
-          curl -sSL "$FILE_URL" -o "input_file.json"
+          # Download the file with retry logic
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          DOWNLOAD_SUCCESS=false
           
-          # Process with OpenAI API (using completion API, not chat )
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$DOWNLOAD_SUCCESS" != "true" ]; do
+            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
+            
+            if curl -sSL --max-time 30 "$FILE_URL" -o "input_file.json" && [ -s "input_file.json" ]; then
+              DOWNLOAD_SUCCESS=true
+            else
+              echo "⚠️ Failed to download $FILE_NAME, attempt $(($RETRY_COUNT + 1 ))"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 3
+            fi
+          done
+          
+          if [ "$DOWNLOAD_SUCCESS" != "true" ]; then
+            echo "❌ Failed to download $FILE_NAME after $MAX_RETRIES attempts, skipping"
+            continue
+          fi
+          
+          # Update hash in our tracking JSON
+          FILE_SHA=$(grep "$FILE_NAME" latest_files_with_sha.txt | cut -f2)
+          HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
+          
+          # Process with OpenAI API (using completion API, not chat)
           echo "🧠 Extracting information with OpenAI API..."
           
           # Extract information using OpenAI API
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract the key information from this integration configuration file.")
+          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt 2>/dev/null || echo "Extract the key information from this integration configuration file.")
           USER_CONTENT=$(cat input_file.json)
           
           # Use OpenAI Completion API (not Chat API)
@@ -167,15 +206,37 @@ jobs:
             temperature: 0
           }')
           
-          curl -s https://api.openai.com/v1/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD" | jq -r '.choices[0].text' > "extracted_info.md"
+          # Call OpenAI API with retry logic
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          API_SUCCESS=false
+          
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$API_SUCCESS" != "true" ]; do
+            RESPONSE=$(curl -s --max-time 60 https://api.openai.com/v1/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" )
+            
+            if echo "$RESPONSE" | jq -e '.choices[0].text' > /dev/null 2>&1; then
+              echo "$RESPONSE" | jq -r '.choices[0].text' > "extracted_info.md"
+              API_SUCCESS=true
+            else
+              echo "⚠️ OpenAI API error, attempt $(($RETRY_COUNT + 1))"
+              echo "$RESPONSE"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 5
+            fi
+          done
+          
+          if [ "$API_SUCCESS" != "true" ]; then
+            echo "❌ Failed to extract information after $MAX_RETRIES attempts, skipping"
+            continue
+          fi
           
           # Generate documentation
           echo "📝 Generating documentation..."
           
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate comprehensive markdown documentation based on the extracted information." )
+          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt 2>/dev/null || echo "Generate comprehensive markdown documentation based on the extracted information.")
           EXTRACTED_CONTENT=$(cat extracted_info.md)
           
           # Use OpenAI Completion API again
@@ -186,13 +247,35 @@ jobs:
             temperature: 0.3
           }')
           
-          curl -s https://api.openai.com/v1/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD" | jq -r '.choices[0].text' > "generated_doc.md"
+          # Call OpenAI API with retry logic
+          MAX_RETRIES=3
+          RETRY_COUNT=0
+          API_SUCCESS=false
+          
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$API_SUCCESS" != "true" ]; do
+            RESPONSE=$(curl -s --max-time 60 https://api.openai.com/v1/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" )
+            
+            if echo "$RESPONSE" | jq -e '.choices[0].text' > /dev/null 2>&1; then
+              echo "$RESPONSE" | jq -r '.choices[0].text' > "generated_doc.md"
+              API_SUCCESS=true
+            else
+              echo "⚠️ OpenAI API error, attempt $(($RETRY_COUNT + 1))"
+              echo "$RESPONSE"
+              RETRY_COUNT=$((RETRY_COUNT + 1))
+              sleep 5
+            fi
+          done
+          
+          if [ "$API_SUCCESS" != "true" ]; then
+            echo "❌ Failed to generate documentation after $MAX_RETRIES attempts, skipping"
+            continue
+          fi
           
           # Prepare final path
-          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]' )
+          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
           mkdir -p "$(dirname "$FINAL_PATH")"
           
@@ -210,11 +293,11 @@ jobs:
           echo "✅ Completed processing: $FILE_NAME"
         done < files_to_process.txt
         
-        # Save the latest commit SHA for next run
-        echo "${{ env.latest_commit }}" > scripts/last_commit_sha.txt
+        # Save updated hashes
+        echo "$HASHES_JSON" > scripts/file_hashes.json
 
     - name: Commit and open PR
-      if: env.files_found == 'true' && env.file_count != '0'
+      if: env.changes_found == 'true'
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
@@ -225,8 +308,8 @@ jobs:
         add-paths: |
           website/docs/connect-data/reference/
           scripts/processed_files.txt
-          scripts/last_commit_sha.txt
+          scripts/file_hashes.json
         body: |
           This PR adds or updates integration reference documentation for **${{ env.file_count }}** integrations.
           
-          Generated from files changed since commit ${{ env.last_commit || 'initial' }} in the [integration-resources repository](https://github.com/appsmithorg/integration-resources/tree/main/Generic%20UQI%20Creation/uqi_configs ).
+          Generated from the latest configuration files in the [integration-resources repository](https://github.com/appsmithorg/integration-resources/tree/main/Generic%20UQI%20Creation/uqi_configs ).
