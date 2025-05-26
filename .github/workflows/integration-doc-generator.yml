@@ -1,0 +1,201 @@
+name: Integration Doc Generator
+
+on:
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      force_check_all:
+        description: 'Force check all files (not just new ones)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+  
+  # Event-based trigger - when changes are pushed to the integration-resources repo
+  repository_dispatch:
+    types: [integration_resources_updated]
+
+jobs:
+  generate_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout appsmith-docs
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}  # Use a PAT with access to both repos
+
+    - name: Ensure scripts directory exists
+      run: |
+        mkdir -p scripts
+        if [ ! -f scripts/processed_files.txt ]; then
+          touch scripts/processed_files.txt
+        fi
+        if [ ! -f scripts/file_hashes.json ]; then
+          echo "{}" > scripts/file_hashes.json
+        fi
+
+    - name: Fetch file list and metadata from integration-resources
+      run: |
+        curl -s -H "Authorization: Bearer ${{ secrets.REPO_ACCESS_TOKEN }}" \
+             -H "Accept: application/vnd.github+json" \
+             https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
+             -o response.json
+
+        # Validate it's an array (not an error message)
+        if ! jq 'type == "array"' response.json | grep -q true; then
+          echo "❌ GitHub API did not return a file list. Possible error:"
+          cat response.json
+          exit 1
+        fi
+
+        # Extract file names and their SHA hashes
+        jq -r '.[] | select(.type=="file") | [.name, .sha] | @tsv' response.json > latest_files_with_sha.txt
+        jq -r '.[] | select(.type=="file") | .name' response.json > latest_files.txt
+
+    - name: Identify new and modified files
+      id: detect_changes
+      run: |
+        # Load previous file hashes
+        PREV_HASHES=$(cat scripts/file_hashes.json)
+        
+        # Force check all files if requested
+        if [ "${{ github.event.inputs.force_check_all }}" == "true" ]; then
+          echo "🔄 Force checking all files as requested"
+          cat latest_files.txt > files_to_process.txt
+          echo "files_found=true" >> $GITHUB_ENV
+        else
+          # Find new files (not in processed_files.txt)
+          NEW_FILES=$(comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) || true)
+          
+          # Check for modified files (SHA changed)
+          MODIFIED_FILES=""
+          while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
+            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
+            if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ] && grep -q "^$FILE_NAME$" scripts/processed_files.txt; then
+              echo "🔄 File modified: $FILE_NAME (SHA changed)"
+              MODIFIED_FILES="$MODIFIED_FILES$FILE_NAME"$'\n'
+            fi
+          done < latest_files_with_sha.txt
+          
+          # Combine new and modified files
+          { echo "$NEW_FILES"; echo "$MODIFIED_FILES"; } | grep -v "^$" > files_to_process.txt
+          
+          if [ -s files_to_process.txt ]; then
+            echo "🆕 Found files to process:"
+            cat files_to_process.txt
+            echo "files_found=true" >> $GITHUB_ENV
+          else
+            echo "✅ No new or modified files to process."
+            echo "files_found=false" >> $GITHUB_ENV
+          fi
+        fi
+        
+        # Count files to process
+        FILE_COUNT=$(wc -l < files_to_process.txt || echo "0")
+        echo "file_count=$FILE_COUNT" >> $GITHUB_ENV
+
+    - name: Exit if no files to process
+      if: env.files_found != 'true'
+      run: exit 0
+
+    - name: Process files
+      run: |
+        # Create a directory for generated docs
+        mkdir -p generated_docs
+        
+        # Update file hashes JSON for tracking changes
+        HASHES_JSON=$(cat scripts/file_hashes.json)
+        
+        # Process each file
+        while IFS= read -r FILE_NAME; do
+          echo "⏳ Processing: $FILE_NAME"
+          
+          # Download the file
+          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
+          curl -sSL "$FILE_URL" -o "input_file.json"
+          
+          # Update hash in our tracking JSON
+          FILE_SHA=$(grep "$FILE_NAME" latest_files_with_sha.txt | cut -f2)
+          HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
+          
+          # Process with OpenAI API (using completion API, not chat)
+          echo "🧠 Extracting information with OpenAI API..."
+          
+          # Extract information using OpenAI API
+          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract the key information from this integration configuration file.")
+          USER_CONTENT=$(cat input_file.json)
+          
+          # Use OpenAI Completion API (not Chat API)
+          PAYLOAD=$(jq -n --arg prompt "System: $SYSTEM_PROMPT\n\nUser: $USER_CONTENT" '{
+            model: "gpt-4-turbo-preview",
+            prompt: $prompt,
+            max_tokens: 2000,
+            temperature: 0
+          }')
+          
+          curl -s https://api.openai.com/v1/completions \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" | jq -r '.choices[0].text' > "extracted_info.md"
+          
+          # Generate documentation
+          echo "📝 Generating documentation..."
+          
+          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate comprehensive markdown documentation based on the extracted information.")
+          EXTRACTED_CONTENT=$(cat extracted_info.md)
+          
+          # Use OpenAI Completion API again
+          PAYLOAD=$(jq -n --arg prompt "System: $SYSTEM_PROMPT\n\nUser: $EXTRACTED_CONTENT" '{
+            model: "gpt-4-turbo-preview",
+            prompt: $prompt,
+            max_tokens: 4000,
+            temperature: 0.3
+          }')
+          
+          curl -s https://api.openai.com/v1/completions \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD" | jq -r '.choices[0].text' > "generated_doc.md"
+          
+          # Prepare final path
+          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+          FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
+          mkdir -p "$(dirname "$FINAL_PATH")"
+          
+          # Copy to final location
+          cp "generated_doc.md" "$FINAL_PATH"
+          
+          # Also save to our generated_docs directory for the PR
+          cp "generated_doc.md" "generated_docs/${INTEGRATION}.md"
+          
+          # Mark as processed if it's a new file
+          if ! grep -q "^$FILE_NAME$" scripts/processed_files.txt; then
+            echo "$FILE_NAME" >> scripts/processed_files.txt
+          fi
+          
+          echo "✅ Completed processing: $FILE_NAME"
+        done < files_to_process.txt
+        
+        # Save updated hashes
+        echo "$HASHES_JSON" > scripts/file_hashes.json
+
+    - name: Commit and open PR
+      if: env.files_found == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        title: "docs: add/update integration references"
+        commit-message: "docs: add/update integration references"
+        branch: "auto/docs-update-${{ github.run_id }}"
+        base: main
+        add-paths: |
+          website/docs/connect-data/reference/
+          scripts/processed_files.txt
+          scripts/file_hashes.json
+        body: |
+          This PR adds or updates integration reference documentation for **${{ env.file_count }}** integrations.
+          
+          Generated from the latest configuration files in the [integration-resources repository](https://github.com/appsmithorg/integration-resources/tree/main/Generic%20UQI%20Creation/uqi_configs).
