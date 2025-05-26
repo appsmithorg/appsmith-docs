@@ -22,8 +22,19 @@ jobs:
 
     - name: Fetch file list from integration-resources
       run: |
-        curl -s https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
-        | jq -r '.[] | select(.type=="file") | .name' > latest_files.txt
+        curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+             -H "Accept: application/vnd.github+json" \
+             https://api.github.com/repos/appsmithorg/integration-resources/contents/Generic%20UQI%20Creation/uqi_configs \
+             -o response.json
+
+        # Validate it's an array (not an error message)
+        if ! jq 'type == "array"' response.json | grep -q true; then
+          echo "❌ GitHub API did not return a file list. Possible error:"
+          cat response.json
+          exit 1
+        fi
+
+        jq -r '.[] | select(.type=="file") | .name' response.json > latest_files.txt
 
     - name: Find first unprocessed file
       id: detect
@@ -31,10 +42,10 @@ jobs:
         NEW_FILE=$(comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) | head -n 1 || true)
 
         if [ -z "$NEW_FILE" ]; then
-          echo "No new file to process."
+          echo "✅ No new file to process."
           echo "continue=false" >> $GITHUB_ENV
         else
-          echo "Found new file: $NEW_FILE"
+          echo "🆕 Found new file: $NEW_FILE"
           echo "$NEW_FILE" > scripts/current_file.txt
           echo "new_file=$NEW_FILE" >> $GITHUB_ENV
           echo "continue=true" >> $GITHUB_ENV
@@ -68,7 +79,7 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
 
-    - name: Generate Markdown (OpenAI Part 2)
+    - name: Generate Markdown Documentation (OpenAI Part 2)
       run: |
         SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
         EXTRACTED_CONTENT=$(cat extracted_info.md)
@@ -87,10 +98,10 @@ jobs:
           -H "Content-Type: application/json" \
           -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
 
-    - name: Prepare target path
+    - name: Prepare final markdown path
       id: prep
       run: |
-        INTEGRATION=$(echo "${{ env.new_file }}" | sed 's/\.[^.]*$//' | tr '[:upper:]' '[:lower:]')
+        INTEGRATION=$(echo "${{ env.new_file }}" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
         FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
         mkdir -p "$(dirname "$FINAL_PATH")"
         cp generated_doc.md "$FINAL_PATH"
