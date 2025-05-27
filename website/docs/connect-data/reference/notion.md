@@ -10,78 +10,92 @@ Once authenticated, you'll be able to select a Notion workspace and choose speci
 
 ## Query Notion
 
-The following section is a reference guide that provides a description of the available commands with their parameters to create Notion queries.
+The following section provides a reference guide describing available commands and their parameters for interacting with Notion.
 
 ### Create Page
 
-The Create Page command in Appsmith's Notion integration lets you create a new page in your Notion workspace. You can choose where to create the page, add content, and customize how it appears.
+Creates a new page in your Notion workspace. This command allows you to define page details such as parent location, properties, content blocks, and visual elements.
 
 #### Parent `object`
-
 <dd>
+Specifies where the new page should be created in your Notion workspace. You can create the page either within an existing database or as a sub-page under another page.
 
-The `parent` property allows you to specify where the new page should be created in your Notion workspace. You can create the page either within an existing database or as a sub-page under another page.
-It expects an object containing one of the following keys:
+To find a database ID:
+* Open the database in Notion
+* Look at the URL: `https://www.notion.so/workspace/[DATABASE_ID]?v=...`
+* The ID is the part before the question mark, typically a 32-character string with hyphens
 
-- `database_id`: Creates a new page within a Notion database.
+To find a page ID:
+* Open the page in Notion
+* Look at the URL: `https://www.notion.so/workspace/Page-Title-[PAGE_ID]`
+* The ID is typically the last part of the URL, a 32-character string with hyphens
 
-- `page_id`: Creates a new sub-page under an existing Notion page.
-
-When using `database_id`, you should also define the properties field to map values to database columns. If you're using `page_id`, you can include children blocks to add content inside the page.
-
-*Example*: If you're using a Select widget to choose a database or page ID, you can reference the selected value like this:
-
+*Example for creating a page in a database*:
 ```js
-//page456def
-{{select1.selectedOptionValue}}
+{
+  "database_id": "3f846c9a5d324a93a38a29b6c2a9cb12"
+}
 ```
 
+*Example for creating a sub-page under an existing page*:
+```js
+{
+  "page_id": "7a774b5c39c942d4a640a9dc3a84f3f0"
+}
+```
 </dd>
 
 #### Properties `object`
-
 <dd>
+Defines values for the columns in a Notion database when creating a new page. This is required when the `parent` is a `database_id`.
 
- The `properties` field allows you to define values for the columns in a Notion database when creating a new page. This is required when the `parent` is a `database_id`.
+Each key in the properties object should match a column name in the target Notion database, and the value should follow Notion's property format based on the column type.
 
-Each key in the properties object should match a column name in the target Notion database, and the value should follow Notion's rich property format (e.g., for text, select, date, etc.).
+Common property types include:
+* Title: `{ "title": [{ "text": { "content": "Text here" } }] }`
+* Select: `{ "select": { "name": "Option name" } }`
+* Date: `{ "date": { "start": "2025-05-27" } }`
+* Number: `{ "number": 42 }`
+* Checkbox: `{ "checkbox": true }`
 
-It expects an object where each key is a column name, and the value is formatted based on the column type.
-
-*Example:*
-
+*Example for a task database with multiple properties*:
 ```js
 {
   "Name": {
     "title": [
       {
         "text": {
-          "content": "{{input1.text}}"
+          "content": "Quarterly Report"
         }
       }
     ]
   },
   "Status": {
     "select": {
-      "name": "{{select1.selectedOptionLabel}}"
+      "name": "In Progress"
+    }
+  },
+  "Due Date": {
+    "date": {
+      "start": "2025-06-15"
     }
   }
 }
 ```
-
 </dd>
 
 #### Children `array`
-
 <dd>
+Defines the content blocks that appear inside the new Notion page. This is commonly used when creating a page under a `page_id` (not a database).
 
-The `children` property allows you to define the content blocks that appear **inside** the new Notion page. This is commonly used when you're creating a page under a `page_id` (not a database).
+Each object in the array represents a block type like paragraph, heading, to-do, bulleted list, etc. Each block must specify its type and corresponding content.
 
-It expects an array of block objects, where each object represents a block type like paragraph, heading, to-do, bulleted list, etc. Each block must specify its type and corresponding content.
+Common block types include:
+* Paragraph: `{ "type": "paragraph", "paragraph": { "rich_text": [{ "text": { "content": "Text here" } }] } }`
+* Heading: `{ "type": "heading_2", "heading_2": { "rich_text": [{ "text": { "content": "Heading text" } }] } }`
+* Bulleted list: `{ "type": "bulleted_list_item", "bulleted_list_item": { "rich_text": [{ "text": { "content": "List item" } }] } }`
 
-
-*Example*:
-
+*Example for creating a page with multiple content blocks*:
 ```js
 [
   {
@@ -91,7 +105,7 @@ It expects an array of block objects, where each object represents a block type 
       "rich_text": [
         {
           "text": {
-            "content": "{{input1.text}}"
+            "content": "Project Overview"
           }
         }
       ]
@@ -104,7 +118,20 @@ It expects an array of block objects, where each object represents a block type 
       "rich_text": [
         {
           "text": {
-            "content": "{{input2.text}}"
+            "content": "This project aims to improve customer engagement through targeted content."
+          }
+        }
+      ]
+    }
+  },
+  {
+    "object": "block",
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "text": {
+            "content": "Phase 1: Research and planning"
           }
         }
       ]
@@ -112,337 +139,394 @@ It expects an array of block objects, where each object represents a block type 
   }
 ]
 ```
-
 </dd>
 
-#### Cover `object`
-
+#### Cover `string`
 <dd>
+Sets a cover image for the Notion page. This image appears at the top of the page and helps visually distinguish it.
 
-The cover property allows you to set or update a cover image for the Notion page. This image appears at the top of the page in Notion and helps visually distinguish the page.
+Enter a URL to an image that will be used as the page cover.
 
-The URL must point to a publicly accessible image. Notion does not currently support uploading local files directly through this property.
-
+*Example*:
+```
+https://images.unsplash.com/photo-1579546929518-9e396f3cc809
+```
 </dd>
 
 #### Icon `string`
-
 <dd>
+Sets a custom icon for the Notion page. This icon appears next to the page title and helps visually identify the page.
 
-The `icon` property allows you to set a custom icon for the Notion page. This icon appears next to the page title in Notion and helps visually identify the page.
-It accepts either:
+You can use an emoji character as the page icon.
 
-- A string (for an emoji character), or
-
-- An object (to define an external image URL)
-
+*Example*:
+```
+🚀
+```
 </dd>
-
 
 ### Update Page
 
-
-The Update Page command is used to **modify an existing Notion page**. You can update its title, properties (if it's part of a database), change its icon or cover image, or even archive it.
+Updates an existing page in your Notion workspace. This command allows you to modify page details such as properties, icon, cover image, or archive status.
 
 #### Page ID `string`
-
 <dd>
+The unique identifier of the page to update.
 
-The `page_id` identifies the Notion page you want to update. It is a required field.
-Where to find the page_id:
+To find a page ID:
+* Open the page in Notion
+* Look at the URL: `https://www.notion.so/workspace/Page-Title-[PAGE_ID]`
+* The ID is typically the last part of the URL, a 32-character string with hyphens
 
-You can get it from the URL of any Notion page. For example, in the URL:
-
+*Example*:
 ```
-https://www.notion.so/workspace/Project-Details-abc123xyz456
+7a774b5c39c942d4a640a9dc3a84f3f0
 ```
-
-The ID is usually the last part: `abc123xyz456`
-
 </dd>
 
-
 #### Archived `boolean`
+<dd>
+Determines whether the page is archived or active. Set to `true` to archive the page or `false` to unarchive it.
 
-<dd> 
+Archiving a page removes it from the main workspace view but preserves it for future reference.
 
-The Archived property is used to **archive or unarchive** a page.
+*Example to archive a page*:
+```js
+true
+```
 
-- Set it to `true` to archive the page.
-
-- Set it to `false` to unarchive it.
-
+*Example to unarchive a page*:
+```js
+false
+```
 </dd>
 
 #### Properties `object`
+<dd>
+Updates the values of properties (columns) for a page in a database. The format is the same as when creating a page.
 
-<dd> 
-
-Use the Properties field to **update column values** in a database page. The format is the same as when creating a page.
-
-*Example:*
-
+*Example for updating task status and due date*:
 ```js
-"properties": {
+{
   "Status": {
     "select": {
-      "name": "{{selectStatus.selectedOptionLabel}}"
+      "name": "Completed"
     }
   },
   "Due Date": {
     "date": {
-      "start": "{{inputDate.text}}"
+      "start": "2025-06-30"
     }
   }
 }
 ```
-
 </dd>
 
 #### Cover `string`
+<dd>
+Updates the cover image for the Notion page.
 
-<dd> 
+Enter a URL to an image that will be used as the new page cover.
 
-The `cover` property allows you to set or update the cover image that appears at the top of a Notion page. This helps visually highlight or brand the page.
-
-It expects an object with the following format:
-
-- `type`: Set to "external" to use a public image URL.
-
-- `external`: An object containing a url field pointing to the image.
-
+*Example*:
+```
+https://images.unsplash.com/photo-1518655048521-f130df041f66
+```
 </dd>
 
 #### Icon `string`
-
 <dd>
+Updates the icon for the Notion page.
 
-The `icon` property allows you to add or update the small icon that appears next to the Notion page title. You can use either an emoji or an external image.
+Enter an emoji character to use as the new page icon.
 
+*Example*:
+```
+📊
+```
 </dd>
 
 ### Get Page by ID
 
-<dd> 
-
-This command retrieves a specific Notion page using its unique Page ID. It returns metadata about the page, including properties, creation time, parent info, and other high-level details. This is helpful when you need to read the structure or current values of a page before updating it. 
-
-</dd>
+Retrieves detailed information about a specific page using its unique Notion page ID. This command returns comprehensive data about the page, including its properties, parent information, and metadata.
 
 #### Page Id `string`
-
 <dd>
+The unique identifier of the page to retrieve.
 
-The Page Id identifies the Notion page you want to update. It is a required field. 
+To find a page ID:
+* Open the page in Notion
+* Look at the URL: `https://www.notion.so/workspace/Page-Title-[PAGE_ID]`
+* The ID is typically the last part of the URL, a 32-character string with hyphens
 
-You can get it from the URL of any Notion page. For example, in the URL:
-
+*Example*:
 ```
-https://www.notion.so/workspace/Project-Details-abc123xyz456
+7a774b5c39c942d4a640a9dc3a84f3f0
 ```
-
-The ID is usually the last part: `abc123xyz456`
-
-
 </dd>
-
 
 ### Archive Page
 
-This command allows you to archive a Notion page. Archiving a page removes it from the active workspace view but keeps it accessible through queries or if unarchived later. It’s useful for closing out tasks, archiving completed projects, or cleaning up content. 
-
+Archives a page in your Notion workspace. This command moves the page to the archive, making it less visible but still accessible if needed later.
 
 #### Page Id `string`
-
 <dd>
+The unique identifier of the page to archive.
 
-The Page Id identifies the Notion page you want to update. It is a required field. 
+To find a page ID:
+* Open the page in Notion
+* Look at the URL: `https://www.notion.so/workspace/Page-Title-[PAGE_ID]`
+* The ID is typically the last part of the URL, a 32-character string with hyphens
 
-You can get it from the URL of any Notion page. For example, in the URL:
-
+*Example*:
 ```
-https://www.notion.so/workspace/Project-Details-abc123xyz456
+7a774b5c39c942d4a640a9dc3a84f3f0
 ```
-
-The ID is usually the last part: `abc123xyz456`
-
-
 </dd>
 
 ### Search Pages
 
-
-This command allows you to search for Notion pages across your workspace using keywords. It’s useful for dynamically finding pages by title or content without knowing their exact page IDs.
-
-You can use this command to implement features like dropdown selectors that show matching pages as users type, or filter records by project, client, or tag.
-
+Searches for pages in your Notion workspace based on a keyword or phrase. This command returns pages that match the search criteria, including their IDs, titles, and other metadata.
 
 #### Filter `string`
+<dd>
+The search keyword or phrase used to match page titles and content.
 
-<dd> 
+The search performs a full-text search across all pages your integration has access to, returning pages where the title or content includes the filter string.
 
-The `filter` refers to the search keyword or phrase used to match page titles and content.
+*Example to search for project-related pages*:
+```
+project plan
+```
 
-It performs a full-text search, so it will return pages where the title or text includes the filter string.
+*Example to search for specific content*:
+```
+quarterly budget
+```
 
-Results are limited to pages your Notion integration has access to. Make sure the integration is authorized to view the relevant pages.
-
+*Example to search for pages by topic*:
+```
+marketing strategy
+```
 </dd>
-
 
 ### Get Page Content
 
-This command allows you to retrieve the full block content of a Notion page, including text, headings, images, embeds, and other elements structured within the page. It’s useful when you need to display or process the actual content blocks of a page. 
+Retrieves the full content of a specific page, including all blocks such as text, headings, lists, images, and other elements. This command returns the structured content of the page as a series of blocks.
 
 #### Block Id `string`
+<dd>
+The unique identifier of the root block of the page. This is typically the same as the page ID.
 
-The Block Id refers to the root block of the page, which is usually the same as the page’s ID.
+To find a block ID for a page:
+* Open the page in Notion
+* Look at the URL: `https://www.notion.so/workspace/Page-Title-[PAGE_ID]`
+* The page ID is also the root block ID
 
-To get a page's block ID:
-
-```JS
-https://www.notion.so/My-Project-Page-a1b2c3d4e5f6g7h8i9j0
-
-//block_id = "a1b2c3d4e5f6g7h8i9j0"
+*Example*:
 ```
-
+7a774b5c39c942d4a640a9dc3a84f3f0
+```
+</dd>
 
 ### Update Block
 
-This command allows you to update content blocks inside a Notion page. You can modify blocks like paragraphs, images, bookmarks, code blocks, PDFs, tables, and more. It’s useful when you want to edit a specific block’s content programmatically without recreating it. 
+Updates a specific block within a Notion page. This command allows you to modify the content or properties of an individual block, such as a paragraph, image, or table.
 
 #### Block ID `string`
+<dd>
+The unique identifier of the block to update.
 
-<dd> 
+To find a block ID:
+* Use the "Get Page Content" command to list all blocks in a page
+* Each block in the response will have an `id` field
+* Block IDs are typically 32-character strings with hyphens
 
-The Block ID identifies the specific Notion block you want to update. This could be a paragraph, image, heading, etc.
-
+*Example*:
+```
+b55c9c91-384d-452b-81db-d1ef79372b75
+```
 </dd>
 
 #### Archived `boolean`
+<dd>
+Determines whether the block is archived or active. Set to `true` to archive the block or `false` to unarchive it.
 
-<dd> 
-
-This field allows you to archive or unarchive a block.
-
-- Set to `true` to archive the block.
-- Set to `false` to keep or restore it
-
+*Example to archive a block*:
+```js
+true
+```
 </dd>
 
-#### Paragraph `object `
+#### Paragraph `object`
+<dd>
+Updates the content of a paragraph block. This is used when the block type is "paragraph".
 
-<dd> 
-
-The Paragraph property allows you to update the text content of a paragraph block in Notion. You can use it to modify or replace the existing paragraph text with new content, which can include formatting such as bold, italics, and links.
-
+*Example*:
+```js
+{
+  "rich_text": [
+    {
+      "text": {
+        "content": "This is the updated paragraph text with new information."
+      }
+    }
+  ]
+}
+```
 </dd>
 
 #### Image `string`
-
 <dd>
+Updates an image block with a new image. This is used when the block type is "image".
 
-This property allows you to update an image block within a Notion page. You can provide an image URL to display an image either from an external source or a file hosted on a server. This is useful for dynamically changing or updating images within your Notion pages.
+Enter a URL to the new image.
 
+*Example*:
+```
+https://images.unsplash.com/photo-1504805572947-34fad45aed93
+```
 </dd>
 
 #### Bookmark `string`
-
 <dd>
+Updates a bookmark block with a new URL. This is used when the block type is "bookmark".
 
-This property allows you to update a bookmark block within a Notion page. You can provide a URL that Notion will display as a clickable bookmark, typically showing a preview of the linked content. This is useful when you want to embed external content into your Notion pages as a link with a preview.
+Enter the new URL for the bookmark.
 
+*Example*:
+```
+https://www.notion.so/help
+```
 </dd>
 
-
 #### PDF `string`
+<dd>
+Updates a PDF block with a new PDF file. This is used when the block type is "pdf".
 
-<dd> 
+Enter a URL to the new PDF file.
 
-The **PDF** property allows you to update a PDF block within a Notion page by providing the URL of the PDF file. This is useful for embedding documents directly within a Notion page.
-
+*Example*:
+```
+https://example.org/documents/quarterly-report.pdf
+```
 </dd>
 
 #### Table `object`
-
 <dd>
-
-The Table block represents a simple (non-database) table. It must define structure using these fields:
-
-- `table_width`: Number of columns
-
-- `has_column_header`: Whether the first row is a column header
-
-- `has_row_header`: Whether the first column is a row header
-
+Updates a table block with new structure and content. This is used when the block type is "table".
 
 *Example*:
-
 ```js
 {
-  "table": {
-    "table_width": 2,
-    "has_column_header": true,
-    "has_row_header": false,
-    "children": [
-      {
-        "type": "table_row",
-        "table_row": {
-          "cells": [
-            [{"type": "text", "text": {"content": "Header 1"}}],
-            [{"type": "text", "text": {"content": "Header 2"}}]
-          ]
-}}]}}
-```
-
-</dd>
-
-
-#### Table of Contents
-
-<dd>
-
-The **Table of Contents** property allows you to update the Table of Contents (TOC) block within a Notion page. The TOC block is typically auto-generated, but it can be updated programmatically in some cases. It generates links to headings within the page content.
-
-*Example:*
-
-```js
-"table_of_contents": {
-  "heading": "Updated Heading"
+  "table_width": 3,
+  "has_column_header": true,
+  "has_row_header": false,
+  "children": [
+    {
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [{"type": "text", "text": {"content": "Product"}}],
+          [{"type": "text", "text": {"content": "Price"}}],
+          [{"type": "text", "text": {"content": "Stock"}}]
+        ]
+      }
+    },
+    {
+      "type": "table_row",
+      "table_row": {
+        "cells": [
+          [{"type": "text", "text": {"content": "Widget A"}}],
+          [{"type": "text", "text": {"content": "$25.99"}}],
+          [{"type": "text", "text": {"content": "In stock"}}]
+        ]
+      }
+    }
+  ]
 }
 ```
-
 </dd>
 
+#### Table of Contents `object`
+<dd>
+Updates a table of contents block. This is used when the block type is "table_of_contents".
+
+*Example*:
+```js
+{
+  "color": "default"
+}
+```
+</dd>
 
 ### Get Block by ID
 
- This command allows you to retrieve the content of a specific block within a Notion page by using the block's unique ID. By providing the block ID, you can fetch details about the block, such as its properties, type, and other associated content.
+Retrieves detailed information about a specific block using its unique Notion block ID. This command returns comprehensive data about the block, including its type, content, and metadata.
 
 #### Block ID `string`
-
 <dd>
+The unique identifier of the block to retrieve.
 
-The block ID is a unique identifier used to refer to a specific block within a Notion page. This ID is required to fetch or update the content of that particular block.
+To find a block ID:
+* Use the "Get Page Content" command to list all blocks in a page
+* Each block in the response will have an `id` field
+* Block IDs are typically 32-character strings with hyphens
 
+*Example*:
+```
+b55c9c91-384d-452b-81db-d1ef79372b75
+```
 </dd>
-
-
 
 ### Delete Block
 
-This command allows you to delete a specific block within a Notion page by using its block ID. Once the block ID is provided, the command will permanently remove the block from the page.
-
+Deletes a specific block from a Notion page. This command permanently removes the block and its content.
 
 #### Block ID `string`
-
 <dd>
+The unique identifier of the block to delete.
 
-The block ID is a unique identifier used to refer to a specific block within a Notion page. This ID is required to fetch or update the content of that particular block.
+To find a block ID:
+* Use the "Get Page Content" command to list all blocks in a page
+* Each block in the response will have an `id` field
+* Block IDs are typically 32-character strings with hyphens
 
+*Example*:
+```
+b55c9c91-384d-452b-81db-d1ef79372b75
+```
 </dd>
-
 
 ### Custom Action
 
-This command allows you to configure and execute a custom API call based on your specific requirements. You can select the HTTP method (GET, POST, PUT, DELETE, etc.), provide the endpoint URL, define query parameters, and execute the query within your Notion integration.
+Executes a custom action against the Notion API. This command allows for advanced operations not covered by the standard commands.
+
+<dd>
+This command enables you to perform custom operations with Notion that aren't covered by the standard commands. You can specify parameters and values according to your specific requirements.
+
+When using Custom Action, you may need to refer to the Notion documentation for guidance on specific operations and required parameters.
+
+*Example for a custom search query*:
+```
+{
+  "query": "Project Plan",
+  "sort": {
+    "direction": "ascending",
+    "timestamp": "last_edited_time"
+  }
+}
+```
+
+*Example for a custom filter*:
+```
+{
+  "filter": {
+    "property": "Status",
+    "select": {
+      "equals": "Completed"
+    }
+  }
+}
+```
+</dd>
