@@ -161,6 +161,9 @@ jobs:
         # Update file hashes JSON for tracking changes
         HASHES_JSON=$(cat scripts/file_hashes.json)
         
+        # Initialize counter for successfully processed files
+        PROCESSED_COUNT=0
+        
         # Process each file
         while IFS= read -r FILE_NAME; do
           echo "⏳ Processing: $FILE_NAME"
@@ -290,14 +293,35 @@ jobs:
             echo "$FILE_NAME" >> scripts/processed_files.txt
           fi
           
+          # Increment the counter for successfully processed files
+          PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
+          
           echo "✅ Completed processing: $FILE_NAME"
         done < files_to_process.txt
         
         # Save updated hashes
         echo "$HASHES_JSON" > scripts/file_hashes.json
+        
+        # Set environment variable for PR creation
+        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
+        
+        # Check if any files were successfully processed
+        if [ $PROCESSED_COUNT -gt 0 ]; then
+          echo "content_generated=true" >> $GITHUB_ENV
+          echo "✅ Successfully processed $PROCESSED_COUNT files"
+        else
+          echo "content_generated=false" >> $GITHUB_ENV
+          echo "⚠️ No files were successfully processed"
+        fi
+
+    - name: Exit if no content was generated
+      if: env.content_generated != 'true'
+      run: |
+        echo "No content was generated from OpenAI. Workflow completed successfully without creating a PR."
+        exit 0
 
     - name: Commit and open PR
-      if: env.changes_found == 'true'
+      if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
@@ -310,6 +334,6 @@ jobs:
           scripts/processed_files.txt
           scripts/file_hashes.json
         body: |
-          This PR adds or updates integration reference documentation for **${{ env.file_count }}** integrations.
+          This PR adds or updates integration reference documentation for **${{ env.processed_count }}** integrations.
           
-          Generated from the latest configuration files in the [integration-resources repository](https://github.com/appsmithorg/integration-resources/tree/main/Generic%20UQI%20Creation/uqi_configs ).
+          Generated from the latest configuration files in the [integration-resources repository](https://github.com/appsmithorg/integration-resources/tree/main/Generic%20UQI%20Creation/uqi_configs).
