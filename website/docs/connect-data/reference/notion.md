@@ -149,7 +149,7 @@ Enter a URL to an image that will be used as the page cover.
 
 *Example*:
 ```
-https://images.unsplash.com/photo-1579546929518-9e396f3cc809
+https://images.unsplash.com/photo-1579529518-9e396f309
 ```
 </dd>
 
