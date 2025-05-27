@@ -57,6 +57,37 @@ Inputs can be accessed using the same syntax across widgets, queries, and JavaSc
 
 </dd>
 
+#### Outputs
+
+<dd>
+
+Outputs allow you to pass dynamic values from the UI Module back to the parent application. They enable modules to share results, state changes, or computed values with the consuming application.
+
+Each Output has:
+
+- **Name:** Used to reference the value in the parent application.
+- **Value:** The internal module data, state, or computed result you want to expose.
+
+**Accessing Outputs**
+
+When a UI Module is added to an application, its outputs become available through the module instance name:
+
+```javascript
+{{ModuleName.outputName}}
+```
+
+*Example:* If you have a login module that generates an authentication token, you can access it in the parent app using `{{LoginModule.authToken}}` for subsequent API calls.
+
+*Example:* To display data from a module in a Table widget on your application:
+
+```javascript
+// In your Table widget's Data property:
+{{DataModule.tableData}}
+```
+
+This allows you to populate application tables with data processed or filtered inside your module without exposing the internal implementation details.
+
+</dd>
 
 #### Visible `boolean`
 
