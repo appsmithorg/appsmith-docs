@@ -180,7 +180,7 @@ Determines the spacing between the **Icon** and the **Label**.
 
 <dd>
 
-Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). The background color can also be modified programmatically using JavaScript functions.
 
 </dd>
 

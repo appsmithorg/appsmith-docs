@@ -163,7 +163,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). When JS is enabled, the font color can be programmatically modified using JavaScript functions.
+Represents the color of the button, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). When JS is enabled, the background color can be programmatically modified using JavaScript functions.
 
 </dd>
 

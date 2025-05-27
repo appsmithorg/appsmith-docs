@@ -295,7 +295,7 @@ Enables you to select a font style for the widget, such as bold or italic. Addit
 
 <dd>
 
-Represents the color of the slider, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). Additionally, the font color can be programmatically modified using JavaScript functions.
+Represents the color of the slider, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). The slider color can also be modified programmatically using JavaScript functions.
 
 </dd>
 
