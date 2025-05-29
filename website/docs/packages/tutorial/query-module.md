@@ -1,12 +1,12 @@
 ---
-title: Package and query modules
+title: Query Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Package and query modules</h1>
+ <h1>Query Modules</h1>
 
 <Tags
 tags={[
@@ -18,10 +18,12 @@ tags={[
 
 <!-- vale on -->
 
-A package is a collection of query and JS modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of reusable query, JavaScript, and UI modules that can be versioned and shared across applications in the same workspace. Packages help you organize and maintain logic consistently across your projects.
 
-:::tip What will I learn? 📝
-You'll create a reusable query module using product inventory data and display that data in a Table widget. By the end of this tutorial, you will learn:
+In this tutorial, we will create a query module, which allows you to define reusable queries that accept dynamic inputs and can be used across multiple applications.
+
+:::tip ⏳ Estimated Time: 10 minutes
+By the end of this tutorial, you will learn to:
 
 * 🔧 **Basics:** Learn how to create and configure the query module
 * 🔄 **Dynamic Data:** Learn how to pass data between the app and query module

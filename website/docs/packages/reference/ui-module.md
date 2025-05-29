@@ -78,14 +78,6 @@ When a UI Module is added to an application, its outputs become available throug
 
 *Example:* If you have a login module that generates an authentication token, you can access it in the parent app using `{{LoginModule.authToken}}` for subsequent API calls.
 
-*Example:* To display data from a module in a Table widget on your application:
-
-```javascript
-// In your Table widget's Data property:
-{{DataModule.tableData}}
-```
-
-This allows you to populate application tables with data processed or filtered inside your module without exposing the internal implementation details.
 
 </dd>
 
