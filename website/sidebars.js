@@ -451,7 +451,8 @@ const sidebars = {
             `build-apps/how-to-guides/browse-and-display-documents`,
             'build-apps/how-to-guides/Multi-step-Form-or-Wizard-Using-Tabs',
             'build-apps/how-to-guides/usage-app',
-            'build-apps/how-to-guides/export-audit-logs'
+            'build-apps/how-to-guides/export-audit-logs',
+            'reference/widgets/button/google-recaptcha'
           ]
         },
         {
@@ -468,12 +469,8 @@ const sidebars = {
               items: [
                 'reference/widgets/audio',
                 'reference/widgets/audio-recorder',
-                {
-                  type: 'category',
-                  label: 'Button',
-                  link: { type: 'doc', id: 'reference/widgets/button/README' },
-                  items: ['reference/widgets/button/google-recaptcha'],
-                },
+                'reference/widgets/button/README',
+      
                 {
                   type: 'category',
                   label: 'Button Group',
@@ -821,6 +818,64 @@ const sidebars = {
       ]
 
     }, //Workflows end
+
+ // AIStart
+
+ { 
+  type: 'category',
+  collapsed: false,
+  label: 'AI Assistants',
+  items: [
+    'AI-assistants/overview',
+    {
+      //Reference start
+      type: 'category',
+      label: 'Reference',
+      collapsed: false,
+      items: [
+        {
+          type: 'category',
+          label: 'Widgets',
+          items: [
+            'AI-assistants/reference/AIChat', 
+            'AI-assistants/reference/button',  
+        'AI-assistants/reference/checkbox',  
+        'AI-assistants/reference/ComboBox',
+        'AI-assistants/reference/checkbox-group',  
+        'AI-assistants/reference/currency-input',
+        'AI-assistants/reference/custom',  
+        'AI-assistants/reference/date',  
+        'AI-assistants/reference/emailinput',
+        'AI-assistants/reference/Heading', 
+        'AI-assistants/reference/icon-button',  
+        'AI-assistants/reference/inline-button',  
+        'AI-assistants/reference/input',  
+        'AI-assistants/reference/menu-button',  
+        'AI-assistants/reference/modal',  
+        'AI-assistants/reference/multilineInput',
+        'AI-assistants/reference/number-input',  
+        'AI-assistants/reference/paragraph',  
+        'AI-assistants/reference/password-input',
+        'AI-assistants/reference/phone-input',
+        'AI-assistants/reference/radio-group',  
+        'AI-assistants/reference/select', 
+        'AI-assistants/reference/stats',  
+        'AI-assistants/reference/switch',  
+        'AI-assistants/reference/switch-group',  
+        'AI-assistants/reference/table',
+        'AI-assistants/reference/toolbar', 
+        'AI-assistants/reference/zone',
+
+          
+          ],
+        },
+        'AI-assistants/reference/app-theming',
+         'AI-assistants/appsmith-ai',
+          ],
+    }, //Reference End
+  ]
+}, //ai end
+
     {
       // Help & Support start
       type: 'category',
