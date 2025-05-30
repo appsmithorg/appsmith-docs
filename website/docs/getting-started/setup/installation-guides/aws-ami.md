@@ -27,7 +27,7 @@ Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
 4. On the **Launch instance** screen, scroll down to the **Application and OS images(Amazon Machine Image)** section.
 5. Search for **Appsmith** in the search bar.
 6. In the search results, click **AWS Marketplace AMIs**.
-7. Select the [Appsmith](https://aws.amazon.com/marketplace/pp/prodview-mrpgdd3mhpvbs) image.
+7. Select the [Appsmith](https://aws.amazon.com/marketplace/pp/prodview-ncouicgslpim4) image.
 8. On the **Launch an instance** screen:
 
 a. Configure the instance as below:
@@ -35,7 +35,7 @@ a. Configure the instance as below:
 | Attribute         | Value                                                                           |
 | ----------------- | ------------------------------------------------------------------------------- |
 | **Name**          | Give a desired name.                                                            |
-| **Instance type** | A minimum `t3.medium` or `t3a.medium` is needed.                                |
+| **Instance type** | A minimum `t3.large` or `t3a.large` is needed.                                |
 | **Key pair**      | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
 
 b. Scroll down to the **Networking** section, and configure as below:
