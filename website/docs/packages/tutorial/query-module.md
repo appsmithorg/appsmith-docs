@@ -20,7 +20,7 @@ tags={[
 
 A package is a collection of reusable query, JavaScript, and UI modules that can be versioned and shared across applications in the same workspace. Packages help you organize and maintain logic consistently across your projects.
 
-In this tutorial, we will create a query module, which allows you to define reusable queries that accept dynamic inputs and can be used across multiple applications.
+In this tutorial, we will create a query module, which allows you to define reusable queries that accept dynamic inputs and can be used across multiple applications. As an example, we’ll build a query module that fetches user details from a sample database, and then display the results in a Table widget with server-side pagination enabled.
 
 :::tip ⏳ Estimated Time: 10 minutes
 By the end of this tutorial, you will learn to:
