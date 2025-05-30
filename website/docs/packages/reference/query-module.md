@@ -7,12 +7,6 @@ When you incorporate a module from the package into your application, you create
 This page provides information about the module settings and properties available within the app, enabling you to configure the query and JS modules.
 
 
-<ZoomImage
-  src="/img/modules-diagram.png" 
-  alt=""
-  caption=""
-/>
-
 
 <ZoomImage
   src="/img/query-module-ins.drawio.png" 
