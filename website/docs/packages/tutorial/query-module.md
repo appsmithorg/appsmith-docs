@@ -25,9 +25,9 @@ In this tutorial, we will create a query module, which allows you to define reus
 :::tip ⏳ Estimated Time: 10 minutes
 By the end of this tutorial, you will learn to:
 
-* 🔧 **Basics:** Learn how to create and configure the query module
-* 🔄 **Dynamic Data:** Learn how to pass data between the app and query module
-* ♻️ **Reusability:** Discover how to reuse the query module within applications
+* 🔧 **Basics:** How to create and configure the query module
+* 🔄 **Dynamic Data:** How to pass data between the app and query module
+* ♻️ **Reusability:** How to reuse the query module within applications
 :::
 
 
