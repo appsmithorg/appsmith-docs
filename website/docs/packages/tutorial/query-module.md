@@ -190,3 +190,4 @@ You have successfully integrated the query module into your app, displaying its 
 ## Next steps
 
 - [Create JS Module](/packages/tutorial/js-module)
+- [Create UI Module](/packages/tutorial/ui-module)
