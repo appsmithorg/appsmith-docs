@@ -13,10 +13,8 @@ jobs:
       with:
         token: ${{ secrets.test_REPO_ACCESS_TOKEN }}
 
-    - name: Create exclusion list for test
-      run: |
-        cat > saas_exclusions.txt << EOF
-        EOF
+    - name: Create exclusion list
+      run: echo > saas_exclusions.txt
 
     - name: Ensure scripts directory exists
       run: |
@@ -60,53 +58,82 @@ jobs:
       if: env.changes_found != 'true'
       run: exit 0
 
-    - name: Process files from test repo
+    - name: Process files with OpenAI
       run: |
         mkdir -p generated_docs
         HASHES_JSON=$(cat scripts/file_hashes.json)
         PROCESSED_COUNT=0
+
         while IFS= read -r FILE_NAME; do
+          echo "⏳ Processing $FILE_NAME"
           FILE_URL="https://raw.githubusercontent.com/harshilp24/integration-resources-test/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
-          curl -sSL --max-time 30 "$FILE_URL" -o "input_file.json"
+          curl -sSL --max-time 30 "$FILE_URL" -o input_file.json
 
           FILE_SHA=$(grep "$FILE_NAME" latest_files_with_sha.txt | cut -f2)
           HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
 
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
+          # Prompt 1: Extract Info
+          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
           USER_CONTENT=$(cat input_file.json)
-          PAYLOAD=$(jq -n --arg prompt "System: $SYSTEM_PROMPT\n\nUser: $USER_CONTENT" '{
-            model: "gpt-4.1",
-            prompt: $prompt,
-            max_tokens: 2000,
-            temperature: 0
-          }')
-          RESPONSE=$(curl -s https://api.openai.com/v1/completions \
-            -H "Authorization: Bearer ${{ secrets.test_OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-          echo "$RESPONSE" | jq -r '.choices[0].text' > "extracted_info.md"
 
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
-          EXTRACTED_CONTENT=$(cat extracted_info.md)
-          PAYLOAD=$(jq -n --arg prompt "System: $SYSTEM_PROMPT\n\nUser: $EXTRACTED_CONTENT" '{
-            model: "gpt-4.1",
-            prompt: $prompt,
-            max_tokens: 4000,
-            temperature: 0.3
-          }')
-          RESPONSE=$(curl -s https://api.openai.com/v1/completions \
+          PAYLOAD=$(jq -n \
+            --arg system "$SYSTEM_PROMPT" \
+            --arg user "$USER_CONTENT" \
+            '{
+              model: "gpt-4-1106-preview",
+              messages: [
+                {"role": "system", "content": $system},
+                {"role": "user", "content": $user}
+              ],
+              max_tokens: 2000,
+              temperature: 0
+            }')
+
+          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Authorization: Bearer ${{ secrets.test_OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD")
-          echo "$RESPONSE" | jq -r '.choices[0].text' > "generated_doc.md"
+
+          echo "$RESPONSE" | jq '.'
+
+          echo "$RESPONSE" | jq -r '.choices[0].message.content' > extracted_info.md
+
+          # Prompt 2: Generate Markdown
+          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
+          EXTRACTED_CONTENT=$(cat extracted_info.md)
+
+          PAYLOAD=$(jq -n \
+            --arg system "$SYSTEM_PROMPT" \
+            --arg user "$EXTRACTED_CONTENT" \
+            '{
+              model: "gpt-4-1106-preview",
+              messages: [
+                {"role": "system", "content": $system},
+                {"role": "user", "content": $user}
+              ],
+              max_tokens: 4000,
+              temperature: 0.3
+            }')
+
+          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Authorization: Bearer ${{ secrets.test_OPENAI_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d "$PAYLOAD")
+
+          echo "$RESPONSE" | jq '.'
+
+          echo "$RESPONSE" | jq -r '.choices[0].message.content' > generated_doc.md
 
           INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
+
           mkdir -p "$(dirname "$FINAL_PATH")"
-          cp "generated_doc.md" "$FINAL_PATH"
-          cp "generated_doc.md" "generated_docs/${INTEGRATION}.md"
+          cp generated_doc.md "$FINAL_PATH"
+          cp generated_doc.md "generated_docs/${INTEGRATION}.md"
+
           echo "$FILE_NAME" >> scripts/processed_files.txt
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
+          echo "✅ Finished $FILE_NAME"
         done < files_to_process.txt
 
         echo "$HASHES_JSON" > scripts/file_hashes.json
