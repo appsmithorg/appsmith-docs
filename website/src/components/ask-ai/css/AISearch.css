@@ -473,11 +473,17 @@ h5 {
 }
 
 .ai-search-modal-content.no-padding {
-  padding: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  height: 90vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw; /* Reduced from 90% for tighter layout */
+  max-width: 960px;
+  height: 85vh;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
-
