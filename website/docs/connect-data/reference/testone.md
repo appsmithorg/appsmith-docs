@@ -14,13 +14,13 @@ The following section provides a **reference guide** describing available comman
 
 ### Create Page
 
-Creates a new page within a parent page or database in Notion.
+Creates a new page within a specified parent page or database.
 
 #### Parent `JSON object`
 
 <dd>
 
-The Parent property specifies the parent page or database where the new page will be created. It must be a JSON object containing either a `page_id` or `database_id` key with the corresponding ID value. The ID should be in a format like `evt_1234abcd5678efgh`.
+The Parent property defines the location where the new page will be created. It must be a JSON object containing either a `page_id` or `database_id` key with the corresponding ID value. The ID should be the unique identifier of the parent page or database.
 
 *example*:
 ```json
@@ -35,7 +35,7 @@ The Parent property specifies the parent page or database where the new page wil
 
 <dd>
 
-The Properties property defines the values for the page's properties. When the parent is a database, the schema must match the database's properties. If the parent is a page, the title is the only valid key. The content should be structured as a JSON object.
+The Properties field specifies the values for the page's properties. When the parent is a database, the schema must align with the database's properties. If the parent is a page, the only valid key is `title`. The format should match Notion's property structure.
 
 *example*:
 ```json
@@ -56,7 +56,7 @@ The Properties property defines the values for the page's properties. When the p
 
 <dd>
 
-The Children property allows you to insert content blocks into the new page, such as headings, paragraphs, and lists. It should be provided as an array of block objects in JSON format.
+Children is an array of block objects that represent the content of the new page. Each block object must specify the type of block and include the relevant content and formatting.
 
 *example*:
 ```json
@@ -84,7 +84,7 @@ The Children property allows you to insert content blocks into the new page, suc
 
 <dd>
 
-The Cover property sets the cover image for the new page. It should be a JSON object with a key pointing to an external URL where the image is hosted.
+The Cover property allows you to set a cover image for the page using a JSON object. The image can be hosted externally, and the URL must be specified.
 
 *example*:
 ```json
@@ -101,7 +101,7 @@ The Cover property sets the cover image for the new page. It should be a JSON ob
 
 <dd>
 
-The Icon property allows you to set an emoji or image as the icon for the new page. It should be provided as a JSON object with an `emoji` key for emojis.
+The Icon property enables you to set an icon for the page. It can be an emoji or an image represented as a JSON object.
 
 *example*:
 ```json
@@ -114,13 +114,13 @@ The Icon property allows you to set an emoji or image as the icon for the new pa
 
 ### Update Page
 
-Updates the properties of an existing page in Notion.
+Updates properties, cover, or icon of an existing page.
 
 #### Page Id `string`
 
 <dd>
 
-The Page Id field is required to specify which page to update. The ID should be in a format like `evt_1234abcd5678efgh`, and you can find this ID in the URL of the page when viewed in Notion.
+The Page ID is the unique identifier of the page you wish to update. It is required to specify which page will be modified.
 
 *example*:
 ```json
@@ -133,7 +133,7 @@ The Page Id field is required to specify which page to update. The ID should be 
 
 <dd>
 
-The Archived property indicates whether the page is archived (deleted). Setting this to true will archive the page, and setting it to false will un-archive (restore) it. This field is required.
+The Archived property indicates whether the page is archived (deleted). Set to `true` to archive a page or `false` to un-archive (restore) it. This field is optional.
 
 *example*:
 ```json
@@ -146,7 +146,7 @@ true
 
 <dd>
 
-The Properties field is used to update the values of the page's properties. It should be a JSON object with keys representing the property names or IDs and values representing the property values. Unchanged properties should not be included.
+This field contains the property values to update on the page. The keys must match the names or IDs of the property, and the values are the new property values. Unspecified properties will remain unchanged.
 
 *example*:
 ```json
@@ -154,7 +154,7 @@ The Properties field is used to update the values of the page's properties. It s
   "title":[
     {
       "text":{
-        "content":"My Updated Page"
+        "content":"Updated Page Title"
       }
     }
   ]
@@ -167,7 +167,7 @@ The Properties field is used to update the values of the page's properties. It s
 
 <dd>
 
-The Cover field sets or updates the cover image of the page. Provide a JSON object with a key pointing to an external URL of the image.
+The Cover property allows you to update the cover image of the page. Provide a JSON object with the new image URL.
 
 *example*:
 ```json
@@ -184,7 +184,7 @@ The Cover field sets or updates the cover image of the page. Provide a JSON obje
 
 <dd>
 
-The Icon field sets or updates the icon of the page. Provide a JSON object with an `emoji` key for emojis or an `external` key for images.
+Update the icon of the page by providing a new emoji or image in the form of a JSON object.
 
 *example*:
 ```json
@@ -197,13 +197,13 @@ The Icon field sets or updates the icon of the page. Provide a JSON object with 
 
 ### Get Page By Id
 
-Retrieves a page from Notion by its unique identifier.
+Retrieves a page using its unique identifier.
 
 #### Page Id `string`
 
 <dd>
 
-The Page Id property requires the unique identifier of the page you wish to retrieve. The ID is typically found in the Notion page URL and follows a format similar to `evt_1234abcd5678efgh`.
+The Page ID is the unique identifier for the page you want to retrieve. Provide the ID to fetch the corresponding page details.
 
 *example*:
 ```json
@@ -214,13 +214,13 @@ The Page Id property requires the unique identifier of the page you wish to retr
 
 ### Archive Page
 
-Archives (soft deletes) a page in Notion.
+Archives (soft deletes) a specified page.
 
 #### Page Id `string`
 
 <dd>
 
-The Page Id property is used to specify the unique identifier of the page to be archived. The ID follows a standard format and can be located within the Notion page's URL.
+The Page ID is the unique identifier for the page you want to archive. Provide the ID to archive the corresponding page.
 
 *example*:
 ```json
@@ -231,13 +231,13 @@ The Page Id property is used to specify the unique identifier of the page to be 
 
 ### Search Pages
 
-Searches for pages in Notion by title.
+Searches for pages with titles that match a specified query.
 
-#### Search By Title Filter `string`
+#### Search By Title Filter Search `string`
 
 <dd>
 
-The Search By Title Filter property allows you to search for pages by their title. Enter the title or a portion of the title to filter the search results.
+Use this field to filter pages by title. Enter the search query to find pages with titles containing the specified text.
 
 *example*:
 ```json
@@ -248,13 +248,13 @@ The Search By Title Filter property allows you to search for pages by their titl
 
 ### Get Page Content
 
-Retrieves the content of a page or block in Notion.
+Retrieves the content of a page or block by its ID.
 
 #### Block Id `string`
 
 <dd>
 
-The Block Id property requires the unique identifier of the page or block whose content you want to retrieve. The ID should be in a format like `evt_1234abcd5678efgh`.
+The Block ID is used to specify which page or block's content you wish to retrieve. It must be the unique identifier of the block or page.
 
 *example*:
 ```json
@@ -265,13 +265,13 @@ The Block Id property requires the unique identifier of the page or block whose 
 
 ### Update Block
 
-Updates a specific content block within a Notion page.
+Updates the content or properties of a block.
 
 #### Block Id `string`
 
 <dd>
 
-The Block Id field is necessary to specify the block you intend to update. Block IDs are unique identifiers that can be found when interacting with blocks in Notion.
+The Block ID is the unique identifier of the block you wish to update. Provide the ID to specify which block will be modified.
 
 *example*:
 ```json
@@ -284,7 +284,7 @@ The Block Id field is necessary to specify the block you intend to update. Block
 
 <dd>
 
-The Archived property determines whether a block is archived (deleted). Set this to true to archive the block, or false to un-archive (restore) it. This field is mandatory.
+The Archived property determines whether a block is archived (deleted). Set to `true` to archive a block or `false` to un-archive (restore) it.
 
 *example*:
 ```json
@@ -297,7 +297,7 @@ true
 
 <dd>
 
-The Paragraph property allows you to update a paragraph block with rich text and formatting options. Provide a JSON object with the desired text and formatting.
+The Paragraph property allows you to update the paragraph block with new content and formatting specified as a JSON object.
 
 *example*:
 ```json
@@ -306,8 +306,7 @@ The Paragraph property allows you to update a paragraph block with rich text and
     {
       "type":"text",
       "text":{
-        "content":"Lacinato kale",
-        "link":null
+        "content":"Updated paragraph content"
       }
     }
   ],
@@ -321,14 +320,14 @@ The Paragraph property allows you to update a paragraph block with rich text and
 
 <dd>
 
-The Image property updates an image block within a page. Provide a JSON object with the image type and URL.
+The Image property lets you update an image block with a new external image URL provided in a JSON object.
 
 *example*:
 ```json
 {
   "type":"external",
   "external":{
-    "url":"https://website.domain/images/image.png"
+    "url":"https://website.domain/images/updated-image.png"
   }
 }
 ```
@@ -339,13 +338,13 @@ The Image property updates an image block within a page. Provide a JSON object w
 
 <dd>
 
-The Bookmark property lets you update a bookmark block. Provide a JSON object with the URL and an optional caption.
+The Bookmark property is used to update a bookmark block with a new URL and optional caption, formatted as a JSON object.
 
 *example*:
 ```json
 {
   "caption":[],
-  "url":"https://companywebsite.com"
+  "url":"https://updatedwebsite.com"
 }
 ```
 
@@ -355,7 +354,7 @@ The Bookmark property lets you update a bookmark block. Provide a JSON object wi
 
 <dd>
 
-The Code property updates a code block with formatted code snippets. Provide a JSON object with the code content and the programming language.
+Update a code block with new content and specify the programming language using the Code property formatted as a JSON object.
 
 *example*:
 ```json
@@ -364,7 +363,7 @@ The Code property updates a code block with formatted code snippets. Provide a J
     {
       "type":"text",
       "text":{
-        "content":"const a = 3"
+        "content":"let updatedVariable = 'new value';"
       }
     }
   ],
@@ -378,14 +377,14 @@ The Code property updates a code block with formatted code snippets. Provide a J
 
 <dd>
 
-The Pdf property allows you to update a PDF block with a link to an external PDF file. Provide a JSON object with the file type and URL.
+The PDF property allows you to update a PDF block with a new external PDF URL provided in a JSON object.
 
 *example*:
 ```json
 {
   "type": "external",
   "external": {
-      "url": "https://website.domain/files/doc.pdf"
+      "url": "https://website.domain/files/updated-doc.pdf"
   }
 }
 ```
@@ -396,14 +395,14 @@ The Pdf property allows you to update a PDF block with a link to an external PDF
 
 <dd>
 
-The Table property updates a table block within a page. Provide a JSON object with the table width and header options.
+The Table property is used to update a table block with new dimensions and header settings, specified as a JSON object.
 
 *example*:
 ```json
 {
-  "table_width":2,
-  "has_column_header":false,
-  "has_row_header":false
+  "table_width":3,
+  "has_column_header":true,
+  "has_row_header":true
 }
 ```
 
@@ -413,12 +412,12 @@ The Table property updates a table block within a page. Provide a JSON object wi
 
 <dd>
 
-The Table Of Content property updates a table of contents block. Provide a JSON object with the desired color option.
+Update a table of contents block with the Table Of Content property, which allows you to specify the color in a JSON object.
 
 *example*:
 ```json
 {
-  "color":"default"
+  "color":"gray"
 }
 ```
 
@@ -428,16 +427,16 @@ The Table Of Content property updates a table of contents block. Provide a JSON 
 
 <dd>
 
-The Additional Fields property allows you to update various additional fields within a block. Provide a JSON object with the fields you want to update.
+The Additional Fields property allows you to update other block types, such as child pages or databases, with new content specified as a JSON object.
 
 *example*:
 ```json
 {
   "child_page":{
-    "title":"Lacinato kale"
+    "title":"Updated Lacinato kale"
   },
   "child_database":{
-    "title":"My database"
+    "title":"Updated database title"
   }
 }
 ```
@@ -446,13 +445,13 @@ The Additional Fields property allows you to update various additional fields wi
 
 ### Get Block By Id
 
-Retrieves a specific block from Notion by its unique identifier.
+Retrieves a block using its unique identifier.
 
 #### Block Id `string`
 
 <dd>
 
-The Block Id property requires the unique identifier of the block you wish to retrieve. The ID should be in a format like `evt_1234abcd5678efgh`.
+The Block ID is the unique identifier for the block you want to retrieve. Provide the ID to fetch the corresponding block details.
 
 *example*:
 ```json
@@ -463,13 +462,13 @@ The Block Id property requires the unique identifier of the block you wish to re
 
 ### Delete Block
 
-Deletes a specific block from a Notion page.
+Deletes a specified block.
 
 #### Block Id `string`
 
 <dd>
 
-The Block Id property is used to specify the block you intend to delete. The ID is a unique identifier that can be found when interacting with blocks in Notion.
+The Block ID is the unique identifier for the block you want to delete. Provide the ID to delete the corresponding block.
 
 *example*:
 ```json
@@ -480,17 +479,17 @@ The Block Id property is used to specify the block you intend to delete. The ID 
 
 ### Add Content to Page
 
-Appends new content to an existing page or block in Notion.
+Appends content to an existing Notion page or block.
 
 #### Page/Block ID `string`
 
 <dd>
 
-The Page/Block ID property specifies the Notion page or block to which you want to append content. The ID should be in a format like `evt_1234abcd5678efgh`.
+The Page/Block ID is the identifier of the Notion page or block to which you want to append content. Provide the ID to specify the target for the new content.
 
 *example*:
 ```json
-"Enter Page or Block ID"
+"59833787-2cf9-4fdf-8782-e53db20768a5"
 ```
 
 ---
@@ -499,24 +498,39 @@ The Page/Block ID property specifies the Notion page or block to which you want 
 
 <dd>
 
-The Notion Blocks JSON property requires an array of blocks formatted according to Notion's block structure. This array defines the content to be appended to the page or block.
+The Notion Blocks JSON property is an array of blocks in Notion's block format that you want to append to the page or block. Include block types such as heading, paragraph, etc.
 
 *example*:
 ```json
-[{ "object": "block", "type": "heading_2", "heading_2": { ... } }]
+[
+  {
+    "object": "block",
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "New Heading"
+          }
+        }
+      ]
+    }
+  }
+]
 ```
 
 ---
 
-#### Insert After (Block ID) `string`
+#### Insert After (Block ID) `string` (Optional)
 
 <dd>
 
-The Insert After (Block ID) property is optional and specifies the ID of an existing child block. New blocks will be inserted after this block. If omitted, new content is appended at the end.
+The Insert After property is an optional field where you can specify the ID of an existing child block. New blocks will be inserted after the specified block.
 
 *example*:
 ```json
-"Enter Block ID (optional)"
+"9bc30ad4-9373-46a5-84ab-0a7845ee52e6"
 ```
 
 ---
@@ -525,15 +539,41 @@ The Insert After (Block ID) property is optional and specifies the ID of an exis
 
 Executes a custom action within Notion.
 
-#### No properties available.
+No properties available. No description available.
 
-<dd>
+---
 
-No description available.
+# Style and Formatting Rules
 
-*example*:
-```
-No example provided.
-```
+- Output must be **strict Markdown** — no HTML except `<dd>` tags inside properties.
+- Always use proper headings: `#`, `##`, `###`, `####`.
+- Use `<dd>` tags only to wrap full property explanations.
+- Always provide a fenced `example` block (` ``` `) for each property.
+- Write **full instructional sentences** — no bullet points, no fragments.
+- Maintain a professional, polished, educational tone.
+
+---
+
+# Special Handling Rules
+
+- **ID fields**:  
+  - Always explain what the ID represents.
+  - Mention typical ID formats (e.g., `evt_1234abcd5678efgh`).
+  - Give clear examples.
+
+- **Date fields**:  
+  - Mention the expected format (ISO 8601 or Unix timestamp).
+  - Give an example with real-looking date.
+
+- **Search/Filter/Pagination fields**:  
+  - If field name implies search, filter, pagination — briefly explain with a usage hint.
+  - Give two examples if possible.
+
+---
+
+# Missing Fields Handling
+
+- If tooltip text is missing → Write: `No description available.`
+- If placeholder/example text is missing → Write: `No example provided.`
 
 ---

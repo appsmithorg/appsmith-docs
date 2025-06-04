@@ -27,13 +27,11 @@ The Task ID is a unique identifier for the task to which the comment will be add
 1204619611402340
 ```
 
----
-
 #### Text `string`
 
 <dd>
 
-The Text property represents the content of the comment to be added to the task. This field is required to create a comment.
+The Text property represents the content of the comment to be added to the task. This should be a plain text string. If omitted, no comment will be added.
 
 *example*:
 ```
@@ -44,52 +42,46 @@ The Text property represents the content of the comment to be added to the task.
 
 ### Create Project
 
-Creates a new project within the specified workspace and team.
+Creates a new project within Asana.
 
 #### Name `string`
 
 <dd>
 
-The Name property specifies the name of the new project. This field is required to create a project.
+The Name property specifies the name of the project to be created. This is a required field and must be a plain text string.
 
 *example*:
 ```
 "Stuff to buy"
 ```
 
----
-
 #### Workspace `string`
 
 <dd>
 
-The Workspace property allows users to select the workspace in which to create the project. If left blank, it defaults to the user's first workspace. This field is optional.
+The Workspace property allows users to select which Workspace to create projects in. If left blank, it defaults to the user’s first Workspace. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.workspace}}"
 ```
 
----
-
 #### Team `string`
 
 <dd>
 
-The Team property allows users to select the team with which to share the project. If left blank, it defaults to the user's first team. This field is optional.
+The Team property allows users to select which Team to share this Project with. If left blank, it defaults to the user’s first Team. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
+``"
+{{settings.team}}
 ```
-"{{settings.team}}"
-```
-
----
 
 #### Notes `string`
 
 <dd>
 
-The Notes property is used to add additional information or description to the project. This field is optional.
+The Notes property is used to add additional information or description to the project. This field is optional and should be a plain text string.
 
 *example*:
 ```
@@ -100,13 +92,13 @@ The Notes property is used to add additional information or description to the p
 
 ### Get Projects
 
-Retrieves a list of projects, with options to include archived projects.
+Retrieves a list of projects, with options to filter by archived status.
 
 #### Archived `string`
 
 <dd>
 
-The Archived property allows users to filter the projects list based on their archived status. Options are Yes for archived projects, No for active projects, and Default for both. This field is optional.
+The Archived property allows users to filter the projects list by their archived status. Options include 'Yes' to show only archived projects, 'No' to show only active projects, and 'Default' to show both archived and active projects.
 
 *example*:
 ```
@@ -123,279 +115,245 @@ Retrieves a specific project by its ID.
 
 <dd>
 
-The Project Filter Id is the unique identifier of the project to be retrieved. This field is required to fetch a specific project.
+The Project Filter Id is the unique identifier of the project you wish to retrieve. It is required to specify the Project ID to fetch the project details.
 
 *example*:
 ```
-"114748165638217"
+"1147481656382177"
 ```
 
 ---
 
 ### Create Task
 
-Creates a new task within the specified workspace, project, and assigns it to a user.
+Creates a new task within Asana.
 
 #### Name `string`
 
 <dd>
 
-The Name property specifies the name of the new task. This field is required to create a task.
+The Name property specifies the name of the task to be created. This is a required field and must be a plain text string.
 
 *example*:
 ```
 "Task Name"
 ```
 
----
-
 #### Workspace `string`
 
 <dd>
 
-The Workspace property allows users to select the workspace in which to create the task. If left blank, it defaults to the user's first workspace. This field is optional.
+The Workspace property allows users to select which Workspace to create tasks in. If left blank, it defaults to the user’s first Workspace. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.workspace}}"
 ```
 
----
-
 #### Project `string`
 
 <dd>
 
-The Project property allows users to select the project within which to create the task. This field is optional.
+The Project property allows users to select which Project to create this Task in. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.project}}"
 ```
 
----
-
 #### Notes `string`
 
 <dd>
 
-No description available.
+The Notes property is used to add additional information or description to the task. This field is optional and should be a plain text string.
 
 *example*:
 ```
 "Task related notes."
 ```
 
----
-
 #### Due On Date `string`
 
 <dd>
 
-The Due On property specifies the date on which the task is due. It should be in the format "YYYY-MM-DD" and cannot be used together with Due At. This field is optional.
+The Due On property specifies the date on which this task is due. It cannot be used together with Due At. The expected format is YYYY-MM-DD.
 
 *example*:
 ```
-"2023-05-10"
+"2023-05-01"
 ```
-
----
 
 #### Due At Date `string`
 
 <dd>
 
-The Due At property specifies the exact date and time at which the task is due, following the ISO timestamp format. It cannot be used together with Due On. This field is optional.
+The Due At property specifies the date and time at which this task is due. It cannot be used together with Due On. The expected format is an ISO timestamp.
 
 *example*:
 ```
-"2023-05-10T17:00:00Z"
+"2023-05-01T09:00:00Z"
 ```
-
----
 
 #### Assignee `string`
 
 <dd>
 
-The Assignee property is the ID of the Asana user to whom the task will be assigned. This field is optional.
+The Assignee property specifies the ID of the Asana user this task will be assigned to. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.assignee}}"
 ```
 
----
-
 #### Gid `string`
 
 <dd>
 
-The Gid property is an external ID from your application to associate with the task. This allows for syncing updates to the task later. This field is optional.
+The Gid property is an external ID from your application to associate this task with. This ID can be used to sync updates to this task later.
 
 *example*:
 ```
-"ext_6789abcd1234"
+"ext_1234567890"
 ```
 
 ---
 
 ### Update Task
 
-Updates an existing task with new details.
+Updates an existing task within Asana.
 
 #### Task Id `string`
 
 <dd>
 
-The Task Id is the unique identifier of the task to be updated. This field is required to update a task.
+The Task ID is the unique identifier of the task that will be updated. It is required to specify the Task ID to update the task.
 
 *example*:
 ```
 "1204619611402340"
 ```
 
----
-
-#### Complete Status `boolean`
+#### Complete Status `string`
 
 <dd>
 
-The Complete Status property indicates whether the task has been completed. This field is optional.
+The Complete Status property indicates the completion status of the task. No description available.
 
 *example*:
 ```
-true
+"Completed"
 ```
-
----
 
 #### Name `string`
 
 <dd>
 
-The Name property specifies the new name of the task. This field is optional.
+The Name property specifies the new name of the task to be updated. This field is optional and should be a plain text string.
 
 *example*:
 ```
 "Updated Task Name"
 ```
 
----
-
 #### Notes `string`
 
 <dd>
 
-No description available.
+The Notes property is used to update the additional information or description of the task. This field is optional and should be a plain text string.
 
 *example*:
 ```
-"Updated task notes."
+"Updated task related notes."
 ```
-
----
 
 #### Due On Date `string`
 
 <dd>
 
-The Due On property specifies the date on which the task is due. It should be in the format "YYYY-MM-DD" and cannot be used together with Due At. This field is optional.
+The Due On property specifies the updated date on which this task is due. It cannot be used together with Due At. The expected format is YYYY-MM-DD.
 
 *example*:
 ```
-"2023-06-15"
+"2023-06-01"
 ```
-
----
 
 #### Due At Date `string`
 
 <dd>
 
-The Due At property specifies the exact date and time at which the task is due, following the ISO timestamp format. It cannot be used together with Due On. This field is optional.
+The Due At property specifies the updated date and time at which this task is due. It cannot be used together with Due On. The expected format is an ISO timestamp.
 
 *example*:
 ```
-"2023-06-15T14:30:00Z"
+"2023-06-01T12:00:00Z"
 ```
-
----
 
 #### Assignee `string`
 
 <dd>
 
-The Assignee property is the ID of the Asana user to whom the task will be assigned. This field is optional.
+The Assignee property specifies the ID of the Asana user this task will be reassigned to. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.assignee}}"
 ```
 
----
-
 #### Gid `string`
 
 <dd>
 
-The Gid property is an external ID from your application to associate with the task. This allows for syncing updates to the task later. This field is optional.
+The Gid property is an external ID from your application to associate this task with. This ID can be used to sync updates to this task later.
 
 *example*:
 ```
-"ext_6789abcd1234"
+"ext_9876543210"
 ```
 
 ---
 
 ### Get Tasks
 
-Retrieves a list of tasks based on the specified filters.
+Retrieves a list of tasks, with options to filter by workspace, project, assignee, and completion status.
 
 #### Workspace `string`
 
 <dd>
 
-The Workspace property is the ID of the workspace to filter tasks on. This field is optional.
+The Workspace property specifies the ID of the Workspace to filter tasks on. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.workspace}}"
 ```
 
----
-
 #### Project `string`
 
 <dd>
 
-The Project property is the ID of the project to filter tasks on. This field is optional.
+The Project property specifies the ID of the Project to filter tasks on. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.project}}"
 ```
 
----
-
 #### Assignee `string`
 
 <dd>
 
-The Assignee property is the ID of the assignee to filter tasks on. This field is optional.
+The Assignee property specifies the ID of the assignee to filter tasks on. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.assignee}}"
 ```
 
----
-
 #### Completed Since `string`
 
 <dd>
 
-The Completed Since property filters tasks to only return those that are either incomplete or have been completed since the specified time. The time can be an ISO or Unix timestamp. This field is optional.
+The Completed Since property filters tasks to only return those that are either incomplete or that have been completed since the provided time. The expected format is either ISO or Unix timestamp.
 
 *example*:
 ```
@@ -412,7 +370,7 @@ Retrieves a specific task by its ID.
 
 <dd>
 
-The Task Id is the unique identifier of the task to be retrieved. This field is required to fetch a specific task.
+The Task ID is the unique identifier of the task you wish to retrieve. It is required to specify the Task ID to fetch the task details.
 
 *example*:
 ```
@@ -423,73 +381,67 @@ The Task Id is the unique identifier of the task to be retrieved. This field is 
 
 ### Get Task By External Id
 
-Retrieves a task associated with a given external ID.
+Retrieves a task associated with a specified external ID.
 
 #### Gid `string`
 
 <dd>
 
-The Gid is the external ID that the task is associated or synced with, from your application. This field is required to fetch a task by external ID.
+The Gid property is the external ID that this task is associated or synced with, from your application.
 
 *example*:
 ```
-"ext_6789abcd1234"
+"ext_1234567890"
 ```
 
 ---
 
 ### Add Task To Section
 
-Adds a task to a specified section within a project.
+Adds an existing task to a specified section within a project.
 
 #### Section Id `string`
 
 <dd>
 
-The Section Id is the unique identifier of the section to which the task will be added. This field is required.
+The Section ID is the unique identifier of the section to which the task will be added. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
 "{{settings.section}}"
 ```
 
----
-
 #### Task Id `string`
 
 <dd>
 
-The Task Id is the unique identifier of the task to be added to the section. This field is required.
+The Task ID is the unique identifier of the task that will be added to the section.
 
 *example*:
 ```
 "1204619611402340"
 ```
 
----
-
 #### Before Task Id `string`
 
 <dd>
 
-The Before Task Id specifies a task in the section before which the new task will be inserted. It cannot be used with After Task Id. This field is optional.
+The Before Task ID specifies the ID of a task in this section that the current task will be inserted before. It cannot be used with After Task ID.
 
 *example*:
 ```
 "1204619611402341"
 ```
 
----
-
 #### After Task Id `string`
 
 <dd>
 
-The After Task Id specifies a task in the section after which the new task will be inserted. It cannot be used with Before Task Id. This field is optional.
+The After Task ID specifies the ID of a task in this section that the current task will be inserted after. It cannot be used with Before Task ID.
 
 *example*:
 ```
-"1204619611402339"
+"1204619611402342"
 ```
 
 ---
@@ -502,7 +454,7 @@ Retrieves a list of teams within a specified workspace.
 
 <dd>
 
-The Workspace property is the ID of the workspace for which to return the visible teams to the authorized user. This field is required.
+The Workspace property specifies the ID of the workspace for which the teams will be listed. This field is typically populated using the Connect Portal Workflow Settings.
 
 *example*:
 ```
@@ -513,7 +465,7 @@ The Workspace property is the ID of the workspace for which to return the visibl
 
 ### Get Workspaces
 
-Retrieves a list of workspaces available to the authorized user.
+Retrieves a list of workspaces accessible to the authorized user.
 
 No properties available.
 

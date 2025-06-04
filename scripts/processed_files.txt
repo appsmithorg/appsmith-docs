@@ -3,3 +3,4 @@ TestOne_uqi_config.json
 gmail.json
 jira.json
 outlook.json
+slack.json

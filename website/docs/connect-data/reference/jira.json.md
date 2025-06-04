@@ -1,6 +1,6 @@
 # JIRA Integration
 
-This page provides information on how to connect to JIRA. It enables users to perform actions such as creating issues, updating issues, retrieving issue information, filtering issues, and managing projects and issue types.
+This page provides information on how to connect to JIRA. It enables users to perform actions such as creating issues, updating issues, retrieving issue details, filtering issues, and managing projects and issue types.
 
 ## Connect JIRA
 
@@ -14,16 +14,16 @@ The following section provides a **reference guide** describing available comman
 
 ### Create Issue
 
-Creates a new issue in JIRA.
+Creates a new issue in JIRA with the provided details.
 
 #### Summary `string`
 
 <dd>
 
-The Summary property is a concise description of the issue. It is a required field and should be a brief one-liner that encapsulates the main point of the issue. If omitted, the issue creation will fail.
+The Summary property is a concise one-liner that encapsulates the main point of the issue. It is a required field and should be clear and descriptive. If omitted, the issue creation will not proceed.
 
 *example*:
-```markdown
+```
 Enter Summary
 ```
 
@@ -33,10 +33,10 @@ Enter Summary
 
 <dd>
 
-The Project property specifies the JIRA project to which the issue will be added. If not provided, it defaults to the user's first project. Users can select a project using the Connect Portal Workflow Settings. This field is typically required to ensure the issue is created within the correct project context.
+The Project property specifies the project to which the issue will be added. If not provided, it defaults to the user's first project. Users can configure the Connect Portal Workflow Settings to select a project. This field is optional but important for issue categorization.
 
 *example*:
-```markdown
+```
 Enter Project
 ```
 
@@ -46,10 +46,10 @@ Enter Project
 
 <dd>
 
-The Issue Type property defines the type of issue to be created, such as Task, Bug, or Story. It defaults to Task if not provided. Users can select an issue type using the Connect Portal Workflow Settings. This field helps categorize the issue appropriately within JIRA.
+The Issue Type property defines the type of issue to be created, such as 'Task', 'Bug', or 'Story'. It defaults to 'Task' if not provided. This field is optional but helps in classifying the issue correctly.
 
 *example*:
-```markdown
+```
 Enter Issue Type
 ```
 
@@ -59,10 +59,10 @@ Enter Issue Type
 
 <dd>
 
-The Jira Issue Status property sets the initial status of the issue. If not provided, it defaults to the project's first status. This property is important for workflow management and tracking the issue's progress.
+The Jira Issue Status property sets the initial status of the issue. If not provided, it defaults to the project's first status. This field is optional and can be set according to the project's workflow requirements.
 
 *example*:
-```markdown
+```
 Enter Jira Issue Status
 ```
 
@@ -72,10 +72,10 @@ Enter Jira Issue Status
 
 <dd>
 
-The Assignee property determines who is responsible for the issue. If not provided, it defaults to the authenticated user. This field is crucial for task allocation and accountability within the team.
+The Assignee property specifies the user who is assigned to work on the issue. If not provided, the issue is assigned to the authenticated user by default. This field is optional but crucial for task ownership.
 
 *example*:
-```markdown
+```
 Enter Assignee
 ```
 
@@ -85,10 +85,10 @@ Enter Assignee
 
 <dd>
 
-The Description Type property allows the user to select the format of the issue description. This field may dictate how the description is rendered and edited within JIRA.
+The Description Type property allows the user to select the format of the issue description. This field is optional and is used to specify how the description should be interpreted, such as plain text or formatted text.
 
 *example*:
-```markdown
+```
 Enter Description Type
 ```
 
@@ -98,10 +98,10 @@ Enter Description Type
 
 <dd>
 
-The Description JSON property is used to provide a structured description of the issue when 'descriptionType' is set to 'descriptionJSON'. This allows for more complex descriptions that can include formatting and other elements.
+The Description JSON property is used when the 'Description Type' is set to 'descriptionJSON'. It allows for a structured description using JSON format. This field is optional and appears only when 'Description Type' is set accordingly.
 
 *example*:
-```markdown
+```
 Enter Description JSON
 ```
 
@@ -111,10 +111,10 @@ Enter Description JSON
 
 <dd>
 
-The Description property is a detailed narrative of the issue. It provides more context and information than the summary and is essential for understanding the issue's scope and requirements.
+The Description property provides a detailed explanation of the issue. It is an optional field but is important for understanding the context and requirements of the issue.
 
 *example*:
-```markdown
+```
 Enter Description
 ```
 
@@ -124,10 +124,10 @@ Enter Description
 
 <dd>
 
-The Additional Fields property allows users to specify any other issue fields in JSON format. This is used to include fields that are not covered by the standard properties and can be configured using the Connect Portal Workflow Settings.
+The Additional Fields property allows users to specify any other fields in JSON format that should be included with the issue. This field is optional and can be configured in the Connect Portal Workflow Settings to update specific issue fields.
 
 *example*:
-```markdown
+```
 Enter Additional Fields
 ```
 
@@ -135,16 +135,16 @@ Enter Additional Fields
 
 ### Update Issue
 
-Updates an existing issue in JIRA.
+Updates an existing issue in JIRA with the provided details.
 
 #### Issue Key `string`
 
 <dd>
 
-The Issue Key property is the unique identifier for the issue to be updated. It is a required field and follows a typical format like 'PROJ-123'. Users can find this ID in the issue URL or within the issue details in JIRA.
+The Issue Key property is the unique identifier for the issue to be updated. It is a required field and should match the format used by JIRA, such as 'PROJ-123'.
 
 *example*:
-```markdown
+```
 Enter Issue Key
 ```
 
@@ -154,10 +154,10 @@ Enter Issue Key
 
 <dd>
 
-The Summary property is a concise description of the issue. It is an optional field for the update command and should be a brief one-liner that encapsulates the main point of the issue.
+The Summary property allows updating the one-line summary of the issue. It is optional but should be used to keep the issue's description accurate and up-to-date.
 
 *example*:
-```markdown
+```
 Enter Summary
 ```
 
@@ -167,10 +167,10 @@ Enter Summary
 
 <dd>
 
-The Issue Type property defines the type of issue to be updated, such as Task, Bug, or Story. Users can select an issue type using the Connect Portal Workflow Settings. This field helps categorize the issue appropriately within JIRA.
+The Issue Type property allows changing the type of the issue. It is optional and can be configured in the Connect Portal Workflow Settings to allow users to select an appropriate issue type.
 
 *example*:
-```markdown
+```
 Enter Issue Type
 ```
 
@@ -180,10 +180,10 @@ Enter Issue Type
 
 <dd>
 
-The Jira Issue Status property sets the status of the issue. Users can select a status using the Connect Portal Workflow Settings. This property is important for workflow management and tracking the issue's progress.
+The Jira Issue Status property allows updating the status of the issue. It is optional and can be set according to the project's workflow requirements, with options configured in the Connect Portal Workflow Settings.
 
 *example*:
-```markdown
+```
 Enter Jira Issue Status
 ```
 
@@ -193,10 +193,10 @@ Enter Jira Issue Status
 
 <dd>
 
-The Assignee property determines who is responsible for the issue. Users can select an assignee using the Connect Portal Workflow Settings. This field is crucial for task allocation and accountability within the team.
+The Assignee property allows changing the user assigned to the issue. It is optional and can be configured in the Connect Portal Workflow Settings to allow users to select an assignee.
 
 *example*:
-```markdown
+```
 Enter Assignee
 ```
 
@@ -206,10 +206,10 @@ Enter Assignee
 
 <dd>
 
-The Description Type property allows the user to select the format of the issue description. This field may dictate how the description is rendered and edited within JIRA.
+The Description Type property allows selecting the format for the issue description when updating. It is optional and determines how the description is interpreted.
 
 *example*:
-```markdown
+```
 Enter Description Type
 ```
 
@@ -219,10 +219,10 @@ Enter Description Type
 
 <dd>
 
-The Description JSON property is used to provide a structured description of the issue when 'descriptionType' is set to 'descriptionJSON'. This allows for more complex descriptions that can include formatting and other elements.
+The Description JSON property is used when updating the issue's description in JSON format. It is optional and only applicable when 'Description Type' is set to 'descriptionJSON'.
 
 *example*:
-```markdown
+```
 Enter Description JSON
 ```
 
@@ -232,10 +232,10 @@ Enter Description JSON
 
 <dd>
 
-The Description property is a detailed narrative of the issue. It provides more context and information than the summary and is essential for understanding the issue's scope and requirements.
+The Description property allows providing a detailed description when updating the issue. It is optional but recommended for clarity and completeness.
 
 *example*:
-```markdown
+```
 Enter Description
 ```
 
@@ -245,10 +245,10 @@ Enter Description
 
 <dd>
 
-The Additional Fields property allows users to specify any other issue fields in JSON format. This is used to include fields that are not covered by the standard properties and can be configured using the Connect Portal Workflow Settings.
+The Additional Fields property allows specifying additional fields in JSON format when updating the issue. It is optional and can include any other fields that need to be updated as per the Connect Portal Workflow Settings.
 
 *example*:
-```markdown
+```
 Enter Additional Fields
 ```
 
@@ -256,16 +256,16 @@ Enter Additional Fields
 
 ### Get Issue By Key
 
-Retrieves details of a specific issue using its unique key.
+Retrieves details of a specific issue by its key.
 
 #### Issue Key `string`
 
 <dd>
 
-The Issue Key property is the unique identifier for the issue to be retrieved. It is a required field and follows a typical format like 'PROJ-123'. Users can find this ID in the issue URL or within the issue details in JIRA.
+The Issue Key property is the unique identifier of the issue to retrieve. It is a required field and must conform to the JIRA issue key format.
 
 *example*:
-```markdown
+```
 Enter Issue Key
 ```
 
@@ -273,16 +273,16 @@ Enter Issue Key
 
 ### Filter Issues
 
-Searches for issues that match specified filters using JIRA Query Language (JQL).
+Retrieves a list of issues that match the specified JQL query filters.
 
 #### Jql Query `string`
 
 <dd>
 
-The Jql Query property allows users to filter issues based on specific criteria defined in JIRA Query Language (JQL). This field is essential for narrowing down search results to relevant issues.
+The Jql Query property is used to search for issues that match specified filters using JIRA Query Language (JQL). It is a required field and must be a valid JQL statement.
 
 *example*:
-```markdown
+```
 Enter Jql Query
 ```
 
@@ -292,10 +292,10 @@ Enter Jql Query
 
 <dd>
 
-The Limit property restricts the maximum number of issues to return. If left blank, it defaults to 10. This field is useful for controlling the size of the result set, especially in cases with potentially large numbers of matching issues.
+The Limit property restricts the maximum number of issues to return. It is optional and defaults to 10 if left blank. This field is useful for controlling the size of the result set.
 
 *example*:
-```markdown
+```
 Enter Limit
 ```
 
@@ -303,16 +303,16 @@ Enter Limit
 
 ### Search By Jql
 
-Executes a search in JIRA using a JQL query and returns paginated results.
+Performs a search for issues using a JQL query.
 
 #### Jql Query `string`
 
 <dd>
 
-The JQL Query property is used to perform a search based on specific criteria defined in JIRA Query Language (JQL). This field is essential for finding issues that meet the defined conditions.
+The JQL Query property allows for a detailed search using JIRA Query Language. It is a required field and must be a valid JQL statement to retrieve the desired issues.
 
 *example*:
-```markdown
+```
 Enter Jql Query
 ```
 
@@ -322,10 +322,10 @@ Enter Jql Query
 
 <dd>
 
-The Pagination Parameters property is used to navigate through paginated search results. It typically includes parameters such as page number and page size. This field is crucial for handling large sets of data efficiently.
+The Pagination Parameters property is used to control paginated results. It is optional and allows users to specify parameters such as page number and page size for the search results.
 
 *example*:
-```markdown
+```
 Enter Pagination Parameters
 ```
 
@@ -333,16 +333,16 @@ Enter Pagination Parameters
 
 ### Get Projects
 
-Retrieves a list of JIRA projects with pagination support.
+Retrieves a list of projects with pagination support.
 
 #### Pagination Parameters `string`
 
 <dd>
 
-The Pagination Parameters property is used to navigate through paginated project lists. It typically includes parameters such as page number and page size. This field is crucial for handling large sets of data efficiently.
+The Pagination Parameters property allows for paginated retrieval of projects. It is optional and can include parameters such as page number and page size to manage the list of projects.
 
 *example*:
-```markdown
+```
 Enter Pagination Parameters
 ```
 
@@ -350,16 +350,16 @@ Enter Pagination Parameters
 
 ### Get Issue Types By Project
 
-Retrieves a list of issue types available in a specific project.
+Retrieves a list of issue types available for a specific project.
 
 #### Project `string`
 
 <dd>
 
-The Project property specifies the key of the JIRA project for which issue types are to be retrieved. It is a required field and helps in fetching the relevant types of issues that can be created within the project context.
+The Project property is the key of the project for which to retrieve available issue types. It is a required field and must match the project key format used by JIRA.
 
 *example*:
-```markdown
+```
 Enter Project
 ```
 
@@ -369,22 +369,22 @@ Enter Project
 
 Retrieves a list of all issue types available in JIRA.
 
-(No properties available.)
+(No properties are provided for this command, so no description is available.)
 
 ---
 
 ### Describe Action Schema
 
-Provides the schema for a specific action type within a project context.
+Provides the schema for a specific action type within a project and issue type context.
 
 #### Issue Type Id `string`
 
 <dd>
 
-The Issue Type ID property is the identifier for the issue type related to the action being described. It is a required field and helps in understanding the fields and operations available for that particular issue type.
+The Issue Type ID property specifies the identifier of the issue type for which the schema is to be described. It is a required field and should match the format used by JIRA for issue type IDs.
 
 *example*:
-```markdown
+```
 Enter Issue Type Id
 ```
 
@@ -394,10 +394,10 @@ Enter Issue Type Id
 
 <dd>
 
-The Project Key property specifies the key of the JIRA project related to the action being described. It is a required field and helps in fetching the relevant schema for actions within the project context.
+The Project Key property specifies the key of the project for which the action schema is to be described. It is a required field and must conform to the project key format used by JIRA.
 
 *example*:
-```markdown
+```
 Enter Project Key
 ```
 
@@ -407,10 +407,10 @@ Enter Project Key
 
 <dd>
 
-The Operation property indicates the type of action for which the schema is requested, such as CREATE_ISSUE or UPDATE_ISSUE. It is a required field and determines the applicable fields and rules for the specified action.
+The Operation property defines the type of action for which the schema is requested, such as 'CREATE_ISSUE' or 'UPDATE_ISSUE'. It is a required field and should match one of the predefined operation type values.
 
 *example*:
-```markdown
+```
 Enter Operation
 ```
 
@@ -418,16 +418,16 @@ Enter Operation
 
 ### Get Issue Status By Project
 
-Retrieves a list of issue statuses available in a specific project.
+Retrieves a list of issue statuses available for a specific project.
 
 #### Project `string`
 
 <dd>
 
-The Project property specifies the key of the JIRA project for which issue statuses are to be retrieved. It is a required field and helps in understanding the various stages an issue can go through within the project context.
+The Project property is the key of the project for which to retrieve available issue statuses. It is a required field and must match the project key format used by JIRA.
 
 *example*:
-```markdown
+```
 Enter Project
 ```
 
@@ -435,16 +435,16 @@ Enter Project
 
 ### Get All Assignees By Project
 
-Retrieves a list of all users who can be assigned issues in a specific project.
+Retrieves a list of all possible assignees for a specific project.
 
 #### Project `string`
 
 <dd>
 
-The Project property specifies the key of the JIRA project for which potential assignees are to be retrieved. It is a required field and helps in identifying the team members involved in the project.
+The Project property is the key of the project for which to retrieve possible assignees. It is a required field and must conform to the project key format used by JIRA.
 
 *example*:
-```markdown
+```
 Enter Project
 ```
 
@@ -452,8 +452,6 @@ Enter Project
 
 ### Custom Action
 
-Performs a custom action defined by the user.
+Executes a custom action defined by the user.
 
-(No properties available.)
-
----
+(No properties are provided for this command, so no description is available.)
