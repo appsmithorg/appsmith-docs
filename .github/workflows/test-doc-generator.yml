@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       target_branch:
-        description: 'The branch in appsmith-docs to create PR against'
+        description: 'The branch in appsmith-docs to checkout and create PR against'
         required: true
-        default: 'docs-staging'
+        default: 'docs-staging' # Default to docs-staging
         type: string
 
 jobs:
@@ -14,72 +14,149 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout appsmith-docs
+    - name: Checkout appsmith-docs target branch
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.test_REPO_ACCESS_TOKEN }}
-        ref: ${{ github.event.inputs.target_branch }}
+        ref: ${{ github.event.inputs.target_branch }} # Checkout the specified branch
+        # Fetch depth 0 to get all history needed for base branch detection by create-pull-request
         fetch-depth: 0
 
-    - name: Create exclusion list
-      run: echo > saas_exclusions.txt
-
-    - name: Ensure scripts directory exists
+    - name: Ensure scripts directory and tracking files exist
       run: |
         mkdir -p scripts
+        # Initialize tracking files if they don't exist in the checked-out branch
         [ -f scripts/processed_files.txt ] || touch scripts/processed_files.txt
         [ -f scripts/file_hashes.json ] || echo "{}" > scripts/file_hashes.json
 
     - name: Fetch file list from test repo
       id: fetch_files
       run: |
-        curl -s --max-time 30 -H "Authorization: Bearer ${{ secrets.test_REPO_ACCESS_TOKEN }}" \
+        echo "Fetching files from source repo..."
+        curl -s --max-time 60 -H "Authorization: Bearer ${{ secrets.test_REPO_ACCESS_TOKEN }}" \
              -H "Accept: application/vnd.github+json" \
              https://api.github.com/repos/harshilp24/integration-resources-test/contents/Generic%20UQI%20Creation/uqi_configs \
              -o response.json
 
-        jq -r '.[] | select(.type=="file") | [.name, .sha] | @tsv' response.json > latest_files_with_sha.txt
-        jq -r '.[] | select(.type=="file") | .name' response.json > latest_files.txt
+        if ! jq -e '.' response.json > /dev/null; then
+          echo "Error: Invalid JSON received from GitHub API."
+          cat response.json # Print response for debugging
+          exit 1
+        fi
 
-        echo "files_found=true" >> $GITHUB_ENV
+        # Check if the response is an array (list of files) or an object (error message)
+        if jq -e 'type == "array"' response.json > /dev/null; then
+          jq -r '.[] | select(.type=="file") | [.name, .sha] | @tsv' response.json > latest_files_with_sha.txt
+          jq -r '.[] | select(.type=="file") | .name' response.json > latest_files.txt
+          echo "files_found=true" >> $GITHUB_ENV
+          echo "Files list fetched successfully."
+        else
+          echo "Warning: Received non-array response from GitHub API (maybe empty dir or error?):"
+          cat response.json
+          # Create empty files to avoid errors downstream if dir is empty
+          touch latest_files_with_sha.txt
+          touch latest_files.txt
+          echo "files_found=false" >> $GITHUB_ENV # Indicate no files found
+        fi
 
     - name: Identify new and modified files
       id: detect_changes
+      # Only run if files were actually found in the source repo
+      if: env.files_found == 'true'
       run: |
+        echo "Identifying changes against branch: ${{ github.event.inputs.target_branch }}"
+        # Read tracking files FROM THE CHECKED-OUT BRANCH
         PREV_HASHES=$(cat scripts/file_hashes.json)
-        NEW_FILES=$(comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) || true)
-        MODIFIED_FILES=""
+        # Ensure processed_files.txt exists before sorting
+        [ -f scripts/processed_files.txt ] || touch scripts/processed_files.txt
+
+        # Find files present in latest_files.txt but not in processed_files.txt
+        comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) > new_files.tmp || true
+        echo "--- New Files ---"
+        cat new_files.tmp
+        echo "-----------------"
+
+        MODIFIED_FILES_LIST="modified_files.tmp"
+        touch $MODIFIED_FILES_LIST
+        echo "--- Checking for Modifications ---" >&2 # Debug output to stderr
         while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
-          PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
-          if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ] && grep -q "^$FILE_NAME$" scripts/processed_files.txt; then
-            MODIFIED_FILES="$MODIFIED_FILES$FILE_NAME"$'\n'
+          # Check if the file is listed in processed_files.txt (meaning it's not new)
+          if grep -q -x -F "$FILE_NAME" scripts/processed_files.txt; then
+            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.["$file"] // ""')
+            echo "Checking: $FILE_NAME, Current SHA: $FILE_SHA, Previous SHA: $PREV_SHA" >&2
+            if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ]; then
+              echo "$FILE_NAME" >> $MODIFIED_FILES_LIST
+              echo "  -> Marked as modified." >&2
+            fi
           fi
         done < latest_files_with_sha.txt
-        { echo "$NEW_FILES"; echo "$MODIFIED_FILES"; } | grep -v "^$" > files_to_process.txt
+        echo "--- Modified Files ---"
+        cat $MODIFIED_FILES_LIST
+        echo "----------------------"
+
+        # Combine new and modified files, ensuring uniqueness and removing empty lines
+        cat new_files.tmp $MODIFIED_FILES_LIST | sort | uniq | grep -v '^$' > files_to_process.txt || true
+
+        echo "--- Files to Process ---"
+        cat files_to_process.txt
+        echo "------------------------"
+
         if [ -s files_to_process.txt ]; then
           echo "changes_found=true" >> $GITHUB_ENV
+          echo "Changes detected."
         else
           echo "changes_found=false" >> $GITHUB_ENV
+          echo "No new or modified files detected."
         fi
+        # Clean up temporary files
+        rm -f new_files.tmp modified_files.tmp
 
     - name: Exit if no files to process
       if: env.changes_found != 'true'
-      run: exit 0
+      run: |
+        echo "No changes detected in source files relative to branch '${{ github.event.inputs.target_branch }}'. Exiting."
+        exit 0
 
     - name: Process files with OpenAI
+      # This step now correctly reads the initial hashes from the checked-out branch
+      # and updates the local files, which are then committed in the next step.
+      if: env.changes_found == 'true'
       run: |
         mkdir -p generated_docs
+        # Read initial hashes from the checked-out branch state
         HASHES_JSON=$(cat scripts/file_hashes.json)
         PROCESSED_COUNT=0
 
         while IFS= read -r FILE_NAME; do
+          # Ensure FILE_NAME is not empty
+          if [ -z "$FILE_NAME" ]; then
+            continue
+          fi
+
           echo "⏳ Processing $FILE_NAME"
-          FILE_URL="https://raw.githubusercontent.com/harshilp24/integration-resources-test/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
-          curl -sSL --max-time 30 "$FILE_URL" -o input_file.json
+          # URL encode the filename for the URL
+          ENCODED_FILE_NAME=$(printf '%s' "$FILE_NAME" | jq -sRr @uri)
+          FILE_URL="https://raw.githubusercontent.com/harshilp24/integration-resources-test/main/Generic%20UQI%20Creation/uqi_configs/$ENCODED_FILE_NAME"
+          echo "Fetching content from: $FILE_URL"
+          curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json
+          if [ $? -ne 0 ]; then
+              echo "Error: Failed to download $FILE_NAME from $FILE_URL" >&2
+              continue # Skip this file if download fails
+          fi
 
-          FILE_SHA=$(grep "$FILE_NAME" latest_files_with_sha.txt | cut -f2)
-          HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
+          # Find the SHA for the current file using awk (more robust than grep+cut)
+          FILE_SHA=$(awk -F'\t' -v filename="$FILE_NAME" '$1 == filename { print $2; exit }' latest_files_with_sha.txt)
 
+          if [ -z "$FILE_SHA" ]; then
+            echo "Warning: Could not find SHA for '$FILE_NAME' in latest_files_with_sha.txt. Skipping hash update." >&2
+          else
+            echo "Updating hash for $FILE_NAME to $FILE_SHA"
+            # Update the hash in our JSON object
+            HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.["$file"] = $sha')
+          fi
+
+          # --- OpenAI Processing Start ---
+          # Prompt 1: Extract Info
           SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
           USER_CONTENT=$(cat input_file.json)
 
@@ -96,14 +173,20 @@ jobs:
               temperature: 0
             }')
 
-          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.test_OPENAI_API_KEY }}" \
+          RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD")
 
-          echo "$RESPONSE" | jq '.'
-          echo "$RESPONSE" | jq -r '.choices[0].message.content' > extracted_info.md
+          # Check for API errors
+          if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
+            echo "Error during OpenAI Prompt 1 for $FILE_NAME:" >&2
+            echo "$RESPONSE1" | jq '.' >&2
+            continue # Skip this file
+          fi
+          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
 
+          # Prompt 2: Generate Markdown
           SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
           EXTRACTED_CONTENT=$(cat extracted_info.md)
 
@@ -120,45 +203,85 @@ jobs:
               temperature: 0.3
             }')
 
-          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.test_OPENAI_API_KEY }}" \
+          RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d "$PAYLOAD")
 
-          echo "$RESPONSE" | jq '.'
-          echo "$RESPONSE" | jq -r '.choices[0].message.content' > generated_doc.md
+          # Check for API errors
+          if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
+            echo "Error during OpenAI Prompt 2 for $FILE_NAME:" >&2
+            echo "$RESPONSE2" | jq '.' >&2
+            continue # Skip this file
+          fi
+          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
+          # --- OpenAI Processing End ---
 
+          # Determine output path
           INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
 
           mkdir -p "$(dirname "$FINAL_PATH")"
           cp generated_doc.md "$FINAL_PATH"
-          cp generated_doc.md "generated_docs/${INTEGRATION}.md"
+          # Optional: Keep a copy in a separate dir if needed for artifacts
+          # cp generated_doc.md "generated_docs/${INTEGRATION}.md"
 
-          echo "$FILE_NAME" >> scripts/processed_files.txt
+          # Add the successfully processed file to the list for this run
+          echo "$FILE_NAME" >> processed_files_this_run.txt
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Finished $FILE_NAME"
+          echo "✅ Finished processing $FILE_NAME"
+
         done < files_to_process.txt
 
-        echo "$HASHES_JSON" > scripts/file_hashes.json
-        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-        echo "content_generated=true" >> $GITHUB_ENV
+        # Update the main tracking files with the results of this run
+        # Append newly processed files to the persistent list
+        if [ -f processed_files_this_run.txt ]; then
+          cat processed_files_this_run.txt >> scripts/processed_files.txt
+          # Ensure uniqueness and sort the persistent list
+          sort -u scripts/processed_files.txt -o scripts/processed_files.txt
+          rm processed_files_this_run.txt
+        fi
+        # Overwrite the persistent hash file with the updated JSON
+        echo "$HASHES_JSON" | jq '.' > scripts/file_hashes.json
 
-    - name: Commit and open PR
+        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
+        if [ "$PROCESSED_COUNT" -gt 0 ]; then
+          echo "content_generated=true" >> $GITHUB_ENV
+        else
+          echo "content_generated=false" >> $GITHUB_ENV
+        fi
+        # Clean up intermediate files
+        rm -f input_file.json extracted_info.md generated_doc.md
+
+    - name: Commit and open PR against target branch
+      # Only run if content was actually generated in the previous step
       if: env.content_generated == 'true'
-      uses: peter-evans/create-pull-request@v5
+      uses: peter-evans/create-pull-request@v6 # Use v6 for latest features/fixes
       with:
         token: ${{ secrets.test_REPO_ACCESS_TOKEN }}
-        title: "test: generate integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "test: generated docs from harshilp24/integration-resources-test"
-        branch: "test/docs-update-${{ github.run_id }}"
+        # Make title and commit message specific to the target branch
+        title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
+        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nProcessed files based on changes in harshilp24/integration-resources-test."
+        # Create a branch name that includes the target branch for clarity
+        branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
+        # Set the base branch for the PR to the target branch
         base: ${{ github.event.inputs.target_branch }}
+        # Add the generated docs and the UPDATED tracking files
         add-paths: |
           website/docs/connect-data/reference/
           scripts/processed_files.txt
           scripts/file_hashes.json
+        # Update PR body
         body: |
-          ✅ Test PR: Generated integration documentation from your test repo.
+          ✅ Automated PR: Generated/updated integration documentation based on changes in the source repository.
 
           **Target Branch:** `${{ github.event.inputs.target_branch }}`
           **Source Repo:** [harshilp24/integration-resources-test](https://github.com/harshilp24/integration-resources-test/tree/main/Generic%20UQI%20Creation/uqi_configs)
+
+          This PR includes:
+          - Updated markdown files in `website/docs/connect-data/reference/`
+          - Updated tracking files in `scripts/` to reflect the processed state for this branch.
+        # Optional: Add labels, assignees etc.
+        # labels: automated-pr, documentation
+        # assignees: your-github-username
+
