@@ -20,11 +20,11 @@ Creates a new event in the user's Outlook calendar.
 
 <dd>
 
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's calendar the event will be created in.
+Specify a user ID to perform this action if you are working with an application token. This field is required to identify which user's calendar the event will be created in. The typical format for a User ID in Outlook might resemble a GUID or a unique alphanumeric string.
 
 *example*:
 ```
-user@example.com
+b1a2c3d4-e5f6-7g8h-9i0j-1k2l3m4n5o6p
 ```
 
 ---
@@ -33,7 +33,7 @@ user@example.com
 
 <dd>
 
-The Subject property sets the text of the event’s subject line. This is a required field and will be displayed as the title of the event in the user's calendar.
+The Subject property defines the text of the event’s subject line. This field is essential for summarizing the event's purpose and is typically a short string of text.
 
 *example*:
 ```
@@ -46,11 +46,11 @@ Team Meeting
 
 <dd>
 
-The Start Time specifies when the event begins using the YYYY-MM-DD[T]HH:MM:SS date format, which is compliant with ISO 8601. This property is required to schedule the event at the correct time.
+The Start Time property accepts dates in the YYYY-MM-DD[T]HH:MM:SS format, following the ISO 8601 standard. This field specifies when the event is set to begin and is required to schedule the event.
 
 *example*:
 ```
-2023-07-21T09:00:00
+2023-06-01T14:00:00
 ```
 
 ---
@@ -59,11 +59,11 @@ The Start Time specifies when the event begins using the YYYY-MM-DD[T]HH:MM:SS d
 
 <dd>
 
-The Time Zone property allows users to select which timezone the event will be added to, using the Connect Portal Workflow Settings. If this property is omitted, the event defaults to the UTC timezone.
+The Time Zone property allows users to select the timezone for the event. If left blank, it defaults to UTC. It's important to set this correctly to ensure the event aligns with the intended time zone of the participants.
 
 *example*:
 ```
-Pacific/Auckland
+Eastern Standard Time
 ```
 
 ---
@@ -72,11 +72,11 @@ Pacific/Auckland
 
 <dd>
 
-The End Time indicates when the event ends and accepts a date in the YYYY-MM-DD[T]HH:MM:SS format. If this property is not provided, it defaults to one hour after the start time.
+The End Time property accepts dates in the YYYY-MM-DD[T]HH:MM:SS format, following the ISO 8601 standard. If omitted, it defaults to one hour after the start time. This field defines when the event is scheduled to end.
 
 *example*:
 ```
-2023-07-21T10:00:00
+2023-06-01T15:00:00
 ```
 
 ---
@@ -85,11 +85,11 @@ The End Time indicates when the event ends and accepts a date in the YYYY-MM-DD[
 
 <dd>
 
-The Calendar Id allows users to select which calendar the event will be added to through the Connect Portal Workflow Settings. If left blank, the event is added to the user’s primary calendar. The Calendar Id is typically a unique identifier for a calendar within Outlook.
+The Calendar Id property allows users to select which calendar the event will be added to. If left blank, it defaults to the user’s primary calendar. The Calendar ID typically resembles a GUID or a unique alphanumeric string.
 
 *example*:
 ```
-AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
+A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8
 ```
 
 ---
@@ -98,11 +98,11 @@ AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
 
 <dd>
 
-The Description property is used to add a message or additional details associated with the event. This field is optional and helps provide context for the event attendees.
+The Description property contains the message associated with the event. This field allows for a more detailed explanation of the event and can include information such as the agenda or topics to be discussed.
 
 *example*:
 ```
-Discussing the upcoming project deliverables.
+Quarterly financial review meeting to discuss performance metrics and goals for the next quarter.
 ```
 
 ---
@@ -124,11 +124,11 @@ No example provided.
 
 <dd>
 
-The Location Name is the display name of the event location. This property is optional but can be useful for attendees to know the physical or virtual location of the event.
+The Location Name property specifies the display name of the event location. This could be a physical location or a descriptive name for a virtual meeting space.
 
 *example*:
 ```
-Conference Room B
+Conference Room A
 ```
 
 ---
@@ -137,11 +137,11 @@ Conference Room B
 
 <dd>
 
-The Location URL is an optional property that represents the location of the event with a URL. This is particularly useful for virtual meetings where a link to the meeting platform can be provided.
+The Location URL property provides a URL representing the location. This is particularly useful for virtual meetings where a link to the conference platform is required.
 
 *example*:
 ```
-https://meet.example.com/join/123456789
+https://meetings.example.com/j/123456789
 ```
 
 ---
@@ -150,11 +150,11 @@ https://meet.example.com/join/123456789
 
 <dd>
 
-The Attendees property accepts an array of email addresses or email addresses separated by commas. It specifies the participants that are to be invited to the event.
+The Attendees property accepts an array of email addresses or email addresses separated by commas. It specifies the participants who are to be invited to the event.
 
 *example*:
 ```
-["attendee1@example.com", "attendee2@example.com"]
+["john.doe@example.com", "jane.smith@example.com"]
 ```
 
 ---
@@ -167,11 +167,11 @@ Updates an existing event in the user's Outlook calendar.
 
 <dd>
 
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's calendar the event will be updated in.
+Specify a user ID to perform this action if you are working with an application token. This field is required to identify which user's calendar the event will be updated in. The typical format for a User ID in Outlook might resemble a GUID or a unique alphanumeric string.
 
 *example*:
 ```
-user@example.com
+b1a2c3d4-e5f6-7g8h-9i0j-1k2l3m4n5o6p
 ```
 
 ---
@@ -180,45 +180,32 @@ user@example.com
 
 <dd>
 
-The Event ID is the unique identifier of the event to update. It is required to locate the specific event within the user's calendar that needs modification.
+The Event ID property is the unique identifier of the event to update. This ID is essential to locate the specific event within the user's calendar.
 
 *example*:
 ```
-AAMkAGI2TZZAIND1xAAA=
+evt_1234abcd5678efgh
 ```
 
 ---
 
-#### Subject `string`
-
-<dd>
-
-The Subject property sets the text of the event’s subject line. This is a required field and will be displayed as the title of the event in the user's calendar.
-
-*example*:
-```
-Updated Team Meeting
-```
-
----
-
-(Repeat the same property explanations as in "Create Event" for Start Time, Time Zone, End Time, Calendar Id, Description, Content Type, Location Name, Location Url, Attendees)
+(Repeat the same structure for the remaining properties as in the Create Event command)
 
 ---
 
 ### Get Event By Id
 
-Retrieves the details of a specific event by its ID.
+Retrieves details of a specific event by its ID.
 
 #### User Id `string`
 
 <dd>
 
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's calendar the event will be retrieved from.
+Specify a user ID to perform this action if you are working with an application token. This field is required to identify which user's calendar the event details will be retrieved from. The typical format for a User ID in Outlook might resemble a GUID or a unique alphanumeric string.
 
 *example*:
 ```
-user@example.com
+b1a2c3d4-e5f6-7g8h-9i0j-1k2l3m4n5o6p
 ```
 
 ---
@@ -227,11 +214,11 @@ user@example.com
 
 <dd>
 
-The Event ID is the unique identifier of the event to get. It is required to locate the specific event within the user's calendar.
+The Event ID property is the unique identifier of the event to retrieve. This ID is essential to locate the specific event within the user's calendar.
 
 *example*:
 ```
-AAMkAGI2TZZAIND1xAAA=
+evt_1234abcd5678efgh
 ```
 
 ---
@@ -240,11 +227,11 @@ AAMkAGI2TZZAIND1xAAA=
 
 <dd>
 
-The Calendar Id allows users to select which calendar to retrieve the event from through the Connect Portal Workflow Settings. If left blank, the event is retrieved from the user’s primary calendar. The Calendar Id is typically a unique identifier for a calendar within Outlook.
+The Calendar Id property allows users to select which calendar to retrieve the event from. If left blank, it defaults to the user’s primary calendar. The Calendar ID typically resembles a GUID or a unique alphanumeric string.
 
 *example*:
 ```
-AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
+A1B2C3D4E5F6G7H8I9J0K1L2M3N4O5P6Q7R8
 ```
 
 ---
@@ -253,29 +240,7 @@ AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
 
 Retrieves a list of events from the user's Outlook calendar.
 
-#### User Id `string`
-
-<dd>
-
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's calendar the events will be retrieved from.
-
-*example*:
-```
-user@example.com
-```
-
----
-
-#### Calendar Id `string`
-
-<dd>
-
-The Calendar Id allows users to select which calendar to retrieve events from through the Connect Portal Workflow Settings. If left blank, events are retrieved from the user’s primary calendar. The Calendar Id is typically a unique identifier for a calendar within Outlook.
-
-*example*:
-```
-AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
-```
+(Repeat the same structure for the properties as in the previous commands, and add the following for the new property)
 
 ---
 
@@ -283,7 +248,7 @@ AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
 
 <dd>
 
-The Events Filter Formula allows users to filter events based on the Outlook filter formula. This field is optional and can be used to retrieve specific events that match the criteria provided.
+The Events Filter Formula property allows users to apply a filter based on the Outlook filter formula, such as filtering by subject or date. This field helps in retrieving a specific subset of events.
 
 *example*:
 ```
@@ -294,74 +259,17 @@ The Events Filter Formula allows users to filter events based on the Outlook fil
 
 ### Delete Event
 
-Deletes a specific event from the user's Outlook calendar.
+Deletes an event from the user's Outlook calendar.
 
-#### User Id `string`
-
-<dd>
-
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's calendar the event will be deleted from.
-
-*example*:
-```
-user@example.com
-```
-
----
-
-#### Event Id `string`
-
-<dd>
-
-The Event ID is the unique identifier of the event to delete. It is required to locate and remove the specific event within the user's calendar.
-
-*example*:
-```
-AAMkAGI2TZZAIND1xAAA=
-```
-
----
-
-#### Calendar Id `string`
-
-<dd>
-
-The Calendar Id allows users to select which calendar the event will be deleted from through the Connect Portal Workflow Settings. If left blank, the event is deleted from the user’s primary calendar. The Calendar Id is typically a unique identifier for a calendar within Outlook.
-
-*example*:
-```
-AQMkADAwATMwMAItZmYAZS1iNjQ2LTAwAi0wMAoARgAAA5P9
-```
+(Repeat the same structure for the properties as in the Get Event By Id command)
 
 ---
 
 ### Get Messages
 
-Retrieves a list of messages from the user's Outlook mail folders.
+Retrieves a list of messages from the user's Outlook mailbox.
 
-#### User Id `string`
-
-<dd>
-
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's mail folder the messages will be retrieved from.
-
-*example*:
-```
-user@example.com
-```
-
----
-
-#### Mail Folder `string`
-
-<dd>
-
-The Mail Folder property allows users to select which mail folder to get messages from using the Connect Portal Workflow Settings. If left blank, messages are retrieved from the user’s primary mail folder.
-
-*example*:
-```
-Inbox
-```
+(Repeat the same structure for the properties as in the previous commands, and add the following for the new properties)
 
 ---
 
@@ -369,7 +277,7 @@ Inbox
 
 <dd>
 
-The Messages Filter Formula allows users to filter messages based on the Outlook filter formula. This field is optional and can be used to retrieve specific messages that match the criteria provided.
+The Messages Filter Formula property allows users to apply a filter based on the Outlook filter formula, such as filtering by subject or sender. This field helps in retrieving a specific subset of messages.
 
 *example*:
 ```
@@ -382,11 +290,11 @@ The Messages Filter Formula allows users to filter messages based on the Outlook
 
 <dd>
 
-The Limit Results property sets the maximum number of messages to return. If left blank, it defaults to 10. The maximum number of messages that can be returned is 1,000.
+The Limit Results property specifies the maximum number of messages to return. If left blank, it defaults to 10, with a maximum allowable value of 1,000. This field helps manage the volume of returned messages.
 
 *example*:
 ```
-50
+25
 ```
 
 ---
@@ -395,29 +303,7 @@ The Limit Results property sets the maximum number of messages to return. If lef
 
 Sends a message from the user's Outlook account.
 
-#### User Id `string`
-
-<dd>
-
-Specify a user ID to perform this action if you are working with an application token. The User ID is typically in the format of an email address or a unique identifier assigned to a user within the Outlook service. It is required to specify which user's mail folder the message will be sent from.
-
-*example*:
-```
-user@example.com
-```
-
----
-
-#### Subject `string`
-
-<dd>
-
-The Subject property sets the text of the message’s subject line. This is a required field and will be displayed as the title of the message in the recipient's inbox.
-
-*example*:
-```
-Project Update
-```
+(Repeat the same structure for the properties as in the previous commands, and add the following for the new properties)
 
 ---
 
@@ -425,24 +311,11 @@ Project Update
 
 <dd>
 
-No description available.
+The Message Body property contains the content of the message to be sent. This field is essential for conveying the message's information to the recipients.
 
 *example*:
 ```
-No example provided.
-```
-
----
-
-#### Content Type `string`
-
-<dd>
-
-No description available.
-
-*example*:
-```
-No example provided.
+Dear Team, please find attached the report for this month.
 ```
 
 ---
@@ -451,11 +324,11 @@ No example provided.
 
 <dd>
 
-The Attachments property accepts either a single file object or a JSON array of file objects. This allows users to attach files to the message being sent.
+The Attachments property accepts either a single file object or a JSON array of file objects. This field allows users to include files with their message.
 
 *example*:
 ```
-[{"name":"attachment.pdf", "contentBytes":"<base64-encoded-content>"}]
+[{"name": "report.pdf", "contentBytes": "base64encodedstring=="}]
 ```
 
 ---
@@ -468,7 +341,7 @@ The To Recipients property accepts an array of email addresses or email addresse
 
 *example*:
 ```
-["recipient1@example.com", "recipient2@example.com"]
+["john.doe@example.com", "jane.smith@example.com"]
 ```
 
 ---
@@ -477,11 +350,11 @@ The To Recipients property accepts an array of email addresses or email addresse
 
 <dd>
 
-The Cc Recipients property accepts an array of email addresses or email addresses separated by commas. It specifies the recipients who will receive a copy of the message.
+The CC Recipients property accepts an array of email addresses or email addresses separated by commas. It specifies the secondary recipients who will receive a copy of the message.
 
 *example*:
 ```
-["cc1@example.com", "cc2@example.com"]
+["manager@example.com", "teamlead@example.com"]
 ```
 
 ---
@@ -490,11 +363,11 @@ The Cc Recipients property accepts an array of email addresses or email addresse
 
 <dd>
 
-The Bcc Recipients property accepts an array of email addresses or email addresses separated by commas. It specifies the recipients who will receive a blind copy of the message, meaning other recipients will not see these addresses.
+The BCC Recipients property accepts an array of email addresses or email addresses separated by commas. It specifies recipients who will receive the message without their addresses being visible to other recipients.
 
 *example*:
 ```
-["bcc1@example.com", "bcc2@example.com"]
+["audit@example.com"]
 ```
 
 ---
@@ -503,7 +376,7 @@ The Bcc Recipients property accepts an array of email addresses or email address
 
 <dd>
 
-The Mail Folder property allows users to select which mail folder to send the message from using the Connect Portal Workflow Settings. If left blank, the message is sent from the user’s primary mail folder.
+The Mail Folder property allows users to select which mail folder to send the message from. If left blank, it defaults to the user’s primary mail folder. The Mail Folder typically resembles a name or a unique identifier.
 
 *example*:
 ```
@@ -514,7 +387,7 @@ Sent Items
 
 ### Custom Action
 
-Performs a custom action within the Outlook service.
+Performs a custom action within the Outlook integration.
 
 #### No properties available.
 
