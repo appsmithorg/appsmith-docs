@@ -89,22 +89,34 @@ jobs:
 
         MODIFIED_FILES_LIST="modified_files.tmp"
         touch $MODIFIED_FILES_LIST
-        echo "--- Checking for Modifications ---" >&2 # Debug output to stderr
+        echo "--- Checking for Modifications (Enhanced Debug) ---" >&2 # Debug output to stderr
         while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
           # Check if the file is listed in processed_files.txt (meaning it's not new)
           if grep -q -x -F "$FILE_NAME" "$PROCESSED_FILES_LIST_FILE"; then
+            echo "DEBUG: Checking file found in processed list: '$FILE_NAME'" >&2
             # *** Corrected jq command to fetch previous SHA ***
-            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
-            echo "Checking: '$FILE_NAME', Current SHA: '$FILE_SHA', Previous SHA: '$PREV_SHA'" >&2
+            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.["$file"] // ""')
+            echo "DEBUG:   Current SHA from source: '$FILE_SHA'" >&2
+            echo "DEBUG:   Previous SHA from JSON : '$PREV_SHA'" >&2
+            
             # Check if PREV_SHA is not empty and differs from current FILE_SHA
             if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ]; then
+              echo "DEBUG:   Comparison result: '$PREV_SHA' != '$FILE_SHA' is TRUE" >&2
               echo "$FILE_NAME" >> $MODIFIED_FILES_LIST
               echo "  -> Marked as modified." >&2
+            elif [ -n "$PREV_SHA" ] && [ "$PREV_SHA" == "$FILE_SHA" ]; then
+              echo "DEBUG:   Comparison result: '$PREV_SHA' == '$FILE_SHA' is TRUE" >&2
+              echo "  -> Not modified." >&2
             elif [ -z "$PREV_SHA" ]; then
               # If file is in processed_files.txt but NOT in file_hashes.json, treat as modified (edge case)
+              echo "DEBUG:   Previous SHA is EMPTY." >&2
               echo "  -> Warning: File '$FILE_NAME' was processed but hash missing. Marking as modified." >&2
               echo "$FILE_NAME" >> $MODIFIED_FILES_LIST
+            else
+              echo "DEBUG:   Unhandled comparison case for '$FILE_NAME'" >&2
             fi
+          else
+             echo "DEBUG: Skipping file not in processed list: '$FILE_NAME'" >&2
           fi
         done < latest_files_with_sha.txt
         echo "--- Modified Files ---"
@@ -169,7 +181,7 @@ jobs:
           else
             echo "Updating hash for $FILE_NAME to $FILE_SHA"
             # Update the hash in our JSON object
-            HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
+            HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.["$file"] = $sha')
           fi
 
           # --- OpenAI Processing Start ---
@@ -301,3 +313,4 @@ jobs:
         # Optional: Add labels, assignees etc.
         # labels: automated-pr, documentation
         # assignees: your-github-username
+
