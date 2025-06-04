@@ -1,383 +1,181 @@
-# Gmail Integration
+# Asana Integration
 
-This page provides information on how to connect to Gmail. It enables users to perform actions such as sending emails, managing contacts, and searching for specific messages.
+This page provides information on how to connect to Asana. It enables users to perform actions such as creating comments, managing projects, tasks, and organizing teamwork.
 
-## Connect Gmail
+## Connect Asana
 
 Explain how to authenticate and connect to this service securely.
 
-## Query Gmail
+## Query Asana
 
 The following section provides a **reference guide** describing available commands and their parameters.
 
 ---
 
-### Send Email
+### Create Comment
 
-Sends an email to specified recipients with optional attachments and headers.
+Creates a new comment on a specified task.
 
-#### To Recipients `array`
+#### Task `string`
 
 <dd>
 
-The `To Recipients` property specifies the email addresses of the recipients. It accepts an array of email strings. If omitted, the email will not be sent as there are no recipients defined. The email format should be standard (e.g., `user@example.com`).
+The Task ID is a unique identifier for the task to which the comment will be added. The comment will be authored by the currently authenticated user. It is required to specify the Task ID to add a comment.
 
 *example*:
-```json
-["john@example.com", "team@example.com"]
+```
+1204619611402340
 ```
 
 ---
 
-#### From `string`
+#### Text `string`
 
 <dd>
 
-The `From` property indicates the sender's email address. It should be a valid email address from which the email will be sent. If omitted, the default sending address associated with the authenticated user's account will be used.
+The Text property represents the content of the comment to be added to the task. This field is required to create a comment.
 
 *example*:
-```json
-"john@example.com"
+```
+"This is a comment."
 ```
 
 ---
 
-#### Subject `string`
+### Create Project
+
+Creates a new project within the specified workspace and team.
+
+#### Name `string`
 
 <dd>
 
-The `Subject` property represents the subject line of the email. It is a string that summarizes the email's content. If omitted, the email will be sent without a subject line, which might cause it to be marked as spam or ignored by recipients.
+The Name property specifies the name of the new project. This field is required to create a project.
 
 *example*:
-```json
-"Meeting Follow-up"
+```
+"Stuff to buy"
 ```
 
 ---
 
-#### Message Content `string`
+#### Workspace `string`
 
 <dd>
 
-The `Message Content` property contains the body of the email. It can be in plain text or HTML format. This property is essential for conveying the message to the recipients.
+The Workspace property allows users to select the workspace in which to create the project. If left blank, it defaults to the user's first workspace. This field is optional.
 
 *example*:
-```html
-"<p>Hello, team!</p>"
+```
+"{{settings.workspace}}"
 ```
 
 ---
 
-#### Attachments `array`
+#### Team `string`
 
 <dd>
 
-The `Attachments` property is optional and allows for file attachments to be included with the email. Each attachment should be an object with `filename`, `mimeType`, and `content` encoded in base64.
+The Team property allows users to select the team with which to share the project. If left blank, it defaults to the user's first team. This field is optional.
 
 *example*:
-```json
-[{"filename": "report.pdf", "mimeType": "application/pdf", "content": "base64content"}]
+```
+"{{settings.team}}"
 ```
 
 ---
 
-#### Additional Headers `object`
+#### Notes `string`
 
 <dd>
 
-The `Additional Headers` property is optional and can include headers such as `reply-to`, `cc`, and `bcc`. These headers can be used for additional email routing and metadata.
+The Notes property is used to add additional information or description to the project. This field is optional.
 
 *example*:
-```json
-{"reply-to": "Jane <jane@example.com>", "cc": "cc@example.com"}
+```
+"These are things we need to purchase."
 ```
 
 ---
 
-### Get Email By Id
+### Get Projects
 
-Retrieves an email message by its unique identifier.
+Retrieves a list of projects, with options to include archived projects.
 
-#### User Id `string`
+#### Archived `string`
 
 <dd>
 
-The `User Id` property specifies the email address of the user whose message is to be retrieved. This should be a valid email address associated with the user's Gmail account. If omitted, the request will fail as the user's identity is required.
+The Archived property allows users to filter the projects list based on their archived status. Options are Yes for archived projects, No for active projects, and Default for both. This field is optional.
 
 *example*:
-```json
-"user@domain.com"
+```
+"Yes"
 ```
 
 ---
 
-#### Message Id `string`
+### Get Project By Id
+
+Retrieves a specific project by its ID.
+
+#### Project Filter Id `string`
 
 <dd>
 
-The `Message Id` property specifies the unique identifier of the email message to retrieve. This ID is unique to each email and can be found in the email's details. If omitted, the request will fail as the specific message cannot be identified.
+The Project Filter Id is the unique identifier of the project to be retrieved. This field is required to fetch a specific project.
 
 *example*:
-```json
-"Enter Message Id"
+```
+"114748165638217"
 ```
 
 ---
 
-### Search For Email
+### Create Task
 
-Searches for emails that match a given filter formula and handles pagination.
+Creates a new task within the specified workspace, project, and assigns it to a user.
 
-#### Email Filter Formula `string`
+#### Name `string`
 
 <dd>
 
-The `Email Filter Formula` property allows users to search for emails based on a filter formula. The formula can include various search operators and values. If omitted, no search will be performed.
+The Name property specifies the name of the new task. This field is required to create a task.
 
 *example*:
-```json
-"from:user@example.com subject:\"project update\""
+```
+"Task Name"
 ```
 
 ---
 
-#### Pagination Parameters `string`
+#### Workspace `string`
 
 <dd>
 
-The `Pagination Parameters` property is used to navigate through search results. It typically includes parameters like page size and page token. If omitted, only the first set of results will be returned.
+The Workspace property allows users to select the workspace in which to create the task. If left blank, it defaults to the user's first workspace. This field is optional.
 
 *example*:
-```json
-"maxResults=50&pageToken=nextPageToken"
+```
+"{{settings.workspace}}"
 ```
 
 ---
 
-### Delete Email
-
-Moves an email message to the trash using the user's email address and the message's ID.
-
-#### User Id `string`
+#### Project `string`
 
 <dd>
 
-The `User Id` property specifies the email address of the user whose message is to be trashed. This should be a valid email address associated with the user's Gmail account. If omitted, the request will fail as the user's identity is required.
+The Project property allows users to select the project within which to create the task. This field is optional.
 
 *example*:
-```json
-"user@domain.com"
+```
+"{{settings.project}}"
 ```
 
 ---
 
-#### Message Id `string`
-
-<dd>
-
-The `Message Id` property specifies the unique identifier of the email message to trash. This ID is unique to each email and can be found in the email's details. If omitted, the request will fail as the specific message cannot be identified.
-
-*example*:
-```json
-"Enter Message Id"
-```
-
----
-
-### Create A Contact
-
-Adds a new contact to the user's Gmail contacts with optional additional fields.
-
-#### Given Name `string`
-
-<dd>
-
-The `Given Name` property represents the first name of the contact. It is a required field to create a contact record. If omitted, the contact will not have a first name associated with it.
-
-*example*:
-```json
-"John"
-```
-
----
-
-#### Family Name `string`
-
-<dd>
-
-The `Family Name` property represents the last name of the contact. It is a required field to create a contact record. If omitted, the contact will not have a last name associated with it.
-
-*example*:
-```json
-"Doe"
-```
-
----
-
-#### Email `string`
-
-<dd>
-
-The `Email` property specifies the contact's email address. It should be a valid email address to which you can send emails. If omitted, the contact will not have an email address associated with it.
-
-*example*:
-```json
-"john.doe@example.com"
-```
-
----
-
-#### Additional Fields `object`
-
-<dd>
-
-The `Additional Fields` property is optional and can include additional contact information such as addresses or phone numbers. Each field should be provided as an object with the appropriate structure.
-
-*example*:
-```json
-{"addresses":[{"streetAddress":"1000 North St.","city":"LA"}]}
-```
-
----
-
-### Get Contact By Resource Name
-
-Retrieves a contact's information using its unique resource name.
-
-#### Resource Name `string`
-
-<dd>
-
-The `Resource Name` property specifies the unique resource name of the contact to fetch. This name is used to identify the contact within the Gmail contacts system. If omitted, the request will fail as the specific contact cannot be identified.
-
-*example*:
-```json
-"Enter Resource Name"
-```
-
----
-
-### Search For Contact
-
-Searches for contacts using a specified search term.
-
-#### Search Term `string`
-
-<dd>
-
-The `Search Term` property allows users to specify a search term to find near or exact matches on contact properties such as names, nicknames, email addresses, phone numbers, or organizations. If omitted, no search will be performed.
-
-*example*:
-```json
-"John Doe"
-```
-
----
-
-### Delete Contact
-
-Deletes a contact from the user's Gmail contacts using the contact's resource name.
-
-#### Resource Name `string`
-
-<dd>
-
-The `Resource Name` property specifies the unique resource name of the contact to delete. This name is used to identify the contact within the Gmail contacts system. If omitted, the request will fail as the specific contact cannot be identified.
-
-*example*:
-```json
-"Enter Resource Name"
-```
-
----
-
-### Create Draft
-
-Creates an email draft with optional attachments and headers.
-
-#### To Recipients `array`
-
-<dd>
-
-The `To Recipients` property specifies the email addresses of the draft recipients. It accepts an array of email strings. If omitted, the draft will not have any recipients defined.
-
-*example*:
-```json
-["john@example.com", "team@example.com"]
-```
-
----
-
-#### From `string`
-
-<dd>
-
-The `From` property indicates the sender's email address for the draft. If omitted, it defaults to the authenticated user's email address. It should be a valid email address from which the email will be sent.
-
-*example*:
-```json
-"me"
-```
-
----
-
-#### Subject `string`
-
-<dd>
-
-The `Subject` property represents the subject line of the draft email. It is a string that summarizes the content of the email. If omitted, the draft will be created without a subject line.
-
-*example*:
-```json
-"Meeting Follow-up"
-```
-
----
-
-#### Message Content `string`
-
-<dd>
-
-The `Message Content` property contains the body of the draft email. It can be in plain text or HTML format. This property is essential for conveying the message to the recipients.
-
-*example*:
-```html
-"<p>Hello, team!</p>"
-```
-
----
-
-#### Attachments `array`
-
-<dd>
-
-The `Attachments` property is optional and allows for file attachments to be included with the draft. Each attachment should be an object with `filename`, `mimeType`, and `content` encoded in base64.
-
-*example*:
-```json
-[{"filename": "report.pdf", "mimeType": "application/pdf", "content": "base64content"}]
-```
-
----
-
-#### Additional Headers `object`
-
-<dd>
-
-The `Additional Headers` property is optional and can include headers such as `reply-to`, `cc`, and `bcc`. These headers can be used for additional email routing and metadata in the draft.
-
-*example*:
-```json
-{"reply-to": "Jane <jane@example.com>", "cc": "cc@example.com"}
-```
-
----
-
-### Custom Action
-
-Performs a custom action within the Gmail integration.
-
-#### No properties available.
+#### Notes `string`
 
 <dd>
 
@@ -385,7 +183,346 @@ No description available.
 
 *example*:
 ```
-No example provided.
+"Task related notes."
 ```
+
+---
+
+#### Due On Date `string`
+
+<dd>
+
+The Due On property specifies the date on which the task is due. It should be in the format "YYYY-MM-DD" and cannot be used together with Due At. This field is optional.
+
+*example*:
+```
+"2023-05-10"
+```
+
+---
+
+#### Due At Date `string`
+
+<dd>
+
+The Due At property specifies the exact date and time at which the task is due, following the ISO timestamp format. It cannot be used together with Due On. This field is optional.
+
+*example*:
+```
+"2023-05-10T17:00:00Z"
+```
+
+---
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the ID of the Asana user to whom the task will be assigned. This field is optional.
+
+*example*:
+```
+"{{settings.assignee}}"
+```
+
+---
+
+#### Gid `string`
+
+<dd>
+
+The Gid property is an external ID from your application to associate with the task. This allows for syncing updates to the task later. This field is optional.
+
+*example*:
+```
+"ext_6789abcd1234"
+```
+
+---
+
+### Update Task
+
+Updates an existing task with new details.
+
+#### Task Id `string`
+
+<dd>
+
+The Task Id is the unique identifier of the task to be updated. This field is required to update a task.
+
+*example*:
+```
+"1204619611402340"
+```
+
+---
+
+#### Complete Status `boolean`
+
+<dd>
+
+The Complete Status property indicates whether the task has been completed. This field is optional.
+
+*example*:
+```
+true
+```
+
+---
+
+#### Name `string`
+
+<dd>
+
+The Name property specifies the new name of the task. This field is optional.
+
+*example*:
+```
+"Updated Task Name"
+```
+
+---
+
+#### Notes `string`
+
+<dd>
+
+No description available.
+
+*example*:
+```
+"Updated task notes."
+```
+
+---
+
+#### Due On Date `string`
+
+<dd>
+
+The Due On property specifies the date on which the task is due. It should be in the format "YYYY-MM-DD" and cannot be used together with Due At. This field is optional.
+
+*example*:
+```
+"2023-06-15"
+```
+
+---
+
+#### Due At Date `string`
+
+<dd>
+
+The Due At property specifies the exact date and time at which the task is due, following the ISO timestamp format. It cannot be used together with Due On. This field is optional.
+
+*example*:
+```
+"2023-06-15T14:30:00Z"
+```
+
+---
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the ID of the Asana user to whom the task will be assigned. This field is optional.
+
+*example*:
+```
+"{{settings.assignee}}"
+```
+
+---
+
+#### Gid `string`
+
+<dd>
+
+The Gid property is an external ID from your application to associate with the task. This allows for syncing updates to the task later. This field is optional.
+
+*example*:
+```
+"ext_6789abcd1234"
+```
+
+---
+
+### Get Tasks
+
+Retrieves a list of tasks based on the specified filters.
+
+#### Workspace `string`
+
+<dd>
+
+The Workspace property is the ID of the workspace to filter tasks on. This field is optional.
+
+*example*:
+```
+"{{settings.workspace}}"
+```
+
+---
+
+#### Project `string`
+
+<dd>
+
+The Project property is the ID of the project to filter tasks on. This field is optional.
+
+*example*:
+```
+"{{settings.project}}"
+```
+
+---
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the ID of the assignee to filter tasks on. This field is optional.
+
+*example*:
+```
+"{{settings.assignee}}"
+```
+
+---
+
+#### Completed Since `string`
+
+<dd>
+
+The Completed Since property filters tasks to only return those that are either incomplete or have been completed since the specified time. The time can be an ISO or Unix timestamp. This field is optional.
+
+*example*:
+```
+"2014-04-25T16:15:47-04:00"
+```
+
+---
+
+### Get Tasks By Id
+
+Retrieves a specific task by its ID.
+
+#### Task Id `string`
+
+<dd>
+
+The Task Id is the unique identifier of the task to be retrieved. This field is required to fetch a specific task.
+
+*example*:
+```
+"1204619611402340"
+```
+
+---
+
+### Get Task By External Id
+
+Retrieves a task associated with a given external ID.
+
+#### Gid `string`
+
+<dd>
+
+The Gid is the external ID that the task is associated or synced with, from your application. This field is required to fetch a task by external ID.
+
+*example*:
+```
+"ext_6789abcd1234"
+```
+
+---
+
+### Add Task To Section
+
+Adds a task to a specified section within a project.
+
+#### Section Id `string`
+
+<dd>
+
+The Section Id is the unique identifier of the section to which the task will be added. This field is required.
+
+*example*:
+```
+"{{settings.section}}"
+```
+
+---
+
+#### Task Id `string`
+
+<dd>
+
+The Task Id is the unique identifier of the task to be added to the section. This field is required.
+
+*example*:
+```
+"1204619611402340"
+```
+
+---
+
+#### Before Task Id `string`
+
+<dd>
+
+The Before Task Id specifies a task in the section before which the new task will be inserted. It cannot be used with After Task Id. This field is optional.
+
+*example*:
+```
+"1204619611402341"
+```
+
+---
+
+#### After Task Id `string`
+
+<dd>
+
+The After Task Id specifies a task in the section after which the new task will be inserted. It cannot be used with Before Task Id. This field is optional.
+
+*example*:
+```
+"1204619611402339"
+```
+
+---
+
+### Get Teams
+
+Retrieves a list of teams within a specified workspace.
+
+#### Workspace `string`
+
+<dd>
+
+The Workspace property is the ID of the workspace for which to return the visible teams to the authorized user. This field is required.
+
+*example*:
+```
+"{{settings.workspace}}"
+```
+
+---
+
+### Get Workspaces
+
+Retrieves a list of workspaces available to the authorized user.
+
+No properties available.
+
+---
+
+### Custom Action
+
+Performs a custom action defined by the user.
+
+No properties available.
 
 ---

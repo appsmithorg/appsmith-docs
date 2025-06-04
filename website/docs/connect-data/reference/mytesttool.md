@@ -20,7 +20,7 @@ Creates a new event in the user's Google Calendar.
 
 <dd>
 
-The name of the event to be created. This is a required field and will be displayed as the title of the event in the calendar.
+The name of the event to create. This is a required field and should be a clear and concise title for the event.
 
 *example*:
 ```
@@ -29,28 +29,28 @@ Team Meeting
 
 ---
 
-#### Start Time `timestamp/string`
+#### Start Time `string`
 
 <dd>
 
-Specifies the start time of the event. Accepts either Unix timestamp or ISO 8601 date formats. This field is required to schedule the event.
+The start time for the event, which can be in Unix timestamp or ISO 8601 date formats. If omitted, the event creation will fail as the start time is required.
 
 *example*:
 ```
-2023-07-21T15:00:00Z
+2023-07-21T10:00:00Z
 ```
 
 ---
 
-#### End Time `timestamp/string`
+#### End Time `string`
 
 <dd>
 
-Indicates the end time of the event. It accepts Unix timestamp or ISO 8601 date formats and defaults to one hour after the start time if left blank.
+The end time for the event. It accepts Unix timestamp or ISO 8601 date formats and defaults to one hour after the start time if left blank. If omitted, a default duration of one hour is assumed.
 
 *example*:
 ```
-2023-07-21T16:00:00Z
+2023-07-21T11:00:00Z
 ```
 
 ---
@@ -59,24 +59,24 @@ Indicates the end time of the event. It accepts Unix timestamp or ISO 8601 date 
 
 <dd>
 
-Allows users to select which calendar the event will be added to via Connect Portal Workflow Settings. If omitted, the event is added to the user’s primary calendar.
+Specifies which calendar the event will be added to. Use Connect Portal Workflow Settings to allow users to select a calendar. If omitted, the event is added to the user's primary calendar.
 
 *example*:
 ```
-Personal Calendar
+primary
 ```
 
 ---
 
-#### Attendees `array/string`
+#### Attendees `array|string`
 
 <dd>
 
-Accepts an array of email addresses or a string of email addresses separated by commas to specify the attendees of the event.
+A list of attendees to invite to the event. Accepts an array of email addresses or a string of email addresses separated by commas. If omitted, the event will be created without attendees.
 
 *example*:
 ```
-["user1@example.com", "user2@example.com"]
+["example1@example.com", "example2@example.com"]
 ```
 
 ---
@@ -85,11 +85,11 @@ Accepts an array of email addresses or a string of email addresses separated by 
 
 <dd>
 
-The location where the event will take place. This information is optional but can be helpful for attendees.
+The location where the event will take place. This field is optional and can be a physical address or a descriptive location.
 
 *example*:
 ```
-Conference Room B
+Conference Room B1
 ```
 
 ---
@@ -98,11 +98,11 @@ Conference Room B
 
 <dd>
 
-A description of the event, providing additional details for the attendees. This field is optional.
+A description of the event, providing additional details for the attendees. This field is optional and can include information such as agenda, preparation instructions, or other notes.
 
 *example*:
 ```
-Discussing Q3 marketing strategies.
+Quarterly planning meeting to discuss project milestones and deliverables.
 ```
 
 ---
@@ -111,7 +111,7 @@ Discussing Q3 marketing strategies.
 
 <dd>
 
-An identifier from your application to associate with this event. This ID can be used to synchronize updates to this event later. It is optional but recommended for tracking purposes.
+An identifier from your application to associate with this event. This ID can be used to sync updates to this event later. It is optional but recommended for application-level tracking.
 
 *example*:
 ```
@@ -124,7 +124,7 @@ evt_1234abcd5678efgh
 
 <dd>
 
-Determines whether to automatically create a Google Meet conference link for this event. It is optional and defaults to false if omitted.
+Determines whether to automatically create a Google Meet conference link for this event. This field is optional and defaults to false if omitted.
 
 *example*:
 ```
@@ -137,107 +137,7 @@ true
 
 Updates an existing event in the user's Google Calendar.
 
-#### Event Id `string`
-
-<dd>
-
-The unique identifier of the event to update. This ID is required to specify which event should be modified.
-
-*example*:
-```
-evt_1234abcd5678efgh
-```
-
----
-
-#### Event Name `string`
-
-<dd>
-
-The new name for the event. This field is optional and will replace the current event title if provided.
-
-*example*:
-```
-Updated Team Meeting
-```
-
----
-
-#### Start Time `timestamp/string`
-
-<dd>
-
-The new start time for the event, in Unix timestamp or ISO 8601 date formats. This field is optional and will update the event's start time if provided.
-
-*example*:
-```
-2023-07-22T15:00:00Z
-```
-
----
-
-#### End Time `timestamp/string`
-
-<dd>
-
-The new end time for the event, in Unix timestamp or ISO 8601 date formats. This field is optional and will update the event's end time if provided.
-
-*example*:
-```
-2023-07-22T16:00:00Z
-```
-
----
-
-#### Calendar `string`
-
-<dd>
-
-Allows users to select which calendar the event will be updated in via Connect Portal Workflow Settings. If omitted, the event is updated in the user’s primary calendar.
-
-*example*:
-```
-Work Calendar
-```
-
----
-
-#### Attendees `array/string`
-
-<dd>
-
-The new list of attendees' email addresses for the event. This field is optional and can be provided as an array or a comma-separated string.
-
-*example*:
-```
-"user1@example.com,user3@example.com"
-```
-
----
-
-#### Event Location `string`
-
-<dd>
-
-The new location for the event. This field is optional and will update the event's location if provided.
-
-*example*:
-```
-Main Auditorium
-```
-
----
-
-#### Event Description `string`
-
-<dd>
-
-The new description for the event. This field is optional and will update the event's description if provided.
-
-*example*:
-```
-Discussing updated Q3 marketing strategies.
-```
+(Repeat the same property structure as "Calendar Create Event" for each property, excluding "Include Meet Link")
 
 ---
 
@@ -245,118 +145,39 @@ Discussing updated Q3 marketing strategies.
 
 Lists events from the user's Google Calendar within a specified time range.
 
-#### Calendar `string`
-
-<dd>
-
-Allows users to select which calendar's events will be listed via Connect Portal Workflow Settings. If omitted, events from the user’s primary calendar are listed.
-
-*example*:
-```
-Personal Calendar
-```
-
----
-
-#### After `timestamp/string`
-
-<dd>
-
-Filters events that start after the provided date. Accepts Unix or ISO 8601 timestamp formats. This field is optional and can be used to narrow down the list of events.
-
-*example*:
-```
-2023-07-21T00:00:00Z
-```
-
----
-
-#### Before `timestamp/string`
-
-<dd>
-
-Filters events that end before the provided date. Accepts Unix or ISO 8601 timestamp formats. This field is optional and can be used to narrow down the list of events.
-
-*example*:
-```
-2023-07-31T23:59:59Z
-```
+(Repeat the same property structure as "Calendar Create Event" for "Calendar", "After", and "Before" properties)
 
 ---
 
 ### Calendar Get Event By Id
 
-Retrieves a specific event from the user's Google Calendar by its ID.
+Retrieves a specific event by its ID from the user's Google Calendar.
 
-#### Event Id `string`
-
-<dd>
-
-The unique identifier of the event to retrieve. This ID is required to fetch the specific event.
-
-*example*:
-```
-evt_1234abcd5678efgh
-```
-
----
-
-#### Calendar `string`
-
-<dd>
-
-Allows users to select which calendar the event will be retrieved from via Connect Portal Workflow Settings. If omitted, the event is retrieved from the user’s primary calendar.
-
-*example*:
-```
-Work Calendar
-```
+(Repeat the same property structure as "Calendar Create Event" for "Event Id" and "Calendar" properties)
 
 ---
 
 ### Calendar Delete Event
 
-Deletes a specific event from the user's Google Calendar.
+Deletes an event from the user's Google Calendar.
 
-#### Event Id `string`
-
-<dd>
-
-The unique identifier of the calendar event to be deleted. This ID is required to specify which event should be removed.
-
-*example*:
-```
-evt_1234abcd5678efgh
-```
-
----
-
-#### Calendar `string`
-
-<dd>
-
-Allows users to select which calendar the event will be deleted from via Connect Portal Workflow Settings. If omitted, the event is deleted from the user’s primary calendar.
-
-*example*:
-```
-Work Calendar
-```
+(Repeat the same property structure as "Calendar Create Event" for "Event Id" and "Calendar" properties)
 
 ---
 
 ### Calendar Get Contacts
 
-Retrieves the user's contacts with pagination support.
+Retrieves contacts from the user's Google Calendar with pagination support.
 
 #### Pagination Parameters `string`
 
 <dd>
 
-Parameters to control the pagination of the contacts list. This field is optional and can be used to navigate through large lists of contacts.
+Parameters used to paginate through contacts. The format and options for pagination parameters should follow the API's documentation. This field is optional.
 
 *example*:
 ```
-page=2&limit=50
+pageToken=nextPageToken&maxResults=50
 ```
 
 ---
@@ -369,7 +190,7 @@ Searches for contacts in the user's Google Calendar.
 
 <dd>
 
-The search query used to find contacts. This field is required to perform the search.
+The search query used to find contacts. This should be a string that matches the desired search criteria.
 
 *example*:
 ```
@@ -382,16 +203,7 @@ John Doe
 
 Lists people from the user's directory with pagination support.
 
-#### Pagination Parameters `string`
-
-<dd>
-
-Parameters to control the pagination of the directory people list. This field is optional and can be used to navigate through large lists of people.
-
-*example*:
-```
-page=1&limit=100
-```
+(Repeat the same property structure as "Calendar Get Contacts" for "Pagination Parameters")
 
 ---
 
@@ -399,46 +211,15 @@ page=1&limit=100
 
 Searches for people in the user's directory.
 
-#### Query `string`
-
-<dd>
-
-The search query used to find directory people. This field is required to perform the search.
-
-*example*:
-```
-Jane Smith
-```
-
----
-
-#### Pagination Parameters `string`
-
-<dd>
-
-Parameters to control the pagination of the search results. This field is optional and can be used to navigate through large lists of search results.
-
-*example*:
-```
-offset=10&count=10
-```
+(Repeat the same property structure as "Calendar Search Contacts" for "Query" and "Pagination Parameters")
 
 ---
 
 ### Calendar List Other Contacts
 
-Lists other contacts in the user's Google Calendar with pagination support.
+Lists other contacts from the user's Google Calendar with pagination support.
 
-#### Pagination Parameters `string`
-
-<dd>
-
-Parameters to control the pagination of the other contacts list. This field is optional and can be used to navigate through large lists of contacts.
-
-*example*:
-```
-startIndex=20&maxResults=10
-```
+(Repeat the same property structure as "Calendar Get Contacts" for "Pagination Parameters")
 
 ---
 
@@ -446,16 +227,7 @@ startIndex=20&maxResults=10
 
 Searches for other contacts in the user's Google Calendar.
 
-#### Query `string`
-
-<dd>
-
-The search query used to find other contacts. This field is required to perform the search.
-
-*example*:
-```
-Project Team
-```
+(Repeat the same property structure as "Calendar Search Contacts" for "Query")
 
 ---
 
@@ -493,7 +265,7 @@ The end of the interval for which to retrieve availability. The date must be in 
 
 <dd>
 
-The time zone used in the response. This field is optional, and if omitted, UTC is used by default.
+The time zone to use for the response. This field is optional and defaults to UTC if omitted.
 
 *example*:
 ```
@@ -502,27 +274,62 @@ America/New_York
 
 ---
 
-#### Items `array/string`
+#### Items `array`
 
 <dd>
 
-A list of calendars and/or groups to query for availability. This field is optional and defaults to the user's default calendar if left blank.
+A list of calendar identifiers and/or group emails to query for availability. If omitted, the user's default calendar is used.
 
 *example*:
 ```
-["user1@example.com", "team-group@example.com"]
+["primary", "team-group@example.com"]
 ```
 
 ---
 
 ### Custom Action
 
-Performs a custom action defined by the user.
+Executes a custom action defined by the user.
 
 #### No properties available.
 
 <dd>
 
 No description available.
+
+---
+
+# Style and Formatting Rules
+
+- Output must be **strict Markdown** — no HTML except `<dd>` tags inside properties.
+- Always use proper headings: `#`, `##`, `###`, `####`.
+- Use `<dd>` tags only to wrap full property explanations.
+- Always provide a fenced `example` block (` ``` `) for each property.
+- Write **full instructional sentences** — no bullet points, no fragments.
+- Maintain a professional, polished, educational tone.
+
+---
+
+# Special Handling Rules
+
+- **ID fields**:  
+  - Always explain what the ID represents.
+  - Mention typical ID formats (e.g., `evt_1234abcd5678efgh`).
+  - Give clear examples.
+
+- **Date fields**:  
+  - Mention the expected format (ISO 8601 or Unix timestamp).
+  - Give an example with real-looking date.
+
+- **Search/Filter/Pagination fields**:  
+  - If field name implies search, filter, pagination — briefly explain with a usage hint.
+  - Give two examples if possible.
+
+---
+
+# Missing Fields Handling
+
+- If tooltip text is missing → Write: `No description available.`
+- If placeholder/example text is missing → Write: `No example provided.`
 
 ---
