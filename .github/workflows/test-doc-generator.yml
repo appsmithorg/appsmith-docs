@@ -22,10 +22,6 @@ jobs:
         # Fetch depth 0 to get all history needed for base branch detection by create-pull-request
         fetch-depth: 0
 
-    # No need for exclusion list step if not used
-    # - name: Create exclusion list
-    #   run: echo > saas_exclusions.txt
-
     - name: Ensure scripts directory and tracking files exist
       run: |
         mkdir -p scripts
@@ -83,7 +79,7 @@ jobs:
         MODIFIED_FILES_LIST="modified_files.tmp"
         touch $MODIFIED_FILES_LIST
         echo "--- Checking for Modifications ---" >&2 # Debug output to stderr
-        while IFS=$ '\t' read -r FILE_NAME FILE_SHA; do
+        while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
           # Check if the file is listed in processed_files.txt (meaning it's not new)
           if grep -q -x -F "$FILE_NAME" scripts/processed_files.txt; then
             PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
@@ -148,12 +144,12 @@ jobs:
               continue # Skip this file if download fails
           fi
 
-          # Find the SHA for the current file from the fetched list
-          FILE_SHA_LINE=$(grep -F "$FILE_NAME"$ '\t' latest_files_with_sha.txt)
-          if [ -z "$FILE_SHA_LINE" ]; then
-            echo "Warning: Could not find SHA for $FILE_NAME in latest_files_with_sha.txt. Skipping hash update." >&2
+          # Find the SHA for the current file using awk (more robust than grep+cut)
+          FILE_SHA=$(awk -F'\t' -v filename="$FILE_NAME" '$1 == filename { print $2; exit }' latest_files_with_sha.txt)
+
+          if [ -z "$FILE_SHA" ]; then
+            echo "Warning: Could not find SHA for '$FILE_NAME' in latest_files_with_sha.txt. Skipping hash update." >&2
           else
-            FILE_SHA=$(echo "$FILE_SHA_LINE" | cut -f2)
             echo "Updating hash for $FILE_NAME to $FILE_SHA"
             # Update the hash in our JSON object
             HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
