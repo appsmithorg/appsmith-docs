@@ -14,7 +14,7 @@ The following section provides a **reference guide** describing available comman
 
 ### Calendar Create Event
 
-Creates a new event in the user's calendar.
+Creates a new event in the user's Google Calendar.
 
 #### Event Name `string`
 
@@ -23,34 +23,34 @@ Creates a new event in the user's calendar.
 The name of the event to be created. This is a required field and will be displayed as the title of the event in the calendar.
 
 *example*:
-```markdown
-Team Meeting
+```
+Board Meeting
 ```
 
 ---
 
-#### Start Time `timestamp or ISO8601`
+#### Start Time `string`
 
 <dd>
 
-The starting time of the event. This property accepts either Unix timestamp or ISO 8601 date formats. If omitted, the event will not be created as the start time is required.
+Specifies the start time of the event. Accepts either Unix timestamp or ISO 8601 date formats. This field is required to schedule the event.
 
 *example*:
-```markdown
-2023-07-21T10:00:00Z
+```
+2023-05-10T09:00:00Z
 ```
 
 ---
 
-#### End Time `timestamp or ISO8601`
+#### End Time `string`
 
 <dd>
 
-The ending time of the event. Similar to the start time, this property accepts Unix timestamp or ISO 8601 date formats. If left blank, the event duration defaults to one hour after the start time.
+Indicates the end time of the event. If left blank, it defaults to one hour after the start time. Accepts Unix timestamp or ISO 8601 date formats.
 
 *example*:
-```markdown
-2023-07-21T11:00:00Z
+```
+2023-05-10T10:00:00Z
 ```
 
 ---
@@ -59,24 +59,24 @@ The ending time of the event. Similar to the start time, this property accepts U
 
 <dd>
 
-The identifier of the calendar where the event will be added. Users can select which calendar to use through Connect Portal Workflow Settings. If left blank, the event is added to the user’s primary calendar by default.
+Allows users to select which calendar to add the event to via Connect Portal Workflow Settings. If left blank, the event is added to the user’s primary calendar.
 
 *example*:
-```markdown
-primary
+```
+Work Calendar
 ```
 
 ---
 
-#### Attendees `array of strings or comma-separated string`
+#### Attendees `array`
 
 <dd>
 
-A list of attendees to be invited to the event. This property accepts an array of email addresses or a single string of email addresses separated by commas.
+Accepts an array of email addresses or a string of email addresses separated by commas to specify the attendees of the event.
 
 *example*:
-```markdown
-["example1@example.com", "example2@example.com"]
+```
+["jane.doe@example.com", "john.smith@example.com"]
 ```
 
 ---
@@ -85,10 +85,10 @@ A list of attendees to be invited to the event. This property accepts an array o
 
 <dd>
 
-The location where the event will take place. This is an optional field and can be used to specify a physical location or an online meeting link.
+The location where the event will take place. This can be a physical address or a descriptive location name.
 
 *example*:
-```markdown
+```
 Conference Room B
 ```
 
@@ -98,11 +98,11 @@ Conference Room B
 
 <dd>
 
-A description of the event. This field can contain details about the event, such as an agenda or other important information.
+A description of the event, providing additional details to attendees.
 
 *example*:
-```markdown
-Quarterly business review meeting.
+```
+Discuss quarterly sales targets and strategies.
 ```
 
 ---
@@ -111,10 +111,10 @@ Quarterly business review meeting.
 
 <dd>
 
-A unique identifier from your application to associate with this event. This ID can be used later to sync updates to this event. It is an optional field but recommended for application-level tracking.
+An identifier from your application to associate with this event. This ID can be used to sync updates to this event later. It is optional and should be unique.
 
 *example*:
-```markdown
+```
 evt_1234abcd5678efgh
 ```
 
@@ -127,7 +127,7 @@ evt_1234abcd5678efgh
 Determines whether to automatically create a Google Meet conference link for the event. This is an optional field.
 
 *example*:
-```markdown
+```
 true
 ```
 
@@ -135,16 +135,16 @@ true
 
 ### Calendar Update Event
 
-Updates an existing event in the user's calendar.
+Updates an existing event in the user's Google Calendar.
 
 #### Event Id `string`
 
 <dd>
 
-The unique identifier of the event to be updated. This ID is required to specify which event will be modified.
+The unique identifier of the event to be updated. This is a required field to specify which event should be modified.
 
 *example*:
-```markdown
+```
 evt_1234abcd5678efgh
 ```
 
@@ -154,37 +154,37 @@ evt_1234abcd5678efgh
 
 <dd>
 
-The new name for the event. If provided, it will replace the existing event name.
+The updated name of the event. If provided, it will replace the current event title.
 
 *example*:
-```markdown
-Updated Team Meeting
+```
+Annual General Meeting
 ```
 
 ---
 
-#### Start Time `timestamp or ISO8601`
+#### Start Time `string`
 
 <dd>
 
-The new start time for the event. Accepts Unix timestamp or ISO 8601 date formats. If provided, it will replace the existing start time.
+Specifies the updated start time of the event. Accepts either Unix timestamp or ISO 8601 date formats.
 
 *example*:
-```markdown
-2023-07-21T10:30:00Z
+```
+2023-06-15T14:00:00Z
 ```
 
 ---
 
-#### End Time `timestamp or ISO8601`
+#### End Time `string`
 
 <dd>
 
-The new end time for the event. If provided, it will replace the existing end time or default to one hour after the new start time if left blank.
+Indicates the updated end time of the event. If left blank, it defaults to one hour after the start time. Accepts Unix timestamp or ISO 8601 date formats.
 
 *example*:
-```markdown
-2023-07-21T11:30:00Z
+```
+2023-06-15T15:00:00Z
 ```
 
 ---
@@ -193,24 +193,24 @@ The new end time for the event. If provided, it will replace the existing end ti
 
 <dd>
 
-The identifier of the calendar where the event is located. If provided, it allows specifying a different calendar than the one where the event currently resides.
+Allows users to select which calendar to update the event in via Connect Portal Workflow Settings. If left blank, the event is updated in the user’s primary calendar.
 
 *example*:
-```markdown
-secondary
+```
+Personal Calendar
 ```
 
 ---
 
-#### Attendees `array of strings or comma-separated string`
+#### Attendees `array`
 
 <dd>
 
-The new list of attendees for the event. If provided, it will replace the existing list of attendees.
+Accepts an updated array of email addresses or a string of email addresses separated by commas to specify the attendees of the event.
 
 *example*:
-```markdown
-["example3@example.com", "example4@example.com"]
+```
+["jane.doe@example.com", "john.smith@example.com"]
 ```
 
 ---
@@ -219,10 +219,10 @@ The new list of attendees for the event. If provided, it will replace the existi
 
 <dd>
 
-The new location for the event. If provided, it will replace the existing event location.
+The updated location where the event will take place.
 
 *example*:
-```markdown
+```
 Main Auditorium
 ```
 
@@ -232,53 +232,53 @@ Main Auditorium
 
 <dd>
 
-The new description for the event. If provided, it will replace the existing event description.
+The updated description of the event, providing additional details to attendees.
 
 *example*:
-```markdown
-Updated agenda for the quarterly business review meeting.
+```
+Review of yearly performance and future roadmap.
 ```
 
 ---
 
 ### Calendar List Events
 
-Lists events from the user's calendar within a specified time range.
+Lists events from the user's Google Calendar within a specified time range.
 
 #### Calendar `string`
 
 <dd>
 
-The identifier of the calendar from which to list events. If left blank, events from the user’s primary calendar are listed.
+Allows users to select which calendar to list events from via Connect Portal Workflow Settings. If left blank, events are listed from the user’s primary calendar.
 
 *example*:
-```markdown
-primary
+```
+Family Calendar
 ```
 
 ---
 
-#### After `timestamp or ISO8601`
+#### After `string`
 
 <dd>
 
-Filters events to only include those that start after the provided date. Accepts Unix timestamp or ISO 8601 date formats.
+Filters events that start after the provided date. Accepts either Unix timestamp or ISO 8601 date formats.
 
 *example*:
-```markdown
-2023-07-21T00:00:00Z
+```
+2023-07-01T00:00:00Z
 ```
 
 ---
 
-#### Before `timestamp or ISO8601`
+#### Before `string`
 
 <dd>
 
-Filters events to only include those that end before the provided date. Accepts Unix timestamp or ISO 8601 date formats.
+Filters events that end before the provided date. Accepts either Unix timestamp or ISO 8601 date formats.
 
 *example*:
-```markdown
+```
 2023-07-31T23:59:59Z
 ```
 
@@ -286,16 +286,16 @@ Filters events to only include those that end before the provided date. Accepts 
 
 ### Calendar Get Event By Id
 
-Retrieves a specific event by its ID from the user's calendar.
+Retrieves a specific event from the user's Google Calendar using its unique identifier.
 
 #### Event Id `string`
 
 <dd>
 
-The unique identifier of the event to retrieve. This ID is required to specify which event to fetch.
+The unique identifier of the event to be retrieved. This is a required field.
 
 *example*:
-```markdown
+```
 evt_1234abcd5678efgh
 ```
 
@@ -305,27 +305,27 @@ evt_1234abcd5678efgh
 
 <dd>
 
-The identifier of the calendar from which to retrieve the event. If left blank, the event is retrieved from the user’s primary calendar.
+Allows users to select which calendar to retrieve the event from via Connect Portal Workflow Settings. If left blank, the event is retrieved from the user’s primary calendar.
 
 *example*:
-```markdown
-primary
+```
+Team Calendar
 ```
 
 ---
 
 ### Calendar Delete Event
 
-Deletes a specific event from the user's calendar.
+Deletes a specific event from the user's Google Calendar.
 
 #### Event Id `string`
 
 <dd>
 
-The unique identifier of the event to be deleted. This ID is required to specify which event to remove.
+The unique identifier of the event to be deleted. This is a required field.
 
 *example*:
-```markdown
+```
 evt_1234abcd5678efgh
 ```
 
@@ -335,35 +335,35 @@ evt_1234abcd5678efgh
 
 <dd>
 
-The identifier of the calendar from which to delete the event. If left blank, the event is deleted from the user’s primary calendar.
+Allows users to select which calendar to delete the event from via Connect Portal Workflow Settings. If left blank, the event is deleted from the user’s primary calendar.
 
 *example*:
-```markdown
-primary
+```
+Project Calendar
 ```
 
 ---
 
 ### Calendar Get Contacts
 
-Retrieves a list of contacts with pagination support.
+Retrieves contacts from the user's Google Calendar with pagination support.
 
 #### Pagination Parameters `string`
 
 <dd>
 
-Parameters used to paginate through contacts. This field may include page tokens or other pagination-related data.
+Parameters to control the pagination of contacts. This field is required to navigate through the list of contacts.
 
 *example*:
-```markdown
-pageToken=nextPage123
+```
+pageToken=nextPageToken&maxResults=50
 ```
 
 ---
 
 ### Calendar Search Contacts
 
-Searches for contacts based on a query.
+Searches for contacts within the user's Google Calendar.
 
 #### Query `string`
 
@@ -372,7 +372,7 @@ Searches for contacts based on a query.
 The search query used to find contacts. This field is required to perform the search.
 
 *example*:
-```markdown
+```
 John Doe
 ```
 
@@ -386,27 +386,27 @@ Lists people from the user's directory with pagination support.
 
 <dd>
 
-Parameters used to paginate through directory people. This field may include page tokens or other pagination-related data.
+Parameters to control the pagination of directory people. This field is required to navigate through the list of people.
 
 *example*:
-```markdown
-pageToken=nextPage123
+```
+pageToken=nextPageToken&maxResults=50
 ```
 
 ---
 
 ### Calendar Search Directory People
 
-Searches for people in the user's directory based on a query.
+Searches for people within the user's directory.
 
 #### Query `string`
 
 <dd>
 
-The search query used to find people in the directory. This field is required to perform the search.
+The search query used to find directory people. This field is required to perform the search.
 
 *example*:
-```markdown
+```
 Jane Smith
 ```
 
@@ -416,35 +416,35 @@ Jane Smith
 
 <dd>
 
-Parameters used to paginate through the search results in the directory. This field may include page tokens or other pagination-related data.
+Parameters to control the pagination of the search results. This field is required to navigate through the list of search results.
 
 *example*:
-```markdown
-pageToken=nextPage456
+```
+pageToken=nextPageToken&maxResults=50
 ```
 
 ---
 
 ### Calendar List Other Contacts
 
-Lists other contacts with pagination support.
+Lists other contacts from the user's Google Calendar with pagination support.
 
 #### Pagination Parameters `string`
 
 <dd>
 
-Parameters used to paginate through other contacts. This field may include page tokens or other pagination-related data.
+Parameters to control the pagination of other contacts. This field is required to navigate through the list of contacts.
 
 *example*:
-```markdown
-pageToken=nextPage789
+```
+pageToken=nextPageToken&maxResults=50
 ```
 
 ---
 
 ### Calendar Search Other Contacts
 
-Searches for other contacts based on a query.
+Searches for other contacts within the user's Google Calendar.
 
 #### Query `string`
 
@@ -453,38 +453,38 @@ Searches for other contacts based on a query.
 The search query used to find other contacts. This field is required to perform the search.
 
 *example*:
-```markdown
-Acme Corporation
+```
+Doe Enterprises
 ```
 
 ---
 
 ### Calendar Get Availability
 
-Retrieves the availability of calendars and/or groups within a specified time interval.
+Retrieves the availability of calendars and/or groups within a specified time range.
 
-#### Time Min `ISO8601`
+#### Time Min `string`
 
 <dd>
 
-The start of the interval for which to get availability. This field must be in ISO 8601 format and is required.
+The start of the interval for which to retrieve availability. Must be in ISO 8601 format.
 
 *example*:
-```markdown
-2023-07-21T09:00:00Z
+```
+2023-08-10T09:00:00Z
 ```
 
 ---
 
-#### Time Max `ISO8601`
+#### Time Max `string`
 
 <dd>
 
-The end of the interval for which to get availability. This field must be in ISO 8601 format and is required.
+The end of the interval for which to retrieve availability. Must be in ISO 8601 format.
 
 *example*:
-```markdown
-2023-07-21T17:00:00Z
+```
+2023-08-10T17:00:00Z
 ```
 
 ---
@@ -493,31 +493,31 @@ The end of the interval for which to get availability. This field must be in ISO
 
 <dd>
 
-The time zone to use for the availability response. This field is optional, with UTC being the default if not specified.
+The time zone used in the response. If omitted, UTC is used by default. This field is optional.
 
 *example*:
-```markdown
+```
 America/New_York
 ```
 
 ---
 
-#### Items `array of strings`
+#### Items `array`
 
 <dd>
 
-A list of calendar identifiers and/or group emails to query for availability. If left blank, the user's default calendar is queried.
+A list of calendars and/or groups to query for availability. If left blank, the user's default calendar is used.
 
 *example*:
-```markdown
-["primary", "team-group@example.com"]
+```
+["primary", "team@company.com"]
 ```
 
 ---
 
 ### Custom Action
 
-Executes a custom action within the integration.
+Executes a custom action defined by the user.
 
 #### No properties available.
 
@@ -526,7 +526,7 @@ Executes a custom action within the integration.
 No description available.
 
 *example*:
-```markdown
+```
 No example provided.
 ```
 
