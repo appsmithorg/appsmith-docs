@@ -66,12 +66,23 @@ jobs:
       run: |
         echo "Identifying changes against branch: ${{ github.event.inputs.target_branch }}"
         # Read tracking files FROM THE CHECKED-OUT BRANCH
-        PREV_HASHES=$(cat scripts/file_hashes.json)
-        # Ensure processed_files.txt exists before sorting
-        [ -f scripts/processed_files.txt ] || touch scripts/processed_files.txt
+        PREV_HASHES_JSON_FILE="scripts/file_hashes.json"
+        PROCESSED_FILES_LIST_FILE="scripts/processed_files.txt"
+
+        # Ensure tracking files exist
+        [ -f "$PROCESSED_FILES_LIST_FILE" ] || touch "$PROCESSED_FILES_LIST_FILE"
+        if ! [ -f "$PREV_HASHES_JSON_FILE" ]; then 
+          echo "{}" > "$PREV_HASHES_JSON_FILE"
+        fi
+        # Validate JSON structure
+        if ! jq -e '.' "$PREV_HASHES_JSON_FILE" > /dev/null; then
+          echo "Error: $PREV_HASHES_JSON_FILE is not valid JSON. Resetting to empty object."
+          echo "{}" > "$PREV_HASHES_JSON_FILE"
+        fi
+        PREV_HASHES=$(cat "$PREV_HASHES_JSON_FILE")
 
         # Find files present in latest_files.txt but not in processed_files.txt
-        comm -23 <(sort latest_files.txt) <(sort scripts/processed_files.txt) > new_files.tmp || true
+        comm -23 <(sort latest_files.txt) <(sort "$PROCESSED_FILES_LIST_FILE") > new_files.tmp || true
         echo "--- New Files ---"
         cat new_files.tmp
         echo "-----------------"
@@ -81,12 +92,18 @@ jobs:
         echo "--- Checking for Modifications ---" >&2 # Debug output to stderr
         while IFS=$'\t' read -r FILE_NAME FILE_SHA; do
           # Check if the file is listed in processed_files.txt (meaning it's not new)
-          if grep -q -x -F "$FILE_NAME" scripts/processed_files.txt; then
-            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.["$file"] // ""')
-            echo "Checking: $FILE_NAME, Current SHA: $FILE_SHA, Previous SHA: $PREV_SHA" >&2
+          if grep -q -x -F "$FILE_NAME" "$PROCESSED_FILES_LIST_FILE"; then
+            # *** Corrected jq command to fetch previous SHA ***
+            PREV_SHA=$(echo "$PREV_HASHES" | jq -r --arg file "$FILE_NAME" '.[$file] // ""')
+            echo "Checking: '$FILE_NAME', Current SHA: '$FILE_SHA', Previous SHA: '$PREV_SHA'" >&2
+            # Check if PREV_SHA is not empty and differs from current FILE_SHA
             if [ -n "$PREV_SHA" ] && [ "$PREV_SHA" != "$FILE_SHA" ]; then
               echo "$FILE_NAME" >> $MODIFIED_FILES_LIST
               echo "  -> Marked as modified." >&2
+            elif [ -z "$PREV_SHA" ]; then
+              # If file is in processed_files.txt but NOT in file_hashes.json, treat as modified (edge case)
+              echo "  -> Warning: File '$FILE_NAME' was processed but hash missing. Marking as modified." >&2
+              echo "$FILE_NAME" >> $MODIFIED_FILES_LIST
             fi
           fi
         done < latest_files_with_sha.txt
@@ -152,7 +169,7 @@ jobs:
           else
             echo "Updating hash for $FILE_NAME to $FILE_SHA"
             # Update the hash in our JSON object
-            HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.["$file"] = $sha')
+            HASHES_JSON=$(echo "$HASHES_JSON" | jq --arg file "$FILE_NAME" --arg sha "$FILE_SHA" '.[$file] = $sha')
           fi
 
           # --- OpenAI Processing Start ---
