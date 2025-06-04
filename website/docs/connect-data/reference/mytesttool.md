@@ -1,478 +1,533 @@
-# Asana Integration
+# Google Calendar Integration
 
-This page provides information on how to connect to Asana. It enables users to perform actions such as creating tasks, managing projects, and organizing teamwork.
+This page provides information on how to connect to Google Calendar. It enables users to perform actions such as creating events, managing contacts, checking availability.
 
-## Connect Asana
+## Connect Google Calendar
 
 Explain how to authenticate and connect to this service securely.
 
-## Query Asana
+## Query Google Calendar
 
 The following section provides a **reference guide** describing available commands and their parameters.
 
 ---
 
-### Create Comment
+### Calendar Create Event
 
-Creates a new comment on a specified task.
+Creates a new event in the user's calendar.
 
-#### Task `string`
+#### Event Name `string`
 
+<dd>
 
-
-The Task ID is a unique identifier for the task where the comment will be added. The comment will be authored by the currently authenticated user. The Task ID is typically in the format of a numeric string.
-
-*example*:
-```
-1234567890
-```
-
-#### Text `string`
-
-
-
-The Text property represents the content of the comment to be added to the task. It should be a clear and concise message.
+The name of the event to be created. This is a required field and will be displayed as the title of the event in the calendar.
 
 *example*:
-```
-"This is a comment."
+```markdown
+Team Meeting
 ```
 
 ---
 
-### Create Project
+#### Start Time `timestamp or ISO8601`
 
-Creates a new project within a workspace or team.
+<dd>
 
-#### Name `string`
-
-
-
-The Name property specifies the name of the new project. It should be a descriptive title that clearly identifies the project's purpose or scope.
+The starting time of the event. This property accepts either Unix timestamp or ISO 8601 date formats. If omitted, the event will not be created as the start time is required.
 
 *example*:
-```
-"Stuff to buy"
-```
-
-#### Workspace `string`
-
-
-
-The Workspace property allows users to select which Workspace to create the project in. If left blank, it defaults to the user’s first Workspace. The Workspace ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"1122334455"
-```
-
-#### Team `string`
-
-
-
-The Team property allows users to select which Team to share the project with. If left blank, it defaults to the user’s first Team. The Team ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"6677889900"
-```
-
-#### Notes `string`
-
-
-
-The Notes property allows you to add additional information or context about the project. This could include objectives, requirements, or any other details relevant to the project.
-
-*example*:
-```
-"These are things we need to purchase."
+```markdown
+2023-07-21T10:00:00Z
 ```
 
 ---
 
-### Get Projects
+#### End Time `timestamp or ISO8601`
 
-Retrieves a list of projects, with options to filter by archived status.
+<dd>
 
-#### Archived `string`
-
-
-
-The Archived property lets you filter the projects list based on their archival status. Choose 'Yes' to show only archived projects, 'No' to display only active projects, and 'The Default' to show both archived and active projects.
+The ending time of the event. Similar to the start time, this property accepts Unix timestamp or ISO 8601 date formats. If left blank, the event duration defaults to one hour after the start time.
 
 *example*:
-```
-"Yes"
+```markdown
+2023-07-21T11:00:00Z
 ```
 
 ---
 
-### Get Project By Id
+#### Calendar `string`
 
-Retrieves a specific project by its ID.
+<dd>
 
-#### Project Filter Id `string`
-
-
-
-The Project Filter ID is the unique identifier for the project you wish to retrieve. The Project ID is typically in the format of a numeric string.
+The identifier of the calendar where the event will be added. Users can select which calendar to use through Connect Portal Workflow Settings. If left blank, the event is added to the user’s primary calendar by default.
 
 *example*:
-```
-"1234567890"
+```markdown
+primary
 ```
 
 ---
 
-### Create Task
+#### Attendees `array of strings or comma-separated string`
 
-Creates a new task within a workspace or project.
+<dd>
 
-#### Name `string`
-
-
-
-The Name property specifies the name of the new task. It should be a descriptive title that clearly identifies the task's purpose or scope.
+A list of attendees to be invited to the event. This property accepts an array of email addresses or a single string of email addresses separated by commas.
 
 *example*:
-```
-"Task Name"
-```
-
-#### Workspace `string`
-
-
-
-The Workspace property allows users to select which Workspace to create the task in. If left blank, it defaults to the user’s first Workspace. The Workspace ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"1122334455"
-```
-
-#### Project `string`
-
-
-
-The Project property allows users to select which Project to create the task in. The Project ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"6677889900"
-```
-
-#### Notes `string`
-
-
-
-No description available.
-
-*example*:
-```
-"Task related notes."
-```
-
-#### Due On Date `date`
-
-
-
-The Due On property specifies the date on which the task is due. It cannot be used together with Due At. The expected format is ISO 8601.
-
-*example*:
-```
-"2023-07-20"
-```
-
-#### Due At Date `datetime`
-
-
-
-The Due At property specifies the exact date and time at which the task is due. It cannot be used together with Due On. The expected format is an ISO 8601 timestamp.
-
-*example*:
-```
-"2023-07-20T15:00:00Z"
-```
-
-#### Assignee `string`
-
-
-
-The Assignee property is the ID of the Asana user to whom the task will be assigned. The Assignee ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"9988776655"
-```
-
-#### Gid `string`
-
-
-
-The External ID (Gid) is an identifier from your application to associate with this task. This ID can be used to sync updates to this task later.
-
-*example*:
-```
-"ext_123456"
+```markdown
+["example1@example.com", "example2@example.com"]
 ```
 
 ---
 
-### Update Task
+#### Event Location `string`
 
-Updates an existing task with new information.
+<dd>
 
-#### Task Id `string`
-
-
-
-The Task ID is the unique identifier for the task that will be updated. The Task ID is typically in the format of a numeric string.
+The location where the event will take place. This is an optional field and can be used to specify a physical location or an online meeting link.
 
 *example*:
+```markdown
+Conference Room B
 ```
-"1234567890"
-```
 
-#### Complete Status `boolean`
+---
 
+#### Event Description `string`
 
+<dd>
 
-The Completed Status property indicates whether the task is completed or not. Set this to 'true' for completed or 'false' for incomplete.
+A description of the event. This field can contain details about the event, such as an agenda or other important information.
 
 *example*:
+```markdown
+Quarterly business review meeting.
 ```
+
+---
+
+#### Event Id `string`
+
+<dd>
+
+A unique identifier from your application to associate with this event. This ID can be used later to sync updates to this event. It is an optional field but recommended for application-level tracking.
+
+*example*:
+```markdown
+evt_1234abcd5678efgh
+```
+
+---
+
+#### Include Meet Link `boolean`
+
+<dd>
+
+Determines whether to automatically create a Google Meet conference link for the event. This is an optional field.
+
+*example*:
+```markdown
 true
 ```
 
-#### Name `string`
+---
 
+### Calendar Update Event
 
+Updates an existing event in the user's calendar.
 
-The Name property specifies the updated name of the task. It should be a descriptive title that clearly identifies the task's purpose or scope.
+#### Event Id `string`
 
-*example*:
-```
-"Updated Task Name"
-```
+<dd>
 
-#### Notes `string`
-
-
-
-No description available.
+The unique identifier of the event to be updated. This ID is required to specify which event will be modified.
 
 *example*:
-```
-"Updated task related notes."
-```
-
-#### Due On Date `date`
-
-
-
-The Due On property specifies the updated date on which the task is due. It cannot be used together with Due At. The expected format is ISO 8601.
-
-*example*:
-```
-"2023-08-15"
-```
-
-#### Due At Date `datetime`
-
-
-
-The Due At property specifies the updated exact date and time at which the task is due. It cannot be used together with Due On. The expected format is an ISO 8601 timestamp.
-
-*example*:
-```
-"2023-08-15T17:00:00Z"
-```
-
-#### Assignee `string`
-
-
-
-The Assignee property is the ID of the Asana user to whom the task will be reassigned. The Assignee ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"5566778899"
-```
-
-#### Gid `string`
-
-
-
-The External ID (Gid) is an identifier from your application to associate with this task. This ID can be used to sync updates to this task later.
-
-*example*:
-```
-"ext_789012"
+```markdown
+evt_1234abcd5678efgh
 ```
 
 ---
 
-### Get Tasks
+#### Event Name `string`
 
-Retrieves a list of tasks, with options to filter by workspace, project, assignee, and completion status.
+<dd>
 
-#### Workspace `string`
-
-
-
-The Workspace property is the ID of the Workspace to filter tasks on. The Workspace ID is typically a numeric or alphanumeric string.
+The new name for the event. If provided, it will replace the existing event name.
 
 *example*:
-```
-"1122334455"
-```
-
-#### Project `string`
-
-
-
-The Project property is the ID of the Project to filter tasks on. The Project ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"6677889900"
-```
-
-#### Assignee `string`
-
-
-
-The Assignee property is the ID of the assignee to filter tasks on. The Assignee ID is typically a numeric or alphanumeric string.
-
-*example*:
-```
-"9988776655"
-```
-
-#### Completed Since `datetime`
-
-
-
-The Completed Since property filters tasks to only return those that are either incomplete or that have been completed since this time. The expected format can be either ISO or Unix timestamp.
-
-*example*:
-```
-"2023-01-01T00:00:00Z"
+```markdown
+Updated Team Meeting
 ```
 
 ---
 
-### Get Tasks By Id
+#### Start Time `timestamp or ISO8601`
 
-Retrieves a specific task by its ID.
+<dd>
 
-#### Task Id `string`
-
-
-
-The Task ID is the unique identifier for the task you wish to retrieve. The Task ID is typically in the format of a numeric string.
+The new start time for the event. Accepts Unix timestamp or ISO 8601 date formats. If provided, it will replace the existing start time.
 
 *example*:
-```
-"1234567890"
+```markdown
+2023-07-21T10:30:00Z
 ```
 
 ---
 
-### Get Task By External Id
+#### End Time `timestamp or ISO8601`
 
-Retrieves a task associated with a specific external ID.
+<dd>
 
-#### Gid `string`
-
-
-
-The External ID (Gid) is the identifier that this task is associated or synced with, from your application.
+The new end time for the event. If provided, it will replace the existing end time or default to one hour after the new start time if left blank.
 
 *example*:
-```
-"ext_123456"
+```markdown
+2023-07-21T11:30:00Z
 ```
 
 ---
 
-### Add Task To Section
+#### Calendar `string`
 
-Adds an existing task to a specified section within a project.
+<dd>
 
-#### Section Id `string`
-
-
-
-The Section ID is the unique identifier for the section to which the task will be added. The Section ID is typically in the format of a numeric string.
+The identifier of the calendar where the event is located. If provided, it allows specifying a different calendar than the one where the event currently resides.
 
 *example*:
-```
-"2345678901"
-```
-
-#### Task Id `string`
-
-
-
-The Task ID is the unique identifier for the task that will be added to the section. The Task ID is typically in the format of a numeric string.
-
-*example*:
-```
-"3456789012"
-```
-
-#### Before Task Id `string`
-
-
-
-The Before Task ID is the identifier of a task in the section before which the specified task will be inserted. It cannot be used with After Task ID. The Before Task ID is typically in the format of a numeric string.
-
-*example*:
-```
-"4567890123"
-```
-
-#### After Task Id `string`
-
-
-
-The After Task ID is the identifier of a task in the section after which the specified task will be inserted. It cannot be used with Before Task ID. The After Task ID is typically in the format of a numeric string.
-
-*example*:
-```
-"5678901234"
+```markdown
+secondary
 ```
 
 ---
 
-### Get Teams
+#### Attendees `array of strings or comma-separated string`
 
-Retrieves a list of teams within a specified workspace.
+<dd>
 
-#### Workspace `string`
-
-
-
-The Workspace property is the ID of the workspace from which to return the teams visible to the authorized user. The Workspace ID is typically a numeric or alphanumeric string.
+The new list of attendees for the event. If provided, it will replace the existing list of attendees.
 
 *example*:
-```
-"1122334455"
+```markdown
+["example3@example.com", "example4@example.com"]
 ```
 
 ---
 
-### Get Workspaces
+#### Event Location `string`
 
-Retrieves a list of workspaces accessible to the authorized user.
+<dd>
 
-No properties available.
+The new location for the event. If provided, it will replace the existing event location.
+
+*example*:
+```markdown
+Main Auditorium
+```
+
+---
+
+#### Event Description `string`
+
+<dd>
+
+The new description for the event. If provided, it will replace the existing event description.
+
+*example*:
+```markdown
+Updated agenda for the quarterly business review meeting.
+```
+
+---
+
+### Calendar List Events
+
+Lists events from the user's calendar within a specified time range.
+
+#### Calendar `string`
+
+<dd>
+
+The identifier of the calendar from which to list events. If left blank, events from the user’s primary calendar are listed.
+
+*example*:
+```markdown
+primary
+```
+
+---
+
+#### After `timestamp or ISO8601`
+
+<dd>
+
+Filters events to only include those that start after the provided date. Accepts Unix timestamp or ISO 8601 date formats.
+
+*example*:
+```markdown
+2023-07-21T00:00:00Z
+```
+
+---
+
+#### Before `timestamp or ISO8601`
+
+<dd>
+
+Filters events to only include those that end before the provided date. Accepts Unix timestamp or ISO 8601 date formats.
+
+*example*:
+```markdown
+2023-07-31T23:59:59Z
+```
+
+---
+
+### Calendar Get Event By Id
+
+Retrieves a specific event by its ID from the user's calendar.
+
+#### Event Id `string`
+
+<dd>
+
+The unique identifier of the event to retrieve. This ID is required to specify which event to fetch.
+
+*example*:
+```markdown
+evt_1234abcd5678efgh
+```
+
+---
+
+#### Calendar `string`
+
+<dd>
+
+The identifier of the calendar from which to retrieve the event. If left blank, the event is retrieved from the user’s primary calendar.
+
+*example*:
+```markdown
+primary
+```
+
+---
+
+### Calendar Delete Event
+
+Deletes a specific event from the user's calendar.
+
+#### Event Id `string`
+
+<dd>
+
+The unique identifier of the event to be deleted. This ID is required to specify which event to remove.
+
+*example*:
+```markdown
+evt_1234abcd5678efgh
+```
+
+---
+
+#### Calendar `string`
+
+<dd>
+
+The identifier of the calendar from which to delete the event. If left blank, the event is deleted from the user’s primary calendar.
+
+*example*:
+```markdown
+primary
+```
+
+---
+
+### Calendar Get Contacts
+
+Retrieves a list of contacts with pagination support.
+
+#### Pagination Parameters `string`
+
+<dd>
+
+Parameters used to paginate through contacts. This field may include page tokens or other pagination-related data.
+
+*example*:
+```markdown
+pageToken=nextPage123
+```
+
+---
+
+### Calendar Search Contacts
+
+Searches for contacts based on a query.
+
+#### Query `string`
+
+<dd>
+
+The search query used to find contacts. This field is required to perform the search.
+
+*example*:
+```markdown
+John Doe
+```
+
+---
+
+### Calendar List Directory People
+
+Lists people from the user's directory with pagination support.
+
+#### Pagination Parameters `string`
+
+<dd>
+
+Parameters used to paginate through directory people. This field may include page tokens or other pagination-related data.
+
+*example*:
+```markdown
+pageToken=nextPage123
+```
+
+---
+
+### Calendar Search Directory People
+
+Searches for people in the user's directory based on a query.
+
+#### Query `string`
+
+<dd>
+
+The search query used to find people in the directory. This field is required to perform the search.
+
+*example*:
+```markdown
+Jane Smith
+```
+
+---
+
+#### Pagination Parameters `string`
+
+<dd>
+
+Parameters used to paginate through the search results in the directory. This field may include page tokens or other pagination-related data.
+
+*example*:
+```markdown
+pageToken=nextPage456
+```
+
+---
+
+### Calendar List Other Contacts
+
+Lists other contacts with pagination support.
+
+#### Pagination Parameters `string`
+
+<dd>
+
+Parameters used to paginate through other contacts. This field may include page tokens or other pagination-related data.
+
+*example*:
+```markdown
+pageToken=nextPage789
+```
+
+---
+
+### Calendar Search Other Contacts
+
+Searches for other contacts based on a query.
+
+#### Query `string`
+
+<dd>
+
+The search query used to find other contacts. This field is required to perform the search.
+
+*example*:
+```markdown
+Acme Corporation
+```
+
+---
+
+### Calendar Get Availability
+
+Retrieves the availability of calendars and/or groups within a specified time interval.
+
+#### Time Min `ISO8601`
+
+<dd>
+
+The start of the interval for which to get availability. This field must be in ISO 8601 format and is required.
+
+*example*:
+```markdown
+2023-07-21T09:00:00Z
+```
+
+---
+
+#### Time Max `ISO8601`
+
+<dd>
+
+The end of the interval for which to get availability. This field must be in ISO 8601 format and is required.
+
+*example*:
+```markdown
+2023-07-21T17:00:00Z
+```
+
+---
+
+#### Time Zone `string`
+
+<dd>
+
+The time zone to use for the availability response. This field is optional, with UTC being the default if not specified.
+
+*example*:
+```markdown
+America/New_York
+```
+
+---
+
+#### Items `array of strings`
+
+<dd>
+
+A list of calendar identifiers and/or group emails to query for availability. If left blank, the user's default calendar is queried.
+
+*example*:
+```markdown
+["primary", "team-group@example.com"]
+```
 
 ---
 
 ### Custom Action
 
-Performs a custom action defined by the user.
+Executes a custom action within the integration.
 
-No properties available.
+#### No properties available.
+
+<dd>
+
+No description available.
+
+*example*:
+```markdown
+No example provided.
+```
+
+---
