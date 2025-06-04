@@ -1,6 +1,6 @@
 # Gmail Integration
 
-This page provides information on how to connect to Gmail. It enables users to perform actions such as sending emails, managing contacts, searching for specific messages, and creating drafts.
+This page provides information on how to connect to Gmail. It enables users to perform actions such as sending emails, managing contacts, and searching for specific messages.
 
 ## Connect Gmail
 
@@ -14,13 +14,13 @@ The following section provides a **reference guide** describing available comman
 
 ### Send Email
 
-Sends an email message to specified recipients with optional attachments and additional headers.
+Sends an email to specified recipients with optional attachments and headers.
 
 #### To Recipients `array`
 
 <dd>
 
-The To Recipients property specifies the email addresses of the recipients. It accepts an array of email addresses. If omitted, the command will fail as at least one recipient is required. Email addresses should be in standard email format.
+The `To Recipients` property specifies the email addresses of the recipients. It accepts an array of email strings. If omitted, the email will not be sent as there are no recipients defined. The email format should be standard (e.g., `user@example.com`).
 
 *example*:
 ```json
@@ -33,7 +33,7 @@ The To Recipients property specifies the email addresses of the recipients. It a
 
 <dd>
 
-The From property defines the sender's email address. It should be a valid email address. If omitted, the service may use the authenticated user's email address by default.
+The `From` property indicates the sender's email address. It should be a valid email address from which the email will be sent. If omitted, the default sending address associated with the authenticated user's account will be used.
 
 *example*:
 ```json
@@ -46,7 +46,7 @@ The From property defines the sender's email address. It should be a valid email
 
 <dd>
 
-The Subject property is used to set the subject line of the email. It is a plain text string. If omitted, the email will be sent with an empty subject line.
+The `Subject` property represents the subject line of the email. It is a string that summarizes the email's content. If omitted, the email will be sent without a subject line, which might cause it to be marked as spam or ignored by recipients.
 
 *example*:
 ```json
@@ -59,7 +59,7 @@ The Subject property is used to set the subject line of the email. It is a plain
 
 <dd>
 
-The Message Content property contains the body of the email. It can be plain text or HTML formatted. If omitted, the email will be sent with an empty body.
+The `Message Content` property contains the body of the email. It can be in plain text or HTML format. This property is essential for conveying the message to the recipients.
 
 *example*:
 ```html
@@ -72,7 +72,7 @@ The Message Content property contains the body of the email. It can be plain tex
 
 <dd>
 
-The Attachments property allows for optional file attachments to be included with the email. It accepts an array of objects specifying the filename, MIME type, and content in base64 encoding. If omitted, the email will be sent without attachments.
+The `Attachments` property is optional and allows for file attachments to be included with the email. Each attachment should be an object with `filename`, `mimeType`, and `content` encoded in base64.
 
 *example*:
 ```json
@@ -85,7 +85,7 @@ The Attachments property allows for optional file attachments to be included wit
 
 <dd>
 
-The Additional Headers property allows for optional headers like reply-to, cc, and bcc to be included with the email. It accepts an object where each key-value pair represents a header name and its value. If omitted, no additional headers will be included.
+The `Additional Headers` property is optional and can include headers such as `reply-to`, `cc`, and `bcc`. These headers can be used for additional email routing and metadata.
 
 *example*:
 ```json
@@ -102,7 +102,7 @@ Retrieves an email message by its unique identifier.
 
 <dd>
 
-The User Id property specifies the email address of the user whose message is to be retrieved. It should be a valid email address. If omitted, the command may default to the authenticated user's email address.
+The `User Id` property specifies the email address of the user whose message is to be retrieved. This should be a valid email address associated with the user's Gmail account. If omitted, the request will fail as the user's identity is required.
 
 *example*:
 ```json
@@ -115,7 +115,7 @@ The User Id property specifies the email address of the user whose message is to
 
 <dd>
 
-The Message Id property specifies the unique identifier of the email message to retrieve. The ID format is typically a string of characters unique to each email. If omitted, the command will fail as the message ID is required.
+The `Message Id` property specifies the unique identifier of the email message to retrieve. This ID is unique to each email and can be found in the email's details. If omitted, the request will fail as the specific message cannot be identified.
 
 *example*:
 ```json
@@ -126,17 +126,17 @@ The Message Id property specifies the unique identifier of the email message to 
 
 ### Search For Email
 
-Searches for email messages based on a specified filter formula.
+Searches for emails that match a given filter formula and handles pagination.
 
 #### Email Filter Formula `string`
 
 <dd>
 
-The Email Filter Formula property allows users to search for emails using a custom filter formula. The format of the filter formula should follow the service's search syntax. If omitted, the search will not be performed.
+The `Email Filter Formula` property allows users to search for emails based on a filter formula. The formula can include various search operators and values. If omitted, no search will be performed.
 
 *example*:
 ```json
-"from:example@example.com subject:\"Project Update\""
+"from:user@example.com subject:\"project update\""
 ```
 
 ---
@@ -145,24 +145,24 @@ The Email Filter Formula property allows users to search for emails using a cust
 
 <dd>
 
-The Pagination Parameters property is used to navigate through search results. It typically includes parameters such as page number or results per page. If omitted, default pagination settings will be applied.
+The `Pagination Parameters` property is used to navigate through search results. It typically includes parameters like page size and page token. If omitted, only the first set of results will be returned.
 
 *example*:
 ```json
-"page_size=10&page_token=CgV*****3D"
+"maxResults=50&pageToken=nextPageToken"
 ```
 
 ---
 
 ### Delete Email
 
-Moves an email message to the trash using the message's unique identifier.
+Moves an email message to the trash using the user's email address and the message's ID.
 
 #### User Id `string`
 
 <dd>
 
-The User Id property specifies the email address of the user whose message is to be trashed. It should be a valid email address. If omitted, the command may default to the authenticated user's email address.
+The `User Id` property specifies the email address of the user whose message is to be trashed. This should be a valid email address associated with the user's Gmail account. If omitted, the request will fail as the user's identity is required.
 
 *example*:
 ```json
@@ -175,7 +175,7 @@ The User Id property specifies the email address of the user whose message is to
 
 <dd>
 
-The Message Id property specifies the unique identifier of the email message to trash. The ID format is typically a string of characters unique to each email. If omitted, the command will fail as the message ID is required.
+The `Message Id` property specifies the unique identifier of the email message to trash. This ID is unique to each email and can be found in the email's details. If omitted, the request will fail as the specific message cannot be identified.
 
 *example*:
 ```json
@@ -186,13 +186,13 @@ The Message Id property specifies the unique identifier of the email message to 
 
 ### Create A Contact
 
-Creates a new contact with given name, family name, and email address.
+Adds a new contact to the user's Gmail contacts with optional additional fields.
 
 #### Given Name `string`
 
 <dd>
 
-The Given Name property is used to specify the first name of the contact. It is a plain text string. If omitted, the contact may be created without a first name.
+The `Given Name` property represents the first name of the contact. It is a required field to create a contact record. If omitted, the contact will not have a first name associated with it.
 
 *example*:
 ```json
@@ -205,7 +205,7 @@ The Given Name property is used to specify the first name of the contact. It is 
 
 <dd>
 
-The Family Name property is used to specify the last name of the contact. It is a plain text string. If omitted, the contact may be created without a last name.
+The `Family Name` property represents the last name of the contact. It is a required field to create a contact record. If omitted, the contact will not have a last name associated with it.
 
 *example*:
 ```json
@@ -218,7 +218,7 @@ The Family Name property is used to specify the last name of the contact. It is 
 
 <dd>
 
-The Email property specifies the contact's email address. It should be a valid email address. If omitted, the contact will be created without an email address, which may limit functionality.
+The `Email` property specifies the contact's email address. It should be a valid email address to which you can send emails. If omitted, the contact will not have an email address associated with it.
 
 *example*:
 ```json
@@ -231,7 +231,7 @@ The Email property specifies the contact's email address. It should be a valid e
 
 <dd>
 
-The Additional Fields property allows for optional information such as addresses or phone numbers to be included. It accepts an object where each key-value pair represents a field name and its value. If omitted, the contact will be created with only the provided fields.
+The `Additional Fields` property is optional and can include additional contact information such as addresses or phone numbers. Each field should be provided as an object with the appropriate structure.
 
 *example*:
 ```json
@@ -242,13 +242,13 @@ The Additional Fields property allows for optional information such as addresses
 
 ### Get Contact By Resource Name
 
-Fetches a contact's details using the contact's resource name.
+Retrieves a contact's information using its unique resource name.
 
 #### Resource Name `string`
 
 <dd>
 
-The Resource Name property specifies the unique resource name of the contact to fetch. The format of the resource name is typically a string that uniquely identifies the contact. If omitted, the command will fail as the resource name is required.
+The `Resource Name` property specifies the unique resource name of the contact to fetch. This name is used to identify the contact within the Gmail contacts system. If omitted, the request will fail as the specific contact cannot be identified.
 
 *example*:
 ```json
@@ -265,7 +265,7 @@ Searches for contacts using a specified search term.
 
 <dd>
 
-The Search Term property is used to specify a term for searching contacts. It searches for near or exact matches on various contact properties. If omitted, the search will not be performed.
+The `Search Term` property allows users to specify a search term to find near or exact matches on contact properties such as names, nicknames, email addresses, phone numbers, or organizations. If omitted, no search will be performed.
 
 *example*:
 ```json
@@ -276,13 +276,13 @@ The Search Term property is used to specify a term for searching contacts. It se
 
 ### Delete Contact
 
-Deletes a contact using the contact's resource name.
+Deletes a contact from the user's Gmail contacts using the contact's resource name.
 
 #### Resource Name `string`
 
 <dd>
 
-The Resource Name property specifies the unique resource name of the contact to delete. The format of the resource name is typically a string that uniquely identifies the contact. If omitted, the command will fail as the resource name is required.
+The `Resource Name` property specifies the unique resource name of the contact to delete. This name is used to identify the contact within the Gmail contacts system. If omitted, the request will fail as the specific contact cannot be identified.
 
 *example*:
 ```json
@@ -293,13 +293,13 @@ The Resource Name property specifies the unique resource name of the contact to 
 
 ### Create Draft
 
-Creates an email draft with specified recipients, subject, and content.
+Creates an email draft with optional attachments and headers.
 
 #### To Recipients `array`
 
 <dd>
 
-The To Recipients property specifies the email addresses of the draft recipients. It accepts an array of email addresses. If omitted, the draft will be created without recipients.
+The `To Recipients` property specifies the email addresses of the draft recipients. It accepts an array of email strings. If omitted, the draft will not have any recipients defined.
 
 *example*:
 ```json
@@ -312,7 +312,7 @@ The To Recipients property specifies the email addresses of the draft recipients
 
 <dd>
 
-The From property defines the sender's email address for the draft. It should be a valid email address. If omitted, the draft will use the authenticated user's email address by default.
+The `From` property indicates the sender's email address for the draft. If omitted, it defaults to the authenticated user's email address. It should be a valid email address from which the email will be sent.
 
 *example*:
 ```json
@@ -325,7 +325,7 @@ The From property defines the sender's email address for the draft. It should be
 
 <dd>
 
-The Subject property is used to set the subject line of the draft. It is a plain text string. If omitted, the draft will be created with an empty subject line.
+The `Subject` property represents the subject line of the draft email. It is a string that summarizes the content of the email. If omitted, the draft will be created without a subject line.
 
 *example*:
 ```json
@@ -338,7 +338,7 @@ The Subject property is used to set the subject line of the draft. It is a plain
 
 <dd>
 
-The Message Content property contains the body of the draft. It can be plain text or HTML formatted. If omitted, the draft will be created with an empty body.
+The `Message Content` property contains the body of the draft email. It can be in plain text or HTML format. This property is essential for conveying the message to the recipients.
 
 *example*:
 ```html
@@ -351,7 +351,7 @@ The Message Content property contains the body of the draft. It can be plain tex
 
 <dd>
 
-The Attachments property allows for optional file attachments to be included with the draft. It accepts an array of objects specifying the filename, MIME type, and content in base64 encoding. If omitted, the draft will be created without attachments.
+The `Attachments` property is optional and allows for file attachments to be included with the draft. Each attachment should be an object with `filename`, `mimeType`, and `content` encoded in base64.
 
 *example*:
 ```json
@@ -364,7 +364,7 @@ The Attachments property allows for optional file attachments to be included wit
 
 <dd>
 
-The Additional Headers property allows for optional headers like reply-to, cc, and bcc to be included with the draft. It accepts an object where each key-value pair represents a header name and its value. If omitted, no additional headers will be included.
+The `Additional Headers` property is optional and can include headers such as `reply-to`, `cc`, and `bcc`. These headers can be used for additional email routing and metadata in the draft.
 
 *example*:
 ```json
@@ -377,12 +377,14 @@ The Additional Headers property allows for optional headers like reply-to, cc, a
 
 Performs a custom action within the Gmail integration.
 
+#### No properties available.
+
 <dd>
 
-No properties available.
+No description available.
 
 *example*:
-```json
+```
 No example provided.
 ```
 
