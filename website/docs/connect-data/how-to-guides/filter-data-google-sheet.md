@@ -45,7 +45,7 @@ To fetch data based on a condition using the where clause, follow these steps:
    {{ gender.text; }}
    ```
 
-4. In **[Sort By](/connect-data/reference/querying-google-sheets#sort-by)** enter the column name you want your data sorted by.
+4. In **[Sort By](/connect-data/reference/querying-google-sheets#sort-by)**, enter the column name you want your data sorted by.
 
 :::info
 If the **Smart JSON substitution** setting is enabled, Appsmith adds or removes quotation marks from the mustache binding `{{}}` as necessary to correctly cast them into JSON. You must manually format the JSON data if this setting is off. For a video guide on using this feature, see [How to Use Smart JSON Substitution](https://www.youtube.com/watch?v=-Z3y-pdNhXc).
@@ -85,7 +85,7 @@ To filter data by a range to fetch data from designated cells in your sheet, fol
 You can configure the page size in the response when the **Filter Format** is set to **Where Clause**.
 To set the number of records fetched in the response dynamically, follow these steps:
 
-1. In [Pagination Limit](/connect-data/reference/querying-google-sheets#pagination-limit) set the value according to the page size using the following code where `user_details_table` is the name of the Table widget:
+1. In [Pagination Limit](/connect-data/reference/querying-google-sheets#pagination-limit), set the value according to the page size using the following code, where `user_details_table` is the name of the Table widget:
 
    ```
    {{ user_details_table.pageSize; }}
