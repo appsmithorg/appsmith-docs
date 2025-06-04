@@ -1,6 +1,8 @@
 MyTestTool_uqi_config.json
 TestOne_uqi_config.json
+github.json
 gmail.json
 jira.json
 outlook.json
 slack.json
+zoom.json
