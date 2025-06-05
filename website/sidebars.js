@@ -324,7 +324,7 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                      'connect-data/reference/confluence',
                     'connect-data/reference/querying-google-sheets',
-                    'connect-data/reference/google-calendar',
+                    //'connect-data/reference/google-calendar',
                     'connect-data/reference/google-drive',
                     'connect-data/reference/github',
                     'connect-data/reference/hubspot',
@@ -333,7 +333,7 @@ const sidebars = {
                       'connect-data/reference/stripe',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
-                    'connect-data/reference/zoom',
+                    //'connect-data/reference/zoom',
                   ],
                 },
                 //category- AI Integrations
