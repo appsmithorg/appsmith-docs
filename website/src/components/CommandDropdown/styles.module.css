@@ -1,0 +1,314 @@
+/* Base Styles */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Dropdown Header */
+.dropdownHeader {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dropdownHeader:hover {
+  background-color: #f8f9fa;
+}
+
+/* Arrow Icon */
+.arrow {
+  margin-left: auto; /* Pushes arrow to the right */
+  font-size: 1rem;
+  color: #6b7280;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Position dropdown dynamically */
+.menuBottom {
+  top: 110%;
+}
+
+.menuTop {
+  bottom: 110%;
+}
+
+/* Search Box */
+.searchInput {
+  width: calc(100% - 24px);
+  margin: 8px 12px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #fd7e14;
+}
+
+/* Category Headers */
+.category {
+  padding: 8px 12px; /* Aligns category headers to the left */
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+  text-align: left;
+  list-style: none;
+}
+
+/* Category Title */
+.categoryTitle {
+  display: block;
+  padding: 10px 1px; /* Ensures alignment to the left */
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+/* Commands List */
+.commands {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual Command Items */
+.commandItem {
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.commandItem:hover {
+  background-color: #FEB57F;
+  color: white;
+}
+
+/* Selected Command */
+.selected {
+  background-color: #FEB57F !important;
+  color: white !important;
+}
+
+/* No Results *//* Base Styles */
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Dropdown Header */
+.dropdownHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dropdownHeader:hover {
+  background-color: #f8f9fa;
+}
+
+/* Arrow Icon */
+.arrow {
+  margin-left: auto;
+  font-size: 1rem;
+  color: #6b7280;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Position dropdown dynamically */
+.menuBottom {
+  top: 110%;
+}
+
+.menuTop {
+  bottom: 110%;
+}
+
+/* Fixed Search Container */
+.fixedSearchContainer {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Search Box */
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: #fd7e14;
+}
+
+/* Commands List */
+.commandList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Category Headers */
+.category {
+  padding: 8px 12px;
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 4px;
+  text-align: left;
+  list-style: none;
+}
+
+/* Category Title */
+.categoryTitle {
+  display: block;
+  padding: 10px 1px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+/* Individual Command Items */
+.commandItem {
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+.commandItem:hover {
+  background-color: #FEB57F;
+  color: white;
+}
+
+/* Selected Command */
+.selected {
+  background-color: #FEB57F !important;
+  color: white !important;
+}
+
+/* No Results */
+.noResults {
+  padding: 12px 14px;
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.noResults {
+  padding: 12px 14px;
+  color: #888;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Increased dropdown height */
+.dropdownMenu {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 10;
+  max-height: 400px; /* Increased from 300px */
+  overflow-y: auto;
+}
+
+/* Style for total commands text */
+.totalCommands {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  background: #f8f9fa;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
