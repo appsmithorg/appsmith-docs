@@ -1,4 +1,23 @@
-# Module Instance
+---
+description: Learn about the Modules feature in Appsmith.
+title: Code Module Instance
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Code Module Instance</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 
 

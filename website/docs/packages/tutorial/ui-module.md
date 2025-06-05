@@ -1,4 +1,23 @@
-# UI Modules
+---
+description: Learn about the Modules feature in Appsmith.
+title: UI Modules
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>UI Modules</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 A UI Module is a reusable, self-contained component built using widgets, queries, and JS Objects. It allows you to group UI elements, logic, and data interactions into a single unit that can be reused across multiple applications.
 
@@ -87,7 +106,7 @@ These widgets will display user details such as the user's name, email, ID, and 
 To bind an input value to a widget, use the following syntax:
 
 ```js
-{{inputs.<inputName>}}
+{{inputs.inputName}}
 ```
 
 Set the widget properties as follows:

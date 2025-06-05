@@ -1,4 +1,24 @@
-# UI Module Instance
+---
+description: Learn about the UI Module Instance feature in Appsmith.
+title: UI Module Instance
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>UI Module Instance</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+
 
 
 When you add a UI Module from a package into your application, you create a UI Module Instance. Each instance acts as a reusable, self-contained UI component that can be configured dynamically without modifying the internal structure of the module.
@@ -29,11 +49,16 @@ Inputs enable you to dynamically populate widget properties, run queries, or exe
 You can bind static values, widget outputs, query results, or app/user data into Inputs using JavaScript bindings.
 
 
-*Example:* If you want to pass customer details fetched from a query into the module, you can set Inputs using the query response fields.
+*Example:* If you want to pass customer details fetched from a query into the module, you can bind the input like:
 
-```js
-//inputCustomerName
+```javascript
 {{getCustomerDetails.data.name}}
+```
+
+Then inside the module, the corresponding widget (e.g., `Input1`) can use:
+
+```javascript
+{{inputs.customerName}}
 ```
 
 
@@ -47,12 +72,11 @@ Allows you to access dynamic values from the UI Module Instance in your parent a
 
 Outputs enable you to retrieve internal module state, computed values, or processing results without needing to understand the module's internal implementation.
 
-**Accessing Module Outputs**
+You can access outputs using the module instance name followed by .`outputs.outputName`:
 
-Module outputs can be accessed directly using the module instance name:
 
 ```javascript
-{{ModuleInstanceName.outputName}}
+{{ModuleInstanceName.outputs.outputName}}
 ```
 
 *Example:* If you want to display data from a module in a Table widget on your application:

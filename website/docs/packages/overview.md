@@ -18,7 +18,10 @@ tags={[
 
 <!-- vale on -->
 
-Reusability is an integral part of application development, offering various advantages like speeding up the development process, centralizing business logic, and introducing standardization into applications. Appsmith enhances reusability by providing a feature set, which allows you to reuse widgets, queries, and JS logic across your applications.
+In modern application development, reusability is key to building efficiently and maintaining high standards. Appsmith empowers you to embrace reusability through Packages, a powerful feature set designed to help you create, share, and manage reusable logic and UI components across your applications.
+
+Whether you need to standardize backend operations or ensure a consistent user interface, Packages provide the tools to build faster, reduce redundancy, and improve the overall quality of your Appsmith applications.
+
 
 :::info
 For Appsmith version v1.57 or earlier, refer to the legacy documentation for the packages. For more information, see [Package Legacy Documentation](https://appsmith-docs-git-packages-v156-get-appsmith.vercel.app/packages/overview).
@@ -26,7 +29,7 @@ For Appsmith version v1.57 or earlier, refer to the legacy documentation for the
 
 ## Packages
 
-A package is a collection of JS and Query modules that can be shared across apps within the same workspace. With packages, developers can create, update, and share specific modules independently, making code more reusable and easier to maintain.
+A **Package** is a reusable bundle that can be shared across apps in the same workspace. There are two types of packages in Appsmith:
 
 <ZoomImage
   src="/img/modules-landing.png" 
@@ -34,15 +37,24 @@ A package is a collection of JS and Query modules that can be shared across apps
   caption=""
 />
 
-### Modules
+### Code Packages
 
-Modules are part of Package. There are two types of modules, query and JS, that can be used in multiple applications within the same workspace. 
+Code Packages are reusable bundles that group multiple logic-based modules, which can be shared across applications within the same workspace.
+
+Inside a Code Package, you can create two types of modules—Query Modules and JavaScript Modules. These modules allow you to encapsulate backend logic in a reusable, version-controlled way, helping you standardize how data is fetched and processed across your apps.
 
 * **Query Modules:** Reusable datasource queries that can be used across different apps and pages. You can pass dynamic inputs to the query module, which allows you to change query parameters based on user input or widget actions. They are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
 
 * **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. It allows you to pass data between query and JS modules, ensuring smooth integration and reuse across different applications.
 
-* **UI Modules (Coming Soon):** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
+### UI Packages
+
+
+UI Packages allow you to create and distribute reusable UI components across multiple applications in the same workspace.
+
+Inside a UI Package, you can create UI Modules—self-contained user interface components that bundle widgets, logic, and internal queries into a configurable unit. These modules are designed to enhance consistency, simplify UI development, and promote reuse across your apps.
+
+* **UI Modules:** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
 
 
 

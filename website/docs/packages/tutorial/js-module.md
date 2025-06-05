@@ -6,7 +6,7 @@ hide_title: true
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>JS modules</h1>
+ <h1>JS Modules</h1>
 
 <Tags
 tags={[

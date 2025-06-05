@@ -1,4 +1,23 @@
-# UI Module
+---
+description: Learn about the UI Modules feature in Appsmith.
+title: UI Module
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>UI Modules</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 A UI Module is a reusable container that groups widgets, queries, and JavaScript logic into a single unit. It is created inside a UI Package and is designed for reuse across multiple applications.
 
@@ -19,7 +38,7 @@ Content properties control the functional behavior of the UI Module container an
 
 
 Inputs allow you to pass dynamic values from the application into the UI Module.
-They act as a bridge between the app and the widgets, queries, or JS logic inside the module.
+They act as a bridge between the app and the widgets, queries, or JS logic inside the UI module.
 
 You can create multiple Inputs when designing the module. Each Input has:
 
@@ -27,33 +46,25 @@ You can create multiple Inputs when designing the module. Each Input has:
 
 - **Default value (optional):** Used if no value is passed from the application at runtime.
 
-Inputs help you dynamically configure the behavior of widgets inside the UI Module without modifying the module itself.
-
-**Accessing Inputs**
-
-Inputs can be accessed using the same syntax across widgets, queries, and JavaScript functions within the module:
+You can access input values using:
 
 ```javascript
 {{inputs.inputName}}
 ```
 
+*Example 1:* If you want to show dynamic data in a widget, bind the property like:
 
-- **Widget**: Use `{{inputs.inputName}}` inside widget properties such as Default Text, Label, Data, or Options.
+```js
+{{inputs.ordersData}}
+```
 
-    *Example:* If you want to prefill a customer profile form with the user's email, create an input named `inputemail` and set the Input widget’s Default Text property to `{{inputs.inputemail}}`, passing `{{appsmith.user.email}}` from the application.
+*Example 2:* If you want to filter a query using an input value, use:
 
-- **Query**: Use `{{inputs.inputName}}` inside the query body to dynamically inject input values at runtime.
+```js
+SELECT * FROM addresses WHERE country = {{inputs.inputCountry}}
+```
 
-   *Example:* If you want to fetch customer addresses based on the selected country, create a query that uses:
-   
-   ```js
-   SELECT * FROM addresses WHERE country = {{inputs.inputCountry}}
-   ```
 
-- **JavaScript**: Use `inputs.inputName` directly inside JavaScript Object functions to dynamically operate based on input values.
-
-    *Example:* If you want to adjust available shipping options based on country, create a function that checks `inputs.inputCountry` and returns different options accordingly.
-   
 
 </dd>
 
@@ -68,15 +79,23 @@ Each Output has:
 - **Name:** Used to reference the value in the parent application.
 - **Value:** The internal module data, state, or computed result you want to expose.
 
-**Accessing Outputs**
-
-When a UI Module is added to an application, its outputs become available through the module instance name:
+You can access output values using the module instance name from the application:
 
 ```javascript
-{{ModuleName.outputName}}
+{{ModuleInstanceName.outputs.outputName}}
 ```
 
-*Example:* If you have a login module that generates an authentication token, you can access it in the parent app using `{{LoginModule.authToken}}` for subsequent API calls.
+:::note
+Outputs are only accessible in the parent app, not inside the module itself.
+:::
+
+*Example:* If you want to filter a query using a value generated inside the module (e.g., customerId),
+create an output in the module and access it in your app query:
+
+```sql
+SELECT * FROM orders WHERE customer_id = {{CustomerModule1.outputs.customerId}}
+```
+
 
 
 </dd>
