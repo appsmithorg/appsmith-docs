@@ -52,10 +52,10 @@ Inside a Code Package, you can create two types of modules—Query Modules and J
 ### UI Packages
 
 
-UI Packages allow you to create and distribute reusable UI components across multiple applications in the same workspace.
+UI Packages are reusable bundles that group user interface components and related logic, which can be shared across applications within the same workspace. Inside a UI Package, you can create one or more UI Modules. 
 
+A **UI Module** combines widgets, queries, JavaScript, inputs, and outputs into a self-contained, configurable component. This allows you to build dynamic, branded UI blocks—like login forms or dashboards—that can be reused and customized across different applications without duplicating logic.
 
-* **UI Modules:** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
 
 
 

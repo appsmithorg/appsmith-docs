@@ -18,8 +18,7 @@ tags={[
 
 <!-- vale on -->
 
-This page shows how to create a custom authentication module using packages, which allows you to reuse the same module across different applications to authenticate users efficiently.
-
+This page shows you how to create a reusable custom authentication module using UI Packages. It guides you through building a secure login flow that can be shared across multiple applications, while allowing each app to customize its branding and behavior as needed.
 
 
 ## Prerequisites
@@ -31,37 +30,25 @@ This page shows how to create a custom authentication module using packages, whi
 
 ## Configure package
 
-To secure your Appsmith application, you will need to set up a sign-in flow that requires users to authenticate before accessing the app. Follow these steps to create the sign-in flow:
+To create a reusable and secure sign-in flow, you’ll configure a Login UI Module that handles user authentication, supports dynamic branding, and exposes login state back to the parent app. Follow these steps to build the login flow inside the package:
 
 
-
-<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
-  <iframe
-    src="https://demo.arcade.software/EbrwbFYIQoyrqb738kX8?embed"
-    frameBorder="0"
-    loading="lazy"
-    webkitAllowFullScreen
-    mozAllowFullScreen
-    allowFullScreen
-    allow="fullscreen"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    title="Appsmith | Connect Data"
-  />
-</div>
-
-1. In the UI Module, create the login interface using the following widgets:
+1. In the **UI Module**, create the login interface using the following widgets:
 
 <dd>
 
 - **Input Widget** (`emailInput`) – Used to capture the user's email or username.
-
 - **Input Widget** (`passwordInput`) – Used to capture the user's password. Set the input type to password to mask the input.
-
 - **Button Widget** (`loginButton`) – Triggers the login process when clicked. 
-
 - **Text Widget** – Displays the application name. 
-
 - **Image Widget** – Displays the brand logo. 
+
+
+<ZoomImage
+  src="/img/login-module.png" 
+  alt=""
+  caption=""
+/>
 
 </dd>
 
@@ -91,7 +78,7 @@ The values for email and password are dynamically taken from the input widgets (
 
 </dd>
 
-3. Create a new JS Object inside the UI Module to manage the login logic. This function will call the login API query with the provided email and password, store the authentication token in local storage using storeValue, and navigate to the Home page upon successful authentication.
+3. Create a new JS Object inside the UI Module to manage the login logic. This function will call the `login` API query with the provided `email` and `password`, store the authentication token in local storage using `storeValue`, and navigate to the Home page upon successful authentication.
 
 <dd>
 
@@ -102,7 +89,7 @@ export default {
   async loginUser() {
     if (!emailInput.text || !passwordInput.text) {
       showAlert("Enter both email and password", "error");
-      return;
+      return { token: "", isLoggedIn: false };
     }
 
     try {
@@ -113,13 +100,15 @@ export default {
 
       if (response.token) {
         await storeValue("access_token", response.token);
-        // Navigate to the 'Home' page upon successful authentication
         navigateTo("Home");
+        return { token: response.token, isLoggedIn: true };
       } else {
         showAlert("Login failed", "error");
+        return { token: "", isLoggedIn: false };
       }
     } catch (e) {
       showAlert("Invalid credentials", "error");
+      return { token: "", isLoggedIn: false };
     }
   }
 };
@@ -130,23 +119,24 @@ For any future user actions, use the stored access token to access the relevant 
 
 </dd>
 
-4. Set the **onClick** event of the Login button to run the loginUser function defined in the JS Object. 
+4. On the **UI** tab, set the **onClick** event of the Login button to run the `loginUser` function defined in the JSObject. 
 
-5. To dynamically change the login UI based on the app using the module, use inputs to pass data from the parent application into the module. This allows each app to control elements like the displayed app name and logo without modifying the module itself.
+
+5. To customize the login UI based on the app using the module, use [Inputs](/packages/reference/ui-module#inputs) to pass values such as the application name and logo URL from the parent app. This allows each application to display its own branding, such as “HR Portal” or “CRM Dashboard”, without modifying the module. 
 
 <dd>
 
 *Example:* Create two inputs, `appName` and `logoUrl`, to reuse the same login module across different applications such as an HR portal or a CRM dashboard.
 
 
-`appName`: Set the Text widget’s text property to: `{{ this.params.appName }}`
+- `appName`: Set the Text widget’s text property to: `{{ inputs.appName }}`
+- `logoUrl`: Set the Image widget’s source property to: `{{ inputs.logoUrl }}`
 
-`logoUrl`: Set the Image widget’s source property to: `{{ this.params.logoUrl }}`
 
 </dd>
 
 
-6. To pass login state or token ID from the module back to the parent app, use outputs. This allows you to expose specific values such as authentication tokens or login status that the parent application can access and respond to.
+6. To pass login state or token ID from the module back to the parent app, use [Outputs](/packages/reference/ui-module#outputs). This allows you to expose specific values such as authentication tokens or login status that the parent application can access and respond to.
 
 <dd>
 
@@ -159,14 +149,13 @@ For any future user actions, use the stored access token to access the relevant 
 
 The token can then be accessed in the parent app using `LoginModule1.outputs.token`.
 
-
 </dd>
 
 
-7. Publish the package.
+7. **Publish** the package.
 
 
-8. To integrate custom authentication into your app, open the application and navigate to the UI tab. Drag the login module onto the desired page and configure the appName and logoUrl inputs.
+8. To integrate custom authentication into your app, open the application and navigate to the **UI** tab. Drag the `login` module onto the desired page and configure the `appName` and `logoUrl` inputs.
 
 <dd>
 
@@ -176,100 +165,14 @@ Based on your application’s requirements, you can use the token output to stor
 </dd>
 
 
-With this setup, the login module can now securely authenticate users, dynamically adapt to different applications, and expose login state back to the parent app. Once a user logs in successfully, they are automatically navigated to the home page or any other page you specify through input configuration.
 
+### See also
 
-If your application uses short-lived access tokens, consider implementing a refresh token strategy to maintain session continuity. For details on when and how to use refresh tokens, see the Refresh Token Handling Guide.
+- [Refresh access token](/docs/build-apps/how-to-guides/refresh-access-token.md) – Use this guide to implement a refresh token strategy and maintain session continuity for apps using short-lived access tokens. View guide
 
+- [Module inputs](/packages/reference/ui-module#inputs) – Learn how to define and use inputs to customize module behavior such as dynamic app names, logos, or redirect paths. View reference
 
-
-
-
-
-
-
-
-
-## Refresh access token
-
-To keep your access uninterrupted and secure across all apps, follow these steps to refresh OAuth tokens and extend your authentication:
-
-1. Create a query module to call the token refresh endpoint provided by your authentication service. For OAuth services, ensure that you add the refresh token in the request payload to receive a new access token.
-
-<dd>
-
-*Example:* 
-
-```api
-https://api.example.io/api/user/token-auth/
-```
-
-</dd>
-
-2. Create a new JS module to refresh the token:
-
-<dd>
-
-  *Example:*
-
-```jsx
-export default {
-    refreshAccessToken: () => {
-        // Retrieving the refresh token from the appsmith store
-        const refreshToken = appsmith.store.refreshtoken;
-
-        // Checking if a refresh token exists
-        if (refreshToken) {
-            // Executing the refresh API with the retrieved refresh token
-            return refreshAPI.run({ refreshtoken: refreshToken })
-                .then(newTokens => {
-                    // Updating the access token in the appsmith store
-                    storeValue('accesstoken', newTokens.accesstoken);
-
-                    // Checking if a new refresh token is provided and updating it
-                    if (newTokens.refreshtoken) {
-                        storeValue('refreshtoken', newTokens.refresh_token);
-                    }
-                })
-                .catch(error => {
-                    console.log('Error refreshing token:', error);
-                });
-        }
-    }
-};
-```
-
-</dd>
-
-3. Create a new query module to handle the generation of tokens when an authentication token expires.
-
-<dd>
-
-*Example:*
-
-```js
-https://api.example.io/api/user/token-refresh/
-```
-
-In the API configuration, provide the refresh token from the store in the request body:
-
-```js
-{
-    "refresh_token":{{appsmith.store.authRefreshToken}}
-}
-```
-
-</dd>
-
-4. Publish the package.
-
-
-Now you can use the JS module within your app to fetch details using query or refresh tokens on page load, ensuring continuous authentication access.
-
-
-
-
-
+- [Module outputs](/packages/reference/ui-module#outputs) – Understand how to expose values like access tokens or login status from a module to the parent app. View reference
 
 
 
