@@ -31,17 +31,19 @@ For Appsmith version v1.57 or earlier, refer to the legacy documentation for the
 
 A **Package** is a reusable bundle that can be shared across apps in the same workspace. There are two types of packages in Appsmith:
 
-<ZoomImage
-  src="/img/modules-landing.png" 
-  alt="Modules image"
-  caption=""
-/>
 
 ### Code Packages
 
 Code Packages are reusable bundles that group multiple logic-based modules, which can be shared across applications within the same workspace.
 
 Inside a Code Package, you can create two types of modules—Query Modules and JavaScript Modules. These modules allow you to encapsulate backend logic in a reusable, version-controlled way, helping you standardize how data is fetched and processed across your apps.
+
+
+<ZoomImage
+  src="/img/modules-landing.png" 
+  alt="Modules image"
+  caption=""
+/>
 
 * **Query Modules:** Reusable datasource queries that can be used across different apps and pages. You can pass dynamic inputs to the query module, which allows you to change query parameters based on user input or widget actions. They are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
 
@@ -52,10 +54,16 @@ Inside a Code Package, you can create two types of modules—Query Modules and J
 
 UI Packages allow you to create and distribute reusable UI components across multiple applications in the same workspace.
 
-Inside a UI Package, you can create UI Modules—self-contained user interface components that bundle widgets, logic, and internal queries into a configurable unit. These modules are designed to enhance consistency, simplify UI development, and promote reuse across your apps.
 
 * **UI Modules:** Reusable widgets and UI components designed to enhance modularity and reusability in the user interface, streamlining the development and maintenance of consistent UI elements across multiple applications.
 
+
+
+<ZoomImage
+  src="/img/moduleui.png" 
+  alt="Modules image"
+  caption=""
+/>
 
 
 ## Getting started

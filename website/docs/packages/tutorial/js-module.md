@@ -1,5 +1,5 @@
 ---
-title: JS modules
+title: JS Modules
 hide_title: true
 ---
 

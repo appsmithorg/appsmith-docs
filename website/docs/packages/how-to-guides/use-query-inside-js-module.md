@@ -24,7 +24,7 @@ This page shows how to create a custom authentication module using packages, whi
 
 ## Prerequisites
 
-- A UI Package that has already been created. For more information, see [Package and query modules tutorials](/packages/tutorial/query-module).
+- A UI Package that has already been created. For more information, see [UI Modules tutorials](//packages/tutorial/ui-module).
 - An authenticated datasource with user sign-in endpoints.
 
 

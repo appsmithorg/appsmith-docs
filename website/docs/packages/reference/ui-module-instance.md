@@ -68,9 +68,7 @@ Then inside the module, the corresponding widget (e.g., `Input1`) can use:
 
 <dd>
 
-Allows you to access dynamic values from the UI Module Instance in your parent application. Outputs listed at the instance level are automatically generated based on the Outputs defined when the UI Module was created.
-
-Outputs enable you to retrieve internal module state, computed values, or processing results without needing to understand the module's internal implementation.
+Outputs allow your app to receive data from a UI Module. You can use outputs to access values like user input, results, or internal state from the module. These values are defined inside the module and become available in your app when you use the module instance.
 
 You can access outputs using the module instance name followed by .`outputs.outputName`:
 
