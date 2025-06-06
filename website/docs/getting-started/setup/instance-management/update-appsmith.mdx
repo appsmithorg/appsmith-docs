@@ -49,30 +49,38 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
 If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
 :::
 
-The following works if you followed the steps in the install guide exactly. If you changed things like Helm release name, namespace, etc. then your exact commands may vary. Make any substitutions where they apply in the instructions below.
+> **Note**: The following instructions assume you followed our [Kubernetes install guide](https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes) exactly. If you made changes—such as using a different Helm release name, namespace, etc.—you’ll need to adjust the commands accordingly.
 
-1. Retrieve the latest version from GitHub [here](https://github.com/appsmithorg/appsmith/releases).
-2. Locate your Helm installation's values file:
-   - If you have your values.yaml fom when you first [installed Appsmith](https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes), navigate to that folder using the `cd` command.
-   - If you no longer have your values.yaml, you can retrieve it from the cluster with this command:
-   ```bash
-   helm get values appsmith-ee -n appsmith-ee | grep -v "USER-SUPPLIED" > values.yaml
-   ```
-3. Edit values.yaml to specify the new version.
-   If you have `yq` installed, you can use it:
-   ```bash
-   APPSMITH_VERSION=<version>
-   yq -i ".image.tag = \"$APPSMITH_VERSION\"" values.yaml
-   ```
-   If you do not have `yq` installed locally, edit values.yaml with your preferred editor. You want to change the `image.tag` value like:
-   ```bash
-   image:
-     tag: <version>
-   ```
-4. Apply the changes with:
+1. Retrieve the latest Appsmith version
+   Find the latest release version on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+
+2. Locate your Helm `values.yaml` file
+   - If you still have the `values.yaml` file from your initial installation, navigate to its directory:
      ```bash
-     helm upgrade appsmith-ee -n appsmith-ee -f values.yaml
+     cd /path/to/your/values-file
      ```
+   - If you no longer have the file, you can retrieve it from your cluster:
+     ```bash
+     helm get values appsmith-ee -n appsmith-ee | grep -v "USER-SUPPLIED" > values.yaml
+     ```
+
+3. Update the image tag in `values.yaml`
+   - If you have [`yq`](https://github.com/mikefarah/yq) installed:
+     ```bash
+     APPSMITH_VERSION=<version>
+     yq -i ".image.tag = \"$APPSMITH_VERSION\"" values.yaml
+     ```
+   - If you don’t have `yq`, manually edit `values.yaml` with your preferred text editor to set the new version:
+     ```yaml
+     image:
+       tag: <version>
+     ```
+
+4. Apply the upgrade using Helm
+   Run the following command to upgrade your Appsmith installation:
+   ```bash
+   helm upgrade appsmith-ee -n appsmith-ee -f values.yaml
+   ```
 
 </TabItem>
 
