@@ -23,14 +23,14 @@ This page shows you how to create a reusable custom authentication module using 
 
 ## Prerequisites
 
-- A UI Package that has already been created. For more information, see [UI Modules tutorials](//packages/tutorial/ui-module).
+- A UI Package that has already been created. For more information, see [UI Modules tutorials](/packages/tutorial/ui-module).
 - An authenticated datasource with user sign-in endpoints.
 
 
 
 ## Configure package
 
-To create a reusable and secure sign-in flow, you’ll configure a Login UI Module that handles user authentication, supports dynamic branding, and exposes login state back to the parent app. Follow these steps to build the login flow inside the package:
+Follow these steps to create a reusable and secure sign-in flow by configuring a Login UI Module. This module handles user authentication, supports dynamic branding, and exposes login state back to the parent app:
 
 
 1. In the **UI Module**, create the login interface using the following widgets:
@@ -78,7 +78,7 @@ The values for email and password are dynamically taken from the input widgets (
 
 </dd>
 
-3. Create a new JS Object inside the UI Module to manage the login logic. This function will call the `login` API query with the provided `email` and `password`, store the authentication token in local storage using `storeValue`, and navigate to the Home page upon successful authentication.
+3. Create a new JSObject inside the UI Module to manage the login logic. This function will call the `login` API query with the provided `email` and `password`, store the authentication token in local storage using `storeValue`, and navigate to the Home page upon successful authentication.
 
 <dd>
 
@@ -87,26 +87,30 @@ The values for email and password are dynamically taken from the input widgets (
 ```js
 export default {
   async loginUser() {
+    // Validate that both email and password fields are filled
     if (!emailInput.text || !passwordInput.text) {
       showAlert("Enter both email and password", "error");
       return { token: "", isLoggedIn: false };
     }
 
     try {
+      // Call the login API query with the user-provided credentials
       const response = await login.run({
         email: emailInput.text,
         password: passwordInput.text
       });
 
+      // If the API returns a token, store it and navigate to the Home page
       if (response.token) {
-        await storeValue("access_token", response.token);
-        navigateTo("Home");
-        return { token: response.token, isLoggedIn: true };
+        await storeValue("access_token", response.token); // Store token for app-wide access
+        navigateTo("Home"); // Redirect user after successful login
+        return { token: response.token, isLoggedIn: true }; // Return token and status to be used as module outputs
       } else {
         showAlert("Login failed", "error");
         return { token: "", isLoggedIn: false };
       }
     } catch (e) {
+      // Handle any API or network errors
       showAlert("Invalid credentials", "error");
       return { token: "", isLoggedIn: false };
     }
@@ -119,7 +123,9 @@ For any future user actions, use the stored access token to access the relevant 
 
 </dd>
 
-4. On the **UI** tab, set the **onClick** event of the Login button to run the `loginUser` function defined in the JSObject. 
+4. In the **UI** tab, set the **onClick** event of the Login button to run the `loginUser` function defined in the JSObject.
+
+ 
 
 
 5. To customize the login UI based on the app using the module, use [Inputs](/packages/reference/ui-module#inputs) to pass values such as the application name and logo URL from the parent app. This allows each application to display its own branding, such as “HR Portal” or “CRM Dashboard”, without modifying the module. 

@@ -1,6 +1,5 @@
 
-
-## Refresh access token
+# Refresh access token
 
 To keep your access uninterrupted and secure across all apps, follow these steps to refresh OAuth tokens and extend your authentication:
 
