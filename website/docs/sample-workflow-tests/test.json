@@ -1,0 +1,690 @@
+{
+  "editor": [
+    {
+      "controlType": "SECTION_V2",
+      "identifier": "SELECTOR",
+      "children": [
+        {
+          "controlType": "DOUBLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "label": "Commands",
+              "description": "Select the method to run",
+              "configProperty": "actionConfiguration.formData.command",
+              "controlType": "DROP_DOWN",
+              "isSearchable": true,
+              "options": [
+                {
+                  "index": 1,
+                  "label": "Create Issue",
+                  "value": "JIRA_CREATE_ISSUE"
+                },
+                {
+                  "index": 2,
+                  "label": "Update Issue",
+                  "value": "JIRA_UPDATE_ISSUE"
+                },
+                {
+                  "index": 3,
+                  "label": "Get Issue By Key",
+                  "value": "JIRA_GET_ISSUE_BY_KEY"
+                },
+                {
+                  "index": 4,
+                  "label": "Filter Issues",
+                  "value": "JIRA_FILTER_ISSUES"
+                },
+                {
+                  "index": 5,
+                  "label": "Search By Jql",
+                  "value": "JIRA_SEARCH_BY_JQL"
+                },
+                {
+                  "index": 6,
+                  "label": "Get Projects",
+                  "value": "JIRA_GET_PROJECTS"
+                },
+                {
+                  "index": 7,
+                  "label": "Get Issue Types By Project",
+                  "value": "JIRA_GET_ISSUE_TYPES_BY_PROJECT"
+                },
+                {
+                  "index": 8,
+                  "label": "Get Issue Types",
+                  "value": "JIRA_GET_ISSUE_TYPES"
+                },
+                {
+                  "index": 9,
+                  "label": "Describe Action Schema",
+                  "value": "JIRA_DESCRIBE_ACTION_SCHEMA"
+                },
+                {
+                  "index": 10,
+                  "label": "Get Issue Status By Project",
+                  "value": "JIRA_GET_ISSUE_STATUS_BY_PROJECT"
+                },
+                {
+                  "index": 11,
+                  "label": "Get All Assignees By Project",
+                  "value": "JIRA_GET_ALL_ASSIGNEES_BY_PROJECT"
+                },
+                {
+                  "index": 12,
+                  "label": "Custom Action",
+                  "value": "CUSTOM_ACTION"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_CREATE_ISSUE",
+      "controlType": "SECTION_V2",
+      "name": "Create Issue",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_CREATE_ISSUE'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "summary",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.summary",
+              "isRequired": true,
+              "label": "Summary",
+              "tooltipText": "Summary : A brief one-line summary of the issue. (example: \"The printer stopped working\")",
+              "placeholderText": "Enter Summary"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "project",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.project",
+              "isRequired": false,
+              "label": "Project",
+              "tooltipText": "Project : The project which the issue belongs to. Defaults to the user\u2019s first project if not provided. Use Connect Portal Workflow Settings to allow users to select a Project. (example: \"{{settings.project}}\")",
+              "placeholderText": "Enter Project"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "issueType",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.issueType",
+              "isRequired": false,
+              "label": "Issue Type",
+              "tooltipText": "Issue type : Defaults to Task if not provided. (example: \"{{settings.issueType}}\")",
+              "placeholderText": "Enter Issue Type"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "jiraIssueStatus",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.jiraIssueStatus",
+              "isRequired": false,
+              "label": "Jira Issue Status",
+              "tooltipText": "Status : Defaults to the project\u2019s first status if not provided. (example: \"{{settings.status}}\")",
+              "placeholderText": "Enter Jira Issue Status"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "assignee",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.assignee",
+              "isRequired": false,
+              "label": "Assignee",
+              "tooltipText": "Assignee : Defaults to the authenticated user if not provided. (example: \"{{settings.assignee}}\")",
+              "placeholderText": "Enter Assignee"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "descriptionType",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.descriptionType",
+              "isRequired": false,
+              "label": "Description Type",
+              "tooltipText": "Description Type : Select the Description Type.",
+              "placeholderText": "Enter Description Type",
+              "options": [
+                {
+                  "label": "descriptionJSON",
+                  "value": "descriptionJSON"
+                },
+                {
+                  "label": "description",
+                  "value": "description"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "descriptionJSON",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.descriptionJSON",
+              "isRequired": false,
+              "label": "Description J S O N",
+              "tooltipText": "Description JSON (example: \"{\n  \"version\": 1,\n  \"type\": \"doc\",\n  \"content\": [\n    {\n      \"type\": \"paragraph\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Hello\",\n          \"marks\": [\n            {\n              \"type\": \"strong\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\") \nThis field appears only when 'descriptionType' = 'descriptionJSON')",
+              "placeholderText": "Enter Description J S O N"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "description",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.description",
+              "isRequired": false,
+              "label": "Description",
+              "tooltipText": "Description : A detailed description of the issue.",
+              "placeholderText": "Enter Description"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "additionalFields",
+              "configProperty": "actionConfiguration.formData.JIRA_CREATE_ISSUE.additionalFields",
+              "isRequired": false,
+              "label": "Additional Fields",
+              "tooltipText": "Additional Fields : Specify any other fields that should be included in JSON below. Use Connect Portal Workflow Settings to allow users to select which Issue Fields to update. (example: \"{\n    \"{{settings.ExternalID}}\": \"...\"\n}\n                \")",
+              "placeholderText": "Enter Additional Fields"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_UPDATE_ISSUE",
+      "controlType": "SECTION_V2",
+      "name": "Update Issue",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_UPDATE_ISSUE'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "issueKey",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.issueKey",
+              "isRequired": true,
+              "label": "Issue Key",
+              "tooltipText": "Issue Key (example: \"TEST-1234\")",
+              "placeholderText": "Enter Issue Key"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "summary",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.summary",
+              "isRequired": false,
+              "label": "Summary",
+              "tooltipText": "Summary : A brief one-line summary of the issue. (example: \"The printer stopped working\")",
+              "placeholderText": "Enter Summary"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "issueType",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.issueType",
+              "isRequired": false,
+              "label": "Issue Type",
+              "tooltipText": "Issue type : Use Connect Portal Workflow Settings to allow users to select an Issue Type. (example: \"{{settings.issueType}}\")",
+              "placeholderText": "Enter Issue Type"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "jiraIssueStatus",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.jiraIssueStatus",
+              "isRequired": false,
+              "label": "Jira Issue Status",
+              "tooltipText": "Status : Use Connect Portal Workflow Settings to allow users to select a Status. (example: \"{{settings.status}}\")",
+              "placeholderText": "Enter Jira Issue Status"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "assignee",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.assignee",
+              "isRequired": false,
+              "label": "Assignee",
+              "tooltipText": "Assignee : Use Connect Portal Workflow Settings to allow users to select an Assignee. (example: \"{{settings.assignee}}\")",
+              "placeholderText": "Enter Assignee"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "descriptionType",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.descriptionType",
+              "isRequired": false,
+              "label": "Description Type",
+              "tooltipText": "Description Type : Select the Description Type.",
+              "placeholderText": "Enter Description Type",
+              "options": [
+                {
+                  "label": "descriptionJSON",
+                  "value": "descriptionJSON"
+                },
+                {
+                  "label": "description",
+                  "value": "description"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "descriptionJSON",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.descriptionJSON",
+              "isRequired": false,
+              "label": "Description J S O N",
+              "tooltipText": "Description JSON (example: \"{\n  \"version\": 1,\n  \"type\": \"doc\",\n  \"content\": [\n    {\n      \"type\": \"paragraph\",\n      \"content\": [\n        {\n          \"type\": \"text\",\n          \"text\": \"Hello\",\n          \"marks\": [\n            {\n              \"type\": \"strong\"\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\") \nThis field appears only when 'descriptionType' = 'descriptionJSON')",
+              "placeholderText": "Enter Description J S O N"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "description",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.description",
+              "isRequired": false,
+              "label": "Description",
+              "tooltipText": "Description : A detailed description of the issue.",
+              "placeholderText": "Enter Description"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "additionalFields",
+              "configProperty": "actionConfiguration.formData.JIRA_UPDATE_ISSUE.additionalFields",
+              "isRequired": false,
+              "label": "Additional Fields",
+              "tooltipText": "Additional Fields : Specify any other fields that should be included in JSON below. Use Connect Portal Workflow Settings to allow users to select which Issue Fields to update. (example: \"{\n    \"{{settings.ExternalID}}\": \"...\"\n}\n                \")",
+              "placeholderText": "Enter Additional Fields"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_ISSUE_BY_KEY",
+      "controlType": "SECTION_V2",
+      "name": "Get Issue By Key",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_ISSUE_BY_KEY'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "issueKey",
+              "configProperty": "actionConfiguration.formData.JIRA_GET_ISSUE_BY_KEY.issueKey",
+              "isRequired": true,
+              "label": "Issue Key",
+              "tooltipText": "Issue Key (example: \"TEST-1234\")",
+              "placeholderText": "Enter Issue Key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_FILTER_ISSUES",
+      "controlType": "SECTION_V2",
+      "name": "Filter Issues",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_FILTER_ISSUES'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "jqlQuery",
+              "configProperty": "actionConfiguration.formData.JIRA_FILTER_ISSUES.jqlQuery",
+              "isRequired": false,
+              "label": "Jql Query",
+              "tooltipText": "Filter Search : Search for issue that match specified filters. (example: \"field\")",
+              "placeholderText": "Enter Jql Query"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "limit",
+              "configProperty": "actionConfiguration.formData.JIRA_FILTER_ISSUES.limit",
+              "isRequired": false,
+              "label": "Limit",
+              "tooltipText": "Limit results : Limit the maximum number of issues to return. Defaults to 10 if left blank.",
+              "placeholderText": "Enter Limit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_SEARCH_BY_JQL",
+      "controlType": "SECTION_V2",
+      "name": "Search By Jql",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_SEARCH_BY_JQL'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "jqlQuery",
+              "configProperty": "actionConfiguration.formData.JIRA_SEARCH_BY_JQL.jqlQuery",
+              "isRequired": true,
+              "label": "Jql Query",
+              "tooltipText": "JQL Query (example: \"project = PROJECT\")",
+              "placeholderText": "Enter Jql Query"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "paginationParameters",
+              "configProperty": "actionConfiguration.formData.JIRA_SEARCH_BY_JQL.paginationParameters",
+              "isRequired": false,
+              "label": "Pagination Parameters",
+              "tooltipText": "Pagination parameters for paginated results",
+              "placeholderText": "Enter Pagination Parameters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_PROJECTS",
+      "controlType": "SECTION_V2",
+      "name": "Get Projects",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_PROJECTS'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "paginationParameters",
+              "configProperty": "actionConfiguration.formData.JIRA_GET_PROJECTS.paginationParameters",
+              "isRequired": false,
+              "label": "Pagination Parameters",
+              "tooltipText": "Pagination Parameters",
+              "placeholderText": "Enter Pagination Parameters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_ISSUE_TYPES_BY_PROJECT",
+      "controlType": "SECTION_V2",
+      "name": "Get Issue Types By Project",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_ISSUE_TYPES_BY_PROJECT'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "project",
+              "configProperty": "actionConfiguration.formData.JIRA_GET_ISSUE_TYPES_BY_PROJECT.project",
+              "isRequired": true,
+              "label": "Project",
+              "tooltipText": "Project key",
+              "placeholderText": "Enter Project"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_ISSUE_TYPES",
+      "controlType": "SECTION_V2",
+      "name": "Get Issue Types",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_ISSUE_TYPES'}}"
+      },
+      "children": []
+    },
+    {
+      "identifier": "JIRA_DESCRIBE_ACTION_SCHEMA",
+      "controlType": "SECTION_V2",
+      "name": "Describe Action Schema",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_DESCRIBE_ACTION_SCHEMA'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "issueTypeId",
+              "configProperty": "actionConfiguration.formData.JIRA_DESCRIBE_ACTION_SCHEMA.issueTypeId",
+              "isRequired": true,
+              "label": "Issue Type Id",
+              "tooltipText": "Issue Type ID",
+              "placeholderText": "Enter Issue Type Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "projectKey",
+              "configProperty": "actionConfiguration.formData.JIRA_DESCRIBE_ACTION_SCHEMA.projectKey",
+              "isRequired": true,
+              "label": "Project Key",
+              "tooltipText": "Project key",
+              "placeholderText": "Enter Project Key"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "operation",
+              "configProperty": "actionConfiguration.formData.JIRA_DESCRIBE_ACTION_SCHEMA.operation",
+              "isRequired": true,
+              "label": "Operation",
+              "tooltipText": "'Operation Type value for example CREATE_ISSUE or UPDATE_ISSUE",
+              "placeholderText": "Enter Operation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_ISSUE_STATUS_BY_PROJECT",
+      "controlType": "SECTION_V2",
+      "name": "Get Issue Status By Project",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_ISSUE_STATUS_BY_PROJECT'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "project",
+              "configProperty": "actionConfiguration.formData.JIRA_GET_ISSUE_STATUS_BY_PROJECT.project",
+              "isRequired": true,
+              "label": "Project",
+              "tooltipText": "Project key",
+              "placeholderText": "Enter Project"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "JIRA_GET_ALL_ASSIGNEES_BY_PROJECT",
+      "controlType": "SECTION_V2",
+      "name": "Get All Assignees By Project",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'JIRA_GET_ALL_ASSIGNEES_BY_PROJECT'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "project",
+              "configProperty": "actionConfiguration.formData.JIRA_GET_ALL_ASSIGNEES_BY_PROJECT.project",
+              "isRequired": true,
+              "label": "Project",
+              "tooltipText": "Project key",
+              "placeholderText": "Enter Project"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "CUSTOM_ACTION",
+      "controlType": "SECTION_V2",
+      "name": "Custom Action",
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "CUSTOM_ACTION_COLUMN",
+          "children": [
+            {
+              "label": "",
+              "Description": "",
+              "identifier": "CUSTOM_ACTION_FORM",
+              "subtitle": "",
+              "configProperty": "actionConfiguration.formData.CUSTOM_ACTION",
+              "controlType": "CUSTOM_ACTIONS_CONFIG_FORM"
+            }
+          ]
+        }
+      ],
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'CUSTOM_ACTION'}}"
+      }
+    }
+  ]
+}

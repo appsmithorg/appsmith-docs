@@ -320,15 +320,25 @@ const sidebars = {
                   type: 'category',
                   label: 'SaaS Integrations',
                   items: [
-                    'connect-data/reference/airtable',
+                    'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
+                     'connect-data/reference/confluence',
+                    'connect-data/reference/gmail',
+                    'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
+                    //'connect-data/reference/google-calendar',
+                    'connect-data/reference/google-drive',
+                    'connect-data/reference/github',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
+                    'connect-data/reference/notion',
                     'connect-data/reference/outlook',
+                    'connect-data/reference/salesforce',
                      'connect-data/reference/slack',
+                      'connect-data/reference/stripe',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
+                    //'connect-data/reference/zoom',
                   ],
                 },
                 //category- AI Integrations
@@ -739,7 +749,7 @@ const sidebars = {
       {
         type: 'category',
         collapsed: false,
-        label: 'Packages (Beta)',
+        label: 'Packages',
         items: [
           'packages/overview',
   
@@ -776,7 +786,7 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
-      label: 'Workflows (Beta)',
+      label: 'Workflows',
       items: [
         'workflows/README',
         //category- Api

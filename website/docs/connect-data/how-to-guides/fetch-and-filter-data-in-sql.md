@@ -50,7 +50,7 @@ Learn more about [Prepared Statements](/connect-data/concepts/how-to-use-prepare
 
 :::caution
 * Using the `IS` keyword in MySQL is not supported in Appsmith. Use the `=` operator instead.
-* `true` / `false` values should be without quotes i.e. `{{true}}` instead of `{{”true”}}`.
+* `true` / `false` values should be without quotes, i.e., `{{true}}` instead of `{{”true”}}`.
 :::
 
 
@@ -67,7 +67,7 @@ You can use either a Table or List widget to display the paginated data, and you
 
 *Example:* 
 
-1. Create a query to fetch data from the database using `pageSize`, and `pageOffset` reference properties:
+1. Create a query to fetch data from the database using `pageSize` and `pageOffset` reference properties:
 
 
 ```sql
@@ -118,7 +118,7 @@ If you want to perform search operations in your SQL queries, consider using LIK
 <dd>
 
 
-**Example**:If you want to perform a partial text search that matches the search term anywhere in the data column, you can use the following query with prepared statements enabled:
+**Example**: If you want to perform a partial text search that matches the search term anywhere in the data column, you can use the following query with prepared statements enabled:
 
 
 ```sql
@@ -143,7 +143,7 @@ The IN clause in SQL allows you to filter results based on multiple values.
 <dd>
 
 
-**Example :** If you're working with a list of product IDs as strings, you can use this query format: 
+**Example:** If you're working with a list of product IDs as strings, you can use this query format: 
 
 ```sql
 -- With prepared statements disabled
@@ -175,7 +175,7 @@ When working with IN statements, you may encounter situations where it's more co
 <dd>
 
 
-**Example :**  If you want to filter employee data based on a specific combination of name and department, you can use the following query:
+**Example:**  If you want to filter employee data based on a specific combination of name and department, you can use the following query:
 
 
 

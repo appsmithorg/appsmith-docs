@@ -196,57 +196,112 @@ Databases are an essential part of many applications and are used to store and m
 
 ## SaaS Integrations
 
-Appsmith also supports integration with various Software as a Service (SAAS) platforms:
-
+Appsmith also supports integration with various Software as a Service (SaaS) platforms:
 
 <div className="containerGrid">
-    <div className="columnGrid column-one" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/airtable">
-            <img className="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/airtable">Airtable</a></b>
-    </div>
-   <div className="columnGrid column-two" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/twilio">
-            <img className="containerImage" src="/img/twilio_.png" alt="twilio-logo"/>
-            </a>     
-        </div> 
-         <b><a href="/connect-data/reference/twilio">Twilio</a></b>
-    </div>
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/hubspot">
-            <img className="containerImage" src="/img/hubspot_.png" alt="hubspot-logo"/>
-            </a>   
-        </div> 
-            <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
-   </div>
 
+  <div className="columnGrid column-one" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/airtable">
+        <img className="containerImage" src="/img/Airtable-logo.png" alt="Airtable"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/airtable">Airtable</a></b>
+  </div>
+
+  <div className="columnGrid column-two" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/asana">
+        <img className="containerImage" src="/img/generic-integration-icon.svg" alt="Asana"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/asana">Asana</a></b>
+  </div>
+
+  <div className="columnGrid column-three" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/aws-lambda">
+        <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
+  </div>
 
 </div>
 
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/querying-google-sheets">
+        <img className="containerImage" src="/img/gsheets_.png" alt="Google Sheets"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
+  </div>
+
+  <div className="columnGrid column-two" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/hubspot">
+        <img className="containerImage" src="/img/hubspot_.png" alt="HubSpot"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
+  </div>
+
+  <div className="columnGrid column-three" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/jira">
+        <img className="containerImage" src="/img/generic-integration-icon.svg" alt="Jira"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/jira">Jira</a></b>
+  </div>
+
+</div>
 
 <div className="containerGrid">
-    
-   <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/aws-lambda">
-            <img className="containerImage" src="/img/aws-logo02.svg" alt="AWS Lambda"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
+
+  <div className="columnGrid column-one" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/salesforce">
+        <img className="containerImage" src="/img/generic-integration-icon.svg" alt="Salesforce"/>
+      </a>
     </div>
- <div className="columnGrid column-three" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/querying-google-sheets">
-            <img className="containerImage" src="/img/gsheets_.png" alt="GoogleSheets"/>
-            </a>   
-        </div> 
-            <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
-   </div>
+    <b><a href="/connect-data/reference/salesforce">Salesforce</a></b>
+  </div>
+
+  <div className="columnGrid column-two" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/slack">
+        <img className="containerImage" src="/img/generic-integration-icon.svg" alt="Slack"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/slack">Slack</a></b>
+  </div>
+
+  <div className="columnGrid column-three" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/twilio">
+        <img className="containerImage" src="/img/twilio_.png" alt="Twilio"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/twilio">Twilio</a></b>
+  </div>
+
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
+    <div className="containerCol">
+      <a href="/connect-data/reference/zendesk">
+        <img className="containerImage" src="/img/generic-integration-icon.svg" alt="Zendesk"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/zendesk">Zendesk</a></b>
+  </div>
+
 </div>
 
 
