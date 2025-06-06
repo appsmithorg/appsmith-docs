@@ -51,6 +51,9 @@ Sets the tooltip content for the stars by providing an array of strings that des
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Allow half stars `boolean`
 
 <dd>
@@ -121,6 +124,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 #### onChange		
 
 <dd>
@@ -134,6 +139,9 @@ Sets the action (Framework functions, queries, or JS functions) to be executed w
 Style properties allow you to change the look and feel of the widget.
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Star size `string`
 
