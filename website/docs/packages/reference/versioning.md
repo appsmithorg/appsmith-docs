@@ -12,6 +12,19 @@ You can manage versions of a Git-connected Package using the Commit button in th
 If the Package is not Git-connected, the Deploy button appears instead of Commit. Deploying applies changes immediately without version control.
 
 
+<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
+  <iframe
+    src="https://demo.arcade.software/Qk3L0I0ilxeF6rvFvgb0?embed"
+    frameBorder="0"
+    loading="lazy"
+    webkitAllowFullScreen
+    mozAllowFullScreen
+    allowFullScreen
+    allow="fullscreen"
+    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+    title="Appsmith | Connect Data"
+  />
+</div>
 
 
 #### Deploy

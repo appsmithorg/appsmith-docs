@@ -405,7 +405,7 @@ Replace `<YOUR_GOOGLE_MAPS_API_KEY>` with a valid API key obtained from the [Goo
 
 ### File size limit
 
-The default file size limit in Appsmith is 150 MB. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
+The default file size limit in Appsmith is 200 MB. This limit is customizable based on your requirements for larger file uploads in self-hosted instances.
 
 ##### `APPSMITH_CODEC_SIZE`
 <dd>
