@@ -1,4 +1,23 @@
-# Module
+---
+description: Learn about the Modules feature in Appsmith.
+title: Code Module
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Code Module</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 Modules in Appsmith are integral components of a Package tailored. They are reusable components containing queries and JSObjects that can yield results across multiple applications within the same workspace.
 

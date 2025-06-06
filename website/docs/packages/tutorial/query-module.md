@@ -1,12 +1,12 @@
 ---
-title: Package and query modules
+title: Query Modules
 hide_title: true
 ---
 
 <!-- vale off -->
 
 <div className="tag-wrapper">
- <h1>Package and query modules</h1>
+ <h1>Query Modules</h1>
 
 <Tags
 tags={[
@@ -18,14 +18,16 @@ tags={[
 
 <!-- vale on -->
 
-A package is a collection of query and JS modules that can be versioned and distributed across instances. Inside packages, you can create multiple query and JS modules, allowing you to bundle and organize your application logic efficiently.
+A package is a collection of reusable query, JavaScript, and UI modules that can be versioned and shared across applications in the same workspace. Packages help you organize and maintain logic consistently across your projects.
 
-:::tip What will I learn? 📝
-You'll create a reusable query module using product inventory data and display that data in a Table widget. By the end of this tutorial, you will learn:
+In this tutorial, we will create a query module, which allows you to define reusable queries that accept dynamic inputs and can be used across multiple applications. As an example, we’ll build a query module that fetches user details from a sample database, and then display the results in a Table widget with server-side pagination enabled.
 
-* 🔧 **Basics:** Learn how to create and configure the query module
-* 🔄 **Dynamic Data:** Learn how to pass data between the app and query module
-* ♻️ **Reusability:** Discover how to reuse the query module within applications
+:::tip ⏳ Estimated Time: 10 minutes
+By the end of this tutorial, you will learn to:
+
+* 🔧 **Basics:** How to create and configure the query module
+* 🔄 **Dynamic Data:** How to pass data between the app and query module
+* ♻️ **Reusability:** How to reuse the query module within applications
 :::
 
 
@@ -33,9 +35,10 @@ You'll create a reusable query module using product inventory data and display t
 
 A reusable query module is a query that can be used across multiple applications within the same workspace. They prove beneficial for tasks like fetching details or creating filter queries, eliminating the need to create separate queries for each application.
 
+
 <div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
   <iframe
-    src="https://demo.arcade.software/Zm91UIkEM0nSlq2MGzOQ?embed"
+    src="https://demo.arcade.software/yPMGvRmB4KZ03CcKZZtv?embed"
     frameBorder="0"
     loading="lazy"
     webkitAllowFullScreen
@@ -50,48 +53,41 @@ A reusable query module is a query that can be used across multiple applications
 
 
 
-1. Click **Create New** on the top-right corner of your workspace, and then select **New Package**.
+1. Open your **Appsmith** workspace and click **Create New** on the top-right corner, then select **Package**.
 
-2. Rename the package to `ProductUtils`.
 
-3. Click the **New Module** button located at the center of the screen. Choose **Query Module** and proceed to create a **new datasource** by selecting PostgreSQL.
-
-4. Enter the following details in the connection parameter fields. For this tutorial, we will use a product inventory database as an example to create queries and display data.
+2. Select **Code Package**, and rename it to `UserUtils`.
 
 <dd>
 
-* **Connection mode:** `READ_WRITE`
-* **Host address:** `aws-0-us-east-1.pooler.supabase.com`
-* **Port:** `5432`
-* **Database name:** `postgres`
-* **Username:** `postgres.hazwlkzitjmrmqbpkqch`
-* **Password:** `w9uDFMhmMzOOvPbv`
+- **Code Packages:** Contain reusable query and JS modules that can be shared across your workspace.
 
+- **UI Packages:** Contain UI modules, bundling widgets, queries, and JavaScript logic into reusable units. See [UI Modules](/packages/tutorial/ui-module).
+ 
 </dd>
 
-5. Test and save the datasource.
+3. In the Package UI, click on the **Queries** tab, then add a new datasource and select **Sample Users** Database.
 
-6. Click **+ New Reusable Query** from the top-right corner of the datasource editor.
 
-7. Rename the query module to `GetProducts`.
+4. Once connected, click + New Reusable Query from the top-right corner of the datasource editor.
 
-8. Configure the query to retrieve product details using the following SQL:
-
+5. Rename the query to `GetUsers` and configure it with the following SQL:
 
 <dd>
 
 ```sql
-SELECT * FROM public."product" LIMIT 5 OFFSET 4;
+SELECT * FROM public."users" LIMIT 10 OFFSET 4;
 ```
 
-With this, you don't need to create multiple same queries for different pages or applications. You can reuse this same query module in various contexts, such as:
+With this setup, you don't need to create separate queries each time you want to fetch user data. You can reuse this query module across multiple applications and widgets. For example:
 
-- Displaying the entire inventory data in a Table widget.
-- Displaying stock data in a chart widget, and more.
+- Display user information in a Table widget for user management pages.
+
+- Populate user statistics dynamically in a Chart widget to visualize user distribution.
 
 </dd>
 
-9. Click on the **+ Add Inputs** button from the right-side property pane. These inputs allow you to pass parameters from your application to query module, facilitating dynamic query adjustments based on user inputs or application requirements. 
+6. Click **+ Add Inputs** in the right-side pane. Inputs allow you to pass parameters dynamically from your application to the query module. If no dynamic values are provided, the query will use the default values set.
 
 <dd>
 
@@ -101,26 +97,26 @@ Create two inputs:
 * `limit`, with a default value of `5`.
 * `offset`, with a default value of `4`.
 
-If dynamic values are not passed, it takes the default value.
+You can use these inputs to adjust queries based on user interactions, such as pagination or filtering within widgets.
 
 </dd>
 
 
-10. Update the query by using `inputs` property for dynamic adjustments: 
+7. Update the query by using `inputs` property for dynamic adjustments: 
 
 <dd>
 
 
 ```sql
-SELECT * FROM public."product" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
+SELECT * FROM public."users" LIMIT {{inputs.limit}} OFFSET {{inputs.offset}};
 ```
 
 </dd>
 
-11. **Run** the query to ensure it retrieves the data correctly.
+8. **Run** the query to ensure it retrieves the data correctly.
 
 
-12. **Publish** the query module from top-right corner. This allows the changes to reflect on the app side. 
+9. **Publish** the query module from top-right corner. This allows the changes to reflect on the app side. 
 
 <dd>
 
@@ -135,10 +131,9 @@ If the package is git-connected, you also need to release a new version for the 
 Great job on creating a query module! Now, let's see how you can reuse it in different apps.
 
 
-
 <div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
   <iframe
-    src="https://demo.arcade.software/t77RIouwmGGXyyuUN8j8?embed"
+    src="https://demo.arcade.software/M6Wcxy6NVNFg51KFihM2?embed"
     frameBorder="0"
     loading="lazy"
     webkitAllowFullScreen
@@ -151,18 +146,21 @@ Great job on creating a query module! Now, let's see how you can reuse it in dif
 </div>
 
 
-1. Open your App or create a new one from the homepage and ensure that both the app and modules share the same workspace.
+1. Open your existing App or create a new one from the homepage, ensuring both the App and modules are in the same workspace.
 
-2. From the **Queries** Tab, click **+ New query / API**.
+2. From the **Queries** tab, click **+ New query / API** and select the **GetUsers** query module from the `UserUtils` package.
 
-3. Select the `Add GetProducts` query module. You can add multiple instances of the same module and pass different parameters to each one.
+<dd>
 
-4. **Run** the query module.
+When you add a query module into your app, it becomes a query module instance. You can add multiple instances of the same module and pass different parameters to each one
 
-5. To display query data, drop a Table widget and connect it to the `GetProducts1` **Query module**. 
+</dd>
 
+4. **Run** the query module instance.
 
-6. From the **Queries** Tab, open the `GetProducts` query module and set the **inputs** to reference the properties of the Table widget.
+5. To display the data, drag a **Table** widget onto the canvas, click **Connect Data**, and select the `GetUsers1` query module instance.
+
+6. From the **Queries** Tab, open the `GetUsers` query module and set the **inputs** to reference the properties of the Table widget.
 
 <dd>
 
@@ -179,7 +177,7 @@ This configuration dynamically sets the limit and offset based on the values fro
 7. Enable the **Server-side pagination** property in the Table.
 
 
-8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetProducts` query. 
+8. Set the Table widget's **OnPageSizeChange** and **onPageChange** to execute the `GetUsers` query. 
 
 With this, you have connected the query module to the Table widget and enabled server-side pagination, which allows you to dynamically fetch and display data based on the current page and page size.
 
@@ -192,3 +190,4 @@ You have successfully integrated the query module into your app, displaying its 
 ## Next steps
 
 - [Create JS Module](/packages/tutorial/js-module)
+- [Create UI Module](/packages/tutorial/ui-module)
