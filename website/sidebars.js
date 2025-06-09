@@ -554,6 +554,7 @@ const sidebars = {
             'learning-and-resources/sample-apps'
           ],
         }, //Reference End
+        'build-apps/performance-best-practices',
       ]
     }, //Build Apps end
 
