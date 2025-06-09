@@ -98,3 +98,29 @@ Choose the authentication method that best aligns with your organization's ident
 </div>
 
 </dd>
+
+
+
+### Provisioning
+
+<dd>
+
+The Provisioning section allows administrators to automate user and group management through external Identity Providers (IdPs) such as Okta or Azure Active Directory. Appsmith currently supports provisioning via SCIM (System for Cross-domain Identity Management).
+
+For more details, see [User Provisioning & Group Sync](/advanced-concepts/user-provisioning-group-sync).
+
+
+</dd>
+
+### Users
+
+Users are individuals who have access to your Appsmith instance. From the Users page in the Admin UI, administrators can manage access by assigning roles, adding users, grouping users for permission control, or removing users from the instance.
+
+Administrators can:
+
+- Invite new users.
+- Assign or update user roles (e.g., Viewer, Developer, Admin).
+- Add users to specific groups.
+- Deactivate or remove users from the instance.
+
+For more information, see [Granular Access Control](/advanced-concepts/granular-access-control#users).
