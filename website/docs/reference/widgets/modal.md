@@ -14,6 +14,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Animate Loading `boolean`
 
 
@@ -48,6 +51,8 @@ This property determines how the widget's height adjusts to changes in its conte
 </dd>
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 #### onClose
 
