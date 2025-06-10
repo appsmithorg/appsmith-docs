@@ -116,6 +116,8 @@ For more details, see [User Provisioning & Group Sync](/advanced-concepts/user-p
 
 Users are individuals who have access to your Appsmith instance. From the Users page in the Admin UI, administrators can manage access by assigning roles, adding users, grouping users for permission control, or removing users from the instance.
 
+<dd>
+
 Administrators can:
 
 - Invite new users.
@@ -124,3 +126,43 @@ Administrators can:
 - Deactivate or remove users from the instance.
 
 For more information, see [Granular Access Control](/advanced-concepts/granular-access-control#users).
+
+</dd>
+
+### Groups
+
+Groups allow administrators to organize users into logical collections for easier access management. Instead of assigning roles and permissions to individual users, you can assign them to a group and manage access collectively.
+
+
+<dd>
+With the Groups feature, administrators can:
+
+- Create and name groups based on roles (e.g., “Developers”, “Support Team”, “Finance”)
+- Add or remove users from specific groups
+- Assign roles (such as Viewer, Editor, Administrator) to the entire group
+
+For more information, see [Granular Access Control](/advanced-concepts/granular-access-control).
+
+
+</dd>
+
+
+### Roles
+
+Roles define what actions a user or group is allowed to perform within your Appsmith instance. Each role represents a bundle of permissions that govern access to applications, pages, datasources, queries, and administrative features.
+
+<dd>
+
+Roles can be assigned to individual users or to groups, making it easier to manage access consistently and securely across your organization.
+
+Appsmith supports two types of roles:
+
+- [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles)
+Predefined roles such as Viewer, App Viewer, Developer, and Administrator provide standardized permission sets that align with common user responsibilities.
+
+- [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles)
+Available in the Business Edition, custom roles allow administrators to define precise permission sets tailored to organizational needs, such as restricting deployment access or read-only access to certain environments.
+
+For more information, see [Granular Access Control](/advanced-concepts/granular-access-control).
+
+</dd>
