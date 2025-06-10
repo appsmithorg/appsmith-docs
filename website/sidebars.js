@@ -175,7 +175,20 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-configuration/file-size-limit',
-                'getting-started/setup/instance-configuration/admin-settings',
+                {
+  type: 'category',
+  label: 'Admin Settings',
+  link: {
+    type: 'doc',
+    id: 'getting-started/setup/instance-configuration/admin-settings', // Landing page
+  },
+  items: [
+    'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
+    'getting-started/setup/instance-configuration/user-management',   // User Management
+    'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
+  ],
+},
+
                 'getting-started/setup/environment-variables',
                 'getting-started/setup/instance-management/api-reference',
               ],
