@@ -32,7 +32,6 @@ You can trigger the function using:
 - JavaScript calls using `.run()`.
 - The **Run** button in the editor.
 
-
 This mode provides full control over execution timing and is best suited for user-driven actions.
 
 *Example:* If you want to execute a function only when a user clicks a button, you can set the button's **onClick** event to:
