@@ -1,12 +1,26 @@
 # Query Settings
 
-This page is a reference guide that provides a description of all the settings available for configuring your queries.
-
-You can find the following settings by clicking the gear icon in the top-right corner of the query editor for an API or database query.
+This page is a reference guide that provides a description of all the settings available for configuring your queries. You can find the following settings by clicking the **⚙️ gear icon**  in the top-right corner of the query editor for an API or database query.
 
 ### Run behavior
 
 The Run behavior property determines when your query executes. It has three possible values:
+
+
+<img
+  src="/img/query-settings.png"
+  alt="Query Settings"
+  style={{
+    maxHeight: "600px",
+    width: "auto",
+    display: "block",
+    margin: "0 auto"
+  }}
+/>
+<p style={{ textAlign: "center", fontSize: "0.9rem", color: "#666" }}>
+  Query Settings
+</p>
+
 
 
 #### Manual
