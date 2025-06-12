@@ -68,6 +68,22 @@ SELECT * FROM addresses WHERE country = {{inputs.inputCountry}}
 
 </dd>
 
+#### On Input Change
+
+<dd>
+
+
+Each Input supports an optional **onChange** configuration that defines what happens when the Input’s value changes during application usage. When you create an Input, a corresponding Input event is also created automatically. You can configure this event to:
+
+- Run one or more queries.
+- Call a JavaScript function.
+- Chain multiple actions.
+
+All actions defined in this event will run simultaneously when the input value changes from the app side. With this configuration, you do not need to set up separate buttons or widget events to trigger a query every time an input changes—Appsmith will automatically run the defined logic as part of the input’s change lifecycle.
+
+
+</dd>
+
 #### Outputs
 
 <dd>
