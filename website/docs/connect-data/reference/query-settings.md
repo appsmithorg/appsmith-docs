@@ -2,7 +2,89 @@
 
 This page is a reference guide that provides a description of all the settings available for configuring your queries.
 
-You can find the following settings in the **Settings** tab of the query editor for an API or database query:
+You can find the following settings by clicking the gear icon in the top-right corner of the query editor for an API or database query.
+
+### Run behavior
+
+The Run behavior property determines when your query executes. It has three possible values:
+
+
+#### Manual
+
+<dd>
+
+Queries execute only when explicitly triggered. They do not run automatically on page load or when any variables change.
+
+You can trigger the query using:
+
+- Widget events (e.g., **onClick**, **onOptionChange**).
+
+- JavaScript function calls using `.run()`
+
+- The **Run** button in the query editor
+
+This mode provides full control over when and how the query is executed.
+
+*Example:* If you want to execute a query when a button is clicked:
+
+```js
+{{getUsers.run()}}
+```
+
+
+</dd>
+
+#### On page load
+
+<dd>
+
+Queries with On page load behavior execute automatically once whenever the application or page is loaded. This is useful for fetching data needed immediately when the app starts, without requiring any user interaction.
+
+The query runs each time:
+
+- The page is loaded or reloaded
+
+- The app is opened or refreshed
+
+You do not need to configure any widget actions or write custom JavaScript to trigger the query.
+
+
+*Example:* If you have a query that fetches user data and you want to display it whenever the app is opened, you can set the run behavior to **On page load**.
+
+</dd>
+
+
+#### Automatic
+
+<dd>
+
+Queries with Automatic behavior execute whenever a variable they depend on changes. This includes values from:
+
+- Widget properties (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`)
+
+- JavaScript object variables or function outputs (e.g., `{{JSObject1.value}}`, `{{JSObject1.function.data}}`)
+
+- Appsmith store variables (e.g., `{{appsmith.store.searchKey}}`)
+
+When any of these values change, the query re-executes automatically. You do not need to use event handlers like **onTextChanged** or **onOptionChanged**.
+
+This mode is useful for building dynamic, responsive apps where data needs to stay updated based on user input or state changes.
+
+*Example:* If you have a query that filters a customer list based on user input, and you want the results to update automatically as the user types, you can bind the input value directly and set the run behavior to Automatic:
+
+```js
+SELECT * FROM customers WHERE name ILIKE '%{{SearchInput.text}}%';
+```
+
+Each time the value of` SearchInput.text` changes, the query runs automatically and updates the data shown in the UI.
+
+:::note
+If a query is configured with Automatic run behavior and is also manually triggered through a widget event (such as **onTextChanged**), the query will be executed twice—once due to the reactive binding, and once from the event handler.
+To avoid unintended duplicate executions, it is recommended to use either the automatic behavior or an explicit trigger, but not both.
+:::
+
+</dd>
+
 
 #### Encode query params
 
