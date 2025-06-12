@@ -29,9 +29,7 @@ The function executes only when explicitly invoked. It will not run on page load
 You can trigger the function using:
 
 - Widget events (e.g., **onClick**).
-
 - JavaScript calls using `.run()`.
-
 - The **Run** button in the editor.
 
 
@@ -56,7 +54,6 @@ Functions configured with On page load run behavior execute automatically once w
 The function runs each time:
 
 - The page is loaded or reloaded
-
 - The app is opened or refreshed
 
 This mode is ideal for setup tasks that should occur during the initial load of the application.
@@ -82,13 +79,10 @@ This eliminates the need to manually bind the function to widget events such as 
 
 The function runs each time:
 
-- A referenced widget value changes (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`)
-
-- A dependent JavaScript object or function result is updated
-
-- An Appsmith store variable used inside the function changes
-
-- A default parameter bound to a variable is updated
+- A referenced widget value changes (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
+- A dependent JavaScript object or function result is updated.
+- An Appsmith store variable used inside the function changes.
+- A default parameter bound to a variable is updated.
 
 This mode is ideal for reactive logic where the output should always reflect the latest application state or user input.
 

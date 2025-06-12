@@ -4,7 +4,7 @@ This page is a reference guide that provides a description of all the settings a
 
 ### Run behavior
 
-The Run behavior property determines when your query executes. It has three possible values:
+The Run behavior property determines when your query executes. 
 
 
 <img
@@ -32,10 +32,8 @@ Queries execute only when explicitly triggered. They do not run automatically on
 You can trigger the query using:
 
 - Widget events (e.g., **onClick**, **onOptionChange**).
-
-- JavaScript function calls using `.run()`
-
-- The **Run** button in the query editor
+- JavaScript function calls using `.run()`.
+- The **Run** button in the query editor.
 
 This mode provides full control over when and how the query is executed.
 
@@ -57,7 +55,6 @@ Queries with On page load behavior execute automatically once whenever the appli
 The query runs each time:
 
 - The page is loaded or reloaded
-
 - The app is opened or refreshed
 
 You do not need to configure any widget actions or write custom JavaScript to trigger the query.
@@ -74,10 +71,8 @@ You do not need to configure any widget actions or write custom JavaScript to tr
 
 Queries with Automatic behavior execute whenever a variable they depend on changes. This includes values from:
 
-- Widget properties (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`)
-
-- JavaScript object variables or function outputs (e.g., `{{JSObject1.value}}`, `{{JSObject1.function.data}}`)
-
+- Widget properties (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
+- JavaScript object variables or function outputs (e.g., `{{JSObject1.value}}`, `{{JSObject1.function.data}}`).
 - Appsmith store variables (e.g., `{{appsmith.store.searchKey}}`)
 
 When any of these values change, the query re-executes automatically. You do not need to use event handlers like **onTextChanged** or **onOptionChanged**.
@@ -102,42 +97,123 @@ To avoid unintended duplicate executions, it is recommended to use either the au
 
 #### Encode query params
 
-<dd>Toggles whether Appsmith converts parameters' special characters into their <a href="https://en.wikipedia.org/wiki/URL_encoding">URL-encoded</a> equivalents. It also encodes the form body when the <b>Content-Type</b> header is set to <code>FORM_URLENCODED</code>. This setting is available for API queries.</dd>
+<dd>
+
+
+When enabled, Appsmith automatically encodes special characters in query parameters to ensure they are transmitted correctly over the network.
+
+- All API query parameters are URL-encoded based on [RFC 3986](https://en.wikipedia.org/wiki/Percent-encoding).
+- If the Content-Type header is set to `application/x-www-form-urlencoded`, the request body is also encoded.
+
+This setting is useful for APIs that expect properly encoded input, especially when sending form data or special characters like spaces, ampersands, or slashes. This setting is only available for API queries.
+
+</dd>
 
 #### Use Prepared Statements
 
-<dd>Toggles whether Appsmith uses pre-compiled and parameterized SQL statements to construct and execute database queries. This method improves the security of your SQL queries. This setting is turned on by default, and available for SQL database queries. For more details, see <a href="/connect-data/concepts/how-to-use-prepared-statements">Prepared Statements</a>.</dd>
+<dd>
+
+When enabled, Appsmith constructs and executes SQL queries using pre-compiled and parameterized statements. This improves both performance and security by separating query logic from user input.
+
+- Helps protect against SQL injection attacks by preventing direct injection of unescaped input.
+- Improves query execution efficiency in certain database engines by allowing query plan reuse.
+
+This setting is enabled by default and is only available for SQL database queries. For more information, see [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements).
+
+
+
+</dd>
 
 #### Query timeout
 
 <dd>
 
-Sets the time duration in milliseconds that the Appsmith server waits for the query to finish before it closes the connection. If your query takes longer than this duration, Appsmith throws a [timeout-error](/help-and-support/troubleshooting-guide/action-errors#timeout-error). This setting defaults to 10000 ms with a maximum of 60000 ms.
 
-The Appsmith server has a default internal timeout of 60 seconds. If your queries take longer than this, you can set a value greater than 60 seconds. For self-hosted instances, you can set the `APPSMITH_SERVER_TIMEOUT` environment variable to a value greater than 60 seconds. For example, if you want a timeout of 80 seconds, use- `APPSMITH_SERVER_TIMEOUT=80`.
+Defines the maximum time (in milliseconds) that Appsmith waits for a query to complete before terminating the request.
+
+- If the query does not respond within the specified timeout, Appsmith throws a [timeout error](/help-and-support/troubleshooting-guide/action-errors#timeout-error).
+
+- The default timeout is `10000` milliseconds (10 seconds), with a maximum configurable limit of `60000` milliseconds (60 seconds).
+
+For self-hosted instances, you can increase the server-level timeout beyond `60` seconds by setting the `APPSMITH_SERVER_TIMEOUT` environment variable. For example:
+
+```js
+APPSMITH_SERVER_TIMEOUT=80
+```
+
+This setting is available for both API and database queries.
+
 
 </dd>
 
-#### Request confirmation before running query
+#### Request confirmation before running query/API
 
-<dd>When turned on, Appsmith asks the user for permission to run the query before each execution.</dd>
+<dd>
 
-#### Request confirmation before running API
+When enabled, Appsmith prompts the user for confirmation each time the API / query is about to run. This is useful for critical operations such as deleting records, sending emails, or triggering external workflows, where unintentional execution may have significant consequences.
 
-<dd>When turned on, Appsmith asks the user for permission to run the query before each execution.</dd>
 
-#### Run API on page load
+</dd>
 
-<dd>When turned on, your query is executed every time the page loads or refreshes. This is automatically turned on when you bind the query's data to be displayed in a widget, though you can choose to turn it off</dd>
 
-#### Run query on page load
+#### Protocol
 
-<dd>When turned on, your query is executed every time the page loads or refreshes. This is automatically turned on when you bind the query's data to be displayed in a widget, though you can choose to turn it off.</dd>
+<dd>
+
+
+Specifies the HTTP protocol version to use when making an API request. Choosing the correct version ensures compatibility with the target server and may improve performance depending on the API's infrastructure.
+
+*Available options:*
+
+**HTTP/1.1 (Default)** The most widely supported version of HTTP.
+
+- Uses a new connection for each request-response pair.
+- Supported by nearly all web servers and APIs.
+- Ideal for general-purpose APIs with no specific protocol requirements.
+
+
+**HTTP/2 (h2):** A modern version of HTTP that enables multiplexing multiple requests over a single connection.
+
+- Reduces latency by allowing multiple streams on one connection.
+- Improves performance for APIs that support it.
+- Requires server support for HTTP/2 over TLS (HTTPS).
+
+**HTTP/2 Cleartext (h2c)**: A variant of HTTP/2 that operates over non-encrypted (HTTP) connections.
+
+- Less common and generally used in controlled environments or internal networks.
+- Requires explicit support from the target server.
+- Not recommended for public or production APIs due to lack of encryption.
+
+This setting is only available for API queries.
+
+</dd>
 
 #### Smart JSON substitution
 
-<dd>JavaScript objects and JSON objects are formatted similarly, however they have different rules for where quotation marks are required. When this setting is turned on, Appsmith intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into JSON. This setting is turned on by default, however it may need to be turned off for some tasks such as sending raw binary data to an API. This setting is available for API queries. For a video guide on using this feature, see <a href="https://www.youtube.com/watch?v=-Z3y-pdNhXc">How to Use Smart JSON Substitution</a>.</dd>
+<dd>
+
+When enabled, Appsmith intelligently formats and escapes JavaScript expressions to produce valid JSON output. This helps prevent syntax errors when passing dynamic values in API requests.
+
+- Automatically adds or removes quotation marks as needed to ensure proper JSON structure.
+- Allows you to write JavaScript directly in bindings without manually formatting the resulting JSON.
+
+This setting is enabled by default and is useful when sending structured data in API request bodies, headers, or parameters. In advanced cases—such as sending raw binary data or pre-formatted payloads—you may need to disable this setting to avoid unwanted formatting.
+
+This option is only available for API queries. For a walkthrough, see How to Use [Smart JSON Substitution](https://www.youtube.com/watch?v=-Z3y-pdNhXc).
+
+
+</dd>
 
 #### Smart BSON substitution
 
-<dd>JavaScript objects and Binary JSON (BSON) objects are formatted similarly, however they have different rules for where quotation marks are required. When turned on, the query intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into BSON. This setting is turned on by default, and available for <a href="/connect-data/reference/querying-mongodb">MongoDB</a> queries.</dd>
+<dd>
+
+When enabled, Appsmith automatically formats and escapes JavaScript expressions to produce valid BSON (Binary JSON) output, which is required when interacting with MongoDB.
+
+- Dynamically adds or removes quotation marks as needed to ensure correct BSON structure.
+- Allows you to use JavaScript bindings directly in MongoDB queries and commands without manually formatting them.
+
+This setting is enabled by default and is available only for MongoDB queries. It helps avoid common syntax issues when constructing dynamic queries, filters, or update commands in MongoDB.
+
+
+</dd>
