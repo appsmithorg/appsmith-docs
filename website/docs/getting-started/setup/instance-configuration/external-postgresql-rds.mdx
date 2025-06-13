@@ -39,10 +39,6 @@ Follow these steps to set up a PostgreSQL instance on AWS RDS for Appsmith. If y
 
 Follow these steps to connect your Appsmith instance to the external PostgreSQL database:
 
-:::note
-The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Temporal, which can have issues connecting to PostgreSQL over TLS on both Azure Database for PostgreSQL and AWS RDS. As an alternative, you can disable `rds.force_ssl` in your RDS parameter group, but this is less secure than disabling host verification.
-:::
-
 <Tabs queryString="current-command-type">
 
 <TabItem label="Docker" value="docker-commands">
@@ -57,6 +53,10 @@ The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Tem
     SQL_TLS_DISABLE_HOST_VERIFICATION: true
     SQL_TLS: true
     ```
+
+:::note
+The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Temporal, which can have issues connecting to PostgreSQL over TLS on both Azure Database for PostgreSQL and AWS RDS. As an alternative, you can disable `rds.force_ssl` in your RDS parameter group, but this is less secure than disabling host verification.
+:::
 
 3. Update the Appsmith server configuration to apply the changes:
 
@@ -79,6 +79,10 @@ The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Tem
       SQL_TLS_DISABLE_HOST_VERIFICATION: true
       SQL_TLS: true
     ```
+
+:::note
+The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Temporal, which can have issues connecting to PostgreSQL over TLS on both Azure Database for PostgreSQL and AWS RDS. As an alternative, you can disable `rds.force_ssl` in your RDS parameter group, but this is less secure than disabling host verification.
+:::
 
 3. Apply the environment variables:
 
