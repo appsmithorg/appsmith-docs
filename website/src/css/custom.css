@@ -911,3 +911,9 @@ h4+.tags {
   margin: 20px 0;
   padding-bottom: 2px;
 }
+
+.three-column-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
