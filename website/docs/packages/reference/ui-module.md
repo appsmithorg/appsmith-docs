@@ -79,7 +79,8 @@ Each Input supports an optional **onChange** configuration that defines what hap
 - Call a JavaScript function.
 - Chain multiple actions.
 
-All actions defined in this event will run simultaneously when the input value changes from the app side. With this configuration, you do not need to set up separate buttons or widget events to trigger a query every time an input changes—Appsmith will automatically run the defined logic as part of the input’s change lifecycle.
+All actions defined in this event are executed automatically whenever the input value changes from the application. With this configuration, there is no need to manually configure buttons or widget events to trigger logic. Appsmith automatically runs the associated queries or JavaScript functions as part of the input’s change lifecycle.
+
 
 
 </dd>
