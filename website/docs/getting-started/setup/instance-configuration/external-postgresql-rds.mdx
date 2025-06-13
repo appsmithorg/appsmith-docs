@@ -29,7 +29,7 @@ Follow these steps to set up a PostgreSQL instance on AWS RDS for Appsmith. If y
    - Choose the latest 16.x option for engine version
    - Set a master username and choose the self-managed credentials management option. Note these credentials securely.
    - For most deployments, you can start with `db.t4g.small` as the instance type and scale it as needed. We recommend gp3 storage type, allocating at least 20GB of storage, and checking the box "Enable storage autoscaling" allowing up to 100GB.
-   - In the connectivity section, ensure the instance is in the correct VPC and subnet group. Configure security groups to allow inbound connections from your Appsmith containers.
+   - In the connectivity section, ensure the instance is in the correct VPC and subnets. Configure security groups to allow inbound connections from your Appsmith containers.
    - Complete the remaining configuration as needed and launch the instance.
 
 2. **Retrieve connection details:**
