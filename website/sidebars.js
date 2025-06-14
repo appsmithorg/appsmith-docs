@@ -157,6 +157,7 @@ const sidebars = {
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-postgresql-rds',
                 'getting-started/setup/instance-configuration/external-redis',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
