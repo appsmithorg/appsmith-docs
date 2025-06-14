@@ -48,7 +48,7 @@ Follow these steps to connect your Appsmith instance to the external PostgreSQL 
 2. Add or update the following environment variables with your PostgreSQL connection details:
 
     ```yaml
-    APPSMITH_KEYCLOAK_DB_URL: postgresql://<username>:<password>@<hostname>/<database name>
+    APPSMITH_KEYCLOAK_DB_URL: postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
     SQL_TLS_ENABLED: true
     SQL_TLS_DISABLE_HOST_VERIFICATION: true
     SQL_TLS: true
@@ -74,7 +74,7 @@ The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Tem
 
     ```yaml
     applicationConfig:
-      APPSMITH_KEYCLOAK_DB_URL=postgresql://<username>:<password>@<hostname>/<database name>
+      APPSMITH_KEYCLOAK_DB_URL=postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
       SQL_TLS_ENABLED: true
       SQL_TLS_DISABLE_HOST_VERIFICATION: true
       SQL_TLS: true
