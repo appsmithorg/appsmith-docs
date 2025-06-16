@@ -911,3 +911,111 @@ h4+.tags {
   margin: 20px 0;
   padding-bottom: 2px;
 }
+
+.email-provider-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 1rem 0;
+  text-align: center;
+}
+.email-provider-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+.email-provider-grid a:hover {
+  box-shadow: 0 0 0 2px #2e90fa33;
+}
+.email-provider-grid img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+
+.auth-provider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 1rem 0;
+}
+.auth-provider-grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease;
+}
+.auth-provider-grid a:hover {
+  box-shadow: 0 0 0 2px #2e90fa33;
+}
+.auth-provider-grid img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+.auth-provider-grid span {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.auth-provider-grid p {
+  font-size: 14px;
+  color: #555;
+}
+
+.admin-settings-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.admin-card {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-width: 260px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: left;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+
+.admin-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.admin-card img {
+  height: 42px;
+  margin-bottom: 0.75rem;
+}
+
+.admin-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.admin-card p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
