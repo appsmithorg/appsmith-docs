@@ -822,6 +822,13 @@ a.appsmithtag.enterprise:hover {
   background: #F1F5F9;
 }
 
+.beta {
+  color: #2E7D32;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 125, 50, 0.5);
+  background: #E8F5E9;
+}
+
 h2+.tags,
 h3+.tags {
   top: -6px !important;

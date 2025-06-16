@@ -59,7 +59,27 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'High Availability Guides',
+              label: 'High Availability Guides (PostgreSQL)',
+              items: [
+                'getting-started/setup/instance-configuration/high-availability/aws-eks',
+                {
+                  type: 'category',
+                  label: 'AWS ECS on Fargate',
+                  link: {
+                    type: 'doc',
+                    id: 'getting-started/setup/instance-configuration/high-availability/aws-ecs-fargate',
+                  },
+                  items: [
+                    'getting-started/setup/installation-guides/aws-ecs/migrate-bind-mount-to-efs',
+                    'getting-started/setup/installation-guides/aws-ecs/aws-fargate-migrate-keycloak-data',
+                  ],
+                },
+                'getting-started/setup/instance-configuration/high-availability/google-cloud-run',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'High Availability Guides (MongoDB)',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
                 {
@@ -156,8 +176,9 @@ const sidebars = {
               type: 'category',
               label: 'Other Configuration Guides',
               items: [
-                'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-postgresql',
                 'getting-started/setup/instance-configuration/external-redis',
+                'getting-started/setup/instance-configuration/custom-mongodb-redis',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
@@ -237,6 +258,13 @@ const sidebars = {
               ],
             },
             'getting-started/setup/manage-plans/downgrade-plan',
+            {
+              type: 'category',
+              label: 'Migrate to PostgreSQL',
+              items: [
+                'getting-started/setup/instance-configuration/migrate-external-mongodb-external-postgresql',
+              ],
+            },
           ],
         },
         {
