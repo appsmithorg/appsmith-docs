@@ -52,8 +52,7 @@ const CustomSearchBar = () => {
         setSearchType(type);
 
         if (ExecutionEnvironment.canUseDOM && typeof window.analytics !== 'undefined') {
-            const eventName = type === 'ai' ? 'Ask AI Button Click' : 'Search Button Click';
-
+            const eventName = type === 'ai' ? 'Docs Ask AI Click' : 'Docs Search Button Click';
             window.analytics.track(eventName, {
                 searchType: type,
                 page: window.location.pathname,
