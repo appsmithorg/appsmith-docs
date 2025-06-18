@@ -1,4 +1,4 @@
-name: Process Sample Files and Generate Docs
+name: Generate Integration Docs and Create PR
 
 on:
   push:
@@ -6,86 +6,99 @@ on:
       - 'website/docs/sample-workflow-tests/**'
 
 jobs:
-  process_sample_file:
+  generate_docs:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
 
-    - name: Detect changed files
+    - name: Detect newly added file
       id: detect_files
       run: |
-        echo "Detecting changes..."
-        git fetch origin main
-        CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
-        if [ -z "$CHANGED_FILE" ]; then
-          echo "No relevant file found. Exiting."
+        ADDED_FILE=$(git diff --name-status HEAD~1 HEAD | awk '$1 == "A" && $2 ~ /^website\/docs\/sample-workflow-tests\// { print $2 }' | head -n 1)
+        if [ -z "$ADDED_FILE" ]; then
+          echo "No new file added in sample-workflow-tests/. Exiting."
           exit 0
         fi
-        echo "Changed file detected: $CHANGED_FILE"
-        echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
+        echo "New file detected: $ADDED_FILE"
+        echo "file_path=$ADDED_FILE" >> $GITHUB_ENV
 
     - name: Read file content
-      id: read_file
       run: |
-        echo "Reading file content..."
-        FILE_CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
-        echo "file_content=$FILE_CONTENT" >> $GITHUB_ENV
+        echo "Reading: ${{ env.file_path }}"
+        cat "${{ env.file_path }}"
+        cp "${{ env.file_path }}" input_file.txt
 
     - name: Extract Commands and Properties (OpenAI Part 1)
-      id: extract_details
       run: |
-        echo "Extracting commands and properties..."
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt)
+        USER_CONTENT=$(cat input_file.txt)
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$USER_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0
+        }')
+
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > extracted_info.md
-{
-  "model": "gpt-4o",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are a technical parser.\n\nObjective:\nGiven the provided JSON, extract all available Commands and their Properties clearly.\n\nOutput Format (Strict Plain Text)\n\nTotal Commands: X\n\nCommand: <Command Name>\nIdentifier: <Command Identifier>\n\nProperties:\n- <Property Name>: <Tooltip Text> (Example: <Placeholder Text>)\n\nImportant:\n- No Markdown formatting.\n- No headings (#, ##, etc.).\n- No <dd> tags.\n- No backticks.\n- Just clean, readable text."
-    },
-    {
-      "role": "user",
-      "content": ${{ env.file_content }}
-    }
-  ],
-  "temperature": 0
-}
-EOF
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > extracted_info.md
 
     - name: Generate Markdown Documentation (OpenAI Part 2)
-      id: generate_doc
       run: |
-        echo "Generating final Markdown documentation..."
-        EXTRACTED_CONTENT=$(cat extracted_info.md | jq -Rs .)
+        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt)
+        EXTRACTED_CONTENT=$(cat extracted_info.md)
+
+        PAYLOAD=$(jq -n --arg sys "$SYSTEM_PROMPT" --arg usr "$EXTRACTED_CONTENT" '{
+          model: "gpt-4o",
+          messages: [
+            { role: "system", content: $sys },
+            { role: "user", content: $usr }
+          ],
+          temperature: 0.3
+        }')
+
         curl -s https://api.openai.com/v1/chat/completions \
           -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
           -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > generated_doc.md
-{
-  "model": "gpt-4o",
-  "messages": [
-    {
-      "role": "system",
-      "content": "You are a professional technical writing assistant.\n\nObjective:\nYou will receive developer-extracted command and property data.\nYour task is to generate strict, professional Markdown integration documentation in a style consistent with platforms like Stripe, Slack, and Google Cloud.\n\nUse:\n- Strict Markdown (#, ##, ### headings)\n- <dd> tags for properties\n- Example sections inside fenced code blocks\n- No bullet points or extra JSON\n- Write full sentences, professional tone."
-    },
-    {
-      "role": "user",
-      "content": $EXTRACTED_CONTENT
-    }
-  ],
-  "temperature": 0.3
-}
-EOF
+          -d "$PAYLOAD" | jq -r '.choices[0].message.content' > generated_doc.md
 
-    - name: Upload generated documentation
-      uses: actions/upload-artifact@v4
+    - name: Prepare target path
+      id: prepare_path
+      run: |
+        RAW_FILENAME=$(basename "${{ env.file_path }}")
+        INTEGRATION_NAME=$(echo "$RAW_FILENAME" | sed 's/\.[^.]*$//' | tr '[:upper:]' '[:lower:]')
+        TARGET_PATH="website/docs/connect-data/reference/${INTEGRATION_NAME}.md"
+
+        echo "Target file: $TARGET_PATH"
+        mkdir -p "$(dirname "$TARGET_PATH")"
+        cp generated_doc.md "$TARGET_PATH"
+
+        echo "integration_name=$INTEGRATION_NAME" >> $GITHUB_ENV
+        echo "target_path=$TARGET_PATH" >> $GITHUB_ENV
+
+    - name: Commit and create PR
+      uses: peter-evans/create-pull-request@v5
       with:
-        name: documentation-files
-        path: |
-          extracted_info.md
-          generated_doc.md
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "docs: add ${{ env.integration_name }} integration reference"
+        commit-message: "docs: add reference for ${{ env.integration_name }}"
+        branch: "auto/docs-${{ env.integration_name }}"
+        base: main
+        add-paths: |
+          ${{ env.target_path }}
+        body: |
+          This PR adds the generated integration reference for **${{ env.integration_name }}** to:
+
+          ```
+          /website/docs/connect-data/reference/${{ env.integration_name }}.md
+          ```
+
+          Generated automatically from sample workflow input.

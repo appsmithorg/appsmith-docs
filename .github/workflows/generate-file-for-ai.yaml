@@ -1,82 +1,31 @@
-name: Process Sample Files and Generate Docs
+name: Generate Markdown File and Upload
 
 on:
-  push:
-    paths:
-      - 'website/docs/sample-workflow-tests/**'
+  schedule:
+    - cron: '0 0 * * 0' # Runs every Sunday at midnight UTC
+  workflow_dispatch:
 
 jobs:
-  process_sample_file:
+  merge-and-upload-markdown:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
-    - name: Detect changed files
-      id: detect_files
+    - name: Merge markdown files
       run: |
-        git fetch origin main
-        CHANGED_FILE=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- 'website/docs/sample-workflow-tests/' | head -n 1 || true)
-        if [ -z "$CHANGED_FILE" ]; then
-          echo "No relevant file found. Exiting."
-          exit 0
-        fi
-        echo "Changed file detected: $CHANGED_FILE"
-        echo "file_path=$CHANGED_FILE" >> $GITHUB_ENV
+        find website/docs \( -name '*.md' -o -name '*.mdx' \) -exec cat {} + > appsmith-docs.md
 
-    - name: Read file content
-      id: read_file
+    - name: Check file size
       run: |
-        echo "Reading changed file content..."
-        FILE_CONTENT=$(cat ${{ env.file_path }} | jq -Rs .)
-        echo "file_content=$FILE_CONTENT" >> $GITHUB_ENV
+        filesize=$(stat -c%s "appsmith-docs.md")
+        echo "File size: $filesize bytes"
 
-    - name: Extract Commands and Properties (OpenAI Part 1)
-      id: extract_details
+    - name: Upload merged markdown to API
       run: |
-        echo "Extracting commands and properties..."
-        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt | jq -Rs .)
-
-        curl -s https://api.openai.com/v1/chat/completions \
-          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > extracted_info.md
-{
-  "model": "gpt-4o",
-  "messages": [
-    { "role": "system", "content": $SYSTEM_PROMPT },
-    { "role": "user", "content": ${{ env.file_content }} }
-  ],
-  "temperature": 0
-}
-EOF
-
-    - name: Generate Markdown Documentation (OpenAI Part 2)
-      id: generate_doc
-      run: |
-        echo "Generating final Markdown documentation..."
-        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt | jq -Rs .)
-        EXTRACTED_CONTENT=$(cat extracted_info.md | jq -Rs .)
-
-        curl -s https://api.openai.com/v1/chat/completions \
-          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-          -H "Content-Type: application/json" \
-          -d @- <<EOF | jq -r '.choices[0].message.content' > generated_doc.md
-{
-  "model": "gpt-4o",
-  "messages": [
-    { "role": "system", "content": $SYSTEM_PROMPT },
-    { "role": "user", "content": $EXTRACTED_CONTENT }
-  ],
-  "temperature": 0.3
-}
-EOF
-
-    - name: Upload documentation artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: documentation-files
-        path: |
-          extracted_info.md
-          generated_doc.md
+        response=$(curl -X POST \
+          -H "Content-Type: text/markdown" \
+          --data-binary "@appsmith-docs.md" \
+          https://hook.eu1.make.com/78ylobuaxpwb4w8k3lbfgmdlwow9d8m5)
+        echo "Response: $response"

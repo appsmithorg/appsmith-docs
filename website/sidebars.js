@@ -157,6 +157,7 @@ const sidebars = {
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-postgresql-rds',
                 'getting-started/setup/instance-configuration/external-redis',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
@@ -175,7 +176,20 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-configuration/file-size-limit',
-                'getting-started/setup/instance-configuration/admin-settings',
+                {
+  type: 'category',
+  label: 'Admin Settings',
+  link: {
+    type: 'doc',
+    id: 'getting-started/setup/instance-configuration/admin-settings', // Landing page
+  },
+  items: [
+    'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
+    'getting-started/setup/instance-configuration/user-management',   // User Management
+    'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
+  ],
+},
+
                 'getting-started/setup/environment-variables',
                 'getting-started/setup/instance-management/api-reference',
               ],
@@ -322,14 +336,23 @@ const sidebars = {
                   items: [
                     'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
+                     'connect-data/reference/confluence',
+                    'connect-data/reference/gmail',
                     'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
+                    //'connect-data/reference/google-calendar',
+                    'connect-data/reference/google-drive',
+                    'connect-data/reference/github',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
+                    'connect-data/reference/notion',
+                    'connect-data/reference/outlook',
                     'connect-data/reference/salesforce',
                      'connect-data/reference/slack',
+                      'connect-data/reference/stripe',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
+                    //'connect-data/reference/zoom',
                   ],
                 },
                 //category- AI Integrations

@@ -7,6 +7,25 @@ import '@site/src/components/custom-search/css/CustomSearch.css';
 const CustomSearchBar = () => {
     const [searchType, setSearchType] = useState('');
 
+    // Identify the user once on mount
+    useEffect(() => {
+        if (ExecutionEnvironment.canUseDOM && typeof window.analytics !== 'undefined') {
+            const user = JSON.parse(localStorage.getItem('user') || '{}');
+
+            if (user?.id && user?.email) {
+                window.analytics.identify(user.id, {
+                    name: user.name,
+                    email: user.email,
+                    plan: user.plan || 'Free',
+                });
+            }
+
+            // Optional: Enable debug logging
+            // window.analytics.debug();
+        }
+    }, []);
+
+    // Trigger search input clicks
     useEffect(() => {
         if (ExecutionEnvironment.canUseDOM) {
             const searchInput = document.querySelector('.DocSearch-Button');
@@ -18,8 +37,10 @@ const CustomSearchBar = () => {
                 searchInput.click();
                 setTimeout(() => {
                     const searchTerm = document.querySelector('.DocSearch-Input');
-                    searchTerm.focus();
-                    searchTerm.click();
+                    if (searchTerm) {
+                        searchTerm.focus();
+                        searchTerm.click();
+                    }
                 }, 100);
             }
 
@@ -29,11 +50,14 @@ const CustomSearchBar = () => {
 
     const handleClick = (type) => {
         setSearchType(type);
-        if (ExecutionEnvironment.canUseDOM) {
-            const eventName = type === 'ai' ? 'Ask AI Button Click' : 'Search Button Click';
-            if (typeof window.analytics !== 'undefined') {
-                window.analytics.track(eventName, { searchType: type });
-            }
+
+        if (ExecutionEnvironment.canUseDOM && typeof window.analytics !== 'undefined') {
+            const eventName = type === 'ai' ? 'Docs Ask AI Click' : 'Docs Search Button Click';
+            window.analytics.track(eventName, {
+                searchType: type,
+                page: window.location.pathname,
+                timestamp: new Date().toISOString(),
+            });
         }
     };
 
@@ -44,13 +68,13 @@ const CustomSearchBar = () => {
                     className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
                     onClick={() => handleClick('ai')}
                 >
-                    <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className='ai-search-icon'></img> Ask AI
+                    <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className="ai-search-icon" /> Ask AI
                 </div>
                 <div
                     className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
                     onClick={() => handleClick('docs')}
                 >
-                    <img src="/img/search-in-docs-icon.svg" alt="Search" className='doc-search-icon'></img> Search
+                    <img src="/img/search-in-docs-icon.svg" alt="Search" className="doc-search-icon" /> Search
                 </div>
             </div>
             <AISearchButton />
