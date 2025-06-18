@@ -912,6 +912,13 @@ h4+.tags {
   padding-bottom: 2px;
 }
 
+.three-column-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+}
+
 .email-provider-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1018,4 +1025,5 @@ h4+.tags {
   color: #4b5563;
   font-size: 0.875rem;
   line-height: 1.4;
+
 }
