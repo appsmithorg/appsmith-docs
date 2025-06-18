@@ -30,23 +30,6 @@ For Appsmith version v1.57 or earlier, refer to the legacy documentation for the
 A Package is a reusable bundle that can be shared across apps in the same workspace. There are two types of packages in Appsmith:
 
 
-### Code Packages
-
-Code Packages are reusable bundles that group multiple logic-based modules, which can be shared across applications within the same workspace. Inside a Code Package, you can create two types of modules—Query Modules and JavaScript Modules. 
-
-These modules allow you to encapsulate backend logic in a reusable, version-controlled way, helping you standardize how data is fetched and processed across your apps.
-
-
-<ZoomImage
-  src="/img/code-package.png" 
-  alt="Modules image"
-  caption=""
-/>
-
-* **Query Modules:** Reusable datasource queries that can be used across different apps and pages. You can pass dynamic inputs to the query module, which allows you to change query parameters based on user input or widget actions. They are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
-
-* **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. It allows you to pass data between query and JS modules, ensuring smooth integration and reuse across different applications.
-
 ### UI Packages
 
 
@@ -64,6 +47,23 @@ A **UI Module** combines widgets, queries, JavaScript, inputs, and outputs into 
   caption=""
 />
 
+
+### Code Packages
+
+Code Packages are reusable bundles that group multiple logic-based modules, which can be shared across applications within the same workspace. Inside a Code Package, you can create two types of modules—Query Modules and JavaScript Modules. 
+
+These modules allow you to encapsulate backend logic in a reusable, version-controlled way, helping you standardize how data is fetched and processed across your apps.
+
+
+<ZoomImage
+  src="/img/code-package.png" 
+  alt="Modules image"
+  caption=""
+/>
+
+* **Query Modules:** Reusable datasource queries that can be used across different apps and pages. You can pass dynamic inputs to the query module, which allows you to change query parameters based on user input or widget actions. They are deployment-independent, meaning updates affect only applications in edit mode and not the deployed version.
+
+* **JavaScript Modules:** Reusable objects containing JavaScript functions and logic, enabling efficient data manipulation and standardized handling. It allows you to pass data between query and JS modules, ensuring smooth integration and reuse across different applications.
 
 ## Getting started
 
