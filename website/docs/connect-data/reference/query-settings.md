@@ -73,7 +73,6 @@ Queries with Automatic behavior execute whenever a variable they depend on chang
 
 - Widget properties (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
 - JavaScript object variables or function outputs (e.g., `{{JSObject1.value}}`, `{{JSObject1.function.data}}`).
-- Appsmith store variables (e.g., `{{appsmith.store.searchKey}}`)
 
 When any of these values change, the query re-executes automatically. You do not need to use event handlers like **onTextChanged** or **onOptionChanged**.
 

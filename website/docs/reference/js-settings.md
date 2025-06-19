@@ -80,7 +80,6 @@ The function runs each time:
 
 - A referenced widget value changes (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
 - A dependent JavaScript object or function result is updated.
-- An Appsmith store variable used inside the function changes.
 - A default parameter bound to a variable is updated.
 
 This mode is ideal for reactive logic where the output should always reflect the latest application state or user input. 
