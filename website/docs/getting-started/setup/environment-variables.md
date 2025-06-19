@@ -239,25 +239,9 @@ For more information about how to URL encode your username and password, see [En
 ##### `APPSMITH_KEYCLOAK_DB_URL`
 
 <dd>
-Specifies the URL for the external PostgreSQL database (RDS instance) to be used by Keycloak. This URL is critical for establishing a secure connection to the database and must be in the format: `jdbc:postgresql://<hostname>:<port>/<database_name>`. 
-</dd>
 
-##### `APPSMITH_KEYCLOAK_DB_DRIVER`
+ Specifies the URL for the external PostgreSQL database (e.g., an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
 
-<dd>
-Defines the database driver that Keycloak will use to interact with the external PostgreSQL database. For PostgreSQL databases, this value must be set to `postgresql`. The driver acts as an intermediary, facilitating smooth and efficient communication between Keycloak and the database.
-</dd>
-
-##### `APPSMITH_KEYCLOAK_DB_USERNAME`
-
-<dd>
-Sets the username required for authenticating with the external PostgreSQL database. This credential ensures secure access and grants Keycloak the necessary permissions to manage its database operations.
-</dd>
-
-##### `APPSMITH_KEYCLOAK_DB_PASSWORD`
-
-<dd>
-Specifies the password associated with the database username. This sensitive information is used to authenticate Keycloak's connection to the PostgreSQL database and must be kept secure to prevent unauthorized access.
 </dd>
 
 ##### `APPSMITH_REDIS_URL`
