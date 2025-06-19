@@ -83,7 +83,7 @@ The function runs each time:
 - An Appsmith store variable used inside the function changes.
 - A default parameter bound to a variable is updated.
 
-This mode is ideal for reactive logic where the output should always reflect the latest application state or user input.
+This mode is ideal for reactive logic where the output should always reflect the latest application state or user input. 
 
 *Example:* If you want to filter a product list based on a search input and selected category, you can define a function like `filterProducts`:
 
@@ -99,8 +99,14 @@ filterProducts: () => {
 When `SearchInput.text` or `CategoryDropdown.selectedOptionValue` changes, the `filterProducts` function will run automatically.
 
 :::note
-If a function is configured with Automatic run behavior and is also invoked manually (e.g., in a widget’s event handler), it may execute multiple times—once due to the dependency change, and once from the manual trigger.
-To avoid duplicate executions, use either automatic behavior or explicit invocation, but not both.
+- If a function is set to run automatically and is also invoked manually (for example, through a widget’s event handler), it can execute twice, once due to the dependency change and once from the manual trigger. To prevent this, use either automatic behavior or manual invocation, not both.
+
+- If a JavaScript object function triggers a query, and the query’s result is bound to a widget (such as a Table), both the function and the query become reactive. Any change in their shared dependencies, such as `Input1`.text—can cause both the function and the query to execute automatically.
+:::
+
+
+:::info
+Changes to values in the Appsmith global object do not trigger automatic re-execution of queries or JavaScript actions. For example, updates to appsmith.store will not cause a function or query to re-run unless combined with a reactive property or triggered explicitly.
 :::
 
 </dd>
