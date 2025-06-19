@@ -92,6 +92,10 @@ If a query is configured with Automatic run behavior and is also manually trigge
 To avoid unintended duplicate executions, it is recommended to use either the automatic behavior or an explicit trigger, but not both.
 :::
 
+:::info
+Changes to values in the [Appsmith global object](/write-code/reference) do not trigger automatic re-execution of queries or JavaScript actions. For example, updates to `appsmith.store` will not cause a query to re-run unless combined with a reactive property or explicitly triggered.
+:::
+
 </dd>
 
 
