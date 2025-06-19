@@ -52,7 +52,8 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
 > **Note**: The following instructions assume you followed our [Kubernetes install guide](https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes) exactly. If you made changes—such as using a different Helm release name, namespace, etc.—you’ll need to adjust the commands accordingly.
 
 1. Retrieve the latest Appsmith version
-   Find the latest release version on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+   
+Find the latest release version on [GitHub](https://github.com/appsmithorg/appsmith/releases).
 
 2. Locate your Helm `values.yaml` file
    - If you still have the `values.yaml` file from your initial installation, navigate to its directory:
@@ -77,7 +78,8 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
      ```
 
 4. Apply the upgrade using Helm
-   Run the following command to upgrade your Appsmith installation:
+   
+Run the following command to upgrade your Appsmith installation:
    ```bash
    helm upgrade appsmith-ee -n appsmith-ee -f values.yaml
    ```
