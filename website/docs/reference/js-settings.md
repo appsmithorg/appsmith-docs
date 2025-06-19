@@ -80,7 +80,7 @@ The function runs each time:
 
 - A referenced widget value changes (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
 - A dependent JavaScript object or function result is updated.
-- A default parameter bound to a variable is updated.
+- A function has a default parameter set to a reactive value (like `Input1.text`), and that value changes.
 
 This mode is ideal for reactive logic where the output should always reflect the latest application state or user input. 
 
