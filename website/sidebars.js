@@ -895,6 +895,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/README',
             'help-and-support/troubleshooting-guide/git-errors',
             'help-and-support/troubleshooting-guide/gac-errors',
+            'help-and-support/troubleshooting-guide/action-errors/workflow-errors',
             'help-and-support/troubleshooting-guide/cyclic-dependency',
           ],
         },
