@@ -1,457 +1,478 @@
-# JIRA Integration
+# Asana Integration
 
-This page provides information on how to connect to JIRA. It enables users to perform actions such as creating issues, updating issues, retrieving issue details, filtering issues, and managing projects and issue types.
+This page provides information on how to connect to Asana. It enables users to perform actions such as creating comments, managing projects, tasks, and organizing teams and workspaces.
 
-## Connect JIRA
+## Connect Asana
 
 Explain how to authenticate and connect to this service securely.
 
-## Query JIRA
+## Query Asana
 
 The following section provides a **reference guide** describing available commands and their parameters.
 
 ---
 
-### Create Issue
+### Create Comment
 
-Creates a new issue in JIRA with the provided details.
+Creates a new comment on a specified task.
 
-#### Summary `string`
+#### Task `string`
 
 <dd>
 
-The Summary property is a concise one-liner that encapsulates the main point of the issue. It is a required field and should be clear and descriptive. If omitted, the issue creation will not proceed.
+The Task ID is a unique identifier for the task to which the comment will be added. The comment will be authored by the currently authenticated user. It is required to associate the comment with the correct task.
 
 *example*:
+```markdown
+"1204619611402340"
 ```
-Enter Summary
+
+#### Text `string`
+
+<dd>
+
+The Text property represents the content of the comment to be added to the task. It is required and should be a clear, concise message.
+
+*example*:
+```markdown
+"This is a comment."
 ```
 
 ---
 
-#### Project `string`
+### Create Project
+
+Creates a new project within the specified workspace and team.
+
+#### Name `string`
 
 <dd>
 
-The Project property specifies the project to which the issue will be added. If not provided, it defaults to the user's first project. Users can configure the Connect Portal Workflow Settings to select a project. This field is optional but important for issue categorization.
+The Name property is the title of the new project to be created. It is required and should be descriptive of the project's purpose or contents.
 
 *example*:
-```
-Enter Project
+```markdown
+"Stuff to buy"
 ```
 
----
-
-#### Issue Type `string`
+#### Workspace `string`
 
 <dd>
 
-The Issue Type property defines the type of issue to be created, such as 'Task', 'Bug', or 'Story'. It defaults to 'Task' if not provided. This field is optional but helps in classifying the issue correctly.
+The Workspace property is the identifier for the workspace where the project will be created. It can be set in the Connect Portal Workflow Settings, defaulting to the user’s first workspace if left blank.
 
 *example*:
-```
-Enter Issue Type
+```markdown
+"{{settings.workspace}}"
 ```
 
----
-
-#### Jira Issue Status `string`
+#### Team `string`
 
 <dd>
 
-The Jira Issue Status property sets the initial status of the issue. If not provided, it defaults to the project's first status. This field is optional and can be set according to the project's workflow requirements.
+The Team property is the identifier for the team with which the project will be shared. It can be set in the Connect Portal Workflow Settings, defaulting to the user’s first team if left blank.
 
 *example*:
-```
-Enter Jira Issue Status
+```markdown
+"{{settings.team}}"
 ```
 
----
-
-#### Assignee `string`
+#### Notes `string`
 
 <dd>
 
-The Assignee property specifies the user who is assigned to work on the issue. If not provided, the issue is assigned to the authenticated user by default. This field is optional but crucial for task ownership.
+The Notes property allows you to add descriptive text or additional information about the project. This field is optional.
 
 *example*:
-```
-Enter Assignee
-```
-
----
-
-#### Description Type `string`
-
-<dd>
-
-The Description Type property allows the user to select the format of the issue description. This field is optional and is used to specify how the description should be interpreted, such as plain text or formatted text.
-
-*example*:
-```
-Enter Description Type
-```
-
----
-
-#### Description JSON `string`
-
-<dd>
-
-The Description JSON property is used when the 'Description Type' is set to 'descriptionJSON'. It allows for a structured description using JSON format. This field is optional and appears only when 'Description Type' is set accordingly.
-
-*example*:
-```
-Enter Description JSON
-```
-
----
-
-#### Description `string`
-
-<dd>
-
-The Description property provides a detailed explanation of the issue. It is an optional field but is important for understanding the context and requirements of the issue.
-
-*example*:
-```
-Enter Description
-```
-
----
-
-#### Additional Fields `JSON`
-
-<dd>
-
-The Additional Fields property allows users to specify any other fields in JSON format that should be included with the issue. This field is optional and can be configured in the Connect Portal Workflow Settings to update specific issue fields.
-
-*example*:
-```
-Enter Additional Fields
-```
-
----
-
-### Update Issue
-
-Updates an existing issue in JIRA with the provided details.
-
-#### Issue Key `string`
-
-<dd>
-
-The Issue Key property is the unique identifier for the issue to be updated. It is a required field and should match the format used by JIRA, such as 'PROJ-123'.
-
-*example*:
-```
-Enter Issue Key
-```
-
----
-
-#### Summary `string`
-
-<dd>
-
-The Summary property allows updating the one-line summary of the issue. It is optional but should be used to keep the issue's description accurate and up-to-date.
-
-*example*:
-```
-Enter Summary
-```
-
----
-
-#### Issue Type `string`
-
-<dd>
-
-The Issue Type property allows changing the type of the issue. It is optional and can be configured in the Connect Portal Workflow Settings to allow users to select an appropriate issue type.
-
-*example*:
-```
-Enter Issue Type
-```
-
----
-
-#### Jira Issue Status `string`
-
-<dd>
-
-The Jira Issue Status property allows updating the status of the issue. It is optional and can be set according to the project's workflow requirements, with options configured in the Connect Portal Workflow Settings.
-
-*example*:
-```
-Enter Jira Issue Status
-```
-
----
-
-#### Assignee `string`
-
-<dd>
-
-The Assignee property allows changing the user assigned to the issue. It is optional and can be configured in the Connect Portal Workflow Settings to allow users to select an assignee.
-
-*example*:
-```
-Enter Assignee
-```
-
----
-
-#### Description Type `string`
-
-<dd>
-
-The Description Type property allows selecting the format for the issue description when updating. It is optional and determines how the description is interpreted.
-
-*example*:
-```
-Enter Description Type
-```
-
----
-
-#### Description JSON `string`
-
-<dd>
-
-The Description JSON property is used when updating the issue's description in JSON format. It is optional and only applicable when 'Description Type' is set to 'descriptionJSON'.
-
-*example*:
-```
-Enter Description JSON
-```
-
----
-
-#### Description `string`
-
-<dd>
-
-The Description property allows providing a detailed description when updating the issue. It is optional but recommended for clarity and completeness.
-
-*example*:
-```
-Enter Description
-```
-
----
-
-#### Additional Fields `JSON`
-
-<dd>
-
-The Additional Fields property allows specifying additional fields in JSON format when updating the issue. It is optional and can include any other fields that need to be updated as per the Connect Portal Workflow Settings.
-
-*example*:
-```
-Enter Additional Fields
-```
-
----
-
-### Get Issue By Key
-
-Retrieves details of a specific issue by its key.
-
-#### Issue Key `string`
-
-<dd>
-
-The Issue Key property is the unique identifier of the issue to retrieve. It is a required field and must conform to the JIRA issue key format.
-
-*example*:
-```
-Enter Issue Key
-```
-
----
-
-### Filter Issues
-
-Retrieves a list of issues that match the specified JQL query filters.
-
-#### Jql Query `string`
-
-<dd>
-
-The Jql Query property is used to search for issues that match specified filters using JIRA Query Language (JQL). It is a required field and must be a valid JQL statement.
-
-*example*:
-```
-Enter Jql Query
-```
-
----
-
-#### Limit `integer`
-
-<dd>
-
-The Limit property restricts the maximum number of issues to return. It is optional and defaults to 10 if left blank. This field is useful for controlling the size of the result set.
-
-*example*:
-```
-Enter Limit
-```
-
----
-
-### Search By Jql
-
-Performs a search for issues using a JQL query.
-
-#### Jql Query `string`
-
-<dd>
-
-The JQL Query property allows for a detailed search using JIRA Query Language. It is a required field and must be a valid JQL statement to retrieve the desired issues.
-
-*example*:
-```
-Enter Jql Query
-```
-
----
-
-#### Pagination Parameters `string`
-
-<dd>
-
-The Pagination Parameters property is used to control paginated results. It is optional and allows users to specify parameters such as page number and page size for the search results.
-
-*example*:
-```
-Enter Pagination Parameters
+```markdown
+"These are things we need to purchase."
 ```
 
 ---
 
 ### Get Projects
 
-Retrieves a list of projects with pagination support.
+Retrieves a list of projects, with the option to include archived projects.
 
-#### Pagination Parameters `string`
+#### Archived `string`
 
 <dd>
 
-The Pagination Parameters property allows for paginated retrieval of projects. It is optional and can include parameters such as page number and page size to manage the list of projects.
+The Archived property lets you filter the projects list based on their archival status. Options include 'Yes' to show only archived projects, 'No' to show only active projects, and 'Default' to show both.
 
 *example*:
-```
-Enter Pagination Parameters
+```markdown
+"Default"
 ```
 
 ---
 
-### Get Issue Types By Project
+### Get Project By Id
 
-Retrieves a list of issue types available for a specific project.
+Retrieves a single project by its unique identifier.
+
+#### Project Filter Id `string`
+
+<dd>
+
+The Project Filter Id is the unique identifier of the project to be retrieved. It is required to specify which project's details are to be fetched.
+
+*example*:
+```markdown
+"1140939393920399"
+```
+
+---
+
+### Create Task
+
+Creates a new task within the specified workspace, project, and with additional details.
+
+#### Name `string`
+
+<dd>
+
+The Name property is the title of the new task to be created. It is required and should be descriptive of the task's purpose.
+
+*example*:
+```markdown
+"Task Name"
+```
+
+#### Workspace `string`
+
+<dd>
+
+The Workspace property is the identifier for the workspace where the task will be created. It can be set in the Connect Portal Workflow Settings, defaulting to the user’s first workspace if left blank.
+
+*example*:
+```markdown
+"{{settings.workspace}}"
+```
 
 #### Project `string`
 
 <dd>
 
-The Project property is the key of the project for which to retrieve available issue types. It is a required field and must match the project key format used by JIRA.
+The Project property is the identifier for the project under which the task will be created. It can be set in the Connect Portal Workflow Settings.
 
 *example*:
+```markdown
+"{{settings.project}}"
 ```
-Enter Project
-```
 
----
-
-### Get Issue Types
-
-Retrieves a list of all issue types available in JIRA.
-
-(No properties are provided for this command, so no description is available.)
-
----
-
-### Describe Action Schema
-
-Provides the schema for a specific action type within a project and issue type context.
-
-#### Issue Type Id `string`
+#### Notes `string`
 
 <dd>
 
-The Issue Type ID property specifies the identifier of the issue type for which the schema is to be described. It is a required field and should match the format used by JIRA for issue type IDs.
+The Notes property allows you to add descriptive text or additional information about the task. This field is optional.
 
 *example*:
-```
-Enter Issue Type Id
+```markdown
+"Complete the integration documentation."
 ```
 
----
-
-#### Project Key `string`
+#### Due On Date `string`
 
 <dd>
 
-The Project Key property specifies the key of the project for which the action schema is to be described. It is a required field and must conform to the project key format used by JIRA.
+The Due On property specifies the date by which the task is due, in "YYYY-MM-DD" format. It cannot be used together with Due At.
 
 *example*:
-```
-Enter Project Key
+```markdown
+"2023-05-10"
 ```
 
----
-
-#### Operation `string`
+#### Due At Date `string`
 
 <dd>
 
-The Operation property defines the type of action for which the schema is requested, such as 'CREATE_ISSUE' or 'UPDATE_ISSUE'. It is a required field and should match one of the predefined operation type values.
+The Due At property specifies the exact date and time by which the task is due, in ISO 8601 timestamp format. It cannot be used together with Due On.
 
 *example*:
+```markdown
+"2023-05-10T17:00:00Z"
 ```
-Enter Operation
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the identifier for the Asana user to whom the task will be assigned. It can be set in the Connect Portal Workflow Settings.
+
+*example*:
+```markdown
+"{{settings.assignee}}"
+```
+
+#### Gid `string`
+
+<dd>
+
+The Gid, or External ID, is an identifier from your application to associate with this task. It can be used to sync updates to this task later.
+
+*example*:
+```markdown
+"ext_7890abcd1234"
 ```
 
 ---
 
-### Get Issue Status By Project
+### Update Task
 
-Retrieves a list of issue statuses available for a specific project.
+Updates the details of an existing task.
+
+#### Task Id `string`
+
+<dd>
+
+The Task ID is the unique identifier for the task that will be updated. It is required to specify which task's details are to be changed.
+
+*example*:
+```markdown
+"1204619611402340"
+```
+
+#### Complete Status `boolean`
+
+<dd>
+
+The Complete Status property indicates whether the task has been completed. This field is optional.
+
+*example*:
+```markdown
+true
+```
+
+#### Name `string`
+
+<dd>
+
+The Name property is the title of the task to be updated. It is optional and can be used to change the existing task's name.
+
+*example*:
+```markdown
+"Updated Task Name"
+```
+
+#### Notes `string`
+
+<dd>
+
+The Notes property allows you to update the descriptive text or additional information about the task. This field is optional.
+
+*example*:
+```markdown
+"Updated integration documentation requirements."
+```
+
+#### Due On Date `string`
+
+<dd>
+
+The Due On property specifies the updated date by which the task is due, in "YYYY-MM-DD" format. It cannot be used together with Due At.
+
+*example*:
+```markdown
+"2023-06-01"
+```
+
+#### Due At Date `string`
+
+<dd>
+
+The Due At property specifies the updated exact date and time by which the task is due, in ISO 8601 timestamp format. It cannot be used together with Due On.
+
+*example*:
+```markdown
+"2023-06-01T12:00:00Z"
+```
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the identifier for the Asana user to whom the task will be reassigned. It can be set in the Connect Portal Workflow Settings.
+
+*example*:
+```markdown
+"{{settings.assignee}}"
+```
+
+#### Gid `string`
+
+<dd>
+
+The Gid, or External ID, is an identifier from your application to associate with this task. It can be used to sync updates to this task later.
+
+*example*:
+```markdown
+"ext_5678efgh1234"
+```
+
+---
+
+### Get Tasks
+
+Retrieves a list of tasks based on specified criteria such as workspace, project, assignee, and completion status.
+
+#### Workspace `string`
+
+<dd>
+
+The Workspace property is the identifier for the workspace to filter tasks on. It can be set in the Connect Portal Workflow Settings.
+
+*example*:
+```markdown
+"{{settings.workspace}}"
+```
 
 #### Project `string`
 
 <dd>
 
-The Project property is the key of the project for which to retrieve available issue statuses. It is a required field and must match the project key format used by JIRA.
+The Project property is the identifier for the project to filter tasks on. It can be set in the Connect Portal Workflow Settings.
 
 *example*:
+```markdown
+"{{settings.project}}"
 ```
-Enter Project
+
+#### Assignee `string`
+
+<dd>
+
+The Assignee property is the identifier for the Asana user to filter tasks based on their assignment. It can be set in the Connect Portal Workflow Settings.
+
+*example*:
+```markdown
+"{{settings.assignee}}"
+```
+
+#### Completed Since `string`
+
+<dd>
+
+The Completed Since property filters tasks to only those that are incomplete or have been completed since the specified time, in ISO or Unix timestamp format.
+
+*example*:
+```markdown
+"2023-04-01T00:00:00Z"
 ```
 
 ---
 
-### Get All Assignees By Project
+### Get Tasks By Id
 
-Retrieves a list of all possible assignees for a specific project.
+Retrieves a specific task by its unique identifier.
 
-#### Project `string`
+#### Task Id `string`
 
 <dd>
 
-The Project property is the key of the project for which to retrieve possible assignees. It is a required field and must conform to the project key format used by JIRA.
+The Task ID is the unique identifier of the task to be retrieved. It is required to specify which task's details are to be fetched.
 
 *example*:
+```markdown
+"1204619611402340"
 ```
-Enter Project
+
+---
+
+### Get Task By External Id
+
+Retrieves a task associated with a specified external identifier.
+
+#### Gid `string`
+
+<dd>
+
+The Gid, or External ID, is the identifier from your application that the task is associated or synced with.
+
+*example*:
+```markdown
+"ext_7890abcd1234"
 ```
+
+---
+
+### Add Task To Section
+
+Adds an existing task to a specified section within a project.
+
+#### Section Id `string`
+
+<dd>
+
+The Section ID is the identifier for the section to which the task will be added. It is required to specify the destination within the project.
+
+*example*:
+```markdown
+"{{settings.section}}"
+```
+
+#### Task Id `string`
+
+<dd>
+
+The Task ID is the unique identifier of the task that will be added to the section. It is required to specify which task is being moved.
+
+*example*:
+```markdown
+"1204619611402340"
+```
+
+#### Before Task Id `string`
+
+<dd>
+
+The Before Task ID specifies the task before which the current task will be inserted. It cannot be used with After Task ID.
+
+*example*:
+```markdown
+"1204619611402341"
+```
+
+#### After Task Id `string`
+
+<dd>
+
+The After Task ID specifies the task after which the current task will be inserted. It cannot be used with Before Task ID.
+
+*example*:
+```markdown
+"1204619611402339"
+```
+
+---
+
+### Get Teams
+
+Retrieves a list of teams within a specified workspace.
+
+#### Workspace `string`
+
+<dd>
+
+The Workspace property is the identifier for the workspace whose teams are to be listed. It is required to filter teams by workspace.
+
+*example*:
+```markdown
+"{{settings.workspace}}"
+```
+
+---
+
+### Get Workspaces
+
+Retrieves a list of workspaces visible to the authorized user.
+
+No properties available.
 
 ---
 
 ### Custom Action
 
-Executes a custom action defined by the user.
+Performs a custom action defined by the user.
 
-(No properties are provided for this command, so no description is available.)
+No properties available.
