@@ -97,6 +97,8 @@ The **HubDB - create table** command creates a new HubDB table. The following is
 
 ##### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 <dd>The label of the new table.</dd>
 
 ##### Use for pages
@@ -178,6 +180,8 @@ The **HubDB - update existing table** command fetches rows from a HubDB table. T
 <dd>The name of the new table.</dd>
 
 ##### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
 
 <dd>The label of the new table.</dd>
 

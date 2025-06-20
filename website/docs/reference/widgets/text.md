@@ -14,6 +14,9 @@ These properties are customizable options present in the property pane of the wi
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Text `string`
 
 
@@ -93,6 +96,9 @@ Style properties allow you to change the look and feel of the widget.
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Font family `string`
 
 <dd>
@@ -120,6 +126,8 @@ Sets the color for the text, and when JS is enabled, you can dynamically modify 
 </dd>
 
 ### Text formatting
+
+The Text Formatting properties allow you to customize the appearance of the text in the Widget. 
 
 
 #### Alignment `string`
