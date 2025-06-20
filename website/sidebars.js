@@ -37,6 +37,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
+                'getting-started/setup/instance-configuration/deploy-non-root',
               ],
             },
             'getting-started/setup/installation-guides/aws-ami',
