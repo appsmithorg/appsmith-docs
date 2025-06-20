@@ -110,11 +110,8 @@ Open `http://localhost:8080` in your browser. You should see the Appsmith setup 
 <dd>
 
 - Runs as a non-root user (`runAsNonRoot: true`)
-
 - Uses a fixed `runAsUser`, `runAsGroup`, and `fsGroup` (all set to `1001`)
-
 - Enables `seccompProfile: RuntimeDefault `for syscall filtering
-
 - Applies `net.ipv4.ip_unprivileged_port_start` sysctl so Appsmith can bind to ports `<1024` without root access
 
 
