@@ -46,7 +46,7 @@ Workflows depend on the following services:
 
 - For Kubernetes: Use `kubectl get pods` to check pod status
 
-[See required services for self-hosted Appsmith](https://docs.appsmith.com/setup/self-host)
+[See required services for self-hosted Appsmith](/getting-started/setup/instance-configuration).
 
 </dd>
 
