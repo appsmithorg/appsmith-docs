@@ -37,6 +37,7 @@ const sidebars = {
               },
               items: [
                 'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
+                'getting-started/setup/instance-configuration/deploy-non-root',
               ],
             },
             'getting-started/setup/installation-guides/aws-ami',
@@ -895,6 +896,7 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/action-errors/README',
             'help-and-support/troubleshooting-guide/git-errors',
             'help-and-support/troubleshooting-guide/gac-errors',
+            'help-and-support/troubleshooting-guide/action-errors/workflow-errors',
             'help-and-support/troubleshooting-guide/cyclic-dependency',
           ],
         },

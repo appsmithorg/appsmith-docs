@@ -34,6 +34,7 @@ Before you start, make sure you have:
 * A self-hosted instance of Appsmith. Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions on setting up your Appsmith instance.
 * Basic knowledge of creating a basic workflow in Appsmith. If you're new to Workflows, follow the [Tutorial - Create Basic Workflow](/workflows/tutorials/create-workflow) to learn the workflow basics.
 * A configured datasource to manage data within your workspace. For more information on configuring datasource, see the available [Datasources](/connect-data/reference) in Appsmith.
+* PostgreSQL must be configured and accessible. Appsmith workflows require PostgreSQL version `13` to `16`. If you're using ECS or Kubernetes, configure an external PostgreSQL database (e.g., AWS RDS). For setup instructions, refer to [Configure External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds). 
 
 ## Create workflow
 

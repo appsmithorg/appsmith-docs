@@ -35,6 +35,7 @@ Before starting, ensure you have:
 - A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
 - Basic familiarity with Appsmith operations. If you're new to Appsmith, follow the [Getting Started Tutorial](/getting-started/tutorials/start-building) to learn the basics.
 - A REST client like [HTTPie](https://httpie.io) for testing workflows.
+- PostgreSQL must be configured and accessible. Appsmith workflows require PostgreSQL version `13` to `16`. If you're using ECS or Kubernetes, configure an external PostgreSQL database (e.g., AWS RDS). For setup instructions, refer to [Configure External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds). 
 
 ## Create workflow
 
