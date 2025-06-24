@@ -38,6 +38,10 @@ The Appsmith server has a default internal timeout of 60 seconds. If your querie
 
 <dd>When turned on, your query is executed every time the page loads or refreshes. This is automatically turned on when you bind the query's data to be displayed in a widget, though you can choose to turn it off.</dd>
 
+#### Automated Query Execution
+
+<dd>When enabled, Appsmith automatically executes the query at a fixed interval. This is particularly useful for keeping your data up-to-date without manual intervention. You can set the frequency of automated execution in seconds, minutes, or hours. This setting is available for both API and database queries.</dd>
+
 #### Smart JSON substitution
 
 <dd>JavaScript objects and JSON objects are formatted similarly, however they have different rules for where quotation marks are required. When this setting is turned on, Appsmith intelligently adds or removes quotation marks from your JavaScript data as necessary to correctly cast them into JSON. This setting is turned on by default, however it may need to be turned off for some tasks such as sending raw binary data to an API. This setting is available for API queries. For a video guide on using this feature, see <a href="https://www.youtube.com/watch?v=-Z3y-pdNhXc">How to Use Smart JSON Substitution</a>.</dd>
