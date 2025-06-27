@@ -26,6 +26,7 @@ Debugging workflows is crucial for identifying and resolving issues while buildi
 Before you begin, make sure you have:
 
 - A self-hosted Appsmith instance with a [business subscription](https://www.appsmith.com/pricing). Refer to the [Appsmith installation guides](/getting-started/setup/installation-guides) for detailed instructions if you need to set up your instance. You can also get a trial license by signing up on [customer.appsmith.com](https://customer.appsmith.com/).
+* PostgreSQL must be configured and accessible. Appsmith workflows require PostgreSQL version `13` to `16`. If you're using ECS or Kubernetes, configure an external PostgreSQL database (e.g., AWS RDS). For setup instructions, refer to [Configure External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds). 
 
 ## Set up and run workflow with test values
 
