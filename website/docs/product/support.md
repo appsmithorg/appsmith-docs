@@ -7,6 +7,20 @@ description: >-
 
 When users need help with Appsmith, prompt access to support is crucial. This page provides an overview of the available channels through which you can reach Appsmith support.
 
+## Support Portal
+
+The [Appsmith Support Portal](https://support.appsmith.com) is the primary support destination for managing support tickets and accessing your support history. It is the recommended channel for raising and tracking issues.
+
+Through the portal, you can:
+
+- Submit new support requests
+- View and respond to open tickets
+- Track the status of your previous support requests
+
+:::note
+If you need to reset your password for the support portal, use the following link: [Reset Support Portal Password](http://support.appsmith.com/access/help)
+:::
+
 ## Discord
 
 The Discord community serves as a valuable resource for users seeking help and community engagement. While it may not always be the primary channel for paid support, the support team is available to assist users in Discord. Here's how you can contact support through the Discord server:
