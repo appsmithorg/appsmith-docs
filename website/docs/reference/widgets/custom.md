@@ -46,6 +46,9 @@ _Example:_ If you want to pass the name from a Table widget to the custom widget
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Visible `boolean`
 
 <dd>
@@ -83,6 +86,8 @@ This property determines how the widget's height adjusts to changes in its conte
   :::
 
 ### Events
+
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
 
 <dd>
 

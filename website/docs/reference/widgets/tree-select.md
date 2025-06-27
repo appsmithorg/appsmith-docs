@@ -95,6 +95,8 @@ For example, if you want the default selected value to be `CLOTHING`, you can se
 
 ### Label
 
+The Label property is a group of customizable settings that define the main text displayed on the widget. 
+
 #### Text `string`
 
 <dd>
@@ -143,6 +145,9 @@ Enabling this property for a TreeSelect widget makes it a mandatory field, meani
 </dd>
 
 ### General
+
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
 
 #### Tooltip `string`
 
@@ -227,6 +232,8 @@ This property determines how the widget's height adjusts to changes in its conte
 
 ### Events
 
+Events are properties that allow you to define actions or responses based on user interactions or widget state changes.
+
 #### onOptionChange 
 
 <dd>
@@ -257,7 +264,9 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 Style properties allow you to change the look and feel of the widget.
 
-### Label styles
+### Label
+
+The Label property is a group of customizable settings that define the main text displayed on the widget.  styles
 
 #### Font color `string`
 
