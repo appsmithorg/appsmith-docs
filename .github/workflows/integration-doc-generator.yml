@@ -1,13 +1,12 @@
 name: Integration Doc Generator
 
-# Trigger manually from GitHub UI
 on:
   workflow_dispatch:
     inputs:
       target_branch:
         description: 'Branch in appsmith-docs to create PR against'
         required: true
-        default: 'main'  # Updated default from 'docs-staging' to 'main'
+        default: 'main'
         type: string
 
 jobs:
@@ -15,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout appsmith-docs repo (where docs will be committed)
+    # Step 1: Checkout appsmith-docs repo (target branch)
     - name: Checkout appsmith-docs (target branch)
       uses: actions/checkout@v4
       with:
@@ -23,7 +22,7 @@ jobs:
         ref: ${{ github.event.inputs.target_branch }}
         fetch-depth: 0
 
-    # Step 2: Checkout integration-resources prod repo (detect changed integration files)
+    # Step 2: Checkout integration-resources repo (to get config files)
     - name: Checkout integration-resources repo
       uses: actions/checkout@v4
       with:
@@ -31,28 +30,33 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         ref: main
         path: integration-resources
-        fetch-depth: 2  # Get last 2 commits to check diff
+        fetch-depth: 1
 
-    # Step 3: Detect changed files in the target directory
-    - name: Get changed files in uqi_configs
-      id: changed-files
-      uses: tj-actions/changed-files@v46
-      with:
-        path: integration-resources/Generic UQI Creation/uqi_configs
-        since_last_remote_commit: true
-
-    # Step 4: Save changed file paths to a list
-    - name: Save list of changed files
+    # Step 3: Compare against processed_files.txt and identify new files
+    - name: Detect new integration config files
+      id: detect-files
       run: |
         mkdir -p scripts
-        echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > files_to_process.txt
-        if [ ! -s files_to_process.txt ]; then
+        touch scripts/processed_files.txt
+        CURRENT_DIR="integration-resources/Generic UQI Creation/uqi_configs"
+        OUTPUT_FILE="files_to_process.txt"
+
+        # Find all *_uqi_config.json files, and filter out those already processed
+        find "$CURRENT_DIR" -type f -name '*_uqi_config.json' | while read -r path; do
+          filename=$(basename "$path")
+          if ! grep -Fxq "$filename" scripts/processed_files.txt; then
+            echo "$path" >> "$OUTPUT_FILE"
+          fi
+        done
+
+        if [ ! -s "$OUTPUT_FILE" ]; then
           echo "No new or modified files to process. Exiting."
           exit 0
         fi
+
         echo "changes_found=true" >> $GITHUB_ENV
 
-    # Step 5: Extract data and generate markdown docs using OpenAI
+    # Step 4: Use OpenAI to generate docs for new files
     - name: Process files with OpenAI
       if: env.changes_found == 'true'
       run: |
@@ -146,25 +150,25 @@ jobs:
         fi
         rm -f input_file.json extracted_info.md generated_doc.md
 
-    # Step 6: Commit and open a pull request with generated docs
+    # Step 5: Commit and raise PR with newly generated docs
     - name: Commit and open PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nProcessed changed files from integration-resources."
+        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nProcessed new integration files from integration-resources."
         branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
         base: ${{ github.event.inputs.target_branch }}
         add-paths: |
           website/docs/connect-data/reference/
           scripts/processed_files.txt
         body: |
-          ✅ Auto-generated PR based on file changes in `appsmithorg/integration-resources`.
+          ✅ Auto-generated PR based on new integration files from `appsmithorg/integration-resources`.
 
           **Target Branch:** `${{ github.event.inputs.target_branch }}`
           **Source Repo:** `appsmithorg/integration-resources`
 
           This PR includes:
-          - New/updated docs from changed integration files.
-          - Updated tracking list in `scripts/processed_files.txt`.
+          - New/updated reference docs for new integrations.
+          - Updated file list in `scripts/processed_files.txt`.
