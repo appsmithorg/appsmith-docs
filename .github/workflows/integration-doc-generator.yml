@@ -22,7 +22,7 @@ jobs:
         ref: ${{ github.event.inputs.target_branch }}
         fetch-depth: 0
 
-    # Step 2: Checkout integration-resources repo (to get config files)
+    # Step 2: Checkout integration-resources repo
     - name: Checkout integration-resources repo
       uses: actions/checkout@v4
       with:
@@ -30,145 +30,8 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         ref: main
         path: integration-resources
-        fetch-depth: 1
+        fetch-depth: 20  # Ensure recent commit history is available
 
-    # Step 3: Compare against processed_files.txt and identify new files
-    - name: Detect new integration config files
-      id: detect-files
-      run: |
-        mkdir -p scripts
-        touch scripts/processed_files.txt
-        CURRENT_DIR="integration-resources/Generic UQI Creation/uqi_configs"
-        OUTPUT_FILE="files_to_process.txt"
-
-        # Find all *_uqi_config.json files, and filter out those already processed
-        find "$CURRENT_DIR" -type f -name '*_uqi_config.json' | while read -r path; do
-          filename=$(basename "$path")
-          if ! grep -Fxq "$filename" scripts/processed_files.txt; then
-            echo "$path" >> "$OUTPUT_FILE"
-          fi
-        done
-
-        if [ ! -s "$OUTPUT_FILE" ]; then
-          echo "No new or modified files to process. Exiting."
-          exit 0
-        fi
-
-        echo "changes_found=true" >> $GITHUB_ENV
-
-    # Step 4: Use OpenAI to generate docs for new files
-    - name: Process files with OpenAI
-      if: env.changes_found == 'true'
-      run: |
-        mkdir -p generated_docs
-        PROCESSED_COUNT=0
-
-        while IFS= read -r FILE_PATH; do
-          FILE_NAME=$(basename "$FILE_PATH")
-          echo "⏳ Processing $FILE_NAME"
-
-          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
-          echo "Fetching content from: $FILE_URL"
-          curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
-            echo "❌ Failed to fetch $FILE_NAME"
-            continue
-          }
-
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
-          USER_CONTENT=$(cat input_file.json)
-
-          PAYLOAD=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$USER_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 2000,
-              temperature: 0
-            }')
-
-          RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-
-          if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on Prompt 1"
-            echo "$RESPONSE1" | jq .
-            continue
-          fi
-          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
-
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
-          EXTRACTED_CONTENT=$(cat extracted_info.md)
-
-          PAYLOAD=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$EXTRACTED_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 4000,
-              temperature: 0.3
-            }')
-
-          RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-
-          if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on Prompt 2"
-            echo "$RESPONSE2" | jq .
-            continue
-          fi
-          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
-
-          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
-          FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
-
-          mkdir -p "$(dirname "$FINAL_PATH")"
-          cp generated_doc.md "$FINAL_PATH"
-
-          echo "$FILE_NAME" >> scripts/processed_files.txt
-          PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Finished $FILE_NAME"
-
-        done < files_to_process.txt
-
-        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-        if [ "$PROCESSED_COUNT" -gt 0 ]; then
-          echo "content_generated=true" >> $GITHUB_ENV
-        else
-          echo "content_generated=false" >> $GITHUB_ENV
-        fi
-        rm -f input_file.json extracted_info.md generated_doc.md
-
-    # Step 5: Commit and raise PR with newly generated docs
-    - name: Commit and open PR
-      if: env.content_generated == 'true'
-      uses: peter-evans/create-pull-request@v6
-      with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nProcessed new integration files from integration-resources."
-        branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
-        base: ${{ github.event.inputs.target_branch }}
-        add-paths: |
-          website/docs/connect-data/reference/
-          scripts/processed_files.txt
-        body: |
-          ✅ Auto-generated PR based on new integration files from `appsmithorg/integration-resources`.
-
-          **Target Branch:** `${{ github.event.inputs.target_branch }}`
-          **Source Repo:** `appsmithorg/integration-resources`
-
-          This PR includes:
-          - New/updated reference docs for new integrations.
-          - Updated file list in `scripts/processed_files.txt`.
+    # Step 3: Always get latest 3 committed *_uqi_config.json files
+    - name: Get latest committed JSON files
+      id: detect-
