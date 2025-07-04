@@ -64,13 +64,14 @@ jobs:
           fi
           echo "changes_found=true" >> $GITHUB_ENV
 
-      # 5. Generate docs for each new config
+      # 5. Generate docs via OpenAI
       - name: Generate docs via OpenAI
         if: env.changes_found == 'true'
         run: |
           mkdir -p website/docs/connect-data/reference
           PROCESSED=0
           while IFS= read -r FILE_PATH; do
+            echo "DEBUG: Processing FILE_PATH: $FILE_PATH" # Added debug
             # Extract just the filename
             FILE_NAME=$(basename "$FILE_PATH")
             echo "⏳ Processing $FILE_NAME"
@@ -78,21 +79,21 @@ jobs:
             # Build raw URL (spaces URL-encoded)
             URL_PATH=$(echo "$FILE_PATH" | sed 's/ /%20/g')
             RAW_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$URL_PATH"
-            echo "Fetching $RAW_URL"
+            echo "DEBUG: Attempting to fetch from RAW_URL: $RAW_URL" # Added debug
             curl -fsSL --max-time 60 "$RAW_URL" -o input.json || {
               echo "❌ Failed to fetch $FILE_NAME"
               continue
             }
 
             # Prompt 1: extract details
-            SYSTEM1=$(< .github/prompts/extract_prompt.txt)
+            SYSTEM1=$(< .github/prompts/extract_prompt.txt )
             USER1=$(< input.json)
             PAYLOAD1=$(jq -nc --arg sys "$SYSTEM1" --arg usr "$USER1" \
               '{model:"gpt-4-1106-preview",messages:[{role:"system",content:$sys},{role:"user",content:$usr}],max_tokens:2000,temperature:0}')
             RESP1=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
                          -H "Content-Type: application/json" \
                          -d "$PAYLOAD1" \
-                         https://api.openai.com/v1/chat/completions)
+                         https://api.openai.com/v1/chat/completions )
             if echo "$RESP1" | jq -e '.error' > /dev/null; then
               echo "❌ OpenAI extract error for $FILE_NAME"
               echo "$RESP1" | jq .
@@ -107,7 +108,7 @@ jobs:
             RESP2=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
                          -H "Content-Type: application/json" \
                          -d "$PAYLOAD2" \
-                         https://api.openai.com/v1/chat/completions)
+                         https://api.openai.com/v1/chat/completions )
             if echo "$RESP2" | jq -e '.error' > /dev/null; then
               echo "❌ OpenAI generate error for $FILE_NAME"
               echo "$RESP2" | jq .
