@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # Step 1: Checkout appsmith-docs repo (target branch)
     - name: Checkout appsmith-docs (target branch)
       uses: actions/checkout@v4
       with:
@@ -21,6 +22,7 @@ jobs:
         ref: ${{ github.event.inputs.target_branch }}
         fetch-depth: 0
 
+    # Step 2: Checkout integration-resources repo (source of configs)
     - name: Checkout integration-resources repo
       uses: actions/checkout@v4
       with:
@@ -30,37 +32,30 @@ jobs:
         path: integration-resources
         fetch-depth: 20
 
-    - name: Detect new JSON files to process
+    # Step 3: Detect files (manually specify latest files or pull from git)
+    - name: Detect files to process
       run: |
         mkdir -p scripts
-        touch scripts/processed_files.txt
-
         echo "🔍 Detecting latest committed JSON files..."
+        
         cd integration-resources
-
-        git log --pretty=format: --name-only -n 20 \
+        git log --pretty=format: --name-only -n 30 \
           | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
           | sort -u \
-          | head -n 10 \
-          > ../scripts/candidate_files.txt
-
+          > ../files_to_process.txt
         cd ..
+
         echo "📄 Candidate files:"
-        cat scripts/candidate_files.txt || echo "(none)"
-
-        # Filter out already processed
-        grep -Fxv -f scripts/processed_files.txt scripts/candidate_files.txt > files_to_process.txt || true
-
-        echo "📄 Files to be processed:"
-        cat files_to_process.txt || echo "(none)"
+        cat files_to_process.txt
 
         if [ ! -s files_to_process.txt ]; then
-          echo "🛑 No new files to process."
+          echo "❌ No recent JSON files found. Exiting."
           exit 0
         fi
 
         echo "changes_found=true" >> $GITHUB_ENV
 
+    # Step 4: Process each file with OpenAI to generate docs
     - name: Process files with OpenAI
       if: env.changes_found == 'true'
       run: |
@@ -68,26 +63,22 @@ jobs:
         PROCESSED_COUNT=0
 
         while IFS= read -r FILE_PATH; do
-          FILE_NAME=$(basename "$FILE_PATH")
-          echo "⏳ Processing: $FILE_NAME"
+          echo "⏳ Processing: $FILE_PATH"
 
-          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
+          # URL-encode the full relative path
+          ENCODED_PATH=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$FILE_PATH'''))")
+          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/${ENCODED_PATH}"
           echo "🌐 Fetching: $FILE_URL"
+
           curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
-            echo "❌ Failed to fetch $FILE_NAME"
+            echo "❌ Failed to fetch $FILE_PATH"
             continue
           }
-
-          echo "📦 Raw JSON:"
-          cat input_file.json | head -n 20 || true
 
           SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
           USER_CONTENT=$(cat input_file.json)
 
-          echo "🧠 Sending to OpenAI - Prompt 1"
-          echo "System prompt: $SYSTEM_PROMPT"
-
-          PAYLOAD1=$(jq -n \
+          PAYLOAD=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
             --arg user "$USER_CONTENT" \
             '{
@@ -100,14 +91,10 @@ jobs:
               temperature: 0
             }')
 
-          echo "$PAYLOAD1" > debug_payload_1.json
-
           RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d "$PAYLOAD1")
-
-          echo "$RESPONSE1" | jq .
+            -d "$PAYLOAD")
 
           if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
             echo "❌ OpenAI error on Prompt 1"
@@ -119,10 +106,7 @@ jobs:
           SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
           EXTRACTED_CONTENT=$(cat extracted_info.md)
 
-          echo "🧠 Sending to OpenAI - Prompt 2"
-          echo "System prompt: $SYSTEM_PROMPT"
-
-          PAYLOAD2=$(jq -n \
+          PAYLOAD=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
             --arg user "$EXTRACTED_CONTENT" \
             '{
@@ -135,14 +119,10 @@ jobs:
               temperature: 0.3
             }')
 
-          echo "$PAYLOAD2" > debug_payload_2.json
-
           RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d "$PAYLOAD2")
-
-          echo "$RESPONSE2" | jq .
+            -d "$PAYLOAD")
 
           if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
             echo "❌ OpenAI error on Prompt 2"
@@ -150,10 +130,8 @@ jobs:
             continue
           fi
           echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
-          echo "📄 Generated Markdown:"
-          cat generated_doc.md
 
-          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+          INTEGRATION=$(basename "$FILE_PATH" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
 
           mkdir -p "$(dirname "$FINAL_PATH")"
@@ -161,7 +139,7 @@ jobs:
 
           echo "$FILE_PATH" >> scripts/processed_files.txt
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Finished $FILE_NAME"
+          echo "✅ Finished $FILE_PATH"
 
         done < files_to_process.txt
 
@@ -171,23 +149,27 @@ jobs:
         else
           echo "content_generated=false" >> $GITHUB_ENV
         fi
+        rm -f input_file.json extracted_info.md generated_doc.md
 
+    # Step 5: Commit and open PR if docs were generated
     - name: Commit and open PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: auto-generated markdown for ${{ github.event.inputs.target_branch }}"
+        commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} from recent integration configs"
         branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
         base: ${{ github.event.inputs.target_branch }}
         add-paths: |
           website/docs/connect-data/reference/
           scripts/processed_files.txt
         body: |
-          ✅ Auto-generated documentation PR.
+          ✅ Auto-generated PR from `appsmithorg/integration-resources`.
+
+          **Target Branch:** `${{ github.event.inputs.target_branch }}`
+          **Source Repo:** `appsmithorg/integration-resources`
 
           This PR includes:
-          - Docs for newly committed integration configs.
-          - Skips already processed files using `scripts/processed_files.txt`
-
+          - Docs from recent committed JSON configs
+          - Updated `scripts/processed_files.txt`
