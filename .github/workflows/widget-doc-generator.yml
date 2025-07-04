@@ -3,9 +3,15 @@ name: Widget Doc Generator
 on:
   schedule:
     - cron: '0 3 * * 1'  # Runs every Monday at 03:00 UTC
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 'Branch in appsmith-docs to create PR against'
+        required: false
+        default: 'docs-staging'
 
 env:
-  TARGET_BRANCH: docs-staging
+  TARGET_BRANCH: ${{ github.event.inputs.target_branch || 'docs-staging' }}
 
 jobs:
   generate_widget_docs:
