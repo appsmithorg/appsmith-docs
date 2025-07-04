@@ -49,6 +49,9 @@ Specify the value of the progress indicator (in percentage). You can also use va
 
 ### General
 
+General properties are essential configurations that provide overall control over the widget's behavior and appearance. 
+
+
 #### Number of steps `number`
 
 <dd>
