@@ -12,123 +12,156 @@ on:
 jobs:
   generate_docs:
     runs-on: ubuntu-latest
+
     steps:
-      # 1. Checkout the docs repo at the target branch
-      - name: Checkout appsmith-docs
+      # 1. Checkout the docs repo
+      - name: Checkout appsmith-docs (target branch)
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           ref: ${{ github.event.inputs.target_branch }}
           fetch-depth: 0
 
-      # 2. Checkout the integration-resources repo
-      - name: Checkout integration-resources
+      # 2. Checkout integration-resources on main
+      - name: Checkout integration-resources repo
         uses: actions/checkout@v4
         with:
           repository: appsmithorg/integration-resources
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           ref: main
           path: integration-resources
-          fetch-depth: 10
+          fetch-depth: 2
 
-      # 3. Identify files committed in the last 7 days
-      - name: Detect recent UQI config files
-        id: detect
+      # 3. Detect changed files (filenames only) in the target folder
+      - name: Get changed files in uqi_configs
+        id: changed-files
+        uses: tj-actions/changed-files@v46
+        with:
+          path: integration-resources/Generic UQI Creation/uqi_configs
+          since_last_remote_commit: true
+
+      # 4. Save filenames to process
+      - name: Save list of changed files
         run: |
           mkdir -p scripts
-          # List all UQI configs changed in the last 7 days
-          cd integration-resources
-          git fetch --depth=10 origin main
-          git log origin/main --since="7 days ago" --pretty=format: --name-only \
-            | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
-            | sort -u > ../scripts/files_to_process.txt
-          cd ..
-          echo "Files to process:"
-          cat scripts/files_to_process.txt || echo "(none)"
-          if [ ! -s scripts/files_to_process.txt ]; then
-            echo "❌ No files changed in the last 7 days. Exiting."
+          # all_changed_files is a space-separated list of filenames like "intercom_uqi_config.json"
+          echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > files_to_process.txt
+          echo "Will process these files:"
+          cat files_to_process.txt
+          if [ ! -s files_to_process.txt ]; then
+            echo "No new files to process. Exiting."
             exit 0
           fi
           echo "changes_found=true" >> $GITHUB_ENV
 
-      # 4. Process each file with OpenAI
-      - name: Generate docs with OpenAI
+      # 5. Process each filename
+      - name: Process files with OpenAI
         if: env.changes_found == 'true'
         run: |
           mkdir -p website/docs/connect-data/reference
-          PROCESSED=0
-          while IFS= read -r FILE_PATH; do
-            echo "⏳ Processing $FILE_PATH"
-            # URL-encode spaces
-            URL_PATH=$(echo "$FILE_PATH" | sed 's/ /%20/g')
-            RAW_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$URL_PATH"
+          PROCESSED_COUNT=0
 
-            echo "Fetching $RAW_URL"
-            curl -fsSL --max-time 60 "$RAW_URL" -o input.json || {
-              echo "❌ Failed to fetch $FILE_PATH"
+          while IFS= read -r FILE_NAME; do
+            echo "⏳ Processing $FILE_NAME"
+
+            # Build raw URL using the fixed folder path (spaces URL-encoded)
+            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/${FILE_NAME}"
+            echo "Fetching content from: $FILE_URL"
+            curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
+              echo "❌ Failed to fetch $FILE_NAME"
               continue
             }
 
-            # Step 1: extract
-            SYSTEM1=$(< .github/prompts/extract_prompt.txt)
-            USER1=$(< input.json)
-            PAYLOAD1=$(jq -nc \
-              --arg sys "$SYSTEM1" \
-              --arg usr "$USER1" \
-              '{model:"gpt-4-1106-preview", messages:[{role:"system",content:$sys},{role:"user",content:$usr}], max_tokens:2000, temperature:0}')
-            RESP1=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-                         -H "Content-Type: application/json" \
-                         -d "$PAYLOAD1" \
-                         https://api.openai.com/v1/chat/completions)
-            echo "$RESP1" | jq .
-            EXTRACTED=$(echo "$RESP1" | jq -r '.choices[0].message.content')
+            # Step 1: Extract details
+            SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract integration details.")
+            USER_CONTENT=$(< input_file.json)
+            PAYLOAD=$(jq -n \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg user "$USER_CONTENT" \
+              '{
+                model: "gpt-4-1106-preview",
+                messages: [
+                  {role: "system", content: $system},
+                  {role: "user",   content: $user}
+                ],
+                max_tokens: 2000,
+                temperature: 0
+              }')
 
-            # Step 2: generate
-            SYSTEM2=$(< .github/prompts/generate_prompt.txt)
-            PAYLOAD2=$(jq -nc \
-              --arg sys "$SYSTEM2" \
-              --arg usr "$EXTRACTED" \
-              '{model:"gpt-4-1106-preview", messages:[{role:"system",content:$sys},{role:"user",content:$usr}], max_tokens:4000, temperature:0.3}')
-            RESP2=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-                         -H "Content-Type: application/json" \
-                         -d "$PAYLOAD2" \
-                         https://api.openai.com/v1/chat/completions)
-            echo "$RESP2" | jq .
-            MD=$(echo "$RESP2" | jq -r '.choices[0].message.content')
+            RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD")
 
-            # Write out doc
-            NAME=$(basename "$FILE_PATH" "_uqi_config.json" | tr '[:upper:]' '[:lower:]')
-            OUT="website/docs/connect-data/reference/${NAME}.md"
-            echo "$MD" > "$OUT"
-            echo "✅ Wrote $OUT"
+            if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI error on extract for $FILE_NAME"
+              echo "$RESPONSE1" | jq .
+              continue
+            fi
+            echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
 
-            # Track
-            echo "$FILE_PATH" >> scripts/processed_files.txt
-            PROCESSED=$((PROCESSED+1))
-          done < scripts/files_to_process.txt
+            # Step 2: Generate markdown
+            SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate docs in markdown.")
+            EXTRACTED=$(< extracted_info.md)
+            PAYLOAD=$(jq -n \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg user "$EXTRACTED" \
+              '{
+                model: "gpt-4-1106-preview",
+                messages: [
+                  {role: "system", content: $system},
+                  {role: "user",   content: $user}
+                ],
+                max_tokens: 4000,
+                temperature: 0.3
+              }')
 
-          echo "processed_count=$PROCESSED" >> $GITHUB_ENV
-          if [ "$PROCESSED" -eq 0 ]; then
-            echo "❌ No docs generated, exiting."
-            exit 1
+            RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD")
+
+            if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI error on generate for $FILE_NAME"
+              echo "$RESPONSE2" | jq .
+              continue
+            fi
+            echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
+
+            # Write the output file
+            NAME=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+            DEST="website/docs/connect-data/reference/${NAME}.md"
+            mkdir -p "$(dirname "$DEST")"
+            cp generated_doc.md "$DEST"
+            echo "✅ Wrote $DEST"
+
+            echo "$FILE_NAME" >> scripts/processed_files.txt
+            PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
+          done < files_to_process.txt
+
+          echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
+          if [ "$PROCESSED_COUNT" -gt 0 ]; then
+            echo "content_generated=true" >> $GITHUB_ENV
+          else
+            echo "content_generated=false" >> $GITHUB_ENV
           fi
-          echo "content_generated=true" >> $GITHUB_ENV
+          rm -f input_file.json extracted_info.md generated_doc.md
 
-      # 5. Commit & open PR
-      - name: Commit and create PR
+      # 6. Commit & open PR
+      - name: Commit and open PR
         if: env.content_generated == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          title: "docs: update integration docs (recent changes)"
+          title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
           commit-message: |
-            docs: generate docs for recent UQI configs
-
-            Processed files from the last 7 days.
+            docs: automated generation for ${{ github.event.inputs.target_branch }}
+            
+            Processed changed files from integration-resources.
           branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
           base: ${{ github.event.inputs.target_branch }}
           add-paths: |
             website/docs/connect-data/reference/
             scripts/processed_files.txt
           body: |
-            This PR updates documentation for UQI configs changed in the last 7 days.
+            ✅ Auto-generated PR based on file changes in `appsmithorg/integration-resources`.
