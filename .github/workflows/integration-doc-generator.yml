@@ -30,12 +30,14 @@ jobs:
         path: integration-resources
         fetch-depth: 20
 
-    - name: Detect and filter new JSON files
+    - name: Detect new JSON files to process
       run: |
         mkdir -p scripts
+        touch scripts/processed_files.txt
+
+        echo "🔍 Detecting latest committed JSON files..."
         cd integration-resources
 
-        # Get the latest 10 committed *_uqi_config.json files
         git log --pretty=format: --name-only -n 20 \
           | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
           | sort -u \
@@ -43,16 +45,17 @@ jobs:
           > ../scripts/candidate_files.txt
 
         cd ..
+        echo "📄 Candidate files:"
+        cat scripts/candidate_files.txt || echo "(none)"
 
-        # Load processed files if they exist
-        touch scripts/processed_files.txt
+        # Filter out already processed
         grep -Fxv -f scripts/processed_files.txt scripts/candidate_files.txt > files_to_process.txt || true
 
-        echo "Files selected for processing:"
-        cat files_to_process.txt || echo "None"
+        echo "📄 Files to be processed:"
+        cat files_to_process.txt || echo "(none)"
 
         if [ ! -s files_to_process.txt ]; then
-          echo "❌ No new files to process. Exiting."
+          echo "🛑 No new files to process."
           exit 0
         fi
 
@@ -66,18 +69,25 @@ jobs:
 
         while IFS= read -r FILE_PATH; do
           FILE_NAME=$(basename "$FILE_PATH")
-          echo "⏳ Processing $FILE_NAME"
+          echo "⏳ Processing: $FILE_NAME"
 
           FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
+          echo "🌐 Fetching: $FILE_URL"
           curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
             echo "❌ Failed to fetch $FILE_NAME"
             continue
           }
 
+          echo "📦 Raw JSON:"
+          cat input_file.json | head -n 20 || true
+
           SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
           USER_CONTENT=$(cat input_file.json)
 
-          PAYLOAD=$(jq -n \
+          echo "🧠 Sending to OpenAI - Prompt 1"
+          echo "System prompt: $SYSTEM_PROMPT"
+
+          PAYLOAD1=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
             --arg user "$USER_CONTENT" \
             '{
@@ -90,10 +100,14 @@ jobs:
               temperature: 0
             }')
 
+          echo "$PAYLOAD1" > debug_payload_1.json
+
           RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
+            -d "$PAYLOAD1")
+
+          echo "$RESPONSE1" | jq .
 
           if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
             echo "❌ OpenAI error on Prompt 1"
@@ -105,7 +119,10 @@ jobs:
           SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
           EXTRACTED_CONTENT=$(cat extracted_info.md)
 
-          PAYLOAD=$(jq -n \
+          echo "🧠 Sending to OpenAI - Prompt 2"
+          echo "System prompt: $SYSTEM_PROMPT"
+
+          PAYLOAD2=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
             --arg user "$EXTRACTED_CONTENT" \
             '{
@@ -118,10 +135,14 @@ jobs:
               temperature: 0.3
             }')
 
+          echo "$PAYLOAD2" > debug_payload_2.json
+
           RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
             -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
+            -d "$PAYLOAD2")
+
+          echo "$RESPONSE2" | jq .
 
           if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
             echo "❌ OpenAI error on Prompt 2"
@@ -129,6 +150,8 @@ jobs:
             continue
           fi
           echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
+          echo "📄 Generated Markdown:"
+          cat generated_doc.md
 
           INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
@@ -148,7 +171,6 @@ jobs:
         else
           echo "content_generated=false" >> $GITHUB_ENV
         fi
-        rm -f input_file.json extracted_info.md generated_doc.md
 
     - name: Commit and open PR
       if: env.content_generated == 'true'
@@ -166,6 +188,6 @@ jobs:
           ✅ Auto-generated documentation PR.
 
           This PR includes:
-          - New/updated docs for integration configs.
-          - Skips already processed files using `scripts/processed_files.txt`.
+          - Docs for newly committed integration configs.
+          - Skips already processed files using `scripts/processed_files.txt`
 
