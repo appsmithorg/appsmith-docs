@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout appsmith-docs repo (target branch)
+    # Step 1: Checkout appsmith-docs
     - name: Checkout appsmith-docs (target branch)
       uses: actions/checkout@v4
       with:
@@ -22,7 +22,7 @@ jobs:
         ref: ${{ github.event.inputs.target_branch }}
         fetch-depth: 0
 
-    # Step 2: Checkout integration-resources repo (source of configs)
+    # Step 2: Checkout integration-resources
     - name: Checkout integration-resources repo
       uses: actions/checkout@v4
       with:
@@ -32,30 +32,18 @@ jobs:
         path: integration-resources
         fetch-depth: 20
 
-    # Step 3: Detect files (manually specify latest files or pull from git)
-    - name: Detect files to process
+    # Step 3: Manually set files to process for now
+    - name: Set files to process manually
       run: |
         mkdir -p scripts
-        echo "🔍 Detecting latest committed JSON files..."
-        
-        cd integration-resources
-        git log --pretty=format: --name-only -n 30 \
-          | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
-          | sort -u \
-          > ../files_to_process.txt
-        cd ..
-
-        echo "📄 Candidate files:"
-        cat files_to_process.txt
-
-        if [ ! -s files_to_process.txt ]; then
-          echo "❌ No recent JSON files found. Exiting."
-          exit 0
-        fi
-
+        cat <<EOF > files_to_process.txt
+Generic UQI Creation/uqi_configs/intercom_uqi_config.json
+Generic UQI Creation/uqi_configs/microsoftTeams_uqi_config.json
+Generic UQI Creation/uqi_configs/sharepoint_uqi_config.json
+EOF
         echo "changes_found=true" >> $GITHUB_ENV
 
-    # Step 4: Process each file with OpenAI to generate docs
+    # Step 4: Process files with OpenAI
     - name: Process files with OpenAI
       if: env.changes_found == 'true'
       run: |
@@ -63,13 +51,14 @@ jobs:
         PROCESSED_COUNT=0
 
         while IFS= read -r FILE_PATH; do
+          FILE_NAME=$(basename "$FILE_PATH")
           echo "⏳ Processing: $FILE_PATH"
 
-          # URL-encode the full relative path
-          ENCODED_PATH=$(python3 -c "import urllib.parse; print(urllib.parse.quote('''$FILE_PATH'''))")
-          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/${ENCODED_PATH}"
-          echo "🌐 Fetching: $FILE_URL"
+          # Encode the full path
+          RAW_PATH=$(echo "$FILE_PATH" | sed 's| |%20|g')
+          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$RAW_PATH"
 
+          echo "🌐 Fetching: $FILE_URL"
           curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
             echo "❌ Failed to fetch $FILE_PATH"
             continue
@@ -131,15 +120,15 @@ jobs:
           fi
           echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
 
-          INTEGRATION=$(basename "$FILE_PATH" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
           FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
 
           mkdir -p "$(dirname "$FINAL_PATH")"
           cp generated_doc.md "$FINAL_PATH"
 
-          echo "$FILE_PATH" >> scripts/processed_files.txt
+          echo "$FILE_NAME" >> scripts/processed_files.txt
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Finished $FILE_PATH"
+          echo "✅ Finished $FILE_NAME"
 
         done < files_to_process.txt
 
@@ -151,14 +140,14 @@ jobs:
         fi
         rm -f input_file.json extracted_info.md generated_doc.md
 
-    # Step 5: Commit and open PR if docs were generated
+    # Step 5: Commit and open PR
     - name: Commit and open PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} from recent integration configs"
+        commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} — intercom, teams, sharepoint"
         branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
         base: ${{ github.event.inputs.target_branch }}
         add-paths: |
@@ -167,9 +156,8 @@ jobs:
         body: |
           ✅ Auto-generated PR from `appsmithorg/integration-resources`.
 
-          **Target Branch:** `${{ github.event.inputs.target_branch }}`
+          **Target Branch:** `${{ github.event.inputs.target_branch }}`  
           **Source Repo:** `appsmithorg/integration-resources`
 
-          This PR includes:
-          - Docs from recent committed JSON configs
-          - Updated `scripts/processed_files.txt`
+          Includes:
+          - Docs generated for: `intercom`, `microsoftTeams`, `sharepoint`
