@@ -30,32 +30,18 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         ref: main
         path: integration-resources
-        fetch-depth: 20  # Ensure recent commit history is available
+        fetch-depth: 20
 
-    # Step 3: Always get latest 3 committed *_uqi_config.json files
-    - name: Get latest committed JSON files
-      id: detect-files
+    # Step 3: Manually set files to process
+    - name: Manually set files to process
       run: |
         mkdir -p scripts
-        OUTPUT_FILE="files_to_process.txt"
-
-        # Get the 3 most recently committed *_uqi_config.json files
-        cd integration-resources
-        git log --pretty=format: --name-only -n 20 \
-          | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
-          | sort -u \
-          | head -n 3 \
-          > ../$OUTPUT_FILE
-        cd ..
-
-        echo "Files to process:"
-        cat $OUTPUT_FILE || echo "None found"
-
-        if [ ! -s "$OUTPUT_FILE" ]; then
-          echo "❌ No recent JSON files found. Exiting."
-          exit 0
-        fi
-
+        cat <<EOF > files_to_process.txt
+Generic UQI Creation/uqi_configs/intercom_uqi_config.json
+Generic UQI Creation/uqi_configs/microsoftTeams_uqi_config.json
+Generic UQI Creation/uqi_configs/sharepoint_uqi_config.json
+EOF
+        cat files_to_process.txt
         echo "changes_found=true" >> $GITHUB_ENV
 
     # Step 4: Process each file with OpenAI to generate docs
@@ -159,7 +145,7 @@ jobs:
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nGenerated from latest committed integration configs."
+        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nGenerated manually for selected integration configs."
         branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
         base: ${{ github.event.inputs.target_branch }}
         add-paths: |
@@ -172,5 +158,5 @@ jobs:
           **Source Repo:** `appsmithorg/integration-resources`
 
           This PR includes:
-          - New/updated docs from the latest committed integration files.
+          - Manually selected integration docs.
           - Tracking file update in `scripts/processed_files.txt`.
