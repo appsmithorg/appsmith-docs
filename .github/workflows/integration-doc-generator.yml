@@ -12,6 +12,7 @@ on:
 jobs:
   generate_docs:
     runs-on: ubuntu-latest
+
     steps:
       # 1. Checkout the docs repo on the target branch
       - name: Checkout appsmith-docs
@@ -31,7 +32,7 @@ jobs:
           path: integration-resources
           fetch-depth: 1
 
-      # 3. Create list of files to process
+      # 3. Hardcode the two files to process
       - name: Set files to process manually
         run: |
           echo "intercom_uqi_config.json"   > files_to_process.txt
@@ -48,32 +49,35 @@ jobs:
           while IFS= read -r FILE_NAME; do
             echo "⏳ Processing $FILE_NAME"
 
-            RAW_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/${FILE_NAME}"
-            curl -fsSL "$RAW_URL" -o input.json
+            # Build and URL-encode the full relative path
+            REL="Generic UQI Creation/uqi_configs/${FILE_NAME}"
+            ENC=$(echo "$REL" | sed 's/ /%20/g')
+            RAW_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$ENC"
+            echo "Fetching $RAW_URL"
+            curl -fsSL "$RAW_URL" -o input.json || {
+              echo "❌ Failed to fetch $FILE_NAME"
+              exit 1
+            }
 
-            # Step 1: Extract details
+            # Step 1: extract integration details
             SYS1=$(< .github/prompts/extract_prompt.txt)
             USR1=$(< input.json)
-            PAY1=$(jq -nc \
-              --arg sys "$SYS1" \
-              --arg usr "$USR1" \
+            PAY1=$(jq -nc --arg sys "$SYS1" --arg usr "$USR1" \
               '{model:"gpt-4-1106-preview",messages:[{role:"system",content:$sys},{role:"user",content:$usr}],max_tokens:2000,temperature:0}')
             RES1=$(curl -s -H "Authorization: Bearer $OPENAI_API_KEY" \
                         -H "Content-Type: application/json" \
-                        -d "$PAY1" https://api.openai.com/v1/chat/completions)
-            echo "$RES1" | jq .
+                        -d "$PAY1" \
+                        https://api.openai.com/v1/chat/completions)
             EXTRACTED=$(echo "$RES1" | jq -r '.choices[0].message.content')
 
-            # Step 2: Generate markdown
+            # Step 2: generate markdown
             SYS2=$(< .github/prompts/generate_prompt.txt)
-            PAY2=$(jq -nc \
-              --arg sys "$SYS2" \
-              --arg usr "$EXTRACTED" \
+            PAY2=$(jq -nc --arg sys "$SYS2" --arg usr "$EXTRACTED" \
               '{model:"gpt-4-1106-preview",messages:[{role:"system",content:$sys},{role:"user",content:$usr}],max_tokens:4000,temperature:0.3}')
             RES2=$(curl -s -H "Authorization: Bearer $OPENAI_API_KEY" \
                         -H "Content-Type: application/json" \
-                        -d "$PAY2" https://api.openai.com/v1/chat/completions)
-            echo "$RES2" | jq .
+                        -d "$PAY2" \
+                        https://api.openai.com/v1/chat/completions)
             MD=$(echo "$RES2" | jq -r '.choices[0].message.content')
 
             # Save markdown
@@ -83,7 +87,7 @@ jobs:
             echo "✅ Wrote $OUT"
           done < files_to_process.txt
 
-      # 5. Commit and open PR
+      # 5. Commit & open PR
       - name: Commit & Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -98,3 +102,5 @@ jobs:
           add-paths: |
             website/docs/connect-data/reference/intercom.md
             website/docs/connect-data/reference/sharepoint.md
+          body: |
+            ✅ Auto-generated documentation for Intercom and SharePoint integrations.
