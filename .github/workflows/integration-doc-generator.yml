@@ -1,162 +1,140 @@
-name: Integration Doc Generator
+name: Generate Integration Documentation
 
 on:
   workflow_dispatch:
     inputs:
       target_branch:
-        description: 'Branch in appsmith-docs to create PR against'
-        required: true
+        description: 'Target branch to merge PR'
+        required: false
         default: 'main'
-        type: string
 
 jobs:
-  generate_docs:
+  generate-docs:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout appsmith-docs
-      - name: Checkout appsmith-docs (target branch)
+      - name: Checkout docs repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           ref: ${{ github.event.inputs.target_branch }}
-          fetch-depth: 0
 
-      # Step 2: Checkout integration-resources
-      - name: Checkout integration-resources repo
+      - name: Checkout integration resources
         uses: actions/checkout@v4
         with:
           repository: appsmithorg/integration-resources
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           ref: main
           path: integration-resources
-          fetch-depth: 20
 
-      # Step 3: Manually set files to process
-      - name: Set files to process manually
+      - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Setup directories
+        run: |
+          mkdir -p website/docs/connect-data/reference
           mkdir -p scripts
-          cat <<EOF > files_to_process.txt
-Generic UQI Creation/uqi_configs/intercom_uqi_config.json
-Generic UQI Creation/uqi_configs/microsoftTeams_uqi_config.json
-Generic UQI Creation/uqi_configs/sharepoint_uqi_config.json
-EOF
-          echo "changes_found=true" >> $GITHUB_ENV
 
-      # Step 4: Process files with OpenAI
-      - name: Process files with OpenAI
-        if: env.changes_found == 'true'
+      - name: Identify changed UQI config files
         run: |
-          mkdir -p generated_docs
-          PROCESSED_COUNT=0
-
-          while IFS= read -r FILE_PATH; do
-            FILE_NAME=$(basename "$FILE_PATH")
-            echo "⏳ Processing: $FILE_PATH"
-
-            # Encode the full path
-            RAW_PATH=$(echo "$FILE_PATH" | sed 's| |%20|g')
-            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$RAW_PATH"
-
-            echo "🌐 Fetching: $FILE_URL"
-            curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
-              echo "❌ Failed to fetch $FILE_PATH"
-              continue
-            }
-
-            SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
-            USER_CONTENT=$(cat input_file.json)
-
-            PAYLOAD=$(jq -n \
-              --arg system "$SYSTEM_PROMPT" \
-              --arg user "$USER_CONTENT" \
-              '{
-                model: "gpt-4-1106-preview",
-                messages: [
-                  {"role": "system", "content": $system},
-                  {"role": "user", "content": $user}
-                ],
-                max_tokens: 2000,
-                temperature: 0
-              }')
-
-            RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
-              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-              -H "Content-Type: application/json" \
-              -d "$PAYLOAD")
-
-            if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on Prompt 1"
-              echo "$RESPONSE1" | jq .
-              continue
+          echo "Searching for updated UQI config files..."
+          cd integration-resources
+          git checkout main
+          git pull
+          find "Generic UQI Creation/uqi_configs" -type f -name "*_uqi_config.json" > ../all_uqi_configs.txt
+          > changed_files.txt
+          while IFS= read -r file; do
+            last_commit=$(git log -1 --format="%ct" -- "$file")
+            seven_days_ago=$(date -d "7 days ago" +%s)
+            if [ "$last_commit" -ge "$seven_days_ago" ]; then
+              echo "$file" >> ../changed_files.txt
             fi
-            echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
+          done < ../all_uqi_configs.txt
 
-            SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
-            EXTRACTED_CONTENT=$(cat extracted_info.md)
-
-            PAYLOAD=$(jq -n \
-              --arg system "$SYSTEM_PROMPT" \
-              --arg user "$EXTRACTED_CONTENT" \
-              '{
-                model: "gpt-4-1106-preview",
-                messages: [
-                  {"role": "system", "content": $system},
-                  {"role": "user", "content": $user}
-                ],
-                max_tokens: 4000,
-                temperature: 0.3
-              }')
-
-            RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
-              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-              -H "Content-Type: application/json" \
-              -d "$PAYLOAD")
-
-            if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on Prompt 2"
-              echo "$RESPONSE2" | jq .
-              continue
-            fi
-            echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
-
-            INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
-            FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
-
-            mkdir -p "$(dirname "$FINAL_PATH")"
-            cp generated_doc.md "$FINAL_PATH"
-
-            echo "$FILE_NAME" >> scripts/processed_files.txt
-            PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-            echo "✅ Finished $FILE_NAME"
-          done < files_to_process.txt
-
-          echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-          if [ "$PROCESSED_COUNT" -gt 0 ]; then
-            echo "content_generated=true" >> $GITHUB_ENV
-          else
-            echo "content_generated=false" >> $GITHUB_ENV
+      - name: Process changed files
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ ! -s changed_files.txt ]; then
+            echo "No changed UQI config files in the last 7 days. Exiting."
+            exit 0
           fi
-          rm -f input_file.json extracted_info.md generated_doc.md
+          while IFS= read -r file; do
+            echo "Processing file: $file"
+            # Encode file path for URL
+            encoded_path=$(echo "$file" | sed 's/ /%20/g')
+            raw_url="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$encoded_path"
+            echo "Fetching raw content from $raw_url"
+            content=$(curl -sSL -H "Authorization: token ${{ secrets.REPO_ACCESS_TOKEN }}" "$raw_url")
+            if [ -z "$content" ]; then
+              echo "Error: Could not fetch content for $file" >&2
+              continue
+            fi
 
-      # Step 5: Commit and open PR
-      - name: Commit and open PR
-        if: env.content_generated == 'true'
-        uses: peter-evans/create-pull-request@v6
+            # Derive integration name and output file path
+            base_name=$(basename "$file" "_uqi_config.json")
+            integration=$(echo "$base_name" | tr '[:upper:]' '[:lower:]')
+            doc_path="website/docs/connect-data/reference/${integration}.md"
+
+            # Step 1: Extract integration details via GPT
+            extract_prompt=$(< .github/prompts/extract_prompt.txt)
+            payload1=$(jq -n \
+              --arg system "$extract_prompt" \
+              --arg user "$content" \
+              '{model: "gpt-4", messages: [{role:"system", content:$system}, {role:"user", content:$user}]}')
+            response1=$(curl -s -X POST https://api.openai.com/v1/chat/completions \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer $OPENAI_API_KEY" \
+              -d "$payload1")
+            if echo "$response1" | jq -e '.error' > /dev/null; then
+              err=$(echo "$response1" | jq -r '.error.message')
+              echo "OpenAI API error on extract for $file: $err" >&2
+              continue
+            fi
+            extracted=$(echo "$response1" | jq -r '.choices[0].message.content')
+
+            # Step 2: Generate documentation via GPT
+            gen_prompt=$(< .github/prompts/generate_prompt.txt)
+            payload2=$(jq -n \
+              --arg system "$gen_prompt" \
+              --arg user "$extracted" \
+              '{model: "gpt-4", messages: [{role:"system", content:$system}, {role:"user", content:$user}]}')
+            response2=$(curl -s -X POST https://api.openai.com/v1/chat/completions \
+              -H "Content-Type: application/json" \
+              -H "Authorization: Bearer $OPENAI_API_KEY" \
+              -d "$payload2")
+            if echo "$response2" | jq -e '.error' > /dev/null; then
+              err=$(echo "$response2" | jq -r '.error.message')
+              echo "OpenAI API error on generate for $file: $err" >&2
+              continue
+            fi
+            doc_content=$(echo "$response2" | jq -r '.choices[0].message.content')
+
+            # Write markdown to file
+            echo "$doc_content" > "$doc_path"
+            echo "Generated documentation for $integration"
+
+            # Track processed file
+            echo "$file" >> scripts/processed_files.txt
+            echo "$integration" >> new_integrations.txt
+          done < changed_files.txt
+          if [ ! -s new_integrations.txt ]; then
+            echo "No new integrations documentation generated. Exiting."
+            exit 0
+          fi
+
+      - name: Prepare PR body
+        run: |
+          echo "This PR updates documentation for the following integrations:" > pr_body.txt
+          while IFS= read -r integration; do
+            echo "- $integration" >> pr_body.txt
+          done < new_integrations.txt
+
+      - name: Commit and create Pull Request
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-          commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} — intercom, teams, sharepoint"
-          branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
           base: ${{ github.event.inputs.target_branch }}
-          add-paths: |
-            website/docs/connect-data/reference/
-            scripts/processed_files.txt
-          body: |
-            ✅ Auto-generated PR from `appsmithorg/integration-resources`.
-
-            **Target Branch:** `${{ github.event.inputs.target_branch }}`  
-            **Source Repo:** `appsmithorg/integration-resources`
-
-            Includes:
-            - Docs generated for: `intercom`, `microsoftTeams`, `sharepoint`
+          title: "Update integration documentation"
+          body-path: pr_body.txt
