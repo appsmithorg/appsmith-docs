@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout appsmith-docs repo (target branch)
     - name: Checkout appsmith-docs (target branch)
       uses: actions/checkout@v4
       with:
@@ -22,7 +21,6 @@ jobs:
         ref: ${{ github.event.inputs.target_branch }}
         fetch-depth: 0
 
-    # Step 2: Checkout integration-resources repo
     - name: Checkout integration-resources repo
       uses: actions/checkout@v4
       with:
@@ -32,19 +30,34 @@ jobs:
         path: integration-resources
         fetch-depth: 20
 
-    # Step 3: Manually set files to process
-    - name: Manually set files to process
+    - name: Detect and filter new JSON files
       run: |
         mkdir -p scripts
-        cat <<EOF > files_to_process.txt
-Generic UQI Creation/uqi_configs/intercom_uqi_config.json
-Generic UQI Creation/uqi_configs/microsoftTeams_uqi_config.json
-Generic UQI Creation/uqi_configs/sharepoint_uqi_config.json
-EOF
-        cat files_to_process.txt
+        cd integration-resources
+
+        # Get the latest 10 committed *_uqi_config.json files
+        git log --pretty=format: --name-only -n 20 \
+          | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
+          | sort -u \
+          | head -n 10 \
+          > ../scripts/candidate_files.txt
+
+        cd ..
+
+        # Load processed files if they exist
+        touch scripts/processed_files.txt
+        grep -Fxv -f scripts/processed_files.txt scripts/candidate_files.txt > files_to_process.txt || true
+
+        echo "Files selected for processing:"
+        cat files_to_process.txt || echo "None"
+
+        if [ ! -s files_to_process.txt ]; then
+          echo "❌ No new files to process. Exiting."
+          exit 0
+        fi
+
         echo "changes_found=true" >> $GITHUB_ENV
 
-    # Step 4: Process each file with OpenAI to generate docs
     - name: Process files with OpenAI
       if: env.changes_found == 'true'
       run: |
@@ -56,7 +69,6 @@ EOF
           echo "⏳ Processing $FILE_NAME"
 
           FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
-          echo "Fetching content from: $FILE_URL"
           curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
             echo "❌ Failed to fetch $FILE_NAME"
             continue
@@ -124,7 +136,7 @@ EOF
           mkdir -p "$(dirname "$FINAL_PATH")"
           cp generated_doc.md "$FINAL_PATH"
 
-          echo "$FILE_NAME" >> scripts/processed_files.txt
+          echo "$FILE_PATH" >> scripts/processed_files.txt
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
           echo "✅ Finished $FILE_NAME"
 
@@ -138,25 +150,22 @@ EOF
         fi
         rm -f input_file.json extracted_info.md generated_doc.md
 
-    # Step 5: Commit and raise a PR
     - name: Commit and open PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: automated generation for ${{ github.event.inputs.target_branch }}\n\nGenerated manually for selected integration configs."
+        commit-message: "docs: auto-generated markdown for ${{ github.event.inputs.target_branch }}"
         branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
         base: ${{ github.event.inputs.target_branch }}
         add-paths: |
           website/docs/connect-data/reference/
           scripts/processed_files.txt
         body: |
-          ✅ Auto-generated PR from `appsmithorg/integration-resources`.
-
-          **Target Branch:** `${{ github.event.inputs.target_branch }}`
-          **Source Repo:** `appsmithorg/integration-resources`
+          ✅ Auto-generated documentation PR.
 
           This PR includes:
-          - Manually selected integration docs.
-          - Tracking file update in `scripts/processed_files.txt`.
+          - New/updated docs for integration configs.
+          - Skips already processed files using `scripts/processed_files.txt`.
+
