@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout the docs repo
+      # 1. Checkout the docs repository (full history to pull processed_files.txt)
       - name: Checkout appsmith-docs (target branch)
         uses: actions/checkout@v4
         with:
@@ -22,8 +22,8 @@ jobs:
           ref: ${{ github.event.inputs.target_branch }}
           fetch-depth: 0
 
-      # 2. Checkout integration-resources on main
-      - name: Checkout integration-resources repo
+      # 2. Checkout the integration-resources repository
+      - name: Checkout integration-resources
         uses: actions/checkout@v4
         with:
           repository: appsmithorg/integration-resources
@@ -32,123 +32,114 @@ jobs:
           path: integration-resources
           fetch-depth: 2
 
-      # 3. Detect changed files (filenames only) in the target folder
-      - name: Get changed files in uqi_configs
+      # 3. Ensure processed_files.txt exists
+      - name: Ensure processed_files.txt
+        run: |
+          mkdir -p scripts
+          if [ ! -f scripts/processed_files.txt ]; then
+            echo "# processed UQI config files" > scripts/processed_files.txt
+          fi
+
+      # 4. Detect changed files in the uqi_configs directory
+      - name: Get changed UQI config filenames
         id: changed-files
         uses: tj-actions/changed-files@v46
         with:
           path: integration-resources/Generic UQI Creation/uqi_configs
           since_last_remote_commit: true
 
-      # 4. Save filenames to process
-      - name: Save list of changed files
+      # 5. Filter out already processed files
+      - name: Prepare list of files to process
         run: |
-          mkdir -p scripts
-          # all_changed_files is a space-separated list of filenames like "intercom_uqi_config.json"
-          echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > files_to_process.txt
-          echo "Will process these files:"
-          cat files_to_process.txt
-          if [ ! -s files_to_process.txt ]; then
+          echo "${{ steps.changed-files.outputs.all_changed_files }}" \
+            | tr ' ' '\n' \
+            | grep -v '^$' \
+            > scripts/candidate_files.txt
+
+          grep -Fxv -f scripts/processed_files.txt scripts/candidate_files.txt \
+            > scripts/files_to_process.txt || true
+
+          echo "Files to process:"
+          cat scripts/files_to_process.txt || echo "(none)"
+
+          if [ ! -s scripts/files_to_process.txt ]; then
             echo "No new files to process. Exiting."
             exit 0
           fi
+
           echo "changes_found=true" >> $GITHUB_ENV
 
-      # 5. Process each filename
-      - name: Process files with OpenAI
+      # 6. Process each new file with OpenAI
+      - name: Generate docs via OpenAI
         if: env.changes_found == 'true'
         run: |
           mkdir -p website/docs/connect-data/reference
-          PROCESSED_COUNT=0
+          PROCESSED=0
 
           while IFS= read -r FILE_NAME; do
             echo "⏳ Processing $FILE_NAME"
 
-            # Build raw URL using the fixed folder path (spaces URL-encoded)
-            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/${FILE_NAME}"
-            echo "Fetching content from: $FILE_URL"
-            curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
+            RAW_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/Generic%20UQI%20Creation/uqi_configs/$FILE_NAME"
+            echo "Fetching $RAW_URL"
+            curl -fsSL --max-time 60 "$RAW_URL" -o input.json || {
               echo "❌ Failed to fetch $FILE_NAME"
               continue
             }
 
-            # Step 1: Extract details
-            SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract integration details.")
-            USER_CONTENT=$(< input_file.json)
-            PAYLOAD=$(jq -n \
-              --arg system "$SYSTEM_PROMPT" \
-              --arg user "$USER_CONTENT" \
-              '{
-                model: "gpt-4-1106-preview",
-                messages: [
-                  {role: "system", content: $system},
-                  {role: "user",   content: $user}
-                ],
-                max_tokens: 2000,
-                temperature: 0
-              }')
-
-            RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
-              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-              -H "Content-Type: application/json" \
-              -d "$PAYLOAD")
-
-            if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on extract for $FILE_NAME"
-              echo "$RESPONSE1" | jq .
+            # Step 1: extract integration details
+            SYSTEM1=$(< .github/prompts/extract_prompt.txt)
+            USER1=$(< input.json)
+            PAYLOAD1=$(jq -nc \
+              --arg sys "$SYSTEM1" \
+              --arg usr "$USER1" \
+              '{model:"gpt-4-1106-preview", messages:[{role:"system",content:$sys},{role:"user",content:$usr}], max_tokens:2000, temperature:0}')
+            RESP1=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+                         -H "Content-Type: application/json" \
+                         -d "$PAYLOAD1" \
+                         https://api.openai.com/v1/chat/completions)
+            if echo "$RESP1" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI extract error for $FILE_NAME"
+              echo "$RESP1" | jq .
               continue
             fi
-            echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
+            EXTRACTED=$(echo "$RESP1" | jq -r '.choices[0].message.content')
 
-            # Step 2: Generate markdown
-            SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate docs in markdown.")
-            EXTRACTED=$(< extracted_info.md)
-            PAYLOAD=$(jq -n \
-              --arg system "$SYSTEM_PROMPT" \
-              --arg user "$EXTRACTED" \
-              '{
-                model: "gpt-4-1106-preview",
-                messages: [
-                  {role: "system", content: $system},
-                  {role: "user",   content: $user}
-                ],
-                max_tokens: 4000,
-                temperature: 0.3
-              }')
-
-            RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
-              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-              -H "Content-Type: application/json" \
-              -d "$PAYLOAD")
-
-            if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on generate for $FILE_NAME"
-              echo "$RESPONSE2" | jq .
+            # Step 2: generate markdown
+            SYSTEM2=$(< .github/prompts/generate_prompt.txt)
+            PAYLOAD2=$(jq -nc \
+              --arg sys "$SYSTEM2" \
+              --arg usr "$EXTRACTED" \
+              '{model:"gpt-4-1106-preview", messages:[{role:"system",content:$sys},{role:"user",content:$usr}], max_tokens:4000, temperature:0.3}')
+            RESP2=$(curl -s -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+                         -H "Content-Type: application/json" \
+                         -d "$PAYLOAD2" \
+                         https://api.openai.com/v1/chat/completions)
+            if echo "$RESP2" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI generate error for $FILE_NAME"
+              echo "$RESP2" | jq .
               continue
             fi
-            echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
+            MD=$(echo "$RESP2" | jq -r '.choices[0].message.content')
 
-            # Write the output file
             NAME=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
-            DEST="website/docs/connect-data/reference/${NAME}.md"
-            mkdir -p "$(dirname "$DEST")"
-            cp generated_doc.md "$DEST"
-            echo "✅ Wrote $DEST"
+            OUT="website/docs/connect-data/reference/${NAME}.md"
+            echo "$MD" > "$OUT"
+            echo "✅ Wrote $OUT"
 
             echo "$FILE_NAME" >> scripts/processed_files.txt
-            PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          done < files_to_process.txt
+            PROCESSED=$((PROCESSED+1))
+          done < scripts/files_to_process.txt
 
-          echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-          if [ "$PROCESSED_COUNT" -gt 0 ]; then
+          echo "processed_count=$PROCESSED" >> $GITHUB_ENV
+          if [ "$PROCESSED" -gt 0 ]; then
             echo "content_generated=true" >> $GITHUB_ENV
           else
             echo "content_generated=false" >> $GITHUB_ENV
+            exit 1
           fi
-          rm -f input_file.json extracted_info.md generated_doc.md
 
-      # 6. Commit & open PR
-      - name: Commit and open PR
+      # 7. Commit and open PR
+      - name: Commit & open Pull Request
         if: env.content_generated == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
@@ -156,12 +147,17 @@ jobs:
           title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
           commit-message: |
             docs: automated generation for ${{ github.event.inputs.target_branch }}
-            
-            Processed changed files from integration-resources.
+
+            Processed files:
+            ${{ steps.changed-files.outputs.all_changed_files }}
           branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
           base: ${{ github.event.inputs.target_branch }}
           add-paths: |
             website/docs/connect-data/reference/
             scripts/processed_files.txt
           body: |
-            ✅ Auto-generated PR based on file changes in `appsmithorg/integration-resources`.
+            ✅ Auto-generated documentation update.
+
+            **Target Branch:** `${{ github.event.inputs.target_branch }}`
+            **Processed Files:**  
+            ${{ steps.changed-files.outputs.all_changed_files }}
