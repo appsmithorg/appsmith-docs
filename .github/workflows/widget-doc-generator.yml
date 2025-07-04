@@ -1,13 +1,11 @@
- name: Widget Doc Generator
+name: Widget Doc Generator
 
 on:
-  workflow_dispatch:
-    inputs:
-      target_branch:
-        description: 'Branch in appsmith-docs to create PR against'
-        required: true
-        default: 'docs-staging'
-        type: string
+  schedule:
+    - cron: '0 3 * * 1'  # Runs every Monday at 03:00 UTC
+
+env:
+  TARGET_BRANCH: docs-staging
 
 jobs:
   generate_widget_docs:
@@ -18,7 +16,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.test_REPO_ACCESS_TOKEN }}
-        ref: ${{ github.event.inputs.target_branch }}
+        ref: ${{ env.TARGET_BRANCH }}
         fetch-depth: 0
 
     - name: Checkout appsmith repo (release branch)
@@ -60,7 +58,7 @@ jobs:
 
           cp "$FILE_PATH" input_widget_file.js
 
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract key widget properties and usage.")
+          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract key widget properties and usage.")
           USER_CONTENT=$(cat input_widget_file.js)
 
           PAYLOAD=$(jq -n \
@@ -88,7 +86,7 @@ jobs:
           fi
           echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_widget_info.md
 
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate widget documentation in markdown.")
+          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt_widget.txt || echo "Generate widget documentation in markdown.")
           EXTRACTED_CONTENT=$(cat extracted_widget_info.md)
 
           PAYLOAD=$(jq -n \
@@ -139,17 +137,17 @@ jobs:
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.test_REPO_ACCESS_TOKEN }}
-        title: "docs: update widget docs for ${{ github.event.inputs.target_branch }}"
+        title: "docs: update widget docs for ${{ env.TARGET_BRANCH }}"
         commit-message: "docs: automated widget documentation\n\nProcessed changed widget files from appsmith repo."
-        branch: "widgets-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
-        base: ${{ github.event.inputs.target_branch }}
+        branch: "widgets-update/${{ env.TARGET_BRANCH }}-${{ github.run_id }}"
+        base: ${{ env.TARGET_BRANCH }}
         add-paths: |
           website/docs/widgets/
           scripts/processed_widgets.txt
         body: |
           ✅ Auto-generated PR based on widget file changes from `appsmithorg/appsmith`.
 
-          **Target Branch:** `${{ github.event.inputs.target_branch }}`  
+          **Target Branch:** `${{ env.TARGET_BRANCH }}`  
           **Source:** `release` branch of Appsmith repo
 
           This PR includes:
