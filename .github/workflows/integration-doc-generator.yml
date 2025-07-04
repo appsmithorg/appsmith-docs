@@ -14,150 +14,149 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout appsmith-docs
-    - name: Checkout appsmith-docs (target branch)
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        ref: ${{ github.event.inputs.target_branch }}
-        fetch-depth: 0
+      # Step 1: Checkout appsmith-docs
+      - name: Checkout appsmith-docs (target branch)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          ref: ${{ github.event.inputs.target_branch }}
+          fetch-depth: 0
 
-    # Step 2: Checkout integration-resources
-    - name: Checkout integration-resources repo
-      uses: actions/checkout@v4
-      with:
-        repository: appsmithorg/integration-resources
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        ref: main
-        path: integration-resources
-        fetch-depth: 20
+      # Step 2: Checkout integration-resources
+      - name: Checkout integration-resources repo
+        uses: actions/checkout@v4
+        with:
+          repository: appsmithorg/integration-resources
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          ref: main
+          path: integration-resources
+          fetch-depth: 20
 
-    # Step 3: Manually set files to process for now
-    - name: Set files to process manually
-      run: |
-        mkdir -p scripts
-        cat <<EOF > files_to_process.txt
+      # Step 3: Manually set files to process
+      - name: Set files to process manually
+        run: |
+          mkdir -p scripts
+          cat <<EOF > files_to_process.txt
 Generic UQI Creation/uqi_configs/intercom_uqi_config.json
 Generic UQI Creation/uqi_configs/microsoftTeams_uqi_config.json
 Generic UQI Creation/uqi_configs/sharepoint_uqi_config.json
 EOF
-        echo "changes_found=true" >> $GITHUB_ENV
+          echo "changes_found=true" >> $GITHUB_ENV
 
-    # Step 4: Process files with OpenAI
-    - name: Process files with OpenAI
-      if: env.changes_found == 'true'
-      run: |
-        mkdir -p generated_docs
-        PROCESSED_COUNT=0
+      # Step 4: Process files with OpenAI
+      - name: Process files with OpenAI
+        if: env.changes_found == 'true'
+        run: |
+          mkdir -p generated_docs
+          PROCESSED_COUNT=0
 
-        while IFS= read -r FILE_PATH; do
-          FILE_NAME=$(basename "$FILE_PATH")
-          echo "⏳ Processing: $FILE_PATH"
+          while IFS= read -r FILE_PATH; do
+            FILE_NAME=$(basename "$FILE_PATH")
+            echo "⏳ Processing: $FILE_PATH"
 
-          # Encode the full path
-          RAW_PATH=$(echo "$FILE_PATH" | sed 's| |%20|g')
-          FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$RAW_PATH"
+            # Encode the full path
+            RAW_PATH=$(echo "$FILE_PATH" | sed 's| |%20|g')
+            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/$RAW_PATH"
 
-          echo "🌐 Fetching: $FILE_URL"
-          curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
-            echo "❌ Failed to fetch $FILE_PATH"
-            continue
-          }
+            echo "🌐 Fetching: $FILE_URL"
+            curl -fsSL --max-time 60 "$FILE_URL" -o input_file.json || {
+              echo "❌ Failed to fetch $FILE_PATH"
+              continue
+            }
 
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
-          USER_CONTENT=$(cat input_file.json)
+            SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt.txt || echo "Extract important integration details.")
+            USER_CONTENT=$(cat input_file.json)
 
-          PAYLOAD=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$USER_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 2000,
-              temperature: 0
-            }')
+            PAYLOAD=$(jq -n \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg user "$USER_CONTENT" \
+              '{
+                model: "gpt-4-1106-preview",
+                messages: [
+                  {"role": "system", "content": $system},
+                  {"role": "user", "content": $user}
+                ],
+                max_tokens: 2000,
+                temperature: 0
+              }')
 
-          RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
+            RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD")
 
-          if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on Prompt 1"
-            echo "$RESPONSE1" | jq .
-            continue
+            if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI error on Prompt 1"
+              echo "$RESPONSE1" | jq .
+              continue
+            fi
+            echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
+
+            SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
+            EXTRACTED_CONTENT=$(cat extracted_info.md)
+
+            PAYLOAD=$(jq -n \
+              --arg system "$SYSTEM_PROMPT" \
+              --arg user "$EXTRACTED_CONTENT" \
+              '{
+                model: "gpt-4-1106-preview",
+                messages: [
+                  {"role": "system", "content": $system},
+                  {"role": "user", "content": $user}
+                ],
+                max_tokens: 4000,
+                temperature: 0.3
+              }')
+
+            RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
+              -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD")
+
+            if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
+              echo "❌ OpenAI error on Prompt 2"
+              echo "$RESPONSE2" | jq .
+              continue
+            fi
+            echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
+
+            INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+            FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
+
+            mkdir -p "$(dirname "$FINAL_PATH")"
+            cp generated_doc.md "$FINAL_PATH"
+
+            echo "$FILE_NAME" >> scripts/processed_files.txt
+            PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
+            echo "✅ Finished $FILE_NAME"
+          done < files_to_process.txt
+
+          echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
+          if [ "$PROCESSED_COUNT" -gt 0 ]; then
+            echo "content_generated=true" >> $GITHUB_ENV
+          else
+            echo "content_generated=false" >> $GITHUB_ENV
           fi
-          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
+          rm -f input_file.json extracted_info.md generated_doc.md
 
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt.txt || echo "Generate reference documentation in markdown.")
-          EXTRACTED_CONTENT=$(cat extracted_info.md)
+      # Step 5: Commit and open PR
+      - name: Commit and open PR
+        if: env.content_generated == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
+          commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} — intercom, teams, sharepoint"
+          branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
+          base: ${{ github.event.inputs.target_branch }}
+          add-paths: |
+            website/docs/connect-data/reference/
+            scripts/processed_files.txt
+          body: |
+            ✅ Auto-generated PR from `appsmithorg/integration-resources`.
 
-          PAYLOAD=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$EXTRACTED_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 4000,
-              temperature: 0.3
-            }')
+            **Target Branch:** `${{ github.event.inputs.target_branch }}`  
+            **Source Repo:** `appsmithorg/integration-resources`
 
-          RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD")
-
-          if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on Prompt 2"
-            echo "$RESPONSE2" | jq .
-            continue
-          fi
-          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
-
-          INTEGRATION=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
-          FINAL_PATH="website/docs/connect-data/reference/${INTEGRATION}.md"
-
-          mkdir -p "$(dirname "$FINAL_PATH")"
-          cp generated_doc.md "$FINAL_PATH"
-
-          echo "$FILE_NAME" >> scripts/processed_files.txt
-          PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Finished $FILE_NAME"
-
-        done < files_to_process.txt
-
-        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-        if [ "$PROCESSED_COUNT" -gt 0 ]; then
-          echo "content_generated=true" >> $GITHUB_ENV
-        else
-          echo "content_generated=false" >> $GITHUB_ENV
-        fi
-        rm -f input_file.json extracted_info.md generated_doc.md
-
-    # Step 5: Commit and open PR
-    - name: Commit and open PR
-      if: env.content_generated == 'true'
-      uses: peter-evans/create-pull-request@v6
-      with:
-        token: ${{ secrets.REPO_ACCESS_TOKEN }}
-        title: "docs: update integration docs for ${{ github.event.inputs.target_branch }}"
-        commit-message: "docs: auto-gen for ${{ github.event.inputs.target_branch }} — intercom, teams, sharepoint"
-        branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
-        base: ${{ github.event.inputs.target_branch }}
-        add-paths: |
-          website/docs/connect-data/reference/
-          scripts/processed_files.txt
-        body: |
-          ✅ Auto-generated PR from `appsmithorg/integration-resources`.
-
-          **Target Branch:** `${{ github.event.inputs.target_branch }}`  
-          **Source Repo:** `appsmithorg/integration-resources`
-
-          Includes:
-          - Docs generated for: `intercom`, `microsoftTeams`, `sharepoint`
+            Includes:
+            - Docs generated for: `intercom`, `microsoftTeams`, `sharepoint`
