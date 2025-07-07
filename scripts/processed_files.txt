@@ -1,7 +1,20 @@
-MyTestTool_uqi_config.json
-TestOne_uqi_config.json
-gmail.json
-jira.json
-outlook.json
-slack.json
-newtest.json
+# Processed integration configs (do not delete unless reprocessing needed)
+asana_uqi_config.json
+confluence_uqi_config.json
+github_uqi_config.json
+gmail_uqi_config.json
+googleCalendar_uqi_config.json
+googleDocs_uqi_config.json
+googledrive_uqi_config.json
+intercom_uqi_config.json
+jira_uqi_config.json
+microsoftTeams_uqi_config.json
+notion_uqi_config.json
+outlook_uqi_config.json
+salesforce_uqi_config.json
+sharepoint_uqi_config.json
+slack_uqi_config.json
+stripe_uqi_config.json
+togetherAI_uqi_config.json
+zendesk_uqi_config.json
+zoom_uqi_config.json
