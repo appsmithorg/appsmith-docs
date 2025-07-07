@@ -3,7 +3,7 @@ Description: This page provides information on how to use the Audio widget to pl
 ---
 # Audio
 
-This page provides information on using the Audio widget to play MP3, WAV, OGG audio files. It also supports URLs from YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. 
+This page provides information on using the Audio widget to play MP3, WAV, OGG, and WAV audio files. It also supports URLs from YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. 
 
 <VideoEmbed host="youtube" videoId="FhY6-yUixto" title="Using the Audio Widget" caption="Using the Audio Widget"/>
 
@@ -18,7 +18,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Allows you to set the audio source to be played. It supports various formats such as MP3, WAV, and OGG. 
+Allows you to set the audio source to be played. It supports various formats such as MP3, WAV, OGG, and WAV. 
 
 *Example*:
 ```js
