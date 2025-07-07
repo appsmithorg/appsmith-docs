@@ -2,7 +2,7 @@ name: Widget Doc Generator
 
 on:
   schedule:
-    - cron: '0 3 * * 1' # Every Monday at 03:00 UTC
+    - cron: '0 3 * * 1' # Weekly on Monday at 03:00 UTC
   workflow_dispatch:
     inputs:
       target_branch:
@@ -14,157 +14,119 @@ env:
   TARGET_BRANCH: ${{ github.event.inputs.target_branch || 'docs-staging' }}
 
 jobs:
-  generate_widget_docs:
+  generate_latest_widget_doc:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout appsmith-docs
+    - name: Checkout appsmith-docs (target)
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
         ref: ${{ env.TARGET_BRANCH }}
         fetch-depth: 0
+        persist-credentials: false
 
-    - name: Checkout appsmith (release branch)
+    - name: Checkout appsmith repo
       uses: actions/checkout@v4
       with:
         repository: appsmithorg/appsmith
         token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
         ref: release
         path: appsmith
-        fetch-depth: 0
+        fetch-depth: 10  # enough to get recent commit
 
-    - name: Get changed widget files
-      id: changed-files
-      uses: tj-actions/changed-files@v46
-      with:
-        path: appsmith/app/client/src/widgets
-        since_last_remote_commit: true
-
-    - name: Filter widget `widget/index.tsx` files
+    - name: Get most recently committed index.tsx file
+      id: latest-widget
       run: |
-        mkdir -p scripts
-        echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' |
-        grep '/widget/index.tsx$' > widget_files_to_process.txt
-
-        cat widget_files_to_process.txt
-        if [ ! -s widget_files_to_process.txt ]; then
-          echo "No relevant widget changes found. Exiting."
+        cd appsmith/app/client/src/widgets
+        LAST_FILE=$(git log -1 --pretty=format: --name-only | grep '/widget/index.tsx$' | head -n 1)
+        
+        if [ -z "$LAST_FILE" ]; then
+          echo "No recent widget/index.tsx found. Exiting."
           exit 0
         fi
 
+        echo "Found: $LAST_FILE"
+        echo "widget_file_path=appsmith/app/client/src/widgets/$LAST_FILE" >> $GITHUB_OUTPUT
         echo "changes_found=true" >> $GITHUB_ENV
 
-    - name: Generate documentation with OpenAI
+    - name: Generate widget doc with OpenAI
       if: env.changes_found == 'true'
       run: |
         mkdir -p website/docs/widgets
-        PROCESSED_COUNT=0
+        FILE_PATH="${{ steps.latest-widget.outputs.widget_file_path }}"
+        FILE_NAME=$(basename "$FILE_PATH")
+        WIDGET_NAME=$(basename "$(dirname "$(dirname "$FILE_PATH")")")
 
-        while IFS= read -r FILE_PATH; do
-          echo "📦 Processing $FILE_PATH"
+        cp "$FILE_PATH" widget_input.tsx
 
-          WIDGET_NAME=$(basename "$(dirname "$(dirname "$FILE_PATH")")")
-          cp "$FILE_PATH" widget_input.tsx
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract widget info for docs.")
+        USER_CONTENT=$(cat widget_input.tsx)
 
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract important widget info from the following code.")
-          USER_CONTENT=$(cat widget_input.tsx)
+        # Prompt 1
+        PAYLOAD1=$(jq -n \
+          --arg system "$SYSTEM_PROMPT" \
+          --arg user "$USER_CONTENT" \
+          '{
+            model: "gpt-4-1106-preview",
+            messages: [
+              {"role": "system", "content": $system},
+              {"role": "user", "content": $user}
+            ],
+            max_tokens: 2000,
+            temperature: 0
+          }')
 
-          # Step 1: Extraction
-          PAYLOAD1=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$USER_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 2000,
-              temperature: 0
-            }')
+        RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD1")
 
-          RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD1")
+        echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_widget_info.md
 
-          if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on prompt 1 for $WIDGET_NAME"
-            echo "$RESPONSE1" | jq .
-            continue
-          fi
+        # Prompt 2
+        SYSTEM_PROMPT2=$(cat .github/prompts/generate_prompt_widget.txt || echo "Convert extracted info to markdown.")
+        EXTRACTED_CONTENT=$(cat extracted_widget_info.md)
 
-          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
+        PAYLOAD2=$(jq -n \
+          --arg system "$SYSTEM_PROMPT2" \
+          --arg user "$EXTRACTED_CONTENT" \
+          '{
+            model: "gpt-4-1106-preview",
+            messages: [
+              {"role": "system", "content": $system},
+              {"role": "user", "content": $user}
+            ],
+            max_tokens: 4000,
+            temperature: 0.3
+          }')
 
-          # Step 2: Generate Markdown
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt_widget.txt || echo "Generate markdown documentation for the widget.")
-          EXTRACTED_CONTENT=$(cat extracted_info.md)
+        RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD2")
 
-          PAYLOAD2=$(jq -n \
-            --arg system "$SYSTEM_PROMPT" \
-            --arg user "$EXTRACTED_CONTENT" \
-            '{
-              model: "gpt-4-1106-preview",
-              messages: [
-                {"role": "system", "content": $system},
-                {"role": "user", "content": $user}
-              ],
-              max_tokens: 4000,
-              temperature: 0.3
-            }')
+        echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_widget_doc.md
 
-          RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
-            -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
-            -H "Content-Type: application/json" \
-            -d "$PAYLOAD2")
+        cp generated_widget_doc.md "website/docs/widgets/${WIDGET_NAME}.md"
+        echo "$FILE_PATH" > scripts/processed_widgets.txt
 
-          if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-            echo "❌ OpenAI error on prompt 2 for $WIDGET_NAME"
-            echo "$RESPONSE2" | jq .
-            continue
-          fi
+        echo "content_generated=true" >> $GITHUB_ENV
 
-          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
-
-          FINAL_PATH="website/docs/widgets/${WIDGET_NAME}.md"
-          mkdir -p "$(dirname "$FINAL_PATH")"
-          cp generated_doc.md "$FINAL_PATH"
-          echo "$FILE_PATH" >> scripts/processed_widgets.txt
-
-          PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Generated doc for $WIDGET_NAME"
-
-        done < widget_files_to_process.txt
-
-        echo "processed_count=$PROCESSED_COUNT" >> $GITHUB_ENV
-        if [ "$PROCESSED_COUNT" -gt 0 ]; then
-          echo "content_generated=true" >> $GITHUB_ENV
-        else
-          echo "content_generated=false" >> $GITHUB_ENV
-        fi
-
-        rm -f widget_input.tsx extracted_info.md generated_doc.md
-
-    - name: Commit and open PR
+    - name: Create PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
-        title: "docs: update widget docs for ${{ env.TARGET_BRANCH }}"
-        commit-message: |
-          docs: auto-generated widget documentation
-
-          Generated markdown for updated widgets from `appsmithorg/appsmith`.
-        branch: "widgets-update/${{ env.TARGET_BRANCH }}-${{ github.run_id }}"
+        title: "docs: auto-gen widget doc for ${{ env.TARGET_BRANCH }}"
+        commit-message: "docs: auto-generated docs for updated widget"
+        branch: "widget-doc-update/${{ github.run_id }}"
         base: ${{ env.TARGET_BRANCH }}
         add-paths: |
           website/docs/widgets/
           scripts/processed_widgets.txt
         body: |
-          📘 Auto-generated docs for updated widgets from `appsmithorg/appsmith`.
+          📦 Widget doc updated for latest committed widget in `release` branch.
 
-          **Branch:** `${{ env.TARGET_BRANCH }}`  
-          **Processed Files:**  
-          $(cat scripts/processed_widgets.txt | sed 's/^/- /')
-
+          - Source: `appsmithorg/appsmith`
+          - Widget file: `$(cat scripts/processed_widgets.txt)`
