@@ -2,112 +2,130 @@ name: Integration Doc Generator
 
 on:
   workflow_dispatch:
-    inputs:
-      target_branch:
-        description: 'Branch in appsmith-docs to create PR against'
-        required: true
-        default: 'main'
-        type: string
+  schedule:
+    - cron: '30 20 * * *'  # 2:00 AM IST every night (20:30 UTC)
 
 jobs:
   generate_docs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout appsmith-docs repo
+      # 1. Checkout appsmith-docs (target)
       - name: Checkout appsmith-docs
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          ref: ${{ github.event.inputs.target_branch }}
+          ref: main
           fetch-depth: 0
 
-      # Step 2: Set local files to process
-      - name: Set files to process manually
-        run: |
-          echo "intercom_uqi_config.json"   > files_to_process.txt
-          echo "sharepoint_uqi_config.json" >> files_to_process.txt
-          cat files_to_process.txt
+      # 2. Checkout integration-resources (source)
+      - name: Checkout integration-resources
+        uses: actions/checkout@v4
+        with:
+          repository: appsmithorg/integration-resources
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          ref: main
+          path: integration-resources
+          fetch-depth: 20
 
-      # Step 3: Generate Markdown docs using OpenAI
+      # 3. Detect latest committed JSON config
+      - name: Detect latest committed file
+        id: detect
+        run: |
+          echo "🔍 Finding latest committed integration file..."
+          cd integration-resources
+          git log --pretty=format: --name-only -n 20 \
+            | grep 'Generic UQI Creation/uqi_configs/.*_uqi_config.json' \
+            | grep -v '^$' \
+            | head -n 1 \
+            > ../scripts/candidate_files.txt
+          cd ..
+          cat scripts/candidate_files.txt || echo "(no file found)"
+
+      # 4. Compare with processed list
+      - name: Compare with processed_files.txt
+        id: check
+        run: |
+          mkdir -p scripts
+          touch scripts/processed_files.txt
+
+          echo "" | cat - scripts/candidate_files.txt > tmpfile && mv tmpfile scripts/candidate_files.txt
+
+          grep -Fxv -f scripts/processed_files.txt scripts/candidate_files.txt \
+            > scripts/files_to_process.txt || true
+
+          echo "✅ Files to process:"
+          cat scripts/files_to_process.txt || echo "(none)"
+
+          if [ ! -s scripts/files_to_process.txt ]; then
+            echo "No new files to process. Exiting."
+            exit 0
+          fi
+
+          echo "changes_found=true" >> $GITHUB_ENV
+
+      # 5. Send to OpenAI + generate markdown
       - name: Generate docs with OpenAI
+        if: env.changes_found == 'true'
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           mkdir -p website/docs/connect-data/reference
 
-          while IFS= read -r FILE_NAME; do
+          while IFS= read -r FILE_PATH; do
+            FILE_NAME=$(basename "$FILE_PATH")
             echo "⏳ Processing $FILE_NAME"
 
-            INPUT_PATH=".github/resources/integration-configs/$FILE_NAME"
-            if [ ! -f "$INPUT_PATH" ]; then
-              echo "❌ File not found: $INPUT_PATH"
+            ENCODED=$(echo "$FILE_PATH" | sed 's/ /%20/g')
+            FILE_URL="https://raw.githubusercontent.com/appsmithorg/integration-resources/main/${ENCODED}"
+            echo "🌐 Fetching: $FILE_URL"
+            curl -fsSL "$FILE_URL" -o input.json || {
+              echo "❌ Failed to fetch $FILE_NAME"
               exit 1
-            fi
+            }
 
-            # Step 1: extract integration details
-            SYSTEM_PROMPT_1=$(cat .github/prompts/extract_prompt.txt)
-            USER_INPUT_1=$(cat "$INPUT_PATH")
-
-            PAYLOAD_1=$(jq -nc \
-              --arg sys "$SYSTEM_PROMPT_1" \
-              --arg usr "$USER_INPUT_1" \
+            SYSTEM1=$(cat .github/prompts/extract_prompt.txt)
+            USER1=$(cat input.json)
+            PAYLOAD1=$(jq -nc --arg sys "$SYSTEM1" --arg usr "$USER1" \
               '{model: "gpt-4-1106-preview", messages: [{"role": "system", "content": $sys}, {"role": "user", "content": $usr}], max_tokens: 2000, temperature: 0}')
-
-            RESPONSE_1=$(curl -s https://api.openai.com/v1/chat/completions \
+            RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
               -H "Authorization: Bearer $OPENAI_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$PAYLOAD_1")
+              -d "$PAYLOAD1")
+            EXTRACTED=$(echo "$RESPONSE1" | jq -r '.choices[0].message.content')
 
-            if echo "$RESPONSE_1" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on extract"
-              echo "$RESPONSE_1" | jq .
-              continue
-            fi
-
-            EXTRACTED_CONTENT=$(echo "$RESPONSE_1" | jq -r '.choices[0].message.content')
-
-            # Step 2: generate markdown
-            SYSTEM_PROMPT_2=$(cat .github/prompts/generate_prompt.txt)
-
-            PAYLOAD_2=$(jq -nc \
-              --arg sys "$SYSTEM_PROMPT_2" \
-              --arg usr "$EXTRACTED_CONTENT" \
+            SYSTEM2=$(cat .github/prompts/generate_prompt.txt)
+            PAYLOAD2=$(jq -nc --arg sys "$SYSTEM2" --arg usr "$EXTRACTED" \
               '{model: "gpt-4-1106-preview", messages: [{"role": "system", "content": $sys}, {"role": "user", "content": $usr}], max_tokens: 4000, temperature: 0.3}')
-
-            RESPONSE_2=$(curl -s https://api.openai.com/v1/chat/completions \
+            RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
               -H "Authorization: Bearer $OPENAI_API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$PAYLOAD_2")
+              -d "$PAYLOAD2")
+            MARKDOWN=$(echo "$RESPONSE2" | jq -r '.choices[0].message.content')
 
-            if echo "$RESPONSE_2" | jq -e '.error' > /dev/null; then
-              echo "❌ OpenAI error on generate"
-              echo "$RESPONSE_2" | jq .
-              continue
-            fi
+            INTEGRATION_NAME=$(echo "$FILE_NAME" | sed 's/_uqi_config\.json//' | tr '[:upper:]' '[:lower:]')
+            OUT_PATH="website/docs/connect-data/reference/${INTEGRATION_NAME}.md"
+            echo "$MARKDOWN" > "$OUT_PATH"
 
-            FINAL_MD=$(echo "$RESPONSE_2" | jq -r '.choices[0].message.content')
+            echo "$FILE_NAME" >> scripts/processed_files.txt
+            echo "✅ Wrote: $OUT_PATH"
+          done < scripts/files_to_process.txt
 
-            INTEGRATION_NAME=$(basename "$FILE_NAME" "_uqi_config.json" | tr '[:upper:]' '[:lower:]')
-            OUTPUT_FILE="website/docs/connect-data/reference/${INTEGRATION_NAME}.md"
-            echo "$FINAL_MD" > "$OUTPUT_FILE"
-            echo "✅ Wrote $OUTPUT_FILE"
-          done < files_to_process.txt
-
-      # Step 4: Create a PR with generated docs
-      - name: Commit & Create Pull Request
+      # 6. Commit and raise PR
+      - name: Commit and Open PR
+        if: env.changes_found == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          title: "docs: update intercom & sharepoint integration docs"
+          title: "docs: generate new integration doc"
           commit-message: |
-            docs: generated intercom and sharepoint docs
+            docs: add generated integration doc
 
-            Processed: intercom_uqi_config.json, sharepoint_uqi_config.json
-          branch: "docs-update/${{ github.event.inputs.target_branch }}-${{ github.run_id }}"
-          base: ${{ github.event.inputs.target_branch }}
+            Auto-processed newest integration file.
+          branch: "docs-auto-update/${{ github.run_id }}"
+          base: main
           add-paths: |
-            website/docs/connect-data/reference/intercom.md
-            website/docs/connect-data/reference/sharepoint.md
+            website/docs/connect-data/reference/
+            scripts/processed_files.txt
           body: |
-            ✅ Auto-generated documentation for Intercom and SharePoint integrations.
+            ✅ Auto-generated doc for newly added integration file.
