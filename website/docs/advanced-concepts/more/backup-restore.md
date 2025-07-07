@@ -12,7 +12,7 @@ On Appsmith, you can migrate all Appsmith data from one instance to another or j
 You can import or export the desired application to any workspace, either in the same or a different Appsmith instance.
 
 :::info
-Applications are forward compatible from Appsmith version 1.6.9.
+Applications are forward compatible from Appsmith version 1.6.9 to 1.7.0.
 
 Applications built in an older version of an Appsmith instance will work when imported into a newer version of an Appsmith instance.
 :::
