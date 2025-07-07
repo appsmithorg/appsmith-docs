@@ -2,7 +2,7 @@ name: Widget Doc Generator
 
 on:
   schedule:
-    - cron: '0 3 * * 1'  # Weekly: Monday at 03:00 UTC
+    - cron: '0 3 * * 1' # Every Monday at 03:00 UTC
   workflow_dispatch:
     inputs:
       target_branch:
@@ -24,16 +24,15 @@ jobs:
         token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
         ref: ${{ env.TARGET_BRANCH }}
         fetch-depth: 0
-        persist-credentials: false
 
-    - name: Checkout appsmith repo (release branch)
+    - name: Checkout appsmith (release branch)
       uses: actions/checkout@v4
       with:
         repository: appsmithorg/appsmith
         token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
         ref: release
         path: appsmith
-        fetch-depth: 2
+        fetch-depth: 0
 
     - name: Get changed widget files
       id: changed-files
@@ -42,33 +41,36 @@ jobs:
         path: appsmith/app/client/src/widgets
         since_last_remote_commit: true
 
-    - name: Save list of changed widget files
+    - name: Filter widget `widget/index.tsx` files
       run: |
         mkdir -p scripts
-        echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' > widget_files_to_process.txt
+        echo "${{ steps.changed-files.outputs.all_changed_files }}" | tr ' ' '\n' |
+        grep '/widget/index.tsx$' > widget_files_to_process.txt
+
+        cat widget_files_to_process.txt
         if [ ! -s widget_files_to_process.txt ]; then
-          echo "No widget changes. Exiting."
+          echo "No relevant widget changes found. Exiting."
           exit 0
         fi
+
         echo "changes_found=true" >> $GITHUB_ENV
 
-    - name: Process widget files with OpenAI
+    - name: Generate documentation with OpenAI
       if: env.changes_found == 'true'
       run: |
         mkdir -p website/docs/widgets
         PROCESSED_COUNT=0
 
         while IFS= read -r FILE_PATH; do
-          echo "📦 File: $FILE_PATH"
-          FILE_NAME=$(basename "$FILE_PATH")
-          WIDGET_NAME=$(basename "$(dirname "$FILE_PATH")")
+          echo "📦 Processing $FILE_PATH"
 
-          cp "$FILE_PATH" widget_input.js
+          WIDGET_NAME=$(basename "$(dirname "$(dirname "$FILE_PATH")")")
+          cp "$FILE_PATH" widget_input.tsx
 
-          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract important widget info.")
-          USER_CONTENT=$(cat widget_input.js)
+          SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract important widget info from the following code.")
+          USER_CONTENT=$(cat widget_input.tsx)
 
-          # Prompt 1: Extract content
+          # Step 1: Extraction
           PAYLOAD1=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
             --arg user "$USER_CONTENT" \
@@ -88,16 +90,16 @@ jobs:
             -d "$PAYLOAD1")
 
           if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
-            echo "❌ Error in Prompt 1"
+            echo "❌ OpenAI error on prompt 1 for $WIDGET_NAME"
             echo "$RESPONSE1" | jq .
             continue
           fi
 
-          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_widget_info.md
+          echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted_info.md
 
-          # Prompt 2: Generate markdown
-          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt_widget.txt || echo "Generate markdown documentation.")
-          EXTRACTED_CONTENT=$(cat extracted_widget_info.md)
+          # Step 2: Generate Markdown
+          SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt_widget.txt || echo "Generate markdown documentation for the widget.")
+          EXTRACTED_CONTENT=$(cat extracted_info.md)
 
           PAYLOAD2=$(jq -n \
             --arg system "$SYSTEM_PROMPT" \
@@ -118,20 +120,20 @@ jobs:
             -d "$PAYLOAD2")
 
           if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
-            echo "❌ Error in Prompt 2"
+            echo "❌ OpenAI error on prompt 2 for $WIDGET_NAME"
             echo "$RESPONSE2" | jq .
             continue
           fi
 
-          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_widget_doc.md
+          echo "$RESPONSE2" | jq -r '.choices[0].message.content' > generated_doc.md
 
           FINAL_PATH="website/docs/widgets/${WIDGET_NAME}.md"
           mkdir -p "$(dirname "$FINAL_PATH")"
-          cp generated_widget_doc.md "$FINAL_PATH"
-
+          cp generated_doc.md "$FINAL_PATH"
           echo "$FILE_PATH" >> scripts/processed_widgets.txt
+
           PROCESSED_COUNT=$((PROCESSED_COUNT + 1))
-          echo "✅ Done: $WIDGET_NAME"
+          echo "✅ Generated doc for $WIDGET_NAME"
 
         done < widget_files_to_process.txt
 
@@ -142,9 +144,9 @@ jobs:
           echo "content_generated=false" >> $GITHUB_ENV
         fi
 
-        rm -f widget_input.js extracted_widget_info.md generated_widget_doc.md
+        rm -f widget_input.tsx extracted_info.md generated_doc.md
 
-    - name: Commit and create PR
+    - name: Commit and open PR
       if: env.content_generated == 'true'
       uses: peter-evans/create-pull-request@v6
       with:
@@ -153,15 +155,16 @@ jobs:
         commit-message: |
           docs: auto-generated widget documentation
 
-          Generated markdown for modified widget files.
+          Generated markdown for updated widgets from `appsmithorg/appsmith`.
         branch: "widgets-update/${{ env.TARGET_BRANCH }}-${{ github.run_id }}"
         base: ${{ env.TARGET_BRANCH }}
         add-paths: |
           website/docs/widgets/
           scripts/processed_widgets.txt
         body: |
-          🛠 Auto-generated docs for updated widgets from `appsmithorg/appsmith`.
+          📘 Auto-generated docs for updated widgets from `appsmithorg/appsmith`.
 
           **Branch:** `${{ env.TARGET_BRANCH }}`  
           **Processed Files:**  
           $(cat scripts/processed_widgets.txt | sed 's/^/- /')
+
