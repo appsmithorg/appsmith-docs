@@ -1,0 +1,679 @@
+{
+  "editor": [
+    {
+      "controlType": "SECTION_V2",
+      "identifier": "SELECTOR",
+      "children": [
+        {
+          "controlType": "DOUBLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "label": "Commands",
+              "description": "Select the method to run",
+              "configProperty": "actionConfiguration.formData.command",
+              "controlType": "DROP_DOWN",
+              "isSearchable": true,
+              "options": [
+                {
+                  "index": 1,
+                  "label": "Create Contact",
+                  "value": "INTERCOM_CREATE_CONTACT"
+                },
+                {
+                  "index": 2,
+                  "label": "Update Contact",
+                  "value": "INTERCOM_UPDATE_CONTACT"
+                },
+                {
+                  "index": 3,
+                  "label": "Get Contact By Id",
+                  "value": "INTERCOM_GET_CONTACT_BY_ID"
+                },
+                {
+                  "index": 4,
+                  "label": "Search Contacts",
+                  "value": "INTERCOM_SEARCH_CONTACTS"
+                },
+                {
+                  "index": 5,
+                  "label": "Send Message",
+                  "value": "INTERCOM_SEND_MESSAGE"
+                },
+                {
+                  "index": 6,
+                  "label": "Custom Action",
+                  "value": "CUSTOM_ACTION"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "INTERCOM_CREATE_CONTACT",
+      "controlType": "SECTION_V2",
+      "name": "Create Contact",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'INTERCOM_CREATE_CONTACT'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "role",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.role",
+              "isRequired": true,
+              "label": "Role",
+              "tooltipText": "Role",
+              "placeholderText": "Enter Role",
+              "options": [
+                {
+                  "label": "user",
+                  "value": "user"
+                },
+                {
+                  "label": "lead",
+                  "value": "lead"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "email",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.email",
+              "isRequired": true,
+              "label": "Email",
+              "tooltipText": "Email (example: \"name@example.com\")",
+              "placeholderText": "Enter Email"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "name",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.name",
+              "isRequired": false,
+              "label": "Name",
+              "tooltipText": "Name",
+              "placeholderText": "Enter Name"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "externalId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.externalId",
+              "isRequired": false,
+              "label": "External Id",
+              "tooltipText": "External ID : A unique external identifier given to the contact (e.g. from your app) (example: \"25\")",
+              "placeholderText": "Enter External Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "phone",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.phone",
+              "isRequired": false,
+              "label": "Phone",
+              "tooltipText": "Phone (example: \"+1123456789\")",
+              "placeholderText": "Enter Phone"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "avatar",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.avatar",
+              "isRequired": false,
+              "label": "Avatar",
+              "tooltipText": "Avatar (example: \"https://example.com/avatar.jpeg\")",
+              "placeholderText": "Enter Avatar"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "signedUpDate",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.signedUpDate",
+              "isRequired": false,
+              "label": "Signed Up Date",
+              "tooltipText": "Signed up at : The time specified for when a contact signed up (ISO or Unix timestamp). (example: \"2014-04-25T16:15:47-04:00\")",
+              "placeholderText": "Enter Signed Up Date"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "lastSeenDate",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.lastSeenDate",
+              "isRequired": false,
+              "label": "Last Seen Date",
+              "tooltipText": "Last seen at : The time when the contact was last seen (ISO or Unix timestamp). (example: \"2014-04-25T16:15:47-04:00\")",
+              "placeholderText": "Enter Last Seen Date"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "ownerId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.ownerId",
+              "isRequired": false,
+              "label": "Owner Id",
+              "tooltipText": "Owner ID : The Intercom Admin that has been assigned account ownership of the contact. Use Connect Portal Workflow Settings to allow users to select an Admin. (example: \"{{settings.admin}}\")",
+              "placeholderText": "Enter Owner Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "SWITCH",
+              "identifier": "unsubscribeFromEmail",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.unsubscribeFromEmail",
+              "isRequired": false,
+              "label": "Unsubscribe From Email",
+              "tooltipText": "Unsubscribed from emails : Whether the contact is unsubscribed from emails.",
+              "placeholderText": "Enter Unsubscribe From Email"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "customAttribute",
+              "configProperty": "actionConfiguration.formData.INTERCOM_CREATE_CONTACT.customAttribute",
+              "isRequired": false,
+              "label": "Custom Attribute",
+              "tooltipText": "Custom attributes (example: \"{\n\"paid_subscriber\": true,\n\"monthly_spend\": 155.5,\n\"team_mates\": 1\n}\")",
+              "placeholderText": "Enter Custom Attribute"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "INTERCOM_UPDATE_CONTACT",
+      "controlType": "SECTION_V2",
+      "name": "Update Contact",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'INTERCOM_UPDATE_CONTACT'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "contactId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.contactId",
+              "isRequired": true,
+              "label": "Contact Id",
+              "tooltipText": "Contact ID : The ID of the contact to update.",
+              "placeholderText": "Enter Contact Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "role",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.role",
+              "isRequired": false,
+              "label": "Role",
+              "tooltipText": "Role",
+              "placeholderText": "Enter Role",
+              "options": [
+                {
+                  "label": "user",
+                  "value": "user"
+                },
+                {
+                  "label": "lead",
+                  "value": "lead"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "email",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.email",
+              "isRequired": false,
+              "label": "Email",
+              "tooltipText": "Email (example: \"name@example.com\")",
+              "placeholderText": "Enter Email"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "name",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.name",
+              "isRequired": false,
+              "label": "Name",
+              "tooltipText": "Name",
+              "placeholderText": "Enter Name"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "externalId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.externalId",
+              "isRequired": false,
+              "label": "External Id",
+              "tooltipText": "External ID : A unique external identifier given to the contact (e.g. from your app) (example: \"25\")",
+              "placeholderText": "Enter External Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "phone",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.phone",
+              "isRequired": false,
+              "label": "Phone",
+              "tooltipText": "Phone (example: \"+1123456789\")",
+              "placeholderText": "Enter Phone"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "avatar",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.avatar",
+              "isRequired": false,
+              "label": "Avatar",
+              "tooltipText": "Avatar (example: \"https://example.com/avatar.jpeg\")",
+              "placeholderText": "Enter Avatar"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "signedUpDate",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.signedUpDate",
+              "isRequired": false,
+              "label": "Signed Up Date",
+              "tooltipText": "Signed up at : The time specified for when a contact signed up (ISO or Unix timestamp). (example: \"2014-04-25T16:15:47-04:00\")",
+              "placeholderText": "Enter Signed Up Date"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "lastSeenDate",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.lastSeenDate",
+              "isRequired": false,
+              "label": "Last Seen Date",
+              "tooltipText": "Last seen at : The time when the contact was last seen (ISO or Unix timestamp). (example: \"2014-04-25T16:15:47-04:00\")",
+              "placeholderText": "Enter Last Seen Date"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "ownerId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.ownerId",
+              "isRequired": false,
+              "label": "Owner Id",
+              "tooltipText": "Owner ID : The Intercom Admin that has been assigned account ownership of the contact. Use Connect Portal Workflow Settings to allow users to select an Admin. (example: \"{{settings.admin}}\")",
+              "placeholderText": "Enter Owner Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "SWITCH",
+              "identifier": "unsubscribeFromEmail",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.unsubscribeFromEmail",
+              "isRequired": false,
+              "label": "Unsubscribe From Email",
+              "tooltipText": "Unsubscribed from emails : Whether the contact is unsubscribed from emails.",
+              "placeholderText": "Enter Unsubscribe From Email"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "customAttribute",
+              "configProperty": "actionConfiguration.formData.INTERCOM_UPDATE_CONTACT.customAttribute",
+              "isRequired": false,
+              "label": "Custom Attribute",
+              "tooltipText": "Custom attributes (example: \"{\n\"paid_subscriber\": true,\n\"monthly_spend\": 155.5,\n\"team_mates\": 1\n}\")",
+              "placeholderText": "Enter Custom Attribute"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "INTERCOM_GET_CONTACT_BY_ID",
+      "controlType": "SECTION_V2",
+      "name": "Get Contact By Id",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'INTERCOM_GET_CONTACT_BY_ID'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "contactId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_GET_CONTACT_BY_ID.contactId",
+              "isRequired": true,
+              "label": "Contact Id",
+              "tooltipText": "Contact ID",
+              "placeholderText": "Enter Contact Id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "INTERCOM_SEARCH_CONTACTS",
+      "controlType": "SECTION_V2",
+      "name": "Search Contacts",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'INTERCOM_SEARCH_CONTACTS'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "filterFormula",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEARCH_CONTACTS.filterFormula",
+              "isRequired": false,
+              "label": "Filter Formula",
+              "tooltipText": "A filter in disjunctive normal form: OR of AND groups of single conditions",
+              "placeholderText": "Enter Filter Formula"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "paginationParameters",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEARCH_CONTACTS.paginationParameters",
+              "isRequired": false,
+              "label": "Pagination Parameters",
+              "tooltipText": "Pagination Parameters",
+              "placeholderText": "Enter Pagination Parameters"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "INTERCOM_SEND_MESSAGE",
+      "controlType": "SECTION_V2",
+      "name": "Send Message",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'INTERCOM_SEND_MESSAGE'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "recipientContactType",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.recipientContactType",
+              "isRequired": true,
+              "label": "Recipient Contact Type",
+              "tooltipText": "Recipient contact type",
+              "placeholderText": "Enter Recipient Contact Type",
+              "options": [
+                {
+                  "label": "user",
+                  "value": "user"
+                },
+                {
+                  "label": "lead",
+                  "value": "lead"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "recepientContactId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.recepientContactId",
+              "isRequired": true,
+              "label": "Recepient Contact Id",
+              "tooltipText": "Recipient contact ID : The ID of the contact to send the message to.",
+              "placeholderText": "Enter Recepient Contact Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "messageType",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.messageType",
+              "isRequired": true,
+              "label": "Message Type",
+              "tooltipText": "Message type",
+              "placeholderText": "Enter Message Type",
+              "options": [
+                {
+                  "label": "inapp",
+                  "value": "inapp"
+                },
+                {
+                  "label": "email",
+                  "value": "email"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "fromId",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.fromId",
+              "isRequired": true,
+              "label": "From Id",
+              "tooltipText": "From : The Intercom Admin the message will be sent from. Use Connect Portal Workflow Settings to allow users to select an Admin. (example: \"{{settings.admin}}\")",
+              "placeholderText": "Enter From Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "subject",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.subject",
+              "isRequired": false,
+              "label": "Subject",
+              "tooltipText": "Subject : Required if sending an email. (example: \"name@example.com\")",
+              "placeholderText": "Enter Subject"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "body",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.body",
+              "isRequired": true,
+              "label": "Body",
+              "tooltipText": "Body : The content of the message. HTML and plaintext are supported.",
+              "placeholderText": "Enter Body"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "DROP_DOWN",
+              "identifier": "template",
+              "configProperty": "actionConfiguration.formData.INTERCOM_SEND_MESSAGE.template",
+              "isRequired": false,
+              "label": "Template",
+              "tooltipText": "Template : The style of the outgoing message. Required if sending an email.",
+              "placeholderText": "Enter Template",
+              "options": [
+                {
+                  "label": "personal",
+                  "value": "personal"
+                },
+                {
+                  "label": "plain",
+                  "value": "plain"
+                }
+              ],
+              "isAllowClear": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "CUSTOM_ACTION",
+      "controlType": "SECTION_V2",
+      "name": "Custom Action",
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "CUSTOM_ACTION_COLUMN",
+          "children": [
+            {
+              "label": "",
+              "Description": "",
+              "identifier": "CUSTOM_ACTION_FORM",
+              "subtitle": "",
+              "configProperty": "actionConfiguration.formData.CUSTOM_ACTION",
+              "controlType": "CUSTOM_ACTIONS_CONFIG_FORM"
+            }
+          ]
+        }
+      ],
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'CUSTOM_ACTION'}}"
+      }
+    }
+  ]
+}

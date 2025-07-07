@@ -1,0 +1,459 @@
+{
+  "editor": [
+    {
+      "controlType": "SECTION_V2",
+      "identifier": "SELECTOR",
+      "children": [
+        {
+          "controlType": "DOUBLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "label": "Commands",
+              "description": "Select the method to run",
+              "configProperty": "actionConfiguration.formData.command",
+              "controlType": "DROP_DOWN",
+              "isSearchable": true,
+              "options": [
+                {
+                  "index": 1,
+                  "label": "Create Item",
+                  "value": "SHAREPOINT_CREATE_ITEM"
+                },
+                {
+                  "index": 2,
+                  "label": "Update Item",
+                  "value": "SHAREPOINT_UPDATE_ITEM"
+                },
+                {
+                  "index": 3,
+                  "label": "Get Item By Id",
+                  "value": "SHAREPOINT_GET_ITEM_BY_ID"
+                },
+                {
+                  "index": 4,
+                  "label": "Get Items In A List",
+                  "value": "SHAREPOINT_GET_ITEMS_IN_A_LIST"
+                },
+                {
+                  "index": 5,
+                  "label": "Delete Item",
+                  "value": "SHAREPOINT_DELETE_ITEM"
+                },
+                {
+                  "index": 6,
+                  "label": "Create List",
+                  "value": "SHAREPOINT_CREATE_LIST"
+                },
+                {
+                  "index": 7,
+                  "label": "Get List By Id",
+                  "value": "SHAREPOINT_GET_LIST_BY_ID"
+                },
+                {
+                  "index": 8,
+                  "label": "Get Lists",
+                  "value": "SHAREPOINT_GET_LISTS"
+                },
+                {
+                  "index": 9,
+                  "label": "Get List Columns",
+                  "value": "SHAREPOINT_GET_LIST_COLUMNS"
+                },
+                {
+                  "index": 10,
+                  "label": "Custom Action",
+                  "value": "CUSTOM_ACTION"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_CREATE_ITEM",
+      "controlType": "SECTION_V2",
+      "name": "Create Item",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_CREATE_ITEM'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "title",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_CREATE_ITEM.title",
+              "isRequired": true,
+              "label": "Title",
+              "tooltipText": "Title",
+              "placeholderText": "Enter Title"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_CREATE_ITEM.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The List ID to create the item in. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "fields",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_CREATE_ITEM.fields",
+              "isRequired": false,
+              "label": "Fields",
+              "tooltipText": "Fields : The column values of the new item.  Use Connect Portal Workflow Settings to allow users to select which item columns to update.",
+              "placeholderText": "Enter Fields"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_UPDATE_ITEM",
+      "controlType": "SECTION_V2",
+      "name": "Update Item",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_UPDATE_ITEM'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "itemId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_UPDATE_ITEM.itemId",
+              "isRequired": true,
+              "label": "Item Id",
+              "tooltipText": "Item ID : The ID of the item to update.",
+              "placeholderText": "Enter Item Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "title",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_UPDATE_ITEM.title",
+              "isRequired": true,
+              "label": "Title",
+              "tooltipText": "Title",
+              "placeholderText": "Enter Title"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_UPDATE_ITEM.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The List ID to update the item in. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "fields",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_UPDATE_ITEM.fields",
+              "isRequired": false,
+              "label": "Fields",
+              "tooltipText": "Fields : The column values of the new item.  Use Connect Portal Workflow Settings to allow users to select which item columns to update.",
+              "placeholderText": "Enter Fields"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_GET_ITEM_BY_ID",
+      "controlType": "SECTION_V2",
+      "name": "Get Item By Id",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_GET_ITEM_BY_ID'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "itemId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_ITEM_BY_ID.itemId",
+              "isRequired": true,
+              "label": "Item Id",
+              "tooltipText": "Item ID : The ID of the item to get.",
+              "placeholderText": "Enter Item Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_ITEM_BY_ID.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The List ID to get the item from. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_GET_ITEMS_IN_A_LIST",
+      "controlType": "SECTION_V2",
+      "name": "Get Items In A List",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_GET_ITEMS_IN_A_LIST'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_ITEMS_IN_A_LIST.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The List ID to get items from. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "itemsFilterFormula",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_ITEMS_IN_A_LIST.itemsFilterFormula",
+              "isRequired": false,
+              "label": "Items Filter Formula",
+              "tooltipText": "A filter in disjunctive normal form: OR of AND groups of single conditions",
+              "placeholderText": "Enter Items Filter Formula"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_DELETE_ITEM",
+      "controlType": "SECTION_V2",
+      "name": "Delete Item",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_DELETE_ITEM'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "itemId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_DELETE_ITEM.itemId",
+              "isRequired": true,
+              "label": "Item Id",
+              "tooltipText": "Item ID : The ID of the item to delete.",
+              "placeholderText": "Enter Item Id"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_DELETE_ITEM.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The List ID to delete the item from. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_CREATE_LIST",
+      "controlType": "SECTION_V2",
+      "name": "Create List",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_CREATE_LIST'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "name",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_CREATE_LIST.name",
+              "isRequired": true,
+              "label": "Name",
+              "tooltipText": "Name",
+              "placeholderText": "Enter Name"
+            }
+          ]
+        },
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "description",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_CREATE_LIST.description",
+              "isRequired": false,
+              "label": "Description",
+              "tooltipText": "Description : Description or acceptance criteria for this epic to be considered complete.",
+              "placeholderText": "Enter Description"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_GET_LIST_BY_ID",
+      "controlType": "SECTION_V2",
+      "name": "Get List By Id",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_GET_LIST_BY_ID'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_LIST_BY_ID.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The ID of the list to get. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_GET_LISTS",
+      "controlType": "SECTION_V2",
+      "name": "Get Lists",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_GET_LISTS'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listsFilterFormula",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_LISTS.listsFilterFormula",
+              "isRequired": false,
+              "label": "Lists Filter Formula",
+              "tooltipText": "A filter in disjunctive normal form: OR of AND groups of single conditions",
+              "placeholderText": "Enter Lists Filter Formula"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "SHAREPOINT_GET_LIST_COLUMNS",
+      "controlType": "SECTION_V2",
+      "name": "Get List Columns",
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'SHAREPOINT_GET_LIST_COLUMNS'}}"
+      },
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "SELECTOR-Z1",
+          "children": [
+            {
+              "controlType": "QUERY_DYNAMIC_INPUT_TEXT",
+              "identifier": "listId",
+              "configProperty": "actionConfiguration.formData.SHAREPOINT_GET_LIST_COLUMNS.listId",
+              "isRequired": true,
+              "label": "List Id",
+              "tooltipText": "List ID : The ID of the list to get. Use Connect Portal User Settings to allow users to select a List. (example: \"22e03ef3-6ef4-424d-a1d3-92a337807c30\")",
+              "placeholderText": "Enter List Id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "CUSTOM_ACTION",
+      "controlType": "SECTION_V2",
+      "name": "Custom Action",
+      "children": [
+        {
+          "controlType": "SINGLE_COLUMN_ZONE",
+          "identifier": "CUSTOM_ACTION_COLUMN",
+          "children": [
+            {
+              "label": "",
+              "Description": "",
+              "identifier": "CUSTOM_ACTION_FORM",
+              "subtitle": "",
+              "configProperty": "actionConfiguration.formData.CUSTOM_ACTION",
+              "controlType": "CUSTOM_ACTIONS_CONFIG_FORM"
+            }
+          ]
+        }
+      ],
+      "conditionals": {
+        "show": "{{actionConfiguration.formData.command === 'CUSTOM_ACTION'}}"
+      }
+    }
+  ]
+}
