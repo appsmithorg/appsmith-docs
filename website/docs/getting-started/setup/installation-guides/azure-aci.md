@@ -145,6 +145,43 @@ Once you have completed the installation process, consider performing the tasks 
   </a>
 </div>
 
+## Best Practices & Things Not to Do When Deploying Appsmith on Azure ACI
+
+When deploying **Appsmith** on **Azure Container Instances (ACI)**, it's crucial to avoid certain architectural decisions that can lead to performance issues, data inconsistency, or outright application failure. The following anti-patterns are particularly relevant when using Azure Files or network-mounted file systems.
+
+### Avoid Using Azure Files (or Any Network-Mounted File System) for Appsmith Storage
+
+While Azure Files offers a convenient way to persist data, it is **not suitable** for hosting Appsmith's core components such as MongoDB, Redis, or internal file storage.
+
+#### Common Mistakes
+
+1. **Running internal MongoDB, Redis, or file storage on Azure Files**
+    - Appsmith is not designed to work efficiently with network-mounted volumes as primary persistent stores.
+    - Issues observed:
+        - Sluggish performance.
+        - Data corruption.
+        - Intermittent failures and inconsistencies.
+        - App crashes on startup or under load.
+
+2. **Using Azure Files to store runtime data for internal services**
+    - These services (MongoDB, Redis) are latency-sensitive and require fast local or SSD-backed storage to function properly.
+
+#### Recommended Approach
+
+To ensure a **stateless, reliable, and production-grade deployment**, follow these best practices:
+
+- **Run Appsmith container on ACI using Azure Files only for minimal required mounts** (e.g., config files, if needed).
+- **Use external managed services** for critical components:
+    - [**MongoDB**](/getting-started/setup/instance-configuration/custom-mongodb-redis): Use a cloud-managed MongoDB (e.g., MongoDB Atlas) hosted in Azure or nearby region.
+    - [**Redis**](/getting-started/setup/instance-configuration/external-redis): Use **Azure Cache for Redis** or provision your own Redis cluster.
+    - [**PostgreSQL**](/getting-started/setup/instance-configuration/external-postgresql-rds): Use **Azure Database for PostgreSQL** to support advanced features like **Workflows** and **SAML SSO**.
+
+This approach ensures your Appsmith instance is:
+
+- **Stateless**
+- **Easy to scale and recover**
+- **Less prone to I/O bottlenecks and crashes**
+
 ## Troubleshooting
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
