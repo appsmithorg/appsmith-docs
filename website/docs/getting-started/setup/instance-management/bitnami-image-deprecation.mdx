@@ -6,68 +6,93 @@ toc_max_heading_level: 2
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Bitnami Image Deprecation (August 2025)
+# Bitnami image deprecation (August 2025)
 
 If you deploy Appsmith on Kubernetes using our Helm chart, a recent upstream change may affect your deployment.
 
-Bitnami has announced that on August 28, 2025, they will move many of their versioned container images — including MongoDB and PostgreSQL — to a read-only bitnamilegacy repository. While you may not be using Bitnami’s charts directly, by default the Appsmith Helm chart does include these images that are being moved.
+Bitnami [announced](https://github.com/bitnami/containers/issues/83267) that on August 28, 2025, many versioned images hosted at `docker.io/bitnami` will be moved to a read‑only `docker.io/bitnamilegacy` repository. Already‑packaged Bitnami Helm charts will remain available as OCI artifacts, but won’t work out‑of‑the‑box unless you override the bundled image repositories. Appsmith’s Helm chart includes Bitnami‑packaged images for the optional in‑cluster databases (MongoDB and PostgreSQL), so some deployments may be impacted.
+
+Note: While the Appsmith chart does bundle Redis, Bitnami's Redis image was removed several versions ago.
 
 ## How do I know if I’m affected
 
-This issue *only* affects Helm-based deployments on Kubernetes that use the default values from our Helm chart. Therefore, *you are unaffected if* you:
+This change affects only Kubernetes deployments installed with Helm that still use the in‑cluster databases from the chart’s default values. You are not affected if you:
 
-- Are using an external database and providing the credentials, utilizing services like MongoDB Atlas
-- Have deployed Appsmith on a platform besides Kubernetes
-- Have deployed via Helm after August 2025
+- Use external/managed databases (for example, MongoDB Atlas or an external PostgreSQL) and have configured Appsmith to connect to them
+- Deployed Appsmith on a platform other than Kubernetes
+- Installed or reinstalled with a chart version that no longer relies on these Bitnami images (post‑August 2025 guidance)
 
-To check your deployment to see if you are affected, we'll check the image that is used by your MongoDB and PostgreSQL pods currently.
+To check your deployment, verify whether the MongoDB or PostgreSQL pods are using images from `docker.io/bitnami/*`.
 
-1. Locate the namespace your deployment is running in:
-
-```
-kubectl get pod -A -l app.kubernetes.io/name=appsmith
-NAMESPACE   NAME         READY   STATUS    RESTARTS      AGE
-appsmith    appsmith-0   1/1     Running   3 (19d ago)   59d
-```
-
-If there are multiple values returned in the namespace field above, you'll need to update each one as you have multiple deployments of Appsmith.
-
-2. Check if your deployment is using the default MongoDB or PostgreSQL option:
+1. Locate the namespace your deployment is running in and set it in an environment variable for reuse:
 
 ```
-kubectl get pod -n appsmith
+# Find the release and namespace
+helm list -A | grep appsmith
+
+# Example: set the namespace (replace with your actual namespace)
+NAMESPACE=appsmith
+```
+
+If multiple namespaces are returned, repeat the following checks for each one.
+
+2. Check if your deployment is using the default in‑cluster databases (MongoDB, PostgreSQL):
+
+```
+kubectl get pods -n "$NAMESPACE"
+
+# Example output
 NAME                         READY   STATUS    RESTARTS      AGE
 appsmith-0                   1/1     Running   3 (19d ago)   59d
 appsmith-mongodb-0           1/1     Running   0             22h
 appsmith-mongodb-1           1/1     Running   0             22h
 appsmith-mongodb-arbiter-0   1/1     Running   0             22h
 appsmith-postgresql-0        1/1     Running   0             22h
-appsmith-redis-master-0      1/1     Running   2 (19d ago)   59d
-appsmith-redis-replicas-0    1/1     Running   2 (19d ago)   59d
 ```
 
-If you do not see pods named with `mongodb` or `postgresql` then you are *not affected* and can skip the rest.
+If you do not see pods named with `mongodb` or `postgresql`, you are likely not using the in‑cluster databases and can skip the rest.
 
-If you do see pods from the above, check if you're using the affected image:
+If you do see these pods, check whether their images are pulled from `docker.io/bitnami`:
 
 ```
-# MongoDB:
-kubectl get statefulset -l app.kubernetes.io/component=mongodb -o jsonpath='{.items[0].spec.template.spec.containers[0].image}' --namespace appsmith-ee | grep docker.io/bitnami/mongodb
-# PostgreSQL:
-kubectl get statefulset -l app.kubernetes.io/component=primary -o jsonpath='{.items[0].spec.template.spec.containers[0].image}' --namespace appsmith-ee | grep docker.io/bitnami/postgresql
+# MongoDB
+kubectl get statefulset -n "$NAMESPACE" -l app.kubernetes.io/name=mongodb \
+  -o jsonpath='{range .items[*]}{.metadata.name}={.spec.template.spec.containers[0].image}{"\n"}{end}' | grep 'docker.io/bitnami/' || true
+
+# PostgreSQL
+kubectl get statefulset -n "$NAMESPACE" -l app.kubernetes.io/name=postgresql \
+  -o jsonpath='{range .items[*]}{.metadata.name}={.spec.template.spec.containers[0].image}{"\n"}{end}' | grep 'docker.io/bitnami/' || true
+
 ```
 
-If either command returns an image, then you must take action to avoid downtime in the future.
+If any command returns an image reference from `docker.io/bitnami/...`, you should take action to avoid future image pull errors after August 28, 2025 (for example, `ImagePullBackOff`).
 
-## Updating the image value
+## What to do next
 
-Take a backup, and then follow the instructions for Kubernetes-based upgrades in our [documentation to deploy from the latest version of the Helm chart](/getting-started/setup/instance-management/update-appsmith?current-platform-type=kubernetes). Verify that the image was updated once the deployment is finished by utilizing the previous step.
+Before making any changes, take a backup. Then upgrade to the latest Appsmith Helm chart, at least version 3.6.4. This release updates the in‑cluster MongoDB and PostgreSQL image repositories to `docker.io/bitnamilegacy` to ensure continued pulls after August 28, 2025. Follow the Kubernetes steps here and target chart version 3.6.4: [Update Appsmith](/getting-started/setup/instance-management/update-appsmith?current-platform-type=kubernetes). After upgrading, re‑run the image checks above to confirm images reference `docker.io/bitnamilegacy/*`.
+
+:::caution Important
+Using the Bitnami Legacy images is a stopgap solution. We are still evaluating the best long‑term approach and will update this document when a decision is finalized. No action is required at this time beyond staying up to date with chart releases.
+:::
 
 ## Troubleshooting
 
-For further queries, contact the Appsmith support team using the chat widget in the bottom-right corner of this page.
+If you encounter `ImagePullBackOff` or `ErrImagePull` for Bitnami images post‑August 28, 2025, apply the short‑term workaround above to restore service, then plan a migration off legacy images. For further assistance, contact Appsmith support using the chat widget in the bottom‑right corner of this page.
+
+You'll encounter issues similar to seeing this in the pod list:
+
+```
+pod/appsmith-ee-mongodb-0           0/1     ImagePullBackOff   0              21m
+```
+
+And when describing the pod you'll see something like this:
+
+```
+Warning  Failed     2s (x2 over 16s)  kubelet            Failed to pull image "docker.io/bitnami/mongodb:6.0.13": failed to pull and unpack image "docker.io/bitnami/mongodb:6.0.13": failed to resolve reference "docker.io/bitnami/mongodb:6.0.13": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+```
 
 ## See also
 
 - [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith): Learn how to upgrade your Appsmith installation to the latest version.
 - [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date.
+ - Bitnami announcement on catalog changes: [GitHub issue #83267](https://github.com/bitnami/containers/issues/83267)
