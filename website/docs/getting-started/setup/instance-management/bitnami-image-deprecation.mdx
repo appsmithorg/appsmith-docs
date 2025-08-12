@@ -71,25 +71,34 @@ If any command returns an image reference from `docker.io/bitnami/...`, you shou
 
 Before making any changes, take a backup. Then upgrade to the latest Appsmith Helm chart, at least version 3.6.4. This release updates the in‑cluster MongoDB and PostgreSQL image repositories to `docker.io/bitnamilegacy` to ensure continued pulls after August 28, 2025. Follow the Kubernetes steps here and target chart version 3.6.4: [Update Appsmith](/getting-started/setup/instance-management/update-appsmith?current-platform-type=kubernetes). After upgrading, re‑run the image checks above to confirm images reference `docker.io/bitnamilegacy/*`.
 
-:::caution Important
+:::caution Note
 Using the Bitnami Legacy images is a stopgap solution. We are still evaluating the best long‑term approach and will update this document when a decision is finalized. No action is required at this time beyond staying up to date with chart releases.
 :::
 
 ## Troubleshooting
 
-If you encounter `ImagePullBackOff` or `ErrImagePull` for Bitnami images post‑August 28, 2025, apply the short‑term workaround above to restore service, then plan a migration off legacy images. For further assistance, contact Appsmith support using the chat widget in the bottom‑right corner of this page.
+If your Appsmith deployment shows MongoDB or PostgreSQL pods stuck with `ImagePullBackOff` or `ErrImagePull`, the most common cause is that Kubernetes can no longer pull Bitnami images from `docker.io/bitnami` (post‑August 28, 2025). This often surfaces when searching for terms like “Appsmith MongoDB ImagePullBackOff”, “Appsmith ErrImagePull mongodb”, or “insufficient_scope authorization failed bitnami mongodb”.
 
-You'll encounter issues similar to seeing this in the pod list:
+Common symptoms:
+
+- `ImagePullBackOff` or `ErrImagePull` in `kubectl get pods` for MongoDB or PostgreSQL pods
+- `Failed to pull image`, `pull access denied`, or `insufficient_scope: authorization failed` in `kubectl describe pod`
+
+For example, your pod list might show:
 
 ```
 pod/appsmith-ee-mongodb-0           0/1     ImagePullBackOff   0              21m
 ```
 
-And when describing the pod you'll see something like this:
+And `kubectl describe pod` might include:
 
 ```
 Warning  Failed     2s (x2 over 16s)  kubelet            Failed to pull image "docker.io/bitnami/mongodb:6.0.13": failed to pull and unpack image "docker.io/bitnami/mongodb:6.0.13": failed to resolve reference "docker.io/bitnami/mongodb:6.0.13": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
 ```
+
+Fix: Upgrade to the Appsmith Helm chart version 3.6.4 or later. This switches the in‑cluster MongoDB and PostgreSQL image repositories to `docker.io/bitnamilegacy` so image pulls succeed again. After upgrading, re‑run the image checks above to ensure you are no longer pulling from `docker.io/bitnami/*`. If pods remain in `ImagePullBackOff`, delete the affected pod to trigger a fresh pull, or wait for the StatefulSet to reconcile.
+
+For further assistance, contact Appsmith support using the chat widget in the bottom‑right corner of this page.
 
 ## See also
 
