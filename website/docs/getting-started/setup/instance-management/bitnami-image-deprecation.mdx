@@ -1,0 +1,73 @@
+---
+description: This page provides technical documentation about Bitnami image deprecation happening August 2025 and how to adjust deployment if necessary.
+toc_max_heading_level: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Bitnami Image Deprecation (August 2025)
+
+If you deploy Appsmith on Kubernetes using our Helm chart, a recent upstream change may affect your deployment.
+
+Bitnami has announced that on August 28, 2025, they will move many of their versioned container images — including MongoDB and PostgreSQL — to a read-only bitnamilegacy repository. While you may not be using Bitnami’s charts directly, by default the Appsmith Helm chart does include these images that are being moved.
+
+## How do I know if I’m affected
+
+This issue *only* affects Helm-based deployments on Kubernetes that use the default values from our Helm chart. Therefore, *you are unaffected if* you:
+
+- Are using an external database and providing the credentials, utilizing services like MongoDB Atlas
+- Have deployed Appsmith on a platform besides Kubernetes
+- Have deployed via Helm after August 2025
+
+To check your deployment to see if you are affected, we'll check the image that is used by your MongoDB and PostgreSQL pods currently.
+
+1. Locate the namespace your deployment is running in:
+
+```
+kubectl get pod -A -l app.kubernetes.io/name=appsmith
+NAMESPACE   NAME         READY   STATUS    RESTARTS      AGE
+appsmith    appsmith-0   1/1     Running   3 (19d ago)   59d
+```
+
+If there are multiple values returned in the namespace field above, you'll need to update each one as you have multiple deployments of Appsmith.
+
+2. Check if your deployment is using the default MongoDB or PostgreSQL option:
+
+```
+kubectl get pod -n appsmith
+NAME                         READY   STATUS    RESTARTS      AGE
+appsmith-0                   1/1     Running   3 (19d ago)   59d
+appsmith-mongodb-0           1/1     Running   0             22h
+appsmith-mongodb-1           1/1     Running   0             22h
+appsmith-mongodb-arbiter-0   1/1     Running   0             22h
+appsmith-postgresql-0        1/1     Running   0             22h
+appsmith-redis-master-0      1/1     Running   2 (19d ago)   59d
+appsmith-redis-replicas-0    1/1     Running   2 (19d ago)   59d
+```
+
+If you do not see pods named with `mongodb` or `postgresql` then you are *not affected* and can skip the rest.
+
+If you do see pods from the above, check if you're using the affected image:
+
+```
+# MongoDB:
+kubectl get statefulset -l app.kubernetes.io/component=mongodb -o jsonpath='{.items[0].spec.template.spec.containers[0].image}' --namespace appsmith-ee | grep docker.io/bitnami/mongodb
+# PostgreSQL:
+kubectl get statefulset -l app.kubernetes.io/component=primary -o jsonpath='{.items[0].spec.template.spec.containers[0].image}' --namespace appsmith-ee | grep docker.io/bitnami/postgresql
+```
+
+If either command returns an image, then you must take action to avoid downtime in the future.
+
+## Updating the image value
+
+Take a backup, and then follow the instructions for Kubernetes-based upgrades in our [documentation to deploy from the latest version of the Helm chart](/getting-started/setup/instance-management/update-appsmith?current-platform-type=kubernetes). Verify that the image was updated once the deployment is finished by utilizing the previous step.
+
+## Troubleshooting
+
+For further queries, contact the Appsmith support team using the chat widget in the bottom-right corner of this page.
+
+## See also
+
+- [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith): Learn how to upgrade your Appsmith installation to the latest version.
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date.

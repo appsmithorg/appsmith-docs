@@ -219,6 +219,7 @@ const sidebars = {
               type: 'category',
               label: 'Upgrade Helm Versions',
               items: [
+                'getting-started/setup/instance-management/bitnami-image-deprecation',
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
