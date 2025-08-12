@@ -24,7 +24,7 @@ This change affects only Kubernetes deployments installed with Helm that still u
 
 ### Proactive check
 
-To check your deployment, verify whether the MongoDB or PostgreSQL pods are using images from `docker.io/bitnami/*`.
+To proactively check your deployment, verify whether the MongoDB or PostgreSQL pods are using images from `docker.io/bitnami/*`.
 
 1. Locate the namespace your deployment is running in and set it in an environment variable for reuse:
 
@@ -71,7 +71,7 @@ If any command returns an image reference from `docker.io/bitnami/...`, you shou
 
 ### Deployment is broken (after August 28, 2025)
 
-If your Appsmith deployment shows MongoDB or PostgreSQL pods stuck with `ImagePullBackOff` or `ErrImagePull`, the most common cause is that Kubernetes can no longer pull Bitnami images from `docker.io/bitnami` (post‑August 28, 2025). This often surfaces when searching for terms like “Appsmith MongoDB ImagePullBackOff”, “Appsmith ErrImagePull mongodb”, or “insufficient_scope authorization failed bitnami mongodb”.
+If your Appsmith deployment is currently down and shows MongoDB or PostgreSQL pods stuck with `ImagePullBackOff` or `ErrImagePull` (post‑August 28, 2025), you are likely already affected.
 
 Common symptoms:
 
@@ -90,15 +90,15 @@ And `kubectl describe pod` might include:
 Warning  Failed     2s (x2 over 16s)  kubelet            Failed to pull image "docker.io/bitnami/mongodb:6.0.13": failed to pull and unpack image "docker.io/bitnami/mongodb:6.0.13": failed to resolve reference "docker.io/bitnami/mongodb:6.0.13": pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
 ```
 
+If you are seeing something similar to the above, proceed to the next section to fix it.
+
 ## What to do next
 
 - If your deployment is still functional, take a backup of the instance
 - Upgrade to the latest Appsmith Helm chart version, at least 3.6.4. This release updates the in‑cluster MongoDB and PostgreSQL image repositories to `docker.io/bitnamilegacy` to ensure continued pulls after August 28, 2025. Follow the Kubernetes steps here: [Update Appsmith](/getting-started/setup/instance-management/update-appsmith?current-platform-type=kubernetes).
-- After upgrading, re‑run the image checks above to confirm images reference `docker.io/bitnamilegacy/*`.
+- After upgrading, re‑run the proactive image checks above to confirm images reference `docker.io/bitnamilegacy/*`.
 
-## Troubleshooting
-
-If your deployment is down and the pod is still not starting after upgrading, you may need to clear the current broken pod in the StatefulSet. Force a rollout of the MongoDB and PostgreSQL StatefulSets:
+If the deployment is still down and after performing the Helm upgrade, you may need to clear the current broken pod in the StatefulSet. Force a rollout of the MongoDB and PostgreSQL StatefulSets:
 
 ```
 kubectl rollout restart statefulset/appsmith-ee-mongodb -n "$NAMESPACE"
