@@ -68,6 +68,19 @@ Choose from the following guides to deploy Appsmith according to your business n
          Deploy Appsmith using AWS Elastic Container Service (ECS) on EC2 instances for reliable and flexible container management.
       </div>
    </a>
+
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-three" href="/getting-started/setup/installation-guides/azure-aks">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/Kubernetes_logo.png" alt="Azure Kubernetes Service logo"/>
+         <div className="containerHeading">
+            <b>Azure Kubernetes Service (AKS)</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Deploy Appsmith on Azure Kubernetes Service (AKS) for scalable, managed Kubernetes deployments with enterprise-grade features.
+      </div>
+   </a>
 </div>
 
 <div className="containerGridSampleApp">
@@ -84,7 +97,7 @@ Choose from the following guides to deploy Appsmith according to your business n
       </div>
    </a>
 
-   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/installation-guides/azure-aci">
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/azure-aci">
       <div className="containerHead">
          <img className="containerImage containerImgDimensions" src="/img/azure_aci.png" alt="Azure Container Instances logo"/>
          <div className="containerHeading">
@@ -94,19 +107,6 @@ Choose from the following guides to deploy Appsmith according to your business n
       <hr className="gradient-hr" />
       <div className="containerDescription">
          Deploy Appsmith on Azure Container Instances (ACI) for a simplified container setup with minimal operational overhead.
-      </div>
-   </a>
-
-   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/installation-guides/azure-aks">
-      <div className="containerHead">
-         <img className="containerImage containerImgDimensions" src="/img/azure_aks.png" alt="Azure Kubernetes Service logo"/>
-         <div className="containerHeading">
-            <b>Azure Kubernetes Service (AKS)</b>
-         </div>
-      </div>
-      <hr className="gradient-hr" />
-      <div className="containerDescription">
-         Deploy Appsmith on Azure Kubernetes Service (AKS) for scalable, managed Kubernetes deployments with enterprise-grade features.
       </div>
    </a>
 </div>
