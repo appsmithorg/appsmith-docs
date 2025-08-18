@@ -96,6 +96,19 @@ Choose from the following guides to deploy Appsmith according to your business n
          Deploy Appsmith on Azure Container Instances (ACI) for a simplified container setup with minimal operational overhead.
       </div>
    </a>
+
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/installation-guides/azure-aks">
+      <div className="containerHead">
+         <img className="containerImage containerImgDimensions" src="/img/azure_aks.png" alt="Azure Kubernetes Service logo"/>
+         <div className="containerHeading">
+            <b>Azure Kubernetes Service (AKS)</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Deploy Appsmith on Azure Kubernetes Service (AKS) for scalable, managed Kubernetes deployments with enterprise-grade features.
+      </div>
+   </a>
 </div>
 
 <div className="containerGridSampleApp">
