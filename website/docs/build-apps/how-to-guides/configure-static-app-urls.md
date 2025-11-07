@@ -31,11 +31,11 @@ When static URLs are enabled, the new routes work right away. Anyone with the ol
 
 ## Manage page URL slugs
 
-- Each page receives a slug when static URLs are enabled. Existing pages get a slug based on the page name; new pages inherit the same pattern.
-- Leaving a page slug empty keeps it synced with the page name, so slug values update automatically when you rename the page.
+- When static URLs are enabled for the first time, each page receives a slug and are automatically set in view mode for all existing pages.
+- After the initial setup, any changes to page slugs require deployment to reflect in view mode.
+- When a new page is created after static URLs are enabled, the page slug is empty by default and automatically syncs with the slug derived from the page name. Renaming the page updates the slug automatically.
 - Setting a custom slug locks it in place. Later page renames do not change that slug.
 - Page slugs must be unique inside the application. If a slug is already in use, pick a different value.
-- Deploy the application for page slug changes to appear in view mode.
 
 :::tip
 Keep slugs short, descriptive, and lowercase. Hyphenate multiword names (for example, `sales-dashboard`).
@@ -46,6 +46,13 @@ Keep slugs short, descriptive, and lowercase. Hyphenate multiword names (for exa
 - Appsmith updates view mode URLs (`/app/<app-slug>/<page-slug>`) as soon as you enable static URLs.
 - Legacy UUID-based URLs remain valid, so existing bookmarks and embeds continue to work.
 - Static URLs remain active until you disable the feature.
+
+## Branching considerations
+
+- When you enable static URLs in edit mode for a branch, the changes apply instantly to both edit and view modes of that branch.
+- After the initial setup, any subsequent changes to page slugs in edit mode require deployment to reflect in view mode.
+- Enabling static URLs on one branch does not automatically apply to other branches. You must enable static URLs separately for each branch, that also includes the main branch.
+- Different branches of an application can have different unique app slug URLs. However, it's a best practice to configure the same app slug across all branches to maintain consistency.
 
 ## Import and export scenarios
 
