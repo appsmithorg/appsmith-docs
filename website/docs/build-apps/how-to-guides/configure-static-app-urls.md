@@ -54,13 +54,57 @@ Keep slugs short, descriptive, and lowercase. Hyphenate multiword names (for exa
 - Enabling static URLs on one branch does not automatically apply to other branches. You must enable static URLs separately for each branch, that also includes the main branch.
 - Different branches of an application can have different unique app slug URLs. However, it's a best practice to configure the same app slug across all branches to maintain consistency.
 
-## Import and export scenarios
+## Cross-Instance deployment and Version control
 
-- Exporting or importing an application (via JSON or Git) preserves the static URL settings. If the application slugs are available on the target instance, the same routes continue to work.
+- Exporting, importing, or syncing an application (via JSON or Git sync) preserves the static URL settings. If the application slugs are available on the target instance, the same routes continue to work.
 - Importing into the same Appsmith instance automatically appends a short suffix when needed to keep the application slug unique.
 - After import, you can rename slugs manually if you prefer a different URL.
 
-## Disable or re-enable static URLs
+:::info
+Since static URLs remain constant, you can synchronize your apps across different instances without worrying about broken links. The same static URL structure works consistently across environments.
+:::
+
+## Navigate between apps
+
+With static URLs enabled, you can navigate between different apps using the [navigateTo](/reference/appsmith-framework/widget-actions/navigate-to) action. Static URLs provide predictable routes that remain consistent across instances, making cross-app navigation reliable.
+
+To navigate to another app:
+
+1. Use a widget (such as a Button or Icon button) and set its **onClick** property to navigate to another app.
+2. Select the **Navigate to** action and choose **URL** as the destination type.
+3. Enter the static URL in the following format:
+
+   ```jsx
+   {{appsmith.URL.host}}/app/<app-slug>/<page-slug>
+   ```
+
+   Replace `<app-slug>` and `<page-slug>` with the actual slugs of the target application and page.
+
+   Example:
+   ```jsx
+   {{appsmith.URL.host}}/app/sales-dashboard/reports
+   ```
+
+## Embed apps with static URLs
+
+You can embed apps that use static URLs in the same way. Static URLs make embedding more reliable by providing consistent routes that don't change when apps are exported and imported or version controlled.
+
+To embed an app with static URLs:
+
+1. Use the static URL format with the `embed=true` parameter:
+
+   ```jsx
+   <instance-url>/app/<app-slug>/<page-slug>?embed=true
+   ```
+
+   Example:
+   ```jsx
+   https://app.appsmith.com/app/sales-dashboard/reports?embed=true
+   ```
+
+2. For different environments (development, staging, production), you can configure the instance URL dynamically while keeping the app and page slugs constant. This means you only need to update the instance URL when deploying to different environments, and the app path remains the same across all environments.
+
+## Disable static URLs
 
 1. Go to **Settings → General → Static URL** and turn the toggle off.
 2. Confirm the change to remove the static routes. The app remains accessible through the original UUID-based URLs.
