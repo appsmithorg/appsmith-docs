@@ -110,6 +110,20 @@ To embed an app with static URLs:
 2. Confirm the change to remove the static routes. The app remains accessible through the original UUID-based URLs.
 3. When you turn the toggle back on, Appsmith regenerates slugs from the current application and page names; earlier custom slug values are not restored automatically.
 
+## Version compatibility
+
+Static URLs are available in Appsmith version 1.91 and later. Keep the following compatibility considerations in mind:
+
+- **Importing to older instances**: If you import an application with static URLs configured into an Appsmith instance running a version less than 1.91, the static URL feature will not be available, and the app will use the default UUID-based URLs.
+
+- **Git sync with older instances**: If your application is Git-connected and synchronized with an instance running a version less than 1.91, static URL changes will not be reflected on that instance. The app will continue to use UUID-based URLs.
+
+- **Overriding static URL changes**: If you commit changes from an instance that doesn't have static URL changes (or is running a version less than 1.91), those commits can override the static URL configuration when synced to other instances.
+
+:::warning
+Ensure all instances in your workflow are running Appsmith version 1.91 or later to maintain static URL functionality across all environments.
+:::
+
 ## Troubleshooting and best practices
 
 - If a slug shows as unavailable, choose another value that does not conflict with existing applications or pages.
