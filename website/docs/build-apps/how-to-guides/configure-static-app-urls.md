@@ -8,6 +8,7 @@ Static app URLs give every application and page a stable, readable route. Use th
 
 ## Prerequisites
 
+- A self-hosted Appsmith instance running version 1.91 or later. See the [installation guides](/getting-started/setup/installation-guides) if you need to set up your instance.
 - You need edit access to the application.
 - Open the app in Appsmith and go to **Settings → General** to find the Static URL toggle.
 
@@ -51,12 +52,12 @@ Keep slugs short, descriptive, and lowercase. Hyphenate multiword names (for exa
 
 - When you enable static URLs in edit mode for a branch, the changes apply instantly to both edit and view modes of that branch.
 - After the initial setup, any subsequent changes to page slugs in edit mode require deployment to reflect in view mode.
-- Enabling static URLs on one branch does not automatically apply to other branches. You must enable static URLs separately for each branch, that also includes the main branch.
+- Enabling static URLs on one branch does not automatically update other pre-existing branches. Enable the setting manually on any branch that predates the change; branches created from a static-URL-enabled branch inherit it automatically.
 - Different branches of an application can have different unique app slug URLs. However, it's a best practice to configure the same app slug across all branches to maintain consistency.
 
 ## Cross-Instance deployment and Version control
 
-- Exporting, importing, or syncing an application (via JSON or Git sync) preserves the static URL settings. If the application slugs are available on the target instance, the same routes continue to work.
+- Exporting, importing, or syncing an application (via JSON or Git sync) preserves the static URL settings. The same routes continue to work as long as the application slug is available on the target instance.
 - Importing into the same Appsmith instance automatically appends a short suffix when needed to keep the application slug unique.
 - After import, you can rename slugs manually if you prefer a different URL.
 
