@@ -134,6 +134,7 @@ Ensure all instances in your workflow are running Appsmith version 1.91 or later
 
 ## Next steps
 
-- Learn how to [navigate between pages](./navigate-between-pages.md).
-- Explore best practices for [reusing application entities](./import-export-app-entities.md).
+- Learn how to [embed Appsmith apps](/advanced-concepts/embed-appsmith-into-existing-application) using static URLs.
+- Set up [version control with Git](/advanced-concepts/version-control-with-git) to maintain static URLs across branches and instances.
+- Learn how to [navigate between pages](./navigate-between-pages.md) within your app.
 
