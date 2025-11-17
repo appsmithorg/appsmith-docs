@@ -58,16 +58,68 @@ Indicates whether to include the actual file contents in the response. Accepts a
 
 Upload and save a file to Google Drive with options to specify its location and sharing settings.
 
-#### File `binary`
+#### File `object`
 
 <dd>
 
-This is the actual file data you want to upload. The command requires this property, accepting files in binary format.
+Provide the file payload as an object so Appsmith can correctly encode it for Google Drive. Include the file contents as a hex string, describe the MIME type, and always set the data type to `FILE`.
 
-*Example*:
+```
+{
+  "data": "5468697320697320612073616d706c6520746578742e",
+  "mimeType": FilePicker1.files[0].type,
+  "dataType": "FILE"
+}
+```
 
+* `data`: Hex-encoded bytes of the file. The string above corresponds to `"This is a sample text."`.
+* `mimeType`: The file’s MIME type, for example `FilePicker1.files[0].type`.
+* `dataType`: Always `"FILE"`.
 
+##### Use a JSObject to convert FilePicker data to hex
 
+Add helper functions to a JSObject so both binary and base64 FilePicker outputs can be converted before you build the payload:
+
+```javascript
+export default {
+  binaryToHex: (arrayBuffer) => {
+    return [...new Uint8Array(arrayBuffer)]
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+  },
+  base64ToHex: (encoded) => {
+    const stripped = encoded?.includes(",") ? encoded.split(",")[1] : encoded;
+    return atob(stripped)
+      .split("")
+      .map((c) => c.charCodeAt(0).toString(16).padStart(2, "0"))
+      .join("");
+  },
+};
+```
+
+*Binary FilePicker output*
+
+```
+{{
+{
+  "data": JSObject1.binaryToHex(FilePicker1.files[0].data),
+  "mimeType": FilePicker1.files[0].type,
+  "dataType": "FILE"
+}
+}}
+```
+
+*Base64 FilePicker output (strip the `application-type;base64,` prefix inside the helper)*
+
+```
+{{
+{
+  "data": JSObject1.base64ToHex(FilePicker1.files[0].data),
+  "mimeType": FilePicker1.files[0].type,
+  "dataType": "FILE"
+}
+}}
+```
 
 </dd>
 
