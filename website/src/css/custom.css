@@ -1027,3 +1027,8 @@ h4+.tags {
   line-height: 1.4;
 
 }
+
+.referenceIcon {
+  max-height: 30px;
+  min-height: 30px;
+}

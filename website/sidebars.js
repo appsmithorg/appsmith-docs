@@ -338,6 +338,7 @@ const sidebars = {
                     'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
                      'connect-data/reference/confluence',
+                    'connect-data/reference/dropbox',
                     'connect-data/reference/gmail',
                     'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
