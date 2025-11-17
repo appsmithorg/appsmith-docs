@@ -76,17 +76,12 @@ Provide the file payload as an object so Appsmith can correctly encode it for Go
 * `mimeType`: The file’s MIME type, for example `FilePicker1.files[0].type`.
 * `dataType`: Always `"FILE"`.
 
-##### Use a JSObject to convert FilePicker data to hex
+##### Using FilePicker with Drive Save File
 
-Add helper functions to a JSObject so both binary and base64 FilePicker outputs can be converted before you build the payload:
+Set the FilePicker to use base64 data format. Add a helper function to a JSObject to convert base64 FilePicker output to hex before you build the payload:
 
 ```javascript
 export default {
-  binaryToHex: (arrayBuffer) => {
-    return [...new Uint8Array(arrayBuffer)]
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
-  },
   base64ToHex: (encoded) => {
     const stripped = encoded?.includes(",") ? encoded.split(",")[1] : encoded;
     return atob(stripped)
@@ -95,18 +90,6 @@ export default {
       .join("");
   },
 };
-```
-
-*Binary FilePicker output*
-
-```
-{{
-{
-  "data": JSObject1.binaryToHex(FilePicker1.files[0].data),
-  "mimeType": FilePicker1.files[0].type,
-  "dataType": "FILE"
-}
-}}
 ```
 
 *Base64 FilePicker output (strip the `application-type;base64,` prefix inside the helper)*
