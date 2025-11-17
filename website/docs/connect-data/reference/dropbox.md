@@ -1,10 +1,3 @@
----
-sidebar_position: 18
-description: Connect Appsmith to Dropbox and automate file management tasks.
----
-
-<!-- markdownlint-disable MD033 MD024 -->
-
 # Dropbox
 
 This page provides information on how to connect Appsmith to Dropbox. Use this integration to automate file-heavy workflows such as listing folder contents, searching shared spaces, creating or moving folders, downloading assets, and running custom Dropbox API calls.
