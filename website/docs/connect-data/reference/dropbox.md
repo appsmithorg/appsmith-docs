@@ -31,7 +31,13 @@ The folder path to fetch (for example, `/Projects/Invoices`). Leave blank to def
 #### Pagination Parameters `JSON object`
 
 <dd>
-Optional object that controls cursor-based pagination. Provide values such as `{"cursor":"Vf6...","limit":50}` when you want to continue from a previous response or limit the number of returned entries.
+Optional object that controls cursor-based pagination. Provide values such as:
+
+```json
+{"cursor":"Vf6...","limit":50}
+```
+
+Use this when you want to continue from a previous response or limit the number of returned entries.
 </dd>
 
 ### Search Folders
@@ -54,7 +60,9 @@ Toggle to enforce Dropbox match-field rules (for example, matching against path 
 
 <dd>
 Optional JSON payload for advanced search options such as file status, filename-only matches, result limits, or scoping the search path. Example:
-```
+</dd>
+
+```json
 {
   "file_status": "active",
   "filename_only": false,
@@ -62,7 +70,6 @@ Optional JSON payload for advanced search options such as file status, filename-
   "path": "/Shared/Design"
 }
 ```
-</dd>
 
 #### Pagination Parameters `JSON object`
 
@@ -121,7 +128,7 @@ Fetches metadata for a folder using either its Dropbox path or its unique folder
 #### Path/ID `string`
 
 <dd>
-Accepts a standard path (for example, `/Shared/Legal`) or a Dropbox identifier such as `id:_UcW5dJGu0UAJRGAAXXCkw`. This field is required.
+Accepts a standard path (for example, `/Shared/Legal`) or a Dropbox identifier such as `id:_UcXdJGu0UAJRGAAXXCkw`. This field is required.
 </dd>
 
 #### Include Deleted `boolean`
