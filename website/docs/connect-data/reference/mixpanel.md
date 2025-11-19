@@ -64,7 +64,7 @@ If this field is left empty, the query will use the default workspace.
 
 </dd>
 
-#### Event(s) (JSON array) `string`
+#### Events (JSON array) `string`
 
 <dd>
 
@@ -758,7 +758,7 @@ Specifies the end date for the export in YYYY-MM-DD format. The date is interpre
 
 </dd>
 
-#### Event(s) (JSON array) `string`
+#### Events (JSON array) `string`
 
 <dd>
 
