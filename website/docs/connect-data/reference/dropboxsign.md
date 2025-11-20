@@ -30,12 +30,15 @@ Ensure every URL is publicly accessible or already shared with Dropbox Sign; oth
 #### Signers `array<object>`
 <dd>
 Required. Array of signer objects with `email_address`, `name`, and optional `order`.
-```
+
+```json
 [
   {
-    email_address: "jack@example.com",
-    name: "Jack",
-    order: 0
+    "email_address": "jack@example.com"
+    ,
+    "name": "Jack"
+    ,
+    "order": 0
   }
 ]
 ```
@@ -65,11 +68,13 @@ Optional list of CC recipients who should receive status notifications. Provide 
 #### Attachments `array<object>`
 <dd>
 Optional files signers must upload back before completion. Each entry needs a `name` and `signer_index` that matches the signer order.
-```
+
+```json
 [
   {
-    name: "Jack Doe File",
-    signer_index: 0
+    "name": "Jack Doe File"
+    ,
+    "signer_index": 0
   }
 ]
 ```
@@ -107,12 +112,12 @@ Updates signer metadata or expiration on an existing request. Use this when a si
 
 #### Signature Request Id `string`
 <dd>
-Required. The unique ID returned from create/search operations (for example `fa5c8a0b0f492d768749333ad6fcc214c111e967`).
+Required. The unique ID returned from create/search operations.
 </dd>
 
 #### Signature Id `string`
 <dd>
-Required. Identify the specific signer on the request (example `78caf2a1d01cd39cea2bc1cbb340dac3`).
+Required. Identify the specific signer on the request.
 </dd>
 
 #### Email `string`
