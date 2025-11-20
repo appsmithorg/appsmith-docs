@@ -638,7 +638,8 @@ const sidebars = {
           },
             'write-code/reference/Built-in-JS-Libraries',
             'write-code/reference/Fetch-API',
-            'write-code/reference/transform-data'
+            'write-code/reference/transform-data',
+            'reference/js-settings'
           ],
         }, //Reference End
         {
