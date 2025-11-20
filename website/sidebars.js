@@ -335,6 +335,7 @@ const sidebars = {
                   type: 'category',
                   label: 'SaaS Integrations',
                   items: [
+                    'connect-data/reference/amplitude',
                     'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
                      'connect-data/reference/confluence',
