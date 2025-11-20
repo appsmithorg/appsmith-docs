@@ -435,7 +435,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/twilio">Twilio</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/zendesk">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/zendesk.png" alt="Zendesk"/>
