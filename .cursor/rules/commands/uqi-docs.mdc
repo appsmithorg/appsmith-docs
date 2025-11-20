@@ -1,0 +1,170 @@
+---
+description: Workflow instructions for the `@uqi_doc` command that scaffolds a new UQI reference doc, sidebar link, and README tile from a JSON config file.
+alwaysApply: false
+---
+
+# UQI Docs Builder
+
+You are the `@uqi_doc` command. Your job is to turn a Unified Query Interface (UQI) configuration JSON into a complete docs update: generate a reference page in `website/docs/connect-data/reference/`, insert the page in the sidebar, and surface it in `website/docs/connect-data/reference/README.md`. Move fast, keep everything in sync, and mirror the authored tone used in existing SaaS reference pages.
+
+## Core Principles
+
+- Treat the JSON config as source of truth for available commands, field labels, tooltips, and UI hints.
+- Match the voice, structure, and HTML helpers (`\`&lt;dd&gt;\``, code blocks, bullets) from existing SaaS docs.
+- Prefer deterministic transformations over free-form prose; when improvising copy, ground it in the field metadata or upstream API facts.
+- Respect alphabetical ordering in both the sidebar category and README tiles.
+
+## Required Inputs
+
+Collect these (ask the user if anything is missing):
+
+1. **Display name** (defaults to the JSON `name` field, but confirm if a doc-specific variant is needed).
+2. **Docs slug** for the file + sidebar id (auto-derive from the last segment of `documentationLink`, override only if necessary).
+3. **Category** for README tile + sidebar bucket (use `SaaS Integrations`).
+4. **JSON path** for the UQI config (e.g., `/integrations/acme_crm_uqi_config.json`).
+5. **Authentication summary** (OAuth vs. API key, scopes, etc.).
+6. **Any product-specific callouts** (rate limits, preview status, etc.).
+
+## Kickoff Response
+
+1. Acknowledge the request, restate integration name + slug.
+2. Confirm you’re starting the UQI docs workflow and will pause for confirmation after the outline.
+
+Example:
+
+```text
+Roger — spinning up @uqi_doc for Acme CRM (`connect-data/reference/acme-crm`). I’ll parse the config and share the outline before drafting the page.
+```
+
+## Working Document
+
+- Create (or append to) a markdown file at `specs/uqi-docs/<YYYY-MM-DD_HH-mm>-<slug>.md`.
+- Sections, in order:
+  1. **Intake Snapshot** – bullets covering inputs, assumptions, and open questions.
+  2. **Doc Outline** – headings + bullets describing planned sections.
+  3. **JSON Notes** – tables or lists summarizing each command + parameters parsed from the config with file references (for example, ``acme_crm_uqi_config.json → identifier: owner``).
+  4. **Copy Decisions** – any human-authored blurbs (connect steps, conceptual tips) you want to reuse verbatim.
+  5. **Implementation Checklist** – ≤6 ordered steps.
+  6. **Change Log** – bullet per file touched describing edits.
+  7. **Validation** – commands run + manual checks.
+  8. **Follow-ups** – optional backlog items.
+- Update the same document through the workflow; do not spawn additional planning files.
+
+## Workflow
+
+### 1. Intake & Setup
+
+- Validate inputs, resolve ambiguous category/icon info.
+- Record everything in **Intake Snapshot**.
+- If data is missing, ask immediately; do not guess.
+
+### 2. Parse the JSON Config
+
+- Open the supplied JSON file (example: `acme_crm_uqi_config.json`).
+- Identify:
+  - **Command list** inside `rootActionConfig.editor`: locate the drop-down with `configProperty: actionConfiguration.formData.command` to capture labels + values in order.
+  - Matching `SECTION_V2` blocks within the same `rootActionConfig.editor` array whose `identifier` equals each command value.
+  - Every field node inside a section (`QUERY_DYNAMIC_INPUT_TEXT`, `DROP_DOWN`, `CHECKBOX`, etc.).
+  - **Docs slug** by parsing the trailing path segment of `documentationLink` (e.g., `https://docs.appsmith.com/connect-data/reference/github` → slug `github`).
+  - **README icon URL** from `iconLocation` (these are already hosted on `https://assets.appsmith.com/...` and should be reused verbatim).
+- For each field capture:
+  - `identifier` / `label`.
+  - Control type → inferred data type (text → string, number input → integer/number, checkbox → boolean, array inputs → array).
+  - Required flag.
+  - Tooltip / placeholder text for copy inspiration.
+- Dump findings into a table inside **JSON Notes** so later steps stay mechanical.
+
+### 3. Draft the Doc Outline
+
+- Mirror the shape of the existing UQI reference pages under `website/docs/connect-data/reference/`:
+  1. Intro paragraph describing what the integration enables.
+  2. `## Connect <Name>` section summarizing authentication (OAuth/API key instructions, prerequisite scopes, rate-limit warnings).
+  3. `## Query <Name>` master section listing each command as a `###` heading.
+  4. Within each command, enumerate parameters with headings like ``#### Owner `string``` and wrap explanations in `\`&lt;dd&gt;\`` blocks.
+  5. Optional `### Custom Action` guidance if the config exposes `CUSTOM_ACTION`.
+- Share the outline (include planned headings + notable notes) in the **Doc Outline** section and wait for user confirmation before writing prose.
+
+### 4. Produce the Reference Page
+
+- File path: `website/docs/connect-data/reference/<slug>.md`.
+- Top-of-file structure:
+  - `# <Display Name>`
+  - Intro paragraph (2–3 sentences).
+  - `## Connect <Display Name>` with bulleted or numbered steps.
+- For each command:
+  - Add a 1–2 sentence description of what the command does and its return shape.
+- Use `\`&lt;dd&gt;\`` blocks to hold detailed prose; cite where to find values (for example, point readers to the location of project IDs, workspace names, or resource URLs in the target platform).
+  - Include sample payloads using fenced code blocks when helpful (JSON arrays, numbers, etc.).
+  - Call out permissions, rate limits, or validation rules from the JSON/tooltips.
+- If the JSON exposes enums (dropdown options), list them as bullet points inside the parameter description.
+- Re-check for consistent heading depth (`#`, `##`, `###`, `####`), avoid MDX imports unless necessary, keep ASCII punctuation.
+
+### 5. Update the Sidebar
+
+- File: `website/sidebars.js`.
+- Locate the correct category inside the `connect-data/reference` tree (APIs, Databases, SaaS Integrations, AI Integrations).
+- Insert `'connect-data/reference/<slug>'` in alphabetical order.
+- If the category already contains the slug, skip to README updates but note in Change Log.
+
+### 6. Update the Reference README
+
+- File: `website/docs/connect-data/reference/README.md`.
+- Within the matching category grid (`## APIs`, `## Databases`, `## SaaS Integrations`, or `## AI Integrations`):
+  - Add a new `<div className="columnGrid ...">` block mirroring existing cards.
+  - Image:
+    - Use the `iconLocation` URL from the JSON (hosted on `https://assets.appsmith.com/...`; do not rewrite or relocate it).
+    - Set descriptive `alt` text (`alt="<Name>"`).
+  - Link + bold label must point to `/connect-data/reference/<slug>`.
+- Ensure layout stays consistent (indentation + closing tags) and alphabetical ordering within the grid.
+
+### 7. Validation
+
+- Run targeted checks noted in the working doc. At minimum:
+  - `cd website && npm run build` (or `pnpm --filter website build`) if time permits.
+  - If skipping build (e.g., doc-only change), manually re-read rendered Markdown for syntax errors and note the risk.
+- Verify internal links:
+  - Markdown file renders headings correctly.
+  - Sidebar entry compiles (no typos in doc id).
+  - README tile image path resolves.
+- Record results in **Validation**.
+
+### 8. Final Response
+
+Return one message covering:
+
+1. **Outcome Summary** – mention new doc path + sidebar/README updates.
+2. **Artifacts** – link to the working doc + list of modified files.
+3. **Validation** – commands run or explicit note if skipped.
+4. **Next Steps** – only if follow-ups exist; otherwise “None”.
+
+Once the user confirms the changes are final prompt them to delete the specs/uqi_docs folder and it's contents.
+
+## Parameter-to-Docs Mapping Cheatsheet
+
+- `QUERY_DYNAMIC_INPUT_TEXT` → treat as `string` unless tooltip mentions arrays/numbers (then follow tooltip).
+- `INPUT_TEXT` with `isRequired: false` → highlight optional.
+- `DROP_DOWN` → document allowed values exactly as shown in `options`.
+- `CHECKBOX`/boolean toggles → describe default behavior when unchecked.
+- `CUSTOM_ACTIONS_CONFIG_FORM` → summarize how to craft arbitrary REST calls and reference the target platform’s REST documentation, similar to the “Custom Action” sections found in other SaaS docs.
+
+## Style Checklist
+
+- Use sentence case headings after the initial `#`.
+- Always wrap parameter explanations in ``&lt;dd&gt;`` tags for visual parity with the sample doc.
+- Provide at least one example where the JSON tooltip includes sample payloads (arrays, numbers).
+- Keep command descriptions ≤3 sentences before diving into fields.
+- Avoid duplicating content already covered in another parameter; instead cross-reference (“See `Owner` above”).
+
+## Failure Handling
+
+- Missing info? Pause and ask the user; log the blocker in **Intake Snapshot**.
+- JSON discrepancies (e.g., command referenced but section missing): note in **Follow-ups**, proceed with available data, and highlight gap in final response.
+- If build fails, capture the log snippet in **Validation**, fix if possible, otherwise report failure and mark next steps.
+
+## Example References
+
+- `website/docs/connect-data/reference/` → browse existing files to see canonical formatting for SaaS commands, parameter sections, and ``&lt;dd&gt;`` usage.
+- `website/sidebars.js` → locate the appropriate category inside the “SaaS Integrations” (or relevant) section before inserting the new doc id.
+- `website/docs/connect-data/reference/README.md` → card layout for surfacing the integration tile.
+
+Use these as blueprints but never hardcode vendor-specific text unless you’re documenting that vendor’s integration.
