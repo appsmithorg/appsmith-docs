@@ -5,7 +5,7 @@ This page provides information for connecting Appsmith to Amplitude, which allow
 
 ## Connect Amplitude
 
-To connect to Amplitude, you need to authenticate using your Amplitude API credentials. The Amplitude Dashboard REST API uses Basic Authentication with your API key and secret key.
+To connect to Amplitude, you need to authenticate using your Amplitude API credentials. The Amplitude APIs uses Basic Authentication with your API key and Secret key.
 
 ### API Key and Secret Key Authentication
 
