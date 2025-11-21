@@ -16,11 +16,25 @@ Static app URLs give every application and page a stable, readable route. Use th
 
 1. Open the application settings and navigate to **General → Static URL**.
 2. Turn on **Enable Static URLs**. Appsmith generates an application slug and page slugs based on existing names.
-3. Review the preview URL and the list of generated slugs.
-4. Click **Apply** to confirm. Static URLs become active immediately in both edit and view modes.
+
+<ZoomImage
+  src="/img/toggle-static-urls.png"
+  alt="Toggle Static URLs"
+  caption="Enable static URLs toggle"
+/>
+
+3. Click **Apply** to confirm. A confirmation modal appears
+
+<ZoomImage
+  src="/img/static-urls-preview.png"
+  alt="Static URLs Preview"
+  caption="Confirmation modal for static URL change"
+/>
+
+4. Review the URL change in the modal, then click **Change App Slug** to confirm or **Cancel** to abort. Static URLs become active immediately in both edit and view modes after confirmation.
 
 :::info
-When static URLs are enabled, the new routes work right away. Anyone with the old UUID-based URLs can continue using them as aliases.
+When static URLs are enabled, the new routes work right away. Meanwhile the old UUID-based URLs will still be working and anyone can continue to use them.
 :::
 
 ## Manage the application URL slug
