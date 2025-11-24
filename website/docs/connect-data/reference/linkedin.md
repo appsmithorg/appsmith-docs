@@ -28,17 +28,7 @@ The following section is a reference guide that provides a complete description 
 
 <dd>
 
-You can authenticate using OAuth 2.0. To connect LinkedIn to Appsmith, you'll need to:
-
-1. **Set up a LinkedIn Developer App**:
-   - Navigate to the [LinkedIn Developer Portal](https://www.linkedin.com/developers/).
-   - Create a new application to obtain your **Client ID** and **Client Secret**.
-   - Configure the necessary OAuth 2.0 redirect URLs and permissions (scopes) required for your application.
-
-2. **Configure the LinkedIn Integration**:
-   - In Appsmith, when creating a new LinkedIn datasource, you'll be prompted to authenticate.
-   - Review the requested permissions and click **Allow** to grant Appsmith access to your LinkedIn account.
-   - The OAuth flow provides secure access to your LinkedIn profile and content based on the permissions granted.
+LinkedIn uses OAuth 2.0. When you create a LinkedIn datasource in Appsmith, the OAuth client configuration is handled for you—simply click **Authorize**, review the requested permissions, and approve the connection. The OAuth flow will open LinkedIn in a browser tab where you can grant Appsmith access to your LinkedIn account.
 
 The authentication process requires you to have a browser session and will redirect you to LinkedIn's authorization page where you can approve the connection.
 
@@ -198,10 +188,9 @@ Check out our latest product launch!
 
 The media category specifies the type of media being shared in the post. This field is mandatory and accepts the following values:
 
-- **`IMAGE`** - For image media
-- **`VIDEO`** - For video media
-- **`ARTICLE`** - For article media
-- **`NONE`** - For posts without media
+- **`IMAGE`** - For image
+- **`VIDEO`** - For video
+- **`ARTICLE`** - For article
 
 *Example:* To specify an image post:
 
@@ -226,7 +215,7 @@ The structure should follow LinkedIn's UGC (User Generated Content) API format:
     "description": {
       "text": "Image description"
     },
-    "media": "urn:li:digitalmediaAsset:...",
+    "media": "urn:li:digitalmediaAsset:D4S22AQG7l8cHwx9SgA",
     "title": {
       "text": "Test Image"
     }
@@ -242,14 +231,14 @@ The structure should follow LinkedIn's UGC (User Generated Content) API format:
   "description": {
     "text": {{ImageDescriptionInput.text}}
   },
-  "media": {{_.last(RegisterAssetUpload.data.output.value.asset.split(":"))}},
+  "media": {{RegisterAssetUpload.data.output.value.asset}},
   "title": {
     "text": {{ImageTitleInput.text}}
   }
 }]
 ```
 
-**Note:** The `media` field should contain a URN from a previously registered asset upload. You'll need to use LinkedIn's asset upload API to register media before creating the post.
+**Note:** The `media` field should contain a URN from a previously registered asset upload. Use the [Register Media Upload Request](#register-media-upload-request) action to create the asset before posting.
 
 </dd>
 
@@ -300,8 +289,8 @@ urn:li:person:{{GetUserInfo.data.output.sub}}
 
 The type of media to register for upload. This field is mandatory and accepts two values:
 
-- **`image`** - For image media uploads
-- **`video`** - For video media uploads
+- **`image`** - For image uploads
+- **`video`** - For video uploads
 
 *Example:* To register an image upload:
 
@@ -310,6 +299,38 @@ image
 ```
 
 </dd>
+
+**Example response**
+
+```json
+{
+  "value": {
+    "mediaArtifact": "urn:li:digitalmediaMediaArtifact:(urn:li:digitalmediaAsset:D4S22AQG7l8cHwx9SgA,urn:li:digitalmediaMediaArtifactClass:uploaded-image)",
+    "uploadMechanism": {
+      "com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest": {
+        "uploadUrl": "https://www.linkedin.com/dms-uploads/sp/v2/D4S22AQG7l8cHwx9SgA/uploaded-image/B56Zq0rcQ_HQAE-/0?ca=vector_feedshare&cn=uploads&iri=B01-86&sync=0&v=beta&ut=2UJzfayWyECs01",
+        "headers": {
+          "media-type-family": "STILLIMAGE"
+        }
+      }
+    },
+    "asset": "urn:li:digitalmediaAsset:D4S22AQG7l8cHwx9SgA",
+    "assetRealTimeTopic": "urn:li-realtime:digitalmediaAssetUpdatesTopic:urn:li:digitalmediaAsset:D4S22AQG7l8cHwx9SgA"
+  }
+}
+```
+
+#### Upload Media to URL
+
+After you receive the `uploadUrl`, upload the binary file contents directly to LinkedIn using a REST API **PUT** request:
+
+1. Add a **FilePicker** widget and set its **Data Format** to **Binary**.
+2. Create a new REST API action and set **Method** to `PUT`.
+3. Set the **URL** to `{{RegisterMediaUploadRequest.data.value.uploadMechanism["com.linkedin.digitalmedia.uploading.MediaUploadHttpRequest"].uploadUrl}}`.
+4. Add headers:
+    - `Content-Type: {{FilePicker1.files[0].type}}`
+5. Set the **Body** to **Binary** and provide `{{FilePicker1.files[0].data}}` as the value.
+6. Run the API to upload the image/video bytes, which completes the media upload for the returned `media` URN.
 
 ### Get Media Upload Status
 
@@ -321,9 +342,9 @@ The Get Media Upload Status command checks the upload/processing status of media
 
 The type of media to check status for. This field is mandatory and accepts three values:
 
-- **`image`** - For image media
-- **`video`** - For video media
-- **`document`** - For document media
+- **`image`** - For image 
+- **`video`** - For video
+- **`document`** - For document
 
 *Example:* To check status of an image:
 
@@ -342,7 +363,7 @@ The unique identifier of the media to check status for. This is the media ID ret
 *Example:* If you want to dynamically check status using a media ID from a previous query:
 
 ```javascript
-{{RegisterAssetUpload.data.output.value.asset}}
+{{_.last(registerAssetUpload.data.output.value.asset.split(":"))}}
 ```
 
 *Example:* If you have a specific media ID:
