@@ -230,7 +230,7 @@ Optional. Provide to fetch details for a single user; leave blank to run a broad
 
 </dd>
 
-### Custom Action
+### Custom GraphQL Action
 
 Builds an ad-hoc GraphQL request when the canned commands do not cover your use case. Configure the method, headers, query/mutation body, and variables inline to call any Monday API supported by your token’s permissions.
 
