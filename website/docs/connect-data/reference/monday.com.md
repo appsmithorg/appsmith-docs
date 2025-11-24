@@ -236,12 +236,16 @@ Builds an ad-hoc GraphQL request when the canned commands do not cover your use 
 
 Example configuration:
 
+Use the `activity_logs` query to pull board-level audit info—this returns an array of log entries with metadata (timestamps, event names, payload) for the specified board. See Monday’s [activity logs reference](https://developer.monday.com/api-reference/reference/activity-logs) for limits, arguments, and fields.
+
 ```
 Method: POST
 URL: /
 Body:
 {
-  "query": "query { me { is_guest created_at name id }}"
+  "query": "query { boards(ids: [{{BoardIdInput.text}}]) { activity_logs(from: \"{{DatePickerFrom.selectedDate}}\", to: \"{{DatePickerTo.selectedDate}}\") { id event data } } }"
 }
 ```
+
+The double curly braces (`{{ }}`) let you inject widget or JS object values at runtime, so the GraphQL query stays dynamic without manual string concatenation.
 
