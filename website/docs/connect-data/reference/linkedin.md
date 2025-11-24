@@ -332,6 +332,12 @@ After you receive the `uploadUrl`, upload the binary file contents directly to L
 5. Set the **Body** to **Binary** and provide `{{FilePicker1.files[0].data}}` as the value.
 6. Run the API to upload the image/video bytes, which completes the media upload for the returned `media` URN.
 
+<ZoomImage
+  src="/img/linkedin-upload-media.png"
+  alt="Upload media using PUT request and a FilePicker widget"
+  caption="Upload media using PUT request and a FilePicker widget"
+/>
+
 ### Get Media Upload Status
 
 The Get Media Upload Status command checks the upload/processing status of media (image, video, or document) on LinkedIn using the LinkedIn API via a proxy. This is useful for monitoring the status of uploaded media assets before using them in posts or other LinkedIn content.
