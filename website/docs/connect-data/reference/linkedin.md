@@ -41,27 +41,29 @@ The following section is a reference guide that provides a description of the av
 ### Get User Info
 
 The Get User Info command retrieves the authenticated LinkedIn user's basic profile information using the LinkedIn API via a proxy. This is useful for fetching the current user's details, such as their user ID (sub), email, and name, which can then be used in other queries or displayed in your application.
+For additional details about this API, see the [LinkedIn member details documentation](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/sign-in-with-linkedin-v2#api-request-to-retreive-member-details).
 
 ### Create Post
 
 The Create Post command allows you to create a new post on LinkedIn. You can specify the post content, visibility settings, lifecycle state, and the author who will publish the post. This is useful for automating content sharing, scheduling posts, or integrating LinkedIn posting into your workflow.
+See the official [Create a text share](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#create-a-text-share) guide for the complete payload structure and field descriptions.
 
 #### Author `string`
 
 <dd>
 
-The author identifier specifies who will create the post. This should be a LinkedIn person URN (Uniform Resource Name) in the format `urn:li:person:{id}` or just the person identifier.
+Provide the member’s identifier in the `person:{id}` format (for example, `person:ABC123`).
 
 *Example:* If you want to use a static author ID:
 
 ```javascript
-urn:li:person:123456789
+person:123456789
 ```
 
-*Example:* If you want to dynamically set the author using data from a previous query (Get User Info):
+*Example:* To build the value from another query:
 
 ```javascript
-urn:li:person:{{GetUserInfo.data.output.sub}}
+{{"person:" + GetUserInfo.data.output.sub}}
 ```
 
 </dd>
@@ -124,23 +126,24 @@ PUBLIC
 ### Create Post With Media
 
 The Create Post With Media command allows you to create a LinkedIn post with rich content including media (images, videos, etc.) using the LinkedIn API via a proxy. This command supports advanced post creation with media attachments, descriptions, and titles, enabling you to create more engaging content on LinkedIn.
+Refer to LinkedIn’s [image and video share documentation](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#create-the-image-or-video-share) for the underlying API schema and best practices.
 
 #### Author `string`
 
 <dd>
 
-The author identifier specifies who will create the post. This should be a LinkedIn person URN (Uniform Resource Name) in the format `urn:li:person:{id}` or constructed dynamically using data from other queries.
+Provide the member’s identifier in the `person:{id}` format (for example, `person:ABC123`).
 
 *Example:* If you want to use a static author ID:
 
 ```javascript
-urn:li:person:123456789
+person:123456789
 ```
 
-*Example:* If you want to dynamically set the author using data from the Get User Info query:
+*Example:* To build the value from the Get User Info query:
 
 ```javascript
-urn:li:person:{{GetUserInfo.data.output.sub}}
+{{"person:" + GetUserInfo.data.output.sub}}
 ```
 
 </dd>
@@ -262,23 +265,24 @@ PUBLIC
 ### Register Media Upload Request
 
 The Register Media Upload Request command registers a media upload request with LinkedIn to obtain upload URLs and asset identifiers for images or videos. This is the first step in uploading media to LinkedIn before creating posts with media attachments.
+See LinkedIn’s [Register the image or video](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#register-the-image-or-video) section for full request/response details.
 
 #### Author `string`
 
 <dd>
 
-The author identifier specifies who will own the media. This should be a LinkedIn person URN (Uniform Resource Name) in the format `urn:li:person:{id}` or constructed dynamically using data from other queries.
+Provide the member’s identifier in the `person:{id}` format (for example, `person:ABC123`).
 
 *Example:* If you want to use a static author ID:
 
 ```javascript
-urn:li:person:123456789
+person:123456789
 ```
 
-*Example:* If you want to dynamically set the author using data from the Get User Info query:
+*Example:* To build the value from the Get User Info query:
 
 ```javascript
-urn:li:person:{{GetUserInfo.data.output.sub}}
+{{"person:" + GetUserInfo.data.output.sub}}
 ```
 
 </dd>
@@ -322,6 +326,8 @@ image
 
 #### Upload Media to URL
 
+Refer to LinkedIn’s [Upload image or video binary file](https://learn.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/share-on-linkedin#upload-image-or-video-binary-file) documentation for the underlying HTTP requirements.
+
 After you receive the `uploadUrl`, upload the binary file contents directly to LinkedIn using a REST API **PUT** request:
 
 1. Add a **FilePicker** widget and set its **Data Format** to **Binary**.
@@ -341,6 +347,7 @@ After you receive the `uploadUrl`, upload the binary file contents directly to L
 ### Get Media Upload Status
 
 The Get Media Upload Status command checks the upload/processing status of media (image, video, or document) on LinkedIn using the LinkedIn API via a proxy. This is useful for monitoring the status of uploaded media assets before using them in posts or other LinkedIn content.
+LinkedIn provides separate references for [images](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/images-api?tabs=http#get-a-single-image), [videos](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/videos-api?tabs=http#get-a-video), and [documents](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/documents-api?tabs=http#get-a-single-document); consult those pages for the available fields and status values.
 
 #### Media Category `string`
 
@@ -393,13 +400,12 @@ You can define the HTTP method, endpoint path, headers, and body to call any Lin
 <dd>
 
 ```bash
-GET /v2/people/(id:{{ProfileIdInput.text}})
+GET https://api.linkedin.com/v2/people/(id:{{ProfileIdInput.text}})
 ```
 
 With headers:
 
 ```
-Authorization: Bearer <access_token>
 LinkedIn-Version: 202402
 ```
 
