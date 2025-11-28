@@ -127,6 +127,44 @@ With Appsmith, you can manage user access and authentication methods in your ins
 Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
 </dd>
 
+### Security
+
+Configure security settings to protect your Appsmith instance against account takeover attacks and ensure secure authentication flows.
+
+##### `APPSMITH_BASE_URL`
+
+<dd>
+
+Specifies the base URL of your Appsmith instance. When configured, this variable enables Origin header validation for password reset and email verification requests, preventing account takeover attacks.
+
+When `APPSMITH_BASE_URL` is set, the system validates that the `Origin` header in password reset and email verification requests matches the configured base URL. Requests with mismatched origins are rejected, preventing attackers from:
+
+- Using arbitrary Origin headers to redirect reset links to malicious domains
+- Exploiting the password reset flow to send tokens to attacker-controlled endpoints
+- Performing account takeover attacks through email verification redirects
+
+**Configuration:**
+
+You can configure this variable either:
+
+- **Via Admin Settings UI**: Navigate to **Settings → Configuration → Appsmith Base URL**
+- **Via environment variable**: Set the `APPSMITH_BASE_URL` environment variable in your configuration file
+
+**Example:**
+
+```yaml
+APPSMITH_BASE_URL=https://appsmith.yourdomain.com
+```
+
+**Backward compatibility:**
+
+If `APPSMITH_BASE_URL` is not set, the system maintains backward compatibility by skipping validation, ensuring existing deployments continue to function without changes. However, it is strongly recommended to set this variable to enable protection against account takeover attempts.
+
+**Recommendation:**
+
+We strongly recommend setting `APPSMITH_BASE_URL` in your environment configuration to enable this protection. This ensures that sensitive authentication flows are restricted to your trusted domain, significantly reducing the attack surface for account takeover attempts.
+
+</dd>
 
 ### Email server
 
