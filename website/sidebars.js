@@ -348,6 +348,7 @@ const sidebars = {
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
                     'connect-data/reference/mixpanel',
+                    'connect-data/reference/linkedin',
                     'connect-data/reference/notion',
                     'connect-data/reference/outlook',
                     'connect-data/reference/salesforce',
