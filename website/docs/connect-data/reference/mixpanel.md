@@ -1,4 +1,22 @@
-# Mixpanel
+---
+title: Mixpanel
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Mixpanel</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page provides information on how to connect to Mixpanel. It enables users to perform actions such as querying event data, tracking events, managing user profiles, and analyzing insights from your Mixpanel project.
 

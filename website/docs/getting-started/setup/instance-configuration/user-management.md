@@ -37,8 +37,23 @@ For more details, see [Restrict Query Access](/advanced-concepts/granular-access
 
 </dd>
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
 
 #### Session Timeout
+<Tags
+  tags={[
+    {
+      name: "Enterprise",
+      link: "https://www.appsmith.com/pricing",
+      additionalClass: "enterprise",
+    }
+  ]}
+/>
+</div>
+
+<!-- vale on -->
 
 <dd>
 

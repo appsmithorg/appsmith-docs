@@ -1,4 +1,22 @@
-# Asana
+---
+title: Asana
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Asana</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page provides information on how to connect to Asana. This integration enables you to automate project and task management operations such as creating tasks, updating task details, commenting on tasks, and fetching workspace, team, and project data.
 
