@@ -1,4 +1,22 @@
-# Dropbox
+---
+title: Dropbox
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Dropbox</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page provides information on how to connect Appsmith to Dropbox. Use this integration to automate file-heavy workflows such as listing folder contents, searching shared spaces, creating or moving folders, downloading assets, and running custom Dropbox API calls.
 

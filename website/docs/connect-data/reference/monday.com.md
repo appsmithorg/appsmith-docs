@@ -1,4 +1,22 @@
-# Monday.com
+---
+title: Monday.com
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Monday.com</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Use the Monday.com SaaS integration to orchestrate boards, items, subitems, and user directories directly from Appsmith. The built-in commands wrap common GraphQL mutations so you can create, update, search, or archive Monday records without wiring custom HTTP requests.
 
