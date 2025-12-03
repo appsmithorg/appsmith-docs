@@ -1,4 +1,22 @@
-# Trello
+---
+title: Trello
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Trello</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 Integrate Trello with Appsmith to create, update, search, and delete cards or boards without leaving your app. Each Trello action returns JSON so you can bind card metadata to widgets, trigger follow-up workflows, or keep your boards in sync with other datasources.
 

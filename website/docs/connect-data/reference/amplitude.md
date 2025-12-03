@@ -1,5 +1,22 @@
-# Amplitude
+---
+title: Amplitude
+hide_title: true
+---
 
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Amplitude</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
 
 This page provides information for connecting Appsmith to Amplitude, which allows you to query analytics data, export event data, search for users, send events, and retrieve chart results from your Amplitude project.
 
