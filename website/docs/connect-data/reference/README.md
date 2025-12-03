@@ -25,7 +25,7 @@ With Appsmith, you can connect with a wide range of tools and platforms; if ther
         <b><a href="/connect-data/reference/authenticated-api">API</a></b>
     </div>
   
-   <div className="columnGrid column-three" align="center">
+   <div className="columnGrid column-two" align="center">
         <div className="containerCol">
             <a href="/connect-data/reference/graphql">
             <img className="containerImage referenceIcon" src="/img/graphqllogo.png" alt="GraphQL"/>
@@ -211,6 +211,15 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
 
   <div className="columnGrid column-two" align="center">
     <div className="containerCol">
+      <a href="/connect-data/reference/amplitude">
+        <img className="containerImage referenceIcon" src="https://assets.appsmith.com/amplitude.png" alt="Amplitude"/>
+      </a>
+    </div>
+    <b><a href="/connect-data/reference/amplitude">Amplitude</a></b>
+  </div>
+
+  <div className="columnGrid column-three" align="center">
+    <div className="containerCol">
       <a href="/connect-data/reference/asana">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/asana.png" alt="Asana"/>
       </a>
@@ -218,7 +227,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/asana">Asana</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/aws-lambda">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/aws-lambda-logo.svg" alt="AWS Lambda"/>
@@ -227,11 +240,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/aws-lambda">AWS Lambda</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/dropbox">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/dropbox.png" alt="Dropbox"/>
@@ -240,7 +249,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/dropbox">Dropbox</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/querying-google-sheets">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/google-sheets.png" alt="Google Sheets"/>
@@ -249,7 +258,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/querying-google-sheets">Google Sheets</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/hubspot">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/hubspot2.png" alt="HubSpot"/>
@@ -258,11 +271,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/hubspot">HubSpot</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/jira">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/jira.png" alt="Jira"/>
@@ -271,7 +280,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/jira">Jira</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/linkedin">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/linkedin.png" alt="LinkedIn"/>
@@ -280,7 +289,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/linkedin">LinkedIn</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/mixpanel">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/mixpanel.png" alt="Mixpanel"/>
@@ -289,11 +302,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/mixpanel">Mixpanel</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/monday.com">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/monday.com.png" alt="Monday.com"/>
@@ -302,7 +311,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/monday.com">Monday.com</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/salesforce">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/salesforce-logo.svg" alt="Salesforce"/>
@@ -311,7 +320,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/salesforce">Salesforce</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/slack">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/slack.png" alt="Slack"/>
@@ -320,11 +333,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/slack">Slack</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/twilio">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/twilio.svg" alt="Twilio"/>
@@ -333,7 +342,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/twilio">Twilio</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/zendesk">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/zendesk.png" alt="Zendesk"/>
@@ -373,7 +382,11 @@ With AI integrations, you can add intelligent AI capabilties to automate human t
         </div> 
         <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
    </div>
-  <div className="columnGrid column-three" align="center">
+
+</div>
+
+<div className="containerGrid">
+    <div className="columnGrid column-one" align="center">
        <div className="containerCol">
             <a href="/connect-data/reference/google-ai">
             <img className="containerImage referenceIcon" src="/img/google-ai.svg" alt="Google AI"/>
