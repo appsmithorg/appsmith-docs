@@ -37,6 +37,7 @@ For more details, see [Restrict Query Access](/advanced-concepts/granular-access
 
 </dd>
 
+<!-- vale off -->
 
 <div className="tag-wrapper">
 <h4>Session Timeout</h4>
@@ -48,6 +49,8 @@ tags={[
 />
 
 </div>
+
+<!-- vale on -->
 
 <dd>
 
