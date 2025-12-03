@@ -38,7 +38,16 @@ For more details, see [Restrict Query Access](/advanced-concepts/granular-access
 </dd>
 
 
-#### Session Timeout
+<div className="tag-wrapper">
+<h4>Session Timeout</h4>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
 
 <dd>
 
