@@ -1,4 +1,13 @@
-# Dropbox Sign
+<div className="tag-wrapper">
+ <h1>Dropbox Sign</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
 
 Dropbox Sign lets you create, update, and track signature requests without leaving Appsmith. Use these commands to kick off new agreements, resend or edit signer details, search existing requests, and download completed packets directly into your workflows.
 
