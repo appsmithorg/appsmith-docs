@@ -166,6 +166,22 @@ We strongly recommend setting `APPSMITH_BASE_URL` in your environment configurat
 
 </dd>
 
+##### `APPSMITH_RATE_LIMIT`
+
+<dd>
+
+Defines the maximum number of requests each client can make to the Appsmith backend per second. The default value is `100`, which helps guard the platform against abusive traffic while keeping normal usage unaffected. Set this variable to any positive integer to adjust the cap based on your infrastructure capacity, or set it to `disabled` to turn rate limiting off entirely.
+
+```yaml
+# Increase the limit
+APPSMITH_RATE_LIMIT=250
+
+# Disable rate limiting
+APPSMITH_RATE_LIMIT=disabled
+```
+
+</dd>
+
 ### Email server
 
 Configure your email server in Appsmith to handle application emailing needs. The following environment variables enable you to set up and manage these email-related capabilities for your Appsmith instance.
