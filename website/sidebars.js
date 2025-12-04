@@ -461,6 +461,7 @@ const sidebars = {
 
               ],
             },
+            'build-apps/how-to-guides/configure-static-app-urls',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/custom-widget-using-vanillajs',
             `build-apps/how-to-guides/download-table-data`,
