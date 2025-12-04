@@ -1,4 +1,13 @@
-# Linear
+<div className="tag-wrapper">
+ <h1>Linear</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
 
 Linear's unified query interface lets you create and manage issues, sub-issues, and projects directly from Appsmith. Each command returns JSON so you can wire Linear workflows into widgets, automations, or downstream datasources without custom wrappers.
 
@@ -114,6 +123,7 @@ Retrieves an issue using the friendly key shown in Linear (for example, `ENG-142
 ### Search Issue
 
 Runs a disjunctive normal form query to filter issues by status, assignee, or other conditions.
+<!-- TODO: improve description and link to Linear search syntax -->
 
 #### Issue Filter Formula `string`
 
@@ -234,15 +244,15 @@ Filters Linear teams using the same disjunctive normal form syntax as issue sear
 
 <dd>Optional filter string to narrow the response to specific team attributes.</dd>
 
-### Custom Action
+### Custom GraphQL Action
 
 Build bespoke Linear calls with `Custom Action` when you need mutations or queries that are not exposed above.
 
 <dd>
-Set the Custom Action type to `POST` and the endpoint to `graphql`, then use the Body tab to craft the request body and variables. Follow the <a href="https://linear.app/developers/graphql" target="_blank" rel="noopener noreferrer">Linear GraphQL docs</a> for available queries and mutations. Test the call before wiring it into widgets to make sure the schema matches your expectations.
+Set the Custom Action type to `POST` and the endpoint to `/graphql`, then use the Body tab to craft the request body and variables. Follow the <a href="https://linear.app/developers/graphql" target="_blank" rel="noopener noreferrer">Linear GraphQL docs</a> for available queries and mutations. Test the call before wiring it into widgets to make sure the schema matches your expectations.
 </dd>
 
-![Linear custom action example showing POST and graphql settings](/img/linear_custom_action_example.png)
+![Linear custom action example showing POST and graphql settings](/img/linear-custom-action.png)
 
 ## Troubleshooting
 
