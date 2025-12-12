@@ -513,6 +513,14 @@ Specify a `5-value` cron expression to define the schedule for automatic backups
 
 </dd>
 
+##### `APPSMITH_BACKUP_ARCHIVE_LIMIT`
+
+<dd>
+
+Controls how many recent backup archives are retained. Backups use a count-based retention system (not time-based): each run creates a new timestamped file in `/appsmith-stacks/data/backup/`, and after every successful backup the cleanup process prunes the oldest files if the total exceeds this limit. The default is `4`, ensuring storage does not grow unbounded while keeping the most recent backup history. Backups are never overwritten; older files are simply deleted once the limit is surpassed.
+
+</dd>
+
 <!-- vale off -->
 <br/>
 <div className="tag-wrapper">
