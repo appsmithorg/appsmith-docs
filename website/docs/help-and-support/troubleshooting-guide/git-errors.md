@@ -124,6 +124,21 @@ messageContent='Private Repo Limit Error'></Message>
 
 In the community edition, you can only connect to 3 private repositories. If you want to connect more private repositories, you must upgrade to a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 
+### Edit and view mode out of sync
+
+#### Cause
+
+In some cases, an issue can occur where the latest changes have been pulled to the edit mode of the application, but the deployment to view mode failed. This results in edit mode and view mode being out of sync, with no more commits to be pushed.
+
+#### Solution
+
+When edit and view mode are out of sync and there are no more changes to be committed, you will see the **Deploy** button on the top right of the editor displaying an orange notification dot. When you hover over it, a tooltip will appear stating "Redeploy needed to sync changes from edit mode". To resolve this:
+
+1. Open the Git commit modal by clicking the **Deploy** button on the top right of the editor.
+2. Click the **Redeploy** button in the Git modal to synchronize the changes from edit mode to view mode.
+
+<ZoomImage src="/img/redeploy-app.png" alt="Redeploy app" caption="Redeploy app" />
+
 
 
 
