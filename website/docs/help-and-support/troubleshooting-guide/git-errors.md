@@ -124,6 +124,26 @@ messageContent='Private Repo Limit Error'></Message>
 
 In the community edition, you can only connect to 3 private repositories. If you want to connect more private repositories, you must upgrade to a paid plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
 
+### CI/CD deployment failed - missing packages
+
+<Message
+ messageContainerClassName='error'
+messageContent='AE-GIT-5002: Deployment aborted to protect the last successful version as the artifact is in an invalid state. Details: Module instances exist without the necessary packages/modules in the current workspace. Please resolve the missing dependencies first.'></Message>
+
+#### Cause
+
+This error occurs when CI/CD fails because the application uses Packages that are not present in the workspace where the CI/CD is being triggered. The deployment is aborted to protect the last successful version.
+
+#### Solution
+
+To resolve this:
+
+1. Ensure that all Packages used by the application are imported into the workspace of the application for which CI/CD is being triggered.
+
+2. If the issue continues to happen despite importing all Packages, reconfigure the bearer token from the CI/CD settings of the application and use the new bearer token in your CI/CD API. This is required because older bearer tokens may not have the necessary permissions to resolve Package dependencies.
+
+For more information, see [CI/CD with Git-Connected Apps and Packages](/packages/reference/best-practices-git-packages#cicd-with-git-connected-apps-and-packages).
+
 ### Edit and view mode out of sync
 
 #### Cause
@@ -132,7 +152,7 @@ In some cases, an issue can occur where the latest changes have been pulled to t
 
 #### Solution
 
-When edit and view mode are out of sync and there are no more changes to be committed, you will see the **Deploy** button on the top right of the editor displaying an orange notification dot. When you hover over it, a tooltip will appear stating "Redeploy needed to sync changes from edit mode". To resolve this:
+When edit and view mode are out of sync and there are no more changes to be committed, you will see the **Deploy** button on the top right of the editor displaying an orange notification dot. When you hover over it, a tooltip will appear stating "Redeploy needed to sync changes from edit mode." To resolve this:
 
 1. Open the Git commit modal by clicking the **Deploy** button on the top right of the editor.
 2. Click the **Redeploy** button in the Git modal to synchronize the changes from edit mode to view mode.
