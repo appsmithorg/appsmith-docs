@@ -798,6 +798,7 @@ const sidebars = {
   label: 'Reference',
   items: [
     'packages/reference/versioning', // Package Version Control
+    'packages/reference/best-practices-git-packages',
     {
       type: 'category',
       label: 'Code Packages',
