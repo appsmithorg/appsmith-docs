@@ -60,48 +60,134 @@ The Task ID appears in the URL when viewing a task:
 https://app.clickup.com/t/TASK_ID
 ```
 
-You can also find these IDs by using the "Get Space", "Get List", or "Get Task In List" queries, which return the IDs in their response.
+You can also find these IDs by using the "Get Space" or "Get List" queries, which return the IDs in their response.
 
-### Search Tasks
+### Search Tasks in List
 
-Searches for tasks across your ClickUp workspace using a filter formula. This is useful for finding tasks that match specific criteria.
+Searches for tasks within a specific ClickUp list with filtering options. This allows you to find tasks that match specific criteria within a particular list.
 
-#### Task Filter Formula `string`
+#### List ID `string`
 
 <dd>
 
-Optional. A filter in disjunctive normal form: OR of AND groups of single conditions. This allows you to search for tasks based on various criteria.
+Required. The ID of the ClickUp list to search tasks from. You can find the list ID in the URL when viewing the list in ClickUp, or by using the "Get List" query.
 
-*Example:* To search for tasks with a specific name:
+</dd>
+
+#### Include Closed `string`
+
+<dd>
+
+Optional. Include closed tasks in the search results. Set to `true` to include closed tasks, or `false` to exclude them.
+
+*Example:*
 
 ```js
-name=task1
+true
 ```
 
 </dd>
 
-### Get Task In List
-
-Retrieves tasks from a specific list in ClickUp. You can optionally filter the results using a task filter formula.
-
-#### List Id `string`
+#### Status `string`
 
 <dd>
 
-Required. The ID of the list from which to retrieve tasks. You can find the list ID in the URL when viewing the list in ClickUp, or by using the "Get List" query.
+Optional. Filter by status. This allows you to search for tasks with a specific status.
+
+*Example:* To filter by status:
+
+```js
+in progress
+```
+
+or
+
+```js
+to do
+```
 
 </dd>
 
-#### Task Filter Formula `string`
+#### Assignee `string`
 
 <dd>
 
-Optional. Search for tasks that match specified filters. This allows you to narrow down the results from the list.
+Optional. Filter by assignee user ID. This allows you to search for tasks assigned to a specific user.
 
-*Example:* To filter tasks by name:
+*Example:* To filter by assignee:
 
 ```js
-name=task1
+12345678
+```
+
+</dd>
+
+#### Order By `string`
+
+<dd>
+
+Optional. Order tasks by a specific field. Common values include `created`, `updated`, or `due_date`.
+
+*Example:* To order by creation date:
+
+```js
+created
+```
+
+</dd>
+
+#### Due Date Greater Than `string`
+
+<dd>
+
+Optional. Filter tasks with a due date greater than this value. Provide a Unix timestamp in milliseconds.
+
+*Example:*
+
+```js
+1609459200000
+```
+
+</dd>
+
+#### Due Date Less Than `string`
+
+<dd>
+
+Optional. Filter tasks with a due date less than this value. Provide a Unix timestamp in milliseconds.
+
+*Example:*
+
+```js
+1609545600000
+```
+
+</dd>
+
+#### Page `string`
+
+<dd>
+
+Optional. Page number for pagination. Starts at 0.
+
+*Example:*
+
+```js
+0
+```
+
+</dd>
+
+#### Reverse `string`
+
+<dd>
+
+Optional. Reverse the order of results. Set to `true` to reverse the order, or `false` for normal order.
+
+*Example:*
+
+```js
+true
 ```
 
 </dd>
