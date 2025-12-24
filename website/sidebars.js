@@ -340,6 +340,7 @@ const sidebars = {
                     'connect-data/reference/aws-lambda',
                      'connect-data/reference/confluence',
                     'connect-data/reference/dropbox',
+                    'connect-data/reference/freshdesk',
                     'connect-data/reference/gmail',
                     'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
