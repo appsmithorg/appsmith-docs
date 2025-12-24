@@ -62,9 +62,9 @@ https://app.clickup.com/t/TASK_ID
 
 You can also find these IDs by using the "Get Space" or "Get List" queries, which return the IDs in their response.
 
-### Search Tasks in List
+### Get Tasks in List
 
-Searches for tasks within a specific ClickUp list with filtering options. This allows you to find tasks that match specific criteria within a particular list.
+Gets tasks within a specific ClickUp list with filtering options. This allows you to find tasks that match specific criteria within a particular list. For more details, see [Get Tasks](https://developer.clickup.com/reference/gettasks).
 
 #### List ID `string`
 
@@ -428,7 +428,7 @@ Required. The ID of the space from which to retrieve folders. You can find the s
 
 </dd>
 
-### Get Member
+### Get Members
 
 Retrieves information about the authenticated ClickUp member. This is useful for getting your own user ID or member details.
 
@@ -436,64 +436,16 @@ No parameters are required for this command.
 
 ### Custom Action
 
-Use **Custom Action** when you need a ClickUp REST endpoint that is not modeled above. The form lets you supply the HTTP method, path (for example, `https://api.clickup.com/api/v2/list/{listId}/task`), query parameters, and body. Appsmith automatically injects the OAuth token from your datasource, so you only have to reference [ClickUp's API docs](https://clickup.com/api) for the payload structure.
+Use **Custom Action** when you need a ClickUp REST endpoint that is not modeled above. The form lets you supply the HTTP method, path (for example, `https://api.clickup.com/api/v2/task/{taskId}/comment`), query parameters, and body. Appsmith automatically injects the OAuth token from your datasource, so you only have to reference [ClickUp's API docs](https://developer.clickup.com/reference) for the payload structure.
 
 *Example:*
 
-- Get all tasks in a list with specific fields
+- Get task comments
 
 <dd>
 
 ```bash
-GET /api/v2/list/{{listId}}/task?archived=false&include_closed=true
-```
-
-</dd>
-
-- Create a task with custom fields
-
-<dd>
-
-```bash
-POST /api/v2/list/{{listId}}/task
-```
-
-With body:
-
-```json
-{
-  "name": "New Task",
-  "description": "Task description",
-  "status": "to do",
-  "priority": 2,
-  "assignees": ["12345678"],
-  "tags": ["urgent"],
-  "due_date": 1733011200000,
-  "custom_fields": [
-    {
-      "id": "custom_field_id",
-      "value": "custom_value"
-    }
-  ]
-}
-```
-
-</dd>
-
-- Update a task's custom field
-
-<dd>
-
-```bash
-PUT /api/v2/task/{{taskId}}/field/{{fieldId}}
-```
-
-With body:
-
-```json
-{
-  "value": "updated_value"
-}
+GET /api/v2/task/{{taskId}}/comment
 ```
 
 </dd>
