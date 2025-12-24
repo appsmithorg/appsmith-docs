@@ -280,17 +280,21 @@ Required. A unique identifier for the ticket you want to permanently delete. You
 
 ### Custom Action
 
-Use **Custom Action** when you need a Freshdesk REST endpoint that is not modeled above. The form lets you supply the HTTP method, path (for example, `https://api.freshdesk.com/api/v2/tickets/{ticketId}/comments`), query parameters, and body. Appsmith automatically injects the OAuth token from your datasource, so you only have to reference [Freshdesk's API docs](https://developer.freshdesk.com/api) for the payload structure.
+Use **Custom Action** when you need a Freshdesk REST endpoint that is not modeled above. The form lets you supply the HTTP method, path, query parameters, and body. Appsmith automatically injects the API key from your datasource, so you only have to reference [Freshdesk's API docs](https://developer.freshdesk.com/api) for the payload structure.
+
+When using Custom Action, provide the path without the `/api/v2` prefix. For example, if the endpoint is `/api/v2/search/tickets`, use `/search/tickets` in the Custom Action form.
 
 *Example:*
 
-- Get ticket comments
+- Search tickets
 
 <dd>
 
 ```bash
-GET /api/v2/tickets/{{ticketId}}/comments
+GET /search/tickets?query="status:2 AND priority:3"
 ```
+
+For more details, see [Filter Tickets](https://developer.freshdesk.com/api/#filter_tickets).
 
 </dd>
 
