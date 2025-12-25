@@ -1,3 +1,8 @@
+---
+title: Linear
+hide_title: true
+---
+
 <div className="tag-wrapper">
  <h1>Linear</h1>
 
@@ -122,16 +127,34 @@ Retrieves an issue using the friendly key shown in Linear (for example, `ENG-142
 
 ### Search Issue
 
-Runs a disjunctive normal form query to filter issues by status, assignee, or other conditions.
-<!-- TODO: improve description and link to Linear search syntax -->
+Searches Linear issues with pagination and filtering using GraphQL API. Returns issues matching the filter criteria with pagination support.
 
-#### Issue Filter Formula `string`
+#### Filter `object`
 
-<dd>Provide Linear's filter syntax as a string. Each OR group contains AND clauses for precise targeting.</dd>
+<dd>JSON filter object for filtering issues. Use Linear's IssueFilter format. Leave it as empty object `{}` if not being used. Example:</dd>
 
+```json
+{
+  "team": {
+    "id": {
+      "eq": "team-id"
+    }
+  },
+  "state": {
+    "type": {
+      "eq": "started"
+    }
+  }
+}
 ```
-(statusId = "c168..." AND teamId = "a70b...") OR (assigneeId = "lead-uuid")
-```
+
+#### Limit `integer`
+
+<dd>The maximum number of issues to return (pagination limit). Default is 50.</dd>
+
+#### Cursor `string`
+
+<dd>The cursor for pagination (endCursor from previous page). Leave empty for first page. Use the `endCursor` value from the `pageInfo` object in the previous response to fetch the next page.</dd>
 
 ### Delete Issue
 
@@ -238,11 +261,19 @@ Deletes a project permanently. Use with caution because Linear cannot restore de
 
 ### Search Teams
 
-Filters Linear teams using the same disjunctive normal form syntax as issue searches.
+Searches Linear teams by name using GraphQL API. Returns teams matching the search criteria with optional member and state information.
 
-#### Team Filter Formula `string`
+#### Team Name `string`
 
-<dd>Optional filter string to narrow the response to specific team attributes.</dd>
+<dd>The team name to search for (partial match supported). This field is required.</dd>
+
+#### Include Members `boolean`
+
+<dd>Include team members in the response. Default is `false`.</dd>
+
+#### Include States `boolean`
+
+<dd>Include team states in the response. Default is `false`.</dd>
 
 ### Custom GraphQL Action
 
