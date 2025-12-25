@@ -281,9 +281,13 @@ Build bespoke Linear calls with `Custom Action` when you need mutations or queri
 
 <dd>
 Set the Custom Action type to `POST` and the endpoint to `/graphql`, then use the Body tab to craft the request body and variables. Follow the <a href="https://linear.app/developers/graphql" target="_blank" rel="noopener noreferrer">Linear GraphQL docs</a> for available queries and mutations. Test the call before wiring it into widgets to make sure the schema matches your expectations.
+
+*Example: Query users*
+![Linear custom action example showing POST and graphql settings](/img/linear-custom-action.png)
+
 </dd>
 
-![Linear custom action example showing POST and graphql settings](/img/linear-custom-action.png)
+
 
 ## Troubleshooting
 
