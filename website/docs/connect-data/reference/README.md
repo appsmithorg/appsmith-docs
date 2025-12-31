@@ -373,7 +373,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/mixpanel">Mixpanel</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/monday.com">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/monday.com.png" alt="Monday.com"/>
@@ -382,7 +382,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/monday.com">Monday.com</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/notion">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/notion.png" alt="Notion"/>
@@ -391,11 +395,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/notion">Notion</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/outlook">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/outlook.png" alt="Outlook"/>
@@ -404,7 +404,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/outlook">Outlook</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/salesforce">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/salesforce-logo.svg" alt="Salesforce"/>
@@ -413,7 +413,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/salesforce">Salesforce</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/slack">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/slack.png" alt="Slack"/>
@@ -422,11 +426,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/slack">Slack</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/stripe">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/stripe.png" alt="Stripe"/>
@@ -435,7 +435,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/stripe">Stripe</a></b>
   </div>
 
-  <div className="columnGrid column-two" align="center">
+  <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/trello">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/trello.png" alt="Trello"/>
@@ -444,7 +444,11 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/trello">Trello</a></b>
   </div>
 
-  <div className="columnGrid column-three" align="center">
+</div>
+
+<div className="containerGrid">
+
+  <div className="columnGrid column-one" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/twilio">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/twilio.svg" alt="Twilio"/>
@@ -453,11 +457,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
     <b><a href="/connect-data/reference/twilio">Twilio</a></b>
   </div>
 
-</div>
-
-<div className="containerGrid">
-
-  <div className="columnGrid column-one" align="center">
+  <div className="columnGrid column-two" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/zendesk">
         <img className="containerImage referenceIcon" src="https://assets.appsmith.com/zendesk.png" alt="Zendesk"/>
