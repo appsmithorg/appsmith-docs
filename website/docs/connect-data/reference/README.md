@@ -345,7 +345,7 @@ Appsmith also supports integration with various Software as a Service (SaaS) pla
   <div className="columnGrid column-three" align="center">
     <div className="containerCol">
       <a href="/connect-data/reference/linear">
-        <img className="containerImage referenceIcon" src="https://assets.appsmith.com/linear2.png" alt="Linear"/>
+        <img className="containerImage referenceIcon" src="https://assets.appsmith.com/linear.png" alt="Linear"/>
       </a>
     </div>
     <b><a href="/connect-data/reference/linear">Linear</a></b>
