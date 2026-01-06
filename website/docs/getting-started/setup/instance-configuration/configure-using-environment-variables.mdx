@@ -33,14 +33,14 @@ Follow these steps to configure Appsmith using environment variables for Docker-
 
 <TabItem label="Helm" value="helm">
 
-For Kubernetes installations using Helm, modify the `values.yaml` file to configure environment variables.
+For Kubernetes installations using Helm, modify the `values.yaml` file and update with Helm to configure environment variables.
 
 **Steps for Commercial Edition:**
 
-1. Navigate to your installation's root directory.
-2. Generate a `values.yaml` file:
+1. Open a shell on your Kubernetes client.
+2. Retrieve the current values from your installation and store them in a file:
     ```bash
-    helm show values appsmith-ee/appsmith > values.yaml
+    helm get values appsmith -n appsmith -o yaml > values.yaml
     ```
 3. Update parameters under the `applicationConfig` section. For instance:
     ```yaml
@@ -55,10 +55,10 @@ For Kubernetes installations using Helm, modify the `values.yaml` file to config
 ---
 **Steps for Community Edition:**
 
-1. Navigate to your installation's root directory.
-2. Generate a `values.yaml` file:
+1. Open a shell on your Kubernetes client.
+2. Retrieve the current values from your installation and store them in a file:
     ```bash
-    helm show values appsmith/appsmith > values.yaml
+    helm get values appsmith -n appsmith -o yaml > values.yaml
     ```
 3. Modify parameters under the `applicationConfig` section. For example, to set the sender email address:
     ```yaml
