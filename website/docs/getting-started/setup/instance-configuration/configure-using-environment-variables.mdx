@@ -42,7 +42,7 @@ For Kubernetes installations using Helm, modify the `values.yaml` file and updat
     ```bash
     helm get values appsmith -n appsmith -o yaml > values.yaml
     ```
-3. Update parameters under the `applicationConfig` section. For instance:
+3. Modify parameters under the `applicationConfig` section in the `values.yaml` file. For example, to set the sender email address:
     ```yaml
     applicationConfig:
       #highlight-next-line
@@ -60,7 +60,7 @@ For Kubernetes installations using Helm, modify the `values.yaml` file and updat
     ```bash
     helm get values appsmith -n appsmith -o yaml > values.yaml
     ```
-3. Modify parameters under the `applicationConfig` section. For example, to set the sender email address:
+3. Modify parameters under the `applicationConfig` section in the `values.yaml` file. For example, to set the sender email address:
     ```yaml
     applicationConfig:
       #highlight-next-line
