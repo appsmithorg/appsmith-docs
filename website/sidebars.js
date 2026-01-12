@@ -31,15 +31,12 @@ const sidebars = {
         "training/session-6",
       ],
     },
-    {
-      type: "category",
-      label: "Appsmith Training Day 5",
-      collapsed: false,
-      items: [
-        "training/day-5-agenda",
-        "training/session-8",
-      ],
-    }, //training end
+    // {
+    //   type: "category",
+    //   label: "Appsmith Training Day 5",
+    //   collapsed: false,
+    //   items: ["training/day-5-agenda", "training/session-8"],
+    // }, //training end
   ],
 };
 
