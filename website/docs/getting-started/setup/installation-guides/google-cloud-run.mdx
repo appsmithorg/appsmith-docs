@@ -30,6 +30,7 @@ Before you install Appsmith, it's important to set up the below prerequisites:
 2. Enable billing for your Google Cloud project.
 3. Enable the [Cloud Filestore API](https://console.cloud.google.com/marketplace/product/google/file.googleapis.com).
 4. Enable the [Serverless VPC Access API](https://console.cloud.google.com/marketplace/details/google/vpcaccess.googleapis.com).
+5. Choose a single region for your deployment and keep all resources (Cloud Run service, Filestore instance, and Serverless VPC Access connector) in that same region.
 
 ### Create a Filestore instance
 
@@ -102,17 +103,23 @@ Follow these steps to install Appsmith on Google Cloud Run:
      - Set the memory size to **4 GiB** in the **Memory** dropdown list.
      - Set the CPU limit as **2** in the **CPU** dropdown list.
    - Under **Execution environment**, select **Second generation**.
+  - Under **Volume mounts**, click **Add volume mount**:
+    - Set **Mount path** to `/appsmith-stacks`.
+    - Set **Volume name** to `appsmith-stacks`.
+  - Under **Volumes**, click **Add volume**:
+    - Set **Volume name** to `appsmith-stacks`.
+    - Select **NFS** and enter the **IP address** you noted in the Filestore [Prerequisites](#prerequisites).
+    - Set **Path** to `/<FILE_SHARE_NAME>` (replace with the file share name you created). This mounts Filestore to `/appsmith-stacks` inside the container, following the Cloud Run NFS volume mount guidance ([learn more](https://docs.cloud.google.com/run/docs/configuring/services/nfs-volume-mounts)).
    - Under **Environment variables**, click **Add Variable** to add each variable in the **Name** and **Value** text boxes as shown below: <br/>
 
    | Name                                   | Value                                                                                                                                                                                                                                                 |
    | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-   | **FILESTORE_IP_ADDRESS**               | The IP address you noted down in step for creating a Filestore instance in [Prerequisites](#prerequisites).                                                                                                                                           |
-   | **FILE_SHARE_NAME**                    | The file share name you noted down in step for creating a Filestore instance in [Prerequisites](#prerequisites).                                                                                                                                      |
-   | **APPSMITH_DB_URL**               | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]` |
+   | **APPSMITH_DB_URL**                    | Specify the connection string of the external MongoDB instance required for Appsmith data storage. <br/><br/> <i>Format</i>: <br/>`mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/?authSource=<DATABASE_NAME>&replicaSet=<REPLICA_SET_NAME>[&options]` |
    | **APPSMITH_ENCRYPTION_SALT**           | Specify an encryption salt to encrypt values in the database.                                                                                                                                                                                         |
    | **APPSMITH_ENCRYPTION_PASSWORD**       | Specify an encryption password to encrypt values in the database.                                                                                                                                                                                     |
    | **APPSMITH_ENABLE_EMBEDDED_DB**        | `0`                                                                                                                                                                                                                                                   |
    | **APPSMITH_DISABLE_EMBEDDED_KEYCLOAK** | `1`                                                                                                                                                                                                                                                   |
+   | **HOSTNAME**                           | `cloudrun`                                                                                                                                                                                                                                            |
 
 10. Click the Networking tab.
     - In the VPC Network field, choose the name of the Serverless VPC Access connector you created in the preceding section.
