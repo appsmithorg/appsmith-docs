@@ -21,6 +21,8 @@ types
 test-website
 test-website-in-workspace
 
+.cursor/tmp/*
+
 packages/create-docusaurus/lib/
 packages/lqip-loader/lib/
 packages/docusaurus/lib/
