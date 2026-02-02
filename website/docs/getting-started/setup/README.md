@@ -13,7 +13,7 @@ You can host and manage Appsmith on your local machine or server, giving you com
 Appsmith works best on AMD and ARM architectures on AWS, Azure, GCP, and DigitalOcean. By default, Kubernetes and Docker Compose are recommended methods to run Appsmith. The current certified and recommended configurations are:
 
 - Two virtual CPUs
-- 4 GB of memory
+- 8 GB of memory
 
 You can follow one of the below guides to deploy Appsmith on the platform you prefer:
 

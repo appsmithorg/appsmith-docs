@@ -1,4 +1,23 @@
-# Module Instance
+---
+description: Learn about the Modules feature in Appsmith.
+title: Code Module Instance
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Code Module Instance</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 
 
@@ -6,12 +25,6 @@ When you incorporate a module from the package into your application, you create
 
 This page provides information about the module settings and properties available within the app, enabling you to configure the query and JS modules.
 
-
-<ZoomImage
-  src="/img/modules-diagram.png" 
-  alt=""
-  caption=""
-/>
 
 
 <ZoomImage

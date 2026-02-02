@@ -157,6 +157,7 @@ const sidebars = {
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
+                'getting-started/setup/instance-configuration/external-postgresql-rds',
                 'getting-started/setup/instance-configuration/external-redis',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
@@ -175,7 +176,20 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/appsmithctl',
                 'getting-started/setup/instance-configuration/file-size-limit',
-                'getting-started/setup/instance-configuration/admin-settings',
+                {
+  type: 'category',
+  label: 'Admin Settings',
+  link: {
+    type: 'doc',
+    id: 'getting-started/setup/instance-configuration/admin-settings', // Landing page
+  },
+  items: [
+    'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
+    'getting-started/setup/instance-configuration/user-management',   // User Management
+    'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
+  ],
+},
+
                 'getting-started/setup/environment-variables',
                 'getting-started/setup/instance-management/api-reference',
               ],
@@ -205,6 +219,7 @@ const sidebars = {
               type: 'category',
               label: 'Upgrade Helm Versions',
               items: [
+                'getting-started/setup/instance-management/bitnami-image-deprecation',
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-be-chart',
                 'getting-started/setup/installation-guides/kubernetes/migrate-to-helm-chart-v2-ce',
               ],
@@ -320,9 +335,13 @@ const sidebars = {
                   type: 'category',
                   label: 'SaaS Integrations',
                   items: [
+                    'connect-data/reference/amplitude',
                     'connect-data/reference/asana',
                     'connect-data/reference/aws-lambda',
-                     'connect-data/reference/confluence',
+                    'connect-data/reference/clickup',
+                    'connect-data/reference/confluence',
+                    'connect-data/reference/dropbox',
+                    'connect-data/reference/freshdesk',
                     'connect-data/reference/gmail',
                     'connect-data/reference/google-docs',
                     'connect-data/reference/querying-google-sheets',
@@ -331,11 +350,16 @@ const sidebars = {
                     'connect-data/reference/github',
                     'connect-data/reference/hubspot',
                     'connect-data/reference/jira',
+                    'connect-data/reference/linear',
+                    'connect-data/reference/linkedin',
+                    'connect-data/reference/mixpanel',
+                    'connect-data/reference/monday.com',
                     'connect-data/reference/notion',
                     'connect-data/reference/outlook',
                     'connect-data/reference/salesforce',
                      'connect-data/reference/slack',
                       'connect-data/reference/stripe',
+                    'connect-data/reference/trello',
                     'connect-data/reference/twilio',
                     'connect-data/reference/zendesk',
                     //'connect-data/reference/zoom',
@@ -440,6 +464,7 @@ const sidebars = {
 
               ],
             },
+            'build-apps/how-to-guides/configure-static-app-urls',
             'build-apps/how-to-guides/Create-Custom-Widgets-Using-Iframe',
             'build-apps/how-to-guides/custom-widget-using-vanillajs',
             `build-apps/how-to-guides/download-table-data`,
@@ -759,7 +784,8 @@ const sidebars = {
             label: 'Tutorial',
             items: [
               'packages/tutorial/query-module',
-              'packages/tutorial/js-module'
+              'packages/tutorial/js-module',
+              'packages/tutorial/ui-module'
             ],
           },
           {
@@ -771,15 +797,32 @@ const sidebars = {
               'packages/how-to-guides/use-query-inside-js-module',],
           },
           {
-            type: 'category',
-            collapsed: false,
-            label: 'Reference',
-            items: [
-              'packages/reference/package',
-              'packages/reference/query-module',
-              'packages/reference/versioning'
-            ],
-          }
+  type: 'category',
+  collapsed: false,
+  label: 'Reference',
+  items: [
+    'packages/reference/versioning', // Package Version Control
+    'packages/reference/best-practices-git-packages',
+    {
+      type: 'category',
+      label: 'Code Packages',
+      collapsed: true,
+      items: [
+        'packages/reference/package',        // Module
+        'packages/reference/query-module',   // Module Instance
+      ],
+    },
+    {
+      type: 'category',
+      label: 'UI Packages',
+      collapsed: true,
+      items: [
+        'packages/reference/ui-module',          // UI Module
+        'packages/reference/ui-module-instance', // UI Module Instance
+      ],
+    },
+  ],
+}
         ]
       }, //module end
   

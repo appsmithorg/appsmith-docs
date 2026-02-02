@@ -101,7 +101,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://app.appsmith.com',
+            href: 'https://login.appsmith.com',
             label: 'Try Appsmith',
             position: 'right'
           },
