@@ -10,12 +10,7 @@ The Run behavior property determines when your query executes.
 <img
   src="/img/query-settings.png"
   alt="Query Settings"
-  style={{
-    maxHeight: "600px",
-    width: "auto",
-    display: "block",
-    margin: "0 auto"
-  }}
+  style={{ maxHeight: "600px", width: "auto", display: "block", margin: "0 auto" }}
 />
 <p style={{ textAlign: "center", fontSize: "0.9rem", color: "#666" }}>
   Query Settings
@@ -31,7 +26,7 @@ Queries execute only when explicitly triggered. They do not run automatically on
 
 You can trigger the query using:
 
-- Widget events (e.g., **onClick**, **onOptionChange**).
+- Widget events (for example **onClick**, **onOptionChange**).
 - JavaScript function calls using `.run()`.
 - The **Run** button in the query editor.
 
@@ -71,8 +66,8 @@ You do not need to configure any widget actions or write custom JavaScript to tr
 
 Queries with Automatic behavior execute whenever a variable they depend on changes. This includes values from:
 
-- Widget properties (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
-- JavaScript object variables or function outputs (e.g., `{{JSObject1.value}}`, `{{JSObject1.function.data}}`).
+- Widget properties (for example `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
+- JavaScript object variables or function outputs (for example `{{JSObject1.value}}`, `{{JSObject1.function.data}}`).
 
 When any of these values change, the query re-executes automatically. You do not need to use event handlers like **onTextChanged** or **onOptionChanged**.
 

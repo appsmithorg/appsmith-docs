@@ -8,12 +8,7 @@ Each JavaScript function supports one of the following Run behavior modes:
 <img
   src="/img/js-settings-mode.png"
   alt="JavaScript Settings Mode"
-  style={{
-    maxHeight: "600px",
-    width: "auto",
-    display: "block",
-    margin: "0 auto"
-  }}
+  style={{ maxHeight: "600px", width: "auto", display: "block", margin: "0 auto" }}
 />
 <p style={{ textAlign: "center", fontSize: "0.9rem", color: "#666" }}>
   JavaScript Settings
@@ -29,7 +24,7 @@ The function executes only when explicitly invoked. It will not run on page load
 You can trigger the function using:
 
 - Widget events (e.g., **onClick**).
-- JavaScript calls using `.run()`.
+- JavaScript calls using `JSObjectName.functionName()`.
 - The **Run** button in the editor.
 
 This mode provides full control over execution timing and is best suited for user-driven actions.
