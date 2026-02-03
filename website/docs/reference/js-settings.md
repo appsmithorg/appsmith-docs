@@ -5,11 +5,7 @@ This page provides information on the settings available for JS Objects and thei
 
 Each JavaScript function supports one of the following Run behavior modes:
 
-<img
-  src="/img/js-settings-mode.png"
-  alt="JavaScript Settings Mode"
-  style={{ maxHeight: "600px", width: "auto", display: "block", margin: "0 auto" }}
-/>
+<img src="/img/js-settings-mode.png" alt="JavaScript Settings Mode" style={{ maxHeight: "600px", width: "auto", display: "block", margin: "0 auto" }} />
 <p style={{ textAlign: "center", fontSize: "0.9rem", color: "#666" }}>
   JavaScript Settings
 </p>
