@@ -23,7 +23,7 @@ The function executes only when explicitly invoked. It will not run on page load
 
 You can trigger the function using:
 
-- Widget events (e.g., **onClick**).
+- Widget events (for example **onClick**).
 - JavaScript calls using `JSObjectName.functionName()`.
 - The **Run** button in the editor.
 
@@ -73,7 +73,7 @@ This eliminates the need to manually bind the function to widget events such as 
 
 The function runs each time:
 
-- A referenced widget value changes (e.g., `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
+- A referenced widget value changes (for example `{{Input1.text}}`, `{{Select1.selectedOptionValue}}`).
 - A dependent JavaScript object or function result is updated.
 - A function has a default parameter set to a reactive value (like `Input1.text`), and that value changes.
 
