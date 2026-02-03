@@ -5,7 +5,7 @@ toc_max_heading_level: 2
 
 # Cancel Subscription or Downgrade to Free Plan
 
-This page provides instructions on how to cancel your subscription or downgrade your Appsmith plan to the Free tier.
+This page provides instructions on how to cancel your subscription or downgrade your Appsmith plan to the Free tier. Canceling a subscription stops billing through Stripe, while removing a license key downgrades a specific Appsmith instance to the Free plan. Depending on your situation, you may need to do one or both actions.
 
 
 ## Before you begin
@@ -23,11 +23,33 @@ Canceling your subscription or downgrading your plan will result in the loss of 
 * **Ask AI** - Access to Ask AI for generating SQL queries and JavaScript code within the editor will no longer be available.
 * **Sending messages from the parent app to Appsmith** - Any interactions between the parent app and Appsmith will no longer be available after downgrading. You may have to change your application code if your application captures or interacts with messages from the parent application.
 
-## Prerequisites
+## Cancel subscription
+
+Follow these steps to cancel a paid subscription.
+
+### Self-hosted plans
+
+1. Log in to [customer.appsmith.com](https://customer.appsmith.com/).
+2. Open the **Billing** menu.
+3. Click **Visit Stripe dashboard**.
+4. In Stripe, select **Cancel subscription**, then confirm the cancellation.
+
+### Business Cloud plans
+
+You must be the organization owner to open the Admin Settings (gear icon) in Business Cloud.
+
+1. Log in to [login.appsmith.com](https://login.appsmith.com/) with your organization workspace.
+2. Click the gear icon in the top-right corner and choose **Billing**.
+3. Click **Visit Stripe dashboard**.
+4. In Stripe, select **Cancel subscription**, then confirm the cancellation.
+
+## Remove license key (downgrade an instance)
+
+Removing a license key downgrades your Appsmith instance to the Free plan. This does not automatically cancel your paid subscription—you must also cancel the subscription if you want billing to stop.
+
+### Prerequisites
 
 * You can access **Admin Settings** on the Appsmith instance.
-
-## Remove license key
 
 To downgrade to a free plan, you have to remove your license key in your Appsmith instance. Follow these steps to remove your license key:
 

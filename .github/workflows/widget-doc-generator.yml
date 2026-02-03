@@ -1,0 +1,152 @@
+name: Widget Doc Generator
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'  # Every Monday at 03:00 UTC
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 'Branch to create PR against'
+        required: false
+        default: 'docs-staging'
+
+env:
+  TARGET_BRANCH: ${{ github.event.inputs.target_branch || 'docs-staging' }}
+
+jobs:
+  generate_widget_docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout appsmith-docs
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
+        ref: ${{ env.TARGET_BRANCH }}
+        fetch-depth: 0
+
+    - name: Checkout appsmith (release branch)
+      uses: actions/checkout@v4
+      with:
+        repository: appsmithorg/appsmith
+        token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
+        ref: release
+        path: appsmith
+        fetch-depth: 10
+
+    - name: Find last committed widget file
+      id: latest-widget
+      run: |
+        cd appsmith
+
+        LAST_COMMIT=$(git log -n 1 --pretty=format:%H -- app/client/src/widgets/*/widget/index.tsx)
+
+        if [ -z "$LAST_COMMIT" ]; then
+          echo "No recent widget/index.tsx commit found. Exiting."
+          exit 0
+        fi
+
+        LAST_FILE=$(git diff-tree --no-commit-id --name-only -r $LAST_COMMIT | grep 'app/client/src/widgets/.*/widget/index.tsx' | head -n 1)
+
+        if [ -z "$LAST_FILE" ]; then
+          echo "No index.tsx file found in that commit. Exiting."
+          exit 0
+        fi
+
+        echo "✅ Found: $LAST_FILE"
+        echo "widget_file_path=$LAST_FILE" >> $GITHUB_OUTPUT
+        echo "changes_found=true" >> $GITHUB_ENV
+
+    - name: Extract and generate documentation
+      if: env.changes_found == 'true'
+      run: |
+        mkdir -p website/docs/widgets
+        WIDGET_PATH=${{ steps.latest-widget.outputs.widget_file_path }}
+        WIDGET_NAME=$(basename "$(dirname "$(dirname "$WIDGET_PATH")")")
+
+        echo "📦 Processing $WIDGET_NAME from $WIDGET_PATH"
+        cp "appsmith/$WIDGET_PATH" widget_input.tsx
+
+        SYSTEM_PROMPT=$(cat .github/prompts/extract_prompt_widget.txt || echo "Extract important widget info.")
+        USER_CONTENT=$(cat widget_input.tsx)
+
+        # Prompt 1: extract
+        PAYLOAD1=$(jq -n \
+          --arg system "$SYSTEM_PROMPT" \
+          --arg user "$USER_CONTENT" \
+          '{
+            model: "gpt-4-1106-preview",
+            messages: [
+              {"role": "system", "content": $system},
+              {"role": "user", "content": $user}
+            ],
+            max_tokens: 2000,
+            temperature: 0
+          }')
+
+        RESPONSE1=$(curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD1")
+
+        if echo "$RESPONSE1" | jq -e '.error' > /dev/null; then
+          echo "❌ Error in extract step"
+          echo "$RESPONSE1" | jq .
+          exit 1
+        fi
+
+        echo "$RESPONSE1" | jq -r '.choices[0].message.content' > extracted.md
+
+        # Prompt 2: generate markdown
+        SYSTEM_PROMPT=$(cat .github/prompts/generate_prompt_widget.txt || echo "Generate widget markdown documentation.")
+        EXTRACTED_CONTENT=$(cat extracted.md)
+
+        PAYLOAD2=$(jq -n \
+          --arg system "$SYSTEM_PROMPT" \
+          --arg user "$EXTRACTED_CONTENT" \
+          '{
+            model: "gpt-4-1106-preview",
+            messages: [
+              {"role": "system", "content": $system},
+              {"role": "user", "content": $user}
+            ],
+            max_tokens: 4000,
+            temperature: 0.3
+          }')
+
+        RESPONSE2=$(curl -s https://api.openai.com/v1/chat/completions \
+          -H "Authorization: Bearer ${{ secrets.OPENAI_API_KEY }}" \
+          -H "Content-Type: application/json" \
+          -d "$PAYLOAD2")
+
+        if echo "$RESPONSE2" | jq -e '.error' > /dev/null; then
+          echo "❌ Error in generate step"
+          echo "$RESPONSE2" | jq .
+          exit 1
+        fi
+
+        echo "$RESPONSE2" | jq -r '.choices[0].message.content' > "website/docs/widgets/${WIDGET_NAME}.md"
+        echo "$WIDGET_PATH" > processed_widget.txt
+        echo "content_generated=true" >> $GITHUB_ENV
+
+        rm -f widget_input.tsx extracted.md
+
+    - name: Commit and create PR
+      if: env.content_generated == 'true'
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN_WIDGETS }}
+        title: "docs: update widget docs for ${{ env.TARGET_BRANCH }}"
+        commit-message: |
+          docs: auto-generated widget documentation
+          Generated markdown for latest widget.
+        branch: "widgets-update/${{ env.TARGET_BRANCH }}-${{ github.run_id }}"
+        base: ${{ env.TARGET_BRANCH }}
+        add-paths: |
+          website/docs/widgets/
+        body: |
+          🛠 Auto-generated docs for latest widget from `appsmithorg/appsmith`.
+
+          **Branch:** `${{ env.TARGET_BRANCH }}`  
+          **Widget File:**  
+          $(cat processed_widget.txt | sed 's/^/- /')

@@ -16,6 +16,8 @@ const AISearchModal = ({ show, closeModal }) => {
       return () => document.removeEventListener('mousedown', checkIfClickedOutside);
     }
   }, [show, closeModal]);
+  // https://demo.appsmithai.com/app/docs-agent/page-686bba24341eb84314a2e48e
+  
 
   return (
     <div className={`ai-search-modal ${show ? 'show' : ''}`}>

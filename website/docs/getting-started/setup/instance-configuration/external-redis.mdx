@@ -5,7 +5,7 @@ toc_max_heading_level: 2
 
 # Configure External Redis
 
-Appsmith runs an embedded Redis instance by default for session management and caching. You may choose to switch to an external Redis instance to enhance performance, scalability, and reliability. This page provides instructions on setting up an external Redis instance and how to connect it to your Appsmith instance.
+Appsmith relies on MongoDB, PostgreSQL and Redis. It uses Redis for session management and caching. By default in a single server deployment, it runs an embeded instance of each within the container. You may choose to switch to an external Redis instance to enhance performance, scalability, and reliability. This page provides instructions on setting up an external Redis instance and how to connect it to your Appsmith instance.
 
 ## Prerequisites
 
@@ -19,7 +19,7 @@ Before configuring an external Redis instance for your Appsmith instance, ensure
 Follow these steps to set up an external Redis instance for Appsmith. If you already have a Redis instance, skip this step and move to [Connect Appsmith to external Redis](#connect-appsmith-to-external-redis) section.
 
 1. Create a Redis instance:
-      - **Self-hosted Redis**: Install and configure Redis on your server using the [Redis installation guide](https://redis.io/docs/getting-started/installation/).  
+      - **Self-hosted Redis**: Install and configure Redis on your server using the [Redis installation guide](https://redis.io/docs/latest/get-started/).  
 
       - **Cloud-hosted Redis**: Set up a managed Redis instance using a cloud provider such as AWS ElastiCache, Redis Cloud, or Azure Cache for Redis.  
 

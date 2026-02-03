@@ -7,7 +7,7 @@ This page shows how to build an Appsmith app to monitor other Appsmith applicati
 
 ## Prerequisites
 
-- Appsmith instance with access to [Admin setting](/getting-started/setup/instance-configuration#admin-settings).
+- Appsmith instance with access to [Admin setting](/getting-started/setup/instance-configuration/admin-settings).
 - Access to the MongoDB URI, either embedded with Appsmith or external.
 
 
@@ -16,47 +16,44 @@ This page shows how to build an Appsmith app to monitor other Appsmith applicati
 Follow these steps to connect your MongoDB and create queries to fetch usage data:
 
 
-<dd>
-
-<div style={{ position: "relative", paddingBottom: "calc(50.52% + 41px)", height: 0, width: "100%" }}>
-  <iframe
-    src="https://demo.arcade.software/VORqZSvYo0RPYVSq46Li?embed"
-    frameBorder="0"
-    loading="lazy"
-    webkitAllowFullScreen
-    mozAllowFullScreen
-    allowFullScreen
-    allow="fullscreen"
-    style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-    title="Appsmith | Connect Data"
-  />
-</div>
-
-</dd>
+1. Open the **Admin Settings**, click the settings icon in the top-right corner of your workspace. If the icon is not visible, ensure you are signed in with an administrator account.
 
 
-1. In Appsmith, open the **Admin settings** page from the top-right corner.
-
-2. Open the Advanced tab, and copy the **MongoDB URI**. If the URI is not available, open the environment variable file (`docker.env` for Docker or `values.yaml` for Kubernetes) and copy the `APPSMITH_DB_URL`. The URI looks like:
-
-
-
+2. In **Admin Settings**, go to the **Configuration** section and copy the value of `APPSMITH_DB_URL`.
 
 <dd>
+
+If the URI is not visible, open your environment file (`docker.env` for Docker or `values.yaml` for Kubernetes) and copy the value of `APPSMITH_DB_URL`.
+
 
 ```js
 mongodb://appsmith:Oabc123@localhost:27017/appsmith
 ```
 
+<ZoomImage
+  src="/img/mongo-db-new-settings.png" 
+  alt=""
+  caption=""
+/>
+
 
 </dd>
 
 
-2. Create a new MongoDB datasource using the MongoDB URI:
+3. Open your Appsmith application and navigate to the **Datasource** section. Click **+ Create New** and select **MongoDB**.
+
 
 <dd>
 
 - For external MongoDB, use the provided URI or configure it according to your MongoDB setup.
+
+<dd>
+
+```js
+mongodb+srv://username:password@cluster.mongodb.net/appsmith
+```
+
+</dd>
 
 - For embedded MongoDB (internal), append `?authsource=appsmith` to the end of the URI, like this:
 
@@ -73,10 +70,11 @@ For more information on how to configure the MongoDB datasource, see [MongoDB](/
 
 </dd>
 
-3. Create a new query to fetch logs from the `auditlog` **Collection** and configure the parameters as needed. 
-
+4. Create a new query using the connected MongoDB datasource. Select the `auditlog` collection to retrieve event data from your Appsmith instance.
 
 <dd>
+
+You can configure the query using filters to track specific types of activity such as:
 
 - For application lifecycle events, use ` application.created`, `application.updated`, `application.deleted`, and `application.deployed` to track when applications are created, modified, deleted, or deployed.
 
@@ -134,7 +132,7 @@ For more information on how logs are stored, see [Log contents](/advanced-concep
 </dd>
 
 
-4. Drag a Chart widget and set its **Series Data** property to display the data, like:
+5. Drag a Chart widget and set its **Series Data** property to display the data, like:
 
 <dd>
 

@@ -1,0 +1,118 @@
+---
+description: Learn how to set up an external PostgreSQL instance for your Appsmith application to manage session storage and caching effectively.
+toc_max_heading_level: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Configure External PostgreSQL (AWS RDS)
+
+Appsmith relies on MongoDB, PostgreSQL and Redis. It uses PostgreSQL for SSO and workflows. By default in a single server deployment, it runs an embeded instance of each within the container. You can also switch to an external PostgreSQL instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external PostgreSQL instance on AWS RDS and how to connect it to your Appsmith instance.
+
+## Prerequisites
+
+Before configuring an external PostgreSQL instance for your Appsmith deployment, ensure the following:
+
+- This guide applies only to **self-hosted Appsmith** instances. If you haven't installed Appsmith yet, refer to the [installation guides](/getting-started/setup/installation-guides).
+- You have access to an AWS account with permissions to create and manage RDS resources.
+- You have access to change environment variables on your Appsmith deployment.
+
+## Create PostgreSQL instance on AWS RDS
+
+Follow these steps to set up a PostgreSQL instance on AWS RDS for Appsmith. If you already have a PostgreSQL instance, skip to [Connect Appsmith to external PostgreSQL](#connect-appsmith-to-external-postgresql).
+
+1. **Create an RDS PostgreSQL instance:**
+   - Sign in to the [AWS Management Console](https://console.aws.amazon.com/).
+   - Navigate to **Aurora and RDS > Databases** and click **Create database**.
+   - Choose **Standard Create** and select **PostgreSQL** as the engine.
+   - Choose the latest 16.x option for engine version
+   - Set a master username and choose the self-managed credentials management option. Save these credentials for later.
+   - For most deployments, you can start with `db.t4g.small` as the instance type and scale it as needed. We recommend gp3 storage type, allocating at least 20GB of storage, and checking the box "Enable storage autoscaling" allowing up to 100GB.
+   - In the connectivity section, ensure the instance is in the correct VPC and subnets. Configure security groups to allow inbound connections from your Appsmith containers.
+   - Complete the remaining configuration as needed and launch the instance.
+
+2. **Retrieve connection details:**
+   - After the instance is available, note the **endpoint** (hostname), **port** (default: 5432), **database name**, **username**, and **password**. You will need these to configure Appsmith.
+
+## Connect Appsmith to external PostgreSQL
+
+Follow these steps to connect your Appsmith instance to the external PostgreSQL database:
+
+<Tabs queryString="current-command-type">
+
+<TabItem label="Docker" value="docker-commands">
+
+1. Navigate to the directory containing the `docker-compose.yml` file.
+
+2. Add or update the following environment variables with your PostgreSQL connection details:
+
+    ```yaml
+    APPSMITH_KEYCLOAK_DB_URL: postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
+    SQL_TLS_ENABLED: true
+    SQL_TLS_DISABLE_HOST_VERIFICATION: true
+    SQL_TLS: true
+    ```
+
+:::note
+The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Temporal, which can have issues connecting to PostgreSQL over TLS on both Azure Database for PostgreSQL and AWS RDS. As an alternative, you can disable `rds.force_ssl` in your RDS parameter group, but this is less secure than disabling host verification.
+:::
+
+3. Update the Appsmith server configuration to apply the changes:
+
+    ```bash
+    docker-compose down && docker-compose up -d
+    ```
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes-commands">
+
+1. Navigate to the directory containing your `values.yaml` file for you deployment.
+
+2. Add or update the following environment variables with your PostgreSQL connection details:
+
+    ```yaml
+    applicationConfig:
+      APPSMITH_KEYCLOAK_DB_URL=postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
+      SQL_TLS_ENABLED: true
+      SQL_TLS_DISABLE_HOST_VERIFICATION: true
+      SQL_TLS: true
+    ```
+
+:::note
+The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Temporal, which can have issues connecting to PostgreSQL over TLS on both Azure Database for PostgreSQL and AWS RDS. As an alternative, you can disable `rds.force_ssl` in your RDS parameter group, but this is less secure than disabling host verification.
+:::
+
+3. Apply the environment variables:
+
+    ```bash
+    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+    ```
+
+4. Restart the deployment:
+
+    ```bash
+    # if using a statefulset:
+    kubectl rollout restart statefulset/appsmith-ee -n appsmith-ee
+    # if using a deployment:
+    kubectl rollout restart deployment/appsmith-ee -n appsmith-ee
+    ```
+
+</TabItem>
+
+</Tabs>
+
+## Troubleshooting
+
+If you face connection issues:
+- Double-check the RDS endpoint, port, database name, username, and password.
+- Ensure the RDS instance is accessible from your Appsmith server (check VPC, subnet, and security group settings).
+- Confirm that the PostgreSQL instance is accepting connections from the Appsmith server’s IP address.
+- Verify that the PostgreSQL user has the necessary privileges.
+
+If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.
+
+## See also
+
+- [Configure External MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis): Learn how to set up an external MongoDB instance.

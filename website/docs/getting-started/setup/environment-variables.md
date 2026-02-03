@@ -127,6 +127,60 @@ With Appsmith, you can manage user access and authentication methods in your ins
 Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
 </dd>
 
+### Security
+
+Configure security settings to protect your Appsmith instance against account takeover attacks and ensure secure authentication flows.
+
+##### `APPSMITH_BASE_URL`
+
+<dd>
+
+Specifies the base URL of your Appsmith instance. When configured, this variable enables Origin header validation for password reset and email verification requests, preventing account takeover attacks.
+
+When `APPSMITH_BASE_URL` is set, the system validates that the `Origin` header in password reset and email verification requests matches the configured base URL. Requests with mismatched origins are rejected, preventing attackers from:
+
+- Using arbitrary Origin headers to redirect reset links to malicious domains
+- Exploiting the password reset flow to send tokens to attacker-controlled endpoints
+- Performing account takeover attacks through email verification redirects
+
+**Configuration:**
+
+You can configure this variable either:
+
+- **Via Admin Settings UI**: Navigate to **Settings → Configuration → Appsmith Base URL**
+- **Via environment variable**: Set the `APPSMITH_BASE_URL` environment variable in your configuration file
+
+**Example:**
+
+```yaml
+APPSMITH_BASE_URL=https://appsmith.yourdomain.com
+```
+
+**Backward compatibility:**
+
+If `APPSMITH_BASE_URL` is not set, the system maintains backward compatibility by skipping validation, ensuring existing deployments continue to function without changes. However, it is strongly recommended to set this variable to enable protection against account takeover attempts.
+
+**Recommendation:**
+
+We strongly recommend setting `APPSMITH_BASE_URL` in your environment configuration to enable this protection. This ensures that sensitive authentication flows are restricted to your trusted domain, significantly reducing the attack surface for account takeover attempts.
+
+</dd>
+
+##### `APPSMITH_RATE_LIMIT`
+
+<dd>
+
+Defines the maximum number of requests each client can make to the Appsmith backend per second. The default value is `100`, which helps guard the platform against abusive traffic while keeping normal usage unaffected. Set this variable to any positive integer to adjust the cap based on your infrastructure capacity, or set it to `disabled` to turn rate limiting off entirely.
+
+```yaml
+# Increase the limit
+APPSMITH_RATE_LIMIT=250
+
+# Disable rate limiting
+APPSMITH_RATE_LIMIT=disabled
+```
+
+</dd>
 
 ### Email server
 
@@ -239,7 +293,9 @@ For more information about how to URL encode your username and password, see [En
 ##### `APPSMITH_KEYCLOAK_DB_URL`
 
 <dd>
-Specifies the URL for the external PostgreSQL database (RDS instance) to be used by Keycloak. This URL is critical for establishing a secure connection to the database and must be in the format: `jdbc:postgresql://<hostname>:<port>/<database_name>`. 
+
+Specifies the URL for the external PostgreSQL database (e.g., an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
+
 </dd>
 
 ##### `APPSMITH_KEYCLOAK_DB_DRIVER`
@@ -248,17 +304,6 @@ Specifies the URL for the external PostgreSQL database (RDS instance) to be used
 Defines the database driver that Keycloak will use to interact with the external PostgreSQL database. For PostgreSQL databases, this value must be set to `postgresql`. The driver acts as an intermediary, facilitating smooth and efficient communication between Keycloak and the database.
 </dd>
 
-##### `APPSMITH_KEYCLOAK_DB_USERNAME`
-
-<dd>
-Sets the username required for authenticating with the external PostgreSQL database. This credential ensures secure access and grants Keycloak the necessary permissions to manage its database operations.
-</dd>
-
-##### `APPSMITH_KEYCLOAK_DB_PASSWORD`
-
-<dd>
-Specifies the password associated with the database username. This sensitive information is used to authenticate Keycloak's connection to the PostgreSQL database and must be kept secure to prevent unauthorized access.
-</dd>
 
 ##### `APPSMITH_REDIS_URL`
 
@@ -465,6 +510,14 @@ Specify a `5-value` cron expression to define the schedule for automatic backups
             #highlight-next-line
             APPSMITH_BACKUP_CRON_EXPRESSION="0 0 * * *"
             ```
+
+</dd>
+
+##### `APPSMITH_BACKUP_ARCHIVE_LIMIT`
+
+<dd>
+
+Controls how many recent backup archives are retained. Backups use a count-based retention system (not time-based): each run creates a new timestamped file in `/appsmith-stacks/data/backup/`, and after every successful backup the cleanup process prunes the oldest files if the total exceeds this limit. The default is `4`, ensuring storage does not grow unbounded while keeping the most recent backup history. Backups are never overwritten; older files are simply deleted once the limit is surpassed.
 
 </dd>
 

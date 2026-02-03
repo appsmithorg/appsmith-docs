@@ -1,12 +1,14 @@
 .ai-search-modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent background */
+  z-index: 9999;
 }
 
 .ai-search-modal-content {
@@ -472,18 +474,30 @@ h5 {
   }
 }
 
-.ai-search-modal-content.no-padding {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw; /* Reduced from 90% for tighter layout */
-  max-width: 960px;
-  height: 85vh;
-  background: #fff;
-  padding: 0;
-  margin: 0;
-  border: none;
-  border-radius: 6px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+
+.ai-search-modal.show {
+  display: flex;
+}
+
+.ai-search-modal-content {
+  width: 90%;
+  max-width: 900px;
+  height: 80%;
+  background-color: white;
+  border-radius: 16px; /* 👈 adds round corners */
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+
+.ai-search-modal-content {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.ai-search-modal.show .ai-search-modal-content {
+  transform: translateY(0);
+  opacity: 1;
 }

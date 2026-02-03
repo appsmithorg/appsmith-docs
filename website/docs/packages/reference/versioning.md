@@ -1,4 +1,23 @@
-# Package Version Control 
+---
+description: Learn about the Modules feature in Appsmith.
+title: Package Version Control 
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Package Version Control</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
 
 This page provides information about versioning and tagging in Packages. You can connect a Package to any Git remote repository, similar to applications. When a Package is Git-connected, you can commit changes, merge branches, and create tagged releases.
 

@@ -5,7 +5,7 @@ toc_max_heading_level: 2
 
 # Configure External MongoDB
 
-Appsmith runs embedded instances of MongoDB and Redis. It uses MongoDB for data storage. You can also switch to an external MongoDB instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external MongoDB instance and how to connect it to your Appsmith instance.
+Appsmith relies on MongoDB, PostgreSQL and Redis. It uses MongoDB for most data storage. By default in a single server deployment, it runs an embeded instance of each within the container. You can also switch to an external MongoDB instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external MongoDB instance and how to connect it to your Appsmith instance.
 
 ## Prerequisites
 
