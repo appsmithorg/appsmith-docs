@@ -63,6 +63,38 @@ To help our team resolve your issue efficiently, please include the following de
     * **Health Check:** `https://your-appsmith-installation.com/api/v1/health`
     * **Settings Overview:** `https://your-appsmith-installation.com/api/v1/consolidated-api/view`
 
+## Send Support Info
+
+Use the built-in **Send support info** option to quickly share issue context with the Appsmith support team. You can open it from either Help menu location and use the widget to capture a screenshot or a short screen recording.
+This feature is available from Appsmith version `v1.96` onward.
+
+### From the Editor help menu
+
+1. Open your app in the Editor.
+2. Click the **Help** menu.
+3. Select **Send support info**.
+
+<ZoomImage src="/img/send-support-info-editor-help-menu.png" alt="Send support info option in the Editor help menu" caption="Send support info option in the Editor help menu" />
+
+### From the Homepage header help menu
+
+1. Go to the Appsmith Homepage.
+2. Click the **Help** menu in the header.
+3. Select **Send support info**.
+
+<ZoomImage src="/img/send-support-info-homepage-help-menu.png" alt="Send support info option in the Homepage header help menu" caption="Send support info option in the Homepage header help menu" />
+
+### Support info widget
+
+After you select **Send support info**, the support widget opens and lets you choose one of the following:
+
+- Capture a screenshot
+- Record your screen
+
+Add a title and a brief description of the issue, then submit the captured details to support.
+
+<ZoomImage src="/img/send-support-info-widget.png" alt="Send support info widget with screenshot and screen recording options" caption="Send support info widget with screenshot and screen recording options"/>
+
 ## Example Ticket Template
 
 This is a sample format you can follow when opening a support request:
