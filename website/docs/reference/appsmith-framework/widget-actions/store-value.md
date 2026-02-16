@@ -10,12 +10,12 @@ The `storeValue()` function stores the data in the browser's local storage as ke
 
 <VideoEmbed host="youtube" videoId="UUvJn8oWqNs" title="Using the StoreValue Function" caption="Using the StoreValue Function"/>
 
- 
 ## Signature
 
 ```javascript
 storeValue(key: string, value: any, persist? = true): Promise
 ```
+
 ### Parameters
 
 #### key
@@ -47,7 +47,7 @@ Accepts a boolean value. The default value is `true`, which ensures the persiste
 If you want to store the text of an input widget, you can use `storeValue()` as shown below:
 
 ```javascript
-{{storeValue('email',input1.text)}}
+{{storeValue('email', input1.text)}}
 ```
 
 Here, `email` is the key where the value is stored, and `input1.text` is the value in the input widget that's saved in the storage object.
@@ -58,12 +58,12 @@ You can save any data type with `storeValue()`. The code snippet below shows how
 
 ```javascript
 
+
 export default {
 	writeToStore: () => {
 		storeValue("isActive", true) // Boolean
 		storeValue("name", "Robert") // String 
 		storeValue("pin", 9929) // Number
-	
 	}
 }
 ```
@@ -95,9 +95,16 @@ If you have stored a boolean value with the key `isActive`, you can update the b
 ```javascript
 
 export default {
-	updateStore: () => {
-		if(appsmith.store.isActive === true)
-			storeValue("isActive", false) 
+    // Pure getter: only reads from the store
+    fetch_status () {
+        return appsmith.store.isActive;
+    },
+    
+    // Setter: updates the store
+	update_status: () => {
+		if(appsmith.store.isActive === true) {
+			storeValue("isActive", false);
+        }
 	}
 }
 ```
@@ -117,14 +124,14 @@ The below example shows how to access the name of the employee that you have sto
 ```javascript
 
 //Access store using a JSobject
-    export default {
+export default {
 	userName: () => {
 		let user = appsmith.store.user.name
 		return user
 	}
 }
-//Text binding
 
+//Text binding
 {{appsmith.store.user.name}}
 ```
 
@@ -156,7 +163,7 @@ If you store value in the persistent state, it remains in the store across diffe
 If you don't define the value for persist argument, the value is saved in the persistent state by default.
 
 ```
-{{storeValue('one',Input1.text)}}
+{{storeValue('one', Input1.text)}}
 ```
 The persistent state is cleared out when the user logs out.
 
@@ -165,7 +172,7 @@ The persistent state is cleared out when the user logs out.
 You can use the session state to store the value you wish to hold until the page reloads or a user closes the window. To save data in this way, add `false` to the `persist` argument in the `storeValue()` function.
 
 ```javascript
-{{storeValue('two',Input2.text, false)}}
+{{storeValue('two', Input2.text, false)}}
 ```
 Session state (`persist=false`) is only available till the user exits the app or refreshes a page.
 
