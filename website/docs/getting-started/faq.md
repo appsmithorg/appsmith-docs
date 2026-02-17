@@ -17,7 +17,7 @@ Appsmith is open source, which means developers can easily adopt, extend and use
 
 Appsmith applications are secure by default. See [Security](/product/security) for more information. For Appsmith cloud users, data is stored and processed on servers in the US. If you want to have complete control over how your data is stored and transmitted, or need to ensure HIPAA compliance, you can [self-host Appsmith](/getting-started/setup) to ensure none of your data leaves your VPC.
 
-We appreciate any information that can help improve the security of our systems and protect users' data. We do reward security researchers who report serious and previously undiscovered issues. If you believe you have discovered a security vulnerability, please email our security team at [security@appsmith.com](mailto:security@appsmith.com) with a description of the issue and any relevant details. After reviewing the report, appropriate action is taken to address the issue.
+We appreciate any information that can help improve the security of our systems and protect users' data. If you believe you have discovered a security vulnerability, please email our security team at [security@appsmith.com](mailto:security@appsmith.com) with a description of the issue and any relevant details. After reviewing the report, appropriate action is taken to address the issue. Please note that Appsmith does not typically offer monetary rewards for security reports.
 
 ## Does Appsmith support multi-user editing?
 
