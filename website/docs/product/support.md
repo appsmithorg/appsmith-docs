@@ -45,27 +45,9 @@ Priority Support ensures expedited assistance for paid plan customers. Here's ho
 
 - **Account Manager**: Enterprise plan customers have the option to contact their dedicated Account Manager for personalized assistance.
 
-## Required Information for Support
-
-To help our team resolve your issue efficiently, please include the following details in your ticket:
-
-1. **Appsmith version**:  
-    * Open `https://your-appsmith-installation.com/info`
-    * Copy the version number from that page
-2. **Steps to Reproduce and Error Description**:
-    * **Preferred:** Record a short video showing the issue in action. You can use [Loom](https://www.loom.com/) or any other screen recording tool, and share the link in your support request
-    * **Alternative:** Provide clear screenshots and describe each step leading to the error
-3. **Logs (Self-hosted instances only)** - Logs help our team diagnose backend issues:
-    * If you're running a **self-hosted** instance of Appsmith, access your server or container host
-    * Follow the steps outlined in the [How to Get Container Logs](https://docs.appsmith.com/learning-and-resources/how-to-guides/how-to-get-container-logs) guide
-    * Attach the relevant logs to your support request
-4. **Optional but Useful API Responses** - These endpoints provide insight into the health and configuration of your Appsmith instance. Including their responses can help speed up troubleshooting:
-    * **Health Check:** `https://your-appsmith-installation.com/api/v1/health`
-    * **Settings Overview:** `https://your-appsmith-installation.com/api/v1/consolidated-api/view`
-
 ## Send Support Info
 
-Use the built-in **Send support info** option to quickly share issue context with the Appsmith support team. You can open it from either Help menu location and use the widget to capture a screenshot or a short screen recording.
+Use the built-in **Send support info** option to capture and submit issue context from inside the platform. You can open it from either Help menu location and use the widget to capture a screenshot or a short screen recording. Then open a ticket on [one of our supported channels](#support-channels) to get help.
 This feature is available from Appsmith version `v1.96` onward.
 
 ### From the Editor help menu
@@ -95,6 +77,24 @@ Add a title and a brief description of the issue, then submit the captured detai
 
 <ZoomImage src="/img/send-support-info-widget.png" alt="Send support info widget with screenshot and screen recording options" caption="Send support info widget with screenshot and screen recording options"/>
 
+## Required Information for Support
+
+To help our team resolve your issue efficiently, please include the following details in your ticket:
+
+1. **Appsmith version**:  
+    * Open `https://your-appsmith-installation.com/info`
+    * Copy the version number from that page
+2. **Steps to Reproduce and Error Description**:
+    * **Preferred:** Record a short video showing the issue in action. Use the built-in [Send support info](#send-support-info) feature, or [Loom](https://www.loom.com/) or any other screen recording tool, and share the link in your support request
+    * **Alternative:** Provide clear screenshots and describe each step leading to the error
+3. **Logs (Self-hosted instances only)** - Logs help our team diagnose backend issues:
+    * If you're running a **self-hosted** instance of Appsmith, access your server or container host
+    * Follow the steps outlined in the [How to Get Container Logs](https://docs.appsmith.com/learning-and-resources/how-to-guides/how-to-get-container-logs) guide
+    * Attach the relevant logs to your support request
+4. **Optional but Useful API Responses** - These endpoints provide insight into the health and configuration of your Appsmith instance. Including their responses can help speed up troubleshooting:
+    * **Health Check:** `https://your-appsmith-installation.com/api/v1/health`
+    * **Settings Overview:** `https://your-appsmith-installation.com/api/v1/consolidated-api/view`
+
 ## Example Ticket Template
 
 This is a sample format you can follow when opening a support request:
@@ -110,7 +110,9 @@ Unable to deploy applications – receiving a 502 error on publish.
 2. Click 'Deploy'
 3. Observe the 502 error
 
-**Loom Video:**
+**Screen Recording:**
+Sent via Send support info
+OR
 https://www.loom.com/share/example
 
 **APIs Output (if applicable):**
