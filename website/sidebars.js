@@ -159,6 +159,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
                 'getting-started/setup/instance-configuration/external-postgresql-rds',
                 'getting-started/setup/instance-configuration/external-redis',
+                'getting-started/setup/instance-configuration/in-memory-git',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
