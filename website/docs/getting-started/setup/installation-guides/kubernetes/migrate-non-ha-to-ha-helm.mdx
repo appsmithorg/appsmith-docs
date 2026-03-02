@@ -27,18 +27,15 @@ To enable HA safely, migrate data to a new `ReadWriteMany` (RWX) volume first, t
 
 For all available chart parameters, see Helm [values.yaml](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/values.yaml).
 
-## System requirements
-
-- At least 2 GB of free storage space for backup and migration tasks.
-
 ## Prerequisites
 
 Before you begin, ensure:
 
-1. You already have Appsmith installed on Kubernetes using Helm.
-2. You can run `kubectl` and `helm` commands against your cluster.
-3. You have a maintenance window for final cutover.
-4. You have a backup of the instance. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands).
+1. You already have an Appsmith instance installed on Kubernetes using Helm using a StatefulSet. If this is not your current situation, start your [Kubernetes deployment with HA enabled](/getting-started/setup/installation-guides/kubernetes/configure-high-availability).
+2. You have `kubectl` and `helm` access to the target Kubernetes cluster.
+3. You have access to create the required storage resources in your cloud provider and/or Kubernetes cluster.
+4. It is recommended to download the latest backup of your Appsmith instance from the cluster before you start migration. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands).
+5. You have a maintenance window for final cutover.
 
 ## Step 1: Provision RWX storage outside the Helm chart
 
