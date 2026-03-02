@@ -62,6 +62,7 @@ const sidebars = {
               label: 'High Availability Guides',
               items: [
                 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                'getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm',
                 {
                   type: 'category',
                   label: 'AWS ECS on Fargate',

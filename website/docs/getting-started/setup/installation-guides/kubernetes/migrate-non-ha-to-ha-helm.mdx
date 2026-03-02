@@ -1,0 +1,159 @@
+---
+description: Migrate an existing Appsmith Helm deployment on Kubernetes from non-HA storage to HA storage with minimal data loss.
+title: Migrate K8s Helm Deployment to HA
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Migrate Appsmith Helm Deployment from Non-HA to HA (Kubernetes)</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+This guide explains how to migrate an existing Appsmith Helm deployment from single-pod storage (typically `ReadWriteOnce`) to shared storage (`ReadWriteMany`) so you can run Appsmith in high availability mode with multiple pods.
+
+The default Helm configuration sets `autoscaling.enabled: false`, which deploys Appsmith as a StatefulSet and creates a pod volume mounted at `/appsmith-stacks`. In most clusters, this uses the default StorageClass and is not shareable across multiple pods.
+
+To enable HA safely, migrate data to a new `ReadWriteMany` (RWX) volume first, then cut Appsmith over to that claim.
+
+For all available chart parameters, see Helm [values.yaml](https://github.com/appsmithorg/appsmith/blob/release/deploy/helm/values.yaml).
+
+## System requirements
+
+- At least 2 GB of free storage space for backup and migration tasks.
+
+## Prerequisites
+
+Before you begin, ensure:
+
+1. You already have Appsmith installed on Kubernetes using Helm.
+2. You can run `kubectl` and `helm` commands against your cluster.
+3. You have a maintenance window for final cutover.
+4. You have a backup of the instance. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands).
+
+## Step 1: Provision RWX storage outside the Helm chart
+
+Create a new PersistentVolume (PV) and PersistentVolumeClaim (PVC) backed by a RWX-capable storage class using your cloud/on-prem CSI driver.
+
+Use provider guides as needed:
+
+- AWS EKS + EFS CSI driver: [Install the Amazon EFS CSI driver](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html)
+- Google Kubernetes Engine + Filestore CSI driver: [Use Filestore with GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/persistent-volumes/filestore-csi-driver)
+- Generic Kubernetes storage: [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+
+For this migration scenario, it is cleaner to create and manage the PV/PVC outside the Appsmith Helm chart and then reference the PVC from `values.yaml`.
+
+In the examples below, the target PVC name is `appsmith-data-ha`.
+
+## Step 2: Mount the new PVC as a temporary secondary path
+
+Follow the below steps to mount the new claim as a temporary secondary path:
+
+1. Update `values.yaml` to add the new claim as an extra volume and mount point:
+
+   ```yaml
+   extraVolumes:
+     - name: appsmith-data-ha-volume
+       persistentVolumeClaim:
+         claimName: appsmith-data-ha
+   extraVolumeMounts:
+     - name: appsmith-data-ha-volume
+       mountPath: /appsmith-stacks-ha
+   ```
+
+2. Apply the change:
+
+   ```bash
+   helm upgrade -i <release_name> appsmith-ee/appsmith -n <namespace> -f values.yaml
+   ```
+
+3. Wait until Appsmith is healthy:
+
+   ```bash
+   kubectl get pods -n <namespace>
+   ```
+
+## Step 3: Copy data from current volume to RWX volume
+
+Follow the below steps to copy data from the existing volume to the new RWX volume:
+
+1. Open a shell in the running Appsmith pod:
+
+   ```bash
+   kubectl exec -it pod/<appsmith_pod_name> -n <namespace> -- bash
+   ```
+
+2. Copy all data from the original path to the temporary RWX path:
+
+   ```bash
+   cp -a /appsmith-stacks/* /appsmith-stacks-ha/
+   ```
+
+## Step 4: Cut over Appsmith to the new existing claim
+
+Follow the below steps to cut over Appsmith to the new claim:
+
+1. Remove the temporary `extraVolumes` and `extraVolumeMounts` entries.
+2. Set Appsmith persistence to use the new claim directly:
+
+   ```yaml
+   persistence:
+     existingClaim:
+       enabled: true
+       name: appsmith-data-ha
+       claimName: appsmith-data-ha
+   ```
+
+3. Apply the final cutover:
+
+   ```bash
+   helm upgrade -i <release_name> appsmith-ee/appsmith -n <namespace> -f values.yaml
+   ```
+
+## Step 5: Enable HA replicas
+
+If not already enabled, follow the below steps to set autoscaling:
+
+1. Update `values.yaml`:
+
+   ```yaml
+   autoscaling:
+     enabled: true
+     minReplicas: 2
+     maxReplicas: 2
+   ```
+
+2. Apply the update and verify multiple healthy pods:
+
+   ```bash
+   kubectl get pods -n <namespace>
+   ```
+
+## Data consistency note
+
+:::caution
+Data written between the copy step and final cutover can be missed.
+:::
+
+To minimize risk:
+
+- Keep the copy-to-cutover window as short as possible.
+- Consider temporarily blocking user traffic (for example, disable ingress) during final cutover.
+- If needed, run an additional sync pass (for example, with `rsync`) just before cutover.
+
+In most cases, the highest-risk loss is recent filesystem writes such as logs, but configuration artifacts can also be affected if the window is large.
+
+## See also
+
+- [Configure High Availability on AWS EKS (K8s)](/getting-started/setup/installation-guides/kubernetes/configure-high-availability)
+- [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes)
+- [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance)
