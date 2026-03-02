@@ -1,0 +1,227 @@
+---
+description: Migrate from storage-based Git to Redis-backed in-memory Git for faster Git operations on self-hosted Appsmith.
+toc_max_heading_level: 3
+---
+
+# In-Memory Git (Redis-backed)
+
+This guide is for third-party administrators operating self-hosted Appsmith who want to migrate from storage-based Git to the Redis-backed in-memory Git workflow.
+
+In-memory Git uses Redis as a temporary persistence layer and copies a repository into a RAM-backed path for each Git operation. This:
+
+- Improves Git performance for larger apps and repositories by removing slow disk I/O
+- Decouples Git storage from the application's filesystem
+- Reduces contention via lightweight Redis locks and branch metadata
+
+This feature is optional.
+
+:::note Version compatibility
+In-memory Git is available in Appsmith v1.96 and later. Do not attempt this migration on versions older than v1.96; it may break the Git experience and might be irreversible.
+:::
+
+## How it works
+
+Previously, Appsmith's Git integration stored cloned repositories on a central shared filesystem (for example, EFS) across server pods. While functional, that approach was slow due to high-latency network filesystem I/O. In-memory Git replaces it with Redis as a shared cache and RAM-backed tmpfs (`/dev/shm`) for much faster operations.
+
+Repositories are cached as compressed blobs in Redis. Before each Git operation, the repository is downloaded into RAM (`/dev/shm`), the operation runs entirely in memory, and the updated repository is compressed and uploaded back to Redis. If the repository is not in the cache, Appsmith falls back to cloning from the remote repository.
+
+```mermaid
+flowchart LR
+    subgraph cache [Redis cache]
+        Redis["Compressed repo blobs"]
+    end
+    subgraph ram [RAM]
+        Shm["/dev/shm working dir"]
+    end
+    Remote[Remote Git]
+    Redis <-->|"Download / upload"| Shm
+    Shm <-->|"Git operations"| GitOp[Fetch, checkout, merge, etc.]
+    Remote -->|"Clone on cache miss"| Shm
+```
+
+## Why switch
+
+- **Faster Git operations**: RAM-backed working directories significantly reduce fetch, checkout, and merge times, especially for larger apps.
+- **Better scalability**: Git data is managed via Redis, lowering reliance on slow or shared storage.
+- **Operational separation**: Git storage requirements are decoupled from the app's persistent volumes.
+
+## Prerequisites and cautions
+
+- **SSH keys**:
+  - Legacy or incompatible SHA-1 SSH keys will fail. Rotate to ed25519 (preferred) or RSA with SHA-2 signatures.
+  - Update keys at your Git provider before switching.
+- **Memory**:
+  - Minimum 6 GB RAM for deployments with external Mongo and Redis.
+  - Minimum 8 GB RAM for all-in-pod or all-in-container deployments.
+- **Redis**:
+  - Recommended: use a separate Redis instance for in-memory Git (do not reuse the primary application Redis).
+  - Sizing: start with the sum of your connected repos' `.git` sizes × 2 (100% buffer). If that is below a common plan size, start with a standard plan and adjust based on usage.
+  - Supported connection schemes: `redis://`, `rediss://`, `redis-cluster://`.
+- **Filesystem paths**:
+  - Use `/dev/shm` where available.
+  - If your pod or container does not run as root, use `/tmp/shm` instead of `/dev/shm`.
+- **Tooling**:
+  - Ensure `git` and `redis-cli` are available in the environment where migrations or scripts run.
+- **Security**:
+  - Store secrets safely, enable TLS for Redis where applicable, and follow your organization's key rotation policies.
+
+## Environment variables
+
+These variables are also documented in the [Environment Variables](/getting-started/setup/environment-variables) reference.
+
+- **`APPSMITH_GIT_ROOT`**
+  - Set to the path that Appsmith uses as the Git root.
+  - For in-memory Git, use a RAM-backed path such as `/dev/shm` or a subpath under `/dev/shm/`, or `/tmp/shm/...` when `/dev/shm` is not accessible (for example, non-root containers).
+
+- **`APPSMITH_REDIS_GIT_URL`**
+  - Redis endpoint used by in-memory Git operations and helper scripts.
+  - Examples:
+    - `redis://user:password@host:6379/0`
+    - `rediss://user:password@host:6380/0` (TLS)
+    - `redis-cluster://user:password@host:6379/0`
+
+## Migration paths
+
+### Standard migration (recommended)
+
+1. **Rotate SSH keys**
+   - Replace legacy SHA-1 keys with ed25519 or RSA (SHA-2) keys.
+   - Update keys in your Git provider.
+
+2. **Provision a dedicated Redis for in-memory Git**
+   - Choose a plan that fits "sum of .git sizes of all connected repos × 2".
+   - If that estimate is below a common plan size, start with a standard plan and monitor.
+
+3. **Pre-seed branch metadata in Redis**
+   - Purpose: ensures branch data is immediately available for all connected repos after switching.
+   - Run from the same environment that has access to your existing on-disk repos (for example, EFS or NFS mount).
+   - If your runtime image does not include the script by default, copy it into the running container or pod under `/appsmith-stacks/` and run it there.
+
+   **Docker example (from your desktop):**
+
+   ```bash
+   # Copy the script into the running container
+   docker cp ~/Downloads/copy_branch_info_from_efs_to_redis.sh <container_name_or_id>:/appsmith-stacks/copy_branch_info_from_efs_to_redis.sh
+
+   # Make it executable and run
+   docker exec -it <container_name_or_id> bash -lc 'chmod +x /appsmith-stacks/copy_branch_info_from_efs_to_redis.sh && source /appsmith-stacks/copy_branch_info_from_efs_to_redis.sh && find_git_repos "<efs_git_root>" "$APPSMITH_REDIS_GIT_URL" 4'
+   ```
+
+   **Kubernetes example (from your desktop):**
+
+   ```bash
+   # Copy the script into the pod
+   kubectl cp ~/Downloads/copy_branch_info_from_efs_to_redis.sh <namespace>/<pod_name>:/appsmith-stacks/copy_branch_info_from_efs_to_redis.sh
+
+   # Make it executable and run
+   kubectl exec -it -n <namespace> <pod_name> -- bash -lc 'chmod +x /appsmith-stacks/copy_branch_info_from_efs_to_redis.sh && source /appsmith-stacks/copy_branch_info_from_efs_to_redis.sh && find_git_repos "<efs_git_root>" "$APPSMITH_REDIS_GIT_URL" 4'
+   ```
+
+   **Commands (if the script is already available in the environment):**
+
+   ```bash
+   source scripts/copy_branch_info_from_efs_to_redis.sh
+   # <efs_git_root> is the root folder under which your repositories live
+   # The third argument is max depth to search (adjust as needed)
+   find_git_repos "<efs_git_root>" "$APPSMITH_REDIS_GIT_URL" 4
+   ```
+
+   You can skip pre-seeding only if every app or package is already on its latest remote branch. If you skip and are not on the latest, you will need to discard and pull the latest on every branch of each app or package after switching.
+
+4. **Configure environment variables**
+
+   **Docker Compose (example):**
+
+   ```yaml
+   services:
+     appsmith:
+       environment:
+         - APPSMITH_GIT_ROOT=/dev/shm
+         - APPSMITH_REDIS_GIT_URL=redis://user:password@redis-git:6379/0
+   ```
+
+   **Kubernetes (example Deployment env):**
+
+   ```yaml
+   apiVersion: apps/v1
+   kind: Deployment
+   metadata:
+     name: appsmith
+   spec:
+     template:
+       spec:
+         containers:
+           - name: appsmith
+             env:
+               - name: APPSMITH_GIT_ROOT
+                 value: "/dev/shm"   # or "/tmp/shm" if non-root
+               - name: APPSMITH_REDIS_GIT_URL
+                 value: "redis://user:password@redis-git:6379/0"
+   ```
+
+   If the container is non-root or `/dev/shm` is not available, set `APPSMITH_GIT_ROOT=/tmp/shm/...`.
+
+5. **Restart the application**
+   - Restart the pod or container to pick up the new environment.
+   - After restart, perform a simple Git action (for example, branch checkout or pull) to verify improved responsiveness.
+
+6. **Validate and monitor**
+   - Confirm Git operations complete successfully across a few apps.
+   - Watch Redis memory usage and adjust plan size if needed.
+
+### Minimal migration (only if already on latest remote for all branches)
+
+If all your apps or packages are already at the latest upstream commits on all branches:
+
+1. Rotate SSH keys (ed25519 or RSA-SHA2).
+2. Provision Redis (separate instance recommended).
+3. Configure `APPSMITH_GIT_ROOT` and `APPSMITH_REDIS_GIT_URL`.
+4. Restart the application.
+5. Validate Git operations.
+
+If any branch is behind, you must discard and pull latest on every branch for each app or package after switching.
+
+## Infrastructure changes
+
+- **Redis**: Use a separate instance dedicated to in-memory Git. Start with "sum of .git sizes × 2" buffer; if within a common plan's limits, adopt that plan and scale with usage. Enable TLS (`rediss`) if required by policy.
+- **Memory**: Provision at least 6 GB RAM if Mongo and Redis are external; at least 8 GB RAM if running everything inside the same pod or container.
+- **Filesystem**: Use `/dev/shm` (root containers) or `/tmp/shm` (non-root). Ensure the chosen path is writable and has sufficient space.
+- **Tooling**: Ensure `git` and `redis-cli` are present wherever you run the pre-seed script.
+
+## Rollback
+
+This feature is optional. To revert to storage-based Git:
+
+1. **Point Git back to persistent storage**
+   - Set `APPSMITH_GIT_ROOT` to your persistent filesystem path (for example, an EFS or NFS mount or your prior on-disk location).
+   - Delete any older or stale repositories left under that path to avoid conflicts with fresh clones.
+
+2. **Redis URL**
+   - Keep or remove `APPSMITH_REDIS_GIT_URL`; it will be unused once in-memory Git is disabled.
+
+3. **Restart**
+   - Restart the pod or container to apply the rollback.
+
+4. **Align app or package branches with upstream**
+   - For each app or package, and for each branch, perform "discard and pull" to move to the latest remote state.
+   - This is required because the persistent filesystem state (fresh clones) may be on latest while the database's Git branch state may not match.
+
+## Troubleshooting
+
+- **SSH authentication errors**: Usually indicate legacy keys. Rotate to ed25519 or RSA with SHA-2 and update your Git provider.
+- **Verifying Redis content**: Ensure the pre-seed script completed successfully. You can check for `branchStore=<path>` keys using `redis-cli` against the `APPSMITH_REDIS_GIT_URL` target.
+- **General checks**: Confirm `APPSMITH_GIT_ROOT` points to `/dev/shm` (root) or `/tmp/shm` (non-root). Verify available memory meets the minimum recommendations.
+
+## Appendix: Pre-seed script reference
+
+- **Script**: `scripts/copy_branch_info_from_efs_to_redis.sh` (source on GitHub: [copy_branch_info_from_efs_to_redis.sh](https://github.com/appsmithorg/appsmith/blob/release/deploy/docker/fs/opt/appsmith/copy_branch_info_from_efs_to_redis.sh))
+- **What it does**:
+  - Locates Git repos under a given directory (up to a configurable depth).
+  - Reads local branches and their latest commit SHAs.
+  - Writes branch metadata to Redis using the connection defined by `APPSMITH_REDIS_GIT_URL`.
+- **Typical usage**:
+
+  ```bash
+  source scripts/copy_branch_info_from_efs_to_redis.sh
+  find_git_repos "<efs_git_root>" "$APPSMITH_REDIS_GIT_URL" 4
+  ```
