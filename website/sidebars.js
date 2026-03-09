@@ -61,7 +61,16 @@ const sidebars = {
               type: 'category',
               label: 'High Availability Guides',
               items: [
-                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                  label: 'Kubernetes: AWS EKS with HA',
+                },
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm',
+                  label: 'Kubernetes: Migrate Single-Pod to HA',
+                },
                 {
                   type: 'category',
                   label: 'AWS ECS on Fargate',
