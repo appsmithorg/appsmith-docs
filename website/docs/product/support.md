@@ -45,6 +45,38 @@ Priority Support ensures expedited assistance for paid plan customers. Here's ho
 
 - **Account Manager**: Enterprise plan customers have the option to contact their dedicated Account Manager for personalized assistance.
 
+## Send Support Info
+
+Use the built-in **Send support info** option to capture and submit issue context from inside the platform. You can open it from either Help menu location and use the widget to capture a screenshot or a short screen recording. Then open a ticket on [one of our supported channels](#support-channels) to get help.
+This feature is available from Appsmith version `v1.96` onward.
+
+### From the Editor help menu
+
+1. Open your app in the Editor.
+2. Click the **Help** menu.
+3. Select **Send support info**.
+
+<ZoomImage src="/img/send-support-info-editor-help-menu.png" alt="Send support info option in the Editor help menu" caption="Send support info option in the Editor help menu" />
+
+### From the Homepage header help menu
+
+1. Go to the Appsmith Homepage.
+2. Click the **Help** menu in the header.
+3. Select **Send support info**.
+
+<ZoomImage src="/img/send-support-info-homepage-help-menu.png" alt="Send support info option in the Homepage header help menu" caption="Send support info option in the Homepage header help menu" />
+
+### Support info widget
+
+After you select **Send support info**, the support widget opens and lets you choose one of the following:
+
+- Capture a screenshot
+- Record your screen
+
+Add a title and a brief description of the issue, then submit the captured details to support.
+
+<ZoomImage src="/img/send-support-info-widget.png" alt="Send support info widget with screenshot and screen recording options" caption="Send support info widget with screenshot and screen recording options"/>
+
 ## Required Information for Support
 
 To help our team resolve your issue efficiently, please include the following details in your ticket:
@@ -53,7 +85,7 @@ To help our team resolve your issue efficiently, please include the following de
     * Open `https://your-appsmith-installation.com/info`
     * Copy the version number from that page
 2. **Steps to Reproduce and Error Description**:
-    * **Preferred:** Record a short video showing the issue in action. You can use [Loom](https://www.loom.com/) or any other screen recording tool, and share the link in your support request
+    * **Preferred:** Record a short video showing the issue in action. Use the built-in [Send support info](#send-support-info) feature, or [Loom](https://www.loom.com/) or any other screen recording tool, and share the link in your support request
     * **Alternative:** Provide clear screenshots and describe each step leading to the error
 3. **Logs (Self-hosted instances only)** - Logs help our team diagnose backend issues:
     * If you're running a **self-hosted** instance of Appsmith, access your server or container host
@@ -78,7 +110,9 @@ Unable to deploy applications – receiving a 502 error on publish.
 2. Click 'Deploy'
 3. Observe the 502 error
 
-**Loom Video:**
+**Screen Recording:**
+Sent via Send support info
+OR
 https://www.loom.com/share/example
 
 **APIs Output (if applicable):**
