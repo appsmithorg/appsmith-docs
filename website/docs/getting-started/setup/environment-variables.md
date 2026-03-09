@@ -382,17 +382,32 @@ For more information about embedding Appsmith, see the [Embed Appsmith](/advance
 
 ### Git Local File Path
 
-Appsmith clones Git repositories to the local file system, which is attached to the persistent volume within the Docker container. To ensure the repositories are maintained across restarts, you need to specify a file path that points to the volume within the Docker container.
+Appsmith clones Git repositories to the local file system, which is attached to the persistent volume within the Docker container. To ensure the repositories are maintained across restarts, you need to specify a file path that points to the volume within the Docker container. When using the in-memory Git feature, Appsmith instead uses a RAM-backed path for Git operations while still relying on this variable to determine where repositories are checked out.
 
 ##### `APPSMITH_GIT_ROOT`
 
 <dd>
-This environment variable allows you to set a custom Git root path for your Appsmith Git repositories, enabling local repositories to be created and persisted on your machine. To set the custom root path, use the following command:
+This environment variable allows you to set a custom Git root path for your Appsmith Git repositories.
+
+- For storage-based Git, set this to a directory on a persistent volume so repositories are created and persisted across restarts.
+- For in-memory Git, set this to a RAM-backed path such as `/dev/shm` (or `/tmp/shm` for non-root containers), so repositories are checked out in memory for each Git operation. For migration steps and sizing guidance, see [In-Memory Git (Redis-backed)](/getting-started/setup/instance-configuration/in-memory-git).
+
+To set the custom root path, use a configuration similar to the following:
 
 ```bash
+# Persistent storage-based Git example
 APPSMITH_GIT_ROOT=<path-to-repo-directory>
+
+# In-memory Git example
+APPSMITH_GIT_ROOT=/dev/shm
 ```
-If this file path is not configured, repositories will be cloned but will not persist. This can lead to data loss during events like a Docker restart. Appsmith will attempt to re-clone the repositories if they are deleted, but configuring persistent storage is essential to avoid any potential loss of data.
+If this file path is not configured, repositories will be cloned but will not persist. This can lead to data loss during events like a Docker restart. Appsmith will attempt to re-clone the repositories if they are deleted, but configuring a suitable path (persistent volume or RAM-backed path for in-memory Git) is essential to avoid potential data loss.
+</dd>
+
+##### `APPSMITH_REDIS_GIT_URL`
+
+<dd>
+Specifies the Redis endpoint used by the in-memory Git feature to store and retrieve compressed Git repository blobs and branch metadata. Use a dedicated Redis instance for in-memory Git and size it based on the combined `.git` directory sizes of your connected repositories. For detailed migration steps and recommendations, see [In-Memory Git (Redis-backed)](/getting-started/setup/instance-configuration/in-memory-git).
 </dd>
 
 ### Client logging

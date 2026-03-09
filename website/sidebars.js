@@ -61,7 +61,16 @@ const sidebars = {
               type: 'category',
               label: 'High Availability Guides',
               items: [
-                'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/configure-high-availability',
+                  label: 'Kubernetes: AWS EKS with HA',
+                },
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm',
+                  label: 'Kubernetes: Migrate Single-Pod to HA',
+                },
                 {
                   type: 'category',
                   label: 'AWS ECS on Fargate',
@@ -159,6 +168,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
                 'getting-started/setup/instance-configuration/external-postgresql-rds',
                 'getting-started/setup/instance-configuration/external-redis',
+                'getting-started/setup/instance-configuration/in-memory-git',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
