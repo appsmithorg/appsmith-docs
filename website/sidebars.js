@@ -163,6 +163,13 @@ const sidebars = {
             },
             {
               type: 'category',
+              label: 'Observability',
+              items: [
+                'getting-started/setup/instance-management/observability/configure-prometheus-metrics',
+              ],
+            },
+            {
+              type: 'category',
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
