@@ -1,31 +1,130 @@
-name: Generate Markdown File and Upload
+name: Upload Docs to OpenAI Vector Store
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Runs every Sunday at midnight UTC
+    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
+  push:
+    branches: [main]
+    paths:
+      - 'website/docs/**'
   workflow_dispatch:
 
+concurrency:
+  group: upload-docs-to-openai
+  cancel-in-progress: false
+
 jobs:
-  merge-and-upload-markdown:
+  upload-docs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Merge markdown files
-      run: |
-        find website/docs \( -name '*.md' -o -name '*.mdx' \) -exec cat {} + > appsmith-docs.md
+      - name: Merge markdown files
+        run: |
+          find website/docs \( -name '*.md' -o -name '*.mdx' \) -exec cat {} + > appsmith-docs.md
+          echo "Merged docs file created"
 
-    - name: Check file size
-      run: |
-        filesize=$(stat -c%s "appsmith-docs.md")
-        echo "File size: $filesize bytes"
+      - name: Check file size
+        run: |
+          filesize=$(stat -c%s "appsmith-docs.md")
+          echo "File size: $filesize bytes"
+          max_size=$((512 * 1024 * 1024))
+          if [ "$filesize" -gt "$max_size" ]; then
+            echo "ERROR: File exceeds 512MB limit"
+            exit 1
+          fi
 
-    - name: Upload merged markdown to API
-      run: |
-        response=$(curl -X POST \
-          -H "Content-Type: text/markdown" \
-          --data-binary "@appsmith-docs.md" \
-          https://hook.eu1.make.com/78ylobuaxpwb4w8k3lbfgmdlwow9d8m5)
-        echo "Response: $response"
+      - name: Remove previous appsmith-docs file from vector store
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
+        run: |
+          echo "Looking for previous appsmith-docs.md in files list..."
+          # Single API call to find file IDs matching our filename
+          old_ids=$(curl -s \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            "https://api.openai.com/v1/files?purpose=assistants" \
+            | jq -r '.data[] | select(.filename == "appsmith-docs.md") | .id')
+
+          if [ -z "$old_ids" ]; then
+            echo "No previous appsmith-docs.md found"
+          else
+            for file_id in $old_ids; do
+              echo "Removing $file_id from vector store and deleting..."
+              curl -s -X DELETE \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                -H "OpenAI-Beta: assistants=v2" \
+                "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files/$file_id"
+              curl -s -X DELETE \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                "https://api.openai.com/v1/files/$file_id"
+            done
+          fi
+
+      - name: Upload merged file to OpenAI
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          echo "Uploading file to OpenAI..."
+          upload_response=$(curl -s -X POST \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -F "purpose=assistants" \
+            -F "file=@appsmith-docs.md" \
+            "https://api.openai.com/v1/files")
+
+          FILE_ID=$(echo "$upload_response" | jq -r '.id')
+          if [ "$FILE_ID" = "null" ] || [ -z "$FILE_ID" ]; then
+            echo "ERROR: File upload failed"
+            echo "$upload_response"
+            exit 1
+          fi
+          echo "Uploaded file ID: $FILE_ID"
+          echo "FILE_ID=$FILE_ID" >> "$GITHUB_ENV"
+
+      - name: Attach file to vector store
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
+        run: |
+          echo "Attaching file to vector store..."
+          attach_response=$(curl -s -X POST \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "OpenAI-Beta: assistants=v2" \
+            -d "{\"file_id\": \"$FILE_ID\"}" \
+            "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files")
+
+          status=$(echo "$attach_response" | jq -r '.status')
+          echo "Attach status: $status"
+
+      - name: Wait for vector store processing
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
+        run: |
+          echo "Waiting for vector store to finish processing..."
+          for i in $(seq 1 60); do
+            vs_response=$(curl -s \
+              -H "Authorization: Bearer $OPENAI_API_KEY" \
+              -H "OpenAI-Beta: assistants=v2" \
+              "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID")
+
+            vs_status=$(echo "$vs_response" | jq -r '.status')
+            echo "Attempt $i: status=$vs_status"
+
+            if [ "$vs_status" = "completed" ]; then
+              echo "Vector store processing complete"
+              exit 0
+            elif [ "$vs_status" = "failed" ]; then
+              echo "ERROR: Vector store processing failed"
+              echo "$vs_response"
+              exit 1
+            fi
+
+            sleep 10
+          done
+          echo "ERROR: Timed out waiting for vector store processing"
+          exit 1
+

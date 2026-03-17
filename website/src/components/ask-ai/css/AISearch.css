@@ -15,12 +15,16 @@
     background: var(--docsearch-modal-background);
     text-align: center;
     position: relative;
-    width: 55%;
-    min-height: 48%;
+    width: 90%;
+    max-width: 900px;
+    height: 80%;
     margin: 4% auto;
-    border-radius: 8px;
-    box-shadow: var(--docsearch-modal-shadow);
-    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .ai-search-result-wrapper {
@@ -215,8 +219,8 @@ h5 {
     cursor: pointer;
 }
 
-.show {
-    display: block !important;
+.ai-search-modal.show {
+    display: flex !important;
 }
 
 .loading-icon-container {
@@ -381,61 +385,18 @@ h5 {
   cursor: not-allowed;
 }
 
-.ai-feedback-widget {
-  margin: 20px;
-  padding-top: 12px;
-  border-top: 1px solid #eee;
-  font-family: inherit;
-  text-align: left;
-}
-
-.ai-feedback-label {
-  font-weight: 600;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-.ai-feedback-buttons {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 8px;
-}
-
-.thumb-button {
-  font-size: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 6px 12px;
-  cursor: pointer;
-  background-color: #f9f9f9;
-  transition: background 0.2s ease;
-}
-
-.thumb-button.selected {
-  background-color: #def;
-  border-color: #09f;
-}
-
-.ai-feedback-widget textarea {
-  width: 100%;
-  resize: vertical;
-  padding: 10px;
-  border: 1px solid #ccc;
+.ai-error-message {
+  padding: 12px 16px;
+  margin-top: 10px;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
   border-radius: 6px;
+  color: #991b1b;
   font-size: 14px;
-  margin-bottom: 10px;
-  font-family: inherit;
 }
 
-.submit-feedback-btn {
-  background-color: #0b5fff;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  font-weight: 500;
+.ai-error-message p {
+  margin: 0;
 }
 
 
@@ -474,28 +435,6 @@ h5 {
   }
 }
 
-
-.ai-search-modal.show {
-  display: flex;
-}
-
-.ai-search-modal-content {
-  width: 90%;
-  max-width: 900px;
-  height: 80%;
-  background-color: white;
-  border-radius: 16px; /* 👈 adds round corners */
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-
-.ai-search-modal-content {
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 0.3s ease;
-}
 
 .ai-search-modal.show .ai-search-modal-content {
   transform: translateY(0);
