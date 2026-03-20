@@ -1,7 +1,13 @@
 name: Upload Docs to OpenAI Vector Store
 
 on:
-  workflow_dispatch: # Manual trigger only — automatic runs disabled for now
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
+  push:
+    branches: [main]
+    paths:
+      - 'website/docs/**'
+  workflow_dispatch:
 
 concurrency:
   group: upload-docs-to-openai

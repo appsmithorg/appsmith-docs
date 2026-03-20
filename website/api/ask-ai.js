@@ -1,5 +1,7 @@
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
-const ASSISTANT_ID = process.env.OPENAI_ASSISTANT_ID;
+const VECTOR_STORE_ID = process.env.OPENAI_VECTOR_STORE_ID;
+
+const SYSTEM_PROMPT = `You are the Appsmith documentation assistant. Answer questions using only the provided documentation files. If the answer is not found in the documentation, say so. Be concise and include relevant code examples when helpful.`;
 
 const ALLOWED_ORIGINS = [
   'https://docs.appsmith.com',
@@ -41,26 +43,6 @@ function getCorsHeaders(origin) {
   return headers;
 }
 
-async function openaiRequest(path, options = {}) {
-  const headers = {
-    'Authorization': `Bearer ${OPENAI_API_KEY}`,
-    'OpenAI-Beta': 'assistants=v2',
-    ...options.headers,
-  };
-  if (options.body) {
-    headers['Content-Type'] = 'application/json';
-  }
-  const res = await fetch(`https://api.openai.com/v1${path}`, {
-    ...options,
-    headers,
-  });
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`OpenAI API error ${res.status}: ${text}`);
-  }
-  return res.json();
-}
-
 function stripCitations(text) {
   return text.replace(/【\d+[:\d]*†[^】]*】/g, '');
 }
@@ -99,41 +81,39 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    // Create thread + message + run in a single API call
-    const run = await openaiRequest('/threads/runs', {
+    const response = await fetch('https://api.openai.com/v1/responses', {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
-        assistant_id: ASSISTANT_ID,
-        thread: { messages: [{ role: 'user', content: trimmed }] },
+        model: 'gpt-4o',
+        instructions: SYSTEM_PROMPT,
+        input: trimmed,
+        tools: [{
+          type: 'file_search',
+          vector_store_ids: [VECTOR_STORE_ID],
+        }],
       }),
     });
 
-    // Poll for completion (55s cap)
-    const deadline = Date.now() + 55_000;
-    let status = run.status;
-    const threadId = run.thread_id;
-    while (status === 'queued' || status === 'in_progress') {
-      if (Date.now() > deadline) {
-        // Best-effort cancel the orphaned run
-        openaiRequest(`/threads/${threadId}/runs/${run.id}/cancel`, { method: 'POST' }).catch(() => {});
-        return res.status(504).json({ error: 'Request timed out. Please try again.' });
-      }
-      await new Promise((r) => setTimeout(r, 1000));
-      const updated = await openaiRequest(`/threads/${threadId}/runs/${run.id}`, { method: 'GET' });
-      status = updated.status;
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('OpenAI API error:', response.status, text);
+      return res.status(502).json({ error: 'Failed to get response from AI.' });
     }
 
-    if (status !== 'completed') {
-      return res.status(500).json({ error: `Run ended with status: ${status}` });
-    }
+    const data = await response.json();
 
-    // Get the assistant's response
-    const messages = await openaiRequest(`/threads/${threadId}/messages?order=desc&limit=1`, { method: 'GET' });
-    const assistantMessage = messages.data?.[0];
-    const textContent = assistantMessage?.content?.find((c) => c.type === 'text');
-    const answer = textContent ? stripCitations(textContent.text.value) : 'No response generated.';
+    // Extract text from output messages
+    const message = data.output?.find((o) => o.type === 'message');
+    const textContent = message?.content?.find((c) => c.type === 'output_text');
+    let answer = textContent?.text || 'No response generated.';
 
-    return res.status(200).json({ answer, threadId });
+    answer = stripCitations(answer) || 'No response generated.';
+
+    return res.status(200).json({ answer });
   } catch (err) {
     console.error('Ask AI error:', err);
     return res.status(500).json({ error: 'Something went wrong. Please try again.' });
