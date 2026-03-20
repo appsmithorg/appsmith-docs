@@ -1,13 +1,7 @@
 name: Upload Docs to OpenAI Vector Store
 
 on:
-  schedule:
-    - cron: '0 0 * * 0' # Every Sunday at midnight UTC
-  push:
-    branches: [main]
-    paths:
-      - 'website/docs/**'
-  workflow_dispatch:
+  workflow_dispatch: # Manual trigger only — automatic runs disabled for now
 
 concurrency:
   group: upload-docs-to-openai
@@ -34,33 +28,6 @@ jobs:
           if [ "$filesize" -gt "$max_size" ]; then
             echo "ERROR: File exceeds 512MB limit"
             exit 1
-          fi
-
-      - name: Remove previous appsmith-docs file from vector store
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
-        run: |
-          echo "Looking for previous appsmith-docs.md in files list..."
-          # Single API call to find file IDs matching our filename
-          old_ids=$(curl -s \
-            -H "Authorization: Bearer $OPENAI_API_KEY" \
-            "https://api.openai.com/v1/files?purpose=assistants" \
-            | jq -r '.data[] | select(.filename == "appsmith-docs.md") | .id')
-
-          if [ -z "$old_ids" ]; then
-            echo "No previous appsmith-docs.md found"
-          else
-            for file_id in $old_ids; do
-              echo "Removing $file_id from vector store and deleting..."
-              curl -s -X DELETE \
-                -H "Authorization: Bearer $OPENAI_API_KEY" \
-                -H "OpenAI-Beta: assistants=v2" \
-                "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files/$file_id"
-              curl -s -X DELETE \
-                -H "Authorization: Bearer $OPENAI_API_KEY" \
-                "https://api.openai.com/v1/files/$file_id"
-            done
           fi
 
       - name: Upload merged file to OpenAI
