@@ -1,32 +1,20 @@
-// src/components/ask-ai/AISearchButton.jsx
-
-import React, { Component } from 'react';
+import React, { useState, useCallback } from 'react';
 import AISearchModal from './AISearchModal';
 
-class AISearchButton extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isModalOpen: false,
-    };
-  }
+const AISearchButton = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  toggleModal = () => {
-    this.setState((prevState) => ({
-      isModalOpen: !prevState.isModalOpen,
-    }));
-  };
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = useCallback(() => setIsModalOpen(false), []);
 
-  render() {
-    return (
-      <div className='search-link'>
-        <button className='custom-doc-Search-bar hideSearchButtons' onClick={this.toggleModal}>
-          Ask Appsmith AI
-        </button>
-        <AISearchModal show={this.state.isModalOpen} closeModal={this.toggleModal} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="search-link">
+      <button className="custom-doc-Search-bar hideSearchButtons" onClick={openModal}>
+        Ask Appsmith AI
+      </button>
+      <AISearchModal show={isModalOpen} closeModal={closeModal} />
+    </div>
+  );
+};
 
 export default AISearchButton;
