@@ -116,11 +116,11 @@ Multi-part form data is a flexible format for API requests. It is used when you 
 
 *Example*: 
 
-|      Key      	| Type 	|           Value          	| D
-|:-------------:	|:----:	|:------------------------:	|
-| file          	| File 	| `{{FilePicker1.files[0]}}` 	|
-| key_filename     | Text     		| `{{FilePicker1.files[0].name}}` 	|
-| key1 	| Text 	| `value1`                   	|
+| Key          | Type | Value                              |
+|:------------:|:----:|:----------------------------------:|
+| file         | File | `{{FilePicker1.files[0]}}`         |
+| key_filename | Text | `{{FilePicker1.files[0].name}}`    |
+| key1         | Text | `value1`                           |
 
 In this example:
 
