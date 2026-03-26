@@ -59,6 +59,8 @@ Ensuring the security of your Appsmith instance is vital for protecting sensitiv
 
 Regular backups and recovery plans are critical to prevent data loss and ensure smooth recovery in case of failures.
 
+- **Data stores and criticality**: For MongoDB, PostgreSQL, Redis, EFS or persistent volumes, and how they relate to `appsmithctl` backups, see [Data criticality and backup considerations](/getting-started/setup/deployment-architecture#data-criticality-and-backup-considerations).
+
 - **Regular backups**:
   - Enable scheduled backups to run **nightly** on all your instances. For more information, see [Schedule automatic backup](/getting-started/setup/environment-variables#automatic-backups) reference.
   - Use the `appsmithctl backup` command to create backups of your **production** and **staging** environments. For detailed backup configuration, refer to the [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide.

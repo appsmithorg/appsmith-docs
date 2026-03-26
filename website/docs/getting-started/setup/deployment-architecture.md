@@ -82,8 +82,7 @@ For high availability and scalability, Appsmith configures certain components as
 
 #### PostgresDB Appsmith database
 
-PostgreSQL database that stores Keycloak user data when Single Sign-On (SSO) authentication is configured using SAML.
-  - It stores critical authentication-related data, including user information and session data for the SSO integration.
+PostgreSQL stores data for **Keycloak** and **Temporal** only when those features are in use: Keycloak uses it for user and session data when Single Sign-On (SSO) is configured using SAML; Temporal uses it for workflow metadata and related state when you use Appsmith workflows.
 
 ### Application Load Balancer (ALB)
 
@@ -97,6 +96,45 @@ The **React Frontend** is the web client where users interact with Appsmith to d
 - Provides the user interface for building, managing, and interacting with applications.
 - Communicates with the backend services using REST APIs and WebSocket protocols for real-time interactions.
 - Is hosted behind the **Application Load Balancer (ALB)** to ensure scalable and reliable access to the platform.
+
+## Data criticality and backup considerations
+
+Operational criticality helps you plan backups and disaster recovery for self-hosted Appsmith. The subsections below are ordered from **highest** to **lowest** typical criticality.
+
+### MongoDB (critical)
+
+MongoDB is Appsmith’s primary data store in your deployment. If lost, app, workspace, and configuration state is not practically rebuildable from source.
+
+Use [`appsmithctl backup`](/getting-started/setup/instance-management/appsmithctl) to create backups that include the MongoDB database, configuration, and Git data. For steps, see [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance).
+
+### EFS and persistent volumes (critical for continuity)
+
+Persistent volumes (for example AWS EFS or other attached storage) hold configuration, keys, Git storage, backups, certificates, and similar artifacts depending on deployment. Some parts are rebuildable; key configuration and persistent artifacts may not be.
+
+`appsmithctl backup` backs up Appsmith instance data under Appsmith-managed paths on that storage, as described in [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance). You should still protect the underlying volume as part of continuity and disaster recovery.
+
+### PostgreSQL for Keycloak and Temporal (important)
+
+PostgreSQL is **not** Appsmith’s primary application database (MongoDB is). Appsmith uses this PostgreSQL instance when you enable features that rely on it:
+
+- **SAML SSO:** Keycloak stores authentication and session data in PostgreSQL when you configure SAML-based SSO.
+- **Temporal workflows:** Temporal stores workflow metadata and related state in PostgreSQL when you use Appsmith workflows.
+
+If you use **SAML SSO**, **workflows**, or both, losing PostgreSQL is rebuildable in principle but causes user-visible impact (SSO, auth, workflow history, or workflow state disruptions). Plan backups and treat operational criticality for this database only when you enable one or both of those features.
+
+Backups created with `appsmithctl` **do not include** this PostgreSQL database. Back it up separately when you use SAML SSO and/or Temporal workflows. For setup details, see [External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds).
+
+### Redis (context-dependent)
+
+Redis is used mainly for caching and session handling and is usually rebuildable after failure. If Redis data is lost, users may be logged out or see other transient effects.
+
+If you use [In-Memory Git (Redis-backed)](/getting-started/setup/instance-configuration/in-memory-git) with a dedicated Redis instance, that Redis holds Appsmith Git cache and branch metadata. Losing it can disrupt Git operations until data is repopulated from remote repositories and normal workflows. In that case, treat Redis as operationally important (medium to high criticality).
+
+### Summary
+
+Treat **MongoDB** and **EFS or persistent volumes** as highest criticality. **PostgreSQL** is medium to high when you use **SAML SSO** and/or **Temporal workflows** (because Keycloak and Temporal persist data there). **Redis** is lowest when used only for cache and sessions, and medium to high when used for In-Memory Git.
+
+For operational guidance, see [Self-hosting Best Practices](/getting-started/setup/best-practices), including [Backup and recovery management](/getting-started/setup/best-practices#backup-and-recovery-management).
 
 ## See also
 
