@@ -67,7 +67,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     * **Task role** and **Task execution role** as default. For all other fields keep the default settings.
 5. Configure the **Container-1** as shown below:
     * **Name** - Give a meaningful name. For example, `appsmith`
-    * **Image URI** - `index.docker.io/appsmith/appsmith-ee`
+    * **Image URI** - `index.docker.io/appsmith/appsmith-ee:<version>`, replacing `<version>` with a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases). Use a pinned tag so task revisions pull a known image.
     * Add the port mappings for Port `80` as follows:
       * **Container port** - `80`
       * **Protocol** - HTTP
@@ -135,7 +135,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
 
 ## Install Appsmith Community
 
-For the Appsmith open source edition (Appsmith Community), substitute `appsmith/appsmith-ee` with `appsmith/appsmith-ce` in the container definition for **Container-1** in the [Create task and container definition](#create-task-and-container-definition) section on this page.
+For the Appsmith open source edition (Appsmith Community), substitute `appsmith/appsmith-ee` with `appsmith/appsmith-ce` in the **Image URI** for **Container-1** in the [Create task and container definition](#create-task-and-container-definition) section on this page, and keep the same `:<version>` suffix.
 
 
 ## Post-installation configuration
