@@ -160,6 +160,8 @@ docker-compose up -d
 
 _Please note that you must create a new `docker-compose.yml` in the `"$new_path"` folder, like with the `curl` command. Don't copy it from `"$old_path"`._
 
+After you generate the file, confirm the Appsmith `image` in `docker-compose.yml` uses a pinned release tag if you need a known version; see the [Docker install guide](/getting-started/setup/installation-guides/docker).
+
 ## Import database
 
 After your new deployment comes up (usually takes \~30 seconds), import the data that was exported from the old instance:

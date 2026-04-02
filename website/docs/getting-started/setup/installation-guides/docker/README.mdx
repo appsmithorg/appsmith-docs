@@ -33,7 +33,7 @@ Follow these steps to install Appsmith:
    version: "3"
    services:
       appsmith:
-        image: index.docker.io/appsmith/appsmith-ee
+        image: index.docker.io/appsmith/appsmith-ee:<version>
         container_name: appsmith
         ports:
             - "80:80"
@@ -43,7 +43,11 @@ Follow these steps to install Appsmith:
         restart: unless-stopped
    ```
 
-   The `appsmith-ee` image installs the _Commercial edition_ (recommended), which offers a _free plan_ and the flexibility to upgrade to a paid plan at any point. To install the _Community edition_, replace `appsmith-ee` with `appsmith-ce` in the image attribute within the `docker-compose.yml` file.
+   :::tip Pin the image to a release tag
+   Replace `<version>` with a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases) (for example, `v1.98`). Pinning the image avoids unexpected upgrades when you recreate the container and is recommended for production. If you omit the tag, Docker uses `latest`, which is acceptable for quick local trials but gives you less control over upgrades.
+   :::
+
+   The `appsmith-ee` image installs the _Commercial edition_ (recommended), which offers a _free plan_ and the flexibility to upgrade to a paid plan at any point. To install the _Community edition_, replace `appsmith-ee` with `appsmith-ce` in the image name and keep the same `:<version>` suffix in the `image` attribute within the `docker-compose.yml` file.
 
 3. Start the Docker container by using the below command. You may need to use `sudo` if you don't have permission to run `docker-compose`:
 

@@ -66,13 +66,15 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 ## Install Appsmith
 
+- Choose a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases) and set it in place of `<version>` in the `--image` value below. Pinning the tag keeps upgrades under your control.
+
 - Create an Azure container instance for Appsmith with: 
 
   ```bash
   az container create \
   --resource-group $resourceGroupName \
   	--name $aciName \
-  	--image appsmith/appsmith-ee \
+  	--image appsmith/appsmith-ee:<version> \
   	--ip-address public \
   	--dns-name-label $dnsNameLabel \
   	--ports 80 443 \
@@ -86,7 +88,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating an Azure container instance file on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the `--image` value while creating an Azure container instance on this page, and keep the same `:<version>` suffix.
 
 
 ## Post-installation configuration

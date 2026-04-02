@@ -103,7 +103,7 @@ Follow these steps to create task and container definitions for your cluster:
    
 4. In the **Container-1** section:
     * **Name** - Give a meaningful and unique name. For example, `appsmith`.
-    * **Image/URI** - `appsmith/appsmith-ee`
+    * **Image/URI** - `appsmith/appsmith-ee:<version>`, replacing `<version>` with a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases). Use a pinned tag so task revisions pull a known image.
     * Add the port mappings for Port `80` as follows:
       * **Container port** - `80`
       * **Protocol** - HTTP
@@ -237,7 +237,7 @@ Follow these steps to create and run an ECS service:
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in step 4 of the [Create task and container definitions](#create-task-and-container-definitions) section on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` in the **Image/URI** value in step 4 of the [Create task and container definitions](#create-task-and-container-definitions) section on this page, and keep the same `:<version>` suffix.
 
 ## Post-installation configuration
 

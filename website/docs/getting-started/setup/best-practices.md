@@ -74,6 +74,7 @@ Regular backups and recovery plans are critical to prevent data loss and ensure 
 
 Having a proper upgrade strategy ensures that your environment remains up-to-date with the latest features and security patches.
 
+- Pin the Appsmith `image` to a specific release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases) instead of relying on the implicit `latest` reference, so upgrades are deliberate and rollbacks are predictable. For the full workflow, see [Upgrade Appsmith Versions](/getting-started/setup/instance-management/update-appsmith).
 - Backup your environment and configuration files before upgrading. For more information, see the [Backup and recovery management(#backup-and-recovery-management) section.
 - Verify whether you need to **Upgrade to Checkpoint Version (v1.9.2)** before proceeding.
 - To stay up-to-date, enable **auto-updates**. For more information, see the [Schedule Automatic Updates](/getting-started/setup/instance-management/maintenance-window) guide.
