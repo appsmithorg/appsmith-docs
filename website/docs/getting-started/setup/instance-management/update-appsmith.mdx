@@ -36,7 +36,20 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
    ```bash
    docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
    ``` 
-2. Pull the latest Appsmith image and restart the container:  
+2. Retrieve the Appsmith version you want to run.
+
+   Find the release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+
+3. Open `docker-compose.yml` in that directory and set the `image` for the Appsmith service to a pinned tag, for example:
+
+   ```yaml
+   image: index.docker.io/appsmith/appsmith-ee:<version>
+   ```
+
+   If you use the Community edition image, use `appsmith-ce` instead of `appsmith-ee` and the same `:<version>` suffix.
+
+4. Pull the image and restart the container. The running container matches the tag in `docker-compose.yml`.
+
    ```bash
    docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
    ```
@@ -113,7 +126,19 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
    ```bash
    cd /root/appsmith
    ```  
-2. Pull the latest image and restart the installation:  
+2. Retrieve the Appsmith version you want to run.
+
+   Find the release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+
+3. Open `docker-compose.yml` and set the `image` for the Appsmith service to a pinned tag, for example:
+
+   ```yaml
+   image: index.docker.io/appsmith/appsmith-ee:<version>
+   ```
+
+   If you use the Community edition image, use `appsmith-ce` instead of `appsmith-ee` and the same `:<version>` suffix.
+
+4. Pull the image and restart the installation. The running container matches the tag in `docker-compose.yml`.
 
    ```bash
    docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d

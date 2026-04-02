@@ -80,7 +80,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
 
 3. In the form, select **Deploy one revision from an existing container image**.
 
-   - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ee`.
+   - In the **Container image URL** box, enter `docker.io/appsmith/appsmith-ee:<version>`, replacing `<version>` with a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases). Pinning the tag avoids pulling an unexpected image when you deploy new revisions.
 
 4. Enter a desired name in the **Service name** field.
 
@@ -131,7 +131,7 @@ Follow these steps to install Appsmith on Google Cloud Run:
 
 ## Install Appsmith Community
 
-To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating a service in step 3 of the [Install Appsmith](#install-appsmith) section on this page.
+To install the Appsmith open source edition (Appsmith Community), replace `appsmith-ee` with `appsmith-ce` while creating a service in step 3 of the [Install Appsmith](#install-appsmith) section on this page, and keep the same `:<version>` suffix on the image URL.
 
 ## Post-installation configuration
 

@@ -188,6 +188,8 @@ To connect your PostgreSQL database to Appsmith, follow these steps:
 
 Get the `APPSMITH_KEYCLOAK_DB_URL` from the **Connection Strings** section of your Azure PostgreSQL instance. 
 
+Pin the Appsmith image to a release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases) by replacing `<version>` in the example below.
+
 *Example:*
 
 ```yaml
@@ -196,7 +198,7 @@ Get the `APPSMITH_KEYCLOAK_DB_URL` from the **Connection Strings** section of yo
 version: "3"
 services:
   appsmith:
-    image: index.docker.io/appsmith/appsmith-ee
+    image: index.docker.io/appsmith/appsmith-ee:<version>
     container_name: appsmith
     ports:
       - "80:80"
