@@ -27,13 +27,21 @@ This page shows how to configure Appsmith for System for Cross-domain Identity M
 ## Prerequisites
 
 * A self-hosted Appsmith instance. See the [installation guides](/getting-started/setup/installation-guides) for deploying Appsmith.
-* Ensure that the Identity Provider (IDP) can connect with Appsmith.
+* Ensure that your Identity Provider (IdP) can reach the Appsmith SCIM API over HTTPS from its network. See [HTTPS and network access](#https-and-network-access).
 
 :::caution info
 - Appsmith only supports [SCIM v2.0](https://scim.cloud/) for user and group provisioning. You must ensure that your Identity Provider (IdP) is compatible with SCIM v2.0.
 - Google Workspace does not support SCIM, and integration cannot be configured within the platform. For more details, you can refer to the [Google Workspace documentation](https://support.google.com/a/topic/10018788?hl=en&ref_topic=6400789&sjid=5315314283411870064-AP).
 :::
 
+
+## HTTPS and network access
+
+The main requirement for provisioning is **reachability**: your Identity Provider must be able to send **HTTPS** requests to the **SCIM API endpoint** and receive a valid response. Copy that URL from **Admin Settings** when you [enable SCIM](#enable-scim-provisioning-on-appsmith); it usually looks like `https://<your-domain>/scim`. The IdP must reach that URL from wherever it operates—its cloud region, data center, or corporate network—so outbound provisioning calls succeed.
+
+Identity Providers initiate **outbound HTTPS** to your instance. SCIM is served on the **same HTTPS endpoint** as the rest of Appsmith—typically **port 443** at your load balancer or reverse proxy—not a separate SCIM-only port.
+
+On an internal or restricted network, you can narrow **inbound** HTTPS using firewall rules, security groups, or reverse proxy policies—for example, by allowing only IP ranges your IdP uses for provisioning (most vendors publish current ranges). The aim is to keep SCIM reachable without exposing the instance more than you need. These controls are **optional**; they are not an extra Appsmith-specific requirement for every deployment.
 
 ## Enable SCIM provisioning on Appsmith
 
