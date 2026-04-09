@@ -71,6 +71,11 @@ jobs:
 
           status=$(echo "$attach_response" | jq -r '.status')
           echo "Attach status: $status"
+          if [ "$status" = "null" ] || [ -z "$status" ]; then
+            echo "ERROR: Attach failed. Full response:"
+            echo "$attach_response"
+            exit 1
+          fi
 
       - name: Wait for vector store processing
         env:
