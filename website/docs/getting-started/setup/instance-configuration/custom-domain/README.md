@@ -41,7 +41,7 @@ Follow these steps to generate and maintain an SSL certificate for your custom d
 
 1. Go to the _Admin Settings_ in your Appsmith instance.
 
-2. Click **Advanced Settings** from the left navigation.
+2. Click **Instance settings** from the left navigation.
 
 3. Add your custom domain name to the **Custom Domain** field.
 
@@ -69,7 +69,7 @@ Follow these steps to configure SSL using a custom SSL Certificate:
 
 4. Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
 
-5. Go to the Admin Settings in your Appsmith instance. Under **Advanced Settings** - add your custom domain name to the **Custom Domain** field, and click the **SAVE & RESTART** button. You can also set up the custom domain using a [custom domain environment variable](/getting-started/setup/environment-variables#custom-domain).
+5. Go to the Admin Settings in your Appsmith instance. Under **Instance settings**, add your custom domain name to the **Custom Domain** field, and click the **SAVE & RESTART** button. You can also set up the custom domain using a [custom domain environment variable](/getting-started/setup/environment-variables#custom-domain).
 
 6. Open the terminal, go to the Appsmith installation directory, and restart the container using the below command:
    ```bash
