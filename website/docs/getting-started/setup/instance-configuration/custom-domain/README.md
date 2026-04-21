@@ -28,6 +28,10 @@ Before configuring SSL for your custom domain, ensure you have the following:
 
 You can use your custom domain with the HTTP protocol, even if you haven’t set up an SSL certificate. To ensure secure connections using HTTPS, it’s recommended to configure SSL. You can choose from the following two methods:
 
+:::info Custom domain format
+Enter **only** the domain or hostname—for example, `apps.example.com` or `subdomain.example.com`. Do **not** include a protocol (`http://` or `https://`), a port, a path, or a trailing slash.
+:::
+
 - [Set up Let’s Encrypt SSL certificate](#ssl-using-lets-encrypt-certificate) (recommended for most users)
 - [Set up a custom SSL certificate](#ssl-using-custom-certificate)
 
@@ -43,7 +47,7 @@ Follow these steps to generate and maintain an SSL certificate for your custom d
 
 2. Click **Instance settings** from the left navigation.
 
-3. Add your custom domain name to the **Custom Domain** field.
+3. Add your custom domain to the **Custom Domain** field as a plain hostname only (no `http://`, `https://`, port, path, or trailing slash).
 
 4. Click the **SAVE & RESTART** button.
 
@@ -69,7 +73,7 @@ Follow these steps to configure SSL using a custom SSL Certificate:
 
 4. Copy these files into the subdirectory `<MOUNTING-DIRECTORY>/ssl/`. Ensure that you change `<MOUNTING-DIRECTORY>` by the mounting volume directory available in the `docker-compose.yml`. For example, the default value is `./stacks`.
 
-5. Go to the Admin Settings in your Appsmith instance. Under **Instance settings**, add your custom domain name to the **Custom Domain** field, and click the **SAVE & RESTART** button. You can also set up the custom domain using a [custom domain environment variable](/getting-started/setup/environment-variables#custom-domain).
+5. Go to the Admin Settings in your Appsmith instance. Under **Instance settings**, add your custom domain to the **Custom Domain** field as a plain hostname only (no `http://`, `https://`, port, path, or trailing slash), and click the **SAVE & RESTART** button. You can also set up the custom domain using a [custom domain environment variable](/getting-started/setup/environment-variables#custom-domain).
 
 6. Open the terminal, go to the Appsmith installation directory, and restart the container using the below command:
    ```bash
