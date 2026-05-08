@@ -124,7 +124,9 @@ With Appsmith, you can manage user access and authentication methods in your ins
 
 <dd>
 
-Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
+Set to `true` to turn off the default username and password login when the instance is first configured. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
+
+Changing this variable after that initial setup does **not** update form login behavior in a running instance. To change form login afterward, use [`appsmithctl enable-form-login`](/getting-started/setup/instance-management/appsmithctl#enable-form-login) (alias `appsmithctl efl`) or toggle **Form Login** under **Admin Settings → User Management**, as described in [User Management](/getting-started/setup/instance-configuration/user-management#authentication).
 </dd>
 
 ### Security
