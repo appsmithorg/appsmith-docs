@@ -11,9 +11,9 @@ The MongoDB Kubernetes Operator is the recommended way to run MongoDB for new Ap
 
 ## Why use the operator
 
-- **Actively maintained** — the Bitnami MongoDB images have been deprecated by their publisher. The operator uses official MongoDB images with ongoing support.
-- **Operator-managed lifecycle** — a dedicated controller handles replica set membership, SCRAM credential lifecycle, and version upgrades.
-- **Automatic connection wiring** — the operator creates and maintains the connection-string Secret that Appsmith consumes. No manual URL assembly required.
+- **Actively maintained**—the Bitnami MongoDB images have been deprecated by their publisher. The operator uses official MongoDB images with ongoing support.
+- **Operator-managed lifecycle**—a dedicated controller handles replica set membership, SCRAM credential lifecycle, and version upgrades.
+- **Automatic connection wiring**—the operator creates and maintains the connection-string Secret that Appsmith consumes. No manual URL assembly required.
 
 ## How the chart integrates the operator
 
@@ -68,7 +68,7 @@ You should see the operator pod, MongoDB pod(s), and the `MongoDBCommunity` reso
 kubectl port-forward -n appsmith svc/appsmith 8080:80
 ```
 
-Open http://localhost:8080. For production access, configure an Ingress — see [Expose Appsmith](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
+Open http://localhost:8080. For production access, configure an Ingress—see [Expose Appsmith](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
 
 ## Configuration
 
@@ -99,7 +99,7 @@ kubectl get secret appsmith-mongo-password -n appsmith \
 
 ### Production sizing
 
-The defaults are tuned for evaluation — a single-member replica set with modest storage. For production, scale to three members and pin resources:
+The defaults are tuned for evaluation—a single-member replica set with modest storage. For production, scale to three members and pin resources:
 
 ```yaml
 mongodbCommunity:
@@ -116,7 +116,7 @@ mongodbCommunity:
       memory: 4Gi
 ```
 
-Scaling from 1 to 3 members after the initial install is a value change on upgrade — the operator handles adding members to the replica set without downtime.
+Scaling from 1 to 3 members after the initial install is a value change on upgrade—the operator handles adding members to the replica set without downtime.
 
 ### Namespace scope
 
@@ -124,7 +124,7 @@ Setting `mongodbOperator.enabled: true` installs the operator in the same namesp
 
 ### Deploying with ArgoCD
 
-The bundled operator path works with ArgoCD because the CRDs live in the upstream chart's `crds/` directory — Helm and ArgoCD install them before any templates are validated.
+The bundled operator path works with ArgoCD because the CRDs live in the upstream chart's `crds/` directory—Helm and ArgoCD install them before any templates are validated.
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
@@ -188,7 +188,7 @@ kubectl delete crd mongodbusers.mongodb.com
 ```
 
 :::caution
-Deleting these CRDs removes all matching resources across the cluster — only do this if nothing else relies on the operator.
+Deleting these CRDs removes all matching resources across the cluster—only do this if nothing else relies on the operator.
 :::
 
 ## Migrate from Bitnami subchart
@@ -345,5 +345,5 @@ mongodbCommunity:
 
 ## See also
 
-- [Helm Chart](/getting-started/setup/instance-configuration/helm-chart) — Deployment planning and chart feature overview.
-- [Kubernetes Installation Guide](/getting-started/setup/installation-guides/kubernetes) — Step-by-step install for Appsmith on Kubernetes.
+- [Helm Chart](/getting-started/setup/instance-configuration/helm-chart)—Deployment planning and chart feature overview.
+- [Kubernetes Installation Guide](/getting-started/setup/installation-guides/kubernetes)—Step-by-step install for Appsmith on Kubernetes.
