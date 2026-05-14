@@ -8,107 +8,128 @@ import TabItem from "@theme/TabItem";
 
 # Kubernetes (k8s)
 
-This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager.
+This page provides steps to install Appsmith on a Kubernetes cluster using the [Helm](https://helm.sh) package manager. The default installation runs a single replica and is a good starting point for getting Appsmith running. If you need high availability with multiple replicas, review the [deployment planning guide](/getting-started/setup/instance-configuration/helm-chart#planning-your-deployment) before installing — some decisions require a migration to change later.
 
-<VideoEmbed
-  host="youtube"
-  videoId="wZzYL1uZwds"
-  title="How To Deploy Appsmith On Kubernetes"
-  caption="How To Deploy Appsmith On Kubernetes"
-/>
+## Requirements
 
-## System requirements
+### Kubernetes cluster
 
-- At least 15 GB of free storage space.
-- 8 GB of RAM.
+- A running Kubernetes cluster (1.33+).
+- Appsmith application pods need at least **6 GB of memory** and benefit from **2 vCPUs**. MongoDB, Redis, PostgreSQL, and other chart dependencies consume additional resources, and the cluster itself has overhead for system components (kube-proxy, monitoring agents, ingress controllers, etc.). Plan for a minimum of **2 nodes with 2 vCPUs and 8 GB of memory each**.
+- A default `StorageClass` capable of provisioning persistent volumes. Most managed Kubernetes services (EKS, GKE, AKS) provide this out of the box.
+- An Ingress controller (such as [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) or an AWS/GCP load balancer controller) or a `LoadBalancer`-type Service to expose Appsmith to users.
+- Outbound network access to `cs.appsmith.com` for license validation and updates.
 
-## Prerequisites
+If you are setting up a new cluster on AWS, see [Set up Kubernetes cluster on AWS-EKS](/getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks).
 
-1. Install Helm package manager on your local machine. See the official Helm documentation for your [operating system](https://helm.sh/docs/intro/install/#through-package-managers).
-2. Install and configure `kubectl` to interact with your Kubernetes cluster. Follow the below guides available on the official Kubernetes documentation for instructions on how to install `kubectl` on your specific operating system:
-   - [MacOS using Homebrew](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos)
-   - [Linux using native package management](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
-   - [Windows using Chocolatey, Scoop, or winget](https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/#install-nonstandard-package-tools).
-3. Set up a Kubernetes cluster and persistent volume on your preferred platform for hosting the Kubernetes cluster. If you are hosting the Kubernetes cluster on AWS-EKS, see [Set up Kubernetes cluster on AWS-EKS](/getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks)
-4. Whitelist `cs.appsmith.com` in your firewall or security group’s outbound rules to ensure proper connectivity to required services.
+### Client machine
 
-:::caution
-A persistent volume configuration is required on the Kubernetes cluster before proceeding with the Appsmith installation.
-:::
+- [Helm 3.14+](https://helm.sh/docs/intro/install/) — the Helm package manager.
+- [`kubectl`](https://kubernetes.io/docs/tasks/tools/) — configured to connect to your cluster.
 
 ## Install Appsmith
 
 Follow these steps to install Appsmith:
 
-1. Create a folder named `appsmith` on your machine for deployment and data storage. Then, navigate to this folder using the `cd` command.
-
 <a id="update-helm-command"></a>
 
-2. Add the Appsmith chart repository with:
+1. Add the Appsmith chart repository:
 
     ```bash
     helm repo add appsmith-ee https://helm-ee.appsmith.com
-    ```
-
-3. Load the Appsmith chart repository with:
-
-    ```bash
     helm repo update
     ```
 
-4. Generate the `values.yaml` file with:
+2. Look up the latest Appsmith release version:
 
     ```bash
-    helm show values appsmith-ee/appsmith  > values.yaml
+    APPSMITH_VERSION=$(curl -s https://api.github.com/repos/appsmithorg/appsmith/releases/latest | jq -r '.tag_name')
+    echo $APPSMITH_VERSION
     ```
 
-5. Run the below command to deploy Appsmith:
+3. Create a `values.yaml` file with the following content:
+
+    ```yaml
+    image:
+      tag: # paste the version from step 2 (e.g. v1.99)
+
+    mongodb:
+      enabled: false
+
+    mongodbCommunity:
+      enabled: true
+
+    mongodbOperator:
+      enabled: true
+
+    ingress:
+      enabled: true
+      className: ""  # leave blank for the cluster default, or set to your controller (e.g. traefik, alb)
+      hosts:
+        - host: appsmith.example.com
+    ```
+
+    Replace `appsmith.example.com` with your domain and set `className` to match your Ingress controller. This configures the chart to use the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) instead of the legacy Bitnami MongoDB subchart. For TLS configuration, see [Configure TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
+
+4. Deploy Appsmith:
 
     ```bash
-    helm install appsmith-ee appsmith-ee/appsmith -n appsmith-ee --create-namespace -f values.yaml
+    helm install appsmith-ee appsmith-ee/appsmith \
+      -n appsmith-ee --create-namespace \
+      -f values.yaml
     ```
 
-6. Get pod name with:
+5. Wait for the pods to be ready:
 
     ```bash
     kubectl get pods -n appsmith-ee
     ```
 
-    The above command displays the status of the pods. Proceed to the next step once the pod status is shown as _RUNNING_.
+    Proceed once all pods show `Running`.
 
-7. To access and verify the installation locally, use the below command that forwards the port 8080 to port 80:
+6. If your ingress and DNS are already configured, open `https://appsmith.example.com`. Otherwise, use port-forward to verify the installation locally:
 
     ```bash
-    kubectl --namespace appsmith-ee port-forward appsmith-ee-0 8080:80
+    kubectl -n appsmith-ee port-forward appsmith-ee-0 8080:80
     ```
 
-  In the above command, `appsmith-ee-0` is the Appsmith pod name.
+    Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes.
 
-8. Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes. Once the server is up and running, you can access Appsmith at [http://localhost:8080](http://localhost:8080).
+7. Fill in your details to create an administrator account.
 
-9. Fill in your details to create an administrator account.
-
-10. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
+8. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 
-For high availability and scalability configuration, see the [Configure High Availability and Scalability](/getting-started/setup/installation-guides/kubernetes/configure-high-availability) guide. If you are migrating an existing single-pod installation to HA, see [Migrate Helm deployment from non-HA to HA](/getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm). To expose Appsmith installation on the internet, see the [Expose K8s to Internet](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) guide.
+## Next steps
 
-## Install Appsmith Community
+Appsmith is running and accessible via your ingress. Explore other guides below to secure and customize your deployment.
 
-To install the Appsmith open source edition (Appsmith Community):
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Configure TLS</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Set up TLS certificates for your Appsmith ingress using cert-manager or your own certificates.
+    </div>
+  </a>
 
-1. Use the open source helm chart by running the below command which adds the Appsmith chart repository:
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/helm-chart">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Helm Chart Reference</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Deployment planning, database options, and chart configuration reference.
+    </div>
+  </a>
+</div>
 
-```bash
-helm repo add appsmith https://helm.appsmith.com
-```
-
-2. Replace `appsmith-ee` with `appsmith` in the commands on this page.
-
-## Post-installation configuration
-
-Once you have completed the installation process, consider performing the tasks below to configure and manage your Appsmith instance, enhancing its security and performance, specifically if it's intended for production use.
-<br/>
 <div className="containerGridSampleApp">
   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/kubernetes/configure-high-availability">
     <div className="containerHead">
@@ -118,25 +139,11 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Configure high availability and scalability for your Appsmith deployment on Kubernetes to ensure uninterrupted access to your applications. 
+      Configure multiple replicas and shared storage for high availability.
     </div>
   </a>
 
-  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online">
-    <div className="containerHead">
-      <div className="containerHeading">
-        <strong>Expose K8s to Internet</strong>
-      </div>
-    </div>
-    <hr className="gradient-hr" />
-    <div className="containerDescription">
-      Configure your Appsmith Kubernetes installation to be accessible from the internet, enabling remote access and usage. 
-    </div>
-  </a>
-</div>
-
-<div className="containerGridSampleApp">
-  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/authentication">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/authentication">
     <div className="containerHead">
       <div className="containerHeading">
         <strong>Configure Single Sign-on (SSO)</strong>
@@ -144,11 +151,13 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Enable SSO to allow users to log in using your identity provider. Appsmith supports multiple SSO providers through SAML and OpenID protocols. 
+      Enable SSO to allow users to log in using your identity provider.
     </div>
   </a>
+</div>
 
-  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/email">
+<div className="containerGridSampleApp">
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/instance-configuration/email">
     <div className="containerHead">
       <div className="containerHeading">
         <strong>Configure Email Service</strong>
@@ -156,7 +165,19 @@ Once you have completed the installation process, consider performing the tasks 
     </div>
     <hr className="gradient-hr" />
     <div className="containerDescription">
-      Set up an email service to enable Appsmith to send notifications and alerts. You can use providers such as AWS SES, Gmail, or others. 
+      Set up an email service to enable notifications and alerts.
+    </div>
+  </a>
+
+  <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/instance-configuration/helm-chart">
+    <div className="containerHead">
+      <div className="containerHeading">
+        <strong>Uninstall Appsmith</strong>
+      </div>
+    </div>
+    <hr className="gradient-hr" />
+    <div className="containerDescription">
+      Learn how to remove Appsmith resources from your cluster and start fresh.
     </div>
   </a>
 </div>

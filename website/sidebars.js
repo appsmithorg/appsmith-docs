@@ -201,6 +201,8 @@ const sidebars = {
 },
 
                 'getting-started/setup/environment-variables',
+                'getting-started/setup/instance-configuration/helm-chart',
+                'getting-started/setup/instance-configuration/mongodb-kubernetes-operator',
                 'getting-started/setup/instance-management/api-reference',
               ],
             },
