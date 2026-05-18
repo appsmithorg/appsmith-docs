@@ -73,6 +73,17 @@ image:
 
 The enterprise image (`appsmith/appsmith-ee`) is used by default. You can run the enterprise image on a free plan without a license key—the community image is only needed if you prefer to run the open source edition.
 
+## Uninstall
+
+If you installed with the MongoDB Kubernetes Operator (as recommended in the [install guide](/getting-started/setup/installation-guides/kubernetes)), the operator's custom resource has a finalizer that must be cleared before uninstalling. See the [MongoDB Operator uninstall procedure](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator#uninstall) for the full steps.
+
+If you're using the Bitnami subchart or an external MongoDB, a standard uninstall is sufficient:
+
+```bash
+helm uninstall appsmith-ee -n appsmith-ee
+kubectl delete namespace appsmith-ee
+```
+
 ## Values reference
 
 The full list of chart parameters is maintained in the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters). The README is auto-generated from annotated comments in `values.yaml` to stay in sync with each chart release.
