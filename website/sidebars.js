@@ -197,6 +197,7 @@ const sidebars = {
     'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
     'getting-started/setup/instance-configuration/user-management',   // User Management
     'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
+    'getting-started/setup/instance-configuration/ai-assistant',      // AI Assistant
   ],
 },
 
