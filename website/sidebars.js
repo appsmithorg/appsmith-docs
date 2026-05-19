@@ -132,10 +132,25 @@ const sidebars = {
             },
             {
               type: 'category',
+              label: 'Helm Chart',
+              link: {
+                type: 'doc',
+                id: 'getting-started/setup/instance-configuration/helm-chart',
+              },
+              items: [
+                'getting-started/setup/instance-configuration/mongodb-kubernetes-operator',
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
+                  label: 'Ingress and TLS',
+                },
+              ],
+            },
+            {
+              type: 'category',
               label: 'Custom Domain and SSL Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-domain/README',
-                'getting-started/setup/instance-configuration/custom-domain/configure-tls',
                 'getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate',
               ],
             },
@@ -170,7 +185,6 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/external-redis',
                 'getting-started/setup/instance-configuration/in-memory-git',
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
-                'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/configure-using-environment-variables',
                 'getting-started/setup/instance-management/supervisor',
@@ -201,8 +215,6 @@ const sidebars = {
 },
 
                 'getting-started/setup/environment-variables',
-                'getting-started/setup/instance-configuration/helm-chart',
-                'getting-started/setup/instance-configuration/mongodb-kubernetes-operator',
                 'getting-started/setup/instance-management/api-reference',
               ],
             },

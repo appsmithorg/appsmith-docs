@@ -1,9 +1,9 @@
 ---
-description: Configure TLS for your Appsmith Kubernetes deployment.
+description: Configure ingress and TLS for your Appsmith Kubernetes deployment.
 toc_max_heading_level: 2
 ---
 
-# Configure TLS
+# Ingress and TLS
 
 When running on Kubernetes, TLS should be terminated at the Ingress layer—not inside Appsmith. This page covers the common approaches to adding TLS to your Appsmith ingress.
 
@@ -157,4 +157,4 @@ Common causes: the ClusterIssuer name doesn't match, DNS isn't pointing to the I
 
 - [Kubernetes Installation Guide](/getting-started/setup/installation-guides/kubernetes)—Install Appsmith on Kubernetes.
 - [Helm Chart Reference](/getting-started/setup/instance-configuration/helm-chart)—Deployment planning and chart configuration.
-- [Custom SSL Certificates](/getting-started/setup/instance-configuration/custom-domain/configure-tls)—Configuring TLS for Docker and non-Kubernetes deployments.
+- [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain)—Configuring TLS for Docker and non-Kubernetes deployments.

@@ -36,6 +36,8 @@ The chart supports two workload modes, each with different storage behavior:
 | **Multi-replica / HA** | Deployment | Shared filesystem (`ReadWriteMany`)—[AWS EFS](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html), [GCP Filestore](https://cloud.google.com/filestore/docs/csi-driver), Azure Files, NFS | 2+ | `workload.kind: Deployment`, `persistence.storageClass: <shared-sc>` |
 | **Existing claim** | Deployment | Pre-provisioned PVC | 1+ | `workload.kind: Deployment`, `persistence.existingClaim.enabled: true`, `persistence.existingClaim.claimName: <name>` |
 
+Use a `StorageClass` that allows volume expansion (`allowVolumeExpansion: true`) to avoid reprovisioning storage as your data grows.
+
 Changing the storage backend or switching between StatefulSet and Deployment on an existing release requires a migration—recreating volumes and the workload resource. See [Migrate to High Availability](/getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm) for the procedure. Plan this before your first install.
 
 ### MongoDB
@@ -48,19 +50,19 @@ MongoDB is Appsmith's primary data store. The chart supports three approaches, a
 | **Bitnami subchart** (default) | Being phased out | Existing installations that haven't migrated yet. The upstream Bitnami MongoDB images have been deprecated by their publisher. |
 | **External MongoDB** | Stable | Managed services (Atlas) or self-managed MongoDB outside the cluster. |
 
-For a complete walkthrough of the MongoDB Operator, see the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) guide. If you have an existing install using the Bitnami subchart, see [Migrate from Bitnami to MongoDB Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator#migrate-from-bitnami-subchart) for the migration procedure.
+For a complete walkthrough of the MongoDB Operator, see the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) guide. If you have an existing install using the Bitnami subchart, see [Migrate from Bitnami to MongoDB Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator#migrate-from-bitnami-subchart) for the migration procedure. To configure an external MongoDB instance, see [Custom MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis).
 
 ### Redis
 
 Redis is used for session storage and caching. The chart bundles Redis by default (`redis.enabled: true`) and runs it in the cluster alongside Appsmith. You can also bring your own Redis—for example, a cloud-managed service like AWS ElastiCache—by disabling the bundled instance and setting `APPSMITH_REDIS_URL` in `applicationConfig`.
 
-Redis data is ephemeral, so switching between bundled and external doesn't require a data migration.
+Redis data is ephemeral, so switching between bundled and external doesn't require a data migration. See [External Redis](/getting-started/setup/instance-configuration/external-redis) for configuration details.
 
 ### PostgreSQL
 
 PostgreSQL is used by Keycloak for identity management. The chart bundles PostgreSQL by default (`postgresql.enabled: true`) and runs it in the cluster alongside Appsmith. You can also bring your own PostgreSQL—for example, Amazon RDS or Azure Database for PostgreSQL—by disabling the bundled instance and configuring the Keycloak database connection via `applicationConfig`.
 
-Switching to an external PostgreSQL on an existing install requires migrating Keycloak's data.
+Switching to an external PostgreSQL on an existing install requires migrating Keycloak's data. See [External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds) for configuration details.
 
 ## Community edition
 
@@ -84,13 +86,10 @@ helm uninstall appsmith-ee -n appsmith-ee
 kubectl delete namespace appsmith-ee
 ```
 
-## Values reference
-
-The full list of chart parameters is maintained in the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters). The README is auto-generated from annotated comments in `values.yaml` to stay in sync with each chart release.
-
 ## See also
 
-- [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator)—Install guide, configuration, and migration from Bitnami.
+- [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online)—Configure ingress and TLS for Kubernetes.
 - [Kubernetes Installation Guide](/getting-started/setup/installation-guides/kubernetes)—Step-by-step install for Appsmith on Kubernetes.
 - [Environment Variables](/getting-started/setup/environment-variables)—Application-level configuration reference.
 - [High Availability Setup](/getting-started/setup/installation-guides/kubernetes/configure-high-availability)—Configure HA on AWS EKS.
+- [Upgrade Helm Chart Versions](/getting-started/setup/instance-management)—Migration guides for older chart versions (v1→v2, CE→EE chart consolidation, Bitnami image deprecation).

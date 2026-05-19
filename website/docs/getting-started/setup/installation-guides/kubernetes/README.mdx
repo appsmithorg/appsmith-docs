@@ -16,7 +16,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 
 - A running Kubernetes cluster (1.33+).
 - Appsmith application pods need at least **6 GB of memory** and benefit from **2 vCPUs**. MongoDB, Redis, PostgreSQL, and other chart dependencies consume additional resources, and the cluster itself has overhead for system components (kube-proxy, monitoring agents, ingress controllers, etc.). Plan for a minimum of **2 nodes with 2 vCPUs and 8 GB of memory each**.
-- A default `StorageClass` capable of provisioning persistent volumes. Most managed Kubernetes services (EKS, GKE, AKS) provide this out of the box.
+- A default `StorageClass` capable of provisioning persistent volumes with `allowVolumeExpansion: true` to avoid reprovisioning storage as data grows.
 - An Ingress controller (such as [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) or an AWS/GCP load balancer controller) or a `LoadBalancer`-type Service to expose Appsmith to users.
 - Outbound network access to `cs.appsmith.com` for license validation and updates.
 
@@ -69,7 +69,7 @@ Follow these steps to install Appsmith:
         - host: appsmith.example.com
     ```
 
-    Replace `appsmith.example.com` with your domain and set `className` to match your Ingress controller. This configures the chart to use the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) instead of the legacy Bitnami MongoDB subchart. For TLS configuration, see [Configure TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
+    Replace `appsmith.example.com` with your domain and set `className` to match your Ingress controller. This configures the chart to use the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) instead of the legacy Bitnami MongoDB subchart. For TLS configuration, see [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online). For the full list of configurable values, see the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters).
 
 4. Deploy Appsmith:
 
@@ -108,7 +108,7 @@ Appsmith is running and accessible via your ingress. Explore other guides below 
   <a className="containerAnchor containerColumnSampleApp columnGrid column-one" href="/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online">
     <div className="containerHead">
       <div className="containerHeading">
-        <strong>Configure TLS</strong>
+        <strong>Ingress and TLS</strong>
       </div>
     </div>
     <hr className="gradient-hr" />

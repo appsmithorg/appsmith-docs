@@ -7,7 +7,7 @@ description: Learn how to secure your custom domain on a self-hosted Appsmith in
 This page explains how to configure SSL for your custom domain on a self-hosted Appsmith instance, ensuring secure HTTPS connections for your applications.
 
 :::info
-For Kubernetes installations, see [Configure TLS for Kubernetes](/getting-started/setup/instance-configuration/custom-domain/configure-tls).
+For Kubernetes installations, see [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
 :::
 
 ## Prerequisites
@@ -110,5 +110,5 @@ If you continue to face issues, contact the support team using the chat widget a
 ## See also
 - [Configure Environment Variables](/getting-started/setup/instance-configuration/configure-using-environment-variables?current-platform=docker): Learn how to configure environment variables, which may be necessary when setting up TLS and Appsmith in Kubernetes.
 - [Configure HTTP/HTTPS Proxy](/getting-started/setup/instance-configuration/http-proxy): Setup HTTP/HTTPS proxy if required for your deployment while configuring TLS or managing network traffic.
-- [Configure TLS for Kubernetes](/getting-started/setup/instance-configuration/custom-domain/configure-tls): Learn how to set up TLS for Appsmith on Kubernetes.
+- [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online): Learn how to configure ingress and TLS for Appsmith on Kubernetes.
 - [Install an SSL certificate on DigitalOcean](https://docs.digitalocean.com/support/how-do-i-install-an-ssl-certificate-on-a-droplet/): Follow this guide to configure SSL for your DigitalOcean Droplet.
