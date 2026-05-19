@@ -8,7 +8,7 @@ import TabItem from '@theme/TabItem';
 
 # Configure External PostgreSQL (AWS RDS)
 
-Appsmith relies on MongoDB, PostgreSQL and Redis. It uses PostgreSQL for SSO and workflows. By default in a single server deployment, it runs an embeded instance of each within the container. You can also switch to an external PostgreSQL instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external PostgreSQL instance on AWS RDS and how to connect it to your Appsmith instance.
+Appsmith relies on MongoDB, PostgreSQL and Redis. It uses PostgreSQL for SSO and workflows. By default in a single server deployment, it runs an embedded instance of each within the container. You can also switch to an external PostgreSQL instance to enable better performance, scalability, and reliability. This page provides steps on how to set up an external PostgreSQL instance on AWS RDS and how to connect it to your Appsmith instance.
 
 ## Prerequisites
 
@@ -39,6 +39,10 @@ Follow these steps to set up a PostgreSQL instance on AWS RDS for Appsmith. If y
 
 Follow these steps to connect your Appsmith instance to the external PostgreSQL database:
 
+:::note
+**Encrypted connections are required.** PostgreSQL uses TLS (often called SSL); set `sslmode=require` in `APPSMITH_KEYCLOAK_DB_URL` and use the environment variables in the steps below. On AWS RDS, encrypted connections are commonly enforced (for example with the `rds.force_ssl` parameter). Ensure security groups and networking allow Appsmith to reach the database endpoint. If you need details about Temporal and host verification, see the note after the connection variables.
+:::
+
 <Tabs queryString="current-command-type">
 
 <TabItem label="Docker" value="docker-commands">
@@ -68,13 +72,13 @@ The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Tem
 
 <TabItem label="Kubernetes" value="kubernetes-commands">
 
-1. Navigate to the directory containing your `values.yaml` file for you deployment.
+1. Navigate to the directory containing your `values.yaml` file for your deployment.
 
 2. Add or update the following environment variables with your PostgreSQL connection details:
 
     ```yaml
     applicationConfig:
-      APPSMITH_KEYCLOAK_DB_URL=postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
+      APPSMITH_KEYCLOAK_DB_URL: postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
       SQL_TLS_ENABLED: true
       SQL_TLS_DISABLE_HOST_VERIFICATION: true
       SQL_TLS: true
@@ -109,6 +113,7 @@ If you face connection issues:
 - Double-check the RDS endpoint, port, database name, username, and password.
 - Ensure the RDS instance is accessible from your Appsmith server (check VPC, subnet, and security group settings).
 - Confirm that the PostgreSQL instance is accepting connections from the Appsmith server’s IP address.
+- Verify TLS settings: `sslmode=require` in `APPSMITH_KEYCLOAK_DB_URL` and the TLS-related variables match the steps above.
 - Verify that the PostgreSQL user has the necessary privileges.
 
 If you continue facing issues, contact support using the chat widget available in the bottom-right corner of this page.

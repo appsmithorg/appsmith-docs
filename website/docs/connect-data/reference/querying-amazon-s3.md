@@ -7,7 +7,7 @@ description: Connect Appsmith to an S3 bucket and create queries.
 
 This page provides information for connecting your application to your Amazon S3 bucket and using queries to manage its content.
 
-This datasource can also be used to connect to any S3-compatible object storage provider such as Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, and MinIO.
+This datasource can also be used to connect to any S3-compatible object storage provider such as Upcloud, Digital Ocean Spaces, Wasabi, DreamObjects, MinIO, and Google Cloud Storage (using S3-compatible HMAC credentials).
 
 ## Connect S3
 
@@ -37,17 +37,26 @@ The following section is a reference guide that provides a complete description 
     <li>Wasabi</li>
     <li>DreamObjects</li>
     <li>MinIO</li>
+    <li>Google Cloud Storage</li>
     <li>Other</li>
   </ul>
 </dd>
 
 #### Access key
 
-<dd>The key used to grant programmatic access to your resource.</dd>
+<dd>
+
+The identifier for programmatic access to your bucket or account. For Amazon S3, this is the IAM user <b>Access key ID</b>. To create and manage keys in AWS, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-keys-admin-managed.html">How an IAM administrator can manage IAM user access keys</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Manage access keys for IAM users</a>. For the IAM actions Appsmith uses, see <a href="#iam-permissions-for-s3-queries">IAM permissions for S3 queries</a>.
+
+</dd>
 
 #### Secret key
 
-<dd>The secret key used to identify and authenticate your queries.</dd>
+<dd>
+
+The secret paired with the access key. For Amazon S3, this is the <b>Secret access key</b>. You can only view or download it when the key is created; see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html">Manage access keys for IAM users</a>. Store it in a secrets manager or secure deployment configuration.
+
+</dd>
 
 #### Endpoint URL
 
@@ -61,11 +70,113 @@ Identifies which regional data center to connect to. This field appears when <b>
 
 </dd>
 
+#### Default bucket
+
+<dd>
+
+This field appears when <b>S3 service provider</b> is <b>Google Cloud Storage</b>. Enter the bucket Appsmith should use for the connection test and default operations. It is required for that provider.
+
+</dd>
+
 :::note
-If the configuration is correct but the credentials do not have the required permission, the test operation fails.
+Missing permissions for <b>object</b> operations (list objects in a bucket, get, put, or delete) can cause queries to fail even when the datasource test succeeds.
+
+For <b>Amazon S3</b>, the connection test calls the AWS API to list buckets in your account. If that call returns access denied because <code>s3:ListAllMyBuckets</code> is not allowed, Appsmith may still report a successful test (the credentials are treated as valid). Bucket discovery in the datasource UI can then fail; use known bucket names in your queries, or grant <code>s3:ListAllMyBuckets</code> if you need account-wide bucket listing.
+
+For <b>Google Cloud Storage</b>, the test uses the bucket you set in <b>Default bucket</b>. Ensure that bucket exists and the HMAC identity can list objects in it.
+
 :::
 
+### Access keys and AWS IAM setup
 
+Appsmith's S3 datasource uses **long-term access key** credentials on the server to sign requests to your object storage API.
+
+| Appsmith field | AWS (and S3-compatible APIs) |
+| --- | --- |
+| Access key | Access key ID (or provider equivalent) |
+| Secret key | Secret access key (or provider equivalent) |
+
+For Amazon S3, create a dedicated IAM user when possible, attach a minimal policy (see [Example least-privilege policy](#example-least-privilege-policy)), and rotate keys on a schedule. AWS documents the full workflow here:
+
+- [Create an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html)
+- [How an IAM administrator can manage IAM user access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-keys-admin-managed.html) (includes console steps under *To create an access key for an IAM user*)
+- [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) (concepts, limits, and security practices)
+
+### IAM permissions for S3 queries
+
+The plugin calls S3 APIs that map to the following **IAM actions** on AWS. Scope resources to the buckets and prefixes you use.
+
+| Appsmith behavior | Typical IAM action |
+| --- | --- |
+| Test connection (Amazon S3) | `s3:ListAllMyBuckets` (see note under [Connection parameters](#connection-parameters) if this is denied) |
+| Datasource structure (bucket list in UI) | `s3:ListAllMyBuckets` |
+| List files | `s3:ListBucket` on the bucket ARN |
+| Read file | `s3:GetObject` on object ARNs |
+| Upload | `s3:PutObject` |
+| Delete file / delete multiple | `s3:DeleteObject` |
+| Signed URLs (GET) in list/upload flows | `s3:GetObject` on the relevant objects |
+
+If you restrict policies to specific buckets and omit `s3:ListAllMyBuckets`, some UI features that depend on listing all buckets may not work; you can still run queries when you supply bucket names explicitly.
+
+### Example least-privilege policy
+
+Replace `your-bucket` with your bucket name. Adjust the object ARN if you use only a prefix.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListBucket",
+      "Effect": "Allow",
+      "Action": ["s3:ListBucket"],
+      "Resource": "arn:aws:s3:::your-bucket"
+    },
+    {
+      "Sid": "ObjectReadWriteDelete",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject", "s3:DeleteObject"],
+      "Resource": "arn:aws:s3:::your-bucket/*"
+    }
+  ]
+}
+```
+
+If Appsmith must list all buckets for testing and datasource structure, add a separate statement:
+
+```json
+{
+  "Sid": "ListAllBucketsForAppsmithUi",
+  "Effect": "Allow",
+  "Action": ["s3:ListAllMyBuckets"],
+  "Resource": "*"
+}
+```
+
+You can tighten access further with prefix conditions on `s3:ListBucket` and object keys. To create and attach a policy in AWS, see [Define custom IAM permissions with customer managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html) and [Create IAM policies (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create-console.html).
+
+### Encryption with SSE-KMS
+
+If the bucket uses **SSE-KMS**, the IAM principal often needs **KMS** permissions on the key used by the bucket (for example `kms:Decrypt` and `kms:GenerateDataKey`), in addition to S3 object permissions. See [Protecting data with server-side encryption using AWS KMS keys (SSE-KMS)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html) and [Key policies in AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html).
+
+### S3-compatible providers
+
+For MinIO, Wasabi, DigitalOcean Spaces, and other S3-compatible services, use the same **Access key**, **Secret key**, **Endpoint URL**, and **Region** fields as required by the form. Permission names and console steps are provider-specific; follow that provider's documentation for creating keys and restricting access to your buckets.
+
+### Google Cloud Storage
+
+Select **Google Cloud Storage** as the **S3 service provider**. Configure **Access key** and **Secret key** using [HMAC keys for interoperability](https://cloud.google.com/storage/docs/authentication/hmackeys); to create and manage them, see [Create and manage HMAC keys for service accounts](https://cloud.google.com/storage/docs/authentication/managing-hmackeys). Set **Default bucket** to the bucket used for the connection test and your app. Use Google's documentation for bucket access and endpoint details for the S3-compatible XML API.
+
+:::tip Credentials checklist
+
+- Use a dedicated IAM user or service principal where possible, with least-privilege policies on the buckets you need.
+- Store secrets securely; rotate access keys on a schedule.
+- Ensure the policy allows `s3:ListBucket`, `s3:GetObject`, `s3:PutObject`, and `s3:DeleteObject` on the correct ARNs for AWS.
+- Add `s3:ListAllMyBuckets` only if you need account-wide bucket listing in the UI and tests without access issues.
+- Set **Region**, **Endpoint URL**, and **Default bucket** (for Google Cloud Storage) as the form requires.
+- If you use SSE-KMS, grant the extra KMS permissions your key and bucket policies require.
+
+:::
 
 ## Create queries
 

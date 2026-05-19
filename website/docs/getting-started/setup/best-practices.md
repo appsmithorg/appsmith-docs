@@ -59,6 +59,8 @@ Ensuring the security of your Appsmith instance is vital for protecting sensitiv
 
 Regular backups and recovery plans are critical to prevent data loss and ensure smooth recovery in case of failures.
 
+- **Data stores and criticality**: For MongoDB, PostgreSQL, Redis, EFS or persistent volumes, and how they relate to `appsmithctl` backups, see [Data criticality and backup considerations](/getting-started/setup/deployment-architecture#data-criticality-and-backup-considerations).
+
 - **Regular backups**:
   - Enable scheduled backups to run **nightly** on all your instances. For more information, see [Schedule automatic backup](/getting-started/setup/environment-variables#automatic-backups) reference.
   - Use the `appsmithctl backup` command to create backups of your **production** and **staging** environments. For detailed backup configuration, refer to the [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) guide.
@@ -72,6 +74,7 @@ Regular backups and recovery plans are critical to prevent data loss and ensure 
 
 Having a proper upgrade strategy ensures that your environment remains up-to-date with the latest features and security patches.
 
+- Pin the Appsmith `image` to a specific release tag from [Appsmith on GitHub](https://github.com/appsmithorg/appsmith/releases) instead of relying on the implicit `latest` reference, so upgrades are deliberate and rollbacks are predictable. For the full workflow, see [Upgrade Appsmith Versions](/getting-started/setup/instance-management/update-appsmith).
 - Backup your environment and configuration files before upgrading. For more information, see the [Backup and recovery management(#backup-and-recovery-management) section.
 - Verify whether you need to **Upgrade to Checkpoint Version (v1.9.2)** before proceeding.
 - To stay up-to-date, enable **auto-updates**. For more information, see the [Schedule Automatic Updates](/getting-started/setup/instance-management/maintenance-window) guide.

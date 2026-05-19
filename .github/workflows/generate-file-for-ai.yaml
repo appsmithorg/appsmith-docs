@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Merge markdown files
         run: |
@@ -41,7 +41,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           echo "Uploading file to OpenAI..."
-          upload_response=$(curl -s -X POST \
+          upload_response=$(curl -sS --http1.1 -X POST \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
             -F "purpose=assistants" \
             -F "file=@appsmith-docs.md" \
@@ -61,15 +61,27 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
         run: |
+          echo "Validating vector store..."
+          vs_validate=$(curl -fsS --http1.1 "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID" \
+            -H "Authorization: Bearer $OPENAI_API_KEY")
+          echo "$vs_validate" | jq .
+
           echo "Attaching file to vector store..."
-          attach_response=$(curl -s -X POST \
+          attach_response=$(curl -sS --http1.1 -X POST \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
             -H "Content-Type: application/json" \
-            -H "OpenAI-Beta: assistants=v2" \
-            -d "{\"file_id\": \"$FILE_ID\"}" \
+            -d "{\"file_id\":\"$FILE_ID\"}" \
             "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files")
 
+          echo "$attach_response"
+
           status=$(echo "$attach_response" | jq -r '.status')
+          if [ "$status" = "null" ] || [ -z "$status" ]; then
+            echo "ERROR: Attach failed. Full response:"
+            echo "$attach_response"
+            exit 1
+          fi
+
           echo "Attach status: $status"
 
       - name: Wait for vector store processing
@@ -77,27 +89,26 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
         run: |
-          echo "Waiting for vector store to finish processing..."
+          echo "Waiting for file $FILE_ID to finish processing in vector store..."
           for i in $(seq 1 60); do
-            vs_response=$(curl -s \
+            file_response=$(curl -sS --http1.1 \
               -H "Authorization: Bearer $OPENAI_API_KEY" \
-              -H "OpenAI-Beta: assistants=v2" \
-              "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID")
+              "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files/$FILE_ID")
 
-            vs_status=$(echo "$vs_response" | jq -r '.status')
-            echo "Attempt $i: status=$vs_status"
+            file_status=$(echo "$file_response" | jq -r '.status')
+            echo "Attempt $i: status=$file_status"
 
-            if [ "$vs_status" = "completed" ]; then
-              echo "Vector store processing complete"
+            if [ "$file_status" = "completed" ]; then
+              echo "File ingestion complete"
               exit 0
-            elif [ "$vs_status" = "failed" ]; then
-              echo "ERROR: Vector store processing failed"
-              echo "$vs_response"
+            elif [ "$file_status" = "failed" ] || [ "$file_status" = "cancelled" ]; then
+              echo "ERROR: File ingestion $file_status"
+              echo "$file_response"
               exit 1
             fi
 
             sleep 10
           done
-          echo "ERROR: Timed out waiting for vector store processing"
+          echo "ERROR: Timed out waiting for file ingestion"
           exit 1
 

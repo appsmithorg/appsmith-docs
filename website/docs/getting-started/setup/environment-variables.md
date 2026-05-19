@@ -124,7 +124,9 @@ With Appsmith, you can manage user access and authentication methods in your ins
 
 <dd>
 
-Set to `true` to turn off the default username and password login. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
+Set to `true` to turn off the default username and password login when the instance is first configured. Useful for administrators who want to enforce Single Sign-On (SSO) or limit authentication methods for added security and control.
+
+Changing this variable after that initial setup does **not** update form login behavior in a running instance. To change form login afterward, use [`appsmithctl enable-form-login`](/getting-started/setup/instance-management/appsmithctl#enable-form-login) (alias `appsmithctl efl`) or toggle **Form Login** under **Admin Settings → User Management**, as described in [User Management](/getting-started/setup/instance-configuration/user-management#authentication).
 </dd>
 
 ### Security
@@ -318,7 +320,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 ##### `APPSMITH_CUSTOM_DOMAIN`
 
 <dd>
-    Set this variable with your custom domain to access Appsmith. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
+    Set this variable to your custom domain hostname only (for example, `apps.example.com`)—do not include `http://`, `https://`, a port, a path, or a trailing slash. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
 
