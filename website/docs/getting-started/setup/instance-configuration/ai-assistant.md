@@ -5,7 +5,7 @@ The AI Assistant section lets organization administrators configure Ask AI for t
 API keys are encrypted and stored securely. Only organization administrators can view or change these settings.
 
 :::note Version compatibility
-AI Assistant configuration is available in Appsmith v2.0 and later (except on the free hosted version using app.appsmith.com domain). If your instance is on an earlier version, this page does not appear in Admin Settings and Ask AI is not available.  
+AI Assistant configuration is available in Appsmith v2.0 and later (Not Available on the free hosted version using app.appsmith.com domain). If your instance is on an earlier version, this page does not appear in Admin Settings and Ask AI is not available.  
 :::
 
 <ZoomImage
