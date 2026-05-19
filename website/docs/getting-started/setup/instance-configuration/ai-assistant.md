@@ -8,7 +8,11 @@ API keys are encrypted and stored securely. Only organization administrators can
 AI Assistant configuration is available in Appsmith v2.0 and later (except on the free hosted version using app.appsmith.com domain). If your instance is on an earlier version, this page does not appear in Admin Settings and Ask AI is not available.  
 :::
 
-
+<ZoomImage
+  src="/img/ai-assistant-settings.png"
+  alt="AI Assistant Configuration settings in Admin Settings"
+  caption=""
+/>
 
 ## AI Assistant Configuration
 
@@ -80,7 +84,13 @@ Change this value only if you use a proxy or a custom API endpoint.
 
 Click **Test Key** to verify that your API key, model, and base URL are valid before saving. Use this to confirm connectivity without applying changes to your organization.
 
+After you click **Test Key**, Appsmith shows the results of the connection check, including API key format, connection, and authentication status. The example below shows a failed test with troubleshooting suggestions:
 
+<ZoomImage
+  src="/img/AskAI-TestKey.png"
+  alt="API key test results showing authentication failure"
+  caption=""
+/>
 
 #### Save Configuration
 
