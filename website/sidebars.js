@@ -481,6 +481,7 @@ const sidebars = {
             `build-apps/how-to-guides/download-table-data`,
             'connect-data/how-to-guides/how-to-download-files-using-api',
             `core-concepts/writing-code/ui-actions`,
+            'build-apps/how-to-guides/use-ask-ai',
             'connect-data/how-to-guides/send-emails-using-the-SMTP-plugin',
             'build-apps/how-to-guides/generate-pdf-dynamically',
             `build-apps/how-to-guides/display-select-options-dynamically`,

@@ -5,7 +5,7 @@ The AI Assistant section lets organization administrators configure Ask AI for t
 API keys are encrypted and stored securely. Only organization administrators can view or change these settings.
 
 :::note Version compatibility
-AI Assistant configuration is available in Appsmith v2.0 and later (Not Available on the free hosted version using app.appsmith.com domain). If your instance is on an earlier version, this page does not appear in Admin Settings and Ask AI is not available.  
+AI Assistant configuration is available in Appsmith v2.0 and later (***Not Available*** *on the free hosted version using app.appsmith.com domain*). If your instance is on an earlier version, this page does not appear in Admin Settings and Ask AI is not available.  
 :::
 
 <ZoomImage
@@ -97,4 +97,6 @@ After you click **Test Key**, Appsmith shows the results of the connection check
 
 
 Click **Save Configuration** to apply your AI Assistant settings. Changes take effect for all users in the organization after the save completes.
+
+For instructions on using Ask AI in the editor, see [Use Ask AI](/build-apps/how-to-guides/use-ask-ai).
 
