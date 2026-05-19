@@ -27,48 +27,7 @@ When `mongodbOperator.enabled: true` (recommended), the chart also pulls the ups
 
 ## Fresh installation
 
-### Prerequisites
-
-- Kubernetes 1.28+
-- Helm 3.14+
-- A `StorageClass` available for MongoDB PVCs (uses the cluster default unless overridden via `mongodbCommunity.persistent.storageClass`)
-
-### Install
-
-```bash
-helm repo add appsmith https://helm.appsmith.com
-helm repo update
-
-kubectl create namespace appsmith
-
-helm install appsmith appsmith/appsmith -n appsmith --wait --timeout 10m \
-  --set mongodb.enabled=false \
-  --set mongodbCommunity.enabled=true \
-  --set mongodbOperator.enabled=true
-```
-
-| Flag | Purpose |
-|---|---|
-| `mongodb.enabled=false` | Disables the legacy Bitnami MongoDB subchart |
-| `mongodbCommunity.enabled=true` | Deploys a `MongoDBCommunity` CR for the operator to reconcile |
-| `mongodbOperator.enabled=true` | Installs the MongoDB Kubernetes Operator in the same namespace |
-
-### Verify
-
-```bash
-kubectl get pods -n appsmith
-kubectl get mongodbcommunity -n appsmith
-```
-
-You should see the operator pod, MongoDB pod(s), and the `MongoDBCommunity` resource in a `Running` phase.
-
-### Access the UI
-
-```bash
-kubectl port-forward -n appsmith svc/appsmith 8080:80
-```
-
-Open http://localhost:8080. For production access, configure an Ingress—see [Expose Appsmith](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online).
+The MongoDB Operator is the recommended MongoDB configuration for new Appsmith installations. The [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) includes the operator in its default `values.yaml`—follow that guide to get started.
 
 ## Configuration
 
@@ -78,7 +37,7 @@ When `mongodbCommunity.auth.passwordSecretName` is empty (the default), the char
 
 ```bash
 kubectl create secret generic my-mongodb-secret \
-  -n appsmith \
+  -n appsmith-ee \
   --from-literal=password='your-password'
 ```
 
@@ -93,7 +52,7 @@ The chart skips the pre-install Job when a Secret name is provided.
 To retrieve the auto-generated password:
 
 ```bash
-kubectl get secret appsmith-mongo-password -n appsmith \
+kubectl get secret appsmith-ee-mongo-password -n appsmith-ee \
   -o jsonpath='{.data.password}' | base64 -d
 ```
 
@@ -120,39 +79,117 @@ Scaling from 1 to 3 members after the initial install is a value change on upgra
 
 ### Namespace scope
 
-Setting `mongodbOperator.enabled: true` installs the operator in the same namespace as Appsmith. If you manage the operator separately (for example, a cluster-wide install), leave this `false` and ensure the operator has RBAC access to the release namespace.
+Setting `mongodbOperator.enabled: true` installs the operator in the same namespace as Appsmith. If you intend to manage the operator separately (for example, a cluster-wide install), leave this `false` and ensure the operator has RBAC access to your Appsmith deployment's namespace.
 
-### Deploying with ArgoCD
 
-The bundled operator path works with ArgoCD because the CRDs live in the upstream chart's `crds/` directory—Helm and ArgoCD install them before any templates are validated.
+## Migrate from Bitnami subchart
 
-```yaml
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: appsmith
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://helm.appsmith.com
-    chart: appsmith
-    targetRevision: "<chart-version>"
-    helm:
-      valuesObject:
-        mongodb:
-          enabled: false
-        mongodbCommunity:
-          enabled: true
-        mongodbOperator:
-          enabled: true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: appsmith
-  syncPolicy:
-    automated: {}
-    syncOptions:
-      - CreateNamespace=true
+If you have an existing Appsmith install using the Bitnami MongoDB subchart, follow this procedure to move to the MongoDB Operator. The migration exports your data from the Bitnami-managed MongoDB and imports it into the operator-managed instance.
+
+:::caution
+Test this procedure on a non-production cluster first. The migration requires downtime while Appsmith is scaled down, data is exported and imported, and the deployment is reconfigured.
+:::
+
+### Overview
+
+The migration follows an expand-move-contract pattern. First, deploy the MongoDB Operator alongside your existing Bitnami instance so both are running. Then scale down Appsmith to stop writes, export data from Bitnami, and import it into the operator-managed MongoDB. Finally, reconfigure the release to use the new MongoDB and remove the old Bitnami resources.
+
+1. Deploy the MongoDB Operator alongside the existing Bitnami instance
+2. Scale down Appsmith to stop writes
+3. Export and import data from Bitnami to the operator-managed MongoDB
+4. Switch Appsmith to the new MongoDB and verify
+5. Clean up the Bitnami MongoDB resources
+
+### Step 1: Deploy the MongoDB Operator
+
+Upgrade the release to enable the MongoDB Operator alongside the existing Bitnami instance. Both MongoDB deployments will run side by side:
+
+```bash
+helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee --wait --timeout 10m \
+  --reuse-values \
+  --set mongodbCommunity.enabled=true \
+  --set mongodbOperator.enabled=true
+```
+
+Wait for the operator-managed MongoDB to reach a `Running` phase:
+
+```bash
+kubectl get mongodbcommunity -n appsmith-ee -w
+```
+
+### Step 2: Scale down Appsmith
+
+Once the operator-managed MongoDB is running, stop the Appsmith workload to prevent writes during the data migration.
+
+**StatefulSet (default single-replica install):**
+
+```bash
+kubectl scale statefulset appsmith-ee -n appsmith-ee --replicas=0
+```
+
+**Deployment (HA install with autoscaling):**
+
+First set the HPA minimum to zero, then scale the Deployment:
+
+```bash
+kubectl patch hpa appsmith-ee -n appsmith-ee --patch '{"spec":{"minReplicas":0}}'
+kubectl scale deployment appsmith-ee -n appsmith-ee --replicas=0
+```
+
+Wait for all Appsmith pods to terminate before proceeding.
+
+### Step 3: Export and import data
+
+Retrieve both connection strings—the existing Bitnami URI from the ConfigMap and the operator-managed URI from its Secret:
+
+```bash
+SOURCE_URI=$(kubectl get cm appsmith-ee -n appsmith-ee -o jsonpath='{.data.APPSMITH_DB_URL}')
+
+MONGO_PASS=$(kubectl get secret appsmith-ee-mongo-password -n appsmith-ee \
+  -o jsonpath='{.data.password}' | base64 -d)
+DEST_URI="mongodb://appsmith:${MONGO_PASS}@appsmith-ee-mongo-0.appsmith-ee-mongo-svc.appsmith-ee.svc.cluster.local:27017/appsmith?authSource=appsmith"
+```
+
+Dump from the Bitnami MongoDB and restore directly into the operator-managed instance, all from the Bitnami pod:
+
+```bash
+# Dump the data
+kubectl exec -n appsmith-ee appsmith-ee-mongodb-0 -- \
+  mongodump --uri="$SOURCE_URI" \
+  --archive=/tmp/appsmith-dump.gz --gzip
+
+# Restore into the operator-managed MongoDB
+kubectl exec -n appsmith-ee appsmith-ee-mongodb-0 -- \
+  mongorestore --uri="$DEST_URI" \
+  --archive=/tmp/appsmith-dump.gz --gzip --drop
+```
+
+### Step 4: Switch Appsmith to the new MongoDB
+
+Upgrade the release to disable the Bitnami subchart. Helm will scale Appsmith back to its configured replica count:
+
+```bash
+helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee --wait --timeout 10m \
+  --reuse-values \
+  --set mongodb.enabled=false
+```
+
+Verify Appsmith starts successfully and you can log in with existing credentials. Check the logs for any database connection errors:
+
+```bash
+kubectl logs -n appsmith-ee appsmith-ee-0 --tail=50
+```
+
+### Step 5: Clean up
+
+Once you've verified the migration is successful, remove the old Bitnami MongoDB PVCs:
+
+```bash
+# List PVCs from the old Bitnami MongoDB
+kubectl get pvc -n appsmith-ee -l app.kubernetes.io/name=mongodb
+
+# Delete them after confirming the new MongoDB is working
+kubectl delete pvc -n appsmith-ee -l app.kubernetes.io/name=mongodb
 ```
 
 ## Uninstall
@@ -161,20 +198,20 @@ Delete the `MongoDBCommunity` resource first so the operator can process its fin
 
 ```bash
 # 1. Delete the CR and wait for the operator to clear its finalizer
-kubectl delete mongodbcommunity -n appsmith --all --wait=true
+kubectl delete mongodbcommunity -n appsmith-ee --all --wait=true
 
 # 2. Uninstall Appsmith (and the bundled operator)
-helm uninstall appsmith -n appsmith
+helm uninstall appsmith-ee -n appsmith-ee
 
 # 3. Remove the namespace
-kubectl delete namespace appsmith
+kubectl delete namespace appsmith-ee
 ```
 
 :::caution
 Skipping step 1 can leave the `MongoDBCommunity` resource stuck with an unresolved finalizer, which blocks namespace deletion. If that happens, clear it manually:
 
 ```bash
-kubectl patch mongodbcommunity -n appsmith <name> \
+kubectl patch mongodbcommunity -n appsmith-ee <name> \
   --type=merge -p '{"metadata":{"finalizers":[]}}'
 ```
 :::
@@ -191,125 +228,6 @@ kubectl delete crd mongodbusers.mongodb.com
 Deleting these CRDs removes all matching resources across the cluster—only do this if nothing else relies on the operator.
 :::
 
-## Migrate from Bitnami subchart
-
-If you have an existing Appsmith install using the Bitnami MongoDB subchart, follow this procedure to move to the MongoDB Operator. The migration exports your data from the Bitnami-managed MongoDB and imports it into the operator-managed instance.
-
-:::caution
-Test this procedure on a non-production cluster first. The migration involves a brief downtime window while Appsmith is restarted with the new MongoDB connection.
-:::
-
-### Overview
-
-1. Scale down Appsmith to stop writes
-2. Export data from the Bitnami MongoDB
-3. Deploy the MongoDB Operator alongside the existing release
-4. Import data into the operator-managed MongoDB
-5. Switch Appsmith to the new MongoDB and verify
-6. Clean up the Bitnami MongoDB resources
-
-### Step 1: Scale down Appsmith
-
-Stop the Appsmith workload to prevent writes during the migration:
-
-```bash
-kubectl scale statefulset appsmith -n appsmith --replicas=0
-```
-
-Wait for all Appsmith pods to terminate before proceeding.
-
-### Step 2: Export data from Bitnami MongoDB
-
-Identify the Bitnami MongoDB pod and run `mongodump`:
-
-```bash
-# Find the primary MongoDB pod
-kubectl get pods -n appsmith -l app.kubernetes.io/name=mongodb
-
-# Run mongodump inside the pod
-kubectl exec -n appsmith appsmith-mongodb-0 -- \
-  mongodump --uri="mongodb://root:password@localhost:27017" \
-  --archive=/tmp/appsmith-dump.gz --gzip
-
-# Copy the dump to your local machine
-kubectl cp appsmith/appsmith-mongodb-0:/tmp/appsmith-dump.gz ./appsmith-dump.gz
-```
-
-:::tip
-If your Bitnami MongoDB uses a non-default root password, retrieve it from the existing Secret:
-
-```bash
-kubectl get secret appsmith-mongodb -n appsmith \
-  -o jsonpath='{.data.mongodb-root-password}' | base64 -d
-```
-:::
-
-### Step 3: Deploy the MongoDB Operator
-
-Upgrade the release to enable the MongoDB Operator alongside the existing Bitnami instance. Appsmith remains scaled to zero during this step:
-
-```bash
-helm upgrade appsmith appsmith/appsmith -n appsmith --wait --timeout 10m \
-  --reuse-values \
-  --set mongodbCommunity.enabled=true \
-  --set mongodbOperator.enabled=true
-```
-
-Wait for the operator-managed MongoDB to reach a `Running` phase:
-
-```bash
-kubectl get mongodbcommunity -n appsmith -w
-```
-
-### Step 4: Import data into operator-managed MongoDB
-
-Retrieve the operator-managed MongoDB password:
-
-```bash
-MONGO_PASS=$(kubectl get secret appsmith-mongo-password -n appsmith \
-  -o jsonpath='{.data.password}' | base64 -d)
-```
-
-Copy the dump file into the new MongoDB pod and restore:
-
-```bash
-# Copy dump to the operator-managed pod
-kubectl cp ./appsmith-dump.gz appsmith/appsmith-mongo-0:/tmp/appsmith-dump.gz
-
-# Restore into the new instance
-kubectl exec -n appsmith appsmith-mongo-0 -- \
-  mongorestore --uri="mongodb://appsmith:${MONGO_PASS}@localhost:27017/appsmith?authSource=appsmith" \
-  --archive=/tmp/appsmith-dump.gz --gzip --drop
-```
-
-### Step 5: Switch Appsmith to the new MongoDB
-
-Upgrade the release to disable the Bitnami subchart. Helm will scale Appsmith back to its configured replica count:
-
-```bash
-helm upgrade appsmith appsmith/appsmith -n appsmith --wait --timeout 10m \
-  --reuse-values \
-  --set mongodb.enabled=false
-```
-
-Verify Appsmith starts successfully and you can log in with existing credentials. Check the logs for any database connection errors:
-
-```bash
-kubectl logs -n appsmith appsmith-0 --tail=50
-```
-
-### Step 6: Clean up
-
-Once you've verified the migration is successful, remove the old Bitnami MongoDB PVCs:
-
-```bash
-# List PVCs from the old Bitnami MongoDB
-kubectl get pvc -n appsmith -l app.kubernetes.io/name=mongodb
-
-# Delete them after confirming the new MongoDB is working
-kubectl delete pvc -n appsmith -l app.kubernetes.io/name=mongodb
-```
-
 ## Troubleshooting
 
 ### `MongoDBCommunity` CR stays in `Pending` phase
@@ -317,17 +235,17 @@ kubectl delete pvc -n appsmith -l app.kubernetes.io/name=mongodb
 Check the operator logs:
 
 ```bash
-kubectl logs -n appsmith -l app.kubernetes.io/name=mongodb-kubernetes-operator --tail=50
+kubectl logs -n appsmith-ee -l app.kubernetes.io/name=mongodb-kubernetes-operator --tail=50
 ```
 
 Common causes: the password Secret doesn't exist (if you set `passwordSecretName`, verify the Secret is present with a `password` key), or the MongoDB image can't be pulled.
 
 ### Appsmith pod stuck in `Init`
 
-The init container waits for MongoDB to be reachable. Check MongoDB status first (`kubectl get mongodbcommunity -n appsmith`), then inspect the init container logs:
+The init container waits for MongoDB to be reachable. Check MongoDB status first (`kubectl get mongodbcommunity -n appsmith-ee`), then inspect the init container logs:
 
 ```bash
-kubectl logs -n appsmith appsmith-0 -c mongo-init-container
+kubectl logs -n appsmith-ee appsmith-ee-0 -c mongo-init-container
 ```
 
 ### Password init Job fails with `ImagePullBackOff`
