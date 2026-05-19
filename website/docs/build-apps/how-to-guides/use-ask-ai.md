@@ -50,6 +50,11 @@ Because Ask AI is aware of your **database schema and datasource context**, prom
   caption=""
 />
 
+<ZoomImage
+  src="/img/AskAIExplain.png"
+  alt="Ask AI helping with JavaScript in the editor"
+  caption=""
+/>
 :::tip
 Connect the datasource and, where possible, select the relevant tables or run a schema discovery step in your environment so Ask AI has up-to-date context for table and column names.
 :::
@@ -62,9 +67,9 @@ Connect the datasource and, where possible, select the relevant tables or run a 
 4. Apply the suggested code to your module and test it in the app.
 
 <ZoomImage
-  src="/img/AskAIExplain.png"
+  src="/img/AskAIJS.png"
   alt="Ask AI helping with JavaScript in the editor"
-  caption=""
+  caption="Using AI in JS"
 />
 
 ## Example prompts
