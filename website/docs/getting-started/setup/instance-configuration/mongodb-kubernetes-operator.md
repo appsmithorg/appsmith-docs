@@ -88,9 +88,9 @@ If you have an existing Appsmith install using the Bitnami MongoDB subchart, fol
 
 :::caution
 Test this procedure on a non-production cluster first. The migration requires downtime while Appsmith is scaled down, data is exported and imported, and the deployment is reconfigured.
-:::
 
 Before starting, [back up your Appsmith instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands) so you can restore if anything goes wrong.
+:::
 
 ### Overview
 
