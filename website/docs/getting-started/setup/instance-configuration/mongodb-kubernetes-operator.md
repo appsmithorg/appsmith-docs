@@ -90,6 +90,8 @@ If you have an existing Appsmith install using the Bitnami MongoDB subchart, fol
 Test this procedure on a non-production cluster first. The migration requires downtime while Appsmith is scaled down, data is exported and imported, and the deployment is reconfigured.
 :::
 
+Before starting, [back up your Appsmith instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance?current-command-type=kubernetes-commands) so you can restore if anything goes wrong.
+
 ### Overview
 
 The migration follows an expand-move-contract pattern. First, deploy the MongoDB Operator alongside your existing Bitnami instance so both are running. Then scale down Appsmith to stop writes, export data from Bitnami, and import it into the operator-managed MongoDB. Finally, reconfigure the release to use the new MongoDB and remove the old Bitnami resources.
@@ -111,11 +113,13 @@ helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee --wait --timeout 10
   --set mongodbOperator.enabled=true
 ```
 
-Wait for the operator-managed MongoDB to reach a `Running` phase:
+Wait for the operator-managed MongoDB to reach a `Running` phase before proceeding:
 
 ```bash
 kubectl get mongodbcommunity -n appsmith-ee -w
 ```
+
+Do not continue until the `PHASE` column shows `Running`.
 
 ### Step 2: Scale down Appsmith
 
@@ -136,7 +140,13 @@ kubectl patch hpa appsmith-ee -n appsmith-ee --patch '{"spec":{"minReplicas":0}}
 kubectl scale deployment appsmith-ee -n appsmith-ee --replicas=0
 ```
 
-Wait for all Appsmith pods to terminate before proceeding.
+Wait for all Appsmith pods to terminate before proceeding:
+
+```bash
+kubectl get pods -n appsmith-ee -l app.kubernetes.io/name=appsmith
+```
+
+The command should return no resources.
 
 ### Step 3: Export and import data
 
@@ -145,28 +155,27 @@ Retrieve both connection strings—the existing Bitnami URI from the ConfigMap a
 ```bash
 SOURCE_URI=$(kubectl get cm appsmith-ee -n appsmith-ee -o jsonpath='{.data.APPSMITH_DB_URL}')
 
-MONGO_PASS=$(kubectl get secret appsmith-ee-mongo-password -n appsmith-ee \
-  -o jsonpath='{.data.password}' | base64 -d)
-DEST_URI="mongodb://appsmith:${MONGO_PASS}@appsmith-ee-mongo-0.appsmith-ee-mongo-svc.appsmith-ee.svc.cluster.local:27017/appsmith?authSource=appsmith"
+DEST_URI=$(kubectl get secret appsmith-ee-mongo-appsmith-appsmith -n appsmith-ee \
+  -o jsonpath='{.data.connectionString\.standardSrv}' | base64 -d)
 ```
 
-Dump from the Bitnami MongoDB and restore directly into the operator-managed instance, all from the Bitnami pod:
+Dump from Bitnami and restore into the operator-managed instance. The Bitnami image does not include `mongodump`/`mongorestore`, so both commands run from the operator pod's `mongod` container:
 
 ```bash
-# Dump the data
-kubectl exec -n appsmith-ee appsmith-ee-mongodb-0 -- \
+# Dump from Bitnami MongoDB
+kubectl exec -n appsmith-ee appsmith-ee-mongo-0 -c mongod -- \
   mongodump --uri="$SOURCE_URI" \
   --archive=/tmp/appsmith-dump.gz --gzip
 
 # Restore into the operator-managed MongoDB
-kubectl exec -n appsmith-ee appsmith-ee-mongodb-0 -- \
+kubectl exec -n appsmith-ee appsmith-ee-mongo-0 -c mongod -- \
   mongorestore --uri="$DEST_URI" \
   --archive=/tmp/appsmith-dump.gz --gzip --drop
 ```
 
 ### Step 4: Switch Appsmith to the new MongoDB
 
-Upgrade the release to disable the Bitnami subchart. Helm will scale Appsmith back to its configured replica count:
+Upgrade the release to disable the Bitnami subchart. This points Appsmith at the operator-managed MongoDB and removes the old Bitnami deployment. Helm will scale Appsmith back to its configured replica count:
 
 ```bash
 helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee --wait --timeout 10m \
