@@ -36,7 +36,7 @@ The chart supports two workload modes, each with different storage behavior:
 | **Multi-replica / HA** | Deployment | Shared filesystem (`ReadWriteMany`)—[AWS EFS](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html), [GCP Filestore](https://cloud.google.com/filestore/docs/csi-driver), Azure Files, NFS | 2+ | `workload.kind: Deployment`, `persistence.storageClass: <shared-sc>` |
 | **Existing claim** | Deployment | Pre-provisioned PVC | 1+ | `workload.kind: Deployment`, `persistence.existingClaim.enabled: true`, `persistence.existingClaim.claimName: <name>` |
 
-Use a `StorageClass` that allows volume expansion (`allowVolumeExpansion: true`) to avoid reprovisioning storage as your data grows.
+A `StorageClass` with `allowVolumeExpansion: true` is recommended to allow resizing volumes without reprovisioning.
 
 Changing the storage backend or switching between StatefulSet and Deployment on an existing release requires a migration—recreating volumes and the workload resource. See [Migrate to High Availability](/getting-started/setup/installation-guides/kubernetes/migrate-non-ha-to-ha-helm) for the procedure. Plan this before your first install.
 

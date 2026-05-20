@@ -16,7 +16,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 
 - A running Kubernetes cluster (1.33+).
 - Appsmith application pods need at least **6 GB of memory** and benefit from **2 vCPUs**. MongoDB, Redis, PostgreSQL, and other chart dependencies consume additional resources, and the cluster itself has overhead for system components (kube-proxy, monitoring agents, ingress controllers, etc.). Plan for a minimum of **2 nodes with 2 vCPUs and 8 GB of memory each**.
-- A default `StorageClass` capable of provisioning persistent volumes with `allowVolumeExpansion: true` to avoid reprovisioning storage as data grows.
+- A default `StorageClass` capable of provisioning persistent volumes. A StorageClass with `allowVolumeExpansion: true` is recommended to allow resizing volumes without reprovisioning.
 - An Ingress controller (such as [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) or an AWS/GCP load balancer controller) or a `LoadBalancer`-type Service to expose Appsmith to users.
 - Outbound network access to `cs.appsmith.com` for license validation and updates.
 
@@ -24,7 +24,7 @@ If you are setting up a new cluster on AWS, see [Set up Kubernetes cluster on AW
 
 ### Client machine
 
-- [Helm 3.14+](https://helm.sh/docs/intro/install/)—the Helm package manager.
+- [Helm 3.14+](https://helm.sh/docs/intro/install/) (Helm 4 is also supported)—the Helm package manager.
 - [`kubectl`](https://kubernetes.io/docs/tasks/tools/)—configured to connect to your cluster.
 
 ## Install Appsmith
@@ -40,18 +40,13 @@ Follow these steps to install Appsmith:
     helm repo update
     ```
 
-2. Look up the latest Appsmith release version:
-
-    ```bash
-    APPSMITH_VERSION=$(curl -s https://api.github.com/repos/appsmithorg/appsmith/releases/latest | jq -r '.tag_name')
-    echo $APPSMITH_VERSION
-    ```
-
-3. Create a `values.yaml` file with the following content:
+2. Create a `values.yaml` file with the following content:
 
     ```yaml
     image:
-      tag: # paste the version from step 2 (e.g. v1.99)
+      # Required: pin to a release tag (e.g. v1.99)
+      # Find the latest version: https://github.com/appsmithorg/appsmith/releases/latest
+      tag: <APPSMITH_VERSION>
 
     mongodb:
       enabled: false
@@ -64,12 +59,19 @@ Follow these steps to install Appsmith:
 
     ingress:
       enabled: true
-      className: ""  # leave blank for the cluster default, or set to your controller (e.g. traefik, alb)
+      # Required: set to match your Ingress controller (e.g. traefik, alb, nginx)
+      # List available controllers: kubectl get ingressclass
+      className: <INGRESS_CLASS>
       hosts:
         - host: appsmith.example.com
     ```
 
-    Replace `appsmith.example.com` with your domain and set `className` to match your Ingress controller. This configures the chart to use the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) instead of the legacy Bitnami MongoDB subchart. For TLS configuration, see [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online). For the full list of configurable values, see the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters).
+    Replace the placeholder values before installing:
+    - `<APPSMITH_VERSION>`—the release tag from the [GitHub releases page](https://github.com/appsmithorg/appsmith/releases/latest).
+    - `<INGRESS_CLASS>`—the name of your cluster's IngressClass. Run `kubectl get ingressclass` to see available options.
+    - `appsmith.example.com`—your domain.
+
+    The MongoDB values configure the chart to use the [MongoDB Kubernetes Operator](/getting-started/setup/instance-configuration/mongodb-kubernetes-operator) instead of the legacy Bitnami MongoDB subchart. For TLS configuration, see [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online). For the full list of configurable values, see the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters).
 
 4. Deploy Appsmith:
 
@@ -87,17 +89,25 @@ Follow these steps to install Appsmith:
 
     Proceed once all pods show `Running`.
 
-6. If your ingress and DNS are already configured, open `https://appsmith.example.com`. Otherwise, use port-forward to verify the installation locally:
+6. Verify the Ingress has been assigned an address by your controller:
 
     ```bash
-    kubectl -n appsmith-ee port-forward appsmith-ee-0 8080:80
+    kubectl get ingress -n appsmith-ee
+    ```
+
+    The `ADDRESS` column should show a hostname or IP. If it's empty, your Ingress controller isn't claiming the resource—check that `className` in your `values.yaml` matches your controller.
+
+7. If your DNS is already pointing to the Ingress address, open `https://appsmith.example.com`. Otherwise, use port-forward to verify the installation locally:
+
+    ```bash
+    kubectl -n appsmith-ee port-forward svc/appsmith-ee 8080:80
     ```
 
     Open [http://localhost:8080](http://localhost:8080) and wait for the server to come up. This can take up to 5 minutes.
 
-7. Fill in your details to create an administrator account.
+8. Fill in your details to create an administrator account.
 
-8. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
+9. Once you've created an account, you can either start with the free plan or activate your instance with a license key. If you want to generate a license key, sign up on [customer.appsmith.com](https://customer.appsmith.com) to create one, and then proceed to activate your instance using the newly generated license key.
 
 
 ## Next steps
