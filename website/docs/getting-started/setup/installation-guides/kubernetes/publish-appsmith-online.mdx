@@ -1,137 +1,160 @@
 ---
-description: The page provides steps to expose your Appsmith Kubernetes installation to the internet.
+description: Configure ingress and TLS for your Appsmith Kubernetes deployment.
+toc_max_heading_level: 2
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-# Expose K8s to Internet
-The page provides steps to expose your Appsmith Kubernetes installation to the internet.
+# Ingress and TLS
 
-## Prerequisites
-1.  A self-hosted Appsmith installation on a Kubernetes cluster. If not installed yet, see the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) for installing Appsmith.
-2. A running Kubernetes cluster with at least one node.
+When running on Kubernetes, TLS should be terminated at the Ingress layer—not inside Appsmith. This page covers the common approaches to adding TLS to your Appsmith ingress.
 
-## Before you begin
-1. Install NGINX Ingress controller on your Kubernetes cluster. If not installed yet, follow these steps:
+:::caution
+Avoid setting `APPSMITH_CUSTOM_DOMAIN` in your Helm values. This enables Appsmith's built-in Caddy proxy to handle TLS, which is designed for Docker and single-instance deployments. On Kubernetes it can cause redirect loops if proxy protocol or `X-Forwarded-Proto` headers are not correctly configured between your cloud load balancer, Ingress controller, and Appsmith.
+:::
 
-  a. Add ingress chart repository with:
+## Wildcard or pre-existing certificate
 
-    ```bash
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    ```
+If your cluster already has TLS coverage for your domain—for example, a wildcard certificate managed by your Ingress controller or a cloud load balancer—no additional TLS configuration is needed in the Appsmith chart. Your ingress configuration from the [install guide](/getting-started/setup/installation-guides/kubernetes) is sufficient:
 
-  b. Load ingress chart repository with:
+```yaml
+ingress:
+  enabled: true
+  className: traefik
+  hosts:
+    - host: appsmith.example.com
+```
 
-    ```bash
-    helm repo update
-    ```
-  c. Deploy ingress with:
+The Ingress controller matches the hostname against the existing certificate and terminates TLS automatically.
 
-    ```bash
-    helm upgrade --namespace ingress-nginx -i ingress-nginx ingress-nginx/ingress-nginx --create-namespace --version 4.4.0
-   ```
+## cert-manager
 
-  d. Verify ingress installation with:
+[cert-manager](https://cert-manager.io/) automates certificate issuance and renewal. This is the most common approach when you don't already have wildcard coverage. The examples below show how to wire cert-manager into the Appsmith Helm chart—for help installing or troubleshooting cert-manager itself, refer to the [cert-manager documentation](https://cert-manager.io/docs/).
 
-    ```bash
-    kubectl get pods -n ingress-nginx
-    ``` 
+### Prerequisites
 
-## Configure instance
+- cert-manager installed in your cluster ([installation guide](https://cert-manager.io/docs/installation/))
+- A `ClusterIssuer` or `Issuer` configured (for example, Let's Encrypt)
 
-<Tabs groupId="appsmithEditions" queryString="current-edition">
+### Values
 
-<TabItem label="Community Edition" value="communityEdition"> 
+Add the following to your `values.yaml`:
 
-  1. Go to the Appsmith installation directory, open values.yaml file, and update the `ingress` attribute as shown below:
+```yaml
+ingress:
+  enabled: true
+  className: ""  # your ingress controller
+  tls: true
+  certManager: true
+  certManagerTls:
+    - hosts:
+        - appsmith.example.com
+      secretName: appsmith-tls
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  hosts:
+    - host: appsmith.example.com
+```
 
-  ```yaml 
-    ingress:
-      ## @param ingress.enabled Enable ingress record generation for Ghost
-      ##
-      #highlight-next-line
-      enabled: true
-      annotations:
-        nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/limit-rps: "15"
-      ## @param ingress.annotations Additional custom annotations for the ingress record
-      ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-      ##
-      className: nginx
-      hosts:
-        #highlight-next-line
-        - host: <REPLACE-WITH-YOUR-DOMAIN>
-          paths:
-          - path: "/"
-            pathType: Prefix
-    service:
-      ## @param service.type Kubernetes Service type
-      ##
-      type: ClusterIP
-  ```
+Setting `certManager: true` automatically adds the `kubernetes.io/tls-acme: "true"` annotation. The `cert-manager.io/cluster-issuer` annotation tells cert-manager which issuer to use—adjust this to match your ClusterIssuer name.
 
-  2. Run the below command once the parameter values are updated:
+Apply with:
 
-      ```bash 
-      helm upgrade -i appsmith appsmith/appsmith --f values.yaml
-      ```
-  3. It takes a few minutes for the ingress to get a public IP assigned. Once it has been assigned, you should see an IPv4 address or a domain name in the `ADDRESS` column. Run the below command to get this address:
+```bash
+helm upgrade appsmith-ee appsmith-ee/appsmith \
+  -n appsmith-ee -f values.yaml
+```
 
-  ```bash
-  kubectl get ingress -n appsmith
-  ```
+### Verify
 
-</TabItem>
- <TabItem label="Commercial Edition" value="commercialEdition">
+Check that cert-manager issued a certificate:
 
-  1. Go to the Appsmith installation directory, open values.yaml file, and update `ingress` attribute as shown below:
-  
-    ```yaml 
-      ingress:
-        ## @param ingress.enabled Enable ingress record generation for Ghost
-        ##
-        #highlight-next-line
-        enabled: true
-        annotations:
-          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-          nginx.ingress.kubernetes.io/limit-rps: "15"
-        ## @param ingress.annotations Additional custom annotations for the ingress record
-        ## NOTE: If `ingress.certManager=true`, annotation `kubernetes.io/tls-acme: "true"` will automatically be added
-        ##
-        className: nginx
-        hosts:
-          #highlight-next-line
-          - host: <REPLACE-WITH-YOUR-DOMAIN>
-            paths:
-            - path: "/"
-              pathType: Prefix
-      service:
-        ## @param service.type Kubernetes Service type
-        ##
-        type: ClusterIP
-    ```
-    
-  2. Run the below command once the parameter values are updated:
+```bash
+kubectl get certificate -n appsmith-ee
+```
 
-    ```bash 
-    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
-    ```
+The certificate should show `Ready: True`. If it stays `False`, check the certificate and order events:
 
-  3. It takes a few minutes for the ingress to get a public IP assigned. Once it has been assigned, you should see an IPv4 address or a domain name in the `ADDRESS` column. Run the below command to get this address:
+```bash
+kubectl describe certificate appsmith-tls -n appsmith-ee
+```
 
-  ```bash
-  kubectl get ingress -n appsmith-ee
-  ```
+## Bring your own certificate
 
-</TabItem>
-</Tabs>
-  
+If you manage certificates outside of Kubernetes (purchased certs, internal CA, etc.), create a TLS Secret and reference it in your values.
+
+### Create the Secret
+
+```bash
+kubectl create secret tls appsmith-tls \
+  -n appsmith-ee \
+  --cert=path/to/tls.crt \
+  --key=path/to/tls.key
+```
+
+### Values
+
+```yaml
+ingress:
+  enabled: true
+  className: ""  # your ingress controller
+  tls: true
+  secrets:
+    - hosts:
+        - appsmith.example.com
+      secretName: appsmith-tls
+  hosts:
+    - host: appsmith.example.com
+```
+
+Apply with:
+
+```bash
+helm upgrade appsmith-ee appsmith-ee/appsmith \
+  -n appsmith-ee -f values.yaml
+```
+
+## Controller-managed TLS
+
+Some Ingress controllers handle certificate provisioning themselves—for example, [Tailscale](https://tailscale.com/kb/1236/kubernetes-operator) or cloud load balancer controllers that provision certificates via AWS ACM or Google-managed certs. In these cases, set `tls: true` but leave `secretName` empty:
+
+```yaml
+ingress:
+  enabled: true
+  className: tailscale
+  tls: true
+  secrets:
+    - hosts:
+        - appsmith
+      secretName: ~
+```
+
+The controller provisions and manages the certificate. No cert-manager or manual Secret required.
 
 ## Troubleshooting
 
-If you face issues, contact the support team using the chat widget at the bottom right of this page.
+### Redirect loop after enabling TLS
+
+**Cause:** `APPSMITH_CUSTOM_DOMAIN` is set in your Helm values. This tells Appsmith's built-in Caddy proxy to handle TLS internally, which conflicts with Ingress TLS termination.
+
+**Fix:** Remove `APPSMITH_CUSTOM_DOMAIN` from your `applicationConfig` and restart the pods:
+
+```bash
+helm upgrade appsmith-ee appsmith-ee/appsmith \
+  -n appsmith-ee -f values.yaml
+```
+
+### Certificate not issued by cert-manager
+
+Check the cert-manager logs and the Certificate resource events:
+
+```bash
+kubectl logs -n cert-manager -l app=cert-manager --tail=50
+kubectl describe certificate -n appsmith-ee
+```
+
+Common causes: the ClusterIssuer name doesn't match, DNS isn't pointing to the Ingress yet, or the ACME challenge can't be reached.
 
 ## See also
-* [Configure TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls)
-* [Configure Appsmith instance](/getting-started/setup/instance-configuration/configure-using-environment-variables)
-* [Manage Appsmith instance](/getting-started/setup/instance-management/)
+
+- [Kubernetes Installation Guide](/getting-started/setup/installation-guides/kubernetes)—Install Appsmith on Kubernetes.
+- [Helm Chart Reference](/getting-started/setup/instance-configuration/helm-chart)—Deployment planning and chart configuration.
+- [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain)—Configuring TLS for Docker and non-Kubernetes deployments.

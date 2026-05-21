@@ -87,7 +87,7 @@ It's recommended to install the new Appsmith helm chart in the same namespace. H
 3. Run the below command to install Appsmith:
 
  :::caution Attention
-   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Configuring TLS](/getting-started/setup/instance-configuration/custom-domain/configure-tls) section.
+   Ensure that the `APPSMITH_CUSTOM_DOMAIN` environment variable is not set in the `docker.env` file when deploying Appsmith on Kubernetes. To configure the TLS on Kubernetes, see the [Ingress and TLS](/getting-started/setup/installation-guides/kubernetes/publish-appsmith-online) section.
  :::
 
    ```bash
