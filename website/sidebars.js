@@ -28,17 +28,7 @@ const sidebars = {
           items: [
 
             'getting-started/setup/installation-guides/docker/README',
-            {
-              type: 'category',
-              label: 'Kubernetes',
-              link: {
-                type: 'doc',
-                id: 'getting-started/setup/installation-guides/kubernetes/README',
-              },
-              items: [
-                'getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks',
-              ],
-            },
+            'getting-started/setup/installation-guides/kubernetes/README',
             'getting-started/setup/installation-guides/aws-ami',
             'getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2',
             'getting-started/setup/installation-guides/aws-ecs-on-fargate',

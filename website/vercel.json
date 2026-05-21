@@ -17,6 +17,10 @@
       "destination": "/"
     },
     {
+      "source": "/getting-started/setup/installation-guides/kubernetes/setup-kubernetes-cluster-aws-eks",
+      "destination": "/getting-started/setup/installation-guides/kubernetes"
+    },
+    {
       "source": "/setup/instance-configuration/google-login",
       "destination": "/getting-started/setup/instance-configuration/authentication/google-login"
     },
