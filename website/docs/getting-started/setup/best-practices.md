@@ -20,8 +20,8 @@ Selecting the right platform and deployment method is crucial for the scalabilit
   - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended. For more information, see [AWS ECS Installation](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2) guide.
 
 - **Instance recommendations**:
-  - **Minimum instance size**: `t3.medium` or equivalent. This should scale well for hundreds of users.
-  - **For 500 concurrent users**, we recommend `t3.large` or larger instances.
+  - **Minimum instance size**: `t3.large` or equivalent (2 vCPU, 8 GB of memory). This should scale well for hundreds of users.
+  - **For 500 concurrent users**, we recommend `t3.xlarge` or larger instances.
   - **Free disk space**: Always ensure at least `10-15GB` of free space.
   - **Node separation**: For better data safety, keep separate node groups for **MongoDB**, **Redis**, **Postgres**, and the **Appsmith pod** in Kubernetes.
   
