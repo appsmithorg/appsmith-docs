@@ -81,7 +81,6 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     * Under the **Environment variables** section, click the **Add environment variable** button, and add the below environment variables in the **Key** and their values in the **Value** fields:
         * `APPSMITH_ENCRYPTION_PASSWORD`: Add a password to encrypt all credentials in the database. It's recommended to use a random password.
         * `APPSMITH_ENCRYPTION_SALT`: Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
-        * `APPSMITH_SUPERVISOR_PASSWORD` : Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
         * `APPSMITH_DB_URL` : Enter the URI of the external MongoDB (v5.0 or later) instance.
         * `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
 6. Configure the **HealthCheck** section as shown below: 
