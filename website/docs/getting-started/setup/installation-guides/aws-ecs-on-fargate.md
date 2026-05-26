@@ -120,7 +120,6 @@ Follow these steps to create task and container definitions for your cluster:
 5. In the **Environment variables** section, add the following environment variables:
     * `APPSMITH_ENCRYPTION_PASSWORD`- Add a password to encrypt all credentials in the database. It's recommended to use a random password.
     * `APPSMITH_ENCRYPTION_SALT`- Use encryption salt to encrypt all credentials in the database. It's recommended to use a random password.
-    * `APPSMITH_SUPERVISOR_PASSWORD` - Password to access the supervisor console to watch the processes in the Appsmith container. It's recommended to use a random password.
     * `APPSMITH_DB_URL` - Enter the URI of the external MongoDB (v5.0 or later) instance.
     * `APPSMITH_ENABLE_EMBEDDED_DB` - `0`. This disables embedded mock databases on EFS volume.
 6. Add the below configuration in the **HealthCheck** section:

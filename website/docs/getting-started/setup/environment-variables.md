@@ -474,25 +474,6 @@ The default file size limit in Appsmith is 200 MB. This limit is customizable ba
 Specifies the allowed file size. To change the file size limit, update the `APPSMITH_CODEC_SIZE` parameter in the configuration file specific to your deployment. For example, when installed on Docker, update the `docker.env` file, and when installed on Kubernetes, update the `values.yaml` file. For more information about large file uploads, see [Configure File Size Limit](/getting-started/setup/instance-configuration/file-size-limit).
 </dd>
 
-### Supervisord 
-
-Access the Supervisord web interface seamlessly through Appsmith by setting login credentials using environment variables. Securely control your background processes, ensuring reliable application management.
-
-##### `APPSMITH_SUPERVISOR_USER`
-
-<dd>
-Specifies the username for authentication within Supervisord. Appsmith uses this credential to interact with Supervisord, facilitating the management and monitoring of background processes and tasks.
-
-</dd>
-
-##### `APPSMITH_SUPERVISOR_PASSWORD`
-
-<dd>
-
-Sets the password associated with the Supervisord user specified in `APPSMITH_SUPERVISOR_USER`. This password is essential for secure authentication, enabling Appsmith to manage and control background processes seamlessly through Supervisord.
-
-</dd>
-
 <!-- vale off -->
 <br/>
 <div className="tag-wrapper">

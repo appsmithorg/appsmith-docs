@@ -39,7 +39,7 @@ Proper instance and environment configuration ensures reliability, performance, 
 
 - Enable logging to monitor Appsmith for errors. If using AWS ECS, enable **CloudWatch logging** for easy retrieval of Appsmith logs.
 
-- Integrate with **BetterUptime** or **UptimeRobot** to track the uptime and availability of your Appsmith instance. You may also choose to use `Supervisor` to monitor Appsmith. For more information, see [Configure Monitoring Tool](/getting-started/setup/instance-management/supervisor) guide.
+- Integrate with **BetterUptime** or **UptimeRobot** to track the uptime and availability of your Appsmith instance.
 
 ## Security and authentication
 
