@@ -177,7 +177,6 @@ const sidebars = {
                 'getting-started/setup/installation-guides/azure/setup-to-integrate-sso',
                 'getting-started/setup/instance-configuration/http-proxy',
                 'getting-started/setup/instance-configuration/configure-using-environment-variables',
-                'getting-started/setup/instance-management/supervisor',
                 'getting-started/setup/instance-management/how-to-get-container-logs',
                 'getting-started/setup/instance-configuration/google-maps',
                 'getting-started/setup/instance-management/maintenance-window',
