@@ -261,6 +261,7 @@ const sidebars = {
           items:
             [
               `getting-started/setup/best-practices`,
+              'getting-started/setup/infrastructure-sizing',
               'getting-started/setup/deployment-architecture',
             ],
         }

@@ -326,7 +326,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 
 ### Telemetry
 
-Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation.
+Monitoring the performance of your Appsmith instance is crucial for making informed decisions about feature improvements and resource allocation. For capacity planning guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
 
 ##### `APPSMITH_DISABLE_TELEMETRY`
 

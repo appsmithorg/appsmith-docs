@@ -17,6 +17,10 @@ This page provides steps to install Appsmith using an Amazon Machine Image (AMI)
 - Ensure you have created the security group and the SSH key pair in the same region.
 - Whitelist `cs.appsmith.com` in your security group’s outbound rules to allow outbound HTTPS traffic. If using a custom firewall, ensure these domains are permitted.
 
+:::info Capacity planning
+The minimum instance types listed below are entry-level baselines for evaluation and low-traffic workloads. Production sizing depends on application workload and usage patterns. See [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing) before sizing for production.
+:::
+
 ## Install Appsmith
 
 Follow these steps to install Appsmith using an Amazon Machine Image (AMI):
@@ -35,7 +39,7 @@ a. Configure the instance as below:
 | Attribute         | Value                                                                           |
 | ----------------- | ------------------------------------------------------------------------------- |
 | **Name**          | Give a desired name.                                                            |
-| **Instance type** | A minimum `t3.large` or `t3a.large` is needed.                                |
+| **Instance type** | Minimum `t3.large` or `t3a.large` (2 vCPU, 8 GB memory) for evaluation and low-traffic workloads. For production sizing guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing). |
 | **Key pair**      | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
 
 b. Scroll down to the **Networking** section, and configure as below:
@@ -152,5 +156,6 @@ If you are facing issues during deployment, refer to the guide on [troubleshooti
 
 ## See also
 
+- [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing): Plan CPU, memory, and disk for your deployment.
 - [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
 - [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
