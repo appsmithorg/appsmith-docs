@@ -5,7 +5,6 @@ export default function Message(props) {
     hideFooter();
     hideTopBar();
     hideEditPage();
-    disableIntercomApp();
 
     return true;
 }
@@ -34,11 +33,5 @@ function hideEditPage() {
              element.style.display = 'none';
          })
     }
-        
-}
 
-function disableIntercomApp() {
-  if (typeof Intercom === "function") {
-    Intercom("shutdown");
-  }  
 }

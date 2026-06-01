@@ -116,11 +116,6 @@ const config = {
   scripts: [
     ...(process.env.VERCEL_ENV === "production" ? [{
       src:
-        '/scripts/intercomSettings.js',
-      async: false,
-    },
-    {
-      src:
         '/scripts/smartlook.js',
       async: false,
     },
