@@ -26,8 +26,8 @@ Deployment architecture significantly impacts sizing requirements.
 
 For Docker-based deployments, sizing depends on whether **MongoDB**, **Redis**, and **PostgreSQL** are externalized services or running locally within the deployment stack:
 
-- **Externalized or managed services** — If MongoDB, Redis, and PostgreSQL run outside the Appsmith container (for example, MongoDB Atlas, Amazon ElastiCache, or Amazon RDS), Appsmith application containers generally require fewer and more predictable resources.
-- **Services in the same Docker environment** — If these services run inside the same container or compose stack as Appsmith, overall CPU, memory, and disk requirements are higher and can vary substantially depending on workload, data growth, logging, and retention policies.
+- **Externalized or managed services**: If MongoDB, Redis, and PostgreSQL run outside the Appsmith container (for example, MongoDB Atlas, Amazon ElastiCache, or Amazon RDS), Appsmith application containers generally require fewer and more predictable resources.
+- **Services in the same Docker environment**: If these services run inside the same container or compose stack as Appsmith, overall CPU, memory, and disk requirements are higher and can vary substantially depending on workload, data growth, logging, and retention policies.
 
 For more information on externalizing data stores, see [Custom MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis), [External Redis](/getting-started/setup/instance-configuration/external-redis), and [External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds).
 
@@ -53,12 +53,12 @@ For production environments with sustained activity or higher CPU utilization, c
 
 Follow this workflow when planning capacity for a self-hosted Appsmith deployment:
 
-1. **Choose a deployment model** — Start with the documented baseline for a non-HA deployment (for example, Docker or a single VM), or use [Kubernetes](/getting-started/setup/installation-guides/kubernetes) for production and high availability requirements.
-2. **Decide on supporting services** — Determine whether MongoDB, Redis, and PostgreSQL will be externalized or hosted locally with Appsmith.
-3. **Run a pilot** — Deploy using representative applications, data sources, and expected concurrent usage patterns.
-4. **Monitor utilization** — Track CPU, memory, disk utilization, database growth, Redis usage, API latency, and application and page load times.
-5. **Scale on observed workload** — Adjust capacity based on measured usage rather than named user counts alone.
-6. **Load-test before production** — For larger or business-critical deployments, use a Kubernetes or HA architecture and conduct load testing before finalizing capacity.
+1. **Choose a deployment model**: Start with the documented baseline for a non-HA deployment (for example, Docker or a single VM), or use [Kubernetes](/getting-started/setup/installation-guides/kubernetes) for production and high availability requirements.
+2. **Decide on supporting services**: Determine whether MongoDB, Redis, and PostgreSQL will be externalized or hosted locally with Appsmith.
+3. **Run a pilot**: Deploy using representative applications, data sources, and expected concurrent usage patterns.
+4. **Monitor utilization**: Track CPU, memory, disk utilization, database growth, Redis usage, API latency, and application and page load times.
+5. **Scale on observed workload**: Adjust capacity based on measured usage rather than named user counts alone.
+6. **Load-test before production**: For larger or business-critical deployments, use a Kubernetes or HA architecture and conduct load testing before finalizing capacity.
 
 :::caution User count is not a reliable sizing metric
 Avoid presenting a fixed VM or instance size as guaranteed for a given user count. User count alone does not predict resource needs. **Concurrent active usage** and **application workload** are more important indicators when sizing infrastructure.
@@ -66,7 +66,7 @@ Avoid presenting a fixed VM or instance size as guaranteed for a given user coun
 
 ## See also
 
-- [Self-hosting Best Practices](/getting-started/setup/best-practices) — Platform selection, HA, security, and operations
-- [Deployment Architecture](/getting-started/setup/deployment-architecture) — Components and data flow
-- [Helm Chart — Planning your deployment](/getting-started/setup/instance-configuration/helm-chart#planning-your-deployment) — Kubernetes architecture decisions before install
-- [In-Memory Git (Redis-backed)](/getting-started/setup/instance-configuration/in-memory-git) — Additional memory and Redis sizing for Git workloads
+- [Self-hosting Best Practices](/getting-started/setup/best-practices): Platform selection, HA, security, and operations
+- [Deployment Architecture](/getting-started/setup/deployment-architecture): Components and data flow
+- [Helm Chart: Planning your deployment](/getting-started/setup/instance-configuration/helm-chart#planning-your-deployment): Kubernetes architecture decisions before install
+- [In-Memory Git (Redis-backed)](/getting-started/setup/instance-configuration/in-memory-git): Additional memory and Redis sizing for Git workloads

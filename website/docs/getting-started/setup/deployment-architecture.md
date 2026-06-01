@@ -10,8 +10,8 @@ Appsmith can be deployed as a single Docker container with a single volume for s
 
 How you deploy MongoDB, Redis, and PostgreSQL affects infrastructure sizing:
 
-- **Bundled in the same environment** — A single Docker container or an all-in-one compose stack runs embedded MongoDB, Redis, and PostgreSQL alongside Appsmith. Overall CPU, memory, and disk requirements are higher and can grow with workload, data, logging, and retention.
-- **External or managed services** — When these stores run outside the Appsmith runtime (for example, MongoDB Atlas, Amazon ElastiCache, or Amazon RDS), Appsmith application containers generally need fewer and more predictable resources.
+- **Bundled in the same environment**: A single Docker container or an all-in-one compose stack runs embedded MongoDB, Redis, and PostgreSQL alongside Appsmith. Overall CPU, memory, and disk requirements are higher and can grow with workload, data, logging, and retention.
+- **External or managed services**: When these stores run outside the Appsmith runtime (for example, MongoDB Atlas, Amazon ElastiCache, or Amazon RDS), Appsmith application containers generally need fewer and more predictable resources.
 
 For workload factors, baseline starting points, and a recommended sizing workflow, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
 
