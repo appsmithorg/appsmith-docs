@@ -19,9 +19,9 @@ Selecting the right platform and deployment method is crucial for the scalabilit
   - The preferred method for production environments is **Kubernetes**, as it supports high availability and scalability, managing Appsmith's dependencies like MongoDB and Redis within Kubernetes pods without requiring external instances. For more information, see [Kubernetes Installation](/getting-started/setup/installation-guides/kubernetes) guide.
   - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended. For more information, see [AWS ECS Installation](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2) guide.
 
-- **Instance recommendations**:
-  - **Minimum instance size**: `t3.large` or equivalent (2 vCPU, 8 GB of memory). This should scale well for hundreds of users.
-  - **For 500 concurrent users**, we recommend `t3.xlarge` or larger instances.
+- **Infrastructure and capacity planning**:
+  - **Baseline**: Start with **2 vCPU** and **8 GB of memory** for standard deployments. On AWS, the [AWS AMI](/getting-started/setup/installation-guides/aws-ami) guide lists **`t3.large`** or **`t3a.large`** as the minimum instance size. These are entry-level baselines for testing, evaluation, or low-traffic workloads—not fixed production capacity for a given user count.
+  - **Production sizing**: Capacity depends on application workload, concurrency, and whether MongoDB, Redis, and PostgreSQL run locally or as external services. For the full planning workflow, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
   - **Free disk space**: Always ensure at least `10-15GB` of free space.
   - **Node separation**: For better data safety, keep separate node groups for **MongoDB**, **Redis**, **Postgres**, and the **Appsmith pod** in Kubernetes.
   
@@ -85,5 +85,6 @@ Having a proper upgrade strategy ensures that your environment remains up-to-dat
 
 ## See also
 
+- [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing): Plan CPU, memory, and disk for your deployment.
 - [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
 - [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
