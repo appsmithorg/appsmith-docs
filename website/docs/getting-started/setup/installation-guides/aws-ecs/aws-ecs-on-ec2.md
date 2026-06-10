@@ -43,7 +43,7 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
     * **Provisioning Model**: Choose **On-demand**
     * **Auto Scaling Group**: Keep default selection
     * **Operating system/Architecture**: Amazon Linux 2
-    * **EC2 instance type**: Select at least a `t3.large` or a `t3a.large` instance type (2 vCPU, 8 GB of memory) as an entry-level baseline for evaluation and low-traffic workloads. For production sizing guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
+    * **EC2 instance type**: Select at least a `t3.large` instance type (2 vCPU, 8 GB of memory) as an entry-level baseline for evaluation and low-traffic workloads. For production sizing guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
     * **Desired Capacity**: Give **Minimum** as 1 and **Maximum** as 2
     * **SSH Key pair**: Use the key pair created in the [Prerequisites](#prerequisites) section
     Keep default settings for other attributes.
