@@ -39,7 +39,7 @@ a. Configure the instance as below:
 | Attribute         | Value                                                                           |
 | ----------------- | ------------------------------------------------------------------------------- |
 | **Name**          | Give a desired name.                                                            |
-| **Instance type** | Minimum `t3.large` or `t3a.large` (2 vCPU, 8 GB memory) for evaluation and low-traffic workloads. For production sizing guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing). |
+| **Instance type** | Minimum `t3.large` (2 vCPU, 8 GB memory) for evaluation and low-traffic workloads. For production sizing guidance, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing). |
 | **Key pair**      | Select the Key pair you created in the [Prerequisites](#prerequisites) section. |
 
 b. Scroll down to the **Networking** section, and configure as below:

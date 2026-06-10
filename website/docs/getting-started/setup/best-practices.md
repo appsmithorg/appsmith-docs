@@ -20,7 +20,7 @@ Selecting the right platform and deployment method is crucial for the scalabilit
   - If using serverless platforms such as **AWS ECS**, external instances of MongoDB and Redis must be provisioned, with **MongoDB Atlas** and **Elasticache** recommended. For more information, see [AWS ECS Installation](/getting-started/setup/installation-guides/aws-ecs/aws-ecs-on-ec2) guide.
 
 - **Infrastructure and capacity planning**:
-  - **Baseline**: Start with **2 vCPU** and **8 GB of memory** for standard deployments. On AWS, the [AWS AMI](/getting-started/setup/installation-guides/aws-ami) guide lists **`t3.large`** or **`t3a.large`** as the minimum instance size. These are entry-level baselines for testing, evaluation, or low-traffic workloads—not fixed production capacity for a given user count.
+  - **Baseline**: Start with **2 vCPU** and **8 GB of memory** for standard deployments. On AWS, the [AWS AMI](/getting-started/setup/installation-guides/aws-ami) guide lists **`t3.large`** as the minimum instance size. These are entry-level baselines for testing, evaluation, or low-traffic workloads—not fixed production capacity for a given user count.
   - **Production sizing**: Capacity depends on application workload, concurrency, and whether MongoDB, Redis, and PostgreSQL run locally or as external services. For the full planning workflow, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
   - **Free disk space**: Always ensure at least `10-15GB` of free space.
   - **Node separation**: For better data safety, keep separate node groups for **MongoDB**, **Redis**, **Postgres**, and the **Appsmith pod** in Kubernetes.

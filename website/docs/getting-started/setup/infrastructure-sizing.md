@@ -37,7 +37,7 @@ For production environments where scalability and availability are important, **
 
 ## Baseline starting points
 
-Appsmith’s current self-hosting guidance recommends **2 vCPU** and **8 GB of memory** as a starting point for standard deployments. The [AWS AMI](/getting-started/setup/installation-guides/aws-ami) guide lists **`t3.large`** or **`t3a.large`** as the minimum instance size (2 vCPU, 8 GB memory).
+Appsmith’s current self-hosting guidance recommends **2 vCPU** and **8 GB of memory** as a starting point for standard deployments. The [AWS AMI](/getting-started/setup/installation-guides/aws-ami) guide lists **`t3.large`** as the minimum instance size (2 vCPU, 8 GB memory).
 
 These recommendations should generally be viewed as **entry-level baselines** suitable for:
 
