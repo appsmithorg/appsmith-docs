@@ -134,6 +134,11 @@ const sidebars = {
                   id: 'getting-started/setup/installation-guides/kubernetes/publish-appsmith-online',
                   label: 'Ingress and TLS',
                 },
+                {
+                  type: 'doc',
+                  id: 'getting-started/setup/installation-guides/kubernetes/enable-redis-auth',
+                  label: 'Redis Authentication',
+                },
               ],
             },
             {

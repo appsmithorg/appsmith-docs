@@ -1,0 +1,198 @@
+---
+description: Enable Redis authentication for the bundled Redis on existing Appsmith Helm chart deployments.
+toc_max_heading_level: 2
+---
+
+# Enable Redis Authentication
+
+Starting with Helm chart version **3.8.2**, the bundled Redis instance is password-protected by default. The chart generates the password automatically, stores it in a Kubernetes Secret, and wires it into both Redis and Appsmith.
+
+This page explains how Redis authentication works in the chart and how to enable it on existing deployments, including deployments running chart versions older than 3.8.2.
+
+This page applies only to the **bundled Redis** subchart (`redis.enabled: true`). If you use an external Redis instance, see [External Redis](/getting-started/setup/instance-configuration/external-redis).
+
+## How it works
+
+When `redis.auth.enabled` is `true`, the chart manages the Redis password end to end:
+
+- A **pre-install/pre-upgrade hook Job** checks whether the Secret named by `redis.auth.existingSecret` exists. If it doesn't, the Job generates a random password and creates the Secret with it. If the Secret already exists (created by a previous upgrade or by you), the Job leaves it untouched, so the password stays stable across upgrades.
+- The Appsmith pods receive the password **by Secret reference** and assemble the authenticated `APPSMITH_REDIS_URL` from it at runtime. The password never lands in the chart's ConfigMap.
+- The Redis readiness init container authenticates its `ping` checks using the same Secret.
+
+The relevant chart values:
+
+| Key | Default | Description |
+|---|---|---|
+| `redis.auth.enabled` | `true` | Enable authentication for the bundled Redis. |
+| `redis.auth.existingSecret` | `appsmith-redis-secret` | Name of the Secret holding the Redis password. Created by the bootstrap Job when absent. |
+| `redis.auth.existingSecretPasswordKey` | `redis-password` | Key within the Secret that holds the password. |
+| `redisAuth.passwordInit.image.*` | `docker.io/alpine/kubectl:latest` | Image used by the bootstrap Job. Override it in air-gapped environments or to pin a specific tag. |
+
+For the full list of values, see the [chart README](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#appsmith).
+
+## Upgrade an existing deployment to chart 3.8.2 or later
+
+For most deployments, enabling Redis authentication is a standard chart upgrade. The bootstrap Job handles the password automatically.
+
+1. Update your local chart repository and upgrade:
+
+   ```bash
+   helm repo update
+   helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+   ```
+
+   During the upgrade, the hook Job creates the `appsmith-redis-secret` Secret, Redis restarts with the password enabled, and the Appsmith pods restart with the authenticated connection URL.
+
+2. Verify that the Secret exists:
+
+   ```bash
+   kubectl get secret appsmith-redis-secret -n appsmith-ee
+   ```
+
+3. Verify that all pods are running and that Appsmith can reach Redis:
+
+   ```bash
+   kubectl get pods -n appsmith-ee
+   ```
+
+   Optionally, test the authenticated connection directly:
+
+   ```bash
+   kubectl exec -it appsmith-ee-redis-master-0 -n appsmith-ee -- \
+     sh -c 'REDISCLI_AUTH="<your-redis-password>" redis-cli ping'
+   ```
+
+   Replace `<your-redis-password>` with the value from the `appsmith-redis-secret` Secret. The command should return `PONG`.
+
+### Bring your own password
+
+To control the password yourself, create the Secret **before** installing or upgrading. The bootstrap Job detects it and leaves it untouched:
+
+```bash
+kubectl create secret generic appsmith-redis-secret \
+  --from-literal=redis-password='<your-password>' \
+  -n appsmith-ee
+```
+
+To use a different Secret name or key, point the chart at it in `values.yaml`:
+
+```yaml
+redis:
+  auth:
+    existingSecret: my-redis-secret
+    existingSecretPasswordKey: my-password-key
+```
+
+### Opt out
+
+To keep the bundled Redis unauthenticated (for example, in an isolated development cluster), disable auth in `values.yaml`:
+
+```yaml
+redis:
+  auth:
+    enabled: false
+```
+
+This restores the behavior of earlier chart versions: a passwordless Redis with a plain `APPSMITH_REDIS_URL` in the ConfigMap.
+
+### ArgoCD deployments
+
+No special handling is required on chart 3.8.2 or later. ArgoCD runs the chart's pre-install/pre-upgrade hooks as PreSync hooks, and the bootstrap Job is idempotent, so the password is generated once and reused on every subsequent sync. The Secret is created without Helm release labels or owner references, so ArgoCD does not track or diff it. You don't need an `ignoreDifferences` rule.
+
+### Air-gapped and restricted networks
+
+The bootstrap Job pulls `docker.io/alpine/kubectl:latest` by default. If your cluster cannot reach Docker Hub, mirror the image to your private registry and override it in `values.yaml`:
+
+```yaml
+redisAuth:
+  passwordInit:
+    image:
+      registry: registry.example.com
+      repository: mirrored/alpine-kubectl
+      tag: "1.33.1"
+```
+
+Pinning a specific tag is also recommended if you need reproducible deployments.
+
+## Enable auth on chart versions before 3.8.2
+
+Chart versions older than 3.8.2 don't include the password bootstrap Job and can't assemble the authenticated Redis URL from a Secret. To enable Redis authentication without upgrading the chart, wire it manually:
+
+1. Create the password Secret:
+
+   ```bash
+   kubectl create secret generic appsmith-redis-secret \
+     --from-literal=redis-password='<your-password>' \
+     -n appsmith-ee
+   ```
+
+2. Point the bundled Redis subchart at the Secret in `values.yaml`:
+
+   ```yaml
+   redis:
+     auth:
+       enabled: true
+       existingSecret: appsmith-redis-secret
+       existingSecretPasswordKey: redis-password
+   ```
+
+3. Set the authenticated Redis URL explicitly, since older charts only render the passwordless URL:
+
+   ```yaml
+   applicationConfig:
+     APPSMITH_REDIS_URL: "redis://:<your-password>@<release-name>-redis-master.<namespace>.svc.cluster.local:6379"
+   ```
+
+   Replace `<release-name>` and `<namespace>` with your Helm release name and namespace.
+
+   :::caution
+   On charts older than 3.8.2, the password set in `applicationConfig` is stored in cleartext in the rendered ConfigMap and in your `values.yaml`. Upgrading to chart 3.8.2 or later avoids this: the password is injected by Secret reference instead. Remove the manual `APPSMITH_REDIS_URL` override after upgrading so the chart can manage the URL.
+   :::
+
+4. Apply the changes:
+
+   ```bash
+   helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+   ```
+
+### ArgoCD on older charts
+
+On older charts, always use the pre-created Secret approach above. If you enable `redis.auth.enabled` without `existingSecret`, the Bitnami Redis subchart generates a new random password on every render, and each ArgoCD sync rotates it, breaking existing connections until the pods restart.
+
+If you can't use a pre-created Secret, the alternative is to ignore drift on the generated Secret in your Application spec:
+
+```yaml
+spec:
+  ignoreDifferences:
+    - kind: Secret
+      name: <release-name>-redis
+      jsonPointers:
+        - /data
+```
+
+This is a workaround, not a recommendation. The pre-created Secret keeps the password deterministic and visible to you, and upgrading to chart 3.8.2 or later removes the problem entirely.
+
+## Troubleshooting
+
+**Appsmith logs show `NOAUTH Authentication required` or `WRONGPASS`**
+
+The password in the Secret doesn't match what Redis was started with, typically after editing the Secret manually. After changing the password, restart both Redis and Appsmith so they pick up the new value:
+
+```bash
+kubectl rollout restart statefulset appsmith-ee-redis-master -n appsmith-ee
+kubectl rollout restart statefulset appsmith-ee -n appsmith-ee
+```
+
+**The bootstrap Job pod shows `ImagePullBackOff`**
+
+Your cluster can't pull `docker.io/alpine/kubectl`. Mirror the image and override `redisAuth.passwordInit.image` as described in [Air-gapped and restricted networks](#air-gapped-and-restricted-networks).
+
+**Appsmith can't resolve the Redis host**
+
+The chart derives the Redis hostname from the release name and assumes the release name does not contain the word `redis`. If yours does, the Bitnami subchart shortens its resource names and the derived hostname no longer matches. Set `applicationConfig.APPSMITH_REDIS_URL` explicitly with the actual Redis service hostname, or reinstall under a release name without `redis` in it.
+
+## See also
+
+- [Helm Chart](/getting-started/setup/instance-configuration/helm-chart#redis): Architecture and configuration reference for the Appsmith Helm chart.
+- [External Redis](/getting-started/setup/instance-configuration/external-redis): Connect Appsmith to a Redis instance outside the cluster.
+- [Chart parameters reference](https://github.com/appsmithorg/appsmith/tree/release/deploy/helm#parameters): Full list of configurable Helm values.
