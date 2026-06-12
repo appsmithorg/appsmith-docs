@@ -204,18 +204,6 @@ A concurrent Git operation holds a lock on the file system, preventing other Git
 - As an instance admin, enable **Atomic pushes** in the instance settings (only visible to instance admins).
 - If issues persist, contact support for assistance.
 
-### Cannot change branch with uncommitted changes
-
-#### Cause
-
-When an app has uncommitted changes, switching branches from the UI can fail or behave inconsistently. This was a known bug fixed in v1.73.
-
-#### Solution
-
-- Update your instance to v1.73 or later.
-- As a workaround on earlier versions, change the branch directly in the app URL by setting the branch query parameter to the desired branch, for example `app-url/edit?branch=desiredBranch`.
-- If issues persist, contact support for assistance.
-
 ### Version mismatch when pulling between environments
 
 #### Cause
@@ -243,7 +231,6 @@ When a merge conflict is resolved manually on the remote (for example in an edit
 - Validate the page JSON with a JSON validator and correct the formatting issue introduced during conflict resolution, then commit the fix to the remote.
 - In Appsmith, click **Discard and Pull** to update the app. See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push).
 - If issues persist, contact support for assistance.
-
 
 
 
