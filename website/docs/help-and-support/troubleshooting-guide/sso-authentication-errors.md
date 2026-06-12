@@ -1,6 +1,6 @@
 # SSO and Authentication Errors
 
-This page shows how to resolve common Single Sign-On (SSO) and authentication errors on self-hosted Appsmith instances using OIDC, SAML, or Google OAuth. SSO (OIDC and SAML) is available on the Enterprise Edition. For setup guides, see [Authentication](/getting-started/setup/instance-configuration/authentication/README).
+This page shows how to resolve common Single Sign-On (SSO) and authentication errors on self-hosted Appsmith instances using OIDC, SAML, or Google OAuth. SSO (OIDC and SAML) is available on the Enterprise Edition. For setup guides, see [Authentication](/getting-started/setup/instance-configuration/authentication).
 
 ### Locked out after misconfiguring or disconnecting SSO
 
