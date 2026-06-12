@@ -908,7 +908,15 @@ const sidebars = {
             "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
             "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
             "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error",
-            "help-and-support/troubleshooting-guide/backup-restore-errors"
+            "help-and-support/troubleshooting-guide/backup-restore-errors",
+            "help-and-support/troubleshooting-guide/license-and-activation-errors",
+            "help-and-support/troubleshooting-guide/sso-authentication-errors",
+            "help-and-support/troubleshooting-guide/user-management-errors",
+            "help-and-support/troubleshooting-guide/ssl-certificate-errors",
+            "help-and-support/troubleshooting-guide/email-smtp-errors",
+            "help-and-support/troubleshooting-guide/performance-resource-errors",
+            "help-and-support/troubleshooting-guide/monitoring-audit-log-errors",
+            "help-and-support/troubleshooting-guide/upgrade-migration-errors"
           ],
         },
         {
@@ -925,11 +933,12 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/git-errors',
             'help-and-support/troubleshooting-guide/gac-errors',
             'help-and-support/troubleshooting-guide/cyclic-dependency',
+            'help-and-support/troubleshooting-guide/embedding-csp-errors',
+            'help-and-support/troubleshooting-guide/js-errors',
+            'help-and-support/troubleshooting-guide/query-errors',
+            'help-and-support/troubleshooting-guide/widget-errors',
           ],
         },
-        // 'help-and-support/troubleshooting-guide/js-errors',
-        // 'help-and-support/troubleshooting-guide/query-errors',
-        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {
