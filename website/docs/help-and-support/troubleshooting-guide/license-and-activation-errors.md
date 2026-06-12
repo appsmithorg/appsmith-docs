@@ -76,18 +76,6 @@ This message appears when an invoice is past due, even if the license has not ye
 - A Business/Enterprise instance can be automatically downgraded if dues remain unpaid, or if the card on file is invalid or revoked. If your instance was downgraded, settle the outstanding balance to restore the previous plan.
 - For invoice or billing changes, contact support. These are handled on the customer portal/billing side, not from the instance.
 
-### License key invalid after moving to a new instance
-
-#### Cause
-
-A license key that was activated on one instance (for example, a local/debug instance) can report invalid when applied to a different deployment if it is still associated with the previous instance.
-
-#### Solution
-
-- Obtain (copy) your license key for the self-hosted instance from [customer.appsmith.com](https://customer.appsmith.com) and apply it on the new server under **Admin Settings** → **License & Plans**.
-- If you must rotate or deactivate an existing key (for example, for a security policy), contact support. They coordinate generating and applying the new key. As a temporary measure to stay unblocked, you can switch back to the old license key until the new one is ready.
-- For transferring a license between cloud and self-hosted, or between accounts/emails, contact support to update the license owner; this cannot be self-served from the instance.
-
 ### License not validating on an instance with restricted internet
 
 #### Cause
