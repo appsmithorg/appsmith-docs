@@ -79,16 +79,3 @@ When debugging an instance issue, support needs backend/server logs, and you nee
 
 - Self-hosted logs are stored under `/appsmith-stacks/logs/`, with a sub-directory per service (`appsmithctl`, `backend`, `cron`, `editor`, `mongodb`, `redis`, `rts`). Backend logs are the most useful for server errors (`/appsmith-stacks/logs/backend/*-stdout.log` and `*-stderr.log`). See [How to Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs).
 - Always check your version first by appending `/info` to your instance URL in the browser, since many issues are resolved by upgrading.
-
-### Exposing metrics to Prometheus, Grafana, or Datadog
-
-#### Cause
-
-By default, a self-hosted Appsmith instance exposes metrics from the underlying Caddy server and standard Kubernetes metrics. Teams frequently ask for richer application-level metrics or custom monitoring integrations.
-
-#### Solution
-
-- Appsmith does not currently provide an officially documented native application metrics endpoint or a supported way to add custom Datadog context; these are tracked as feature requests.
-- For health and basic performance monitoring, integrate the documented endpoints with your tool: the **Health Check API** (`GET /api/v1/health`) and the **Application Performance API** (`GET /api/v1/consolidated-api/view`). See the [API Reference](/getting-started/setup/instance-management/api-reference).
-- For app-level error monitoring, implement it inside your Appsmith application using a REST API datasource that posts to the monitoring tool's ingestion endpoint.
-- To disable Appsmith's outbound telemetry, set [`APPSMITH_DISABLE_TELEMETRY`](/getting-started/setup/environment-variables#appsmith_disable_telemetry) to `true`. See [Appsmith Telemetry](/product/telemetry).
