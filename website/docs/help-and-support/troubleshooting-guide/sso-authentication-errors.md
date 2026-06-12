@@ -12,12 +12,11 @@ When SSO is the only enabled login method and the provider is misconfigured, dis
 
 To regain admin access, re-enable form login and sign up with a new admin account:
 
-- Set [`APPSMITH_FORM_LOGIN_DISABLED`](/getting-started/setup/environment-variables#appsmith_form_login_disabled) to `false`, and ensure signup is not restricted (check [`APPSMITH_SIGNUP_DISABLED`](/getting-started/setup/environment-variables#appsmith_signup_disabled)).
+- Re-enable form login on the running instance with `appsmithctl enable-form-login`, or toggle **Form Login** under **Admin Settings → User Management** if you still have admin access. See [User Management](/getting-started/setup/instance-configuration/user-management#authentication).
+- Ensure signup is not restricted (check [`APPSMITH_SIGNUP_DISABLED`](/getting-started/setup/environment-variables#appsmith_signup_disabled)).
 - Add a new email to the [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) line of your `docker.env` file (or `values.yaml` for Kubernetes).
 - Restart the server and sign up with the new email.
 - Once logged in, open **Admin Settings** to reconfigure SSO or update the provider's client secret.
-
-For form login behavior on a running instance, you can also use `appsmithctl enable-form-login` or toggle **Form Login** under **Admin Settings → User Management**. See [User Management](/getting-started/setup/instance-configuration/user-management#authentication).
 
 ### Users locked out after disconnecting OIDC SSO
 
