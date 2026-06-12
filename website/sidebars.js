@@ -912,7 +912,9 @@ const sidebars = {
             "help-and-support/troubleshooting-guide/sso-authentication-errors",
             "help-and-support/troubleshooting-guide/user-management-errors",
             "help-and-support/troubleshooting-guide/ssl-certificate-errors",
-            "help-and-support/troubleshooting-guide/email-smtp-errors"
+            "help-and-support/troubleshooting-guide/email-smtp-errors",
+            "help-and-support/troubleshooting-guide/performance-resource-errors",
+            "help-and-support/troubleshooting-guide/monitoring-audit-log-errors"
           ],
         },
         {
