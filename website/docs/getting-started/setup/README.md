@@ -15,6 +15,8 @@ Appsmith works best on AMD and ARM architectures on AWS, Azure, GCP, and Digital
 - Two virtual CPUs
 - 8 GB of memory
 
+These values are a baseline for getting started. Production sizing depends on application workload, concurrency, and whether supporting services run locally or externally. For the full planning workflow, see [Infrastructure and capacity planning](/getting-started/setup/infrastructure-sizing).
+
 You can follow one of the below guides to deploy Appsmith on the platform you prefer:
 
 - [Docker](/getting-started/setup/installation-guides/docker) (_Recommended_)
