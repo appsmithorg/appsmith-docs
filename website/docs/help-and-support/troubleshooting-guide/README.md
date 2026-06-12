@@ -37,6 +37,35 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 
 ---
 
+## All troubleshooting guides
+
+### Self-hosting and instance administration
+
+- [Self-hosting (deployment) errors](/help-and-support/troubleshooting-guide/deployment-errors)
+- [Upgrade and migration errors](/help-and-support/troubleshooting-guide/upgrade-migration-errors)
+- [License and activation errors](/help-and-support/troubleshooting-guide/license-and-activation-errors)
+- [SSO and authentication errors](/help-and-support/troubleshooting-guide/sso-authentication-errors)
+- [User management and permissions errors](/help-and-support/troubleshooting-guide/user-management-errors)
+- [SSL, certificate, and reverse proxy errors](/help-and-support/troubleshooting-guide/ssl-certificate-errors)
+- [Email and SMTP errors](/help-and-support/troubleshooting-guide/email-smtp-errors)
+- [Performance and resource errors](/help-and-support/troubleshooting-guide/performance-resource-errors)
+- [Monitoring and audit log errors](/help-and-support/troubleshooting-guide/monitoring-audit-log-errors)
+- [Backup and restore errors](/help-and-support/troubleshooting-guide/backup-restore-errors)
+
+### Building applications
+
+- [Application errors](/help-and-support/troubleshooting-guide/application-errors)
+- [Datasource and action errors](/help-and-support/troubleshooting-guide/action-errors)
+- [Query errors](/help-and-support/troubleshooting-guide/query-errors)
+- [JS errors](/help-and-support/troubleshooting-guide/js-errors)
+- [Widget errors](/help-and-support/troubleshooting-guide/widget-errors)
+- [Git errors](/help-and-support/troubleshooting-guide/git-errors)
+- [Granular access control errors](/help-and-support/troubleshooting-guide/gac-errors)
+- [Cyclic dependency errors](/help-and-support/troubleshooting-guide/cyclic-dependency)
+- [Embedding and content security errors](/help-and-support/troubleshooting-guide/embedding-csp-errors)
+
+---
+
 ## Contacting Support
 
 If you are unable to resolve your issue using the provided troubleshooting guides, you can contact Appsmith support for assistance. To get in touch with the support team, use the chat widget on the page for further help.

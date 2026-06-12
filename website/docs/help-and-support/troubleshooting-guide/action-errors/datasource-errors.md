@@ -62,6 +62,89 @@ See how to [Configure a custom domain and SSL certificate](/getting-started/setu
 
 Once HTTPS is enabled, the Google File Picker will function correctly, and access will be granted only to the selected sheets as expected.
 
+## Cloud datasource connection fails or disconnects (IP whitelisting)
+
+<Message
+messageContainerClassName="error" 
+messageContent="Failed to load the datasource."/>
+
+#### Cause
+
+When using Appsmith Cloud, the platform connects to your database from a fixed set of Appsmith deployment IP addresses. If those IPs are not allowed on your database instance, VPC, or firewall, connections are refused or drop intermittently. This commonly affects managed databases where access is IP-restricted.
+
+#### Solution
+
+- Whitelist the Appsmith Cloud deployment IP addresses `18.223.74.85` and `3.131.104.27` on your database instance, security group, or VPC.
+- For pooled Postgres providers, connect using the **session pooler** connection method rather than transaction pooling.
+- To isolate whether the problem is on Appsmith's side or the database's, try connecting with an external client such as DBeaver using the same credentials.
+- See the reference for your datasource (for example, [Connect to PostgreSQL](/connect-data/reference/querying-postgres) or [Connect to Amazon S3](/connect-data/reference/querying-amazon-s3)) for the exact whitelisting steps.
+
+## Too many connections / connection pool limit reached
+
+#### Cause
+
+By default, each Appsmith instance uses a connection pool limit of **5** connections per datasource. On databases with a low maximum-connections setting, multiple apps or instances can together approach the database's connection limit.
+
+#### Solution
+
+- The default pool limit of `5` works for most use cases. On paid (Business) plans you can adjust the pool size in the **Admin Settings** of your instance. See [Connection Pooling in Appsmith](/connect-data/concepts/connection-pooling).
+- If queries against a single datasource intermittently fail under load, restarting the affected instance or pods can clear connections left in a bad state.
+
+## SSH private key not accepted (key format)
+
+#### Cause
+
+When connecting to a database over an SSH tunnel, Appsmith accepts the private key only in **PEM RSA** format. Keys in the newer OpenSSH key format are not accepted and the connection fails.
+
+#### Solution
+
+- Generate or convert your private key to the PEM RSA format and upload that file in the datasource configuration.
+
+## Snowflake key-pair authentication option not visible
+
+#### Cause
+
+Snowflake key-pair (RSA) authentication may not appear as an option on every instance.
+
+#### Solution
+
+- Once available, select the key-pair option and upload your private key. The private key must be in a supported PEM format. See [Connect to Snowflake — Key Pair authentication](/connect-data/reference/querying-snowflake-db).
+- If you do not see the option to switch to key-pair authentication for Snowflake, contact Appsmith support to have it enabled for your instance.
+
+## Snowflake query returns a different number than Appsmith
+
+#### Cause
+
+Snowflake handles full 64-bit integers, but Appsmith evaluates values internally with JavaScript. Numbers that exceed JavaScript's safe integer precision range are rounded, so a large integer can appear different in Appsmith than in Snowflake.
+
+#### Solution
+
+- Treat large numbers as strings. In the query, cast them, for example `SELECT TO_VARCHAR(8714031664424933984)`.
+- In JS code, wrap such values in quotes, for example `const id = "8714031664424933984"`.
+
+## File upload to S3 fails or uploads an empty object (large files)
+
+#### Cause
+
+Uploading larger files takes longer to complete. If the upload exceeds the query timeout, it fails — sometimes leaving an empty object in the bucket.
+
+#### Solution
+
+- Increase the **Query timeout** in the query's **Settings** tab (for example, to `60000` ms) and retry. See [Query settings](/connect-data/reference/query-settings).
+- The maximum configurable query timeout is `60000` ms (60 seconds). On self-hosted instances you can raise the server-level limit beyond 60 seconds with the `APPSMITH_SERVER_TIMEOUT` environment variable.
+- When uploading via the FilePicker widget, set the FilePicker's **Data format** to `Base64`. See how to [upload files to S3](/connect-data/reference/querying-amazon-s3).
+
+## Uploading an SSL CA certificate for a datasource is not supported
+
+#### Cause
+
+Appsmith does not currently support uploading a custom SSL CA certificate (for example, a self-signed CA) for MySQL datasources.
+
+#### Solution
+
+- This is not available at this juncture. If the database server does not support SSL, set the datasource's **SSL** field to `Disabled`.
+- This capability is tracked as a feature request; add your use case to [appsmith issue #33194](https://github.com/appsmithorg/appsmith/issues/33194) to help prioritize it.
+
 
 
 

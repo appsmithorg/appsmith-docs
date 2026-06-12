@@ -46,7 +46,7 @@ You may see the below errors when working with a [JSON Form ](../../reference/wi
 
 ### Source data exceeds 50 fields
 
-You may see an error message when you try to bind a large query/API response to the [source data ](../../reference/widgets/json-form#source-data)property of the JSON Form widget.
+You may see an error message when you try to bind a large query/API response to the [source data ](../../reference/widgets/json-form#source-data-json)property of the JSON Form widget.
 
 #### Error message
 
@@ -72,7 +72,7 @@ To determine if the problem is caused due to:
 * **A large array or a huge JSON object** - You can re-look at the data and evaluate the need to display all the data on UI, as it would be painful for your users to navigate more than 50 fields.
 * **The whole query response that you bound to the source data** - You recheck the source data field you are trying to bind and select either the selected row / triggered row to bind.
 
-Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data) field to make changes.
+Once you have figured out the new structure for the data, head to the [source data](../../reference/widgets/json-form#source-data-json) field to make changes.
 
 If you still need help debugging an error, please raise a request on [Discord Server](https://discord.com/invite/rBTTVJp) or email support@appsmith.com.
 
