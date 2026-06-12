@@ -933,11 +933,11 @@ const sidebars = {
             'help-and-support/troubleshooting-guide/gac-errors',
             'help-and-support/troubleshooting-guide/cyclic-dependency',
             'help-and-support/troubleshooting-guide/embedding-csp-errors',
+            'help-and-support/troubleshooting-guide/js-errors',
+            'help-and-support/troubleshooting-guide/query-errors',
+            'help-and-support/troubleshooting-guide/widget-errors',
           ],
         },
-        // 'help-and-support/troubleshooting-guide/js-errors',
-        // 'help-and-support/troubleshooting-guide/query-errors',
-        // 'help-and-support/troubleshooting-guide/widget-errors',
       ],
     }, // Help & Support end
     {
