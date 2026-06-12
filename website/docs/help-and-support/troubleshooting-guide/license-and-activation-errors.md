@@ -17,7 +17,7 @@ The license key entered does not match a valid key for your subscription. This c
 - Sign in (do not sign up) at [customer.appsmith.com](https://customer.appsmith.com) and copy your exact license key from the **License** section.
 - In your instance, go to **Admin Settings** → **License & Plans**, enter the key in the **Add Key** field, and click **Activate**. See [Add or update license key](/getting-started/setup/manage-plans/upgrade-plan#add-or-update-license-key).
 - The same license key can be applied to multiple instances (including production); there is no upper limit on the number of instances on the enterprise plan.
-- If you maintain separate accounts, note that the account used to purchase the license and the account used as instance admin are independent — use the key from the account that holds the paid subscription.
+- If you maintain separate accounts, note that the account used to purchase the license and the account used as instance admin are independent. Use the key from the account that holds the paid subscription.
 
 ### License screen shown instead of the application
 
@@ -29,7 +29,7 @@ When the `appsmith-ee` (Commercial/Enterprise) image starts for the first time, 
 
 - Confirm you are running the enterprise image (`appsmith/appsmith-ee`), not the community image. The license entry option only appears on the enterprise image.
 - Copy your existing license key from [customer.appsmith.com](https://customer.appsmith.com) and apply it under **Admin Settings** → **License & Plans**. See [Upgrade to Paid Plan](/getting-started/setup/manage-plans/upgrade-plan).
-- You can reuse your existing key on new development, test, and production systems — you do not need a separate key per instance.
+- You can reuse your existing key on new development, test, and production systems. You do not need a separate key per instance.
 
 ### Cannot find the License page or Admin Settings
 
@@ -58,7 +58,7 @@ After a renewal, payment, or backend fix, the updated license status can take ti
 - After a confirmed renewal/payment, restart your instance and confirm whether the issue clears.
 - The notification can take up to a couple of hours to disappear on its own. To apply it immediately, go to **Admin Settings** → **License & Plans** and click the **Refresh** button next to the license key.
 - If the instance has no admin user with form login, add one via [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) and restart, then sign up with that user and refresh the license from the **License & Plans** tab.
-- If the status still does not update after these steps, contact support — the renewal may need a backend correction on the customer portal before it can be refreshed on your instance.
+- If the status still does not update after these steps, contact support. The renewal may need a backend correction on the customer portal before it can be refreshed on your instance.
 
 ### Payment overdue notification while the license is still valid
 
@@ -74,7 +74,7 @@ This message appears when an invoice is past due, even if the license has not ye
 
 - Process the outstanding invoice as soon as possible to avoid disruption.
 - A Business/Enterprise instance can be automatically downgraded if dues remain unpaid, or if the card on file is invalid or revoked. If your instance was downgraded, settle the outstanding balance to restore the previous plan.
-- For invoice or billing changes, contact support — these are handled on the customer portal/billing side, not from the instance.
+- For invoice or billing changes, contact support. These are handled on the customer portal/billing side, not from the instance.
 
 ### License key invalid after moving to a new instance
 
@@ -85,7 +85,7 @@ A license key that was activated on one instance (for example, a local/debug ins
 #### Solution
 
 - Obtain (copy) your license key for the self-hosted instance from [customer.appsmith.com](https://customer.appsmith.com) and apply it on the new server under **Admin Settings** → **License & Plans**.
-- If you must rotate or deactivate an existing key (for example, for a security policy), contact support — they coordinate generating and applying the new key. As a temporary measure to stay unblocked, you can switch back to the old license key until the new one is ready.
+- If you must rotate or deactivate an existing key (for example, for a security policy), contact support. They coordinate generating and applying the new key. As a temporary measure to stay unblocked, you can switch back to the old license key until the new one is ready.
 - For transferring a license between cloud and self-hosted, or between accounts/emails, contact support to update the license owner; this cannot be self-served from the instance.
 
 ### License not validating on an instance with restricted internet

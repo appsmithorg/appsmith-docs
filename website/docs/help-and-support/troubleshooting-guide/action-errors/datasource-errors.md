@@ -126,7 +126,7 @@ Snowflake handles full 64-bit integers, but Appsmith evaluates values internally
 
 #### Cause
 
-Uploading larger files takes longer to complete. If the upload exceeds the query timeout, it fails — sometimes leaving an empty object in the bucket.
+Uploading larger files takes longer to complete. If the upload exceeds the query timeout, it can fail and sometimes leave an empty object in the bucket.
 
 #### Solution
 
@@ -144,7 +144,6 @@ Appsmith does not currently support uploading a custom SSL CA certificate (for e
 
 - This is not available at this juncture. If the database server does not support SSL, set the datasource's **SSL** field to `Disabled`.
 - This capability is tracked as a feature request; add your use case to [appsmith issue #33194](https://github.com/appsmithorg/appsmith/issues/33194) to help prioritize it.
-
 
 
 

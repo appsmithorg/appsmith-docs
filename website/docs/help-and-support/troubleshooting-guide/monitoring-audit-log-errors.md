@@ -49,7 +49,7 @@ messageContent='401 Unauthorized'></Message>
 
 #### Cause
 
-Appsmith always serves its unauthenticated health endpoint at `GET /api/v1/health`. A 401 on the health check usually means something in front of Appsmith — load balancer authentication, a WAF, or another security layer — is intercepting the request, not Appsmith itself.
+Appsmith always serves its unauthenticated health endpoint at `GET /api/v1/health`. A 401 on the health check usually means something in front of Appsmith, such as load balancer authentication, a WAF, or another security layer, is intercepting the request, not Appsmith itself.
 
 #### Solution
 

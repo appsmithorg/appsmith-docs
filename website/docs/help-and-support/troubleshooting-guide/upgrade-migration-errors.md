@@ -70,7 +70,7 @@ Users on very old versions are sometimes unsure whether they must step through i
 
 #### Solution
 
-- You can update directly from an old version to the latest in a single step; you do not need to go through every intermediate version. The exception is the mandatory checkpoint: if you are older than v1.9.2, first follow [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version). For Docker, there is also a v1.96–v1.99 checkpoint required before moving to 2.0+, described in [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
+- You can update directly from an old version to the latest in a single step; you do not need to go through every intermediate version. The exception is the mandatory checkpoint: if you are older than v1.9.2, first follow [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version). For Docker, there is also a v1.96 to v1.99 checkpoint required before moving to 2.0+, described in [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 - Pin the `image` tag to a specific release (for example `index.docker.io/appsmith/appsmith-ee:<version>`) instead of a floating tag, so restarts don't pull an unexpected version. Find release tags on [GitHub](https://github.com/appsmithorg/appsmith/releases).
 - Always take a backup before updating. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance).
 

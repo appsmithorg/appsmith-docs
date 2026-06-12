@@ -10,7 +10,7 @@ To mitigate clickjacking, Appsmith sets the `Content-Security-Policy` header wit
 
 #### Solution
 
-- Allow the embedding domain(s) with the `APPSMITH_ALLOWED_FRAME_ANCESTORS` environment variable, for example `APPSMITH_ALLOWED_FRAME_ANCESTORS="'self' http://trusted-other.com"`. Separate multiple domains with spaces. See [Environment variables](/getting-started/setup/environment-variables).
+- Allow the embedding domains with the `APPSMITH_ALLOWED_FRAME_ANCESTORS` environment variable, for example `APPSMITH_ALLOWED_FRAME_ANCESTORS="'self' http://trusted-other.com"`. Separate multiple domains with spaces. See [Environment variables](/getting-started/setup/environment-variables).
 - For background on the clickjacking protection, see [Security](/product/security).
 
 ### Removing 'unsafe-eval' from the CSP header

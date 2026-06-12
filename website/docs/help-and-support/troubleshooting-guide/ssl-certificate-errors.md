@@ -57,15 +57,15 @@ When SSL termination happens at a load balancer, the application servers communi
 - If SSL terminates at the load balancer, update the certificate there; there is no need to update `ca-certs` on the application servers.
 - Only update `ca-certs` on the application servers if Appsmith makes outbound HTTPS calls to other services, if load-balancer-to-application traffic is encrypted, or if mutual TLS (mTLS) is in use.
 
-### Custom domain causes redirect loops or 401s behind a reverse proxy
+### Custom domain causes redirect loops or 401 errors behind a reverse proxy
 
 #### Cause
 
-When NGINX, ingress-nginx, or another load balancer sits in front of the Appsmith container and also handles SSL termination, setting `APPSMITH_CUSTOM_DOMAIN` conflicts with the proxy and causes bad redirects, infinite redirect loops, 401s, or NULL domain errors.
+When NGINX, ingress-nginx, or another load balancer sits in front of the Appsmith container and also handles SSL termination, setting `APPSMITH_CUSTOM_DOMAIN` conflicts with the proxy and causes bad redirects, infinite redirect loops, 401 errors, or NULL domain errors.
 
 #### Solution
 
-- If you have NGINX, ingress-nginx, or any load balancer in front of the Appsmith container, remove the [`APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/environment-variables) environment variable from your `docker.env` / values to avoid bad redirects and 401s.
+- If you have NGINX, ingress-nginx, or any load balancer in front of the Appsmith container, remove the [`APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/environment-variables) environment variable from your `docker.env` / values to avoid bad redirects and 401 errors.
 - Avoid using the `latest` image tag; pin a concrete version so multiple Appsmith versions don't run in the cluster simultaneously.
 
 ### Setting up a custom domain with SSL
