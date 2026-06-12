@@ -17,6 +17,7 @@ During an upgrade, Appsmith runs one-time database migrations. If a migration do
 - Restore your pre-upgrade backup to return to a working state, then retry the upgrade. See [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
 - Update directly to the latest version, since fixes for migration failures are shipped in newer releases. See [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 - If your current version is older than v1.9.2, you must first follow the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide, as skipping the mandatory checkpoint can leave migrations in an inconsistent state.
+- If your current version is newer than v1.9.2 but older than v1.96, first upgrade to any version from v1.96 through v1.99 (v1.99 is recommended), and then upgrade to 2.0 or newer. See [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 - If the backend still fails after upgrading, gather full server logs and contact support.
 
 ### Errors or missing plugins after downgrading by changing the image tag
