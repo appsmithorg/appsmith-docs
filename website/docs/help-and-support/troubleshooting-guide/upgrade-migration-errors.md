@@ -2,22 +2,6 @@
 
 This page shows how to resolve common errors when upgrading or migrating a self-hosted Appsmith instance. Before any upgrade or migration, always take a backup of your instance so you can roll back. See [Backup instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance) and [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 
-### Instance won't start or is stuck restarting after an upgrade
-
-<Message
- messageContainerClassName='error'
-messageContent='Backend server is not running. Retrying attempt 7/50 in 20 seconds...'></Message>
-
-#### Cause
-
-After updating to a new version, the container can fail to come back online and stay in a restarting state, with the RTS or other services unable to reach the backend. In several cases this was caused by a defect in a specific release rather than your environment, and was corrected in a later release.
-
-#### Solution
-
-- First, take the recommended recovery path: if you took a backup before upgrading, restore it to get unblocked. See [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
-- Then update to the latest version, where these start-up defects are typically fixed. See [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
-- Re-running the upgrade alone will not fix a known release defect. Collect your server logs ([How to get container logs](/getting-started/setup/instance-management/how-to-get-container-logs)) and the before/after versions, then contact support via the chat widget so they can confirm whether a fix is already available in a newer release.
-
 ### Backend down with aborted migration after upgrade
 
 <Message
