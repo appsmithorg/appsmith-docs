@@ -15,7 +15,7 @@ This page applies only to the **bundled Redis** subchart (`redis.enabled: true`)
 
 For most deployments, enabling Redis authentication is a standard chart upgrade.
 
-1. Check your `values.yaml` for an explicit `redis.auth.enabled: false`. Older deployments often carry this from a previous install, and an explicit value overrides the new default, leaving authentication disabled after the upgrade. Remove the override or set it to `true`:
+1. Remove any explicit `redis.auth.enabled: false` from your `values.yaml`, or set it to `true`. An explicit `false` overrides the new default and leaves authentication disabled after the upgrade:
 
    ```yaml
    redis:
