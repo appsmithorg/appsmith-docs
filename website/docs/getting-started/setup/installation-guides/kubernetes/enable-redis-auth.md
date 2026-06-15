@@ -15,20 +15,28 @@ This page applies only to the **bundled Redis** subchart (`redis.enabled: true`)
 
 For most deployments, enabling Redis authentication is a standard chart upgrade.
 
-1. Update your local chart repository and upgrade:
+1. Check your `values.yaml` for an explicit `redis.auth.enabled: false`. Older deployments often carry this from a previous install, and an explicit value overrides the new default, leaving authentication disabled after the upgrade. Remove the override or set it to `true`:
+
+   ```yaml
+   redis:
+     auth:
+       enabled: true
+   ```
+
+2. Update your local chart repository and upgrade:
 
    ```bash
    helm repo update
    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
    ```
 
-2. Verify that the Secret exists:
+3. Verify that the Secret exists:
 
    ```bash
    kubectl get secret appsmith-redis-secret -n appsmith-ee
    ```
 
-3. Verify that all pods are running and that Appsmith can reach Redis:
+4. Verify that all pods are running and that Appsmith can reach Redis:
 
    ```bash
    kubectl get pods -n appsmith-ee
