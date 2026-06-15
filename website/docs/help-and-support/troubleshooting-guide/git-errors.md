@@ -159,6 +159,78 @@ When edit and view mode are out of sync and there are no more changes to be comm
 
 <ZoomImage src="/img/redeploy-app.png" alt="Redeploy app" caption="Redeploy app" />
 
+### Git connection lost after restart
+
+#### Cause
+
+On self-hosted instances without a persistent volume, the local Git repository clones are stored on ephemeral container storage. When the Appsmith container or instance is restarted, the cloned repositories are wiped, and the app is no longer able to reconnect to its Git repository.
+
+#### Solution
+
+- Configure a persistent volume for your deployment so that Git repositories are maintained across restarts.
+- Set the `APPSMITH_GIT_ROOT` environment variable to a directory on the persistent volume so repositories are created and persisted. See [Git Local File Path](/getting-started/setup/environment-variables#git-local-file-path).
+- If issues persist, contact support for assistance.
+
+### SSHKey error when connecting to a repository
+
+<Message
+ messageContainerClassName='error'
+messageContent='SSHKey error'></Message>
+
+#### Cause
+
+Appsmith connects to Git over SSH using deploy keys. This error typically appears when the instance cannot reach the Git provider over the network, due to firewall rules, security group settings, or proxy configuration blocking outbound traffic, rather than the key itself being missing.
+
+#### Solution
+
+- Verify network connectivity from the Appsmith host to the Git provider, including firewall rules, security group settings, and any proxy configuration that may restrict outbound traffic.
+- From an affected node, test basic connectivity and HTTPS port reachability, for example `ping github.com` and `telnet github.com 443`.
+- If a proxy is in use, test connectivity with the proxy disabled to isolate the cause.
+- Confirm you are using the **SSH** repository URL with a deploy key. HTTPS Git connections are not supported. See [Setup GitHub](/advanced-concepts/version-control-with-git/guides/setup-github).
+- If issues persist, contact support for assistance.
+
+### Unable to populate branches / file system lock error
+
+<Message
+ messageContainerClassName='error'
+messageContent='Git command execution error: We were unable to place a lock on the file system to perform status command. This error can occur when another command listBranch, which is in progress.'></Message>
+
+#### Cause
+
+A concurrent Git operation holds a lock on the file system, preventing other Git commands (such as listing branches) from completing. This can surface after upgrading the instance.
+
+#### Solution
+
+- As an instance admin, enable **Atomic pushes** in the instance settings (only visible to instance admins).
+- If issues persist, contact support for assistance.
+
+### Version mismatch when pulling between environments
+
+#### Cause
+
+When a development environment runs a newer Appsmith version than a higher environment (such as staging or production), pulling changes from the newer environment into the older one fails with a version mismatch. This is expected behavior.
+
+#### Solution
+
+- Update the other environment to the same Appsmith version (or higher) so the Git operation succeeds.
+- Keep all environments connected to the same repository on the same Appsmith version to avoid version-related Git conflicts. See [Continuous Delivery (CI/CD) with Git](/advanced-concepts/version-control-with-git/cd-with-git).
+
+### Discard local changes fails or changes reappear
+
+<Message
+ messageContainerClassName='error'
+messageContent="Unexpected character ('<' (code 60)): was expecting double-quote to start field name"></Message>
+
+#### Cause
+
+When a merge conflict is resolved manually on the remote (for example in an editor or your Git provider) and the resulting page JSON becomes invalid, Appsmith cannot import the artifact. As a result, discarding local changes reports success but the uncommitted changes reappear, or the discard fails outright.
+
+#### Solution
+
+- Identify the corrupted page file in your repository (the error message names the file, line, and column, for example `pages/<PageName>/<PageName>.json`).
+- Validate the page JSON with a JSON validator and correct the formatting issue introduced during conflict resolution, then commit the fix to the remote.
+- In Appsmith, click **Discard and Pull** to update the app. See [Resolve Merge Conflicts in Git](/advanced-concepts/version-control-with-git/commit-and-push).
+- If issues persist, contact support for assistance.
 
 
 
