@@ -138,21 +138,6 @@ Chart versions older than 3.8.2 require manual configuration to enable Redis aut
    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
    ```
 
-### ArgoCD on older charts
-
-If you can't use a pre-created Secret, ignore drift on the generated Secret in your Application spec:
-
-```yaml
-spec:
-  ignoreDifferences:
-    - kind: Secret
-      name: <release-name>-redis
-      jsonPointers:
-        - /data
-```
-
-This is a workaround, not a recommendation. The pre-created Secret keeps the password deterministic and visible to you, and upgrading to chart 3.8.2 or later removes the problem entirely.
-
 ## Troubleshooting
 
 **Appsmith logs show `NOAUTH Authentication required` or `WRONGPASS`**
