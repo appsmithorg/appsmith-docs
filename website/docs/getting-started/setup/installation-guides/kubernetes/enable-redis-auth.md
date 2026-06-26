@@ -72,7 +72,7 @@ redis:
 
 ### Self-manage the Redis password
 
-To set the Redis password directly instead of letting the chart manage a Secret — for example, when migrating a deployment that already sets `redis.auth.password` — set all three values in `values.yaml`:
+To set the Redis password directly instead of letting the chart manage a Secret (for example, when migrating a deployment that already sets `redis.auth.password`), set all three values in `values.yaml`:
 
 ```yaml
 redis:
