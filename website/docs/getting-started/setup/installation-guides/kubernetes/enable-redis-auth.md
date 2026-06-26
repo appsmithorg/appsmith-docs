@@ -70,6 +70,21 @@ redis:
     existingSecretPasswordKey: my-password-key
 ```
 
+### Self-manage the Redis password
+
+To set the Redis password directly instead of letting the chart manage a Secret — for example, when migrating a deployment that already sets `redis.auth.password` — set all three values in `values.yaml`:
+
+```yaml
+redis:
+  auth:
+    password: "<your-password>"
+    existingSecret: ""
+applicationConfig:
+  APPSMITH_REDIS_URL: "redis://:<your-password>@<release-name>-redis-master.<namespace>.svc.cluster.local:6379"
+```
+
+`existingSecret` must be empty so the chart skips its bootstrap Secret, and `APPSMITH_REDIS_URL` must carry the same password. The chart rejects the install with an error if `redis.auth.password` is set without both.
+
 ### Opt out
 
 To keep the bundled Redis unauthenticated (for example, in an isolated development cluster), disable auth in `values.yaml`:
@@ -140,6 +155,10 @@ Chart versions older than 3.8.2 require manual configuration to enable Redis aut
 
 ## Troubleshooting
 
+**Install fails with `redis.auth.password is set, which is only supported on the self-managed path`**
+
+Either unset `redis.auth.password` and use a Secret instead (see [Bring your own password](#bring-your-own-password)), or set the full self-managed configuration (see [Self-manage the Redis password](#self-manage-the-redis-password)).
+
 **Appsmith logs show `NOAUTH Authentication required` or `WRONGPASS`**
 
 The password in the Secret doesn't match what Redis was started with, typically after editing the Secret manually. After changing the password, restart both Redis and Appsmith so they pick up the new value:
@@ -152,10 +171,6 @@ kubectl rollout restart statefulset appsmith-ee -n appsmith-ee
 **The bootstrap Job pod shows `ImagePullBackOff`**
 
 Your cluster can't pull `docker.io/alpine/kubectl`. Mirror the image and override `redisAuth.passwordInit.image` as described in [Air-gapped and restricted networks](#air-gapped-and-restricted-networks).
-
-**Appsmith can't resolve the Redis host**
-
-This can happen when your Helm release name contains the word `redis`, which prevents the chart from deriving the correct Redis hostname. Set `applicationConfig.APPSMITH_REDIS_URL` explicitly with the actual Redis service hostname, or reinstall under a release name without `redis` in it.
 
 ## See also
 
