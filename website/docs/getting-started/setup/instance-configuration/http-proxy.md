@@ -12,30 +12,16 @@ When Appsmith runs behind a corporate firewall or a Virtual Private Network (VPN
 
 ## Verify connectivity
 
-Before you begin proxy configuration, verify if your Appsmith instance can connect to [cs.appsmith.com](http://cs.appsmith.com/) for internal communication. 
+Before you begin proxy configuration, verify whether your Appsmith instance can connect to `cs.appsmith.com` for internal communication. See [Verify connectivity to cs.appsmith.com](/help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity) for Docker and Kubernetes test steps.
 
-1. Connect to the `appsmith` container as root:
+For Docker, connect to the container and run:
 
-    ```bash
-    docker exec -it -u root appsmith bash
-    ```
+```bash
+docker exec -it -u root appsmith bash
+curl -i -v https://cs.appsmith.com/api/v1/health
+```
 
-2. Test connection with:
-
-    ```bash
-    curl -i -v cs.appsmith.com
-    ```
-
-    The command shows output as below:
-
-    ```bash
-    * Trying <IP_Address>...
-    * TCP_NODELAY set
-    ```
-    If you see below connection errors after the above output, it shows that a connection is not established and a proxy set up may be required.
-
-    - `connect to <IP address> port 80 failed: Connection timed out`
-    - `curl: (7) Failed to connect to <IP address> port 80: Network unreachable`
+If you see connection errors (for example, `Connection timed out` or `Network unreachable`), a proxy setup may be required.
 
 ## Set up proxy
 
@@ -61,15 +47,7 @@ Follow below steps to configure proxy by setting environment variables:
 4. Confirm proxy configuration with:
 
     ```bash
-    curl -i -v cs.appsmith.com
-    ```
-
-    The command shows below output when connection is successfully established:
-
-    ```bash
-    Trying <IP_ADDRESS>:8080...
-    * TCP_NODELAY set
-    * Connected to proxy (<IP_ADDRESS>) port 8080 (#0)
+    curl -i -v https://cs.appsmith.com/api/v1/health
     ```
 
 5. When using an HTTPS proxy, you may want to add a trusted custom Certificate Authority to Appsmith. For more information, see [Custom Root CA Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) guide.

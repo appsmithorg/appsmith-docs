@@ -44,6 +44,7 @@ When using Appsmith, you may encounter errors related to both self-hosting the p
 - [Self-hosting (deployment) errors](/help-and-support/troubleshooting-guide/deployment-errors)
 - [Upgrade and migration errors](/help-and-support/troubleshooting-guide/upgrade-migration-errors)
 - [License and activation errors](/help-and-support/troubleshooting-guide/license-and-activation-errors)
+- [Verify connectivity to cs.appsmith.com](/help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity)
 - [SSO and authentication errors](/help-and-support/troubleshooting-guide/sso-authentication-errors)
 - [User management and permissions errors](/help-and-support/troubleshooting-guide/user-management-errors)
 - [SSL, certificate, and reverse proxy errors](/help-and-support/troubleshooting-guide/ssl-certificate-errors)
