@@ -25,6 +25,8 @@ The **Appsmith Server** is a cloud service (`cs.appsmith.com`) managed by Appsmi
 - **Licensing:** Managing deployment licenses.  
 - **Template configuration:** Handles the configuration and management of application templates within Appsmith.
 
+Self-hosted instances must reach `cs.appsmith.com` over outbound HTTPS. To test connectivity from Docker or Kubernetes, see [Verify connectivity to cs.appsmith.com](/help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity).
+
 ### Customer data (external systems)
 **Customer Data** refers to customer's external systems that Appsmith interfaces with, such as:
 - **SQL Databases**: PostgreSQL, MySQL, Microsoft SQL Server, etc.

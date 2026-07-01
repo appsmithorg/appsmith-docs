@@ -18,7 +18,7 @@ This page provides steps to install Appsmith on a Kubernetes cluster using the [
 - Appsmith application pods need at least **6 GB of memory** and benefit from **2 vCPUs**. MongoDB, Redis, PostgreSQL, and other chart dependencies consume additional resources, and the cluster itself has overhead for system components (kube-proxy, monitoring agents, ingress controllers, etc.). Plan for a minimum of **2 nodes with 2 vCPUs and 8 GB of memory each**.
 - A default `StorageClass` capable of provisioning persistent volumes. A StorageClass with `allowVolumeExpansion: true` is recommended to allow resizing volumes without reprovisioning.
 - An Ingress controller (such as [Traefik](https://doc.traefik.io/traefik/providers/kubernetes-ingress/) or an AWS/GCP load balancer controller) or a `LoadBalancer`-type Service to expose Appsmith to users.
-- Outbound network access to `cs.appsmith.com` for license validation and updates.
+- Outbound network access to `cs.appsmith.com` for license validation and updates. To verify connectivity after install, see [Verify connectivity to cs.appsmith.com](/help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity).
 
 ### Client machine
 

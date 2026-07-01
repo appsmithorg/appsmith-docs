@@ -461,16 +461,37 @@ MultiSelect1.setRequired(true)
 </dd>
 
 
-#### setSelectedOptions (param: object): Promise
+#### setSelectedOptions (param: array): Promise
 
 <dd>
 
-Sets the selected option of the MultiSelect widget.
+Sets the selected option(s) of the MultiSelect widget. Updates the widget's default selected values, reflected in `selectedOptionValues`.
+
+*Parameter type*: `Array<string | number>` or `Array<{ label: string, value: string | number }>`
+
+*Notes*:
+- Pass option **values** from your source data (the field bound to the **Value key** / `optionValue` property), not display labels.
+- Values in the array must be unique.
+- Pass an empty array `[]` to clear all selections.
+- `undefined` is not allowed and will throw.
 
 *Example*:
 
 ```js
-MultiSelect1.setSelectedOption({ label: 'Option 2', value: 'option2' })
+// Recommended — array of option values
+MultiSelect1.setSelectedOptions(["GREEN", "RED"])
+
+// Array of label/value objects
+MultiSelect1.setSelectedOptions([
+  { label: "Green", value: "GREEN" },
+  { label: "Red", value: "RED" }
+])
+
+// Single selection (coerced to one-element array)
+MultiSelect1.setSelectedOptions("GREEN")
+
+// Clear selection
+MultiSelect1.setSelectedOptions([])
 ```
 
 </dd>

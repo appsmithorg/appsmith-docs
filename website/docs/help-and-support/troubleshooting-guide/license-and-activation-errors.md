@@ -84,5 +84,6 @@ Appsmith fetches license status from the license server (`cs.appsmith.com`) on a
 
 #### Solution
 
+- Verify outbound connectivity from the instance using [Verify connectivity to cs.appsmith.com](/help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity).
 - Whitelist the domain `cs.appsmith.com` for outbound HTTPS. Use the domain, not an IP, because IP-based whitelisting is not supported for this domain. See [Air-gapped Edition](/getting-started/setup/installation-guides/air-gapped).
 - For environments that must remain fully internet-isolated, request the dedicated air-gapped edition by contacting the Appsmith sales team (`sales@appsmith.com`); the standard image still requires reaching `cs.appsmith.com` for license validation.
