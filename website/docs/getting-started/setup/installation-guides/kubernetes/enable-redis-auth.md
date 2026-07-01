@@ -9,9 +9,9 @@ Starting with Helm chart version **3.8.2**, the bundled Redis instance is passwo
 
 This page explains how to enable Redis authentication on existing deployments, including deployments running chart versions older than 3.8.2.
 
-This page applies only to the **bundled Redis** subchart (`redis.enabled: true`). If you use an external Redis instance, see [External Redis](/getting-started/setup/instance-configuration/external-redis). For a Docker single-container deployment, use External Redis to run an authenticated instance.
+This page applies only to the **bundled Redis** subchart (`redis.enabled: true`). If you use an external Redis instance, see [External Redis](/getting-started/setup/instance-configuration/external-redis).
 
-The examples use the release name `appsmith-ee`. Substitute your own release name and namespace. The Secret name `appsmith-redis-secret` is a fixed default (set by `redis.auth.existingSecret`) and is not release-prefixed.
+The examples use the release name `appsmith-ee`. Substitute your own release name and namespace.
 
 ## Upgrade an existing deployment to chart 3.8.2 or later
 
