@@ -21,9 +21,9 @@ Follow these steps to set up an external Redis instance for Appsmith. If you alr
 1. Create a Redis instance:
       - **Self-hosted Redis**: Install and configure Redis on your server using the [Redis installation guide](https://redis.io/docs/latest/get-started/).  
 
-      - **Cloud-hosted Redis**: Set up a managed Redis instance using a cloud provider such as AWS ElastiCache, Redis Cloud, or Azure Cache for Redis.  
+      - **Cloud-hosted Redis**: Set up a managed Redis instance using a cloud provider such as AWS ElastiCache, Redis Cloud, or Azure Cache for Redis. Enable authentication on the instance (see [Enable authentication](#enable-authentication)). Cloud-managed Redis must never be exposed without a password.  
 
-2. Retrieve the connection details of your Redis instance, including the hostname and port. Store these details securely. You need them to configure the Redis instance on Appsmith. 
+2. Retrieve the connection details of your Redis instance, including the hostname, port, and the authentication password or AUTH token. Store these details securely. You need them to configure the Redis instance on Appsmith. 
 
 ## Connect Appsmith to external Redis
 
@@ -31,24 +31,28 @@ Follow these steps to connect your Appsmith instance to the external Redis insta
 
 1. Go to the directory containing the Appsmith configuration file, such as `docker.env` for Docker or `values.yaml` for Kubernetes.  
 
-2. Add or update the following environment variable with your Redis connection details:  
+2. Add or update the following environment variable with your Redis connection details. Include the password so Appsmith connects with authentication:  
    * **Docker**:
 
       ```yaml
-      APPSMITH_REDIS_URL=redis://{redis.instance.hostname}:{port}
+      APPSMITH_REDIS_URL=redis://:{password}@{redis.instance.hostname}:{port}
       ```  
 
         Replace:
+        - `{password}` with the Redis password or AUTH token.
         - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
         - `{port}` with the Redis port (default: 6379).  
     * **Kubernetes**:
 
       ```yaml
-      APPSMITH_REDIS_URL:redis://{redis.instance.hostname}:{port}
+      APPSMITH_REDIS_URL:redis://:{password}@{redis.instance.hostname}:{port}
       ```  
         Replace:
+        - `{password}` with the Redis password or AUTH token.
         - `{redis.instance.hostname}` with the Redis instance hostname or IP address. 
         - `{port}` with the Redis port (default: 6379).  
+
+      If your instance has encryption in transit enabled, use the `rediss://` scheme instead of `redis://`. For provider-specific formats, see [Enable authentication](#enable-authentication).
 
 3. Update the Appsmith server configuration to establish a connection with the external Redis instance.  
    - **Docker**:  
@@ -62,6 +66,28 @@ Follow these steps to connect your Appsmith instance to the external Redis insta
 
 4. Log in to your Appsmith application and verify that the instance is functioning as expected.  
 5. Confirm that data caching and sessions management is happening by the external Redis instance.
+
+## Enable authentication
+
+:::caution
+Cloud-managed Redis (AWS ElastiCache, Azure Cache for Redis, GCP Memorystore, Redis Cloud) must run with authentication enabled, and Appsmith must connect with credentials. Never expose an external Redis instance without a password.
+:::
+
+Provide the credentials in `APPSMITH_REDIS_URL`. Two forms are supported:
+
+- `redis://:<password>@<host>:<port>` when the instance uses a single password or AUTH token.
+- `redis://<username>:<password>@<host>:<port>` when the instance uses an ACL / RBAC user.
+
+Use the `rediss://` scheme instead of `redis://` when encryption in transit is enabled. Appsmith also supports the `redis-cluster://` scheme for clustered instances.
+
+Enable authentication on the managed instance and build the connection string as follows:
+
+| Provider | Enable on the instance | Connection string |
+|---|---|---|
+| **AWS ElastiCache** | Turn on **Encryption in transit** and set a **Redis AUTH token** (or create an RBAC user). | `rediss://:<auth-token>@<host>:6379` |
+| **Azure Cache for Redis** | TLS is required. Use the **access key** as the password on the TLS port `6380`. | `rediss://:<access-key>@<name>.redis.cache.windows.net:6380` |
+| **GCP Memorystore** | Enable **AUTH** and **in-transit encryption**. | `rediss://:<auth-string>@<host>:6379` |
+| **Redis Cloud** | Set a database password. | `redis://:<password>@<host>:<port>` (use `rediss://` with TLS) |
 
 ## Troubleshooting
 

@@ -310,7 +310,7 @@ Defines the database driver that Keycloak will use to interact with the external
 ##### `APPSMITH_REDIS_URL`
 
 <dd>
-    Appsmith uses this variable to establish a link to an external Redis server, which Appsmith uses for session handling and caching operations. This connection string typically includes the Redis host, port number, and optionally, authentication credentials.
+    Appsmith uses this variable to establish a link to an external Redis server, which Appsmith uses for session handling and caching operations. The connection string includes the Redis host, port number, and authentication credentials, for example `redis://:<password>@<host>:<port>`. Always include credentials for external or cloud-managed Redis, and use the `rediss://` scheme when encryption in transit is enabled. See [Enable authentication](/getting-started/setup/instance-configuration/external-redis#enable-authentication).
 </dd>
 
 ### Custom domain

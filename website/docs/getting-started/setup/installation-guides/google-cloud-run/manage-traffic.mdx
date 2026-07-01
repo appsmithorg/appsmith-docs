@@ -73,8 +73,9 @@ Appsmith relies on Redis for caching and session storage. Set up a Redis instanc
    - **Configure read replicas**: Select `2 Read Replicas` if using the Standard tier to ensure high availability.
 4. Under **Set up connection**, choose the default option for **Network**.
 5. Expand the **Configuration** section and select **6.x** (recommended) for the Redis version.
-6. Click the **Create** button to deploy the Redis instance.
-7. Once the instance is ready, note down the **Primary Endpoint**, as this will be used later in your Appsmith configuration.
+6. Enable **AUTH** and **in-transit encryption** so the instance requires authentication. Store the AUTH string securely. Never run Memorystore without authentication.
+7. Click the **Create** button to deploy the Redis instance.
+8. Once the instance is ready, note down the **Primary Endpoint** and the **AUTH string**, as these will be used later in your Appsmith configuration.
 
 <ZoomImage src="/img/redis-primary-endpoint.png" alt="Primary Endpoint of the Redis Instance" caption="Primary Endpoint of the Redis Instance" />
 
@@ -146,7 +147,7 @@ After setting up external databases, configure Appsmith on Google Cloud Run for 
 3. Add the following environment variables:
 
     - `APPSMITH_DB_URL=<MongoDB connection string>`: Use the connection string for your MongoDB database, configured during its setup.
-    - `APPSMITH_REDIS_URL=<Redis connection string>`: Use the Redis connection string or endpoint provided after setting up your Redis instance on AWS ElastiCache.
+    - `APPSMITH_REDIS_URL=rediss://:<auth-string>@<host>:6379`: Use the Memorystore primary endpoint with the AUTH string so Appsmith connects with authentication. Use the `rediss://` scheme because in-transit encryption is enabled. See [Enable authentication](/getting-started/setup/instance-configuration/external-redis#enable-authentication).
     - `APPSMITH_KEYCLOAK_DB_URL=<PostgreSQL endpoint>`: This should be the endpoint of the PostgreSQL database you set up for Keycloak.
     - `APPSMITH_KEYCLOAK_DB_DRIVER=postgresql`: Set the driver to `postgresql` as Keycloak uses PostgreSQL for its database.
     - `APPSMITH_KEYCLOAK_DB_USERNAME=<PostgreSQL username>`: Enter the username you configured during the PostgreSQL setup.
