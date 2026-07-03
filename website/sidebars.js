@@ -911,6 +911,7 @@ const sidebars = {
             "help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery",
             "help-and-support/troubleshooting-guide/backup-restore-errors",
             "help-and-support/troubleshooting-guide/license-and-activation-errors",
+            "help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity",
             "help-and-support/troubleshooting-guide/sso-authentication-errors",
             "help-and-support/troubleshooting-guide/user-management-errors",
             "help-and-support/troubleshooting-guide/ssl-certificate-errors",
