@@ -82,5 +82,5 @@ This method allows for a good balance between security, and convenience. Having 
 These security implementations demonstrate Appsmith's commitment to maintaining a secure environment for developers and users alike. By following the guidelines provided, you can contribute to creating secure applications on the Appsmith platform.
 
 :::info
-Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you notice a security vulnerability, please email `security@appsmith.com`. Please note that Appsmith does not typically offer monetary rewards for security reports.
+Appsmith maintains an open communication channel with security researchers to report security vulnerabilities responsibly. If you believe you have discovered a security vulnerability, please reach out to us through [GitHub's private vulnerability reporting](https://github.com/appsmithorg/appsmith/security/advisories/new) with a description of the issue and any relevant details. After reviewing the report, appropriate action is taken to address the issue. Please note that Appsmith does not typically offer monetary rewards for security reports.
 :::
