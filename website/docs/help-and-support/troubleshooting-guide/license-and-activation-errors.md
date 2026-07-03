@@ -39,7 +39,7 @@ The license and other admin settings are only visible to users with instance adm
 
 #### Solution
 
-- Add your email to the [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) environment variable and restart Appsmith for the change to take effect.
+- Follow [Recover admin access when you don't know the admin email](/help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery) to grant yourself instance administrator access.
 - Sign in with that admin user, then go to **Admin Settings** → **License & Plans** to enter or update the license key.
 - Alternatively, an existing instance admin can grant you admin rights by adding your email to the Admin users list in **Admin Settings**.
 
@@ -57,7 +57,7 @@ After a renewal, payment, or backend fix, the updated license status can take ti
 
 - After a confirmed renewal/payment, restart your instance and confirm whether the issue clears.
 - The notification can take up to a couple of hours to disappear on its own. To apply it immediately, go to **Admin Settings** → **License & Plans** and click the **Refresh** button next to the license key.
-- If the instance has no admin user with form login, add one via [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) and restart, then sign up with that user and refresh the license from the **License & Plans** tab.
+- If the instance has no admin user with form login, follow [Recover admin access when you don't know the admin email](/help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery), then refresh the license from the **License & Plans** tab.
 - If the status still does not update after these steps, contact support. The renewal may need a backend correction on the customer portal before it can be refreshed on your instance.
 
 ### Payment overdue notification while the license is still valid
