@@ -14,8 +14,7 @@ To regain admin access, re-enable form login and sign up with a new admin accoun
 
 - Re-enable form login on the running instance with `appsmithctl enable-form-login`, or toggle **Form Login** under **Admin Settings → User Management** if you still have admin access. See [User Management](/getting-started/setup/instance-configuration/user-management#authentication).
 - Ensure signup is not restricted (check [`APPSMITH_SIGNUP_DISABLED`](/getting-started/setup/environment-variables#appsmith_signup_disabled)).
-- Add a new email to the [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) line of your `docker.env` file (or `values.yaml` for Kubernetes).
-- Restart the server and sign up with the new email.
+- Follow [Recover admin access when you don't know the admin email](/help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery) to add a new instance administrator.
 - Once logged in, open **Admin Settings** to reconfigure SSO or update the provider's client secret.
 
 ### Users locked out after disconnecting OIDC SSO
@@ -99,7 +98,7 @@ The SSO login button can disappear if the SSO configuration was lost (see the re
 
 #### Solution
 
-- Regain access by adding a new email to [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails), restarting the server, and signing up with that email.
+- Regain access by following [Recover admin access when you don't know the admin email](/help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery).
 - In **Admin Settings**, if SSO shows unavailable, click the **Refresh** button next to your license key.
 - Confirm you are running the Enterprise Edition image (`appsmith/appsmith-ee`), since SSO (OIDC and SAML) is an Enterprise feature.
 

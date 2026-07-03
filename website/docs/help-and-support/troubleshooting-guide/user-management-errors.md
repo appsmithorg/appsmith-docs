@@ -116,5 +116,4 @@ When the only user with instance-admin access leaves, no one can reach Admin Set
 
 #### Solution
 
-- Add the new administrator's email to the [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) environment variable in your `docker.env` (Docker) or `values.yaml` (Kubernetes) file.
-- Restart the instance. The new admin can then log in and access Admin Settings.
+- Follow [Recover admin access when you don't know the admin email](/help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery).
