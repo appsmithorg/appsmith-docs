@@ -5,15 +5,15 @@ toc_max_heading_level: 2
 
 # Enable Redis Authentication
 
-Starting with Helm chart version **3.8.2**, the bundled Redis instance is password-protected by default. The chart generates the password automatically, stores it in a Kubernetes Secret, and wires it into both Redis and Appsmith.
+Starting with Helm chart version **3.9.0**, the bundled Redis instance is password-protected by default. The chart generates the password automatically, stores it in a Kubernetes Secret, and wires it into both Redis and Appsmith.
 
-This page explains how to enable Redis authentication on existing deployments, including deployments running chart versions older than 3.8.2.
+This page explains how to enable Redis authentication on existing deployments, including deployments running chart versions older than 3.9.0.
 
 This page applies only to the **bundled Redis** subchart (`redis.enabled: true`). If you use an external Redis instance, see [External Redis](/getting-started/setup/instance-configuration/external-redis).
 
 The examples use the release name `appsmith-ee`. Substitute your own release name and namespace.
 
-## Upgrade an existing deployment to chart 3.8.2 or later
+## Upgrade an existing deployment to chart 3.9.0 or later
 
 For most deployments, enabling Redis authentication is a standard chart upgrade. Redis stores only sessions and cache, so enabling authentication briefly logs users out and repopulates the cache with no data loss while the pods roll.
 
@@ -118,9 +118,9 @@ redisAuth:
 
 The default tag is `latest`. Pin a specific tag or digest for reproducible, supply-chain-safe deployments.
 
-## Enable auth on chart versions before 3.8.2
+## Enable auth on chart versions before 3.9.0
 
-Chart versions older than 3.8.2 require manual configuration to enable Redis authentication:
+Chart versions older than 3.9.0 require manual configuration to enable Redis authentication:
 
 1. Create the password Secret:
 
@@ -150,7 +150,7 @@ Chart versions older than 3.8.2 require manual configuration to enable Redis aut
    Replace `<release-name>` and `<namespace>` with your Helm release name and namespace.
 
    :::caution
-   On charts older than 3.8.2, the password set in `applicationConfig` is stored in plaintext in the rendered ConfigMap and in your `values.yaml`. Upgrading to chart 3.8.2 or later avoids this: the password is injected by Secret reference instead. Remove the manual `APPSMITH_REDIS_URL` override after upgrading so the chart can manage the URL.
+   On charts older than 3.9.0, the password set in `applicationConfig` is stored in plaintext in the rendered ConfigMap and in your `values.yaml`. Upgrading to chart 3.9.0 or later avoids this: the password is injected by Secret reference instead. Remove the manual `APPSMITH_REDIS_URL` override after upgrading so the chart can manage the URL.
    :::
 
 4. Apply the changes:

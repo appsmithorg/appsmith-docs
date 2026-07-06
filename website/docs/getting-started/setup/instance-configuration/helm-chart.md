@@ -56,7 +56,7 @@ For a complete walkthrough of the MongoDB Operator, see the [MongoDB Kubernetes 
 
 Redis is used for session storage and caching. The chart bundles Redis by default (`redis.enabled: true`) and runs it in the cluster alongside Appsmith. You can also bring your own Redis—for example, a cloud-managed service like AWS ElastiCache—by disabling the bundled instance and setting `APPSMITH_REDIS_URL` in `applicationConfig`.
 
-Since chart 3.8.2, the bundled Redis is password-protected by default. The chart generates the password and stores it in a Kubernetes Secret automatically. See [Enable Redis Authentication](/getting-started/setup/installation-guides/kubernetes/enable-redis-auth) for how it works and how to enable it on existing deployments.
+Since chart 3.9.0, the bundled Redis is password-protected by default. The chart generates the password and stores it in a Kubernetes Secret automatically. See [Enable Redis Authentication](/getting-started/setup/installation-guides/kubernetes/enable-redis-auth) for how it works and how to enable it on existing deployments.
 
 Redis data is ephemeral, so switching between bundled and external doesn't require a data migration. See [External Redis](/getting-started/setup/instance-configuration/external-redis) for configuration details.
 
