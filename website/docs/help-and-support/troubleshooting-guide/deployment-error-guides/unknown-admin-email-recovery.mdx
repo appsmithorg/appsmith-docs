@@ -1,0 +1,111 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Recover admin access when you don't know the admin email
+
+## Symptom
+
+<Message
+  messageContainerClassName="error"
+  messageContent="You cannot access Admin Settings and do not know which email has Instance Administrator privileges."
+/>
+
+## Cause
+
+Instance administrator email addresses are managed in **Admin Settings**, which only instance administrators can access. If you cannot reach Admin Settings, you cannot see or change the current admin list from the UI. This commonly happens when the previous administrator left the organization, you inherited an existing deployment, or you forgot which account was configured as the instance administrator.
+
+## Solution
+
+1. Choose the email address for the new instance administrator.
+2. Set [`APPSMITH_ADMIN_EMAILS`](/getting-started/setup/environment-variables#appsmith_admin_emails) using the platform-specific steps below.
+3. Restart the instance for the change to take effect.
+4. Sign up with a new email or sign in with an existing account using that email address. The user receives the [Instance Administrator](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role) role on startup.
+5. Open **Admin Settings** to verify access and manage other administrators.
+
+:::info
+If signup is disabled, ensure [`APPSMITH_SIGNUP_DISABLED`](/getting-started/setup/environment-variables#appsmith_signup_disabled) allows the new administrator to register, or use an email address that already has an account on the instance.
+:::
+
+:::info
+If the instance uses SSO-only login, re-enable form login before signing up. See [Locked out after misconfiguring or disconnecting SSO](/help-and-support/troubleshooting-guide/sso-authentication-errors#locked-out-after-misconfiguring-or-disconnecting-sso).
+:::
+
+<Tabs groupId="appsmithplatforms" queryString="current-platform">
+
+<TabItem label="Docker" value="docker">
+
+1. Navigate to your installation folder.
+2. Open the `stacks/configuration/docker.env` file.
+3. Add or update the environment variable:
+
+    ```bash
+    APPSMITH_ADMIN_EMAILS=your-admin@example.com
+    ```
+
+    To assign more than one instance administrator, separate email addresses with commas.
+
+4. Restart the Docker containers for the changes to take effect:
+
+    ```bash
+    docker-compose restart appsmith
+    ```
+
+</TabItem>
+
+<TabItem label="Helm" value="helm">
+
+1. Open a shell on your Kubernetes client.
+2. Retrieve the current values from your installation and store them in a file:
+
+    ```bash
+    helm get values appsmith -n appsmith -o yaml > values.yaml
+    ```
+
+3. Modify parameters under the `applicationConfig` section in the `values.yaml` file:
+
+    ```yaml
+    applicationConfig:
+      APPSMITH_ADMIN_EMAILS: "your-admin@example.com"
+    ```
+
+    To assign more than one instance administrator, separate email addresses with commas.
+
+4. Apply the updated values:
+
+    ```bash
+    helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
+    ```
+
+</TabItem>
+
+<TabItem label="AWS ECS" value="aws-ecs">
+
+1. Open the AWS ECS console.
+2. Select **Task Definitions** and choose the relevant task definition.
+3. Click **Create new revision**.
+4. In the **Task Definition config** page, edit the Appsmith container.
+5. Under **Environment**, add or update the environment variable:
+
+    - Key: `APPSMITH_ADMIN_EMAILS`
+    - Value: `your-admin@example.com` (comma-separated for multiple administrators)
+
+    <ZoomImage src="/img/ecs-task-env_(1).png" alt="ECS environment configuration example" />
+
+6. Click **Update**, then **Create** to generate a new task definition.
+7. In the ECS console, navigate to your cluster and select the service.
+8. Update the service to use the latest task definition revision.
+9. Review and confirm the update.
+
+    <ZoomImage src="/img/instance-configuration-ecs-service-restart.png" alt="ECS service restart example" />
+
+The new ECS task should be running within a minute.
+
+</TabItem>
+
+</Tabs>
+
+## See also
+
+* [Configure Environment Variables](/getting-started/setup/instance-configuration/configure-using-environment-variables)
+* [Environment Variables — APPSMITH_ADMIN_EMAILS](/getting-started/setup/environment-variables#appsmith_admin_emails)
+* [Instance Administrator role](/advanced-concepts/granular-access-control/reference/default-roles#instance-administrator-role)

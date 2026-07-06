@@ -913,6 +913,7 @@ const sidebars = {
             "help-and-support/troubleshooting-guide/deployment-error-guides/mongodb-startup-error-postv5",
             "help-and-support/troubleshooting-guide/deployment-error-guides/schema-mismatch-error",
             "help-and-support/troubleshooting-guide/deployment-error-guides/k8s-helm3.0.4-upgrade-error",
+            "help-and-support/troubleshooting-guide/deployment-error-guides/unknown-admin-email-recovery",
             "help-and-support/troubleshooting-guide/backup-restore-errors",
             "help-and-support/troubleshooting-guide/license-and-activation-errors",
             "help-and-support/troubleshooting-guide/verify-cs-appsmith-connectivity",
