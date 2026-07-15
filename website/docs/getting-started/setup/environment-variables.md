@@ -349,6 +349,22 @@ APPSMITH_DISABLE_TELEMETRY=true
 
 </dd>
 
+### Actuator and metrics
+
+These environment variables enable the Actuator metrics endpoint used for Prometheus scraping and optional OpenTelemetry support.
+
+##### `APPSMITH_INTERNAL_PASSWORD`
+
+<dd>
+Protects the Actuator endpoint with HTTP basic authentication. Required when exposing `/actuator/prometheus` so that only Prometheus (or other scrapers configured with the same password) can access it. Set to a strong, secret value. For Kubernetes/Helm deployments, set this under `applicationConfig` in your `values.yaml`. For step-by-step configuration, see the [Configure Prometheus metrics (Kubernetes)](/getting-started/setup/instance-management/observability/configure-prometheus-metrics) guide.
+</dd>
+
+##### `APPSMITH_ENABLE_OTEL`
+
+<dd>
+Optional. Set to `"true"` to enable Prometheus metric descriptions and OpenTelemetry tracing for richer metrics context. When enabled, actuator metrics include additional metadata useful for observability stacks. For Kubernetes/Helm deployments, set this under `applicationConfig` in your `values.yaml`. See the [Configure Prometheus metrics (Kubernetes)](/getting-started/setup/instance-management/observability/configure-prometheus-metrics) guide for details.
+</dd>
+
 ### Embed Appsmith
 
 Embedding your Appsmith apps on external websites can expose them to clickjacking attacks. To mitigate this, Appsmith uses the `Content-Security-Policy` header with the `frame-ancestors` directive. For more details, refer to the [frame-ancestors documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors).
