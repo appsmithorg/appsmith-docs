@@ -5,7 +5,7 @@ description: Appsmith AI is deprecated. This page shows how to migrate your Apps
 # Migrate from Appsmith AI
 
 :::caution Deprecated
-Appsmith AI is deprecated and stops working on **September 30, 2026**. Creating new Appsmith AI datasources is no longer possible. Existing datasources and queries continue to work until that date; files uploaded for context are not available afterwards.
+Appsmith AI is deprecated and stops working on **September 30, 2026**. Creating new Appsmith AI datasources, or new queries on existing ones, is no longer possible. Existing queries continue to work until that date; files uploaded for context are not available afterwards.
 :::
 
 This page shows how to move your existing Appsmith AI queries to the [OpenAI](/connect-data/reference/open-ai), [Anthropic](/connect-data/reference/anthropic), or [Google AI](/connect-data/reference/google-ai) datasources using your own API key.
