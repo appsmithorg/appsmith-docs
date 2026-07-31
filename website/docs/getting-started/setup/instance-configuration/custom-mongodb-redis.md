@@ -78,6 +78,19 @@ Follow these steps to connect the Appsmith instance to the external MongoDB inst
       - **`{mongo.host.name}`:** The hostname or IP address of your MongoDB server. 
       - **`{db_name}`:** The name of your database within MongoDB. This is the database you want to connect to.  
 
+    For **Kubernetes (Helm)** installations, also disable the chart-managed MongoDB in `values.yaml` — the Bitnami subchart (`mongodb`) or the MongoDB Kubernetes Operator resource (`mongodbCommunity`), whichever your installation uses:
+
+    ```yaml
+    mongodb:
+      enabled: false
+
+    mongodbCommunity:
+      enabled: false
+
+    applicationConfig:
+      APPSMITH_DB_URL: "mongodb+srv://{username}:{password}@{mongo.host.name}/{db_name}"
+    ```
+
 3. Update the Appsmith server configuration to establish a connection with the external MongoDB database. This ensures that Appsmith starts using the configured MongoDB instance for all database operations.
 
    - **Docker**:
