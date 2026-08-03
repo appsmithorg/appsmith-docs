@@ -580,7 +580,6 @@ const sidebars = {
                 'reference/widgets/stat-box',
                 'reference/widgets/switch',
                 'reference/widgets/switch-group',
-                'reference/widgets/tab-order',
                 'reference/widgets/tabs',
                 {
                   type: 'category',
@@ -594,6 +593,13 @@ const sidebars = {
                 'reference/widgets/text',
                 'reference/widgets/tree-select',
                 'reference/widgets/video',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Accessibility',
+              items: [
+                'reference/accessibility/tab-order',
               ],
             },
 
