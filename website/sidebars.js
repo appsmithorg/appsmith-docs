@@ -580,6 +580,7 @@ const sidebars = {
                 'reference/widgets/stat-box',
                 'reference/widgets/switch',
                 'reference/widgets/switch-group',
+                'reference/widgets/tab-order',
                 'reference/widgets/tabs',
                 {
                   type: 'category',
