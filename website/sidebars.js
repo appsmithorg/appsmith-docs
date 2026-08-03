@@ -595,6 +595,13 @@ const sidebars = {
                 'reference/widgets/video',
               ],
             },
+            {
+              type: 'category',
+              label: 'Accessibility',
+              items: [
+                'reference/accessibility/tab-order',
+              ],
+            },
 
             'core-concepts/building-ui/designing-an-application/app-theming',
             'learning-and-resources/sample-apps'
