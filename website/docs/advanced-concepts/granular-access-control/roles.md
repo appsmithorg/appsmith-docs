@@ -75,11 +75,23 @@ Custom roles in Appsmith allow users to define specific permission sets tailored
 
 The Roles screen shows how each role is assigned. The **Assignees** column lists direct assignment counts as `N users · M groups`. For the [Default Role for All Users](/advanced-concepts/granular-access-control/reference/default-roles#default-role-for-all-users), the column shows **All users** instead of numeric counts, because every user in the instance inherits that role.
 
+ <ZoomImage
+    src="/img/GAC-Roles-Assignees-column.png"
+    alt="Assignees column on the Roles screen showing user and group counts"
+    caption="Assignees column on the Roles screen"
+  />
+
 To review who has a role:
 
 1. Go to **Admin Settings** > **Roles**.
 2. Open the role.
 3. Select the **Assignees** tab. Use the **Permissions** tab to configure the role's permission tree.
+
+ <ZoomImage
+    src="/img/GAC-Role-Assignees-tab.png"
+    alt="Assignees tab on a role showing users with Direct and via group sources"
+    caption="Assignees tab on a role"
+  />
 
 The **Assignees** tab is view-only. It lists users who have the role either directly or through a group. To assign or unassign a role, use the [Users](/getting-started/setup/instance-configuration/user-management#users) or [Groups](/getting-started/setup/instance-configuration/user-management#groups) pages.
 
@@ -107,6 +119,12 @@ Use the search field on the role page to find assignees by username. Scroll the 
 ### Default Role for All Users
 
 For the **Default Role for All Users**, the **Assignees** tab shows **Assigned to all users** instead of an enumerated list. Membership is implicit for every user in the instance. Configure the permissions for this role on the **Permissions** tab. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions).
+
+ <ZoomImage
+    src="/img/GAC-Default-Role-Assignees-all-users.png"
+    alt="Assignees tab for Default Role For All Users showing Assigned to all users"
+    caption="Assignees tab for Default Role For All Users"
+  />
 
 ## See also
 
