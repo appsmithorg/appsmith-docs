@@ -96,7 +96,7 @@ Sets the Google reCAPTCHA version to use for the button, either v2 or v3.
 
 Buttons can have some special behaviors when they're located within the boundaries of a [Form widget](/reference/widgets/form). Its form-specific behavior is controlled by two of the button's properties:
 
-#### Disabled invalid forms 
+#### Disable when form is invalid
 
 <dd>
 
@@ -174,6 +174,32 @@ This property can be dynamically set using JavaScript by providing a string valu
 
 </dd>
 
+### Label styles
+
+#### Font color `string`
+
+<dd>
+
+Sets the text color of the button label. Additionally, you can programmatically modify the text color using JavaScript functions.
+
+</dd>
+
+#### Font size `string`
+
+<dd>
+
+Controls the font size of the button label. Additionally, you can programmatically modify the text size using JavaScript functions.
+
+</dd>
+
+#### Emphasis `string`
+
+<dd>
+
+Allows you to choose a font style for the button label, such as bold or italic. Additionally, you can programmatically modify the font style using JavaScript functions.
+
+</dd>
+
 ### Color
 
 #### Button color `string`
@@ -204,11 +230,9 @@ This property adds a drop shadow effect to the frame of the widget. If JavaScrip
 
 </dd>
 
+## Reference properties
 
-
-### Reference properties
-
-Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a  button widget, you can use `Button1.isVisible`.
+Reference properties enable you to access the widget's data and state using the dot operator in other widgets or JavaScript functions. They provide additional information or allow interaction with the widget programmatically. For instance, to retrieve the visibility status of a button widget, you can use `Button1.isVisible`.
 
 #### text `string`
 
@@ -248,7 +272,6 @@ It reflects the state of the widget's **Disabled** setting. It is represented by
 
 </dd>
 
-
 ## Methods
 
 Widget property setters enable you to modify the values of widget properties at runtime, eliminating the need to manually update properties in the editor.
@@ -265,7 +288,7 @@ Sets the visibility of the widget.
 *Example*:
 
 ```js
-Button1..setVisibility(true)
+Button1.setVisibility(true)
 
 ```
 

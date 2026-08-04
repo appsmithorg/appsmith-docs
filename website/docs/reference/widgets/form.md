@@ -2,7 +2,7 @@
 
 This page provides information on how to use the Form widget to collect, validate, and submit user input. It acts as a container for grouping related inputs and comes with a default Text widget for the title, as well as Submit and Reset buttons for form interaction. 
 
-The Reset button allows for one-click clearing of form fields to default values. Similarly, the Success button allows you to set actions to be performed when the submit button is clicked. 
+The Reset button allows for one-click clearing of form fields to default values. Similarly, the Success button allows you to set actions to be performed when the submit button is clicked. These behaviors are controlled by the Button widget's [Form settings](/reference/widgets/button#form-settings), including **Disable when form is invalid** and **Reset form on success**. 
 
 <VideoEmbed host="youtube" videoId="UgpQ0ZOnzdg" title="How to use Form Widget" caption="How to use Form Widget"/>
 
