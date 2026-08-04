@@ -70,3 +70,47 @@ Custom roles in Appsmith allow users to define specific permission sets tailored
     alt="Click the Add role button to create a custom role"
     caption="Click the Add role button to create a custom role"
   />
+
+## View role assignees
+
+The Roles screen shows how each role is assigned. The **Assignees** column lists direct assignment counts as `N users · M groups`. For the [Default Role for All Users](/advanced-concepts/granular-access-control/reference/default-roles#default-role-for-all-users), the column shows **All users** instead of numeric counts, because every user in the instance inherits that role.
+
+To review who has a role:
+
+1. Go to **Admin Settings** > **Roles**.
+2. Open the role.
+3. Select the **Assignees** tab. Use the **Permissions** tab to configure the role's permission tree.
+
+The **Assignees** tab is view-only. It lists users who have the role either directly or through a group. To assign or unassign a role, use the [Users](/getting-started/setup/instance-configuration/user-management#users) or [Groups](/getting-started/setup/instance-configuration/user-management#groups) pages.
+
+### Assignee sources
+
+Each user row shows the assignment source:
+
+* **Direct**: You assigned the role to the user.
+* **via group name**: You assigned the role to a group that includes the user. The group name links to that group's settings page.
+
+A user can show both sources when you assign the role directly and through one or more groups. Users provisioned through System for Cross-domain Identity Management (SCIM) show a provisioned indicator next to their username. For more information, see [User Provisioning & Group Sync](/advanced-concepts/user-provisioning-group-sync).
+
+### Filter and search assignees
+
+Use the filter control on the **Assignees** tab to narrow the list:
+
+| Filter | Shows |
+| --- | --- |
+| **All** | Users with the role from any source |
+| **Direct** | Users assigned the role directly |
+| **Via group** | Users who inherit the role through a group |
+
+Use the search field on the role page to find assignees by username. Scroll the list to load more results when a role has many assignees.
+
+### Default Role for All Users
+
+For the **Default Role for All Users**, the **Assignees** tab shows **Assigned to all users** instead of an enumerated list. Membership is implicit for every user in the instance. Configure the permissions for this role on the **Permissions** tab. For more information, see [Configure Default Access to Apps](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions).
+
+## See also
+
+* [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles)
+* [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles)
+* [Permissions](/advanced-concepts/granular-access-control/reference/permissions)
+* [User Management](/getting-started/setup/instance-configuration/user-management)
