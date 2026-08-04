@@ -27,6 +27,7 @@ The user still has a default role (such as **App Viewer**) assigned in addition 
 #### Solution
 
 - Go to **Admin Settings > Users** and review every role assigned to the user, not just the custom role.
+- Open the custom role under **Admin Settings > Roles**, select the **Assignees** tab, and confirm how the user receives the role (**Direct** or **via** a group). For more information, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
 - Remove the broad default role (for example, App Viewer) from the user, and rely on the custom role with **View** permission for only the intended pages.
 - Ensure the **View** permission is also enabled at the application level, not only at the page level.
 - For more details on building roles, see [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles) and [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
@@ -40,7 +41,7 @@ After accepting an invite and logging in, the user lands on an empty home screen
 #### Solution
 
 - Ask an instance administrator to review the user's current configuration under **Admin Settings > Users**.
-- Confirm the role granting access is actually assigned and that **View** is enabled at the application level.
+- Confirm the role granting access is actually assigned and that **View** is enabled at the application level. You can also open that role under **Admin Settings > Roles** and check the **Assignees** tab.
 - If the issue persists, collect the backend server logs covering the time range when the access was configured (`docker logs <container>` for Docker, or `kubectl logs <pod>` for Kubernetes) and share them with support for further investigation.
 
 ### Permission denied on query execute despite a working role

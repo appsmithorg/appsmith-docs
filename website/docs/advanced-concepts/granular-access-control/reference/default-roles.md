@@ -121,7 +121,9 @@ Despite having extensive permissions, the Organization Administrator role in App
 
 ## Default Role for All Users
 
-Default Roles for All users helps you in assigning some default permissions to all users across your Appsmith instance.  Initially, the role has [permission to create workspace](/advanced-concepts/granular-access-control/reference/permissions?gac-resource=create-others). For all other permissions, Instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions) guide.
+Default Role for All Users helps you assign some default permissions to all users across your Appsmith instance. Initially, the role has [permission to create workspace](/advanced-concepts/granular-access-control/reference/permissions?gac-resource=create-others). For all other permissions, instance administrators can fully customize this role according to your business needs. For more information, see [How to provide default access to all users](/advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions).
+
+On the Roles screen, the **Assignees** column shows **All users** for this role. On the role page, the **Assignees** tab shows **Assigned to all users** instead of listing individual users, because membership is implicit for every user in the instance. Configure permissions on the **Permissions** tab. For more information about viewing assignees on other roles, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
 
 ## Administrator Role for Workspace
 
