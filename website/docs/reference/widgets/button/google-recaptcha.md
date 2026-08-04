@@ -28,7 +28,7 @@ description: >-
 The exact steps depend on your backend - see [Google's reference](https://developers.google.com/recaptcha/docs/verify) for detailed instructions.
 :::
 
-The user's reCAPTCHA response can be obtained in the API Pane with the `recaptchaToken` key.
+The user's reCAPTCHA response can be obtained in the API Pane with the `recaptchaToken` key. See the Button widget [Validation](/reference/widgets/button#validation) properties for configuring Google reCAPTCHA on a button.
 
 Make a `POST` request to `https://www.google.com/recaptcha/api/siteverify` with the `secret` (secret key) and `response` (user response) parameters to retrieve the score in a JSON format:
 
