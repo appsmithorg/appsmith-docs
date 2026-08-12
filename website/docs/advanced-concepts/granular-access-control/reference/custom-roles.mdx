@@ -28,7 +28,7 @@ Appsmith allows the creation of custom roles to manage granular access control, 
 
 ## Create custom role
 
-To create a custom role, click the **Add role** button on the Roles screen. On the roles configuration screen, assign permissions to resources in each tab based on your business needs.
+To create a custom role, click the **Add role** button on the Roles screen. On the role page, open the **Permissions** tab and assign permissions to resources in each resource tab based on your business needs. Use the **Assignees** tab to review which users currently have the role. For more information, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
 
  <ZoomImage
     src="/img/GAC-Create-Custom-Roles-Add-Role-button.png" 
@@ -106,7 +106,7 @@ To restrict access to specific pages within an Appsmith application, modify the 
 
 ### Give app access
 
-To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role. When creating a new custom role, it's necessary to also configure permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access.
+To give access to specific applications within an Appsmith workspace, configure the permissions at the application level for the custom role under the **Permissions** tab. When creating a new custom role, it's necessary to also configure permissions for the datasources and environments used by the application. After configuring these permissions, assign the custom role to the necessary users or groups to grant them the required access. You can confirm the assignment on the role's **Assignees** tab.
 
 Example permissions setup to provide read-only access:
 
@@ -287,3 +287,4 @@ Example permissions setup to provide read-only access:
 
 * [Restrict Query Access](/advanced-concepts/granular-access-control/how-to-guides/restrict-query-access)
 * [Permissions](/advanced-concepts/granular-access-control/reference/permissions)
+* [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees)

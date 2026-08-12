@@ -136,7 +136,7 @@ Users are individuals who have access to your Appsmith instance. From the Users 
 Administrators can:
 
 - Invite new users.
-- Assign or update user roles (e.g., Viewer, Developer, Admin).
+- Assign or update user roles (for example, Viewer, Developer, Admin).
 - Add users to specific groups.
 - Deactivate or remove users from the instance.
 
@@ -152,7 +152,7 @@ Groups allow administrators to organize users into logical collections for easie
 <dd>
 With the Groups feature, administrators can:
 
-- Create and name groups based on roles (e.g., “Developers”, “Support Team”, “Finance”)
+- Create and name groups based on roles (for example, “Developers”, “Support Team”, “Finance”)
 - Add or remove users from specific groups
 - Assign roles (such as Viewer, Editor, Administrator) to the entire group
 
@@ -168,7 +168,7 @@ Roles define what actions a user or group is allowed to perform within your Apps
 
 <dd>
 
-Roles can be assigned to individual users or to groups, making it easier to manage access consistently and securely across your organization.
+Roles can be assigned to individual users or to groups, making it easier to manage access consistently and securely across your organization. To see who already has a role, open the role on the Roles page and select the **Assignees** tab. For more information, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
 
 Appsmith supports two types of roles:
 
