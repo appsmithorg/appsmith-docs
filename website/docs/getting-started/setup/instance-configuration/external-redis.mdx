@@ -45,6 +45,9 @@ Follow these steps to connect your Appsmith instance to the external Redis insta
     * **Kubernetes**:
 
       ```yaml
+      redis:
+        enabled: false
+
       applicationConfig:
         APPSMITH_REDIS_URL: "redis://:{password}@{redis.instance.hostname}:{port}"
       ```  

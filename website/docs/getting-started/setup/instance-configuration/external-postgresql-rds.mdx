@@ -77,8 +77,12 @@ The `SQL_TLS_DISABLE_HOST_VERIFICATION` environment variable is only used by Tem
 2. Add or update the following environment variables with your PostgreSQL connection details:
 
     ```yaml
+    postgresql:
+      enabled: false
+
     applicationConfig:
       APPSMITH_KEYCLOAK_DB_URL: postgresql://<username>:<password>@<hostname>/<database_name>?sslmode=require
+      APPSMITH_KEYCLOAK_DB_DRIVER: postgresql
       SQL_TLS_ENABLED: true
       SQL_TLS_DISABLE_HOST_VERIFICATION: true
       SQL_TLS: true
