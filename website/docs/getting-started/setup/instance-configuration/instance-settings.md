@@ -4,6 +4,8 @@ The Instance Settings section allows administrators to configure core properties
 
 Use this section to personalize the instance, control administrative access, and ensure environment-level configurations are consistent across deployments. These settings are accessible only to users with Instance Administrator privileges.
 
+For upcoming release communications that need administrator attention, see [Admin central](/getting-started/setup/instance-configuration/admin-central). That page is informational and is listed under **Instance** in Admin Settings.
+
 <ZoomImage
   src="/img/instace-settings.png" 
   alt=""

@@ -202,10 +202,11 @@ const sidebars = {
     id: 'getting-started/setup/instance-configuration/admin-settings', // Landing page
   },
   items: [
-    'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
-    'getting-started/setup/instance-configuration/user-management',   // User Management
-    'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
-    'getting-started/setup/instance-configuration/ai-assistant',      // AI Assistant
+                'getting-started/setup/instance-configuration/profile',           // Profile & Organisation
+                'getting-started/setup/instance-configuration/user-management',   // User Management
+                'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
+                'getting-started/setup/instance-configuration/admin-central',      // Admin central
+                'getting-started/setup/instance-configuration/ai-assistant',      // AI Assistant
   ],
 },
 
@@ -885,6 +886,7 @@ const sidebars = {
             'workflows/how-to-guides/create-approval-workflow',
             'workflows/how-to-guides/set-up-automatic-processing',
             'workflows/how-to-guides/debug-workflow',
+            'workflows/how-to-guides/native-workflow-engine',
           ],
         },
         {
