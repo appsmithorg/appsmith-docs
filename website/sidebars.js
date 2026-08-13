@@ -537,6 +537,7 @@ const sidebars = {
                   ],
                 },
                 'reference/widgets/camera',
+                'reference/widgets/card',
                 'reference/widgets/category-slider',
                 'reference/widgets/chart',
                 'reference/widgets/checkbox',
