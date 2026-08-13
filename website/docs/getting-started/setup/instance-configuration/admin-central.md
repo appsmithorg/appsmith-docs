@@ -1,10 +1,10 @@
 ---
-description: Use Admin central to review Appsmith communications about incoming release changes that need instance administrator attention.
+description: Use Admin central to review Appsmith communications about upcoming release changes that need instance administrator attention.
 ---
 
 # Admin central
 
-Admin central is the place instance administrators review Appsmith communications about incoming release changes. Use it to see what needs attention on this instance before you upgrade or adopt a change that ships in a later release.
+Admin central is where instance administrators review Appsmith communications about upcoming release changes. Use it to see what needs attention on this instance before you upgrade.
 
 The page is informational. It does not save configuration, and it does not change how the instance runs.
 
@@ -32,7 +32,7 @@ The page title is **Admin central**. The subtitle is **Important information abo
   caption=""
 />
 
-Appsmith adds a notice when a change in an upcoming or current release needs administrator awareness. Each notice can include:
+Appsmith adds a notice when a change in an upcoming or current release requires administrator attention. Each notice can include:
 
 - A title and short description of the change
 - A severity indicator so you can tell informational updates from items that need action
@@ -40,7 +40,7 @@ Appsmith adds a notice when a change in an upcoming or current release needs adm
 - An expandable list of affected items when more context is available
 - A **Learn more** link to the documentation for that change
 
-Review each notice and follow its documentation before you upgrade, if the notice says an upgrade depends on completing work on this instance. For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
+If a notice says you must finish work on this instance before you upgrade, follow that notice’s documentation first. For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
 
 ## When no action is required
 
@@ -48,7 +48,7 @@ If there is nothing that needs attention, Admin central shows:
 
 > There is no action required for this instance.
 
-This is the expected state when no release communications apply to the instance right now. Notices appear and disappear as Appsmith ships and completes release changes.
+This is the expected state when no release communications apply to the instance. Notices appear when a change needs attention and disappear when that work is complete.
 
 ## If the page does not load
 
