@@ -6,7 +6,7 @@ description: >-
 
 # Card
 
-This page provides information on using the Card widget, which groups related information and actions into a visually distinct unit. A Card is made up of four zones — an optional media slot for an image, a header with an avatar, title, subtitle, badge, and overflow (⋮) menu, a body canvas where you can drop other widgets to design the card's content, and a footer with action buttons. Cards can also be made clickable, selectable, and collapsible.
+This page provides information on using the Card widget, which groups related information and actions into a visually distinct unit. A Card is made up of four zones: an optional media slot for an image, a header with an avatar, title, subtitle, badge, and overflow (⋮) menu, a body canvas where you can drop other widgets to design the card's content, and a footer with action buttons. Cards can also be made clickable, selectable, and collapsible.
 
 <ZoomImage src="/img/card-widget.png" alt="Card widget" caption="Card widget" />
 
@@ -20,7 +20,7 @@ These properties are customizable options present in the property pane of the wi
 
 <dd>
 
-Sets the entity displayed by the card. You can connect a datasource using the **Connect data** button, or bind a single record — an object with one or more keys — using JavaScript:
+Sets the entity displayed by the card. You can connect a datasource using the **Connect data** button, or bind a single record, which is an object with one or more keys, using JavaScript:
 
 ```js
 {{userQuery.data[0]}}
@@ -190,7 +190,7 @@ Configures the action buttons rendered in the card footer. By default, a card ha
 - **onClick**: Sets the [action](/reference/appsmith-framework/widget-actions) to run when the button is clicked.
 - **Visible**: Controls the visibility of the button. Hiding all actions removes the footer.
 - **Disabled**: Disables the button.
-- **Button variant**: Sets the button style — **Primary**, **Secondary**, or **Tertiary**.
+- **Button variant**: Sets the button style, which can be **Primary**, **Secondary**, or **Tertiary**.
 - **Icon**, **Position**: Set an icon for the button and its alignment.
 - **Button color**: Sets the color of the button. By default, it follows the app theme's primary color.
 
@@ -324,7 +324,7 @@ This property determines how the widget's height adjusts to changes in its conte
 
 <dd>
 
-Specifies the [action](/reference/appsmith-framework/widget-actions) to run when the card background is clicked. This event is available only when **Clickable** is turned on and **Enable selection** is turned off — while selection is enabled, clicking the card toggles selection instead.
+Specifies the [action](/reference/appsmith-framework/widget-actions) to run when the card background is clicked. This event is available only when **Clickable** is turned on and **Enable selection** is turned off. While selection is enabled, clicking the card toggles selection instead.
 
 </dd>
 
