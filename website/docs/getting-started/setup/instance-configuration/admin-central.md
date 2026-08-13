@@ -4,7 +4,7 @@ description: Use Admin central to review Appsmith communications about upcoming 
 
 # Admin central
 
-Admin central is where instance administrators review Appsmith communications about upcoming release changes. Use it to see what needs attention on this instance before you upgrade.
+Admin central is where instance administrators review Appsmith communications about upcoming release changes. It shows which of those changes apply to your instance, and whether any need action before you upgrade.
 
 The page is informational. It does not save configuration, and it does not change how the instance runs.
 
@@ -21,8 +21,6 @@ Only users with Instance Administrator privileges can open Admin central. The pa
   alt="Admin central in the Instance section of Admin Settings"
   caption=""
 />
-
-The page title is **Admin central**. The subtitle is **Important information about this Appsmith instance.**
 
 ## What you see
 
