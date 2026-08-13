@@ -74,4 +74,16 @@ This page offers step-by-step guides to help you integrate, automate, debug, and
          This guide provides troubleshooting tips and techniques for debugging workflows. Learn how to identify and resolve issues quickly to ensure smooth execution of your Appsmith workflows.
       </div>
    </a>
+
+   <a className="containerAnchor containerColumnSampleAppNoGradient columnGrid column-two" href="/workflows/how-to-guides/native-workflow-engine">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Native workflow engine</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Learn what changes in Appsmith v2.3 when workflows start running on the native engine, and how to check remaining Temporal approval runs in Admin central.
+      </div>
+   </a>
 </div>
