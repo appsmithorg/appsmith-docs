@@ -6,7 +6,7 @@ toc_max_heading_level: 2
 
 # Azure Container Instance
 
-Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container. An Azure file share persists the files stored under `/appsmith-stacks`.
+Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container.
 
 :::note
 Azure only supports CIFS file shares and doesn't support NFS file shares.
@@ -14,7 +14,7 @@ Azure only supports CIFS file shares and doesn't support NFS file shares.
 
 ## Best practices
 
-For production deployments, use Azure Files only for Appsmith's filesystem artifacts. Don't use it to host databases or cache services because network-mounted volumes can cause poor performance, data inconsistency, or startup failures.
+For production deployments, use Azure Files only to persist Appsmith's filesystem artifacts. Don't use it to host databases or cache services because network-mounted volumes can cause poor performance, data inconsistency, or startup failures.
 
 Before deploying Appsmith, follow the relevant guides to configure the external services you need:
 
