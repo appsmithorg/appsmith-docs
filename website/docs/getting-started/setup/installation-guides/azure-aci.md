@@ -4,12 +4,9 @@ sidebar_position: 4
 toc_max_heading_level: 2
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Azure Container Instance
 
-Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container. An Azure file share persists configuration, certificates, Git data, logs, and other filesystem artifacts. External MongoDB and Redis services store application data, sessions, and cached data.
+Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container. An Azure file share persists the files stored under `/appsmith-stacks`.
 
 :::note
 Azure only supports CIFS file shares and doesn't support NFS file shares.
@@ -17,16 +14,13 @@ Azure only supports CIFS file shares and doesn't support NFS file shares.
 
 ## Best practices
 
-For production deployments, don't run Appsmith's embedded MongoDB or Redis services on Azure Files. Database workloads are sensitive to the latency and filesystem behavior of network-mounted volumes, which can cause poor performance, data inconsistency, or startup failures.
+For production deployments, use Azure Files only for Appsmith's filesystem artifacts. Don't use it to host databases or cache services because network-mounted volumes can cause poor performance, data inconsistency, or startup failures.
 
-Use the following storage model:
+Before deploying Appsmith, follow the relevant guides to configure the external services you need:
 
-- Mount Azure Files at `/appsmith-stacks` to persist configuration, certificates, Git data, logs, and similar filesystem artifacts.
-- Use an [external MongoDB instance](/getting-started/setup/instance-configuration/custom-mongodb-redis) for Appsmith application data.
-- Use an [external Redis instance](/getting-started/setup/instance-configuration/external-redis) for sessions and caching.
-- Use [external PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds) when you enable SAML SSO or Workflows.
-
-The deployment command on this page follows this model by passing the MongoDB and Redis connection URLs as secure environment variables.
+- [Configure external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis).
+- [Configure external Redis](/getting-started/setup/instance-configuration/external-redis).
+- Before enabling SAML SSO, [configure PostgreSQL for SAML SSO on Azure](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso). For Workflows, complete the [workflow prerequisites](/workflows/tutorials/create-workflow#before-you-begin).
 
 ## Prerequisites​
 
@@ -34,8 +28,7 @@ Before launching an ACI instance, you need to have an Azure subscription and hav
 
 - [Azure Subscription](https://azure.com/free) - If you don't have an Azure subscription, you can sign up for a free trial.
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure).
-- An authenticated [external MongoDB instance](/getting-started/setup/instance-configuration/custom-mongodb-redis) that the container can access. Configure TLS if your provider supports it.
-- An authenticated [external Redis instance](/getting-started/setup/instance-configuration/external-redis) that the container can access. Use the `rediss://` scheme when encryption in transit is enabled.
+- Complete the external MongoDB and Redis setup described in [Best practices](#best-practices), and keep their connection URLs available.
 - Whitelist `cs.appsmith.com` in your firewall settings to allow outbound HTTPS traffic. If using Azure Firewall, add these domains under Application Rules.
 
 ## Configure variables
@@ -49,10 +42,19 @@ storageAccountName="mystorageaccount$RANDOM"
 aciLocation="southindia"
 fileShareName="myFileShareName"
 dnsNameLabel="myDNSLabel"
-mongodbUrl="mongodb+srv://<username>:<password>@<host>/<database>"
-redisUrl="rediss://:<password>@<host>:<port>"
-encryptionPassword="<strong-random-password>"
-encryptionSalt="<long-random-string>"
+```
+
+:::caution
+Use strong values for the encryption password and salt. Store them securely and reuse the same values whenever you redeploy or restore the instance. Changing them prevents Appsmith from decrypting stored credentials.
+:::
+
+Enter the MongoDB URL, Redis URL, encryption password, and encryption salt through silent prompts so the values aren't saved in your shell history:
+
+```bash
+read -rsp "MongoDB connection URL: " mongodbUrl && printf '\n'
+read -rsp "Redis connection URL: " redisUrl && printf '\n'
+read -rsp "Appsmith encryption password: " encryptionPassword && printf '\n'
+read -rsp "Appsmith encryption salt: " encryptionSalt && printf '\n'
 ```
 
 ### Create a resource group (optional)
@@ -107,7 +109,7 @@ az storage share create --name $fileShareName --account-name $storageAccountName
     --azure-file-volume-account-name $storageAccountName \
     --azure-file-volume-account-key $storageAccountKey \
     --azure-file-volume-share-name $fileShareName \
-    --azure-file-volume-mount-path "/appsmith-stacks/" \
+    --azure-file-volume-mount-path "/appsmith-stacks/"
   ```
 
 ## Install Appsmith Community
