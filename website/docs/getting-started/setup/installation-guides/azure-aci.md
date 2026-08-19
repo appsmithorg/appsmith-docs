@@ -20,7 +20,7 @@ Before deploying Appsmith, follow the relevant guides to configure the external 
 
 - [Configure external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis).
 - [Configure external Redis](/getting-started/setup/instance-configuration/external-redis).
-- Before enabling SAML SSO, [configure PostgreSQL for SAML SSO on Azure](/getting-started/setup/installation-guides/azure/setup-to-integrate-sso). For Workflows, complete the [workflow prerequisites](/workflows/tutorials/create-workflow#before-you-begin).
+- [Configure external PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds) if you plan to use [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) or [Workflows](/workflows/tutorials/create-workflow#before-you-begin).
 
 ## Prerequisites​
 
