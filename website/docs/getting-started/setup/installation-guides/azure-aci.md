@@ -44,18 +44,18 @@ fileShareName="myFileShareName"
 dnsNameLabel="myDNSLabel"
 ```
 
+Set the following variables using connection strings from the external service guides and secrets from your preferred secret-management method. Don't commit or share the actual values.
+
+```bash
+mongodbUrl="<mongodb-connection-url>"
+redisUrl="<redis-connection-url>"
+encryptionPassword="<strong-encryption-password>"
+encryptionSalt="<strong-encryption-salt>"
+```
+
 :::caution
 Use strong values for the encryption password and salt. Store them securely and reuse the same values whenever you redeploy or restore the instance. Changing them prevents Appsmith from decrypting stored credentials.
 :::
-
-Enter the MongoDB URL, Redis URL, encryption password, and encryption salt through silent prompts so the values aren't saved in your shell history:
-
-```bash
-read -rsp "MongoDB connection URL: " mongodbUrl && printf '\n'
-read -rsp "Redis connection URL: " redisUrl && printf '\n'
-read -rsp "Appsmith encryption password: " encryptionPassword && printf '\n'
-read -rsp "Appsmith encryption salt: " encryptionSalt && printf '\n'
-```
 
 ### Create a resource group (optional)
 
