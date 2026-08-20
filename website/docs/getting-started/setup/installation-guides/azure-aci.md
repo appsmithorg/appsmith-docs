@@ -4,16 +4,23 @@ sidebar_position: 4
 toc_max_heading_level: 2
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 # Azure Container Instance
 
-Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container. The data persists in Azure Storage Account File Share.
+Azure Container Instances (ACI) is a simple and efficient way to run containers in the cloud. This document guides you through launching an ACI instance and running an Appsmith container.
 
 :::note
 Azure only supports CIFS file shares and doesn't support NFS file shares.
 :::
+
+## Best practices
+
+For production deployments, use Azure Files only to persist Appsmith's filesystem artifacts. Don't use it to host databases or cache services because network-mounted volumes can cause poor performance, data inconsistency, or startup failures.
+
+Before deploying Appsmith, follow the relevant guides to configure the external services you need:
+
+- [Configure external MongoDB](/getting-started/setup/instance-configuration/custom-mongodb-redis).
+- [Configure external Redis](/getting-started/setup/instance-configuration/external-redis).
+- [Configure external PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds) if you plan to use [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml) or [Workflows](/workflows/tutorials/create-workflow#before-you-begin).
 
 ## Prerequisites​
 
@@ -21,11 +28,12 @@ Before launching an ACI instance, you need to have an Azure subscription and hav
 
 - [Azure Subscription](https://azure.com/free) - If you don't have an Azure subscription, you can sign up for a free trial.
 - [Azure CLI](https://learn.microsoft.com/en-us/cli/azure).
+- Complete the external MongoDB and Redis setup described in [Best practices](#best-practices), and keep their connection URLs available.
 - Whitelist `cs.appsmith.com` in your firewall settings to allow outbound HTTPS traffic. If using Azure Firewall, add these domains under Application Rules.
 
 ## Configure variables
 
-Update the following values starting with 'my' where necessary, and enter them in your shell/terminal.
+Update the following values for your deployment, and enter them in your shell or terminal.
 
 ```bash
 resourceGroupName="myResourceGroup"
@@ -35,6 +43,19 @@ aciLocation="southindia"
 fileShareName="myFileShareName"
 dnsNameLabel="myDNSLabel"
 ```
+
+Set the following variables using connection strings from the external service guides and secrets from your preferred secret-management method. Don't commit or share the actual values.
+
+```bash
+mongodbUrl="<mongodb-connection-url>"
+redisUrl="<redis-connection-url>"
+encryptionPassword="<strong-encryption-password>"
+encryptionSalt="<strong-encryption-salt>"
+```
+
+:::caution
+Use strong values for the encryption password and salt. Store them securely and reuse the same values whenever you redeploy or restore the instance. Changing them prevents Appsmith from decrypting stored credentials.
+:::
 
 ### Create a resource group (optional)
 
@@ -72,18 +93,23 @@ az storage share create --name $fileShareName --account-name $storageAccountName
 
   ```bash
   az container create \
-  --resource-group $resourceGroupName \
-  	--name $aciName \
-  	--image appsmith/appsmith-ee:<version> \
-  	--ip-address public \
-  	--dns-name-label $dnsNameLabel \
-  	--ports 80 443 \
-  	--cpu 2 \
-  	--memory 4 \
-  	--azure-file-volume-account-name $storageAccountName \
-  	--azure-file-volume-account-key $storageAccountKey \
-  	--azure-file-volume-share-name $fileShareName \
-  	--azure-file-volume-mount-path "/appsmith-stacks/" \
+    --resource-group $resourceGroupName \
+    --name $aciName \
+    --image appsmith/appsmith-ee:<version> \
+    --ip-address public \
+    --dns-name-label $dnsNameLabel \
+    --ports 80 443 \
+    --cpu 2 \
+    --memory 4 \
+    --secure-environment-variables \
+      "APPSMITH_DB_URL=$mongodbUrl" \
+      "APPSMITH_REDIS_URL=$redisUrl" \
+      "APPSMITH_ENCRYPTION_PASSWORD=$encryptionPassword" \
+      "APPSMITH_ENCRYPTION_SALT=$encryptionSalt" \
+    --azure-file-volume-account-name $storageAccountName \
+    --azure-file-volume-account-key $storageAccountKey \
+    --azure-file-volume-share-name $fileShareName \
+    --azure-file-volume-mount-path "/appsmith-stacks/"
   ```
 
 ## Install Appsmith Community
@@ -147,48 +173,11 @@ Once you have completed the installation process, consider performing the tasks 
   </a>
 </div>
 
-## Best Practices & Things Not to Do When Deploying Appsmith on Azure ACI
-
-When deploying **Appsmith** on **Azure Container Instances (ACI)**, it's crucial to avoid certain architectural decisions that can lead to performance issues, data inconsistency, or outright application failure. The following anti-patterns are particularly relevant when using Azure Files or network-mounted file systems.
-
-### Avoid Using Azure Files (or Any Network-Mounted File System) for Appsmith Storage
-
-While Azure Files offers a convenient way to persist data, it is **not suitable** for hosting Appsmith's core components such as MongoDB, Redis, or internal file storage.
-
-#### Common Mistakes
-
-1. **Running internal MongoDB, Redis, or file storage on Azure Files**
-    - Appsmith is not designed to work efficiently with network-mounted volumes as primary persistent stores.
-    - Issues observed:
-        - Sluggish performance.
-        - Data corruption.
-        - Intermittent failures and inconsistencies.
-        - App crashes on startup or under load.
-
-2. **Using Azure Files to store runtime data for internal services**
-    - These services (MongoDB, Redis) are latency-sensitive and require fast local or SSD-backed storage to function properly.
-
-#### Recommended Approach
-
-To ensure a **stateless, reliable, and production-grade deployment**, follow these best practices:
-
-- **Run Appsmith container on ACI using Azure Files only for minimal required mounts** (e.g., config files, if needed).
-- **Use external managed services** for critical components:
-    - [**MongoDB**](/getting-started/setup/instance-configuration/custom-mongodb-redis): Use a cloud-managed MongoDB (e.g., MongoDB Atlas) hosted in Azure or nearby region.
-    - [**Redis**](/getting-started/setup/instance-configuration/external-redis): Use **Azure Cache for Redis** or provision your own Redis cluster.
-    - [**PostgreSQL**](/getting-started/setup/instance-configuration/external-postgresql-rds): Use **Azure Database for PostgreSQL** to support advanced features like **Workflows** and **SAML SSO**.
-
-This approach ensures your Appsmith instance is:
-
-- **Stateless**
-- **Easy to scale and recover**
-- **Less prone to I/O bottlenecks and crashes**
-
 ## Troubleshooting
 
 If you are facing issues during deployment, refer to the guide on [troubleshooting deployment errors](/help-and-support/troubleshooting-guide/deployment-errors). If you continue to face issues, contact the support team using the chat widget at the bottom right of this page.
 
-### See also
+## See also
 
 - [Manage Installation](/getting-started/setup/instance-configuration): Learn how to manage your Appsmith instance.
 - [Upgrade Installation Guides](/getting-started/setup/instance-management/): Learn how to upgrade your Appsmith installation.
