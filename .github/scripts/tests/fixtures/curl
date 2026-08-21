@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${MOCK_SCENARIO:?MOCK_SCENARIO is required}"
+: "${MOCK_STATE_DIR:?MOCK_STATE_DIR is required}"
+
+url="${!#}"
+method="GET"
+connect_timeout_seen=false
+max_time_seen=false
+
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --connect-timeout)
+      shift
+      [ "${1:-}" = "10" ] || { echo "Unexpected connect timeout" >&2; exit 2; }
+      connect_timeout_seen=true
+      ;;
+    --max-time)
+      shift
+      [ "${1:-}" = "60" ] || { echo "Unexpected maximum time" >&2; exit 2; }
+      max_time_seen=true
+      ;;
+    -X)
+      shift
+      method="${1:-}"
+      ;;
+  esac
+  shift
+done
+
+[ "$connect_timeout_seen" = "true" ] || { echo "Missing connect timeout" >&2; exit 2; }
+[ "$max_time_seen" = "true" ] || { echo "Missing maximum time" >&2; exit 2; }
+
+all_stale_files_deleted() {
+  [ -f "$MOCK_STATE_DIR/deleted-file-tagged-old" ] &&
+    [ -f "$MOCK_STATE_DIR/deleted-file-renamed-old" ]
+}
+
+success_list_response() {
+  if all_stale_files_deleted; then
+    if [ ! -f "$MOCK_STATE_DIR/first-verification-returned" ]; then
+      touch "$MOCK_STATE_DIR/first-verification-returned"
+      jq -n '{
+        object: "list",
+        data: [
+          {id: "file-current", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-tagged-old", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-untagged-appsmith-docs", attributes: null},
+          {id: "file-unrelated", attributes: {}}
+        ],
+        has_more: false,
+        last_id: "file-unrelated"
+      }'
+    else
+      jq -n '{
+        object: "list",
+        data: [
+          {id: "file-current", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-untagged-appsmith-docs", attributes: null},
+          {id: "file-unrelated", attributes: {}},
+          {id: "file-other-owner", attributes: {managed_by: "manual-upload"}},
+          {id: "file-unrelated-two", attributes: null}
+        ],
+        has_more: false,
+        last_id: "file-unrelated-two"
+      }'
+    fi
+  elif [[ "$url" == *"after=cursor-page-1"* ]]; then
+    jq -n '{
+      object: "list",
+      data: [
+        {id: "file-renamed-old", attributes: {managed_by: "generate-file-for-ai"}},
+        {id: "file-unrelated-two", attributes: null}
+      ],
+      has_more: false,
+      last_id: "file-unrelated-two"
+    }'
+  else
+    jq -n '
+      [range(0; 96) as $index |
+        {id: ("file-manual-" + ($index | tostring)), attributes: {managed_by: "manual-upload"}}
+      ] as $manual_files |
+      {
+        object: "list",
+        data: ([
+          {id: "file-current", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-tagged-old", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-untagged-appsmith-docs", attributes: null},
+          {id: "file-unrelated", attributes: {}}
+        ] + $manual_files),
+        has_more: true,
+        last_id: "cursor-page-1"
+      }
+    '
+  fi
+}
+
+if [[ "$url" == *"/vector_stores/test-vector-store/files?"* ]]; then
+  case "$MOCK_SCENARIO" in
+    success)
+      success_list_response
+      ;;
+    no-stale)
+      jq -n '{
+        object: "list",
+        data: [
+          {id: "file-current", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-unrelated", attributes: null}
+        ],
+        has_more: false,
+        last_id: "file-unrelated"
+      }'
+      ;;
+    delete-failure)
+      jq -n '{
+        object: "list",
+        data: [
+          {id: "file-current", attributes: {managed_by: "generate-file-for-ai"}},
+          {id: "file-tagged-old", attributes: {managed_by: "generate-file-for-ai"}}
+        ],
+        has_more: false,
+        last_id: "file-tagged-old"
+      }'
+      ;;
+    repeated-cursor)
+      jq -n '{
+        object: "list",
+        data: [{id: "file-current", attributes: {managed_by: "generate-file-for-ai"}}],
+        has_more: true,
+        last_id: "repeated-cursor"
+      }'
+      ;;
+    page-limit)
+      if [[ "$url" == *"after=page-1"* ]]; then
+        next_cursor="page-2"
+      else
+        next_cursor="page-1"
+      fi
+      jq -n --arg cursor "$next_cursor" '{
+        object: "list",
+        data: [{id: "file-current", attributes: {managed_by: "generate-file-for-ai"}}],
+        has_more: true,
+        last_id: $cursor
+      }'
+      ;;
+    invalid-list)
+      jq -n '{object: "list", data: "invalid", has_more: false}'
+      ;;
+    *)
+      echo "Unknown mock scenario: $MOCK_SCENARIO" >&2
+      exit 2
+      ;;
+  esac
+elif [ "$method" = "GET" ] && [[ "$url" == *"/files/"* ]]; then
+  echo "Unexpected metadata request: ${url##*/}" >&2
+  exit 2
+elif [ "$method" = "DELETE" ] && [[ "$url" == *"/files/"* ]]; then
+  file_id="${url##*/}"
+  case "$file_id" in
+    file-tagged-old|file-renamed-old)
+      if [ "$MOCK_SCENARIO" = "delete-failure" ] && [ "$file_id" = "file-tagged-old" ]; then
+        jq -n --arg id "$file_id" '{id: $id, deleted: false}'
+      else
+        touch "$MOCK_STATE_DIR/deleted-$file_id"
+        jq -n --arg id "$file_id" '{id: $id, deleted: true}'
+      fi
+      ;;
+    *)
+      echo "Unexpected deletion: $file_id" >&2
+      exit 2
+      ;;
+  esac
+else
+  echo "Unexpected request: $method $url" >&2
+  exit 2
+fi

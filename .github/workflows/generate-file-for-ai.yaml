@@ -21,6 +21,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Test vector store cleanup logic
+        timeout-minutes: 2
+        run: bash .github/scripts/tests/cleanup-openai-vector-store.test.sh
+
       - name: Merge markdown files
         run: |
           find website/docs \( -name '*.md' -o -name '*.mdx' \) -exec cat {} + > appsmith-docs.md
@@ -70,7 +74,8 @@ jobs:
           attach_response=$(curl -sS --http1.1 -X POST \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
             -H "Content-Type: application/json" \
-            -d "{\"file_id\":\"$FILE_ID\"}" \
+            -d "$(jq -n --arg file_id "$FILE_ID" \
+              '{file_id: $file_id, attributes: {managed_by: "generate-file-for-ai"}}')" \
             "https://api.openai.com/v1/vector_stores/$VECTOR_STORE_ID/files")
 
           echo "$attach_response"
@@ -112,3 +117,9 @@ jobs:
           echo "ERROR: Timed out waiting for file ingestion"
           exit 1
 
+      - name: Remove stale workflow-managed files
+        timeout-minutes: 15
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          VECTOR_STORE_ID: ${{ secrets.OPENAI_VECTOR_STORE_ID }}
+        run: bash .github/scripts/cleanup-openai-vector-store.sh
