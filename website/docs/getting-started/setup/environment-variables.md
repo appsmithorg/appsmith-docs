@@ -36,7 +36,7 @@ tags={[
 
 <!-- vale on -->
 
-The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials.
+The following environment variables help in configuring OAuth 2.0 authentication with your OIDC provider, enabling seamless login experiences and allowing Appsmith applications to authenticate users with their existing OIDC credentials. For provider-specific configuration instructions, see [OpenID Connect SSO](/getting-started/setup/instance-configuration/authentication/openid-connect-oidc).
 
 ##### `APPSMITH_OAUTH2_OIDC_CLIENT_ID`
 
@@ -48,6 +48,42 @@ The following environment variables help in configuring OAuth 2.0 authentication
 
 <dd>
     This variable, in conjunction with the OIDC Client ID, holds the secret key provided by your OIDC provider to authenticate your application's requests securely. Set this variable with the Client Secret provided by your provider upon creating your OIDC application. Ensure that you store it securely and do not expose it publicly.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_AUTHORIZATION_URI`
+
+<dd>
+    Specifies the endpoint where Appsmith redirects users to authenticate with your OIDC provider. Set this variable to the `authorization_endpoint` value from your provider's OIDC discovery document.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_TOKEN_URI`
+
+<dd>
+    Specifies the endpoint Appsmith uses to exchange an authorization code for tokens. Set this variable to the `token_endpoint` value from your provider's OIDC discovery document.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_JWK_SET_URI`
+
+<dd>
+    Specifies the endpoint that provides your OIDC provider's JSON Web Key Set (JWKS). Appsmith uses these public keys to verify ID token signatures. Set this variable to the `jwks_uri` value from your provider's OIDC discovery document.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_USER_INFO`
+
+<dd>
+    Specifies the endpoint Appsmith uses to retrieve claims about the authenticated user. Set this variable to the `userinfo_endpoint` value from your provider's OIDC discovery document.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_USERNAME_ATTRIBUTE`
+
+<dd>
+    Specifies the name of the claim that contains the user's email address. Set this variable to the claim exposed by your OIDC provider, typically `email`.
+</dd>
+
+##### `APPSMITH_OAUTH2_OIDC_SCOPE`
+
+<dd>
+    Specifies the comma-separated list of OIDC scopes Appsmith requests during authentication. Include the required `openid` and `email` scopes. You can also include `profile` and other scopes supported by your provider. For example, `openid,email,profile`.
 </dd>
 
 
