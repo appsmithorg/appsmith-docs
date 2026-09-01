@@ -123,7 +123,7 @@ Follow these steps to create task and container definitions for your cluster:
     * `APPSMITH_DB_URL` - Enter the URI of the external MongoDB (v5.0 or later) instance.
     * `APPSMITH_ENABLE_EMBEDDED_DB` - `0`. This disables embedded mock databases on EFS volume.
 6. Add the below configuration in the **HealthCheck** section:
-    * **Command** - `CMD-SHELL, curl -f http://localhost/ || exit 1`
+    * **Command** - `CMD-SHELL, curl -f http://localhost/api/v1/health || exit 1`
     * **Interval** - 10
     * **Timeout** - 5
     * **Start period** - 160
@@ -184,7 +184,7 @@ Follow these steps to create and run an ECS service:
         * **Target group** - Select **Create new target group**. 
         * **Target group name** - Give a meaningful and unique name.
         * **Health check protocol** - Set it to `HTTP`.
-        * **Health check path** - Set it to `/`.
+        * **Health check path** - Set it to `/api/v1/health`.
     * Port `443` listener- 
         * **Listener** - Select **Create new listener**.
         * **Port** - `443`
@@ -193,7 +193,7 @@ Follow these steps to create and run an ECS service:
         * **Target group** - Select **Create new target group**. 
         * **Target group name** - Give a meaningful and unique name.
         * **Health check protocol** - Set it to `HTTP`.
-        * **Health check path** - Set it to `/`.
+        * **Health check path** - Set it to `/api/v1/health`.
 
 9.  In the **Service auto scaling** section, add the below details: 
     * **Use service auto scaling** - Check this setting.

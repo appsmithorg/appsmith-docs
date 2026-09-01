@@ -84,9 +84,9 @@ To deploy Appsmith on the Amazon ECS cluster that has a single node, you need to
         * `APPSMITH_DB_URL` : Enter the URI of the external MongoDB (v5.0 or later) instance.
         * `APPSMITH_ENABLE_EMBEDDED_DB` to `0`. This disables embedded mock databases on EFS volume.
 6. Configure the **HealthCheck** section as shown below: 
-    * **HealthCheck Command** - `CMD-SHELL, curl http://localhost/ || exit 1`
+    * **HealthCheck Command** - `CMD-SHELL, curl -f http://localhost/api/v1/health || exit 1`
     * **Interval** - 10
-    * **Timeout** - 2
+    * **Timeout** - 5
     * **Start period** - 160
     * **Retries** - 3
 7. Keep the default settings for other sections, and scroll down to **Storage**. Click **Add volume** button and configure **Volume-1** as shown below:
