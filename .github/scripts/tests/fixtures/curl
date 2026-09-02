@@ -112,7 +112,7 @@ if [[ "$url" == *"/vector_stores/test-vector-store/files?"* ]]; then
         last_id: "file-unrelated"
       }'
       ;;
-    delete-failure)
+    delete-failure|detach-failure)
       jq -n '{
         object: "list",
         data: [
@@ -155,10 +155,30 @@ if [[ "$url" == *"/vector_stores/test-vector-store/files?"* ]]; then
 elif [ "$method" = "GET" ] && [[ "$url" == *"/files/"* ]]; then
   echo "Unexpected metadata request: ${url##*/}" >&2
   exit 2
+elif [ "$method" = "DELETE" ] && [[ "$url" == *"/vector_stores/test-vector-store/files/"* ]]; then
+  file_id="${url##*/}"
+  case "$file_id" in
+    file-tagged-old|file-renamed-old)
+      if [ "$MOCK_SCENARIO" = "detach-failure" ]; then
+        jq -n --arg id "$file_id" '{id: $id, object: "vector_store.file.deleted", deleted: false}'
+      else
+        touch "$MOCK_STATE_DIR/detached-$file_id"
+        jq -n --arg id "$file_id" '{id: $id, object: "vector_store.file.deleted", deleted: true}'
+      fi
+      ;;
+    *)
+      echo "Unexpected detach: $file_id" >&2
+      exit 2
+      ;;
+  esac
 elif [ "$method" = "DELETE" ] && [[ "$url" == *"/files/"* ]]; then
   file_id="${url##*/}"
   case "$file_id" in
     file-tagged-old|file-renamed-old)
+      if [ ! -f "$MOCK_STATE_DIR/detached-$file_id" ]; then
+        echo "File $file_id deleted before being detached from the vector store" >&2
+        exit 2
+      fi
       if [ "$MOCK_SCENARIO" = "delete-failure" ] && [ "$file_id" = "file-tagged-old" ]; then
         jq -n --arg id "$file_id" '{id: $id, deleted: false}'
       else

@@ -184,9 +184,24 @@ if [ "${#stale_file_ids[@]}" -eq 0 ]; then
 fi
 
 for stale_file_id in ${stale_file_ids[@]+"${stale_file_ids[@]}"}; do
+  echo "Detaching stale file $stale_file_id from vector store..."
+  if ! detach_response=$(api_delete "$OPENAI_API_BASE_URL/vector_stores/$VECTOR_STORE_ID/files/$stale_file_id"); then
+    echo "ERROR: Request to detach stale file $stale_file_id failed"
+    exit 1
+  fi
+
+  if ! jq -e --arg file_id "$stale_file_id" '
+    .id == $file_id and .deleted == true
+  ' > /dev/null <<< "$detach_response"; then
+    echo "ERROR: Failed to detach stale file $stale_file_id"
+    echo "$detach_response"
+    exit 1
+  fi
+
   echo "Deleting stale file $stale_file_id..."
   if ! delete_response=$(api_delete "$OPENAI_API_BASE_URL/files/$stale_file_id"); then
     echo "ERROR: Request to delete stale file $stale_file_id failed"
+    echo "ORPHANED FILE $stale_file_id: detached from the vector store but not deleted; delete it manually"
     exit 1
   fi
 
@@ -194,6 +209,7 @@ for stale_file_id in ${stale_file_ids[@]+"${stale_file_ids[@]}"}; do
     .id == $file_id and .deleted == true
   ' > /dev/null <<< "$delete_response"; then
     echo "ERROR: Failed to delete stale file $stale_file_id"
+    echo "ORPHANED FILE $stale_file_id: detached from the vector store but not deleted; delete it manually"
     echo "$delete_response"
     exit 1
   fi

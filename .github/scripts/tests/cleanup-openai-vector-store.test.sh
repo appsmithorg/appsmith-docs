@@ -87,6 +87,8 @@ expect_failure() {
 success_output=$(expect_success success)
 assert_contains "$success_output" "Verification attempt 1"
 assert_contains "$success_output" "Vector store contains only the current workflow-managed file and preserved non-workflow files"
+assert_file_exists "$TEST_ROOT/success/detached-file-tagged-old"
+assert_file_exists "$TEST_ROOT/success/detached-file-renamed-old"
 assert_file_exists "$TEST_ROOT/success/deleted-file-tagged-old"
 assert_file_exists "$TEST_ROOT/success/deleted-file-renamed-old"
 assert_file_missing "$TEST_ROOT/success/deleted-file-untagged-appsmith-docs"
@@ -100,6 +102,10 @@ echo "PASS: no-op cleanup"
 expect_failure delete-failure "Failed to delete stale file file-tagged-old"
 echo "PASS: unsuccessful deletion is rejected"
 
+expect_failure detach-failure "Failed to detach stale file file-tagged-old"
+assert_file_missing "$TEST_ROOT/detach-failure/deleted-file-tagged-old"
+echo "PASS: unsuccessful detach stops before file deletion"
+
 expect_failure repeated-cursor "repeated pagination cursor repeated-cursor"
 echo "PASS: repeated pagination cursor is rejected"
 
@@ -109,4 +115,4 @@ echo "PASS: pagination page limit is enforced"
 expect_failure invalid-list "Invalid vector store file discovery response"
 echo "PASS: malformed list response is rejected"
 
-echo "6 cleanup tests passed"
+echo "7 cleanup tests passed"
