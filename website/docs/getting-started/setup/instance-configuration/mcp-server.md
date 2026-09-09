@@ -6,29 +6,44 @@ MCP Server is in beta. Its behavior, available tools, and client configuration m
 
 Appsmith's Model Context Protocol (MCP) server lets compatible AI clients connect to Appsmith through a structured API. An MCP client can use the Appsmith capabilities available to the user who created its key, including working with apps and their resources.
 
-An MCP key authenticates the client **as you**. It does not grant the client additional Appsmith permissions. Any request made with your key is limited to the same organizations, workspaces, apps, and actions that your Appsmith account can access.This guide covers MCP setup for all self-hosted deployments and eligible Appsmith Cloud organizations.
+An MCP key authenticates the client **as you**. It does not grant the client additional Appsmith permissions. Any request made with your key is limited to the same organizations, workspaces, apps, and actions that your Appsmith account can access.
 
-## Before you begin- An Appsmith administrator must enable MCP Server under **Organizations** on BE Cloud or under **Instances** on self-hosted deployments.
+This guide covers MCP setup for all self-hosted deployments and eligible Appsmith Cloud organizations.
+
+## Before you begin
+
+- An Appsmith administrator must enable MCP Server under **Organizations** on BE Cloud or under **Instances** on self-hosted deployments.
 - Each user must create their own MCP key. Do not share a key between users.
 - Your AI client must support a remote MCP server and allow an `Authorization` header in its server configuration.
 
-## Enable MCP ServerMCP Server is off by default. On BE Cloud, the setting is under **Organizations**. On all self-hosted deployments, it is under **Instances**.### Appsmith Cloud:::note Appsmith Cloud availability
+## Enable MCP Server
+
+MCP Server is off by default. On BE Cloud, the setting is under **Organizations**. On all self-hosted deployments, it is under **Instances**.
+
+### Appsmith Cloud
+
+:::note Appsmith Cloud availability
 MCP Server is available only for Business Edition (BE) Cloud accounts with a custom organization name. It is not available on legacy `app.appsmith.com` Cloud accounts that do not have a custom organization name.
 :::
 
-
 To enable MCP Server for an eligible Appsmith Cloud organization:
 
-1. Open **Admin Settings**.2. Under **Organizations**, select **MCP Server (BETA)**.
+1. Open **Admin Settings**.
+2. Under **Organizations**, select **MCP Server (BETA)**.
 3. Turn on **Enable MCP server**, and save the setting.
 
 <ZoomImage
   src="/img/mcp-enable-business-cloud.png"
   alt="MCP Server beta setting under Organizations in BE Cloud"
   caption="Enable MCP Server for an eligible Appsmith Cloud organization"
-/>### Self-hostedTo enable MCP Server for any self-hosted deployment:
+/>
 
-1. Open **Admin Settings**.2. Under **Instances**, select **MCP Server (BETA)**.
+### Self-hosted
+
+To enable MCP Server for any self-hosted deployment:
+
+1. Open **Admin Settings**.
+2. Under **Instances**, select **MCP Server (BETA)**.
 3. Turn on **Enable MCP server**.
 4. Click **Save & Restart** to apply the setting.
 
