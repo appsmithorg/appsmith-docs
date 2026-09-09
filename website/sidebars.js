@@ -207,6 +207,7 @@ const sidebars = {
                 'getting-started/setup/instance-configuration/instance-settings', // Instance Settings
                 'getting-started/setup/instance-configuration/admin-central',      // Admin central
                 'getting-started/setup/instance-configuration/ai-assistant',      // AI Assistant
+                'getting-started/setup/instance-configuration/mcp-server',        // MCP Server (BETA)
   ],
 },
 
