@@ -23,7 +23,7 @@ MCP Server is off by default. On BE Cloud, the setting is under **Organizations*
 ### Appsmith Cloud
 
 :::note Appsmith Cloud availability
-MCP Server is available only for Business Edition (BE) Cloud accounts with a custom organization name. It is not available on legacy `app.appsmith.com` Cloud accounts that do not have a custom organization name.
+MCP Server is available only for Business Edition (BE) Cloud accounts with a custom organization name. It is not available on Free Cloud accounts, including newer accounts that have a custom organization name, or on legacy `app.appsmith.com` Cloud accounts without one.
 :::
 
 To enable MCP Server for an eligible Appsmith Cloud organization:
@@ -127,7 +127,7 @@ If an administrator disables a user's Appsmith account, requests made with that 
 
 | Problem | What to check |
 | --- | --- |
-| **MCP Server (BETA)** is not visible in Admin Settings | On BE Cloud, look under **Organizations** and confirm that the account has a custom organization name. The feature is not available on legacy `app.appsmith.com` Cloud accounts without one. On self-hosted deployments, look under **Instances**. |
+| **MCP Server (BETA)** is not visible in Admin Settings | On BE Cloud, look under **Organizations** and confirm that the account has a custom organization name. The feature is not available on Free Cloud accounts, even when they have a custom organization name, or on legacy `app.appsmith.com` Cloud accounts without one. On self-hosted deployments, look under **Instances**. |
 | **MCP keys** is not visible under Profile | Ask an administrator to confirm that MCP Server is enabled, then refresh Appsmith. |
 | The client cannot find the server | Confirm that the URL uses your Appsmith domain and ends in `/mcp`. On a self-hosted deployment, confirm that the administrator clicked **Save & Restart** after enabling the server. |
 | The client receives an authentication error | Confirm that the header is `Authorization: Bearer YOUR_MCP_KEY` and that the key has not expired, been rotated, or been revoked. Also confirm that MCP Server and your Appsmith user account are enabled. |
