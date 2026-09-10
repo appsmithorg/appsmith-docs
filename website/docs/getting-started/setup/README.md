@@ -23,6 +23,7 @@ You can follow one of the below guides to deploy Appsmith on the platform you pr
 - [Kubernetes](/getting-started/setup/installation-guides/kubernetes) (_High Availability and Scalability_)
 - [AWS AMI](/getting-started/setup/installation-guides/aws-ami)
 - [DigitalOcean](/getting-started/setup/installation-guides/digitalocean)
+- [Easypanel](/getting-started/setup/installation-guides/easypanel)
 
 While Appsmith is a dockerized application that works on other platforms, official support is limited to these configurations. For other environments, support is provided on a case-by-case basis. For more information about installation platforms, see all [installation guides](/getting-started/setup/installation-guides).
 
