@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import DocSearch from '@theme-original/SearchBar';
+import PagefindSearch from './PagefindSearch';
 import AISearchButton from '@site/src/components/ask-ai/AISearchButton';
 import '@site/src/components/custom-search/css/CustomSearch.css';
 
 const CustomSearchBar = () => {
-    const [searchType, setSearchType] = useState('');
+    const [searchOpen, setSearchOpen] = useState(false);
 
     // Identify the user once on mount
     useEffect(() => {
@@ -25,31 +25,24 @@ const CustomSearchBar = () => {
         }
     }, []);
 
-    // Trigger search input clicks
     useEffect(() => {
-        if (ExecutionEnvironment.canUseDOM) {
-            const searchInput = document.querySelector('.DocSearch-Button');
-            const aiInput = document.querySelector('.custom-doc-Search-bar');
-
-            if (searchType === 'ai' && aiInput) {
-                aiInput.click();
-            } else if (searchType === 'docs' && searchInput) {
-                searchInput.click();
-                setTimeout(() => {
-                    const searchTerm = document.querySelector('.DocSearch-Input');
-                    if (searchTerm) {
-                        searchTerm.focus();
-                        searchTerm.click();
-                    }
-                }, 100);
+        const shortcut = (event) => {
+            const editing = event.target instanceof HTMLElement &&
+                (event.target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(event.target.tagName));
+            if (editing || document.querySelector('.ai-search-modal.show') || event.altKey) return;
+            if (((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') ||
+                (event.key === '/' && !event.metaKey && !event.ctrlKey)) {
+                event.preventDefault();
+                setSearchOpen(true);
             }
-
-            setSearchType('');
-        }
-    }, [searchType]);
+        };
+        document.addEventListener('keydown', shortcut);
+        return () => document.removeEventListener('keydown', shortcut);
+    }, []);
 
     const handleClick = (type) => {
-        setSearchType(type);
+        if (type === 'docs') setSearchOpen(true);
+        else document.querySelector('.custom-doc-Search-bar')?.click();
 
         if (ExecutionEnvironment.canUseDOM && typeof window.analytics !== 'undefined') {
             const eventName = type === 'ai' ? 'Docs Ask AI Click' : 'Docs Search Button Click';
@@ -64,23 +57,25 @@ const CustomSearchBar = () => {
     return (
         <>
             <div className="custom-segmented-search-option">
-                <div
-                    className={`custom-search-option ${searchType === 'ai' ? 'selected' : ''}`}
+                <button
+                    type="button"
+                    className="custom-search-option"
                     onClick={() => handleClick('ai')}
                 >
-                    <img src="/img/ask-ai-robot-icon.svg" alt="Ask AI" className="ai-search-icon" /> Ask AI
-                </div>
-                <div
-                    className={`custom-search-option ${searchType === 'docs' ? 'selected' : ''}`}
+                    <img src="/img/ask-ai-robot-icon.svg" alt="" className="ai-search-icon" /> Ask AI
+                </button>
+                <button
+                    type="button"
+                    className="custom-search-option"
                     onClick={() => handleClick('docs')}
+                    aria-haspopup="dialog"
+                    aria-expanded={searchOpen}
                 >
-                    <img src="/img/search-in-docs-icon.svg" alt="Search" className="doc-search-icon" /> Search
-                </div>
+                    <img src="/img/search-in-docs-icon.svg" alt="" className="doc-search-icon" /> Search
+                </button>
             </div>
             <AISearchButton />
-            <div style={{ display: 'none' }}>
-                <DocSearch />
-            </div>
+            {searchOpen && <PagefindSearch onClose={() => setSearchOpen(false)} />}
         </>
     );
 };

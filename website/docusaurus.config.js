@@ -26,6 +26,7 @@ const config = {
     locales: ['en'],
   },
   plugins: [
+    require.resolve('./plugins/pagefind'),
     process.env.VERCEL_ENV === "production" && [
       '@twilio-labs/docusaurus-plugin-segment',
       {
@@ -80,14 +81,6 @@ const config = {
         defaultMode: 'light',
         disableSwitch: true,
         respectPrefersColorScheme: false,
-      },
-      algolia: {
-        appId: 'AZ2Z9CJSJ0',
-        apiKey: 'dfde934d9bdc2e0b14830f1dd3cb240f',
-        indexName: 'appsmith_docusaurus_index',
-        contextualSearch: false,
-
-        //... other Algolia params
       },
       navbar: {
         title: '',

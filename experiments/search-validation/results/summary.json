@@ -1,0 +1,35 @@
+{
+  "pagefind": {
+    "standardTop1": 10,
+    "standardTop5": 10,
+    "typosTop5": 3,
+    "noResultsPass": false,
+    "coldSearchMs": 88.10000002384186,
+    "coldSearchBytes": 139166,
+    "suiteSearchBytes": 433696,
+    "checkedLinks": 360,
+    "invalidLinks": []
+  },
+  "orama": {
+    "standardTop1": 9,
+    "standardTop5": 10,
+    "typosTop5": 0,
+    "noResultsPass": true,
+    "coldSearchMs": 397.5,
+    "coldSearchBytes": 3122409,
+    "suiteSearchBytes": 3122409,
+    "checkedLinks": 48,
+    "invalidLinks": []
+  },
+  "orama-typos": {
+    "standardTop1": 9,
+    "standardTop5": 9,
+    "typosTop5": 1,
+    "noResultsPass": true,
+    "coldSearchMs": 411.4000000357628,
+    "coldSearchBytes": 3122409,
+    "suiteSearchBytes": 3122409,
+    "checkedLinks": 58,
+    "invalidLinks": []
+  }
+}

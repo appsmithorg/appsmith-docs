@@ -1,0 +1,2139 @@
+{
+  "engine": "pagefind",
+  "results": [
+    {
+      "query": "storeValue",
+      "count": 20,
+      "ms": 88.10000002384186,
+      "hits": [
+        {
+          "title": "storeValue()",
+          "url": "/reference/appsmith-framework/widget-actions/store-value",
+          "excerpt": "<mark>storeValue().</mark> The <mark>storeValue()</mark> function stores the data in the browser's local storage as key-value pairs that represent storage objects and can be later accessed anywhere in the application. Using the",
+          "sections": [
+            {
+              "title": "storeValue()",
+              "url": "/reference/appsmith-framework/widget-actions/store-value"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#signature"
+            },
+            {
+              "title": "value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#value"
+            },
+            {
+              "title": "persist",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#persist"
+            },
+            {
+              "title": "Modify value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#modify-value"
+            },
+            {
+              "title": "Store multiple values",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#store-multiple-values"
+            },
+            {
+              "title": "Storage states",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#storage-states"
+            },
+            {
+              "title": "Persistent state",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#persistent-state"
+            },
+            {
+              "title": "Session state",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#session-state"
+            },
+            {
+              "title": "Asynchronous behavior of store value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#asynchronous-behavior-of-store-value"
+            }
+          ]
+        },
+        {
+          "title": "clearStore()",
+          "url": "/reference/appsmith-framework/widget-actions/clear-store",
+          "excerpt": "local storage of the browser using the <mark>storeValue()</mark> function. clearStore(). Signature. clearStore() Usage. If you have saved an employee's basic information using the <mark>storeValue()</mark> function, you can remove all the",
+          "sections": [
+            {
+              "title": "clearStore()",
+              "url": "/reference/appsmith-framework/widget-actions/clear-store"
+            },
+            {
+              "title": "Usage",
+              "url": "/reference/appsmith-framework/widget-actions/clear-store#usage"
+            }
+          ]
+        },
+        {
+          "title": "Insert Input Fields Dynamically",
+          "url": "/build-apps/how-to-guides/add-remove-inputs-in-list",
+          "excerpt": "the <mark>storeValue()</mark> function. Example: This code sets the id of dynamically added inputs based on the last item's index. addInput: async () =&gt; { let index = appsmith.store.inputValue ?appsmith.store.inputValue.length: 0;",
+          "sections": [
+            {
+              "title": "Insert Input Fields Dynamically",
+              "url": "/build-apps/how-to-guides/add-remove-inputs-in-list"
+            }
+          ]
+        },
+        {
+          "title": "Share Data Across Pages",
+          "url": "/advanced-concepts/sharing-data-across-pages",
+          "excerpt": "using <mark>storeValue().</mark> export default { saveUserData() { const userName = InputName.text; // User's name from an input widget const userPhone = InputPhone.text; // User's phone number from another input widget",
+          "sections": [
+            {
+              "title": "Share Data Across Pages",
+              "url": "/advanced-concepts/sharing-data-across-pages"
+            },
+            {
+              "title": "Using local storage",
+              "url": "/advanced-concepts/sharing-data-across-pages#using-local-storage"
+            }
+          ]
+        },
+        {
+          "title": "Best Practices",
+          "url": "/write-code/best-practices",
+          "excerpt": "in your application and persist the data, use the <mark>storeValue()</mark> function. Example: In this example, the third parameter persist in the <mark>storeValue()</mark> function is set to true. This ensures that",
+          "sections": [
+            {
+              "title": "Use Appsmith store",
+              "url": "/write-code/best-practices#use-appsmith-store"
+            },
+            {
+              "title": "Avoid nested operations within widgets",
+              "url": "/write-code/best-practices#avoid-nested-operations-within-widgets"
+            }
+          ]
+        }
+      ],
+      "coldRequests": [
+        {
+          "url": "/pagefind/pagefind.js",
+          "encodedBytes": 12961,
+          "decodedBytes": 45555
+        },
+        {
+          "url": "/pagefind/pagefind-worker.js",
+          "encodedBytes": 12016,
+          "decodedBytes": 41255
+        },
+        {
+          "url": "/pagefind/pagefind-entry.json",
+          "encodedBytes": 159,
+          "decodedBytes": 173
+        },
+        {
+          "url": "/pagefind/pagefind.en_b991a30dda.pf_meta",
+          "encodedBytes": 3733,
+          "decodedBytes": 3710
+        },
+        {
+          "url": "/pagefind/wasm.en.pagefind",
+          "encodedBytes": 72783,
+          "decodedBytes": 72740
+        },
+        {
+          "url": "/pagefind/index/en_3f2a3f7.pf_index",
+          "encodedBytes": 31004,
+          "decodedBytes": 30976
+        },
+        {
+          "url": "/pagefind/fragment/en_3135872.pf_fragment",
+          "encodedBytes": 530,
+          "decodedBytes": 507
+        },
+        {
+          "url": "/pagefind/fragment/en_f84b7d1.pf_fragment",
+          "encodedBytes": 871,
+          "decodedBytes": 848
+        },
+        {
+          "url": "/pagefind/fragment/en_656c14f.pf_fragment",
+          "encodedBytes": 2466,
+          "decodedBytes": 2443
+        },
+        {
+          "url": "/pagefind/fragment/en_d95dbe1.pf_fragment",
+          "encodedBytes": 1466,
+          "decodedBytes": 1443
+        },
+        {
+          "url": "/pagefind/fragment/en_c1cb30e.pf_fragment",
+          "encodedBytes": 1177,
+          "decodedBytes": 1154
+        }
+      ],
+      "expected": "/reference/appsmith-framework/widget-actions/store-value",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "showAlert",
+      "count": 16,
+      "ms": 5.300000011920929,
+      "hits": [
+        {
+          "title": "showAlert()",
+          "url": "/reference/appsmith-framework/widget-actions/show-alert",
+          "excerpt": "<mark>showAlert().</mark> This page provides information about the <mark>showAlert()</mark> function signature and parameters, which allows you to display a temporary toast-style alert message to the user for precisely 5 seconds. The",
+          "sections": [
+            {
+              "title": "showAlert()",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#signature"
+            },
+            {
+              "title": "Parameters",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#parameters"
+            },
+            {
+              "title": "Message",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#message"
+            },
+            {
+              "title": "Type",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#type"
+            },
+            {
+              "title": "Conditional alerts",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#conditional-alerts"
+            },
+            {
+              "title": "Error handling",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#error-handling"
+            },
+            {
+              "title": "Asynchronous function alerts",
+              "url": "/reference/appsmith-framework/widget-actions/show-alert#asynchronous-function-alerts"
+            }
+          ]
+        },
+        {
+          "title": "Use JavaScript Promises",
+          "url": "/core-concepts/writing-code/javascript-promises",
+          "excerpt": "finish (or any to reject). return Promise.all(calls) .then(() =&gt; <mark>showAlert('Promise.all</mark> - All successful')) .catch(() =&gt; <mark>showAlert('Promise.all</mark> - Something went wrong')) .finally(() =&gt; <mark>showAlert('Promise.all</mark> - finished')) })() }} In the example:",
+          "sections": [
+            {
+              "title": "JavaScript promises",
+              "url": "/core-concepts/writing-code/javascript-promises#javascript-promises"
+            },
+            {
+              "title": "Callbacks vs promises",
+              "url": "/core-concepts/writing-code/javascript-promises#callbacks-vs-promises"
+            },
+            {
+              "title": "Promise methods",
+              "url": "/core-concepts/writing-code/javascript-promises#promise-methods"
+            },
+            {
+              "title": "Promise.any()",
+              "url": "/core-concepts/writing-code/javascript-promises#promiseany"
+            },
+            {
+              "title": "Promise.race()",
+              "url": "/core-concepts/writing-code/javascript-promises#promiserace"
+            },
+            {
+              "title": "Promise.all()",
+              "url": "/core-concepts/writing-code/javascript-promises#promiseall"
+            },
+            {
+              "title": "Promise.allSettled()",
+              "url": "/core-concepts/writing-code/javascript-promises#promiseallsettled"
+            },
+            {
+              "title": "Using Promises in Appsmith",
+              "url": "/core-concepts/writing-code/javascript-promises#using-promises-in-appsmith"
+            },
+            {
+              "title": "Await",
+              "url": "/core-concepts/writing-code/javascript-promises#await"
+            }
+          ]
+        },
+        {
+          "title": "setTimeout()",
+          "url": "/reference/appsmith-framework/widget-actions/set-timeout",
+          "excerpt": "callbackFunction. Example: You can use the <mark>showAlert()</mark> function to show an alert message when delay time has passed as shown below: setTimeout(() =&gt; { <mark>showAlert(\"5</mark> seconds have passed\") }, 5000);",
+          "sections": [
+            {
+              "title": "delay",
+              "url": "/reference/appsmith-framework/widget-actions/set-timeout#delay"
+            }
+          ]
+        },
+        {
+          "title": "Chain Functions and Promises",
+          "url": "/write-code/how-to-guides/chain-functions-and-promises",
+          "excerpt": "response from the fetchPendingUsers query. {{ statusDropdown.selectedOptionValue === \"Pending\" ? fetchPendingUsers.run(() =&gt; { fetchPendingUsers.data.length === 0 ? <mark>showAlert(\"No</mark> Users Pending Approval\", \"info\") : <mark>showAlert(\"Fetched</mark> Users\", \"success\"); }) : fetchApprovedUsers.run(); }}",
+          "sections": [
+            {
+              "title": "Conditional execution",
+              "url": "/write-code/how-to-guides/chain-functions-and-promises#conditional-execution"
+            }
+          ]
+        },
+        {
+          "title": "Trigger UI Actions",
+          "url": "/core-concepts/writing-code/ui-actions",
+          "excerpt": "=== \"Pending\") { fetchPendingUsers.run(() =&gt; { if (fetchPendingUsers.data.length === 0) { <mark>showAlert(\"No</mark> Users Pending Approval\", \"info\"); } else { <mark>showAlert(\"Fetched</mark> Users\", \"success\"); } }); } else { fetchApprovedUsers.run(); } }",
+          "sections": [
+            {
+              "title": "Execute actions in parallel",
+              "url": "/core-concepts/writing-code/ui-actions#execute-actions-in-parallel"
+            },
+            {
+              "title": "Based on query response",
+              "url": "/core-concepts/writing-code/ui-actions#based-on-query-response"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/appsmith-framework/widget-actions/show-alert",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "navigateTo",
+      "count": 13,
+      "ms": 7.099999964237213,
+      "hits": [
+        {
+          "title": "navigateTo()",
+          "url": "/reference/appsmith-framework/widget-actions/navigate-to",
+          "excerpt": "<mark>navigateTo().</mark> This page provides information about the <mark>navigateTo()</mark> function signature and parameters, which allows you to navigate and pass data between internal app pages or external URLs. <mark>navigateTo().</mark> Signature. <mark>navigateTo(pageNameOrUrl:</mark>",
+          "sections": [
+            {
+              "title": "navigateTo()",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#signature"
+            },
+            {
+              "title": "Parameters",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#parameters"
+            },
+            {
+              "title": "pageNameOrUrl",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#pagenameorurl"
+            },
+            {
+              "title": "params",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#params"
+            },
+            {
+              "title": "target",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#target"
+            },
+            {
+              "title": "Conditional navigation:",
+              "url": "/reference/appsmith-framework/widget-actions/navigate-to#conditional-navigation"
+            }
+          ]
+        },
+        {
+          "title": "Navigate Between Pages",
+          "url": "/build-apps/how-to-guides/navigate-between-pages",
+          "excerpt": "Appsmith provides the <mark>navigateTo</mark> function that lets you navigate between pages within your app. This guide shows you how to implement page navigation. Set up page navigation. You can use",
+          "sections": [
+            {
+              "title": "Navigate Between Pages",
+              "url": "/build-apps/how-to-guides/navigate-between-pages"
+            },
+            {
+              "title": "Set up page navigation",
+              "url": "/build-apps/how-to-guides/navigate-between-pages#set-up-page-navigation"
+            }
+          ]
+        },
+        {
+          "title": "Share Data Across Pages",
+          "url": "/advanced-concepts/sharing-data-across-pages",
+          "excerpt": "to share data across different pages using the <mark>navigateTo()</mark> or the storeValue() function. Using query params. The <mark>navigateTo()</mark> function allows you to navigate between internal app pages or external URLs",
+          "sections": [
+            {
+              "title": "Share Data Across Pages",
+              "url": "/advanced-concepts/sharing-data-across-pages"
+            },
+            {
+              "title": "Using query params",
+              "url": "/advanced-concepts/sharing-data-across-pages#using-query-params"
+            },
+            {
+              "title": "Using local storage",
+              "url": "/advanced-concepts/sharing-data-across-pages#using-local-storage"
+            }
+          ]
+        },
+        {
+          "title": "Global Functions",
+          "url": "/reference/appsmith-framework/widget-actions",
+          "excerpt": "for pasting. download. Downloads the file data provided, with an optional file name and type. <mark>navigateTo.</mark> Navigates to a different page or URL, either within the Appsmith app or externally.",
+          "sections": [
+            {
+              "title": "Global Functions",
+              "url": "/reference/appsmith-framework/widget-actions"
+            }
+          ]
+        },
+        {
+          "title": "Display Map Markers",
+          "url": "/build-apps/how-to-guides/display-map-markers",
+          "excerpt": "{ <mark>navigateToMap:</mark> async () =&gt; { const currentPosition = await appsmith.geolocation.getCurrentPosition(); const url = 'www.google.com/maps/dir/' + currentPosition.coords.latitude + ',' + currentPosition.coords.longitude + '/' + Table1.selectedRow.clientlat + ',' + Table1.selectedRow.clientlong; await",
+          "sections": [
+            {
+              "title": "Generate routes using markers",
+              "url": "/build-apps/how-to-guides/display-map-markers#generate-routes-using-markers"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/appsmith-framework/widget-actions/navigate-to",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "resetWidget",
+      "count": 3,
+      "ms": 5.699999988079071,
+      "hits": [
+        {
+          "title": "resetWidget()",
+          "url": "/reference/appsmith-framework/widget-actions/reset-widget",
+          "excerpt": "<mark>resetWidget().</mark> This page provides information about the <mark>resetWidget()</mark> function signature and parameters, which sets a widget to its default state. All user input changes are reverted and its properties' default",
+          "sections": [
+            {
+              "title": "resetWidget()",
+              "url": "/reference/appsmith-framework/widget-actions/reset-widget"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/reset-widget#signature"
+            },
+            {
+              "title": "widgetName",
+              "url": "/reference/appsmith-framework/widget-actions/reset-widget#widgetname"
+            },
+            {
+              "title": "Reset all widgets in a container",
+              "url": "/reference/appsmith-framework/widget-actions/reset-widget#reset-all-widgets-in-a-container"
+            },
+            {
+              "title": "Reset a widget without affecting its child inputs",
+              "url": "/reference/appsmith-framework/widget-actions/reset-widget#reset-a-widget-without-affecting-its-child-inputs"
+            }
+          ]
+        },
+        {
+          "title": "Global Functions",
+          "url": "/reference/appsmith-framework/widget-actions",
+          "excerpt": "multiple windows. removeValue. Removes a stored value, clearing it from local storage or session storage. <mark>resetWidget.</mark> Resets a widget to its default state, clearing any set values or changes. setInterval.",
+          "sections": [
+            {
+              "title": "Global Functions",
+              "url": "/reference/appsmith-framework/widget-actions"
+            }
+          ]
+        },
+        {
+          "title": "Sample Apps",
+          "url": "/learning-and-resources/sample-apps",
+          "excerpt": "View App Reset Table. This app shows how to reset the Table widget using the <mark>resetWidget()</mark> function of the Appsmith Framework. Datasource - PostgreSQL View App Input. Input Data Validation.",
+          "sections": [
+            {
+              "title": "Table",
+              "url": "/learning-and-resources/sample-apps#table"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/appsmith-framework/widget-actions/reset-widget",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "prepared statements",
+      "count": 17,
+      "ms": 7.900000035762787,
+      "hits": [
+        {
+          "title": "Prepared Statements",
+          "url": "/connect-data/concepts/how-to-use-prepared-statements",
+          "excerpt": "<mark>Prepared</mark> <mark>Statements.</mark> This page explains <mark>prepared</mark> <mark>statements,</mark> why they're used in your SQL database queries, and the situations where you may need to turn them off. Overview. A <mark>prepared</mark> <mark>statement</mark>",
+          "sections": [
+            {
+              "title": "Prepared Statements",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements"
+            },
+            {
+              "title": "Overview",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#overview"
+            },
+            {
+              "title": "Prepared statements workflow",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#prepared-statements-workflow"
+            },
+            {
+              "title": "Security",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#security"
+            },
+            {
+              "title": "Limitations",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#limitations"
+            },
+            {
+              "title": "Dynamic table name",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#dynamic-table-name"
+            },
+            {
+              "title": "Dynamic queries",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#dynamic-queries"
+            },
+            {
+              "title": "Dynamic clauses",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#dynamic-clauses"
+            },
+            {
+              "title": "Dynamic WHERE clauses",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#dynamic-where-clauses"
+            },
+            {
+              "title": "Dynamic array with IN clause",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#dynamic-array-with-in-clause"
+            },
+            {
+              "title": "Commented bindings",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#commented-bindings"
+            },
+            {
+              "title": "Summary",
+              "url": "/connect-data/concepts/how-to-use-prepared-statements#summary"
+            }
+          ]
+        },
+        {
+          "title": "Executing SQL Queries",
+          "url": "/connect-data/concepts/dynamic-binding-in-queries",
+          "excerpt": "executed. <mark>Prepared</mark> <mark>statements</mark> - On vs Off. By default, <mark>prepared</mark> <mark>statement</mark> bindings in Appsmith are turned on. This means that your mustache bindings will be used to create <mark>prepared</mark> <mark>statements</mark>",
+          "sections": [
+            {
+              "title": "Executing SQL Queries",
+              "url": "/connect-data/concepts/dynamic-binding-in-queries"
+            },
+            {
+              "title": "Mustache bindings with prepared statements",
+              "url": "/connect-data/concepts/dynamic-binding-in-queries#mustache-bindings-with-prepared-statements"
+            },
+            {
+              "title": "Prepared statements - On vs Off",
+              "url": "/connect-data/concepts/dynamic-binding-in-queries#prepared-statements---on-vs-off"
+            },
+            {
+              "title": "Invoking stored procedures",
+              "url": "/connect-data/concepts/dynamic-binding-in-queries#invoking-stored-procedures"
+            },
+            {
+              "title": "Conclusion",
+              "url": "/connect-data/concepts/dynamic-binding-in-queries#conclusion"
+            }
+          ]
+        },
+        {
+          "title": "Fetch and Filter data in SQL",
+          "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql",
+          "excerpt": "<mark>prepared</mark> <mark>statements</mark> disabled SELECT * FROM users WHERE {{ Input1.text ? \"name = '\" + Input1.text + \"'\" : \"1=1\" }} Turn Off the <mark>Prepared</mark> <mark>Statements.</mark> Learn more about <mark>Prepared</mark>",
+          "sections": [
+            {
+              "title": "Prerequisites",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#prerequisites"
+            },
+            {
+              "title": "Using WHERE Clause",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-where-clause"
+            },
+            {
+              "title": "Using conditional operators",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-conditional-operators"
+            },
+            {
+              "title": "Using LIKE or ILIKE operator",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-like-or-ilike-operator"
+            },
+            {
+              "title": "Using IN clause",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-in-clause"
+            },
+            {
+              "title": "Using ANY clause",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-any-clause"
+            }
+          ]
+        },
+        {
+          "title": "Insert and Update data in SQL",
+          "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql",
+          "excerpt": "using CASE <mark>statements.</mark> It only applies updates to rows with matching id values. Turn off <mark>prepared</mark> <mark>statements</mark> in the query editor for this configuration. For more details, see <mark>Prepared</mark> <mark>Statements.</mark>",
+          "sections": [
+            {
+              "title": "Insert single row",
+              "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql#insert-single-row"
+            },
+            {
+              "title": "Insert multiple rows",
+              "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql#insert-multiple-rows"
+            },
+            {
+              "title": "Update multiple rows",
+              "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql#update-multiple-rows"
+            }
+          ]
+        },
+        {
+          "title": "Query Settings",
+          "url": "/connect-data/reference/query-settings",
+          "excerpt": "setting is only available for API queries. Use <mark>Prepared</mark> <mark>Statements.</mark> When enabled, Appsmith constructs and executes SQL queries using pre-compiled and parameterized <mark>statements.</mark> This improves both performance and security by",
+          "sections": [
+            {
+              "title": "Use Prepared Statements",
+              "url": "/connect-data/reference/query-settings#use-prepared-statements"
+            }
+          ]
+        }
+      ],
+      "expected": "/connect-data/concepts/how-to-use-prepared-statements",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "server side pagination",
+      "count": 30,
+      "ms": 9.800000011920929,
+      "hits": [
+        {
+          "title": "Setup Server-Side Pagination on Table",
+          "url": "/build-apps/how-to-guides/Server-side-pagination-in-table",
+          "excerpt": "Setup <mark>Server-Side</mark> <mark>Pagination</mark> on Table. This page shows you how to set up <mark>server-side</mark> <mark>pagination</mark> on a Table widget, which allows you to manage and display large datasets within your",
+          "sections": [
+            {
+              "title": "Setup Server-Side Pagination on Table",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-query"
+            },
+            {
+              "title": "Configure Table widget",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-table-widget"
+            }
+          ]
+        },
+        {
+          "title": "Setup Server-side Pagination on List",
+          "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List",
+          "excerpt": "Setup <mark>Server-side</mark> <mark>Pagination</mark> on List. This page shows you how to set up <mark>server-side</mark> <mark>pagination</mark> on the List widget, which allows you to manage and display large datasets within your",
+          "sections": [
+            {
+              "title": "Setup Server-side Pagination on List",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List#configure-query"
+            },
+            {
+              "title": "Configure List widget",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List#configure-list-widget"
+            }
+          ]
+        },
+        {
+          "title": "Table",
+          "url": "/reference/widgets/table",
+          "excerpt": "and access. <mark>Pagination.</mark> Show <mark>pagination</mark> boolean. Determines whether the <mark>pagination</mark> feature is displayed in the table header, allowing users to navigate through different pages of the table. <mark>Server</mark> <mark>side</mark> <mark>pagination</mark>",
+          "sections": [
+            {
+              "title": "Table",
+              "url": "/reference/widgets/table"
+            },
+            {
+              "title": "Table data array<object>",
+              "url": "/reference/widgets/table#table-data-arrayobject"
+            },
+            {
+              "title": "Pagination",
+              "url": "/reference/widgets/table#pagination"
+            },
+            {
+              "title": "Show pagination boolean",
+              "url": "/reference/widgets/table#show-pagination-boolean"
+            },
+            {
+              "title": "Server side pagination boolean",
+              "url": "/reference/widgets/table#server-side-pagination-boolean"
+            },
+            {
+              "title": "Total Records number",
+              "url": "/reference/widgets/table#total-records-number"
+            },
+            {
+              "title": "Infinite scroll boolean",
+              "url": "/reference/widgets/table#infinite-scroll-boolean"
+            },
+            {
+              "title": "onPageChange",
+              "url": "/reference/widgets/table#onpagechange"
+            },
+            {
+              "title": "Client side search boolean",
+              "url": "/reference/widgets/table#client-side-search-boolean"
+            },
+            {
+              "title": "onSearchTextChanged",
+              "url": "/reference/widgets/table#onsearchtextchanged"
+            },
+            {
+              "title": "pageNo number",
+              "url": "/reference/widgets/table#pageno-number"
+            },
+            {
+              "title": "pageOffset number",
+              "url": "/reference/widgets/table#pageoffset-number"
+            },
+            {
+              "title": "totalRecordsCount number",
+              "url": "/reference/widgets/table#totalrecordscount-number"
+            },
+            {
+              "title": "See also",
+              "url": "/reference/widgets/table#see-also"
+            }
+          ]
+        },
+        {
+          "title": "Fetch and Filter Data from Google Sheets",
+          "url": "/connect-data/how-to-guides/filter-data-google-sheet",
+          "excerpt": "mustache syntax, use the following format where Cell_range_row and Cell_range_col are two Text widgets: {{Cell_range_row.text}}:{{Cell_range_col.text}} <mark>Server-side</mark> <mark>Pagination.</mark> You can configure the page size in the response when the Filter Format",
+          "sections": [
+            {
+              "title": "Server-side Pagination",
+              "url": "/connect-data/how-to-guides/filter-data-google-sheet#server-side-pagination"
+            }
+          ]
+        },
+        {
+          "title": "Fetch and Filter data in SQL",
+          "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql",
+          "excerpt": "of {{”true”}}. <mark>Server-side</mark> <mark>pagination.</mark> <mark>Server-side</mark> <mark>pagination</mark> allows you to manage and display large datasets within your application. It involves fetching and displaying only a portion of data from the <mark>server</mark>",
+          "sections": [
+            {
+              "title": "Using WHERE Clause",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#using-where-clause"
+            },
+            {
+              "title": "Server-side pagination",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#server-side-pagination"
+            }
+          ]
+        }
+      ],
+      "expected": "/build-apps/how-to-guides/Server-side-pagination-in-table",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "PostgreSQL",
+      "count": 59,
+      "ms": 4.400000035762787,
+      "hits": [
+        {
+          "title": "PostgreSQL",
+          "url": "/connect-data/reference/querying-postgres",
+          "excerpt": "<mark>PostgreSQL.</mark> This page gives information to connect Appsmith to a <mark>PostgreSQL</mark> database and to read and write data in your applications. Connect <mark>PostgreSQL.</mark> caution. If you are a cloud user,",
+          "sections": [
+            {
+              "title": "PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres"
+            },
+            {
+              "title": "Connect PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres#connect-postgresql"
+            },
+            {
+              "title": "Connection parameters",
+              "url": "/connect-data/reference/querying-postgres#connection-parameters"
+            },
+            {
+              "title": "Host Address",
+              "url": "/connect-data/reference/querying-postgres#host-address"
+            },
+            {
+              "title": "Username",
+              "url": "/connect-data/reference/querying-postgres#username"
+            },
+            {
+              "title": "Query PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres#query-postgresql"
+            },
+            {
+              "title": "Row Level Security (RLS)",
+              "url": "/connect-data/reference/querying-postgres#row-level-security-rls"
+            }
+          ]
+        },
+        {
+          "title": "Configure PostgreSQL for SAML SSO (Azure)",
+          "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso",
+          "excerpt": "Configure <mark>PostgreSQL</mark> for SAML SSO (Azure). Business. This page shows how to configure Appsmith on Azure Container Instance for using Security Assertion Markup Language (SAML) Single Sign-On (SSO). Prerequisites. Azure",
+          "sections": [
+            {
+              "title": "Configure PostgreSQL for SAML SSO (Azure)",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#prerequisites"
+            },
+            {
+              "title": "Set up PostgreSQL in Azure",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#set-up-postgresql-in-azure"
+            },
+            {
+              "title": "Set up Firewall Rules",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#set-up-firewall-rules"
+            },
+            {
+              "title": "Connect to PostgreSQL Database",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#connect-to-postgresql-database"
+            },
+            {
+              "title": "Create Keycloak Database and User",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#create-keycloak-database-and-user"
+            },
+            {
+              "title": "Connect PostgreSQL to Appsmith",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#connect-postgresql-to-appsmith"
+            }
+          ]
+        },
+        {
+          "title": "Configure External PostgreSQL (AWS RDS)",
+          "url": "/getting-started/setup/instance-configuration/external-postgresql-rds",
+          "excerpt": "External <mark>PostgreSQL</mark> (AWS RDS). Appsmith relies on MongoDB, <mark>PostgreSQL</mark> and Redis. It uses <mark>PostgreSQL</mark> for SSO and workflows. By default in a single server deployment, it runs an embedded instance",
+          "sections": [
+            {
+              "title": "Configure External PostgreSQL (AWS RDS)",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#prerequisites"
+            },
+            {
+              "title": "Create PostgreSQL instance on AWS RDS",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#create-postgresql-instance-on-aws-rds"
+            },
+            {
+              "title": "Connect Appsmith to external PostgreSQL",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#connect-appsmith-to-external-postgresql"
+            },
+            {
+              "title": "Troubleshooting",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#troubleshooting"
+            }
+          ]
+        },
+        {
+          "title": "Helm Chart",
+          "url": "/getting-started/setup/instance-configuration/helm-chart",
+          "excerpt": "data migration. See External Redis for configuration details. <mark>PostgreSQL.</mark> <mark>PostgreSQL</mark> is used by Keycloak for identity management. The chart bundles <mark>PostgreSQL</mark> by default <mark>(postgresql.enabled:</mark> true) and runs it in the",
+          "sections": [
+            {
+              "title": "Planning your deployment",
+              "url": "/getting-started/setup/instance-configuration/helm-chart#planning-your-deployment"
+            },
+            {
+              "title": "PostgreSQL",
+              "url": "/getting-started/setup/instance-configuration/helm-chart#postgresql"
+            }
+          ]
+        },
+        {
+          "title": "High Availability on Google Cloud Run",
+          "url": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic",
+          "excerpt": "of the Redis Instance. Configure <mark>PostgreSQL</mark> (optional). If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a <mark>PostgreSQL</mark> RDS instance for Keycloak.",
+          "sections": [
+            {
+              "title": "Configure PostgreSQL (optional)",
+              "url": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#configure-postgresql-optional"
+            },
+            {
+              "title": "Create PostgreSQL instance",
+              "url": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#create-postgresql-instance"
+            },
+            {
+              "title": "Create users",
+              "url": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#create-users"
+            },
+            {
+              "title": "Deploy new revision",
+              "url": "/getting-started/setup/installation-guides/google-cloud-run/manage-traffic#deploy-new-revision"
+            }
+          ]
+        }
+      ],
+      "expected": "/connect-data/reference/querying-postgres",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "Filepicker",
+      "count": 25,
+      "ms": 6.299999952316284,
+      "hits": [
+        {
+          "title": "Filepicker",
+          "url": "/reference/widgets/filepicker",
+          "excerpt": "<mark>Filepicker.</mark> This page provides information on using the <mark>Filepicker</mark> widget, which allows users to select and upload multiple files. Content properties. These properties are customizable options present in the property",
+          "sections": [
+            {
+              "title": "Filepicker",
+              "url": "/reference/widgets/filepicker"
+            },
+            {
+              "title": "Allowed file types\tarray<string>",
+              "url": "/reference/widgets/filepicker#allowed-file-typesarraystring"
+            },
+            {
+              "title": "Validation",
+              "url": "/reference/widgets/filepicker#validation"
+            },
+            {
+              "title": "Required boolean",
+              "url": "/reference/widgets/filepicker#required-boolean"
+            },
+            {
+              "title": "Reference properties",
+              "url": "/reference/widgets/filepicker#reference-properties"
+            },
+            {
+              "title": "files array",
+              "url": "/reference/widgets/filepicker#files-array"
+            },
+            {
+              "title": "isValid boolean",
+              "url": "/reference/widgets/filepicker#isvalid-boolean"
+            },
+            {
+              "title": "isDisabled boolean",
+              "url": "/reference/widgets/filepicker#isdisabled-boolean"
+            },
+            {
+              "title": "isVisible boolean",
+              "url": "/reference/widgets/filepicker#isvisible-boolean"
+            },
+            {
+              "title": "isDirty boolean",
+              "url": "/reference/widgets/filepicker#isdirty-boolean"
+            },
+            {
+              "title": "setVisibility(param: boolean): Promise",
+              "url": "/reference/widgets/filepicker#setvisibilityparam-boolean-promise"
+            },
+            {
+              "title": "setDisabled(param: boolean): Promise",
+              "url": "/reference/widgets/filepicker#setdisabledparam-boolean-promise"
+            },
+            {
+              "title": "See also",
+              "url": "/reference/widgets/filepicker#see-also"
+            }
+          ]
+        },
+        {
+          "title": "Upload Files using API",
+          "url": "/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests",
+          "excerpt": "shows you how to use the <mark>Filepicker</mark> widget to upload file data using API. Prerequisites. A <mark>Filepicker</mark> widget to upload files. Access to a cloud platform with API endpoints. Configure",
+          "sections": [
+            {
+              "title": "Upload Files using API",
+              "url": "/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests#prerequisites"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Send-Filepicker-Data-with-API-Requests#configure-query"
+            }
+          ]
+        },
+        {
+          "title": "Upload Files to S3",
+          "url": "/connect-data/how-to-guides/how-to-upload-to-s3",
+          "excerpt": "{ \"data\": \"{{userCamera.imageDataURL}}\" } Configure <mark>Filepicker</mark> widget. Follow these steps to configure the <mark>Filepicker</mark> widget to upload files: Configure the Allowed file types property of the <mark>Filepicker</mark> widget to allow",
+          "sections": [
+            {
+              "title": "Upload Files to S3",
+              "url": "/connect-data/how-to-guides/how-to-upload-to-s3"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/connect-data/how-to-guides/how-to-upload-to-s3#prerequisites"
+            },
+            {
+              "title": "Configure query",
+              "url": "/connect-data/how-to-guides/how-to-upload-to-s3#configure-query"
+            },
+            {
+              "title": "Configure Filepicker widget",
+              "url": "/connect-data/how-to-guides/how-to-upload-to-s3#configure-filepicker-widget"
+            }
+          ]
+        },
+        {
+          "title": "Google Drive",
+          "url": "/connect-data/reference/google-drive",
+          "excerpt": "example <mark>FilePicker1.files[0].type.</mark> dataType: Always \"FILE\". Using <mark>FilePicker</mark> with Drive Save File. Set the <mark>FilePicker</mark> to use base64 data format. Add a helper function to a JSObject to convert base64 <mark>FilePicker</mark>",
+          "sections": [
+            {
+              "title": "File object",
+              "url": "/connect-data/reference/google-drive#file-object"
+            },
+            {
+              "title": "Using FilePicker with Drive Save File",
+              "url": "/connect-data/reference/google-drive#using-filepicker-with-drive-save-file"
+            }
+          ]
+        },
+        {
+          "title": "Insert and Update data in SQL",
+          "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql",
+          "excerpt": "instance, uploading data from a CSV or Excel file, you can use the <mark>FilePicker</mark> widget. In the <mark>Filepicker</mark> widget, select Array of Objects from the Data Format property. Configure the",
+          "sections": [
+            {
+              "title": "Insert single row",
+              "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql#insert-single-row"
+            },
+            {
+              "title": "Insert multiple rows",
+              "url": "/connect-data/how-to-guides/insert-and-update-data-in-sql#insert-multiple-rows"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/widgets/filepicker",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "Table",
+      "count": 119,
+      "ms": 13.300000011920929,
+      "hits": [
+        {
+          "title": "Table",
+          "url": "/reference/widgets/table",
+          "excerpt": "<mark>Table.</mark> This page provides information on using the <mark>Table</mark> widget to display data in tabular format, trigger actions based on user interaction, and work with paginated data sets of any",
+          "sections": [
+            {
+              "title": "Table",
+              "url": "/reference/widgets/table"
+            },
+            {
+              "title": "Table data array<object>",
+              "url": "/reference/widgets/table#table-data-arrayobject"
+            },
+            {
+              "title": "Columns array",
+              "url": "/reference/widgets/table#columns-array"
+            },
+            {
+              "title": "Editable boolean",
+              "url": "/reference/widgets/table#editable-boolean"
+            },
+            {
+              "title": "Update mode string",
+              "url": "/reference/widgets/table#update-mode-string"
+            },
+            {
+              "title": "Show pagination boolean",
+              "url": "/reference/widgets/table#show-pagination-boolean"
+            },
+            {
+              "title": "Total Records number",
+              "url": "/reference/widgets/table#total-records-number"
+            },
+            {
+              "title": "Infinite scroll boolean",
+              "url": "/reference/widgets/table#infinite-scroll-boolean"
+            },
+            {
+              "title": "onPageChange",
+              "url": "/reference/widgets/table#onpagechange"
+            },
+            {
+              "title": "onPageSizeChange",
+              "url": "/reference/widgets/table#onpagesizechange"
+            },
+            {
+              "title": "Allow searching boolean",
+              "url": "/reference/widgets/table#allow-searching-boolean"
+            },
+            {
+              "title": "Client side search boolean",
+              "url": "/reference/widgets/table#client-side-search-boolean"
+            },
+            {
+              "title": "Default search text string",
+              "url": "/reference/widgets/table#default-search-text-string"
+            },
+            {
+              "title": "onSearchTextChanged",
+              "url": "/reference/widgets/table#onsearchtextchanged"
+            },
+            {
+              "title": "Allow filtering boolean",
+              "url": "/reference/widgets/table#allow-filtering-boolean"
+            },
+            {
+              "title": "Default selected row number/array",
+              "url": "/reference/widgets/table#default-selected-row-numberarray"
+            },
+            {
+              "title": "Enable multi-row selection boolean",
+              "url": "/reference/widgets/table#enable-multi-row-selection-boolean"
+            },
+            {
+              "title": "onRowSelected",
+              "url": "/reference/widgets/table#onrowselected"
+            },
+            {
+              "title": "Column sorting boolean",
+              "url": "/reference/widgets/table#column-sorting-boolean"
+            },
+            {
+              "title": "onSort",
+              "url": "/reference/widgets/table#onsort"
+            },
+            {
+              "title": "Allow adding a row boolean",
+              "url": "/reference/widgets/table#allow-adding-a-row-boolean"
+            },
+            {
+              "title": "onSave",
+              "url": "/reference/widgets/table#onsave"
+            },
+            {
+              "title": "onDiscard",
+              "url": "/reference/widgets/table#ondiscard"
+            },
+            {
+              "title": "Default values string",
+              "url": "/reference/widgets/table#default-values-string"
+            },
+            {
+              "title": "Allow download boolean",
+              "url": "/reference/widgets/table#allow-download-boolean"
+            },
+            {
+              "title": "Default Row Height string",
+              "url": "/reference/widgets/table#default-row-height-string"
+            },
+            {
+              "title": "Cell Background Color string",
+              "url": "/reference/widgets/table#cell-background-color-string"
+            },
+            {
+              "title": "Text Color string",
+              "url": "/reference/widgets/table#text-color-string"
+            },
+            {
+              "title": "Cell Borders string",
+              "url": "/reference/widgets/table#cell-borders-string"
+            },
+            {
+              "title": "Reference properties",
+              "url": "/reference/widgets/table#reference-properties"
+            },
+            {
+              "title": "selectedRow object",
+              "url": "/reference/widgets/table#selectedrow-object"
+            },
+            {
+              "title": "selectedRows array<object>",
+              "url": "/reference/widgets/table#selectedrows-arrayobject"
+            },
+            {
+              "title": "triggeredRow object",
+              "url": "/reference/widgets/table#triggeredrow-object"
+            },
+            {
+              "title": "isVisible boolean",
+              "url": "/reference/widgets/table#isvisible-boolean"
+            },
+            {
+              "title": "sortOrder object",
+              "url": "/reference/widgets/table#sortorder-object"
+            },
+            {
+              "title": "tableData array<object>",
+              "url": "/reference/widgets/table#tabledata-arrayobject"
+            },
+            {
+              "title": "selectedRowIndex number",
+              "url": "/reference/widgets/table#selectedrowindex-number"
+            },
+            {
+              "title": "selectedRowIndices array",
+              "url": "/reference/widgets/table#selectedrowindices-array"
+            },
+            {
+              "title": "filteredTableData array<object>",
+              "url": "/reference/widgets/table#filteredtabledata-arrayobject"
+            },
+            {
+              "title": "pageNo number",
+              "url": "/reference/widgets/table#pageno-number"
+            },
+            {
+              "title": "pageOffset number",
+              "url": "/reference/widgets/table#pageoffset-number"
+            },
+            {
+              "title": "pageSize number",
+              "url": "/reference/widgets/table#pagesize-number"
+            },
+            {
+              "title": "searchText string",
+              "url": "/reference/widgets/table#searchtext-string"
+            },
+            {
+              "title": "isAddRowInProgress boolean",
+              "url": "/reference/widgets/table#isaddrowinprogress-boolean"
+            },
+            {
+              "title": "newRow object",
+              "url": "/reference/widgets/table#newrow-object"
+            },
+            {
+              "title": "nextPageVisited boolean",
+              "url": "/reference/widgets/table#nextpagevisited-boolean"
+            },
+            {
+              "title": "previousPageVisited boolean",
+              "url": "/reference/widgets/table#previouspagevisited-boolean"
+            },
+            {
+              "title": "tableHeaders array<object>",
+              "url": "/reference/widgets/table#tableheaders-arrayobject"
+            },
+            {
+              "title": "totalRecordsCount number",
+              "url": "/reference/widgets/table#totalrecordscount-number"
+            },
+            {
+              "title": "updatedRow object",
+              "url": "/reference/widgets/table#updatedrow-object"
+            },
+            {
+              "title": "updatedRows array<object>",
+              "url": "/reference/widgets/table#updatedrows-arrayobject"
+            },
+            {
+              "title": "triggeredRowIndex number",
+              "url": "/reference/widgets/table#triggeredrowindex-number"
+            },
+            {
+              "title": "updatedRowIndices array",
+              "url": "/reference/widgets/table#updatedrowindices-array"
+            },
+            {
+              "title": "setVisibility (param: boolean): Promise",
+              "url": "/reference/widgets/table#setvisibility-param-boolean-promise"
+            },
+            {
+              "title": "setData (param: array< object >): Promise",
+              "url": "/reference/widgets/table#setdata-param-array-object--promise"
+            },
+            {
+              "title": "setSelectedRowIndex (param: number): Promise",
+              "url": "/reference/widgets/table#setselectedrowindex-param-number-promise"
+            },
+            {
+              "title": "setSelectedRowIndices (param: [?]): Promise",
+              "url": "/reference/widgets/table#setselectedrowindices-param--promise"
+            },
+            {
+              "title": "See also",
+              "url": "/reference/widgets/table#see-also"
+            }
+          ]
+        },
+        {
+          "title": "Refresh Table Data After Updates",
+          "url": "/build-apps/how-to-guides/refresh-table-data",
+          "excerpt": "Refresh <mark>Table</mark> Data After Updates. This page shows you how to refresh <mark>table</mark> data after updates which allows you to see changes in real time. When data is updated in",
+          "sections": [
+            {
+              "title": "Refresh Table Data After Updates",
+              "url": "/build-apps/how-to-guides/refresh-table-data"
+            }
+          ]
+        },
+        {
+          "title": "Setup Server-Side Pagination on Table",
+          "url": "/build-apps/how-to-guides/Server-side-pagination-in-table",
+          "excerpt": "Pagination on <mark>Table.</mark> This page shows you how to set up server-side pagination on a <mark>Table</mark> widget, which allows you to manage and display large datasets within your application. It",
+          "sections": [
+            {
+              "title": "Setup Server-Side Pagination on Table",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-query"
+            },
+            {
+              "title": "Configure Table widget",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-table-widget"
+            },
+            {
+              "title": "Configure total records",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-total-records"
+            }
+          ]
+        },
+        {
+          "title": "Display and Lookup Data in Table",
+          "url": "/build-apps/how-to-guides/display-search-and-filter-table-data",
+          "excerpt": "Lookup Data in <mark>Table.</mark> This page shows you how to display and lookup data in a <mark>Table</mark> widget. Prerequisites. A datasource containing the data to display and filter. See Connect",
+          "sections": [
+            {
+              "title": "Display and Lookup Data in Table",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data"
+            },
+            {
+              "title": "Display data",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#display-data"
+            },
+            {
+              "title": "One-click binding",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#one-click-binding"
+            },
+            {
+              "title": "Mustache binding",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#mustache-binding"
+            },
+            {
+              "title": "Customize and hide columns",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#customize-and-hide-columns"
+            },
+            {
+              "title": "Format table cells",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#format-table-cells"
+            },
+            {
+              "title": "Search and filter table data",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#search-and-filter-table-data"
+            },
+            {
+              "title": "See also",
+              "url": "/build-apps/how-to-guides/display-search-and-filter-table-data#see-also"
+            }
+          ]
+        },
+        {
+          "title": "Edit Table Data Inline",
+          "url": "/reference/widgets/table/inline-editing",
+          "excerpt": "Edit <mark>Table</mark> Data Inline. This page shows you how to add and edit rows on <mark>Table</mark> through inline editing. Prerequisites. A <mark>Table</mark> widget connected to a query that holds the",
+          "sections": [
+            {
+              "title": "Edit Table Data Inline",
+              "url": "/reference/widgets/table/inline-editing"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/reference/widgets/table/inline-editing#prerequisites"
+            },
+            {
+              "title": "Update single row",
+              "url": "/reference/widgets/table/inline-editing#update-single-row"
+            },
+            {
+              "title": "Update multiple rows",
+              "url": "/reference/widgets/table/inline-editing#update-multiple-rows"
+            },
+            {
+              "title": "Delete row",
+              "url": "/reference/widgets/table/inline-editing#delete-row"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/widgets/table",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "Query.run",
+      "count": 1,
+      "ms": 1.600000023841858,
+      "hits": [
+        {
+          "title": "query",
+          "url": "/reference/appsmith-framework/query-object",
+          "excerpt": "the following methods that enable you to run a query or clear a query response. <mark>query.run().</mark> When you call the run() function of a query, it executes the query. Signature.",
+          "sections": [
+            {
+              "title": "query.run()",
+              "url": "/reference/appsmith-framework/query-object#queryrun"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/appsmith-framework/query-object",
+      "category": "standard",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "storeVaule",
+      "count": 99,
+      "ms": 2.399999976158142,
+      "hits": [
+        {
+          "title": "clearStore()",
+          "url": "/reference/appsmith-framework/widget-actions/clear-store",
+          "excerpt": "<mark>clearStore().</mark> This page provides information about the <mark>clearStore()</mark> function signature and parameters, which clears all the data that was <mark>stored</mark> in the local storage of the browser using the <mark>storeValue()</mark>",
+          "sections": [
+            {
+              "title": "clearStore()",
+              "url": "/reference/appsmith-framework/widget-actions/clear-store"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/clear-store#signature"
+            },
+            {
+              "title": "Usage",
+              "url": "/reference/appsmith-framework/widget-actions/clear-store#usage"
+            }
+          ]
+        },
+        {
+          "title": "storeValue()",
+          "url": "/reference/appsmith-framework/widget-actions/store-value",
+          "excerpt": "} Access <mark>stored</mark> value. You can access the values from the <mark>store</mark> by referencing the key inside the <mark>store</mark> object. Signature. {{ <mark>appsmith.store.KEY_NAME</mark> }} Example: If you have <mark>stored</mark> a",
+          "sections": [
+            {
+              "title": "storeValue()",
+              "url": "/reference/appsmith-framework/widget-actions/store-value"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#signature"
+            },
+            {
+              "title": "value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#value"
+            },
+            {
+              "title": "persist",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#persist"
+            },
+            {
+              "title": "Access stored value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#access-stored-value"
+            },
+            {
+              "title": "Signature",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#signature-1"
+            },
+            {
+              "title": "Modify value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#modify-value"
+            },
+            {
+              "title": "Store multiple values",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#store-multiple-values"
+            },
+            {
+              "title": "Storage states",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#storage-states"
+            },
+            {
+              "title": "Persistent state",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#persistent-state"
+            },
+            {
+              "title": "Session state",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#session-state"
+            },
+            {
+              "title": "Asynchronous behavior of store value",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#asynchronous-behavior-of-store-value"
+            },
+            {
+              "title": "See also",
+              "url": "/reference/appsmith-framework/widget-actions/store-value#see-also"
+            }
+          ]
+        },
+        {
+          "title": "Stored Procedures",
+          "url": "/connect-data/concepts/returning-data-from-a-stored-procedure",
+          "excerpt": "<mark>Stored</mark> Procedures. This page explains SQL <mark>stored</mark> procedures and the modified way that they should be handled in Appsmith. Overview. <mark>Stored</mark> procedures are SQL statements that can be defined and",
+          "sections": [
+            {
+              "title": "Stored Procedures",
+              "url": "/connect-data/concepts/returning-data-from-a-stored-procedure"
+            },
+            {
+              "title": "Overview",
+              "url": "/connect-data/concepts/returning-data-from-a-stored-procedure#overview"
+            },
+            {
+              "title": "Standard syntax",
+              "url": "/connect-data/concepts/returning-data-from-a-stored-procedure#standard-syntax"
+            },
+            {
+              "title": "Modified syntax",
+              "url": "/connect-data/concepts/returning-data-from-a-stored-procedure#modified-syntax"
+            }
+          ]
+        },
+        {
+          "title": "Best Practices",
+          "url": "/write-code/best-practices",
+          "excerpt": "this example, vars is the name of the JS Object. {{vars.name = \"Michael\"}} Use Appsmith <mark>store.</mark> With mutable JS, each variable created in a JS file is only scoped to",
+          "sections": [
+            {
+              "title": "Use mutable JS variables",
+              "url": "/write-code/best-practices#use-mutable-js-variables"
+            },
+            {
+              "title": "Use Appsmith store",
+              "url": "/write-code/best-practices#use-appsmith-store"
+            },
+            {
+              "title": "Avoid nested operations within widgets",
+              "url": "/write-code/best-practices#avoid-nested-operations-within-widgets"
+            }
+          ]
+        },
+        {
+          "title": "Share Data Across Pages",
+          "url": "/advanced-concepts/sharing-data-across-pages",
+          "excerpt": "user's phone number return { name: <mark>appsmith.store.userName,</mark> phone: <mark>appsmith.store.userPhone</mark> }; } } You can also use the <mark>Store</mark> value action to <mark>store</mark> values. When using <mark>storeValue(),</mark> make sure you provide",
+          "sections": [
+            {
+              "title": "Share Data Across Pages",
+              "url": "/advanced-concepts/sharing-data-across-pages"
+            },
+            {
+              "title": "Using local storage",
+              "url": "/advanced-concepts/sharing-data-across-pages#using-local-storage"
+            }
+          ]
+        }
+      ],
+      "expected": "/reference/appsmith-framework/widget-actions/store-value",
+      "category": "typo",
+      "rank": 2,
+      "pass": true
+    },
+    {
+      "query": "postgress",
+      "count": 61,
+      "ms": 3.400000035762787,
+      "hits": [
+        {
+          "title": "PostgreSQL",
+          "url": "/connect-data/reference/querying-postgres",
+          "excerpt": "<mark>PostgreSQL.</mark> This page gives information to connect Appsmith to a <mark>PostgreSQL</mark> database and to read and write data in your applications. Connect <mark>PostgreSQL.</mark> caution. If you are a cloud user,",
+          "sections": [
+            {
+              "title": "PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres"
+            },
+            {
+              "title": "Connect PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres#connect-postgresql"
+            },
+            {
+              "title": "Connection parameters",
+              "url": "/connect-data/reference/querying-postgres#connection-parameters"
+            },
+            {
+              "title": "Host Address",
+              "url": "/connect-data/reference/querying-postgres#host-address"
+            },
+            {
+              "title": "Username",
+              "url": "/connect-data/reference/querying-postgres#username"
+            },
+            {
+              "title": "Query PostgreSQL",
+              "url": "/connect-data/reference/querying-postgres#query-postgresql"
+            },
+            {
+              "title": "Row Level Security (RLS)",
+              "url": "/connect-data/reference/querying-postgres#row-level-security-rls"
+            }
+          ]
+        },
+        {
+          "title": "Configure PostgreSQL for SAML SSO (Azure)",
+          "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso",
+          "excerpt": "Configure <mark>PostgreSQL</mark> for SAML SSO (Azure). Business. This page shows how to configure Appsmith on Azure Container Instance for using Security Assertion Markup Language (SAML) Single Sign-On (SSO). Prerequisites. Azure",
+          "sections": [
+            {
+              "title": "Configure PostgreSQL for SAML SSO (Azure)",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#prerequisites"
+            },
+            {
+              "title": "Set up PostgreSQL in Azure",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#set-up-postgresql-in-azure"
+            },
+            {
+              "title": "Set up Firewall Rules",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#set-up-firewall-rules"
+            },
+            {
+              "title": "Connect to PostgreSQL Database",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#connect-to-postgresql-database"
+            },
+            {
+              "title": "Create Keycloak Database and User",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#create-keycloak-database-and-user"
+            },
+            {
+              "title": "Connect PostgreSQL to Appsmith",
+              "url": "/getting-started/setup/installation-guides/azure/setup-to-integrate-sso#connect-postgresql-to-appsmith"
+            }
+          ]
+        },
+        {
+          "title": "Configure External PostgreSQL (AWS RDS)",
+          "url": "/getting-started/setup/instance-configuration/external-postgresql-rds",
+          "excerpt": "External <mark>PostgreSQL</mark> (AWS RDS). Appsmith relies on MongoDB, <mark>PostgreSQL</mark> and Redis. It uses <mark>PostgreSQL</mark> for SSO and workflows. By default in a single server deployment, it runs an embedded instance",
+          "sections": [
+            {
+              "title": "Configure External PostgreSQL (AWS RDS)",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds"
+            },
+            {
+              "title": "Prerequisites",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#prerequisites"
+            },
+            {
+              "title": "Create PostgreSQL instance on AWS RDS",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#create-postgresql-instance-on-aws-rds"
+            },
+            {
+              "title": "Connect Appsmith to external PostgreSQL",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#connect-appsmith-to-external-postgresql"
+            },
+            {
+              "title": "Troubleshooting",
+              "url": "/getting-started/setup/instance-configuration/external-postgresql-rds#troubleshooting"
+            }
+          ]
+        },
+        {
+          "title": "Connect to Local Datasource",
+          "url": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith",
+          "excerpt": "and connect to your <mark>Postgres</mark> instance. In Appsmith, create a <mark>Postgres</mark> datasource. For the Host Address field, enter the name of the Docker container that's running your <mark>Postgres</mark> instance. For",
+          "sections": [
+            {
+              "title": "Datasource on localhost",
+              "url": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith#datasource-on-localhost"
+            },
+            {
+              "title": "Set up services",
+              "url": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith#set-up-services"
+            },
+            {
+              "title": "Connect to the database from Appsmith",
+              "url": "/connect-data/how-to-guides/how-to-work-with-local-apis-on-appsmith#connect-to-the-database-from-appsmith"
+            }
+          ]
+        },
+        {
+          "title": "High Availability on Fargate",
+          "url": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability",
+          "excerpt": "in the next steps. Configure <mark>PostgreSQL</mark> (optional). If you want to integrate Single Sign-on provider using SAML on Appsmith, you'll have to set up a <mark>PostgreSQL</mark> RDS instance for Keycloak.",
+          "sections": [
+            {
+              "title": "Set up external databases",
+              "url": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#set-up-external-databases"
+            },
+            {
+              "title": "Configure PostgreSQL (optional)",
+              "url": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#configure-postgresql-optional"
+            },
+            {
+              "title": "Create PostgreSQL RDS instance",
+              "url": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#create-postgresql-rds-instance"
+            },
+            {
+              "title": "Update task definition",
+              "url": "/getting-started/setup/installation-guides/aws-ecs/set-up-high-availability#update-task-definition"
+            }
+          ]
+        }
+      ],
+      "expected": "/connect-data/reference/querying-postgres",
+      "category": "typo",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "pagintion",
+      "count": 45,
+      "ms": 2.199999988079071,
+      "hits": [
+        {
+          "title": "Setup Server-Side Pagination on Table",
+          "url": "/build-apps/how-to-guides/Server-side-pagination-in-table",
+          "excerpt": "Server-Side <mark>Pagination</mark> on Table. This page shows you how to set up server-side <mark>pagination</mark> on a Table widget, which allows you to manage and display large datasets within your application.",
+          "sections": [
+            {
+              "title": "Setup Server-Side Pagination on Table",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-query"
+            },
+            {
+              "title": "Configure Table widget",
+              "url": "/build-apps/how-to-guides/Server-side-pagination-in-table#configure-table-widget"
+            }
+          ]
+        },
+        {
+          "title": "Setup Server-side Pagination on List",
+          "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List",
+          "excerpt": "Server-side <mark>Pagination</mark> on List. This page shows you how to set up server-side <mark>pagination</mark> on the List widget, which allows you to manage and display large datasets within your application.",
+          "sections": [
+            {
+              "title": "Setup Server-side Pagination on List",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List"
+            },
+            {
+              "title": "Configure query",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List#configure-query"
+            },
+            {
+              "title": "Configure List widget",
+              "url": "/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List#configure-list-widget"
+            }
+          ]
+        },
+        {
+          "title": "Fetch and Filter Data from Google Sheets",
+          "url": "/connect-data/how-to-guides/filter-data-google-sheet",
+          "excerpt": "syntax, use the following format where Cell_range_row and Cell_range_col are two Text widgets: {{Cell_range_row.text}}:{{Cell_range_col.text}} Server-side <mark>Pagination.</mark> You can configure the page size in the response when the Filter Format is",
+          "sections": [
+            {
+              "title": "Server-side Pagination",
+              "url": "/connect-data/how-to-guides/filter-data-google-sheet#server-side-pagination"
+            }
+          ]
+        },
+        {
+          "title": "Query Errors",
+          "url": "/help-and-support/troubleshooting-guide/query-errors",
+          "excerpt": "Prepared Statements. GraphQL <mark>pagination</mark> variable not recognized. No such variable exists in a query. Cause. When configuring cursor-based <mark>pagination</mark> for a GraphQL query, Appsmith may not detect a <mark>pagination</mark> variable",
+          "sections": [
+            {
+              "title": "Solution",
+              "url": "/help-and-support/troubleshooting-guide/query-errors#solution"
+            },
+            {
+              "title": "Solution",
+              "url": "/help-and-support/troubleshooting-guide/query-errors#solution-2"
+            },
+            {
+              "title": "GraphQL pagination variable not recognized",
+              "url": "/help-and-support/troubleshooting-guide/query-errors#graphql-pagination-variable-not-recognized"
+            },
+            {
+              "title": "Cause",
+              "url": "/help-and-support/troubleshooting-guide/query-errors#cause-3"
+            },
+            {
+              "title": "Solution",
+              "url": "/help-and-support/troubleshooting-guide/query-errors#solution-3"
+            }
+          ]
+        },
+        {
+          "title": "Fetch and Filter data in SQL",
+          "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql",
+          "excerpt": "true / false values should be without quotes, i.e., {{true}} instead of {{”true”}}. Server-side <mark>pagination.</mark> Server-side <mark>pagination</mark> allows you to manage and display large datasets within your application. It involves",
+          "sections": [
+            {
+              "title": "Server-side pagination",
+              "url": "/connect-data/how-to-guides/fetch-and-filter-data-in-sql#server-side-pagination"
+            }
+          ]
+        }
+      ],
+      "expected": "/build-apps/how-to-guides/Server-side-pagination-in-table",
+      "category": "typo",
+      "rank": 1,
+      "pass": true
+    },
+    {
+      "query": "qzxwvvnonexistent",
+      "count": 1,
+      "ms": 1.5,
+      "hits": [
+        {
+          "title": "Trigger Workflow with Appsmith App",
+          "url": "/workflows/how-to-guides/trigger-workflow-from-appsmith-app",
+          "excerpt": "where a unique workflowRunID is available that indicates the run has successfully started. { \"workflowRunId\": <mark>\"B5XGV5QZ\"</mark> } Now, you can trigger the workflow run whenever an event happens. For example,",
+          "sections": [
+            {
+              "title": "Connect Workflow with Appsmith App",
+              "url": "/workflows/how-to-guides/trigger-workflow-from-appsmith-app#connect-workflow-with-appsmith-app"
+            }
+          ]
+        }
+      ],
+      "expected": null,
+      "category": "no-results",
+      "rank": null,
+      "pass": false
+    }
+  ],
+  "resources": [
+    {
+      "url": "http://127.0.0.1:4175/client.js",
+      "transferSize": 23039,
+      "encodedBodySize": 22739,
+      "decodedBodySize": 64343
+    },
+    {
+      "url": "http://127.0.0.1:4175/pagefind/pagefind.js",
+      "transferSize": 13261,
+      "encodedBodySize": 12961,
+      "decodedBodySize": 45555
+    },
+    {
+      "url": "http://127.0.0.1:4175/pagefind/pagefind-worker.js",
+      "transferSize": 12316,
+      "encodedBodySize": 12016,
+      "decodedBodySize": 41255
+    }
+  ],
+  "requests": [
+    {
+      "url": "/pagefind/pagefind.js",
+      "encodedBytes": 12961,
+      "decodedBytes": 45555
+    },
+    {
+      "url": "/pagefind/pagefind-worker.js",
+      "encodedBytes": 12016,
+      "decodedBytes": 41255
+    },
+    {
+      "url": "/pagefind/pagefind-entry.json",
+      "encodedBytes": 159,
+      "decodedBytes": 173
+    },
+    {
+      "url": "/pagefind/pagefind.en_b991a30dda.pf_meta",
+      "encodedBytes": 3733,
+      "decodedBytes": 3710
+    },
+    {
+      "url": "/pagefind/wasm.en.pagefind",
+      "encodedBytes": 72783,
+      "decodedBytes": 72740
+    },
+    {
+      "url": "/pagefind/index/en_3f2a3f7.pf_index",
+      "encodedBytes": 31004,
+      "decodedBytes": 30976
+    },
+    {
+      "url": "/pagefind/fragment/en_3135872.pf_fragment",
+      "encodedBytes": 530,
+      "decodedBytes": 507
+    },
+    {
+      "url": "/pagefind/fragment/en_f84b7d1.pf_fragment",
+      "encodedBytes": 871,
+      "decodedBytes": 848
+    },
+    {
+      "url": "/pagefind/fragment/en_656c14f.pf_fragment",
+      "encodedBytes": 2466,
+      "decodedBytes": 2443
+    },
+    {
+      "url": "/pagefind/fragment/en_d95dbe1.pf_fragment",
+      "encodedBytes": 1466,
+      "decodedBytes": 1443
+    },
+    {
+      "url": "/pagefind/fragment/en_c1cb30e.pf_fragment",
+      "encodedBytes": 1177,
+      "decodedBytes": 1154
+    },
+    {
+      "url": "/pagefind/fragment/en_9afe479.pf_fragment",
+      "encodedBytes": 1366,
+      "decodedBytes": 1343
+    },
+    {
+      "url": "/pagefind/fragment/en_5096396.pf_fragment",
+      "encodedBytes": 638,
+      "decodedBytes": 615
+    },
+    {
+      "url": "/pagefind/fragment/en_df73eaf.pf_fragment",
+      "encodedBytes": 2447,
+      "decodedBytes": 2424
+    },
+    {
+      "url": "/pagefind/fragment/en_c23a9d1.pf_fragment",
+      "encodedBytes": 895,
+      "decodedBytes": 872
+    },
+    {
+      "url": "/pagefind/fragment/en_8255295.pf_fragment",
+      "encodedBytes": 1812,
+      "decodedBytes": 1789
+    },
+    {
+      "url": "/pagefind/index/en_8d49907.pf_index",
+      "encodedBytes": 27925,
+      "decodedBytes": 27897
+    },
+    {
+      "url": "/pagefind/fragment/en_992033f.pf_fragment",
+      "encodedBytes": 934,
+      "decodedBytes": 911
+    },
+    {
+      "url": "/pagefind/fragment/en_41f374e.pf_fragment",
+      "encodedBytes": 708,
+      "decodedBytes": 685
+    },
+    {
+      "url": "/pagefind/fragment/en_bac65e1.pf_fragment",
+      "encodedBytes": 1302,
+      "decodedBytes": 1279
+    },
+    {
+      "url": "/pagefind/fragment/en_ada054a.pf_fragment",
+      "encodedBytes": 2085,
+      "decodedBytes": 2062
+    },
+    {
+      "url": "/pagefind/index/en_772a34c.pf_index",
+      "encodedBytes": 30519,
+      "decodedBytes": 30491
+    },
+    {
+      "url": "/pagefind/fragment/en_3a3a3f6.pf_fragment",
+      "encodedBytes": 975,
+      "decodedBytes": 952
+    },
+    {
+      "url": "/pagefind/fragment/en_75756c3.pf_fragment",
+      "encodedBytes": 4216,
+      "decodedBytes": 4193
+    },
+    {
+      "url": "/pagefind/index/en_8d67a8c.pf_index",
+      "encodedBytes": 28878,
+      "decodedBytes": 28850
+    },
+    {
+      "url": "/pagefind/fragment/en_f16d80c.pf_fragment",
+      "encodedBytes": 3174,
+      "decodedBytes": 3151
+    },
+    {
+      "url": "/pagefind/fragment/en_6c77953.pf_fragment",
+      "encodedBytes": 2251,
+      "decodedBytes": 2228
+    },
+    {
+      "url": "/pagefind/fragment/en_7467646.pf_fragment",
+      "encodedBytes": 1847,
+      "decodedBytes": 1824
+    },
+    {
+      "url": "/pagefind/fragment/en_692f3a7.pf_fragment",
+      "encodedBytes": 2116,
+      "decodedBytes": 2093
+    },
+    {
+      "url": "/pagefind/fragment/en_fcb750f.pf_fragment",
+      "encodedBytes": 3314,
+      "decodedBytes": 3291
+    },
+    {
+      "url": "/pagefind/index/en_a73135d.pf_index",
+      "encodedBytes": 28383,
+      "decodedBytes": 28355
+    },
+    {
+      "url": "/pagefind/index/en_86a7c16.pf_index",
+      "encodedBytes": 28996,
+      "decodedBytes": 28968
+    },
+    {
+      "url": "/pagefind/fragment/en_41a5d97.pf_fragment",
+      "encodedBytes": 1865,
+      "decodedBytes": 1842
+    },
+    {
+      "url": "/pagefind/fragment/en_cfd1e21.pf_fragment",
+      "encodedBytes": 1117,
+      "decodedBytes": 1094
+    },
+    {
+      "url": "/pagefind/fragment/en_9ab1bf4.pf_fragment",
+      "encodedBytes": 7107,
+      "decodedBytes": 7084
+    },
+    {
+      "url": "/pagefind/fragment/en_6ae6945.pf_fragment",
+      "encodedBytes": 1368,
+      "decodedBytes": 1345
+    },
+    {
+      "url": "/pagefind/fragment/en_6c637f5.pf_fragment",
+      "encodedBytes": 2308,
+      "decodedBytes": 2285
+    },
+    {
+      "url": "/pagefind/fragment/en_9c1d27f.pf_fragment",
+      "encodedBytes": 2177,
+      "decodedBytes": 2154
+    },
+    {
+      "url": "/pagefind/fragment/en_28455f3.pf_fragment",
+      "encodedBytes": 2247,
+      "decodedBytes": 2224
+    },
+    {
+      "url": "/pagefind/fragment/en_63f7a56.pf_fragment",
+      "encodedBytes": 2790,
+      "decodedBytes": 2767
+    },
+    {
+      "url": "/pagefind/fragment/en_d65b6ef.pf_fragment",
+      "encodedBytes": 3747,
+      "decodedBytes": 3724
+    },
+    {
+      "url": "/pagefind/index/en_b9fe6c3.pf_index",
+      "encodedBytes": 30122,
+      "decodedBytes": 30094
+    },
+    {
+      "url": "/pagefind/fragment/en_83f04c4.pf_fragment",
+      "encodedBytes": 952,
+      "decodedBytes": 929
+    },
+    {
+      "url": "/pagefind/fragment/en_6bb9acf.pf_fragment",
+      "encodedBytes": 1136,
+      "decodedBytes": 1113
+    },
+    {
+      "url": "/pagefind/fragment/en_91ea11f.pf_fragment",
+      "encodedBytes": 3459,
+      "decodedBytes": 3436
+    },
+    {
+      "url": "/pagefind/fragment/en_4cbbb82.pf_fragment",
+      "encodedBytes": 3465,
+      "decodedBytes": 3442
+    },
+    {
+      "url": "/pagefind/index/en_14ffff2.pf_index",
+      "encodedBytes": 39293,
+      "decodedBytes": 39260
+    },
+    {
+      "url": "/pagefind/fragment/en_c898472.pf_fragment",
+      "encodedBytes": 610,
+      "decodedBytes": 587
+    },
+    {
+      "url": "/pagefind/fragment/en_6aff237.pf_fragment",
+      "encodedBytes": 2084,
+      "decodedBytes": 2061
+    },
+    {
+      "url": "/pagefind/fragment/en_ac7a24b.pf_fragment",
+      "encodedBytes": 1394,
+      "decodedBytes": 1371
+    },
+    {
+      "url": "/pagefind/fragment/en_eee6dcd.pf_fragment",
+      "encodedBytes": 1195,
+      "decodedBytes": 1172
+    },
+    {
+      "url": "/pagefind/fragment/en_92f3171.pf_fragment",
+      "encodedBytes": 1040,
+      "decodedBytes": 1017
+    },
+    {
+      "url": "/pagefind/fragment/en_7d81c02.pf_fragment",
+      "encodedBytes": 2134,
+      "decodedBytes": 2111
+    },
+    {
+      "url": "/pagefind/fragment/en_dbc952f.pf_fragment",
+      "encodedBytes": 3467,
+      "decodedBytes": 3444
+    },
+    {
+      "url": "/pagefind/fragment/en_c512f39.pf_fragment",
+      "encodedBytes": 3204,
+      "decodedBytes": 3181
+    },
+    {
+      "url": "/pagefind/fragment/en_825eea8.pf_fragment",
+      "encodedBytes": 1468,
+      "decodedBytes": 1445
+    }
+  ],
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36"
+}

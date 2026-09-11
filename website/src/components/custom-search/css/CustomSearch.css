@@ -9,7 +9,9 @@
 }
 
 .custom-search-option {
-    height: 36px;
+    min-height: 40px;
+    border: 0;
+    font-family: inherit;
     display: flex;
     cursor: pointer;
     position: relative;
@@ -44,3 +46,4 @@
 .hideSearchButtons {
     display: none !important;
 }
+.custom-search-option:focus-visible { outline: 2px solid var(--ifm-color-primary-darkest); outline-offset: -3px; }
