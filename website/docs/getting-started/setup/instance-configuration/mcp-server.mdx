@@ -1,0 +1,332 @@
+---
+description: Enable Appsmith's MCP Server (BETA), create a personal key, and connect AI clients such as Cursor, VS Code, Claude Code, Claude Desktop, Codex, and Windsurf.
+toc_max_heading_level: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# MCP Server (BETA)
+
+:::caution Beta feature
+MCP Server is in beta. Its behavior, available tools, and client configuration may change. If you find an issue or have a suggestion, [submit a support ticket](https://support.appsmith.com) and identify the feature as **MCP Server (BETA)**. Never include an MCP key in a support ticket.
+:::
+
+Appsmith's Model Context Protocol (MCP) server lets compatible AI clients connect to Appsmith through a structured API. An MCP client can use the Appsmith capabilities available to the user who created its key, including working with apps and their resources.
+
+An MCP key authenticates the client **as you**. It does not grant the client additional Appsmith permissions. Any request made with your key is limited to the same organizations, workspaces, apps, and actions that your Appsmith account can access.
+
+This guide covers MCP setup for Appsmith Business Cloud and self-hosted Enterprise deployments.
+
+## Before you begin
+
+- An Appsmith administrator must enable MCP Server for the organization or instance.
+- Each user must create their own MCP key. Do not share a key between users.
+- Your AI client must support a remote MCP server. Most clients send an `Authorization` header in their server configuration. Claude Desktop requires the `mcp-remote` wrapper described below.
+
+## Enable MCP Server
+
+MCP Server is off by default. The location of the setting depends on your Appsmith deployment.
+
+### Business Cloud
+
+To enable MCP Server for a Business Cloud organization:
+
+1. Open **Admin Settings**.
+2. Under **Organisation**, select **MCP Server (BETA)**.
+3. Turn on **Enable MCP server**, and save the setting.
+
+<ZoomImage
+  src="/img/mcp-enable-business-cloud.png"
+  alt="MCP Server beta setting under Organisation in Business Cloud"
+  caption="Enable MCP Server for a Business Cloud organization"
+/>
+
+### Self-hosted Enterprise
+
+To enable MCP Server for a self-hosted Enterprise instance:
+
+1. Open **Admin Settings**.
+2. Under **Instance**, select **MCP Server (BETA)**.
+3. Turn on **Enable MCP server**.
+4. Click **Save & Restart** to apply the setting.
+
+<ZoomImage
+  src="/img/mcp-enable-self-hosted.png"
+  alt="MCP Server beta setting under Instance settings in a self-hosted Enterprise instance"
+  caption="Enable MCP Server for a self-hosted Enterprise instance"
+/>
+
+When MCP Server is disabled, Appsmith removes access to the `/mcp` endpoint, prevents users from creating or rotating keys, and rejects requests made with existing keys. Disabling the server does not revoke the keys. Revoke a key separately if you want to invalidate it permanently.
+
+## Create an MCP key
+
+After an administrator enables MCP Server, each user can create and manage keys from their own profile:
+
+<ZoomImage
+  src="/img/mcp-keys-page.png"
+  alt="MCP keys page with How to connect and Create Key buttons"
+  caption="Create and manage personal MCP keys from Profile settings"
+/>
+
+1. Open **Admin Settings**.
+2. Under **Profile**, select **MCP keys**.
+3. Click **Create Key**.
+4. Enter a descriptive name, up to 50 characters, that identifies the client or purpose of the key.
+5. Select how long the key should remain valid: 30, 60, 90, 180, or 365 days. The default is 30 days.
+6. Click **Create**.
+
+<ZoomImage
+  src="/img/mcp-create-key.png"
+  alt="Create Key window with fields for the MCP key name and validity in days"
+  caption="Name the key and choose how long it remains valid"
+/>
+
+You can have up to 10 MCP keys that have not been revoked. Expired keys count toward this limit, so revoke an unused or expired key before creating another one.
+
+## Copy the key and connect your client
+
+Appsmith shows the key only once, immediately after you create or rotate it. Before closing the confirmation window, copy either the MCP token or the complete client configuration and store it securely.
+
+<ZoomImage
+  src="/img/mcp-token-created.png"
+  alt="MCP token created window with one-time token, server URL, client configuration, and expiration date"
+  caption="Copy the token or client configuration before closing this window"
+/>
+
+Choose your AI client and add the configuration using the MCP server URL and key from that window. Replace `YOUR_APPSMITH_DOMAIN` and `YOUR_MCP_KEY` with those values.
+
+You can return to **Profile > MCP keys** and click **How to connect** to copy the server URL and a configuration template, but Appsmith cannot display an existing key again.
+
+<Tabs groupId="mcp-client" queryString="mcp-client">
+
+<TabItem value="cursor" label="Cursor" default>
+
+1. Open **Cursor Settings → Tools & MCP**, or edit the config file:
+   - macOS / Linux: `~/.cursor/mcp.json`
+   - Windows: `%USERPROFILE%\.cursor\mcp.json`
+   - Project-level: `.cursor/mcp.json` in the project root
+2. Add the Appsmith server:
+
+    ```json
+    {
+      "mcpServers": {
+        "appsmith": {
+          "url": "https://YOUR_APPSMITH_DOMAIN/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_MCP_KEY"
+          }
+        }
+      }
+    }
+    ```
+
+3. Save the file and restart Cursor if the server does not appear.
+
+This is the same JSON structure Appsmith generates when you create a key.
+
+</TabItem>
+
+<TabItem value="vscode" label="VS Code">
+
+1. Create `.vscode/mcp.json` in your project, or open the Command Palette and run **MCP: Open User Configuration**.
+2. Add the Appsmith server:
+
+    ```json
+    {
+      "servers": {
+        "appsmith": {
+          "type": "http",
+          "url": "https://YOUR_APPSMITH_DOMAIN/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_MCP_KEY"
+          }
+        }
+      }
+    }
+    ```
+
+3. Save the file. VS Code detects the configuration without a restart.
+
+VS Code uses a `servers` object and requires `"type": "http"`. Do not paste the Appsmith-generated `mcpServers` block into this file unchanged.
+
+</TabItem>
+
+<TabItem value="claude-code" label="Claude Code">
+
+1. In a terminal, run:
+
+    ```bash
+    claude mcp add --transport http appsmith https://YOUR_APPSMITH_DOMAIN/mcp \
+      --header "Authorization: Bearer YOUR_MCP_KEY"
+    ```
+
+2. In Claude Code, run `/mcp` and confirm that the Appsmith server is connected.
+
+The server is registered immediately. You do not need to restart Claude Code.
+
+</TabItem>
+
+<TabItem value="claude-desktop" label="Claude Desktop">
+
+Claude Desktop does not send custom HTTP headers to remote MCP servers. Use the `mcp-remote` wrapper, which requires [Node.js](https://nodejs.org/) 18 or later.
+
+1. Open the Claude Desktop config file:
+   - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+2. Add the Appsmith server:
+
+    ```json
+    {
+      "mcpServers": {
+        "appsmith": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "mcp-remote",
+            "https://YOUR_APPSMITH_DOMAIN/mcp",
+            "--header",
+            "Authorization:Bearer YOUR_MCP_KEY"
+          ]
+        }
+      }
+    }
+    ```
+
+    On Windows, if `npx` is not found, set `"command"` to `"cmd"` and add `"/c"` and `"npx"` as the first two arguments.
+
+3. Fully quit and relaunch Claude Desktop. Closing the window is not enough.
+
+Do not put a space after the colon in `"Authorization:Bearer YOUR_MCP_KEY"`.
+
+</TabItem>
+
+<TabItem value="codex" label="Codex">
+
+Codex sends the Bearer token from an environment variable. Do not put the MCP key in `config.toml`.
+
+1. Store the key in your environment, for example:
+
+    ```bash
+    export APPSMITH_MCP_KEY="YOUR_MCP_KEY"
+    ```
+
+2. Add the server:
+
+    ```bash
+    codex mcp add appsmith --url https://YOUR_APPSMITH_DOMAIN/mcp --bearer-token-env-var APPSMITH_MCP_KEY
+    ```
+
+    Or add the equivalent entry to `~/.codex/config.toml`:
+
+    ```toml
+    [mcp_servers.appsmith]
+    url = "https://YOUR_APPSMITH_DOMAIN/mcp"
+    bearer_token_env_var = "APPSMITH_MCP_KEY"
+    ```
+
+3. Confirm that `APPSMITH_MCP_KEY` is set in the environment that launches Codex.
+
+</TabItem>
+
+<TabItem value="windsurf" label="Windsurf">
+
+1. Edit the Windsurf MCP config file:
+   - macOS / Linux: `~/.codeium/windsurf/mcp_config.json`
+   - Windows: `%USERPROFILE%\.codeium\windsurf\mcp_config.json`
+2. Add the Appsmith server:
+
+    ```json
+    {
+      "mcpServers": {
+        "appsmith": {
+          "serverUrl": "https://YOUR_APPSMITH_DOMAIN/mcp",
+          "headers": {
+            "Authorization": "Bearer YOUR_MCP_KEY"
+          }
+        }
+      }
+    }
+    ```
+
+3. Save the file and refresh MCP servers in Cascade.
+
+Windsurf uses `serverUrl` for remote servers, not `url`. If you paste the Appsmith-generated configuration, rename `url` to `serverUrl`.
+
+</TabItem>
+
+<TabItem value="other" label="Other">
+
+For any client that supports a remote MCP server and custom headers, use:
+
+- **URL:** `https://YOUR_APPSMITH_DOMAIN/mcp`
+- **Transport:** Streamable HTTP
+- **Header:** `Authorization: Bearer YOUR_MCP_KEY`
+
+A typical configuration looks like this:
+
+```json
+{
+  "mcpServers": {
+    "appsmith": {
+      "url": "https://YOUR_APPSMITH_DOMAIN/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_MCP_KEY"
+      }
+    }
+  }
+}
+```
+
+If the client only supports locally launched MCP servers, wrap the remote endpoint with `mcp-remote`:
+
+```json
+{
+  "mcpServers": {
+    "appsmith": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://YOUR_APPSMITH_DOMAIN/mcp",
+        "--header",
+        "Authorization:Bearer YOUR_MCP_KEY"
+      ]
+    }
+  }
+}
+```
+
+Consult the client's documentation for the exact file location and field names.
+
+</TabItem>
+
+</Tabs>
+
+:::warning Protect your key
+An MCP key grants the client access as your Appsmith user. Do not commit it to source control, include it in logs, paste it into a support ticket, or share it with another person. Use a separate key for each client, choose the shortest practical validity period, and revoke a key immediately if it might have been exposed.
+:::
+
+## Manage MCP keys
+
+On the **MCP keys** page, you can review a key's name, status, creation date, and expiration date. You can also search for keys and filter them by status.
+
+- **Rotate a key** to replace its current secret. The old secret stops working immediately, and Appsmith displays the replacement only once. Update the client configuration with the new key.
+- **Revoke a key** to permanently prevent clients from using it.
+- **Expired keys** no longer authenticate. Create a new key or rotate the expired key, and update your client configuration.
+
+Creating, rotating, and revoking MCP keys requires your normal signed-in Appsmith session. An MCP key itself cannot be used to manage keys.
+
+If an administrator disables a user's Appsmith account, requests made with that user's MCP keys are rejected. Administrators should therefore apply the same least-privilege access practices to MCP users that they use elsewhere in Appsmith.
+
+## Troubleshoot a connection
+
+| Problem | What to check |
+| --- | --- |
+| **MCP keys** is not visible under Profile | Ask an administrator to confirm that MCP Server is enabled, then refresh Appsmith. |
+| The client cannot find the server | Confirm that the URL uses your Appsmith domain and ends in `/mcp`. On self-hosted Enterprise, confirm that the administrator clicked **Save & Restart** after enabling the server. |
+| The client receives an authentication error | Confirm that the header is `Authorization: Bearer YOUR_MCP_KEY` and that the key has not expired, been rotated, or been revoked. Also confirm that MCP Server and your Appsmith user account are enabled. For Codex, confirm that the environment variable named in `bearer_token_env_var` is set. |
+| The client connects but cannot perform an action | The client has the permissions of the key owner. Confirm that your Appsmith user has access to the relevant organization, workspace, app, and action. |
+| The configuration is rejected by the client | Use the tab for your client in [Copy the key and connect your client](#copy-the-key-and-connect-your-client). Common mismatches: VS Code expects `servers` and `"type": "http"`; Windsurf expects `serverUrl`; Claude Desktop needs `mcp-remote`. |
+
+Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
