@@ -1,6 +1,6 @@
 # Documentation search
 
-`appsmith-pagefind` generates a static Pagefind index in the Docusaurus `postBuild` hook. Deploy the entire `build/` directory, including `build/pagefind/`. Search runs in the browser and requires no Algolia account, API key, crawler, or search server.
+`appsmith-pagefind` generates a static Pagefind index in the Docusaurus `postBuild` hook. Deploy the entire `build/` directory, including `build/pagefind/`. Search runs in the browser and requires no external search account, API key, crawler, or search server.
 
 Only rendered `.theme-doc-markdown` content is indexed. Navigation, copy buttons, heading-link icons, redirects and pages marked `noindex` are excluded. URLs preserve this site's clean paths and heading IDs. Index generation errors or missing documentation fail the build.
 
@@ -20,7 +20,7 @@ The Search button, Cmd/Ctrl+K, and `/` open the search dialog. Typing in editabl
 
 The first eight matching pages include excerpts and up to three section links each. Pagefind's excerpt HTML is escaped by the engine before adding highlight tags; raw metadata is rendered as React text. A retry uses a fresh import URL because browsers cache failed dynamic imports.
 
-Pagefind's broad matching can return related or unrelated results for nonsense input, as recorded in `experiments/search-validation/README.md`. Quoted queries request exact phrases. This integration retains the validated default ranking and does not apply an arbitrary score cutoff that could suppress useful typo matches.
+Pagefind's broad matching can return related or unrelated results for nonsense input. Quoted queries request exact phrases. This integration retains the validated default ranking and does not apply an arbitrary score cutoff that could suppress useful typo matches.
 
 ## Verification performed
 
@@ -29,6 +29,6 @@ Pagefind's broad matching can return related or unrelated results for nonsense i
 - Desktop browser: `storeValue` results, arrow-key selection, Enter navigation to `#signature`, Cmd+K, Escape, and focus restoration to Search.
 - Mobile browser emulation at 390px: search input, results, scrolling and close button fit within the viewport.
 - Simulated missing Pagefind assets displayed an error; restoring them and clicking Try again recovered results without reloading. The no-results state was also observed.
-- Ask AI opened with its examples and input after removing Algolia styles; no AI request was sent.
+- Ask AI opened with its examples and input with self-contained styles; no AI request was sent.
 
-The prototype comparisons remain in `experiments/search-validation/`. This integration has not been deployed.
+The index is rebuilt with each site deployment; no scheduled crawler is needed.
