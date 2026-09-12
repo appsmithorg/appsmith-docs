@@ -971,6 +971,11 @@ const sidebars = {
         'product/support',
         {
           type: 'link',
+          label: 'Discord',
+          href: 'https://discord.com/invite/rBTTVJp',
+        },
+        {
+          type: 'link',
           label: 'Privacy Policy',
           href: 'https://www.appsmith.com/privacy-policy',
         },
