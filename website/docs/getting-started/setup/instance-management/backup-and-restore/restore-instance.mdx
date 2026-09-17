@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Restore Instance
 
-This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility.
+This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility. You can restore interactively or [automate restores](#automate-restores) in a deployment pipeline.
 
 ## Prerequisites
 
@@ -90,6 +90,95 @@ Follow these steps to restore your Appsmith instance for Kubernetes-based instal
 </TabItem>
 
 </Tabs>
+
+## Automate restores
+
+Starting with Appsmith **v2.4.1**, you can run `appsmithctl restore` without prompts for automated disaster recovery or environment rebuilds. Pin your pipeline's Appsmith image to v2.4.1 or later. Older images may ignore these flags and wait for interactive input.
+
+```bash
+appsmithctl restore --non-interactive --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc
+```
+
+### Select the backup
+
+Use `--backup-file=<name>` with the exact archive filename, including its extension. The `=` is required. Supply a filename, not a path, URL, or interactive list index. The command does not automatically select the latest backup.
+
+Copy the archive to `/appsmith-stacks/data/backup/` inside the container or pod using the steps above. For instances with [S3 backups configured](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3) and an active paid plan, the command also checks S3. It uses the local archive when the filename exists in both locations; otherwise, it downloads the matching S3 archive before restoring it.
+
+### Supply the required secrets
+
+The required environment variables depend on the archive format:
+
+| Archive | Required secrets |
+| --- | --- |
+| Encrypted (`.tar.gz.enc`) | Set `APPSMITH_BACKUP_ARCHIVE_PASSWORD` to the password used when creating the archive. Appsmith restores the instance encryption keys from the encrypted backup. |
+| Unencrypted (`.tar.gz`) | Set both `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT` to the values from the instance that created the backup. The archive password is not required. |
+
+Supply the archive password as a temporary secret for the restore invocation, using your CI/CD secret store. Do not save it in `docker.env`, Helm values, or source control. If `APPSMITH_BACKUP_ARCHIVE_PASSWORD` is set, Appsmith uses it for one decryption attempt, even in interactive mode.
+
+For an unencrypted backup from the same instance, you can use its existing encryption password and salt. When restoring another instance's backup, supply that source instance's values before running the command. The command checks that both values are present; you must ensure they match the source instance.
+
+### Run the restore
+
+The following examples restore an encrypted archive. Replace `TIMESTAMP`, the container or pod name, and the namespace with your values.
+
+<Tabs queryString="automated-restore-environment">
+
+<TabItem label="Docker" value="docker">
+
+Configure your pipeline to inject `APPSMITH_BACKUP_ARCHIVE_PASSWORD` into the runner's environment, then pass it to the restore process:
+
+```bash
+docker exec \
+  -e APPSMITH_BACKUP_ARCHIVE_PASSWORD \
+  appsmith appsmithctl restore \
+  --non-interactive \
+  --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc
+```
+
+Do not allocate a TTY (`-t`) for pipeline execution. To use Docker Compose, replace `docker exec` with `docker-compose exec -T` in this example.
+
+For an unencrypted archive, use the `.tar.gz` filename and omit `-e APPSMITH_BACKUP_ARCHIVE_PASSWORD`. If supplying the source instance's encryption keys from the runner, pass them with `-e APPSMITH_ENCRYPTION_PASSWORD -e APPSMITH_ENCRYPTION_SALT`.
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes">
+
+Make `APPSMITH_BACKUP_ARCHIVE_PASSWORD` available to the restore process in the target pod through your Kubernetes secret management workflow. Setting it only on the machine running `kubectl` does not pass it into the pod. Limit its availability to the recovery operation and remove the temporary secret configuration afterward.
+
+```bash
+kubectl exec -n APPSMITH_NAMESPACE ANY_APPSMITH_POD_NAME -- \
+  appsmithctl restore \
+  --non-interactive \
+  --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc
+```
+
+For an unencrypted archive, use the `.tar.gz` filename and ensure the restore process has the source instance's `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT`.
+
+After a successful restore, if autoscaling is turned on, restart the Appsmith deployment:
+
+```bash
+kubectl rollout restart deployment appsmith -n APPSMITH_NAMESPACE
+```
+
+With autoscaling turned off, or on Community Edition, the restore command restarts the Appsmith server.
+
+</TabItem>
+
+</Tabs>
+
+### Handle failures in a pipeline
+
+Make your pipeline stop when the restore command returns a nonzero exit status. Missing or unknown backup filenames, paths supplied as filenames, missing secrets, failed decryption, and version mismatches return exit code `1` without prompting. These checks occur before the restore stops services or changes the database. A failure during the restore itself can leave the instance partially restored.
+
+By default, non-interactive restore stops if the backup's Appsmith version differs from the running instance. Use a matching version when possible. To deliberately proceed despite a version mismatch, add `--force`:
+
+```bash
+appsmithctl restore --non-interactive \
+  --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc --force
+```
+
+`--force` only bypasses the version check in non-interactive mode. It does not bypass archive or secret validation, and it does not guarantee compatibility between versions. Without `--non-interactive`, the version confirmation prompt still appears.
 
 ## Troubleshooting
 
