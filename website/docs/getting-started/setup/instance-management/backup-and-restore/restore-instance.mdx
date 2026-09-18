@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Restore Instance
 
-This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility. You can restore interactively or [automate restores](#automate-restores) in a deployment pipeline.
+This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility.
 
 ## Prerequisites
 
@@ -93,7 +93,7 @@ Follow these steps to restore your Appsmith instance for Kubernetes-based instal
 
 ## Automate restores
 
-Starting with Appsmith **v2.4.1**, you can run `appsmithctl restore` without prompts for automated disaster recovery or environment rebuilds. Pin your pipeline's Appsmith image to v2.4.1 or later. Older images may ignore these flags and wait for interactive input.
+Starting with Appsmith **v2.4.1**, you can run `appsmithctl restore` without prompts for automated disaster recovery or environment rebuilds.
 
 ```bash
 appsmithctl restore --non-interactive --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc
@@ -101,7 +101,7 @@ appsmithctl restore --non-interactive --backup-file=appsmith-backup-TIMESTAMP.ta
 
 ### Select the backup
 
-Use `--backup-file=<name>` with the exact archive filename, including its extension. The `=` is required. Supply a filename, not a path, URL, or interactive list index. The command does not automatically select the latest backup.
+Use `--backup-file=<name>` with the exact archive filename, including its extension. The command does not automatically select the latest backup.
 
 Copy the archive to `/appsmith-stacks/data/backup/` inside the container or pod using the steps above. For instances with [S3 backups configured](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3) and an active paid plan, the command also checks S3. It uses the local archive when the filename exists in both locations; otherwise, it downloads the matching S3 archive before restoring it.
 
