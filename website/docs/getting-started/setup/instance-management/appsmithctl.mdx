@@ -90,9 +90,23 @@ For [Appsmith paid plans](https://www.appsmith.com/pricing), backups can be uplo
   ```bash
   appsmithctl restore
   ```
-- The `restore` command restores the Appsmith instance, including the internal database, `docker.env`, and Git data, from an encrypted backup file. You will need the password used during the backup process to decrypt the backup. Without this password, the restore process will fail.
+- The `restore` command restores the Appsmith instance, including the internal database, `docker.env`, and Git data. For encrypted backups, you need the password used during the backup process to decrypt the archive.
   - The restore process assumes that the backup file is located at `/appsmith-stacks/data/backup/` within the container.
-  - The backup file should follow the naming pattern `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc`.
+  - The backup file should follow the naming pattern `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz.enc` for encrypted archives, or `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz` for unencrypted archives.
+
+Starting with Appsmith v2.4.1, use the following options to automate restores:
+
+```bash
+appsmithctl restore --non-interactive --backup-file=appsmith-backup-TIMESTAMP.tar.gz.enc
+```
+
+| Option | Description |
+| --- | --- |
+| `--backup-file=<name>` | Selects an exact archive filename, including its extension, without the selection prompt. Requires `=` and a filename, not a path or index. Checks local backups and, on eligible instances, configured S3 backups, preferring the local copy. |
+| `--non-interactive` | Disables all prompts. Requires `--backup-file=<name>` and the appropriate secrets in the restore process environment. Missing or invalid inputs exit with status `1`. |
+| `--force` | Allows a version mismatch only when used with `--non-interactive`. Other validation still applies. |
+
+For encrypted archives, supply `APPSMITH_BACKUP_ARCHIVE_PASSWORD` as a temporary environment variable for the invocation. For unencrypted archives, supply the source instance's `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT`. See [Automate restores](/getting-started/setup/instance-management/backup-and-restore/restore-instance#automate-restores) for Docker and Kubernetes examples, secret handling, and pipeline failure behavior.
 
 For more information about restoring an Appsmith instance, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide.
 </dd>
