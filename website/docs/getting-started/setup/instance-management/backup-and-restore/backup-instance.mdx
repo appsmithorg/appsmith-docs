@@ -81,6 +81,10 @@ You can create a backup archive of your Appsmith instance, including the databas
 
 </Tabs>
 
+:::caution Unencrypted archives
+`appsmithctl backup` only asks for an encryption password when it runs interactively in a terminal. Run with `--non-interactive`, or from a pipeline or scheduled job where no terminal is attached, and it writes an unencrypted `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz` instead. That archive holds a plaintext database dump, so protect it at rest and don't keep it as a pipeline artifact. Restoring it also requires the source instance's `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT`, which an unencrypted archive doesn't carry — save both values when you create one. For more information, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance#automate-restores).
+:::
+
 ## Troubleshooting
 
 If you encounter any issues during the restore process, consider the following:

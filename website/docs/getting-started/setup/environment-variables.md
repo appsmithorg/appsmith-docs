@@ -555,6 +555,16 @@ Controls how many recent backup archives are retained. Backups use a count-based
 
 </dd>
 
+##### `APPSMITH_BACKUP_ARCHIVE_PASSWORD`
+
+<dd>
+
+Supplies the password that `appsmithctl restore` uses to decrypt an encrypted backup archive, so the restore can run without prompting. Available from Appsmith v2.4.1. Only `appsmithctl restore` reads this variable. It has no effect on `appsmithctl backup`, which takes an encryption password from an interactive prompt and can't encrypt an archive without one. Set it only for the restore invocation, from your CI/CD secret store. Appsmith strips it from the `docker.env` it writes into a backup archive, and it isn't needed outside a restore. When it's set, Appsmith makes a single decryption attempt with it and doesn't fall back to prompting, even in interactive mode.
+
+For more information, see [Automate restores](/getting-started/setup/instance-management/backup-and-restore/restore-instance#automate-restores).
+
+</dd>
+
 <!-- vale off -->
 <br/>
 <div className="tag-wrapper">
