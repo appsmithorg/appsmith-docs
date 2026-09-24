@@ -259,7 +259,6 @@ const sidebars = {
 
               ],
             },
-            'getting-started/setup/manage-plans/downgrade-plan',
           ],
         },
         {
@@ -905,6 +904,14 @@ const sidebars = {
       ]
 
     }, //Workflows end
+    {
+      type: 'category',
+      label: 'Billing and Plans',
+      items: [
+        'getting-started/setup/manage-plans/update-payment-details',
+        'getting-started/setup/manage-plans/downgrade-plan',
+      ],
+    },
     {
       // Help & Support start
       type: 'category',
