@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, and connect AI clients such as Cursor, VS Code, Claude Code, Claude Desktop, Codex, and Windsurf.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, and connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf.
 toc_max_heading_level: 2
 ---
 
@@ -22,7 +22,7 @@ This guide covers MCP setup for Appsmith Business Cloud and self-hosted Enterpri
 
 - An Appsmith administrator must enable MCP Server for the organization or instance.
 - Each user must create their own MCP key. Do not share a key between users.
-- Your AI client must support a remote MCP server. Most clients send an `Authorization` header in their server configuration. Claude Desktop requires the `mcp-remote` wrapper described below.
+- Your AI client must support a remote MCP server and must be able to send the key as an `Authorization` header. Appsmith MCP Server authenticates with the key only; it does not offer an OAuth sign-in flow. Clients whose connectors support only OAuth or no authentication, such as ChatGPT conversations, cannot connect. See [Client compatibility](#client-compatibility).
 
 ## Enable MCP Server
 
@@ -59,6 +59,19 @@ To enable MCP Server for a self-hosted Enterprise instance:
 
 When MCP Server is disabled, Appsmith removes access to the `/mcp` endpoint, prevents users from creating or rotating keys, and rejects requests made with existing keys. Disabling the server does not revoke the keys. Revoke a key separately if you want to invalidate it permanently.
 
+### Run MCP Server on more than one replica
+
+On a self-hosted instance that runs two or more Appsmith replicas behind a load balancer, MCP Server shares its sessions through the Redis instance that `APPSMITH_REDIS_URL` points to, the same Redis that Appsmith already uses for user sessions. Any replica can serve any MCP session, and an approval prompt answered on one replica reaches the replica that asked for it. No additional configuration is required.
+
+MCP clients do not send cookies, so sticky sessions on the load balancer cannot keep an MCP session on one replica. Without the shared session store, a request that reaches a replica other than the one that opened the session fails with HTTP 404, and clients see intermittent errors and missing tool lists.
+
+Keep the following in mind when you run multiple replicas:
+
+- `APPSMITH_REDIS_URL` must point to one Redis instance that every replica can reach. See [Configure External Redis](/getting-started/setup/instance-configuration/external-redis).
+- If the Redis user has a restricted ACL, grant read and write access to keys that start with `appsmith:mcp:`, permission to run `EVAL` (the `@scripting` category; MCP Server uses two short Lua scripts for entity locks and one-time confirmations), and `PUBLISH` and `SUBSCRIBE` access to channels that start with `appsmith:mcp:relay:`. MCP Server refuses to start if it cannot subscribe, and the container log for the `mcp` program explains why.
+- Each replica opens two additional Redis connections for MCP Server. Redis is not a credential store: MCP Server never writes a user's MCP key to it, and a session record holds only a hash that binds the session to the key that opened it. Every Redis entry that MCP Server writes, all under the `appsmith:mcp:` prefix, carries a time to live, so flushing them only drops open MCP sessions, and compliant clients reconnect automatically.
+- During a rolling upgrade to a version that includes the shared store, sessions opened on a replica running the older version fail with HTTP 404 on replicas running the newer version, and the reverse, until the rollout completes. MCP clients reconnect on their own.
+
 ## Create an MCP key
 
 After an administrator enables MCP Server, each user can create and manage keys from their own profile:
@@ -86,7 +99,7 @@ You can have up to 10 MCP keys that have not been revoked. Expired keys count to
 
 ## Copy the key and connect your client
 
-Appsmith shows the key only once, immediately after you create or rotate it. Before closing the confirmation window, copy either the MCP token or the complete client configuration and store it securely.
+Appsmith shows the key only once, immediately after you create or rotate it. Before closing the confirmation window, copy either the key, labelled **MCP token** in this window, or the complete client configuration, and store it securely.
 
 <ZoomImage
   src="/img/mcp-token-created.png"
@@ -167,9 +180,30 @@ The server is registered immediately. You do not need to restart Claude Code.
 
 </TabItem>
 
+<TabItem value="claude-ai" label="Claude.ai">
+
+Claude.ai connects through a custom connector. The connector must send the key in a request header, which is available only when your Claude account has the request-headers option in the connector settings. If the option is missing, use Claude Code or the Claude Desktop `mcp-remote` configuration instead.
+
+:::warning Add the connector under your own account only
+A custom connector sends the same request header for everyone who can use it. Do not add an Appsmith connector under **Organization settings → Connectors** on a Team or Enterprise plan: an organization connector would send your MCP key, and therefore your Appsmith identity and permissions, for every member of the organization. Each member adds their own connector with their own key. The key is stored by the connector service rather than on your computer, so choose a short validity period and revoke the key when you remove the connector.
+:::
+
+1. Open **Settings → Connectors** for your own account.
+2. Click **Add custom connector**.
+3. Enter a name and the URL `https://YOUR_APPSMITH_DOMAIN/mcp`.
+4. Under **Authentication**, select **No sign-in**.
+5. Under **Request headers**, add a header named `authorization` with the value `Bearer YOUR_MCP_KEY`, including the word `Bearer` and the space, and mark it as required.
+6. Click **Add**, then enable the connector in the chat where you want to use it.
+
+Do not select a sign-in option. Appsmith MCP Server does not offer an OAuth flow, so a connector configured to sign in looks for OAuth endpoints that do not exist and reports that it cannot reach the server. You cannot change the authentication settings of an existing connector; remove it and add it again.
+
+The same connector is available in Claude Desktop once it is added to your Claude account.
+
+</TabItem>
+
 <TabItem value="claude-desktop" label="Claude Desktop">
 
-Claude Desktop does not send custom HTTP headers to remote MCP servers. Use the `mcp-remote` wrapper, which requires [Node.js](https://nodejs.org/) 18 or later.
+Claude Desktop does not send custom HTTP headers to remote MCP servers from its local configuration file. Either add a custom connector as described in the **Claude.ai** tab, or use the `mcp-remote` wrapper, which requires [Node.js](https://nodejs.org/) 18 or later.
 
 1. Open the Claude Desktop config file:
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
@@ -226,6 +260,22 @@ Codex sends the Bearer token from an environment variable. Do not put the MCP ke
     ```
 
 3. Confirm that `APPSMITH_MCP_KEY` is set in the environment that launches Codex.
+
+By default, Codex runs Appsmith read operations and non-destructive edits without asking for approval and asks for approval before creating a branch or confirming a destructive operation. Your own Codex approval settings can make it ask more often. See [How clients ask for approval](#how-clients-ask-for-approval).
+
+</TabItem>
+
+<TabItem value="chatgpt" label="ChatGPT desktop app">
+
+The ChatGPT desktop app includes Codex. MCP servers that you add in the app are available in **Codex threads only**. A regular ChatGPT conversation does not load them and reports that the server is not available in the chat.
+
+1. In the ChatGPT desktop app, open **Plugins → MCPs**.
+2. Add a server with the URL `https://YOUR_APPSMITH_DOMAIN/mcp`.
+3. Add a header named `Authorization` with the value `Bearer YOUR_MCP_KEY`.
+4. Save the server. The app writes the entry to `~/.codex/config.toml`, the same file that the Codex CLI uses, with the header value, including your key, stored in plain text. Keep that file private and out of any dotfiles repository. To keep the key out of the file, edit the generated entry so that it uses `bearer_token_env_var` as shown in the **Codex** tab; the same entry then serves the Codex CLI and Codex threads in the app, provided the variable is set in the environment that launches the ChatGPT app, not only in your shell.
+5. Start a new Codex thread on a local environment and ask it to work with Appsmith. Threads that were open before you added the server do not see it.
+
+ChatGPT connectors for regular conversations require either OAuth sign-in or no authentication, and neither works with an Appsmith MCP key. If you need Appsmith in a ChatGPT conversation rather than a Codex thread, [submit a support ticket](https://support.appsmith.com) describing your use case.
 
 </TabItem>
 
@@ -307,6 +357,29 @@ Consult the client's documentation for the exact file location and field names.
 An MCP key grants the client access as your Appsmith user. Do not commit it to source control, include it in logs, paste it into a support ticket, or share it with another person. Use a separate key for each client, choose the shortest practical validity period, and revoke a key immediately if it might have been exposed.
 :::
 
+## Client compatibility
+
+Appsmith MCP Server authenticates every request with the MCP key sent as a bearer token. It does not provide an OAuth authorization server, so a client can connect only if it can send the key in an `Authorization` header or through a wrapper such as `mcp-remote`.
+
+| Client | Supported | How it sends the key |
+| --- | --- | --- |
+| Cursor, VS Code, Windsurf, Claude Code, Codex CLI | Yes | `Authorization` header in the client configuration |
+| Claude.ai and Claude Desktop custom connectors | Yes, when the connector settings offer request headers | Request header on a connector added under your own account, never an organization connector |
+| Claude Desktop local configuration | Yes | `mcp-remote` wrapper |
+| ChatGPT desktop app, Codex threads | Yes | Header on the server entry under **Plugins → MCPs** |
+| ChatGPT conversations and ChatGPT connectors | No | ChatGPT connectors support only OAuth sign-in or no authentication |
+
+## How clients ask for approval
+
+Every Appsmith MCP tool describes itself to the client with standard MCP tool annotations: whether it only reads, whether it can destroy data, and whether it reaches outside the Appsmith instance. Clients that decide on their own when to ask you for approval, such as Codex and the ChatGPT desktop app, use these annotations as follows by default; your own approval settings in the client can make it ask more often.
+
+- Read operations, such as listing workspaces or reading a page, run without a prompt. This includes running an action that Appsmith has verified as read-only against your datasource.
+- Non-destructive edits, such as building an app or adding a query, run without a prompt. These changes are revision-checked and recorded, and they apply to the unpublished version of an existing app. `build_application` also deploys the first version of the new app it creates so that its viewer URL works; every later deploy goes through the `prepare_publish` and `confirm_publish` flow.
+- Destructive operations always use a two-step flow: a `prepare_*` tool that describes what is about to happen, followed by a `confirm_*` tool. The confirm step is the one the client asks you to approve. Deleting a page, query, API, or JS object; deploying an app; rolling back a change; committing to Git; and running an action that can modify data all follow this flow.
+- Creating a Git branch and committing to Git push to your Git remote, so clients treat them as operations that reach outside Appsmith and ask for approval.
+
+When the client supports MCP elicitation, Appsmith also shows its own approval prompt for the confirm step, with the exact scope of the change. Claude clients keep their own approval flow and do not change their behavior based on the annotations. The annotations describe the server's rules; they do not replace them.
+
 ## Manage MCP keys
 
 On the **MCP keys** page, you can review a key's name, status, creation date, and expiration date. You can also search for keys and filter them by status.
@@ -325,8 +398,13 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | --- | --- |
 | **MCP keys** is not visible under Profile | Ask an administrator to confirm that MCP Server is enabled, then refresh Appsmith. |
 | The client cannot find the server | Confirm that the URL uses your Appsmith domain and ends in `/mcp`. On self-hosted Enterprise, confirm that the administrator clicked **Save & Restart** after enabling the server. |
-| The client receives an authentication error | Confirm that the header is `Authorization: Bearer YOUR_MCP_KEY` and that the key has not expired, been rotated, or been revoked. Also confirm that MCP Server and your Appsmith user account are enabled. For Codex, confirm that the environment variable named in `bearer_token_env_var` is set. |
+| The client receives an authentication error | Confirm that the header is `Authorization: Bearer YOUR_MCP_KEY` and that the key has not expired, been rotated, or been revoked. Also confirm that MCP Server and your Appsmith user account are enabled. For a Codex CLI entry, confirm that the environment variable named in `bearer_token_env_var` is set; for a server added from the ChatGPT desktop app, confirm the header value on the entry under **Plugins → MCPs**. |
 | The client connects but cannot perform an action | The client has the permissions of the key owner. Confirm that your Appsmith user has access to the relevant organization, workspace, app, and action. |
 | The configuration is rejected by the client | Use the tab for your client in [Copy the key and connect your client](#copy-the-key-and-connect-your-client). Common mismatches: VS Code expects `servers` and `"type": "http"`; Windsurf expects `serverUrl`; Claude Desktop needs `mcp-remote`. |
+| Claude.ai reports that it cannot reach the server | The connector was added with a sign-in option. Remove the connector and add it again with **No sign-in** and the `authorization` request header, as described in the **Claude.ai** tab. |
+| ChatGPT reports that the Appsmith server is not exposed to the chat or that no tool was found | You asked in a regular ChatGPT conversation. MCP servers added under **Plugins → MCPs** are available only in Codex threads. Start a new Codex thread on a local environment and ask there. |
+| Codex or the ChatGPT desktop app asks for approval on every call, or reports that the server has no usable tools | The instance is running an Appsmith version from before tool annotations were added, so the client treats every tool as destructive. Upgrade Appsmith. |
+| On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
+| Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
