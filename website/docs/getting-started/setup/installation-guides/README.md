@@ -139,4 +139,16 @@ Choose from the following guides to deploy Appsmith according to your business n
          Automate the deployment of Appsmith with Ansible, enabling consistent configurations across your infrastructure.
       </div>
    </a>
+
+   <a className="containerAnchor containerColumnSampleApp columnGrid column-two" href="/getting-started/setup/installation-guides/easypanel">
+      <div className="containerHead">
+         <div className="containerHeading">
+            <b>Easypanel</b>
+         </div>
+      </div>
+      <hr className="gradient-hr" />
+      <div className="containerDescription">
+         Deploy Appsmith with one click using Easypanel's official template, a server control panel that runs the Docker image for you.
+      </div>
+   </a>
 </div>
