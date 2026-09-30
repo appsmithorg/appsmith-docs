@@ -170,7 +170,7 @@ A save flow that validates, chooses between insert and update, passes normalized
 
 These are not defects and are unchanged by the fix above.
 
-- **Editor-authored JavaScript is never returned or overwritten.** An AI client can rename such an object, delete it through the confirm flow, and reference its functions, but cannot read or change its code.
+- **Editor-authored JavaScript is never returned or overwritten.** An AI client can rename such an object and delete it through the confirm flow, but cannot read or change its code. After [appsmith#42311](https://github.com/appsmithorg/appsmith/pull/42311) ships, it can also wire events to call the object's functions.
 - **Accumulated store rows are session-only.** Rows collected with `appendToStore` are not persisted to the browser, so they reset on page reload.
 - **Modal width cannot be changed through MCP;** only the height. List and card widgets cannot bind to a store key; tables can.
 - **A newly built app is deployed as a scaffold.** Queries and event wiring are added after creation, so the deployed version lags until the app is deployed again through `prepare_publish` and `confirm_publish` or from the editor.
