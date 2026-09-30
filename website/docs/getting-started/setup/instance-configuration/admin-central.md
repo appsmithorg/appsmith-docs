@@ -6,7 +6,7 @@ description: Use Admin central to review Appsmith communications about upcoming 
 
 Admin central is where instance administrators review Appsmith communications about upcoming release changes. It shows which of those changes apply to your instance, and whether any need action before you upgrade.
 
-The page is informational. It does not save configuration, and it does not change how the instance runs.
+Most notices are informational. A pending upgrade checkpoint is the exception: confirming or skipping it there is what allows a later upgrade to proceed. See [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
 
 Only users with Instance Administrator privileges can open Admin central. The page appears under **Instance** on self-hosted instances. It is not shown on Appsmith Cloud or on deployments where multiple organizations are enabled.
 
@@ -38,7 +38,11 @@ Appsmith adds a notice when a change in an upcoming or current release requires 
 - An expandable list of affected items when more context is available
 - A **Learn more** link to the documentation for that change
 
+<<<<<<< Updated upstream
 If a notice says you must finish work on this instance before you upgrade, follow that notice’s documentation first. For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
+=======
+Review each notice and follow its documentation before you upgrade, if the notice says an upgrade depends on completing work on this instance. For a pending upgrade checkpoint, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
+>>>>>>> Stashed changes
 
 ## When no action is required
 
@@ -57,4 +61,5 @@ If Appsmith cannot load instance information, refresh the page and try again. Yo
 - [Admin Settings](/getting-started/setup/instance-configuration/admin-settings)
 - [Instance Settings](/getting-started/setup/instance-configuration/instance-settings)
 - [Native workflow engine](/workflows/how-to-guides/native-workflow-engine)
+- [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints)
 - [Update Appsmith](/getting-started/setup/instance-management/update-appsmith)

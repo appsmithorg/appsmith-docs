@@ -1,0 +1,67 @@
+---
+description: What an upgrade checkpoint is, and how to pass one before moving to a later Appsmith release.
+---
+
+# Upgrade checkpoints
+
+A checkpoint is a release this instance must install and start successfully before any later release. Skipping it leaves data that a later release cannot repair.
+
+Appsmith places a checkpoint when a change needs time to finish on the running instance. The checkpoint holds further upgrades until that work is done, or until an administrator decides to move on anyway.
+
+This applies to self-hosted instances. Appsmith Cloud does not use these checkpoints.
+
+A checkpoint belongs to a release line. Installing that version, or a later fix on the same line, counts as landing on it. Moving to the next release line before the checkpoint is finished is what Appsmith blocks.
+
+## While you are on the checkpoint release
+
+Sign in as an instance administrator, open **Admin Settings**, and under **Instance** select **Admin central**.
+
+When a checkpoint still needs attention, Admin central lists it and explains what it is for. Stay on this release until you have finished it, then upgrade. Each checkpoint has its own **Learn more** link for anything specific to that release.
+
+You can confirm the checkpoint when the work it describes is done. You can also skip it. Skipping records that you chose to move on, and later upgrades will not ask about that checkpoint again. Read the confirmation on the page before you skip. It describes what you are leaving unfinished.
+
+## If the server does not start
+
+This happens when the instance was moved past a checkpoint that was never finished. Appsmith stops the backend before it comes up, so Admin central is not available.
+
+Open the [backend logs](/getting-started/setup/instance-management/how-to-get-container-logs) and find:
+
+```text
+APPSMITH BACKEND START ABORTED — CHECKPOINT MISSED
+```
+
+The log explains that a mandatory checkpoint was missed, names the version you have to install before going further, and includes that checkpoint's own explanation of what to do. If more checkpoints come after this one, they are listed in order. Finish the first missing one before those.
+
+### Get the instance running again
+
+1. Note the version the log tells you to return to.
+2. Install that version, using the same steps as any other upgrade in [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith). Pin the image to that version. Do not jump to the release you were trying to reach.
+3. Wait until the instance starts.
+4. Sign in as an instance administrator and finish the checkpoint in **Admin central**.
+5. Upgrade again. If the log listed later checkpoints, repeat this for each of them, in the order given, before you go past that line.
+
+### If you cannot use Admin central
+
+The log includes an environment variable for the case where you are sure the checkpoint does not apply, and the server will not start so you cannot confirm that in Admin central:
+
+```bash
+APPSMITH_CHECKPOINT_OVERRIDE="<version>"
+```
+
+Set it to the version named in the log, including the leading `v`. Start the instance again. Appsmith records that checkpoint as skipped and continues. Remove the variable after the instance is up, so a later restart does not keep an override you no longer mean.
+
+If the value is not the checkpoint that is blocking startup, Appsmith ignores it and the backend still does not start. Read the log again and use the version it names.
+
+Skipping this way has the same result as skipping in Admin central.
+
+## After a checkpoint is finished
+
+Admin central keeps a record of checkpoints that are already done: the version, the name, how it was finished, and who finished it and when. A checkpoint can be finished because an administrator confirmed it, because it was skipped, because Appsmith completed the check on its own, or because it did not apply to this instance.
+
+When nothing needs attention, Admin central shows **There is no action required for this instance.**
+
+## See also
+
+- [Admin central](/getting-started/setup/instance-configuration/admin-central)
+- [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith)
+- [Get container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
