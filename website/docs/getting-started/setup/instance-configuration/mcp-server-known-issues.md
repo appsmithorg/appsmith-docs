@@ -134,7 +134,17 @@ A save flow that validates, chooses between insert and update, passes normalized
 
 **Cause:** The patch allowlist did not include them.
 
-**Status:** Bug, fix in progress. They are added as literal-only properties with per-widget type checks.
+**Status:** Bug, fix in progress. They are added as literal-only properties with per-widget type checks. Note that Checkbox, Switch, and Radio Group widgets keep their caption in `label`; `labelText` is the caption of Select and MultiSelect widgets only.
+
+**Workaround:** Set the property in the Appsmith editor's property pane.
+
+### Most style and property-pane settings cannot be set through `patch_widgets`
+
+**Symptom:** `patch_widgets` accepts about 35 widget properties in 2.4.3. A Table widget's default selected row (`defaultSelectedRowIndex`, `defaultSelectedRowIndices`, `multiRowSelection`), header and cell colors, compact mode, and column alignment; a Text widget's font family, size, alignment, and overflow; label position, width, and typography on form controls; border radius, box shadow, border color and width, and accent colors; a Date Picker's minimum, maximum, and default date; a File Picker's allowed types and size limits; chart axis names; and image fit are all refused with an "unrecognized key" error.
+
+**Cause:** The patch allowlist is closed by design, so that an AI client can never write an expression into a widget property, and it was only ever extended for the properties that earlier exercises needed.
+
+**Status:** Limitation, extension in progress. The change under review adds every literal property-pane setting of the eighteen supported widget types as closed values copied from each widget's own property pane (enumerations, bounded numbers, colors, ISO dates, or plain text), checks each family-specific property against the widget's real type, and reads the same properties back through `read_semantic_page`. Theme presets for border radius and box shadow are accepted by name. Event handlers, data bindings, column definitions, and custom chart configurations remain outside the patch vocabulary.
 
 **Workaround:** Set the property in the Appsmith editor's property pane.
 
