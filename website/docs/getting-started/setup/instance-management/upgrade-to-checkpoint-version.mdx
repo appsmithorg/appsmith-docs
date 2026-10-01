@@ -7,9 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Upgrade to Checkpoint Version (v1.96-v1.99)
-It is very important if you have Appsmith installed and are on a version greater than v1.9.2 but less than v1.96 through v1.99 - that you upgrade 
-first to one of the version (v1.96-v1.99) prior to upgrading to Appsmith 2.0 or newer.  If you attempt to upgrade, you will see in the logs failures 
-and will have to roll back and then upgrade to version v1.99 (recommneded).  Only then can you upgrade to v2.0 or newer.
+If your Appsmith version is later than v1.9.2 but earlier than v1.96, you must first upgrade to one of the versions from v1.96 to v1.99 before you upgrade to Appsmith v2.0 or later. If you upgrade directly, the logs show failures, and you must roll back and upgrade to v1.99 (recommended). Only then can you upgrade to v2.0 or later.
 
 # Upgrade to Checkpoint Version (v1.9.2)
 
@@ -58,7 +56,7 @@ These instructions are applicable to platforms using Docker, including Docker st
           container_name: appsmith  
       ```   
 
-4. Save the changes and restart the instance again to finalise the update:  
+5. Save the changes and restart the instance again to finalize the update:  
     ```bash  
     docker-compose up -d  
     ```
@@ -153,4 +151,4 @@ For further queries, contact the Appsmith support team using the chat widget in 
 ## See also
 
 - [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith): Learn how to upgrade your Appsmith installation to the latest version.
-- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date.
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up to date.
