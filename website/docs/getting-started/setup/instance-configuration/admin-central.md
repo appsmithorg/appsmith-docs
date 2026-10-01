@@ -1,14 +1,14 @@
 ---
-description: Use Admin central to review Appsmith communications about upcoming release changes that need instance administrator attention.
+description: Review notices from Appsmith about changes in upcoming releases that require instance administrator attention.
 ---
 
 # Admin central
 
-Admin central is where instance administrators review Appsmith communications about upcoming release changes. It shows which of those changes apply to your instance, and whether any need action before you upgrade.
+Use Admin central to review notices from Appsmith about changes in upcoming releases. Each notice shows whether the change applies to your instance and whether you need to take action before you upgrade.
 
 Most notices are informational and do not change how the instance runs. Pending upgrade checkpoints are the exception: you must confirm or skip a checkpoint here before you can upgrade past it. For more information, see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
 
-Only users with Instance Administrator privileges can open Admin central. The page appears under **Instance** on self-hosted instances. It is not shown on Appsmith Cloud or on deployments where multiple organizations are enabled.
+Only users with Instance Administrator privileges can access Admin central. On self-hosted instances, it appears under **Instance** in **Admin Settings**. It is not available on Appsmith Cloud or on deployments with multiple organizations enabled.
 
 ## Open Admin central
 
@@ -30,27 +30,27 @@ Only users with Instance Administrator privileges can open Admin central. The pa
   caption=""
 />
 
-Appsmith adds a notice when a change in an upcoming or current release requires administrator attention. Each notice can include:
+Appsmith adds a notice when a change in a current or upcoming release requires administrator attention. A notice can include:
 
 - A title and short description of the change
-- A severity indicator so you can tell informational updates from items that need action
-- Summary details, such as counts or status for the current instance
-- An expandable list of affected items when more context is available
+- A severity indicator that distinguishes informational updates from items that require action
+- Summary details for your instance, such as counts or status
+- An expandable list of affected items, when more details are available
 - A **Learn more** link to the documentation for that change
 
-If a notice says you must complete work on this instance before you upgrade, follow that notice’s documentation first. For a pending upgrade checkpoint, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
+If a notice says you must complete work on this instance before you upgrade, follow that notice’s documentation first. For pending upgrade checkpoints, see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
 
 ## When no action is required
 
-If there is nothing that needs attention, Admin central shows:
+If nothing requires your attention, Admin central displays:
 
 > There is no action required for this instance.
 
-This is the expected state when no release communications apply to the instance. Notices appear when a change needs attention and disappear when that work is complete.
+This is the expected state when no notices apply to your instance. A notice appears when a change requires attention and disappears after the required work is complete.
 
 ## If the page does not load
 
-If Appsmith cannot load instance information, refresh the page and try again. You must stay signed in as an instance administrator.
+If Appsmith cannot load instance information, refresh the page. Make sure you are still signed in as an instance administrator.
 
 ## Related
 
