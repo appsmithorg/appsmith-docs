@@ -16,7 +16,7 @@ This page covers the checkpoint versions for upgrading to Appsmith v2.0. For che
 
 | Your current version | What to do |
 | --- | --- |
-| Earlier than v1.9.2 | Upgrade to [v1.9.2](#upgrade-to-v192), then to [v1.96–v1.99](#upgrade-to-v196v199), and then to the latest release. |
+| Earlier than v1.9.2 | Follow [Upgrade to v1.9.2](#upgrade-to-v192), which takes you to v1.9.2 and then to v1.99. Then upgrade to the latest release. |
 | v1.9.2 or later, but earlier than v1.96 | Upgrade to [v1.96–v1.99](#upgrade-to-v196v199), and then to the latest release. |
 | v1.96 or later | No action is required. Follow [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith). |
 
@@ -30,11 +30,7 @@ Before you upgrade, make sure that:
 
 ## Upgrade to v1.9.2 {#upgrade-to-v192}
 
-Follow these steps if your current version is earlier than v1.9.2.
-
-:::caution Important
-The final steps in each tab update your instance to the `latest` tag. If the latest release is v2.0 or later, use `v1.99` instead of `latest`, and then follow [Upgrade to v1.96–v1.99](#upgrade-to-v196v199).
-:::
+Follow these steps if your current version is earlier than v1.9.2. These steps upgrade your instance to v1.9.2 and then to v1.99. Do not upgrade directly from v1.9.2 to v2.0 or later.
 
 <Tabs queryString="current-checkpoint-platform">
 
@@ -58,12 +54,12 @@ These instructions apply to Docker-based platforms, such as Docker standalone, A
 
 3. Wait for the instance to start and apply the schema changes. This happens automatically.
 
-4. After the schema updates are complete, update the image tag in `docker-compose.yml`:
+4. After the schema updates are complete, update the image tag in `docker-compose.yml` to `v1.99`:
       ```yaml
       services:
         appsmith:
         # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ee:latest
+          image: index.docker.io/appsmith/appsmith-ee:v1.99
           container_name: appsmith
       ```
 
@@ -99,12 +95,12 @@ These instructions apply to Appsmith instances running on Kubernetes.
 
 4. Verify the update by checking that your Appsmith apps work as expected.
 
-5. After the instance is stable, update the image tag:
+5. After the instance is stable, update the image tag to `v1.99`:
     ```bash
-    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.99
     ```
 
-6. Restart the StatefulSet to pull and run the new version:
+6. Restart the StatefulSet to pull and run version `v1.99`:
     ```bash
     kubectl rollout restart sts/<appsmith> -n <appsmith-namespace>
     ```
@@ -123,9 +119,9 @@ These instructions apply to Appsmith instances running on Kubernetes.
     kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.9.2
     ```
 
-3. After the instance is stable, update the image tag:
+3. After the instance is stable, update the image tag to `v1.99`:
     ```bash
-    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.99
     ```
 
 </TabItem>
@@ -142,9 +138,9 @@ These instructions apply to Appsmith instances running on AWS ECS (EC2) and Farg
     ```
 4. Restart the ECS service.
 5. Verify that the updated version is running.
-6. Open the task definition and update the image tag:
+6. Open the task definition and update the image tag to `v1.99`:
     ```bash
-    appsmith/appsmith-ee:latest
+    appsmith/appsmith-ee:v1.99
     ```
 7. Restart the ECS service.
 8. Verify that the updated version is running.
@@ -152,6 +148,8 @@ These instructions apply to Appsmith instances running on AWS ECS (EC2) and Farg
 </TabItem>
 
 </Tabs>
+
+After your instance is running v1.99, upgrade to v2.0 or later by following [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 
 ## Upgrade to v1.96–v1.99 {#upgrade-to-v196v199}
 
