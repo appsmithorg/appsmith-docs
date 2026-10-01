@@ -38,11 +38,7 @@ Appsmith adds a notice when a change in an upcoming or current release requires 
 - An expandable list of affected items when more context is available
 - A **Learn more** link to the documentation for that change
 
-<<<<<<< Updated upstream
-If a notice says you must finish work on this instance before you upgrade, follow that notice’s documentation first. For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
-=======
 Review each notice and follow its documentation before you upgrade, if the notice says an upgrade depends on completing work on this instance. For a pending upgrade checkpoint, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
->>>>>>> Stashed changes
 
 ## When no action is required
 
