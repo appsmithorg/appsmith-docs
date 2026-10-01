@@ -6,7 +6,7 @@ description: Use Admin central to review Appsmith communications about upcoming 
 
 Admin central is where instance administrators review Appsmith communications about upcoming release changes. It shows which of those changes apply to your instance, and whether any need action before you upgrade.
 
-Most notices are informational. A pending upgrade checkpoint is the exception: confirming or skipping it there is what allows a later upgrade to proceed. See [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
+Most notices are informational and do not change how the instance runs. Pending upgrade checkpoints are the exception: you must confirm or skip a checkpoint here before you can upgrade past it. For more information, see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
 
 Only users with Instance Administrator privileges can open Admin central. The page appears under **Instance** on self-hosted instances. It is not shown on Appsmith Cloud or on deployments where multiple organizations are enabled.
 
@@ -38,7 +38,7 @@ Appsmith adds a notice when a change in an upcoming or current release requires 
 - An expandable list of affected items when more context is available
 - A **Learn more** link to the documentation for that change
 
-Review each notice and follow its documentation before you upgrade, if the notice says an upgrade depends on completing work on this instance. For a pending upgrade checkpoint, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
+If a notice says you must complete work on this instance before you upgrade, follow that notice’s documentation first. For a pending upgrade checkpoint, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
 
 ## When no action is required
 
