@@ -45,14 +45,16 @@ In this example, the third parameter `persist` in the [storeValue()](/reference/
 
 ```jsx
 export default {
-	fetch_name () {
-		storeValue('name', 'sam', true);
-		return appsmith.store.name;
-	},
-	update_name () {
-		storeValue('name', 'ben', true);
-		return appsmith.store.name;
-	},
+	// Pure getter: returns the name, or 'sam' if it's not set yet
+  	fetch_name () {
+    	return appsmith.store.name || 'sam';
+  	},
+
+  	// Setter: correctly forces the name to change to 'ben'
+  	update_name () {
+    	storeValue('name', 'ben', true);
+    	return appsmith.store.name;
+  	},
 }
 ```
 You can then refer to the stored computed value in widgets.
