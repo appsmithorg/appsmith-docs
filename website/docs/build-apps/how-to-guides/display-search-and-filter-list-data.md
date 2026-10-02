@@ -43,6 +43,9 @@ To display data in a List widget, follow these steps:
    To rearrange widgets within a List item, drag and drop them within the first item to rearrange the order. Once you arrange the widgets in the first List item, the subsequent items automatically update with the same arrangement.
 3. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
+:::tip
+For a read-only list (no row selection / no pointer cursor), turn on **Disable selection** in the List property pane. See [Disable selection](/reference/widgets/list#disable-selection).
+:::
 
 ## Format list item
 Highlighting list cells enables you to visually distinguish specific cells from others.
