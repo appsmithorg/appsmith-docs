@@ -30,7 +30,11 @@ The uniform resource locator (URL) specifies the address of the service or endpo
 ### Send Appsmith signature header
 
 <dd>
-When enabled, Appsmith adds an extra header, `X-Appsmith-Signature`, to your requests. This header contains a JSON Web Token (JWT) signed with a secret string. You can use this header to verify that the incoming requests are originating from Appsmith. This mechanism ensures the integrity and authenticity of requests originating from Appsmith.
+When enabled, Appsmith adds an extra header, `X-Appsmith-Signature`, to your requests. This header contains a JSON Web Token (JWT) signed with the session signature key. The key must be at least 32 characters.
+
+You can use this header to verify that the request came from an Appsmith datasource that has the key. The token contains the issuer and the expiry time, and it expires after 10 minutes. It does not include the signed-in user's email, and it does not cover the request body. A caller who has the key can send a different email with a valid signature.
+
+To insert the signed-in user's email on the server, use [`<<APPSMITH_USER_EMAIL>>`](/reference/appsmith-framework/context-object#server-side-email).
 </dd>
 
 ### Use self-signed certificate

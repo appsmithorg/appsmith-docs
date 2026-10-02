@@ -180,6 +180,36 @@ To access the email, use the following code:
 {{appsmith.user.email}}
 ```
 
+Appsmith evaluates this binding in the browser. A viewer can change the value before a query runs. Use it to display the email. To send the signed-in user's email from the server, use [server-side email](#server-side-email).
+
+##### Server-side email
+
+Put the literal text `<<APPSMITH_USER_EMAIL>>` in a saved query or datasource configuration. Appsmith replaces it on the server with the email of the current session before the query runs, and before client parameters are applied. A viewer cannot change this value through the browser, an action parameter, or the execution payload.
+
+```sql
+SELECT * FROM projects WHERE owner_email = '<<APPSMITH_USER_EMAIL>>'
+```
+
+You can use the placeholder in these saved fields:
+
+* SQL query body
+* REST request body
+* REST headers
+* REST query parameters
+* Headers saved on the datasource
+
+The placeholder name is case-sensitive. Spaces inside the brackets are ignored. Deploy the application so that viewer mode runs the saved query.
+
+The placeholder has no effect in widget properties, JavaScript objects, or `{{ }}` bindings. A `{{ }}` binding cannot supply or override it.
+
+`<<APPSMITH_USER_EMAIL>>` is available on Appsmith Cloud, including the Free plan, and on self-hosted Business and Enterprise. Self-hosted Community Edition does not include it. No additional login is required.
+
+:::caution
+The placeholder inserts the account email as plain text. It is not a signed token, and an API or database cannot verify it on its own. The database still connects with the shared datasource user. An app editor can write a query that omits the placeholder. The email is inserted into the query text, not sent as a bound parameter.
+
+[`X-Appsmith-Signature`](/connect-data/reference/authenticated-api#send-appsmith-signature-header) shows that the caller knows the datasource secret. The token does not contain the email, and it does not cover the request body. A caller who has the secret can send a different email with a valid signature.
+:::
+
 #### username `string`
 The `username` attribute represents the unique username associated with the user's account.
 To access the username, use the following code:

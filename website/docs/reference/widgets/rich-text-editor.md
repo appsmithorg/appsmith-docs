@@ -3,8 +3,13 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 ---
 # Rich Text Editor
 
-This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
+This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users.
 
+## Toolbar
+
+The Rich Text Editor includes a formatting toolbar above the text area. Use it to change blocks, fonts, emphasis, color, alignment, lists, and to insert links, images, tables, and other content. When the widget is narrow, some controls move behind the **…** menu.
+
+<ZoomImage src="/img/rich-text-editor-toolbar.png" alt="Rich Text Editor toolbar" caption="Rich Text Editor toolbar" />
 
 ## Content properties
 
