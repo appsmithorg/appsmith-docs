@@ -7,11 +7,9 @@ This page provides information on using the Rich Text Editor, which allows you t
 
 ## Toolbar
 
-The classic Rich Text Editor includes a formatting toolbar above the text area. Immediately to the right of the **Paragraph** / Blocks dropdown is the **Font** control. Use it to change the typeface of selected text, or of the next text you type when nothing is selected.
+The Rich Text Editor includes a formatting toolbar above the text area. Use it to change blocks, fonts, emphasis, color, alignment, lists, and to insert links, images, tables, and other content. When the widget is narrow, some controls move behind the **…** menu.
 
-<ZoomImage src="/img/rich-text-editor-font-family.png" alt="Rich Text Editor Font Family dropdown" caption="Font control on the Rich Text Editor toolbar" />
-
-The list includes **Default** (the existing Times look for unstyled content) and common web-safe fonts such as Arial, Georgia, Courier New, and Verdana. Font choices are written into the editor HTML (for example as `font-family` on a span), including in **Default Value** when you set styled HTML there. There is no separate Font Family property in the property pane.
+<ZoomImage src="/img/rich-text-editor-toolbar.png" alt="Rich Text Editor toolbar" caption="Rich Text Editor toolbar" />
 
 ## Content properties
 
@@ -182,7 +180,7 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 <dd>
 
-Controls the visibility of the toolbar on top of the widget, including the **Font** control and other formatting buttons. When the toolbar is hidden, existing font styling in the content remains visible.
+Controls the visibility of the toolbar on top of the widget.
 
 </dd>
 
