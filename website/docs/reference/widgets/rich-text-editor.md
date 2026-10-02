@@ -3,8 +3,15 @@ description: Learn how to use the Rich Text Editor widget for capturing and form
 ---
 # Rich Text Editor
 
-This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users. 
+This page provides information on using the Rich Text Editor, which allows you to capture rich text input from users.
 
+## Toolbar
+
+The classic Rich Text Editor includes a formatting toolbar above the text area. Immediately to the right of the **Paragraph** / Blocks dropdown is the **Font** control. Use it to change the typeface of selected text, or of the next text you type when nothing is selected.
+
+<ZoomImage src="/img/rich-text-editor-font-family.png" alt="Rich Text Editor Font Family dropdown" caption="Font control on the Rich Text Editor toolbar" />
+
+The list includes **Default** (the existing Times look for unstyled content) and common web-safe fonts such as Arial, Georgia, Courier New, and Verdana. Font choices are written into the editor HTML (for example as `font-family` on a span), including in **Default Value** when you set styled HTML there. There is no separate Font Family property in the property pane.
 
 ## Content properties
 
@@ -175,7 +182,7 @@ Controls whether the widget is displayed with a loading animation. When enabled,
 
 <dd>
 
-Controls the visibility of the toolbar on top of the widget.
+Controls the visibility of the toolbar on top of the widget, including the **Font** control and other formatting buttons. When the toolbar is hidden, existing font styling in the content remains visible.
 
 </dd>
 
