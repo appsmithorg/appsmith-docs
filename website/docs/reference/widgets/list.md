@@ -101,7 +101,7 @@ Allows you to configure one or multiple actions (Framework functions, queries, o
 
 <dd>
 
-When enabled, list items are not selected when the item container is clicked, and the pointer cursor and hover highlight on item containers are disabled. The **onItemClick** property is hidden in the property pane while this option is on.
+When turned on, list items are not selected when the item container is clicked, and the pointer cursor and hover highlight on item containers are disabled. The **onItemClick** property is hidden in the property pane while this option is on.
 
 **Default selected item** still applies when the list loads. [triggeredItem](#triggereditem-object) and [triggeredItemView](#triggereditemview-object) still update when users click child widgets inside a list item.
 
