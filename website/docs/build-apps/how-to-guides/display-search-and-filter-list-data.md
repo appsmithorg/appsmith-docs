@@ -44,7 +44,7 @@ To display data in a List widget, follow these steps:
 3. To set up pagination, enable the **Server side pagination** property for pagination. To set up the server-side pagination manually, follow the instructions in [Setup Server-Side Pagination on List](/build-apps/how-to-guides/Setup-Server-side-Pagination-on-List).
 
 :::tip
-For a read-only list (no row selection / no pointer cursor), turn on **Disable selection** in the List property pane. See [Disable selection](/reference/widgets/list#disable-selection).
+For a read-only list (no row selection / no pointer cursor), turn on **Disable selection** in the List property pane. See [Disable selection](/reference/widgets/list#disable-selection-boolean).
 :::
 
 ## Format list item
