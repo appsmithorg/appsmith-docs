@@ -46,6 +46,7 @@ Once a user has successfully authenticated through a Single Sign-On (SSO) Provid
 
 You can reference the access token using the placeholder `<<APPSMITH_USER_OAUTH2_ACCESS_TOKEN>>`. This placeholder is automatically substituted with the access token of the currently logged-in user.
 
+`<<APPSMITH_USER_EMAIL>>` is a different placeholder. It inserts the session email, it does not require OIDC, and it is not a token. See [Server-side email](/reference/appsmith-framework/context-object#server-side-email).
 
 ## User Claims
 

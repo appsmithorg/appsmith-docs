@@ -91,6 +91,10 @@ Appsmith supports a variety of encoding types for sending data in API queries. T
 When uploading file data, check that your Filepicker widget's **Data Format** property is set correctly. When uploading as multipart/form-data, this should usually be set to `Binary`.
 :::
 
+:::caution
+`{{appsmith.user.email}}` is evaluated in the browser, so a viewer can change it. To send the session email from the server, put [`<<APPSMITH_USER_EMAIL>>`](/reference/appsmith-framework/context-object#server-side-email) in the saved query.
+:::
+
 </dd>
 <ul>
   <li><b>BINARY:</b> For any Base64 upload, including text files, images, videos, and more, ensure that you include the file data in the body. If you're using Binary to upload files, remember to set the [Data Format](/reference/widgets/filepicker#data-format-string) property of the Filepicker widget to `Base64`. This ensures that the file data is encoded correctly before transmission. Moreover, if the API you are connecting with expects additional key/value pairs, you can include them along with file data in the body.</li>
