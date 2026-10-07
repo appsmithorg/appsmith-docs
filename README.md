@@ -7,10 +7,10 @@ Navigate to the website sub-directory
 ```
 $ cd website
 ```
-Run the below command to install node-modules
+Run the below command to install node modules
 
 ```
-$ npm install package.json
+$ npm install
 ```
 
 ### Local Development
