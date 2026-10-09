@@ -449,29 +449,80 @@ If you want to keep the same background color for an entire row, you can use the
 
 </dd>
 
+#### Header row color `string`
+
+<dd>
+
+Sets the background color of the header row, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). If empty, the header row uses the default background color. Additionally, the header row color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Header text color `string`
+
+<dd>
+
+Sets the color of the column header text, specified as a CSS color value. Additionally, the header text color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Header font weight `number/string`
+
+<dd>
+
+Sets the font weight of the column headers for the entire table. Cell text is not affected. The default is **Bold**, and an empty value also renders as bold.
+
+*Options*:
+* Light (300)
+* Regular (400)
+* Bold (700)
+
+When JavaScript is enabled, you can enter any number from 1 to 1000, including decimals, or one of these keywords:
+
+| Keyword | Weight |
+| --- | --- |
+| `light` | 300 |
+| `normal`, `regular` | 400 |
+| `medium` | 500 |
+| `semibold`, `semi-bold` | 600 |
+| `bold` | 700 |
+
+Invalid values show a validation error, and the headers render at 700. If the app font has no file for the selected weight, the browser uses the closest weight available.
+
+</dd>
+
+#### Header emphasis `string`
+
+<dd>
+
+Applies **Italic** and **Underline** styling to the column header labels for the entire table. Both are off by default, and you can select both. Sort icons and the column menu are not affected.
+
+When JavaScript is enabled, set the value to `ITALIC`, `UNDERLINE`, or `ITALIC,UNDERLINE`. Any other value, including `BOLD`, is ignored. To change the header weight, use [Header font weight](#header-font-weight-numberstring).
+
+</dd>
+
+#### Odd row color `string`
+
+<dd>
+
+Sets the background color of odd rows, specified as a CSS color value. Rows are counted from the first row of the table data, so the first row uses this color. If empty, odd rows are white. Additionally, the odd row color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Even row color `string`
+
+<dd>
+
+Sets the background color of even rows, specified as a CSS color value. If empty, even rows are white. Additionally, the even row color can be programmatically modified using JavaScript functions.
+
+Selected rows keep their selection highlight, regardless of the odd and even row colors.
+
+</dd>
+
 #### Text Color `string`
 
 <dd>
 
 Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
-</dd>
-
-#### Background Color `string`
-
-<dd>
-
-Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
-
-</dd>
-
-#### Border color `string`
-
-
-<dd>
-
-Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
-
-
 </dd>
 
 ### Border and shadow
