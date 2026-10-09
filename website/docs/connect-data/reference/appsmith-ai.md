@@ -1,7 +1,15 @@
+---
+unlisted: true
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Appsmith AI
+
+:::caution Deprecated
+The Appsmith AI datasource reached end of life on September 30, 2026, and is no longer available. You cannot create or run Appsmith AI datasources or queries. To add AI capabilities to your apps, use the [OpenAI](/connect-data/reference/open-ai), [Anthropic](/connect-data/reference/anthropic), or [Google AI](/connect-data/reference/google-ai) datasources instead.
+:::
 
 This page provides information on creating queries with Appsmith AI, which allows you to configure applications with advanced AI features such as text generation, image classification, and sentiment analysis without the need for any API keys or datasource authentication.
 

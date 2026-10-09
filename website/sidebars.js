@@ -392,7 +392,6 @@ const sidebars = {
                   label: 'AI Integrations',
                   items: [
                     'connect-data/reference/anthropic',
-                    'connect-data/reference/appsmith-ai',
                     'connect-data/reference/google-ai',
                     'connect-data/reference/open-ai'
                   ],
