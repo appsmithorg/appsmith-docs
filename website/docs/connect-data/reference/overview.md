@@ -254,15 +254,7 @@ Appsmith also supports integration with various Software as a Service (SAAS) pla
 With AI integrations, you can add intelligent AI capabilties to automate human tasks on your internal apps. Execute AI queries with a custom prompt and optional file context for enhanced responses.
 
 <div className="containerGrid">
-    <div className="columnGrid column-one" align="center">
-        <div className="containerCol">
-            <a href="/connect-data/reference/appsmith-ai">
-            <img className="containerImage" src="/img/appsmith-ai-logo.svg" alt="Appsmith AI"/>
-            </a> 
-        </div> 
-        <b><a href="/connect-data/reference/appsmith-ai">Appsmith AI</a></b>
-    </div>
-   <div className="columnGrid column-two" align="center">
+   <div className="columnGrid column-one" align="center">
         <div className="containerCol">
             <a href="/connect-data/reference/open-ai">
             <img className="containerImage" src="/img/open-ai.svg" alt="OpenAI"/>
@@ -270,10 +262,10 @@ With AI integrations, you can add intelligent AI capabilties to automate human t
         </div> 
         <b><a href="/connect-data/reference/open-ai">OpenAI</a></b>
     </div>
-   <div className="columnGrid column-three" align="center">
+   <div className="columnGrid column-two" align="center">
          <div className="containerCol">
             <a href="/connect-data/reference/anthropic">
-            <img className="containerImage" src="/img/anthropic4.svg" alt="OpenAI"/>
+            <img className="containerImage" src="/img/anthropic4.svg" alt="Anthropic"/>
             </a> 
         </div> 
         <b><a href="/connect-data/reference/anthropic">Anthropic</a></b>
