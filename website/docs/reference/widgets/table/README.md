@@ -449,6 +449,41 @@ If you want to keep the same background color for an entire row, you can use the
 
 </dd>
 
+#### Header font weight `number/string`
+
+<dd>
+
+Sets the font weight of the column headers for the entire table. Cell text is not affected. The default is **Bold**, and an empty value also renders as bold.
+
+*Options*:
+* Light (300)
+* Regular (400)
+* Bold (700)
+
+When JavaScript is enabled, you can enter any number from 1 to 1000, including decimals, or one of these keywords:
+
+| Keyword | Weight |
+| --- | --- |
+| `light` | 300 |
+| `normal`, `regular` | 400 |
+| `medium` | 500 |
+| `semibold`, `semi-bold` | 600 |
+| `bold` | 700 |
+
+Invalid values show a validation error, and the headers render at 700. If the app font has no file for the selected weight, the browser uses the closest weight available.
+
+</dd>
+
+#### Header emphasis `string`
+
+<dd>
+
+Applies **Italic** and **Underline** styling to the column header labels for the entire table. Both are off by default, and you can select both. Sort icons and the column menu are not affected.
+
+When JavaScript is enabled, set the value to `ITALIC`, `UNDERLINE`, or `ITALIC,UNDERLINE`. Any other value, including `BOLD`, is ignored. To change the header weight, use [Header font weight](#header-font-weight-numberstring).
+
+</dd>
+
 #### Text Color `string`
 
 <dd>
