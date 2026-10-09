@@ -82,6 +82,8 @@ The run details provide a comprehensive view of each activity's execution within
 	* **Timestamps** -  Each log entry, from the start to the completion of the workflow execution, has an associated timestamp indicating when each activity started and ended. This helps in understanding the duration of each activity and the overall workflow completion time.
 	* **Activity** - The logs present the sequence of activities performed during the workflow, including the parameters passed and any errors encountered. Each activity is identified by its name (e.g., query name or JS object name) and includes start and end timestamps for detailed analysis.
 
+For runs on the [native workflow engine](/workflows/how-to-guides/native-workflow-engine), the logs show the value of an `Authorization` request header as `****`. Appsmith redacts only the `Authorization` header. Credentials sent in other headers, such as a custom API key header, are not redacted.
+
 ## Important considerations
 
 * **Unique ID** - Use the unique ID to quickly locate and review specific workflow runs.
