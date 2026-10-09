@@ -265,7 +265,11 @@ This property allows the column title to wrap onto multiple lines instead of bei
 
 This property is available for every column type and is turned off by default, so headers display on a single line unless you enable it.
 
-<!-- TODO(screenshot): Table header with Header Wrapping enabled on a column with a long title, showing the title on multiple lines and the taller header row -->
+<ZoomImage
+  src="/img/table-header-wrapping.png"
+  alt="Table with Header Wrapping enabled on a column with a long title"
+  caption="Header Wrapping enabled on the Estimated delivery date and shipping window column"
+/>
 
 </dd>
 
