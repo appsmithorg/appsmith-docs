@@ -449,6 +449,22 @@ If you want to keep the same background color for an entire row, you can use the
 
 </dd>
 
+#### Header row color `string`
+
+<dd>
+
+Sets the background color of the header row, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). If empty, the header row uses the default background color. Additionally, the header row color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Header text color `string`
+
+<dd>
+
+Sets the color of the column header text, specified as a CSS color value. Additionally, the header text color can be programmatically modified using JavaScript functions.
+
+</dd>
+
 #### Header font weight `number/string`
 
 <dd>
@@ -484,29 +500,29 @@ When JavaScript is enabled, set the value to `ITALIC`, `UNDERLINE`, or `ITALIC,U
 
 </dd>
 
+#### Odd row color `string`
+
+<dd>
+
+Sets the background color of odd rows, specified as a CSS color value. Rows are counted from the first row of the table data, so the first row uses this color. If empty, odd rows are white. Additionally, the odd row color can be programmatically modified using JavaScript functions.
+
+</dd>
+
+#### Even row color `string`
+
+<dd>
+
+Sets the background color of even rows, specified as a CSS color value. If empty, even rows are white. Additionally, the even row color can be programmatically modified using JavaScript functions.
+
+Selected rows keep their selection highlight, regardless of the odd and even row colors.
+
+</dd>
+
 #### Text Color `string`
 
 <dd>
 
 Sets the color for the text in the table. Additionally, the text color can be programmatically modified using JavaScript functions.
-</dd>
-
-#### Background Color `string`
-
-<dd>
-
-Sets the background color of the widget, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
-
-</dd>
-
-#### Border color `string`
-
-
-<dd>
-
-Sets a color for the border, specified as a CSS color value. It can also be manipulated programmatically using the JavaScript functions.
-
-
 </dd>
 
 ### Border and shadow

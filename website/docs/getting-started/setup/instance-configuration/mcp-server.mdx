@@ -380,6 +380,10 @@ Every Appsmith MCP tool describes itself to the client with standard MCP tool an
 
 When the client supports MCP elicitation, Appsmith also shows its own approval prompt for the confirm step, with the exact scope of the change. Claude clients keep their own approval flow and do not change their behavior based on the annotations. The annotations describe the server's rules; they do not replace them.
 
+## Datasource environments
+
+A datasource that an MCP client creates is configured in the workspace's default [datasource environment](/connect-data/concepts/Datasource-Environments), usually **Production**. Queries that the client runs and datasource structures that it reads also use the default environment. To use the datasource in another environment, configure it for that environment in Appsmith. See [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
+
 ## Manage MCP keys
 
 On the **MCP keys** page, you can review a key's name, status, creation date, and expiration date. You can also search for keys and filter them by status.
