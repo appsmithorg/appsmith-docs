@@ -257,6 +257,18 @@ This property allows the content of the cell to be wrapped, enabling the display
 
 </dd>
 
+#### Header Wrapping `boolean`
+
+<dd>
+
+This property allows the column title to wrap onto multiple lines instead of being cut off. When enabled, the title wraps onto as many lines as it needs, and the header row grows taller to fit it. The sort arrow, column menu, edit icon, and resize handle stay beside the title.
+
+This property is available for every column type and is turned off by default, so headers display on a single line unless you enable it.
+
+<!-- TODO(screenshot): Table header with Header Wrapping enabled on a column with a long title, showing the title on multiple lines and the taller header row -->
+
+</dd>
+
 #### Editable `boolean`
 
 <dd>
