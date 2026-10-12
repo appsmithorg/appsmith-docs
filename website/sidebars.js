@@ -233,6 +233,7 @@ const sidebars = {
                 id: 'getting-started/setup/instance-management/update-appsmith',
               },
               items: [
+                'getting-started/setup/instance-management/upgrade-checkpoints',
                 'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
               ]
             },

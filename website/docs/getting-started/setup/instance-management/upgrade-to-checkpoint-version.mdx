@@ -1,73 +1,78 @@
 ---
-description: This page provides steps to upgrade Appsmith to the checkpoint version on your self-hosted Appsmith instance.
+description: Learn how to upgrade your self-hosted Appsmith instance through the v1.9.2 and v1.96-v1.99 checkpoint versions before you upgrade to a later release.
 toc_max_heading_level: 2
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Upgrade to Checkpoint Version (v1.96-v1.99)
-It is very important if you have Appsmith installed and are on a version greater than v1.9.2 but less than v1.96 through v1.99 - that you upgrade 
-first to one of the version (v1.96-v1.99) prior to upgrading to Appsmith 2.0 or newer.  If you attempt to upgrade, you will see in the logs failures 
-and will have to roll back and then upgrade to version v1.99 (recommneded).  Only then can you upgrade to v2.0 or newer.
+# Upgrade to Checkpoint Versions
 
-# Upgrade to Checkpoint Version (v1.9.2)
+Checkpoint versions are milestone releases that apply required database schema updates, optimizations, and compatibility fixes to your Appsmith instance. You must install each checkpoint version that applies to you, and let your instance start successfully, before you upgrade to a later release.
 
-Checkpoint versions are milestone releases that ensure your Appsmith instance applies necessary database schema updates, optimizations, and compatibility fixes. If your current Appsmith version is older than `v1.9.2`, upgrading to this checkpoint version is mandatory before moving to later releases. This page provides step-by-step instructions to upgrade your self-hosted Appsmith instance to checkpoint version `v1.9.2`.
+This page covers the checkpoint versions for upgrading to Appsmith v2.0. For checkpoints in later releases, which Appsmith enforces automatically, see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
+
+## Find the checkpoints that apply to you
+
+| Your current version | What to do |
+| --- | --- |
+| Earlier than v1.9.2 | Follow [Upgrade to v1.9.2](#upgrade-to-v192), which takes you to v1.9.2 and then to v1.99. Then upgrade to the latest release. |
+| v1.9.2 or later, but earlier than v1.96 | Upgrade to [v1.96–v1.99](#upgrade-to-v196v199), and then to the latest release. |
+| v1.96 or later | No action is required. Follow [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith). |
 
 ## Prerequisites
 
-Before upgrading, ensure the following:
+Before you upgrade, make sure that:
 
-1. At least 2 GB of free storage for backup and update tasks.  
-2. Upgrade your embedded or external MongoDB server to v5.0 or later. For more information, see the list of [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the steps available on MongoDB official documentation to [Upgrade a Replica Set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
-3. Create a backup of your Appsmith instance. For more information, see the [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide.
+1. You have at least 2 GB of free storage for the backup and update.
+2. Your embedded or external MongoDB server runs version 5.0 or later. To upgrade MongoDB, check the [supported platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the MongoDB guide to [upgrade a replica set to 5.0](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+3. You have a backup of your Appsmith instance. To create one, follow the [Backup instance](/getting-started/setup/instance-management/appsmithctl/#backup-instance) guide.
 
-## Update Appsmith
+## Upgrade to v1.9.2 {#upgrade-to-v192}
 
-Follow these steps to upgrade your Appsmith instance to checkpoint version `v1.9.2`.
+Follow these steps if your current version is earlier than v1.9.2. These steps upgrade your instance to v1.9.2 and then to v1.99. Do not upgrade directly from v1.9.2 to v2.0 or later.
 
 <Tabs queryString="current-checkpoint-platform">
 
 <TabItem label="Docker" value="docker">
 
-These instructions are applicable to platforms using Docker, including Docker standalone, AWS AMI, or DigitalOcean.
+These instructions apply to Docker-based platforms, such as Docker standalone, AWS AMI, and DigitalOcean.
 
-1. Access your Appsmith installation directory and update the `docker-compose.yml` file:
-
-2. Set the image attribute to use tag `v1.9.2`:  
-      ```yaml  
-      services:  
-        appsmith:  
+1. Go to your Appsmith installation directory, open the `docker-compose.yml` file, and set the image tag to `v1.9.2`:
+      ```yaml
+      services:
+        appsmith:
         # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ee:v1.9.2  
-          container_name: appsmith  
-      ``` 
+          image: index.docker.io/appsmith/appsmith-ee:v1.9.2
+          container_name: appsmith
+      ```
 
-3. Save the changes and restart the instance with the following command:  
-    ```bash  
-    docker-compose up -d  
+2. Save the file and restart the instance:
+    ```bash
+    docker-compose up -d
     ```
 
-4. Allow the instance to start and apply the necessary schema changes automatically. After the schema updates are complete, revert the image in the `docker-compose.yml` file to point to the latest version:  
-      ```yaml  
-      services:  
-        appsmith:  
-        # highlight-next-line
-          image: index.docker.io/appsmith/appsmith-ee:latest 
-          container_name: appsmith  
-      ```   
+3. Wait for the instance to start and apply the schema changes. This happens automatically.
 
-4. Save the changes and restart the instance again to finalise the update:  
-    ```bash  
-    docker-compose up -d  
+4. After the schema updates are complete, update the image tag in `docker-compose.yml` to `v1.99`:
+      ```yaml
+      services:
+        appsmith:
+        # highlight-next-line
+          image: index.docker.io/appsmith/appsmith-ee:v1.99
+          container_name: appsmith
+      ```
+
+5. Save the file and restart the instance again to complete the update:
+    ```bash
+    docker-compose up -d
     ```
 
 </TabItem>
 
 <TabItem label="Kubernetes" value="kubernetes">
 
-These instructions apply to platforms running Appsmith on Kubernetes.
+These instructions apply to Appsmith instances running on Kubernetes.
 
 ### StatefulSets
 
@@ -76,26 +81,26 @@ These instructions apply to platforms running Appsmith on Kubernetes.
     kubectl get sts -n <appsmith-namespace>
     ```
 
-    Replace `<appsmith-namespace>` with your defined namespace.
+    Replace `<appsmith-namespace>` with your namespace.
 
-2. Update the image of the StatefulSet to checkpoint version `v1.9.2`:
+2. Set the StatefulSet image to checkpoint version `v1.9.2`:
     ```bash
     kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.9.2
     ```
 
-3. Pull and update Appsmith to version `v1.9.2`:
+3. Restart the StatefulSet to pull and run version `v1.9.2`:
     ```bash
     kubectl rollout restart sts/<appsmith> -n <appsmith-namespace>
     ```
 
-4. Verify the update by checking the Appsmith apps.
+4. Verify the update by checking that your Appsmith apps work as expected.
 
-5. Once the instance is stable, update to the latest version:
+5. After the instance is stable, update the image tag to `v1.99`:
     ```bash
-    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    kubectl set image sts/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.99
     ```
 
-6. Pull and update Appsmith to the latest version:
+6. Restart the StatefulSet to pull and run version `v1.99`:
     ```bash
     kubectl rollout restart sts/<appsmith> -n <appsmith-namespace>
     ```
@@ -107,50 +112,63 @@ These instructions apply to platforms running Appsmith on Kubernetes.
     kubectl get deployments -n <appsmith-namespace>
     ```
 
-    Note the Deployment name for Appsmith.
+    Note the name of the Appsmith Deployment.
 
-2. Update the Deployment image to checkpoint version `v1.9.2`:
+2. Set the Deployment image to checkpoint version `v1.9.2`:
     ```bash
     kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.9.2
     ```
 
-3. Once the instance is stable, update to the latest version:
+3. After the instance is stable, update the image tag to `v1.99`:
     ```bash
-    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:latest
+    kubectl set image deployment/<appsmith> -n <appsmith-namespace> appsmith=appsmith/appsmith-ee:v1.99
     ```
 
 </TabItem>
 
 <TabItem label="AWS ECS (EC2) and Fargate" value="aws-ecs-and-fargate">
 
-These instructions apply to platforms running Appsmith on AWS ECS (EC2) and Fargate.
+These instructions apply to Appsmith instances running on AWS ECS (EC2) and Fargate.
 
-1. Log in to your AWS account and navigate to the Amazon ECS console.
-2. Select the cluster containing the container instance to update.
-3. Go to the task definition, and update the image tag to `v1.9.2`:
+1. Sign in to your AWS account and open the Amazon ECS console.
+2. Select the cluster that contains the container instance you want to update.
+3. Open the task definition and set the image tag to `v1.9.2`:
     ```bash
     appsmith/appsmith-ee:v1.9.2
     ```
 4. Restart the ECS service.
-5. Verify the updated version is running successfully.
-6. Go to the task definition, and update the image tag to `latest`:
+5. Verify that the updated version is running.
+6. Open the task definition and update the image tag to `v1.99`:
     ```bash
-    appsmith/appsmith-ee:latest
+    appsmith/appsmith-ee:v1.99
     ```
 7. Restart the ECS service.
-8. Verify the updated version is running successfully.   
+8. Verify that the updated version is running.
 
 </TabItem>
 
 </Tabs>
 
+After your instance is running v1.99, upgrade to v2.0 or later by following [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
+
+## Upgrade to v1.96–v1.99 {#upgrade-to-v196v199}
+
+Follow these steps if your current version is v1.9.2 or later, but earlier than v1.96. You must install one of the versions from v1.96 to v1.99 before you upgrade to v2.0 or later. Appsmith recommends v1.99.
+
+1. Follow the steps in [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith) for your platform, and set the image tag to `v1.99`.
+2. Wait for the instance to start, and verify that your Appsmith apps work as expected.
+3. Upgrade to v2.0 or later by following [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith) again.
+
+If you already upgraded directly to v2.0 or later and the logs show failures, roll back to your previous version by following the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide. Then follow the steps above.
+
 ## Troubleshooting
 
-If you face issues during the upgrade, roll back to a previous version using the [Restore instance guide](/getting-started/setup/instance-management/backup-and-restore/restore-instance).
+If the upgrade fails, roll back to the previous version by following the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide.
 
-For further queries, contact the Appsmith support team using the chat widget in the bottom-right corner of this page.
+If the problem persists, contact Appsmith support using the chat widget in the bottom-right corner of this page.
 
 ## See also
 
+- [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints): Learn how Appsmith enforces checkpoints in later releases, and what to do if the server does not start after an upgrade.
 - [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith): Learn how to upgrade your Appsmith installation to the latest version.
-- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date.
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule automatic updates to keep your installation up to date.

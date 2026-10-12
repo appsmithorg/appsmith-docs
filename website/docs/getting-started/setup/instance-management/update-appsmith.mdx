@@ -1,5 +1,5 @@
 ---
-description: This page provides steps to update Appsmith to the latest version on your self-hosted Appsmith instance.
+description: Learn how to update your self-hosted Appsmith instance to the latest version.
 toc_max_heading_level: 2
 ---
 
@@ -8,39 +8,39 @@ import TabItem from '@theme/TabItem';
 
 # Upgrade Appsmith Versions
 
-This page provides step-by-step instructions to update Appsmith to the latest version on your self-hosted instance.
+This page explains how to update your self-hosted Appsmith instance to the latest version.
 
 ## Prerequisites
 
-Before updating, ensure the following prerequisites are met:
+Before you update, make sure that:
 
-1. At least 2 GB of free storage for backup and update tasks.  
-2. Update your embedded or external MongoDB server to version 5.0 or later. Refer to the [compliant platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the [MongoDB Replica Set Upgrade Guide](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).  
-3. Create a backup of your Appsmith instance. Follow the [Backup instance guide](/getting-started/setup/instance-management/appsmithctl/#backup-instance).
+1. You have at least 2 GB of free storage for the backup and update.
+2. Your embedded or external MongoDB server runs version 5.0 or later. To upgrade MongoDB, check the [supported platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the [MongoDB replica set upgrade guide](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
+3. You have a backup of your Appsmith instance. To create one, follow the [Backup instance guide](/getting-started/setup/instance-management/appsmithctl/#backup-instance).
 
 ## Update Appsmith
 
-Follow these steps to update Appsmith to latest version on your self-hosted instance:
+Select your platform and follow the steps to update Appsmith to the latest version:
 
 <Tabs queryString="current-platform-type">
 
 <TabItem label="Docker" value="docker">
 
-These instructions are applicable to platforms using Docker, including Docker standalone, AWS AMI, and similar platforms:
+These instructions apply to Docker-based platforms, such as Docker standalone and AWS AMI.
 
 :::caution Important
-We have two checkpoints:
- - If your current version is newer than v1.9.2, but less than v1.96-v1.99 then you must upgrade to any version between v1.96 to v1.99 prior to upgrading to version 2.0+.
- - If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+Some versions are checkpoints that you must install before you upgrade further:
+ - If your current version is earlier than v1.9.2, follow the steps in [Upgrade to v1.9.2](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v192) before you update to the latest release.
+ - If your current version is later than v1.9.2 but earlier than v1.96, follow [Upgrade to v1.96–v1.99](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v196v199) before you upgrade to v2.0 or later.
 :::
 
-1. Locate your Appsmith installation directory by running:  
+1. Find your Appsmith installation directory:
    ```bash
    docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
    ``` 
-2. Retrieve the Appsmith version you want to run.
+2. Choose the Appsmith version you want to run.
 
-   Find the release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+   Find its release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
 
 3. Open `docker-compose.yml` in that directory and set the `image` for the Appsmith service to a pinned tag, for example:
 
@@ -48,9 +48,9 @@ We have two checkpoints:
    image: index.docker.io/appsmith/appsmith-ee:<version>
    ```
 
-   If you use the Community edition image, use `appsmith-ce` instead of `appsmith-ee` and the same `:<version>` suffix.
+   If you use the Community Edition, replace `appsmith-ee` with `appsmith-ce` and keep the same `:<version>` suffix.
 
-4. Pull the image and restart the container. The running container matches the tag in `docker-compose.yml`.
+4. Pull the image and restart the container. The new container runs the version set in `docker-compose.yml`.
 
    ```bash
    docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
@@ -61,40 +61,41 @@ We have two checkpoints:
 <TabItem label="Kubernetes" value="kubernetes">
 
 :::caution Important
-If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+If your current version is earlier than v1.9.2, follow the steps in [Upgrade to v1.9.2](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v192) before you update to the latest release.
 :::
 
-> **Note**: The following instructions assume you followed our [Kubernetes install guide](https://docs.appsmith.com/getting-started/setup/installation-guides/kubernetes) exactly. If you made changes—such as using a different Helm release name, namespace, etc.—you’ll need to adjust the commands accordingly.
+> **Note**: These instructions assume you followed the [Kubernetes installation guide](/getting-started/setup/installation-guides/kubernetes) exactly. If you changed any defaults, such as the Helm release name or namespace, adjust the commands to match.
 
-1. Retrieve the latest Appsmith version
-   
-Find the latest release version on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+1. Choose the latest Appsmith version.
 
-2. Locate your Helm `values.yaml` file
-   - If you still have the `values.yaml` file from your initial installation, navigate to its directory:
+   Find the latest release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+
+2. Locate your Helm `values.yaml` file.
+   - If you still have the `values.yaml` file from your initial installation, go to its directory:
      ```bash
      cd /path/to/your/values-file
      ```
-   - If you no longer have the file, you can retrieve it from your cluster:
+   - If you no longer have the file, retrieve it from your cluster:
      ```bash
      helm get values appsmith-ee -n appsmith-ee | grep -v "USER-SUPPLIED" > values.yaml
      ```
 
-3. Update the image tag in `values.yaml`
+3. Update the image tag in `values.yaml`.
    - If you have [`yq`](https://github.com/mikefarah/yq) installed:
      ```bash
      APPSMITH_VERSION=<version>
      yq -i ".image.tag = \"$APPSMITH_VERSION\"" values.yaml
      ```
-   - If you don’t have `yq`, manually edit `values.yaml` with your preferred text editor to set the new version:
+   - If you don’t have `yq`, open `values.yaml` in a text editor and set the new version:
      ```yaml
      image:
        tag: <version>
      ```
 
-4. Apply the upgrade using Helm
-   
-Run the following command to upgrade your Appsmith installation:
+4. Apply the upgrade with Helm.
+
+   Run the following command:
+
    ```bash
    helm upgrade appsmith-ee -n appsmith-ee -f values.yaml
    ```
@@ -103,34 +104,34 @@ Run the following command to upgrade your Appsmith installation:
 
 <TabItem label="AWS ECS on EC2" value="aws-ecs-ec2">
 
-1. Log in to your AWS account and navigate to the Amazon ECS console.  
-2. Select the cluster containing the container instance to update.  
-3. Stop the task and allow the system to deploy a new task automatically.  
-4. Verify the updated version is running successfully.
+1. Sign in to your AWS account and open the Amazon ECS console.
+2. Select the cluster that contains the container instance you want to update.
+3. Stop the task. ECS automatically deploys a new task.
+4. Verify that the updated version is running.
 
 </TabItem>
 
 <TabItem label="Azure Container Instance" value="azure-ci">
 
-1. Navigate to the Azure Portal and locate the Azure Container Instance running Appsmith.  
-2. Restart the container by clicking the **Restart** button.
+1. In the Azure portal, find the Azure Container Instance that runs Appsmith.
+2. Click **Restart** to restart the container.
 
 </TabItem>
 
 <TabItem label="DigitalOcean" value="digital-ocean">
 
 :::caution Important
-If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoint Version (v1.9.2)](/getting-started/setup/instance-management/upgrade-to-checkpoint-version) guide before updating Appsmith to the latest release.  
+If your current version is earlier than v1.9.2, follow the steps in [Upgrade to v1.9.2](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v192) before you update to the latest release.
 :::
 
-1. SSH into your droplet and navigate to the Appsmith installation directory:  
+1. Connect to your Droplet over SSH and go to the Appsmith installation directory:
 
    ```bash
    cd /root/appsmith
    ```  
-2. Retrieve the Appsmith version you want to run.
+2. Choose the Appsmith version you want to run.
 
-   Find the release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
+   Find its release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
 
 3. Open `docker-compose.yml` and set the `image` for the Appsmith service to a pinned tag, for example:
 
@@ -138,9 +139,9 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
    image: index.docker.io/appsmith/appsmith-ee:<version>
    ```
 
-   If you use the Community edition image, use `appsmith-ce` instead of `appsmith-ee` and the same `:<version>` suffix.
+   If you use the Community Edition, replace `appsmith-ee` with `appsmith-ce` and keep the same `:<version>` suffix.
 
-4. Pull the image and restart the installation. The running container matches the tag in `docker-compose.yml`.
+4. Pull the image and restart the installation. The new container runs the version set in `docker-compose.yml`.
 
    ```bash
    docker-compose pull && docker-compose rm -fsv appsmith && docker-compose up -d
@@ -154,9 +155,10 @@ If your current version is older than v1.9.2. Refer to the [Upgrade to Checkpoin
 
 ## Troubleshooting
 
-If you encounter errors during the update, roll back to a previous version using the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide. If issues persist, contact support using the chat widget available on the bottom-right of this page.
+If the update fails, roll back to the previous version by following the [Restore instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance) guide. If the problem persists, contact support using the chat widget in the bottom-right corner of this page.
 
 
 ## See also
 
-- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule updates to keep your installation up-to-date effortlessly.
+- [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints): Learn about releases that you must install and run before you can upgrade past them, and what to do if the server does not start after an upgrade.
+- [Schedule automatic updates for Appsmith installation](/getting-started/setup/instance-management/maintenance-window): Learn how to schedule automatic updates to keep your installation up to date.
