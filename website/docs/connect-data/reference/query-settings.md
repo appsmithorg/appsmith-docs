@@ -141,6 +141,14 @@ APPSMITH_SERVER_TIMEOUT=80
 
 This setting is available for both API and database queries.
 
+By default, reaching the timeout only stops Appsmith from waiting: the query keeps running on the database until it finishes, and keeps one of the datasource's pooled connections busy. On self-hosted instances, set the `APPSMITH_PLUGIN_QUERY_TIMEOUT_CANCEL_ENABLED` environment variable to `true` to have the database cancel the query when its timeout is reached. For example:
+
+```js
+APPSMITH_PLUGIN_QUERY_TIMEOUT_CANCEL_ENABLED=true
+```
+
+This applies to PostgreSQL, MySQL, MariaDB, Microsoft SQL Server, Oracle, Redshift, Snowflake, Databricks, and MongoDB queries. On MySQL, the database only enforces the limit on read-only `SELECT` statements.
+
 
 </dd>
 
