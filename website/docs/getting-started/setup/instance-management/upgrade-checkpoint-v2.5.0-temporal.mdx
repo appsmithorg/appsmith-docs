@@ -1,54 +1,60 @@
 ---
-description: Finish the v2.5.0 workflow engine checkpoint on a v2.5.x release before you upgrade to v2.6, when Temporal is removed.
+description: Complete the v2.5.0 workflow engine checkpoint on a v2.5.x release before upgrading to v2.6, which removes Temporal.
 ---
 
 # v2.5.0 workflow engine transition
 
-Starting with **v2.5.0**, new workflow runs use Appsmith's native engine.
+Starting with **v2.5.0**, new workflow runs use Appsmith's native workflow engine. Runs that started before v2.5.0 continue on **Temporal**, and every **v2.5.x** release keeps Temporal running so those runs can complete. **v2.6 removes Temporal**, so you must complete this checkpoint on a v2.5.x release before you upgrade.
 
-Workflows that started before v2.5.0 continue on **Temporal**. Every **v2.5.x** release still runs Temporal so those runs can finish.
+This page applies only to self-hosted instances. Appsmith Cloud does not use upgrade checkpoints.
 
-**v2.6** removes Temporal. Stay on a v2.5.x release and finish this checkpoint before you upgrade to v2.6.
+## Complete the checkpoint
 
-This applies to self-hosted instances. Appsmith Cloud does not use these checkpoints.
+1. Sign in as an instance administrator.
+2. Go to **Admin Settings** > **Instance** > **Admin central**.
+3. Find the **v2.5.0 · Workflow Engine Transition** checkpoint.
 
-## While you are on v2.5.x
+For an overview of how checkpoints work, click **How checkpoints work** on the same screen, or see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
 
-Sign in as an instance administrator, open **Admin Settings**, and under **Instance** select **Admin central**.
-
-The checkpoint is **v2.5.0 · Workflow Engine Transition**. **Learn more** on that row opens this page. For how checkpoints work in general, use **How checkpoints work** on the same screen, or see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints).
-
-While Temporal runs are still open, Admin central marks the upgrade as blocked. It lists each workflow, the workspace it belongs to, how many runs are still open, and the age of the oldest run.
+While any Temporal runs are still in progress, Admin central shows the upgrade as **blocked**. For each workflow, it lists the workspace, the number of runs in progress, and the age of the oldest run.
 
 <ZoomImage
   src="/img/checkpoint-v2.5.0-pending.png"
-  alt="Admin central showing the v2.5.0 Workflow Engine Transition checkpoint with open Temporal runs and Upgrade blocked"
-  caption="Open Temporal runs block the upgrade to v2.6"
+  alt="Admin central showing the v2.5.0 Workflow Engine Transition checkpoint with Temporal runs in progress and the upgrade blocked"
+  caption="Temporal runs in progress block the upgrade to v2.6"
 />
 
-Let an open run finish when you can. Stop a run only if you mean to end that work.
+Where possible, let in-progress runs complete. Stop a run only if you no longer need it to finish.
 
-While runs are still open, the action on the page is **Skip checkpoint...**. Read the confirmation before you skip. Skipping records that you chose to move on with those runs unfinished. Later upgrades will not ask about this checkpoint again.
+### Acknowledge the checkpoint
 
-When no runs are still open, **Skip checkpoint...** is replaced by **Acknowledge**. Acknowledge records the checkpoint as finished.
+When no runs remain in progress, **Skip checkpoint...** changes to **Acknowledge**. Click **Acknowledge** to mark the checkpoint complete.
 
-## After you acknowledge
+### Skip the checkpoint
 
-Admin central moves the checkpoint to **Collected**. The record shows the version, the name **Workflow Engine Transition**, the outcome **Marked complete**, and who finished it and when.
+If runs are still in progress and you need to upgrade anyway, click **Skip checkpoint...** and review the confirmation dialog before you continue.
+
+:::caution
+Skipping records that you chose to upgrade while runs were still in progress. Appsmith won't prompt you about this checkpoint again.
+:::
+
+## After you complete the checkpoint
+
+Admin central moves the checkpoint to **Collected**. The entry shows the version, the name **Workflow Engine Transition**, the outcome **Marked complete**, and who completed it and when.
 
 <ZoomImage
   src="/img/checkpoint-v2.5.0-collected.png"
-  alt="Admin central Collected list with the v2.5.0 Workflow Engine Transition checkpoint marked complete"
-  caption="A finished checkpoint no longer blocks the next upgrade"
+  alt="Admin central Collected list showing the v2.5.0 Workflow Engine Transition checkpoint marked complete"
+  caption="A completed checkpoint no longer blocks the next upgrade"
 />
 
-Under **Pending**, Admin central shows **No checkpoint pending. Nothing blocks your next upgrade.** You can then upgrade to v2.6.
+Under **Pending**, Admin central displays **No checkpoint pending. Nothing blocks your next upgrade.** You can now upgrade to v2.6.
 
 ## If the server does not start
 
-This happens when the instance was moved to v2.6 or later before this checkpoint was finished. Appsmith stops the backend before it comes up, so Admin central is not available.
+If you upgraded to v2.6 or later before completing this checkpoint, Appsmith stops the backend during startup, so Admin central isn't available.
 
-Follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints#if-the-server-does-not-start). Return to the v2.5.x version named in the log, finish or skip this checkpoint in Admin central, then upgrade again.
+To recover, follow [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints#if-the-server-does-not-start). Roll back to the v2.5.x version named in the server log, complete or skip this checkpoint in Admin central, and then upgrade again.
 
 ## See also
 
