@@ -620,7 +620,7 @@ APPSMITH_DISABLE_INTERCOM=true
 
 ### Help menu
 
-Use the following environment variables to control the Help (?) icon and its menu items. Each variable applies only to the instance where you set it, so you can hide the Help icon on a production instance and keep it on development or test instances. When `APPSMITH_DISABLE_HELP_ICON` is `true`, the whole Help menu is hidden, so the other two variables have no effect.
+Use the following environment variables to control the Help (?) icon and its menu items. Each variable applies only to the instance where you set it, so you can hide the Help icon on a production instance and keep it on development or test instances. When `APPSMITH_DISABLE_HELP_ICON` is `true`, the whole Help menu is hidden, including the items the other two variables control. To also turn off in-app chat and support-info recording elsewhere in Appsmith, set those variables as well.
 
 ##### `APPSMITH_DISABLE_HELP_ICON`
 
@@ -637,13 +637,13 @@ APPSMITH_DISABLE_HELP_ICON=true
 ##### `APPSMITH_DISABLE_PYLON`
 
 <dd>
-Set this to `true` to hide the **Chat with us** item in the Help menu.
+Set this to `true` to turn off in-app chat. This hides **Chat with us** in the Help menu and **Get Appsmith support** in the debugger's error menu.
 </dd>
 
 ##### `APPSMITH_DISABLE_BETTERBUGS`
 
 <dd>
-Set this to `true` to hide the **Send support info** item in the Help menu.
+Set this to `true` to hide **Send support info** in the Help menu. It also stops the support-info recorder from loading.
 </dd>
 
 ## See also
