@@ -618,6 +618,34 @@ APPSMITH_DISABLE_INTERCOM=true
 ```
 </dd>
 
+### Help menu
+
+Use the following environment variables to control the Help (?) icon and its menu items. Each variable applies only to the instance where you set it, so you can hide the Help icon on a production instance and keep it on development or test instances. When `APPSMITH_DISABLE_HELP_ICON` is `true`, the whole Help menu is hidden, including the items the other two variables control. To also turn off in-app chat and support-info recording elsewhere in Appsmith, set those variables as well.
+
+##### `APPSMITH_DISABLE_HELP_ICON`
+
+<dd>
+Set this to `true` to hide the Help (?) icon in the editor and on the homepage. In the app editor, the **Help** submenu is also removed from the menu that opens when you click the app name. By default, this variable isn't set and the Help icon is visible.
+
+The onboarding checklist for new users opens from the Help icon, so it isn't available while this variable is `true`.
+
+```yaml
+APPSMITH_DISABLE_HELP_ICON=true
+```
+</dd>
+
+##### `APPSMITH_DISABLE_PYLON`
+
+<dd>
+Set this to `true` to turn off in-app chat. This hides **Chat with us** in the Help menu and **Get Appsmith support** in the debugger's error menu.
+</dd>
+
+##### `APPSMITH_DISABLE_BETTERBUGS`
+
+<dd>
+Set this to `true` to hide **Send support info** in the Help menu. It also stops the support-info recorder from loading.
+</dd>
+
 ## See also
 * [Configure Appsmith instance using Environment Variables](/getting-started/setup/instance-configuration/configure-using-environment-variables) - Learn more about setting up and managing environment variables in Appsmith.
 * [Admin Settings](/getting-started/setup/instance-configuration/admin-settings) - Learn more about setting up and managing Appsmith instance using Admin Settings User Interface.
