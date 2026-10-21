@@ -597,6 +597,13 @@ Adjust the internal server timeout to optimize performance based on your Appsmit
 Specifies the internal Appsmith server timeout in seconds. Defaults to a `60` second timeout. Increase or decrease based on your server's load and expected response times.
 </dd>
 
+##### `APPSMITH_PLUGIN_QUERY_TIMEOUT_CANCEL_ENABLED`
+
+<dd>
+
+When set to `true`, database queries are cancelled on the database once their [Query timeout](/connect-data/reference/query-settings#query-timeout) is reached, so they stop using database resources and release their pooled connection. Defaults to `false`, where Appsmith stops waiting but the query keeps running on the database until it finishes. Applies to PostgreSQL, MySQL, MariaDB, Microsoft SQL Server, Oracle, Redshift, Snowflake, Databricks, and MongoDB datasources. Each query uses its own Query timeout setting.
+</dd>
+
 ### Intercom
 
 Appsmith includes an Intercom app for all self-hosted instances. Use the following environment variables to configure or disable it.
