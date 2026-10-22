@@ -62,11 +62,10 @@ Appsmith always serves its unauthenticated health endpoint at `GET /api/v1/healt
 
 #### Cause
 
-The internal Appsmith server health check uses a timeout that defaults to 60 seconds. Under heavy load or slow responses, the container may be marked unhealthy and restarted.
+The container health check times out when the Appsmith server responds slowly, for example under heavy load. The container is then marked unhealthy and may be restarted.
 
 #### Solution
 
-- Adjust the internal server timeout using the [`APPSMITH_SERVER_TIMEOUT`](/getting-started/setup/environment-variables#appsmith_server_timeout) environment variable, which defaults to `60` seconds.
 - If the container is repeatedly marked unhealthy, collect the backend logs and check machine specifications (OS, CPU, memory), as resource exhaustion is a common cause. See [How to Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs).
 
 ### Retrieving application and server logs

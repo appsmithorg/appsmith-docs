@@ -24,7 +24,7 @@ Apply the following resolutions to fix timeout errors:
 
 - **Server-side pagination**: Allows you to manage and display large datasets within your application. It involves fetching and displaying a small set of data from the server at a time, improving performance. For more information, see [Server-side pagination](/build-apps/how-to-guides/Server-side-pagination-in-table).
 
-- **Timeout configuration**: The Appsmith server has a default internal timeout of 60 seconds. If your queries take longer, you can set a value greater than 60 seconds. For self-hosted instances, set the `APPSMITH_SERVER_TIMEOUT` environment variable to a value greater than 60 seconds. For more information, see [Timeout Configuration in Query Settings](/connect-data/reference/query-settings).
+- **Timeout configuration**: Increase the **Query timeout** in the query's **Settings** tab. For more information, see [Timeout Configuration in Query Settings](/connect-data/reference/query-settings).
 
 - **Whitelist VPC**: If your API or database is behind a VPC, whitelist the Appsmith instance IPs in your database, servers hosting APIs, or VPC to ensure that the Appsmith instance can access the databases or APIs.
 

@@ -131,7 +131,7 @@ Uploading larger files takes longer to complete. If the upload exceeds the query
 #### Solution
 
 - Increase the **Query timeout** in the query's **Settings** tab (for example, to `60000` ms) and retry. See [Query settings](/connect-data/reference/query-settings).
-- The maximum configurable query timeout is `60000` ms (60 seconds). On self-hosted instances you can raise the server-level limit beyond 60 seconds with the `APPSMITH_SERVER_TIMEOUT` environment variable.
+- The maximum configurable query timeout is `60000` ms (60 seconds).
 - When uploading via the FilePicker widget, set the FilePicker's **Data format** to `Base64`. See how to [upload files to S3](/connect-data/reference/querying-amazon-s3).
 
 ## Uploading an SSL CA certificate for a datasource is not supported
