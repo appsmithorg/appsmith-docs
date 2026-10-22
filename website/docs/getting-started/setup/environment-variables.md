@@ -586,17 +586,6 @@ tags={[
    `APPSMITH_BACKUP_S3_REGION=AWS_BUCKET_REGION`
 
  For more information about how to sync back up to s3, see [Sync Backup to S3 Bucket](/getting-started/setup/instance-management/backup-and-restore/sync-backup-to-s3) guide.
-### Server timeout
-
-Adjust the internal server timeout to optimize performance based on your Appsmith instance's load and expected response times.
-
-##### `APPSMITH_SERVER_TIMEOUT`
-
-<dd>
-
-Specifies the internal Appsmith server timeout in seconds. Defaults to a `60` second timeout. Increase or decrease based on your server's load and expected response times.
-</dd>
-
 ### Intercom
 
 Appsmith includes an Intercom app for all self-hosted instances. Use the following environment variables to configure or disable it.

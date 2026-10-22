@@ -133,12 +133,6 @@ Defines the maximum time (in milliseconds) that Appsmith waits for a query to co
 
 - The default timeout is `10000` milliseconds (10 seconds), with a maximum configurable limit of `60000` milliseconds (60 seconds).
 
-For self-hosted instances, you can increase the server-level timeout beyond `60` seconds by setting the `APPSMITH_SERVER_TIMEOUT` environment variable. For example:
-
-```js
-APPSMITH_SERVER_TIMEOUT=80
-```
-
 This setting is available for both API and database queries.
 
 
