@@ -61,6 +61,15 @@ Configuring a custom domain improves trust, ensures a consistent user experience
 
 You can point your domain to Appsmith by updating DNS settings and configuring SSL (manually or via Let's Encrypt).
 
+Enter the domain only, without `http://` or `https://`, for example `apps.example.com`. Do not include a port, a path, or a trailing slash. You can leave the field empty if you don't use a custom domain.
+
+The field checks the value before you save it and shows an error when the value:
+
+- Includes a protocol such as `https://`: _Remove http:// or https://. Enter the domain only, for example apps.example.com_
+- Includes a path or spaces, including a leading or trailing space: _Enter the domain only, without a path or spaces. For example, apps.example.com_
+
+If a value saved earlier fails these checks, the error shows as soon as you open **Instance settings**, and the **Save & Restart** button stays disabled until you fix or clear the value. Only this form checks the value. A value set through `APPSMITH_CUSTOM_DOMAIN` in `docker.env` or Helm values is not checked; see [Custom domain is ignored or Save is disabled in Instance settings](/help-and-support/troubleshooting-guide/ssl-certificate-errors#custom-domain-is-ignored-or-save-is-disabled-in-instance-settings).
+
 For complete steps and DNS configuration guidance, refer to the [Custom Domain Setup](/getting-started/setup/instance-configuration/custom-domain) guide.
 
 </dd>
