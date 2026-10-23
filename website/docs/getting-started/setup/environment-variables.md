@@ -356,7 +356,7 @@ If you prefer to host your Appsmith instance on a personalized domain, you can d
 ##### `APPSMITH_CUSTOM_DOMAIN`
 
 <dd>
-    Set this variable to your custom domain hostname only (for example, `apps.example.com`)—do not include `http://`, `https://`, a port, a path, or a trailing slash. For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
+    Set this variable to your custom domain hostname only (for example, `apps.example.com`)—do not include `http://`, `https://`, a port, a path, or a trailing slash. If the value starts with `http://` or `https://`, Appsmith ignores it and runs without a custom domain; see [Custom domain is ignored or Save is disabled in Instance settings](/help-and-support/troubleshooting-guide/ssl-certificate-errors#custom-domain-is-ignored-or-save-is-disabled-in-instance-settings). For more information about how to set up Custom domain and SSL Certificate, see [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain) guide.
 </dd>
 
 
