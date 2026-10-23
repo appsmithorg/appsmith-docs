@@ -92,9 +92,12 @@ You can stop a workflow run that is still in progress, including a run that is w
 
 1. Open the run details. For a deployed run, open **Run History** and select the run. For a test run, the run details appear after you click **Run**, as described in [Debug Workflows](/workflows/how-to-guides/debug-workflow).
 2. In the run details, on the **Workflow is executing, fetching logs...** row, click **Terminate run**. The button appears only while the run is in progress.
+
+   <ZoomImage src="/img/workflows-terminate-run-button.png" alt="Terminate run button on an in-progress run" caption="Terminate run button on an in-progress run" />
+
 3. In the **Terminate run** dialog, click **Terminate**. To keep the run going, click **Cancel**.
 
-<!-- TODO(screenshot): Run details of an in-progress run showing the Terminate run button and the Terminate run confirmation dialog. -->
+   <ZoomImage src="/img/workflows-terminate-run-dialog.png" alt="Terminate run confirmation dialog" caption="Terminate run confirmation dialog" />
 
 A terminated run cannot be resumed. After the run stops, Appsmith shows the message **Workflow run terminated**. The run stays in **All Runs** and also appears in **Failed Runs**.
 
