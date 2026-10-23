@@ -72,6 +72,8 @@ Follow these steps to set up test values and debug the workflow:
 
    <ZoomImage src=" /img/workflows-log-details.png" alt="Workflow Log Details" caption="Workflow Log Details" />
 
+   To stop a test run that is still in progress, click **Terminate run** in the run details. For more information, see [Terminate a run](/workflows/reference/run-history#terminate-a-run).
+
 ## Troubleshooting
 
 If you face issues, contact the support team using the chat widget at the bottom right of this page.

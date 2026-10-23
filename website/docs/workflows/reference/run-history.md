@@ -46,7 +46,9 @@ You can access the history of all workflow runs of your workflow by clicking the
   - Lists all workflow executions, including both successful and failed runs, with the most recent run displayed at the top.
   
 - **Failed Runs**
-  - Displays only the workflow runs that encountered issues and did not complete successfully, also with the most recent run displayed at the top.
+  - Displays only the workflow runs that encountered issues and did not complete successfully, including [terminated runs](#terminate-a-run), also with the most recent run displayed at the top.
+
+To reload the list for the selected tab, click the **Refresh runs** button next to the tabs.
 
 ### Run details
 
@@ -84,9 +86,30 @@ The run details provide a comprehensive view of each activity's execution within
 
 For runs on the [native workflow engine](/workflows/how-to-guides/native-workflow-engine), the logs show the value of an `Authorization` request header as `****`. Appsmith redacts only the `Authorization` header. Credentials sent in other headers, such as a custom API key header, are not redacted.
 
+## Terminate a run
+
+You can stop a workflow run that is still in progress, including a run that is waiting for an approval. This works for deployed runs and for test runs, whether the run is on the [native workflow engine](/workflows/how-to-guides/native-workflow-engine) or on Temporal.
+
+1. Open the run details. For a deployed run, open **Run History** and select the run. For a test run, the run details appear after you click **Run**, as described in [Debug Workflows](/workflows/how-to-guides/debug-workflow).
+2. In the run details, on the **Workflow is executing, fetching logs...** row, click **Terminate run**. The button appears only while the run is in progress.
+3. In the **Terminate run** dialog, click **Terminate**. To keep the run going, click **Cancel**.
+
+<!-- TODO(screenshot): Run details of an in-progress run showing the Terminate run button and the Terminate run confirmation dialog. -->
+
+A terminated run cannot be resumed. After the run stops, Appsmith shows the message **Workflow run terminated**. The run stays in **All Runs** and also appears in **Failed Runs**.
+
+If Appsmith can't stop the run, for example because the run finished before you confirmed, an error message appears that starts with **Unable to terminate** and includes the reason.
+
+### Delete a workflow with active runs
+
+When you delete a workflow, Appsmith first tries to terminate its runs that are still in progress or waiting for an approval, on both the native workflow engine and Temporal. It then removes the workflow's approval requests, both pending and resolved.
+
+If Appsmith can't stop the runs, or stopping them takes longer than about 15 seconds, the workflow is still deleted. Because of this step, deleting a workflow can take up to about 15 seconds longer to finish.
+
 ## Important considerations
 
 * **Unique ID** - Use the unique ID to quickly locate and review specific workflow runs.
 * **Timestamps** - Check the timestamps to understand the timeline and duration of each activity.
 * **Expand activities** - Expand activities to verify the details of each processing step.
 * **Failed runs** - Focus on the *Failed Runs* tab to diagnose and resolve issues.
+* **Terminate runs** - Terminate a run only if you intend to stop that work. You can't resume a terminated run.

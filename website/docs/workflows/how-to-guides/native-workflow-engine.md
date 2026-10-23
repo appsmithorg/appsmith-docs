@@ -48,6 +48,8 @@ For more about the page, see [Admin central](/getting-started/setup/instance-con
 Whenever possible, let open approval runs complete normally. Terminate a run only if you intend to stop that work.
 :::
 
+To stop a run, including one that started on Temporal, open the workflow's **Run History**, select the run, and click **Terminate run**. For more information, see [Terminate a run](/workflows/reference/run-history#terminate-a-run).
+
 ## What you should do
 
 Most teams do not need to change anything after Appsmith enables the native engine.
