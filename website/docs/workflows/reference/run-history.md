@@ -48,7 +48,7 @@ You can access the history of all workflow runs of your workflow by clicking the
 - **Failed Runs**
   - Displays only the workflow runs that encountered issues and did not complete successfully, including [terminated runs](#terminate-a-run), also with the most recent run displayed at the top.
 
-To reload the list for the selected tab, click the **Refresh runs** button next to the tabs.
+To reload the list for the selected tab, click the refresh icon (**Refresh runs**) next to the tabs.
 
 ### Run details
 
@@ -98,7 +98,7 @@ You can stop a workflow run that is still in progress, including a run that is w
 
 A terminated run cannot be resumed. After the run stops, Appsmith shows the message **Workflow run terminated**. The run stays in **All Runs** and also appears in **Failed Runs**.
 
-If Appsmith can't stop the run, for example because the run finished before you confirmed, an error message appears that starts with **Unable to terminate** and includes the reason.
+If Appsmith can't stop the run, for example because the run finished before you confirmed, an error message appears with the reason.
 
 ### Delete a workflow with active runs
 
