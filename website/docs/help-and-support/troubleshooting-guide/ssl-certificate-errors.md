@@ -80,6 +80,20 @@ A custom domain with HTTPS is not reachable because prerequisites such as open p
 - Ensure ports **80 and 443** are open and accessible (or your custom ports if used). See [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain).
 - Appsmith can provision a certificate automatically through Let's Encrypt when the domain is set; access the instance via HTTPS on port 443 after restart.
 
+### Custom domain is ignored or Save is disabled in Instance settings
+
+#### Cause
+
+The custom domain value includes a protocol, a path, or spaces. Appsmith expects the domain only, for example `apps.example.com`.
+
+- If `APPSMITH_CUSTOM_DOMAIN` starts with `http://` or `https://`, Appsmith ignores the whole value. The instance runs without a custom domain, so no certificate is provisioned for it. No error is shown, because values set in `docker.env` or Helm values are not checked.
+- In **Admin Settings > Instance settings**, the **Custom domain** field rejects these values. If a value saved earlier fails the check, the field shows an error when the page opens, and the **Save & Restart** button stays disabled.
+
+#### Solution
+
+- In **Instance settings**, change the **Custom domain** field to the domain only, for example `apps.example.com`, or clear it. Then click **Save & Restart**.
+- If you set the domain through the environment, update [`APPSMITH_CUSTOM_DOMAIN`](/getting-started/setup/environment-variables#appsmith_custom_domain) in `docker.env` or your Helm values to the domain only, without `http://`, `https://`, a port, a path, or a trailing slash. Then restart Appsmith.
+
 ### Adding the HTTP Strict-Transport-Security (HSTS) header
 
 #### Cause
