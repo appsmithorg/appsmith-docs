@@ -607,6 +607,26 @@ APPSMITH_DISABLE_INTERCOM=true
 ```
 </dd>
 
+### Workflows
+
+Workflows run on Appsmith's native engine. Temporal stays available unless you turn it off.
+
+##### `APPSMITH_TEMPORAL_URL`
+
+<dd>
+
+Set this to `disabled` to turn Temporal off. Appsmith does not start the embedded Temporal process, and workflow services skip Temporal calls. The value is not case-sensitive.
+
+Leave this variable unset to start embedded Temporal. That is the default, except on a fresh air-gapped install, which sets it to `disabled`.
+
+To turn Temporal back on, remove this variable from `docker.env` and restart Appsmith.
+
+```yaml
+APPSMITH_TEMPORAL_URL=disabled
+```
+
+</dd>
+
 ### Help menu
 
 Use the following environment variables to control the Help (?) icon and its menu items. Each variable applies only to the instance where you set it, so you can hide the Help icon on a production instance and keep it on development or test instances. When `APPSMITH_DISABLE_HELP_ICON` is `true`, the whole Help menu is hidden, including the items the other two variables control. To also turn off in-app chat and support-info recording elsewhere in Appsmith, set those variables as well.

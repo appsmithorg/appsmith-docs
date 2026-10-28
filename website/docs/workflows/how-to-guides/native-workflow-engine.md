@@ -50,6 +50,16 @@ Whenever possible, let open approval runs complete normally. Terminate a run onl
 
 To stop a run, including one that started on Temporal, open the workflow's **Run History**, select the run, and click **Terminate run**. For more information, see [Terminate a run](/workflows/reference/run-history#terminate-a-run).
 
+## Turn Temporal off
+
+Set `APPSMITH_TEMPORAL_URL` to `disabled` in `docker.env`, then restart Appsmith. Appsmith does not start the embedded Temporal process, and workflow services skip Temporal. New runs use the native engine.
+
+A fresh air-gapped install sets this for you. Other installs leave the variable unset, so embedded Temporal starts.
+
+To turn Temporal back on, remove `APPSMITH_TEMPORAL_URL` from `docker.env` and restart.
+
+For the variable, see [Environment variables](/getting-started/setup/environment-variables).
+
 ## What you should do
 
 Most teams do not need to change anything after Appsmith enables the native engine.

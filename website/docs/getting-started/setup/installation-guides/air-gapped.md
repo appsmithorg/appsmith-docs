@@ -24,6 +24,10 @@ When using the airgapped edition, these features will be unavailable or have lim
 - **SaaS Integrations:** Connecting to integrated SaaS services such as Google Sheets & Airtable for seamless data exchange.
 - **Custom JavaScript Libraries:** Enabling the installation of third-party libraries to extend the platform's capabilities.
 
+## Workflows
+
+A fresh air-gapped install sets `APPSMITH_TEMPORAL_URL=disabled`. Workflows run on the native engine, and the embedded Temporal process does not start. To change this, see [Environment variables](/getting-started/setup/environment-variables).
+
 ## Update policy for Airgapped Edition
 
 Updates for the airgapped edition are specifically packaged and released once every quarter. Since the air-gapped servers cannot access the internet, these updates need to be manually downloaded from an authorized source with internet access and transferred to the isolated network, where they are applied to the Appsmith instance. Organizations using airgapped edition should plan for a regular update cycle to ensure the platform remains secure and up to date.
