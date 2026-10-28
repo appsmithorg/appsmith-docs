@@ -92,7 +92,7 @@ This section shows only when **Readonly** is off.
 
 <dd>
 
-Makes the field mandatory. If a user clears the field, it shows "This field is required". Off by default.
+Makes the field mandatory. If a user clears the field, it shows "This field is required." Off by default.
 
 </dd>
 
@@ -100,7 +100,7 @@ Makes the field mandatory. If a user clears the field, it shows "This field is r
 
 <dd>
 
-Sets the most characters a user can enter. Must be a whole number of 1 or more. If the text is too long, the field shows "Input text length must be less than *N* characters".
+Sets the most characters a user can enter. Must be a whole number of 1 or more. If the text is too long, the field shows "Input text length must be less than *N* characters."
 
 </dd>
 

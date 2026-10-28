@@ -36,7 +36,7 @@ Widget type: `WDS_KEY_VALUE_WIDGET`
 ## Loading and empty states
 
 - While its data loads for the first time, the widget shows a loading placeholder.
-- When the value is empty and nothing is loading, the widget shows "No data to display".
+- When the value is empty and nothing is loading, the widget shows "No data to display."
 - When data reloads and the widget already has a value, it keeps showing the old value until the new one arrives.
 
 ## Content properties

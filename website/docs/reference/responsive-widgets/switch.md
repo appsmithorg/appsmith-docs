@@ -25,7 +25,7 @@ tags={[
 Responsive Widgets are in alpha and available by invitation only on Business and Enterprise plans. Behavior and properties may change. To request access, [open a support ticket](https://support.appsmith.com) and name the feature **Responsive Widgets (ALPHA)**.
 :::
 
-The Switch widget shows one toggle with a label. Users turn it on or off. Use it for settings that take effect right away, for example "Show archived items".
+The Switch widget shows one toggle with a label. Users turn it on or off. Use it for settings that take effect right away, for example "Show archived items."
 
 <ZoomImage src="/img/responsive-widgets/switch.png" alt="Switch widget in a Responsive app" caption="Switch widget" />
 

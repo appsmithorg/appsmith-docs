@@ -51,9 +51,9 @@ It rejects:
 
 When the URL is empty or rejected, the widget does not load a frame. It shows a message instead:
 
-- **URL** mode: "Provide a same-origin or https URL to embed".
-- **Document** mode: "No document URL provided", or "Only same-origin or absolute https document URLs render".
-- **Inline HTML** mode with no HTML: "Add HTML to render".
+- **URL** mode: "Provide a same-origin or https URL to embed."
+- **Document** mode: "No document URL provided," or "Only same-origin or absolute https document URLs render."
+- **Inline HTML** mode with no HTML: "Add HTML to render."
 
 The frame always loads with `referrerPolicy="no-referrer"`, so the embedded site does not see your app's URL.
 
@@ -143,7 +143,7 @@ Sets the URL of a document, such as `pdf`, `txt`, `docx`, `xlsx`, or `pptx`. Sho
 
 <dd>
 
-Sets the frame's accessible name for screen readers. If empty, the frame uses "Embedded content".
+Sets the frame's accessible name for screen readers. If empty, the frame uses "Embedded content."
 
 </dd>
 

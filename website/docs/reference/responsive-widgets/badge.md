@@ -91,7 +91,7 @@ This property shows only when **Mode** is **Count**.
 
 <dd>
 
-Sets the name that screen readers announce for the badge, for example `Unread notifications`. In **Count** mode, screen readers hear the label and the count, for example "Unread notifications: 5".
+Sets the name that screen readers announce for the badge, for example `Unread notifications`. In **Count** mode, screen readers hear the label and the count, for example "Unread notifications: 5."
 
 This property is required in **Count** and **Dot** modes, because the badge has no readable text of its own. The property pane shows an error if it is empty.
 

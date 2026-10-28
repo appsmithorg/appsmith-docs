@@ -75,7 +75,7 @@ Lets users give half ratings, for example 3.5. Default: off.
 
 <dd>
 
-Shows the current rating as text, for example "3 of 5". Default: off.
+Shows the current rating as text, for example "3 of 5." Default: off.
 
 </dd>
 

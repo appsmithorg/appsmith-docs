@@ -69,7 +69,7 @@ Open a tab's settings to set the per-tab properties below.
 
 Sets the tab that is selected when the page loads. Enter the tab label, for example `Tab 1`. Default: `Tab 1`.
 
-The value must match the label of a tab. Otherwise, the property shows the error "Tab name ... does not exist". An empty value is allowed. If the value does not match a visible tab, the widget selects the first visible tab.
+The value must match the label of a tab. Otherwise, the property shows the error "Tab name ... does not exist." An empty value is allowed. If the value does not match a visible tab, the widget selects the first visible tab.
 
 </dd>
 

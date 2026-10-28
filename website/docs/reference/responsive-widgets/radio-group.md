@@ -100,7 +100,7 @@ Shows help text or details next to the label.
 
 <dd>
 
-Makes a selection mandatory. When on and no option is selected, the widget shows the message "Please select an option". Default: off.
+Makes a selection mandatory. When on and no option is selected, the widget shows the message "Please select an option." Default: off.
 
 </dd>
 

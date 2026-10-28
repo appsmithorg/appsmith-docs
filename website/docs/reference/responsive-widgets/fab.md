@@ -43,7 +43,7 @@ These properties appear in the **Content** tab of the property pane.
 
 <dd>
 
-Sets the icon on the button. Default: `plus`. The value must be the name of an icon from the icon list. You cannot choose "no icon".
+Sets the icon on the button. Default: `plus`. The value must be the name of an icon from the icon list. You cannot choose "no icon."
 
 </dd>
 

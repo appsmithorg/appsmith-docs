@@ -92,7 +92,7 @@ The array must follow these rules, or the property pane shows an error:
 - Each `value` must be a string or a number, and must be unique.
 - All `value` fields must have the same type.
 
-The label always shows as text, never as HTML. When the array has no chips, the widget shows "No chips to display".
+The label always shows as text, never as HTML. When the array has no chips, the widget shows "No chips to display."
 
 </dd>
 

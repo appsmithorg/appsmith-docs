@@ -77,7 +77,7 @@ Each item in **Messages** is an object with these fields:
 
 The widget handles bad data safely:
 
-- If **Messages** is not an array, the widget shows "No messages yet".
+- If **Messages** is not an array, the widget shows "No messages yet."
 - Items that are not objects are skipped.
 
 Message content and limits:

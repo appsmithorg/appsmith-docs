@@ -72,7 +72,7 @@ The widget uses the label in two ways:
 
 <dd>
 
-Shows a status dot on the avatar. Options: **None** (default), **Online**, **Busy**, **Away**. Screen readers hear the status after the label, for example "Ada Lovelace (online)".
+Shows a status dot on the avatar. Options: **None** (default), **Online**, **Busy**, **Away**. Screen readers hear the status after the label, for example "Ada Lovelace (online)."
 
 Values for code: `none`, `online`, `busy`, `away`.
 

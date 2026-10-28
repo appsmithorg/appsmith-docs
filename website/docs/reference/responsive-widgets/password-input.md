@@ -92,7 +92,7 @@ This section shows only when **Readonly** is off.
 
 <dd>
 
-Makes the field mandatory. If a user clears the field, it shows "This field is required". Off by default.
+Makes the field mandatory. If a user clears the field, it shows "This field is required." Off by default.
 
 </dd>
 

@@ -183,7 +183,7 @@ Adds the theme's elevated background and border around the widget. This sets it 
 In **Carousel** appearance:
 
 - When the widget has focus, the Left and Right arrow keys move between slides.
-- Screen readers announce the active slide, for example "Slide 2 of 5".
+- Screen readers announce the active slide, for example "Slide 2 of 5."
 - When the user's system has "reduce motion" on, slides change without a scroll animation.
 
 ## Reference properties

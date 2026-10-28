@@ -25,7 +25,7 @@ tags={[
 Responsive Widgets are in alpha and available by invitation only on Business and Enterprise plans. Behavior and properties may change. To request access, [open a support ticket](https://support.appsmith.com) and name the feature **Responsive Widgets (ALPHA)**.
 :::
 
-The Checkbox widget shows one checkbox with a label. Users check or clear it to make a yes or no choice. Use it for consent, for example "I agree to the terms", or for a single on or off option in a form.
+The Checkbox widget shows one checkbox with a label. Users check or clear it to make a yes or no choice. Use it for consent, for example "I agree to the terms," or for a single on or off option in a form.
 
 <ZoomImage src="/img/responsive-widgets/checkbox.png" alt="Checkbox widget in a Responsive app" caption="Checkbox widget" />
 
