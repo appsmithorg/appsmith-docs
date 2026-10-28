@@ -1,10 +1,12 @@
 ---
-description: Complete the v2.5.0 workflow engine checkpoint on a v2.5.x release before upgrading to v2.6, which removes Temporal.
+description: Complete the v2.5.0 workflow engine checkpoint on a v2.5.x release before upgrading to v2.6.
 ---
 
 # v2.5.0 workflow engine transition
 
-Starting with **v2.5.0**, new workflow runs use Appsmith's native workflow engine. Runs that started before v2.5.0 continue on **Temporal**, and every **v2.5.x** release keeps Temporal running so those runs can complete. **v2.6 removes Temporal**, so you must complete this checkpoint on a v2.5.x release before you upgrade.
+Starting with **v2.5.0**, new workflow runs use Appsmith's native workflow engine. Runs that started before v2.5.0 continue on **Temporal**, and every **v2.5.x** release keeps Temporal running so those runs can complete. Complete this checkpoint on a v2.5.x release before you upgrade to **v2.6**. If previous-engine approval runs are still open, v2.6 stops during startup.
+
+Set `APPSMITH_TEMPORAL_URL` to `disabled` to turn Temporal off. When that variable is unset, v2.6 starts Temporal. See [Environment variables](/getting-started/setup/environment-variables).
 
 This page applies only to self-hosted instances. Appsmith Cloud does not use upgrade checkpoints.
 
