@@ -1,0 +1,103 @@
+---
+title: Configure Prometheus metrics (Kubernetes)
+description: Expose Actuator metrics from your Helm-based Appsmith deployment for Prometheus scraping.
+---
+
+# Configure Prometheus metrics (Kubernetes)
+
+This guide walks you through configuring your Appsmith instance on Kubernetes (Helm) to expose Actuator metrics for Prometheus. Use it when you want to scrape metrics from Appsmith pods and integrate them into your existing Prometheus or observability stack.
+
+## Prerequisites
+
+- Appsmith deployed on Kubernetes using the Helm chart (Enterprise or Community Edition). If not yet installed, follow the [Kubernetes (k8s)](/getting-started/setup/installation-guides/kubernetes) installation guide.
+- [Helm](https://helm.sh) and [kubectl](https://kubernetes.io/docs/tasks/tools/) installed and configured for your cluster.
+- Access to edit `values.yaml` and apply Helm upgrades.
+
+## Step 1: Enable Actuator metrics
+
+Add the following environment variables to your Helm `values.yaml` under `applicationConfig`. These enable the Actuator metrics endpoint and protect it with basic authentication.
+
+In your Helm `values.yaml`, add to `applicationConfig`:
+
+```yaml
+applicationConfig:
+  APPSMITH_INTERNAL_PASSWORD: "<your-chosen-password>"
+  APPSMITH_ENABLE_OTEL: "true"   # optional: enables Prometheus metric descriptions and OpenTelemetry tracing
+```
+
+- **APPSMITH_INTERNAL_PASSWORD** — Required. This password protects the actuator endpoint with HTTP basic authentication. Choose a strong, secret value and use the same password in your Prometheus scrape config (Step 5).
+- **APPSMITH_ENABLE_OTEL** — Optional. Set to `"true"` to enable Prometheus metric descriptions and OpenTelemetry tracing for more context in your metrics.
+
+For full details on these variables, see [Environment Variables](/getting-started/setup/environment-variables#actuator-and-metrics).
+
+## Step 2: Add Prometheus annotations
+
+Configure pod annotations so Prometheus (or a Prometheus Operator) can discover and scrape the Appsmith pods. In your `values.yaml`, add:
+
+```yaml
+podAnnotations:
+  prometheus.io/scrape: "true"
+  prometheus.io/port: "8080"
+  prometheus.io/path: "/actuator/prometheus"
+```
+
+## Step 3: Apply configuration changes
+
+Apply the change (replace `<release_name>` and `<namespace>` with your Helm release name and namespace):
+
+```bash
+helm upgrade <release_name> appsmith-ee/appsmith -n <namespace> -f values.yaml
+```
+
+Wait until Appsmith is healthy:
+
+```bash
+kubectl get pods -n <namespace>
+```
+
+Proceed when the Appsmith pod(s) show status `Running`.
+
+## Step 4: Verify the metrics endpoint
+
+Confirm that the Actuator Prometheus endpoint is reachable inside the pod.
+
+1. Get the Appsmith pod name:
+
+   ```bash
+   kubectl get pods -n <namespace>
+   ```
+
+2. Exec into the pod:
+
+   ```bash
+   kubectl exec -it <pod-name> -n <namespace> -- bash
+   ```
+
+3. From inside the pod, query the metrics endpoint (use the same password you set in Step 1):
+
+   ```bash
+   curl -u "":"<APPSMITH_INTERNAL_PASSWORD>" http://localhost:8080/actuator/prometheus
+   ```
+
+You should see output in Prometheus text format: lines starting with `#` (comments) and metric definitions (e.g. `jvm_memory_used_bytes`, `http_server_requests_seconds_count`, etc.). If you see a response, the endpoint is working.
+
+## Step 5: Configure Prometheus scraping
+
+In your Prometheus configuration, add a scrape job that uses HTTP basic auth with the same password. For example, in `prometheus.yml` under `scrape_configs`:
+
+```yaml
+scrape_configs:
+  - job_name: 'appsmith'
+    metrics_path: '/actuator/prometheus'
+    basic_auth:
+      username: ""
+      password: "<APPSMITH_INTERNAL_PASSWORD>"
+    ...
+```
+
+Reload or restart Prometheus, then verify in the Prometheus UI that the `appsmith` job is up and metrics are being collected.
+
+## See also
+
+- [Environment Variables](/getting-started/setup/environment-variables#actuator-and-metrics) — Full reference for `APPSMITH_INTERNAL_PASSWORD` and `APPSMITH_ENABLE_OTEL`.
+- [API Reference](/getting-started/setup/instance-management/api-reference) — Health Check and Application Performance APIs for monitoring and integrating with tools like Prometheus, Datadog, or Grafana.
