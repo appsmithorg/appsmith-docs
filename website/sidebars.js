@@ -235,6 +235,7 @@ const sidebars = {
               items: [
                 'getting-started/setup/instance-management/upgrade-checkpoints',
                 'getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal',
+                'getting-started/setup/instance-management/native-saml-migration',
                 'getting-started/setup/instance-management/upgrade-to-checkpoint-version'
               ]
             },

@@ -22,6 +22,10 @@ tags={[
 
 Appsmith provides a way to integrate with Security Assertion Markup Language (SAML), enabling users to sign in to the Appsmith account using their SAML identity providers.
 
+:::info
+Starting with v2.7, self-hosted instances can switch SAML sign-in from the bundled Keycloak broker to native SAML, built into the Appsmith server. In most cases, your identity provider needs no change. See [Native SAML migration](/getting-started/setup/instance-management/native-saml-migration).
+:::
+
 ## SAML providers
 
 Appsmith offers seamless integration with various popular SAML providers. To get started, select one of the below-listed providers and follow the instructions to configure SAML integration:
