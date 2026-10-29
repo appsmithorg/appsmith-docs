@@ -678,7 +678,7 @@ Contains all the table data in JSON format.
 
 <dd>
 
-Contains the index of the row selected by the user. Not applicable when multiple rows are selected.
+Index of the selected row in `filteredTableData`. Not applicable when multiple rows are selected.
 
 *Example:*
 ```js
@@ -691,7 +691,7 @@ Contains the index of the row selected by the user. Not applicable when multiple
 
 <dd>
 
-Contains an array of the index of the rows selected by the user. Not applicable when multi-row selection is turned off.
+Indexes of the selected rows in `filteredTableData`. Not applicable when multi-row selection is turned off.
 
 *Example:*
 ```js
@@ -874,7 +874,7 @@ Contains data related to updated rows.
 
 <dd>
 
-An index property that indicates the row index of the table that has been triggered.
+Index of the triggered row in `tableData` (before search, filter, or sort).
 
 *Example:*
 ```js
