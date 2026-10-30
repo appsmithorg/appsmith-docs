@@ -17,8 +17,6 @@ Keep an inventory accessible outside the primary site:
 - DNS records, TLS certificates, ingress or gateway configuration, service mesh policies, and datasource network requirements.
 - Recovery owners, access procedures, backup locations, and the criteria for declaring a failover.
 
-Verify the licensing arrangements for the recovery environment before an exercise. Do not assume that creating a standby installation establishes its license entitlement.
-
 ## 2. Protect instance data and keys
 
 Choose a recovery approach and test it as a complete procedure.
