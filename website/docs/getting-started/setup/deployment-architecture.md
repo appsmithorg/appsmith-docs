@@ -112,6 +112,8 @@ The **React Frontend** is the web client where users interact with Appsmith to d
 
 Operational criticality helps you plan backups and disaster recovery for self-hosted Appsmith. The subsections below are ordered from **highest** to **lowest** typical criticality.
 
+For recovery objectives, responsibilities, and a recovery workflow, see [Disaster Recovery](/getting-started/setup/instance-management/disaster-recovery). Your infrastructure team owns the recovery plan for your self-hosted environment, including the underlying databases, storage, networking, and traffic changes.
+
 ### MongoDB (critical)
 
 MongoDB is Appsmith’s primary data store in your deployment. If lost, app, workspace, and configuration state is not practically rebuildable from source.

@@ -173,6 +173,18 @@ const sidebars = {
             },
             {
               type: 'category',
+              label: 'Disaster Recovery',
+              link: {
+                type: 'doc',
+                id: 'getting-started/setup/instance-management/disaster-recovery/README',
+              },
+              items: [
+                'getting-started/setup/instance-management/disaster-recovery/setup',
+                'getting-started/setup/instance-management/disaster-recovery/restore',
+              ],
+            },
+            {
+              type: 'category',
               label: 'Other Configuration Guides',
               items: [
                 'getting-started/setup/instance-configuration/custom-mongodb-redis',
