@@ -11,10 +11,9 @@ Use this checklist to prepare a recovery environment for self-hosted Appsmith. S
 
 Keep an inventory accessible outside the primary site:
 
-- Appsmith edition and exact image version, Helm chart version or Compose configuration, and enabled features.
+- Appsmith edition, exact image version, and the Helm chart version and values or Docker Compose files that deploy it. Keep this configuration and any infrastructure definitions in version control, and keep secret values in your secret store.
 - MongoDB, Redis, and any PostgreSQL services used by the deployment, including their versions, endpoints, and backup owners.
 - Persistent volumes and their mount paths, storage classes, access modes, capacity, and restore procedures.
-- Deployment manifests, Helm values, secret references, and infrastructure definitions. Store configuration in version control and secret values in your approved secret store.
 - DNS records, TLS certificates, ingress or gateway configuration, service mesh policies, and datasource network requirements.
 - Recovery owners, access procedures, backup locations, and the criteria for declaring a failover.
 
@@ -82,7 +81,7 @@ Before declaring the site ready, verify that it can:
 The recovery site may use different outbound IP addresses or private network paths. Preconfigure and test access to datasources from that site. A healthy Appsmith deployment can still have unusable applications if datasource firewalls allow only the primary site's addresses.
 :::
 
-Kubernetes Services, ingress controllers, and service meshes depend on your cluster configuration. Your platform team owns the DR-specific routing manifests and hostnames, including any Istio gateways and VirtualServices. Use [Kubernetes Ingress documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/) and the documentation for your selected controller or mesh to implement routing.
+Plan how traffic from your users reaches Appsmith at the recovery site. This covers DNS, the load balancer, TLS termination, and whichever ingress controller or service mesh routes requests to the Appsmith pods or hosts. Keep those routing manifests and the recovery hostnames with your deployment configuration, because the recovery site may use different hostnames and endpoints than the primary.
 
 ## 5. Maintain readiness
 
@@ -100,8 +99,7 @@ Use these upstream resources with your platform team's runbook. Select documenta
 | --- | --- |
 | [Kubernetes Volume Snapshots](https://kubernetes.io/docs/concepts/storage/volume-snapshots/) | Understand CSI snapshot prerequisites and how volume snapshots relate to persistent storage. Test database consistency separately. |
 | [Operating etcd clusters for Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/) | Plan control-plane backup and recovery for clusters where your team manages etcd. An etcd snapshot does not contain application volume data or external databases; managed services such as EKS manage their own control plane. |
-| [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Rebuild hostname and HTTP routing using your selected ingress controller. |
-| [Istio VirtualService reference](https://istio.io/latest/docs/reference/config/networking/virtual-service/) | Recreate service-mesh routing when your platform uses Istio. Your platform team maintains the manifests and DR hostnames. |
+| [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Rebuild how user traffic reaches Appsmith: hostname, TLS, and HTTP routing. Use it with the documentation for the ingress controller or service mesh your cluster runs. |
 | [Velero documentation](https://velero.io/docs/v1.18/) | Evaluate cluster-resource and volume backup tooling for cloud or on-premises Kubernetes. Use the version selector for your installation and validate provider/plugin support and application consistency. |
 
 ### Amazon EKS and AWS storage
