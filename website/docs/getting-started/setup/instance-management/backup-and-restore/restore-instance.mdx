@@ -9,6 +9,12 @@ import TabItem from '@theme/TabItem';
 
 This page explains how to restore your self-hosted Appsmith instance backup using the `appsmithctl` utility.
 
+For a complete DR runbook covering primary-site isolation, infrastructure dependencies, restored settings, application validation, and traffic changes, see [Restore and Validate Recovery](/getting-started/setup/instance-management/disaster-recovery/restore).
+
+:::warning Restoring to another instance
+A restore can overwrite the destination's data and configuration, including SSO settings. Use a dedicated recovery destination and validate its site-specific settings before directing users to it. For the recovery checklist, see [Check site-specific settings](/getting-started/setup/instance-management/disaster-recovery/restore#4-check-site-specific-settings-and-start-services).
+:::
+
 ## Prerequisites
 
 Before starting, ensure the following:

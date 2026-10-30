@@ -59,6 +59,8 @@ Ensuring the security of your Appsmith instance is vital for protecting sensitiv
 
 Regular backups and recovery plans are critical to prevent data loss and ensure smooth recovery in case of failures.
 
+- **Disaster recovery planning**: Your infrastructure team owns DR for your self-hosted deployment. Set recovery objectives, protect off-site copies, prepare the recovery site's infrastructure and datasource connectivity, and test a complete restore. See [Disaster Recovery](/getting-started/setup/instance-management/disaster-recovery) for Appsmith dependencies, setup requirements, and a recovery exercise checklist.
+
 - **Data stores and criticality**: For MongoDB, PostgreSQL, Redis, EFS or persistent volumes, and how they relate to `appsmithctl` backups, see [Data criticality and backup considerations](/getting-started/setup/deployment-architecture#data-criticality-and-backup-considerations).
 
 - **Regular backups**:
