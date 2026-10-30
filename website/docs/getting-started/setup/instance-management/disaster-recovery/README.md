@@ -74,3 +74,4 @@ An instance backup protects Appsmith's configuration and application state. It d
 
 1. [Set up disaster recovery](/getting-started/setup/instance-management/disaster-recovery/setup): Protect data, prepare infrastructure, and maintain readiness.
 2. [Restore and validate recovery](/getting-started/setup/instance-management/disaster-recovery/restore): Build a failover runbook, test applications, and plan failback.
+3. [Helpful infrastructure resources](/getting-started/setup/instance-management/disaster-recovery/setup#helpful-infrastructure-resources): Find Kubernetes, EKS, storage, MongoDB, and Redis documentation for your platform team.

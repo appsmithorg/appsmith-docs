@@ -89,3 +89,39 @@ Kubernetes Services, ingress controllers, and service meshes depend on your clus
 Record the exact recovery commands, resource names, namespaces, dependency order, secret delivery steps, and traffic changes for your deployment. Include a way to isolate the primary and prevent both sites from accepting writes or running scheduled work during a transition.
 
 After changes to Appsmith, authentication, databases, storage, networking, or backup tooling, review and retest the runbook. Monitor backup failures and stale off-site copies. Validate both the database and filesystem restore, then record the measured RPO and RTO using the [recovery exercise checklist](/getting-started/setup/instance-management/disaster-recovery/restore#run-a-recovery-exercise).
+
+## Helpful infrastructure resources
+
+Use these upstream resources with your platform team's runbook. Select documentation for the versions and services you operate. These references describe infrastructure capabilities; they do not establish an Appsmith integration or guarantee that a cluster backup contains every Appsmith dependency. Check coverage, consistency, permissions, regional availability, and restore limitations before choosing a tool.
+
+### Kubernetes and routing
+
+| Resource | When it helps |
+| --- | --- |
+| [Kubernetes Volume Snapshots](https://kubernetes.io/docs/concepts/storage/volume-snapshots/) | Understand CSI snapshot prerequisites and how volume snapshots relate to persistent storage. Test database consistency separately. |
+| [Operating etcd clusters for Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/) | Plan control-plane backup and recovery for clusters where your team manages etcd. An etcd snapshot does not contain application volume data or external databases; managed services such as EKS manage their own control plane. |
+| [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) | Rebuild hostname and HTTP routing using your selected ingress controller. |
+| [Istio VirtualService reference](https://istio.io/latest/docs/reference/config/networking/virtual-service/) | Recreate service-mesh routing when your platform uses Istio. Your platform team maintains the manifests and DR hostnames. |
+| [Velero documentation](https://velero.io/docs/v1.18/) | Evaluate cluster-resource and volume backup tooling for cloud or on-premises Kubernetes. Use the version selector for your installation and validate provider/plugin support and application consistency. |
+
+### Amazon EKS and AWS storage
+
+| Resource | When it helps |
+| --- | --- |
+| [Amazon EKS reliability best practices](https://docs.aws.amazon.com/eks/latest/best-practices/reliability.html) | Plan reliability across the control plane, data plane, and applications. |
+| [Amazon EKS backups with AWS Backup](https://docs.aws.amazon.com/aws-backup/latest/devguide/eks-backups.html) | Review cluster-state and supported persistent-volume backup coverage, prerequisites, and limitations. Account for external databases and other resources separately. |
+| [Backing up EFS file systems](https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html) | Configure and test recovery of Appsmith persistent storage hosted on EFS. |
+| [S3 replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html) | Plan copies of backup objects across buckets or regions, including handling objects that existed before replication was enabled. |
+| [S3 Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html) | Evaluate retention controls that protect backup objects against deletion or overwrite. Choose retention deliberately and test how it affects cleanup. |
+
+### Database and cache recovery
+
+| Resource | When it helps |
+| --- | --- |
+| [MongoDB backup methods](https://www.mongodb.com/docs/manual/core/backups/) | Choose a native backup method appropriate to a self-managed MongoDB deployment. |
+| [MongoDB Atlas restore status](https://www.mongodb.com/docs/atlas/backup/cloud-backup/restore-overview/) | Track snapshot restoration in Atlas when using Atlas-managed backups. |
+| [mongorestore reference](https://www.mongodb.com/docs/database-tools/mongorestore/) | Interpret logical restore output, errors, and tool options. |
+| [Redis persistence](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/) | Decide whether and how to persist Redis data based on its role, and understand RDB/AOF recovery trade-offs. |
+| [Redis INFO reference](https://redis.io/docs/latest/commands/info/) | Inspect loading, persistence, replication, memory, and eviction indicators during recovery. |
+
+For the operational checks to perform after data recovery, see [MongoDB restore checks](/getting-started/setup/instance-management/disaster-recovery/restore#check-mongodb-restore-status) and [Redis and cache checks](/getting-started/setup/instance-management/disaster-recovery/restore#check-redis-and-cache-recovery).

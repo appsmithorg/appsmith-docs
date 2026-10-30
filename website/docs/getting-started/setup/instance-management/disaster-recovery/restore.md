@@ -52,6 +52,29 @@ An encrypted archive carries the instance encryption keys and requires its archi
 
 For subsystem recovery, follow the database and storage procedures you tested during setup. See [Restore Database](/getting-started/setup/instance-management/backup-and-restore/restore-database) for the Appsmith MongoDB procedure. It does not recover the filesystem or other data stores for you.
 
+### Check MongoDB restore status
+
+Use the status source that matches the restore method:
+
+| Restore method | What to check |
+| --- | --- |
+| Appsmith instance or database restore | Capture the restore command's output and exit status. Review database restore errors before starting validation. Output from a command run with `kubectl exec` may be in your terminal or runner logs rather than the pod's normal logs. |
+| Native logical restore with `mongorestore` | Wait for the process to finish, inspect its final successful/failed document summary, and investigate errors or unexpected skipped namespaces and index failures. The [mongorestore reference](https://www.mongodb.com/docs/database-tools/mongorestore/) explains that duplicate-key and document-validation errors can allow processing to continue by default; do not infer success from progress output alone. |
+| MongoDB Atlas snapshot restore | Track the restore job in Atlas using [View Status of Snapshot Restorations](https://www.mongodb.com/docs/atlas/backup/cloud-backup/restore-overview/). Verify the destination cluster and recovery point, and wait for the job to complete before allowing application traffic. |
+
+Once the restore completes, have your database owner connect to the **recovery** database using the approved authenticated connection. The following read-only `mongosh` checks are examples; replace `APPSMITH_DATABASE_NAME` with the actual Appsmith database name:
+
+```javascript
+db.runCommand({ ping: 1 })
+db.getSiblingDB("APPSMITH_DATABASE_NAME").runCommand({ dbStats: 1 })
+```
+
+MongoDB's [ping command](https://www.mongodb.com/docs/manual/reference/command/ping/) checks responsiveness, while [dbStats](https://www.mongodb.com/docs/manual/reference/command/dbstats/) reports database statistics. Compare expected collections and document counts with the selected recovery point, and check representative records. For replica-set deployments, your database owner can also inspect [rs.status()](https://www.mongodb.com/docs/manual/reference/method/rs.status/) to confirm expected member health and roles before enabling writes. Use provider monitoring where direct administrative commands are restricted.
+
+:::caution Database availability is not restore completeness
+A responsive MongoDB server, healthy replica set, or plausible document count does not prove every collection, index, or credential was restored correctly. Confirm the restore job completed without unresolved errors, then validate Appsmith users, apps, permissions, and datasource credentials. Do not retry a restore into a partially populated database without following the database owner's cleanup or rebuild procedure.
+:::
+
 ## 4. Check site-specific settings and start services
 
 Review the restored configuration against the recovery-site inventory before directing traffic to it. Reapply destination-specific values through the appropriate Appsmith settings or deployment configuration:
@@ -66,6 +89,33 @@ Keep the **source instance encryption keys** when applying destination configura
 
 Start or restart Appsmith and its configured supporting services in the order recorded in your runbook. Confirm that dependencies are available and inspect [container logs](/getting-started/setup/instance-management/how-to-get-container-logs) for startup, connection, authentication, or decryption errors. If a restore fails after modifying data, keep the destination isolated and investigate or rebuild it before retrying; it may be partially restored.
 
+### Check Redis and cache recovery
+
+Decide how to recover Redis from its role in your deployment, rather than treating every Redis instance as disposable:
+
+| Role or condition | Recovery consideration |
+| --- | --- |
+| Cache and sessions | A fresh cache may be acceptable under your runbook, but users may need to sign in again. Expect additional database/API load and slower requests while caches repopulate; monitor before restoring full traffic. |
+| In-Memory Git | Inventory the dedicated Redis endpoint and `APPSMITH_REDIS_GIT_URL`. Cached repositories and branch metadata need recovery planning. Verify remote access and branch state using the [In-Memory Git guide](/getting-started/setup/instance-configuration/in-memory-git); a fresh clone is not proof that all previous local state survived. |
+| Persistence or replication enabled | If you rely on Redis persistence, confirm the intended snapshot or AOF loaded successfully. Check the expected primary/replica roles and replication state for your topology. See [Redis persistence](https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/). |
+| Connection or authentication errors | Verify the destination endpoint, TLS, credentials, and client configuration. A restored configuration may refer to source-site values; make sure Appsmith and Redis agree before sending users to the site. |
+
+From an approved Redis client connection with the required permissions, use [PING](https://redis.io/docs/latest/commands/ping/) to test responsiveness and the following [INFO](https://redis.io/docs/latest/commands/info/) sections to inspect recovery:
+
+```text
+PING
+INFO persistence
+INFO replication
+INFO memory
+INFO stats
+```
+
+Check that data loading has finished (`loading:0`), review persistence errors if persistence is configured, and confirm the intended replication role. Watch memory use, eviction counters, and errors as traffic returns. Available fields and commands vary by Redis version and managed service; use provider metrics when commands are restricted. A `PONG` response alone does not validate data, application permissions, or successful Git operations.
+
+:::warning Do not flush Redis as a general recovery step
+Avoid blanket cache-clearing operations such as `FLUSHALL` or `FLUSHDB`. They can remove sessions, Git metadata, or other data used by the deployment. Any reset must target an identified instance and database, with a documented recovery plan and coordination with its owner. Keep test and DR clients from accidentally connecting to production Redis.
+:::
+
 ## 5. Validate before redirecting traffic
 
 Validate through the hostname and network path users will actually use:
@@ -74,6 +124,8 @@ Validate through the hostname and network path users will actually use:
 | --- | --- |
 | Login and authorization | Expected users can sign in, including through SSO where configured, and retain the expected permissions. |
 | Instance state | Expected workspaces, applications, and recent changes are present for the selected recovery point. |
+| MongoDB recovery | The restore operation completed without unresolved errors, the expected database state is present, and the destination topology is healthy. |
+| Redis and cache behavior | Destination connections work, loading is complete, expected sessions/Git behavior is verified, and cache warm-up does not overload dependencies. |
 | Datasource credentials and connectivity | Representative queries succeed from the recovery site using restored credentials. Use controlled test data for write operations. |
 | Application behavior | Critical apps work in deployed mode; authorized developers can open and edit apps. |
 | Git and persistent artifacts | Git operations, certificates, and other required filesystem artifacts work as expected. |
