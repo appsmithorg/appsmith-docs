@@ -1,0 +1,242 @@
+---
+description: Switch SAML sign-in from the bundled Keycloak broker to native SAML in the Appsmith server, check readiness in Admin central, and roll back if needed.
+title: Native SAML migration
+hide_title: true
+toc_max_heading_level: 2
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Native SAML migration</h1>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+Today, Appsmith signs users in with SAML through a Keycloak server that runs inside the Appsmith container. Appsmith is replacing Keycloak with SAML built into the Appsmith server, called native SAML. Starting with **v2.7**, you can switch to native SAML, and switch back, with one environment variable.
+
+- **Keycloak stays the default in v2.7.** Nothing changes for your users until you switch.
+- **Appsmith copies your SAML configuration from Keycloak** every time it starts and after every SAML change in **Admin Settings**. Admin central shows whether the copy is ready for native SAML.
+- **A later release makes native SAML the default**, and keeps Keycloak available so you can roll back. A release after that removes Keycloak.
+
+Switch to native SAML and sign in once while Keycloak is still available. This shows that your configuration works natively before native SAML becomes the default.
+
+This page applies only to self-hosted instances where SAML is configured.
+
+## What stays the same
+
+- **Your identity provider (IdP) needs no change**, unless it requires signed sign-in requests. See [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests).
+- **The URLs in your IdP stay the same.** The Assertion Consumer Service (ACS) URL is still `https://<your-domain>/auth/realms/appsmith/broker/saml/endpoint`, and the entity ID is still `https://<your-domain>/auth/realms/appsmith`.
+- **Users sign in to the same accounts** with the same SAML button on the sign-in page.
+- **SAML changes in Admin Settings still go to Keycloak first.** Appsmith then copies them, so Keycloak stays current if you roll back.
+
+## Check readiness in Admin central
+
+1. Sign in as an instance administrator.
+2. Go to **Admin Settings** > **Instance** > **Admin central**.
+3. Find the native SAML entry. While Keycloak is in use, it's titled **Before switching to native SAML**. After you switch, it's titled **About native SAML**.
+
+| Admin central shows | What it means | What to do |
+|---|---|---|
+| **Native SAML is being prepared** | Appsmith is copying your SAML configuration from Keycloak. | Wait, then refresh the page. |
+| **Native SAML is ready to test** | The copy is complete and native SAML can run it. | [Switch to native SAML](#switch-to-native-saml). |
+| **Native SAML needs administrator action** | The copy lists one or more [required actions](#required-actions). Native SAML refuses sign-in until they're resolved. Keycloak sign-in keeps working. | Resolve each required action. |
+| **Native SAML could not be prepared** | Appsmith couldn't copy the configuration. The entry shows a failure code. | Fix the cause, then [retry the copy](#retry-the-copy). |
+| **Native SAML is on, waiting for a first sign-in** | You switched to native SAML, and nobody has signed in with it yet. | Sign in once with SAML. |
+| **Native SAML is verified** | A user signed in with native SAML using the current configuration. | Nothing. |
+| **SAML is back on Keycloak** | You switched from native SAML back to Keycloak. | Switch again when you're ready. |
+
+The entry also lists details such as when the configuration was copied, how many Keycloak account links were copied, and the last native sign-in that was refused. It never shows configuration values.
+
+## Switch to native SAML
+
+Before you begin:
+
+- Upgrade to v2.7 or later.
+- Make sure Admin central shows **Native SAML is ready to test** and lists no required actions other than `NATIVE_SP_CERTIFICATE_REQUIRED`.
+- Plan for a restart. Appsmith reads the SAML engine only when it starts.
+
+### Confirm certificate trust if your IdP requires signed requests
+
+Skip this step if Admin central doesn't list `NATIVE_SP_CERTIFICATE_REQUIRED`.
+
+When your IdP requires signed sign-in requests, native SAML signs them with its own certificate, not Keycloak's. Your IdP must trust that certificate before native sign-in works.
+
+1. Open `https://<your-domain>/api/v1/saml/native/metadata`. This metadata contains the native SAML signing certificate.
+2. Add that certificate to your IdP as a request-signing certificate. Keep Keycloak's certificate in place too, so Keycloak sign-in keeps working until you switch, and after a rollback.
+3. Confirm the change in Appsmith. While signed in as an instance administrator, open your browser's developer console on any Appsmith page and run:
+
+    ```js
+    await fetch("/api/v1/admin/sso/saml/native/certificate-trust", {
+      method: "POST",
+      headers: { "X-Requested-By": "Appsmith" },
+    }).then((response) => response.json());
+    ```
+
+    Admin central then shows **Certificate trust confirmed**, and `NATIVE_SP_CERTIFICATE_REQUIRED` is no longer listed.
+
+Changes on the IdP side, such as a new IdP signing certificate, don't require a new confirmation. You confirm again only after you disconnect SAML and configure it again, because that creates a new native SAML certificate.
+
+### Set the SAML engine
+
+Set `APPSMITH_SAML_ENGINE` to `native` and restart Appsmith.
+
+<Tabs groupId="appsmithplatforms" queryString="current-platform">
+
+<TabItem label="Docker" value="docker">
+
+1. Go to your installation folder and open the `stacks/configuration/docker.env` file.
+2. Add the following line:
+
+    ```bash
+    APPSMITH_SAML_ENGINE=native
+    ```
+
+3. Restart Appsmith:
+
+    ```bash
+    docker-compose restart appsmith
+    ```
+
+</TabItem>
+
+<TabItem label="Kubernetes" value="kubernetes">
+
+1. Get the current values of your installation and save them to a file:
+
+    ```bash
+    helm get values appsmith -n appsmith -o yaml > values.yaml
+    ```
+
+2. In `values.yaml`, set the variable under `applicationConfig`:
+
+    ```yaml
+    applicationConfig:
+      #highlight-next-line
+      APPSMITH_SAML_ENGINE: "native"
+    ```
+
+3. Apply the updated values:
+
+    ```bash
+    helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
+    ```
+
+</TabItem>
+
+</Tabs>
+
+For other platforms, see [Configure environment variables](/getting-started/setup/instance-configuration/configure-using-environment-variables).
+
+### Sign in once
+
+After Appsmith restarts, sign in with SAML. The first successful native sign-in changes the Admin central entry to **Native SAML is verified**.
+
+If sign-in fails, see [Sign-in errors](#sign-in-errors), or [roll back](#roll-back-to-keycloak).
+
+## Roll back to Keycloak
+
+Set `APPSMITH_SAML_ENGINE` to `keycloak`, or remove the variable, and restart Appsmith. Use the same steps as in [Set the SAML engine](#set-the-saml-engine).
+
+Users sign in through Keycloak again, to the same accounts. Admin central shows **SAML is back on Keycloak**. You don't need to sign in to Appsmith to roll back.
+
+## Required actions
+
+Native SAML refuses sign-in only when Keycloak would refuse it too, or when native SAML can't reproduce what Keycloak does. While Admin central lists a required action, native sign-in is refused. Keycloak sign-in keeps working.
+
+| Required action | Cause | How to resolve |
+|---|---|---|
+| `NATIVE_SP_CERTIFICATE_REQUIRED` | Your IdP requires signed sign-in requests, and hasn't been confirmed to trust the native SAML certificate. | [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests). |
+| `UNSUPPORTED_IDP_SETTING` | A Keycloak identity provider setting has no native equivalent. Admin central names the setting. | See the table below. |
+| `UNSUPPORTED_MAPPER` | A Keycloak attribute mapper does something other than import the email, the first or last name, or an Appsmith claim. Admin central names the mapper. | Remove or replace the mapper in Keycloak. |
+| `CONFLICTING_MAPPER` | Several Keycloak mappers write the same claim, or the email, from different attributes. Admin central names the mappers. | Keep one mapper for each claim in Keycloak. |
+
+Settings that `UNSUPPORTED_IDP_SETTING` can name:
+
+| Setting | What it means | How to resolve |
+|---|---|---|
+| `enabled` | The SAML identity provider is turned off in Keycloak. | Turn it on, or disconnect SAML. |
+| `linkOnly` | The identity provider only links accounts and doesn't sign users in. | Turn off **Account linking only** in Keycloak. |
+| `firstBrokerLoginFlowAlias`, `postBrokerLoginFlowAlias` | Keycloak runs a custom flow during sign-in. | Use Keycloak's default flows. |
+| `authnContextClassRefs`, `authnContextDeclRefs` | Keycloak asks the IdP for a specific authentication context, such as multi-factor authentication. | Enforce the requirement in your IdP instead, and remove it from Keycloak. |
+| `wantAssertionsEncrypted` | The IdP encrypts assertions. Native SAML doesn't support encrypted assertions. | Turn off assertion encryption in the IdP and in Keycloak. |
+| `signatureAlgorithm` | Keycloak signs requests with an algorithm other than RSA-SHA256. | Set the algorithm to `RSA_SHA256` in Keycloak. Your IdP must accept it. |
+| `useMetadataDescriptorUrl` | Keycloak reloads the IdP's signing keys from its metadata URL. Native SAML trusts only the certificates copied from Keycloak. | First make sure Keycloak holds the IdP's current signing certificate, then turn off **Use metadata descriptor URL**. |
+
+You change these settings in the Keycloak admin console at `https://<your-domain>/auth`. To sign in to it, use the Keycloak administrator credentials in the `docker.env` file.
+
+After you resolve an action, restart Appsmith or [retry the copy](#retry-the-copy). The action disappears once a new copy no longer finds it.
+
+## Advisories
+
+Advisories suggest improvements. They never stop sign-in, under either engine.
+
+| Advisory | What it means | What to do |
+|---|---|---|
+| `NEW_USER_EMAIL_UNCONFIRMED` | No email attribute is mapped. A new user's email can come only from an email-format NameID, which some IdPs don't send. Returning users sign in through the account link copied from Keycloak. | Make sure your IdP sends the email as an email-address NameID, or in the attribute `urn:oid:1.2.840.113549.1.9.1`. A native sign-in that receives the email clears this advisory. |
+| `NEW_USER_EMAIL_MISSING` | No email attribute is mapped, and Appsmith doesn't ask the IdP for an email-format NameID. Returning users sign in through their account link. A new user signs in with native SAML only if the IdP sends their email anyway. | Have your IdP send the email in an attribute named `urn:oid:1.2.840.113549.1.9.1`. Keycloak and native SAML both read it, so nothing changes in Appsmith. In Okta, add an attribute statement with that name, name format **URI Reference**, and value `user.email`. |
+| `NAME_IMPORTERS_DISAGREE` | Several Keycloak mappers import the first or last name from different attributes. Native SAML uses the first one by mapper name. | Keep one mapper for each name in Keycloak. |
+
+## Sign-in errors
+
+When native SAML refuses a sign-in, the user returns to the Appsmith sign-in page. The page URL contains an `error` code, and for most codes the page shows a message.
+
+| Error code | Cause | What to do |
+|---|---|---|
+| `saml_certificate_action_required` | Your IdP requires signed requests, and the native SAML certificate isn't confirmed yet. | [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests). |
+| `saml_action_required` | Admin central lists a required action. | Resolve the [required actions](#required-actions). |
+| `saml_sync_required` | An administrator changed SAML settings, and Appsmith hasn't copied them yet. | Wait a few seconds and try again. If Admin central shows **Native sign-in paused**, [retry the copy](#retry-the-copy). |
+| `saml_email_missing` | A new user signed in, and the IdP didn't send their email. | See `NEW_USER_EMAIL_MISSING` in [Advisories](#advisories). |
+| `saml_failed` | Any other reason. | Check **Last refused native sign-in** in Admin central, described below. |
+
+**Last refused native sign-in** in Admin central shows the reason for the most recent refusal:
+
+| Reason | What to check |
+|---|---|
+| `SIGNATURE_MISSING` | The IdP signed neither the response nor the assertion. Configure the IdP to sign one of them. |
+| `SIGNATURE_INVALID` | The signature doesn't match any IdP certificate copied from Keycloak. Add the IdP's current signing certificate to the SAML identity provider in Keycloak, then restart Appsmith or [retry the copy](#retry-the-copy). |
+| `EMAIL_MISSING` | The response had no email, and the user has no account link. See `NEW_USER_EMAIL_MISSING` in [Advisories](#advisories). |
+| `OTHER` | Look for `Rejected SAML assertion` or `SAML sign-in failed` in the [backend logs](/getting-started/setup/instance-management/how-to-get-container-logs). |
+
+A sign-in also fails with `saml_failed` when:
+
+- It took more than 30 minutes from clicking the SAML button to returning from the IdP.
+- It started in one browser and finished in another.
+- It started from the IdP's app dashboard instead of the Appsmith sign-in page.
+
+## Retry the copy
+
+When Admin central shows **Native SAML could not be prepared** or **Native sign-in paused**, fix the cause first. Then restart Appsmith, or ask Appsmith to copy the configuration again. While signed in as an instance administrator, open your browser's developer console on any Appsmith page and run:
+
+```js
+await fetch("/api/v1/admin/sso/saml/native/retry-sync", {
+  method: "POST",
+  headers: { "X-Requested-By": "Appsmith" },
+}).then((response) => response.json());
+```
+
+## Differences from Keycloak
+
+- **Sign-in starts on the Appsmith sign-in page.** Native SAML doesn't support sign-in started from the IdP's app dashboard.
+- **Encrypted assertions aren't supported.**
+- **New users must get an email from the IdP.** Keycloak asks a new user to type an email when the IdP sends none. Native SAML refuses the sign-in with `saml_email_missing`. Returning users aren't affected.
+- **The IdP must sign the response or the assertion.** Native SAML always checks the signature.
+- **Keycloak-generated claims aren't available.** Claims such as `sub` and `preferred_username` came from Keycloak and have no native equivalent.
+- **Errors appear on the Appsmith sign-in page**, not on a Keycloak error page.
+
+## See also
+
+- [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml)
+- [Admin central](/getting-started/setup/instance-configuration/admin-central)
+- [Configure environment variables](/getting-started/setup/instance-configuration/configure-using-environment-variables)
+- [Environment variables](/getting-started/setup/environment-variables)
