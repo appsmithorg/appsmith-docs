@@ -20,6 +20,53 @@ During an upgrade, Appsmith runs one-time database migrations. If a migration do
 - If your current version is newer than v1.9.2 but older than v1.96, first upgrade to any version from v1.96 through v1.99 (v1.99 is recommended), and then upgrade to 2.0 or newer. See [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith).
 - If the backend still fails after upgrading, gather full server logs and contact support.
 
+### SAML SSO login returns 502 after upgrading to v2.4 or later
+
+<Message
+ messageContainerClassName='error'
+messageContent='ERROR: permission denied for schema public [Failed SQL: (0) CREATE TABLE public.databasechangelog ...]'></Message>
+
+The login page loads, but selecting the SAML SSO button returns **502 Bad Gateway**. The Keycloak logs in `/appsmith-stacks/logs/keycloak/` repeat the error above, and the supervisor log shows `exited: keycloak (exit status 1; not expected)` every 30 to 60 seconds.
+
+#### Cause
+
+This affects only instances that use SAML SSO and set [`APPSMITH_KEYCLOAK_DB_URL`](/getting-started/setup/environment-variables#appsmith_keycloak_db_url) but not [`APPSMITH_KEYCLOAK_DB_DRIVER`](/getting-started/setup/environment-variables#appsmith_keycloak_db_driver). Appsmith uses Keycloak for SAML only. Other sign-in methods, including OIDC, store their configuration in MongoDB and keep working.
+
+Before v2.4, Keycloak ignored `APPSMITH_KEYCLOAK_DB_URL` unless `APPSMITH_KEYCLOAK_DB_DRIVER` was also set. It kept its data, including your SAML configuration, in the embedded H2 database at `/appsmith-stacks/data/keycloak/keycloakdb.mv.db`. From v2.4, Keycloak uses the PostgreSQL database in `APPSMITH_KEYCLOAK_DB_URL` whenever that variable is set.
+
+On the first start after the upgrade, Keycloak connects to the external PostgreSQL database and finds no tables. Your Keycloak data does not move from H2 to PostgreSQL. What happens next depends on the database user:
+
+- **The user cannot create tables.** Keycloak fails with `permission denied for schema public` and restarts in a loop. SAML SSO returns 502.
+- **The user can create tables.** Keycloak starts with an empty database, so your SAML configuration is missing.
+
+Rolling back to an older v2.x image does not help, because every version from v2.4 behaves the same way.
+
+#### Solution
+
+Keep Keycloak on the embedded H2 database, where your existing data is:
+
+1. Confirm the H2 database exists. The `/appsmith-stacks/data/keycloak/` directory should contain `keycloakdb.mv.db`.
+2. Add this line to your `docker.env` file, or to the `environment` section of your `docker-compose.yml`:
+
+   ```bash
+   APPSMITH_KEYCLOAK_DB_DRIVER=h2
+   ```
+
+   On Kubernetes, add it under `applicationConfig` in your `values.yaml`.
+3. Recreate the container:
+
+   ```bash
+   docker-compose up -d --force-recreate
+   ```
+
+4. Check that SAML SSO login works.
+
+Keep `APPSMITH_KEYCLOAK_DB_DRIVER=h2` set for all later upgrades. If you remove it, the error returns.
+
+To avoid this problem, add `APPSMITH_KEYCLOAK_DB_DRIVER=h2` **before** you upgrade from a version older than v2.4 to v2.4 or later. Do this on every instance that sets `APPSMITH_KEYCLOAK_DB_URL`.
+
+To move your Keycloak data from H2 to the external PostgreSQL database, contact support via the chat widget.
+
 ### Errors or missing plugins after downgrading by changing the image tag
 
 #### Cause

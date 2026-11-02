@@ -339,7 +339,14 @@ Specifies the URL for the external PostgreSQL database (e.g., an RDS instance) u
 ##### `APPSMITH_KEYCLOAK_DB_DRIVER`
 
 <dd>
-Defines the database driver that Keycloak will use to interact with the external PostgreSQL database. For PostgreSQL databases, this value must be set to `postgresql`. The driver acts as an intermediary, facilitating smooth and efficient communication between Keycloak and the database.
+Defines which database Keycloak uses. Accepted values:
+
+- `postgresql`: the external PostgreSQL database in [`APPSMITH_KEYCLOAK_DB_URL`](#appsmith_keycloak_db_url).
+- `h2`: the embedded H2 database in `/appsmith-stacks/data/keycloak`.
+
+When this variable is not set, Keycloak uses `postgresql` if `APPSMITH_KEYCLOAK_DB_URL` is set, and `h2` otherwise.
+
+Keycloak data does not move between the two databases. If your Keycloak data is in H2 and you set `APPSMITH_KEYCLOAK_DB_URL`, set this variable to `h2` to keep using it. See [SAML SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#saml-sso-login-returns-502-after-upgrading-to-v24-or-later).
 </dd>
 
 
