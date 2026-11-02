@@ -346,7 +346,7 @@ Defines which database Keycloak uses. Accepted values:
 
 When this variable is not set, Keycloak uses `postgresql` if `APPSMITH_KEYCLOAK_DB_URL` is set, and `h2` otherwise.
 
-Keycloak data does not move between the two databases. If your Keycloak data is in H2 and you set `APPSMITH_KEYCLOAK_DB_URL`, set this variable to `h2` to keep using it. See [SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#sso-login-returns-502-after-upgrading-to-v24-or-later).
+Keycloak data does not move between the two databases. If your Keycloak data is in H2 and you set `APPSMITH_KEYCLOAK_DB_URL`, set this variable to `h2` to keep using it. See [SAML SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#saml-sso-login-returns-502-after-upgrading-to-v24-or-later).
 </dd>
 
 

@@ -35,7 +35,7 @@ Some versions are checkpoints that you must install before you upgrade further:
 :::
 
 :::caution Upgrading from a version earlier than v2.4
-If your `docker.env` sets `APPSMITH_KEYCLOAK_DB_URL` but not `APPSMITH_KEYCLOAK_DB_DRIVER`, add `APPSMITH_KEYCLOAK_DB_DRIVER=h2` before you upgrade. Without it, SSO login can fail with a 502 error after the upgrade. See [SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#sso-login-returns-502-after-upgrading-to-v24-or-later).
+If you use SAML SSO and your `docker.env` sets `APPSMITH_KEYCLOAK_DB_URL` but not `APPSMITH_KEYCLOAK_DB_DRIVER`, add `APPSMITH_KEYCLOAK_DB_DRIVER=h2` before you upgrade. Without it, SAML SSO login can fail with a 502 error after the upgrade. See [SAML SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#saml-sso-login-returns-502-after-upgrading-to-v24-or-later).
 :::
 
 1. Find your Appsmith installation directory:
