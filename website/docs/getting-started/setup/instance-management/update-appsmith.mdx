@@ -34,6 +34,10 @@ Some versions are checkpoints that you must install before you upgrade further:
  - If your current version is later than v1.9.2 but earlier than v1.96, follow [Upgrade to v1.96–v1.99](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v196v199) before you upgrade to v2.0 or later.
 :::
 
+:::caution Upgrading from a version earlier than v2.4
+If your `docker.env` sets `APPSMITH_KEYCLOAK_DB_URL` but not `APPSMITH_KEYCLOAK_DB_DRIVER`, add `APPSMITH_KEYCLOAK_DB_DRIVER=h2` before you upgrade. Without it, SSO login can fail with a 502 error after the upgrade. See [SSO login returns 502 after upgrading to v2.4 or later](/help-and-support/troubleshooting-guide/upgrade-migration-errors#sso-login-returns-502-after-upgrading-to-v24-or-later).
+:::
+
 1. Find your Appsmith installation directory:
    ```bash
    docker inspect -f '{{ (index .Mounts 0).Source }}' <APPSMITH_CONTAINER_ID>
