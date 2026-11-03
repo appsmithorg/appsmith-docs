@@ -253,7 +253,7 @@ The **Edit** permission permits users to edit existing resources in Appsmith. Wh
         <tr>
           <td>Groups</td>
           <td>View, Invite User, Remove User</td>
-          <td>Allows editing existing groups in the instance. Additionally, grants permissions for viewing, inviting users to, and removing users from the instance.</td>
+          <td>Allows editing existing groups in the instance. Additionally, grants permissions for viewing groups, inviting users to groups, and removing users from groups.</td>
         </tr>
         <tr>
           <td>Roles</td>
@@ -625,6 +625,10 @@ The **Export** permission permits users to export data and resources from Appsmi
 
 The **Invite User** permission permits users to invite other users to groups. Once granted, users can see the **Add user** button enabled on the groups configuration screen, and allows them to invite other users to the groups within the instance.
 
+:::note
+**Invite User** applies only to groups in **Admin Settings**. It doesn't control the **Share** button on workspaces and apps. Sharing is controlled by [Associate Role](#associate-role-permission).
+:::
+
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="invite-user-groups-and-roles">
     <table className="permissions-table" style={{ width: '100%', display: 'table', marginLeft: '2px' }}>
@@ -648,7 +652,7 @@ The **Invite User** permission permits users to invite other users to groups. On
 
 ## Remove User permission
 
-The **Remove User** permission permits users to remove other users from the groups wihtin the Appsmith instance.
+The **Remove User** permission permits users to remove other users from the groups within the Appsmith instance.
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="remove-user-groups-and-roles">
@@ -673,7 +677,13 @@ The **Remove User** permission permits users to remove other users from the grou
 
 ## Associate Role permission
 
-The **Associate Role** permission permits users to assign or change roles of other users within the instance in Appsmith.
+The **Associate Role** permission permits users to assign or change roles of other users and groups within the instance in Appsmith.
+
+**Associate Role** is also what lets workspace and app members invite others. Every default workspace and application role has **Associate Role** on itself and on the default roles below it. For example, **App Viewer - _workspace name_** has **Associate Role** on itself, so an App Viewer can invite others as App Viewers. Default roles can't be edited. For details and for how to restrict this, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
+:::caution
+**View** on a role also grants **Associate Role** on that role. If you give a custom role **View** on other roles, its users can assign those roles to anyone on the instance.
+:::
 
 <Tabs queryString="gac-resource">
   <TabItem label="Groups & Roles" value="associate-role-groups-and-roles">
@@ -689,17 +699,17 @@ The **Associate Role** permission permits users to assign or change roles of oth
         <tr>
           <td>Roles</td>
           <td>NA</td>
-          <td>Allows assigning default and custom roles to users within the instance.</td>
+          <td>Allows assigning default and custom roles to users and groups within the instance.</td>
         </tr>
         <tr>
           <td>&nbsp;&nbsp;Default&nbsp;&nbsp;Roles</td>
           <td>NA</td>
-          <td>Allows assigning the given custom role to users within the instance.</td>
+          <td>Allows assigning the given default role to users and groups within the instance.</td>
         </tr>
         <tr>
           <td>&nbsp;&nbsp;Custom&nbsp;&nbsp;Roles</td>
           <td>NA</td>
-          <td>Allows assigning the given custom role to users within the instance.</td>
+          <td>Allows assigning the given custom role to users and groups within the instance.</td>
         </tr>
       </tbody>
     </table>

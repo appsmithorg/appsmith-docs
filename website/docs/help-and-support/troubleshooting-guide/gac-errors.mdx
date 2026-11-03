@@ -62,6 +62,42 @@ A custom role that provides access to the application is created, but users are 
 * Verify if the custom role access is provided by checking the groups and role mapping or user and role assignment. You can also open the role under **Admin Settings > Roles**, select the **Assignees** tab, and confirm whether the user appears as a **Direct** assignee or **via** a group. If not, add users to groups that have access or assign roles to the appropriate users.
 * Ensure you have granted the necessary access to the datasources used by the application under the _Datasources & Environments_ tab when configuring the custom role. For more details on permissions, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions). For more details on reviewing assignees, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
 
+## App Viewers can invite other users
+
+A user with the **App Viewer** role can open the **Share** dialog and invite other people to the workspace or app. In the role editor, the App Viewer role shows the **Associate Role** permission.
+
+#### Cause
+
+This is expected. Every default workspace and application role can invite others with the same role or a lower one. An App Viewer can invite others only as App Viewers. A Developer can invite others as Developers or App Viewers. If the invited email address is new to the instance, Appsmith creates an account for it. For details, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
+#### Solution
+
+Default roles can't be edited. To give users access without the ability to invite, assign them a custom role and remove their default roles. For steps, see [Restrict Who Can Invite Users](/advanced-concepts/granular-access-control/how-to-guides/restrict-user-invites).
+
+## Unable to invite users
+
+You can open a workspace or app, but the workspace has no **Share** button, or the app's **Share** dialog has no field for inviting users.
+
+#### Cause
+
+Inviting is available only to users who hold a default role on the workspace or app, such as Administrator, Developer, or App Viewer. Users who get access only through custom roles can't invite others.
+
+#### Solution
+
+Ask a workspace Administrator to invite the people you want to add, or ask your instance administrator to assign them a role. For more information, see [Who sees the Share button](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions#who-sees-the-share-button).
+
+## Group is not listed when sharing
+
+When you share a workspace or app, the group you want to invite doesn't appear in the **Share** dialog.
+
+#### Cause
+
+To invite a group, you need **View** permission on that group.
+
+#### Solution
+
+Ask your instance administrator to add **View** on that group to one of your roles, on the **Groups & Roles** tab under **Groups**. For more information, see [Invite a group](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions#invite-a-group).
+
 ## Getting help
 
 If you are unable to resolve your error, please reach out to support via the chat widget on the page.

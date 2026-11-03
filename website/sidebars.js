@@ -851,6 +851,7 @@ const sidebars = {
               items: [
                 'advanced-concepts/granular-access-control/how-to-guides/configure-default-permissions',
                 'advanced-concepts/granular-access-control/how-to-guides/restrict-query-access',
+                'advanced-concepts/granular-access-control/how-to-guides/restrict-user-invites',
               ]
             },
             {
@@ -860,6 +861,7 @@ const sidebars = {
               items: [
                 'advanced-concepts/granular-access-control/reference/default-roles',
                 'advanced-concepts/granular-access-control/reference/custom-roles',
+                'advanced-concepts/granular-access-control/reference/invite-and-share-permissions',
                 'advanced-concepts/granular-access-control/reference/permissions',
               ]
             },

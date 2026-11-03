@@ -686,7 +686,7 @@
     },
     {
       "source": "/advanced-concepts/access-control",
-      "destination": "/advanced-concepts/invite-users"
+      "destination": "/advanced-concepts/granular-access-control/reference/invite-and-share-permissions"
     },
     {
       "source": "/advanced-concepts/access-control/granular-access-control",
@@ -990,11 +990,11 @@
     },
     {
       "source": "/getting-started/tutorials/review-moderator-dashboard/advanced-concepts/invite-users",
-      "destination": "/advanced-concepts/invite-users"
+      "destination": "/advanced-concepts/granular-access-control/reference/invite-and-share-permissions"
     },
     {
       "source": "/getting-started/tutorials/building-a-store-catalog-manager/advanced-concepts/invite-users",
-      "destination": "/advanced-concepts/invite-users"
+      "destination": "/advanced-concepts/granular-access-control/reference/invite-and-share-permissions"
     },
     {
       "source": "/getting-started/tutorials/building-a-store-catalog-manager/reference/widgets/input",
@@ -1253,7 +1253,7 @@
     },
     {
       "source": "/advanced-concepts/invite-users",
-      "destination": "/advanced-concepts/granular-access-control/reference/permissions"
+      "destination": "/advanced-concepts/granular-access-control/reference/invite-and-share-permissions"
     },
     {
       "source": "/advanced-concepts/version-control-with-git/connecting-to-git-repository",

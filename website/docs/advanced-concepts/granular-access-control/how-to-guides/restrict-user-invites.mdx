@@ -1,0 +1,104 @@
+---
+description: >-
+  Give users access to Appsmith apps and workspaces without letting them invite other users.
+title: Restrict Who Can Invite Users
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Restrict Who Can Invite Users</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+Every default role in Appsmith can invite other people, including **App Viewer**. An App Viewer can invite others as App Viewers, and a Developer can invite others as Developers or App Viewers. You can't turn this off on a default role. For details, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
+This page shows how to give users access through a custom role, so that they can use an app without being able to invite anyone.
+
+## Prerequisites
+
+Before you start, ensure you have:
+
+- A self-hosted Appsmith instance on a Business or Enterprise plan. For more information, see [Pricing](https://www.appsmith.com/pricing).
+- Permission to create roles and to assign roles to users and groups, such as the [Organization Administrator Role](/advanced-concepts/granular-access-control/reference/default-roles#organization-administrator-role).
+- A test user account, to check the result.
+
+## Create the custom role
+
+1. Go to **Admin Settings** > **Roles** and click **Add role**.
+2. Give the role a clear name, for example `Sales Dashboard - Viewer (no invite)`.
+3. On the **Permissions** tab, grant only the access the users need:
+
+    * **Application Resources**: select **View** on the app. For read-only access to every app in a workspace, select **View** on the workspace.
+    * **Datasources & Environments**: select **Execute** on each datasource the app uses, and on the environments the users need, such as **Production**. Without these, the app loads but its queries fail.
+
+    For a full example, see [Give app access](/advanced-concepts/granular-access-control/reference/custom-roles#give-app-access).
+
+4. On the **Groups & Roles** tab, leave every permission cleared. In particular, don't select:
+
+    * **Associate Role**, on any role. This is the permission that lets users invite others.
+    * **View** on **Roles**. **View** on a role also grants **Associate Role** on it.
+    * **Invite User** or **Remove User** on **Groups**.
+
+5. Leave the **Others** tab cleared.
+6. Save the role.
+
+For users who build apps but must not invite anyone, use the same steps and grant **Create**, **Edit**, and **Delete** on the app resources instead of **View** only.
+
+## Assign the role
+
+Assign the custom role to a group, then add the users to that group. A group makes it easier to add people later without using the **Share** button.
+
+1. Go to **Admin Settings** > **Groups** and open or create the group.
+2. Add the custom role to the group.
+3. Add the users to the group.
+
+You can also assign the role to individual users on the **Users** page. For more information, see [User Management](/getting-started/setup/instance-configuration/user-management#groups).
+
+## Remove the default roles
+
+Appsmith combines the permissions of every role a user holds. If a user still has any default role on the workspace or app, that user can still invite others. The same applies to any other custom role the user holds that has **Associate Role** or **View** on a default role. Remove each of these default roles:
+
+* **App Viewer**, **Developer**, or **Administrator** - _workspace name_
+* **App Viewer** or **Developer** - _app name_
+
+A user can hold a default role directly or through a group, so check both:
+
+1. Go to **Admin Settings** > **Roles** and turn on **Default Roles**.
+2. Open each default role for the workspace and its apps, and select the **Assignees** tab.
+3. For a user marked **Direct**, remove the role on the **Users** page, or remove the user from the workspace **Members** page.
+4. For a user marked **via _group name_**, remove the default role from that group, or remove the user from the group.
+
+For more information about the **Assignees** tab, see [View role assignees](/advanced-concepts/granular-access-control/roles#view-role-assignees).
+
+## Check the result
+
+1. Sign in as the test user.
+2. Open the workspace. Confirm that the **Share** button doesn't appear.
+3. Open the app and confirm that it works.
+4. If the app shows a **Share** button, open it. Confirm that the dialog has no field for inviting users.
+
+If the workspace **Share** button or the invite field still appears, the user still holds a default role. Check the **Assignees** tab of each default role again.
+
+:::caution
+Don't use the **Share** button to give these users access later. Sharing assigns a default role, which brings back the ability to invite. Add new users to the group instead.
+:::
+
+## Troubleshooting
+
+If a user can't open the app after this change, the custom role may be missing access to a page, a datasource, or an environment. For more information, see [Unable to access application](/help-and-support/troubleshooting-guide/gac-errors#unable-to-access-application).
+
+## See also
+
+* [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions)
+* [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles)
+* [Permissions](/advanced-concepts/granular-access-control/reference/permissions)

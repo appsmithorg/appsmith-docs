@@ -136,9 +136,11 @@ Users are individuals who have access to your Appsmith instance. From the Users 
 Administrators can:
 
 - Invite new users.
-- Assign or update user roles (for example, Viewer, Developer, Admin).
+- Assign or update user roles (for example, Administrator, Developer, or App Viewer).
 - Add users to specific groups.
 - Deactivate or remove users from the instance.
+
+Workspace and app members can also invite new users with the **Share** button, including members with the App Viewer role. An invitation to a new email address creates an account on the instance. For more information, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
 
 For more information, see [Granular Access Control](/advanced-concepts/granular-access-control#users).
 
@@ -154,7 +156,7 @@ With the Groups feature, administrators can:
 
 - Create and name groups based on roles (for example, “Developers”, “Support Team”, “Finance”)
 - Add or remove users from specific groups
-- Assign roles (such as Viewer, Editor, Administrator) to the entire group
+- Assign roles (such as Administrator, Developer, or App Viewer) to the entire group
 
 For more information, see [Granular Access Control](/advanced-concepts/granular-access-control).
 

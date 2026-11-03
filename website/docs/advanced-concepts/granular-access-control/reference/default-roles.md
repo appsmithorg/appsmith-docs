@@ -21,6 +21,10 @@ tags={[
 <!-- vale on -->
 This page provides detailed insights into the individual permissions associated with the default roles available in Appsmith.
 
+:::info
+The tables on this page show permissions on apps, datasources, environments, and workflows. Every workspace and application default role also includes **Associate Role** on the **Groups & Roles** tab. This lets members invite others with the same role or a lower one. For example, an App Viewer can invite other users as App Viewers. For details, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+:::
+
 ## Organization Administrator Role
 
 The Organization Administrator Role (previously Instance Administrator role) operates at the highest level within the platform, managing organization-wide settings such as branding, GAC, licenses, provisioning, and audit logs.
@@ -257,9 +261,13 @@ To perform different tasks, the Administrator - Workspace role in Appsmith has t
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
+### Invite users
+
+Workspace Administrators can invite people to the workspace as Administrator, Developer, or App Viewer. They can also change a member's role and remove members. They can share any app in the workspace as Developer or App Viewer. For more information, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
 ### Limitations
 
-Workspace Administrators do have some limitations; they lack authority to create workspaces, view audit logs, or manage roles, groups, or users.
+Workspace Administrators can't create workspaces, view audit logs, or manage users, groups, and roles in **Admin Settings**.
 
 ## Developer Role for Workspace
 
@@ -370,9 +378,13 @@ The Developer role enables users to create, edit, and delete apps within a works
 
 For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
+### Invite users
+
+Workspace Developers can invite people to the workspace as Developer or App Viewer. They can share any app in the workspace as Developer or App Viewer. They can't invite anyone as Administrator. For more information, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
 ### Limitations
 
-Workspace Developers have the same limitations as Workspace Administrators and, in addition, cannot make apps public or export them.
+Workspace Developers can't make apps public, export apps, change a member's role, or remove members. They also can't create workspaces, view audit logs, or manage users, groups, and roles in **Admin Settings**.
 
 ## App Viewer Role for Workspace
 
@@ -469,9 +481,13 @@ The workspace App Viewer role enables users to view apps, governed by the permis
   For more information about each permission, see [Permissions](/advanced-concepts/granular-access-control/reference/permissions).
 
 
+### Invite users
+
+Workspace App Viewers can invite people to the workspace as App Viewer, and can share any app in the workspace as App Viewer. They can't give anyone edit access. Invited people who don't have an account get one on the instance. To give users view access without the ability to invite, see [Restrict Who Can Invite Users](/advanced-concepts/granular-access-control/how-to-guides/restrict-user-invites).
+
 ### Limitations
 
- Workspace App Viewers do not have permission to create, edit, or delete apps that is it does not include permissions to manage apps within workspace.
+Workspace App Viewers can't create, edit, or delete apps, and can't change or remove members.
 
 ## Developer Role for Application
 
@@ -564,13 +580,17 @@ The Developer role enables users to manage pages, queries, datasources, and envi
 </table>
 </div>
 
+### Invite users
+
+Application Developers can share the app as Developer or App Viewer. For more information, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
+
 ### Limitations
 
-Application Developers do have some constraints; they lack permissions to create applications in workspace, view audit logs, manage workflows, make apps public or export apps, and manage roles, groups, or users.
+Application Developers can't create applications in the workspace, view audit logs, manage workflows, make apps public, export apps, or manage users, groups, and roles in **Admin Settings**.
 
 ## App Viewer Role for Application
 
-The App Viewer for Application Role is specific to each workspace and provides view-only access to apps within that application.
+The App Viewer for Application role is specific to each app and provides view-only access to that app. When a user is invited to an app with App Viewer access, this role is created if not already present.
 
 ### Permissions
 
@@ -659,6 +679,17 @@ The App Viewer role enables users to view pages, governed by the permissions all
 </table>
     </div>
     
+### Invite users
+
+Application App Viewers can share the app as App Viewer. They can't give anyone edit access. To give users view access without the ability to invite, see [Restrict Who Can Invite Users](/advanced-concepts/granular-access-control/how-to-guides/restrict-user-invites).
+
 ### Limitations
 
- Application App Viewers do not have permission to create, edit, or delete pages, queries in the app and does not include permissions to manage apps within workspace.
+Application App Viewers can't create, edit, or delete pages or queries in the app.
+
+## See also
+
+* [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions)
+* [Restrict Who Can Invite Users](/advanced-concepts/granular-access-control/how-to-guides/restrict-user-invites)
+* [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles)
+* [Permissions](/advanced-concepts/granular-access-control/reference/permissions)

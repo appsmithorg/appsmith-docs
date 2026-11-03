@@ -45,11 +45,13 @@ Instance-level default roles have permissions that govern access to Appsmith ins
 
 Workspace-level default roles control access within a specific workspace. These roles are pre-defined, offering standard access controls tailored to each workspace. The workspace level roles are not available for customization. They include:
 
-* [Administrator - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#administrator-role-for-workspace) - to create, edit, view and delete apps, queries, datasources, environments, export apps and make apps public within a workpsace.
+* [Administrator - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#administrator-role-for-workspace) - to create, edit, view and delete apps, queries, datasources, environments, export apps and make apps public within a workspace.
 
 * [Developer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#developer-role-for-workspace) - to create, edit, and delete apps, pages, queries, datasources, and environments within a workspace.
 
 * [App Viewer - Workspace Role](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-workspace) - to provide read-only access to apps within a workspace.
+
+Each workspace role can also invite people to the workspace with the same role or a lower one. For example, an App Viewer can invite other users as App Viewers. For more information, see [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions).
  
 
 ### Application level
@@ -60,6 +62,8 @@ Application level default roles control access within a specific application. Th
 
 
 * [App Viewer - Application Role](/advanced-concepts/granular-access-control/reference/default-roles#app-viewer-role-for-application) - to provide read-only access to the shared app.
+
+As with workspace roles, each application role can share the app with the same role or a lower one.
 
 ## Custom roles
 
@@ -131,4 +135,5 @@ For the **Default Role for All Users**, the **Assignees** tab shows **Assigned t
 * [Custom Roles](/advanced-concepts/granular-access-control/reference/custom-roles)
 * [Default Roles](/advanced-concepts/granular-access-control/reference/default-roles)
 * [Permissions](/advanced-concepts/granular-access-control/reference/permissions)
+* [Invite and Share Permissions](/advanced-concepts/granular-access-control/reference/invite-and-share-permissions)
 * [User Management](/getting-started/setup/instance-configuration/user-management)
