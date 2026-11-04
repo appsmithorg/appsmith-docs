@@ -19,12 +19,15 @@ Follow the steps below to export desired application entities and import it into
   caption="Select entities to export or import"
 />
 
-<!-- TODO(screenshot): Export modal showing the Select All checkbox in every category (JS objects, Databases, Queries, Custom libraries, Widgets). -->
-
 3.  Select the specific entities under each category and click **Export selected entities** to download the JSON file. The JSON file follows the naming convention - `applicationname.json`.
 
     Each category (**JS objects**, **Databases**, **Queries**, **Custom libraries**, and **Widgets**) has a **Select All** checkbox at the top to export all entities in that category at once. Under **Queries**, **Select All** selects the queries in every group listed there, such as APIs and each datasource. If you clear any entity in a category, its **Select All** checkbox clears too.
 
+<ZoomImage
+  src="/img/reuse-entities-export-select-all.png"
+  alt="Export modal with a Select All checkbox in every category"
+  caption="Select All in every export category"
+/>
 
 :::info
 The JSON file is a blueprint of your selected entities, and designed for sharing entities across pages. The JSON file can't be used to create a new application. 
