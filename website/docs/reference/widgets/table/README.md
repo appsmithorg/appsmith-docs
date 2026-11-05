@@ -132,7 +132,7 @@ Sets the number of rows shown on each page of the table. The table grows or shri
 
 The value must be a whole number from 1 to 200. The default is 10. Values above 200 show a validation error and are capped at 200.
 
-You can also set this property with JavaScript by clicking **JS** next to it.
+You can also set this property with JavaScript by writing a binding in the field, like `{{appsmith.store.rowsPerPage}}`.
 
 <!-- TODO(screenshot): Pagination section of the Table property pane with Height set to Auto Height, showing the Rows per page field. The local docs instance runs a release image built before appsmithorg/appsmith#42489, so this control is not available there yet. -->
 
