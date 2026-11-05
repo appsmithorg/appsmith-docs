@@ -50,7 +50,7 @@ This page applies only to self-hosted instances where SAML is configured.
 |---|---|---|
 | **Native SAML is being prepared** | Appsmith is copying your SAML configuration from Keycloak. | Wait, then refresh the page. |
 | **Native SAML is ready to test** | The copy is complete and native SAML can run it. | [Switch to native SAML](#switch-to-native-saml). |
-| **Native SAML needs administrator action** | The copy lists one or more [required actions](#required-actions). Native SAML refuses sign-in until they're resolved. Keycloak sign-in keeps working. | Resolve each required action. |
+| **Native SAML needs administrator action** | The copy lists one or more [required actions](#required-actions). Native SAML refuses sign-in until they're resolved. Keycloak sign-in keeps working. | Resolve each required action, then [retry the copy](#retry-the-copy). |
 | **Native SAML could not be prepared** | Appsmith couldn't copy the configuration. The entry shows a failure code. | Fix the cause, then [retry the copy](#retry-the-copy). |
 | **Native SAML is on, waiting for a first sign-in** | You switched to native SAML, and nobody has signed in with it yet. | Sign in once with SAML. |
 | **Native SAML is verified** | A user signed in with native SAML using the current configuration. | Nothing. |
@@ -216,14 +216,11 @@ A sign-in also fails with `saml_failed` when:
 
 ## Retry the copy
 
-When Admin central shows **Native SAML could not be prepared** or **Native sign-in paused**, fix the cause first. Then restart Appsmith, or ask Appsmith to copy the configuration again. While signed in as an instance administrator, open your browser's developer console on any Appsmith page and run:
+When Admin central shows **Native SAML could not be prepared**, **Native SAML needs administrator action**, or **Native sign-in paused**, fix the cause first. Then click **Retry copy** on the native SAML entry.
 
-```js
-await fetch("/api/v1/admin/sso/saml/native/retry-sync", {
-  method: "POST",
-  headers: { "X-Requested-By": "Appsmith" },
-}).then((response) => response.json());
-```
+Appsmith copies the configuration from Keycloak again, without a restart, and the entry shows the result. If the copy fails again, the entry shows the new failure code. Restarting Appsmith also copies the configuration.
+
+The button shows only while a new copy can change the result.
 
 ## Differences from Keycloak
 
