@@ -12,7 +12,8 @@ toc_max_heading_level: 3
 
 <Tags
 tags={[
-{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" },
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
 ]}
 />
 </div>
