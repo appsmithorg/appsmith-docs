@@ -124,6 +124,20 @@ Allows you to assign a unique column that helps maintain `selectedRows` and `tri
 Determines whether the pagination feature is displayed in the table header, allowing users to navigate through different pages of the table.
 </dd>
 
+#### Rows per page `number`
+
+<dd>
+
+Sets the number of rows shown on each page of the table. The table grows or shrinks to fit these rows, and `Table.pageSize` is set to this value. This property is only visible when [**Height**](#height-string) is set to **Auto Height**.
+
+The value must be a whole number from 1 to 200. The default is 10. Values above 200 show a validation error and are capped at 200.
+
+You can also set this property with JavaScript by clicking **JS** next to it.
+
+<!-- TODO(screenshot): Pagination section of the Table property pane with Height set to Auto Height, showing the Rows per page field. The local docs instance runs a release image built before appsmithorg/appsmith#42489, so this control is not available there yet. -->
+
+</dd>
+
 #### Server side pagination `boolean`
 
 <dd>
@@ -177,6 +191,8 @@ The following Table features are automatically disabled when infinite scroll is 
 - Inline editing
 - Adding new rows
 
+Infinite scroll is not available when [**Height**](#height-string) is set to **Auto Height**. The toggle is disabled, and selecting **Auto Height** for a table that has infinite scroll enabled turns infinite scroll off.
+
 </dd>
 
 #### onPageChange
@@ -191,7 +207,7 @@ Sets the [actions](/reference/appsmith-framework/widget-actions) that would be t
 
 <dd>
 
-Sets the [actions](/reference/appsmith-framework/widget-actions) to be executed when the height of the table is changed. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new table height.
+Sets the [actions](/reference/appsmith-framework/widget-actions) to be executed when `Table.pageSize` changes. With **Height** set to **Fixed**, this happens when the height or row height of the table changes; with **Auto Height**, it happens when **Rows per page** changes. This event is typically triggered by developers working on the app and not by end users. It can be useful, for example, to dynamically set a limit in your query based on the new page size.
 
 </dd>
 
@@ -367,6 +383,24 @@ When enabled, a dropdown is displayed in the header cells of the columns, allowi
 <dd>
 
 Allows you to specify the separator character to use for formatting the downloaded `.csv` file. This property is applicable only when the **Allow Download** property is enabled. By default, the separator character is set to `,` *(comma)*.
+
+</dd>
+
+#### Height `string`
+
+<dd>
+
+This property determines how the table's height is set. There are two available options:
+
+* **Fixed** *(default)*: The table's height remains as set using drag and resize. `Table.pageSize` is calculated from the table's height and row height, and the table body scrolls when its rows don't fit.
+* **Auto Height**: The table grows to fit one page of rows, as set in **Pagination** > [**Rows per page**](#rows-per-page-number). The table has no vertical scrollbar of its own; when the table is taller than the screen, the page scrolls instead. Horizontal scrolling for wide tables still works.
+
+With **Auto Height**:
+
+* The table's height follows the number of rows on the current page and the **Default Row Height** style property. When a page has fewer rows than **Rows per page**, for example the last page or a search with few matches, the table shrinks to fit them and doesn't show empty rows.
+* [**Infinite scroll**](#infinite-scroll-boolean) is not available. If it was on, selecting **Auto Height** turns it off and turns on **Allow searching**, **Allow filtering**, **Column sorting**, and **Allow adding a row**, the same as turning off the **Infinite scroll** toggle.
+
+<!-- TODO(screenshot): General section of the Table property pane with the Height dropdown open, showing the Auto Height and Fixed options. The local docs instance runs a release image built before appsmithorg/appsmith#42489, so this control is not available there yet. -->
 
 </dd>
 
@@ -743,7 +777,7 @@ Contains a calculated value to represent how many records to skip when using Ser
 
 <dd>
 
-Contains the number of rows that can fit inside a page of the table. Changes along with the height & row height of the table.
+Contains the number of rows shown on a page of the table. With **Height** set to **Fixed**, it's the number of rows that fit inside the table and changes along with the height and row height of the table. With **Height** set to **Auto Height**, it equals the [**Rows per page**](#rows-per-page-number) property.
 
 *Example:*
 ```js
