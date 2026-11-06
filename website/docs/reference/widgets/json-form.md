@@ -235,6 +235,14 @@ Sets a color for the form's border, specified as a [CSS color value](https://dev
 
 </dd>
 
+#### Title Font Color `string`
+
+<dd>
+
+Sets the font color of the form title, specified as a [CSS color value](https://developer.mozilla.org/en-US/docs/Web/CSS/color). It can also be manipulated programmatically using the JavaScript functions.
+
+</dd>
+
 ### Border and shadow
 
 #### Border Width `number`
