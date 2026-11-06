@@ -183,22 +183,31 @@ Advisories suggest improvements. They never stop sign-in, under either engine.
 
 | Advisory | What it means | What to do |
 |---|---|---|
-| `NEW_USER_EMAIL_UNCONFIRMED` | No email attribute is mapped, and some IdPs ignore the email-format NameID Appsmith asks for. Returning users sign in through the account link copied from Keycloak. A new user signs in with the email the IdP sends as an email-address NameID, in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. | Nothing is required. To skip the email form, make sure your IdP sends the email in one of those places. A native sign-in that receives the email from the IdP clears this advisory. |
-| `NEW_USER_EMAIL_MISSING` | No email attribute is mapped, and Appsmith doesn't ask the IdP for an email-format NameID. Returning users sign in through their account link. A new user signs in with the email the IdP sends in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. | Nothing is required. To skip the email form, have your IdP send the email in an attribute named `urn:oid:1.2.840.113549.1.9.1`. Keycloak and native SAML both read it, so nothing changes in Appsmith. In Okta, add an attribute statement with that name, name format **URI Reference**, and value `user.email`. |
+| `NEW_USER_EMAIL_UNCONFIRMED` | No email attribute is mapped, and some IdPs ignore the email-format NameID Appsmith asks for. Returning users sign in through the account link copied from Keycloak. A new user signs in with the email the IdP sends as an email-address NameID, in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. A common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form, make sure your IdP sends the email in one of those places. A native sign-in that receives the email from the IdP clears this advisory. |
+| `NEW_USER_EMAIL_MISSING` | No email attribute is mapped, and Appsmith doesn't ask the IdP for an email-format NameID. Returning users sign in through their account link. A new user signs in with the email the IdP sends in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. A common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form and the confirmation link, have your IdP send the email in an attribute named `urn:oid:1.2.840.113549.1.9.1`. Keycloak and native SAML both read it, so nothing changes in Appsmith. In Okta, add an attribute statement with that name, name format **URI Reference**, and value `user.email`. |
 | `NAME_IMPORTERS_DISAGREE` | Several Keycloak mappers import the first or last name from different attributes. Native SAML uses the first one by mapper name. | Keep one mapper for each name in Keycloak. |
 
 ## When the IdP sends no email
 
 A returning user signs in through their account link, so they never see this. A new user needs an email for their Appsmith account. When the IdP sends none, native SAML shows a **Finish signing in** page that asks for the email and name, as Keycloak does. The user types them once. Native SAML links the email to the user's IdP identity, so the next sign-in skips the page.
 
-What happens next depends on the typed email:
+Appsmith then emails a confirmation link to the typed address, whether or not an account has it. Only the owner of the address can open it, so no one can sign in to someone else's account, or claim an address for later, by typing it. The link expires after 15 minutes and works only in the browser where the sign-in started. Opening it signs the user in to the account with that email, or creates one with the email marked as verified.
 
-- **A new email** creates an account, if sign-up rules allow it. The account's email is marked as not verified. If sign-up is turned off, or the email's domain isn't allowed, the sign-in fails with `saml_email_not_allowed`.
-- **An email that already has an account**, or one listed in `APPSMITH_ADMIN_EMAILS`, needs proof of ownership. Appsmith emails a confirmation link to that address. The link expires after 15 minutes and works only in the browser where the sign-in started. Opening it signs the user in. The link needs mail turned on (`APPSMITH_MAIL_ENABLED`) and a base URL (`APPSMITH_BASE_URL`). Without them, the sign-in fails with `saml_email_in_use`.
+- **Mail is required.** The page appears only when mail is turned on (`APPSMITH_MAIL_ENABLED`) and a base URL is set for the link (`APPSMITH_BASE_URL`). Without them, a new user whose IdP sends no email can't sign in, and gets `saml_email_missing`.
+- **Sign-up rules apply.** If the email has no account, and sign-up is turned off or the email's domain isn't allowed, the sign-in fails with `saml_email_not_allowed` before any link is sent.
 
 The page works only in the browser that started the sign-in, and only for 10 minutes. Admin central counts how many times the page was shown, in the **Email prompts issued** row.
 
 To skip the page entirely, have your IdP send the email. See `NEW_USER_EMAIL_MISSING` in [Advisories](#advisories) for where to send it.
+
+### Email from a common attribute
+
+Native SAML also reads the email from common attributes that Keycloak reads only when an administrator maps them: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, and `email`. Some IdPs let users set these values themselves, for example Auth0 with public sign-up. So native SAML trusts them less than an email-address NameID or the attribute `urn:oid:1.2.840.113549.1.9.1`:
+
+- **A new email** creates an account and signs in, with no extra step.
+- **An email that already has an account**, or one listed in `APPSMITH_ADMIN_EMAILS`, gets the same confirmation link as a typed email. Without mail, the sign-in fails with `saml_email_in_use`.
+
+A returning user signs in through their account link and never gets the link. To avoid the link, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`.
 
 ## Sign-in errors
 
@@ -209,8 +218,8 @@ When native SAML refuses a sign-in, the user returns to the Appsmith sign-in pag
 | `saml_certificate_action_required` | Your IdP requires signed requests, and the native SAML certificate isn't confirmed yet. | [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests). |
 | `saml_action_required` | Admin central lists a required action. | Resolve the [required actions](#required-actions). |
 | `saml_sync_required` | An administrator changed SAML settings, and Appsmith hasn't copied them yet. | Wait a few seconds and try again. If Admin central shows **Native sign-in paused**, [retry the copy](#retry-the-copy). |
-| `saml_email_missing` | A new user signed in, the IdP didn't send their email, and the NameID is transient. A transient NameID changes at every sign-in, so Appsmith can't link a typed email to the user. | Have your IdP send the email, or use a persistent NameID format. |
-| `saml_email_in_use` | A new user typed an email that already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | Have your IdP send the email, or [set up mail](#when-the-idp-sends-no-email) so Appsmith can confirm the address. |
+| `saml_email_missing` | A new user signed in, and the IdP didn't send their email. Either the NameID is transient, so Appsmith can't link a typed email to the user, or mail isn't set up, so Appsmith can't confirm a typed email. | Have your IdP send the email, use a persistent NameID format, or [set up mail](#when-the-idp-sends-no-email). |
+| `saml_email_in_use` | A new user's email came from a [common email attribute](#email-from-a-common-attribute) and already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | Have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`, or set up mail so Appsmith can confirm the address. |
 | `saml_email_not_allowed` | A new user typed an email that sign-up rules don't allow. Sign-up is turned off, or the email's domain isn't allowed. | Have your IdP send the email, or change the sign-up settings. |
 | `saml_failed` | Any other reason. | Check **Last refused native sign-in** in Admin central, described below. |
 
@@ -220,8 +229,8 @@ When native SAML refuses a sign-in, the user returns to the Appsmith sign-in pag
 |---|---|
 | `SIGNATURE_MISSING` | The IdP signed neither the response nor the assertion. Configure the IdP to sign one of them. |
 | `SIGNATURE_INVALID` | The signature doesn't match any IdP certificate copied from Keycloak. Add the IdP's current signing certificate to the SAML identity provider in Keycloak, then restart Appsmith or [retry the copy](#retry-the-copy). |
-| `EMAIL_MISSING` | The response had no email, the user has no account link, and the NameID is transient. Have your IdP send the email, or use a persistent NameID format. |
-| `EMAIL_IN_USE` | A new user typed an email that belongs to an existing account, and Appsmith couldn't send a confirmation link. Mail isn't turned on (`APPSMITH_MAIL_ENABLED`), or no base URL is set for the link (`APPSMITH_BASE_URL`). |
+| `EMAIL_MISSING` | The response had no email, and the user has no account link. Either the NameID is transient, or mail isn't turned on (`APPSMITH_MAIL_ENABLED`) or no base URL is set (`APPSMITH_BASE_URL`), so a typed email can't be confirmed. |
+| `EMAIL_IN_USE` | A new user's email came from a common email attribute and belongs to an existing account, and Appsmith couldn't send a confirmation link. Mail isn't turned on (`APPSMITH_MAIL_ENABLED`), or no base URL is set for the link (`APPSMITH_BASE_URL`). |
 | `OTHER` | Look for `Rejected SAML assertion` or `SAML sign-in failed` in the [backend logs](/getting-started/setup/instance-management/how-to-get-container-logs). |
 
 A sign-in also fails with `saml_failed` when:
@@ -242,7 +251,8 @@ The button shows only while a new copy can change the result.
 
 - **Sign-in starts on the Appsmith sign-in page.** Native SAML doesn't support sign-in started from the IdP's app dashboard.
 - **Encrypted assertions aren't supported.**
-- **A typed email that already has an account needs proof.** When the IdP sends no email, both engines ask a new user to type one. If the typed email belongs to an existing account, Keycloak signs the user in to that account. Native SAML first sends a confirmation link to that address, or refuses the sign-in when it can't send one. See [When the IdP sends no email](#when-the-idp-sends-no-email).
+- **A typed email needs proof.** When the IdP sends no email, both engines ask a new user to type one. Keycloak creates or signs in to the account for that email right away. Native SAML first sends a confirmation link to that address, so it needs mail. See [When the IdP sends no email](#when-the-idp-sends-no-email).
+- **Common email attributes are read, with care.** Native SAML reads the email from common attributes without a mapper, but uses one to reach an existing account only after a confirmation link. See [Email from a common attribute](#email-from-a-common-attribute).
 - **The IdP must sign the response or the assertion.** Native SAML always checks the signature.
 - **Keycloak-generated claims aren't available.** Claims such as `sub` and `preferred_username` came from Keycloak and have no native equivalent.
 - **Errors appear on the Appsmith sign-in page**, not on a Keycloak error page.
