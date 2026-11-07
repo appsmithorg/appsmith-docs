@@ -209,6 +209,8 @@ Native SAML also reads the email from common attributes that Keycloak reads only
 
 A returning user signs in through their account link and never gets the link. To avoid the link, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`.
 
+If your IdP sets one of these attributes and its users can't change it, you can trust it instead. After a native sign-in reads the email from a common attribute, Admin central names it in the **Email read from a common attribute** row of the native SAML entry, and shows a **Trust *attribute* as the email** button. Click it, and native SAML reads that attribute as it reads a mapped email attribute: an email that already has an account signs in without a confirmation link, and `saml_email_in_use` stops for that attribute. Other common attributes still need the link. Copying the configuration from Keycloak keeps the choice. To undo it, click **Stop trusting *attribute***.
+
 ## Sign-in errors
 
 When native SAML refuses a sign-in, the user returns to the Appsmith sign-in page. The page URL contains an `error` code, and for most codes the page shows a message.
@@ -219,7 +221,7 @@ When native SAML refuses a sign-in, the user returns to the Appsmith sign-in pag
 | `saml_action_required` | Admin central lists a required action. | Resolve the [required actions](#required-actions). |
 | `saml_sync_required` | An administrator changed SAML settings, and Appsmith hasn't copied them yet. | Wait a few seconds and try again. If Admin central shows **Native sign-in paused**, [retry the copy](#retry-the-copy). |
 | `saml_email_missing` | A new user signed in, and the IdP didn't send their email. Either the NameID is transient, so Appsmith can't link a typed email to the user, or mail isn't set up, so Appsmith can't confirm a typed email. | Have your IdP send the email, use a persistent NameID format, or [set up mail](#when-the-idp-sends-no-email). |
-| `saml_email_in_use` | A new user's email came from a [common email attribute](#email-from-a-common-attribute) and already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | Have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`, or set up mail so Appsmith can confirm the address. |
+| `saml_email_in_use` | A new user's email came from a [common email attribute](#email-from-a-common-attribute) and already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | [Trust the attribute](#email-from-a-common-attribute) in Admin central, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`, or set up mail so Appsmith can confirm the address. |
 | `saml_email_not_allowed` | A new user typed an email that sign-up rules don't allow. Sign-up is turned off, or the email's domain isn't allowed. | Have your IdP send the email, or change the sign-up settings. |
 | `saml_failed` | Any other reason. | Check **Last refused native sign-in** in Admin central, described below. |
 
