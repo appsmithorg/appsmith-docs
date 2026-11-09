@@ -35,8 +35,7 @@ This page covers the v2.7 opt-in on self-hosted instances where SAML is configur
 
 ## What stays the same
 
-- **Your identity provider (IdP) needs no change**, unless it requires signed sign-in requests. See [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests).
-- **The URLs in your IdP stay the same.** The Assertion Consumer Service (ACS) URL is still `https://<your-domain>/auth/realms/appsmith/broker/saml/endpoint`, and the entity ID is still `https://<your-domain>/auth/realms/appsmith`.
+- **The URLs in your identity provider (IdP) stay the same.** The default Assertion Consumer Service (ACS) URL is `https://<your-domain>/auth/realms/appsmith/broker/saml/endpoint`, and the default entity ID is `https://<your-domain>/auth/realms/appsmith`. Keep any custom entity ID already configured for your instance.
 - **The SAML button stays the same.** Native SAML uses the existing Appsmith accounts. Wait for the account links to finish copying before testing returning users.
 - **SAML changes in Admin Settings still go to Keycloak first.** Appsmith then copies them, so Keycloak stays current if you roll back.
 
@@ -117,9 +116,12 @@ Set `APPSMITH_SAML_ENGINE` to `native` and restart Appsmith.
 
 <TabItem label="Kubernetes" value="kubernetes">
 
-1. Get the current values of your installation and save them to a file:
+These examples use `appsmith` as the Helm release, namespace, and workload name. Substitute your installation's names where needed. Keep the current chart and Appsmith image versions when changing only the SAML engine.
+
+1. Check the installed chart version, then save your current values to a file:
 
     ```bash
+    helm list -n appsmith
     helm get values appsmith -n appsmith -o yaml > values.yaml
     ```
 
@@ -131,17 +133,28 @@ Set `APPSMITH_SAML_ENGINE` to `native` and restart Appsmith.
       APPSMITH_SAML_ENGINE: "native"
     ```
 
-3. Apply the updated values:
+3. Apply the updated values with the installed chart version. Replace `<chart-version>` with the version from the **CHART** column of `helm list`, without the `appsmith-` prefix:
 
     ```bash
-    helm upgrade appsmith appsmith-ee/appsmith -f values.yaml -n appsmith
+    helm upgrade appsmith appsmith-ee/appsmith --version <chart-version> -f values.yaml -n appsmith
     ```
+
+4. Restart the Appsmith workload so its pods read the new value, then wait for the rollout. Changing the Helm value alone might not restart existing pods. For the default StatefulSet:
+
+    ```bash
+    kubectl rollout restart statefulset/appsmith -n appsmith
+    kubectl rollout status statefulset/appsmith -n appsmith --timeout=10m
+    ```
+
+    If your installation uses a Deployment, replace `statefulset/appsmith` with `deployment/appsmith`. If you changed the workload name, find it with `kubectl get statefulset,deployment -n appsmith` and use that name.
 
 </TabItem>
 
 </Tabs>
 
 For other platforms, see [Configure environment variables](/getting-started/setup/instance-configuration/configure-using-environment-variables).
+
+After the restart, check the engine label on the native SAML entry in Admin central. It must show **Native engine** for `native`, or **Keycloak engine** when rolling back to `keycloak`.
 
 ### Sign in once
 
