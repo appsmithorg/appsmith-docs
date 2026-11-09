@@ -134,7 +134,7 @@ The value must be a whole number from 1 to 200. The default is 10. Values above 
 
 You can also set this property with JavaScript by writing a binding in the field, like `{{appsmith.store.rowsPerPage}}`.
 
-<!-- TODO(screenshot): Pagination section of the Table property pane with Height set to Auto Height, showing the Rows per page field. The local docs instance runs a release image built before appsmithorg/appsmith#42489, so this control is not available there yet. -->
+<ZoomImage src="/img/table-rows-per-page.png" alt="Pagination section of the Table property pane with the Rows per page field set to 10" caption="Rows per page in the Pagination section" />
 
 </dd>
 
@@ -400,7 +400,7 @@ With **Auto Height**:
 * The table's height follows the number of rows on the current page and the **Default Row Height** style property. When a page has fewer rows than **Rows per page**, for example the last page or a search with few matches, the table shrinks to fit them and doesn't show empty rows.
 * [**Infinite scroll**](#infinite-scroll-boolean) is not available. If it was on, selecting **Auto Height** turns it off and turns on **Allow searching**, **Allow filtering**, **Column sorting**, and **Allow adding a row**, the same as turning off the **Infinite scroll** toggle.
 
-<!-- TODO(screenshot): General section of the Table property pane with the Height dropdown open, showing the Auto Height and Fixed options. The local docs instance runs a release image built before appsmithorg/appsmith#42489, so this control is not available there yet. -->
+<ZoomImage src="/img/table-height-property.png" alt="General section of the Table property pane with the Height dropdown open, showing the Auto Height and Fixed options" caption="Height options for the Table" />
 
 </dd>
 
