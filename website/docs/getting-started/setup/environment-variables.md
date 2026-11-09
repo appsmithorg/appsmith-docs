@@ -363,7 +363,7 @@ For more information about how to URL encode your username and password, see [En
 
 <dd>
 
-Specifies the URL for the external PostgreSQL database (e.g., an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
+Specifies the URL for the external PostgreSQL database (for example, an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
 
 </dd>
 

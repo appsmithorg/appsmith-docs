@@ -31,13 +31,13 @@ Today, Appsmith signs users in with SAML through a Keycloak server that runs ins
 
 Switch to native SAML and sign in once while Keycloak is still available. This shows that your configuration works natively before native SAML becomes the default.
 
-This page applies only to self-hosted instances where SAML is configured.
+This page covers the v2.7 opt-in on self-hosted instances where SAML is configured.
 
 ## What stays the same
 
 - **Your identity provider (IdP) needs no change**, unless it requires signed sign-in requests. See [Confirm certificate trust](#confirm-certificate-trust-if-your-idp-requires-signed-requests).
 - **The URLs in your IdP stay the same.** The Assertion Consumer Service (ACS) URL is still `https://<your-domain>/auth/realms/appsmith/broker/saml/endpoint`, and the entity ID is still `https://<your-domain>/auth/realms/appsmith`.
-- **Users sign in to the same accounts** with the same SAML button on the sign-in page.
+- **The SAML button stays the same.** Native SAML uses the existing Appsmith accounts. Wait for the account links to finish copying before testing returning users.
 - **SAML changes in Admin Settings still go to Keycloak first.** Appsmith then copies them, so Keycloak stays current if you roll back.
 
 ## Check readiness in Admin central
@@ -62,8 +62,9 @@ The entry also lists details such as when the configuration was copied, how many
 
 Before you begin:
 
-- Upgrade to v2.7 or later.
-- Make sure Admin central shows **Native SAML is ready to test** and lists no required actions other than `NATIVE_SP_CERTIFICATE_REQUIRED`.
+- Upgrade to v2.7.
+- Wait for the configuration and Keycloak account links to finish copying. Check the account-link count and copy time in Admin central.
+- Resolve any required actions. If the only remaining action is `NATIVE_SP_CERTIFICATE_REQUIRED`, complete the certificate-trust step below. Otherwise, Admin central should show **Native SAML is ready to test** before you switch.
 - Plan for a restart. Appsmith reads the SAML engine only when it starts.
 
 ### Confirm certificate trust if your IdP requires signed requests
@@ -73,17 +74,21 @@ Skip this step if Admin central doesn't list `NATIVE_SP_CERTIFICATE_REQUIRED`.
 When your IdP requires signed sign-in requests, native SAML signs them with its own certificate, not Keycloak's. Your IdP must trust that certificate before native sign-in works.
 
 1. Open `https://<your-domain>/api/v1/saml/native/metadata`. This metadata contains the native SAML signing certificate.
-2. Add that certificate to your IdP as a request-signing certificate. Keep Keycloak's certificate in place too, so Keycloak sign-in keeps working until you switch, and after a rollback.
+2. Add that certificate to your IdP as a request-signing certificate. Keep Keycloak's certificate in place too, so Keycloak sign-in keeps working until you switch, and after a rollback. If your IdP accepts only one request-signing certificate, plan a maintenance window to replace it and switch engines. Keep a copy of Keycloak's certificate for rollback.
 3. Confirm the change in Appsmith. While signed in as an instance administrator, open your browser's developer console on any Appsmith page and run:
 
     ```js
-    await fetch("/api/v1/admin/sso/saml/native/certificate-trust", {
+    const response = await fetch("/api/v1/admin/sso/saml/native/certificate-trust", {
       method: "POST",
       headers: { "X-Requested-By": "Appsmith" },
-    }).then((response) => response.json());
+    });
+    if (!response.ok) {
+      throw new Error(`Certificate-trust confirmation failed: HTTP ${response.status}`);
+    }
+    await response.json();
     ```
 
-    Admin central then shows **Certificate trust confirmed**, and `NATIVE_SP_CERTIFICATE_REQUIRED` is no longer listed.
+    After the request succeeds, refresh Admin central. It shows **Certificate trust confirmed**, and `NATIVE_SP_CERTIFICATE_REQUIRED` is no longer listed.
 
 Changes on the IdP side, such as a new IdP signing certificate, don't require a new confirmation. You confirm again only after you disconnect SAML and configure it again, because that creates a new native SAML certificate.
 
@@ -140,19 +145,21 @@ For other platforms, see [Configure environment variables](/getting-started/setu
 
 ### Sign in once
 
-After Appsmith restarts, sign in with SAML. The first successful native sign-in changes the Admin central entry to **Native SAML is verified**.
+After Appsmith restarts, wait for the account-link copy to finish, then sign in with SAML. Check that you reach the expected account and workspaces. Test a returning user and, if your instance allows sign-up, a new user.
+
+The first successful native sign-in changes the Admin central entry to **Native SAML is verified**. This confirms that sign-in worked for that user and the current configuration; it doesn't confirm every user or IdP configuration.
 
 If sign-in fails, see [Sign-in errors](#sign-in-errors), or [roll back](#roll-back-to-keycloak).
 
 ## Roll back to Keycloak
 
-Set `APPSMITH_SAML_ENGINE` to `keycloak`, or remove the variable, and restart Appsmith. Use the same steps as in [Set the SAML engine](#set-the-saml-engine).
+If you replaced Keycloak's request-signing certificate in the IdP, restore it first. Then set `APPSMITH_SAML_ENGINE` to `keycloak`, or remove the variable, and restart Appsmith. Use the same steps as in [Set the SAML engine](#set-the-saml-engine).
 
 Users sign in through Keycloak again, to the same accounts. Admin central shows **SAML is back on Keycloak**. You don't need to sign in to Appsmith to roll back.
 
 ## Required actions
 
-Native SAML refuses sign-in only when Keycloak would refuse it too, or when native SAML can't reproduce what Keycloak does. While Admin central lists a required action, native sign-in is refused. Keycloak sign-in keeps working.
+While Admin central lists a required action, native sign-in is refused. Resolve the action before switching engines. You can keep using Keycloak while resolving actions specific to native SAML.
 
 | Required action | Cause | How to resolve |
 |---|---|---|
@@ -183,13 +190,13 @@ Advisories suggest improvements. They never stop sign-in, under either engine.
 
 | Advisory | What it means | What to do |
 |---|---|---|
-| `NEW_USER_EMAIL_UNCONFIRMED` | No email attribute is mapped, and some IdPs ignore the email-format NameID Appsmith asks for. Returning users sign in through the account link copied from Keycloak. A new user signs in with the email the IdP sends as an email-address NameID, in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. A common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form, make sure your IdP sends the email in one of those places. A native sign-in that receives the email from the IdP clears this advisory. |
-| `NEW_USER_EMAIL_MISSING` | No email attribute is mapped, and Appsmith doesn't ask the IdP for an email-format NameID. Returning users sign in through their account link. A new user signs in with the email the IdP sends in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. A common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form and the confirmation link, have your IdP send the email in an attribute named `urn:oid:1.2.840.113549.1.9.1`. Keycloak and native SAML both read it, so nothing changes in Appsmith. In Okta, add an attribute statement with that name, name format **URI Reference**, and value `user.email`. |
+| `NEW_USER_EMAIL_UNCONFIRMED` | No email attribute is mapped, and some IdPs ignore the email-format NameID Appsmith asks for. Returning users sign in through the account link copied from Keycloak. A new user signs in with the email the IdP sends as an email-address NameID, in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. An untrusted common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form, make sure your IdP sends the email in one of those places. A native sign-in that receives the email from the IdP clears this advisory. |
+| `NEW_USER_EMAIL_MISSING` | No email attribute is mapped, and Appsmith doesn't ask the IdP for an email-format NameID. Returning users sign in through their account link. A new user signs in with the email the IdP sends in the attribute `urn:oid:1.2.840.113549.1.9.1`, or in a common email attribute: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, or `email`. Otherwise, native SAML [asks them to type it once](#when-the-idp-sends-no-email), as Keycloak does. An untrusted common email attribute that names an existing account [needs a confirmation link](#email-from-a-common-attribute). | Nothing is required. To skip the email form and the confirmation link, have your IdP send the email in an attribute named `urn:oid:1.2.840.113549.1.9.1`. Keycloak and native SAML both read it, so nothing changes in Appsmith. In Okta, add an attribute statement with that name, name format **URI Reference**, and value `user.email`. |
 | `NAME_IMPORTERS_DISAGREE` | Several Keycloak mappers import the first or last name from different attributes. Native SAML uses the first one by mapper name. | Keep one mapper for each name in Keycloak. |
 
 ## When the IdP sends no email
 
-A returning user signs in through their account link, so they never see this. A new user needs an email for their Appsmith account. When the IdP sends none, native SAML shows a **Finish signing in** page that asks for the email and name, as Keycloak does. The user types them once. Native SAML links the email to the user's IdP identity, so the next sign-in skips the page.
+A returning user with a copied or native account link signs in through that link. A new user needs an email for their Appsmith account. When the IdP sends none, native SAML shows a **Finish signing in** page that asks for the email and name, as Keycloak does. The user types them once. Native SAML links the email to the user's IdP identity, so the next sign-in skips the page.
 
 Appsmith then emails a confirmation link to the typed address, whether or not an account has it. Only the owner of the address can open it, so no one can sign in to someone else's account, or claim an address for later, by typing it. The link expires after 15 minutes and works only in the browser where the sign-in started. Opening it signs the user in to the account with that email, or creates one with the email marked as verified.
 
@@ -202,18 +209,24 @@ To skip the page entirely, have your IdP send the email. See `NEW_USER_EMAIL_MIS
 
 ### Email from a common attribute
 
-Native SAML also reads the email from common attributes that Keycloak reads only when an administrator maps them: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, and `email`. Some IdPs let users set these values themselves, for example Auth0 with public sign-up. So native SAML trusts them less than an email-address NameID or the attribute `urn:oid:1.2.840.113549.1.9.1`:
+Native SAML also reads the email from common attributes that Keycloak reads only when an administrator maps them: `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`, `mail`, and `email`. Some IdPs let users set these values themselves, for example Auth0 with public sign-up. Unless an administrator explicitly trusts an attribute as described below, native SAML handles it as follows:
 
 - **A new email** creates an account and signs in, with no extra step.
 - **An email that already has an account**, or one listed in `APPSMITH_ADMIN_EMAILS`, gets the same confirmation link as a typed email. Without mail, the sign-in fails with `saml_email_in_use`.
 
-A returning user signs in through their account link and never gets the link. To avoid the link, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`.
+When a returning user's account link supplies the email, no confirmation is needed. To avoid confirmation for a new link, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`.
 
-If your IdP sets one of these attributes and its users can't change it, you can trust it instead. After a native sign-in reads the email from a common attribute, Admin central names it in the **Email read from a common attribute** row of the native SAML entry, and shows a **Trust *attribute* as the email** button. Click it, and native SAML reads that attribute as it reads a mapped email attribute: an email that already has an account signs in without a confirmation link, and `saml_email_in_use` stops for that attribute. Other common attributes still need the link. Copying the configuration from Keycloak keeps the choice. To undo it, click **Stop trusting *attribute***.
+If the native SAML entry in Admin central offers **Trust *attribute* as the email**, you can choose to trust that attribute. Use this only when your IdP controls the value and users can't change it. The **Email read from a common attribute** row names the attribute seen during sign-in.
+
+Trusting it lets an existing account sign in without a confirmation link. Other untrusted common attributes still need confirmation for existing accounts. Copying the configuration from Keycloak keeps the choice. To undo it, click **Stop trusting *attribute***.
+
+If the trust button isn't available, use the IdP email settings described above or configure mail. You don't need this button to use native SAML.
 
 ## Sign-in errors
 
-When native SAML refuses a sign-in, the user returns to the Appsmith sign-in page. The page URL contains an `error` code, and for most codes the page shows a message.
+When a failed sign-in redirects to the Appsmith sign-in page, its URL contains an `error` code. Some failures still show a generic message. Use the URL code and **Last refused native sign-in** in Admin central to find the cause.
+
+Invalid or oversized requests, or too many requests, can return HTTP 400, 413, or 429 without a redirect. For 429, wait and try again.
 
 | Error code | Cause | What to do |
 |---|---|---|
@@ -221,7 +234,7 @@ When native SAML refuses a sign-in, the user returns to the Appsmith sign-in pag
 | `saml_action_required` | Admin central lists a required action. | Resolve the [required actions](#required-actions). |
 | `saml_sync_required` | An administrator changed SAML settings, and Appsmith hasn't copied them yet. | Wait a few seconds and try again. If Admin central shows **Native sign-in paused**, [retry the copy](#retry-the-copy). |
 | `saml_email_missing` | A new user signed in, and the IdP didn't send their email. Either the NameID is transient, so Appsmith can't link a typed email to the user, or mail isn't set up, so Appsmith can't confirm a typed email. | Have your IdP send the email, use a persistent NameID format, or [set up mail](#when-the-idp-sends-no-email). |
-| `saml_email_in_use` | A new user's email came from a [common email attribute](#email-from-a-common-attribute) and already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | [Trust the attribute](#email-from-a-common-attribute) in Admin central, have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`, or set up mail so Appsmith can confirm the address. |
+| `saml_email_in_use` | A new user's email came from a [common email attribute](#email-from-a-common-attribute) and already belongs to an Appsmith account, and Appsmith can't send a confirmation link. | Have your IdP send the email as an email-address NameID or in the attribute `urn:oid:1.2.840.113549.1.9.1`, or set up mail. If Admin central offers a trust button, you can [trust the attribute](#email-from-a-common-attribute). |
 | `saml_email_not_allowed` | A new user typed an email that sign-up rules don't allow. Sign-up is turned off, or the email's domain isn't allowed. | Have your IdP send the email, or change the sign-up settings. |
 | `saml_failed` | Any other reason. | Check **Last refused native sign-in** in Admin central, described below. |
 
@@ -230,7 +243,7 @@ When native SAML refuses a sign-in, the user returns to the Appsmith sign-in pag
 | Reason | What to check |
 |---|---|
 | `SIGNATURE_MISSING` | The IdP signed neither the response nor the assertion. Configure the IdP to sign one of them. |
-| `SIGNATURE_INVALID` | The signature doesn't match any IdP certificate copied from Keycloak. Add the IdP's current signing certificate to the SAML identity provider in Keycloak, then restart Appsmith or [retry the copy](#retry-the-copy). |
+| `SIGNATURE_INVALID` | Check the backend logs for the cause. If the certificate is unusable or doesn't match, add the IdP's current signing certificate to the SAML identity provider in Keycloak, then restart Appsmith or [retry the copy](#retry-the-copy). If the log says `signature uses a refused algorithm`, set the IdP to use RSA-SHA256 signatures and SHA-256 digests instead of MD5 or SHA-1; replacing the certificate alone won't fix that. |
 | `EMAIL_MISSING` | The response had no email, and the user has no account link. Either the NameID is transient, or mail isn't turned on (`APPSMITH_MAIL_ENABLED`) or no base URL is set (`APPSMITH_BASE_URL`), so a typed email can't be confirmed. |
 | `EMAIL_IN_USE` | A new user's email came from a common email attribute and belongs to an existing account, and Appsmith couldn't send a confirmation link. Mail isn't turned on (`APPSMITH_MAIL_ENABLED`), or no base URL is set for the link (`APPSMITH_BASE_URL`). |
 | `OTHER` | Look for `Rejected SAML assertion` or `SAML sign-in failed` in the [backend logs](/getting-started/setup/instance-management/how-to-get-container-logs). |
@@ -254,7 +267,7 @@ The button shows only while a new copy can change the result.
 - **Sign-in starts on the Appsmith sign-in page.** Native SAML doesn't support sign-in started from the IdP's app dashboard.
 - **Encrypted assertions aren't supported.**
 - **A typed email needs proof.** When the IdP sends no email, both engines ask a new user to type one. Keycloak creates or signs in to the account for that email right away. Native SAML first sends a confirmation link to that address, so it needs mail. See [When the IdP sends no email](#when-the-idp-sends-no-email).
-- **Common email attributes are read, with care.** Native SAML reads the email from common attributes without a mapper, but uses one to reach an existing account only after a confirmation link. See [Email from a common attribute](#email-from-a-common-attribute).
+- **Common email attributes are read, with care.** Native SAML reads the email from common attributes without a mapper. Reaching an existing account requires a confirmation link unless an administrator has explicitly trusted the attribute. See [Email from a common attribute](#email-from-a-common-attribute).
 - **The IdP must sign the response or the assertion.** Native SAML always checks the signature.
 - **Keycloak-generated claims aren't available.** Claims such as `sub` and `preferred_username` came from Keycloak and have no native equivalent.
 - **Errors appear on the Appsmith sign-in page**, not on a Keycloak error page.
