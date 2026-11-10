@@ -36,6 +36,14 @@ Sets the text label for a item. It can be a static text value or dynamically bou
 
 ### General
 
+#### Tooltip `string`
+
+<dd>
+
+Enables you to add hints or provide additional information to guide the user regarding the required input.
+
+</dd>
+
 #### Visible `boolean`
 
 <dd>
