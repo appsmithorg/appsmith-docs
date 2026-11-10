@@ -7,13 +7,11 @@ This page provides information on using the Filepicker widget, which allows user
 
 ## Upload dialog language
 
-The Filepicker upload dialog (dropzone text, tabs, actions, and errors) uses the app **HTML language** setting. Set this under App Settings for the application.
+The Filepicker upload dialog (dropzone text, tabs, actions, and errors) uses the app **HTML language** setting. Set this under **App settings** for the application.
 
 * Appsmith loads a matching language pack for supported languages.
 * If the language is unset, English, or unsupported, the dialog stays in English.
 * After files are selected, the widget button shows a selected-files message in that same language. In English, one file shows as `1 file selected` (singular).
-* You cannot customize individual dialog strings in the Filepicker property pane.
-* This applies to the classic Filepicker widget. WDS File Upload is separate and is not covered here.
 
 ## Content properties
 
