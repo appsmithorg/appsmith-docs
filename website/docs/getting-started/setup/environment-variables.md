@@ -119,6 +119,37 @@ The following environment variables help in configuring OAuth 2.0 authentication
     This variable, in conjunction with the Client ID, holds the secret key provided by GitHub OAuth 2.0 to authenticate your application's requests securely. Set this variable with the Client Secret provided by GitHub upon creating your OAuth application. Ensure that you store it securely and do not expose it publicly.
 </dd>
 
+<!-- vale off -->
+<br/>
+<div className="tag-wrapper">
+
+### SAML
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+</div>
+
+<!-- vale on -->
+
+The following environment variable selects how Appsmith signs users in with SAML. For setup instructions, see [SAML SSO](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml).
+
+##### `APPSMITH_SAML_ENGINE`
+
+<dd>
+
+Set this to `native` to sign users in with native SAML, built into the Appsmith server. Leave it unset, or set it to `keycloak`, to use the bundled Keycloak broker. Keycloak is the default. The value isn't case-sensitive, and any other value means Keycloak. Restart Appsmith after you change it.
+
+Available from v2.7. For the steps, readiness checks, and rollback, see [Native SAML migration](/getting-started/setup/instance-management/native-saml-migration).
+
+```bash
+APPSMITH_SAML_ENGINE=native
+```
+
+</dd>
+
 ### Signup
 With Appsmith, you can manage and control who can create accounts on the platform.
 
@@ -332,7 +363,7 @@ For more information about how to URL encode your username and password, see [En
 
 <dd>
 
-Specifies the URL for the external PostgreSQL database (e.g., an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
+Specifies the URL for the external PostgreSQL database (for example, an RDS instance) used by Keycloak. The connection string must be in the format: `postgres://<username>:<password>@<hostname>:<port>/<database_name>`
 
 </dd>
 
