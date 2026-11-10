@@ -5,6 +5,16 @@ description: This page provides information on using the Filepicker widget, whic
 
 This page provides information on using the Filepicker widget, which allows users to select and upload multiple files.
 
+## Upload dialog language
+
+The Filepicker upload dialog (dropzone text, tabs, actions, and errors) uses the app **HTML language** setting. Set this under App Settings for the application.
+
+* Appsmith loads a matching language pack for supported languages.
+* If the language is unset, English, or unsupported, the dialog stays in English.
+* After files are selected, the widget button shows a selected-files message in that same language. In English, one file shows as `1 file selected` (singular).
+* You cannot customize individual dialog strings in the Filepicker property pane.
+* This applies to the classic Filepicker widget. WDS File Upload is separate and is not covered here.
+
 ## Content properties
 
 These properties are customizable options present in the property pane of the widget, allowing users to modify the widget according to their preferences.
@@ -90,7 +100,9 @@ Sets the maximum number of files that a user can select. The default value is `1
 
 #### Text `string`
 <dd>
-Sets the text on the widget. The default value is `Select Files`.
+Sets the text on the widget when no files are selected. The default value is `Select Files`.
+
+After the user selects files, the button label switches to the selected-files message for the app HTML language (see [Upload dialog language](#upload-dialog-language)).
 </dd>
 
 ### Validation
