@@ -20,7 +20,7 @@ This guide connects self-hosted Appsmith to **Active Directory Federation Servic
 AD FS is an on-premises identity provider. For Microsoft's cloud identity provider, use the [Microsoft Entra ID SAML guide](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id).
 
 :::info Validated environment
-This procedure was validated with **Appsmith Airgap v2.6.0** and **AD FS on Windows Server 2025**, backed by Windows Server Active Directory. Validation covered a successful SAML login with an AD test user. Offline operation was not part of this AD FS validation. Screens and generated SAML endpoints can differ in other versions; always copy the values shown by your Appsmith instance.
+This procedure was validated with **Appsmith Airgap v2.6.0** and **AD FS on Windows Server 2025**, backed by Windows Server Active Directory. Validation covered a successful SAML login with an AD test user. Screens and generated SAML endpoints can differ in other versions; always copy the values shown by your Appsmith instance.
 :::
 
 ## Prerequisites
@@ -217,8 +217,6 @@ Appsmith also accepts an AD FS **Metadata URL**. For this method, Appsmith's ser
 A successful return to the intended Appsmith account confirms the SAML login. A new user may have no workspace or application access; assign the required Appsmith roles separately. This guide does not configure automatic provisioning or group-to-role synchronization.
 
 AD FS may use Windows Integrated Authentication and select the current Windows account automatically. A private window does not necessarily force a username prompt. Confirm the returned identity and use the intended Windows test session or your organization's AD FS authentication policy when testing a different user.
-
-For an air-gapped installation, the browser and Appsmith still need the required local connectivity. Preserve access to AD FS and internal DNS when applying network restrictions. This guide does not establish that every deployment's offline network policy has been validated.
 
 ## Troubleshooting
 
