@@ -66,3 +66,5 @@ Appsmith offers seamless integration with various popular SAML providers. To get
         </div>
 </div>
 </div>
+
+For an on-premises Active Directory deployment, see [AD FS on Windows Server 2025](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/adfs).
