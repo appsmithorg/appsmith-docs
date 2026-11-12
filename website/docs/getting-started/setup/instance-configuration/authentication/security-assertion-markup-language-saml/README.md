@@ -31,7 +31,7 @@ Starting with v2.7, self-hosted instances can switch SAML sign-in from the bundl
 Appsmith offers seamless integration with various popular SAML providers. To get started, select one of the below-listed providers and follow the instructions to configure SAML integration:
 
 <div className="containerBorder">
-<div className="containerGrid">
+<div className="containerGrid" style={{ flexWrap: "wrap" }}>
         <div className="columnGrid column-one" align="center">
             <div className="containerCol">
                 <a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0">
@@ -64,7 +64,13 @@ Appsmith offers seamless integration with various popular SAML providers. To get
             </div> 
             <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/ping-identity">Ping Identity</a></b>
         </div>
+        <div className="columnGrid column-one" align="center">
+            <div className="containerCol">
+                <a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/adfs">
+                <img className="containerImage" src="/img/adfs-windows-server.svg" alt="Windows Server for AD FS"/>
+                </a>
+            </div>
+            <b><a href="/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/adfs">AD FS</a></b>
+        </div>
 </div>
 </div>
-
-For an on-premises Active Directory deployment, see [AD FS on Windows Server 2025](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/adfs).
