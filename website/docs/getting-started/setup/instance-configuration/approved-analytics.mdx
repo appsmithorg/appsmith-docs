@@ -25,7 +25,11 @@ An administrator turns approved analytics on for the organization and keeps the 
 4. Under **Approved measurement IDs**, enter a measurement ID and click **Add**. Repeat for each ID you want to approve.
 5. Click **Save**.
 
-<!-- TODO(screenshot): Admin Settings > Organisation > Approved analytics, with the switch on and one approved measurement ID such as G-EXAMPLE1. The docs instance image predates this feature. -->
+<ZoomImage
+  src="/img/approved-analytics-admin.png"
+  alt="Approved analytics page under Organisation in Admin Settings, with the switch on and one approved measurement ID"
+  caption="Turn on approved analytics and approve a measurement ID"
+/>
 
 ### Measurement ID rules
 
@@ -57,7 +61,11 @@ After an administrator approves at least one ID, app authors choose which ID eac
 5. Click **Save**.
 6. Deploy the app. Changes apply to viewers after you deploy.
 
-<!-- TODO(screenshot): App settings > Analytics, with an app measurement ID selected and a page set to Use app setting. The docs instance image predates this feature. -->
+<ZoomImage
+  src="/img/approved-analytics-app-settings.png"
+  alt="Analytics section in App settings, with a measurement ID for the app and a page set to Use app setting"
+  caption="Pick the app's measurement ID and set each page"
+/>
 
 If an administrator removes an ID from the allowlist, apps and pages that use it show **No longer approved**, and analytics does not run with that ID. Choose another ID or turn analytics off. If an administrator turns approved analytics off for the organization, your settings are kept and take effect when it is turned on again.
 
@@ -65,7 +73,11 @@ If an administrator removes an ID from the allowlist, apps and pages that use it
 
 When a viewer opens a published page that has analytics on, Appsmith shows a consent banner at the bottom left of the page. Nothing loads from Google before the viewer makes a choice: no script and no preconnect.
 
-<!-- TODO(screenshot): Published app showing the consent banner with Allow analytics and Decline analytics. The docs instance image predates this feature. -->
+<ZoomImage
+  src="/img/approved-analytics-consent-banner.png"
+  alt="Published app showing the consent banner with Allow analytics and Decline analytics buttons"
+  caption="The consent banner in a published app"
+/>
 
 - **Allow analytics** loads GA4 and sends page views.
 - **Decline analytics** keeps GA4 off.
@@ -77,7 +89,11 @@ After the viewer chooses, a small control stays at the bottom left:
 - After **Allow analytics**, **Turn off analytics and reload** turns GA4 off, deletes the Appsmith analytics cookies, and reloads the page. Data that was already sent cannot be recalled.
 - After **Decline analytics**, **Analytics choices** shows the banner again.
 
-<!-- TODO(screenshot): Published app after Allow analytics, showing the Turn off analytics and reload control. The docs instance image predates this feature. -->
+<ZoomImage
+  src="/img/approved-analytics-viewer-on.png"
+  alt="Published app after Allow analytics, showing the Turn off analytics and reload control at the bottom left"
+  caption="After the viewer allows analytics"
+/>
 
 ## What Appsmith sends to Google
 
