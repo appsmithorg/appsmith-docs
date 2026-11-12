@@ -1,0 +1,172 @@
+---
+description: Send page views from published Appsmith apps to Google Analytics 4 (GA4). An administrator approves measurement IDs, app authors pick one per app and page, and viewers consent before anything loads.
+toc_max_heading_level: 2
+---
+
+# Approved Analytics (GA4)
+
+Approved analytics lets published apps send page views to Google Analytics 4 (GA4). Appsmith uses only the GA4 measurement IDs that an administrator approves. Viewers see a consent banner, and nothing loads from Google until they allow it.
+
+Approved analytics supports GA4 only. You cannot add your own tracking scripts, and Google Tag Manager is not supported.
+
+## Before you begin
+
+- Approved analytics is available in the Appsmith Commercial Edition, on every plan, including the free plan. It needs no license key or feature flag. It is not available in the Community Edition.
+- It is not available on [air-gapped instances](/getting-started/setup/installation-guides/air-gapped).
+- You need a GA4 property and web stream whose Google tag you can configure. Before you approve an ID, prepare the tag and the property as described in [Prepare your Google tag and GA4 property](#prepare-your-google-tag-and-ga4-property).
+
+## Turn on analytics and approve IDs
+
+An administrator turns approved analytics on for the organization and keeps the list of approved measurement IDs.
+
+1. Open **Admin Settings**.
+2. Under **Organisation**, select **Approved analytics**.
+3. Turn on **Allow apps to use approved analytics**.
+4. Under **Approved measurement IDs**, enter a measurement ID and click **Add**. Repeat for each ID you want to approve.
+5. Click **Save**.
+
+<!-- TODO(screenshot): Admin Settings > Organisation > Approved analytics, with the switch on and one approved measurement ID such as G-EXAMPLE1. The docs instance image predates this feature. -->
+
+### Measurement ID rules
+
+- The list holds at most 20 IDs.
+- An ID must be `G-` followed by 4 to 20 capital letters or digits, such as `G-ABCD12`.
+- Appsmith checks the ID exactly as you type it. It does not trim spaces or change case, so `g-ABCD12` and ` G-ABCD12` are refused.
+- Google Tag Manager (`GTM-`), Google tag (`GT-`), Google Ads (`AW-`), Floodlight (`DC-`), and Universal Analytics (`UA-`) IDs are refused. So are URLs.
+
+### Who can change these settings
+
+Who can edit approved analytics depends on whether your organization has [granular access control](/advanced-concepts/granular-access-control):
+
+- **With granular access control:** only an instance administrator. An organization administrator who is not an instance administrator cannot turn analytics on.
+- **Without granular access control,** for example on the free plan: the organization's super user.
+
+Already-open tabs keep the old setting until they are refreshed.
+
+## Set analytics for an app and its pages
+
+After an administrator approves at least one ID, app authors choose which ID each app and page uses.
+
+1. Open the app in the editor and open **App settings**.
+2. Select **Analytics**.
+3. Under **Measurement ID for this app**, pick an approved ID, or pick **Disabled** to leave the app off. Pages use this ID unless you change them.
+4. Under **Pages**, set each page:
+   - **Use app setting:** the page uses the app's ID. This is the default.
+   - **Disabled:** the page sends nothing.
+   - **Use a different ID:** the page uses another approved ID that you pick.
+5. Click **Save**.
+6. Deploy the app. Changes apply to viewers after you deploy.
+
+<!-- TODO(screenshot): App settings > Analytics, with an app measurement ID selected and a page set to Use app setting. The docs instance image predates this feature. -->
+
+If an administrator removes an ID from the allowlist, apps and pages that use it show **No longer approved**, and analytics does not run with that ID. Choose another ID or turn analytics off. If an administrator turns approved analytics off for the organization, your settings are kept and take effect when it is turned on again.
+
+## What viewers see
+
+When a viewer opens a published page that has analytics on, Appsmith shows a consent banner at the bottom left of the page. Nothing loads from Google before the viewer makes a choice: no script and no preconnect.
+
+<!-- TODO(screenshot): Published app showing the consent banner with Allow analytics and Decline analytics. The docs instance image predates this feature. -->
+
+- **Allow analytics** loads GA4 and sends page views.
+- **Decline analytics** keeps GA4 off.
+
+Appsmith remembers the choice in the viewer's browser for 180 days. It asks again when the measurement ID, the organization's policy, or the consent notice changes.
+
+After the viewer chooses, a small control stays at the bottom left:
+
+- After **Allow analytics**, **Turn off analytics and reload** turns GA4 off, deletes the Appsmith analytics cookies, and reloads the page. Data that was already sent cannot be recalled.
+- After **Decline analytics**, **Analytics choices** shows the banner again.
+
+<!-- TODO(screenshot): Published app after Allow analytics, showing the Turn off analytics and reload control. The docs instance image predates this feature. -->
+
+## What Appsmith sends to Google
+
+Appsmith limits what the page views contain:
+
+- It sends one page view for each page the viewer opens.
+- The page location is made up: `<origin>/app/<baseApplicationId>/page/<basePageId>`.
+- The page title is always `Appsmith page`.
+- The referrer is the previous made-up location in the same app, or empty.
+- The real URL, query string, page title, and referrer are never sent.
+- Cookies are host-only, so only the app's exact hostname can read them, not a parent domain or its subdomains. They use Appsmith-owned names, `appsmith_aa_ga` and `appsmith_aa_ga_<ID without G->`, so they never share the `_ga` cookie of other Google Analytics on the same domain.
+- Google signals and ad personalization are turned off in the tag.
+
+Once GA4 has loaded, Appsmith loads a fresh page when the viewer moves to a page with another ID or with analytics off, leaves the app, or switches branch. A change to the query string alone stays in the app.
+
+Appsmith controls only the page views it sends. Google's own features, set on your Google tag and GA4 property, can still collect more. The next section explains which settings to change.
+
+## Prepare your Google tag and GA4 property
+
+Do this for every measurement ID before you approve it. Appsmith cannot check these settings for you. Keeping the tag and property limited to one GA4 stream is your responsibility.
+
+### Use a dedicated Google tag
+
+A `G-` measurement ID loads a Google tag, not GA4 alone. A Google tag can have other destinations connected to it, such as Google Ads or another GA4 property, and it sends the same events to every destination. Appsmith cannot see or change these connections.
+
+1. In the Google tag settings for the ID, open the tag's **Destinations**.
+2. Make sure the only destination is the GA4 stream that owns the ID.
+3. Remove any Google Ads, Floodlight, Tag Manager container, or other GA4 destinations from the tag. If the tag must keep them for another site, create a new web stream and a new tag just for Appsmith.
+4. In the GA4 property, open **Admin > Product links**. Remove links that share this property's data, such as Google Ads, BigQuery, Search Ads 360, and Merchant Center.
+5. In the GA4 property, open **Admin > Data collection** and turn off Google signals.
+6. Check the tag and the property again whenever someone changes your Google account setup. A destination or link added later applies at once.
+
+For details, see Google's guides on [destinations and destination tags](https://support.google.com/analytics/answer/12324388) and [configuring Google products with gtag.js](https://developers.google.com/tag-platform/gtagjs/configure).
+
+### Change the Enhanced measurement settings
+
+Google's Enhanced measurement runs inside the Google library. It can send the real URL, search terms from the query string, and form details. These settings live on the GA4 web stream.
+
+Open **Admin > Data collection and modification > Data streams**, select your web stream, and open **Enhanced measurement > Settings**. Then:
+
+- **Page views:** open the advanced settings and turn off page views on browser history events.
+- **Site search:** turn it off. It reads search terms from the URL.
+- **Form interactions:** turn it off.
+- **Video engagement:** turn it off. It can send video URLs for supported embeds, such as YouTube.
+- **Outbound clicks** and **File downloads:** turn them off unless your data policy allows sending link URLs.
+
+For details, see [Google: Enhanced measurement](https://support.google.com/analytics/answer/9216061).
+
+## Content Security Policy
+
+The Caddy configuration that ships with Appsmith sets only `frame-ancestors`, so it does not block the GA4 script. If you set your own Content Security Policy (CSP), add the hosts that Google documents for [Google Analytics without Ads features](https://developers.google.com/tag-platform/security/guides/csp).
+
+:::caution
+Add the Google hosts to the sources your policy already allows. Do not replace those sources. A `script-src-elem` directive that lists only Google's host blocks Appsmith's own scripts, and the app does not load. The same applies to `img-src` and `connect-src`.
+:::
+
+For example, if your policy has `script-src 'self'`, `img-src 'self' data:`, and `connect-src 'self'`, the result is the following. It is one `Content-Security-Policy` header value, split across lines here for reading:
+
+```text
+script-src 'self';
+script-src-elem 'self' https://www.googletagmanager.com;
+img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com;
+connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com
+```
+
+- End each directive with a semicolon, except the last. Without the semicolons, the browser reads everything as one `script-src` directive, and the Google hosts and `data:` become allowed script sources.
+- Keep every other source your directives already contain, such as CDN, websocket, or datasource hosts.
+
+Appsmith does not add a nonce to the GA4 script. If your policy blocks the script, analytics stays off and the app still renders.
+
+A CSP controls what loads. It does not sandbox the Google library. Once loaded, the library runs in the page with the viewer's session, so approving a property is a decision to trust Google.
+
+## Limits
+
+- **Open tabs:** a tab that is already open keeps the setting it loaded with until it is refreshed. This applies to policy and allowlist changes.
+- **Removing an ID:** every app and page that uses it turns off for new page loads. The setting is kept, and authors see **No longer approved**.
+- **Import and Git:** app and page settings are carried with the app, and each page keeps its choice. A carried ID does nothing unless the target organization approves it.
+- **Fork:** Appsmith copies the app's analytics settings and matches each page choice to the copied page, so a page disabled in the source stays disabled in the fork. If Appsmith cannot match the pages, the fork starts with analytics off. A carried ID does nothing unless the target organization approves it.
+- **Clone (duplicate app):** a clone starts with analytics off. Set it up again in the clone.
+- **Rollback:** if you roll back to an older Appsmith version, it drops app and page analytics settings the next time it saves an app. The organization's policy and allowlist are kept.
+- **Audit log:** import, Git, and fork carry settings without writing an audit log entry.
+
+## Audit log
+
+Appsmith writes an [audit log](/advanced-concepts/audit-logs) entry each time someone saves approved analytics settings through Admin Settings or App settings:
+
+| Event                                   | Logged when                                                                           |
+| --------------------------------------- | ------------------------------------------------------------------------------------- |
+| **approved_analytics_policy.updated**   | An administrator changes the on/off switch or the list of approved measurement IDs.   |
+| **approved_analytics_settings.updated** | An app author changes the app's measurement ID or a page's analytics setting.         |
+
+Each entry records who made the change and the old and new values.

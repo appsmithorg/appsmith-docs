@@ -133,6 +133,8 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **group.deleted**            | Logged when a group is deleted from granular access controls.                                                                                                      |
 | **group.invite_users**       | Logged when users are added to a user group.                                                                                                                       |
 | **group.remove_users**       | Logged when users are removed from a user group.                                                                                                                   |
+| **approved_analytics_policy.updated** | Logged when an administrator changes the [approved analytics](/getting-started/setup/instance-configuration/approved-analytics) switch or the list of approved measurement IDs. |
+| **approved_analytics_settings.updated** | Logged when an app author changes an app's or a page's [approved analytics](/getting-started/setup/instance-configuration/approved-analytics) settings. |
 
 ## Export logs
 
