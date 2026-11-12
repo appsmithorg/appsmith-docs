@@ -1,0 +1,243 @@
+---
+description: Configure AD FS on Windows Server 2025 as a SAML identity provider for self-hosted Appsmith, including HTTPS, certificate trust, and email claims.
+title: AD FS (Windows Server 2025)
+hide_title: true
+---
+
+<!-- vale off -->
+
+<div className="tag-wrapper">
+  <h1>AD FS (Windows Server 2025)</h1>
+  <Tags tags={[
+    { name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+  ]} />
+</div>
+
+<!-- vale on -->
+
+This guide connects self-hosted Appsmith to **Active Directory Federation Services (AD FS) on Windows Server 2025** using SAML 2.0. Users sign in with their Windows Active Directory accounts. AD FS authenticates the user and sends a signed SAML response to Appsmith through the browser.
+
+AD FS is an on-premises identity provider. For Microsoft's cloud identity provider, use the [Microsoft Entra ID SAML guide](/getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id).
+
+:::info Validated environment
+This procedure was validated with **Appsmith Airgap v2.6.0** and **AD FS on Windows Server 2025**, backed by Windows Server Active Directory. Validation covered a successful SAML login with an AD test user. Screens and generated SAML endpoints can differ in other versions; always copy the values shown by your Appsmith instance.
+:::
+
+## Prerequisites
+
+Complete these steps before creating the AD FS relying-party trust:
+
+- Install self-hosted Appsmith with a license that includes SAML SSO. See the [installation guides](/getting-started/setup/installation-guides).
+- Deploy AD FS on Windows Server 2025 and connect it to your Active Directory domain. You need access to **AD FS Management** and permission to create relying-party trusts and claim rules. Deploying a domain controller or an AD FS farm is outside this guide; see Microsoft's [AD FS lab setup](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/set-up-an-ad-fs-lab-environment) if you are building a test environment.
+- Configure Appsmith at its final **HTTPS** address, such as `https://appsmith.example.com`. Install its certificate using the existing [Custom Domain and SSL guide](/getting-started/setup/instance-configuration/custom-domain). Set **Admin Settings > Configuration > Appsmith Base URL** to that same HTTPS address before configuring SAML.
+- Configure AD FS with its own HTTPS service name and certificate, such as `https://fs.example.com`.
+- Verify that the browser used for login can resolve and reach **both** services and trusts both HTTPS certificate chains. Each computer has its own certificate trust store. Trusting a lab CA on an AD FS server does not make a separate workstation trust it. For a private CA, follow your organization's certificate-distribution procedure. See [Custom CA Root Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate) for Appsmith's server trust configuration.
+- Verify that each test user's **E-mail** field is populated in Active Directory. In **Active Directory Users and Computers**, open the user and check **Properties > General > E-mail**. The claim rules below read this attribute; a user logon name alone does not populate it.
+- Keep access to an Appsmith administrator account that can use **form login** while setting up SAML. If replacing an existing SAML provider, disconnect it through **Admin Settings > Authentication > SAML 2.0** before registering AD FS. Plan for the interruption to existing SAML sign-ins.
+
+:::warning HTTPS is required before SAML setup
+The AD FS wizard requires an **HTTPS** SAML WebSSO callback. Appsmith and AD FS need separate HTTPS certificates, each matching its own address. For an IP-based lab URL, the Appsmith certificate must contain that IP address in its Subject Alternative Name (SAN). A DNS-only certificate does not cover an IP address.
+
+The wizard's optional **Configure Certificate** page is for **SAML token encryption**. It does not install an HTTPS certificate for Appsmith or AD FS. Complete HTTPS installation and trust first; do not bypass a browser certificate warning to validate the customer setup.
+:::
+
+:::note Screenshot values
+The screenshots use the lab Appsmith address `https://10.0.0.33` and AD FS name `fs.adfs.lab.test`. Replace those with your deployment's addresses. The `example.com` addresses in the text are placeholders, not values to enter unchanged. You can use any supported browser on a computer that meets the DNS, connectivity, and certificate-trust prerequisites; Edge on the AD FS server is not required.
+:::
+
+## Get Appsmith's SAML addresses
+
+1. Open Appsmith at its final **HTTPS** address and sign in as an Appsmith administrator.
+2. Go to **Admin Settings > Authentication** and click **Enable** for **SAML 2.0**.
+3. Copy the **Redirect URL** and **Entity ID** from the configuration page. Leave the page open; you will enter AD FS metadata later.
+
+<ZoomImage src="/img/adfs/appsmith-enable-saml.png" alt="Appsmith Authentication settings with Enable beside SAML 2.0" caption="Enable SAML 2.0 in Appsmith's Admin Settings." />
+
+Use each value in the corresponding AD FS field:
+
+| Appsmith field | AD FS field | Example from the validated version |
+| --- | --- | --- |
+| **Redirect URL** | **Relying party SAML 2.0 SSO service URL** | `https://appsmith.example.com/auth/realms/appsmith/broker/saml/endpoint` |
+| **Entity ID** | **Relying party trust identifier** | `https://appsmith.example.com/auth/realms/appsmith` |
+
+Copy the full values, including the scheme, hostname, port if present, and path. Do not enter the callback URL as the Entity ID. Avoid `localhost` when the login browser is on another machine.
+
+## Create the AD FS relying-party trust
+
+On the Windows Server 2025 AD FS server:
+
+1. Open **Server Manager > Tools > AD FS Management**.
+
+<ZoomImage src="/img/adfs/open-adfs-management.png" alt="Server Manager Tools menu with AD FS Management highlighted" caption="Open AD FS Management on the federation server." />
+
+2. Select **Relying Party Trusts**, then click **Add Relying Party Trust**.
+
+<ZoomImage src="/img/adfs/add-relying-party-trust.png" alt="AD FS Management with Relying Party Trusts selected and Add Relying Party Trust highlighted" caption="Create a relying-party trust for Appsmith." />
+
+3. On **Welcome**, select **Claims aware**, then click **Start**.
+
+<ZoomImage src="/img/adfs/claims-aware.png" alt="Add Relying Party Trust Wizard with Claims aware selected" caption="Appsmith uses a claims-aware SAML relying-party trust." />
+
+4. On **Select Data Source**, choose **Enter data about the relying party manually**, then click **Next**.
+
+<ZoomImage src="/img/adfs/manual-data-source.png" alt="Select Data Source page with Enter data about the relying party manually selected" caption="Enter the addresses copied from Appsmith manually." />
+
+5. On **Specify Display Name**, enter a recognizable name, such as `Appsmith`, then click **Next**. The screenshots use `Appsmith Airgap`.
+
+<ZoomImage src="/img/adfs/display-name-entry.png" alt="Specify Display Name page before a name is entered" caption="The wizard opens the display-name field. Enter a name users and administrators will recognize." />
+
+<ZoomImage src="/img/adfs/display-name-filled.png" alt="Specify Display Name page with Appsmith Airgap entered" caption="The lab uses Appsmith Airgap as the relying-party display name." />
+
+6. On **Configure Certificate**, leave the optional token-encryption certificate blank for this signed, unencrypted assertion flow, then click **Next**. The HTTPS certificates from the prerequisites must already be installed.
+
+<ZoomImage src="/img/adfs/optional-encryption-certificate.png" alt="Configure Certificate page with the optional token-encryption certificate left blank" caption="This optional certificate encrypts SAML tokens; it does not configure HTTPS." />
+
+7. On **Configure URL**, select **Enable support for the SAML 2.0 WebSSO protocol**. In **Relying party SAML 2.0 SSO service URL**, paste the **Redirect URL** copied from Appsmith. Leave WS-Federation unselected for this SAML integration and click **Next**.
+8. On **Configure Identifiers**, paste Appsmith's **Entity ID** into **Relying party trust identifier**. Click **Add** so it appears in the identifiers list, then click **Next**.
+
+<ZoomImage src="/img/adfs/relying-party-identifier.png" alt="Configure Identifiers page showing the Appsmith Entity ID and the Add button" caption="Add the exact Entity ID shown in Appsmith, rather than its Redirect URL." />
+
+9. On **Choose Access Control Policy**, select a policy that permits the intended AD users or groups, then click **Next**. The screenshot shows **Permit everyone**, which was used for the lab. Use a policy appropriate for your organization's access requirements.
+
+<ZoomImage src="/img/adfs/access-control-policy.png" alt="Choose Access Control Policy page showing Permit everyone selected in the lab" caption="Select your access policy. Permit everyone is the lab example, not a required production setting." />
+
+10. Review the values on **Ready to Add Trust**, then click **Next**.
+11. On **Finish**, leave **Configure claims issuance policy for this application** selected and click **Close**. If the claim-policy window does not open, right-click the new trust in **Relying Party Trusts** and select **Edit Claim Issuance Policy**.
+
+<ZoomImage src="/img/adfs/relying-party-created.png" alt="Wizard Finish page confirming the relying-party trust was added and offering to configure its claims policy" caption="Finish the trust wizard and open its claim issuance policy." />
+
+## Configure the email and Name ID claim rules
+
+Create the following two rules under **Issuance Transform Rules**, in this order. The first reads the user's AD email attribute. The second sends that email as the SAML Name ID used to identify the user.
+
+<ZoomImage src="/img/adfs/edit-claim-issuance-policy.png" alt="AD FS Management action to edit the Appsmith relying party's claim issuance policy" caption="Open the claim issuance policy for the Appsmith relying-party trust." />
+
+<ZoomImage src="/img/adfs/claim-policy-start.png" alt="New Appsmith claim issuance policy with an empty Issuance Transform Rules list and the Add Rule button" caption="A new trust starts with an empty rule list. Add the two rules below." />
+
+### Send the user's email
+
+1. Click **Add Rule**.
+2. Select **Send LDAP Attributes as Claims**, then click **Next**.
+
+<ZoomImage src="/img/adfs/ldap-rule-template.png" alt="Select Rule Template page with Send LDAP Attributes as Claims selected" caption="Choose the LDAP attribute rule template." />
+
+3. Set these values:
+
+<ZoomImage src="/img/adfs/email-rule-entry.png" alt="Configure Rule page showing the Send user email rule name and Active Directory attribute store before mapping the email attribute" caption="Name the rule and select Active Directory before adding the email mapping." />
+
+| Field | Value |
+| --- | --- |
+| **Claim rule name** | `Send user email` |
+| **Attribute store** | `Active Directory` |
+| **LDAP Attribute** | `E-Mail-Addresses` |
+| **Outgoing Claim Type** | `E-Mail Address` |
+
+4. Click **Finish**.
+
+<ZoomImage src="/img/adfs/email-claim-mapping.png" alt="LDAP claim rule mapping E-Mail-Addresses from Active Directory to the E-Mail Address outgoing claim" caption="Map the AD email attribute to the E-Mail Address claim." />
+
+### Send the email as Name ID
+
+1. Click **Add Rule** again.
+2. Select **Transform an Incoming Claim**, then click **Next**.
+
+<ZoomImage src="/img/adfs/transform-rule-template.png" alt="Select Rule Template page with Transform an Incoming Claim selected" caption="Choose the transformation template for the Name ID rule." />
+
+3. Set these values:
+
+| Field | Value |
+| --- | --- |
+| **Claim rule name** | `Email as Name ID` |
+| **Incoming claim type** | `E-Mail Address` |
+| **Outgoing claim type** | `Name ID` |
+| **Outgoing name ID format** | `Email` |
+| **Claim values** | **Pass through all claim values** |
+
+4. Click **Finish**. Verify that **Send user email** is above **Email as Name ID**, then click **Apply > OK**.
+
+<ZoomImage src="/img/adfs/email-name-id.png" alt="Transform claim rule from E-Mail Address to Name ID with Email format and pass-through values selected" caption="Send the user's email as an email-format SAML Name ID." />
+
+<ZoomImage src="/img/adfs/saved-claim-rules.png" alt="Saved issuance transform rules showing Send user email first and Email as Name ID second" caption="Save both claim rules in this order." />
+
+AD FS uses its token-signing certificate to sign assertions. Keep signature validation enabled. This token-signing certificate is separate from the HTTPS certificate used to secure the AD FS website. For background, see Microsoft's guidance on [LDAP claim rules](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-rule-to-send-ldap-attributes-as-claims) and [claim transformations](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/create-a-rule-to-transform-an-incoming-claim).
+
+## Register AD FS in Appsmith
+
+The validated setup imports the AD FS metadata as XML through Appsmith's SAML settings.
+
+### Find the federation metadata URL
+
+Find the address in AD FS Management before opening or downloading the XML:
+
+1. Open **AD FS Management > Service > Endpoints**.
+2. Under **Metadata**, locate the entry with type **Federation Metadata**. Its path is normally `/FederationMetadata/2007-06/FederationMetadata.xml`. Verify that the endpoint is enabled. Follow your organization's policy before changing endpoint exposure.
+3. To find the hostname, select **Service** and open **Edit Federation Service Properties**. Read **Federation Service name**, for example `fs.example.com`. This is the service name configured for AD FS, not necessarily the Windows server's computer name.
+4. Combine `https://`, the federation service name, and the metadata path:
+
+   ```text
+   https://fs.example.com/FederationMetadata/2007-06/FederationMetadata.xml
+   ```
+
+In the screenshot lab, the service name is `fs.adfs.lab.test`, so the metadata URL is `https://fs.adfs.lab.test/FederationMetadata/2007-06/FederationMetadata.xml`.
+
+The **Federation Service identifier**, commonly ending in `/adfs/services/trust`, identifies the IdP. It is not the metadata download URL. See Microsoft's [AD FS endpoint mapping](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/migrate-adfs-saml-based-sso) for where these values appear in AD FS Management.
+
+### Import the metadata XML
+
+1. In a browser that trusts AD FS, open its federation metadata URL. Replace the hostname with your federation service name:
+
+   ```text
+   https://fs.example.com/FederationMetadata/2007-06/FederationMetadata.xml
+   ```
+
+2. Copy the entire XML document. If the browser downloads it, open the file in a text editor. Exclude the browser's message about missing style information and include the opening and closing XML elements. Use metadata obtained from your trusted AD FS service or administrator.
+
+<ZoomImage src="/img/adfs/federation-metadata.png" alt="AD FS federation metadata XML opened in a browser" caption="Copy the complete federation metadata XML, without the browser's introductory message." />
+
+3. Return to **Appsmith > Admin Settings > Authentication > SAML 2.0**.
+4. Under **Register Identity Provider**, select the **XML** tab and paste the document into **Metadata XML**. The **Metadata URL** field expects a URL, not XML content.
+5. Set **Provider name** to `AD FS`, or another label that users will recognize on the login button.
+6. Leave **Advanced > Claims** blank for this basic email-based login. The two AD FS rules already provide the email and Name ID. This section is for additional custom claims, not the AD FS rule definitions.
+7. Click **Save & Restart** and wait for Appsmith to become available again.
+
+<ZoomImage src="/img/adfs/appsmith-metadata-xml.png" alt="Appsmith SAML configuration with the XML tab selected, AD FS metadata pasted, and the provider name entered" caption="Register AD FS through Appsmith's SAML settings and save the configuration." />
+
+:::tip Metadata URL alternative
+Appsmith also accepts an AD FS **Metadata URL**. For this method, Appsmith's server must be able to resolve and reach the AD FS HTTPS endpoint and trust its certificate chain. A successful fetch in your browser does not prove the container has the same DNS and trust configuration. Importing XML avoids that metadata fetch; the browser still needs to reach and trust AD FS during login.
+:::
+
+## Verify login
+
+1. Keep a working Appsmith administrator session available. Close any existing private browsing windows, then open a fresh private window in a browser that meets the prerequisites.
+2. Open Appsmith's final HTTPS address and select the SAML login button with the provider name you configured, such as **Sign in with AD FS**.
+3. Confirm that the browser reaches your AD FS service.
+4. Sign in with an authorized AD test user, such as `testuser@example.com`, and that user's AD password.
+5. After the browser returns to Appsmith, open the user profile and verify that the email matches the test user's AD **E-mail** attribute.
+
+A successful return to the intended Appsmith account confirms the SAML login. A new user may have no workspace or application access; assign the required Appsmith roles separately. This guide does not configure automatic provisioning or group-to-role synchronization.
+
+AD FS may use Windows Integrated Authentication and select the current Windows account automatically. A private window does not necessarily force a username prompt. Confirm the returned identity and use the intended Windows test session or your organization's AD FS authentication policy when testing a different user.
+
+## Troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| The AD FS wizard rejects the WebSSO URL because it uses HTTP | Complete Appsmith HTTPS setup, set its final Base URL, reopen the SAML page at that HTTPS address, and copy its updated Redirect URL and Entity ID. |
+| The browser reports `NET::ERR_CERT_AUTHORITY_INVALID` | Check the issuing CA for the service named in the warning. Trust the appropriate CA chain on the computer running that browser. AD FS and Appsmith can use different CAs. On Windows, inspect **Trusted Root Certification Authorities > Certificates** in `certlm.msc`. Restart the browser after updating trust. Do not install a private key as a trust certificate. |
+| The browser reports a certificate name or date error | Verify that the certificate SAN covers the exact hostname or IP in the URL, that the certificate is valid, and that the client's clock is correct. |
+| AD FS reports an unknown relying party or audience mismatch | Compare the relying-party identifier with the exact Entity ID shown in Appsmith. Confirm that you clicked **Add** in the wizard. |
+| The response goes to the wrong host or callback | Compare the AD FS SAML WebSSO URL with Appsmith's complete Redirect URL. Check HTTPS, hostname, port, and path. Use the final public address consistently before enabling SAML. |
+| Appsmith cannot obtain the user's email | Populate the user's AD **E-mail** field. Verify the `E-Mail-Addresses` mapping, that the email rule precedes the Name ID rule, and that the outgoing Name ID format is **Email**. |
+| Pasting XML into Appsmith fails | Select the **XML** tab. Paste the complete metadata document, not a browser message or just the certificate text. |
+| Metadata URL import fails but the URL opens in a browser | Check DNS, reachability, and certificate trust from Appsmith's server. Use trusted metadata XML if server-side retrieval is unavailable. |
+| Login fails after an AD FS signing-certificate change | Obtain current AD FS metadata and update the provider through Appsmith's SAML settings. Keep signature validation enabled; the signing certificate is different from the HTTPS certificate. |
+| Login succeeds as a different Windows user | Check whether AD FS used Windows Integrated Authentication. Verify the Appsmith profile rather than assuming a private window switched the Windows identity. |
+| The user signs in but cannot access a workspace | Check Appsmith invitations, user settings, and role assignments separately from SAML authentication. |
+
+## See also
+
+- [Custom Domain and SSL](/getting-started/setup/instance-configuration/custom-domain)
+- [Custom CA Root Certificate](/getting-started/setup/instance-configuration/custom-domain/custom-ca-root-certificate)
+- [User management](/getting-started/setup/instance-configuration/user-management)
+- [SCIM provisioning](/advanced-concepts/user-provisioning-group-sync)
+- [Microsoft AD FS certificate requirements](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/design/ad-fs-requirements)

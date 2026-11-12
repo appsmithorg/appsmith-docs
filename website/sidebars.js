@@ -94,6 +94,7 @@ const sidebars = {
                     id: 'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/README',
                   },
                   items: [
+                    'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/adfs',
                     'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/entra-id',
                     'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/auth0',
                     'getting-started/setup/instance-configuration/authentication/security-assertion-markup-language-saml/okta',
