@@ -87,6 +87,14 @@ You can create a backup archive of your Appsmith instance, including the databas
 `appsmithctl backup` only asks for an encryption password when it runs interactively in a terminal. Run with `--non-interactive`, or from a pipeline or scheduled job where no terminal is attached, and it writes an unencrypted `appsmith-backup-DATE_AND_TIMESTAMP.tar.gz` instead. That archive holds a plaintext database dump, so protect it at rest and don't keep it as a pipeline artifact. Restoring it also requires the source instance's `APPSMITH_ENCRYPTION_PASSWORD` and `APPSMITH_ENCRYPTION_SALT`, which an unencrypted archive doesn't carry — save both values when you create one. For more information, see [Restore Instance](/getting-started/setup/instance-management/backup-and-restore/restore-instance#automate-restores).
 :::
 
+## Exclude collections from a backup
+
+To leave MongoDB collections out of the database dump, set the [`APPSMITH_BACKUP_EXCLUDE_COLLECTIONS`](/getting-started/setup/environment-variables#appsmith_backup_exclude_collections) environment variable and restart Appsmith. The setting applies to every `appsmithctl backup` run, including scheduled backups. During the backup, Appsmith logs the collections it excludes, and the archive's `manifest.json` records them in `excludedCollections`.
+
+:::caution
+Excluded collections aren't in the archive. When you restore that archive, those collections aren't restored. Keep another copy of their data if you need it.
+:::
+
 ## Troubleshooting
 
 If you encounter any issues during the restore process, consider the following:
