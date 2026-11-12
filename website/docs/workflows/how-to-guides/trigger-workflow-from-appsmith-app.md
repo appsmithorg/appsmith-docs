@@ -77,7 +77,7 @@ Now, you can trigger the workflow run whenever an event happens. For example, bi
 A workflow query always triggers the published version of the workflow. Who can run it depends on where the workflow is:
 
 - **Workflow in the app's workspace**: any user who can run the workflow query in the app can trigger the workflow. They don't need a separate permission on the workflow.
-- **Workflow in another workspace**: the query triggers the workflow only for users who have **Execute** permission on that workflow. Other users get a permissions error.
+- **Workflow in another workspace**: the query triggers the workflow only for users who have **Edit** permission on it, either through the Developer or Administrator role in the workflow's workspace or through a custom role's **Workflows** tab. Other users get a permissions error.
 
 To keep a workflow query working for all app users, keep the workflow in the same workspace as the app. For more information about roles and permissions, see [Granular Access Control](/advanced-concepts/granular-access-control).
 
@@ -85,10 +85,10 @@ To keep a workflow query working for all app users, keep the workflow in the sam
 
 #### Workflow query fails with a permissions error
 
-The workflow query fails with an error that says the workflow doesn't exist or "you don't have required permissions" when the workflow is in a different workspace from the app and the user running the query doesn't have **Execute** permission on the workflow. To fix it, do one of the following:
+The workflow query fails with an error that says the workflow doesn't exist or "you don't have required permissions" when the workflow is in a different workspace from the app and the user running the query doesn't have **Edit** permission on the workflow. To fix it, do one of the following:
 
-- Move the workflow into the app's workspace.
-- Grant the app's users **Execute** permission on the workflow.
+- Move the workflow into the app's workspace. This is the safer fix.
+- Give the app's users **Edit** permission on the workflow. Edit also lets them change the workflow.
 
 If you face other issues, contact the support team using the chat widget at the bottom right of this page.
 
