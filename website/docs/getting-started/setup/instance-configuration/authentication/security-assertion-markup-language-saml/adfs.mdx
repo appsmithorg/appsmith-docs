@@ -27,7 +27,7 @@ This procedure was validated with **Appsmith Airgap v2.6.0** and **AD FS on Wind
 
 Complete these steps before creating the AD FS relying-party trust:
 
-- Install self-hosted Appsmith with a license that includes SAML SSO. See the [installation guides](/getting-started/setup/installation-guides).
+- Install self-hosted Appsmith with an active paid license. See the [installation guides](/getting-started/setup/installation-guides).
 - Deploy AD FS on Windows Server 2025 and connect it to your Active Directory domain. You need access to **AD FS Management** and permission to create relying-party trusts and claim rules. Deploying a domain controller or an AD FS farm is outside this guide; see Microsoft's [AD FS lab setup](https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/set-up-an-ad-fs-lab-environment) if you are building a test environment.
 - Configure Appsmith at its final **HTTPS** address, such as `https://appsmith.example.com`. Install its certificate using the existing [Custom Domain and SSL guide](/getting-started/setup/instance-configuration/custom-domain). Set **Admin Settings > Configuration > Appsmith Base URL** to that same HTTPS address before configuring SAML.
 - Configure AD FS with its own HTTPS service name and certificate, such as `https://fs.example.com`.
