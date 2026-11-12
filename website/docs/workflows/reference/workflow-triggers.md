@@ -37,6 +37,15 @@ The unique webhook endpoint used to trigger the workflow. This URL includes an e
 
 If the original webhook URL is lost, you can generate a new one. This action invalidates the previous URL, and any external services or integrations must be updated to use the new endpoint.
 
+#### Permissions for direct calls
+
+When you call the trigger URL directly, Appsmith checks the caller's permission on the workflow:
+
+- Triggering the published workflow and starting a draft test run from the workflow editor both require **Edit** permission on the workflow, or the Developer or Administrator role in its workspace.
+- A request authenticated with an API key and no session cookie, such as a call from an external service, doesn't need a CSRF token. If a script sends an API key together with an Appsmith session cookie, the request goes through the standard CSRF check. To pass it, send a JSON body with `Content-Type: application/json`, or include the `X-Requested-By: Appsmith` header or a CSRF token.
+
+To trigger a workflow from an Appsmith app, use a workflow query instead. For more information, see [Trigger Workflow with Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app#permissions-to-trigger-a-workflow).
+
 #### Response Handling
 
 Appsmith workflows can send a response back to the service that triggered the webhook. Use the `appsmith.workflows.response()` function to return an HTTP status code and a response body. This is helpful when the calling service expects a confirmation or a specific output after the workflow runs.

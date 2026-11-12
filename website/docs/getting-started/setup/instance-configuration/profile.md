@@ -20,7 +20,7 @@ The Account section includes personal account-level settings such as your name, 
 Upload a profile image that will be displayed on your account.
 
 - **Maximum file size**: `3 MB`  
-- **Supported formats**: `.jpg`, `.png`, `.svg`
+- **Supported formats**: `.jpg`, `.jpeg`, `.png`, `.ico`
 
 </dd>
 
@@ -137,7 +137,7 @@ Brand customization helps create a familiar and consistent user experience for i
 
 Upload a custom logo that will be displayed on the Appsmith login screen and throughout the application dashboard. This is useful for organizations that want to reflect their own branding across all user-facing areas.
 
-- Accepted formats: `.SVG`, `.PNG`, `.JPG`
+- Accepted formats: `.PNG`, `.JPG`, `.JPEG`
 
 - Maximum file size: `2 MB`
 

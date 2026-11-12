@@ -603,6 +603,25 @@ For more information, see [Automate restores](/getting-started/setup/instance-ma
 
 </dd>
 
+##### `APPSMITH_BACKUP_EXCLUDE_COLLECTIONS`
+
+<dd>
+
+Lists MongoDB collections to leave out of the database dump in a backup archive. It applies to `appsmithctl backup`, including scheduled backups. When it's unset or empty, no collections are excluded.
+
+- Separate names with commas. Spaces around a name are ignored.
+- Names are case-sensitive and must match the collection name exactly. A name that matches no collection has no effect.
+- A name can be a collection, such as `auditLog`, or `database.collection`, such as `appsmith.auditLog`. A `database.collection` value applies only when the database matches the one named in [`APPSMITH_DB_URL`](#appsmith_db_url). Otherwise, Appsmith skips it and logs a warning.
+
+```bash
+#highlight-next-line
+APPSMITH_BACKUP_EXCLUDE_COLLECTIONS=auditLog
+```
+
+An archive created with this variable set doesn't contain the excluded collections, so restoring it doesn't bring them back. For more information, see [Backup Instance](/getting-started/setup/instance-management/backup-and-restore/backup-instance#exclude-collections-from-a-backup).
+
+</dd>
+
 <!-- vale off -->
 <br/>
 <div className="tag-wrapper">
