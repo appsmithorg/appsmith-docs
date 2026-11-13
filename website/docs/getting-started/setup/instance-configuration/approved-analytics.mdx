@@ -53,13 +53,15 @@ After an administrator approves at least one ID, app authors choose which ID eac
 
 1. Open the app in the editor and open **App settings**.
 2. Select **Analytics**.
-3. Under **Measurement ID for this app**, pick an approved ID, or pick **Disabled** to leave the app off. Pages use this ID unless you change them.
+3. Under **Measurement ID for this app**, pick an approved ID, or pick **Disabled** to leave the app default off. Pages use this ID unless you change them.
 4. Under **Pages**, set each page:
-   - **Use app setting:** the page uses the app's ID. This is the default.
+   - **Use app setting:** the page uses the app's ID. This is the default. If the app default is disabled, the page has no analytics.
    - **Disabled:** the page sends nothing.
-   - **Use a different ID:** the page uses another approved ID that you pick.
+   - **Use a different ID:** the page uses another approved ID that you pick. Select an ID before saving. This can enable analytics for the page even when the app default is disabled.
 5. Click **Save**.
-6. Deploy the app. Changes apply to viewers after you deploy.
+6. Deploy the app. Changes apply to viewers after you deploy. Already-open tabs keep their previous settings until refreshed.
+
+To disable analytics for every page in an app, set the app default to **Disabled** and set any page overrides to **Use app setting** or **Disabled**. Disabling the app default alone leaves page overrides active.
 
 <ZoomImage
   src="/img/approved-analytics-app-settings.png"
@@ -68,6 +70,18 @@ After an administrator approves at least one ID, app authors choose which ID eac
 />
 
 If an administrator removes an ID from the allowlist, apps and pages that use it show **No longer approved**, and analytics does not run with that ID. Choose another ID or turn analytics off. If an administrator turns approved analytics off for the organization, your settings are kept and take effect when it is turned on again.
+
+## Verify a published page
+
+1. Open the deployed app in a browser profile with no saved analytics choice for the app.
+2. Open a page configured to use an approved ID. Confirm that the consent banner appears at the bottom left.
+3. Select **Allow analytics**.
+4. In the GA4 property that owns the selected ID, check incoming `page_view` events in Realtime. Reports may take time to update.
+5. Navigate to another enabled page and confirm that its page location identifies that page.
+
+Appsmith reports a synthetic location, such as `https://apps.example.com/app/<baseApplicationId>/page/<basePageId>`, and the fixed title `Appsmith page`. App and page names do not appear as report titles. See [What Appsmith sends to Google](#what-appsmith-sends-to-google).
+
+To inspect requests, open your browser's developer tools before reloading and use the Network panel. Before consent, this feature should make no request for Google's tag library. After allowing analytics, look for `gtag/js` and GA4 collection requests, and check the page location, title, and referrer. A sent request confirms browser activity; check the intended GA4 property to confirm that the data arrives.
 
 ## What viewers see
 
@@ -82,7 +96,9 @@ When a viewer opens a published page that has analytics on, Appsmith shows a con
 - **Allow analytics** loads GA4 and sends page views.
 - **Decline analytics** keeps GA4 off.
 
-Appsmith remembers the choice in the viewer's browser for 180 days. It asks again when the measurement ID, the organization's policy, or the consent notice changes.
+Appsmith stores the choice in the browser's local storage for 180 days. The choice is tied to the organization, app, measurement ID, policy revision, and consent notice version. A change to any of these requires a new choice. Clearing local storage also removes the choice.
+
+If the browser blocks storage or storage is full, a choice can apply to the current page without being saved for a later load. The viewer may see the banner again. When storage is available, a consent change in another tab for the same app is handled through browser storage events.
 
 After the viewer chooses, a small control stays at the bottom left:
 
@@ -99,11 +115,11 @@ After the viewer chooses, a small control stays at the bottom left:
 
 Appsmith limits what the page views contain:
 
-- It sends one page view for each page the viewer opens.
+- It sends a page view when an enabled page becomes active after consent. Repeated renders of the same page do not send another view. Navigating to another page and returning can send a new view; changing only query parameters does not create another view for the same page.
 - The page location is made up: `<origin>/app/<baseApplicationId>/page/<basePageId>`.
 - The page title is always `Appsmith page`.
 - The referrer is the previous made-up location in the same app, or empty.
-- The real URL, query string, page title, and referrer are never sent.
+- Appsmith does not use the real URL, query string, URL fragment, document title, or browser referrer to build these page views. Google's other collection features are separate, as described below.
 - Cookies are host-only, so only the app's exact hostname can read them, not a parent domain or its subdomains. They use Appsmith-owned names, `appsmith_aa_ga` and `appsmith_aa_ga_<ID without G->`, so they never share the `_ga` cookie of other Google Analytics on the same domain.
 - Google signals and ad personalization are turned off in the tag.
 
@@ -186,3 +202,20 @@ Appsmith writes an [audit log](/advanced-concepts/audit-logs) entry each time so
 | **approved_analytics_settings.updated** | An app author changes the app's measurement ID or a page's analytics setting.         |
 
 Each entry records who made the change and the old and new values.
+
+## Troubleshooting
+
+| Symptom | What to check |
+| --- | --- |
+| **Approved analytics** or **Analytics** is missing | Check that the instance runs Commercial Edition with a plan that includes the feature, and that you have administrator or app management permissions. Community Edition does not include these settings. |
+| An administrator cannot add an ID | Use `G-` plus 4 to 20 capital letters or digits, with no spaces. Check for a duplicate or the 20-ID limit. |
+| The app has no IDs to select | Ask an administrator to add and save an ID in **Admin Settings > Organisation > Approved analytics**. |
+| **Your administrator has turned off approved analytics** | Ask the administrator to enable the organization policy. Saved app settings apply only while it is enabled. |
+| **No longer approved** | Choose an approved replacement ID or disable analytics, then save and deploy. The old ID remains stored but cannot collect analytics on new loads. |
+| **Choose a measurement ID.** | A page uses **Use a different ID** without an ID selected. Choose one before saving. |
+| **Someone else changed these settings** | Select **Reload**, review the latest settings, and apply your changes again. Reloading replaces your unsaved draft. |
+| No consent banner appears | Check the published page's effective ID and the organization policy. A saved grant or decline suppresses the banner; use the bottom-left control to change the choice. |
+| No events appear after consent | Save and deploy app settings, refresh the published app, and confirm the selected ID matches the GA4 property. Check browser blockers, network access, CSP, and reporting delays. |
+| Page names or full URLs are missing from reports | Expected: Appsmith uses synthetic app/page URLs and the fixed title `Appsmith page`. |
+| Duplicate views or extra event details appear | Review the GA4 stream's Enhanced measurement settings, especially browser-history page views. Check for other tracking integrations. |
+| Analytics continues in an open tab after administrator changes | Refresh the tab. Policy changes do not immediately update existing viewer tabs. |
