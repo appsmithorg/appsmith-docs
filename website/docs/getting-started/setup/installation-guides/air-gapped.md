@@ -23,6 +23,7 @@ When using the airgapped edition, these features will be unavailable or have lim
 - **Templates:** Offering users a selection of pre-built templates for rapid application development.
 - **SaaS Integrations:** Connecting to integrated SaaS services such as Google Sheets & Airtable for seamless data exchange.
 - **Custom JavaScript Libraries:** Enabling the installation of third-party libraries to extend the platform's capabilities.
+- **[Approved analytics (GA4)](/getting-started/setup/instance-configuration/approved-analytics):** Sending page views from published apps to Google Analytics 4. Administrators can still open the setting to turn it off.
 
 ## Workflows
 
