@@ -391,7 +391,7 @@ An MCP client can create and edit [Appsmith Workflows](/workflows) and connect t
 | Tool | What it does |
 | --- | --- |
 | `list_workflows` | Lists the workflows in a workspace, with each workflow's ID, name, and whether it has been deployed. |
-| `read_workflow` | Reads a workflow's name, deploy state, logic, and queries. It never returns query headers or datasource configuration. |
+| `read_workflow` | Reads a workflow's name, deploy state, logic, and queries. Logic written in the editor comes back as its source, and each query's SQL text, or REST method, path, query parameters, and body, comes back as written, including any secret typed into it. It never returns query headers or datasource configuration. |
 | `create_workflow` | Creates a workflow in a workspace, optionally with its logic. |
 | `rename_workflow` | Renames a workflow. |
 | `update_workflow_logic` | Replaces the workflow's logic, its `Main` JS object. The logic must define `executeWorkflow(data)`, where `data` is the trigger data. Any code written in the editor is replaced. |
