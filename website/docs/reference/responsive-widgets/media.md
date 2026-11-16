@@ -185,7 +185,7 @@ Sets the corner radius of the outer card. Options: **From theme** (default), **S
 
 <dd>
 
-Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, not only the styled part. To style an inner part, use its element selector. You cannot bind this property.
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the outer card. You cannot bind this property.
 
 </dd>
 

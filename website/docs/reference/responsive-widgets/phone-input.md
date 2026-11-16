@@ -287,7 +287,7 @@ Sets the corner radius of the input field box. Options: **From theme** (default)
 
 <dd>
 
-Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, not only the styled part. To style an inner part, use its element selector, for example `button` or `input`. You cannot bind this property.
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, its label included, not the part inside it. To style an inner part, use its element selector, for example `button` or `input`. You cannot bind this property.
 
 </dd>
 
