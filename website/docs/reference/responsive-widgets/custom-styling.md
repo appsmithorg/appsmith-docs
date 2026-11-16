@@ -56,6 +56,12 @@ Theme colors: **Positive**, **Negative**, **Warning**, **Neutral**.
 
 On a widget with its own color setting, such as **Button color** on a Button, **Accent color** shows only while that setting is **Accent**.
 
+The focus ring uses the accent color. When the ring has less than 3:1 contrast with the background behind it, it gets a 2px black or white outer ring, whichever stands out more.
+
+- The background behind the ring is the custom **Background** of the nearest container, such as a Card, Zone, or Section, or else the theme background. A gradient or see-through background is skipped, and the next one above is used.
+- The check runs on a widget with a custom accent color, on a container with a custom **Background** and the widgets inside it, and inside a Modal or Sheet.
+- Other widgets keep their usual focus ring. Fixed-layout apps are unchanged.
+
 </dd>
 
 #### Background `string`
@@ -89,7 +95,15 @@ Theme colors: **Default**, **Accent**, **Neutral**, **Positive**, **Negative**, 
 
 When **Text color** is empty and **Background** is set, the widget picks a text color that is readable on the background.
 
-When the text color and the background have a contrast below 4.5:1, the property pane shows a low contrast warning, for example `Low contrast: 2.1:1. Text needs at least 4.5:1 against the background.` The check needs two solid colors. It skips bindings, gradients, and colors that are partly transparent.
+When the text color and the background have a contrast below 4.5:1, the property pane shows this warning under **Text color**:
+
+```text
+Low contrast: <ratio>:1. Text needs at least 4.5:1 against the background.
+```
+
+- The warning shows only on widgets that also have a **Background** setting.
+- Both values must be solid colors with no transparency. An empty **Text color**, a binding, a gradient, or a see-through color gives no warning.
+- A theme color is measured with the theme colors of the current mode. When one color follows the theme and the other is a custom color, the pane also shows `One color follows the theme and one is fixed. Check light and dark mode.`
 
 </dd>
 
@@ -135,72 +149,73 @@ This table lists the settings each widget has, and the part of the widget they c
 
 - **Yes, or gradient**: the setting also takes a gradient.
 - **Custom color only**: the setting does not offer theme colors.
+- **Box around the widget**: the widget has **Custom CSS**, and `&` is the box around the widget, not the styled part. On every other widget with **Custom CSS**, `&` is the styled part.
 - **—**: the widget does not have the setting.
 
 | Widget | Accent color | Background | Text color | Border | Corners | Custom CSS | Styled part |
 |---|---|---|---|---|---|---|---|
-| [Avatar](/reference/responsive-widgets/avatar) | Yes | — | — | — | — | Yes | Control |
-| [Badge](/reference/responsive-widgets/badge) | Yes | — | — | — | — | Yes | Control |
-| [Button](/reference/responsive-widgets/button) | Yes | — | — | — | — | Yes | Control |
+| [Avatar](/reference/responsive-widgets/avatar) | Yes | — | — | — | — | Box around the widget | Control |
+| [Badge](/reference/responsive-widgets/badge) | Yes | — | — | — | — | Box around the widget | Control |
+| [Button](/reference/responsive-widgets/button) | Yes | — | — | — | — | Box around the widget | Control |
 | [Card](/reference/responsive-widgets/card) | Yes | Yes, or gradient | Yes | Yes | Yes | Yes | Surface |
 | [Carousel](/reference/responsive-widgets/carousel) | Yes | Yes | Yes | Yes | Yes | Yes | Surface |
 | [Chart](/reference/responsive-widgets/chart) | — | Yes | — | Yes | Yes | Yes | Outer card |
 | [Chat](/reference/responsive-widgets/chat) | Yes | — | — | — | — | Yes | Whole widget |
-| [Checkbox](/reference/responsive-widgets/checkbox) | Yes | — | — | — | — | Yes | Control |
-| [Checkbox Group](/reference/responsive-widgets/checkbox-group) | Yes | — | — | — | — | Yes | Control |
-| [Chip Group](/reference/responsive-widgets/chip-group) | Yes | — | — | — | — | Yes | Control |
+| [Checkbox](/reference/responsive-widgets/checkbox) | Yes | — | — | — | — | Box around the widget | Control |
+| [Checkbox Group](/reference/responsive-widgets/checkbox-group) | Yes | — | — | — | — | Box around the widget | Control |
+| [Chip Group](/reference/responsive-widgets/chip-group) | Yes | — | — | — | — | Box around the widget | Control |
 | [Code](/reference/responsive-widgets/code) | — | — | — | — | — | Yes | Whole widget |
 | [Code Scanner](/reference/responsive-widgets/code-scanner) | — | Yes | — | Yes | Yes | Yes | Outer card |
-| [ColorPicker](/reference/responsive-widgets/color-picker) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [ColorPicker](/reference/responsive-widgets/color-picker) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [ComboBox](/reference/responsive-widgets/combobox) | Yes | Yes | Yes | Yes | Yes | — | Input field box |
-| [Currency Input](/reference/responsive-widgets/currency-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Currency Input](/reference/responsive-widgets/currency-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Custom](/reference/responsive-widgets/custom) | — | — | — | — | — | — | None |
-| [DatePicker](/reference/responsive-widgets/datepicker) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
-| [DateRangePicker](/reference/responsive-widgets/date-range-picker) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [DatePicker](/reference/responsive-widgets/datepicker) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
+| [DateRangePicker](/reference/responsive-widgets/date-range-picker) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Divider](/reference/responsive-widgets/divider) | — | — | — | Line color | — | Yes | Line |
-| [Email Input](/reference/responsive-widgets/email-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Email Input](/reference/responsive-widgets/email-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Embed](/reference/responsive-widgets/embed) | — | — | — | — | — | Yes | Whole widget |
 | [FAB](/reference/responsive-widgets/fab) | Yes | — | — | — | — | — | Control |
 | [File Upload](/reference/responsive-widgets/file-upload) | Yes | — | — | — | — | Yes | Whole widget |
 | [Heading](/reference/responsive-widgets/heading) | — | — | Custom color only | — | — | Yes | Text |
-| [Icon Button](/reference/responsive-widgets/icon-button) | Yes | — | — | — | — | Yes | Control |
+| [Icon Button](/reference/responsive-widgets/icon-button) | Yes | — | — | — | — | Box around the widget | Control |
 | [Image](/reference/responsive-widgets/image) | — | — | — | Yes | Yes | Yes | Image frame |
 | [Inline Buttons](/reference/responsive-widgets/inline-buttons) | Yes | — | — | — | — | — | Control |
-| [Input](/reference/responsive-widgets/input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Input](/reference/responsive-widgets/input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [KeyValue](/reference/responsive-widgets/key-value) | Yes | — | — | — | — | Yes | Whole widget |
-| [Link](/reference/responsive-widgets/link) | Yes | — | — | — | — | Yes | Control |
+| [Link](/reference/responsive-widgets/link) | Yes | — | — | — | — | Box around the widget | Control |
 | [List](/reference/responsive-widgets/list) | Yes | Yes | Yes | Yes | Yes | Yes | Surface |
 | [Map Chart](/reference/responsive-widgets/map-chart) | — | Yes | — | Yes | Yes | Yes | Outer card |
 | [Markdown](/reference/responsive-widgets/markdown) | — | — | Yes | — | — | Yes | Text |
 | [Media](/reference/responsive-widgets/media) | — | Yes | — | Yes | Yes | Yes | Outer card |
-| [Menu Button](/reference/responsive-widgets/menu-button) | Yes | — | — | — | — | Yes | Control |
+| [Menu Button](/reference/responsive-widgets/menu-button) | Yes | — | — | — | — | Box around the widget | Control |
 | [Modal](/reference/responsive-widgets/modal) | Yes | Yes, or gradient | Yes | Yes | Yes | Yes | Dialog surface |
-| [Multiline Input](/reference/responsive-widgets/multiline-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
-| [MultiSelect](/reference/responsive-widgets/multiselect) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
-| [Number Input](/reference/responsive-widgets/number-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Multiline Input](/reference/responsive-widgets/multiline-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
+| [MultiSelect](/reference/responsive-widgets/multiselect) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
+| [Number Input](/reference/responsive-widgets/number-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Paragraph](/reference/responsive-widgets/paragraph) | — | — | Custom color only | — | — | Yes | Text |
-| [Password Input](/reference/responsive-widgets/password-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
-| [Phone Input](/reference/responsive-widgets/phone-input) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
-| [Progress](/reference/responsive-widgets/progress) | Yes | — | — | — | — | Yes | Control |
-| [Radio Group](/reference/responsive-widgets/radio-group) | Yes | — | — | — | — | Yes | Control |
-| [Rating](/reference/responsive-widgets/rating) | Yes | — | — | — | — | Yes | Control |
+| [Password Input](/reference/responsive-widgets/password-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
+| [Phone Input](/reference/responsive-widgets/phone-input) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
+| [Progress](/reference/responsive-widgets/progress) | Yes | — | — | — | — | Box around the widget | Control |
+| [Radio Group](/reference/responsive-widgets/radio-group) | Yes | — | — | — | — | Box around the widget | Control |
+| [Rating](/reference/responsive-widgets/rating) | Yes | — | — | — | — | Box around the widget | Control |
 | [Rich Text Editor](/reference/responsive-widgets/rich-text-editor) | Yes | — | — | — | — | Yes | Whole widget |
-| [Search](/reference/responsive-widgets/search) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Search](/reference/responsive-widgets/search) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Section](/reference/responsive-widgets/section) | Yes | Custom color or gradient | Yes | Yes | Yes | Yes | Surface |
 | [Select](/reference/responsive-widgets/select) | Yes | Yes | Yes | Yes | Yes | — | Input field box |
 | [Sheet](/reference/responsive-widgets/sheet) | Yes | Yes, or gradient | Yes | Yes | Yes | Yes | Dialog surface |
 | [Signature](/reference/responsive-widgets/signature) | — | — | — | — | — | Yes | Whole widget |
-| [Slider](/reference/responsive-widgets/slider) | Yes | — | — | — | — | Yes | Control |
+| [Slider](/reference/responsive-widgets/slider) | Yes | — | — | — | — | Box around the widget | Control |
 | [Stats](/reference/responsive-widgets/stats) | Yes | Custom color or gradient | Yes | Custom color only | Yes | Yes | Surface |
-| [Switch](/reference/responsive-widgets/switch) | Yes | — | — | — | — | Yes | Control |
-| [Switch Group](/reference/responsive-widgets/switch-group) | Yes | — | — | — | — | Yes | Control |
+| [Switch](/reference/responsive-widgets/switch) | Yes | — | — | — | — | Box around the widget | Control |
+| [Switch Group](/reference/responsive-widgets/switch-group) | Yes | — | — | — | — | Box around the widget | Control |
 | [Table](/reference/responsive-widgets/table) | Yes | — | — | — | — | Yes | Whole widget |
 | [Tabs](/reference/responsive-widgets/tabs) | Yes | Yes | Yes | Yes | Yes | Yes | Surface |
-| [TagGroup](/reference/responsive-widgets/tag-group) | Yes | — | — | — | — | Yes | Control |
+| [TagGroup](/reference/responsive-widgets/tag-group) | Yes | — | — | — | — | Box around the widget | Control |
 | [Text List](/reference/responsive-widgets/text-list) | Yes | Yes | Yes | Yes | Yes | Yes | Surface |
 | [Toolbar Buttons](/reference/responsive-widgets/toolbar-buttons) | Yes | — | — | — | — | — | Control |
 | [Tree](/reference/responsive-widgets/tree) | Yes | — | — | — | — | Yes | Whole widget |
-| [Tree Select](/reference/responsive-widgets/tree-select) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
+| [Tree Select](/reference/responsive-widgets/tree-select) | Yes | Yes | Yes | Yes | Yes | Box around the widget | Input field box |
 | [Zone](/reference/responsive-widgets/zone) | Yes | Yes, or gradient | Yes | Yes | Yes | Yes | Surface |
 
 Two widget types have no page of their own. `WDS_TABLE_WIDGET` has the same settings as [Table](/reference/responsive-widgets/table), and `WDS_AI_CHAT_WIDGET` has the same settings as [Chat](/reference/responsive-widgets/chat).
@@ -212,7 +227,7 @@ Two widget types have no page of their own. `WDS_TABLE_WIDGET` has the same sett
 - **Plain CSS only.** You cannot bind it. CSS that contains `{{` is ignored as a whole.
 - **Rules apply only inside the widget.** Appsmith places every selector inside the widget, so a rule cannot style another widget or the page.
 - **`&` is the styled part.** On a control or a field, such as a Button or an Input, `&` is the box around the widget, not the part inside it. To style an inner part, use its element selector, for example `button` or `input`. On the Table, `&` is the table. On a Modal or Sheet, `&` is the dialog surface.
-- **The widget keeps its box.** Nothing the CSS draws can reach more than 8 px outside the widget. A `z-index` above 10 is lowered to 10, and it applies only inside the widget.
+- **The widget keeps its box.** Custom CSS can paint up to 8px past the widget box, which leaves room for focus rings and small shadows. Anything beyond that is clipped. A `z-index` above 10 is lowered to 10, and it applies only inside the widget.
 - **Size limit.** CSS longer than 20 KB (20,480 characters) is ignored as a whole.
 
 *Example:*
