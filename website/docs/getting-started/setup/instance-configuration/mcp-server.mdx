@@ -390,6 +390,17 @@ An MCP client can hide or show an existing page in an app's navigation with `set
 
 A hidden page is removed from navigation only. Users who can open the app can still reach the page by its URL or when another page navigates to it. To restrict who can open a page, use [Granular Access Control](/advanced-concepts/granular-access-control).
 
+## Page navigation with URL parameters
+
+An MCP client can make a widget event open another page of the same app with `wire_event`, or add a `navigate` step to a JS object function. Either way, the client can pass up to 10 URL query parameters to the page it opens. In an event, each value is a fixed value, a widget property, or a column of a table's selected row. In a JS object, each value is an expression, which can also read those values. For example, you can ask the client to "add a **Details** button that opens the Ticket Details page for the selected row of the tickets table".
+
+The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for example `{{appsmith.URL.queryParams.id}}`. See [`navigateTo`](/reference/appsmith-framework/widget-actions/navigate-to) and the [`queryParams`](/reference/appsmith-framework/context-object#queryparams-object) property of the context object.
+
+- Navigation opens a page of this app in the same window. Opening a URL or a new window isn't supported.
+- Parameter names are plain identifiers: a letter or underscore, followed by letters, digits, or underscores.
+- In an event, a fixed text value can't contain single quotes, braces, backticks, or `${`.
+- A page name that reads as an IP address or as `localhost`, such as `12`, `1.2.3.4`, or `0x5db8d822`, is refused when the client creates, renames, or navigates to a page. Add a letter to the page name.
+
 ## Manage MCP keys
 
 On the **MCP keys** page, you can review a key's name, status, creation date, and expiration date. You can also search for keys and filter them by status.
@@ -415,6 +426,7 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | ChatGPT reports that the Appsmith server is not exposed to the chat or that no tool was found | You asked in a regular ChatGPT conversation. MCP servers added under **Plugins → MCPs** are available only in Codex threads. Start a new Codex thread on a local environment and ask there. |
 | Codex or the ChatGPT desktop app asks for approval on every call, or reports that the server has no usable tools | The instance is running an Appsmith version from before tool annotations were added, so the client treats every tool as destructive. Upgrade Appsmith. |
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
+| The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
