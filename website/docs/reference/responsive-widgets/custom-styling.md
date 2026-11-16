@@ -36,11 +36,21 @@ Each widget has only the settings that fit it. The settings change one part of t
 ## How values work
 
 - **Empty means From theme.** Every setting starts empty. An empty setting shows the theme value, and changes when the theme changes.
-- **Theme color or custom color.** A color setting offers theme color swatches and a color picker. A theme color follows the theme, in light and dark mode. A custom color is fixed. It does not change in dark mode.
+- **Theme color or custom color.** A color setting offers theme color swatches and a color picker. A theme color follows the theme, in light and dark mode. A custom color is fixed. It does not change in dark mode. **Accent color** is the exception: the widget rebuilds its colors from a custom accent for light and for dark mode.
 - **Some settings take a custom color only.** These settings do not offer theme colors: **Background** on Section and Stats, **Border color** on Stats, and **Text color** on Paragraph and Heading.
 - **Invalid values are ignored.** A value that is not a valid color shows the theme value instead. The property pane shows an error for it.
 
-You can bind the color settings with JavaScript, so an app can pick a color at run time. Write a theme color in code as `token:<name>`, for example `token:accent`. **Border width**, **Corners**, and **Custom CSS** cannot be bound.
+You can bind the color settings with JavaScript, so an app can pick a color at run time. **Border width**, **Corners**, and **Custom CSS** cannot be bound.
+
+In code, write a theme color as `token:` plus its value for code, for example `token:positive` for **Accent color** or `token:elevation-1` for **Background**. Each setting accepts only its own values. The value must match exactly, in lowercase:
+
+| Setting | Swatch | Value for code |
+|---|---|---|
+| Accent color | Positive, Negative, Warning, Neutral | `token:positive`, `token:negative`, `token:warning`, `token:neutral` |
+| Background | Accent, Accent, subtle, Neutral, subtle | `token:accent`, `token:accent-subtle`, `token:neutral-subtle` |
+| Background | Surface 1, Surface 2, Surface 3 | `token:elevation-1`, `token:elevation-2`, `token:elevation-3` |
+| Text color | Default, Accent, Neutral, Positive, Negative, Warning | `token:default`, `token:accent`, `token:neutral`, `token:positive`, `token:negative`, `token:warning` |
+| Border color, Line color | Accent, Neutral, Surface | `token:accent`, `token:neutral`, `token:elevation-1` |
 
 A custom color can be a hex value (`#553de9`), `rgb()`, `rgba()`, `hsl()`, `hsla()`, `hsv()`, `hsva()`, a color name, or `transparent`. URLs, CSS variables, and keywords such as `inherit` or `currentColor` are not valid.
 
@@ -50,7 +60,9 @@ A custom color can be a hex value (`#553de9`), `rgb()`, `rgba()`, `hsl()`, `hsla
 
 <dd>
 
-Builds the hover, pressed, focus, and text colors of the widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the theme accent.
+Builds the hover, pressed, focus, and text colors of the widget from one color, in light and dark mode. Lists and menus that the widget opens use them too.
+
+When **Accent color** is empty, the widget uses the **Accent color** of the nearest container around it that has one, such as a Section, Zone, Card, or Modal. Without such a container, it uses the theme accent. A container's **Accent color** also changes the **Accent** and **Accent, subtle** background swatches of the widgets inside it.
 
 Theme colors: **Positive**, **Negative**, **Warning**, **Neutral**.
 
@@ -64,14 +76,14 @@ On a widget with its own color setting, such as **Button color** on a Button, **
 
 Sets the background of the styled part.
 
-Theme colors: **Accent**, **Accent, subtle**, **Neutral, subtle**, **Surface 1**, **Surface 2**, **Surface 3**. Each theme background comes with a theme text color that is readable on it.
+Theme colors: **Accent**, **Accent, subtle**, **Neutral, subtle**, **Surface 1**, **Surface 2**, **Surface 3**. On a widget that also has **Text color**, each theme background comes with a theme text color that is readable on it.
 
 On Section, Stats, Zone, Card, Modal, and Sheet, **Background** also takes a gradient. Choose **Gradient** in the color control to build one:
 
-- Set the **Angle**, or pick a preset angle.
-- Add up to 6 stops. A gradient needs at least 2 stops. Each stop has a **Color** and a **Position, in percent**.
+- Set the angle, or pick one of the preset angles: 0°, 90°, 180°, or 270°.
+- Click **Add stop** to add a stop, up to 6. A gradient needs at least 2 stops. Each stop has a color and a position, in percent.
 - A gradient typed by hand, such as `linear-gradient(135deg, #6366f1, #8b5cf6)`, goes through the **JS** button. `linear-gradient()`, `radial-gradient()`, `conic-gradient()`, and their `repeating-` forms are accepted, up to 1024 characters.
-- **Solid** removes the gradient.
+- **Solid** turns the gradient into a solid color.
 
 A gradient does not change in dark mode, and it sets no text color. Check that the text is readable in light and dark mode.
 
@@ -89,7 +101,9 @@ Theme colors: **Default**, **Accent**, **Neutral**, **Positive**, **Negative**, 
 
 When **Text color** is empty and **Background** is set, the widget picks a text color that is readable on the background.
 
-When the text color and the background have a contrast below 4.5:1, the property pane shows a low contrast warning, for example `Low contrast: 2.1:1. Text needs at least 4.5:1 against the background.` The check needs two solid colors. It skips bindings, gradients, and colors that are partly transparent.
+When the text color and the background have a contrast below 4.5:1, the property pane shows a low contrast warning, for example `Low contrast: 2.1:1. Text needs at least 4.5:1 against the background.` Theme colors are measured too, with the colors of the current mode. The check skips bindings, gradients, and colors that are partly transparent.
+
+When one of the two colors is a theme color and the other is a custom color, the property pane also shows `One color follows the theme and one is fixed. Check light and dark mode.`
 
 </dd>
 
@@ -203,7 +217,7 @@ This table lists the settings each widget has, and the part of the widget they c
 | [Tree Select](/reference/responsive-widgets/tree-select) | Yes | Yes | Yes | Yes | Yes | Yes | Input field box |
 | [Zone](/reference/responsive-widgets/zone) | Yes | Yes, or gradient | Yes | Yes | Yes | Yes | Surface |
 
-Two widget types have no page of their own. `WDS_TABLE_WIDGET` has the same settings as [Table](/reference/responsive-widgets/table), and `WDS_AI_CHAT_WIDGET` has the same settings as [Chat](/reference/responsive-widgets/chat).
+Two widget types have no page of their own. `WDS_TABLE_WIDGET` has the same settings as [Table](/reference/responsive-widgets/table), but its custom CSS works as on other widgets, without the `.anvil-table__*` class names. `WDS_AI_CHAT_WIDGET` has the same settings as [Chat](/reference/responsive-widgets/chat).
 
 ## Custom CSS
 
@@ -211,7 +225,7 @@ Two widget types have no page of their own. `WDS_TABLE_WIDGET` has the same sett
 
 - **Plain CSS only.** You cannot bind it. CSS that contains `{{` is ignored as a whole.
 - **Rules apply only inside the widget.** Appsmith places every selector inside the widget, so a rule cannot style another widget or the page.
-- **`&` is the styled part.** On a control or a field, such as a Button or an Input, `&` is the box around the widget, not the part inside it. To style an inner part, use its element selector, for example `button` or `input`. On the Table, `&` is the table. On a Modal or Sheet, `&` is the dialog surface.
+- **`&` is the box around the widget.** It holds the whole widget, its label included, not only the styled part. To style an inner part, use its element selector, for example `button` or `input`. Three widgets differ: on the Table, `&` is the table. On a Card, `&` is the card surface. On a Modal or Sheet, `&` is the dialog surface.
 - **The widget keeps its box.** Nothing the CSS draws can reach more than 8 px outside the widget. A `z-index` above 10 is lowered to 10, and it applies only inside the widget.
 - **Size limit.** CSS longer than 20 KB (20,480 characters) is ignored as a whole.
 
@@ -237,12 +251,13 @@ Appsmith removes these parts and keeps the rest of the CSS:
 - Selectors that reach the browser's top layer, such as `::backdrop`, `:modal`, `:popover-open`, and `:fullscreen`.
 - Selectors and declarations that contain a backslash (`\`).
 - A `:has()` inside another `:has()`.
+- Declarations outside a rule, and rules nested more than 8 levels deep.
 
 Appsmith ignores the whole CSS when:
 
 - A quoted string contains a line break, or a string does not close.
 - The CSS cannot be parsed.
-- The browser cannot check the result. Older browsers without constructed style sheets show no custom CSS.
+- The browser does not read the result as rules inside the widget, or cannot check it. Older browsers without constructed style sheets show no custom CSS.
 
 ### Keep focus rings
 

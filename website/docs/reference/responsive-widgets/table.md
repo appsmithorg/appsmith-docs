@@ -513,7 +513,7 @@ These settings are in the **Custom styling** section, at the end of the **Style*
 
 <dd>
 
-Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the theme accent.
+Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the accent of the nearest container that sets one, or the theme accent.
 
 </dd>
 
@@ -537,7 +537,7 @@ Adds plain CSS to this table. Rules apply only inside the table, and `&` is the 
 .anvil-table__row--alt { background: #f8fafc; }
 ```
 
-For what Appsmith removes from custom CSS, see [Custom CSS](/reference/responsive-widgets/custom-styling#custom-css).
+For what Appsmith removes from custom CSS, see [What Appsmith removes](/reference/responsive-widgets/custom-styling#what-appsmith-removes).
 
 :::caution
 Treat Custom CSS as code. Write it yourself and keep it static. Do not build it from user input, query results, or other data that app users can change.

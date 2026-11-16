@@ -185,7 +185,7 @@ These settings are in the **Custom styling** section, at the end of the **Style*
 
 <dd>
 
-Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the theme accent.
+Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the accent of the nearest container that sets one, or the theme accent.
 
 </dd>
 
@@ -193,7 +193,7 @@ Builds the hover, pressed, focus, and text colors of this widget from one color,
 
 <dd>
 
-Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, not the part inside it. To style an inner part, use its element selector, for example `button` or `input`. You cannot bind this property.
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, not only the styled part. To style an inner part, use its element selector, for example `button` or `input`. You cannot bind this property.
 
 </dd>
 

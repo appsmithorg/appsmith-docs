@@ -115,7 +115,7 @@ Sets the color of the line. Takes a theme color or a custom color. **Thickness**
 
 <dd>
 
-Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the line. You cannot bind this property.
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the box around the widget, not only the styled part. To style an inner part, use its element selector. You cannot bind this property.
 
 </dd>
 
