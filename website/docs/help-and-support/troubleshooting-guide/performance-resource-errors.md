@@ -29,7 +29,7 @@ The same thing can happen on a newer chart if a `probes` override in your `value
 #### Solution
 
 - Upgrade to Helm chart 3.9.2 or later. Its liveness probe runs every 10 seconds with a 5-second timeout and restarts the container only after 180 seconds of continuous failure. A single successful check resets the count, so a series of restarts doesn't add up to a container restart.
-- If you override `probes`, remove the liveness overrides or raise `timeoutSeconds` and `failureThreshold`. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
+- If you override `probes`, remove the liveness overrides, or raise `timeoutSeconds` and `failureThreshold`, or lower `periodSeconds`. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
 
 ### Instance runs out of memory (OOM) or fails health checks
 

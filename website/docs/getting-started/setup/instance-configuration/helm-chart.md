@@ -99,7 +99,7 @@ probes:
 Charts before 3.9.2 ran each probe every 60 seconds with a 1-second timeout and a `failureThreshold` of 3. When you upgrade:
 
 - Keys you set under `probes` still take effect, and keys you didn't set take the new defaults.
-- If you set `failureThreshold` with a 60-second interval in mind, also set `periodSeconds: 60` for that probe. Otherwise the probe now runs every 10 seconds, and your threshold is reached six times faster.
+- If you set `failureThreshold` with a 60-second interval in mind, the probe now runs every 10 seconds and reaches your threshold six times faster. Multiply `failureThreshold` by 6 to keep the same window, for example `3` becomes `18`. You can also set `periodSeconds: 60` for that probe to keep the old timing, but a 60-second period makes [pod restarts after saving admin settings](/help-and-support/troubleshooting-guide/performance-resource-errors#pod-restarts-after-saving-admin-settings) more likely.
 - `periodSeconds`, `timeoutSeconds`, and `failureThreshold` must be positive integers. Other values, such as `0`, make `helm install` and `helm upgrade` fail with a schema validation error. Quoted numbers such as `"60"` are accepted.
 
 ### Custom HTTP port
