@@ -36,6 +36,10 @@ Responsive Widgets are separate from the [classic widgets](/reference/widgets) u
 - On small screens, zones stack on top of each other.
 - Keyboard order follows reading order: sections top to bottom, zones left to right, then rows and widgets.
 
+## Theme
+
+An instance administrator can set one theme for every Responsive app in the organization. To learn which apps follow it and which values it accepts, see [Organization Theme](/reference/responsive-widgets/organization-theme).
+
 ## Widgets
 
 ### Layout and containers
