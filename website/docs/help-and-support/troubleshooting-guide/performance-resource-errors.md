@@ -15,8 +15,21 @@ The Appsmith server is unreachable or crashing. A common root cause on self-mana
 #### Solution
 
 - Mount a persistent volume to the Appsmith pod so configuration and data survive restarts. See [Self-hosting Best Practices](/getting-started/setup/best-practices) and [High Availability Setup on Kubernetes](/getting-started/setup/installation-guides/kubernetes/configure-high-availability).
-- Configure `readinessProbe` and `livenessProbe` so unhealthy pods are restarted and removed from rotation. If you deployed with your own manifests rather than the Appsmith Helm chart, add these probes to your deployment.
+- Configure `readinessProbe` and `livenessProbe` so unhealthy pods are restarted and removed from rotation. The Appsmith Helm chart configures these probes for you. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes) for the defaults and how to override them. If you deployed with your own manifests rather than the Appsmith Helm chart, add these probes to your deployment.
 - Collect the server logs covering the time of the crash (not just after the restart) and share them with support. See [How to Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs).
+
+### Pod restarts after saving admin settings
+
+#### Cause
+
+Saving some admin settings restarts the Appsmith server inside the container. The restart takes about 45 seconds, and the health check fails while it runs. Helm charts older than 3.9.2 ran the liveness probe every 60 seconds with a 1-second timeout and restarted the container after three failures in a row. When you save settings several times in a row, each server restart can land on a liveness check, and Kubernetes kills the container in the middle of a restart. The 1-second timeout also lets a slow but working server fail a check.
+
+The same thing can happen on a newer chart if a `probes` override in your `values.yaml` sets a short `timeoutSeconds`, a low `failureThreshold`, or a long `periodSeconds`.
+
+#### Solution
+
+- Upgrade to Helm chart 3.9.2 or later. Its liveness probe runs every 10 seconds with a 5-second timeout and restarts the container only after 180 seconds of continuous failure. A single successful check resets the count, so a series of restarts doesn't add up to a container restart.
+- If you override `probes`, remove the liveness overrides or raise `timeoutSeconds` and `failureThreshold`. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
 
 ### Instance runs out of memory (OOM) or fails health checks
 

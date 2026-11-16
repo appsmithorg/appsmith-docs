@@ -66,6 +66,57 @@ PostgreSQL is used by Keycloak for identity management. The chart bundles Postgr
 
 Switching to an external PostgreSQL on an existing install requires migrating Keycloak's data. See [External PostgreSQL](/getting-started/setup/instance-configuration/external-postgresql-rds) for configuration details.
 
+## Health probes
+
+The chart configures a startup, liveness, and readiness probe on the Appsmith container. All three send an HTTP request to the health endpoint, `/api/v1/health`. The liveness and readiness probes start only after the startup probe succeeds.
+
+Saving some admin settings restarts the Appsmith server inside the container, and the restart takes about 45 seconds. The probe defaults in chart 3.9.2 and later are sized so that Kubernetes doesn't kill the container during these restarts.
+
+| Probe | `periodSeconds` | `timeoutSeconds` | `failureThreshold` | Effect |
+|---|---|---|---|---|
+| `startupProbe` | 10 | 5 | 60 | Allows 600 seconds for the server to boot. |
+| `livenessProbe` | 10 | 5 | 18 | Restarts the container after 180 seconds of continuous failure. |
+| `readinessProbe` | 10 | 5 | 3 | Stops sending traffic to the pod after 30 seconds of failure. |
+
+Each probe accepts the following keys under `probes.startupProbe`, `probes.livenessProbe`, and `probes.readinessProbe`:
+
+- `port`: the container port to probe. Defaults to `80`.
+- `api`: the HTTP path to request. Defaults to `/api/v1/health`.
+- `periodSeconds`: how often to run the probe.
+- `timeoutSeconds`: how long to wait for a response before the attempt counts as a failure.
+- `failureThreshold`: how many failures in a row trigger the probe's effect.
+
+To change a probe, set only the keys you need in your `values.yaml`. Keys you don't set keep their defaults. For example, to give the liveness probe a longer timeout:
+
+```yaml
+probes:
+  livenessProbe:
+    timeoutSeconds: 15
+```
+
+### Upgrading from an older chart
+
+Charts before 3.9.2 ran each probe every 60 seconds with a 1-second timeout and a `failureThreshold` of 3. When you upgrade:
+
+- Keys you set under `probes` still take effect, and keys you didn't set take the new defaults.
+- If you set `failureThreshold` with a 60-second interval in mind, also set `periodSeconds: 60` for that probe. Otherwise the probe now runs every 10 seconds, and your threshold is reached six times faster.
+- `periodSeconds`, `timeoutSeconds`, and `failureThreshold` must be positive integers. Other values, such as `0`, make `helm install` and `helm upgrade` fail with a schema validation error. Quoted numbers such as `"60"` are accepted.
+
+### Custom HTTP port
+
+The probe `port` defaults to `80` and doesn't follow `HTTPContainerPort`. If you set `HTTPContainerPort`, also set `port` for every probe to the same value. Otherwise the probes call a port the server doesn't listen on, the startup probe never succeeds, and Kubernetes keeps restarting the container:
+
+```yaml
+HTTPContainerPort: 8080
+probes:
+  startupProbe:
+    port: 8080
+  livenessProbe:
+    port: 8080
+  readinessProbe:
+    port: 8080
+```
+
 ## Community edition
 
 The community and enterprise editions use the same Helm chart. To install the community edition, set the image repository in your `values.yaml`:
