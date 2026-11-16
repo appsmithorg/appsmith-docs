@@ -72,6 +72,10 @@ To connect workflows with Appsmith app, you need to create workflow query. Follo
 
 Now, you can trigger the workflow run whenever an event happens. For example, bind the workflow query to a `onClick` event of a Button widget and pass appropriate parameters needed by the workflow for processing on button's click event.
 
+:::tip
+An AI client connected through MCP Server can create this query for you with the `create_workflow_trigger` tool, then wire it to an app event. See [Build workflows](/getting-started/setup/instance-configuration/mcp-server#build-workflows).
+:::
+
 ## Permissions to trigger a workflow
 
 A workflow query always triggers the published version of the workflow. Who can run it depends on where the workflow is:
