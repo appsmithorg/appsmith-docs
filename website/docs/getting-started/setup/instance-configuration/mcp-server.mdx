@@ -448,6 +448,38 @@ The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for 
 - In an event, a fixed text value can't contain single quotes, braces, backticks, or `${`.
 - A page name that reads as an IP address or as `localhost`, such as `12` or `0x5db8d822`, is refused when the client creates, renames, or navigates to a page. Add a letter to the page name.
 
+## Build workflows
+
+An MCP client can create and edit [Appsmith Workflows](/workflows) and connect them to apps. These tools are available on Business Cloud and self-hosted Enterprise only, when your plan includes Workflows. Community Edition does not have them. If your plan does not include Workflows, every workflow tool returns "Workflows are not available on your Appsmith plan. Contact sales@appsmith.com to enable them."
+
+| Tool | What it does |
+| --- | --- |
+| `list_workflows` | Lists the workflows in a workspace, with each workflow's ID, name, and whether it has been deployed. |
+| `read_workflow` | Reads a workflow's name, deploy state, logic, and queries. Logic written in the editor comes back as its source, and each query's SQL text, or REST method, path, query parameters, and body, comes back as written, including any secret typed into it. It never returns query headers or datasource configuration. |
+| `create_workflow` | Creates a workflow in a workspace, optionally with its logic. |
+| `rename_workflow` | Renames a workflow. |
+| `update_workflow_logic` | Replaces the workflow's logic, its `Main` JS object. The logic must define `executeWorkflow(data)`, where `data` is the trigger data. Any code written in the editor is replaced. |
+| `create_workflow_query` | Adds a SQL query to a workflow, on a datasource in the workflow's workspace. |
+| `create_workflow_rest_api` | Adds a REST API call to a workflow, on a REST datasource in the workflow's workspace. |
+| `create_workflow_trigger` | Adds a query to an app page that starts a workflow when an app event runs it. See [Start a workflow from an app](#start-a-workflow-from-an-app). |
+
+An MCP client can't run, test, deploy, schedule, or delete a workflow, and it can't set up webhook triggers or approvals. A workflow built through MCP goes live only after someone deploys it in the Appsmith editor.
+
+### Start a workflow from an app
+
+`create_workflow_trigger` adds a Workflow query, with the `Trigger workflow` request type, to an app page. The client then wires the query to an event, such as a Button's `onClick` or a Table row action. This is the same query described in [Trigger Workflow with Appsmith App](/workflows/how-to-guides/trigger-workflow-from-appsmith-app).
+
+- **Workflow.** The client gets the workflow ID from `list_workflows`. The workflow must be in the app's workspace, and you must be able to run it.
+- **Deploy first.** The query runs the workflow's deployed version. Deploy the workflow in the editor before you use the trigger.
+- **When it runs.** The query never runs on page load. It runs only from the event it's wired to.
+- **Payload.** The payload is the trigger data that `executeWorkflow` receives, with at most 20 keys. Each value is either a fixed value or a widget value read when the query runs, such as `Input1.text`. Each widget must be on the page. A widget value that isn't set when the query runs is sent as `null`, so the workflow always receives every key.
+- **Table row actions.** To send a value from the row whose action ran, use the Table's `triggeredRow`, such as `triggeredRow.id`. Don't use `selectedRow`.
+- **Creating it runs nothing.** Creating the trigger doesn't start the workflow. If the client sends the same request again, it gets the existing query back instead of a duplicate.
+
+:::caution Validate the trigger data
+Anyone who can run the app can start the workflow and change the payload that the query sends. Write the workflow so that it checks every value it receives before it acts on it.
+:::
+
 ## Manage MCP keys
 
 On the **MCP keys** page, you can review a key's name, status, creation date, and expiration date. You can also search for keys and filter them by status.
@@ -476,5 +508,10 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
 | The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
+| A workflow tool reports that Workflows are not available on your plan | Your plan doesn't include Workflows. Contact sales@appsmith.com to enable them. |
+| `create_workflow_trigger` reports that the workflow is not in the application's workspace | An app can start only a workflow in its own workspace. Move the workflow into the app's workspace, or create the workflow there. |
+| `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
+| `create_workflow_trigger` reports that a widget is not on the page | A payload value names a widget that isn't on the page. Check the widget name, or add the widget to the page first. |
+| `create_workflow_trigger` reports that the page already has a query with that name | Another query on the page uses the name, or a trigger with that name points to a different workflow or payload. Choose another name. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
