@@ -70,8 +70,8 @@ On a widget with its own color setting, such as **Button color** on a Button, **
 
 The focus ring uses the accent color. When the ring has less than 3:1 contrast with the background behind it, it gets a 2px black or white outer ring, whichever stands out more.
 
-- The background behind the ring is the custom **Background** of the nearest container, such as a Card, Zone, or Section, or else the theme background. A gradient or see-through background is skipped, and the next one above is used.
-- The check runs on a widget with a custom accent color, on a container with a custom **Background** and the widgets inside it, and inside a Modal or Sheet.
+- The background behind the ring is the **Background** of the nearest container that sets one, such as a Card, Zone, or Section, or else the theme background. A gradient or see-through background is skipped, and the next one above is used.
+- The check runs on a widget with its own **Accent color**, on a container with its own **Background** and the widgets inside it, and inside a Modal or Sheet.
 - Other widgets keep their usual focus ring. Fixed-layout apps are unchanged.
 
 </dd>
@@ -115,7 +115,7 @@ Low contrast: <ratio>:1. Text needs at least 4.5:1 against the background.
 
 - The warning shows only on widgets that also have a **Background** setting.
 - Both values must be solid colors with no transparency. An empty **Text color**, a binding, a gradient, or a see-through color gives no warning.
-- A theme color is measured with the theme colors of the current mode. When one color follows the theme and the other is a custom color, the pane also shows `One color follows the theme and one is fixed. Check light and dark mode.`
+- A theme color is measured with the theme colors of the current mode. When one color follows the theme and the other is a custom color, the pane shows `One color follows the theme and one is fixed. Check light and dark mode.`, whatever the contrast.
 
 </dd>
 
