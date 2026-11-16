@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, and connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
 toc_max_heading_level: 2
 ---
 
@@ -380,6 +380,51 @@ Every Appsmith MCP tool describes itself to the client with standard MCP tool an
 
 When the client supports MCP elicitation, Appsmith also shows its own approval prompt for the confirm step, with the exact scope of the change. Claude clients keep their own approval flow and do not change their behavior based on the annotations. The annotations describe the server's rules; they do not replace them.
 
+## What clients can build
+
+An MCP client can build a conditional form end to end, without follow-up work in the editor. Describe the form in plain language, for example: "Add a leave-request form where the end date can't be more than one year after the start date, and keep **Submit** disabled until the form is valid." The client turns the request into widget settings that Appsmith checks before it saves them.
+
+### Conditions
+
+A client can show, hide, require, or disable a widget based on other widgets on the page. A condition can check that a control, such as a select or radio group, has a given value, that a table has a selected row, that an input holds text, or a combination of values, such as "**New contract** is chosen and the start date is less than a year away."
+
+- **Visible** and **Disabled** conditions apply to any widget that has those properties.
+- **Required** conditions apply to form controls such as inputs, selects, radio groups, checkbox groups, and date pickers.
+- A custom **Valid** check applies to Input, Currency Input, and Phone Input widgets, for a rule that a named validation format can't express. See [Valid](/reference/widgets/input#valid-boolean) in the Input reference.
+- A submit button can stay disabled until up to 10 form controls are valid.
+
+### Defaults and dates
+
+A widget's default value can come from another widget, from a field of a query's response, or from a calculation. This works for inputs, selects, multiselects, radio groups, checkboxes, switches, and date pickers. A Text widget's displayed value can be calculated the same way.
+
+A date picker's [default date](/reference/widgets/datepicker#default-date-iso-8601-date-string), [minimum date](/reference/widgets/datepicker#min-date-iso-8601-date-string), and [maximum date](/reference/widgets/datepicker#max-date-iso-8601-date-string) can depend on other widgets. For example, the end date can default to 14 days after today, and its maximum can be one year after the start date.
+
+Date calculations can add days, months, or years, take the start of a day, count the days between two dates, and format a date as `YYYY-MM-DD`. They work as follows:
+
+- They use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
+- Adding months or years keeps the day within the target month. 31 January plus one month is the last day of February, and 29 February plus one year is 28 February.
+- A date that doesn't exist, such as 30 February, gives no value instead of rolling over into the next month.
+
+### Current user
+
+A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details.
+
+### Tables, validation, and events
+
+- **Table columns:** a client can add columns to an existing table or update them. A button or icon button column can open a modal or run an action for the row that was clicked, for example to open an edit form for that row.
+- **Input validation:** in addition to the existing formats, an input can accept letters only, letters and numbers only, or initials (2 to 4 letters). An input can also require a minimum or maximum length. An input uses either a named format or a length rule, not both.
+- **Events:** a client can run actions when the selection changes in a radio group or checkbox group, and when the selected options change in a multiselect.
+
+### Limits
+
+Appsmith refuses a change, and the client reports the reason, in these cases:
+
+- **Raw code:** a client can't write raw JavaScript or `{{ }}` text into a widget property. Every condition, default, and calculation is built from the operations described in this section.
+- **JS object functions:** a widget property can't call a function in a JS object. Functions that an MCP client writes run asynchronously, and widget properties can't wait for them. Ask the client to read a widget or query value instead, or to run the function from an event.
+- **Curly braces in text:** text inside a condition or calculation can't contain `{` or `}`.
+- **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
+- **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
+
 ## Datasource environments
 
 A datasource that an MCP client creates is configured in the workspace's default [datasource environment](/connect-data/concepts/Datasource-Environments), usually **Production**. Queries that the client runs and datasource structures that it reads also use the default environment. To use the datasource in another environment, configure it for that environment in Appsmith. See [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
@@ -414,6 +459,7 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | Claude.ai reports that it cannot reach the server | The connector was added with a sign-in option. Remove the connector and add it again with **No sign-in** and the `authorization` request header, as described in the **Claude.ai** tab. |
 | ChatGPT reports that the Appsmith server is not exposed to the chat or that no tool was found | You asked in a regular ChatGPT conversation. MCP servers added under **Plugins → MCPs** are available only in Codex threads. Start a new Codex thread on a local environment and ask there. |
 | Codex or the ChatGPT desktop app asks for approval on every call, or reports that the server has no usable tools | The instance is running an Appsmith version from before tool annotations were added, so the client treats every tool as destructive. Upgrade Appsmith. |
+| After Appsmith was rolled back to an older version, the client can't edit a JS object that it wrote earlier | A newer MCP server wrote the JS object in a format that the older version can't edit. The JS object still runs. Upgrade Appsmith to let the client edit it again. |
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 
