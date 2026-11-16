@@ -31,7 +31,7 @@ The organization theme applies only to Responsive apps. Fixed-layout apps never 
 
 ## How apps follow the organization theme
 
-When an app starts to follow the organization theme, Appsmith copies the theme values into the app once. While the organization theme is turned on, the app shows the organization theme. If an administrator turns the organization theme off later, the app keeps showing the values that were copied into it.
+When an app starts to follow the organization theme, Appsmith copies the theme values into the app once. While the organization theme is turned on, the app shows the organization theme. If an administrator turns the organization theme off later, the app keeps showing the values that were copied into it. These are the values from when the app started to follow, not later changes to the organization theme.
 
 The way an app is created decides whether it follows the organization theme:
 
@@ -40,7 +40,7 @@ The way an app is created decides whether it follows the organization theme:
 | New app | Follows the organization theme when the theme is turned on. Otherwise the app uses its own theme. |
 | From a template | Follows the organization theme when the theme is turned on. |
 | Imported as a new app, from a JSON file or Git | Follows the organization theme only if the file says the app follows it. The destination organization's theme values are then copied in, when that theme is turned on. Otherwise the app keeps the theme values in the file. |
-| Built by the Appsmith MCP server | Same as an import. |
+| Built by the Appsmith MCP server | Follows the organization theme unless the app spec sets its own theme. The theme values are copied in when the organization theme is turned on. |
 | Forked | Keeps the source app's theme, including whether it follows the organization theme. |
 | Duplicated | Copies the source app's whole theme setting, including whether it follows the organization theme. |
 
@@ -76,7 +76,8 @@ Appsmith also applies these rules:
 - Accent color and app background values can't contain `url(`, `var(`, `expression(`, `;`, a backslash (`\`), or other tokens that load files or break out of a CSS value. Values that contain these are rejected.
 - A value left blank counts as not set.
 - Keys that aren't in the table are dropped.
-- When a save leaves a stored value unchanged, Appsmith doesn't check that value again. An organization or app with an older value can still save its other changes.
+- A save that sends back the same organization theme doesn't check the theme again, so other organization settings still save. A save that changes any theme value checks the whole theme, including values you didn't change.
+- When you save an app's theme, Appsmith checks the font only if you changed it.
 
 ### Invalid theme value error
 
