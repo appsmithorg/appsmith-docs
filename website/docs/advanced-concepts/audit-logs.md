@@ -27,6 +27,7 @@ There are several kinds of events that are logged:
   - Datasource configuration
   - Query configuration and execution
   - Deleting apps
+  - Exporting a page's resources to a file and importing them into a page
 - Changes to Administrator settings
   - Instance configuration changes
 - User sign-up and login activity
@@ -51,6 +52,8 @@ Each logged item has several data points that describe that event, including ref
 | **resource**  | The type of resource on which this event was performed (Query, Datasource, etc.) | `id`, `type`, `name`                      |
 | **app**       | Application on which the action is performed.                                    | `id`, `name`, `git` {`branch`, `default`} |
 | **workspace** | Workspace on which the action is performed.                                      | `id`, `name`                              |
+| **page**      | Page on which the action is performed. Set for page-scoped events, such as partial imports and exports. | `id`, `name`                              |
+| **partialResourceCounts** | Number of resources included in a partial import or export. Set only on `application.partial_exported` and `application.partial_imported` events. | `actionCount`, `actionCollectionCount`, `datasourceCount`, `jsLibCount`, `hasWidgets` |
 | **metadata**  | Platform details, such as the Appsmith version.                                  | `appsmithVersion`, `createdAt`            |
 
 An example of a log item is given below:
@@ -88,6 +91,36 @@ An example of a log item is given below:
 }
 ```
 
+A partial export or import record also includes the page and the number of resources in the file. In `partialResourceCounts`, `actionCount` is the number of queries, `actionCollectionCount` is the number of JS objects, `jsLibCount` is the number of JS libraries, and `hasWidgets` is `true` when the file includes widgets. For example:
+
+```JSON
+{
+    "event": "application.partial_exported",
+    "resource": {
+        "id": "<application-id>",
+        "type": "Application",
+        "name": "Sample App"
+    },
+    "workspace": {
+        "id": "<workspace-id>",
+        "name": "Sample Workspace"
+    },
+    "page": {
+        "id": "<page-id>",
+        "name": "Page1"
+    },
+    "partialResourceCounts": {
+        "actionCount": 3,
+        "actionCollectionCount": 0,
+        "datasourceCount": 1,
+        "jsLibCount": 0,
+        "hasWidgets": true
+    }
+}
+```
+
+In the audit log list, these records show as **partially exported** or **partially imported**, followed by the page, the workspace, and the resources that were included. Resource types with a count of zero are left out. For example: `from Page1 in Sample Workspace · 3 queries, 1 datasource, widgets`.
+
 ## Tracked events
 
 The following table shows the events that appear in Appsmith's audit logs. In any given log record, you can find the event's name on the record's `event` property.
@@ -102,6 +135,8 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **application.deleted**      | Logged when an application is deleted.                                                                                                                             |
 | **application.imported**     | Logged when a new application is created via importing with Git or JSON.                                                                                           |
 | **application.exported**     | Logged when an existing application is exported via Git or JSON.                                                                                                   |
+| **application.partial_exported** | Logged when a user exports selected resources (widgets, queries, JS objects, datasources, or JS libraries) from a page to a JSON file. A partial export logs this event instead of `application.exported`. |
+| **application.partial_imported** | Logged when a user imports resources from a partial export JSON file into a page. Only imports from an uploaded file log this event. |
 | **application.cloned**       | Logged when a new application is created via cloning.                                                                                                              |
 | **application.forked**       | Logged when an existing application is forked.                                                                                                                     |
 | **application.deployed**     | Logged when a new version of an application is deployed/published.                                                                                                 |
