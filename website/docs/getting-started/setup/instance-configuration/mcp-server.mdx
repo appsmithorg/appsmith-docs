@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, and connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
 toc_max_heading_level: 2
 ---
 
@@ -377,10 +377,57 @@ Every Appsmith MCP tool describes itself to the client with standard MCP tool an
 
 - Read operations, such as listing workspaces or reading a page, run without a prompt. This includes running an action that Appsmith has verified as read-only against your datasource.
 - Non-destructive edits, such as building an app, adding a query, or hiding a page, run without a prompt. These changes are revision-checked and recorded, and they apply to the unpublished version of an existing app. `build_application` also deploys the first version of the new app it creates so that its viewer URL works; every later deploy goes through the `prepare_publish` and `confirm_publish` flow.
-- Destructive operations always use a two-step flow: a `prepare_*` tool that describes what is about to happen, followed by a `confirm_*` tool. The confirm step is the one the client asks you to approve. Deleting a page, query, API, or JS object; replacing the code of a JS object written in the editor; deploying an app; rolling back a change; committing to Git; and running an action that can modify data all follow this flow. When replacing a JS object's code, the client cannot remove a function that the page still calls unless it explicitly acknowledges the broken calls. Replacing editor-written JS code requires MCP JS objects and MCP governance; if the client reports that these tools are unavailable, ask your Appsmith administrator to enable MCP JS objects and configure MCP governance.
+- Destructive operations always use a two-step flow: a `prepare_*` tool that describes what is about to happen, followed by a `confirm_*` tool. The confirm step is the one the client asks you to approve. Deleting a page, query, API, or JS object; replacing the code of a JS object written in the editor; removing widgets from a page; deploying an app; rolling back a change; committing to Git; and running an action that can modify data all follow this flow. When replacing a JS object's code, the client cannot remove a function that the page still calls unless it explicitly acknowledges the broken calls. Replacing editor-written JS code requires MCP JS objects and MCP governance; if the client reports that these tools are unavailable, ask your Appsmith administrator to enable MCP JS objects and configure MCP governance.
 - Creating a Git branch and committing to Git push to your Git remote, so clients treat them as operations that reach outside Appsmith and ask for approval.
 
+To remove widgets, the client calls `prepare_remove_widgets` and then `confirm_remove_widgets`. The prepare step lists every widget that will be removed, including everything inside a container, so you can review the full extent of the removal before you approve it. One removal can name up to 20 widgets, and each named widget is removed with everything inside it. `patch_widgets` does not remove widgets: it refuses a remove operation and directs the client to `prepare_remove_widgets`. Widgets on a page built from sections and zones can't be removed with `prepare_remove_widgets` and `confirm_remove_widgets`.
+
 When the client supports MCP elicitation, Appsmith also shows its own approval prompt for the confirm step, with the exact scope of the change. Claude clients keep their own approval flow and do not change their behavior based on the annotations. The annotations describe the server's rules; they do not replace them.
+
+## What clients can build
+
+An MCP client can build a conditional form end to end, without follow-up work in the editor. Describe the form in plain language, for example: "Add a leave-request form where the end date can't be more than one year after the start date, and keep **Submit** disabled until the form is valid." The client turns the request into widget settings that Appsmith checks before it saves them.
+
+### Conditions
+
+A client can show, hide, require, or disable a widget based on other widgets on the page. A condition can check that a control, such as a select or radio group, has a given value, that a table has a selected row, that an input holds text, or a combination of values, such as "**New contract** is chosen and the start date is less than a year away."
+
+- **Visible** and **Disabled** conditions apply to any widget that has those properties.
+- **Required** conditions apply to form controls such as inputs, selects, radio groups, checkbox groups, and date pickers.
+- A custom **Valid** check applies to Input, Currency Input, and Phone Input widgets, for a rule that a named validation format can't express. See [Valid](/reference/widgets/input#valid-boolean) in the Input reference.
+- A submit button can stay disabled until up to 10 form controls are valid.
+
+### Defaults and dates
+
+A widget's default value can come from another widget, from a field of a query's response, or from a calculation. This works for inputs, selects, multiselects, radio groups, checkboxes, switches, and date pickers. A Text widget's displayed value can be calculated the same way.
+
+A date picker's [default date](/reference/widgets/datepicker#default-date-iso-8601-date-string), [minimum date](/reference/widgets/datepicker#min-date-iso-8601-date-string), and [maximum date](/reference/widgets/datepicker#max-date-iso-8601-date-string) can depend on other widgets. For example, the end date can default to 14 days after today, and its maximum can be one year after the start date.
+
+Date calculations can add days, months, or years, take the start of a day, count the days between two dates, and format a date as `YYYY-MM-DD`. They work as follows:
+
+- They use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
+- Adding months or years keeps the day within the target month. 31 January plus one month is the last day of February, and 29 February plus one year is 28 February.
+- A date that doesn't exist, such as 30 February, gives no value instead of rolling over into the next month.
+
+### Current user
+
+A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details.
+
+### Tables, validation, and events
+
+- **Table columns:** a client can add columns to an existing table or update them. A button or icon button column can open a modal or run an action for the row that was clicked, for example to open an edit form for that row.
+- **Input validation:** in addition to the existing formats, an input can accept letters only, letters and numbers only, or initials (2 to 4 letters). These formats accept only the letters A to Z, so a value with an accented letter, such as "José", is invalid. An input can also require a minimum or maximum length. An input uses either a named format or a length rule, not both.
+- **Events:** a client can run actions when the selection changes in a radio group or checkbox group, and when the selected options change in a multiselect.
+
+### Limits
+
+Appsmith refuses a change, and the client reports the reason, in these cases:
+
+- **Raw code:** a client can't write raw JavaScript or `{{ }}` text into a widget property. Every condition, default, and calculation is built from the operations described in this section.
+- **JS object functions:** a widget property can't call a function in a JS object. Functions that an MCP client writes run asynchronously, and widget properties can't wait for them. Ask the client to read a widget or query value instead, or to run the function from an event.
+- **Curly braces in text:** text inside a condition or calculation can't contain `{` or `}`.
+- **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
+- **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
 
 ## Datasource environments
 
@@ -391,6 +438,17 @@ A datasource that an MCP client creates is configured in the workspace's default
 An MCP client can hide or show an existing page in an app's navigation with `set_page_visibility`. The change applies to the unpublished version of the app, so users see it after the next deploy. On a Git-connected app, it applies to the branch the client works on. The app's home page can't be hidden.
 
 A hidden page is removed from navigation only. Users who can open the app can still reach the page by its URL or when another page navigates to it. To restrict who can open a page, use [Granular Access Control](/advanced-concepts/granular-access-control).
+
+## Page navigation with URL parameters
+
+An MCP client can make a widget event open another page of the same app with `wire_event`, or add a `navigate` step to a JS object function. Either way, the client can pass up to 10 URL query parameters to the page it opens. In an event, each value is a fixed value, a widget property, or a column of a table's selected row. In a JS object, each value is an expression, which can also read those values. For example, you can ask the client to "add a **Details** button that opens the Ticket Details page for the selected row of the tickets table".
+
+The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for example `{{appsmith.URL.queryParams.id}}`. See [`navigateTo`](/reference/appsmith-framework/widget-actions/navigate-to) and the [`queryParams`](/reference/appsmith-framework/context-object#queryparams-object) property of the context object.
+
+- Navigation opens a page of this app in the same window. Opening a URL or a new window isn't supported.
+- Parameter names are plain identifiers: a letter or underscore, followed by letters, digits, or underscores.
+- In an event, a fixed text value can't contain single quotes, braces, backticks, or `${`.
+- A page name that reads as an IP address or as `localhost`, such as `12` or `0x5db8d822`, is refused when the client creates, renames, or navigates to a page. Add a letter to the page name.
 
 ## Manage MCP keys
 
@@ -418,7 +476,9 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | Claude.ai reports that it cannot reach the server | The connector was added with a sign-in option. Remove the connector and add it again with **No sign-in** and the `authorization` request header, as described in the **Claude.ai** tab. |
 | ChatGPT reports that the Appsmith server is not exposed to the chat or that no tool was found | You asked in a regular ChatGPT conversation. MCP servers added under **Plugins → MCPs** are available only in Codex threads. Start a new Codex thread on a local environment and ask there. |
 | Codex or the ChatGPT desktop app asks for approval on every call, or reports that the server has no usable tools | The instance is running an Appsmith version from before tool annotations were added, so the client treats every tool as destructive. Upgrade Appsmith. |
+| After Appsmith was rolled back to an older version, the client can't edit a JS object that it wrote earlier | A newer MCP server wrote the JS object in a format that the older version can't edit. The JS object still runs. Upgrade Appsmith to let the client edit it again. |
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
+| The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
