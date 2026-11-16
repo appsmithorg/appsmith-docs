@@ -184,6 +184,24 @@ Sets where the icon appears. Options: start (default) or end. You cannot bind th
 
 </dd>
 
+## Style properties
+
+These properties appear in the **Style** tab of the property pane.
+
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Accent color `string`
+
+<dd>
+
+Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the theme accent.
+
+</dd>
+
+This widget has no **Custom CSS** setting. It renders hidden focus markers next to the buttons, so custom CSS cannot be scoped to the widget alone.
+
 ## Reference properties
 
 Reference properties let you read the widget's state in bindings and code, for example `{{InlineButtons1.isVisible}}`. You cannot set them directly.

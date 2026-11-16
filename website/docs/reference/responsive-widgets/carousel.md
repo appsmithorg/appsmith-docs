@@ -178,6 +178,66 @@ Adds the theme's elevated background and border around the widget. This sets it 
 
 </dd>
 
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Accent color `string`
+
+<dd>
+
+Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the theme accent.
+
+</dd>
+
+#### Background `string`
+
+<dd>
+
+Sets the background of the widget surface. Takes a theme color or a custom color.
+
+</dd>
+
+#### Text color `string`
+
+<dd>
+
+Sets the text color of the widget surface. Takes a theme color or a custom color. When it is empty and **Background** is set, the widget picks a readable text color.
+
+</dd>
+
+#### Border color `string`
+
+<dd>
+
+Sets the border color of the widget surface. Takes a theme color or a custom color. A color with no **Border width** draws a thin border.
+
+</dd>
+
+#### Border width `string`
+
+<dd>
+
+Sets the border width of the widget surface. Options: **From theme** (default), **None**, **Thin**, **Medium**, **Thick**. You cannot bind this property.
+
+</dd>
+
+#### Corners `string`
+
+<dd>
+
+Sets the corner radius of the widget surface. Options: **From theme** (default), **Sharp**, **Rounded**, **Pill**. You cannot bind this property.
+
+</dd>
+
+#### Custom CSS `string`
+
+<dd>
+
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the widget surface. You cannot bind this property.
+
+</dd>
+
 ## Keyboard and screen readers
 
 In **Carousel** appearance:

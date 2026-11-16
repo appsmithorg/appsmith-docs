@@ -99,6 +99,26 @@ Values for code: `small`, `medium`, `large`.
 
 </dd>
 
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Line color `string`
+
+<dd>
+
+Sets the color of the line. Takes a theme color or a custom color. **Thickness** sets the line width.
+
+</dd>
+
+#### Custom CSS `string`
+
+<dd>
+
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the line. You cannot bind this property.
+
+</dd>
+
 ## Reference properties
 
 Reference properties let you read the widget's state in bindings and code, for example `{{Divider1.isVisible}}`. You cannot set them directly.

@@ -36,6 +36,10 @@ Responsive Widgets are separate from the [classic widgets](/reference/widgets) u
 - On small screens, zones stack on top of each other.
 - Keyboard order follows reading order: sections top to bottom, zones left to right, then rows and widgets.
 
+## Custom styling
+
+Every Responsive Widget except Custom has a **Custom styling** section in the **Style** tab. Use it to change the widget's colors, border, and corners, and to add custom CSS that applies to that widget only. See [Custom styling](/reference/responsive-widgets/custom-styling).
+
 ## Widgets
 
 ### Layout and containers

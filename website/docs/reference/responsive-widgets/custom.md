@@ -89,7 +89,7 @@ New widgets have one event, `onResetClick`. It shows the alert `Successfully res
 
 ## Style properties
 
-These properties appear in the **Style** tab of the property pane.
+These properties appear in the **Style** tab of the property pane. The Custom widget has no **Custom styling** section, because it renders in its own frame and has its own CSS.
 
 ### General
 

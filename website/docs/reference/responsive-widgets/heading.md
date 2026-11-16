@@ -89,14 +89,6 @@ When you pick **Body** in the property pane, the widget turns into a [Paragraph]
 
 ### Text formatting
 
-#### Text color `string`
-
-<dd>
-
-Sets a custom color for the text. This overrides the theme color.
-
-</dd>
-
 #### Alignment `string`
 
 <dd>
@@ -114,6 +106,26 @@ Values for code: `left`, `center`, `right`.
 Makes the text bold, italic, or both.
 
 Values for code: `bold`, `italic`. To use both, include both words, for example `bold,italic`.
+
+</dd>
+
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Text color `string`
+
+<dd>
+
+Sets the color of the text. Takes a custom color only.
+
+</dd>
+
+#### Custom CSS `string`
+
+<dd>
+
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the text. You cannot bind this property.
 
 </dd>
 

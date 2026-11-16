@@ -109,6 +109,54 @@ Sets the action that runs when the scanner finds a code. See [Events](#events).
 
 </dd>
 
+## Style properties
+
+These properties appear in the **Style** tab of the property pane.
+
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Background `string`
+
+<dd>
+
+Sets the background of the outer card. It does not change the camera view. Takes a theme color or a custom color.
+
+</dd>
+
+#### Border color `string`
+
+<dd>
+
+Sets the border color of the outer card. Takes a theme color or a custom color. A color with no **Border width** draws a thin border.
+
+</dd>
+
+#### Border width `string`
+
+<dd>
+
+Sets the border width of the outer card. Options: **From theme** (default), **None**, **Thin**, **Medium**, **Thick**. You cannot bind this property.
+
+</dd>
+
+#### Corners `string`
+
+<dd>
+
+Sets the corner radius of the outer card. Options: **From theme** (default), **Sharp**, **Rounded**, **Pill**. You cannot bind this property.
+
+</dd>
+
+#### Custom CSS `string`
+
+<dd>
+
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the outer card. You cannot bind this property.
+
+</dd>
+
 ## Reference properties
 
 Reference properties let you read the widget's state in bindings and code, for example `{{CodeScanner1.isVisible}}`. You cannot set them directly.
