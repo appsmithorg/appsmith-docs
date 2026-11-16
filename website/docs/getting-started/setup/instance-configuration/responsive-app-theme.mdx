@@ -1,0 +1,135 @@
+---
+description: Set one theme for every responsive app in your organization, preview it in light and dark mode, restore the previous theme, and turn custom CSS on or off for all responsive apps.
+toc_max_heading_level: 2
+title: Responsive App Theme
+hide_title: true
+---
+<!-- vale off -->
+
+<div className="tag-wrapper">
+ <h1>Responsive App Theme</h1>
+
+<Tags
+tags={[
+{ name: "Business", link: "https://www.appsmith.com/pricing", additionalClass: "business" }
+]}
+/>
+
+<Tags
+tags={[
+{ name: "Enterprise", link: "https://www.appsmith.com/pricing", additionalClass: "enterprise" }
+]}
+/>
+
+</div>
+
+<!-- vale on -->
+
+:::caution Alpha feature: invite only
+[Responsive apps](/reference/responsive-widgets) are in alpha and available by invitation only on Business and Enterprise plans. Behavior and settings may change. To request access, [open a support ticket](https://support.appsmith.com) and name the feature **Responsive Widgets (ALPHA)**.
+:::
+
+The **Responsive app theme** page sets one theme for the responsive apps in your organization. Apps that follow it change at once, published apps too. The same page turns custom CSS on or off for every responsive app.
+
+## Before you begin
+
+- The page shows only to super users (instance administrators) on instances licensed for responsive apps.
+- The theme applies to responsive apps only. Fixed-layout apps keep their own themes.
+
+## Set the organization theme
+
+1. Open **Admin Settings**.
+2. Under **Organisation**, select **Responsive app theme**.
+3. Turn on **Use the organization theme**.
+4. Set the theme values. The sections are described below.
+5. Check the [preview](#preview-and-app-counts).
+6. Click **Save**.
+
+<!-- TODO(screenshot): Admin Settings > Organisation > Responsive app theme page with the organization theme turned on -->
+
+Above the **Save** button, the page tells you how many apps the save changes: "Saving changes 3 apps that follow the organization theme, published apps too." When you save, every app that follows the theme changes at once. You do not need to deploy them again.
+
+If a value is not valid, the field is highlighted and the page asks you to fix it before you save.
+
+### Color
+
+- **Accent color**: enter a hex, `rgb()`, `rgba()`, `hsl()`, `hsla()`, or named color, such as `#0080ff` or `teal`.
+- **Color mode**: **Light** or **Dark**.
+
+### Dimensions
+
+- **Density**: **Tight**, **Regular**, or **Loose**.
+- **Sizing**: **Small**, **Regular**, or **Big**.
+- **Corners**: **Sharp**, **Rounded**, or **Pill**.
+
+### Layout
+
+- **Font**: pick **System font** or one of the [bundled fonts](#fonts).
+- **Maximum app width**: **Unlimited**, **Large**, or **Medium**.
+- **App background**: a color or a gradient, such as `#0b1220` or `linear-gradient(90deg, #ffffff, #e6f0ff)`. `url()`, CSS variables, and other CSS are not allowed.
+
+## Preview and app counts
+
+The **Preview** section shows sample widgets with the values you have entered, side by side in **Light** and **Dark** mode. The preview updates as you type, before you save.
+
+The line at the top of the page counts the responsive apps in the organization, for example: "12 apps follow the organization theme. 3 apps use their own theme."
+
+## Turn the organization theme off
+
+Turn off **Use the organization theme** and click **Save**. Then:
+
+- Apps that followed the theme keep looking the same. Each one shows a copy of the theme's values.
+- New apps no longer follow the theme. They get their own theme.
+- App builders cannot reset an app to the organization theme until you turn it on again.
+
+## Restore the previous theme
+
+Appsmith keeps the theme from before the last change. To go back to it:
+
+1. Click **Restore previous theme**.
+2. In **Restore the previous theme?**, click **Restore**.
+
+Apps that follow the organization theme change at once, published apps too. The current theme becomes the previous one, so you can click **Restore previous theme** again to switch back.
+
+The button is disabled when there is no previous theme.
+
+## Custom CSS
+
+**Allow custom CSS in responsive apps** controls the custom CSS that app builders add to responsive widgets. It is on by default.
+
+When you turn it off and click **Save**, no responsive app shows custom CSS. The CSS stays saved in each app, so turning the switch on again brings it back.
+
+<!-- TODO(screenshot): Custom CSS section of the Responsive app theme page with Allow custom CSS in responsive apps turned off -->
+
+## Fonts
+
+Responsive apps can use **System font** or one of these bundled fonts:
+
+- Inter
+- Roboto
+- Open Sans
+- Montserrat
+- Nunito
+- Raleway
+- Work Sans
+- DM Sans
+- Source Sans 3
+- Plus Jakarta Sans
+
+The fonts are bundled with Appsmith and served from your instance. Viewers' browsers do not contact Google or any other font service. A font loads only when an app uses it.
+
+- **Air-gapped instances** need no extra setup.
+- **CDN in front of Appsmith**: allow cross-origin requests (CORS) for font files.
+
+## How apps follow the theme
+
+When the organization theme is on:
+
+- **New apps**: a new responsive app follows the organization theme. This includes apps built from a template and apps built through the [MCP server](/getting-started/setup/instance-configuration/mcp-server) without a theme of their own.
+- **Imported apps**: an app keeps the theme setting from its file. An app exported while it followed the organization theme follows the theme of the organization you import it into.
+- **Forked apps**: a fork keeps the source app's theme setting, including whether it follows the organization theme.
+- **Duplicated apps**: a duplicate copies the app's theme setting.
+
+If an imported or forked app uses a font that this instance does not have, Appsmith replaces it with **System font**.
+
+App builders can switch a single app to its own theme, or back to the organization theme, in the app's **Theme** settings. See [Responsive Widgets: Theme](/reference/responsive-widgets#theme).

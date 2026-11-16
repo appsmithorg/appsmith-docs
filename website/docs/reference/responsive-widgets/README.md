@@ -36,6 +36,19 @@ Responsive Widgets are separate from the [classic widgets](/reference/widgets) u
 - On small screens, zones stack on top of each other.
 - Keyboard order follows reading order: sections top to bottom, zones left to right, then rows and widgets.
 
+## Theme
+
+Set a Responsive app's colors, dimensions, font, maximum width, and background in **App settings > Theme**.
+
+An administrator can set one theme for every responsive app in the organization. See [Responsive App Theme](/getting-started/setup/instance-configuration/responsive-app-theme). When an app follows that theme, the **Theme** settings show the banner **This app uses the organization theme**, and the theme controls are read-only.
+
+- **Customize** switches the app to its own theme. The app keeps the values it shows, and you can then change them.
+- **Reset to organization theme** shows when the app uses its own theme and the organization theme is on. It replaces the app's own theme with the organization theme. Appsmith asks you to confirm, and you cannot undo it.
+
+Use **Font** to pick **System font** or one of the fonts bundled with Appsmith: Inter, Roboto, Open Sans, Montserrat, Nunito, Raleway, Work Sans, DM Sans, Source Sans 3, or Plus Jakarta Sans.
+
+<!-- TODO(screenshot): App settings > Theme in a Responsive app, showing the "This app uses the organization theme" banner and the Customize button -->
+
 ## Widgets
 
 ### Layout and containers
