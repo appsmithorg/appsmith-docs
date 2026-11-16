@@ -27,7 +27,7 @@ There are several kinds of events that are logged:
   - Datasource configuration
   - Query configuration and execution
   - Deleting apps
-  - Importing and exporting pages or resources from a file
+  - Exporting a page's resources to a file and importing them into a page
 - Changes to Administrator settings
   - Instance configuration changes
 - User sign-up and login activity
