@@ -43,6 +43,37 @@ When the Appsmith instance is undersized, the backend can start and then be term
 - Ensure the instance meets the minimum size: `t3.large` or equivalent (2 vCPU, 8 GB of memory). See [Self-hosting Best Practices](/getting-started/setup/best-practices).
 - On platforms with health checks, increase the failed-health-check threshold or extend the health-check timeout so the service has time to stabilize before being marked unhealthy.
 
+### Pod restarts during first startup on Kubernetes
+
+#### Cause
+
+On first start, the Appsmith server runs every database migration before it starts to accept requests. Against a remote MongoDB, such as MongoDB Atlas, this can take several minutes. While the migrations run, the Helm chart's `startupProbe` fails. When the startup probe reaches its `failureThreshold`, Kubernetes restarts the container before the server finishes starting.
+
+Helm charts older than 3.9.2 ran the startup probe every 60 seconds and restarted the container after three failures, which allows about 180 seconds to boot. Chart 3.9.2 and later run it every 10 seconds with a 5-second timeout and a `failureThreshold` of 60, which allows 600 seconds. The liveness and readiness probes start only after the startup probe succeeds.
+
+#### Solution
+
+- Upgrade to Helm chart 3.9.2 or later.
+- If the first boot still takes longer than 600 seconds, raise `failureThreshold` under `probes.startupProbe` in your `values.yaml`. The startup window is `periodSeconds` multiplied by `failureThreshold`. For example, this allows 900 seconds:
+
+    ```yaml
+    probes:
+      startupProbe:
+        periodSeconds: 10
+        failureThreshold: 90
+    ```
+
+    Then apply the change:
+
+    ```bash
+    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+    ```
+
+    `periodSeconds` and `failureThreshold` must be positive integers. Other values, such as `0`, make `helm install` and `helm upgrade` fail with a schema validation error.
+- If you stay on a chart older than 3.9.2, set both `periodSeconds` and `failureThreshold` under `probes.startupProbe` so their product covers your boot time, for example `periodSeconds: 10` and `failureThreshold: 60` for 600 seconds.
+
+The startup probe stops after its first success, so a longer startup window doesn't change how quickly Kubernetes detects a failure on a running server. For all probe defaults and override keys, see [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
+
 ### High CPU and memory usage with few users
 
 #### Cause
