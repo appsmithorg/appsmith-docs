@@ -40,7 +40,7 @@ Responsive Widgets are separate from the [classic widgets](/reference/widgets) u
 
 Set a Responsive app's colors, dimensions, font, maximum width, and background in **App settings > Theme**.
 
-An administrator can set one theme for every Responsive app in the organization. See [Responsive App Theme](/getting-started/setup/instance-configuration/responsive-app-theme). When an app follows that theme, the **Theme** settings show the banner **This app uses the organization theme**, and the theme controls are read-only.
+An administrator can set one theme for every Responsive app in the organization. To set it, see [Responsive App Theme](/getting-started/setup/instance-configuration/responsive-app-theme). To learn which apps follow it and which values it accepts, see [Organization Theme](/reference/responsive-widgets/organization-theme). When an app follows that theme, the **Theme** settings show the banner **This app uses the organization theme**, and the theme controls are read-only.
 
 - **Customize** switches the app to its own theme. The app keeps the values it shows, and you can then change them.
 - **Reset to organization theme** shows when the app uses its own theme and the organization theme is on. It replaces the app's own theme with the organization theme. Appsmith asks you to confirm, and you cannot undo it.

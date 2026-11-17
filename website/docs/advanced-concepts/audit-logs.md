@@ -54,6 +54,9 @@ Each logged item has several data points that describe that event, including ref
 | **workspace** | Workspace on which the action is performed.                                      | `id`, `name`                              |
 | **page**      | Page on which the action is performed. Set for page-scoped events, such as partial imports and exports. | `id`, `name`                              |
 | **partialResourceCounts** | Number of resources included in a partial import or export. Set only on `application.partial_exported` and `application.partial_imported` events. | `actionCount`, `actionCollectionCount`, `datasourceCount`, `jsLibCount`, `hasWidgets` |
+| **instanceSettings** | Names of the instance settings that changed. Set on `instance_setting.updated` events. | List of setting names, such as `anvilTheme` |
+| **anvilTheme** | The [organization theme for Responsive apps](/reference/responsive-widgets/organization-theme) before and after the change. Set only on `instance_setting.updated` events that change the theme, including a restore of the previous theme. An empty object means there was no theme. | `oldValue`, `newValue` |
+| **allowCustomCss** | Whether builders can add custom CSS to Responsive widgets, before and after the change. Set only on `instance_setting.updated` events that change this setting. A setting that was never changed counts as `true`. | `oldValue`, `newValue` |
 | **metadata**  | Platform details, such as the Appsmith version.                                  | `appsmithVersion`, `createdAt`            |
 
 An example of a log item is given below:
@@ -121,6 +124,28 @@ A partial export or import record also includes the page and the number of resou
 
 In the audit log list, these records show as **partially exported** or **partially imported**, followed by the page, the workspace, and the resources that were included. Resource types with a count of zero are left out. For example: `from Page1 in Sample Workspace · 3 queries, 1 datasource, widgets`.
 
+A change to the organization theme for Responsive apps writes one `instance_setting.updated` record. `instanceSettings` lists the settings that changed, and `anvilTheme` holds the theme values before and after the change. If the same save also changes the custom CSS setting, the record lists `allowCustomCss` too and includes its old and new value. For example:
+
+```JSON
+{
+    "event": "instance_setting.updated",
+    "instanceSettings": ["anvilTheme"],
+    "anvilTheme": {
+        "oldValue": {
+            "enabled": true,
+            "accentColor": "#553DE9",
+            "colorMode": "LIGHT"
+        },
+        "newValue": {
+            "enabled": true,
+            "accentColor": "#0B8A5F",
+            "colorMode": "DARK",
+            "anvilFont": "inter"
+        }
+    }
+}
+```
+
 ## Tracked events
 
 The following table shows the events that appear in Appsmith's audit logs. In any given log record, you can find the event's name on the record's `event` property.
@@ -155,7 +180,7 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **user.logged_out**          | Logged when a user signs out.                                                                                                                                      |
 | **user.invited**             | Logged when someone invites another user to the app or workspace.                                                                                                  |
 | **user.signed_up**           | Logged when a new user logs in for the first time.                                                                                                                 |
-| **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration.                                                                                             |
+| **instance_setting.updated** | Logged when a change is made to the Appsmith instance's configuration. A change to the organization theme for Responsive apps, or to whether custom CSS is allowed in Responsive apps, also records the old and new value. |
 | **role.created**             | Logged when a new role is created in granular access controls.                                                                                                     |
 | **role.updated**             | Logged when a role configuration is updated in granular access controls.                                                                                           |
 | **role.deleted**             | Logged when a role is deleted from granular access controls.                                                                                                       |
