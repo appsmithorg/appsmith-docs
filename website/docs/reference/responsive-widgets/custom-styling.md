@@ -31,7 +31,7 @@ The section is the last one in the **Style** tab of the property pane. It starts
 
 Each widget has only the settings that fit it. The settings change one part of the widget, called the styled part. For example, on an Input they change the input field box, and on a Chart they change the outer card, not the chart. See [Settings by widget](#settings-by-widget).
 
-<!-- TODO(screenshot): Custom styling section of an Input widget in the Style tab, on the local docs instance. -->
+<ZoomImage src="/img/responsive-widgets/custom-styling.png" alt="Style tab of an Input widget with the Custom styling section open, showing Accent color, Background, Text color, Border color, Border width, Corners, and Custom CSS" caption="Custom styling section of an Input widget" />
 
 ## How values work
 
