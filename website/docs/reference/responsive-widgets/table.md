@@ -505,18 +505,29 @@ Styles cells or rows when a value matches a condition. Each rule is an object.
 
 </dd>
 
-### Custom CSS
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Accent color `string`
+
+<dd>
+
+Builds the hover, pressed, focus, and text colors of this widget from one color, in light and dark mode. Lists and menus that the widget opens use them too. Empty means the accent of the nearest container that sets one, or the theme accent.
+
+</dd>
 
 #### Custom CSS `string`
 
 <dd>
 
-Adds CSS to style this table. Appsmith prefixes your selectors so they target this table. Target these class names, or set `--anvil-table-*` variables:
+Adds plain CSS to this table. Rules apply only inside the table, and `&` is the table itself. Target these class names, or set `--anvil-table-*` variables:
 
 - `.anvil-table__header-cell`
 - `.anvil-table__row`
 - `.anvil-table__row--alt`
 - `.anvil-table__cell`
+- `.anvil-table__card`
 - `.anvil-table__toolbar`
 - `.anvil-table__footer`
 
@@ -526,8 +537,10 @@ Adds CSS to style this table. Appsmith prefixes your selectors so they target th
 .anvil-table__row--alt { background: #f8fafc; }
 ```
 
+For what Appsmith removes from custom CSS, see [What Appsmith removes](/reference/responsive-widgets/custom-styling#what-appsmith-removes).
+
 :::caution
-Treat Custom CSS as code. Write it yourself and keep it static. Do not bind it to user input, query results, or other data that app users can change.
+Treat Custom CSS as code. Write it yourself and keep it static. Do not build it from user input, query results, or other data that app users can change.
 :::
 
 </dd>

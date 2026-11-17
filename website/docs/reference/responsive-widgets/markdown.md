@@ -91,6 +91,30 @@ Controls the loading animation of the widget. Default: on.
 
 </dd>
 
+## Style properties
+
+These properties appear in the **Style** tab of the property pane.
+
+### Custom styling
+
+These settings are in the **Custom styling** section, at the end of the **Style** tab. An empty setting uses the theme value. For theme colors, dark mode, and the rules for custom CSS, see [Custom styling](/reference/responsive-widgets/custom-styling).
+
+#### Text color `string`
+
+<dd>
+
+Sets the color of the text. Takes a theme color or a custom color.
+
+</dd>
+
+#### Custom CSS `string`
+
+<dd>
+
+Adds plain CSS to this widget. Rules apply only inside the widget, and `&` is the text. You cannot bind this property.
+
+</dd>
+
 ## Reference properties
 
 Reference properties let you read the widget's state in bindings and code, for example `{{Markdown1.isVisible}}`. You cannot set them directly.

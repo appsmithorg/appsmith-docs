@@ -40,6 +40,10 @@ Responsive Widgets are separate from the [classic widgets](/reference/widgets) u
 
 An instance administrator can set one theme for every Responsive app in the organization. To learn which apps follow it and which values it accepts, see [Organization Theme](/reference/responsive-widgets/organization-theme).
 
+## Custom styling
+
+Every Responsive Widget except Custom has a **Custom styling** section in the **Style** tab. Use it to change the widget's colors, border, and corners, and to add custom CSS that applies to that widget only. See [Custom styling](/reference/responsive-widgets/custom-styling).
+
 ## Widgets
 
 ### Layout and containers

@@ -618,6 +618,7 @@ const sidebars = {
               label: 'Responsive Widgets (ALPHA)',
               link: { type: 'doc', id: 'reference/responsive-widgets/README' },
               items: [
+                'reference/responsive-widgets/custom-styling',
                 {
                   type: 'category',
                   label: 'Layout and containers',
