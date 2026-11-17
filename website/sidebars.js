@@ -736,6 +736,7 @@ const sidebars = {
                     'reference/responsive-widgets/custom',
                   ],
                 },
+                'reference/responsive-widgets/organization-theme',
               ],
             },
             {
