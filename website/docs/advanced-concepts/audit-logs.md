@@ -278,3 +278,22 @@ This change applies only to the `auditLog` collection. It does not change retent
 ## Export logs
 
 You can export audit logs from the Appsmith instance to your system as a JSON file. To export logs as a JSON file, go to **Admin Settings > Others > Audit logs**, click the **⋮** icon at the top right corner and click **Download**.
+
+
+## Archive audit logs outside Appsmith
+
+Appsmith does not have a built-in audit log archive feature. Changing the TTL deletes expired logs; it does not move them to an archive. If you need to keep logs longer than the database retention period, export them before they expire and manage the archive outside Appsmith.
+
+:::note External archiving is outside Appsmith support
+The external archiving options below are provided for information only. They are not part of the Appsmith product and are not covered by Appsmith support. If you choose one, you are responsible for implementing, securing, monitoring, and maintaining it.
+:::
+
+Choose an approach based on your needs:
+
+- **Occasional exports:** Use the [Download option](#export-logs) to export audit logs as JSON, then store the files in your archive.
+- **Scheduled exports on self-hosted instances:** Run an external job with [MongoDB's `mongoexport`](https://www.mongodb.com/docs/database-tools/mongoexport/) to export the `auditLog` collection as JSON. Use a date-range filter on `createdAt` to export a defined period. Store the files in object storage, such as Amazon S3, Azure Blob Storage, or Google Cloud Storage. This requires direct MongoDB access and a scheduler that you manage.
+- **Searchable archives:** Load exported logs into your organization's log management or security information and event management (SIEM) system. You must build and manage the ingestion process; Appsmith does not provide an automatic archive integration.
+
+For scheduled exports, run the job well before logs reach the TTL limit, monitor failures, and verify each export before relying on it. Use overlapping export periods and deduplicate by `_id` in your archive to reduce the risk of gaps after retries. Export and verify older logs **before** shortening retention.
+
+Set access controls, encryption, and a separate retention policy for the archive. Archived files are managed outside Appsmith and are not available in the Audit logs screen. Keep database backups separately: `mongoexport` creates a data export, not a database backup.
