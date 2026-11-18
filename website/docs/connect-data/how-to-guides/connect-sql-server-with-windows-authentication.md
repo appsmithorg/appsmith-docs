@@ -175,7 +175,10 @@ Appsmith reads `krb5.conf` again each time it signs in. So you don't need to res
 - Appsmith signs in to the domain controller with the datasource's username and password. It never uses a Kerberos ticket that is already on the Appsmith server, so each datasource connects only as its own account.
 - The password goes to the domain controller only. SQL Server receives a Kerberos ticket, not the password.
 - One sign-in serves all of the datasource's connections, until shortly before the ticket expires.
-- If sign-in fails, Appsmith waits before it tries again: 1 minute, then 2, 4 and 8, then every 15 minutes. This keeps a wrong or changed password from locking out the account. Each **Test configuration** click still tries once, so don't click it repeatedly with a wrong password.
+- If the domain controller refuses the username or password, Appsmith waits before it tries that username and password again: 1 minute, then 2, 4 and 8, then every 15 minutes. This keeps a wrong or changed password from locking out the account.
+  - The wait applies to every app and every **Test configuration** click that uses the same username and password.
+  - When you enter a different password, Appsmith tries it at once.
+  - Other failures, such as an unreachable domain controller or a missing `krb5.conf`, don't start a wait. Appsmith tries again as soon as you fix them.
 - Every query in every app that uses the datasource runs as this one account. SQL Server can't tell which app user ran it.
 
 ## Limits
@@ -197,7 +200,7 @@ Appsmith shows these messages when Windows authentication fails.
 | `… The domain controller does not know this realm.` | Check the part of the username after `@`. It must match the Active Directory domain. |
 | `… Kerberos is not set up on the Appsmith server, or this realm is not in its krb5.conf.` | Check that `krb5.conf` is at `/etc/krb5.conf` in the container, or at the path in `APPSMITH_JAVA_ARGS`, and that it lists the realm. |
 | `… The Appsmith server could not reach the domain controller on port 88.` | Check DNS, firewalls and, on Kubernetes, network policies between Appsmith and the domain controller. |
-| `… Appsmith waits … seconds before it tries this account again …` | An earlier sign-in failed. Fix the cause shown before it. Saving or testing the datasource tries again at once. |
+| `… Appsmith waits … seconds before it tries this account again …` | The domain controller refused this username and password. Enter the right password, which Appsmith tries at once, or wait the time shown. |
 | `SQL Server's service name (SPN) is not registered in Active Directory.` | Register `MSSQLSvc/<host>:<port>` for the SQL Server service account, or enter the registered name in **Server SPN**. |
 | `SQL Server did not accept the Kerberos ticket.` | The SPN may belong to a different account than the one SQL Server runs as, or SQL Server isn't joined to the domain. Check with `setspn -L`. |
 | `The Kerberos login worked, but SQL Server refused the account.` | Create a SQL Server login for the account and give it access to the database. See [Prerequisites](#prerequisites). |
