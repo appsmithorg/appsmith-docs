@@ -196,6 +196,85 @@ The following table shows the events that appear in Appsmith's audit logs. In an
 | **approved_analytics_policy.updated** | Logged when an administrator changes the [approved analytics](/getting-started/setup/instance-configuration/approved-analytics) switch or the list of approved measurement IDs. |
 | **approved_analytics_settings.updated** | Logged when an app author changes an app's or a page's [approved analytics](/getting-started/setup/instance-configuration/approved-analytics) settings. |
 
+## Change audit log retention
+
+On self-hosted Appsmith instances, audit logs are retained for **365 days** by default. MongoDB enforces this retention with a time-to-live (TTL) index on the `auditLog` collection's `createdAt` field. You can change the retention period for this collection in either the built-in MongoDB or an external MongoDB instance.
+
+:::warning
+Reducing retention makes **existing audit logs** older than the new limit eligible for automatic deletion. For example, changing from 365 days to 30 days makes logs older than 30 days eligible for deletion. Increasing retention or restoring the default does not recover logs already deleted.
+:::
+
+### Prerequisites
+
+- Access to the MongoDB instance used by Appsmith, with permission to list indexes and run `collMod` on the `auditLog` collection. Appsmith admin access alone does not grant MongoDB permissions.
+- The MongoDB connection URI and Appsmith database name for your instance.
+- A current [database backup](/getting-started/setup/instance-management/backup-and-restore/backup-database).
+
+### Connect and check the index
+
+1. For a Docker installation with built-in MongoDB, run this command on the Docker host:
+
+   ```bash
+   docker exec -it appsmith mongosh "<APPSMITH_DB_URL>"
+   ```
+
+   Replace `appsmith` with your container name and `<APPSMITH_DB_URL>` with the actual MongoDB connection URI. The placeholder is not expanded automatically. Keep the URI in quotes and do not share it, because it may contain credentials.
+
+   For an external MongoDB instance, connect with `mongosh` from a machine that can reach it, using the connection URI and any TLS or authentication options required by your deployment.
+
+2. Run the remaining commands inside `mongosh`. Select the database named in your connection URI. The default name is `appsmith`:
+
+   ```javascript
+   use appsmith
+   ```
+
+3. Inspect the audit log indexes:
+
+   ```javascript
+   db.auditLog.getIndexes()
+   ```
+
+   Confirm that an index has `key: { createdAt: 1 }` and an `expireAfterSeconds` value. Appsmith names this index `ttl_index_audit_log_created_time`. If the TTL index is missing, check that you selected the correct database before continuing. These steps modify an existing TTL index.
+
+### Set the retention period
+
+Choose the retention period in seconds:
+
+| Retention | `expireAfterSeconds` |
+| --- | --- |
+| 30 days | `2592000` |
+| 60 days | `5184000` |
+| 90 days | `7776000` |
+| 365 days (default) | `31536000` |
+
+Run the following command **once**, using your chosen value. This example sets retention to **30 days**:
+
+```javascript
+db.runCommand({
+  collMod: "auditLog",
+  index: {
+    keyPattern: { createdAt: 1 },
+    expireAfterSeconds: 2592000
+  }
+})
+```
+
+For **60 days**, replace `2592000` with `5184000`. For **90 days**, use `7776000`. To restore the default **365-day** retention, use `31536000`.
+
+### Verify the change
+
+Confirm that the command response includes `ok: 1`, then inspect the index again:
+
+```javascript
+db.auditLog.getIndexes()
+```
+
+The index on `createdAt` should show your chosen `expireAfterSeconds` value.
+
+MongoDB deletes expired logs in the background, so deletion may not happen immediately. The retention period is measured from each log's `createdAt` value, not from when you change the TTL. A shorter period can make many logs eligible for deletion at once and increase database load. Schedule a large reduction during a maintenance window. See [MongoDB TTL indexes](https://www.mongodb.com/docs/manual/core/index-ttl/) for details.
+
+This change applies only to the `auditLog` collection. It does not change retention for other Appsmith data.
+
 ## Export logs
 
 You can export audit logs from the Appsmith instance to your system as a JSON file. To export logs as a JSON file, go to **Admin Settings > Others > Audit logs**, click the **⋮** icon at the top right corner and click **Download**.
