@@ -40,6 +40,10 @@ Appsmith adds a notice when a change in a current or upcoming release requires a
 
 If a notice says you must complete work on this instance before you upgrade, follow that notice’s documentation first. For pending upgrade checkpoints, see [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints). For workflow notices, see [Native workflow engine](/workflows/how-to-guides/native-workflow-engine).
 
+## v2.5.2 upgrade checkpoint
+
+Before upgrading a self-hosted instance to **v2.6 or later**, install **v2.5.2**. In Admin central, review the **Workflow Engine Transition** checkpoint and acknowledge it once the required work is complete. See [v2.5.2 workflow engine transition](/getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal) for details, including what to do with in-progress workflow runs.
+
 ## When no action is required
 
 If nothing requires your attention, Admin central displays:
