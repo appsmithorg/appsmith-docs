@@ -12,6 +12,10 @@ Checkpoints apply only to self-hosted instances. Appsmith Cloud does not use the
 
 Each checkpoint belongs to a release line. Installing the checkpoint version, or any later patch release on the same line, counts as reaching the checkpoint. Appsmith blocks upgrades to the next release line until the checkpoint is complete.
 
+## v2.5.2 workflow engine checkpoint
+
+Before upgrading to **v2.6 or later**, install **v2.5.2** and complete the **Workflow Engine Transition** checkpoint in [Admin central](/getting-started/setup/instance-configuration/admin-central). See [v2.5.2 workflow engine transition](/getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal) for instructions on handling in-progress Temporal runs and acknowledging the checkpoint.
+
 ## While you are on the checkpoint release
 
 Sign in as an instance administrator, open **Admin Settings**, and under **Instance**, select **Admin central**.
@@ -62,7 +66,7 @@ When nothing needs attention, Admin central shows **There is no action required 
 
 ## See also
 
-- [v2.5.0 workflow engine transition](/getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal)
+- [v2.5.2 workflow engine transition](/getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal)
 - [Admin central](/getting-started/setup/instance-configuration/admin-central)
 - [Upgrade Appsmith versions](/getting-started/setup/instance-management/update-appsmith)
 - [Get container logs](/getting-started/setup/instance-management/how-to-get-container-logs)
