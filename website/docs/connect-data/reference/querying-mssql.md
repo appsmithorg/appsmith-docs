@@ -55,13 +55,34 @@ The following section is a reference guide that describes all the parameters to 
 
 <dd>The name of the database to connect to.</dd>
 
+#### Authentication type
+
+<dd>How Appsmith signs in to SQL Server.</dd><br />
+<dd>
+  <i>Options:</i>
+  <ul>
+    <li><b>SQL Server login:</b> A SQL Server login and its password. This is the default.</li>
+    <li><b>Windows (Kerberos):</b> An Active Directory account and its password. Available from Appsmith v2.8, on self-hosted Appsmith only. The Appsmith server needs Kerberos settings and access to your domain controller. See <a href="/connect-data/how-to-guides/connect-sql-server-with-windows-authentication"><b>Connect to SQL Server with Windows Authentication</b></a>.</li>
+  </ul>
+</dd>
+
 #### Username
 
-<dd>The SQL Server login that Appsmith uses to connect. Appsmith supports SQL Server authentication (a user name and password). Give this login only the permissions your app needs.</dd>
+<dd>The account Appsmith uses to connect. Give it only the permissions your app needs.</dd><br />
+<dd>
+  <ul>
+    <li>For <b>SQL Server login</b>, enter the SQL Server login name.</li>
+    <li>For <b>Windows (Kerberos)</b>, enter the Active Directory account as <code>user@REALM</code>, such as <code>svc_appsmith@CORP.EXAMPLE.COM</code>. The <code>DOMAIN\user</code> form is not supported.</li>
+  </ul>
+</dd>
 
 #### Password
 
-<dd>The password for the login.</dd>
+<dd>The password for the login or the Active Directory account.</dd>
+
+#### Server SPN
+
+<dd>Shown only for <b>Windows (Kerberos)</b>. The service principal name registered for SQL Server in Active Directory. Leave it blank to use <code>MSSQLSvc/&lt;host&gt;:&lt;port&gt;</code>. Set it when you connect through a DNS alias, an IP address or an Always On listener, such as <code>MSSQLSvc/sql01.corp.example.com:1433</code>.</dd>
 
 #### SSL mode
 
@@ -350,6 +371,7 @@ Appsmith v2.8 changed how some queries behave. If your apps were built on an ear
 | `affectedRows` for a table with a trigger, prepared statements off | The trigger's count | The INSERT's own count |
 | **Test configuration** with a wrong host, port or database | Reports after about 30 seconds | Reports after about 1 second |
 | Message when a running query's connection is closed by the server | `Connection object is invalid` | SQL Server's message, such as `… session is in the kill state` |
+| Windows (Kerberos) authentication | Not available | Available on self-hosted Appsmith |
 
 Everything else, including the format of every other data type and the error messages for SQL errors, is the same in both versions.
 
@@ -404,11 +426,13 @@ In a query with several statements, an error in the second or a later statement 
 | A large ID has different last digits in the app | JavaScript rounds numbers above 9,007,199,254,740,991 | Return the value as text with `CAST(… AS varchar(20))` |
 | A query that used to return rows now returns nothing, or no row count | An earlier query ran `SET NOCOUNT ON` and didn't set it back, and the option stayed on the pooled connection | Set options back at the end of each query, such as `SET NOCOUNT OFF` |
 | `A statement in this query failed. …` (v2.8 and later) | One statement in a multi-statement query failed | Read the SQL Server message after it. Statements before it may have run |
+| `Kerberos login failed for …` | Windows (Kerberos) authentication could not sign in | See [Troubleshoot Windows authentication](/connect-data/how-to-guides/connect-sql-server-with-windows-authentication#troubleshooting) |
 
 For other problems, see the [Datasource troubleshooting guide](/help-and-support/troubleshooting-guide/action-errors/datasource-errors), or contact the support team with the chat widget at the bottom right of this page.
 
 ## See also
 
+- [Connect to SQL Server with Windows Authentication](/connect-data/how-to-guides/connect-sql-server-with-windows-authentication) - Set up Kerberos on a self-hosted Appsmith server and sign in with an Active Directory account.
 - [Prepared Statements](/connect-data/concepts/how-to-use-prepared-statements) - Learn how bindings are sent to the database and when to turn prepared statements off.
 - [Display and Lookup Data in Table](/build-apps/how-to-guides/display-search-and-filter-table-data) - Learn how to display query results in a Table and let users look up data.
 - [Search and Filter Table Data](/build-apps/how-to-guides/search-and-filter-table-data) - Add search and filters to Tables for easier data navigation.
