@@ -79,35 +79,32 @@ If your current version is earlier than v1.9.2, follow the steps in [Upgrade to 
 
    Find the latest release tag on [GitHub](https://github.com/appsmithorg/appsmith/releases).
 
-2. Locate your Helm `values.yaml` file.
-   - If you still have the `values.yaml` file from your initial installation, go to its directory:
-     ```bash
-     cd /path/to/your/values-file
-     ```
-   - If you no longer have the file, retrieve it from your cluster:
-     ```bash
-     helm get values appsmith-ee -n appsmith-ee | grep -v "USER-SUPPLIED" > values.yaml
-     ```
-
-3. Update the image tag in `values.yaml`.
-   - If you have [`yq`](https://github.com/mikefarah/yq) installed:
-     ```bash
-     APPSMITH_VERSION=<version>
-     yq -i ".image.tag = \"$APPSMITH_VERSION\"" values.yaml
-     ```
-   - If you don’t have `yq`, open `values.yaml` in a text editor and set the new version:
-     ```yaml
-     image:
-       tag: <version>
-     ```
-
-4. Apply the upgrade with Helm.
-
-   Run the following command:
+2. Update the local Helm chart repository index:
 
    ```bash
-   helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+   helm repo update appsmith-ee
    ```
+
+3. Upgrade the Helm release to the new version:
+
+   ```bash
+   helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee \
+     --reset-then-reuse-values --set image.tag=<version>
+   ```
+
+   This command upgrades the Helm chart to its latest version and sets the Appsmith image to `<version>`. The `--reset-then-reuse-values` flag keeps the values of your current release and applies the defaults of the new chart version.
+
+   If you manage `values.yaml` in source control, set `image.tag` in that file and run the command with `-f values.yaml` instead of `--set image.tag=<version>`.
+
+4. If Helm rejects the upgrade with `values don't meet the specifications of the schema(s)`, a value in your release is not compatible with the latest chart version. Helm makes no change to the release. Do one of these:
+   - Update the values that the error lists, then run step 3 again.
+   - Keep your current chart version and update only the Appsmith image:
+
+     ```bash
+     CHART_VERSION=$(helm get metadata appsmith-ee -n appsmith-ee | awk '/^VERSION:/ {print $2}')
+     helm upgrade appsmith-ee appsmith-ee/appsmith -n appsmith-ee \
+       --version "$CHART_VERSION" --reuse-values --set image.tag=<version>
+     ```
 
 </TabItem>
 
