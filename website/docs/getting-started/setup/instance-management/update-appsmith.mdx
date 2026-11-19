@@ -18,6 +18,10 @@ Before you update, make sure that:
 2. Your embedded or external MongoDB server runs version 5.0 or later. To upgrade MongoDB, check the [supported platforms](https://www.mongodb.com/docs/manual/administration/production-notes/#platform-support) and follow the [MongoDB replica set upgrade guide](https://www.mongodb.com/docs/manual/release-notes/5.0-upgrade-replica-set/).
 3. You have a backup of your Appsmith instance. To create one, follow the [Backup instance guide](/getting-started/setup/instance-management/appsmithctl/#backup-instance).
 
+## Required upgrade checkpoints
+
+Before upgrading a self-hosted instance to **v2.6 or later**, install **v2.5.2** and complete the **Workflow Engine Transition** checkpoint. Sign in as an instance administrator and open **Admin Settings → Instance → Admin central** to review and acknowledge the checkpoint. Do not proceed to v2.6 or later until it is complete. See [Upgrade checkpoints](/getting-started/setup/instance-management/upgrade-checkpoints) and [v2.5.2 workflow engine transition](/getting-started/setup/instance-management/upgrade-checkpoint-v2.5.0-temporal) for details.
+
 ## Update Appsmith
 
 Select your platform and follow the steps to update Appsmith to the latest version:
@@ -32,6 +36,7 @@ These instructions apply to Docker-based platforms, such as Docker standalone an
 Some versions are checkpoints that you must install before you upgrade further:
  - If your current version is earlier than v1.9.2, follow the steps in [Upgrade to v1.9.2](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v192) before you update to the latest release.
  - If your current version is later than v1.9.2 but earlier than v1.96, follow [Upgrade to v1.96–v1.99](/getting-started/setup/instance-management/upgrade-to-checkpoint-version#upgrade-to-v196v199) before you upgrade to v2.0 or later.
+ - Before upgrading to v2.6 or later, install **v2.5.2** and complete the checkpoint in [Admin central](/getting-started/setup/instance-configuration/admin-central).
 :::
 
 :::caution Upgrading from a version earlier than v2.4
