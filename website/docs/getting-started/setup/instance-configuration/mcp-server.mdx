@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms and calculated values in responsive apps from the client.
 toc_max_heading_level: 2
 ---
 
@@ -411,7 +411,7 @@ Date calculations can add days, months, or years, take the start of a day, count
 
 ### Current user
 
-A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details.
+A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details. [Calculated values](#calculated-values) in responsive apps can't read these details.
 
 ### Tables, validation, and events
 
@@ -428,6 +428,74 @@ Appsmith refuses a change, and the client reports the reason, in these cases:
 - **Curly braces in text:** text inside a condition or calculation can't contain `{` or `}`.
 - **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
 - **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
+
+## Build responsive apps
+
+This section applies only to apps built with [Responsive Widgets](/reference/responsive-widgets). Your plan must include responsive apps, or the client reports "Responsive applications are not available on your Appsmith plan. Contact sales@appsmith.com to enable them."
+
+### Calculated values
+
+A client can show a value calculated from queries, widgets, and stored values, such as a total, a rounded average, filtered and sorted rows, or a chart of grouped sums. Describe the result in plain language, for example:
+
+- "Show the total of the `amount` column of the **Orders** query in a Stats widget."
+- "Show only the open orders in the table, with the largest amount first."
+
+These settings accept a calculated value:
+
+| Widget | Settings |
+| --- | --- |
+| Heading | [**Text**](/reference/responsive-widgets/heading#text-string) |
+| Paragraph | [**Text**](/reference/responsive-widgets/paragraph#text-string) |
+| Stats | [**Label**](/reference/responsive-widgets/stats#label-string), [**Value**](/reference/responsive-widgets/stats#value-string), [**Value change**](/reference/responsive-widgets/stats#value-change-string), [**Caption**](/reference/responsive-widgets/stats#caption-string) |
+| Table | [**Table data**](/reference/responsive-widgets/table#table-data-array) |
+| Chart | [**Chart data**](/reference/responsive-widgets/chart#chart-data-array) |
+
+Every other setting refuses a calculated value. For example, the Markdown widget refuses one because Markdown could load an image or show a link built from data.
+
+#### What a calculated value can read
+
+- Every query and widget that a calculated value reads must already exist. In a new app, ask the client to create the app and its queries first, and then add the values that read queries.
+- A calculated value can't read the signed-in user's name, email, or username.
+- A calculated value can't read its own widget.
+- A widget or query that a calculated value reads can't be named `item`. Rename the widget or query.
+- A client can't address a widget named `appsmith`, even to rename it. Rename the widget in the editor.
+
+#### What can read a calculated value
+
+A setting of another widget can't read a widget that holds a calculated value. An event can read it.
+
+- **Same result in two places:** calculate the value in the query and bind both widgets to the query, or repeat the calculation on the second widget, if that setting accepts one.
+- **Form that reads a table:** a form can't read the selected row of a table whose rows are calculated. Filter and sort in the query, and then bind the table to the query.
+- **Widget that is already read:** a widget that another widget's setting reads can't take or change a calculated value until you remove that binding.
+- **Short widget names:** a widget that holds a calculated value can look like it's read by others if it has a short name such as `row`, `total`, or `month`. Renaming the widget fixes that.
+
+#### Table columns
+
+Appsmith refuses calculated **Table data** if the table has an image column, a column whose type is set by a binding, or a column of a type that isn't known to show plain text. Remove or change that column, or bind the table directly to a query.
+
+:::caution Links and later changes
+A **URL** column turns a calculated cell into a link that viewers can click, so don't build addresses from data. Appsmith checks calculated values when the client saves a change. It doesn't check changes made later in the editor, such as a binding that reads the widget, or a column changed to an image.
+:::
+
+#### Number formats and result shapes
+
+- **Numbers:** a calculation can use `round` and `concat`. It can't add thousands separators or format a currency. Format those values in the query.
+- **Text settings:** a text, number, or true/false result is shown. Any other result shows as empty text, so convert dates to text first.
+- **Tables:** a result that isn't a list shows no rows.
+- **Charts:** a point whose value isn't a number shows as a gap. A series whose data isn't a list is dropped.
+
+#### Limits for calculated values
+
+| Scope | Limit |
+| --- | --- |
+| One value | 120 parts, 12 levels of nesting, and 20,000 characters |
+| One page | 250 calculated values and 500,000 characters in total |
+
+Bindings written in the editor don't count toward the page limits.
+
+#### Change a calculated value
+
+A client can't read a calculation back later. It sees only that the setting is bound. To change a calculated value, describe the full calculation again.
 
 ## Datasource environments
 
@@ -513,6 +581,8 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 | A workflow tool reports that Workflows are not available on your plan | Your plan doesn't include Workflows. Contact sales@appsmith.com to enable them. |
+| The client reports "…holds a computed value, and a widget that holds a computed value cannot be read by another widget's setting" | The change binds a setting to a widget that holds a calculated value. Calculate the value in the query and bind both widgets to the query, or repeat the calculation on the second widget, if that setting accepts one. See [Calculated values](#calculated-values). |
+| The client reports "…cannot take a computed value" | The setting doesn't accept a calculated value, or the table has a column that can't show calculated rows. Use one of the settings listed in [Calculated values](#calculated-values), or change the column or bind the table directly to a query. |
 | `create_workflow_trigger` reports that the workflow is not in the application's workspace | An app can start only a workflow in its own workspace. Move the workflow into the app's workspace, or create the workflow there. |
 | `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
 | `create_workflow_trigger` reports that a widget is not on the page | A payload value names a widget that isn't on the page. Check the widget name, or add the widget to the page first. |
