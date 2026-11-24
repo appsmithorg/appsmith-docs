@@ -452,7 +452,7 @@ The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for 
 
 ## Copy a query to another app
 
-An MCP client can copy a saved SQL or REST API query with `copy_action`, either to a page of another app or to another page of the same app. For example, you can ask the client to "copy the `getCustomers` query from the Support app to the Home page of the Billing app". Appsmith copies the query text and configuration on the server and never returns them to the client. Copying a query requires MCP governance; if the client reports that the tool is unavailable, ask your Appsmith administrator to configure MCP governance.
+An MCP client can copy a saved SQL or REST API query with `copy_action`, either to a page of another app or to another page of the same app. For example, you can ask the client to "copy the `getCustomers` query from the Support app to the Home page of the Billing app". Appsmith copies the query text and configuration on the server, and `copy_action` doesn't return them. The client can still read the text of a SQL query or the configuration of a REST API query that MCP wrote and nobody edited, with `get_action`. Copying a query requires MCP governance; if the client reports that the tool is unavailable, ask your Appsmith administrator to configure MCP governance.
 
 Appsmith refuses a copy that breaks one of these rules, and the client reports the reason:
 
@@ -471,7 +471,7 @@ After the copy:
 - **Bindings:** the client reports when the copy reads widgets or other queries. The target app may not have them, so check the bindings before you use the copy. A REST API query is copied with its bindings.
 
 :::caution Public apps
-Copying a query into a public app gives anonymous visitors execute permission on the target datasource, as creating a query there in the editor does.
+Copying a query into a public app gives anonymous visitors execute permission on the target datasource as soon as the copy is created, before you deploy. Creating a query there in the editor does the same.
 :::
 
 ## Build workflows
