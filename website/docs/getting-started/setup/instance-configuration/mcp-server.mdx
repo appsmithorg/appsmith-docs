@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, build conditional forms, calculated values in responsive apps, SQL report queries, and email queries from the client, and copy queries between apps.
 toc_max_heading_level: 2
 ---
 
@@ -403,15 +403,17 @@ A widget's default value can come from another widget, from a field of a query's
 
 A date picker's [default date](/reference/widgets/datepicker#default-date-iso-8601-date-string), [minimum date](/reference/widgets/datepicker#min-date-iso-8601-date-string), and [maximum date](/reference/widgets/datepicker#max-date-iso-8601-date-string) can depend on other widgets. For example, the end date can default to 14 days after today, and its maximum can be one year after the start date.
 
-Date calculations can add days, months, or years, take the start of a day, count the days between two dates, and format a date as `YYYY-MM-DD`. They work as follows:
+Date calculations can add days, months, or years, take the start of a day, count the days between two dates, format a date as `YYYY-MM-DD`, and print a date as readable text, such as "Nov 24, 2026". They work as follows:
 
-- They use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
+- Except for readable text, they use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
 - Adding months or years keeps the day within the target month. 31 January plus one month is the last day of February, and 29 February plus one year is 28 February.
 - A date that doesn't exist, such as 30 February, gives no value instead of rolling over into the next month.
+- Readable text uses UTC, or a time zone that the client names, such as `America/New_York`. In UTC, a date and time can print as the day before or after the viewer's. Ask the client to name a time zone, or to format the date as `YYYY-MM-DD` first. A `YYYY-MM-DD` value prints as that day in every time zone. A missing or invalid date gives no value.
+- To show readable dates in a large table, use the column's own date format instead.
 
 ### Current user
 
-A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details.
+A client can prefill a widget with the signed-in user's name, email, or username, for example the requester's email on a request form. These values come from the [`appsmith.user`](/reference/appsmith-framework/context-object#user-object) object, so each viewer sees their own details. [Calculated values](#calculated-values) in responsive apps can't read these details.
 
 ### Tables, validation, and events
 
@@ -428,6 +430,168 @@ Appsmith refuses a change, and the client reports the reason, in these cases:
 - **Curly braces in text:** text inside a condition or calculation can't contain `{` or `}`.
 - **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
 - **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
+
+## Build responsive apps
+
+This section applies only to apps built with [Responsive Widgets](/reference/responsive-widgets). Your plan must include responsive apps, or the client reports "Responsive applications are not available on your Appsmith plan. Contact sales@appsmith.com to enable them."
+
+### Built-in widget features
+
+A client uses `list_responsive_widgets` to learn what one widget type can do. The tool reports the settings that the client can change. Under `builtIn`, it also reports the features that are on by default and that no setting controls. Neither the client nor the property pane can change those features. For a widget with no such features, the `builtIn` list is empty.
+
+Only the Table widget has built-in features:
+
+- **Filters** in the table toolbar.
+- **Export** in the table toolbar.
+- Searching the loaded rows in the browser, even when a search event is set.
+
+A client doesn't need to add a download button or a `download()` function to a responsive table, because the table already exports its rows. For what **Filters** and **Export** do, and why hiding export doesn't restrict data, see [Built-in toolbar features](/reference/responsive-widgets/table#built-in-toolbar-features).
+
+Search, column sorting, the **Columns** menu, and saved views are also on by default, but they have settings that a client can change. The fullscreen button also has a setting and is off by default. See the [Table reference](/reference/responsive-widgets/table#content-properties).
+
+`builtIn` describes the defaults of a new widget, not a saved widget. A table on an existing page can differ.
+
+### Calculated values
+
+A client can show a value calculated from queries, widgets, and stored values, such as a total, a rounded average, filtered and sorted rows, or a chart of grouped sums. Describe the result in plain language, for example:
+
+- "Show the total of the `amount` column of the **Orders** query in a Stats widget."
+- "Show only the open orders in the table, with the largest amount first."
+
+These settings accept a calculated value:
+
+| Widget | Settings |
+| --- | --- |
+| Heading | [**Text**](/reference/responsive-widgets/heading#text-string) |
+| Paragraph | [**Text**](/reference/responsive-widgets/paragraph#text-string) |
+| Stats | [**Label**](/reference/responsive-widgets/stats#label-string), [**Value**](/reference/responsive-widgets/stats#value-string), [**Value change**](/reference/responsive-widgets/stats#value-change-string), [**Caption**](/reference/responsive-widgets/stats#caption-string) |
+| Table | [**Table data**](/reference/responsive-widgets/table#table-data-array) |
+| Chart | [**Chart data**](/reference/responsive-widgets/chart#chart-data-array) |
+
+Every other setting refuses a calculated value. For example, the Markdown widget refuses one because Markdown could load an image or show a link built from data.
+
+#### What a calculated value can read
+
+- Every query and widget that a calculated value reads must already exist. In a new app, ask the client to create the app and its queries first, and then add the values that read queries.
+- A calculated value can't read the signed-in user's name, email, or username.
+- A calculated value can't read its own widget.
+- A widget or query that a calculated value reads can't be named `item`. Rename the widget or query.
+- A client can't address a widget named `appsmith`, even to rename it. Rename the widget in the editor.
+
+#### What can read a calculated value
+
+A setting of another widget can't read a widget that holds a calculated value. An event can read it.
+
+- **Same result in two places:** calculate the value in the query and bind both widgets to the query, or repeat the calculation on the second widget, if that setting accepts one.
+- **Form that reads a table:** a form can't read the selected row of a table whose rows are calculated. Filter and sort in the query, and then bind the table to the query.
+- **Widget that is already read:** a widget that another widget's setting reads can't take or change a calculated value until you remove that binding.
+- **Short widget names:** a widget that holds a calculated value can look like it's read by others if it has a short name such as `row`, `total`, or `month`. Renaming the widget fixes that.
+
+#### Table columns
+
+Appsmith refuses calculated **Table data** if the table has an image column, a column whose type is set by a binding, or a column of a type that isn't known to show plain text. Remove or change that column, or bind the table directly to a query.
+
+:::caution Links and later changes
+A **URL** column turns a calculated cell into a link that viewers can click, so don't build addresses from data. Appsmith checks calculated values when the client saves a change. It doesn't check changes made later in the editor, such as a binding that reads the widget, or a column changed to an image.
+:::
+
+#### Number formats and result shapes
+
+- **Numbers:** a calculation can use `round` and `concat`. It can't add thousands separators or format a currency. Format those values in the query.
+- **Text settings:** a text, number, or true/false result is shown. Any other result shows as empty text, so convert dates to text first.
+- **Tables:** a result that isn't a list shows no rows.
+- **Charts:** a point whose value isn't a number shows as a gap. A series whose data isn't a list is dropped.
+
+#### Limits for calculated values
+
+| Scope | Limit |
+| --- | --- |
+| One value | 120 parts, 12 levels of nesting, and 20,000 characters |
+| One page | 250 calculated values and 500,000 characters in total |
+
+Bindings written in the editor don't count toward the page limits.
+
+#### Change a calculated value
+
+A client can't read a calculation back later. It sees only that the setting is bound. To change a calculated value, describe the full calculation again.
+
+## SQL report queries
+
+An MCP client can build a saved SQL query that groups, summarizes, or deduplicates rows. Describe the report in plain language, for example: "Show the number of tickets created per week and the average resolution time, rounded down." The client uses `create_query` to add the query, or `update_action` to change an existing one. Changing a query requires MCP governance. A report query can use the following:
+
+- **Date grouping:** group rows by day, week, month, quarter, or year. This works on PostgreSQL and Redshift only, and the query needs at least one aggregate. A timestamp with time zone is cut in the database session's time zone, not the viewer's.
+- **Aggregates:** return 1 to 6 aggregates, each a count, sum, average, minimum, or maximum. A sum, average, minimum, or maximum can use the absolute values of its column. Only a sum or average can be rounded. Rounding down works on every SQL datasource. Rounding up or to the nearest whole number works only on PostgreSQL, Redshift, MySQL, MariaDB, and Oracle.
+- **Distinct rows:** return each combination of the named columns once. The query must name its columns, can't use aggregates or grouping, and can sort only by a column it selects.
+
+Appsmith refuses a report query that breaks one of these rules, and the client reports the reason:
+
+- **Result names:** in a query that uses several aggregates or date grouping, each result column needs a unique name, ignoring case. A name that the client chooses for an aggregate or a date group must be lower-case and can't be a reserved SQL word.
+- **Sorting:** a query that uses several aggregates or date grouping can be sorted only by its result columns.
+- **Group conditions:** a condition on groups (`HAVING`) can't test a date group. Filter the date column instead.
+- **Redshift and Snowflake:** a query can't contain a value, so it can't have filters that compare a column with a value, or group conditions. "Is null" and "is not null" filters still work. As a result, a date-grouped query on Redshift can't be narrowed to a date range.
+- **System tables:** `create_query` and `update_action` refuse to read or change a database's system tables, for example those in `information_schema`, `pg_catalog`, `sys`, MySQL's `mysql` and `performance_schema`, or Oracle's `SYSTEM`. Ask the client to read the datasource's structure instead. This check is best effort. The datasource's credentials decide what a query can read.
+- **Query size:** the SQL that Appsmith generates for a query can be at most 8 KB.
+
+A report query can also join tables, calculate categories, and run in several steps. Support depends on the datasource:
+
+| Datasource | Joins and CASE | WITH |
+| --- | --- | --- |
+| PostgreSQL, Oracle, SQL Server | Yes | Yes |
+| MySQL, MariaDB | Yes | No |
+| Redshift, Snowflake | No | No |
+
+### Several tables
+
+A client can combine tables with a JOIN. Describe the report you need, for example: "Show paid revenue per region and customer for the last quarter, from the orders, customers, and payments tables." These rules also apply to a query that uses CASE or WITH, even on one table:
+
+- **Joins:** a query, or one WITH step, can use up to 7 joins, so it reads at most 8 sources. Each join is an inner join or a left join, with 1 to 4 conditions. Each condition checks that two columns are equal.
+- **Read only:** the query can only be a `SELECT`.
+- **Result columns:** the client names every column to return. `SELECT *` isn't available. Every result column, with or without aggregates, follows the result name rules in [SQL report queries](#sql-report-queries).
+- **Rows and sorting:** the query needs a row limit from 1 to 1,000 and can be sorted only by its result columns.
+- **PostgreSQL only:** date grouping, case-insensitive matching (`ilike`), and multi-select list filters work only on PostgreSQL.
+- **Delimited columns:** splitting a column that holds a delimited list isn't available.
+
+### Calculated categories
+
+A client can calculate a value for each row with CASE, for example to label each order as small, medium, or large by its total. A CASE works in a selected column, or as the input of an aggregate, such as the sum of paid amounts only.
+
+- **Branches:** a CASE has 1 to 8 branches. Each branch has 1 to 4 conditions, and all of them must hold. A query, or one WITH step, can have at most 12 CASE expressions.
+- **Conditions:** a condition can't use a filter that is skipped when empty, or a multi-select list filter.
+- **Results:** each result is a column or a fixed value. It can't be a widget value or null. The fixed values in one CASE must have the same type. A true or false result isn't available on Oracle or SQL Server.
+- **Nesting and grouping:** a CASE can't contain another CASE, and a query can't group by one directly. To group by a CASE result, ask the client to calculate it in a WITH step first, then group by the result of that step. This isn't possible on MySQL or MariaDB, because they don't support WITH here.
+
+### Multi-step queries
+
+A client can build a query in steps with WITH, for example to total payments per customer first and then count customers by total.
+
+- **Steps:** a query has 1 to 4 WITH steps before its final query. Each step can read only the steps before it, and every step must be used.
+- **No nesting:** a step can't contain steps of its own.
+- **Sorting and limits:** a step has no sort order or row limit. Set them on the final query.
+
+:::caution Filters on the viewer
+A filter on a query isn't always enough to limit what each viewer can read:
+
+- **Filter every step.** In a query with WITH, put the filter in every step that reads the restricted table. A filter in the final query doesn't limit what a step reads.
+- **A filter on `appsmith.user` isn't access control.** The browser evaluates values such as `appsmith.user.email`, so a viewer can change them. To limit rows by the signed-in user, use [server-side email](/reference/appsmith-framework/context-object#server-side-email). On PostgreSQL, you can also limit rows in the database with [Row Level Security](/connect-data/reference/querying-postgres#row-level-security-rls). All viewers share the datasource's database user, so a policy based on that user alone doesn't tell viewers apart.
+- **Add server-side email in the editor.** A client can't write `<<APPSMITH_USER_EMAIL>>` through a structured query, because its values become `{{ }}` bindings. Add it to the saved query in the editor. If the client changes the query later, it replaces the whole query, so check that the filter is still there.
+:::
+
+## Email queries
+
+An MCP client can add a query that sends email to an app page with `create_smtp_query`, and change it later with `update_action`. Changing, duplicating, or directly running an email query requires MCP governance. For example, you can ask the client to "add a **Send reminder** button that emails the customer selected in the orders table".
+
+- **Setup:** the client uses an existing [SMTP datasource](/connect-data/reference/using-smtp) in the app's workspace. It never creates one, so add the server and credentials in Appsmith first.
+- **Fields:** the client can set from, to, CC, BCC, reply-to, subject, and body. The body is plain text by default, or HTML. Each field is fixed text, a widget value, or a mix of both. The client can't write `{{ }}`, and it can't add attachments. [Add attachments](/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin#add-attachments) in the editor.
+- **How values are handled:** every field except the body is a header field. Fixed text in a header field can't contain line breaks, and line breaks in a widget value are replaced with a space. In an address field, a widget value that is an array is joined with commas. In an HTML body, widget values are HTML-escaped, so put markup in the fixed text.
+- **When it runs:** the query is set to [**Manual**](/connect-data/reference/query-settings#run-behavior) and never runs on page load. Creating it sends nothing. It runs from an event or a JS object. To run it directly, the client must use the [two-step approval flow](#how-clients-ask-for-approval). A direct run doesn't fill in widget values, so use it only for an email made of fixed text. To test an email with widget values, run it from the app. A duplicated email query is also set to **Manual**. If the page already has a query with the same name, the client gets that query back unchanged.
+- **Changing one:** `update_action` rewrites the email and sets the query to **Manual**, including an email made in the editor. It refuses to rewrite an email that has attachments, because that would remove them. It can't change an email query into another kind of query, or another kind of query into an email.
+- **What the client can read:** the addresses and subject of any email query, including one written in the editor. It can read the body only if MCP wrote the email and nobody has edited it since. It can never read the datasource credentials.
+
+:::caution Keep recipients out of viewers' hands
+Don't fill from, to, CC, BCC, or reply-to from a free-text input. Viewers could then send mail to anyone through your server. Prefer a fixed sender. Anyone who can run the app can change any value that comes from a widget, and can skip the checks on it. Running the app doesn't let them change fixed text. Use fixed recipients if viewers must not choose them.
+
+Creating an email query in a public app gives anonymous visitors execute permission on the SMTP datasource as soon as the query is created, before you deploy.
+:::
 
 ## Datasource environments
 
@@ -450,6 +614,30 @@ The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for 
 - In an event, a fixed text value can't contain single quotes, braces, backticks, or `${`.
 - A page name that reads as an IP address or as `localhost`, such as `12` or `0x5db8d822`, is refused when the client creates, renames, or navigates to a page. Add a letter to the page name.
 
+## Copy a query to another app
+
+An MCP client can copy a saved SQL or REST API query with `copy_action`, either to a page of another app or to another page of the same app. For example, you can ask the client to "copy the `getCustomers` query from the Support app to the Home page of the Billing app". Appsmith copies the query text and configuration on the server, and `copy_action` doesn't return them. The client can still read the text of a SQL query or the configuration of a REST API query that MCP wrote and nobody edited, with `get_action`. Copying a query requires MCP governance; if the client reports that the tool is unavailable, ask your Appsmith administrator to configure MCP governance.
+
+Appsmith refuses a copy that breaks one of these rules, and the client reports the reason:
+
+- **What can be copied:** page queries on MariaDB, Microsoft SQL Server, MySQL, Oracle, PostgreSQL, Redshift, Snowflake, and REST API datasources. The query must use a saved datasource. Queries on MongoDB or any other plugin, JS objects, module queries, and workflow queries can't be copied.
+- **Permissions:** you need editor access to the source query, edit access to the target page, and permission to create queries on the datasource that the copy uses. An app viewer can't copy a query.
+- **Queries written or edited in the editor:** the copy keeps the query's own datasource, so the target app must be in the same workspace. Such a query can hold a secret, such as a token in a header or a password in the SQL text, and another datasource could send that secret to a different host.
+- **Queries that MCP wrote and nobody edited:** the copy can use another datasource in the target app's workspace, if that datasource uses the same plugin. For example, a PostgreSQL query can move only to a PostgreSQL datasource.
+- **SQL with `{{ }}`:** the query must have [prepared statements](/connect-data/concepts/how-to-use-prepared-statements) turned on. On Redshift and Snowflake, SQL with `{{ }}` can't be copied. SQL without `{{ }}` isn't affected.
+
+If the target page already has a query with the same name, nothing is copied and the client gets the existing query, which may be unrelated. Ask the client to use a different name.
+
+After the copy:
+
+- **Running:** the copy runs manually, not on page load. Ask the client to run it from an event. The copy keeps the [request confirmation](/connect-data/reference/query-settings#request-confirmation-before-running-queryapi) setting.
+- **Deploying:** the copy is in the unpublished version of the target app and goes live on the next deploy. On a Git-connected target app, it's on the branch the client works on.
+- **Bindings:** the client reports when the copy reads widgets or other queries. The target app may not have them, so check the bindings before you use the copy. A REST API query is copied with its bindings.
+
+:::caution Public apps
+Copying a query into a public app gives anonymous visitors execute permission on the target datasource as soon as the copy is created, before you deploy. Creating a query there in the editor does the same.
+:::
+
 ## Build workflows
 
 An MCP client can create and edit [Appsmith Workflows](/workflows) and connect them to apps. These tools are available on Business Cloud and self-hosted Enterprise only, when your plan includes Workflows. Community Edition does not have them. If your plan does not include Workflows, every workflow tool returns "Workflows are not available on your Appsmith plan. Contact sales@appsmith.com to enable them."
@@ -461,11 +649,13 @@ An MCP client can create and edit [Appsmith Workflows](/workflows) and connect t
 | `create_workflow` | Creates a workflow in a workspace, optionally with its logic. |
 | `rename_workflow` | Renames a workflow. |
 | `update_workflow_logic` | Replaces the workflow's logic, its `Main` JS object. The logic must define `executeWorkflow(data)`, where `data` is the trigger data. Any code written in the editor is replaced. |
-| `create_workflow_query` | Adds a SQL query to a workflow, on a datasource in the workflow's workspace. |
+| `create_workflow_query` | Adds a SQL query to a workflow, on a datasource in the workflow's workspace. The query reads one table, with no joins, CASE, or WITH. |
 | `create_workflow_rest_api` | Adds a REST API call to a workflow, on a REST datasource in the workflow's workspace. |
 | `create_workflow_trigger` | Adds a query to an app page that starts a workflow when an app event runs it. See [Start a workflow from an app](#start-a-workflow-from-an-app). |
 
 An MCP client can't run, test, deploy, schedule, or delete a workflow, and it can't set up webhook triggers or approvals. A workflow built through MCP goes live only after someone deploys it in the Appsmith editor.
+
+Logic that a client writes can log a value with `console.log`. In a workflow, the value goes to the [run history](/workflows/reference/run-history). In an app's JS object, it goes to the viewer's browser console. Never log secrets, tokens, or personal data.
 
 ### Start a workflow from an app
 
@@ -512,10 +702,21 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
 | The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
+| The client reports "bucket … is only available on a PostgreSQL or Redshift datasource" | Grouping by a date unit works on PostgreSQL and Redshift only. Ask the client for a query without date grouping, or use a PostgreSQL or Redshift datasource. See [SQL report queries](#sql-report-queries). |
+| The client reports "the Redshift plugin does not use prepared statements" or "the Snowflake plugin does not use prepared statements" | A query on Redshift or Snowflake can't contain a value. Ask the client to remove value filters and group conditions from the query. "Is null" and "is not null" filters still work. See [SQL report queries](#sql-report-queries). |
+| The client reports "from and joins need a PostgreSQL, MySQL, MariaDB, Oracle or SQL Server datasource…" | The datasource doesn't support joins, CASE, or WITH, or the query belongs to a workflow. Use a supported datasource, or ask the client for a query on one table. See [SQL report queries](#sql-report-queries). |
+| The client reports "with is not available on MySQL or MariaDB…" | Ask the client to use joins instead of WITH, or use a PostgreSQL, Oracle, or SQL Server datasource. See [Multi-step queries](#multi-step-queries). |
+| The client reports "…is in a system catalog, which the MCP does not query…" | The query names a system table. Ask the client to read the datasource's structure instead. See [SQL report queries](#sql-report-queries). |
+| The client reports "compiled query exceeds the size limit" | The generated SQL is larger than 8 KB. Ask the client for fewer columns, conditions, CASE expressions, or steps, or split the report into several queries. |
+| The client reports "…holds a computed value, and a widget that holds a computed value cannot be read by another widget's setting" | The change binds a setting to a widget that holds a calculated value. Calculate the value in the query and bind both widgets to the query, or repeat the calculation on the second widget, if that setting accepts one. See [Calculated values](#calculated-values). |
+| The client reports "…cannot take a computed value" | The setting doesn't accept a calculated value, or the table has a column that can't show calculated rows. Use one of the settings listed in [Calculated values](#calculated-values), or change the column or bind the table directly to a query. |
 | A workflow tool reports that Workflows are not available on your plan | Your plan doesn't include Workflows. Contact sales@appsmith.com to enable them. |
 | `create_workflow_trigger` reports that the workflow is not in the application's workspace | An app can start only a workflow in its own workspace. Move the workflow into the app's workspace, or create the workflow there. |
 | `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
 | `create_workflow_trigger` reports that a widget is not on the page | A payload value names a widget that isn't on the page. Check the widget name, or add the widget to the page first. |
 | `create_workflow_trigger` reports that the page already has a query with that name | Another query on the page uses the name, or a trigger with that name points to a different workflow or payload. Choose another name. |
+| The client reports "create_smtp_query requires an existing SMTP datasource" | The datasource that the client chose isn't an SMTP datasource. Create an [SMTP datasource](/connect-data/reference/using-smtp) in the app's workspace, and ask the client to use it. |
+| The client reports "this email has attachments set in the editor" | A client can't rewrite an email that has attachments, because that would remove them. Change the email in the editor. |
+| The client reports that an email query "could not be pinned to manual run behaviour" | The query may still be in the app and may run on page load. In the editor, set its run behavior to **Manual** or delete it, and then ask the client to retry. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).

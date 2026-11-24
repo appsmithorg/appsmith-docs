@@ -286,6 +286,32 @@ Sets the action that runs when a user changes the rows per page. This property s
 
 </dd>
 
+### Built-in toolbar features
+
+New tables show **Filters** and **Export** in the table toolbar. No property controls either of them.
+
+#### Filters
+
+<dd>
+
+Opens a panel with one filter for each visible column. The type of filter depends on the column type and its data. For example, number columns filter by a minimum and a maximum.
+
+</dd>
+
+#### Export
+
+<dd>
+
+Downloads rows as **CSV** or **JSON**. The file contains every loaded row that matches the current search and filters, across all table pages. With **Server side pagination** on, it contains only the rows the table has loaded.
+
+With **Enable multi-row selection** on, the selection toolbar replaces the table toolbar when users select rows. Its **Export selected** button downloads the selected rows as CSV.
+
+:::caution
+You cannot turn off export, and hiding it would not restrict access to the data. Every row the table loads is already in the viewer's browser. To limit what users can get, limit the rows and columns that your query returns.
+:::
+
+</dd>
+
 ### Grouping
 
 #### Group by column `string`
