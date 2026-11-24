@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms and SQL report queries from the client.
 toc_max_heading_level: 2
 ---
 
@@ -429,6 +429,21 @@ Appsmith refuses a change, and the client reports the reason, in these cases:
 - **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
 - **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
 
+## SQL report queries
+
+An MCP client can build a saved SQL query that groups, summarizes, or deduplicates rows. Describe the report in plain language, for example: "Show the number of tickets created per week and the average resolution time, rounded down." The client uses `create_query` to add the query, or `update_action` to change an existing one. Changing a query requires MCP governance. A report query can use the following:
+
+- **Date grouping:** group rows by day, week, month, quarter, or year. This works on PostgreSQL and Redshift only, and the query needs at least one aggregate. A timestamp with time zone is cut in the database session's time zone, not the viewer's.
+- **Aggregates:** return 1 to 6 aggregates, each a count, sum, average, minimum, or maximum. A sum, average, minimum, or maximum can use the absolute values of its column. Only a sum or average can be rounded. Rounding down works on every SQL datasource. Rounding up or to the nearest whole number works only on PostgreSQL, Redshift, MySQL, MariaDB, and Oracle.
+- **Distinct rows:** return each combination of the named columns once. The query must name its columns, can't use aggregates or grouping, and can sort only by a column it selects.
+
+Appsmith refuses a report query that breaks one of these rules, and the client reports the reason:
+
+- **Result names:** in a query that uses several aggregates or date grouping, each result column needs a unique name, ignoring case. A name that the client chooses for an aggregate or a date group must be lower-case and can't be a reserved SQL word.
+- **Sorting:** a query that uses several aggregates or date grouping can be sorted only by its result columns.
+- **Group conditions:** a condition on groups (`HAVING`) can't test a date group. Filter the date column instead.
+- **Redshift and Snowflake:** a query can't contain a value, so it can't have filters that compare a column with a value, or group conditions. "Is null" and "is not null" filters still work. As a result, a date-grouped query on Redshift can't be narrowed to a date range.
+
 ## Datasource environments
 
 A datasource that an MCP client creates is configured in the workspace's default [datasource environment](/connect-data/concepts/Datasource-Environments), usually **Production**. Queries that the client runs and datasource structures that it reads also use the default environment. To use the datasource in another environment, configure it for that environment in Appsmith. See [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
@@ -512,6 +527,8 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | On a multi-replica instance, requests fail with HTTP 404 on roughly every other call | The replicas are not sharing MCP sessions. Confirm that every replica runs a version that includes the shared session store and that `APPSMITH_REDIS_URL` points to one Redis instance that every replica uses. See [Run MCP Server on more than one replica](#run-mcp-server-on-more-than-one-replica). |
 | The client reports that a page name cannot read as an IP address | Add a letter to the page name. See [Page navigation with URL parameters](#page-navigation-with-url-parameters). |
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
+| The client reports "bucket … is only available on a PostgreSQL or Redshift datasource" | Grouping by a date unit works on PostgreSQL and Redshift only. Ask the client for a query without date grouping, or use a PostgreSQL or Redshift datasource. See [SQL report queries](#sql-report-queries). |
+| The client reports "the Redshift plugin does not use prepared statements" or "the Snowflake plugin does not use prepared statements" | A query on Redshift or Snowflake can't contain a value. Ask the client to remove value filters and group conditions from the query. "Is null" and "is not null" filters still work. See [SQL report queries](#sql-report-queries). |
 | A workflow tool reports that Workflows are not available on your plan | Your plan doesn't include Workflows. Contact sales@appsmith.com to enable them. |
 | `create_workflow_trigger` reports that the workflow is not in the application's workspace | An app can start only a workflow in its own workspace. Move the workflow into the app's workspace, or create the workflow there. |
 | `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
