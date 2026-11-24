@@ -429,6 +429,26 @@ Appsmith refuses a change, and the client reports the reason, in these cases:
 - **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
 - **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
 
+## Build responsive apps
+
+This section applies only to apps built with [Responsive Widgets](/reference/responsive-widgets). Your plan must include responsive apps, or the client reports "Responsive applications are not available on your Appsmith plan. Contact sales@appsmith.com to enable them."
+
+### Built-in widget features
+
+A client uses `list_responsive_widgets` to learn what one widget type can do. The tool reports the settings that the client can change. Under `builtIn`, it also reports the features that are on by default and that no setting controls. Neither the client nor the property pane can change those features. For a widget with no such features, the `builtIn` list is empty.
+
+Only the Table widget has built-in features:
+
+- **Filters** in the table toolbar.
+- **Export** in the table toolbar.
+- Searching the loaded rows in the browser, even when a search event is set.
+
+A client doesn't need to add a download button or a `download()` function to a responsive table, because the table already exports its rows. For what **Filters** and **Export** do, and why hiding export doesn't restrict data, see [Built-in toolbar features](/reference/responsive-widgets/table#built-in-toolbar-features).
+
+Search, column sorting, the **Columns** menu, and saved views are also on by default, but they have settings that a client can change. The fullscreen button also has a setting and is off by default. See the [Table reference](/reference/responsive-widgets/table#content-properties).
+
+`builtIn` describes the defaults of a new widget, not a saved widget. A table on an existing page can differ.
+
 ## Datasource environments
 
 A datasource that an MCP client creates is configured in the workspace's default [datasource environment](/connect-data/concepts/Datasource-Environments), usually **Production**. Queries that the client runs and datasource structures that it reads also use the default environment. To use the datasource in another environment, configure it for that environment in Appsmith. See [Setup Datasource Environments](/connect-data/how-to-guides/setup-datasource-environments).
