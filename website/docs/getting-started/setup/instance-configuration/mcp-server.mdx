@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms and SQL report queries from the client.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms and SQL report queries over one or several tables from the client.
 toc_max_heading_level: 2
 ---
 
@@ -443,6 +443,52 @@ Appsmith refuses a report query that breaks one of these rules, and the client r
 - **Sorting:** a query that uses several aggregates or date grouping can be sorted only by its result columns.
 - **Group conditions:** a condition on groups (`HAVING`) can't test a date group. Filter the date column instead.
 - **Redshift and Snowflake:** a query can't contain a value, so it can't have filters that compare a column with a value, or group conditions. "Is null" and "is not null" filters still work. As a result, a date-grouped query on Redshift can't be narrowed to a date range.
+- **System tables:** `create_query` and `update_action` refuse to read or change a database's system tables, for example those in `information_schema`, `pg_catalog`, `sys`, MySQL's `mysql` and `performance_schema`, or Oracle's `SYSTEM`. Ask the client to read the datasource's structure instead. This check is best effort. The datasource's credentials decide what a query can read.
+- **Query size:** the SQL that Appsmith generates for a query can be at most 8 KB.
+
+A report query can also join tables, calculate categories, and run in several steps. Support depends on the datasource:
+
+| Datasource | Joins and CASE | WITH |
+| --- | --- | --- |
+| PostgreSQL, Oracle, SQL Server | Yes | Yes |
+| MySQL, MariaDB | Yes | No |
+| Redshift, Snowflake | No | No |
+
+### Several tables
+
+A client can combine tables with a JOIN. Describe the report you need, for example: "Show paid revenue per region and customer for the last quarter, from the orders, customers, and payments tables." These rules also apply to a query that uses CASE or WITH, even on one table:
+
+- **Joins:** a query, or one WITH step, can use up to 7 joins, so it reads at most 8 sources. Each join is an inner join or a left join, with 1 to 4 conditions. Each condition checks that two columns are equal.
+- **Read only:** the query can only be a `SELECT`.
+- **Result columns:** the client names every column to return. `SELECT *` isn't available. Every result column, with or without aggregates, follows the result name rules in [SQL report queries](#sql-report-queries).
+- **Rows and sorting:** the query needs a row limit from 1 to 1,000 and can be sorted only by its result columns.
+- **PostgreSQL only:** date grouping, case-insensitive matching (`ilike`), and multi-select list filters work only on PostgreSQL.
+- **Delimited columns:** splitting a column that holds a delimited list isn't available.
+
+### Calculated categories
+
+A client can calculate a value for each row with CASE, for example to label each order as small, medium, or large by its total. A CASE works in a selected column, or as the input of an aggregate, such as the sum of paid amounts only.
+
+- **Branches:** a CASE has 1 to 8 branches. Each branch has 1 to 4 conditions, and all of them must hold. A query, or one WITH step, can have at most 12 CASE expressions.
+- **Conditions:** a condition can't use a filter that is skipped when empty, or a multi-select list filter.
+- **Results:** each result is a column or a fixed value. It can't be a widget value or null. The fixed values in one CASE must have the same type. A true or false result isn't available on Oracle or SQL Server.
+- **Nesting and grouping:** a CASE can't contain another CASE, and a query can't group by one directly. To group by a CASE result, ask the client to calculate it in a WITH step first, then group by the result of that step. This isn't possible on MySQL or MariaDB, because they don't support WITH here.
+
+### Multi-step queries
+
+A client can build a query in steps with WITH, for example to total payments per customer first and then count customers by total.
+
+- **Steps:** a query has 1 to 4 WITH steps before its final query. Each step can read only the steps before it, and every step must be used.
+- **No nesting:** a step can't contain steps of its own.
+- **Sorting and limits:** a step has no sort order or row limit. Set them on the final query.
+
+:::caution Filters on the viewer
+A filter on a query isn't always enough to limit what each viewer can read:
+
+- **Filter every step.** In a query with WITH, put the filter in every step that reads the restricted table. A filter in the final query doesn't limit what a step reads.
+- **A filter on `appsmith.user` isn't access control.** The browser evaluates values such as `appsmith.user.email`, so a viewer can change them. To limit rows by the signed-in user, use [server-side email](/reference/appsmith-framework/context-object#server-side-email). On PostgreSQL, you can also limit rows in the database with [Row Level Security](/connect-data/reference/querying-postgres#row-level-security-rls). All viewers share the datasource's database user, so a policy based on that user alone doesn't tell viewers apart.
+- **Add server-side email in the editor.** A client can't write `<<APPSMITH_USER_EMAIL>>` through a structured query, because its values become `{{ }}` bindings. Add it to the saved query in the editor. If the client changes the query later, it replaces the whole query, so check that the filter is still there.
+:::
 
 ## Datasource environments
 
@@ -476,7 +522,7 @@ An MCP client can create and edit [Appsmith Workflows](/workflows) and connect t
 | `create_workflow` | Creates a workflow in a workspace, optionally with its logic. |
 | `rename_workflow` | Renames a workflow. |
 | `update_workflow_logic` | Replaces the workflow's logic, its `Main` JS object. The logic must define `executeWorkflow(data)`, where `data` is the trigger data. Any code written in the editor is replaced. |
-| `create_workflow_query` | Adds a SQL query to a workflow, on a datasource in the workflow's workspace. |
+| `create_workflow_query` | Adds a SQL query to a workflow, on a datasource in the workflow's workspace. The query reads one table, with no joins, CASE, or WITH. |
 | `create_workflow_rest_api` | Adds a REST API call to a workflow, on a REST datasource in the workflow's workspace. |
 | `create_workflow_trigger` | Adds a query to an app page that starts a workflow when an app event runs it. See [Start a workflow from an app](#start-a-workflow-from-an-app). |
 
@@ -529,6 +575,10 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | Every authenticated request returns HTTP 503 with an MCP session relay error | A replica could not subscribe to its Redis channel at startup. Check Redis connectivity from that replica and confirm that the Redis user is allowed to `SUBSCRIBE`. |
 | The client reports "bucket … is only available on a PostgreSQL or Redshift datasource" | Grouping by a date unit works on PostgreSQL and Redshift only. Ask the client for a query without date grouping, or use a PostgreSQL or Redshift datasource. See [SQL report queries](#sql-report-queries). |
 | The client reports "the Redshift plugin does not use prepared statements" or "the Snowflake plugin does not use prepared statements" | A query on Redshift or Snowflake can't contain a value. Ask the client to remove value filters and group conditions from the query. "Is null" and "is not null" filters still work. See [SQL report queries](#sql-report-queries). |
+| The client reports "from and joins need a PostgreSQL, MySQL, MariaDB, Oracle or SQL Server datasource…" | The datasource doesn't support joins, CASE, or WITH, or the query belongs to a workflow. Use a supported datasource, or ask the client for a query on one table. See [SQL report queries](#sql-report-queries). |
+| The client reports "with is not available on MySQL or MariaDB…" | Ask the client to use joins instead of WITH, or use a PostgreSQL, Oracle, or SQL Server datasource. See [Multi-step queries](#multi-step-queries). |
+| The client reports "…is in a system catalog, which the MCP does not query…" | The query names a system table. Ask the client to read the datasource's structure instead. See [SQL report queries](#sql-report-queries). |
+| The client reports "compiled query exceeds the size limit" | The generated SQL is larger than 8 KB. Ask the client for fewer columns, conditions, CASE expressions, or steps, or split the report into several queries. |
 | A workflow tool reports that Workflows are not available on your plan | Your plan doesn't include Workflows. Contact sales@appsmith.com to enable them. |
 | `create_workflow_trigger` reports that the workflow is not in the application's workspace | An app can start only a workflow in its own workspace. Move the workflow into the app's workspace, or create the workflow there. |
 | `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
