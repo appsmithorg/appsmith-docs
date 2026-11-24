@@ -403,11 +403,13 @@ A widget's default value can come from another widget, from a field of a query's
 
 A date picker's [default date](/reference/widgets/datepicker#default-date-iso-8601-date-string), [minimum date](/reference/widgets/datepicker#min-date-iso-8601-date-string), and [maximum date](/reference/widgets/datepicker#max-date-iso-8601-date-string) can depend on other widgets. For example, the end date can default to 14 days after today, and its maximum can be one year after the start date.
 
-Date calculations can add days, months, or years, take the start of a day, count the days between two dates, and format a date as `YYYY-MM-DD`. They work as follows:
+Date calculations can add days, months, or years, take the start of a day, count the days between two dates, format a date as `YYYY-MM-DD`, and print a date as readable text, such as "Nov 24, 2026". They work as follows:
 
-- They use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
+- Except for readable text, they use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
 - Adding months or years keeps the day within the target month. 31 January plus one month is the last day of February, and 29 February plus one year is 28 February.
 - A date that doesn't exist, such as 30 February, gives no value instead of rolling over into the next month.
+- Readable text uses UTC, or a time zone that the client names, such as `America/New_York`. A `YYYY-MM-DD` value prints as that day in every time zone. A missing or invalid date gives no value.
+- To show readable dates in a large table, use the column's own date format instead.
 
 ### Current user
 
@@ -428,6 +430,21 @@ Appsmith refuses a change, and the client reports the reason, in these cases:
 - **Curly braces in text:** text inside a condition or calculation can't contain `{` or `}`.
 - **Cycles:** a property can't read itself, and two properties can't depend on each other. For example, a field's **Required** condition can't depend on whether that same field is valid. A cycle would stop the page from evaluating for every viewer.
 - **Missing references:** every widget and query that a condition, default, or calculation refers to must already exist. Ask the client to create the widget or query first.
+
+## Email queries
+
+An MCP client can add a query that sends email to an app page with `create_smtp_query`, and change it later with `update_action`. For example, you can ask the client to "add a **Send reminder** button that emails the customer selected in the orders table".
+
+- **Setup:** the client uses an existing [SMTP datasource](/connect-data/reference/using-smtp) in the app's workspace. It never creates one, so add the server and credentials in Appsmith first.
+- **Fields:** the client can set from, to, CC, BCC, reply-to, subject, and body. The body is plain text by default, or HTML. Each field is fixed text, a widget value, or a mix of both. The client can't write `{{ }}`, and it can't add attachments. [Add attachments](/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin#add-attachments) in the editor.
+- **Safety of values:** every field except the body is a header field. Fixed text in a header field can't contain line breaks, and line breaks in a widget value are replaced with a space. In an address field, a widget value that is an array is joined with commas. In an HTML body, widget values are HTML-escaped, so put markup in the fixed text.
+- **When it runs:** the query is set to [**Manual**](/connect-data/reference/query-settings#run-behavior) and never runs on page load. Creating it sends nothing. It runs from an event or a JS object. To run it directly, the client must use the [two-step approval flow](#how-clients-ask-for-approval). A duplicated email query is also set to **Manual**. If the page already has a query with the same name, the client gets that query back unchanged.
+- **Changing one:** `update_action` rewrites the email and sets the query to **Manual**, including an email made in the editor. It refuses to rewrite an email that has attachments, because that would remove them. It can't change an email query into another kind of query, or another kind of query into an email.
+- **What the client can read:** the addresses and subject of any email query, including one written in the editor. It can read the body only if MCP wrote the email and nobody has edited it since. It can never read the datasource credentials.
+
+:::caution Keep recipients out of viewers' hands
+Don't fill from, to, CC, or BCC from a free-text input. Viewers could then send mail to anyone through your server. Prefer a fixed sender. Anyone who can run the app can change the values that the query sends.
+:::
 
 ## Datasource environments
 
@@ -466,6 +483,8 @@ An MCP client can create and edit [Appsmith Workflows](/workflows) and connect t
 | `create_workflow_trigger` | Adds a query to an app page that starts a workflow when an app event runs it. See [Start a workflow from an app](#start-a-workflow-from-an-app). |
 
 An MCP client can't run, test, deploy, schedule, or delete a workflow, and it can't set up webhook triggers or approvals. A workflow built through MCP goes live only after someone deploys it in the Appsmith editor.
+
+Logic that a client writes can log a value with `console.log`. In a workflow, the value goes to the [run history](/workflows/reference/run-history). In an app's JS object, it goes to the viewer's browser console. Never log secrets, tokens, or personal data.
 
 ### Start a workflow from an app
 
@@ -517,5 +536,8 @@ If an administrator disables a user's Appsmith account, requests made with that 
 | `create_workflow_trigger` reports that you cannot run the workflow | Your Appsmith user can't run the workflow. Ask a workspace administrator for permission to run it. |
 | `create_workflow_trigger` reports that a widget is not on the page | A payload value names a widget that isn't on the page. Check the widget name, or add the widget to the page first. |
 | `create_workflow_trigger` reports that the page already has a query with that name | Another query on the page uses the name, or a trigger with that name points to a different workflow or payload. Choose another name. |
+| The client reports "create_smtp_query requires an existing SMTP datasource" | The datasource that the client chose isn't an SMTP datasource. Create an [SMTP datasource](/connect-data/reference/using-smtp) in the app's workspace, and ask the client to use it. |
+| The client reports "this email has attachments set in the editor" | A client can't rewrite an email that has attachments, because that would remove them. Change the email in the editor. |
+| The client reports that an email query "could not be pinned to manual run behaviour" | The query may still be in the app and may run on page load. In the editor, set its run behavior to **Manual** or delete it, and then ask the client to retry. |
 
 Because MCP Server is in beta, please [open a ticket in the Appsmith Support Portal](https://support.appsmith.com) for connection problems, unexpected behavior, or feature suggestions. Include your Appsmith version, deployment type, AI client name and version, and steps to reproduce the issue. Redact keys and other secrets from screenshots, logs, and configuration files. For more information, see [Support at Appsmith](/product/support).
