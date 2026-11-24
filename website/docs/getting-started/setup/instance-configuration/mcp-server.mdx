@@ -1,5 +1,5 @@
 ---
-description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, and build conditional forms from the client.
+description: Enable Appsmith's MCP Server (BETA), create a personal key, run it on more than one replica, connect AI clients such as Cursor, VS Code, Claude Code, Claude.ai, Claude Desktop, Codex, the ChatGPT desktop app, and Windsurf, build conditional forms from the client, and copy queries between apps.
 toc_max_heading_level: 2
 ---
 
@@ -449,6 +449,30 @@ The page that opens reads each value with `appsmith.URL.queryParams.<key>`, for 
 - Parameter names are plain identifiers: a letter or underscore, followed by letters, digits, or underscores.
 - In an event, a fixed text value can't contain single quotes, braces, backticks, or `${`.
 - A page name that reads as an IP address or as `localhost`, such as `12` or `0x5db8d822`, is refused when the client creates, renames, or navigates to a page. Add a letter to the page name.
+
+## Copy a query to another app
+
+An MCP client can copy a saved SQL or REST API query with `copy_action`, either to a page of another app or to another page of the same app. For example, you can ask the client to "copy the `getCustomers` query from the Support app to the Home page of the Billing app". Appsmith copies the query text and configuration on the server and never returns them to the client. Copying a query requires MCP governance; if the client reports that the tool is unavailable, ask your Appsmith administrator to configure MCP governance.
+
+Appsmith refuses a copy that breaks one of these rules, and the client reports the reason:
+
+- **What can be copied:** page queries on MariaDB, Microsoft SQL Server, MySQL, Oracle, PostgreSQL, Redshift, Snowflake, and REST API datasources. The query must use a saved datasource. Queries on MongoDB or any other plugin, JS objects, module queries, and workflow queries can't be copied.
+- **Permissions:** you need editor access to the source query, edit access to the target page, and permission to create queries on the datasource that the copy uses. An app viewer can't copy a query.
+- **Queries written or edited in the editor:** the copy keeps the query's own datasource, so the target app must be in the same workspace. Such a query can hold a secret, such as a token in a header or a password in the SQL text, and another datasource could send that secret to a different host.
+- **Queries that MCP wrote and nobody edited:** the copy can use another datasource in the target app's workspace, if that datasource uses the same plugin. For example, a PostgreSQL query can move only to a PostgreSQL datasource.
+- **SQL with `{{ }}`:** the query must have [prepared statements](/connect-data/concepts/how-to-use-prepared-statements) turned on. On Redshift and Snowflake, SQL with `{{ }}` can't be copied. SQL without `{{ }}` isn't affected.
+
+If the target page already has a query with the same name, nothing is copied and the client gets the existing query, which may be unrelated. Ask the client to use a different name.
+
+After the copy:
+
+- **Running:** the copy runs manually, not on page load. Ask the client to run it from an event. The copy keeps the [request confirmation](/connect-data/reference/query-settings#request-confirmation-before-running-queryapi) setting.
+- **Deploying:** the copy is in the unpublished version of the target app and goes live on the next deploy. On a Git-connected target app, it's on the branch the client works on.
+- **Bindings:** the client reports when the copy reads widgets or other queries. The target app may not have them, so check the bindings before you use the copy. A REST API query is copied with its bindings.
+
+:::caution Public apps
+Copying a query into a public app gives anonymous visitors execute permission on the target datasource, as creating a query there in the editor does.
+:::
 
 ## Build workflows
 
