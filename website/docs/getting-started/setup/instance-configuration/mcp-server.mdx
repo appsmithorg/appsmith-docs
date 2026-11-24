@@ -408,7 +408,7 @@ Date calculations can add days, months, or years, take the start of a day, count
 - Except for readable text, they use the viewer's local time zone. A `YYYY-MM-DD` value means midnight at the start of that day in the viewer's time zone, not in UTC.
 - Adding months or years keeps the day within the target month. 31 January plus one month is the last day of February, and 29 February plus one year is 28 February.
 - A date that doesn't exist, such as 30 February, gives no value instead of rolling over into the next month.
-- Readable text uses UTC, or a time zone that the client names, such as `America/New_York`. A `YYYY-MM-DD` value prints as that day in every time zone. A missing or invalid date gives no value.
+- Readable text uses UTC, or a time zone that the client names, such as `America/New_York`. In UTC, a date and time can print as the day before or after the viewer's. Ask the client to name a time zone, or to format the date as `YYYY-MM-DD` first. A `YYYY-MM-DD` value prints as that day in every time zone. A missing or invalid date gives no value.
 - To show readable dates in a large table, use the column's own date format instead.
 
 ### Current user
@@ -437,13 +437,13 @@ An MCP client can add a query that sends email to an app page with `create_smtp_
 
 - **Setup:** the client uses an existing [SMTP datasource](/connect-data/reference/using-smtp) in the app's workspace. It never creates one, so add the server and credentials in Appsmith first.
 - **Fields:** the client can set from, to, CC, BCC, reply-to, subject, and body. The body is plain text by default, or HTML. Each field is fixed text, a widget value, or a mix of both. The client can't write `{{ }}`, and it can't add attachments. [Add attachments](/connect-data/how-to-guides/send-emails-using-the-SMTP-plugin#add-attachments) in the editor.
-- **Safety of values:** every field except the body is a header field. Fixed text in a header field can't contain line breaks, and line breaks in a widget value are replaced with a space. In an address field, a widget value that is an array is joined with commas. In an HTML body, widget values are HTML-escaped, so put markup in the fixed text.
-- **When it runs:** the query is set to [**Manual**](/connect-data/reference/query-settings#run-behavior) and never runs on page load. Creating it sends nothing. It runs from an event or a JS object. To run it directly, the client must use the [two-step approval flow](#how-clients-ask-for-approval). A duplicated email query is also set to **Manual**. If the page already has a query with the same name, the client gets that query back unchanged.
+- **How values are handled:** every field except the body is a header field. Fixed text in a header field can't contain line breaks, and line breaks in a widget value are replaced with a space. In an address field, a widget value that is an array is joined with commas. In an HTML body, widget values are HTML-escaped, so put markup in the fixed text.
+- **When it runs:** the query is set to [**Manual**](/connect-data/reference/query-settings#run-behavior) and never runs on page load. Creating it sends nothing. It runs from an event or a JS object. To run it directly, the client must use the [two-step approval flow](#how-clients-ask-for-approval). A direct run doesn't fill in widget values, so use it only for an email made of fixed text. To test an email with widget values, run it from the app. A duplicated email query is also set to **Manual**. If the page already has a query with the same name, the client gets that query back unchanged.
 - **Changing one:** `update_action` rewrites the email and sets the query to **Manual**, including an email made in the editor. It refuses to rewrite an email that has attachments, because that would remove them. It can't change an email query into another kind of query, or another kind of query into an email.
 - **What the client can read:** the addresses and subject of any email query, including one written in the editor. It can read the body only if MCP wrote the email and nobody has edited it since. It can never read the datasource credentials.
 
 :::caution Keep recipients out of viewers' hands
-Don't fill from, to, CC, or BCC from a free-text input. Viewers could then send mail to anyone through your server. Prefer a fixed sender. Anyone who can run the app can change the values that the query sends.
+Don't fill from, to, CC, or BCC from a free-text input. Viewers could then send mail to anyone through your server. Prefer a fixed sender. Anyone who can run the app can change any value that comes from a widget, and can skip the checks on it. Running the app doesn't let them change fixed text. Use fixed recipients if viewers must not choose them.
 :::
 
 ## Datasource environments
