@@ -9,6 +9,8 @@ This page shows how to use the SMTP Plugin to send emails and attach files and i
 ## Prerequisites
 A connected [SMTP](/connect-data/reference/using-smtp) plugin.
 
+An AI client connected through [MCP Server (BETA)](/getting-started/setup/instance-configuration/mcp-server#email-queries) can also create this query for you.
+
 ## Configure query
 
 Configure the query to send email, using the following parameters:
