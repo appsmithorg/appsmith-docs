@@ -131,3 +131,71 @@ SAML authentication can intermittently stop redirecting correctly so that users 
 
 - Restart the Appsmith deployment (containers/pods); this has resolved the symptom in reported cases.
 - If a restart does not help, remove the SAML configuration and configure it again.
+
+### Intermittent OIDC login failures after idle periods
+
+On self-hosted instances, OIDC sign-in may fail with HTTP 500 on `/login/oauth2/code/oidc` after several minutes of inactivity, while subsequent attempts succeed.
+
+Check the Appsmith server logs for errors during the token exchange with your identity provider (IdP), such as:
+
+```text
+WebClientRequestException: Connection prematurely closed BEFORE response
+```
+
+#### Cause
+
+One possible cause is a stale outbound HTTP connection. Reactor Netty can reuse pooled connections that an intermediate NAT gateway, firewall, or proxy has already expired. For example, AWS NAT Gateway expires idle TCP connections after 350 seconds. Reusing such a connection can cause a reset before the IdP returns an HTTP response.
+
+To distinguish this from other OIDC errors, compare logins immediately after one another with logins after an idle period longer than your network's idle timeout. Check whether the error occurs during the server-side token exchange rather than in the browser redirect or IdP configuration.
+
+#### Solution
+
+Work with your network administrator to ensure idle connections to the IdP are closed before the shortest idle timeout along the network path.
+
+For Kubernetes deployments using an Istio sidecar for outbound traffic, one approach is to configure an IdP-specific `ServiceEntry` and `DestinationRule` with a shorter TCP idle timeout. The following illustrative configuration uses 60 seconds; adjust the host, namespace, port, and timeout for your environment. If a ServiceEntry or DestinationRule already exists for the host, update it instead of creating conflicting resources.
+
+```yaml
+apiVersion: networking.istio.io/v1
+kind: ServiceEntry
+metadata:
+  name: oidc-idp
+spec:
+  hosts:
+    - idp.example.com
+  location: MESH_EXTERNAL
+  ports:
+    - number: 443
+      name: tls
+      protocol: TLS
+  resolution: DNS
+---
+apiVersion: networking.istio.io/v1
+kind: DestinationRule
+metadata:
+  name: oidc-idp
+spec:
+  host: idp.example.com
+  trafficPolicy:
+    connectionPool:
+      tcp:
+        idleTimeout: 60s
+```
+
+Use the hostname of the configured OIDC token endpoint. Ensure the Appsmith workload's outbound traffic actually traverses the Istio proxy and that the policy applies to that workload. Use an API version supported by your Istio installation. See [Istio ServiceEntry](https://istio.io/latest/docs/reference/config/networking/service-entry/) and [DestinationRule](https://istio.io/latest/docs/reference/config/networking/destination-rule/).
+
+An alternative for deployments without an appropriate egress proxy is to evaluate Reactor Netty pool settings with Appsmith Support. The following JVM arguments can limit pooled connection idle time and lifetime, respectively, in milliseconds:
+
+```text
+-Dreactor.netty.pool.maxIdleTime=60000 -Dreactor.netty.pool.maxLifeTime=300000
+```
+
+If testing these through `APPSMITH_JAVA_ARGS`, preserve existing JVM arguments and restart Appsmith. These settings may affect outbound connections to other hosts as well, and their effectiveness depends on the runtime and connection provider configuration. Prefer a host-specific policy where available.
+
+#### Verify the solution
+
+- Test sign-in, sign-out, and sign-in again after an idle period longer than the original failure threshold.
+- Repeat the test across Appsmith replicas and check that the first login attempt succeeds.
+- Confirm that successful callbacks redirect normally (typically HTTP 302) and that the premature connection closure errors no longer appear in server logs.
+- Monitor other outbound integrations for regressions before rolling the change out to production.
+
+If the issue persists, share sanitized server logs, the idle interval, Appsmith version, and relevant network topology with Appsmith Support. Do not include tokens or client secrets.
