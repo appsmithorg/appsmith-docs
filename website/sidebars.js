@@ -308,6 +308,7 @@ const sidebars = {
             'connect-data/how-to-guides/how-to-pass-params-to-an-api',
             'connect-data/how-to-guides/fetch-and-filter-data-in-sql',
             'connect-data/how-to-guides/insert-and-update-data-in-sql',
+            'connect-data/how-to-guides/connect-sql-server-with-windows-authentication',
             'connect-data/how-to-guides/filter-data-google-sheet',
             'connect-data/how-to-guides/insert-and-update-data-in-google-sheets',
             'connect-data/integrations',
