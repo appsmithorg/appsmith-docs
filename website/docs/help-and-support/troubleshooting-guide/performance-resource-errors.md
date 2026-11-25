@@ -15,8 +15,21 @@ The Appsmith server is unreachable or crashing. A common root cause on self-mana
 #### Solution
 
 - Mount a persistent volume to the Appsmith pod so configuration and data survive restarts. See [Self-hosting Best Practices](/getting-started/setup/best-practices) and [High Availability Setup on Kubernetes](/getting-started/setup/installation-guides/kubernetes/configure-high-availability).
-- Configure `readinessProbe` and `livenessProbe` so unhealthy pods are restarted and removed from rotation. If you deployed with your own manifests rather than the Appsmith Helm chart, add these probes to your deployment.
+- Configure `readinessProbe` and `livenessProbe` so unhealthy pods are restarted and removed from rotation. The Appsmith Helm chart configures these probes for you. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes) for the defaults and how to override them. If you deployed with your own manifests rather than the Appsmith Helm chart, add these probes to your deployment.
 - Collect the server logs covering the time of the crash (not just after the restart) and share them with support. See [How to Get Container Logs](/getting-started/setup/instance-management/how-to-get-container-logs).
+
+### Pod restarts after saving admin settings
+
+#### Cause
+
+Saving some admin settings restarts the Appsmith server inside the container. The restart takes about 45 seconds, and the health check fails while it runs. Helm charts older than 3.9.2 ran the liveness probe every 60 seconds with a 1-second timeout and restarted the container after three failures in a row. When you save settings several times in a row, each server restart can land on a liveness check, and Kubernetes kills the container in the middle of a restart. The 1-second timeout also lets a slow but working server fail a check.
+
+The same thing can happen on a newer chart if a `probes` override in your `values.yaml` sets a short `timeoutSeconds`, a low `failureThreshold`, or a long `periodSeconds`.
+
+#### Solution
+
+- Upgrade to Helm chart 3.9.2 or later. Its liveness probe runs every 10 seconds with a 5-second timeout and restarts the container only after 180 seconds of continuous failure. A single successful check resets the count, so a series of restarts doesn't add up to a container restart.
+- If you override `probes`, remove the liveness overrides, or raise `timeoutSeconds` and `failureThreshold`, or lower `periodSeconds`. See [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
 
 ### Instance runs out of memory (OOM) or fails health checks
 
@@ -29,6 +42,37 @@ When the Appsmith instance is undersized, the backend can start and then be term
 - Increase the memory allocated to the instance. Support has resolved health-check and OOM cases by raising available memory.
 - Ensure the instance meets the minimum size: `t3.large` or equivalent (2 vCPU, 8 GB of memory). See [Self-hosting Best Practices](/getting-started/setup/best-practices).
 - On platforms with health checks, increase the failed-health-check threshold or extend the health-check timeout so the service has time to stabilize before being marked unhealthy.
+
+### Pod restarts during first startup on Kubernetes
+
+#### Cause
+
+On first start, the Appsmith server runs every database migration before it starts to accept requests. Against a remote MongoDB, such as MongoDB Atlas, this can take several minutes. While the migrations run, the Helm chart's `startupProbe` fails. When the startup probe reaches its `failureThreshold`, Kubernetes restarts the container before the server finishes starting.
+
+Helm charts older than 3.9.2 ran the startup probe every 60 seconds and restarted the container after three failures, which allows about 180 seconds to boot. Chart 3.9.2 and later run it every 10 seconds with a 5-second timeout and a `failureThreshold` of 60, which allows 600 seconds. The liveness and readiness probes start only after the startup probe succeeds.
+
+#### Solution
+
+- Upgrade to Helm chart 3.9.2 or later.
+- If the first boot still takes longer than 600 seconds, raise `failureThreshold` under `probes.startupProbe` in your `values.yaml`. The startup window is `periodSeconds` multiplied by `failureThreshold`. For example, this allows 900 seconds:
+
+    ```yaml
+    probes:
+      startupProbe:
+        periodSeconds: 10
+        failureThreshold: 90
+    ```
+
+    Then apply the change:
+
+    ```bash
+    helm upgrade -i appsmith-ee appsmith-ee/appsmith -n appsmith-ee -f values.yaml
+    ```
+
+    `periodSeconds` and `failureThreshold` must be positive integers. Other values, such as `0`, make `helm install` and `helm upgrade` fail with a schema validation error.
+- If you stay on a chart older than 3.9.2, set both `periodSeconds` and `failureThreshold` under `probes.startupProbe` so their product covers your boot time, for example `periodSeconds: 10` and `failureThreshold: 60` for 600 seconds.
+
+The startup probe stops after its first success, so a longer startup window doesn't change how quickly Kubernetes detects a failure on a running server. For all probe defaults and override keys, see [Health probes](/getting-started/setup/instance-configuration/helm-chart#health-probes).
 
 ### High CPU and memory usage with few users
 
